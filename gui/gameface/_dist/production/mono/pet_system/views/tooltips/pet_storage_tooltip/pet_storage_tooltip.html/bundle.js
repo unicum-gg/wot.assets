@@ -1,101 +1,116 @@
-import { q as e, j as s } from '../../../../chunks/vendor.js';
-import { i as a, t, r, a3 as o, v as p, ad as n, k as l } from '../../../../chunks/lib.js';
-import { B as c } from '../../../../chunks/breed.js';
-/* empty css                       */ const [m, d] = a()(({ observableModel: e }) => ({ root: e.object() }), t),
-    i = 'Bonus_de50af4c',
-    u = 'Bonus_title_83ec6411',
-    _ = 'Bonus_row_99659264',
-    j = 'Bonus_value_70b996b5',
-    x = 'Bonus_accentText_83ec6411',
-    h = 'Bonus_counter_646ae1fb',
-    N = r.resolve('strings'),
-    v = e(function () {
-        const { model: e } = d(),
+import { q as e, j as s, f as a } from '../../../../chunks/vendor.js';
+import { i as t, t as r, r as n, a2 as o, v as c, ac as p, k as l } from '../../../../chunks/lib.js';
+import { B as i } from '../../../../chunks/breed.js';
+import { S as m } from '../../../../chunks/warning_icon.js';
+/* empty css                       */ const [d, _] = t()(({ observableModel: e }) => ({ root: e.object() }), r),
+    u = 'Bonus_de50af4c',
+    j = 'Bonus_title_83ec6411',
+    x = 'Bonus_row_99659264',
+    N = 'Bonus_value_70b996b5',
+    h = 'Bonus_accentText_83ec6411',
+    b = 'Bonus_counter_646ae1fb',
+    v = n.resolve('strings'),
+    g = e(function () {
+        const { model: e } = _(),
             { bonusName: a, bonusValue: t, totalBattleCount: r, currentBattleCount: n } = e.root.get(),
-            l = n <= 0;
+            p = n <= 0;
         return s.jsxs('div', {
-            className: i,
+            className: u,
             children: [
-                s.jsx('div', { className: u, children: N.readOrEmpty('pet_system.petStorageTooltip.bonus.title') }),
+                s.jsx('div', { className: j, children: v.readOrEmpty('pet_system.petStorageTooltip.bonus.title') }),
                 s.jsxs('div', {
-                    className: _,
+                    className: x,
                     children: [
                         s.jsx('div', {
-                            className: j,
+                            className: N,
                             children: s.jsx(o, {
                                 type: a,
-                                className: x,
+                                className: h,
                                 reverse: !0,
-                                children: s.jsx(p, { path: 'pet_system.plusPercentValue', params: { value: t } }),
+                                children: s.jsx(c, { path: 'pet_system.plusPercentValue', params: { value: t } }),
                             }),
                         }),
-                        s.jsx(p, {
+                        s.jsx(c, {
                             path: 'pet_system.petStorageTooltip.bonus.currentBonus',
-                            params: { value: N.readOrEmpty(`quests.bonusName.${a}`) },
+                            params: { value: v.readOrEmpty(`quests.bonusName.${a}`) },
                         }),
                     ],
                 }),
                 s.jsxs('div', {
-                    className: _,
+                    className: x,
                     children: [
                         s.jsx('div', {
-                            className: j,
+                            className: N,
                             children: s.jsxs('div', {
-                                className: h,
-                                children: [s.jsx('div', { className: x, children: n }), '/', r],
+                                className: b,
+                                children: [s.jsx('div', { className: h, children: n }), '/', r],
                             }),
                         }),
-                        N.readOrEmpty('pet_system.petStorageTooltip.bonus.' + (l ? 'caption' : 'inProgress')),
+                        v.readOrEmpty('pet_system.petStorageTooltip.bonus.' + (p ? 'caption' : 'inProgress')),
                     ],
                 }),
             ],
         });
     }),
-    b = 'App_2f55a205',
-    y = 'App_inner_e279a242',
-    g = 'App_header_37a37190',
-    f = 'App_icon_5868d441',
-    B = 'App_name_1d781831',
-    k = 'App_breed_26f2e2f7',
-    A = 'App_content_7860a5c0',
-    E = r.resolve('strings'),
-    O = r.resolve('images'),
-    T = e(function () {
-        const { model: e } = d(),
-            { petNameID: a, petType: t, breedName: r, petID: o } = e.root.get();
-        return s.jsx(n, {
-            children: s.jsx(n.Decorator, {
-                className: b,
+    y = 'Warning_87784287',
+    f = 'Warning_warningIcon_c547ee9d',
+    B = 'Warning_warningText_aecebe45';
+function T({ className: e }) {
+    return s.jsxs('div', {
+        className: a(y, e),
+        children: [
+            s.jsx(m, { className: f }),
+            s.jsx(c, { className: B, path: 'pet_system.petStorageTooltip.warning.unsuitableMode', split: !0 }),
+        ],
+    });
+}
+const k = 'App_2f55a205',
+    A = 'App_inner_e279a242',
+    E = 'App_header_37a37190',
+    O = 'App_icon_5868d441',
+    w = 'App_name_1d781831',
+    S = 'App_breed_26f2e2f7',
+    $ = 'App_content_7860a5c0',
+    I = 'App_warning_141659eb',
+    M = n.resolve('strings'),
+    D = n.resolve('images'),
+    W = e(function () {
+        const { model: e } = _(),
+            { petNameID: a, petType: t, breedName: r, petID: n, isUnsuitableMode: o } = e.root.get();
+        return s.jsx(p, {
+            children: s.jsx(p.Decorator, {
+                className: k,
                 children: s.jsxs('div', {
-                    className: y,
+                    className: A,
                     children: [
                         s.jsxs('div', {
-                            className: g,
+                            className: E,
                             children: [
                                 s.jsx('div', {
-                                    className: f,
+                                    className: O,
                                     style: {
-                                        backgroundImage: `url(${O.readOrEmpty(`petSystem.pets.x96x96.pet_${o}`)})`,
+                                        backgroundImage: `url(${D.readOrEmpty(`petSystem.pets.x96x96.pet_${n}`)})`,
                                     },
                                 }),
-                                s.jsx(p, {
-                                    className: B,
+                                s.jsx(c, {
+                                    className: w,
                                     path: 'pet_system.petHouseMarker.pet',
-                                    params: { petName: E.readOrEmpty(`pet_names.petName_${a}`) },
+                                    params: { petName: M.readOrEmpty(`pet_names.petName_${a}`) },
                                 }),
                                 s.jsx('div', {
-                                    className: k,
-                                    children: s.jsx(c, {
-                                        petType: E.readOrEmpty(`pet_system.petType.${t}`),
-                                        breedName: E.readOrEmpty(`pet_system.breedName.${r}`),
+                                    className: S,
+                                    children: s.jsx(i, {
+                                        petType: M.readOrEmpty(`pet_system.petType.${t}`),
+                                        breedName: M.readOrEmpty(`pet_system.breedName.${r}`),
                                     }),
                                 }),
                             ],
                         }),
-                        s.jsx('div', { className: A, children: s.jsx(v, {}) }),
+                        s.jsx('div', { className: $, children: s.jsx(g, {}) }),
+                        o && s.jsx(T, { className: I }),
                     ],
                 }),
             }),
         });
     });
-l(s.jsx(m, { children: s.jsx(T, {}) }));
+l(s.jsx(d, { children: s.jsx(W, {}) }));

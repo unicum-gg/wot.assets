@@ -1,22 +1,23 @@
 import { j as e, f as a, v as s } from '../../../../chunks/vendor.js';
 import {
     y as t,
-    ah as r,
-    i as l,
-    a as i,
-    aP as d,
+    aP as r,
+    ah as l,
+    i,
+    a as d,
     aQ as n,
     aR as o,
     aS as c,
-    ai as m,
-    n as _,
-    r as p,
-    ap as b,
-    aK as u,
-    ay as h,
-    ax as x,
+    aT as m,
+    ai as _,
+    n as p,
+    r as b,
+    ap as u,
+    aK as h,
+    ay as x,
+    ax as j,
 } from '../../../../chunks/lib.js';
-const j = {
+const v = {
         base: 'Column_ff23958e',
         battleType: 'Column_battleType_66a6d7ec',
         cell: 'Column_cell_14a5553e',
@@ -28,30 +29,30 @@ const j = {
         reward: 'Column_reward_e7901f9f',
         dash: 'Column_dash_f9b9a2c',
     },
-    v = ({ battleType: s, battleMode: r, isNotFirstColumn: l }) =>
+    f = ({ battleType: s, battleMode: r, isNotFirstColumn: l }) =>
         e.jsxs('div', {
-            className: a(j.base, l && j.base__notFirstColumn),
+            className: a(v.base, l && v.base__notFirstColumn),
             children: [
-                e.jsx('div', { className: j.battleType, children: s }),
+                e.jsx('div', { className: v.battleType, children: s }),
                 t(r, ({ place: s, points: t }, l) => {
                     const i = r.length - 1 === l;
                     return e.jsx(
                         'div',
                         {
-                            className: j.cell,
+                            className: v.cell,
                             children: e.jsxs('div', {
-                                className: a(j.row, i && j.row__last),
+                                className: a(v.row, i && v.row__last),
                                 children: [
-                                    e.jsx('div', { className: j.place, children: s }),
+                                    e.jsx('div', { className: v.place, children: s }),
                                     t
                                         ? e.jsxs('div', {
-                                              className: j.pointContainer,
+                                              className: v.pointContainer,
                                               children: [
-                                                  e.jsx('div', { className: j.point, children: t }),
-                                                  e.jsx('div', { className: j.reward }),
+                                                  e.jsx('div', { className: v.point, children: t }),
+                                                  e.jsx('div', { className: v.reward }),
                                               ],
                                           })
-                                        : e.jsx('div', { className: j.dash, children: R.strings.common.common.dash() }),
+                                        : e.jsx('div', { className: v.dash, children: R.strings.common.common.dash() }),
                                 ],
                             }),
                         },
@@ -60,53 +61,53 @@ const j = {
                 }),
             ],
         }),
-    f = 'Table_8cfe9af4',
-    N = 'Table_battleTypeBg_b005c4ad',
-    y = 'Table_a7b52080',
+    N = 'Table_8cfe9af4',
+    y = 'Table_battleTypeBg_b005c4ad',
+    T = 'Table_a7b52080',
     C = 'Table_separators_1618eb00',
-    T = 'Table_separator_eea24026',
-    g = ({ battleModes: a, battleType: s }) => {
-        const l = a.reduce((e, a) => Math.max(e, a.length), 0);
+    g = 'Table_separator_eea24026',
+    H = ({ battleModes: a, battleType: s }) => {
+        const i = r(a, (e, a) => Math.max(e, a.length), 0);
         return e.jsxs('div', {
-            className: f,
+            className: N,
             children: [
-                e.jsx('div', { className: N }),
+                e.jsx('div', { className: y }),
                 e.jsx('div', {
-                    className: y,
+                    className: T,
                     children: t(a, (a, t) => {
                         const r = t > 0;
-                        return e.jsx(v, { battleMode: a, battleType: s(t), isNotFirstColumn: r }, t);
+                        return e.jsx(f, { battleMode: a, battleType: s(t), isNotFirstColumn: r }, t);
                     }),
                 }),
-                e.jsx('div', { className: C, children: l > 1 && r(l - 1, (a) => e.jsx('div', { className: T }, a)) }),
+                e.jsx('div', { className: C, children: i > 1 && l(i - 1, (a) => e.jsx('div', { className: g }, a)) }),
             ],
         });
     },
-    H = R.strings.battle_royale_extention.tooltip.progressionWidget,
-    [w, M] = l()(({ observableModel: e }) => {
+    w = R.strings.battle_royale_extention.tooltip.progressionWidget,
+    [M, E] = i()(({ observableModel: e }) => {
         const a = e.object(),
-            s = i.primitive(() => {
+            s = d.primitive(() => {
                 const e = a.get().timeTillEnd;
                 let s = '';
                 return (
                     (s =
-                        e >= d
-                            ? n(R.strings.common.duration.days(), { days: Math.trunc(e / d) })
-                            : e >= o
-                              ? n(R.strings.common.duration.hours(), { hours: Math.trunc(e / o) })
-                              : n(R.strings.common.duration.minutes(), { minutes: Math.trunc(e / c) || 1 })),
-                    { text: H.subTitle(), time: s }
+                        e >= n
+                            ? o(R.strings.common.duration.days(), { days: Math.trunc(e / n) })
+                            : e >= c
+                              ? o(R.strings.common.duration.hours(), { hours: Math.trunc(e / c) })
+                              : o(R.strings.common.duration.minutes(), { minutes: Math.trunc(e / m) || 1 })),
+                    { text: w.subTitle(), time: s }
                 );
             }),
-            t = i.primitive((e) => {
+            t = d.primitive((e) => {
                 const s = a.get().leaderBoard.battleTypes,
-                    t = m(s, e);
+                    t = _(s, e);
                 if (!t) throw Error('battleType is undefined');
                 return t;
             });
         return { params: a, computes: { battleLeaveTime: s, battleType: t } };
-    }, _),
-    E = {
+    }, p),
+    $ = {
         base: 'Header_dd3276f6',
         base__unavailable: 'Header_base__unavailable_45ec0218',
         header: 'Header_f77580be',
@@ -119,53 +120,53 @@ const j = {
         text: 'Header_text_716171df',
         time: 'Header_time_e49d5d0f',
     },
-    $ = 'battle_royale_extention.tooltip.progressionWidget',
-    B = s(() => {
-        const { model: s } = M(),
+    B = 'battle_royale_extention.tooltip.progressionWidget',
+    F = s(() => {
+        const { model: s } = E(),
             { isCompleted: t } = s.params.get(),
             { time: r, text: l } = s.computes.battleLeaveTime(),
-            i = p.resolve('strings'),
+            i = b.resolve('strings'),
             d = t ? 'completed' : 'inProgress';
         return e.jsxs('div', {
-            className: a(E.base, E[`base__${d}`]),
+            className: a($.base, $[`base__${d}`]),
             children: [
                 e.jsxs('div', {
-                    className: E.header,
+                    className: $.header,
                     children: [
-                        e.jsx('div', { className: E.completedIcon }),
+                        e.jsx('div', { className: $.completedIcon }),
                         e.jsxs('div', {
-                            className: E.headerContainer,
+                            className: $.headerContainer,
                             children: [
-                                e.jsx('div', { className: E.title, children: i.readOrEmpty(`${$}.title`) }),
-                                e.jsx(b, { text: l, params: { value: r }, className: E.time, upgradeLegacy: !0 }),
+                                e.jsx('div', { className: $.title, children: i.readOrEmpty(`${B}.title`) }),
+                                e.jsx(u, { text: l, params: { value: r }, className: $.time, upgradeLegacy: !0 }),
                             ],
                         }),
                     ],
                 }),
                 e.jsxs('div', {
-                    className: E.description,
+                    className: $.description,
                     children: [
-                        e.jsx('div', { className: E.subtitle, children: i.readOrEmpty(`${$}.description.header`) }),
-                        e.jsx('div', { className: E.text, children: i.readOrEmpty(`${$}.description.${d}`) }),
+                        e.jsx('div', { className: $.subtitle, children: i.readOrEmpty(`${B}.description.header`) }),
+                        e.jsx('div', { className: $.text, children: i.readOrEmpty(`${B}.description.${d}`) }),
                     ],
                 }),
             ],
         });
     }),
-    F = 'App_54b301f',
-    I = s(function () {
-        const { model: a } = M(),
+    I = 'App_54b301f',
+    L = s(function () {
+        const { model: a } = E(),
             { isCompleted: s, leaderBoard: t } = a.params.get();
-        return e.jsx(u, {
-            children: e.jsx(u.Decorator, {
+        return e.jsx(h, {
+            children: e.jsx(h.Decorator, {
                 children: e.jsxs('div', {
-                    className: F,
+                    className: I,
                     children: [
-                        e.jsx(B, {}),
-                        !s && e.jsx(g, { battleModes: t.battleModes, battleType: a.computes.battleType }),
+                        e.jsx(F, {}),
+                        !s && e.jsx(H, { battleModes: t.battleModes, battleType: a.computes.battleType }),
                     ],
                 }),
             }),
         });
     });
-h(e.jsx(x, { children: e.jsx(w, { children: e.jsx(I, {}) }) }));
+x(e.jsx(j, { children: e.jsx(M, { children: e.jsx(L, {}) }) }));

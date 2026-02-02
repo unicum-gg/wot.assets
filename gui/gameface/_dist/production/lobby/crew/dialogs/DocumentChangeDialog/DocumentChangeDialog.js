@@ -2882,12 +2882,14 @@
                     bu = (e, u, t) => (t < e ? e : t > u ? u : t);
                 function vu(e, u, t = []) {
                     const n = (0, o.useRef)(0),
-                        r = (0, o.useCallback)(() => window.clearInterval(n.current), t || []);
+                        r = (0, o.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, t || []);
                     (0, o.useEffect)(() => r, [r]);
                     const a = (null != t ? t : []).concat([u]);
                     return [
                         (0, o.useCallback)((t) => {
-                            ((n.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
+                            (0 !== n.current && r(), (n.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
                         }, a),
                         r,
                     ];

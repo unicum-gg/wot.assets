@@ -246,9 +246,11 @@ resources.register({
     intl: asValue(intl),
 });
 const easings = {
+        linear: (e) => e,
         easeInCubic: (e) => e * e * e,
         easeOutCubic: (e) => --e * e * e + 1,
         easeInOutCubic: (e) => (e < 0.5 ? 4 * e * e * e : (e - 1) * (2 * e - 2) * (2 * e - 2) + 1),
+        easeOutCirc: (e) => Math.sqrt(1 - Math.pow(e - 1, 2)),
     },
     HOURS_IN_DAY = 24,
     ONE_MINUTE = 60,
@@ -283,6 +285,7 @@ function setTrackMouseOutside$1(e) {
 }
 const onResize$1 = makeEngineEvent$1('clientResized'),
     onRescale = makeEngineEvent$1('self.onScaleUpdated'),
+    onMinimize = makeEngineEvent$1('clientMinimized'),
     internalMouse$1 = {
         down: makeEngineEvent$1('mousedown'),
         up: makeEngineEvent$1('mouseup'),
@@ -1137,8 +1140,6 @@ class Stack {
         return this.items.slice();
     }
 }
-const CHINESE_LANGUAGE_CODES$1 = new Set(['zh_cn', 'zh_sg', 'zh_tw']),
-    JAPANESE_LANGUAGE_CODE = 'ja';
 function splitChinese$1(e) {
     const t = [],
         u = e
@@ -1163,17 +1164,34 @@ function splitJapanese(e) {
     for (const [n] of u) t.push(n);
     return t;
 }
+function splitKorean(e) {
+    const t = [],
+        u = e
+            .replace(/&nbsp;/g, ' ')
+            .matchAll(
+                /\s+|\u00A0|[【「(（『《]?[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F%](?:[。!?、…・ー—–!%?）)】」》『]+)?|[「【(（『《]?\d+(?:,\d{3})*(?:\s*[a-zA-Z\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F/%]+)?(?:[。，、:;：；!?）)】」》・%)、]+)?|[「【(（『《]?[a-zA-Z0-9]+(?:[-/][a-zA-Z0-9]+)*(?:\s*[。!?、…・ー—–!?》】」）)』]+)?|[^\s]/gu,
+            );
+    for (const [n] of u) t.push(n);
+    return t;
+}
+const splitters = {
+    zh_cn: splitChinese$1,
+    zh_sg: splitChinese$1,
+    zh_tw: splitChinese$1,
+    ja: splitJapanese,
+    ko: splitKorean,
+};
+function defaultSplit(e) {
+    return e.split(' ');
+}
+const langsWithoutSpace = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko']);
 function addSpaceAndMap(e, t, u) {
-    return CHINESE_LANGUAGE_CODES$1.has(t) || t === JAPANESE_LANGUAGE_CODE
+    return langsWithoutSpace.has(t)
         ? e.map(u)
         : e.map((e, t, n) => (t === n.length - 1 ? u(e, t, n) : u(`${e} `, t, n)));
 }
 function splitLocale(e, t) {
-    return CHINESE_LANGUAGE_CODES$1.has(t)
-        ? splitChinese$1(e)
-        : t === JAPANESE_LANGUAGE_CODE
-          ? splitJapanese(e)
-          : e.split(' ');
+    return (splitters[t] ?? defaultSplit)(e);
 }
 const MediaContext = reactExports.createContext(void 0);
 function useMediaContext() {
@@ -1507,12 +1525,14 @@ const useLoop = (e) => {
 };
 function useRepeatCallback$1(e, t, u = []) {
     const n = reactExports.useRef(0),
-        r = reactExports.useCallback(() => window.clearInterval(n.current), u || []);
+        r = reactExports.useCallback(() => {
+            (window.clearInterval(n.current), (n.current = 0));
+        }, u || []);
     reactExports.useEffect(() => r, [r]);
     const o = (u ?? []).concat([t]);
     return [
         reactExports.useCallback((u) => {
-            ((n.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
+            (0 !== n.current && r(), (n.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
         }, o),
         r,
     ];
@@ -1720,6 +1740,12 @@ const soundConfig = {
     decreaseAmountRoll: createSoundPlay('cons_ammo_roll_minus'),
     close: createSoundPlay('cancelcloseno'),
     'show-context-menu': createSoundPlay('tabb'),
+    progressSimple: createSoundPlay('gui_hangar_progressbar_simple'),
+    increaseDelta: createSoundPlay('gui_hangar_progressbar_delta_increase'),
+    decreaseDelta: createSoundPlay('gui_hangar_progressbar_delta_decrease'),
+    increaseDeltaMax: createSoundPlay('gui_hangar_progressbar_delta_max'),
+    pointerGrab: createSoundPlay('gui_hangar_progressbar_pointer_grab'),
+    pointerDrag: createSoundPlay('gui_hangar_progressbar_pointer_drag'),
 };
 function createSoundPlay(e) {
     return () => {
@@ -1986,8 +2012,8 @@ const initializeModelWithContext =
                     E = a ?? d.mode,
                     p = c ?? d.mocks,
                     m = reactExports.useRef([]),
-                    A = null == (s = null == n ? void 0 : n.useRequires) ? void 0 : s.call(n),
-                    f = useEvent$1((r, s, a) => {
+                    f = null == (s = null == n ? void 0 : n.useRequires) ? void 0 : s.call(n),
+                    A = useEvent$1((r, s, a) => {
                         var i;
                         const l = 'real' !== r && a ? createMockInstance(a.getter, s) : create(s, { name: e }),
                             c = (e) => ('mocks' === r ? (null == a ? void 0 : a.getter(e, s)) : l.readByPath(e)),
@@ -1999,16 +2025,16 @@ const initializeModelWithContext =
                                 ...E,
                                 mode: r,
                                 readByPath: c,
-                                requires: A,
+                                requires: f,
                                 externalModel: l,
                                 observableModel: createObservableModel(l, r, c),
                                 cleanup: d,
                             }),
-                            f = { ...E, mode: r, model: p, externalModel: l, cleanup: d, requires: A },
-                            F = 'mocks' === r && (null == a ? void 0 : a.controls) ? a.controls(f) : {};
+                            A = { ...E, mode: r, model: p, externalModel: l, cleanup: d, requires: f },
+                            F = 'mocks' === r && (null == a ? void 0 : a.controls) ? a.controls(A) : {};
                         return {
                             model: p,
-                            controls: { ...(null == u ? void 0 : u(f)), ...F },
+                            controls: { ...(null == u ? void 0 : u(A)), ...F },
                             externalModel: l,
                             mode: r,
                         };
@@ -2018,12 +2044,12 @@ const initializeModelWithContext =
                 reactExports.useEffect(() => {
                     g(E);
                 }, [E]);
-                const [_, D] = reactExports.useState(() => f(h, i, p));
+                const [_, D] = reactExports.useState(() => A(h, i, p));
                 return (
                     reactExports.useEffect(() => {
-                        F.current ? D(f(h, i, p)) : (F.current = !0);
+                        F.current ? D(A(h, i, p)) : (F.current = !0);
                     }, [
-                        f,
+                        A,
                         p,
                         h,
                         null == i ? void 0 : i.context,
@@ -2528,12 +2554,12 @@ const root$5 = 'Cbutton_root_180a9717',
         soundClick: p = 'play',
     }) => {
         const m = reactExports.useRef(null),
-            [A, f] = reactExports.useState(c),
+            [f, A] = reactExports.useState(c),
             [F, h] = reactExports.useState(!1);
         return (
             reactExports.useEffect(() => {
                 function e(e) {
-                    A && null !== m.current && !m.current.contains(e.target) && f(!1);
+                    f && null !== m.current && !m.current.contains(e.target) && A(!1);
                 }
                 return (
                     document.addEventListener('mousedown', e),
@@ -2541,9 +2567,9 @@ const root$5 = 'Cbutton_root_180a9717',
                         document.removeEventListener('mousedown', e);
                     }
                 );
-            }, [A]),
+            }, [f]),
             reactExports.useEffect(() => {
-                f(c);
+                A(c);
             }, [c]),
             jsxRuntimeExports.jsxs('div', {
                 ref: m,
@@ -2552,7 +2578,7 @@ const root$5 = 'Cbutton_root_180a9717',
                     styles$c[`base__${d}`],
                     u && styles$c.base__disabled,
                     t && styles$c[`base__${t}`],
-                    A && styles$c.base__focus,
+                    f && styles$c.base__focus,
                     F && styles$c.base__highlightActive,
                     n,
                 ),
@@ -2569,7 +2595,7 @@ const root$5 = 'Cbutton_root_180a9717',
                     u ||
                         (null !== p && playSound$1(p),
                         s && s(e),
-                        c && (u || (m.current && (m.current.focus(), f(!0)))),
+                        c && (u || (m.current && (m.current.focus(), A(!0)))),
                         h(!0));
                 },
                 onMouseLeave: function (e) {
@@ -3004,13 +3030,13 @@ const view = Object.freeze(
                 },
                 [o],
             ),
-            A = reactExports.useCallback(
+            f = reactExports.useCallback(
                 (e) => {
                     (null == s || s(e), env.sound.play.sound(d));
                 },
                 [s, d],
             ),
-            f = reactExports.useCallback(
+            A = reactExports.useCallback(
                 (e) => {
                     null == a || a(e);
                 },
@@ -3020,8 +3046,8 @@ const view = Object.freeze(
             className: cx(styles$b.base, styles$b[`base__${l}`], styles$b[`base__${i}`], null == n ? void 0 : n.base),
             onMouseEnter: p,
             onMouseLeave: m,
-            onMouseDown: A,
-            onMouseUp: f,
+            onMouseDown: f,
+            onMouseUp: A,
             onClick: t,
             ...E,
             children: [
@@ -3157,14 +3183,14 @@ const defaultSettings$1 = {
                 E = reactExports.useRef(null),
                 p = reactExports.useRef({ wrapper: 0, container: 0 }),
                 m = useEmitter$1(),
-                A = useThrottle$1(
+                f = useThrottle$1(
                     () => {
                         forceTriggerMouseMove$1();
                     },
                     [],
                     150,
                 ),
-                [f, F] = useSpring(() => ({
+                [A, F] = useSpring(() => ({
                     scrollPosition: 0,
                     onChange: (e) => {
                         const t = d.current;
@@ -3176,30 +3202,30 @@ const defaultSettings$1 = {
                 })),
                 h = reactExports.useCallback(
                     (e, t, u) => {
-                        const n = f.scrollPosition.get(),
-                            r = (f.scrollPosition.goal ?? 0) - n;
+                        const n = A.scrollPosition.get(),
+                            r = (A.scrollPosition.goal ?? 0) - n;
                         return s(e, t * u + r + n);
                     },
-                    [f.scrollPosition],
+                    [A.scrollPosition],
                 ),
                 g = reactExports.useCallback(
                     function (e, { immediate: t = !1, reset: u = !0 } = {}) {
                         const n = d.current;
                         if (!n) return;
                         const r = s(n, e);
-                        f.scrollPosition.get() !== r &&
+                        A.scrollPosition.goal !== r &&
                             F.start({
                                 scrollPosition: r,
                                 immediate: t,
                                 reset: u,
                                 config: i.animationConfig,
-                                from: { scrollPosition: s(n, f.scrollPosition.get()) },
+                                from: { scrollPosition: s(n, A.scrollPosition.get()) },
                                 onChange: () => {
-                                    o && A();
+                                    o && f();
                                 },
                             });
                     },
-                    [F, i.animationConfig, f.scrollPosition, A],
+                    [A.scrollPosition, F, i.animationConfig, f],
                 ),
                 _ = reactExports.useCallback(
                     function (e) {
@@ -3223,16 +3249,16 @@ const defaultSettings$1 = {
                     function (e) {
                         l ||
                             (0 !== e.deltaY && _(n(e)),
-                            d.current && m.trigger('mouseWheel', e, f.scrollPosition, t(d.current)));
+                            d.current && m.trigger('mouseWheel', e, A.scrollPosition, t(d.current)));
                     },
-                    [f.scrollPosition, _, m, l],
+                    [A.scrollPosition, _, m, l],
                 ),
                 C = reactExports.useCallback(
                     function () {
                         const e = d.current;
-                        e && (g(s(e, f.scrollPosition.goal), { immediate: !0 }), m.trigger('resizeHandled'));
+                        e && (g(s(e, A.scrollPosition.goal), { immediate: !0 }), m.trigger('resizeHandled'));
                     },
-                    [g, f.scrollPosition.goal, m],
+                    [g, A.scrollPosition.goal, m],
                 );
             useRefResizeObserver(E, (e) => {
                 const t = e.target;
@@ -3246,8 +3272,8 @@ const defaultSettings$1 = {
                     const u = e(t),
                         n = E.current ? r(E.current) : 0;
                     if (p.current.container !== u || p.current.wrapper !== n) {
-                        const e = s(t, f.scrollPosition.goal);
-                        (e !== f.scrollPosition.goal && g(e, { immediate: !0 }),
+                        const e = s(t, A.scrollPosition.goal);
+                        (e !== A.scrollPosition.goal && g(e, { immediate: !0 }),
                             (p.current.container = u),
                             (p.current.wrapper = n),
                             m.trigger('recalculateContent'));
@@ -3270,13 +3296,13 @@ const defaultSettings$1 = {
                     contentRef: d,
                     wrapperRef: E,
                     scrollPosition: F,
-                    animationScroll: f,
+                    animationScroll: A,
                     recalculateContent: b,
                     disabled: l,
                     setDisabled: c,
                     events: { on: m.on, off: m.off },
                 }),
-                [i, D, g, _, F, f, b, l, c, m.on, m.off],
+                [i, D, g, _, F, A, b, l, c, m.on, m.off],
             );
         };
     },
@@ -3368,14 +3394,14 @@ function Thumb(e) {
                 E = clamp$1(0, 1, c / (l - i)),
                 p = e.calculateSize(n, d),
                 m = (('horizontal' === e.direction ? n.offsetWidth : n.offsetHeight) - p) * E || 0,
-                A = Math.round((2 * E - 1) * BOUNCING_OFFSET);
+                f = Math.round((2 * E - 1) * BOUNCING_OFFSET);
             (r.style.setProperty('--thumbOffset', `${m}px`),
-                null == (u = e.onUpdate) || u.call(e, { thumbSize: p, thumbOffset: m, newBouncingCorrection: A }));
-            const f = 0 === m || e.isBoundThumb(m) ? 0 : A;
+                null == (u = e.onUpdate) || u.call(e, { thumbSize: p, thumbOffset: m, newBouncingCorrection: f }));
+            const A = 0 === m || e.isBoundThumb(m) ? 0 : f;
             return (
                 s.start({
-                    to: { '--bouncingCorrection': `${f}px` },
-                    ...(0 === f ? { delay: 100, config: { duration: 100 } } : { immediate: !0 }),
+                    to: { '--bouncingCorrection': `${A}px` },
+                    ...(0 === A ? { delay: 100, config: { duration: 100 } } : { immediate: !0 }),
                 }),
                 m
             );
@@ -3529,26 +3555,26 @@ function useBarHandlers(e, t, u, n, r, o, s) {
                     p = u.current,
                     m = n.current;
                 if (!(l && c && p && m && i.button === MOUSE_BUTTON_LEFT$2)) return;
-                const A = getCoordinate(i, l, c, p, m, s),
-                    f = A.thumb.start <= A.occurredEvent && A.occurredEvent <= A.thumb.end,
+                const f = getCoordinate(i, l, c, p, m, s),
+                    A = f.thumb.start <= f.occurredEvent && f.occurredEvent <= f.thumb.end,
                     F =
-                        (A.backButton.start <= A.occurredEvent && A.occurredEvent <= A.backButton.end) ||
-                        (A.forwardButton.start <= A.occurredEvent && A.occurredEvent <= A.forwardButton.end);
-                if (f) o({ pending: !0, offset: A.occurredEvent - A.thumb.start });
+                        (f.backButton.start <= f.occurredEvent && f.occurredEvent <= f.backButton.end) ||
+                        (f.forwardButton.start <= f.occurredEvent && f.occurredEvent <= f.forwardButton.end);
+                if (A) o({ pending: !0, offset: f.occurredEvent - f.thumb.start });
                 else if (F) {
-                    ((A.occurredEvent > A.thumb.start ? Direction$1.Prev : Direction$1.Next) === Direction$1.Next
+                    ((f.occurredEvent > f.thumb.start ? Direction$1.Prev : Direction$1.Next) === Direction$1.Next
                         ? d
                         : E)(i);
                 } else {
-                    const e = A.occurredEvent - A.bar.start,
-                        t = A.thumb.end - A.thumb.start,
-                        u = A.bar.end - A.bar.start,
+                    const e = f.occurredEvent - f.bar.start,
+                        t = f.thumb.end - f.thumb.start,
+                        u = f.bar.end - f.bar.start,
                         n = r.getContainerSize();
                     if ('number' != typeof n || Number.isNaN(n)) return console.error('Incorrect container size');
                     const o = ((e - t / 2) / u) * n;
                     r.applyScroll(o);
                 }
-                a.play('click', { target: 'Scroll:' + (f ? 'thumb' : F ? 'button' : ''), original: i });
+                a.play('click', { target: 'Scroll:' + (A ? 'thumb' : F ? 'button' : ''), original: i });
             },
             [e, t, u, n, a, s, o, d, E, r],
         ),
@@ -3609,8 +3635,8 @@ reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop$2 }) {
             (e) => ('dragStart' === e.type ? c(!0) : 'dragEnd' === e.type && c(!1), t(e)),
             [t],
         ),
-        A = useBarDragging(s, m, d, o, E),
-        f = useEvent$1(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: u }) => {
+        f = useBarDragging(s, m, d, o, E),
+        A = useEvent$1(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: u }) => {
             const n = o.current,
                 r = a.current,
                 s = i.current;
@@ -3624,7 +3650,7 @@ reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop$2 }) {
             r,
             n,
             d,
-            A,
+            f,
             scrollOrientations.horizontal,
         );
     return jsxRuntimeExports.jsxs('div', {
@@ -3656,7 +3682,7 @@ reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop$2 }) {
                         railAfterRef: a,
                         railBeforeRef: i,
                         styles: THUMB_STYLES$1,
-                        onUpdate: f,
+                        onUpdate: A,
                         thumbRef: s,
                         trackRef: o,
                     }),
@@ -3729,8 +3755,8 @@ const DEFAULT_VERTICAL_API_CONFIG = {
                 (e) => ('dragStart' === e.type ? c(!0) : 'dragEnd' === e.type && c(!1), t(e)),
                 [t],
             ),
-            A = useBarDragging(s, m, d, o, p),
-            f = useEvent$1(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: u }) => {
+            f = useBarDragging(s, m, d, o, p),
+            A = useEvent$1(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: u }) => {
                 const n = o.current,
                     r = a.current,
                     s = i.current;
@@ -3744,7 +3770,7 @@ const DEFAULT_VERTICAL_API_CONFIG = {
                 n,
                 r,
                 d,
-                A,
+                f,
                 scrollOrientations.vertical,
             );
         return jsxRuntimeExports.jsxs('div', {
@@ -3776,7 +3802,7 @@ const DEFAULT_VERTICAL_API_CONFIG = {
                             railAfterRef: a,
                             railBeforeRef: i,
                             styles: THUMB_STYLES,
-                            onUpdate: f,
+                            onUpdate: A,
                             thumbRef: s,
                             trackRef: o,
                         }),
@@ -4274,12 +4300,14 @@ function useEvent(e) {
 }
 function useRepeatCallback(e, t, u = []) {
     const n = reactExports.useRef(0),
-        r = reactExports.useCallback(() => window.clearInterval(n.current), u || []);
+        r = reactExports.useCallback(() => {
+            (window.clearInterval(n.current), (n.current = 0));
+        }, u || []);
     reactExports.useEffect(() => r, [r]);
     const o = (u ?? []).concat([t]);
     return [
         reactExports.useCallback((u) => {
-            ((n.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
+            (0 !== n.current && r(), (n.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
         }, o),
         r,
     ];
@@ -4383,7 +4411,7 @@ const defaultSettings = {
                     [],
                     150,
                 ),
-                [m, A] = useSpring(() => ({
+                [m, f] = useSpring(() => ({
                     scrollPosition: 0,
                     onChange: (e) => {
                         const t = l.current;
@@ -4393,7 +4421,7 @@ const defaultSettings = {
                     onStart: (e) => E.trigger('start', e),
                     onPause: (e) => E.trigger('pause', e),
                 })),
-                f = reactExports.useCallback(
+                A = reactExports.useCallback(
                     (e, t, u) => {
                         const n = m.scrollPosition.get(),
                             r = (m.scrollPosition.goal ?? 0) - n;
@@ -4405,7 +4433,7 @@ const defaultSettings = {
                     (e, { immediate: t = !1, reset: u = !0 } = {}) => {
                         const n = l.current;
                         n &&
-                            A.start({
+                            f.start({
                                 scrollPosition: s(n, e),
                                 immediate: t,
                                 reset: u,
@@ -4413,7 +4441,7 @@ const defaultSettings = {
                                 from: { scrollPosition: s(n, m.scrollPosition.get()) },
                             });
                     },
-                    [A, i.animationConfig, m.scrollPosition],
+                    [f, i.animationConfig, m.scrollPosition],
                 ),
                 h = reactExports.useCallback(
                     (e) => {
@@ -4428,10 +4456,10 @@ const defaultSettings = {
                                         return t.value;
                                 }
                             })(u, i.step),
-                            o = f(t, e, n);
+                            o = A(t, e, n);
                         F(o);
                     },
-                    [F, f, i.step],
+                    [F, A, i.step],
                 ),
                 g = reactExports.useCallback(
                     (e) => {
@@ -4493,12 +4521,12 @@ const defaultSettings = {
                     applyStepTo: h,
                     contentRef: l,
                     wrapperRef: c,
-                    scrollPosition: A,
+                    scrollPosition: f,
                     animationScroll: m,
                     recalculateContent: D,
                     events: { on: E.on, off: E.off },
                 }),
-                [m.scrollPosition, F, h, E.off, E.on, D, g, A, i.step.clampedArrowStepTimeout],
+                [m.scrollPosition, F, h, E.off, E.on, D, g, f, i.step.clampedArrowStepTimeout],
             );
         };
     },
@@ -4644,10 +4672,10 @@ const defaultSettings = {
                     (t(), u());
                 };
             }, [e, c.offset, c.pending, n, E]));
-        const [A, f] = useRepeatCallback((t) => e.applyStepTo(t), l, [e]);
+        const [f, A] = useRepeatCallback((t) => e.applyStepTo(t), l, [e]);
         reactExports.useEffect(
-            () => (document.addEventListener('mouseup', f, !0), () => document.removeEventListener('mouseup', f, !0)),
-            [f],
+            () => (document.addEventListener('mouseup', A, !0), () => document.removeEventListener('mouseup', A, !0)),
+            [A],
         );
         const F = (e) => {
             e.target.classList.contains(DISABLE_CLASS$1) || playSound$1('highlight');
@@ -4662,9 +4690,9 @@ const defaultSettings = {
                     onMouseDown: (e) => {
                         e.target.classList.contains(DISABLE_CLASS$1) ||
                             e.button !== MOUSE_BUTTON_LEFT$1 ||
-                            (playSound$1('play'), A(Direction.Next));
+                            (playSound$1('play'), f(Direction.Next));
                     },
-                    onMouseUp: f,
+                    onMouseUp: A,
                     ref: o,
                     onMouseEnter: F,
                 }),
@@ -4697,9 +4725,9 @@ const defaultSettings = {
                     onMouseDown: (e) => {
                         e.target.classList.contains(DISABLE_CLASS$1) ||
                             e.button !== MOUSE_BUTTON_LEFT$1 ||
-                            (playSound$1('play'), A(Direction.Prev));
+                            (playSound$1('play'), f(Direction.Prev));
                     },
-                    onMouseUp: f,
+                    onMouseUp: A,
                     ref: s,
                     onMouseEnter: F,
                 }),
@@ -4808,12 +4836,12 @@ const DEFAULT_VERTICAL_API_CONTEXT = {
                         }
                     })(E));
             }),
-            A = useEvent(() => {
+            f = useEvent(() => {
                 handleContainer(e, () => {
                     (p(), m());
                 });
             });
-        (reactExports.useEffect(() => createLayoutReadyInEffect(A)),
+        (reactExports.useEffect(() => createLayoutReadyInEffect(f)),
             reactExports.useEffect(() => {
                 const t = () => {
                     handleContainer(e, () => {
@@ -4822,16 +4850,16 @@ const DEFAULT_VERTICAL_API_CONTEXT = {
                 };
                 let u = emptyFunction;
                 const n = () => {
-                    (u(), (u = createLayoutReadyInEffect(A)));
+                    (u(), (u = createLayoutReadyInEffect(f)));
                 };
                 return (
-                    e.events.on('recalculateContent', A),
+                    e.events.on('recalculateContent', f),
                     e.events.on('rest', t),
                     e.events.on('change', t),
                     e.events.on('resizeHandled', n),
                     () => {
                         (u(),
-                            e.events.off('recalculateContent', A),
+                            e.events.off('recalculateContent', f),
                             e.events.off('rest', t),
                             e.events.off('change', t),
                             e.events.off('resizeHandled', n));
@@ -4864,7 +4892,7 @@ const DEFAULT_VERTICAL_API_CONTEXT = {
                     (t(), u());
                 };
             }, [e, c.offset, c.pending, n, E]));
-        const [f, F] = useRepeatCallback((t) => e.applyStepTo(t), l, [e]);
+        const [A, F] = useRepeatCallback((t) => e.applyStepTo(t), l, [e]);
         reactExports.useEffect(
             () => (document.addEventListener('mouseup', F, !0), () => document.removeEventListener('mouseup', F, !0)),
             [F],
@@ -4882,7 +4910,7 @@ const DEFAULT_VERTICAL_API_CONTEXT = {
                     onMouseDown: (e) => {
                         e.target.classList.contains(DISABLE_CLASS) ||
                             e.button !== MOUSE_BUTTON_LEFT ||
-                            (playSound$1('play'), f(Direction.Next));
+                            (playSound$1('play'), A(Direction.Next));
                     },
                     ref: o,
                     onMouseEnter: h,
@@ -4918,7 +4946,7 @@ const DEFAULT_VERTICAL_API_CONTEXT = {
                     onMouseDown: (e) => {
                         e.target.classList.contains(DISABLE_CLASS) ||
                             e.button !== MOUSE_BUTTON_LEFT ||
-                            (playSound$1('play'), f(Direction.Prev));
+                            (playSound$1('play'), A(Direction.Prev));
                     },
                     onMouseUp: F,
                     ref: s,
@@ -5134,33 +5162,33 @@ const handleViewEvent = (e, t, u = {}, n = 0) => {
         onHide: p,
         ...m
     }) => {
-        const A = reactExports.useRef({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
-            f = reactExports.useMemo(() => d || getFromCallStack().resId, [d]),
+        const f = reactExports.useRef({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
+            A = reactExports.useMemo(() => d || getFromCallStack().resId, [d]),
             F = reactExports.useCallback(() => {
-                (A.current.isVisible && A.current.timeoutId) ||
-                    (handleViewEvent(t, l, { isMouseEvent: !0, on: !0, arguments: getViewEventArguments(u) }, f),
+                (f.current.isVisible && f.current.timeoutId) ||
+                    (handleViewEvent(t, l, { isMouseEvent: !0, on: !0, arguments: getViewEventArguments(u) }, A),
                     E && E(),
-                    (A.current.isVisible = !0));
-            }, [t, l, u, f, E]),
+                    (f.current.isVisible = !0));
+            }, [t, l, u, A, E]),
             h = reactExports.useCallback(() => {
-                if (A.current.isVisible || A.current.timeoutId) {
-                    const e = A.current.timeoutId;
-                    (e > 0 && (clearTimeout(e), (A.current.timeoutId = 0)),
-                        handleViewEvent(t, l, { on: !1 }, f),
-                        A.current.isVisible && p && p(),
-                        (A.current.isVisible = !1));
+                if (f.current.isVisible || f.current.timeoutId) {
+                    const e = f.current.timeoutId;
+                    (e > 0 && (clearTimeout(e), (f.current.timeoutId = 0)),
+                        handleViewEvent(t, l, { on: !1 }, A),
+                        f.current.isVisible && p && p(),
+                        (f.current.isVisible = !1));
                 }
-            }, [t, l, f, p]),
+            }, [t, l, A, p]),
             g = reactExports.useCallback((e) => {
-                A.current.isVisible &&
-                    ((A.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
-                    (A.current.hideTimerId = window.setTimeout(() => {
+                f.current.isVisible &&
+                    ((f.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
+                    (f.current.hideTimerId = window.setTimeout(() => {
                         const t = document.elementFromPoint(e.clientX, e.clientY);
-                        t && !t.isSameNode(A.current.prevTarget) && h();
+                        t && !t.isSameNode(f.current.prevTarget) && h();
                     }, 200)));
             }, []);
         (reactExports.useEffect(() => {
-            const e = A.current.hideTimerId;
+            const e = f.current.hideTimerId;
             return (
                 document.addEventListener('wheel', g, { capture: !0 }),
                 () => {
@@ -5186,8 +5214,8 @@ const handleViewEvent = (e, t, u = {}, n = 0) => {
                       ((_ = e.props.onMouseEnter),
                       (e) => {
                           (e.clientX === window.innerWidth && e.clientY === window.innerHeight) ||
-                              (clearTimeout(A.current.timeoutId),
-                              (A.current.timeoutId = window.setTimeout(F, a ? SHOW_DELAY_MIN : SHOW_DELAY_DEFAULT)),
+                              (clearTimeout(f.current.timeoutId),
+                              (f.current.timeoutId = window.setTimeout(F, a ? SHOW_DELAY_MIN : SHOW_DELAY_DEFAULT)),
                               n && n(e),
                               _ && _(e));
                       }),
@@ -5559,8 +5587,8 @@ const root$1 = 'Checkbox_root_9586ffe2',
         onClick: E,
         onChange: p,
         onFocus: m,
-        onBlur: A,
-        text: f,
+        onBlur: f,
+        text: A,
         contentStyles: F,
         children: h,
         alignment: g,
@@ -5587,13 +5615,13 @@ const root$1 = 'Checkbox_root_9586ffe2',
                 },
                 [u, c],
             ),
-            w = reactExports.useCallback(
+            T = reactExports.useCallback(
                 (e) => {
                     u || (i && i(e), s && playSound$1(s));
                 },
                 [u, i, s],
             ),
-            T = reactExports.useCallback(
+            w = reactExports.useCallback(
                 (e) => {
                     u || (C(!1), l && l(e));
                 },
@@ -5607,16 +5635,16 @@ const root$1 = 'Checkbox_root_9586ffe2',
             ),
             R = reactExports.useCallback(
                 (e) => {
-                    u || (B(!1), A && A(e));
+                    u || (B(!1), f && f(e));
                 },
-                [u, A],
+                [u, f],
             ),
             $ = jsxRuntimeExports.jsx('div', {
                 className: styles$1.label,
                 children: jsxRuntimeExports.jsx('div', {
                     className: cx(styles$1.labelContent, 's-labelContent'),
                     style: F,
-                    children: f || h,
+                    children: A || h,
                 }),
             });
         return jsxRuntimeExports.jsxs('div', {
@@ -5630,8 +5658,8 @@ const root$1 = 'Checkbox_root_9586ffe2',
                 [styles$1.base__bottom]: g === Alignments.Bottom,
             }),
             onClick: y,
-            onMouseEnter: w,
-            onMouseLeave: T,
+            onMouseEnter: T,
+            onMouseLeave: w,
             onMouseDown: v,
             onMouseUp: x,
             onFocus: S,
@@ -5647,7 +5675,7 @@ const root$1 = 'Checkbox_root_9586ffe2',
                     ],
                 }),
                 jsxRuntimeExports.jsx('div', { className: styles$1.checkmark }),
-                ((f || h) && $) || null,
+                ((A || h) && $) || null,
             ],
         });
     };
@@ -5663,9 +5691,9 @@ function requestAnimationFrameLoop(e) {
         },
     ];
 }
-const DEFAULT_NAME_KEYFRAME = 'Point',
-    THRESHOLD = 0.02,
-    VideoForwarded = reactExports.forwardRef(function (
+const DEFAULT_NAME_KEYFRAME$1 = 'Point',
+    THRESHOLD$1 = 0.02,
+    VideoForwarded$1 = reactExports.forwardRef(function (
         {
             src: e,
             className: t,
@@ -5721,13 +5749,13 @@ const DEFAULT_NAME_KEYFRAME = 'Point',
                                         return;
                                     const r = d.current.cohGetKeyframeTimestamps();
                                     r.forEach((t, n) => {
-                                        u > r[n] - THRESHOLD &&
+                                        u > r[n] - THRESHOLD$1 &&
                                             u < r[n] &&
                                             e.changeKeyframeHandlers.forEach((e) => {
                                                 const u = Object.keys(s ?? {})[n];
                                                 return e({
                                                     time: t,
-                                                    name: `${s ? u : `${DEFAULT_NAME_KEYFRAME}_${n}`}`,
+                                                    name: `${s ? u : `${DEFAULT_NAME_KEYFRAME$1}_${n}`}`,
                                                 });
                                             });
                                     });
@@ -5784,10 +5812,10 @@ const DEFAULT_NAME_KEYFRAME = 'Point',
                             var e;
                             return (null == (e = d.current) ? void 0 : e.cohGetKeyframeTimestamps()) ?? [];
                         },
-                        A = (e) => {
+                        f = (e) => {
                             (i(e), l());
                         },
-                        f = (e) => {
+                        A = (e) => {
                             (i(e), E());
                         },
                         F = () => {
@@ -5827,8 +5855,8 @@ const DEFAULT_NAME_KEYFRAME = 'Point',
                             getCurrentTime: r,
                             getDuration: a,
                             getCachedKeyframes: m,
-                            goToAndPlay: A,
-                            goToAndStop: f,
+                            goToAndPlay: f,
+                            goToAndStop: A,
                             setCurrentTime: i,
                             domRef: d.current,
                             onChangeTime: u,
@@ -5852,7 +5880,7 @@ const DEFAULT_NAME_KEYFRAME = 'Point',
             jsxRuntimeExports.jsx('video', { src: e, className: t, style: n, loop: r, ref: d, onClick: a, ...i })
         );
     }),
-    Video = reactExports.memo(VideoForwarded),
+    Video$1 = reactExports.memo(VideoForwarded$1),
     BackportTooltip = ({ children: e, ...t }) =>
         jsxRuntimeExports.jsx(Tooltip$1, {
             contentId: R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent('resId'),
@@ -5953,19 +5981,19 @@ const root = 'Togglebutton_root_f4d0260c',
                 },
                 [s, i, l],
             ),
-            A = reactExports.useCallback(
+            f = reactExports.useCallback(
                 (e) => {
                     s || ((1 !== e.button && 2 !== e.button) || (null !== a && playSound$1(a)), c && c(e));
                 },
                 [c, s, a],
             ),
-            f = cx(styles.base, t, styles[`base__${n}`], e && styles.base__active, s && styles.base__disabled);
+            A = cx(styles.base, t, styles[`base__${n}`], e && styles.base__active, s && styles.base__disabled);
         return jsxRuntimeExports.jsxs('div', {
-            className: f,
+            className: A,
             onClick: p,
             onMouseEnter: m,
             onMouseUp: s ? noop : d,
-            onMouseDown: A,
+            onMouseDown: f,
             onMouseLeave: s ? noop : E,
             children: [
                 jsxRuntimeExports.jsx('div', { className: styles.content, children: u }),
@@ -5983,7 +6011,221 @@ const root = 'Togglebutton_root_f4d0260c',
             ],
         });
     },
-    ToggleButton$1 = React.memo(ToggleButton);
+    ToggleButton$1 = React.memo(ToggleButton),
+    DEFAULT_NAME_KEYFRAME = 'Point',
+    THRESHOLD = 0.02;
+function createLoop(e) {
+    let t = 0;
+    return [
+        function u() {
+            (e(), (t = requestAnimationFrame(u)));
+        },
+        function () {
+            cancelAnimationFrame(t);
+        },
+    ];
+}
+const VideoForwarded = reactExports.forwardRef(function (
+        {
+            src: e,
+            className: t,
+            autoplay: u = !1,
+            style: n,
+            loop: r = !1,
+            isPrebufferKeyframes: o,
+            keyframesNameConfig: s,
+            onClick: a,
+            ...i
+        },
+        l,
+    ) {
+        const c = l,
+            d = reactExports.useRef(null);
+        return (
+            useMount$1(() => {
+                let e = !1;
+                return events$2.onDisplayChanged((t, u) => {
+                    const n = d.current;
+                    n &&
+                        (u === displayStatus$1.hidden
+                            ? ((e = n.paused), n.pause())
+                            : e || u !== displayStatus$1.shown || n.play());
+                });
+            }),
+            useMount$1(() => {
+                let e = !1;
+                return onMinimize((t) => {
+                    const u = d.current;
+                    u && (t ? ((e = u.paused), u.pause()) : e || u.play());
+                });
+            }),
+            reactExports.useEffect(
+                () =>
+                    createLayoutReadyInEffect$1(() => {
+                        const e = d.current;
+                        if (!c || !e || !o) return void ((null == e ? void 0 : e.cohFastSeek) && (e.cohFastSeek = !1));
+                        const t = e.cohGetKeyframeTimestamps ? e.cohGetKeyframeTimestamps() : [];
+                        t.length > 0
+                            ? ((e.cohFastSeek = !0),
+                              t.map((t) => {
+                                  (null == e ? void 0 : e.cohPrebufferKeyframe) && e.cohPrebufferKeyframe(t);
+                              }))
+                            : console.warn("Can't prebuffered keyframes, keyframes was not found");
+                    }),
+                [o, c],
+            ),
+            reactExports.useEffect(() => {
+                if (c && d.current) {
+                    const e = { changeTimeHandlers: [], changeKeyframeHandlers: [], changeTimeLoop: noop$2 },
+                        t = () => {
+                            let t = 0;
+                            const [u, n] = createLoop(() => {
+                                if (d.current) {
+                                    const { currentTime: u, duration: n } = d.current;
+                                    if (
+                                        (t !== u &&
+                                            (e.changeTimeHandlers.forEach((e) => e({ currentTime: u, duration: n })),
+                                            (t = u)),
+                                        d.current.paused || !c || !o)
+                                    )
+                                        return;
+                                    const r = d.current.cohGetKeyframeTimestamps
+                                        ? d.current.cohGetKeyframeTimestamps()
+                                        : [];
+                                    r.forEach((t, n) => {
+                                        void 0 !== r[n] &&
+                                            u > r[n] - THRESHOLD &&
+                                            u < r[n] &&
+                                            e.changeKeyframeHandlers.forEach((e) => {
+                                                const u = Object.keys(s ?? {})[n];
+                                                return e({
+                                                    time: t,
+                                                    name: `${s ? u : `${DEFAULT_NAME_KEYFRAME}_${n}`}`,
+                                                });
+                                            });
+                                    });
+                                }
+                            });
+                            return (u(), n);
+                        };
+                    e.changeTimeLoop = t();
+                    const u = (t) => (
+                            e.changeTimeHandlers.push(t),
+                            () => {
+                                const { changeTimeHandlers: u } = e,
+                                    n = u.indexOf(t);
+                                n < 0
+                                    ? console.warn("Can't unsubscribe changeTimeHandler, this reference was not found")
+                                    : u.splice(n, 1);
+                            }
+                        ),
+                        n = (t) => (
+                            e.changeKeyframeHandlers.push(t),
+                            () => {
+                                const { changeKeyframeHandlers: u } = e,
+                                    n = u.indexOf(t);
+                                n < 0
+                                    ? console.warn(
+                                          "Can't unsubscribe changeKeyframeHandlers, this reference was not found",
+                                      )
+                                    : u.splice(n, 1);
+                            }
+                        ),
+                        r = () => {
+                            var e;
+                            return null == (e = d.current) ? void 0 : e.currentTime;
+                        },
+                        a = () => {
+                            var e;
+                            return null == (e = d.current) ? void 0 : e.duration;
+                        },
+                        i = (e) => {
+                            d.current && (d.current.currentTime = clamp$1(0, d.current.duration, e));
+                        },
+                        l = () => {
+                            var e;
+                            return null == (e = d.current) ? void 0 : e.play();
+                        },
+                        E = () => {
+                            var e;
+                            return null == (e = d.current) ? void 0 : e.pause();
+                        },
+                        p = () => {
+                            (E(), i(0));
+                        },
+                        m = () => {
+                            var e;
+                            return (null == (e = d.current) ? void 0 : e.cohGetKeyframeTimestamps)
+                                ? d.current.cohGetKeyframeTimestamps()
+                                : [];
+                        },
+                        f = (e) => {
+                            (i(e), l());
+                        },
+                        A = (e) => {
+                            (i(e), E());
+                        },
+                        F = () => {
+                            var t;
+                            ((e.changeTimeHandlers = []),
+                                (e.changeKeyframeHandlers = []),
+                                null == (t = e.changeTimeLoop) || t.call(e));
+                        },
+                        h = (e, t) => {
+                            var u;
+                            return (
+                                null == (u = d.current) || u.addEventListener(e, t),
+                                () => {
+                                    var u;
+                                    return null == (u = d.current) ? void 0 : u.removeEventListener(e, t);
+                                }
+                            );
+                        },
+                        g = (e, t) => {
+                            var u;
+                            return (
+                                null == (u = d.current) || u.removeEventListener(e, t),
+                                () => {
+                                    var u;
+                                    return null == (u = d.current) ? void 0 : u.removeEventListener(e, t);
+                                }
+                            );
+                        };
+                    return (
+                        (c.current = {
+                            on: h,
+                            off: g,
+                            play: l,
+                            pause: E,
+                            stop: p,
+                            cleanup: F,
+                            getCurrentTime: r,
+                            getDuration: a,
+                            getCachedKeyframes: m,
+                            goToAndPlay: f,
+                            goToAndStop: A,
+                            setCurrentTime: i,
+                            domRef: d.current,
+                            onChangeTime: u,
+                            onKeyframes: n,
+                        }),
+                        () => {
+                            (F(), (c.current = null));
+                        }
+                    );
+                }
+            }, [s, c, o]),
+            reactExports.useEffect(() => {
+                d.current && u && d.current.play();
+            }, [u, r]),
+            useUnmount$1(() => {
+                var e;
+                null == (e = d.current) || e.pause();
+            }),
+            jsxRuntimeExports.jsx('video', { src: e, className: t, style: n, loop: r, ref: d, onClick: a, ...i })
+        );
+    }),
+    Video = reactExports.memo(VideoForwarded);
 export {
     breakpointsByType as $,
     noop$2 as A,
@@ -6017,7 +6259,7 @@ export {
     unsafeGet as a0,
     easings as a1,
     useLoop as a2,
-    Video as a3,
+    Video$1 as a3,
     useSimpleTooltip as a4,
     DynamicTooltipWrapper as a5,
     ClickOutsideManager as a6,
@@ -6026,21 +6268,22 @@ export {
     useEvent$1 as a9,
     Area$1 as aa,
     Bar$1 as ab,
-    toRoman as ac,
-    MediaSize as ad,
-    snakeToCamel as ae,
-    useEmitter$1 as af,
-    useTimeout as ag,
-    useSkipFrame$1 as ah,
-    useMount$1 as ai,
-    normalizeResource as aj,
-    Checkbox as ak,
-    CheckboxType as al,
-    useScreenSize as am,
-    SoundsRClassProvider as an,
-    concatWithPath as ao,
-    logBySeverity$1 as ap,
-    ImagesRClassProvider as aq,
+    Video as ac,
+    toRoman as ad,
+    MediaSize as ae,
+    snakeToCamel as af,
+    useEmitter$1 as ag,
+    useTimeout as ah,
+    useSkipFrame$1 as ai,
+    useMount$1 as aj,
+    normalizeResource as ak,
+    Checkbox as al,
+    CheckboxType as am,
+    useScreenSize as an,
+    SoundsRClassProvider as ao,
+    concatWithPath as ap,
+    logBySeverity$1 as aq,
+    ImagesRClassProvider as ar,
     getFormattedValue as b,
     constFalse as c,
     useCallbackOnEsc as d,

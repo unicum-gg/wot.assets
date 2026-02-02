@@ -1,17 +1,17 @@
-import { I as e, r as a, j as s, Q as t } from '../../../../chunks/vendor.js';
+import { Q as e, r as a, j as s, Y as t } from '../../../../chunks/vendor.js';
 import {
     i as o,
     n,
-    bL as r,
+    bS as r,
     R as i,
-    cy as l,
-    cz as c,
-    bE as d,
-    bK as p,
-    cA as m,
-    ch as _,
+    c$ as l,
+    cE as c,
+    bL as d,
+    bR as p,
+    d0 as m,
+    cm as _,
 } from '../../../../chunks/lib.js';
-import { F as f, I as h, A as x, a as b, b as T } from '../../../../chunks/event_banner_state.js';
+import { F as f, I as x, A as h, a as b, b as T } from '../../../../chunks/event_banner_state.js';
 import { D as u } from '../../../../chunks/divider.js';
 const [j, v] = o()(
         ({ observableModel: e }) => ({
@@ -38,17 +38,17 @@ const [j, v] = o()(
     P = 'DateInfo_cooldownIconWrapper_dc30f0ca',
     y = 'DateInfo_cooldownIcon_98fd90f',
     L = 'dateRange',
-    W = 'cooldown',
-    k = 'accent',
-    E = (e, a, o, n) => {
+    S = 'cooldown',
+    W = 'accent',
+    k = (e, a, o, n) => {
         const r = l;
         return {
-            [W]: s.jsx(i, {
+            [S]: s.jsx(i, {
                 className: t(B, D),
                 path: 'fl_tooltips.bannerTooltip.curfewTime',
                 params: { timer: s.jsx(d, { size: 'x24x24', type: 'cooldown', start: n }) },
             }),
-            [k]: s.jsx(d, { size: 'x24x24', type: 'accent', start: n }),
+            [W]: s.jsx(d, { size: 'x24x24', type: 'accent', start: n }),
             [L]: s.jsxs('div', {
                 className: I,
                 children: [
@@ -66,7 +66,7 @@ const [j, v] = o()(
             }),
         }[e];
     },
-    S = e(function ({ type: e }) {
+    E = e(function ({ type: e }) {
         const { model: t } = v(),
             o = t.eventStartDate.get(),
             n = t.eventEndDate.get(),
@@ -79,7 +79,7 @@ const [j, v] = o()(
                 }, r);
                 return () => window.clearTimeout(e);
             }, [n]),
-            s.jsx('div', { className: g, children: E(e, o, n, i) })
+            s.jsx('div', { className: g, children: k(e, o, n, i) })
         );
     }),
     A = {
@@ -87,12 +87,12 @@ const [j, v] = o()(
             isDisabled: !1,
             shouldShowPoints: !0,
             shouldShowTierData: !0,
-            dateInfoType: k,
+            dateInfoType: W,
             specificDescriptionKey: 'fl_tooltips.bannerTooltip.descriptionActive',
         },
-        [b]: { isDisabled: !1, dateInfoType: k },
-        [x]: { isDisabled: !0, dateInfoType: L },
-        [h]: { isDisabled: !0, dateInfoType: W },
+        [b]: { isDisabled: !1, dateInfoType: W },
+        [h]: { isDisabled: !0, dateInfoType: L },
+        [x]: { isDisabled: !0, dateInfoType: S },
         [f]: {
             isDisabled: !0,
             shouldHideCallToAction: !0,
@@ -107,11 +107,11 @@ function F({ children: e, isDisabled: a = !1 }) {
     return s.jsx('div', { className: C, style: { backgroundImage: `url(${t})` }, children: e });
 }
 const M = 'ProgressPoints_a5cbe757',
-    z = 'ProgressPoints_progressionValuesWrapper_e7ef156c',
-    H = 'ProgressPoints_currentProgress_25705c74',
+    H = 'ProgressPoints_progressionValuesWrapper_e7ef156c',
+    z = 'ProgressPoints_currentProgress_25705c74',
     K = 'ProgressPoints_progressIcon_9b37bf52',
     V = 'ProgressPoints_description_281855c9',
-    Q = e(function () {
+    $ = e(function () {
         const { model: e } = v(),
             a = e.maxPoints.get(),
             t = e.curPoints.get();
@@ -121,12 +121,12 @@ const M = 'ProgressPoints_a5cbe757',
                   className: M,
                   children: [
                       s.jsxs('div', {
-                          className: z,
+                          className: H,
                           children: [
                               s.jsx(i, {
                                   className: V,
                                   path: 'fl_tooltips.bannerTooltip.progress',
-                                  params: { value: s.jsx('div', { className: H, children: t }), maxValue: a },
+                                  params: { value: s.jsx('div', { className: z, children: t }), maxValue: a },
                               }),
                               s.jsx('div', { className: K }),
                           ],
@@ -135,19 +135,19 @@ const M = 'ProgressPoints_a5cbe757',
                   ],
               });
     }),
-    $ = 'BannerTooltip_67cf8ae2',
-    q = 'BannerTooltip_contentWrapper_69bfdee9',
-    G = 'BannerTooltip_title_eb5c95ad',
-    J = 'BannerTooltip_maxTier_baec7baf',
-    O = 'BannerTooltip_rewardText_9b198a9a',
-    U = 'BannerTooltip_warningText_3870055d',
-    X = 'BannerTooltip_descriptionText_714dbfec',
-    Y = 'BannerTooltip_performanceIcon_4b05a3c8',
+    Q = 'BannerTooltip_67cf8ae2',
+    Y = 'BannerTooltip_contentWrapper_69bfdee9',
+    q = 'BannerTooltip_title_eb5c95ad',
+    G = 'BannerTooltip_maxTier_baec7baf',
+    J = 'BannerTooltip_rewardText_9b198a9a',
+    O = 'BannerTooltip_warningText_3870055d',
+    U = 'BannerTooltip_descriptionText_714dbfec',
+    X = 'BannerTooltip_performanceIcon_4b05a3c8',
     Z = 'BannerTooltip_performance_acfebd23',
     ee = 'BannerTooltip_performanceHeaderWrapper_dbeaaac9',
     ae = 'BannerTooltip_rewardIcon_cba7ea77',
     se = 'BannerTooltip_rewardWrapper_10979df7',
-    te = 'BannerTooltip_modeLabel_e1a061ec',
+    te = 'BannerTooltip_modeLabel_512876d5',
     oe = 'BannerTooltip_callToAction_e0a487d4',
     ne = e(function () {
         const { model: e } = v(),
@@ -158,53 +158,56 @@ const M = 'ProgressPoints_a5cbe757',
                 shouldHideCallToAction: d,
                 shouldShowTierData: p,
                 specificDescriptionKey: _,
-                dateInfoType: h,
+                dateInfoType: x,
             } = A[a.get()],
-            x = a.get() !== f,
+            h = a.get() !== f,
             b = _ || 'fl_tooltips.bannerTooltip.description';
         return s.jsx(m, {
             children: s.jsxs('div', {
-                className: $,
+                className: Q,
                 children: [
                     s.jsx(F, {
                         isDisabled: l,
                         children: s.jsx(i, {
                             path: 'fl_tooltips.bannerTooltip.' + (p ? 'headerWithTier' : 'header'),
-                            params: { curLevel: n.get(), maxLevel: o.get(), maxTierClass: J },
-                            className: G,
+                            params: { curLevel: n.get(), maxLevel: o.get(), maxTierClass: G },
+                            className: q,
                         }),
                     }),
                     s.jsxs('div', {
-                        className: q,
+                        className: Y,
                         children: [
-                            c && s.jsx(Q, {}),
-                            s.jsx(i, { path: b, params: { vehicleTier: r.get() }, className: X }),
+                            c && s.jsx($, {}),
+                            s.jsx(i, { path: b, params: { vehicleTier: r.get() }, className: U }),
                             !d &&
                                 s.jsx(i, {
                                     className: oe,
                                     path: 'fl_tooltips.bannerTooltip.mode',
                                     split: !0,
                                     params: {
-                                        mode: s.jsx(i, { className: te, path: 'hangar_event_banners.modeLabel' }),
+                                        mode: s.jsx('div', {
+                                            className: te,
+                                            children: R.strings.hangar_event_banners.modeLabel(),
+                                        }),
                                     },
                                 }),
-                            x &&
+                            h &&
                                 s.jsxs('div', {
                                     className: Z,
                                     children: [
                                         s.jsxs('div', {
                                             className: ee,
                                             children: [
-                                                s.jsx('div', { className: Y }),
+                                                s.jsx('div', { className: X }),
                                                 s.jsx(i, {
                                                     path: 'fl_tooltips.bannerTooltip.performanceRisk.title',
-                                                    className: U,
+                                                    className: O,
                                                 }),
                                             ],
                                         }),
                                         s.jsx(i, {
                                             path: 'fl_tooltips.bannerTooltip.performanceRisk.text',
-                                            className: X,
+                                            className: U,
                                         }),
                                     ],
                                 }),
@@ -222,13 +225,13 @@ const M = 'ProgressPoints_a5cbe757',
                                             path: 'fl_tooltips.bannerTooltip.rewardInfo',
                                             params: { value: t.get() },
                                             split: !0,
-                                            className: O,
+                                            className: J,
                                         }),
                                     ],
                                 }),
                             ],
                         }),
-                    h && s.jsxs(s.Fragment, { children: [s.jsx(u, {}), s.jsx(S, { type: h })] }),
+                    x && s.jsxs(s.Fragment, { children: [s.jsx(u, {}), s.jsx(E, { type: x })] }),
                 ],
             }),
         });

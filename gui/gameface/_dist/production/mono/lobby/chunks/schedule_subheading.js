@@ -1,5 +1,5 @@
 import { j as e, w as s, x as a } from './vendor.js';
-import { i as t, d4 as o, F as n, d5 as i, d6 as r, d7 as m, d8 as d, d9 as l, da as c, db as p } from './lib.js';
+import { i as t, dd as o, F as n, de as i, df as r, dg as m, dh as d, di as l, dj as c, dk as p } from './lib.js';
 import { u as x } from './use_server_time_polling.js';
 const [v, g] = t()(
         ({ observableModel: e }) => ({
@@ -43,9 +43,9 @@ const [v, g] = t()(
                     : void 0;
     },
     N = R.strings.comp7_ext,
-    b = (e) => ((e, s) => String(e.$dyn(s)))(N.seasonName, e),
+    f = (e) => ((e, s) => String(e.$dyn(s)))(N.seasonName, e),
     T = 'ActiveSeasonState_7be3b725',
-    f = 'ActiveSeasonState_calendarIcon_cc4d1c6a',
+    b = 'ActiveSeasonState_calendarIcon_cc4d1c6a',
     _ = 'ActiveSeasonState_divider_e45543ee',
     M = ({
         startTimestamp: a,
@@ -62,8 +62,8 @@ const [v, g] = t()(
             children: e.jsxs('div', {
                 className: T,
                 children: [
-                    e.jsx('div', { className: s(f, null == m ? void 0 : m.calendarIcon) }),
-                    r && e.jsxs(e.Fragment, { children: [b(n), e.jsx('div', { className: _ })] }),
+                    e.jsx('div', { className: s(b, null == m ? void 0 : m.calendarIcon) }),
+                    r && e.jsxs(e.Fragment, { children: [f(n), e.jsx('div', { className: _ })] }),
                     u(a, t, o),
                 ],
             }),
@@ -93,7 +93,7 @@ const [v, g] = t()(
                                   classNames: null == t ? void 0 : t.scheduleClassNames,
                               }),
                           })
-                        : e.jsx(p, { text: R.strings.comp7_ext.season.over(), binding: { seasonName: b(l) } }),
+                        : e.jsx(p, { text: R.strings.comp7_ext.season.over(), binding: { seasonName: f(l) } }),
             })
         );
     });

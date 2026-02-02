@@ -1,5 +1,5 @@
 import { x as e, j as t, w as s } from '../../../chunks/vendor.js';
-import { i as a, F as r, bV as o, r as i, cJ as n } from '../../../chunks/lib.js';
+import { i as a, F as r, T as o, r as i, q as n } from '../../../chunks/lib.js';
 import { g as p } from '../../../chunks/get_roman_levels.js';
 import { u as d } from '../../../chunks/use_server_time_polling.js';
 /* empty css                     */ var l = ((e) => (
@@ -52,7 +52,7 @@ const [_, c] = a()(
                   })
         );
     }),
-    b = {
+    g = {
         decorator: 'App_decorator_2b788cac',
         decoratorInner: 'App_decoratorInner_c21b80f6',
         base: 'App_db75b9f1',
@@ -83,7 +83,7 @@ const [_, c] = a()(
         blink: 'App_blink_0',
         slideUpIn: 'App_slideUpIn_0',
     },
-    g = 'Tooltips_divider_ca103a1d',
+    b = 'Tooltips_divider_ca103a1d',
     v = {
         [l.Disabled]: 'disabled',
         [l.JustStarted]: 'justStarted',
@@ -97,33 +97,33 @@ const [_, c] = a()(
             a = e.season.state.get(),
             o = p(e.vehicleLevels.get(), R.strings.comp7_light.listSeparator());
         return t.jsxs('div', {
-            className: s(b.base, b[`base__${v[a]}`]),
+            className: s(g.base, g[`base__${v[a]}`]),
             children: [
-                t.jsx('div', { className: b.topContentBg }),
+                t.jsx('div', { className: g.topContentBg }),
                 t.jsx('div', {
-                    className: b.topContent,
-                    children: t.jsx('div', { className: b.title, children: R.strings.comp7_light.featureName() }),
+                    className: g.topContent,
+                    children: t.jsx('div', { className: g.title, children: R.strings.comp7_light.featureName() }),
                 }),
                 t.jsxs('div', {
-                    className: b.bottomContent,
+                    className: g.bottomContent,
                     children: [
                         t.jsx(r, {
                             text: R.strings.comp7_light.entryPointTooltip.description(),
                             binding: { levels: o },
-                            classMix: b.paragraph,
+                            classMix: g.paragraph,
                         }),
                         t.jsx(r, {
                             text: R.strings.comp7_light.entryPointTooltip.modeDescription(),
                             binding: {
                                 mode: t.jsx('div', {
-                                    className: b.modeBtn,
+                                    className: g.modeBtn,
                                     children: R.strings.comp7_light.entryPointTooltip.modeBtnText(),
                                 }),
                             },
-                            classMix: b.mode,
+                            classMix: g.mode,
                         }),
-                        t.jsx('div', { className: s(g, b.divider) }),
-                        t.jsx('div', { className: b.timerContainer, children: t.jsx(m, {}) }),
+                        t.jsx('div', { className: s(b, g.divider) }),
+                        t.jsx('div', { className: g.timerContainer, children: t.jsx(m, {}) }),
                     ],
                 }),
             ],
@@ -133,8 +133,8 @@ i(
     t.jsx(_, {
         children: t.jsx(n, {
             children: t.jsx('div', {
-                className: b.decorator,
-                children: t.jsx('div', { className: b.decoratorInner, children: t.jsx(A, {}) }),
+                className: g.decorator,
+                children: t.jsx('div', { className: g.decoratorInner, children: t.jsx(A, {}) }),
             }),
         }),
     }),

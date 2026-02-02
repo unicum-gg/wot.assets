@@ -1,5 +1,5 @@
-import { j as e, f as t, d as s, o, g as n, F as a, r } from './vendor.js';
-import { cR as i, cS as c, cT as d, o as l, cU as u, cV as m, i as p, bM as h, T as _, cW as x } from './lib.js';
+import { j as e, f as t, d as s, o, g as n, B as a, r } from './vendor.js';
+import { dg as i, dh as c, di as d, o as l, dj as u, dk as m, i as p, bT as h, T as _, dl as x } from './lib.js';
 const y = { base: 'AlertIcon_7dcecd8f', shadow: 'AlertIcon_shadow_daf8370', icon: 'AlertIcon_icon_35ce98b5' };
 function b({ icon: s, hasShadow: o = !1, className: n }) {
     return e.jsxs('div', {
@@ -125,7 +125,7 @@ const C = {
         }
         return s;
     },
-    T = ({ type: e, filePath: t, eventName: s }, o = !1) => {
+    B = ({ type: e, filePath: t, eventName: s }, o = !1) => {
         const {
             parent: n,
             path: a,
@@ -154,11 +154,11 @@ const C = {
         })(e, t, s);
         return n ? { eventResource: o ? S(n, a) : j(n, a), defaultResource: o ? S(n, r) : j(n, r) } : null;
     },
-    B = (e, t, s) =>
+    T = (e, t, s) =>
         Object.keys(e).reduce(
             (o, n) => (
                 (o[n] = (({ type: e, filePath: t, eventName: s }) => {
-                    const o = T({ type: e, filePath: t, eventName: s });
+                    const o = B({ type: e, filePath: t, eventName: s });
                     if (!o || (!o.eventResource && !o.defaultResource))
                         return (console.info(`Unreachable code: unknown resource (${e} ${s} ${t})`), '');
                     const { eventResource: n, defaultResource: a } = o;
@@ -171,9 +171,9 @@ const C = {
     k = (e, t) =>
         Object.keys(e).reduce((s, o) => {
             const n = e[o];
-            return n ? ((s[o] = B(n, o, t)), s) : s;
+            return n ? ((s[o] = T(n, o, t)), s) : s;
         }, {}),
-    V = {
+    G = {
         images: {
             iconEmpty: 'entry_point.lootboxEmpty',
             iconGold: 'entry_point.lootboxGold',
@@ -183,11 +183,11 @@ const C = {
         texts: { boxes: 'entryPoint.boxes', maxBoxesCount: 'entryPoint.maxBoxesCount', boxesCount: 'entryPoint.count' },
         sounds: { entryHover: 'gui_lb_icon_hover' },
     };
-var G = ((e) => ((e.Boxes = 'boxes'), (e.Empty = 'empty'), e))(G || {});
-const [F, L] = p()(
+var V = ((e) => ((e.Boxes = 'boxes'), (e.Empty = 'empty'), e))(V || {});
+const [L, F] = p()(
         ({ observableModel: e }) => {
             const t = e.object().get().eventName,
-                s = { root: e.object(), style: o.box(D(t, $.EntryPoint)), resources: o.box(k(V, t)) },
+                s = { root: e.object(), style: o.box(D(t, $.EntryPoint)), resources: o.box(k(G, t)) },
                 a = n(() => {
                     const { boxesCount: e } = s.root.get();
                     return e ? 'boxes' : 'empty';
@@ -204,11 +204,11 @@ function W({ count: s, text: o, maxText: n, className: a }) {
         children: s < M ? e.jsx(h, { text: o, params: { count: s }, upgradeLegacy: !0 }) : n,
     });
 }
-const U = { base: 'Icon_1d8e6c37' };
-function z({ image: s, brightness: o, disabled: n, className: a, ...r }) {
+const z = { base: 'Icon_1d8e6c37' };
+function U({ image: s, brightness: o, disabled: n, className: a, ...r }) {
     return e.jsx('div', {
         ...r,
-        className: t(U.base, a),
+        className: t(z.base, a),
         style: { backgroundImage: `url(${s})`, filter: n ? 'brightness(.8) saturate(.5)' : `brightness(${o})` },
     });
 }
@@ -256,15 +256,15 @@ const q = a(function () {
             contentId: n.read((e) => e.mono.lootbox.tooltips.entry_point('resId')),
         }),
         [i, c] = r.useState(!1),
-        { model: d, controls: u } = L(),
+        { model: d, controls: u } = F(),
         { isEnabled: m, boxesCount: p, hasNew: h } = d.root.get(),
         y = d.computes.getState(),
         { images: g, texts: f, sounds: v } = d.resources.get(),
         w = d.style.get(),
         { opacityCustomNewBox: N, opacityCustom: E, opacityDiff: I, animationDuration: A } = w.shine,
-        R = i ? 1 + w.icon[`${y}IconBrightness`] : 1,
-        j = { opacity: (h ? N : E) + (i ? I : 0), animationDuration: A },
-        $ = y === G.Empty ? g.iconEmpty : g.iconGold;
+        j = i ? 1 + w.icon[`${y}IconBrightness`] : 1,
+        R = { opacity: (h ? N : E) + (i ? I : 0), animationDuration: A },
+        $ = y === V.Empty ? g.iconEmpty : g.iconGold;
     return e.jsx('div', {
         className: t(Z.base, !m && Z.base__disabled),
         children: e.jsx('div', {
@@ -280,10 +280,10 @@ const q = a(function () {
                 },
                 onMouseLeave: () => c(!1),
                 children: [
-                    y === G.Boxes
+                    y === V.Boxes
                         ? e.jsxs(e.Fragment, {
                               children: [
-                                  m && e.jsx(Y, { image: g.shine, style: j }),
+                                  m && e.jsx(Y, { image: g.shine, style: R }),
                                   e.jsx(W, {
                                       className: Z.count,
                                       maxText: f.maxBoxesCount,
@@ -293,7 +293,7 @@ const q = a(function () {
                               ],
                           })
                         : e.jsx('div', { className: Z.text, children: f.boxes }),
-                    e.jsx(z, { disabled: !m, image: $, brightness: R, className: Z.icon }),
+                    e.jsx(U, { disabled: !m, image: $, brightness: j, className: Z.icon }),
                     !m && e.jsx(b, { className: t(Z.alert, Z[`alert__${y}`]), hasShadow: !0, icon: g.alert }),
                 ],
             }),
@@ -303,6 +303,6 @@ const q = a(function () {
 function J() {
     const t = l.resolve('aliases').read((e) => e.hangar.shared.LootboxEntryPoint('resId')),
         s = r.useMemo(() => ({ rootId: t }), [t]);
-    return e.jsx(F, { options: s, children: e.jsx(q, {}) });
+    return e.jsx(L, { options: s, children: e.jsx(q, {}) });
 }
 export { J as default };

@@ -1,12 +1,12 @@
-import { an as s, ao as e, ap as t, j as a, aq as o, I as n } from './lib.js';
-import { d as r } from './vendor.js';
+import { ao as s, ap as e, aq as t, j as a, ar as o, I as r } from './lib.js';
+import { d as n } from './vendor.js';
 class i extends s {
     constructor(s, e) {
         (super(), (this.root = s), (this.prefix = e));
     }
     readOr(s, a, o = 'silent') {
-        const n = e(this.prefix, s),
-            r = (function (s, e) {
+        const r = e(this.prefix, s),
+            n = (function (s, e) {
                 const t = e.split('.');
                 if (window.R && window.R.sounds) {
                     const e = t[t.length - 1];
@@ -18,8 +18,8 @@ class i extends s {
                     return 'function' == typeof a[e] ? a[e]() : void 0;
                 }
                 throw new Error('R class with images field is not defined');
-            })(this.root, n);
-        return void 0 === r ? ('silent' !== o && t(`Resource not found: ${n}`, o), a()) : r;
+            })(this.root, r);
+        return void 0 === n ? ('silent' !== o && t(`Resource not found: ${r}`, o), a()) : n;
     }
     readOrEmpty(s, e = 'warn') {
         return this.readOr(s, () => '', e);
@@ -27,8 +27,8 @@ class i extends s {
 }
 const c = 'lootbox_images',
     u = 'lootbox_sounds';
-(a.register(c, r(() => new o(window.R.images)).singleton()),
-    a.register(u, r(() => new i(window.R.sounds)).singleton()));
+(a.register(c, n(() => new o(window.R.images)).singleton()),
+    a.register(u, n(() => new i(window.R.sounds)).singleton()));
 const m = a.resolve(c),
     l = a.resolve('videos'),
     g = a.resolve(u),
@@ -93,16 +93,16 @@ const m = a.resolve(c),
     },
     w = (s) => {
         switch (s) {
-            case n.S600x450:
+            case r.S600x450:
                 return 'c_600x450';
-            case n.S180x135:
+            case r.S180x135:
                 return 'c_180x135';
             default:
                 return s;
         }
     },
-    f = (s, e = n.S180x135, t = !1) => {
-        const { name: a, icon: o, value: r } = t ? s.compensation : s,
+    f = (s, e = r.S180x135, t = !1) => {
+        const { name: a, icon: o, value: n } = t ? s.compensation : s,
             { id: i, isRent: c } = s;
         switch (a) {
             case k.vehicles:
@@ -161,7 +161,7 @@ const m = a.resolve(c),
                 return `R.images.gui.maps.icons.quests.bonuses.${e}.freeXP`;
             case k.tmanToken:
             case k.battlePassSelectToken:
-                return b(e, `${o}_${r}`, o);
+                return b(e, `${o}_${n}`, o);
             case k.premiumTank:
                 return `R.images.gui.maps.icons.quests.bonuses.${e}.vehicles`;
             case k.styleProgressToken:

@@ -2380,12 +2380,14 @@
                     ou = (e, u, t) => (t < e ? e : t > u ? u : t);
                 function au(e, u, t = []) {
                     const n = (0, i.useRef)(0),
-                        r = (0, i.useCallback)(() => window.clearInterval(n.current), t || []);
+                        r = (0, i.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, t || []);
                     (0, i.useEffect)(() => r, [r]);
                     const o = (null != t ? t : []).concat([u]);
                     return [
                         (0, i.useCallback)((t) => {
-                            ((n.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
+                            (0 !== n.current && r(), (n.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
                         }, o),
                         r,
                     ];
@@ -2479,7 +2481,6 @@
                                                         );
                                                     })(u(e).values());
                                                 !(n = r()).done;
-
                                             )
                                                 (0, n.value)(...t);
                                         };
@@ -4808,7 +4809,6 @@
                                                                     );
                                                                 })(r.keys());
                                                             !(e = t()).done;
-
                                                         )
                                                             o(e.value, u);
                                                     },

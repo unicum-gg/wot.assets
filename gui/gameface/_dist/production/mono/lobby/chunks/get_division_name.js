@@ -1,5 +1,5 @@
 import { D as i } from './enums.js';
-import { cf as s } from './lib.js';
+import { cm as s } from './lib.js';
 const o = { [i.A]: 'A', [i.B]: 'B', [i.C]: 'C', [i.D]: 'D', [i.E]: 'E' },
     t = (i) => String(R.strings.comp7_ext.division.$dyn(o[i])),
     n = (i) => s(R.strings.comp7_ext.division.text(), { division: t(i) });

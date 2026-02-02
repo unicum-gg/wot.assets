@@ -1748,9 +1748,9 @@ const qi = {
                                                                             ? ((h = e),
                                                                               Boolean(
                                                                                   h &&
-                                                                                      'object' == typeof h &&
-                                                                                      'type' in h &&
-                                                                                      'line' === h.type,
+                                                                                  'object' == typeof h &&
+                                                                                  'type' in h &&
+                                                                                  'line' === h.type,
                                                                               )
                                                                                   ? t.jsx(
                                                                                         ke,

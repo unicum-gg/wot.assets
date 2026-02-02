@@ -7207,12 +7207,14 @@
                     Pu = (e, t, n) => (n < e ? e : n > t ? t : n);
                 function $u(e, t, n = []) {
                     const a = (0, o.useRef)(0),
-                        s = (0, o.useCallback)(() => window.clearInterval(a.current), n || []);
+                        s = (0, o.useCallback)(() => {
+                            (window.clearInterval(a.current), (a.current = 0));
+                        }, n || []);
                     (0, o.useEffect)(() => s, [s]);
                     const u = (null != n ? n : []).concat([t]);
                     return [
                         (0, o.useCallback)((n) => {
-                            ((a.current = window.setInterval(() => e(n, !0), t)), e(n, !1));
+                            (0 !== a.current && s(), (a.current = window.setInterval(() => e(n, !0), t)), e(n, !1));
                         }, u),
                         s,
                     ];

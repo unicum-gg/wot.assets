@@ -3559,12 +3559,14 @@
                 }
                 function be(e, t, u = []) {
                     const n = (0, o.useRef)(0),
-                        a = (0, o.useCallback)(() => window.clearInterval(n.current), u || []);
+                        a = (0, o.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, u || []);
                     (0, o.useEffect)(() => a, [a]);
                     const r = (null != u ? u : []).concat([t]);
                     return [
                         (0, o.useCallback)((u) => {
-                            ((n.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
+                            (0 !== n.current && a(), (n.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
                         }, r),
                         a,
                     ];

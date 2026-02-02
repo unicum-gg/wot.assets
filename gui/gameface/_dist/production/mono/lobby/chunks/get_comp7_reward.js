@@ -1,4 +1,4 @@
-import { cP as e, cS as o, dl as r, dI as n, al as i } from './lib.js';
+import { dj as e, dD as o, dv as r, dL as n, a9 as i } from './lib.js';
 import './vendor.js';
 const s = [e.Big, e.Small],
     a = [e.S232x174, e.S296x222, e.S400x300, e.S600x450],
@@ -12,7 +12,7 @@ const s = [e.Big, e.Small],
             ignoreShowDelay: !0,
         });
     },
-    c = (e, o) => {
+    p = (e, o) => {
         var r;
         if ('tankman' === e.name) {
             const n = null == (r = R.images.comp7.gui.maps.icons.crew.$dyn(o)) ? void 0 : r.$dyn(e.groupName);
@@ -28,7 +28,7 @@ const s = [e.Big, e.Small],
         }
         return n(e, o);
     },
-    p = ({ reward: r, size: n, rank: i, index: s }) => {
+    c = ({ reward: r, size: n, rank: i, index: s }) => {
         const a = ((o, r) => {
             if ('dogTagComponents' === o.name) {
                 if (r === e.Big) return e.S80x80;
@@ -39,7 +39,7 @@ const s = [e.Big, e.Small],
         return {
             ...r,
             size: a,
-            image: c(r, a),
+            image: p(r, a),
             value: m(r),
             valueType: o(r.name),
             special: l(r, a),
@@ -50,5 +50,5 @@ const s = [e.Big, e.Small],
             },
         };
     },
-    g = ({ rewards: e, size: o, rank: r, index: n }) => i(e, (e) => p({ reward: e, size: o, rank: r, index: n }));
-export { p as g, g as m };
+    g = ({ rewards: e, size: o, rank: r, index: n }) => i(e, (e) => c({ reward: e, size: o, rank: r, index: n }));
+export { c as g, g as m };

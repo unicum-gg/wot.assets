@@ -1488,12 +1488,14 @@
                 }
                 function Au(u, e, t = []) {
                     const r = (0, a.useRef)(0),
-                        n = (0, a.useCallback)(() => window.clearInterval(r.current), t || []);
+                        n = (0, a.useCallback)(() => {
+                            (window.clearInterval(r.current), (r.current = 0));
+                        }, t || []);
                     (0, a.useEffect)(() => n, [n]);
                     const o = (null != t ? t : []).concat([e]);
                     return [
                         (0, a.useCallback)((t) => {
-                            ((r.current = window.setInterval(() => u(t, !0), e)), u(t, !1));
+                            (0 !== r.current && n(), (r.current = window.setInterval(() => u(t, !0), e)), u(t, !1));
                         }, o),
                         n,
                     ];

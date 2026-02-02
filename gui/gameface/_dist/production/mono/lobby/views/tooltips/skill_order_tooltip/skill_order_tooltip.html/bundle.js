@@ -1,36 +1,36 @@
 import { j as e, R as s } from '../../../../chunks/vendor.js';
 import {
     S as a,
-    cC as c,
-    cD as r,
-    cE as i,
-    cF as o,
-    cG as t,
+    d2 as r,
+    d3 as c,
+    d4 as i,
+    d5 as o,
+    d6 as t,
     o as l,
-    cB as n,
+    d1 as n,
     R as d,
-    ch as p,
+    cm as p,
 } from '../../../../chunks/lib.js';
 import { D as _ } from '../../../../chunks/divider.js';
-var x = ((e) => ((e.Firesupport = 'firesupport'), (e.Reconnaissance = 'reconnaissance'), (e.Tactics = 'tactics'), e))(
-    x || {},
+var m = ((e) => ((e.Firesupport = 'firesupport'), (e.Reconnaissance = 'reconnaissance'), (e.Tactics = 'tactics'), e))(
+    m || {},
 );
-const h = {
+const x = {
     base: 'CategoryIcon_ab8abcc7',
     categoryIcon: 'CategoryIcon_categoryIcon_1f02424f',
     arrow: 'CategoryIcon_arrow_a1c14258',
 };
-function m({ category: s, showArrow: a }) {
+function h({ category: s, showArrow: a }) {
     return e.jsxs('div', {
-        className: h.base,
+        className: x.base,
         children: [
             e.jsx('div', {
-                className: h.categoryIcon,
+                className: x.categoryIcon,
                 style: {
                     backgroundImage: `url(${R.images.frontline.gui.maps.icons.loadout.categories.c_24x24.$dyn(s)})`,
                 },
             }),
-            a && e.jsx('div', { className: h.arrow }),
+            a && e.jsx('div', { className: x.arrow }),
         ],
     });
 }
@@ -44,21 +44,21 @@ const j = {
         [t]: 'light_tank_x48x48',
         [o]: 'medium_tank_x48x48',
         [i]: 'heavy_tank_x48x48',
-        [r]: 'spg_x48x48',
-        [c]: 'tank_destroyer_x48x48',
+        [c]: 'spg_x48x48',
+        [r]: 'tank_destroyer_x48x48',
     };
-function g({ vehicleType: c, categories: r }) {
+function g({ vehicleType: r, categories: c }) {
     return e.jsxs('div', {
         className: j.base,
         children: [
             e.jsx('div', {
                 className: j.vehicleIconWrapper,
-                children: e.jsx(a, { className: j.vehicleIcon, path: `ui_kit.vehicle_type.x48x48.${v[c]}` }),
+                children: e.jsx(a, { className: j.vehicleIcon, path: `ui_kit.vehicle_type.x48x48.${v[r]}` }),
             }),
             e.jsx('div', {
                 className: j.categories,
-                children: r.map((a, c) =>
-                    e.jsx(s.Fragment, { children: e.jsx(m, { category: a, showArrow: c < r.length - 1 }) }, a),
+                children: c.map((a, r) =>
+                    e.jsx(s.Fragment, { children: e.jsx(h, { category: a, showArrow: r < c.length - 1 }) }, a),
                 ),
             }),
         ],
@@ -73,13 +73,13 @@ const u = 'SkillOrderTooltip_f3653ea',
     I = 'SkillOrderTooltip_infoText_52a8e30b',
     N = l.resolve('strings'),
     O = [
-        [t, [x.Reconnaissance, x.Tactics, x.Firesupport]],
-        [o, [x.Tactics, x.Firesupport, x.Reconnaissance]],
-        [i, [x.Firesupport, x.Tactics, x.Reconnaissance]],
-        [r, [x.Firesupport, x.Reconnaissance, x.Tactics]],
-        [c, [x.Reconnaissance, x.Firesupport, x.Tactics]],
+        [t, [m.Reconnaissance, m.Tactics, m.Firesupport]],
+        [o, [m.Tactics, m.Firesupport, m.Reconnaissance]],
+        [i, [m.Firesupport, m.Tactics, m.Reconnaissance]],
+        [c, [m.Firesupport, m.Reconnaissance, m.Tactics]],
+        [r, [m.Reconnaissance, m.Firesupport, m.Tactics]],
     ];
-function F() {
+function S() {
     return e.jsx(n, {
         children: e.jsx(n.Decorator, {
             children: e.jsxs('div', {
@@ -115,4 +115,4 @@ function F() {
         }),
     });
 }
-p(e.jsx(F, {}));
+p(e.jsx(S, {}));

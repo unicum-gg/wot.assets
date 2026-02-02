@@ -1,5 +1,5 @@
 import { R as r } from './enums.js';
-import { cf as t } from './lib.js';
+import { cm as t } from './lib.js';
 const s = {
         [r.First]: 'first',
         [r.Second]: 'second',
@@ -17,4 +17,4 @@ const s = {
         const e = s.upperCase ? R.strings.comp7_ext.rankUpper.text() : R.strings.comp7_ext.rank.text();
         return t(e, { rank: p(r, s) });
     };
-export { s as R, e as a, n as b, p as g };
+export { s as R, e as a, p as b, n as g };

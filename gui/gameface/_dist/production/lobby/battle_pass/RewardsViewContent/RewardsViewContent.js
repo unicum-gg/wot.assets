@@ -2630,12 +2630,14 @@
                 var r = t(7363);
                 function n(u, e, t = []) {
                     const n = (0, r.useRef)(0),
-                        a = (0, r.useCallback)(() => window.clearInterval(n.current), t || []);
+                        a = (0, r.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, t || []);
                     (0, r.useEffect)(() => a, [a]);
                     const o = (null != t ? t : []).concat([e]);
                     return [
                         (0, r.useCallback)((t) => {
-                            ((n.current = window.setInterval(() => u(t, !0), e)), u(t, !1));
+                            (0 !== n.current && a(), (n.current = window.setInterval(() => u(t, !0), e)), u(t, !1));
                         }, o),
                         a,
                     ];
@@ -3200,7 +3202,7 @@
                     g = 'Content_mainContent_d4',
                     p = 'Content_base__noScroll_d3',
                     h = R.strings.battle_pass.battlePassBuyView.reward,
-                    f = () => {
+                    f = (0, o.Pi)(() => {
                         const u = (0, C.t)().model,
                             e = u.levels.get(),
                             t = e.fromLevel,
@@ -3246,7 +3248,7 @@
                                     }),
                             ),
                         );
-                    },
+                    }),
                     v = 'RewardsViewContent_base_42',
                     w = 'RewardsViewContent_content_64',
                     b = 'RewardsViewContent_background_37',

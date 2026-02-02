@@ -5178,12 +5178,14 @@
                     gn = u(3815);
                 function bn(e, t, u = []) {
                     const n = (0, s.useRef)(0),
-                        a = (0, s.useCallback)(() => window.clearInterval(n.current), u || []);
+                        a = (0, s.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, u || []);
                     (0, s.useEffect)(() => a, [a]);
                     const r = (null != u ? u : []).concat([t]);
                     return [
                         (0, s.useCallback)((u) => {
-                            ((n.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
+                            (0 !== n.current && a(), (n.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
                         }, r),
                         a,
                     ];

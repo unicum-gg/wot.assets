@@ -1,24 +1,24 @@
 import { j as e, x as s } from '../../../../chunks/vendor.js';
 import {
     m as o,
-    dd as t,
-    c8 as r,
-    c9 as i,
-    de as a,
-    df as n,
-    i as d,
-    L as l,
-    c3 as c,
-    c2 as p,
+    dm as t,
+    co as r,
+    cp as i,
+    dn as a,
+    dp as n,
+    i as l,
+    N as d,
+    cj as c,
+    ci as p,
     r as u,
 } from '../../../../chunks/lib.js';
 import { E as m, D as v } from '../../../../chunks/extended_tooltip_decorator.js';
-/* empty css                        */ function I({ bonuses: s, questId: d, size: l, resId: c, ...p }) {
+/* empty css                        */ function I({ bonuses: s, questId: l, size: d, resId: c, ...p }) {
     const u = o(s, (e) => {
             return {
-                size: l,
+                size: d,
                 name: e.name,
-                image: i(e, l),
+                image: i(e, d),
                 value: e.value,
                 valueType: r(e.name),
                 special:
@@ -31,7 +31,7 @@ import { E as m, D as v } from '../../../../chunks/extended_tooltip_decorator.js
                         : void 0,
                 tooltipArgs: {
                     ...t(
-                        { tooltipId: `${d}:${e.tooltipId}` },
+                        { tooltipId: `${l}:${e.tooltipId}` },
                         Number(e.tooltipContentId) ||
                             R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent('resId'),
                     ),
@@ -42,12 +42,12 @@ import { E as m, D as v } from '../../../../chunks/extended_tooltip_decorator.js
         }),
         m = {
             contentId: R.views.lobby.tooltips.AdditionalRewardsTooltip('resId'),
-            args: { showFromIndex: p.count, questId: d },
+            args: { showFromIndex: p.count, questId: l },
             resId: c,
         };
-    return e.jsx(a, { ...p, data: u, boxRewardTooltip: m, size: l });
+    return e.jsx(a, { ...p, data: u, boxRewardTooltip: m, size: d });
 }
-const [T, b] = d()(({ observableModel: e }) => ({
+const [T, b] = l()(({ observableModel: e }) => ({
         ...e.primitives([
             'countdown',
             'missionType',
@@ -66,21 +66,21 @@ const [T, b] = d()(({ observableModel: e }) => ({
     g = 'BattleQuestTooltip_divider_31b2f465',
     w = 'BattleQuestTooltip_rewardItem_462d39e4',
     y = 'BattleQuestTooltip_rewards_863df0c8',
-    _ = l.resolve('aliases'),
-    h = R.strings.comp7_light.battleQuestTooltips,
-    j = s(function () {
+    _ = d.resolve('aliases'),
+    j = R.strings.comp7_light.battleQuestTooltips,
+    h = s(function () {
         const { model: s } = b(),
             o = s.bonuses.get(),
             t = s.countdown.get();
         return e.jsxs(m, {
-            header: h.mission(),
+            header: j.mission(),
             description: c(s.description.get()),
             invertedColors: !0,
-            timerText: h.expiresIn(),
+            timerText: j.expiresIn(),
             timerTimeLeft: t,
             children: [
                 e.jsx(v, { className: g }),
-                e.jsx('div', { className: x, children: h.rewards(o.length) }),
+                e.jsx('div', { className: x, children: j.rewards(o.length) }),
                 e.jsx(I, {
                     bonuses: o,
                     questId: s.id.get(),
@@ -93,4 +93,4 @@ const [T, b] = d()(({ observableModel: e }) => ({
             ],
         });
     });
-u(e.jsx(T, { children: e.jsx(j, {}) }));
+u(e.jsx(T, { children: e.jsx(h, {}) }));

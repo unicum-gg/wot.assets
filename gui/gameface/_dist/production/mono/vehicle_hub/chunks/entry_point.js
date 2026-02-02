@@ -37,12 +37,12 @@ import {
     d as B,
     aT as $,
     I as D,
-    aU as T,
-    a5 as I,
-    aV as M,
-    aW as S,
-    aX as A,
-    aY as C,
+    aU as M,
+    a5 as T,
+    aV as I,
+    aW as A,
+    aX as C,
+    aY as S,
     aZ as F,
     a_ as z,
     a$ as L,
@@ -68,7 +68,7 @@ import {
     F as oe,
     b9 as ie,
     N as ce,
-    aN as le,
+    aM as le,
     B as de,
     Q as _e,
     ba as me,
@@ -209,7 +209,7 @@ const je = {
                 a.jsx('div', { className: ke.emblem, children: a.jsx(we, { level: r, state: i }) }),
                 a.jsx('div', {
                     className: ke.reward,
-                    children: a.jsx(T, {
+                    children: a.jsx(M, {
                         image: xe({ name: e, icon: t }, u),
                         name: t,
                         size: u,
@@ -256,20 +256,20 @@ const je = {
         content__horizontal: 'Progression_content__horizontal_4ee67b69',
         horizontalBar: 'Progression_horizontalBar_c07ecaf4',
     },
-    Be = I('Wrapper', Ee.wrapper),
-    $e = I('Element', Ee.element),
+    Be = T('Wrapper', Ee.wrapper),
+    $e = T('Element', Ee.element),
     De = 'both',
     Re = 'left',
-    Te = 'right',
-    Ie = 'none';
-function Me({ elements: e }) {
-    const { api: t } = S(),
+    Me = 'right',
+    Te = 'none';
+function Ie({ elements: e }) {
+    const { api: t } = A(),
         { animationScroll: r, applyScroll: i } = t,
-        c = A(t, O.horizontal),
+        c = C(t, O.horizontal),
         [l, d] = n.useState();
     n.useEffect(
         () =>
-            C(() => {
+            S(() => {
                 'idle' === c.type && r.scrollPosition.idle && i(r.scrollPosition.get());
             }),
         [r.scrollPosition, c, i],
@@ -279,12 +279,12 @@ function Me({ elements: e }) {
             s = t.getContainerSize() ?? 0,
             n = t.getWrapperSize() ?? 0,
             o = t.getBounds()[1];
-        d(n >= s ? Ie : a <= 30 ? Te : a >= o - 30 ? Re : De);
+        d(n >= s ? Te : a <= 30 ? Me : a >= o - 30 ? Re : De);
     });
     return (
         o.useLayoutEffect(() => {
             function e() {
-                C(() => {
+                S(() => {
                     _();
                 });
             }
@@ -319,13 +319,13 @@ function Me({ elements: e }) {
         })
     );
 }
-const Se = r(function () {
+const Ae = r(function () {
     const { model: e } = ve(),
         t = e.rewards.get();
-    return a.jsx(M, { children: a.jsx(Me, { elements: t.map((e) => a.jsx(Pe, { ...e }, e.level)) }) });
+    return a.jsx(I, { children: a.jsx(Ie, { elements: t.map((e) => a.jsx(Pe, { ...e }, e.level)) }) });
 });
-var Ae = ((e) => ((e.Available = 'available'), (e.Completed = 'completed'), (e.Disabled = 'disabled'), e))(Ae || {});
-const Ce = {
+var Ce = ((e) => ((e.Available = 'available'), (e.Completed = 'completed'), (e.Disabled = 'disabled'), e))(Ce || {});
+const Se = {
         root: 'Vanity_root_267393fa',
         base: 'Vanity_289eaebe',
         background: 'Vanity_background_b38f23a6',
@@ -341,14 +341,14 @@ const Ce = {
             t = w.resolve('strings'),
             r = e.rewards.get().length > 0 && e.computes.allResearched(),
             n = e.prestigeEmblem.get(),
-            o = e.prestigeState.get() ? e.prestigeState.get() : Ae.Disabled,
+            o = e.prestigeState.get() ? e.prestigeState.get() : Ce.Disabled,
             i = r
                 ? t.readOrEmpty('veh_skill_tree.vanity.completed.subtitle')
                 : t.readOrEmpty(`veh_skill_tree.vanity.${o}.subtitle`),
             c = P({ body: t.readOrEmpty(`veh_skill_tree.vanity.${o}.tooltip`) }),
             l = B({ size: H.sizes.sm }, { medium: { size: H.sizes.md } });
         return a.jsxs('div', {
-            className: s(Ce.base, Ce[`base__${o}`], r && Ce.base__completed),
+            className: s(Se.base, Se[`base__${o}`], r && Se.base__completed),
             children: [
                 r &&
                     a.jsx(D, {
@@ -358,21 +358,21 @@ const Ce = {
                         adaptive: {
                             medium: { width: 530, height: 140, path: 'skillTree.prestige.vanity_bg.big.vanity_bg' },
                         },
-                        className: Ce.background,
+                        className: Se.background,
                     }),
                 a.jsxs('div', {
-                    className: Ce.description,
+                    className: Se.description,
                     children: [
-                        a.jsx('div', { className: Ce.title, children: t.readOrEmpty('veh_skill_tree.vanity.title') }),
-                        a.jsx('div', { className: Ce.subtitle, children: i }),
+                        a.jsx('div', { className: Se.title, children: t.readOrEmpty('veh_skill_tree.vanity.title') }),
+                        a.jsx('div', { className: Se.subtitle, children: i }),
                     ],
                 }),
                 a.jsx('div', {
-                    className: Ce.emblem,
+                    className: Se.emblem,
                     ...c,
                     children:
-                        o === Ae.Disabled
-                            ? a.jsx('div', { className: Ce.disabledEmblem })
+                        o === Ce.Disabled
+                            ? a.jsx('div', { className: Se.disabledEmblem })
                             : a.jsx(H, {
                                   level: n.level,
                                   grade: n.grade ?? 1,
@@ -390,6 +390,7 @@ var ze = ((e) => (
     (e.IN_FORMATION = 'inFormation'),
     (e.NEEDS_REPAIR = 'needsRepair'),
     (e.AVAILABLE = 'researchAvailable'),
+    (e.EMERGENCY_MODE_ENABLED = 'emergencyModeEnabled'),
     e
 ))(ze || {});
 const Le = ['right', 'left'],
@@ -941,28 +942,28 @@ const Bt = 'Points_ebbc956c',
     $t = 'Points_arrowContainer_2bd78abc',
     Dt = 'Points_arrow_cd1850ae',
     Rt = 'Points_arrow__top_2e330546',
-    Tt = 'Points_arrow__right_fa74c47',
-    It = 'Points_arrow__bottom_1b669f6e',
-    Mt = 'Points_arrow__left_1453abe0',
-    St = 'Points_outsideGlow_8ec52358',
-    At = 'Points_insideGlow_ec6f3f05',
-    Ct = 'Wrapper_3f1ea42a',
+    Mt = 'Points_arrow__right_fa74c47',
+    Tt = 'Points_arrow__bottom_1b669f6e',
+    It = 'Points_arrow__left_1453abe0',
+    At = 'Points_outsideGlow_8ec52358',
+    Ct = 'Points_insideGlow_ec6f3f05',
+    St = 'Wrapper_3f1ea42a',
     Ft = u(({ style: e }) =>
         a.jsxs(u.div, {
             className: Bt,
             style: e,
             children: [
-                a.jsx('div', { className: St }),
+                a.jsx('div', { className: At }),
                 a.jsxs('div', {
                     className: $t,
                     children: [
                         a.jsx('div', { className: s(Dt, Rt) }),
+                        a.jsx('div', { className: s(Dt, Mt) }),
                         a.jsx('div', { className: s(Dt, Tt) }),
                         a.jsx('div', { className: s(Dt, It) }),
-                        a.jsx('div', { className: s(Dt, Mt) }),
                     ],
                 }),
-                a.jsx('div', { className: At }),
+                a.jsx('div', { className: Ct }),
             ],
         }),
     ),
@@ -982,7 +983,7 @@ const Bt = 'Points_ebbc956c',
 function Lt({ children: e, showHint: t, type: s }) {
     const r = h(t, { from: { opacity: 0 }, enter: { opacity: 1 }, leave: { opacity: 0 }, config: { duration: 0 } });
     return a.jsxs('div', {
-        className: Ct,
+        className: St,
         children: [
             r(
                 (e, t) =>
@@ -1571,7 +1572,7 @@ const ha = 'Container_2a42bba9',
             o.useLayoutEffect(() => {
                 const e = new ae(),
                     a = () => {
-                        C(() => {
+                        S(() => {
                             i();
                         });
                     };
@@ -1683,12 +1684,12 @@ const ja = r(function () {
     $a = 'Footer_text_d790ec85',
     Da = 'Footer_currency_408955e2',
     Ra = 'Footer_value_2988e411',
-    Ta = 'Footer_base__enough_4308958a',
-    Ia = 'Footer_button_7e68acf0',
-    Ma = 'Footer_buttonText_881ef4c9',
-    Sa = w.resolve('intl'),
-    Aa = w.resolve('strings'),
-    Ca = r(function () {
+    Ma = 'Footer_base__enough_4308958a',
+    Ta = 'Footer_button_7e68acf0',
+    Ia = 'Footer_buttonText_881ef4c9',
+    Aa = w.resolve('intl'),
+    Ca = w.resolve('strings'),
+    Sa = r(function () {
         const { model: e, controls: t } = va(),
             r = e.researchAvailability.get(),
             n = e.computes.selectedPerks(),
@@ -1700,9 +1701,12 @@ const ja = r(function () {
                 { medium: { buttonSize: ce.medium, iconSize: ie.medium } },
             ),
             { tooltip: d, description: _ } = e.computes.textParams(),
-            m = P({ body: Aa.readOrEmpty(`veh_skill_tree.research.${d}`, 'silent') });
+            m = P({
+                body: Ca.readOr(`veh_skill_tree.research.${d}.body`, () => Ca.read(`veh_skill_tree.research.${d}`)),
+                header: Ca.read(`veh_skill_tree.research.${d}.header`),
+            });
         return a.jsxs('div', {
-            className: s(wa, i && Ta),
+            className: s(wa, i && Ma),
             children: [
                 a.jsx('div', { className: Pa }),
                 a.jsx('div', {
@@ -1722,7 +1726,7 @@ const ja = r(function () {
                                               className: Da,
                                               children: a.jsx('div', {
                                                   className: Ra,
-                                                  children: Sa.formatNumber('integral', o),
+                                                  children: Aa.formatNumber('integral', o),
                                               }),
                                           }),
                                           a.jsx(ja, {}),
@@ -1734,15 +1738,15 @@ const ja = r(function () {
                                       size: l.buttonSize,
                                       theme: _e.primary,
                                       onClick: t.research,
-                                      classNames: { base: Ia },
+                                      classNames: { base: Ta },
                                       children: a.jsx('div', {
-                                          className: Ma,
-                                          children: Aa.readOrEmpty('veh_skill_tree.research.button.label'),
+                                          className: Ia,
+                                          children: Ca.readOrEmpty('veh_skill_tree.research.button.label'),
                                       }),
                                   }),
                               ],
                           })
-                        : a.jsx('div', { className: $a, children: Aa.readOrEmpty(`veh_skill_tree.research.${_}`) }),
+                        : a.jsx('div', { className: $a, children: Ca.readOrEmpty(`veh_skill_tree.research.${_}`) }),
                 }),
             ],
         });
@@ -1802,4 +1806,4 @@ const ja = r(function () {
             }),
         });
     });
-export { Ne as A, rt as E, ga as F, be as M, Se as P, pa as T, Fe as V, Ke as a, Va as b, Ca as c, ge as d, fe as u };
+export { Ne as A, rt as E, ga as F, be as M, Ae as P, pa as T, Fe as V, Ke as a, Va as b, Sa as c, ge as d, fe as u };

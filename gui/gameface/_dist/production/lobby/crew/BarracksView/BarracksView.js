@@ -4369,12 +4369,14 @@
                 }
                 function qn(e, t, n = []) {
                     const a = (0, u.useRef)(0),
-                        r = (0, u.useCallback)(() => window.clearInterval(a.current), n || []);
+                        r = (0, u.useCallback)(() => {
+                            (window.clearInterval(a.current), (a.current = 0));
+                        }, n || []);
                     (0, u.useEffect)(() => r, [r]);
                     const s = (null != n ? n : []).concat([t]);
                     return [
                         (0, u.useCallback)((n) => {
-                            ((a.current = window.setInterval(() => e(n, !0), t)), e(n, !1));
+                            (0 !== a.current && r(), (a.current = window.setInterval(() => e(n, !0), t)), e(n, !1));
                         }, s),
                         r,
                     ];

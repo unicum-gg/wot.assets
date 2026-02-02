@@ -172,6 +172,11 @@ html[lang='th'] input {
     flex: 1 1 auto;
     width: 100%;
 }
+.FormatText_db904f12 span {
+    flex-wrap: wrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
 
 .FormatText_nowrap_ff69eca3 {
     white-space: nowrap;

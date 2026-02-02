@@ -1688,7 +1688,6 @@ function St(e, t) {
             for (
                 var a = s.stack.split('\n'), i = r.stack.split('\n'), o = a.length - 1, l = i.length - 1;
                 1 <= o && 0 <= l && a[o] !== i[l];
-
             )
                 l--;
             for (; 1 <= o && 0 <= l; o--, l--)
@@ -2023,7 +2022,6 @@ var Kt,
                     (Kt = Kt || document.createElement('div')).innerHTML = '<svg>' + t.valueOf().toString() + '</svg>',
                         t = Kt.firstChild;
                     e.firstChild;
-
                 )
                     e.removeChild(e.firstChild);
                 for (; t.firstChild; ) e.appendChild(t.firstChild);
@@ -6136,7 +6134,6 @@ function Ns(e, t, n) {
                                         r = n,
                                         n = t.child;
                                     null !== n;
-
                                 )
                                     ((e = r),
                                         ((i = n).flags &= 14680066),
@@ -7529,7 +7526,6 @@ function af(e, t, n) {
                                                         f !== i || (0 !== r && 3 !== f.nodeType) || (u = o + r),
                                                         3 === f.nodeType && (o += f.nodeValue.length),
                                                         null !== (p = f.firstChild);
-
                                                 )
                                                     ((d = f), (f = p));
                                                 for (;;) {
@@ -8180,7 +8176,6 @@ oc = function (e, t, n) {
                             n = il(t, null, r, n),
                             t.child = n;
                         n;
-
                     )
                         ((n.flags = (-3 & n.flags) | 4096), (n = n.sibling));
                 } else {
@@ -8685,9 +8680,9 @@ function qf(e) {
     throw new Error(
         'number' == typeof e
             ? '[MobX] minified error nr: ' +
-              e +
-              (n.length ? ' ' + n.map(String).join(',') : '') +
-              '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
+                  e +
+                  (n.length ? ' ' + n.map(String).join(',') : '') +
+                  '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
             : '[MobX] ' + e,
     );
 }
@@ -10942,7 +10937,6 @@ var Cv,
                                 i = !1,
                                 o = Ad(t.data_.keys());
                             !(n = o()).done;
-
                         ) {
                             var l = n.value;
                             if (!r.has(l))
@@ -12350,12 +12344,12 @@ var ty,
             i
                 ? Boolean(
                       t &&
-                          i.inputs &&
-                          (function (e, t) {
-                              if (e.length !== t.length) return !1;
-                              for (let n = 0; n < e.length; n++) if (e[n] !== t[n]) return !1;
-                              return !0;
-                          })(t, i.inputs),
+                      i.inputs &&
+                      (function (e, t) {
+                          if (e.length !== t.length) return !1;
+                          for (let n = 0; n < e.length; n++) if (e[n] !== t[n]) return !1;
+                          return !0;
+                      })(t, i.inputs),
                   ) || (i = { inputs: t, result: e() })
                 : (i = n);
             return (

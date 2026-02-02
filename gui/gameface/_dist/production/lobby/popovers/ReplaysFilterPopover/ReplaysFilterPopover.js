@@ -1832,7 +1832,6 @@
                                                                     );
                                                                 })(o.keys());
                                                             !(e = u()).done;
-
                                                         )
                                                             r(e.value, t);
                                                     },
@@ -2481,12 +2480,14 @@
                     Ye = (e, t, u) => (u < e ? e : u > t ? t : u);
                 function Xe(e, t, u = []) {
                     const n = (0, r.useRef)(0),
-                        o = (0, r.useCallback)(() => window.clearInterval(n.current), u || []);
+                        o = (0, r.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, u || []);
                     (0, r.useEffect)(() => o, [o]);
                     const a = (null != u ? u : []).concat([t]);
                     return [
                         (0, r.useCallback)((u) => {
-                            ((n.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
+                            (0 !== n.current && o(), (n.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
                         }, a),
                         o,
                     ];
@@ -2541,7 +2542,6 @@
                                         );
                                     })(t(e).values());
                                 !(n = o()).done;
-
                             )
                                 (0, n.value)(...u);
                         };

@@ -1,15 +1,15 @@
-import { j as s, f as a, R as e } from './vendor.js';
-import { Y as r } from './lib.js';
+import { R as s, j as a, f as e } from './vendor.js';
+import { I as r } from './lib.js';
 const n = { base: 'Divider_1632862f' };
-function t(e) {
-    return s.jsx(r, { path: 'ui.noise', className: a(n.base, e.className), fit: 'cover' });
+function t(s) {
+    return a.jsx(r, { path: 'ui.noise', className: e(n.base, s.className), fit: 'cover' });
 }
-function i({ children: a, className: r }) {
-    const n = e.Children.toArray(a);
+function i({ children: e, className: r }) {
+    const n = s.Children.toArray(e);
     return n.length <= 1
-        ? a
-        : s.jsx(s.Fragment, {
-              children: n.map((a, n) => s.jsxs(e.Fragment, { children: [n > 0 && s.jsx(t, { className: r }), a] }, n)),
+        ? e
+        : a.jsx(a.Fragment, {
+              children: n.map((e, n) => a.jsxs(s.Fragment, { children: [n > 0 && a.jsx(t, { className: r }), e] }, n)),
           });
 }
-export { t as D, i as a };
+export { i as D, t as a };

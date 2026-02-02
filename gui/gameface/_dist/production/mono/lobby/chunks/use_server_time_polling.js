@@ -1,5 +1,5 @@
 import './vendor.js';
-import { dc as o } from './lib.js';
+import { dl as o } from './lib.js';
 function i(i, r, s) {
     o(
         () => {

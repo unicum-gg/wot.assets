@@ -1,0 +1,43 @@
+import { r as a, j as e, f as s } from './vendor.js';
+import { o as t, d1 as i, a0 as m, au as l, dM as o } from './lib.js';
+const n = { small: 'small', big: 'big' },
+    r = { full: 'full', medium: 'medium', small: 'small' },
+    d = { appear: 'appear', fadeIn: 'fadeIn', slideUpIn: 'slideUpIn' },
+    c = { battlePass: 'battlePass', events: 'events', missions: 'missions' },
+    u = 'DateRange_8756cb54',
+    p = 'DateRange_label_a9603586',
+    f = 'DateRange_image_6a8d9b5e',
+    h = t.resolve('strings'),
+    g = { full: 'full', numeric: 'numeric', compact: 'compact' },
+    D = { [g.full]: i.DayMonthFull, [g.numeric]: i.DayMonthNumeric };
+function b({ startDate: t, endDate: i, className: n, size: d, isAdaptive: c, isMode: x }) {
+    const v = o,
+        _ = d === r.medium,
+        j = d === r.small,
+        w = a.useMemo(
+            () => (j || (c && _ && x) ? b.format.compact : c || _ ? b.format.numeric : b.format.full),
+            [c, _, x, j],
+        );
+    return e.jsxs('div', {
+        className: s(u, n),
+        children: [
+            e.jsx(m, {
+                className: f,
+                path: 'ui_kit.datetime.x16x16.cooldown',
+                width: 18,
+                height: 17,
+                adaptive: { medium: { path: 'ui_kit.datetime.x24x24.cooldown', width: 24, height: 24 } },
+            }),
+            w !== g.compact
+                ? e.jsx(l, {
+                      className: p,
+                      text: h.readOrEmpty('user_missions.common.daterange.divider'),
+                      split: !0,
+                      params: { startDate: v(t, D[w]), endDate: v(i, D[w]) },
+                  })
+                : null,
+        ],
+    });
+}
+b.format = g;
+export { b as D, d as a, c as b, r as c, n as w };

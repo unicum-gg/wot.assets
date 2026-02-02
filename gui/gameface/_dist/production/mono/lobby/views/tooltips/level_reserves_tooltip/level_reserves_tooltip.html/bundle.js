@@ -1,13 +1,13 @@
-import { I as e, j as s, r as l } from '../../../../chunks/vendor.js';
-import { i as a, n as t, cB as o, R as r, A as i, cn as v, ch as p } from '../../../../chunks/lib.js';
+import { Q as e, j as s, r as l } from '../../../../chunks/vendor.js';
+import { i as a, n as t, d1 as o, R as r, A as i, co as v, cm as p } from '../../../../chunks/lib.js';
 import { D as c } from '../../../../chunks/divider.js';
 import { H as n } from '../../../../chunks/head_decorator.js';
-const [_, d] = a()(
+const [d, m] = a()(
         ({ observableModel: e }) => ({ ...e.primitives(['hasOptionalReserves']), levels: e.array('levels') }),
         t,
     ),
-    h = 'LevelReservesTooltip_2862b15f',
-    m = 'LevelReservesTooltip_title_64be79bb',
+    _ = 'LevelReservesTooltip_2862b15f',
+    h = 'LevelReservesTooltip_title_64be79bb',
     j = 'LevelReservesTooltip_description_91eb551b',
     f = 'LevelReservesTooltip_levelTitle_f50b450',
     x = 'LevelReservesTooltip_levelBlock_83ac4a4c',
@@ -16,19 +16,19 @@ const [_, d] = a()(
     T = 'LevelReservesTooltip_header_759d67f',
     L = 'LevelReservesTooltip_footer_b684b19c',
     g = e(function () {
-        const { model: e } = d(),
+        const { model: e } = m(),
             a = e.hasOptionalReserves.get(),
             t = e.levels.get(),
             p = a ? t.length + 1 : t.length;
         return s.jsx(o, {
             children: s.jsx(o.Decorator, {
                 children: s.jsxs('div', {
-                    className: h,
+                    className: _,
                     children: [
                         s.jsxs(n, {
                             className: T,
                             children: [
-                                s.jsx(r, { path: 'fl_tooltips.levelReserves.title', className: m }),
+                                s.jsx(r, { path: 'fl_tooltips.levelReserves.title', className: h }),
                                 s.jsx(r, { path: 'fl_tooltips.levelReserves.desc', className: j }),
                             ],
                         }),
@@ -106,4 +106,4 @@ const [_, d] = a()(
             }),
         });
     });
-p(s.jsx(_, { children: s.jsx(g, {}) }));
+p(s.jsx(d, { children: s.jsx(g, {}) }));

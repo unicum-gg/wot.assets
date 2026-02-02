@@ -1,4 +1,4 @@
-import { ae as t } from './lib.js';
+import { af as t } from './lib.js';
 const n = {
         ENTRY_POINT: {
             icon: { emptyIconBrightness: 0.3, boxesIconBrightness: 0.3 },

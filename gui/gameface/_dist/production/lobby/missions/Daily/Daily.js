@@ -3369,12 +3369,14 @@
                 }
                 function Ct(e, t, u = []) {
                     const n = (0, r.useRef)(0),
-                        a = (0, r.useCallback)(() => window.clearInterval(n.current), u || []);
+                        a = (0, r.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, u || []);
                     (0, r.useEffect)(() => a, [a]);
                     const s = (null != u ? u : []).concat([t]);
                     return [
                         (0, r.useCallback)((u) => {
-                            ((n.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
+                            (0 !== n.current && a(), (n.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
                         }, s),
                         a,
                     ];

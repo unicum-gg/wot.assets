@@ -1770,7 +1770,6 @@
                                                         );
                                                     })(e);
                                                 !(i = r()).done;
-
                                             ) {
                                                 const e = i.value.contentRect,
                                                     o = e.width,

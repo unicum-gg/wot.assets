@@ -1,5 +1,5 @@
-import { j as o, w as s } from './vendor.js';
-import { f as e, p as n } from './lib.js';
+import { j as o, J as s } from './vendor.js';
+import { dA as n, an as e } from './lib.js';
 const l = 'CloseButton_49a682e7',
     a = 'CloseButton_icon_b31f68a5',
     u = 'CloseButton_iconHover_b5894825',
@@ -12,20 +12,20 @@ const l = 'CloseButton_49a682e7',
         onMouseLeave: v,
         onMouseDown: m,
         onMouseUp: _,
-        soundHover: p = 'highlight',
-        soundClick: M = 'play',
+        soundHover: M = 'highlight',
+        soundClick: p = 'play',
     }) => {
-        e(c);
+        n(c);
         return o.jsxs('div', {
             className: s(l, i.close, d),
             onMouseEnter: (o) => {
-                (null == t || t(o), n.sound(p));
+                (null == t || t(o), e.sound(M));
             },
             onMouseLeave: (o) => {
                 null == v || v(o);
             },
             onMouseDown: (o) => {
-                (null == m || m(o), n.sound(M));
+                (null == m || m(o), e.sound(p));
             },
             onMouseUp: (o) => {
                 null == _ || _(o);

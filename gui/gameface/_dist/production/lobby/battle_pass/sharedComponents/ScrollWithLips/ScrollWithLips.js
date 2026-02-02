@@ -1269,12 +1269,14 @@
                 var r = n(7363);
                 function o(e, t, n = []) {
                     const o = (0, r.useRef)(0),
-                        a = (0, r.useCallback)(() => window.clearInterval(o.current), n || []);
+                        a = (0, r.useCallback)(() => {
+                            (window.clearInterval(o.current), (o.current = 0));
+                        }, n || []);
                     (0, r.useEffect)(() => a, [a]);
                     const s = (null != n ? n : []).concat([t]);
                     return [
                         (0, r.useCallback)((n) => {
-                            ((o.current = window.setInterval(() => e(n, !0), t)), e(n, !1));
+                            (0 !== o.current && a(), (o.current = window.setInterval(() => e(n, !0), t)), e(n, !1));
                         }, s),
                         a,
                     ];

@@ -1427,9 +1427,7 @@ const comparer = {
         sameValue: sameValueComparer,
         shallow: shallowComparer,
     },
-    mouseButtons = { left: 0 },
-    CHINESE_LANGUAGE_CODES = new Set(['zh_cn', 'zh_sg', 'zh_tw']),
-    JAPANESE_LANGUAGE_CODE = 'ja';
+    mouseButtons = { left: 0 };
 function splitChinese(e) {
     const t = [],
         r = e
@@ -1454,17 +1452,28 @@ function splitJapanese(e) {
     for (const [s] of r) t.push(s);
     return t;
 }
+function splitKorean(e) {
+    const t = [],
+        r = e
+            .replace(/&nbsp;/g, ' ')
+            .matchAll(
+                /\s+|\u00A0|[【「(（『《]?[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F%](?:[。!?、…・ー—–!%?）)】」》『]+)?|[「【(（『《]?\d+(?:,\d{3})*(?:\s*[a-zA-Z\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F/%]+)?(?:[。，、:;：；!?）)】」》・%)、]+)?|[「【(（『《]?[a-zA-Z0-9]+(?:[-/][a-zA-Z0-9]+)*(?:\s*[。!?、…・ー—–!?》】」）)』]+)?|[^\s]/gu,
+            );
+    for (const [s] of r) t.push(s);
+    return t;
+}
+const splitters = { zh_cn: splitChinese, zh_sg: splitChinese, zh_tw: splitChinese, ja: splitJapanese, ko: splitKorean };
+function defaultSplit(e) {
+    return e.split(' ');
+}
+const langsWithoutSpace = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko']);
 function addSpaceAndMap(e, t, r) {
-    return CHINESE_LANGUAGE_CODES.has(t) || t === JAPANESE_LANGUAGE_CODE
+    return langsWithoutSpace.has(t)
         ? e.map(r)
         : e.map((e, t, s) => (t === s.length - 1 ? r(e, t, s) : r(`${e} `, t, s)));
 }
 function splitLocale(e, t) {
-    return CHINESE_LANGUAGE_CODES.has(t)
-        ? splitChinese(e)
-        : t === JAPANESE_LANGUAGE_CODE
-          ? splitJapanese(e)
-          : e.split(' ');
+    return (splitters[t] ?? defaultSplit)(e);
 }
 const MediaContext = reactExports.createContext(void 0);
 function useMediaContext() {
@@ -1787,12 +1796,14 @@ const useLayoutReady = (e, t) => {
 };
 function useRepeatCallback(e, t, r = []) {
     const s = reactExports.useRef(0),
-        n = reactExports.useCallback(() => window.clearInterval(s.current), r || []);
+        n = reactExports.useCallback(() => {
+            (window.clearInterval(s.current), (s.current = 0));
+        }, r || []);
     reactExports.useEffect(() => n, [n]);
     const o = (r ?? []).concat([t]);
     return [
         reactExports.useCallback((r) => {
-            ((s.current = window.setInterval(() => e(r, !0), t)), e(r, !1));
+            (0 !== s.current && n(), (s.current = window.setInterval(() => e(r, !0), t)), e(r, !1));
         }, o),
         n,
     ];
@@ -2042,6 +2053,12 @@ const soundConfig = {
     decreaseAmountRoll: createSoundPlay('cons_ammo_roll_minus'),
     close: createSoundPlay('cancelcloseno'),
     'show-context-menu': createSoundPlay('tabb'),
+    progressSimple: createSoundPlay('gui_hangar_progressbar_simple'),
+    increaseDelta: createSoundPlay('gui_hangar_progressbar_delta_increase'),
+    decreaseDelta: createSoundPlay('gui_hangar_progressbar_delta_decrease'),
+    increaseDeltaMax: createSoundPlay('gui_hangar_progressbar_delta_max'),
+    pointerGrab: createSoundPlay('gui_hangar_progressbar_pointer_grab'),
+    pointerDrag: createSoundPlay('gui_hangar_progressbar_pointer_drag'),
 };
 function createSoundPlay(e) {
     return () => {
@@ -3289,6 +3306,7 @@ const formatValue = (e, t) => {
         equipCoin: 'equipCoin',
         eliteXp: 'eliteXp',
         depot: 'depot',
+        vehicle: 'vehicle',
         crew: 'crew',
         custom: 'custom',
     },
@@ -4321,7 +4339,7 @@ const defaultSettings = {
                         const s = d.current;
                         if (!s) return;
                         const n = a(s, e);
-                        f.scrollPosition.get() !== n &&
+                        f.scrollPosition.goal !== n &&
                             h.start({
                                 scrollPosition: n,
                                 immediate: t,
@@ -4333,7 +4351,7 @@ const defaultSettings = {
                                 },
                             });
                     },
-                    [h, i.animationConfig, f.scrollPosition, _],
+                    [f.scrollPosition, h, i.animationConfig, _],
                 ),
                 b = reactExports.useCallback(
                     function (e) {
@@ -4361,7 +4379,7 @@ const defaultSettings = {
                     },
                     [f.scrollPosition, b, E, l],
                 ),
-                A = reactExports.useCallback(
+                y = reactExports.useCallback(
                     function () {
                         const e = d.current;
                         e && (x(a(e, f.scrollPosition.goal), { immediate: !0 }), E.trigger('resizeHandled'));
@@ -4372,9 +4390,9 @@ const defaultSettings = {
                 const t = e.target;
                 if (!(t instanceof HTMLElement)) return;
                 const r = n(t);
-                m.current.wrapper !== r && A();
+                m.current.wrapper !== r && y();
             });
-            const y = useEvent(function () {
+            const A = useEvent(function () {
                     const t = d.current;
                     if (!t) return;
                     const r = e(t),
@@ -4388,7 +4406,7 @@ const defaultSettings = {
                     }
                 }),
                 F = useSkipFrame();
-            reactExports.useEffect(() => addEventListener(window, 'resize', () => F.run(A)), [A, F]);
+            reactExports.useEffect(() => addEventListener(window, 'resize', () => F.run(y)), [y, F]);
             return reactExports.useMemo(
                 () => ({
                     getWrapperSize: () => (p.current ? n(p.current) : void 0),
@@ -4405,12 +4423,12 @@ const defaultSettings = {
                     wrapperRef: p,
                     scrollPosition: h,
                     animationScroll: f,
-                    recalculateContent: y,
+                    recalculateContent: A,
                     disabled: l,
                     setDisabled: c,
                     events: { on: E.on, off: E.off },
                 }),
-                [i, v, x, b, h, f, y, l, c, E.on, E.off],
+                [i, v, x, b, h, f, A, l, c, E.on, E.off],
             );
         };
     },
@@ -4428,7 +4446,29 @@ const defaultSettings = {
         triggerMouseMoveOnUpdate: !0,
     },
     useApi$1 = createApiHook(DEFAULT_HORIZONTAL_API_CONFIG),
-    scrollOrientations = { horizontal: 'horizontal', vertical: 'vertical' },
+    IGNORE_DEFAULT = [2, 2];
+function useScrollBounding(e, [t, r] = IGNORE_DEFAULT) {
+    const [s, n] = reactExports.useState(!0),
+        [o, a] = reactExports.useState(!0);
+    return (
+        reactExports.useEffect(() => {
+            function s() {
+                if (!e.contentRef.current) return;
+                const s = e.animationScroll.scrollPosition.get(),
+                    [o, u] = e.getBounds(),
+                    i = s >= u - r;
+                (n(s <= o + t), a(i));
+            }
+            return new DisposeBuilder()
+                .add(createLayoutReadyInEffect(s))
+                .add(e.events.on('resizeHandled', s))
+                .add(e.events.on('recalculateContent', s))
+                .add(e.events.on('change', s)).dispose;
+        }, [e, t, r]),
+        [s, o]
+    );
+}
+const scrollOrientations = { horizontal: 'horizontal', vertical: 'vertical' },
     CLAMPED_ARROW_STEP_TIMEOUT_DEFAULT = 100,
     MOUSE_BUTTON_LEFT = 0,
     root$4 = 'Thumb_root_830942bb',
@@ -5159,28 +5199,6 @@ function Base$5({ children: e }) {
     return jsxRuntimeExports.jsx(Context$1.Provider, { value: r, children: e });
 }
 Area.Default = DefaultScroll;
-const IGNORE_DEFAULT = [2, 2];
-function useScrollBounding(e, [t, r] = IGNORE_DEFAULT) {
-    const [s, n] = reactExports.useState(!0),
-        [o, a] = reactExports.useState(!0);
-    return (
-        reactExports.useEffect(() => {
-            function s() {
-                if (!e.contentRef.current) return;
-                const s = e.animationScroll.scrollPosition.get(),
-                    [o, u] = e.getBounds(),
-                    i = s >= u - r;
-                (n(s <= o + t), a(i));
-            }
-            return new DisposeBuilder()
-                .add(createLayoutReadyInEffect(s))
-                .add(e.events.on('resizeHandled', s))
-                .add(e.events.on('recalculateContent', s))
-                .add(e.events.on('change', s)).dispose;
-        }, [e, t, r]),
-        [s, o]
-    );
-}
 const base$7 = 'SceneWrapper_52fcfc1e',
     base__down = 'SceneWrapper_base__down_4ece5089',
     base__moveSpaceDisabled = 'SceneWrapper_base__moveSpaceDisabled_1b1cd939',
@@ -7775,16 +7793,16 @@ export {
     ModelRouterProvider as aB,
     createSoundPlay as aC,
     runView as aD,
-    resize$1 as aE,
-    Tooltip as aF,
-    ExtendedText as aG,
-    normilizeVehicleType as aH,
-    columnBehaviours as aI,
-    useTableContext as aJ,
-    Table as aK,
-    tableParts as aL,
-    TableProvider as aM,
-    types$1 as aN,
+    Tooltip as aE,
+    ExtendedText as aF,
+    normilizeVehicleType as aG,
+    columnBehaviours as aH,
+    useTableContext as aI,
+    Table as aJ,
+    tableParts as aK,
+    TableProvider as aL,
+    types$1 as aM,
+    resize$1 as aN,
     setSidePaddingsRem$1 as aO,
     head as aP,
     assert as aQ,

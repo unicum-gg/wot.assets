@@ -1,80 +1,84 @@
 import { q as e, j as s } from '../../../../chunks/vendor.js';
-import { i as a, t, r as p, ad as r, p as d, k as m } from '../../../../chunks/lib.js';
-import { B as o } from '../../../../chunks/breed.js';
-/* empty css                       */ const [c, l] = a('PetTooltipModel')(
+import { i as t, t as a, r as p, ac as r, F as m, p as o, k as d } from '../../../../chunks/lib.js';
+import { B as l } from '../../../../chunks/breed.js';
+/* empty css                       */ const [c, i] = t('PetTooltipModel')(
         ({ observableModel: e }) => ({ root: e.object(), bonuses: e.arrayClone('promotionBonuses') }),
-        t,
+        a,
     ),
-    i = 'App_e5b11dda',
-    n = 'App_bgFlare_c6313b44',
-    _ = 'App_petIcon_d684143d',
-    b = 'App_divider_5947fd2b',
-    y = 'App_tooltipBase_c42f572b',
-    j = 'App_header_ffbe7d49',
+    n = 'App_e5b11dda',
+    _ = 'App_bgFlare_c6313b44',
+    b = 'App_petIcon_d684143d',
+    j = 'App_divider_5947fd2b',
+    x = 'App_tooltipBase_c42f572b',
+    y = 'App_header_ffbe7d49',
     N = 'App_title_0',
-    x = 'App_petName_b49c6143',
-    u = 'App_breed_50b287e6',
+    u = 'App_petName_b49c6143',
+    f = 'App_breed_50b287e6',
     v = 'App_description_582521f4',
-    f = 'App_bonusesList_f32c39e6',
-    h = 'App_card_82efbffd',
-    A = 'App_bonusIcon_f8777acb',
-    g = 'App_text_a9b1bc33',
-    $ = p.resolve('images'),
-    E = p.resolve('strings'),
-    O = e(function () {
-        const { model: e } = l(),
-            { breedName: a, petID: t, petNameID: p, petType: m } = e.root.get(),
+    A = 'App_bonusesList_f32c39e6',
+    g = 'App_card_82efbffd',
+    h = 'App_bonusIcon_f8777acb',
+    $ = 'App_text_a9b1bc33',
+    E = p.resolve('images'),
+    O = p.resolve('strings'),
+    k = e(function () {
+        const { model: e } = i(),
+            { breedName: t, petID: a, petNameID: p, petType: d } = e.root.get(),
             c = e.bonuses.get();
         return s.jsxs(r, {
-            className: i,
+            className: n,
             children: [
                 s.jsx('div', {
-                    className: _,
-                    style: { backgroundImage: `url(${$.readOrEmpty(`petSystem.pets.x96x96.pet_${t}`)})` },
+                    className: b,
+                    style: { backgroundImage: `url(${E.readOrEmpty(`petSystem.pets.x96x96.pet_${a}`)})` },
                 }),
                 s.jsxs(r.Decorator, {
-                    className: y,
+                    className: x,
                     children: [
                         s.jsx('div', {
-                            className: n,
-                            style: { backgroundImage: `url(${$.readOrEmpty('petSystem.tooltips.bg_flare')})` },
+                            className: _,
+                            style: { backgroundImage: `url(${E.readOrEmpty('petSystem.tooltips.bg_flare')})` },
                         }),
                         s.jsxs('div', {
-                            className: j,
+                            className: y,
                             children: [
-                                s.jsx('div', { className: x, children: E.readOrEmpty(`pet_names.petName_${p}`) }),
-                                s.jsx(o, {
-                                    className: u,
-                                    petType: E.readOrEmpty(`pet_system.petType.${m}`),
-                                    breedName: E.readOrEmpty(`pet_system.breedName.${a}`),
+                                s.jsx('div', { className: u, children: O.readOrEmpty(`pet_names.petName_${p}`) }),
+                                s.jsx(l, {
+                                    className: f,
+                                    petType: O.readOrEmpty(`pet_system.petType.${d}`),
+                                    breedName: O.readOrEmpty(`pet_system.breedName.${t}`),
                                 }),
                             ],
                         }),
-                        s.jsx('div', { className: b }),
-                        s.jsx('div', { className: v, children: E.readOrEmpty(`pet_system.petDescription.${a}`) }),
-                        s.jsx('div', { className: b }),
+                        s.jsx('div', { className: j }),
+                        s.jsx(m, { text: O.readOrEmpty(`pet_system.petDescription.${t}`), className: v, split: !0 }),
+                        s.jsx('div', { className: j }),
                         s.jsx('div', {
-                            className: f,
-                            children: d(c, (e) =>
+                            className: A,
+                            children: o(c, (e) =>
                                 s.jsxs(
                                     'div',
                                     {
-                                        className: h,
+                                        className: g,
                                         children: [
                                             s.jsx('div', {
-                                                className: A,
+                                                className: h,
                                                 style: {
-                                                    backgroundImage: `url(${$.readOrEmpty(`petSystem.promotion.${e}_sm`)})`,
+                                                    backgroundImage: `url(${E.readOrEmpty(`petSystem.promotion.${e}_sm`)})`,
                                                 },
                                             }),
                                             s.jsxs('div', {
-                                                className: g,
+                                                className: $,
                                                 children: [
-                                                    s.jsx('div', {
+                                                    s.jsx(m, {
                                                         className: N,
-                                                        children: E.readOrEmpty(`pet_system.bonus.${e}.title`),
+                                                        text: O.readOrEmpty(`pet_system.bonus.${e}.title`),
+                                                        split: !0,
                                                     }),
-                                                    E.readOrEmpty(`pet_system.bonus.${e}.description`),
+                                                    s.jsx(m, {
+                                                        text: O.readOrEmpty(`pet_system.bonus.${e}.description`),
+                                                        split: !0,
+                                                    }),
                                                 ],
                                             }),
                                         ],
@@ -88,4 +92,4 @@ import { B as o } from '../../../../chunks/breed.js';
             ],
         });
     });
-m(s.jsx(c, { children: s.jsx(O, {}) }));
+d(s.jsx(c, { children: s.jsx(k, {}) }));

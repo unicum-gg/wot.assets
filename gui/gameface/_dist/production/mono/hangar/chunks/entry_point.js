@@ -1,12 +1,12 @@
-import { j as e, f as t, d as s, o as n, g as o, v as a, r } from './vendor.js';
-import { dl as i, dm as c, dn as d, r as l, dp as u, dq as m, i as p, cp as h, T as x, dr as _ } from './lib.js';
-const y = { base: 'AlertIcon_7dcecd8f', shadow: 'AlertIcon_shadow_daf8370', icon: 'AlertIcon_icon_35ce98b5' };
-function b({ icon: s, hasShadow: n = !1, className: o }) {
+import { j as e, f as t, d as s, o as n, g as o, w as a, r } from './vendor.js';
+import { dt as i, du as c, dv as d, r as l, dw as u, dx as m, i as p, bB as h, k as x, bz as _ } from './lib.js';
+const b = { base: 'AlertIcon_7dcecd8f', shadow: 'AlertIcon_shadow_daf8370', icon: 'AlertIcon_icon_35ce98b5' };
+function y({ icon: s, hasShadow: n = !1, className: o }) {
     return e.jsxs('div', {
-        className: t(y.base, o),
+        className: t(b.base, o),
         children: [
-            n && e.jsx('div', { className: y.shadow }),
-            e.jsx('div', { className: y.icon, style: { backgroundImage: `url(${s})` } }),
+            n && e.jsx('div', { className: b.shadow }),
+            e.jsx('div', { className: b.icon, style: { backgroundImage: `url(${s})` } }),
         ],
     });
 }
@@ -37,17 +37,17 @@ class f extends i {
     }
 }
 const v = 'lootbox_images',
-    N = 'lootbox_sounds';
+    w = 'lootbox_sounds';
 (l.register(v, s(() => new u(window.R.images)).singleton()),
-    l.register(N, s(() => new f(window.R.sounds)).singleton()));
-const w = l.resolve(v),
+    l.register(w, s(() => new f(window.R.sounds)).singleton()));
+const N = l.resolve(v),
     E = l.resolve('videos'),
-    I = l.resolve(N),
+    I = l.resolve(w),
     j = l.resolve('strings'),
     A = (e, t) => {
         switch (e) {
             case R.images:
-                return w.readOrEmpty(t, 'silent');
+                return N.readOrEmpty(t, 'silent');
             case R.videos:
                 return E.readOrEmpty(t, 'silent');
             case R.sounds:
@@ -233,7 +233,7 @@ function Y({ image: s, style: n }) {
         ],
     });
 }
-const q = {
+const Z = {
     base: 'App_db696922',
     content: 'App_content_d4b05d62',
     base__disabled: 'App_base__disabled_0',
@@ -245,7 +245,7 @@ const q = {
     alert__boxes: 'App_alert__boxes_ed652a30',
     icon: 'App_icon_879c8615',
 };
-const Z = a(function () {
+const q = a(function () {
     const s = l.resolve('sounds'),
         n = l.resolve('aliases'),
         o = l.resolve('views'),
@@ -256,20 +256,20 @@ const Z = a(function () {
         [i, c] = r.useState(!1),
         { model: d, controls: u } = F(),
         { isEnabled: m, boxesCount: p, hasNew: h } = d.root.get(),
-        y = d.computes.getState(),
+        b = d.computes.getState(),
         { images: g, texts: f, sounds: v } = d.resources.get(),
-        N = d.style.get(),
-        { opacityCustomNewBox: w, opacityCustom: E, opacityDiff: I, animationDuration: R } = N.shine,
-        j = i ? 1 + N.icon[`${y}IconBrightness`] : 1,
-        A = { opacity: (h ? w : E) + (i ? I : 0), animationDuration: R },
-        $ = y === V.Empty ? g.iconEmpty : g.iconGold;
+        w = d.style.get(),
+        { opacityCustomNewBox: N, opacityCustom: E, opacityDiff: I, animationDuration: R } = w.shine,
+        j = i ? 1 + w.icon[`${b}IconBrightness`] : 1,
+        A = { opacity: (h ? N : E) + (i ? I : 0), animationDuration: R },
+        $ = b === V.Empty ? g.iconEmpty : g.iconGold;
     return e.jsx('div', {
-        className: t(q.base, !m && q.base__disabled),
+        className: t(Z.base, !m && Z.base__disabled),
         children: e.jsx('div', {
-            className: q.content,
+            className: Z.content,
             ...a,
             children: e.jsxs('div', {
-                className: q.wrapper,
+                className: Z.wrapper,
                 onClick: function () {
                     (s.play('yes1'), u.showLanding());
                 },
@@ -278,21 +278,21 @@ const Z = a(function () {
                 },
                 onMouseLeave: () => c(!1),
                 children: [
-                    y === V.Boxes
+                    b === V.Boxes
                         ? e.jsxs(e.Fragment, {
                               children: [
                                   m && e.jsx(Y, { image: g.shine, style: A }),
                                   e.jsx(W, {
-                                      className: q.count,
+                                      className: Z.count,
                                       maxText: f.maxBoxesCount,
                                       count: p,
                                       text: f.boxesCount,
                                   }),
                               ],
                           })
-                        : e.jsx('div', { className: q.text, children: f.boxes }),
-                    e.jsx(U, { disabled: !m, image: $, brightness: j, className: q.icon }),
-                    !m && e.jsx(b, { className: t(q.alert, q[`alert__${y}`]), hasShadow: !0, icon: g.alert }),
+                        : e.jsx('div', { className: Z.text, children: f.boxes }),
+                    e.jsx(U, { disabled: !m, image: $, brightness: j, className: Z.icon }),
+                    !m && e.jsx(y, { className: t(Z.alert, Z[`alert__${b}`]), hasShadow: !0, icon: g.alert }),
                 ],
             }),
         }),
@@ -301,6 +301,6 @@ const Z = a(function () {
 function J() {
     const t = l.resolve('aliases').read((e) => e.hangar.shared.LootboxEntryPoint('resId')),
         s = r.useMemo(() => ({ rootId: t }), [t]);
-    return e.jsx(L, { options: s, children: e.jsx(Z, {}) });
+    return e.jsx(L, { options: s, children: e.jsx(q, {}) });
 }
 export { J as default };

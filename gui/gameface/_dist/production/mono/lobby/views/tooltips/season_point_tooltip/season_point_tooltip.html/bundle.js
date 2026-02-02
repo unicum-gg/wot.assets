@@ -1,6 +1,7 @@
-import { x as e, j as s, w as t } from '../../../../chunks/vendor.js';
-import { i as a, n as p, F as o, c8 as n, r as _ } from '../../../../chunks/lib.js';
-import { t as i, T as c } from '../../../../chunks/tooltips.module.js';
+import { I as e, j as s, J as t } from '../../../../chunks/vendor.js';
+import { i as a, n as p, cd as o, cf as n, cP as _ } from '../../../../chunks/lib.js';
+import { T as i } from '../../../../chunks/tooltip_decorator.js';
+import { t as c } from '../../../../chunks/tooltips.module.js';
 /* empty css                        */ const [r, d] = a()(({ observableModel: e }) => ({ root: e.object() }), p),
     l = {
         base: 'App_eaae4c68',
@@ -32,7 +33,7 @@ import { t as i, T as c } from '../../../../chunks/tooltips.module.js';
         const { model: e } = d(),
             { ignoreState: a, state: p, seasonPointExchangeRate: _ } = e.root.get();
         return s.jsxs('div', {
-            className: t(i.base, l.base),
+            className: t(c.base, l.base),
             children: [
                 s.jsxs('div', {
                     className: l.header,
@@ -63,4 +64,4 @@ import { t as i, T as c } from '../../../../chunks/tooltips.module.js';
             ],
         });
     });
-_(s.jsx(r, { children: s.jsx(c, { children: s.jsx(x, {}) }) }));
+_(s.jsx(r, { children: s.jsx(i, { children: s.jsx(x, {}) }) }));

@@ -1,7 +1,7 @@
 import { y as e, j as t, z as a } from '../../../../chunks/vendor.js';
-import { a as s, F as i, cr as n, aG as r, c_ as o, j as c, a3 as p, cX as m } from '../../../../chunks/lib.js';
-import { g as d, a as _ } from '../../../../chunks/readResource.js';
-const [l, f] = s()(({ observableModel: e }) => ({ root: e.object(), performance: e.object('performance') })),
+import { a as s, F as i, cy as n, aM as r, c$ as o, j as c, a3 as p, cY as m } from '../../../../chunks/lib.js';
+import { g as d, a as l } from '../../../../chunks/readResource.js';
+const [_, f] = s()(({ observableModel: e }) => ({ root: e.object(), performance: e.object('performance') })),
     h = {
         root: 'App_root_0',
         base: 'App_db75b9f1',
@@ -109,7 +109,7 @@ const [l, f] = s()(({ observableModel: e }) => ({ root: e.object(), performance:
         return t.jsxs('div', {
             className: a(h.base, h[`base__${c}`], h[`base__${p.performanceRisk}`]),
             children: [
-                t.jsx('img', { className: h.topContentBg, src: _(o).event_banner_tooltip.bg(), alt: 'background' }),
+                t.jsx('img', { className: h.topContentBg, src: l(o).event_banner_tooltip.bg(), alt: 'background' }),
                 t.jsx('div', {
                     className: h.topContent,
                     children: t.jsx('div', { className: h.title, children: m.userName() }),
@@ -161,4 +161,4 @@ const [l, f] = s()(({ observableModel: e }) => ({ root: e.object(), performance:
             ],
         });
     });
-p(t.jsx(l, { children: t.jsx(m, { children: t.jsx(j, {}) }) }));
+p(t.jsx(_, { children: t.jsx(m, { children: t.jsx(j, {}) }) }));

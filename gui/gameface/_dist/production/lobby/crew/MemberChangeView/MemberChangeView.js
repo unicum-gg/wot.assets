@@ -2886,12 +2886,14 @@
                 }
                 function T(e, t, n = []) {
                     const a = (0, i.useRef)(0),
-                        r = (0, i.useCallback)(() => window.clearInterval(a.current), n || []);
+                        r = (0, i.useCallback)(() => {
+                            (window.clearInterval(a.current), (a.current = 0));
+                        }, n || []);
                     (0, i.useEffect)(() => r, [r]);
                     const s = (null != n ? n : []).concat([t]);
                     return [
                         (0, i.useCallback)((n) => {
-                            ((a.current = window.setInterval(() => e(n, !0), t)), e(n, !1));
+                            (0 !== a.current && r(), (a.current = window.setInterval(() => e(n, !0), t)), e(n, !1));
                         }, s),
                         r,
                     ];

@@ -728,32 +728,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    width: 200rem;
-    height: 280rem;
     filter: brightness(100%);
     position: relative;
     transition: filter 0.3s ease-in-out;
     cursor: pointer;
-}
-
-.mediaSmall .Tankman_content_fc {
-    width: 260rem;
-    height: 340rem;
-}
-
-.mediaMedium .Tankman_content_fc {
-    width: 280rem;
-    height: 380rem;
-}
-
-.mediaLarge .Tankman_content_fc {
-    width: 320rem;
-    height: 440rem;
-}
-
-.mediaExtraLarge .Tankman_content_fc {
-    width: 440rem;
-    height: 640rem;
 }
 
 .Tankman_base__disabled_ef .Tankman_content_fc {
@@ -782,22 +760,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaSmall .Tankman_img_36 {
-    width: 340rem;
     margin-left: -40rem;
 }
 
 .mediaMedium .Tankman_img_36 {
-    width: 380rem;
     margin-left: -50rem;
 }
 
 .mediaLarge .Tankman_img_36 {
-    width: 440rem;
     margin-left: -60rem;
 }
 
 .mediaExtraLarge .Tankman_img_36 {
-    width: 640rem;
     margin-left: -100rem;
 }
 
@@ -1028,13 +1002,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -35%);
-}
-
-.mediaSmall .TankmenVoiceoverApp_content_08 {
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -50%);
 }
 
 .mediaLarge .TankmenVoiceoverApp_content_08 {
+    transform: translate(-50%, -42%);
+}
+
+.mediaExtraLarge .TankmenVoiceoverApp_content_08 {
     transform: translate(-50%, -30%);
 }

@@ -1,22 +1,22 @@
-import { v as e, r as s, j as t, f as a } from './vendor.js';
+import { w as e, r as s, j as t, f as a } from './vendor.js';
 import {
-    aG as o,
-    ca as n,
-    cb as i,
+    aF as o,
+    cm as n,
+    cn as i,
     i as r,
-    o as l,
+    q as l,
     r as c,
-    de as d,
-    W as m,
-    aa as p,
-    df as u,
-    ac as g,
-    dg as _,
-    dh as v,
-    di as h,
-    cj as x,
-    dj as b,
-    dk as T,
+    dl as d,
+    l as m,
+    N as p,
+    dm as u,
+    P as g,
+    dn as _,
+    dp as v,
+    dq as h,
+    ct as x,
+    dr as b,
+    ds as T,
 } from './lib.js';
 var f = ((e) => ((e.News = 'news'), (e.ShopPromo = 'shopPromo'), (e.None = 'none'), e))(f || {});
 const N = {
@@ -29,7 +29,7 @@ const N = {
         }),
         controls: () => o(i('onClick', 'onClose')),
     },
-    [j, w] = r('TeaserModel')(
+    [w, y] = r('TeaserModel')(
         ({ observableModel: e }) =>
             e.primitives(['type', 'postCounter', 'description', 'text', 'isVideo', 'finishTime', 'image']),
         ({ externalModel: e }) => ({
@@ -37,7 +37,7 @@ const N = {
             onClose: e.createCallbackNoArgs('onClose'),
         }),
     ),
-    y = {
+    j = {
         imageWrapper: 'Teaser_imageWrapper_901f1116',
         vignette: 'Teaser_vignette_32737740',
         base: 'Teaser_a2a96284',
@@ -57,10 +57,10 @@ const N = {
     },
     C = 'Teaser:Base',
     k = e(function ({ className: e, classNames: o }) {
-        const { model: n, controls: i } = w(),
+        const { model: n, controls: i } = y(),
             r = n.type.get() || f.News,
             N = n.postCounter.get(),
-            j = n.text.get(),
+            w = n.text.get(),
             k = n.description.get(),
             W = n.finishTime.get(),
             B = n.isVideo.get(),
@@ -89,26 +89,26 @@ const N = {
             );
         }, [W]);
         const [L, V] = s.useState(null),
-            [I, z] = s.useState(!1);
+            [q, I] = s.useState(!1);
         return (
             s.useEffect(() => {
                 const e = new Image();
                 return (
                     (e.src = E),
                     (e.onload = () => {
-                        (V({ path: E, height: e.height, width: e.width }), z(!0));
+                        (V({ path: E, height: e.height, width: e.width }), I(!0));
                     }),
                     (e.onerror = () => {
-                        z(!0);
+                        I(!0);
                     }),
                     () => {
                         ((e.src = ''), V(null));
                     }
                 );
             }, [E]),
-            I
+            q
                 ? t.jsxs('div', {
-                      className: a(y.base, y[`base__${r}Type`], B && y.base__video, e),
+                      className: a(j.base, j[`base__${r}Type`], B && j.base__video, e),
                       onClick: function (e) {
                           (M.play('click', { target: C, original: e }), i.onClick());
                       },
@@ -117,13 +117,13 @@ const N = {
                       },
                       children: [
                           t.jsx('div', {
-                              className: a(y.contentWrapper, null == o ? void 0 : o.contentWrapper),
+                              className: a(j.contentWrapper, null == o ? void 0 : o.contentWrapper),
                               children: t.jsx('div', {
-                                  className: a(y.imageWrapper, null == o ? void 0 : o.imageWrapper),
+                                  className: a(j.imageWrapper, null == o ? void 0 : o.imageWrapper),
                                   children:
                                       L &&
                                       t.jsx('div', {
-                                          className: a(y.image, null == o ? void 0 : o.image),
+                                          className: a(j.image, null == o ? void 0 : o.image),
                                           style: {
                                               backgroundImage: `url(${L.path})`,
                                               height: `${L.height}rem`,
@@ -132,18 +132,18 @@ const N = {
                                       }),
                               }),
                           }),
-                          t.jsx('div', { className: a(y.vignette, null == o ? void 0 : o.vignette) }),
+                          t.jsx('div', { className: a(j.vignette, null == o ? void 0 : o.vignette) }),
                           t.jsxs('div', {
-                              className: a(y.contentWrapper, null == o ? void 0 : o.contentWrapper),
+                              className: a(j.contentWrapper, null == o ? void 0 : o.contentWrapper),
                               children: [
                                   t.jsxs('div', {
-                                      className: a(y.title, null == o ? void 0 : o.title),
+                                      className: a(j.title, null == o ? void 0 : o.title),
                                       children: [
                                           P.readOrEmpty('menu.promo.teaser.title'),
                                           Boolean(N) &&
                                               N > 0 &&
                                               t.jsx(v, {
-                                                  className: a(y.counter, null == o ? void 0 : o.counter),
+                                                  className: a(j.counter, null == o ? void 0 : o.counter),
                                                   value: N,
                                                   size: 'small',
                                               }),
@@ -152,27 +152,27 @@ const N = {
                                   t.jsx(h, {
                                       type: 'close',
                                       side: 'right',
-                                      classNames: { base: a(y.closeButton, null == o ? void 0 : o.closeButton) },
+                                      classNames: { base: a(j.closeButton, null == o ? void 0 : o.closeButton) },
                                       onClick: S,
                                       caption: '',
                                   }),
-                                  j && t.jsx('div', { className: a(y.text, null == o ? void 0 : o.text), children: j }),
+                                  w && t.jsx('div', { className: a(j.text, null == o ? void 0 : o.text), children: w }),
                                   (k || $) &&
                                       t.jsxs('div', {
-                                          className: y.bottomContent,
+                                          className: j.bottomContent,
                                           children: [
                                               k &&
                                                   t.jsx('div', {
-                                                      className: a(y.description, null == o ? void 0 : o.description),
+                                                      className: a(j.description, null == o ? void 0 : o.description),
                                                       children: t.jsx(x, {
-                                                          classMix: y.extendedText,
+                                                          classMix: j.extendedText,
                                                           text: k,
                                                           isTruncationAvailable: !0,
                                                       }),
                                                   }),
                                               $ &&
                                                   t.jsx(b, {
-                                                      className: a(y.countdown, null == o ? void 0 : o.countdown),
+                                                      className: a(j.countdown, null == o ? void 0 : o.countdown),
                                                       ...$,
                                                   }),
                                           ],
@@ -185,6 +185,6 @@ const N = {
         );
     });
 function W({ className: e, classNames: s, ...a }) {
-    return t.jsx(j, { ...a, mode: 'real', mocks: N, children: t.jsx(k, { className: e, classNames: s }) });
+    return t.jsx(w, { ...a, mode: 'real', mocks: N, children: t.jsx(k, { className: e, classNames: s }) });
 }
 export { W as default };

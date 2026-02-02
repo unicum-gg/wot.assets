@@ -1,16 +1,25 @@
 import './vendor.js';
-import { p as t } from './lib.js';
-const s = { personal: 'personal', teamsStatistics: 'teamsStatistics', financialReport: 'financialReport' },
-    a = Object.values(s),
-    e = {
-        [s.personal]: '/postBattleResults/overview',
+import { x as t } from './lib.js';
+const s = {
+        overview: 'overview',
+        teamsStatistics: 'teamScore',
+        progression: 'missionProgress',
+        financialReport: 'financialReport',
+    },
+    e = Object.values(s),
+    o = {
+        [s.overview]: '/postBattleResults/overview',
         [s.teamsStatistics]: '/postBattleResults/teamScore',
+        [s.progression]: '/postBattleResults/missionProgress',
         [s.financialReport]: '/postBattleResults/financialReport',
     };
-function n(s) {
-    const n = a.find((t) => e[t] === s);
-    return (t(void 0 !== n, `The post battle screen is not found by path ${s}`), n);
+function r(s) {
+    const r = e.find((t) => o[t] === s);
+    return (t(void 0 !== r, `The post battle screen is not found by path ${s}`), r);
 }
-const o = ['markOfMastery', 'right', 'marksOnGun'],
-    i = 'win';
-export { i as W, s as a, n as f, e as r, o as s };
+const a = ['markOfMastery', 'right', 'marksOnGun'];
+function i() {
+    return Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 9);
+}
+const n = 'win';
+export { n as W, s as a, r as f, i as g, o as r, a as s };

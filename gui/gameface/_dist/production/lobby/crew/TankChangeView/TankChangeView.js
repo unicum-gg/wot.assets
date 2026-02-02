@@ -2925,12 +2925,14 @@
                 }
                 function K(e, t, n = []) {
                     const a = (0, s.useRef)(0),
-                        r = (0, s.useCallback)(() => window.clearInterval(a.current), n || []);
+                        r = (0, s.useCallback)(() => {
+                            (window.clearInterval(a.current), (a.current = 0));
+                        }, n || []);
                     (0, s.useEffect)(() => r, [r]);
                     const u = (null != n ? n : []).concat([t]);
                     return [
                         (0, s.useCallback)((n) => {
-                            ((a.current = window.setInterval(() => e(n, !0), t)), e(n, !1));
+                            (0 !== a.current && r(), (a.current = window.setInterval(() => e(n, !0), t)), e(n, !1));
                         }, u),
                         r,
                     ];

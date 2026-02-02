@@ -172,6 +172,11 @@ html[lang='th'] input {
     flex: 1 1 auto;
     width: 100%;
 }
+.FormatText_db904f12 span {
+    flex-wrap: wrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
 
 .FormatText_nowrap_ff69eca3 {
     white-space: nowrap;
@@ -2276,6 +2281,15 @@ html[lang='th'] input {
     width: 100%;
     overflow-x: hidden;
 }
+.HorizontalScroll_wrapper__left_adacfff {
+    mask-image: linear-gradient(to left, #000 97%, transparent);
+}
+.HorizontalScroll_wrapper__right_a6825027 {
+    mask-image: linear-gradient(to right, #000 97%, transparent);
+}
+.HorizontalScroll_wrapper__both_7917ea88 {
+    mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
+}
 
 .HorizontalScroll_defaultScrollArea_a5c0f45 {
     width: 100%;
@@ -2465,6 +2479,15 @@ html[lang='th'] input {
 .VerticalScroll_content_62cb6120 {
     height: 100%;
     overflow-y: hidden;
+}
+.VerticalScroll_content__top_b27098a4 {
+    mask-image: linear-gradient(to top, #000 97%, transparent);
+}
+.VerticalScroll_content__bottom_d6604290 {
+    mask-image: linear-gradient(to bottom, #000 97%, transparent);
+}
+.VerticalScroll_content__both_8d905712 {
+    mask-image: linear-gradient(to bottom, transparent, #000 3%, #000 97%, transparent);
 }
 
 .VerticalScroll_defaultScroll_c69fa70e {
@@ -11772,7 +11795,11 @@ html[lang='th'] input {
     flex-wrap: wrap;
     width: 100%;
 }
-.TtcColumnSpecial_descriptionTextLine__secondary_c4e8b8dc {
+.TtcColumnSpecial_descriptionTextLine__secondary_60f09503 span {
+    overflow-wrap: normal;
+}
+
+.TtcColumnSpecial_secondaryTextLine_c4e8b8dc {
     color: var(--color-general-secondary);
     opacity: 0.5;
 }
@@ -12451,263 +12478,6 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-max-id */
 /* stylelint-disable selector-no-qualifying-type */
-#ArmorLayer_root_f9bb9b75,
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    color: var(--color-general-primary);
-    font-size: 14rem;
-}
-
-body,
-button,
-input {
-    font-family: PFDINMax;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-}
-html[lang='ja'] body,
-html[lang='ko'] body,
-html[lang='zh_tw'] body,
-html[lang='zh_sg'] body,
-html[lang='zh_cn'] body,
-html[lang='vi'] body,
-html[lang='th'] body,
-html[lang='ja'] button,
-html[lang='ko'] button,
-html[lang='zh_tw'] button,
-html[lang='zh_sg'] button,
-html[lang='zh_cn'] button,
-html[lang='vi'] button,
-html[lang='th'] button,
-html[lang='ja'] input,
-html[lang='ko'] input,
-html[lang='zh_tw'] input,
-html[lang='zh_sg'] input,
-html[lang='zh_cn'] input,
-html[lang='vi'] input,
-html[lang='th'] input {
-    font-family: Warhelios;
-    letter-spacing: 0;
-}
-
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.ArmorLayer_8511e0db {
-    font-size: 15rem;
-    font-weight: 400;
-    line-height: 1.2em;
-    display: flex;
-    filter: saturate(1.4) brightness(1.6) contrast(0.5);
-    position: relative;
-}
-
-.ArmorLayer_layer_5ad9db4 {
-    display: flex;
-    align-items: flex-end;
-}
-
-.ArmorLayer_armor_d9ec88fc {
-    align-items: flex-end;
-} /* stylelint-disable selector-no-qualifying-type */
-:root {
-    --hangar-highlight-shadow:
-        0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
-}
-
-/* stylelint-disable selector-max-id */
-/* stylelint-disable selector-no-qualifying-type */
-#App_root_0,
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    color: var(--color-general-primary);
-    font-size: 14rem;
-}
-
-body,
-button,
-input {
-    font-family: PFDINMax;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-}
-html[lang='ja'] body,
-html[lang='ko'] body,
-html[lang='zh_tw'] body,
-html[lang='zh_sg'] body,
-html[lang='zh_cn'] body,
-html[lang='vi'] body,
-html[lang='th'] body,
-html[lang='ja'] button,
-html[lang='ko'] button,
-html[lang='zh_tw'] button,
-html[lang='zh_sg'] button,
-html[lang='zh_cn'] button,
-html[lang='vi'] button,
-html[lang='th'] button,
-html[lang='ja'] input,
-html[lang='ko'] input,
-html[lang='zh_tw'] input,
-html[lang='zh_sg'] input,
-html[lang='zh_cn'] input,
-html[lang='vi'] input,
-html[lang='th'] input {
-    font-family: Warhelios;
-    letter-spacing: 0;
-}
-
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    color: #fff;
-    font-size: 14rem;
-}
-
-.App_4ddf07be {
-    display: flex;
-    padding: 20rem;
-    position: absolute;
-}
-
-.App_content_66e6c0bb {
-    padding: 15rem 14rem 10rem 15rem;
-    border-radius: 2rem;
-    background: rgba(30, 30, 30, 0.95);
-    position: relative;
-}
-
-.App_section_8d81c223 {
-    display: flex;
-    align-items: center;
-    margin: 2rem 0 4rem;
-}
-.App_section__nominal_ccfcd1c9 {
-    margin-bottom: 6rem;
-}
-.App_section__effective_39c268f4 {
-    margin-top: 3rem;
-}
-
-.App_image_4d2b9a23 {
-    width: 24rem;
-    height: 24rem;
-    background: no-repeat 50% / contain;
-}
-.App_image__nominal_6651b124 {
-    align-self: flex-start;
-    margin-top: -3rem;
-    background-image: url(R.images.gui.maps.icons.lobby.armor_inspector.tooltip.nominal_armor);
-}
-.App_image__angle_a810893a {
-    background-image: url(R.images.gui.maps.icons.lobby.armor_inspector.tooltip.impact_angle);
-}
-.App_image__effective_64e0c709 {
-    background-image: url(R.images.gui.maps.icons.lobby.armor_inspector.tooltip.effective_armor);
-}
-
-.App_info_5ca42508 {
-    margin-left: 4rem;
-}
-
-.App_value_957eb145 {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.3em;
-    display: flex;
-    align-items: flex-end;
-    margin: -4rem 0 -1rem;
-    color: var(--color-general-primary);
-}
-.App_value__angle_13feac86 {
-    font-size: 20rem;
-}
-
-.App_calculations_c68ace7d {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.3em;
-    margin: -4rem 0;
-    color: var(--color-general-primary);
-    opacity: 0.4;
-}
-
-.App_majorValue_49d964de {
-    font-size: 20rem;
-    font-weight: 700;
-    line-height: 1.3em;
-    margin-bottom: -1rem;
-}
-
-.App_divider_9b66e1ca {
-    display: flex;
-    justify-content: center;
-    min-width: 0;
-    height: 9rem;
-    margin: 1rem 0;
-    overflow: hidden;
-    position: relative;
-}
-
-.App_dividerImage_94ed318e {
-    width: 137rem;
-    height: 9rem;
-    background: url(R.images.gui.maps.icons.lobby.armor_inspector.tooltip.divider_dotty) no-repeat center/cover;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%) translateX(0.5rem);
-}
-
-.App_layers_ee23ccfe {
-    margin: -3rem 0 -3rem 4rem;
-    padding-top: 2rem;
-    position: relative;
-}
-
-.App_layer_ec0b9703 {
-    display: flex;
-    margin: -1rem 0 -1rem 9rem;
-    position: relative;
-}
-
-.App_separator_44573a34 {
-    width: 1rem;
-    background: #ede6d9;
-    opacity: 0.16;
-    position: absolute;
-    top: 5rem;
-    bottom: 7rem;
-    left: 0;
-}
-
-.App_line_9b60d064 {
-    width: 5rem;
-    height: 1rem;
-    background: #ede6d9;
-    opacity: 0.16;
-    position: absolute;
-    top: 50%;
-    left: -7rem;
-} /* stylelint-disable selector-no-qualifying-type */
-:root {
-    --hangar-highlight-shadow:
-        0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
-}
-
-/* stylelint-disable selector-max-id */
-/* stylelint-disable selector-no-qualifying-type */
 #App_root_0,
 html,
 body {
@@ -13273,6 +13043,75 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-max-id */
 /* stylelint-disable selector-no-qualifying-type */
+#ArmorLayer_root_f9bb9b75,
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: var(--color-general-primary);
+    font-size: 14rem;
+}
+
+body,
+button,
+input {
+    font-family: PFDINMax;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+html[lang='ja'] body,
+html[lang='ko'] body,
+html[lang='zh_tw'] body,
+html[lang='zh_sg'] body,
+html[lang='zh_cn'] body,
+html[lang='vi'] body,
+html[lang='th'] body,
+html[lang='ja'] button,
+html[lang='ko'] button,
+html[lang='zh_tw'] button,
+html[lang='zh_sg'] button,
+html[lang='zh_cn'] button,
+html[lang='vi'] button,
+html[lang='th'] button,
+html[lang='ja'] input,
+html[lang='ko'] input,
+html[lang='zh_tw'] input,
+html[lang='zh_sg'] input,
+html[lang='zh_cn'] input,
+html[lang='vi'] input,
+html[lang='th'] input {
+    font-family: Warhelios;
+    letter-spacing: 0;
+}
+
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.ArmorLayer_8511e0db {
+    font-size: 15rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    display: flex;
+    filter: saturate(1.4) brightness(1.6) contrast(0.5);
+    position: relative;
+}
+
+.ArmorLayer_layer_5ad9db4 {
+    display: flex;
+    align-items: flex-end;
+}
+
+.ArmorLayer_armor_d9ec88fc {
+    align-items: flex-end;
+} /* stylelint-disable selector-no-qualifying-type */
+:root {
+    --hangar-highlight-shadow:
+        0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+/* stylelint-disable selector-max-id */
+/* stylelint-disable selector-no-qualifying-type */
 #App_root_0,
 html,
 body {
@@ -13318,43 +13157,141 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.App_630c31bc {
-    width: 320rem;
-    padding: 15rem 20rem 20rem;
-    background-color: #141414;
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 14rem;
 }
 
-.App_title_59836549 {
+.App_4ddf07be {
+    display: flex;
+    padding: 20rem;
+    position: absolute;
+}
+
+.App_content_66e6c0bb {
+    padding: 15rem 14rem 10rem 15rem;
+    border-radius: 2rem;
+    background: rgba(30, 30, 30, 0.95);
+    position: relative;
+}
+
+.App_section_8d81c223 {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0 4rem;
+}
+.App_section__nominal_ccfcd1c9 {
+    margin-bottom: 6rem;
+}
+.App_section__effective_39c268f4 {
+    margin-top: 3rem;
+}
+
+.App_image_4d2b9a23 {
+    width: 24rem;
+    height: 24rem;
+    background: no-repeat 50% / contain;
+}
+.App_image__nominal_6651b124 {
+    align-self: flex-start;
+    margin-top: -3rem;
+    background-image: url(R.images.gui.maps.icons.lobby.armor_inspector.tooltip.nominal_armor);
+}
+.App_image__angle_a810893a {
+    background-image: url(R.images.gui.maps.icons.lobby.armor_inspector.tooltip.impact_angle);
+}
+.App_image__effective_64e0c709 {
+    background-image: url(R.images.gui.maps.icons.lobby.armor_inspector.tooltip.effective_armor);
+}
+
+.App_info_5ca42508 {
+    margin-left: 4rem;
+}
+
+.App_value_957eb145 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    display: flex;
+    align-items: flex-end;
+    margin: -4rem 0 -1rem;
+    color: var(--color-general-primary);
+}
+.App_value__angle_13feac86 {
+    font-size: 20rem;
+}
+
+.App_calculations_c68ace7d {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin: -4rem 0;
+    color: var(--color-general-primary);
+    opacity: 0.4;
+}
+
+.App_majorValue_49d964de {
     font-size: 20rem;
     font-weight: 700;
     line-height: 1.3em;
-    color: var(--color-general-primary);
-    line-height: 1.1em;
+    margin-bottom: -1rem;
 }
 
-.App_subtitle_fee6c8d3 {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.3em;
-    margin-top: 2rem;
-    color: var(--color-general-secondary);
-    line-height: 1.1em;
+.App_divider_9b66e1ca {
+    display: flex;
+    justify-content: center;
+    min-width: 0;
+    height: 9rem;
+    margin: 1rem 0;
+    overflow: hidden;
+    position: relative;
 }
 
-.App_separator_d7572cd9 {
-    width: 100%;
-    height: 2rem;
-    margin-top: 12rem;
-    background: url(R.images.gui.maps.icons.skillTree.tree.tooltips.divider) center center/cover no-repeat;
+.App_dividerImage_94ed318e {
+    width: 137rem;
+    height: 9rem;
+    background: url(R.images.gui.maps.icons.lobby.armor_inspector.tooltip.divider_dotty) no-repeat center/cover;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateX(0.5rem);
 }
 
-.App_description_e91a529b {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.3em;
-    margin-top: 12rem;
-    color: var(--color-general-tertiary);
-    line-height: 1.15em;
+.App_layers_ee23ccfe {
+    margin: -3rem 0 -3rem 4rem;
+    padding-top: 2rem;
+    position: relative;
+}
+
+.App_layer_ec0b9703 {
+    display: flex;
+    margin: -1rem 0 -1rem 9rem;
+    position: relative;
+}
+
+.App_separator_44573a34 {
+    width: 1rem;
+    background: #ede6d9;
+    opacity: 0.16;
+    position: absolute;
+    top: 5rem;
+    bottom: 7rem;
+    left: 0;
+}
+
+.App_line_9b60d064 {
+    width: 5rem;
+    height: 1rem;
+    background: #ede6d9;
+    opacity: 0.16;
+    position: absolute;
+    top: 50%;
+    left: -7rem;
 } /* stylelint-disable selector-no-qualifying-type */
 :root {
     --hangar-highlight-shadow:
@@ -13451,4 +13388,94 @@ html[lang='th'] input {
     line-height: 1.3em;
     color: var(--color-general-secondary);
     line-height: 1.1em;
+} /* stylelint-disable selector-no-qualifying-type */
+:root {
+    --hangar-highlight-shadow:
+        0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+/* stylelint-disable selector-max-id */
+/* stylelint-disable selector-no-qualifying-type */
+#App_root_0,
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: var(--color-general-primary);
+    font-size: 14rem;
+}
+
+body,
+button,
+input {
+    font-family: PFDINMax;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+html[lang='ja'] body,
+html[lang='ko'] body,
+html[lang='zh_tw'] body,
+html[lang='zh_sg'] body,
+html[lang='zh_cn'] body,
+html[lang='vi'] body,
+html[lang='th'] body,
+html[lang='ja'] button,
+html[lang='ko'] button,
+html[lang='zh_tw'] button,
+html[lang='zh_sg'] button,
+html[lang='zh_cn'] button,
+html[lang='vi'] button,
+html[lang='th'] button,
+html[lang='ja'] input,
+html[lang='ko'] input,
+html[lang='zh_tw'] input,
+html[lang='zh_sg'] input,
+html[lang='zh_cn'] input,
+html[lang='vi'] input,
+html[lang='th'] input {
+    font-family: Warhelios;
+    letter-spacing: 0;
+}
+
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.App_630c31bc {
+    width: 320rem;
+    padding: 15rem 20rem 20rem;
+    background-color: #141414;
+}
+
+.App_title_59836549 {
+    font-size: 20rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: var(--color-general-primary);
+    line-height: 1.1em;
+}
+
+.App_subtitle_fee6c8d3 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-top: 2rem;
+    color: var(--color-general-secondary);
+    line-height: 1.1em;
+}
+
+.App_separator_d7572cd9 {
+    width: 100%;
+    height: 2rem;
+    margin-top: 12rem;
+    background: url(R.images.gui.maps.icons.skillTree.tree.tooltips.divider) center center/cover no-repeat;
+}
+
+.App_description_e91a529b {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-top: 12rem;
+    color: var(--color-general-tertiary);
+    line-height: 1.15em;
 }

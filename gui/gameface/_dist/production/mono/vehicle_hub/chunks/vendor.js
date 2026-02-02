@@ -1688,7 +1688,6 @@ function kt(e, t) {
             for (
                 var o = s.stack.split('\n'), i = r.stack.split('\n'), a = o.length - 1, l = i.length - 1;
                 1 <= a && 0 <= l && o[a] !== i[l];
-
             )
                 l--;
             for (; 1 <= a && 0 <= l; a--, l--)
@@ -2023,7 +2022,6 @@ var qt,
                     (qt = qt || document.createElement('div')).innerHTML = '<svg>' + t.valueOf().toString() + '</svg>',
                         t = qt.firstChild;
                     e.firstChild;
-
                 )
                     e.removeChild(e.firstChild);
                 for (; t.firstChild; ) e.appendChild(t.firstChild);
@@ -6136,7 +6134,6 @@ function As(e, t, n) {
                                         r = n,
                                         n = t.child;
                                     null !== n;
-
                                 )
                                     ((e = r),
                                         ((i = n).flags &= 14680066),
@@ -7529,7 +7526,6 @@ function od(e, t, n) {
                                                         d !== i || (0 !== r && 3 !== d.nodeType) || (u = a + r),
                                                         3 === d.nodeType && (a += d.nodeValue.length),
                                                         null !== (p = d.firstChild);
-
                                                 )
                                                     ((f = d), (d = p));
                                                 for (;;) {
@@ -8180,7 +8176,6 @@ ac = function (e, t, n) {
                             n = il(t, null, r, n),
                             t.child = n;
                         n;
-
                     )
                         ((n.flags = (-3 & n.flags) | 4096), (n = n.sibling));
                 } else {
@@ -8685,9 +8680,9 @@ function qd(e) {
     throw new Error(
         'number' == typeof e
             ? '[MobX] minified error nr: ' +
-              e +
-              (n.length ? ' ' + n.map(String).join(',') : '') +
-              '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
+                  e +
+                  (n.length ? ' ' + n.map(String).join(',') : '') +
+                  '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
             : '[MobX] ' + e,
     );
 }
@@ -11001,7 +10996,6 @@ var Tg,
                                 i = !1,
                                 a = Rf(t.data_.keys());
                             !(n = a()).done;
-
                         ) {
                             var l = n.value;
                             if (!r.has(l))
@@ -13296,12 +13290,12 @@ var yy,
             i
                 ? Boolean(
                       t &&
-                          i.inputs &&
-                          (function (e, t) {
-                              if (e.length !== t.length) return !1;
-                              for (let n = 0; n < e.length; n++) if (e[n] !== t[n]) return !1;
-                              return !0;
-                          })(t, i.inputs),
+                      i.inputs &&
+                      (function (e, t) {
+                          if (e.length !== t.length) return !1;
+                          for (let n = 0; n < e.length; n++) if (e[n] !== t[n]) return !1;
+                          return !0;
+                      })(t, i.inputs),
                   ) || (i = { inputs: t, result: e() })
                 : (i = n);
             return (
@@ -17609,7 +17603,7 @@ const Jw = {
                             ? Boolean(null == (n = r[t]) ? void 0 : n.length)
                             : Boolean(
                                   (null == (o = r.top) ? void 0 : o.length) ||
-                                      (null == (i = r.bottom) ? void 0 : i.length),
+                                  (null == (i = r.bottom) ? void 0 : i.length),
                               );
                     }),
                     (e._getPinnedRows = (t, n, r) => {

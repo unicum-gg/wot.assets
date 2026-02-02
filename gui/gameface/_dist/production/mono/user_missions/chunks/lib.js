@@ -820,10 +820,10 @@ function makeMap(e) {
                     (window.XMLHttpRequest && new XMLHttpRequest().dispatchEvent)
                 );
             (c.call(d.prototype),
-                c.call(p.prototype),
+                c.call(_.prototype),
                 (self.Headers = u),
                 (self.Request = d),
-                (self.Response = p),
+                (self.Response = _),
                 (self.fetch = function (t, s) {
                     var n;
                     return (
@@ -842,7 +842,7 @@ function makeMap(e) {
                                         var r = {
                                                 status: e,
                                                 statusText: a.statusText,
-                                                headers: _(a),
+                                                headers: p(a),
                                                 url:
                                                     'responseURL' in a
                                                         ? a.responseURL
@@ -851,7 +851,7 @@ function makeMap(e) {
                                                           : void 0,
                                             },
                                             n = 'response' in a ? a.response : a.responseText;
-                                        t(new p(n, r));
+                                        t(new _(n, r));
                                     }
                                 }
                             }
@@ -996,7 +996,7 @@ function makeMap(e) {
                 t
             );
         }
-        function _(e) {
+        function p(e) {
             var t = new u();
             return (
                 e
@@ -1012,7 +1012,7 @@ function makeMap(e) {
                 t
             );
         }
-        function p(e, t) {
+        function _(e, t) {
             (t || (t = {}),
                 this._initBody(e),
                 (this.type = 'default'),
@@ -1206,8 +1206,6 @@ class Stack {
         return this.items.slice();
     }
 }
-const CHINESE_LANGUAGE_CODES = new Set(['zh_cn', 'zh_sg', 'zh_tw']),
-    JAPANESE_LANGUAGE_CODE = 'ja';
 function splitChinese(e) {
     const t = [],
         s = e
@@ -1232,17 +1230,28 @@ function splitJapanese(e) {
     for (const [r] of s) t.push(r);
     return t;
 }
+function splitKorean(e) {
+    const t = [],
+        s = e
+            .replace(/&nbsp;/g, ' ')
+            .matchAll(
+                /\s+|\u00A0|[【「(（『《]?[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F%](?:[。!?、…・ー—–!%?）)】」》『]+)?|[「【(（『《]?\d+(?:,\d{3})*(?:\s*[a-zA-Z\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F/%]+)?(?:[。，、:;：；!?）)】」》・%)、]+)?|[「【(（『《]?[a-zA-Z0-9]+(?:[-/][a-zA-Z0-9]+)*(?:\s*[。!?、…・ー—–!?》】」）)』]+)?|[^\s]/gu,
+            );
+    for (const [r] of s) t.push(r);
+    return t;
+}
+const splitters = { zh_cn: splitChinese, zh_sg: splitChinese, zh_tw: splitChinese, ja: splitJapanese, ko: splitKorean };
+function defaultSplit(e) {
+    return e.split(' ');
+}
+const langsWithoutSpace = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko']);
 function addSpaceAndMap(e, t, s) {
-    return CHINESE_LANGUAGE_CODES.has(t) || t === JAPANESE_LANGUAGE_CODE
+    return langsWithoutSpace.has(t)
         ? e.map(s)
         : e.map((e, t, r) => (t === r.length - 1 ? s(e, t, r) : s(`${e} `, t, r)));
 }
 function splitLocale(e, t) {
-    return CHINESE_LANGUAGE_CODES.has(t)
-        ? splitChinese(e)
-        : t === JAPANESE_LANGUAGE_CODE
-          ? splitJapanese(e)
-          : e.split(' ');
+    return (splitters[t] ?? defaultSplit)(e);
 }
 const MediaContext = reactExports.createContext(void 0);
 function useMediaContext() {
@@ -1569,12 +1578,14 @@ function useCloseOnEsc() {
 }
 function useRepeatCallback(e, t, s = []) {
     const r = reactExports.useRef(0),
-        n = reactExports.useCallback(() => window.clearInterval(r.current), s || []);
+        n = reactExports.useCallback(() => {
+            (window.clearInterval(r.current), (r.current = 0));
+        }, s || []);
     reactExports.useEffect(() => n, [n]);
     const a = (s ?? []).concat([t]);
     return [
         reactExports.useCallback((s) => {
-            ((r.current = window.setInterval(() => e(s, !0), t)), e(s, !1));
+            (0 !== r.current && n(), (r.current = window.setInterval(() => e(s, !0), t)), e(s, !1));
         }, a),
         n,
     ];
@@ -1792,6 +1803,12 @@ const soundConfig = {
     decreaseAmountRoll: createSoundPlay('cons_ammo_roll_minus'),
     close: createSoundPlay('cancelcloseno'),
     'show-context-menu': createSoundPlay('tabb'),
+    progressSimple: createSoundPlay('gui_hangar_progressbar_simple'),
+    increaseDelta: createSoundPlay('gui_hangar_progressbar_delta_increase'),
+    decreaseDelta: createSoundPlay('gui_hangar_progressbar_delta_decrease'),
+    increaseDeltaMax: createSoundPlay('gui_hangar_progressbar_delta_max'),
+    pointerGrab: createSoundPlay('gui_hangar_progressbar_pointer_grab'),
+    pointerDrag: createSoundPlay('gui_hangar_progressbar_pointer_drag'),
 };
 function createSoundPlay(e) {
     return () => {
@@ -2039,18 +2056,18 @@ const initializeModelWithContext =
                 const { mode: o, options: i, children: l, mocks: c } = a,
                     d = useMockContext(),
                     m = o ?? d.mode,
-                    _ = c ?? d.mocks,
-                    p = reactExports.useRef([]),
+                    p = c ?? d.mocks,
+                    _ = reactExports.useRef([]),
                     E = null == (u = null == r ? void 0 : r.useRequires) ? void 0 : u.call(r),
                     f = useEvent((n, u, o) => {
                         var i;
                         const l = 'real' !== n && o ? createMockInstance(o.getter, u) : create(u, { name: e }),
                             c = (e) => ('mocks' === n ? (null == o ? void 0 : o.getter(e, u)) : l.readByPath(e)),
-                            d = (e) => p.current.push(e),
+                            d = (e) => _.current.push(e),
                             m = 'initial' in a && {
                                 initial: null == (i = null == r ? void 0 : r.initial) ? void 0 : i.call(r, a.initial),
                             },
-                            _ = t({
+                            p = t({
                                 ...m,
                                 mode: n,
                                 readByPath: c,
@@ -2059,10 +2076,10 @@ const initializeModelWithContext =
                                 observableModel: createObservableModel(l, n, c),
                                 cleanup: d,
                             }),
-                            f = { ...m, mode: n, model: _, externalModel: l, cleanup: d, requires: E },
+                            f = { ...m, mode: n, model: p, externalModel: l, cleanup: d, requires: E },
                             x = 'mocks' === n && (null == o ? void 0 : o.controls) ? o.controls(f) : {};
                         return {
-                            model: _,
+                            model: p,
                             controls: { ...(null == s ? void 0 : s(f)), ...x },
                             externalModel: l,
                             mode: n,
@@ -2073,13 +2090,13 @@ const initializeModelWithContext =
                 reactExports.useEffect(() => {
                     g(m);
                 }, [m]);
-                const [b, A] = reactExports.useState(() => f(h, i, _));
+                const [b, y] = reactExports.useState(() => f(h, i, p));
                 return (
                     reactExports.useEffect(() => {
-                        x.current ? A(f(h, i, _)) : (x.current = !0);
+                        x.current ? y(f(h, i, p)) : (x.current = !0);
                     }, [
                         f,
-                        _,
+                        p,
                         h,
                         null == i ? void 0 : i.context,
                         null == i ? void 0 : i.initializer,
@@ -2088,7 +2105,7 @@ const initializeModelWithContext =
                     ]),
                     reactExports.useEffect(
                         () => () => {
-                            (b.externalModel.dispose(), p.current.forEach((e) => e()));
+                            (b.externalModel.dispose(), _.current.forEach((e) => e()));
                         },
                         [b],
                     ),
@@ -2511,8 +2528,8 @@ const defaultSettings = {
                 [l, c] = reactExports.useState(!1),
                 d = reactExports.useRef(null),
                 m = reactExports.useRef(null),
-                _ = reactExports.useRef({ wrapper: 0, container: 0 }),
-                p = useEmitter(),
+                p = reactExports.useRef({ wrapper: 0, container: 0 }),
+                _ = useEmitter(),
                 E = useThrottle(
                     () => {
                         forceTriggerMouseMove$1();
@@ -2524,11 +2541,11 @@ const defaultSettings = {
                     scrollPosition: 0,
                     onChange: (e) => {
                         const t = d.current;
-                        t && (s(t, e), p.trigger('change', e));
+                        t && (s(t, e), _.trigger('change', e));
                     },
-                    onRest: (e) => p.trigger('rest', e),
-                    onStart: (e) => p.trigger('start', e),
-                    onPause: (e) => p.trigger('pause', e),
+                    onRest: (e) => _.trigger('rest', e),
+                    onStart: (e) => _.trigger('start', e),
+                    onPause: (e) => _.trigger('pause', e),
                 })),
                 h = reactExports.useCallback(
                     (e, t, s) => {
@@ -2543,7 +2560,7 @@ const defaultSettings = {
                         const r = d.current;
                         if (!r) return;
                         const n = u(r, e);
-                        f.scrollPosition.get() !== n &&
+                        f.scrollPosition.goal !== n &&
                             x.start({
                                 scrollPosition: n,
                                 immediate: t,
@@ -2555,7 +2572,7 @@ const defaultSettings = {
                                 },
                             });
                     },
-                    [x, i.animationConfig, f.scrollPosition, E],
+                    [f.scrollPosition, x, i.animationConfig, E],
                 ),
                 b = reactExports.useCallback(
                     function (e) {
@@ -2575,42 +2592,42 @@ const defaultSettings = {
                     },
                     [g, h, i.step],
                 ),
-                A = reactExports.useCallback(
+                y = reactExports.useCallback(
                     function (e) {
                         l ||
                             (0 !== e.deltaY && b(r(e)),
-                            d.current && p.trigger('mouseWheel', e, f.scrollPosition, t(d.current)));
+                            d.current && _.trigger('mouseWheel', e, f.scrollPosition, t(d.current)));
                     },
-                    [f.scrollPosition, b, p, l],
+                    [f.scrollPosition, b, _, l],
                 ),
-                y = reactExports.useCallback(
+                A = reactExports.useCallback(
                     function () {
                         const e = d.current;
-                        e && (g(u(e, f.scrollPosition.goal), { immediate: !0 }), p.trigger('resizeHandled'));
+                        e && (g(u(e, f.scrollPosition.goal), { immediate: !0 }), _.trigger('resizeHandled'));
                     },
-                    [g, f.scrollPosition.goal, p],
+                    [g, f.scrollPosition.goal, _],
                 );
             useRefResizeObserver(m, (e) => {
                 const t = e.target;
                 if (!(t instanceof HTMLElement)) return;
                 const s = n(t);
-                _.current.wrapper !== s && y();
+                p.current.wrapper !== s && A();
             });
             const F = useEvent(function () {
                     const t = d.current;
                     if (!t) return;
                     const s = e(t),
                         r = m.current ? n(m.current) : 0;
-                    if (_.current.container !== s || _.current.wrapper !== r) {
+                    if (p.current.container !== s || p.current.wrapper !== r) {
                         const e = u(t, f.scrollPosition.goal);
                         (e !== f.scrollPosition.goal && g(e, { immediate: !0 }),
-                            (_.current.container = s),
-                            (_.current.wrapper = r),
-                            p.trigger('recalculateContent'));
+                            (p.current.container = s),
+                            (p.current.wrapper = r),
+                            _.trigger('recalculateContent'));
                     }
                 }),
                 v = useSkipFrame();
-            reactExports.useEffect(() => addEventListener(window, 'resize', () => v.run(y)), [y, v]);
+            reactExports.useEffect(() => addEventListener(window, 'resize', () => v.run(A)), [A, v]);
             return reactExports.useMemo(
                 () => ({
                     getWrapperSize: () => (m.current ? n(m.current) : void 0),
@@ -2620,7 +2637,7 @@ const defaultSettings = {
                     stepTimeout: i.step.clampedArrowStepTimeout,
                     settings: i,
                     clampPosition: u,
-                    handleMouseWheel: A,
+                    handleMouseWheel: y,
                     applyScroll: g,
                     applyStepTo: b,
                     contentRef: d,
@@ -2630,9 +2647,9 @@ const defaultSettings = {
                     recalculateContent: F,
                     disabled: l,
                     setDisabled: c,
-                    events: { on: p.on, off: p.off },
+                    events: { on: _.on, off: _.off },
                 }),
-                [i, A, g, b, x, f, F, l, c, p.on, p.off],
+                [i, y, g, b, x, f, F, l, c, _.on, _.off],
             );
         };
     },
@@ -2732,18 +2749,18 @@ function Thumb(e) {
             const c = e.api.animationScroll.scrollPosition.get(),
                 d = Math.min(1, i / l),
                 m = clamp(0, 1, c / (l - i)),
-                _ = e.calculateSize(r, d),
-                p = (('horizontal' === e.direction ? r.offsetWidth : r.offsetHeight) - _) * m || 0,
+                p = e.calculateSize(r, d),
+                _ = (('horizontal' === e.direction ? r.offsetWidth : r.offsetHeight) - p) * m || 0,
                 E = Math.round((2 * m - 1) * BOUNCING_OFFSET);
-            (n.style.setProperty('--thumbOffset', `${p}px`),
-                null == (s = e.onUpdate) || s.call(e, { thumbSize: _, thumbOffset: p, newBouncingCorrection: E }));
-            const f = 0 === p || e.isBoundThumb(p) ? 0 : E;
+            (n.style.setProperty('--thumbOffset', `${_}px`),
+                null == (s = e.onUpdate) || s.call(e, { thumbSize: p, thumbOffset: _, newBouncingCorrection: E }));
+            const f = 0 === _ || e.isBoundThumb(_) ? 0 : E;
             return (
                 u.start({
                     to: { '--bouncingCorrection': `${f}px` },
                     ...(0 === f ? { delay: 100, config: { duration: 100 } } : { immediate: !0 }),
                 }),
-                p
+                _
             );
         }),
         i = useSkipFrame(),
@@ -2888,14 +2905,14 @@ function useBarHandlers(e, t, s, r, n, a, u) {
             },
             [l, o],
         ),
-        _ = reactExports.useCallback(
+        p = reactExports.useCallback(
             (i) => {
                 const l = e.current,
                     c = t.current,
-                    _ = s.current,
-                    p = r.current;
-                if (!(l && c && _ && p && i.button === MOUSE_BUTTON_LEFT)) return;
-                const E = getCoordinate(i, l, c, _, p, u),
+                    p = s.current,
+                    _ = r.current;
+                if (!(l && c && p && _ && i.button === MOUSE_BUTTON_LEFT)) return;
+                const E = getCoordinate(i, l, c, p, _, u),
                     f = E.thumb.start <= E.occurredEvent && E.occurredEvent <= E.thumb.end,
                     x =
                         (E.backButton.start <= E.occurredEvent && E.occurredEvent <= E.backButton.end) ||
@@ -2916,7 +2933,7 @@ function useBarHandlers(e, t, s, r, n, a, u) {
             },
             [e, t, s, r, o, u, a, d, m, n],
         ),
-        p = reactExports.useCallback(
+        _ = reactExports.useCallback(
             (e) => {
                 e.target.classList.contains(DISABLE_CLASS) ||
                     o.play('mouse-enter', { target: 'Scroll:Bar', original: e });
@@ -2926,13 +2943,13 @@ function useBarHandlers(e, t, s, r, n, a, u) {
     return reactExports.useMemo(
         () => ({
             handleMouseBackDown: d,
-            handleMouseEnter: p,
-            handleMouseDownTrack: _,
+            handleMouseEnter: _,
+            handleMouseDownTrack: p,
             handleMouseForwardDown: m,
             handleMouseForwardUp: c,
             handleMouseBackUp: c,
         }),
-        [d, p, _, m, c],
+        [d, _, p, m, c],
     );
 }
 const rail$1 = 'HorizontalBar_rail_37858d8f',
@@ -2970,12 +2987,12 @@ const rail$1 = 'HorizontalBar_rail_37858d8f',
         const m = useEvent(
                 (e, t, { parent: s }) => (e.screenX - t.offset - s.getBoundingClientRect().x) / s.offsetWidth,
             ),
-            _ = useEvent((e) => e - (a.current.offsetWidth - u.current.offsetWidth) >= -0.5),
-            p = reactExports.useCallback(
+            p = useEvent((e) => e - (a.current.offsetWidth - u.current.offsetWidth) >= -0.5),
+            _ = reactExports.useCallback(
                 (e) => ('dragStart' === e.type ? c(!0) : 'dragEnd' === e.type && c(!1), t(e)),
                 [t],
             ),
-            E = useBarDragging(u, p, d, a, m),
+            E = useBarDragging(u, _, d, a, m),
             f = useEvent(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: s }) => {
                 const r = a.current,
                     n = o.current,
@@ -3018,7 +3035,7 @@ const rail$1 = 'HorizontalBar_rail_37858d8f',
                             calculateOffset: m,
                             calculateSize: calculateThumbSize$1,
                             direction: 'horizontal',
-                            isBoundThumb: _,
+                            isBoundThumb: p,
                             railAfterRef: o,
                             railBeforeRef: i,
                             styles: THUMB_STYLES$1,
@@ -3140,14 +3157,14 @@ const DEFAULT_VERTICAL_API_CONFIG = {
             { api: d } = useVerticalScroll();
         useUpdateStatesBar({ baseRef: s, api: d });
         const m = useEvent((e) => e - (a.current.offsetHeight - u.current.offsetHeight) >= -0.5),
-            _ = useEvent(
+            p = useEvent(
                 (e, t, { parent: s }) => (e.screenY - t.offset - s.getBoundingClientRect().y) / s.offsetHeight,
             ),
-            p = reactExports.useCallback(
+            _ = reactExports.useCallback(
                 (e) => ('dragStart' === e.type ? c(!0) : 'dragEnd' === e.type && c(!1), t(e)),
                 [t],
             ),
-            E = useBarDragging(u, p, d, a, _),
+            E = useBarDragging(u, _, d, a, p),
             f = useEvent(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: s }) => {
                 const r = a.current,
                     n = o.current,
@@ -3187,7 +3204,7 @@ const DEFAULT_VERTICAL_API_CONFIG = {
                         jsxRuntimeExports.jsx(Thumb, {
                             dragging: l,
                             api: d,
-                            calculateOffset: _,
+                            calculateOffset: p,
                             calculateSize: calculateThumbSize,
                             direction: 'vertical',
                             isBoundThumb: m,
@@ -3538,8 +3555,8 @@ const defaultBrackets = { start: '{{', end: '}}' },
                 [e.formatters],
             ),
             m = reactExports.useMemo(() => parse(i ? `{{@ split}}${c}{{/}}` : c, t), [t, c, i]),
-            _ = reactExports.useMemo(() => render(m, d, e.params), [m, d, e.params]),
-            p = cx(styles$h.base, a && styles$h.base__fullSize, l.className);
+            p = reactExports.useMemo(() => render(m, d, e.params), [m, d, e.params]),
+            _ = cx(styles$h.base, a && styles$h.base__fullSize, l.className);
         return e.inline
             ? (console.warn(
                   "[FormatText] using the 'inline' props causes memory leaks due to incorrect working of the 'cohinline' attribute in GF version 1.48.2.3. Can cause client crashes.",
@@ -3547,13 +3564,13 @@ const defaultBrackets = { start: '{{', end: '}}' },
               ),
               jsxRuntimeExports.jsx('p', {
                   ...l,
-                  className: p,
+                  className: _,
                   ref: (e) => {
                       null == e || e.setAttribute('cohinline', 'true');
                   },
-                  children: _,
+                  children: p,
               }))
-            : jsxRuntimeExports.jsx('span', { ...l, className: p, children: _ });
+            : jsxRuntimeExports.jsx('span', { ...l, className: _, children: p });
     });
 function FormatString({ path: e, ...t }) {
     return jsxRuntimeExports.jsx(FormatText, { text: resources.resolve('strings').readOrEmpty(e), ...t });
@@ -4415,8 +4432,8 @@ const handleViewEvent = (e, t, s = {}, r = 0) => {
         isEnabled: c = !0,
         targetId: d = 0,
         onShow: m,
-        onHide: _,
-        ...p
+        onHide: p,
+        ..._
     }) => {
         const E = reactExports.useRef({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
             f = reactExports.useMemo(() => d || getFromCallStack().resId, [d]),
@@ -4431,10 +4448,10 @@ const handleViewEvent = (e, t, s = {}, r = 0) => {
                     const e = E.current.timeoutId;
                     (e > 0 && (clearTimeout(e), (E.current.timeoutId = 0)),
                         handleViewEvent(t, l, { on: !1 }, f),
-                        E.current.isVisible && _ && _(),
+                        E.current.isVisible && p && p(),
                         (E.current.isVisible = !1));
                 }
-            }, [t, l, f, _]),
+            }, [t, l, f, p]),
             g = reactExports.useCallback((e) => {
                 E.current.isVisible &&
                     ((E.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
@@ -4484,7 +4501,7 @@ const handleViewEvent = (e, t, s = {}, r = 0) => {
                   onMouseDown: ((e) => (t) => {
                       (!1 === i && h(), null == a || a(t), null == e || e(t));
                   })(e.props.onMouseDown),
-                  ...p,
+                  ..._,
               })
             : e;
         var b;
@@ -4871,10 +4888,10 @@ const isTextBlock = (e) => void 0 !== e.childList,
                 const e = s.children,
                     l = t[i],
                     d = l.props.children,
-                    [m, _] = truncateElement(e, d, e.length - 1, r, n, a);
+                    [m, p] = truncateElement(e, d, e.length - 1, r, n, a);
                 if (!(m < 0)) {
                     const e = d.slice(0, m);
-                    ((o = React.cloneElement(l, l.props, e, _)), (u = i));
+                    ((o = React.cloneElement(l, l.props, e, p)), (u = i));
                     break;
                 }
                 n -= c.length;
@@ -4942,21 +4959,21 @@ const isTextBlock = (e) => void 0 !== e.childList,
     }) => {
         const d = reactExports.useRef(null),
             m = reactExports.useRef({ height: 0, width: 0 }),
-            [_, p] = reactExports.useState({ elementList: [], isTruncated: !1, isTruncateFinished: !1 }),
+            [p, _] = reactExports.useState({ elementList: [], isTruncated: !1, isTruncateFinished: !1 }),
             E = reactExports.useMemo(() => getJsxElementsList(e, r, { justifyContent: i }), [r, i, e]),
             f = reactExports.useMemo(() => {
-                if (n && _.isTruncated && (!r || !Object.values(r).find((e) => 'object' == typeof e)))
+                if (n && p.isTruncated && (!r || !Object.values(r).find((e) => 'object' == typeof e)))
                     return {
                         args: { text: e, ...u, stringifyKwargs: r ? JSON.stringify(r) : '' },
                         contentId: R.views.lobby.common.tooltips.ExtendedTextTooltip('resId'),
                         targetId: o,
                     };
-            }, [r, n, o, e, u, _.isTruncated]),
+            }, [r, n, o, e, u, p.isTruncated]),
             x = reactExports.useCallback(
                 (e) => {
                     ((m.current.width = e.contentRect.width), (m.current.height = e.contentRect.height));
                     const [t, r] = truncateJsxElements(d, E, m.current, c);
-                    (p({ elementList: t, isTruncated: r, isTruncateFinished: !0 }), s && s(r));
+                    (_({ elementList: t, isTruncated: r, isTruncateFinished: !0 }), s && s(r));
                 },
                 [s, c, E],
             ),
@@ -4976,9 +4993,9 @@ const isTextBlock = (e) => void 0 !== e.childList,
                             styles$d[`tooltip__align-${l}`],
                         ),
                         children: jsxRuntimeExports.jsx('div', {
-                            className: cx(styles$d.truncated, !_.isTruncateFinished && a && styles$d.truncated__hide),
+                            className: cx(styles$d.truncated, !p.isTruncateFinished && a && styles$d.truncated__hide),
                             style: h,
-                            children: _.isTruncateFinished && a ? _.elementList : E,
+                            children: p.isTruncateFinished && a ? p.elementList : E,
                         }),
                     }),
                 ],
@@ -5568,11 +5585,6 @@ const multiValueTypes = [
                 return e;
         }
     },
-    formatPrintf = (e, t) =>
-        e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
-            const s = 0 === e.indexOf('%') ? 2 : 1;
-            return String(t[e.slice(s, -s)]);
-        }),
     base$7 = 'Reward_d65e1e12',
     base__s24x24 = 'Reward_base__s24x24_954b5cee',
     base__s48x48 = 'Reward_base__s48x48_21f091ec',
@@ -5590,7 +5602,7 @@ const multiValueTypes = [
     icon$1 = 'Reward_icon_e152f13b',
     overlay = 'Reward_overlay_8cbe65c9',
     highlight = 'Reward_highlight_f1cd08e0',
-    image = 'Reward_image_1cbfa020',
+    image = 'Reward_image_810ec3a2',
     image__s24x24 = 'Reward_image__s24x24_954b5cee',
     image__s48x48 = 'Reward_image__s48x48_21f091ec',
     image__small = 'Reward_image__small_3eddf28d',
@@ -5603,7 +5615,7 @@ const multiValueTypes = [
     image__s400x300 = 'Reward_image__s400x300_a8627e1b',
     image__s600x450 = 'Reward_image__s600x450_e27f3852',
     image__fixedBox = 'Reward_image__fixedBox_e45bdd8a',
-    info = 'Reward_info_81cb3342',
+    info = 'Reward_info_26d38c48',
     info__multi = 'Reward_info__multi_465d34bd',
     info__credits = 'Reward_info__credits_1643219',
     info__gold = 'Reward_info__gold_c751be5d',
@@ -5670,9 +5682,9 @@ const multiValueTypes = [
         className: c,
         classNames: d,
         tooltipArgs: m,
-        periodicIconTooltipArgs: _,
+        periodicIconTooltipArgs: p,
     }) => {
-        const p = SIZE_MAP.has(n) ? SIZE_MAP.get(n) : n,
+        const _ = SIZE_MAP.has(n) ? SIZE_MAP.get(n) : n,
             E = getBottomHighlight(n, a),
             f = getOverlay(a),
             x = getFormattedValue(u, o),
@@ -5682,7 +5694,7 @@ const multiValueTypes = [
                 resId: null == m ? void 0 : m.resId,
                 decoratorId: null == m ? void 0 : m.decoratorId,
             }),
-            g = useSimpleTooltip({ header: null == _ ? void 0 : _.header, body: null == _ ? void 0 : _.body });
+            g = useSimpleTooltip({ header: null == p ? void 0 : p.header, body: null == p ? void 0 : p.body });
         return jsxRuntimeExports.jsxs('div', {
             className: cx(styles$9.base, styles$9[`base__${n}`], !r && styles$9.base__dynamicBox, c),
             style: l,
@@ -5701,7 +5713,7 @@ const multiValueTypes = [
                                     jsxRuntimeExports.jsx('div', {
                                         className: cx(styles$9.highlight, null == d ? void 0 : d.highlight),
                                         style: {
-                                            backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${p}.${E}_highlight`)})`,
+                                            backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${_}.${E}_highlight`)})`,
                                         },
                                     }),
                                 t &&
@@ -5713,7 +5725,7 @@ const multiValueTypes = [
                                     jsxRuntimeExports.jsx('div', {
                                         className: cx(styles$9.overlay, null == d ? void 0 : d.overlay),
                                         style: {
-                                            backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${p}.${f}_overlay`)})`,
+                                            backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${_}.${f}_overlay`)})`,
                                         },
                                     }),
                             ],
@@ -5739,7 +5751,12 @@ const multiValueTypes = [
             ],
         });
     },
-    base$6 = 'RewardsList_b956755b',
+    formatters = Object.fromEntries(Object.entries(defaultFormatters).map(([e]) => [e, (e) => e]));
+function renderString(e, t = {}) {
+    const s = parse(e, defaultBrackets);
+    return String(render(s, formatters, t));
+}
+const base$6 = 'RewardsList_b956755b',
     base__vertical = 'RewardsList_base__vertical_59db3c9f',
     reward = 'RewardsList_reward_fc200613',
     reward__vertical = 'RewardsList_reward__vertical_5f09c6e0',
@@ -5751,6 +5768,7 @@ const multiValueTypes = [
         reward__vertical: reward__vertical,
         boxRewardClassName: boxRewardClassName,
     },
+    sizeToDefault = { [ImageSize.S24x24]: ImageSize.Small, [ImageSize.S48x48]: ImageSize.Small },
     Rewards = reactExports.memo(function ({
         data: e,
         isFixedBoxSize: t,
@@ -5766,55 +5784,62 @@ const multiValueTypes = [
     }) {
         const d = resources.resolve('strings'),
             m = resources.resolve('images'),
-            _ = s === ImageSize.S24x24 ? ImageSize.Small : s,
-            p = n && n < e.length ? `${m.readOrEmpty(`quests.bonuses.${_}.default`)}` : '',
-            E =
+            p =
+                'number' == typeof n && n < e.length
+                    ? `${m.readOrEmpty(`quests.bonuses.${sizeToDefault[s] ?? s}.default`)}`
+                    : void 0,
+            _ =
                 i ||
-                formatPrintf(d.readOrEmpty('tooltips.quests.awards.additional.bottom'), { count: e.length - (n || 0) }),
-            f = cx(styles$8.base, r && styles$8.base__vertical, a),
-            x = cx(styles$8.reward, r && styles$8.reward__vertical, u);
+                renderString(upgradeLegacy(d.readOrEmpty('tooltips.quests.awards.additional.bottom')), {
+                    count: e.length - (n || 0),
+                });
         return jsxRuntimeExports.jsx('div', {
-            className: f,
-            children: p
-                ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
-                      children: [
-                          e
-                              .slice(0, n)
-                              .map((e, r) =>
-                                  jsxRuntimeExports.jsx(
-                                      'div',
-                                      {
-                                          className: x,
-                                          children: jsxRuntimeExports.jsx(Reward, { size: s, isFixedBoxSize: t, ...e }),
-                                      },
-                                      r,
+            className: cx(styles$8.base, r && styles$8.base__vertical, a),
+            children:
+                void 0 !== p
+                    ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+                          children: [
+                              e
+                                  .slice(0, n)
+                                  .map((e, n) =>
+                                      jsxRuntimeExports.jsx(
+                                          'div',
+                                          {
+                                              className: cx(styles$8.reward, r && styles$8.reward__vertical, u),
+                                              children: jsxRuntimeExports.jsx(Reward, {
+                                                  size: s,
+                                                  isFixedBoxSize: t,
+                                                  ...e,
+                                              }),
+                                          },
+                                          n,
+                                      ),
                                   ),
-                              ),
-                          jsxRuntimeExports.jsx('div', {
-                              className: x,
-                              children: jsxRuntimeExports.jsx(Reward, {
-                                  name: 'more',
-                                  isFixedBoxSize: t,
-                                  image: p,
-                                  size: s,
-                                  value: E,
-                                  tooltipArgs: o,
-                                  className: cx(styles$8.boxRewardClassName, l),
-                                  classNames: c,
+                              jsxRuntimeExports.jsx('div', {
+                                  className: cx(styles$8.reward, r && styles$8.reward__vertical, u),
+                                  children: jsxRuntimeExports.jsx(Reward, {
+                                      name: 'more',
+                                      isFixedBoxSize: t,
+                                      image: p,
+                                      size: s,
+                                      value: _,
+                                      tooltipArgs: o,
+                                      className: cx(styles$8.boxRewardClassName, l),
+                                      classNames: c,
+                                  }),
                               }),
-                          }),
-                      ],
-                  })
-                : e.map((e, r) =>
-                      jsxRuntimeExports.jsx(
-                          'div',
-                          {
-                              className: x,
-                              children: jsxRuntimeExports.jsx(Reward, { size: s, isFixedBoxSize: t, ...e }),
-                          },
-                          r,
+                          ],
+                      })
+                    : e.map((e, n) =>
+                          jsxRuntimeExports.jsx(
+                              'div',
+                              {
+                                  className: cx(styles$8.reward, r && styles$8.reward__vertical, u),
+                                  children: jsxRuntimeExports.jsx(Reward, { size: s, isFixedBoxSize: t, ...e }),
+                              },
+                              n,
+                          ),
                       ),
-                  ),
         });
     }),
     Context = reactExports.createContext(void 0);
@@ -5887,7 +5912,7 @@ function ProgressBarProvider(e) {
     const c = reactExports.useMemo(() => {
         if (void 0 !== a && void 0 !== u) return { value: a, maxValue: u, percentage: a / u };
     }, [a, u]);
-    assert(r > 0, 'initMaxValue must be greater than 0');
+    assert(r > 0, 'ProgressBar: maxValue must be greater than 0');
     const d = reactExports.useMemo(
         () => ({
             value: t,
@@ -5920,10 +5945,17 @@ const background = 'ProgressBar_background_b40cdfdf',
     Base$3 = defineStyledComponent('ProgressBar', styles$6.base, {
         variants: { size: { small: styles$6.base__small, medium: styles$6.base__medium, full: styles$6.base__full } },
     });
-function ProgressBar({ size: e = 'medium', className: t, classNames: s, filledClassNames: r, ...n }) {
+function ProgressBar({
+    size: e = 'medium',
+    className: t,
+    classNames: s,
+    filledClassName: r,
+    filledClassNames: n,
+    ...a
+}) {
     return jsxRuntimeExports.jsx(ProgressBarProvider, {
         size: e,
-        ...n,
+        ...a,
         children: jsxRuntimeExports.jsxs(Base$3, {
             size: e,
             className: t,
@@ -5932,8 +5964,8 @@ function ProgressBar({ size: e = 'medium', className: t, classNames: s, filledCl
                 jsxRuntimeExports.jsx('div', {
                     className: cx(styles$6.backgroundPattern, null == s ? void 0 : s.backgroundPattern),
                 }),
-                jsxRuntimeExports.jsx(Filled, { classNames: r }),
-                n.children,
+                jsxRuntimeExports.jsx(Filled, { className: r, classNames: n }),
+                a.children,
             ],
         }),
     });
@@ -5944,27 +5976,27 @@ const delta = 'Delta_5c8185db',
     styles$5 = { delta: delta, delta__increase: delta__increase, glow: glow },
     Delta = reactExports.memo(
         reactExports.forwardRef(function (
-            { initValue: e, initMaxValue: t, animationEnabled: s = !0, animationProps: r, ...n },
-            a,
+            { initValue: e, initMaxValue: t, animationEnabled: s = !0, animationProps: r, classNames: n, ...a },
+            u,
         ) {
-            const u = reactExports.useRef(null),
-                o = reactExports.useRef(null),
-                i = useProgressBar(),
-                l = reactExports.useMemo(() => {
+            const o = reactExports.useRef(null),
+                i = reactExports.useRef(null),
+                l = useProgressBar(),
+                c = reactExports.useMemo(() => {
                     if ('number' != typeof e || 'number' != typeof t) return;
                     assert(t > 0, 'initMaxValue must be greater than 0');
                     const s = Math.min(e, t);
                     return { value: s, maxValue: t, percentage: s / t };
                 }, [e, t]),
-                c = i.previous ?? l;
+                d = l.previous ?? c;
             return (
                 reactExports.useEffect(() => {
-                    const e = u.current,
-                        t = o.current;
-                    if (!e || !c || !t) return;
-                    const n = i.percentage - c.percentage;
+                    const e = o.current,
+                        t = i.current;
+                    if (!e || !d || !t) return;
+                    const n = l.percentage - d.percentage;
                     if (
-                        ((e.style.left = 100 * Math.max(0, i.percentage - Math.max(0, n)) + '%'),
+                        ((e.style.left = 100 * Math.max(0, l.percentage - Math.max(0, n)) + '%'),
                         (e.style.width = 100 * Math.abs(n) + '%'),
                         e.classList.toggle(styles$5.delta__increase, n > 0),
                         (t.style.width = '100%'),
@@ -5988,12 +6020,19 @@ const delta = 'Delta_5c8185db',
                             }
                         );
                     }
-                }, [i.percentage, s, r, c]),
+                }, [l.percentage, s, r, d]),
                 jsxRuntimeExports.jsxs('div', {
-                    ...n,
-                    ref: assignRefs([a, u]),
-                    className: cx(n.className, styles$5.delta),
-                    children: [c && jsxRuntimeExports.jsx('div', { className: styles$5.glow, ref: o }), n.children],
+                    ...a,
+                    ref: assignRefs([u, o]),
+                    className: cx(a.className, styles$5.delta),
+                    children: [
+                        d &&
+                            jsxRuntimeExports.jsx('div', {
+                                className: cx(styles$5.glow, null == n ? void 0 : n.glow),
+                                ref: i,
+                            }),
+                        a.children,
+                    ],
                 })
             );
         }),
@@ -6207,14 +6246,14 @@ const SMALL_SIZE_BREAKPOINT = 100,
         },
         m,
     ) {
-        const [_, p] = reactExports.useState(!1),
+        const [p, _] = reactExports.useState(!1),
             E = useSounds(),
             f = useCardsWrapperContextOptional(),
             x = n || i;
         return jsxRuntimeExports.jsx(Base$1, {
             ...d,
             ref: m,
-            hover: _,
+            hover: p,
             disableMouse: n,
             active: t,
             className: cx(cardStyles.card, l, (null == f ? void 0 : f.enabled) && cardStyles.base__wrapped),
@@ -6222,7 +6261,7 @@ const SMALL_SIZE_BREAKPOINT = 100,
                 disabled: i,
                 selected: d.selected ?? !1,
                 multiple: d.multiple ?? !1,
-                hover: _,
+                hover: p,
                 status: s,
                 children: [
                     jsxRuntimeExports.jsx('div', {
@@ -6234,10 +6273,10 @@ const SMALL_SIZE_BREAKPOINT = 100,
                             x || E.play('mouse-enter', { target: o || 'react-ui:card', original: e });
                         },
                         onMouseOver: function (e) {
-                            x || (p(!0), null == a || a(e));
+                            x || (_(!0), null == a || a(e));
                         },
                         onMouseOut: function (e) {
-                            x || (p(!1), null == u || u(e));
+                            x || (_(!1), null == u || u(e));
                         },
                         children: jsxRuntimeExports.jsx(MainContainer, { classNames: c, children: e }),
                     }),
@@ -6461,14 +6500,14 @@ const Lines = reactExports.memo(({ containerRef: e, generation: t, border: s, ca
                 l,
                 reactExports.useCallback(() => m(), [m]),
             ));
-        const _ = reactExports.useMemo(() => ({ recalculate: m, enabled: n }), [m, n]);
+        const p = reactExports.useMemo(() => ({ recalculate: m, enabled: n }), [m, n]);
         return jsxRuntimeExports.jsx(Base, {
             ...u,
             ref: l,
             children: jsxRuntimeExports.jsxs('div', {
                 className: t,
                 children: [
-                    jsxRuntimeExports.jsx(CardsWrapperContextProvider, { value: _, children: e }),
+                    jsxRuntimeExports.jsx(CardsWrapperContextProvider, { value: p, children: e }),
                     jsxRuntimeExports.jsx(Lines, {
                         cardsRef: i,
                         containerRef: l,
@@ -6637,10 +6676,10 @@ const VideoForwarded = reactExports.forwardRef(function (
                             var e;
                             return null == (e = d.current) ? void 0 : e.pause();
                         },
-                        _ = () => {
+                        p = () => {
                             (m(), i(0));
                         },
-                        p = () => {
+                        _ = () => {
                             var e;
                             return (null == (e = d.current) ? void 0 : e.cohGetKeyframeTimestamps)
                                 ? d.current.cohGetKeyframeTimestamps()
@@ -6684,11 +6723,11 @@ const VideoForwarded = reactExports.forwardRef(function (
                             off: g,
                             play: l,
                             pause: m,
-                            stop: _,
+                            stop: p,
                             cleanup: x,
                             getCurrentTime: n,
                             getDuration: o,
-                            getCachedKeyframes: p,
+                            getCachedKeyframes: _,
                             goToAndPlay: E,
                             goToAndStop: f,
                             setCurrentTime: i,
@@ -6731,61 +6770,65 @@ const VehicleLevel = reactExports.forwardRef(function ({ value: e, numberType: t
 });
 VehicleLevel.numberTypes = numberTypes;
 export {
-    assert as $,
+    useMedia as $,
     Area as A,
     Base$5 as B,
     CloseButton as C,
-    getRewardValueType as D,
-    getRewardImage as E,
+    now as D,
+    Tooltip as E,
     FormatText as F,
-    ExtendedText as G,
-    Alignment as H,
+    Timer as G,
+    getRewardValueType as H,
     Image as I,
     JSXBuilder as J,
-    useSimpleTooltip as K,
-    Delta as L,
-    Card as M,
-    cloneModel as N,
-    get as O,
+    getRewardImage as K,
+    ExtendedText as L,
+    Alignment as M,
+    useSimpleTooltip as N,
+    useParamTooltip as O,
     ProgressBar as P,
-    useSounds as Q,
+    Delta as Q,
     Rewards as R,
     Specials as S,
     Tabs as T,
     UIProvider as U,
-    useEvent as V,
-    easings as W,
-    useMedia as X,
-    useParamTooltip as Y,
-    toSeconds as Z,
-    forEach as _,
+    Card as V,
+    cloneModel as W,
+    add as X,
+    useSounds as Y,
+    useEvent as Z,
+    easings as _,
     createLayoutReadyInEffect as a,
-    isEmptyObject as a0,
-    useEmitter as a1,
-    useSoundsOptional as a2,
-    find as a3,
-    remToPx$1 as a4,
-    usePrevious as a5,
-    useMount as a6,
-    useEmitterSubscribe as a7,
-    Video as a8,
-    useIsFirstRender as a9,
-    logBySeverity$1 as aa,
-    useTooltip as ab,
-    toArray as ac,
-    getRewardTooltipConfig as ad,
-    VehicleLevel as ae,
-    normalizeResource as af,
-    Reward as ag,
-    mapNonNullable as ah,
-    useHorizontalScroll as ai,
-    useSkipFrame as aj,
-    useCallbackOnce as ak,
-    Area$1 as al,
-    Bar$1 as am,
-    Base$6 as an,
-    CardsWrapper as ao,
-    mapFilter as ap,
+    toMillis as a0,
+    forEach as a1,
+    get as a2,
+    assert as a3,
+    isEmptyObject as a4,
+    useEmitter as a5,
+    useSoundsOptional as a6,
+    find as a7,
+    remToPx$1 as a8,
+    usePrevious as a9,
+    useMount as aa,
+    useEmitterSubscribe as ab,
+    Video as ac,
+    useIsFirstRender as ad,
+    logBySeverity$1 as ae,
+    useTooltip as af,
+    toArray as ag,
+    getRewardTooltipConfig as ah,
+    VehicleLevel as ai,
+    normalizeResource as aj,
+    Reward as ak,
+    mapNonNullable as al,
+    useHorizontalScroll as am,
+    useSkipFrame as an,
+    useCallbackOnce as ao,
+    Area$1 as ap,
+    Bar$1 as aq,
+    Base$6 as ar,
+    CardsWrapper as as,
+    mapFilter as at,
     resources as b,
     createSoundPlay as c,
     FormatString as d,
@@ -6807,8 +6850,8 @@ export {
     themes as t,
     useAdaptive as u,
     useUntilTimer as v,
-    add as w,
-    now as x,
-    Tooltip as y,
-    Timer as z,
+    millis as w,
+    pipe as x,
+    toSeconds as y,
+    subtract as z,
 };

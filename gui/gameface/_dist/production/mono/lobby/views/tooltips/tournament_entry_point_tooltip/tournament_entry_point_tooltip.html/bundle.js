@@ -1,6 +1,8 @@
-import { x as e, j as t, w as a } from '../../../../chunks/vendor.js';
-import { i as n, F as i, bO as s, r as p } from '../../../../chunks/lib.js';
-import { t as o, T as r } from '../../../../chunks/tooltips.module.js';
+import { I as e, j as t, J as a } from '../../../../chunks/vendor.js';
+import { i as s, cd as n, bV as i, cP as p } from '../../../../chunks/lib.js';
+import { T as o } from '../../../../chunks/tooltip_decorator.js';
+import { T as r } from '../../../../chunks/enums.js';
+import { t as _ } from '../../../../chunks/tooltips.module.js';
 var c = ((e) => (
     (e[(e.StartingSoon = 0)] = 'StartingSoon'),
     (e[(e.Live = 1)] = 'Live'),
@@ -8,11 +10,13 @@ var c = ((e) => (
     (e[(e.Finished = 3)] = 'Finished'),
     e
 ))(c || {});
-const [_, l] = n()(({ observableModel: e }) => ({ root: e.object() })),
-    d = {
+const [l, d] = s()(({ observableModel: e }) => ({ root: e.object() })),
+    m = {
         base: 'App_db75b9f1',
-        topContentBg: 'App_topContentBg_fc931abd',
-        base__live: 'App_base__live_0',
+        topContentBg: 'App_topContentBg_83729a80',
+        base__ols: 'App_base__ols_0',
+        base__olsLive: 'App_base__olsLive_0',
+        live: 'App_live_9ef7c7f3',
         topContent: 'App_topContent_52c7eecf',
         title: 'App_title_65c2019a',
         bottomContent: 'App_bottomContent_86b6402b',
@@ -34,51 +38,46 @@ const [_, l] = n()(({ observableModel: e }) => ({ root: e.object() })),
         blink: 'App_blink_0',
         slideUpIn: 'App_slideUpIn_0',
     },
-    h = {
-        [c.StartingSoon]: 'startingSoon',
-        [c.Live]: 'live',
-        [c.BetweenShowmatches]: 'betweenShowmatches',
-        [c.Finished]: 'finished',
-    },
-    m = [c.Live, c.BetweenShowmatches],
-    A = e(() => {
-        const { model: e } = l(),
-            { state: n, timeLeftUntilLiveMatch: p, timeLeftUntilNextShowMatchDay: r } = e.root.get();
+    h = [c.Live, c.BetweenShowmatches],
+    v = e(() => {
+        const { model: e } = d(),
+            { state: s, timeLeftUntilLiveMatch: p, timeLeftUntilNextShowMatchDay: o, tournamentName: l } = e.root.get();
         return t.jsxs('div', {
-            className: a(d.base, d[`base__${h[n]}`]),
+            className: a(m.base, m[`base__${l}${s === c.Live ? 'Live' : ''}`]),
             children: [
-                t.jsx('div', { className: d.topContentBg }),
+                t.jsx('div', { className: m.topContentBg }),
+                s === c.Live && l === r.WCI && t.jsx('div', { className: m.live }),
                 t.jsx('div', {
-                    className: d.topContent,
+                    className: m.topContent,
                     children: t.jsx('div', {
-                        className: d.title,
-                        children: R.strings.comp7_ext.tournamentsEntryPointTooltip.heading(),
+                        className: m.title,
+                        children: `${R.strings.comp7_ext.tournamentsEntryPointTooltip.heading.$dyn(l)}`,
                     }),
                 }),
                 t.jsxs('div', {
-                    className: d.bottomContent,
+                    className: m.bottomContent,
                     children: [
-                        t.jsx(i, {
-                            text: R.strings.comp7_ext.tournamentsEntryPointTooltip.description(),
-                            classMix: d.paragraph,
+                        t.jsx(n, {
+                            text: `${R.strings.comp7_ext.tournamentsEntryPointTooltip.description.$dyn(l)}`,
+                            classMix: m.paragraph,
                         }),
-                        m.includes(n) &&
+                        h.includes(s) &&
                             t.jsxs(t.Fragment, {
                                 children: [
-                                    t.jsx('div', { className: a(o.divider, d.divider) }),
+                                    t.jsx('div', { className: a(_.divider, m.divider) }),
                                     t.jsx('div', {
-                                        className: d.timerContainer,
-                                        children: t.jsx(i, {
+                                        className: m.timerContainer,
+                                        children: t.jsx(n, {
                                             text:
-                                                n === c.Live
+                                                s === c.Live
                                                     ? R.strings.comp7_ext.tournamentsEntryPointTooltip.live()
                                                     : R.strings.comp7_ext.tournamentsEntryPointTooltip.showmatch(),
                                             binding: {
-                                                timer: t.jsx(s, {
-                                                    start: n === c.Live ? p : r,
-                                                    format: s.format.default,
-                                                    type: s.type.accent,
-                                                    size: s.size.x24x24,
+                                                timer: t.jsx(i, {
+                                                    start: s === c.Live ? p : o,
+                                                    format: i.format.default,
+                                                    type: i.type.accent,
+                                                    size: i.size.x24x24,
                                                 }),
                                             },
                                         }),
@@ -90,4 +89,4 @@ const [_, l] = n()(({ observableModel: e }) => ({ root: e.object() })),
             ],
         });
     });
-p(t.jsx(_, { children: t.jsx(r, { children: t.jsx(A, {}) }) }));
+p(t.jsx(l, { children: t.jsx(o, { children: t.jsx(v, {}) }) }));

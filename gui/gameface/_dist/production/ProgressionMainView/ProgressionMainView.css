@@ -1118,6 +1118,7 @@
     width: 32rem;
     height: 32rem;
     background: no-repeat center / contain;
+    filter: brightness(1.2);
     position: relative;
     z-index: 5;
 }

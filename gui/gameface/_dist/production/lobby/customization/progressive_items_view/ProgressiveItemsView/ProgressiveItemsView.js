@@ -43,7 +43,7 @@
                         extraSize: () => ie,
                         forceTriggerMouseMove: () => ue,
                         freezeTextureBeforeResize: () => q,
-                        getBrowserTexturePath: () => W,
+                        getBrowserTexturePath: () => H,
                         getDisplayStatus: () => te,
                         getExternalPaddingsRem: () => ae,
                         getFontNames: () => ne,
@@ -59,7 +59,7 @@
                         sendEvent: () => I,
                         setAnimateWindow: () => Z,
                         setEventHandled: () => J,
-                        setInputPaddingsRem: () => H,
+                        setInputPaddingsRem: () => W,
                         setSidePaddingsRem: () => V,
                         whenTutorialReady: () => se,
                     }));
@@ -246,10 +246,10 @@
                 function z(e) {
                     viewEnv.addPreloadTexture(e);
                 }
-                function H(e) {
+                function W(e) {
                     viewEnv.setHitAreaPaddingsRem(e, e, e, e, 15);
                 }
-                function W(e, u, t, n = 1) {
+                function H(e, u, t, n = 1) {
                     return viewEnv.getWebBrowserTexturePath(e, u, t, n);
                 }
                 function j(e, u, t) {
@@ -971,12 +971,14 @@
                 }
                 function y(e, u, t = []) {
                     const n = (0, o.useRef)(0),
-                        r = (0, o.useCallback)(() => window.clearInterval(n.current), t || []);
+                        r = (0, o.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, t || []);
                     (0, o.useEffect)(() => r, [r]);
                     const a = (null != t ? t : []).concat([u]);
                     return [
                         (0, o.useCallback)((t) => {
-                            ((n.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
+                            (0 !== n.current && r(), (n.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
                         }, a),
                         r,
                     ];
@@ -1281,8 +1283,8 @@
                         forceTriggerMouseMove: a.O.view.forceTriggerMouseMove,
                     }),
                     z = 'HorizontalBar_base_49',
-                    H = 'HorizontalBar_base__active_5e',
-                    W = 'HorizontalBar_leftButton_5f',
+                    W = 'HorizontalBar_base__active_5e',
+                    H = 'HorizontalBar_leftButton_5f',
                     j = 'HorizontalBar_rightButton_03',
                     V = 'HorizontalBar_track_0d',
                     $ = 'HorizontalBar_thumb_fd',
@@ -1350,7 +1352,7 @@
                                     ((u.style.width = `${X(t, o)}px`),
                                         (u.style.display = 'flex'),
                                         r.current &&
-                                            (1 !== o ? r.current.classList.add(H) : r.current.classList.remove(H)));
+                                            (1 !== o ? r.current.classList.add(W) : r.current.classList.remove(W)));
                                 })(),
                                     B());
                             });
@@ -1426,7 +1428,7 @@
                             'div',
                             { className: p()(z, u.base), ref: r, onWheel: e.handleMouseWheel },
                             i().createElement('div', {
-                                className: p()(W, u.leftButton),
+                                className: p()(H, u.leftButton),
                                 onMouseDown: (e) => {
                                     e.target.classList.contains(G) || 0 !== e.button || (S('play'), g(O.Next));
                                 },
@@ -2049,8 +2051,8 @@
                     var t;
                     if (!(u >= e.length)) return Array.isArray(e) ? e[u] : null == (t = e[u]) ? void 0 : t.value;
                 }
-                const He = ze;
-                const We = ['children', 'top', 'bottom'];
+                const We = ze;
+                const He = ['children', 'top', 'bottom'];
                 function je() {
                     return (
                         (je =
@@ -2077,7 +2079,7 @@
                                 a = Object.keys(e);
                             for (n = 0; n < a.length; n++) ((t = a[n]), u.indexOf(t) >= 0 || (r[t] = e[t]));
                             return r;
-                        })(e, We);
+                        })(e, He);
                     return i().createElement(
                         'div',
                         je({}, r, { style: Object.assign({ marginTop: `${t}rem`, marginBottom: `${n}rem` }, r.style) }),
@@ -2442,8 +2444,8 @@
                     Mu = 'Item_hoverContent_51',
                     Iu = 'Item_itemProgression_d8',
                     zu = 'Item_itemProgression__small_2e',
-                    Hu = 'Item_itemProgression__large_34',
-                    Wu = 'Item_itemProgressionWithBar_f5',
+                    Wu = 'Item_itemProgression__large_34',
+                    Hu = 'Item_itemProgressionWithBar_f5',
                     ju = 'Item_itemProgressionWithBar__small_20',
                     Vu = 'Item_itemProgressionWithBar__large_ab',
                     $u = 'Item_itemSeparator_1f',
@@ -3041,8 +3043,8 @@
                     Mt = 'ItemBlockProgression_base__small_02',
                     It = 'ItemBlockProgression_text_d9',
                     zt = 'ItemBlockProgression_text__large_7e',
-                    Ht = 'ItemBlockProgression_text__score_9d',
-                    Wt = 'ItemBlockProgression_count_b1',
+                    Wt = 'ItemBlockProgression_text__score_9d',
+                    Ht = 'ItemBlockProgression_count_b1',
                     jt = 'ItemBlockProgression_description_b2',
                     Vt = ({
                         unlockCondition: e,
@@ -3064,8 +3066,8 @@
                                     null,
                                     i().createElement(
                                         'span',
-                                        { className: p()(Wt, c) },
-                                        i().createElement('span', { className: Ht }, u),
+                                        { className: p()(Ht, c) },
+                                        i().createElement('span', { className: Wt }, u),
                                         a,
                                     ),
                                     i().createElement(Rt, { value: u, size: et.Small, maxValue: t }),
@@ -3163,7 +3165,7 @@
                                 C = p()(Ou, A && Ru, m && Lu),
                                 _ = p()($u, A && Uu, m && Gu);
                             let g;
-                            g = r.hideProgressBarAndString ? p()(Iu, A && zu, m && Hu) : p()(Wu, A && ju, m && Vu);
+                            g = r.hideProgressBarAndString ? p()(Iu, A && zu, m && Wu) : p()(Hu, A && ju, m && Vu);
                             const f = (0, o.useCallback)(() => {
                                     (S('cust_progress_exiting'), u(e, s));
                                 }, [e, s, u]),
@@ -3395,7 +3397,7 @@
                                             t = d.contentRef.current;
                                         if (!u || !t) return;
                                         const n = (function (e, u) {
-                                            for (let t = 0; t < e.length; t++) if (u(He(e, t), t, e)) return t;
+                                            for (let t = 0; t < e.length; t++) if (u(We(e, t), t, e)) return t;
                                         })(E.items, (e) => e.itemId === r);
                                         if (void 0 !== n) {
                                             const e = Math.round((u.offsetHeight / E.items.length) * n) - 30;
@@ -3526,8 +3528,8 @@
                     Mn = 'TutorialElement_icon__small_2e',
                     In = 'TutorialElement_icon__medium_3d',
                     zn = 'TutorialElement_elementTitle_15',
-                    Hn = 'TutorialElement_elementTitle_container_66',
-                    Wn = 'TutorialElement_elementDescription_82',
+                    Wn = 'TutorialElement_elementTitle_container_66',
+                    Hn = 'TutorialElement_elementDescription_82',
                     jn = ({ elementType: e, isSmall: u = !1 }) => {
                         const t = u ? Rn : Ln,
                             n = u ? Mn : In,
@@ -3543,7 +3545,7 @@
                             i().createElement('div', { className: n, style: r }),
                             i().createElement(
                                 'div',
-                                { className: Hn },
+                                { className: Wn },
                                 i().createElement(
                                     'div',
                                     { className: zn },
@@ -3551,7 +3553,7 @@
                                 ),
                             ),
                             i().createElement(Pn, {
-                                classMix: Wn,
+                                classMix: Hn,
                                 text: R.strings.vehicle_customization.progressionTutorial.$dyn(e).description(),
                             }),
                         );
@@ -3687,6 +3689,14 @@
                             n = ue();
                         return (
                             ye(ve.n.ESCAPE, e),
+                            ye(
+                                ve.n.ARROW_UP,
+                                i().useCallback(() => n.applyStepTo(O.Next), [n]),
+                            ),
+                            ye(
+                                ve.n.ARROW_DOWN,
+                                i().useCallback(() => n.applyStepTo(O.Prev), [n]),
+                            ),
                             i().createElement(
                                 'div',
                                 { className: wn },

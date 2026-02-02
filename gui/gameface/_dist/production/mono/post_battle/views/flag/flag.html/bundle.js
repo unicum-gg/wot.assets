@@ -1,7 +1,7 @@
-import { w as e, j as s, e as a } from '../../../chunks/vendor.js';
-import { i as o, c as t, s as i, d as n, r, u as c, V as p, J as l, M as d, a as _ } from '../../../chunks/lib.js';
-import { s as b, r as u, W as m } from '../../../chunks/flag_view_model.js';
-/* empty css                    */ const [h, v] = o()(({ observableModel: e }) => {
+import { F as e, j as s, e as a } from '../../../chunks/vendor.js';
+import { i as o, c as t, s as i, d as r, r as n, u as c, V as p, J as l, M as d, a as _ } from '../../../chunks/lib.js';
+import { s as b, r as u, a as m, W as v } from '../../../chunks/flag_view_model.js';
+/* empty css                    */ const [h, f] = o()(({ observableModel: e }) => {
         const s = { ...e.primitives(['winStatus']), achievements: e.arrayClone('achievements') },
             a = t.primitive(() => {
                 const e = s.achievements.get();
@@ -9,29 +9,29 @@ import { s as b, r as u, W as m } from '../../../chunks/flag_view_model.js';
             });
         return { ...s, computeds: { hasSpeialMedals: a } };
     }),
-    f = 'App_cb654453',
-    w = 'App_flag_4ed23b16',
-    g = 'App_flag__hidden_8afb9008',
-    j = n('Flag', f);
-function S({ winStatus: e, epicRibbon: s }) {
-    return e === m
+    w = 'App_cb654453',
+    g = 'App_flag_4ed23b16',
+    j = 'App_flag__hidden_8afb9008',
+    S = r('Flag', w);
+function k({ winStatus: e, epicRibbon: s }) {
+    return e === v
         ? 'post_battle.' + (s ? 'epic_victory_ribbon' : 'no_epic_victory_ribbon')
         : 'post_battle.' + (s ? 'epic_defeat_draw_ribbon' : 'no_epic_defeat_draw_ribbon');
 }
-const k = e(function () {
-    const e = r.resolve('videos'),
+const x = e(function () {
+    const e = n.resolve('videos'),
         o = c(),
-        { model: t } = v(),
+        { model: t } = f(),
         i = t.winStatus.get(),
-        n = t.computeds.hasSpeialMedals();
-    return s.jsx(j, {
-        className: f,
+        r = t.computeds.hasSpeialMedals();
+    return s.jsx(S, {
+        className: w,
         children: s.jsx(p, {
             loop: !0,
             autoplay: !0,
-            className: a(w, o.location !== u.personal && g),
-            src: e.read(S({ winStatus: i, epicRibbon: n })),
+            className: a(g, o.location !== u[m.overview] && j),
+            src: e.read(k({ winStatus: i, epicRibbon: r })),
         }),
     });
 });
-_(new l().addWithProps(d, { context: 'model.router' }).add(h).render(s.jsx(k, {})));
+_(new l().addWithProps(d, { context: 'model.router' }).add(h).render(s.jsx(x, {})));

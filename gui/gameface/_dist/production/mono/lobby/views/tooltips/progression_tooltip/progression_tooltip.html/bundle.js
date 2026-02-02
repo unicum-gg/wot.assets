@@ -6,17 +6,17 @@ import {
     e as r,
     h as d,
     g as c,
-    a5 as l,
+    ac as l,
     q as _,
     P as u,
     v as m,
     I as g,
     w as p,
-    d0 as x,
-    d1 as b,
-    d2 as T,
+    d1 as x,
+    d2 as b,
+    d3 as T,
     a3 as f,
-    cX as j,
+    cY as j,
 } from '../../../../chunks/lib.js';
 import { F as v } from '../../../../chunks/fun_random_progression_state.js';
 import { g as I } from '../../../../chunks/readResource.js';
@@ -150,7 +150,7 @@ const [N, E] = n()(({ observableModel: s }) => {
             ],
         });
     }),
-    X = {
+    Y = {
         root: 'ActiveModeContent_root_684b70dc',
         base: 'ActiveModeContent_9a83f24b',
         title: 'ActiveModeContent_title_c8fece42',
@@ -170,13 +170,13 @@ const [N, E] = n()(({ observableModel: s }) => {
             { dynamicTexts: c } = I('metaProgressionTooltip', { assetsPointer: d }),
             l = [v.ACTIVE_INFINITE_RESETTABLE, v.ACTIVE_INFINITE_FINAL].includes(r);
         return t.jsxs('div', {
-            className: a(X.base, X[`base__${r}`]),
+            className: a(Y.base, Y[`base__${r}`]),
             children: [
                 t.jsxs('div', {
-                    className: X.title,
+                    className: Y.title,
                     children: [
                         t.jsx(_, { text: c.header.active(), binding: { done: o, total: l ? '' : i } }),
-                        l && t.jsx('div', { className: X.infiniteIcon }),
+                        l && t.jsx('div', { className: Y.infiniteIcon }),
                     ],
                 }),
                 t.jsx(L, {}),
@@ -184,10 +184,10 @@ const [N, E] = n()(({ observableModel: s }) => {
                 n &&
                     (null == (e = c.reward) ? void 0 : e.tip) &&
                     t.jsxs('div', {
-                        className: X.info,
+                        className: Y.info,
                         children: [
-                            t.jsx('div', { className: X.notificationIcon }),
-                            t.jsx('div', { className: X.infoDescription, children: c.reward.tip && c.reward.tip() }),
+                            t.jsx('div', { className: Y.notificationIcon }),
+                            t.jsx('div', { className: Y.infoDescription, children: c.reward.tip && c.reward.tip() }),
                         ],
                     }),
                 t.jsx(U, { fullMode: !0 }),

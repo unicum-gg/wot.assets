@@ -1689,12 +1689,14 @@
                 }
                 function Be(e, t, u = []) {
                     const a = (0, r.useRef)(0),
-                        n = (0, r.useCallback)(() => window.clearInterval(a.current), u || []);
+                        n = (0, r.useCallback)(() => {
+                            (window.clearInterval(a.current), (a.current = 0));
+                        }, u || []);
                     (0, r.useEffect)(() => n, [n]);
                     const s = (null != u ? u : []).concat([t]);
                     return [
                         (0, r.useCallback)((u) => {
-                            ((a.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
+                            (0 !== a.current && n(), (a.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
                         }, s),
                         n,
                     ];
@@ -1788,7 +1790,6 @@
                                                         );
                                                     })(t(e).values());
                                                 !(a = n()).done;
-
                                             )
                                                 (0, a.value)(...u);
                                         };
@@ -4249,7 +4250,6 @@
                                                                     );
                                                                 })(n.keys());
                                                             !(e = u()).done;
-
                                                         )
                                                             r(e.value, t);
                                                     },

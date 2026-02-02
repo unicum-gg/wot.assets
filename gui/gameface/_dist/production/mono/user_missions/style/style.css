@@ -455,6 +455,15 @@
     width: 100%;
     overflow-x: hidden;
 }
+.HorizontalScroll_wrapper__left_adacfff {
+    mask-image: linear-gradient(to left, #000 97%, transparent);
+}
+.HorizontalScroll_wrapper__right_a6825027 {
+    mask-image: linear-gradient(to right, #000 97%, transparent);
+}
+.HorizontalScroll_wrapper__both_7917ea88 {
+    mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
+}
 
 .HorizontalScroll_defaultScrollArea_a5c0f45 {
     width: 100%;
@@ -543,6 +552,15 @@
     height: 100%;
     overflow-y: hidden;
 }
+.VerticalScroll_content__top_b27098a4 {
+    mask-image: linear-gradient(to top, #000 97%, transparent);
+}
+.VerticalScroll_content__bottom_d6604290 {
+    mask-image: linear-gradient(to bottom, #000 97%, transparent);
+}
+.VerticalScroll_content__both_8d905712 {
+    mask-image: linear-gradient(to bottom, transparent, #000 3%, #000 97%, transparent);
+}
 
 .VerticalScroll_defaultScroll_c69fa70e {
     display: flex;
@@ -567,6 +585,11 @@
 .FormatText_base__fullSize_a514958e {
     flex: 1 1 auto;
     width: 100%;
+}
+.FormatText_db904f12 span {
+    flex-wrap: wrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
 }
 
 .FormatText_nowrap_ff69eca3 {
@@ -1328,10 +1351,10 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
     z-index: 0;
 }
 
-.Reward_image_1cbfa020 {
+.Reward_image_810ec3a2 {
     display: flex;
-    position: relative;
     align-self: center;
+    position: relative;
 }
 .Reward_image__s24x24_954b5cee {
     width: 24rem;
@@ -1376,7 +1399,7 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
     height: 100%;
 }
 
-.Reward_info_81cb3342 {
+.Reward_info_26d38c48 {
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.2em;
@@ -1387,13 +1410,13 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
     overflow-wrap: normal;
     z-index: 1;
 }
-.Reward_base__s24x24_954b5cee .Reward_info_81cb3342 {
+.Reward_base__s24x24_954b5cee .Reward_info_26d38c48 {
     margin-top: 0;
     white-space: nowrap;
 }
-.Reward_base__s48x48_21f091ec .Reward_info_81cb3342,
-.Reward_base__small_3eddf28d .Reward_info_81cb3342 {
-    margin: -10rem -10rem 0;
+.Reward_base__s48x48_21f091ec .Reward_info_26d38c48,
+.Reward_base__small_3eddf28d .Reward_info_26d38c48 {
+    margin: -8rem -10rem 0;
 }
 .Reward_info__multi_465d34bd {
     justify-content: flex-end;
@@ -2804,11 +2827,11 @@ html[lang='th'] input {
     margin-bottom: 20rem;
     font-size: 20rem;
 }
-.InProgress_points_c7836e1a {
+.InProgress_points_9ee62ee {
     width: 24rem;
     height: 24rem;
     margin-left: 4rem;
-    background: url(R.images.gui.maps.icons.userMissions.personal_missions.points.c_24x24) no-repeat center/cover;
+    background: url(R.images.gui.maps.icons.personal_missions_30.points.c_24x24) no-repeat center/cover;
 }
 .InProgress_container_fb690b6c {
     align-self: stretch;

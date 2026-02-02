@@ -1926,11 +1926,7 @@
                         return s().createElement(
                             'div',
                             { className: hu },
-                            s().createElement(Eu, {
-                                text: u.text.get(),
-                                binding: u.computes.binding(),
-                                isTruncationAvailable: !0,
-                            }),
+                            s().createElement(Eu, { text: u.text.get(), binding: u.computes.binding() }),
                         );
                     });
                 engine.whenReady.then(() => {

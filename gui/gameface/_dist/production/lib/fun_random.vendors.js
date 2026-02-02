@@ -2559,7 +2559,6 @@
                                 );
                             })(t.childNodes);
                         !(e = n()).done;
-
                     )
                         if (3 === e.value.nodeType) return !0;
                     return !1;
@@ -3588,9 +3587,9 @@
                 throw new Error(
                     'number' == typeof t
                         ? '[MobX] minified error nr: ' +
-                          t +
-                          (n.length ? ' ' + n.map(String).join(',') : '') +
-                          '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
+                              t +
+                              (n.length ? ' ' + n.map(String).join(',') : '') +
+                              '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
                         : '[MobX] ' + t,
                 );
             }
@@ -5800,7 +5799,6 @@
                                             a = !1,
                                             s = C(e.data_.keys());
                                         !(n = s()).done;
-
                                     ) {
                                         var u = n.value;
                                         if (!i.has(u))
@@ -5826,7 +5824,6 @@
                                             for (
                                                 var g = e.data_.keys(), _ = o.keys(), b = g.next(), w = _.next();
                                                 !b.done;
-
                                             ) {
                                                 if (b.value !== w.value) {
                                                     e.keysAtom_.reportChanged();

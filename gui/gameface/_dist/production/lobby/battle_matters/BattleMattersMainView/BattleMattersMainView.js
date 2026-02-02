@@ -3980,12 +3980,16 @@
                             }, [e, m.offset, m.pending, a, F]));
                         const C = (function (e, u, t = []) {
                                 const r = (0, n.useRef)(0),
-                                    a = (0, n.useCallback)(() => window.clearInterval(r.current), t || []);
+                                    a = (0, n.useCallback)(() => {
+                                        (window.clearInterval(r.current), (r.current = 0));
+                                    }, t || []);
                                 (0, n.useEffect)(() => a, [a]);
                                 const s = (null != t ? t : []).concat([u]);
                                 return [
                                     (0, n.useCallback)((t) => {
-                                        ((r.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
+                                        (0 !== r.current && a(),
+                                            (r.current = window.setInterval(() => e(t, !0), u)),
+                                            e(t, !1));
                                     }, s),
                                     a,
                                 ];
@@ -4219,25 +4223,28 @@
                         a = t.clampPosition,
                         s = t.getWrapperSize,
                         o = t.wrapperRef,
-                        i = (0, n.useState)(),
+                        i = (0, n.useState)(null),
                         l = i[0],
-                        c = i[1];
+                        c = i[1],
+                        d = an();
                     return (
                         (0, n.useEffect)(() => {
                             if (!o.current) return;
                             const t = new ResizeObserver(() => {
-                                const t = u.current,
-                                    n = r.current,
-                                    o = s();
-                                if (void 0 === e || !t || !n || !o) return c(void 0);
-                                const i = t[e],
-                                    l = i.offsetWidth,
-                                    d = i.offsetLeft,
-                                    E = a(n, d - o / 2 + l / 2);
-                                c(E);
+                                d.run(() => {
+                                    const t = u.current,
+                                        n = r.current,
+                                        o = s();
+                                    if (void 0 === e || !t || !n || !o) return c(void 0);
+                                    const i = t[e],
+                                        l = i.offsetWidth,
+                                        d = i.offsetLeft,
+                                        E = a(n, d - o / 2 + l / 2);
+                                    c(E);
+                                });
                             });
                             return (t.observe(o.current), () => t.disconnect());
-                        }, [s, a, r, o, e, u]),
+                        }, [s, a, r, o, e, u, d]),
                         l
                     );
                 };

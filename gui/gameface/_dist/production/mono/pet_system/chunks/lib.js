@@ -205,8 +205,8 @@ class StringsRClassProvider {
     }
     pluralOr(e, t, s, r = 'silent') {
         const n = e.startsWith('R.strings') ? e : concatWithPath(this.prefix, e),
-            o = readFromR$1(n, t, e.startsWith('R.strings') ? window : this.root);
-        return void 0 === o ? ('silent' !== r && logBySeverity$1(`Resource not found: ${n}`, r), s()) : o;
+            a = readFromR$1(n, t, e.startsWith('R.strings') ? window : this.root);
+        return void 0 === a ? ('silent' !== r && logBySeverity$1(`Resource not found: ${n}`, r), s()) : a;
     }
     pluralOrEmpty(e, t, s = 'warn') {
         return this.pluralOr(e, t, () => '', s);
@@ -324,15 +324,15 @@ function initMouseEvents$1() {
                     return (s) => {
                         e.listeners += 1;
                         const n = `mouse${t}`,
-                            o = internalMouse$1[t]((e) => s([e, 'outside']));
-                        function a(e) {
+                            a = internalMouse$1[t]((e) => s([e, 'outside']));
+                        function o(e) {
                             s([e, 'inside']);
                         }
                         return (
-                            window.addEventListener(n, a),
+                            window.addEventListener(n, o),
                             r(),
                             () => {
-                                (o(), window.removeEventListener(n, a), (e.listeners -= 1), r());
+                                (a(), window.removeEventListener(n, o), (e.listeners -= 1), r());
                             }
                         );
                     };
@@ -503,7 +503,7 @@ function initExternalPaddings$1(e) {
 function getKeyNameFromKeyCode(e) {
     return window.systemInput.getKeyName(e);
 }
-function pipe(e, t, s, r, n, o, a, i, l) {
+function pipe(e, t, s, r, n, a, o, i, l) {
     switch (arguments.length) {
         case 1:
             return e;
@@ -516,13 +516,13 @@ function pipe(e, t, s, r, n, o, a, i, l) {
         case 5:
             return n(r(s(t(e))));
         case 6:
-            return o(n(r(s(t(e)))));
+            return a(n(r(s(t(e)))));
         case 7:
-            return a(o(n(r(s(t(e))))));
+            return o(a(n(r(s(t(e))))));
         case 8:
-            return i(a(o(n(r(s(t(e)))))));
+            return i(o(a(n(r(s(t(e)))))));
         case 9:
-            return l(i(a(o(n(r(s(t(e))))))));
+            return l(i(o(a(n(r(s(t(e))))))));
         default: {
             let e = arguments[0];
             for (let t = 1; t < arguments.length; t++) e = arguments[t](e);
@@ -553,15 +553,15 @@ function create(
     { initializer: e = !0, rootId: t = 0, getRoot: s = getRootDefault, context: r = 'model' } = {},
     { name: n = 'DataLayer' } = {},
 ) {
-    const o = new Map(),
-        a = { subscribersNotified: new SimpleEmitter() },
+    const a = new Map(),
+        o = { subscribersNotified: new SimpleEmitter() },
         i = engine.whenReady.then(() => {
             function e(e, t, s) {
                 (s.forEach((s) => {
-                    const r = o.get(s);
+                    const r = a.get(s);
                     void 0 !== r && r(e, t);
                 }),
-                    a.subscribersNotified.emit());
+                    o.subscribersNotified.emit());
             }
             const t = [];
             return (
@@ -589,17 +589,17 @@ function create(
                 const s = e[t];
                 return 'function' == typeof s ? s.bind(e) : s;
             }, s);
-        } catch (o) {
-            throw new Error(`Failure readByPath in ${n}. Root id: ${t}. Context: ${r}:\n${o}\n`);
+        } catch (a) {
+            throw new Error(`Failure readByPath in ${n}. Root id: ${t}. Context: ${r}:\n${a}\n`);
         }
     };
     function u(e) {
-        viewEnv.removeDataChangedCallback(e, t) ? o.delete(e) : console.error("Can't remove callback by id:", e);
+        viewEnv.removeDataChangedCallback(e, t) ? a.delete(e) : console.error("Can't remove callback by id:", e);
     }
     return {
         subscribe: (s, n) => {
-            const a = addModelObserver$1('string' == typeof n ? `${r}.${n}` : r, t, !0);
-            return (o.set(a, s), e && s(c(n), []), a);
+            const o = addModelObserver$1('string' == typeof n ? `${r}.${n}` : r, t, !0);
+            return (a.set(o, s), e && s(c(n), []), o);
         },
         readByPath: c,
         readSafeByPath: (e) => {
@@ -624,11 +624,11 @@ function create(
             };
         },
         dispose: function () {
-            if (0 === t || ids().includes(t)) for (const e of o.keys()) u(e);
+            if (0 === t || ids().includes(t)) for (const e of a.keys()) u(e);
             i.then((e) => e());
         },
         unsubscribe: u,
-        events: a,
+        events: o,
     };
 }
 function cleanContext(e) {
@@ -697,28 +697,28 @@ function addEventListener(e, t, s, r) {
         Object.defineProperty(Symbol, 'asyncDispose', { value: Symbol.for('asyncDispose') }),
     (function () {
         if (!self.fetch) {
-            ((a.prototype.append = function (e, t) {
-                ((e = n(e)), (t = o(t)));
+            ((o.prototype.append = function (e, t) {
+                ((e = n(e)), (t = a(t)));
                 var s = this.map[e];
                 (s || ((s = []), (this.map[e] = s)), s.push(t));
             }),
-                (a.prototype.delete = function (e) {
+                (o.prototype.delete = function (e) {
                     delete this.map[n(e)];
                 }),
-                (a.prototype.get = function (e) {
+                (o.prototype.get = function (e) {
                     var t = this.map[n(e)];
                     return t ? t[0] : null;
                 }),
-                (a.prototype.getAll = function (e) {
+                (o.prototype.getAll = function (e) {
                     return this.map[n(e)] || [];
                 }),
-                (a.prototype.has = function (e) {
+                (o.prototype.has = function (e) {
                     return this.map.hasOwnProperty(n(e));
                 }),
-                (a.prototype.set = function (e, t) {
-                    this.map[n(e)] = [o(t)];
+                (o.prototype.set = function (e, t) {
+                    this.map[n(e)] = [a(t)];
                 }),
-                (a.prototype.forEach = function (e) {
+                (o.prototype.forEach = function (e) {
                     var t = this;
                     Object.getOwnPropertyNames(this.map).forEach(function (s) {
                         e(s, t.map[s]);
@@ -743,7 +743,7 @@ function addEventListener(e, t, s, r) {
                 );
             (u.call(d.prototype),
                 u.call(_.prototype),
-                (self.Headers = a),
+                (self.Headers = o),
                 (self.Request = d),
                 (self.Response = _),
                 (self.fetch = function (t, s) {
@@ -751,47 +751,47 @@ function addEventListener(e, t, s, r) {
                     return (
                         (n = d.prototype.isPrototypeOf(t) && !s ? t : new d(t, s)),
                         new fetch.Promise(function (t, s) {
-                            var o = (function () {
+                            var a = (function () {
                                 return r && !/^(get|post|head|put|delete|options)$/i.test(this.method)
                                     ? ((this.usingActiveXhr = !0), new ActiveXObject('Microsoft.XMLHTTP'))
                                     : new XMLHttpRequest();
                             })();
-                            function a() {
-                                if (4 === o.readyState) {
-                                    var e = 1223 === o.status ? 204 : o.status;
+                            function o() {
+                                if (4 === a.readyState) {
+                                    var e = 1223 === a.status ? 204 : a.status;
                                     if (e < 100 || e > 599) s(new TypeError('Network request failed'));
                                     else {
                                         var r = {
                                                 status: e,
-                                                statusText: o.statusText,
-                                                headers: m(o),
+                                                statusText: a.statusText,
+                                                headers: m(a),
                                                 url:
-                                                    'responseURL' in o
-                                                        ? o.responseURL
-                                                        : /^X-Request-URL:/m.test(o.getAllResponseHeaders())
-                                                          ? o.getResponseHeader('X-Request-URL')
+                                                    'responseURL' in a
+                                                        ? a.responseURL
+                                                        : /^X-Request-URL:/m.test(a.getAllResponseHeaders())
+                                                          ? a.getResponseHeader('X-Request-URL')
                                                           : void 0,
                                             },
-                                            n = 'response' in o ? o.response : o.responseText;
+                                            n = 'response' in a ? a.response : a.responseText;
                                         t(new _(n, r));
                                     }
                                 }
                             }
-                            ('cors' === n.credentials && (o.withCredentials = !0),
-                                (o.onreadystatechange = a),
+                            ('cors' === n.credentials && (a.withCredentials = !0),
+                                (a.onreadystatechange = o),
                                 self.usingActiveXhr ||
-                                    ((o.onload = a),
-                                    (o.onerror = function () {
+                                    ((a.onload = o),
+                                    (a.onerror = function () {
                                         s(new TypeError('Network request failed'));
                                     })),
-                                o.open(n.method, n.url, !0),
-                                'responseType' in o && e && (o.responseType = 'blob'),
+                                a.open(n.method, n.url, !0),
+                                'responseType' in a && e && (a.responseType = 'blob'),
                                 n.headers.forEach(function (e, t) {
                                     t.forEach(function (t) {
-                                        o.setRequestHeader(e, t);
+                                        a.setRequestHeader(e, t);
                                     });
                                 }),
-                                o.send(void 0 === n._bodyInit ? null : n._bodyInit));
+                                a.send(void 0 === n._bodyInit ? null : n._bodyInit));
                         })
                     );
                 }),
@@ -803,13 +803,13 @@ function addEventListener(e, t, s, r) {
                 throw new TypeError('Invalid character in header field name');
             return e.toLowerCase();
         }
-        function o(e) {
+        function a(e) {
             return ('string' != typeof e && (e = e.toString()), e);
         }
-        function a(e) {
+        function o(e) {
             this.map = {};
             var t = this;
-            e instanceof a
+            e instanceof o
                 ? e.forEach(function (e, s) {
                       s.forEach(function (s) {
                           t.append(e, s);
@@ -892,7 +892,7 @@ function addEventListener(e, t, s, r) {
                 ((t = t || {}),
                 (this.url = e),
                 (this.credentials = t.credentials || 'omit'),
-                (this.headers = new a(t.headers)),
+                (this.headers = new o(t.headers)),
                 (this.method = ((r = t.method || 'GET'), (n = r.toUpperCase()), s.indexOf(n) > -1 ? n : r)),
                 (this.mode = t.mode || null),
                 (this.referrer = null),
@@ -919,7 +919,7 @@ function addEventListener(e, t, s, r) {
             );
         }
         function m(e) {
-            var t = new a();
+            var t = new o();
             return (
                 e
                     .getAllResponseHeaders()
@@ -942,7 +942,7 @@ function addEventListener(e, t, s, r) {
                 (this.status = t.status),
                 (this.ok = this.status >= 200 && this.status < 300),
                 (this.statusText = t.statusText),
-                (this.headers = t.headers instanceof a ? t.headers : new a(t.headers)),
+                (this.headers = t.headers instanceof o ? t.headers : new o(t.headers)),
                 (this.url = t.url || ''));
         }
     })());
@@ -1032,8 +1032,8 @@ function map(e, t) {
 function filterMap(e, t, s) {
     const r = [];
     for (let n = 0; n < e.length; n++) {
-        const o = unsafeGet(e, n);
-        t(o, n, e) && r.push(s(o, n, e));
+        const a = unsafeGet(e, n);
+        t(a, n, e) && r.push(s(a, n, e));
     }
     return r;
 }
@@ -1113,9 +1113,7 @@ class Stack {
         return this.items.slice();
     }
 }
-const mouseButtons = { left: 0, wheel: 1, right: 2 },
-    CHINESE_LANGUAGE_CODES = new Set(['zh_cn', 'zh_sg', 'zh_tw']),
-    JAPANESE_LANGUAGE_CODE = 'ja';
+const mouseButtons = { left: 0, wheel: 1, right: 2 };
 function splitChinese(e) {
     const t = [],
         s = e
@@ -1140,17 +1138,28 @@ function splitJapanese(e) {
     for (const [r] of s) t.push(r);
     return t;
 }
+function splitKorean(e) {
+    const t = [],
+        s = e
+            .replace(/&nbsp;/g, ' ')
+            .matchAll(
+                /\s+|\u00A0|[【「(（『《]?[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F%](?:[。!?、…・ー—–!%?）)】」》『]+)?|[「【(（『《]?\d+(?:,\d{3})*(?:\s*[a-zA-Z\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F/%]+)?(?:[。，、:;：；!?）)】」》・%)、]+)?|[「【(（『《]?[a-zA-Z0-9]+(?:[-/][a-zA-Z0-9]+)*(?:\s*[。!?、…・ー—–!?》】」）)』]+)?|[^\s]/gu,
+            );
+    for (const [r] of s) t.push(r);
+    return t;
+}
+const splitters = { zh_cn: splitChinese, zh_sg: splitChinese, zh_tw: splitChinese, ja: splitJapanese, ko: splitKorean };
+function defaultSplit(e) {
+    return e.split(' ');
+}
+const langsWithoutSpace = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko']);
 function addSpaceAndMap(e, t, s) {
-    return CHINESE_LANGUAGE_CODES.has(t) || t === JAPANESE_LANGUAGE_CODE
+    return langsWithoutSpace.has(t)
         ? e.map(s)
         : e.map((e, t, r) => (t === r.length - 1 ? s(e, t, r) : s(`${e} `, t, r)));
 }
 function splitLocale(e, t) {
-    return CHINESE_LANGUAGE_CODES.has(t)
-        ? splitChinese(e)
-        : t === JAPANESE_LANGUAGE_CODE
-          ? splitJapanese(e)
-          : e.split(' ');
+    return (splitters[t] ?? defaultSplit)(e);
 }
 const MediaContext = reactExports.createContext(void 0);
 function useMediaContext() {
@@ -1225,9 +1234,9 @@ function calculateMedia(e, t, s) {
             { width: { classes: [], names: [], weight: 0 }, height: { classes: [], names: [], weight: 0 } },
         ),
         n = r.width.weight <= r.height.weight ? 'width' : 'height',
-        o = r[n],
-        a = o.names[o.names.length - 1] ?? breakpoints.extraSmall,
-        i = breakpointsByType[a],
+        a = r[n],
+        o = a.names[a.names.length - 1] ?? breakpoints.extraSmall,
+        i = breakpointsByType[o],
         l = r.width.names,
         c = r.height.names,
         u = l[l.length - 1] ?? breakpoints.extraSmall,
@@ -1238,7 +1247,7 @@ function calculateMedia(e, t, s) {
         breakpoint: i,
         screenWidthRem: e,
         screenHeightRem: t,
-        breaks: o.names,
+        breaks: a.names,
         sides: p,
         mediaSize: i.width,
         mediaWidth: p.width,
@@ -1304,18 +1313,18 @@ const usePrevious = (e) => {
 };
 function throttle(e, t, s, r) {
     let n,
-        o = !1,
-        a = 0;
+        a = !1,
+        o = 0;
     function i() {
         n && clearTimeout(n);
     }
     function l(...l) {
         const c = this,
-            u = Date.now() - a;
+            u = Date.now() - o;
         function d() {
-            ((a = Date.now()), s.apply(c, l));
+            ((o = Date.now()), s.apply(c, l));
         }
-        o ||
+        a ||
             (r && !n && d(),
             i(),
             void 0 === r && u > e
@@ -1333,7 +1342,7 @@ function throttle(e, t, s, r) {
     return (
         'boolean' != typeof t && ((r = s), (s = t), (t = void 0)),
         (l.cancel = function () {
-            (i(), (o = !0));
+            (i(), (a = !0));
         }),
         l
     );
@@ -1367,7 +1376,7 @@ function useEvent(e) {
 function useMount$1(e) {
     reactExports.useEffect(e, []);
 }
-function useUnmount$1(e) {
+function useUnmount(e) {
     reactExports.useEffect(() => e, []);
 }
 const createApi = () => {
@@ -1407,11 +1416,11 @@ function useApi$2() {
 }
 function useHandleKey(e, t, s, r = !1) {
     const n = normalizeKeyCode(e),
-        o = useEvent((e) => {
+        a = useEvent((e) => {
             isEventHandled$1() || (s(e), setEventHandled$1(), r && e.stopPropagation());
         }),
-        a = useApi$2(),
-        i = reactExports.useMemo(() => a[t].register(n, o), [a, t, n, o]);
+        o = useApi$2(),
+        i = reactExports.useMemo(() => o[t].register(n, a), [o, t, n, a]);
     reactExports.useEffect(() => i, [i]);
 }
 function useHandleKeydown(e, t, s = !1) {
@@ -1467,17 +1476,19 @@ const useLayoutReady = (e, t) => {
 };
 function useRepeatCallback(e, t, s = []) {
     const r = reactExports.useRef(0),
-        n = reactExports.useCallback(() => window.clearInterval(r.current), s || []);
+        n = reactExports.useCallback(() => {
+            (window.clearInterval(r.current), (r.current = 0));
+        }, s || []);
     reactExports.useEffect(() => n, [n]);
-    const o = (s ?? []).concat([t]);
+    const a = (s ?? []).concat([t]);
     return [
         reactExports.useCallback((s) => {
-            ((r.current = window.setInterval(() => e(s, !0), t)), e(s, !1));
-        }, o),
+            (0 !== r.current && n(), (r.current = window.setInterval(() => e(s, !0), t)), e(s, !1));
+        }, a),
         n,
     ];
 }
-function useResize$1(e, t) {
+function useResize(e, t) {
     reactExports.useEffect(
         () => (window.addEventListener('resize', e), () => window.removeEventListener('resize', e)),
         t,
@@ -1523,11 +1534,11 @@ const useResizeState = (e, t) => {
             );
         }, [r, s, e]);
     },
-    NO_RAF_ID$1 = 0;
-function useSkipFrame$1() {
-    const e = reactExports.useRef(NO_RAF_ID$1);
+    NO_RAF_ID = 0;
+function useSkipFrame() {
+    const e = reactExports.useRef(NO_RAF_ID);
     return (
-        useUnmount$1(() => {
+        useUnmount(() => {
             window.cancelAnimationFrame(e.current);
         }),
         reactExports.useMemo(
@@ -1536,15 +1547,15 @@ function useSkipFrame$1() {
                     (window.cancelAnimationFrame(e.current),
                         (e.current = window.requestAnimationFrame(() => {
                             e.current = window.requestAnimationFrame(() => {
-                                ((e.current = NO_RAF_ID$1), t());
+                                ((e.current = NO_RAF_ID), t());
                             });
                         })));
                 },
                 clear: () => {
-                    (window.cancelAnimationFrame(e.current), (e.current = NO_RAF_ID$1));
+                    (window.cancelAnimationFrame(e.current), (e.current = NO_RAF_ID));
                 },
                 get isRunning() {
-                    return e.current !== NO_RAF_ID$1;
+                    return e.current !== NO_RAF_ID;
                 },
             }),
             [],
@@ -1569,12 +1580,12 @@ function useThrottleCall(e, t = !1) {
         reactExports.useMemo(() => {
             if (e <= 0) return { call: (e) => e(), cancel: noop$1 };
             return {
-                call: function (o) {
-                    n.current = o;
-                    const a = Date.now();
-                    a - r.current < e ||
+                call: function (a) {
+                    n.current = a;
+                    const o = Date.now();
+                    o - r.current < e ||
                         (t && (n.current(), (n.current = noop$1)),
-                        (r.current = a),
+                        (r.current = o),
                         (s.current = window.setTimeout(() => {
                             (n.current(), (s.current = 0));
                         }, e)));
@@ -1600,14 +1611,14 @@ function watchResizes(e, t) {
     let s = 0;
     const r = e.map(() => initialSize);
     function n() {
-        let o = !1;
+        let a = !1;
         for (let t = 0; t < e.length; t++) {
             const s = e[t],
                 n = r[t],
-                a = s.getBoundingClientRect();
-            isEqual(a, n) || ((r[t] = a), (o = !0));
+                o = s.getBoundingClientRect();
+            isEqual(o, n) || ((r[t] = o), (a = !0));
         }
-        (o && t(r), (s = requestAnimationFrame(n)));
+        (a && t(r), (s = requestAnimationFrame(n)));
     }
     return {
         start() {
@@ -1628,27 +1639,27 @@ function useTooltip({
     decoratorId: s,
     disabled: r,
     args: n,
-    showDelay: o = 400,
+    showDelay: a = 400,
 }) {
-    const a = reactExports.useRef({ status: statuses.idle, resId: e, timeoutId: 0 }),
+    const o = reactExports.useRef({ status: statuses.idle, resId: e, timeoutId: 0 }),
         [i, l] = reactExports.useMemo(() => {
             let i = null;
             function l() {
                 r ||
-                    ((a.current.status = statuses.await),
-                    window.clearTimeout(a.current.timeoutId),
-                    (a.current.timeoutId = window.setTimeout(c, o)));
+                    ((o.current.status = statuses.await),
+                    window.clearTimeout(o.current.timeoutId),
+                    (o.current.timeoutId = window.setTimeout(c, a)));
             }
             function c() {
-                ((a.current.status = statuses.display),
+                ((o.current.status = statuses.display),
                     sendEvent$1.tooltip.open(e, t, s, n),
                     i && displayedTooltips.set(i, d));
             }
             function u() {
                 if (
-                    (window.clearTimeout(a.current.timeoutId),
-                    a.current.status === statuses.display && sendEvent$1.tooltip.hide(e, t, s),
-                    (a.current.status = statuses.idle),
+                    (window.clearTimeout(o.current.timeoutId),
+                    o.current.status === statuses.display && sendEvent$1.tooltip.hide(e, t, s),
+                    (o.current.status = statuses.idle),
                     i)
                 ) {
                     displayedTooltips.delete(i);
@@ -1664,7 +1675,7 @@ function useTooltip({
                 hide: u,
                 show: c,
                 rerun: function () {
-                    a.current.status !== statuses.idle && (r ? d.hide() : l());
+                    o.current.status !== statuses.idle && (r ? d.hide() : l());
                 },
             };
             return [
@@ -1677,25 +1688,25 @@ function useTooltip({
                     onClick: r ? noop$1 : u,
                 },
             ];
-        }, [n, t, s, r, e, o]);
+        }, [n, t, s, r, e, a]);
     return (
         reactExports.useEffect(() => {
             i.rerun();
         }, [i]),
-        useUnmount$1(useEvent(i.hide)),
+        useUnmount(useEvent(i.hide)),
         l
     );
 }
-function useSimpleTooltip({ alert: e, body: t, header: s, note: r, hasHtmlContent: n, disabled: o }) {
-    const a = resources.resolve('views');
+function useSimpleTooltip({ alert: e, body: t, header: s, note: r, hasHtmlContent: n, disabled: a }) {
+    const o = resources.resolve('views');
     return useTooltip({
-        disabled: o,
-        contentId: a.read((e) =>
+        disabled: a,
+        contentId: o.read((e) =>
             n
                 ? e.common.tooltip_window.simple_tooltip_content.SimpleTooltipHtmlContent('resId')
                 : e.common.tooltip_window.simple_tooltip_content.SimpleTooltipContent('resId'),
         ),
-        decoratorId: a.read((e) => e.common.tooltip_window.tooltip_window.TooltipWindow('resId')),
+        decoratorId: o.read((e) => e.common.tooltip_window.tooltip_window.TooltipWindow('resId')),
         args: reactExports.useMemo(() => ({ body: t, header: s, note: r, alert: e }), [e, t, s, r]),
     });
 }
@@ -1717,6 +1728,12 @@ const soundConfig = {
     decreaseAmountRoll: createSoundPlay('cons_ammo_roll_minus'),
     close: createSoundPlay('cancelcloseno'),
     'show-context-menu': createSoundPlay('tabb'),
+    progressSimple: createSoundPlay('gui_hangar_progressbar_simple'),
+    increaseDelta: createSoundPlay('gui_hangar_progressbar_delta_increase'),
+    decreaseDelta: createSoundPlay('gui_hangar_progressbar_delta_decrease'),
+    increaseDeltaMax: createSoundPlay('gui_hangar_progressbar_delta_max'),
+    pointerGrab: createSoundPlay('gui_hangar_progressbar_pointer_grab'),
+    pointerDrag: createSoundPlay('gui_hangar_progressbar_pointer_drag'),
 };
 function createSoundPlay(e) {
     return () => {
@@ -1741,18 +1758,18 @@ function logBySeverity(e, t) {
 const Context$3 = reactExports.createContext(null);
 function SoundsProvider({ severity: e = 'warn', overrides: t, silent: s = !1, children: r }) {
     const n = reactExports.useMemo(() => ({ ...soundConfig, ...t }), [t]),
-        o = reactExports.useMemo(
+        a = reactExports.useMemo(
             () => ({
                 play: function (t, r) {
                     if (s) return;
-                    const o = n[t];
-                    o ? o(r) : logBySeverity(`There is no sound for event: ${t}`, e);
+                    const a = n[t];
+                    a ? a(r) : logBySeverity(`There is no sound for event: ${t}`, e);
                 },
                 settings: { plays: n, severity: e, silent: s },
             }),
             [n, e, s],
         );
-    return jsxRuntimeExports.jsx(Context$3.Provider, { value: o, children: r });
+    return jsxRuntimeExports.jsx(Context$3.Provider, { value: a, children: r });
 }
 function useSounds() {
     const e = reactExports.useContext(Context$3);
@@ -1763,16 +1780,16 @@ const nonConvertingTypes = new Set(['number', 'string', 'boolean', 'bigint', 'un
     primitives$1 = new Set(['number', 'string', 'boolean', 'bigint']),
     bindingsForbidden = new Set(['Dict']);
 function cloneModel(e, { shallow: t = !0, depth: s = 0, maxDepth: r = 32 } = {}) {
-    var n, o;
-    const a = e,
+    var n, a;
+    const o = e,
         i = typeof e;
     if (s > r) throw new Error(`Too deeply nested to copy. Max is ${r}.`);
-    if (nonConvertingTypes.has(i)) return a;
-    if (null === a) return a;
+    if (nonConvertingTypes.has(i)) return o;
+    if (null === o) return o;
     const l = { depth: s + 1, maxDepth: r };
-    if (Array.isArray(a)) return a.map((e) => cloneModel(e, l));
+    if (Array.isArray(o)) return o.map((e) => cloneModel(e, l));
     if ('object' === i) {
-        const r = (null == (n = a.constructor) ? void 0 : n.name) ?? 'UNKNOWN';
+        const r = (null == (n = o.constructor) ? void 0 : n.name) ?? 'UNKNOWN';
         if (Array.isArray(e)) return e.map((e) => cloneModel(e, l));
         if ('CoherentArrayProxy' === r) return e.map((e) => cloneModel(e.value, l));
         if ('Dict' === r) return;
@@ -1780,27 +1797,27 @@ function cloneModel(e, { shallow: t = !0, depth: s = 0, maxDepth: r = 32 } = {})
         if (r.includes(':ViewModel:') || 'Object' === r) {
             if (t && 0 === s) {
                 const e = {};
-                for (const t in a) {
-                    const s = a[t];
+                for (const t in o) {
+                    const s = o[t];
                     primitives$1.has(typeof s) && (e[t] = s);
                 }
                 return e;
             }
             {
                 const e = {};
-                for (const t in a) {
-                    const s = a[t],
-                        r = (null == (o = null == a ? void 0 : a.constructor) ? void 0 : o.name) ?? 'UNKNOWN';
+                for (const t in o) {
+                    const s = o[t],
+                        r = (null == (a = null == o ? void 0 : o.constructor) ? void 0 : a.name) ?? 'UNKNOWN';
                     bindingsForbidden.has(r) || (e[t] = cloneModel(s, l));
                 }
                 return e;
             }
         }
         const i = {};
-        for (const e of Object.keys(a)) i[e] = cloneModel(a[e], l);
+        for (const e of Object.keys(o)) i[e] = cloneModel(o[e], l);
         return i;
     }
-    return (console.error('Incorrect value to clone model', a), a);
+    return (console.error('Incorrect value to clone model', o), o);
 }
 const MOBX_OPTIONS = { deep: !1, equals: constFalse },
     DEFAULT_OPTIONS = { cloneItem: !0 },
@@ -1838,12 +1855,12 @@ class DLDict {
         const s = this._data.get();
         for (let r = 0; r < t.length; r++) {
             const n = t[r],
-                o = this.takeItem(e, n);
+                a = this.takeItem(e, n);
             n in s
-                ? null === o
+                ? null === a
                     ? (delete s[n], this._keys.delete(n), this.set(s))
-                    : s[n].set(o)
-                : null !== o && ((s[n] = observable.box(o, MOBX_OPTIONS)), this._keys.add(n), this.set(s));
+                    : s[n].set(a)
+                : null !== a && ((s[n] = observable.box(a, MOBX_OPTIONS)), this._keys.add(n), this.set(s));
         }
     }
     entries() {
@@ -1898,29 +1915,29 @@ function createObservableModel(e, t, s) {
             r.splice(0, r.length);
         }),
     );
-    const n = (n, o, a = DEFAULT_BOX_CONFIG) => {
-            const i = observable.box(n(s(o)), a);
-            return ('real' === t && e.subscribe((e) => r.push(() => i.set(n(e))), o), i);
+    const n = (n, a, o = DEFAULT_BOX_CONFIG) => {
+            const i = observable.box(n(s(a)), o);
+            return ('real' === t && e.subscribe((e) => r.push(() => i.set(n(e))), a), i);
         },
-        o = (n, o) => {
-            const a = new DLDict(s(n), o);
-            return ('real' === t && e.subscribe((e, t) => r.push(() => a.update(e, t)), n), a);
+        a = (n, a) => {
+            const o = new DLDict(s(n), a);
+            return ('real' === t && e.subscribe((e, t) => r.push(() => o.update(e, t)), n), o);
         },
-        a = (n, o) => {
-            const a = observable.box(s(n) ?? o, DEFAULT_BOX_CONFIG);
-            return ('real' === t && e.subscribe((e) => r.push(() => a.set(e)), n), a);
+        o = (n, a) => {
+            const o = observable.box(s(n) ?? a, DEFAULT_BOX_CONFIG);
+            return ('real' === t && e.subscribe((e) => r.push(() => o.set(e)), n), o);
         };
     return {
-        dict: o,
-        dictRef: (e, t) => o(e, { cloneItem: !1, ...t }),
+        dict: a,
+        dictRef: (e, t) => a(e, { cloneItem: !1, ...t }),
         arrayClone: (e) => n(cloneModel, e),
-        array: a,
-        object: a,
+        array: o,
+        object: o,
         transform: n,
-        primitives: (n, o) => {
-            const a = s(o);
+        primitives: (n, a) => {
+            const o = s(a);
             if (Array.isArray(n)) {
-                const s = n.reduce((e, t) => ((e[t] = observable.box(a[t], {})), e), {});
+                const s = n.reduce((e, t) => ((e[t] = observable.box(o[t], {})), e), {});
                 return (
                     'real' === t &&
                         e.subscribe((e) => {
@@ -1929,14 +1946,14 @@ function createObservableModel(e, t, s) {
                                     s[t].set(e[t]);
                                 }),
                             );
-                        }, o),
+                        }, a),
                     s
                 );
             }
             {
                 const s = n,
                     i = Object.entries(s),
-                    l = i.reduce((e, [t, s]) => ((e[s] = observable.box(a[t], {})), e), {});
+                    l = i.reduce((e, [t, s]) => ((e[s] = observable.box(o[t], {})), e), {});
                 return (
                     'real' === t &&
                         e.subscribe((e) => {
@@ -1945,7 +1962,7 @@ function createObservableModel(e, t, s) {
                                     l[s].set(e[t]);
                                 }),
                             );
-                        }, o),
+                        }, a),
                     l
                 );
             }
@@ -1956,21 +1973,21 @@ const initializeModelWithContext =
         (e = 'DataLayerProvider') =>
         (t, s, r) => {
             const n = reactExports.createContext(null);
-            function o(o) {
-                var a;
-                const { mode: i, options: l, children: c, mocks: u } = o,
+            function a(a) {
+                var o;
+                const { mode: i, options: l, children: c, mocks: u } = a,
                     d = useMockContext(),
                     p = i ?? d.mode,
                     m = u ?? d.mocks,
                     _ = reactExports.useRef([]),
-                    f = null == (a = null == r ? void 0 : r.useRequires) ? void 0 : a.call(r),
-                    h = useEvent((n, a, i) => {
+                    f = null == (o = null == r ? void 0 : r.useRequires) ? void 0 : o.call(r),
+                    h = useEvent((n, o, i) => {
                         var l;
-                        const c = 'real' !== n && i ? createMockInstance(i.getter, a) : create(a, { name: e }),
-                            u = (e) => ('mocks' === n ? (null == i ? void 0 : i.getter(e, a)) : c.readByPath(e)),
+                        const c = 'real' !== n && i ? createMockInstance(i.getter, o) : create(o, { name: e }),
+                            u = (e) => ('mocks' === n ? (null == i ? void 0 : i.getter(e, o)) : c.readByPath(e)),
                             d = (e) => _.current.push(e),
-                            p = 'initial' in o && {
-                                initial: null == (l = null == r ? void 0 : r.initial) ? void 0 : l.call(r, o.initial),
+                            p = 'initial' in a && {
+                                initial: null == (l = null == r ? void 0 : r.initial) ? void 0 : l.call(r, a.initial),
                             },
                             m = t({
                                 ...p,
@@ -1991,11 +2008,11 @@ const initializeModelWithContext =
                         };
                     }),
                     g = reactExports.useRef(!1),
-                    [E, x] = reactExports.useState(p);
+                    [E, b] = reactExports.useState(p);
                 reactExports.useEffect(() => {
-                    x(p);
+                    b(p);
                 }, [p]);
-                const [b, y] = reactExports.useState(() => h(E, l, m));
+                const [x, y] = reactExports.useState(() => h(E, l, m));
                 return (
                     reactExports.useEffect(() => {
                         g.current ? y(h(E, l, m)) : (g.current = !0);
@@ -2010,20 +2027,20 @@ const initializeModelWithContext =
                     ]),
                     reactExports.useEffect(
                         () => () => {
-                            (b.externalModel.dispose(), _.current.forEach((e) => e()));
+                            (x.externalModel.dispose(), _.current.forEach((e) => e()));
                         },
-                        [b],
+                        [x],
                     ),
-                    jsxRuntimeExports.jsx(n.Provider, { value: b, children: c })
+                    jsxRuntimeExports.jsx(n.Provider, { value: x, children: c })
                 );
             }
             return (
-                (o.displayName = e),
+                (a.displayName = e),
                 [
-                    o,
+                    a,
                     function () {
                         const e = reactExports.useContext(n);
-                        if (!e) throw new Error(`hook useModel must be used within a ${o.displayName}.`);
+                        if (!e) throw new Error(`hook useModel must be used within a ${a.displayName}.`);
                         return e;
                     },
                     { Context: n },
@@ -2087,19 +2104,19 @@ function injectShowModel() {
             case 'function':
                 return 'function';
             case 'object': {
-                const o = { depth: s - 1, convertArrays: r },
-                    a = (null == (n = t.constructor) ? void 0 : n.name) ?? 'UNKNOWN';
+                const a = { depth: s - 1, convertArrays: r },
+                    o = (null == (n = t.constructor) ? void 0 : n.name) ?? 'UNKNOWN';
                 switch (!0) {
-                    case a.includes('CoherentArrayProxy'):
-                        return [...t.values()].map((t) => e(o.convertArrays ? t.value : t, o));
-                    case 'Dict' === a:
-                        return [...t.entries()].reduce((t, [s, r]) => ((t[s] = e(r, o)), t), { $$type: 'Dict' });
-                    case 'UNKNOWN' === a:
+                    case o.includes('CoherentArrayProxy'):
+                        return [...t.values()].map((t) => e(a.convertArrays ? t.value : t, a));
+                    case 'Dict' === o:
+                        return [...t.entries()].reduce((t, [s, r]) => ((t[s] = e(r, a)), t), { $$type: 'Dict' });
+                    case 'UNKNOWN' === o:
                         return 'UNKNOWN_TYPE';
-                    case a.includes('ViewModel'):
+                    case o.includes('ViewModel'):
                     default: {
                         const s = {};
-                        for (const r in t) Object.prototype.hasOwnProperty.call(t, r) && (s[r] = e(t[r], o));
+                        for (const r in t) Object.prototype.hasOwnProperty.call(t, r) && (s[r] = e(t[r], a));
                         return s;
                     }
                 }
@@ -2134,16 +2151,16 @@ async function runView(
     e,
     { root: t = document.getElementById('root'), withMedia: s = !0, fullScreen: r = !1, immediateLayout: n = !0 } = {},
 ) {
-    var o;
+    var a;
     injectShowModel();
-    const a = s ? MediaWrapper : React.Fragment,
-        i = (null == (o = null == window ? void 0 : window.engine) ? void 0 : o.whenReady) ?? Promise.resolve();
+    const o = s ? MediaWrapper : React.Fragment,
+        i = (null == (a = null == window ? void 0 : window.engine) ? void 0 : a.whenReady) ?? Promise.resolve();
     (n && engine.enableImmediateLayout(!0),
         await i,
         document.documentElement.setAttribute('lang', resources.resolve('langCode')),
         client
             .createRoot(t)
-            .render(jsxRuntimeExports.jsx(a, { children: jsxRuntimeExports.jsx(Provider, { children: e }) })),
+            .render(jsxRuntimeExports.jsx(o, { children: jsxRuntimeExports.jsx(Provider, { children: e }) })),
         r && (initExternalPaddings$1(t), enableFullScreenModeSupported$1()));
 }
 var RewardType$1 = ((e) => (
@@ -2327,8 +2344,8 @@ const multiValueTypes$1 = [
         const r = DOG_TAG_FOLDER_NAMES[e];
         if (r) {
             const n = R.images.gui.maps.icons.dogtags.$dyn(t).$dyn(r),
-                o = n.$dyn(s);
-            return !o && DOG_TAG_DEFAULT_ICON_NAME[e] ? `${n.$dyn(DOG_TAG_DEFAULT_ICON_NAME[e])}` : `${o}`;
+                a = n.$dyn(s);
+            return !a && DOG_TAG_DEFAULT_ICON_NAME[e] ? `${n.$dyn(DOG_TAG_DEFAULT_ICON_NAME[e])}` : `${a}`;
         }
         return (
             console.error('Unreachable branch: add dogTagType and icon folder for corresponding icon matching'),
@@ -2336,7 +2353,7 @@ const multiValueTypes$1 = [
         );
     },
     getRewardImage = (e, t = ImageSize$1.Small) => {
-        const { name: s, type: r, value: n, icon: o, item: a, dogTagType: i } = e,
+        const { name: s, type: r, value: n, icon: a, item: o, dogTagType: i } = e,
             l = t === ImageSize$1.S24x24 ? ImageSize$1.Small : t,
             c = getSizeFolder(l);
         switch (s) {
@@ -2347,11 +2364,11 @@ const multiValueTypes$1 = [
             case 'premium_plus':
                 return `R.images.gui.maps.icons.quests.bonuses.${l}.${s}_${n}`;
             case 'items':
-                return `R.images.gui.maps.icons.quests.bonuses.${l}.${a}`;
+                return `R.images.gui.maps.icons.quests.bonuses.${l}.${o}`;
             case 'blueprints':
             case 'blueprintsAny':
             case 'finalBlueprints':
-                return `R.images.gui.maps.icons.blueprints.fragment.${l}.${o}`;
+                return `R.images.gui.maps.icons.blueprints.fragment.${l}.${a}`;
             case 'tokens':
             case 'lootBox':
             case 'battleToken':
@@ -2363,15 +2380,15 @@ const multiValueTypes$1 = [
             case 'groups':
             case 'tmanToken':
             case 'battlePassSelectToken':
-                return `R.images.gui.maps.icons.quests.bonuses.${l}.${o}`;
+                return `R.images.gui.maps.icons.quests.bonuses.${l}.${a}`;
             case 'crewBooks':
-                return `R.images.gui.maps.icons.crewBooks.books.${l}.${o}`;
+                return `R.images.gui.maps.icons.crewBooks.books.${l}.${a}`;
             case 'dogTagComponents':
-                return getDogTypeImage(i, l, o);
+                return getDogTypeImage(i, l, a);
             case 'dossier_badge':
-                return `R.images.gui.maps.icons.quests.bonuses.badges.${c}.${o}`;
+                return `R.images.gui.maps.icons.quests.bonuses.badges.${c}.${a}`;
             case 'dossier_achievement':
-                return `R.images.gui.maps.icons.achievement.${c}.${o}`;
+                return `R.images.gui.maps.icons.achievement.${c}.${a}`;
             case 'xp':
             case 'xpFactor':
                 return `R.images.gui.maps.icons.quests.bonuses.${l}.exp`;
@@ -2387,7 +2404,7 @@ const multiValueTypes$1 = [
             case 'styleProgressToken':
                 return `R.images.gui.maps.icons.quests.bonuses.${l}.style_3d`;
             case 'collectionItem':
-                return `R.images.gui.maps.icons.collectionItems.${c}.${o}`;
+                return `R.images.gui.maps.icons.collectionItems.${c}.${a}`;
             default:
                 return `R.images.gui.maps.icons.quests.bonuses.${l}.${s}`;
         }
@@ -2455,12 +2472,7 @@ const multiValueTypes$1 = [
             default:
                 return e;
         }
-    },
-    formatPrintf = (e, t) =>
-        e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
-            const s = 0 === e.indexOf('%') ? 2 : 1;
-            return String(t[e.slice(s, -s)]);
-        });
+    };
 function ColorsProvider(e) {
     return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: e.children });
 }
@@ -2532,16 +2544,16 @@ function initMouseEvents() {
                     return (s) => {
                         e.listeners += 1;
                         let n = !0;
-                        const o = `mouse${t}`,
-                            a = internalMouse[t]((e) => s([e, 'outside']));
+                        const a = `mouse${t}`,
+                            o = internalMouse[t]((e) => s([e, 'outside']));
                         function i(e) {
                             s([e, 'inside']);
                         }
                         return (
-                            window.addEventListener(o, i),
+                            window.addEventListener(a, i),
                             r(),
                             () => {
-                                n && (a(), window.removeEventListener(o, i), (e.listeners -= 1), r(), (n = !1));
+                                n && (o(), window.removeEventListener(a, i), (e.listeners -= 1), r(), (n = !1));
                             }
                         );
                     };
@@ -2782,11 +2794,8 @@ const view = Object.freeze(
     env = { view: view };
 function noop() {}
 const useMount = (e) => {
-        reactExports.useEffect(e, []);
-    },
-    useUnmount = (e) => {
-        reactExports.useEffect(() => e, []);
-    };
+    reactExports.useEffect(e, []);
+};
 function requestAnimationFrameLoop(e) {
     let t = 0;
     return [
@@ -2807,8 +2816,8 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
             autoplay: s = !1,
             style: r,
             loop: n = !1,
-            isPrebufferKeyframes: o,
-            keyframesNameConfig: a,
+            isPrebufferKeyframes: a,
+            keyframesNameConfig: o,
             onClick: i,
             ...l
         },
@@ -2828,7 +2837,7 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
                 () =>
                     createLayoutReadyInEffect(() => {
                         const e = d.current;
-                        if (!u || !e || !o) return void ((null == e ? void 0 : e.cohFastSeek) && (e.cohFastSeek = !1));
+                        if (!u || !e || !a) return void ((null == e ? void 0 : e.cohFastSeek) && (e.cohFastSeek = !1));
                         const t = e.cohGetKeyframeTimestamps();
                         t.length > 0
                             ? ((e.cohFastSeek = !0),
@@ -2837,7 +2846,7 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
                               }))
                             : console.warn("Can't prebuffered keyframes, keyframes was not found");
                     }),
-                [o, u],
+                [a, u],
             ),
             reactExports.useEffect(() => {
                 if (u && d.current) {
@@ -2851,7 +2860,7 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
                                         (t !== s &&
                                             (e.changeTimeHandlers.forEach((e) => e({ currentTime: s, duration: r })),
                                             (t = s)),
-                                        d.current.paused || !u || !o)
+                                        d.current.paused || !u || !a)
                                     )
                                         return;
                                     const n = d.current.cohGetKeyframeTimestamps();
@@ -2859,10 +2868,10 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
                                         s > n[r] - THRESHOLD$1 &&
                                             s < n[r] &&
                                             e.changeKeyframeHandlers.forEach((e) => {
-                                                const s = Object.keys(a ?? {})[r];
+                                                const s = Object.keys(o ?? {})[r];
                                                 return e({
                                                     time: t,
-                                                    name: `${a ? s : `${DEFAULT_NAME_KEYFRAME$1}_${r}`}`,
+                                                    name: `${o ? s : `${DEFAULT_NAME_KEYFRAME$1}_${r}`}`,
                                                 });
                                             });
                                     });
@@ -2941,7 +2950,7 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
                                 }
                             );
                         },
-                        x = (e, t) => {
+                        b = (e, t) => {
                             var s;
                             return (
                                 null == (s = d.current) || s.removeEventListener(e, t),
@@ -2954,7 +2963,7 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
                     return (
                         (u.current = {
                             on: E,
-                            off: x,
+                            off: b,
                             play: c,
                             pause: p,
                             stop: m,
@@ -2974,7 +2983,7 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
                         }
                     );
                 }
-            }, [a, u, o]),
+            }, [o, u, a]),
             reactExports.useEffect(() => {
                 d.current && s && d.current.play();
             }, [s, n]),
@@ -2988,7 +2997,7 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
         );
     }),
     Video$1 = reactExports.memo(VideoForwarded$1),
-    base$n = 'Reward_d65e1e12',
+    base$m = 'Reward_d65e1e12',
     base__s24x24 = 'Reward_base__s24x24_954b5cee',
     base__s48x48 = 'Reward_base__s48x48_21f091ec',
     base__small$3 = 'Reward_base__small_3eddf28d',
@@ -3005,7 +3014,7 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
     icon$3 = 'Reward_icon_e152f13b',
     overlay$2 = 'Reward_overlay_8cbe65c9',
     highlight = 'Reward_highlight_f1cd08e0',
-    image = 'Reward_image_1cbfa020',
+    image = 'Reward_image_810ec3a2',
     image__s24x24 = 'Reward_image__s24x24_954b5cee',
     image__s48x48 = 'Reward_image__s48x48_21f091ec',
     image__small = 'Reward_image__small_3eddf28d',
@@ -3018,7 +3027,7 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
     image__s400x300 = 'Reward_image__s400x300_a8627e1b',
     image__s600x450 = 'Reward_image__s600x450_e27f3852',
     image__fixedBox = 'Reward_image__fixedBox_e45bdd8a',
-    info = 'Reward_info_81cb3342',
+    info = 'Reward_info_26d38c48',
     info__multi = 'Reward_info__multi_465d34bd',
     info__credits = 'Reward_info__credits_1643219',
     info__gold = 'Reward_info__gold_c751be5d',
@@ -3026,8 +3035,8 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
     info__premiumTank = 'Reward_info__premiumTank_7862152',
     title$1 = 'Reward_title_fbcf4b5',
     timer = 'Reward_timer_22ba7b8b',
-    styles$q = {
-        base: base$n,
+    styles$p = {
+        base: base$m,
         base__s24x24: base__s24x24,
         base__s48x48: base__s48x48,
         base__small: base__small$3,
@@ -3077,8 +3086,8 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
         isPeriodic: s = !1,
         isFixedBoxSize: r = !0,
         size: n = ImageSize$1.Big,
-        special: o,
-        value: a,
+        special: a,
+        value: o,
         valueType: i,
         title: l,
         style: c,
@@ -3088,18 +3097,18 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
         periodicIconTooltipArgs: m,
     }) => {
         const _ = SIZE_MAP.has(n) ? SIZE_MAP.get(n) : n,
-            f = getBottomHighlight(n, o),
-            h = getOverlay(o),
-            g = getFormattedValue(a, i),
+            f = getBottomHighlight(n, a),
+            h = getOverlay(a),
+            g = getFormattedValue(o, i),
             E = useTooltip({
                 contentId: (null == p ? void 0 : p.contentId) ?? 0,
                 args: null == p ? void 0 : p.args,
                 resId: null == p ? void 0 : p.resId,
                 decoratorId: null == p ? void 0 : p.decoratorId,
             }),
-            x = useSimpleTooltip({ header: null == m ? void 0 : m.header, body: null == m ? void 0 : m.body });
+            b = useSimpleTooltip({ header: null == m ? void 0 : m.header, body: null == m ? void 0 : m.body });
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$q.base, styles$q[`base__${n}`], !r && styles$q.base__dynamicBox, u),
+            className: cx(styles$p.base, styles$p[`base__${n}`], !r && styles$p.base__dynamicBox, u),
             style: c,
             ...E,
             children: [
@@ -3107,26 +3116,26 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
                     children: [
                         jsxRuntimeExports.jsxs('div', {
                             className: cx(
-                                styles$q.image,
-                                r ? styles$q.image__fixedBox : styles$q[`image__${n}`],
+                                styles$p.image,
+                                r ? styles$p.image__fixedBox : styles$p[`image__${n}`],
                                 null == d ? void 0 : d.image,
                             ),
                             children: [
                                 f &&
                                     jsxRuntimeExports.jsx('div', {
-                                        className: cx(styles$q.highlight, null == d ? void 0 : d.highlight),
+                                        className: cx(styles$p.highlight, null == d ? void 0 : d.highlight),
                                         style: {
                                             backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${_}.${f}_highlight`)})`,
                                         },
                                     }),
                                 t &&
                                     jsxRuntimeExports.jsx('div', {
-                                        className: cx(styles$q.icon, null == d ? void 0 : d.rewardIcon),
+                                        className: cx(styles$p.icon, null == d ? void 0 : d.rewardIcon),
                                         style: { backgroundImage: `url(${t})` },
                                     }),
                                 h &&
                                     jsxRuntimeExports.jsx('div', {
-                                        className: cx(styles$q.overlay, null == d ? void 0 : d.overlay),
+                                        className: cx(styles$p.overlay, null == d ? void 0 : d.overlay),
                                         style: {
                                             backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${_}.${h}_overlay`)})`,
                                         },
@@ -3136,110 +3145,35 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
                         g &&
                             jsxRuntimeExports.jsx('div', {
                                 className: cx(
-                                    styles$q.info,
-                                    styles$q[`info__${e}`],
-                                    i === ValueTypes$1.MULTI && styles$q.info__multi,
+                                    styles$p.info,
+                                    styles$p[`info__${e}`],
+                                    i === ValueTypes$1.MULTI && styles$p.info__multi,
                                     null == d ? void 0 : d.info,
                                 ),
                                 children: g,
                             }),
-                        l && jsxRuntimeExports.jsx('div', { className: styles$q.title, children: l }),
+                        l && jsxRuntimeExports.jsx('div', { className: styles$p.title, children: l }),
                     ],
                 }),
                 s &&
                     jsxRuntimeExports.jsx('div', {
-                        className: cx(styles$q.timer, null == d ? void 0 : d.periodicIcon),
-                        ...x,
+                        className: cx(styles$p.timer, null == d ? void 0 : d.periodicIcon),
+                        ...b,
                     }),
             ],
         });
     },
-    base$m = 'RewardsList_b956755b',
-    base__vertical$1 = 'RewardsList_base__vertical_59db3c9f',
-    reward = 'RewardsList_reward_fc200613',
-    reward__vertical = 'RewardsList_reward__vertical_5f09c6e0',
-    boxRewardClassName = 'RewardsList_boxRewardClassName_882c908d',
-    styles$p = {
-        base: base$m,
-        base__vertical: base__vertical$1,
-        reward: reward,
-        reward__vertical: reward__vertical,
-        boxRewardClassName: boxRewardClassName,
-    };
-reactExports.memo(function ({
-    data: e,
-    isFixedBoxSize: t,
-    size: s = ImageSize$1.Big,
-    isVertical: r = !1,
-    count: n,
-    classMix: o,
-    rewardItemClassMix: a,
-    boxRewardTooltip: i,
-    boxRewardValue: l,
-    boxRewardClassName: c,
-    boxRewardClassNames: u,
-}) {
-    const d = resources.resolve('strings'),
-        p = resources.resolve('images'),
-        m = s === ImageSize$1.S24x24 ? ImageSize$1.Small : s,
-        _ = n && n < e.length ? `${p.readOrEmpty(`quests.bonuses.${m}.default`)}` : '',
-        f =
-            l ||
-            formatPrintf(d.readOrEmpty('tooltips.quests.awards.additional.bottom'), { count: e.length - (n || 0) }),
-        h = cx(styles$p.base, r && styles$p.base__vertical, o),
-        g = cx(styles$p.reward, r && styles$p.reward__vertical, a);
-    return jsxRuntimeExports.jsx('div', {
-        className: h,
-        children: _
-            ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
-                  children: [
-                      e
-                          .slice(0, n)
-                          .map((e, r) =>
-                              jsxRuntimeExports.jsx(
-                                  'div',
-                                  {
-                                      className: g,
-                                      children: jsxRuntimeExports.jsx(Reward, { size: s, isFixedBoxSize: t, ...e }),
-                                  },
-                                  r,
-                              ),
-                          ),
-                      jsxRuntimeExports.jsx('div', {
-                          className: g,
-                          children: jsxRuntimeExports.jsx(Reward, {
-                              name: 'more',
-                              isFixedBoxSize: t,
-                              image: _,
-                              size: s,
-                              value: f,
-                              tooltipArgs: i,
-                              className: cx(styles$p.boxRewardClassName, c),
-                              classNames: u,
-                          }),
-                      }),
-                  ],
-              })
-            : e.map((e, r) =>
-                  jsxRuntimeExports.jsx(
-                      'div',
-                      { className: g, children: jsxRuntimeExports.jsx(Reward, { size: s, isFixedBoxSize: t, ...e }) },
-                      r,
-                  ),
-              ),
-    });
-});
-const NodeTypes = { Text: 1, Tag: 2, Var: 3 };
+    NodeTypes = { Text: 1, Tag: 2, Var: 3 };
 function parseArguments(e) {
     const t = [];
     let s = '',
         r = !1,
         n = !1,
-        o = '';
-    for (let a = 0; a < e.length; a++) {
-        const i = e[a];
+        a = '';
+    for (let o = 0; o < e.length; o++) {
+        const i = e[o];
         ("'" !== i && '"' !== i) || n || r
-            ? i === o && n
+            ? i === a && n
                 ? ((n = !1), (s += i))
                 : '(' !== i || n
                   ? ')' === i && r && !n
@@ -3248,7 +3182,7 @@ function parseArguments(e) {
                         ? (s += i)
                         : s && (t.push(s), (s = ''))
                   : ((r = !0), (s += i))
-            : ((n = !0), (o = i), (s += i));
+            : ((n = !0), (a = i), (s += i));
     }
     return (s && t.push(s), t);
 }
@@ -3256,8 +3190,8 @@ function parse(e, t) {
     const s = [],
         r = [];
     let n = '',
-        o = !1,
-        a = '',
+        a = !1,
+        o = '',
         i = 0;
     for (let l = 0; l < e.length; l++) {
         const c = e[l];
@@ -3268,10 +3202,10 @@ function parse(e, t) {
                 } else s.push({ type: NodeTypes.Text, value: n });
                 n = '';
             }
-            ((o = !0), (l += t.start.length - 1));
+            ((a = !0), (l += t.start.length - 1));
         } else if (c === t.end[0] && e.slice(l, l + t.end.length) === t.end) {
-            ((o = !1), (l += t.end.length - 1));
-            const e = a.trim();
+            ((a = !1), (l += t.end.length - 1));
+            const e = o.trim();
             if (e.startsWith('@')) {
                 const t = e.slice(1).trim(),
                     n = { type: NodeTypes.Tag, attrs: t.split('|'), instanceId: ++i, children: [] };
@@ -3286,8 +3220,8 @@ function parse(e, t) {
                     r[r.length - 1].node.children.push(t);
                 } else s.push(t);
             }
-            a = '';
-        } else o ? (a += c) : (n += c);
+            o = '';
+        } else a ? (o += c) : (n += c);
     }
     if (n)
         if (r.length) {
@@ -3325,14 +3259,14 @@ function splitArray(e) {
             t.push(split(r));
             continue;
         }
-        const o = splitString(n.slice(1));
+        const a = splitString(n.slice(1));
         (t.push(
             jsxRuntimeExports.jsxs(
                 reactExports.Fragment,
                 {
                     children: [
                         jsxRuntimeExports.jsxs('span', { className: styles$o.nowrap, children: [split(r), n[0]] }),
-                        o,
+                        a,
                     ],
                 },
                 takeKey(),
@@ -3404,8 +3338,8 @@ function applyFunction(e, t, s, r) {
             }
             return s.startsWith("'") && s.endsWith("'") ? s.slice(1, -1) : s;
         }),
-        o = r[t];
-    return o ? o(e, ...n) : (console.error(`Function ${t} is not registered`), e);
+        a = r[t];
+    return a ? a(e, ...n) : (console.error(`Function ${t} is not registered`), e);
 }
 function applyFunctions(e, t, s) {
     return e.reduce((e, t) => {
@@ -3422,8 +3356,8 @@ function resolveAttrParams(e, t) {
             let r = s + 1;
             for (; r < e.length && !isEnd(e[r]); ) r++;
             const n = e.slice(s + 1, r),
-                o = t[n];
-            if (o) return resolveAttrParams(e.replace(`$${n}`, String(o)), t);
+                a = t[n];
+            if (a) return resolveAttrParams(e.replace(`$${n}`, String(a)), t);
         }
     }
     return e;
@@ -3437,28 +3371,28 @@ const primitives = ['number', 'string', 'undefined'];
 function render(e, t, s = {}, r = !0) {
     r && (keyId = 0);
     const n = [];
-    function o(e) {
+    function a(e) {
         if (primitives.includes(typeof e)) {
             const t = n.at(-1);
             if ('string' == typeof t) return void (n[n.length - 1] = t + e);
         }
         n.push(e);
     }
-    for (const a of e)
-        if (a.type === NodeTypes.Text) o(a.value);
-        else if (a.type === NodeTypes.Var)
-            null === s[a.name] || primitives.includes(typeof s[a.name])
-                ? o(s[a.name] ?? `{{${a.name}}}`)
+    for (const o of e)
+        if (o.type === NodeTypes.Text) a(o.value);
+        else if (o.type === NodeTypes.Var)
+            null === s[o.name] || primitives.includes(typeof s[o.name])
+                ? a(s[o.name] ?? `{{${o.name}}}`)
                 : n.push(
                       jsxRuntimeExports.jsx(
                           reactExports.Fragment,
-                          { children: s[a.name] },
-                          `var-${a.name}-${a.instanceId}`,
+                          { children: s[o.name] },
+                          `var-${o.name}-${o.instanceId}`,
                       ),
                   );
-        else if (a.type === NodeTypes.Tag) {
-            const e = render(a.children, t, s, !1),
-                r = applyFunctions(resolveAttrsParams(a.attrs, s), e, t);
+        else if (o.type === NodeTypes.Tag) {
+            const e = render(o.children, t, s, !1),
+                r = applyFunctions(resolveAttrsParams(o.attrs, s), e, t);
             n.push(r);
         }
     return n;
@@ -3486,8 +3420,8 @@ const defaultBrackets = { start: '{{', end: '}}' },
                 text: s,
                 params: r,
                 upgradeLegacy: n,
-                fullSize: o,
-                inline: a,
+                fullSize: a,
+                inline: o,
                 formatters: i,
                 split: l,
                 ...c
@@ -3502,7 +3436,7 @@ const defaultBrackets = { start: '{{', end: '}}' },
             ),
             p = reactExports.useMemo(() => parse(l ? `{{@ split}}${u}{{/}}` : u, t), [t, u, l]),
             m = reactExports.useMemo(() => render(p, d, e.params), [p, d, e.params]),
-            _ = cx(styles$o.base, o && styles$o.base__fullSize, c.className);
+            _ = cx(styles$o.base, a && styles$o.base__fullSize, c.className);
         return e.inline
             ? (console.warn(
                   "[FormatText] using the 'inline' props causes memory leaks due to incorrect working of the 'cohinline' attribute in GF version 1.48.2.3. Can cause client crashes.",
@@ -3521,27 +3455,114 @@ const defaultBrackets = { start: '{{', end: '}}' },
 function FormatString({ path: e, ...t }) {
     return jsxRuntimeExports.jsx(FormatText, { text: resources.resolve('strings').readOrEmpty(e), ...t });
 }
+const formatters = Object.fromEntries(Object.entries(defaultFormatters).map(([e]) => [e, (e) => e]));
+function renderString(e, t = {}) {
+    const s = parse(e, defaultBrackets);
+    return String(render(s, formatters, t));
+}
+const base$k = 'RewardsList_b956755b',
+    base__vertical$1 = 'RewardsList_base__vertical_59db3c9f',
+    reward = 'RewardsList_reward_fc200613',
+    reward__vertical = 'RewardsList_reward__vertical_5f09c6e0',
+    boxRewardClassName = 'RewardsList_boxRewardClassName_882c908d',
+    styles$n = {
+        base: base$k,
+        base__vertical: base__vertical$1,
+        reward: reward,
+        reward__vertical: reward__vertical,
+        boxRewardClassName: boxRewardClassName,
+    },
+    sizeToDefault = { [ImageSize$1.S24x24]: ImageSize$1.Small, [ImageSize$1.S48x48]: ImageSize$1.Small };
 function isSerializableReactNode(e) {
     return (
         !(null != e && !['string', 'number', 'boolean'].includes(typeof e)) ||
         (!reactExports.isValidElement(e) && !!Array.isArray(e) && e.every(isSerializableReactNode))
     );
 }
-const base$k = 'MultilineOverflow_8834bd8e',
+reactExports.memo(function ({
+    data: e,
+    isFixedBoxSize: t,
+    size: s = ImageSize$1.Big,
+    isVertical: r = !1,
+    count: n,
+    classMix: a,
+    rewardItemClassMix: o,
+    boxRewardTooltip: i,
+    boxRewardValue: l,
+    boxRewardClassName: c,
+    boxRewardClassNames: u,
+}) {
+    const d = resources.resolve('strings'),
+        p = resources.resolve('images'),
+        m =
+            'number' == typeof n && n < e.length
+                ? `${p.readOrEmpty(`quests.bonuses.${sizeToDefault[s] ?? s}.default`)}`
+                : void 0,
+        _ =
+            l ||
+            renderString(upgradeLegacy(d.readOrEmpty('tooltips.quests.awards.additional.bottom')), {
+                count: e.length - (n || 0),
+            });
+    return jsxRuntimeExports.jsx('div', {
+        className: cx(styles$n.base, r && styles$n.base__vertical, a),
+        children:
+            void 0 !== m
+                ? jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+                      children: [
+                          e
+                              .slice(0, n)
+                              .map((e, n) =>
+                                  jsxRuntimeExports.jsx(
+                                      'div',
+                                      {
+                                          className: cx(styles$n.reward, r && styles$n.reward__vertical, o),
+                                          children: jsxRuntimeExports.jsx(Reward, { size: s, isFixedBoxSize: t, ...e }),
+                                      },
+                                      n,
+                                  ),
+                              ),
+                          jsxRuntimeExports.jsx('div', {
+                              className: cx(styles$n.reward, r && styles$n.reward__vertical, o),
+                              children: jsxRuntimeExports.jsx(Reward, {
+                                  name: 'more',
+                                  isFixedBoxSize: t,
+                                  image: m,
+                                  size: s,
+                                  value: _,
+                                  tooltipArgs: i,
+                                  className: cx(styles$n.boxRewardClassName, c),
+                                  classNames: u,
+                              }),
+                          }),
+                      ],
+                  })
+                : e.map((e, n) =>
+                      jsxRuntimeExports.jsx(
+                          'div',
+                          {
+                              className: cx(styles$n.reward, r && styles$n.reward__vertical, o),
+                              children: jsxRuntimeExports.jsx(Reward, { size: s, isFixedBoxSize: t, ...e }),
+                          },
+                          n,
+                      ),
+                  ),
+    });
+});
+const base$j = 'MultilineOverflow_8834bd8e',
     content$4 = 'MultilineOverflow_content_b539970d',
-    styles$n = { base: base$k, content: content$4 };
+    styles$m = { base: base$j, content: content$4 };
 function isSerializableParams(e) {
     return !e || Object.values(e).every(isSerializableReactNode);
 }
-const MultilineOverflow$1 = reactExports.forwardRef(function (
+const MultilineOverflow = reactExports.forwardRef(function (
         {
             text: e,
             brackets: t,
             params: s,
             formatters: r,
             upgradeLegacy: n,
-            split: o = !0,
-            onMouseEnter: a,
+            split: a = !0,
+            onMouseEnter: o,
             onMouseLeave: i,
             onClick: l,
             tooltipDisabled: c = !1,
@@ -3555,104 +3576,108 @@ const MultilineOverflow$1 = reactExports.forwardRef(function (
         const f = reactExports.useRef(null),
             [h, g] = reactExports.useState(!1);
         reactExports.useEffect(() => {
-            const e = f.current;
-            if (!e) return;
-            const t = document.createElement('div');
-            let s = noop$1;
-            function r() {
-                if (!e) return;
-                (s(),
-                    (t.style.visibility = 'hidden'),
-                    (t.className = cx(styles$n.content, e.children[0].className)),
-                    (t.innerHTML = ''),
-                    e.appendChild(t));
-                for (let s of e.children[0].childNodes.values()) {
-                    if (s instanceof HTMLElement) {
-                        const e = s.cloneNode(!0);
-                        t.appendChild(e);
+            if (0 === e.length) return;
+            const t = f.current;
+            if (!t) return;
+            const s = document.createElement('div');
+            let r = noop$1;
+            function n() {
+                if (!t) return;
+                (r(),
+                    (s.style.visibility = 'hidden'),
+                    (s.className = cx(styles$m.content, t.children[0].className)),
+                    (s.innerHTML = ''),
+                    t.appendChild(s));
+                for (let r of t.children[0].childNodes.values()) {
+                    if (r instanceof HTMLElement) {
+                        const e = r.cloneNode(!0);
+                        s.appendChild(e);
                     }
-                    if (s.nodeType === Node.TEXT_NODE) {
-                        const e = document.createTextNode(s.nodeValue ?? '');
-                        t.appendChild(e);
+                    if (r.nodeType === Node.TEXT_NODE) {
+                        const e = document.createTextNode(r.nodeValue ?? '');
+                        s.appendChild(e);
                     }
                 }
-                const r = document.createElement('div');
-                ((r.innerHTML = '...'),
-                    t.appendChild(r),
-                    (s = createLayoutReadyInEffect$1(() => {
-                        var s, n;
-                        const o = [];
-                        for (let r = t.childNodes.length - 2; 0 !== r; r--) {
-                            const s = t.childNodes[r];
-                            if (s.offsetTop + s.offsetHeight <= e.offsetHeight) break;
-                            o.push(s);
+                const e = document.createElement('div');
+                ((e.innerHTML = '...'),
+                    s.appendChild(e),
+                    (r = createLayoutReadyInEffect$1(() => {
+                        var r, n;
+                        const a = [];
+                        for (let e = s.childNodes.length - 2; 0 !== e; e--) {
+                            const r = s.childNodes[e];
+                            if (r instanceof HTMLElement) {
+                                if (r.offsetTop + r.offsetHeight <= t.offsetHeight) break;
+                                a.push(r);
+                            }
                         }
-                        o.forEach((e) => e.remove());
-                        const a = null == (s = t.lastChild) ? void 0 : s.previousSibling;
-                        (0 === o.length
-                            ? (null == (n = t.lastChild) || n.remove(), g(!1))
-                            : a.offsetWidth + a.offsetLeft + r.offsetWidth > e.offsetWidth
-                              ? (a.remove(), g(!0))
+                        a.forEach((e) => e.remove());
+                        const o = null == (r = s.lastChild) ? void 0 : r.previousSibling;
+                        (0 === a.length
+                            ? (null == (n = s.lastChild) || n.remove(), g(!1))
+                            : o.offsetWidth + o.offsetLeft + e.offsetWidth > t.offsetWidth
+                              ? (o.remove(), g(!0))
                               : g(!0),
-                            (t.style.visibility = ''));
+                            (s.style.visibility = ''));
                     })));
             }
-            const n = new ResizeObserver(r);
+            const a = new ResizeObserver(n);
             return (
-                n.observe(e),
-                window.addEventListener('resize', r),
+                a.observe(t),
                 new DisposeBuilder()
-                    .add(() => s())
-                    .add(() => window.removeEventListener('resize', r))
-                    .add(n.disconnect.bind(n))
-                    .add(t.remove.bind(t)).dispose
+                    .add(() => r())
+                    .add(addEventListener(window, 'resize', n))
+                    .add(a.disconnect.bind(a))
+                    .add(s.remove.bind(s)).dispose
             );
-        }, [_]);
+        }, [_, e]);
         const E = isSerializableParams(s),
-            x = useParamTooltip(
+            b = useParamTooltip(
                 'format_text',
                 reactExports.useMemo(
                     () => ({
                         text: e,
                         params: E ? s : void 0,
-                        split: o,
+                        split: a,
                         upgradeLegacy: n,
                         brackets: t,
                         resId: resources.resolve('views').read((e) => e.mono.tooltips.tooltips('resId')),
                     }),
-                    [e, t, o, n, s, E],
+                    [e, t, a, n, s, E],
                 ),
             ),
-            b = u ?? x;
-        return (
-            reactExports.useEffect(() => {
-                c || h || b.onMouseLeave();
-            }, [h, b, u, c, E]),
-            jsxRuntimeExports.jsx('div', {
-                ...m,
-                onMouseEnter: function (e) {
-                    (null == a || a(e), h && !c && b.onMouseEnter(e));
-                },
-                onClick: function (e) {
-                    (null == l || l(e), c || b.onClick());
-                },
-                onMouseLeave: function (e) {
-                    (null == i || i(e), c || b.onMouseLeave());
-                },
-                ref: assignRefs([_, f]),
-                className: cx(styles$n.base, d, null == p ? void 0 : p.base),
-                children: jsxRuntimeExports.jsx(FormatText, {
-                    text: e,
-                    brackets: t,
-                    params: s,
-                    upgradeLegacy: n,
-                    split: o,
-                    formatters: r,
-                    className: null == p ? void 0 : p.text,
-                    style: { visibility: 'hidden' },
-                }),
-            })
-        );
+            x = u ?? b;
+        if (
+            (reactExports.useEffect(() => {
+                c || h || x.onMouseLeave();
+            }, [h, x, u, c, E]),
+            0 === e.length)
+        )
+            return null;
+        return jsxRuntimeExports.jsx('div', {
+            ...m,
+            onMouseEnter: function (e) {
+                (null == o || o(e), h && !c && x.onMouseEnter(e));
+            },
+            onClick: function (e) {
+                (null == l || l(e), c || x.onClick());
+            },
+            onMouseLeave: function (e) {
+                (null == i || i(e), c || x.onMouseLeave());
+            },
+            ref: assignRefs([_, f]),
+            className: cx(styles$m.base, d, null == p ? void 0 : p.base),
+            children: jsxRuntimeExports.jsx(FormatText, {
+                text: e,
+                brackets: t,
+                params: s,
+                upgradeLegacy: n,
+                split: a,
+                formatters: r,
+                className: null == p ? void 0 : p.text,
+                style: { visibility: 'hidden' },
+            }),
+        });
     }),
     themes$1 = { primary: 'primary', secondary: 'secondary', custom: 'custom' },
     sizes$3 = { extraSmall: 'extraSmall', small: 'small', medium: 'medium', large: 'large' };
@@ -3666,23 +3691,23 @@ function defineStyledComponent(e, t, s) {
                 : null == s
                   ? void 0
                   : s.variants,
-        o = n ? Object.keys(n) : [];
+        a = n ? Object.keys(n) : [];
     if ('object' == typeof t) {
         const s = t,
             r = cva(s.className, s.cva),
             n = s.element,
-            a = reactExports.forwardRef(function (e, t) {
+            o = reactExports.forwardRef(function (e, t) {
                 return reactExports.createElement(n, {
-                    ...('function' == typeof n ? e : cleanProps(o, e)),
+                    ...('function' == typeof n ? e : cleanProps(a, e)),
                     ref: t,
                     className: r(e),
                 });
             });
-        return ((a.displayName = e), s.cva && (a.cva = s.cva), a);
+        return ((o.displayName = e), s.cva && (o.cva = s.cva), o);
     }
-    const a = cva(t, s),
+    const o = cva(t, s),
         i = reactExports.forwardRef(function (t, s) {
-            return jsxRuntimeExports.jsx('div', { 'data-name': e, ...cleanProps(o, t), ref: s, className: a(t) });
+            return jsxRuntimeExports.jsx('div', { 'data-name': e, ...cleanProps(a, t), ref: s, className: o(t) });
         });
     return ((i.displayName = e), s && (i.cva = s), i);
 }
@@ -3692,22 +3717,22 @@ function cleanProps(e, t) {
     for (const r of e) delete s[r];
     return s;
 }
-const base$j = 'HeadlessButton_df8536fc',
-    styles$m = { base: base$j },
-    HeadlessButtonBase = defineStyledComponent('Button', { element: 'button', className: styles$m.base }),
+const base$i = 'HeadlessButton_df8536fc',
+    styles$l = { base: base$i },
+    HeadlessButtonBase = defineStyledComponent('Button', { element: 'button', className: styles$l.base }),
     HeadlessButton = reactExports.forwardRef(function (
-        { children: e, onClick: t, onMouseEnter: s, soundTarget: r, disabled: n = !1, silent: o = !1, ...a },
+        { children: e, onClick: t, onMouseEnter: s, soundTarget: r, disabled: n = !1, silent: a = !1, ...o },
         i,
     ) {
         const l = useSounds();
         return jsxRuntimeExports.jsx(HeadlessButtonBase, {
-            ...a,
+            ...o,
             ref: i,
             onMouseEnter: function (e) {
-                (n || o || l.play('mouse-enter', { target: r || 'Button', original: e }), null == s || s(e));
+                (n || a || l.play('mouse-enter', { target: r || 'Button', original: e }), null == s || s(e));
             },
             onClick: function (e) {
-                n || (o || l.play('click', { target: r || 'Button', original: e }), null == t || t(e));
+                n || (a || l.play('click', { target: r || 'Button', original: e }), null == t || t(e));
             },
             children: e,
         });
@@ -3715,16 +3740,16 @@ const base$j = 'HeadlessButton_df8536fc',
     background$3 = 'Button_background_98ebcfb8',
     border$3 = 'Button_border_7e6390d7',
     overlay$1 = 'Button_overlay_174632c8',
-    base$i = 'Button_70871946',
+    base$h = 'Button_70871946',
     base__enabled$1 = 'Button_base__enabled_96634d40',
     base__disabled$1 = 'Button_base__disabled_b713e04a',
     content$3 = 'Button_content_298de63f',
     content__fontAligned = 'Button_content__fontAligned_66115778',
-    styles$l = {
+    styles$k = {
         background: background$3,
         border: border$3,
         overlay: overlay$1,
-        base: base$i,
+        base: base$h,
         base__enabled: base__enabled$1,
         base__disabled: base__disabled$1,
         'base__size-extraSmall': 'Button_base__size-extraSmall_d0cdb5ed',
@@ -3743,8 +3768,8 @@ const base$j = 'HeadlessButton_df8536fc',
             theme: s = themes$1.primary,
             disabled: r = !1,
             silent: n = !1,
-            autoAlignContent: o = !0,
-            classNames: a,
+            autoAlignContent: a = !0,
+            classNames: o,
             className: i,
             ...l
         },
@@ -3756,23 +3781,23 @@ const base$j = 'HeadlessButton_df8536fc',
             silent: n,
             disabled: r,
             className: cx(
-                styles$l.base,
-                styles$l[`base__size-${t}`],
-                styles$l[`base__theme-${s}`],
-                r ? styles$l.base__disabled : styles$l.base__enabled,
+                styles$k.base,
+                styles$k[`base__size-${t}`],
+                styles$k[`base__theme-${s}`],
+                r ? styles$k.base__disabled : styles$k.base__enabled,
                 i,
-                null == a ? void 0 : a.base,
+                null == o ? void 0 : o.base,
             ),
             onClick: function (e) {
                 var t;
                 r || null == (t = l.onClick) || t.call(l, e);
             },
             children: [
-                jsxRuntimeExports.jsx('div', { className: cx(styles$l.background, null == a ? void 0 : a.background) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$l.border, null == a ? void 0 : a.border) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$l.overlay, null == a ? void 0 : a.overlay) }),
+                jsxRuntimeExports.jsx('div', { className: cx(styles$k.background, null == o ? void 0 : o.background) }),
+                jsxRuntimeExports.jsx('div', { className: cx(styles$k.border, null == o ? void 0 : o.border) }),
+                jsxRuntimeExports.jsx('div', { className: cx(styles$k.overlay, null == o ? void 0 : o.overlay) }),
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$l.content, o && styles$l.content__fontAligned, null == a ? void 0 : a.content),
+                    className: cx(styles$k.content, a && styles$k.content__fontAligned, null == o ? void 0 : o.content),
                     children: e,
                 }),
             ],
@@ -3796,9 +3821,9 @@ const defaultSettings = {
         setScrollPosition: s,
         getDirection: r,
         getWrapperSize: n,
-        triggerMouseMoveOnUpdate: o = !1,
+        triggerMouseMoveOnUpdate: a = !1,
     }) => {
-        const a = (e, s) => {
+        const o = (e, s) => {
             const [r, n] = t(e);
             return clamp$1(r, n, s);
         };
@@ -3830,30 +3855,30 @@ const defaultSettings = {
                     (e, t, s) => {
                         const r = h.scrollPosition.get(),
                             n = (h.scrollPosition.goal ?? 0) - r;
-                        return a(e, t * s + n + r);
+                        return o(e, t * s + n + r);
                     },
                     [h.scrollPosition],
                 ),
-                x = reactExports.useCallback(
+                b = reactExports.useCallback(
                     function (e, { immediate: t = !1, reset: s = !0 } = {}) {
                         const r = d.current;
                         if (!r) return;
-                        const n = a(r, e);
-                        h.scrollPosition.get() !== n &&
+                        const n = o(r, e);
+                        h.scrollPosition.goal !== n &&
                             g.start({
                                 scrollPosition: n,
                                 immediate: t,
                                 reset: s,
                                 config: l.animationConfig,
-                                from: { scrollPosition: a(r, h.scrollPosition.get()) },
+                                from: { scrollPosition: o(r, h.scrollPosition.get()) },
                                 onChange: () => {
-                                    o && f();
+                                    a && f();
                                 },
                             });
                     },
-                    [g, l.animationConfig, h.scrollPosition, f],
+                    [h.scrollPosition, g, l.animationConfig, f],
                 ),
-                b = reactExports.useCallback(
+                x = reactExports.useCallback(
                     function (e) {
                         const t = d.current,
                             s = p.current;
@@ -3866,25 +3891,25 @@ const defaultSettings = {
                                         return t.value;
                                 }
                             })(s, l.step),
-                            o = E(t, e, r);
-                        x(o);
+                            a = E(t, e, r);
+                        b(a);
                     },
-                    [x, E, l.step],
+                    [b, E, l.step],
                 ),
                 y = reactExports.useCallback(
                     function (e) {
                         c ||
-                            (0 !== e.deltaY && b(r(e)),
+                            (0 !== e.deltaY && x(r(e)),
                             d.current && _.trigger('mouseWheel', e, h.scrollPosition, t(d.current)));
                     },
-                    [h.scrollPosition, b, _, c],
+                    [h.scrollPosition, x, _, c],
                 ),
                 v = reactExports.useCallback(
                     function () {
                         const e = d.current;
-                        e && (x(a(e, h.scrollPosition.goal), { immediate: !0 }), _.trigger('resizeHandled'));
+                        e && (b(o(e, h.scrollPosition.goal), { immediate: !0 }), _.trigger('resizeHandled'));
                     },
-                    [x, h.scrollPosition.goal, _],
+                    [b, h.scrollPosition.goal, _],
                 );
             useRefResizeObserver(p, (e) => {
                 const t = e.target;
@@ -3898,14 +3923,14 @@ const defaultSettings = {
                     const s = e(t),
                         r = p.current ? n(p.current) : 0;
                     if (m.current.container !== s || m.current.wrapper !== r) {
-                        const e = a(t, h.scrollPosition.goal);
-                        (e !== h.scrollPosition.goal && x(e, { immediate: !0 }),
+                        const e = o(t, h.scrollPosition.goal);
+                        (e !== h.scrollPosition.goal && b(e, { immediate: !0 }),
                             (m.current.container = s),
                             (m.current.wrapper = r),
                             _.trigger('recalculateContent'));
                     }
                 }),
-                R = useSkipFrame$1();
+                R = useSkipFrame();
             reactExports.useEffect(() => addEventListener(window, 'resize', () => R.run(v)), [v, R]);
             return reactExports.useMemo(
                 () => ({
@@ -3915,10 +3940,10 @@ const defaultSettings = {
                         d.current ? t(d.current) : (console.warn('getBounds: contentRef.current is null'), [0, 0]),
                     stepTimeout: l.step.clampedArrowStepTimeout,
                     settings: l,
-                    clampPosition: a,
+                    clampPosition: o,
                     handleMouseWheel: y,
-                    applyScroll: x,
-                    applyStepTo: b,
+                    applyScroll: b,
+                    applyStepTo: x,
                     contentRef: d,
                     wrapperRef: p,
                     scrollPosition: g,
@@ -3928,7 +3953,7 @@ const defaultSettings = {
                     setDisabled: u,
                     events: { on: _.on, off: _.off },
                 }),
-                [l, y, x, b, g, h, w, c, u, _.on, _.off],
+                [l, y, b, x, g, h, w, c, u, _.on, _.off],
             );
         };
     },
@@ -3946,23 +3971,45 @@ const defaultSettings = {
         triggerMouseMoveOnUpdate: !0,
     },
     useApi$1 = createApiHook(DEFAULT_HORIZONTAL_API_CONFIG),
-    scrollOrientations = { horizontal: 'horizontal', vertical: 'vertical' },
+    IGNORE_DEFAULT = [2, 2];
+function useScrollBounding(e, [t, s] = IGNORE_DEFAULT) {
+    const [r, n] = reactExports.useState(!0),
+        [a, o] = reactExports.useState(!0);
+    return (
+        reactExports.useEffect(() => {
+            function r() {
+                if (!e.contentRef.current) return;
+                const r = e.animationScroll.scrollPosition.get(),
+                    [a, i] = e.getBounds(),
+                    l = r >= i - s;
+                (n(r <= a + t), o(l));
+            }
+            return new DisposeBuilder()
+                .add(createLayoutReadyInEffect$1(r))
+                .add(e.events.on('resizeHandled', r))
+                .add(e.events.on('recalculateContent', r))
+                .add(e.events.on('change', r)).dispose;
+        }, [e, t, s]),
+        [r, a]
+    );
+}
+const scrollOrientations = { horizontal: 'horizontal', vertical: 'vertical' },
     CLAMPED_ARROW_STEP_TIMEOUT_DEFAULT = 100,
     MOUSE_BUTTON_LEFT = 0,
     background$2 = 'Thumb_background_7f3dd6ac',
     border$2 = 'Thumb_border_5749138b',
     innerBorder = 'Thumb_innerBorder_42bafd18',
     icon$2 = 'Thumb_icon_dca8bf26',
-    base$h = 'Thumb_6ff3e706',
+    base$g = 'Thumb_6ff3e706',
     base__vertical = 'Thumb_base__vertical_55a67c91',
     base__horizontal = 'Thumb_base__horizontal_27ca7ace',
     base__active$1 = 'Thumb_base__active_830942bb',
-    styles$k = {
+    styles$j = {
         background: background$2,
         border: border$2,
         innerBorder: innerBorder,
         icon: icon$2,
-        base: base$h,
+        base: base$g,
         base__vertical: base__vertical,
         base__horizontal: base__horizontal,
         base__active: base__active$1,
@@ -3987,44 +4034,44 @@ function Thumb(e) {
             const s = t.current,
                 r = e.trackRef.current,
                 n = e.api.getWrapperSize(),
-                o = e.api.getContainerSize();
-            if (!(n && o && s && r)) return;
-            const a = Math.min(1, n / o),
+                a = e.api.getContainerSize();
+            if (!(n && a && s && r)) return;
+            const o = Math.min(1, n / a),
                 i = 'horizontal' === e.direction ? 'width' : 'height';
-            return ((s.style[i] = `${e.calculateSize(r, a)}px`), (s.style.display = 'flex'), a);
+            return ((s.style[i] = `${e.calculateSize(r, o)}px`), (s.style.display = 'flex'), o);
         }),
-        [o, a] = useSpring(() => ({
+        [a, o] = useSpring(() => ({
             from: { ...e.styles.closed, '--bouncingCorrection': '0px' },
             easings: easings.easeInCubic,
             config: { duration: 200 },
         }));
     reactExports.useEffect(() => {
         s || e.dragging
-            ? a.start({
+            ? o.start({
                   to: e.styles.opened,
                   onRest() {
                       var e;
-                      null == (e = t.current) || e.classList.add(styles$k.base__active);
+                      null == (e = t.current) || e.classList.add(styles$j.base__active);
                   },
               })
-            : a.start({
+            : o.start({
                   to: e.styles.closed,
                   delay: 500,
                   onRest() {
                       var e;
-                      null == (e = t.current) || e.classList.remove(styles$k.base__active);
+                      null == (e = t.current) || e.classList.remove(styles$j.base__active);
                   },
               });
-    }, [s, e.dragging, e.styles.closed, e.styles.opened, a]);
+    }, [s, e.dragging, e.styles.closed, e.styles.opened, o]);
     const i = useEvent(function () {
             var s;
             const r = e.trackRef.current,
                 n = t.current,
-                o = e.railBeforeRef.current,
+                a = e.railBeforeRef.current,
                 i = e.railAfterRef.current,
                 l = e.api.getWrapperSize(),
                 c = e.api.getContainerSize();
-            if (!(l && r && n && o && i && c)) return;
+            if (!(l && r && n && a && i && c)) return;
             const u = e.api.animationScroll.scrollPosition.get(),
                 d = Math.min(1, l / c),
                 p = clamp$1(0, 1, u / (c - l)),
@@ -4035,14 +4082,14 @@ function Thumb(e) {
                 null == (s = e.onUpdate) || s.call(e, { thumbSize: m, thumbOffset: _, newBouncingCorrection: f }));
             const h = 0 === _ || e.isBoundThumb(_) ? 0 : f;
             return (
-                a.start({
+                o.start({
                     to: { '--bouncingCorrection': `${h}px` },
                     ...(0 === h ? { delay: 100, config: { duration: 100 } } : { immediate: !0 }),
                 }),
                 _
             );
         }),
-        l = useSkipFrame$1(),
+        l = useSkipFrame(),
         c = useEvent(function () {
             n();
             const t = i();
@@ -4070,62 +4117,62 @@ function Thumb(e) {
         }, [u, l, c]),
         jsxRuntimeExports.jsxs(animated.div, {
             ref: assignRefs([t, e.thumbRef]),
-            className: cx(styles$k.base, styles$k[`base__${e.direction}`], e.className),
-            style: o,
+            className: cx(styles$j.base, styles$j[`base__${e.direction}`], e.className),
+            style: a,
             onMouseEnter: () => r(!0),
             onMouseLeave: () => r(!1),
             children: [
-                jsxRuntimeExports.jsx('div', { className: styles$k.background }),
-                jsxRuntimeExports.jsx('div', { className: styles$k.border }),
-                jsxRuntimeExports.jsx('div', { className: styles$k.innerBorder }),
-                jsxRuntimeExports.jsx('div', { className: styles$k.icon }),
+                jsxRuntimeExports.jsx('div', { className: styles$j.background }),
+                jsxRuntimeExports.jsx('div', { className: styles$j.border }),
+                jsxRuntimeExports.jsx('div', { className: styles$j.innerBorder }),
+                jsxRuntimeExports.jsx('div', { className: styles$j.icon }),
             ],
         })
     );
 }
 const initBarDraggingState = { pending: !1, offset: 0 };
 function useBarDragging(e, t, s, r, n) {
-    const [o, a] = reactExports.useState(initBarDraggingState),
+    const [a, o] = reactExports.useState(initBarDraggingState),
         i = useEvent(t),
         l = reactExports.useCallback(
             (t) => {
-                (a(t), e.current && i({ type: t.pending ? 'dragStart' : 'dragEnd', dragElement: e.current }));
+                (o(t), e.current && i({ type: t.pending ? 'dragStart' : 'dragEnd', dragElement: e.current }));
             },
             [i, e],
         );
     return (
         reactExports.useEffect(() => {
-            if (!o.pending) return;
+            if (!a.pending) return;
             const t = mouse.move(function ([t]) {
-                    const a = s.contentRef.current;
-                    if (!a) return;
+                    const o = s.contentRef.current;
+                    if (!o) return;
                     const l = r.current,
                         c = e.current;
-                    if (!a || !l || !c) return;
-                    const u = n(t, o, { parent: l, thumb: c }),
+                    if (!o || !l || !c) return;
+                    const u = n(t, a, { parent: l, thumb: c }),
                         d = u * (s.getContainerSize() ?? 0);
                     (s.scrollPosition.start({
-                        scrollPosition: s.clampPosition(a, d),
+                        scrollPosition: s.clampPosition(o, d),
                         reset: !0,
                         immediate: !0,
                         from: { scrollPosition: s.animationScroll.scrollPosition.get() },
                     }),
                         i({ type: 'dragging', dragElement: c, elementOffset: u, contentOffset: d }));
                 }),
-                a = mouse.up(() => {
+                o = mouse.up(() => {
                     l(initBarDraggingState);
                 });
             return () => {
-                (t(), a());
+                (t(), o());
             };
-        }, [s, o.offset, o.pending, i, l, e, r, o, n]),
+        }, [s, a.offset, a.pending, i, l, e, r, a, n]),
         l
     );
 }
 const DISABLE_CLASS = 'disable',
     ACTIVE_CLASS = 'scroll-active';
 function useUpdateStatesBar({ api: e, baseRef: t }) {
-    const s = useSkipFrame$1(),
+    const s = useSkipFrame(),
         r = useEvent(function () {
             const s = e.getWrapperSize(),
                 r = e.getContainerSize();
@@ -4153,16 +4200,16 @@ function getElementCoordinates(e, t) {
         r = t === scrollOrientations.horizontal ? s.x : s.y;
     return { start: r, end: t === scrollOrientations.horizontal ? r + s.width : r + s.height };
 }
-function getCoordinate(e, t, s, r, n, o) {
+function getCoordinate(e, t, s, r, n, a) {
     return {
-        occurredEvent: o === scrollOrientations.horizontal ? e.screenX : e.screenY,
-        bar: getElementCoordinates(t, o),
-        thumb: getElementCoordinates(s, o),
-        backButton: getElementCoordinates(r, o),
-        forwardButton: getElementCoordinates(n, o),
+        occurredEvent: a === scrollOrientations.horizontal ? e.screenX : e.screenY,
+        bar: getElementCoordinates(t, a),
+        thumb: getElementCoordinates(s, a),
+        backButton: getElementCoordinates(r, a),
+        forwardButton: getElementCoordinates(n, a),
     };
 }
-function useBarHandlers(e, t, s, r, n, o, a) {
+function useBarHandlers(e, t, s, r, n, a, o) {
     const i = useSounds(),
         l = n.stepTimeout || CLAMPED_ARROW_STEP_TIMEOUT_DEFAULT,
         [c, u] = useRepeatCallback((e) => n.applyStepTo(e), l, [n]);
@@ -4191,12 +4238,12 @@ function useBarHandlers(e, t, s, r, n, o, a) {
                     m = s.current,
                     _ = r.current;
                 if (!(c && u && m && _ && l.button === MOUSE_BUTTON_LEFT)) return;
-                const f = getCoordinate(l, c, u, m, _, a),
+                const f = getCoordinate(l, c, u, m, _, o),
                     h = f.thumb.start <= f.occurredEvent && f.occurredEvent <= f.thumb.end,
                     g =
                         (f.backButton.start <= f.occurredEvent && f.occurredEvent <= f.backButton.end) ||
                         (f.forwardButton.start <= f.occurredEvent && f.occurredEvent <= f.forwardButton.end);
-                if (h) o({ pending: !0, offset: f.occurredEvent - f.thumb.start });
+                if (h) a({ pending: !0, offset: f.occurredEvent - f.thumb.start });
                 else if (g) {
                     ((f.occurredEvent > f.thumb.start ? Direction.Prev : Direction.Next) === Direction.Next ? d : p)(l);
                 } else {
@@ -4205,12 +4252,12 @@ function useBarHandlers(e, t, s, r, n, o, a) {
                         s = f.bar.end - f.bar.start,
                         r = n.getContainerSize();
                     if ('number' != typeof r || Number.isNaN(r)) return console.error('Incorrect container size');
-                    const o = ((e - t / 2) / s) * r;
-                    n.applyScroll(o);
+                    const a = ((e - t / 2) / s) * r;
+                    n.applyScroll(a);
                 }
                 i.play('click', { target: 'Scroll:' + (h ? 'thumb' : g ? 'button' : ''), original: l });
             },
-            [e, t, s, r, i, a, o, d, p, n],
+            [e, t, s, r, i, o, a, d, p, n],
         ),
         _ = reactExports.useCallback(
             (e) => {
@@ -4232,16 +4279,16 @@ function useBarHandlers(e, t, s, r, n, o, a) {
     );
 }
 const rail$1 = 'HorizontalBar_rail_37858d8f',
-    base$g = 'HorizontalBar_4df27ac3',
+    base$f = 'HorizontalBar_4df27ac3',
     track$1 = 'HorizontalBar_track_649dc296',
     rail__left = 'HorizontalBar_rail__left_1a906b4e',
     rail__right = 'HorizontalBar_rail__right_cd24364e',
     button__right = 'HorizontalBar_button__right_e8f0aa2d',
     button__left = 'HorizontalBar_button__left_da330e13',
     button$1 = 'HorizontalBar_button_cbabd91',
-    styles$j = {
+    styles$i = {
         rail: rail$1,
-        base: base$g,
+        base: base$f,
         track: track$1,
         rail__left: rail__left,
         rail__right: rail__right,
@@ -4256,8 +4303,8 @@ const rail$1 = 'HorizontalBar_rail_37858d8f',
         const s = reactExports.useRef(null),
             r = reactExports.useRef(null),
             n = reactExports.useRef(null),
-            o = reactExports.useRef(null),
             a = reactExports.useRef(null),
+            o = reactExports.useRef(null),
             i = reactExports.useRef(null),
             l = reactExports.useRef(null),
             [c, u] = reactExports.useState(!1),
@@ -4266,23 +4313,23 @@ const rail$1 = 'HorizontalBar_rail_37858d8f',
         const p = useEvent(
                 (e, t, { parent: s }) => (e.screenX - t.offset - s.getBoundingClientRect().x) / s.offsetWidth,
             ),
-            m = useEvent((e) => e - (o.current.offsetWidth - a.current.offsetWidth) >= -0.5),
+            m = useEvent((e) => e - (a.current.offsetWidth - o.current.offsetWidth) >= -0.5),
             _ = reactExports.useCallback(
                 (e) => ('dragStart' === e.type ? u(!0) : 'dragEnd' === e.type && u(!1), t(e)),
                 [t],
             ),
-            f = useBarDragging(a, _, d, o, p),
+            f = useBarDragging(o, _, d, a, p),
             h = useEvent(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: s }) => {
-                const r = o.current,
+                const r = a.current,
                     n = i.current,
-                    a = l.current;
-                if (!r || !n || !a) return;
+                    o = l.current;
+                if (!r || !n || !o) return;
                 const c = remToPx$1(THUMB_TO_RAIL_OFFSET$1);
-                ((n.style.width = `${t - c + s}px`), (a.style.width = r.offsetWidth - e - t - c - s + 'px'));
+                ((n.style.width = `${t - c + s}px`), (o.style.width = r.offsetWidth - e - t - c - s + 'px'));
             }),
             { handleMouseEnter: g, handleMouseDownTrack: E } = useBarHandlers(
                 s,
-                a,
+                o,
                 n,
                 r,
                 d,
@@ -4290,7 +4337,7 @@ const rail$1 = 'HorizontalBar_rail_37858d8f',
                 scrollOrientations.horizontal,
             );
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$j.base, e.base),
+            className: cx(styles$i.base, e.base),
             ref: s,
             onWheel: d.handleMouseWheel,
             onMouseDown: E,
@@ -4298,15 +4345,15 @@ const rail$1 = 'HorizontalBar_rail_37858d8f',
             children: [
                 jsxRuntimeExports.jsx('div', {
                     ref: r,
-                    className: cx(styles$j.button, styles$j.button__left, e.leftButton),
+                    className: cx(styles$i.button, styles$i.button__left, e.leftButton),
                 }),
                 jsxRuntimeExports.jsxs('div', {
-                    ref: o,
-                    className: cx(styles$j.track, e.track),
+                    ref: a,
+                    className: cx(styles$i.track, e.track),
                     children: [
                         jsxRuntimeExports.jsx('div', {
                             ref: i,
-                            className: cx(styles$j.rail, styles$j.rail__left, e.leftRail),
+                            className: cx(styles$i.rail, styles$i.rail__left, e.leftRail),
                         }),
                         jsxRuntimeExports.jsx(Thumb, {
                             dragging: c,
@@ -4319,62 +4366,62 @@ const rail$1 = 'HorizontalBar_rail_37858d8f',
                             railBeforeRef: l,
                             styles: THUMB_STYLES$1,
                             onUpdate: h,
-                            thumbRef: a,
-                            trackRef: o,
+                            thumbRef: o,
+                            trackRef: a,
                         }),
                         jsxRuntimeExports.jsx('div', {
                             ref: l,
-                            className: cx(styles$j.rail, styles$j.rail__right, e.rightRail),
+                            className: cx(styles$i.rail, styles$i.rail__right, e.rightRail),
                         }),
                     ],
                 }),
                 jsxRuntimeExports.jsx('div', {
                     ref: n,
-                    className: cx(styles$j.button, styles$j.button__right, e.rightButton),
+                    className: cx(styles$i.button, styles$i.button__right, e.rightButton),
                 }),
             ],
         });
     }),
-    base$f = 'HorizontalScroll_5b201d2b',
+    base$e = 'HorizontalScroll_5b201d2b',
     wrapper$1 = 'HorizontalScroll_wrapper_abec8dee',
     defaultScrollArea = 'HorizontalScroll_defaultScrollArea_a5c0f45',
-    styles$i = { base: base$f, wrapper: wrapper$1, defaultScrollArea: defaultScrollArea },
+    styles$h = { base: base$e, wrapper: wrapper$1, defaultScrollArea: defaultScrollArea },
     DefaultScroll$1 = ({
         children: e,
         className: t,
         barClassNames: s,
         areaClassName: r,
         classNames: n,
-        scrollClassName: o,
-        onDrag: a,
+        scrollClassName: a,
+        onDrag: o,
     }) => {
         const { api: i } = useHorizontalScroll(),
             l = reactExports.useMemo(() => {
                 const e = s || {};
-                return { ...e, base: cx(styles$i.base, e.base) };
+                return { ...e, base: cx(styles$h.base, e.base) };
             }, [s]);
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$i.defaultScroll, t),
+            className: cx(styles$h.defaultScroll, t),
             onWheel: i.handleMouseWheel,
             children: [
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$i.defaultScrollArea, r),
-                    children: jsxRuntimeExports.jsx(Area$1, { className: o, classNames: n, children: e }),
+                    className: cx(styles$h.defaultScrollArea, r),
+                    children: jsxRuntimeExports.jsx(Area$1, { className: a, classNames: n, children: e }),
                 }),
-                jsxRuntimeExports.jsx(Bar$1, { onDrag: a, classNames: l }),
+                jsxRuntimeExports.jsx(Bar$1, { onDrag: o, classNames: l }),
             ],
         });
     };
 function Area$1({ className: e, classNames: t, children: s }) {
     const { api: r } = useHorizontalScroll();
     return jsxRuntimeExports.jsx('div', {
-        className: cx(styles$i.base, e),
+        className: cx(styles$h.base, e),
         children: jsxRuntimeExports.jsx('div', {
-            className: cx(styles$i.wrapper, null == t ? void 0 : t.wrapper),
+            className: cx(styles$h.wrapper, null == t ? void 0 : t.wrapper),
             onWheel: r.handleMouseWheel,
             ref: r.wrapperRef,
             children: jsxRuntimeExports.jsx('div', {
-                className: cx(styles$i.content, null == t ? void 0 : t.content),
+                className: cx(styles$h.content, null == t ? void 0 : t.content),
                 ref: r.contentRef,
                 children: s,
             }),
@@ -4407,8 +4454,8 @@ const INITIAL_DRAGGING_STATE = { type: 'idle' };
 function useScrollByDragElements(e, t, s, r) {
     const {
             contentRef: n,
-            wrapperRef: o,
-            scrollPosition: a,
+            wrapperRef: a,
+            scrollPosition: o,
             clampPosition: i,
             animationScroll: l,
             events: c,
@@ -4417,7 +4464,7 @@ function useScrollByDragElements(e, t, s, r) {
         [d, p] = reactExports.useState(INITIAL_DRAGGING_STATE),
         [m, _] = reactExports.useState(0),
         { gapBeforeStart: f } = r ?? {},
-        h = useSkipFrame$1(),
+        h = useSkipFrame(),
         g = useEvent(() => {
             h.run(() => {
                 const t = e.contentRef.current,
@@ -4430,29 +4477,29 @@ function useScrollByDragElements(e, t, s, r) {
         reactExports.useEffect(() => {
             g();
         }, [d.type, g]),
-        useResize$1(() => {
+        useResize(() => {
             g();
         }, [g]),
         reactExports.useEffect(() => {
             if ('pending' !== d.type) return;
             const e = n.current,
-                s = o.current;
+                s = a.current;
             if (null === e || null === s) return;
             const r = mouse.move(([e]) => {
                     const s = getScreenCoordinate(e, t);
                     (void 0 === f || Math.abs(m - s) > f) &&
                         p({ type: 'dragging', positionFrom: s, previousScrollPosition: l.scrollPosition.get() });
                 }),
-                a = mouse.up(() => p({ type: 'scrollComplete' }));
+                o = mouse.up(() => p({ type: 'scrollComplete' }));
             return () => {
-                (r(), a());
+                (r(), o());
             };
-        }, [l.scrollPosition, n, m, t, d, f, o]),
+        }, [l.scrollPosition, n, m, t, d, f, a]),
         reactExports.useEffect(() => {
             if ('dragging' !== d.type) return;
             const e = mouse.move(([e, r]) => {
                 const c = n.current,
-                    u = o.current;
+                    u = a.current;
                 if ('outside' === r) return void p({ type: 'scrollComplete' });
                 const m = getEventCoordinate(e, t);
                 if (null === c || null === u || ('inside' === r && m < 0)) return;
@@ -4460,7 +4507,7 @@ function useScrollByDragElements(e, t, s, r) {
                     f = 'inside' === r ? m : m - _,
                     h = d.positionFrom - f,
                     g = d.previousScrollPosition + h;
-                a.start({ scrollPosition: i(c, g), from: { scrollPosition: l.scrollPosition.get() }, ...s });
+                o.start({ scrollPosition: i(c, g), from: { scrollPosition: l.scrollPosition.get() }, ...s });
             });
             const r = mouse.up(function () {
                 p({ type: 'scrollComplete' });
@@ -4468,7 +4515,7 @@ function useScrollByDragElements(e, t, s, r) {
             return () => {
                 (e(), r());
             };
-        }, [l.scrollPosition, i, n, d, a, o, s, t]),
+        }, [l.scrollPosition, i, n, d, o, a, s, t]),
         reactExports.useEffect(() => {
             if ('scrollComplete' !== d.type) return;
             const e = () => {
@@ -4517,16 +4564,16 @@ const DEFAULT_VERTICAL_API_CONFIG = {
     },
     useApi = createApiHook(DEFAULT_VERTICAL_API_CONFIG),
     rail = 'VerticalBar_rail_3d663c9',
-    base$e = 'VerticalBar_7187fa00',
+    base$d = 'VerticalBar_7187fa00',
     track = 'VerticalBar_track_ff482708',
     rail__top = 'VerticalBar_rail__top_ee531f43',
     rail__bottom = 'VerticalBar_rail__bottom_3eaa33b1',
     button__bottom = 'VerticalBar_button__bottom_6880f123',
     button__top = 'VerticalBar_button__top_b8383775',
     button = 'VerticalBar_button_7b0e4aca',
-    styles$h = {
+    styles$g = {
         rail: rail,
-        base: base$e,
+        base: base$d,
         track: track,
         rail__top: rail__top,
         rail__bottom: rail__bottom,
@@ -4541,14 +4588,14 @@ const DEFAULT_VERTICAL_API_CONFIG = {
         const s = reactExports.useRef(null),
             r = reactExports.useRef(null),
             n = reactExports.useRef(null),
-            o = reactExports.useRef(null),
             a = reactExports.useRef(null),
+            o = reactExports.useRef(null),
             i = reactExports.useRef(null),
             l = reactExports.useRef(null),
             [c, u] = reactExports.useState(!1),
             { api: d } = useVerticalScroll();
         useUpdateStatesBar({ baseRef: s, api: d });
-        const p = useEvent((e) => e - (o.current.offsetHeight - a.current.offsetHeight) >= -0.5),
+        const p = useEvent((e) => e - (a.current.offsetHeight - o.current.offsetHeight) >= -0.5),
             m = useEvent(
                 (e, t, { parent: s }) => (e.screenY - t.offset - s.getBoundingClientRect().y) / s.offsetHeight,
             ),
@@ -4556,18 +4603,18 @@ const DEFAULT_VERTICAL_API_CONFIG = {
                 (e) => ('dragStart' === e.type ? u(!0) : 'dragEnd' === e.type && u(!1), t(e)),
                 [t],
             ),
-            f = useBarDragging(a, _, d, o, m),
+            f = useBarDragging(o, _, d, a, m),
             h = useEvent(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: s }) => {
-                const r = o.current,
+                const r = a.current,
                     n = i.current,
-                    a = l.current;
-                if (!r || !n || !a) return;
+                    o = l.current;
+                if (!r || !n || !o) return;
                 const c = remToPx$1(THUMB_TO_RAIL_OFFSET);
-                ((n.style.height = `${t - c + s}px`), (a.style.height = r.offsetHeight - e - t - c - s + 'px'));
+                ((n.style.height = `${t - c + s}px`), (o.style.height = r.offsetHeight - e - t - c - s + 'px'));
             }),
             { handleMouseEnter: g, handleMouseDownTrack: E } = useBarHandlers(
                 s,
-                a,
+                o,
                 r,
                 n,
                 d,
@@ -4575,7 +4622,7 @@ const DEFAULT_VERTICAL_API_CONFIG = {
                 scrollOrientations.vertical,
             );
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$h.base, e.base),
+            className: cx(styles$g.base, e.base),
             ref: s,
             onWheel: d.handleMouseWheel,
             onMouseDown: E,
@@ -4583,15 +4630,15 @@ const DEFAULT_VERTICAL_API_CONFIG = {
             children: [
                 jsxRuntimeExports.jsx('div', {
                     ref: r,
-                    className: cx(styles$h.button, styles$h.button__top, e.topButton),
+                    className: cx(styles$g.button, styles$g.button__top, e.topButton),
                 }),
                 jsxRuntimeExports.jsxs('div', {
-                    ref: o,
-                    className: cx(styles$h.track, e.track),
+                    ref: a,
+                    className: cx(styles$g.track, e.track),
                     children: [
                         jsxRuntimeExports.jsx('div', {
                             ref: i,
-                            className: cx(styles$h.rail, styles$h.rail__top, e.topRail),
+                            className: cx(styles$g.rail, styles$g.rail__top, e.topRail),
                         }),
                         jsxRuntimeExports.jsx(Thumb, {
                             dragging: c,
@@ -4604,18 +4651,18 @@ const DEFAULT_VERTICAL_API_CONFIG = {
                             railBeforeRef: l,
                             styles: THUMB_STYLES,
                             onUpdate: h,
-                            thumbRef: a,
-                            trackRef: o,
+                            thumbRef: o,
+                            trackRef: a,
                         }),
                         jsxRuntimeExports.jsx('div', {
                             ref: l,
-                            className: cx(styles$h.rail, styles$h.rail__bottom, e.bottomRail),
+                            className: cx(styles$g.rail, styles$g.rail__bottom, e.bottomRail),
                         }),
                     ],
                 }),
                 jsxRuntimeExports.jsx('div', {
                     ref: n,
-                    className: cx(styles$h.button, styles$h.button__bottom, e.bottomButton),
+                    className: cx(styles$g.button, styles$g.button__bottom, e.bottomButton),
                 }),
             ],
         });
@@ -4623,30 +4670,30 @@ const DEFAULT_VERTICAL_API_CONFIG = {
     content$2 = 'VerticalScroll_content_62cb6120',
     defaultScroll = 'VerticalScroll_defaultScroll_c69fa70e',
     area = 'VerticalScroll_area_a3c0086a',
-    styles$g = { content: content$2, defaultScroll: defaultScroll, area: area },
+    styles$f = { content: content$2, defaultScroll: defaultScroll, area: area },
     DefaultScroll = ({
         children: e,
         className: t,
         barClassNames: s,
         areaClassName: r,
         scrollClassName: n,
-        scrollClassNames: o,
-        onDrag: a,
+        scrollClassNames: a,
+        onDrag: o,
     }) => {
         const { api: i } = useVerticalScroll(),
             l = reactExports.useMemo(() => {
                 const e = s || {};
-                return { ...e, base: cx(styles$g.base, e.base) };
+                return { ...e, base: cx(styles$f.base, e.base) };
             }, [s]);
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$g.defaultScroll, t),
+            className: cx(styles$f.defaultScroll, t),
             onWheel: i.handleMouseWheel,
             children: [
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$g.area, r),
-                    children: jsxRuntimeExports.jsx(Area, { className: n, classNames: o, children: e }),
+                    className: cx(styles$f.area, r),
+                    children: jsxRuntimeExports.jsx(Area, { className: n, classNames: a, children: e }),
                 }),
-                jsxRuntimeExports.jsx(Bar, { onDrag: a, classNames: l }),
+                jsxRuntimeExports.jsx(Bar, { onDrag: o, classNames: l }),
             ],
         });
     },
@@ -4657,12 +4704,12 @@ const DEFAULT_VERTICAL_API_CONFIG = {
                 createLayoutReadyInEffect$1(() => createLayoutReadyInEffect$1(n.recalculateContent)),
             ),
             jsxRuntimeExports.jsx('div', {
-                className: cx(styles$g.base, null == t ? void 0 : t.wrapper, e),
+                className: cx(styles$f.base, null == t ? void 0 : t.wrapper, e),
                 ref: n.wrapperRef,
                 onWheel: n.handleMouseWheel,
                 children: jsxRuntimeExports.jsx('div', {
                     ...r,
-                    className: cx(styles$g.content, null == t ? void 0 : t.content),
+                    className: cx(styles$f.content, null == t ? void 0 : t.content),
                     ref: n.contentRef,
                     children: s,
                 }),
@@ -4675,28 +4722,6 @@ function Base$7({ children: e }) {
     return jsxRuntimeExports.jsx(Context$1.Provider, { value: s, children: e });
 }
 Area.Default = DefaultScroll;
-const IGNORE_DEFAULT = [2, 2];
-function useScrollBounding(e, [t, s] = IGNORE_DEFAULT) {
-    const [r, n] = reactExports.useState(!0),
-        [o, a] = reactExports.useState(!0);
-    return (
-        reactExports.useEffect(() => {
-            function r() {
-                if (!e.contentRef.current) return;
-                const r = e.animationScroll.scrollPosition.get(),
-                    [o, i] = e.getBounds(),
-                    l = r >= i - s;
-                (n(r <= o + t), a(l));
-            }
-            return new DisposeBuilder()
-                .add(createLayoutReadyInEffect$1(r))
-                .add(e.events.on('resizeHandled', r))
-                .add(e.events.on('recalculateContent', r))
-                .add(e.events.on('change', r)).dispose;
-        }, [e, t, s]),
-        [r, o]
-    );
-}
 const DEFAULT_NAME_KEYFRAME = 'Point',
     THRESHOLD = 0.02;
 function createLoop(e) {
@@ -4717,8 +4742,8 @@ const VideoForwarded = reactExports.forwardRef(function (
             autoplay: s = !1,
             style: r,
             loop: n = !1,
-            isPrebufferKeyframes: o,
-            keyframesNameConfig: a,
+            isPrebufferKeyframes: a,
+            keyframesNameConfig: o,
             onClick: i,
             ...l
         },
@@ -4748,7 +4773,7 @@ const VideoForwarded = reactExports.forwardRef(function (
                 () =>
                     createLayoutReadyInEffect$1(() => {
                         const e = d.current;
-                        if (!u || !e || !o) return void ((null == e ? void 0 : e.cohFastSeek) && (e.cohFastSeek = !1));
+                        if (!u || !e || !a) return void ((null == e ? void 0 : e.cohFastSeek) && (e.cohFastSeek = !1));
                         const t = e.cohGetKeyframeTimestamps ? e.cohGetKeyframeTimestamps() : [];
                         t.length > 0
                             ? ((e.cohFastSeek = !0),
@@ -4757,7 +4782,7 @@ const VideoForwarded = reactExports.forwardRef(function (
                               }))
                             : console.warn("Can't prebuffered keyframes, keyframes was not found");
                     }),
-                [o, u],
+                [a, u],
             ),
             reactExports.useEffect(() => {
                 if (u && d.current) {
@@ -4771,7 +4796,7 @@ const VideoForwarded = reactExports.forwardRef(function (
                                         (t !== s &&
                                             (e.changeTimeHandlers.forEach((e) => e({ currentTime: s, duration: r })),
                                             (t = s)),
-                                        d.current.paused || !u || !o)
+                                        d.current.paused || !u || !a)
                                     )
                                         return;
                                     const n = d.current.cohGetKeyframeTimestamps
@@ -4782,10 +4807,10 @@ const VideoForwarded = reactExports.forwardRef(function (
                                             s > n[r] - THRESHOLD &&
                                             s < n[r] &&
                                             e.changeKeyframeHandlers.forEach((e) => {
-                                                const s = Object.keys(a ?? {})[r];
+                                                const s = Object.keys(o ?? {})[r];
                                                 return e({
                                                     time: t,
-                                                    name: `${a ? s : `${DEFAULT_NAME_KEYFRAME}_${r}`}`,
+                                                    name: `${o ? s : `${DEFAULT_NAME_KEYFRAME}_${r}`}`,
                                                 });
                                             });
                                     });
@@ -4866,7 +4891,7 @@ const VideoForwarded = reactExports.forwardRef(function (
                                 }
                             );
                         },
-                        x = (e, t) => {
+                        b = (e, t) => {
                             var s;
                             return (
                                 null == (s = d.current) || s.removeEventListener(e, t),
@@ -4879,7 +4904,7 @@ const VideoForwarded = reactExports.forwardRef(function (
                     return (
                         (u.current = {
                             on: E,
-                            off: x,
+                            off: b,
                             play: c,
                             pause: p,
                             stop: m,
@@ -4899,11 +4924,11 @@ const VideoForwarded = reactExports.forwardRef(function (
                         }
                     );
                 }
-            }, [a, u, o]),
+            }, [o, u, a]),
             reactExports.useEffect(() => {
                 d.current && s && d.current.play();
             }, [s, n]),
-            useUnmount$1(() => {
+            useUnmount(() => {
                 var e;
                 null == (e = d.current) || e.pause();
             }),
@@ -5108,7 +5133,7 @@ const makeGlobalBoundingBox = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y,
             }
             return s;
         }),
-    handleViewEvent$1 = (e, t) => {
+    handleViewEvent = (e, t) => {
         const s = 'GFViewEventProxy';
         if (void 0 !== t) {
             const { args: r, ...n } = t;
@@ -5117,11 +5142,11 @@ const makeGlobalBoundingBox = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y,
                 : viewEnv.handleViewEvent({ __Type: s, type: e, ...n });
         } else viewEnv.handleViewEvent({ __Type: s, type: e });
     },
-    sendMoveEvent = (e) => handleViewEvent$1(ViewEventType.MOVE, { isMouseEvent: !0, on: e }),
-    sendCloseEvent = () => handleViewEvent$1(ViewEventType.CLOSE),
-    sendClosePopOverEvent = () => handleViewEvent$1(ViewEventType.POP_OVER, { on: !1 }),
+    sendMoveEvent = (e) => handleViewEvent(ViewEventType.MOVE, { isMouseEvent: !0, on: e }),
+    sendCloseEvent = () => handleViewEvent(ViewEventType.CLOSE),
+    sendClosePopOverEvent = () => handleViewEvent(ViewEventType.POP_OVER, { on: !1 }),
     sendShowContextMenuEvent = (e, t, s = 0) => {
-        handleViewEvent$1(ViewEventType.CONTEXT_MENU, {
+        handleViewEvent(ViewEventType.CONTEXT_MENU, {
             isMouseEvent: !0,
             contentID: e,
             on: !0,
@@ -5129,16 +5154,16 @@ const makeGlobalBoundingBox = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y,
             args: t,
         });
     },
-    sendShowPopOverEvent = (e, t, s, r, n = R.invalid('resId'), o) => {
-        const a = env.view.getViewGlobalPosition(),
+    sendShowPopOverEvent = (e, t, s, r, n = R.invalid('resId'), a) => {
+        const o = env.view.getViewGlobalPosition(),
             { x: i, y: l, width: c, height: u } = s.getBoundingClientRect(),
             d = {
-                x: env.view.pxToRem(i) + a.x,
-                y: env.view.pxToRem(l) + a.y,
+                x: env.view.pxToRem(i) + o.x,
+                y: env.view.pxToRem(l) + o.y,
                 width: env.view.pxToRem(c),
                 height: env.view.pxToRem(u),
             };
-        handleViewEvent$1(ViewEventType.POP_OVER, {
+        handleViewEvent(ViewEventType.POP_OVER, {
             isMouseEvent: !0,
             contentID: e,
             decoratorID: r || R.invalid('resId'),
@@ -5146,7 +5171,7 @@ const makeGlobalBoundingBox = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y,
             direction: t,
             bbox: makeGlobalBoundingBox(d),
             on: !0,
-            args: o,
+            args: a,
         });
     },
     isTooltipShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.TOOLTIP),
@@ -5215,7 +5240,7 @@ const ClickOutsideManager = ClickOutsideManager$1.instance,
         sendShowPopOverEvent: sendShowPopOverEvent,
         addEscapeListener: addEscapeListener,
         closeOnEsc: closeOnEsc,
-        handleViewEvent: handleViewEvent$1,
+        handleViewEvent: handleViewEvent,
         onBindingsReady: onBindingsReady,
         onLayoutReady: onLayoutReady,
         isTooltipShown: isTooltipShown,
@@ -5363,11 +5388,11 @@ function withResolvePath(e) {
     const t = e;
     return reactExports.forwardRef(function (e, s) {
         const r = useAdaptive(e, e.adaptive),
-            { path: n, ...o } = r,
-            a = r.images ?? resources.resolve('images'),
-            i = { ...o, ref: s };
+            { path: n, ...a } = r,
+            o = r.images ?? resources.resolve('images'),
+            i = { ...a, ref: s };
         {
-            const e = n ? a.readOr(n, undef, 'warn') : void 0;
+            const e = n ? o.readOr(n, undef, 'warn') : void 0;
             return e ? jsxRuntimeExports.jsx(t, { ...i, src: e }) : jsxRuntimeExports.jsx(t, { ...i, unknown: !0 });
         }
     });
@@ -5386,8 +5411,8 @@ const defaultUnknownStyle = {
                     repeat: s,
                     fit: r,
                     position: n,
-                    width: o,
-                    src: a,
+                    width: a,
+                    src: o,
                     height: i,
                     unselectable: l,
                     unknown: c,
@@ -5404,8 +5429,8 @@ const defaultUnknownStyle = {
                 repeat: s,
                 fit: r,
                 position: n,
-                width: o,
-                height: a,
+                width: a,
+                height: o,
                 unknownStyle: i,
                 unknown: l,
                 unselectable: c,
@@ -5419,8 +5444,8 @@ const defaultUnknownStyle = {
                     backgroundRepeat: s ?? 'no-repeat',
                     backgroundSize: r ?? 'contain',
                     backgroundPosition: n ?? 'center center',
-                    width: 'number' == typeof o ? `${o}rem` : o,
-                    height: 'number' == typeof a ? `${a}rem` : a,
+                    width: 'number' == typeof a ? `${a}rem` : a,
+                    height: 'number' == typeof o ? `${o}rem` : o,
                     ...u.style,
                 },
             });
@@ -5432,8 +5457,8 @@ withResolvePath(
             width: s,
             height: r,
             src: n,
-            unselectable: o,
-            unknown: a,
+            unselectable: a,
+            unknown: o,
             unknownStyle: i = defaultUnknownStyle,
             ...l
         } = e;
@@ -5452,15 +5477,15 @@ function Icon$1({ className: e, size: t = sizes$2.small, type: s, imagePath: r }
     const n = imageSizes$2[t];
     return jsxRuntimeExports.jsx(Image, { width: n, height: n, path: getImagePath$1(s, n, r), className: e });
 }
-const base$d = 'Value_880359b5',
+const base$c = 'Value_880359b5',
     base__small$2 = 'Value_base__small_533886b2',
     base__text = 'Value_base__text_3c091067',
     base__medium$2 = 'Value_base__medium_c1f8595d',
     value = 'Value_29975a5b',
     value__small = 'Value_value__small_f3df7ae5',
     value__medium = 'Value_value__medium_62a482c',
-    styles$f = {
-        base: base$d,
+    styles$e = {
+        base: base$c,
         base__small: base__small$2,
         base__text: base__text,
         base__medium: base__medium$2,
@@ -5481,22 +5506,22 @@ function getValue(e, t) {
 function Value({ classNames: e, size: t = sizes$2.small, value: s, maxValue: r = DEFAULT_MAX_VALUE }) {
     return jsxRuntimeExports.jsx('div', {
         className: cx(
-            styles$f.base,
-            styles$f[`base__${t}`],
-            'string' == typeof s && styles$f.base__text,
+            styles$e.base,
+            styles$e[`base__${t}`],
+            'string' == typeof s && styles$e.base__text,
             null == e ? void 0 : e.valueContainer,
         ),
         children: jsxRuntimeExports.jsx('div', {
-            className: cx(styles$f.value, styles$f[`value__${t}`], null == e ? void 0 : e.value),
+            className: cx(styles$e.value, styles$e[`value__${t}`], null == e ? void 0 : e.value),
             children: getValue(s, r),
         }),
     });
 }
-const base$c = 'Bubble_df22310d',
+const base$b = 'Bubble_df22310d',
     base__hidden = 'Bubble_base__hidden_1700314d',
-    styles$e = { base: base$c, base__hidden: base__hidden },
+    styles$d = { base: base$b, base__hidden: base__hidden },
     Bubble = {
-        Root: defineStyledComponent('Bubble', styles$e.base, { variants: { hidden: { true: styles$e.base__hidden } } }),
+        Root: defineStyledComponent('Bubble', styles$d.base, { variants: { hidden: { true: styles$d.base__hidden } } }),
         Value: Value,
         Icon: Icon$1,
     },
@@ -5523,7 +5548,7 @@ function usePopoverInstance(e) {
             const t = observable.box(),
                 r = { onBeforeOpen: new Set(), onBeforeClose: new Set() },
                 n = { bounding: observable.box(), position: observable.box() };
-            function o(e) {
+            function a(e) {
                 s((t) => {
                     const s = e(t);
                     return (
@@ -5535,9 +5560,9 @@ function usePopoverInstance(e) {
             }
             return {
                 id: e,
-                open: () => o((e) => ({ ...e, opened: !0 })),
-                close: () => o((e) => ({ ...e, opened: !1 })),
-                toggle: () => o((e) => ({ ...e, opened: !e.opened })),
+                open: () => a((e) => ({ ...e, opened: !0 })),
+                close: () => a((e) => ({ ...e, opened: !1 })),
+                toggle: () => a((e) => ({ ...e, opened: !e.opened })),
                 subscribe: {
                     onBeforeOpen: (e) => (r.onBeforeOpen.add(e), () => r.onBeforeOpen.delete(e)),
                     onBeforeClose: (e) => (r.onBeforeClose.add(e), () => r.onBeforeClose.delete(e)),
@@ -5561,7 +5586,7 @@ const border$1 = 'Popover_border_d0a76717',
     divider = 'Popover_divider_46fe6f15',
     decoration = 'Popover_decoration_134219d5',
     close = 'Popover_close_ad4a9c7b',
-    styles$d = {
+    styles$c = {
         border: border$1,
         title: title,
         subtitle: subtitle,
@@ -5573,8 +5598,8 @@ const border$1 = 'Popover_border_d0a76717',
     },
     Close = reactExports.forwardRef(({ className: e, children: t, ...s }, r) => {
         const n = usePopoverOptional(),
-            o = useSounds(),
-            a = useUpscale('ui_kit.close_button.icon_small', 'ui_kit.close_button.icon_medium');
+            a = useSounds(),
+            o = useUpscale('ui_kit.close_button.icon_small', 'ui_kit.close_button.icon_medium');
         return (
             reactExports.useEffect(
                 () =>
@@ -5588,17 +5613,17 @@ const border$1 = 'Popover_border_d0a76717',
                 onClick: function (e) {
                     var t;
                     (null == (t = s.onClick) || t.call(s, e),
-                        o.play('close', { target: 'react-popover:close', original: e }),
+                        a.play('close', { target: 'react-popover:close', original: e }),
                         null == n || n.close());
                 },
                 onMouseEnter: function (e) {
                     var t;
                     (null == (t = s.onMouseEnter) || t.call(s, e),
-                        o.play('mouse-enter', { target: 'react-popover:close', original: e }));
+                        a.play('mouse-enter', { target: 'react-popover:close', original: e }));
                 },
                 ref: r,
-                className: cx(styles$d.close, e),
-                children: t ?? jsxRuntimeExports.jsx(Image, { path: a, width: 24, height: 24 }),
+                className: cx(styles$c.close, e),
+                children: t ?? jsxRuntimeExports.jsx(Image, { path: o, width: 24, height: 24 }),
             })
         );
     }),
@@ -5615,8 +5640,8 @@ function Portal({
     pivot: s = 0,
     position: r = 'top',
     lazy: n = !1,
-    closeByEscape: o = !0,
-    ...a
+    closeByEscape: a = !0,
+    ...o
 }) {
     const i = usePopover(),
         l = React.useRef(null),
@@ -5627,15 +5652,15 @@ function Portal({
         const t = document.querySelector(`[data-popover-trigger-id="${i.id}"]`),
             n = e.querySelector(`[data-popover-display-id="${i.id}"]`);
         if (!t || !n) return;
-        const o = watchResizes([t, e, document.body], ([t, n, o]) => {
+        const a = watchResizes([t, e, document.body], ([t, n, a]) => {
             if (!i.opened) return;
-            const a = getUpdatedPosition(r, t, n, o);
-            (updatePosition(s, a, t, n, o, e),
+            const o = getUpdatedPosition(r, t, n, a);
+            (updatePosition(s, o, t, n, a, e),
                 runInAction(() => {
-                    (i.trigger.setBounding(t), i.portal.setBounding(n), i.portal.setPosition(a));
+                    (i.trigger.setBounding(t), i.portal.setBounding(n), i.portal.setPosition(o));
                 }));
         });
-        return (o.start(), o.stop);
+        return (a.start(), a.stop);
     }, [s, i.id, i.portal, i.trigger, r, i.opened]);
     const u = reactExports.useCallback(() => {
         const e = l.current;
@@ -5646,7 +5671,7 @@ function Portal({
             document.activeElement.blur();
     }, []);
     (reactExports.useEffect(() => i.subscribe.onBeforeClose(u), [i.subscribe, u]),
-        useHandleKeydown(o && i.opened ? keyCodes.ESCAPE : keyCodes.NONE, () => {
+        useHandleKeydown(a && i.opened ? keyCodes.ESCAPE : keyCodes.NONE, () => {
             i.close();
         }),
         reactExports.useEffect(() => {
@@ -5690,7 +5715,7 @@ function Portal({
         : jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {
               children: ReactDOM.createPortal(
                   jsxRuntimeExports.jsx(animated.div, {
-                      ...a,
+                      ...o,
                       ref: l,
                       style: {
                           position: 'absolute',
@@ -5698,7 +5723,7 @@ function Portal({
                           left: '0',
                           pointerEvents: d.opacity.to((e) => (1 === e ? 'auto' : 'none')),
                           display: d.opacity.to((e) => (0 === e ? 'none' : 'block')),
-                          ...a.style,
+                          ...o.style,
                       },
                       children: jsxRuntimeExports.jsx(animated.div, { style: d, children: e }),
                   }),
@@ -5719,29 +5744,29 @@ function applyTransform(e, t, s, r) {
         (t = clamp$1(0, r.height - s.offsetHeight, t)),
         (s.style.transform = `translate(${e}px, ${t}px)`));
 }
-function updatePosition(e, t, s, r, n, o) {
-    const a = remToPx$1(FREE_SPACE);
+function updatePosition(e, t, s, r, n, a) {
+    const o = remToPx$1(FREE_SPACE);
     if ('top' === t) {
         const t = (r.width - s.width) * e;
-        applyTransform(s.left - t, s.top - r.height - a, o, n);
+        applyTransform(s.left - t, s.top - r.height - o, a, n);
     } else if ('bottom' === t) {
         const t = (r.width - s.width) * e;
-        applyTransform(s.left - t, s.bottom + a, o, n);
+        applyTransform(s.left - t, s.bottom + o, a, n);
     } else if ('left' === t) {
-        const t = s.left - r.width - a,
+        const t = s.left - r.width - o,
             i = (r.height - s.height) * e;
-        applyTransform(t, s.top - i, o, n);
+        applyTransform(t, s.top - i, a, n);
     } else if ('right' === t) {
-        const t = s.right + a,
+        const t = s.right + o,
             i = (r.height - s.height) * e;
-        applyTransform(t, s.top - i, o, n);
+        applyTransform(t, s.top - i, a, n);
     }
 }
-const base$b = 'PopoverTip_163a336f',
+const base$a = 'PopoverTip_163a336f',
     arrow = 'PopoverTip_arrow_44c7d6a5',
     glow = 'PopoverTip_glow_da3f9be9',
-    styles$c = {
-        base: base$b,
+    styles$b = {
+        base: base$a,
         'base__flip-left': 'PopoverTip_base__flip-left_3cc0dadc',
         'base__flip-right': 'PopoverTip_base__flip-right_6a5605b6',
         'base__flip-top': 'PopoverTip_base__flip-top_6bcc69e1',
@@ -5759,7 +5784,7 @@ const base$b = 'PopoverTip_163a336f',
     Tip = reactExports.forwardRef(({ size: e, ...t }, s) => {
         const r = reactExports.useRef(null),
             n = usePopoverOptional(),
-            [o, a] = reactExports.useState(t.position),
+            [a, o] = reactExports.useState(t.position),
             [i, l] = reactExports.useState(t.offset);
         return (
             reactExports.useEffect(() => {
@@ -5770,9 +5795,9 @@ const base$b = 'PopoverTip_163a336f',
                             s = n.portal.bounding.get(),
                             r = n.portal.position.get();
                         if (!t || !r || !s) return;
-                        const o = oppositePositions[r];
-                        (a(o),
-                            isVerticalPosition(o)
+                        const a = oppositePositions[r];
+                        (o(a),
+                            isVerticalPosition(a)
                                 ? (l(`${Math.max(0, t.left - s.left)}px`),
                                   (e.style.width = `${Math.min(t.width, s.width)}px`))
                                 : (l(`${Math.max(0, t.top - s.top)}px`),
@@ -5783,24 +5808,24 @@ const base$b = 'PopoverTip_163a336f',
                 ...t,
                 ref: assignRefs([s, r]),
                 style: {
-                    width: verticals.includes(o) ? e : '1rem',
-                    height: horizontals.includes(o) ? e : '1rem',
-                    top: horizontals.includes(o) ? i : 'auto',
-                    bottom: 'bottom' === o ? '0' : 'auto',
-                    left: verticals.includes(o) ? i : 'auto',
-                    right: 'right' === o ? '0' : 'auto',
+                    width: verticals.includes(a) ? e : '1rem',
+                    height: horizontals.includes(a) ? e : '1rem',
+                    top: horizontals.includes(a) ? i : 'auto',
+                    bottom: 'bottom' === a ? '0' : 'auto',
+                    left: verticals.includes(a) ? i : 'auto',
+                    right: 'right' === a ? '0' : 'auto',
                     ...t.style,
                 },
-                className: cx(styles$c.base, t.flipped && styles$c[`base__flipped-${o}`], t.className),
+                className: cx(styles$b.base, t.flipped && styles$b[`base__flipped-${a}`], t.className),
                 children: [
                     jsxRuntimeExports.jsx('div', {
-                        className: cx(styles$c.arrow, styles$c[`arrow__position-${o}`]),
-                        style: { transform: `translate(-50%, -50%) rotate(${rotations[o]}deg)` },
+                        className: cx(styles$b.arrow, styles$b[`arrow__position-${a}`]),
+                        style: { transform: `translate(-50%, -50%) rotate(${rotations[a]}deg)` },
                     }),
                     !1 === t.noGlow &&
                         jsxRuntimeExports.jsx('div', {
-                            className: styles$c.glow,
-                            style: { transform: `translate(-50%, -50%) rotate(${rotations[o]}deg)` },
+                            className: styles$b.glow,
+                            style: { transform: `translate(-50%, -50%) rotate(${rotations[a]}deg)` },
                         }),
                 ],
             })
@@ -5811,19 +5836,19 @@ function Trigger({ children: e }) {
     return e({ onClick: t.toggle, 'data-popover-trigger-id': t.id }, t);
 }
 Tip.positions = positions;
-const Title = defineStyledComponent('Title', styles$d.title),
-    Subtitle = defineStyledComponent('Subtitle', styles$d.subtitle),
-    Header = defineStyledComponent('Header', styles$d.header),
-    Divider = defineStyledComponent('Divider', styles$d.divider),
-    Body = defineStyledComponent('Body', styles$d.body),
-    Decoration = defineStyledComponent('Decoration', styles$d.decoration),
+const Title = defineStyledComponent('Title', styles$c.title),
+    Subtitle = defineStyledComponent('Subtitle', styles$c.subtitle),
+    Header = defineStyledComponent('Header', styles$c.header),
+    Divider = defineStyledComponent('Divider', styles$c.divider),
+    Body = defineStyledComponent('Body', styles$c.body),
+    Decoration = defineStyledComponent('Decoration', styles$c.decoration),
     Display = reactExports.forwardRef((e, t) => {
         const s = usePopoverOptional();
         return jsxRuntimeExports.jsxs(Decoration, {
             ...e,
             ref: t,
             'data-popover-display-id': null == s ? void 0 : s.id,
-            children: [jsxRuntimeExports.jsx('div', { className: styles$d.border }), e.children],
+            children: [jsxRuntimeExports.jsx('div', { className: styles$c.border }), e.children],
         });
     });
 function Popover(e) {
@@ -5844,32 +5869,32 @@ function Popover(e) {
     (Popover.use = usePopover),
     (Popover.Portal = Portal),
     (Popover.Trigger = Trigger));
-const base$a = 'TruncateText_dcb41d92',
-    styles$b = { base: base$a },
+const base$9 = 'TruncateText_dcb41d92',
+    styles$a = { base: base$9 },
     TruncatedText = reactExports.forwardRef(function ({ text: e, tooltipParams: t, className: s, ...r }, n) {
-        const o = useSimpleTooltip({ header: null == t ? void 0 : t.header, body: (null == t ? void 0 : t.body) || e }),
-            a = reactExports.useRef(null),
+        const a = useSimpleTooltip({ header: null == t ? void 0 : t.header, body: (null == t ? void 0 : t.body) || e }),
+            o = reactExports.useRef(null),
             [i, l] = reactExports.useState(!1);
         const c = reactExports.useCallback(() => {
-            if (a.current) {
-                const { scrollWidth: e, offsetWidth: t } = a.current;
+            if (o.current) {
+                const { scrollWidth: e, offsetWidth: t } = o.current;
                 l(e > t);
             }
         }, []);
         return (
             reactExports.useEffect(() => {
-                i || o.onMouseLeave();
-            }, [i, o]),
+                i || a.onMouseLeave();
+            }, [i, a]),
             useLayoutReady(c, [c]),
             useResizeLayoutReady(c, [c]),
-            useRefResizeObserver(a, c),
+            useRefResizeObserver(o, c),
             jsxRuntimeExports.jsx('div', {
                 ...r,
                 ref: function (e) {
-                    ((a.current = e), 'function' == typeof n ? n(e) : n && (n.current = e));
+                    ((o.current = e), 'function' == typeof n ? n(e) : n && (n.current = e));
                 },
-                className: cx(styles$b.base, s),
-                ...(i ? o : {}),
+                className: cx(styles$a.base, s),
+                ...(i ? a : {}),
                 children: e,
             })
         );
@@ -5891,7 +5916,7 @@ function useRadioButtonInstance({ value: e, onChange: t }) {
 }
 const background$1 = 'RadioButton_background_d016b9f3',
     border = 'RadioButton_border_6658f86a',
-    base$9 = 'RadioButton_3fb28b85',
+    base$8 = 'RadioButton_3fb28b85',
     base__enabled = 'RadioButton_base__enabled_7a0e90e6',
     label = 'RadioButton_label_33fbbd64',
     label__primary = 'RadioButton_label__primary_d55ea2ac',
@@ -5901,10 +5926,10 @@ const background$1 = 'RadioButton_background_d016b9f3',
     icon$1 = 'RadioButton_icon_7e3b6696',
     input = 'RadioButton_input_52c34160',
     overlay = 'RadioButton_overlay_9ffdf66b',
-    styles$a = {
+    styles$9 = {
         background: background$1,
         border: border,
-        base: base$9,
+        base: base$8,
         base__enabled: base__enabled,
         label: label,
         label__primary: label__primary,
@@ -5919,25 +5944,25 @@ function getImagePath(e, t, s) {
     return s && s === themes.primary ? `ui_kit.radio_button.point_${e}x${e}` : t;
 }
 function Icon({ size: e = sizes$1.medium, theme: t, className: s, iconPath: r, withoutScale: n }) {
-    const o = 'number' == typeof e ? e : imageSizes$1[e],
-        a = useUpscale(r, n ? r : `${r}_scale2`);
+    const a = 'number' == typeof e ? e : imageSizes$1[e],
+        o = useUpscale(r, n ? r : `${r}_scale2`);
     return jsxRuntimeExports.jsx(Image, {
-        width: o,
-        height: o,
-        path: getImagePath(o, a, t),
-        className: cx(styles$a.icon, s),
+        width: a,
+        height: a,
+        path: getImagePath(a, o, t),
+        className: cx(styles$9.icon, s),
     });
 }
 function Input({ theme: e = themes.primary, className: t, children: s }) {
     return jsxRuntimeExports.jsxs('div', {
-        className: cx(styles$a.input, t),
+        className: cx(styles$9.input, t),
         children: [
             e === themes.primary &&
                 jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
                     children: [
-                        jsxRuntimeExports.jsx('div', { className: styles$a.background }),
-                        jsxRuntimeExports.jsx('div', { className: styles$a.border }),
-                        jsxRuntimeExports.jsx('div', { className: styles$a.overlay }),
+                        jsxRuntimeExports.jsx('div', { className: styles$9.background }),
+                        jsxRuntimeExports.jsx('div', { className: styles$9.border }),
+                        jsxRuntimeExports.jsx('div', { className: styles$9.overlay }),
                     ],
                 }),
             s,
@@ -5945,13 +5970,13 @@ function Input({ theme: e = themes.primary, className: t, children: s }) {
     });
 }
 function Label({ theme: e, className: t, children: s }) {
-    return jsxRuntimeExports.jsx('div', { className: cx(styles$a.label, styles$a[`label__${e}`], t), children: s });
+    return jsxRuntimeExports.jsx('div', { className: cx(styles$9.label, styles$9[`label__${e}`], t), children: s });
 }
-const Base$6 = defineStyledComponent('Base', styles$a.base, {
+const Base$6 = defineStyledComponent('Base', styles$9.base, {
     variants: {
-        size: { [sizes$1.small]: styles$a.base__small, [sizes$1.medium]: styles$a.base__medium },
-        selected: { true: styles$a.base__selected },
-        enabled: { true: styles$a.base__enabled },
+        size: { [sizes$1.small]: styles$9.base__small, [sizes$1.medium]: styles$9.base__medium },
+        selected: { true: styles$9.base__selected },
+        enabled: { true: styles$9.base__enabled },
     },
 });
 function Root({
@@ -5960,8 +5985,8 @@ function Root({
     value: s,
     size: r = sizes$1.medium,
     disabled: n = !1,
-    children: o,
-    handleChange: a,
+    children: a,
+    handleChange: o,
     ...i
 }) {
     const l = useSounds(),
@@ -5978,9 +6003,9 @@ function Root({
         onClick: function (e) {
             (l.play('click', { target: Base$6.displayName, original: e }),
                 null == t || t(e),
-                a ? null == a || a(s) : null == c || c.onChange(s));
+                o ? null == o || o(s) : null == c || c.onChange(s));
         },
-        children: o,
+        children: a,
     });
 }
 function RadioButton({
@@ -5989,13 +6014,13 @@ function RadioButton({
     theme: s = themes.primary,
     size: r = sizes$1.medium,
     iconPath: n = 'ui_kit.radio_button.pointer_20x20',
-    withoutScale: o = !1,
-    ...a
+    withoutScale: a = !1,
+    ...o
 }) {
     const i = useRadioButtonOptional(),
         l = t === (null == i ? void 0 : i.value);
     return jsxRuntimeExports.jsxs(Root, {
-        ...a,
+        ...o,
         size: r,
         value: t,
         handleChange: null == i ? void 0 : i.onChange,
@@ -6003,7 +6028,7 @@ function RadioButton({
         children: [
             jsxRuntimeExports.jsx(Input, {
                 theme: s,
-                children: jsxRuntimeExports.jsx(Icon, { theme: s, size: r, iconPath: n, withoutScale: o }),
+                children: jsxRuntimeExports.jsx(Icon, { theme: s, size: r, iconPath: n, withoutScale: a }),
             }),
             jsxRuntimeExports.jsx(Label, { theme: s, children: e }),
         ],
@@ -6026,19 +6051,19 @@ function useCardContext() {
     if (!e) throw new Error('Card context must be used only within its provider');
     return e;
 }
-function CardContextProvider({ selected: e, hover: t, disabled: s, multiple: r, status: n, children: o }) {
-    const a = reactExports.useMemo(
+function CardContextProvider({ selected: e, hover: t, disabled: s, multiple: r, status: n, children: a }) {
+    const o = reactExports.useMemo(
         () => ({ selected: e, hover: t, disabled: s, multiple: r, status: n }),
         [s, t, r, e, n],
     );
-    return jsxRuntimeExports.jsx(CardContext.Provider, { value: a, children: o });
+    return jsxRuntimeExports.jsx(CardContext.Provider, { value: o, children: a });
 }
 const CardsWrapperContext = reactExports.createContext(null);
 function useCardsWrapperContextOptional() {
     return reactExports.useContext(CardsWrapperContext);
 }
 const CardsWrapperContextProvider = CardsWrapperContext.Provider,
-    base$8 = 'Content_8eaaf71a',
+    base$7 = 'Content_8eaaf71a',
     content$1 = 'Content_ab8563af',
     disabledOverlay = 'Content_disabledOverlay_af87c441',
     base__multiple = 'Content_base__multiple_da09528a',
@@ -6047,8 +6072,8 @@ const CardsWrapperContextProvider = CardsWrapperContext.Provider,
     base__selectedHover$1 = 'Content_base__selectedHover_da09528a',
     base__selected$1 = 'Content_base__selected_da09528a',
     multipleCorner = 'Content_multipleCorner_151c26ee',
-    styles$9 = {
-        base: base$8,
+    styles$8 = {
+        base: base$7,
         content: content$1,
         disabledOverlay: disabledOverlay,
         base__multiple: base__multiple,
@@ -6059,14 +6084,14 @@ const CardsWrapperContextProvider = CardsWrapperContext.Provider,
         multipleCorner: multipleCorner,
     },
     MULTIPLE_CORNER_SIZE = 20,
-    Base$5 = defineStyledComponent('Content', styles$9.base, {
+    Base$5 = defineStyledComponent('Content', styles$8.base, {
         variants: {
-            multiple: { true: styles$9.base__multiple },
-            selected: { true: styles$9.base__selected },
-            hover: { true: styles$9.base__hover },
-            disabled: { true: styles$9.base__disabled },
+            multiple: { true: styles$8.base__multiple },
+            selected: { true: styles$8.base__selected },
+            hover: { true: styles$8.base__hover },
+            disabled: { true: styles$8.base__disabled },
         },
-        compoundVariants: [{ hover: !0, selected: !0, className: styles$9.base__selectedHover }],
+        compoundVariants: [{ hover: !0, selected: !0, className: styles$8.base__selectedHover }],
     }),
     MainContainer = ({ children: e, classNames: t }) => {
         const s = React.useRef(null),
@@ -6090,12 +6115,12 @@ const CardsWrapperContextProvider = CardsWrapperContext.Provider,
                 hover: r.hover,
                 disabled: r.disabled,
                 children: [
-                    r.multiple && jsxRuntimeExports.jsx('div', { className: styles$9.multipleCorner }),
+                    r.multiple && jsxRuntimeExports.jsx('div', { className: styles$8.multipleCorner }),
                     jsxRuntimeExports.jsxs('div', {
                         ref: s,
-                        className: cx(styles$9.content, null == t ? void 0 : t.mainContainerContent),
+                        className: cx(styles$8.content, null == t ? void 0 : t.mainContainerContent),
                         children: [
-                            r.disabled && jsxRuntimeExports.jsx('div', { className: styles$9.disabledOverlay }),
+                            r.disabled && jsxRuntimeExports.jsx('div', { className: styles$8.disabledOverlay }),
                             e,
                         ],
                     }),
@@ -6103,26 +6128,26 @@ const CardsWrapperContextProvider = CardsWrapperContext.Provider,
             })
         );
     },
-    base$7 = 'Status_68bd9bc6',
+    base$6 = 'Status_68bd9bc6',
     icon = 'Status_icon_cef4536',
     base__done = 'Status_base__done_35b9a31c',
     base__doneSmall = 'Status_base__doneSmall_35b9a31c',
     base__alert = 'Status_base__alert_35b9a31c',
     base__alertSmall = 'Status_base__alertSmall_35b9a31c',
-    line$1 = 'Status_line_8f933ea7',
+    line = 'Status_line_8f933ea7',
     shadow = 'Status_shadow_fc30bf98',
     base__lockedSmall = 'Status_base__lockedSmall_35b9a31c',
     glowInner = 'Status_glowInner_f8eb475a',
     blur = 'Status_blur_5675b854',
     glowBig = 'Status_glowBig_5954041c',
-    styles$8 = {
-        base: base$7,
+    styles$7 = {
+        base: base$6,
         icon: icon,
         base__done: base__done,
         base__doneSmall: base__doneSmall,
         base__alert: base__alert,
         base__alertSmall: base__alertSmall,
-        line: line$1,
+        line: line,
         shadow: shadow,
         base__lockedSmall: base__lockedSmall,
         glowInner: glowInner,
@@ -6130,21 +6155,21 @@ const CardsWrapperContextProvider = CardsWrapperContext.Provider,
         glowBig: glowBig,
     },
     strings = resources.resolve('strings');
-defineStyledComponent('Status', styles$8.base, {
-    variants: { status: { done: styles$8.base__done, alert: styles$8.base__alert, locked: styles$8.base__locked } },
+defineStyledComponent('Status', styles$7.base, {
+    variants: { status: { done: styles$7.base__done, alert: styles$7.base__alert, locked: styles$7.base__locked } },
 });
 const SMALL_SIZE_BREAKPOINT = 100,
     tooltipEnabled = ({ header: e, body: t }) => Boolean(e && t),
     Status = ({ reason: e, classNames: t }) => {
         const s = reactExports.useRef(null),
             [r, n] = React.useState(!1),
-            o = `base__${useCardContext().status}${r ? 'Small' : ''}`,
-            a = React.useCallback(() => {
+            a = `base__${useCardContext().status}${r ? 'Small' : ''}`,
+            o = React.useCallback(() => {
                 var e;
                 const t = null == (e = s.current) ? void 0 : e.getBoundingClientRect();
                 t && n(t.width <= SMALL_SIZE_BREAKPOINT);
             }, [s]);
-        useRefResizeObserver(s, a);
+        useRefResizeObserver(s, o);
         const i = e
                 ? {
                       header: strings.readOrEmpty(`tooltips.moduleFits.${e}.header`),
@@ -6153,30 +6178,30 @@ const SMALL_SIZE_BREAKPOINT = 100,
                 : {},
             l = useSimpleTooltip(i);
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$8.base, styles$8[o], null == t ? void 0 : t.wrapper),
+            className: cx(styles$7.base, styles$7[a], null == t ? void 0 : t.wrapper),
             ref: s,
             children: [
-                jsxRuntimeExports.jsx('div', { className: styles$8.glowBig }),
-                jsxRuntimeExports.jsx('div', { className: styles$8.line }),
-                jsxRuntimeExports.jsx('div', { className: styles$8.shadow }),
-                jsxRuntimeExports.jsx('div', { className: styles$8.glowInner }),
+                jsxRuntimeExports.jsx('div', { className: styles$7.glowBig }),
+                jsxRuntimeExports.jsx('div', { className: styles$7.line }),
+                jsxRuntimeExports.jsx('div', { className: styles$7.shadow }),
+                jsxRuntimeExports.jsx('div', { className: styles$7.glowInner }),
                 jsxRuntimeExports.jsx('svg', {
                     width: '42',
                     height: '42',
                     viewBox: '0 0 42 42',
-                    className: styles$8.blur,
+                    className: styles$7.blur,
                     children: jsxRuntimeExports.jsx('g', {
                         children: jsxRuntimeExports.jsx('circle', { cx: '21', cy: '21', r: '3' }),
                     }),
                 }),
                 jsxRuntimeExports.jsx('div', {
                     ...(tooltipEnabled(i) && l),
-                    className: cx(styles$8.icon, null == t ? void 0 : t.icon),
+                    className: cx(styles$7.icon, null == t ? void 0 : t.icon),
                 }),
             ],
         });
     },
-    base$6 = 'Card_f0963ece',
+    base$5 = 'Card_f0963ece',
     base__wrapped = 'Card_base__wrapped_c6eb8737',
     base__disableMouse = 'Card_base__disableMouse_5cd80216',
     base__hover = 'Card_base__hover_f4c22d1c',
@@ -6188,7 +6213,7 @@ const SMALL_SIZE_BREAKPOINT = 100,
     base__selectedHover = 'Card_base__selectedHover_f4c22d1c',
     centerBorder = 'Card_centerBorder_8a0f28ae',
     cardStyles = {
-        base: base$6,
+        base: base$5,
         base__wrapped: base__wrapped,
         base__disableMouse: base__disableMouse,
         base__hover: base__hover,
@@ -6219,8 +6244,8 @@ const SMALL_SIZE_BREAKPOINT = 100,
             status: s,
             statusReason: r,
             disableMouse: n,
-            onMouseOver: o,
-            onMouseOut: a,
+            onMouseOver: a,
+            onMouseOut: o,
             soundTarget: i,
             disabled: l = !1,
             className: c,
@@ -6256,10 +6281,10 @@ const SMALL_SIZE_BREAKPOINT = 100,
                             g || f.play('mouse-enter', { target: i || 'react-ui:card', original: e });
                         },
                         onMouseOver: function (e) {
-                            g || (_(!0), null == o || o(e));
+                            g || (_(!0), null == a || a(e));
                         },
                         onMouseOut: function (e) {
-                            g || (_(!1), null == a || a(e));
+                            g || (_(!1), null == o || o(e));
                         },
                         children: jsxRuntimeExports.jsx(MainContainer, { classNames: u, children: e }),
                     }),
@@ -6276,15 +6301,15 @@ const SMALL_SIZE_BREAKPOINT = 100,
     Point = (e, t) => ({ x: e, y: t });
 function getRectangleEdges(e) {
     let { x: t, y: s, width: r, height: n } = e;
-    const o = Point(t, s),
-        a = Point(t + r, s),
+    const a = Point(t, s),
+        o = Point(t + r, s),
         i = Point(t + r, s + n),
         l = Point(t, s + n);
     return [
-        [o, a],
-        [a, i],
+        [a, o],
+        [o, i],
         [i, l],
-        [l, o],
+        [l, a],
     ];
 }
 function getEdgeKey(e) {
@@ -6308,8 +6333,8 @@ function buildContourPath(e) {
         s = { x: t[0].x - PADDING, y: t[0].y - PADDING },
         r = [s];
     let n = t[1],
-        o = s,
         a = s,
+        o = s,
         i = -PADDING,
         l = -PADDING;
     for (e.splice(0, 1); e.length > 0; ) {
@@ -6317,16 +6342,16 @@ function buildContourPath(e) {
         if (-1 === t) break;
         const s = e[t],
             c = n;
-        (n.x <= a.x ? (l = PADDING) : (l === PADDING && (o.y -= 2 * PADDING), (l = -PADDING)),
-            n.y >= a.y ? (i = PADDING) : (i === PADDING && (o.x -= 2 * PADDING), (i = -PADDING)),
+        (n.x <= o.x ? (l = PADDING) : (l === PADDING && (a.y -= 2 * PADDING), (l = -PADDING)),
+            n.y >= o.y ? (i = PADDING) : (i === PADDING && (a.x -= 2 * PADDING), (i = -PADDING)),
             (n = { x: n.x + i, y: n.y + l }),
             r.push(n),
-            (a = c),
-            (o = n),
+            (o = c),
+            (a = n),
             (n = s[1]),
             e.splice(t, 1));
     }
-    return (l === PADDING && i === PADDING && (o = { ...o, x: o.x - 2 * PADDING }), r.push(s), r);
+    return (l === PADDING && i === PADDING && (a = { ...a, x: a.x - 2 * PADDING }), r.push(s), r);
 }
 function buildContour(e, t) {
     return buildContourPath(buildOuterEdgesAndCenter(e));
@@ -6338,11 +6363,11 @@ class LinesOptimizer {
         (__publicField(this, 'lines', new Map()), (this.containerRect = e));
     }
     addLine(e, t, s, r, n) {
-        var o;
-        const a = `${s === LINE_THICKNESS ? VERTICAL : HORIZONTAL}-${s === LINE_THICKNESS ? Math.round(e) : Math.round(t)}-${n}`;
-        this.lines.has(a) || this.lines.set(a, []);
+        var a;
+        const o = `${s === LINE_THICKNESS ? VERTICAL : HORIZONTAL}-${s === LINE_THICKNESS ? Math.round(e) : Math.round(t)}-${n}`;
+        this.lines.has(o) || this.lines.set(o, []);
         const i = { x: e - this.containerRect.x, y: t - this.containerRect.y, width: s, height: r, className: n };
-        null == (o = this.lines.get(a)) || o.push(i);
+        null == (a = this.lines.get(o)) || a.push(i);
     }
     run() {
         const e = [];
@@ -6350,23 +6375,23 @@ class LinesOptimizer {
             this.lines.forEach((t, s) => {
                 const r = s.at(0) === HORIZONTAL,
                     n = t.sort((e, t) => (r ? e.x - t.x : e.y - t.y));
-                let o = null;
+                let a = null;
                 (n.forEach((t) => {
-                    if (o)
+                    if (a)
                         if (r) {
-                            const s = o.x + o.width,
+                            const s = a.x + a.width,
                                 r = t.x + t.width;
-                            t.x >= o.x && t.x <= s ? (o = { ...o, width: Math.max(r, s) - o.x }) : (e.push(o), (o = t));
+                            t.x >= a.x && t.x <= s ? (a = { ...a, width: Math.max(r, s) - a.x }) : (e.push(a), (a = t));
                         } else {
-                            const s = o.y + o.height,
+                            const s = a.y + a.height,
                                 r = t.y + t.height;
-                            t.y >= o.y && t.y <= s
-                                ? (o = { ...o, height: Math.max(r, s) - o.y })
-                                : (e.push(o), (o = t));
+                            t.y >= a.y && t.y <= s
+                                ? (a = { ...a, height: Math.max(r, s) - a.y })
+                                : (e.push(a), (a = t));
                         }
-                    else o = t;
+                    else a = t;
                 }),
-                    o && e.push(o));
+                    a && e.push(a));
             }),
             e
         );
@@ -6374,22 +6399,22 @@ class LinesOptimizer {
 }
 const lineInner = 'LinesBuilder_lineInner_a52dc157',
     lineOuter = 'LinesBuilder_lineOuter_c57514b2',
-    styles$7 = { lineInner: lineInner, lineOuter: lineOuter };
+    styles$6 = { lineInner: lineInner, lineOuter: lineOuter };
 function buildLines(e, t, s) {
     const r = [],
         n = new LinesOptimizer(t);
-    for (let o = 0; o < e.length; o++) {
-        const t = e[o],
-            a = t.getBoundingClientRect();
-        if (0 === a.width || 0 === a.height)
+    for (let a = 0; a < e.length; a++) {
+        const t = e[a],
+            o = t.getBoundingClientRect();
+        if (0 === o.width || 0 === o.height)
             return void console.debug(
-                `Card rect has zero size by one side: ${a.width}x${a.height} (${t.getAttribute('data-test-id')}) `,
+                `Card rect has zero size by one side: ${o.width}x${o.height} (${t.getAttribute('data-test-id')}) `,
             );
-        (s !== borderTypes.none && r.push({ x: a.x, y: a.y, width: a.width, height: a.height }),
-            n.addLine(a.x, a.y, a.width, LINE_THICKNESS, styles$7.lineInner),
-            n.addLine(a.x, a.y + a.height, a.width, LINE_THICKNESS, styles$7.lineInner),
-            n.addLine(a.x, a.y, LINE_THICKNESS, a.height, styles$7.lineInner),
-            n.addLine(a.x + a.width, a.y, LINE_THICKNESS, a.height + OFFSET, styles$7.lineInner));
+        (s !== borderTypes.none && r.push({ x: o.x, y: o.y, width: o.width, height: o.height }),
+            n.addLine(o.x, o.y, o.width, LINE_THICKNESS, styles$6.lineInner),
+            n.addLine(o.x, o.y + o.height, o.width, LINE_THICKNESS, styles$6.lineInner),
+            n.addLine(o.x, o.y, LINE_THICKNESS, o.height, styles$6.lineInner),
+            n.addLine(o.x + o.width, o.y, LINE_THICKNESS, o.height + OFFSET, styles$6.lineInner));
     }
     if (s !== borderTypes.none) {
         const e = buildContour(r);
@@ -6398,13 +6423,13 @@ function buildLines(e, t, s) {
             if (t) {
                 const s = t.y === e.y,
                     r = t,
-                    o = e;
+                    a = e;
                 n.addLine(
-                    Math.min(r.x, o.x),
-                    Math.min(r.y, o.y),
-                    s ? Math.abs(o.x - r.x) : LINE_THICKNESS,
-                    s ? LINE_THICKNESS : Math.abs(o.y - r.y) + OFFSET,
-                    styles$7.lineOuter,
+                    Math.min(r.x, a.x),
+                    Math.min(r.y, a.y),
+                    s ? Math.abs(a.x - r.x) : LINE_THICKNESS,
+                    s ? LINE_THICKNESS : Math.abs(a.y - r.y) + OFFSET,
+                    styles$6.lineOuter,
                 );
             }
             t = e;
@@ -6413,16 +6438,16 @@ function buildLines(e, t, s) {
     return n.run();
 }
 const Lines = reactExports.memo(({ containerRef: e, generation: t, border: s, cardSelector: r }) => {
-        const [n, o] = reactExports.useState([]),
-            a = useEvent(() => {
+        const [n, a] = reactExports.useState([]),
+            o = useEvent(() => {
                 const t = e.current;
                 if (!t) return;
                 const n = t.getBoundingClientRect(),
-                    a = buildLines(t.querySelectorAll(`.${r || cardStyles.card}`), n, s);
-                o(a ?? []);
+                    o = buildLines(t.querySelectorAll(`.${r || cardStyles.card}`), n, s);
+                a(o ?? []);
             });
         return (
-            reactExports.useEffect(a, [a, t]),
+            reactExports.useEffect(o, [o, t]),
             jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {
                 children: n.map((e, t) =>
                     jsxRuntimeExports.jsx(
@@ -6434,17 +6459,17 @@ const Lines = reactExports.memo(({ containerRef: e, generation: t, border: s, ca
             })
         );
     }),
-    base$5 = 'CardsWrapper_3b6cc4f6',
+    base$4 = 'CardsWrapper_3b6cc4f6',
     card = 'CardsWrapper_card_c7fc9ee7',
     centerBorderCommon = 'CardsWrapper_centerBorderCommon_b4b27a11',
     outerBorderCommon = 'CardsWrapper_outerBorderCommon_f4887371',
-    styles$6 = {
-        base: base$5,
+    styles$5 = {
+        base: base$4,
         card: card,
         centerBorderCommon: centerBorderCommon,
         outerBorderCommon: outerBorderCommon,
     },
-    Base$3 = defineStyledComponent('CardsWrapper', styles$6.base),
+    Base$3 = defineStyledComponent('CardsWrapper', styles$5.base),
     CardsWrapper = reactExports.forwardRef(function (
         {
             children: e,
@@ -6452,8 +6477,8 @@ const Lines = reactExports.memo(({ containerRef: e, generation: t, border: s, ca
             trashhold: s,
             border: r = borderTypes.contour,
             enabled: n = !0,
-            cardSelector: o,
-            ...a
+            cardSelector: a,
+            ...o
         },
         i,
     ) {
@@ -6465,16 +6490,16 @@ const Lines = reactExports.memo(({ containerRef: e, generation: t, border: s, ca
             (e) => {
                 const t = c.current;
                 if (!t) return;
-                const s = t.querySelectorAll(`.${o || cardStyles.card}`);
+                const s = t.querySelectorAll(`.${a || cardStyles.card}`);
                 if (s.length > 0) {
                     const r = t.getBoundingClientRect(),
                         n = s.length;
                     n !== l.current.length && (l.current = Array.from(s));
-                    const o = `${Math.round(r.width)}x${Math.round(r.height)}-${n}|${e}`;
-                    d(o);
+                    const a = `${Math.round(r.width)}x${Math.round(r.height)}-${n}|${e}`;
+                    d(a);
                 } else d('');
             },
-            [o],
+            [a],
         );
         (reactExports.useEffect(() => {
             p(s);
@@ -6485,7 +6510,7 @@ const Lines = reactExports.memo(({ containerRef: e, generation: t, border: s, ca
             ));
         const m = reactExports.useMemo(() => ({ recalculate: p, enabled: n }), [p, n]);
         return jsxRuntimeExports.jsx(Base$3, {
-            ...a,
+            ...o,
             ref: c,
             children: jsxRuntimeExports.jsxs('div', {
                 className: t,
@@ -6496,7 +6521,7 @@ const Lines = reactExports.memo(({ containerRef: e, generation: t, border: s, ca
                         containerRef: c,
                         border: r,
                         generation: u,
-                        cardSelector: o,
+                        cardSelector: a,
                     }),
                 ],
             }),
@@ -6504,12 +6529,12 @@ const Lines = reactExports.memo(({ containerRef: e, generation: t, border: s, ca
     }),
     CardSingle = reactExports.forwardRef(({ className: e, classNames: t, ...s }, r) =>
         jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$6.base, null == t ? void 0 : t.wrapper),
+            className: cx(styles$5.base, null == t ? void 0 : t.wrapper),
             children: [
-                jsxRuntimeExports.jsx('div', { className: styles$6.centerBorderCommon }),
-                jsxRuntimeExports.jsx('div', { className: styles$6.outerBorderCommon }),
+                jsxRuntimeExports.jsx('div', { className: styles$5.centerBorderCommon }),
+                jsxRuntimeExports.jsx('div', { className: styles$5.outerBorderCommon }),
                 jsxRuntimeExports.jsx(Card, {
-                    className: cx(styles$6.card, e, null == t ? void 0 : t.card),
+                    className: cx(styles$5.card, e, null == t ? void 0 : t.card),
                     classNames: t,
                     ...s,
                     ref: r,
@@ -6518,302 +6543,6 @@ const Lines = reactExports.memo(({ containerRef: e, generation: t, border: s, ca
         }),
     ),
     statusTypes = { done: 'done' },
-    getFromCallStack = (e = 1) => {
-        var t;
-        const s = new Error().stack;
-        let r,
-            n = R.invalid('resId'),
-            o = '';
-        return (
-            s &&
-                ((o = (null == (t = s.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : t[0]) || ''),
-                (r = s.split('\n')[e].split('.js')[0].split('/').pop() || ''),
-                window.__feature && window.__feature !== r && window.subViews[r] && (n = window.subViews[r].id)),
-            { callerUrl: o, caller: r, stack: s, resId: n }
-        );
-    },
-    SHOW_DELAY_MIN = 100,
-    SHOW_DELAY_DEFAULT = 400;
-function getViewEventArguments(e) {
-    return Object.entries(e || {}).map(([e, t]) => {
-        const s = { __Type: 'GFValueProxy', name: e };
-        switch (typeof t) {
-            case 'number':
-                s.number = t;
-                break;
-            case 'boolean':
-                s.bool = t;
-                break;
-            case 'undefined':
-                break;
-            default:
-                s.string = t.toString();
-        }
-        return s;
-    });
-}
-const handleViewEvent = (e, t, s = {}, r = 0) => {
-        viewEnv.handleViewEvent({
-            __Type: 'GFViewEventProxy',
-            type: ViewEventType.TOOLTIP,
-            contentID: e,
-            decoratorID: t,
-            targetID: r,
-            ...s,
-        });
-    },
-    Tooltip$1 = ({
-        children: e,
-        contentId: t,
-        args: s,
-        onMouseEnter: r,
-        onMouseLeave: n,
-        onMouseDown: o,
-        onClick: a,
-        ignoreShowDelay: i = !1,
-        ignoreMouseClick: l = !1,
-        decoratorId: c = 0,
-        isEnabled: u = !0,
-        targetId: d = 0,
-        onShow: p,
-        onHide: m,
-        ..._
-    }) => {
-        const f = reactExports.useRef({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
-            h = reactExports.useMemo(() => d || getFromCallStack().resId, [d]),
-            g = reactExports.useCallback(() => {
-                (f.current.isVisible && f.current.timeoutId) ||
-                    (handleViewEvent(t, c, { isMouseEvent: !0, on: !0, arguments: getViewEventArguments(s) }, h),
-                    p && p(),
-                    (f.current.isVisible = !0));
-            }, [t, c, s, h, p]),
-            E = reactExports.useCallback(() => {
-                if (f.current.isVisible || f.current.timeoutId) {
-                    const e = f.current.timeoutId;
-                    (e > 0 && (clearTimeout(e), (f.current.timeoutId = 0)),
-                        handleViewEvent(t, c, { on: !1 }, h),
-                        f.current.isVisible && m && m(),
-                        (f.current.isVisible = !1));
-                }
-            }, [t, c, h, m]),
-            x = reactExports.useCallback((e) => {
-                f.current.isVisible &&
-                    ((f.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
-                    (f.current.hideTimerId = window.setTimeout(() => {
-                        const t = document.elementFromPoint(e.clientX, e.clientY);
-                        t && !t.isSameNode(f.current.prevTarget) && E();
-                    }, 200)));
-            }, []);
-        (reactExports.useEffect(() => {
-            const e = f.current.hideTimerId;
-            return (
-                document.addEventListener('wheel', x, { capture: !0 }),
-                () => {
-                    (document.removeEventListener('wheel', x, { capture: !0 }), e && window.clearTimeout(e));
-                }
-            );
-        }, []),
-            reactExports.useEffect(() => {
-                !1 === u && E();
-            }, [u, E]),
-            reactExports.useEffect(
-                () => (
-                    window.addEventListener('mouseleave', E),
-                    () => {
-                        (window.removeEventListener('mouseleave', E), E());
-                    }
-                ),
-                [E],
-            ));
-        return u
-            ? reactExports.cloneElement(e, {
-                  onMouseEnter:
-                      ((b = e.props.onMouseEnter),
-                      (e) => {
-                          (e.clientX === window.innerWidth && e.clientY === window.innerHeight) ||
-                              (clearTimeout(f.current.timeoutId),
-                              (f.current.timeoutId = window.setTimeout(g, i ? SHOW_DELAY_MIN : SHOW_DELAY_DEFAULT)),
-                              r && r(e),
-                              b && b(e));
-                      }),
-                  onMouseLeave: ((e) => (t) => {
-                      (E(), null == n || n(t), null == e || e(t));
-                  })(e.props.onMouseLeave),
-                  onClick: ((e) => (t) => {
-                      (!1 === l && E(), null == a || a(t), null == e || e(t));
-                  })(e.props.onClick),
-                  onMouseDown: ((e) => (t) => {
-                      (!1 === l && E(), null == o || o(t), null == e || e(t));
-                  })(e.props.onMouseDown),
-                  ..._,
-              })
-            : e;
-        var b;
-    },
-    UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
-    getTooltipContentId = (e) =>
-        e ? UB_SIMPLE_TOOLTIPS.SimpleTooltipHtmlContent('resId') : UB_SIMPLE_TOOLTIPS.SimpleTooltipContent('resId'),
-    SimpleTooltip = ({ children: e, body: t, header: s, note: r, alert: n, args: o, ...a }) => {
-        const i = reactExports.useMemo(() => {
-            const e = { ...o, body: t, header: s, note: r, alert: n };
-            for (const t in e) void 0 === e[t] && delete e[t];
-            return e;
-        }, [n, t, s, r, o]);
-        return jsxRuntimeExports.jsx(Tooltip$1, {
-            contentId: getTooltipContentId(null == o ? void 0 : o.hasHtmlContent),
-            decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
-            args: i,
-            ...a,
-            children: e,
-        });
-    };
-function useResize(e, t) {
-    reactExports.useEffect(
-        () => (window.addEventListener('resize', e), () => window.removeEventListener('resize', e)),
-        t,
-    );
-}
-const NO_RAF_ID = 0;
-function useSkipFrame() {
-    const e = reactExports.useRef(NO_RAF_ID);
-    return (
-        useUnmount(() => {
-            window.cancelAnimationFrame(e.current);
-        }),
-        reactExports.useMemo(
-            () => ({
-                run: (t) => {
-                    (window.cancelAnimationFrame(e.current),
-                        (e.current = window.requestAnimationFrame(() => {
-                            e.current = window.requestAnimationFrame(() => {
-                                ((e.current = NO_RAF_ID), t());
-                            });
-                        })));
-                },
-                clear: () => {
-                    (window.cancelAnimationFrame(e.current), (e.current = NO_RAF_ID));
-                },
-                get isRunning() {
-                    return e.current !== NO_RAF_ID;
-                },
-            }),
-            [],
-        )
-    );
-}
-const getCssStyle = (e, t) => window.getComputedStyle(e, null).getPropertyValue(t),
-    makeCanvasFont = (e) =>
-        `${getCssStyle(e, 'font-weight')} ${getCssStyle(e, 'font-size')} ${getCssStyle(e, 'font-family')}`,
-    getTextWidth = (e, t, s) => {
-        const r = s.getContext('2d');
-        if (!r) return 0;
-        r.font = makeCanvasFont(t);
-        return r.measureText(e).width;
-    },
-    getElementWidth = (e) => e.getBoundingClientRect().width,
-    getElementHeight = (e) => e.getBoundingClientRect().height,
-    calculateFitLength = (e) => {
-        if (e.start >= e.end - 1) return e.start;
-        const t = Math.floor((e.start + e.end) / 2),
-            s = e.words.slice(0, t).join(' '),
-            r = Math.ceil(getTextWidth(s, e.element, e.canvas) / getElementWidth(e.element));
-        return calculateFitLength(r <= 1 ? { ...e, start: t } : { ...e, end: t });
-    },
-    base$4 = 'Multilineoverflow_c23f658d',
-    base__truncated = 'Multilineoverflow_base__truncated_da38b33f',
-    text = 'Multilineoverflow_text_224088b3',
-    truncatedContent = 'Multilineoverflow_truncatedContent_a6e0cfa',
-    singleLine = 'Multilineoverflow_singleLine_17832ee4',
-    line = 'Multilineoverflow_line_e6b06631',
-    styles$5 = {
-        base: base$4,
-        base__truncated: base__truncated,
-        text: text,
-        truncatedContent: truncatedContent,
-        singleLine: singleLine,
-        line: line,
-    },
-    MultilineOverflow = reactExports.forwardRef(function ({ text: e, lines: t, className: s, onChange: r, ...n }, o) {
-        const a = reactExports.useRef(null),
-            i = reactExports.useRef(null),
-            [l, c] = reactExports.useState(!1),
-            [u, d] = reactExports.useState([]),
-            [p, m] = reactExports.useState(0),
-            _ = useSkipFrame(),
-            f = reactExports.useMemo(() => document.createElement('canvas'), []),
-            h = reactExports.useCallback(() => (i.current ? getElementHeight(i.current) : 0), []),
-            g = reactExports.useCallback(
-                (e) => {
-                    const t = h();
-                    return e && t ? Math.round(e.scrollHeight / t) : 0;
-                },
-                [h],
-            ),
-            E = reactExports.useCallback(() => {
-                if (g(a.current) <= t) return c(!1);
-                c(!0);
-                const s = e.split(' '),
-                    r = Array.from(new Array(t)).reduce((e, r, n) => {
-                        if (!a.current) return e;
-                        const o = e.reduce((e, t) => e + t.length, 0),
-                            i = s.slice(o);
-                        if (n === t - 1) return (e.push(i), e);
-                        const l = calculateFitLength({
-                            start: 0,
-                            end: i.length,
-                            words: i,
-                            element: a.current,
-                            canvas: f,
-                        });
-                        return (e.push(i.slice(0, l)), e);
-                    }, []);
-                d(r);
-            }, [f, g, t, e]),
-            x = reactExports.useCallback(() => {
-                _.run(() => {
-                    (m(h() * t), E());
-                });
-            }, [h, t, _, E]);
-        return (
-            reactExports.useEffect(x, [x]),
-            useResize(x, [x]),
-            reactExports.useEffect(() => {
-                null == r || r(l);
-            }, [r, l]),
-            jsxRuntimeExports.jsxs('div', {
-                ...n,
-                ref: o,
-                className: cx(styles$5.base, s, l && styles$5.base__truncated),
-                children: [
-                    jsxRuntimeExports.jsx('div', {
-                        ref: a,
-                        className: styles$5.text,
-                        style: { maxHeight: `${p}rem` },
-                        children: e,
-                    }),
-                    jsxRuntimeExports.jsx('div', {
-                        className: styles$5.truncatedContent,
-                        children: u.map((e, t) =>
-                            jsxRuntimeExports.jsx('div', { className: styles$5.line, children: e.join(' ') }, t),
-                        ),
-                    }),
-                    jsxRuntimeExports.jsx('div', {
-                        ref: i,
-                        className: styles$5.singleLine,
-                        children: R.strings.common.common.dot(),
-                    }),
-                ],
-            })
-        );
-    }),
-    MultilineOverflowWithTooltip = reactExports.forwardRef(function (e, t) {
-        const [s, r] = reactExports.useState(!1);
-        return jsxRuntimeExports.jsx(SimpleTooltip, {
-            isEnabled: s,
-            body: e.text,
-            children: jsxRuntimeExports.jsx(MultilineOverflow, { ...e, ref: t, onChange: r }),
-        });
-    }),
     base$3 = 'CarouselScroll_3690a837',
     areaContent = 'CarouselScroll_areaContent_f5dd7772',
     styles$4 = { base: base$3, areaContent: areaContent },
@@ -6825,18 +6554,18 @@ function CarouselScroll({
     className: s,
     areaClassNames: r,
     staticContent: n,
-    disabled: o,
-    onDraggingState: a,
+    disabled: a,
+    onDraggingState: o,
 }) {
     const { animationScroll: i, applyScroll: l, setDisabled: c } = e,
         u = useScrollByDragElements(e, dragDirections.horizontal, void 0, { gapBeforeStart: GAP_BEFORE_START });
     return (
         reactExports.useEffect(() => {
-            null == a || a(u.type === draggingStates.dragging);
-        }, [u.type, a]),
+            null == o || o(u.type === draggingStates.dragging);
+        }, [u.type, o]),
         reactExports.useEffect(() => {
-            c(o);
-        }, [o, c]),
+            c(a);
+        }, [a, c]),
         reactExports.useEffect(
             () =>
                 createLayoutReadyInEffect$1(() => {
@@ -6865,9 +6594,9 @@ function calculateRangeRows(e, t, s) {
     const r = e.animationScroll.scrollPosition.get(),
         n = e.getWrapperSize();
     if ('number' != typeof n || 0 === n) return [0, 0];
-    const o = Math.ceil((n / s) * PERCENT_OF_VISIBLE_ELEMENTS),
-        a = Math.max(0, Math.ceil(r / s) - Math.floor(o * SAFETY_FACTOR));
-    return [a, Math.min(t, a + o)];
+    const a = Math.ceil((n / s) * PERCENT_OF_VISIBLE_ELEMENTS),
+        o = Math.max(0, Math.ceil(r / s) - Math.floor(a * SAFETY_FACTOR));
+    return [o, Math.min(t, o + a)];
 }
 function DefaultWrapper(e) {
     return jsxRuntimeExports.jsx('div', { ...e });
@@ -6877,13 +6606,13 @@ function calculateRangeItems(e, t, s) {
     const r = e.animationScroll.scrollPosition.get(),
         n = e.getWrapperSize();
     if ('number' != typeof n || 0 === n || Number.isNaN(r)) return [0, 0];
-    const o = Math.ceil((n / s) * PERCENT_OF_VISIBLE_ELEMENTS),
-        a = clamp$1(0, t, Math.ceil(r / s) - Math.floor(o * SAFETY_FACTOR));
-    return [a, Math.min(t, a + o)];
+    const a = Math.ceil((n / s) * PERCENT_OF_VISIBLE_ELEMENTS),
+        o = clamp$1(0, t, Math.ceil(r / s) - Math.floor(a * SAFETY_FACTOR));
+    return [o, Math.min(t, o + a)];
 }
 const initVisibleRange = [0, 0];
 function useVisibleRange(e, t, s, r, n) {
-    const [o, a] = reactExports.useState(initVisibleRange),
+    const [a, o] = reactExports.useState(initVisibleRange),
         i = reactExports.useRef(initVisibleRange),
         [l, c] = useOptionalTransition(s),
         u = usePrevious(l),
@@ -6891,7 +6620,7 @@ function useVisibleRange(e, t, s, r, n) {
         p = useEvent(() => {
             c(() => {
                 const [e, t] = i.current;
-                a((s) => {
+                o((s) => {
                     const [r, n] = s;
                     return e === r && t === n ? s : [e, t];
                 });
@@ -6905,8 +6634,8 @@ function useVisibleRange(e, t, s, r, n) {
         });
     return (
         reactExports.useEffect(() => {
-            u && !l && ((i.current[0] === o[0] && i.current[1] === o[1]) || p());
-        }, [l, u, p, o]),
+            u && !l && ((i.current[0] === a[0] && i.current[1] === a[1]) || p());
+        }, [l, u, p, a]),
         reactExports.useLayoutEffect(
             () => (
                 e.events.on('change', m),
@@ -6921,7 +6650,7 @@ function useVisibleRange(e, t, s, r, n) {
             ),
             [e.events, m, n],
         ),
-        o
+        a
     );
 }
 const renderScrollDefault$1 = (e) => jsxRuntimeExports.jsx(DefaultScroll$1, { ...e });
@@ -6931,8 +6660,8 @@ function HorizontalList({
     api: s,
     elementWidth: r,
     wrappers: n,
-    className: o,
-    renderElement: a,
+    className: a,
+    renderElement: o,
     asyncRenderEnabled: i = !1,
     renderScroll: l = renderScrollDefault$1,
 }) {
@@ -6944,11 +6673,11 @@ function HorizontalList({
         f = clamp$1(0, _, p);
     return l(
         {
-            className: o,
+            className: a,
             children: jsxRuntimeExports.jsxs(d, {
                 children: [
                     jsxRuntimeExports.jsx('div', { style: { width: p * r } }),
-                    mapRange(f, Math.max(_, f), (e) => jsxRuntimeExports.jsx(u, { children: a(e) }, e)),
+                    mapRange(f, Math.max(_, f), (e) => jsxRuntimeExports.jsx(u, { children: o(e) }, e)),
                     jsxRuntimeExports.jsx('div', { style: { width: Math.max(0, e - m) * r } }),
                 ],
             }),
@@ -6963,18 +6692,18 @@ function VerticalList({
     totalElements: s,
     elementHeight: r,
     itemsPerRow: n = 1,
-    wrappers: o,
-    throttle: a = 0,
+    wrappers: a,
+    throttle: o = 0,
     asyncRenderEnabled: i = !1,
     renderElement: l,
     renderScroll: c = renderScrollDefault,
 }) {
     const u = Math.ceil(s / n),
-        d = useVisibleRange(e, a, i, () => calculateRangeRows(e, u, r));
+        d = useVisibleRange(e, o, i, () => calculateRangeRows(e, u, r));
     reactExports.useEffect(e.recalculateContent, [e, d]);
     const [p, m] = d,
-        _ = (null == o ? void 0 : o.Element) ?? reactExports.Fragment,
-        f = (null == o ? void 0 : o.Content) ?? DefaultWrapper,
+        _ = (null == a ? void 0 : a.Element) ?? reactExports.Fragment,
+        f = (null == a ? void 0 : a.Content) ?? DefaultWrapper,
         h = Math.min(s, m * n),
         g = clamp$1(0, h, p * n);
     return c(
@@ -7006,6 +6735,7 @@ const types = {
         equipCoin: 'equipCoin',
         eliteXp: 'eliteXp',
         depot: 'depot',
+        vehicle: 'vehicle',
         crew: 'crew',
         custom: 'custom',
     },
@@ -7071,19 +6801,19 @@ function Currency({
     className: s,
     classNames: r,
     imagePath: n,
-    size: o = sizes.small,
-    enough: a = !0,
+    size: a = sizes.small,
+    enough: o = !0,
     ...i
 }) {
-    const l = imageSizes[o],
+    const l = imageSizes[a],
         c = `${t}_${l}x${l}`,
-        u = upscaledImageSizes[o],
+        u = upscaledImageSizes[a],
         d = `${t}_${u}x${u}`,
         p = n || currencyTypes.includes(t),
         m = useUpscale(`library.currency.${c}`, `library.currency.${d}`);
     return jsxRuntimeExports.jsxs(Base$2, {
         ...i,
-        className: cx(null == r ? void 0 : r.base, a ? styles$3[`base__${t}`] : styles$3.base__notEnough, s),
+        className: cx(null == r ? void 0 : r.base, o ? styles$3[`base__${t}`] : styles$3.base__notEnough, s),
         children: [
             p &&
                 jsxRuntimeExports.jsx(Image, {
@@ -7171,8 +6901,8 @@ const fill = 'Filled_fill_32930ca9',
 function ProgressBarProvider(e) {
     const [t, s] = reactExports.useState(Math.min(e.value, e.maxValue)),
         [r, n] = reactExports.useState(e.maxValue),
-        o = usePrevious(t),
-        a = usePrevious(r),
+        a = usePrevious(t),
+        o = usePrevious(r),
         i = useEvent((t) => s(Math.min(t, e.maxValue)));
     (reactExports.useLayoutEffect(() => {
         i(e.value);
@@ -7195,9 +6925,9 @@ function ProgressBarProvider(e) {
         c(r);
     }, [c, r]);
     const u = reactExports.useMemo(() => {
-        if (void 0 !== o && void 0 !== a) return { value: o, maxValue: a, percentage: o / a };
-    }, [o, a]);
-    assert(r > 0, 'initMaxValue must be greater than 0');
+        if (void 0 !== a && void 0 !== o) return { value: a, maxValue: o, percentage: a / o };
+    }, [a, o]);
+    assert(r > 0, 'ProgressBar: maxValue must be greater than 0');
     const d = reactExports.useMemo(
         () => ({
             value: t,
@@ -7230,10 +6960,17 @@ const background = 'ProgressBar_background_b40cdfdf',
     Base = defineStyledComponent('ProgressBar', styles.base, {
         variants: { size: { small: styles.base__small, medium: styles.base__medium, full: styles.base__full } },
     });
-function ProgressBar({ size: e = 'medium', className: t, classNames: s, filledClassNames: r, ...n }) {
+function ProgressBar({
+    size: e = 'medium',
+    className: t,
+    classNames: s,
+    filledClassName: r,
+    filledClassNames: n,
+    ...a
+}) {
     return jsxRuntimeExports.jsx(ProgressBarProvider, {
         size: e,
-        ...n,
+        ...a,
         children: jsxRuntimeExports.jsxs(Base, {
             size: e,
             className: t,
@@ -7242,14 +6979,14 @@ function ProgressBar({ size: e = 'medium', className: t, classNames: s, filledCl
                 jsxRuntimeExports.jsx('div', {
                     className: cx(styles.backgroundPattern, null == s ? void 0 : s.backgroundPattern),
                 }),
-                jsxRuntimeExports.jsx(Filled, { classNames: r }),
-                n.children,
+                jsxRuntimeExports.jsx(Filled, { className: r, classNames: n }),
+                a.children,
             ],
         }),
     });
 }
 export {
-    identity as $,
+    useScrollBounding as $,
     Area as A,
     Base$7 as B,
     sounds$1 as C,
@@ -7262,7 +6999,7 @@ export {
     JSXBuilder as J,
     RadioButton as K,
     sizes$1 as L,
-    MultilineOverflow$1 as M,
+    MultilineOverflow as M,
     Image as N,
     useSimpleTooltip as O,
     Popover as P,
@@ -7273,26 +7010,25 @@ export {
     UIProvider as U,
     Video$1 as V,
     CardsWrapper as W,
-    MultilineOverflowWithTooltip as X,
-    useMedia as Y,
-    breakpointsByType as Z,
-    mapRange as _,
+    useMedia as X,
+    breakpointsByType as Y,
+    mapRange as Z,
+    identity as _,
     getRewardValueType$1 as a,
-    useScrollBounding as a0,
-    CardSingle as a1,
-    statusTypes as a2,
-    Currency as a3,
-    sizes$2 as a4,
-    useHorizontalScroll as a5,
-    useRem as a6,
-    List as a7,
-    CarouselScroll as a8,
-    borderTypes as a9,
-    Base$8 as aa,
-    useHandleKeydown as ab,
-    keyCodes as ac,
-    Tooltip as ad,
-    ProgressBar as ae,
+    CardSingle as a0,
+    statusTypes as a1,
+    Currency as a2,
+    sizes$2 as a3,
+    useHorizontalScroll as a4,
+    useRem as a5,
+    List as a6,
+    CarouselScroll as a7,
+    borderTypes as a8,
+    Base$8 as a9,
+    useHandleKeydown as aa,
+    keyCodes as ab,
+    Tooltip as ac,
+    ProgressBar as ad,
     getRewardImage as b,
     Bar as c,
     Button as d,
@@ -7312,7 +7048,7 @@ export {
     resources as r,
     setSidePaddingsRem$1 as s,
     noop$1 as t,
-    useSkipFrame$1 as u,
+    useSkipFrame as u,
     FormatString as v,
     Bubble as w,
     types$1 as x,

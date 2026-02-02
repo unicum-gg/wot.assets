@@ -1,5 +1,5 @@
-import { j as e, w as a } from './vendor.js';
-import { aX as l, ag as i, dj as s, dd as _, d0 as c } from './lib.js';
+import { j as e, J as a } from './vendor.js';
+import { aG as l, a2 as i, dd as s, dp as _, c$ as c } from './lib.js';
 const n = {
     base: 'VehicleRole_b05c9386',
     icon: 'VehicleRole_icon_a3da323b',
@@ -35,7 +35,7 @@ function r({ role: s, size: _ = '24x24', roleIconFolderPath: c, className: o, cl
                   className: a(n.icon, null == r ? void 0 : r.icon),
                   style: { backgroundImage: `url(${null == c ? void 0 : c.$dyn(h)})` },
               })
-            : e.jsx(i, { roleKey: h, size: `x${_}` }),
+            : e.jsx(i, { roleKey: h, size: `x${_}`, classNames: { base: null == r ? void 0 : r.base } }),
     });
 }
 const h = {
@@ -49,6 +49,7 @@ const h = {
     base__elite: 'VehicleName_base__elite_e43b4676',
     vehicleType: 'VehicleName_vehicleType_7b61c047',
     roleContainer: 'VehicleName_roleContainer_2b4839b4',
+    role: 'VehicleName_role_dbc66a72',
     fadeIn: 'VehicleName_fadeIn_e43b4676',
     fadeInThreeQuarters: 'VehicleName_fadeInThreeQuarters_e43b4676',
     fadeInHalf: 'VehicleName_fadeInHalf_e43b4676',
@@ -65,8 +66,8 @@ const h = {
     slideUpIn: 'VehicleName_slideUpIn_e43b4676',
 };
 var t = ((e) => ((e.x24 = '24x24'), (e.x48 = '48x48'), (e.x64 = '64x64'), (e.x96 = '96x96'), e))(t || {});
-const d = { '24x24': o.x16, '48x48': o.x24, '64x64': o.x32, '96x96': o.x32 },
-    b = (e) => R.images.comp7.gui.maps.icons.vehicleTypes.$dyn(`c_${e}`);
+const b = { '24x24': o.x16, '48x48': o.x24, '64x64': o.x32, '96x96': o.x32 },
+    d = (e) => R.images.comp7.gui.maps.icons.vehicleTypes.$dyn(`c_${e}`);
 function m({
     name: i,
     tier: n,
@@ -74,7 +75,7 @@ function m({
     role: t,
     vehicleCD: m,
     size: x = '24x24',
-    typeIconFolderPath: p = b(x),
+    typeIconFolderPath: p = d(x),
     isPremium: V = !1,
     className: N,
     classNames: v,
@@ -114,7 +115,7 @@ function m({
                     isEnabled: void 0 !== m,
                     children: e.jsx('div', {
                         className: a(h.roleContainer, null == I ? void 0 : I.roleContainer),
-                        children: e.jsx(r, { role: t, size: d[x], className: u, classNames: I }),
+                        children: e.jsx(r, { role: t, size: b[x], className: u, classNames: I }),
                     }),
                 }),
         ],

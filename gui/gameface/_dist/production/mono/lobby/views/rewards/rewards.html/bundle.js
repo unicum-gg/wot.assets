@@ -1,40 +1,40 @@
-import { j as e, z as a, x as s, y as d, r, X as i } from '../../../chunks/vendor.js';
+import { j as e, z as a, x as s, y as d, r, T as i } from '../../../chunks/vendor.js';
 import {
     y as n,
-    cN as t,
+    a5 as t,
     z as l,
-    cO as _,
+    a6 as _,
     a as o,
     c,
     g as m,
-    cP as w,
-    cQ as u,
+    a7 as w,
+    a8 as u,
     d as b,
     e as x,
     h as p,
     I as f,
     R as g,
-    bg as h,
+    a9 as h,
     p as j,
-    a6 as N,
-    u as v,
+    aa as v,
+    u as N,
     n as y,
-    cR as M,
+    ab as M,
     a3 as A,
     a2 as I,
 } from '../../../chunks/lib.js';
 import { a as C, g as S } from '../../../chunks/readResource.js';
 const $ = 'Footer_f09fca09',
     z = 'Footer_buttonContainer_cc670971',
-    P = (e) => (e >= l.Medium ? _.medium : _.small),
-    k = ({ onClick: s, className: d }) => {
+    k = (e) => (e >= l.Medium ? _.medium : _.small),
+    P = ({ onClick: s, className: d }) => {
         const { mediaSize: r } = n();
         return e.jsx('div', {
             className: a($, d),
             children: e.jsx('div', {
                 className: z,
                 children: e.jsx(t, {
-                    size: P(r),
+                    size: k(r),
                     onClick: s,
                     children: R.strings.fun_random.rewardsView.footer.acceptButton(),
                 }),
@@ -44,17 +44,17 @@ const $ = 'Footer_f09fca09',
     E = 'Header_edfdfa4a',
     U = 'Header_title_bef229bc',
     H = 'Header_status_faf7f728',
-    O = 'Header_subtitle_1008328a',
+    T = 'Header_subtitle_1008328a',
     V = ({ title: a, status: s, subtitle: d }) =>
         e.jsxs('div', {
             className: E,
             children: [
                 e.jsx('div', { className: U, children: a }),
                 e.jsx('div', { className: H, children: s }),
-                d && e.jsx('div', { className: O, children: d }),
+                d && e.jsx('div', { className: T, children: d }),
             ],
         }),
-    [T, W] = o()(
+    [O, W] = o()(
         ({ observableModel: e }) => {
             const a = {
                     root: e.object(),
@@ -112,7 +112,7 @@ const $ = 'Footer_f09fca09',
     },
     F = (e, a = 0) => ({ appear: a + 400 + 200 * e, enter: 600 }),
     D = (e) => 1300 + 400 * e,
-    Q = d(({ index: a, className: s, mainRewardsEnabled: d = !1 }) => {
+    J = d(({ index: a, className: s, mainRewardsEnabled: d = !1 }) => {
         const { model: r } = W(),
             i = d ? r.computes.mainReward(a) : r.computes.additionalReward(a),
             { mediaSize: t } = n(),
@@ -120,9 +120,9 @@ const $ = 'Footer_f09fca09',
             o = L(i, _);
         return e.jsx(g, { ...o, size: _, className: s });
     }),
-    X = 'AdditionalRewards_8af994f7',
-    J = 'AdditionalRewards_title_dd32b80a',
-    K = 'AdditionalRewards_rewardsList_532db93b',
+    K = 'AdditionalRewards_8af994f7',
+    Q = 'AdditionalRewards_title_dd32b80a',
+    X = 'AdditionalRewards_rewardsList_532db93b',
     Y = 'AdditionalRewards_reward_79ca4edb',
     Z = R.strings.fun_random.rewardsView,
     ee = d(({ className: s }) => {
@@ -142,18 +142,18 @@ const $ = 'Footer_f09fca09',
                 [t, d.mainRewards, n],
             ),
             e.jsxs('div', {
-                className: a(X, s),
+                className: a(K, s),
                 style: { '--baseDelay': `${D(d.mainRewards.get().length)}ms` },
                 children: [
-                    e.jsx('div', { className: J, children: Z.additionalRewards.title() }),
+                    e.jsx('div', { className: Q, children: Z.additionalRewards.title() }),
                     e.jsxs('div', {
-                        className: K,
+                        className: X,
                         children: [
-                            N(
+                            v(
                                 d.mainRewards.get().length,
-                                (a) => a >= 4 && e.jsx(Q, { index: a, className: Y, mainRewardsEnabled: !0 }, a + i),
+                                (a) => a >= 4 && e.jsx(J, { index: a, className: Y, mainRewardsEnabled: !0 }, a + i),
                             ),
-                            N(i, (a) => e.jsx(Q, { index: a, className: Y }, a)),
+                            v(i, (a) => e.jsx(J, { index: a, className: Y }, a)),
                         ],
                     }),
                 ],
@@ -222,7 +222,7 @@ const $ = 'Footer_f09fca09',
         const { model: s } = W();
         return e.jsx('div', {
             className: ne,
-            children: N(
+            children: v(
                 s.mainRewards.get().length,
                 (s) => s < 4 && e.jsx(ie, { rewardIndex: s, rewardSize: a }, `reward-${s}`),
             ),
@@ -288,7 +288,7 @@ const $ = 'Footer_f09fca09',
             i = s.mainRewards.get().length,
             n = s.additionalRewards.get().length > 0 || i > 4,
             t = 1 === i;
-        v(d.closeWindow);
+        N(d.closeWindow);
         const { dynamicTexts: l } = S(null, { assetsPointer: r }),
             _ = {
                 title: y(ge.rewardsView.subheader(), { subModeName: l.capsUserName() }),
@@ -325,10 +325,10 @@ const $ = 'Footer_f09fca09',
                                 }),
                             ],
                         }),
-                        e.jsx(k, { onClick: d.closeWindow, className: fe }),
+                        e.jsx(P, { onClick: d.closeWindow, className: fe }),
                     ],
                 }),
             ],
         });
     });
-A(e.jsx(T, { children: e.jsx(I, { children: e.jsx(he, {}) }) }));
+A(e.jsx(O, { children: e.jsx(I, { children: e.jsx(he, {}) }) }));

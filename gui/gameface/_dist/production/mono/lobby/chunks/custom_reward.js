@@ -1,40 +1,40 @@
 import { j as a, f as s } from './vendor.js';
-import { cs as e, ct as i, cu as t, cv as o, cl as l } from './lib.js';
+import { cx as e, cW as i, cX as t, cY as o, cw as l } from './lib.js';
 var m = ((a) => ((a.Static = 'static'), (a.Claimable = 'claimable'), a))(m || {});
 const r = 'CustomReward_197314c4',
     c = 'CustomReward_base__disable_51f6e5f1',
     d = 'CustomReward_animWrapper_f3d190a6',
     n = 'CustomReward_glow_11133e2',
     u = 'CustomReward_glowReverse_48fff15c';
-function v({
-    claimState: v,
-    name: _,
-    icon: f,
-    rewardSize: p,
-    value: C,
-    tooltipId: b,
-    tooltipContentId: j,
-    isDisable: w,
-    className: g,
+function _({
+    claimState: _,
+    name: f,
+    icon: p,
+    rewardSize: v,
+    value: w,
+    tooltipId: C,
+    tooltipContentId: b,
+    isDisable: j,
+    className: x,
 }) {
-    const x = v === m.Claimable;
+    const g = _ === m.Claimable;
     return a.jsxs('div', {
-        className: s(r, w && c, g),
+        className: s(r, j && c, x),
         children: [
-            x &&
+            g &&
                 a.jsxs('div', {
                     className: d,
                     children: [a.jsx('div', { className: n }), a.jsx('div', { className: u })],
                 }),
             a.jsx(e, {
-                name: _,
-                image: o({ name: _, icon: f }, l.Big),
-                size: p,
-                value: C.toString(),
-                valueType: t(_),
-                tooltipArgs: i({ tooltipId: b }, Number(j)),
+                name: f,
+                image: o({ name: f, icon: p }, l.Big),
+                size: v,
+                value: w.toString(),
+                valueType: t(f),
+                tooltipArgs: i({ tooltipId: C }, Number(b)),
             }),
         ],
     });
 }
-export { v as C };
+export { _ as C };

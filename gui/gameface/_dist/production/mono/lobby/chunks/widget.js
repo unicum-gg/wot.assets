@@ -1,22 +1,22 @@
 import { L as e, r as s, j as t, f as a } from './vendor.js';
 import {
     b as o,
-    cd as n,
-    ce as i,
+    ck as n,
+    cl as i,
     a as r,
-    ay as l,
+    aE as l,
     E as c,
-    d3 as d,
-    d4 as m,
-    d5 as p,
-    d6 as u,
-    d7 as _,
-    d2 as g,
-    d8 as v,
-    cR as b,
-    d9 as h,
-    d1 as x,
-    da as T,
+    d4 as d,
+    d5 as m,
+    d6 as p,
+    d7 as u,
+    d8 as _,
+    d3 as g,
+    d9 as v,
+    ab as b,
+    da as h,
+    d2 as x,
+    db as T,
 } from './lib.js';
 var f = ((e) => ((e.News = 'news'), (e.ShopPromo = 'shopPromo'), (e.None = 'none'), e))(f || {});
 const N = {
@@ -29,7 +29,7 @@ const N = {
         }),
         controls: () => o(i('onClick', 'onClose')),
     },
-    [y, w] = r('TeaserModel')(
+    [w, y] = r('TeaserModel')(
         ({ observableModel: e }) =>
             e.primitives(['type', 'postCounter', 'description', 'text', 'isVideo', 'finishTime', 'image']),
         ({ externalModel: e }) => ({
@@ -58,10 +58,10 @@ const N = {
     },
     C = 'Teaser:Base',
     k = e(function ({ className: e, classNames: o }) {
-        const { model: n, controls: i } = w(),
+        const { model: n, controls: i } = y(),
             r = n.type.get() || f.News,
             N = n.postCounter.get(),
-            y = n.text.get(),
+            w = n.text.get(),
             k = n.description.get(),
             W = n.finishTime.get(),
             E = n.isVideo.get(),
@@ -157,7 +157,7 @@ const N = {
                                       onClick: L,
                                       caption: '',
                                   }),
-                                  y && t.jsx('div', { className: a(j.text, null == o ? void 0 : o.text), children: y }),
+                                  w && t.jsx('div', { className: a(j.text, null == o ? void 0 : o.text), children: w }),
                                   (k || S) &&
                                       t.jsxs('div', {
                                           className: j.bottomContent,
@@ -186,6 +186,6 @@ const N = {
         );
     });
 function W({ className: e, classNames: s, ...a }) {
-    return t.jsx(y, { ...a, mode: 'real', mocks: N, children: t.jsx(k, { className: e, classNames: s }) });
+    return t.jsx(w, { ...a, mode: 'real', mocks: N, children: t.jsx(k, { className: e, classNames: s }) });
 }
 export { W as default };

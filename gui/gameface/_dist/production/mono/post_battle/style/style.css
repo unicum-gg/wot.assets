@@ -70,6 +70,11 @@
     flex: 1 1 auto;
     width: 100%;
 }
+.FormatText_db904f12 span {
+    flex-wrap: wrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
 
 .FormatText_nowrap_ff69eca3 {
     white-space: nowrap;
@@ -146,6 +151,74 @@
 }
 .FormatText_colorLegacy__prom {
     color: #a29b70;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Value_880359b5::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.Value_880359b5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4rem;
+    border-radius: 2rem;
+    border-image: url(R.images.gui.maps.icons.library.notification.border) 2 fill/2rem round;
+    box-shadow:
+        0 0 15rem 0 rgba(255, 23, 2, 0.6),
+        0 0 7rem 0 #ff3a28,
+        0 1rem 1rem 0 #c13629;
+    background-color: #ffe4c0;
+    position: relative;
+}
+.Value_880359b5::after {
+    background: url(R.images.gui.maps.icons.library.notification.noise) center/contain repeat;
+    content: '';
+}
+.Value_base__small_533886b2 {
+    min-width: 18rem;
+    max-width: 67rem;
+    height: 13rem;
+}
+.Value_base__small_533886b2.Value_base__text_3c091067 {
+    min-width: 29rem;
+}
+.Value_base__medium_c1f8595d {
+    min-width: 20rem;
+    max-width: 81rem;
+    height: 17rem;
+}
+.Value_base__medium_c1f8595d.Value_base__text_3c091067 {
+    min-width: 33rem;
+}
+
+.Value_29975a5b {
+    max-width: 100%;
+    color: rgba(149, 16, 8, 0.9);
+    font-weight: 600;
+    text-overflow: ellipsis;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.Value_value__small_f3df7ae5 {
+    font-size: 13rem;
+    line-height: 1.4;
+}
+.Value_value__medium_62a482c {
+    font-size: 16rem;
+    line-height: 1.1;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Bubble_df22310d {
+    transition: opacity 0.2s ease;
+}
+.Bubble_base__hidden_1700314d {
+    opacity: 0;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .HorizontalTabs_background_5e3af03e,
@@ -480,6 +553,15 @@
     width: 100%;
     overflow-x: hidden;
 }
+.HorizontalScroll_wrapper__left_adacfff {
+    mask-image: linear-gradient(to left, #000 97%, transparent);
+}
+.HorizontalScroll_wrapper__right_a6825027 {
+    mask-image: linear-gradient(to right, #000 97%, transparent);
+}
+.HorizontalScroll_wrapper__both_7917ea88 {
+    mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
+}
 
 .HorizontalScroll_defaultScrollArea_a5c0f45 {
     width: 100%;
@@ -568,6 +650,15 @@
     height: 100%;
     overflow-y: hidden;
 }
+.VerticalScroll_content__top_b27098a4 {
+    mask-image: linear-gradient(to top, #000 97%, transparent);
+}
+.VerticalScroll_content__bottom_d6604290 {
+    mask-image: linear-gradient(to bottom, #000 97%, transparent);
+}
+.VerticalScroll_content__both_8d905712 {
+    mask-image: linear-gradient(to bottom, transparent, #000 3%, #000 97%, transparent);
+}
 
 .VerticalScroll_defaultScroll_c69fa70e {
     display: flex;
@@ -645,20 +736,6 @@
 }
 .WithDiscount_icon__xxl_4080bb18 {
     transform: translate(-42%, -50%);
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.MultilineOverflow_8834bd8e {
-    display: flex;
-    flex-wrap: wrap;
-    white-space: pre-wrap;
-    position: relative;
-}
-
-.MultilineOverflow_content_b539970d {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .HeadlessButton_df8536fc {
@@ -912,6 +989,20 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
 }
 .Button_base__size-large_83da852e .Button_content_298de63f {
     font-size: 28rem;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.MultilineOverflow_8834bd8e {
+    display: flex;
+    flex-wrap: wrap;
+    white-space: pre-wrap;
+    position: relative;
+}
+
+.MultilineOverflow_content_b539970d {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .GradientText_textOverlay_2d67fbb8 {
@@ -1307,6 +1398,111 @@ on a texture and its positioning and sizes should be managed by the texture and 
 .mediaLarge .BattleInfo_commendations_icon_55a703a8 {
     width: 20rem;
     height: 20rem;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.AnimatedValue_d9f4b2f0 {
+    display: flex;
+    position: relative;
+}
+
+.AnimatedValue_animatedValue_4c490d83 {
+    display: flex;
+    align-items: center;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Bubble_valueContainer_8b7ced74::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.Bubble_valueContainer_8b7ced74 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 13rem;
+    max-width: 67rem;
+    height: 13rem;
+    padding: 0 3rem;
+    border-radius: 2rem;
+    border-image: url(R.images.gui.maps.icons.library.notification.border) 2 fill/2rem round;
+    box-shadow:
+        0 0 15rem 0 rgba(255, 23, 2, 0.6),
+        0 0 7rem 0 #ff3a28,
+        0 1rem 1rem 0 #c13629;
+    background-color: #ffe4c0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    pointer-events: none;
+}
+.Bubble_valueContainer_8b7ced74::after {
+    background: url(R.images.gui.maps.icons.library.notification.noise) center/contain repeat;
+    content: '';
+}
+.Bubble_valueContainer__medium_a9175d93 {
+    min-width: 16rem;
+    max-width: 81rem;
+    height: 17rem;
+}
+
+.Bubble_value_5eacd6f5 {
+    min-width: 7rem;
+    max-width: 100%;
+    color: rgba(149, 16, 8, 0.9);
+    font-size: 13rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+    text-overflow: ellipsis;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.Bubble_value__medium_3232d6e8 {
+    min-width: 10rem;
+    font-size: 16rem;
+    line-height: 1.05;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Items_9477a756 {
+    display: flex;
+    justify-content: center;
+    color: rgba(238, 237, 233, 0.9);
+    font-size: 16rem;
+    font-weight: 600;
+    text-shadow:
+        0 0 15rem rgba(255, 40, 40, 0.7),
+        0 0 7rem rgba(255, 108, 64, 0.5),
+        0 0 2rem rgba(255, 180, 95, 0.4);
+    position: relative;
+}
+.mediaLarge .Items_9477a756 {
+    font-size: 18rem;
+}
+
+.Items_animatedValue_6a64bc54 {
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+.Items_plug_a7a8cadf {
+    display: flex;
+    justify-content: center;
+    min-width: 100%;
+    max-width: 100vh;
+    opacity: 0;
+    pointer-events: none;
+}
+.Items_9477a756 .Items_plug_a7a8cadf * {
+    flex-wrap: nowrap;
+    white-space: nowrap;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .Divider_80a19f4b {
@@ -1964,14 +2160,68 @@ on a texture and its positioning and sizes should be managed by the texture and 
     margin-top: 14rem;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.MissionsProgress_ff6d39db {
+.NoProgress_e30a0572 {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.NoProgress_header_fd4fa20b {
+    font-size: 20rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    margin-bottom: 24rem;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+}
+
+.NoProgress_description_965e21c0 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-bottom: 36rem;
+    color: rgba(var(--color-general-primary-rgb), 0.5);
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.MissionsProgress_ca7ca547 {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100vw;
     height: 100vh;
     color: #fff;
     font-size: 20rem;
+}
+
+.MissionsProgress_content_b1e9d53b {
+    flex: 1;
+    width: 900rem;
+    margin: 134rem 0 92rem;
+    position: relative;
+}
+.mediaMediumWidth .MissionsProgress_content_b1e9d53b {
+    width: 920rem;
+    margin: 150rem 0 110rem;
+}
+.mediaLargeWidth .MissionsProgress_content_b1e9d53b {
+    width: 1080rem;
+    margin: 178rem 0 126rem;
+}
+.mediaExtraLargeWidth .MissionsProgress_content_b1e9d53b {
+    width: 1200rem;
+    margin: 244rem 0 164rem;
+}
+
+.MissionsProgress_verticalBar_a9f04f7f {
+    position: absolute;
+    top: 0;
+    right: -15rem;
+}
+.mediaLarge .MissionsProgress_verticalBar_a9f04f7f {
+    right: -20rem;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .Achievements_ee9c0189 {
@@ -3690,6 +3940,15 @@ on a texture and its positioning and sizes should be managed by the texture and 
 .VehicleCell_name_755dfe36 {
     flex: 1;
     opacity: 0.8;
+}
+.VehicleCell_name__unknown_83c23c5e {
+    margin-left: 21rem;
+}
+.mediaMedium .VehicleCell_name__unknown_83c23c5e {
+    margin-left: 16rem;
+}
+.mediaExtraLarge .VehicleCell_name__unknown_83c23c5e {
+    margin-left: 18rem;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .Index_align_5032d1bf {
@@ -4454,6 +4713,15 @@ body .PlayerStatistics_scrollbar_987bbca2 {
 .mediaExtraLarge .VehicleCell_vehicleName_eaeb9715 {
     margin-top: 1rem;
     font-size: 22rem;
+}
+.VehicleCell_vehicleName__unknown_726ac1d0 {
+    margin-left: 21rem;
+}
+.mediaMedium .VehicleCell_vehicleName__unknown_726ac1d0 {
+    margin-left: 17rem;
+}
+.mediaExtraLarge .VehicleCell_vehicleName__unknown_726ac1d0 {
+    margin-left: 18rem;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 .EfficiencyTable_efficiencyTable__allies_b2f99733 {
@@ -4481,79 +4749,86 @@ body .PlayerStatistics_scrollbar_987bbca2 {
 .mediaExtraLarge .EfficiencyTable_efficiencyTable__enemies_1ba35ae7 {
     margin-left: -37rem;
 }
-.EfficiencyTable_header_412b5b7b {
+
+.EfficiencyTable_header_da354842 {
     margin-bottom: -1rem;
     position: relative;
     z-index: 2;
 }
-.EfficiencyTable_efficiencyTable__allies_b2f99733 .EfficiencyTable_header_412b5b7b {
+.EfficiencyTable_efficiencyTable__allies_b2f99733 .EfficiencyTable_header_da354842 {
     margin-right: 27rem;
 }
-.mediaMedium .EfficiencyTable_efficiencyTable__allies_b2f99733 .EfficiencyTable_header_412b5b7b {
+.mediaMedium .EfficiencyTable_efficiencyTable__allies_b2f99733 .EfficiencyTable_header_da354842 {
     margin-right: 24rem;
 }
-.mediaLarge .EfficiencyTable_efficiencyTable__allies_b2f99733 .EfficiencyTable_header_412b5b7b {
+.mediaLarge .EfficiencyTable_efficiencyTable__allies_b2f99733 .EfficiencyTable_header_da354842 {
     margin-right: 44rem;
 }
-.mediaExtraLarge .EfficiencyTable_efficiencyTable__allies_b2f99733 .EfficiencyTable_header_412b5b7b {
-    margin-right: 64rem;
+.mediaExtraLarge .EfficiencyTable_efficiencyTable__allies_b2f99733 .EfficiencyTable_header_da354842 {
+    margin-right: 67rem;
 }
-.EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_header_412b5b7b {
+.EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_header_da354842 {
     margin-left: 27rem;
 }
-.mediaMedium .EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_header_412b5b7b {
+.mediaMedium .EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_header_da354842 {
     margin-left: 24rem;
 }
-.mediaLarge .EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_header_412b5b7b {
+.mediaLarge .EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_header_da354842 {
     margin-left: 44rem;
 }
-.mediaExtraLarge .EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_header_412b5b7b {
-    margin-left: 64rem;
+.mediaExtraLarge .EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_header_da354842 {
+    margin-left: 67rem;
 }
-.EfficiencyTable_rowsWrapper_da034938 {
+
+.EfficiencyTable_rowsWrapper_cae55fb5 {
     padding-top: 1rem;
 }
-.EfficiencyTable_efficiencyTable__allies_b2f99733 .EfficiencyTable_rowsWrapper_da034938 {
+.EfficiencyTable_efficiencyTable__allies_b2f99733 .EfficiencyTable_rowsWrapper_cae55fb5 {
     padding-right: 27rem;
 }
-.mediaMedium .EfficiencyTable_efficiencyTable__allies_b2f99733 .EfficiencyTable_rowsWrapper_da034938 {
+.mediaMedium .EfficiencyTable_efficiencyTable__allies_b2f99733 .EfficiencyTable_rowsWrapper_cae55fb5 {
     padding-right: 24rem;
 }
-.mediaLarge .EfficiencyTable_efficiencyTable__allies_b2f99733 .EfficiencyTable_rowsWrapper_da034938 {
+.mediaLarge .EfficiencyTable_efficiencyTable__allies_b2f99733 .EfficiencyTable_rowsWrapper_cae55fb5 {
     padding-right: 44rem;
 }
-.mediaExtraLarge .EfficiencyTable_efficiencyTable__allies_b2f99733 .EfficiencyTable_rowsWrapper_da034938 {
-    padding-right: 64rem;
+.mediaExtraLarge .EfficiencyTable_efficiencyTable__allies_b2f99733 .EfficiencyTable_rowsWrapper_cae55fb5 {
+    padding-right: 67rem;
 }
-.EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_rowsWrapper_da034938 {
+.EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_rowsWrapper_cae55fb5 {
     padding-left: 27rem;
 }
-.mediaMedium .EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_rowsWrapper_da034938 {
+.mediaMedium .EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_rowsWrapper_cae55fb5 {
     padding-left: 24rem;
 }
-.mediaLarge .EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_rowsWrapper_da034938 {
+.mediaLarge .EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_rowsWrapper_cae55fb5 {
     padding-left: 44rem;
 }
-.mediaExtraLarge .EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_rowsWrapper_da034938 {
-    padding-left: 64rem;
+.mediaExtraLarge .EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_rowsWrapper_cae55fb5 {
+    padding-left: 67rem;
 }
+
 .EfficiencyTable_efficiencyTable_e622a43e .EfficiencyTable_alignLeft_a52cfd11 {
     justify-content: flex-start;
 }
+
 .EfficiencyTable_efficiencyTable_e622a43e .EfficiencyTable_alignRight_46cf6a64 {
     justify-content: flex-end;
 }
+
 .EfficiencyTable_table_f467cc44 {
     width: 100%;
     max-height: 100%;
     position: relative;
     z-index: 0;
 }
+
 .EfficiencyTable_tableBody_5b14613b {
     flex: 1;
     position: relative;
     z-index: 1;
 }
+
 .EfficiencyTable_tableBody_5b14613b .EfficiencyTable_scrollBar_f4e5aa11 {
     max-height: 100%;
     position: absolute;
@@ -4580,10 +4855,12 @@ body .PlayerStatistics_scrollbar_987bbca2 {
 .mediaExtraLarge .EfficiencyTable_efficiencyTable__enemies_1ba35ae7 .EfficiencyTable_scrollBar_f4e5aa11 {
     right: -21rem;
 }
+
 .EfficiencyTable_scrollAreaContent_4fa5a5ab {
     height: auto;
     max-height: 100%;
 }
+
 .EfficiencyTable_mask_8fbe6740 {
     mask-image: linear-gradient(#000 0%, #000 93%, transparent 100%);
 } /* stylelint-disable selector-no-qualifying-type */
@@ -4817,7 +5094,7 @@ body .PlayerStatistics_scrollbar_987bbca2 {
     opacity: 0.3;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.TeamEfficiency_92585566 {
+.TeamEfficiency_51caa749 {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -4828,17 +5105,17 @@ body .PlayerStatistics_scrollbar_987bbca2 {
     overflow: hidden;
     position: relative;
 }
-.mediaMediumWidth .TeamEfficiency_92585566 {
-    padding: 150rem 0 117rem;
+.mediaMediumWidth .TeamEfficiency_51caa749 {
+    padding: 150rem 0 110rem;
 }
-.mediaLargeWidth .TeamEfficiency_92585566 {
-    padding: 177rem 0 152rem;
+.mediaLargeWidth .TeamEfficiency_51caa749 {
+    padding: 177rem 0 140rem;
 }
-.mediaExtraLargeWidth .TeamEfficiency_92585566 {
+.mediaExtraLargeWidth .TeamEfficiency_51caa749 {
     padding: 250rem 0;
 }
 @media (orientation: portrait) {
-    .TeamEfficiency_92585566 {
+    .TeamEfficiency_51caa749 {
         align-items: center;
     }
 }
@@ -4879,8 +5156,7 @@ body .PlayerStatistics_scrollbar_987bbca2 {
     left: 0;
 }
 
-.App_352edcd8 {
-    width: 100vw;
+.App_e782cff0 {
     height: 100vh;
     position: relative;
 }
@@ -4909,21 +5185,71 @@ body .PlayerStatistics_scrollbar_987bbca2 {
     flex-grow: 0;
 }
 
+.App_mainBorderSwitcher_edb9d39b {
+    overflow: visible;
+}
+
 .App_tab_5d913562 {
     visibility: hidden;
     pointer-events: none;
 }
-.App_content__personal_0 .App_tab__personal_83066945 {
+.App_content__overview_0 .App_tab__overview_83066945 {
     visibility: visible;
     pointer-events: auto;
 }
-.App_content__teamsStatistics_0 .App_tab__teamsStatistics_83066945 {
+.App_content__teamScore_0 .App_tab__teamScore_83066945 {
     visibility: visible;
     pointer-events: auto;
 }
 .App_content__financialReport_0 .App_tab__financialReport_83066945 {
     visibility: visible;
     pointer-events: auto;
+}
+.App_content__missionProgress_0 .App_tab__missionProgress_83066945 {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.App_progressionNotificationItems_50f548a8 {
+    position: absolute;
+    right: 0;
+    bottom: -100%;
+    left: 0;
+    transform: translateY(2rem);
+}
+
+.App_e782cff0 .App_notificationBubble_e3b77ec5 {
+    position: absolute;
+    top: -3rem;
+    right: 19rem;
+}
+.mediaMedium .App_e782cff0 .App_notificationBubble_e3b77ec5 {
+    top: -5rem;
+    right: 21rem;
+}
+.mediaExtraLarge .App_e782cff0 .App_notificationBubble_e3b77ec5 {
+    top: -4rem;
+}
+
+.App_notificationValueContainer_17678555 {
+    min-width: 13rem;
+    padding: 0 3rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    pointer-events: none;
+}
+.mediaLarge .App_notificationValueContainer_17678555 {
+    min-width: 16rem;
+}
+
+.App_notificationValue_e7f1f67c {
+    min-width: 7rem;
+    text-align: center;
+}
+.mediaLarge .App_notificationValue_e7f1f67c {
+    min-width: 10rem;
+    line-height: 1.05;
 }
 
 .App_vignette_6896e5b7 {

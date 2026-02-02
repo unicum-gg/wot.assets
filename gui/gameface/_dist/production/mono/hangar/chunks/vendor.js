@@ -1688,7 +1688,6 @@ function St(e, t) {
             for (
                 var i = s.stack.split('\n'), a = r.stack.split('\n'), o = i.length - 1, l = a.length - 1;
                 1 <= o && 0 <= l && i[o] !== a[l];
-
             )
                 l--;
             for (; 1 <= o && 0 <= l; o--, l--)
@@ -2023,7 +2022,6 @@ var Ht,
                     (Ht = Ht || document.createElement('div')).innerHTML = '<svg>' + t.valueOf().toString() + '</svg>',
                         t = Ht.firstChild;
                     e.firstChild;
-
                 )
                     e.removeChild(e.firstChild);
                 for (; t.firstChild; ) e.appendChild(t.firstChild);
@@ -6136,7 +6134,6 @@ function js(e, t, n) {
                                         r = n,
                                         n = t.child;
                                     null !== n;
-
                                 )
                                     ((e = r),
                                         ((a = n).flags &= 14680066),
@@ -7529,7 +7526,6 @@ function af(e, t, n) {
                                                         f !== a || (0 !== r && 3 !== f.nodeType) || (u = o + r),
                                                         3 === f.nodeType && (o += f.nodeValue.length),
                                                         null !== (p = f.firstChild);
-
                                                 )
                                                     ((d = f), (f = p));
                                                 for (;;) {
@@ -8180,7 +8176,6 @@ oc = function (e, t, n) {
                             n = al(t, null, r, n),
                             t.child = n;
                         n;
-
                     )
                         ((n.flags = (-3 & n.flags) | 4096), (n = n.sibling));
                 } else {
@@ -8686,9 +8681,9 @@ function Kf(e) {
     throw new Error(
         'number' == typeof e
             ? '[MobX] minified error nr: ' +
-              e +
-              (n.length ? ' ' + n.map(String).join(',') : '') +
-              '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
+                  e +
+                  (n.length ? ' ' + n.map(String).join(',') : '') +
+                  '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
             : '[MobX] ' + e,
     );
 }
@@ -10950,7 +10945,6 @@ var Nv,
                                 a = !1,
                                 o = jd(t.data_.keys());
                             !(n = o()).done;
-
                         ) {
                             var l = n.value;
                             if (!r.has(l))
@@ -13421,12 +13415,12 @@ var bb,
             a
                 ? Boolean(
                       t &&
-                          a.inputs &&
-                          (function (e, t) {
-                              if (e.length !== t.length) return !1;
-                              for (let n = 0; n < e.length; n++) if (e[n] !== t[n]) return !1;
-                              return !0;
-                          })(t, a.inputs),
+                      a.inputs &&
+                      (function (e, t) {
+                          if (e.length !== t.length) return !1;
+                          for (let n = 0; n < e.length; n++) if (e[n] !== t[n]) return !1;
+                          return !0;
+                      })(t, a.inputs),
                   ) || (a = { inputs: t, result: e() })
                 : (a = n);
             return (
@@ -16336,8 +16330,8 @@ export {
     Bf as s,
     Yw as t,
     Jp as u,
-    N_ as v,
-    Pb as w,
+    Pb as v,
+    N_ as w,
     zh as x,
     sw as y,
     Cw as z,

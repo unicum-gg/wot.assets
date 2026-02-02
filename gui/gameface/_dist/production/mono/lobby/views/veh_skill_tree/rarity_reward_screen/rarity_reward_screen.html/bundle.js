@@ -1,6 +1,6 @@
 import { n as e, r as a, j as s, e as t } from '../../../../chunks/vendor.js';
-import { i, r as o, a as r, k as n, u as c, h as l, F as p, b as _, U as m } from '../../../../chunks/lib.js';
-const [d, u] = i()(
+import { i, r as o, h as r, k as n, d as c, V as l, F as p, l as _, U as d } from '../../../../chunks/lib.js';
+const [m, u] = i()(
         ({ observableModel: e }) => ({ root: e.object() }),
         ({ externalModel: e }) => ({ close: e.createCallbackNoArgs('onClose') }),
     ),
@@ -22,7 +22,7 @@ const [d, u] = i()(
     },
     x = e(function () {
         const { model: e, controls: i } = u(),
-            { name: _, title: m, rarity: d } = e.root.get(),
+            { name: _, title: d, rarity: m } = e.root.get(),
             [x, f] = a.useState(!0),
             h = o.resolve('intl'),
             A = o.resolve('strings'),
@@ -49,28 +49,28 @@ const [d, u] = i()(
                             x &&
                                 s.jsx(l, {
                                     className: b.animation,
-                                    src: j.readOrEmpty(`rarity.intro_${d}`),
+                                    src: j.readOrEmpty(`rarity.intro_${m}`),
                                     autoplay: !0,
                                     onEnded: y,
                                 }),
                             s.jsx(l, {
                                 className: t(b.animation, x && b.animation__hidden),
-                                src: j.readOrEmpty(`rarity.cycle_${d}`),
+                                src: j.readOrEmpty(`rarity.cycle_${m}`),
                                 autoplay: !x,
                                 loop: !0,
                             }),
                         ],
                     }),
                     s.jsxs('div', {
-                        className: t(b.footer, b[`footer__${d}`]),
+                        className: t(b.footer, b[`footer__${m}`]),
                         children: [
-                            s.jsx('div', { className: b.title, children: h.toUpperCase(m) }),
+                            s.jsx('div', { className: b.title, children: h.toUpperCase(d) }),
                             s.jsx(p, {
                                 text: A.readOrEmpty('vehicle_customization.customization.RarityRewardScreen.subtitle'),
                                 upgradeLegacy: !0,
                                 params: {
                                     rarity: h.toUpperCase(
-                                        A.readOrEmpty(`vehicle_customization.customization.rarity.${d}`),
+                                        A.readOrEmpty(`vehicle_customization.customization.rarity.${m}`),
                                     ),
                                 },
                                 className: b.subTitle,
@@ -81,4 +81,4 @@ const [d, u] = i()(
             }),
         });
     });
-_(s.jsx(d, { children: s.jsx(m, { children: s.jsx(x, {}) }) }));
+_(s.jsx(m, { children: s.jsx(d, { children: s.jsx(x, {}) }) }));

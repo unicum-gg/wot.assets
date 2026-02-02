@@ -1,26 +1,26 @@
-import { S as e, r as s, I as a, O as r, j as t, f as o, T as n, P as i, U as l } from '../../../chunks/vendor.js';
+import { Z as e, r as s, Q as a, W as r, j as t, f as o, $ as n, X as i, a0 as l } from '../../../chunks/vendor.js';
 import {
     _ as c,
-    by as d,
+    bF as d,
     i as m,
     f as u,
-    aQ as g,
+    aR as g,
     o as p,
-    cr as f,
-    ar as _,
-    cj as h,
-    ck as v,
+    ct as f,
+    as as _,
+    cu as h,
+    cv as v,
     ae as x,
     R as b,
-    bD as w,
-    bK as y,
-    cl as S,
-    co as j,
-    cs as P,
-    cm as N,
-    cq as C,
-    ch as k,
-    bO as A,
+    bK as w,
+    bR as y,
+    cw as S,
+    cp as j,
+    cx as P,
+    cr as N,
+    cs as C,
+    cm as k,
+    bV as A,
 } from '../../../chunks/lib.js';
 import { C as z } from '../../../chunks/custom_reward.js';
 import { L as B, l as V } from '../../../chunks/level_badge.js';
@@ -28,30 +28,30 @@ const M = { from: { y: c(-40), opacity: 0 }, config: { duration: 400, easing: e.
     O = { to: { y: 0, opacity: 1 }, delay: 1500 },
     E = { from: { opacity: 0, transform: 'scale(0.8)' }, config: { duration: 400, easing: e.easeOutCubic } },
     F = { to: { opacity: 1, transform: 'scale(1)' }, delay: 1850, duration: 400 },
-    I = { to: { opacity: 0 } },
-    L = { from: { y: c(-10), opacity: 0 }, config: { duration: 350, easing: e.easeOutSine } },
+    L = { to: { opacity: 0 } },
+    I = { from: { y: c(-10), opacity: 0 }, config: { duration: 350, easing: e.easeOutSine } },
     $ = { to: { y: 0, opacity: 1 }, delay: 100 },
     q = { from: { opacity: 1 }, config: { duration: 300, easing: e.easeOutSine } },
     T = { to: { opacity: 0 } },
-    D = { to: { opacity: 1 } },
+    W = { to: { opacity: 1 } },
     H = {
         from: { opacity: 0, y: c(40) },
         to: { opacity: 1, y: 0 },
         delay: 1200,
         config: { duration: 120, easing: e.easeOutCubic },
     },
-    U = {
+    D = {
         from: { y: d(60), transform: 'translateX(50%)', opacity: 0 },
         config: { duration: 400, easing: e.easeOutSine },
     },
-    W = { to: { y: 0, opacity: 1 }, delay: 300 },
-    Q = { from: { transform: 'scale(0.4)', opacity: 0 } },
-    G = { to: { transform: 'scale(1)', opacity: 1 }, config: { duration: 280, easing: e.easeInOutSine } },
-    K = { to: { transform: 'scale(0.4)', opacity: 0 } },
-    X = { from: { y: 0 }, config: { duration: 300, easing: e.easeInOutSine } },
-    J = 'initial',
-    Y = 'rank',
-    Z = 'rewards',
+    Q = { to: { y: 0, opacity: 1 }, delay: 300 },
+    U = { from: { transform: 'scale(0.4)', opacity: 0 } },
+    X = { to: { transform: 'scale(1)', opacity: 1 }, config: { duration: 280, easing: e.easeInOutSine } },
+    G = { to: { transform: 'scale(0.4)', opacity: 0 } },
+    K = { from: { y: 0 }, config: { duration: 300, easing: e.easeInOutSine } },
+    Z = 'initial',
+    J = 'rank',
+    Y = 'rewards',
     ee = 100,
     se = (e, s = !1) => {
         const a = Math.floor(e),
@@ -107,13 +107,13 @@ const M = { from: { y: c(-40), opacity: 0 }, config: { duration: 400, easing: e.
                     extraLarge: { progressionShift: 0 },
                 },
             ),
-            [i, l] = s.useState(J),
+            [i, l] = s.useState(Z),
             [d, m] = s.useState(0),
             [u, p] = r(() => M),
-            [f, _] = r(() => L),
+            [f, _] = r(() => I),
             [h, v] = r(() => q),
             [x, b] = r(() => E),
-            [w, y] = r(() => X),
+            [w, y] = r(() => K),
             S = a.prevProgress.get(),
             j = a.currProgress.get(),
             P = d + 1 < a.computes.progressionSequence().length,
@@ -123,37 +123,37 @@ const M = { from: { y: c(-40), opacity: 0 }, config: { duration: 400, easing: e.
                 (e) => {
                     (P ? m((e) => e + 1) : _.start($),
                         e &&
-                            i === Y &&
+                            i === J &&
                             (v.start({
                                 ...T,
                                 onRest: () => {
-                                    (o.ribbonStartsPlaying(), l(Z));
+                                    (o.ribbonStartsPlaying(), l(Y));
                                 },
                             }),
-                            !C && b.start(I)));
+                            !C && b.start(L)));
                 },
                 [v, b, _, o, P, i, C],
             );
         return (
             s.useEffect(() => {
                 switch (i) {
-                    case J:
+                    case Z:
                         (p.start({
                             ...O,
                             onStart: () => {
                                 o.introStartsPlaying();
                             },
                             onRest: () => {
-                                l(Y);
+                                l(J);
                             },
                         }),
                             b.start(F));
                         break;
-                    case Y:
+                    case J:
                         (j === S || N) && _.start($);
                         break;
-                    case Z:
-                        (_.start($), v.start(D), y.start(((e = n.progressionShift), { to: { y: c(e) } })));
+                    case Y:
+                        (_.start($), v.start(W), y.start(((e = n.progressionShift), { to: { y: c(e) } })));
                 }
                 var e;
             }, [p, v, b, y, _, o, i, n.progressionShift, j, S, N]),
@@ -181,12 +181,12 @@ const M = { from: { y: c(-40), opacity: 0 }, config: { duration: 400, easing: e.
     ue = a(function ({ animationStep: e, className: s }) {
         const { model: a, controls: r } = re(),
             n = a.amountRewardsToClaim.get(),
-            i = n > 0 && e === Z;
+            i = n > 0 && e === Y;
         return (
             f(
                 x.ENTER,
                 () => {
-                    i ? r.claimRewards() : e !== J && r.continue();
+                    i ? r.claimRewards() : e !== Z && r.continue();
                 },
                 !0,
             ),
@@ -236,7 +236,7 @@ const M = { from: { y: c(-40), opacity: 0 }, config: { duration: 400, easing: e.
         return t.jsx('div', {
             className: o(ge, s),
             children:
-                e === Z
+                e === Y
                     ? t.jsx(b, { path: 'fl_post_battle_rewards.header.tier', params: { value: r }, className: pe })
                     : t.jsxs(t.Fragment, {
                           children: [
@@ -313,7 +313,7 @@ const M = { from: { y: c(-40), opacity: 0 }, config: { duration: 400, easing: e.
     }) {
         const { model: m, controls: u } = re(),
             [g, p] = s.useState(!0),
-            [f, _] = r(() => Q),
+            [f, _] = r(() => U),
             h = s.useMemo(
                 () => ({
                     delay: g ? 800 : 450,
@@ -328,9 +328,9 @@ const M = { from: { y: c(-40), opacity: 0 }, config: { duration: 400, easing: e.
                             e &&
                                 (p(!1),
                                 _.start({
-                                    ...G,
+                                    ...X,
                                     onRest: () => {
-                                        _.start(K);
+                                        _.start(G);
                                     },
                                 })));
                     },
@@ -384,21 +384,19 @@ const M = { from: { y: c(-40), opacity: 0 }, config: { duration: 400, easing: e.
     Ve = 'Rank_fdbb0733';
 function Me({ rank: e, className: s }) {
     return t.jsx('div', {
-        style: {
-            backgroundImage: `url(${R.images.frontline.gui.maps.icons.postBattleRewards.ranks.c_256x256.$dyn(`rank_${e}`)})`,
-        },
+        style: { backgroundImage: `url(${R.images.frontline.gui.maps.icons.ranks.c_256x256.$dyn(`rank_${e}`)})` },
         className: o(Ve, s),
     });
 }
 const Oe = 'Rewards_200712a6',
     Ee = 'Rewards_ribbon_ecf8c7f4',
     Fe = 'Rewards_base__maxLevel_405577a5',
-    Ie = 'Rewards_rewardsContainer_f10b31ca',
-    Le = 'Rewards_reward_31975416',
+    Le = 'Rewards_rewardsContainer_f10b31ca',
+    Ie = 'Rewards_reward_31975416',
     $e = p.resolve('views'),
     qe = p.resolve('strings'),
     Te = p.resolve('images'),
-    De = a(function ({ className: e }) {
+    We = a(function ({ className: e }) {
         const { model: a } = re(),
             n = g(
                 { rewardSize: S.Small, badgeSize: V.x190 },
@@ -415,10 +413,10 @@ const Oe = 'Rewards_200712a6',
                 args: { showCount: 6 },
             },
             h = l(u, H),
-            [v, x] = r(() => U);
+            [v, x] = r(() => D);
         return (
             s.useEffect(() => {
-                x.start(W);
+                x.start(Q);
             }, [x]),
             t.jsxs('div', {
                 className: o(Oe, m && Fe, e),
@@ -426,7 +424,7 @@ const Oe = 'Rewards_200712a6',
                     t.jsx(i.div, { style: v, className: Ee }),
                     t.jsx(B, { level: d, size: n.badgeSize }),
                     t.jsx('div', {
-                        className: Ie,
+                        className: Le,
                         children: h.map((e, s) => {
                             const a = c[s];
                             return t.jsx(
@@ -441,10 +439,10 @@ const Oe = 'Rewards_200712a6',
                                                   size: n.rewardSize,
                                                   value: f,
                                                   tooltipArgs: _,
-                                                  className: Le,
+                                                  className: Ie,
                                               })
                                             : a
-                                              ? t.jsx(z, { ...a, rewardSize: n.rewardSize, className: Le })
+                                              ? t.jsx(z, { ...a, rewardSize: n.rewardSize, className: Ie })
                                               : null,
                                 },
                                 s,
@@ -456,15 +454,15 @@ const Oe = 'Rewards_200712a6',
         );
     }),
     He = 'PostBattleRewardsView_c4d87b9b',
-    Ue = 'PostBattleRewardsView_closeButton_42e73958',
-    We = 'PostBattleRewardsView_contentWrapper_b7a55b07',
-    Qe = 'PostBattleRewardsView_header_777b59dd',
-    Ge = 'PostBattleRewardsView_content_76f17315',
-    Ke = 'PostBattleRewardsView_glowWrapper_a3000d0',
-    Xe = 'PostBattleRewardsView_glow_86e60398',
-    Je = 'PostBattleRewardsView_rank_d4df69f6',
-    Ye = 'PostBattleRewardsView_footer_2bb3ea6d',
-    Ze = a(function () {
+    De = 'PostBattleRewardsView_closeButton_42e73958',
+    Qe = 'PostBattleRewardsView_contentWrapper_b7a55b07',
+    Ue = 'PostBattleRewardsView_header_777b59dd',
+    Xe = 'PostBattleRewardsView_content_76f17315',
+    Ge = 'PostBattleRewardsView_glowWrapper_a3000d0',
+    Ke = 'PostBattleRewardsView_glow_86e60398',
+    Ze = 'PostBattleRewardsView_rank_d4df69f6',
+    Je = 'PostBattleRewardsView_footer_2bb3ea6d',
+    Ye = a(function () {
         const { model: e, controls: a } = re();
         N(a.close);
         const {
@@ -488,20 +486,20 @@ const Oe = 'Rewards_200712a6',
         return t.jsxs('div', {
             className: He,
             children: [
-                t.jsx(C, { onClose: a.close, className: Ue }),
+                t.jsx(C, { onClose: a.close, className: De }),
                 t.jsxs(i.div, {
                     style: n,
-                    className: We,
+                    className: Qe,
                     children: [
-                        t.jsx(_e, { animationStep: r, className: Qe }),
+                        t.jsx(_e, { animationStep: r, className: Ue }),
                         t.jsxs('div', {
-                            className: Ge,
+                            className: Xe,
                             children: [
-                                t.jsx('div', { className: Ke, children: t.jsx(i.div, { style: d, className: Xe }) }),
+                                t.jsx('div', { className: Ge, children: t.jsx(i.div, { style: d, className: Ke }) }),
                                 t.jsx(i.div, {
                                     style: c,
                                     children:
-                                        r === Z ? t.jsx(De, {}) : t.jsx(Me, { rank: e.rank.get(), className: Je }),
+                                        r === Y ? t.jsx(We, {}) : t.jsx(Me, { rank: e.rank.get(), className: Ze }),
                                 }),
                                 _ &&
                                     !p &&
@@ -511,16 +509,16 @@ const Oe = 'Rewards_200712a6',
                                         children: t.jsx(Be, {
                                             prevProgress: _.from,
                                             currentProgress: _.to,
-                                            isProgressAllowed: r !== J,
+                                            isProgressAllowed: r !== Z,
                                             progressAnimFinished: u,
                                         }),
                                     }),
                             ],
                         }),
-                        t.jsx(i.div, { style: l, children: t.jsx(ue, { animationStep: r, className: Ye }) }),
+                        t.jsx(i.div, { style: l, children: t.jsx(ue, { animationStep: r, className: Je }) }),
                     ],
                 }),
             ],
         });
     });
-k(t.jsx(A, { children: t.jsx(ae, { children: t.jsx(oe, { children: t.jsx(Ze, {}) }) }) }));
+k(t.jsx(A, { children: t.jsx(ae, { children: t.jsx(oe, { children: t.jsx(Ye, {}) }) }) }));

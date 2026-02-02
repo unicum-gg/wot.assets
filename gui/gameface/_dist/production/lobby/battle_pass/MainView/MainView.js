@@ -4225,12 +4225,14 @@
                 var r = a(7363);
                 function s(e, t, a = []) {
                     const s = (0, r.useRef)(0),
-                        n = (0, r.useCallback)(() => window.clearInterval(s.current), a || []);
+                        n = (0, r.useCallback)(() => {
+                            (window.clearInterval(s.current), (s.current = 0));
+                        }, a || []);
                     (0, r.useEffect)(() => n, [n]);
                     const o = (null != a ? a : []).concat([t]);
                     return [
                         (0, r.useCallback)((a) => {
-                            ((s.current = window.setInterval(() => e(a, !0), t)), e(a, !1));
+                            (0 !== s.current && n(), (s.current = window.setInterval(() => e(a, !0), t)), e(a, !1));
                         }, o),
                         n,
                     ];
@@ -10857,32 +10859,31 @@
                     E = a(5521),
                     g = a(3403),
                     b = a(8030),
-                    v = a(5831),
-                    h = a(6444);
-                const f = 'App_base_26',
-                    C = 'App_additionalBackground_c6',
-                    A = 'App_infoButtons_78',
-                    w = 'App_header_41';
-                var B = a(6483),
-                    D = a.n(B),
-                    y = a(5415),
-                    F = a(9766),
-                    P = a(2828),
-                    S = a(6373),
-                    N = a(3815),
-                    k = a(7727),
-                    L = a(9485),
-                    x = a(7994),
-                    I = a(2893),
-                    T = a(8546),
-                    O = a(8596);
-                const M = 'Shield_base_ec',
-                    $ = 'Shield_flag_a2',
-                    W = 'Shield_flag__isChapterChosen_81',
-                    H = 'Shield_flag__medium_78',
-                    z = 'Shield_emblem_59',
-                    G = 'Shield_chapterLogoIcon_4b',
-                    U = (0, g.Pi)(({ size: e, chapterID: t = 0 }) => {
+                    v = a(6444);
+                const h = 'App_base_26',
+                    f = 'App_additionalBackground_c6',
+                    C = 'App_infoButtons_78',
+                    A = 'App_header_41';
+                var w = a(6483),
+                    B = a.n(w),
+                    D = a(5415),
+                    y = a(9766),
+                    F = a(2828),
+                    P = a(6373),
+                    S = a(3815),
+                    N = a(7727),
+                    k = a(9485),
+                    L = a(7994),
+                    x = a(2893),
+                    I = a(8546),
+                    T = a(8596);
+                const O = 'Shield_base_ec',
+                    M = 'Shield_flag_a2',
+                    $ = 'Shield_flag__isChapterChosen_81',
+                    W = 'Shield_flag__medium_78',
+                    H = 'Shield_emblem_59',
+                    z = 'Shield_chapterLogoIcon_4b',
+                    G = (0, g.Pi)(({ size: e, chapterID: t = 0 }) => {
                         const a = _().model,
                             r = a.root.get().seasonNum,
                             o = a.computes.getChapterById(t);
@@ -10894,21 +10895,21 @@
                             d = c.currentLevel,
                             m = c.levelProgression,
                             p = { level: d, to: m, from: m },
-                            E = l === n.l.Completed ? T.Bq.Completed : i ? T.Bq.Bought : T.Bq.Free,
+                            E = l === n.l.Completed ? I.Bq.Completed : i ? I.Bq.Bought : I.Bq.Free,
                             g = l === n.l.Active,
-                            b = (0, I.UP)(p) || l !== n.l.NotStarted,
-                            v = b && E !== T.Bq.Completed;
+                            b = (0, x.UP)(p) || l !== n.l.NotStarted,
+                            v = b && E !== I.Bq.Completed;
                         return s().createElement(
                             'div',
-                            { className: M },
+                            { className: O },
                             s().createElement('div', {
-                                className: D()($, e === T.$u.Medium && H, v && W),
-                                style: (0, L.fW)(t, e),
+                                className: B()(M, e === I.$u.Medium && W, v && $),
+                                style: (0, k.fW)(t, e),
                             }),
                             s().createElement(
                                 'div',
-                                { className: z },
-                                s().createElement(O.G4, {
+                                { className: H },
+                                s().createElement(T.G4, {
                                     progression: p,
                                     size: e,
                                     chapterID: t,
@@ -10922,11 +10923,11 @@
                                     showProgressBar: g,
                                     isExtra: u,
                                 }),
-                                v && s().createElement('div', { className: G, style: (0, L.cs)(t, i, e) }),
+                                v && s().createElement('div', { className: z, style: (0, k.cs)(t, i, e) }),
                             ),
                         );
                     }),
-                    V = {
+                    U = {
                         base: 'Chapter_base_f0',
                         base__qHDSize: 'Chapter_base__qHDSize_da',
                         bg: 'Chapter_bg_2e',
@@ -10964,6 +10965,7 @@
                         slideUp: 'Chapter_slideUp_71',
                         scale: 'Chapter_scale_96',
                     };
+                var V = a(5831);
                 function j() {
                     return (
                         (j =
@@ -10985,7 +10987,7 @@
                             o = t.controls,
                             i = a.computes.getChapterById(e);
                         if (!i) return null;
-                        const l = (0, h.tv)(),
+                        const l = (0, v.tv)(),
                             c = i.chapterState,
                             d = i.styleName,
                             m = i.isVehicleInHangar,
@@ -10993,93 +10995,93 @@
                             E = i.finalRewardType,
                             g = i.tankmanNames,
                             b = i.isExtra,
-                            f = (0, y.GS)(),
-                            C = f.mediaSize,
-                            A = f.remScreenWidth,
-                            w = f.remScreenHeight,
-                            B = (0, r.useCallback)(
+                            h = (0, D.GS)(),
+                            f = h.mediaSize,
+                            C = h.remScreenWidth,
+                            A = h.remScreenHeight,
+                            w = (0, r.useCallback)(
                                 (t) => {
                                     (o.openPreview(e), t.stopPropagation());
                                 },
                                 [e, o],
                             ),
-                            R = (0, N.z)(() => {
-                                (0, k.G)(I.r_.BP_HIGHLIGHT);
+                            R = (0, S.z)(() => {
+                                (0, N.G)(x.r_.BP_HIGHLIGHT);
                             }),
-                            O = C <= y.cJ.Medium ? T.$u.Small : T.$u.Medium,
-                            M = A >= 2560 && w >= 1440,
-                            $ = c === n.l.Completed,
-                            W = c === n.l.Active,
-                            H = q.chapter.fullNameUppercased.$num(e);
+                            T = f <= D.cJ.Medium ? I.$u.Small : I.$u.Medium,
+                            O = C >= 2560 && A >= 1440,
+                            M = c === n.l.Completed,
+                            $ = c === n.l.Active,
+                            W = q.chapter.fullNameUppercased.$num(e);
                         return s().createElement(
                             'div',
                             {
-                                className: D()(V.base, V[`base__${c}`], M && V.base__qHDSize),
+                                className: B()(U.base, U[`base__${c}`], O && U.base__qHDSize),
                                 onMouseEnter: R,
                                 onClick: () => {
-                                    (k.$.playClick(), l.push(v._.battlePass.progression, { chapterID: e }));
+                                    (N.$.playClick(), l.push(V._.battlePass.progression, { chapterID: e }));
                                 },
-                                style: { width: viewEnv.remToPx(ve[C]) },
+                                style: { width: viewEnv.remToPx(ve[f]) },
                             },
                             s().createElement(
                                 'div',
-                                { className: V.bg, style: (0, L.TZ)(e) },
-                                s().createElement('div', { className: V.vehicleImg, style: (0, L.OH)(e) }),
-                                s().createElement('div', { className: V.bgHover }),
-                                W && s().createElement('div', { className: V.frame }),
+                                { className: U.bg, style: (0, k.TZ)(e) },
+                                s().createElement('div', { className: U.vehicleImg, style: (0, k.OH)(e) }),
+                                s().createElement('div', { className: U.bgHover }),
+                                $ && s().createElement('div', { className: U.frame }),
                             ),
                             s().createElement(
                                 'div',
-                                { className: D()(V.content, b && V.content__extraChapterContent) },
+                                { className: B()(U.content, b && U.content__extraChapterContent) },
                                 s().createElement(
                                     'div',
-                                    { className: V.shieldWrapper },
-                                    W && s().createElement('div', { className: V.shieldShine }),
+                                    { className: U.shieldWrapper },
+                                    $ && s().createElement('div', { className: U.shieldShine }),
                                     s().createElement(
                                         'div',
-                                        { className: V.shield },
-                                        s().createElement(U, { size: O, chapterID: e }),
+                                        { className: U.shield },
+                                        s().createElement(G, { size: T, chapterID: e }),
                                     ),
                                 ),
-                                $ && s().createElement('div', { className: V.completedIcon }),
-                                s().createElement('div', { className: V.title }, H),
+                                M && s().createElement('div', { className: U.completedIcon }),
+                                s().createElement('div', { className: U.title }, W),
                                 s().createElement(
                                     'div',
-                                    { className: V.vehicleStyle },
+                                    { className: U.vehicleStyle },
                                     E !== n.E.Tankman &&
                                         s().createElement(
                                             'div',
-                                            { className: V.preview },
+                                            { className: U.preview },
                                             s().createElement(
                                                 'div',
-                                                { className: V.previewWrapper },
-                                                s().createElement(P.h, {
+                                                { className: U.previewWrapper },
+                                                s().createElement(F.h, {
                                                     type: 'preview',
-                                                    onClick: B,
-                                                    size: C < y.cJ.Medium ? 'small' : 'normal',
+                                                    onClick: w,
+                                                    size: f < D.cJ.Medium ? 'small' : 'normal',
                                                 }),
                                             ),
                                         ),
                                     s().createElement(
                                         'div',
-                                        { className: V.styleTitle },
+                                        { className: U.styleTitle },
                                         ((e, t) => {
                                             switch (e) {
                                                 case n.E.Style:
-                                                    return s().createElement(F.z, {
+                                                    return s().createElement(y.z, {
                                                         text: q.chapterChoice.stylePreview.name(),
                                                         binding: { styleName: t },
                                                     });
                                                 case n.E.Tankman:
                                                     return s().createElement(
                                                         'div',
-                                                        { className: V.crewTitle },
-                                                        s().createElement(F.z, {
+                                                        { className: U.crewTitle },
+                                                        s().createElement(y.z, {
                                                             text: q.chapterChoice.crewMember.reward(),
                                                         }),
                                                     );
                                                 case n.E.Vehicle:
-                                                    return s().createElement(F.z, {
+                                                    return s().createElement(y.z, {
                                                         text: q.chapterChoice.premiumVehicle.reward(),
                                                     });
                                                 default:
@@ -11089,33 +11091,33 @@
                                     ),
                                     s().createElement(
                                         'div',
-                                        { className: V.vehicleTitle },
+                                        { className: U.vehicleTitle },
                                         ((e, t, a, r) => {
                                             const o = r
-                                                ? { level: V.extraLevel, name: V.extraName }
-                                                : { level: V.level, name: V.name };
+                                                ? { level: U.extraLevel, name: U.extraName }
+                                                : { level: U.level, name: U.name };
                                             switch (e) {
                                                 case n.E.Style:
-                                                    return s().createElement(F.z, {
+                                                    return s().createElement(y.z, {
                                                         text: q.chapterChoice.stylePreview.forLabel(),
                                                         binding: {
                                                             vehicleName: s().createElement(
-                                                                x.U4,
+                                                                L.U4,
                                                                 j({}, a, { classNames: o }),
                                                             ),
                                                         },
                                                     });
                                                 case n.E.Tankman:
-                                                    return s().createElement(F.z, {
-                                                        classMix: V.crewSubtitle,
+                                                    return s().createElement(y.z, {
+                                                        classMix: U.crewSubtitle,
                                                         text: u.v_(t, q.common.comma()),
                                                     });
                                                 case n.E.Vehicle:
-                                                    return s().createElement(F.z, {
+                                                    return s().createElement(y.z, {
                                                         text: q.chapterChoice.stylePreview.extraLabel(),
                                                         binding: {
                                                             vehicleName: s().createElement(
-                                                                x.U4,
+                                                                L.U4,
                                                                 j({}, a, { classNames: o }),
                                                             ),
                                                         },
@@ -11127,9 +11129,9 @@
                                         E === n.E.Style &&
                                             m &&
                                             s().createElement(
-                                                S.i,
+                                                P.i,
                                                 { body: q.chapterChoice.vehicleInHangar.tooltip.text() },
-                                                s().createElement('div', { className: V.vehicleInHangar }),
+                                                s().createElement('div', { className: U.vehicleInHangar }),
                                             ),
                                     ),
                                 ),
@@ -11147,13 +11149,13 @@
                         verticalChapterLine__completed: 'ChapterPostProgressionLine_verticalChapterLine__completed_7c',
                     },
                     Y = ({ chapterState: e, isButtonHovered: t }) => {
-                        const a = (0, y.GS)().mediaSize,
-                            r = viewEnv.remToPx(a <= y.cJ.Small ? 47 : 57),
+                        const a = (0, D.GS)().mediaSize,
+                            r = viewEnv.remToPx(a <= D.cJ.Small ? 47 : 57),
                             o = e === n.l.Completed ? r + 1 : r,
                             i = viewEnv.remToPx(4);
                         return s().createElement(
                             'div',
-                            { className: D()(X.base, t && X.base__hovered) },
+                            { className: B()(X.base, t && X.base__hovered) },
                             e === n.l.Completed && s().createElement('div', { className: X.circleShine }),
                             s().createElement(
                                 'svg',
@@ -11167,14 +11169,14 @@
                                     cx: i,
                                     cy: i,
                                     r: viewEnv.remToPx(3),
-                                    className: D()(X.circle, X[`circle__${e}`]),
+                                    className: B()(X.circle, X[`circle__${e}`]),
                                 }),
                                 s().createElement('line', {
                                     x1: i,
                                     x2: i,
                                     y1: viewEnv.remToPx(7),
                                     y2: o,
-                                    className: D()(X.verticalChapterLine, X[`verticalChapterLine__${e}`]),
+                                    className: B()(X.verticalChapterLine, X[`verticalChapterLine__${e}`]),
                                 }),
                             ),
                         );
@@ -11188,10 +11190,10 @@
                     },
                     J = (0, g.Pi)(({ activateLine: e }) => {
                         const t = _().model.computes.chaptersLineInfo(),
-                            a = (0, y.GS)().mediaSize;
+                            a = (0, D.GS)().mediaSize;
                         return s().createElement(
                             'div',
-                            { className: D()(Q.base, e && Q.base__active) },
+                            { className: B()(Q.base, e && Q.base__active) },
                             s().createElement(
                                 'svg',
                                 { width: '100%', height: '100%', viewBox: '0 0 100% 100%' },
@@ -11202,7 +11204,7 @@
                                         y1: '0',
                                         y2: '0',
                                         key: `${e}_${r}`,
-                                        className: D()(Q.horizontalChapterLine, Q[`horizontalChapterLine__${t}`]),
+                                        className: B()(Q.horizontalChapterLine, Q[`horizontalChapterLine__${t}`]),
                                     }),
                                 ),
                             ),
@@ -11225,15 +11227,15 @@
                     re = R.strings.battle_pass.chapterChoice.postProgression,
                     se = (0, g.Pi)(({ setIsButtonHovered: e, isButtonHovered: t }) => {
                         const a = _().model,
-                            r = (0, h.tv)(),
-                            n = (0, y.GS)().mediaSize,
+                            r = (0, v.tv)(),
+                            n = (0, D.GS)().mediaSize,
                             o = a.computes.regularChapters(),
                             i = a.computes.regularChaptersCompleteCount(),
                             u = i === o.length;
                         return s().createElement(
                             'div',
                             {
-                                className: D()(ee.base, t && ee.base__hovered),
+                                className: B()(ee.base, t && ee.base__hovered),
                                 style: { width: (te(n) + ae) * (o.length - 1) },
                             },
                             s().createElement(J, { activateLine: t }),
@@ -11251,7 +11253,7 @@
                                             e(!1);
                                         },
                                         onClick: () => {
-                                            (r.push(v._.battlePass.postProgression), K.hY.sound('play'));
+                                            (r.push(V._.battlePass.postProgression), K.hY.sound('play'));
                                         },
                                     },
                                     s().createElement('div', { className: ee.buttonText }, re.button.text()),
@@ -11267,7 +11269,7 @@
                                     s().createElement(
                                         'div',
                                         { className: ee.postProgressionText },
-                                        s().createElement(F.z, {
+                                        s().createElement(y.z, {
                                             classMix: ee.text,
                                             text: re.text(),
                                             binding: {
@@ -11290,16 +11292,16 @@
                     le = 'Separator_line__bottom_a0',
                     ce = 'Separator_plus_41',
                     de = () => {
-                        const e = (0, y.GS)(),
+                        const e = (0, D.GS)(),
                             t = e.remScreenWidth,
                             a = e.remScreenHeight,
                             r = t >= 2560 && a >= 1440;
                         return s().createElement(
                             'div',
-                            { className: D()(ne, r && oe) },
-                            s().createElement('div', { className: D()(ie, ue) }),
+                            { className: B()(ne, r && oe) },
+                            s().createElement('div', { className: B()(ie, ue) }),
                             s().createElement('div', { className: ce }),
-                            s().createElement('div', { className: D()(ie, le) }),
+                            s().createElement('div', { className: B()(ie, le) }),
                         );
                     },
                     _e = 'Chapters_base_81',
@@ -11309,11 +11311,11 @@
                     ge = 'Chapters_regularChapters_e9',
                     be = 'Chapters_chapterWrapper_51',
                     ve = {
-                        [y.cJ.ExtraSmall]: 242,
-                        [y.cJ.Small]: 242,
-                        [y.cJ.Medium]: 376,
-                        [y.cJ.Large]: 452,
-                        [y.cJ.ExtraLarge]: 608,
+                        [D.cJ.ExtraSmall]: 242,
+                        [D.cJ.Small]: 242,
+                        [D.cJ.Medium]: 376,
+                        [D.cJ.Large]: 452,
+                        [D.cJ.ExtraLarge]: 608,
                     },
                     he = (0, g.Pi)(() => {
                         const e = _().model,
@@ -11325,7 +11327,7 @@
                             l = o[1];
                         return s().createElement(
                             'div',
-                            { className: D()(_e, t ? pe : me) },
+                            { className: B()(_e, t ? pe : me) },
                             s().createElement(
                                 'div',
                                 { className: Ee },
@@ -11362,13 +11364,13 @@
                         const t = _().model,
                             a = t.root.get().freePoints,
                             r = !t.computes.isCompleted() && a > 0,
-                            n = (0, y.GS)(),
+                            n = (0, D.GS)(),
                             o = n.remScreenWidth,
                             i = n.remScreenHeight,
                             u = o >= 2560 && i >= 1440;
                         return s().createElement(
                             'div',
-                            { className: D()(fe, u && Ae) },
+                            { className: B()(fe, u && Ae) },
                             s().createElement('div', { className: Ce }, e),
                             s().createElement(
                                 'div',
@@ -11379,7 +11381,7 @@
                                         { className: Be },
                                         Pe.description(),
                                         s().createElement(
-                                            S.i,
+                                            P.i,
                                             { header: Pe.tooltip.title(), body: Pe.tooltip.description() },
                                             s().createElement(
                                                 'div',
@@ -11397,52 +11399,52 @@
                         const e = _(),
                             t = e.model,
                             a = e.controls,
-                            n = a.openAbout,
-                            o = a.openPointsInfo,
-                            i = a.onViewLoaded,
-                            u = t.root.get().isSeasonWithAdditionalBackground,
-                            l = t.computes.hasExtra(),
-                            c = t.computes.hasActive(),
-                            d = t.computes.isCompleted(),
-                            g = l && u,
+                            n = (0, v.tv)(),
+                            o = a.openAbout,
+                            i = a.openPointsInfo,
+                            u = a.onViewLoaded,
+                            l = t.root.get().isSeasonWithAdditionalBackground,
+                            c = t.computes.hasExtra(),
+                            d = t.computes.hasActive(),
+                            g = t.computes.isCompleted(),
+                            w = c && l,
                             B = (0, r.useState)(!1),
                             D = B[0],
-                            y = B[1],
-                            F = (0, h.tv)();
+                            y = B[1];
                         return (
                             b.N.useHandleKeydown(E.n.ESCAPE, () => {
-                                F.push(v._.root, void 0);
+                                n.goBack();
                             }),
                             (0, r.useEffect)(
                                 () =>
                                     (0, p.v)(() => {
-                                        D || (i(), y(!0));
+                                        D || (u(), y(!0));
                                     }),
-                                [D, i],
+                                [D, u],
                             ),
                             s().createElement(
                                 'div',
-                                { className: f },
-                                g && s().createElement('div', { className: C }),
+                                { className: h },
+                                w && s().createElement('div', { className: f }),
                                 s().createElement(
                                     'div',
-                                    { className: A },
+                                    { className: C },
                                     s().createElement(m.A, {
                                         caption: Ne.intro.aboutButton(),
                                         type: 'info',
-                                        onClick: n,
+                                        onClick: o,
                                     }),
                                     s().createElement(m.A, {
                                         caption: Ne.howToEarnPoints.title(),
                                         type: 'info',
-                                        onClick: o,
+                                        onClick: i,
                                     }),
                                 ),
                                 s().createElement(
                                     'div',
-                                    { className: w },
+                                    { className: A },
                                     s().createElement(Se, {
-                                        title: c || d ? Ne.chapterChoice.activeTitle() : Ne.chapterChoice.title(),
+                                        title: d || g ? Ne.chapterChoice.activeTitle() : Ne.chapterChoice.title(),
                                     }),
                                 ),
                                 s().createElement(he, null),
@@ -12749,7 +12751,7 @@
                             s().createElement(
                                 'div',
                                 { className: M()(ve, t) },
-                                _ && s().createElement(pe, { key: `statusCompleted-${e}`, shouldAppear: E }),
+                                _ && E && s().createElement(pe, { shouldAppear: E }),
                                 m &&
                                     s().createElement(be, {
                                         className: he,
@@ -13318,7 +13320,7 @@
                     f = 'Content_mainContent_d4',
                     C = 'Content_base__noScroll_d3',
                     A = R.strings.battle_pass.battlePassBuyView.reward,
-                    w = () => {
+                    w = (0, o.Pi)(() => {
                         const e = (0, v.t)().model,
                             t = e.levels.get(),
                             a = t.fromLevel,
@@ -13364,7 +13366,7 @@
                                     }),
                             ),
                         );
-                    },
+                    }),
                     B = 'RewardsViewContent_base_42',
                     D = 'RewardsViewContent_content_64',
                     y = 'RewardsViewContent_background_37',

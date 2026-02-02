@@ -2,18 +2,18 @@ import { n as e, j as s, e as a } from '../../../chunks/vendor.js';
 import {
     i,
     r as l,
-    u as o,
+    d as o,
     n as t,
     F as c,
     P as n,
     B as r,
     t as d,
     s as _,
-    V as m,
-    a as g,
+    o as m,
+    h as g,
     k as v,
     T as N,
-    b as x,
+    l as x,
     U as p,
 } from '../../../chunks/lib.js';
 var j = ((e) => (
@@ -93,9 +93,9 @@ const [h, b] = i()(
     F = 'Content_glow__strong_4a868d52',
     $ = 'Content_9af045a3',
     M = 'Content_base__hasPostProgression_a9391767',
-    V = 'Content_main_f562db1d',
-    K = 'Content_section_57c57489',
-    U = 'Content_section__image_7f1ebf74',
+    K = 'Content_main_f562db1d',
+    U = 'Content_section_57c57489',
+    V = 'Content_section__image_7f1ebf74',
     W = 'Content_section__body_8837b3f5',
     q = 'Content_section__title_806db271',
     J = 'Content_section__description_e93395a4',
@@ -114,13 +114,13 @@ const [h, b] = i()(
             className: a($, t !== j.STANDARD && M),
             children: [
                 s.jsxs('div', {
-                    className: V,
+                    className: K,
                     children: [
                         s.jsx('div', { className: Z }),
                         s.jsxs('div', {
-                            className: K,
+                            className: U,
                             children: [
-                                s.jsx('div', { className: U, children: s.jsx(S, { vehicleType: o.vehicleType }) }),
+                                s.jsx('div', { className: V, children: s.jsx(S, { vehicleType: o.vehicleType }) }),
                                 s.jsxs('div', {
                                     className: W,
                                     children: [
@@ -132,10 +132,10 @@ const [h, b] = i()(
                         }),
                         r &&
                             s.jsxs('div', {
-                                className: K,
+                                className: U,
                                 children: [
                                     s.jsxs('div', {
-                                        className: a(U, Q),
+                                        className: a(V, Q),
                                         children: [
                                             s.jsx('div', { className: a(L, F) }),
                                             s.jsx(n, {

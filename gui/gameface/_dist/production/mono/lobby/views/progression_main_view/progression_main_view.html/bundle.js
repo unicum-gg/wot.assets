@@ -1,48 +1,48 @@
 import { j as e, w as s, x as a, r as t, T as r, U as o, R as n, y as i, z as d } from '../../../chunks/vendor.js';
 import {
-    cM as l,
-    aM as c,
-    cN as _,
-    cO as p,
-    cf as f,
+    cV as l,
+    aO as _,
+    cW as c,
+    cX as p,
+    ct as f,
     F as m,
     I as g,
     b as u,
     M as h,
     m as b,
-    cP as v,
+    cY as v,
     i as k,
-    X as T,
-    au as C,
-    ce as x,
-    cQ as I,
-    c4 as B,
-    cR as j,
-    cS as w,
-    c5 as P,
-    cT as L,
-    cU as A,
+    Z as T,
+    aw as C,
+    bB as x,
+    cZ as I,
+    ck as B,
+    c_ as j,
+    c$ as w,
+    cl as P,
+    d0 as L,
+    d1 as A,
     p as N,
     h as S,
     R as y,
-    cV as V,
-    cW as U,
-    cd as W,
+    d2 as V,
+    d3 as U,
+    cs as W,
     k as Q,
-    cX as E,
-    cY as H,
+    d4 as E,
+    d5 as H,
     n as O,
-    bd as F,
-    bc as z,
-    cZ as $,
+    bg as F,
+    bf as z,
+    d6 as $,
     f as M,
-    c_ as G,
-    c$ as D,
+    d7 as G,
+    d8 as D,
     j as q,
     l as K,
-    bg as X,
-    r as Y,
-    U as Z,
+    bD as Z,
+    r as X,
+    U as Y,
 } from '../../../chunks/lib.js';
 import { S as J, a as ee } from '../../../chunks/schedule_subheading.js';
 import { P as se, a as ae } from '../../../chunks/consts.js';
@@ -62,7 +62,7 @@ const re = (e, s) =>
         else {
             const { descrData: t } = e;
             let { titleData: r, current: o, total: n, earned: i, iconKey: d } = e;
-            const l = c(s, 0);
+            const l = _(s, 0);
             (l && ((r = t || l.descrData), (d = d || l.iconKey), ({ current: o, total: n, earned: i } = l)),
                 0 === n && (r = t),
                 a.push({ condition: r, lastValue: i, currentValue: o, maxValue: n, icon: d }));
@@ -75,7 +75,7 @@ const re = (e, s) =>
         return (
             ne(e, s).forEach(({ condition: e, lastValue: s, currentValue: a, maxValue: o }, n) => {
                 ((t[oe[n]] = ((e, s) =>
-                    _(e, p.left)
+                    c(e, p.left)
                         .flat()
                         .map((e, a) => (0 === a && s > 0 && (e = e.toLowerCase()), e)))(e, n)),
                     (r = { lastValue: s, currentValue: a, maxValue: o }));
@@ -111,7 +111,7 @@ const re = (e, s) =>
         hide: 'Progression_hide_61efd8f5',
         show: 'Progression_show_61efd8f5',
     },
-    ce = ({ currentValue: a, maxValue: t, lastValue: r, statusAnimation: o, updateStatusAnimation: n }) =>
+    _e = ({ currentValue: a, maxValue: t, lastValue: r, statusAnimation: o, updateStatusAnimation: n }) =>
         e.jsx('div', {
             className: s(le.base, le[`base__${o}`]),
             children: e.jsxs('div', {
@@ -135,7 +135,7 @@ const re = (e, s) =>
                 ],
             }),
         }),
-    _e = {
+    ce = {
         base: 'TaskCondition_3f718053',
         base__completed: 'TaskCondition_base__completed_f5d779ca',
         base__completedWasVisited: 'TaskCondition_base__completedWasVisited_ffe6fe0',
@@ -159,21 +159,21 @@ const re = (e, s) =>
     fe = a(function ({ conditions: a, setStatusAnimation: r, statusAnimation: o, progression: n, conditionIndex: i }) {
         const { model: d } = Ce(),
             l = d.computes.missionCompletedVisitedStatus,
-            c = t.useCallback(() => {
+            _ = t.useCallback(() => {
                 r(l(i));
             }, [i, l, r]),
-            _ = { ...n, statusAnimation: o, updateStatusAnimation: c },
+            c = { ...n, statusAnimation: o, updateStatusAnimation: _ },
             { maxValue: p, status: f } = n,
             g = 0 === p;
         return (
             t.useEffect(() => {
-                f === ke ? g && c() : r(he.inProgress);
-            }, [g, r, f, c]),
+                f === ke ? g && _() : r(he.inProgress);
+            }, [g, r, f, _]),
             e.jsxs('div', {
-                className: s(_e.base, _e[`base__${o}`]),
+                className: s(ce.base, ce[`base__${o}`]),
                 children: [
-                    e.jsx(m, { text: `${pe.$dyn(de(a))}`, classMix: s(_e.text, _e[`text__${o}`]), binding: { ...a } }),
-                    Boolean(p) && e.jsx(ce, { ..._ }),
+                    e.jsx(m, { text: `${pe.$dyn(de(a))}`, classMix: s(ce.text, ce[`text__${o}`]), binding: { ...a } }),
+                    Boolean(p) && e.jsx(_e, { ...c }),
                 ],
             })
         );
@@ -262,8 +262,8 @@ const re = (e, s) =>
     be = a(function ({ taskConditions: a, awardsBattle: r, taskBattleIcon: o, index: n }) {
         const [i, d] = t.useState(he.inProgress),
             { parsedRewards: l } = te(r, g.Small),
-            { mediaSize: c } = u(),
-            _ = c >= h.Large ? 2 : 1;
+            { mediaSize: _ } = u(),
+            c = _ >= h.Large ? 2 : 1;
         return e.jsxs('div', {
             className: s(ue.base, ue[`base__${i}`]),
             children: [
@@ -308,11 +308,11 @@ const re = (e, s) =>
                             children: e.jsx(v, {
                                 data: l,
                                 rewardItemClassMix: ue.award,
-                                count: _,
+                                count: c,
                                 size: g.Small,
                                 boxRewardTooltip: {
                                     contentId: R.views.lobby.tooltips.AdditionalRewardsTooltip('resId'),
-                                    args: { fromIndex: _, index: n },
+                                    args: { fromIndex: c, index: n },
                                 },
                             }),
                         }),
@@ -380,7 +380,7 @@ const ke = 'done',
                         e
                     );
                 }),
-                _ = o(
+                c = o(
                     () => {
                         const e = a(),
                             t = s.progressLevels.get();
@@ -415,10 +415,10 @@ const ke = 'done',
                 m = o((e) => {
                     var a, t;
                     const r =
-                            null == (t = null == (a = c(d(), e)) ? void 0 : a.taskConditions[0])
+                            null == (t = null == (a = _(d(), e)) ? void 0 : a.taskConditions[0])
                                 ? void 0
                                 : t.progression.status,
-                        o = c(s.missionsCompletedVisited.get(), e);
+                        o = _(s.missionsCompletedVisited.get(), e);
                     return r !== ke ? he.inProgress : o ? he.completedWasVisited : he.completed;
                 }),
                 g = o(() => {
@@ -430,7 +430,7 @@ const ke = 'done',
                 ...s,
                 ...s.currentTimerDate,
                 computes: {
-                    levels: _,
+                    levels: c,
                     battleQuests: d,
                     currentLevel: a,
                     levelStatus: n,
@@ -678,24 +678,24 @@ const ke = 'done',
         blink: 'LevelCard_blink_3d180533',
         slideUpIn: 'LevelCard_slideUpIn_3d180533',
     },
-    Xe = 'prevLevel',
-    Ye = 'completed',
-    Ze = 'inProgress',
-    Je = (e, s, a) => (e ? Ye : s ? Ze : a),
+    Ze = 'prevLevel',
+    Xe = 'completed',
+    Ye = 'inProgress',
+    Je = (e, s, a) => (e ? Xe : s ? Ye : a),
     es = a(function ({ level: a, isActive: r, isCompleted: o, isLast: n }) {
         const [i, d] = t.useState(),
             { model: l } = Ce(),
-            c = t.useRef(null),
-            { wasProgressionVisited: _, isRecentlyCompletedLevel: p, isPrevLevel: f } = l.computes.levelStatus(a);
+            _ = t.useRef(null),
+            { wasProgressionVisited: c, isRecentlyCompletedLevel: p, isPrevLevel: f } = l.computes.levelStatus(a);
         t.useEffect(() => {
-            o && !_ && p && d(Xe);
-        }, [o, _, p]);
+            o && !c && p && d(Ze);
+        }, [o, c, p]);
         const m = t.useCallback(() => {
             N.sound('pr_progress_tick');
         }, []);
         return (
             t.useEffect(() => {
-                const e = c.current;
+                const e = _.current;
                 return S(() => {
                     if (e)
                         return (
@@ -705,11 +705,11 @@ const ke = 'done',
                             }
                         );
                 });
-            }, [c, m]),
+            }, [_, m]),
             e.jsxs('div', {
                 className: Ke.base,
                 children: [
-                    e.jsx('div', { className: s(Ke.bgCompleted, o && Ke.bgCompleted__completed), ref: c }),
+                    e.jsx('div', { className: s(Ke.bgCompleted, o && Ke.bgCompleted__completed), ref: _ }),
                     e.jsxs('div', {
                         className: s(Ke.completedIconContainer, Ke[`completedIconContainer__${Je(f, !o, i)}`]),
                         children: [
@@ -746,8 +746,8 @@ const ke = 'done',
     }),
     ds = 'RewardCard_3d33baf7',
     ls = 'RewardCard_activeBlock_e979e1b7',
-    cs = 'RewardCard_activeBlock__completed_671ab3dd',
-    _s = 'RewardCard_pointsBorder_7ac65f55',
+    _s = 'RewardCard_activeBlock__completed_671ab3dd',
+    cs = 'RewardCard_pointsBorder_7ac65f55',
     ps = 'RewardCard_pointsBorder__right_ba44cb4f',
     fs = 'RewardCard_pointsContainer_9dd72d4d',
     ms = 'RewardCard_points_ae900ff0',
@@ -768,7 +768,7 @@ const ke = 'done',
             className: ds,
             children: [
                 e.jsx('div', {
-                    className: s(ls, n && cs),
+                    className: s(ls, n && _s),
                     children: e.jsxs('div', {
                         className: fs,
                         children: [
@@ -783,9 +783,9 @@ const ke = 'done',
                 }),
                 e.jsx(is, { rewards: d, isActive: n, isCompleted: o }),
                 e.jsx('div', { className: hs }),
-                e.jsx('div', { className: _s, children: a }),
+                e.jsx('div', { className: cs, children: a }),
                 i && e.jsx('div', { className: s(hs, bs) }),
-                i && e.jsx('div', { className: s(_s, ps), children: a + t }),
+                i && e.jsx('div', { className: s(cs, ps), children: a + t }),
             ],
         });
     }),
@@ -848,23 +848,23 @@ const ke = 'done',
             { computes: i } = r,
             d = r.prevProgressPoints.get(),
             l = r.curProgressPoints.get(),
-            c = r.pointsForLevel.get(),
-            _ = t.useRef(V());
+            _ = r.pointsForLevel.get(),
+            c = t.useRef(V());
         s.current.moveProgressBars = t.useCallback((e) => {
-            _.current.update(e);
+            c.current.update(e);
         }, []);
         const [{ previousEarnedPoints: p, maxPoints: f, progressionSize: m }, g] = t.useState({
-            maxPoints: i.levels().length * c,
+            maxPoints: i.levels().length * _,
             previousEarnedPoints: d,
             progressionSize: d,
         });
         t.useEffect(() => {
             (g((e) => {
                 const s = 0 === e.progressionSize ? d : e.progressionSize;
-                return { maxPoints: i.levels().length * c, previousEarnedPoints: s, progressionSize: l };
+                return { maxPoints: i.levels().length * _, previousEarnedPoints: s, progressionSize: l };
             }),
                 d !== l && N.sound('pr_progress_bar'));
-        }, [d, c, l, i]);
+        }, [d, _, l, i]);
         const u = t.useMemo(
             () => ({
                 ...W,
@@ -893,7 +893,7 @@ const ke = 'done',
                             deltaFrom: p,
                             value: m,
                             maxValue: f,
-                            api: _,
+                            api: c,
                             theme: a,
                             className: xs.progressBar,
                         }),
@@ -914,8 +914,8 @@ const ke = 'done',
             i = a.progressAnimationState.get(),
             d = a.curProgressPoints.get(),
             { computes: l } = a,
-            c = t.useRef({ moveProgressBars: O }),
-            _ = t.useRef(null),
+            _ = t.useRef({ moveProgressBars: O }),
+            c = t.useRef(null),
             p = t.useRef(null),
             f = z(),
             m = $(r, r.settings.animationConfig),
@@ -961,13 +961,13 @@ const ke = 'done',
             }, [r, g, f]),
             e.jsxs('div', {
                 className: s(Bs, o && js),
-                ref: _,
+                ref: c,
                 children: [
                     e.jsxs(G, {
                         classNames: Ps,
                         children: [
                             e.jsx(as, { ref: p }),
-                            e.jsx('div', { className: ws, children: e.jsx(Is, { api: c }) }),
+                            e.jsx('div', { className: ws, children: e.jsx(Is, { api: _ }) }),
                             e.jsx(Ts, {}),
                         ],
                     }),
@@ -1003,8 +1003,8 @@ const ke = 'done',
         const { model: r, controls: o } = Ce(),
             n = r.progressAnimationState.get(),
             [i, d] = t.useState(!1),
-            [l, c] = t.useState(!0),
-            _ = r.computes.isProgressionCompleted(),
+            [l, _] = t.useState(!0),
+            c = r.computes.isProgressionCompleted(),
             p = r.computes.wasProgressionCompletedBeforeStart(),
             { api: f } = F();
         return (
@@ -1015,7 +1015,7 @@ const ke = 'done',
                         const e = f.contentRef.current.offsetLeft,
                             a = f.getWrapperSize() || 0,
                             t = f.getContainerSize() || 0;
-                        (d(s > e), c(s + a < t - e));
+                        (d(s > e), _(s + a < t - e));
                     }
                 };
                 return (
@@ -1029,7 +1029,7 @@ const ke = 'done',
                 () =>
                     p
                         ? o.completeProgression(!0)
-                        : n === ve.ChangeCompleted && _
+                        : n === ve.ChangeCompleted && c
                           ? Q(() => {
                                 o.completeProgression(!1);
                             }, 1600)
@@ -1042,7 +1042,7 @@ const ke = 'done',
                             : Q(() => {
                                   o.finishScrolling();
                               }, 1200),
-                [n, p, _, o],
+                [n, p, c, o],
             ),
             e.jsxs('div', {
                 className: s(Cs(Ns, n, 'base'), a),
@@ -1087,14 +1087,14 @@ const ke = 'done',
                     e.jsxs(d.div, {
                         className: Qs,
                         style: a,
-                        children: [e.jsx(Ee, {}), e.jsx(X, { children: e.jsx(Ss, { className: Os }) })],
+                        children: [e.jsx(Ee, {}), e.jsx(Z, { children: e.jsx(Ss, { className: Os }) })],
                     }),
                 ],
             })
         );
     });
-Y(
-    e.jsx(Z, {
+X(
+    e.jsx(Y, {
         children: e.jsx(Te, {
             options: { context: 'model.progressionModel' },
             children: e.jsx(ee, {

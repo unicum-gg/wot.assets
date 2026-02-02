@@ -1,11 +1,11 @@
 import { j as o } from './vendor.js';
-import { m as e, ad as t, D as s, E as a, R as r, S as i } from './lib.js';
-function n({ bonuses: n, questId: l, size: d, resId: p, ...v }) {
+import { m as e, ah as t, H as s, K as a, R as r, S as i } from './lib.js';
+function n({ bonuses: n, questId: l, size: p, resId: d, ...v }) {
     const u = e(n, (o) => {
             return {
-                size: d,
+                size: p,
                 name: o.name,
-                image: a(o, d),
+                image: a(o, p),
                 value: o.value,
                 valueType: s(o.name),
                 special:
@@ -22,7 +22,7 @@ function n({ bonuses: n, questId: l, size: d, resId: p, ...v }) {
                         Number(o.tooltipContentId) ||
                             R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent('resId'),
                     ),
-                    resId: p,
+                    resId: d,
                 },
             };
             var e;
@@ -30,8 +30,8 @@ function n({ bonuses: n, questId: l, size: d, resId: p, ...v }) {
         m = {
             contentId: R.views.lobby.tooltips.AdditionalRewardsTooltip('resId'),
             args: { showFromIndex: v.count, questId: l },
-            resId: p,
+            resId: d,
         };
-    return o.jsx(r, { ...v, data: u, boxRewardTooltip: m, size: d });
+    return o.jsx(r, { ...v, data: u, boxRewardTooltip: m, size: p });
 }
 export { n as R };

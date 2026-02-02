@@ -1,5 +1,5 @@
 import { j as e, f as s } from './vendor.js';
-import { cJ as i, F as r, bW as t, bV as a } from './lib.js';
+import { q as i, F as r, ca as t, T as a } from './lib.js';
 const o = 'Divider_7a72bfaf',
     d = 'Divider_1eaf72bd',
     c = ({ className: i }) => e.jsx('div', { className: s(o, i), children: e.jsx('div', { className: d }) }),
@@ -13,26 +13,26 @@ function p({
     header: o,
     description: d,
     descriptionParams: p,
-    invertedColors: b,
-    timerTimeLeft: f = 0,
-    timerText: v,
-    className: D,
-    children: h,
+    invertedColors: f,
+    timerTimeLeft: v = 0,
+    timerText: D,
+    className: T,
+    children: b,
 }) {
     return e.jsx(i, {
         children: e.jsx(i.Decorator, {
             children: e.jsxs('div', {
-                className: s(n, b && x, D),
+                className: s(n, f && x, T),
                 children: [
                     o && e.jsx(r, { text: o, classMix: l }),
                     e.jsx(t, { text: d, binding: p, classMix: m }),
-                    h,
-                    f > 0 &&
+                    b,
+                    v > 0 &&
                         e.jsxs('div', {
                             className: _,
                             children: [
                                 e.jsx(c, { className: j }),
-                                e.jsx(r, { text: v, binding: { timeLeft: e.jsx(a, { start: f }) } }),
+                                e.jsx(r, { text: D, binding: { timeLeft: e.jsx(a, { start: v }) } }),
                             ],
                         }),
                 ],

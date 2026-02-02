@@ -72,6 +72,11 @@
     flex: 1 1 auto;
     width: 100%;
 }
+.FormatText_db904f12 span {
+    flex-wrap: wrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
 
 .FormatText_nowrap_ff69eca3 {
     white-space: nowrap;
@@ -410,253 +415,6 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Reward_d65e1e12 {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-.Reward_base__s24x24_954b5cee {
-    width: 24rem;
-    height: 24rem;
-}
-.Reward_base__s48x48_21f091ec,
-.Reward_base__small_3eddf28d {
-    width: 48rem;
-    height: 48rem;
-}
-.Reward_base__s80x80_21f091ec,
-.Reward_base__big_e23f2c77 {
-    width: 80rem;
-    height: 80rem;
-}
-.Reward_base__s128x100_1e08e04b {
-    width: 128rem;
-    height: 100rem;
-}
-.Reward_base__s180x135_93fc57c {
-    width: 180rem;
-    height: 135rem;
-}
-.Reward_base__s232x174_2904ea89 {
-    width: 232rem;
-    height: 174rem;
-}
-.Reward_base__s296x222_52f0615b {
-    width: 296rem;
-    height: 222rem;
-}
-.Reward_base__s400x300_a8627e1b {
-    width: 400rem;
-    height: 300rem;
-}
-.Reward_base__s600x450_e27f3852 {
-    width: 600rem;
-    height: 450rem;
-}
-.Reward_base__dynamicBox_45d7782b {
-    width: auto;
-    height: auto;
-}
-
-.Reward_tooltipWrapper_75b925a5 {
-    height: 100%;
-}
-
-.Reward_icon_e152f13b {
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    position: relative;
-    z-index: 1;
-}
-
-.Reward_overlay_8cbe65c9 {
-    background: no-repeat center/100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 2;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-}
-.Reward_base__s24x24_954b5cee .Reward_overlay_8cbe65c9 {
-    width: 48rem;
-    height: 48rem;
-}
-.Reward_base__s48x48_21f091ec .Reward_overlay_8cbe65c9,
-.Reward_base__small_3eddf28d .Reward_overlay_8cbe65c9 {
-    width: 96rem;
-    height: 96rem;
-    background-size: 100%;
-    overflow: visible;
-}
-.Reward_base__s80x80_21f091ec .Reward_overlay_8cbe65c9,
-.Reward_base__big_e23f2c77 .Reward_overlay_8cbe65c9 {
-    width: 128rem;
-    height: 128rem;
-}
-.Reward_base__s180x135_93fc57c .Reward_overlay_8cbe65c9 {
-    width: 266rem;
-    height: 241rem;
-}
-.Reward_base__s232x174_2904ea89 .Reward_overlay_8cbe65c9 {
-    width: 344rem;
-    height: 312rem;
-}
-.Reward_base__s296x222_52f0615b .Reward_overlay_8cbe65c9 {
-    width: 450rem;
-    height: 408rem;
-}
-.Reward_base__s400x300_a8627e1b .Reward_overlay_8cbe65c9 {
-    width: 618rem;
-    height: 590rem;
-}
-.Reward_base__s600x450_e27f3852 .Reward_overlay_8cbe65c9 {
-    width: 670rem;
-    height: 575rem;
-}
-
-.Reward_highlight_f1cd08e0 {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center/contain;
-    position: absolute;
-    z-index: 0;
-}
-
-.Reward_image_1cbfa020 {
-    display: flex;
-    position: relative;
-    align-self: center;
-}
-.Reward_image__s24x24_954b5cee {
-    width: 24rem;
-    height: 24rem;
-}
-.Reward_image__s48x48_21f091ec,
-.Reward_image__small_3eddf28d {
-    width: 48rem;
-    height: 48rem;
-}
-.Reward_image__s80x80_21f091ec,
-.Reward_image__big_e23f2c77 {
-    width: 80rem;
-    height: 80rem;
-}
-.Reward_image__s128x100_1e08e04b {
-    width: 128rem;
-    height: 100rem;
-}
-.Reward_image__s180x135_93fc57c {
-    width: 180rem;
-    height: 135rem;
-}
-.Reward_image__s232x174_2904ea89 {
-    width: 232rem;
-    height: 174rem;
-}
-.Reward_image__s296x222_52f0615b {
-    width: 296rem;
-    height: 222rem;
-}
-.Reward_image__s400x300_a8627e1b {
-    width: 400rem;
-    height: 300rem;
-}
-.Reward_image__s600x450_e27f3852 {
-    width: 600rem;
-    height: 450rem;
-}
-.Reward_image__fixedBox_e45bdd8a {
-    width: 100%;
-    height: 100%;
-}
-
-.Reward_info_81cb3342 {
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.2em;
-    display: flex;
-    justify-content: center;
-    margin-top: -13rem;
-    color: #e9e2bf;
-    overflow-wrap: normal;
-    z-index: 1;
-}
-.Reward_base__s24x24_954b5cee .Reward_info_81cb3342 {
-    margin-top: 0;
-    white-space: nowrap;
-}
-.Reward_base__s48x48_21f091ec .Reward_info_81cb3342,
-.Reward_base__small_3eddf28d .Reward_info_81cb3342 {
-    margin: -10rem -10rem 0;
-}
-.Reward_info__multi_465d34bd {
-    justify-content: flex-end;
-    margin-right: 2rem;
-}
-.Reward_base__s48x48_21f091ec .Reward_info__multi_465d34bd,
-.Reward_base__small_3eddf28d .Reward_info__multi_465d34bd {
-    margin-right: 0;
-}
-.Reward_info__credits_1643219 {
-    color: var(--color-currency-credits);
-}
-.Reward_info__gold_c751be5d {
-    color: var(--color-currency-gold);
-}
-.Reward_info__crystal_18ccfdd0 {
-    color: var(--color-currency-bond);
-}
-.Reward_info__premiumTank_7862152 {
-    color: #fd9;
-}
-
-.Reward_title_fbcf4b5 {
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.2em;
-    max-width: 80rem;
-    margin: -13rem -16rem 0;
-    color: #e9e2bf;
-    text-align: center;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-}
-.mediaMedium .Reward_title_fbcf4b5 {
-    max-width: 100rem;
-    margin-left: -10rem;
-    margin-right: -10rem;
-}
-
-.Reward_timer_22ba7b8b {
-    background: no-repeat center/contain;
-    position: absolute;
-    z-index: 1;
-}
-.Reward_base__s48x48_21f091ec .Reward_timer_22ba7b8b,
-.Reward_base__small_3eddf28d .Reward_timer_22ba7b8b {
-    width: 23rem;
-    height: 23rem;
-    background-image: url(R.images.gui.maps.icons.quests.bonuses.small.timer);
-    top: -6rem;
-    right: -6rem;
-}
-.Reward_base__s80x80_21f091ec .Reward_timer_22ba7b8b,
-.Reward_base__big_e23f2c77 .Reward_timer_22ba7b8b {
-    width: 48rem;
-    height: 48rem;
-    background-image: url(R.images.gui.maps.icons.quests.bonuses.big.timer);
-    top: -14rem;
-    right: -14rem;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
 .Thumb_background_7f3dd6ac,
 .Thumb_border_5749138b {
     position: absolute;
@@ -829,6 +587,15 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
     width: 100%;
     overflow-x: hidden;
 }
+.HorizontalScroll_wrapper__left_adacfff {
+    mask-image: linear-gradient(to left, #000 97%, transparent);
+}
+.HorizontalScroll_wrapper__right_a6825027 {
+    mask-image: linear-gradient(to right, #000 97%, transparent);
+}
+.HorizontalScroll_wrapper__both_7917ea88 {
+    mask-image: linear-gradient(to right, transparent, #000 3%, #000 97%, transparent);
+}
 
 .HorizontalScroll_defaultScrollArea_a5c0f45 {
     width: 100%;
@@ -918,6 +685,15 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
 .VerticalScroll_content_62cb6120 {
     height: 100%;
     overflow-y: hidden;
+}
+.VerticalScroll_content__top_b27098a4 {
+    mask-image: linear-gradient(to top, #000 97%, transparent);
+}
+.VerticalScroll_content__bottom_d6604290 {
+    mask-image: linear-gradient(to bottom, #000 97%, transparent);
+}
+.VerticalScroll_content__both_8d905712 {
+    mask-image: linear-gradient(to bottom, transparent, #000 3%, #000 97%, transparent);
 }
 
 .VerticalScroll_defaultScroll_c69fa70e {
@@ -1436,6 +1212,253 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
     bottom: -1rem;
     left: 0;
     pointer-events: none;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Reward_d65e1e12 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.Reward_base__s24x24_954b5cee {
+    width: 24rem;
+    height: 24rem;
+}
+.Reward_base__s48x48_21f091ec,
+.Reward_base__small_3eddf28d {
+    width: 48rem;
+    height: 48rem;
+}
+.Reward_base__s80x80_21f091ec,
+.Reward_base__big_e23f2c77 {
+    width: 80rem;
+    height: 80rem;
+}
+.Reward_base__s128x100_1e08e04b {
+    width: 128rem;
+    height: 100rem;
+}
+.Reward_base__s180x135_93fc57c {
+    width: 180rem;
+    height: 135rem;
+}
+.Reward_base__s232x174_2904ea89 {
+    width: 232rem;
+    height: 174rem;
+}
+.Reward_base__s296x222_52f0615b {
+    width: 296rem;
+    height: 222rem;
+}
+.Reward_base__s400x300_a8627e1b {
+    width: 400rem;
+    height: 300rem;
+}
+.Reward_base__s600x450_e27f3852 {
+    width: 600rem;
+    height: 450rem;
+}
+.Reward_base__dynamicBox_45d7782b {
+    width: auto;
+    height: auto;
+}
+
+.Reward_tooltipWrapper_75b925a5 {
+    height: 100%;
+}
+
+.Reward_icon_e152f13b {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    position: relative;
+    z-index: 1;
+}
+
+.Reward_overlay_8cbe65c9 {
+    background: no-repeat center/100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.Reward_base__s24x24_954b5cee .Reward_overlay_8cbe65c9 {
+    width: 48rem;
+    height: 48rem;
+}
+.Reward_base__s48x48_21f091ec .Reward_overlay_8cbe65c9,
+.Reward_base__small_3eddf28d .Reward_overlay_8cbe65c9 {
+    width: 96rem;
+    height: 96rem;
+    background-size: 100%;
+    overflow: visible;
+}
+.Reward_base__s80x80_21f091ec .Reward_overlay_8cbe65c9,
+.Reward_base__big_e23f2c77 .Reward_overlay_8cbe65c9 {
+    width: 128rem;
+    height: 128rem;
+}
+.Reward_base__s180x135_93fc57c .Reward_overlay_8cbe65c9 {
+    width: 266rem;
+    height: 241rem;
+}
+.Reward_base__s232x174_2904ea89 .Reward_overlay_8cbe65c9 {
+    width: 344rem;
+    height: 312rem;
+}
+.Reward_base__s296x222_52f0615b .Reward_overlay_8cbe65c9 {
+    width: 450rem;
+    height: 408rem;
+}
+.Reward_base__s400x300_a8627e1b .Reward_overlay_8cbe65c9 {
+    width: 618rem;
+    height: 590rem;
+}
+.Reward_base__s600x450_e27f3852 .Reward_overlay_8cbe65c9 {
+    width: 670rem;
+    height: 575rem;
+}
+
+.Reward_highlight_f1cd08e0 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center/contain;
+    position: absolute;
+    z-index: 0;
+}
+
+.Reward_image_810ec3a2 {
+    display: flex;
+    align-self: center;
+    position: relative;
+}
+.Reward_image__s24x24_954b5cee {
+    width: 24rem;
+    height: 24rem;
+}
+.Reward_image__s48x48_21f091ec,
+.Reward_image__small_3eddf28d {
+    width: 48rem;
+    height: 48rem;
+}
+.Reward_image__s80x80_21f091ec,
+.Reward_image__big_e23f2c77 {
+    width: 80rem;
+    height: 80rem;
+}
+.Reward_image__s128x100_1e08e04b {
+    width: 128rem;
+    height: 100rem;
+}
+.Reward_image__s180x135_93fc57c {
+    width: 180rem;
+    height: 135rem;
+}
+.Reward_image__s232x174_2904ea89 {
+    width: 232rem;
+    height: 174rem;
+}
+.Reward_image__s296x222_52f0615b {
+    width: 296rem;
+    height: 222rem;
+}
+.Reward_image__s400x300_a8627e1b {
+    width: 400rem;
+    height: 300rem;
+}
+.Reward_image__s600x450_e27f3852 {
+    width: 600rem;
+    height: 450rem;
+}
+.Reward_image__fixedBox_e45bdd8a {
+    width: 100%;
+    height: 100%;
+}
+
+.Reward_info_26d38c48 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    display: flex;
+    justify-content: center;
+    margin-top: -13rem;
+    color: #e9e2bf;
+    overflow-wrap: normal;
+    z-index: 1;
+}
+.Reward_base__s24x24_954b5cee .Reward_info_26d38c48 {
+    margin-top: 0;
+    white-space: nowrap;
+}
+.Reward_base__s48x48_21f091ec .Reward_info_26d38c48,
+.Reward_base__small_3eddf28d .Reward_info_26d38c48 {
+    margin: -8rem -10rem 0;
+}
+.Reward_info__multi_465d34bd {
+    justify-content: flex-end;
+    margin-right: 2rem;
+}
+.Reward_base__s48x48_21f091ec .Reward_info__multi_465d34bd,
+.Reward_base__small_3eddf28d .Reward_info__multi_465d34bd {
+    margin-right: 0;
+}
+.Reward_info__credits_1643219 {
+    color: var(--color-currency-credits);
+}
+.Reward_info__gold_c751be5d {
+    color: var(--color-currency-gold);
+}
+.Reward_info__crystal_18ccfdd0 {
+    color: var(--color-currency-bond);
+}
+.Reward_info__premiumTank_7862152 {
+    color: #fd9;
+}
+
+.Reward_title_fbcf4b5 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    max-width: 80rem;
+    margin: -13rem -16rem 0;
+    color: #e9e2bf;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+.mediaMedium .Reward_title_fbcf4b5 {
+    max-width: 100rem;
+    margin-left: -10rem;
+    margin-right: -10rem;
+}
+
+.Reward_timer_22ba7b8b {
+    background: no-repeat center/contain;
+    position: absolute;
+    z-index: 1;
+}
+.Reward_base__s48x48_21f091ec .Reward_timer_22ba7b8b,
+.Reward_base__small_3eddf28d .Reward_timer_22ba7b8b {
+    width: 23rem;
+    height: 23rem;
+    background-image: url(R.images.gui.maps.icons.quests.bonuses.small.timer);
+    top: -6rem;
+    right: -6rem;
+}
+.Reward_base__s80x80_21f091ec .Reward_timer_22ba7b8b,
+.Reward_base__big_e23f2c77 .Reward_timer_22ba7b8b {
+    width: 48rem;
+    height: 48rem;
+    background-image: url(R.images.gui.maps.icons.quests.bonuses.big.timer);
+    top: -14rem;
+    right: -14rem;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
@@ -2813,765 +2836,6 @@ html[lang='th'] input {
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-@keyframes AdditionalRewards_fadeIn_3afa6e1a {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes AdditionalRewards_up_3afa6e1a {
-    0% {
-        transform: translateY(20rem);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-@keyframes AdditionalRewards_upScale_3afa6e1a {
-    0% {
-        transform: scale(1.2) translateY(20rem);
-    }
-    100% {
-        transform: scale(1) translateY(0);
-    }
-}
-@keyframes AdditionalRewards_rotate_3afa6e1a {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-.AdditionalRewards_ffae6df {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.AdditionalRewards_title_2d8eb236 {
-    margin-bottom: 5rem;
-    color: rgba(var(--color-general-primary-rgb), 0.9);
-    font-size: 20rem;
-    font-weight: 600;
-    opacity: 0;
-}
-.mediaLarge .AdditionalRewards_title_2d8eb236 {
-    margin-bottom: 10rem;
-}
-.showAdditionalTitle .AdditionalRewards_title_2d8eb236 {
-    animation-name: AdditionalRewards_fadeIn_3afa6e1a;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-}
-.AdditionalRewards_list_81a45598 {
-    display: flex;
-}
-.AdditionalRewards_reward_ed90708c + .AdditionalRewards_reward_ed90708c {
-    margin-left: 24rem;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.Buttons_82277d53 {
-    display: flex;
-}
-
-.Buttons_button_2eb74e89 {
-    min-width: 195rem;
-}
-.Buttons_button_2eb74e89 + .Buttons_button_2eb74e89 {
-    margin-left: 25rem;
-}
-.mediaMedium .Buttons_button_2eb74e89 + .Buttons_button_2eb74e89 {
-    margin-left: 30rem;
-}
-
-.Buttons_text_981ee64f {
-    font-weight: 700;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.VehicleName_cce06ab3 {
-    display: flex;
-    align-items: center;
-    color: #fff;
-    position: relative;
-}
-.VehicleName_base__24x24_e43b4676,
-.VehicleName_base__24x24_metal_af74305d {
-    font-size: 14rem;
-}
-.VehicleName_base__48x48_e43b4676,
-.VehicleName_base__64x64_a079d4e3 {
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.3em;
-}
-.VehicleName_base__83x74_1dd2aae1 {
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.3em;
-}
-
-.VehicleName_vehicleTypeContainer_1421b13d {
-    position: relative;
-}
-.VehicleName_base__24x24_e43b4676 .VehicleName_vehicleTypeContainer_1421b13d,
-.VehicleName_base__24x24_metal_af74305d .VehicleName_vehicleTypeContainer_1421b13d {
-    width: 24rem;
-}
-.VehicleName_base__48x48_e43b4676 .VehicleName_vehicleTypeContainer_1421b13d {
-    width: 48rem;
-}
-.VehicleName_base__60x54_e43b4676 .VehicleName_vehicleTypeContainer_1421b13d {
-    width: 40rem;
-}
-.VehicleName_base__64x64_a079d4e3 .VehicleName_vehicleTypeContainer_1421b13d {
-    width: 64rem;
-}
-.VehicleName_base__83x74_1dd2aae1 .VehicleName_vehicleTypeContainer_1421b13d {
-    width: 55rem;
-}
-
-.VehicleName_vehicleType_5ec4137d {
-    background: no-repeat center/contain;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.VehicleName_base__24x24_e43b4676 .VehicleName_vehicleType_5ec4137d,
-.VehicleName_base__24x24_metal_af74305d .VehicleName_vehicleType_5ec4137d {
-    width: 24rem;
-    height: 24rem;
-}
-.VehicleName_base__48x48_e43b4676 .VehicleName_vehicleType_5ec4137d {
-    width: 48rem;
-    height: 48rem;
-}
-.VehicleName_base__60x54_e43b4676 .VehicleName_vehicleType_5ec4137d {
-    width: 60rem;
-    height: 54rem;
-}
-.VehicleName_base__64x64_a079d4e3 .VehicleName_vehicleType_5ec4137d {
-    width: 64rem;
-    height: 64rem;
-}
-.VehicleName_base__83x74_1dd2aae1 .VehicleName_vehicleType_5ec4137d {
-    width: 83rem;
-    height: 74rem;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-@keyframes Header_fadeIn_65f475ba {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes Header_up_65f475ba {
-    0% {
-        transform: translateY(20rem);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-@keyframes Header_upScale_65f475ba {
-    0% {
-        transform: scale(1.2) translateY(20rem);
-    }
-    100% {
-        transform: scale(1) translateY(0);
-    }
-}
-@keyframes Header_rotate_65f475ba {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-.Header_a3ec173b {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-.Header_subTitle_fcc90c2d {
-    margin-bottom: 2rem;
-    color: rgba(var(--color-general-primary-rgb), 0.45);
-    font-size: 28rem;
-    font-weight: 600;
-    opacity: 0;
-}
-.mediaLarge .Header_subTitle_fcc90c2d {
-    margin-bottom: 0;
-}
-.showSubtitle .Header_subTitle_fcc90c2d {
-    animation-name: Header_fadeIn_65f475ba, Header_up_65f475ba;
-    animation-duration: 0.4s, 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-}
-.Header_title_63b15d15 {
-    color: rgba(var(--color-general-primary-rgb), 0.9);
-    font-size: 40rem;
-    font-weight: 600;
-    opacity: 0;
-}
-.mediaLarge .Header_title_63b15d15 {
-    font-size: 56rem;
-}
-.showTitle .Header_title_63b15d15 {
-    animation-name: Header_fadeIn_65f475ba, Header_up_65f475ba;
-    animation-duration: 0.4s, 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-}
-.Header_honorsBack_6ebc07c1 {
-    width: 791rem;
-    height: 781rem;
-    position: absolute;
-}
-.Header_vehicleName_17df3d4c {
-    margin-top: 15rem;
-    color: rgba(var(--color-general-primary-rgb), 0.9);
-    font-size: 24rem;
-    font-weight: 600;
-    opacity: 0;
-}
-.mediaMedium .Header_vehicleName_17df3d4c {
-    margin-top: 20rem;
-    font-size: 32rem;
-}
-.mediaExtraLarge .Header_vehicleName_17df3d4c {
-    margin-top: 15rem;
-}
-.showTankName .Header_vehicleName_17df3d4c {
-    animation-name: Header_fadeIn_65f475ba, Header_up_65f475ba;
-    animation-duration: 0.4s, 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-@keyframes RegularMainReward_fadeIn_54e4f800 {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes RegularMainReward_up_54e4f800 {
-    0% {
-        transform: translateY(20rem);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-@keyframes RegularMainReward_upScale_54e4f800 {
-    0% {
-        transform: scale(1.2) translateY(20rem);
-    }
-    100% {
-        transform: scale(1) translateY(0);
-    }
-}
-@keyframes RegularMainReward_rotate_54e4f800 {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-.RegularMainReward_d1a37b82 {
-    position: relative;
-}
-.RegularMainReward_image_ca63a3d4 {
-    opacity: 0;
-}
-.showMainRewards .RegularMainReward_image_ca63a3d4 {
-    animation-name: RegularMainReward_fadeIn_54e4f800, RegularMainReward_upScale_54e4f800;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-}
-.RegularMainReward_label_a21d4175 {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.3em;
-    width: 100%;
-    color: rgba(var(--color-general-primary-rgb), 0.9);
-    text-align: center;
-    opacity: 0;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 100%);
-}
-.mediaLarge .RegularMainReward_label_a21d4175 {
-    font-size: 20rem;
-}
-.showMainRewardsLabels .RegularMainReward_label_a21d4175 {
-    animation-name: RegularMainReward_fadeIn_54e4f800;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-}
-.RegularMainReward_info_59fd3db8 {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.3em;
-    margin-top: 0;
-    opacity: 0;
-}
-.mediaLarge .RegularMainReward_info_59fd3db8 {
-    font-size: 20rem;
-}
-.RegularMainReward_base__attachment_54e4f800 .RegularMainReward_info_59fd3db8 {
-    visibility: hidden;
-}
-.showMainRewardsLabels .RegularMainReward_info_59fd3db8 {
-    animation-name: RegularMainReward_fadeIn_54e4f800;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-@keyframes VehiclePart_fadeIn_4fbae416 {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes VehiclePart_up_4fbae416 {
-    0% {
-        transform: translateY(20rem);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-@keyframes VehiclePart_upScale_4fbae416 {
-    0% {
-        transform: scale(1.2) translateY(20rem);
-    }
-    100% {
-        transform: scale(1) translateY(0);
-    }
-}
-@keyframes VehiclePart_rotate_4fbae416 {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-.VehiclePart_15b78928 {
-    position: relative;
-}
-.VehiclePart_image_f33361cd {
-    opacity: 0;
-}
-.showMainRewards .VehiclePart_image_f33361cd {
-    animation-name: VehiclePart_fadeIn_4fbae416, VehiclePart_upScale_4fbae416;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-}
-.VehiclePart_label_5cfdac0 {
-    margin-top: 5rem;
-    color: rgba(var(--color-general-primary-rgb), 0.9);
-    font-size: 22rem;
-    font-weight: 600;
-    text-align: center;
-    opacity: 0;
-}
-.showMainRewardsLabels .VehiclePart_label_5cfdac0 {
-    animation-name: VehiclePart_fadeIn_4fbae416;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-@keyframes MainRewards_fadeIn_56da68ed {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes MainRewards_up_56da68ed {
-    0% {
-        transform: translateY(20rem);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-@keyframes MainRewards_upScale_56da68ed {
-    0% {
-        transform: scale(1.2) translateY(20rem);
-    }
-    100% {
-        transform: scale(1) translateY(0);
-    }
-}
-@keyframes MainRewards_rotate_56da68ed {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-.MainRewards_9aca825a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: relative;
-}
-.MainRewards_ribbonWrapper_30eeaba3 {
-    position: absolute;
-    transform: translateY(74rem);
-}
-.mediaMedium .MainRewards_ribbonWrapper_30eeaba3 {
-    transform: translateY(96rem);
-}
-.mediaLarge .MainRewards_ribbonWrapper_30eeaba3 {
-    transform: translateY(100rem);
-}
-.MainRewards_ribbon_7f79f96d {
-    opacity: 0;
-}
-.showRibbon .MainRewards_ribbon_7f79f96d {
-    animation-name: MainRewards_fadeIn_56da68ed, MainRewards_up_56da68ed;
-    animation-duration: 0.4s, 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-}
-.MainRewards_list_597b951b {
-    display: flex;
-    position: relative;
-}
-.MainRewards_rays_466e2f66 {
-    width: 1300rem;
-    height: 1300rem;
-    margin: -830rem 0 0 -650rem;
-    background: url(R.images.gui.maps.icons.personal_missions_30.common.lines) no-repeat center/contain;
-    opacity: 0;
-    mix-blend-mode: additive;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transition: opacity 0.8s ease-out;
-    animation-name: MainRewards_rotate_56da68ed;
-    animation-duration: 120s;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    pointer-events: none;
-}
-.showMainRewards .MainRewards_rays_466e2f66 {
-    opacity: 0.35;
-}
-.MainRewards_base__operationWithHonors_56da68ed .MainRewards_rays_466e2f66 {
-    margin-top: -790rem;
-}
-.MainRewards_base__campaignWithHonors_56da68ed .MainRewards_rays_466e2f66 {
-    margin-top: -770rem;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.VehicleVideo_210aecbb {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.VehicleVideo_fading_d689de26 {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.VehicleVideo_video_6832c75d {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-@keyframes Rewards_fadeIn_405577a5 {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes Rewards_up_405577a5 {
-    0% {
-        transform: translateY(20rem);
-    }
-    100% {
-        transform: translateY(0);
-    }
-}
-@keyframes Rewards_upScale_405577a5 {
-    0% {
-        transform: scale(1.2) translateY(20rem);
-    }
-    100% {
-        transform: scale(1) translateY(0);
-    }
-}
-@keyframes Rewards_rotate_405577a5 {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-.Rewards_b4f00ae2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: 60rem 0 70rem;
-    overflow: hidden;
-    position: relative;
-}
-.mediaMedium .Rewards_b4f00ae2 {
-    padding: 80rem 0 90rem;
-}
-.mediaLarge .Rewards_b4f00ae2 {
-    padding: 90rem 0 100rem;
-}
-.Rewards_base__campaignWithHonors_f96bb2ad {
-    padding: 60rem 0;
-}
-.mediaMedium .Rewards_base__campaignWithHonors_f96bb2ad {
-    padding: 60rem 0 70rem;
-}
-.mediaMedium .Rewards_base__campaignWithHonors_f96bb2ad {
-    padding: 90rem 0 70rem;
-}
-.mediaExtraLarge .Rewards_base__campaignWithHonors_f96bb2ad {
-    padding: 90rem 0 100rem;
-}
-.Rewards_base__operation_732634ed {
-    padding: 50rem 0 60rem;
-}
-.mediaMedium .Rewards_base__operation_732634ed {
-    padding: 65rem 0 80rem;
-}
-.mediaExtraLarge .Rewards_base__operation_732634ed {
-    padding: 80rem 0 100rem;
-}
-.Rewards_background_648064f5 {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-}
-.showBack .Rewards_background_648064f5 {
-    animation-name: Rewards_fadeIn_405577a5;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-}
-.Rewards_closeButtonWrapper_37b0a4f9 {
-    opacity: 0;
-    position: absolute;
-    top: 30rem;
-    right: 30rem;
-    pointer-events: none;
-}
-.showBack .Rewards_closeButtonWrapper_37b0a4f9 {
-    animation-name: Rewards_fadeIn_405577a5;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    pointer-events: auto;
-}
-.Rewards_base__operation_732634ed.showTitle .Rewards_closeButtonWrapper_37b0a4f9 {
-    animation-name: Rewards_fadeIn_405577a5;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-    pointer-events: auto;
-}
-.Rewards_closeButton_550ea6e3 {
-    width: 48rem;
-    height: 48rem;
-    background: url(R.images.gui.maps.icons.personal_missions_30.rewards.close) no-repeat center/contain;
-    opacity: 0.6;
-    transition: opacity 0.3s;
-    cursor: pointer;
-}
-.Rewards_closeButton_550ea6e3:hover {
-    opacity: 1;
-}
-.Rewards_rewardsContainer_fe9e462d {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: 1;
-    width: 100%;
-    position: relative;
-}
-.Rewards_base__campaignWithHonors_f96bb2ad .Rewards_main_e6e4b036 {
-    transform: translateY(10rem);
-}
-.mediaMedium .Rewards_base__campaignWithHonors_f96bb2ad .Rewards_main_e6e4b036 {
-    transform: translateY(30rem);
-}
-.mediaLarge .Rewards_base__campaignWithHonors_f96bb2ad .Rewards_main_e6e4b036 {
-    transform: translateY(20rem);
-}
-.mediaExtraLarge .Rewards_base__campaignWithHonors_f96bb2ad .Rewards_main_e6e4b036 {
-    transform: translateY(60rem);
-}
-.Rewards_base__vehiclePart_405577a5 .Rewards_main_e6e4b036 {
-    transform: translateY(-20rem);
-}
-.mediaMedium .Rewards_base__vehiclePart_405577a5 .Rewards_main_e6e4b036 {
-    transform: translateY(-30rem);
-}
-.mediaLarge .Rewards_base__vehiclePart_405577a5 .Rewards_main_e6e4b036 {
-    transform: translateY(-20rem);
-}
-.mediaExtraLarge .Rewards_base__vehiclePart_405577a5 .Rewards_main_e6e4b036 {
-    transform: translateY(10rem);
-}
-.Rewards_base__operationWithHonors_405577a5 .Rewards_main_e6e4b036 {
-    transform: translateY(20rem);
-}
-.mediaMedium .Rewards_base__operationWithHonors_405577a5 .Rewards_main_e6e4b036 {
-    transform: translateY(-10rem);
-}
-.mediaLarge .Rewards_base__operationWithHonors_405577a5 .Rewards_main_e6e4b036 {
-    transform: translateY(30rem);
-}
-.mediaExtraLarge .Rewards_base__operationWithHonors_405577a5 .Rewards_main_e6e4b036 {
-    transform: translateY(60rem);
-}
-.Rewards_additional_2ae9fbc8 {
-    margin-bottom: 15rem;
-    position: relative;
-}
-.mediaExtraLarge .Rewards_additional_2ae9fbc8 {
-    margin-bottom: 40rem;
-}
-.Rewards_nextOperation_5eb1386a {
-    margin-bottom: 15rem;
-    color: rgba(var(--color-general-primary-rgb), 0.9);
-    font-size: 24rem;
-    font-weight: 600;
-    opacity: 0;
-    position: relative;
-}
-.mediaExtraLarge .Rewards_nextOperation_5eb1386a {
-    margin-bottom: 50rem;
-}
-.showNextOperation .Rewards_nextOperation_5eb1386a {
-    animation-name: Rewards_fadeIn_405577a5;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-}
-.Rewards_divider_9db12b94 {
-    width: 480rem;
-    height: 1rem;
-    background-color: rgba(255, 255, 255, 0.25);
-    opacity: 0;
-}
-.mediaMedium .Rewards_divider_9db12b94 {
-    width: 670rem;
-}
-.showButtons .Rewards_divider_9db12b94 {
-    animation-name: Rewards_fadeIn_405577a5;
-    animation-duration: 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-}
-.Rewards_buttons_a3bb560b {
-    margin-top: 25rem;
-    opacity: 0;
-    pointer-events: none;
-}
-.mediaExtraLarge .Rewards_buttons_a3bb560b {
-    margin-top: 50rem;
-}
-.showButtons .Rewards_buttons_a3bb560b {
-    pointer-events: auto;
-    animation-name: Rewards_fadeIn_405577a5, Rewards_up_405577a5;
-    animation-duration: 0.4s, 0.4s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
 .ZoomOut_718336b5 {
     display: flex;
     align-items: center;
@@ -4114,6 +3378,37 @@ html[lang='de'] .mediaMedium .CategoryInfo_descriptionBlock_18a18499 {
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
+.VehiclesProgress_d2b4bea6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.VehiclesProgress_container_3dc9329c {
+    width: 39rem;
+    height: 14rem;
+    position: relative;
+}
+.VehiclesProgress_container_3dc9329c + .VehiclesProgress_container_3dc9329c {
+    margin-left: 2rem;
+}
+
+.VehiclesProgress_done_db1d3990,
+.VehiclesProgress_vehicle_3344a8a1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.VehiclesProgress_done_db1d3990 {
+    opacity: 0;
+}
+.VehiclesProgress_done__visible_b31330f7 {
+    opacity: 1;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
 .Progress_431da46b {
     display: flex;
     flex-direction: column;
@@ -4140,10 +3435,7 @@ html[lang='de'] .mediaMedium .CategoryInfo_descriptionBlock_18a18499 {
     margin: 0 3rem;
 }
 
-.Progress_c2cbad16 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Progress_bab84485 {
     margin-top: 4rem;
 }
 
@@ -6356,6 +5648,765 @@ html[lang='de'] .mediaMedium .CategoryInfo_descriptionBlock_18a18499 {
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
+@keyframes AdditionalRewards_fadeIn_3afa6e1a {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes AdditionalRewards_up_3afa6e1a {
+    0% {
+        transform: translateY(20rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes AdditionalRewards_upScale_3afa6e1a {
+    0% {
+        transform: scale(1.2) translateY(20rem);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+@keyframes AdditionalRewards_rotate_3afa6e1a {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.AdditionalRewards_ffae6df {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.AdditionalRewards_title_2d8eb236 {
+    margin-bottom: 5rem;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+    font-size: 20rem;
+    font-weight: 600;
+    opacity: 0;
+}
+.mediaLarge .AdditionalRewards_title_2d8eb236 {
+    margin-bottom: 10rem;
+}
+.showAdditionalTitle .AdditionalRewards_title_2d8eb236 {
+    animation-name: AdditionalRewards_fadeIn_3afa6e1a;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+}
+.AdditionalRewards_list_81a45598 {
+    display: flex;
+}
+.AdditionalRewards_reward_ed90708c + .AdditionalRewards_reward_ed90708c {
+    margin-left: 24rem;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Buttons_82277d53 {
+    display: flex;
+}
+
+.Buttons_button_2eb74e89 {
+    min-width: 195rem;
+}
+.Buttons_button_2eb74e89 + .Buttons_button_2eb74e89 {
+    margin-left: 25rem;
+}
+.mediaMedium .Buttons_button_2eb74e89 + .Buttons_button_2eb74e89 {
+    margin-left: 30rem;
+}
+
+.Buttons_text_981ee64f {
+    font-weight: 700;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.VehicleName_cce06ab3 {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    position: relative;
+}
+.VehicleName_base__24x24_e43b4676,
+.VehicleName_base__24x24_metal_af74305d {
+    font-size: 14rem;
+}
+.VehicleName_base__48x48_e43b4676,
+.VehicleName_base__64x64_a079d4e3 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.3em;
+}
+.VehicleName_base__83x74_1dd2aae1 {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.3em;
+}
+
+.VehicleName_vehicleTypeContainer_1421b13d {
+    position: relative;
+}
+.VehicleName_base__24x24_e43b4676 .VehicleName_vehicleTypeContainer_1421b13d,
+.VehicleName_base__24x24_metal_af74305d .VehicleName_vehicleTypeContainer_1421b13d {
+    width: 24rem;
+}
+.VehicleName_base__48x48_e43b4676 .VehicleName_vehicleTypeContainer_1421b13d {
+    width: 48rem;
+}
+.VehicleName_base__60x54_e43b4676 .VehicleName_vehicleTypeContainer_1421b13d {
+    width: 40rem;
+}
+.VehicleName_base__64x64_a079d4e3 .VehicleName_vehicleTypeContainer_1421b13d {
+    width: 64rem;
+}
+.VehicleName_base__83x74_1dd2aae1 .VehicleName_vehicleTypeContainer_1421b13d {
+    width: 55rem;
+}
+
+.VehicleName_vehicleType_5ec4137d {
+    background: no-repeat center/contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.VehicleName_base__24x24_e43b4676 .VehicleName_vehicleType_5ec4137d,
+.VehicleName_base__24x24_metal_af74305d .VehicleName_vehicleType_5ec4137d {
+    width: 24rem;
+    height: 24rem;
+}
+.VehicleName_base__48x48_e43b4676 .VehicleName_vehicleType_5ec4137d {
+    width: 48rem;
+    height: 48rem;
+}
+.VehicleName_base__60x54_e43b4676 .VehicleName_vehicleType_5ec4137d {
+    width: 60rem;
+    height: 54rem;
+}
+.VehicleName_base__64x64_a079d4e3 .VehicleName_vehicleType_5ec4137d {
+    width: 64rem;
+    height: 64rem;
+}
+.VehicleName_base__83x74_1dd2aae1 .VehicleName_vehicleType_5ec4137d {
+    width: 83rem;
+    height: 74rem;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+@keyframes Header_fadeIn_65f475ba {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes Header_up_65f475ba {
+    0% {
+        transform: translateY(20rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes Header_upScale_65f475ba {
+    0% {
+        transform: scale(1.2) translateY(20rem);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+@keyframes Header_rotate_65f475ba {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.Header_a3ec173b {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.Header_subTitle_fcc90c2d {
+    margin-bottom: 2rem;
+    color: rgba(var(--color-general-primary-rgb), 0.45);
+    font-size: 28rem;
+    font-weight: 600;
+    opacity: 0;
+}
+.mediaLarge .Header_subTitle_fcc90c2d {
+    margin-bottom: 0;
+}
+.showSubtitle .Header_subTitle_fcc90c2d {
+    animation-name: Header_fadeIn_65f475ba, Header_up_65f475ba;
+    animation-duration: 0.4s, 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+}
+.Header_title_63b15d15 {
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+    font-size: 40rem;
+    font-weight: 600;
+    opacity: 0;
+}
+.mediaLarge .Header_title_63b15d15 {
+    font-size: 56rem;
+}
+.showTitle .Header_title_63b15d15 {
+    animation-name: Header_fadeIn_65f475ba, Header_up_65f475ba;
+    animation-duration: 0.4s, 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+}
+.Header_honorsBack_6ebc07c1 {
+    width: 791rem;
+    height: 781rem;
+    position: absolute;
+}
+.Header_vehicleName_17df3d4c {
+    margin-top: 15rem;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+    font-size: 24rem;
+    font-weight: 600;
+    opacity: 0;
+}
+.mediaMedium .Header_vehicleName_17df3d4c {
+    margin-top: 20rem;
+    font-size: 32rem;
+}
+.mediaExtraLarge .Header_vehicleName_17df3d4c {
+    margin-top: 15rem;
+}
+.showTankName .Header_vehicleName_17df3d4c {
+    animation-name: Header_fadeIn_65f475ba, Header_up_65f475ba;
+    animation-duration: 0.4s, 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+@keyframes RegularMainReward_fadeIn_54e4f800 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes RegularMainReward_up_54e4f800 {
+    0% {
+        transform: translateY(20rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes RegularMainReward_upScale_54e4f800 {
+    0% {
+        transform: scale(1.2) translateY(20rem);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+@keyframes RegularMainReward_rotate_54e4f800 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.RegularMainReward_d1a37b82 {
+    position: relative;
+}
+.RegularMainReward_image_ca63a3d4 {
+    opacity: 0;
+}
+.showMainRewards .RegularMainReward_image_ca63a3d4 {
+    animation-name: RegularMainReward_fadeIn_54e4f800, RegularMainReward_upScale_54e4f800;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+}
+.RegularMainReward_label_a21d4175 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    width: 100%;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+    text-align: center;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+}
+.mediaLarge .RegularMainReward_label_a21d4175 {
+    font-size: 20rem;
+}
+.showMainRewardsLabels .RegularMainReward_label_a21d4175 {
+    animation-name: RegularMainReward_fadeIn_54e4f800;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+}
+.RegularMainReward_info_59fd3db8 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-top: 0;
+    opacity: 0;
+}
+.mediaLarge .RegularMainReward_info_59fd3db8 {
+    font-size: 20rem;
+}
+.RegularMainReward_base__attachment_54e4f800 .RegularMainReward_info_59fd3db8 {
+    visibility: hidden;
+}
+.showMainRewardsLabels .RegularMainReward_info_59fd3db8 {
+    animation-name: RegularMainReward_fadeIn_54e4f800;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+@keyframes VehiclePart_fadeIn_4fbae416 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes VehiclePart_up_4fbae416 {
+    0% {
+        transform: translateY(20rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes VehiclePart_upScale_4fbae416 {
+    0% {
+        transform: scale(1.2) translateY(20rem);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+@keyframes VehiclePart_rotate_4fbae416 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.VehiclePart_15b78928 {
+    position: relative;
+}
+.VehiclePart_image_f33361cd {
+    opacity: 0;
+}
+.showMainRewards .VehiclePart_image_f33361cd {
+    animation-name: VehiclePart_fadeIn_4fbae416, VehiclePart_upScale_4fbae416;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+}
+.VehiclePart_label_5cfdac0 {
+    margin-top: 5rem;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+    font-size: 22rem;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0;
+}
+.showMainRewardsLabels .VehiclePart_label_5cfdac0 {
+    animation-name: VehiclePart_fadeIn_4fbae416;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+@keyframes MainRewards_fadeIn_56da68ed {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes MainRewards_up_56da68ed {
+    0% {
+        transform: translateY(20rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes MainRewards_upScale_56da68ed {
+    0% {
+        transform: scale(1.2) translateY(20rem);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+@keyframes MainRewards_rotate_56da68ed {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.MainRewards_9aca825a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+.MainRewards_ribbonWrapper_30eeaba3 {
+    position: absolute;
+    transform: translateY(74rem);
+}
+.mediaMedium .MainRewards_ribbonWrapper_30eeaba3 {
+    transform: translateY(96rem);
+}
+.mediaLarge .MainRewards_ribbonWrapper_30eeaba3 {
+    transform: translateY(100rem);
+}
+.MainRewards_ribbon_7f79f96d {
+    opacity: 0;
+}
+.showRibbon .MainRewards_ribbon_7f79f96d {
+    animation-name: MainRewards_fadeIn_56da68ed, MainRewards_up_56da68ed;
+    animation-duration: 0.4s, 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+}
+.MainRewards_list_597b951b {
+    display: flex;
+    position: relative;
+}
+.MainRewards_rays_466e2f66 {
+    width: 1300rem;
+    height: 1300rem;
+    margin: -830rem 0 0 -650rem;
+    background: url(R.images.gui.maps.icons.personal_missions_30.common.lines) no-repeat center/contain;
+    opacity: 0;
+    mix-blend-mode: additive;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transition: opacity 0.8s ease-out;
+    animation-name: MainRewards_rotate_56da68ed;
+    animation-duration: 120s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    pointer-events: none;
+}
+.showMainRewards .MainRewards_rays_466e2f66 {
+    opacity: 0.35;
+}
+.MainRewards_base__operationWithHonors_56da68ed .MainRewards_rays_466e2f66 {
+    margin-top: -790rem;
+}
+.MainRewards_base__campaignWithHonors_56da68ed .MainRewards_rays_466e2f66 {
+    margin-top: -770rem;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.VehicleVideo_210aecbb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.VehicleVideo_fading_d689de26 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.VehicleVideo_video_6832c75d {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+@keyframes Rewards_fadeIn_405577a5 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes Rewards_up_405577a5 {
+    0% {
+        transform: translateY(20rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes Rewards_upScale_405577a5 {
+    0% {
+        transform: scale(1.2) translateY(20rem);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+@keyframes Rewards_rotate_405577a5 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.Rewards_b4f00ae2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 60rem 0 70rem;
+    overflow: hidden;
+    position: relative;
+}
+.mediaMedium .Rewards_b4f00ae2 {
+    padding: 80rem 0 90rem;
+}
+.mediaLarge .Rewards_b4f00ae2 {
+    padding: 90rem 0 100rem;
+}
+.Rewards_base__campaignWithHonors_f96bb2ad {
+    padding: 60rem 0;
+}
+.mediaMedium .Rewards_base__campaignWithHonors_f96bb2ad {
+    padding: 60rem 0 70rem;
+}
+.mediaMedium .Rewards_base__campaignWithHonors_f96bb2ad {
+    padding: 90rem 0 70rem;
+}
+.mediaExtraLarge .Rewards_base__campaignWithHonors_f96bb2ad {
+    padding: 90rem 0 100rem;
+}
+.Rewards_base__operation_732634ed {
+    padding: 50rem 0 60rem;
+}
+.mediaMedium .Rewards_base__operation_732634ed {
+    padding: 65rem 0 80rem;
+}
+.mediaExtraLarge .Rewards_base__operation_732634ed {
+    padding: 80rem 0 100rem;
+}
+.Rewards_background_648064f5 {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+.showBack .Rewards_background_648064f5 {
+    animation-name: Rewards_fadeIn_405577a5;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+}
+.Rewards_closeButtonWrapper_37b0a4f9 {
+    opacity: 0;
+    position: absolute;
+    top: 30rem;
+    right: 30rem;
+    pointer-events: none;
+}
+.showBack .Rewards_closeButtonWrapper_37b0a4f9 {
+    animation-name: Rewards_fadeIn_405577a5;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    pointer-events: auto;
+}
+.Rewards_base__operation_732634ed.showTitle .Rewards_closeButtonWrapper_37b0a4f9 {
+    animation-name: Rewards_fadeIn_405577a5;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    pointer-events: auto;
+}
+.Rewards_closeButton_550ea6e3 {
+    width: 48rem;
+    height: 48rem;
+    background: url(R.images.gui.maps.icons.personal_missions_30.rewards.close) no-repeat center/contain;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    cursor: pointer;
+}
+.Rewards_closeButton_550ea6e3:hover {
+    opacity: 1;
+}
+.Rewards_rewardsContainer_fe9e462d {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    position: relative;
+}
+.Rewards_base__campaignWithHonors_f96bb2ad .Rewards_main_e6e4b036 {
+    transform: translateY(10rem);
+}
+.mediaMedium .Rewards_base__campaignWithHonors_f96bb2ad .Rewards_main_e6e4b036 {
+    transform: translateY(30rem);
+}
+.mediaLarge .Rewards_base__campaignWithHonors_f96bb2ad .Rewards_main_e6e4b036 {
+    transform: translateY(20rem);
+}
+.mediaExtraLarge .Rewards_base__campaignWithHonors_f96bb2ad .Rewards_main_e6e4b036 {
+    transform: translateY(60rem);
+}
+.Rewards_base__vehiclePart_405577a5 .Rewards_main_e6e4b036 {
+    transform: translateY(-20rem);
+}
+.mediaMedium .Rewards_base__vehiclePart_405577a5 .Rewards_main_e6e4b036 {
+    transform: translateY(-30rem);
+}
+.mediaLarge .Rewards_base__vehiclePart_405577a5 .Rewards_main_e6e4b036 {
+    transform: translateY(-20rem);
+}
+.mediaExtraLarge .Rewards_base__vehiclePart_405577a5 .Rewards_main_e6e4b036 {
+    transform: translateY(10rem);
+}
+.Rewards_base__operationWithHonors_405577a5 .Rewards_main_e6e4b036 {
+    transform: translateY(20rem);
+}
+.mediaMedium .Rewards_base__operationWithHonors_405577a5 .Rewards_main_e6e4b036 {
+    transform: translateY(-10rem);
+}
+.mediaLarge .Rewards_base__operationWithHonors_405577a5 .Rewards_main_e6e4b036 {
+    transform: translateY(30rem);
+}
+.mediaExtraLarge .Rewards_base__operationWithHonors_405577a5 .Rewards_main_e6e4b036 {
+    transform: translateY(60rem);
+}
+.Rewards_additional_2ae9fbc8 {
+    margin-bottom: 15rem;
+    position: relative;
+}
+.mediaExtraLarge .Rewards_additional_2ae9fbc8 {
+    margin-bottom: 40rem;
+}
+.Rewards_nextOperation_5eb1386a {
+    margin-bottom: 15rem;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+    font-size: 24rem;
+    font-weight: 600;
+    opacity: 0;
+    position: relative;
+}
+.mediaExtraLarge .Rewards_nextOperation_5eb1386a {
+    margin-bottom: 50rem;
+}
+.showNextOperation .Rewards_nextOperation_5eb1386a {
+    animation-name: Rewards_fadeIn_405577a5;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+}
+.Rewards_divider_9db12b94 {
+    width: 480rem;
+    height: 1rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    opacity: 0;
+}
+.mediaMedium .Rewards_divider_9db12b94 {
+    width: 670rem;
+}
+.showButtons .Rewards_divider_9db12b94 {
+    animation-name: Rewards_fadeIn_405577a5;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+}
+.Rewards_buttons_a3bb560b {
+    margin-top: 25rem;
+    opacity: 0;
+    pointer-events: none;
+}
+.mediaExtraLarge .Rewards_buttons_a3bb560b {
+    margin-top: 50rem;
+}
+.showButtons .Rewards_buttons_a3bb560b {
+    pointer-events: auto;
+    animation-name: Rewards_fadeIn_405577a5, Rewards_up_405577a5;
+    animation-duration: 0.4s, 0.4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
 .GradientDecorator_dbb5784d {
     display: flex;
     flex-direction: column;
@@ -6393,6 +6444,136 @@ html[lang='de'] .mediaMedium .CategoryInfo_descriptionBlock_18a18499 {
 }
 .GradientDecorator_divider__bottom_7df700df {
     bottom: 0rem;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Header_a57509ea {
+    display: flex;
+    justify-content: flex-start;
+    padding: 19rem 18rem 11rem;
+}
+.Header_content_84bb0203 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12rem;
+    color: var(--color-general-primary);
+}
+.Header_category_73a14ab3 {
+    transform: translateY(5rem);
+}
+.Header_title_e89d676b {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    font-weight: 600;
+    line-height: 28rem;
+    opacity: 0.9;
+    transform: translateY(2rem);
+}
+.Header_description_2cc816f6 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    width: 260rem;
+    margin-top: 8rem;
+    color: var(--color-general-tertiary);
+    line-height: 22rem;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.ColumnItem_f772e009 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    color: var(--color-general-secondary);
+}
+.ColumnItem_base__roles_fabefe49 {
+    color: var(--color-currency-gold);
+}
+
+.ColumnItem_icon_876d9b1b {
+    width: 24rem;
+    height: 24rem;
+    background: no-repeat center/cover;
+}
+
+.ColumnItem_text_f537f721 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-left: 5rem;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.InnerBlock_4e0a1101 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+.InnerBlock_description_e25909eb {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-top: 6rem;
+    padding: 0 12rem 6rem;
+    color: var(--color-general-tertiary);
+    line-height: 22rem;
+}
+.InnerBlock_base__support_8a259d83 .InnerBlock_description_e25909eb {
+    padding: 0 12rem;
+}
+.InnerBlock_content_dd2985b {
+    display: flex;
+    justify-content: space-around;
+    padding: 8rem 8rem 9rem;
+}
+.InnerBlock_content__noRoles_b0516207 {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.InnerBlock_base__support_8a259d83 .InnerBlock_content_dd2985b {
+    margin: 12rem 0 9rem;
+}
+.InnerBlock_subtitle_c3819b5a {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    margin: 3rem 0 6rem 2rem;
+    color: var(--color-general-primary);
+    font-weight: 600;
+    opacity: 0.9;
+}
+.InnerBlock_column_9f423fea {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 120rem;
+}
+.InnerBlock_verticalLine_af25fb85 {
+    width: 4rem;
+    height: 100rem;
+    margin-top: 10rem;
+    background: url(R.images.gui.maps.icons.personal_missions_30.tooltips.missions_category.vertical_line) no-repeat
+        center/contain;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.MissionsCategoryTooltip_c7151f3b {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 402rem;
+}
+.MissionsCategoryTooltip_footer_e1c7b92d {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    padding: 10rem 19rem 16rem;
+    color: var(--color-general-tertiary);
+    line-height: 22rem;
+    opacity: 0.6;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
@@ -6569,136 +6750,6 @@ html[lang='de'] .mediaMedium .CategoryInfo_descriptionBlock_18a18499 {
 }
 .App_text__bold_f88f7b4e {
     font-weight: 700;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.Header_a57509ea {
-    display: flex;
-    justify-content: flex-start;
-    padding: 19rem 18rem 11rem;
-}
-.Header_content_84bb0203 {
-    display: flex;
-    flex-direction: column;
-    margin-left: 12rem;
-    color: var(--color-general-primary);
-}
-.Header_category_73a14ab3 {
-    transform: translateY(5rem);
-}
-.Header_title_e89d676b {
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.3em;
-    font-weight: 600;
-    line-height: 28rem;
-    opacity: 0.9;
-    transform: translateY(2rem);
-}
-.Header_description_2cc816f6 {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.3em;
-    width: 260rem;
-    margin-top: 8rem;
-    color: var(--color-general-tertiary);
-    line-height: 22rem;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.ColumnItem_f772e009 {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2rem;
-    color: var(--color-general-secondary);
-}
-.ColumnItem_base__roles_fabefe49 {
-    color: var(--color-currency-gold);
-}
-
-.ColumnItem_icon_876d9b1b {
-    width: 24rem;
-    height: 24rem;
-    background: no-repeat center/cover;
-}
-
-.ColumnItem_text_f537f721 {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.3em;
-    margin-left: 5rem;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.InnerBlock_4e0a1101 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
-}
-.InnerBlock_description_e25909eb {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.3em;
-    margin-top: 6rem;
-    padding: 0 12rem 6rem;
-    color: var(--color-general-tertiary);
-    line-height: 22rem;
-}
-.InnerBlock_base__support_8a259d83 .InnerBlock_description_e25909eb {
-    padding: 0 12rem;
-}
-.InnerBlock_content_dd2985b {
-    display: flex;
-    justify-content: space-around;
-    padding: 8rem 8rem 9rem;
-}
-.InnerBlock_content__noRoles_b0516207 {
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-.InnerBlock_base__support_8a259d83 .InnerBlock_content_dd2985b {
-    margin: 12rem 0 9rem;
-}
-.InnerBlock_subtitle_c3819b5a {
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.3em;
-    margin: 3rem 0 6rem 2rem;
-    color: var(--color-general-primary);
-    font-weight: 600;
-    opacity: 0.9;
-}
-.InnerBlock_column_9f423fea {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-width: 120rem;
-}
-.InnerBlock_verticalLine_af25fb85 {
-    width: 4rem;
-    height: 100rem;
-    margin-top: 10rem;
-    background: url(R.images.gui.maps.icons.personal_missions_30.tooltips.missions_category.vertical_line) no-repeat
-        center/contain;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.MissionsCategoryTooltip_c7151f3b {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 402rem;
-}
-.MissionsCategoryTooltip_footer_e1c7b92d {
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.3em;
-    padding: 10rem 19rem 16rem;
-    color: var(--color-general-tertiary);
-    line-height: 22rem;
-    opacity: 0.6;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */

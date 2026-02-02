@@ -15,30 +15,30 @@ import {
     C as h,
     B as N,
     e as y,
-    i as v,
-    c as C,
+    i as C,
+    c as v,
     a5 as j,
-    F as w,
-    Y as I,
+    F as I,
+    Y as w,
     I as T,
     $ as S,
     a6 as k,
     z as B,
 } from './lib.js';
-import { H as R, u as E, R as P } from './use_cover_size.js';
+import { H as E, u as R, R as P } from './use_cover_size.js';
 import { S as G, g as L, f as $ } from './utils.js';
 import { N as D } from './title2.js';
 import { l as M } from './getRewardImage.js';
 import { R as z, D as H, a as A, g as O } from './resources.js';
 import { S as q } from './sounds.js';
 import { S as V } from './scroll_with_lips.js';
-import { T as X, i as U, b as F, g as K, a as W, c as Y } from './statistics.js';
-const Z = 'StatisticsButton_844af96b',
-    J = 'StatisticsButton_text_6dff36a3',
-    Q = 'StatisticsButton_icon_a1774dca';
+import { T as X, i as U, b as F, g as K, a as Y, c as Z } from './statistics.js';
+const J = 'StatisticsButton_844af96b',
+    Q = 'StatisticsButton_text_6dff36a3',
+    W = 'StatisticsButton_icon_a1774dca';
 function ee({ icon: a, label: t, onClick: o, className: n = '' }) {
     return e.jsxs('div', {
-        className: s(Z, n),
+        className: s(J, n),
         onMouseEnter: () => {
             r.highlight();
         },
@@ -46,8 +46,8 @@ function ee({ icon: a, label: t, onClick: o, className: n = '' }) {
             (r.yes1(), o());
         },
         children: [
-            e.jsx('div', { className: Q, style: { backgroundImage: `url(${a})` } }),
-            e.jsx('div', { className: J, children: t }),
+            e.jsx('div', { className: W, style: { backgroundImage: `url(${a})` } }),
+            e.jsx('div', { className: Q, children: t }),
         ],
     });
 }
@@ -70,7 +70,7 @@ function re({ children: a, className: t }) {
         return e.jsx('div', { className: s(oe, t), children: a });
     }),
     (re.Heading = function ({ text: a, className: t }) {
-        return e.jsx(R, { title: a, className: s(te, t) });
+        return e.jsx(E, { title: a, className: s(te, t) });
     }),
     (re.Switcher = function ({ children: a, className: t }) {
         return e.jsx('div', { className: s(ne, t), children: a });
@@ -112,15 +112,15 @@ const ye = {
     counter__hovered: 'Tab_counter__hovered_e6f6fe65',
     fadeIn: 'Tab_fadeIn_0',
 };
-const ve = { base: 'Tabs_6382a8ae' };
-function Ce({ className: a = '', children: o }) {
+const Ce = { base: 'Tabs_6382a8ae' };
+function ve({ className: a = '', children: o }) {
     const [n, c] = t.useState('');
     return e.jsx(de, {
         guaranteedState: { activeId: n, setActiveId: c },
-        children: e.jsx('div', { className: s(ve.base, a), children: o }),
+        children: e.jsx('div', { className: s(Ce.base, a), children: o }),
     });
 }
-((Ce.Tab = function ({ tab: a, onClick: o, state: n, className: c = '' }) {
+((ve.Tab = function ({ tab: a, onClick: o, state: n, className: c = '' }) {
     const [i, l] = t.useState(!1);
     return e.jsx('div', {
         className: s(ye.base, ye[`base__${n}`], c),
@@ -150,7 +150,7 @@ function Ce({ className: a = '', children: o }) {
         }),
     });
 }),
-    (Ce.Guaranteed = function ({ id: a, icons: o, texts: n, soundHover: c, boxesCountToGuaranteed: i, className: u }) {
+    (ve.Guaranteed = function ({ id: a, icons: o, texts: n, soundHover: c, boxesCountToGuaranteed: i, className: u }) {
         const [_, m] = t.useState(!0),
             { guaranteedState: b } = le(),
             g = b.activeId === a,
@@ -197,7 +197,7 @@ function Ce({ className: a = '', children: o }) {
             })
         );
     }),
-    (Ce.Item = function ({ id: a, children: t, className: o }) {
+    (ve.Item = function ({ id: a, children: t, className: o }) {
         const { guaranteedState: n } = le();
         return e.jsx('div', {
             onMouseOver: () => n.setActiveId(a),
@@ -206,7 +206,7 @@ function Ce({ className: a = '', children: o }) {
             children: t,
         });
     }),
-    (Ce.Tooltip = function ({ children: s, boxCategory: a, eventName: t, className: o }) {
+    (ve.Tooltip = function ({ children: s, boxCategory: a, eventName: t, className: o }) {
         const n = u.resolve('views'),
             c = _({
                 contentId: n.read((e) => e.mono.lootbox.tooltips.box_tooltip('resId')),
@@ -215,8 +215,8 @@ function Ce({ className: a = '', children: o }) {
         return e.jsx('div', { ...c, className: o, children: s });
     }));
 const je = 'BoxSwitch_30f3e1e',
-    we = 'BoxSwitch_tab_66b3d775',
-    Ie = 'BoxSwitch_tab__isFirst_12303d41',
+    Ie = 'BoxSwitch_tab_66b3d775',
+    we = 'BoxSwitch_tab__isFirst_12303d41',
     Te = 'BoxSwitch_guaranteedTip_b851e3c0',
     Se = { opacity: 0, transform: 'translateX(-20rem)' },
     ke = (e, s) =>
@@ -255,7 +255,7 @@ function Be({
     t.useEffect(() => {
         f && y(0);
     }, [f, a.length]);
-    return e.jsx(Ce, {
+    return e.jsx(ve, {
         className: s(je, _),
         children: m(a, (a, t) => {
             const _ = `${t}_${a.boxCategory}`,
@@ -264,16 +264,16 @@ function Be({
                 o.div,
                 {
                     style: N[t].springs,
-                    className: s(we, 0 === t && Ie),
-                    children: e.jsxs(Ce.Item, {
+                    className: s(Ie, 0 === t && we),
+                    children: e.jsxs(ve.Item, {
                         id: _,
                         children: [
                             e.jsx(
-                                Ce.Tooltip,
+                                ve.Tooltip,
                                 {
                                     boxCategory: a.boxCategory,
                                     eventName: x,
-                                    children: e.jsx(Ce.Tab, {
+                                    children: e.jsx(ve.Tab, {
                                         tab: a,
                                         onClick: () => {
                                             return ((e = a.boxCategory), r.sound(n.switch), void c(e));
@@ -285,7 +285,7 @@ function Be({
                                 a.boxCategory,
                             ),
                             m &&
-                                e.jsx(Ce.Guaranteed, {
+                                e.jsx(ve.Guaranteed, {
                                     id: _,
                                     icons: l,
                                     texts: i.plural('tabText', a.boxesCountToGuaranteed),
@@ -301,7 +301,7 @@ function Be({
         }),
     });
 }
-const Re = (e, s) => {
+const Ee = (e, s) => {
         t.useEffect(() => {
             const a = new Image();
             return (
@@ -313,9 +313,9 @@ const Re = (e, s) => {
             );
         }, [e, s]);
     },
-    Ee = { base: 'ImageLayer_f8eebc6c' };
+    Re = { base: 'ImageLayer_f8eebc6c' };
 function Pe({ src: a, className: t, onLoaded: o = b }) {
-    return (Re(a, o), e.jsx('div', { className: s(Ee.base, t), style: { backgroundImage: `url(${a})` } }));
+    return (Ee(a, o), e.jsx('div', { className: s(Re.base, t), style: { backgroundImage: `url(${a})` } }));
 }
 function Ge({
     src: s,
@@ -329,7 +329,7 @@ function Ge({
     shouldCleanUp: d = !1,
 }) {
     const u = t.useRef(null),
-        _ = E(z);
+        _ = R(z);
     t.useEffect(() => {
         const e = u.current;
         e && r && e.goToAndPlay(0);
@@ -410,11 +410,11 @@ const qe = 'Background_9cc315a3',
 const Ue = 'Body_5abb9234';
 const Fe = 'Content_15583580';
 const Ke = 'Shadow_28212855';
-const We = 'Layout_8695f8df',
-    Ye = t.forwardRef(function ({ children: a, className: t }, o) {
-        return e.jsx('div', { className: s(We, t), ref: o, children: a });
+const Ye = 'Layout_8695f8df',
+    Ze = t.forwardRef(function ({ children: a, className: t }, o) {
+        return e.jsx('div', { className: s(Ye, t), ref: o, children: a });
     });
-((Ye.Background = function ({ className: a = '', img: t }) {
+((Ze.Background = function ({ className: a = '', img: t }) {
     return e.jsxs('div', {
         className: s(qe, a),
         children: [
@@ -423,32 +423,32 @@ const We = 'Layout_8695f8df',
         ],
     });
 }),
-    (Ye.Body = function ({ children: a, className: t }) {
+    (Ze.Body = function ({ children: a, className: t }) {
         return e.jsx('div', { className: s(Ue, t), children: a });
     }),
-    (Ye.Shadow = function ({ className: a = '' }) {
+    (Ze.Shadow = function ({ className: a = '' }) {
         return e.jsx('div', { className: s(Ke, a) });
     }),
-    (Ye.Content = function ({ children: a, className: t }) {
+    (Ze.Content = function ({ children: a, className: t }) {
         return e.jsx('div', { className: s(Fe, t), children: a });
     }));
-const Ze = { base__disabled: 'ResetButton_base__disabled_2c71c62d' };
-function Je({ texts: a, disabled: t, onClick: o, className: n = '' }) {
+const Je = { base__disabled: 'ResetButton_base__disabled_2c71c62d' };
+function Qe({ texts: a, disabled: t, onClick: o, className: n = '' }) {
     const c = p({ body: a.tooltip });
     return e.jsx('div', {
-        className: s(Ze.base, t && Ze.base__disabled, n),
+        className: s(Je.base, t && Je.base__disabled, n),
         ...c,
         children: e.jsx(h, {
             type: y.ghost,
             size: N.medium,
             disabled: t,
             onClick: o,
-            mixClass: Ze.button,
+            mixClass: Je.button,
             children: a.button,
         }),
     });
 }
-const Qe = 'Icon_f4b46a7a',
+const We = 'Icon_f4b46a7a',
     es = 'Icon_ea7f6157';
 const ss = 'Text_count_356a3dde';
 const as = { base: 'Header_1b2a1dfa' };
@@ -457,7 +457,7 @@ function ts({ children: a, className: t = '' }) {
 }
 ((ts.Icon = function ({ icon: a, className: t = '', ...o }) {
     return e.jsx('div', {
-        className: s(Qe, t),
+        className: s(We, t),
         ...o,
         children: e.jsx('div', { className: es, style: { backgroundImage: `url(${a})` } }),
     });
@@ -492,18 +492,18 @@ const os = {
             rewardsPremiumDay: 'common.rewards.premiumDay',
         },
     },
-    [cs, rs] = v()(
+    [cs, rs] = C()(
         ({ observableModel: e }) => {
             const s = {
                     root: e.object(),
                     categories: e.arrayClone('categories'),
                     ...e.primitives(['eventName', 'openedCount']),
                 },
-                a = n(() => A(os, s.eventName.get()), { equals: C }),
-                t = n(() => O(ns, s.eventName.get()), { equals: C }),
-                o = n(() => A(os, ''), { equals: C }),
-                c = n(() => s.categories.get(), { equals: C }),
-                r = n(() => s.eventName.get(), { equals: C });
+                a = n(() => A(os, s.eventName.get()), { equals: v }),
+                t = n(() => O(ns, s.eventName.get()), { equals: v }),
+                o = n(() => A(os, ''), { equals: v }),
+                c = n(() => s.categories.get(), { equals: v }),
+                r = n(() => s.eventName.get(), { equals: v });
             return {
                 ...s,
                 computes: { resources: a, dynamicResources: t, defaultResources: o, categories: c, getEventName: r },
@@ -573,7 +573,7 @@ function bs({ children: a, imageSize: t, className: o }) {
 const gs = 'Info_63d4ffeb';
 const fs = {
     base: 'Categories_f228c023',
-    area: 'Categories_area_fc75ccc9',
+    area: 'Categories_area_ffccdaa6',
     base__wide: 'Categories_base__wide_c099b2e6',
     scroll: 'Categories_scroll_d800d930',
     scrollContent: 'Categories_scrollContent_3984cae9',
@@ -617,21 +617,21 @@ const ps = c(function ({ category: s, imageSize: a, className: t }) {
             })(n, c, s),
             d = U(r) ? c.boxCategory.dynOpt(F(r)) : c.category.dyn(K(r));
         return e.jsx(j, {
-            tooltipArgs: W(r, o.getEventName()),
+            tooltipArgs: Y(r, o.getEventName()),
             children: e.jsxs(xs.Category, {
                 imageSize: a,
                 className: t,
                 children: [
-                    e.jsx(xs.Category.Icon, { img: Y(s.type, a), imageSize: a }),
+                    e.jsx(xs.Category.Icon, { img: Z(s.type, a), imageSize: a }),
                     e.jsxs(xs.Category.Description, {
                         children: [
                             e.jsx(xs.Category.Label, { imageSize: a, label: d }),
                             e.jsx(xs.Category.Count, {
                                 type: r,
                                 imageSize: a,
-                                children: e.jsx(w, {
+                                children: e.jsx(I, {
                                     text: l,
-                                    params: { count: i, currency: e.jsx(w, { text: $(`${i}`), upgradeLegacy: !0 }) },
+                                    params: { count: i, currency: e.jsx(I, { text: $(`${i}`), upgradeLegacy: !0 }) },
                                     upgradeLegacy: !0,
                                 }),
                             }),
@@ -642,10 +642,8 @@ const ps = c(function ({ category: s, imageSize: a, className: t }) {
         });
     }),
     hs = 'Rewards_405577a5',
-    Ns = 'Rewards_reward_e4f396cf',
-    ys = 'Rewards_reward__even_c904b9c9',
-    vs = 'Rewards_reward__evenWide_6fb4d45a';
-const Cs = c(function ({ className: a }) {
+    Ns = 'Rewards_reward_e4f396cf';
+const ys = c(function ({ className: a }) {
         const {
                 model: { computes: t },
             } = rs(),
@@ -653,29 +651,21 @@ const Cs = c(function ({ className: a }) {
             c = t.categories(),
             {
                 breakpoint: { weight: r },
-            } = I(),
+            } = w(),
             i = c.length > 7;
-        function l(e) {
-            const s = e % 2;
-            return s && i ? vs : s ? ys : '';
-        }
         return e.jsxs(xs, {
             className: s(hs, a),
             lipImage: n.scrollLipTop,
             wide: i,
             children: [
                 0 === c.length && e.jsx(xs.Info, { children: o.emptyHeader }),
-                m(c, (a, t) =>
-                    e.jsx(
-                        ps,
-                        { category: a, imageSize: r < S.medium.weight ? T.Small : T.Big, className: s(Ns, l(t)) },
-                        t,
-                    ),
+                m(c, (s, a) =>
+                    e.jsx(ps, { category: s, imageSize: r < S.medium.weight ? T.Small : T.Big, className: Ns }, a),
                 ),
             ],
         });
     }),
-    js = {
+    Cs = {
         root: 'Popover_root_b6b2f5f6',
         base: 'Popover_b5a0d9d4',
         base__show: 'Popover_base__show_ab334a8',
@@ -686,10 +676,10 @@ const Cs = c(function ({ className: a }) {
         reset: 'Popover_reset_bbe1207',
         fadeIn: 'Popover_fadeIn_b6b2f5f6',
     },
-    ws = 'show',
-    Is = 'hide';
-const Ts = c(function ({ onHidden: a, isStatsEnabled: o, className: n }) {
-        const [c, i] = t.useState(Is),
+    vs = 'show',
+    js = 'hide';
+const Is = c(function ({ onHidden: a, isStatsEnabled: o, className: n }) {
+        const [c, i] = t.useState(js),
             {
                 model: { computes: d, root: u, openedCount: _ },
                 controls: m,
@@ -698,13 +688,13 @@ const Ts = c(function ({ onHidden: a, isStatsEnabled: o, className: n }) {
             { images: g, sounds: f, texts: x } = d.resources(),
             p = d.categories(),
             h = () => {
-                (i(Is), r.sound(f.statsClose));
+                (i(js), r.sound(f.statsClose));
             },
             N = t.useRef(null);
         return (
             t.useEffect(() => {
                 const e = N.current;
-                if (e && c === ws) return (k.register(e, h), () => k.unregister(e, h));
+                if (e && c === vs) return (k.register(e, h), () => k.unregister(e, h));
             }, [c, N, i]),
             t.useEffect(() => {
                 b && (h(), m.updateResetState());
@@ -712,12 +702,12 @@ const Ts = c(function ({ onHidden: a, isStatsEnabled: o, className: n }) {
             t.useEffect(
                 () =>
                     B(() => {
-                        (i(ws), r.sound(f.statsOpen));
+                        (i(vs), r.sound(f.statsOpen));
                     }),
                 [f, i],
             ),
             t.useEffect(() => {
-                if (c === Is)
+                if (c === js)
                     return l(() => {
                         a();
                     }, 300);
@@ -725,20 +715,20 @@ const Ts = c(function ({ onHidden: a, isStatsEnabled: o, className: n }) {
             t.useEffect(() => {
                 o || h();
             }, [o]),
-            e.jsxs(Ye, {
-                className: s(js.base, js[`base__${c}`], n),
+            e.jsxs(Ze, {
+                className: s(Cs.base, Cs[`base__${c}`], n),
                 ref: N,
                 children: [
-                    e.jsxs(Ye.Body, {
+                    e.jsxs(Ze.Body, {
                         children: [
-                            e.jsx(Ye.Background, { className: js.background, img: g.noiseBackground }),
-                            e.jsxs(Ye.Content, {
-                                className: js.content,
+                            e.jsx(Ze.Background, { className: Cs.background, img: g.noiseBackground }),
+                            e.jsxs(Ze.Content, {
+                                className: Cs.content,
                                 children: [
-                                    e.jsx(is, { className: js.header }),
-                                    e.jsx(Cs, {}),
-                                    e.jsx(Je, {
-                                        className: js.reset,
+                                    e.jsx(is, { className: Cs.header }),
+                                    e.jsx(ys, {}),
+                                    e.jsx(Qe, {
+                                        className: Cs.reset,
                                         disabled: 0 === p.length && 0 === _.get(),
                                         onClick: m.reset,
                                         texts: { tooltip: x.resetTooltipDescription, button: x.resetButton },
@@ -756,13 +746,13 @@ const Ts = c(function ({ onHidden: a, isStatsEnabled: o, className: n }) {
                             }),
                         ],
                     }),
-                    e.jsx(Ye.Shadow, { className: js.shadow }),
+                    e.jsx(Ze.Shadow, { className: Cs.shadow }),
                 ],
             })
         );
     }),
-    Ss = { context: 'model.hasBoxes.statistics' };
-function ks(s) {
-    return e.jsx(cs, { options: s.options || Ss, children: e.jsx(Ts, { ...s }) });
+    ws = { context: 'model.hasBoxes.statistics' };
+function Ts(s) {
+    return e.jsx(cs, { options: s.options || ws, children: e.jsx(Is, { ...s }) });
 }
-export { Be as B, re as P, Me as R, ee as S, ks as a, He as d };
+export { Be as B, re as P, Me as R, ee as S, Ts as a, He as d };

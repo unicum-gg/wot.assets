@@ -1878,12 +1878,16 @@
                             }, [e, m.offset, m.pending, a, F]));
                         const g = (function (e, u, t = []) {
                                 const r = (0, n.useRef)(0),
-                                    a = (0, n.useCallback)(() => window.clearInterval(r.current), t || []);
+                                    a = (0, n.useCallback)(() => {
+                                        (window.clearInterval(r.current), (r.current = 0));
+                                    }, t || []);
                                 (0, n.useEffect)(() => a, [a]);
                                 const s = (null != t ? t : []).concat([u]);
                                 return [
                                     (0, n.useCallback)((t) => {
-                                        ((r.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
+                                        (0 !== r.current && a(),
+                                            (r.current = window.setInterval(() => e(t, !0), u)),
+                                            e(t, !1));
                                     }, s),
                                     a,
                                 ];

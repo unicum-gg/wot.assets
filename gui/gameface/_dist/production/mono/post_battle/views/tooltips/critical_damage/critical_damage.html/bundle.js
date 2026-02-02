@@ -1,5 +1,5 @@
-import { j as e, e as s, w as t } from '../../../../chunks/vendor.js';
-import { F as a, m as i, i as r, c, n as l, q as o, I as n, aB as d, a as m } from '../../../../chunks/lib.js';
+import { j as e, e as s, F as t } from '../../../../chunks/vendor.js';
+import { F as a, t as i, i as r, c, v as l, y as o, I as n, aM as d, a as m } from '../../../../chunks/lib.js';
 /* empty css                       */ const h = 'Content_6fb69530';
 function u({ className: t }) {
     return e.jsx('div', {
@@ -13,7 +13,7 @@ const p = 'criticalDevices',
 function x(e) {
     return i(e, (e) => ({ damageGroup: e.damageGroup, value: e.value }));
 }
-const [_, v] = r()(({ observableModel: e, cleanup: s }) => {
+const [v, _] = r()(({ observableModel: e, cleanup: s }) => {
         e.transform;
         const t = { details: e.transform(x, 'details') },
             a = c.shallow(() => {
@@ -44,7 +44,7 @@ const [_, v] = r()(({ observableModel: e, cleanup: s }) => {
     N = 'Footer_items_ba6fe6b4',
     D = 'Footer_row_85f76f88',
     k = 'Footer_icon_5fdf9d06';
-function w({ titlePath: s, list: t, iconSuffix: r, localizationTemplate: c }) {
+function F({ titlePath: s, list: t, iconSuffix: r, localizationTemplate: c }) {
     return e.jsxs('div', {
         className: g,
         children: [
@@ -73,28 +73,28 @@ function w({ titlePath: s, list: t, iconSuffix: r, localizationTemplate: c }) {
         ],
     });
 }
-const F = t(function ({ className: t }) {
-        const { model: a } = v(),
+const T = t(function ({ className: t }) {
+        const { model: a } = _(),
             i = a.computes.groupedDetails();
         return e.jsxs('div', {
             className: s(b, t),
             children: [
                 i.criticalDevices.length > 0 &&
-                    e.jsx(w, {
+                    e.jsx(F, {
                         titlePath: 'critDamage',
                         list: i.criticalDevices,
                         iconSuffix: 'CriticalSmall',
                         localizationTemplate: 'item_types.{value}.name',
                     }),
                 i.destroyedDevices.length > 0 &&
-                    e.jsx(w, {
+                    e.jsx(F, {
                         titlePath: 'critDestruction',
                         list: i.destroyedDevices,
                         iconSuffix: 'DestroyedSmall',
                         localizationTemplate: 'item_types.{value}.name',
                     }),
                 i.destroyedTankmen.length > 0 &&
-                    e.jsx(w, {
+                    e.jsx(F, {
                         titlePath: 'critWound',
                         list: i.destroyedTankmen,
                         iconSuffix: 'DestroyedSmall',
@@ -103,12 +103,12 @@ const F = t(function ({ className: t }) {
             ],
         });
     }),
-    T = 'Header_4824f534',
+    w = 'Header_4824f534',
     S = 'Header_iconWrapper_ca45cf',
     P = 'Header_description_d362ea56';
 function z({ className: t }) {
     return e.jsxs('div', {
-        className: s(T, t),
+        className: s(w, t),
         children: [
             e.jsx('div', {
                 className: S,
@@ -127,7 +127,7 @@ const A = 'App_48b0ea08',
     H = 'App_content_962209c7',
     $ = 'App_footer_80741629',
     C = t(function () {
-        const { model: s } = v(),
+        const { model: s } = _(),
             t = s.details.get();
         return e.jsxs('div', {
             className: A,
@@ -139,13 +139,13 @@ const A = 'App_48b0ea08',
                     e.jsxs(e.Fragment, {
                         children: [
                             e.jsx(n, { width: '100%', height: '9rem', path: 'library.efficiency.divider' }),
-                            e.jsx(F, { className: $ }),
+                            e.jsx(T, { className: $ }),
                         ],
                     }),
             ],
         });
     });
-function W() {
-    return e.jsx(_, { children: e.jsx(d, { children: e.jsx(d.Decorator, { children: e.jsx(C, {}) }) }) });
+function M() {
+    return e.jsx(v, { children: e.jsx(d, { children: e.jsx(d.Decorator, { children: e.jsx(C, {}) }) }) });
 }
-m(e.jsx(W, {}));
+m(e.jsx(M, {}));

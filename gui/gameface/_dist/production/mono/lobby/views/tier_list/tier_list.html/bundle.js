@@ -10,10 +10,10 @@ import {
     w as b,
     n as m,
     u as x,
-    aE as _,
-    bt as p,
+    aK as _,
+    bz as p,
     a3 as w,
-    cs as j,
+    cz as j,
     a2 as h,
     a4 as v,
 } from '../../../chunks/lib.js';
@@ -99,9 +99,9 @@ const [N, y] = l()(
     }),
     B = 'App_41da450e',
     L = 'App_background_8bf668c',
-    C = 'App_content_c51a1e8f',
-    $ = 'App_header_6b270f84',
-    E = 'App_title_ed37f891',
+    z = 'App_content_c51a1e8f',
+    C = 'App_header_6b270f84',
+    $ = 'App_title_ed37f891',
     M = 'App_description_8e9e0dbe',
     P = 'App_scroll_ce8f2661',
     T = e(() => {
@@ -116,13 +116,13 @@ const [N, y] = l()(
                 s.jsx('div', { className: L, style: { backgroundImage: `url('${g(o).library.tier_list_bg()}')` } }),
                 s.jsx(_, {
                     children: s.jsxs(p, {
-                        scrollClassNames: { content: C },
+                        scrollClassNames: { content: z },
                         className: P,
                         children: [
                             s.jsxs('div', {
-                                className: $,
+                                className: C,
                                 children: [
-                                    s.jsx('div', { className: E, children: r.title() }),
+                                    s.jsx('div', { className: $, children: r.title() }),
                                     s.jsx('div', { className: M, children: r.description() }),
                                 ],
                             }),

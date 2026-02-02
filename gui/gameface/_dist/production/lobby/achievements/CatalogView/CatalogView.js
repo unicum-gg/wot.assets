@@ -2079,12 +2079,14 @@
                 }
                 function Je(e, u, t = []) {
                     const n = (0, r.useRef)(0),
-                        a = (0, r.useCallback)(() => window.clearInterval(n.current), t || []);
+                        a = (0, r.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, t || []);
                     (0, r.useEffect)(() => a, [a]);
                     const s = (null != t ? t : []).concat([u]);
                     return [
                         (0, r.useCallback)((t) => {
-                            ((n.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
+                            (0 !== n.current && a(), (n.current = window.setInterval(() => e(t, !0), u)), e(t, !1));
                         }, s),
                         a,
                     ];
@@ -4406,7 +4408,7 @@
                     Zn = 'MultilineOverflow_truncatedContent_da',
                     Jn = 'MultilineOverflow_singleLine_bb',
                     ea = 'MultilineOverflow_line_51',
-                    ua = ['text', 'lines', 'className', 'onChange'];
+                    ua = ['text', 'lines', 'className', 'classNames', 'onChange'];
                 function ta() {
                     return (
                         (ta =
@@ -4425,8 +4427,9 @@
                     let t = e.text,
                         n = e.lines,
                         a = e.className,
-                        i = e.onChange,
-                        o = (function (e, u) {
+                        i = e.classNames,
+                        o = e.onChange,
+                        l = (function (e, u) {
                             if (null == e) return {};
                             var t,
                                 n,
@@ -4435,68 +4438,74 @@
                             for (n = 0; n < r.length; n++) ((t = r[n]), u.indexOf(t) >= 0 || (a[t] = e[t]));
                             return a;
                         })(e, ua);
-                    const l = (0, r.useRef)(null),
-                        c = (0, r.useRef)(null),
-                        d = (0, r.useState)(!1),
-                        E = d[0],
-                        m = d[1],
-                        _ = (0, r.useState)([]),
-                        A = _[0],
-                        g = _[1],
-                        D = (0, r.useState)(0),
-                        C = D[0],
-                        B = D[1],
-                        p = jn(),
-                        b = (0, r.useMemo)(() => document.createElement('canvas'), []),
-                        h = (0, r.useCallback)(() => (c.current ? c.current.getBoundingClientRect().height : 0), []),
-                        v = (0, r.useCallback)(
+                    const c = (0, r.useRef)(null),
+                        d = (0, r.useRef)(null),
+                        E = (0, r.useState)(!1),
+                        m = E[0],
+                        _ = E[1],
+                        A = (0, r.useState)([]),
+                        g = A[0],
+                        D = A[1],
+                        C = (0, r.useState)(0),
+                        B = C[0],
+                        p = C[1],
+                        b = jn(),
+                        h = (0, r.useMemo)(() => document.createElement('canvas'), []),
+                        v = (0, r.useCallback)(() => (d.current ? d.current.getBoundingClientRect().height : 0), []),
+                        f = (0, r.useCallback)(
                             (e) => {
-                                const u = h();
+                                const u = v();
                                 return e && u ? Math.round(e.scrollHeight / u) : 0;
                             },
-                            [h],
+                            [v],
                         ),
-                        f = (0, r.useCallback)(() => {
-                            if (v(l.current) <= n) return m(!1);
-                            m(!0);
+                        w = (0, r.useCallback)(() => {
+                            if (f(c.current) <= n) return _(!1);
+                            _(!0);
                             const e = t.split(' '),
                                 u = Array.from(new Array(n)).reduce((u, t, a) => {
-                                    if (!l.current) return u;
+                                    if (!c.current) return u;
                                     const r = u.reduce((e, u) => e + u.length, 0),
                                         s = e.slice(r);
                                     if (a === n - 1) return (u.push(s), u);
-                                    const i = Yn({ start: 0, end: s.length, words: s, element: l.current, canvas: b });
+                                    const i = Yn({ start: 0, end: s.length, words: s, element: c.current, canvas: h });
                                     return (u.push(s.slice(0, i)), u);
                                 }, []);
-                            g(u);
-                        }, [b, v, n, t]),
-                        w = (0, r.useCallback)(() => {
-                            p.run(() => {
-                                (B(h() * n), f());
+                            D(u);
+                        }, [h, f, n, t]),
+                        x = (0, r.useCallback)(() => {
+                            b.run(() => {
+                                (p(v() * n), w());
                             });
-                        }, [h, n, p, f]);
-                    var x, S;
+                        }, [v, n, b, w]);
+                    var S, y;
                     return (
-                        (0, r.useEffect)(w, [w]),
-                        (x = w),
-                        (S = [w]),
+                        (0, r.useEffect)(x, [x]),
+                        (S = x),
+                        (y = [x]),
                         (0, r.useEffect)(
-                            () => (window.addEventListener('resize', x), () => window.removeEventListener('resize', x)),
-                            S,
+                            () => (window.addEventListener('resize', S), () => window.removeEventListener('resize', S)),
+                            y,
                         ),
                         (0, r.useEffect)(() => {
-                            null == i || i(E);
-                        }, [i, E]),
+                            null == o || o(m);
+                        }, [o, m]),
                         s().createElement(
                             'div',
-                            ta({}, o, { ref: u, className: F()(Xn, a, E && Qn) }),
-                            s().createElement('div', { ref: l, className: Kn, style: { maxHeight: `${C}rem` } }, t),
+                            ta({}, l, { ref: u, className: F()(Xn, a, m && Qn) }),
+                            s().createElement('div', { ref: c, className: Kn, style: { maxHeight: `${B}rem` } }, t),
                             s().createElement(
                                 'div',
                                 { className: Zn },
-                                A.map((e, u) => s().createElement('div', { key: u, className: ea }, e.join(' '))),
+                                g.map((e, u) =>
+                                    s().createElement(
+                                        'div',
+                                        { key: u, className: F()(ea, null == i ? void 0 : i.line) },
+                                        e.join(' '),
+                                    ),
+                                ),
                             ),
-                            s().createElement('div', { ref: c, className: Jn }, R.strings.common.common.dot()),
+                            s().createElement('div', { ref: d, className: Jn }, R.strings.common.common.dot()),
                         )
                     );
                 });

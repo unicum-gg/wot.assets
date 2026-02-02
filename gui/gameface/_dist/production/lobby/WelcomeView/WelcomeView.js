@@ -755,11 +755,11 @@
                         getFormattedDateTime: (e, u, t = !0) => regionalDateTime.getFormattedDateTime(e, u, t),
                     };
             },
-            179: (e, u, t) => {
+            652: (e, u, t) => {
                 'use strict';
-                var n = t(916);
-                const r = React;
-                var i = t.n(r);
+                var n = t(916),
+                    r = t(363),
+                    i = t.n(r);
                 const a = (e, u, t) =>
                     u.extraLargeHeight || u.largeHeight || u.mediumHeight || u.smallHeight || u.extraSmallHeight
                         ? (u.extraLargeHeight && t.extraLarge) ||
@@ -1082,9 +1082,9 @@
                                 return r;
                             })(e, L);
                         return i().createElement(F, null, i().createElement(y, t, u));
-                    },
-                    k = ReactDOM;
-                var S = t.n(k);
+                    };
+                var k = t(533),
+                    S = t.n(k);
                 function O(e) {
                     engine.call('PlaySound', e).catch((u) => {
                         console.error('[lib/sounds.js] playSound(', e, '): ', u);
@@ -2499,6 +2499,14 @@
                     );
                 });
             },
+            363: (e) => {
+                'use strict';
+                e.exports = React;
+            },
+            533: (e) => {
+                'use strict';
+                e.exports = ReactDOM;
+            },
         },
         __webpack_module_cache__ = {},
         deferred;
@@ -2556,6 +2564,7 @@
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
+        (__webpack_require__.j = 'lobby/WelcomeView/WelcomeView'),
         (() => {
             var e = { 'lobby/WelcomeView/WelcomeView': 0 };
             __webpack_require__.O.j = (u) => 0 === e[u];
@@ -2575,6 +2584,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, ['lib/frontline.vendors'], () => __webpack_require__(179));
+    var __webpack_exports__ = __webpack_require__.O(void 0, ['lib/frontline.vendors'], () => __webpack_require__(652));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

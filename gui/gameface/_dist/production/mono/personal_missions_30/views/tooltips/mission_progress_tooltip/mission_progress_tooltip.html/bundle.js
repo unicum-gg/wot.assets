@@ -1,5 +1,5 @@
 import { j as s, f as e, n as o } from '../../../../chunks/vendor.js';
-import { i, v as t, F as l, a2 as n, h as a, at as c, d as r } from '../../../../chunks/lib.js';
+import { i, v as t, F as l, J as n, h as a, at as c, d as r } from '../../../../chunks/lib.js';
 import { G as m } from '../../../../chunks/gradient_decorator.js';
 /* empty css                       */ const [d, _] = i()(
         ({ observableModel: s }) => ({

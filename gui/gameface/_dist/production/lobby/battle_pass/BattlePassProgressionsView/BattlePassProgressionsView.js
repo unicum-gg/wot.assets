@@ -3920,12 +3920,14 @@
                 var u = a(7363);
                 function n(e, t, a = []) {
                     const n = (0, u.useRef)(0),
-                        r = (0, u.useCallback)(() => window.clearInterval(n.current), a || []);
+                        r = (0, u.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, a || []);
                     (0, u.useEffect)(() => r, [r]);
                     const s = (null != a ? a : []).concat([t]);
                     return [
                         (0, u.useCallback)((a) => {
-                            ((n.current = window.setInterval(() => e(a, !0), t)), e(a, !1));
+                            (0 !== n.current && r(), (n.current = window.setInterval(() => e(a, !0), t)), e(a, !1));
                         }, s),
                         r,
                     ];

@@ -3264,12 +3264,14 @@
                 }
                 function Ke(e, t, u = []) {
                     const i = (0, a.useRef)(0),
-                        r = (0, a.useCallback)(() => window.clearInterval(i.current), u || []);
+                        r = (0, a.useCallback)(() => {
+                            (window.clearInterval(i.current), (i.current = 0));
+                        }, u || []);
                     (0, a.useEffect)(() => r, [r]);
                     const n = (null != u ? u : []).concat([t]);
                     return [
                         (0, a.useCallback)((u) => {
-                            ((i.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
+                            (0 !== i.current && r(), (i.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
                         }, n),
                         r,
                     ];

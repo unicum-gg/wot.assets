@@ -1,5 +1,5 @@
 import { A as t, I as e, B as s, J as n, K as a, D as i, L as l, M as r, N as o, C as c, O as u } from './vendor.js';
-import { r as d, d8 as f, d9 as h, b8 as g, aC as p, da as v, db as m } from './lib.js';
+import { r as d, df as f, dg as h, b7 as g, aB as p, dh as v, di as m } from './lib.js';
 const b = d.resolve('strings');
 function y(t, e, s = '...') {
     if (
@@ -41,8 +41,8 @@ const O = { delete: 'delete', save: 'save', import: 'import' },
         i(),
         l((t) => (t.length > 0 ? t : void 0)),
     ),
-    C = t({ id: e(i(), a(1)), new: s(n()) }),
-    T = t({ title: i() }),
+    T = t({ id: e(i(), a(1)), new: s(n()) }),
+    C = t({ title: i() }),
     L = t({
         titles: e(
             r(i()),
@@ -138,7 +138,7 @@ function M(t) {
     return B({ numbers: r, hash: a, version: i });
 }
 export {
-    C as E,
+    T as E,
     L as I,
     E as P,
     x as S,
@@ -149,7 +149,7 @@ export {
     $ as e,
     N as f,
     I as g,
-    T as h,
+    C as h,
     D as i,
     M as j,
     j as k,

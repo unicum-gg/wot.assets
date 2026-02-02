@@ -3429,12 +3429,14 @@
                     gu = (e, t, u) => (u < e ? e : u > t ? t : u);
                 function pu(e, t, u = []) {
                     const n = (0, a.useRef)(0),
-                        r = (0, a.useCallback)(() => window.clearInterval(n.current), u || []);
+                        r = (0, a.useCallback)(() => {
+                            (window.clearInterval(n.current), (n.current = 0));
+                        }, u || []);
                     (0, a.useEffect)(() => r, [r]);
                     const o = (null != u ? u : []).concat([t]);
                     return [
                         (0, a.useCallback)((u) => {
-                            ((n.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
+                            (0 !== n.current && r(), (n.current = window.setInterval(() => e(u, !0), t)), e(u, !1));
                         }, o),
                         r,
                     ];

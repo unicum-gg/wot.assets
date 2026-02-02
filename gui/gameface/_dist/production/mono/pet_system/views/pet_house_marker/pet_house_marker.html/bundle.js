@@ -1,67 +1,53 @@
-import { r as e, q as s, R as a, j as t } from '../../../chunks/vendor.js';
-import { i as r, t as n, r as l, j as i, v as m, w as o, x as p, k as c, U as u } from '../../../chunks/lib.js';
-/* empty css                    */ const [d, f] = r()(
-        ({ observableModel: e }) => ({ ...{ ...e.primitives(['petNameID', 'hasUpdate']) } }),
-        n,
+import { q as e, R as s, r as a, j as t, f as r } from '../../../chunks/vendor.js';
+import { i as p, t as i, r as l, j as n, v as c, w as d, x as m, k as o, U as f } from '../../../chunks/lib.js';
+/* empty css                    */ const [h, _] = p()(
+        ({ observableModel: e }) => ({ ...{ ...e.primitives(['petNameID', 'hasUpdate', 'isVisible']) } }),
+        i,
     ),
-    h = 'App_d52abf23',
-    j = 'App_name_f23ce584',
-    b = 'App_bubble_14dbfc23',
-    _ = l.resolve('strings'),
-    x = s(function () {
-        const s = a.useRef(null),
-            { model: r } = f(),
-            n = r.petNameID.get(),
-            l = r.hasUpdate.get(),
-            c = e.useCallback(() => {
-                const e = s.current;
-                if (!e) return;
-                const a = e.scrollWidth,
-                    t = e.scrollHeight;
-                i(a, t);
-            }, [s]);
-        var u, d;
+    b = 'App_4f546f10',
+    u = 'App_base__hidden_4f2b7a98',
+    j = 'App_inner_f0b59ee5',
+    x = 'App_name_a1466fa8',
+    N = 'App_bubble_14dbfc23',
+    v = l.resolve('strings'),
+    g = e(function () {
+        const e = s.useRef(null),
+            { model: p } = _(),
+            i = p.isVisible.get(),
+            l = p.petNameID.get(),
+            o = p.hasUpdate.get();
         return (
-            (u = c),
-            (d = []),
-            e.useEffect(() => {
-                let e,
-                    s = null;
-                return (
-                    (s = requestAnimationFrame(() => {
-                        s = requestAnimationFrame(() => {
-                            s = requestAnimationFrame(() => {
-                                s = requestAnimationFrame(() => {
-                                    ((s = null), (e = u()));
-                                });
-                            });
-                        });
-                    })),
-                    () => {
-                        ('function' == typeof e && e(), null !== s && cancelAnimationFrame(s));
-                    }
-                );
-            }, [u, ...d]),
+            a.useEffect(() => {
+                const s = e.current;
+                if (!s) return;
+                const a = s.scrollWidth,
+                    t = s.scrollHeight;
+                n(a, t);
+            }, [e]),
             t.jsx('div', {
-                ref: s,
-                className: h,
+                ref: e,
+                className: r(b, !i && u),
                 children: t.jsxs('div', {
                     className: j,
                     children: [
-                        0 === n
-                            ? t.jsx(m, { path: 'pet_system.petHouseMarker.default' })
-                            : t.jsx(m, {
-                                  path: 'pet_system.petHouseMarker.pet',
-                                  params: {
-                                      petName: _.readOr(`pet_names.petName_${n}`, () =>
-                                          _.readOrEmpty('pet_names.petName_default'),
-                                      ),
-                                  },
-                              }),
-                        t.jsx(o.Root, { className: b, hidden: !l, children: t.jsx(o.Icon, { type: p.bubble }) }),
+                        t.jsx('div', {
+                            className: x,
+                            children:
+                                0 === l
+                                    ? t.jsx(c, { path: 'pet_system.petHouseMarker.default' })
+                                    : t.jsx(c, {
+                                          path: 'pet_system.petHouseMarker.pet',
+                                          params: {
+                                              petName: v.readOr(`pet_names.petName_${l}`, () =>
+                                                  v.readOrEmpty('pet_names.petName_default'),
+                                              ),
+                                          },
+                                      }),
+                        }),
+                        t.jsx(d.Root, { className: N, hidden: !o, children: t.jsx(d.Icon, { type: m.bubble }) }),
                     ],
                 }),
             })
         );
     });
-c(t.jsx(u, { children: t.jsx(d, { children: t.jsx(x, {}) }) }));
+o(t.jsx(f, { children: t.jsx(h, { children: t.jsx(g, {}) }) }));

@@ -2879,12 +2879,14 @@
                 var a = n(7363);
                 function r(e, t, n = []) {
                     const r = (0, a.useRef)(0),
-                        s = (0, a.useCallback)(() => window.clearInterval(r.current), n || []);
+                        s = (0, a.useCallback)(() => {
+                            (window.clearInterval(r.current), (r.current = 0));
+                        }, n || []);
                     (0, a.useEffect)(() => s, [s]);
                     const i = (null != n ? n : []).concat([t]);
                     return [
                         (0, a.useCallback)((n) => {
-                            ((r.current = window.setInterval(() => e(n, !0), t)), e(n, !1));
+                            (0 !== r.current && s(), (r.current = window.setInterval(() => e(n, !0), t)), e(n, !1));
                         }, i),
                         s,
                     ];

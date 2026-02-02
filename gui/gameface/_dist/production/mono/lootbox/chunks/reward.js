@@ -1,9 +1,9 @@
 import { r as e, q as t, s, t as a, h as n, p as i, j as o, e as r } from './vendor.js';
 import {
-    af as c,
-    ag as l,
-    ah as d,
-    ai as u,
+    ag as c,
+    ah as l,
+    ai as d,
+    aj as u,
     a1 as m,
     a3 as f,
     n as p,
@@ -21,7 +21,7 @@ import {
     Z as C,
     I as B,
 } from './lib.js';
-import { a as O, o as E, r as S, g as z } from './getRewardImage.js';
+import { a as O, o as S, r as E, g as z } from './getRewardImage.js';
 import { R as T, b as A } from './resources.js';
 import { u as $ } from './use_cover_size.js';
 import { L as P, A as I, Q as L, P as V } from './quantity_title.js';
@@ -111,11 +111,12 @@ function F(t) {
     };
 }
 const M = (e, t = '') => {
-        if (!t) return { video: '', image: '', sound: '' };
+        if (!t) return { video: '', image: '', sound: '', stopSound: '' };
         const s = `lootbox.events.${e}.rarityOverlay.${t}`,
             a = `gui.maps.icons.lootBoxSystem.events.${e}.rarityOverlay.${t}`,
-            n = `gui_lb_video_appear_${e}_${t}`;
-        return { video: O(R.videos, s), image: O(R.images, a), sound: n };
+            n = `gui_lb_video_appear_${e}_${t}`,
+            i = `${n}_stop`;
+        return { video: O(R.videos, s), image: O(R.images, a), sound: n, stopSound: i };
     },
     H = (e, t = '') => '' !== M(e, t).video,
     D = (t) => {
@@ -346,8 +347,8 @@ function Re({ children: e, className: t }) {
         return o.jsx(I, { isActive: e, onClick: t, className: r(Ne, n), text: s, size: a });
     }));
 const Oe = 'Buttons_82277d53',
-    Ee = 'Buttons_button_c941212c',
-    Se = 'Buttons_button__first_1b371712';
+    Se = 'Buttons_button_c941212c',
+    Ee = 'Buttons_button__first_1b371712';
 const ze = 'Quantity_ee16e2a';
 const Te = { base: 'Controls_405d637b' };
 function Ae({ children: e, className: t }) {
@@ -368,11 +369,11 @@ function Ae({ children: e, className: t }) {
                 o.jsx(_, {
                     type: v.main,
                     size: h.medium,
-                    mixClass: r(Ee, Se),
+                    mixClass: r(Se, Ee),
                     onClick: e,
                     children: o.jsx(x, { text: a.footerOpenNextButton, binding: { count: Math.min(s, n) } }),
                 }),
-            o.jsx(_, { type: v.primary, size: h.medium, mixClass: Ee, onClick: t, children: a.footerBackButton }),
+            o.jsx(_, { type: v.primary, size: h.medium, mixClass: Se, onClick: t, children: a.footerBackButton }),
         ],
     });
 }),
@@ -449,15 +450,15 @@ const tt = { base: 'Page_9fc130d7' };
 function st({ children: e, className: t }) {
     return o.jsx('div', { className: r(tt.base, t), children: e });
 }
-((st.Media = function ({ videoSrc: e, playerRef: t, onVideoEnded: s, image: a, className: n }) {
-    const i = $(T);
+((st.Media = function ({ videoSrc: e, playerRef: t, onVideoEnded: s, image: a, className: n, forceImage: i = !0 }) {
+    const c = $(T);
     return (
         D(t),
         o.jsx('div', {
             className: r(Je, n),
-            children: w.isHigh()
-                ? o.jsx(f, { style: i, src: e, ref: t, autoplay: !0, onEnded: s, className: Ke })
-                : o.jsx('div', { className: Ye, style: { backgroundImage: `url(${a})` } }),
+            children: i
+                ? o.jsx('div', { className: Ye, style: { backgroundImage: `url(${a})` } })
+                : o.jsx(f, { style: c, src: e, ref: t, autoplay: !0, onEnded: s, className: Ke }),
         })
     );
 }),
@@ -549,15 +550,19 @@ const it = 'RewardOverlay_fbbf0c4d',
 function ut({ res: t, rareBonus: s, texts: a, minimized: n, controls: { onClose: i, onPlay: r, onEnded: c } }) {
     const [l, d] = e.useState(!1),
         [u, m] = e.useState(!1),
-        f = e.useRef(null);
-    e.useEffect(() => {
-        s && w.isHigh() && (p.sound(t.sound), m(!0), r());
-    }, [s]);
+        [f, g] = e.useState(!1),
+        x = e.useRef(null),
+        y = () => {
+            (m(!1), d(!0), c());
+        };
     return (
+        e.useEffect(() => {
+            s && w.isHigh() && (p.sound(t.sound), m(!0), r());
+        }, [s]),
         k(() => {
-            l && i();
+            l ? i() : w.isHigh() && (p.sound(t.stopSound), g(!0), y());
         }),
-        Q(f, u, n),
+        Q(x, u, n),
         e.useEffect(() => {
             if (w.isLow()) return C(() => d(!0), 300);
         }, []),
@@ -566,11 +571,10 @@ function ut({ res: t, rareBonus: s, texts: a, minimized: n, controls: { onClose:
             children: [
                 o.jsx(st.Media, {
                     className: dt,
-                    playerRef: f,
+                    playerRef: x,
                     videoSrc: t.video,
-                    onVideoEnded: () => {
-                        (m(!1), d(!0), c());
-                    },
+                    onVideoEnded: y,
+                    forceImage: w.isLow() || f,
                     image: t.image,
                 }),
                 l &&
@@ -649,7 +653,7 @@ function xt({ children: e, className: t = '' }) {
         const { name: a, overlayType: n } = e;
         return o.jsx('div', {
             className: r(ht.base, !A.includes(a) && ht[`base__${t}`], s),
-            style: { backgroundImage: `url(${E(t, a, n)})` },
+            style: { backgroundImage: `url(${S(t, a, n)})` },
         });
     }));
 const yt = { base: 'Icon_2beee90a' };
@@ -663,17 +667,17 @@ const Nt = 'Reward_2df31201',
     jt = 'Reward_count_298a4419',
     wt = (e, t) => {
         const { name: s, isRent: a } = e;
-        return s === S.vehicles && t === B.Big
+        return s === E.vehicles && t === B.Big
             ? 'R.images.gui.maps.icons.quests.bonuses.big.vehicles' + (a ? '_rent' : '')
-            : s === S.customizations && t === B.Big
+            : s === E.customizations && t === B.Big
               ? z({ ...e, id: 0 }, t)
               : z(e, t);
     },
     kt = (e, t) => {
         if (t === B.Big)
             switch (e) {
-                case S.tokens:
-                case S.tmanToken:
+                case E.tokens:
+                case E.tmanToken:
                     return { right: '-7%', bottom: '-12%' };
                 default:
                     return { right: '0', bottom: '-5rem' };
@@ -683,7 +687,7 @@ const Nt = 'Reward_2df31201',
 function Ct({ reward: e, sizes: t, countText: s, className: a = '' }) {
     const { count: n, name: i, overlayType: c } = e,
         l =
-            i === S.premiumPlus
+            i === E.premiumPlus
                 ? { height: t.premDaysHeight || t.rewardHeight, width: t.premDaysWidth || t.rewardWidth }
                 : { height: t.rewardHeight, width: t.rewardWidth };
     return o.jsxs(xt, {
