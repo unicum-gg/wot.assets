@@ -30,19 +30,66 @@
     bottom: 1rem;
     left: 2rem;
 }
+.AbilityPanel_ability__teleport_d8 .AbilityPanel_ability_effect_80 {
+    background-color: #38b0ca;
+}
+.AbilityPanel_ability__power_shot_04 .AbilityPanel_ability_effect_80 {
+    background-color: #b3a5ff;
+}
+.AbilityPanel_ability__overcharge_02 .AbilityPanel_ability_effect_80 {
+    background-color: #ff7070;
+}
+.AbilityPanel_ability__black_hole_2f .AbilityPanel_ability_effect_80 {
+    background-color: #ffd770;
+}
 .AbilityPanel_ability__shell_e8.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80,
 .AbilityPanel_ability__wave_d6.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80,
 .AbilityPanel_ability__stun_shot_ef.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80,
+.AbilityPanel_ability__repulsion_mine_ae.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80,
 .AbilityPanel_ability__acceleration_62.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80,
 .AbilityPanel_ability__shield_39.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80,
 .AbilityPanel_ability__black_hole_2f.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80,
 .AbilityPanel_ability__overcharge_02.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80,
 .AbilityPanel_ability__power_shot_04.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80,
+.AbilityPanel_ability__teleport_d8.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80,
 .AbilityPanel_ability__rapid_shelling_6d.AbilityPanel_ability__ready_fd .AbilityPanel_ability_effect_80 {
     animation: AbilityPanel_flash_a1 0.5s ease-in-out;
 }
-.AbilityPanel_ability__rapid_shelling_6d .AbilityPanel_ability_effect_80 {
-    background-color: var(--rapidShellingColor);
+.AbilityPanel_ability__teleport_d8.AbilityPanel_ability__active_4b .AbilityPanel_ability_icon_f2,
+.AbilityPanel_ability__teleport_d8.AbilityPanel_ability__active_4b .AbilityPanel_ability_reloadMask_icon_31 {
+    animation: AbilityPanel_teleport-animation_6d 1.2s linear infinite;
+}
+.AbilityPanel_ability__teleport_d8.AbilityPanel_ability__active_4b .AbilityPanel_ability_effect_80 {
+    background-color: #d7eff4;
+    opacity: 0.1;
+}
+.AbilityPanel_ability__teleport_d8.AbilityPanel_ability__active_4b .AbilityPanel_ability_reloadMask_background_29 {
+    display: none;
+}
+.AbilityPanel_ability__teleport_d8.AbilityPanel_ability__active_4b .AbilityPanel_ability_keyBind_40 {
+    width: 24rem;
+    height: 20rem;
+    background: rgba(1, 3, 38, 0.3);
+    color: #d7eff4;
+    line-height: 90%;
+    opacity: 1;
+    left: 50%;
+    transform: translate(-50%, 2rem);
+    justify-self: center;
+}
+.AbilityPanel_ability_9e .AbilityPanel_teleport_effect_be {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.size_74x72.teleport_frame') center
+        center / contain no-repeat;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.AbilityPanel_ability__teleport_d8.AbilityPanel_ability__active_4b .AbilityPanel_teleport_effect_be {
+    opacity: 1;
+    animation: AbilityPanel_border-animation_08 1.2s linear infinite;
 }
 .AbilityPanel_ability_overlay_1b {
     background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.size_60x58.slot_active') center center /
@@ -78,7 +125,8 @@
 .AbilityPanel_ability__disabled_81 .AbilityPanel_ability_disabledOverlay_41 {
     opacity: 1;
 }
-.AbilityPanel_ability__rapid_shelling_6d .AbilityPanel_ability_overlay_1b {
+.AbilityPanel_ability__rapid_shelling_6d .AbilityPanel_ability_overlay_1b,
+.AbilityPanel_ability__teleport_d8 .AbilityPanel_ability_overlay_1b {
     display: none;
 }
 .AbilityPanel_ability_border_40 {
@@ -104,6 +152,7 @@
 .AbilityPanel_ability__acceleration_62 .AbilityPanel_ability_border_40,
 .AbilityPanel_ability__stun_shot_ef .AbilityPanel_ability_border_40,
 .AbilityPanel_ability__wave_d6 .AbilityPanel_ability_border_40,
+.AbilityPanel_ability__repulsion_mine_ae .AbilityPanel_ability_border_40,
 .AbilityPanel_ability__shield_39 .AbilityPanel_ability_border_40 {
     background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.size_60x58.ability_border') center
         center / 57rem 56rem no-repeat;
@@ -111,6 +160,7 @@
 .mediaMedium .AbilityPanel_ability__acceleration_62 .AbilityPanel_ability_border_40,
 .mediaMedium .AbilityPanel_ability__stun_shot_ef .AbilityPanel_ability_border_40,
 .mediaMedium .AbilityPanel_ability__wave_d6 .AbilityPanel_ability_border_40,
+.mediaMedium .AbilityPanel_ability__repulsion_mine_ae .AbilityPanel_ability_border_40,
 .mediaMedium .AbilityPanel_ability__shield_39 .AbilityPanel_ability_border_40 {
     background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.size_74x72.ability_border') center
         center / 72rem 68rem no-repeat;
@@ -139,6 +189,17 @@
     background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.size_74x72.ability_border_rapid_shelling')
         center center / 70rem 70rem no-repeat;
 }
+.AbilityPanel_ability__teleport_d8 .AbilityPanel_ability_border_40 {
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.size_60x58.ability_border_teleport')
+        center center / 55rem 55rem no-repeat;
+}
+.mediaMedium .AbilityPanel_ability__teleport_d8 .AbilityPanel_ability_border_40 {
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.size_74x72.ability_border_teleport')
+        center center / 70rem 70rem no-repeat;
+}
+.AbilityPanel_ability__teleport_d8.AbilityPanel_ability__active_4b .AbilityPanel_ability_border_40 {
+    display: none;
+}
 .AbilityPanel_ability__power_shot_04 .AbilityPanel_ability_border_40 {
     background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.size_60x58.ability_border_power_shot')
         center center / 55rem 55rem no-repeat;
@@ -151,20 +212,20 @@
     opacity: 1;
 }
 .AbilityPanel_ability_keyBind_40 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    opacity: 0.5;
-    position: absolute;
-    right: 0;
-    bottom: 100%;
-    left: 0;
     color: #f4e1b3;
     font-size: 18rem;
     font-weight: 400;
     line-height: 21rem;
     /* stylelint-disable-next-line unit-blacklist */
     letter-spacing: 0.04em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    opacity: 0.5;
+    position: absolute;
+    top: -25rem;
+    right: 0;
+    left: 0;
 }
 .AbilityPanel_ability__ready_fd .AbilityPanel_ability_keyBind_40 {
     opacity: 1;
@@ -242,6 +303,9 @@
 .AbilityPanel_ability__wave_d6 {
     margin-right: 6rem;
 }
+.AbilityPanel_ability__repulsion_mine_ae {
+    margin-right: 25rem;
+}
 .AbilityPanel_ability__shell_e8 {
     margin-right: 25rem;
 }
@@ -271,6 +335,26 @@
 .mediaMedium .AbilityPanel_ability__acceleration_62 .AbilityPanel_ability_reloadMask_icon_31 {
     background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.icons.acceleration') center center /
         48rem 48rem no-repeat;
+}
+.AbilityPanel_ability__repulsion_mine_ae .AbilityPanel_ability_icon_f2,
+.AbilityPanel_ability__repulsion_mine_ae .AbilityPanel_ability_reloadMask_icon_31 {
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.icons.repulsion_mine_small') center
+        center / 40rem 40rem no-repeat;
+}
+.mediaMedium .AbilityPanel_ability__repulsion_mine_ae .AbilityPanel_ability_icon_f2,
+.mediaMedium .AbilityPanel_ability__repulsion_mine_ae .AbilityPanel_ability_reloadMask_icon_31 {
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.icons.repulsion_mine') center center /
+        48rem 48rem no-repeat;
+}
+.AbilityPanel_ability__teleport_d8 .AbilityPanel_ability_icon_f2,
+.AbilityPanel_ability__teleport_d8 .AbilityPanel_ability_reloadMask_icon_31 {
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.icons.teleport_small') center center /
+        40rem 40rem no-repeat;
+}
+.mediaMedium .AbilityPanel_ability__teleport_d8 .AbilityPanel_ability_icon_f2,
+.mediaMedium .AbilityPanel_ability__teleport_d8 .AbilityPanel_ability_reloadMask_icon_31 {
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.ability_panel.icons.teleport') center center / 48rem
+        48rem no-repeat;
 }
 .AbilityPanel_ability__shield_39 .AbilityPanel_ability_icon_f2,
 .AbilityPanel_ability__shield_39 .AbilityPanel_ability_reloadMask_icon_31 {
@@ -358,6 +442,9 @@
 .AbilityPanel_ability__rapid_shelling_6d .AbilityPanel_ability_reloading_af {
     color: var(--rapidShellingColor);
 }
+.AbilityPanel_ability__teleport_d8 .AbilityPanel_ability_reloading_af {
+    color: #d7eff4;
+}
 .AbilityPanel_ability__rapid_shelling_6d .AbilityPanel_ability_reloadMask_icon_31 {
     border-left-color: var(--rapidShellingColor);
     border-top-color: var(--rapidShellingColor);
@@ -377,8 +464,29 @@
         1 1 1 stretch;
     border-image-width: 1rem;
 }
-.AbilityPanel_ability__rapid_shelling_6d .AbilityPanel_ability_reloadMask_background_29 {
-    background-color: var(--rapidShellingColor);
+.AbilityPanel_ability_9e .AbilityPanel_teleport_border_4d {
+    width: 100%;
+    height: 100%;
+    border-top: 1rem solid #38b0ca;
+    border-bottom: 1rem solid #38b0ca;
+    position: absolute;
+}
+.AbilityPanel_ability__teleport_d8.AbilityPanel_ability__active_4b .AbilityPanel_teleport_border_4d {
+    border-bottom-color: transparent;
+}
+.AbilityPanel_ability__teleport_d8 .AbilityPanel_ability_reloadMask_border_20 {
+    display: flex;
+    border-image: linear-gradient(
+            90deg,
+            #38b0ca 0%,
+            #38b0ca 20%,
+            transparent 20%,
+            transparent 80%,
+            #38b0ca 80%,
+            #38b0ca 100%
+        )
+        1 1 1 stretch;
+    border-image-width: 1rem;
 }
 .AbilityPanel_ability__shell_e8 .AbilityPanel_ability_reloadMask_icon_31 {
     border: 1rem solid #f4e1b3;
@@ -396,6 +504,49 @@
     to {
         opacity: 0;
         transform: scale(1.25);
+    }
+}
+@keyframes AbilityPanel_border-animation_08 {
+    0%,
+    100% {
+        transform: scale(1.05);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+@keyframes AbilityPanel_teleport-animation_6d {
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(0.95);
+    }
+}
+@keyframes AbilityPanel_pulse_bc {
+    0% {
+        opacity: 0;
+    }
+
+    33.33% {
+        opacity: 0.4;
+    }
+
+    40% {
+        opacity: 0.4;
+    }
+
+    73.33% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
     }
 }
 @keyframes AbilityPanel_chargeUp_3d {
@@ -426,6 +577,416 @@
     to {
         height: 100.5%;
     }
+}
+
+.ProgressionBar_base_00 {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: 270rem;
+    margin-top: 20rem;
+    margin-bottom: 30rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.scanning.bg_small') 0 0 / 270rem 26rem no-repeat;
+    position: relative;
+}
+
+.mediaMedium .ProgressionBar_base_00 {
+    width: 320rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.scanning.bg') 0 0 / 320rem 36rem no-repeat;
+}
+
+.ProgressionBar_base__coral_65 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.battle.scanning.bg_coral_small');
+}
+
+.mediaMedium .ProgressionBar_base__coral_65 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.battle.scanning.bg_coral');
+}
+
+.ProgressionBar_base__show_4b {
+    display: flex;
+}
+.ProgressionBar_progressBar_68 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 17rem;
+    margin: 4rem 4rem 6rem 5rem;
+    background-color: #01032640;
+    position: relative;
+}
+.mediaMedium .ProgressionBar_progressBar_68 {
+    height: 25rem;
+    margin: 6rem 7rem 6rem 6rem;
+}
+.ProgressionBar_progressBar_progress_ae {
+    height: 100%;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.scanning.scanning_progress') 1rem 1rem / 4rem 4rem
+        repeat;
+}
+.ProgressionBar_progressBar_text_73 {
+    color: #f4e1b3;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 21rem;
+    /* stylelint-disable-next-line unit-blacklist */
+    letter-spacing: 0.04em;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.ProgressionBar_base__coral_65 .ProgressionBar_progressBar_text_73 {
+    color: #dfcdf2;
+}
+.mediaMedium .ProgressionBar_progressBar_text_73 {
+    top: 0;
+}
+.ProgressionBar_progressBar_text_73 span {
+    min-width: 45rem;
+}
+.ProgressionBar_label_f8 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #f4e1b3;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 19rem;
+    letter-spacing: 0.04em;
+}
+.mediaMedium .ProgressionBar_label_f8 {
+    color: #f4e1b3;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 21rem;
+    /* stylelint-disable-next-line unit-blacklist */
+    letter-spacing: 0.04em;
+    top: 0;
+}
+.ProgressionBar_base__coral_65 .ProgressionBar_label_f8 {
+    color: #dfcdf2;
+}
+.ProgressionBar_label_f8 span {
+    min-width: 9rem;
+}
+
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+@keyframes AbilityHint_fadeOut_38 {
+    to {
+        opacity: 0;
+    }
+}
+.AbilityHint_base_3e {
+    display: none;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40rem;
+    opacity: 1;
+    position: relative;
+    animation: AbilityHint_fadeOut_38 0.3s ease-in-out 2s;
+    animation-fill-mode: both;
+}
+.AbilityHint_base__visible_a9 {
+    display: flex;
+}
+.AbilityHint_base__animation_delay_23 {
+    animation-delay: 8s;
+}
+.AbilityHint_text_48 {
+    color: #fbd07f;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 21rem;
+    /* stylelint-disable-next-line unit-blacklist */
+    letter-spacing: 0.04em;
+    text-shadow:
+        2rem 0 rgba(1, 3, 38, 0.06),
+        -2rem 0 rgba(1, 3, 38, 0.06),
+        0 2rem rgba(1, 3, 38, 0.06),
+        0 -2rem rgba(1, 3, 38, 0.06),
+        0 0 8rem #010326;
+}
+.AbilityHint_seconds_41 {
+    font-size: 26rem;
+    position: relative;
+    top: -3rem;
 }
 
 .Announcement_base_93 {
@@ -557,86 +1118,6 @@
     }
 }
 
-.ArtefactScanning_base_19 {
-    display: none;
-    flex-direction: column;
-    align-items: stretch;
-    width: 270rem;
-    margin-top: 20rem;
-    margin-bottom: 10rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.scanning.bg_small') 0 0 / 270rem 26rem no-repeat;
-    position: relative;
-}
-
-.mediaMedium .ArtefactScanning_base_19 {
-    width: 320rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.scanning.bg') 0 0 / 320rem 36rem no-repeat;
-}
-
-.ArtefactScanning_base__show_21 {
-    display: flex;
-}
-.ArtefactScanning_progressBar_d0 {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    height: 17rem;
-    margin: 4rem 4rem 6rem 5rem;
-    background-color: #01032640;
-    position: relative;
-}
-.mediaMedium .ArtefactScanning_progressBar_d0 {
-    height: 25rem;
-    margin: 6rem 7rem 6rem 6rem;
-}
-.ArtefactScanning_progressBar_progress_a9 {
-    height: 100%;
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.scanning.scanning_progress') 1rem 1rem / 4rem 4rem
-        repeat;
-}
-.ArtefactScanning_progressBar_text_f7 {
-    color: #f4e1b3;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 21rem;
-    /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    top: -3rem;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.mediaMedium .ArtefactScanning_progressBar_text_f7 {
-    top: 0;
-}
-.ArtefactScanning_progressBar_text_f7 span {
-    min-width: 45rem;
-}
-.ArtefactScanning_label_80 {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: #f4e1b3;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 19rem;
-    letter-spacing: 0.04em;
-}
-.mediaMedium .ArtefactScanning_label_80 {
-    color: #f4e1b3;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 21rem;
-    /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-    top: 0;
-}
-.ArtefactScanning_label_80 span {
-    min-width: 9rem;
-}
-
 .ArenaTimer_base_4c {
     color: #f4e1b3;
     font-size: 26rem;
@@ -672,11 +1153,6 @@
     text-align: left;
     position: relative;
     top: -2rem;
-}
-
-.FormatText_base_d0 {
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .InfoPlate_base_b3 {
@@ -865,15 +1341,32 @@
     animation-fill-mode: both;
 }
 .MessageLog_Message__kill_9d,
-.MessageLog_Message__killStreak_50 {
+.MessageLog_Message__killStreak_50,
+.MessageLog_Message__firstBlood_4a {
     background-image: url('R.images.cosmic_event.gui.maps.icons.battle.messages.message_bg__kill');
 }
-.MessageLog_Message__firstBlood_4a,
-.MessageLog_Message__revenge_1f {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.battle.messages.message_bg__firstBlood');
+.MessageLog_Message__lootResearching_ac,
+.MessageLog_Message__lootResearchingDone_fa,
+.MessageLog_Message__lootResearchablePickUp_1d {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.battle.messages.message_bg__loot');
+}
+.MessageLog_Message__lootResearching_marsPoints_ca,
+.MessageLog_Message__lootResearchingDone_marsPoints_7f,
+.MessageLog_Message__lootResearchablePickUp_marsPoints_2e {
+    color: #e9dcf6;
+}
+.MessageLog_Message__lootResearching_ac .MessageLog_Message_marsPoints_8a,
+.MessageLog_Message__lootResearching_ac .MessageLog_Message_type_14,
+.MessageLog_Message__lootResearchingDone_fa .MessageLog_Message_marsPoints_8a,
+.MessageLog_Message__lootResearchingDone_fa .MessageLog_Message_type_14,
+.MessageLog_Message__lootResearchablePickUp_1d .MessageLog_Message_marsPoints_8a,
+.MessageLog_Message__lootResearchablePickUp_1d .MessageLog_Message_type_14 {
+    color: #e9dcf6;
 }
 .MessageLog_Message__kill_9d .MessageLog_Message_marsPoints_8a,
-.MessageLog_Message__kill_9d .MessageLog_Message_type_14 {
+.MessageLog_Message__kill_9d .MessageLog_Message_type_14,
+.MessageLog_Message__firstBlood_4a .MessageLog_Message_marsPoints_8a,
+.MessageLog_Message__firstBlood_4a .MessageLog_Message_type_14 {
     color: #f2c572;
 }
 .MessageLog_Message__kill_9d .MessageLog_Message_effect_f5 {
@@ -948,6 +1441,7 @@
 
 .PickupNotificationSlot_base__black_hole_6b,
 .PickupNotificationSlot_base__rapid_shelling_fb,
+.PickupNotificationSlot_base__teleport_14,
 .PickupNotificationSlot_base__power_shot_41,
 .PickupNotificationSlot_base__overcharge_a5 {
     animation: PickupNotificationSlot_blink_3c 1s ease-in-out;
@@ -966,9 +1460,22 @@
 }
 .PickupNotificationSlot_base__black_hole_6b .PickupNotificationSlot_effect_e4,
 .PickupNotificationSlot_base__rapid_shelling_fb .PickupNotificationSlot_effect_e4,
+.PickupNotificationSlot_base__teleport_14 .PickupNotificationSlot_effect_e4,
 .PickupNotificationSlot_base__power_shot_41 .PickupNotificationSlot_effect_e4,
 .PickupNotificationSlot_base__overcharge_a5 .PickupNotificationSlot_effect_e4 {
     display: flex;
+}
+.PickupNotificationSlot_base__teleport_14 .PickupNotificationSlot_effect_e4 {
+    background-color: #38b0ca;
+}
+.PickupNotificationSlot_base__power_shot_41 .PickupNotificationSlot_effect_e4 {
+    background-color: #b3a5ff;
+}
+.PickupNotificationSlot_base__overcharge_a5 .PickupNotificationSlot_effect_e4 {
+    background-color: #ff7070;
+}
+.PickupNotificationSlot_base__black_hole_6b .PickupNotificationSlot_effect_e4 {
+    background-color: #ffd770;
 }
 .PickupNotificationSlot_icon_49 {
     width: 90rem;
@@ -984,6 +1491,9 @@
 }
 .PickupNotificationSlot_base__rapid_shelling_fb .PickupNotificationSlot_icon_49 {
     background-image: url('R.images.cosmic_event.gui.maps.icons.battle.pickup_notification.icons.rapid_shelling');
+}
+.PickupNotificationSlot_base__teleport_14 .PickupNotificationSlot_icon_49 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.battle.pickup_notification.icons.teleport');
 }
 .PickupNotificationSlot_base__power_shot_41 .PickupNotificationSlot_icon_49 {
     background-image: url('R.images.cosmic_event.gui.maps.icons.battle.pickup_notification.icons.power_shot');
@@ -1145,10 +1655,10 @@
 .PlayerList_playerEntrySelected_37 .PlayerList_playerScore_d6 {
     color: #f2c572;
 }
-.PlayerList_playerRevenge_46 {
+.PlayerList_lootResearching_9c {
     width: 24rem;
     height: 24rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.battle.player_list.revenge') no-repeat center / cover;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.poiMarker.coral_small') no-repeat center / cover;
     position: absolute;
     top: 2rem;
     right: -25rem;
@@ -1168,6 +1678,9 @@
 }
 
 .PoiMarker_base_ee {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     opacity: 0;
     visibility: hidden;
     position: absolute;
@@ -1183,9 +1696,27 @@
     opacity: 0.2;
 }
 .PoiMarker_icon_1b {
-    width: 59rem;
-    height: 59rem;
+    width: 56rem;
+    height: 56rem;
+    margin-bottom: 8rem;
     background: url('R.images.cosmic_event.gui.maps.icons.battle.poiMarker.icon') 0 0 / cover no-repeat;
+}
+.PoiMarker_base__coral_7c .PoiMarker_icon_1b {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.battle.poiMarker.coral');
+}
+.PoiMarker_timer_14 {
+    width: 56rem;
+    height: 26rem;
+    border-radius: 1rem;
+    box-shadow:
+        0 0 4rem 0 rgba(112, 74, 148, 0.5),
+        0 0 8rem 0 rgba(72, 49, 94, 0.5);
+    background: #e9dcf6;
+    color: #704a94;
+    font-size: 20rem;
+    font-weight: 700;
+    line-height: 23rem;
+    text-align: center;
 }
 .PoiMarker_direction_2b {
     width: 34rem;
@@ -1198,6 +1729,9 @@
     transform: rotateX(30deg);
     transform-origin: 50% 80rem;
     transition: opacity 300ms ease-in;
+}
+.PoiMarker_base__coral_7c .PoiMarker_direction_2b {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.battle.poiMarker.coral_direction');
 }
 .PoiMarker_base__onScreen_c5 .PoiMarker_direction_2b {
     opacity: 0;
@@ -1212,7 +1746,7 @@
     margin-top: 5rem;
     background: url('R.images.cosmic_event.gui.maps.icons.battle.poiMarker.distanceBg') 0 0 / 5rem 5rem repeat;
     position: absolute;
-    top: 100%;
+    top: 80%;
     left: 50%;
     transform: translateX(-50%);
     color: #f4e1b3;
@@ -1222,47 +1756,8 @@
     /* stylelint-disable-next-line unit-blacklist */
     letter-spacing: 0.04em;
 }
-
-@keyframes AbilityHint_fadeOut_38 {
-    to {
-        opacity: 0;
-    }
-}
-.AbilityHint_base_3e {
-    display: flex;
-    justify-content: center;
-    opacity: 1;
-    position: absolute;
-    top: 225rem;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: AbilityHint_fadeOut_38 0.3s ease-in-out 2s;
-    animation-fill-mode: both;
-}
-.mediaMedium .AbilityHint_base_3e {
-    top: 275rem;
-}
-.mediaLarge .AbilityHint_base_3e {
-    top: 350rem;
-}
-.AbilityHint_text_48 {
-    color: #fbd07f;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 21rem;
-    /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-    text-shadow:
-        2rem 0 rgba(1, 3, 38, 0.06),
-        -2rem 0 rgba(1, 3, 38, 0.06),
-        0 2rem rgba(1, 3, 38, 0.06),
-        0 -2rem rgba(1, 3, 38, 0.06),
-        0 0 8rem #010326;
-}
-.AbilityHint_seconds_41 {
-    font-size: 26rem;
-    position: relative;
-    top: -3rem;
+.PoiMarker_base__coral_7c .PoiMarker_distance_f5 {
+    color: #dfcdf2;
 }
 
 .VehicleMarkers_base_62 {
@@ -1270,6 +1765,9 @@
     height: 100%;
 }
 .VehicleMarkers_vehicleMarker_26 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     visibility: hidden;
     position: absolute;
     transform-origin: top left;
@@ -1279,13 +1777,52 @@
     font-size: 18rem;
     text-align: center;
     text-shadow:
-        0 0 4px rgba(255, 127, 0, 0.25),
-        0 0 8px #ff2a00,
-        0 0 15px #e52;
-    transform: translate(-50%, -50%);
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
+    letter-spacing: 0.72rem;
 }
 .VehicleMarkers_vehicleMarker__visible_17 {
     visibility: visible;
+}
+.VehicleMarkers_vehicleMarker__lootResearching_88 {
+    color: #e9dcf6;
+    text-shadow:
+        0 0 4rem rgba(112, 74, 148, 0.5),
+        0 0 8rem rgba(112, 74, 148, 0.75),
+        0 0 12rem rgba(72, 49, 94, 0.75);
+}
+.VehicleMarkers_wrapper_84 {
+    transform: translate(-50%, -90%);
+}
+.VehicleMarkers_lootContainer_ad {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8rem;
+    visibility: visible;
+    position: relative;
+}
+.VehicleMarkers_icon_2c {
+    width: 28rem;
+    height: 32rem;
+    margin-bottom: 4rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.battle.poiMarker.coral_small') no-repeat center / cover;
+}
+.VehicleMarkers_timer_7b {
+    width: 50rem;
+    height: 24rem;
+    border-radius: 1rem;
+    box-shadow:
+        0 0 4rem 0 rgba(112, 74, 148, 0.25),
+        0 0 8rem 0 rgba(72, 49, 94, 0.5);
+    background: #e9dcf6;
+    color: #704a94;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 21rem;
+    text-align: center;
 }
 
 .Crosshair_base_64 {
@@ -1685,6 +2222,88 @@
 .mediaMedium .Aim_killStreak_text_anim_9a {
     margin-top: -4rem;
     font-size: 24rem;
+}
+
+.LootWidget_base_8d {
+    width: 154rem;
+    height: 154rem;
+    opacity: 0;
+    position: absolute;
+    bottom: 24rem;
+    left: 24rem;
+    transition: opacity 0.2s ease-out 0.2s;
+}
+
+.LootWidget_base__visible_d1 {
+    opacity: 1;
+}
+
+.mediaMedium .LootWidget_base_8d {
+    width: 170rem;
+    height: 170rem;
+    bottom: 40rem;
+    left: 40rem;
+}
+
+.mediaLarge .LootWidget_base_8d {
+    width: 220rem;
+    height: 220rem;
+}
+
+.mediaExtraLarge .LootWidget_base_8d {
+    width: 260rem;
+    height: 260rem;
+}
+.LootWidget_lootSequence_0a {
+    width: 100%;
+    height: 100%;
+    animation: LootWidget_slideUp_b6 3s linear infinite;
+}
+.LootWidget_timer_39 {
+    width: 50rem;
+    height: 24rem;
+    border: 1rem solid rgba(115, 39, 170, 0.1);
+    border-radius: 1rem;
+    background: rgba(233, 220, 246, 0.85);
+    color: #704a94;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.05;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.mediaMedium .LootWidget_timer_39 {
+    width: 54rem;
+    height: 26rem;
+    font-size: 20rem;
+}
+.mediaLarge .LootWidget_timer_39 {
+    width: 66rem;
+    height: 32rem;
+    font-size: 24rem;
+    line-height: 1.1;
+}
+.mediaExtraLarge .LootWidget_timer_39 {
+    width: 80rem;
+    height: 38rem;
+    font-size: 28rem;
+    line-height: 1.15;
+}
+@keyframes LootWidget_slideUp_b6 {
+    0% {
+        transform: translateY(-5rem);
+    }
+
+    50% {
+        transform: translateY(0rem);
+    }
+
+    100% {
+        transform: translateY(-5rem);
+    }
 }
 
 .CosmicReactHudApp_base_c3 {

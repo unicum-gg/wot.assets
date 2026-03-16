@@ -861,29 +861,63 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 2;
-    width: auto;
     height: 231rem;
     position: relative;
 }
 
-.Stage_rewards_6b {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 104rem;
-    height: 104rem;
-    margin-top: -44rem;
-    position: absolute;
+.Stage_mainReward_1a {
+    margin-bottom: 20rem;
 }
 
-.mediaMedium .Stage_rewards_6b {
+.mediaExtraLarge .Stage_mainReward_1a {
+    margin-bottom: 50rem;
+}
+
+.Stage_mainRewardIcon_77 {
+    transform: scale(0.6);
+}
+
+.mediaExtraLarge .Stage_mainRewardIcon_77 {
+    transform: scale(0.8);
+}
+
+.Stage_mainRewardOverlay_ae {
+    transform: translate(-50%, -50%) scale(0.6);
+}
+
+.mediaExtraLarge .Stage_mainRewardOverlay_ae {
+    transform: translate(-50%, -50%) scale(0.8);
+}
+
+.Stage_mainRewardInfo_0c {
+    margin-top: -38rem;
+}
+
+.Stage_mainRewardInfo__multi_49 {
+    margin-right: 52rem;
+}
+
+.mediaExtraLarge .Stage_mainRewardInfo_0c {
+    margin-top: -26rem;
+}
+
+.mediaExtraLarge .Stage_mainRewardInfo__multi_49 {
+    margin-right: 46rem;
+}
+
+.Stage_rewards_6b {
+    display: flex;
     justify-content: center;
-    margin-top: -20rem;
+    align-items: center;
+    margin-top: -30rem;
 }
 
 .Stage_reward_29 {
-    margin: 4rem 8rem;
+    margin: 4rem 0rem;
+}
+
+.mediaSmall .Stage_reward_29 {
+    margin: 4rem;
 }
 
 .Stage_points_8c {
@@ -891,10 +925,9 @@
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
-    width: 104rem;
-    margin-top: 75rem;
-    text-align: center;
     opacity: 0.6;
+    position: absolute;
+    bottom: -10rem;
 }
 
 .mediaMedium .Stage_points_8c {
@@ -926,7 +959,7 @@
     line-height: 1.3;
     opacity: 0.5;
     position: absolute;
-    bottom: 30rem;
+    bottom: -90rem;
 }
 
 .mediaMedium .Stage_index_e2 {
@@ -934,6 +967,10 @@
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+}
+
+.mediaExtraLarge .Stage_index_e2 {
+    bottom: -140rem;
 }
 
 .Stage_base__done_17 .Stage_index_e2,
@@ -945,8 +982,9 @@
     align-content: center;
     width: 104rem;
     height: 24rem;
-    margin-top: 85rem;
     background: url('R.images.gui.maps.icons.library.check') no-repeat center;
+    position: absolute;
+    bottom: -12rem;
 }
 
 .Stage_doneGlowTop_05 {
@@ -954,7 +992,11 @@
     height: 170rem;
     background: url('R.images.fun_random.gui.maps.icons.feature.progression.done_top') no-repeat center / cover;
     position: absolute;
-    top: -44rem;
+    top: 90rem;
+}
+
+.mediaExtraLarge .Stage_doneGlowTop_05 {
+    top: 130rem;
 }
 
 .Stage_doneGlowBottom_1c {
@@ -962,14 +1004,34 @@
     height: 63rem;
     background: url('R.images.fun_random.gui.maps.icons.feature.progression.done_bottom') no-repeat center / cover;
     position: absolute;
-    bottom: 30rem;
+    bottom: -104rem;
+}
+
+.mediaExtraLarge .Stage_doneGlowBottom_1c {
+    bottom: -144rem;
 }
 
 .Stage_separator_46 {
     width: 2rem;
-    height: 100%;
+    height: 230rem;
     position: absolute;
     left: 0;
+}
+
+.mediaSmall .Stage_separator_46 {
+    height: 280rem;
+}
+
+.mediaMedium .Stage_separator_46 {
+    height: 316rem;
+}
+
+.mediaLarge .Stage_separator_46 {
+    height: 346rem;
+}
+
+.mediaExtraLarge .Stage_separator_46 {
+    height: 380rem;
 }
 
 .Stage_separatorDark_ce {
@@ -1001,7 +1063,11 @@
     display: flex;
     width: 100%;
     position: absolute;
-    top: 126rem;
+    top: 260rem;
+}
+
+.mediaExtraLarge .Progression_progress_67 {
+    top: 300rem;
 }
 
 .Progression_stages_15 {
@@ -1171,7 +1237,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
 }
 
 .App_content_c2 {
@@ -1190,12 +1255,20 @@
     display: flex;
     flex-direction: column;
     width: 992rem;
-    margin-top: 60rem;
+    margin-top: 30rem;
+}
+
+.mediaSmall .App_progression_00 {
+    width: 1200rem;
 }
 
 .mediaMedium .App_progression_00 {
     width: 1415rem;
-    margin-top: 20rem;
+    margin-top: 0rem;
+}
+
+.mediaLarge .App_progression_00 {
+    width: 1700rem;
 }
 
 .App_base__completedFinal_cb .App_progression_00 {
@@ -1209,7 +1282,22 @@
     line-height: 1.3;
     display: flex;
     justify-content: center;
-    width: 100%;
+    position: absolute;
+    bottom: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mediaMedium .App_resetTimer_94 {
+    bottom: 28rem;
+}
+
+.mediaLarge .App_resetTimer_94 {
+    bottom: 56rem;
+}
+
+.mediaExtraLarge .App_resetTimer_94 {
+    bottom: 90rem;
 }
 
 .App_resetText_07 {
@@ -1246,15 +1334,20 @@
 
 .App_quest_96 {
     display: flex;
-    margin-top: 24rem;
+    margin-top: 14rem;
 }
 
 .mediaMedium .App_quest_96 {
-    margin-top: 47rem;
+    margin-top: 36rem;
+    margin-bottom: 20rem;
 }
 
 .mediaLarge .App_quest_96 {
-    margin-top: 35rem;
+    margin-top: 25rem;
+}
+
+.mediaExtraLarge .App_quest_96 {
+    margin-bottom: 60rem;
 }
 
 .App_conditions_fb {

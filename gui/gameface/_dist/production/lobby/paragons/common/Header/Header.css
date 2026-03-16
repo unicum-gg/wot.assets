@@ -1,8 +1,3 @@
-.FormatText_base_d0 {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .Box_mt__XS_0c {
     margin-top: 4rem;
 }
@@ -107,6 +102,11 @@
 
 .Box_ml__XL_4a {
     margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* eslint-disable-next-line expectedscss*/
@@ -315,14 +315,11 @@
     line-height: 1.25;
 }
 
-.mediaSmall .Header_subTitle_fb {
+.mediaMedium .Header_subTitle_fb {
     color: #fefeec;
     font-size: 20rem;
     font-weight: 400;
     line-height: 1.2;
-}
-
-.mediaMedium .Header_subTitle_fb {
     margin-top: 9rem;
 }
 

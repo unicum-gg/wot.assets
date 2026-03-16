@@ -4562,7 +4562,6 @@
                                                                     );
                                                                 })(n.keys());
                                                             !(e = u()).done;
-
                                                         )
                                                             r(e.value, t);
                                                     },
@@ -5438,10 +5437,10 @@
                                 P = _ && r === ot.Locked,
                                 M = Boolean(
                                     r !== ot.Locked &&
-                                        r !== ot.Done &&
-                                        t !== qa.Disabled &&
-                                        o &&
-                                        (e || (_ && s !== ja.Completed)),
+                                    r !== ot.Done &&
+                                    t !== qa.Disabled &&
+                                    o &&
+                                    (e || (_ && s !== ja.Completed)),
                                 ),
                                 N = ((e) => {
                                     if (e && e.length)

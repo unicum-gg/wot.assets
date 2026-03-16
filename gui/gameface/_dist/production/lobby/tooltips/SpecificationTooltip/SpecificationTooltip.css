@@ -342,3 +342,7 @@
     position: absolute;
     top: 0;
 }
+
+.CosmicTooltipDecorator_simple_e8 .CosmicTooltipDecorator_bg_glow_9a {
+    display: none;
+}

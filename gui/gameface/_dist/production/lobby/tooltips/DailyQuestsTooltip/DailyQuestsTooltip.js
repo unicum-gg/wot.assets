@@ -736,7 +736,7 @@
                     r = t(3138),
                     o = t(6179),
                     a = t.n(o);
-                const i = ['children', 'className'];
+                const i = ['children', 'className', 'isSimple'];
                 function l() {
                     return (
                         (l =
@@ -754,7 +754,8 @@
                 const c = a().forwardRef(function (e, u) {
                     let t = e.children,
                         n = e.className,
-                        c = (function (e, u) {
+                        c = e.isSimple,
+                        E = (function (e, u) {
                             if (null == e) return {};
                             var t,
                                 n,
@@ -763,7 +764,7 @@
                             for (n = 0; n < r.length; n++) ((t = r[n]), u.indexOf(t) >= 0 || (s[t] = e[t]));
                             return s;
                         })(e, i);
-                    const E = (function () {
+                    const d = (function () {
                             const e = (0, o.useRef)(0);
                             var u;
                             return (
@@ -792,12 +793,12 @@
                                 )
                             );
                         })(),
-                        d = a().useRef(null);
-                    var _;
+                        _ = a().useRef(null);
+                    var A;
                     return (
-                        (_ = () => {
-                            E.run(() => {
-                                const e = d.current;
+                        (A = () => {
+                            d.run(() => {
+                                const e = _.current;
                                 if (!e) return;
                                 const u = e.scrollWidth,
                                     t = e.scrollHeight;
@@ -811,16 +812,16 @@
                                 });
                             });
                         }),
-                        (0, o.useEffect)(_, []),
+                        (0, o.useEffect)(A, []),
                         a().createElement(
                             'div',
-                            l({}, c, {
+                            l({}, E, {
                                 className: s()('CosmicTooltipDecorator_base_7d', n),
                                 ref: function (e) {
-                                    ((d.current = e), 'function' == typeof u ? u(e) : u && (u.current = e));
+                                    ((_.current = e), 'function' == typeof u ? u(e) : u && (u.current = e));
                                 },
                             }),
-                            a().createElement('div', { className: 'CosmicTooltipDecorator_bg_cubes_b6' }),
+                            !c && a().createElement('div', { className: 'CosmicTooltipDecorator_bg_cubes_b6' }),
                             a().createElement('div', { className: 'CosmicTooltipDecorator_bg_glow_9a' }),
                             a().createElement('div', { className: 'CosmicTooltipDecorator_decorator_13' }, t),
                         )
@@ -1311,7 +1312,7 @@
                     }
                 }
                 k.defaultProps = { format: 'integral' };
-                const N = [
+                const I = [
                         c.Items,
                         c.Equipment,
                         c.Xp,
@@ -1351,7 +1352,7 @@
                         c.PostStamp,
                         c.PremiumPlusUniversal,
                     ],
-                    I = [c.Gold, c.Credits, c.Crystal, c.FreeXp],
+                    N = [c.Gold, c.Credits, c.Crystal, c.FreeXp],
                     x = [c.BattlePassPoints],
                     M = [c.PremiumPlus, c.Premium];
                 let U;
@@ -2379,8 +2380,8 @@
                                   );
                         return r().createElement('div', { className: 'BattleConditions_condition_e2' }, d > 0 && m, u);
                     },
-                    Ne = R.strings.quests.dailyQuests.postBattle.genericAmpersand(),
-                    Ie = R.strings.quests.dailyQuests.postBattle.and(),
+                    Ie = R.strings.quests.dailyQuests.postBattle.genericAmpersand(),
+                    Ne = R.strings.quests.dailyQuests.postBattle.and(),
                     xe = ({
                         conditions: e,
                         missionId: u,
@@ -2473,7 +2474,7 @@
                                                                         'BattleConditions_description_inlineOperator_34',
                                                                     style: _,
                                                                 },
-                                                                'and' === e.conditionType && A ? Ne : Ie,
+                                                                'and' === e.conditionType && A ? Ie : Ne,
                                                             ),
                                                         )
                                                       : r().createElement(
@@ -2490,7 +2491,7 @@
                                             r().createElement(
                                                 'div',
                                                 { className: 'BattleConditions_operator_43' },
-                                                'and' === e.conditionType && A ? Ne : Ie,
+                                                'and' === e.conditionType && A ? Ie : Ne,
                                             ),
                                     )
                                 );
@@ -2696,9 +2697,9 @@
                                 value: e.value,
                                 valueType:
                                     ((u = e.name),
-                                    N.includes(u)
+                                    I.includes(u)
                                         ? _.MULTI
-                                        : I.includes(u)
+                                        : N.includes(u)
                                           ? _.CURRENCY
                                           : x.includes(u)
                                             ? _.NUMBER
@@ -2825,7 +2826,6 @@
                                                                     );
                                                                 })(r.keys());
                                                             !(e = t()).done;
-
                                                         )
                                                             o(e.value, u);
                                                     },
@@ -2980,8 +2980,8 @@
                     })(),
                     eu = Je[0],
                     uu = Je[1],
-                    tu = { color: '#E9E2BF', fontSize: '20rem' },
-                    nu = { marginLeft: '10rem', marginRight: '10rem' },
+                    tu = { color: '#E9E2BF', fontSize: '18rem' },
+                    nu = { marginLeft: '0rem', marginRight: '0rem' },
                     su = (0, W.observer)(() => {
                         const e = uu().model,
                             u = e.root.get(),
@@ -3000,7 +3000,7 @@
                                 () =>
                                     ((e) =>
                                         'done' === e
-                                            ? R.strings.quests.battleCondition.state.completed()
+                                            ? R.strings.quests.quest.flag.status.completed()
                                             : R.strings.quests.battleCondition.state.in_progress())(o),
                                 [o],
                             ),
@@ -3022,7 +3022,10 @@
                                     columns: !0,
                                     progressBarStyles: nu,
                                     textStyles: tu,
-                                    classNames: { text: 'App_battleConditionsText_16' },
+                                    classNames: {
+                                        text: 'App_battleConditionsText_16',
+                                        progressInfo: 'App_progressInfo_e9',
+                                    },
                                     progressInfoStyles: tu,
                                     progressBarTheme: ye,
                                     missionId: n,
@@ -3047,11 +3050,11 @@
                             r().createElement(
                                 'div',
                                 { className: 'App_rewards_wrapper_dd' },
-                                r().createElement(Y, { data: _ }),
+                                r().createElement(Y, { size: d.S80x80, data: _ }),
                                 i &&
                                     r().createElement(Ve, {
                                         data: A,
-                                        size: d.Big,
+                                        size: d.S80x80,
                                         isUnlockedQuestReward:
                                             (a && o !== V.UndoneSubscription) || (!a && o === V.Done),
                                         isClosedRewardOnCompletedQuest: o === V.UndoneSubscription,

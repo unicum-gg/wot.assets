@@ -1869,7 +1869,6 @@
                                 (lr = lr || document.createElement('div')).innerHTML = '<svg>' + t + '</svg>',
                                     t = lr.firstChild;
                                 e.firstChild;
-
                             )
                                 e.removeChild(e.firstChild);
                             for (; t.firstChild; ) e.appendChild(t.firstChild);
@@ -3331,7 +3330,6 @@
                     for (
                         n = Yr((e = t.child), e.pendingProps, e.expirationTime), t.child = n, n.return = t;
                         null !== e.sibling;
-
                     )
                         ((e = e.sibling), ((n = n.sibling = Yr(e, e.pendingProps, e.expirationTime)).return = t));
                     n.sibling = null;
@@ -4539,7 +4537,6 @@
                                                         c !== i || (0 !== n && 3 !== c.nodeType) || (l = a + n),
                                                         3 === c.nodeType && (a += c.nodeValue.length),
                                                         null !== (d = c.firstChild);
-
                                                 )
                                                     ((f = c), (c = d));
                                                 for (;;) {
@@ -4564,7 +4561,6 @@
                         En = !1,
                         Eo = r;
                     null !== Eo;
-
                 ) {
                     i = !1;
                     var o = void 0;
@@ -6395,9 +6391,9 @@
                 throw new Error(
                     'number' == typeof e
                         ? '[MobX] minified error nr: ' +
-                          e +
-                          (n.length ? ' ' + n.map(String).join(',') : '') +
-                          '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
+                              e +
+                              (n.length ? ' ' + n.map(String).join(',') : '') +
+                              '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
                         : '[MobX] ' + e,
                 );
             }
@@ -8494,7 +8490,6 @@
                                             o = !1,
                                             l = U(t.data_.keys());
                                         !(n = l()).done;
-
                                     ) {
                                         var u = n.value;
                                         if (!i.has(u))
@@ -8520,7 +8515,6 @@
                                             for (
                                                 var y = t.data_.keys(), g = a.keys(), b = y.next(), x = g.next();
                                                 !b.done;
-
                                             ) {
                                                 if (b.value !== x.value) {
                                                     t.keysAtom_.reportChanged();

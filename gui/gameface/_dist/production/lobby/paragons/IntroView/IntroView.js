@@ -802,7 +802,7 @@
                     };
                 window.ViewEnvHelper = b;
             },
-            7531: (u, e, t) => {
+            574: (u, e, t) => {
                 'use strict';
                 var r = t(6179),
                     a = t.n(r);
@@ -2113,7 +2113,7 @@
                         },
                         ({ externalModel: u }) => ({
                             close: u.createCallbackNoArgs('onClose'),
-                            goToFeature: u.createCallbackNoArgs('onGoToFeature'),
+                            toFeature: u.createCallbackNoArgs('onGoToFeature'),
                         }),
                     ),
                     Iu = Wu[0],
@@ -2133,49 +2133,62 @@
                     ue = R.strings.paragons.introView,
                     ee = ['first', 'second', 'third'],
                     te = (0, Ru.Pi)(() => {
-                        const u = Gu().controls;
-                        Ou(Su.n.ESCAPE, u.close);
-                        const e = f().mediaSize >= v.Medium;
-                        return a().createElement(
-                            'div',
-                            { className: Uu },
-                            a().createElement('div', { className: ju }),
+                        const u = Gu().controls,
+                            e = f().mediaSize >= v.Medium,
+                            t = e ? G.medium : G.small,
+                            r = e ? '_large' : '';
+                        return (
+                            (function ({
+                                key: u = Su.n.ESCAPE,
+                                callback: e = () => n.O.view.sendEvent.close(),
+                                preventPropagation: t = !0,
+                            } = {}) {
+                                Ou(u, e, t);
+                            })({ callback: u.close, preventPropagation: !1 }),
                             a().createElement(
                                 'div',
-                                { className: Xu },
-                                a().createElement(Lu, {
-                                    side: 'right',
-                                    type: 'close',
-                                    caption: ue.closeButton(),
-                                    onClick: u.close,
-                                }),
-                            ),
-                            a().createElement(xu, { className: $u, text: ue.header.title() }),
-                            a().createElement(
-                                'div',
-                                { className: Ku },
-                                a().createElement('div', { className: zu }),
-                                a().createElement('div', { className: h()(zu, Vu) }),
-                                ee.map((u) =>
-                                    a().createElement(
-                                        'div',
-                                        { className: qu, key: u },
-                                        a().createElement('div', {
-                                            className: Yu,
-                                            style: {
-                                                backgroundImage: `url(R.images.gui.maps.icons.paragons.intro.Card_${u}${e ? '_large' : ''})`,
-                                            },
-                                        }),
-                                        a().createElement(xu, { className: Zu, text: ue.title.$dyn(u) }),
-                                        a().createElement(xu, { className: Qu, text: ue.description.$dyn(u) }),
+                                { className: Uu },
+                                a().createElement('div', { className: ju }),
+                                a().createElement(
+                                    'div',
+                                    { className: Xu },
+                                    a().createElement(Lu, {
+                                        side: 'right',
+                                        type: 'close',
+                                        caption: ue.closeButton(),
+                                        onClick: u.close,
+                                    }),
+                                ),
+                                a().createElement(xu, { className: $u, text: ue.header.title() }),
+                                a().createElement(
+                                    'div',
+                                    { className: Ku },
+                                    a().createElement('div', { className: zu }),
+                                    a().createElement('div', { className: h()(zu, Vu) }),
+                                    ee.map((u) =>
+                                        a().createElement(
+                                            'div',
+                                            { className: qu, key: u },
+                                            a().createElement('div', {
+                                                className: Yu,
+                                                style: {
+                                                    backgroundImage: `url(R.images.gui.maps.icons.paragons.intro.Card_${u}${r})`,
+                                                },
+                                            }),
+                                            a().createElement(xu, { className: Zu, text: String(ue.title.$dyn(u)) }),
+                                            a().createElement(xu, {
+                                                className: Qu,
+                                                text: String(ue.description.$dyn(u)),
+                                            }),
+                                        ),
                                     ),
                                 ),
-                            ),
-                            a().createElement(
-                                j,
-                                { mixClass: Ju, onClick: u.goToFeature, type: I.primary, size: e ? G.medium : G.small },
-                                a().createElement(xu, { text: ue.goToFeatureButton() }),
-                            ),
+                                a().createElement(
+                                    j,
+                                    { mixClass: Ju, onClick: u.toFeature, type: I.primary, size: t },
+                                    a().createElement(xu, { text: ue.goToFeatureButton() }),
+                                ),
+                            )
                         );
                     });
                 engine.whenReady.then(() => {
@@ -2262,6 +2275,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [454], () => __webpack_require__(7531));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [454], () => __webpack_require__(574));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

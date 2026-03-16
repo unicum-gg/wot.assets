@@ -11,6 +11,103 @@
     position: relative;
 }
 
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FormatTextWithColorTags_blackReal_3c {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_8a {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_16 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_18 {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_10 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_ca {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_8d {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_a3 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_60 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_03 {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_ad {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_e4 {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_cd {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_c8 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_f0 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_c5 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_ac {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_6f {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_4e {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_90 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_71 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_dd {
+    color: #a29b70;
+}
+
 .Box_mt__XS_0c {
     margin-top: 4rem;
 }
@@ -115,11 +212,6 @@
 
 .Box_ml__XL_4a {
     margin-left: 64rem;
-}
-
-.FormatText_base_d0 {
-    display: flex;
-    flex-wrap: wrap;
 }
 
 /* eslint-disable-next-line expectedscss*/
@@ -286,96 +378,101 @@
     color: #a29b70;
 }
 
-.FormatTextWithColorTags_blackReal_3c {
-    color: #000000;
+.Active_base_2d {
+    width: 100%;
 }
 
-.FormatTextWithColorTags_whiteReal_8a {
-    color: #ffffff;
-}
-
-.FormatTextWithColorTags_white_16 {
-    color: #f2f2f7;
-}
-
-.FormatTextWithColorTags_whiteOrange_18 {
-    color: #fefeec;
-}
-
-.FormatTextWithColorTags_whiteSpanish_10 {
+.Active_subHeader_16 {
     color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 10rem;
 }
 
-.FormatTextWithColorTags_par_ca {
+.Active_topHeader_95 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 10rem;
+}
+
+.Active_description_92 {
     color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 10rem;
 }
 
-.FormatTextWithColorTags_parSecondary_8d {
-    color: #595950;
+.Active_params_f9 {
+    margin-bottom: 8rem;
 }
 
-.FormatTextWithColorTags_parTertiary_a3 {
-    color: #37362e;
+.Active_params__small_6b {
+    margin-bottom: 2rem;
 }
 
-.FormatTextWithColorTags_red_60 {
-    color: #ff2717;
+.Active_item_ca {
+    margin-bottom: 5rem;
+    padding-left: 24rem;
+    position: relative;
 }
 
-.FormatTextWithColorTags_redDark_03 {
-    color: #b70000;
-}
-
-.FormatTextWithColorTags_yellow_ad {
-    color: #feab34;
-}
-
-.FormatTextWithColorTags_orange_e4 {
-    color: #ee7000;
-}
-
-.FormatTextWithColorTags_cream_cd {
-    color: #ffdd99;
-}
-
-.FormatTextWithColorTags_brown_c8 {
+.Active_item__colored_95 {
     color: #cbac77;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
 }
 
-.FormatTextWithColorTags_greenBright_f0 {
-    color: #80d43a;
+.Active_item__small_04 {
+    margin-bottom: 2rem;
 }
 
-.FormatTextWithColorTags_green_c5 {
-    color: #7ab300;
+.Active_bullet_ac {
+    position: absolute;
+    top: 0;
+    left: 12rem;
+    transform: translateX(-50%);
 }
 
-.FormatTextWithColorTags_greenDark_af {
-    color: #497212;
+.Active_points_07 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    transform: translateY(-1rem);
 }
 
-.FormatTextWithColorTags_blueBooster_ac {
-    color: #ccffff;
+.Active_pointsIcon_dc {
+    width: 16rem;
+    height: 16rem;
+    margin-left: 5rem;
+    background: url('R.images.gui.maps.icons.paragons.paragon') no-repeat center / contain;
 }
 
-.FormatTextWithColorTags_blueTeamkiller_6f {
-    color: #09e2ff;
+.Active_creditIcon_ea {
+    width: 16rem;
+    height: 16rem;
+    background: url('R.images.gui.maps.icons.paragons.resetBranch.credits_small') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    right: -20rem;
+    transform: translateY(-50%);
 }
 
-.FormatTextWithColorTags_cred_4e {
-    color: #ced9d9;
-}
-
-.FormatTextWithColorTags_gold_90 {
-    color: #ffc363;
-}
-
-.FormatTextWithColorTags_bond_71 {
-    color: #c9c9b6;
-}
-
-.FormatTextWithColorTags_prom_dd {
-    color: #a29b70;
+.Active_list_0e {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 15rem;
 }
 
 .App_base_43 {
@@ -389,16 +486,74 @@
     padding: 17rem 28rem 7rem;
 }
 
-.App_icon_6b {
-    width: 24rem;
-    height: 24rem;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+.App_warning_7f {
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(201, 201, 182, 0.07) 38.22%,
+        rgba(201, 201, 182, 0.07) 64.56%,
+        transparent 100%
+    );
 }
 
-.App_topHeader_69 {
+.App_divider_6d {
+    width: 100%;
+    height: 1rem;
+    background: url('R.images.gui.maps.icons.paragons.tooltips.entryPointTooltip.divider_points') no-repeat center /
+        cover;
+}
+
+.App_alertIcon_79 {
+    width: 16rem;
+    height: 16rem;
+    margin-right: 8rem;
+    background: url('R.images.gui.maps.icons.library.alertBigIcon') no-repeat center / contain;
+    transform: translateY(3rem);
+}
+
+.App_warningContainer_52 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    margin: 20rem 28rem;
+}
+
+.App_warningText_9a {
+    width: 370rem;
+}
+
+.BattleModeList_base_3e {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.BattleModeList_itemList_dd {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.BattleModeList_battleTypeIcon_7e {
+    width: 24rem;
+    height: 24rem;
+    margin-right: 6rem;
+    background: no-repeat center / contain;
+}
+
+.BattleModeList_battleModeText_f2 {
+    width: 157rem;
+}
+
+.DroppedBranch_base_c3 {
+    width: 100%;
+}
+
+.DroppedBranch_topHeader_70 {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -406,29 +561,7 @@
     margin-bottom: 10rem;
 }
 
-.App_topHeader__alertIcon_ee,
-.App_topHeader__errorIcon_3b {
-    padding-left: 30rem;
-    position: relative;
-}
-
-.App_topHeader__alertIcon_ee .App_icon_6b {
-    background: url('R.images.gui.maps.icons.library.alertBigIcon') no-repeat center center / contain;
-}
-
-.App_topHeader__errorIcon_3b .App_icon_6b {
-    background: url('R.images.gui.maps.icons.library.stopIcon') no-repeat center center / contain;
-}
-
-.App_subHeader_71 {
-    color: #e9e2bf;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 10rem;
-}
-
-.App_description_c1 {
+.DroppedBranch_description_4f {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -436,63 +569,271 @@
     margin-bottom: 10rem;
 }
 
-.App_secondHeader_8c {
-    color: #e9e2bf;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
+.DroppedBranch_params_08 {
+    margin-bottom: 2rem;
 }
 
-.App_points_6c {
+.DroppedBranch_points_50 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     position: relative;
+    transform: translateY(-1rem);
 }
 
-.App_params_5a {
-    margin-bottom: 8rem;
+.DroppedBranch_points__vehicles_f6 {
+    transform: translateY(-1rem) translateX(5rem);
 }
 
-.App_pointsIcon_6b {
-    width: 21rem;
-    height: 20rem;
+.DroppedBranch_pointsIcon_d8 {
+    width: 16rem;
+    height: 16rem;
     margin-left: 5rem;
-    background: url('R.images.gui.maps.icons.paragons.tooltips.entryPointTooltip.icon_paragon') no-repeat center / cover;
+    background: url('R.images.gui.maps.icons.paragons.paragon') no-repeat center / contain;
 }
 
-.App_creditIcon_6d {
-    width: 24rem;
-    height: 24rem;
-    background: url('R.images.gui.maps.icons.paragons.resetBranch.credits_small') no-repeat center / cover;
-    position: absolute;
-    top: 50%;
-    right: -25rem;
-    transform: translateY(-50%);
-}
-
-.App_list_75 {
-    color: #8c8c7e;
+.DroppedBranch_item_5e {
+    color: #cbac77;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    margin-bottom: 15rem;
-}
-
-.App_item_c9 {
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
     padding-left: 24rem;
     position: relative;
 }
 
-.App_bullet_d7 {
-    color: #8c8c7e;
+.DroppedBranch_item__single_bf {
+    padding-left: 0;
+}
+
+.DroppedBranch_bullet_34 {
     position: absolute;
     top: 0;
     left: 12rem;
     transform: translateX(-50%);
 }
 
-.App_cream_ac {
+.DroppedBranch_subHeader_03 {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 10rem 0;
+}
+
+.DroppedBranch_battleTypesTable_31 {
+    display: flex;
+    width: 100%;
+    margin-top: 8rem;
+}
+
+.DroppedBranch_column_b8 {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: wrap;
+}
+
+.DroppedBranch_column__left_52 {
+    margin-right: 12rem;
+}
+
+.FirstBranchReset_base_c4 {
+    width: 100%;
+}
+
+.FirstBranchReset_topHeader_92 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 10rem;
+}
+
+.FirstBranchReset_description_75 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 10rem;
+}
+
+.FirstBranchReset_params_01 {
+    margin-bottom: 8rem;
+}
+
+.FirstBranchReset_item_a2 {
+    color: #cbac77;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+    padding-left: 24rem;
+    position: relative;
+}
+
+.FirstBranchReset_bullet_a3 {
+    position: absolute;
+    top: 0;
+    left: 12rem;
+    transform: translateX(-50%);
+}
+
+.FirstBranchReset_points_07 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    transform: translateY(-1rem);
+}
+
+.FirstBranchReset_points__vehicles_62 {
+    transform: translateY(-1rem) translateX(5rem);
+}
+
+.FirstBranchReset_pointsIcon_07 {
+    width: 16rem;
+    height: 16rem;
+    margin-left: 5rem;
+    background: url('R.images.gui.maps.icons.paragons.paragon') no-repeat center / contain;
+}
+
+.LimitReached_base_a7 {
+    width: 100%;
+}
+
+.LimitReached_topHeader_12 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 10rem;
+    padding-left: 30rem;
+    position: relative;
+}
+
+.LimitReached_icon_63 {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.library.alertBigIcon') no-repeat center center / contain;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-10rem);
+}
+
+.LimitReached_description_55 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 10rem;
+}
+
+.Paused_base_37 {
+    width: 100%;
+}
+
+.Paused_topHeader_a8 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 10rem;
+    padding-left: 30rem;
+    position: relative;
+}
+
+.Paused_icon_76 {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.library.stopIcon') no-repeat center center / contain;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-10rem);
+}
+
+.Paused_description_3e {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 10rem;
+}
+
+.RulesIncompleted_base_ea {
+    width: 100%;
+}
+
+.RulesIncompleted_topHeader_b7 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 10rem;
+    padding-left: 30rem;
+    position: relative;
+}
+
+.RulesIncompleted_icon_d3 {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.library.alertBigIcon') no-repeat center center / contain;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-10rem);
+}
+
+.RulesIncompleted_cream_41 {
     color: #ffdd99;
+}
+
+.RulesIncompleted_description_54 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 10rem;
+}
+
+.VehiclesRequired_base_41 {
+    width: 100%;
+}
+
+.VehiclesRequired_topHeader_5e {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 10rem;
+    padding-left: 30rem;
+    position: relative;
+}
+
+.VehiclesRequired_icon_50 {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.library.alertBigIcon') no-repeat center center / contain;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-10rem);
+}
+
+.VehiclesRequired_description_ab {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 10rem;
 }

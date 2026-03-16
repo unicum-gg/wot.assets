@@ -3938,9 +3938,12 @@
                     }),
                     gt = R.strings.battle_pass.battlePassBuyView,
                     Ct = (0, f.Pi)(({ onClose: e }) => {
-                        const u = V().model.computes.firstChapter();
+                        const u = V().model.computes.firstChapter(),
+                            t = () => {
+                                e(!1);
+                            };
                         return (
-                            ue({ callback: e, preventPropagation: !1 }),
+                            ue({ callback: t, preventPropagation: !1 }),
                             n().createElement(
                                 'div',
                                 { className: re },
@@ -3962,7 +3965,7 @@
                                     { className: se },
                                     n().createElement(K, {
                                         caption: R.strings.menu.viewHeader.backBtn.label(),
-                                        onClick: e,
+                                        onClick: t,
                                     }),
                                 ),
                                 n().createElement(

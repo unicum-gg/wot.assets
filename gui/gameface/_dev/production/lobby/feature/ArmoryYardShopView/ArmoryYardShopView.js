@@ -5234,7 +5234,6 @@
                         for (
                             var _iterator = _createForOfIteratorHelperLoose(subscribers.keys()), _step;
                             !(_step = _iterator()).done;
-
                         ) {
                             const subscriberId = _step.value;
                             unsubscribe(subscriberId, rootId);
@@ -6533,7 +6532,6 @@
                         for (
                             var _iterator = _createForOfIteratorHelperLoose(get(key).values()), _step;
                             !(_step = _iterator()).done;
-
                         ) {
                             const value = _step.value;
                             value(...args);
@@ -11734,7 +11732,6 @@
                                                 for (
                                                     var _iterator = _createForOfIteratorHelperLoose(SECTIONS), _step;
                                                     !(_step = _iterator()).done;
-
                                                 ) {
                                                     const section = _step.value;
 

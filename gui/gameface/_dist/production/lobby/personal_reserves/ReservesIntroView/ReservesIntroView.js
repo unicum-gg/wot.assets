@@ -1771,7 +1771,9 @@
                             ((0, r.useEffect)(() => {
                                 const e = [];
                                 (D.map((t) => {
-                                    const r = u.find((u) => u.key === t.key);
+                                    const r = u.find(
+                                        (u) => (null == u ? void 0 : u.key) === (null == t ? void 0 : t.key),
+                                    );
                                     r && e.push(r);
                                 }),
                                     _(e));

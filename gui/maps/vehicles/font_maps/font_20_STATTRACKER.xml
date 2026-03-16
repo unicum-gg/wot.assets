@@ -49,4 +49,9 @@
     <begin>	0.785 0.078	</begin>
     <end>	0.89 0.358	</end>
   </glyph>
+  <glyph>
+    <name>	*	</name>
+    <begin>	0.89 0.345	</begin>
+    <end>	0.99 0.625	</end>
+  </glyph>
 </font_20_STATTRACKER.xml>

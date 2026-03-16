@@ -463,8 +463,9 @@
 .App_base_4a {
     display: flex;
     flex-direction: column;
-    width: 420rem;
-    padding: 20rem 20rem 0;
+    width: 439rem;
+    padding: 16rem 20rem 24rem;
+    background: url('R.images.gui_lootboxes.gui.maps.storage.tooltip_bg') no-repeat top right / 260rem 130rem;
 }
 
 .App_title_7b {
@@ -472,7 +473,7 @@
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 8rem;
+    margin-bottom: 16rem;
 }
 
 .App_description_89 {
@@ -508,7 +509,6 @@
 .App_specialSlotWrapper_fc {
     display: flex;
     align-items: center;
-    margin-bottom: -4rem;
     position: relative;
 }
 
@@ -554,12 +554,18 @@
     max-width: 380rem;
 }
 
+.App_lastElementWrapper_68 {
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
 .App_rewardsExtraText_35 {
-    margin-top: 12rem;
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+    max-width: 279rem;
+    margin-left: 12rem;
 }
 
 .App_reward_1e + .App_reward_1e {
@@ -570,11 +576,25 @@
     margin-bottom: 5rem;
 }
 
-.App_footer_58 {
+.App_rewardItemWrapper_76 {
+    margin-right: 12rem;
+    position: relative;
+}
+
+.App_rewardItemWrapper_76 .App_rewardGlow_a1 {
+    width: 100rem;
+    height: 100rem;
+    background: url('R.images.gui_lootboxes.gui.maps.storage.tooltipRewardGlow') no-repeat center / cover;
+    position: absolute;
+    top: -25rem;
+    left: -25rem;
+}
+
+.App_counter_17 {
     display: flex;
     align-items: center;
     height: 58rem;
-    margin-top: 16rem;
+    margin-top: 0;
     border-top: 1rem dashed rgba(242, 242, 247, 0.1);
     background: linear-gradient(
         90deg,
@@ -587,7 +607,7 @@
 }
 
 .App_guaranteedNumber_af {
-    margin: -3rem 12rem 0;
+    margin: -3rem 12rem 0 0;
     color: #f4e1b3;
     font-size: 22rem;
     font-weight: 700;
@@ -602,7 +622,8 @@
     height: 80rem;
     background: url('R.images.gui_lootboxes.gui.maps.storage.tooltipDiscount') no-repeat center / cover;
     position: absolute;
-    left: -16rem;
+    bottom: -11rem;
+    left: -27rem;
 }
 
 .App_counterDescription_75 {
@@ -612,11 +633,23 @@
     line-height: 1.3;
 }
 
+.App_row_2e {
+    padding: 12rem 0 14rem;
+}
+
+.App_row_2e:last-child {
+    padding-bottom: 0;
+}
+
 .App_separator_a1 {
     width: 100%;
-    height: 2rem;
-    margin: 14rem 0 10rem;
+    height: 1rem;
+    margin: 0;
     background: url('R.images.gui.maps.icons.tooltip.tool_tip_separator') no-repeat center / cover;
+}
+
+.App_counter_17 + .App_separator_a1 {
+    display: none;
 }
 
 .TooltipDecorator_base_c9 {

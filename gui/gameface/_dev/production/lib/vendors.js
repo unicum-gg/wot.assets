@@ -1214,7 +1214,6 @@
                                         for (
                                             var _iterator2 = _createForOfIteratorHelperLoose(queue), _step2;
                                             !(_step2 = _iterator2()).done;
-
                                         ) {
                                             const props = _step2.value;
                                             yield animate(props);
@@ -33265,9 +33264,9 @@
                     throw new Error(
                         typeof error === 'number'
                             ? '[MobX] minified error nr: ' +
-                              error +
-                              (args.length ? ' ' + args.map(String).join(',') : '') +
-                              '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
+                                  error +
+                                  (args.length ? ' ' + args.map(String).join(',') : '') +
+                                  '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
                             : '[MobX] ' + error,
                     );
                 }
@@ -37962,7 +37961,6 @@
                         for (
                             var _iterator = _createForOfIteratorHelperLoose(this), _step;
                             !(_step = _iterator()).done;
-
                         ) {
                             var _step$value = _step.value,
                                 key = _step$value[0],
@@ -38008,7 +38006,6 @@
                                 for (
                                     var _iterator2 = _createForOfIteratorHelperLoose(_this5.keys()), _step2;
                                     !(_step2 = _iterator2()).done;
-
                                 ) {
                                     var key = _step2.value;
 
@@ -38038,7 +38035,6 @@
                             for (
                                 var _iterator3 = _createForOfIteratorHelperLoose(_this6.data_.keys()), _step3;
                                 !(_step3 = _iterator3()).done;
-
                             ) {
                                 var key = _step3.value; // Concurrently iterating/deleting keys
                                 // iterator should handle this correctly
@@ -38061,7 +38057,6 @@
                             for (
                                 var _iterator4 = _createForOfIteratorHelperLoose(replacementMap.entries()), _step4;
                                 !(_step4 = _iterator4()).done;
-
                             ) {
                                 var _step4$value = _step4.value,
                                     _key = _step4$value[0],
@@ -38236,7 +38231,6 @@
                                 for (
                                     var _iterator = _createForOfIteratorHelperLoose(_this.data_.values()), _step;
                                     !(_step = _iterator()).done;
-
                                 ) {
                                     var value = _step.value;
 
@@ -38250,7 +38244,6 @@
                         for (
                             var _iterator2 = _createForOfIteratorHelperLoose(this), _step2;
                             !(_step2 = _iterator2()).done;
-
                         ) {
                             var value = _step2.value;
                             callbackFn.call(thisArg, value, value, this);

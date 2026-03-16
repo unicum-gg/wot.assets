@@ -40,7 +40,7 @@
                     XL: '64rem',
                 };
             },
-            8636: (u, e, t) => {
+            289: (u, e, t) => {
                 'use strict';
                 var A = {};
                 (t.r(A), t.d(A, { mouse: () => o, onResize: () => B }));
@@ -1210,8 +1210,22 @@
                     return A;
                 }
                 const me = (u) => (0 === u ? window : window.subViews.get(u));
-                var se = t(3946);
-                const ce = ((u, e) => {
+                const se = (u) => {
+                    return null !== u && 'object' == typeof u
+                        ? 'CoherentArrayProxy' === u.constructor.name
+                            ? ((e = u),
+                              (t = (u) => ('object' == typeof u ? se(u) : u)),
+                              Array.isArray(e) ? e.map(t) : e.map((u, e, A) => t(null == u ? void 0 : u.value, e, A)))
+                            : Array.isArray(u)
+                              ? u.map((u) => ('object' == typeof u ? se(u) : u))
+                              : Object.fromEntries(
+                                    Object.entries(u).map(([u, e]) => [u, 'object' == typeof e ? se(e) : e]),
+                                )
+                        : u;
+                    var e, t;
+                };
+                var ce = t(3946);
+                const de = ((u, e) => {
                         const t = (0, Q.createContext)({});
                         return [
                             function ({ mode: A = 'real', options: r, children: F, mocks: E }) {
@@ -1393,44 +1407,41 @@
                         ];
                     })(({ observableModel: u }) => {
                         const e = { root: u.object(), reward: u.object('reward'), vehicles: u.array('vehicles') },
-                            t = (0, se.Om)(() => {
-                                return ((u = e.vehicles.get()),
-                                (t = (u) => Object.assign({}, u)),
-                                Array.isArray(u)
-                                    ? u.map(t)
-                                    : u.map((u, e, A) => t(null == u ? void 0 : u.value, e, A))).slice(0, 5);
-                                var u, t;
-                            });
-                        return Object.assign({}, e, { computes: { getVehicles: t } });
+                            t = (0, ce.Om)(() => {
+                                return ((u = e.vehicles.get()), se(u));
+                                var u;
+                            }),
+                            A = (0, ce.Om)(() => t().slice(0, 5));
+                        return Object.assign({}, e, { computes: { getVehicles: t, getVisibleVehicles: A } });
                     }, ie),
-                    de = ce[0],
-                    ge = ce[1],
-                    _e = 'App_base_84',
-                    he = 'App_header_99',
-                    xe = 'App_topHeader_d7',
-                    pe = 'App_description_da',
-                    fe = 'App_secondHeader_cb',
-                    ve = 'App_availableEquipment_3a',
-                    be = 'App_availableEquipmentInner_cc',
-                    we = 'App_divider_8b',
-                    Se = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
-                    Te = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
-                const Le = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
-                    ye = (u) =>
-                        Le
+                    ge = de[0],
+                    _e = de[1],
+                    he = 'App_base_84',
+                    xe = 'App_header_99',
+                    pe = 'App_topHeader_d7',
+                    fe = 'App_description_da',
+                    ve = 'App_secondHeader_cb',
+                    be = 'App_availableEquipment_3a',
+                    we = 'App_availableEquipmentInner_cc',
+                    Se = 'App_divider_8b',
+                    Te = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
+                    Le = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
+                const ye = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
+                    Me = (u) =>
+                        ye
                             ? `${u}`
                             : (function (u) {
                                   let e = '';
-                                  for (let t = Te.length - 1; t >= 0; t--)
-                                      for (; u >= Te[t]; ) ((e += Se[t]), (u -= Te[t]));
+                                  for (let t = Le.length - 1; t >= 0; t--)
+                                      for (; u >= Le[t]; ) ((e += Te[t]), (u -= Le[t]));
                                   return e;
                               })(u),
-                    Me = {
+                    Re = {
                         base: 'VehicleName_base_04',
                         nation: 'VehicleName_nation_82',
                         class: 'VehicleName_class_9c',
                     },
-                    Re = ({ vehicleShortName: u, nation: e, level: t, vehicleClass: A, className: r }) => {
+                    He = ({ vehicleShortName: u, nation: e, level: t, vehicleClass: A, className: r }) => {
                         const F = R.images.gui.maps.icons.filters.nations.$dyn(e),
                             E = R.images.gui.maps.icons.vehicleTypes.big.$dyn(
                                 `${((a = A), a.replace(/-/g, '_'))}_elite`,
@@ -1438,25 +1449,44 @@
                         var a;
                         return Z().createElement(
                             'div',
-                            { className: D()(Me.base, r) },
-                            Z().createElement('div', { className: Me.nation, style: { backgroundImage: `url(${F})` } }),
-                            Z().createElement(Ae, { text: ye(t), className: Me.level }),
-                            Z().createElement('div', { className: Me.class, style: { backgroundImage: `url(${E})` } }),
-                            Z().createElement(Ae, { text: u, className: Me.name }),
+                            { className: D()(Re.base, r) },
+                            Z().createElement('div', { className: Re.nation, style: { backgroundImage: `url(${F})` } }),
+                            Z().createElement(Ae, { text: Me(t), className: Re.level }),
+                            Z().createElement('div', { className: Re.class, style: { backgroundImage: `url(${E})` } }),
+                            Z().createElement(Ae, { text: u, className: Re.name }),
                         );
                     },
-                    He = R.strings.paragons.allRewards.tooltip,
-                    Oe = (0, re.Pi)(() => {
-                        const u = ge().model,
-                            e = u.root.get().isReceived,
+                    Oe = R.strings.paragons.allRewards.tooltip,
+                    We = (0, re.Pi)(() => {
+                        const u = _e().model,
+                            e = u.root.get().isAchieved,
                             t = u.computes.getVehicles(),
-                            A = (0, Q.useMemo)(
-                                () =>
-                                    t.map((u) =>
+                            A = u.computes.getVisibleVehicles();
+                        return Z().createElement(
+                            'div',
+                            { className: he },
+                            Z().createElement(
+                                'div',
+                                { className: xe },
+                                Z().createElement(Ae, { text: Oe.vehicleSelectHeader_1(), className: pe }),
+                                Z().createElement(Ae, {
+                                    text: e ? Oe.vehicleSelectBody_1() : Oe.vehicleSelectBody_2(),
+                                    className: fe,
+                                }),
+                            ),
+                            Z().createElement('div', { className: Se }),
+                            Z().createElement(
+                                'div',
+                                { className: be },
+                                Z().createElement(Ae, { text: Oe.vehicleSelectHeader_2(), className: ve }),
+                                Z().createElement(
+                                    'div',
+                                    { className: we },
+                                    A.map((u) =>
                                         Z().createElement(
                                             'div',
                                             { key: u.vehicleName },
-                                            Z().createElement(Re, {
+                                            Z().createElement(He, {
                                                 vehicleShortName: u.label,
                                                 nation: u.nationTag,
                                                 level: u.level,
@@ -1464,32 +1494,11 @@
                                             }),
                                         ),
                                     ),
-                                [t],
-                            );
-                        return Z().createElement(
-                            'div',
-                            { className: _e },
-                            Z().createElement(
-                                'div',
-                                { className: he },
-                                Z().createElement(Ae, { text: He.vehicleSelectHeader_1(), className: xe }),
-                                !e && Z().createElement(Ae, { text: He.vehicleSelectBody_1(), className: pe }),
-                                Z().createElement(Ae, { text: He.vehicleSelectBody_2(), className: pe }),
-                            ),
-                            Z().createElement('div', { className: we }),
-                            Z().createElement(
-                                'div',
-                                { className: ve },
-                                Z().createElement(Ae, { text: He.vehicleSelectHeader_2(), className: fe }),
-                                Z().createElement(
-                                    'div',
-                                    { className: be },
-                                    A,
                                     t.length > 5 &&
                                         Z().createElement(ne, {
-                                            text: He.count(),
+                                            text: Oe.count(),
                                             binding: { count: t.length - 5 },
-                                            classMix: pe,
+                                            classMix: fe,
                                         }),
                                 ),
                             ),
@@ -1497,7 +1506,7 @@
                     });
                 engine.whenReady.then(() => {
                     Fu().render(
-                        Z().createElement(de, null, Z().createElement(Au, null, Z().createElement(Oe, null))),
+                        Z().createElement(ge, null, Z().createElement(Au, null, Z().createElement(We, null))),
                         document.getElementById('root'),
                     );
                 });
@@ -1573,6 +1582,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var r = A.O(void 0, [454], () => A(8636));
+    var r = A.O(void 0, [454], () => A(289));
     r = A.O(r);
 })();

@@ -2048,7 +2048,6 @@
                                                                     );
                                                                 })(n.keys());
                                                             !(e = t()).done;
-
                                                         )
                                                             o(e.value, u);
                                                     },
@@ -3163,7 +3162,6 @@
                                                         );
                                                     })(u(e).values());
                                                 !(r = n()).done;
-
                                             )
                                                 (0, r.value)(...t);
                                         };
@@ -4465,13 +4463,13 @@
                         b = D.hasVisibleLootBoxes,
                         f = Boolean(
                             (null == c ? void 0 : c.length) ||
-                                (null == m ? void 0 : m.length) ||
-                                (null == F ? void 0 : F.length),
+                            (null == m ? void 0 : m.length) ||
+                            (null == F ? void 0 : F.length),
                         ),
                         x = Boolean(
                             (null == E ? void 0 : E.length) ||
-                                (null == _ ? void 0 : _.length) ||
-                                (null == A ? void 0 : A.length),
+                            (null == _ ? void 0 : _.length) ||
+                            (null == A ? void 0 : A.length),
                         ),
                         R = (0, o.useRef)(null),
                         T = (function () {

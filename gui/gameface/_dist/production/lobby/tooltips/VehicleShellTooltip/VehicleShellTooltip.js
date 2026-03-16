@@ -223,7 +223,7 @@
                         setEventHandled: () => h,
                         setInputPaddingsRem: () => a,
                         setSidePaddingsRem: () => i,
-                        whenTutorialReady: () => w,
+                        whenTutorialReady: () => S,
                     }));
                 var A = t(3722),
                     E = t(6112),
@@ -296,7 +296,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    w = Promise.all([
+                    S = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : F.U.onDomBuilt(u);
                         }),
@@ -363,7 +363,7 @@
                     F = t(3138),
                     r = t(6179),
                     D = t.n(r);
-                const a = ['children', 'className'];
+                const a = ['children', 'className', 'isSimple'];
                 function n() {
                     return (
                         (n =
@@ -381,7 +381,8 @@
                 const B = D().forwardRef(function (u, e) {
                     let t = u.children,
                         A = u.className,
-                        B = (function (u, e) {
+                        B = u.isSimple,
+                        i = (function (u, e) {
                             if (null == u) return {};
                             var t,
                                 A,
@@ -390,7 +391,7 @@
                             for (A = 0; A < F.length; A++) ((t = F[A]), e.indexOf(t) >= 0 || (E[t] = u[t]));
                             return E;
                         })(u, a);
-                    const i = (function () {
+                    const C = (function () {
                             const u = (0, r.useRef)(0);
                             var e;
                             return (
@@ -419,12 +420,12 @@
                                 )
                             );
                         })(),
-                        C = D().useRef(null);
-                    var l;
+                        l = D().useRef(null);
+                    var o;
                     return (
-                        (l = () => {
-                            i.run(() => {
-                                const u = C.current;
+                        (o = () => {
+                            C.run(() => {
+                                const u = l.current;
                                 if (!u) return;
                                 const e = u.scrollWidth,
                                     t = u.scrollHeight;
@@ -438,16 +439,16 @@
                                 });
                             });
                         }),
-                        (0, r.useEffect)(l, []),
+                        (0, r.useEffect)(o, []),
                         D().createElement(
                             'div',
-                            n({}, B, {
+                            n({}, i, {
                                 className: E()('CosmicTooltipDecorator_base_7d', A),
                                 ref: function (u) {
-                                    ((C.current = u), 'function' == typeof e ? e(u) : e && (e.current = u));
+                                    ((l.current = u), 'function' == typeof e ? e(u) : e && (e.current = u));
                                 },
                             }),
-                            D().createElement('div', { className: 'CosmicTooltipDecorator_bg_cubes_b6' }),
+                            !B && D().createElement('div', { className: 'CosmicTooltipDecorator_bg_cubes_b6' }),
                             D().createElement('div', { className: 'CosmicTooltipDecorator_bg_glow_9a' }),
                             D().createElement('div', { className: 'CosmicTooltipDecorator_decorator_13' }, t),
                         )
@@ -673,17 +674,17 @@
                             (u[(u.Large = o.large.height)] = 'Large'),
                             (u[(u.ExtraLarge = o.extraLarge.height)] = 'ExtraLarge'));
                     })(b || (b = {})));
-                const w = ['xl', 'lg', 'md', 'sm', 'xs'],
-                    S = (u) => u.includes('_') && ((u) => w.includes(u))(u.split('_').at(-1)),
+                const S = ['xl', 'lg', 'md', 'sm', 'xs'],
+                    w = (u) => u.includes('_') && ((u) => S.includes(u))(u.split('_').at(-1)),
                     L = [f.ExtraLarge, f.Large, f.Medium, f.Small, f.ExtraSmall],
                     M = (u, e) =>
                         Object.keys(u).reduce((t, A) => {
                             if (A in t) return t;
-                            if (S(A)) {
+                            if (w(A)) {
                                 const E = A.split('_').slice(0, -1).join('_');
                                 if (E in t) return t;
                                 const F = L.indexOf(e),
-                                    r = (-1 !== F ? w.slice(F) : [])
+                                    r = (-1 !== F ? S.slice(F) : [])
                                         .map((u) => E + '_' + u)
                                         .find((e) => void 0 !== u[e]),
                                     D = r ? u[r] : void 0;
@@ -692,7 +693,7 @@
                             const E = u[A];
                             return (
                                 void 0 === E ||
-                                    ((u, e) => w.some((t) => void 0 !== e[`${u}_${t}`]))(A, u) ||
+                                    ((u, e) => S.some((t) => void 0 !== e[`${u}_${t}`]))(A, u) ||
                                     (t[A] = E),
                                 t
                             );
@@ -775,7 +776,7 @@
                             }
                         )(u, e);
                         return E().memo((e) =>
-                            Object.keys(e).some((u) => S(u) && void 0 !== e[u])
+                            Object.keys(e).some((u) => w(u) && void 0 !== e[u])
                                 ? E().createElement(t, e)
                                 : E().createElement(u, e),
                         );
@@ -895,8 +896,8 @@
                                       (f && 'space-around') ||
                                       void 0
                                     : v,
-                            w = u.alignItems,
-                            S = void 0 === w ? (_ ? 'flex-start' : h && 'center') || (x && 'flex-end') || void 0 : w,
+                            S = u.alignItems,
+                            w = void 0 === S ? (_ ? 'flex-start' : h && 'center') || (x && 'flex-end') || void 0 : S,
                             L = u.alignSelf,
                             R = u.wrap,
                             M = u.flexWrap,
@@ -934,15 +935,15 @@
                                         height: void 0 !== F && 'number' == typeof F ? F + 'rem' : F,
                                         flex: I,
                                         alignSelf: L,
-                                        display: g || S ? 'flex' : void 0,
+                                        display: g || w ? 'flex' : void 0,
                                         flexDirection: g,
                                         flexWrap: y,
                                         justifyContent: b,
-                                        alignItems: S,
+                                        alignItems: w,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, F, a, i, l, m, z, I, L, g, y, b, S]),
+                            }, [t, F, a, i, l, m, z, I, L, g, y, b, w]),
                             $ = V.computedStyle,
                             K = V.computedClassNames;
                         return E().createElement('div', O({ className: n()(T.base, ...K, e), style: $ }, U), k);
@@ -1331,7 +1332,6 @@
                                                                     );
                                                                 })(E.keys());
                                                             !(u = t()).done;
-
                                                         )
                                                             F(u.value, e);
                                                     },

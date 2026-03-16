@@ -1092,7 +1092,7 @@
                 var tu = A(6711);
                 engine.whenReady.then(() => {
                     D().render(
-                        F().createElement(tu.c, null, F().createElement(Fu, null)),
+                        F().createElement(tu.c, { isSimple: !0 }, F().createElement(Fu, null)),
                         document.getElementById('root'),
                     );
                 });
@@ -1105,7 +1105,7 @@
                     t = A(3138),
                     D = A(6179),
                     r = A.n(D);
-                const B = ['children', 'className'];
+                const B = ['children', 'className', 'isSimple'];
                 function a() {
                     return (
                         (a =
@@ -1123,7 +1123,8 @@
                 const i = r().forwardRef(function (u, e) {
                     let A = u.children,
                         E = u.className,
-                        i = (function (u, e) {
+                        i = u.isSimple,
+                        n = (function (u, e) {
                             if (null == u) return {};
                             var A,
                                 E,
@@ -1132,7 +1133,7 @@
                             for (E = 0; E < t.length; E++) ((A = t[E]), e.indexOf(A) >= 0 || (F[A] = u[A]));
                             return F;
                         })(u, B);
-                    const n = (function () {
+                    const C = (function () {
                             const u = (0, D.useRef)(0);
                             var e;
                             return (
@@ -1161,12 +1162,12 @@
                                 )
                             );
                         })(),
-                        C = r().useRef(null);
-                    var l;
+                        l = r().useRef(null);
+                    var m;
                     return (
-                        (l = () => {
-                            n.run(() => {
-                                const u = C.current;
+                        (m = () => {
+                            C.run(() => {
+                                const u = l.current;
                                 if (!u) return;
                                 const e = u.scrollWidth,
                                     A = u.scrollHeight;
@@ -1180,16 +1181,16 @@
                                 });
                             });
                         }),
-                        (0, D.useEffect)(l, []),
+                        (0, D.useEffect)(m, []),
                         r().createElement(
                             'div',
-                            a({}, i, {
+                            a({}, n, {
                                 className: F()('CosmicTooltipDecorator_base_7d', E),
                                 ref: function (u) {
-                                    ((C.current = u), 'function' == typeof e ? e(u) : e && (e.current = u));
+                                    ((l.current = u), 'function' == typeof e ? e(u) : e && (e.current = u));
                                 },
                             }),
-                            r().createElement('div', { className: 'CosmicTooltipDecorator_bg_cubes_b6' }),
+                            !i && r().createElement('div', { className: 'CosmicTooltipDecorator_bg_cubes_b6' }),
                             r().createElement('div', { className: 'CosmicTooltipDecorator_bg_glow_9a' }),
                             r().createElement('div', { className: 'CosmicTooltipDecorator_decorator_13' }, A),
                         )

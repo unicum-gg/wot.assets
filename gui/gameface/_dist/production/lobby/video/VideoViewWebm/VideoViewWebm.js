@@ -703,7 +703,7 @@
                     };
                 window.ViewEnvHelper = w;
             },
-            420: (u, e, t) => {
+            995: (u, e, t) => {
                 var n = t(179),
                     r = t.n(n),
                     o = t(493),
@@ -1427,21 +1427,22 @@
                             i = E.root.get(),
                             a = i.videoSource,
                             s = i.isWindowAccessible,
-                            c = i.isUIVisible;
+                            c = i.isUIVisible,
+                            B = i.canEscape;
                         a || A.onCloseBtnClick();
-                        const B = w(),
-                            l = B.width,
-                            C = B.height,
-                            d = (0, n.useMemo)(() => {
+                        const l = w(),
+                            C = l.width,
+                            d = l.height,
+                            _ = (0, n.useMemo)(() => {
                                 const u = ((u, e, t, n) => {
                                     const r = u / e;
                                     return t / n > r
                                         ? { width: t, height: Math.round(t / r) }
                                         : { width: Math.round(n * r), height: n };
-                                })(I, V, l, C);
+                                })(I, V, C, d);
                                 return u ? { width: `${u.width}rem`, height: `${u.height}rem` } : {};
-                            }, [C, l]),
-                            _ = (0, n.useCallback)(() => {
+                            }, [d, C]),
+                            h = (0, n.useCallback)(() => {
                                 (A.onLoadError(), A.onCloseBtnClick());
                             }, [A]);
                         return (
@@ -1451,7 +1452,7 @@
                                 preventPropagation: t = !0,
                             } = {}) {
                                 O(u, e, t);
-                            })({ callback: A.onCloseBtnClick }),
+                            })({ callback: B ? A.onCloseBtnClick : () => {} }),
                             (0, n.useEffect)(() => {
                                 var u, e;
                                 s ? null == (u = F.current) || u.play() : null == (e = F.current) || e.pause();
@@ -1474,10 +1475,10 @@
                                     ref: F,
                                     src: String(a),
                                     className: K,
-                                    style: d,
+                                    style: _,
                                     onEnded: A.onVideoStopped,
                                     autoplay: !0,
-                                    onError: _,
+                                    onError: h,
                                     onPlay: () => {
                                         var u;
                                         s && (e && (t(!1), A.onVideoStarted()), null == (u = F.current) || u.play());
@@ -1566,6 +1567,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [308], () => __webpack_require__(420));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [308], () => __webpack_require__(995));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

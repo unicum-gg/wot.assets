@@ -4343,10 +4343,10 @@
                                 T = m && r === G.Locked,
                                 L = Boolean(
                                     r !== G.Locked &&
-                                        r !== G.Done &&
-                                        u !== H.Disabled &&
-                                        o &&
-                                        (e || (m && n !== q.Completed)),
+                                    r !== G.Done &&
+                                    u !== H.Disabled &&
+                                    o &&
+                                    (e || (m && n !== q.Completed)),
                                 ),
                                 M = ((e) => {
                                     if (e && e.length)
@@ -4655,7 +4655,6 @@
                                                         );
                                                     })(u(e).values());
                                                 !(r = n()).done;
-
                                             )
                                                 (0, r.value)(...t);
                                         };
@@ -5527,7 +5526,6 @@
                                                                     );
                                                                 })(n.keys());
                                                             !(e = t()).done;
-
                                                         )
                                                             a(e.value, u);
                                                     },

@@ -923,6 +923,88 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateX(-16rem);
 }
 
+.VehicleName_base_f4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.VehicleName_base__white_3d {
+    color: #f2f2f7;
+}
+
+.VehicleName_base__whiteSpanish_90 {
+    color: #e9e2bf;
+}
+
+.VehicleName_base__whiteOrange_52 {
+    color: #fefeec;
+}
+
+.VehicleName_base__cream_b3 {
+    color: #ffdd99;
+}
+
+.VehicleName_nation_8b {
+    width: 25rem;
+    height: 17rem;
+    margin-top: 4rem;
+    margin-right: 5rem;
+    background: no-repeat center / contain;
+}
+
+.VehicleName_base__colored_f2 .VehicleName_level_7d {
+    color: #e9e2bf;
+}
+
+.VehicleName_type_12 {
+    width: 60rem;
+    height: 54rem;
+    margin: 0 -14rem;
+    background: no-repeat center / contain;
+    position: relative;
+    top: 2rem;
+}
+
+.VehicleName_type__elite_0d {
+    margin: 0 -8rem;
+    top: 0;
+}
+
+.VehicleName_base__extraSmall_74 .VehicleName_type_12 {
+    width: 36rem;
+    height: 40rem;
+    margin: 0 -7rem;
+    background: no-repeat center / contain;
+    position: relative;
+    top: 0;
+}
+
+.VehicleName_base__extraSmall_74 .VehicleName_type__elite_0d {
+    margin: 4rem -4rem 0;
+    top: -1rem;
+}
+
+.VehicleName_base__medium_16 .VehicleName_type_12 {
+    width: 83rem;
+    height: 73rem;
+    margin: 0 -26rem;
+    background: no-repeat center / contain;
+    position: relative;
+    top: 4rem;
+}
+
+.VehicleName_base__medium_16 .VehicleName_type__elite_0d {
+    margin: 0 -16rem;
+    top: 0;
+}
+
+.VehicleName_base__colored_f2 .VehicleName_name_5c {
+    color: #fefeec;
+}
+
 .Frame_base_b1 {
     width: 100%;
     height: 100%;
@@ -975,50 +1057,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Frame_stroke_34 {
     border: 1rem solid rgba(255, 255, 255, 0.2);
     border-radius: 2rem;
-}
-
-.VehicleName_base_1f {
-    color: #fefeec;
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 32rem;
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.VehicleName_base__small_39 {
-    color: #fefeec;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin-top: -12rem;
-}
-
-.VehicleName_vehicleTypeContainer_37 {
-    width: 50rem;
-    position: relative;
-}
-
-.VehicleName_base__small_39 .VehicleName_vehicleTypeContainer_37 {
-    width: 24rem;
-}
-
-.VehicleName_vehicleType_6b {
-    width: 83rem;
-    height: 74rem;
-    margin-top: 3rem;
-    background: no-repeat center / contain;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.VehicleName_base__small_39 .VehicleName_vehicleType_6b {
-    width: 24rem;
-    height: 24rem;
-    margin-top: 1rem;
 }
 
 .Card_base_c4 {
@@ -1161,6 +1199,32 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 100%;
     position: absolute;
 }
+.Card_notInHangar_7e {
+    color: #cbac77;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+    padding-top: 60rem;
+}
+.mediaMedium .Card_notInHangar_7e {
+    color: #cbac77;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Card_vehicleNameText_f9 {
+    color: #fefeec;
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+    margin-top: -20rem;
+}
+.mediaLarge .Card_vehicleNameText_f9 {
+    margin-top: -28rem;
+}
+.mediaExtraLarge .Card_vehicleNameText_f9 {
+    margin-top: -44rem;
+}
 @keyframes Card_scaleDown_9c {
     from {
         transform: scaleX(1);
@@ -1186,6 +1250,91 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     100% {
         transform: scaleX(1);
     }
+}
+
+.DefaultCardContent_base_12 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.DefaultCardContent_pointsWrapper_2b {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 49rem;
+    position: relative;
+}
+
+.mediaLarge .DefaultCardContent_pointsWrapper_2b {
+    padding-top: 57rem;
+}
+
+.mediaExtraLarge .DefaultCardContent_pointsWrapper_2b {
+    padding-top: 97rem;
+}
+
+.InfoCardContent_base_9e {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.InfoCardContent_points_a6 {
+    display: flex;
+    position: relative;
+}
+
+.InfoCardContent_pointsBg_45 {
+    width: 256rem;
+    height: 160rem;
+    margin-top: 6rem;
+    background: url('R.images.gui.maps.icons.paragons.resetBranch.points_back') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.InfoCardContent_count_32 {
+    color: #ffffff;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+    font-size: 48rem;
+    z-index: 1;
+}
+
+.mediaLarge .InfoCardContent_count_32 {
+    font-size: 56rem;
+}
+
+.InfoCardContent_paragonIcon_79 {
+    width: 32rem;
+    height: 32rem;
+    background: url('R.images.gui.maps.icons.paragons.resetBranch.paragon') no-repeat center / contain;
+    position: relative;
+    top: 15rem;
+    right: -8rem;
+}
+
+.mediaLarge .InfoCardContent_paragonIcon_79 {
+    top: 22rem;
+}
+
+.InfoCardContent_pointsDescription_6e {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 8rem;
 }
 
 .Reward_base_ea {
@@ -1375,124 +1524,41 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: -14rem;
 }
 
-.DefaultCardContent_notInHangar_ee {
-    color: #cbac77;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
-    padding-top: 90rem;
-}
-
-.mediaMedium .DefaultCardContent_notInHangar_ee {
-    color: #cbac77;
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
-    padding-top: 85rem;
-}
-
-.mediaLarge .DefaultCardContent_notInHangar_ee {
-    padding-top: 105rem;
-}
-
-.DefaultCardContent_pointsWrapper_2b {
+.ReturnValueContent_base_be {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    padding-top: 70rem;
-    position: relative;
 }
 
-.mediaMedium .DefaultCardContent_pointsWrapper_2b {
-    padding-top: 75rem;
-}
-
-.mediaLarge .DefaultCardContent_pointsWrapper_2b {
-    padding-top: 68rem;
-}
-
-.DefaultCardContent_points_c0 {
-    display: flex;
-    position: relative;
-}
-
-.DefaultCardContent_count_48 {
-    color: #ffffff;
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
-    font-size: 48rem;
-}
-
-.mediaLarge .DefaultCardContent_count_48 {
-    font-size: 56rem;
-}
-
-.DefaultCardContent_paragonIcon_4c {
-    width: 32rem;
-    height: 32rem;
-    background: url('R.images.gui.maps.icons.paragons.resetBranch.paragon') no-repeat center / contain;
-    position: relative;
-    top: 15rem;
-    right: -8rem;
-}
-
-.mediaLarge .DefaultCardContent_paragonIcon_4c {
-    top: 22rem;
-}
-
-.DefaultCardContent_pointsBg_12 {
-    width: 100%;
-    height: 100%;
-    background: url('R.images.gui.maps.icons.paragons.resetBranch.points_back') no-repeat center / contain;
-    position: absolute;
-    bottom: 3rem;
-    left: 0;
-}
-
-.DefaultCardContent_pointsDescription_a3 {
-    color: #fefeec;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-top: 8rem;
-}
-
-.DefaultCardContent_return_a0 {
+.ReturnValueContent_return_05 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 30rem;
     position: relative;
 }
 
-.mediaExtraLarge .DefaultCardContent_return_a0 {
-    margin-top: 35rem;
-}
-
-.DefaultCardContent_line_5e {
+.ReturnValueContent_line_e7 {
     width: 71rem;
     height: 6rem;
     background: url('R.images.gui.maps.icons.paragons.resetBranch.card.line_small') no-repeat center / contain;
 }
 
-.mediaLarge .DefaultCardContent_line_5e {
+.mediaLarge .ReturnValueContent_line_e7 {
     width: 91rem;
     background-image: url('R.images.gui.maps.icons.paragons.resetBranch.card.line');
 }
 
-.mediaExtraLarge .DefaultCardContent_line_5e {
+.mediaExtraLarge .ReturnValueContent_line_e7 {
     width: 126rem;
     background-image: url('R.images.gui.maps.icons.paragons.resetBranch.card.line_large');
 }
 
-.DefaultCardContent_line__right_14 {
+.ReturnValueContent_line__right_b6 {
     transform: rotate(180deg);
 }
 
-.DefaultCardContent_returnBack_ef {
+.ReturnValueContent_returnBack_40 {
     color: #fefeec;
     font-size: 14rem;
     font-weight: 400;
@@ -1500,7 +1566,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding: 0 15rem;
 }
 
-.DefaultCardContent_arrowDown_63 {
+.ReturnValueContent_arrowDown_16 {
     width: 13rem;
     height: 7rem;
     background: url('R.images.gui.maps.icons.paragons.resetBranch.card.arrow_down') no-repeat center / contain;
@@ -1510,49 +1576,49 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translate(-50%, -50%);
 }
 
-.DefaultCardContent_list_0f {
+.ReturnValueContent_list_4a {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20rem;
 }
 
-.mediaLarge .DefaultCardContent_list_0f {
+.mediaLarge .ReturnValueContent_list_4a {
     margin-top: 20rem;
 }
 
-.mediaExtraLarge .DefaultCardContent_list_0f {
+.mediaExtraLarge .ReturnValueContent_list_4a {
     margin-top: 30rem;
 }
 
-.DefaultCardContent_list_0f > div {
+.ReturnValueContent_list_4a > div {
     margin-right: 24rem;
 }
 
-.mediaLarge .DefaultCardContent_list_0f > div {
+.mediaLarge .ReturnValueContent_list_4a > div {
     margin-right: 35rem;
 }
 
-.DefaultCardContent_list_0f > div:last-child {
+.ReturnValueContent_list_4a > div:last-child {
     margin-right: 0;
 }
 
-.DefaultCardContent_btnContainer_9e {
+.ReturnValueContent_btnContainer_42 {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 40rem;
 }
 
-.mediaLarge .DefaultCardContent_btnContainer_9e {
+.mediaLarge .ReturnValueContent_btnContainer_42 {
     margin-top: 30rem;
 }
 
-.mediaExtraLarge .DefaultCardContent_btnContainer_9e {
+.mediaExtraLarge .ReturnValueContent_btnContainer_42 {
     margin-top: 40rem;
 }
 
-.DefaultCardContent_btn_60 {
+.ReturnValueContent_btn_43 {
     width: 160rem;
 }
 
@@ -1786,11 +1852,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaLarge .ReversedCardContent_header_5e {
-    padding: 20rem 24rem 24rem;
     color: #fefeec;
     font-size: 24rem;
     font-weight: 400;
     line-height: 1.2;
+    padding: 20rem 24rem 24rem;
 }
 
 .ReversedCardContent_close_54 {
@@ -1876,27 +1942,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
 }
 
-.ReversedCardContent_rewardOverlay_2c {
-    position: absolute;
-    top: 25rem;
-    left: 25rem;
-}
-
-.ReversedCardContent_rewardOverlay__equipmentPlus_be {
-    top: 20rem;
-    left: 25rem;
-}
-
-.mediaLarge .ReversedCardContent_rewardOverlay_2c {
-    top: 30rem;
-    left: 30rem;
-}
-
-.mediaLarge .ReversedCardContent_rewardOverlay__equipmentPlus_be {
-    top: 30rem;
-    left: 30rem;
-}
-
 .ReversedCardContent_group_79 {
     padding: 15rem;
 }
@@ -1905,36 +1950,54 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 30rem;
 }
 
-.ReversedCardContent_title_4a {
+.RewardType_title_7d {
     color: #f2f2f7;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+    opacity: 0.4;
 }
 
-.mediaLarge .ReversedCardContent_title_4a {
+.mediaLarge .RewardType_title_7d {
     color: #f2f2f7;
     font-size: 20rem;
     font-weight: 400;
     line-height: 1.2;
 }
 
-.ReversedCardContent_title_4a {
-    opacity: 0.4;
-}
-
-.ReversedCardContent_list_73 {
+.RewardType_list_9d {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 18rem;
 }
 
-.ReversedCardContent_reward_8e {
+.RewardType_rewardOverlay_2f {
+    position: absolute;
+    top: 25rem;
+    left: 25rem;
+}
+
+.RewardType_rewardOverlay__equipmentPlus_38 {
+    top: 20rem;
+    left: 25rem;
+}
+
+.mediaLarge .RewardType_rewardOverlay_2f {
+    top: 30rem;
+    left: 30rem;
+}
+
+.mediaLarge .RewardType_rewardOverlay__equipmentPlus_38 {
+    top: 30rem;
+    left: 30rem;
+}
+
+.RewardType_reward_2e {
     margin-right: 18rem;
     cursor: pointer;
 }
 
-.ReversedCardContent_reward_8e:last-child {
+.RewardType_reward_2e:last-child {
     margin-right: 0;
 }
 
@@ -2096,6 +2159,83 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 100%;
     height: 100%;
     position: absolute;
+}
+
+.MiniCard_vehicleNameContainer_d1 {
+    transform: translateY(-30rem);
+}
+
+.mediaLarge .MiniCard_vehicleNameContainer_d1 {
+    transform: translateY(-20rem);
+}
+
+.MiniCard_vehicleNameText_08 {
+    color: #fefeec;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.MiniCard_vehicleNameText__medium_91 {
+    color: #fefeec;
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+
+.CardList_base_ba {
+    width: 100%;
+    position: relative;
+}
+.CardList_animation_33 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.CardList_cardList_15 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 35rem 22rem 0;
+}
+.mediaSmall .CardList_cardList_15 {
+    padding: 35rem 74rem 0;
+}
+.mediaMedium .CardList_cardList_15 {
+    padding: 53rem 124rem 0;
+}
+.mediaLarge .CardList_cardList_15 {
+    padding: 72rem 160rem 0;
+}
+.mediaExtraLarge .CardList_cardList_15 {
+    padding: 155rem 66rem 0;
+}
+.CardList_cardList__captchaStep_14 {
+    padding-top: 13rem;
+}
+.CardList_cardList__hidden_43 {
+    opacity: 0;
+}
+.CardList_cardWrapper_f4 {
+    margin-right: 10rem;
+}
+.mediaMedium .CardList_cardWrapper_f4 {
+    margin-right: 20rem;
+}
+.mediaLarge .CardList_cardWrapper_f4 {
+    margin-right: 32rem;
+}
+.CardList_cardWrapper_f4:last-child {
+    margin-right: 0;
+}
+.CardList_module_c0 {
+    margin-top: 14rem;
+}
+.mediaMedium .CardList_module_c0 {
+    margin-top: 30rem;
+}
+.mediaExtraLarge .CardList_module_c0 {
+    margin-top: 40rem;
 }
 
 .Checkbox_base_36 {
@@ -2430,61 +2570,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.8;
 }
 
-.CardList_base_ba {
-    width: 100%;
-    position: relative;
-}
-.CardList_animation_33 {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-.CardList_cardList_15 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 35rem 22rem 0;
-}
-.CardList_cardList__captchaStep_14 {
-    padding-top: 13rem;
-}
-.mediaSmall .CardList_cardList_15 {
-    padding: 35rem 74rem 0;
-}
-.CardList_cardList_15 > div {
-    margin-right: 10rem;
-}
-.mediaMedium .CardList_cardList_15 > div {
-    margin-right: 20rem;
-}
-.mediaLarge .CardList_cardList_15 > div {
-    margin-right: 32rem;
-}
-.CardList_cardList_15 > div:last-child {
-    margin-right: 0;
-}
-.mediaMedium .CardList_cardList_15 {
-    padding: 53rem 124rem 0;
-}
-.mediaLarge .CardList_cardList_15 {
-    padding: 72rem 160rem 0;
-}
-.mediaExtraLarge .CardList_cardList_15 {
-    padding: 155rem 66rem 0;
-}
-.CardList_cardList__hidden_43 {
-    opacity: 0;
-}
-.CardList_module_c0 {
-    margin-top: 14rem;
-}
-.mediaMedium .CardList_module_c0 {
-    margin-top: 30rem;
-}
-.mediaExtraLarge .CardList_module_c0 {
-    margin-top: 40rem;
-}
-
 .FadeAnimation_base_f3 {
     opacity: 0;
     animation-duration: 0.25s;
@@ -2524,41 +2609,28 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-.Footer_base_ad {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-.Footer_branchCountCurrent_cc {
-    margin: 0 2rem;
-    color: #f2f2f7;
-}
-
-.Footer_description_93 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Footer_points_ea {
+.DetailsFooter_base_8a {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-top: 10rem;
     position: relative;
 }
 
-.mediaMedium .Footer_points_ea {
-    margin-top: 19rem;
+.DetailsFooter_pointsText_1b {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
 }
 
-.mediaLarge .Footer_points_ea {
-    margin-top: 16rem;
+.mediaLarge .DetailsFooter_pointsText_1b {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
 }
 
-.Footer_count_c8 {
+.DetailsFooter_count_bf {
     color: #ced9d9;
     font-size: 22rem;
     font-weight: 700;
@@ -2567,7 +2639,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.mediaLarge .Footer_count_c8 {
+.mediaLarge .DetailsFooter_count_bf {
     color: #ced9d9;
     font-size: 36rem;
     font-weight: 700;
@@ -2575,25 +2647,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(2rem);
 }
 
-.Footer_paragonIcon_21 {
-    width: 24rem;
-    height: 24rem;
-    background: url('R.images.gui.maps.icons.paragons.resetBranch.paragon_small') no-repeat center / contain;
-    position: absolute;
-    top: 4rem;
-    right: -30rem;
-}
-
-.mediaLarge .Footer_paragonIcon_21 {
-    width: 48rem;
-    height: 48rem;
-    background-image: url('R.images.gui.maps.icons.paragons.resetBranch.paragon_big');
-    position: absolute;
-    top: 2rem;
-    right: -48rem;
-}
-
-.Footer_creditIcon_e1 {
+.DetailsFooter_creditIcon_24 {
     width: 32rem;
     height: 32rem;
     background: url('R.images.gui.maps.icons.paragons.resetBranch.credits') no-repeat center / contain;
@@ -2602,10 +2656,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
 }
 
-.mediaLarge .Footer_creditIcon_e1 {
+.mediaLarge .DetailsFooter_creditIcon_24 {
     width: 48rem;
     height: 48rem;
     top: 10rem;
+}
+
+.Footer_base_ad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .Footer_buttons_8b {
@@ -2662,6 +2723,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-top: -2rem;
 }
 
+.Footer_detailsFooterContainer_55 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 10rem;
+    position: relative;
+}
+
+.mediaMedium .Footer_detailsFooterContainer_55 {
+    margin-top: 19rem;
+}
+
+.mediaLarge .Footer_detailsFooterContainer_55 {
+    margin-top: 16rem;
+}
+
 .Footer_confirmText_20 {
     color: #ee7000;
     font-size: 14rem;
@@ -2679,18 +2756,120 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: -5rem;
 }
 
-.Footer_pointsText_f9 {
+.InfoFooter_base_2b {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.InfoFooter_branchCountCurrent_65 {
+    margin: 0 2rem;
+    color: #f2f2f7;
+}
+.InfoFooter_description_90 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.InfoFooter_pointsWrapper_9b {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 8rem;
+    z-index: 1;
+}
+.mediaMedium .InfoFooter_pointsWrapper_9b {
+    margin-top: 16rem;
+}
+.InfoFooter_points_df {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+.InfoFooter_pointsTitle_5b {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-right: 8rem;
+}
+.mediaLarge .InfoFooter_pointsTitle_5b {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-right: 12rem;
+}
+.InfoFooter_pointsDescription_3d {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
-
-.mediaLarge .Footer_pointsText_f9 {
+.mediaLarge .InfoFooter_pointsDescription_3d {
     color: #8c8c7e;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
+}
+.InfoFooter_count_0a {
+    color: #ced9d9;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-left: 4rem;
+    position: relative;
+}
+.mediaLarge .InfoFooter_count_0a {
+    color: #ced9d9;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-left: 8rem;
+    transform: translateY(2rem);
+}
+.InfoFooter_paragonIcon_67 {
+    width: 24rem;
+    height: 24rem;
+    margin-left: 6rem;
+    background: url('R.images.gui.maps.icons.paragons.resetBranch.paragon_small') no-repeat center / contain;
+    z-index: 1;
+}
+.mediaLarge .InfoFooter_paragonIcon_67 {
+    width: 48rem;
+    height: 48rem;
+    margin-left: 0;
+    background-image: url('R.images.gui.maps.icons.paragons.resetBranch.paragon_big');
+    transform: translateY(10rem);
+}
+.InfoFooter_plus_4f {
+    width: 24rem;
+    height: 24rem;
+    margin: 0 8rem;
+    background: url('R.images.gui.maps.icons.library.outline.plus') no-repeat center / contain;
+    transform: translateY(4rem);
+}
+.mediaLarge .InfoFooter_plus_4f {
+    width: 32rem;
+    height: 32rem;
+    margin: 0 12rem;
+    transform: translateY(7rem);
+}
+.InfoFooter_pointsBack_34 {
+    width: 160rem;
+    height: 100rem;
+    background: url('R.images.gui.maps.icons.paragons.resetBranch.points_back') no-repeat center / contain;
+    position: absolute;
+    right: -54rem;
+    bottom: 12rem;
+    z-index: -1;
+    transform: translateY(50%);
+}
+.mediaLarge .InfoFooter_pointsBack_34 {
+    width: 200rem;
+    height: 125rem;
+    bottom: 15rem;
 }
 
 .FormatTextWithColorTags_blackReal_3c {
@@ -2783,6 +2962,92 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .FormatTextWithColorTags_prom_dd {
     color: #a29b70;
+}
+
+.Header_base_a0 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Header_subtitle_47 {
+    color: #fefeec;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.mediaMedium .Header_subtitle_47 {
+    color: #fefeec;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.mediaLarge .Header_subtitle_47 {
+    color: #fefeec;
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.Header_title_6b {
+    color: #fefeec;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: -1rem;
+}
+
+.mediaMedium .Header_title_6b {
+    color: #fefeec;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 4rem;
+}
+
+.mediaExtraLarge .Header_title_6b {
+    color: #fefeec;
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.Header_stepperWrapper_90 {
+    margin-top: 5rem;
+}
+
+.mediaMedium .Header_stepperWrapper_90 {
+    margin-top: 14rem;
+}
+
+.Header_description_ce {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    justify-content: center;
+    max-width: 965rem;
+    margin-top: 8rem;
+}
+
+.mediaSmall .Header_description_ce {
+    margin-top: 11rem;
+}
+
+.mediaMedium .Header_description_ce {
+    color: #fefeec;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    max-width: 1100rem;
+    margin-top: 7rem;
+}
+
+.mediaLarge .Header_description_ce {
+    margin-top: 11rem;
 }
 
 .ResetBranchStepper_base_3a {
@@ -2911,92 +3176,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: 10rem;
     left: 0;
-}
-
-.Header_base_a0 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.Header_subtitle_47 {
-    color: #fefeec;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-
-.mediaMedium .Header_subtitle_47 {
-    color: #fefeec;
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-
-.mediaLarge .Header_subtitle_47 {
-    color: #fefeec;
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-
-.Header_title_6b {
-    color: #fefeec;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-top: -1rem;
-}
-
-.mediaMedium .Header_title_6b {
-    color: #fefeec;
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-top: 4rem;
-}
-
-.mediaExtraLarge .Header_title_6b {
-    color: #fefeec;
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.Header_stepperWrapper_90 {
-    margin-top: 5rem;
-}
-
-.mediaMedium .Header_stepperWrapper_90 {
-    margin-top: 14rem;
-}
-
-.Header_description_ce {
-    color: #fefeec;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    display: flex;
-    justify-content: center;
-    max-width: 965rem;
-    margin-top: 8rem;
-}
-
-.mediaSmall .Header_description_ce {
-    margin-top: 11rem;
-}
-
-.mediaMedium .Header_description_ce {
-    color: #fefeec;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    max-width: 1100rem;
-    margin-top: 7rem;
-}
-
-.mediaLarge .Header_description_ce {
-    margin-top: 11rem;
 }
 
 .ResultScreen_base_6a {

@@ -1117,7 +1117,7 @@
                     De = 'App_description_49',
                     re = 'App_secondHeader_00',
                     Be = R.strings.paragons.navigation.progression,
-                    ae = () =>
+                    ae = (0, Q.memo)(() =>
                         Z().createElement(
                             'div',
                             { className: Ee },
@@ -1141,7 +1141,8 @@
                                 { className: De },
                                 Z().createElement(Fe, { text: Be.tooltip.activeStoragePointsBody_2() }),
                             ),
-                        );
+                        ),
+                    );
                 engine.whenReady.then(() => {
                     tu().render(
                         Z().createElement(Fu, null, Z().createElement(ae, null)),

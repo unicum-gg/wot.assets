@@ -3741,7 +3741,6 @@
                                                                     );
                                                                 })(r.keys());
                                                             !(e = u()).done;
-
                                                         )
                                                             n(e.value, t);
                                                     },
@@ -4123,7 +4122,6 @@
                                                         );
                                                     })(t(e).values());
                                                 !(a = r()).done;
-
                                             )
                                                 (0, a.value)(...u);
                                         };
@@ -5966,10 +5964,10 @@
                                 x = m && a === ma.Locked,
                                 N = Boolean(
                                     a !== ma.Locked &&
-                                        a !== ma.Done &&
-                                        t !== Ye.Disabled &&
-                                        o &&
-                                        (e || (m && r !== Ea.Completed)),
+                                    a !== ma.Done &&
+                                    t !== Ye.Disabled &&
+                                    o &&
+                                    (e || (m && r !== Ea.Completed)),
                                 ),
                                 M = ((e) => {
                                     if (e && e.length)

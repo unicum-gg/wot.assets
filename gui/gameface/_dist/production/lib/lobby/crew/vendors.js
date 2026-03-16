@@ -2388,12 +2388,12 @@
                 if (o) {
                     Boolean(
                         t &&
-                            o.inputs &&
-                            (function (e, t) {
-                                if (e.length !== t.length) return !1;
-                                for (let n = 0; n < e.length; n++) if (e[n] !== t[n]) return !1;
-                                return !0;
-                            })(t, o.inputs),
+                        o.inputs &&
+                        (function (e, t) {
+                            if (e.length !== t.length) return !1;
+                            for (let n = 0; n < e.length; n++) if (e[n] !== t[n]) return !1;
+                            return !0;
+                        })(t, o.inputs),
                     ) || (o = { inputs: t, result: e() });
                 } else o = n;
                 return (
@@ -4610,7 +4610,6 @@
                                 (ur = ur || document.createElement('div')).innerHTML = '<svg>' + t + '</svg>',
                                     t = ur.firstChild;
                                 e.firstChild;
-
                             )
                                 e.removeChild(e.firstChild);
                             for (; t.firstChild; ) e.appendChild(t.firstChild);
@@ -6072,7 +6071,6 @@
                     for (
                         n = Yr((e = t.child), e.pendingProps, e.expirationTime), t.child = n, n.return = t;
                         null !== e.sibling;
-
                     )
                         ((e = e.sibling), ((n = n.sibling = Yr(e, e.pendingProps, e.expirationTime)).return = t));
                     n.sibling = null;
@@ -7280,7 +7278,6 @@
                                                         c !== i || (0 !== n && 3 !== c.nodeType) || (u = o + n),
                                                         3 === c.nodeType && (o += c.nodeValue.length),
                                                         null !== (d = c.firstChild);
-
                                                 )
                                                     ((f = c), (c = d));
                                                 for (;;) {
@@ -7305,7 +7302,6 @@
                         On = !1,
                         Oa = r;
                     null !== Oa;
-
                 ) {
                     i = !1;
                     var a = void 0;
@@ -10210,9 +10206,9 @@
                 throw new Error(
                     'number' == typeof e
                         ? '[MobX] minified error nr: ' +
-                          e +
-                          (n.length ? ' ' + n.map(String).join(',') : '') +
-                          '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
+                              e +
+                              (n.length ? ' ' + n.map(String).join(',') : '') +
+                              '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
                         : '[MobX] ' + e,
                 );
             }
@@ -12406,7 +12402,6 @@
                                             a = !1,
                                             u = L(t.data_.keys());
                                         !(n = u()).done;
-
                                     ) {
                                         var l = n.value;
                                         if (!i.has(l))
@@ -12432,7 +12427,6 @@
                                             for (
                                                 var y = t.data_.keys(), g = o.keys(), b = y.next(), w = g.next();
                                                 !b.done;
-
                                             ) {
                                                 if (b.value !== w.value) {
                                                     t.keysAtom_.reportChanged();

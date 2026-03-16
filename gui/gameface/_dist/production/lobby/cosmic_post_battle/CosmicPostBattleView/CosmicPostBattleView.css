@@ -146,13 +146,15 @@
     justify-content: flex-start;
     align-items: center;
     flex: 1 0 auto;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.postBattleView.bg');
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    background-size: cover;
     overflow: hidden;
     position: relative;
     --table-width: 492rem;
+    --row-height: 42rem;
+}
+
+.mediaExtraLarge .ArenaScore_base_21 {
+    --table-width: 688rem;
+    --row-height: 60rem;
 }
 .ArenaScore_wrapper_ea {
     display: flex;
@@ -163,8 +165,7 @@
     margin-top: 100rem;
 }
 .mediaExtraLarge .ArenaScore_wrapper_ea {
-    margin-top: 366rem;
-    transform: scale(1.4);
+    margin-top: 186rem;
 }
 .ArenaScore_marsPoints_11 {
     display: flex;
@@ -174,15 +175,25 @@
     width: 100rem;
     position: relative;
 }
+.mediaExtraLarge .ArenaScore_marsPoints_11 {
+    width: 115rem;
+}
 .ArenaScore_rover_91 {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 94rem;
 }
+.mediaExtraLarge .ArenaScore_rover_91 {
+    width: 112rem;
+}
 .ArenaScore_rover_icon_38 {
     width: 24rem;
     height: 24rem;
+}
+.mediaExtraLarge .ArenaScore_rover_icon_38 {
+    width: 32rem;
+    height: 32rem;
 }
 .ArenaScore_tableHeader_7c {
     display: flex;
@@ -190,7 +201,7 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    height: 42rem;
+    height: var(--row-height);
     padding: 5rem;
     border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
     background: rgba(0, 0, 0, 0.2);
@@ -199,9 +210,15 @@
     font-weight: 400;
     line-height: 1.3;
 }
+.mediaExtraLarge .ArenaScore_tableHeader_7c {
+    font-size: 20rem;
+}
 .ArenaScore_tableHeader_text_0b {
     flex: 1 0 auto;
     margin-left: 15rem;
+}
+.mediaExtraLarge .ArenaScore_tableHeader_text_0b {
+    margin-left: 30rem;
 }
 .ArenaScore_tableHeader_marsPoints_1f {
     display: flex;
@@ -212,10 +229,17 @@
     height: 100%;
     border-left: 1rem solid rgba(255, 255, 255, 0.2);
 }
+.mediaExtraLarge .ArenaScore_tableHeader_marsPoints_1f {
+    width: 112rem;
+}
 .ArenaScore_tableHeader_marsPoints_icon_fa {
     width: 18rem;
     height: 18rem;
     opacity: 0.5;
+}
+.mediaExtraLarge .ArenaScore_tableHeader_marsPoints_icon_fa {
+    width: 25rem;
+    height: 25rem;
 }
 .ArenaScore_tableHeader_rover_c3 {
     display: flex;
@@ -226,10 +250,17 @@
     height: 100%;
     border-left: 1rem solid rgba(255, 255, 255, 0.2);
 }
+.mediaExtraLarge .ArenaScore_tableHeader_rover_c3 {
+    width: 112rem;
+}
 .ArenaScore_tableHeader_rover_icon_7b {
     width: 32rem;
     height: 32rem;
     opacity: 0.5;
+}
+.mediaExtraLarge .ArenaScore_tableHeader_rover_icon_7b {
+    width: 44rem;
+    height: 44rem;
 }
 .ArenaScore_textAccent_7e {
     color: #f2c572 !important;
@@ -247,6 +278,11 @@
 .ArenaScore_winnerIcon_x2Scale_df {
     left: 10rem;
 }
+.mediaExtraLarge .ArenaScore_winnerIcon_7f {
+    width: 40rem;
+    height: 40rem;
+    left: 23rem;
+}
 .ArenaScore_playersTable_c1 {
     display: flex;
     flex-direction: column;
@@ -258,28 +294,32 @@
 }
 .ArenaScore_playersTable__selected_42 {
     width: var(--table-width);
-    height: 42rem;
+    height: var(--row-height);
     border: 2rem solid #f2c572;
     background: rgba(242, 197, 114, 0.15);
     position: absolute;
     pointer-events: none;
 }
 .ArenaScore_playersTable_row_60 {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 42rem;
-    border-bottom: 1rem solid rgba(255, 255, 255, 0.05);
-    color: #f4e1b3;
-    position: relative;
     color: #f4e1b3;
     font-size: 16rem;
     font-weight: 400;
     line-height: 19rem;
     letter-spacing: 0.04em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: var(--row-height);
+    border-bottom: 1rem solid rgba(255, 255, 255, 0.05);
+    color: #f4e1b3;
+    position: relative;
     cursor: pointer;
+}
+.mediaExtraLarge .ArenaScore_playersTable_row_60 {
+    font-size: 22rem;
+    line-height: 120%;
 }
 .ArenaScore_playersTable_row_60:hover {
     background: linear-gradient(
@@ -316,6 +356,9 @@
     width: 50rem;
     position: relative;
 }
+.mediaExtraLarge .ArenaScore_playersTable_row_place_12 {
+    width: 86rem;
+}
 .ArenaScore_playersTable_row_name_af {
     display: flex;
     flex-direction: row;
@@ -332,17 +375,30 @@
     min-height: 462rem;
     background-color: rgba(0, 0, 0, 0.1);
 }
+.mediaExtraLarge .ArenaScore_playerTable_f2 {
+    min-height: 749rem;
+}
 .ArenaScore_playerTable_marsPoints_6b {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 60rem;
     color: #f4e1b3;
     font-size: 16rem;
     font-weight: 400;
     line-height: 19rem;
     letter-spacing: 0.04em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 60rem;
+}
+.mediaExtraLarge .ArenaScore_playerTable_marsPoints_6b {
+    color: #f4e1b3;
+    font-size: 22rem;
+    font-weight: 400;
+    line-height: 19rem;
+    letter-spacing: 0.04em;
+}
+.ArenaScore_playerTable_row__loot_27 .ArenaScore_playerTable_marsPoints_6b {
+    color: #dfcdf2;
 }
 .ArenaScore_playerTable_wrapper_c4 {
     display: flex;
@@ -352,6 +408,12 @@
     margin-top: 9rem;
 }
 .ArenaScore_playerTable_topHeader_d2 {
+    color: #f4e1b3;
+    font-size: 26rem;
+    font-weight: 700;
+    line-height: 30rem;
+    /* stylelint-disable-next-line unit-blacklist */
+    letter-spacing: 0.04em;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -359,25 +421,21 @@
     width: var(--table-width);
     max-width: var(--table-width);
 }
-.ArenaScore_playerTable_topHeader_playersName_8d {
+.mediaExtraLarge .ArenaScore_playerTable_topHeader_d2 {
     color: #f4e1b3;
-    font-size: 26rem;
+    font-size: 36rem;
     font-weight: 700;
-    line-height: 30rem;
+    line-height: 110%;
     /* stylelint-disable-next-line unit-blacklist */
     letter-spacing: 0.04em;
+}
+.ArenaScore_playerTable_topHeader_playersName_8d {
     flex: 0 1 auto;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
 .ArenaScore_playerTable_topHeader_playerClan_e0 {
-    color: #f4e1b3;
-    font-size: 26rem;
-    font-weight: 700;
-    line-height: 30rem;
-    /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
     margin-right: 15rem;
     white-space: nowrap;
     overflow: hidden;
@@ -385,6 +443,10 @@
 .ArenaScore_playerTable_topHeader_img_de {
     width: 160rem;
     height: 100rem;
+}
+.mediaExtraLarge .ArenaScore_playerTable_topHeader_img_de {
+    width: 224rem;
+    height: 140rem;
 }
 .ArenaScore_playerTable_topRow_f7 {
     display: flex;
@@ -396,9 +458,16 @@
     border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
 }
 .ArenaScore_playerTable_topRow_pointsGained_06 {
-    flex: 1 0 auto;
     color: #f2c572;
     font-size: 16rem;
+    font-weight: 400;
+    line-height: 19rem;
+    letter-spacing: 0.04em;
+    flex: 1 0 auto;
+}
+.mediaExtraLarge .ArenaScore_playerTable_topRow_pointsGained_06 {
+    color: #f2c572;
+    font-size: 22rem;
     font-weight: 400;
     line-height: 19rem;
     letter-spacing: 0.04em;
@@ -412,6 +481,9 @@
     height: 28rem;
     border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
 }
+.mediaExtraLarge .ArenaScore_playerTable_row_0a {
+    height: 37rem;
+}
 .ArenaScore_playerTable_row_category_80 {
     color: #f4e1b3;
     font-size: 16rem;
@@ -419,6 +491,16 @@
     line-height: 19rem;
     letter-spacing: 0.04em;
     flex: 1 0 auto;
+}
+.mediaExtraLarge .ArenaScore_playerTable_row_category_80 {
+    color: #f4e1b3;
+    font-size: 22rem;
+    font-weight: 400;
+    line-height: 19rem;
+    letter-spacing: 0.04em;
+}
+.ArenaScore_playerTable_row__loot_27 .ArenaScore_playerTable_row_category_80 {
+    color: #dfcdf2;
 }
 
 .FormatText_base_d0 {
@@ -830,6 +912,11 @@
     background: rgba(10, 4, 8, 0.5);
     position: relative;
 }
+
+.mediaExtraLarge .DailyMissionCard_base_d3 {
+    width: 330rem;
+    min-height: 381rem;
+}
 .DailyMissionCard_wrapper_e3 {
     display: flex;
     position: relative;
@@ -854,6 +941,9 @@
     border-bottom: 1rem solid rgba(255, 255, 255, 0.15);
     background: #01032630;
 }
+.mediaExtraLarge .DailyMissionCard_header_71 {
+    height: 46rem;
+}
 .DailyMissionCard_header_71 .DailyMissionCard_heading_dd {
     color: #f4e1b3;
     font-size: 16rem;
@@ -861,6 +951,9 @@
     line-height: 19rem;
     letter-spacing: 0.04em;
     margin-left: 14rem;
+}
+.mediaExtraLarge .DailyMissionCard_header_71 .DailyMissionCard_heading_dd {
+    font-size: 19rem;
 }
 .DailyMissionCard_body_58 {
     display: flex;
@@ -874,19 +967,30 @@
     height: 100rem;
     margin: -35rem;
 }
+.mediaExtraLarge .DailyMissionCard_missionIcon_53 {
+    width: 140rem;
+    height: 140rem;
+    margin: -45rem;
+}
 .DailyMissionCard_description_9a {
     color: #f4e1b3;
-    font-size: 16rem;
+    font-size: 14rem;
     font-weight: 400;
-    line-height: 19rem;
+    line-height: 18rem;
     letter-spacing: 0.04em;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex: 1;
     width: 220rem;
-    margin: 14rem 0rem;
+    margin: 14rem 0;
     text-align: center;
+}
+.mediaExtraLarge .DailyMissionCard_description_9a {
+    align-items: flex-start;
+    width: 308rem;
+    font-size: 19rem;
+    line-height: 25rem;
 }
 .DailyMissionCard_progressBar_ee {
     display: flex;
@@ -895,6 +999,10 @@
     align-content: center;
     width: 200rem;
     margin-top: 2rem;
+}
+.mediaExtraLarge .DailyMissionCard_progressBar_ee {
+    width: 280rem;
+    margin-top: 8rem;
 }
 .DailyMissionCard_progressBar_label_83 {
     color: #f4e1b3;
@@ -910,12 +1018,19 @@
     margin-bottom: 14rem;
     text-align: center;
 }
+.mediaExtraLarge .DailyMissionCard_progressBar_label_83 {
+    margin-bottom: 18rem;
+    font-size: 19rem;
+}
 .DailyMissionCard_progressBar_label_accent_da {
     color: #ffa420;
     font-size: 16rem;
     font-weight: 400;
     line-height: 19rem;
     letter-spacing: 0.04em;
+}
+.mediaExtraLarge .DailyMissionCard_progressBar_label_accent_da {
+    font-size: 19rem;
 }
 .DailyMissionCard_footer_af {
     display: flex;
@@ -926,6 +1041,9 @@
     height: 33rem;
     border-top: 1rem solid rgba(255, 255, 255, 0.15);
     background: #01032630;
+}
+.mediaExtraLarge .DailyMissionCard_footer_af {
+    height: 46rem;
 }
 .DailyMissionCard_footer_af .DailyMissionCard_status_de {
     display: flex;
@@ -939,16 +1057,26 @@
     font-weight: 400;
     line-height: 1.3;
 }
+.mediaExtraLarge .DailyMissionCard_footer_af .DailyMissionCard_status_active_02 {
+    font-size: 19rem;
+}
 .DailyMissionCard_footer_af .DailyMissionCard_status_done_bd {
     color: #7ab300;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
+.mediaExtraLarge .DailyMissionCard_footer_af .DailyMissionCard_status_done_bd {
+    font-size: 19rem;
+}
 .DailyMissionCard_footer_af .DailyMissionCard_status_done_icon_07 {
     width: 16rem;
     height: 16rem;
     margin-top: 1rem;
+}
+.mediaExtraLarge .DailyMissionCard_footer_af .DailyMissionCard_status_done_icon_07 {
+    width: 20rem;
+    height: 20rem;
 }
 .DailyMissionCard_rewards_23 {
     display: flex;
@@ -985,12 +1113,11 @@
     margin-top: 140rem;
 }
 .mediaExtraLarge .BattleResults_wrapper_d4 {
-    margin-top: 336rem;
-    transform: scale(1.4);
+    margin-top: 156rem;
 }
 .BattleResults_heading_ce {
     margin-bottom: 15rem;
-    opacity: 0.7;
+    opacity: 0.8;
     color: #f4e1b3;
     font-size: 73rem;
     font-weight: 700;
@@ -1001,6 +1128,10 @@
     font-size: 96rem;
     font-weight: 700;
     line-height: 113rem;
+}
+.mediaExtraLarge .BattleResults_heading_ce {
+    font-size: 134rem;
+    line-height: 120%;
 }
 .BattleResults_divider_4f {
     width: 533rem;
@@ -1013,6 +1144,9 @@
 .mediaMedium .BattleResults_divider_4f {
     width: 695rem;
     background-image: url('R.images.cosmic_event.gui.maps.icons.postBattleView.battleResultsTab.divider_large');
+}
+.mediaExtraLarge .BattleResults_divider_4f {
+    margin-top: -10rem;
 }
 .BattleResults_achievements_e0 {
     display: flex;
@@ -1033,6 +1167,9 @@
     margin: 0 20rem;
     position: relative;
 }
+.mediaExtraLarge .BattleResults_achievements_e0 .BattleResults_achievement_e6 {
+    height: 168rem;
+}
 .BattleResults_achievements_e0 .BattleResults_achievement_icon_27 {
     width: 120rem;
     height: 120rem;
@@ -1041,6 +1178,10 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+}
+.mediaExtraLarge .BattleResults_achievements_e0 .BattleResults_achievement_icon_27 {
+    width: 168rem;
+    height: 168rem;
 }
 .BattleResults_achievements_e0 .BattleResults_achievement_points_1f {
     color: #f2c572;
@@ -1052,6 +1193,14 @@
     margin-bottom: 1rem;
     position: relative;
 }
+.mediaExtraLarge .BattleResults_achievements_e0 .BattleResults_achievement_points_1f {
+    color: #f2c572;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 110%;
+    /* stylelint-disable-next-line unit-blacklist */
+    letter-spacing: 0.04em;
+}
 .BattleResults_achievements_e0 .BattleResults_achievement_label_f2 {
     color: #f2c572;
     font-size: 12rem;
@@ -1060,6 +1209,13 @@
     width: 100rem;
     text-align: center;
     position: relative;
+}
+.mediaExtraLarge .BattleResults_achievements_e0 .BattleResults_achievement_label_f2 {
+    color: #f2c572;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    width: 160rem;
 }
 .BattleResults_dailyMissions_42 {
     display: flex;
@@ -1086,6 +1242,11 @@
 .mediaLarge .BattleResults_dailyMissions_42 .BattleResults_dailyMission_44 {
     margin-top: 45rem;
 }
+.mediaExtraLarge .BattleResults_dailyMissions_42 .BattleResults_dailyMission_44 {
+    margin-left: 14rem;
+    margin-top: 105rem;
+    margin-right: 14rem;
+}
 .BattleResults_dailyMissions_completed_36 {
     padding: 10rem 15rem;
     background: #01032651;
@@ -1105,12 +1266,20 @@
 .CosmicPostBattleApp_base_5f {
     width: 100%;
     height: 100%;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.postBattleView.bg');
+    background-image: url('R.images.cosmic_event.gui.maps.icons.postBattleView.bg_small');
     background-repeat: no-repeat;
     background-position: right bottom;
     background-size: cover;
     overflow: hidden;
     position: relative;
+}
+
+.mediaMedium .CosmicPostBattleApp_base_5f {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.postBattleView.bg_medium');
+}
+
+.mediaExtraLarge .CosmicPostBattleApp_base_5f {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.postBattleView.bg_large');
 }
 .CosmicPostBattleApp_closeButton_1c {
     text-transform: uppercase;
@@ -1130,6 +1299,9 @@
 }
 .mediaSmall .CosmicPostBattleApp_tabs_98 {
     top: 25rem;
+}
+.mediaExtraLarge .CosmicPostBattleApp_tabs_98 {
+    top: 46rem;
 }
 .CosmicPostBattleApp_tabs_patchWorkDecoration_f3 {
     width: 54rem;

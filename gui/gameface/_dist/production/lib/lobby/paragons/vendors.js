@@ -27,7 +27,7 @@
                     return this.payload || [];
                 }
             }
-            class c extends (/^(84(|4)|306|314|755)$/.test(n.j) ? s : null) {
+            class c extends (/^(306|314|755|844)$/.test(n.j) ? s : null) {
                 constructor(e) {
                     (super(),
                         (this.done = !0),
@@ -67,7 +67,7 @@
                             (this.v0 = null)));
                 }
             }
-            class f extends (/^(84(|4)|306|314|755)$/.test(n.j) ? c : null) {
+            class f extends (/^(306|314|755|844)$/.test(n.j) ? c : null) {
                 constructor(e) {
                     (super(0),
                         (this._string = null),
@@ -98,7 +98,7 @@
                 }
             }
             const d = { dependencies: null };
-            class p extends (/^(84(|4)|306|314|755)$/.test(n.j) ? s : null) {
+            class p extends (/^(306|314|755|844)$/.test(n.j) ? s : null) {
                 constructor(e) {
                     (super(), (this.source = e), this.setValue(e));
                 }
@@ -134,7 +134,7 @@
                     t && (0, r.S6)(t, (e) => this.add(e));
                 }
             }
-            class h extends (/^(84(|4)|306|314|755)$/.test(n.j) ? p : null) {
+            class h extends (/^(306|314|755|844)$/.test(n.j) ? p : null) {
                 constructor(e) {
                     super(e);
                 }
@@ -347,7 +347,7 @@
                     }
                     return i;
                 },
-                y = /^(84(|4)|306|314|755)$/.test(n.j)
+                y = /^(306|314|755|844)$/.test(n.j)
                     ? ['config', 'onProps', 'onStart', 'onChange', 'onPause', 'onResume', 'onRest']
                     : null,
                 g = {
@@ -456,7 +456,7 @@
                         n && (e.frequency = void 0));
                 } else e.duration = void 0;
             }
-            const E = /^(84(|4)|306|314|755)$/.test(n.j) ? [] : null;
+            const E = /^(306|314|755|844)$/.test(n.j) ? [] : null;
             class C {
                 constructor() {
                     ((this.changed = !1),
@@ -655,7 +655,7 @@
                 q = (e) => (4 & e[B]) > 0,
                 H = (e, t) => (t ? (e[B] |= 3) : (e[B] &= -3)),
                 K = (e, t) => (t ? (e[B] |= 4) : (e[B] &= -5));
-            class G extends (/^(84(|4)|306|314|755)$/.test(n.j) ? F : null) {
+            class G extends (/^(306|314|755|844)$/.test(n.j) ? F : null) {
                 constructor(e, t) {
                     if (
                         (super(),
@@ -1101,7 +1101,7 @@
             function Z(e, t) {
                 (0, r.rU)(e, (e, n) => null != e && t.add(n));
             }
-            const ee = /^(84(|4)|306|314|755)$/.test(n.j)
+            const ee = /^(306|314|755|844)$/.test(n.j)
                 ? ['onStart', 'onRest', 'onChange', 'onPause', 'onResume']
                 : null;
             function te(e, t, n) {
@@ -1112,7 +1112,7 @@
                 (null == (r = (i = e.animation)[t]) || r.call(i, ...n),
                     null == (o = (a = e.defaultProps)[t]) || o.call(a, ...n));
             }
-            const re = /^(84(|4)|306|314|755)$/.test(n.j) ? ['onStart', 'onChange', 'onRest'] : null;
+            const re = /^(306|314|755|844)$/.test(n.j) ? ['onStart', 'onChange', 'onRest'] : null;
             let ie = 1;
             class oe {
                 constructor(e, t) {
@@ -2220,12 +2220,12 @@
                 if (o) {
                     Boolean(
                         t &&
-                            o.inputs &&
-                            (function (e, t) {
-                                if (e.length !== t.length) return !1;
-                                for (let n = 0; n < e.length; n++) if (e[n] !== t[n]) return !1;
-                                return !0;
-                            })(t, o.inputs),
+                        o.inputs &&
+                        (function (e, t) {
+                            if (e.length !== t.length) return !1;
+                            for (let n = 0; n < e.length; n++) if (e[n] !== t[n]) return !1;
+                            return !0;
+                        })(t, o.inputs),
                     ) || (o = { inputs: t, result: e() });
                 } else o = n;
                 return (
@@ -4437,7 +4437,6 @@
                                 (ur = ur || document.createElement('div')).innerHTML = '<svg>' + t + '</svg>',
                                     t = ur.firstChild;
                                 e.firstChild;
-
                             )
                                 e.removeChild(e.firstChild);
                             for (; t.firstChild; ) e.appendChild(t.firstChild);
@@ -5899,7 +5898,6 @@
                     for (
                         n = Yr((e = t.child), e.pendingProps, e.expirationTime), t.child = n, n.return = t;
                         null !== e.sibling;
-
                     )
                         ((e = e.sibling), ((n = n.sibling = Yr(e, e.pendingProps, e.expirationTime)).return = t));
                     n.sibling = null;
@@ -7107,7 +7105,6 @@
                                                         c !== i || (0 !== n && 3 !== c.nodeType) || (u = o + n),
                                                         3 === c.nodeType && (o += c.nodeValue.length),
                                                         null !== (d = c.firstChild);
-
                                                 )
                                                     ((f = c), (c = d));
                                                 for (;;) {
@@ -7132,7 +7129,6 @@
                         On = !1,
                         Oa = r;
                     null !== Oa;
-
                 ) {
                     i = !1;
                     var a = void 0;
@@ -8931,7 +8927,7 @@
         },
         5013: (e, t, n) => {
             'use strict';
-            if ((n.d(t, { e: () => i }), !/^(731|862|921)$/.test(n.j))) var r = n(9174);
+            if ((n.d(t, { e: () => i }), !/^(533|731|862|921)$/.test(n.j))) var r = n(9174);
             function i(e) {
                 return (0, r.Gf)(e);
             }
@@ -9678,9 +9674,9 @@
                 throw new Error(
                     'number' == typeof e
                         ? '[MobX] minified error nr: ' +
-                          e +
-                          (n.length ? ' ' + n.map(String).join(',') : '') +
-                          '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
+                              e +
+                              (n.length ? ' ' + n.map(String).join(',') : '') +
+                              '. Find the full error at: https://github.com/mobxjs/mobx/blob/main/packages/mobx/src/errors.ts'
                         : '[MobX] ' + e,
                 );
             }
@@ -11874,7 +11870,6 @@
                                             a = !1,
                                             u = U(t.data_.keys());
                                         !(n = u()).done;
-
                                     ) {
                                         var l = n.value;
                                         if (!i.has(l))
@@ -11900,7 +11895,6 @@
                                             for (
                                                 var y = t.data_.keys(), g = o.keys(), b = y.next(), w = g.next();
                                                 !b.done;
-
                                             ) {
                                                 if (b.value !== w.value) {
                                                     t.keysAtom_.reportChanged();
