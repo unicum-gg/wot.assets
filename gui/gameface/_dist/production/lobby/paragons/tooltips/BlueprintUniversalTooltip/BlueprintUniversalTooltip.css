@@ -1,3 +1,16 @@
+.TooltipDecorator_base_c9 {
+    display: flex;
+    position: absolute;
+}
+
+.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
+}
+
 .Box_mt__XS_0c {
     margin-top: 4rem;
 }
@@ -544,17 +557,4 @@
     position: relative;
     top: -1rem;
     right: 0;
-}
-
-.TooltipDecorator_base_c9 {
-    display: flex;
-    position: absolute;
-}
-
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url('R.images.gui.maps.icons.tooltip.tooltip_background');
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
 }

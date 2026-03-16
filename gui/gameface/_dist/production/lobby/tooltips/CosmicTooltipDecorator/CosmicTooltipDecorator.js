@@ -313,7 +313,7 @@
                     o = t(3138),
                     a = t(6179),
                     s = t.n(a);
-                const u = ['children', 'className'];
+                const u = ['children', 'className', 'isSimple'];
                 function d() {
                     return (
                         (d =
@@ -331,7 +331,8 @@
                 s().forwardRef(function (e, n) {
                     let t = e.children,
                         r = e.className,
-                        c = (function (e, n) {
+                        c = e.isSimple,
+                        l = (function (e, n) {
                             if (null == e) return {};
                             var t,
                                 r,
@@ -340,7 +341,7 @@
                             for (r = 0; r < o.length; r++) ((t = o[r]), n.indexOf(t) >= 0 || (i[t] = e[t]));
                             return i;
                         })(e, u);
-                    const l = (function () {
+                    const v = (function () {
                             const e = (0, a.useRef)(0);
                             var n;
                             return (
@@ -369,12 +370,12 @@
                                 )
                             );
                         })(),
-                        v = s().useRef(null);
-                    var f;
+                        f = s().useRef(null);
+                    var m;
                     return (
-                        (f = () => {
-                            l.run(() => {
-                                const e = v.current;
+                        (m = () => {
+                            v.run(() => {
+                                const e = f.current;
                                 if (!e) return;
                                 const n = e.scrollWidth,
                                     t = e.scrollHeight;
@@ -388,16 +389,16 @@
                                 });
                             });
                         }),
-                        (0, a.useEffect)(f, []),
+                        (0, a.useEffect)(m, []),
                         s().createElement(
                             'div',
-                            d({}, c, {
+                            d({}, l, {
                                 className: i()('CosmicTooltipDecorator_base_7d', r),
                                 ref: function (e) {
-                                    ((v.current = e), 'function' == typeof n ? n(e) : n && (n.current = e));
+                                    ((f.current = e), 'function' == typeof n ? n(e) : n && (n.current = e));
                                 },
                             }),
-                            s().createElement('div', { className: 'CosmicTooltipDecorator_bg_cubes_b6' }),
+                            !c && s().createElement('div', { className: 'CosmicTooltipDecorator_bg_cubes_b6' }),
                             s().createElement('div', { className: 'CosmicTooltipDecorator_bg_glow_9a' }),
                             s().createElement('div', { className: 'CosmicTooltipDecorator_decorator_13' }, t),
                         )

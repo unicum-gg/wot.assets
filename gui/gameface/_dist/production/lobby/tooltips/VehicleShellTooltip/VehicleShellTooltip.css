@@ -326,9 +326,7 @@
     color: #f4e1b3;
     font-size: 15rem;
     font-weight: 700;
-    line-height: 20rem;
-    /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
+    line-height: 17rem;
     margin: 10rem 0 7rem;
 }
 
@@ -363,4 +361,8 @@
     background: url('R.images.cosmic_event.gui.maps.icons.tooltip.glow') 0 0 / contain no-repeat;
     position: absolute;
     top: 0;
+}
+
+.CosmicTooltipDecorator_simple_e8 .CosmicTooltipDecorator_bg_glow_9a {
+    display: none;
 }

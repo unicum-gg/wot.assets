@@ -167,101 +167,6 @@
     margin: -14rem;
 }
 
-.Navigation_base_32 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 54rem;
-    position: relative;
-}
-.Navigation_linksContainer_49 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 54rem;
-    padding: 0 9rem;
-    border-image-source: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.navigation.decor_bar');
-    border-image-slice: 9 fill;
-    border-image-width: 9rem;
-}
-.Navigation_bgLeft_ab {
-    width: 54rem;
-    height: 39rem;
-    margin-right: 6rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.navigation.menu_bg') center center / contain
-        no-repeat;
-}
-.Navigation_bgRight_40 {
-    width: 54rem;
-    height: 39rem;
-    margin-left: 6rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.navigation.menu_bg') center center / contain
-        no-repeat;
-    transform: rotate(180deg);
-}
-.Navigation_link_82 {
-    color: #f4e1b3;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 21rem;
-    /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 152rem;
-    height: 32rem;
-    margin: 0 1rem;
-    line-height: 20rem;
-    letter-spacing: 0;
-    opacity: 1;
-    position: relative;
-    transition: opacity 1s ease;
-    cursor: pointer;
-}
-.Navigation_link_82:hover {
-    color: #f2c572;
-}
-.Navigation_link_light_47 {
-    width: 128rem;
-    height: 61rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.navigation.light') center center / contain
-        no-repeat;
-    opacity: 0;
-    position: absolute;
-    top: -10rem;
-    left: 50%;
-    z-index: -1;
-    transform: translateX(-50%);
-    transition: opacity 1s ease;
-    pointer-events: none;
-}
-.Navigation_link__active_db {
-    border: 1rem solid #f2c572;
-    opacity: 1;
-    color: #f2c572;
-    font-size: 18rem;
-    font-weight: 500;
-    line-height: 21rem;
-    /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-}
-.Navigation_link__active_db:hover {
-    opacity: 1;
-}
-.Navigation_link__active_db .Navigation_link_light_47 {
-    opacity: 1;
-}
-.Navigation_borderImg_27 {
-    width: 156rem;
-    height: 36rem;
-    border-image-source: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.navigation.decor_button');
-    border-image-slice: 4 fill;
-    border-image-width: 4rem;
-    position: absolute;
-}
-
 .Box_mt__XS_0c {
     margin-top: 4rem;
 }
@@ -553,6 +458,14 @@
 .mediaExtraLarge .ActionItem_base_86 {
     min-height: 42rem;
 }
+
+.ActionItem_base__highlighted_84 {
+    background: linear-gradient(90deg, #704a9450 0%, #704a9450 33.8%, rgba(115, 39, 170, 0) 100%);
+}
+.ActionItem_infoBlock_23 {
+    display: flex;
+    flex: 1 0 auto;
+}
 .ActionItem_icon_e8 {
     width: 26rem;
     height: 26rem;
@@ -587,13 +500,12 @@
     background: url('R.images.cosmic_event.gui.maps.icons.scoring.action_icon_bg') center center / 42rem 42rem no-repeat;
 }
 .ActionItem_title_8b {
-    flex: 1 0 auto;
-    padding-bottom: 3rem;
     color: #f4e1b3;
     font-size: 16rem;
     font-weight: 400;
     line-height: 19rem;
     letter-spacing: 0.04em;
+    padding-top: 3rem;
 }
 .mediaMedium .ActionItem_title_8b {
     color: #f4e1b3;
@@ -605,7 +517,11 @@
 }
 .mediaExtraLarge .ActionItem_title_8b {
     min-width: 280rem;
+    padding-top: 8rem;
     font-size: 22rem;
+}
+.ActionItem_base__highlighted_84 .ActionItem_title_8b {
+    color: #e9dcf6;
 }
 .ActionItem_points_b7 {
     color: #f4e1b3;
@@ -625,18 +541,26 @@
     background: url('R.images.cosmic_event.gui.maps.icons.event_icon.c_14x14') right center / 14rem 14rem no-repeat;
     text-align: right;
     position: relative;
+    z-index: 1;
 }
 .mediaExtraLarge .ActionItem_points_b7 {
     padding-right: 23rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.event_icon.c_14x14') right center / 18rem 18rem no-repeat;
+    background: url('R.images.cosmic_event.gui.maps.icons.event_icon.c_18x18') right center / 18rem 18rem no-repeat;
     font-size: 22rem;
+}
+.ActionItem_base__highlighted_84 .ActionItem_points_b7 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.event_icon.higlighted_14x14');
+    color: #e9dcf6;
+}
+.mediaExtraLarge .ActionItem_base__highlighted_84 .ActionItem_points_b7 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.event_icon.higlighted_18x18');
 }
 .ActionItem_points_bg_61 {
     width: 90rem;
     height: 30rem;
     background: url('R.images.cosmic_event.gui.maps.icons.scoring.action_points_bg') 0 0 / contain no-repeat;
     position: absolute;
-    top: 0;
+    top: -3rem;
     right: -20rem;
     z-index: -1;
 }
@@ -1472,7 +1396,7 @@ body {
     --headerHeight: 70rem;
     width: 100%;
     height: 100%;
-    background-color: #93523b;
+    background-color: rgba(107, 106, 106, 0.3);
     overflow: hidden;
     position: relative;
     animation-name: CosmicLobbyViewApp_fadeIn_c8;
@@ -1508,37 +1432,30 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    height: 28rem;
+    padding: 4rem 0;
     position: absolute;
-    top: 14rem;
+    top: 18rem;
     right: 25rem;
     left: 25rem;
     z-index: 100;
+    pointer-events: none;
 }
 
 .mediaMedium .CosmicLobbyViewApp_header_3b {
     top: 25rem;
+    left: 30rem;
+}
+
+.mediaExtraLarge .CosmicLobbyViewApp_header_3b {
+    top: 30rem;
+    right: 40rem;
+    left: 54rem;
 }
 
 .CosmicLobbyViewApp_fallback_ed {
     min-width: 200rem;
-}
-
-.CosmicLobbyViewApp_navigationWrapper_64 {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-top: 15rem;
-    position: relative;
-}
-
-.mediaMedium .CosmicLobbyViewApp_navigationWrapper_64 {
-    margin-top: 0;
-}
-
-.CosmicLobbyViewApp_navigationWrapper_64 .CosmicLobbyViewApp_navBar_35 {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    pointer-events: auto;
 }
 
 .CosmicLobbyViewApp_about_6a {
@@ -1547,6 +1464,17 @@ body {
     justify-content: flex-start;
     min-width: 200rem;
     margin-left: -2rem;
+    pointer-events: auto;
+}
+
+.CosmicLobbyViewApp_aboutCaption_03 {
+    padding-left: 0;
+}
+
+.CosmicLobbyViewApp_aboutIcon_b4 {
+    width: 24rem;
+    height: 24rem;
+    margin-right: 2rem;
 }
 
 .CosmicLobbyViewApp_close_43 {
@@ -1554,6 +1482,7 @@ body {
     flex-direction: row;
     justify-content: flex-end;
     min-width: 200rem;
+    pointer-events: auto;
 }
 
 .CosmicLobbyViewApp_routeWrapper_8a {
@@ -1581,31 +1510,50 @@ body {
     height: 100%;
     background-repeat: no-repeat;
     background-position: center bottom;
-    background-size: cover;
+    background-size: 133% 100%;
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 0;
     transition: opacity 600ms ease-in-out;
 }
 
-.CosmicLobbyViewApp_background__main_80 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.main_bg');
+.mediaSmall .CosmicLobbyViewApp_background_00 {
+    background-size: cover;
 }
 
-.mediaExtraLarge .CosmicLobbyViewApp_background__main_80 {
+.CosmicLobbyViewApp_background__main_80 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.main_bg_small');
+}
+
+.mediaLarge .CosmicLobbyViewApp_background__main_80 {
     background-image: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.main_bg_large');
 }
 
+.mediaExtraLarge .CosmicLobbyViewApp_background__main_80 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.main_bg_extraLarge');
+}
+
 .CosmicLobbyViewApp_background__artefact_36 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.artefact_bg');
+    background-image: none;
 }
 
 .CosmicLobbyViewApp_background__pickups_00 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.rules_bg');
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.background.base');
 }
 
-.CosmicLobbyViewApp_background__rules_64 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.cosmicLobbyView.rules_bg');
+.mediaSmall .CosmicLobbyViewApp_background__pickups_00 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.background.small');
+}
+
+.mediaMedium .CosmicLobbyViewApp_background__pickups_00 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.background.medium');
+}
+
+.mediaLarge .CosmicLobbyViewApp_background__pickups_00 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.background.large');
+}
+
+.mediaExtraLarge .CosmicLobbyViewApp_background__pickups_00 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.background.extraLarge');
 }
 
 .CosmicLobbyViewApp_stage_90 {
@@ -1885,30 +1833,10 @@ body {
     width: 140rem;
     height: 140rem;
 }
-.Medal_grayscale_d2 {
-    filter: grayscale(1);
-}
-.Medal_lock_64 {
-    width: 24rem;
-    height: 24rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.artefact.rewards.lock') no-repeat center / cover;
-    position: absolute;
-    bottom: -2rem;
-    left: 50%;
-    transform: translateX(-50%);
-}
 .Medal_img_52 {
-    width: 80rem;
-    height: 80rem;
+    width: 100%;
+    height: 100%;
     position: absolute;
-}
-.mediaMedium .Medal_img_52 {
-    width: 100rem;
-    height: 100rem;
-}
-.mediaExtraLarge .Medal_img_52 {
-    width: 140rem;
-    height: 140rem;
 }
 .Medal_tooltipArea_2f {
     width: 67rem;
@@ -2106,12 +2034,13 @@ body {
 .mediaMedium .ArtefactRoute_medalsList_f6 {
     width: 328rem;
     height: 106rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.artefact.rewards.research_big') top / contain no-repeat;
+    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.rewards.research_big');
 }
 .mediaExtraLarge .ArtefactRoute_medalsList_f6 {
     width: 459rem;
     height: 120rem;
     margin-top: 28rem;
+    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.rewards.research_large');
 }
 .ArtefactRoute_firstMedal_16,
 .ArtefactRoute_secondMedal_7c {
@@ -2180,6 +2109,234 @@ body {
     bottom: 40rem;
 }
 
+.CustomSubtitles_base_45 {
+    opacity: 0;
+    position: absolute;
+    bottom: 80rem;
+    left: 50%;
+    z-index: 10;
+    transform: translateX(-50%) translateY(10rem);
+    transition:
+        opacity 0.3s ease-in-out,
+        transform 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.CustomSubtitles_base_45.CustomSubtitles_visible_fb {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.CustomSubtitles_text_40 {
+    max-width: 80vw;
+    padding: 12rem 20rem;
+    border: 1rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 4rem;
+    box-shadow: 0 2rem 8rem rgba(0, 0, 0, 0.3);
+    background: #000000;
+    color: #f2f2f7;
+    font-size: 36rem;
+    line-height: 1.4;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.Video_buttonsWrapper_33 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 40rem;
+    position: absolute;
+    bottom: 20rem;
+    z-index: 100;
+}
+
+.Video_baseButton_49 {
+    width: 48rem;
+    height: 48rem;
+    border: none;
+    color: #f2f2f7;
+    font-size: 20rem;
+    font-weight: 600;
+    line-height: 40rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.Video_iconWrapper_d4 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.Video_iconLayer_41 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    opacity: 1;
+    pointer-events: none;
+}
+
+.Video_iconHover_71 {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.Video_iconPress_97 {
+    opacity: 0;
+    transition: opacity 0.05s ease;
+}
+
+.Video_actionButton_f2:active .Video_iconPress_97,
+.Video_muteButton_d7:active .Video_iconPress_97,
+.Video_baseButton_49:active .Video_iconPress_97 {
+    opacity: 1;
+}
+
+.Video_actionButton_f2:active .Video_iconHover_71,
+.Video_muteButton_d7:active .Video_iconHover_71,
+.Video_baseButton_49:active .Video_iconHover_71 {
+    opacity: 0;
+}
+
+.Video_actionButton_f2:hover .Video_iconHover_71,
+.Video_muteButton_d7:hover .Video_iconHover_71,
+.Video_baseButton_49:hover .Video_iconHover_71 {
+    opacity: 1;
+}
+
+.Video_playBase_07 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.video.play.plays');
+}
+
+.Video_playHover_f0 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.video.play.plays_hover');
+}
+
+.Video_playPress_a6 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.video.play.plays_press');
+}
+
+.Video_pauseBase_dd {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.video.play.pause');
+}
+
+.Video_pauseHover_ab {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.video.play.pause_hover');
+}
+
+.Video_pausePress_1f {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.video.play.pause_press');
+}
+
+.Video_muteBase_52 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.video.volume.sound_on');
+}
+
+.Video_muteHover_d0 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.video.volume.sound_on_hover');
+}
+
+.Video_soundOnBase_7f {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.video.volume.sound_off');
+}
+
+.Video_soundOnHover_6d {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.video.volume.sound_off_hover');
+}
+
+.Video_subtitlesOnBase_2c {
+    background: url('R.images.cosmic_event.gui.maps.icons.video.subtitles.active') no-repeat center / cover;
+}
+
+.Video_subtitlesOffBase_d7 {
+    background: url('R.images.cosmic_event.gui.maps.icons.video.subtitles.inactive') no-repeat center / cover;
+}
+
+.Video_subtitlesHover_25 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.video.subtitles.hover');
+}
+
+.Video_subtitlesPress_c8 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.video.subtitles.pressed');
+}
+
+.Video_actionButton_f2 {
+    margin-right: 12rem;
+}
+
+.Video_videoControl_d2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Video_muteButton_d7 {
+    margin-right: 20rem;
+}
+
+.Video_volumeContainer_c6 {
+    display: flex;
+    align-items: center;
+}
+
+.Video_volumeSlider_ec {
+    display: flex;
+    align-items: center;
+    width: 80rem;
+    height: 40rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.Video_volumeSliderTrack_7d {
+    width: 100%;
+    height: 2rem;
+    background: #b2b2b2;
+    position: relative;
+}
+
+.Video_volumeSliderFill_82 {
+    height: 100%;
+    border-radius: 2rem;
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.05s ease;
+}
+
+.Video_volumeSliderThumb_30 {
+    width: 12rem;
+    height: 12rem;
+    margin-left: -6rem;
+    margin-top: -6rem;
+    border-radius: 50%;
+    box-shadow: 0 0 4rem rgba(0, 0, 0, 0.3);
+    background: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transition: box-shadow 0.2s ease;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.Video_volumeSlider_ec:hover .Video_volumeSliderThumb_30 {
+    box-shadow: 0 0 8rem rgba(255, 255, 255, 0.5);
+}
+
 .Artefact_base_56 {
     display: flex;
     position: relative;
@@ -2204,41 +2361,56 @@ body {
 }
 
 .Artefact_image_be {
-    background: url('R.images.cosmic_event.gui.maps.icons.artefact.states.normal') no-repeat center / cover;
+    background: url('R.images.cosmic_event.gui.maps.icons.artefact.states.small.base') no-repeat center / cover;
     position: absolute;
 }
 
 .mediaMedium .Artefact_image_be {
-    background: url('R.images.cosmic_event.gui.maps.icons.artefact.states.normal_big') no-repeat center / cover;
+    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.medium.base');
+}
+
+.mediaExtraLarge .Artefact_image_be {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.large.base');
 }
 
 .Artefact_base__completed_13 .Artefact_image_be {
-    background: url('R.images.cosmic_event.gui.maps.icons.artefact.states.done') no-repeat center / cover;
+    background: url('R.images.cosmic_event.gui.maps.icons.artefact.states.small.finished') no-repeat center / cover;
 }
 
 .mediaMedium .Artefact_base__completed_13 .Artefact_image_be {
-    background: url('R.images.cosmic_event.gui.maps.icons.artefact.states.done_big') no-repeat center / cover;
+    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.medium.finished');
+}
+
+.mediaExtraLarge .Artefact_base__completed_13 .Artefact_image_be {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.large.finished');
 }
 
 .Artefact_hover_63 {
-    width: 165rem;
-    height: 132rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.artefact.states.normal_hover') no-repeat center / cover;
+    background: url('R.images.cosmic_event.gui.maps.icons.artefact.states.small.base_hover') no-repeat center / cover;
     opacity: 0;
     position: absolute;
     transition: opacity 0.1s ease-in-out;
 }
 
 .mediaMedium .Artefact_hover_63 {
-    background: url('R.images.cosmic_event.gui.maps.icons.artefact.states.normal_hover_big') no-repeat center / cover;
+    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.medium.base_hover');
+}
+
+.mediaExtraLarge .Artefact_hover_63 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.large.base_hover');
 }
 
 .Artefact_base__completed_13 .Artefact_hover_63 {
-    background: url('R.images.cosmic_event.gui.maps.icons.artefact.states.done_hover') no-repeat center / cover;
+    background: url('R.images.cosmic_event.gui.maps.icons.artefact.states.small.finished_hover') no-repeat center /
+        cover;
 }
 
 .mediaMedium .Artefact_base__completed_13 .Artefact_hover_63 {
-    background: url('R.images.cosmic_event.gui.maps.icons.artefact.states.done_big_hover') no-repeat center / cover;
+    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.medium.finished_hover');
+}
+
+.mediaExtraLarge .Artefact_base__completed_13 .Artefact_hover_63 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.artefact.states.large.finished_hover');
 }
 
 .Artefact_base__hovered_a6 .Artefact_hover_63 {
@@ -2246,62 +2418,34 @@ body {
 }
 
 .ShopEntryPoint_base_88 {
-    width: 193rem;
-    height: 155rem;
+    width: 214rem;
+    height: 172rem;
     position: relative;
     z-index: 2;
     cursor: pointer;
 }
 
-.mediaSmall .ShopEntryPoint_base_88 {
-    width: 214rem;
-    height: 172rem;
-}
-
-.mediaLarge .ShopEntryPoint_base_88 {
+.mediaMedium .ShopEntryPoint_base_88 {
     width: 290rem;
     height: 234rem;
 }
 
 .mediaExtraLarge .ShopEntryPoint_base_88 {
     width: 348rem;
-    height: 281rem;
-}
-.ShopEntryPoint_entry-point_2d {
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-}
-.ShopEntryPoint_bg_c4 {
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.shop_entry_point.shop_small');
-}
-.mediaLarge .ShopEntryPoint_bg_c4 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.shop_entry_point.shop');
-}
-.mediaExtraLarge .ShopEntryPoint_bg_c4 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.shop_entry_point.shop_large');
+    height: 280rem;
 }
 .ShopEntryPoint_hover_f3 {
     width: 100%;
     height: 100%;
+    background-image: url('R.images.cosmic_event.gui.maps.icons.shop_entry_point.shop_small_hover');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    position: absolute;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.shop_entry_point.shop_small_hover');
     opacity: 0;
+    position: absolute;
     transition: opacity 0.2s ease;
 }
-.mediaLarge .ShopEntryPoint_hover_f3 {
+.mediaMedium .ShopEntryPoint_hover_f3 {
     background-image: url('R.images.cosmic_event.gui.maps.icons.shop_entry_point.shop_hover');
 }
 .mediaExtraLarge .ShopEntryPoint_hover_f3 {
@@ -2311,31 +2455,20 @@ body {
     opacity: 1;
 }
 .ShopEntryPoint_particles_f6 {
-    width: 90%;
-    height: 123%;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    top: -20rem;
-    left: 7rem;
+    z-index: 2;
 }
 
 .RulesEntryPoint_base_3b {
     display: flex;
-    width: 150rem;
-    height: 250rem;
+    width: 169rem;
+    height: 285rem;
     position: relative;
 }
 
-.mediaSmall .RulesEntryPoint_base_3b {
-    width: 169rem;
-    height: 285rem;
-}
-
 .mediaMedium .RulesEntryPoint_base_3b {
-    width: 215rem;
-    height: 308rem;
-}
-
-.mediaLarge .RulesEntryPoint_base_3b {
     width: 245rem;
     height: 351rem;
 }
@@ -2348,24 +2481,24 @@ body {
 .RulesEntryPoint_background_52 {
     width: 100%;
     height: 100%;
-    background: url('R.images.cosmic_event.gui.maps.icons.rules.entry_point.small') no-repeat center / contain;
+    background: url('R.images.cosmic_event.gui.maps.icons.pickups.entry_point.small') no-repeat center / contain;
     position: absolute;
     top: 0;
     left: 0;
 }
 
 .mediaMedium .RulesEntryPoint_background_52 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rules.entry_point.medium');
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.entry_point.medium');
 }
 
 .mediaExtraLarge .RulesEntryPoint_background_52 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rules.entry_point.large');
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.entry_point.large');
 }
 
 .RulesEntryPoint_hover_fd {
     width: 100%;
     height: 100%;
-    background: url('R.images.cosmic_event.gui.maps.icons.rules.entry_point.small_hover') no-repeat center / contain;
+    background: url('R.images.cosmic_event.gui.maps.icons.pickups.entry_point.small_hover') no-repeat center / contain;
     opacity: 0;
     position: absolute;
     top: 0;
@@ -2374,11 +2507,11 @@ body {
 }
 
 .mediaMedium .RulesEntryPoint_hover_fd {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rules.entry_point.medium_hover');
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.entry_point.medium_hover');
 }
 
 .mediaExtraLarge .RulesEntryPoint_hover_fd {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rules.entry_point.large_hover');
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.entry_point.large_hover');
 }
 
 .RulesEntryPoint_base_3b:hover .RulesEntryPoint_hover_fd {
@@ -2390,15 +2523,23 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    width: 100%;
+    height: 60rem;
     margin-right: 12rem;
     position: relative;
 }
 
-.mediaLarge .Mission_base_3a {
+.mediaMedium .Mission_base_3a {
     flex-direction: row;
     align-items: stretch;
-    width: 380rem;
     margin-bottom: 1rem;
+    padding-left: 55rem;
+}
+
+.mediaExtraLarge .Mission_base_3a {
+    width: 100%;
+    height: 78rem;
+    padding-left: 95rem;
 }
 .Mission_doneBg_f0 {
     display: flex;
@@ -2417,6 +2558,20 @@ body {
     background-position: center center;
     background-size: 110rem 110rem;
     position: relative;
+}
+.mediaMedium .Mission_header_c5 {
+    width: 100rem;
+    height: 100rem;
+    position: absolute;
+    top: -20rem;
+    left: -18rem;
+}
+.mediaExtraLarge .Mission_header_c5 {
+    width: 130rem;
+    height: 130rem;
+    position: absolute;
+    top: -26rem;
+    left: -18rem;
 }
 .Mission_points_92 {
     color: #f4e1b3;
@@ -2446,23 +2601,46 @@ body {
     display: none;
     padding: 0 12rem 0 18rem;
 }
-.mediaLarge .Mission_body_c9 {
+.mediaMedium .Mission_body_c9 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
     flex: 1 1 auto;
 }
+.mediaLarge .Mission_body_c9 {
+    padding: 0 12rem 0 22rem;
+}
+.mediaExtraLarge .Mission_body_c9 {
+    width: 392rem;
+    padding: 0 12rem 0 18rem;
+}
 .Mission_title_d6 {
-    line-height: 14rem;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    position: relative;
     color: #93c8f1;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+.mediaMedium .Mission_title_d6 {
+    width: 302rem;
+}
+.mediaLarge .Mission_title_d6 {
+    margin-bottom: 2rem;
+}
+.mediaExtraLarge .Mission_title_d6 {
+    color: #93c8f1;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 21rem;
+    /* stylelint-disable-next-line unit-blacklist */
+    letter-spacing: 0.04em;
+    width: 392rem;
+    margin-bottom: 0;
+    letter-spacing: 0.72rem;
 }
 .Mission_base__done_69 .Mission_title_d6 {
     max-width: 260rem;
@@ -2473,232 +2651,275 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-end;
-    height: 14rem;
-    margin: 6rem 0;
+    margin: 0 0 6rem;
     color: #dbedfa;
+    font-size: 14rem;
     line-height: 14rem;
+    letter-spacing: 0.56rem;
+}
+.mediaLarge .Mission_progression_1c {
+    line-height: 18rem;
+}
+.mediaExtraLarge .Mission_progression_1c {
+    margin: 0 0 11rem;
 }
 .Mission_progression_current_c3 {
     color: #6fb5ec;
+}
+.Mission_progressBar_71 {
+    width: 233rem;
+    margin-left: 2rem;
+}
+.mediaExtraLarge .Mission_progressBar_71 {
+    width: 302rem;
 }
 .Mission_base__done_69 .Mission_progression_1c,
 .Mission_base__done_69 .Mission_progressBar_71 {
     display: none;
 }
 
-.VehicleSelect_rover_6d {
-    width: 160rem;
-    height: 100rem;
+.VehicleSelect_rover_6d,
+.VehicleSelect_roverBg_35,
+.VehicleSelect_roverHover_80,
+.VehicleSelect_roverBattle_4c,
+.VehicleSelect_roverActiveBg_2a {
+    width: 400rem;
+    height: 300rem;
+    background: no-repeat center/cover;
     position: relative;
 }
 
-.VehicleSelect_rover_6d:hover {
-    cursor: pointer;
+.mediaMedium .VehicleSelect_rover_6d,
+.mediaMedium .VehicleSelect_roverBg_35,
+.mediaMedium .VehicleSelect_roverHover_80,
+.mediaMedium .VehicleSelect_roverBattle_4c,
+.mediaMedium .VehicleSelect_roverActiveBg_2a {
+    width: 480rem;
+    height: 360rem;
 }
 
-.mediaExtraLarge .VehicleSelect_rover_6d {
-    width: 224rem;
-    height: 140rem;
+.mediaLarge .VehicleSelect_rover_6d,
+.mediaLarge .VehicleSelect_roverBg_35,
+.mediaLarge .VehicleSelect_roverHover_80,
+.mediaLarge .VehicleSelect_roverBattle_4c,
+.mediaLarge .VehicleSelect_roverActiveBg_2a {
+    width: 560rem;
+    height: 420rem;
+}
+
+.mediaExtraLarge .VehicleSelect_rover_6d,
+.mediaExtraLarge .VehicleSelect_roverBg_35,
+.mediaExtraLarge .VehicleSelect_roverHover_80,
+.mediaExtraLarge .VehicleSelect_roverBattle_4c,
+.mediaExtraLarge .VehicleSelect_roverActiveBg_2a {
+    width: 720rem;
+    height: 540rem;
 }
 .VehicleSelect_roverBg_35 {
-    width: 160rem;
-    height: 100rem;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    opacity: 1;
     position: absolute;
     z-index: 3;
 }
 .VehicleSelect_rover__old_66 .VehicleSelect_roverBg_35 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.monitor_160x100');
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.small');
+}
+.mediaMedium .VehicleSelect_rover__old_66 .VehicleSelect_roverBg_35 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.medium');
+}
+.mediaLarge .VehicleSelect_rover__old_66 .VehicleSelect_roverBg_35 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.large');
 }
 .VehicleSelect_rover__new_1d .VehicleSelect_roverBg_35 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.monitor_160x100');
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.small');
 }
-.mediaExtraLarge .VehicleSelect_roverBg_35 {
-    width: 224rem;
-    height: 140rem;
+.mediaMedium .VehicleSelect_rover__new_1d .VehicleSelect_roverBg_35 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.medium');
+}
+.mediaLarge .VehicleSelect_rover__new_1d .VehicleSelect_roverBg_35 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.large');
+}
+.VehicleSelect_roverHover_80 {
+    opacity: 0;
+    position: absolute;
+    z-index: 4;
+    transition: opacity ease-in-out 0.16s;
+}
+.VehicleSelect_rover__new_1d .VehicleSelect_roverHover_80 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_small');
+    opacity: 0;
+}
+.mediaMedium .VehicleSelect_rover__new_1d .VehicleSelect_roverHover_80 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_medium');
+}
+.mediaLarge .VehicleSelect_rover__new_1d .VehicleSelect_roverHover_80 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_large');
+}
+.VehicleSelect_rover__old_66 .VehicleSelect_roverHover_80 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_small');
+    opacity: 0;
+}
+.mediaMedium .VehicleSelect_rover__old_66 .VehicleSelect_roverHover_80 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_medium');
+}
+.mediaLarge .VehicleSelect_rover__old_66 .VehicleSelect_roverHover_80 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_large');
 }
 .VehicleSelect_roverActiveBg_2a {
-    width: 160rem;
-    height: 100rem;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     opacity: 0;
     position: absolute;
     z-index: 3;
     transition: opacity ease-in-out 0.16s;
 }
-.VehicleSelect_rover__old_66 .VehicleSelect_roverActiveBg_2a {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.monitor_160x100_selected');
-}
-.VehicleSelect_rover__new_1d .VehicleSelect_roverActiveBg_2a {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.monitor_160x100_selected');
-}
-.VehicleSelect_rover_6d:hover .VehicleSelect_roverActiveBg_2a,
-.VehicleSelect_rover__selected_21 .VehicleSelect_roverActiveBg_2a {
+.VehicleSelect_rover__old_66.VehicleSelect_rover__selected_21 .VehicleSelect_roverActiveBg_2a {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_small');
     opacity: 1;
 }
-.mediaExtraLarge .VehicleSelect_roverActiveBg_2a {
-    width: 224rem;
-    height: 140rem;
+.mediaMedium .VehicleSelect_rover__old_66.VehicleSelect_rover__selected_21 .VehicleSelect_roverActiveBg_2a {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_medium');
 }
-.VehicleSelect_screenBorder_41 {
-    width: 160rem;
-    height: 100rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.screen.screen') no-repeat center / cover;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: opacity ease-in-out 0.16s;
+.mediaLarge .VehicleSelect_rover__old_66.VehicleSelect_rover__selected_21 .VehicleSelect_roverActiveBg_2a {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.hover_large');
 }
-.VehicleSelect_rover__selected_21 .VehicleSelect_screenBorder_41 {
+.VehicleSelect_rover__new_1d.VehicleSelect_rover__selected_21 .VehicleSelect_roverActiveBg_2a {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_small');
     opacity: 1;
 }
-.mediaExtraLarge .VehicleSelect_screenBorder_41 {
-    width: 224rem;
-    height: 140rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.screen.sreenLarge');
+.mediaMedium .VehicleSelect_rover__new_1d.VehicleSelect_rover__selected_21 .VehicleSelect_roverActiveBg_2a {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_medium');
 }
-.VehicleSelect_roverIcon_6b {
-    width: 16rem;
-    height: 16rem;
-    filter: drop-shadow(0 0 11rem #2d85c8);
-    position: absolute;
-    top: 12rem;
-    left: 19rem;
-    z-index: 4;
+.mediaLarge .VehicleSelect_rover__new_1d.VehicleSelect_rover__selected_21 .VehicleSelect_roverActiveBg_2a {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.hover_large');
 }
-.VehicleSelect_rover__old_66 .VehicleSelect_roverIcon_6b {
-    background: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.one_select') center / cover no-repeat;
-}
-.VehicleSelect_rover__new_1d .VehicleSelect_roverIcon_6b {
-    background: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.two_select') center / cover no-repeat;
-}
-.mediaExtraLarge .VehicleSelect_roverIcon_6b {
-    width: 20rem;
-    height: 20rem;
-    top: 17rem;
-    left: 27rem;
-}
-.VehicleSelect_roverLabel_d5 {
-    color: #dbedfa;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 18rem;
-    letter-spacing: 0.04em;
-    text-shadow: 0 0 8rem #2d85c8;
-    position: absolute;
-    right: 12rem;
-    bottom: 9rem;
-    z-index: 4;
-}
-.mediaExtraLarge .VehicleSelect_roverLabel_d5 {
-    color: #dbedfa;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 21rem;
-    /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-    right: 21rem;
-    bottom: 14rem;
-}
-.VehicleSelect_darkBg_16 {
-    width: 100%;
-    height: 100%;
-    background: #000;
-    opacity: 0.35;
+.VehicleSelect_roverBattle_4c {
+    opacity: 0.5;
     position: absolute;
     z-index: 5;
 }
-.VehicleSelect_battleGlow_ea {
+.VehicleSelect_rover__old_66 .VehicleSelect_roverBattle_4c {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.battle_small');
+}
+.mediaMedium .VehicleSelect_rover__old_66 .VehicleSelect_roverBattle_4c {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.battle_medium');
+}
+.mediaLarge .VehicleSelect_rover__old_66 .VehicleSelect_roverBattle_4c {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.battle_large');
+}
+.VehicleSelect_rover__new_1d .VehicleSelect_roverBattle_4c {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.battle_small');
+}
+.mediaMedium .VehicleSelect_rover__new_1d .VehicleSelect_roverBattle_4c {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.battle_medium');
+}
+.mediaLarge .VehicleSelect_rover__new_1d .VehicleSelect_roverBattle_4c {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.battle_large');
+}
+.mediaLarge .VehicleSelect_roverBattle_4c {
+    width: 560rem;
+    height: 420rem;
+}
+.mediaExtraLarge .VehicleSelect_roverBattle_4c {
+    width: 720rem;
+    height: 540rem;
+}
+.VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__old_66 .VehicleSelect_roverBg_35,
+.VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__new_1d .VehicleSelect_roverBg_35 {
+    opacity: 0.7;
+}
+.VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__old_66 .VehicleSelect_roverActiveBg_2a,
+.VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__new_1d .VehicleSelect_roverActiveBg_2a {
+    opacity: 0;
+}
+.VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__old_66 .VehicleSelect_roverBattle_4c,
+.VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__new_1d .VehicleSelect_roverBattle_4c {
+    opacity: 0.5;
+}
+.VehicleSelect_rover__inBattle_5c.VehicleSelect_rover__selected_21 .VehicleSelect_roverBattle_4c {
+    opacity: 1;
+}
+.VehicleSelect_glow_f9 {
     width: 185rem;
     height: 200rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.in_battle') center / cover no-repeat;
+    background: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.glow.small') no-repeat
+        center/cover;
     position: absolute;
-    top: -48rem;
+    top: 50%;
     left: 50%;
-    z-index: 6;
-    transform: translateX(-50%);
+    z-index: 10;
+    transform: translateX(-50%) translateY(-50%);
 }
-.mediaExtraLarge .VehicleSelect_battleGlow_ea {
-    width: 100%;
-    height: 100%;
-    top: 0;
+.mediaExtraLarge .VehicleSelect_glow_f9 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.glow.large');
 }
 .VehicleSelect_battleLabel_4d {
-    color: #ffa420;
-    font-size: 18rem;
+    color: #fdd1d4;
+    font-size: 22rem;
     font-weight: 700;
-    line-height: 21rem;
-    /* stylelint-disable-next-line unit-blacklist */
+    line-height: 19rem;
     letter-spacing: 0.04em;
     text-shadow:
-        0 0 4rem rgba(242, 125, 22, 0.6),
-        0 4rem 8rem rgba(242, 125, 22, 0.25);
+        0 0 4rem rgba(255, 112, 112, 0.5),
+        0 0 12rem #d03e45,
+        0 0 20rem #d03e45;
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: 11;
     transform: translate(-50%, -50%);
 }
+.mediaMedium .VehicleSelect_battleLabel_4d {
+    color: #fdd1d4;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 30rem;
+    letter-spacing: 1.12rem;
+}
+.mediaExtraLarge .VehicleSelect_battleLabel_4d {
+    color: #fdd1d4;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 110%;
+    /* stylelint-disable-next-line unit-blacklist */
+    letter-spacing: 0.04em;
+}
+.VehicleSelect_actionBlock_e1 {
+    width: 75%;
+    height: 55%;
+    margin-left: 13%;
+    margin-top: 18%;
+    position: relative;
+    z-index: 12;
+    cursor: pointer;
+}
 
 .AbilityBlock_base_51 {
     display: flex;
-    width: 182rem;
-    height: 52rem;
+    width: 48rem;
+    height: 48rem;
     position: relative;
 }
-
-.mediaMedium .AbilityBlock_base_51 {
-    width: 208rem;
+.mediaLarge .AbilityBlock_base_51 {
+    width: 64rem;
     height: 64rem;
 }
-
 .mediaExtraLarge .AbilityBlock_base_51 {
-    width: 273rem;
-    height: 83rem;
-}
-.AbilityBlock_bg_86 {
-    width: 191rem;
-    height: 52rem;
-    border-radius: 1rem;
-    position: absolute;
-    right: 0;
-}
-.mediaMedium .AbilityBlock_bg_86 {
-    width: 198rem;
-    height: 64rem;
-}
-.mediaExtraLarge .AbilityBlock_bg_86 {
-    width: 257rem;
-    height: 83rem;
+    width: 80rem;
+    height: 80rem;
 }
 .AbilityBlock_imageContainer_ad {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 52rem;
-    height: 52rem;
+    width: 100%;
+    height: 100%;
     border-radius: 1rem 0 0 1rem;
     background: rgba(75, 163, 231, 0.15);
     position: relative;
-}
-.mediaMedium .AbilityBlock_imageContainer_ad {
-    width: 64rem;
-    height: 64rem;
-}
-.mediaExtraLarge .AbilityBlock_imageContainer_ad {
-    width: 83rem;
-    height: 83rem;
 }
 .AbilityBlock_img_c5 {
     width: 36rem;
     height: 36rem;
 }
-.mediaMedium .AbilityBlock_img_c5 {
+.mediaLarge .AbilityBlock_img_c5 {
     width: 48rem;
     height: 48rem;
 }
@@ -2741,190 +2962,6 @@ body {
     font-size: 21rem;
 }
 
-.SpecificationBlock_base_61 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 210rem;
-    height: 50rem;
-    padding: 9rem 12rem;
-    position: relative;
-}
-
-.mediaMedium .SpecificationBlock_base_61 {
-    width: 270rem;
-    height: 67rem;
-    padding: 13rem;
-}
-
-.mediaExtraLarge .SpecificationBlock_base_61 {
-    width: 351rem;
-    height: 87rem;
-    padding: 18rem;
-}
-.SpecificationBlock_img_ce {
-    width: 24rem;
-    height: 24rem;
-}
-.mediaMedium .SpecificationBlock_img_ce {
-    width: 32rem;
-    height: 32rem;
-}
-.mediaExtraLarge .SpecificationBlock_img_ce {
-    width: 42rem;
-    height: 42rem;
-    margin-right: 16rem;
-}
-.SpecificationBlock_progressionContainer_13 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 154rem;
-    height: 100%;
-}
-.mediaMedium .SpecificationBlock_progressionContainer_13 {
-    width: 198rem;
-}
-.mediaExtraLarge .SpecificationBlock_progressionContainer_13 {
-    width: 333rem;
-}
-.SpecificationBlock_title_d9 {
-    color: #93c8f1;
-    font-size: 12rem;
-    text-shadow: 0 0 10rem #2d85c8;
-    letter-spacing: 0.96rem;
-}
-.mediaMedium .SpecificationBlock_title_d9 {
-    font-size: 16rem;
-}
-.mediaExtraLarge .SpecificationBlock_title_d9 {
-    font-size: 21rem;
-}
-.SpecificationBlock_progressionArea_1d {
-    display: flex;
-    flex-direction: row;
-}
-.SpecificationBlock_progressionDivision_61 {
-    width: 4rem;
-    height: 12rem;
-    margin-right: 1rem;
-    background: #3c82b9;
-    opacity: 0.2;
-    transition: opacity 0.6s ease;
-}
-.mediaMedium .SpecificationBlock_progressionDivision_61 {
-    width: 5rem;
-    height: 15rem;
-}
-.mediaExtraLarge .SpecificationBlock_progressionDivision_61 {
-    width: 7rem;
-    height: 20rem;
-}
-.SpecificationBlock_progressionDivision_filled_d5 {
-    box-shadow: 0 0 8rem 0 rgba(45, 133, 200, 0.8);
-    background: #4ba3e7;
-    animation: SpecificationBlock_fillAnimation_13 0.3s forwards;
-}
-@keyframes SpecificationBlock_fillAnimation_13 {
-    from {
-        opacity: 0.2;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(1) {
-    animation-delay: 8ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(2) {
-    animation-delay: 16ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(3) {
-    animation-delay: 24ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(4) {
-    animation-delay: 32ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(5) {
-    animation-delay: 40ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(6) {
-    animation-delay: 48ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(7) {
-    animation-delay: 56ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(8) {
-    animation-delay: 64ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(9) {
-    animation-delay: 72ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(10) {
-    animation-delay: 80ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(11) {
-    animation-delay: 88ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(12) {
-    animation-delay: 96ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(13) {
-    animation-delay: 104ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(14) {
-    animation-delay: 112ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(15) {
-    animation-delay: 120ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(16) {
-    animation-delay: 128ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(17) {
-    animation-delay: 136ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(18) {
-    animation-delay: 144ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(19) {
-    animation-delay: 152ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(20) {
-    animation-delay: 160ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(21) {
-    animation-delay: 168ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(22) {
-    animation-delay: 176ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(23) {
-    animation-delay: 184ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(24) {
-    animation-delay: 192ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(25) {
-    animation-delay: 200ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(26) {
-    animation-delay: 208ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(27) {
-    animation-delay: 216ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(28) {
-    animation-delay: 224ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(29) {
-    animation-delay: 232ms; /* stylelint-disable-line */
-}
-.SpecificationBlock_progressionDivision_filled_d5:nth-child(30) {
-    animation-delay: 240ms; /* stylelint-disable-line */
-}
-
 .MainRoute_base_bb {
     display: flex;
     flex-direction: row;
@@ -2938,7 +2975,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 .MainRoute_rulesEntryPoint_27 {
     cursor: pointer;
@@ -2958,7 +2997,6 @@ body {
     width: 165rem;
     height: 132rem;
     position: absolute;
-    top: 4rem;
     left: 50%;
     z-index: 3;
     transform: translateX(-50%);
@@ -2974,26 +3012,67 @@ body {
 }
 .MainRoute_artefact_info_7b {
     position: absolute;
-    top: 50%;
+    top: 24rem;
     left: 50%;
     z-index: 10;
-    transform: translate(-50%, -50%);
-    color: #f4e1b3;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 110%;
-    /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
+    transform: translateX(-50%);
 }
 .mediaMedium .MainRoute_artefact_info_7b {
-    color: #f4e1b3;
-    font-size: 54rem;
-    font-weight: 700;
-    line-height: 63rem;
+    top: 31rem;
 }
-.mediaExtraLarge .MainRoute_artefact_info_7b {
-    font-size: 67rem;
-    line-height: 67rem;
+.MainRoute_artefact_infoNumber_a4 {
+    width: 48rem;
+    height: 48rem;
+    background-image: var(--glitch-bg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: relative;
+    animation: MainRoute_signal-loss-opacity_e7 6s infinite linear;
+}
+.mediaMedium .MainRoute_artefact_infoNumber_a4 {
+    width: 56rem;
+    height: 56rem;
+}
+.mediaExtraLarge .MainRoute_artefact_infoNumber_a4 {
+    width: 80rem;
+    height: 80rem;
+}
+.MainRoute_glitchLayer1_86,
+.MainRoute_glitchLayer2_bb {
+    width: 100%;
+    height: 100%;
+    background-image: var(--glitch-bg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.MainRoute_glitchLayer1_86 {
+    clip-path: inset(50% 0% 30% 0%);
+    transform: translate(-2rem, 0rem);
+    animation: MainRoute_glitch-anim-1_e2 4s infinite linear alternate-reverse;
+}
+.MainRoute_glitchLayer2_bb {
+    clip-path: inset(10% 0% 60% 0%);
+    transform: translate(2rem, 0rem);
+    animation: MainRoute_glitch-anim-2_30 4.5s infinite linear alternate-reverse;
+}
+.MainRoute_scanline_62 {
+    width: 70%;
+    height: 10rem;
+    background: linear-gradient(to bottom, rgba(75, 163, 231, 0), rgba(75, 163, 231, 0.4) 50%, rgba(75, 163, 231, 0));
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 4;
+    transform: translateX(-50%);
+    animation: MainRoute_scanline_62 8s linear infinite;
+    pointer-events: none;
 }
 .MainRoute_coubeIcon_ad {
     width: 42rem;
@@ -3002,382 +3081,221 @@ body {
     top: 11%;
     right: 16%;
 }
-.MainRoute_vehicleImageWrapper_9a {
-    width: 440rem;
-    height: 330rem;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    opacity: 0;
-    position: absolute;
-    bottom: 240rem;
-    left: 50%;
-    z-index: 1;
-    transform: translateX(-50%);
-    transition: opacity ease-in-out 300ms;
-}
-.MainRoute_vehicleImageWrapper_old_6e {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.golo_440x330');
-    opacity: 1;
-}
-.mediaMedium .MainRoute_vehicleImageWrapper_old_6e {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.golo_600x450');
-}
-.mediaLarge .MainRoute_vehicleImageWrapper_old_6e {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.old.golo_840x630');
-}
-.MainRoute_vehicleImageWrapper_new_12 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.golo_440x330');
-    opacity: 1;
-}
-.mediaMedium .MainRoute_vehicleImageWrapper_new_12 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.golo_600x450');
-}
-.mediaLarge .MainRoute_vehicleImageWrapper_new_12 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.roverBackgrounds.new.golo_840x630');
-}
-.mediaMedium .MainRoute_vehicleImageWrapper_9a {
-    width: 524rem;
-    height: 393rem;
-    bottom: 280rem;
-}
-.mediaLarge .MainRoute_vehicleImageWrapper_9a {
-    width: 600rem;
-    height: 450rem;
-    bottom: 350rem;
-}
-.mediaExtraLarge .MainRoute_vehicleImageWrapper_9a {
-    width: 840rem;
-    height: 630rem;
-    bottom: 450rem;
-}
-.MainRoute_vehicleName_3a {
+.MainRoute_vehicleAbilitiesHeader_06 {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 113rem;
-    height: 47rem;
-    position: absolute;
-    bottom: -28rem;
-    left: 50%;
-    transform: translateX(-50%);
+    align-items: flex-start;
+    margin-top: 16rem;
 }
-.mediaSmall .MainRoute_vehicleName_3a {
-    height: 53rem;
+.mediaLarge .MainRoute_vehicleAbilitiesHeader_06 {
+    margin-top: 25rem;
 }
-.mediaMedium .MainRoute_vehicleName_3a {
-    height: 68rem;
-    bottom: -48rem;
+.mediaExtraLarge .MainRoute_vehicleAbilitiesHeader_06 {
+    margin-top: 33rem;
 }
-.mediaExtraLarge .MainRoute_vehicleName_3a {
-    height: 95rem;
-}
-.MainRoute_vehicleName_3a .MainRoute_logo_45 {
-    width: 30rem;
-    height: 30rem;
-}
-.mediaMedium .MainRoute_vehicleName_3a .MainRoute_logo_45 {
-    width: 40rem;
-    height: 40rem;
-}
-.mediaExtraLarge .MainRoute_vehicleName_3a .MainRoute_logo_45 {
-    width: 60rem;
-    height: 60rem;
-}
-.MainRoute_vehicleName_3a .MainRoute_title_e6 {
-    color: #6fb5ec;
+.MainRoute_abilitiesTitle_47 {
+    color: #b7daf5;
     font-size: 16rem;
     font-weight: 400;
-    text-shadow:
-        0 0 4rem #4ba3e7,
-        0 0 8rem rgba(75, 163, 231, 0.8),
-        0 0 12rem rgba(75, 163, 231, 0.6),
-        0 0 16rem rgba(75, 163, 231, 0.4),
-        0 0 20rem rgba(75, 163, 231, 0.2);
-}
-.mediaMedium .MainRoute_vehicleName_3a .MainRoute_title_e6 {
-    font-size: 20rem;
-}
-.mediaExtraLarge .MainRoute_vehicleName_3a .MainRoute_title_e6 {
-    font-size: 24rem;
-}
-.MainRoute_abilitiesTitleContainer_94,
-.MainRoute_specificationsTitleContainer_72 {
+    line-height: 19rem;
+    letter-spacing: 0.04em;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    padding: 42rem 0 15rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 8rem #b7daf5;
+    text-transform: uppercase;
 }
-.mediaMedium .MainRoute_abilitiesTitleContainer_94 {
-    padding: 51rem 0 24rem;
+.mediaLarge .MainRoute_abilitiesTitle_47 {
+    color: #b7daf5;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 24rem;
+    /* stylelint-disable-next-line unit-blacklist */
+    letter-spacing: 0.08em;
+    margin-bottom: 3rem;
 }
-.mediaExtraLarge .MainRoute_abilitiesTitleContainer_94 {
-    padding: 55rem 0 24rem;
+.mediaExtraLarge .MainRoute_abilitiesTitle_47 {
+    color: #b7daf5;
+    font-size: 26rem;
+    font-weight: 400;
+    line-height: 30rem;
+    /* stylelint-disable-next-line unit-blacklist */
+    letter-spacing: 0.04em;
+    margin-bottom: 6rem;
 }
-.MainRoute_specificationsTitleContainer_72 {
-    padding-top: 36rem;
+.MainRoute_roverIcon_53 {
+    width: 32rem;
+    height: 32rem;
+    margin-top: -5rem;
+    background: no-repeat center / contain;
+    position: relative;
 }
-.mediaMedium .MainRoute_specificationsTitleContainer_72 {
-    padding: 39rem 0 24rem;
+.mediaLarge .MainRoute_roverIcon_53 {
+    width: 36rem;
+    height: 36rem;
+    margin-right: 3rem;
+}
+.mediaExtraLarge .MainRoute_roverIcon_53 {
+    width: 44rem;
+    height: 44rem;
+    margin-left: -12rem;
+    margin-right: 6rem;
+}
+.MainRoute_roverSputnik_12 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.rover_icon.meteor.small');
+}
+.mediaLarge .MainRoute_roverSputnik_12 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.rover_icon.meteor.medium');
+}
+.mediaExtraLarge .MainRoute_roverSputnik_12 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.rover_icon.meteor.large');
+}
+.MainRoute_roverMeteor_22 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.rover_icon.sputnik.small');
+}
+.mediaLarge .MainRoute_roverMeteor_22 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.rover_icon.sputnik.medium');
+}
+.mediaExtraLarge .MainRoute_roverMeteor_22 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.rover_icon.sputnik.large');
 }
 .MainRoute_vehicleAbilitiesWrapper_54 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 257rem;
-    min-height: 290rem;
+    width: 252rem;
+    height: 112rem;
     background: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.abilitiesBg.small') no-repeat center / cover;
     position: absolute;
-    top: 82rem;
-    left: 28rem;
-    z-index: 1;
-}
-.MainRoute_vehicleAbilitiesWrapper_54 .MainRoute_title_e6 {
-    color: #93c8f1;
-    font-size: 14rem;
-    text-shadow:
-        0 0 4rem #4ba3e7,
-        0 0 8rem rgba(75, 163, 231, 0.8),
-        0 0 12rem rgba(75, 163, 231, 0.6),
-        0 0 16rem rgba(75, 163, 231, 0.4),
-        0 0 20rem rgba(75, 163, 231, 0.2);
-    letter-spacing: 1.68rem;
-}
-.mediaMedium .MainRoute_vehicleAbilitiesWrapper_54 .MainRoute_title_e6 {
-    color: #93c8f1;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 21rem;
-    /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-}
-.mediaExtraLarge .MainRoute_vehicleAbilitiesWrapper_54 .MainRoute_title_e6 {
-    font-size: 23rem;
-}
-.mediaSmall .MainRoute_vehicleAbilitiesWrapper_54 {
-    top: 90rem;
-    left: 169rem;
-}
-.mediaMedium .MainRoute_vehicleAbilitiesWrapper_54 {
-    width: 315rem;
-    min-height: 355rem;
-    top: 124rem;
-    left: 194rem;
-}
-.mediaLarge .MainRoute_vehicleAbilitiesWrapper_54 {
-    top: 166rem;
-    left: 324rem;
-}
-.mediaExtraLarge .MainRoute_vehicleAbilitiesWrapper_54 {
-    width: 355rem;
-    min-height: 436rem;
-    top: 290rem;
-    left: 417rem;
-}
-.MainRoute_specificationsWrapper_d3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 257rem;
-    min-height: 402rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.specifications.background.small') no-repeat center / cover;
-    position: absolute;
-    top: 90rem;
-    right: 23rem;
-    z-index: 2;
-}
-.MainRoute_specificationsWrapper_d3 .MainRoute_title_e6 {
-    color: #93c8f1;
-    font-size: 14rem;
-    text-shadow:
-        0 0 4rem #4ba3e7,
-        0 0 8rem rgba(75, 163, 231, 0.8),
-        0 0 12rem rgba(75, 163, 231, 0.6),
-        0 0 16rem rgba(75, 163, 231, 0.4),
-        0 0 20rem rgba(75, 163, 231, 0.2);
-    letter-spacing: 1.68rem;
-}
-.mediaMedium .MainRoute_specificationsWrapper_d3 .MainRoute_title_e6 {
-    color: #93c8f1;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 21rem;
-    /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-}
-.mediaExtraLarge .MainRoute_specificationsWrapper_d3 .MainRoute_title_e6 {
-    font-size: 23rem;
-}
-.mediaSmall .MainRoute_specificationsWrapper_d3 {
-    top: 100rem;
-    right: 163rem;
-}
-.mediaMedium .MainRoute_specificationsWrapper_d3 {
-    width: 315rem;
-    min-height: 490rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.specifications.background.medium');
-    top: 137rem;
-    right: 182rem;
-}
-.mediaLarge .MainRoute_specificationsWrapper_d3 {
-    top: 176rem;
-    right: 315rem;
-}
-.mediaExtraLarge .MainRoute_specificationsWrapper_d3 {
-    width: 411rem;
-    min-height: 633rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.specifications.background.large');
-    top: 290rem;
-    right: 371rem;
-}
-.MainRoute_specificationBlock_01 {
-    z-index: 1;
-}
-.MainRoute_specificationBlock_01 + .MainRoute_specificationBlock_01 {
-    margin-top: 12rem;
-}
-.mediaMedium .MainRoute_specificationBlock_01 + .MainRoute_specificationBlock_01 {
-    margin-top: 8rem;
-}
-.mediaLarge .MainRoute_specificationBlock_01 + .MainRoute_specificationBlock_01 {
-    margin-top: 10rem;
-}
-.mediaExtraLarge .MainRoute_specificationBlock_01 + .MainRoute_specificationBlock_01 {
-    margin-top: 18rem;
-}
-.MainRoute_abilityBlock_69 {
-    margin-left: 16rem;
-}
-.MainRoute_abilityBlock_69 + .MainRoute_abilityBlock_69 {
-    margin-top: 12rem;
-}
-.mediaMedium .MainRoute_abilityBlock_69 + .MainRoute_abilityBlock_69 {
-    margin-top: 16rem;
-}
-.mediaExtraLarge .MainRoute_abilityBlock_69 + .MainRoute_abilityBlock_69 {
-    margin-top: 22rem;
-}
-.MainRoute_scanningAnimation_6f {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.skanner') center / contain no-repeat;
-    mix-blend-mode: color-dodge;
-    position: absolute;
-}
-.MainRoute_roverLight_32 {
-    width: 292rem;
-    height: 200rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.light.light_292x200') no-repeat center / cover;
-    overflow: visible;
-    position: absolute;
-    bottom: 165rem;
+    bottom: 43rem;
     left: 50%;
+    z-index: 1;
     transform: translateX(-50%);
 }
-.mediaMedium .MainRoute_roverLight_32 {
-    width: 358rem;
-    height: 262rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.light.light_358x262');
+.mediaLarge .MainRoute_vehicleAbilitiesWrapper_54 {
+    width: 354rem;
+    height: 160rem;
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.abilitiesBg.medium');
+    bottom: 63rem;
 }
-.mediaLarge .MainRoute_roverLight_32 {
-    width: 412rem;
-    height: 344rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.light.light_412x344');
-    bottom: 180rem;
+.mediaExtraLarge .MainRoute_vehicleAbilitiesWrapper_54 {
+    width: 456rem;
+    height: 208rem;
+    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.abilitiesBg.large');
+    bottom: 103rem;
 }
-.mediaExtraLarge .MainRoute_roverLight_32 {
-    width: 568rem;
-    height: 444rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.light.light_568x444');
-    bottom: 260rem;
+.MainRoute_abilitiesContent_b3 {
+    display: flex;
+    position: absolute;
+    bottom: 24rem;
 }
-.MainRoute_roverBlock_3a + .MainRoute_roverBlock_3a {
-    margin-left: 34rem;
+.mediaLarge .MainRoute_abilitiesContent_b3 {
+    bottom: 36rem;
 }
-.mediaLarge .MainRoute_roverBlock_3a + .MainRoute_roverBlock_3a {
-    margin-left: 36rem;
+.mediaExtraLarge .MainRoute_abilitiesContent_b3 {
+    bottom: 48rem;
 }
-.mediaExtraLarge .MainRoute_roverBlock_3a + .MainRoute_roverBlock_3a {
-    margin-left: 50rem;
+.MainRoute_commonAbility_aa {
+    margin-right: 4rem;
+}
+.mediaLarge .MainRoute_commonAbility_aa {
+    margin-right: 6rem;
+}
+.mediaExtraLarge .MainRoute_commonAbility_aa {
+    margin-right: 8rem;
+}
+.MainRoute_abilityBlock_69 + .MainRoute_abilityBlock_69 {
+    margin-left: 4rem;
+}
+.mediaMedium .MainRoute_abilityBlock_69 + .MainRoute_abilityBlock_69 {
+    margin-left: 6rem;
+}
+.mediaExtraLarge .MainRoute_abilityBlock_69 + .MainRoute_abilityBlock_69 {
+    margin-left: 8rem;
 }
 .MainRoute_vehicleSelectWrapper_30 {
     display: flex;
     justify-content: center;
-    width: 558rem;
-    height: 168rem;
-    padding-top: 38rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.table.table_558x168');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    width: 760rem;
+    height: 300rem;
     position: absolute;
-    bottom: 0;
+    bottom: 143rem;
     left: 50%;
-    z-index: 2;
     transform: translateX(-50%);
 }
+.mediaSmall .MainRoute_vehicleSelectWrapper_30 {
+    width: 800rem;
+    height: 300rem;
+    bottom: 143rem;
+}
 .mediaMedium .MainRoute_vehicleSelectWrapper_30 {
-    width: 640rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.table.table_640x168');
+    width: 960rem;
+    height: 360rem;
 }
 .mediaLarge .MainRoute_vehicleSelectWrapper_30 {
-    height: 186rem;
-    padding-top: 40rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.table.table_640x186');
+    width: 1120rem;
+    height: 420rem;
+    bottom: 203rem;
 }
 .mediaExtraLarge .MainRoute_vehicleSelectWrapper_30 {
-    width: 896rem;
-    height: 260rem;
-    padding-top: 55rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.vehicleSelect.table.table_896x260');
+    width: 1440rem;
+    height: 540rem;
+    bottom: 323rem;
 }
 .MainRoute_missions_e4 {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 228rem;
-    height: 84rem;
-    padding: 0 7rem 0 11rem;
-    background: url('R.images.cosmic_event.gui.maps.icons.missions.background') no-repeat center / cover;
-    position: absolute;
-    bottom: 226rem;
-    left: 45rem;
-    z-index: 2;
-}
-.mediaSmall .MainRoute_missions_e4 {
-    bottom: 161rem;
-    left: 184rem;
+    height: 109rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.missions.background') no-repeat top / cover;
+    position: relative;
+    top: 103rem;
+    left: 15rem;
 }
 .mediaMedium .MainRoute_missions_e4 {
-    bottom: 185rem;
-    left: 206rem;
+    width: 462rem;
+    height: 269rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.missions.backgroundLarge') no-repeat center / cover;
+    top: 110rem;
+    left: -7rem;
 }
 .mediaLarge .MainRoute_missions_e4 {
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 462rem;
-    height: 255rem;
-    padding-left: 44rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.missions.backgroundLarge');
-    bottom: 147rem;
-    left: 189rem;
+    top: 130rem;
 }
 .mediaExtraLarge .MainRoute_missions_e4 {
-    bottom: 237rem;
-    left: 334rem;
+    width: 601rem;
+    height: 350rem;
+    top: 185rem;
+    left: 19rem;
+}
+.MainRoute_missionsContent_1e {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding-top: 12rem;
+    padding-bottom: 9rem;
+    position: relative;
+    z-index: 2;
+}
+.mediaMedium .MainRoute_missionsContent_1e {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 44rem;
+    padding-top: 37rem;
+}
+.mediaExtraLarge .MainRoute_missionsContent_1e {
+    padding-top: 47rem;
 }
 .MainRoute_mission_54 {
-    margin-right: 6rem;
+    margin-right: 4rem;
 }
-.mediaLarge .MainRoute_mission_54 {
+.mediaMedium .MainRoute_mission_54 {
     margin-right: 0;
 }
 .MainRoute_missionWrapper_17 {
@@ -3390,128 +3308,433 @@ body {
     background: url('R.images.cosmic_event.gui.maps.icons.missions.backgroundBar') no-repeat center / cover;
     position: absolute;
     top: 3rem;
-    left: -3rem;
 }
-.mediaLarge .MainRoute_missionSeparator_dd {
+.mediaMedium .MainRoute_missionSeparator_dd {
     display: flex;
     margin-left: 65rem;
+    top: 6rem;
+}
+.mediaExtraLarge .MainRoute_missionSeparator_dd {
+    display: flex;
+    height: 68rem;
+    margin-left: 95rem;
+    top: 5rem;
 }
 .MainRoute_missionWrapper_17 + .MainRoute_missionWrapper_17 .MainRoute_missionSeparator_dd {
     display: flex;
 }
+.MainRoute_timerWrap_17 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140rem;
+    height: 18rem;
+    position: absolute;
+    bottom: 9rem;
+    left: 50%;
+    z-index: 2;
+    transform: translateX(-50%);
+}
+.mediaExtraLarge .MainRoute_timerWrap_17 {
+    bottom: 14rem;
+}
+.MainRoute_timerText_b1 {
+    color: #b7daf5;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 18rem;
+    letter-spacing: 0.04em;
+    margin: 0 6rem 0 0;
+    text-shadow: 0 0 8rem #2d85c8;
+    letter-spacing: 0;
+}
+.mediaExtraLarge .MainRoute_timerText_b1 {
+    color: #b7daf5;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 21rem;
+    /* stylelint-disable-next-line unit-blacklist */
+    letter-spacing: 0.04em;
+    height: 24rem;
+    margin-right: 10rem;
+}
+.MainRoute_mark_e6 {
+    width: 4rem;
+    height: 4rem;
+    background-color: #b7daf5;
+}
+.MainRoute_clockIcon_75 {
+    width: 20rem;
+    height: 20rem;
+    margin: 0 4rem 0 6rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.missions.icons.clock') no-repeat bottom / contain;
+}
+.mediaExtraLarge .MainRoute_clockIcon_75 {
+    width: 27rem;
+    height: 27rem;
+    margin: 0 6rem 2rem 10rem;
+}
+@keyframes MainRoute_scanline_62 {
+    0% {
+        opacity: 0;
+        top: 10%;
+    }
+
+    5% {
+        opacity: 0.3;
+    }
+
+    90% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 0;
+        top: 60%;
+    }
+}
+@keyframes MainRoute_glitch-anim-1_e2 {
+    0%,
+    90% {
+        opacity: 0;
+        clip-path: inset(50% 50% 50% 50%);
+        transform: translate(0rem, 0rem);
+    }
+
+    91% {
+        opacity: 0.7;
+        clip-path: inset(80% 0% 0% 0%);
+        transform: translate(-2rem, 1rem);
+    }
+
+    92% {
+        opacity: 0.7;
+        clip-path: inset(10% 0% 85% 0%);
+        transform: translate(2rem, -1rem);
+    }
+
+    93% {
+        opacity: 0.7;
+        clip-path: inset(40% 0% 40% 0%);
+        transform: translate(-2rem, 2rem);
+    }
+
+    94% {
+        opacity: 0.7;
+        clip-path: inset(80% 0% 5% 0%);
+        transform: translate(2rem, -2rem);
+    }
+
+    95% {
+        opacity: 0.7;
+        clip-path: inset(20% 0% 60% 0%);
+        transform: translate(-1rem, 1rem);
+    }
+
+    96% {
+        opacity: 0.7;
+        clip-path: inset(60% 0% 10% 0%);
+        transform: translate(1rem, -1rem);
+    }
+
+    97% {
+        opacity: 0.7;
+        clip-path: inset(10% 0% 80% 0%);
+        transform: translate(-2rem, 2rem);
+    }
+
+    98% {
+        opacity: 0.7;
+        clip-path: inset(50% 0% 30% 0%);
+        transform: translate(2rem, -2rem);
+    }
+
+    99% {
+        opacity: 0.7;
+        clip-path: inset(30% 0% 50% 0%);
+        transform: translate(-1rem, 1rem);
+    }
+
+    100% {
+        opacity: 0.7;
+        clip-path: inset(70% 0% 10% 0%);
+        transform: translate(1rem, -1rem);
+    }
+}
+@keyframes MainRoute_glitch-anim-2_30 {
+    0%,
+    90% {
+        opacity: 0;
+        clip-path: inset(50% 50% 50% 50%);
+        transform: translate(0rem, 0rem);
+    }
+
+    91% {
+        opacity: 0.7;
+        clip-path: inset(10% 0% 60% 0%);
+        transform: translate(2rem, -1rem);
+    }
+
+    92% {
+        opacity: 0.7;
+        clip-path: inset(80% 0% 5% 0%);
+        transform: translate(-2rem, 1rem);
+    }
+
+    93% {
+        opacity: 0.7;
+        clip-path: inset(30% 0% 20% 0%);
+        transform: translate(2rem, -2rem);
+    }
+
+    94% {
+        opacity: 0.7;
+        clip-path: inset(60% 0% 10% 0%);
+        transform: translate(-2rem, 2rem);
+    }
+
+    95% {
+        opacity: 0.7;
+        clip-path: inset(10% 0% 80% 0%);
+        transform: translate(1rem, -1rem);
+    }
+
+    96% {
+        opacity: 0.7;
+        clip-path: inset(50% 0% 30% 0%);
+        transform: translate(-1rem, 1rem);
+    }
+
+    97% {
+        opacity: 0.7;
+        clip-path: inset(20% 0% 60% 0%);
+        transform: translate(2rem, -2rem);
+    }
+
+    98% {
+        opacity: 0.7;
+        clip-path: inset(70% 0% 10% 0%);
+        transform: translate(-2rem, 2rem);
+    }
+
+    99% {
+        opacity: 0.7;
+        clip-path: inset(40% 0% 40% 0%);
+        transform: translate(1rem, -1rem);
+    }
+
+    100% {
+        opacity: 0.7;
+        clip-path: inset(90% 0% 5% 0%);
+        transform: translate(-1rem, 1rem);
+    }
+}
+@keyframes MainRoute_signal-loss-opacity_e7 {
+    0%,
+    85% {
+        filter: brightness(1);
+        opacity: 1;
+    }
+
+    86% {
+        filter: brightness(1.1);
+        opacity: 0.9;
+    }
+
+    87% {
+        filter: brightness(1);
+        opacity: 0.9;
+    }
+
+    88% {
+        filter: brightness(1.1);
+        opacity: 0.7;
+    }
+
+    89% {
+        filter: brightness(1);
+        opacity: 1;
+    }
+
+    90% {
+        filter: brightness(1.1);
+        opacity: 0.9;
+    }
+
+    91% {
+        filter: brightness(0.8);
+        opacity: 0.8;
+    }
+
+    92% {
+        filter: brightness(1);
+        opacity: 1;
+    }
+
+    93% {
+        filter: brightness(1.1);
+        opacity: 0.8;
+    }
+
+    94% {
+        filter: brightness(1);
+        opacity: 1;
+    }
+
+    95% {
+        filter: brightness(1.1);
+        opacity: 0.9;
+    }
+
+    96% {
+        filter: brightness(0.9);
+        opacity: 0.8;
+    }
+
+    97% {
+        filter: brightness(1);
+        opacity: 1;
+    }
+
+    98% {
+        filter: brightness(1.1);
+        opacity: 0.9;
+    }
+
+    100% {
+        filter: brightness(1);
+        opacity: 1;
+    }
+}
 
 .PickupBlock_base_62 {
     display: flex;
-    width: 300rem;
-    height: 92rem;
+    width: 280rem;
+    height: 88rem;
+    border: 1rem solid transparent;
     position: relative;
     transition: 0.3s opacity ease-in-out;
 }
 
 .mediaMedium .PickupBlock_base_62 {
-    width: 438rem;
-    height: 140rem;
+    width: 388rem;
+    height: 124rem;
+}
+
+.mediaExtraLarge .PickupBlock_base_62 {
+    width: 485rem;
+    height: 155rem;
 }
 
 .PickupBlock_base__unFocused_ac {
-    opacity: 0.6;
+    opacity: 0.7;
+}
+
+.PickupBlock_base__active_9e {
+    opacity: 1;
 }
 
 .PickupBlock_base__hovered_bf {
-    background: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.light_hover_small') no-repeat center / contain;
+    opacity: 1;
     cursor: pointer;
 }
 
-.mediaMedium .PickupBlock_base__hovered_bf {
-    background: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.light_hover') no-repeat center / contain;
+.PickupBlock_base__hovered_bf.PickupBlock_base__locked_2a {
+    cursor: default;
 }
 
 .PickupBlock_base__active_9e.PickupBlock_overcharge_67 {
-    background: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.overcharge_light_small') no-repeat center /
-        contain;
+    border: 1rem solid #ff7070;
+    background: rgba(255, 112, 112, 0.1);
 }
 
-.mediaMedium .PickupBlock_base__active_9e.PickupBlock_overcharge_67 {
-    background: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.overcharge_light') no-repeat center / contain;
+.PickupBlock_base__active_9e.PickupBlock_teleport_67 {
+    border: 1rem solid #38b0ca;
+    background: rgba(56, 176, 202, 0.1);
 }
 
 .PickupBlock_base__active_9e.PickupBlock_powershot_e4 {
-    background: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.power_shot_light_small') no-repeat center /
-        contain;
-}
-
-.mediaMedium .PickupBlock_base__active_9e.PickupBlock_powershot_e4 {
-    background: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.power_shot_light') no-repeat center / contain;
-}
-
-.PickupBlock_base__active_9e.PickupBlock_rapidshelling_c3 {
-    background: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.rapid_shelling_light_small') no-repeat center /
-        contain;
-}
-
-.mediaMedium .PickupBlock_base__active_9e.PickupBlock_rapidshelling_c3 {
-    background: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.rapid_shelling_light') no-repeat center /
-        contain;
+    border: 1rem solid #b3a5ff;
+    background: rgba(179, 165, 255, 0.1);
 }
 
 .PickupBlock_base__active_9e.PickupBlock_blackhole_88 {
-    background: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.black_hole_light_small') no-repeat center /
-        contain;
+    border: 1rem solid #ffd770;
+    background: rgba(255, 215, 112, 0.1);
 }
-
-.mediaMedium .PickupBlock_base__active_9e.PickupBlock_blackhole_88 {
-    background: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.black_hole_light') no-repeat center / contain;
-}
-.PickupBlock_imgGlow_9b {
-    width: 300rem;
-    height: 92rem;
-    opacity: 0;
+.PickupBlock_gradient_d4 {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     position: absolute;
-    left: 0;
-    transition: 0.2s opacity ease-in-out;
 }
-.mediaMedium .PickupBlock_imgGlow_9b {
-    width: 596rem;
-    height: 140rem;
-    left: -107rem;
+.PickupBlock_overcharge_67 .PickupBlock_gradient_d4 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.overcharge_gradient');
 }
-.PickupBlock_base__active_9e .PickupBlock_imgGlow_9b {
-    opacity: 1;
+.PickupBlock_teleport_67 .PickupBlock_gradient_d4 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.teleport_gradient');
+}
+.PickupBlock_powershot_e4 .PickupBlock_gradient_d4 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.power_shot_gradient');
+}
+.PickupBlock_blackhole_88 .PickupBlock_gradient_d4 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.black_hole_gradient');
+}
+.PickupBlock_base__locked_2a .PickupBlock_gradient_d4 {
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.lock_gradient');
 }
 .PickupBlock_content_5d {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
-    margin-left: 60rem;
+    margin-left: 16rem;
+    transition: all 0.15s ease-in-out;
+}
+.PickupBlock_base__hovered_bf .PickupBlock_content_5d,
+.PickupBlock_base__active_9e .PickupBlock_content_5d {
+    transform: translateX(2rem);
+}
+.mediaMedium .PickupBlock_base__hovered_bf .PickupBlock_content_5d,
+.mediaMedium .PickupBlock_base__active_9e .PickupBlock_content_5d {
+    transform: translateX(4rem);
+}
+.PickupBlock_base__locked_2a .PickupBlock_content_5d {
+    opacity: 0.3;
 }
 .mediaMedium .PickupBlock_content_5d {
-    margin-left: 100rem;
+    margin-left: 24rem;
 }
 .PickupBlock_pickupIcon_96 {
     width: 68rem;
     height: 68rem;
-    opacity: 0.6;
 }
 .mediaMedium .PickupBlock_pickupIcon_96 {
     width: 100rem;
     height: 100rem;
 }
-.PickupBlock_base__hovered_bf .PickupBlock_pickupIcon_96,
-.PickupBlock_base__active_9e .PickupBlock_pickupIcon_96 {
-    opacity: 1;
+.mediaExtraLarge .PickupBlock_pickupIcon_96 {
+    width: 125rem;
+    height: 125rem;
 }
 .PickupBlock_title_5e {
-    margin-left: 20rem;
+    margin-left: 16rem;
     font-size: 18rem;
 }
 .mediaMedium .PickupBlock_title_5e {
-    margin-left: 28rem;
+    margin-left: 20rem;
     font-size: 24rem;
+}
+.mediaExtraLarge .PickupBlock_title_5e {
+    margin-left: 25rem;
+    font-size: 30rem;
 }
 .PickupBlock_overcharge_67 .PickupBlock_title_5e {
     color: #ff7070;
 }
-.PickupBlock_rapidshelling_c3 .PickupBlock_title_5e {
-    color: #70d4ff;
+.PickupBlock_teleport_67 .PickupBlock_title_5e {
+    color: #38b0ca;
 }
 .PickupBlock_blackhole_88 .PickupBlock_title_5e {
     color: #ffd770;
@@ -3528,420 +3751,207 @@ body {
     width: 100%;
     height: 100%;
     padding: 50rem 25rem;
-    overflow: hidden;
-    position: relative;
 }
 
 .mediaLarge .PickupsRoute_base_27 {
     padding: 100rem 25rem;
 }
-.PickupsRoute_pickupWrapper_dd {
+.PickupsRoute_title_54 {
     display: flex;
-    width: 300rem;
-    height: 92rem;
-}
-.mediaMedium .PickupsRoute_pickupWrapper_dd {
-    width: 438rem;
-    height: 140rem;
-}
-.PickupsRoute_pickupsWrapper_9a {
+    justify-content: center;
+    width: 100%;
+    margin-top: 16rem;
+    text-transform: uppercase;
     position: absolute;
-    transform: translate(-50%, -50%);
-    transition: 0.3s opacity ease-in-out;
+    color: #f4e1b3;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 110%;
+    /* stylelint-disable-next-line unit-blacklist */
+    letter-spacing: 0.04em;
+}
+.mediaMedium .PickupsRoute_title_54 {
+    color: #f4e1b3;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 63rem;
+}
+.mediaExtraLarge .PickupsRoute_title_54 {
+    color: #f4e1b3;
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 80rem;
+    margin-top: 26rem;
+}
+.PickupsRoute_content_7f {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: -27rem;
+    position: relative;
+}
+.mediaSmall .PickupsRoute_content_7f {
+    margin-left: -48rem;
+}
+.mediaMedium .PickupsRoute_content_7f {
+    margin-left: -30rem;
+}
+.mediaLarge .PickupsRoute_content_7f {
+    margin-top: -17rem;
 }
 .PickupsRoute_sideBarWrapper_34 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: -3rem;
+    position: relative;
+}
+.mediaSmall .PickupsRoute_sideBarWrapper_34 {
+    margin-left: 65rem;
+    margin-top: -18rem;
+}
+.mediaMedium .PickupsRoute_sideBarWrapper_34 {
+    margin-top: -3rem;
 }
 .mediaLarge .PickupsRoute_sideBarWrapper_34 {
-    margin-left: 30rem;
+    margin-left: 75rem;
 }
-.PickupsRoute_stage_a6 {
-    flex: 1 1 auto;
-    position: relative;
+.mediaExtraLarge .PickupsRoute_sideBarWrapper_34 {
+    margin-left: 117rem;
+}
+.PickupsRoute_tab_51 + .PickupsRoute_tab_51 {
+    margin-top: 4rem;
+}
+.mediaSmall .PickupsRoute_tab_51 + .PickupsRoute_tab_51 {
+    margin-top: 16rem;
+}
+.mediaLarge .PickupsRoute_tab_51 + .PickupsRoute_tab_51 {
+    margin-top: 20rem;
 }
 .PickupsRoute_videoWrapper_44 {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 680rem;
+    height: 392rem;
+    margin-left: 26rem;
+    position: relative;
+}
+.mediaSmall .PickupsRoute_videoWrapper_44 {
+    width: 864rem;
+    height: 498rem;
+    margin-left: 66rem;
+}
+.mediaMedium .PickupsRoute_videoWrapper_44 {
+    width: 1014rem;
+    height: 584rem;
+    margin-left: 50rem;
+}
+.mediaLarge .PickupsRoute_videoWrapper_44 {
+    width: 1244rem;
+    height: 720rem;
+    margin-left: 108rem;
+}
+.mediaExtraLarge .PickupsRoute_videoWrapper_44 {
+    width: 1656rem;
+    height: 960rem;
+    margin-left: 127rem;
+}
+.PickupsRoute_videoLayer_4e {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    margin-top: 20rem;
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+    pointer-events: none;
 }
-.mediaSmall .PickupsRoute_videoWrapper_44 {
-    margin-top: 24rem;
-}
-.mediaMedium .PickupsRoute_videoWrapper_44 {
-    margin-top: 32rem;
-}
-.mediaExtraLarge .PickupsRoute_videoWrapper_44 {
-    margin-top: 40rem;
+.PickupsRoute_videoLayer__active_9c {
+    opacity: 1;
 }
 .PickupsRoute_videoBorder_a3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 664rem;
-    height: 379rem;
-    border-image-source: url('R.images.cosmic_event.gui.maps.icons.pickups.icons.border');
-    border-image-slice: 4 fill;
-    border-image-width: 4rem;
+    width: 100%;
+    height: 100%;
+    background: url('R.images.cosmic_event.gui.maps.icons.pickups.screen.base') center / contain no-repeat;
+    position: absolute;
 }
 .mediaSmall .PickupsRoute_videoBorder_a3 {
-    width: 758rem;
-    height: 433rem;
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.screen.small');
 }
 .mediaMedium .PickupsRoute_videoBorder_a3 {
-    width: 981rem;
-    height: 560rem;
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.screen.medium');
 }
 .mediaLarge .PickupsRoute_videoBorder_a3 {
-    width: 1104rem;
-    height: 629rem;
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.screen.large');
 }
 .mediaExtraLarge .PickupsRoute_videoBorder_a3 {
-    width: 1531rem;
-    height: 872rem;
+    background-image: url('R.images.cosmic_event.gui.maps.icons.pickups.screen.extraLarge');
 }
 .PickupsRoute_video_ae {
-    max-width: 652rem;
-    max-height: 367rem;
-    background-color: #0a0a0a;
+    max-width: 660rem;
+    max-height: 372rem;
+    animation-name: PickupsRoute_fadeIn_bd;
+    animation-duration: 400ms;
+    animation-timing-function: ease-in;
 }
 .mediaSmall .PickupsRoute_video_ae {
-    max-width: 746rem;
-    max-height: 421rem;
+    max-width: 840rem;
+    max-height: 474rem;
 }
 .mediaMedium .PickupsRoute_video_ae {
-    max-width: 969rem;
-    max-height: 548rem;
+    max-width: 990rem;
+    max-height: 560rem;
 }
 .mediaLarge .PickupsRoute_video_ae {
-    max-width: 1092rem;
-    max-height: 617rem;
+    max-width: 1204rem;
+    max-height: 680rem;
 }
 .mediaExtraLarge .PickupsRoute_video_ae {
-    max-width: 1515rem;
-    max-height: 856rem;
+    max-width: 1600rem;
+    max-height: 900rem;
 }
 .PickupsRoute_description_2e {
-    max-width: 600rem;
-    margin-top: 20rem;
-    text-align: center;
-    position: relative;
-    color: #f4e1b3;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 21rem;
-    /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-}
-.mediaSmall .PickupsRoute_description_2e {
-    margin-top: 24rem;
-}
-.mediaMedium .PickupsRoute_description_2e {
-    max-width: 800rem;
-    font-size: 20rem;
-}
-.mediaLarge .PickupsRoute_description_2e {
-    margin-top: 32rem;
-}
-.mediaExtraLarge .PickupsRoute_description_2e {
-    margin-top: 40rem;
-}
-
-.InfoBlock_base_0f {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    width: 342rem;
-    min-height: 99rem;
-    padding: 2rem;
-    border: 1rem solid transparent;
-    opacity: 0.6;
-    position: relative;
-    transition: opacity 0.2s ease;
-}
-
-.InfoBlock_base__selected_89 {
-    opacity: 1;
-}
-
-.InfoBlock_base_0f:hover {
-    opacity: 1;
-    cursor: pointer;
-}
-
-.mediaMedium .InfoBlock_base_0f {
-    width: 406rem;
-    min-height: 126rem;
-}
-
-.InfoBlock_base_0f .InfoBlock_title_6a {
-    padding-left: 7rem;
-    padding-top: 0;
-    padding-bottom: 1rem;
-    background-image: url('R.images.cosmic_event.gui.maps.icons.descriptiveBlockPatchwork');
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: cover;
-    color: #f4e1b3;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 20rem;
-    /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-}
-
-.mediaMedium .InfoBlock_base_0f .InfoBlock_title_6a {
-    padding-top: 2rem;
-    padding-bottom: 5rem;
-    color: #f4e1b3;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 21rem;
-    /* stylelint-disable-next-line unit-blacklist */
-    letter-spacing: 0.04em;
-}
-
-.InfoBlock_base_0f .InfoBlock_normalFlex_7c {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex: 1 1 auto;
-}
-
-.InfoBlock_base_0f .InfoBlock_normalFlex_7c .InfoBlock_img_3a {
-    width: 100rem;
-    height: 60rem;
-}
-
-.mediaMedium .InfoBlock_base_0f .InfoBlock_normalFlex_7c .InfoBlock_img_3a {
-    width: 140rem;
-    height: 100rem;
-}
-
-.InfoBlock_base_0f .InfoBlock_normalFlex_7c .InfoBlock_description_dc {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex: 1 1 auto;
-    margin: 4rem 4rem 4rem 8rem;
-    color: #f4e1b3;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 18rem;
-    letter-spacing: 0.04em;
-}
-
-.mediaMedium .InfoBlock_base_0f .InfoBlock_normalFlex_7c .InfoBlock_description_dc {
     color: #f4e1b3;
     font-size: 16rem;
     font-weight: 400;
     line-height: 19rem;
     letter-spacing: 0.04em;
-}
-.InfoBlock_border_f8 {
-    width: 100%;
-    height: 100%;
-    border-image-source: url('R.images.cosmic_event.gui.maps.icons.rules.select');
-    border-image-slice: 9 fill;
-    border-image-width: 9rem;
-    opacity: 0;
-    position: absolute;
-}
-.InfoBlock_border__active_2f {
-    opacity: 1;
-    animation: InfoBlock_borderGrow_47 0.5s forwards;
-}
-@keyframes InfoBlock_borderGrow_47 {
-    0% {
-        border-image-width: 0;
-        transform: scale(1.1);
-    }
-
-    100% {
-        border-image-width: 9rem;
-        transform: scale(1);
-    }
-}
-
-.RulesRoute_base_23 {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-.RulesRoute_defaultBg_f3,
-.RulesRoute_mapBackground_9d {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.RulesRoute_defaultBg_f3 {
-    background: url('R.images.cosmic_event.gui.maps.icons.rules.map.default.background') no-repeat center 112% / contain;
-}
-.mediaSmall .RulesRoute_defaultBg_f3 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rules.map.small.background');
-    background-position-y: 145%;
-}
-.mediaMedium .RulesRoute_defaultBg_f3 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rules.map.medium.background');
-    background-position-y: 135%;
-}
-.mediaLarge .RulesRoute_defaultBg_f3 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rules.map.large.background');
-    background-position-y: 126%;
-}
-.mediaExtraLarge .RulesRoute_defaultBg_f3 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rules.map.extraLarge.background');
-    background-position-y: 100%;
-}
-.RulesRoute_mapBackground_9d {
-    background: no-repeat center 112% / contain;
-}
-.RulesRoute_mapBackground__animated_b3 {
-    animation: RulesRoute_scaleAnimation_28 0.5s ease forwards;
-}
-.mediaSmall .RulesRoute_mapBackground_9d {
-    background-position-y: 145%;
-}
-.mediaMedium .RulesRoute_mapBackground_9d {
-    background-position-y: 135%;
-}
-.mediaLarge .RulesRoute_mapBackground_9d {
-    background-position-y: 126%;
-}
-.mediaExtraLarge .RulesRoute_mapBackground_9d {
-    background-position-y: 100%;
-}
-.RulesRoute_mapBackground__artefact_f6 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rules.map.large.artefact');
-}
-.RulesRoute_mapBackground__jampers_51 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rules.map.large.jampers');
-}
-.RulesRoute_mapBackground__geysers_02 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rules.map.large.geysers');
-}
-.RulesRoute_mapBackground__powerups_78 {
-    background-image: url('R.images.cosmic_event.gui.maps.icons.rules.map.large.powerups');
-}
-.RulesRoute_rulesBlock_40 {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1rem solid transparent;
+    width: 600rem;
+    height: 100rem;
+    line-height: 125%;
+    text-align: center;
     position: absolute;
+    bottom: -114rem;
 }
-.RulesRoute_rulesBlock__1_ed {
-    top: 260rem;
-    left: 34rem;
+.mediaSmall .PickupsRoute_description_2e {
+    bottom: -112rem;
 }
-.mediaSmall .RulesRoute_rulesBlock__1_ed {
-    top: 225rem;
-    left: 28rem;
+.mediaMedium .PickupsRoute_description_2e {
+    width: 800rem;
+    font-size: 20rem;
+    bottom: -116rem;
 }
-.mediaMedium .RulesRoute_rulesBlock__1_ed {
-    top: 244rem;
-    left: 58rem;
+.mediaLarge .PickupsRoute_description_2e {
+    bottom: -120rem;
 }
-.mediaLarge .RulesRoute_rulesBlock__1_ed {
-    top: 290rem;
-    left: 103rem;
+.mediaExtraLarge .PickupsRoute_description_2e {
+    font-size: 26rem;
+    line-height: 120%;
+    bottom: -124rem;
 }
-.mediaExtraLarge .RulesRoute_rulesBlock__1_ed {
-    top: 382rem;
-    left: 300rem;
-}
-.RulesRoute_rulesBlock__2_1b {
-    top: 125rem;
-    left: 184rem;
-}
-.mediaSmall .RulesRoute_rulesBlock__2_1b {
-    top: 114rem;
-    left: 322rem;
-}
-.mediaMedium .RulesRoute_rulesBlock__2_1b {
-    top: 112rem;
-    left: 373rem;
-}
-.mediaLarge .RulesRoute_rulesBlock__2_1b {
-    top: 142rem;
-    left: 468rem;
-}
-.mediaExtraLarge .RulesRoute_rulesBlock__2_1b {
-    top: 267rem;
-    left: 780rem;
-}
-.RulesRoute_rulesBlock__3_13 {
-    top: 125rem;
-    right: 123rem;
-}
-.mediaSmall .RulesRoute_rulesBlock__3_13 {
-    top: 114rem;
-    right: 337rem;
-}
-.mediaMedium .RulesRoute_rulesBlock__3_13 {
-    top: 112rem;
-    right: 395rem;
-}
-.mediaLarge .RulesRoute_rulesBlock__3_13 {
-    top: 142rem;
-    right: 550rem;
-}
-.mediaExtraLarge .RulesRoute_rulesBlock__3_13 {
-    top: 267rem;
-    right: 780rem;
-}
-.RulesRoute_rulesBlock__4_ef {
-    top: 260rem;
-    right: 39rem;
-}
-.mediaSmall .RulesRoute_rulesBlock__4_ef {
-    top: 225rem;
-    right: 35rem;
-}
-.mediaMedium .RulesRoute_rulesBlock__4_ef {
-    top: 244rem;
-    right: 44rem;
-}
-.mediaLarge .RulesRoute_rulesBlock__4_ef {
-    top: 290rem;
-    right: 165rem;
-}
-.mediaExtraLarge .RulesRoute_rulesBlock__4_ef {
-    top: 382rem;
-    right: 350rem;
-}
-@keyframes RulesRoute_transitionWithOpacity_2b {
-    0% {
-        opacity: 0;
-        transform: translateY(120%);
-    }
-
-    35% {
+@keyframes PickupsRoute_fadeIn_bd {
+    from {
         opacity: 0;
     }
 
-    100% {
+    to {
         opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes RulesRoute_scaleAnimation_28 {
-    0% {
-        transform: translateX(-50%) scale(0.99);
-    }
-
-    100% {
-        transform: translateX(-50%) scale(1);
     }
 }

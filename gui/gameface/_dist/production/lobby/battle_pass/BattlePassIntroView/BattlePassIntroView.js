@@ -2204,52 +2204,51 @@
                     Qu = 'App_applyButton_d9',
                     Ju = 'App_blur_ba',
                     ue = 'App_blur__marathon_2c',
-                    ee = 'App_base__marathon_f0',
-                    te = 'App_closeButton_0d',
-                    re = 'App_card_d8',
-                    ae = 'App_card__last_4f',
-                    Ee = 'App_cardIcon_e8',
-                    ne = 'BaseHeader_base_22',
-                    Ae = 'BaseHeader_title_b6',
-                    ie = 'BaseHeader_subTitle_51',
-                    Fe = 'BaseHeader_subTitleText_00',
-                    oe = R.strings.battle_pass,
-                    se = (0, r.memo)(() =>
+                    ee = 'App_closeButton_0d',
+                    te = 'App_card_d8',
+                    re = 'App_card__last_4f',
+                    ae = 'App_cardIcon_e8',
+                    Ee = 'BaseHeader_base_22',
+                    ne = 'BaseHeader_title_b6',
+                    Ae = 'BaseHeader_subTitle_51',
+                    ie = 'BaseHeader_subTitleText_00',
+                    Fe = R.strings.battle_pass,
+                    oe = (0, r.memo)(() =>
                         a().createElement(
                             'div',
-                            { className: ne },
-                            a().createElement(xu, { text: oe.intro.title(), format: { classMix: Ae } }),
+                            { className: Ee },
+                            a().createElement(xu, { text: Fe.intro.title(), format: { classMix: ne } }),
                             a().createElement(
                                 'div',
-                                { className: ie },
-                                a().createElement(xu, { text: oe.intro.subTitle(), format: { classMix: Fe } }),
+                                { className: Ae },
+                                a().createElement(xu, { text: Fe.intro.subTitle(), format: { classMix: ie } }),
                             ),
                         ),
                     ),
-                    De = 'MarathonHeader_base_6e',
-                    le = 'MarathonHeader_title_01',
-                    _e = 'MarathonHeader_marathonTitle_92',
-                    Be = 'MarathonHeader_subTitle_c4',
-                    ce = 'MarathonHeader_subTitleText_19',
-                    me = R.strings.battle_pass,
-                    Ce = (0, r.memo)(({ startDate: u, endDate: e }) =>
+                    se = 'MarathonHeader_base_6e',
+                    De = 'MarathonHeader_title_01',
+                    le = 'MarathonHeader_marathonTitle_92',
+                    _e = 'MarathonHeader_subTitle_c4',
+                    Be = 'MarathonHeader_subTitleText_19',
+                    ce = R.strings.battle_pass,
+                    me = (0, r.memo)(({ startDate: u, endDate: e }) =>
                         a().createElement(
                             'div',
-                            { className: De },
-                            a().createElement(xu, { text: me.intro.title(), format: { classMix: le } }),
-                            a().createElement(xu, { text: me.intro.marathonTitle(), format: { classMix: _e } }),
+                            { className: se },
+                            a().createElement(xu, { text: ce.intro.title(), format: { classMix: De } }),
+                            a().createElement(xu, { text: ce.intro.marathonTitle(), format: { classMix: le } }),
                             a().createElement(
                                 'div',
-                                { className: Be },
+                                { className: _e },
                                 a().createElement(xu, {
-                                    text: me.intro.marathonSubTitle(),
-                                    format: { classMix: ce, binding: { startDate: u, endDate: e } },
+                                    text: ce.intro.marathonSubTitle(),
+                                    format: { classMix: Be, binding: { startDate: u, endDate: e } },
                                 }),
                             ),
                         ),
                     ),
-                    de = R.strings.battle_pass,
-                    he = (0, ku.Pi)(() => {
+                    Ce = R.strings.battle_pass,
+                    de = (0, ku.Pi)(() => {
                         const u = f().mediaSize,
                             e = $u(),
                             t = e.model,
@@ -2272,13 +2271,13 @@
                             })({ callback: r.close }),
                             a().createElement(
                                 'div',
-                                { className: h()(Ku, A && ee) },
+                                { className: Ku },
                                 a().createElement('div', { className: h()(Ju, A && ue) }),
                                 a().createElement(
                                     'div',
-                                    { className: te },
+                                    { className: ee },
                                     a().createElement(Tu, {
-                                        caption: de.button.close(),
+                                        caption: Ce.button.close(),
                                         side: 'right',
                                         type: 'close',
                                         onClick: r.close,
@@ -2288,8 +2287,8 @@
                                     'div',
                                     { className: Yu },
                                     A
-                                        ? a().createElement(Ce, { startDate: D, endDate: l })
-                                        : a().createElement(se, null),
+                                        ? a().createElement(me, { startDate: D, endDate: l })
+                                        : a().createElement(oe, null),
                                 ),
                                 a().createElement(
                                     'div',
@@ -2297,9 +2296,9 @@
                                     s.map(({ value: { icon: u, title: e, description: t } }, r) =>
                                         a().createElement(
                                             'div',
-                                            { className: h()(re, r === s.length - 1 && ae), key: `card_${r}` },
+                                            { className: h()(te, r === s.length - 1 && re), key: `card_${r}` },
                                             a().createElement('div', {
-                                                className: Ee,
+                                                className: ae,
                                                 style: {
                                                     backgroundImage: `url(${(null == u ? void 0 : u.split('.')[0]) + o}.png)`,
                                                 },
@@ -2315,7 +2314,7 @@
                                     a().createElement(
                                         j,
                                         { type: W.primary, size: G.medium, mixClass: Qu, onClick: r.close },
-                                        a().createElement(xu, { text: de.intro.button() }),
+                                        a().createElement(xu, { text: Ce.intro.button() }),
                                     ),
                                 ),
                             )
@@ -2323,7 +2322,7 @@
                     });
                 engine.whenReady.then(() => {
                     P().render(
-                        a().createElement(Xu, null, a().createElement(H, null, a().createElement(he, null))),
+                        a().createElement(Xu, null, a().createElement(H, null, a().createElement(de, null))),
                         document.getElementById('root'),
                     );
                 });

@@ -2406,7 +2406,7 @@
                                         E,
                                     ),
                                     special: e.overlayType,
-                                    value: e.value,
+                                    value: String(e.value),
                                     valueType:
                                         ((u = e.name),
                                         he.includes(u)
@@ -2526,7 +2526,7 @@
                                         r().createElement(
                                             'div',
                                             { className: Qe },
-                                            r().createElement('div', { className: d, style: E(e, l()) }),
+                                            r().createElement('div', { className: d, style: E(e, l() || void 0) }),
                                             a &&
                                                 1 !== a &&
                                                 A &&

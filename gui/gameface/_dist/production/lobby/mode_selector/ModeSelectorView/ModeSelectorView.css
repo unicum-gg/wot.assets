@@ -1962,6 +1962,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: none;
 }
 
+.CardWrapper_base__locked_95 {
+    cursor: default;
+}
+
 .CardWrapper_base__isNotStarted_29 {
     cursor: default;
 }
@@ -1992,6 +1996,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 1;
     position: relative;
     pointer-events: none;
+}
+
+.CardWrapper_border__locked_c0 {
+    border: 1rem solid rgba(255, 255, 255, 0.09);
 }
 
 .CardWrapper_hover_af {
@@ -2119,6 +2127,215 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .CardWrapper_background__empty_bb {
     opacity: 0.45;
+}
+
+.CardWrapper_lockBlock_81 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 128rem;
+    height: 24rem;
+    position: absolute;
+    top: 55rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mediaMedium .CardWrapper_lockBlock_81 {
+    top: 65rem;
+}
+
+.mediaLarge .CardWrapper_lockBlock_81 {
+    top: 75rem;
+}
+
+.CardWrapper_lockBlock_81.CardWrapper_b0_65 {
+    top: 215rem;
+}
+
+.mediaMedium .CardWrapper_lockBlock_81.CardWrapper_b0_65 {
+    top: 275rem;
+}
+
+.mediaLarge .CardWrapper_lockBlock_81.CardWrapper_b0_65 {
+    top: 325rem;
+}
+
+.CardWrapper_lockBlock_81.CardWrapper_b1_10 {
+    top: 215rem;
+}
+
+.mediaMedium .CardWrapper_lockBlock_81.CardWrapper_b1_10 {
+    top: 275rem;
+}
+
+.mediaLarge .CardWrapper_lockBlock_81.CardWrapper_b1_10 {
+    top: 325rem;
+}
+
+.CardWrapper_lockBlock_81.CardWrapper_b2_7a {
+    top: 105rem;
+}
+
+.mediaMedium .CardWrapper_lockBlock_81.CardWrapper_b2_7a {
+    top: 160rem;
+}
+
+.mediaLarge .CardWrapper_lockBlock_81.CardWrapper_b2_7a {
+    top: 180rem;
+}
+
+.CardWrapper_lockBlock_81.CardWrapper_b3_5e {
+    top: 95rem;
+}
+
+.mediaMedium .CardWrapper_lockBlock_81.CardWrapper_b3_5e {
+    top: 120rem;
+}
+
+.mediaLarge .CardWrapper_lockBlock_81.CardWrapper_b3_5e {
+    top: 160rem;
+}
+
+.CardWrapper_lockBlock_81.CardWrapper_b4_60 {
+    top: 85rem;
+}
+
+.mediaMedium .CardWrapper_lockBlock_81.CardWrapper_b4_60 {
+    top: 100rem;
+}
+
+.mediaLarge .CardWrapper_lockBlock_81.CardWrapper_b4_60 {
+    top: 112rem;
+}
+
+.CardWrapper_lockBlock_81.CardWrapper_b5_9a {
+    top: 65rem;
+}
+
+.mediaMedium .CardWrapper_lockBlock_81.CardWrapper_b5_9a {
+    top: 80rem;
+}
+
+.mediaLarge .CardWrapper_lockBlock_81.CardWrapper_b5_9a {
+    top: 95rem;
+}
+
+.CardWrapper_lockBlock__medium_12 {
+    width: 166rem;
+    height: 32rem;
+}
+
+.CardWrapper_lockBlock__big_51 {
+    width: 220rem;
+    height: 48rem;
+}
+
+.CardWrapper_lock_31 {
+    width: 24rem;
+    height: 24rem;
+    margin-top: -12rem;
+    background: url('R.images.gui.maps.icons.mode_selector.common.lock') no-repeat center / cover;
+    position: relative;
+    z-index: 1;
+    transition: transform 300ms ease;
+}
+
+.CardWrapper_lock__anim_fd {
+    transform: scale(1.5);
+}
+
+.CardWrapper_lock__medium_5f {
+    width: 32rem;
+    height: 32rem;
+    margin-top: -16rem;
+}
+
+.CardWrapper_lock__big_8c {
+    width: 40rem;
+    height: 40rem;
+    margin-top: -20rem;
+}
+
+.CardWrapper_lockGlow_f2 {
+    width: 32rem;
+    height: 32rem;
+    background: url('R.images.gui.maps.icons.mode_selector.common.lock_glow') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -16rem;
+    left: 50%;
+    z-index: -1;
+    transform: translateX(-50%);
+    transition: opacity 300ms ease;
+    pointer-events: none;
+}
+
+.CardWrapper_lockGlow__medium_36 {
+    width: 48rem;
+    height: 48rem;
+    top: -24rem;
+}
+
+.CardWrapper_lockGlow__big_b4 {
+    width: 64rem;
+    height: 64rem;
+    top: -32rem;
+}
+
+.CardWrapper_lockGlow__anim_de {
+    opacity: 1;
+}
+
+.CardWrapper_lockLine_7e {
+    width: 48rem;
+    height: 1rem;
+    margin-top: 2rem;
+    transition: transform 300ms ease;
+}
+
+.CardWrapper_lockLine__medium_47 {
+    width: 63rem;
+    height: 1rem;
+    margin-top: 3rem;
+}
+
+.CardWrapper_lockLine__big_91 {
+    width: 82rem;
+    height: 1rem;
+    margin-top: 3rem;
+}
+
+.CardWrapper_lockLine__leftAnim_5b {
+    transform: translateX(-10rem);
+}
+
+.CardWrapper_lockLine__rightAnim_77 {
+    transform: translateX(10rem);
+}
+
+.CardWrapper_leftLineBg_26 {
+    background: linear-gradient(
+        90deg,
+        rgba(146, 199, 255, 0) 0%,
+        rgba(146, 199, 255, 0.3) 30%,
+        rgba(195, 224, 255, 0.8) 80%
+    );
+}
+
+.CardWrapper_rightLineBg_ee {
+    background: linear-gradient(
+        -90deg,
+        rgba(146, 199, 255, 0) 0%,
+        rgba(146, 199, 255, 0.3) 30%,
+        rgba(195, 224, 255, 0.8) 80%
+    );
 }
 
 .CardWrapper_novelty_ae {
@@ -2254,6 +2471,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: 26rem;
 }
 
+.BattlePassIcon_bpIcon__locked_86 {
+    opacity: 0.6;
+}
+
 .BattlePassIcon_bpAnim_01 {
     width: 128rem;
     height: 128rem;
@@ -2304,6 +2525,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 64rem;
     margin: 0 21rem;
     background: no-repeat 50% / contain;
+}
+
+.Reward_icon__locked_6f {
+    opacity: 0.6;
 }
 
 .Reward_base__small_cb .Reward_icon_93,
@@ -2639,6 +2864,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-weight: 700;
     line-height: 1.2;
     bottom: 40rem;
+}
+
+.NormalCard_name__locked_71 {
+    color: rgba(255, 251, 229, 0.5);
 }
 
 .NormalCard_formatText_cb {
@@ -4544,6 +4773,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+}
+
+.CosmicCard_subTitle_51 {
+    color: #fefeec;
+}
+
+.CosmicCard_name_ed {
+    color: #ffdd99;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .Countdown_base_fe {

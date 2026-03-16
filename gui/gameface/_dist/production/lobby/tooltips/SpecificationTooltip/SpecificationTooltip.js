@@ -223,7 +223,7 @@
                         setEventHandled: () => h,
                         setInputPaddingsRem: () => a,
                         setSidePaddingsRem: () => i,
-                        whenTutorialReady: () => w,
+                        whenTutorialReady: () => S,
                     }));
                 var A = t(3722),
                     E = t(6112),
@@ -296,7 +296,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    w = Promise.all([
+                    S = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : F.U.onDomBuilt(u);
                         }),
@@ -363,7 +363,7 @@
                     F = t(3138),
                     r = t(6179),
                     D = t.n(r);
-                const a = ['children', 'className'];
+                const a = ['children', 'className', 'isSimple'];
                 function n() {
                     return (
                         (n =
@@ -381,7 +381,8 @@
                 const B = D().forwardRef(function (u, e) {
                     let t = u.children,
                         A = u.className,
-                        B = (function (u, e) {
+                        B = u.isSimple,
+                        i = (function (u, e) {
                             if (null == u) return {};
                             var t,
                                 A,
@@ -390,7 +391,7 @@
                             for (A = 0; A < F.length; A++) ((t = F[A]), e.indexOf(t) >= 0 || (E[t] = u[t]));
                             return E;
                         })(u, a);
-                    const i = (function () {
+                    const C = (function () {
                             const u = (0, r.useRef)(0);
                             var e;
                             return (
@@ -419,12 +420,12 @@
                                 )
                             );
                         })(),
-                        C = D().useRef(null);
-                    var l;
+                        l = D().useRef(null);
+                    var o;
                     return (
-                        (l = () => {
-                            i.run(() => {
-                                const u = C.current;
+                        (o = () => {
+                            C.run(() => {
+                                const u = l.current;
                                 if (!u) return;
                                 const e = u.scrollWidth,
                                     t = u.scrollHeight;
@@ -438,16 +439,16 @@
                                 });
                             });
                         }),
-                        (0, r.useEffect)(l, []),
+                        (0, r.useEffect)(o, []),
                         D().createElement(
                             'div',
-                            n({}, B, {
+                            n({}, i, {
                                 className: E()('CosmicTooltipDecorator_base_7d', A),
                                 ref: function (u) {
-                                    ((C.current = u), 'function' == typeof e ? e(u) : e && (e.current = u));
+                                    ((l.current = u), 'function' == typeof e ? e(u) : e && (e.current = u));
                                 },
                             }),
-                            D().createElement('div', { className: 'CosmicTooltipDecorator_bg_cubes_b6' }),
+                            !B && D().createElement('div', { className: 'CosmicTooltipDecorator_bg_cubes_b6' }),
                             D().createElement('div', { className: 'CosmicTooltipDecorator_bg_glow_9a' }),
                             D().createElement('div', { className: 'CosmicTooltipDecorator_decorator_13' }, t),
                         )
@@ -800,8 +801,8 @@
                 const f = B.O.client.getSize('rem'),
                     v = f.width,
                     b = f.height,
-                    w = Object.assign({ width: v, height: b }, p(v, b, h)),
-                    S = (0, A.createContext)(w),
+                    S = Object.assign({ width: v, height: b }, p(v, b, h)),
+                    w = (0, A.createContext)(S),
                     L = ['children'],
                     M = (u) => {
                         let e = u.children,
@@ -814,7 +815,7 @@
                                 for (A = 0; A < F.length; A++) ((t = F[A]), e.indexOf(t) >= 0 || (E[t] = u[t]));
                                 return E;
                             })(u, L);
-                        const E = (0, A.useContext)(S),
+                        const E = (0, A.useContext)(w),
                             F = E.extraLarge,
                             r = E.large,
                             D = E.medium,
@@ -881,7 +882,7 @@
                     (0, A.memo)(M));
                 let y, T, H;
                 ((0, A.memo)(({ children: u }) => {
-                    const e = (0, A.useContext)(S),
+                    const e = (0, A.useContext)(w),
                         t = (0, A.useState)(e),
                         F = t[0],
                         r = t[1],
@@ -898,7 +899,7 @@
                     }),
                         (0, A.useEffect)(() => () => engine.off('clientResized', D), [D]));
                     const a = (0, A.useMemo)(() => Object.assign({}, F), [F]);
-                    return E().createElement(S.Provider, { value: a }, u);
+                    return E().createElement(w.Provider, { value: a }, u);
                 }),
                     (function (u) {
                         ((u[(u.ExtraSmall = h.extraSmall.width)] = 'ExtraSmall'),
@@ -950,7 +951,7 @@
                             (u, e = N) =>
                             (t) => {
                                 const F = (() => {
-                                        const u = (0, A.useContext)(S),
+                                        const u = (0, A.useContext)(w),
                                             e = u.width,
                                             t = u.height,
                                             E = ((u) => {
@@ -1143,8 +1144,8 @@
                                       (f && 'space-around') ||
                                       void 0
                                     : v,
-                            w = u.alignItems,
-                            S = void 0 === w ? (_ ? 'flex-start' : h && 'center') || (x && 'flex-end') || void 0 : w,
+                            S = u.alignItems,
+                            w = void 0 === S ? (_ ? 'flex-start' : h && 'center') || (x && 'flex-end') || void 0 : S,
                             L = u.alignSelf,
                             M = u.wrap,
                             R = u.flexWrap,
@@ -1182,15 +1183,15 @@
                                         height: void 0 !== F && 'number' == typeof F ? F + 'rem' : F,
                                         flex: P,
                                         alignSelf: L,
-                                        display: g || S ? 'flex' : void 0,
+                                        display: g || w ? 'flex' : void 0,
                                         flexDirection: g,
                                         flexWrap: y,
                                         justifyContent: b,
-                                        alignItems: S,
+                                        alignItems: w,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, F, a, B, C, o, W, P, L, g, y, b, S]),
+                            }, [t, F, a, B, C, o, W, P, L, g, y, b, w]),
                             $ = V.computedStyle,
                             K = V.computedClassNames;
                         return E().createElement('div', I({ className: c()(j.base, ...K, e), style: $ }, G), N);

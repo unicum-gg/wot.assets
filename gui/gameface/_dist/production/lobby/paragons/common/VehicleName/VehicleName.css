@@ -278,6 +278,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 .VehicleName_base__white_3d {
@@ -290,6 +291,10 @@
 
 .VehicleName_base__whiteOrange_52 {
     color: #fefeec;
+}
+
+.VehicleName_base__cream_b3 {
+    color: #ffdd99;
 }
 
 .VehicleName_nation_8b {
@@ -310,10 +315,12 @@
     margin: 0 -14rem;
     background: no-repeat center / contain;
     position: relative;
+    top: 2rem;
 }
 
 .VehicleName_type__elite_0d {
     margin: 0 -8rem;
+    top: 0;
 }
 
 .VehicleName_base__extraSmall_74 .VehicleName_type_12 {
@@ -322,23 +329,26 @@
     margin: 0 -7rem;
     background: no-repeat center / contain;
     position: relative;
+    top: 0;
 }
 
 .VehicleName_base__extraSmall_74 .VehicleName_type__elite_0d {
     margin: 4rem -4rem 0;
+    top: -1rem;
 }
 
 .VehicleName_base__medium_16 .VehicleName_type_12 {
     width: 83rem;
     height: 73rem;
-    margin: 0 -23rem;
+    margin: 0 -26rem;
     background: no-repeat center / contain;
     position: relative;
-    top: -18rem;
+    top: 4rem;
 }
 
 .VehicleName_base__medium_16 .VehicleName_type__elite_0d {
     margin: 0 -16rem;
+    top: 0;
 }
 
 .VehicleName_base__colored_f2 .VehicleName_name_5c {

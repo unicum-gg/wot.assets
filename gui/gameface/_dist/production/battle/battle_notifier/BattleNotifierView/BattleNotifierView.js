@@ -167,8 +167,8 @@
                         getViewGlobalPosition: () => _,
                         isEventHandled: () => p,
                         isFocused: () => w,
-                        pxToRem: () => d,
-                        remToPx: () => l,
+                        pxToRem: () => l,
+                        remToPx: () => d,
                         resize: () => B,
                         sendEvent: () => n.qP,
                         setAnimateWindow: () => v,
@@ -204,7 +204,7 @@
                 }
                 function _(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: l(e.x), y: l(e.y) };
+                    return 'rem' === u ? e : { x: d(e.x), y: d(e.y) };
                 }
                 function C() {
                     viewEnv.freezeTextureBeforeResize();
@@ -212,10 +212,10 @@
                 function c() {
                     return viewEnv.getScale();
                 }
-                function d(u) {
+                function l(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function l(u) {
+                function d(u) {
                     return viewEnv.remToPx(u);
                 }
                 function v(u, e) {
@@ -494,7 +494,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             4179: (u, e, t) => {
-                t.d(e, { Sw: () => E.Z, ry: () => l });
+                t.d(e, { Sw: () => E.Z, ry: () => d });
                 class A {
                     constructor() {
                         ((this.entries = []),
@@ -575,8 +575,8 @@
                     }
                     r.done ? e(i) : Promise.resolve(i).then(A, F);
                 }
-                const d = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
-                    l = (function () {
+                const l = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
+                    d = (function () {
                         var u,
                             e =
                                 ((u = function* () {
@@ -657,7 +657,7 @@
                         RealFormatType: a,
                         TimeFormatType: o,
                         DateFormatType: s,
-                        makeGlobalBoundingBox: d,
+                        makeGlobalBoundingBox: l,
                         sendMoveEvent: (u) => v(i.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: w,
                         sendClosePopOverEvent: () => v(i.POP_OVER, { on: !1 }),
@@ -683,7 +683,7 @@
                                 decoratorID: A || R.invalid('resId'),
                                 targetID: F,
                                 direction: e,
-                                bbox: d(B),
+                                bbox: l(B),
                                 on: !0,
                                 args: E,
                             });
@@ -699,7 +699,7 @@
                             m(u, w);
                         },
                         handleViewEvent: v,
-                        onBindingsReady: l,
+                        onBindingsReady: d,
                         onLayoutReady: () =>
                             new Promise((u) => {
                                 requestAnimationFrame(() => {
@@ -805,8 +805,8 @@
                             { caller: t, stack: e, resId: A }
                         );
                     },
-                    d = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
-                    l = (u) => {
+                    l = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
+                    d = (u) => {
                         const e = (0, A.useRef)(!1);
                         e.current || (u(), (e.current = !0));
                     },
@@ -815,7 +815,7 @@
                     m = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, t) => {
-                                const A = d(`${u}.${t}`, window);
+                                const A = l(`${u}.${t}`, window);
                                 return v(A) ? e(u, t, A) : `${u}.${t}`;
                             }))(u, (u, e) => `${u}.${e}.value`),
                     p = (u) => {
@@ -832,7 +832,7 @@
                             const u = [A[0]];
                             return (
                                 A.reduce((e, A) => {
-                                    const F = d(w(t, `${e}.${A}`), window);
+                                    const F = l(w(t, `${e}.${A}`), window);
                                     return v(F) ? (u.push(F.id), `${e}.${A}.value`) : (u.push(A), `${e}.${A}`);
                                 }),
                                 u.reduce((u, e) => u + '.' + e)
@@ -857,7 +857,7 @@
                         ),
                         D = (0, A.useState)(() =>
                             ((u) => {
-                                const e = d(u, window);
+                                const e = l(u, window);
                                 for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                 return v(e) ? e.value : e;
                             })(m(i)),
@@ -866,7 +866,7 @@
                         o = D[1],
                         s = (0, A.useRef)(-1);
                     return (
-                        l(() => {
+                        d(() => {
                             if (
                                 ('boolean' == typeof e &&
                                     ((e = e ? f.Deep : f.None),
@@ -983,13 +983,13 @@
                             B = u.crystalAmount,
                             _ = u.onResultShown,
                             c = (0, A.useRef)(null),
-                            d = (0, A.useCallback)(
+                            l = (0, A.useCallback)(
                                 (u) => {
                                     u.target === c.current && _();
                                 },
                                 [_],
                             ),
-                            l = e === g.Victory,
+                            d = e === g.Victory,
                             v = e === g.Defeat,
                             w = J[e],
                             m = new Date(1e3 * t),
@@ -1012,29 +1012,30 @@
                                     (clearTimeout(u), clearTimeout(t));
                                 };
                             }),
-                            z &&
-                                F().createElement(
-                                    'div',
-                                    { key: t, className: i()(T, { [P]: l, [k]: v }) },
-                                    F().createElement('div', { className: y, style: Fu, onAnimationEnd: d, ref: c }),
-                                    F().createElement('div', { className: W, style: eu(e) }),
-                                    F().createElement('div', { className: H, style: eu(e) }),
-                                    F().createElement('div', { className: O, style: tu(e) }),
-                                    F().createElement('div', { className: M, style: tu(e) }),
-                                    F().createElement('div', { className: S }, w),
-                                    F().createElement('div', { className: i()(N, x) }, p + ' ' + E),
-                                    F().createElement(
-                                        'div',
-                                        { className: i()(N, U) },
-                                        F().createElement('div', null, C(r)),
-                                        F().createElement('img', { className: K, src: uu(D, e) }),
-                                        F().createElement('div', null, n),
-                                    ),
-                                    F().createElement('div', { className: i()(L, I), style: Au('credits') }, f),
-                                    F().createElement('div', { className: i()(L, V), style: Au('experience') }, h),
-                                    0 !== B &&
-                                        F().createElement('div', { className: i()(L, G), style: Au('crystals') }, j),
-                                )
+                            z
+                                ? F().createElement(
+                                      'div',
+                                      { key: t, className: i()(T, { [P]: d, [k]: v }) },
+                                      F().createElement('div', { className: y, style: Fu, onAnimationEnd: l, ref: c }),
+                                      F().createElement('div', { className: W, style: eu(e) }),
+                                      F().createElement('div', { className: H, style: eu(e) }),
+                                      F().createElement('div', { className: O, style: tu(e) }),
+                                      F().createElement('div', { className: M, style: tu(e) }),
+                                      F().createElement('div', { className: S }, w),
+                                      F().createElement('div', { className: i()(N, x) }, p + ' ' + E),
+                                      F().createElement(
+                                          'div',
+                                          { className: i()(N, U) },
+                                          F().createElement('div', null, C(r)),
+                                          F().createElement('img', { className: K, src: uu(D, e) }),
+                                          F().createElement('div', null, n),
+                                      ),
+                                      F().createElement('div', { className: i()(L, I), style: Au('credits') }, f),
+                                      F().createElement('div', { className: i()(L, V), style: Au('experience') }, h),
+                                      0 !== B &&
+                                          F().createElement('div', { className: i()(L, G), style: Au('crystals') }, j),
+                                  )
+                                : null
                         );
                     };
                 engine.whenReady.then(() => {

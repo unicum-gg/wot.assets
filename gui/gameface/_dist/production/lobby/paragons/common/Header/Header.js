@@ -81,8 +81,8 @@
                             h = void 0 === c ? t : c,
                             x = u.column,
                             v = u.row,
-                            p = u.flexDirection,
-                            f = void 0 === p ? (x ? 'column' : v && 'row') || void 0 : p,
+                            f = u.flexDirection,
+                            p = void 0 === f ? (x ? 'column' : v && 'row') || void 0 : f,
                             S = u.flexStart,
                             w = u.center,
                             b = u.flexEnd,
@@ -136,15 +136,15 @@
                                         height: void 0 !== F && 'number' == typeof F ? F + 'rem' : F,
                                         flex: X,
                                         alignSelf: y,
-                                        display: f || O ? 'flex' : void 0,
-                                        flexDirection: f,
+                                        display: p || O ? 'flex' : void 0,
+                                        flexDirection: p,
                                         flexWrap: G,
                                         justifyContent: H,
                                         alignItems: O,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [A, F, B, d, _, h, z, X, y, f, G, H, O]),
+                            }, [A, F, B, d, _, h, z, X, y, p, G, H, O]),
                             Y = U.computedStyle,
                             K = U.computedClassNames;
                         return a().createElement('div', n({ className: E()(C.Z.base, ...K, e), style: Y }, k), I);
@@ -396,7 +396,7 @@
             },
             7613: (u, e, A) => {
                 'use strict';
-                A.d(e, { ZP: () => p });
+                A.d(e, { ZP: () => f });
                 var F = A(6483),
                     E = A.n(F),
                     t = A(3779),
@@ -468,7 +468,7 @@
                                     ? { colorClassName: m.Z[u] }
                                     : { colorStyle: { color: u } }
                                 : {}),
-                    p = (0, i.ZP)((u) => {
+                    f = (0, i.ZP)((u) => {
                         let e = u.text,
                             A = u.variant,
                             F = u.className,
@@ -482,8 +482,8 @@
                             _ = void 0 === g ? r : g,
                             c = u.ml,
                             h = void 0 === c ? r : c,
-                            p = u.style,
-                            f = u.format,
+                            f = u.style,
+                            p = u.format,
                             S = (function (u, e) {
                                 if (null == u) return {};
                                 var A,
@@ -498,8 +498,8 @@
                                     e = u.colorClassName,
                                     A = u.colorStyle,
                                     F = void 0 === A ? {} : A;
-                                return { computedStyle: Object.assign({}, p, F), colorClassName: e };
-                            }, [p, B]),
+                                return { computedStyle: Object.assign({}, f, F), colorClassName: e };
+                            }, [f, B]),
                             b = w.computedStyle,
                             L = w.colorClassName;
                         return l().createElement(
@@ -515,7 +515,7 @@
                                 },
                                 S,
                             ),
-                            void 0 !== f ? l().createElement(D.z, o({}, f, { text: e })) : e,
+                            void 0 !== p ? l().createElement(D.z, o({}, p, { text: e })) : e,
                         );
                     });
             },
@@ -721,13 +721,13 @@
                         addPreloadTexture: () => B,
                         children: () => F,
                         displayStatus: () => E.W,
-                        displayStatusIs: () => f,
+                        displayStatusIs: () => p,
                         events: () => t.U,
                         extraSize: () => S,
                         forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => s,
                         getBrowserTexturePath: () => a,
-                        getDisplayStatus: () => p,
+                        getDisplayStatus: () => f,
                         getScale: () => o,
                         getSize: () => n,
                         getViewGlobalPosition: () => m,
@@ -799,10 +799,10 @@
                 function v() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function p() {
+                function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const f = Object.keys(E.W).reduce(
+                const p = Object.keys(E.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === E.W[e]), u),
                         {},
                     ),
@@ -1074,26 +1074,25 @@
                     },
                     C = (u, e, A) => u.split(/%\((.*?)\)(?:[sd])?/g).map((u) => (A && u in A ? A[u] : a(u, e)));
             },
-            1112: (u, e, A) => {
+            1685: (u, e, A) => {
                 'use strict';
-                var F = A(280),
-                    E = (A(3649), A(7613)),
-                    t = A(6179),
-                    D = A.n(t);
-                const B = 'Header_base_37',
-                    r = 'Header_textContainer_22',
-                    a = 'Header_mainTitle_85',
-                    C = 'Header_subTitle_fb';
-                (0, t.memo)(({ stage: u = 0, topTitle: e = '', mainTitle: A, subtitle: t = '' }) =>
-                    D().createElement(
+                var F = A(7613),
+                    E = A(6179),
+                    t = A.n(E);
+                const D = 'Header_base_37',
+                    B = 'Header_textContainer_22',
+                    r = 'Header_mainTitle_85',
+                    a = 'Header_subTitle_fb';
+                (0, E.memo)(({ stage: u = 0, topTitle: e = '', mainTitle: A, subtitle: E = '' }) =>
+                    t().createElement(
                         'div',
-                        { className: B },
-                        D().createElement(
+                        { className: D },
+                        t().createElement(
                             'div',
-                            { className: r },
-                            e && D().createElement(E.ZP, { text: e, className: C }),
-                            D().createElement(F.z, { text: A, binding: { level: u }, classMix: a }),
-                            t && D().createElement(F.z, { text: t, classMix: C }),
+                            { className: B },
+                            e && t().createElement(F.ZP, { text: e, className: a }),
+                            t().createElement(F.ZP, { text: A, format: { binding: { level: u } }, className: r }),
+                            E && t().createElement(F.ZP, { text: E, className: a }),
                         ),
                     ),
                 );
@@ -1256,6 +1255,6 @@
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (A.forEach(e.bind(null, 0)), (A.push = e.bind(null, A.push.bind(A))));
         })());
-    var E = F.O(void 0, [454], () => F(1112));
+    var E = F.O(void 0, [454], () => F(1685));
     E = F.O(E);
 })();

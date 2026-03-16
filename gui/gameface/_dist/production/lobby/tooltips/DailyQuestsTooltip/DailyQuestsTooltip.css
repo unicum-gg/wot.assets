@@ -650,44 +650,57 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 364rem;
-    height: auto;
+    width: 404rem;
 }
 
 .App_rewards_wrapper_dd {
     display: flex;
-    margin-bottom: 25rem;
+    margin-bottom: 36rem;
 }
 
 .App_info_c5 {
-    width: 100%;
-    margin: 5rem 0 45rem;
-    padding: 0 37rem;
-    color: #fff;
+    width: 269rem;
+    margin: 19rem 0;
+    color: #ffffff;
+}
+
+.App_progressInfo_e9 {
+    line-height: 20rem;
 }
 
 .App_battleConditionsText_16 {
     margin-bottom: 20rem;
+    padding: 0;
 }
 
 .App_icon_23 {
     width: 80rem;
     height: 80rem;
-    margin-top: 35rem;
+    margin-top: 28rem;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
 }
 
 .App_info_text_66 {
-    color: #fff;
+    color: #ffffff;
     text-align: center;
 }
 
 .App_status_ac {
     display: flex;
+    justify-content: center;
     align-items: center;
-    height: 50rem;
+    width: 100%;
+    height: 52rem;
+    margin: 0 -4rem -5rem;
+    background: linear-gradient(
+        90deg,
+        rgba(201, 201, 182, 0) 0%,
+        rgba(201, 201, 182, 0.07) 38.22%,
+        rgba(201, 201, 182, 0.07) 64.56%,
+        rgba(201, 201, 182, 0) 100%
+    );
     color: #cbac77;
     font-size: 14rem;
 }
@@ -714,7 +727,7 @@
 }
 
 .App_separator_7b {
-    width: 290rem;
+    width: 376rem;
     height: 1rem;
     margin: 0;
     background: url('R.images.gui.maps.icons.missions.daily.widgets.separator_border');
@@ -761,4 +774,8 @@
     background: url('R.images.cosmic_event.gui.maps.icons.tooltip.glow') 0 0 / contain no-repeat;
     position: absolute;
     top: 0;
+}
+
+.CosmicTooltipDecorator_simple_e8 .CosmicTooltipDecorator_bg_glow_9a {
+    display: none;
 }

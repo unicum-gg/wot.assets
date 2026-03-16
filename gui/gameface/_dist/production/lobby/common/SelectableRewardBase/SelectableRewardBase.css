@@ -704,7 +704,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 206rem;
     height: 78rem;
     background: no-repeat center / contain;
-    mix-blend-mode: screen;
     position: absolute;
     bottom: -1rem;
     left: 50%;
@@ -727,6 +726,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .Reward_base__stateReceived_45 .Reward_glow_81 {
     background-image: url('R.images.gui.maps.icons.selectableReward.reward.state.green_glow');
+    mix-blend-mode: screen;
 }
 
 .SelectButton_base_fd {
@@ -863,7 +863,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 148rem;
     background: url('R.images.gui.maps.icons.selectableReward.tabs.glow') no-repeat center / cover;
     opacity: 0;
-    mix-blend-mode: screen;
     position: absolute;
     bottom: -1rem;
     left: 50%;

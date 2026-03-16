@@ -276,16 +276,15 @@
 .App_base_1f {
     display: flex;
     flex-direction: column;
-    width: 443rem;
-    height: 100%;
-    padding: 20rem 24rem 32rem;
+    width: 404rem;
+    padding: 16rem 17rem 0 18rem;
 }
 .App_topWrapper_37 {
     display: flex;
 }
 .App_img_59 {
-    width: 32rem;
-    height: 32rem;
+    width: 40rem;
+    height: 40rem;
     margin-right: 20rem;
 }
 .App_title_03 {
@@ -312,6 +311,86 @@
     line-height: 18rem;
     letter-spacing: 0.04em;
     margin-top: 12rem;
+    margin-bottom: 12rem;
+}
+.App_specificationsWrapper_56 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: -4rem;
+    padding-bottom: 8rem;
+    background: linear-gradient(
+        90deg,
+        rgba(183, 218, 245, 0) 0%,
+        rgba(183, 218, 245, 0.07) 38.22%,
+        rgba(183, 218, 245, 0.07) 64.56%,
+        rgba(183, 218, 245, 0) 100%
+    );
+}
+.App_parameter_9f {
+    color: #ffd770;
+}
+.App_specificationsTitle_62 {
+    color: #f4e1b3;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 19rem;
+    letter-spacing: 0.04em;
+    margin-top: 12rem;
+    margin-bottom: 16rem;
+}
+.App_specificationsList_2e {
+    padding-left: 60rem;
+}
+
+.SpecificationBlock_base_61 {
+    display: flex;
+    align-items: center;
+    width: 210rem;
+    height: 32rem;
+    margin: 0 0 16rem;
+    position: relative;
+}
+.SpecificationBlock_img_ce {
+    width: 32rem;
+    height: 32rem;
+    margin-right: 12rem;
+}
+.SpecificationBlock_progressionContainer_13 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 154rem;
+    height: 100%;
+}
+.SpecificationBlock_title_d9 {
+    color: #f4e1b3;
+    font-size: 14rem;
+    letter-spacing: 0.96rem;
+}
+.SpecificationBlock_progressionArea_1d {
+    display: flex;
+    flex-direction: row;
+}
+.SpecificationBlock_progressionDivision_61 {
+    width: 4rem;
+    height: 10rem;
+    margin-right: 1rem;
+    background: #f4e1b3;
+    opacity: 0.2;
+}
+.SpecificationBlock_progressionDivision_filled_d5 {
+    background: #f4e1b3;
+    opacity: 1;
+}
+@keyframes SpecificationBlock_fillAnimation_13 {
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .CosmicTooltipDecorator_base_7d {
@@ -345,4 +424,8 @@
     background: url('R.images.cosmic_event.gui.maps.icons.tooltip.glow') 0 0 / contain no-repeat;
     position: absolute;
     top: 0;
+}
+
+.CosmicTooltipDecorator_simple_e8 .CosmicTooltipDecorator_bg_glow_9a {
+    display: none;
 }

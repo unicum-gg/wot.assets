@@ -1294,15 +1294,6 @@
         bottom: 25rem;
     }
 }
-@keyframes StateNormal_freePointsSmallX2Hover_f6 {
-    from {
-        bottom: -5rem;
-    }
-
-    to {
-        bottom: -10rem;
-    }
-}
 @keyframes StateNormal_flagOut_f4 {
     from {
         transform: scaleY(1.05);
@@ -1328,15 +1319,6 @@
 
     to {
         bottom: 30rem;
-    }
-}
-@keyframes StateNormal_freePointsSmallX2Out_ca {
-    from {
-        bottom: -10rem;
-    }
-
-    to {
-        bottom: -5rem;
     }
 }
 @keyframes StateNormal_logoIconOut_be {
@@ -1789,15 +1771,6 @@
         bottom: 25rem;
     }
 }
-@keyframes StateAttention_freePointsSmallX2Hover_06 {
-    from {
-        bottom: -5rem;
-    }
-
-    to {
-        bottom: -10rem;
-    }
-}
 @keyframes StateAttention_flagOut_d4 {
     from {
         transform: scaleY(1.05);
@@ -1823,15 +1796,6 @@
 
     to {
         bottom: 30rem;
-    }
-}
-@keyframes StateAttention_freePointsSmallX2Out_44 {
-    from {
-        bottom: -10rem;
-    }
-
-    to {
-        bottom: -5rem;
     }
 }
 @keyframes StateAttention_logoIconOut_61 {
@@ -2232,15 +2196,6 @@
         bottom: 25rem;
     }
 }
-@keyframes StateBuyBP_freePointsSmallX2Hover_c5 {
-    from {
-        bottom: -5rem;
-    }
-
-    to {
-        bottom: -10rem;
-    }
-}
 @keyframes StateBuyBP_flagOut_e1 {
     from {
         transform: scaleY(1.05);
@@ -2266,15 +2221,6 @@
 
     to {
         bottom: 30rem;
-    }
-}
-@keyframes StateBuyBP_freePointsSmallX2Out_57 {
-    from {
-        bottom: -10rem;
-    }
-
-    to {
-        bottom: -5rem;
     }
 }
 @keyframes StateBuyBP_logoIconOut_b2 {
@@ -2663,15 +2609,6 @@
         bottom: 25rem;
     }
 }
-@keyframes StateChapterNotChosen_freePointsSmallX2Hover_85 {
-    from {
-        bottom: -5rem;
-    }
-
-    to {
-        bottom: -10rem;
-    }
-}
 @keyframes StateChapterNotChosen_flagOut_05 {
     from {
         transform: scaleY(1.05);
@@ -2697,15 +2634,6 @@
 
     to {
         bottom: 30rem;
-    }
-}
-@keyframes StateChapterNotChosen_freePointsSmallX2Out_b5 {
-    from {
-        bottom: -10rem;
-    }
-
-    to {
-        bottom: -5rem;
     }
 }
 @keyframes StateChapterNotChosen_logoIconOut_4f {
@@ -3089,15 +3017,6 @@
         bottom: 25rem;
     }
 }
-@keyframes StateComplete_freePointsSmallX2Hover_52 {
-    from {
-        bottom: -5rem;
-    }
-
-    to {
-        bottom: -10rem;
-    }
-}
 @keyframes StateComplete_flagOut_f0 {
     from {
         transform: scaleY(1.05);
@@ -3123,15 +3042,6 @@
 
     to {
         bottom: 30rem;
-    }
-}
-@keyframes StateComplete_freePointsSmallX2Out_7c {
-    from {
-        bottom: -10rem;
-    }
-
-    to {
-        bottom: -5rem;
     }
 }
 @keyframes StateComplete_logoIconOut_f1 {
@@ -3521,15 +3431,6 @@
         bottom: 25rem;
     }
 }
-@keyframes StateLevelUp_freePointsSmallX2Hover_de {
-    from {
-        bottom: -5rem;
-    }
-
-    to {
-        bottom: -10rem;
-    }
-}
 @keyframes StateLevelUp_flagOut_5e {
     from {
         transform: scaleY(1.05);
@@ -3555,15 +3456,6 @@
 
     to {
         bottom: 30rem;
-    }
-}
-@keyframes StateLevelUp_freePointsSmallX2Out_12 {
-    from {
-        bottom: -10rem;
-    }
-
-    to {
-        bottom: -5rem;
     }
 }
 @keyframes StateLevelUp_logoIconOut_44 {
@@ -3952,15 +3844,6 @@
         bottom: 25rem;
     }
 }
-@keyframes StateMouseOut_freePointsSmallX2Hover_a3 {
-    from {
-        bottom: -5rem;
-    }
-
-    to {
-        bottom: -10rem;
-    }
-}
 @keyframes StateMouseOut_flagOut_f8 {
     from {
         transform: scaleY(1.05);
@@ -3986,15 +3869,6 @@
 
     to {
         bottom: 30rem;
-    }
-}
-@keyframes StateMouseOut_freePointsSmallX2Out_6c {
-    from {
-        bottom: -10rem;
-    }
-
-    to {
-        bottom: -5rem;
     }
 }
 @keyframes StateMouseOut_logoIconOut_cd {
@@ -4316,14 +4190,6 @@
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateMouseOut_base__smallX2_e5 .StateMouseOut_freePoints_fb {
-    animation-name: StateMouseOut_freePointsSmallX2Out_6c;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-}
 
 @keyframes StateMouseOver_fadeInWithScale_65 {
     0% {
@@ -4429,15 +4295,6 @@
         bottom: 25rem;
     }
 }
-@keyframes StateMouseOver_freePointsSmallX2Hover_a0 {
-    from {
-        bottom: -5rem;
-    }
-
-    to {
-        bottom: -10rem;
-    }
-}
 @keyframes StateMouseOver_flagOut_2d {
     from {
         transform: scaleY(1.05);
@@ -4463,15 +4320,6 @@
 
     to {
         bottom: 30rem;
-    }
-}
-@keyframes StateMouseOver_freePointsSmallX2Out_60 {
-    from {
-        bottom: -10rem;
-    }
-
-    to {
-        bottom: -5rem;
     }
 }
 @keyframes StateMouseOver_logoIconOut_b3 {
@@ -4793,14 +4641,6 @@
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateMouseOver_base__smallX2_b2 .StateMouseOver_freePoints_ff {
-    animation-name: StateMouseOver_freePointsSmallX2Hover_a0;
-    animation-duration: 0.2s;
-    animation-fill-mode: forwards;
-    animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
-    animation-delay: 0s;
-    animation-iteration-count: 1;
-}
 
 @keyframes StateNotTakenRewards_fadeInWithScale_a3 {
     0% {
@@ -4906,15 +4746,6 @@
         bottom: 25rem;
     }
 }
-@keyframes StateNotTakenRewards_freePointsSmallX2Hover_d9 {
-    from {
-        bottom: -5rem;
-    }
-
-    to {
-        bottom: -10rem;
-    }
-}
 @keyframes StateNotTakenRewards_flagOut_01 {
     from {
         transform: scaleY(1.05);
@@ -4940,15 +4771,6 @@
 
     to {
         bottom: 30rem;
-    }
-}
-@keyframes StateNotTakenRewards_freePointsSmallX2Out_f9 {
-    from {
-        bottom: -10rem;
-    }
-
-    to {
-        bottom: -5rem;
     }
 }
 @keyframes StateNotTakenRewards_logoIconOut_bc {
@@ -5338,15 +5160,6 @@
         bottom: 25rem;
     }
 }
-@keyframes StateShow_freePointsSmallX2Hover_5d {
-    from {
-        bottom: -5rem;
-    }
-
-    to {
-        bottom: -10rem;
-    }
-}
 @keyframes StateShow_flagOut_5b {
     from {
         transform: scaleY(1.05);
@@ -5372,15 +5185,6 @@
 
     to {
         bottom: 30rem;
-    }
-}
-@keyframes StateShow_freePointsSmallX2Out_9d {
-    from {
-        bottom: -10rem;
-    }
-
-    to {
-        bottom: -5rem;
     }
 }
 @keyframes StateShow_logoIconOut_41 {
@@ -5781,15 +5585,6 @@
         bottom: 25rem;
     }
 }
-@keyframes StateSwitchChapter_freePointsSmallX2Hover_5f {
-    from {
-        bottom: -5rem;
-    }
-
-    to {
-        bottom: -10rem;
-    }
-}
 @keyframes StateSwitchChapter_flagOut_13 {
     from {
         transform: scaleY(1.05);
@@ -5815,15 +5610,6 @@
 
     to {
         bottom: 30rem;
-    }
-}
-@keyframes StateSwitchChapter_freePointsSmallX2Out_56 {
-    from {
-        bottom: -10rem;
-    }
-
-    to {
-        bottom: -5rem;
     }
 }
 @keyframes StateSwitchChapter_logoIconOut_dc {
@@ -6214,15 +6000,6 @@
         bottom: 25rem;
     }
 }
-@keyframes Content_freePointsSmallX2Hover_2d {
-    from {
-        bottom: -5rem;
-    }
-
-    to {
-        bottom: -10rem;
-    }
-}
 @keyframes Content_flagOut_c3 {
     from {
         transform: scaleY(1.05);
@@ -6248,15 +6025,6 @@
 
     to {
         bottom: 30rem;
-    }
-}
-@keyframes Content_freePointsSmallX2Out_73 {
-    from {
-        bottom: -10rem;
-    }
-
-    to {
-        bottom: -5rem;
     }
 }
 @keyframes Content_logoIconOut_f1 {

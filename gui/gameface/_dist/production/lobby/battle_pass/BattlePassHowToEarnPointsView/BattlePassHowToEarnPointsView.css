@@ -1295,6 +1295,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    height: 150rem;
     position: relative;
 }
 

@@ -966,7 +966,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 19rem;
     height: 37rem;
     background: no-repeat center / contain;
-    mix-blend-mode: additive;
     position: absolute;
     top: 50%;
     pointer-events: none;

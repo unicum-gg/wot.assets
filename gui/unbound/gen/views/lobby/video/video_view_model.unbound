@@ -15,5 +15,7 @@
         (var isUIVisible:bool = false)
         (var isVignetteVisible:bool = true)
         (var isAutoClose:bool = true)
+        (var canEscape:bool = true)
+        (var uiShowDelay:number = -1)
     )
 )

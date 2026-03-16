@@ -101,8 +101,8 @@
                             y = void 0 === T ? (S ? 'flex-start' : b && 'center') || (w && 'flex-end') || void 0 : T,
                             O = u.alignSelf,
                             P = u.wrap,
-                            W = u.flexWrap,
-                            N = void 0 === W ? (P ? 'wrap' : void 0) : W,
+                            N = u.flexWrap,
+                            W = void 0 === N ? (P ? 'wrap' : void 0) : N,
                             G = u.grow,
                             j = u.shrink,
                             X = u.flex,
@@ -138,13 +138,13 @@
                                         alignSelf: O,
                                         display: f || y ? 'flex' : void 0,
                                         flexDirection: f,
-                                        flexWrap: N,
+                                        flexWrap: W,
                                         justifyContent: H,
                                         alignItems: y,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [A, E, B, _, c, h, z, Z, O, f, N, H, y]),
+                            }, [A, E, B, _, c, h, z, Z, O, f, W, H, y]),
                             U = V.computedStyle,
                             $ = V.computedClassNames;
                         return a().createElement('div', n({ className: F()(i.Z.base, ...$, e), style: U }, k), I);
@@ -1102,6 +1102,7 @@
                         base__white: 'VehicleName_base__white_3d',
                         base__whiteSpanish: 'VehicleName_base__whiteSpanish_90',
                         base__whiteOrange: 'VehicleName_base__whiteOrange_52',
+                        base__cream: 'VehicleName_base__cream_b3',
                         nation: 'VehicleName_nation_8b',
                         base__colored: 'VehicleName_base__colored_f2',
                         level: 'VehicleName_level_7d',
@@ -1111,38 +1112,46 @@
                         base__medium: 'VehicleName_base__medium_16',
                         name: 'VehicleName_name_5c',
                     },
-                    m = 'small',
-                    s = 'whiteOrange',
-                    o = 'R.images.gui.maps.icons';
-                n().memo(
+                    m = 'R.images.gui.maps.icons',
+                    s = 'small',
+                    o = 'medium',
+                    _ = 'whiteOrange';
+                (0, C.memo)(
                     ({
                         isElite: u = !0,
                         vehicleName: e,
-                        vehicleShortName: A = e,
-                        vehicleNation: E,
-                        vehicleType: D,
-                        vehicleLvl: B,
-                        size: r = m,
-                        type: C = s,
+                        vehicleNation: A,
+                        vehicleType: E,
+                        vehicleLvl: D,
+                        isShortVehicleName: B = !1,
+                        size: r = s,
+                        type: C = _,
+                        className: d,
                     }) => {
-                        const _ = F()(l.base, l[`base__${r}`], l[`base__${C}`]),
-                            d = F()(l.type, u && l.type__elite);
+                        const c = F()(l.base, l[`base__${r}`], l[`base__${C}`], d),
+                            g = F()(l.type, u && l.type__elite),
+                            h = o ? 'big' : 'c_64x64';
                         return n().createElement(
                             'div',
-                            { className: _ },
-                            E &&
-                                n().createElement('div', {
-                                    className: l.nation,
-                                    style: { backgroundImage: `url(${o}.flags.c_25x17.${E})` },
-                                }),
-                            n().createElement(t.ZP, { text: a(B), className: l.level }),
-                            n().createElement('div', {
-                                className: d,
-                                style: {
-                                    backgroundImage: `url(${o}.vehicleTypes.c_60x54.${(0, i.BN)(D)}${u && '_elite'})`,
-                                },
-                            }),
-                            n().createElement(t.ZP, { text: A, className: l.name }),
+                            { className: c },
+                            !B &&
+                                n().createElement(
+                                    n().Fragment,
+                                    null,
+                                    A &&
+                                        n().createElement('div', {
+                                            className: l.nation,
+                                            style: { backgroundImage: `url(${m}.flags.c_25x17.${A})` },
+                                        }),
+                                    n().createElement(t.ZP, { text: a(D), className: l.level }),
+                                    n().createElement('div', {
+                                        className: g,
+                                        style: {
+                                            backgroundImage: `url(${m}.vehicleTypes.${h}.${(0, i.BN)(E)}${u ? '_elite' : ''})`,
+                                        },
+                                    }),
+                                ),
+                            n().createElement(t.ZP, { text: e, className: l.name }),
                         );
                     },
                 );

@@ -1447,23 +1447,7 @@
                     },
                     He = R.strings.paragons.allRewards.tooltip,
                     Oe = (0, re.Pi)(() => {
-                        const u = ge().model.computes.getVehicles(),
-                            e = (0, Q.useMemo)(
-                                () =>
-                                    u.map((u) =>
-                                        Z().createElement(
-                                            'div',
-                                            { key: u.vehicleName },
-                                            Z().createElement(Re, {
-                                                vehicleShortName: u.label,
-                                                nation: u.nationTag,
-                                                level: u.level,
-                                                vehicleClass: u.type,
-                                            }),
-                                        ),
-                                    ),
-                                [u],
-                            );
+                        const u = ge().model.computes.getVehicles();
                         return Z().createElement(
                             'div',
                             { className: _e },
@@ -1493,7 +1477,18 @@
                                 Z().createElement(
                                     'div',
                                     { className: be },
-                                    e,
+                                    u.map((u) =>
+                                        Z().createElement(
+                                            'div',
+                                            { key: u.vehicleName },
+                                            Z().createElement(Re, {
+                                                vehicleShortName: u.label,
+                                                nation: u.nationTag,
+                                                level: u.level,
+                                                vehicleClass: u.type,
+                                            }),
+                                        ),
+                                    ),
                                     u.length > 5 &&
                                         Z().createElement(
                                             'div',

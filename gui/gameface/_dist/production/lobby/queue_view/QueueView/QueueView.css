@@ -282,7 +282,13 @@
     height: 100%;
     background-size: cover;
     --scale: 0.05vw; /* 1/1920 * 100 vw */
-    --vehicleScale: 0.5;
+    opacity: 0;
+    animation-name: QueueViewApp_fadeInWithScale_ee;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
+    animation-delay: 0.2s;
+    animation-iteration-count: 1;
 }
 
 /* Wider aspect ratio than 1920/1080 means height is limiting factor for scale */
@@ -293,12 +299,28 @@
     }
 }
 
+.QueueViewApp_base_2b .QueueViewApp_vignette_4b {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(50% 50% at 50% 50%, #21273a 58.03%, rgba(33, 39, 58, 0) 100%);
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .QueueViewApp_base_2b .QueueViewApp_insideBase_8e {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-width: 632rem;
+    margin-top: -44rem;
+    position: relative;
     z-index: 2;
+}
+
+.mediaMedium .QueueViewApp_base_2b .QueueViewApp_insideBase_8e {
+    margin-top: -86rem;
 }
 .QueueViewApp_videoBg_b4 {
     width: 100%;
@@ -310,21 +332,21 @@
     width: 100%;
     height: 100%;
 }
-.QueueViewApp_waitingTimeValue_52,
-.QueueViewApp_playersInQueueValue_1f,
+.QueueViewApp_waitingTimeValue_52 {
+    color: #fefeec;
+    font-size: 22rem;
+    font-weight: 700;
+}
 .QueueViewApp_vehicleNameValue_12 {
     color: #fefeec;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 1rem;
+    font-size: 22rem;
+    font-weight: 500;
+    letter-spacing: 0.88rem;
 }
 .QueueViewApp_smallerText_48 {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
     margin-right: 5rem;
+    color: #f4e1b3;
+    font-size: 20rem;
     text-shadow: 0 0 10rem rgba(0, 0, 0, 0.25);
 }
 .QueueViewApp_vehicleImage_78 {
@@ -336,17 +358,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30rem;
+    margin-bottom: 40rem;
 }
 .QueueViewApp_logoContainer_1d .QueueViewApp_logoIcon_8f {
-    width: 100rem;
-    height: 100rem;
+    width: 136rem;
+    height: 136rem;
+    margin-bottom: -10rem;
 }
 .QueueViewApp_logoContainer_1d .QueueViewApp_logoLabel_6a {
-    color: #e9e2bf;
-    font-size: 36rem;
+    color: #f4e1b3;
+    font-size: 42rem;
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 49rem;
+    letter-spacing: 0;
 }
 .QueueViewApp_playersInQueueContainer_45 {
     display: flex;
@@ -356,21 +380,19 @@
 }
 .QueueViewApp_playersInQueueContainer_45 .QueueViewApp_playersInQueueValue_1f {
     color: #fefeec;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 2rem;
+    font-size: 22rem;
+    font-weight: 500;
+    letter-spacing: 0.88rem;
 }
 .QueueViewApp_playersInQueueContainer_45 .QueueViewApp_playersInQueue_ec {
-    color: #f4e1b3;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
     margin-right: 5rem;
+    color: #f4e1b3;
+    font-size: 20rem;
+    font-weight: 400;
     text-shadow: 0 0 10rem rgba(0, 0, 0, 0.25);
 }
-.QueueViewApp_gradientContainer_e3 + .QueueViewApp_gradientContainer_e3 {
-    margin-top: 1rem;
+.QueueViewApp_divider_79 + .QueueViewApp_gradientContainer_e3 {
+    margin-top: 0;
     margin-bottom: 15rem;
 }
 .QueueViewApp_gradientContainer_e3 {
@@ -378,18 +400,17 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 340rem;
+    width: 565rem;
     height: 46rem;
-    margin-top: 15rem;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0) 0%,
-            rgba(0, 0, 0, 0.4) 30%,
-            rgba(0, 0, 0, 0.4) 70%,
-            rgba(0, 0, 0, 0) 100%
-        ),
-        url('R.images.cosmic_event.gui.maps.icons.queueView.patchwork');
+    margin-top: 20rem;
+    padding: 0 112rem;
+    background: linear-gradient(
+        90deg,
+        rgba(1, 3, 38, 0) 0%,
+        rgba(1, 3, 38, 0.2) 23.59%,
+        rgba(1, 3, 38, 0.2) 74.69%,
+        rgba(1, 3, 38, 0) 100%
+    );
     background-size: cover;
     position: relative;
 }
@@ -398,18 +419,18 @@
     align-items: center;
 }
 .QueueViewApp_gradientContainer_e3 .QueueViewApp_vehicleName_b0 {
-    color: #c9c9b6;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
     align-items: center;
     margin-left: 20rem;
-    font-weight: 700;
+    color: #fefeec;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.1;
     text-shadow: 0 0 10rem rgba(0, 0, 0, 0.25);
 }
 .QueueViewApp_gradientContainer_e3 .QueueViewApp_playersInQueueValue_1f {
     margin-bottom: 2rem;
-    font-size: 26rem;
+    color: #fefeec;
+    font-size: 28rem;
     font-weight: 700;
     line-height: 1.1;
 }
@@ -418,29 +439,13 @@
     height: 32rem;
     z-index: 1;
 }
-.QueueViewApp_gradientContainer_e3 .QueueViewApp_lipTop_39 {
-    width: 578rem;
-    height: 78rem;
-    position: absolute;
-    top: -30rem;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-.QueueViewApp_gradientContainer_e3 .QueueViewApp_lipBottom_bc {
-    width: 578rem;
-    height: 78rem;
-    position: absolute;
-    bottom: -30rem;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
 .QueueViewApp_queueFunctionalContainer_b9 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 550rem;
-    margin-top: 12rem;
+    margin-top: 60rem;
     margin-bottom: 25rem;
 }
 .QueueViewApp_queueFunctionalContainer_b9 .QueueViewApp_aligningTextsContainer_64 {
@@ -489,4 +494,20 @@
     height: 34rem;
     border: 1rem solid #f4e1b3;
     background-color: rgba(1, 3, 38, 0.22);
+}
+.QueueViewApp_divider_79 {
+    width: 565rem;
+    height: 6rem;
+    background: url('R.images.cosmic_event.gui.maps.icons.queueView.decoration') no-repeat center / contain;
+}
+@keyframes QueueViewApp_fadeInWithScale_ee {
+    0% {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
