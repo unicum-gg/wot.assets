@@ -1,49 +1,49 @@
-import { j as e, f as s, w as t } from '../../../chunks/vendor.js';
+import { j as e, f as s, v as t } from '../../../chunks/vendor.js';
 import {
     i as a,
     c as r,
-    s as i,
+    O as i,
     n as l,
-    aq as n,
-    d7 as c,
-    l as o,
-    P as m,
-    d8 as d,
-    f as u,
+    ag as n,
+    d2 as c,
+    T as o,
+    d3 as m,
+    d4 as d,
+    M as u,
     r as p,
-    F as _,
+    Y as _,
     o as h,
-    C as x,
-    y as g,
-    d as v,
-    I as j,
-    x as b,
-    cs as f,
-    J as N,
-    aV as y,
-    br as E,
-    d9 as P,
-    aA as C,
-    da as w,
-    ba as R,
-    a0 as T,
-    db as O,
-    ar as S,
-    dc as B,
-    dd as k,
-    cx as L,
-    de as I,
-    d6 as $,
-    $ as M,
-    bF as A,
-    a5 as G,
-    a6 as D,
-    a8 as V,
+    a1 as x,
+    a0 as g,
+    H as v,
+    X as j,
+    $ as b,
+    cq as f,
+    a5 as N,
+    b2 as y,
+    bH as E,
+    d5 as P,
+    aq as C,
+    d6 as w,
+    b6 as R,
+    ab as T,
+    aE as O,
+    ah as S,
+    d7 as B,
+    d8 as k,
+    cu as L,
+    d9 as I,
+    da as $,
+    aa as M,
+    b7 as G,
+    J as A,
+    E as D,
+    F as V,
 } from '../../../chunks/lib.js';
-import { d as F, u as z, e as H } from '../../../chunks/index.js';
+import { d as z, u as F, e as H } from '../../../chunks/index.js';
 import { T as X } from '../../../chunks/tankman_role.js';
 var W = ((e) => ((e.UNDEFINED = 'undefined'), (e.SILVER = 'silver'), (e.GOLD = 'gold'), e))(W || {});
-const [U, q] = a('VehicleTooltipModelProvider')(({ observableModel: e }) => {
+const [q, U] = a('VehicleTooltipModelProvider')(({ observableModel: e }) => {
         const s = {
                 ...e.primitives(['status', 'stateLevel', 'bpEntityValid']),
                 statistics: e.object('statistics'),
@@ -68,7 +68,7 @@ const [U, q] = a('VehicleTooltipModelProvider')(({ observableModel: e }) => {
                 () =>
                     s.earnings.get().bpActive &&
                     s.earnings.get().maxBpScore > 0 &&
-                    s.status.get() !== F.unsuitableToQueue,
+                    s.status.get() !== z.unsuitableToQueue,
             ),
             m = r.primitive(() => i(s.mechanics.get(), (e) => e.priority >= 1));
         return {
@@ -87,14 +87,14 @@ const [U, q] = a('VehicleTooltipModelProvider')(({ observableModel: e }) => {
     J = 'INACTIVE',
     K = 'ACTIVE',
     Q = 'CANCELLED',
-    Z = 'critical',
-    Y = 'info',
+    Y = 'critical',
+    Z = 'info',
     ee = { 1: 3, 2: 2, 3: 1, 4: 4 },
     se = (e) => {
         switch (e) {
-            case Z:
-                return '#f31201';
             case Y:
+                return '#f31201';
+            case Z:
                 return '#7ab300';
             default:
                 return '#ee7000';
@@ -179,7 +179,7 @@ const _e = 'BattlePassPoints_row__battlePassPoints_4e755749',
         });
     },
     Ee = t(function () {
-        const { model: s } = q(),
+        const { model: s } = U(),
             { maxBpScore: t, currentBpScore: a, bpReward: r } = s.earnings.get();
         return e.jsx(e.Fragment, {
             children:
@@ -206,8 +206,8 @@ const _e = 'BattlePassPoints_row__battlePassPoints_4e755749',
     Ie = 'Bonds_property__limit_e8d508c6',
     $e = 'Bonds_property__earningProgress_1dc4f208',
     Me = 'Bonds_text_dad80fb6',
-    Ae = t(function () {
-        const { model: t } = q(),
+    Ge = t(function () {
+        const { model: t } = U(),
             { crystalTimeout: a } = t.earnings.get(),
             r = t.computes.maxNumberOfCrystal() <= t.computes.currentNumberOfCrystal(),
             i = t.computes.currentNumberOfCrystal() <= 0,
@@ -250,7 +250,7 @@ const _e = 'BattlePassPoints_row__battlePassPoints_4e755749',
             ],
         });
     }),
-    Ge = {
+    Ae = {
         leftColumn: 'Earnings_leftColumn_940b9a0e',
         earnings: 'Earnings_96294922',
         row: 'Earnings_row_850c7c9b',
@@ -259,70 +259,70 @@ const _e = 'BattlePassPoints_row__battlePassPoints_4e755749',
         text: 'Earnings_text_a6c4a45b',
     },
     De = t(function () {
-        const { model: s } = q(),
+        const { model: s } = U(),
             { xp: t } = s.earnings.get(),
             a = p.resolve('strings');
         return e.jsxs(pe, {
-            className: Ge.row,
+            className: Ae.row,
             children: [
                 e.jsx('div', {
-                    className: Ge.leftColumn,
+                    className: Ae.leftColumn,
                     children: e.jsx(x, {
                         reverse: !0,
-                        classNames: { base: Ge.currency, icon: Ge.icon },
+                        classNames: { base: Ae.currency, icon: Ae.icon },
                         size: g.small,
                         type: s.computes.elite() ? b.eliteXp : b.tankXP,
                         children: e.jsx('div', { children: v.formatNumber('integral', t) }),
                     }),
                 }),
-                e.jsx('div', { className: Ge.text, children: a.readOrEmpty('tooltips.vehicle.xp') }),
+                e.jsx('div', { className: Ae.text, children: a.readOrEmpty('tooltips.vehicle.xp') }),
             ],
         });
     }),
     Ve = t(function () {
-        const { model: s } = q(),
+        const { model: s } = U(),
             { bonusMultiplier: t } = s.earnings.get(),
             a = p.resolve('strings'),
             r = h('hangar.carousel.cards.bonus', 'hangar.carousel.cards.bonus_upscale');
         return e.jsxs(pe, {
-            className: Ge.row,
+            className: Ae.row,
             children: [
                 e.jsx('div', {
-                    className: Ge.leftColumn,
+                    className: Ae.leftColumn,
                     children: e.jsxs(x, {
                         type: 'bonus',
                         size: g.small,
-                        classNames: { base: Ge.currency },
+                        classNames: { base: Ae.currency },
                         children: [
                             e.jsx('div', { children: a.readOrEmpty('common.multiplierSmall') }),
                             e.jsx('div', { children: v.formatNumber('integral', t) }),
-                            e.jsx(j, { path: r, className: Ge.icon, width: 24, height: 24 }),
+                            e.jsx(j, { path: r, className: Ae.icon, width: 24, height: 24 }),
                         ],
                     }),
                 }),
-                e.jsx('div', { className: Ge.text, children: a.readOrEmpty('tooltips.vehicle.dailyXPFactor') }),
+                e.jsx('div', { className: Ae.text, children: a.readOrEmpty('tooltips.vehicle.dailyXPFactor') }),
             ],
         });
     }),
-    Fe = u('Earnings', Ge.base),
-    ze = t(function ({ className: s }) {
+    ze = u('Earnings', Ae.base),
+    Fe = t(function ({ className: s }) {
         var t;
-        const a = null == (t = z()) ? void 0 : t.model,
+        const a = null == (t = F()) ? void 0 : t.model,
             r = !a || a.isCrystalEarnEnabled.get(),
             i = !a || a.isDailyMultipliedXpEnabled.get(),
-            { model: l } = q(),
+            { model: l } = U(),
             { crystalEarning: n } = l.earnings.get(),
             c = p.resolve('strings');
-        return e.jsxs(Fe, {
+        return e.jsxs(ze, {
             className: s,
             children: [
                 e.jsx('div', {
-                    className: Ge.earnings,
+                    className: Ae.earnings,
                     children: c.readOrEmpty('tooltips.tankCaruselTooltip.earnings.header'),
                 }),
                 i && l.computes.hasBonusMultiplier() && e.jsx(Ve, {}),
                 e.jsx(De, {}),
-                r && n && e.jsx(Ae, {}),
+                r && n && e.jsx(Ge, {}),
                 l.bpEntityValid.get() && l.computes.battlePoints() && e.jsx(Ee, {}),
             ],
         });
@@ -330,9 +330,9 @@ const _e = 'BattlePassPoints_row__battlePassPoints_4e755749',
     He = 'Crew_2339425e',
     Xe = 'Crew_79af07ed',
     We = 'Crew_icon_26258836',
-    Ue = 'Crew_sign_a456f030',
-    qe = t(function ({ className: t }) {
-        const { model: a } = q(),
+    qe = 'Crew_sign_a456f030',
+    Ue = t(function ({ className: t }) {
+        const { model: a } = U(),
             r = a.slots.get(),
             i = p.resolve('strings');
         return e.jsx(pe, {
@@ -347,7 +347,7 @@ const _e = 'BattlePassPoints_row__battlePassPoints_4e755749',
                         children: [
                             e.jsx(X, { role: y(s.roles, 0), className: We }),
                             s.roles.length > 1 &&
-                                e.jsx('div', { className: Ue, children: i.readOrEmpty('crew_perks.sign.plus') }),
+                                e.jsx('div', { className: qe, children: i.readOrEmpty('crew_perks.sign.plus') }),
                         ],
                     },
                     s.id,
@@ -358,7 +358,7 @@ const _e = 'BattlePassPoints_row__battlePassPoints_4e755749',
     Je = 'Rent_leftColumn_a909b981',
     Ke = 'Rent_rentValue_f91a4efd',
     Qe = 'Rent_text_94f0c0d7';
-function Ze({ rentPeriodLeft: s, rentType: t }) {
+function Ye({ rentPeriodLeft: s, rentType: t }) {
     const a = p.resolve('strings'),
         r = h('ui_kit.rental_counter.rent_x24x24', 'ui_kit.rental_counter.rent_x48x48');
     return e.jsxs(pe, {
@@ -374,26 +374,26 @@ function Ze({ rentPeriodLeft: s, rentType: t }) {
         ],
     });
 }
-const Ye = t(function () {
-        const { model: s } = q(),
+const Ze = t(function () {
+        const { model: s } = U(),
             { rentLeftTime: t, rentLeftBattles: a, rentLeftWins: r } = s.statistics.get(),
             i = (function (e) {
                 const s = o(e);
                 return c(s, m(1)) ? d(s, oe) : d(s, me);
             })(t);
         return t > 0
-            ? e.jsx(Ze, { rentPeriodLeft: i.value, rentType: i.unit })
+            ? e.jsx(Ye, { rentPeriodLeft: i.value, rentType: i.unit })
             : a > 0
-              ? e.jsx(Ze, { rentPeriodLeft: a, rentType: ne })
+              ? e.jsx(Ye, { rentPeriodLeft: a, rentType: ne })
               : r > 0
-                ? e.jsx(Ze, { rentPeriodLeft: r, rentType: ce })
+                ? e.jsx(Ye, { rentPeriodLeft: r, rentType: ce })
                 : null;
     }),
     es = 'Role_c276c189',
     ss = 'Role_vehicleRoleIcon_a0c92760',
     ts = 'Role_property_8f6d69d9',
     as = t(function ({ className: t }) {
-        const { model: a } = q(),
+        const { model: a } = U(),
             { type: r, role: i } = a.statistics.get(),
             l = p.resolve('strings');
         return e.jsxs(pe, {
@@ -431,7 +431,7 @@ const Ye = t(function () {
     os = 'WotPlus_wotPlus_c07472c2',
     ms = 'WotPlus_wotPlus__timer_fb00f649',
     ds = t(function ({ className: t }) {
-        const { model: a } = q(),
+        const { model: a } = U(),
             { wotPlusExpiryTime: r, wotPlusState: i } = a.earnings.get(),
             l = p.resolve('strings');
         return e.jsxs(e.Fragment, {
@@ -475,7 +475,7 @@ const Ye = t(function () {
     xs = 'Header_row_d4a891e5',
     gs = u('Header'),
     vs = t(function ({ className: s }) {
-        const { model: t } = q(),
+        const { model: t } = U(),
             { wotPlus: a, telecomRent: r, tradeIn: i } = t.earnings.get(),
             { name: l, role: n, type: c, elite: o, level: m } = t.statistics.get(),
             d = C(n);
@@ -493,11 +493,11 @@ const Ye = t(function () {
                     }),
                 }),
                 d !== O && d !== S.spg && e.jsx(as, { className: xs }),
-                e.jsx(qe, { className: xs }),
+                e.jsx(Ue, { className: xs }),
                 a && e.jsx(ds, { className: xs }),
                 r && e.jsx(is, { className: xs }),
                 i && e.jsx(cs, {}),
-                e.jsx(Ye, {}),
+                e.jsx(Ze, {}),
             ],
         });
     }),
@@ -513,7 +513,7 @@ const Ye = t(function () {
     Rs = 'EliteSystem_progressBarBorder_45636892',
     Ts = t(function ({ className: t }) {
         const a = p.resolve('strings'),
-            { model: r } = q(),
+            { model: r } = U(),
             {
                 prestigeLevel: i,
                 prestigeGrade: l,
@@ -568,7 +568,7 @@ const Ye = t(function () {
         text: 'ServiceRecords_text_e426fb24',
     },
     Ss = t(function () {
-        const { model: s } = q(),
+        const { model: s } = U(),
             { marksOnGunPercentage: t, marksOnGun: a } = s.serviceRecords.get(),
             r = p.resolve('strings');
         return e.jsxs(pe, {
@@ -589,7 +589,7 @@ const Ye = t(function () {
         });
     }),
     Bs = t(function () {
-        const { model: s } = q(),
+        const { model: s } = U(),
             { marksOfMastery: t } = s.serviceRecords.get(),
             a = h(`tooltip.proficiency.class_icons_${ee[t]}`, `tooltip.proficiency.class_icons_${ee[t]}_upscale`);
         return e.jsxs(pe, {
@@ -615,7 +615,7 @@ function ks({ rate: s }) {
 }
 const Ls = u('ServiceRecords', Os.base),
     Is = t(function ({ className: s }) {
-        const { model: t } = q(),
+        const { model: t } = U(),
             {
                 prestigeType: a,
                 marksOfMastery: r,
@@ -648,8 +648,8 @@ const Ls = u('ServiceRecords', Os.base),
         text: 'SpecialAbility_text_f255c0f5',
     },
     Ms = u('SpecialAbility', $s.base),
-    As = t(function ({ className: s }) {
-        const { model: t } = q(),
+    Gs = t(function ({ className: s }) {
+        const { model: t } = U(),
             a = t.mechanics.get(),
             r = p.resolve('strings');
         return e.jsxs(Ms, {
@@ -698,41 +698,41 @@ const Ls = u('ServiceRecords', Os.base),
             ],
         });
     }),
-    Gs = 'Tooltip_decorator_9aef02ef',
+    As = 'Tooltip_decorator_9aef02ef',
     Ds = 'Tooltip_fdfde46e',
     Vs = 'Tooltip_base__elite_ae2bf179',
-    Fs = 'Tooltip_vehicleType_b877a704',
-    zs = 'Tooltip_vehicleType__elite_bb248964',
+    zs = 'Tooltip_vehicleType_b877a704',
+    Fs = 'Tooltip_vehicleType__elite_bb248964',
     Hs = 'Tooltip_section_b726d2f2',
     Xs = 'Tooltip_section__header_c649b074',
     Ws = 'Tooltip_section__earnings_e52798af',
-    Us = 'Tooltip_status_29b423b3',
-    qs = t(function ({ className: t }) {
-        const { model: a } = q(),
+    qs = 'Tooltip_status_29b423b3',
+    Us = t(function ({ className: t }) {
+        const { model: a } = U(),
             { type: r } = a.statistics.get();
         return e.jsx($, {
             className: t,
             children: e.jsxs($.Decorator, {
-                className: Gs,
+                className: As,
                 children: [
                     te(r) &&
                         e.jsx(M, {
                             type: r,
                             premium: a.computes.elite(),
-                            size: A.x64x64,
-                            className: s(Fs, a.computes.elite() && zs),
+                            size: G.x64x64,
+                            className: s(zs, a.computes.elite() && Fs),
                         }),
                     e.jsxs('div', {
                         className: s(Ds, a.computes.elite() && Vs),
                         children: [
                             e.jsx(vs, { className: s(Hs, Xs) }),
-                            a.computes.hasSpecialMechanics() && e.jsx(As, { className: Hs }),
-                            e.jsx(ze, { className: s(Hs, Ws) }),
+                            a.computes.hasSpecialMechanics() && e.jsx(Gs, { className: Hs }),
+                            e.jsx(Fe, { className: s(Hs, Ws) }),
                             a.computes.serviceRecords() && e.jsx(Is, { className: Hs }),
                             e.jsx(_, {
                                 upgradeLegacy: !0,
                                 style: { color: se(a.stateLevel.get()) },
-                                className: Us,
+                                className: qs,
                                 path: `tooltips.vehicleStatus.${a.status.get()}.header`,
                                 params: {
                                     icon: e.jsx(j, { path: 'library.premium_igr_small', width: 26, height: 16 }),
@@ -747,12 +747,12 @@ const Ls = u('ServiceRecords', Os.base),
     Js = p.resolve('aliases');
 var Ks;
 V(
-    new G()
-        .add(U)
+    new A()
+        .add(q)
         .add(D)
         .addWithProps(
             H,
             ((Ks = (e) => e.common.shared.DynamicEconomics('resId')), { options: { rootId: Js.read(Ks) } }),
         )
-        .render(e.jsx(qs, {})),
+        .render(e.jsx(Us, {})),
 );

@@ -1,5 +1,5 @@
 import { k as e, j as s, m as t } from '../../../../chunks/vendor.js';
-import { i as o, c as a, A as c, F as i, r, E as l } from '../../../../chunks/lib.js';
+import { i as o, c as a, A as c, a as i, r, E as l } from '../../../../chunks/lib.js';
 import { l as n } from '../../../../chunks/getRewardImage.js';
 import { a as d, g as p } from '../../../../chunks/resources.js';
 const x = {

@@ -2,41 +2,42 @@
     var __webpack_modules__ = {
             3457: (e, u, t) => {
                 'use strict';
-                t.d(u, { L$: () => l.L, qE: () => l.q, u5: () => c });
+                t.d(u, { L$: () => c.L, qE: () => c.q, u5: () => m });
                 var n = t(6483),
                     a = t.n(n),
-                    r = t(7727),
-                    i = t(7363),
-                    o = t.n(i),
-                    s = t(6880),
-                    l = t(2106);
-                const c = ({
+                    r = t(1641),
+                    i = t(7727),
+                    o = t(7363),
+                    s = t.n(o),
+                    l = t(6880),
+                    c = t(2106);
+                const m = ({
                     children: e,
                     size: u,
                     disabled: t,
                     mixClass: n,
-                    onMouseEnter: c,
-                    onMouseMove: m,
-                    onMouseDown: _,
-                    onMouseUp: d,
-                    onMouseLeave: E,
-                    onClick: g,
-                    isFocused: p = !1,
-                    type: A = l.L.primary,
-                    soundHover: F = 'highlight',
-                    soundClick: D = 'play',
+                    onMouseEnter: m,
+                    onMouseMove: _,
+                    onMouseDown: d,
+                    onMouseUp: E,
+                    onMouseLeave: g,
+                    onClick: p,
+                    isFocused: A = !1,
+                    type: F = c.L.primary,
+                    soundHover: D = 'highlight',
+                    soundClick: h = 'play',
                 }) => {
-                    const h = (0, i.useRef)(null),
-                        C = (0, i.useState)(p),
-                        b = C[0],
-                        B = C[1],
-                        v = (0, i.useState)(!1),
-                        f = v[0],
-                        y = v[1];
+                    const C = (0, o.useRef)(null),
+                        b = (0, o.useState)(A),
+                        B = b[0],
+                        v = b[1],
+                        f = (0, o.useState)(!1),
+                        y = f[0],
+                        w = f[1];
                     return (
-                        (0, i.useEffect)(() => {
+                        (0, o.useEffect)(() => {
                             function e(e) {
-                                b && null !== h.current && !h.current.contains(e.target) && B(!1);
+                                B && null !== C.current && !C.current.contains(e.target) && v(!1);
                             }
                             return (
                                 document.addEventListener('mousedown', e),
@@ -44,63 +45,64 @@
                                     document.removeEventListener('mousedown', e);
                                 }
                             );
-                        }, [b]),
-                        (0, i.useEffect)(() => {
-                            B(p);
-                        }, [p]),
-                        o().createElement(
+                        }, [B]),
+                        (0, o.useEffect)(() => {
+                            v(A);
+                        }, [A]),
+                        s().createElement(
                             'div',
                             {
-                                ref: h,
+                                ref: C,
                                 className: a()(
-                                    s.Z.base,
-                                    s.Z[`base__${A}`],
-                                    t && s.Z.base__disabled,
-                                    u && s.Z[`base__${u}`],
-                                    b && s.Z.base__focus,
-                                    f && s.Z.base__highlightActive,
+                                    l.Z.base,
+                                    l.Z[`base__${F}`],
+                                    t && l.Z.base__disabled,
+                                    u && l.Z[`base__${u}`],
+                                    B && l.Z.base__focus,
+                                    y && l.Z.base__highlightActive,
                                     n,
                                 ),
                                 onMouseEnter: function (e) {
-                                    t || (null !== F && (0, r.G)(F), c && c(e));
+                                    t || (null !== D && (0, i.G)(D), m && m(e));
                                 },
                                 onMouseMove: function (e) {
-                                    m && m(e);
+                                    _ && _(e);
                                 },
                                 onMouseUp: function (e) {
-                                    t || (d && d(e), y(!1));
+                                    t || (E && E(e), w(!1));
                                 },
                                 onMouseDown: function (e) {
-                                    t ||
-                                        (null !== D && (0, r.G)(D),
-                                        _ && _(e),
-                                        p && (t || (h.current && (h.current.focus(), B(!0)))),
-                                        y(!0));
+                                    if (t) return;
+                                    const u = e.button === r.t.LEFT;
+                                    (null !== h && u && (0, i.G)(h),
+                                        d && d(e),
+                                        A && (t || (C.current && (C.current.focus(), v(!0)))),
+                                        u && w(!0));
                                 },
                                 onMouseLeave: function (e) {
-                                    t || (E && E(e), y(!1));
+                                    t || (g && g(e), w(!1));
                                 },
                                 onClick: function (e) {
-                                    t || (g && g(e));
+                                    t || (p && p(e));
                                 },
                             },
-                            A !== l.L.ghost &&
-                                o().createElement(
-                                    o().Fragment,
+                            F !== c.L.ghost &&
+                                s().createElement(
+                                    s().Fragment,
                                     null,
-                                    o().createElement('div', { className: s.Z.back }),
-                                    o().createElement('span', { className: s.Z.texture }),
+                                    s().createElement('div', { className: l.Z.back }),
+                                    s().createElement('span', { className: l.Z.texture }),
                                 ),
-                            o().createElement(
+                            s().createElement(
                                 'span',
-                                { className: a()(s.Z.state, s.Z.state__default) },
-                                o().createElement('span', { className: s.Z.stateDisabled }),
-                                o().createElement('span', { className: s.Z.stateHighlightHover }),
-                                o().createElement('span', { className: s.Z.stateHighlightActive }),
+                                { className: a()(l.Z.state, l.Z.state__default) },
+                                s().createElement('span', { className: l.Z.stateDisabled }),
+                                s().createElement('span', { className: l.Z.stateHighlightHover }),
+                                s().createElement('span', { className: l.Z.stateHighlightActive }),
                             ),
-                            o().createElement(
+                            s().createElement(
                                 'span',
-                                { className: s.Z.content, lang: R.strings.settings.LANGUAGE_CODE() },
+                                { className: l.Z.content, lang: R.strings.settings.LANGUAGE_CODE() },
                                 e,
                             ),
                         )
@@ -193,12 +195,12 @@
                         y = e.onMouseLeave,
                         w = e.onMouseUp,
                         x = e.onMouseDown,
-                        k = e.onClick,
-                        S = e.onChange,
+                        S = e.onClick,
+                        k = e.onChange,
                         P = e.onFocus,
                         T = e.onBlur,
-                        N = e.text,
-                        I = e.contentStyles,
+                        I = e.text,
+                        N = e.contentStyles,
                         R = e.children,
                         M = e.alignment,
                         O = (function (e, u) {
@@ -213,15 +215,15 @@
                     const L = (0, n.useState)(!1),
                         $ = L[0],
                         W = L[1],
-                        H = (0, n.useState)(!1),
-                        U = (H[0], H[1]),
-                        V = (0, n.useCallback)(
+                        j = (0, n.useState)(!1),
+                        H = (j[0], j[1]),
+                        U = (0, n.useCallback)(
                             (e) => {
-                                E || (S && S(), k && k(e));
+                                E || (k && k(), S && S(e));
                             },
-                            [E, S, k],
+                            [E, k, S],
                         ),
-                        j = (0, n.useCallback)(
+                        V = (0, n.useCallback)(
                             (e) => {
                                 const u = e.button === s.t.LEFT;
                                 E || (u && W(!0), u && x && x(e), v && (0, o.G)(v));
@@ -248,13 +250,13 @@
                         ),
                         G = (0, n.useCallback)(
                             (e) => {
-                                E || (U(!0), P && P(e));
+                                E || (H(!0), P && P(e));
                             },
                             [E, P],
                         ),
                         K = (0, n.useCallback)(
                             (e) => {
-                                E || (U(!1), T && T(e));
+                                E || (H(!1), T && T(e));
                             },
                             [E, T],
                         ),
@@ -263,8 +265,8 @@
                             { className: c.Z.label },
                             a().createElement(
                                 'div',
-                                { className: i()(c.Z.labelContent, 's-labelContent'), style: I },
-                                N || R,
+                                { className: i()(c.Z.labelContent, 's-labelContent'), style: N },
+                                I || R,
                             ),
                         );
                     return a().createElement(
@@ -280,10 +282,10 @@
                                     [c.Z.base__center]: M === l.N3.Center,
                                     [c.Z.base__bottom]: M === l.N3.Bottom,
                                 }),
-                                onClick: V,
+                                onClick: U,
                                 onMouseEnter: z,
                                 onMouseLeave: q,
-                                onMouseDown: j,
+                                onMouseDown: V,
                                 onMouseUp: Z,
                                 onFocus: G,
                                 onBlur: K,
@@ -298,7 +300,7 @@
                             a().createElement('div', { className: c.Z.highlight }),
                         ),
                         a().createElement('div', { className: c.Z.checkmark }),
-                        ((N || R) && X) || null,
+                        ((I || R) && X) || null,
                     );
                 };
             },
@@ -789,7 +791,7 @@
                                     B && B(),
                                     (y.current.isVisible = !0));
                             }, [t, F, a, w, B]),
-                            k = (0, r.useCallback)(() => {
+                            S = (0, r.useCallback)(() => {
                                 if (y.current.isVisible || y.current.timeoutId) {
                                     const e = y.current.timeoutId;
                                     (e > 0 && (clearTimeout(e), (y.current.timeoutId = 0)),
@@ -798,35 +800,35 @@
                                         (y.current.isVisible = !1));
                                 }
                             }, [t, F, w, v]),
-                            S = (0, r.useCallback)((e) => {
+                            k = (0, r.useCallback)((e) => {
                                 y.current.isVisible &&
                                     ((y.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
                                     (y.current.hideTimerId = window.setTimeout(() => {
                                         const u = document.elementFromPoint(e.clientX, e.clientY);
-                                        u && !u.isSameNode(y.current.prevTarget) && k();
+                                        u && !u.isSameNode(y.current.prevTarget) && S();
                                     }, 200)));
                             }, []);
                         ((0, r.useEffect)(() => {
                             const e = y.current.hideTimerId;
                             return (
-                                document.addEventListener('wheel', S, { capture: !0 }),
+                                document.addEventListener('wheel', k, { capture: !0 }),
                                 () => {
-                                    (document.removeEventListener('wheel', S, { capture: !0 }),
+                                    (document.removeEventListener('wheel', k, { capture: !0 }),
                                         e && window.clearTimeout(e));
                                 }
                             );
                         }, []),
                             (0, r.useEffect)(() => {
-                                !1 === h && k();
-                            }, [h, k]),
+                                !1 === h && S();
+                            }, [h, S]),
                             (0, r.useEffect)(
                                 () => (
-                                    window.addEventListener('mouseleave', k),
+                                    window.addEventListener('mouseleave', S),
                                     () => {
-                                        (window.removeEventListener('mouseleave', k), k());
+                                        (window.removeEventListener('mouseleave', S), S());
                                     }
                                 ),
-                                [k],
+                                [S],
                             ));
                         return h
                             ? (0, r.cloneElement)(
@@ -844,13 +846,13 @@
                                                       P && P(e));
                                               }),
                                           onMouseLeave: ((e) => (u) => {
-                                              (k(), null == c || c(u), null == e || e(u));
+                                              (S(), null == c || c(u), null == e || e(u));
                                           })(u.props.onMouseLeave),
                                           onClick: ((e) => (u) => {
-                                              (!1 === p && k(), null == _ || _(u), null == e || e(u));
+                                              (!1 === p && S(), null == _ || _(u), null == e || e(u));
                                           })(u.props.onClick),
                                           onMouseDown: ((e) => (u) => {
-                                              (!1 === p && k(), null == m || m(u), null == e || e(u));
+                                              (!1 === p && S(), null == m || m(u), null == e || e(u));
                                           })(u.props.onMouseDown),
                                       },
                                       f,
@@ -1297,10 +1299,10 @@
                         arabic2roman: () => w,
                         children: () => a,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => k,
+                        displayStatusIs: () => S,
                         enableFullScreenModeSupported: () => T,
                         events: () => i.U,
-                        extraSize: () => S,
+                        extraSize: () => k,
                         forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => c,
@@ -1310,7 +1312,7 @@
                         getScale: () => A,
                         getSize: () => d,
                         getViewGlobalPosition: () => g,
-                        initExternalPaddings: () => N,
+                        initExternalPaddings: () => I,
                         isEventHandled: () => B,
                         isFocused: () => C,
                         pxToRem: () => F,
@@ -1391,11 +1393,11 @@
                 function x() {
                     return viewEnv.getExternalPaddingsRem();
                 }
-                const k = Object.keys(r.W).reduce(
+                const S = Object.keys(r.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === r.W[u]), e),
                         {},
                     ),
-                    S = {
+                    k = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -1412,7 +1414,7 @@
                 function T() {
                     viewEnv.setFullscreenModeSupported(!0);
                 }
-                function N(e) {
+                function I(e) {
                     function u() {
                         const u = viewEnv.getExternalPaddingsRem(),
                             t = u.top,
@@ -2018,7 +2020,7 @@
                 t.d(u, { Ew: () => r, Z5: () => n, cy: () => a });
                 const n = {
                         getNumberFormat: (e, u) => systemLocale.getNumberFormat(e, u),
-                        getRealFormat: (e, u) => systemLocale.getRealFormat(e, u),
+                        getRealFormat: (e, u, t = 2) => systemLocale.getRealFormat(e, u, t),
                         getTimeFormat: (e, u) => systemLocale.getTimeFormat(e, u),
                         getDateFormat: (e, u) => systemLocale.getDateFormat(e, u),
                         toUpperCase: (e) => systemLocale.toUpperCase(e),
@@ -2136,20 +2138,20 @@
                             ignoreDiscount: y = !0,
                             discountTooltipEnabled: w = !1,
                             plusIconShown: x = !0,
-                            totalPriceClassName: k,
+                            totalPriceClassName: S,
                         }) => {
-                            const S = (0, p.t)(),
-                                P = S.model,
+                            const k = (0, p.t)(),
+                                P = k.model,
                                 T = (0, s.useRef)(null),
-                                N = t === c.cJ.Tiny || t === c.cJ.Small,
-                                I = P.totalItemsInstalled.get(),
+                                I = t === c.cJ.Tiny || t === c.cJ.Small,
+                                N = P.totalItemsInstalled.get(),
                                 R = Boolean(P.totalItemsInStorage.get()),
                                 M = Boolean(P.demountKitsCount.get()),
                                 O = i.G(P.price.get(), (e) => e.value > 0) || M,
-                                L = N && R && O && x;
+                                L = I && R && O && x;
                             return l().createElement(
                                 E.h.Provider,
-                                { value: S },
+                                { value: k },
                                 l().createElement(
                                     'div',
                                     {
@@ -2172,14 +2174,14 @@
                                         l().createElement(
                                             l().Fragment,
                                             null,
-                                            Boolean(I) &&
+                                            Boolean(N) &&
                                                 l().createElement(
                                                     r.i,
-                                                    { body: C.tooltip.fromVehicle(), isEnabled: N },
+                                                    { body: C.tooltip.fromVehicle(), isEnabled: I },
                                                     l().createElement(
                                                         'div',
                                                         { className: a()(F.Z.storage, t && F.Z[`storage__${t}`]) },
-                                                        !N &&
+                                                        !I &&
                                                             l().createElement(
                                                                 'div',
                                                                 { className: F.Z.from },
@@ -2187,7 +2189,7 @@
                                                             ),
                                                         l().createElement(m.Y, {
                                                             location: 'vehicle',
-                                                            count: I,
+                                                            count: N,
                                                             countFirst: !0,
                                                         }),
                                                     ),
@@ -2195,11 +2197,11 @@
                                             R &&
                                                 l().createElement(
                                                     r.i,
-                                                    { body: C.tooltip.fromStorage(), isEnabled: N },
+                                                    { body: C.tooltip.fromStorage(), isEnabled: I },
                                                     l().createElement(
                                                         'div',
                                                         { className: a()(F.Z.storage, t && F.Z[`storage__${t}`]) },
-                                                        !N &&
+                                                        !I &&
                                                             l().createElement(
                                                                 'div',
                                                                 { className: F.Z.from },
@@ -2216,11 +2218,11 @@
                                             O &&
                                                 l().createElement(
                                                     'div',
-                                                    { className: a()(F.Z.totalPrice, L && F.Z.totalPrice__mixed, k) },
+                                                    { className: a()(F.Z.totalPrice, L && F.Z.totalPrice__mixed, S) },
                                                     l().createElement(A.M, {
                                                         parentId: 'deal-panel',
                                                         priceLabel: o,
-                                                        messageHidden: N && n === h.Row,
+                                                        messageHidden: I && n === h.Row,
                                                         ignoreDiscount: y,
                                                         discountTooltipEnabled: w,
                                                         priceSeparator: f,
@@ -2805,7 +2807,7 @@
                         }
                     },
                     x = (e, u, t = B.left) => e.split(u).reduce(t === B.left ? y : w, []),
-                    k = (() => {
+                    S = (() => {
                         const e = new RegExp(
                             [
                                 /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
@@ -2823,10 +2825,10 @@
                                 .replace(/ /g, ' ')
                                 .match(e);
                     })(),
-                    S = ['zh_cn', 'zh_sg', 'zh_tw'],
+                    k = ['zh_cn', 'zh_sg', 'zh_tw'],
                     P = (e, u = B.left) => {
                         const t = R.strings.settings.LANGUAGE_CODE().toLowerCase();
-                        if (S.includes(t)) return k(e);
+                        if (k.includes(t)) return S(e);
                         if ('ja' === t) {
                             return (0, b.D4)()
                                 .parse(e)
@@ -2841,9 +2843,9 @@
                         })(e, u);
                     };
                 var T = t(9916),
-                    N = t(8613);
-                (Date.now(), N.Ew.getRegionalDateTime, N.Ew.getFormattedDateTime);
-                const I = (e, u) => {
+                    I = t(8613);
+                (Date.now(), I.Ew.getRegionalDateTime, I.Ew.getFormattedDateTime);
+                const N = (e, u) => {
                     const t = (0, n.useRef)();
                     return (
                         (0, n.useEffect)(() => {
@@ -2860,13 +2862,13 @@
                     },
                     $ = (e) => e && 'ArrayItem' === e.__proto__.constructor.name,
                     W = (e, u) => (e.length > 0 ? `${e}.${u}` : u),
-                    H = (e) =>
+                    j = (e) =>
                         ((e, u) =>
                             e.split('.').reduce((e, t) => {
                                 const n = O(`${e}.${t}`, window);
                                 return $(n) ? u(e, t, n) : `${e}.${t}`;
                             }))(e, (e, u) => `${e}.${u}.value`),
-                    U = (e) => {
+                    H = (e) => {
                         const u = ((e) => {
                                 const u = (0, M.F)(),
                                     t = u.caller,
@@ -2888,8 +2890,8 @@
                         }
                         return '';
                     };
-                const V = () => (window.injected || (window.injected = new Map()), window.injected);
-                const j = T.Sw.instance;
+                const U = () => (window.injected || (window.injected = new Map()), window.injected);
+                const V = T.Sw.instance;
                 let Z;
                 !(function (e) {
                     ((e.None = 'None'), (e.Shallow = 'Shallow'), (e.Deep = 'Deep'));
@@ -2903,7 +2905,7 @@
                             s = r.resId,
                             l = (0, n.useMemo)(() => {
                                 const u = (function (e) {
-                                    return V().has(e);
+                                    return U().has(e);
                                 })(i.replace('.js', '.html'));
                                 return window.__feature && window.__feature !== o && !u ? `subViews.${o}.${e}` : e;
                             }, [i, o, e]),
@@ -2912,7 +2914,7 @@
                                     const u = O(e, window);
                                     for (const e in u) 'function' == typeof u[e] && (u[e] = u[e].bind(u));
                                     return $(u) ? u.value : u;
-                                })(H(l)),
+                                })(j(l)),
                             ),
                             m = c[0],
                             _ = c[1],
@@ -2933,20 +2935,20 @@
                                                 ? (e === m && a((e) => e + 1), _(e))
                                                 : _(Object.assign([], e));
                                         },
-                                        n = U(e);
-                                    d.current = j.addCallback(n, t, s, u === Z.Deep);
+                                        n = H(e);
+                                    d.current = V.addCallback(n, t, s, u === Z.Deep);
                                 }
                             }),
                             (0, n.useEffect)(() => {
                                 if (u !== Z.None)
                                     return () => {
-                                        j.removeCallback(d.current, s);
+                                        V.removeCallback(d.current, s);
                                     };
                             }, [s, u]),
                             m
                         );
                     },
-                    q = (T.Sw.instance, I);
+                    q = (T.Sw.instance, N);
                 var G = t(329),
                     K = t(2056),
                     X = t(2372);
@@ -3049,10 +3051,10 @@
                         y = F.onCancelClicked,
                         w = F.onExit,
                         x = F.isWalletAvailable,
-                        k = (0, n.useCallback)(() => {
+                        S = (0, n.useCallback)(() => {
                             f();
                         }, [f]),
-                        S = (0, n.useCallback)(() => {
+                        k = (0, n.useCallback)(() => {
                             y();
                         }, [y]),
                         P = (0, n.useCallback)(() => {
@@ -3069,9 +3071,9 @@
                                     e.altKey ||
                                     window.model.isAcceptDisabled ||
                                     i.disabled ||
-                                    k());
+                                    S());
                         },
-                        [i.disabled, k],
+                        [i.disabled, S],
                     );
                     (0, n.useEffect)(
                         () => (
@@ -3080,8 +3082,8 @@
                         ),
                         [T],
                     );
-                    const N = g()(se, le),
-                        I =
+                    const I = g()(se, le),
+                        N =
                             E &&
                             'simple' === r &&
                             a().createElement(
@@ -3104,7 +3106,7 @@
                                 a().createElement(
                                     'div',
                                     { id: `${e}-accept`, className: _e },
-                                    a().createElement(p.u5, Ee({ onClick: k, mixClass: de }, i), o),
+                                    a().createElement(p.u5, Ee({ onClick: S, mixClass: de }, i), o),
                                 ),
                             ),
                         O =
@@ -3112,7 +3114,7 @@
                             a().createElement(
                                 'div',
                                 { id: `${e}-cancel`, className: _e },
-                                a().createElement(p.u5, Ee({ onClick: S, mixClass: de }, s), c),
+                                a().createElement(p.u5, Ee({ onClick: k, mixClass: de }, s), c),
                             );
                     return a().createElement(
                         'div',
@@ -3120,7 +3122,7 @@
                         a().createElement(
                             'div',
                             { className: ne },
-                            I,
+                            N,
                             a().createElement(
                                 'div',
                                 { id: `${e}-close-button`, className: ae },
@@ -3136,7 +3138,7 @@
                             'div',
                             { className: g()(re, ie) },
                             a().createElement('div', { className: oe }, u),
-                            a().createElement('div', { className: N }),
+                            a().createElement('div', { className: I }),
                             t && a().createElement('div', { className: ce }, t),
                             a().createElement('div', { className: me }, M, O),
                             a().createElement('div', { id: 'dialog-template-footer' }),
@@ -3216,8 +3218,8 @@
                         });
                     }, ve.ZT),
                     xe = we[0],
-                    ke = we[1],
-                    Se = (e, u) => {
+                    Se = we[1],
+                    ke = (e, u) => {
                         const t = [];
                         for (let n = 0; n < e; n++) t.push(u(n));
                         return t;
@@ -3250,7 +3252,7 @@
                         image: 'Item_image_8d',
                         image__postProgression: 'Item_image__postProgression_ca',
                     },
-                    Ne = (0, d.Pi)(({ index: e, itemsType: u }) => {
+                    Ie = (0, d.Pi)(({ index: e, itemsType: u }) => {
                         const t = be().model;
                         if (!('computes' in t)) return null;
                         const n = t.computes.confirmedItem(e);
@@ -3280,15 +3282,15 @@
                             a().createElement('div', { className: g()(Te.overlay, Te[`overlay__${s}`]) }),
                         );
                     }),
-                    Ie = 'Items_base_b1',
+                    Ne = 'Items_base_b1',
                     Re = (0, d.Pi)(({ itemsType: e }) => {
                         const u = be().model;
                         return 'computes' in u
                             ? a().createElement(
                                   'div',
-                                  { className: Ie },
-                                  Se(u.computes.confirmedItemsLength(), (u) =>
-                                      a().createElement(Ne, { key: u, index: u, itemsType: e }),
+                                  { className: Ne },
+                                  ke(u.computes.confirmedItemsLength(), (u) =>
+                                      a().createElement(Ie, { key: u, index: u, itemsType: e }),
                                   ),
                               )
                             : null;
@@ -3342,9 +3344,9 @@
                         parNoWidth: 'FormatTextWithColorTags_parNoWidth_5a',
                     },
                     We = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
-                    He = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
-                    Ue = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
-                    Ve = (0, n.memo)(({ text: e, binding: u, classMix: t }) => {
+                    je = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
+                    He = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
+                    Ue = (0, n.memo)(({ text: e, binding: u, classMix: t }) => {
                         const r = (0, n.useCallback)((e) => ({ color: `#${e}` }), []),
                             i = (0, n.useMemo)(() => u || {}, [u]);
                         let o = We.exec(e),
@@ -3352,8 +3354,8 @@
                             l = 0;
                         for (; o; ) {
                             const t = o[0],
-                                n = He.exec(t),
-                                c = Ue.exec(t),
+                                n = je.exec(t),
+                                c = He.exec(t),
                                 m = o[1];
                             if (n && c) {
                                 const e = n[0],
@@ -3375,7 +3377,7 @@
                         }
                         return a().createElement(Le, { text: s, classMix: t, binding: i });
                     }),
-                    je = 'Names_base_96',
+                    Ve = 'Names_base_96',
                     Ze = (0, d.Pi)(() => {
                         const e = be().model;
                         if (!('computes' in e)) return null;
@@ -3384,8 +3386,8 @@
                             ? null
                             : a().createElement(
                                   'div',
-                                  { className: je },
-                                  Se(u, (t) => {
+                                  { className: Ve },
+                                  ke(u, (t) => {
                                       const r = u - 2,
                                           i = e.computes.confirmedItem(t);
                                       if (!i) return null;
@@ -3435,7 +3437,7 @@
                     eu = 'Description_warningIcon_98',
                     uu = R.strings.tank_setup.dialogs.confirm,
                     tu = (0, d.Pi)(() => {
-                        const e = ke().model,
+                        const e = Se().model,
                             u = e.lacksItem.get(),
                             t = e.computes.lacksItemsLength(),
                             r = e.mainContent.get(),
@@ -3456,7 +3458,7 @@
                             { className: Xe },
                             a().createElement(Ze, null),
                             c &&
-                                a().createElement(Ve, {
+                                a().createElement(Ue, {
                                     text: String(uu.demount.$dyn(g)),
                                     binding:
                                         c && _
@@ -3515,7 +3517,7 @@
                     su = 'DialogContent_vehicleIcon_e8',
                     lu = R.strings.common.common,
                     cu = (0, d.Pi)(({ name: e, title: u, items: t, description: n }) => {
-                        const r = ke().model.root.get().vehicleType,
+                        const r = Se().model.root.get().vehicleType,
                             i = r && r.replace(/-/g, '_');
                         return a().createElement(
                             'div',
@@ -3563,7 +3565,7 @@
                     gu = R.strings.tank_setup.dialogs.confirm,
                     pu = (0, d.Pi)(({ isPaymentDeal: e, actionType: u }) => {
                         var t;
-                        const n = ke().model,
+                        const n = Se().model,
                             r = n.computes.confirmedItemsLength() > 1,
                             i = n.mainContent.get().itemsType,
                             o = n.root.get(),
@@ -3629,7 +3631,7 @@
                     yu = 'ExchangeRate_baseHidden_12',
                     wu = { contentId: R.views.lobby.personal_exchange_rates.tooltips.ExchangeRateTooltip('resId') },
                     xu = { contentId: R.views.lobby.personal_exchange_rates.tooltips.ExchangeLimitTooltip('resId') },
-                    ku = ({
+                    Su = ({
                         fromItem: e,
                         toItem: u,
                         defaultRate: t,
@@ -3671,24 +3673,24 @@
                             ),
                         );
                     },
-                    Su = 'EasyTankEquipHeader_base_ee',
+                    ku = 'EasyTankEquipHeader_base_ee',
                     Pu = 'EasyTankEquipHeader_highlight_8c',
                     Tu = 'EasyTankEquipHeader_highlight__warning_1b',
-                    Nu = ({ bottomContentType: e }) =>
+                    Iu = ({ bottomContentType: e }) =>
                         a().createElement(
                             'div',
-                            { className: Su },
+                            { className: ku },
                             a().createElement('div', { className: g()(Pu, e === s && Tu) }),
                         ),
-                    Iu = (0, Be.q3)()(
+                    Nu = (0, Be.q3)()(
                         ({ observableModel: e }) => ({
                             root: e.object(),
                             needRepairContent: e.object('needRepairContent'),
                         }),
                         ve.ZT,
                     ),
-                    Ru = Iu[0],
-                    Mu = Iu[1],
+                    Ru = Nu[0],
+                    Mu = Nu[1],
                     Ou = 'Alert_base_42',
                     Lu = 'Alert_highlight_f2',
                     $u = 'Alert_highlight__warning_13',
@@ -3696,22 +3698,22 @@
                         const u = g()(Lu, e && $u);
                         return a().createElement('div', { className: Ou }, a().createElement('div', { className: u }));
                     },
-                    Hu = {
+                    ju = {
                         base: 'ProgressBar_base_45',
                         base__small: 'ProgressBar_base__small_df',
                         background: 'ProgressBar_background_51',
                         background__small: 'ProgressBar_background__small_46',
                         lineWrapper: 'ProgressBar_lineWrapper_6a',
                     };
-                let Uu, Vu;
+                let Hu, Uu;
                 (!(function (e) {
                     ((e.Small = 'small'), (e.Medium = 'medium'), (e.Default = 'medium'));
-                })(Uu || (Uu = {})),
+                })(Hu || (Hu = {})),
                     (function (e) {
                         ((e[(e.Simple = 0)] = 'Simple'), (e[(e.Growing = 1)] = 'Growing'));
-                    })(Vu || (Vu = {})));
-                const ju = ({ size: e = Uu.Default }) => {
-                        const u = g()(Hu.background, Hu[`background__${e}`]);
+                    })(Uu || (Uu = {})));
+                const Vu = ({ size: e = Hu.Default }) => {
+                        const u = g()(ju.background, ju[`background__${e}`]);
                         return a().createElement('div', { className: u });
                     },
                     Zu = { base: 'ProgressBarBlink_base_24', base__small: 'ProgressBarBlink_base__small_0f' },
@@ -4041,9 +4043,9 @@
                                 (e !== o && s(e), e && u && u(), t && t());
                             }, [o, u, t, r.to]);
                         switch (r.animationSettings.type) {
-                            case Vu.Simple:
+                            case Uu.Simple:
                                 return a().createElement(lt, mt({}, r, { onEndAnimation: l, isComplete: o }));
-                            case Vu.Growing:
+                            case Uu.Growing:
                                 return a().createElement(rt, mt({}, r, { onEndAnimation: l, isComplete: o }));
                             default:
                                 return null;
@@ -4197,14 +4199,63 @@
                             '--progress-delta-shadow': e.delta.shadow,
                         };
                     },
-                    ht = (e, u, t) => (t < e ? e : t > u ? u : t),
-                    Ct = (e, u, t) => {
+                    ht = {
+                        bgImageBase: 'R.images.gui.maps.icons.components.progress_bar.blue_noise_bg_base',
+                        bg: { height: '22rem', heightSmall: '4rem' },
+                        glowSettings: {
+                            width: '34rem',
+                            height: '54rem',
+                            mixBlendMode: 'normal',
+                            smallWidth: '34rem',
+                            smallHeight: '36rem',
+                        },
+                        line: {
+                            bgColorBase: 'rgba(191, 232, 255, 0.6)',
+                            bgColorDisabled: 'transparent',
+                            bgColorFinished: 'rgba(191, 232, 255, 0.6)',
+                            filter: 'drop-shadow(0 0 4px rgba(255, 255, 255, 0.08)) drop-shadow(0 0 8px rgba(255, 255, 255, 0.16)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.24))',
+                        },
+                        pattern: {
+                            bgImageBase: 'R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern_base',
+                            bgImageDisabled:
+                                'R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern_disabled',
+                            bgImageFinished: 'R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern_base',
+                            size: '4rem 22rem',
+                            borderSize: '0',
+                            gradient: 'url(R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern)',
+                            gradientFinished: 'url(R.images.gui.maps.icons.components.progress_bar.blue_noise_pattern)',
+                            mixBlendMode: 'normal',
+                        },
+                        glow: 'R.images.gui.maps.icons.components.progress_bar.blue_noise_glow',
+                        glowSmall: 'R.images.gui.maps.icons.components.progress_bar.blue_noise_glow_small',
+                        delta: {
+                            color: '#fff',
+                            shadow: ' 0 0 4px 1px rgba(120, 180, 255, 0.4), 0 0 9px 1px rgba(100, 160, 255, 0.4), 0 0 12px 2px rgba(80, 140, 255, 0.4), 0 0 12px 4px rgba(60, 120, 255, 0.4)',
+                        },
+                    },
+                    Ct =
+                        (Object.assign({}, ht, {
+                            bgImageBase: 'R.images.gui.maps.icons.components.progress_bar.green_noise_bg_base',
+                            line: Object.assign({}, ht.line, {
+                                bgColorBase: '#83C6A5',
+                                bgColorFinished: 'rgba(10, 230, 72, 0.6)',
+                            }),
+                            pattern: Object.assign({}, ht.pattern, {
+                                bgImageBase: 'R.images.gui.maps.icons.components.progress_bar.green_noise_pattern_base',
+                                bgImageDisabled:
+                                    'R.images.gui.maps.icons.components.progress_bar.green_noise_pattern_disabled',
+                                bgImageFinished:
+                                    'R.images.gui.maps.icons.components.progress_bar.green_noise_pattern_base',
+                            }),
+                        }),
+                        (e, u, t) => (t < e ? e : t > u ? u : t)),
+                    bt = (e, u, t) => {
                         if ('number' == typeof t) {
-                            return (ht(0, u, t) / u) * 100;
+                            return (Ct(0, u, t) / u) * 100;
                         }
                         return e;
                     };
-                const bt = {
+                const Bt = {
                         bgImageBase: 'R.images.gui.maps.icons.components.progress_bar.pattern_grey',
                         line: { bgColorBase: '#f50', bgColorDisabled: 'transparent', bgColorFinished: '#59a011' },
                         pattern: {
@@ -4219,19 +4270,19 @@
                             shadow: '0 0 4px 1px #ffaa0066, 0 0 9px 1px #ffaa0066, 0 0 12px 2px #ff550066, 0 0 12px 4px #ff000066',
                         },
                     },
-                    Bt = {
+                    vt = {
                         freezed: !1,
                         withStack: !1,
-                        type: Vu.Growing,
+                        type: Uu.Growing,
                         delta: { duration: 500, delay: 0 },
                         line: { duration: 500, delay: 0 },
                     },
-                    vt = (0, n.memo)(
+                    ft = (0, n.memo)(
                         ({
                             maxValue: e = 100,
-                            theme: u = bt,
-                            size: t = Uu.Default,
-                            animationSettings: r = Bt,
+                            theme: u = Bt,
+                            size: t = Hu.Default,
+                            animationSettings: r = vt,
                             disabled: i = !1,
                             withoutBackground: o = !1,
                             value: s,
@@ -4245,14 +4296,14 @@
                         }) => {
                             const A = (function (e, u, t) {
                                 return (0, n.useMemo)(() => {
-                                    const n = (ht(0, u, e) / u) * 100;
-                                    return { value: n, deltaFrom: Ct(n, u, t) };
+                                    const n = (Ct(0, u, e) / u) * 100;
+                                    return { value: n, deltaFrom: bt(n, u, t) };
                                 }, [t, u, e]);
                             })(s, e, l);
                             return a().createElement(
                                 'div',
-                                { className: g()(Hu.base, p, Hu[`base__${t}`]), style: Dt(u) },
-                                !o && a().createElement(ju, { size: t }),
+                                { className: g()(ju.base, p, ju[`base__${t}`]), style: Dt(u) },
+                                !o && a().createElement(Vu, { size: t }),
                                 a().createElement(Ft, {
                                     size: t,
                                     lineRef: m,
@@ -4268,42 +4319,42 @@
                             );
                         },
                     ),
-                    ft = 'Durability_base_8c',
-                    yt = 'Durability_label_02',
-                    wt = 'Durability_bar_73',
-                    xt = 'Durability_percentage_a7',
+                    yt = 'Durability_base_8c',
+                    wt = 'Durability_label_02',
+                    xt = 'Durability_bar_73',
+                    St = 'Durability_percentage_a7',
                     kt = R.strings.tank_setup.dialogs.needRepair,
-                    St = ({ value: e }) =>
+                    Pt = ({ value: e }) =>
                         a().createElement(
                             'div',
-                            { className: ft },
-                            a().createElement('div', { className: yt }, kt.durability()),
+                            { className: yt },
+                            a().createElement('div', { className: wt }, kt.durability()),
                             a().createElement(
                                 'div',
-                                { className: wt },
-                                a().createElement(vt, { size: Uu.Medium, value: e }),
+                                { className: xt },
+                                a().createElement(ft, { size: Hu.Medium, value: e }),
                             ),
                             a().createElement(Le, {
                                 text: kt.durabilityPercentage(),
                                 binding: { value: e },
-                                classMix: xt,
+                                classMix: St,
                             }),
                         ),
-                    Pt = 'RepairHeaderApp_base_b0',
-                    Tt = 'RepairHeaderApp_durability_69',
+                    Tt = 'RepairHeaderApp_base_b0',
+                    It = 'RepairHeaderApp_durability_69',
                     Nt = (0, d.Pi)(() => {
                         const e = Mu().model,
                             u = e.needRepairContent.get().repairPercentage,
                             t = e.root.get().bottomContentType;
                         return a().createElement(
                             'div',
-                            { className: Pt },
+                            { className: Tt },
                             a().createElement(Wu, { warning: t === s }),
-                            t === s && a().createElement('div', { className: Tt }, a().createElement(St, { value: u })),
+                            t === s && a().createElement('div', { className: It }, a().createElement(Pt, { value: u })),
                         );
                     }),
-                    It = () => a().createElement(Ru, null, a().createElement(Nt, null)),
-                    Rt = {
+                    Rt = () => a().createElement(Ru, null, a().createElement(Nt, null)),
+                    Mt = {
                         base: 'ExchangeDialogContent_base_ef',
                         description: 'ExchangeDialogContent_description_6e',
                         status: 'ExchangeDialogContent_status_33',
@@ -4313,10 +4364,10 @@
                         title: 'ExchangeDialogContent_title_9f',
                         titleCurrency: 'ExchangeDialogContent_titleCurrency_88',
                     },
-                    Mt = R.strings.tank_setup.dialogs.goldExchange.notRequired.action,
-                    Ot = R.strings.common.common,
-                    Lt = (e) => (e === he.Modification ? Mt.modification() : Mt.buy()),
-                    $t = (0, d.Pi)(
+                    Ot = R.strings.tank_setup.dialogs.goldExchange.notRequired.action,
+                    Lt = R.strings.common.common,
+                    $t = (e) => (e === he.Modification ? Ot.modification() : Ot.buy()),
+                    Wt = (0, d.Pi)(
                         ({
                             title: e,
                             titleBinding: u,
@@ -4325,7 +4376,7 @@
                             items: r,
                             actionType: i,
                             description: o,
-                            exchangeType: s = qn.Basic,
+                            exchangeType: s = Gn.Basic,
                         }) => {
                             const l = be().model,
                                 c = l.root.get().bottomContentType,
@@ -4334,24 +4385,24 @@
                                 d = l.toItem.get(),
                                 E = l.exchangeRate.get(),
                                 p =
-                                    s === qn.Upgrade
+                                    s === Gn.Upgrade
                                         ? R.strings.tank_setup.dialogs.exchangeToUpgrade
                                         : R.strings.tank_setup.dialogs.goldExchange,
-                                A = v(p.notRequired.title(), { action: Lt(i) });
+                                A = v(p.notRequired.title(), { action: $t(i) });
                             return a().createElement(
                                 'div',
-                                { className: Rt.base },
-                                s === qn.Repair && a().createElement(It, null),
-                                s === qn.EasyTankEquip && a().createElement(Nu, { bottomContentType: c }),
-                                r && a().createElement('div', { className: Rt.items }, r),
+                                { className: Mt.base },
+                                s === Gn.Repair && a().createElement(Rt, null),
+                                s === Gn.EasyTankEquip && a().createElement(Iu, { bottomContentType: c }),
+                                r && a().createElement('div', { className: Mt.items }, r),
                                 a().createElement(Le, {
                                     text: n === Fu ? A : e,
                                     binding: Object.assign(
                                         {
-                                            name: t && `${Ot.open_quotes()}${f(t)}${Ot.close_quotes()}`,
+                                            name: t && `${Lt.open_quotes()}${f(t)}${Lt.close_quotes()}`,
                                             credits: a().createElement(
                                                 'div',
-                                                { className: Rt.titleCurrency },
+                                                { className: Mt.titleCurrency },
                                                 a().createElement(Me.F, {
                                                     key: _.name,
                                                     size: G.et.large,
@@ -4363,14 +4414,14 @@
                                         u,
                                     ),
                                     formatWithBrackets: Boolean(Object.keys(u || {}).length),
-                                    classMix: Rt.title,
+                                    classMix: Mt.title,
                                 }),
-                                o && a().createElement('div', { className: Rt.description }, o),
+                                o && a().createElement('div', { className: Mt.description }, o),
                                 a().createElement(
                                     'div',
-                                    { className: g()(Rt.status, Rt[`status__${n}`]) },
+                                    { className: g()(Mt.status, Mt[`status__${n}`]) },
                                     n === Au &&
-                                        a().createElement(ku, {
+                                        a().createElement(Su, {
                                             fromItem: m,
                                             toItem: d,
                                             defaultRate: E.default,
@@ -4394,7 +4445,7 @@
                             );
                         },
                     ),
-                    Wt = (e) => {
+                    jt = (e) => {
                         let u,
                             t = null;
                         return (
@@ -4415,7 +4466,7 @@
                     Vt = (e) => {
                         e.focus();
                     },
-                    jt = (e) => {
+                    Zt = (e) => {
                         if (e.keyCode === _.n.TAB) {
                             const u = Array.from(document.body.querySelectorAll('input')).filter(Ut);
                             if (!u.length) return;
@@ -4431,7 +4482,7 @@
                             } else Vt(n);
                         }
                     };
-                function Zt(e) {
+                function zt(e) {
                     const u = new KeyboardEvent('keydown', {
                         view: window,
                         bubbles: !0,
@@ -4442,7 +4493,7 @@
                     });
                     document.body.dispatchEvent(u);
                 }
-                function zt(e, u, t, n) {
+                function qt(e, u, t, n) {
                     let a,
                         r = !1,
                         i = 0;
@@ -4478,21 +4529,21 @@
                         s
                     );
                 }
-                function qt(e, u, t, a = !1) {
+                function Gt(e, u, t, a = !1) {
                     const r = (0, n.useMemo)(
                         () =>
                             (function (e, u, t) {
-                                return void 0 === t ? zt(e, u, !1) : zt(e, t, !1 !== u);
+                                return void 0 === t ? qt(e, u, !1) : qt(e, t, !1 !== u);
                             })(t, a, e),
                         u,
                     );
                     return ((0, n.useEffect)(() => r.cancel, [r]), r);
                 }
-                var Gt = t(2558),
-                    Kt = t(8934);
-                const Xt = (e, u = T.B3.INTEGRAL) => T.Z5.getNumberFormat(e, u);
+                var Kt = t(2558),
+                    Xt = t(8934);
+                const Yt = (e, u = T.B3.INTEGRAL) => T.Z5.getNumberFormat(e, u);
                 t(3368);
-                let Yt;
+                let Jt;
                 !(function (e) {
                     ((e[(e.ZERO = 48)] = 'ZERO'),
                         (e[(e.ONE = 49)] = 'ONE'),
@@ -4514,9 +4565,9 @@
                         (e[(e.NUMPAD_7 = 103)] = 'NUMPAD_7'),
                         (e[(e.NUMPAD_8 = 104)] = 'NUMPAD_8'),
                         (e[(e.NUMPAD_9 = 105)] = 'NUMPAD_9'));
-                })(Yt || (Yt = {}));
-                var Jt = t(7727);
-                const Qt = {
+                })(Jt || (Jt = {}));
+                var Qt = t(7727);
+                const en = {
                     base: 'NumericStepper_base_98',
                     base__small: 'NumericStepper_base__small_e3',
                     base__medium: 'NumericStepper_base__medium_7f',
@@ -4589,7 +4640,7 @@
                     'buttonDecrement__isActive-medium': 'NumericStepper_buttonDecrement__isActive-medium_df',
                     'buttonDecrement__isActive-large': 'NumericStepper_buttonDecrement__isActive-large_ac',
                 };
-                class en extends a().PureComponent {
+                class un extends a().PureComponent {
                     constructor(...e) {
                         (super(...e),
                             (this.timer = null),
@@ -4804,7 +4855,7 @@
                                     }
                             }),
                             (this.allowOnlyNumbers = (e) => {
-                                e.which in Yt || e.preventDefault();
+                                e.which in Jt || e.preventDefault();
                             }),
                             (this.increment = () => {
                                 const e = this.props.onIncrement ? this.props.onIncrement() : this.props.stepSize,
@@ -4851,10 +4902,10 @@
                                             this.setState({ activeDecrement: !0 }))));
                             }),
                             (this.playHoverSound = () => {
-                                this.props.isDisabled || (0, Jt.G)('highlight');
+                                this.props.isDisabled || (0, Qt.G)('highlight');
                             }),
                             (this.playClickSound = () => {
-                                this.props.isDisabled || (0, Jt.G)('yes');
+                                this.props.isDisabled || (0, Qt.G)('yes');
                             }),
                             (this.stop = () => {
                                 (this.timer && clearTimeout(this.timer), (this.timer = null));
@@ -4899,39 +4950,39 @@
                             t = e.size,
                             n = e.currencyType,
                             r = g()(
-                                Qt.base,
-                                Qt[`base__${t}`],
-                                n && Qt[`base__withCurrency-${t}`],
-                                u && Qt.base__isDisabled,
-                                this.state.isFocused && Qt.base__isFocus,
+                                en.base,
+                                en[`base__${t}`],
+                                n && en[`base__withCurrency-${t}`],
+                                u && en.base__isDisabled,
+                                this.state.isFocused && en.base__isFocus,
                             ),
                             i = g()(
-                                Qt.buttonIncrement,
-                                Qt[`buttonIncrement__${t}`],
-                                this.buttonIncrementIsDisabled && Qt.buttonIncrement__isDisabled,
+                                en.buttonIncrement,
+                                en[`buttonIncrement__${t}`],
+                                this.buttonIncrementIsDisabled && en.buttonIncrement__isDisabled,
                                 this.state.activeIncrement &&
                                     !this.buttonIncrementIsDisabled &&
-                                    Qt[`buttonIncrement__isActive-${this.props.size}`],
+                                    en[`buttonIncrement__isActive-${this.props.size}`],
                             ),
                             o = g()(
-                                Qt.buttonDecrement,
-                                Qt[`buttonDecrement__${t}`],
-                                this.buttonDecrementIsDisabled && Qt.buttonDecrement__isDisabled,
+                                en.buttonDecrement,
+                                en[`buttonDecrement__${t}`],
+                                this.buttonDecrementIsDisabled && en.buttonDecrement__isDisabled,
                                 this.state.activeDecrement &&
                                     !this.buttonDecrementIsDisabled &&
-                                    Qt[`buttonDecrement__isActive-${this.props.size}`],
+                                    en[`buttonDecrement__isActive-${this.props.size}`],
                             ),
                             s = g()(
-                                Qt.input,
-                                u && Qt.input__disabled,
-                                n && Qt.input__withCurrency,
-                                n && Qt[`input__${n}-${t}`],
-                                n && Qt[`input__${n}`],
-                                !1 === this.props.isValid && Qt.input__error,
-                                n && u && Qt[`input__${n}-disabled`],
+                                en.input,
+                                u && en.input__disabled,
+                                n && en.input__withCurrency,
+                                n && en[`input__${n}-${t}`],
+                                n && en[`input__${n}`],
+                                !1 === this.props.isValid && en.input__error,
+                                n && u && en[`input__${n}-disabled`],
                             ),
-                            l = g()(Qt.currencyIcon, n && Qt[`currencyIcon__${n}-${t}`]),
-                            c = g()(Qt.currency, n && Qt[`currency__${n}`], n && Qt[`currency__${n}-${t}`]);
+                            l = g()(en.currencyIcon, n && en[`currencyIcon__${n}-${t}`]),
+                            c = g()(en.currency, n && en[`currency__${n}`], n && en[`currency__${n}-${t}`]);
                         return a().createElement(
                             'div',
                             {
@@ -4941,12 +4992,12 @@
                             },
                             a().createElement(
                                 'div',
-                                { className: Qt.inputContainer },
+                                { className: en.inputContainer },
                                 n &&
                                     a().createElement(
                                         'div',
                                         { className: c },
-                                        a().createElement('span', { className: Qt.dummyValue }, this.formattedValue),
+                                        a().createElement('span', { className: en.dummyValue }, this.formattedValue),
                                         a().createElement('span', { className: l }),
                                     ),
                                 a().createElement('input', {
@@ -4966,7 +5017,7 @@
                             ),
                             a().createElement(
                                 'div',
-                                { className: Qt.control },
+                                { className: en.control },
                                 a().createElement('div', {
                                     className: i,
                                     onClick: this.setFocusOnInput,
@@ -4988,7 +5039,7 @@
                         var m;
                     }
                 }
-                en.defaultProps = {
+                un.defaultProps = {
                     value: 1,
                     stepSize: 1,
                     minimum: 0,
@@ -4999,21 +5050,21 @@
                     onChange: () => null,
                     onKeyDown: () => null,
                 };
-                const un = 'CurrencyStepper_base_8f',
-                    tn = 'CurrencyStepper_label_9b',
-                    nn = 'CurrencyStepper_limit_7c',
-                    an = 'CurrencyStepper_limitIcon_bf',
-                    rn = 'CurrencyStepper_limit__exceeded_5d',
-                    on = 'CurrencyStepper_limit__right_08',
-                    sn = 'CurrencyStepper_limitWrapper__enter_90',
-                    ln = 'CurrencyStepper_limitWrapper__exit_15',
-                    cn = 'CurrencyStepper_restriction_67',
-                    mn = 'CurrencyStepper_restrictionIcon_6f',
-                    _n = 'CurrencyStepper_restrictionIconGlow_02',
-                    dn = ['label', 'limit', 'limitPosition', 'onLimitClick', 'onChange'];
-                function En() {
+                const tn = 'CurrencyStepper_base_8f',
+                    nn = 'CurrencyStepper_label_9b',
+                    an = 'CurrencyStepper_limit_7c',
+                    rn = 'CurrencyStepper_limitIcon_bf',
+                    on = 'CurrencyStepper_limit__exceeded_5d',
+                    sn = 'CurrencyStepper_limit__right_08',
+                    ln = 'CurrencyStepper_limitWrapper__enter_90',
+                    cn = 'CurrencyStepper_limitWrapper__exit_15',
+                    mn = 'CurrencyStepper_restriction_67',
+                    _n = 'CurrencyStepper_restrictionIcon_6f',
+                    dn = 'CurrencyStepper_restrictionIconGlow_02',
+                    En = ['label', 'limit', 'limitPosition', 'onLimitClick', 'onChange'];
+                function gn() {
                     return (
-                        (En =
+                        (gn =
                             Object.assign ||
                             function (e) {
                                 for (var u = 1; u < arguments.length; u++) {
@@ -5022,13 +5073,13 @@
                                 }
                                 return e;
                             }),
-                        En.apply(this, arguments)
+                        gn.apply(this, arguments)
                     );
                 }
-                const gn = R.strings.personal_exchange_rates.common,
-                    pn = { contentId: R.views.lobby.personal_exchange_rates.tooltips.ExchangeLimitTooltip('resId') },
-                    An = { enter: sn, exit: ln },
-                    Fn = (e) => {
+                const pn = R.strings.personal_exchange_rates.common,
+                    An = { contentId: R.views.lobby.personal_exchange_rates.tooltips.ExchangeLimitTooltip('resId') },
+                    Fn = { enter: ln, exit: cn },
+                    Dn = (e) => {
                         let u = e.label,
                             t = e.limit,
                             r = e.limitPosition,
@@ -5042,42 +5093,42 @@
                                     r = Object.keys(e);
                                 for (n = 0; n < r.length; n++) ((t = r[n]), u.indexOf(t) >= 0 || (a[t] = e[t]));
                                 return a;
-                            })(e, dn);
+                            })(e, En);
                         const l = t && s.value > t,
                             c = (0, n.useState)(!1)[1],
-                            m = qt(
+                            m = Gt(
                                 (e) => {
-                                    (o(e), Wt(() => c((e) => !e)));
+                                    (o(e), jt(() => c((e) => !e)));
                                 },
                                 [o],
                                 1e3,
                             );
                         return a().createElement(
                             'div',
-                            { className: un },
-                            u && a().createElement('div', { className: tn }, u),
-                            a().createElement(en, En({ size: 'large', width: 210, onChange: m }, s)),
+                            { className: tn },
+                            u && a().createElement('div', { className: nn }, u),
+                            a().createElement(un, gn({ size: 'large', width: 210, onChange: m }, s)),
                             t &&
                                 !i &&
                                 a().createElement(
-                                    Gt.Z,
+                                    Kt.Z,
                                     { component: a().Fragment },
                                     a().createElement(
-                                        Kt.Z,
-                                        { key: String(l), timeout: 250, classNames: An },
+                                        Xt.Z,
+                                        { key: String(l), timeout: 250, classNames: Fn },
                                         a().createElement(
                                             bu,
-                                            { tooltipArgs: pn, className: g()(nn, 'right' === r && on, l && rn) },
+                                            { tooltipArgs: An, className: g()(an, 'right' === r && sn, l && on) },
                                             a().createElement(
                                                 a().Fragment,
                                                 null,
                                                 l
-                                                    ? a().createElement(Le, { text: gn.limitExceeded() })
+                                                    ? a().createElement(Le, { text: pn.limitExceeded() })
                                                     : a().createElement(Le, {
-                                                          text: gn.limit(),
-                                                          binding: { value: Xt(t) },
+                                                          text: pn.limit(),
+                                                          binding: { value: Yt(t) },
                                                       }),
-                                                a().createElement('div', { className: an }),
+                                                a().createElement('div', { className: rn }),
                                             ),
                                         ),
                                     ),
@@ -5085,34 +5136,34 @@
                             i &&
                                 a().createElement(
                                     'div',
-                                    { className: g()(nn, 'right' === r && on) },
+                                    { className: g()(an, 'right' === r && sn) },
                                     a().createElement(h, {
-                                        caption: gn.limitRestrictions(),
+                                        caption: pn.limitRestrictions(),
                                         type: 'close',
                                         side: 'left',
                                         onClick: i,
-                                        classNames: { base: cn, icon: mn, glow: _n },
+                                        classNames: { base: mn, icon: _n, glow: dn },
                                     }),
                                 ),
                         );
                     },
-                    Dn = 'ExceededMessage_wrapper_0d',
-                    hn = 'ExceededMessage_base_1b',
-                    Cn = 'ExceededMessage_limitIcon_46',
-                    bn = 'ExceededMessage_hidden_4b',
-                    Bn = 'ExceededMessage_limitWrapper__enter_0a',
-                    vn = 'ExceededMessage_limitWrapper__exit_bc',
-                    fn = 'ExceededMessage_restriction_33',
-                    yn = 'ExceededMessage_restrictionIcon_f1',
-                    wn = 'ExceededMessage_restrictionIconGlow_04',
-                    xn = { contentId: R.views.lobby.personal_exchange_rates.tooltips.ExchangeLimitTooltip('resId') },
-                    kn = { enter: Bn, exit: vn },
-                    Sn = ({ className: e, exceeded: u, amountOfPersonalDiscounts: t, onClick: n }) =>
+                    hn = 'ExceededMessage_wrapper_0d',
+                    Cn = 'ExceededMessage_base_1b',
+                    bn = 'ExceededMessage_limitIcon_46',
+                    Bn = 'ExceededMessage_hidden_4b',
+                    vn = 'ExceededMessage_limitWrapper__enter_0a',
+                    fn = 'ExceededMessage_limitWrapper__exit_bc',
+                    yn = 'ExceededMessage_restriction_33',
+                    wn = 'ExceededMessage_restrictionIcon_f1',
+                    xn = 'ExceededMessage_restrictionIconGlow_04',
+                    Sn = { contentId: R.views.lobby.personal_exchange_rates.tooltips.ExchangeLimitTooltip('resId') },
+                    kn = { enter: vn, exit: fn },
+                    Pn = ({ className: e, exceeded: u, amountOfPersonalDiscounts: t, onClick: n }) =>
                         a().createElement(
-                            Gt.Z,
-                            { className: g()(e, Dn) },
+                            Kt.Z,
+                            { className: g()(e, hn) },
                             a().createElement(
-                                Kt.Z,
+                                Xt.Z,
                                 { key: String(`${u}${t > 5}`), timeout: 350, classNames: kn },
                                 a().createElement(
                                     a().Fragment,
@@ -5121,7 +5172,7 @@
                                         ? t > 5
                                             ? a().createElement(
                                                   'div',
-                                                  { className: g()(hn) },
+                                                  { className: g()(Cn) },
                                                   a().createElement(
                                                       'div',
                                                       null,
@@ -5133,12 +5184,12 @@
                                                       type: 'close',
                                                       side: 'right',
                                                       onClick: n,
-                                                      classNames: { base: fn, icon: yn, glow: wn },
+                                                      classNames: { base: yn, icon: wn, glow: xn },
                                                   }),
                                               )
                                             : a().createElement(
                                                   bu,
-                                                  { tooltipArgs: xn, className: g()(hn) },
+                                                  { tooltipArgs: Sn, className: g()(Cn) },
                                                   a().createElement(
                                                       a().Fragment,
                                                       null,
@@ -5147,12 +5198,12 @@
                                                           null,
                                                           R.strings.personal_exchange_rates.common.limitExceeded(),
                                                       ),
-                                                      a().createElement('div', { className: Cn }),
+                                                      a().createElement('div', { className: bn }),
                                                   ),
                                               )
                                         : a().createElement(
                                               'div',
-                                              { className: g()(hn, bn) },
+                                              { className: g()(Cn, Bn) },
                                               a().createElement(
                                                   'div',
                                                   null,
@@ -5162,11 +5213,11 @@
                                 ),
                             ),
                         ),
-                    Pn = 'ExchangePanel_base_bd',
-                    Tn = 'ExchangePanel_arrow_62',
+                    Tn = 'ExchangePanel_base_bd',
+                    In = 'ExchangePanel_arrow_62',
                     Nn = 'ExchangePanel_arrow__small_30',
-                    In = 'ExchangePanel_excluded_02',
-                    Rn = (0, Be.q3)()(
+                    Rn = 'ExchangePanel_excluded_02',
+                    Mn = (0, Be.q3)()(
                         ({ observableModel: e, externalModel: u, readByPath: t }) => {
                             function n() {
                                 return ((e) => {
@@ -5222,27 +5273,27 @@
                             ),
                         }),
                     ),
-                    Mn = Rn[0],
-                    On = Rn[1],
-                    Ln = (0, d.Pi)(({ setGoldToChange: e, isSmall: u = !1 }) => {
+                    On = Mn[0],
+                    Ln = Mn[1],
+                    $n = (0, d.Pi)(({ setGoldToChange: e, isSmall: u = !1 }) => {
                         Ht(
                             () => (
-                                Wt(() => {
-                                    (Zt(!1),
-                                        Wt(() => {
-                                            Zt(!0);
+                                jt(() => {
+                                    (zt(!1),
+                                        jt(() => {
+                                            zt(!0);
                                         }));
                                 }),
-                                document.body.addEventListener('keydown', jt),
+                                document.body.addEventListener('keydown', Zt),
                                 () => {
-                                    document.body.removeEventListener('keydown', jt);
+                                    document.body.removeEventListener('keydown', Zt);
                                 }
                             ),
                         );
                         const t = (0, n.useState)(null),
                             i = t[0],
                             o = t[1],
-                            s = On(),
+                            s = Ln(),
                             l = s.model,
                             c = s.controls,
                             m = l.fromItem.get().value,
@@ -5262,8 +5313,8 @@
                             }),
                             a().createElement(
                                 'div',
-                                { className: Pn },
-                                a().createElement(Fn, {
+                                { className: Tn },
+                                a().createElement(Dn, {
                                     value: l.fromItem.get().value,
                                     maximum: _,
                                     currencyType: G.V2.gold,
@@ -5276,8 +5327,8 @@
                                     isDisabled: E,
                                     isFocused: !1,
                                 }),
-                                a().createElement('div', { className: g()(Tn, u && Nn) }),
-                                a().createElement(Fn, {
+                                a().createElement('div', { className: g()(In, u && Nn) }),
+                                a().createElement(Dn, {
                                     value: l.toItem.get().value,
                                     maximum: l.exchangeRate.get().maxResourceAmountForExchange,
                                     currencyType: G.V2.credits,
@@ -5293,8 +5344,8 @@
                                 }),
                                 i &&
                                     (0, r.createPortal)(
-                                        a().createElement(Sn, {
-                                            className: In,
+                                        a().createElement(Pn, {
+                                            className: Rn,
                                             exceeded: l.computes.exceeded(),
                                             amountOfPersonalDiscounts: l.exchangeRate.get().amountOfPersonalDiscounts,
                                             onClick: c.openAllDiscounts,
@@ -5304,8 +5355,8 @@
                             )
                         );
                     });
-                var $n = t(5851),
-                    Wn = t(2306);
+                var Wn = t(5851),
+                    jn = t(2306);
                 const Hn = (0, Be.q3)()(
                         ({ observableModel: e }) => ({
                             root: e.object(),
@@ -5328,30 +5379,30 @@
                     ),
                     Un = (Hn[0], Hn[1]),
                     Vn = 'ExchangeDialogFooter_base_45',
-                    jn = 'ExchangeDialogFooter_exchange_11',
-                    Zn = 'ExchangeDialogFooter_renewal_e2',
-                    zn = (0, d.Pi)(({ goldToChange: e, setGoldToChange: u, exchangeType: t = qn.Basic }) => {
+                    Zn = 'ExchangeDialogFooter_exchange_11',
+                    zn = 'ExchangeDialogFooter_renewal_e2',
+                    qn = (0, d.Pi)(({ goldToChange: e, setGoldToChange: u, exchangeType: t = Gn.Basic }) => {
                         const n = Un();
                         return a().createElement(
                             'div',
                             { className: Vn },
                             a().createElement(
                                 'div',
-                                { className: jn },
+                                { className: Zn },
                                 a().createElement(
-                                    Mn,
+                                    On,
                                     null,
-                                    a().createElement(Ln, { goldToChange: e, setGoldToChange: u }),
+                                    a().createElement($n, { goldToChange: e, setGoldToChange: u }),
                                 ),
                             ),
-                            t === qn.Repair &&
+                            t === Gn.Repair &&
                                 a().createElement(
-                                    Wn.h.Provider,
+                                    jn.h.Provider,
                                     { value: n },
                                     a().createElement(
                                         'div',
-                                        { className: Zn },
-                                        a().createElement($n.Y, {
+                                        { className: zn },
+                                        a().createElement(Wn.Y, {
                                             renewType: mu.my.Repair,
                                             label: R.strings.tank_setup.dialogs.needRepair.autoRepair(),
                                         }),
@@ -5359,22 +5410,22 @@
                                 ),
                         );
                     });
-                let qn;
+                let Gn;
                 !(function (e) {
                     ((e.Basic = 'basic'),
                         (e.Repair = 'repair'),
                         (e.EasyTankEquip = 'easyTankEquip'),
                         (e.Upgrade = 'upgrade'));
-                })(qn || (qn = {}));
-                const Gn = R.strings.tank_setup.dialogs,
-                    Kn = (0, d.Pi)(
+                })(Gn || (Gn = {}));
+                const Kn = R.strings.tank_setup.dialogs,
+                    Xn = (0, d.Pi)(
                         ({
                             title: e,
                             titleBinding: u,
                             name: t,
                             actionType: r,
                             withInfo: i = !0,
-                            type: o = qn.Basic,
+                            type: o = Gn.Basic,
                             withRollback: s = !1,
                             disabledAcceptTooltipText: l = R.strings.tank_setup.dealPanel.tooltip.notEnough(),
                         }) => {
@@ -5396,7 +5447,7 @@
                                 ),
                                 a().createElement(ge, {
                                     parentId: 'exchange-dialog',
-                                    content: a().createElement($t, {
+                                    content: a().createElement(Wt, {
                                         title: e,
                                         titleBinding: u,
                                         name: t,
@@ -5408,7 +5459,7 @@
                                     }),
                                     footer:
                                         A &&
-                                        a().createElement(zn, { goldToChange: m, setGoldToChange: _, exchangeType: o }),
+                                        a().createElement(qn, { goldToChange: m, setGoldToChange: _, exchangeType: o }),
                                     showPayInfo: !0,
                                     buttonAccept: Object.assign({}, Fe, {
                                         type: pe.L.main,
@@ -5416,9 +5467,9 @@
                                     }),
                                     buttonCancel: De,
                                     buttonAcceptText:
-                                        o === qn.Upgrade ? Gn.exchangeToUpgrade.confirm() : Gn.goldExchange.confirm(),
+                                        o === Gn.Upgrade ? Kn.exchangeToUpgrade.confirm() : Kn.goldExchange.confirm(),
                                     buttonCancelText: s
-                                        ? Gn.confirm.cancel.withRollback()
+                                        ? Kn.confirm.cancel.withRollback()
                                         : R.strings.dialogs.common.cancel(),
                                     disabledAcceptTooltipText: l,
                                     isShowTooltip: E !== Fu,
@@ -5426,19 +5477,19 @@
                             );
                         },
                     ),
-                    Xn = R.strings.tank_setup.dialogs.goldExchange,
-                    Yn = (0, d.Pi)(({ actionType: e, itemsType: u }) => {
-                        const t = ke(),
+                    Yn = R.strings.tank_setup.dialogs.goldExchange,
+                    Jn = (0, d.Pi)(({ actionType: e, itemsType: u }) => {
+                        const t = Se(),
                             n = t.model,
                             r = n.root.get().withRollback,
                             i = n.computes.confirmedItemsLength() > 1,
-                            o = i ? Xn.items : Xn.item,
-                            s = e === he.Modification ? Xn.action.modification() : Xn.action.buy();
+                            o = i ? Yn.items : Yn.item,
+                            s = e === he.Modification ? Yn.action.modification() : Yn.action.buy();
                         return a().createElement(
                             Ce.Provider,
                             { value: t },
-                            a().createElement(Kn, {
-                                title: i ? Xn.items.title() : Xn.item.title(),
+                            a().createElement(Xn, {
+                                title: i ? Yn.items.title() : Yn.item.title(),
                                 name: n.computes.confirmedItem(0).name,
                                 titleBinding: { action: s, type: o.$dyn(u) },
                                 actionType: e,
@@ -5446,9 +5497,9 @@
                             }),
                         );
                     }),
-                    Jn = R.strings.tank_setup.dialogs.confirm,
-                    Qn = (0, d.Pi)(() => {
-                        const e = ke(),
+                    Qn = R.strings.tank_setup.dialogs.confirm,
+                    ea = (0, d.Pi)(() => {
+                        const e = Se(),
                             u = e.model,
                             t = u.mainContent.get().itemsType,
                             n = u.root.get().bottomContentType,
@@ -5465,7 +5516,7 @@
                             n)
                         ) {
                             case 'exchangePanel':
-                                return a().createElement(Yn, { actionType: c, itemsType: t });
+                                return a().createElement(Jn, { actionType: c, itemsType: t });
                             case 'saveSlotsContent':
                                 return a().createElement(
                                     Ce.Provider,
@@ -5473,10 +5524,10 @@
                                     a().createElement(ge, {
                                         parentId: Ae,
                                         buttonAccept: Object.assign({}, Fe, { disabled: i }),
-                                        buttonAcceptText: Jn.confirm.changeSlots(),
+                                        buttonAcceptText: Qn.confirm.changeSlots(),
                                         buttonCancel: De,
-                                        buttonCancelText: Jn.cancel.changeSlots(),
-                                        content: a().createElement(cu, { title: String(Jn.title.changeSlots.$dyn(t)) }),
+                                        buttonCancelText: Qn.cancel.changeSlots(),
+                                        content: a().createElement(cu, { title: String(Qn.title.changeSlots.$dyn(t)) }),
                                         showPayInfo: s,
                                     }),
                                 );
@@ -5490,7 +5541,7 @@
                     });
                 engine.whenReady.then(() => {
                     i().render(
-                        a().createElement(xe, null, a().createElement(Qn, null)),
+                        a().createElement(xe, null, a().createElement(ea, null)),
                         document.getElementById('root'),
                     );
                 });

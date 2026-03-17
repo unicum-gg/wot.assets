@@ -5728,7 +5728,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaLarge .SkillsMatrix_base_2a {
-    margin-top: 65rem;
+    margin-top: 36rem;
 }
 
 .mediaExtraLarge .SkillsMatrix_base_2a {
@@ -6134,7 +6134,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
     background: url('R.images.gui.maps.icons.windows.background') no-repeat center / cover;
-    top: -50rem;
 }
 
 .TankmanContainerApp_content_e4 {

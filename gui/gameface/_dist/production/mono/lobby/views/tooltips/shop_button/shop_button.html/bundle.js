@@ -1,58 +1,62 @@
-import { j as e, f as s } from '../../../../chunks/vendor.js';
-import { r as t, aK as a, ap as i, I as r, ay as l, ax as p } from '../../../../chunks/lib.js';
-const o = 'App_9188ef79',
-    c = 'App_headerContainer_bd668828',
-    n = 'App_title_65c0c363',
-    d = 'App_subtitle_39585678',
-    _ = 'App_separator_649b3a29',
-    x = 'App_description_c0f41308',
-    h = 'App_image_a56d3071',
-    m = 'App_info_cb654453',
-    j = 'App_text_1072bf2a',
-    b = t.resolve('strings');
-function v() {
-    return e.jsx(a, {
-        children: e.jsx(a.Decorator, {
-            children: e.jsxs('div', {
-                className: o,
-                children: [
-                    e.jsxs('div', {
-                        className: c,
-                        children: [
-                            e.jsx('div', {
-                                className: n,
-                                children: b.readOrEmpty('battle_royale_extention.tooltip.shop.title'),
-                            }),
-                            e.jsx('div', {
-                                className: s(d, j),
-                                children: e.jsx(i, {
-                                    text: b.readOrEmpty('battle_royale_extention.tooltip.shop.subtitle'),
-                                    split: !0,
-                                }),
-                            }),
-                        ],
-                    }),
-                    e.jsx('div', { className: _ }),
-                    e.jsxs('div', {
-                        className: s(x, j),
-                        children: [
-                            e.jsx('div', {
-                                className: h,
-                                children: e.jsx(r, {
-                                    path: 'battleRoyale.currency.proxy_80',
-                                    width: '80rem',
-                                    height: '80rem',
-                                }),
-                            }),
-                            e.jsx('div', {
-                                className: m,
-                                children: b.readOrEmpty('battle_royale_extention.tooltip.shop.text'),
-                            }),
-                        ],
-                    }),
-                ],
-            }),
-        }),
+import { q as t, s, v as e, j as i, f as o } from '../../../../chunks/vendor.js';
+import { i as n, n as a, b3 as r, r as l, U as c, bs as p } from '../../../../chunks/lib.js';
+import { P as d, a as _ } from '../../../../chunks/proxy_currency.js';
+import { S as x } from '../../../../chunks/enums.js';
+/* empty css                        */ const [b, h] = n()(({ observableModel: e }) => {
+        const i = { root: e.object(), eventInfo: e.object('eventInfo') },
+            o = t(
+                () =>
+                    i.eventInfo.get().subMode === x.StPatrick
+                        ? {
+                              title: R.strings.battle_royale_extention.tooltip.shop.stPatrick.title(),
+                              subTitle: R.strings.battle_royale_extention.tooltip.shop.stPatrick.subtitle(),
+                              description: R.strings.battle_royale_extention.tooltip.shop.stPatrick.text(),
+                          }
+                        : {
+                              title: R.strings.battle_royale_extention.tooltip.shop.title(),
+                              subTitle: R.strings.battle_royale_extention.tooltip.shop.subtitle(),
+                              description: R.strings.battle_royale_extention.tooltip.shop.text(),
+                          },
+                { equals: s.structural },
+            );
+        return { ...i, computes: { settings: o } };
+    }, a),
+    j = 'App_9188ef79',
+    m = 'App_headerContainer_bd668828',
+    u = 'App_title_65c0c363',
+    v = 'App_subtitle_39585678',
+    f = 'App_separator_649b3a29',
+    g = 'App_description_c0f41308',
+    y = 'App_image_a56d3071',
+    k = 'App_info_cb654453',
+    A = 'App_text_1072bf2a',
+    N = e(function () {
+        const { model: t } = h(),
+            { coinType: s } = t.eventInfo.get(),
+            { title: e, subTitle: n, description: a } = t.computes.settings();
+        return i.jsxs('div', {
+            className: j,
+            children: [
+                i.jsxs('div', {
+                    className: m,
+                    children: [
+                        i.jsx('div', { className: u, children: e }),
+                        i.jsx('div', { className: o(v, A), children: i.jsx(r, { text: n }) }),
+                    ],
+                }),
+                i.jsx('div', { className: f }),
+                i.jsxs('div', {
+                    className: o(g, A),
+                    children: [
+                        i.jsx('div', { className: y, children: i.jsx(d, { type: s, size: _.x80 }) }),
+                        i.jsx('div', { className: k, children: a }),
+                    ],
+                }),
+            ],
+        });
     });
-}
-l(e.jsx(p, { children: e.jsx(v, {}) }));
+l(
+    i.jsx(c, {
+        children: i.jsx(b, { children: i.jsx(p, { children: i.jsx(p.Decorator, { children: i.jsx(N, {}) }) }) }),
+    }),
+);

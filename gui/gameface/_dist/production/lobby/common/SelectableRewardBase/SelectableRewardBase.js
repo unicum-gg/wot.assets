@@ -219,10 +219,10 @@
                         arabic2roman: () => T,
                         children: () => n,
                         displayStatus: () => i.W,
-                        displayStatusIs: () => P,
+                        displayStatusIs: () => R,
                         enableFullScreenModeSupported: () => x,
                         events: () => a.U,
-                        extraSize: () => R,
+                        extraSize: () => L,
                         forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => B,
                         getBrowserTexturePath: () => E,
@@ -243,7 +243,7 @@
                         setEventHandled: () => f,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => A,
-                        whenTutorialReady: () => L,
+                        whenTutorialReady: () => P,
                     }));
                 var r = t(9690),
                     n = t(3722),
@@ -313,11 +313,11 @@
                 function b() {
                     return viewEnv.getExternalPaddingsRem();
                 }
-                const P = Object.keys(i.W).reduce(
+                const R = Object.keys(i.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === i.W[e]), u),
                         {},
                     ),
-                    R = {
+                    L = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -325,7 +325,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    L = Promise.all([
+                    P = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : a.U.onDomBuilt(u);
                         }),
@@ -806,7 +806,7 @@
                 t.d(e, { Ew: () => i, Z5: () => r, cy: () => n });
                 const r = {
                         getNumberFormat: (u, e) => systemLocale.getNumberFormat(u, e),
-                        getRealFormat: (u, e) => systemLocale.getRealFormat(u, e),
+                        getRealFormat: (u, e, t = 2) => systemLocale.getRealFormat(u, e, t),
                         getTimeFormat: (u, e) => systemLocale.getTimeFormat(u, e),
                         getDateFormat: (u, e) => systemLocale.getDateFormat(u, e),
                         toUpperCase: (u) => systemLocale.toUpperCase(u),
@@ -822,7 +822,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            653: (u, e, t) => {
+            9880: (u, e, t) => {
                 'use strict';
                 var r = {};
                 (t.r(r),
@@ -1082,7 +1082,7 @@
                     l().LARGE,
                     l().EXTRA_LARGE);
                 (0, F.createContext)('model');
-                let w, S, T, b, P, L, x, y;
+                let w, S, T, b, L, P, x, y;
                 (!(function (u) {
                     ((u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -1217,10 +1217,10 @@
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
                             (u.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
                             (u.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'));
-                    })(P || (P = {})),
+                    })(L || (L = {})),
                     (function (u) {
                         u.BATTLE_BOOSTER = 'battleBooster';
-                    })(L || (L = {})),
+                    })(P || (P = {})),
                     (function (u) {
                         ((u.ATTACHMENT_RARE = 'rare'),
                             (u.ATTACHMENT_EPIC = 'epic'),
@@ -2087,19 +2087,27 @@
                     );
                 bu.Default = Tu;
                 R.views.common.tooltip_window.simple_tooltip_content;
-                let Pu;
+                let Ru;
                 !(function (u) {
                     ((u.Plus = 'plus'), (u.Minus = 'minus'));
-                })(Pu || (Pu = {}));
-                let Ru;
+                })(Ru || (Ru = {}));
+                let Lu;
                 !(function (u) {
                     ((u.None = 'none'),
                         (u.Trophy = 'trophy'),
                         (u.Deluxe = 'deluxe'),
                         (u.Modernized = 'modernized_device'));
-                })(Ru || (Ru = {}));
+                })(Lu || (Lu = {}));
                 R.strings.selectable_reward.reward;
-                let Lu, xu;
+                let Pu;
+                !(function (u) {
+                    ((u[(u.LEFT = 0)] = 'LEFT'),
+                        (u[(u.WHEEL = 1)] = 'WHEEL'),
+                        (u[(u.RIGHT = 2)] = 'RIGHT'),
+                        (u[(u.FOURTH = 3)] = 'FOURTH'),
+                        (u[(u.FIFTH = 4)] = 'FIFTH'));
+                })(Pu || (Pu = {}));
+                let xu, yu;
                 (!(function (u) {
                     ((u.main = 'main'),
                         (u.primary = 'primary'),
@@ -2107,22 +2115,22 @@
                         (u.primaryRed = 'primaryRed'),
                         (u.secondary = 'secondary'),
                         (u.ghost = 'ghost'));
-                })(Lu || (Lu = {})),
+                })(xu || (xu = {})),
                     (function (u) {
                         ((u.extraSmall = 'extraSmall'),
                             (u.small = 'small'),
                             (u.medium = 'medium'),
                             (u.large = 'large'));
-                    })(xu || (xu = {})));
-                let yu;
-                !(function (u) {
-                    ((u[(u.None = 0)] = 'None'), (u[(u.Accepting = 1)] = 'Accepting'));
-                })(yu || (yu = {}));
-                ((0, F.createContext)(yu.None), R.strings.selectable_reward.error);
+                    })(yu || (yu = {})));
                 let Mu;
                 !(function (u) {
-                    ((u.Normal = 'normal'), (u.Error = 'error'));
+                    ((u[(u.None = 0)] = 'None'), (u[(u.Accepting = 1)] = 'Accepting'));
                 })(Mu || (Mu = {}));
+                ((0, F.createContext)(Mu.None), R.strings.selectable_reward.error);
+                let Ou;
+                !(function (u) {
+                    ((u.Normal = 'normal'), (u.Error = 'error'));
+                })(Ou || (Ou = {}));
             },
             7363: (u) => {
                 'use strict';
@@ -2209,6 +2217,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [127], () => __webpack_require__(653));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [127], () => __webpack_require__(9880));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

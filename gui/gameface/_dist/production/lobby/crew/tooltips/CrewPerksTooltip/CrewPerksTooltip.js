@@ -772,7 +772,7 @@
                 t.d(e, { Z5: () => n, cy: () => r });
                 const n = {
                         getNumberFormat: (u, e) => systemLocale.getNumberFormat(u, e),
-                        getRealFormat: (u, e) => systemLocale.getRealFormat(u, e),
+                        getRealFormat: (u, e, t = 2) => systemLocale.getRealFormat(u, e, t),
                         getTimeFormat: (u, e) => systemLocale.getTimeFormat(u, e),
                         getDateFormat: (u, e) => systemLocale.getDateFormat(u, e),
                         toUpperCase: (u) => systemLocale.toUpperCase(u),
@@ -891,7 +891,8 @@
                 var _ = t(3403);
                 let D, B;
                 (!(function (u) {
-                    ((u.Main = 'main'),
+                    ((u.Empty = ''),
+                        (u.Main = 'main'),
                         (u.Situational = 'situational'),
                         (u.Common = 'common'),
                         (u.CommanderSpecial = 'commanderSpecial'));
@@ -956,12 +957,13 @@
                                     'div',
                                     { className: k },
                                     r().createElement('div', { className: T }, u),
-                                    r().createElement(
-                                        'div',
-                                        { className: x },
-                                        R.strings.tooltips.perkType.name.$dyn(t),
-                                        t === D.Situational && n && r().createElement('div', { className: h }),
-                                    ),
+                                    t &&
+                                        r().createElement(
+                                            'div',
+                                            { className: x },
+                                            R.strings.tooltips.perkType.name.$dyn(t),
+                                            t === D.Situational && n && r().createElement('div', { className: h }),
+                                        ),
                                 ),
                             ),
                         ),

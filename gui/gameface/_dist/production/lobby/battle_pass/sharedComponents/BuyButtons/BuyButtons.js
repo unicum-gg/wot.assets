@@ -3,7 +3,7 @@
     var r,
         e = {
             3457: (r, e, t) => {
-                (t(6483), t(7727), t(7363), t(6880), t(2106));
+                (t(6483), t(1641), t(7727), t(7363), t(6880), t(2106));
             },
             2106: (r, e, t) => {
                 let a, n;
@@ -21,6 +21,16 @@
                             (r.medium = 'medium'),
                             (r.large = 'large'));
                     })(n || (n = {})));
+            },
+            1641: (r, e, t) => {
+                let a;
+                !(function (r) {
+                    ((r[(r.LEFT = 0)] = 'LEFT'),
+                        (r[(r.WHEEL = 1)] = 'WHEEL'),
+                        (r[(r.RIGHT = 2)] = 'RIGHT'),
+                        (r[(r.FOURTH = 3)] = 'FOURTH'),
+                        (r[(r.FIFTH = 4)] = 'FIFTH'));
+                })(a || (a = {}));
             },
             7727: (r, e, t) => {},
             9525: (r, e, t) => {

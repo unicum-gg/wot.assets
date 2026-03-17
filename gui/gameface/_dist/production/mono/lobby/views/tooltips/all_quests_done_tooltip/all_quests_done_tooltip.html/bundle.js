@@ -1,4 +1,4 @@
-import { U as e, x as s, j as t } from '../../../../chunks/vendor.js';
+import { V as e, x as s, j as t } from '../../../../chunks/vendor.js';
 import { i as o, r } from '../../../../chunks/lib.js';
 import { u as n } from '../../../../chunks/use_server_time_polling.js';
 import { E as i } from '../../../../chunks/extended_tooltip_decorator.js';

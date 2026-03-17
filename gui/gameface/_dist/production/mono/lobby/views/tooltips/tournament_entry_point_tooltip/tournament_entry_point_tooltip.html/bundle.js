@@ -1,6 +1,6 @@
 import { I as e, j as t, J as a } from '../../../../chunks/vendor.js';
-import { i as s, cd as n, bV as i, cP as p } from '../../../../chunks/lib.js';
-import { T as o } from '../../../../chunks/tooltip_decorator.js';
+import { i as s, co as n, c5 as i, cW as o } from '../../../../chunks/lib.js';
+import { T as p } from '../../../../chunks/tooltip_decorator.js';
 import { T as r } from '../../../../chunks/enums.js';
 import { t as _ } from '../../../../chunks/tooltips.module.js';
 var c = ((e) => (
@@ -41,7 +41,7 @@ const [l, d] = s()(({ observableModel: e }) => ({ root: e.object() })),
     h = [c.Live, c.BetweenShowmatches],
     v = e(() => {
         const { model: e } = d(),
-            { state: s, timeLeftUntilLiveMatch: p, timeLeftUntilNextShowMatchDay: o, tournamentName: l } = e.root.get();
+            { state: s, timeLeftUntilLiveMatch: o, timeLeftUntilNextShowMatchDay: p, tournamentName: l } = e.root.get();
         return t.jsxs('div', {
             className: a(m.base, m[`base__${l}${s === c.Live ? 'Live' : ''}`]),
             children: [
@@ -74,7 +74,7 @@ const [l, d] = s()(({ observableModel: e }) => ({ root: e.object() })),
                                                     : R.strings.comp7_ext.tournamentsEntryPointTooltip.showmatch(),
                                             binding: {
                                                 timer: t.jsx(i, {
-                                                    start: s === c.Live ? p : o,
+                                                    start: s === c.Live ? o : p,
                                                     format: i.format.default,
                                                     type: i.type.accent,
                                                     size: i.size.x24x24,
@@ -89,4 +89,4 @@ const [l, d] = s()(({ observableModel: e }) => ({ root: e.object() })),
             ],
         });
     });
-p(t.jsx(l, { children: t.jsx(o, { children: t.jsx(v, {}) }) }));
+o(t.jsx(l, { children: t.jsx(p, { children: t.jsx(v, {}) }) }));

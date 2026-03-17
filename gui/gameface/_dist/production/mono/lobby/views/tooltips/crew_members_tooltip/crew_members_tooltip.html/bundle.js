@@ -1,5 +1,5 @@
 import { j as s, J as e } from '../../../../chunks/vendor.js';
-import { cP as i } from '../../../../chunks/lib.js';
+import { cW as i } from '../../../../chunks/lib.js';
 import { T as c } from '../../../../chunks/tooltip_decorator.js';
 import { t as a } from '../../../../chunks/tooltips.module.js';
 /* empty css                        */ const r = 'App_4fcbfa35',

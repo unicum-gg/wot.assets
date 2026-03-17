@@ -1286,7 +1286,539 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-top: -7rem;
 }
 
-.Price_base_3c {
+.DropDownControl_base_46 {
+    display: flex;
+    height: 100%;
+    border: 1rem solid #464538;
+    border-radius: 2rem;
+    box-shadow:
+        inset 0 0 1rem #000,
+        inset 0 0 8rem #000;
+    position: relative;
+    cursor: pointer;
+}
+
+.DropDownControl_base__extraSmall_a3 {
+    height: 20rem;
+}
+
+.DropDownControl_base__small_22 {
+    height: 24rem;
+}
+
+.DropDownControl_base__medium_09 {
+    height: 32rem;
+}
+
+.DropDownControl_base__disabled_37 {
+    cursor: default;
+}
+
+.DropDownControl_base__focused_63 {
+    border-color: #75552c;
+}
+
+.DropDownControl_base__selected_46 {
+    border-color: #7ab300;
+}
+.DropDownControl_stateHighlight_16 {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+.DropDownControl_base__over_e7 .DropDownControl_stateHighlight_16 {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 1;
+}
+.DropDownControl_base__down_1c .DropDownControl_stateHighlight_16,
+.DropDownControl_base__open_e3 .DropDownControl_stateHighlight_16 {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.4) 100%);
+    opacity: 1;
+}
+.DropDownControl_label_12 {
+    display: flex;
+    align-items: flex-end;
+    flex: 1;
+    padding: 0 8rem;
+    color: #8c8c7e;
+}
+.DropDownControl_label__extraSmall_3d {
+    padding-bottom: 2rem;
+    font-size: 14rem;
+}
+.DropDownControl_label__small_e7 {
+    padding-bottom: 2rem;
+    font-size: 14rem;
+}
+.DropDownControl_label__medium_0b {
+    padding-bottom: 5rem;
+    font-size: 16rem;
+}
+.DropDownControl_label__placeholder_98 {
+    color: #595950;
+}
+.DropDownControl_base__down_1c .DropDownControl_label_12,
+.DropDownControl_base__open_e3 .DropDownControl_label_12 {
+    opacity: 0.8;
+}
+.DropDownControl_base__disabled_37 .DropDownControl_label_12 {
+    color: #37362e;
+}
+.DropDownControl_button_cb {
+    display: flex;
+    background: url('R.images.gui.maps.icons.components.dropdown.button') no-repeat center / 100%;
+    position: relative;
+    top: 1rem;
+    right: 1rem;
+    pointer-events: none;
+}
+.DropDownControl_button__extraSmall_d2 {
+    width: 22rem;
+    height: 16rem;
+}
+.DropDownControl_button__small_b5 {
+    width: 22rem;
+    height: 20rem;
+}
+.DropDownControl_button__medium_14 {
+    width: 28rem;
+    height: 28rem;
+}
+.DropDownControl_base__down_1c .DropDownControl_button_cb {
+    opacity: 0.6;
+}
+.DropDownControl_base__open_e3 .DropDownControl_button_cb {
+    opacity: 0.8;
+}
+.DropDownControl_base__disabled_37 .DropDownControl_button_cb {
+    opacity: 0.8;
+}
+.DropDownControl_gradient_b5 {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.25s ease-in-out;
+}
+.DropDownControl_base__over_e7 .DropDownControl_gradient_b5 {
+    opacity: 1;
+}
+.DropDownControl_disabled_4e {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.gui.maps.icons.library.disabled_pattern') center / 9rem;
+    opacity: 0.8;
+    position: absolute;
+}
+.DropDownControl_arrow_de {
+    background: no-repeat center / contain;
+    position: absolute;
+}
+.DropDownControl_arrow__extraSmall_eb {
+    width: 9rem;
+    height: 6rem;
+    background-image: url('R.images.gui.maps.icons.components.dropdown.arrow_small');
+    top: 6rem;
+    left: 7rem;
+}
+.DropDownControl_arrow__small_77 {
+    width: 9rem;
+    height: 6rem;
+    background-image: url('R.images.gui.maps.icons.components.dropdown.arrow_small');
+    top: 7rem;
+    left: 7rem;
+}
+.DropDownControl_arrow__medium_3d {
+    width: 13rem;
+    height: 7rem;
+    background-image: url('R.images.gui.maps.icons.components.dropdown.arrow_medium');
+    top: 11rem;
+    left: 8rem;
+}
+.DropDownControl_base__open_e3 .DropDownControl_arrow_de {
+    transform: rotate(180deg);
+}
+.DropDownControl_alert_75 {
+    border: 1rem solid #ee7000;
+    border-radius: 2rem;
+    box-shadow: inset 0 0 6rem rgba(141, 13, 3, 0.1);
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    bottom: -1rem;
+    left: -1rem;
+    z-index: 1;
+    animation: DropDownControl_blink_68 2s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes DropDownControl_blink_68 {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.HorizontalBar_base_49 {
+    display: flex;
+    width: 100%;
+    height: 13rem;
+    visibility: hidden;
+    position: relative;
+}
+
+.HorizontalBar_base__active_5e {
+    visibility: visible;
+}
+
+.HorizontalBar_base_49 .disable,
+.HorizontalBar_base_49 .disable:hover {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.HorizontalBar_leftButton_5f,
+.HorizontalBar_rightButton_03 {
+    width: 13rem;
+    height: 13rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: no-repeat center / 7rem 5rem;
+    opacity: 0.5;
+    z-index: 1;
+    transform: rotate(-90deg);
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.HorizontalBar_leftButton_5f:hover,
+.HorizontalBar_rightButton_03:hover {
+    opacity: 1;
+}
+
+.HorizontalBar_leftButton_5f {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
+}
+
+.HorizontalBar_rightButton_03 {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
+}
+
+.HorizontalBar_track_0d {
+    flex: 1;
+    margin: 0 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.HorizontalBar_thumb_fd {
+    display: none;
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 20rem;
+    height: 13rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb_horizontal') no-repeat center / 8rem
+        7rem;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 1;
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.HorizontalBar_thumb_fd:hover {
+    opacity: 1;
+}
+
+.HorizontalBar_rail_32 {
+    height: 0;
+    border-top: 1rem solid #2f2e24;
+    position: absolute;
+    top: 6rem;
+    right: 5rem;
+    left: 5rem;
+}
+
+.HorizontalBar_rail_32:hover {
+    opacity: 0.7;
+}
+
+.HorizontalScroll_base_29 {
+    width: 100%;
+}
+
+.HorizontalScroll_wrapper_1e {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.HorizontalScroll_defaultScrollArea_8d {
+    width: 100%;
+    margin-bottom: 7rem;
+}
+
+.VerticalBar_base_f3 {
+    display: flex;
+    flex-direction: column;
+    width: 13rem;
+    height: 100%;
+    visibility: hidden;
+    position: relative;
+}
+
+.VerticalBar_base__active_72 {
+    visibility: visible;
+}
+
+.VerticalBar_base_f3 .disable,
+.VerticalBar_base_f3 .disable:hover {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.VerticalBar_topButton_d7,
+.VerticalBar_bottomButton_06 {
+    width: 13rem;
+    height: 13rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: no-repeat center / 7rem 5rem;
+    opacity: 0.5;
+    z-index: 1;
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.VerticalBar_topButton_d7:hover,
+.VerticalBar_bottomButton_06:hover {
+    opacity: 1;
+}
+
+.VerticalBar_topButton_d7 {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
+}
+
+.VerticalBar_bottomButton_06 {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
+}
+
+.VerticalBar_track_df {
+    flex: 1;
+    margin: 1rem 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.VerticalBar_thumb_32 {
+    display: none;
+    flex: 0 0 13rem;
+    width: 13rem;
+    height: 100%;
+    min-height: 20rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb') no-repeat center / 7rem 8rem;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 1;
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.VerticalBar_thumb_32:hover {
+    opacity: 1;
+}
+
+.VerticalBar_rail_43 {
+    width: 0;
+    height: 100%;
+    border-left: 1rem solid #2f2e24;
+    border-top: 5rem solid transparent;
+    border-bottom: 5rem solid transparent;
+    position: absolute;
+    top: 0;
+    left: 6rem;
+    z-index: 0;
+}
+
+.VerticalBar_rail_43:hover {
+    opacity: 0.7;
+}
+
+.VerticalScroll_content_cb {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.VerticalScroll_defaultScroll_f8 {
+    display: flex;
+}
+
+.VerticalScroll_bar_1e {
+    flex: 1;
+    margin-left: 7rem;
+}
+
+.VerticalScroll_area_af {
+    flex: 1;
+}
+
+/* bugfix WOTD-242261: due to using Chat as Subview in MembersWindow in platoon feature
+2 bundles (Chat.css and MembersWindow.css) start to conflict with each other
+
+for example, provided selectors as css mixClasses for Scroll component can be overwritten by basic css classes of Scroll component
+because both in Chat.tsx and MembersWindow.tsx <Scroll> component is used
+
+so we just add specificity to css classes here
+*/
+
+.VerticalAutoScroll_base_db .VerticalAutoScroll_content_47 {
+    height: auto;
+    min-height: 1rem;
+    max-height: 100%;
+}
+
+.VerticalAutoScroll_base_db .VerticalAutoScroll_barBase_93 {
+    position: absolute;
+    right: 0;
+}
+
+.DropDownItem_base_5e {
+    padding-left: 8rem;
+    padding-right: 8rem;
+    color: #8c8c7e;
+    cursor: pointer;
+}
+
+.DropDownItem_base_5e:hover {
+    background-color: #1c1b12;
+}
+
+.DropDownItem_base__extraSmall_5a {
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.DropDownItem_base__small_d6 {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+}
+
+.DropDownItem_base__medium_e4 {
+    padding-top: 6rem;
+    padding-bottom: 8rem;
+}
+
+.DropDownItem_base__selected_8e {
+    color: #cbac77;
+}
+
+.DropDownItem_base__disabled_21 {
+    color: #37362e;
+    pointer-events: none;
+}
+
+.DropDownItems_base__withScroll_19 {
+    padding-right: 15rem;
+}
+
+.DropDownList_base_62 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 198rem;
+    position: relative;
+}
+
+.DropDownList_base__extraSmall_60 {
+    font-size: 14rem;
+    line-height: 16rem;
+}
+
+.DropDownList_base__small_0c {
+    font-size: 14rem;
+    line-height: 16rem;
+}
+
+.DropDownList_base__medium_99 {
+    font-size: 16rem;
+    line-height: 18rem;
+}
+
+.PureDropDown_base_fc {
+    display: flex;
+    flex-direction: column;
+    width: 200rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+    background-color: rgba(23, 23, 15, 0.8);
+    position: relative;
+}
+
+.PureDropDown_base__extraSmall_31 {
+    height: 20rem;
+}
+
+.PureDropDown_base__small_a6 {
+    height: 24rem;
+}
+
+.PureDropDown_base__medium_05 {
+    height: 32rem;
+}
+.PureDropDown_control__down_18 {
+    z-index: 3;
+}
+.PureDropDown_list_28 {
+    display: flex;
+    width: 100%;
+    border: 1rem solid #464538;
+    border-radius: 2rem;
+    background-color: #090906;
+    position: absolute;
+    left: 0;
+    transition: opacity 0.25s;
+}
+.PureDropDown_list__up_a1 {
+    opacity: 0;
+    z-index: -1;
+    pointer-events: none;
+}
+.PureDropDown_list__down_c4 {
+    opacity: 1;
+    z-index: 2;
+}
+.PureDropDown_list__under_64 {
+    margin-top: -1rem;
+    top: 100%;
+}
+.PureDropDown_list__above_c8 {
+    top: 1rem;
+    transform: translateY(-100%);
+}
+
+.Price_price_dd {
     color: #c9c9b6;
     font-size: 16rem;
     font-weight: 400;
@@ -1297,13 +1829,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: none;
 }
 
-.Price_base__withPrice_ef {
-    margin-bottom: -2rem;
+.Price_price__withTooltip_59 {
+    pointer-events: auto;
 }
 
-.Price_base__withTooltip_a2 {
-    margin-bottom: -2rem;
-    pointer-events: auto;
+.Price_free_1b {
+    color: #c9c9b6;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    display: flex;
+    align-items: flex-end;
+    align-self: center;
+    pointer-events: none;
+    padding-bottom: 1rem;
 }
 
 .Price_resetCardPriceIcon_89 {
@@ -1321,9 +1860,66 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 25rem;
     color: #ced9d9;
     z-index: 1;
+}
+
+.PriceSelector_price_9b {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    bottom: 34rem;
+    left: 0;
+}
+
+.PriceSelector_price__specialDiscount_fd {
+    color: #ffdd99;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.PriceSelector_price__small_ac {
+    bottom: 15rem;
+}
+
+.PriceSelector_dropDown_98 {
+    width: 168rem;
+    position: absolute;
+    bottom: 32rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.PriceSelector_dropDown__small_75 {
+    bottom: 13rem;
+}
+
+.PriceSelector_item_c2 {
+    padding-top: 0;
+    padding-bottom: 1rem;
+}
+
+.PriceSelector_dropDownPrice_84 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 30rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.PriceSelector_dropDownPrice__specialDiscount_a8 {
+    color: #ffdd99;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.PriceSelector_dropDownPrice__control_e1 {
+    bottom: -2rem;
 }
 
 .PriceCard_base_1c {
@@ -1479,27 +2075,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .PriceCard_base__small_b0 .PriceCard_description__reset_aa {
     margin-top: -20rem;
-}
-
-.PriceCard_price_13 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: absolute;
-    bottom: 34rem;
-    left: 0;
-}
-
-.PriceCard_price__specialDiscount_12 {
-    color: #ffdd99;
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-
-.PriceCard_base__small_b0 .PriceCard_price_13 {
-    bottom: 15rem;
 }
 
 .PriceCard_bottomGlow_a3 {

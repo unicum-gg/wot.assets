@@ -4646,3 +4646,27 @@ in JS 8000 reserved like anchor for start optimization
         transform: translateX(20rem);
     }
 }
+
+.App_base_11 {
+    padding-top: var(--external-padding-top);
+    padding-bottom: var(--external-padding-bottom);
+    position: relative;
+}
+.App_background_03 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('R.images.gui.maps.icons.lobby.settings_blured_bg') no-repeat top / cover;
+    bottom: -40rem;
+}
+.App_setupApp_34 {
+    background: none;
+}
+.App_setupAppCloseButton_d7 {
+    display: none;
+}
+.App_setupAppContent_ea {
+    margin-top: 0;
+}

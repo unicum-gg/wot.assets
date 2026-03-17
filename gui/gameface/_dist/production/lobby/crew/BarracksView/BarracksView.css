@@ -2522,6 +2522,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 24rem;
 }
 
+.Header_button_f1:last-child {
+    margin-left: 14rem;
+}
+
 .BarracksApp_base_b7 {
     display: flex;
     justify-content: center;

@@ -1,7 +1,7 @@
-import { r as a, j as e, e as s, n as r, p as t, q as i } from '../../../chunks/vendor.js';
+import { r as a, j as e, f as s, s as r, t, v as i } from '../../../chunks/vendor.js';
 import {
-    u as n,
-    a as d,
+    u as d,
+    a as n,
     i as o,
     c as l,
     b as c,
@@ -44,12 +44,12 @@ const [E, H] = o()(
             ],
         }),
     W = ({ text: a, openTag: s, closeTag: r, classNames: t }) => {
-        const [i, n] = a.split(s);
-        if (!n) return a;
-        const [d, o] = n.split(r);
+        const [i, d] = a.split(s);
+        if (!d) return a;
+        const [n, o] = d.split(r);
         return e.jsxs('span', {
             className: null == t ? void 0 : t.title,
-            children: [i && l(i), d && e.jsx(Q, { className: null == t ? void 0 : t.highlight, text: d }), o && l(o)],
+            children: [i && l(i), n && e.jsx(Q, { className: null == t ? void 0 : t.highlight, text: n }), o && l(o)],
         });
     },
     z = 'Header_7d83acf6',
@@ -58,10 +58,10 @@ const [E, H] = o()(
     D = 'Header_arrow_de9151',
     P = 'Header_arrowHead_4e2a2709',
     $ = 'Header_arrowBody_27276e71',
-    q = 'Header_arrow__left_65f475ba',
-    L = 'Header_arrow__right_65f475ba',
-    U = 'Header_title_c5f44fd0',
-    V = 'Header_underTitleWrapper_1ee34789',
+    L = 'Header_arrow__left_65f475ba',
+    U = 'Header_arrow__right_65f475ba',
+    V = 'Header_title_c5f44fd0',
+    q = 'Header_underTitleWrapper_1ee34789',
     F = 'Header_wing_c2ef7d92',
     G = 'Header_wing__left_a6e40196',
     J = 'Header_wing__right_f408d2da',
@@ -69,8 +69,8 @@ const [E, H] = o()(
     X = r(function () {
         const a = c(),
             r = m.resolve('strings'),
-            n = r.readOrEmpty('awards.collector20.title'),
-            d = r.readOrEmpty('awards.collector20.subTitle'),
+            d = r.readOrEmpty('awards.collector20.title'),
+            n = r.readOrEmpty('awards.collector20.subTitle'),
             o = r.readOrEmpty('awards.collector20.underTitle'),
             l = t(
                 ((a) => ({
@@ -102,24 +102,24 @@ const [E, H] = o()(
                     className: B,
                     children: [
                         e.jsxs('div', {
-                            className: s(D, q),
+                            className: s(D, L),
                             children: [e.jsx('div', { className: $ }), e.jsx('div', { className: P })],
                         }),
-                        d && e.jsx(Q, { className: I, text: d }),
+                        n && e.jsx(Q, { className: I, text: n }),
                         e.jsxs('div', {
-                            className: s(D, L),
+                            className: s(D, U),
                             children: [e.jsx('div', { className: P }), e.jsx('div', { className: $ })],
                         }),
                     ],
                 }),
-                n &&
+                d &&
                     e.jsx(i.div, {
                         style: _,
-                        className: U,
-                        children: e.jsx(W, { text: n, openTag: '{gold_Open}', closeTag: '{gold_Close}' }),
+                        className: V,
+                        children: e.jsx(W, { text: d, openTag: '{gold_Open}', closeTag: '{gold_Close}' }),
                     }),
                 e.jsxs('div', {
-                    className: V,
+                    className: q,
                     children: [
                         o && e.jsx('div', { className: K, children: o }),
                         e.jsx('div', { className: s(F, G) }),
@@ -130,9 +130,9 @@ const [E, H] = o()(
         });
     }),
     Y = 'AnimatedReward_1789d927',
-    Z = ({ children: a, animationConfig: r, className: n }) => {
-        const d = t(r);
-        return e.jsx(i.div, { style: d, className: s(Y, n), children: a });
+    Z = ({ children: a, animationConfig: r, className: d }) => {
+        const n = t(r);
+        return e.jsx(i.div, { style: n, className: s(Y, d), children: a });
     },
     aa = 'MainRewards_title_b9294abf',
     ea = 'MainRewards_f647a436',
@@ -149,25 +149,25 @@ const [E, H] = o()(
         },
     }),
     ia = ({ rewards: a, classNames: r, oneCountDelay: t, duration: i }) => {
-        const n = _({ size: y.S296x222 }, { medium: { size: y.S400x300 } }),
-            d = c();
+        const d = _({ size: y.S296x222 }, { medium: { size: y.S400x300 } }),
+            n = c();
         return e.jsx('div', {
             className: s(ea, null == r ? void 0 : r.base),
             children: u(a, (a, o) =>
                 e.jsxs(
                     Z,
                     {
-                        animationConfig: ta(i, t, o, d),
+                        animationConfig: ta(i, t, o, n),
                         className: sa,
                         children: [
                             e.jsx(x, {
                                 name: a.name,
                                 image: v(
                                     { item: a.item, type: a.overlayType, icon: a.icon, name: a.name, value: a.value },
-                                    n.size,
+                                    d.size,
                                 ),
                                 special: a.overlayType,
-                                size: n.size,
+                                size: d.size,
                                 tooltipArgs: g({ tooltipId: a.tooltipId }, Number(a.tooltipContentId)),
                             }),
                             e.jsx('div', {
@@ -181,8 +181,8 @@ const [E, H] = o()(
             ),
         });
     },
-    na = 'App_video_b460a12e',
-    da = 'App_decorWrapper_bb0bfe54',
+    da = 'App_video_b460a12e',
+    na = 'App_decorWrapper_bb0bfe54',
     oa = 'App_5c487cff',
     la = 'App_closeButton_f5179698',
     ca = 'App_content_6d450fd7',
@@ -227,8 +227,8 @@ const [E, H] = o()(
     Ea = r(function () {
         const [r, o] = a.useState(!1),
             l = (() => {
-                const e = n(),
-                    s = d(),
+                const e = d(),
+                    s = n(),
                     r = 2560 / 1440,
                     t = viewEnv.pxToRem(e.width) * s,
                     i = viewEnv.pxToRem(e.height) * s,
@@ -288,11 +288,11 @@ const [E, H] = o()(
                         src: R.videos.achievements.bg_reward_screen(),
                         autoplay: !0,
                         loop: !0,
-                        className: na,
+                        className: da,
                         style: l,
                     }),
                     e.jsxs('div', {
-                        className: da,
+                        className: na,
                         children: [
                             e.jsx(i.div, { style: A, className: ya, children: e.jsx('div', { className: xa }) }),
                             e.jsx(i.div, {

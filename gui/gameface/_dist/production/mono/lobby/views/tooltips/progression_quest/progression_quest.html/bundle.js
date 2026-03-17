@@ -2,32 +2,32 @@ import { j as e } from '../../../../chunks/vendor.js';
 import {
     i as s,
     n as o,
-    y as t,
-    aN as r,
-    aj as a,
-    ak as i,
-    aO as n,
-    r as d,
-    ad as l,
-    ac as c,
-    ay as u,
-    ax as p,
+    m as t,
+    bv as r,
+    ar as i,
+    as as a,
+    bw as n,
+    q as d,
+    al as l,
+    ak as u,
+    r as c,
+    U as p,
 } from '../../../../chunks/lib.js';
 import { E as m, D as _ } from '../../../../chunks/extended_tooltip_decorator.js';
-const [x, I] = s()(
+/* empty css                        */ const [b, x] = s()(
     ({ observableModel: e }) => ({
         ...e.primitives(['countdown', 'id', 'description']),
         bonuses: e.arrayClone('bonuses'),
     }),
     o,
 );
-function b({ bonuses: s, questId: o, size: d, resId: l, ...c }) {
-    const u = t(s, (e) => ({
+function I({ bonuses: s, questId: o, size: d, resId: l, ...u }) {
+    const c = t(s, (e) => ({
             size: d,
             name: e.name,
-            image: i(e, d),
+            image: a(e, d),
             value: e.value,
-            valueType: a(e.name),
+            valueType: i(e.name),
             special: 'overlayType' in e ? e.overlayType : void 0,
             tooltipArgs: {
                 ...r(
@@ -40,19 +40,19 @@ function b({ bonuses: s, questId: o, size: d, resId: l, ...c }) {
         })),
         p = {
             contentId: R.views.lobby.tooltips.AdditionalRewardsTooltip('resId'),
-            args: { showFromIndex: c.count, questId: o },
+            args: { showFromIndex: u.count, questId: o },
             resId: l,
         };
-    return e.jsx(n, { ...c, data: u, boxRewardTooltip: p, size: d });
+    return e.jsx(n, { ...u, data: c, boxRewardTooltip: p, size: d });
 }
 const g = 'ProgressionQuest_rewardsText_f9c93221',
     v = 'ProgressionQuest_divider_c563a46d',
-    y = 'ProgressionQuest_rewardItem_48a2c60b',
-    w = 'ProgressionQuest_rewards_a5087287',
+    w = 'ProgressionQuest_rewardItem_48a2c60b',
+    h = 'ProgressionQuest_rewards_a5087287',
     j = d.resolve('strings'),
-    h = d.resolve('aliases'),
+    y = d.resolve('aliases'),
     T = () => {
-        const { model: s } = I(),
+        const { model: s } = x(),
             o = s.bonuses.get(),
             t = s.countdown.get();
         return e.jsxs(m, {
@@ -66,15 +66,15 @@ const g = 'ProgressionQuest_rewardsText_f9c93221',
                     className: g,
                     children: j.pluralOrEmpty('battle_royale_extention.tooltip.daily_quests.reward', o.length),
                 }),
-                e.jsx(b, {
+                e.jsx(I, {
                     bonuses: o,
                     questId: s.id.get(),
-                    resId: h.read((e) => e.user_missions.hangarWidget.Quests('resId')),
-                    size: c.Small,
-                    rewardItemClassMix: y,
-                    classMix: w,
+                    resId: y.read((e) => e.user_missions.hangarWidget.Quests('resId')),
+                    size: u.Small,
+                    rewardItemClassMix: w,
+                    classMix: h,
                 }),
             ],
         });
     };
-u(e.jsx(p, { children: e.jsx(x, { children: e.jsx(T, {}) }) }));
+c(e.jsx(p, { children: e.jsx(b, { children: e.jsx(T, {}) }) }));

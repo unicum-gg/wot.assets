@@ -1,5 +1,5 @@
 import { j as a, J as s, R as i, I as e } from '../../../../chunks/vendor.js';
-import { m as t, i as n, n as l, cd as o, cP as m } from '../../../../chunks/lib.js';
+import { m as t, i as n, n as o, co as l, cW as m } from '../../../../chunks/lib.js';
 import { T as r } from '../../../../chunks/tooltip_decorator.js';
 import { R as c, a as d } from '../../../../chunks/rank_emblem.js';
 import { b as p } from '../../../../chunks/get_rank_name.js';
@@ -16,12 +16,12 @@ const h = 'RankCompatibilityTable_d1e1f461',
     u = 'RankCompatibilityTable_emptySlot_7884dfc9',
     y = 'RankCompatibilityTable_divider_e6a19cf8',
     T = [b.First, b.Second, b.Third, b.Fourth, b.Fifth, b.Sixth],
-    f = ({ seasonName: e, rankRangeRestriction: n, className: l, classNames: o }) =>
+    f = ({ seasonName: e, rankRangeRestriction: n, className: o, classNames: l }) =>
         a.jsxs('div', {
-            className: s(h, l),
+            className: s(h, o),
             children: [
                 a.jsxs('div', {
-                    className: s(k, j, null == o ? void 0 : o.tableHeading),
+                    className: s(k, j, null == l ? void 0 : l.tableHeading),
                     children: [
                         a.jsx('div', {
                             className: x,
@@ -36,7 +36,7 @@ const h = 'RankCompatibilityTable_d1e1f461',
                         }),
                     ],
                 }),
-                T.map((l, o) =>
+                T.map((o, l) =>
                     a.jsxs(
                         i.Fragment,
                         {
@@ -47,29 +47,29 @@ const h = 'RankCompatibilityTable_d1e1f461',
                                         a.jsxs('div', {
                                             className: k,
                                             children: [
-                                                a.jsx(c, { rank: l, size: d.x22, seasonName: e, className: v }),
-                                                p(l),
+                                                a.jsx(c, { rank: o, size: d.x22, seasonName: e, className: v }),
+                                                p(o),
                                             ],
                                         }),
                                         a.jsx('div', {
                                             className: s(k, g),
                                             children: t(T.length, (s) =>
-                                                Math.abs(s - o) <= n
+                                                Math.abs(s - l) <= n
                                                     ? a.jsx(c, { rank: T[s], size: d.x22, seasonName: e }, s)
                                                     : a.jsx('div', { className: u }, s),
                                             ),
                                         }),
                                     ],
                                 }),
-                                o !== T.length - 1 && a.jsx('div', { className: s(_.divider, y) }),
+                                l !== T.length - 1 && a.jsx('div', { className: s(_.divider, y) }),
                             ],
                         },
-                        o,
+                        l,
                     ),
                 ),
             ],
         }),
-    [C, F] = n()(({ observableModel: a }) => ({ root: a.object() }), l),
+    [C, F] = n()(({ observableModel: a }) => ({ root: a.object() }), o),
     M = 'App_bce8e88b',
     S = 'App_description_e694643b',
     z = 'App_table_8784516a',
@@ -79,12 +79,12 @@ const h = 'RankCompatibilityTable_d1e1f461',
         return a.jsxs('div', {
             className: s(M, _.base),
             children: [
-                a.jsx(o, {
+                a.jsx(l, {
                     text: R.strings.comp7_ext.rankCompatibilityTooltip.heading(),
                     binding: { count: t },
                     classMix: _.heading,
                 }),
-                a.jsx(o, {
+                a.jsx(l, {
                     text: R.strings.comp7_ext.rankCompatibilityTooltip.description(),
                     classMix: s(_.description, S),
                 }),

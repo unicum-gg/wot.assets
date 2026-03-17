@@ -1,26 +1,26 @@
-import { S as e, j as a, J as s, I as n, f as i, R as c, Q as t, P as r } from '../../../chunks/vendor.js';
+import { T as e, j as a, J as s, I as n, f as i, R as c, S as t, Q as r } from '../../../chunks/vendor.js';
 import {
     i as _,
-    cU as d,
-    aB as l,
-    dA as o,
-    d2 as h,
-    cf as m,
-    dl as p,
-    cS as x,
-    aI as g,
-    a7 as v,
-    ch as j,
-    cd as b,
+    d2 as d,
+    aD as l,
+    cZ as o,
+    dc as h,
+    cq as m,
+    dv as p,
+    d0 as x,
+    aK as g,
+    a9 as v,
+    cr as j,
+    co as b,
     m as N,
-    T as w,
-    _ as f,
-    d4 as u,
-    cP as M,
-    cn as V,
+    V as w,
+    a0 as f,
+    de as u,
+    cW as M,
+    cw as V,
 } from '../../../chunks/lib.js';
-import { u as y, S as I } from '../../../chunks/schedule_model.js';
-import { C as T } from '../../../chunks/close_button.js';
+import { u as y, S as T } from '../../../chunks/schedule_model.js';
+import { C as I } from '../../../chunks/close_button.js';
 import { P as C } from '../../../chunks/consts.js';
 import { g as k } from '../../../chunks/get_button_size.js';
 import { b as A } from '../../../chunks/enums.js';
@@ -82,57 +82,57 @@ const [$, D] = _()(
         blink: 'Tag_blink_0',
         slideUpIn: 'Tag_slideUpIn_0',
     },
-    P = ({ type: e, className: n }) =>
+    H = ({ type: e, className: n }) =>
         a.jsx('div', {
             className: s(z.base, z[`base__${e}`], n),
             children: R.strings.comp7_ext.whatsNewView.tag.$dyn(e),
         }),
-    H = 'Grid_container_831824ec',
-    O = 'Grid_header_9a3828c4',
-    Q = 'Grid_row_6e713752',
+    O = 'Grid_container_831824ec',
+    Q = 'Grid_header_9a3828c4',
+    P = 'Grid_row_6e713752',
     F = 'Grid_cell_30c32ef4',
     G = 'CommsCenter_cacf3fc3',
-    L = 'CommsCenter_text_b65fdeb3',
-    q = 'CommsCenter_container_6791e5a4',
-    E = 'Typography_h1_da89a0d0',
-    K = 'Typography_h2_e8114310',
+    q = 'CommsCenter_text_b65fdeb3',
+    K = 'CommsCenter_container_6791e5a4',
+    L = 'Typography_h1_da89a0d0',
+    E = 'Typography_h2_e8114310',
     J = 'Typography_h3_e8114310',
-    X = 'Typography_paragraphText_5f2b094e',
-    Y = () =>
+    Z = 'Typography_paragraphText_5f2b094e',
+    X = () =>
         a.jsx('div', {
             className: G,
             children: a.jsxs('div', {
-                className: q,
+                className: K,
                 children: [
                     a.jsxs('div', {
-                        className: O,
+                        className: Q,
                         children: [
-                            a.jsx('div', { className: K, children: R.strings.comp7_ext.whatsNewView.comms.heading() }),
-                            a.jsx(P, { type: 'seasonUpdate' }),
+                            a.jsx('div', { className: E, children: R.strings.comp7_ext.whatsNewView.comms.heading() }),
+                            a.jsx(H, { type: 'seasonUpdate' }),
                         ],
                     }),
-                    a.jsx(m, { classMix: s(X, L), text: R.strings.comp7_ext.whatsNewView.comms.description() }),
+                    a.jsx(m, { classMix: s(Z, q), text: R.strings.comp7_ext.whatsNewView.comms.description() }),
                 ],
             }),
         }),
-    Z = 'ShopUpdates_127b9aee',
+    Y = 'ShopUpdates_127b9aee',
     ee = 'ShopUpdates_header_f1f50f12',
     ae = 'ShopUpdates_text_c2b4cf6c',
     se = () =>
         a.jsxs('div', {
-            className: Z,
+            className: Y,
             children: [
                 a.jsxs('div', {
-                    className: s(O, ee),
+                    className: s(Q, ee),
                     children: [
                         a.jsx('div', {
-                            className: K,
+                            className: E,
                             children: R.strings.comp7_ext.whatsNewView.shopUpdates.heading(),
                         }),
-                        a.jsx(P, { type: 'revamped' }),
+                        a.jsx(H, { type: 'revamped' }),
                     ],
                 }),
-                a.jsx(m, { classMix: s(X, ae), text: R.strings.comp7_ext.whatsNewView.shopUpdates.description() }),
+                a.jsx(m, { classMix: s(Z, ae), text: R.strings.comp7_ext.whatsNewView.shopUpdates.description() }),
             ],
         }),
     ne = 'TemporaryUnavailable_8085316d',
@@ -145,16 +145,16 @@ const [$, D] = _()(
                 className: ce,
                 children: [
                     a.jsxs('div', {
-                        className: O,
+                        className: Q,
                         children: [
                             a.jsx('div', {
-                                className: K,
+                                className: E,
                                 children: R.strings.comp7_ext.whatsNewView.unavailable.heading(),
                             }),
-                            a.jsx(P, { type: 'attention' }),
+                            a.jsx(H, { type: 'attention' }),
                         ],
                     }),
-                    a.jsx(m, { classMix: s(X, ie), text: R.strings.comp7_ext.whatsNewView.unavailable.description() }),
+                    a.jsx(m, { classMix: s(Z, ie), text: R.strings.comp7_ext.whatsNewView.unavailable.description() }),
                 ],
             }),
         }),
@@ -206,12 +206,12 @@ const ge = n(() => {
     Me = 'Banner_introContainer_328c8c73',
     Ve = 'Banner_shadow_57286f21',
     ye = 'Banner_tag_b884e5f0',
-    Ie = () =>
+    Te = () =>
         a.jsxs('div', {
             className: ve,
             children: [
                 a.jsx('div', { className: s(J, je), children: R.strings.comp7_ext.whatsNewView.banner.title.small() }),
-                a.jsx('div', { className: E, children: R.strings.comp7_ext.whatsNewView.banner.title.large() }),
+                a.jsx('div', { className: L, children: R.strings.comp7_ext.whatsNewView.banner.title.large() }),
                 a.jsx(U, { hasSeasonName: !1, className: we }),
                 a.jsx(ge, {}),
                 a.jsx('div', {
@@ -225,11 +225,11 @@ const ge = n(() => {
                                 children: a.jsx(b, {
                                     classMix: Ne,
                                     text: R.strings.comp7_ext.whatsNewView.intro.heading(),
-                                    binding: { tag: a.jsx(P, { type: 'new', className: ye }) },
+                                    binding: { tag: a.jsx(H, { type: 'new', className: ye }) },
                                 }),
                             }),
                             a.jsx(b, {
-                                classMix: s(X, ue),
+                                classMix: s(Z, ue),
                                 text: R.strings.comp7_ext.whatsNewView.intro.description(),
                             }),
                         ],
@@ -237,7 +237,7 @@ const ge = n(() => {
                 }),
             ],
         }),
-    Te = [
+    Ie = [
         { name: '13_erlenberg', tag: 'new' },
         { name: '217_er_alaska', stamp: 'removed' },
     ],
@@ -281,7 +281,7 @@ const ge = n(() => {
                 a.jsxs('div', {
                     className: Ce.content,
                     children: [
-                        i && a.jsx(P, { type: i }),
+                        i && a.jsx(H, { type: i }),
                         a.jsx('div', {
                             className: Ce.nameContainer,
                             children: a.jsx('div', { className: Ce.name, children: r.$dyn('name') }),
@@ -297,15 +297,15 @@ const ge = n(() => {
             className: Ae.base,
             children: [
                 a.jsxs('div', {
-                    className: s(O, Ae.header),
+                    className: s(Q, Ae.header),
                     children: [
-                        a.jsx('div', { className: K, children: R.strings.comp7_ext.whatsNewView.mapChanges.heading() }),
-                        a.jsx(P, { type: 'seasonUpdate' }),
+                        a.jsx('div', { className: E, children: R.strings.comp7_ext.whatsNewView.mapChanges.heading() }),
+                        a.jsx(H, { type: 'seasonUpdate' }),
                     ],
                 }),
                 a.jsx('div', {
-                    className: Q,
-                    children: Te.map(({ name: e, tag: s, stamp: n }, i) =>
+                    className: P,
+                    children: Ie.map(({ name: e, tag: s, stamp: n }, i) =>
                         a.jsx('div', { className: F, children: a.jsx(ke, { name: e, tag: s, stamp: n, index: i }) }, e),
                     ),
                 }),
@@ -340,8 +340,8 @@ const ge = n(() => {
     De = 'NewVehicles_6f7751e5',
     We = 'NewVehicles_header_f488f783',
     ze = 'NewVehicles_tag_be6dca54',
-    Pe = 'NewVehicles_h2_b14237be',
-    He = n(() => {
+    He = 'NewVehicles_h2_b14237be',
+    Oe = n(() => {
         const { model: e } = D(),
             s = e.newAvailableVehicles.get().length;
         return a.jsxs('div', {
@@ -351,28 +351,28 @@ const ge = n(() => {
                     className: We,
                     children: a.jsx(b, {
                         text: R.strings.comp7_ext.whatsNewView.newVehicles(s),
-                        classMix: i(K, Pe),
-                        binding: { tag: a.jsx(P, { type: 'new', className: ze }) },
+                        classMix: i(E, He),
+                        binding: { tag: a.jsx(H, { type: 'new', className: ze }) },
                     }),
                 }),
                 N(s, (e) => a.jsx(c.Fragment, { children: a.jsx($e, { index: e }) }, e)),
             ],
         });
     }),
-    Oe = 'Vehicle_adb90ae5',
-    Qe = 'Vehicle_gradient_66189772',
+    Qe = 'Vehicle_adb90ae5',
+    Pe = 'Vehicle_gradient_66189772',
     Fe = 'Vehicle_details_23086f8c',
     Ge = 'Vehicle_vehicleName_3c00f9a6',
-    Le = n(({ index: e }) => {
+    qe = n(({ index: e }) => {
         const { model: s } = D(),
             { mediaSize: n } = g(),
             i = s.computes.vehicle(e),
             c = `url(${R.images.comp7.gui.maps.icons.whatsNewView.vehiclesForRent.$num(i.vehicleCD)})`;
         return a.jsxs('div', {
-            className: Oe,
+            className: Qe,
             style: { backgroundImage: c },
             children: [
-                a.jsx('div', { className: Qe }),
+                a.jsx('div', { className: Pe }),
                 a.jsx('div', {
                     className: Fe,
                     children: a.jsx(B, {
@@ -390,32 +390,32 @@ const ge = n(() => {
             ],
         });
     }),
-    qe = { header: 'VehiclesForRent_header_63fcbd4e' },
-    Ee = n(() => {
+    Ke = { header: 'VehiclesForRent_header_63fcbd4e' },
+    Le = n(() => {
         const { model: e } = D();
         return a.jsxs('div', {
-            className: qe.container,
+            className: Ke.container,
             children: [
                 a.jsxs('div', {
-                    className: s(O, qe.header),
+                    className: s(Q, Ke.header),
                     children: [
                         a.jsx('div', {
-                            className: K,
+                            className: E,
                             children: R.strings.comp7_ext.whatsNewView.vehiclesForRent.heading(),
                         }),
-                        a.jsx(P, { type: 'seasonUpdate' }),
+                        a.jsx(H, { type: 'seasonUpdate' }),
                     ],
                 }),
                 a.jsx('div', {
-                    className: Q,
+                    className: P,
                     children: N(e.vehicles.get().length, (e) =>
-                        a.jsx('div', { className: F, children: a.jsx(Le, { index: e }) }, e),
+                        a.jsx('div', { className: F, children: a.jsx(qe, { index: e }) }, e),
                     ),
                 }),
             ],
         });
     }),
-    Ke = {
+    Ee = {
         base: 'Main_c6b88ada',
         areaBaseWrapper: 'Main_areaBaseWrapper_4f37ba56',
         videoContainer: 'Main_videoContainer_742b9b37',
@@ -451,37 +451,37 @@ const ge = n(() => {
         highlightAppearance: 'Main_highlightAppearance_84c5dae7',
         blink: 'Main_blink_84c5dae7',
     },
-    Je = { base: Ke.scrollBar },
-    Xe = n(() => {
+    Je = { base: Ee.scrollBar },
+    Ze = n(() => {
         const { controls: e } = D(),
             { model: n } = y(),
             { mediaSize: i } = g(),
             c = n.season.name.get();
         return a.jsx(w, {
             children: a.jsxs(f, {
-                className: Ke.base,
+                className: Ee.base,
                 barClassNames: Je,
-                scrollClassName: Ke.areaBaseWrapper,
+                scrollClassName: Ee.areaBaseWrapper,
                 children: [
-                    c === A.Third && a.jsx(oe, { className: Ke.videoContainer }),
+                    c === A.Third && a.jsx(oe, { className: Ee.videoContainer }),
                     a.jsxs('div', {
-                        className: s(Ke.content, Ke[`content__${c}`]),
+                        className: s(Ee.content, Ee[`content__${c}`]),
                         children: [
-                            a.jsx('div', { className: s(H, Ke.banner, Ke.container__1), children: a.jsx(Ie, {}) }),
+                            a.jsx('div', { className: s(O, Ee.banner, Ee.container__1), children: a.jsx(Te, {}) }),
                             a.jsxs('div', {
-                                className: s(H, Ke.section, Ke.section__updates, Ke.container__2),
-                                children: [a.jsx(se, {}), a.jsx(He, {})],
+                                className: s(O, Ee.section, Ee.section__updates, Ee.container__2),
+                                children: [a.jsx(se, {}), a.jsx(Oe, {})],
                             }),
                             a.jsxs('div', {
-                                className: s(H, Ke.section, Ke.section__attention, Ke.container__3),
-                                children: [a.jsx(te, {}), a.jsx('div', { className: Ke.separator }), a.jsx(Y, {})],
+                                className: s(O, Ee.section, Ee.section__attention, Ee.container__3),
+                                children: [a.jsx(te, {}), a.jsx('div', { className: Ee.separator }), a.jsx(X, {})],
                             }),
-                            a.jsx('div', { className: s(H, Ke.section, Ke.container__4), children: a.jsx(Re, {}) }),
-                            a.jsx('div', { className: s(H, Ke.container__5), children: a.jsx(Ee, {}) }),
+                            a.jsx('div', { className: s(O, Ee.section, Ee.container__4), children: a.jsx(Re, {}) }),
+                            a.jsx('div', { className: s(O, Ee.container__5), children: a.jsx(Le, {}) }),
                             a.jsx(v, {
                                 theme: v.themes.primary,
                                 size: k(i),
-                                className: Ke.button,
+                                className: Ee.button,
                                 onClick: e.close,
                                 children: R.strings.comp7_ext.whatsNewView.button.ok(),
                             }),
@@ -491,8 +491,8 @@ const ge = n(() => {
             }),
         });
     }),
-    Ye = 'App_f9ac9f39',
-    Ze = 'App_container_9abce13f',
+    Xe = 'App_f9ac9f39',
+    Ye = 'App_container_9abce13f',
     ea = 'App_waiting_93ca532a',
     aa = n(() => {
         const { controls: e } = D(),
@@ -506,13 +506,13 @@ const ge = n(() => {
                 ])(n),
             );
         return a.jsx('div', {
-            className: Ye,
+            className: Xe,
             children:
                 'success' === c
                     ? a.jsxs(r.div, {
-                          className: Ze,
+                          className: Ye,
                           style: i,
-                          children: [a.jsx(Xe, {}), a.jsx(T, { onClick: e.close })],
+                          children: [a.jsx(Ze, {}), a.jsx(I, { onClick: e.close })],
                       })
                     : a.jsx(W, { onClose: e.close, className: ea }),
         });
@@ -520,7 +520,7 @@ const ge = n(() => {
 M(
     a.jsx(V, {
         children: a.jsx($, {
-            children: a.jsx(I, { options: { context: 'model.scheduleInfo' }, children: a.jsx(aa, {}) }),
+            children: a.jsx(T, { options: { context: 'model.scheduleInfo' }, children: a.jsx(aa, {}) }),
         }),
     }),
 );

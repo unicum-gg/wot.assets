@@ -35,31 +35,31 @@ import {
     r as k,
     b as E,
     e as T,
-    D,
-    f as V,
-    g as z,
+    f as D,
+    g as V,
+    D as z,
     h as O,
     j as H,
     k as W,
-    B as M,
-    l as G,
-    d as F,
-    m as $,
-    n as L,
-    I as X,
-    o as K,
-    p as q,
+    l as M,
+    m as G,
+    B as F,
+    n as $,
+    d as L,
+    o as X,
+    p as K,
+    I as q,
     q as U,
-    A as Y,
-    t as J,
-    v as Z,
+    t as Y,
+    v as J,
+    A as Z,
     w as Q,
     x as ee,
-    i as ae,
-    c as te,
-    y as se,
-    C as ne,
-    z as ie,
+    y as ae,
+    z as te,
+    i as se,
+    c as ne,
+    C as ie,
     E as re,
     G as le,
     H as oe,
@@ -69,9 +69,9 @@ import {
     O as me,
     P as pe,
     Q as _e,
-    s as fe,
-    R as ve,
-    S as be,
+    R as fe,
+    S as ve,
+    s as be,
     T as he,
     U as ge,
     W as ye,
@@ -84,8 +84,8 @@ import {
     a1 as Ce,
     a2 as Se,
     a3 as Be,
-    a4 as Re,
-    a5 as Pe,
+    a4 as Pe,
+    a5 as Re,
     a6 as ke,
     a7 as Ee,
     a8 as Te,
@@ -134,73 +134,92 @@ import {
     aL as ja,
 } from '../../../chunks/lib.js';
 import { g as wa, a as Ia, s as Aa, W as Ca, f as Sa, r as Ba } from '../../../chunks/flag_view_model.js';
-/* empty css                    */ const Ra = 'BattleInfo_d5226211',
-    Pa = 'BattleInfo_group_962f81f6',
-    ka = 'BattleInfo_commendations_731c9f38',
-    Ea = 'BattleInfo_commendations_counter_aef426',
-    Ta = 'BattleInfo_commendations_icon_55a703a8',
-    Da = [1, 19],
-    Va = [1, 10],
-    za = ({ className: t, finishReasonKey: s, status: n, modeName: i, arenaType: r, ...l }) => {
-        const o = `battle_results.finish.reason.c_${s}${Va.includes(s) ? n : ''}`,
-            c = Da.includes(r) ? `arenas.type.${i}.name` : `menu.loading.battleTypes.c_${r}`;
+/* empty css                    */ const Pa = 'BattleInfo_6333ab61',
+    Ra = 'BattleInfo_group_161b6f97',
+    ka = 'BattleInfo_textString_be34b14f',
+    Ea = 'BattleInfo_vehicleName_333dba78',
+    Ta = 'BattleInfo_commendations_731c9f38',
+    Da = 'BattleInfo_commendations_counter_aef426',
+    Va = 'BattleInfo_commendations_icon_55a703a8',
+    za = [1, 19],
+    Oa = [1, 10],
+    Ha = ({ className: t, finishReasonKey: s, status: n, modeName: i, arenaType: r, ...l }) => {
+        const o = `battle_results.finish.reason.c_${s}${Oa.includes(s) ? n : ''}`,
+            c = za.includes(r) ? `arenas.type.${i}.name` : `menu.loading.battleTypes.c_${r}`;
         return e.jsx(P, {
             ...l,
             upgradeLegacy: !0,
             path: 'battle_results.common.arena.fullName',
             params: { 0: e.jsx(P, { path: c }), 1: e.jsx(P, { path: o }) },
-            className: a(Pa, t),
+            className: a(Ra, t),
         });
     };
-const Oa = -1;
-const Ha = k.resolve('strings');
-const Wa = t.forwardRef(function (t, s) {
-    return e.jsx('div', { ...t, 'data-name': 'BattleInfo', ref: s, className: a(Ra, t.className) });
+const Wa = -1;
+const Ma = k.resolve('strings');
+const Ga = t.forwardRef(function (t, s) {
+    return e.jsx('div', { ...t, 'data-name': 'BattleInfo', ref: s, className: a(Pa, t.className) });
 });
-((Wa.Arena = function ({ arenaName: t, className: s, ...n }) {
+((Ga.Arena = function ({ arenaName: t, className: s, ...n }) {
     return e.jsx(P, {
-        className: a(Pa, s),
+        className: a(Ra, s),
         path: 'battle_results.common.arena.nameAndMode',
-        params: { 0: t, 1: e.jsx(za, { ...n }) },
+        params: { 0: t, 1: e.jsx(Ha, { ...n }) },
     });
 }),
-    (Wa.StartTime = ({ startTime: t, className: s, ...n }) =>
+    (Ga.StartTime = ({ startTime: t, className: s, ...n }) =>
         e.jsx(P, {
             ...n,
-            className: a(Pa, s),
+            className: a(Ra, s),
             path: 'battle_results.common.startTime',
-            params: { 0: T.formatDateTime(D.ShortDate, t), 1: T.formatDateTime(D.ShortTime, t) },
+            params: { 0: V.formatDateTime(z.ShortDate, t), 1: V.formatDateTime(z.ShortTime, t) },
         })),
-    (Wa.Player = function ({ className: t, vehicleName: s, userName: n, clan: i, ...r }) {
+    (Ga.Player = function ({
+        className: t,
+        vehicleLevel: s,
+        vehicleType: n,
+        vehicleName: i,
+        userName: r,
+        clan: l,
+        vehicleTypeSize: o = D.sizes.x24x24,
+        classNames: c,
+        ...d
+    }) {
         return e.jsx(P, {
-            ...r,
+            ...d,
             upgradeLegacy: !0,
-            className: a(Pa, t),
+            className: a(Ra, t),
             path: 'battle_results.common.arena.fullName',
             params: {
-                0: i
-                    ? e.jsx(P, { path: 'battle_results.common.player.nameWithClan', params: { name: n, clan: i } })
-                    : n,
-                1: s,
+                0: l
+                    ? e.jsx(P, { path: 'battle_results.common.player.nameWithClan', params: { name: r, clan: l } })
+                    : r,
+                1: e.jsxs('div', {
+                    className: a(Ea, null == c ? void 0 : c.vehicleName),
+                    children: [
+                        e.jsx(T, { value: s, className: a(ka, null == c ? void 0 : c.vehicleLevel) }),
+                        e.jsx(D, { className: null == c ? void 0 : c.vehicleType, type: n, size: o }),
+                        i,
+                    ],
+                }),
             },
         });
     }),
-    (Wa.PlayerStatus = function ({ className: t, deathReasonKey: s, killer: n, abandonBattle: i, ...r }) {
+    (Ga.PlayerStatus = function ({ className: t, deathReasonKey: s, killer: n, abandonBattle: i, ...r }) {
         const l = (function ({ deathReasonKey: e, abandonBattle: a }) {
-            return a ? 'prematureLeave' : e === Oa ? 'alive' : `dead${e}`;
+            return a ? 'prematureLeave' : e === Wa ? 'alive' : `dead${e}`;
         })({ deathReasonKey: s, abandonBattle: i });
         if (
             (n.username || n.fakeUsername) &&
             !i &&
-            s !== Oa &&
+            s !== Wa &&
             (function (e) {
-                return Boolean(Ha.read(`battle_results.common.vehicleState.${e}_with_killername`));
+                return Boolean(Ma.read(`battle_results.common.vehicleState.${e}_with_killername`));
             })(l)
         ) {
             const s = n.anonymizer ? n.fakeUsername : n.username;
             return e.jsx(P, {
                 ...r,
-                className: a(Pa, t),
+                className: a(Ra, t),
                 path: `battle_results.common.vehicleState.${l}_with_killername`,
                 params: {
                     killername: n.clanAbbreviation
@@ -212,9 +231,9 @@ const Wa = t.forwardRef(function (t, s) {
                 },
             });
         }
-        return e.jsx(P, { ...r, className: a(Pa, t), path: `battle_results.common.vehicleState.${l}` });
+        return e.jsx(P, { ...r, className: a(Ra, t), path: `battle_results.common.vehicleState.${l}` });
     }),
-    (Wa.CommendationScore = function ({ commendationsReceived: t }) {
+    (Ga.CommendationScore = function ({ commendationsReceived: t }) {
         const s = t > 0,
             n = k.resolve('strings'),
             i =
@@ -228,21 +247,21 @@ const Wa = t.forwardRef(function (t, s) {
         return s
             ? e.jsxs('div', {
                   ...r,
-                  className: a(Pa, ka),
-                  children: [e.jsx('div', { className: Ea, children: t }), e.jsx('div', { className: Ta })],
+                  className: a(Ra, Ta),
+                  children: [e.jsx('div', { className: Da, children: t }), e.jsx('div', { className: Va })],
               })
             : null;
     }));
-const Ma = 'AnimatedValue_d9f4b2f0',
-    Ga = 'AnimatedValue_animatedValue_4c490d83',
-    Fa = V.cubicBezier(0.33, 0, 0.25, 1);
-function $a(e) {
+const Fa = 'AnimatedValue_d9f4b2f0',
+    $a = 'AnimatedValue_animatedValue_4c490d83',
+    La = O.cubicBezier(0.33, 0, 0.25, 1);
+function Xa(e) {
     return {
         enterElements: document.querySelectorAll(`.js-animated-value-${e}-enter`),
         leftElements: document.querySelectorAll(`.js-animated-value-${e}-leave`),
     };
 }
-function La({ value: i, transition: r, children: l, className: o, classNames: c }) {
+function Ka({ value: i, transition: r, children: l, className: o, classNames: c }) {
     const d = t.useMemo(wa, []),
         u = s(i, {
             ...r,
@@ -252,9 +271,9 @@ function La({ value: i, transition: r, children: l, className: o, classNames: c 
                 opacity: 1,
                 y: '0rem',
                 delay: 330,
-                config: { easing: Fa, duration: 330 },
+                config: { easing: La, duration: 330 },
                 onStart: () => {
-                    const { enterElements: e, leftElements: a } = $a(d);
+                    const { enterElements: e, leftElements: a } = Xa(d);
                     (e.forEach((e) => {
                         e instanceof HTMLElement && ((e.style.width = 'auto'), (e.style.position = 'relative'));
                     }),
@@ -269,10 +288,10 @@ function La({ value: i, transition: r, children: l, className: o, classNames: c 
                 left: 0,
                 opacity: 0,
                 y: '5rem',
-                config: { easing: Fa, duration: 330 },
+                config: { easing: La, duration: 330 },
                 onStart: () => {
                     let e = 0;
-                    const { enterElements: a, leftElements: t } = $a(d);
+                    const { enterElements: a, leftElements: t } = Xa(d);
                     (t.forEach((a) => {
                         a instanceof HTMLElement && ((e = Math.max(e, a.offsetWidth)), (a.style.position = 'relative'));
                     }),
@@ -284,12 +303,12 @@ function La({ value: i, transition: r, children: l, className: o, classNames: c 
             }),
         });
     return e.jsx('div', {
-        className: a(Ma, o),
+        className: a(Fa, o),
         children: u((t, s) => {
             const r = 0 === t.opacity.get() && !1 === t.opacity.isAnimating;
             return e.jsx(n.div, {
                 className: a(
-                    Ga,
+                    $a,
                     `js-animated-value-${d}-${i === s ? 'enter' : 'leave'}`,
                     null == c ? void 0 : c.animatedValue,
                 ),
@@ -299,42 +318,42 @@ function La({ value: i, transition: r, children: l, className: o, classNames: c 
         }),
     });
 }
-const Xa = 'idle',
-    Ka = 'progress',
-    qa = 'waiting',
-    Ua = t.createContext(null),
-    Ya = 1;
-function Ja({ read: e, shownNotificationSize: a, bubbleCounter: t, notification: s }) {
-    return void 0 === s ? t : e || 0 === a ? Ya : t + 1;
+const qa = 'idle',
+    Ua = 'progress',
+    Ya = 'waiting',
+    Ja = t.createContext(null),
+    Za = 1;
+function Qa({ read: e, shownNotificationSize: a, bubbleCounter: t, notification: s }) {
+    return void 0 === s ? t : e || 0 === a ? Za : t + 1;
 }
-function Za() {
-    const e = t.useContext(Ua);
+function et() {
+    const e = t.useContext(Ja);
     if (null === e)
         throw new Error('You can use the notifications context hooks only with the NotificationsProvider component');
     return e;
 }
-const Qa = {
+const at = {
         valueContainer: 'Bubble_valueContainer_8b7ced74',
         valueContainer__medium: 'Bubble_valueContainer__medium_a9175d93',
         value: 'Bubble_value_5eacd6f5',
         value__medium: 'Bubble_value__medium_3232d6e8',
     },
-    et = V.cubicBezier(0.75, 0, 0.67, 1),
-    at = V.cubicBezier(0.33, 0, 0.25, 1);
-function tt(a, t) {
+    tt = O.cubicBezier(0.75, 0, 0.67, 1),
+    st = O.cubicBezier(0.33, 0, 0.25, 1);
+function nt(a, t) {
     return 'number' == typeof a
         ? (function (a, t) {
               return a > t
-                  ? e.jsx(P, { path: 'common.valuePlus', params: { value: T.formatNumber('integral', t) } })
-                  : T.formatNumber('integral', a);
+                  ? e.jsx(P, { path: 'common.valuePlus', params: { value: V.formatNumber('integral', t) } })
+                  : V.formatNumber('integral', a);
           })(a, t)
         : a;
 }
-const st = t.memo(function ({ size: s, className: n, classNames: i, target: r, ...l }) {
-        const { state: o, items: c } = Za(),
-            d = H(),
-            u = o.value === Ka || (o.value === qa && !1 === o.read),
-            m = W({ value: G.small }, { medium: { value: G.medium } }),
+const it = t.memo(function ({ size: s, className: n, classNames: i, target: r, ...l }) {
+        const { state: o, items: c } = et(),
+            d = M(),
+            u = o.value === Ua || (o.value === Ya && !1 === o.read),
+            m = G({ value: $.small }, { medium: { value: $.medium } }),
             p = t.useMemo(() => {
                 var e, a, t;
                 return {
@@ -353,13 +372,13 @@ const st = t.memo(function ({ size: s, className: n, classNames: i, target: r, .
                         opacity: 1,
                         y: '0',
                         delay: 0,
-                        config: { easing: et, duration: 330 },
+                        config: { easing: tt, duration: 330 },
                         onRest: () => {
                             u && d.play('notificationBubbleAppeared', { target: r || 'mission-progress:bubble' });
                         },
                         ...(null == (t = l.rootTransition) ? void 0 : t.enter),
                     },
-                    leave: { opacity: 0, y: '0', delay: 0, config: { duration: 330, easings: at } },
+                    leave: { opacity: 0, y: '0', delay: 0, config: { duration: 330, easings: st } },
                 };
             }, [r, l.rootTransition, d, u]),
             _ = t.useMemo(() => {
@@ -375,7 +394,7 @@ const st = t.memo(function ({ size: s, className: n, classNames: i, target: r, .
                     enter: {
                         opacity: 1,
                         y: '0',
-                        config: { easing: at, duration: 170 },
+                        config: { easing: st, duration: 170 },
                         delay: 170,
                         onRest: () => {
                             d.play('notificationBubbleAppeared', { target: r || 'mission-progress:bubble' });
@@ -386,49 +405,49 @@ const st = t.memo(function ({ size: s, className: n, classNames: i, target: r, .
                         opacity: 0,
                         y: '5rem',
                         delay: 0,
-                        config: { easing: at, duration: 170 },
+                        config: { easing: st, duration: 170 },
                         ...(null == (t = null == l ? void 0 : l.countTransition) ? void 0 : t.leave),
                     },
                 };
             }, [l.countTransition, d, r]);
-        return e.jsx(La, {
+        return e.jsx(Ka, {
             value: u,
             transition: p,
             className: n,
             children: (t) =>
                 t &&
-                e.jsx(M.Root, {
+                e.jsx(F.Root, {
                     children: e.jsx('div', {
                         className: a(
-                            Qa.valueContainer,
-                            Qa[`valueContainer__${s ?? m.value}`],
+                            at.valueContainer,
+                            at[`valueContainer__${s ?? m.value}`],
                             null == i ? void 0 : i.valueContainer,
                         ),
-                        children: e.jsx(La, {
+                        children: e.jsx(Ka, {
                             value: o.bubbleCounter >= c.length ? c.length : o.bubbleCounter,
                             transition: _,
                             children: (t) =>
                                 e.jsx('div', {
-                                    className: a(Qa.value, Qa[`value__${s ?? m.value}`], null == i ? void 0 : i.value),
-                                    children: tt(t, 99),
+                                    className: a(at.value, at[`value__${s ?? m.value}`], null == i ? void 0 : i.value),
+                                    children: nt(t, 99),
                                 }),
                         }),
                     }),
                 }),
         });
     }),
-    nt = 'Items_9477a756',
-    it = 'Items_animatedValue_6a64bc54',
-    rt = 'Items_plug_a7a8cadf',
-    lt = V.cubicBezier(0.75, 0, 0.67, 1),
-    ot = V.cubicBezier(0.1, 0, 0.9, 1),
-    ct = V.cubicBezier(0.33, 0, 0.25, 1),
-    dt = F('NotificationItem', nt),
-    ut = {
-        Bubble: st,
+    rt = 'Items_9477a756',
+    lt = 'Items_animatedValue_c7d2e119',
+    ot = 'Items_plug_a7a8cadf',
+    ct = O.cubicBezier(0.75, 0, 0.67, 1),
+    dt = O.cubicBezier(0.1, 0, 0.9, 1),
+    ut = O.cubicBezier(0.33, 0, 0.25, 1),
+    mt = L('NotificationItem', rt),
+    pt = {
+        Bubble: it,
         Items: t.memo(function ({ transition: a, ...t }) {
             var i;
-            const { items: r, state: l } = Za(),
+            const { items: r, state: l } = et(),
                 o = s(l.currentNotification, {
                     ...a,
                     key: l.currentNotification,
@@ -439,34 +458,34 @@ const st = t.memo(function ({ size: s, className: n, classNames: i, target: r, .
                             opacity: 1,
                             y: '0',
                             x: '-50%',
-                            config: { easing: lt, duration: 330 },
+                            config: { easing: ct, duration: 330 },
                             ...(null == a ? void 0 : a.enter),
                         },
-                        { y: '2rem', x: '-50%', opacity: 1, config: { duration: 800, easing: ot } },
+                        { y: '2rem', x: '-50%', opacity: 1, config: { duration: 800, easing: dt } },
                     ],
                     leave: {
-                        y: l.value === Xa ? '0' : '5rem',
+                        y: l.value === qa ? '0' : '5rem',
                         x: '-50%',
                         opacity: 0,
-                        config: { duration: l.value === Xa ? 330 : 170, easing: l.value === Xa ? ct : lt },
+                        config: { duration: l.value === qa ? 330 : 170, easing: l.value === qa ? ut : ct },
                     },
                 });
-            return e.jsxs(dt, {
+            return e.jsxs(mt, {
                 ...t,
                 children: [
                     e.jsx('div', {
-                        className: rt,
+                        className: ot,
                         children: l.currentNotification || (null == (i = r[r.length - 1]) ? void 0 : i.item),
                     }),
-                    o((a, t) => e.jsx(n.div, { className: it, style: a, children: t })),
+                    o((a, t) => e.jsx(n.div, { className: lt, style: a, children: t })),
                 ],
             });
         }),
         Provider: function ({ items: a, children: s }) {
             const [n, i] = t.useState(() => ({
                     read: !1,
-                    value: Xa,
-                    bubbleCounter: Ya,
+                    value: qa,
+                    bubbleCounter: Za,
                     currentNotification: void 0,
                     shownNotifications: new Set(),
                 })),
@@ -474,7 +493,7 @@ const st = t.memo(function ({ size: s, className: n, classNames: i, target: r, .
                     () => a.some(({ id: e }) => !1 === n.shownNotifications.has(e)),
                     [a, n.shownNotifications],
                 );
-            z(
+            H(
                 () => {
                     i((e) => {
                         const t = a.find(({ id: a }) => !1 === e.shownNotifications.has(a));
@@ -482,26 +501,26 @@ const st = t.memo(function ({ size: s, className: n, classNames: i, target: r, .
                             ...e,
                             read: !1,
                             currentNotification: null == t ? void 0 : t.item,
-                            shownNotifications: void 0 !== t ? O(e.shownNotifications, t.id) : e.shownNotifications,
+                            shownNotifications: void 0 !== t ? W(e.shownNotifications, t.id) : e.shownNotifications,
                             bubbleCounter: void 0 !== t ? e.bubbleCounter + 1 : e.bubbleCounter,
                         };
                     });
                 },
-                n.value === Ka && void 0 !== n.currentNotification ? 1130 : void 0,
+                n.value === Ua && void 0 !== n.currentNotification ? 1130 : void 0,
             );
             const l = t.useMemo(
                 () => ({
                     start() {
                         i((e) => {
-                            if (e.value === Ka || 0 === a.length) return e;
+                            if (e.value === Ua || 0 === a.length) return e;
                             const t = a.find(({ id: a }) => !1 === e.shownNotifications.has(a));
                             return {
                                 ...e,
                                 read: !1,
                                 currentNotification: null == t ? void 0 : t.item,
-                                shownNotifications: void 0 !== t ? O(e.shownNotifications, t.id) : e.shownNotifications,
-                                value: Ka,
-                                bubbleCounter: Ja({
+                                shownNotifications: void 0 !== t ? W(e.shownNotifications, t.id) : e.shownNotifications,
+                                value: Ua,
+                                bubbleCounter: Qa({
                                     notification: t,
                                     read: e.read,
                                     shownNotificationSize: e.shownNotifications.size,
@@ -513,29 +532,29 @@ const st = t.memo(function ({ size: s, className: n, classNames: i, target: r, .
                     read() {
                         i((e) => ({
                             ...e,
-                            value: Xa,
+                            value: qa,
                             read: !0,
                             currentNotification: void 0,
                             shownNotifications: new Set(a.map((e) => e.id)),
                         }));
                     },
                     wait() {
-                        i((e) => (e.value === qa ? e : { ...e, value: qa, currentNotification: void 0 }));
+                        i((e) => (e.value === Ya ? e : { ...e, value: Ya, currentNotification: void 0 }));
                     },
                 }),
                 [a],
             );
             (t.useEffect(() => {
-                n.value === qa && r && l.start();
+                n.value === Ya && r && l.start();
             }, [l, n.value, r]),
                 t.useEffect(() => {
-                    void 0 === n.currentNotification && n.value === Ka && !1 === r && l.wait();
+                    void 0 === n.currentNotification && n.value === Ua && !1 === r && l.wait();
                 }, [n.currentNotification, n.value, l, r]));
             const o = t.useMemo(() => ({ state: n, items: a, controls: l, hasUnreadNotifications: r }), [a, n, l, r]);
-            return e.jsx(Ua.Provider, { value: o, children: s });
+            return e.jsx(Ja.Provider, { value: o, children: s });
         },
     },
-    mt = {
+    _t = {
         initial: 'initial',
         first: 'first',
         second: 'second',
@@ -545,23 +564,23 @@ const st = t.memo(function ({ size: s, className: n, classNames: i, target: r, .
         sixth: 'sixth',
         immediate: 'immediate',
     },
-    pt = V.cubicBezier(0.33, 0, 0.25, 1),
-    _t = 400,
-    ft = t.createContext(null);
-function vt() {
-    const e = t.useContext(ft);
+    ft = O.cubicBezier(0.33, 0, 0.25, 1),
+    vt = 400,
+    bt = t.createContext(null);
+function ht() {
+    const e = t.useContext(bt);
     if (null === e)
         throw new Error('You can use the animation context hooks only with the AnimationProvider component');
     return e;
 }
-function bt({ children: a }) {
-    const [s, n] = t.useState(mt.initial),
+function gt({ children: a }) {
+    const [s, n] = t.useState(_t.initial),
         [r, l] = t.useState(new Set()),
         [o, c] = t.useState(!1),
         [d, u] = t.useState(!1),
-        m = $(),
-        p = H(),
-        { active: _ } = L(),
+        m = X(),
+        p = M(),
+        { active: _ } = K(),
         f = i(),
         v = i(),
         b = i(),
@@ -578,11 +597,11 @@ function bt({ children: a }) {
             [n],
         );
     (t.useEffect(() => {
-        s === mt.immediate && l(new Set(Object.values(mt)));
+        s === _t.immediate && l(new Set(Object.values(_t)));
     }, [s]),
         t.useEffect(() => {
             switch (s) {
-                case mt.immediate:
+                case _t.immediate:
                     return (
                         f.start({ y: '0', opacity: 1, immediate: !0 }),
                         v.start({ opacity: 1, y: '0', immediate: !0 }),
@@ -594,69 +613,69 @@ function bt({ children: a }) {
                         j.start({ opacity: 1, immediate: !0 }),
                         void x.start({ opacity: 1, immediate: !0 })
                     );
-                case mt.initial:
-                    return void n(_ === Ia.overview ? mt.first : mt.immediate);
-                case mt.first:
+                case _t.initial:
+                    return void n(_ === Ia.overview ? _t.first : _t.immediate);
+                case _t.first:
                     return (
                         p.play('showBattleResult', { target: 'animation-context' }),
-                        f.start({ y: '0', opacity: 1, config: { duration: _t, easing: pt } }),
+                        f.start({ y: '0', opacity: 1, config: { duration: vt, easing: ft } }),
                         void v.start({
                             opacity: 1,
                             y: '0',
-                            config: { duration: _t, easing: pt },
+                            config: { duration: vt, easing: ft },
                             onRest: () => {
-                                (n(mt.second), l((e) => O(e, mt.first)));
+                                (n(_t.second), l((e) => W(e, _t.first)));
                             },
                         })
                     );
-                case mt.second:
+                case _t.second:
                     return (
                         b.start({
                             maskSize: '100% 100%',
-                            config: { duration: _t, easing: pt },
+                            config: { duration: vt, easing: ft },
                             onRest: () => {
-                                l((e) => O(e, mt.second));
+                                l((e) => W(e, _t.second));
                             },
                         }),
                         void m.run(() => {
-                            (n(mt.third), m.clear());
+                            (n(_t.third), m.clear());
                         }, 280)
                     );
-                case mt.third:
+                case _t.third:
                     return (
-                        h.start({ opacity: 1, y: '0', config: { duration: _t, easing: pt } }),
-                        g.start({ opacity: 1, y: '0', config: { duration: _t, easing: pt } }),
+                        h.start({ opacity: 1, y: '0', config: { duration: vt, easing: ft } }),
+                        g.start({ opacity: 1, y: '0', config: { duration: vt, easing: ft } }),
                         y.start({
                             opacity: 1,
-                            config: { duration: _t, easing: pt },
+                            config: { duration: vt, easing: ft },
                             onRest: () => {
-                                l((e) => O(e, mt.third));
+                                l((e) => W(e, _t.third));
                             },
                         }),
                         void m.run(() => {
-                            (n(mt.fourth), m.clear());
+                            (n(_t.fourth), m.clear());
                         }, 280)
                     );
-                case mt.fourth:
+                case _t.fourth:
                     return (
                         N.start({
                             maskSize: '100% 100%',
-                            config: { duration: _t, easing: pt },
+                            config: { duration: vt, easing: ft },
                             onRest: () => {
-                                l((e) => O(e, mt.fourth));
+                                l((e) => W(e, _t.fourth));
                             },
                         }),
                         void m.run(() => {
-                            (n(mt.fifth), m.clear());
+                            (n(_t.fifth), m.clear());
                         }, 120)
                     );
-                case mt.fifth:
-                    (j.start({ opacity: 1, config: { duration: _t, easing: pt } }),
+                case _t.fifth:
+                    (j.start({ opacity: 1, config: { duration: vt, easing: ft } }),
                         x.start({
                             opacity: 1,
-                            config: { duration: _t, easing: pt },
+                            config: { duration: vt, easing: ft },
                             onRest: () => {
-                                l((e) => O(e, mt.fifth));
+                                l((e) => W(e, _t.fifth));
                             },
                         }));
                     break;
@@ -681,17 +700,17 @@ function bt({ children: a }) {
             personalEfficiencyRef: j,
             setAllMedalsAnimated: c,
             setAllCurrenciesAniamted: u,
-            readyForNotifications: o && d && r.has(mt.fifth),
+            readyForNotifications: o && d && r.has(_t.fifth),
         }),
         [s, w, o, d, r],
     );
-    return e.jsx(ft.Provider, { value: I, children: a });
+    return e.jsx(bt.Provider, { value: I, children: a });
 }
-const ht = { base: 'Divider_80a19f4b' };
-function gt({ classNames: t }) {
+const yt = { base: 'Divider_80a19f4b' };
+function xt({ classNames: t }) {
     return e.jsx('div', {
-        className: a(ht.base, null == t ? void 0 : t.base),
-        children: e.jsx(X, {
+        className: a(yt.base, null == t ? void 0 : t.base),
+        children: e.jsx(q, {
             className: null == t ? void 0 : t.image,
             width: '100%',
             height: '100%',
@@ -700,33 +719,33 @@ function gt({ classNames: t }) {
         }),
     });
 }
-const yt = 'Header_content_b9e0be90',
-    xt = 'Header_title_91e5448a',
-    Nt = 'Header_divider_eb019c6',
-    jt = 'Header_dividerImage_19f6e11',
-    wt = F('Header', 'Header_70aa1da5'),
-    It = t.forwardRef(({ title: t, children: s, classNames: n, ...i }, r) => {
+const Nt = 'Header_content_b9e0be90',
+    jt = 'Header_title_91e5448a',
+    wt = 'Header_divider_eb019c6',
+    It = 'Header_dividerImage_19f6e11',
+    At = L('Header', 'Header_70aa1da5'),
+    Ct = t.forwardRef(({ title: t, children: s, classNames: n, ...i }, r) => {
         const l = k.resolve('strings');
-        return e.jsxs(wt, {
+        return e.jsxs(At, {
             ...i,
             ref: r,
             children: [
                 e.jsxs('div', {
-                    className: a(yt, null == n ? void 0 : n.content),
+                    className: a(Nt, null == n ? void 0 : n.content),
                     children: [
                         e.jsx('div', {
-                            className: a(xt, null == n ? void 0 : n.title),
-                            children: T.toUpperCase(l.readOrEmpty(t)),
+                            className: a(jt, null == n ? void 0 : n.title),
+                            children: V.toUpperCase(l.readOrEmpty(t)),
                         }),
                         s,
                     ],
                 }),
-                e.jsx(gt, { classNames: { base: a(Nt, null == n ? void 0 : n.divider), image: jt } }),
+                e.jsx(xt, { classNames: { base: a(wt, null == n ? void 0 : n.divider), image: It } }),
             ],
         });
     }),
-    At = t.forwardRef((a, t) => e.jsx(It, { ...a, title: 'battle_results.details.xp', ref: t })),
-    Ct = (e) => {
+    St = t.forwardRef((a, t) => e.jsx(Ct, { ...a, title: 'battle_results.details.xp', ref: t })),
+    Bt = (e) => {
         const [a, s] = t.useState(!1);
         return (
             t.useEffect(() => {
@@ -754,267 +773,296 @@ const yt = 'Header_content_b9e0be90',
             a
         );
     },
-    St = 'IncomeStatement_c4136bc5',
-    Bt = 'IncomeStatement_verticalBar_5fb90511',
-    Rt = 'IncomeStatement_scrollWrapper_ce2dde41',
-    Pt = 'IncomeStatement_scrollContent_72ffb2ee',
-    kt = 'IncomeStatement_scrollContent__initialized_ce1144d0',
-    Et = F('CreditsIncomeStatement'),
-    Tt = ({ children: t }) => {
-        const s = U(),
-            n = Ct(s.api);
-        return e.jsx(Y, { classNames: { wrapper: Rt, content: a(Pt, n && kt) }, children: t });
+    Pt = 'IncomeStatement_c4136bc5',
+    Rt = 'IncomeStatement_verticalBar_5fb90511',
+    kt = 'IncomeStatement_scrollWrapper_ce2dde41',
+    Et = 'IncomeStatement_scrollContent_72ffb2ee',
+    Tt = 'IncomeStatement_scrollContent__initialized_ce1144d0',
+    Dt = L('CreditsIncomeStatement'),
+    Vt = ({ children: t }) => {
+        const s = J(),
+            n = Bt(s.api);
+        return e.jsx(Z, { classNames: { wrapper: kt, content: a(Et, n && Tt) }, children: t });
     },
-    Dt = t.forwardRef(({ children: t, className: s, scrollable: n, ...i }, r) =>
-        e.jsx(Et, {
-            className: a(St, s),
+    zt = t.forwardRef(({ children: t, className: s, scrollable: n, ...i }, r) =>
+        e.jsx(Dt, {
+            className: a(Pt, s),
             ...i,
             ref: r,
             children: n
-                ? e.jsxs(K, { children: [e.jsx(Tt, { children: t }), e.jsx(q, { classNames: { base: Bt } })] })
+                ? e.jsxs(U, { children: [e.jsx(Vt, { children: t }), e.jsx(Y, { classNames: { base: Rt } })] })
                 : t,
         }),
-    ),
-    Vt = 'xp',
-    zt = 'freeXP',
-    Ot = 'credits',
-    Ht = 'gold',
-    Wt = 'originalCrystals',
-    Mt = 'eventCrystals',
-    Gt = 'autoEquipCrystals',
-    Ft = 'totalCrystals',
-    $t = 'originalXP',
-    Lt = 'achievementXP',
-    Xt = 'originalXPPenalty',
-    Kt = 'igrBonusXP',
-    qt = 'firstWinXP',
-    Ut = 'additionalBonusXP',
-    Yt = 'boostersXP',
-    Jt = 'tacticalTrainingXP',
-    Zt = 'eventXP',
-    Qt = 'referralBonusXP',
-    es = 'premiumVehicleXP',
-    as = 'squadBonusXP',
-    ts = 'squadPenaltyXP',
-    ss = 'wotPlusBonusXP',
-    ns = 'totalXP',
-    is = 'originalFreeXP',
-    rs = 'achievementFreeXP',
-    ls = 'igrBonusFreeXP',
-    os = 'firstWinFreeXP',
-    cs = 'additionalBonusFreeXP',
-    ds = 'boostersFreeXP',
-    us = 'militaryManeuversFreeXP',
-    ms = 'eventFreeXP',
-    ps = 'premiumVehicleFreeXP',
-    _s = 'wotPlusBonusFreeXP',
-    fs = 'totalFreeXP',
-    vs = 'baseEarnedCredits',
-    bs = 'squadBonusCredits',
-    hs = 'achievementCredits',
-    gs = 'boostersCredits',
-    ys = 'petSystemBonusCredits',
-    xs = 'battlePaymentsCredits',
-    Ns = 'eventPaymentsCredits',
-    js = 'referralBonusCredits',
-    ws = 'wotPlusBonusCredits',
-    Is = 'friendlyFirePenaltyCredits',
-    As = 'friendlyFireCompensationCredits',
-    Cs = 'piggyBankCredits',
-    Ss = 'autoRepairCredits',
-    Bs = 'autoLoadCredits',
-    Rs = 'autoEquipCredits',
-    Ps = 'intermediateTotalCredits',
-    ks = 'totalCredits',
-    Es = 'goldEventPayments',
-    Ts = 'goldPiggyBank',
-    Ds = 'intermediateTotalGold',
-    Vs = 'totalGold',
-    zs = 'aogasFactor',
-    Os = 'deserterViolation',
-    Hs = 'afkViolation',
-    Ws = 'suicideViolation',
-    Ms = new Set([Xt, Qt, as, ts, Jt]),
-    Gs = new Set([us]),
-    Fs = new Set([vs, bs, hs, gs, xs, js, ys, ws, Os, Ws, Hs, Is, As, zs, Ss, Bs, Rs]),
-    $s = {
-        [Lt]: rs,
-        [Ut]: cs,
-        [Hs]: Hs,
-        [zs]: zs,
-        [Yt]: ds,
-        [Os]: Os,
-        [Zt]: ms,
-        [qt]: os,
-        [Kt]: ls,
-        [$t]: is,
-        [es]: ps,
-        [Ws]: Ws,
-        [ns]: fs,
-        [ss]: _s,
+    );
+var Ot = ((e) => (
+        (e[(e.NoRestriction = 0)] = 'NoRestriction'),
+        (e[(e.IsApplied = 1)] = 'IsApplied'),
+        (e[(e.InvalidBattleType = 2)] = 'InvalidBattleType'),
+        (e[(e.IsNotVictory = 3)] = 'IsNotVictory'),
+        (e[(e.DeprecatedResults = 4)] = 'DeprecatedResults'),
+        (e[(e.NoVehicle = 5)] = 'NoVehicle'),
+        (e[(e.NoCrew = 6)] = 'NoCrew'),
+        (e[(e.FasterEducationCrewNotActive = 7)] = 'FasterEducationCrewNotActive'),
+        (e[(e.FasterEducationCrewActive = 8)] = 'FasterEducationCrewActive'),
+        (e[(e.NotApplyingError = 9)] = 'NotApplyingError'),
+        e
+    ))(Ot || {}),
+    Ht = ((e) => (
+        (e[(e.PremiumInfo = 0)] = 'PremiumInfo'),
+        (e[(e.PremiumBonus = 1)] = 'PremiumBonus'),
+        (e[(e.PremiumEarnings = 2)] = 'PremiumEarnings'),
+        (e[(e.PremiumAdvertising = 3)] = 'PremiumAdvertising'),
+        (e[(e.PlusInfo = 4)] = 'PlusInfo'),
+        (e[(e.PlusEarnings = 5)] = 'PlusEarnings'),
+        (e[(e.PlusYouRock = 6)] = 'PlusYouRock'),
+        e
+    ))(Ht || {}),
+    Wt = ((e) => ((e.None = 'none'), (e.Core = 'core'), (e.Pro = 'pro'), e))(Wt || {});
+const Mt = 'xp',
+    Gt = 'freeXP',
+    Ft = 'credits',
+    $t = 'gold',
+    Lt = 'originalCrystals',
+    Xt = 'eventCrystals',
+    Kt = 'autoEquipCrystals',
+    qt = 'totalCrystals',
+    Ut = 'originalXP',
+    Yt = 'achievementXP',
+    Jt = 'originalXPPenalty',
+    Zt = 'igrBonusXP',
+    Qt = 'firstWinXP',
+    es = 'additionalBonusXP',
+    as = 'boostersXP',
+    ts = 'tacticalTrainingXP',
+    ss = 'eventXP',
+    ns = 'referralBonusXP',
+    is = 'premiumVehicleXP',
+    rs = 'squadBonusXP',
+    ls = 'squadPenaltyXP',
+    os = 'wotPlusBonusXP',
+    cs = 'wotPlusProBoostXP',
+    ds = 'totalXP',
+    us = 'originalFreeXP',
+    ms = 'achievementFreeXP',
+    ps = 'igrBonusFreeXP',
+    _s = 'firstWinFreeXP',
+    fs = 'additionalBonusFreeXP',
+    vs = 'boostersFreeXP',
+    bs = 'militaryManeuversFreeXP',
+    hs = 'eventFreeXP',
+    gs = 'premiumVehicleFreeXP',
+    ys = 'wotPlusBonusFreeXP',
+    xs = 'wotPlusProBoostFreeXP',
+    Ns = 'totalFreeXP',
+    js = 'baseEarnedCredits',
+    ws = 'squadBonusCredits',
+    Is = 'achievementCredits',
+    As = 'boostersCredits',
+    Cs = 'petSystemBonusCredits',
+    Ss = 'battlePaymentsCredits',
+    Bs = 'eventPaymentsCredits',
+    Ps = 'referralBonusCredits',
+    Rs = 'wotPlusBonusCredits',
+    ks = 'wotPlusProBoostCredits',
+    Es = 'friendlyFirePenaltyCredits',
+    Ts = 'friendlyFireCompensationCredits',
+    Ds = 'piggyBankCredits',
+    Vs = 'autoRepairCredits',
+    zs = 'autoLoadCredits',
+    Os = 'autoEquipCredits',
+    Hs = 'intermediateTotalCredits',
+    Ws = 'totalCredits',
+    Ms = 'goldEventPayments',
+    Gs = 'goldPiggyBank',
+    Fs = 'intermediateTotalGold',
+    $s = 'totalGold',
+    Ls = 'aogasFactor',
+    Xs = 'deserterViolation',
+    Ks = 'afkViolation',
+    qs = 'suicideViolation',
+    Us = new Set([Jt, ns, rs, ls, ts]),
+    Ys = new Set([bs]),
+    Js = new Set([js, ws, Is, As, Ss, Ps, Cs, Rs, ks, Xs, qs, Ks, Es, Ts, Ls, Vs, zs, Os]),
+    Zs = {
+        [Yt]: ms,
+        [es]: fs,
+        [Ks]: Ks,
+        [Ls]: Ls,
+        [as]: vs,
+        [Xs]: Xs,
+        [ss]: hs,
+        [Qt]: _s,
+        [Zt]: ps,
+        [Ut]: us,
+        [is]: gs,
+        [qs]: qs,
+        [ds]: Ns,
+        [os]: ys,
+        [cs]: xs,
     },
-    Ls = { [Ns]: Es, [Ps]: Ds, [Cs]: Ts, [ks]: Vs },
-    Xs = [Wt, Mt, Gt, Ft],
-    Ks = [
-        $t,
-        is,
-        Lt,
-        rs,
-        Xt,
-        Kt,
-        ls,
-        qt,
-        os,
+    Qs = { [Bs]: Ms, [Hs]: Fs, [Ds]: Gs, [Ws]: $s },
+    en = [Lt, Xt, Kt, qt],
+    an = [
         Ut,
-        cs,
-        Yt,
-        ds,
-        Jt,
         us,
-        Zt,
+        Yt,
         ms,
-        Qt,
-        es,
+        Jt,
+        Zt,
         ps,
-        as,
-        ts,
-        zs,
-        ss,
+        Qt,
         _s,
-        Os,
-        Ws,
-        Hs,
-        ns,
+        es,
         fs,
+        as,
+        vs,
+        ts,
+        bs,
+        ss,
+        hs,
+        ns,
+        is,
+        gs,
+        rs,
+        ls,
+        Ls,
+        os,
+        ys,
+        cs,
+        xs,
+        Xs,
+        qs,
+        Ks,
+        ds,
+        Ns,
     ],
-    qs = [vs, bs, hs, gs, ys, xs, Ns, Es, js, ws, Os, Ws, Hs, Is, As, zs, Ps, Ds, Ss, Bs, Rs, ks, Vs, Cs, Ts],
-    Us = new Set([Ft, $t, is, ns, fs, vs, As, Ps, Ds, Ss, Bs, Rs, ks, Vs, Cs, Ts]),
-    Ys = new Set([ks, Vs, Ds, Ps]),
-    Js = 'multiplier',
-    Zs = 'firstWinMultiplier',
-    Qs = 'fractionalMultiplier',
-    en = 'percent',
-    an = 'plus',
-    tn = {
-        [Kt]: Js,
-        [ls]: Js,
-        [qt]: Zs,
-        [os]: Zs,
-        [Ut]: Js,
-        [cs]: Js,
-        [zs]: Qs,
-        [Os]: en,
-        [Ws]: en,
-        [Hs]: en,
-        [Cs]: an,
-        [Ts]: an,
+    tn = [js, ws, Is, As, Cs, Ss, Bs, Ms, Ps, Rs, ks, Xs, qs, Ks, Es, Ts, Ls, Hs, Fs, Vs, zs, Os, Ws, $s, Ds, Gs],
+    sn = new Set([qt, Ut, us, ds, Ns, js, Hs, Fs, Vs, zs, Os, Ws, $s, Ds, Gs]),
+    nn = new Set([Ws, $s, Fs, Hs]),
+    rn = 'multiplier',
+    ln = 'firstWinMultiplier',
+    on = 'fractionalMultiplier',
+    cn = 'percent',
+    dn = 'plus',
+    un = {
+        [Zt]: rn,
+        [ps]: rn,
+        [Qt]: ln,
+        [_s]: ln,
+        [es]: rn,
+        [fs]: rn,
+        [Ls]: on,
+        [Xs]: cn,
+        [qs]: cn,
+        [Ks]: cn,
+        [Ds]: dn,
+        [Gs]: dn,
     };
-function sn(e) {
+function mn(e) {
     const a = Number(e.trim());
     return Number.isNaN(a)
         ? (console.error(`Invalid referral factor: "${e}" is not a number.`), 0)
         : Math.round(100 * a);
 }
-function nn(e) {
+function pn(e) {
     const a = Number(e.trim());
     return Number.isNaN(a) ? (console.error(`Invalid percent bonus: "${a}" is not a number.`), 0) : a;
 }
-function rn(e) {
-    return Us.has(e.paramName);
+function _n(e) {
+    return sn.has(e.paramName);
 }
-function ln(e) {
+function fn(e) {
     var a;
     return 'True' === (null == (a = null == e ? void 0 : e.recordsItemsDetails) ? void 0 : a.hasAogasFine);
 }
-function on(e) {
+function vn(e) {
     var a;
     return 'True' === (null == (a = null == e ? void 0 : e.recordsItemsDetails) ? void 0 : a.isEnabled);
 }
-const cn = { [$t]: rn, [is]: rn, [ns]: rn, [fs]: rn, [zs]: ln, [ss]: on, [_s]: on },
-    dn = {
-        [vs]: rn,
-        [As]: rn,
-        [Ps]: rn,
-        [Ds]: rn,
-        [Ss]: rn,
-        [Bs]: rn,
-        [Rs]: rn,
-        [ks]: rn,
-        [Vs]: rn,
-        [zs]: ln,
-        [ws]: on,
-        [Cs]: rn,
+const bn = { [Ut]: _n, [us]: _n, [ds]: _n, [Ns]: _n, [Ls]: fn, [os]: vn, [ys]: vn },
+    hn = {
+        [js]: _n,
+        [Hs]: _n,
+        [Fs]: _n,
+        [Vs]: _n,
+        [zs]: _n,
+        [Os]: _n,
+        [Ws]: _n,
+        [$s]: _n,
+        [Ls]: fn,
+        [Rs]: vn,
+        [Ds]: _n,
     };
-function un(e) {
-    return !1 !== Ys.has(e.paramName) && 0 === e.standard.gold && 0 === e.premium.gold;
+function gn(e) {
+    return !1 !== nn.has(e.paramName) && 0 === e.standard.gold && 0 === e.premium.gold;
 }
-const mn = { [Ps]: (e) => !1 === un(e), [ks]: (e) => !1 === un(e), [Cs]: (e, a) => a },
-    pn = { [Vt]: 'library.xp', [zt]: 'library.freeXp', [Ot]: 'library.credits', [Ht]: 'library.gold' },
-    _n = [zs, Os, Hs, Ws];
-function fn(e) {
-    return e === Vt ? 'library.x2_combatExp' : 'library.x2_combatFreeExp';
+const yn = { [Hs]: (e) => !1 === gn(e), [Ws]: (e) => !1 === gn(e), [Ds]: (e, a) => a },
+    xn = { [Mt]: 'library.xp', [Gt]: 'library.freeXp', [Ft]: 'library.credits', [$t]: 'library.gold' },
+    Nn = [Ls, Xs, Ks, qs];
+function jn(e) {
+    return e === Mt ? 'library.x2_combatExp' : 'library.x2_combatFreeExp';
 }
-const vn = {
-    [Kt]: (e) => 'library.x2_combatExp',
-    [ls]: (e) => 'library.x2_combatExp',
-    [qt]: fn,
-    [os]: fn,
-    [Ut]: fn,
-    [cs]: fn,
+const wn = {
+    [Zt]: (e) => 'library.x2_combatExp',
+    [ps]: (e) => 'library.x2_combatExp',
+    [Qt]: jn,
+    [_s]: jn,
+    [es]: jn,
+    [fs]: jn,
 };
-function bn(e, a) {
-    if (void 0 === a || _n.includes(a)) return;
-    const t = vn[a];
-    return t ? t(e) : pn[e];
+function In(e, a) {
+    if (void 0 === a || Nn.includes(a)) return;
+    const t = wn[a];
+    return t ? t(e) : xn[e];
 }
-function hn(e, a) {
-    return Xs.indexOf(e.paramName) - Xs.indexOf(a.paramName);
+function An(e, a) {
+    return en.indexOf(e.paramName) - en.indexOf(a.paramName);
 }
-function gn(e, a) {
-    return Ks.indexOf(e.paramName) - Ks.indexOf(a.paramName);
+function Cn(e, a) {
+    return an.indexOf(e.paramName) - an.indexOf(a.paramName);
 }
-function yn(e, a) {
-    return qs.indexOf(e.paramName) - qs.indexOf(a.paramName);
+function Sn(e, a) {
+    return tn.indexOf(e.paramName) - tn.indexOf(a.paramName);
 }
-function xn(e) {
+function Bn(e) {
     return {
         paramName: e.paramName,
         currencyType: e.currencyType,
         baseValue: e.baseValue,
         premiumValue: e.premiumValue,
-        recordsItemsDetails: Z(e.detailedItemRecords, (e, a) => ((e[a.itemName] = a.itemValue), e), {}),
+        recordsItemsDetails: ee(e.detailedItemRecords, (e, a) => ((e[a.itemName] = a.itemValue), e), {}),
     };
 }
-function Nn(e, a) {
+function Pn(e, a) {
     const t = [],
         s = [];
     for (const n of e) a(n) ? t.push(n) : s.push(n);
     return [t, s];
 }
-function jn(e, a) {
-    const t = J(e.earned, xn),
-        s = J(e.expenses, xn),
-        n = J(e.total, xn),
-        i = [Ps, Ds],
-        r = [Cs, Ts],
-        [l, o] = Nn(n, (e) => i.includes(e.paramName)),
-        [c, d] = Nn([...t, ...l], (e) => r.includes(e.paramName));
+function Rn(e, a) {
+    const t = Q(e.earned, Bn),
+        s = Q(e.expenses, Bn),
+        n = Q(e.total, Bn),
+        i = [Hs, Fs],
+        r = [Ds, Gs],
+        [l, o] = Pn(n, (e) => i.includes(e.paramName)),
+        [c, d] = Pn([...t, ...l], (e) => r.includes(e.paramName));
     return {
         records: [...d, ...s].sort(a),
         total: ((u = [...o, ...c]),
         u.filter((e) => {
             const a = Boolean(e.premiumValue || e.baseValue),
-                t = Us.has(e.paramName);
+                t = sn.has(e.paramName);
             return a || t;
         })).sort(a),
     };
     var u;
 }
-const wn = (e) => e in tn;
-function In({ xp: e, freeXp: a }) {
+const kn = (e) => e in un;
+function En({ xp: e, freeXp: a }) {
     const t = (null == e ? void 0 : e.paramName) || (null == a ? void 0 : a.paramName);
-    ee('string' == typeof t, 'xp or freeXp paramName is not provided');
-    const s = wn(t) ? tn[t] : void 0,
+    te('string' == typeof t, 'xp or freeXp paramName is not provided');
+    const s = kn(t) ? un[t] : void 0,
         n =
             void 0 !== (null == e ? void 0 : e.recordsItemsDetails) && Object.keys(e.recordsItemsDetails).length > 0
                 ? e.recordsItemsDetails
@@ -1029,10 +1077,10 @@ function In({ xp: e, freeXp: a }) {
         modifier: s,
     };
 }
-function An({ credits: e, gold: a }) {
+function Tn({ credits: e, gold: a }) {
     const t = (null == e ? void 0 : e.paramName) || (null == a ? void 0 : a.paramName);
-    ee('string' == typeof t, 'credits or gold paramName is not provided');
-    const s = wn(t) ? tn[t] : void 0,
+    te('string' == typeof t, 'credits or gold paramName is not provided');
+    const s = kn(t) ? un[t] : void 0,
         n =
             void 0 !== (null == e ? void 0 : e.recordsItemsDetails) && Object.keys(e.recordsItemsDetails).length > 0
                 ? null == e
@@ -1049,77 +1097,79 @@ function An({ credits: e, gold: a }) {
         modifier: s,
     };
 }
-const Cn = (e) => e in $s;
-function Sn(e, a) {
+const Dn = (e) => e in Zs;
+function Vn(e, a) {
     const t = e.paramName;
-    return (ee(Cn(t), `No analogue for ${t} in free xp parameter names`), a.find((e) => $s[t] === e.paramName));
+    return (te(Dn(t), `No analogue for ${t} in free xp parameter names`), a.find((e) => Zs[t] === e.paramName));
 }
-const Bn = (e) => e in Ls;
-function Rn(e, a) {
+const zn = (e) => e in Qs;
+function On(e, a) {
     const t = e.paramName;
-    return (ee(Bn(t), `No analogue for ${t} in gold parameter names`), a.find((e) => Ls[t] === e.paramName));
+    return (te(zn(t), `No analogue for ${t} in gold parameter names`), a.find((e) => Qs[t] === e.paramName));
 }
-function Pn(e, a) {
+function Hn(e, a) {
     const t = (function (e, a) {
         return [
-            ...Q(
+            ...ae(
                 a,
-                (e) => Gs.has(e.paramName),
-                (e) => In({ freeXp: e }),
+                (e) => Ys.has(e.paramName),
+                (e) => En({ freeXp: e }),
             ),
-            ...J(e, (e) => (Ms.has(e.paramName) ? In({ xp: e }) : In({ xp: e, freeXp: Sn(e, a) }))),
+            ...Q(e, (e) => (Us.has(e.paramName) ? En({ xp: e }) : En({ xp: e, freeXp: Vn(e, a) }))),
         ];
     })(e, a);
     return t
         .filter((e) => {
-            const a = cn[e.paramName];
+            const a = bn[e.paramName];
             return 'function' == typeof a
                 ? a(e)
                 : Boolean(e.premium.freeXp || e.premium.xp || e.standard.freeXp || e.standard.xp);
         })
-        .sort(gn);
+        .sort(Cn);
 }
-function kn(e, a) {
+function Wn(e, a) {
     const t = (function (e, a) {
-        return J(e, (e) => (Fs.has(e.paramName) ? An({ credits: e }) : An({ credits: e, gold: Rn(e, a) })));
+        return Q(e, (e) => (Js.has(e.paramName) ? Tn({ credits: e }) : Tn({ credits: e, gold: On(e, a) })));
     })(e, a);
     return t
         .filter((e) => {
-            const a = dn[e.paramName];
+            const a = hn[e.paramName];
             return 'function' == typeof a
                 ? a(e)
                 : Boolean(e.premium.credits || e.premium.gold || e.standard.credits || e.standard.gold);
         })
-        .sort(yn);
+        .sort(Sn);
 }
-function En(e) {
+function Mn(e) {
     return ((a = e),
     a.filter((e) => {
         const a = Boolean(e.baseValue || e.premiumValue),
-            t = Us.has(e.paramName);
+            t = sn.has(e.paramName);
         return a || t;
-    })).sort(hn);
+    })).sort(An);
     var a;
 }
-function Tn({ xp: e, freeXp: a }) {
+function Gn({ xp: e, freeXp: a }) {
     return (function (e, a) {
-        return { records: Pn(e.records, a.records), total: Pn(e.total, a.total) };
+        return { records: Hn(e.records, a.records), total: Hn(e.total, a.total) };
     })(
-        jn({ earned: e.earned, expenses: e.expenses, total: e.total }),
-        jn({ earned: a.earned, expenses: a.expenses, total: a.total }),
+        Rn({ earned: e.earned, expenses: e.expenses, total: e.total }),
+        Rn({ earned: a.earned, expenses: a.expenses, total: a.total }),
     );
 }
-function Dn({ credits: e, gold: a }) {
+function Fn({ credits: e, gold: a }) {
     return (function (e, a) {
-        return { records: kn(e.records, a.records), total: kn(e.total, a.total) };
+        return { records: Wn(e.records, a.records), total: Wn(e.total, a.total) };
     })(
-        jn({ earned: e.earned, expenses: e.expenses, total: e.total }),
-        jn({ earned: a.earned, expenses: a.expenses, total: a.total }),
+        Rn({ earned: e.earned, expenses: e.expenses, total: e.total }),
+        Rn({ earned: a.earned, expenses: a.expenses, total: a.total }),
     );
 }
-const [Vn, zn] = ae()(({ observableModel: e }) => {
+const $n = (e) => e.wotPlusType !== Wt.None,
+    [Ln, Xn] = se()(({ observableModel: e }) => {
         const a = {
-                ...e.primitives(['hasAnyPremium', 'hasWotPlus'], 'additionalBonus'),
+                ...e.primitives(['hasAnyPremium', 'wotPlusType', 'hasPenalties'], 'additionalBonus'),
+                hasWotPlus: e.transform($n, 'additionalBonus'),
                 xp: {
                     earned: e.arrayClone('financialReport.xp.earned'),
                     expenses: e.arrayClone('financialReport.xp.expenses'),
@@ -1146,8 +1196,8 @@ const [Vn, zn] = ae()(({ observableModel: e }) => {
                     total: e.arrayClone('financialReport.crystals.total'),
                 },
             },
-            t = te.model(() =>
-                Tn({
+            t = ne.model(() =>
+                Gn({
                     xp: { earned: a.xp.earned.get(), expenses: a.xp.expenses.get(), total: a.xp.total.get() },
                     freeXp: {
                         earned: a.xp.free.earned.get(),
@@ -1156,8 +1206,8 @@ const [Vn, zn] = ae()(({ observableModel: e }) => {
                     },
                 }),
             ),
-            s = te.model(() =>
-                Dn({
+            s = ne.model(() =>
+                Fn({
                     credits: {
                         earned: a.credits.earned.get(),
                         expenses: a.credits.expenses.get(),
@@ -1166,10 +1216,10 @@ const [Vn, zn] = ae()(({ observableModel: e }) => {
                     gold: { earned: a.gold.earned.get(), expenses: a.gold.expenses.get(), total: a.gold.total.get() },
                 }),
             ),
-            n = te.model(() =>
+            n = ne.model(() =>
                 (function ({ earned: e, expenses: a, total: t }) {
-                    const s = jn({ earned: e, expenses: a, total: t });
-                    return { records: En(s.records), total: En(s.total) };
+                    const s = Rn({ earned: e, expenses: a, total: t });
+                    return { records: Mn(s.records), total: Mn(s.total) };
                 })({
                     earned: a.crystals.earned.get(),
                     expenses: a.crystals.expenses.get(),
@@ -1177,265 +1227,306 @@ const [Vn, zn] = ae()(({ observableModel: e }) => {
                 }),
             );
         return { ...a, computes: { experience: t, credits: s, crystals: n } };
-    }, se),
-    On = 'ListItem_received_ffdc3010',
-    Hn = 'ListItem_separator_71797768',
-    Wn = 'ListItem_label_4ab3c391',
-    Mn = 'ListItem_label__withIcon_c2381aa',
-    Gn = 'ListItem_labelIcon_acb0da4',
-    Fn = F('ListItem', 'ListItem_bcdaabbd'),
-    $n = t.forwardRef(({ labelKey: t, children: s, classNames: n, params: i, labelIconPath: r, ...l }, o) => {
+    }, ie),
+    Kn = 'ListItem_received_ffdc3010',
+    qn = 'ListItem_separator_71797768',
+    Un = 'ListItem_label_4ab3c391',
+    Yn = 'ListItem_label__withIcon_c2381aa',
+    Jn = 'ListItem_labelIcon_acb0da4',
+    Zn = L('ListItem', 'ListItem_bcdaabbd'),
+    Qn = t.forwardRef(({ labelKey: t, children: s, classNames: n, params: i, labelIconPath: r, ...l }, o) => {
         const c = k.resolve('images');
-        return e.jsxs(Fn, {
+        return e.jsxs(Zn, {
             ...l,
             ref: o,
             'data-test-id': `${t}`,
             children: [
                 e.jsxs('div', {
-                    className: a(Wn, void 0 !== r && Mn, null == n ? void 0 : n.label),
+                    className: a(Un, void 0 !== r && Yn, null == n ? void 0 : n.label),
                     children: [
                         void 0 !== r &&
                             e.jsx('div', {
                                 style: { backgroundImage: `url(${c.readOrEmpty(r)})` },
-                                className: a(Gn, null == n ? void 0 : n.icon),
+                                className: a(Jn, null == n ? void 0 : n.icon),
                             }),
                         e.jsx(P, { upgradeLegacy: !0, path: t, params: i }),
                     ],
                 }),
-                e.jsxs('div', { className: On, children: [e.jsx('div', { className: Hn }), s] }),
+                e.jsxs('div', { className: Kn, children: [e.jsx('div', { className: qn }), s] }),
             ],
         });
     }),
-    Ln = 'Record_420804f3',
-    Xn = 'Record_value_4d088deb',
-    Kn = 'Record_value__decreasing_8cff45fa',
-    qn = ({ formatter: t, value: s, modifier: n, currency: i, classNames: l, iconPath: o }) => {
+    ei = 'Record_420804f3',
+    ai = 'Record_value_4d088deb',
+    ti = 'Record_value__decreasing_8cff45fa',
+    si = ({ formatter: t, value: s, modifier: n, currency: i, classNames: l, iconPath: o }) => {
         if (void 0 === s) return null;
-        const c = n === Qs || s < 0;
+        const c = n === on || s < 0;
         return e.jsxs('div', {
-            className: a(Ln, null == l ? void 0 : l.base),
+            className: a(ei, null == l ? void 0 : l.base),
             children: [
                 e.jsxs('div', {
-                    className: a(Xn, c && Kn, null == l ? void 0 : l.value),
+                    className: a(ai, c && ti, null == l ? void 0 : l.value),
                     'data-test-id': `${i}`,
                     children: [
                         r(n)
-                            .with(Zs, () => e.jsx(P, { path: 'common.multiplierSmall' }))
-                            .with(Js, () => e.jsx(P, { path: 'common.multiplierSmall' }))
-                            .with(Qs, () => e.jsx(P, { path: 'common.multiplierSmall' }))
-                            .with(an, () => e.jsx(P, { path: 'common.plus' }))
+                            .with(ln, () => e.jsx(P, { path: 'common.multiplierSmall' }))
+                            .with(rn, () => e.jsx(P, { path: 'common.multiplierSmall' }))
+                            .with(on, () => e.jsx(P, { path: 'common.multiplierSmall' }))
+                            .with(dn, () => e.jsx(P, { path: 'common.plus' }))
                             .otherwise(() => null),
                         t(s, i),
-                        n === en && e.jsx(P, { path: 'common.common.percent' }),
+                        n === cn && e.jsx(P, { path: 'common.common.percent' }),
                     ],
                 }),
-                o && e.jsx(X, { width: 24, height: 24, path: o }),
+                o && e.jsx(q, { width: 24, height: 24, path: o }),
             ],
         });
     },
-    Un = 'RecordGroup_65a30ced',
-    Yn = 'RecordGroup_base__inactive_5fd9f274',
-    Jn = 'RecordGroup_record_5fd9f274',
-    Zn = 'RecordGroup_record__extinguished_7fdfcea',
-    Qn = 'RecordGroup_record__first_9121e1b7',
-    ei = 'RecordGroup_separator_9f211d97',
-    ai = 'RecordGroup_separatorBackground_8a447834',
-    ti = 'RecordGroup_value_1f34e2e2',
-    si = 'RecordGroup_value__total_126d88a1',
-    ni = 'RecordGroup_value__freeXP_931265db';
-function ii(e, a) {
-    return e !== Ut || (void 0 !== a && a > 0);
+    ni = 'RecordGroup_65a30ced',
+    ii = 'RecordGroup_base__inactive_5fd9f274',
+    ri = 'RecordGroup_record_5fd9f274',
+    li = 'RecordGroup_record__extinguished_7fdfcea',
+    oi = 'RecordGroup_record__first_9121e1b7',
+    ci = 'RecordGroup_separator_9f211d97',
+    di = 'RecordGroup_separatorBackground_8a447834',
+    ui = 'RecordGroup_value_1f34e2e2',
+    mi = 'RecordGroup_value__total_126d88a1',
+    pi = 'RecordGroup_value__freeXP_931265db';
+function _i(e, a) {
+    return e !== es || (void 0 !== a && a > 0);
 }
-function ri({ paramName: e, wotPlusActive: a, value: t }) {
+function fi({ paramName: e, wotPlusActive: a, hasPenalties: t, value: s }) {
+    const n = !s || 0 === s;
     switch (e) {
-        case zs:
+        case Ls:
             return !1;
-        case ss:
-        case _s:
-            return !a || !t || 0 === t;
+        case os:
+        case ys:
+            return !a || n;
+        case ds:
+            return !t && n;
         default:
-            return !t || 0 === t;
+            return n;
     }
 }
-const li = ({ paramName: t, xp: s, freeXp: n, modifier: i, inactive: r, total: l, wotPlusActive: o }) => {
-        function c(e) {
+const vi = ({
+        paramName: t,
+        xp: s,
+        freeXp: n,
+        modifier: i,
+        inactive: r,
+        hasPenalties: l = !1,
+        total: o,
+        wotPlusActive: c,
+    }) => {
+        function d(e) {
             switch (t) {
-                case Kt:
-                    return T.formatReal('woZeroDigits', e);
-                case zs:
-                    return T.formatReal('fractional', e);
+                case Zt:
+                    return V.formatReal('woZeroDigits', e);
+                case Ls:
+                    return V.formatReal('fractional', e);
                 default:
-                    return T.formatNumber('integral', e);
+                    return V.formatNumber('integral', e);
             }
         }
         return e.jsxs('div', {
-            className: a(Un, r && Yn),
+            className: a(ni, r && ii),
             children: [
                 e.jsx('div', {
-                    className: a(Jn, Qn, ri({ wotPlusActive: o, paramName: t, value: s }) && Zn),
-                    children: e.jsx(qn, {
+                    className: a(ri, oi, fi({ wotPlusActive: c, paramName: t, value: s, hasPenalties: l }) && li),
+                    children: e.jsx(si, {
                         value: s,
-                        currency: Vt,
-                        modifier: ii(t, s) ? i : void 0,
-                        formatter: c,
-                        classNames: { value: a(ti, l && si) },
-                        iconPath: bn(Vt, t),
+                        currency: Mt,
+                        modifier: _i(t, s) ? i : void 0,
+                        formatter: d,
+                        classNames: { value: a(ui, o && mi) },
+                        iconPath: In(Mt, t),
                     }),
                 }),
-                void 0 !== n && e.jsx('div', { className: ei, children: e.jsx('div', { className: ai }) }),
+                void 0 !== n && e.jsx('div', { className: ci, children: e.jsx('div', { className: di }) }),
                 e.jsx('div', {
-                    className: a(Jn, ri({ wotPlusActive: o, paramName: t, value: n }) && Zn),
-                    children: e.jsx(qn, {
+                    className: a(ri, fi({ wotPlusActive: c, paramName: t, value: n, hasPenalties: l }) && li),
+                    children: e.jsx(si, {
                         value: n,
-                        currency: zt,
-                        modifier: ii(t, n) ? i : void 0,
-                        formatter: c,
-                        classNames: { value: a(ti, ni, l && si) },
-                        iconPath: bn(zt, t),
+                        currency: Gt,
+                        modifier: _i(t, n) ? i : void 0,
+                        formatter: d,
+                        classNames: { value: a(ui, pi, o && mi) },
+                        iconPath: In(Gt, t),
                     }),
                 }),
             ],
         });
     },
-    oi = 'Item_groups_a1f0c2a5',
-    ci = 'Item_label_7521a1d4',
-    di = 'Item_label__highlighted_36e62867',
-    ui = 'Item_label__gold_49ec59ab',
-    mi = {
-        [$t]: 'title.base',
-        [is]: 'title.base',
-        [Lt]: 'noPenalty',
-        [rs]: 'noPenalty',
-        [Xt]: 'friendlyFirePenalty',
-        [Kt]: 'igrBonus.simpleLabel',
-        [ls]: 'igrBonus.simpleLabel',
-        [qt]: 'firstWin',
-        [os]: 'firstWin',
-        [Ut]: 'manageableXpBonus',
-        [cs]: 'manageableXpBonus',
-        [Yt]: 'boosters',
-        [ds]: 'boosters',
-        [Jt]: 'tacticalTraining',
-        [us]: 'militaryManeuvers',
-        [Zt]: 'event',
-        [ms]: 'event',
-        [Qt]: 'referralBonus.fullLabel',
-        [es]: 'premiumVehicleXP',
-        [ps]: 'premiumVehicleXP',
-        [as]: 'squadBonus',
-        [ts]: 'squadXPPenalty',
-        [zs]: 'aogasFactor',
-        [ss]: 'wotPlusBonus',
-        [_s]: 'wotPlusBonus',
-        [Os]: 'fairPlayViolation.deserter',
-        [Ws]: 'fairPlayViolation.suicide',
-        [Hs]: 'fairPlayViolation.afk',
-        [ns]: 'total',
-        [fs]: 'total',
+    bi = 'Item_groups_a1f0c2a5',
+    hi = 'Item_label_7521a1d4',
+    gi = 'Item_label__highlighted_36e62867',
+    yi = 'Item_label__gold_49ec59ab',
+    xi = {
+        [Ut]: 'title.base',
+        [us]: 'title.base',
+        [Yt]: 'noPenalty',
+        [ms]: 'noPenalty',
+        [Jt]: 'friendlyFirePenalty',
+        [Zt]: 'igrBonus.simpleLabel',
+        [ps]: 'igrBonus.simpleLabel',
+        [Qt]: 'firstWin',
+        [_s]: 'firstWin',
+        [es]: 'manageableXpBonus',
+        [fs]: 'manageableXpBonus',
+        [as]: 'boosters',
+        [vs]: 'boosters',
+        [ts]: 'tacticalTraining',
+        [bs]: 'militaryManeuvers',
+        [ss]: 'event',
+        [hs]: 'event',
+        [ns]: 'referralBonus.fullLabel',
+        [is]: 'premiumVehicleXP',
+        [gs]: 'premiumVehicleXP',
+        [rs]: 'squadBonus',
+        [ls]: 'squadXPPenalty',
+        [Ls]: 'aogasFactor',
+        [os]: 'wotPlusBonus',
+        [ys]: 'wotPlusBonus',
+        [cs]: 'wotPlusProBoost',
+        [xs]: 'wotPlusProBoost',
+        [Xs]: 'fairPlayViolation.deserter',
+        [qs]: 'fairPlayViolation.suicide',
+        [Ks]: 'fairPlayViolation.afk',
+        [ds]: 'total',
+        [Ns]: 'total',
         originalAlternative: 'xpRecordSimple',
     },
-    pi = { [ss]: 'subscription.wot_plus_32x32', [_s]: 'subscription.wot_plus_32x32' },
-    _i = new Set([ss, _s]),
-    fi = () =>
-        e.jsx('span', { className: di, children: e.jsx(P, { path: 'battle_results.details.calculations.maximum' }) }),
-    vi = l(
+    Ni = { [os]: 'subscription.wot_plus_32x32', [ys]: 'subscription.wot_plus_32x32' },
+    ji = {
+        [os]: 'subscription.wot_plus_pro_32x32',
+        [ys]: 'subscription.wot_plus_pro_32x32',
+        [cs]: 'subscription.wot_plus_pro_32x32',
+        [xs]: 'subscription.wot_plus_pro_32x32',
+    },
+    wi = { [Wt.None]: void 0, [Wt.Core]: Ni, [Wt.Pro]: ji },
+    Ii = new Set([os, ys, cs, xs]),
+    Ai = () =>
+        e.jsx('span', { className: gi, children: e.jsx(P, { path: 'battle_results.details.calculations.maximum' }) }),
+    Ci = l(
         ({
             record: { paramName: t, premium: s, standard: n, modifier: i, recordsItemsDetails: r },
             total: l,
             ...o
         }) => {
-            const { model: c } = zn(),
-                d = c.hasAnyPremium.get(),
-                u = c.hasWotPlus.get();
-            if (!(t in mi)) return null;
-            const m = '1' === (null == r ? void 0 : r.isHighScope),
-                p = m ? mi.originalAlternative : mi[t],
-                _ = null == r ? void 0 : r.referralFactor;
-            return e.jsx($n, {
+            var c;
+            const { model: d } = Xn(),
+                u = d.hasAnyPremium.get(),
+                m = d.hasWotPlus.get(),
+                p = d.wotPlusType.get(),
+                _ = d.hasPenalties.get();
+            if (!(t in xi)) return null;
+            const f = '1' === (null == r ? void 0 : r.isHighScope),
+                v = f ? xi.originalAlternative : xi[t],
+                b = null == r ? void 0 : r.referralFactor,
+                h = null == (c = wi[p]) ? void 0 : c[t];
+            return e.jsx(Qn, {
                 ...o,
-                labelIconPath: pi[t],
-                labelKey: `battle_results.details.calculations.${p}`,
-                params: { ...(_ && { bonusFactor: sn(_) }), ...(m && { maximum: e.jsx(fi, {}) }) },
-                classNames: { label: a(ci, _i.has(t) && ui) },
+                labelIconPath: h,
+                labelKey: `battle_results.details.calculations.${v}`,
+                params: { ...(b && { bonusFactor: mn(b) }), ...(f && { maximum: e.jsx(Ai, {}) }) },
+                classNames: { label: a(hi, Ii.has(t) && yi) },
                 children: e.jsxs('div', {
-                    className: oi,
+                    className: bi,
                     children: [
-                        e.jsx(li, { ...n, paramName: t, modifier: i, inactive: d, total: l, wotPlusActive: u }),
-                        e.jsx(li, { ...s, paramName: t, modifier: i, inactive: !d, total: l, wotPlusActive: u }),
+                        e.jsx(vi, {
+                            ...n,
+                            paramName: t,
+                            modifier: i,
+                            inactive: u,
+                            total: l,
+                            hasPenalties: _,
+                            wotPlusActive: m,
+                        }),
+                        e.jsx(vi, {
+                            ...s,
+                            paramName: t,
+                            modifier: i,
+                            inactive: !u,
+                            total: l,
+                            hasPenalties: _,
+                            wotPlusActive: m,
+                        }),
                     ],
                 }),
             });
         },
     ),
-    bi = 'IncomeStatement_560dd244',
-    hi = 'IncomeStatement_base__scroll_fb9f1475',
-    gi = 'IncomeStatement_item_48b34a63',
-    yi = l(
+    Si = 'IncomeStatement_560dd244',
+    Bi = 'IncomeStatement_base__scroll_fb9f1475',
+    Pi = 'IncomeStatement_item_48b34a63',
+    Ri = l(
         t.forwardRef(({ className: t, scrollable: s, ...n }, i) => {
-            const { model: r } = zn(),
+            const { model: r } = Xn(),
                 l = r.computes.experience();
-            return e.jsx(Dt, {
+            return e.jsx(zt, {
                 ...n,
                 ref: i,
-                className: a(bi, s && hi, t),
+                className: a(Si, s && Bi, t),
                 scrollable: s,
-                children: J(l.records, (a) => e.jsx(vi, { record: a, className: gi }, a.paramName)),
+                children: Q(l.records, (a) => e.jsx(Ci, { record: a, className: Pi }, a.paramName)),
             });
         }),
     ),
-    xi = 'Total_item_a8580361',
-    Ni = 'Total_divider_1de1ca28',
-    ji = 'Total_dividerImage_ab06168d',
-    wi = F('ExperienceTotal', 'Total_19236d49'),
-    Ii = l(
+    ki = 'Total_item_a8580361',
+    Ei = 'Total_divider_1de1ca28',
+    Ti = 'Total_dividerImage_ab06168d',
+    Di = L('ExperienceTotal', 'Total_19236d49'),
+    Vi = l(
         t.forwardRef((a, t) => {
-            const { model: s } = zn(),
+            const { model: s } = Xn(),
                 n = s.computes.experience();
-            return e.jsxs(wi, {
+            return e.jsxs(Di, {
                 ...a,
                 ref: t,
                 children: [
-                    e.jsx(gt, { classNames: { base: Ni, image: ji } }),
-                    n.total.map((a) => e.jsx(vi, { record: a, className: xi, total: !0 }, a.paramName)),
+                    e.jsx(xt, { classNames: { base: Ei, image: Ti } }),
+                    n.total.map((a) => e.jsx(Ci, { record: a, className: ki, total: !0 }, a.paramName)),
                 ],
             });
         }),
     ),
-    Ai = 'Experience_a014c8c',
-    Ci = 'Experience_base__scroll_f75d07c6',
-    Si = F('Experience'),
-    Bi = t.forwardRef(({ scrollable: t, className: s, ...n }, i) =>
-        e.jsx(Si, { ...n, ref: i, className: a(Ai, t && Ci, s) }),
+    zi = 'Experience_a014c8c',
+    Oi = 'Experience_base__scroll_f75d07c6',
+    Hi = L('Experience'),
+    Wi = t.forwardRef(({ scrollable: t, className: s, ...n }, i) =>
+        e.jsx(Hi, { ...n, ref: i, className: a(zi, t && Oi, s) }),
     );
-((Bi.Header = At), (Bi.Item = vi), (Bi.Total = Ii), (Bi.IncomeStatement = yi));
-const Ri = 'Header_cbd845ec',
-    Pi = 'Header_content_a63fb46c',
-    ki = 'Header_title_7b852a7',
-    Ei = 'Header_title__active_e5dd0f77',
-    Ti = 'Header_title__premium_2c23921f',
-    Di = 'Header_icon_3b4dc587',
-    Vi = l(
+((Wi.Header = St), (Wi.Item = Ci), (Wi.Total = Vi), (Wi.IncomeStatement = Ri));
+const Mi = 'Header_cbd845ec',
+    Gi = 'Header_content_a63fb46c',
+    Fi = 'Header_title_7b852a7',
+    $i = 'Header_title__active_e5dd0f77',
+    Li = 'Header_title__premium_2c23921f',
+    Xi = 'Header_icon_3b4dc587',
+    Ki = l(
         t.forwardRef(({ className: t, ...s }, n) => {
-            const { model: i } = zn(),
+            const { model: i } = Xn(),
                 r = i.hasAnyPremium.get();
-            return e.jsx(It, {
+            return e.jsx(Ct, {
                 ...s,
                 ref: n,
-                className: a(Ri, t),
+                className: a(Mi, t),
                 title: 'battle_results.details.credits',
                 children: e.jsxs('div', {
-                    className: Pi,
+                    className: Gi,
                     children: [
                         e.jsx('div', {
-                            className: a(ki, !r && Ei),
+                            className: a(Fi, !r && $i),
                             children: e.jsx(P, { path: 'battle_results.common.details.noPremTitle' }),
                         }),
                         e.jsxs('div', {
-                            className: a(ki, r && Ei, Ti),
+                            className: a(Fi, r && $i, Li),
                             children: [
                                 e.jsx('div', {
-                                    className: Di,
-                                    children: e.jsx(X, {
+                                    className: Xi,
+                                    children: e.jsx(q, {
                                         width: 32,
                                         height: 32,
                                         path: 'post_battle.wot_premium_32x32',
@@ -1449,250 +1540,264 @@ const Ri = 'Header_cbd845ec',
             });
         }),
     ),
-    zi = 'RecordGroup_65a30ced',
-    Oi = 'RecordGroup_base__inactive_5fd9f274',
-    Hi = 'RecordGroup_record_5fd9f274',
-    Wi = 'RecordGroup_record__extinguished_7fdfcea',
-    Mi = 'RecordGroup_record__first_36c2aa71',
-    Gi = 'RecordGroup_separator_9f211d97',
-    Fi = 'RecordGroup_separatorBackground_8a447834',
-    $i = 'RecordGroup_value_9253748c',
-    Li = 'RecordGroup_value__total_126d88a1',
-    Xi = 'RecordGroup_value__gold_d7bd74ba';
-function Ki({ paramName: e, wotPlusActive: a, value: t }) {
+    qi = 'RecordGroup_65a30ced',
+    Ui = 'RecordGroup_base__inactive_5fd9f274',
+    Yi = 'RecordGroup_record_5fd9f274',
+    Ji = 'RecordGroup_record__extinguished_7fdfcea',
+    Zi = 'RecordGroup_record__first_36c2aa71',
+    Qi = 'RecordGroup_separator_9f211d97',
+    er = 'RecordGroup_separatorBackground_8a447834',
+    ar = 'RecordGroup_value_9253748c',
+    tr = 'RecordGroup_value__total_126d88a1',
+    sr = 'RecordGroup_value__gold_d7bd74ba';
+function nr({ paramName: e, wotPlusActive: a, value: t }) {
     switch (e) {
-        case zs:
+        case Ls:
             return !1;
-        case ws:
+        case Rs:
             return !a || !t || 0 === t;
         default:
             return !t || 0 === t;
     }
 }
-const qi = ({ credits: t, gold: s, modifier: n, inactive: i = !1, total: r, paramName: l, wotPlusActive: o }) => {
+const ir = ({ credits: t, gold: s, modifier: n, inactive: i = !1, total: r, paramName: l, wotPlusActive: o }) => {
         function c(e, a) {
-            return l === zs ? T.formatReal('fractional', e) : T.formatNumber(a === Ht ? 'gold' : 'integral', e);
+            return l === Ls ? V.formatReal('fractional', e) : V.formatNumber(a === $t ? 'gold' : 'integral', e);
         }
         return e.jsxs('div', {
-            className: a(zi, i && Oi),
+            className: a(qi, i && Ui),
             children: [
                 e.jsx('div', {
-                    className: a(Hi, Mi, Ki({ paramName: l, wotPlusActive: o, value: t }) && Wi),
-                    children: e.jsx(qn, {
+                    className: a(Yi, Zi, nr({ paramName: l, wotPlusActive: o, value: t }) && Ji),
+                    children: e.jsx(si, {
                         formatter: c,
                         value: t,
-                        currency: Ot,
+                        currency: Ft,
                         modifier: n,
-                        classNames: { value: a($i, r && Li) },
-                        iconPath: bn(Ot, l),
+                        classNames: { value: a(ar, r && tr) },
+                        iconPath: In(Ft, l),
                     }),
                 }),
-                void 0 !== s && e.jsx('div', { className: Gi, children: e.jsx('div', { className: Fi }) }),
+                void 0 !== s && e.jsx('div', { className: Qi, children: e.jsx('div', { className: er }) }),
                 e.jsx('div', {
-                    className: a(Hi, 0 === s && Wi),
-                    children: e.jsx(qn, {
+                    className: a(Yi, 0 === s && Ji),
+                    children: e.jsx(si, {
                         value: s,
-                        currency: Ht,
+                        currency: $t,
                         modifier: n,
-                        classNames: { value: a($i, Xi, r && Li) },
+                        classNames: { value: a(ar, sr, r && tr) },
                         formatter: c,
-                        iconPath: bn(Ht, l),
+                        iconPath: In($t, l),
                     }),
                 }),
             ],
         });
     },
-    Ui = 'Item_groups_a1f0c2a5',
-    Yi = 'Item_label_7521a1d4',
-    Ji = 'Item_label__gold_49ec59ab',
-    Zi = {
-        [vs]: 'title.base',
-        [bs]: 'squadBonus',
-        [hs]: 'noPenalty',
-        [gs]: 'boosters',
-        [xs]: 'battlePayments',
-        [Ns]: 'event',
-        [Es]: 'event',
-        [js]: 'referralBonus.fullLabel',
-        [ws]: 'wotPlusBonus',
-        [Os]: 'fairPlayViolation.deserter',
-        [Ws]: 'fairPlayViolation.suicide',
-        [Hs]: 'fairPlayViolation.afk',
-        [Is]: 'friendlyFirePenalty',
-        [As]: 'friendlyFireCompensation',
-        [zs]: 'aogasFactor',
-        [Ps]: 'intermediateTotal',
-        [Ds]: 'intermediateTotal',
-        [Ss]: 'autoRepair',
-        [Bs]: 'autoLoad',
-        [Rs]: 'autoEquip',
-        [ks]: 'total',
-        [Vs]: 'total',
-        [Cs]: 'piggyBankInfo',
-        [Ts]: 'piggyBankInfo',
-        [ys]: 'petCredits.fullLabel',
+    rr = 'Item_groups_a1f0c2a5',
+    lr = 'Item_label_7521a1d4',
+    or = 'Item_label__gold_49ec59ab',
+    cr = {
+        [js]: 'title.base',
+        [ws]: 'squadBonus',
+        [Is]: 'noPenalty',
+        [As]: 'boosters',
+        [Ss]: 'battlePayments',
+        [Bs]: 'event',
+        [Ms]: 'event',
+        [Ps]: 'referralBonus.fullLabel',
+        [Rs]: 'wotPlusBonus',
+        [ks]: 'wotPlusProBoost',
+        [Xs]: 'fairPlayViolation.deserter',
+        [qs]: 'fairPlayViolation.suicide',
+        [Ks]: 'fairPlayViolation.afk',
+        [Es]: 'friendlyFirePenalty',
+        [Ts]: 'friendlyFireCompensation',
+        [Ls]: 'aogasFactor',
+        [Hs]: 'intermediateTotal',
+        [Fs]: 'intermediateTotal',
+        [Vs]: 'autoRepair',
+        [zs]: 'autoLoad',
+        [Os]: 'autoEquip',
+        [Ws]: 'total',
+        [$s]: 'total',
+        [Ds]: 'piggyBankInfo',
+        [Gs]: 'piggyBankInfo',
+        [Cs]: 'petCredits.fullLabel',
     },
-    Qi = { [ws]: 'subscription.wot_plus_32x32' },
-    er = l(({ record: t, total: s, ...n }) => {
-        const { model: i } = zn(),
-            r = i.hasAnyPremium.get(),
-            l = i.hasWotPlus.get(),
-            { paramName: o, premium: c, standard: d, modifier: u, recordsItemsDetails: m } = t;
-        if (!(o in Zi)) return null;
-        const p = null == m ? void 0 : m.referralFactor,
-            _ = null == m ? void 0 : m.bonusFactor,
-            f = Zi[o],
-            v = mn[ks](t, l);
-        return e.jsx($n, {
+    dr = { [Rs]: 'subscription.wot_plus_pro_32x32', [ks]: 'subscription.wot_plus_pro_32x32' },
+    ur = { [Rs]: 'subscription.wot_plus_32x32' },
+    mr = { [Wt.None]: void 0, [Wt.Core]: ur, [Wt.Pro]: dr },
+    pr = [Rs, ks],
+    _r = l(({ record: t, total: s, ...n }) => {
+        var i;
+        const { model: r } = Xn(),
+            l = r.hasAnyPremium.get(),
+            o = r.hasWotPlus.get(),
+            { paramName: c, premium: d, standard: u, modifier: m, recordsItemsDetails: p } = t;
+        if (!(c in cr)) return null;
+        const _ = null == p ? void 0 : p.referralFactor,
+            f = null == p ? void 0 : p.bonusFactor,
+            v = cr[c],
+            b = yn[Ws](t, o),
+            h = r.wotPlusType.get(),
+            g = null == (i = mr[h]) ? void 0 : i[c];
+        return e.jsx(Qn, {
             ...n,
-            labelIconPath: Qi[o],
-            labelKey: `battle_results.details.calculations.${f}`,
-            classNames: { label: a(Yi, o === ws && Ji) },
-            params: { ...(p && { bonusFactor: sn(p) }), ...(_ && { bonusFactor: nn(_) }) },
+            labelIconPath: g,
+            labelKey: `battle_results.details.calculations.${v}`,
+            classNames: { label: a(lr, pr.includes(c) && or) },
+            params: { ...(_ && { bonusFactor: mn(_) }), ...(f && { bonusFactor: pn(f) }) },
             children: e.jsxs('div', {
-                className: Ui,
+                className: rr,
                 children: [
-                    e.jsx(qi, {
-                        paramName: o,
-                        credits: d.credits,
-                        gold: v ? d.gold : void 0,
-                        modifier: u,
-                        inactive: r,
+                    e.jsx(ir, {
+                        paramName: c,
+                        credits: u.credits,
+                        gold: b ? u.gold : void 0,
+                        modifier: m,
+                        inactive: l,
                         total: s,
-                        wotPlusActive: l,
+                        wotPlusActive: o,
                     }),
-                    e.jsx(qi, {
-                        paramName: o,
-                        credits: c.credits,
-                        gold: v ? c.gold : void 0,
-                        modifier: u,
-                        inactive: !r,
+                    e.jsx(ir, {
+                        paramName: c,
+                        credits: d.credits,
+                        gold: b ? d.gold : void 0,
+                        modifier: m,
+                        inactive: !l,
                         total: s,
-                        wotPlusActive: l,
+                        wotPlusActive: o,
                     }),
                 ],
             }),
         });
     }),
-    ar = 'IncomeStatement_560dd244',
-    tr = 'IncomeStatement_base__scroll_fb9f1475',
-    sr = 'IncomeStatement_item_48b34a63',
-    nr = l(
+    fr = 'IncomeStatement_560dd244',
+    vr = 'IncomeStatement_base__scroll_fb9f1475',
+    br = 'IncomeStatement_item_48b34a63',
+    hr = l(
         t.forwardRef(({ className: t, scrollable: s, ...n }, i) => {
-            const { model: r } = zn(),
+            const { model: r } = Xn(),
                 l = r.computes.credits();
-            return e.jsx(Dt, {
+            return e.jsx(zt, {
                 ...n,
                 ref: i,
-                className: a(ar, s && tr, t),
+                className: a(fr, s && vr, t),
                 scrollable: s,
-                children: J(l.records, (a) => e.jsx(er, { record: a, className: sr }, a.paramName)),
+                children: Q(l.records, (a) => e.jsx(_r, { record: a, className: br }, a.paramName)),
             });
         }),
     ),
-    ir = 'Total_item_de53c8b0',
-    rr = 'Total_divider_1de1ca28',
-    lr = 'Total_dividerImage_ab06168d',
-    or = F('CreditsTotal', 'Total_19236d49'),
-    cr = l(
+    gr = 'Total_item_de53c8b0',
+    yr = 'Total_divider_1de1ca28',
+    xr = 'Total_dividerImage_ab06168d',
+    Nr = L('CreditsTotal', 'Total_19236d49'),
+    jr = l(
         t.forwardRef((a, t) => {
-            const { model: s } = zn(),
+            const { model: s } = Xn(),
                 n = s.computes.credits();
-            return e.jsxs(or, {
+            return e.jsxs(Nr, {
                 ...a,
                 ref: t,
                 children: [
-                    e.jsx(gt, { classNames: { base: rr, image: lr } }),
-                    n.total.map((a) => e.jsx(er, { record: a, className: ir, total: !0 }, a.paramName)),
+                    e.jsx(xt, { classNames: { base: yr, image: xr } }),
+                    n.total.map((a) => e.jsx(_r, { record: a, className: gr, total: !0 }, a.paramName)),
                 ],
             });
         }),
     ),
-    dr = 'Credits_68f91d81',
-    ur = 'Credits_base__scroll_759f08f3',
-    mr = F('Credits'),
-    pr = t.forwardRef(({ scrollable: t, className: s, ...n }, i) =>
-        e.jsx(mr, { ...n, ref: i, className: a(dr, t && ur, s) }),
+    wr = 'Credits_68f91d81',
+    Ir = 'Credits_base__scroll_759f08f3',
+    Ar = L('Credits'),
+    Cr = t.forwardRef(({ scrollable: t, className: s, ...n }, i) =>
+        e.jsx(Ar, { ...n, ref: i, className: a(wr, t && Ir, s) }),
     );
-((pr.Header = Vi), (pr.Item = er), (pr.Total = cr), (pr.IncomeStatement = nr));
-const _r = 'Item_currencyValue_81f5b9fb',
-    fr = 'Item_currencyValue__total_a7596c8e',
-    vr = 'Item_currencyValue__negative_5e98369f',
-    br = 'Item_label_5d6964d6',
-    hr = {
-        [Wt]: 'battle_results.details.calculations.crystal.total',
-        [Mt]: 'battle_results.details.calculations.crystal.events',
-        [Gt]: 'battle_results.details.calculations.autoBoosters',
-        [Ft]: 'battle_results.details.calculations.total',
+((Cr.Header = Ki), (Cr.Item = _r), (Cr.Total = jr), (Cr.IncomeStatement = hr));
+const Sr = 'Item_currencyValue_81f5b9fb',
+    Br = 'Item_currencyValue__total_a7596c8e',
+    Pr = 'Item_currencyValue__negative_5e98369f',
+    Rr = 'Item_label_5d6964d6',
+    kr = {
+        [Lt]: 'battle_results.details.calculations.crystal.total',
+        [Xt]: 'battle_results.details.calculations.crystal.events',
+        [Kt]: 'battle_results.details.calculations.autoBoosters',
+        [qt]: 'battle_results.details.calculations.total',
     },
-    gr = ({ record: t, total: s, ...n }) => {
+    Er = ({ record: t, total: s, ...n }) => {
         const { paramName: i, baseValue: r } = t;
-        return i in hr
-            ? e.jsx($n, {
+        return i in kr
+            ? e.jsx(Qn, {
                   ...n,
-                  labelKey: hr[i],
-                  classNames: { label: br, ...n.classNames },
-                  children: e.jsx(ne, {
+                  labelKey: kr[i],
+                  classNames: { label: Rr, ...n.classNames },
+                  children: e.jsx(re, {
                       reverse: !0,
                       type: 'crystal',
-                      size: ie.small,
+                      size: le.small,
                       children: e.jsx('div', {
-                          className: a(_r, r < 0 && vr, s && fr),
-                          children: T.formatNumber('integral', r),
+                          className: a(Sr, r < 0 && Pr, s && Br),
+                          children: V.formatNumber('integral', r),
                       }),
                   }),
               })
             : (console.error(`Parameter name "${i} is not valid for bonds`), null);
     },
-    yr = 'IncomeStatement_item_48b34a63',
-    xr = F('BondsIncomeStatement'),
-    Nr = l(
+    Tr = 'IncomeStatement_item_48b34a63',
+    Dr = L('BondsIncomeStatement'),
+    Vr = l(
         t.forwardRef((a, t) => {
-            const { model: s } = zn(),
+            const { model: s } = Xn(),
                 n = s.computes.crystals();
-            return e.jsx(xr, {
+            return e.jsx(Dr, {
                 ...a,
                 ref: t,
-                children: n.records.map((a) => e.jsx(gr, { record: a, className: yr }, a.paramName)),
+                children: n.records.map((a) => e.jsx(Er, { record: a, className: Tr }, a.paramName)),
             });
         }),
     ),
-    jr = 'Total_item_a8580361',
-    wr = 'Total_divider_1de1ca28',
-    Ir = 'Total_dividerImage_ab06168d',
-    Ar = F('BondsTotal', 'Total_120fb0c4'),
-    Cr = l(
-        t.forwardRef((a, t) => {
-            const { model: s } = zn(),
-                n = s.computes.crystals();
-            return e.jsxs(Ar, {
-                ...a,
-                ref: t,
+    zr = 'Total_item_a8580361',
+    Or = 'Total_item__extinguished_4be8343f',
+    Hr = 'Total_divider_1de1ca28',
+    Wr = 'Total_dividerImage_ab06168d',
+    Mr = L('BondsTotal', 'Total_120fb0c4'),
+    Gr = l(
+        t.forwardRef((t, s) => {
+            const { model: n } = Xn(),
+                i = n.computes.crystals();
+            return e.jsxs(Mr, {
+                ...t,
+                ref: s,
                 children: [
-                    e.jsx(gt, { classNames: { base: wr, image: Ir } }),
-                    n.total.map((a) => e.jsx(gr, { total: !0, record: a, className: jr }, a.paramName)),
+                    e.jsx(xt, { classNames: { base: Hr, image: Wr } }),
+                    i.total.map((t) =>
+                        e.jsx(
+                            Er,
+                            { total: !0, record: t, className: a(zr, (!t.baseValue || 0 === t.baseValue) && Or) },
+                            t.paramName,
+                        ),
+                    ),
                 ],
             });
         }),
     ),
-    Sr = t.forwardRef((a, t) => e.jsx(It, { ...a, title: 'battle_results.details.crystal', ref: t })),
-    Br = F('Bonds');
-((Br.Header = Sr), (Br.Item = gr), (Br.Total = Cr), (Br.IncomeStatement = Nr));
-const Rr = 'FinancialReport_content_99bf970f',
-    Pr = 'FinancialReport_leftContent_75c21204',
-    kr = 'FinancialReport_bonds_cc81cbc0',
-    Er = 'FinancialReport_headerContent_aad9188f',
-    Tr = 'FinancialReport_experience_7219d4d3',
-    Dr = 'FinancialReport_credits_7712b0c',
-    Vr = 'FinancialReport_header_d56ebc61',
-    zr = 'FinancialReport_total_bdf3e42b',
-    Or = F('FinancialReport', 'FinancialReport_c3cc562a'),
-    Hr = ({ className: a }) => {
+    Fr = t.forwardRef((a, t) => e.jsx(Ct, { ...a, title: 'battle_results.details.crystal', ref: t })),
+    $r = L('Bonds');
+(($r.Header = Fr), ($r.Item = Er), ($r.Total = Gr), ($r.IncomeStatement = Vr));
+const Lr = 'FinancialReport_content_99bf970f',
+    Xr = 'FinancialReport_leftContent_75c21204',
+    Kr = 'FinancialReport_bonds_cc81cbc0',
+    qr = 'FinancialReport_headerContent_aad9188f',
+    Ur = 'FinancialReport_experience_7219d4d3',
+    Yr = 'FinancialReport_credits_7712b0c',
+    Jr = 'FinancialReport_header_d56ebc61',
+    Zr = 'FinancialReport_total_bdf3e42b',
+    Qr = L('FinancialReport', 'FinancialReport_c3cc562a'),
+    el = ({ className: a }) => {
         const [s, n] = t.useState({ credits: !1, experience: !1 }),
             i = t.useRef(null),
             r = t.useRef(null),
             l = t.useRef(null),
-            o = re({ margin: 18 }, { medium: { margin: 19 }, large: { margin: 16 }, extraLarge: { margin: 30 } }),
+            o = oe({ margin: 18 }, { medium: { margin: 19 }, large: { margin: 16 }, extraLarge: { margin: 30 } }),
             c = t.useCallback(() => {
                 if (!i.current || !r.current || !l.current) return;
                 const { height: e } = i.current.getBoundingClientRect(),
@@ -1712,45 +1817,45 @@ const Rr = 'FinancialReport_content_99bf970f',
                           ));
             }, [o.margin]);
         return (
-            le(i, c),
-            e.jsx(Vn, {
-                children: e.jsx(Or, {
+            ce(i, c),
+            e.jsx(Ln, {
+                children: e.jsx(Qr, {
                     className: a,
                     children: e.jsxs('div', {
-                        className: Rr,
+                        className: Lr,
                         children: [
                             e.jsxs('div', {
-                                className: Pr,
+                                className: Xr,
                                 ref: i,
                                 children: [
-                                    e.jsxs(pr, {
+                                    e.jsxs(Cr, {
                                         ref: r,
                                         scrollable: s.credits,
-                                        className: Dr,
+                                        className: Yr,
                                         children: [
-                                            e.jsx(pr.Header, { className: Vr }),
-                                            e.jsx(pr.IncomeStatement, { scrollable: s.credits }),
-                                            e.jsx(pr.Total, { className: zr }),
+                                            e.jsx(Cr.Header, { className: Jr }),
+                                            e.jsx(Cr.IncomeStatement, { scrollable: s.credits }),
+                                            e.jsx(Cr.Total, { className: Zr }),
                                         ],
                                     }),
-                                    e.jsxs(Bi, {
+                                    e.jsxs(Wi, {
                                         ref: l,
                                         scrollable: s.experience,
-                                        className: Tr,
+                                        className: Ur,
                                         children: [
-                                            e.jsx(Bi.Header, { className: Vr, classNames: { content: Er } }),
-                                            e.jsx(Bi.IncomeStatement, { scrollable: s.experience }),
-                                            e.jsx(Bi.Total, { className: zr }),
+                                            e.jsx(Wi.Header, { className: Jr, classNames: { content: qr } }),
+                                            e.jsx(Wi.IncomeStatement, { scrollable: s.experience }),
+                                            e.jsx(Wi.Total, { className: Zr }),
                                         ],
                                     }),
                                 ],
                             }),
-                            e.jsxs(Br, {
-                                className: kr,
+                            e.jsxs($r, {
+                                className: Kr,
                                 children: [
-                                    e.jsx(Br.Header, { className: Vr, classNames: { content: Er } }),
-                                    e.jsx(Br.IncomeStatement, {}),
-                                    e.jsx(Br.Total, { className: zr }),
+                                    e.jsx($r.Header, { className: Jr, classNames: { content: qr } }),
+                                    e.jsx($r.IncomeStatement, {}),
+                                    e.jsx($r.Total, { className: Zr }),
                                 ],
                             }),
                         ],
@@ -1759,8 +1864,8 @@ const Rr = 'FinancialReport_content_99bf970f',
             })
         );
     };
-var Wr = ((e) => ((e.Done = 'done'), (e.Locked = 'notAvailable'), (e.Active = ''), e))(Wr || {});
-const Mr = o({
+var al = ((e) => ((e.Done = 'done'), (e.Locked = 'notAvailable'), (e.Active = ''), e))(al || {});
+const tl = o({
         index: u(),
         name: c(),
         value: c(),
@@ -1774,9 +1879,9 @@ const Mr = o({
         iconBig: f(c()),
         iconSmall: f(c()),
     }),
-    Gr = o({ conditionType: c() }),
-    Fr = o({
-        ...Gr.entries,
+    sl = o({ conditionType: c() }),
+    nl = o({
+        ...sl.entries,
         titleData: c(),
         descrData: c(),
         iconKey: c(),
@@ -1786,20 +1891,20 @@ const Mr = o({
         progressType: c(),
         sortKey: c(),
     }),
-    $r = o({ ...Gr.entries, items: m(p([Fr, _(() => $r)])) }),
-    Lr = o({ id: c(), groupId: c(), type: u(), title: c(), description: c(), decoration: u(), status: d(Wr) });
-o({ ...Lr.entries, bonuses: m(Mr), preBattleCondition: $r, bonusCondition: $r, postBattleCondition: $r });
-const Xr = o({
+    il = o({ ...sl.entries, items: m(p([nl, _(() => il)])) }),
+    rl = o({ id: c(), groupId: c(), type: u(), title: c(), description: c(), decoration: u(), status: d(al) });
+o({ ...rl.entries, bonuses: m(tl), preBattleCondition: il, bonusCondition: il, postBattleCondition: il });
+const ll = o({
         animated: f(v()),
         completed: f(v()),
-        component: h((e) => oe(e)),
+        component: h((e) => de(e)),
         categoryOrder: u(),
         notifications: f(m(o({ id: c(), item: h((e) => t.isValidElement(e)) }))),
     }),
-    Kr = p([o({ status: b('loaded'), result: Xr }), o({ status: b('loading') })]),
-    qr = k.resolve('strings'),
-    Ur = ['huntsman', 'medalGore', 'medalStark'],
-    Yr = {
+    ol = p([o({ status: b('loaded'), result: ll }), o({ status: b('loading') })]),
+    cl = k.resolve('strings'),
+    dl = ['huntsman', 'medalGore', 'medalStark'],
+    ul = {
         markOfMastery: 'markOfMastery',
         marksOnGun: 'marksOnGun',
         epic: 'epic',
@@ -1808,53 +1913,53 @@ const Xr = o({
         left: 'left',
         other: 'other',
     },
-    Jr = [Yr.markOfMastery, Yr.marksOnGun, Yr.epic, Yr.specialAchievements, Yr.right, Yr.left, Yr.other];
-function Zr(e) {
-    return e.groupID === Yr.markOfMastery
-        ? Yr.markOfMastery
-        : e.groupID === Yr.marksOnGun
-          ? Yr.marksOnGun
+    ml = [ul.markOfMastery, ul.marksOnGun, ul.epic, ul.specialAchievements, ul.right, ul.left, ul.other];
+function pl(e) {
+    return e.groupID === ul.markOfMastery
+        ? ul.markOfMastery
+        : e.groupID === ul.marksOnGun
+          ? ul.marksOnGun
           : e.epic
-            ? Yr.epic
-            : Ur.includes(e.name)
-              ? Yr.specialAchievements
-              : e.groupID === Yr.right
-                ? Yr.right
-                : e.groupID === Yr.left
-                  ? Yr.left
-                  : (console.error(`Achievement ${e.name} with a group ${e.groupID} is not detected`), Yr.other);
+            ? ul.epic
+            : dl.includes(e.name)
+              ? ul.specialAchievements
+              : e.groupID === ul.right
+                ? ul.right
+                : e.groupID === ul.left
+                  ? ul.left
+                  : (console.error(`Achievement ${e.name} with a group ${e.groupID} is not detected`), ul.other);
 }
-function Qr(e) {
-    return ce(e, (e, a) => {
-        const t = Zr(e),
-            s = Zr(a),
-            n = Jr.indexOf(t),
-            i = Jr.indexOf(s);
+function _l(e) {
+    return ue(e, (e, a) => {
+        const t = pl(e),
+            s = pl(a),
+            n = ml.indexOf(t),
+            i = ml.indexOf(s);
         return t !== s
             ? n - i
             : (function (e, a) {
-                  const t = qr.readOrEmpty(`achievements.${e.name}`),
-                      s = qr.readOrEmpty(`achievements.${a.name}`);
+                  const t = cl.readOrEmpty(`achievements.${e.name}`),
+                      s = cl.readOrEmpty(`achievements.${a.name}`);
                   return t.localeCompare(s);
               })(e, a);
     });
 }
-const el = 'default',
-    al = 'hover',
-    tl = 'extinct';
-function sl(e, a) {
-    return void 0 === a ? el : a === e ? al : tl;
+const fl = 'default',
+    vl = 'hover',
+    bl = 'extinct';
+function hl(e, a) {
+    return void 0 === a ? fl : a === e ? vl : bl;
 }
-const nl = { marksOnGun1: '1_mark', marksOnGun2: '2_marks', marksOnGun3: '3_marks' };
-function il({ iconName: e, groupID: a, vehicleNation: t }) {
-    return 'marksOnGun' === a ? `marksOnGun.x240x240.${t}_${nl[e]}` : `achievement.x240x240.${e}`;
+const gl = { marksOnGun1: '1_mark', marksOnGun2: '2_marks', marksOnGun3: '3_marks' };
+function yl({ iconName: e, groupID: a, vehicleNation: t }) {
+    return 'marksOnGun' === a ? `marksOnGun.x240x240.${t}_${gl[e]}` : `achievement.x240x240.${e}`;
 }
-const rl = 'marks',
-    ll = 'epicAndHeroic',
-    ol = 'others',
-    cl = ['bombardier', 'medalAntiSpgFire', 'kamikaze', 'raider', 'medalMonolith', 'medalCoolBlood'];
-const dl = 0;
-var ul = ((e) => (
+const xl = 'marks',
+    Nl = 'epicAndHeroic',
+    jl = 'others',
+    wl = ['bombardier', 'medalAntiSpgFire', 'kamikaze', 'raider', 'medalMonolith', 'medalCoolBlood'];
+const Il = 0;
+var Al = ((e) => (
         (e.Squad = 'squad'),
         (e.Player = 'player'),
         (e.Damage = 'damage'),
@@ -1863,80 +1968,57 @@ var ul = ((e) => (
         (e.Vehicle = 'tank'),
         (e.Medal = 'medal'),
         e
-    ))(ul || {}),
-    ml = ((e) => ((e.Asc = 'ascending'), (e.Desc = 'descending'), e))(ml || {}),
-    pl = ((e) => (
-        (e[(e.NoRestriction = 0)] = 'NoRestriction'),
-        (e[(e.IsApplied = 1)] = 'IsApplied'),
-        (e[(e.InvalidBattleType = 2)] = 'InvalidBattleType'),
-        (e[(e.IsNotVictory = 3)] = 'IsNotVictory'),
-        (e[(e.DeprecatedResults = 4)] = 'DeprecatedResults'),
-        (e[(e.NoVehicle = 5)] = 'NoVehicle'),
-        (e[(e.NoCrew = 6)] = 'NoCrew'),
-        (e[(e.FasterEducationCrewNotActive = 7)] = 'FasterEducationCrewNotActive'),
-        (e[(e.FasterEducationCrewActive = 8)] = 'FasterEducationCrewActive'),
-        (e[(e.NotApplyingError = 9)] = 'NotApplyingError'),
-        e
-    ))(pl || {}),
-    _l = ((e) => (
-        (e[(e.PremiumInfo = 0)] = 'PremiumInfo'),
-        (e[(e.PremiumBonus = 1)] = 'PremiumBonus'),
-        (e[(e.PremiumEarnings = 2)] = 'PremiumEarnings'),
-        (e[(e.PremiumAdvertising = 3)] = 'PremiumAdvertising'),
-        (e[(e.PlusInfo = 4)] = 'PlusInfo'),
-        (e[(e.PlusEarnings = 5)] = 'PlusEarnings'),
-        (e[(e.PlusYouRock = 6)] = 'PlusYouRock'),
-        e
-    ))(_l || {});
-const fl = {
-        plusInfo: _l.PlusInfo,
-        premiumInfo: _l.PremiumInfo,
-        premiumAdvertising: _l.PremiumAdvertising,
-        premiumBonus: _l.PremiumBonus,
-        premiumEarnings: _l.PremiumEarnings,
-        plusEarnings: _l.PlusEarnings,
-        plusYouRock: _l.PlusYouRock,
+    ))(Al || {}),
+    Cl = ((e) => ((e.Asc = 'ascending'), (e.Desc = 'descending'), e))(Cl || {});
+const Sl = {
+        plusInfo: Ht.PlusInfo,
+        premiumInfo: Ht.PremiumInfo,
+        premiumAdvertising: Ht.PremiumAdvertising,
+        premiumBonus: Ht.PremiumBonus,
+        premiumEarnings: Ht.PremiumEarnings,
+        plusEarnings: Ht.PlusEarnings,
+        plusYouRock: Ht.PlusYouRock,
     },
-    vl = Object.values(fl);
-const bl = 'premiumInfo',
-    hl = 'applyBonus',
-    gl = 'appliedBonus',
-    yl = 'isNotVictory',
-    xl = 'requiredRecentBattleAndVehicle',
-    Nl = 'invalidBattleType',
-    jl = 'noVehicle',
-    wl = 'fasterEducationCrewNotActive',
-    Il = 'fasterEducationCrewActive',
-    Al = 'noCrew',
-    Cl = 'premiumEarnings',
-    Sl = 'creditsAdvertising',
-    Bl = 'premiumAdvertising',
-    Rl = 'squadAdvertising',
-    Pl = 'bonusAdvertising',
-    kl = 'questsAdvertising',
-    El = 'plusInfo',
-    Tl = 'plusEarnings',
-    Dl = 'plusYouRock',
-    Vl = { credits: Sl, premium: Bl, squad: Rl, bonus: Pl, quests: kl },
-    zl = [Vl.credits, Vl.premium, Vl.squad, Vl.bonus, Vl.quests];
-const Ol = {
-        [pl.IsApplied]: gl,
-        [pl.DeprecatedResults]: xl,
-        [pl.IsNotVictory]: yl,
-        [pl.InvalidBattleType]: Nl,
-        [pl.NoVehicle]: jl,
-        [pl.FasterEducationCrewActive]: Il,
-        [pl.FasterEducationCrewNotActive]: wl,
-        [pl.NoCrew]: Al,
+    Bl = Object.values(Sl);
+const Pl = 'premiumInfo',
+    Rl = 'applyBonus',
+    kl = 'appliedBonus',
+    El = 'isNotVictory',
+    Tl = 'requiredRecentBattleAndVehicle',
+    Dl = 'invalidBattleType',
+    Vl = 'noVehicle',
+    zl = 'fasterEducationCrewNotActive',
+    Ol = 'fasterEducationCrewActive',
+    Hl = 'noCrew',
+    Wl = 'premiumEarnings',
+    Ml = 'creditsAdvertising',
+    Gl = 'premiumAdvertising',
+    Fl = 'squadAdvertising',
+    $l = 'bonusAdvertising',
+    Ll = 'questsAdvertising',
+    Xl = 'plusInfo',
+    Kl = 'plusEarnings',
+    ql = 'plusYouRock',
+    Ul = { credits: Ml, premium: Gl, squad: Fl, bonus: $l, quests: Ll },
+    Yl = [Ul.credits, Ul.premium, Ul.squad, Ul.bonus, Ul.quests];
+const Jl = {
+        [Ot.IsApplied]: kl,
+        [Ot.DeprecatedResults]: Tl,
+        [Ot.IsNotVictory]: El,
+        [Ot.InvalidBattleType]: Dl,
+        [Ot.NoVehicle]: Vl,
+        [Ot.FasterEducationCrewActive]: Ol,
+        [Ot.FasterEducationCrewNotActive]: zl,
+        [Ot.NoCrew]: Hl,
     },
-    Hl = {
-        [fl.plusInfo]: { define: () => El },
-        [fl.premiumInfo]: { define: () => bl },
-        [fl.premiumAdvertising]: {
+    Zl = {
+        [Sl.plusInfo]: { define: () => Xl },
+        [Sl.premiumInfo]: { define: () => Pl },
+        [Sl.premiumAdvertising]: {
             define: ({ supportedAdvertisements: e, usedAdvertisements: a }) => {
                 const t = e.filter((e) => !1 === a.includes(e))[0] ?? e[0];
                 return (
-                    ee(
+                    te(
                         void 0 !== t,
                         'advertisingState is not recognized. Check please supportedAdvertisements state. It is not possible to have empty supportedAdvertisements array in case if the widget in the premiumAdvertising state',
                     ),
@@ -1944,25 +2026,25 @@ const Ol = {
                 );
             },
         },
-        [fl.premiumBonus]: {
-            define: ({ restriction: e }) => (e !== pl.NoRestriction && e !== pl.NotApplyingError ? Ol[e] : hl),
+        [Sl.premiumBonus]: {
+            define: ({ restriction: e }) => (e !== Ot.NoRestriction && e !== Ot.NotApplyingError ? Jl[e] : Rl),
         },
-        [fl.premiumEarnings]: { define: () => Cl },
-        [fl.plusEarnings]: { define: () => Tl },
-        [fl.plusYouRock]: { define: () => Dl },
+        [Sl.premiumEarnings]: { define: () => Wl },
+        [Sl.plusEarnings]: { define: () => Kl },
+        [Sl.plusYouRock]: { define: () => ql },
     };
-function Wl(e) {
+function Ql(e) {
     return function (a) {
         return e(g(() => y(a)));
     };
 }
-const Ml = '',
-    Gl = [Vl.premium, Vl.squad, Vl.credits],
-    Fl = ['ctf30x30', 'domination30x30'];
-var $l = ((e) => ((e[(e.Integer = 0)] = 'Integer'), (e[(e.Float = 1)] = 'Float'), (e[(e.Time = 2)] = 'Time'), e))(
-        $l || {},
+const eo = '',
+    ao = [Ul.premium, Ul.squad, Ul.credits],
+    to = ['ctf30x30', 'domination30x30'];
+var so = ((e) => ((e[(e.Integer = 0)] = 'Integer'), (e[(e.Float = 1)] = 'Float'), (e[(e.Time = 2)] = 'Time'), e))(
+        so || {},
     ),
-    Ll = ((e) => (
+    no = ((e) => (
         (e.Shots = 'shots'),
         (e.Hits = 'hits'),
         (e.ExplosionHits = 'explosionHits'),
@@ -1986,8 +2068,8 @@ var $l = ((e) => ((e[(e.Integer = 0)] = 'Integer'), (e[(e.Float = 1)] = 'Float')
         (e.CapturePointsVal = 'capturePointsVal'),
         (e.Mileage = 'mileage'),
         e
-    ))(Ll || {});
-function Xl(e) {
+    ))(no || {});
+function io(e) {
     return {
         status: e.winStatus,
         modeName: e.modeName,
@@ -2000,14 +2082,14 @@ function Xl(e) {
         commendationsReceived: e.commendationsReceived,
     };
 }
-const Kl = [ns, Ps];
-function ql(e, a) {
-    const { recordsItemsDetails: t, baseValue: s, premiumValue: n, currencyType: i, paramName: r } = xn(e),
+const ro = [ds, Hs];
+function lo(e, a) {
+    const { recordsItemsDetails: t, baseValue: s, premiumValue: n, currencyType: i, paramName: r } = Bn(e),
         l = a ? n : s,
         o = l >= 0 ? l : 0;
-    return { paramName: r, type: i, visibleIfZero: Kl.includes(r) || 'True' === t.isAvailable, value: o };
+    return { paramName: r, type: i, visibleIfZero: ro.includes(r) || 'True' === t.isAvailable, value: o };
 }
-function Ul(e) {
+function oo(e) {
     return {
         bonusMultiplier: e.bonusMultiplier,
         bonusXpDiff: e.xpDiff,
@@ -2016,7 +2098,7 @@ function Ul(e) {
         dailyAppliedAdditionalXP: e.dailyAppliedAdditionalXP,
         restriction: e.restriction,
         bonusState: e.state,
-        wotPlus: e.hasWotPlus,
+        wotPlusType: e.wotPlusType,
         wotPremium: e.hasPremium,
         durationInDays: e.durationInDays,
         usedAdvertisements:
@@ -2049,7 +2131,7 @@ function Ul(e) {
                 : [],
     };
 }
-function Yl(e) {
+function co(e) {
     return {
         groupID: e.groupID,
         iconName: e.iconName,
@@ -2059,41 +2141,41 @@ function Yl(e) {
         tooltipId: e.tooltipId,
     };
 }
-function Jl(e) {
-    return { labelKey: e.labelKey, paramValueType: e.paramValueType, value: J(e.value, (e) => e) };
+function uo(e) {
+    return { labelKey: e.labelKey, paramValueType: e.paramValueType, value: Q(e.value, (e) => e) };
 }
-function Zl(e) {
+function mo(e) {
     return {
-        ...Jl({ label: e.label, labelKey: e.labelKey, paramValueType: e.paramValueType, value: J(e.value, (e) => e) }),
-        details: J(e.details, (e) => Jl(e)),
+        ...uo({ label: e.label, labelKey: e.labelKey, paramValueType: e.paramValueType, value: Q(e.value, (e) => e) }),
+        details: Q(e.details, (e) => uo(e)),
     };
 }
-function Ql(e) {
+function po(e) {
     var a;
-    const t = null == (a = de(e.detailedStatistics, (e) => e.labelKey === Ll.TeamHitsDamage)) ? void 0 : a.value,
-        s = void 0 !== t ? ue(t, 0) : 0,
+    const t = null == (a = me(e.detailedStatistics, (e) => e.labelKey === no.TeamHitsDamage)) ? void 0 : a.value,
+        s = void 0 !== t ? pe(t, 0) : 0,
         n = e.efficiencyValues.kills - (s ?? 0);
     return {
         personal: e.isPersonal,
         squadIndex: e.squadIndex,
-        achievements: J(e.achievements, Yl),
-        account: pe(e.userNames),
+        achievements: Q(e.achievements, co),
+        account: fe(e.userNames),
         userStatus: ((o = e.userStatus), { abandonBattle: o.isLeftBattle, deathReason: o.deathReason }),
-        killer: pe(e.userStatus.killer),
+        killer: fe(e.userStatus.killer),
         vehicle:
             ((r = e.vehicle.vehicleCD),
             (l = e.vehicle.techName),
-            0 === r && '' === l ? void 0 : { ...me(e.vehicle), longName: e.vehicle.longName }),
+            0 === r && '' === l ? void 0 : { ..._e(e.vehicle), longName: e.vehicle.longName }),
         efficiencyValues: {
             substractedAlliesKills: n,
             ...((i = e.efficiencyValues), { damageDealt: i.damageDealt, kills: i.kills, earnedXp: i.earnedXp }),
         },
-        detailedStatistics: J(e.detailedStatistics, Zl),
+        detailedStatistics: Q(e.detailedStatistics, mo),
         databaseId: e.databaseID,
     };
     var i, r, l, o;
 }
-const eo = {
+const _o = {
     killed: 0,
     spotted: 0,
     criticalDamage: 0,
@@ -2102,17 +2184,17 @@ const eo = {
     damageAssistedStun: { value: 0, count: 0 },
     damageBlockedByArmor: { value: 0, count: 0 },
 };
-const ao = { allies: 'allies', enemies: 'enemies' },
-    to = ['dead0', 'dead1', 'dead2', 'dead3', 'dead5', 'dead7'],
-    so = { personal: 'personal', alien: 'alien' },
-    no = 0;
-function io(e, a, t) {
-    return t === no ? null : a === t && e === ao.allies ? so.personal : so.alien;
+const fo = { allies: 'allies', enemies: 'enemies' },
+    vo = ['dead0', 'dead1', 'dead2', 'dead3', 'dead5', 'dead7'],
+    bo = { personal: 'personal', alien: 'alien' },
+    ho = 0;
+function go(e, a, t) {
+    return t === ho ? null : a === t && e === fo.allies ? bo.personal : bo.alien;
 }
-function ro({ anonymizer: e, personal: a, platoonType: t }) {
-    return !(a || !e) && (t === so.alien || null === t);
+function yo({ anonymizer: e, personal: a, platoonType: t }) {
+    return !(a || !e) && (t === bo.alien || null === t);
 }
-const [lo, oo] = ae()(
+const [xo, No] = se()(
         (e) => {
             const { observableModel: a, cleanup: t } = e,
                 s = {
@@ -2132,18 +2214,18 @@ const [lo, oo] = ae()(
                     gold: { total: a.arrayClone('financialReport.gold.total') },
                 },
                 n = {
-                    battleInfo: a.transform(Xl, 'battleInfo'),
-                    additionalBonus: a.transform(Ul, 'additionalBonus'),
+                    battleInfo: a.transform(io, 'battleInfo'),
+                    additionalBonus: a.transform(oo, 'additionalBonus'),
                     allPlayersDictionary: N.box({}),
                     personalEfficiency: {
                         opened: N.box(!1),
-                        achievements: a.transform((e) => Qr(J(e, Yl)), 'achievements'),
+                        achievements: a.transform((e) => _l(Q(e, co)), 'achievements'),
                         statistics: { details: N.box([]), capturePoints: N.box(0), droppedCapturePoints: N.box(0) },
                     },
                     teamsStatistic: {
                         allies: N.box([]),
                         enemies: N.box([]),
-                        sorting: N.box({ column: ul.Vehicle, sortDirection: ml.Desc }),
+                        sorting: N.box({ column: Al.Vehicle, sortDirection: Cl.Desc }),
                         selectedRow: N.box(),
                     },
                     user: { names: N.box(), status: N.box() },
@@ -2151,24 +2233,24 @@ const [lo, oo] = ae()(
                     pathToPlugins: a.dict('pathToPlugins'),
                     notificationList: N.box([]),
                 };
-            (Wl(t)(() => {
+            (Ql(t)(() => {
                 const e = {};
                 (n.teamsStatistic.allies.set(
-                    J(s.teamsStatistic.allies.get(), (a) => {
-                        const t = Ql(a);
+                    Q(s.teamsStatistic.allies.get(), (a) => {
+                        const t = po(a);
                         return ((e[t.account.username] = t), t);
                     }),
                 ),
                     n.teamsStatistic.enemies.set(
-                        J(s.teamsStatistic.enemies.get(), (a) => {
-                            const t = Ql(a);
+                        Q(s.teamsStatistic.enemies.get(), (a) => {
+                            const t = po(a);
                             return ((e[t.account.username] = t), t);
                         }),
                     ));
                 const a = n.allPlayersDictionary.get();
                 n.allPlayersDictionary.set({ ...a, ...e });
             }),
-                Wl(t)(() => {
+                Ql(t)(() => {
                     return n.teamsStatistic.sorting.set(
                         ((e = s.teamsStatistic.sortingColumn.get()),
                         (a = s.teamsStatistic.sortingOrder.get()),
@@ -2176,24 +2258,24 @@ const [lo, oo] = ae()(
                     );
                     var e, a;
                 }),
-                Wl(t)(() => {
+                Ql(t)(() => {
                     (n.personalEfficiency.statistics.capturePoints.set(s.personalEffiency.capturePoints.get()),
                         n.personalEfficiency.statistics.droppedCapturePoints.set(
                             s.personalEffiency.droppedCapturePoints.get(),
                         ));
                 }));
-            const i = te.structural(() =>
+            const i = ne.structural(() =>
                     (function ({ anyPremium: e, credits: a, crystals: t, gold: s, xp: n }) {
-                        const i = de(a, (e) => e.paramName === Ps),
-                            r = de(s, (e) => e.paramName === Vs),
-                            l = de(n, (e) => e.paramName === ns),
-                            o = de(t, (e) => e.paramName === Ft),
+                        const i = me(a, (e) => e.paramName === Hs),
+                            r = me(s, (e) => e.paramName === $s),
+                            l = me(n, (e) => e.paramName === ds),
+                            o = me(t, (e) => e.paramName === qt),
                             c = [];
                         return (
-                            i && c.push(ql(i, e)),
-                            r && c.push(ql(r, e)),
-                            l && c.push(ql(l, e)),
-                            o && c.push(ql(o, e)),
+                            i && c.push(lo(i, e)),
+                            r && c.push(lo(r, e)),
+                            l && c.push(lo(l, e)),
+                            o && c.push(lo(o, e)),
                             c
                         );
                     })({
@@ -2204,32 +2286,32 @@ const [lo, oo] = ae()(
                         xp: s.xp.total.get(),
                     }),
                 ),
-                r = te.structural(() => n.pathToPlugins.values().map((e) => ({ url: e.get() }))),
-                l = te.shallow(() => {
-                    const e = de(n.teamsStatistic.allies.get(), (e) => e.personal);
+                r = ne.structural(() => n.pathToPlugins.values().map((e) => ({ url: e.get() }))),
+                l = ne.shallow(() => {
+                    const e = me(n.teamsStatistic.allies.get(), (e) => e.personal);
                     var a;
                     return (
-                        ee(void 0 !== e, 'Personal info is not found'),
-                        ee((a = e).personal && void 0 !== a.vehicle, 'There is no vehicle data in the personal info'),
+                        te(void 0 !== e, 'Personal info is not found'),
+                        te((a = e).personal && void 0 !== a.vehicle, 'There is no vehicle data in the personal info'),
                         e
                     );
                 }),
-                o = te.shallow(() => {
+                o = ne.shallow(() => {
                     const e = n.teamsStatistic.selectedRow.get();
                     if (void 0 === e) return;
-                    const a = (e.team === ao.allies ? n.teamsStatistic.allies : n.teamsStatistic.enemies).get();
-                    return de(a, (a) => a.account.username === e.username);
+                    const a = (e.team === fo.allies ? n.teamsStatistic.allies : n.teamsStatistic.enemies).get();
+                    return me(a, (a) => a.account.username === e.username);
                 }),
-                c = te.shallow(() => {
+                c = ne.shallow(() => {
                     const e = n.allPlayersDictionary.get();
                     return {
                         assault: n.personalEfficiency.statistics.capturePoints.get(),
                         defend: n.personalEfficiency.statistics.droppedCapturePoints.get(),
-                        rows: Z(
+                        rows: ee(
                             s.personalEffiency.details.get(),
                             (a, t) => {
                                 const s = (function (e) {
-                                    return Z(
+                                    return ee(
                                         e.personalEfficiencyItems,
                                         (e, a) => {
                                             switch (a.paramType) {
@@ -2269,7 +2351,7 @@ const [lo, oo] = ae()(
                                         },
                                     );
                                 })(t);
-                                if (((n = s), _e.structural(n, eo))) return a;
+                                if (((n = s), ve.structural(n, _o))) return a;
                                 var n;
                                 const i = e[t.userName],
                                     r = (null == i ? void 0 : i.account) ?? {
@@ -2277,11 +2359,11 @@ const [lo, oo] = ae()(
                                         fakeUsername: t.userName,
                                         clanAbbreviation: '',
                                         anonymizer: !1,
-                                        igrType: dl,
+                                        igrType: Il,
                                         teamKiller: !1,
                                         killed: !1,
-                                        badge: Ml,
-                                        suffixBadge: Ml,
+                                        badge: eo,
+                                        suffixBadge: eo,
                                     };
                                 return (
                                     a.push({
@@ -2297,14 +2379,14 @@ const [lo, oo] = ae()(
                         ),
                     };
                 }),
-                d = te.shallow(() => {
-                    const e = de(s.xp.total.get(), (e) => 'totalXP' === e.paramName);
-                    ee(void 0 !== e, 'totalXP record is not found in the financial report');
-                    const a = de(s.credits.total.get(), (e) => 'totalCredits' === e.paramName),
-                        t = de(s.credits.total.get(), (e) => 'intermediateTotalCredits' === e.paramName);
+                d = ne.shallow(() => {
+                    const e = me(s.xp.total.get(), (e) => 'totalXP' === e.paramName);
+                    te(void 0 !== e, 'totalXP record is not found in the financial report');
+                    const a = me(s.credits.total.get(), (e) => 'totalCredits' === e.paramName),
+                        t = me(s.credits.total.get(), (e) => 'intermediateTotalCredits' === e.paramName);
                     return (
-                        ee(void 0 !== a, 'totalCredits record is not found in the financial report'),
-                        ee(void 0 !== t, 'intermediateTotalCredits record is not found in the financial report'),
+                        te(void 0 !== a, 'totalCredits record is not found in the financial report'),
+                        te(void 0 !== t, 'intermediateTotalCredits record is not found in the financial report'),
                         {
                             baseCredits: t.baseValue,
                             baseVehicleXP: e.baseValue,
@@ -2315,9 +2397,9 @@ const [lo, oo] = ae()(
                         }
                     );
                 }),
-                u = te.primitive(() => {
+                u = ne.primitive(() => {
                     const e = n.personalEfficiency.achievements.get();
-                    return fe(e, (e) => e.epic || Aa.includes(e.groupID));
+                    return be(e, (e) => e.epic || Aa.includes(e.groupID));
                 });
             return {
                 ...n,
@@ -2380,49 +2462,49 @@ const [lo, oo] = ae()(
             };
         },
     ),
-    co = 'NoProgress_e30a0572',
-    uo = 'NoProgress_header_fd4fa20b',
-    mo = 'NoProgress_description_965e21c0',
-    po = l(function () {
+    jo = 'NoProgress_e30a0572',
+    wo = 'NoProgress_header_fd4fa20b',
+    Io = 'NoProgress_description_965e21c0',
+    Ao = l(function () {
         const a = k.resolve('strings'),
-            { controls: t } = oo();
+            { controls: t } = No();
         return e.jsxs('div', {
-            className: co,
+            className: jo,
             children: [
                 e.jsx('div', {
-                    className: uo,
+                    className: wo,
                     children: a.readOrEmpty('battle_results.common.missions.noProgress.header'),
                 }),
                 e.jsx('div', {
-                    className: mo,
+                    className: Io,
                     children: a.readOrEmpty('battle_results.common.missions.noProgress.description'),
                 }),
-                e.jsx(ve, {
-                    theme: ve.themes.secondary,
+                e.jsx(he, {
+                    theme: he.themes.secondary,
                     onClick: t.openMissions,
                     children: a.readOrEmpty('battle_results.common.missions.noProgress.button'),
                 }),
             ],
         });
     });
-const _o = 'MissionsProgress_ca7ca547',
-    fo = 'MissionsProgress_content_b1e9d53b',
-    vo = 'MissionsProgress_verticalBar_a9f04f7f',
-    bo = V.cubicBezier(0.23, 0, 0.57, 1),
-    ho = F('MissionsProgress', _o);
-function go(e) {
+const Co = 'MissionsProgress_ca7ca547',
+    So = 'MissionsProgress_content_b1e9d53b',
+    Bo = 'MissionsProgress_verticalBar_a9f04f7f',
+    Po = O.cubicBezier(0.23, 0, 0.57, 1),
+    Ro = L('MissionsProgress', Co);
+function ko(e) {
     return e.reduce((e, a) => (a.result.notifications && e.push(...a.result.notifications), e), []);
 }
-function yo(e) {
-    return Q(
+function Eo(e) {
+    return ae(
         e,
         (e) => Boolean(e.result.animated),
         (e, a) => a,
     );
 }
-const xo = l(function ({ className: a }) {
-        const { model: s, controls: i } = oo(),
-            { active: r } = L(),
+const To = l(function ({ className: a }) {
+        const { model: s, controls: i } = No(),
+            { active: r } = K(),
             [l, o] = t.useState(!1),
             [c, d] = t.useState(!1),
             [u, m] = t.useState(-1),
@@ -2439,13 +2521,13 @@ const xo = l(function ({ className: a }) {
                         return (
                             (async function () {
                                 const l = await Promise.allSettled(
-                                    Q(
+                                    ae(
                                         e,
                                         (e) => !(e.url in a || e.url in i.current),
                                         async (e) => {
                                             ((i.current[e.url] = !0),
                                                 s((a) => ({ ...a, [e.url]: { status: 'loading' } })));
-                                            const a = await be(e.url);
+                                            const a = await ge(e.url);
                                             return t.includes(e.url)
                                                 ? (r(a, e.url), { type: 'rejected' })
                                                 : ((n.current[e.url] = a),
@@ -2488,7 +2570,7 @@ const xo = l(function ({ className: a }) {
                     (e = p),
                     Object.entries(e)
                         .map(([e, a]) => {
-                            const t = I(Kr, a);
+                            const t = I(ol, a);
                             return t.success
                                 ? t.output
                                 : (console.error(`Failure to load plugin: ${e}`, t.issues), { status: 'failure' });
@@ -2502,11 +2584,11 @@ const xo = l(function ({ className: a }) {
                 var e;
             }, [p]),
             { notifications: f, animatablePluginIndexes: v } = t.useMemo(
-                () => ({ notifications: go(_), animatablePluginIndexes: yo(_) }),
+                () => ({ notifications: ko(_), animatablePluginIndexes: Eo(_) }),
                 [_],
             );
-        z(() => m((e) => e + 1), u > -1 && u < v.length ? 600 : void 0);
-        const [b, h] = w(() => ({ from: { opacity: 0 }, config: { duration: 660, easing: bo }, onRest: () => m(0) }));
+        H(() => m((e) => e + 1), u > -1 && u < v.length ? 600 : void 0);
+        const [b, h] = w(() => ({ from: { opacity: 0 }, config: { duration: 660, easing: Po }, onRest: () => m(0) }));
         return (
             t.useEffect(() => {
                 r === Ia.progression && (h.start({ to: { opacity: 1 } }), v.length > 0 && !1 === c && d(!0));
@@ -2517,20 +2599,20 @@ const xo = l(function ({ className: a }) {
             t.useEffect(() => {
                 c && r !== Ia.progression && o(!0);
             }, [c, r]),
-            e.jsx(ho, {
+            e.jsx(Ro, {
                 className: a,
                 children: e.jsx(n.div, {
                     style: b,
-                    className: fo,
-                    children: he(p)
-                        ? e.jsx(po, {})
-                        : e.jsxs(K, {
+                    className: So,
+                    children: ye(p)
+                        ? e.jsx(Ao, {})
+                        : e.jsxs(U, {
                               children: [
-                                  e.jsx(ge, {
-                                      children: J(Object.entries(_), ([a, t], s) => {
+                                  e.jsx(xe, {
+                                      children: Q(Object.entries(_), ([a, t], s) => {
                                           const n = t.result.component;
                                           return e.jsx(
-                                              ye,
+                                              Ne,
                                               {
                                                   children: e.jsx(n, {
                                                       animation: s <= (v[u] ?? -1),
@@ -2542,24 +2624,24 @@ const xo = l(function ({ className: a }) {
                                           );
                                       }),
                                   }),
-                                  e.jsx(q, { classNames: { base: vo } }),
+                                  e.jsx(Y, { classNames: { base: Bo } }),
                               ],
                           }),
                 }),
             })
         );
     }),
-    No = t.createContext(null);
-function jo() {
-    const e = t.useContext(No);
+    Do = t.createContext(null);
+function Vo() {
+    const e = t.useContext(Do);
     if (null === e) throw new Error('You can use the achievements hooks only with the Achievements component');
     return e;
 }
-const wo = { x: 50, y: -30, scale: 1.2, opacity: 0 };
-function Io({ children: a, achievements: s, springsProps: n, vehicleNation: i }) {
+const zo = { x: 50, y: -30, scale: 1.2, opacity: 0 };
+function Oo({ children: a, achievements: s, springsProps: n, vehicleNation: i }) {
     const [r, l] = t.useState(new Set()),
         [o, c] = t.useState(void 0),
-        [d, u] = A(s.length, () => ({ from: { ...wo, ...(null == n ? void 0 : n.from) }, ...n }), [s.length, n]),
+        [d, u] = A(s.length, () => ({ from: { ...zo, ...(null == n ? void 0 : n.from) }, ...n }), [s.length, n]),
         m = t.useMemo(
             () => ({
                 api: u,
@@ -2573,28 +2655,28 @@ function Io({ children: a, achievements: s, springsProps: n, vehicleNation: i })
             }),
             [u, d, i, s, o, c, r, l],
         );
-    return e.jsx(No.Provider, { value: m, children: a });
+    return e.jsx(Do.Provider, { value: m, children: a });
 }
-const Ao = {
+const Ho = {
         base: 'Achievements_ee9c0189',
         animatedAchievement: 'Achievements_animatedAchievement_4c71d33',
         achievement: 'Achievements_achievement_b41909e2',
         achievement__extinct: 'Achievements_achievement__extinct_19551569',
         achievementIcon: 'Achievements_achievementIcon_e83ea27d',
     },
-    Co = t.forwardRef(function ({ achievement: s, index: n, width: i, height: r, classNames: l }, o) {
-        const c = xe({
+    Wo = t.forwardRef(function ({ achievement: s, index: n, width: i, height: r, classNames: l }, o) {
+        const c = je({
                 args: t.useMemo(
                     () => ({ tooltipId: s.tooltipId, tooltipArgs: s.tooltipArgs }),
                     [s.tooltipId, s.tooltipArgs],
                 ),
             }),
-            d = H(),
-            { hoverIndex: u, setHoverIndex: m, vehicleNation: p } = jo();
+            d = M(),
+            { hoverIndex: u, setHoverIndex: m, vehicleNation: p } = Vo();
         return e.jsx('div', {
             ...c,
             ref: o,
-            className: a(Ao.achievement, Ao[`achievement__${sl(n, u)}`], null == l ? void 0 : l.achievement),
+            className: a(Ho.achievement, Ho[`achievement__${hl(n, u)}`], null == l ? void 0 : l.achievement),
             onMouseEnter: function (e) {
                 (d.play('mouse-enter', { original: e, target: 'achievements:achievement' }), c.onMouseEnter(e), m(n));
             },
@@ -2602,26 +2684,26 @@ const Ao = {
                 (c.onMouseLeave(), m(void 0));
             },
             children: e.jsx(
-                X,
+                q,
                 {
                     width: i,
                     height: r,
-                    path: il({ groupID: s.groupID, iconName: s.iconName, vehicleNation: p }),
-                    className: a(Ao.achievementIcon, null == l ? void 0 : l.icon),
+                    path: yl({ groupID: s.groupID, iconName: s.iconName, vehicleNation: p }),
+                    className: a(Ho.achievementIcon, null == l ? void 0 : l.icon),
                 },
                 s.iconName,
             ),
         });
     }),
-    So = F('Rewards', Ao.base);
+    Mo = L('Rewards', Ho.base);
 t.memo(function ({ width: a, height: t, classNames: s, className: n }) {
-    const { achievements: i } = jo();
-    return e.jsx(So, {
+    const { achievements: i } = Vo();
+    return e.jsx(Mo, {
         className: n,
-        children: J(i, (n, i) => e.jsx(Co, { width: a, height: t, index: i, achievement: n, classNames: s }, n.name)),
+        children: Q(i, (n, i) => e.jsx(Wo, { width: a, height: t, index: i, achievement: n, classNames: s }, n.name)),
     });
 });
-const Bo = {
+const Go = {
         base: 'GroupedAchievements_636b322e',
         base__visible: 'GroupedAchievements_base__visible_590e18a3',
         marksGroup: 'GroupedAchievements_marksGroup_a52f04b2',
@@ -2634,7 +2716,7 @@ const Bo = {
         achievement: 'GroupedAchievements_achievement_977416af',
         achievement__notInteractive: 'GroupedAchievements_achievement__notInteractive_76fcea70',
     },
-    Ro = t.memo(function ({
+    Fo = t.memo(function ({
         achievements: s,
         startIndex: i,
         indent: r = 0,
@@ -2646,28 +2728,28 @@ const Bo = {
         updateGroupIndent: m,
     }) {
         const p = t.useRef(null),
-            { springs: _, achievements: f, completedAnimationIndexes: v, hoverIndex: b } = jo();
+            { springs: _, achievements: f, completedAnimationIndexes: v, hoverIndex: b } = Vo();
         return (
-            Ne(() => {
+            we(() => {
                 if (null === p.current) return;
                 const e = p.current.offsetWidth + Math.floor((r / s.length) * 2),
-                    a = je(d);
+                    a = Ie(d);
                 m(l, e < a ? Math.floor((a - e) / 2) : 0);
             }, [s.length, o, d, m]),
             e.jsx('div', {
                 style: { paddingLeft: r, paddingRight: r },
-                className: a(Bo[`${l}Group`], u && Bo[`${l}Group__indent`]),
-                children: J(s, (t, r) => {
+                className: a(Go[`${l}Group`], u && Go[`${l}Group__indent`]),
+                children: Q(s, (t, r) => {
                     const l = f.length - i - r - 1;
                     return e.jsx(
                         n.div,
                         {
                             ref: 0 === r ? p : void 0,
-                            className: Bo.animatedAchievement,
+                            className: Go.animatedAchievement,
                             style: { ..._[l], zIndex: i + r === b ? s.length + 1 : s.length - r },
-                            children: e.jsx(Co, {
+                            children: e.jsx(Wo, {
                                 classNames: {
-                                    achievement: a(Bo.achievement, !1 === v.has(l) && Bo.achievement__notInteractive),
+                                    achievement: a(Go.achievement, !1 === v.has(l) && Go.achievement__notInteractive),
                                 },
                                 achievement: t,
                                 width: o,
@@ -2681,26 +2763,26 @@ const Bo = {
             })
         );
     });
-function Po({ marksOnGun: e, hasSiblingGroups: a }) {
-    return a && e ? Bo.marksGroup__indentWithMarksOnGun : a ? Bo.marksGroup__masteryIndent : void 0;
+function $o({ marksOnGun: e, hasSiblingGroups: a }) {
+    return a && e ? Go.marksGroup__indentWithMarksOnGun : a ? Go.marksGroup__masteryIndent : void 0;
 }
-const ko = t.memo(function ({ achievements: t, startIndex: s, medalWidth: i, medalHeight: r, hasSiblingGroups: l }) {
-        const { springs: o, achievements: c, completedAnimationIndexes: d, hoverIndex: u } = jo();
+const Lo = t.memo(function ({ achievements: t, startIndex: s, medalWidth: i, medalHeight: r, hasSiblingGroups: l }) {
+        const { springs: o, achievements: c, completedAnimationIndexes: d, hoverIndex: u } = Vo();
         return e.jsx('div', {
             className: a(
-                Bo.marksGroup,
-                Po({ hasSiblingGroups: l, marksOnGun: t.some((e) => 'marksOnGun' === e.name) }),
+                Go.marksGroup,
+                $o({ hasSiblingGroups: l, marksOnGun: t.some((e) => 'marksOnGun' === e.name) }),
             ),
-            children: J(t, (l, m) => {
+            children: Q(t, (l, m) => {
                 const p = c.length - s - m - 1;
                 return e.jsx(
                     n.div,
                     {
-                        className: Bo.animatedAchievement,
+                        className: Go.animatedAchievement,
                         style: { ...o[p], zIndex: s + m === u ? t.length + 1 : t.length - m },
-                        children: e.jsx(Co, {
+                        children: e.jsx(Wo, {
                             classNames: {
-                                achievement: a(Bo.achievement, !1 === d.has(p) && Bo.achievement__notInteractive),
+                                achievement: a(Go.achievement, !1 === d.has(p) && Go.achievement__notInteractive),
                             },
                             achievement: l,
                             width: i,
@@ -2713,8 +2795,8 @@ const ko = t.memo(function ({ achievements: t, startIndex: s, medalWidth: i, med
             }),
         });
     }),
-    Eo = t.memo(function ({ className: s }) {
-        const n = re(
+    Xo = t.memo(function ({ className: s }) {
+        const n = oe(
                 {
                     epicAndHeroic: { width: '120rem', height: '120rem', maxContainerWidth: 120 },
                     others: { width: '100rem', height: '100rem', maxContainerWidth: 80 },
@@ -2730,22 +2812,22 @@ const ko = t.memo(function ({ achievements: t, startIndex: s, medalWidth: i, med
                     },
                 },
             ),
-            { achievements: i } = jo(),
+            { achievements: i } = Vo(),
             r = t.useMemo(
                 () =>
                     (function (e) {
-                        return Z(
+                        return ee(
                             e,
                             (e, a) => {
-                                switch (Zr(a)) {
-                                    case Yr.markOfMastery:
-                                    case Yr.marksOnGun:
+                                switch (pl(a)) {
+                                    case ul.markOfMastery:
+                                    case ul.marksOnGun:
                                         e.marks.push(a);
                                         break;
-                                    case Yr.epic:
-                                    case Yr.specialAchievements:
-                                    case Yr.right:
-                                        if (cl.includes(a.name)) {
+                                    case ul.epic:
+                                    case ul.specialAchievements:
+                                    case ul.right:
+                                        if (wl.includes(a.name)) {
                                             e.others.push(a);
                                             break;
                                         }
@@ -2756,7 +2838,7 @@ const ko = t.memo(function ({ achievements: t, startIndex: s, medalWidth: i, med
                                 }
                                 return e;
                             },
-                            { [rl]: [], [ll]: [], [ol]: [] },
+                            { [xl]: [], [Nl]: [], [jl]: [] },
                         );
                     })(i),
                 [i],
@@ -2774,10 +2856,10 @@ const ko = t.memo(function ({ achievements: t, startIndex: s, medalWidth: i, med
         return 0 === i.length
             ? null
             : e.jsxs('div', {
-                  className: a(Bo.base, void 0 !== l.epicAndHeroic && void 0 !== l.others && Bo.base__visible, s),
+                  className: a(Go.base, void 0 !== l.epicAndHeroic && void 0 !== l.others && Go.base__visible, s),
                   children: [
                       r.marks.length > 0 &&
-                          e.jsx(ko, {
+                          e.jsx(Lo, {
                               medalWidth: n.epicAndHeroic.width,
                               medalHeight: n.epicAndHeroic.height,
                               achievements: r.marks,
@@ -2785,8 +2867,8 @@ const ko = t.memo(function ({ achievements: t, startIndex: s, medalWidth: i, med
                               hasSiblingGroups: r.epicAndHeroic.length + r.others.length > 0,
                           }),
                       r.epicAndHeroic.length > 0 &&
-                          e.jsx(Ro, {
-                              group: ll,
+                          e.jsx(Fo, {
+                              group: Nl,
                               medalWidth: n.epicAndHeroic.width,
                               medalHeight: n.epicAndHeroic.height,
                               maxContainerWidth: n.epicAndHeroic.maxContainerWidth,
@@ -2797,8 +2879,8 @@ const ko = t.memo(function ({ achievements: t, startIndex: s, medalWidth: i, med
                               hasSiblingGroups: r.others.length > 0,
                           }),
                       r.others.length > 0 &&
-                          e.jsx(Ro, {
-                              group: ol,
+                          e.jsx(Fo, {
+                              group: jl,
                               medalWidth: n.others.width,
                               medalHeight: n.others.height,
                               maxContainerWidth: n.others.maxContainerWidth,
@@ -2810,64 +2892,64 @@ const ko = t.memo(function ({ achievements: t, startIndex: s, medalWidth: i, med
                   ],
               });
     });
-var To = ((e) => ((e.None = 'none'), (e.Worse = 'worse'), (e.Usual = 'usual'), (e.Better = 'better'), e))(To || {});
-const Do = 'RateButton_bb66ff02',
-    Vo = 'RateButton_base__inner_61655025',
-    zo = 'RateButton_base__first_hover_c025af3c',
-    Oo = 'RateButton_base__usual_6d49d479',
-    Ho = 'RateButton_base__worse_4a6537c5',
-    Wo = 'RateButton_base__better_ab2a6315',
-    Mo = 'RateButton_base__selected_70adc5a4',
-    Go = 'RateButton_base__disabled_73dd0147',
-    Fo = { [To.Worse]: Ho, [To.Usual]: Oo, [To.Better]: Wo, [To.None]: null },
-    $o = ({ variant: t, selected: s, className: n, isHovered: i, ...r }) => {
+var Ko = ((e) => ((e.None = 'none'), (e.Worse = 'worse'), (e.Usual = 'usual'), (e.Better = 'better'), e))(Ko || {});
+const qo = 'RateButton_bb66ff02',
+    Uo = 'RateButton_base__inner_61655025',
+    Yo = 'RateButton_base__first_hover_c025af3c',
+    Jo = 'RateButton_base__usual_6d49d479',
+    Zo = 'RateButton_base__worse_4a6537c5',
+    Qo = 'RateButton_base__better_ab2a6315',
+    ec = 'RateButton_base__selected_70adc5a4',
+    ac = 'RateButton_base__disabled_73dd0147',
+    tc = { [Ko.Worse]: Zo, [Ko.Usual]: Jo, [Ko.Better]: Qo, [Ko.None]: null },
+    sc = ({ variant: t, selected: s, className: n, isHovered: i, ...r }) => {
         const l = k.resolve('strings'),
-            o = H(),
+            o = M(),
             c = E({
                 header: l.readOrEmpty(`battle_results.battleRating.tooltip.${t}.header`),
                 body: l.readOrEmpty(`battle_results.battleRating.tooltip.${t}.body`),
             }),
-            d = !i && !r.disabled && t === To.Usual;
+            d = !i && !r.disabled && t === Ko.Usual;
         return e.jsx('div', {
             onMouseEnter: (e) => {
                 !s && !r.disabled && o.play('mouse-enter', { original: e, target: 'battle_rating:rate_button' });
             },
             children: e.jsx('button', {
-                className: a(Do, n, Fo[t], s ? Mo : d ? zo : r.disabled ? Go : void 0),
+                className: a(qo, n, tc[t], s ? ec : d ? Yo : r.disabled ? ac : void 0),
                 ...c,
                 ...r,
-                children: e.jsx('div', { className: Vo }),
+                children: e.jsx('div', { className: Uo }),
             }),
         });
     },
-    Lo = {
+    nc = {
         base: 'BattleRating_fa13d03',
         base_title: 'BattleRating_base_title_757e19bf',
         base_wrapper: 'BattleRating_base_wrapper_ae4d42aa',
     },
-    Xo = function ({ state: a, onSatisfactionRatingSelected: s }) {
+    ic = function ({ state: a, onSatisfactionRatingSelected: s }) {
         const [n, i] = t.useState(!1),
-            r = H(),
+            r = M(),
             l = R.strings.battle_results.battleResult.battleRating[a].header(),
-            o = [To.Worse, To.Usual, To.Better],
-            c = a === To.None;
+            o = [Ko.Worse, Ko.Usual, Ko.Better],
+            c = a === Ko.None;
         return e.jsxs('div', {
-            className: Lo.base,
+            className: nc.base,
             onMouseEnter: () => {
                 i(!0);
             },
             children: [
-                e.jsx('div', { className: Lo.base_title, children: l }),
+                e.jsx('div', { className: nc.base_title, children: l }),
                 e.jsx('div', {
-                    className: Lo.base_wrapper,
+                    className: nc.base_wrapper,
                     children: o.map(
                         (t) =>
-                            t !== To.None &&
+                            t !== Ko.None &&
                             e.jsx(
-                                $o,
+                                sc,
                                 {
                                     variant: t,
-                                    className: Lo.base_button,
+                                    className: nc.base_button,
                                     selected: a === t,
                                     onClick: c
                                         ? (e) => {
@@ -2876,7 +2958,7 @@ const Do = 'RateButton_bb66ff02',
                                           }
                                         : null,
                                     isHovered: n,
-                                    disabled: a !== t && a !== To.None,
+                                    disabled: a !== t && a !== Ko.None,
                                 },
                                 t,
                             ),
@@ -2885,26 +2967,26 @@ const Do = 'RateButton_bb66ff02',
             ],
         });
     },
-    Ko = t.createContext(null);
-function qo() {
-    const e = t.useContext(Ko);
+    rc = t.createContext(null);
+function lc() {
+    const e = t.useContext(rc);
     if (null === e) throw new Error('You can use the managable bonus hooks only with the ManagableBonus component');
     return e;
 }
-function Uo({
+function oc({
     children: a,
     bonusState: s,
     restriction: n,
     usedAdvertisements: i,
     supportedStates: r,
-    supportedAdvertisements: l = zl,
+    supportedAdvertisements: l = Yl,
     ...o
 }) {
     const c = t.useMemo(
         () => (
-            ee(
+            te(
                 (function (e) {
-                    return vl.includes(e);
+                    return Bl.includes(e);
                 })(s),
                 `Bonus state ${s} is not supported`,
             ),
@@ -2913,38 +2995,38 @@ function Uo({
                 bonusState: s,
                 restriction: n,
                 supportedAdvertisements: l,
-                state: Hl[s].define({ restriction: n, supportedAdvertisements: l, usedAdvertisements: i }),
+                state: Zl[s].define({ restriction: n, supportedAdvertisements: l, usedAdvertisements: i }),
             }
         ),
         [s, n, o, l, i],
     );
     return Array.isArray(r) && !1 === r.includes(s)
         ? (console.error(`State ${s} is not supported for the current game mode`), null)
-        : e.jsx(Ko.Provider, { value: c, children: a });
+        : e.jsx(rc.Provider, { value: c, children: a });
 }
-const Yo = { value: 'Currency_value_a12c8cb4' };
-function Jo({ size: t, type: s, classNames: n, withoutPlus: i = !1, value: r }) {
+const cc = { value: 'Currency_value_a12c8cb4' };
+function dc({ size: t, type: s, classNames: n, withoutPlus: i = !1, value: r }) {
     const l = 'gold' === s ? 'gold' : 'integral';
-    return e.jsx(ne, {
+    return e.jsx(re, {
         reverse: !0,
         size: t,
         type: s,
-        className: a(Yo.currency, null == n ? void 0 : n.currency),
+        className: a(cc.currency, null == n ? void 0 : n.currency),
         children: i
-            ? e.jsx('div', { className: a(Yo.value, null == n ? void 0 : n.value), children: T.formatNumber(l, r) })
+            ? e.jsx('div', { className: a(cc.value, null == n ? void 0 : n.value), children: V.formatNumber(l, r) })
             : e.jsx(P, {
-                  className: a(Yo.value, null == n ? void 0 : n.value),
+                  className: a(cc.value, null == n ? void 0 : n.value),
                   path: 'common.plusValueWithSpace',
-                  params: { value: T.formatNumber(l, r) },
+                  params: { value: V.formatNumber(l, r) },
               }),
     });
 }
-const Zo = 'Advertising_50041e0d',
-    Qo = 'Advertising_base__twoRows_2e4d12dc',
-    ec = 'Advertising_base__threeRows_5439f637',
-    ac = 'Advertising_currency_f20fcad',
-    tc = 'Advertising_currencyValue_18a0b419';
-function sc() {
+const uc = 'Advertising_50041e0d',
+    mc = 'Advertising_base__twoRows_2e4d12dc',
+    pc = 'Advertising_base__threeRows_5439f637',
+    _c = 'Advertising_currency_f20fcad',
+    fc = 'Advertising_currencyValue_18a0b419';
+function vc() {
     const {
         state: t,
         supportedAdvertisements: s,
@@ -2952,8 +3034,8 @@ function sc() {
         durationInDays: i,
         creditsThreshold: r,
         handleAdvertisement: l,
-    } = qo();
-    we(() => {
+    } = lc();
+    Ae(() => {
         void 0 !== s &&
             (!1 !==
             (function (e, a) {
@@ -2968,103 +3050,103 @@ function sc() {
     });
     const o = k.resolve('strings');
     switch (t) {
-        case Sl:
+        case Ml:
             return e.jsx(P, {
-                className: Zo,
+                className: uc,
                 path: 'battle_results.common.details.premiumAdvertising.credits',
                 params: {
-                    bonusCredits: e.jsx(Jo, {
+                    bonusCredits: e.jsx(dc, {
                         withoutPlus: !0,
                         type: 'credits',
-                        size: ie.small,
+                        size: le.small,
                         value: r,
-                        classNames: { currency: ac, value: tc },
+                        classNames: { currency: _c, value: fc },
                     }),
                     durationInDays: i,
                 },
             });
-        case Bl:
-            return e.jsx(Ie, {
-                className: a(Zo, ec),
+        case Gl:
+            return e.jsx(Ce, {
+                className: a(uc, pc),
                 text: o.readOrEmpty('battle_results.common.details.premiumPlus.premium'),
             });
-        case Rl:
-            return e.jsx(Ie, {
-                className: a(Zo, Qo),
+        case Fl:
+            return e.jsx(Ce, {
+                className: a(uc, mc),
                 text: o.readOrEmpty('battle_results.common.details.premiumPlus.squad'),
             });
-        case Pl:
-            return e.jsx(Ie, {
-                className: a(Zo, ec),
+        case $l:
+            return e.jsx(Ce, {
+                className: a(uc, pc),
                 text: o.readOrEmpty('battle_results.common.details.premiumAdvertising.bonus'),
                 params: { multiplier: n },
             });
-        case kl:
-            return e.jsx(Ie, {
-                className: a(Zo, Qo),
+        case Ll:
+            return e.jsx(Ce, {
+                className: a(uc, mc),
                 text: o.readOrEmpty('battle_results.common.details.premiumPlus.quests'),
             });
         default:
             return (console.error(`Advertising state ${t} is not supported`), null);
     }
 }
-const nc = { base: 'LeftBonusAttempts_a541b0b8', count: 'LeftBonusAttempts_count_24f93d48' };
-function ic({ count: a }) {
+const bc = { base: 'LeftBonusAttempts_a541b0b8', count: 'LeftBonusAttempts_count_24f93d48' };
+function hc({ count: a }) {
     return e.jsx(P, {
         upgradeLegacy: !0,
-        params: { count: e.jsx('span', { className: nc.count, children: T.formatNumber('integral', a) }) },
+        params: { count: e.jsx('span', { className: bc.count, children: V.formatNumber('integral', a) }) },
         path: 'battle_results.common.premiumBonus.bonusLeft',
-        className: nc.base,
+        className: bc.base,
     });
 }
-const rc = {
+const gc = {
     base: 'Description_48571438',
     text: 'Description_text_30186c18',
     text__double: 'Description_text__double_333f570f',
 };
-function lc({ text: t, displayType: s = 'single', withAttemts: n = !0 }) {
-    const { leftBonusAttempts: i } = qo();
+function yc({ text: t, displayType: s = 'single', withAttemts: n = !0 }) {
+    const { leftBonusAttempts: i } = lc();
     return e.jsxs('div', {
-        className: rc.base,
-        children: [e.jsx(Ie, { text: t, className: a(rc.text, rc[`text__${s}`]) }), n && e.jsx(ic, { count: i })],
+        className: gc.base,
+        children: [e.jsx(Ce, { text: t, className: a(gc.text, gc[`text__${s}`]) }), n && e.jsx(hc, { count: i })],
     });
 }
-const oc = 'PremiumEarnings_d4b9118e',
-    cc = 'PremiumEarnings_wrapper_82e68328',
-    dc = 'PremiumEarnings_wrapper__semiTransparent_bb0620c7',
-    uc = 'PremiumEarnings_label_94b3586c',
-    mc = 'PremiumEarnings_label__highlight_7755be2e',
-    pc = 'PremiumEarnings_currencies_d4b9118e',
-    _c = 'PremiumEarnings_currency_3f1396eb',
-    fc = 'PremiumEarnings_value_cbe7ec27';
-function vc() {
+const xc = 'PremiumEarnings_d4b9118e',
+    Nc = 'PremiumEarnings_wrapper_82e68328',
+    jc = 'PremiumEarnings_wrapper__semiTransparent_bb0620c7',
+    wc = 'PremiumEarnings_label_94b3586c',
+    Ic = 'PremiumEarnings_label__highlight_7755be2e',
+    Ac = 'PremiumEarnings_currencies_d4b9118e',
+    Cc = 'PremiumEarnings_currency_3f1396eb',
+    Sc = 'PremiumEarnings_value_cbe7ec27';
+function Bc() {
     const t = k.resolve('strings'),
-        { premiumAndStandartEarnings: s } = qo();
+        { premiumAndStandartEarnings: s } = lc();
     return e.jsxs('div', {
-        className: oc,
+        className: xc,
         children: [
             e.jsxs('div', {
-                className: a(cc, dc),
+                className: a(Nc, jc),
                 children: [
                     e.jsx('div', {
-                        className: uc,
+                        className: wc,
                         children: t.readOrEmpty('battle_results.common.details.noPremTitle'),
                     }),
                     e.jsxs('div', {
-                        className: pc,
+                        className: Ac,
                         children: [
-                            e.jsx(Jo, {
+                            e.jsx(dc, {
                                 withoutPlus: !0,
-                                size: ie.small,
+                                size: le.small,
                                 type: 'credits',
-                                classNames: { currency: _c, value: fc },
+                                classNames: { currency: Cc, value: Sc },
                                 value: s.baseCredits,
                             }),
-                            e.jsx(Jo, {
+                            e.jsx(dc, {
                                 withoutPlus: !0,
-                                size: ie.small,
+                                size: le.small,
                                 type: 'tankXP',
-                                classNames: { currency: _c, value: fc },
+                                classNames: { currency: Cc, value: Sc },
                                 value: s.baseVehicleXP,
                             }),
                         ],
@@ -3072,27 +3154,27 @@ function vc() {
                 ],
             }),
             e.jsxs('div', {
-                className: cc,
+                className: Nc,
                 children: [
                     e.jsx('div', {
-                        className: a(uc, mc),
+                        className: a(wc, Ic),
                         children: t.readOrEmpty('battle_results.common.details.premTitle'),
                     }),
                     e.jsxs('div', {
-                        className: pc,
+                        className: Ac,
                         children: [
-                            e.jsx(Jo, {
+                            e.jsx(dc, {
                                 withoutPlus: !0,
-                                size: ie.small,
+                                size: le.small,
                                 type: 'credits',
-                                classNames: { currency: _c, value: fc },
+                                classNames: { currency: Cc, value: Sc },
                                 value: s.premiumCredits,
                             }),
-                            e.jsx(Jo, {
+                            e.jsx(dc, {
                                 withoutPlus: !0,
-                                size: ie.small,
+                                size: le.small,
                                 type: 'tankXP',
-                                classNames: { currency: _c, value: fc },
+                                classNames: { currency: Cc, value: Sc },
                                 value: s.premiumVehicleXP,
                             }),
                         ],
@@ -3102,112 +3184,112 @@ function vc() {
         ],
     });
 }
-const bc = 'PremiumInfoCurrencies_value_5b83491e',
-    hc = 'PremiumInfoCurrencies_currency_6908b9d9',
-    gc = F('PremiumInfoCurrencies', 'PremiumInfoCurrencies_8b21f7ee');
-function yc() {
-    const a = re({ size: ie.small }, { medium: { size: ie.large } }),
-        { premiumAndStandartEarnings: t } = qo();
-    return e.jsxs(gc, {
+const Pc = 'PremiumInfoCurrencies_value_5b83491e',
+    Rc = 'PremiumInfoCurrencies_currency_6908b9d9',
+    kc = L('PremiumInfoCurrencies', 'PremiumInfoCurrencies_8b21f7ee');
+function Ec() {
+    const a = oe({ size: le.small }, { medium: { size: le.large } }),
+        { premiumAndStandartEarnings: t } = lc();
+    return e.jsxs(kc, {
         children: [
-            e.jsx(Jo, { size: a.size, type: 'credits', classNames: { currency: hc, value: bc }, value: t.creditsDiff }),
-            e.jsx(Jo, {
+            e.jsx(dc, { size: a.size, type: 'credits', classNames: { currency: Rc, value: Pc }, value: t.creditsDiff }),
+            e.jsx(dc, {
                 size: a.size,
                 type: 'tankXP',
-                classNames: { currency: hc, value: bc },
+                classNames: { currency: Rc, value: Pc },
                 value: t.vehicleXPDiff,
             }),
         ],
     });
 }
-const xc = F('Content'),
-    Nc = t.forwardRef(function (a, t) {
-        const { state: s } = qo(),
+const Tc = L('Content'),
+    Dc = t.forwardRef(function (a, t) {
+        const { state: s } = lc(),
             n = k.resolve('strings');
-        return e.jsx(xc, {
+        return e.jsx(Tc, {
             ...a,
             ref: t,
             children: (() => {
                 switch (s) {
-                    case bl:
-                        return e.jsx(yc, {});
-                    case hl:
-                    case gl:
-                    case jl:
-                    case Il:
-                    case wl:
-                    case Al:
-                    case Tl:
-                    case Dl:
-                        return e.jsx(lc, {
+                    case Pl:
+                        return e.jsx(Ec, {});
+                    case Rl:
+                    case kl:
+                    case Vl:
+                    case Ol:
+                    case zl:
+                    case Hl:
+                    case Kl:
+                    case ql:
+                        return e.jsx(yc, {
                             text: n.readOrEmpty('battle_results.common.premiumBonus.description'),
                             displayType: 'single',
                         });
-                    case yl:
-                        return e.jsx(lc, {
+                    case El:
+                        return e.jsx(yc, {
                             text: n.readOrEmpty('battle_results.common.premiumBonus.rule'),
                             displayType: 'double',
                         });
-                    case xl:
-                        return e.jsx(lc, {
+                    case Tl:
+                        return e.jsx(yc, {
                             text: n.readOrEmpty('battle_results.common.premiumBonus.expiredBattleResult'),
                             displayType: 'double',
                         });
-                    case Nl:
-                        return e.jsx(lc, {
+                    case Dl:
+                        return e.jsx(yc, {
                             withAttemts: !1,
                             text: n.readOrEmpty('battle_results.common.premiumBonus.unavailable'),
                             displayType: 'double',
                         });
-                    case El:
-                        return e.jsx(lc, {
+                    case Xl:
+                        return e.jsx(yc, {
                             withAttemts: !1,
                             text: n.readOrEmpty('battle_results.common.plusBonus.premiumPlusAdd'),
                             displayType: 'double',
                         });
-                    case Cl:
+                    case Wl:
+                        return e.jsx(Bc, {});
+                    case Gl:
+                    case Ml:
+                    case Fl:
+                    case $l:
+                    case Ll:
                         return e.jsx(vc, {});
-                    case Bl:
-                    case Sl:
-                    case Rl:
-                    case Pl:
-                    case kl:
-                        return e.jsx(sc, {});
                     default:
                         return (console.error(`State ${s} is not supported`), null);
                 }
             })(),
         });
     }),
-    jc = 'AppliedBonusInfo_910a06bc',
-    wc = 'AppliedBonusInfo_icon_208dd0cc';
-function Ic() {
+    Vc = 'AppliedBonusInfo_910a06bc',
+    zc = 'AppliedBonusInfo_icon_208dd0cc';
+function Oc() {
     return e.jsxs('div', {
-        className: jc,
+        className: Vc,
         children: [
-            e.jsx('div', { className: wc }),
+            e.jsx('div', { className: zc }),
             e.jsx(P, { path: 'battle_results.common.premiumBonus.appliedBonus' }),
         ],
     });
 }
-const Ac = 'ApplyButton_fa337b96',
-    Cc = 'ApplyButton_button_a471284',
-    Sc = 'ApplyButton_value_c22167ea';
-function Bc() {
+const Hc = 'ApplyButton_fa337b96',
+    Wc = 'ApplyButton_button_a471284',
+    Mc = 'ApplyButton_value_c22167ea';
+function Gc() {
     const a = k.resolve('strings'),
-        { bonusXpDiff: t, applyBonus: s } = qo(),
-        n = re(
-            { iconSize: ie.small, buttonSize: ve.sizes.small },
-            { large: { iconSize: ie.large }, extraLarge: { buttonSize: ve.sizes.medium } },
+        { bonusXpDiff: t, applyBonus: s } = lc(),
+        n = oe(
+            { iconSize: le.small, buttonSize: he.sizes.small },
+            { large: { iconSize: le.large }, extraLarge: { buttonSize: he.sizes.medium } },
         );
     return e.jsxs('div', {
-        className: Ac,
+        className: Hc,
         children: [
-            e.jsx(Jo, { type: 'tankXP', size: n.iconSize, value: t, classNames: { value: Sc } }),
-            e.jsx(ve, {
+            e.jsx(dc, { type: 'tankXP', size: n.iconSize, value: t, classNames: { value: Mc } }),
+            e.jsx(he, {
                 size: n.buttonSize,
-                theme: ve.themes.primary,
-                className: Cc,
+                theme: he.themes.primary,
+                className: Wc,
                 onClick: s,
                 soundTarget: 'managable-bonus:apply-button',
                 children: a.readOrEmpty('battle_results.common.premiumBonus.applyBonusBtn'),
@@ -3215,97 +3297,98 @@ function Bc() {
         ],
     });
 }
-const Rc = 'PlusEarnings_505f274c',
-    Pc = 'PlusEarnings_label_79ad021c',
-    kc = 'PlusEarnings_link_649208b3',
-    Ec = 'PlusEarnings_currency_fddc9198',
-    Tc = 'PlusEarnings_value_fe187db9',
-    Dc = { withWotPlus: 'withWotPlus', withWotPremium: 'withWotPremium' };
-const Vc = {
-    [Dc.withWotPlus]: 'battle_results.common.plusBonus.wotPlus',
-    [Dc.withWotPremium]: 'battle_results.common.plusBonus.wotPremium',
+const Fc = 'PlusEarnings_505f274c',
+    $c = 'PlusEarnings_label_79ad021c',
+    Lc = 'PlusEarnings_link_649208b3',
+    Xc = 'PlusEarnings_currency_fddc9198',
+    Kc = 'PlusEarnings_value_fe187db9',
+    qc = { withWotPlus: 'withWotPlus', withWotPremium: 'withWotPremium' };
+const Uc = {
+    [qc.withWotPlus]: 'battle_results.common.plusBonus.wotPlus',
+    [qc.withWotPremium]: 'battle_results.common.plusBonus.wotPremium',
 };
-function zc({ onClick: a }) {
+function Yc({ onClick: a }) {
     const t = k.resolve('strings'),
-        s = Ae().breakpoint,
-        { wotPlus: n, wotPremium: i, bonusXpDiff: r } = qo(),
-        l = (function (e, a) {
-            return a && !1 === e ? Dc.withWotPlus : e && !1 === a ? Dc.withWotPremium : void 0;
-        })(n, i);
-    if (void 0 !== l)
+        s = Se().breakpoint,
+        { wotPlusType: n, wotPremium: i, bonusXpDiff: r } = lc(),
+        l = n === Wt.Core || n === Wt.Pro,
+        o = (function (e, a) {
+            return a && !1 === e ? qc.withWotPlus : e && !1 === a ? qc.withWotPremium : void 0;
+        })(l, i);
+    if (void 0 !== o)
         return e.jsxs('div', {
-            className: Rc,
+            className: Fc,
             children: [
                 e.jsxs('div', {
-                    className: Pc,
+                    className: $c,
                     children: [
                         t.readOrEmpty('battle_results.common.plusBonus.bonusLeftAdditionalText'),
-                        e.jsx('span', { className: kc, onClick: a, children: t.readOrEmpty(Vc[l]) }),
+                        e.jsx('span', { className: Lc, onClick: a, children: t.readOrEmpty(Uc[o]) }),
                     ],
                 }),
-                e.jsx(Jo, {
+                e.jsx(dc, {
                     type: 'tankXP',
-                    size: s.weight >= Ce.medium.weight ? ie.large : ie.small,
+                    size: s.weight >= Be.medium.weight ? le.large : le.small,
                     value: r,
-                    classNames: { currency: Ec, value: Tc },
+                    classNames: { currency: Xc, value: Kc },
                 }),
             ],
         });
-    console.error(`plus earnings state can't have such flag combination: wotPlus: ${n}, wotPremium: ${i}`);
+    console.error(`plus earnings state can't have such flag combination: wotPlus: ${l}, wotPremium: ${i}`);
 }
-const Oc = 'PlusYouRock_a108dad8',
-    Hc = 'PlusYouRock_message_52bfa860',
-    Wc = 'PlusYouRock_rock_6d6e55b1',
-    Mc = 'PlusYouRock_currency_73dcb93a',
-    Gc = 'PlusYouRock_value_daab6eb6';
-function Fc() {
+const Jc = 'PlusYouRock_a108dad8',
+    Zc = 'PlusYouRock_message_52bfa860',
+    Qc = 'PlusYouRock_rock_6d6e55b1',
+    ed = 'PlusYouRock_currency_73dcb93a',
+    ad = 'PlusYouRock_value_daab6eb6';
+function td() {
     const a = k.resolve('strings'),
-        t = Ae().breakpoint,
-        { dailyAppliedAdditionalXP: s } = qo();
+        t = Se().breakpoint,
+        { dailyAppliedAdditionalXP: s } = lc();
     return e.jsxs('div', {
-        className: Oc,
+        className: Jc,
         children: [
             e.jsxs('div', {
-                className: Hc,
+                className: Zc,
                 children: [
                     e.jsx('span', {
-                        className: Wc,
+                        className: Qc,
                         children: a.readOrEmpty('battle_results.common.plusBonus.youRock'),
                     }),
                     ' ',
                     a.readOrEmpty('battle_results.common.plusBonus.earnedMessage'),
                 ],
             }),
-            e.jsx(Jo, {
+            e.jsx(dc, {
                 type: 'tankXP',
-                size: t.weight >= Ce.medium.weight ? ie.large : ie.small,
+                size: t.weight >= Be.medium.weight ? le.large : le.small,
                 value: s,
-                classNames: { currency: Mc, value: Gc },
+                classNames: { currency: ed, value: ad },
             }),
         ],
     });
 }
-const $c = {
+const sd = {
     base: 'PremiumInfoButton_66b12c2',
     button: 'PremiumInfoButton_button_870d4076',
     buttonHint: 'PremiumInfoButton_buttonHint_1ee6743f',
 };
-function Lc({ onClick: t, withLabel: s = !1 }) {
+function nd({ onClick: t, withLabel: s = !1 }) {
     const n = k.resolve('strings'),
-        { breakpoint: i } = Ae(),
-        r = i.weight > Ce.large.weight ? ve.sizes.medium : ve.sizes.small;
+        { breakpoint: i } = Se(),
+        r = i.weight > Be.large.weight ? he.sizes.medium : he.sizes.small;
     return e.jsxs('div', {
-        className: a($c.base, s && $c.base__withLabel),
+        className: a(sd.base, s && sd.base__withLabel),
         children: [
             s &&
                 e.jsx('div', {
-                    className: $c.buttonHint,
+                    className: sd.buttonHint,
                     children: n.readOrEmpty('battle_results.common.premiumBonus.earnMore'),
                 }),
-            e.jsx(ve, {
-                className: $c.button,
-                size: s ? ve.sizes.small : r,
-                theme: ve.themes.primary,
+            e.jsx(he, {
+                className: sd.button,
+                size: s ? he.sizes.small : r,
+                theme: he.themes.primary,
                 onClick: t,
                 soundTarget: 'managable-bonus:premium-info-button',
                 children: n.readOrEmpty('battle_results.common.details.getPremBtn'),
@@ -3313,91 +3396,91 @@ function Lc({ onClick: t, withLabel: s = !1 }) {
         ],
     });
 }
-const Xc = 'Restriction_8b730e49',
-    Kc = 'Restriction_iconWrapper_ac9b1b94',
-    qc = 'Restriction_icon_ef5c0819',
-    Uc = 'Restriction_formattedText_b2d2b647';
-function Yc({ path: a, tooltipParams: t }) {
+const id = 'Restriction_8b730e49',
+    rd = 'Restriction_iconWrapper_ac9b1b94',
+    ld = 'Restriction_icon_ef5c0819',
+    od = 'Restriction_formattedText_b2d2b647';
+function cd({ path: a, tooltipParams: t }) {
     const s = E(t);
     return e.jsx('div', {
-        className: Xc,
+        className: id,
         children: e.jsx(P, {
             path: a,
-            className: Uc,
+            className: od,
             params: {
                 info: e.jsx('span', {
                     ...s,
-                    className: Kc,
-                    children: e.jsx(Se, { path: 'post_battle.info', className: qc }),
+                    className: rd,
+                    children: e.jsx(Pe, { path: 'post_battle.info', className: ld }),
                 }),
             },
         }),
     });
 }
-const Jc = F('Footer'),
-    Zc = t.forwardRef(function (a, t) {
-        const { state: s, showBonusDetails: n } = qo(),
+const dd = L('Footer'),
+    ud = t.forwardRef(function (a, t) {
+        const { state: s, showBonusDetails: n } = lc(),
             i = k.resolve('strings');
-        return e.jsx(Jc, {
+        return e.jsx(dd, {
             ...a,
             ref: t,
             children: (() => {
                 switch (s) {
-                    case bl:
-                        return e.jsx(Lc, { withLabel: !0, onClick: n });
-                    case hl:
-                        return e.jsx(Bc, {});
-                    case gl:
-                        return e.jsx(Ic, {});
-                    case jl:
-                        return e.jsx(Yc, {
+                    case Pl:
+                        return e.jsx(nd, { withLabel: !0, onClick: n });
+                    case Rl:
+                        return e.jsx(Gc, {});
+                    case kl:
+                        return e.jsx(Oc, {});
+                    case Vl:
+                        return e.jsx(cd, {
                             path: 'battle_results.common.premiumBonus.tankStateChangedWithInfo',
                             tooltipParams: {
                                 header: i.readOrEmpty('tooltips.battleResults.premiumBonus.tankStateChanged.header'),
                                 body: i.readOrEmpty('tooltips.battleResults.premiumBonus.tankStateChanged.body'),
                             },
                         });
-                    case Il:
-                        return e.jsx(Yc, {
+                    case Ol:
+                        return e.jsx(cd, {
                             path: 'battle_results.common.premiumBonus.isXPToTmenEnabledWithInfo',
                             tooltipParams: {
                                 body: i.readOrEmpty('tooltips.battleResults.premiumBonus.xpToTmenChanged.body'),
                             },
                         });
-                    case wl:
-                        return e.jsx(Yc, {
+                    case zl:
+                        return e.jsx(cd, {
                             path: 'battle_results.common.premiumBonus.isXPToTmenDisabledWithInfo',
                             tooltipParams: {
                                 body: i.readOrEmpty('tooltips.battleResults.premiumBonus.xpToTmenChanged.body'),
                             },
                         });
-                    case Al:
-                        return e.jsx(Yc, {
+                    case Hl:
+                        return e.jsx(cd, {
                             path: 'battle_results.common.premiumBonus.tankmenStateChangedWithInfo',
                             tooltipParams: {
                                 header: i.readOrEmpty('tooltips.battleResults.premiumBonus.tankmenStateChanged.header'),
                                 body: i.readOrEmpty('tooltips.battleResults.premiumBonus.tankmenStateChanged.body'),
                             },
                         });
-                    case El:
-                        return e.jsx(Lc, { onClick: n });
-                    case Tl:
-                        return e.jsx(zc, { onClick: n });
-                    case Dl:
-                        return e.jsx(Fc, {});
-                    case Sl:
-                    case Bl:
-                    case Rl:
-                    case Pl:
-                    case kl:
-                        return e.jsx(Lc, { onClick: n });
+                    case Xl:
+                        return e.jsx(nd, { onClick: n });
+                    case Kl:
+                        return e.jsx(Yc, { onClick: n });
+                    case ql:
+                        return e.jsx(td, {});
+                    case Ml:
+                    case Gl:
+                    case Fl:
+                    case $l:
+                    case Ll:
+                        return e.jsx(nd, { onClick: n });
                     default:
                         return null;
                 }
             })(),
         });
     }),
-    Qc = {
+    md = {
         icon: 'Header_icon_6d03683a',
         base__premiumInfo: 'Header_base__premiumInfo_65f475ba',
         base__premiumEarnings: 'Header_base__premiumEarnings_65f475ba',
@@ -3422,34 +3505,34 @@ const Jc = F('Footer'),
         text: 'Header_text_52d638',
         text__textOverlay: 'Header_text__textOverlay_c3789e66',
     },
-    ed = F('Header'),
-    ad = t.forwardRef(function ({ className: t, classNames: s, ...n }, i) {
-        const { state: r, bonusMultiplier: l } = qo(),
+    pd = L('Header'),
+    _d = t.forwardRef(function ({ className: t, classNames: s, ...n }, i) {
+        const { state: r, bonusMultiplier: l } = lc(),
             o = k
                 .resolve('strings')
                 .readOrEmpty('battle_results.common.premiumBonus.bonusMultiplier')
                 .replace('{{value}}', l.toString());
-        return e.jsx(ed, {
+        return e.jsx(pd, {
             ref: i,
-            className: a(Qc[`base__${r}`], t),
+            className: a(md[`base__${r}`], t),
             ...n,
             children: e.jsx('div', {
-                className: a(Qc.icon, null == s ? void 0 : s.icon),
-                children: e.jsx(Be, {
+                className: a(md.icon, null == s ? void 0 : s.icon),
+                children: e.jsx(Re, {
                     classNames: {
-                        base: Qc.bonusMultiplier,
-                        text: Qc.text,
-                        textOverlay: a(Qc.text, Qc.text__textOverlay),
+                        base: md.bonusMultiplier,
+                        text: md.text,
+                        textOverlay: a(md.text, md.text__textOverlay),
                     },
                     children: o,
                 }),
             }),
         });
     }),
-    td = F('ManagableBonus', 'ManagableBonus_55c8d52d'),
-    sd = t.memo(td);
-((sd.Header = ad), (sd.Content = Nc), (sd.Footer = Zc));
-const nd = {
+    fd = L('ManagableBonus', 'ManagableBonus_55c8d52d'),
+    vd = t.memo(fd);
+((vd.Header = _d), (vd.Content = Dc), (vd.Footer = ud));
+const bd = {
     bonus__disabled: 'Bonus_bonus__disabled_d9abacdd',
     content: 'Bonus_content_58a93521',
     bonus__premiumInfo: 'Bonus_bonus__premiumInfo_d9abacdd',
@@ -3473,24 +3556,24 @@ const nd = {
     bonus__bonusAdvertising: 'Bonus_bonus__bonusAdvertising_d9abacdd',
     footer: 'Bonus_footer_9b2e3fe3',
 };
-function id({ className: t }) {
-    const { state: s } = qo(),
-        { completedSteps: n } = vt();
-    return e.jsxs(sd, {
-        className: a(nd.bonus, nd[`bonus__${s}`], !1 === n.has(mt.third) && nd.bonus__disabled, t),
+function hd({ className: t }) {
+    const { state: s } = lc(),
+        { completedSteps: n } = ht();
+    return e.jsxs(vd, {
+        className: a(bd.bonus, bd[`bonus__${s}`], !1 === n.has(_t.third) && bd.bonus__disabled, t),
         children: [
-            e.jsx(sd.Header, {}),
-            e.jsx(sd.Content, { className: nd.content }),
-            e.jsx(sd.Footer, { className: nd.footer }),
+            e.jsx(vd.Header, {}),
+            e.jsx(vd.Content, { className: bd.content }),
+            e.jsx(vd.Footer, { className: bd.footer }),
         ],
     });
 }
-const rd = 'AnimatedNumber_958fc84e',
-    ld = 'AnimatedNumber_slotMachineDigit_a9587a5a',
-    od = 'AnimatedNumber_plugChar_c66678',
-    cd = 'AnimatedNumber_digitsList_2065427d',
-    dd = V.cubicBezier(0.33, 0, 0.25, 1);
-function ud({ immediate: a, symbol: s, step: i, delay: r, first: l, handleFirstRest: o }) {
+const gd = 'AnimatedNumber_958fc84e',
+    yd = 'AnimatedNumber_slotMachineDigit_a9587a5a',
+    xd = 'AnimatedNumber_plugChar_c66678',
+    Nd = 'AnimatedNumber_digitsList_2065427d',
+    jd = O.cubicBezier(0.33, 0, 0.25, 1);
+function wd({ immediate: a, symbol: s, step: i, delay: r, first: l, handleFirstRest: o }) {
     const [c, d] = t.useState(!1),
         [u, m] = w(() => ({ from: { y: 0, opacity: 0 } })),
         p = /^\d$/.test(s);
@@ -3506,7 +3589,7 @@ function ud({ immediate: a, symbol: s, step: i, delay: r, first: l, handleFirstR
                     delay: c ? 0 : r,
                     from: { y: a ? -_ * i : i, opacity: 1 },
                     to: { y: -_ * i, opacity: 1 },
-                    config: { duration: 600, easing: dd },
+                    config: { duration: 600, easing: jd },
                     immediate: a || c,
                     onRest() {
                         d(!0);
@@ -3514,13 +3597,13 @@ function ud({ immediate: a, symbol: s, step: i, delay: r, first: l, handleFirstR
                 }));
         }, [i, m, c, r, _, a]),
         e.jsxs('div', {
-            className: ld,
+            className: yd,
             children: [
-                e.jsx('div', { className: od, children: s }),
+                e.jsx('div', { className: xd, children: s }),
                 e.jsx(n.div, {
                     style: u,
-                    className: cd,
-                    children: ke(0, _ + 1, (a) =>
+                    className: Nd,
+                    children: Te(0, _ + 1, (a) =>
                         p
                             ? e.jsx('div', { children: a }, a)
                             : e.jsx('div', { style: { height: i }, children: a > 0 ? s : null }, a),
@@ -3530,7 +3613,7 @@ function ud({ immediate: a, symbol: s, step: i, delay: r, first: l, handleFirstR
         })
     );
 }
-const md = t.memo(function ({
+const Id = t.memo(function ({
         immediate: s,
         value: n,
         readyToAnimate: i,
@@ -3538,35 +3621,35 @@ const md = t.memo(function ({
         handleAnimationFinished: l,
         type: o,
     }) {
-        const [c, d] = Re(),
+        const [c, d] = ke(),
             u = t.useMemo(() => n.split(''), [n]),
             m = t.useCallback(() => l(o), [l, o]);
         return e.jsx('div', {
             ref: c,
-            className: a(rd, r),
+            className: a(gd, r),
             children: u.map((a, t) =>
                 e.jsx(
-                    ud,
+                    wd,
                     {
                         first: 0 === t,
                         handleFirstRest: m,
                         immediate: s,
                         delay: 200 * (u.length - t),
                         symbol: a,
-                        step: d.type === Pe.measured && i ? d.size.height : 0,
+                        step: d.type === Ee.measured && i ? d.size.height : 0,
                     },
                     `${n}-${t}`,
                 ),
             ),
         });
     }),
-    pd = 'Currency_10720e2d',
-    _d = 'Currency_icon_4d923f64',
-    fd = 'Currency_icon__visible_9c676b12',
-    vd = 'Currency_value_b21680b3',
-    bd = { xp: 'tankXP', crystal: 'crystal', credits: 'credits', gold: 'gold' },
-    hd = Object.keys(bd);
-function gd({
+    Ad = 'Currency_10720e2d',
+    Cd = 'Currency_icon_4d923f64',
+    Sd = 'Currency_icon__visible_9c676b12',
+    Bd = 'Currency_value_b21680b3',
+    Pd = { xp: 'tankXP', crystal: 'crystal', credits: 'credits', gold: 'gold' },
+    Rd = Object.keys(Pd);
+function kd({
     immediate: t,
     type: s,
     value: n,
@@ -3575,66 +3658,66 @@ function gd({
     readyToAnimate: l,
     handleAnimationFinished: o,
 }) {
-    return ((e) => hd.includes(e))(s)
+    return ((e) => Rd.includes(e))(s)
         ? 0 !== n || r
-            ? e.jsx(ne, {
+            ? e.jsx(re, {
                   reverse: !0,
-                  type: bd[s],
+                  type: Pd[s],
                   size: i,
-                  className: pd,
-                  classNames: { icon: a(_d, (l || t) && fd) },
-                  children: e.jsx(md, {
-                      className: vd,
+                  className: Ad,
+                  classNames: { icon: a(Cd, (l || t) && Sd) },
+                  children: e.jsx(Id, {
+                      className: Bd,
                       immediate: t,
                       readyToAnimate: l,
                       type: s,
                       handleAnimationFinished: o,
-                      value: T.formatNumber(s === Ee.gold ? 'gold' : 'integral', n),
+                      value: V.formatNumber(s === De.gold ? 'gold' : 'integral', n),
                   }),
               })
             : null
         : (console.error(`There is no such currency in the template literal: ${s}`), null);
 }
-const yd = F('Currencies', 'Currencies_5b11a533'),
-    xd = l(function ({ className: a }) {
+const Ed = L('Currencies', 'Currencies_5b11a533'),
+    Td = l(function ({ className: a }) {
         const [s, n] = t.useState(!1),
             [i, r] = t.useState(new Set()),
             [l, o] = t.useState(!1),
-            { model: c } = oo(),
+            { model: c } = No(),
             d = c.computes.earnedCurrencies(),
             u = c.additionalBonus.get(),
-            m = Te(d),
-            p = H(),
-            { step: _, setAllCurrenciesAniamted: f } = vt(),
-            v = re({ value: ie.medium }, { medium: { value: ie.large }, large: { value: ie.extraLarge } });
+            m = Ve(d),
+            p = M(),
+            { step: _, setAllCurrenciesAniamted: f } = ht(),
+            v = oe({ value: le.medium }, { medium: { value: le.large }, large: { value: le.extraLarge } });
         (t.useEffect(() => {
             void 0 !== m && m !== d && p.play('startRolling', { target: 'overview:currencies' });
         }, [d, m, p, _]),
             t.useEffect(() => {
-                (_ !== mt.third && _ !== mt.immediate) ||
-                    (_ === mt.third && p.play('startRolling', { target: 'overview:currencies' }), n(!0));
+                (_ !== _t.third && _ !== _t.immediate) ||
+                    (_ === _t.third && p.play('startRolling', { target: 'overview:currencies' }), n(!0));
             }, [_, p]),
             t.useEffect(() => {
                 i.size === d.filter(({ value: e, visibleIfZero: a }) => e > 0 || a).length &&
-                    (_ !== mt.immediate && p.play('stopRolling', { target: 'overview:currencies' }),
+                    (_ !== _t.immediate && p.play('stopRolling', { target: 'overview:currencies' }),
                     f(!0),
-                    u.bonusState === _l.PremiumBonus &&
-                        u.restriction === pl.NoRestriction &&
-                        (r((e) => De(e, 'xp')), o(!0)));
+                    u.bonusState === Ht.PremiumBonus &&
+                        u.restriction === Ot.NoRestriction &&
+                        (r((e) => ze(e, 'xp')), o(!0)));
             }, [_, i, d, p, u.bonusState, u.restriction, f]));
         const b = t.useCallback(function (e) {
-            r((a) => O(a, e));
+            r((a) => W(a, e));
         }, []);
-        return e.jsx(yd, {
+        return e.jsx(Ed, {
             className: a,
-            children: J(d, (a) =>
+            children: Q(d, (a) =>
                 e.jsx(
-                    gd,
+                    kd,
                     {
                         readyToAnimate: s,
                         size: v.value,
                         handleAnimationFinished: b,
-                        immediate: _ === mt.immediate && !1 === l,
+                        immediate: _ === _t.immediate && !1 === l,
                         ...a,
                     },
                     a.type,
@@ -3642,22 +3725,23 @@ const yd = F('Currencies', 'Currencies_5b11a533'),
             ),
         });
     }),
-    Nd = 'Overview_flare_5277bd9e',
-    jd = 'Overview_vignette_ff9b1e99',
-    wd = 'Overview_b4108a3c',
-    Id = 'Overview_info_fa4e7011',
-    Ad = 'Overview_info__withoutMedals_6be29b19',
-    Cd = 'Overview_statusWrapper_cda9b438',
-    Sd = 'Overview_status_1c902a82',
-    Bd = 'Overview_statusText_26db019c',
-    Rd = 'Overview_achievements_5b2b6582',
-    Pd = 'Overview_dividerWrapper_25de8b48',
-    kd = 'Overview_divider_652a671e',
-    Ed = 'Overview_dividerImage_2a8a0c0e',
-    Td = 'Overview_currencies_d637d5d',
-    Dd = 'Overview_bonus_30af9d4',
-    Vd = k.resolve('images');
-function zd({ winStatus: e, epicFlare: a }) {
+    Dd = 'Overview_flare_5277bd9e',
+    Vd = 'Overview_vignette_ff9b1e99',
+    zd = 'Overview_2a415431',
+    Od = 'Overview_info_fa4e7011',
+    Hd = 'Overview_info__withoutMedals_6be29b19',
+    Wd = 'Overview_statusWrapper_633ae157',
+    Md = 'Overview_infoWrapper_dfa0b233',
+    Gd = 'Overview_status_1c902a82',
+    Fd = 'Overview_statusText_22ef8198',
+    $d = 'Overview_achievements_5b2b6582',
+    Ld = 'Overview_dividerWrapper_25de8b48',
+    Xd = 'Overview_divider_652a671e',
+    Kd = 'Overview_dividerImage_2a8a0c0e',
+    qd = 'Overview_currencies_d637d5d',
+    Ud = 'Overview_bonus_30af9d4',
+    Yd = k.resolve('images');
+function Jd({ winStatus: e, epicFlare: a }) {
     return e === Ca
         ? a
             ? 'post_battle.epic_victory_flare'
@@ -3666,10 +3750,10 @@ function zd({ winStatus: e, epicFlare: a }) {
           ? 'post_battle.epic_draw_defeat_flare'
           : 'post_battle.no_epic_draw_defeat_flare';
 }
-const Od = l(function () {
+const Zd = l(function () {
         var a;
-        const { model: s } = oo(),
-            { active: i } = L(),
+        const { model: s } = No(),
+            { active: i } = K(),
             [{ x: r }, l] = w(() => ({ x: 0 })),
             o = null == (a = s.battleInfo.get()) ? void 0 : a.status,
             c = s.computes.hasSpeialMedals(),
@@ -3677,30 +3761,30 @@ const Od = l(function () {
         return (
             t.useEffect(() => {
                 if (i === Ia.overview)
-                    return Ve.move(function ([e]) {
-                        const a = ze().width,
+                    return Oe.move(function ([e]) {
+                        const a = He().width,
                             t = 2 * (e.clientX / a - 0.5);
                         l.start({ x: 3 * t });
                     });
             }),
             e.jsx(n.div, {
                 ref: d,
-                className: Nd,
+                className: Dd,
                 style: {
-                    backgroundImage: `url(${Vd.readOrEmpty(zd({ winStatus: o, epicFlare: c }))})`,
+                    backgroundImage: `url(${Yd.readOrEmpty(Jd({ winStatus: o, epicFlare: c }))})`,
                     backgroundPosition: r.to((e) => `${50 + e}% center`),
                 },
             })
         );
     }),
-    Hd = t.createContext(null);
-function Wd() {
-    const e = t.useContext(Hd);
+    Qd = t.createContext(null);
+function eu() {
+    const e = t.useContext(Qd);
     if (null === e)
         throw new Error('You can use the expandable overlay hooks only with the ExpandableOverlay widget component');
     return e;
 }
-function Md({ children: a, visible: s, changeVisible: n, closedPosition: i, animationProps: r }) {
+function au({ children: a, visible: s, changeVisible: n, closedPosition: i, animationProps: r }) {
     const [l, o] = t.useState(s ?? !1),
         [c, d] = w(() => ({ ...r, y: l ? '0' : i, backgroundColor: l ? 'rgba(18, 19, 22, 0.8)' : 'transparent' })),
         [u, m] = w(() => ({ opacity: l ? 1 : 0 })),
@@ -3726,52 +3810,52 @@ function Md({ children: a, visible: s, changeVisible: n, closedPosition: i, anim
         }),
         [l, i, r, o, c, d, u, m, p, _],
     );
-    return e.jsx(Hd.Provider, { value: f, children: a });
+    return e.jsx(Qd.Provider, { value: f, children: a });
 }
-const Gd = 'HintKey_keyButton_e4149405',
-    Fd = 'HintKey_background_e4149405',
-    $d = 'HintKey_border_71616e63',
-    Ld = 'HintKey_content_63ecef8',
-    Xd = 'HintKey_triangle_fb0bc682',
-    Kd = 'HintKey_triangleNoise_6e72dfca',
-    qd = F('PersoanlEfficiencyHintKey', 'HintKey_2efc42a0');
-const Ud = {
+const tu = 'HintKey_keyButton_e4149405',
+    su = 'HintKey_background_e4149405',
+    nu = 'HintKey_border_71616e63',
+    iu = 'HintKey_content_63ecef8',
+    ru = 'HintKey_triangle_fb0bc682',
+    lu = 'HintKey_triangleNoise_6e72dfca',
+    ou = L('PersoanlEfficiencyHintKey', 'HintKey_2efc42a0');
+const cu = {
         base: 'OverlayDivider_fcc0c30',
         divider: 'OverlayDivider_divider_1acaec30',
         divider__right: 'OverlayDivider_divider__right_546d0e74',
         base__closed: 'OverlayDivider_base__closed_ceb65522',
         dividerImageElement: 'OverlayDivider_dividerImageElement_9babecb0',
     },
-    Yd = t.forwardRef(function ({ className: t, classNames: s }, n) {
+    du = t.forwardRef(function ({ className: t, classNames: s }, n) {
         var i, r, l, o, c, d;
-        const { opened: u } = Wd();
+        const { opened: u } = eu();
         return e.jsxs('div', {
             ref: n,
-            className: a(Ud.base, !u && Ud.base__closed, null == s ? void 0 : s.base, t),
+            className: a(cu.base, !u && cu.base__closed, null == s ? void 0 : s.base, t),
             children: [
-                e.jsx(gt, {
+                e.jsx(xt, {
                     classNames: {
                         base: a(
-                            Ud.divider,
-                            Ud.divider__left,
+                            cu.divider,
+                            cu.divider__left,
                             null == (i = null == s ? void 0 : s.divider) ? void 0 : i.base,
                         ),
                         image: a(
-                            Ud.dividerImageElement,
+                            cu.dividerImageElement,
                             null == (r = null == s ? void 0 : s.divider) ? void 0 : r.image,
                         ),
                     },
                 }),
-                e.jsx(gt, {
+                e.jsx(xt, {
                     classNames: {
                         base: a(
-                            Ud.divider,
-                            Ud.divider__right,
+                            cu.divider,
+                            cu.divider__right,
                             null == (l = null == s ? void 0 : s.divider) ? void 0 : l.base,
                             null == (o = null == s ? void 0 : s.rightDivider) ? void 0 : o.base,
                         ),
                         image: a(
-                            Ud.dividerImageElement,
+                            cu.dividerImageElement,
                             null == (c = null == s ? void 0 : s.divider) ? void 0 : c.image,
                             null == (d = null == s ? void 0 : s.rightDivider) ? void 0 : d.image,
                         ),
@@ -3780,12 +3864,12 @@ const Ud = {
             ],
         });
     }),
-    Jd = 'ExpandableOverlay_7ce5a85e',
-    Zd = 'ExpandableOverlay_base__opened_7d677539',
-    Qd = 'ExpandableOverlay_shadow_a52d16ce',
-    eu = t.forwardRef(function ({ children: s }, i) {
-        const { opened: r, handleOpen: l, overlayStyles: o, shadowStyles: c } = Wd(),
-            d = H();
+    uu = 'ExpandableOverlay_7ce5a85e',
+    mu = 'ExpandableOverlay_base__opened_7d677539',
+    pu = 'ExpandableOverlay_shadow_a52d16ce',
+    _u = t.forwardRef(function ({ children: s }, i) {
+        const { opened: r, handleOpen: l, overlayStyles: o, shadowStyles: c } = eu(),
+            d = M();
         return (
             t.useEffect(() => {
                 function e(e) {
@@ -3796,7 +3880,7 @@ const Ud = {
             e.jsxs(n.div, {
                 ref: i,
                 'data-name': 'ExpandableOverlay',
-                className: a(Jd, r && Zd),
+                className: a(uu, r && mu),
                 style: o,
                 onClick: function (e) {
                     (e.stopPropagation(),
@@ -3805,21 +3889,21 @@ const Ud = {
                             d.play('openOverlay', { original: e, target: 'expandable-overlay' }),
                             l(!0)));
                 },
-                children: [e.jsx(n.div, { className: Qd, style: c }), s],
+                children: [e.jsx(n.div, { className: pu, style: c }), s],
             })
         );
     });
-((eu.HintKey = function ({
+((_u.HintKey = function ({
     disabled: t,
     throttleDelay: s = 600,
     classNames: i,
-    keyCode: r = We.SPACE,
+    keyCode: r = Ge.SPACE,
     triangleNoisePath: l = 'post_battle.noise',
 }) {
     var o, c, d;
-    const { handleOpen: u, arrowStyles: m } = Wd(),
-        p = H(),
-        _ = Oe(
+    const { handleOpen: u, arrowStyles: m } = eu(),
+        p = M(),
+        _ = We(
             (e) => {
                 t ||
                     (p.play('click', { original: e, target: 'expandable-overlay:hint-key' }),
@@ -3837,7 +3921,7 @@ const Ud = {
             s,
         );
     return e.jsx(e.Fragment, {
-        children: e.jsxs(qd, {
+        children: e.jsxs(ou, {
             className: null == i ? void 0 : i.base,
             onClick: (e) => {
                 (e.stopPropagation(),
@@ -3852,63 +3936,63 @@ const Ud = {
                     ));
             },
             children: [
-                e.jsx(He, {
+                e.jsx(Me, {
                     keyCode: r,
                     classNames: {
-                        base: a(Gd, null == i ? void 0 : i.keyButton),
-                        background: a(Fd, null == (o = null == i ? void 0 : i.keyButton) ? void 0 : o.background),
-                        content: a(Ld, null == (c = null == i ? void 0 : i.keyButton) ? void 0 : c.content),
-                        border: a($d, null == (d = null == i ? void 0 : i.keyButton) ? void 0 : d.border),
+                        base: a(tu, null == i ? void 0 : i.keyButton),
+                        background: a(su, null == (o = null == i ? void 0 : i.keyButton) ? void 0 : o.background),
+                        content: a(iu, null == (c = null == i ? void 0 : i.keyButton) ? void 0 : c.content),
+                        border: a(nu, null == (d = null == i ? void 0 : i.keyButton) ? void 0 : d.border),
                     },
                     soundTarget: 'expandable-overlay:hint-key',
                     onActive: _,
-                    children: e.jsx(He.Code, {}),
+                    children: e.jsx(Me.Code, {}),
                 }),
                 e.jsx(n.div, {
-                    className: a(Xd, null == i ? void 0 : i.triangle),
+                    className: a(ru, null == i ? void 0 : i.triangle),
                     style: m,
-                    children: e.jsx(X, {
+                    children: e.jsx(q, {
                         fit: 'cover',
                         path: l,
-                        className: a(Kd, null == i ? void 0 : i.triangleNoise),
+                        className: a(lu, null == i ? void 0 : i.triangleNoise),
                     }),
                 }),
             ],
         }),
     });
 }),
-    (eu.OverlayDivider = Yd));
-const au = 'BodyRow_b47fe37f',
-    tu = 'BodyRow_rowDivider_eb49c679',
-    su = 'BodyRow_rowDividerImage_d852c3da';
-function nu({ classNames: s, row: n, rowIndex: i }) {
+    (_u.OverlayDivider = du));
+const fu = 'BodyRow_b47fe37f',
+    vu = 'BodyRow_rowDivider_eb49c679',
+    bu = 'BodyRow_rowDividerImage_d852c3da';
+function hu({ classNames: s, row: n, rowIndex: i }) {
     var r, l, o;
-    const c = Me({
+    const c = Fe({
         args: { vehicleCD: null == (r = n.original.vehicle) ? void 0 : r.vehicleCD, databaseID: n.original.databaseId },
     });
     return t.createElement(
-        Ge.Row,
-        { ...(void 0 !== n.original.databaseId && c), key: n.id, className: a(au, null == s ? void 0 : s.row) },
-        J(n.getVisibleCells(), (a, t) =>
+        $e.Row,
+        { ...(void 0 !== n.original.databaseId && c), key: n.id, className: a(fu, null == s ? void 0 : s.row) },
+        Q(n.getVisibleCells(), (a, t) =>
             e.jsx(
-                Ge.Cell,
+                $e.Cell,
                 {
                     className: null == s ? void 0 : s.cell,
-                    cell: { ...a, rowIndex: i, index: t, tablePart: Fe.body },
+                    cell: { ...a, rowIndex: i, index: t, tablePart: Le.body },
                     children: C(a.column.columnDef.cell, a.getContext()),
                 },
                 a.id,
             ),
         ),
-        e.jsx(gt, {
+        e.jsx(xt, {
             classNames: {
-                base: a(tu, null == (l = null == s ? void 0 : s.divider) ? void 0 : l.base),
-                image: a(su, null == (o = null == s ? void 0 : s.divider) ? void 0 : o.image),
+                base: a(vu, null == (l = null == s ? void 0 : s.divider) ? void 0 : l.base),
+                image: a(bu, null == (o = null == s ? void 0 : s.divider) ? void 0 : o.image),
             },
         }),
     );
 }
-const iu = {
+const gu = {
         base: 'TableBody_4f65af24',
         scrollBar: 'TableBody_scrollBar_14038cca',
         scrollAreaContent: 'TableBody_scrollAreaContent_4a80f86c',
@@ -3916,16 +4000,16 @@ const iu = {
         rowDivider: 'TableBody_rowDivider_c1a3ebdc',
         rowDividerImage: 'TableBody_rowDividerImage_b0363e26',
     },
-    ru = t.memo(function ({ classNames: s, children: i }) {
+    yu = t.memo(function ({ classNames: s, children: i }) {
         var r, l, o, c, d, u, m, p;
-        const { table: _ } = $e(),
-            f = Le(),
-            { api: v } = U();
-        (Xe(We.ARROW_UP, () => {
-            v.applyStepTo(Ke.Next);
+        const { table: _ } = Xe(),
+            f = Ke(),
+            { api: v } = J();
+        (qe(Ge.ARROW_UP, () => {
+            v.applyStepTo(Ue.Next);
         }),
-            Xe(We.ARROW_DOWN, () => {
-                v.applyStepTo(Ke.Prev);
+            qe(Ge.ARROW_DOWN, () => {
+                v.applyStepTo(Ue.Prev);
             }));
         const [b, h] = w(() => ({ from: { maskSize: '100% 100%' } }));
         return (
@@ -3953,40 +4037,40 @@ const iu = {
                     }
                 );
             }, [v, f, h]),
-            e.jsxs(Ge.Body, {
-                className: a(iu.base, null == s ? void 0 : s.base),
+            e.jsxs($e.Body, {
+                className: a(gu.base, null == s ? void 0 : s.base),
                 children: [
                     e.jsxs(n.div, {
-                        className: iu.mask,
+                        className: gu.mask,
                         style: b,
                         children: [
-                            e.jsx(gt, {
+                            e.jsx(xt, {
                                 classNames: {
                                     base: a(
-                                        iu.rowDivider,
+                                        gu.rowDivider,
                                         null == (r = null == s ? void 0 : s.divider) ? void 0 : r.base,
                                     ),
                                     image: a(
-                                        iu.rowDividerImage,
+                                        gu.rowDividerImage,
                                         null == (l = null == s ? void 0 : s.divider) ? void 0 : l.image,
                                     ),
                                 },
                             }),
-                            e.jsxs(Y, {
+                            e.jsxs(Z, {
                                 classNames: {
                                     ...(null == (o = null == s ? void 0 : s.scroll) ? void 0 : o.area),
-                                    wrapper: iu.scrollWrapper,
+                                    wrapper: gu.scrollWrapper,
                                     content: a(
-                                        iu.scrollAreaContent,
+                                        gu.scrollAreaContent,
                                         null == (d = null == (c = null == s ? void 0 : s.scroll) ? void 0 : c.area)
                                             ? void 0
                                             : d.content,
                                     ),
                                 },
                                 children: [
-                                    J(_.getRowModel().rows, (a, t) =>
+                                    Q(_.getRowModel().rows, (a, t) =>
                                         e.jsx(
-                                            nu,
+                                            hu,
                                             {
                                                 row: a,
                                                 rowIndex: t,
@@ -4004,11 +4088,11 @@ const iu = {
                             }),
                         ],
                     }),
-                    e.jsx(q, {
+                    e.jsx(Y, {
                         classNames: {
                             ...(null == (u = null == s ? void 0 : s.scroll) ? void 0 : u.bar),
                             base: a(
-                                iu.scrollBar,
+                                gu.scrollBar,
                                 null == (p = null == (m = null == s ? void 0 : s.scroll) ? void 0 : m.bar)
                                     ? void 0
                                     : p.base,
@@ -4019,24 +4103,24 @@ const iu = {
             })
         );
     }),
-    lu = 'TableFooter_40e98711',
-    ou = 'TableFooter_row_41aedfc2',
-    cu = t.memo(function ({ classNames: t }) {
-        const { table: s } = $e();
-        return e.jsx(Ge.Footer, {
-            className: a(lu, null == t ? void 0 : t.base),
-            children: J(s.getFooterGroups(), (s, n) =>
+    xu = 'TableFooter_40e98711',
+    Nu = 'TableFooter_row_41aedfc2',
+    ju = t.memo(function ({ classNames: t }) {
+        const { table: s } = Xe();
+        return e.jsx($e.Footer, {
+            className: a(xu, null == t ? void 0 : t.base),
+            children: Q(s.getFooterGroups(), (s, n) =>
                 e.jsx(
-                    Ge.Row,
+                    $e.Row,
                     {
-                        className: a(ou, null == t ? void 0 : t.row),
-                        children: J(s.headers, (a, s) =>
+                        className: a(Nu, null == t ? void 0 : t.row),
+                        children: Q(s.headers, (a, s) =>
                             e.jsx(
-                                Ge.Cell,
+                                $e.Cell,
                                 {
                                     onClick: a.column.getToggleSortingHandler(),
                                     className: null == t ? void 0 : t.cell,
-                                    cell: { ...a, rowIndex: n, index: s, tablePart: Fe.footer },
+                                    cell: { ...a, rowIndex: n, index: s, tablePart: Le.footer },
                                     children: !a.isPlaceholder && C(a.column.columnDef.footer, a.getContext()),
                                 },
                                 a.id,
@@ -4048,23 +4132,23 @@ const iu = {
             ),
         });
     }),
-    du = 'TableHeader_row_a81d3e65',
-    uu = t.memo(function ({ classNames: t }) {
-        const { table: s } = $e();
-        return e.jsx(Ge.Header, {
+    wu = 'TableHeader_row_a81d3e65',
+    Iu = t.memo(function ({ classNames: t }) {
+        const { table: s } = Xe();
+        return e.jsx($e.Header, {
             className: null == t ? void 0 : t.base,
-            children: J(s.getHeaderGroups(), (s, n) =>
+            children: Q(s.getHeaderGroups(), (s, n) =>
                 e.jsx(
-                    Ge.Row,
+                    $e.Row,
                     {
-                        className: a(du, null == t ? void 0 : t.row),
-                        children: J(s.headers, (a, s) =>
+                        className: a(wu, null == t ? void 0 : t.row),
+                        children: Q(s.headers, (a, s) =>
                             e.jsx(
-                                Ge.Cell,
+                                $e.Cell,
                                 {
                                     onClick: a.column.getToggleSortingHandler(),
                                     className: null == t ? void 0 : t.cell,
-                                    cell: { ...a, rowIndex: n, index: s, tablePart: Fe.header },
+                                    cell: { ...a, rowIndex: n, index: s, tablePart: Le.header },
                                     children: !a.isPlaceholder && C(a.column.columnDef.header, a.getContext()),
                                 },
                                 a.id,
@@ -4076,7 +4160,7 @@ const iu = {
             ),
         });
     }),
-    mu = {
+    Au = {
         account: 'account',
         vehicle: 'vehicle',
         targetKills: 'targetKills',
@@ -4087,29 +4171,29 @@ const iu = {
         spotted: 'spotted',
         criticalDamage: 'criticalDamage',
     },
-    pu = '',
-    _u = '',
-    fu = {
-        [mu.targetKills]: 'library.crossed_tank',
-        [mu.damageDealt]: 'library.cross_with_gap',
-        [mu.damageBlockedByArmor]: 'library.blocked',
-        [mu.damageAssisted]: 'library.double_target',
-        [mu.damageAssistedStun]: 'library.arrow_with_fading',
-        [mu.spotted]: 'library.eyebrow',
-        [mu.criticalDamage]: 'library.gear_with_gap',
+    Cu = '',
+    Su = '',
+    Bu = {
+        [Au.targetKills]: 'library.crossed_tank',
+        [Au.damageDealt]: 'library.cross_with_gap',
+        [Au.damageBlockedByArmor]: 'library.blocked',
+        [Au.damageAssisted]: 'library.double_target',
+        [Au.damageAssistedStun]: 'library.arrow_with_fading',
+        [Au.spotted]: 'library.eyebrow',
+        [Au.criticalDamage]: 'library.gear_with_gap',
     };
-const vu = t.createContext(null);
-function bu() {
-    const e = t.useContext(vu);
+const Pu = t.createContext(null);
+function Ru() {
+    const e = t.useContext(Pu);
     if (null === e)
         throw new Error('You can use the personal efficiency hooks only with the PersonalEfficiency widget component');
     return e;
 }
-function hu({ iconsConfig: a, children: s }) {
-    const n = t.useMemo(() => ({ iconsConfig: { ...fu, ...(a || {}) } }), [a]);
-    return e.jsx(vu.Provider, { value: n, children: s });
+function ku({ iconsConfig: a, children: s }) {
+    const n = t.useMemo(() => ({ iconsConfig: { ...Bu, ...(a || {}) } }), [a]);
+    return e.jsx(Pu.Provider, { value: n, children: s });
 }
-const gu = function ({
+const Eu = function ({
     data: a,
     className: s,
     children: n,
@@ -4118,37 +4202,37 @@ const gu = function ({
     config: l,
     iconsConfig: o,
 }) {
-    const c = Ae(),
+    const c = Se(),
         d = t.useMemo(() => ({ columnOrder: i, columnVisibility: r }), [i, r]);
-    return e.jsx(hu, {
+    return e.jsx(ku, {
         iconsConfig: o,
-        children: e.jsx(qe, {
+        children: e.jsx(Ye, {
             columns: l,
             data: a.rows,
             enableMultiRowSelection: !1,
             getRowId: (e) => e.account.username,
             initialState: d,
-            children: e.jsx(Ge, { className: s, children: e.jsx(K, { children: n }) }, c.breakpoint.name),
+            children: e.jsx($e, { className: s, children: e.jsx(U, { children: n }) }, c.breakpoint.name),
         }),
     });
 };
-((gu.Header = uu), (gu.Body = ru), (gu.Footer = cu));
-const yu = { behaviour: Ue.contentResponsive, minSize: '0rem', maxSize: '1000rem' },
-    xu = {
-        [mu.account]: {
-            [Ye.extraSmall]: { behaviour: Ue.static, size: '200rem' },
-            [Ye.medium]: { behaviour: Ue.static, size: '200rem' },
-            [Ye.large]: { behaviour: Ue.static, size: '200rem' },
-            [Ye.extraLarge]: { behaviour: Ue.static, size: '229rem' },
+((Eu.Header = Iu), (Eu.Body = yu), (Eu.Footer = ju));
+const Tu = { behaviour: Je.contentResponsive, minSize: '0rem', maxSize: '1000rem' },
+    Du = {
+        [Au.account]: {
+            [Ze.extraSmall]: { behaviour: Je.static, size: '200rem' },
+            [Ze.medium]: { behaviour: Je.static, size: '200rem' },
+            [Ze.large]: { behaviour: Je.static, size: '200rem' },
+            [Ze.extraLarge]: { behaviour: Je.static, size: '229rem' },
         },
-        [mu.vehicle]: {
-            [Ye.extraSmall]: { behaviour: Ue.static, size: '182rem' },
-            [Ye.medium]: { behaviour: Ue.static, size: '186rem' },
-            [Ye.large]: { behaviour: Ue.static, size: '216rem' },
-            [Ye.extraLarge]: { behaviour: Ue.static, size: '239rem' },
+        [Au.vehicle]: {
+            [Ze.extraSmall]: { behaviour: Je.static, size: '182rem' },
+            [Ze.medium]: { behaviour: Je.static, size: '186rem' },
+            [Ze.large]: { behaviour: Je.static, size: '216rem' },
+            [Ze.extraLarge]: { behaviour: Je.static, size: '239rem' },
         },
     },
-    Nu = {
+    Vu = {
         accountInfo: 'AccountInfoCell_accountInfo_4ab27ccb',
         accountName: 'AccountInfoCell_accountName_3a2352e5',
         clanAbbreviation: 'AccountInfoCell_clanAbbreviation_99f1cc86',
@@ -4156,94 +4240,94 @@ const yu = { behaviour: Ue.contentResponsive, minSize: '0rem', maxSize: '1000rem
         anonymizerIcon: 'AccountInfoCell_anonymizerIcon_f71ac22',
         badge: 'AccountInfoCell_badge_711d01c5',
     };
-function ju({ account: t }) {
-    return e.jsxs(Je, {
-        className: Nu.accountInfo,
+function zu({ account: t }) {
+    return e.jsxs(Qe, {
+        className: Vu.accountInfo,
         children: [
             e.jsx('div', {
-                className: a(Nu.badge, Nu.gap),
+                className: a(Vu.badge, Vu.gap),
                 children:
-                    t.badge !== pu &&
-                    e.jsx(Je.Badge, { size: Je.Badge.sizes.x24x24, badgeId: t.badge, className: Nu.gap }),
+                    t.badge !== Cu &&
+                    e.jsx(Qe.Badge, { size: Qe.Badge.sizes.x24x24, badgeId: t.badge, className: Vu.gap }),
             }),
-            e.jsx(Je.Name, {
-                className: a(Nu.accountName, Nu.gap),
-                children: e.jsx(Ze, { text: t.anonymizer ? t.fakeUsername : t.username }),
+            e.jsx(Qe.Name, {
+                className: a(Vu.accountName, Vu.gap),
+                children: e.jsx(ea, { text: t.anonymizer ? t.fakeUsername : t.username }),
             }),
-            t.clanAbbreviation !== _u &&
+            t.clanAbbreviation !== Su &&
                 !t.anonymizer &&
-                e.jsx(Je.ClanTag, {
-                    className: a(Nu.clanAbbreviation, Nu.gap),
+                e.jsx(Qe.ClanTag, {
+                    className: a(Vu.clanAbbreviation, Vu.gap),
                     children: e.jsx(P, {
                         path: 'common.clanTag',
                         params: { abbrev: t.clanAbbreviation },
                         brackets: { start: '{', end: '}' },
                     }),
                 }),
-            t.igrType !== dl && e.jsx(Je.IgrIcon, { size: Je.IgrIcon.sizes.x34x16, className: Nu.gap }),
-            t.suffixBadge !== pu &&
-                e.jsx(Je.Stripe, { size: Je.Stripe.sizes.default, badgeId: t.suffixBadge, className: Nu.gap }),
+            t.igrType !== Il && e.jsx(Qe.IgrIcon, { size: Qe.IgrIcon.sizes.x34x16, className: Vu.gap }),
+            t.suffixBadge !== Cu &&
+                e.jsx(Qe.Stripe, { size: Qe.Stripe.sizes.default, badgeId: t.suffixBadge, className: Vu.gap }),
             t.anonymizer &&
-                e.jsx(Je.AnonymizerIcon, { size: Je.AnonymizerIcon.sizes.x24x24, className: Nu.anonymizerIcon }),
+                e.jsx(Qe.AnonymizerIcon, { size: Qe.AnonymizerIcon.sizes.x24x24, className: Vu.anonymizerIcon }),
         ],
     });
 }
-const wu = 'capturePoints',
-    Iu = 'droppedCapturePoints',
-    Au = {
+const Ou = 'capturePoints',
+    Hu = 'droppedCapturePoints',
+    Wu = {
         base: 'BaseCapture_4cb6b6d6',
         icon: 'BaseCapture_icon_d32c372c',
         label: 'BaseCapture_label_8bdb9b9c',
         wrapper: 'BaseCapture_wrapper_c1a0082e',
     };
-function Cu({ assault: t, defend: s, classNames: n, className: i }) {
+function Mu({ assault: t, defend: s, classNames: n, className: i }) {
     const r = k.resolve('strings'),
         l = k.resolve('views'),
-        o = Qe({
+        o = aa({
             contentId: l.read((e) => e.lobby.tooltips.BattleResultsStatsTooltipView('resId')),
-            args: { paramType: wu },
+            args: { paramType: Ou },
         }),
-        c = Qe({
+        c = aa({
             contentId: l.read((e) => e.lobby.tooltips.BattleResultsStatsTooltipView('resId')),
-            args: { paramType: Iu },
+            args: { paramType: Hu },
         });
     return e.jsxs('div', {
-        className: a(Au.base, i),
+        className: a(Wu.base, i),
         children: [
             e.jsx('div', {
-                className: a(Au.label, null == n ? void 0 : n.label),
+                className: a(Wu.label, null == n ? void 0 : n.label),
                 children: r.readOrEmpty('battle_results.common.battleEfficiency.baseCapture'),
             }),
             e.jsxs('div', {
                 ...o,
-                className: Au.wrapper,
+                className: Wu.wrapper,
                 children: [
-                    e.jsx('div', { className: a(Au.value, null == n ? void 0 : n.value), children: t }),
-                    e.jsx(X, {
+                    e.jsx('div', { className: a(Wu.value, null == n ? void 0 : n.value), children: t }),
+                    e.jsx(q, {
                         path: 'post_battle.assault',
                         width: '32rem',
                         height: '32rem',
-                        className: a(Au.icon, null == n ? void 0 : n.icon),
+                        className: a(Wu.icon, null == n ? void 0 : n.icon),
                     }),
                 ],
             }),
             e.jsxs('div', {
                 ...c,
-                className: Au.wrapper,
+                className: Wu.wrapper,
                 children: [
-                    e.jsx('div', { className: a(Au.value, null == n ? void 0 : n.value), children: s }),
-                    e.jsx(X, {
+                    e.jsx('div', { className: a(Wu.value, null == n ? void 0 : n.value), children: s }),
+                    e.jsx(q, {
                         path: 'post_battle.defend',
                         width: '32rem',
                         height: '32rem',
-                        className: a(Au.icon, null == n ? void 0 : n.icon),
+                        className: a(Wu.icon, null == n ? void 0 : n.icon),
                     }),
                 ],
             }),
         ],
     });
 }
-const Su = {
+const Gu = {
     cellWithValue: 'HeaderCell_cellWithValue_78949e6d',
     cellWithValue__totalInfo: 'HeaderCell_cellWithValue__totalInfo_789bf7be',
     cellWithValue__zeroIndent: 'HeaderCell_cellWithValue__zeroIndent_334269c9',
@@ -4253,58 +4337,58 @@ const Su = {
     cellWithText: 'HeaderCell_cellWithText_710c47ce',
     text: 'HeaderCell_text_35220206',
 };
-function Bu({ info: t, name: s, className: n }) {
-    const { iconsConfig: i } = bu(),
+function Fu({ info: t, name: s, className: n }) {
+    const { iconsConfig: i } = Ru(),
         r = k.resolve('views'),
-        l = Qe({
+        l = aa({
             contentId: r.read((e) =>
-                s === mu.criticalDamage
+                s === Au.criticalDamage
                     ? e.mono.post_battle.tooltips.critical_damage('resId')
                     : e.lobby.tooltips.BattleResultsStatsTooltipView('resId'),
             ),
             args: { paramType: s },
         }),
-        o = Z(
+        o = ee(
             t.table.getRowModel().rows,
             (e, a) => {
                 const t = a.getValue(s),
-                    n = ea(t) ? t : t.value;
-                return e + (s === mu.spotted && n > 0 ? 1 : n);
+                    n = ta(t) ? t : t.value;
+                return e + (s === Au.spotted && n > 0 ? 1 : n);
             },
             0,
         ),
         c = i[s] ?? '';
     return e.jsx('div', {
-        className: a(Su.cellWithValue, n),
+        className: a(Gu.cellWithValue, n),
         children: e.jsxs('div', {
             ...l,
-            className: Su.wrapper,
+            className: Gu.wrapper,
             children: [
-                e.jsx('div', { className: Su.value, children: T.formatNumber('integral', o) }),
+                e.jsx('div', { className: Gu.value, children: V.formatNumber('integral', o) }),
                 e.jsx('div', {
-                    className: Su.imageWrapper,
-                    children: e.jsx(X, { width: '100%', height: '100%', path: c }),
+                    className: Gu.imageWrapper,
+                    children: e.jsx(q, { width: '100%', height: '100%', path: c }),
                 }),
             ],
         }),
     });
 }
-function Ru({ name: a, info: t, className: s }) {
+function $u({ name: a, info: t, className: s }) {
     const n = k.resolve('strings');
     switch (a) {
-        case mu.targetKills:
-        case mu.damageDealt:
-        case mu.damageBlockedByArmor:
-        case mu.damageAssisted:
-        case mu.damageAssistedStun:
-        case mu.spotted:
-        case mu.criticalDamage:
-            return void 0 !== t ? e.jsx(Bu, { name: a, info: t, className: s }) : null;
-        case mu.account:
+        case Au.targetKills:
+        case Au.damageDealt:
+        case Au.damageBlockedByArmor:
+        case Au.damageAssisted:
+        case Au.damageAssistedStun:
+        case Au.spotted:
+        case Au.criticalDamage:
+            return void 0 !== t ? e.jsx(Fu, { name: a, info: t, className: s }) : null;
+        case Au.account:
             return e.jsx('div', {
-                className: Su.cellWithText,
+                className: Gu.cellWithText,
                 children: e.jsx('div', {
-                    className: Su.text,
+                    className: Gu.text,
                     children: n.readOrEmpty('battle_results.common.battleEfficiency.uppercased_title'),
                 }),
             });
@@ -4312,11 +4396,11 @@ function Ru({ name: a, info: t, className: s }) {
             return (console.error(`Unknown column ${a}`), null);
     }
 }
-const Pu = { base: 'IconCell_99b0caec' };
-function ku({ value: t, name: s, userName: n, className: i }) {
-    const { iconsConfig: r } = bu(),
+const Lu = { base: 'IconCell_99b0caec' };
+function Xu({ value: t, name: s, userName: n, className: i }) {
+    const { iconsConfig: r } = Ru(),
         l = k.resolve('views'),
-        o = Qe({
+        o = aa({
             contentId: l.read((e) => e.lobby.tooltips.BattleResultsStatsTooltipView('resId')),
             args: { userName: n, paramType: s },
         });
@@ -4324,56 +4408,56 @@ function ku({ value: t, name: s, userName: n, className: i }) {
     const c = r[s] ?? '';
     return e.jsx('div', {
         ...o,
-        className: a(Pu.base, i),
-        children: e.jsx(X, { width: '32rem', height: '32rem', path: c }),
+        className: a(Lu.base, i),
+        children: e.jsx(q, { width: '32rem', height: '32rem', path: c }),
     });
 }
-const Eu = { base: 'NumberCell_c62bf499' };
-function Tu({ value: t, userName: s, name: n, className: i }) {
+const Ku = { base: 'NumberCell_c62bf499' };
+function qu({ value: t, userName: s, name: n, className: i }) {
     const r = k.resolve('views'),
-        l = Qe({
+        l = aa({
             contentId: r.read((e) =>
-                n === mu.criticalDamage
+                n === Au.criticalDamage
                     ? e.mono.post_battle.tooltips.critical_damage('resId')
                     : e.lobby.tooltips.BattleResultsStatsTooltipView('resId'),
             ),
             args: { userName: s, paramType: n },
         });
-    return 0 === t ? null : e.jsx('div', { ...l, className: a(Eu.base, i), children: T.formatNumber('integral', t) });
+    return 0 === t ? null : e.jsx('div', { ...l, className: a(Ku.base, i), children: V.formatNumber('integral', t) });
 }
-const Du = {
+const Uu = {
         base: 'NumberWithCounterCell_f729c44',
         counter: 'NumberWithCounterCell_counter_8bb0eb59',
         counter__hidden: 'NumberWithCounterCell_counter__hidden_468e7d52',
         counterValue: 'NumberWithCounterCell_counterValue_566cc1fa',
         roundedCount: 'NumberWithCounterCell_roundedCount_c97dad37',
     },
-    Vu = 1e3,
-    zu = 99,
-    Ou = 2;
-function Hu({ count: a }) {
+    Yu = 1e3,
+    Ju = 99,
+    Zu = 2;
+function Qu({ count: a }) {
     const t = E({ body: a.toString() }),
-        s = (n = a) < Vu ? n : Math.floor(n / 1e3);
+        s = (n = a) < Yu ? n : Math.floor(n / 1e3);
     var n;
     return e.jsx('div', {
-        className: Du.counterValue,
+        className: Uu.counterValue,
         children:
             s === a
                 ? a
                 : e.jsx('div', {
                       ...t,
-                      className: Du.roundedCount,
+                      className: Uu.roundedCount,
                       children: e.jsx(P, {
                           path: 'common.numberAbbrev',
-                          params: { value: T.formatNumber('integral', Math.min(s, zu)) },
+                          params: { value: V.formatNumber('integral', Math.min(s, Ju)) },
                       }),
                   }),
     });
 }
-function Wu({ value: t, count: s, name: n, userName: i, className: r }) {
-    const { iconsConfig: l } = bu(),
+function em({ value: t, count: s, name: n, userName: i, className: r }) {
+    const { iconsConfig: l } = Ru(),
         o = k.resolve('views'),
-        c = Qe({
+        c = aa({
             contentId: o.read((e) => e.lobby.tooltips.BattleResultsStatsTooltipView('resId')),
             args: { userName: i, paramType: n },
         });
@@ -4381,20 +4465,20 @@ function Wu({ value: t, count: s, name: n, userName: i, className: r }) {
     const d = l[n] ?? '';
     return e.jsxs('div', {
         ...c,
-        className: a(Du.base, r),
+        className: a(Uu.base, r),
         children: [
-            t > 0 && T.formatNumber('integral', t),
+            t > 0 && V.formatNumber('integral', t),
             e.jsxs('div', {
-                className: a(Du.counter, 0 === s && Du.counter__hidden),
+                className: a(Uu.counter, 0 === s && Uu.counter__hidden),
                 children: [
-                    e.jsx(X, { className: Du.icon, width: '32rem', height: '32rem', path: d }),
-                    s >= Ou && e.jsx(Hu, { count: s }),
+                    e.jsx(q, { className: Uu.icon, width: '32rem', height: '32rem', path: d }),
+                    s >= Zu && e.jsx(Qu, { count: s }),
                 ],
             }),
         ],
     });
 }
-const Mu = {
+const am = {
     base: 'VehicleCell_2823d754',
     imageWrapper: 'VehicleCell_imageWrapper_f0d20784',
     typeWrapper: 'VehicleCell_typeWrapper_1232db26',
@@ -4402,248 +4486,248 @@ const Mu = {
     name: 'VehicleCell_name_755dfe36',
     name__unknown: 'VehicleCell_name__unknown_83c23c5e',
 };
-function Gu({ vehicle: t }) {
+function tm({ vehicle: t }) {
     const s = void 0 === t;
     return e.jsxs('div', {
-        className: Mu.base,
+        className: am.base,
         children: [
             e.jsx('div', {
-                className: Mu.imageWrapper,
-                children: e.jsx(aa, { size: aa.size.x120x96, name: s ? 'tank_empty' : t.techName }),
+                className: am.imageWrapper,
+                children: e.jsx(sa, { size: sa.size.x120x96, name: s ? 'tank_empty' : t.techName }),
             }),
             !1 === s &&
                 e.jsxs(e.Fragment, {
                     children: [
-                        e.jsx(ta, { value: t.tier, className: Mu.level }),
+                        e.jsx(T, { value: t.tier, className: am.level }),
                         e.jsx('div', {
-                            className: Mu.typeWrapper,
-                            children: e.jsx(sa, { size: 'x24x24', type: t.type }),
+                            className: am.typeWrapper,
+                            children: e.jsx(D, { size: 'x24x24', type: t.type }),
                         }),
                     ],
                 }),
             e.jsx('div', {
-                className: a(Mu.name, s && Mu.name__unknown),
+                className: a(am.name, s && am.name__unknown),
                 children: s
                     ? e.jsx(P, { path: 'ingame_gui.players_panel.unknown_vehicle' })
-                    : e.jsx(Ze, { text: t.name }),
+                    : e.jsx(ea, { text: t.name }),
             }),
         ],
     });
 }
-const Fu = 'Index_align_5032d1bf',
-    $u = 'Index_align__right_9d371d4f',
-    Lu = 'Index_align__left_7938cc',
-    Xu = 'Index_offsetCell_c4e68915',
-    Ku = 'Index_offsetCell__number_2c760167',
-    qu = S();
-function Uu() {
+const sm = 'Index_align_5032d1bf',
+    nm = 'Index_align__right_9d371d4f',
+    im = 'Index_align__left_7938cc',
+    rm = 'Index_offsetCell_c4e68915',
+    lm = 'Index_offsetCell__number_2c760167',
+    om = S();
+function cm() {
     return [
-        qu.accessor('killed', {
-            id: mu.targetKills,
+        om.accessor('killed', {
+            id: Au.targetKills,
             header: (t) =>
-                e.jsx(Ru, {
+                e.jsx($u, {
                     info: t,
-                    name: mu.targetKills,
-                    className: a(Su.cellWithValue__totalInfo, Su.cellWithValue__zeroIndent),
+                    name: Au.targetKills,
+                    className: a(Gu.cellWithValue__totalInfo, Gu.cellWithValue__zeroIndent),
                 }),
             enableSorting: !1,
-            meta: { column: yu, className: a(Fu, $u) },
+            meta: { column: Tu, className: a(sm, nm) },
         }),
-        qu.accessor('damageDealt', {
-            id: mu.damageDealt,
-            header: (a) => e.jsx(Ru, { info: a, name: mu.damageDealt, className: Su.cellWithValue__totalInfo }),
+        om.accessor('damageDealt', {
+            id: Au.damageDealt,
+            header: (a) => e.jsx($u, { info: a, name: Au.damageDealt, className: Gu.cellWithValue__totalInfo }),
             enableSorting: !1,
-            meta: { className: a(Fu, $u), column: yu },
+            meta: { className: a(sm, nm), column: Tu },
         }),
-        qu.accessor('damageBlockedByArmor', {
-            id: mu.damageBlockedByArmor,
+        om.accessor('damageBlockedByArmor', {
+            id: Au.damageBlockedByArmor,
             header: (a) =>
-                e.jsx(Ru, { info: a, name: mu.damageBlockedByArmor, className: Su.cellWithValue__totalInfo }),
+                e.jsx($u, { info: a, name: Au.damageBlockedByArmor, className: Gu.cellWithValue__totalInfo }),
             enableSorting: !1,
-            meta: { className: a(Fu, $u), column: yu },
+            meta: { className: a(sm, nm), column: Tu },
         }),
-        qu.accessor('damageAssisted', {
-            id: mu.damageAssisted,
-            header: (a) => e.jsx(Ru, { info: a, name: mu.damageAssisted, className: Su.cellWithValue__totalInfo }),
+        om.accessor('damageAssisted', {
+            id: Au.damageAssisted,
+            header: (a) => e.jsx($u, { info: a, name: Au.damageAssisted, className: Gu.cellWithValue__totalInfo }),
             enableSorting: !1,
-            meta: { className: a(Fu, $u), column: yu },
+            meta: { className: a(sm, nm), column: Tu },
         }),
-        qu.accessor('damageAssistedStun', {
-            id: mu.damageAssistedStun,
-            header: (a) => e.jsx(Ru, { info: a, name: mu.damageAssistedStun, className: Su.cellWithValue__totalInfo }),
+        om.accessor('damageAssistedStun', {
+            id: Au.damageAssistedStun,
+            header: (a) => e.jsx($u, { info: a, name: Au.damageAssistedStun, className: Gu.cellWithValue__totalInfo }),
             enableSorting: !1,
-            meta: { className: a(Fu, $u), column: yu },
+            meta: { className: a(sm, nm), column: Tu },
         }),
-        qu.accessor('spotted', {
-            id: mu.spotted,
-            header: (a) => e.jsx(Ru, { info: a, name: mu.spotted, className: Su.cellWithValue__totalInfo }),
+        om.accessor('spotted', {
+            id: Au.spotted,
+            header: (a) => e.jsx($u, { info: a, name: Au.spotted, className: Gu.cellWithValue__totalInfo }),
             enableSorting: !1,
-            meta: { className: a(Fu, $u), column: yu },
+            meta: { className: a(sm, nm), column: Tu },
         }),
-        qu.accessor('criticalDamage', {
-            id: mu.criticalDamage,
-            header: (a) => e.jsx(Ru, { info: a, name: mu.criticalDamage, className: Su.cellWithValue__totalInfo }),
+        om.accessor('criticalDamage', {
+            id: Au.criticalDamage,
+            header: (a) => e.jsx($u, { info: a, name: Au.criticalDamage, className: Gu.cellWithValue__totalInfo }),
             enableSorting: !1,
-            meta: { className: a(Fu, $u), column: yu },
+            meta: { className: a(sm, nm), column: Tu },
         }),
     ];
 }
-const Yu = 'PersonalEfficiency_table_1104dbe8',
-    Ju = 'PersonalEfficiency_table__closed_589e70ab',
-    Zu = 'PersonalEfficiency_hintKey_f91859a5',
-    Qu = 'PersonalEfficiency_messagesPanel_d1b1fa0b',
-    em = 'PersonalEfficiency_message_d772bbd7',
-    am = 'PersonalEfficiency_expandableOverlayWrapper_a5a56a5d',
-    tm = 'PersonalEfficiency_expandableOverlayWrapper__hidden_97a3493d',
-    sm = 'PersonalEfficiency_expandableOverlayWrapper__notInteractive_598241cc',
-    nm = 'PersonalEfficiency_scrollableArea_c747d607',
-    im = 'PersonalEfficiency_scrollableArea__nonInteractive_589e70ab',
-    rm = 'PersonalEfficiency_totalEfficiency_eb2592a8',
-    lm = 'PersonalEfficiency_totalEfficiency__notInteractive_4b33f28d',
-    om = 'PersonalEfficiency_totalEfficiencyTable_9139933',
-    cm = 'PersonalEfficiency_tableWrapper_cd2e7488',
-    dm = 'PersonalEfficiency_overlayDivider_52284c35',
-    um = 'PersonalEfficiency_overlayDivider__closed_6b67c790',
-    mm = 'PersonalEfficiency_clarificationWrapper_5f3072b1',
-    pm = { row: 'PersonalEfficiency_headerRow_6acaa215' };
-function _m() {
-    const { opened: s } = Wd(),
-        { api: n } = U();
+const dm = 'PersonalEfficiency_table_1104dbe8',
+    um = 'PersonalEfficiency_table__closed_589e70ab',
+    mm = 'PersonalEfficiency_hintKey_f91859a5',
+    pm = 'PersonalEfficiency_messagesPanel_d1b1fa0b',
+    _m = 'PersonalEfficiency_message_d772bbd7',
+    fm = 'PersonalEfficiency_expandableOverlayWrapper_a5a56a5d',
+    vm = 'PersonalEfficiency_expandableOverlayWrapper__hidden_97a3493d',
+    bm = 'PersonalEfficiency_expandableOverlayWrapper__notInteractive_598241cc',
+    hm = 'PersonalEfficiency_scrollableArea_c747d607',
+    gm = 'PersonalEfficiency_scrollableArea__nonInteractive_589e70ab',
+    ym = 'PersonalEfficiency_totalEfficiency_eb2592a8',
+    xm = 'PersonalEfficiency_totalEfficiency__notInteractive_4b33f28d',
+    Nm = 'PersonalEfficiency_totalEfficiencyTable_9139933',
+    jm = 'PersonalEfficiency_tableWrapper_cd2e7488',
+    wm = 'PersonalEfficiency_overlayDivider_52284c35',
+    Im = 'PersonalEfficiency_overlayDivider__closed_6b67c790',
+    Am = 'PersonalEfficiency_clarificationWrapper_5f3072b1',
+    Cm = { row: 'PersonalEfficiency_headerRow_6acaa215' };
+function Sm() {
+    const { opened: s } = eu(),
+        { api: n } = J();
     return (
         t.useLayoutEffect(() => {
             s && n.applyScroll(0, { immediate: !0 });
         }, [s, n]),
         e.jsxs(e.Fragment, {
             children: [
-                e.jsx('div', { className: a(nm, !s && im), onWheel: n.handleMouseWheel }),
-                e.jsx(gu.Header, { classNames: pm }),
-                e.jsx(gu.Body, { children: e.jsx(gu.Footer, {}) }),
+                e.jsx('div', { className: a(hm, !s && gm), onWheel: n.handleMouseWheel }),
+                e.jsx(Eu.Header, { classNames: Cm }),
+                e.jsx(Eu.Body, { children: e.jsx(Eu.Footer, {}) }),
             ],
         })
     );
 }
-const fm = V.cubicBezier(0.33, 0, 0.25, 1),
-    vm = 'first',
-    bm = 'second',
-    hm = 'closedArrowInLoop',
-    gm = 'openedArrowInLoop',
-    ym = l(function ({ visible: s, totalEfficiencyStylesApi: i }) {
-        const { model: r } = oo(),
+const Bm = O.cubicBezier(0.33, 0, 0.25, 1),
+    Pm = 'first',
+    Rm = 'second',
+    km = 'closedArrowInLoop',
+    Em = 'openedArrowInLoop',
+    Tm = l(function ({ visible: s, totalEfficiencyStylesApi: i }) {
+        const { model: r } = No(),
             l = r.computes.personalEffiency(),
-            { closedPosition: o, overlayApi: c, shadowApi: d, arrowStylesApi: u } = Wd(),
-            { breakpoint: m } = Ae(),
-            [p, _] = t.useState(hm),
+            { closedPosition: o, overlayApi: c, shadowApi: d, arrowStylesApi: u } = eu(),
+            { breakpoint: m } = Se(),
+            [p, _] = t.useState(km),
             [f, v] = w(() => ({ opacity: 0 })),
             b = t.useMemo(
                 () =>
                     (function ({ breakpointName: t, assault: s, defend: n }) {
-                        const i = 'small' === t ? Ye.extraSmall : t;
+                        const i = 'small' === t ? Ze.extraSmall : t;
                         return [
-                            qu.accessor('account', {
-                                id: mu.account,
-                                header: () => e.jsx(Ru, { name: mu.account }),
-                                footer: () => e.jsx(Cu, { assault: s, defend: n }),
+                            om.accessor('account', {
+                                id: Au.account,
+                                header: () => e.jsx($u, { name: Au.account }),
+                                footer: () => e.jsx(Mu, { assault: s, defend: n }),
                                 enableSorting: !1,
-                                cell: (a) => e.jsx(ju, { account: a.getValue() }),
-                                meta: { className: a(Fu, Lu), column: xu[mu.account][i] },
+                                cell: (a) => e.jsx(zu, { account: a.getValue() }),
+                                meta: { className: a(sm, im), column: Du[Au.account][i] },
                             }),
-                            qu.accessor('vehicle', {
-                                id: mu.vehicle,
+                            om.accessor('vehicle', {
+                                id: Au.vehicle,
                                 header: void 0,
                                 enableSorting: !1,
-                                cell: (a) => e.jsx(Gu, { vehicle: a.getValue() }),
-                                meta: { column: xu[mu.vehicle][i] },
+                                cell: (a) => e.jsx(tm, { vehicle: a.getValue() }),
+                                meta: { column: Du[Au.vehicle][i] },
                             }),
-                            qu.accessor('killed', {
-                                id: mu.targetKills,
-                                header: (a) => e.jsx(Ru, { name: mu.targetKills, info: a }),
+                            om.accessor('killed', {
+                                id: Au.targetKills,
+                                header: (a) => e.jsx($u, { name: Au.targetKills, info: a }),
                                 enableSorting: !1,
                                 cell: (a) =>
-                                    e.jsx(ku, {
-                                        name: mu.targetKills,
+                                    e.jsx(Xu, {
+                                        name: Au.targetKills,
                                         value: a.getValue(),
                                         userName: a.row.original.account.username,
-                                        className: Xu,
+                                        className: rm,
                                     }),
-                                meta: { column: yu, className: a(Fu, $u) },
+                                meta: { column: Tu, className: a(sm, nm) },
                             }),
-                            qu.accessor('damageDealt', {
-                                id: mu.damageDealt,
-                                header: (a) => e.jsx(Ru, { name: mu.damageDealt, info: a }),
+                            om.accessor('damageDealt', {
+                                id: Au.damageDealt,
+                                header: (a) => e.jsx($u, { name: Au.damageDealt, info: a }),
                                 enableSorting: !1,
                                 cell: (a) =>
-                                    e.jsx(Wu, {
+                                    e.jsx(em, {
                                         ...a.getValue(),
-                                        name: mu.damageDealt,
+                                        name: Au.damageDealt,
                                         userName: a.row.original.account.username,
-                                        className: Xu,
+                                        className: rm,
                                     }),
-                                meta: { className: a(Fu, $u), column: yu },
+                                meta: { className: a(sm, nm), column: Tu },
                             }),
-                            qu.accessor('damageBlockedByArmor', {
-                                id: mu.damageBlockedByArmor,
-                                header: (a) => e.jsx(Ru, { name: mu.damageBlockedByArmor, info: a }),
+                            om.accessor('damageBlockedByArmor', {
+                                id: Au.damageBlockedByArmor,
+                                header: (a) => e.jsx($u, { name: Au.damageBlockedByArmor, info: a }),
                                 enableSorting: !1,
                                 cell: (a) =>
-                                    e.jsx(Wu, {
+                                    e.jsx(em, {
                                         ...a.getValue(),
-                                        name: mu.damageBlockedByArmor,
+                                        name: Au.damageBlockedByArmor,
                                         userName: a.row.original.account.username,
-                                        className: Xu,
+                                        className: rm,
                                     }),
-                                meta: { className: a(Fu, $u), column: yu },
+                                meta: { className: a(sm, nm), column: Tu },
                             }),
-                            qu.accessor('damageAssisted', {
-                                id: mu.damageAssisted,
-                                header: (a) => e.jsx(Ru, { name: mu.damageAssisted, info: a }),
+                            om.accessor('damageAssisted', {
+                                id: Au.damageAssisted,
+                                header: (a) => e.jsx($u, { name: Au.damageAssisted, info: a }),
                                 enableSorting: !1,
                                 cell: (a) =>
-                                    e.jsx(Tu, {
+                                    e.jsx(qu, {
                                         value: a.getValue(),
-                                        name: mu.damageAssisted,
+                                        name: Au.damageAssisted,
                                         userName: a.row.original.account.username,
-                                        className: Ku,
+                                        className: lm,
                                     }),
-                                meta: { className: a(Fu, $u), column: yu },
+                                meta: { className: a(sm, nm), column: Tu },
                             }),
-                            qu.accessor('damageAssistedStun', {
-                                id: mu.damageAssistedStun,
-                                header: (a) => e.jsx(Ru, { name: mu.damageAssistedStun, info: a }),
+                            om.accessor('damageAssistedStun', {
+                                id: Au.damageAssistedStun,
+                                header: (a) => e.jsx($u, { name: Au.damageAssistedStun, info: a }),
                                 enableSorting: !1,
                                 cell: (a) =>
-                                    e.jsx(Wu, {
+                                    e.jsx(em, {
                                         ...a.getValue(),
-                                        name: mu.damageAssistedStun,
+                                        name: Au.damageAssistedStun,
                                         userName: a.row.original.account.username,
-                                        className: Xu,
+                                        className: rm,
                                     }),
-                                meta: { className: a(Fu, $u), column: yu },
+                                meta: { className: a(sm, nm), column: Tu },
                             }),
-                            qu.accessor('spotted', {
-                                id: mu.spotted,
-                                header: (a) => e.jsx(Ru, { name: mu.spotted, info: a }),
+                            om.accessor('spotted', {
+                                id: Au.spotted,
+                                header: (a) => e.jsx($u, { name: Au.spotted, info: a }),
                                 enableSorting: !1,
                                 cell: (a) =>
-                                    e.jsx(ku, {
-                                        name: mu.spotted,
+                                    e.jsx(Xu, {
+                                        name: Au.spotted,
                                         value: a.getValue(),
                                         userName: a.row.original.account.username,
-                                        className: Xu,
+                                        className: rm,
                                     }),
-                                meta: { className: a(Fu, $u), column: yu },
+                                meta: { className: a(sm, nm), column: Tu },
                             }),
-                            qu.accessor('criticalDamage', {
-                                id: mu.criticalDamage,
-                                header: (a) => e.jsx(Ru, { name: mu.criticalDamage, info: a }),
+                            om.accessor('criticalDamage', {
+                                id: Au.criticalDamage,
+                                header: (a) => e.jsx($u, { name: Au.criticalDamage, info: a }),
                                 enableSorting: !1,
                                 cell: (a) =>
-                                    e.jsx(Tu, {
+                                    e.jsx(qu, {
                                         value: a.getValue(),
-                                        name: mu.criticalDamage,
+                                        name: Au.criticalDamage,
                                         userName: a.row.original.account.username,
-                                        className: Ku,
+                                        className: lm,
                                     }),
-                                meta: { className: a(Fu, $u), column: yu },
+                                meta: { className: a(sm, nm), column: Tu },
                             }),
                         ];
                     })({ breakpointName: m.name, assault: l.assault, defend: l.defend }),
@@ -4651,10 +4735,10 @@ const fm = V.cubicBezier(0.33, 0, 0.25, 1),
             );
         return (
             t.useEffect(() => {
-                if (s && p === hm) return (u.stop(), void _(vm));
-                if (!s && p === gm) return (u.stop(), void _(bm));
+                if (s && p === km) return (u.stop(), void _(Pm));
+                if (!s && p === Em) return (u.stop(), void _(Rm));
                 switch (p) {
-                    case hm:
+                    case km:
                         u.start({
                             from: { x: '-50%', y: '0', rotate: 180, opacity: 1 },
                             to: [
@@ -4662,11 +4746,11 @@ const fm = V.cubicBezier(0.33, 0, 0.25, 1),
                                 { x: '-50%', y: '0', rotate: 180, opacity: 0 },
                                 { x: '-50%', y: '0', rotate: 180, opacity: 1 },
                             ],
-                            config: { easing: fm, duration: 800 },
+                            config: { easing: Bm, duration: 800 },
                             loop: !0,
                         });
                         break;
-                    case vm:
+                    case Pm:
                         (u.start({
                             to: { opacity: 0, x: '-50%', y: s ? '40rem' : '0', rotate: s ? 0 : 180 },
                             immediate: !0,
@@ -4674,40 +4758,40 @@ const fm = V.cubicBezier(0.33, 0, 0.25, 1),
                             i.start({
                                 to: { opacity: s ? 0 : 1 },
                                 delay: s ? 0 : 150,
-                                config: { easing: fm, duration: 200 },
+                                config: { easing: Bm, duration: 200 },
                             }),
                             c.start({
                                 to: { y: s ? '0' : o, backgroundColor: s ? 'rgba(22, 30, 40, 0.96)' : 'transparent' },
-                                config: { easing: fm, duration: 200 },
+                                config: { easing: Bm, duration: 200 },
                                 delay: s ? 0 : 150,
-                                onRest: () => _(s ? bm : hm),
+                                onRest: () => _(s ? Rm : km),
                             }),
                             d.start({
                                 to: { opacity: s ? 1 : 0 },
                                 delay: s ? 0 : 150,
-                                config: { easing: fm, duration: 200 },
+                                config: { easing: Bm, duration: 200 },
                             }),
                             v.start({
                                 to: { opacity: s ? 1 : 0 },
                                 delay: s ? 150 : 0,
-                                config: { easing: fm, duration: 100 },
+                                config: { easing: Bm, duration: 100 },
                             }));
                         break;
-                    case bm:
+                    case Rm:
                         (u.start({
                             to: { opacity: 0, x: '-50%', y: s ? '40rem' : '0', rotate: s ? 0 : 180 },
                             immediate: !0,
                         }),
-                            _(s ? gm : vm));
+                            _(s ? Em : Pm));
                         break;
-                    case gm: {
-                        const e = m.weight > Ce.large.weight ? '53rem' : '40rem';
+                    case Em: {
+                        const e = m.weight > Be.large.weight ? '53rem' : '40rem';
                         u.start({
                             from: { x: '-50%', y: e, rotate: 0, opacity: 1 },
                             to: [
                                 {
                                     x: '-50%',
-                                    y: m.weight > Ce.large.weight ? '58rem' : '45rem',
+                                    y: m.weight > Be.large.weight ? '58rem' : '45rem',
                                     rotate: 0,
                                     opacity: 0,
                                     config: { duration: 1e3 },
@@ -4715,7 +4799,7 @@ const fm = V.cubicBezier(0.33, 0, 0.25, 1),
                                 { x: '-50%', y: e, rotate: 0, opacity: 0, config: { duration: 400 } },
                                 { x: '-50%', y: e, rotate: 0, opacity: 1, config: { duration: 200 } },
                             ],
-                            config: { easing: fm, duration: 800 },
+                            config: { easing: Bm, duration: 800 },
                             loop: !0,
                         });
                         break;
@@ -4723,28 +4807,28 @@ const fm = V.cubicBezier(0.33, 0, 0.25, 1),
                 }
             }, [p, s, o, m.weight, u, c, d, v, i]),
             t.useLayoutEffect(() => {
-                !1 === s && p === hm && c.start({ to: { y: o }, immediate: !0 });
+                !1 === s && p === km && c.start({ to: { y: o }, immediate: !0 });
             }, [o, s, p, c]),
             e.jsx(n.div, {
-                className: cm,
+                className: jm,
                 style: f,
-                children: e.jsx(gu, { config: b, data: l, className: a(Yu, !s && Ju), children: e.jsx(_m, {}) }),
+                children: e.jsx(Eu, { config: b, data: l, className: a(dm, !s && um), children: e.jsx(Sm, {}) }),
             })
         );
     }),
-    xm = l(function () {
-        const { model: s } = oo(),
+    Dm = l(function () {
+        const { model: s } = No(),
             i = s.computes.personalEffiency(),
             r = s.battleInfo.get().finishReasonClarification,
             l = k.resolve('strings'),
-            o = H(),
-            { hintKeyRef: c, overlayDividerRef: d, personalEfficiencyRef: u, completedSteps: m } = vt(),
-            p = !1 === m.has(mt.fifth),
+            o = M(),
+            { hintKeyRef: c, overlayDividerRef: d, personalEfficiencyRef: u, completedSteps: m } = ht(),
+            p = !1 === m.has(_t.fifth),
             [_] = w(() => ({ from: { opacity: 0 }, ref: c })),
             [f] = w(() => ({ from: { maskSize: '0% 100%' }, ref: d })),
             [v] = w(() => ({ from: { opacity: 0 }, ref: u })),
-            b = re({ value: 159 }, { medium: { value: 187 }, large: { value: 199 }, extraLarge: { value: 267 } }),
-            { active: h } = L(),
+            b = oe({ value: 159 }, { medium: { value: 187 }, large: { value: 199 }, extraLarge: { value: 267 } }),
+            { active: h } = K(),
             g = t.useRef(null),
             [y, x] = t.useState(0),
             [N, j] = t.useState(!1),
@@ -4757,46 +4841,46 @@ const fm = V.cubicBezier(0.33, 0, 0.25, 1),
             const a = (null == (e = g.current) ? void 0 : e.getBoundingClientRect().height) || 0;
             a > 0 && x(Math.round(a));
         }, [x]);
-        le(g, C);
+        ce(g, C);
         const S = t.useMemo(() => (y > 0 ? na(y) - b.value + 'rem' : '150%'), [y, b]),
-            B = t.useMemo(Uu, []);
+            B = t.useMemo(cm, []);
         if (0 === i.assault && 0 === i.defend && 0 === i.rows.length)
             return e.jsxs(n.div, {
                 style: v,
-                className: Qu,
+                className: pm,
                 children: [
                     '' !== r &&
                         e.jsx('div', {
-                            className: em,
+                            className: _m,
                             children: l.readOrEmpty(`battle_results.finish.clarification.${r}`),
                         }),
                     e.jsx('div', {
-                        className: em,
+                        className: _m,
                         children: l.readOrEmpty('battle_results.common.battleEfficiency.noEfficiency'),
                     }),
                 ],
             });
         return e.jsxs(e.Fragment, {
             children: [
-                e.jsx(Md, {
+                e.jsx(au, {
                     closedPosition: S,
                     visible: N,
                     changeVisible: j,
                     children: e.jsx('div', {
-                        className: a(am, 0 === y && tm, p && sm),
-                        children: e.jsxs(eu, {
+                        className: a(fm, 0 === y && vm, p && bm),
+                        children: e.jsxs(_u, {
                             ref: g,
                             children: [
                                 e.jsx(n.div, {
-                                    className: a(dm, !1 === N && um),
+                                    className: a(wm, !1 === N && Im),
                                     style: f,
-                                    children: e.jsx(eu.OverlayDivider, {}),
+                                    children: e.jsx(_u.OverlayDivider, {}),
                                 }),
-                                e.jsx(ym, { visible: N, totalEfficiencyStylesApi: A }),
+                                e.jsx(Tm, { visible: N, totalEfficiencyStylesApi: A }),
                                 e.jsx(n.div, {
-                                    className: Zu,
+                                    className: mm,
                                     style: _,
-                                    children: e.jsx(eu.HintKey, { disabled: h !== Ia.overview }),
+                                    children: e.jsx(_u.HintKey, { disabled: h !== Ia.overview }),
                                 }),
                             ],
                         }),
@@ -4804,7 +4888,7 @@ const fm = V.cubicBezier(0.33, 0, 0.25, 1),
                 }),
                 e.jsx(n.div, {
                     style: I,
-                    className: a(rm, (N || p) && lm),
+                    className: a(ym, (N || p) && xm),
                     onClick: function (e) {
                         (e.stopPropagation(),
                             j(!0),
@@ -4816,26 +4900,26 @@ const fm = V.cubicBezier(0.33, 0, 0.25, 1),
                         children: [
                             '' !== r &&
                                 e.jsx('div', {
-                                    className: mm,
+                                    className: Am,
                                     onClick: (e) => e.stopPropagation(),
                                     children: e.jsx('div', {
-                                        className: em,
+                                        className: _m,
                                         children: l.readOrEmpty(`battle_results.finish.clarification.${r}`),
                                     }),
                                 }),
-                            e.jsx(gu, { config: B, data: i, className: om, children: e.jsx(gu.Header, {}) }),
+                            e.jsx(Eu, { config: B, data: i, className: Nm, children: e.jsx(Eu.Header, {}) }),
                         ],
                     }),
                 }),
             ],
         });
     }),
-    Nm = F('Overview', wd),
-    jm = l(function ({ className: s }) {
+    Vm = L('Overview', zd),
+    zm = l(function ({ className: s }) {
         var i;
         const r = k.resolve('strings'),
-            l = H(),
-            { model: o, controls: c } = oo(),
+            l = M(),
+            { model: o, controls: c } = No(),
             d = o.additionalBonus.get(),
             u = o.battleInfo.get(),
             m = o.personalEfficiency.achievements.get(),
@@ -4846,27 +4930,27 @@ const fm = V.cubicBezier(0.33, 0, 0.25, 1),
                 earnedCurrenciesRef: v,
                 bonusRef: b,
                 setAllMedalsAnimated: h,
-            } = vt(),
+            } = ht(),
             [g] = w(() => ({ from: { opacity: 0, y: '-10rem' }, ref: _ })),
             [y] = w(() => ({ from: { maskSize: '0% 100%' }, ref: f })),
             [x] = w(() => ({ from: { opacity: 0, y: '-10rem' }, ref: v })),
             [N] = w(() => ({ from: { opacity: 0, y: '10rem' }, ref: b })),
-            { api: j, setCompletedAnimationIndexes: I } = jo(),
+            { api: j, setCompletedAnimationIndexes: I } = Vo(),
             A = o.computes.premiumAndStandartEarnings(),
             C = null == (i = o.battleInfo.get()) ? void 0 : i.status,
-            S = t.useMemo(() => (void 0 !== u && Fl.includes(null == u ? void 0 : u.modeName) ? Gl : zl), [u]);
+            S = t.useMemo(() => (void 0 !== u && to.includes(null == u ? void 0 : u.modeName) ? ao : Yl), [u]);
         return (
             t.useEffect(() => {
                 0 === m.length && h(!0);
             }, [m.length, h]),
             t.useEffect(() => {
-                if (p === mt.immediate)
+                if (p === _t.immediate)
                     return (
                         j.start(() => ({ x: 0, y: 0, scale: 1, opacity: 1, immediate: !0 })),
                         h(!0),
-                        void I(new Set(ke(m.length, (e) => e)))
+                        void I(new Set(Te(m.length, (e) => e)))
                     );
-                if (p === mt.first) {
+                if (p === _t.first) {
                     const e = 500 * Math.log(m.length),
                         a = 150 * Math.log(m.length);
                     (j.start((t) => {
@@ -4877,11 +4961,11 @@ const fm = V.cubicBezier(0.33, 0, 0.25, 1),
                             y: 0,
                             scale: 1,
                             delay: 200 * t + s,
-                            config: { duration: 400 + n, easing: V.cubicBezier(1, 0, 0.95, 1) },
+                            config: { duration: 400 + n, easing: O.cubicBezier(1, 0, 0.95, 1) },
                             onRest() {
                                 (l.play('achievementAppeared', { target: 'overview' }),
                                     t === m.length - 1 && h(!0),
-                                    I((e) => O(e, t)));
+                                    I((e) => W(e, t)));
                             },
                         };
                     }),
@@ -4890,73 +4974,78 @@ const fm = V.cubicBezier(0.33, 0, 0.25, 1),
                             delay: 150 + 200 * t + (e - 500 * Math.log(m.length - t)),
                             config: {
                                 duration: 250 + (a - 150 * Math.log(m.length - t)),
-                                easing: V.cubicBezier(0.33, 0, 0.25, 1),
+                                easing: O.cubicBezier(0.33, 0, 0.25, 1),
                             },
                         })));
                 }
             }, [p, j, I, l, m.length, h]),
-            e.jsxs(Nm, {
+            e.jsxs(Vm, {
                 className: s,
                 children: [
-                    e.jsx('div', { className: jd }),
+                    e.jsx('div', { className: Vd }),
                     o.playerSatisfaction.get().isPlayerSatisfactionInterfaceEnabled &&
-                        e.jsx(Xo, {
+                        e.jsx(ic, {
                             state: o.playerSatisfaction.get().state,
                             onSatisfactionRatingSelected: c.onSatisfactionRatingSelected,
                         }),
-                    e.jsx(Od, {}),
+                    e.jsx(Zd, {}),
                     e.jsxs('div', {
-                        className: a(Id, 0 === m.length && Ad),
+                        className: a(Od, 0 === m.length && Hd),
                         children: [
                             e.jsx('div', {
-                                className: Cd,
+                                className: Wd,
                                 children: e.jsx(n.div, {
                                     style: g,
-                                    className: Sd,
+                                    className: Gd,
                                     children: e.jsx('div', {
-                                        className: Bd,
+                                        className: Fd,
                                         'data-test-id': 'winStatus',
-                                        children: T.toUpperCase(r.readOrEmpty(`battle_results.status.${C}`)),
+                                        children: V.toUpperCase(r.readOrEmpty(`battle_results.status.${C}`)),
                                     }),
                                 }),
                             }),
-                            e.jsx(Eo, { className: Rd }),
-                            e.jsx(n.div, { style: x, className: Td, children: e.jsx(xd, {}) }),
-                            e.jsx(n.div, {
-                                style: y,
-                                className: Pd,
-                                children: e.jsx(gt, { classNames: { base: kd, image: Ed } }),
-                            }),
-                            e.jsx(Uo, {
-                                ...d,
-                                premiumAndStandartEarnings: A,
-                                applyBonus: c.applyBonus,
-                                handleAdvertisement: (e) => c.useAdvertisement(e),
-                                supportedAdvertisements: S,
-                                showBonusDetails: c.showBonusDetails,
-                                children: e.jsx(n.div, { style: N, children: e.jsx(id, { className: Dd }) }),
+                            e.jsxs('div', {
+                                className: Md,
+                                children: [
+                                    e.jsx(Xo, { className: $d }),
+                                    e.jsx(n.div, { style: x, className: qd, children: e.jsx(Td, {}) }),
+                                    e.jsx(n.div, {
+                                        style: y,
+                                        className: Ld,
+                                        children: e.jsx(xt, { classNames: { base: Xd, image: Kd } }),
+                                    }),
+                                    e.jsx(oc, {
+                                        ...d,
+                                        premiumAndStandartEarnings: A,
+                                        applyBonus: c.applyBonus,
+                                        handleAdvertisement: (e) => c.useAdvertisement(e),
+                                        supportedAdvertisements: S,
+                                        showBonusDetails: c.showBonusDetails,
+                                        children: e.jsx(n.div, { style: N, children: e.jsx(hd, { className: Ud }) }),
+                                    }),
+                                ],
                             }),
                         ],
                     }),
-                    e.jsx(xm, {}),
+                    e.jsx(Dm, {}),
                 ],
             })
         );
     }),
-    wm = l(function (a) {
-        const { model: t } = oo(),
+    Om = l(function (a) {
+        const { model: t } = No(),
             s = t.personalEfficiency.achievements.get(),
             n = t.computes.personalInfo().vehicle.nation;
-        return e.jsx(Io, { achievements: s, vehicleNation: n, children: e.jsx(jm, { ...a }) });
+        return e.jsx(Oo, { achievements: s, vehicleNation: n, children: e.jsx(zm, { ...a }) });
     }),
-    Im = { divider: 'Divider_80a19f4b' },
-    Am = t.forwardRef(function ({ classNames: t, className: s, ...n }, i) {
+    Hm = { divider: 'Divider_80a19f4b' },
+    Wm = t.forwardRef(function ({ classNames: t, className: s, ...n }, i) {
         return e.jsx('div', {
             ...n,
             ref: i,
-            className: a(Im.divider, null == t ? void 0 : t.base, s),
-            children: e.jsx(X, {
-                className: a(Im.dividerImage, null == t ? void 0 : t.image),
+            className: a(Hm.divider, null == t ? void 0 : t.base, s),
+            children: e.jsx(q, {
+                className: a(Hm.dividerImage, null == t ? void 0 : t.image),
                 width: '100%',
                 height: '100%',
                 path: 'post_battle.row_divider',
@@ -4964,7 +5053,7 @@ const fm = V.cubicBezier(0.33, 0, 0.25, 1),
             }),
         });
     });
-const Cm = {
+const Mm = {
     header: 'Header_ecb415bd',
     vehicle: 'Header_vehicle_ec875116',
     vehicleImageWrapper: 'Header_vehicleImageWrapper_f07116f5',
@@ -4985,26 +5074,26 @@ const Cm = {
     achievement__extinct: 'Header_achievement__extinct_19f6e11',
     achievementIcon: 'Header_achievementIcon_e6989d30',
 };
-function Sm(e, a) {
+function Gm(e, a) {
     return void 0 === a ? 'default' : a === e ? 'hover' : 'extinct';
 }
-const Bm = t.forwardRef(function (
+const Fm = t.forwardRef(function (
     { achievement: s, achievementsLength: n, index: i, hoverIndex: r, setHoverIndex: l, ...o },
     c,
 ) {
-    const d = H(),
+    const d = M(),
         u = ia(
             s.tooltipId,
             t.useMemo(() => JSON.parse(s.tooltipArgs), [s.tooltipArgs]),
         ),
-        m = re(
+        m = oe(
             { width: '48rem', height: '48rem', path: `achievement.c_48x48.${s.iconName}` },
             { medium: { width: '67rem', height: '71rem', path: `achievement.${s.iconName}` } },
         );
     return e.jsx('div', {
         ...o,
         ...u,
-        className: a(Cm.achievement, Cm[`achievement__${Sm(i, r)}`]),
+        className: a(Mm.achievement, Mm[`achievement__${Gm(i, r)}`]),
         style: { zIndex: i === r ? n + 1 : n - i },
         onMouseEnter: function (e) {
             (u.onMouseEnter(e),
@@ -5014,18 +5103,18 @@ const Bm = t.forwardRef(function (
         onMouseLeave: () => {
             (u.onMouseLeave(), l(void 0));
         },
-        children: e.jsx(X, { ref: c, className: Cm.achievementIcon, ...m }, s.iconName),
+        children: e.jsx(q, { ref: c, className: Mm.achievementIcon, ...m }, s.iconName),
     });
 });
-function Rm({ vehicleStatusKey: e, anonymized: a, clanAbbrev: t, personal: s, abbondonBattle: n }) {
+function $m({ vehicleStatusKey: e, anonymized: a, clanAbbrev: t, personal: s, abbondonBattle: n }) {
     if (s && n) return 'battle_results.common.vehicleState.prematureLeave';
-    return !1 === to.includes(e)
+    return !1 === vo.includes(e)
         ? `battle_results.common.vehicleState.${e}`
         : a || '' === t
           ? `battle_results.common.vehicleState.${e}_with_killername`
           : `battle_results.common.vehicleState.${e}_with_killername_and_clan`;
 }
-const Pm = l(function ({
+const Lm = l(function ({
         team: s,
         account: n,
         vehicle: i,
@@ -5037,10 +5126,10 @@ const Pm = l(function ({
     }) {
         const u = k.resolve('strings'),
             [m, p] = t.useState(void 0),
-            { model: _ } = oo(),
+            { model: _ } = No(),
             f = _.computes.personalInfo(),
-            v = re({ width: '230rem', height: '184rem' }, { medium: { width: '290rem', height: '232rem' } }),
-            b = ro({ personal: o, platoonType: io(s, f.squadIndex, l), anonymizer: n.anonymizer }),
+            v = oe({ width: '230rem', height: '184rem' }, { medium: { width: '290rem', height: '232rem' } }),
+            b = yo({ personal: o, platoonType: go(s, f.squadIndex, l), anonymizer: n.anonymizer }),
             h = E({
                 header: u
                     .readOrEmpty('tooltips.anonymizer.teamStats.header')
@@ -5052,74 +5141,74 @@ const Pm = l(function ({
         const x = b ? d.fakeUsername : d.username,
             N = void 0 === i;
         return e.jsxs('div', {
-            className: Cm.header,
+            className: Mm.header,
             children: [
                 e.jsx('div', {
-                    className: Cm.vehicleImageWrapper,
-                    children: e.jsx(aa, { name: N ? 'tank_empty' : i.techName, width: v.width, height: v.height }),
+                    className: Mm.vehicleImageWrapper,
+                    children: e.jsx(sa, { name: N ? 'tank_empty' : i.techName, width: v.width, height: v.height }),
                 }),
                 e.jsxs('div', {
-                    className: Cm.info,
+                    className: Mm.info,
                     children: [
-                        e.jsxs(Je, {
-                            className: Cm.accountInfo,
+                        e.jsxs(Qe, {
+                            className: Mm.accountInfo,
                             children: [
-                                n.badge !== Ml &&
-                                    e.jsx(Je.Badge, {
-                                        className: Cm.accountInfoGap,
-                                        size: Je.Badge.sizes.x48x48,
+                                n.badge !== eo &&
+                                    e.jsx(Qe.Badge, {
+                                        className: Mm.accountInfoGap,
+                                        size: Qe.Badge.sizes.x48x48,
                                         badgeId: n.badge,
                                     }),
-                                e.jsx(Je.Name, {
-                                    className: a(Cm.accountName, Cm.accountInfoGap),
-                                    children: e.jsx(Ze, { text: b ? n.fakeUsername : n.username }),
+                                e.jsx(Qe.Name, {
+                                    className: a(Mm.accountName, Mm.accountInfoGap),
+                                    children: e.jsx(ea, { text: b ? n.fakeUsername : n.username }),
                                 }),
                                 '' !== n.clanAbbreviation &&
                                     !b &&
-                                    e.jsx(Je.ClanTag, {
-                                        className: Cm.clanAbbreviation,
+                                    e.jsx(Qe.ClanTag, {
+                                        className: Mm.clanAbbreviation,
                                         children: e.jsx(P, {
                                             path: 'common.clanTag',
                                             params: { abbrev: n.clanAbbreviation },
                                             brackets: { start: '{', end: '}' },
                                         }),
                                     }),
-                                n.igrType !== dl &&
-                                    e.jsx(Je.IgrIcon, { size: Je.IgrIcon.sizes.x64x28, className: Cm.accountInfoGap }),
-                                n.suffixBadge !== Ml &&
-                                    e.jsx(Je.Stripe, {
-                                        size: Je.Stripe.sizes.regular,
+                                n.igrType !== Il &&
+                                    e.jsx(Qe.IgrIcon, { size: Qe.IgrIcon.sizes.x64x28, className: Mm.accountInfoGap }),
+                                n.suffixBadge !== eo &&
+                                    e.jsx(Qe.Stripe, {
+                                        size: Qe.Stripe.sizes.regular,
                                         badgeId: n.suffixBadge,
-                                        className: Cm.accountInfoGap,
+                                        className: Mm.accountInfoGap,
                                     }),
                                 n.anonymizer &&
-                                    e.jsx(Je.AnonymizerIcon, {
+                                    e.jsx(Qe.AnonymizerIcon, {
                                         ...h,
-                                        size: Je.AnonymizerIcon.sizes.x32x32,
-                                        className: Cm.anonymizerIcon,
+                                        size: Qe.AnonymizerIcon.sizes.x32x32,
+                                        className: Mm.anonymizerIcon,
                                     }),
                             ],
                         }),
                         e.jsx('div', {
-                            className: Cm.vehicle,
+                            className: Mm.vehicle,
                             children: N
                                 ? e.jsx(P, { path: 'ingame_gui.players_panel.unknown_vehicle' })
                                 : e.jsxs(e.Fragment, {
                                       children: [
-                                          e.jsx(ta, { value: i.tier, className: a(Cm.vehicleLevel, Cm.vehicleGap) }),
-                                          e.jsx(sa, {
+                                          e.jsx(T, { value: i.tier, className: a(Mm.vehicleLevel, Mm.vehicleGap) }),
+                                          e.jsx(D, {
                                               type: i.type,
                                               size: 'x24x24',
-                                              className: a(Cm.vehicleType, Cm.vehicleGap),
+                                              className: a(Mm.vehicleType, Mm.vehicleGap),
                                           }),
-                                          e.jsx('div', { className: Cm.vehicleName, children: i.longName }),
+                                          e.jsx('div', { className: Mm.vehicleName, children: i.longName }),
                                       ],
                                   }),
                         }),
                         e.jsx('div', {
-                            className: Cm.vehicleState,
+                            className: Mm.vehicleState,
                             children: e.jsx(P, {
-                                path: Rm({
+                                path: $m({
                                     vehicleStatusKey: g,
                                     anonymized: b,
                                     personal: o,
@@ -5131,10 +5220,10 @@ const Pm = l(function ({
                         }),
                         0 !== r.length &&
                             e.jsx('div', {
-                                className: Cm.achievements,
-                                children: J(Qr(r), (a, t) =>
+                                className: Mm.achievements,
+                                children: Q(_l(r), (a, t) =>
                                     e.jsx(
-                                        Bm,
+                                        Fm,
                                         {
                                             index: t,
                                             hoverIndex: m,
@@ -5151,26 +5240,26 @@ const Pm = l(function ({
             ],
         });
     }),
-    km = F('StatisticsLabel'),
-    Em = k.resolve('strings'),
-    Tm = t.forwardRef(function ({ labelKey: a, ...t }, s) {
-        return e.jsx(km, { ...t, ref: s, children: Em.readOrEmpty(a) });
+    Xm = L('StatisticsLabel'),
+    Km = k.resolve('strings'),
+    qm = t.forwardRef(function ({ labelKey: a, ...t }, s) {
+        return e.jsx(Xm, { ...t, ref: s, children: Km.readOrEmpty(a) });
     }),
-    Dm = 'Value_798a6cdd',
-    Vm = 'Value_separator_798a6cdd',
-    zm = k.resolve('strings');
-function Om(e, a) {
+    Um = 'Value_798a6cdd',
+    Ym = 'Value_separator_798a6cdd',
+    Jm = k.resolve('strings');
+function Zm(e, a) {
     switch (e) {
-        case $l.Integer:
-            return T.formatNumber('integral', a);
-        case $l.Float:
-            return T.formatReal('fractional', a);
+        case so.Integer:
+            return V.formatNumber('integral', a);
+        case so.Float:
+            return V.formatReal('fractional', a);
         default:
             return a;
     }
 }
-const Hm = F('StatisticsValue', Dm),
-    Wm = t.forwardRef(function (
+const Qm = L('StatisticsValue', Um),
+    ep = t.forwardRef(function (
         {
             labelKey: s,
             value: n,
@@ -5182,11 +5271,11 @@ const Hm = F('StatisticsValue', Dm),
         },
         d,
     ) {
-        return e.jsx(Hm, {
+        return e.jsx(Qm, {
             ...c,
             ref: d,
             className: a(null == o ? void 0 : o.base, l),
-            children: J(n, (l, c) =>
+            children: Q(n, (l, c) =>
                 e.jsxs(
                     t.Fragment,
                     {
@@ -5196,12 +5285,12 @@ const Hm = F('StatisticsValue', Dm),
                                     0 === l && (null == o ? void 0 : o.zeroValue),
                                     l < 0 && (null == o ? void 0 : o.negativeValue),
                                 ),
-                                children: Om(i, l),
+                                children: Zm(i, l),
                             }),
                             c < n.length - 1 &&
                                 e.jsxs('div', {
-                                    className: a(Vm, null == o ? void 0 : o.separator),
-                                    children: [' ', zm.readOrEmpty(r), ' '],
+                                    className: a(Ym, null == o ? void 0 : o.separator),
+                                    children: [' ', Jm.readOrEmpty(r), ' '],
                                 }),
                         ],
                     },
@@ -5210,40 +5299,40 @@ const Hm = F('StatisticsValue', Dm),
             ),
         });
     }),
-    Mm = 'Index_scrollAreaContent_52a570a',
-    Gm = 'Index_scrollAreaContent__initialized_b2629fde',
-    Fm = 'Index_item_6b7cdfb0',
-    $m = 'Index_separator_add04e19',
-    Lm = F('Statistics', 'Index_statistics_638478ff'),
-    Xm = F('StatisticsItem', Fm),
-    Km = F('StatisticsItemSeparator', $m);
-function qm({ children: t, scrollbarProps: s, scrollAreaProps: n }) {
+    ap = 'Index_scrollAreaContent_52a570a',
+    tp = 'Index_scrollAreaContent__initialized_b2629fde',
+    sp = 'Index_item_6b7cdfb0',
+    np = 'Index_separator_add04e19',
+    ip = L('Statistics', 'Index_statistics_638478ff'),
+    rp = L('StatisticsItem', sp),
+    lp = L('StatisticsItemSeparator', np);
+function op({ children: t, scrollbarProps: s, scrollAreaProps: n }) {
     var i;
-    const r = U(),
-        l = Ct(r.api);
+    const r = J(),
+        l = Bt(r.api);
     return e.jsxs(e.Fragment, {
         children: [
-            e.jsx(Y, {
+            e.jsx(Z, {
                 ...n,
                 classNames: {
                     ...(null == n ? void 0 : n.classNames),
-                    content: a(Mm, l && Gm, null == (i = null == n ? void 0 : n.classNames) ? void 0 : i.content),
+                    content: a(ap, l && tp, null == (i = null == n ? void 0 : n.classNames) ? void 0 : i.content),
                 },
                 children: t,
             }),
-            e.jsx(q, { ...s }),
+            e.jsx(Y, { ...s }),
         ],
     });
 }
-const Um = t.forwardRef(function ({ scrollbarProps: a, scrollAreaProps: t, ...s }, n) {
-    return e.jsx(Lm, {
+const cp = t.forwardRef(function ({ scrollbarProps: a, scrollAreaProps: t, ...s }, n) {
+    return e.jsx(ip, {
         ...s,
         ref: n,
-        children: e.jsx(K, { children: e.jsx(qm, { ...s, scrollbarProps: a, scrollAreaProps: t }) }),
+        children: e.jsx(U, { children: e.jsx(op, { ...s, scrollbarProps: a, scrollAreaProps: t }) }),
     });
 });
-((Um.Item = Xm), (Um.Value = Wm), (Um.Label = Tm), (Um.Separator = Km));
-const Ym = {
+((cp.Item = rp), (cp.Value = ep), (cp.Label = qm), (cp.Separator = lp));
+const dp = {
     scrollbar: 'PlayerStatistics_scrollbar_987bbca2',
     scrollAreaContent: 'PlayerStatistics_scrollAreaContent_8636fa99',
     listItemSeparator: 'PlayerStatistics_listItemSeparator_32247273',
@@ -5256,7 +5345,7 @@ const Ym = {
     separator: 'PlayerStatistics_separator_4e8ac571',
     separatorSquare: 'PlayerStatistics_separatorSquare_5e440c20',
 };
-function Jm({ squareSize: a = 1, spacing: s = 2, backgroundColor: n = '#d9d9d9' }) {
+function up({ squareSize: a = 1, spacing: s = 2, backgroundColor: n = '#d9d9d9' }) {
     const i = t.useRef(null),
         [r, l] = t.useState(0),
         o = a + s,
@@ -5273,12 +5362,12 @@ function Jm({ squareSize: a = 1, spacing: s = 2, backgroundColor: n = '#d9d9d9' 
         t.useEffect(() => la(c), [c]),
         e.jsx('div', {
             ref: i,
-            className: Ym.separator,
+            className: dp.separator,
             children: Array.from({ length: r }).map((t, s) =>
                 e.jsx(
                     'div',
                     {
-                        className: Ym.separatorSquare,
+                        className: dp.separatorSquare,
                         style: { backgroundColor: n, width: `${a}rem`, height: `${a}rem`, left: s * o + 'rem' },
                     },
                     s,
@@ -5287,28 +5376,28 @@ function Jm({ squareSize: a = 1, spacing: s = 2, backgroundColor: n = '#d9d9d9' 
         })
     );
 }
-function Zm({ list: s }) {
-    return e.jsx(Um, {
-        scrollbarProps: { classNames: { base: Ym.scrollbar } },
-        scrollAreaProps: { classNames: { content: Ym.scrollAreaContent } },
-        children: J(s, (s) =>
+function mp({ list: s }) {
+    return e.jsx(cp, {
+        scrollbarProps: { classNames: { base: dp.scrollbar } },
+        scrollAreaProps: { classNames: { content: dp.scrollAreaContent } },
+        children: Q(s, (s) =>
             e.jsxs(
                 t.Fragment,
                 {
                     children: [
-                        e.jsxs(Um.Item, {
-                            className: Ym.listItem,
+                        e.jsxs(cp.Item, {
+                            className: dp.listItem,
                             children: [
-                                e.jsx(Um.Label, {
-                                    className: Ym.label,
+                                e.jsx(cp.Label, {
+                                    className: dp.label,
                                     labelKey: `battle_results.team.stats.labels_${s.labelKey}`,
                                 }),
-                                e.jsx(Um.Separator, { className: Ym.listItemSeparator, children: e.jsx(Jm, {}) }),
-                                e.jsx(Um.Value, {
+                                e.jsx(cp.Separator, { className: dp.listItemSeparator, children: e.jsx(up, {}) }),
+                                e.jsx(cp.Value, {
                                     classNames: {
-                                        base: Ym.value,
-                                        zeroValue: Ym.zeroValue,
-                                        separator: Ym.valueSeparator,
+                                        base: dp.value,
+                                        zeroValue: dp.zeroValue,
+                                        separator: dp.valueSeparator,
                                     },
                                     labelKey: s.labelKey,
                                     value: s.value,
@@ -5317,25 +5406,25 @@ function Zm({ list: s }) {
                             ],
                         }),
                         void 0 !== s.details &&
-                            J(s.details, (t) =>
+                            Q(s.details, (t) =>
                                 e.jsxs(
-                                    Um.Item,
+                                    cp.Item,
                                     {
-                                        className: a(Ym.listItem, Ym.listSubItem),
+                                        className: a(dp.listItem, dp.listSubItem),
                                         children: [
-                                            e.jsx(Um.Label, {
-                                                className: Ym.label,
+                                            e.jsx(cp.Label, {
+                                                className: dp.label,
                                                 labelKey: `battle_results.team.stats.labels_${t.labelKey}`,
                                             }),
-                                            e.jsx(Um.Separator, {
-                                                className: Ym.listItemSeparator,
-                                                children: e.jsx(Jm, {}),
+                                            e.jsx(cp.Separator, {
+                                                className: dp.listItemSeparator,
+                                                children: e.jsx(up, {}),
                                             }),
-                                            e.jsx(Um.Value, {
+                                            e.jsx(cp.Value, {
                                                 classNames: {
-                                                    base: Ym.value,
-                                                    zeroValue: Ym.zeroValue,
-                                                    separator: Ym.valueSeparator,
+                                                    base: dp.value,
+                                                    zeroValue: dp.zeroValue,
+                                                    separator: dp.valueSeparator,
                                                 },
                                                 labelKey: t.labelKey,
                                                 value: t.value,
@@ -5353,23 +5442,23 @@ function Zm({ list: s }) {
         ),
     });
 }
-const Qm = 'EfficiencyDetails_efficiencyDetails__allies_20b1febc',
-    ep = 'EfficiencyDetails_efficiencyDetails__enemies_23a29af',
-    ap = 'EfficiencyDetails_divider_85b11efd',
-    tp = 'EfficiencyDetails_dividerImage_5b9d06d2',
-    sp = 'EfficiencyDetails_closeIcon_8d81da90',
-    np = 'EfficiencyDetails_statistics_30a81815',
-    ip = F('EfficiencyDetails', 'EfficiencyDetails_efficiencyDetails_db8069eb', {
-        variants: { team: { [ao.allies]: Qm, [ao.enemies]: ep } },
+const pp = 'EfficiencyDetails_efficiencyDetails__allies_20b1febc',
+    _p = 'EfficiencyDetails_efficiencyDetails__enemies_23a29af',
+    fp = 'EfficiencyDetails_divider_85b11efd',
+    vp = 'EfficiencyDetails_dividerImage_5b9d06d2',
+    bp = 'EfficiencyDetails_closeIcon_8d81da90',
+    hp = 'EfficiencyDetails_statistics_30a81815',
+    gp = L('EfficiencyDetails', 'EfficiencyDetails_efficiencyDetails_db8069eb', {
+        variants: { team: { [fo.allies]: pp, [fo.enemies]: _p } },
     }),
-    rp = l(function ({ team: a, className: s }) {
-        const { model: n, controls: i } = oo(),
+    yp = l(function ({ team: a, className: s }) {
+        const { model: n, controls: i } = No(),
             r = n.computes.efficiencyDetails(),
-            l = H(),
+            l = M(),
             o = t.useRef(null);
         return (
             t.useEffect(() => {
-                const e = Ve.down(([, e]) => {
+                const e = Oe.down(([, e]) => {
                         'outside' === e && i.teamEfficiency.selectRow(void 0);
                     }),
                     a = oa(window, 'click', (e) => {
@@ -5381,7 +5470,7 @@ const Qm = 'EfficiencyDetails_efficiencyDetails__allies_20b1febc',
             }, [i.teamEfficiency]),
             void 0 === r
                 ? null
-                : e.jsxs(ip, {
+                : e.jsxs(gp, {
                       team: a,
                       className: s,
                       ref: o,
@@ -5389,7 +5478,7 @@ const Qm = 'EfficiencyDetails_efficiencyDetails__allies_20b1febc',
                           e.stopPropagation();
                       },
                       children: [
-                          e.jsx(Pm, {
+                          e.jsx(Lm, {
                               team: a,
                               account: r.account,
                               squadIndex: r.squadIndex,
@@ -5399,10 +5488,10 @@ const Qm = 'EfficiencyDetails_efficiencyDetails__allies_20b1febc',
                               vehicle: r.vehicle,
                               killer: r.killer,
                           }),
-                          e.jsx('div', { className: np, children: e.jsx(Zm, { list: r.detailedStatistics }) }),
-                          e.jsx(Am, { classNames: { base: ap, image: tp } }),
-                          e.jsx(X, {
-                              className: sp,
+                          e.jsx('div', { className: hp, children: e.jsx(mp, { list: r.detailedStatistics }) }),
+                          e.jsx(Wm, { classNames: { base: fp, image: vp } }),
+                          e.jsx(q, {
+                              className: bp,
                               width: '24rem',
                               height: '24rem',
                               path: 'library.close',
@@ -5421,189 +5510,189 @@ const Qm = 'EfficiencyDetails_efficiencyDetails__allies_20b1febc',
                   })
         );
     }),
-    lp = 'squadIndex',
-    op = 'account',
-    cp = 'vehicle',
-    dp = 'achievements',
-    up = 'damageDealt',
-    mp = 'kills',
-    pp = 'earnedXp',
-    _p = 0,
-    fp = 0,
-    vp = '',
-    bp = 'AccountInfoCell_accountInfo_dec8771',
-    hp = 'AccountInfoCell_accountName_9a181e4d',
-    gp = 'AccountInfoCell_clanAbbreviation_99f1cc86',
-    yp = 'AccountInfoCell_badge_b101914f',
-    xp = 'AccountInfoCell_anonymizerIcon_a1d51ca4',
-    Np = 'AccountInfoCell_igrIcon_158694e7',
-    jp = 'AccountInfoCell_stripe_fefba7b2',
-    wp = l(function ({ account: t, team: s, platoon: n, className: i, classNames: r, ...l }) {
-        const { model: o } = oo(),
+    xp = 'squadIndex',
+    Np = 'account',
+    jp = 'vehicle',
+    wp = 'achievements',
+    Ip = 'damageDealt',
+    Ap = 'kills',
+    Cp = 'earnedXp',
+    Sp = 0,
+    Bp = 0,
+    Pp = '',
+    Rp = 'AccountInfoCell_accountInfo_dec8771',
+    kp = 'AccountInfoCell_accountName_9a181e4d',
+    Ep = 'AccountInfoCell_clanAbbreviation_99f1cc86',
+    Tp = 'AccountInfoCell_badge_b101914f',
+    Dp = 'AccountInfoCell_anonymizerIcon_a1d51ca4',
+    Vp = 'AccountInfoCell_igrIcon_158694e7',
+    zp = 'AccountInfoCell_stripe_fefba7b2',
+    Op = l(function ({ account: t, team: s, platoon: n, className: i, classNames: r, ...l }) {
+        const { model: o } = No(),
             c = o.computes.personalInfo(),
-            d = ro({
+            d = yo({
                 personal: c.account.username === t.username,
-                platoonType: io(s, c.squadIndex, n),
+                platoonType: go(s, c.squadIndex, n),
                 anonymizer: t.anonymizer,
             });
-        return e.jsxs(Je, {
+        return e.jsxs(Qe, {
             ...l,
-            className: a(bp, i),
+            className: a(Rp, i),
             children: [
-                t.badge !== Ml &&
-                    e.jsx(Je.Badge, {
-                        size: Je.Badge.sizes.x24x24,
+                t.badge !== eo &&
+                    e.jsx(Qe.Badge, {
+                        size: Qe.Badge.sizes.x24x24,
                         badgeId: t.badge,
-                        className: a(yp, null == r ? void 0 : r.badge),
+                        className: a(Tp, null == r ? void 0 : r.badge),
                     }),
-                e.jsx(Je.Name, {
-                    className: a(hp, null == r ? void 0 : r.username),
-                    children: e.jsx(Ze, { text: d ? t.fakeUsername : t.username }),
+                e.jsx(Qe.Name, {
+                    className: a(kp, null == r ? void 0 : r.username),
+                    children: e.jsx(ea, { text: d ? t.fakeUsername : t.username }),
                 }),
                 '' !== t.clanAbbreviation &&
                     !d &&
-                    e.jsx(Je.ClanTag, {
-                        className: a(gp, null == r ? void 0 : r.clanAbbreviation),
+                    e.jsx(Qe.ClanTag, {
+                        className: a(Ep, null == r ? void 0 : r.clanAbbreviation),
                         children: e.jsx(P, {
                             path: 'common.clanTag',
                             params: { abbrev: t.clanAbbreviation },
                             brackets: { start: '{', end: '}' },
                         }),
                     }),
-                t.igrType !== dl &&
-                    e.jsx(Je.IgrIcon, {
-                        size: Je.IgrIcon.sizes.x34x16,
-                        className: a(Np, null == r ? void 0 : r.igrIcon),
+                t.igrType !== Il &&
+                    e.jsx(Qe.IgrIcon, {
+                        size: Qe.IgrIcon.sizes.x34x16,
+                        className: a(Vp, null == r ? void 0 : r.igrIcon),
                     }),
-                t.suffixBadge !== Ml &&
-                    e.jsx(Je.Stripe, {
-                        size: Je.Stripe.sizes.default,
+                t.suffixBadge !== eo &&
+                    e.jsx(Qe.Stripe, {
+                        size: Qe.Stripe.sizes.default,
                         badgeId: t.suffixBadge,
-                        className: jp,
+                        className: zp,
                         classNames: null == r ? void 0 : r.suffixBadge,
                     }),
                 t.anonymizer &&
-                    e.jsx(Je.AnonymizerIcon, {
-                        size: Je.AnonymizerIcon.sizes.x24x24,
-                        className: a(xp, null == r ? void 0 : r.anonymizerIcon),
+                    e.jsx(Qe.AnonymizerIcon, {
+                        size: Qe.AnonymizerIcon.sizes.x24x24,
+                        className: a(Dp, null == r ? void 0 : r.anonymizerIcon),
                     }),
             ],
         });
     }),
-    Ip = {
+    Hp = {
         achievementCell: 'AchievementsCell_achievementCell_e9bf973c',
         achievementsAmount: 'AchievementsCell_achievementsAmount_349c209a',
     };
-function Ap({ achievements: a }) {
+function Wp({ achievements: a }) {
     const t = k.resolve('strings'),
-        s = E({ body: J(Qr(a), (e) => t.readOrEmpty(`achievements.${e.name}`)).join('\n') }),
+        s = E({ body: Q(_l(a), (e) => t.readOrEmpty(`achievements.${e.name}`)).join('\n') }),
         n = a.length;
     return 0 === n
         ? null
         : e.jsxs('div', {
               ...s,
-              className: Ip.achievementCell,
+              className: Hp.achievementCell,
               children: [
-                  e.jsx(X, { path: 'library.medal', width: '32rem', height: '32rem' }),
-                  e.jsx('div', { className: Ip.achievementsAmount, children: T.formatNumber('integral', n) }),
+                  e.jsx(q, { path: 'library.medal', width: '32rem', height: '32rem' }),
+                  e.jsx('div', { className: Hp.achievementsAmount, children: V.formatNumber('integral', n) }),
               ],
           });
 }
-const Cp = { behaviour: Ue.static, size: '32rem' },
-    Sp = { behaviour: Ue.static, size: '194rem' },
-    Bp = { behaviour: Ue.static, size: '272rem' },
-    Rp = { behaviour: Ue.static, size: '320rem' },
-    Pp = { behaviour: Ue.static, size: '180rem' },
-    kp = { behaviour: Ue.static, size: '236rem' },
-    Ep = { behaviour: Ue.static, size: '292rem' },
-    Tp = { behaviour: Ue.static, size: '56rem' },
-    Dp = { behaviour: Ue.static, size: '60rem' },
-    Vp = { behaviour: Ue.static, size: '80rem' },
-    zp = { behaviour: Ue.static, size: '40rem' },
-    Op = { behaviour: Ue.static, size: '60rem' },
-    Hp = { behaviour: Ue.static, size: '60rem' },
-    Wp = { behaviour: Ue.static, size: '56rem' },
-    Mp = { behaviour: Ue.static, size: '60rem' },
-    Gp = { behaviour: Ue.static, size: '80rem' },
-    Fp = { behaviour: Ue.static, size: '40rem' },
-    $p = {
-        [lp]: { [Ye.extraSmall]: Cp, [Ye.medium]: Cp, [Ye.large]: Cp, [Ye.extraLarge]: Cp },
-        [op]: { [Ye.extraSmall]: Sp, [Ye.medium]: Bp, [Ye.large]: Bp, [Ye.extraLarge]: Rp },
-        [cp]: { [Ye.extraSmall]: Pp, [Ye.medium]: kp, [Ye.large]: kp, [Ye.extraLarge]: Ep },
-        [up]: { [Ye.extraSmall]: Tp, [Ye.medium]: Dp, [Ye.large]: Dp, [Ye.extraLarge]: Vp },
-        [mp]: { [Ye.extraSmall]: zp, [Ye.medium]: Op, [Ye.large]: Op, [Ye.extraLarge]: Hp },
-        [pp]: { [Ye.extraSmall]: Wp, [Ye.medium]: Mp, [Ye.large]: Mp, [Ye.extraLarge]: Gp },
-        [dp]: { [Ye.extraSmall]: Fp, [Ye.medium]: Fp, [Ye.large]: Fp, [Ye.extraLarge]: Fp },
+const Mp = { behaviour: Je.static, size: '32rem' },
+    Gp = { behaviour: Je.static, size: '194rem' },
+    Fp = { behaviour: Je.static, size: '272rem' },
+    $p = { behaviour: Je.static, size: '320rem' },
+    Lp = { behaviour: Je.static, size: '180rem' },
+    Xp = { behaviour: Je.static, size: '236rem' },
+    Kp = { behaviour: Je.static, size: '292rem' },
+    qp = { behaviour: Je.static, size: '56rem' },
+    Up = { behaviour: Je.static, size: '60rem' },
+    Yp = { behaviour: Je.static, size: '80rem' },
+    Jp = { behaviour: Je.static, size: '40rem' },
+    Zp = { behaviour: Je.static, size: '60rem' },
+    Qp = { behaviour: Je.static, size: '60rem' },
+    e_ = { behaviour: Je.static, size: '56rem' },
+    a_ = { behaviour: Je.static, size: '60rem' },
+    t_ = { behaviour: Je.static, size: '80rem' },
+    s_ = { behaviour: Je.static, size: '40rem' },
+    n_ = {
+        [xp]: { [Ze.extraSmall]: Mp, [Ze.medium]: Mp, [Ze.large]: Mp, [Ze.extraLarge]: Mp },
+        [Np]: { [Ze.extraSmall]: Gp, [Ze.medium]: Fp, [Ze.large]: Fp, [Ze.extraLarge]: $p },
+        [jp]: { [Ze.extraSmall]: Lp, [Ze.medium]: Xp, [Ze.large]: Xp, [Ze.extraLarge]: Kp },
+        [Ip]: { [Ze.extraSmall]: qp, [Ze.medium]: Up, [Ze.large]: Up, [Ze.extraLarge]: Yp },
+        [Ap]: { [Ze.extraSmall]: Jp, [Ze.medium]: Zp, [Ze.large]: Zp, [Ze.extraLarge]: Qp },
+        [Cp]: { [Ze.extraSmall]: e_, [Ze.medium]: a_, [Ze.large]: a_, [Ze.extraLarge]: t_ },
+        [wp]: { [Ze.extraSmall]: s_, [Ze.medium]: s_, [Ze.large]: s_, [Ze.extraLarge]: s_ },
     },
-    Lp = {
+    i_ = {
         headerCell__asc: 'HeaderCell_headerCell__asc_204e6a44',
         headerCell__desc: 'HeaderCell_headerCell__desc_dc5a7202',
         headerCell: 'HeaderCell_headerCell_5b34d1b1',
         headerCell__icon: 'HeaderCell_headerCell__icon_cfa14ddf',
         headerCell__text: 'HeaderCell_headerCell__text_b476890c',
     },
-    Xp = {
-        [lp]: 'library.shield',
-        [cp]: 'library.panzer',
-        [up]: 'library.cross_with_gap',
-        [mp]: 'library.crossed_tank',
-        [pp]: 'library.star',
-        [dp]: 'library.medal',
+    r_ = {
+        [xp]: 'library.shield',
+        [jp]: 'library.panzer',
+        [Ip]: 'library.cross_with_gap',
+        [Ap]: 'library.crossed_tank',
+        [Cp]: 'library.star',
+        [wp]: 'library.medal',
     },
-    Kp = {
-        [lp]: 'squadHeader',
-        [op]: 'playerHeader',
-        [cp]: 'tankHeader',
-        [up]: 'damageHeader',
-        [mp]: 'fragHeader',
-        [pp]: 'xpHeader',
-        [dp]: 'medalHeader',
+    l_ = {
+        [xp]: 'squadHeader',
+        [Np]: 'playerHeader',
+        [jp]: 'tankHeader',
+        [Ip]: 'damageHeader',
+        [Ap]: 'fragHeader',
+        [Cp]: 'xpHeader',
+        [wp]: 'medalHeader',
     },
-    qp = t.forwardRef(function ({ name: t, team: s, column: n, className: i, ...r }, l) {
+    o_ = t.forwardRef(function ({ name: t, team: s, column: n, className: i, ...r }, l) {
         const o = n.getIsSorted(),
             c = k.resolve('strings'),
             d = E({
-                header: c.readOrEmpty(`battle_results.team.${Kp[t]}.header`),
-                body: c.readOrEmpty(`battle_results.team.${Kp[t]}.body`),
+                header: c.readOrEmpty(`battle_results.team.${l_[t]}.header`),
+                body: c.readOrEmpty(`battle_results.team.${l_[t]}.body`),
             }),
-            u = t === op;
+            u = t === Np;
         return e.jsx('div', {
             ...r,
             ...d,
             ref: l,
-            className: a(Lp.headerCell, u ? Lp.headerCell__text : Lp.headerCell__icon, o && Lp[`headerCell__${o}`], i),
+            className: a(i_.headerCell, u ? i_.headerCell__text : i_.headerCell__icon, o && i_[`headerCell__${o}`], i),
             children: u
                 ? c.readOrEmpty(`battle_results.team.stats.${s}`)
-                : e.jsx(X, { width: '32rem', height: '32rem', path: Xp[t] }),
+                : e.jsx(q, { width: '32rem', height: '32rem', path: r_[t] }),
         });
     }),
-    Up = { numberValueCell: 'NumberValueCell_numberValueCell_8840a07' };
-function Yp({ value: t, className: s, showZero: n = !0 }) {
+    c_ = { numberValueCell: 'NumberValueCell_numberValueCell_8840a07' };
+function d_({ value: t, className: s, showZero: n = !0 }) {
     return !1 === n && 0 === t
         ? null
-        : e.jsx('div', { className: a(Up.numberValueCell, s), children: T.formatNumber('integral', t) });
+        : e.jsx('div', { className: a(c_.numberValueCell, s), children: V.formatNumber('integral', t) });
 }
-const Jp = {
+const u_ = {
         platoon: 'PlatoonCell_platoon_5fe0374b',
         platoonText: 'PlatoonCell_platoonText_b6a98287',
         platoonText__personal: 'PlatoonCell_platoonText__personal_d021db4c',
         platoonText__alien: 'PlatoonCell_platoonText__alien_9767e814',
     },
-    Zp = { [so.alien]: 'library.platoon_indicator_gray', [so.personal]: 'library.platoon_indicator_orange' },
-    Qp = l(function ({ platoon: t, team: s }) {
-        const { model: n } = oo(),
-            i = io(s, n.computes.personalInfo().squadIndex, t);
+    m_ = { [bo.alien]: 'library.platoon_indicator_gray', [bo.personal]: 'library.platoon_indicator_orange' },
+    p_ = l(function ({ platoon: t, team: s }) {
+        const { model: n } = No(),
+            i = go(s, n.computes.personalInfo().squadIndex, t);
         if (null === i) return null;
-        const r = Zp[i];
+        const r = m_[i];
         return e.jsxs('div', {
-            className: Jp.platoon,
+            className: u_.platoon,
             children: [
-                e.jsx(X, { path: r, width: '32rem', height: '32rem' }),
-                e.jsx('div', { className: a(Jp.platoonText, Jp[`platoonText__${i}`]), children: t }),
+                e.jsx(q, { path: r, width: '32rem', height: '32rem' }),
+                e.jsx('div', { className: a(u_.platoonText, u_[`platoonText__${i}`]), children: t }),
             ],
         });
     }),
-    e_ = {
+    __ = {
         vehicle: 'VehicleCell_vehicle_386f696d',
         vehicleImageWrapper: 'VehicleCell_vehicleImageWrapper_aa1c27bd',
         vehicleTypeWrapper: 'VehicleCell_vehicleTypeWrapper_3f1f3f6d',
@@ -5611,15 +5700,15 @@ const Jp = {
         vehicleName: 'VehicleCell_vehicleName_eaeb9715',
         vehicleName__unknown: 'VehicleCell_vehicleName__unknown_726ac1d0',
     };
-function a_({ vehicle: t, classNames: s, className: n }) {
+function f_({ vehicle: t, classNames: s, className: n }) {
     const i = void 0 === t;
     return e.jsxs('div', {
-        className: a(e_.vehicle, n),
+        className: a(__.vehicle, n),
         children: [
             e.jsx('div', {
-                className: a(e_.vehicleImageWrapper, null == s ? void 0 : s.imageWrapper),
-                children: e.jsx(aa, {
-                    size: aa.size.x120x96,
+                className: a(__.vehicleImageWrapper, null == s ? void 0 : s.imageWrapper),
+                children: e.jsx(sa, {
+                    size: sa.size.x120x96,
                     name: i ? 'tank_empty' : t.techName,
                     className: null == s ? void 0 : s.image,
                 }),
@@ -5627,10 +5716,10 @@ function a_({ vehicle: t, classNames: s, className: n }) {
             !1 === i &&
                 e.jsxs(e.Fragment, {
                     children: [
-                        e.jsx(ta, { value: t.tier, className: a(e_.vehicleLevel, null == s ? void 0 : s.level) }),
+                        e.jsx(T, { value: t.tier, className: a(__.vehicleLevel, null == s ? void 0 : s.level) }),
                         e.jsx('div', {
-                            className: a(e_.vehicleTypeWrapper, null == s ? void 0 : s.typeWrapper),
-                            children: e.jsx(sa, {
+                            className: a(__.vehicleTypeWrapper, null == s ? void 0 : s.typeWrapper),
+                            children: e.jsx(D, {
                                 size: 'x24x24',
                                 type: t.type,
                                 className: null == s ? void 0 : s.type,
@@ -5639,15 +5728,15 @@ function a_({ vehicle: t, classNames: s, className: n }) {
                     ],
                 }),
             e.jsx('div', {
-                className: a(e_.vehicleName, i && e_.vehicleName__unknown, null == s ? void 0 : s.name),
+                className: a(__.vehicleName, i && __.vehicleName__unknown, null == s ? void 0 : s.name),
                 children: i
                     ? e.jsx(P, { path: 'ingame_gui.players_panel.unknown_vehicle' })
-                    : e.jsx(Ze, { text: t.name }),
+                    : e.jsx(ea, { text: t.name }),
             }),
         ],
     });
 }
-const t_ = {
+const v_ = {
         efficiencyTable__allies: 'EfficiencyTable_efficiencyTable__allies_b2f99733',
         efficiencyTable__enemies: 'EfficiencyTable_efficiencyTable__enemies_1ba35ae7',
         header: 'EfficiencyTable_header_da354842',
@@ -5661,7 +5750,7 @@ const t_ = {
         scrollAreaContent: 'EfficiencyTable_scrollAreaContent_4fa5a5ab',
         mask: 'EfficiencyTable_mask_8fbe6740',
     },
-    s_ = {
+    b_ = {
         tableBodyRow: 'TableBodyRow_tableBodyRow_be19874',
         tableBodyRow__selected: 'TableBodyRow_tableBodyRow__selected_9cd5fe77',
         hoverOverlay: 'TableBodyRow_hoverOverlay_dab11111',
@@ -5685,153 +5774,153 @@ const t_ = {
         selectedOverlayDivider__bottom: 'TableBodyRow_selectedOverlayDivider__bottom_20b949b4',
         selectedOverlayImage: 'TableBodyRow_selectedOverlayImage_9c09afd1',
     },
-    n_ = S();
-function i_(e, a, t) {
+    h_ = S();
+function g_(e, a, t) {
     const s = e.getValue('account'),
         n = e.getValue('squadIndex');
-    return ro({
+    return yo({
         personal: a.account.username === s.username,
-        platoonType: io(t, a.squadIndex, n),
+        platoonType: go(t, a.squadIndex, n),
         anonymizer: s.anonymizer,
     })
         ? s.fakeUsername
         : s.username;
 }
-function r_(e, a) {
+function y_(e, a) {
     return e.getValue('damageDealt').damageDealt - a.getValue('damageDealt').damageDealt;
 }
-const l_ = { [ca.heavyTank]: 5, [ca.mediumTank]: 4, [ca['AT-SPG']]: 3, [ca.lightTank]: 2, [ca.SPG]: 1 };
-function o_({ team: t, personalInfo: s, breakpointName: n }) {
+const x_ = { [ca.heavyTank]: 5, [ca.mediumTank]: 4, [ca['AT-SPG']]: 3, [ca.lightTank]: 2, [ca.SPG]: 1 };
+function N_({ team: t, personalInfo: s, breakpointName: n }) {
     const i = (e, a) =>
             (function (e, a, t, s) {
-                const n = i_(e, t, s),
-                    i = i_(a, t, s);
+                const n = g_(e, t, s),
+                    i = g_(a, t, s);
                 return n.localeCompare(i);
             })(e, a, s, t),
-        r = 'small' === n ? Ye.extraSmall : n;
+        r = 'small' === n ? Ze.extraSmall : n;
     return [
-        n_.accessor('squadIndex', {
-            id: lp,
-            header: (a) => e.jsx(qp, { name: lp, column: a.column }),
+        h_.accessor('squadIndex', {
+            id: xp,
+            header: (a) => e.jsx(o_, { name: xp, column: a.column }),
             sortingFn: (e, a) => {
                 const t = a.getValue('squadIndex') - e.getValue('squadIndex');
                 return 0 !== t ? t : i(e, a);
             },
-            cell: (a) => e.jsx(Qp, { team: t, platoon: a.cell.getValue() }),
-            meta: { column: $p[lp][r] },
+            cell: (a) => e.jsx(p_, { team: t, platoon: a.cell.getValue() }),
+            meta: { column: n_[xp][r] },
         }),
-        n_.accessor('account', {
-            id: op,
-            header: (a) => e.jsx(qp, { team: t, name: op, column: a.column }),
+        h_.accessor('account', {
+            id: Np,
+            header: (a) => e.jsx(o_, { team: t, name: Np, column: a.column }),
             sortDescFirst: !1,
             sortingFn: i,
             cell: (a) =>
-                e.jsx(wp, {
+                e.jsx(Op, {
                     account: a.cell.getValue(),
                     team: t,
                     platoon: a.row.original.squadIndex,
-                    className: s_.accountInfo,
-                    classNames: { username: s_.accountName, clanAbbreviation: s_.clanAbbreviation },
+                    className: b_.accountInfo,
+                    classNames: { username: b_.accountName, clanAbbreviation: b_.clanAbbreviation },
                 }),
-            meta: { column: $p[op][r], className: t_.alignLeft },
+            meta: { column: n_[Np][r], className: v_.alignLeft },
         }),
-        n_.accessor('vehicle', {
-            id: cp,
-            header: (a) => e.jsx(qp, { name: cp, column: a.column }),
+        h_.accessor('vehicle', {
+            id: jp,
+            header: (a) => e.jsx(o_, { name: jp, column: a.column }),
             sortingFn: (e, a) =>
                 (function (e, a) {
                     const t = e.getValue('vehicle'),
                         s = a.getValue('vehicle'),
-                        n = (null == t ? void 0 : t.tier) ?? _p,
-                        i = (null == s ? void 0 : s.tier) ?? _p,
-                        r = (null == t ? void 0 : t.type) ? l_[t.type] : fp,
-                        l = (null == s ? void 0 : s.type) ? l_[s.type] : fp,
-                        o = (null == t ? void 0 : t.name) ?? vp,
-                        c = (null == s ? void 0 : s.name) ?? vp;
+                        n = (null == t ? void 0 : t.tier) ?? Sp,
+                        i = (null == s ? void 0 : s.tier) ?? Sp,
+                        r = (null == t ? void 0 : t.type) ? x_[t.type] : Bp,
+                        l = (null == s ? void 0 : s.type) ? x_[s.type] : Bp,
+                        o = (null == t ? void 0 : t.name) ?? Pp,
+                        c = (null == s ? void 0 : s.name) ?? Pp;
                     return n - i || r - l || c.localeCompare(o);
                 })(e, a) || i(e, a),
             cell: (a) =>
-                e.jsx(a_, {
+                e.jsx(f_, {
                     vehicle: a.cell.getValue(),
                     classNames: {
-                        name: s_.vehicleText,
-                        level: s_.vehicleText,
-                        type: s_.vehicleType,
-                        image: s_.vehicleImage,
+                        name: b_.vehicleText,
+                        level: b_.vehicleText,
+                        type: b_.vehicleType,
+                        image: b_.vehicleImage,
                     },
                 }),
-            meta: { column: $p[cp][r] },
+            meta: { column: n_[jp][r] },
         }),
-        n_.accessor('efficiencyValues', {
-            id: up,
-            header: (a) => e.jsx(qp, { name: up, column: a.column }),
-            sortingFn: (e, a) => r_(e, a) || i(e, a),
+        h_.accessor('efficiencyValues', {
+            id: Ip,
+            header: (a) => e.jsx(o_, { name: Ip, column: a.column }),
+            sortingFn: (e, a) => y_(e, a) || i(e, a),
             cell: (t) =>
-                e.jsx(Yp, {
+                e.jsx(d_, {
                     value: t.getValue().damageDealt,
-                    className: a(s_.numberValue, s_.numberValue__alignRight),
+                    className: a(b_.numberValue, b_.numberValue__alignRight),
                 }),
-            meta: { column: $p[up][r], className: t_.alignRight },
+            meta: { column: n_[Ip][r], className: v_.alignRight },
         }),
-        n_.accessor('efficiencyValues', {
-            id: mp,
-            header: (a) => e.jsx(qp, { name: mp, column: a.column }),
+        h_.accessor('efficiencyValues', {
+            id: Ap,
+            header: (a) => e.jsx(o_, { name: Ap, column: a.column }),
             sortingFn: (e, a) =>
                 (function (e, a) {
                     return e.getValue('kills').substractedAlliesKills - a.getValue('kills').substractedAlliesKills;
                 })(e, a) || i(e, a),
             cell: (a) =>
-                e.jsx(Yp, { showZero: !1, value: a.getValue().substractedAlliesKills, className: s_.numberValue }),
-            meta: { column: $p[mp][r] },
+                e.jsx(d_, { showZero: !1, value: a.getValue().substractedAlliesKills, className: b_.numberValue }),
+            meta: { column: n_[Ap][r] },
         }),
-        n_.accessor('efficiencyValues', {
-            id: pp,
-            header: (a) => e.jsx(qp, { name: pp, column: a.column }),
+        h_.accessor('efficiencyValues', {
+            id: Cp,
+            header: (a) => e.jsx(o_, { name: Cp, column: a.column }),
             sortingFn: (e, a) =>
                 (function (e, a) {
                     return e.getValue('earnedXp').earnedXp - a.getValue('earnedXp').earnedXp;
                 })(e, a) ||
-                r_(e, a) ||
+                y_(e, a) ||
                 (function (e, a) {
                     const t = e.getValue('vehicle'),
                         s = a.getValue('vehicle');
                     return ((null == t ? void 0 : t.vehicleCD) ?? 0) - ((null == s ? void 0 : s.vehicleCD) ?? 0);
                 })(e, a) ||
                 i(e, a),
-            cell: (a) => e.jsx(Yp, { value: a.getValue().earnedXp, className: s_.numberValue }),
-            meta: { column: $p[pp][r], className: t_.alignRight },
+            cell: (a) => e.jsx(d_, { value: a.getValue().earnedXp, className: b_.numberValue }),
+            meta: { column: n_[Cp][r], className: v_.alignRight },
         }),
-        n_.accessor('achievements', {
-            id: dp,
-            header: (a) => e.jsx(qp, { name: dp, column: a.column, className: t_.achievementCell }),
+        h_.accessor('achievements', {
+            id: wp,
+            header: (a) => e.jsx(o_, { name: wp, column: a.column, className: v_.achievementCell }),
             sortingFn: (e, a) =>
                 (function (e, a) {
                     return e.getValue('achievements').length - a.getValue('achievements').length;
                 })(e, a) || i(e, a),
-            cell: (a) => e.jsx(Ap, { achievements: a.getValue() }),
-            meta: { column: $p[dp][r], className: t_.alignLeft },
+            cell: (a) => e.jsx(Wp, { achievements: a.getValue() }),
+            meta: { column: n_[wp][r], className: v_.alignLeft },
         }),
     ];
 }
-const c_ = 'Header_row_e61ae0d9',
-    d_ = 'Header_rowDivider_f54d9df6',
-    u_ = 'Header_rowDividerImage_19f6e11',
-    m_ = 'Header_cell_70aa1da5';
-function p_({ className: a }) {
-    const { table: t } = $e(),
-        s = H();
-    return e.jsxs(Ge.Header, {
+const j_ = 'Header_row_e61ae0d9',
+    w_ = 'Header_rowDivider_f54d9df6',
+    I_ = 'Header_rowDividerImage_19f6e11',
+    A_ = 'Header_cell_70aa1da5';
+function C_({ className: a }) {
+    const { table: t } = Xe(),
+        s = M();
+    return e.jsxs($e.Header, {
         className: a,
         children: [
-            e.jsx(Am, { classNames: { base: d_, image: u_ } }),
-            J(t.getHeaderGroups(), (a, t) =>
+            e.jsx(Wm, { classNames: { base: w_, image: I_ } }),
+            Q(t.getHeaderGroups(), (a, t) =>
                 e.jsx(
-                    Ge.Row,
+                    $e.Row,
                     {
-                        className: c_,
-                        children: J(a.headers, (a, n) => {
+                        className: j_,
+                        children: Q(a.headers, (a, n) => {
                             return e.jsx(
-                                Ge.Cell,
+                                $e.Cell,
                                 {
                                     onClick:
                                         ((i = a.column.getToggleSortingHandler()),
@@ -5847,8 +5936,8 @@ function p_({ className: a }) {
                                             target: 'team-efficiency:efficiency-table:header:cell',
                                             original: e,
                                         }),
-                                    cell: { ...a, rowIndex: t, index: n, tablePart: Fe.header },
-                                    className: m_,
+                                    cell: { ...a, rowIndex: t, index: n, tablePart: Le.header },
+                                    className: A_,
                                     children: !a.isPlaceholder && C(a.column.columnDef.header, a.getContext()),
                                 },
                                 a.id,
@@ -5862,105 +5951,107 @@ function p_({ className: a }) {
         ],
     });
 }
-const __ = 'SelectedRowTail_selectedRowTail_8abda9c8',
-    f_ = 'SelectedRowTail_selectedRowTail__hasWidth_6cb87e09',
-    v_ = 'SelectedRowTail_selectedRowVerticalLine_c502cc58',
-    b_ = 'SelectedRowTail_selectedRowTriangle_6f2b6bb3',
-    h_ = 'SelectedRowTail_rowDivider_8fbc881',
-    g_ = 'SelectedRowTail_rowDivider__bottom_4111cb99',
-    y_ = 'SelectedRowTail_rowDividerImage_d11f29d5';
-function x_({ className: t, short: s }) {
+const S_ = 'SelectedRowTail_selectedRowTail_8abda9c8',
+    B_ = 'SelectedRowTail_selectedRowTail__hasWidth_6cb87e09',
+    P_ = 'SelectedRowTail_selectedRowVerticalLine_c502cc58',
+    R_ = 'SelectedRowTail_selectedRowTriangle_6f2b6bb3',
+    k_ = 'SelectedRowTail_rowDivider_8fbc881',
+    E_ = 'SelectedRowTail_rowDivider__bottom_4111cb99',
+    T_ = 'SelectedRowTail_rowDividerImage_d11f29d5';
+function D_({ className: t, short: s }) {
     return e.jsxs('div', {
-        className: a(__, !s && f_, t),
+        className: a(S_, !s && B_, t),
         children: [
-            e.jsx(Am, { classNames: { base: h_, image: y_ } }),
-            e.jsx(Am, { classNames: { base: a(h_, g_), image: y_ } }),
-            e.jsx('div', { className: v_ }),
-            e.jsx('div', { className: b_ }),
+            e.jsx(Wm, { classNames: { base: k_, image: T_ } }),
+            e.jsx(Wm, { classNames: { base: a(k_, E_), image: T_ } }),
+            e.jsx('div', { className: P_ }),
+            e.jsx('div', { className: R_ }),
         ],
     });
 }
-const N_ = 'personal',
-    j_ = 'personalSquad',
-    w_ = 'none',
-    I_ = l(function ({ row: t, team: s, rowIndex: n, scrollbarVisible: i }) {
-        var r;
-        const { model: l, controls: o } = oo(),
-            c = H(),
-            d = Oe(
+const V_ = 'personal',
+    z_ = 'personalSquad',
+    O_ = 'none',
+    H_ = l(function ({ row: s, team: n, rowIndex: i, scrollbarVisible: r }) {
+        const { model: l, controls: o } = No(),
+            c = M(),
+            d = We(
                 (e) => {
                     (e.stopPropagation(),
                         c.play('click', { original: e, target: 'team-efficiency:efficiency-table:body:row' }),
-                        o.teamEfficiency.selectRow({ team: s, username: t.original.account.username }));
+                        o.teamEfficiency.selectRow({ team: n, username: s.original.account.username }));
                 },
-                [o.teamEfficiency, t.original.account.username, c, s],
+                [o.teamEfficiency, s.original.account.username, c, n],
                 400,
             ),
             u = l.teamsStatistic.selectedRow.get(),
             m = l.computes.personalInfo(),
             p = (() => {
-                if (m.account.username === t.original.account.username) return N_;
-                return io(s, m.squadIndex, t.original.squadIndex) === so.personal ? j_ : w_;
+                if (m.account.username === s.original.account.username) return V_;
+                return go(n, m.squadIndex, s.original.squadIndex) === bo.personal ? z_ : O_;
             })(),
-            _ = t.original.account.teamKiller,
-            f = t.original.account.killed,
-            v = (null == u ? void 0 : u.team) === s && u.username === t.original.account.username,
-            b = Me({
-                args: {
-                    vehicleCD: null == (r = t.original.vehicle) ? void 0 : r.vehicleCD,
-                    databaseID: t.original.databaseId,
-                },
+            _ = s.original.account.teamKiller,
+            f = s.original.account.killed,
+            v = (null == u ? void 0 : u.team) === n && u.username === s.original.account.username,
+            b = Fe({
+                args: t.useMemo(() => {
+                    var e;
+                    return {
+                        vehicleCD: null == (e = s.original.vehicle) ? void 0 : e.vehicleCD,
+                        databaseID: s.original.databaseId,
+                    };
+                }, [s.original]),
             });
-        return e.jsxs(Ge.Row, {
-            ...(p !== N_ && b),
+        return e.jsxs($e.Row, {
+            ...(p !== V_ && b),
             onMouseEnter: (e) =>
                 c.play('mouse-enter', { target: 'team-efficiency:efficiency-table:body:row', original: e }),
             className: a(
-                s_.tableBodyRow,
-                v && s_.tableBodyRow__selected,
-                p !== w_ && s_[`tableBodyRow__${p}`],
-                _ && s_.tableBodyRow__teamKiller,
-                f && s_.tableBodyRow__killed,
+                b_.tableBodyRow,
+                v && b_.tableBodyRow__selected,
+                p !== O_ && b_[`tableBodyRow__${p}`],
+                _ && b_.tableBodyRow__teamKiller,
+                f && b_.tableBodyRow__killed,
             ),
             onClick: d,
             children: [
                 e.jsxs('div', {
-                    className: s_.selectedOverlay,
+                    className: b_.selectedOverlay,
                     children: [
-                        e.jsx(Am, { classNames: { base: s_.selectedOverlayDivider, image: s_.selectedOverlayImage } }),
-                        e.jsx(Am, {
+                        e.jsx(Wm, { classNames: { base: b_.selectedOverlayDivider, image: b_.selectedOverlayImage } }),
+                        e.jsx(Wm, {
                             classNames: {
-                                base: a(s_.selectedOverlayDivider, s_.selectedOverlayDivider__bottom),
-                                image: s_.selectedOverlayImage,
+                                base: a(b_.selectedOverlayDivider, b_.selectedOverlayDivider__bottom),
+                                image: b_.selectedOverlayImage,
                             },
                         }),
-                        e.jsx(x_, {
-                            short: i && s === ao.allies,
-                            className: a(s_.selectedRowTail, s_[`selectedRowTail__${s}`]),
+                        e.jsx(D_, {
+                            short: r && n === fo.allies,
+                            className: a(b_.selectedRowTail, b_[`selectedRowTail__${n}`]),
                         }),
                     ],
                 }),
-                e.jsx(Am, {
-                    classNames: { base: a(s_.rowDivider, v && s_.rowDivider__selected), image: s_.rowDividerImage },
+                e.jsx(Wm, {
+                    classNames: { base: a(b_.rowDivider, v && b_.rowDivider__selected), image: b_.rowDividerImage },
                 }),
-                J(t.getVisibleCells(), (a, t) =>
+                Q(s.getVisibleCells(), (a, t) =>
                     e.jsx(
-                        Ge.Cell,
+                        $e.Cell,
                         {
-                            cell: { ...a, rowIndex: n, index: t, tablePart: Fe.body },
+                            cell: { ...a, rowIndex: i, index: t, tablePart: Le.body },
                             children: C(a.column.columnDef.cell, a.getContext()),
                         },
                         a.id,
                     ),
                 ),
-                e.jsx('div', { className: s_.hoverOverlay }),
+                e.jsx('div', { className: b_.hoverOverlay }),
             ],
         });
     });
-function A_({ team: a }) {
-    const { table: s } = $e(),
-        { api: i } = U(),
-        r = Le(),
+function W_({ team: a }) {
+    const { table: s } = Xe(),
+        { api: i } = J(),
+        r = Ke(),
         l = t.useRef(null),
         [o, c] = t.useState(!1),
         [d, u] = w(() => ({ from: { maskSize: '100% 100%' } }));
@@ -5993,60 +6084,60 @@ function A_({ team: a }) {
                 }
             );
         }, [i, r, u]),
-        e.jsxs(Ge.Body, {
-            className: t_.tableBody,
+        e.jsxs($e.Body, {
+            className: v_.tableBody,
             children: [
                 e.jsx(n.div, {
-                    className: t_.mask,
+                    className: v_.mask,
                     style: d,
-                    children: e.jsx(Y, {
-                        classNames: { wrapper: t_.scrollWrapper, content: t_.scrollAreaContent },
+                    children: e.jsx(Z, {
+                        classNames: { wrapper: v_.scrollWrapper, content: v_.scrollAreaContent },
                         children: e.jsx('div', {
                             ref: l,
-                            className: t_.rowsWrapper,
-                            children: J(s.getRowModel().rows, (t, s) =>
-                                e.jsx(I_, { row: t, rowIndex: s, team: a, scrollbarVisible: o }, t.id),
+                            className: v_.rowsWrapper,
+                            children: Q(s.getRowModel().rows, (t, s) =>
+                                e.jsx(H_, { row: t, rowIndex: s, team: a, scrollbarVisible: o }, t.id),
                             ),
                         }),
                     }),
                 }),
-                e.jsx(q, { classNames: { base: t_.scrollBar } }),
+                e.jsx(Y, { classNames: { base: v_.scrollBar } }),
             ],
         })
     );
 }
-const C_ = F('TeamEfficiencyTable', t_.efficiencyTable, {
-        variants: { team: { [ao.allies]: t_.efficiencyTable__allies, [ao.enemies]: t_.efficiencyTable__enemies } },
+const M_ = L('TeamEfficiencyTable', v_.efficiencyTable, {
+        variants: { team: { [fo.allies]: v_.efficiencyTable__allies, [fo.enemies]: v_.efficiencyTable__enemies } },
     }),
-    S_ = {
-        [ul.Squad]: lp,
-        [ul.Player]: op,
-        [ul.Damage]: up,
-        [ul.Frag]: mp,
-        [ul.Xp]: pp,
-        [ul.Vehicle]: cp,
-        [ul.Medal]: dp,
+    G_ = {
+        [Al.Squad]: xp,
+        [Al.Player]: Np,
+        [Al.Damage]: Ip,
+        [Al.Frag]: Ap,
+        [Al.Xp]: Cp,
+        [Al.Vehicle]: jp,
+        [Al.Medal]: wp,
     },
-    B_ = l(({ team: a, data: s, className: n }) => {
-        const { model: i, controls: r } = oo(),
+    F_ = l(({ team: a, data: s, className: n }) => {
+        const { model: i, controls: r } = No(),
             l = i.computes.personalInfo(),
             o = i.teamsStatistic.sorting.get(),
-            c = t.useMemo(() => [{ id: S_[o.column], desc: o.sortDirection === ml.Desc }], [o.column, o.sortDirection]),
-            d = Ae().breakpoint.name,
+            c = t.useMemo(() => [{ id: G_[o.column], desc: o.sortDirection === Cl.Desc }], [o.column, o.sortDirection]),
+            d = Se().breakpoint.name,
             u = t.useCallback(
                 (e) => {
-                    const a = (e instanceof Function ? e(c) : e)[0] ?? { id: cp, desc: !0 };
+                    const a = (e instanceof Function ? e(c) : e)[0] ?? { id: jp, desc: !0 };
                     r.teamEfficiency.sort({
-                        column: Object.keys(S_).find((e) => S_[e] === a.id) || ul.Vehicle,
-                        sortDirection: a.desc ? ml.Desc : ml.Asc,
+                        column: Object.keys(G_).find((e) => G_[e] === a.id) || Al.Vehicle,
+                        sortDirection: a.desc ? Cl.Desc : Cl.Asc,
                     });
                 },
                 [c, r.teamEfficiency],
             ),
-            m = t.useMemo(() => o_({ team: a, personalInfo: l, breakpointName: d }), [a, d, l]);
+            m = t.useMemo(() => N_({ team: a, personalInfo: l, breakpointName: d }), [a, d, l]);
         return (
-            ee(da(d), `Such breakpoint ${d} is not supported`),
-            e.jsx(qe, {
+            te(da(d), `Such breakpoint ${d} is not supported`),
+            e.jsx(Ye, {
                 columns: m,
                 data: s,
                 enableMultiRowSelection: !1,
@@ -6061,16 +6152,16 @@ const C_ = F('TeamEfficiencyTable', t_.efficiencyTable, {
                 },
                 enableSorting: !0,
                 initialState: { globalFilter: !0 },
-                children: e.jsx(C_, {
+                children: e.jsx(M_, {
                     team: a,
                     className: n,
                     children: e.jsxs(
-                        Ge,
+                        $e,
                         {
-                            className: t_.table,
+                            className: v_.table,
                             children: [
-                                e.jsx(p_, { className: t_.header }),
-                                e.jsx(K, { children: e.jsx(A_, { team: a }) }),
+                                e.jsx(C_, { className: v_.header }),
+                                e.jsx(U, { children: e.jsx(W_, { team: a }) }),
                             ],
                         },
                         d,
@@ -6079,7 +6170,7 @@ const C_ = F('TeamEfficiencyTable', t_.efficiencyTable, {
             })
         );
     }),
-    R_ = {
+    $_ = {
         base: 'TeamEfficiency_51caa749',
         wrapper: 'TeamEfficiency_wrapper_a2a49ce',
         table: 'TeamEfficiency_table_5763cf17',
@@ -6087,40 +6178,40 @@ const C_ = F('TeamEfficiencyTable', t_.efficiencyTable, {
         details: 'TeamEfficiency_details_f087bb8e',
         details__visible: 'TeamEfficiency_details__visible_eaf91b76',
     },
-    P_ = F('TeamEfficiency', R_.base),
-    k_ = l(function ({ className: t }) {
-        const { model: s } = oo(),
+    L_ = L('TeamEfficiency', $_.base),
+    X_ = l(function ({ className: t }) {
+        const { model: s } = No(),
             n = s.teamsStatistic.allies.get(),
             i = s.teamsStatistic.enemies.get(),
             r = s.teamsStatistic.selectedRow.get();
-        return e.jsx(P_, {
-            className: a(R_[`base__${null == r ? void 0 : r.team}`], t),
+        return e.jsx(L_, {
+            className: a($_[`base__${null == r ? void 0 : r.team}`], t),
             children: e.jsxs('div', {
-                className: R_.wrapper,
+                className: $_.wrapper,
                 children: [
-                    e.jsx(rp, {
-                        team: ao.enemies,
-                        className: a(R_.details, (null == r ? void 0 : r.team) === ao.enemies && R_.details__visible),
+                    e.jsx(yp, {
+                        team: fo.enemies,
+                        className: a($_.details, (null == r ? void 0 : r.team) === fo.enemies && $_.details__visible),
                     }),
-                    e.jsx(B_, {
+                    e.jsx(F_, {
                         data: n,
-                        team: ao.allies,
-                        className: a(R_.table, (null == r ? void 0 : r.team) === ao.enemies && R_.table__hidden),
+                        team: fo.allies,
+                        className: a($_.table, (null == r ? void 0 : r.team) === fo.enemies && $_.table__hidden),
                     }),
-                    e.jsx(rp, {
-                        team: ao.allies,
-                        className: a(R_.details, (null == r ? void 0 : r.team) === ao.allies && R_.details__visible),
+                    e.jsx(yp, {
+                        team: fo.allies,
+                        className: a($_.details, (null == r ? void 0 : r.team) === fo.allies && $_.details__visible),
                     }),
-                    e.jsx(B_, {
+                    e.jsx(F_, {
                         data: i,
-                        team: ao.enemies,
-                        className: a(R_.table, (null == r ? void 0 : r.team) === ao.allies && R_.table__hidden),
+                        team: fo.enemies,
+                        className: a($_.table, (null == r ? void 0 : r.team) === fo.allies && $_.table__hidden),
                     }),
                 ],
             }),
         });
     }),
-    E_ = {
+    K_ = {
         tab: 'App_tab_5d913562',
         vignette: 'App_vignette_6896e5b7',
         base: 'App_e782cff0',
@@ -6140,37 +6231,37 @@ const C_ = F('TeamEfficiencyTable', t_.efficiencyTable, {
         notificationBubble: 'App_notificationBubble_e3b77ec5',
         notificationValueContainer: 'App_notificationValueContainer_17678555',
         notificationValue: 'App_notificationValue_e7f1f67c',
-        info: 'App_info_e544accb',
+        info: 'App_info_ad190031',
     },
-    T_ = F('PostBattle', E_.base),
-    D_ = F('PostBattleNavigation', E_.navigation);
-function V_() {
-    const { active: t } = L();
+    q_ = L('PostBattle', K_.base),
+    U_ = L('PostBattleNavigation', K_.navigation);
+function Y_() {
+    const { active: t } = K();
     return e.jsxs('div', {
-        className: a(E_.content, E_[`content__${t}`]),
+        className: a(K_.content, K_[`content__${t}`]),
         children: [
-            e.jsx(wm, { className: a(E_.tab, E_.tab__overview) }),
-            e.jsx(k_, { className: a(E_.tab, E_.tab__teamScore) }),
-            e.jsx(xo, { className: a(E_.tab, E_.tab__missionProgress) }),
-            e.jsx(Hr, { className: a(E_.tab, E_.tab__financialReport) }),
+            e.jsx(Om, { className: a(K_.tab, K_.tab__overview) }),
+            e.jsx(X_, { className: a(K_.tab, K_.tab__teamScore) }),
+            e.jsx(To, { className: a(K_.tab, K_.tab__missionProgress) }),
+            e.jsx(el, { className: a(K_.tab, K_.tab__financialReport) }),
         ],
     });
 }
-const z_ = l(function () {
+const J_ = l(function () {
         const s = k.resolve('strings'),
-            i = H(),
+            i = M(),
             r = ua(),
-            { battleInfoRef: l, navigationRef: o, completedSteps: c, step: d, readyForNotifications: u } = vt(),
-            m = Za(),
+            { battleInfoRef: l, navigationRef: o, completedSteps: c, step: d, readyForNotifications: u } = ht(),
+            m = et(),
             [p] = w(() => ({ from: { opacity: 0, y: '-10rem' }, ref: o })),
             [_] = w(() => ({ from: { opacity: 0 }, ref: l })),
-            { model: f, controls: v } = oo(),
+            { model: f, controls: v } = No(),
             b = f.computes.personalInfo(),
             h = f.battleInfo.get(),
-            { active: g } = L();
+            { active: g } = K();
         return (
-            Xe(We.ESCAPE, v.close),
-            we(() => {
+            qe(Ge.ESCAPE, v.close),
+            Ae(() => {
                 function e(e) {
                     e.altKey || e.shiftKey || e.ctrlKey || ma.tooltip.hideAll();
                 }
@@ -6189,49 +6280,49 @@ const z_ = l(function () {
                       : m.controls.read();
             }, [m.state.read, m.controls, g, u]),
             t.useEffect(() => {
-                d === mt.fourth && i.play('exitResult', { target: 'post-battle' });
+                d === _t.fourth && i.play('exitResult', { target: 'post-battle' });
             }, [d, i]),
-            e.jsxs(T_, {
-                className: a(E_.base, E_[`base__${g}`]),
+            e.jsxs(q_, {
+                className: a(K_.base, K_[`base__${g}`]),
                 style: { width: `${r}rem` },
                 children: [
-                    g !== Ia.overview && e.jsx('div', { className: E_.vignette }),
-                    e.jsx(V_, {}),
+                    g !== Ia.overview && e.jsx('div', { className: K_.vignette }),
+                    e.jsx(Y_, {}),
                     e.jsx(n.div, {
                         style: p,
-                        children: e.jsx(D_, {
-                            className: !1 === c.has(mt.second) && E_.navigation__disabled,
+                        children: e.jsx(U_, {
+                            className: !1 === c.has(_t.second) && K_.navigation__disabled,
                             children: e.jsxs(pa.Switcher, {
-                                className: E_.switcher,
-                                classNames: { mainBorder: E_.mainBorderSwitcher },
+                                className: K_.switcher,
+                                classNames: { mainBorder: K_.mainBorderSwitcher },
                                 children: [
                                     e.jsx(pa.Tab, {
                                         tabId: Ia.overview,
-                                        children: T.toUpperCase(
+                                        children: V.toUpperCase(
                                             s.readOrEmpty('battle_results.battleResult.navigation.battleResults'),
                                         ),
                                     }),
                                     e.jsx(pa.Tab, {
                                         tabId: Ia.teamsStatistics,
-                                        children: T.toUpperCase(
+                                        children: V.toUpperCase(
                                             s.readOrEmpty('battle_results.battleResult.navigation.teamEfficiency'),
                                         ),
                                     }),
                                     e.jsxs(pa.Tab, {
                                         tabId: Ia.progression,
                                         children: [
-                                            T.toUpperCase(
+                                            V.toUpperCase(
                                                 s.readOrEmpty(
                                                     'battle_results.battleResult.navigation.missionsProgress',
                                                 ),
                                             ),
-                                            e.jsx(ut.Bubble, { className: E_.notificationBubble }),
-                                            e.jsx(ut.Items, { className: E_.progressionNotificationItems }),
+                                            e.jsx(pt.Bubble, { className: K_.notificationBubble }),
+                                            e.jsx(pt.Items, { className: K_.progressionNotificationItems }),
                                         ],
                                     }),
                                     e.jsx(pa.Tab, {
                                         tabId: Ia.financialReport,
-                                        children: T.toUpperCase(
+                                        children: V.toUpperCase(
                                             s.readOrEmpty('battle_results.battleResult.navigation.financialReport'),
                                         ),
                                     }),
@@ -6241,30 +6332,32 @@ const z_ = l(function () {
                     }),
                     h &&
                         e.jsx(n.div, {
-                            className: E_.info,
+                            className: K_.info,
                             style: _,
-                            children: e.jsxs(Wa, {
+                            children: e.jsxs(Ga, {
                                 children: [
-                                    e.jsx(Wa.Arena, {
+                                    e.jsx(Ga.Arena, {
                                         arenaName: h.arenaName,
                                         arenaType: h.arenaType,
                                         finishReasonKey: h.finishReasonKey,
                                         status: h.status,
                                         modeName: h.modeName,
                                     }),
-                                    e.jsx(Wa.StartTime, { startTime: h.startTime }),
-                                    e.jsx(Wa.Player, {
+                                    e.jsx(Ga.StartTime, { startTime: h.startTime }),
+                                    e.jsx(Ga.Player, {
                                         vehicleName: b.vehicle.name,
+                                        vehicleLevel: b.vehicle.tier,
+                                        vehicleType: b.vehicle.type,
                                         userName: b.account.username,
                                         clan: b.account.clanAbbreviation,
                                     }),
-                                    e.jsx(Wa.PlayerStatus, {
-                                        className: E_.group,
+                                    e.jsx(Ga.PlayerStatus, {
+                                        className: K_.group,
                                         killer: b.killer,
                                         deathReasonKey: b.userStatus.deathReason,
                                         abandonBattle: b.userStatus.abandonBattle,
                                     }),
-                                    e.jsx(Wa.CommendationScore, { commendationsReceived: h.commendationsReceived }),
+                                    e.jsx(Ga.CommendationScore, { commendationsReceived: h.commendationsReceived }),
                                 ],
                             }),
                         }),
@@ -6272,10 +6365,10 @@ const z_ = l(function () {
             })
         );
     }),
-    O_ = l(function () {
+    Z_ = l(function () {
         const a = _a(),
-            { model: t } = oo(),
-            { size: s } = re({ size: fa.small }, { large: { size: fa.medium }, extraLarge: { size: fa.large } });
+            { model: t } = No(),
+            { size: s } = oe({ size: fa.small }, { large: { size: fa.medium }, extraLarge: { size: fa.large } });
         return e.jsx(pa, {
             theme: 'primary',
             size: s,
@@ -6283,12 +6376,12 @@ const z_ = l(function () {
             onActiveChange: (e) => {
                 e in Ba ? a.push(Ba[e]) : console.error(`Invalid tab ID: ${e}`);
             },
-            children: e.jsx(bt, {
-                children: e.jsx(ut.Provider, { items: t.notificationList.get(), children: e.jsx(z_, {}) }),
+            children: e.jsx(gt, {
+                children: e.jsx(pt.Provider, { items: t.notificationList.get(), children: e.jsx(J_, {}) }),
             }),
         });
     }),
-    H_ = va({
+    Q_ = va({
         click: {
             'expandable-overlay': 'yes',
             'expandable-overlay:hint-key': 'yes',
@@ -6317,8 +6410,8 @@ const z_ = l(function () {
         exitResult: { 'post-battle': 'ue_06_result_exit' },
         notificationBubbleAppeared: { 'mission-progress:bubble': 'gui_pbs_notification_bubble' },
     }),
-    W_ = new ba().add(lo).addWithProps(ha, { soundsOverrides: H_ }).addWithProps(ga, { context: 'model.router' });
+    ef = new ba().add(xo).addWithProps(ha, { soundsOverrides: Q_ }).addWithProps(ga, { context: 'model.router' });
 (ya(),
-    xa(W_.render(e.jsx(O_, {})))
+    xa(ef.render(e.jsx(Z_, {})))
         .then(() => Na(document.getElementById('root')))
         .then(() => ja()));

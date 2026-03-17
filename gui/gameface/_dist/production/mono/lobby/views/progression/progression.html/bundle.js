@@ -1,62 +1,63 @@
 import {
     w as e,
-    Y as t,
-    Z as s,
-    x as a,
-    y as n,
+    Z as t,
+    $ as s,
+    x as n,
+    y as a,
     j as i,
-    z as r,
-    r as o,
-    $ as d,
-    a0 as c,
-    A as _,
-    a1 as l,
-    a2 as g,
-    a3 as u,
-    a4 as m,
-    a5 as p,
+    z as o,
+    r,
+    a0 as d,
+    a1 as c,
+    A as l,
+    a2 as _,
+    a3 as g,
+    a4 as u,
+    a5 as m,
+    a6 as p,
 } from '../../../chunks/vendor.js';
 import {
     m as f,
-    d as b,
-    e as h,
-    cT as C,
+    d as h,
+    e as b,
+    d3 as C,
     h as v,
-    p as x,
-    aa as w,
-    cv as I,
-    cU as P,
-    a as N,
+    G as w,
+    a9 as x,
+    cB as I,
+    d4 as N,
+    a as P,
     c as E,
     g as T,
-    O as j,
-    _ as A,
-    cV as S,
+    N as j,
+    u as A,
+    d5 as S,
     F,
-    cy as Q,
-    I as L,
-    R as y,
-    a9 as k,
-    aF as D,
-    y as q,
-    cq as M,
-    bs as O,
-    c6 as z,
-    cW as $,
-    cX as B,
-    k as G,
-    aM as W,
-    B as V,
-    ac as H,
-    u as Y,
-    a3 as U,
-    cz as X,
-    a2 as Z,
-    a4 as J,
+    cE as Q,
+    o as L,
+    Q as y,
+    U as k,
+    aW as D,
+    aC as q,
+    J as M,
+    cw as $,
+    bA as O,
+    cb as z,
+    d6 as B,
+    d7 as G,
+    d8 as V,
+    aJ as W,
+    B as H,
+    a8 as Y,
+    p as U,
+    a6 as X,
+    cF as J,
+    a5 as Z,
+    a7 as K,
 } from '../../../chunks/lib.js';
-import { g as K, a as ee } from '../../../chunks/readResource.js';
-import { F as te } from '../../../chunks/fun_random_progression_state.js';
-var se = ((e) => (
+import { c as ee, a as te, g as se } from '../../../chunks/readResource.js';
+import { F as ne } from '../../../chunks/fun_random_progression_state.js';
+var ae = ((e) => (
         (e.Inactive = 'inactive'),
         (e.Active = 'active'),
         (e.Detached = 'detached'),
@@ -65,9 +66,9 @@ var se = ((e) => (
         (e.Deactivating = 'deactivating'),
         (e.Activating = 'activating'),
         e
-    ))(se || {}),
-    ae = ((e) => ((e.None = 'none'), (e.HidingGlow = 'hiding_glow'), (e.ShowingGlow = 'showing_glow'), e))(ae || {}),
-    ne = ((e) => (
+    ))(ae || {}),
+    ie = ((e) => ((e.None = 'none'), (e.HidingGlow = 'hiding_glow'), (e.ShowingGlow = 'showing_glow'), e))(ie || {}),
+    oe = ((e) => (
         (e.EvFepCounterChange = 'ev_fep_counter_change'),
         (e.EvFepTearOffCard = 'ev_fep_tear_off_card'),
         (e.EvFepCongratulate = 'ev_fep_congratulate'),
@@ -77,8 +78,8 @@ var se = ((e) => (
         (e.EvFepInfStepTransition = 'ev_fep_inf_step_transition'),
         (e.RtpcExtFepWheelRotation = 'RTPC_ext_fep_wheel_rotation'),
         e
-    ))(ne || {}),
-    ie = ((e) => (
+    ))(oe || {}),
+    re = ((e) => (
         (e[(e.Idle = 0)] = 'Idle'),
         (e[(e.Scrolling = 1)] = 'Scrolling'),
         (e[(e.Dragging = 2)] = 'Dragging'),
@@ -90,15 +91,15 @@ var se = ((e) => (
         (e[(e.FinalAnimation = 8)] = 'FinalAnimation'),
         (e[(e.Blocked = 9)] = 'Blocked'),
         e
-    ))(ie || {}),
-    re = ((e) => (
+    ))(re || {}),
+    de = ((e) => (
         (e[(e.Init = 0)] = 'Init'),
         (e[(e.Detaching = 1)] = 'Detaching'),
         (e[(e.Scroll = 2)] = 'Scroll'),
         (e[(e.Finish = 3)] = 'Finish'),
         e
-    ))(re || {}),
-    oe = ((e) => (
+    ))(de || {}),
+    ce = ((e) => (
         (e[(e.RunCounter = 0)] = 'RunCounter'),
         (e[(e.Detach = 1)] = 'Detach'),
         (e[(e.HideGlow = 2)] = 'HideGlow'),
@@ -109,55 +110,55 @@ var se = ((e) => (
         (e[(e.FinishActivating = 7)] = 'FinishActivating'),
         (e[(e.Finish = 8)] = 'Finish'),
         e
-    ))(oe || {});
-const de = (e, t) =>
+    ))(ce || {});
+const le = (e, t) =>
         f(e, (e) => ({
             name: e.name,
             image: v(e, t),
             value: e.value,
             special: C[e.overlayType],
-            valueType: h(e.name),
-            tooltipArgs: b({ tooltipId: e.tooltipId }, Number(e.tooltipContentId)),
+            valueType: b(e.name),
+            tooltipArgs: h({ tooltipId: e.tooltipId }, Number(e.tooltipContentId)),
         })),
-    ce = {
-        [te.DISABLED]: te.DISABLED,
-        [te.ACTIVE_FINAL]: te.ACTIVE_FINAL,
-        [te.ACTIVE_RESETTABLE]: te.ACTIVE_RESETTABLE,
-        [te.ACTIVE_INFINITE_FINAL]: te.ACTIVE_FINAL,
-        [te.ACTIVE_INFINITE_RESETTABLE]: te.ACTIVE_RESETTABLE,
-        [te.COMPLETED_FINAL]: te.ACTIVE_FINAL,
-        [te.COMPLETED_RESETTABLE]: te.ACTIVE_RESETTABLE,
+    _e = {
+        [ne.DISABLED]: ne.DISABLED,
+        [ne.ACTIVE_FINAL]: ne.ACTIVE_FINAL,
+        [ne.ACTIVE_RESETTABLE]: ne.ACTIVE_RESETTABLE,
+        [ne.ACTIVE_INFINITE_FINAL]: ne.ACTIVE_FINAL,
+        [ne.ACTIVE_INFINITE_RESETTABLE]: ne.ACTIVE_RESETTABLE,
+        [ne.COMPLETED_FINAL]: ne.ACTIVE_FINAL,
+        [ne.COMPLETED_RESETTABLE]: ne.ACTIVE_RESETTABLE,
     },
-    _e = (e) => ({
-        isActive: [te.ACTIVE_FINAL, te.ACTIVE_RESETTABLE].includes(e),
-        isInfinite: [te.ACTIVE_INFINITE_FINAL, te.ACTIVE_INFINITE_RESETTABLE].includes(e),
-        isCompleted: [te.COMPLETED_FINAL, te.COMPLETED_RESETTABLE].includes(e),
-        isResettable: [te.ACTIVE_RESETTABLE, te.COMPLETED_RESETTABLE, te.ACTIVE_INFINITE_RESETTABLE].includes(e),
+    ge = (e) => ({
+        isActive: [ne.ACTIVE_FINAL, ne.ACTIVE_RESETTABLE].includes(e),
+        isInfinite: [ne.ACTIVE_INFINITE_FINAL, ne.ACTIVE_INFINITE_RESETTABLE].includes(e),
+        isCompleted: [ne.COMPLETED_FINAL, ne.COMPLETED_RESETTABLE].includes(e),
+        isResettable: [ne.ACTIVE_RESETTABLE, ne.COMPLETED_RESETTABLE, ne.ACTIVE_INFINITE_RESETTABLE].includes(e),
     }),
-    le = (e, t, s) => Math.min(s, Math.max(t, e)),
-    ge = (e, t, s) => Math.min(t, Math.max(s, e)),
-    ue = () => {
+    ue = (e, t, s) => Math.min(s, Math.max(t, e)),
+    me = (e, t, s) => Math.min(t, Math.max(s, e)),
+    pe = () => {
         const s = { rotation: e.box(0), changeTime: e.box(new Date()), filled: e.box(!1) },
-            a = t((e, t) => {
+            n = t((e, t) => {
                 (s.rotation.set(e), s.changeTime.set(t), s.filled.set(!0));
             }),
-            n = t(() => {
+            a = t(() => {
                 s.filled.set(!1);
             });
-        return { ...s, setRotation: a, clear: n };
+        return { ...s, setRotation: n, clear: a };
     },
-    me = (s, a) => {
-        const n = (e) =>
+    fe = (s, n) => {
+        const a = (e) =>
                 t((...t) => {
-                    if (a.userActionsAllowed.get()) return e(...t);
+                    if (n.userActionsAllowed.get()) return e(...t);
                 }),
             i = t((e) => {
                 s.state.set(e);
             }),
-            r = t(() => {
+            o = t(() => {
                 (s.rotationStats.prev.clear(), s.rotationStats.last.setRotation(s.currentRotation.get(), new Date()));
             }),
-            o = t((e) => {
+            r = t((e) => {
                 (s.rotationStats.prev.setRotation(
                     s.rotationStats.last.rotation.get(),
                     s.rotationStats.last.changeTime.get(),
@@ -166,179 +167,208 @@ const de = (e, t) =>
                     s.currentRotation.set(e));
             }),
             d = t((e) => {
-                s.targetRotation.set(ge(e, a.minRotation.get(), a.maxRotation.get()));
+                s.targetRotation.set(me(e, n.minRotation.get(), n.maxRotation.get()));
             }),
             c = t(() => {
                 if (s.progress.finalCard.get() !== s.progress.currentCard.get()) {
-                    i(ie.ShowProgress);
+                    i(re.ShowProgress);
                     const e = -s.cardRotation.get() * s.progress.currentCard.get();
-                    o(ge(e, a.minRotation.get(), a.maxRotation.get()));
-                } else (v[oe.RunCounter](), i(ie.Idle));
+                    r(me(e, n.minRotation.get(), n.maxRotation.get()));
+                } else (v[ce.RunCounter](), i(re.Idle));
             }),
-            _ = t((e) => {
+            l = t((e) => {
                 const t = (-s.cardRotation.get() * (e - 1)) / 2,
-                    n = ge(t, a.minRotation.get(), a.maxRotation.get());
-                s.currentRotation.get() === n
-                    ? (g(!0), i(ie.Blocked), x.sound(ne.EvFepCongratulate))
-                    : (i(ie.FinalAnimation), d(t));
+                    a = me(t, n.minRotation.get(), n.maxRotation.get());
+                s.currentRotation.get() === a
+                    ? (g(!0), i(re.Blocked), w.sound(oe.EvFepCongratulate))
+                    : (i(re.FinalAnimation), d(t));
             }),
-            l = t((t, n, r, _, l, u) => {
+            _ = t((t, a, o, l, _, u) => {
                 if (
                     (s.cardsCount.set(t),
-                    s.progress.currentCard.set(n),
-                    s.progress.finalCard.set(r),
+                    s.progress.currentCard.set(a),
+                    s.progress.finalCard.set(o),
                     s.progress.state.cards.push(
-                        ...w(t, (t) => {
+                        ...x(t, (t) => {
                             return (
                                 (s = ((e, t, s) =>
-                                    s ? se.Detached : e === t ? se.Active : e > t ? se.Detached : se.Inactive)(
-                                    n,
+                                    s ? ae.Detached : e === t ? ae.Active : e > t ? ae.Detached : ae.Inactive)(
+                                    a,
                                     t,
                                     u,
                                 )),
-                                (a = ae.None),
-                                { state: e.box(s), animation: e.box(a) }
+                                (n = ie.None),
+                                { state: e.box(s), animation: e.box(n) }
                             );
-                            var s, a;
+                            var s, n;
                         }),
                     ),
-                    _)
+                    l)
                 )
-                    (o(-s.cardRotation.get() * a.maxRightCard.get()),
-                        i(ie.FirstAnimation),
-                        d(-s.cardRotation.get() * n));
+                    (r(-s.cardRotation.get() * n.maxRightCard.get()),
+                        i(re.FirstAnimation),
+                        d(-s.cardRotation.get() * a));
                 else if (u) {
                     const e = (-s.cardRotation.get() * (t - 1)) / 2;
-                    (o(e), d(e), g(!0), i(ie.Blocked));
+                    (r(e), d(e), g(!0), i(re.Blocked));
                 } else {
-                    const e = le(n, a.minLeftCard.get(), a.maxRightCard.get());
-                    (l || o(-s.cardRotation.get() * e), d(s.currentRotation.get()), n !== r ? c() : v[oe.RunCounter]());
+                    const e = ue(a, n.minLeftCard.get(), n.maxRightCard.get());
+                    (_ || r(-s.cardRotation.get() * e), d(s.currentRotation.get()), a !== o ? c() : v[ce.RunCounter]());
                 }
             }),
             g = t((e) => {
                 s.assembled.set(e);
             }),
-            u = n((e) => {
-                const t = ge(
+            u = a((e) => {
+                const t = me(
                     s.targetRotation.get() - (s.cardRotation.get() * e) / -2,
-                    a.minRotation.get(),
-                    a.maxRotation.get(),
+                    n.minRotation.get(),
+                    n.maxRotation.get(),
                 );
-                return (i(ie.Scrolling), d(t), s.targetRotation.get());
+                return (i(re.Scrolling), d(t), s.targetRotation.get());
             }),
-            m = n((e) => {
+            m = a((e) => {
                 s.dragging.speed.set(e);
             }),
-            p = n((e) => {
-                (i(ie.Dragging), s.dragging.lastMousePosition.set(e), m(0), d(s.currentRotation.get()));
+            p = a((e) => {
+                (i(re.Dragging), s.dragging.lastMousePosition.set(e), m(0), d(s.currentRotation.get()));
             }),
-            f = n(() => {
-                const { overflow: e } = a.overflow.get();
-                (i(e ? ie.OverflowNormalization : ie.InertialMovement), s.dragging.lastMousePosition.set(0));
+            f = a(() => {
+                const { overflow: e } = n.overflow.get();
+                (i(e ? re.OverflowNormalization : re.InertialMovement), s.dragging.lastMousePosition.set(0));
             }),
-            b = n((e, t) => {
-                if (s.state.get() !== ie.Dragging) return;
-                const { overflow: n } = a.overflow.get(),
+            h = a((e, t) => {
+                if (s.state.get() !== re.Dragging) return;
+                const { overflow: a } = n.overflow.get(),
                     i = (180 * Math.atan((t - s.dragging.lastMousePosition.get()) / e)) / Math.PI,
-                    r = n && Math.max(1, n);
-                (m(r ? i / r : i),
+                    o = a && Math.max(1, a);
+                (m(o ? i / o : i),
                     s.dragging.lastMousePosition.set(t),
                     s.targetRotation.set(s.targetRotation.get() + s.dragging.speed.get()));
             }),
-            h = t((e, t) => {
-                var a;
+            b = t((e, t) => {
+                var n;
                 e >= 0 &&
                     e < s.progress.state.cards.length &&
-                    (null == (a = s.progress.state.cards[e]) || a.state.set(t));
+                    (null == (n = s.progress.state.cards[e]) || n.state.set(t));
             }),
             C = t((e, t) => {
-                var a;
+                var n;
                 e >= 0 &&
                     e <= s.progress.state.cards.length &&
-                    (null == (a = s.progress.state.cards[e]) || a.animation.set(t));
+                    (null == (n = s.progress.state.cards[e]) || n.animation.set(t));
             }),
             v = {
-                [oe.RunCounter]: t(() => {
+                [ce.RunCounter]: t(() => {
                     s.progress.state.runCounter.set(!0);
                 }),
-                [oe.Detach]: t(() => {
-                    (h(s.progress.currentCard.get(), se.DetachingActive), s.progress.animation.set(re.Detaching));
+                [ce.Detach]: t(() => {
+                    (b(s.progress.currentCard.get(), ae.DetachingActive), s.progress.animation.set(de.Detaching));
                 }),
-                [oe.HideGlow]: t(() => {
-                    C(s.progress.currentCard.get(), ae.HidingGlow);
+                [ce.HideGlow]: t(() => {
+                    C(s.progress.currentCard.get(), ie.HidingGlow);
                 }),
-                [oe.DeactivateCurrent]: t(() => {
-                    h(s.progress.currentCard.get(), se.Deactivating);
+                [ce.DeactivateCurrent]: t(() => {
+                    b(s.progress.currentCard.get(), ae.Deactivating);
                 }),
-                [oe.ActivateNext]: t(() => {
+                [ce.ActivateNext]: t(() => {
                     const e = s.progress.currentCard.get() + 1;
-                    (h(e, se.Activating), s.progress.currentCard.set(e));
+                    (b(e, ae.Activating), s.progress.currentCard.set(e));
                 }),
-                [oe.ShowGlow]: t(() => {
-                    C(s.progress.currentCard.get(), ae.ShowingGlow);
+                [ce.ShowGlow]: t(() => {
+                    C(s.progress.currentCard.get(), ie.ShowingGlow);
                 }),
-                [oe.FinishActivating]: t(() => {
+                [ce.FinishActivating]: t(() => {
                     const e = s.progress.currentCard.get() - 1;
-                    h(e, se.Detached);
+                    b(e, ae.Detached);
                 }),
-                [oe.Scroll]: t(() => {
-                    s.progress.animation.set(re.Scroll);
-                    const e = ge(
+                [ce.Scroll]: t(() => {
+                    s.progress.animation.set(de.Scroll);
+                    const e = me(
                         -s.cardRotation.get() * s.progress.currentCard.get(),
-                        a.minRotation.get(),
-                        a.maxRotation.get(),
+                        n.minRotation.get(),
+                        n.maxRotation.get(),
                     );
                     d(e);
                 }),
-                [oe.Finish]: t(() => {
-                    (s.progress.finalCard.get() < s.cardsCount.get() && h(s.progress.finalCard.get(), se.Active),
-                        s.progress.animation.set(re.Finish),
-                        i(ie.Idle));
+                [ce.Finish]: t(() => {
+                    (s.progress.finalCard.get() < s.cardsCount.get() && b(s.progress.finalCard.get(), ae.Active),
+                        s.progress.animation.set(de.Finish),
+                        i(re.Idle));
                 }),
             };
         return {
-            initCardsFan: l,
-            startRotation: r,
+            initCardsFan: _,
+            startRotation: o,
             scroll: u,
             runProgressionAnimation: c,
-            runFinalAnimation: _,
+            runFinalAnimation: l,
             setAssembled: g,
             setState: i,
-            setCurrentRotation: o,
+            setCurrentRotation: r,
             setTargetRotation: d,
             setDraggingSpeed: m,
             startDragging: p,
             stopDragging: f,
-            drag: b,
+            drag: h,
             progress: v,
         };
     },
-    pe = [ie.FirstAnimation, ie.ShowProgress, ie.FinalAnimation, ie.Blocked],
-    fe = [{ duration: 500, action: oe.Scroll }],
-    be = [{ action: oe.FinishActivating }],
-    he = [{ delay: 200, action: oe.Finish }],
-    Ce = [{ duration: 300, action: oe.ShowGlow }],
-    ve = [...fe, { delay: 100, duration: 400, action: oe.RunCounter }, { duration: 300, action: oe.HideGlow }],
-    xe = [
-        { delay: 100, duration: 700, action: oe.Detach },
-        { delay: 300, action: oe.DeactivateCurrent },
-        { duration: 300, action: oe.ActivateNext },
+    he = [re.FirstAnimation, re.ShowProgress, re.FinalAnimation, re.Blocked],
+    be = [{ duration: 500, action: ce.Scroll }],
+    Ce = [{ action: ce.FinishActivating }],
+    ve = [{ delay: 200, action: ce.Finish }],
+    we = [{ duration: 300, action: ce.ShowGlow }],
+    xe = [...be, { delay: 100, duration: 400, action: ce.RunCounter }, { duration: 300, action: ce.HideGlow }],
+    Ie = [
+        { delay: 100, duration: 700, action: ce.Detach },
+        { delay: 300, action: ce.DeactivateCurrent },
+        { duration: 300, action: ce.ActivateNext },
     ],
-    we = {
-        [ie.Idle]: {},
-        [ie.Scrolling]: { duration: 400, easing: I.linear },
-        [ie.Dragging]: { duration: 400, easing: I.easeOutQuint },
-        [ie.InertialMovement]: { duration: 800, easing: I.linear },
-        [ie.FirstAnimation]: { duration: 1e4, easing: I.easeInOutQuint },
-        [ie.Normalization]: { duration: 1e3, easing: I.easeOutQuint },
-        [ie.OverflowNormalization]: { duration: 300, easing: I.easeOutQuint },
-        [ie.ShowProgress]: { duration: 500, easing: I.easeOutQuint },
-        [ie.FinalAnimation]: { duration: 2e3, easing: I.easeInOutQuint },
-        [ie.Blocked]: { duration: 0 },
+    Ne = {
+        [re.Idle]: {},
+        [re.Scrolling]: { duration: 400, easing: I.linear },
+        [re.Dragging]: { duration: 400, easing: I.easeOutQuint },
+        [re.InertialMovement]: { duration: 800, easing: I.linear },
+        [re.FirstAnimation]: { duration: 1e4, easing: I.easeInOutQuint },
+        [re.Normalization]: { duration: 1e3, easing: I.easeOutQuint },
+        [re.OverflowNormalization]: { duration: 300, easing: I.easeOutQuint },
+        [re.ShowProgress]: { duration: 500, easing: I.easeOutQuint },
+        [re.FinalAnimation]: { duration: 2e3, easing: I.easeInOutQuint },
+        [re.Blocked]: { duration: 0 },
     },
-    [Ie, Pe] = N()(
+    Pe = (e) => {
+        if ('object' != typeof e) return !1;
+        const t = e;
+        return (
+            'string' == typeof (null == t ? void 0 : t.ordinary) &&
+            'string' == typeof (null == t ? void 0 : t.epic) &&
+            'string' == typeof (null == t ? void 0 : t.rare) &&
+            'string' == typeof (null == t ? void 0 : t.unusual) &&
+            'string' == typeof (null == t ? void 0 : t.legendary)
+        );
+    },
+    Ee = {
+        pointsValueFontColor: '#e9e2bf',
+        stagesFontColors: {
+            ordinary: '#656565',
+            unusual: '#606636',
+            rare: '#556486',
+            epic: '#826796',
+            legendary: '#9a6f10',
+        },
+        rewardCounterFontColor: '#37362e',
+        pointsTitleFontColors: {
+            ordinary: '#656565',
+            unusual: '#606636',
+            rare: '#556486',
+            epic: '#826796',
+            legendary: '#9a6f10',
+        },
+    },
+    [Re, Te] = P()(
         ({ observableModel: t }) => {
-            const n = {
+            const a = {
                     root: t.object(),
                     stages: t.array('stages'),
                     state: t.object('state'),
@@ -359,110 +389,111 @@ const de = (e, t) =>
                     infiniteCondition: t.object('infiniteCondition'),
                     infiniteQuests: t.array('infiniteCondition.conditions'),
                     infiniteStage: t.object('infiniteStage'),
+                    stringifiedModeViewSettings: t.primitives(['modeViewSettings']),
                 },
-                i = a(
+                i = n(
                     (e) => {
-                        const t = T(n.quests.get(), e);
+                        const t = T(a.quests.get(), e);
                         if (!t) throw new Error(`Unexpected quest index: ${e}`);
                         return { ...t };
                     },
                     { equals: E },
                 ),
-                r = a(
+                o = n(
                     () => {
-                        const e = T(n.infiniteQuests.get(), 0);
+                        const e = T(a.infiniteQuests.get(), 0);
                         return e ? { ...e } : null;
                     },
                     { equals: E },
                 ),
-                o = a(
+                r = n(
                     (e, t, s = !1) => {
-                        const a = s ? n.infiniteStage.get() : T(n.stages.get(), e);
-                        if (!a) throw new Error(`Unexpected card index: ${e}`);
+                        const n = s ? a.infiniteStage.get() : T(a.stages.get(), e);
+                        if (!n) throw new Error(`Unexpected card index: ${e}`);
                         const i = e + 1,
-                            r = l.cardState(e);
-                        return { ...a, rewards: de(a.rewards, t), cardNumber: i, progressionState: r };
+                            o = _.cardState(e);
+                        return { ...n, rewards: le(n.rewards, t), cardNumber: i, progressionState: o };
                     },
                     { equals: E },
                 ),
-                d = a(() => {
+                d = n(() => {
                     const e =
-                        n.condition.currentPoints.get() === n.condition.maximumPoints.get() ? n.stages.get().length : 0;
-                    return j(n.stages.get(), (e) => !e.isCompleted) || e;
+                        a.condition.currentPoints.get() === a.condition.maximumPoints.get() ? a.stages.get().length : 0;
+                    return j(a.stages.get(), (e) => !e.isCompleted) || e;
                 }),
-                c = a(() => {
-                    const e = T(n.stages.get(), 0);
-                    if (e && e.requiredPoints > n.condition.prevPoints.get()) return 0;
-                    const t = n.stages.get().length - 1;
-                    return j(n.stages.get(), (e) => e.requiredPoints > n.condition.prevPoints.get()) || t;
+                c = n(() => {
+                    const e = T(a.stages.get(), 0);
+                    if (e && e.requiredPoints > a.condition.prevPoints.get()) return 0;
+                    const t = a.stages.get().length - 1;
+                    return j(a.stages.get(), (e) => e.requiredPoints > a.condition.prevPoints.get()) || t;
                 }),
-                _ = (({ cardRotation: t, displayCardsCount: s }) => ({
+                l = (({ cardRotation: t, displayCardsCount: s }) => ({
                     cardRotation: e.box(t),
                     displayCardsCount: e.box(s),
                     cardsCount: e.box(0),
-                    state: e.box(ie.Idle),
+                    state: e.box(re.Idle),
                     currentRotation: e.box(0),
                     targetRotation: e.box(0),
                     assembled: e.box(!1),
-                    rotationStats: { prev: ue(), last: ue() },
+                    rotationStats: { prev: pe(), last: pe() },
                     progress: {
                         currentCard: e.box(0),
-                        animation: e.box(re.Init),
+                        animation: e.box(de.Init),
                         finalCard: e.box(0),
                         state: { runCounter: e.box(!1), cards: [] },
                     },
                     dragging: { lastMousePosition: e.box(0), speed: e.box(0) },
                 }))({ cardRotation: 10, displayCardsCount: 14 }),
-                l = ((e) => {
+                _ = ((e) => {
                     const t = s(() => (e.cardsCount.get() >= 5 ? 2 : 1)),
-                        n = s(() =>
+                        a = s(() =>
                             e.cardsCount.get() <= 3
                                 ? e.cardsCount.get() - 2
                                 : e.cardsCount.get() <= 5
                                   ? e.cardsCount.get() - 3
                                   : e.cardsCount.get() - 1,
                         ),
-                        i = s(() => w(e.cardsCount.get(), (t) => ({ key: t, order: e.cardsCount.get() - t - 1 }))),
-                        r = s(() =>
-                            le(
+                        i = s(() => x(e.cardsCount.get(), (t) => ({ key: t, order: e.cardsCount.get() - t - 1 }))),
+                        o = s(() =>
+                            ue(
                                 Math.round(
                                     (Math.abs(e.currentRotation.get()) / (e.cardRotation.get() * e.cardsCount.get())) *
                                         e.cardsCount.get(),
                                 ),
                                 t.get(),
-                                n.get(),
+                                a.get(),
                             ),
                         ),
-                        o = s(
-                            () => Math.max(0, le(r.get(), t.get(), n.get())) - Math.ceil(e.displayCardsCount.get() / 2),
+                        r = s(
+                            () => Math.max(0, ue(o.get(), t.get(), a.get())) - Math.ceil(e.displayCardsCount.get() / 2),
                         ),
-                        d = s(() => Math.min(e.cardsCount.get(), r.get()) + Math.ceil(e.displayCardsCount.get() / 2)),
+                        d = s(() => Math.min(e.cardsCount.get(), o.get()) + Math.ceil(e.displayCardsCount.get() / 2)),
                         c = s(() => -e.cardRotation.get() * t.get()),
-                        _ = s(() => -e.cardRotation.get() * n.get()),
-                        l = s(() => {
+                        l = s(() => -e.cardRotation.get() * a.get()),
+                        _ = s(() => {
                             const t = e.targetRotation.get() + e.dragging.speed.get(),
                                 s = c.get(),
-                                a = _.get(),
-                                n = t > s ? t - s : 0,
-                                i = t < a ? a - t : 0;
-                            return { left: n, right: i, overflow: n || i || 0 };
+                                n = l.get(),
+                                a = t > s ? t - s : 0,
+                                i = t < n ? n - t : 0;
+                            return { left: a, right: i, overflow: a || i || 0 };
                         }),
                         g = s(() =>
-                            e.state.get() === ie.FirstAnimation
-                                ? { ...we[ie.FirstAnimation], duration: 150 * e.cardsCount.get() }
-                                : we[e.state.get()],
+                            e.state.get() === re.FirstAnimation
+                                ? { ...Ne[re.FirstAnimation], duration: 150 * e.cardsCount.get() }
+                                : Ne[e.state.get()],
                         ),
-                        u = s(() => !pe.includes(e.state.get())),
+                        u = s(() => !he.includes(e.state.get())),
                         m = s(() => {
                             const s = [];
-                            s.push(...ve);
-                            for (let a = e.progress.currentCard.get(); a < e.progress.finalCard.get(); a++) {
-                                const e = a >= t.get();
-                                (s.push(...xe), e && s.push(...fe), s.push(...be));
+                            s.push(...xe);
+                            for (let n = e.progress.currentCard.get(); n < e.progress.finalCard.get(); n++) {
+                                const e = n >= t.get();
+                                (s.push(...Ie), e && s.push(...be), s.push(...Ce));
                             }
-                            return (e.progress.finalCard.get() < e.cardsCount.get() && s.push(...Ce), s.push(...he), s);
+                            return (e.progress.finalCard.get() < e.cardsCount.get() && s.push(...we), s.push(...ve), s);
                         }),
-                        p = a((t) =>
+                        p = n((t) =>
                             e.progress.state.cards[t]
                                 ? {
                                       state: e.progress.state.cards[t].state.get(),
@@ -476,90 +507,110 @@ const de = (e, t) =>
                                 s =
                                     e.rotationStats.last.changeTime.get().getTime() -
                                     e.rotationStats.prev.changeTime.get().getTime();
-                            return 0 !== s ? P(-0.4, 0.4, t / s) / -0.4 : void 0;
+                            return 0 !== s ? N(-0.4, 0.4, t / s) / -0.4 : void 0;
                         }),
-                        b = s(() => e.state.get() !== ie.Blocked),
-                        h = s(() => e.cardsCount.get() >= 6),
+                        h = s(() => e.state.get() !== re.Blocked),
+                        b = s(() => e.cardsCount.get() >= 6),
                         C = s(() =>
-                            u.get() && h.get() ? (e.state.get() === ie.Dragging ? 'grabbing' : 'grab') : 'default',
+                            u.get() && b.get() ? (e.state.get() === re.Dragging ? 'grabbing' : 'grab') : 'default',
                         );
                     return {
                         velocity: f,
                         minLeftCard: t,
-                        maxRightCard: n,
+                        maxRightCard: a,
                         cardsMap: i,
-                        currentCard: r,
-                        minVisibleCard: o,
+                        currentCard: o,
+                        minVisibleCard: r,
                         maxVisibleCard: d,
                         minRotation: c,
-                        maxRotation: _,
-                        overflow: l,
+                        maxRotation: l,
+                        overflow: _,
                         animationConfig: g,
                         userActionsAllowed: u,
                         progressSchedule: m,
                         cardState: p,
-                        soundEnabled: b,
+                        soundEnabled: h,
                         cursor: C,
                     };
-                })(_),
-                g = a(
+                })(l),
+                g = n(
                     () =>
-                        n.condition.prevPoints.get() < n.condition.currentPoints.get() &&
-                        n.condition.currentPoints.get() === n.condition.maximumPoints.get(),
+                        a.condition.prevPoints.get() < a.condition.currentPoints.get() &&
+                        a.condition.currentPoints.get() === a.condition.maximumPoints.get(),
                 ),
-                u = a(() =>
-                    (!g() && n.condition.currentPoints.get() === n.condition.maximumPoints.get()) ||
-                    _.progress.animation.get() === re.Finish
-                        ? n.state.get().status
-                        : ce[n.state.get().status],
+                u = n(() =>
+                    (!g() && a.condition.currentPoints.get() === a.condition.maximumPoints.get()) ||
+                    l.progress.animation.get() === de.Finish
+                        ? a.state.get().status
+                        : _e[a.state.get().status],
                 ),
-                m = a(() => {
+                m = n(() => {
                     const e = g(),
                         t = u(),
-                        { isCompleted: s } = _e(t);
+                        { isCompleted: s } = ge(t);
                     return { completedWithAnimation: e && s, completedNoAnimation: !e && s };
+                }),
+                p = n(() => {
+                    const e = a.stringifiedModeViewSettings.modeViewSettings.get(),
+                        t = JSON.parse(e);
+                    return (
+                        console.log(t),
+                        ((e) => {
+                            if ('object' != typeof e) return !1;
+                            const t = e;
+                            return (
+                                'string' == typeof (null == t ? void 0 : t.pointsValueFontColor) &&
+                                'string' == typeof (null == t ? void 0 : t.rewardCounterFontColor) &&
+                                Pe(null == t ? void 0 : t.stagesFontColors) &&
+                                Pe(null == t ? void 0 : t.pointsTitleFontColors)
+                            );
+                        })(t)
+                            ? t
+                            : Ee
+                    );
                 });
             return {
-                ...n,
-                cardsFan: { model: _, computes: l },
+                ...a,
+                cardsFan: { model: l, computes: _ },
                 computes: {
                     quest: i,
-                    card: o,
+                    card: r,
                     cardActiveIndex: d,
                     progressAnimationStartFrom: c,
-                    infiniteQuest: r,
+                    infiniteQuest: o,
                     pageStatus: u,
                     needChangePage: g,
                     finalAnimationStatus: m,
+                    modeViewSettings: p,
                 },
             };
         },
         ({ externalModel: e, model: t }) => ({
-            cardsFun: me(t.cardsFan.model, t.cardsFan.computes),
+            cardsFun: fe(t.cardsFan.model, t.cardsFan.computes),
             close: e.createCallbackNoArgs('onClose'),
             showInfo: e.createCallbackNoArgs('onShowInfo'),
             onOpenTierList: e.createCallbackNoArgs('onOpenTierList'),
         }),
     ),
-    Ne = 'Timer_d6719c38',
-    Ee = 'Timer_base__hide_9f6d0c7b',
-    Re = 'Timer_titleSeparatorLeft_6ee5dd6c',
-    Te = 'Timer_titleSeparatorRight_e3f1bac1',
-    je = 'Timer_line_3fed6cdc',
-    Ae = 'Timer_point_601094e8',
-    Se = 'Timer_questsRenewTimerTitle_1ba29c0d',
-    Fe = 'Timer_completedResettable_9d2f849c',
-    Qe = 'Timer_secondLine_461c25ce',
-    Le = 'Timer_countdown_11b34534',
-    ye = R.strings.fun_random.progression.questsList,
-    ke = n(({ oneline: e, classNames: t }) => {
-        const { model: s } = Pe(),
-            a = s.computes.pageStatus(),
-            { isInfinite: n, isCompleted: o, isResettable: d } = _e(a),
+    je = 'Timer_d6719c38',
+    Ae = 'Timer_base__hide_9f6d0c7b',
+    Se = 'Timer_titleSeparatorLeft_6ee5dd6c',
+    Fe = 'Timer_titleSeparatorRight_e3f1bac1',
+    Qe = 'Timer_line_3fed6cdc',
+    Le = 'Timer_point_601094e8',
+    ye = 'Timer_questsRenewTimerTitle_1ba29c0d',
+    ke = 'Timer_completedResettable_9d2f849c',
+    De = 'Timer_secondLine_461c25ce',
+    qe = 'Timer_countdown_11b34534',
+    Me = R.strings.fun_random.progression.questsList,
+    $e = a(({ oneline: e, classNames: t }) => {
+        const { model: s } = Te(),
+            n = s.computes.pageStatus(),
+            { isInfinite: a, isCompleted: r, isResettable: d } = ge(n),
             { completedWithAnimation: c } = s.computes.finalAnimationStatus(),
-            _ = s.infiniteCondition.get(),
-            l = { statusTimer: s.condition.statusTimer.get() },
-            { statusTimer: g } = n ? _ : l,
+            l = s.infiniteCondition.get(),
+            _ = { statusTimer: s.condition.statusTimer.get() },
+            { statusTimer: g } = a ? l : _,
             u = A(
                 { onelineSize: S.x16x16, completedResettableSize: S.x24x24 },
                 {
@@ -569,65 +620,70 @@ const de = (e, t) =>
                 },
             );
         return i.jsxs('div', {
-            className: r(Ne, c && Ee, t),
+            className: o(je, c && Ae, t),
             children: [
                 i.jsxs('div', {
-                    className: Re,
-                    children: [i.jsx('div', { className: je }), i.jsx('div', { className: Ae })],
+                    className: Se,
+                    children: [i.jsx('div', { className: Qe }), i.jsx('div', { className: Le })],
                 }),
                 e
                     ? i.jsx(F, {
-                          className: Se,
-                          text: ye.questsFinishTimerOnelineTitle(),
-                          params: { time: i.jsx(Q, { start: g, className: Le, size: u.onelineSize }) },
+                          className: ye,
+                          text: Me.questsFinishTimerOnelineTitle(),
+                          params: { time: i.jsx(Q, { start: g, className: qe, size: u.onelineSize }) },
                       })
                     : i.jsxs('div', {
-                          className: Fe,
+                          className: ke,
                           children: [
                               i.jsx('div', {
-                                  className: Se,
-                                  children: o && d ? ye.questsRenewTimerTitle() : ye.questsFinishTimerTitle(),
+                                  className: ye,
+                                  children: r && d ? Me.questsRenewTimerTitle() : Me.questsFinishTimerTitle(),
                               }),
                               i.jsx('div', {
-                                  className: Qe,
-                                  children: i.jsx(Q, { start: g, className: Le, size: u.completedResettableSize }),
+                                  className: De,
+                                  children: i.jsx(Q, { start: g, className: qe, size: u.completedResettableSize }),
                               }),
                           ],
                       }),
                 i.jsxs('div', {
-                    className: Te,
-                    children: [i.jsx('div', { className: Ae }), i.jsx('div', { className: je })],
+                    className: Fe,
+                    children: [i.jsx('div', { className: Le }), i.jsx('div', { className: Qe })],
                 }),
             ],
         });
     }),
-    De = {
+    Oe = {
         base: 'Header_423dfe66',
         base__hide: 'Header_base__hide_a308bf0e',
         title: 'Header_title_be0ad147',
         timer: 'Header_timer_43e2aba3',
     },
-    qe = n(({ className: e }) => {
-        const { model: t } = Pe(),
+    ze = a(({ className: e }) => {
+        const { model: t } = Te(),
             s = t.computes.pageStatus(),
-            { completedWithAnimation: a, completedNoAnimation: n } = t.computes.finalAnimationStatus(),
-            { isActive: o } = _e(s),
+            { completedWithAnimation: n, completedNoAnimation: a } = t.computes.finalAnimationStatus(),
+            { isActive: r } = ge(s),
             { assetsPointer: d } = t.root.get(),
-            { dynamicTexts: c } = K('progression', { assetsPointer: d });
-        return n
+            { dynamicTexts: c } = ee('progression', { assetsPointer: d });
+        return a
             ? null
             : i.jsxs('div', {
-                  className: r(De.base, a && De.base__hide, o && De.base__active, e),
+                  className: o(Oe.base, n && Oe.base__hide, r && Oe.base__active, e),
                   children: [
-                      i.jsx('div', { className: De.title, children: c.title() }),
-                      i.jsx('div', { className: De.timer, children: i.jsx(ke, { oneline: !0 }) }),
+                      i.jsx('div', { className: Oe.title, children: c.title() }),
+                      i.jsx('div', { className: Oe.timer, children: i.jsx($e, { oneline: !0 }) }),
                   ],
               });
     }),
-    Me = 'edge',
-    Oe = 'base',
-    ze = ({ imagesRoot: e, partName: t, rarity: s, size: a }) => `url(${e.$dyn(t).$dyn(`${s}_${a}_1`)})`,
-    $e = {
+    Be = 'edge',
+    Ge = 'base',
+    Ve = ({ imagesRoot: e, partName: t, rarity: s, size: n }) => `url(${e.$dyn(t).$dyn(`${s}_${n}_1`)})`;
+function We(e, t) {
+    const s = L.resolve('images'),
+        n = te(e);
+    return s.readOrEmpty(`${n}.progression.cards.common.${t}`, 'silent');
+}
+const He = {
         root: 'CardEdge_root_f2682522',
         base: 'CardEdge_bfb9e3',
         base__active: 'CardEdge_base__active_87816021',
@@ -639,14 +695,9 @@ const de = (e, t) =>
         edge: 'CardEdge_edge_f2682522',
         shadow: 'CardEdge_shadow_38024ae6',
         base__inactive: 'CardEdge_base__inactive_f2682522',
-        pattern: 'CardEdge_pattern_f7396a45',
-        pointsTitle: 'CardEdge_pointsTitle_b207fc46',
-        base__ordinary: 'CardEdge_base__ordinary_f2682522',
-        base__unusual: 'CardEdge_base__unusual_f2682522',
-        base__rare: 'CardEdge_base__rare_f2682522',
-        base__legendary: 'CardEdge_base__legendary_f2682522',
-        base__epic: 'CardEdge_base__epic_f2682522',
-        pointsValue: 'CardEdge_pointsValue_287aede6',
+        pattern: 'CardEdge_pattern_5d54af04',
+        pointsTitle: 'CardEdge_pointsTitle_48d4cec4',
+        pointsValue: 'CardEdge_pointsValue_e815c680',
         blinkEdge: 'CardEdge_blinkEdge_c9e993dd',
         'blink-edge': 'CardEdge_blink-edge_f2682522',
         'completed-congrats': 'CardEdge_completed-congrats_f2682522',
@@ -668,63 +719,69 @@ const de = (e, t) =>
         second2firstRotate: 'CardEdge_second2firstRotate_f2682522',
         third2second: 'CardEdge_third2second_f2682522',
     },
-    Be = n(({ index: e = 0, state: t, rewardsSize: s, infinite: a, classMix: n }) => {
-        const { model: o } = Pe(),
-            { assetsPointer: d } = o.root.get(),
-            { progressionState: c, rarity: _, requiredPoints: l } = o.computes.card(e, s, a),
-            g = t || (null == c ? void 0 : c.state),
-            u = null == c ? void 0 : c.animation,
-            m = ee(d).progression.cards,
-            p = ze({ imagesRoot: m, partName: Me, rarity: _, size: s });
+    Ye = a(({ index: e = 0, state: t, rewardsSize: s, infinite: n, classMix: a }) => {
+        const { model: r } = Te(),
+            { assetsPointer: d } = r.root.get(),
+            { progressionState: c, rarity: l, requiredPoints: _ } = r.computes.card(e, s, n),
+            { pointsValueFontColor: g, pointsTitleFontColors: u } = r.computes.modeViewSettings(),
+            m = t || (null == c ? void 0 : c.state),
+            p = null == c ? void 0 : c.animation,
+            f = se(d).progression.cards,
+            h = Ve({ imagesRoot: f, partName: Be, rarity: l, size: s }),
+            b = We(d, 'pattern');
         return i.jsxs('div', {
-            className: r(
-                $e.edge,
-                $e.base,
-                $e[`base__${_}`],
-                $e[`base__animation_${u}`],
-                s === L.Big && $e.base__big,
-                $e[`base__${g}`],
-                null == n ? void 0 : n.edge,
+            className: o(
+                He.edge,
+                He.base,
+                He[`base__${l}`],
+                He[`base__animation_${p}`],
+                s === y.Big && He.base__big,
+                He[`base__${m}`],
+                null == a ? void 0 : a.edge,
             ),
-            style: { backgroundImage: p },
+            style: { backgroundImage: h },
             children: [
-                i.jsx('div', { className: $e.blinkEdge }),
+                i.jsx('div', { className: He.blinkEdge }),
                 i.jsx('div', {
-                    className: $e.pointsTitle,
+                    className: He.pointsTitle,
+                    style: { color: u[l] },
                     children: i.jsx('div', { children: R.strings.fun_random.progression.cards.points() }),
                 }),
-                i.jsx('div', { className: $e.pointsValue, children: i.jsx('div', { children: l }) }),
-                i.jsx('div', { className: r($e.pattern, null == n ? void 0 : n.pattern), style: { maskImage: p } }),
-                i.jsx('div', { className: r($e.shadow, null == n ? void 0 : n.shadow), style: { maskImage: p } }),
+                i.jsx('div', {
+                    className: He.pointsValue,
+                    style: { color: g },
+                    children: i.jsx('div', { children: _ }),
+                }),
+                b &&
+                    i.jsx('div', {
+                        className: o(He.pattern, null == a ? void 0 : a.pattern),
+                        style: { maskImage: h, backgroundImage: `url(${b})` },
+                    }),
+                i.jsx('div', { className: o(He.shadow, null == a ? void 0 : a.shadow), style: { maskImage: h } }),
             ],
         });
     }),
-    Ge = {
+    Ue = {
         root: 'CardContent_root_d7ebe82e',
         base: 'CardContent_e296b032',
         rewards: 'CardContent_rewards_c5fd0929',
         base__big: 'CardContent_base__big_d7ebe82e',
-        rewardSlot: 'CardContent_rewardSlot_a0806209',
+        rewardSlot: 'CardContent_rewardSlot_a2ecb4b9',
         reward: 'CardContent_reward_9582bb4b',
         base__detached: 'CardContent_base__detached_d7ebe82e',
         base__detaching: 'CardContent_base__detaching_d7ebe82e',
         base__detaching_active: 'CardContent_base__detaching_active_d7ebe82e',
         base__deactivating: 'CardContent_base__deactivating_d7ebe82e',
+        rewardInfo: 'CardContent_rewardInfo_9d8103dd',
         base__small: 'CardContent_base__small_d7ebe82e',
-        rewardInfo: 'CardContent_rewardInfo_d3ff5d97',
         rewardImage: 'CardContent_rewardImage_738dd0e8',
         rewardImage__battleToken: 'CardContent_rewardImage__battleToken_e5c2fb0e',
-        cardNumber: 'CardContent_cardNumber_9874f4f8',
-        base__ordinary: 'CardContent_base__ordinary_d7ebe82e',
-        base__unusual: 'CardContent_base__unusual_d7ebe82e',
-        base__rare: 'CardContent_base__rare_d7ebe82e',
-        base__legendary: 'CardContent_base__legendary_d7ebe82e',
-        base__epic: 'CardContent_base__epic_d7ebe82e',
+        cardNumber: 'CardContent_cardNumber_2e0af128',
         base__infinite: 'CardContent_base__infinite_d7ebe82e',
         infinity: 'CardContent_infinity_20eac8ba',
         shadow: 'CardContent_shadow_879bdc41',
         base__inactive: 'CardContent_base__inactive_d7ebe82e',
-        pattern: 'CardContent_pattern_1ecf6e5c',
+        pattern: 'CardContent_pattern_cdcaa9ef',
         'completed-congrats': 'CardContent_completed-congrats_d7ebe82e',
         'completed-glow': 'CardContent_completed-glow_d7ebe82e',
         'card-show': 'CardContent_card-show_d7ebe82e',
@@ -746,61 +803,74 @@ const de = (e, t) =>
         second2firstRotate: 'CardContent_second2firstRotate_d7ebe82e',
         third2second: 'CardContent_third2second_d7ebe82e',
     },
-    We = n(({ index: e = 0, state: t, rewardsSize: s, infinite: a, classMix: n }) => {
-        const { model: o } = Pe(),
-            { assetsPointer: d } = o.root.get(),
-            { progressionState: c, rarity: _, cardNumber: l, rewards: g } = o.computes.card(e, s, a),
-            u = t || (null == c ? void 0 : c.state),
-            m = ee(d).progression.cards,
-            p = ze({ imagesRoot: m, partName: Oe, rarity: _, size: s }),
-            f = String(m.infinity_sign.$dyn(_));
+    Xe = a(({ index: e = 0, state: t, rewardsSize: s, infinite: n, classMix: a }) => {
+        const { model: r } = Te(),
+            { assetsPointer: d } = r.root.get(),
+            { progressionState: c, rarity: l, cardNumber: _, rewards: g } = r.computes.card(e, s, n),
+            { stagesFontColors: u } = r.computes.modeViewSettings(),
+            { rewardCounterFontColor: m } = r.computes.modeViewSettings(),
+            p = t || (null == c ? void 0 : c.state),
+            f = se(d).progression.cards,
+            h = Ve({ imagesRoot: f, partName: Ge, rarity: l, size: s }),
+            b = String(f.infinity_sign.$dyn(l)),
+            C = We(d, 'reward_background'),
+            v = We(d, 'pattern');
         return i.jsxs('div', {
-            className: r(
-                Ge.base,
-                Ge[`base__${_}`],
-                Ge[`base__${s}`],
-                Ge[`base__${u}`],
-                a && Ge.base__infinite,
-                null == n ? void 0 : n.content,
+            className: o(
+                Ue.base,
+                Ue[`base__${l}`],
+                Ue[`base__${s}`],
+                Ue[`base__${p}`],
+                n && Ue.base__infinite,
+                null == a ? void 0 : a.content,
             ),
             children: [
                 i.jsx('div', {
-                    className: Ge.rewards,
-                    children: w(4, (e) =>
-                        i.jsx(
+                    className: Ue.rewards,
+                    children: x(4, (e) => {
+                        const t = g.length > e,
+                            n = t && g[e];
+                        return i.jsx(
                             'div',
                             {
-                                className: Ge.rewardSlot,
+                                className: Ue.rewardSlot,
+                                style: { '--reward-info-color': m, backgroundImage: C ? `url(${C})` : 'none' },
                                 children:
-                                    g.length > e &&
-                                    i.jsx(y, {
+                                    t &&
+                                    n &&
+                                    i.jsx(k, {
                                         ...g[e],
                                         size: s,
-                                        className: Ge.reward,
+                                        className: Ue.reward,
                                         classNames: {
-                                            info: Ge.rewardInfo,
-                                            image: r(
-                                                Ge.rewardImage,
-                                                ['lootBox', 'battleToken'].includes(g[e].name) &&
-                                                    Ge.rewardImage__battleToken,
+                                            info: Ue.rewardInfo,
+                                            image: o(
+                                                Ue.rewardImage,
+                                                ['lootBox', 'battleToken'].includes(n.name) &&
+                                                    Ue.rewardImage__battleToken,
                                             ),
                                         },
                                     }),
                             },
                             e,
-                        ),
-                    ),
+                        );
+                    }),
                 }),
                 i.jsx('div', {
-                    className: Ge.cardNumber,
-                    children: a ? i.jsx('div', { className: Ge.infinity, style: { backgroundImage: `url(${f})` } }) : l,
+                    className: Ue.cardNumber,
+                    style: { color: u[l] },
+                    children: n ? i.jsx('div', { className: Ue.infinity, style: { backgroundImage: `url(${b})` } }) : _,
                 }),
-                i.jsx('div', { className: r(Ge.pattern, null == n ? void 0 : n.pattern), style: { maskImage: p } }),
-                i.jsx('div', { className: r(Ge.shadow, null == n ? void 0 : n.shadow), style: { maskImage: p } }),
+                v &&
+                    i.jsx('div', {
+                        className: o(Ue.pattern, null == a ? void 0 : a.pattern),
+                        style: { maskImage: h, backgroundImage: `url(${v})` },
+                    }),
+                i.jsx('div', { className: o(Ue.shadow, null == a ? void 0 : a.shadow), style: { maskImage: h } }),
             ],
         });
     }),
-    Ve = {
+    Je = {
         root: 'Card_root_f4c22d1c',
         base: 'Card_85adaed',
         base__big: 'Card_base__big_247c97ce',
@@ -809,7 +879,7 @@ const de = (e, t) =>
         base__detaching: 'Card_base__detaching_f4c22d1c',
         base__deactivating: 'Card_base__deactivating_f4c22d1c',
         base__activating: 'Card_base__activating_c8c39979',
-        glow: 'Card_glow_636eca6f',
+        glow: 'Card_glow_154b3a6',
         base__active: 'Card_base__active_f4c22d1c',
         base__animation_hiding_glow: 'Card_base__animation_hiding_glow_f4c22d1c',
         base__animation_showing_glow: 'Card_base__animation_showing_glow_f4c22d1c',
@@ -837,63 +907,66 @@ const de = (e, t) =>
         second2firstRotate: 'Card_second2firstRotate_f4c22d1c',
         third2second: 'Card_third2second_f4c22d1c',
     },
-    He = n(({ index: e = 0, state: t, rewardsSize: s, classMix: a, infinite: n }) => {
-        const { model: d } = Pe(),
+    Ze = a(({ index: e = 0, state: t, rewardsSize: s, classMix: n, infinite: a }) => {
+        const { model: d } = Te(),
             { assetsPointer: c } = d.root.get(),
-            { progressionState: _, rarity: l } = d.computes.card(e, s, n),
-            g = t || (null == _ ? void 0 : _.state),
-            u = null == _ ? void 0 : _.animation,
-            m = ee(c).progression.cards,
-            p = ze({ imagesRoot: m, partName: Oe, rarity: l, size: s });
+            { progressionState: l, rarity: _ } = d.computes.card(e, s, a),
+            g = t || (null == l ? void 0 : l.state),
+            u = null == l ? void 0 : l.animation,
+            m = se(c).progression.cards,
+            p = Ve({ imagesRoot: m, partName: Ge, rarity: _, size: s });
         return (
-            o.useEffect(() => {
-                (g !== se.DetachingActive && g !== se.Detaching) || x.sound(ne.EvFepTearOffCard);
+            r.useEffect(() => {
+                (g !== ae.DetachingActive && g !== ae.Detaching) || w.sound(oe.EvFepTearOffCard);
             }, [g]),
             i.jsxs('div', {
-                className: r(
-                    Ve.base,
-                    Ve[`base__${l}`],
-                    Ve[`base__animation_${u}`],
-                    s === L.Big && Ve.base__big,
-                    Ve[`base__${g}`],
-                    null == a ? void 0 : a.base,
+                className: o(
+                    Je.base,
+                    Je[`base__${_}`],
+                    Je[`base__animation_${u}`],
+                    s === y.Big && Je.base__big,
+                    Je[`base__${g}`],
+                    null == n ? void 0 : n.base,
                 ),
                 children: [
-                    i.jsx('div', { className: Ve.glow }),
-                    i.jsx(Be, { index: e, state: t, rewardsSize: s, classMix: a, infinite: n }),
-                    i.jsx('div', { className: Ve.blink }),
-                    i.jsx('div', { className: Ve.particles }),
-                    i.jsx('div', { className: Ve.image, style: { backgroundImage: p } }),
-                    i.jsx(We, { index: e, state: t, rewardsSize: s, classMix: a, infinite: n }),
+                    i.jsx('div', {
+                        className: Je.glow,
+                        style: { backgroundImage: `url('${m.common.glow_active()}')` },
+                    }),
+                    i.jsx(Ye, { index: e, state: t, rewardsSize: s, classMix: n, infinite: a }),
+                    i.jsx('div', { className: Je.blink }),
+                    i.jsx('div', { className: Je.particles }),
+                    i.jsx('div', { className: Je.image, style: { backgroundImage: p } }),
+                    i.jsx(Xe, { index: e, state: t, rewardsSize: s, classMix: n, infinite: a }),
                 ],
             })
         );
     }),
-    Ye = [ie.Dragging, ie.ShowProgress, ie.Blocked],
-    Ue = (e, t) => Math.abs(e - t) < 0.2,
-    Xe = ({
+    Ke = [re.Dragging, re.ShowProgress, re.Blocked],
+    et = (e, t) => Math.abs(e - t) < 0.2,
+    tt = ({
         cardsCount: e,
         prevCard: t,
         activeCard: s,
-        isFirstOpen: a,
-        isBlocked: n,
+        isFirstOpen: n,
+        isBlocked: a,
         model: i,
-        computes: r,
-        actions: l,
+        computes: o,
+        actions: _,
     }) => {
-        const { run: g, clear: u } = k(),
+        const { run: g, clear: u } = D(),
             { runSchedule: m, clearAll: p } = (() => {
-                const e = o.useRef([]);
-                return o.useMemo(
+                const e = r.useRef([]);
+                return r.useMemo(
                     () => ({
                         runSchedule: (t) => {
                             (e.current.forEach(clearTimeout), (e.current = []));
                             let s = 0;
-                            t.forEach(({ delay: t, action: a, duration: n }) => {
+                            t.forEach(({ delay: t, action: n, duration: a }) => {
                                 var i;
                                 s += t || 0;
-                                const r = setTimeout(a, s);
-                                (null == (i = e.current) || i.push(r), (s += n || 0));
+                                const o = setTimeout(n, s);
+                                (null == (i = e.current) || i.push(o), (s += a || 0));
                             });
                         },
                         clearAll: () => {
@@ -903,30 +976,30 @@ const de = (e, t) =>
                     [],
                 );
             })(),
-            f = o.useRef(!0),
-            b = d(() => ({
+            f = r.useRef(!0),
+            h = d(() => ({
                 rotate: i.currentRotation.get(),
                 onStart: () => {
-                    (l.startRotation(), r.soundEnabled.get() && x.sound(ne.EvFepCardStartMove));
+                    (_.startRotation(), o.soundEnabled.get() && w.sound(oe.EvFepCardStartMove));
                 },
                 onRest: () => {
-                    r.soundEnabled.get() && x.sound(ne.EvFepCardStopMove);
+                    o.soundEnabled.get() && w.sound(oe.EvFepCardStopMove);
                 },
                 onChange: (e) => {
-                    l.setCurrentRotation(e.value.rotate);
+                    _.setCurrentRotation(e.value.rotate);
                 },
             }));
-        D(() => x.sound(ne.EvFepCardStopMove));
-        const h = b[1];
+        q(() => w.sound(oe.EvFepCardStopMove));
+        const b = h[1];
         return (
-            o.useEffect(() => {
-                const o = c(
-                        () => r.velocity.get(),
+            r.useEffect(() => {
+                const r = c(
+                        () => o.velocity.get(),
                         (e) => {
                             var t, s;
                             void 0 !== e &&
-                                r.soundEnabled.get() &&
-                                ((t = ne.RtpcExtFepWheelRotation),
+                                o.soundEnabled.get() &&
+                                ((t = oe.RtpcExtFepWheelRotation),
                                 (s = Math.abs(e)),
                                 engine.call('SetRTPCGlobal', t, s).catch((e) => {
                                     console.error(`Error in function setRTPC('${t}', '${s}'): `, e);
@@ -936,164 +1009,164 @@ const de = (e, t) =>
                     d = c(
                         () => i.currentRotation.get(),
                         () => {
-                            if (Ue(i.targetRotation.get(), i.currentRotation.get()) && !Ye.includes(i.state.get()))
-                                i.state.get() === ie.FirstAnimation
-                                    ? l.runProgressionAnimation()
-                                    : i.state.get() === ie.FinalAnimation
-                                      ? (l.setAssembled(!0),
-                                        l.setState(ie.Blocked),
-                                        x.sound(ne.RtpcExtFepWheelRotation),
-                                        x.sound(ne.EvFepCardStopMove),
-                                        x.sound(ne.EvFepCongratulate))
-                                      : l.setState(ie.Idle);
-                            else if (i.state.get() === ie.InertialMovement) {
+                            if (et(i.targetRotation.get(), i.currentRotation.get()) && !Ke.includes(i.state.get()))
+                                i.state.get() === re.FirstAnimation
+                                    ? _.runProgressionAnimation()
+                                    : i.state.get() === re.FinalAnimation
+                                      ? (_.setAssembled(!0),
+                                        _.setState(re.Blocked),
+                                        w.sound(oe.RtpcExtFepWheelRotation),
+                                        w.sound(oe.EvFepCardStopMove),
+                                        w.sound(oe.EvFepCongratulate))
+                                      : _.setState(re.Idle);
+                            else if (i.state.get() === re.InertialMovement) {
                                 const e = 0.75 * i.dragging.speed.get();
-                                (l.setDraggingSpeed(e), l.setTargetRotation(i.targetRotation.get() + e));
+                                (_.setDraggingSpeed(e), _.setTargetRotation(i.targetRotation.get() + e));
                             }
-                            const e = i.state.get() === ie.Idle,
-                                t = i.state.get() === ie.ShowProgress && i.progress.animation.get() === re.Init;
-                            (e || t) && f.current && h.set({ rotate: i.currentRotation.get() });
+                            const e = i.state.get() === re.Idle,
+                                t = i.state.get() === re.ShowProgress && i.progress.animation.get() === de.Init;
+                            (e || t) && f.current && b.set({ rotate: i.currentRotation.get() });
                         },
                     ),
-                    b = c(
+                    h = c(
                         () => i.targetRotation.get(),
                         () => {
-                            i.state.get() !== ie.Idle &&
-                                h.start({ rotate: i.targetRotation.get(), config: r.animationConfig.get() });
+                            i.state.get() !== re.Idle &&
+                                b.start({ rotate: i.targetRotation.get(), config: o.animationConfig.get() });
                         },
                     ),
                     C = c(
                         () => i.state.get(),
                         () => {
                             if (
-                                ([ie.InertialMovement, ie.OverflowNormalization].includes(i.state.get()) &&
-                                    Ue(i.currentRotation.get(), i.targetRotation.get()) &&
-                                    l.setState(ie.Idle),
-                                i.state.get() !== ie.Idle ||
-                                    Ue(i.currentRotation.get(), -i.cardRotation.get() * r.currentCard.get()))
+                                ([re.InertialMovement, re.OverflowNormalization].includes(i.state.get()) &&
+                                    et(i.currentRotation.get(), i.targetRotation.get()) &&
+                                    _.setState(re.Idle),
+                                i.state.get() !== re.Idle ||
+                                    et(i.currentRotation.get(), -i.cardRotation.get() * o.currentCard.get()))
                             )
                                 u();
                             else {
-                                const { overflow: e } = r.overflow.get();
+                                const { overflow: e } = o.overflow.get();
                                 e
-                                    ? (l.setState(ie.OverflowNormalization),
-                                      l.setTargetRotation(-i.cardRotation.get() * r.currentCard.get()))
+                                    ? (_.setState(re.OverflowNormalization),
+                                      _.setTargetRotation(-i.cardRotation.get() * o.currentCard.get()))
                                     : g(() => {
-                                          (l.setState(ie.Normalization),
-                                              l.setTargetRotation(-i.cardRotation.get() * r.currentCard.get()));
+                                          (_.setState(re.Normalization),
+                                              _.setTargetRotation(-i.cardRotation.get() * o.currentCard.get()));
                                       }, 1e3);
                             }
-                            (i.state.get() === ie.FirstAnimation && h.set({ rotate: i.currentRotation.get() }),
-                                i.state.get() === ie.ShowProgress &&
+                            (i.state.get() === re.FirstAnimation && b.set({ rotate: i.currentRotation.get() }),
+                                i.state.get() === re.ShowProgress &&
                                     m(
-                                        r.progressSchedule
+                                        o.progressSchedule
                                             .get()
                                             .map(({ delay: e, action: t, duration: s }) => ({
                                                 delay: e,
                                                 duration: s,
-                                                action: l.progress[t],
+                                                action: _.progress[t],
                                             })),
                                     ));
                         },
                     ),
-                    v = _(() => {
-                        l.initCardsFan(e, t, s, a, !f.current, n);
+                    v = l(() => {
+                        _.initCardsFan(e, t, s, n, !f.current, a);
                     });
                 return (
                     (f.current = !1),
                     () => {
-                        (v(), d(), b(), C(), u(), p(), o());
+                        (v(), d(), h(), C(), u(), p(), r());
                     }
                 );
-            }, [s, h, e, u, p, g, a, n, t, m]),
-            b
+            }, [s, b, e, u, p, g, n, a, t, m]),
+            h
         );
     },
-    Ze = 'CardsFan_457fda09',
-    Je = 'CardsFan_cardHolder_7672ecfc',
-    Ke = 'CardsFan_base__big_7628f226',
-    et = 'CardsFan_card_aa0cd6ad',
-    tt = 'CardsFan_base__final_7628f226',
-    st = 'CardsFan_card__active_62fd3ae5',
-    at = ({ mediaHeight: e, mediaWidth: t }) => e >= $.Large && t >= B.Small,
-    nt = n(
+    st = 'CardsFan_457fda09',
+    nt = 'CardsFan_cardHolder_7672ecfc',
+    at = 'CardsFan_base__big_7628f226',
+    it = 'CardsFan_card_aa0cd6ad',
+    ot = 'CardsFan_base__final_7628f226',
+    rt = 'CardsFan_card__active_62fd3ae5',
+    dt = ({ mediaHeight: e, mediaWidth: t }) => e >= B.Large && t >= G.Small,
+    ct = a(
         ({
             children: e,
             transformRadius: t,
             cardHeight: s,
-            defaultSelectedElement: a = 0,
-            containerRef: n,
+            defaultSelectedElement: n = 0,
+            containerRef: a,
             className: d,
         }) => {
-            const { mediaHeight: c, mediaWidth: _, screenWidthRem: g, screenHeightRem: u } = q(),
-                m = Pe(),
+            const { mediaHeight: c, mediaWidth: l, screenWidthRem: g, screenHeightRem: u } = M(),
+                m = Te(),
                 { model: p, computes: f } = m.model.cardsFan,
-                b = m.controls.cardsFun,
-                h = at({ mediaHeight: c, mediaWidth: _ }),
+                h = m.controls.cardsFun,
+                b = dt({ mediaHeight: c, mediaWidth: l }),
                 C = (({ isAssembled: e, mediaHeight: t, mediaWidth: s }) => {
-                    const a = at({ mediaHeight: t, mediaWidth: s });
-                    return e ? (!a && t >= $.Medium ? 90 : a ? 60 : 50) : 0;
-                })({ mediaHeight: c, mediaWidth: _, isAssembled: p.assembled.get() }),
-                { completedWithAnimation: v, completedNoAnimation: x } = m.model.computes.finalAnimationStatus(),
-                [{ rotate: w }, I] = Xe({
+                    const n = dt({ mediaHeight: t, mediaWidth: s });
+                    return e ? (!n && t >= B.Medium ? 90 : n ? 60 : 50) : 0;
+                })({ mediaHeight: c, mediaWidth: l, isAssembled: p.assembled.get() }),
+                { completedWithAnimation: v, completedNoAnimation: w } = m.model.computes.finalAnimationStatus(),
+                [{ rotate: x }, I] = tt({
                     cardsCount: m.model.stages.get().length,
                     prevCard: m.model.computes.progressAnimationStartFrom(),
                     activeCard: m.model.computes.cardActiveIndex(),
                     isFirstOpen: m.model.root.get().isFirstOpen,
-                    isBlocked: x,
+                    isBlocked: w,
                     model: p,
                     computes: f,
-                    actions: b,
+                    actions: h,
                 }),
-                P = o.useCallback(
+                N = r.useCallback(
                     (e, t) => {
-                        if (!(null == n ? void 0 : n.current)) return;
-                        const { width: s, height: a, x: i, y: r } = n.current.getBoundingClientRect();
-                        return (e >= i && t >= r && e <= i + s && t <= r + a) || void 0;
+                        if (!(null == a ? void 0 : a.current)) return;
+                        const { width: s, height: n, x: i, y: o } = a.current.getBoundingClientRect();
+                        return (e >= i && t >= o && e <= i + s && t <= o + n) || void 0;
                     },
-                    [n],
+                    [a],
                 ),
-                N = o.useCallback(
+                P = r.useCallback(
                     (e) => {
-                        if (!P(e.screenX, e.screenY)) return;
+                        if (!N(e.screenX, e.screenY)) return;
                         const t = e.deltaY > 1 ? 1 : -1;
-                        b.scroll(t);
+                        h.scroll(t);
                     },
-                    [b, P],
+                    [h, N],
                 ),
-                E = o.useCallback(
+                E = r.useCallback(
                     (e) => {
-                        if (p.state.get() === ie.Dragging) {
-                            if (!(null == n ? void 0 : n.current)) return;
-                            if (P(e.screenX, e.screenY)) {
-                                const a = t + s - M(e.screenY);
-                                b.drag(a, M(e.screenX));
-                            } else b.stopDragging();
+                        if (p.state.get() === re.Dragging) {
+                            if (!(null == a ? void 0 : a.current)) return;
+                            if (N(e.screenX, e.screenY)) {
+                                const n = t + s - $(e.screenY);
+                                h.drag(n, $(e.screenX));
+                            } else h.stopDragging();
                         }
                     },
-                    [p.state, n, P, b, t, s],
+                    [p.state, a, N, h, t, s],
                 );
             return (
-                o.useEffect(
+                r.useEffect(
                     () => (
-                        document.addEventListener('wheel', N),
+                        document.addEventListener('wheel', P),
                         function () {
-                            document.removeEventListener('wheel', N);
+                            document.removeEventListener('wheel', P);
                         }
                     ),
-                    [I, b, N],
+                    [I, h, P],
                 ),
-                o.useEffect(
+                r.useEffect(
                     () =>
                         O(() => {
                             const e = () => {
-                                    b.stopDragging();
+                                    h.stopDragging();
                                 },
                                 t = () => {
-                                    b.stopDragging();
+                                    h.stopDragging();
                                 },
                                 s = (e) => {
-                                    b.startDragging(M(e.screenX));
+                                    h.startDragging($(e.screenX));
                                 };
                             return (
                                 document.addEventListener('mousedown', s),
@@ -1108,13 +1181,13 @@ const de = (e, t) =>
                                 }
                             );
                         }),
-                    [b, t, s, p.state, u, g, E],
+                    [h, t, s, p.state, u, g, E],
                 ),
                 i.jsx('div', {
-                    className: r(Ze, d, h && Ke, v && tt),
-                    children: i.jsx(l.div, {
-                        className: Je,
-                        style: { transformOrigin: `center ${t}rem`, rotate: w },
+                    className: o(st, d, b && at, v && ot),
+                    children: i.jsx(_.div, {
+                        className: nt,
+                        style: { transformOrigin: `center ${t}rem`, rotate: x },
                         children: z(
                             f.cardsMap.get(),
                             ({ order: e }) => e >= f.minVisibleCard.get() && e <= f.maxVisibleCard.get(),
@@ -1122,7 +1195,7 @@ const de = (e, t) =>
                                 i.jsx(
                                     'div',
                                     {
-                                        className: r(et, s.order === a && st),
+                                        className: o(it, s.order === n && rt),
                                         style: {
                                             transformOrigin: `center ${t}rem`,
                                             transform: `rotate(${p.cardRotation.get() * s.order}deg) translateY(${C}%)`,
@@ -1137,149 +1210,149 @@ const de = (e, t) =>
             );
         },
     ),
-    it = 'CardsProgression_351ad395',
-    rt = 'CardsProgression_cardsFan_83cbdc49',
-    ot = n(({ className: e, containerRef: t }) => {
-        const { model: s, controls: a } = Pe(),
-            n = s.stages.get().length,
+    lt = 'CardsProgression_351ad395',
+    _t = 'CardsProgression_cardsFan_83cbdc49',
+    gt = a(({ className: e, containerRef: t }) => {
+        const { model: s, controls: n } = Te(),
+            a = s.stages.get().length,
             d = s.cardsFan.model.progress.currentCard.get(),
             c = s.computes.pageStatus(),
-            _ = A(
-                { cardHeight: 261, transformRadius: 990, rewardsSize: L.Small },
-                { large: { cardHeight: 400, transformRadius: 1500, rewardsSize: L.Big } },
+            l = A(
+                { cardHeight: 261, transformRadius: 990, rewardsSize: y.Small },
+                { large: { cardHeight: 400, transformRadius: 1500, rewardsSize: y.Big } },
             );
         return (
-            o.useEffect(() => {
-                c === te.COMPLETED_FINAL && a.cardsFun.runFinalAnimation(n);
-            }, [c, n, a.cardsFun]),
+            r.useEffect(() => {
+                c === ne.COMPLETED_FINAL && n.cardsFun.runFinalAnimation(a);
+            }, [c, a, n.cardsFun]),
             i.jsx('div', {
-                className: r(it, e),
-                children: i.jsx(nt, {
-                    ..._,
+                className: o(lt, e),
+                children: i.jsx(ct, {
+                    ...l,
                     defaultSelectedElement: d,
                     containerRef: t,
-                    className: rt,
-                    children: w(n, (e) => i.jsx(He, { index: e, rewardsSize: _.rewardsSize }, e)),
+                    className: _t,
+                    children: x(a, (e) => i.jsx(Ze, { index: e, rewardsSize: l.rewardsSize }, e)),
                 }),
             })
         );
     }),
-    dt = 'InfiniteTitle_db4ba977',
-    ct = 'InfiniteTitle_base__shown_ddd09f8b',
-    _t = 'InfiniteTitle_glow_7afa9ca6',
-    lt = 'InfiniteTitle_glow__show_76624e20',
-    gt = 'InfiniteTitle_title_64af8d95',
-    ut = 'InfiniteTitle_mainHeader_8a5dad6b',
-    mt = 'InfiniteTitle_congrats_53b68d3',
-    pt = 'InfiniteTitle_congrats__hidden_9600cf7d',
-    ft = 'InfiniteTitle_subtitle_a77973ac',
-    bt = 'InfiniteTitle_timer_4d11422f',
-    ht = 'InfiniteTitle_congratsSubtitle_5fe682a2',
-    Ct = 'InfiniteTitle_congratsSubtitle__hidden_29c7c9af',
-    vt = n(() => {
-        const { model: e } = Pe(),
+    ut = 'InfiniteTitle_db4ba977',
+    mt = 'InfiniteTitle_base__shown_ddd09f8b',
+    pt = 'InfiniteTitle_glow_7afa9ca6',
+    ft = 'InfiniteTitle_glow__show_76624e20',
+    ht = 'InfiniteTitle_title_64af8d95',
+    bt = 'InfiniteTitle_mainHeader_8a5dad6b',
+    Ct = 'InfiniteTitle_congrats_53b68d3',
+    vt = 'InfiniteTitle_congrats__hidden_9600cf7d',
+    wt = 'InfiniteTitle_subtitle_a77973ac',
+    xt = 'InfiniteTitle_timer_4d11422f',
+    It = 'InfiniteTitle_congratsSubtitle_5fe682a2',
+    Nt = 'InfiniteTitle_congratsSubtitle__hidden_29c7c9af',
+    Pt = a(() => {
+        const { model: e } = Te(),
             { assetsPointer: t } = e.root.get(),
             s = e.computes.needChangePage(),
-            { title: a } = e.infiniteCondition.get(),
-            { dynamicTexts: n } = K('progression', { assetsPointer: t }),
-            [d, c] = o.useState(!1),
-            [_, l] = o.useState(!s),
-            [g, u] = o.useState(!s);
+            { title: n } = e.infiniteCondition.get(),
+            { dynamicTexts: a } = ee('progression', { assetsPointer: t }),
+            [d, c] = r.useState(!1),
+            [l, _] = r.useState(!s),
+            [g, u] = r.useState(!s);
         return i.jsxs('div', {
-            className: r(dt, ct),
+            className: o(ut, mt),
             onAnimationEnd: () => {
                 s && c(!0);
             },
             children: [
-                i.jsx('div', { className: r(_t, d && lt), onAnimationEnd: () => l(!0) }),
-                i.jsx('div', { className: gt, children: a }),
+                i.jsx('div', { className: o(pt, d && ft), onAnimationEnd: () => _(!0) }),
+                i.jsx('div', { className: ht, children: n }),
                 g
                     ? i.jsxs('div', {
-                          className: ut,
+                          className: bt,
                           children: [
-                              i.jsx('div', { className: ft, children: n.infinite.infinityStep() }),
-                              i.jsx('div', { className: r(bt), children: i.jsx(ke, { oneline: !0, classNames: bt }) }),
+                              i.jsx('div', { className: wt, children: a.infinite.infinityStep() }),
+                              i.jsx('div', { className: o(xt), children: i.jsx($e, { oneline: !0, classNames: xt }) }),
                           ],
                       })
                     : i.jsxs('div', {
-                          className: r(mt, _ && pt),
+                          className: o(Ct, l && vt),
                           onTransitionEnd: () => u(!0),
                           children: [
-                              i.jsx('div', { className: ft, children: n.infinite.congratulations() }),
+                              i.jsx('div', { className: wt, children: a.infinite.congratulations() }),
                               i.jsx('div', {
-                                  className: r(ht, _ && Ct),
-                                  children: n.infinite.mainProgressionFinished(),
+                                  className: o(It, l && Nt),
+                                  children: a.infinite.mainProgressionFinished(),
                               }),
                           ],
                       }),
             ],
         });
     }),
-    xt = 'CompletedProgression_279268c8',
-    wt = 'CompletedProgression_container_d7c47390',
-    It = 'CompletedProgression_base__final_413e479e',
-    Pt = 'CompletedProgression_base__static_413e479e',
-    Nt = 'CompletedProgression_base__infinite_413e479e',
-    Et = 'CompletedProgression_glow_cca092f1',
-    Rt = 'CompletedProgression_base__resettable_413e479e',
-    Tt = 'CompletedProgression_title_3e7b1301',
-    jt = 'CompletedProgression_congrats_e8822bc1',
-    At = 'CompletedProgression_congratsSubtitle_e8dbd002',
-    St = 'CompletedProgression_icon_1c9145a9',
-    Ft = 'CompletedProgression_timer_4f044f1e',
-    Qt = 'CompletedProgression_button_de4a031d',
-    Lt = n(() => {
-        const { model: e, controls: t } = Pe(),
+    Et = 'CompletedProgression_279268c8',
+    Rt = 'CompletedProgression_container_d7c47390',
+    Tt = 'CompletedProgression_base__final_413e479e',
+    jt = 'CompletedProgression_base__static_413e479e',
+    At = 'CompletedProgression_base__infinite_413e479e',
+    St = 'CompletedProgression_glow_cca092f1',
+    Ft = 'CompletedProgression_base__resettable_413e479e',
+    Qt = 'CompletedProgression_title_3e7b1301',
+    Lt = 'CompletedProgression_congrats_e8822bc1',
+    yt = 'CompletedProgression_congratsSubtitle_e8dbd002',
+    kt = 'CompletedProgression_icon_1c9145a9',
+    Dt = 'CompletedProgression_timer_4f044f1e',
+    qt = 'CompletedProgression_button_de4a031d',
+    Mt = a(() => {
+        const { model: e, controls: t } = Te(),
             s = e.computes.pageStatus(),
-            { isCompleted: a, isResettable: n, isInfinite: o } = _e(s),
+            { isCompleted: n, isResettable: a, isInfinite: r } = ge(s),
             { assetsPointer: d } = e.root.get(),
-            { dynamicTexts: c } = K('progression', { assetsPointer: d }),
-            _ = !e.computes.needChangePage(),
-            l = A({ size: G.medium }, { large: { size: G.large } });
-        return a || o
+            { dynamicTexts: c } = ee('progression', { assetsPointer: d }),
+            l = !e.computes.needChangePage(),
+            _ = A({ size: V.medium }, { large: { size: V.large } });
+        return n || r
             ? i.jsxs('div', {
-                  className: r(xt, It, _ && Pt, n && Rt, o && Nt),
+                  className: o(Et, Tt, l && jt, a && Ft, r && At),
                   children: [
                       i.jsxs('div', {
-                          className: wt,
+                          className: Rt,
                           children: [
-                              o
-                                  ? i.jsx(vt, {})
+                              r
+                                  ? i.jsx(Pt, {})
                                   : i.jsxs(i.Fragment, {
                                         children: [
-                                            i.jsx('div', { className: Tt, children: c.title() }),
-                                            i.jsx('div', { className: Et }),
-                                            i.jsx('div', { className: jt, children: c.complete.congratulations() }),
+                                            i.jsx('div', { className: Qt, children: c.title() }),
+                                            i.jsx('div', { className: St }),
+                                            i.jsx('div', { className: Lt, children: c.complete.congratulations() }),
                                             i.jsxs('div', {
-                                                className: At,
+                                                className: yt,
                                                 children: [
                                                     i.jsx(W, {
                                                         path: 'ui_kit.card.status_done',
                                                         width: 24,
                                                         height: 24,
-                                                        className: St,
+                                                        className: kt,
                                                     }),
                                                     c.complete.title(),
                                                 ],
                                             }),
                                         ],
                                     }),
-                              a && i.jsx(ke, { classNames: Ft }),
+                              n && i.jsx($e, { classNames: Dt }),
                           ],
                       }),
-                      !o &&
-                          i.jsx(V, {
-                              className: Qt,
+                      !r &&
+                          i.jsx(H, {
+                              className: qt,
                               onClick: t.close,
-                              size: l.size,
+                              size: _.size,
                               children: R.strings.fun_random.progression.complete.affirmative(),
                           }),
                   ],
               })
             : null;
     });
-var yt = ((e) => ((e.Active = 'active'), (e.Completed = 'completed'), e))(yt || {});
-const kt = {
+var $t = ((e) => ((e.Active = 'active'), (e.Completed = 'completed'), e))($t || {});
+const Ot = {
         base: 'Point_38360539',
         base__twoPoints: 'Point_base__twoPoints_1893b78b',
         base__single_quest: 'Point_base__single_quest_e3f47efb',
@@ -1287,29 +1360,29 @@ const kt = {
         score: 'Point_score_ae8e52b',
         base__completed: 'Point_base__completed_d8b7e333',
     },
-    Dt = ({ reason: e, valueTemplate: t, value: s, twoPoints: a, singleQuest: n = !1, completed: o = !1 }) => {
-        const { upscale: d } = q();
+    zt = ({ reason: e, valueTemplate: t, value: s, twoPoints: n, singleQuest: a = !1, completed: r = !1 }) => {
+        const { upscale: d } = M();
         return i.jsx(F, {
             text: R.strings.fun_random.progression.questsList.quest.progressChangeLabel.template(),
-            className: r(
-                kt.base,
-                n && kt.base__single_quest,
-                a && kt.base__twoPoints,
-                o && kt.base__completed,
-                d && kt.base__upscaled,
+            className: o(
+                Ot.base,
+                a && Ot.base__single_quest,
+                n && Ot.base__twoPoints,
+                r && Ot.base__completed,
+                d && Ot.base__upscaled,
             ),
             params: {
-                reason: i.jsx('span', { className: kt.reason, children: e }),
+                reason: i.jsx('span', { className: Ot.reason, children: e }),
                 value: t
-                    ? i.jsx(F, { text: t, className: kt.score, params: { value: s }, upgradeLegacy: !0 })
-                    : i.jsx('span', { className: kt.score, children: s }),
+                    ? i.jsx(F, { text: t, className: Ot.score, params: { value: s }, upgradeLegacy: !0 })
+                    : i.jsx('span', { className: Ot.score, children: s }),
             },
         });
     },
-    qt = R.strings.fun_random.progression.questsList.quest;
-const Mt = R.images.gui.maps.icons.quests.battleCondition.c_128_decor,
-    Ot = R.images.gui.maps.icons.quests.battleCondition.c_128;
-const zt = {
+    Bt = R.strings.fun_random.progression.questsList.quest;
+const Gt = R.images.gui.maps.icons.quests.battleCondition.c_128_decor,
+    Vt = R.images.gui.maps.icons.quests.battleCondition.c_128;
+const Wt = {
         root: 'Quest_root_3236e985',
         base: 'Quest_bc79f0ef',
         base__completed: 'Quest_base__completed_fb9052a3',
@@ -1353,147 +1426,147 @@ const zt = {
         second2firstRotate: 'Quest_second2firstRotate_3236e985',
         third2second: 'Quest_third2second_3236e985',
     },
-    $t = n(({ progress: e }) => {
-        const { model: t } = Pe(),
+    Ht = a(({ progress: e }) => {
+        const { model: t } = Te(),
             { assetsPointer: s } = t.root.get(),
-            { dynamicTexts: a } = K('progression', { assetsPointer: s });
+            { dynamicTexts: n } = ee('progression', { assetsPointer: s });
         return i.jsx(F, {
             text: R.strings.fun_random.progression.questsList.quest.progressTitle(),
-            className: zt.progress,
+            className: Wt.progress,
             params: {
                 completed: i.jsx('div', {
-                    className: zt.progressCompleted,
-                    children: a.questsList.quest.infinityStageProgress(),
+                    className: Wt.progressCompleted,
+                    children: n.questsList.quest.infinityStageProgress(),
                 }),
                 currentPoints: i.jsx(g, {
-                    className: zt.progressCurrent,
+                    className: Wt.progressCurrent,
                     children: i.jsx(
                         u,
                         {
                             timeout: 3400,
-                            classNames: { enter: zt.progressCurrentItem__enter, exit: zt.progressCurrentItem__exit },
-                            children: i.jsx('div', { className: zt.progressCurrentItem, children: e }),
+                            classNames: { enter: Wt.progressCurrentItem__enter, exit: Wt.progressCurrentItem__exit },
+                            children: i.jsx('div', { className: Wt.progressCurrentItem, children: e }),
                         },
                         `progress-${e}`,
                     ),
                 }),
-                delimeter: i.jsx('div', { className: zt.progressDelimeter, children: R.strings.common.common.slash() }),
-                totalPoints: i.jsx('div', { className: zt.infinity }),
+                delimeter: i.jsx('div', { className: Wt.progressDelimeter, children: R.strings.common.common.slash() }),
+                totalPoints: i.jsx('div', { className: Wt.infinity }),
             },
         });
     }),
-    Bt = n(({ className: e, index: t = 0, infinite: s, progress: a }) => {
-        const { model: n } = Pe(),
-            o = n.computes.quest(t),
-            d = n.computes.infiniteQuest(),
-            c = s && d ? d : o,
-            { cursor: _ } = n.cardsFan.computes,
-            { sides: l, upscale: g } = q(),
-            u = 1 === n.quests.get().length || s,
+    Yt = a(({ className: e, index: t = 0, infinite: s, progress: n }) => {
+        const { model: a } = Te(),
+            r = a.computes.quest(t),
+            d = a.computes.infiniteQuest(),
+            c = s && d ? d : r,
+            { cursor: l } = a.cardsFan.computes,
+            { sides: _, upscale: g } = M(),
+            u = 1 === a.quests.get().length || s,
             m = (function (e, t, s) {
-                if (t === yt.Completed) {
-                    const e = 'icon_mission_completed_' + (s >= B.Large ? '128' : '90');
+                if (t === $t.Completed) {
+                    const e = 'icon_mission_completed_' + (s >= G.Large ? '128' : '90');
                     return { backgroundImage: `url(${R.images.fun_random.gui.maps.icons.feature.quest.$dyn(e)})` };
                 }
-                if (s >= B.Large) {
+                if (s >= G.Large) {
                     const t = `icon_battle_condition_${e}_128x128`;
-                    return { backgroundImage: `url(${Mt.$dyn(t) ?? Ot.$dyn(t)})` };
+                    return { backgroundImage: `url(${Gt.$dyn(t) ?? Vt.$dyn(t)})` };
                 }
                 return {
                     backgroundImage: `url(${R.images.gui.maps.icons.quests.battleCondition.c_90.$dyn(`icon_battle_condition_${e}_90x90`)})`,
                 };
-            })(c.questCondition, c.state, l.width),
-            [p, f] = (function ({ mainBonusCount: e, state: t, totalPoints: s, altBonusCount: a }) {
-                return t === yt.Completed
-                    ? [{ labelTemplate: qt.progressChangeLabel.pointsEarned(), value: s }]
-                    : a
+            })(c.questCondition, c.state, _.width),
+            [p, f] = (function ({ mainBonusCount: e, state: t, totalPoints: s, altBonusCount: n }) {
+                return t === $t.Completed
+                    ? [{ labelTemplate: Bt.progressChangeLabel.pointsEarned(), value: s }]
+                    : n
                       ? [
                             {
-                                labelTemplate: qt.progressChangeLabel.forWin(),
+                                labelTemplate: Bt.progressChangeLabel.forWin(),
                                 valueTemplate: R.strings.common.plusValue(),
                                 value: e,
                             },
                             {
-                                labelTemplate: qt.progressChangeLabel.forLoss(),
+                                labelTemplate: Bt.progressChangeLabel.forLoss(),
                                 valueTemplate: R.strings.common.plusValue(),
-                                value: a,
+                                value: n,
                             },
                         ]
                       : [
                             {
-                                labelTemplate: qt.progressChangeLabel.forCompletion(),
+                                labelTemplate: Bt.progressChangeLabel.forCompletion(),
                                 valueTemplate: R.strings.common.plusValue(),
                                 value: e,
                             },
                         ];
             })(c);
         return i.jsxs('div', {
-            className: r(
-                zt.base,
-                zt[`base__${c.state}`],
-                zt[`base__cursor_${_}`],
-                u && zt.base__single_quest,
-                s && zt.base__infinite,
-                g && zt.base__upscaled,
+            className: o(
+                Wt.base,
+                Wt[`base__${c.state}`],
+                Wt[`base__cursor_${l}`],
+                u && Wt.base__single_quest,
+                s && Wt.base__infinite,
+                g && Wt.base__upscaled,
                 e,
             ),
             children: [
-                i.jsx('div', { className: zt.conditionIcon, children: i.jsx('div', { className: zt.icon, style: m }) }),
+                i.jsx('div', { className: Wt.conditionIcon, children: i.jsx('div', { className: Wt.icon, style: m }) }),
                 i.jsxs('div', {
-                    className: zt.content,
+                    className: Wt.content,
                     children: [
                         s
-                            ? i.jsx($t, { progress: a })
+                            ? i.jsx(Ht, { progress: n })
                             : 9999 === c.totalProgress
                               ? i.jsx('div', {
-                                    className: r(zt.progress, zt.progressCompleted),
+                                    className: o(Wt.progress, Wt.progressCompleted),
                                     children: R.strings.fun_random.progression.questsList.quest.infinityProgress(),
                                 })
                               : i.jsx(F, {
                                     text: R.strings.fun_random.progression.questsList.quest.progressTitle(),
-                                    className: zt.progress,
+                                    className: Wt.progress,
                                     params: {
                                         completed: i.jsx('div', {
-                                            className: zt.progressCompleted,
+                                            className: Wt.progressCompleted,
                                             children: R.strings.fun_random.progression.questsList.quest.completed(),
                                         }),
                                         currentPoints: i.jsx('div', {
-                                            className: zt.progressCurrent,
+                                            className: Wt.progressCurrent,
                                             children: c.currentProgress,
                                         }),
                                         delimeter: i.jsx('div', {
-                                            className: zt.progressDelimeter,
+                                            className: Wt.progressDelimeter,
                                             children: R.strings.common.common.slash(),
                                         }),
                                         totalPoints: i.jsx('div', {
-                                            className: zt.progressTotal,
+                                            className: Wt.progressTotal,
                                             children: c.totalProgress,
                                         }),
                                     },
                                 }),
-                        i.jsx('div', { className: zt.title, children: c.description }),
+                        i.jsx('div', { className: Wt.title, children: c.description }),
                         i.jsxs('div', {
-                            className: zt.points,
+                            className: Wt.points,
                             children: [
-                                i.jsx(Dt, {
+                                i.jsx(zt, {
                                     value: p.value,
                                     valueTemplate: p.valueTemplate,
                                     reason: p.labelTemplate,
                                     singleQuest: u,
                                     twoPoints: Boolean(f) && !s,
-                                    completed: c.state === yt.Completed,
+                                    completed: c.state === $t.Completed,
                                 }),
                                 f &&
                                     i.jsxs(i.Fragment, {
                                         children: [
-                                            i.jsx('div', { className: zt.pointBreak }),
-                                            i.jsx(Dt, {
+                                            i.jsx('div', { className: Wt.pointBreak }),
+                                            i.jsx(zt, {
                                                 value: f.value,
                                                 valueTemplate: f.valueTemplate,
                                                 reason: f.labelTemplate,
                                                 singleQuest: u,
                                                 twoPoints: !s,
-                                                completed: c.state === yt.Completed,
+                                                completed: c.state === $t.Completed,
                                             }),
                                         ],
                                     }),
@@ -1504,7 +1577,7 @@ const zt = {
             ],
         });
     }),
-    Gt = {
+    Ut = {
         root: 'InfiniteCard_root_55fb4fdf',
         base: 'InfiniteCard_585fc4a4',
         'card-show': 'InfiniteCard_card-show_55fb4fdf',
@@ -1537,47 +1610,47 @@ const zt = {
         pointFadeOut: 'InfiniteCard_pointFadeOut_55fb4fdf',
         pointFadeIn: 'InfiniteCard_pointFadeIn_55fb4fdf',
     },
-    Wt = 'first',
-    Vt = 'second',
-    Ht = 'third',
-    Yt = 'fourth',
-    Ut = {
-        [Yt]: { timeout: 1e3, nextOnEntering: !1 },
-        [Ht]: { timeout: 1400, nextOnEntering: !1 },
-        [Vt]: { timeout: 1400, nextOnEntering: !0 },
-        [Wt]: { timeout: 2500, nextOnEntering: !1 },
+    Xt = 'first',
+    Jt = 'second',
+    Zt = 'third',
+    Kt = 'fourth',
+    es = {
+        [Kt]: { timeout: 1e3, nextOnEntering: !1 },
+        [Zt]: { timeout: 1400, nextOnEntering: !1 },
+        [Jt]: { timeout: 1400, nextOnEntering: !0 },
+        [Xt]: { timeout: 2500, nextOnEntering: !1 },
     },
-    Xt = n(({ postfix: e, isDetached: t, nextTrigger: s, isTransitionActive: a }) => {
-        const { model: n } = Pe(),
-            d = o.useRef(!0),
-            c = n.computes.needChangePage(),
-            { timeout: _, nextOnEntering: l } = Ut[e],
-            g = e === Wt,
-            m = e === Yt,
-            p = t ? se.Detaching : se.Inactive;
+    ts = a(({ postfix: e, isDetached: t, nextTrigger: s, isTransitionActive: n }) => {
+        const { model: a } = Te(),
+            d = r.useRef(!0),
+            c = a.computes.needChangePage(),
+            { timeout: l, nextOnEntering: _ } = es[e],
+            g = e === Xt,
+            m = e === Kt,
+            p = t ? ae.Detaching : ae.Inactive;
         return i.jsx(
             'div',
             {
-                className: r(Gt.base, Gt[`base__${e}`], !g && Gt.base__completed, c && Gt.base__presentment),
+                className: o(Ut.base, Ut[`base__${e}`], !g && Ut.base__completed, c && Ut.base__presentment),
                 onAnimationStart: () => {
-                    d.current && !m && (x.sound(ne.EvFepCardChange), (d.current = !1));
+                    d.current && !m && (w.sound(oe.EvFepCardChange), (d.current = !1));
                 },
                 children: i.jsx(
                     u,
                     {
-                        onEntered: l ? H : s,
-                        onEntering: l ? s : H,
-                        in: a,
-                        timeout: _,
-                        className: Gt.cardWrapper,
-                        classNames: { enter: Gt.cardWrapper__enter, enterDone: Gt.cardWrapper__enterDone },
+                        onEntered: _ ? Y : s,
+                        onEntering: _ ? s : Y,
+                        in: n,
+                        timeout: l,
+                        className: Ut.cardWrapper,
+                        classNames: { enter: Ut.cardWrapper__enter, enterDone: Ut.cardWrapper__enterDone },
                         children: i.jsx('div', {
-                            className: Gt.cardWrapper,
-                            children: i.jsx(He, {
+                            className: Ut.cardWrapper,
+                            children: i.jsx(Ze, {
                                 infinite: !0,
-                                classMix: { content: Gt.content, shadow: Gt.shadow, pattern: Gt.pattern },
+                                classMix: { content: Ut.content, shadow: Ut.shadow, pattern: Ut.pattern },
                                 state: p,
-                                rewardsSize: L.Big,
+                                rewardsSize: y.Big,
                             }),
                         }),
                     },
@@ -1587,50 +1660,50 @@ const zt = {
             e,
         );
     }),
-    Zt = 'InfiniteCards_a57ec698',
-    Jt = 'InfiniteCards_base__big_c727fc86',
-    Kt = [Yt, Ht, Vt, Wt],
-    es = ({ startAllowed: e, progressLevelUps: t }) => {
-        const s = k(),
-            { mediaHeight: a, mediaWidth: n } = q(),
-            d = a >= $.Medium && n >= B.Medium,
-            [c, _] = o.useState(0),
-            [l, g] = o.useState(!1),
-            [u, m] = o.useState(t);
-        o.useEffect(
+    ss = 'InfiniteCards_a57ec698',
+    ns = 'InfiniteCards_base__big_c727fc86',
+    as = [Kt, Zt, Jt, Xt],
+    is = ({ startAllowed: e, progressLevelUps: t }) => {
+        const s = D(),
+            { mediaHeight: n, mediaWidth: a } = M(),
+            d = n >= B.Medium && a >= G.Medium,
+            [c, l] = r.useState(0),
+            [_, g] = r.useState(!1),
+            [u, m] = r.useState(t);
+        r.useEffect(
             () => (
                 e &&
                     u > 0 &&
                     s.run(() => {
-                        (_(1), g(!0));
+                        (l(1), g(!0));
                     }, 300),
                 () => {
                     s.clear();
                 }
             ),
-            [e, u, l, s],
+            [e, u, _, s],
         );
         return i.jsx('div', {
-            className: r(Zt, d && Jt),
-            children: Kt.map((e, t) =>
+            className: o(ss, d && ns),
+            children: as.map((e, t) =>
                 i.jsx(
-                    Xt,
+                    ts,
                     {
                         nextTrigger: () =>
                             ((e) => {
-                                (x.sound(ne.EvFepCardChange),
-                                    0 === e ? (m((e) => e - 1), g(!1), _(0)) : _(Kt.length + 1 - e));
+                                (w.sound(oe.EvFepCardChange),
+                                    0 === e ? (m((e) => e - 1), g(!1), l(0)) : l(as.length + 1 - e));
                             })(t),
-                        isTransitionActive: c > Kt.length - 1 - t,
+                        isTransitionActive: c > as.length - 1 - t,
                         postfix: e,
-                        isDetached: l && c > 0 && 'first' === e,
+                        isDetached: _ && c > 0 && 'first' === e,
                     },
                     e,
                 ),
             ),
         });
     },
-    ts = {
+    os = {
         base: 'InfiniteQuestCondition_89da2a57',
         conditionsPoints: 'InfiniteQuestCondition_conditionsPoints_fdb634b0',
         conditionsDescription: 'InfiniteQuestCondition_conditionsDescription_344304d7',
@@ -1642,91 +1715,91 @@ const zt = {
         currentPointItem__enter: 'InfiniteQuestCondition_currentPointItem__enter_e12cb88d',
         currentPointItem__exit: 'InfiniteQuestCondition_currentPointItem__exit_75d8133e',
     },
-    ss = n(({ points: e, className: t, delay: s }) => {
-        const { model: a } = Pe(),
-            { maximumPoints: n } = a.infiniteCondition.get();
+    rs = a(({ points: e, className: t, delay: s }) => {
+        const { model: n } = Te(),
+            { maximumPoints: a } = n.infiniteCondition.get();
         return i.jsx('div', {
-            className: r(ts.base, t),
+            className: o(os.base, t),
             children: i.jsxs('div', {
-                className: ts.conditionsPoints,
+                className: os.conditionsPoints,
                 children: [
                     i.jsx('div', {
-                        className: ts.conditionsDescription,
+                        className: os.conditionsDescription,
                         children: R.strings.fun_random.progression.infinite.pointsEarned(),
                     }),
                     i.jsx(F, {
                         text: R.strings.fun_random.progression.steps(),
-                        className: r(ts.conditionsPointsItem, ts.conditionsPointsItem__divider),
+                        className: o(os.conditionsPointsItem, os.conditionsPointsItem__divider),
                         params: {
                             done: i.jsx(g, {
-                                className: ts.currentPoint,
+                                className: os.currentPoint,
                                 children: i.jsx(
                                     u,
                                     {
                                         timeout: s,
                                         onExited: () => {
-                                            x.sound(ne.EvFepCounterChange);
+                                            w.sound(oe.EvFepCounterChange);
                                         },
                                         classNames: {
-                                            enter: ts.currentPointItem__enter,
-                                            exit: ts.currentPointItem__exit,
+                                            enter: os.currentPointItem__enter,
+                                            exit: os.currentPointItem__exit,
                                         },
-                                        children: i.jsx('div', { className: ts.currentPointItem, children: e }),
+                                        children: i.jsx('div', { className: os.currentPointItem, children: e }),
                                     },
                                     `points-${e}`,
                                 ),
                             }),
                             delimeter: i.jsx('div', {
-                                className: ts.conditionsPointsDelimeter,
+                                className: os.conditionsPointsDelimeter,
                                 children: R.strings.common.common.slash(),
                             }),
-                            total: i.jsx('div', { className: ts.conditionsPointsTotal, children: n }),
+                            total: i.jsx('div', { className: os.conditionsPointsTotal, children: a }),
                         },
                     }),
                 ],
             }),
         });
     }),
-    as = 'InfiniteProgression_e5621169',
-    ns = 'InfiniteProgression_content_68048581',
-    is = 'InfiniteProgression_questContainer_dd770113',
-    rs = 'InfiniteProgression_questCondition_ec8c8f62',
-    os = n(() => {
-        const e = k(),
-            { model: t } = Pe(),
+    ds = 'InfiniteProgression_e5621169',
+    cs = 'InfiniteProgression_content_68048581',
+    ls = 'InfiniteProgression_questContainer_dd770113',
+    _s = 'InfiniteProgression_questCondition_ec8c8f62',
+    gs = a(() => {
+        const e = D(),
+            { model: t } = Te(),
             s = t.computes.needChangePage(),
-            { prevCompleteCount: a, completeCount: n, prevPoints: r, currentPoints: d } = t.infiniteCondition.get(),
-            [c, _] = o.useState({ previous: r, current: d }),
-            [l, g] = o.useState(a),
+            { prevCompleteCount: n, completeCount: a, prevPoints: o, currentPoints: d } = t.infiniteCondition.get(),
+            [c, l] = r.useState({ previous: o, current: d }),
+            [_, g] = r.useState(n),
             u = s ? 3100 : 2500,
-            m = c.previous === c.current && l === n;
+            m = c.previous === c.current && _ === a;
         return (
-            o.useEffect(
+            r.useEffect(
                 () => (
-                    _({ previous: r, current: d }),
-                    g(a),
+                    l({ previous: o, current: d }),
+                    g(n),
                     e.run(() => {
-                        (_((e) => ({ previous: e.current, current: e.current })), g(n));
+                        (l((e) => ({ previous: e.current, current: e.current })), g(a));
                     }, u),
                     () => {
                         e.clear();
                     }
                 ),
-                [n, e, u, r, d, a],
+                [a, e, u, o, d, n],
             ),
             i.jsxs('div', {
-                className: as,
+                className: ds,
                 children: [
-                    i.jsx(Lt, {}),
+                    i.jsx(Mt, {}),
                     i.jsxs('div', {
-                        className: ns,
+                        className: cs,
                         children: [
-                            i.jsx(es, { startAllowed: m, progressLevelUps: n - a }),
+                            i.jsx(is, { startAllowed: m, progressLevelUps: a - n }),
                             i.jsxs('div', {
-                                className: is,
+                                className: ls,
                                 children: [
-                                    i.jsx(Bt, { progress: l, infinite: !0 }),
-                                    i.jsx(ss, { className: rs, delay: n - a > 0 ? 3400 : 1e3, points: c.previous }),
+                                    i.jsx(Yt, { progress: _, infinite: !0 }),
+                                    i.jsx(rs, { className: _s, delay: a - n > 0 ? 3400 : 1e3, points: c.previous }),
                                 ],
                             }),
                         ],
@@ -1735,27 +1808,27 @@ const zt = {
             })
         );
     }),
-    ds = 'CurrentPoints_bd285292',
-    cs = 'CurrentPoints_prev_5b103642',
-    _s = 'CurrentPoints_base__oneQuest_3970c66e',
-    ls = 'CurrentPoints_current_4d4f9a08',
-    gs = 'CurrentPoints_text_3c1f1e29',
-    us = ({ prevPoints: e, currentPoints: t, animate: s, className: a, oneQuest: n }) => (
-        o.useEffect(() => {
-            s && e !== t && x.sound(ne.EvFepCounterChange);
+    us = 'CurrentPoints_bd285292',
+    ms = 'CurrentPoints_prev_5b103642',
+    ps = 'CurrentPoints_base__oneQuest_3970c66e',
+    fs = 'CurrentPoints_current_4d4f9a08',
+    hs = 'CurrentPoints_text_3c1f1e29',
+    bs = ({ prevPoints: e, currentPoints: t, animate: s, className: n, oneQuest: a }) => (
+        r.useEffect(() => {
+            s && e !== t && w.sound(oe.EvFepCounterChange);
         }, [s, t, e]),
         s && e !== t
             ? i.jsxs('div', {
-                  className: r(ds, n && _s, a),
+                  className: o(us, a && ps, n),
                   children: [
-                      i.jsx('div', { className: gs, children: t }),
-                      i.jsx('div', { className: cs, children: e }),
-                      i.jsx('div', { className: ls, children: t }),
+                      i.jsx('div', { className: hs, children: t }),
+                      i.jsx('div', { className: ms, children: e }),
+                      i.jsx('div', { className: fs, children: t }),
                   ],
               })
-            : i.jsx('div', { className: r(ds, n && _s, a), children: e })
+            : i.jsx('div', { className: o(us, a && ps, n), children: e })
     ),
-    ms = {
+    Cs = {
         root: 'QuestsList_root_cd14c93',
         base: 'QuestsList_5b287364',
         base__hide: 'QuestsList_base__hide_de43f8d1',
@@ -1793,57 +1866,57 @@ const zt = {
         second2firstRotate: 'QuestsList_second2firstRotate_cd14c93',
         third2second: 'QuestsList_third2second_cd14c93',
     },
-    ps = 'severalQuests',
-    fs = { 1: 'oneQuest', 2: 'twoQuests' },
-    bs = n(({ className: e }) => {
-        const { model: t } = Pe(),
+    vs = 'severalQuests',
+    ws = { 1: 'oneQuest', 2: 'twoQuests' },
+    xs = a(({ className: e }) => {
+        const { model: t } = Te(),
             { assetsPointer: s } = t.root.get(),
-            a = t.condition.prevPoints.get(),
-            n = t.condition.currentPoints.get(),
-            o = t.condition.maximumPoints.get(),
+            n = t.condition.prevPoints.get(),
+            a = t.condition.currentPoints.get(),
+            r = t.condition.maximumPoints.get(),
             { completedWithAnimation: d, completedNoAnimation: c } = t.computes.finalAnimationStatus(),
-            _ = t.cardsFan.model.progress.state.runCounter.get(),
-            l = t.quests.get().length,
-            g = l in fs ? fs[l] : ps;
-        const u = l > 0 ? t.computes.quest(0).state : yt.Active,
-            { upscale: m } = q(),
-            { dynamicTexts: p } = K('progression', { assetsPointer: s });
+            l = t.cardsFan.model.progress.state.runCounter.get(),
+            _ = t.quests.get().length,
+            g = _ in ws ? ws[_] : vs;
+        const u = _ > 0 ? t.computes.quest(0).state : $t.Active,
+            { upscale: m } = M(),
+            { dynamicTexts: p } = ee('progression', { assetsPointer: s });
         return c
             ? null
             : i.jsx('div', {
-                  className: r(ms.base, d && ms.base__hide, m && ms.base__upscaled, e),
+                  className: o(Cs.base, d && Cs.base__hide, m && Cs.base__upscaled, e),
                   children: i.jsxs('div', {
-                      className: r(ms[g], ms[`${g}__${u}`]),
+                      className: o(Cs[g], Cs[`${g}__${u}`]),
                       children: [
                           i.jsx('div', {
-                              className: ms.questsList,
-                              children: w(l, (e) => i.jsx(Bt, { className: ms.quest, index: e }, e)),
+                              className: Cs.questsList,
+                              children: x(_, (e) => i.jsx(Yt, { className: Cs.quest, index: e }, e)),
                           }),
                           i.jsx('div', {
-                              className: ms.currentProgress,
+                              className: Cs.currentProgress,
                               children:
-                                  l > 1
+                                  _ > 1
                                       ? i.jsx(F, {
                                             text: p.questsList.totalPointsEarned(),
-                                            className: ms.currentProgressTitle,
+                                            className: Cs.currentProgressTitle,
                                             params: {
                                                 progressionSteps: i.jsx(F, {
                                                     text: R.strings.fun_random.progression.steps(),
-                                                    className: ms.currentProgressPoints,
+                                                    className: Cs.currentProgressPoints,
                                                     params: {
-                                                        done: i.jsx(us, {
-                                                            className: ms.currentProgressPointsEarned,
-                                                            prevPoints: a,
-                                                            currentPoints: n,
-                                                            animate: _,
+                                                        done: i.jsx(bs, {
+                                                            className: Cs.currentProgressPointsEarned,
+                                                            prevPoints: n,
+                                                            currentPoints: a,
+                                                            animate: l,
                                                         }),
                                                         delimeter: i.jsx('span', {
-                                                            className: ms.currentProgressPointsDelimeter,
+                                                            className: Cs.currentProgressPointsDelimeter,
                                                             children: R.strings.common.common.slash(),
                                                         }),
                                                         total: i.jsx('span', {
-                                                            className: ms.currentProgressPointsTotal,
-                                                            children: o,
+                                                            className: Cs.currentProgressPointsTotal,
+                                                            children: r,
                                                         }),
                                                     },
                                                 }),
@@ -1852,27 +1925,27 @@ const zt = {
                                       : i.jsxs(i.Fragment, {
                                             children: [
                                                 i.jsx('div', {
-                                                    className: ms.currentProgressTitle,
+                                                    className: Cs.currentProgressTitle,
                                                     children: p.questsList.totalPointsEarnedStandAloneTitle(),
                                                 }),
                                                 i.jsx(F, {
                                                     text: R.strings.fun_random.progression.steps(),
-                                                    className: ms.currentProgressPoints,
+                                                    className: Cs.currentProgressPoints,
                                                     params: {
-                                                        done: i.jsx(us, {
-                                                            className: ms.currentProgressPointsEarned,
-                                                            prevPoints: a,
-                                                            currentPoints: n,
-                                                            animate: _,
+                                                        done: i.jsx(bs, {
+                                                            className: Cs.currentProgressPointsEarned,
+                                                            prevPoints: n,
+                                                            currentPoints: a,
+                                                            animate: l,
                                                             oneQuest: !0,
                                                         }),
                                                         delimeter: i.jsx('span', {
-                                                            className: ms.currentProgressPointsDelimeter,
+                                                            className: Cs.currentProgressPointsDelimeter,
                                                             children: R.strings.common.common.slash(),
                                                         }),
                                                         total: i.jsx('span', {
-                                                            className: ms.currentProgressPointsTotal,
-                                                            children: o,
+                                                            className: Cs.currentProgressPointsTotal,
+                                                            children: r,
                                                         }),
                                                     },
                                                 }),
@@ -1883,29 +1956,29 @@ const zt = {
                   }),
               });
     }),
-    hs = 'RandomRewardsButton_bd7652e0',
-    Cs = 'RandomRewardsButton_image_72ea278c',
-    vs = 'RandomRewardsButton_text_52bc847e',
-    xs = 'small',
-    ws = 'medium',
-    Is = 'big',
-    Ps = (e, t) => ee(e).progression.random_rewards.$dyn(`random_rewards_icon_${t}`),
-    Ns = ({ assetsPointer: e, onClick: t, className: s }) => {
-        const { dynamicTexts: a } = K('progression', { assetsPointer: e }),
-            n = A({ size: xs }, { medium: { size: ws }, large: { size: Is } });
+    Is = 'RandomRewardsButton_bd7652e0',
+    Ns = 'RandomRewardsButton_image_eaeef14d',
+    Ps = 'RandomRewardsButton_text_52bc847e',
+    Es = 'small',
+    Rs = 'medium',
+    Ts = 'big',
+    js = (e, t) => se(e).progression.random_rewards.$dyn(`random_rewards_icon_${t}`),
+    As = ({ assetsPointer: e, onClick: t, className: s }) => {
+        const { dynamicTexts: n } = ee('progression', { assetsPointer: e }),
+            a = A({ size: Es }, { medium: { size: Rs }, large: { size: Ts } });
         return i.jsxs('div', {
-            className: r(hs, s),
-            onMouseEnter: () => x.highlight(),
+            className: o(Is, s),
+            onMouseEnter: () => w.highlight(),
             onClick: () => {
-                (x.click(), t());
+                (w.click(), t());
             },
             children: [
-                i.jsx('div', { className: Cs, style: { backgroundImage: `url(${Ps(e, n.size)})` } }),
-                i.jsx('div', { className: vs, children: a.cardsFan.listOfRandomRewards() }),
+                i.jsx('div', { className: Ns, style: { backgroundImage: `url(${js(e, a.size)})` } }),
+                i.jsx('div', { className: Ps, children: n.cardsFan.listOfRandomRewards() }),
             ],
         });
     },
-    Es = {
+    Ss = {
         root: 'App_root_0',
         base: 'App_1a4bd1cf',
         show: 'App_show_0',
@@ -1946,81 +2019,81 @@ const zt = {
         second2firstRotate: 'App_second2firstRotate_0',
         third2second: 'App_third2second_0',
     },
-    Rs = n(() => {
-        const { model: e, controls: t } = Pe(),
-            { completedWithAnimation: s, completedNoAnimation: a } = e.computes.finalAnimationStatus(),
-            n = e.computes.pageStatus(),
+    Fs = a(() => {
+        const { model: e, controls: t } = Te(),
+            { completedWithAnimation: s, completedNoAnimation: n } = e.computes.finalAnimationStatus(),
+            a = e.computes.pageStatus(),
             d = e.computes.needChangePage(),
             { cursor: c } = e.cardsFan.computes,
-            { assetsPointer: _ } = e.root.get(),
-            l = o.useRef(null),
-            { isActive: g, isInfinite: u, isCompleted: f } = _e(n),
-            [b, h] = o.useState(u && !d),
-            [C, v] = o.useState(!1);
-        (Y(t.close),
-            o.useEffect(() => {
-                h(u && !d);
+            { assetsPointer: l } = e.root.get(),
+            _ = r.useRef(null),
+            { isActive: g, isInfinite: u, isCompleted: f } = ge(a),
+            [h, b] = r.useState(u && !d),
+            [C, v] = r.useState(!1);
+        (U(t.close),
+            r.useEffect(() => {
+                b(u && !d);
             }, [u, d]));
-        const [w, I] = m(() => ({
+        const [x, I] = m(() => ({
             from: { opacity: 1, transform: 'translateY(0rem)' },
             config: { duration: 500 },
-            onRest: () => h(!0),
+            onRest: () => b(!0),
             onStart: () => {
-                (x.sound(ne.EvFepInfStepTransition), v(!0));
+                (w.sound(oe.EvFepInfStepTransition), v(!0));
             },
         }));
         return (
-            o.useEffect(() => {
+            r.useEffect(() => {
                 u && d && I.start({ to: { opacity: 0, transform: 'translateY(20rem)' }, delay: 800 });
             }, [u, d, I, g]),
-            o.useEffect(() => {
-                C && (t.cardsFun.setState(ie.Blocked), t.cardsFun.setAssembled(!0));
+            r.useEffect(() => {
+                C && (t.cardsFun.setState(re.Blocked), t.cardsFun.setAssembled(!0));
             }, [t.cardsFun, C]),
             i.jsxs('div', {
-                className: r(
-                    Es.base,
-                    Es[`base__${n}`],
-                    Es[`base__cursor_${c.get()}`],
-                    f && Es.base__completed,
-                    s && Es.base__completedAnimated,
+                className: o(
+                    Ss.base,
+                    Ss[`base__${a}`],
+                    Ss[`base__cursor_${c.get()}`],
+                    f && Ss.base__completed,
+                    s && Ss.base__completedAnimated,
                 ),
                 children: [
                     i.jsx('div', {
-                        className: Es.bg,
-                        style: { backgroundImage: `url('${ee(_).library.progression_bg()}')` },
+                        className: Ss.bg,
+                        style: { backgroundImage: `url('${se(l).library.progression_bg()}')` },
                     }),
                     i.jsxs('div', {
-                        className: Es.content,
+                        className: Ss.content,
                         children: [
-                            b
-                                ? i.jsx(os, {})
+                            h
+                                ? i.jsx(gs, {})
                                 : i.jsx('div', {
-                                      className: Es.progressionContainer,
+                                      className: Ss.progressionContainer,
                                       children: i.jsxs(p.div, {
-                                          style: w,
-                                          className: Es.ordinaryProgression,
+                                          style: x,
+                                          className: Ss.ordinaryProgression,
                                           children: [
-                                              i.jsx(qe, { className: Es.header }),
-                                              i.jsx(bs, { className: Es.questsList }),
+                                              i.jsx(ze, { className: Ss.header }),
+                                              i.jsx(xs, { className: Ss.questsList }),
                                               i.jsx('div', {
-                                                  className: Es.cardProgressionContainer,
-                                                  ref: l,
-                                                  children: i.jsx(ot, {
-                                                      className: Es.cardProgression,
-                                                      containerRef: l,
+                                                  className: Ss.cardProgressionContainer,
+                                                  ref: _,
+                                                  children: i.jsx(gt, {
+                                                      className: Ss.cardProgression,
+                                                      containerRef: _,
                                                   }),
                                               }),
                                           ],
                                       }),
                                   }),
-                            f && i.jsx('div', { className: Es.completedProgression, children: i.jsx(Lt, {}) }),
+                            f && i.jsx('div', { className: Ss.completedProgression, children: i.jsx(Mt, {}) }),
                         ],
                     }),
-                    !a && i.jsx(Ns, { className: Es.toRandomRewards, onClick: t.onOpenTierList, assetsPointer: _ }),
+                    !n && i.jsx(As, { className: Ss.toRandomRewards, onClick: t.onOpenTierList, assetsPointer: l }),
                 ],
             })
         );
     });
-U(i.jsx(Ie, { children: i.jsx(X, { children: i.jsx(Z, { children: i.jsx(Rs, {}) }) }) }), { fullScreen: !0 }).then(() =>
-    J(document.getElementById('root')),
+X(i.jsx(Re, { children: i.jsx(J, { children: i.jsx(Z, { children: i.jsx(Fs, {}) }) }) }), { fullScreen: !0 }).then(() =>
+    K(document.getElementById('root')),
 );

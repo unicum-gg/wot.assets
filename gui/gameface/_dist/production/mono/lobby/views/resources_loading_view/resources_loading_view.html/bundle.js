@@ -26,7 +26,7 @@ import {
     w as E,
     W as y,
     X as T,
-    d as A,
+    c as A,
     C as k,
     Y as P,
     r as V,

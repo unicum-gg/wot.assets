@@ -4,7 +4,7 @@
         769: (e, t, n) => {
             'use strict';
             n.d(t, { A: () => r });
-            const r = /^(139|211|362|45|537|85|954)$/.test(n.j)
+            const r = /^(139|362|45|85|954)$/.test(n.j)
                 ? null
                 : [
                       0, 128, 256, 384, 592, 688, 768, 880, 1024, 1280, 1328, 1424, 1536, 1792, 1872, 1920, 1984, 2048,
@@ -38,7 +38,7 @@
         },
         281: (e, t, n) => {
             'use strict';
-            if ((n.d(t, { D4: () => T }), !/^(211|362|537|954)$/.test(n.j))) var r = n(769);
+            if ((n.d(t, { D4: () => T }), !/^(362|954)$/.test(n.j))) var r = n(769);
             const i = {
                 'BB2:108120': 1817,
                 'BP2:OO': 790,
@@ -525,7 +525,7 @@
                 'UW1:く': 13,
                 'UW4:私': 12,
             };
-            if (!/^(211|362|537|954)$/.test(n.j)) var o = n(906);
+            if (!/^(362|954)$/.test(n.j)) var o = n(906);
             function a(e, t) {
                 var n = ('undefined' != typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
                 if (n) return (n = n.call(e)).next.bind(n);
@@ -777,7 +777,7 @@
                         e.head.appendChild(n));
                 }
             }
-            if (!/^(211|362|537|954)$/.test(n.j)) var g = n(759);
+            if (!/^(362|954)$/.test(n.j)) var g = n(759);
             function m(e, t) {
                 var n = ('undefined' != typeof Symbol && e[Symbol.iterator]) || e['@@iterator'];
                 if (n) return (n = n.call(e)).next.bind(n);

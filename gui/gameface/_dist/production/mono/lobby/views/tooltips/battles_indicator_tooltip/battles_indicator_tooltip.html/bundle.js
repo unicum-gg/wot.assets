@@ -1,9 +1,9 @@
-import { I as s, j as t, J as a } from '../../../../chunks/vendor.js';
-import { i as o, n as e, cd as i, cR as n, cP as l, cn as c } from '../../../../chunks/lib.js';
+import { I as s, j as t, J as o } from '../../../../chunks/vendor.js';
+import { i as a, n as e, co as i, c$ as l, cW as n, cw as c } from '../../../../chunks/lib.js';
 import { T as d } from '../../../../chunks/tooltip_decorator.js';
 import { F as r } from '../../../../chunks/formatted_statistic_value.js';
 import { S as p } from '../../../../chunks/enums.js';
-/* empty css                        */ const [_, m] = o()(({ observableModel: s }) => ({ root: s.object() }), e),
+/* empty css                        */ const [_, m] = a()(({ observableModel: s }) => ({ root: s.object() }), e),
     x = 'App_57dacaa2',
     j = 'App_heading_ade6eef',
     u = 'App_count_d181c83a',
@@ -16,16 +16,16 @@ import { S as p } from '../../../../chunks/enums.js';
     f = 'App_icon__platoon_65811861',
     C = s(function () {
         const { model: s } = m(),
-            { statisticsMode: o, soloBattlesCount: e, superPlatoonBattlesCount: l } = s.root.get();
+            { statisticsMode: a, soloBattlesCount: e, superPlatoonBattlesCount: n } = s.root.get();
         return t.jsxs('div', {
             className: x,
             children: [
                 t.jsx(i, {
                     text:
-                        o === p.Season
+                        a === p.Season
                             ? R.strings.comp7_ext.battlesIndicatorTooltip.season.heading()
                             : R.strings.comp7_ext.battlesIndicatorTooltip.day.heading(),
-                    binding: { battlesCount: t.jsx('div', { className: u, children: t.jsx(n, { value: e + l }) }) },
+                    binding: { battlesCount: t.jsx('div', { className: u, children: t.jsx(l, { value: e + n }) }) },
                     classMix: j,
                 }),
                 t.jsx('div', { className: h, children: R.strings.comp7_ext.battlesIndicatorTooltip.listHeading() }),
@@ -35,7 +35,7 @@ import { S as p } from '../../../../chunks/enums.js';
                         t.jsxs('div', {
                             className: v,
                             children: [
-                                t.jsx('div', { className: a(A, N) }),
+                                t.jsx('div', { className: o(A, N) }),
                                 t.jsx(i, {
                                     text: R.strings.comp7_ext.battlesIndicatorTooltip.soloBattlesCount(),
                                     binding: {
@@ -50,13 +50,13 @@ import { S as p } from '../../../../chunks/enums.js';
                         t.jsxs('div', {
                             className: v,
                             children: [
-                                t.jsx('div', { className: a(A, f) }),
+                                t.jsx('div', { className: o(A, f) }),
                                 t.jsx(i, {
                                     text: R.strings.comp7_ext.battlesIndicatorTooltip.superPlatoonBattlesCount(),
                                     binding: {
                                         superPlatoonBattlesCount: t.jsx('div', {
                                             className: g,
-                                            children: t.jsx(r, { value: l }),
+                                            children: t.jsx(r, { value: n }),
                                         }),
                                     },
                                 }),
@@ -67,4 +67,4 @@ import { S as p } from '../../../../chunks/enums.js';
             ],
         });
     });
-l(t.jsx(_, { children: t.jsx(c, { children: t.jsx(d, { children: t.jsx(C, {}) }) }) }));
+n(t.jsx(_, { children: t.jsx(c, { children: t.jsx(d, { children: t.jsx(C, {}) }) }) }));

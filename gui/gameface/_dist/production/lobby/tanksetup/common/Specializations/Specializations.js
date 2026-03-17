@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             3457: (e, t, i) => {
-                (i(6483), i(7727), i(7363), i(6880), i(2106));
+                (i(6483), i(1641), i(7727), i(7363), i(6880), i(2106));
             },
             2106: (e, t, i) => {
                 let r, n;
@@ -68,8 +68,8 @@
                         p = s.largeHeight,
                         f = s.mediumHeight,
                         b = s.smallHeight,
-                        y = s.extraSmallHeight,
-                        O = { extraLarge: E, large: p, medium: f, small: b, extraSmall: y };
+                        O = s.extraSmallHeight,
+                        y = { extraLarge: E, large: p, medium: f, small: b, extraSmall: O };
                     if (i.extraLarge || i.large || i.medium || i.small || i.extraSmall) {
                         if (i.extraLarge && l) return t;
                         if (i.large && d) return t;
@@ -77,11 +77,11 @@
                         if (i.small && u) return t;
                         if (i.extraSmall && _) return t;
                     } else {
-                        if (i.extraLargeWidth && h) return (0, n.H)(t, i, O);
-                        if (i.largeWidth && g) return (0, n.H)(t, i, O);
-                        if (i.mediumWidth && m) return (0, n.H)(t, i, O);
-                        if (i.smallWidth && w) return (0, n.H)(t, i, O);
-                        if (i.extraSmallWidth && v) return (0, n.H)(t, i, O);
+                        if (i.extraLargeWidth && h) return (0, n.H)(t, i, y);
+                        if (i.largeWidth && g) return (0, n.H)(t, i, y);
+                        if (i.mediumWidth && m) return (0, n.H)(t, i, y);
+                        if (i.smallWidth && w) return (0, n.H)(t, i, y);
+                        if (i.extraSmallWidth && v) return (0, n.H)(t, i, y);
                         if (
                             !(i.extraLargeWidth || i.largeWidth || i.mediumWidth || i.smallWidth || i.extraSmallWidth)
                         ) {
@@ -89,7 +89,7 @@
                             if (i.largeHeight && p) return t;
                             if (i.mediumHeight && f) return t;
                             if (i.smallHeight && b) return t;
-                            if (i.extraSmallHeight && y) return t;
+                            if (i.extraSmallHeight && O) return t;
                         }
                     }
                     return null;
@@ -387,10 +387,10 @@
                         arabic2roman: () => S,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => k,
+                        displayStatusIs: () => R,
                         enableFullScreenModeSupported: () => M,
                         events: () => o.U,
-                        extraSize: () => R,
+                        extraSize: () => k,
                         forceTriggerMouseMove: () => x,
                         freezeTextureBeforeResize: () => w,
                         getBrowserTexturePath: () => c,
@@ -401,14 +401,14 @@
                         getSize: () => h,
                         getViewGlobalPosition: () => m,
                         initExternalPaddings: () => H,
-                        isEventHandled: () => O,
+                        isEventHandled: () => y,
                         isFocused: () => b,
                         pxToRem: () => E,
                         remToPx: () => p,
                         resize: () => g,
                         sendEvent: () => s.qP,
                         setAnimateWindow: () => f,
-                        setEventHandled: () => y,
+                        setEventHandled: () => O,
                         setInputPaddingsRem: () => d,
                         setSidePaddingsRem: () => _,
                         whenTutorialReady: () => C,
@@ -461,10 +461,10 @@
                 function b() {
                     return viewEnv.isFocused();
                 }
-                function y() {
+                function O() {
                     return viewEnv.setEventHandled();
                 }
-                function O() {
+                function y() {
                     return viewEnv.isEventHandled();
                 }
                 function x() {
@@ -481,11 +481,11 @@
                 function P() {
                     return viewEnv.getExternalPaddingsRem();
                 }
-                const k = Object.keys(a.W).reduce(
+                const R = Object.keys(a.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
-                    R = {
+                    k = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -621,6 +621,16 @@
                             (e.SYMBOL = 'Symbol'),
                             (e.SYMBOL_LOCK = 'SymbolLock'));
                     })(n || (n = {})));
+            },
+            1641: (e, t, i) => {
+                let r;
+                !(function (e) {
+                    ((e[(e.LEFT = 0)] = 'LEFT'),
+                        (e[(e.WHEEL = 1)] = 'WHEEL'),
+                        (e[(e.RIGHT = 2)] = 'RIGHT'),
+                        (e[(e.FOURTH = 3)] = 'FOURTH'),
+                        (e[(e.FIFTH = 4)] = 'FIFTH'));
+                })(r || (r = {}));
             },
             9690: (e, t, i) => {
                 i.d(t, { cg: () => a });
@@ -878,8 +888,8 @@
                         e.keyCode === _.n.ESCAPE && t();
                     };
                 var b = i(7572);
-                const y = n.instance,
-                    O = {
+                const O = n.instance,
+                    y = {
                         DataTracker: a.Z,
                         ViewModel: b.Z,
                         ViewEventType: s,
@@ -958,17 +968,17 @@
                                 }
                             return i;
                         },
-                        ClickOutsideManager: y,
+                        ClickOutsideManager: O,
                         SystemLocale: o.Z5,
                         UserLocale: o.cy,
                     };
-                window.ViewEnvHelper = O;
+                window.ViewEnvHelper = y;
             },
             8613: (e, t, i) => {
                 i.d(t, { Z5: () => r, cy: () => n });
                 const r = {
                         getNumberFormat: (e, t) => systemLocale.getNumberFormat(e, t),
-                        getRealFormat: (e, t) => systemLocale.getRealFormat(e, t),
+                        getRealFormat: (e, t, i = 2) => systemLocale.getRealFormat(e, t, i),
                         getTimeFormat: (e, t) => systemLocale.getTimeFormat(e, t),
                         getDateFormat: (e, t) => systemLocale.getDateFormat(e, t),
                         toUpperCase: (e) => systemLocale.toUpperCase(e),

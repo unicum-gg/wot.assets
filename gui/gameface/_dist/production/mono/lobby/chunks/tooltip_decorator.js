@@ -1,5 +1,5 @@
 import { j as r, J as o } from './vendor.js';
-import { dS as e } from './lib.js';
+import { dZ as e } from './lib.js';
 const n = 'TooltipDecorator_decorator_81525906',
     s = 'TooltipDecorator_decoratorInner_5b7cf9de';
 function a({ children: a, classNames: c }) {

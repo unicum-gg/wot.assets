@@ -1,4 +1,4 @@
-import { n as e, r as a, j as s, e as t } from '../../../../chunks/vendor.js';
+import { s as e, r as a, j as s, f as t } from '../../../../chunks/vendor.js';
 import { i, r as o, h as r, k as n, d as c, V as l, F as p, l as _, U as d } from '../../../../chunks/lib.js';
 const [m, u] = i()(
         ({ observableModel: e }) => ({ root: e.object() }),
@@ -20,17 +20,17 @@ const [m, u] = i()(
         title: 'App_title_167b9150',
         subTitle: 'App_subTitle_dc235974',
     },
-    x = e(function () {
+    f = e(function () {
         const { model: e, controls: i } = u(),
             { name: _, title: d, rarity: m } = e.root.get(),
-            [x, f] = a.useState(!0),
+            [f, x] = a.useState(!0),
             h = o.resolve('intl'),
             A = o.resolve('strings'),
             j = o.resolve('videos');
         r(n.ESCAPE, i.close);
         const v = c({ size: 's400x300' }, { large: { size: 's600x450' }, extraLarge: { size: 's900x675' } }),
             y = a.useCallback(() => {
-                (f(!1), i.close());
+                (x(!1), i.close());
             }, [i]);
         return s.jsx('div', {
             className: b.base,
@@ -46,7 +46,7 @@ const [m, u] = i()(
                                     backgroundImage: `url('R.images.gui.maps.vehicles.attachments.${v.size}.${_}')`,
                                 },
                             }),
-                            x &&
+                            f &&
                                 s.jsx(l, {
                                     className: b.animation,
                                     src: j.readOrEmpty(`rarity.intro_${m}`),
@@ -54,9 +54,9 @@ const [m, u] = i()(
                                     onEnded: y,
                                 }),
                             s.jsx(l, {
-                                className: t(b.animation, x && b.animation__hidden),
+                                className: t(b.animation, f && b.animation__hidden),
                                 src: j.readOrEmpty(`rarity.cycle_${m}`),
-                                autoplay: !x,
+                                autoplay: !f,
                                 loop: !0,
                             }),
                         ],
@@ -81,4 +81,4 @@ const [m, u] = i()(
             }),
         });
     });
-_(s.jsx(m, { children: s.jsx(d, { children: s.jsx(x, {}) }) }));
+_(s.jsx(m, { children: s.jsx(d, { children: s.jsx(f, {}) }) }));

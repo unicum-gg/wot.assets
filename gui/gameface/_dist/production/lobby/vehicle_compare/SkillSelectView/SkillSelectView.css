@@ -1271,7 +1271,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     cursor: pointer;
 }
 
-.mediaSmall .SkillWithIcon_base_9c {
+.mediaLargeWidth .SkillWithIcon_base_9c {
     width: 100rem;
     height: 90rem;
 }
@@ -1285,7 +1285,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         center / cover;
 }
 
-.mediaSmall .SkillWithIcon_base__bonus_44 {
+.mediaLargeWidth .SkillWithIcon_base__bonus_44 {
     height: 60rem;
     background-image: url('R.images.gui.maps.icons.vehCompare.stroke_default_100_60');
 }
@@ -1305,10 +1305,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .SkillWithIcon_base__major_65 .SkillWithIcon_selectedCover_ac {
     background-image: url('R.images.gui.maps.icons.vehCompare.selected_glow_62_62');
 }
-.mediaSmall .SkillWithIcon_base__major_65 .SkillWithIcon_selectedCover_ac {
+.mediaLargeWidth .SkillWithIcon_base__major_65 .SkillWithIcon_selectedCover_ac {
     background-image: url('R.images.gui.maps.icons.vehCompare.selected_glow_100_90');
 }
-.mediaSmall .SkillWithIcon_selectedCover_ac {
+.mediaLargeWidth .SkillWithIcon_selectedCover_ac {
     background-image: url('R.images.gui.maps.icons.vehCompare.stroke_selected_100_60');
 }
 .SkillWithIcon_hoverHelper_5b {
@@ -1348,64 +1348,48 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .SkillWrapper_base__common_e0 {
-    margin-left: 5rem;
-    padding-left: 5rem;
+    margin-left: 8rem;
+    padding-left: 8rem;
     border-left: 1rem solid rgba(255, 255, 255, 0.1);
     position: relative;
 }
 
-.mediaMedium .SkillWrapper_base__common_e0 {
-    margin-left: 10rem;
-    padding-left: 10rem;
+.mediaMediumWidth .SkillWrapper_base__common_e0 {
+    margin-left: 15rem;
+    padding-left: 15rem;
 }
 .SkillWrapper_skillWithIcon_8a + .SkillWrapper_skillWithIcon_8a {
     margin-left: 8rem;
 }
-.mediaMedium .SkillWrapper_skillWithIcon_8a + .SkillWrapper_skillWithIcon_8a {
+.mediaMediumWidth .SkillWrapper_skillWithIcon_8a + .SkillWrapper_skillWithIcon_8a {
+    margin-left: 15rem;
+}
+.mediaExtraLargeWidth .SkillWrapper_skillWithIcon_8a + .SkillWrapper_skillWithIcon_8a {
     margin-left: 20rem;
 }
 
 .SkillRowComponent_base_d9 {
     display: flex;
+    align-items: center;
     position: relative;
 }
 
-.SkillRowComponent_base_d9 + .SkillRowComponent_base_d9 .SkillRowComponent_skillWrapper_18 {
+.SkillRowComponent_base_d9 + .SkillRowComponent_base_d9 {
     padding-top: 8rem;
 }
 
-.mediaMedium .SkillRowComponent_base_d9 + .SkillRowComponent_base_d9 .SkillRowComponent_skillWrapper_18 {
+.mediaMediumWidth .SkillRowComponent_base_d9 + .SkillRowComponent_base_d9 {
+    padding-top: 15rem;
+}
+
+.mediaExtraLargeWidth .SkillRowComponent_base_d9 + .SkillRowComponent_base_d9 {
     padding-top: 20rem;
 }
 .SkillRowComponent_roleIconHolder_7a {
-    margin: 15rem 5rem 0 7rem;
+    margin-right: 12rem;
 }
-.SkillRowComponent_base_d9:first-child .SkillRowComponent_roleIconHolder_7a {
-    margin-top: 6rem;
-}
-.mediaSmall .SkillRowComponent_base_d9:first-child .SkillRowComponent_roleIconHolder_7a {
-    margin: 30rem 5rem 0;
-}
-.mediaMedium .SkillRowComponent_base_d9:first-child .SkillRowComponent_roleIconHolder_7a {
-    margin: 22rem 23rem 0 -1rem;
-}
-.SkillRowComponent_base_d9:nth-child(2) .SkillRowComponent_roleIconHolder__bonus_ff {
-    margin-top: 7rem;
-}
-.mediaSmall .SkillRowComponent_roleIconHolder_7a {
-    margin: 30rem 5rem 0;
-}
-.mediaMedium .SkillRowComponent_roleIconHolder_7a {
-    margin: 40rem 23rem 0 -1rem;
-}
-.SkillRowComponent_roleIconHolder__bonus_ff {
-    margin-top: 6rem;
-}
-.mediaSmall .SkillRowComponent_roleIconHolder__bonus_ff {
-    margin-top: 8rem;
-}
-.mediaMedium .SkillRowComponent_roleIconHolder__bonus_ff {
-    margin: 7rem 23rem 0 -1rem;
+.mediaMediumWidth .SkillRowComponent_roleIconHolder_7a {
+    margin-right: 25rem;
 }
 .SkillRowComponent_roleIcon_4a {
     margin-left: 2rem;
@@ -1423,14 +1407,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
 }
 .SkillRowComponent_skillWrapper__common_7a {
-    margin-left: 5rem;
-    padding-left: 5rem;
+    margin: -8rem 0 0 8rem;
+    padding: 8rem 0 0 8rem;
     border-left: 1rem solid rgba(255, 255, 255, 0.1);
     position: relative;
 }
-.mediaMedium .SkillRowComponent_skillWrapper__common_7a {
-    margin-left: 10rem;
-    padding-left: 10rem;
+.mediaMediumWidth .SkillRowComponent_skillWrapper__common_7a {
+    margin: -15rem 0 0 15rem;
+    padding: 15rem 0 0 15rem;
+}
+.mediaLargeWidth .SkillRowComponent_skillWrapper__common_7a {
+    margin: -20rem 0 0 20rem;
+    padding: 20rem 0 0 20rem;
 }
 
 .MainContent_base_62 {
@@ -1443,19 +1431,26 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .MainContent_scrollArea_c1 {
     display: flex;
     flex: 1;
-    width: 694rem;
-    margin-left: -22rem;
+    width: 908rem;
+    margin-left: -38rem;
     position: relative;
 }
 
-.mediaSmall .MainContent_scrollArea_c1 {
-    width: 1024rem;
-    margin-left: -16rem;
+.mediaMediumWidth .MainContent_scrollArea_c1 {
+    width: 1001rem;
+    margin-left: -51rem;
 }
 
-.mediaMedium .MainContent_scrollArea_c1 {
-    width: 1135rem;
-    margin-left: -22rem;
+.mediaLargeWidth .MainContent_scrollArea_c1 {
+    width: 1469rem;
+}
+
+.mediaExtraLargeWidth .MainContent_scrollArea_c1 {
+    width: 1519rem;
+}
+
+.MainContent_content_2a {
+    padding-right: 20rem;
 }
 
 .MainContent_title_8c {
@@ -1463,16 +1458,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
-    margin: 0 0 18rem 16rem;
+    margin: 0 0 18rem;
     opacity: 0.8;
-}
-
-.mediaSmall .MainContent_title_8c {
-    margin-left: 20rem;
-}
-
-.mediaMedium .MainContent_title_8c {
-    margin-left: 26rem;
 }
 
 .MainContent_title__bonus_6f {
@@ -1484,7 +1471,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .MainContent_title__bonus_6f {
-    margin: 17rem 0 18rem 50rem;
+    margin: 26rem 0 18rem 50rem;
+}
+
+.mediaMedium .MainContent_title__bonus_6f {
+    margin-top: 22rem;
 }
 
 .TitleContent_base_3b {
@@ -1495,19 +1486,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 24rem 0 28rem;
+    margin: 24rem 0 8rem;
     position: relative;
 }
 
-.mediaMedium .TitleContent_base_3b {
+.mediaMediumWidth .TitleContent_base_3b {
     margin: 53rem 0 28rem;
 }
 
-.mediaLarge .TitleContent_base_3b {
+.mediaLargeWidth .TitleContent_base_3b {
     margin: 53rem 0 47rem;
 }
 
-.mediaExtraLarge .TitleContent_base_3b {
+.mediaExtraLargeWidth .TitleContent_base_3b {
     margin: 135rem 0 47rem;
 }
 
@@ -1531,7 +1522,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 415rem;
     max-height: calc(100vh - 230rem);
     position: absolute;
-    top: 60rem;
+    top: 47rem;
     right: 10rem;
 }
 
@@ -1542,47 +1533,47 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .mediaMedium .SkillSelectApp_widget_ec {
     max-height: calc(100vh - 243rem);
-    top: 92rem;
+    top: 99rem;
 }
 
 .mediaLarge .SkillSelectApp_widget_ec {
     max-height: calc(100vh - 325rem);
-    top: 111rem;
+    top: 119rem;
     right: 20rem;
+}
+
+.mediaExtraLarge .SkillSelectApp_widget_ec {
+    top: 192rem;
 }
 
 .SkillSelectApp_centeredContent_6d {
     display: flex;
     flex-direction: column;
-    align-items: center;
     flex: 1;
-    width: 640rem;
-    margin-left: -308rem;
+    width: 844rem;
+    margin-left: -339rem;
 }
 
-.mediaSmall .SkillSelectApp_centeredContent_6d {
-    width: 966rem;
-    margin-left: -322rem;
+.mediaMediumWidth .SkillSelectApp_centeredContent_6d {
+    width: 924rem;
+    margin-left: -100rem;
 }
 
-.mediaMedium .SkillSelectApp_centeredContent_6d {
-    width: 1060rem;
-    margin-left: -224rem;
+.mediaLargeWidth .SkillSelectApp_centeredContent_6d {
+    width: 1392rem;
+    margin-left: -320rem;
 }
 
-.mediaLarge .SkillSelectApp_centeredContent_6d {
-    margin-left: -112rem;
-}
-
-.mediaExtraLarge .SkillSelectApp_centeredContent_6d {
-    margin-left: 0;
+.mediaExtraLargeWidth .SkillSelectApp_centeredContent_6d {
+    width: 1442rem;
+    margin-left: 37rem;
 }
 
 .SkillSelectApp_footer_9b {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 21rem 0 80rem;
+    padding: 21rem 0 101rem;
     position: relative;
 }
 
@@ -1591,11 +1582,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .SkillSelectApp_footer_9b {
-    padding-bottom: 62rem;
+    padding-bottom: 137rem;
 }
 
 .mediaLarge .SkillSelectApp_footer_9b {
-    padding-bottom: 125rem;
+    padding-bottom: 140rem;
+}
+
+.mediaExtraLarge .SkillSelectApp_footer_9b {
+    padding-bottom: 345rem;
 }
 
 .SkillSelectApp_divider_15 {

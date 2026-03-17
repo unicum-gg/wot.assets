@@ -1,5 +1,5 @@
 import { j as s } from '../../../../chunks/vendor.js';
-import { cP as o, cn as n } from '../../../../chunks/lib.js';
+import { cW as o, cw as n } from '../../../../chunks/lib.js';
 import { T as m, A as i, a, b as e, O as t } from '../../../../chunks/winner_glow.js';
 import '../../../../chunks/consts.js';
 import '../../../../chunks/divine_glow.js';

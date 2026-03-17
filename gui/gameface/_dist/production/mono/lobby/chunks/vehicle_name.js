@@ -1,5 +1,5 @@
 import { j as e, J as a } from './vendor.js';
-import { aG as l, a2 as i, dd as s, dp as _, c$ as c } from './lib.js';
+import { aI as l, a4 as i, dm as s, dy as _, d9 as c } from './lib.js';
 const n = {
     base: 'VehicleRole_b05c9386',
     icon: 'VehicleRole_icon_a3da323b',
@@ -83,9 +83,9 @@ function m({
     roleClassName: u,
     roleClassNames: I,
 }) {
-    const g = l(o),
-        y = V ? `${g}_elite` : g,
-        j = `url(${null == p ? void 0 : p.$dyn(y)})`;
+    const y = l(o),
+        g = V ? `${y}_elite` : y,
+        j = `url(${null == p ? void 0 : p.$dyn(g)})`;
     return e.jsxs('div', {
         className: a(h.base, h[`base__${x}`], V && h.base__elite, N),
         children: [

@@ -1,17 +1,37 @@
 import { j as e, f as t, d as s, o, g as n, B as a, r } from './vendor.js';
-import { dg as i, dh as c, di as d, o as l, dj as u, dk as m, i as p, bT as h, T as _, dl as x } from './lib.js';
-const y = { base: 'AlertIcon_7dcecd8f', shadow: 'AlertIcon_shadow_daf8370', icon: 'AlertIcon_icon_35ce98b5' };
-function b({ icon: s, hasShadow: o = !1, className: n }) {
+import {
+    dn as i,
+    dp as c,
+    dq as l,
+    o as d,
+    dr as u,
+    ds as p,
+    i as m,
+    c2 as b,
+    aa as _,
+    b$ as h,
+    dt as x,
+} from './lib.js';
+const g = {
+        root: 'AlertIcon_root_a8a4098d',
+        'media-wrapper': 'AlertIcon_media-wrapper_a8a4098d',
+        base: 'AlertIcon_7dcecd8f',
+        shadow: 'AlertIcon_shadow_5a06c9a',
+        base__big: 'AlertIcon_base__big_a8a4098d',
+        icon: 'AlertIcon_icon_3bb8b40',
+    },
+    y = { big: 'big', small: 'small' };
+function f({ icon: s, hasShadow: o = !1, size: n = y.small, className: a }) {
     return e.jsxs('div', {
-        className: t(y.base, n),
+        className: t(g.base, g[`base__${n}`], a),
         children: [
-            o && e.jsx('div', { className: y.shadow }),
-            e.jsx('div', { className: y.icon, style: { backgroundImage: `url(${s})` } }),
+            o && e.jsx('div', { className: g.shadow }),
+            e.jsx('div', { className: g.icon, style: { backgroundImage: `url(${s})` } }),
         ],
     });
 }
-var g = ((e) => ((e.Common = 'common'), (e.Rare = 'rare'), (e.Epic = 'epic'), e))(g || {});
-class f extends i {
+var v = ((e) => ((e.Common = 'common'), (e.Rare = 'rare'), (e.Epic = 'epic'), e))(v || {});
+class w extends i {
     constructor(e, t) {
         (super(), (this.root = e), (this.prefix = t));
     }
@@ -30,42 +50,42 @@ class f extends i {
                 }
                 throw new Error('R class with images field is not defined');
             })(this.root, o);
-        return void 0 === n ? ('silent' !== s && d(`Resource not found: ${o}`, s), t()) : n;
+        return void 0 === n ? ('silent' !== s && l(`Resource not found: ${o}`, s), t()) : n;
     }
     readOrEmpty(e, t = 'warn') {
         return this.readOr(e, () => '', t);
     }
 }
-const v = 'lootbox_images',
-    w = 'lootbox_sounds';
-(l.register(v, s(() => new u(window.R.images)).singleton()),
-    l.register(w, s(() => new f(window.R.sounds)).singleton()));
-const N = l.resolve(v),
-    E = l.resolve('videos'),
-    I = l.resolve(w),
-    A = l.resolve('strings'),
-    j = (e, t) => {
+const I = 'lootbox_images',
+    N = 'lootbox_sounds';
+(d.register(I, s(() => new u(window.R.images)).singleton()),
+    d.register(N, s(() => new w(window.R.sounds)).singleton()));
+const E = d.resolve(I),
+    A = d.resolve('videos'),
+    $ = d.resolve(N),
+    j = d.resolve('strings'),
+    k = (e, t) => {
         switch (e) {
             case R.images:
-                return N.readOrEmpty(t, 'silent');
-            case R.videos:
                 return E.readOrEmpty(t, 'silent');
-            case R.sounds:
-                return I.readOrEmpty(t, 'silent');
-            case R.strings:
+            case R.videos:
                 return A.readOrEmpty(t, 'silent');
+            case R.sounds:
+                return $.readOrEmpty(t, 'silent');
+            case R.strings:
+                return j.readOrEmpty(t, 'silent');
             default:
                 return '';
         }
     };
-var $ = ((e) => (
+var P = ((e) => (
         (e.EntryPoint = 'ENTRY_POINT'),
         (e.InfoPage = 'INFO_PAGE'),
         (e.Rewards = 'REWARDS'),
         (e.HasBoxesView = 'HAS_BOXES_VIEW'),
         e
-    ))($ || {}),
-    P = ((e) => (
+    ))(P || {}),
+    O = ((e) => (
         (e.Videos = 'videos'),
         (e.Images = 'images'),
         (e.Texts = 'texts'),
@@ -74,12 +94,13 @@ var $ = ((e) => (
         (e.DynamicImages = 'dynamicImages'),
         (e.DynamicTexts = 'dynamicTexts'),
         e
-    ))(P || {});
-(g.Rare, g.Epic);
-const C = {
+    ))(O || {});
+(v.Rare, v.Epic);
+const B = {
         ENTRY_POINT: {
-            icon: { emptyIconBrightness: 0.3, boxesIconBrightness: 0.3 },
-            shine: { opacityCustom: 0.15, opacityCustomNewBox: 0.4, opacityDiff: 0.15, animationDuration: '40s' },
+            hover: { enabled: !1 },
+            icon: { emptyIconBrightness: 0.4, boxesIconBrightness: 0.4 },
+            shine: { opacity: 0.8 },
         },
         HAS_BOXES_VIEW: {
             hasIdle: !0,
@@ -92,16 +113,17 @@ const C = {
         INFO_PAGE: { hasDescription: !0 },
         REWARDS: { accentCount: 5 },
     },
-    O = {
-        DEFAULT_CONFIG: C,
+    C = {
+        DEFAULT_CONFIG: B,
         anniversaryCN: {
             ENTRY_POINT: { icon: { emptyIconBrightness: 0.2 } },
             HAS_BOXES_VIEW: { hasIdle: !1, tabsGuaranteedCount: 5 },
             INFO_PAGE: { hasDescription: !0 },
         },
+        lootBoxSystem: { ENTRY_POINT: { hover: { enabled: !0 } } },
     },
-    D = (e, t) => {
-        const s = O[m(e)];
+    S = (e, t) => {
+        const s = C[p(e)];
         return s
             ? ((e, t) => {
                   const s = (e, t) => {
@@ -113,10 +135,10 @@ const C = {
                       return o;
                   };
                   return s(e, t);
-              })(C[t], s[t])
-            : C[t];
+              })(B[t], s[t])
+            : B[t];
     },
-    S = (e, t) => {
+    T = (e, t) => {
         let s = e;
         const o = t.split('.');
         for (let n = 0; n < o.length && s; n++) {
@@ -125,7 +147,7 @@ const C = {
         }
         return s;
     },
-    B = ({ type: e, filePath: t, eventName: s }, o = !1) => {
+    D = ({ type: e, filePath: t, eventName: s }, o = !1) => {
         const {
             parent: n,
             path: a,
@@ -134,16 +156,16 @@ const C = {
             const o = 'gui.maps.icons.lootBoxSystem.customizable',
                 n = 'lootbox.customizable';
             switch (e) {
-                case P.Images:
-                case P.DynamicImages:
+                case O.Images:
+                case O.DynamicImages:
                     return { parent: R.images, path: `${o}.${s}.${t}`, defaultPath: `${o}.default.${t}` };
-                case P.Videos:
-                case P.DynamicVideos:
+                case O.Videos:
+                case O.DynamicVideos:
                     return { parent: R.videos, path: `${n}.${s}.${t}`, defaultPath: `${n}.default.${t}` };
-                case P.Texts:
-                case P.DynamicTexts:
+                case O.Texts:
+                case O.DynamicTexts:
                     return { parent: R.strings, path: `lootbox_${s}.${t}`, defaultPath: `lootbox_system.${t}` };
-                case P.Sounds:
+                case O.Sounds:
                     return { parent: R.sounds, path: `${t}_${s}`, defaultPath: `${t}` };
                 default:
                     return (
@@ -152,13 +174,13 @@ const C = {
                     );
             }
         })(e, t, s);
-        return n ? { eventResource: o ? S(n, a) : j(n, a), defaultResource: o ? S(n, r) : j(n, r) } : null;
+        return n ? { eventResource: o ? T(n, a) : k(n, a), defaultResource: o ? T(n, r) : k(n, r) } : null;
     },
-    T = (e, t, s) =>
+    G = (e, t, s) =>
         Object.keys(e).reduce(
             (o, n) => (
                 (o[n] = (({ type: e, filePath: t, eventName: s }) => {
-                    const o = B({ type: e, filePath: t, eventName: s });
+                    const o = D({ type: e, filePath: t, eventName: s });
                     if (!o || (!o.eventResource && !o.defaultResource))
                         return (console.info(`Unreachable code: unknown resource (${e} ${s} ${t})`), '');
                     const { eventResource: n, defaultResource: a } = o;
@@ -168,26 +190,29 @@ const C = {
             ),
             {},
         ),
-    k = (e, t) =>
+    V = (e, t) =>
         Object.keys(e).reduce((s, o) => {
             const n = e[o];
-            return n ? ((s[o] = T(n, o, t)), s) : s;
+            return n ? ((s[o] = G(n, o, t)), s) : s;
         }, {}),
-    G = {
+    L = {
         images: {
             iconEmpty: 'entry_point.lootboxEmpty',
             iconGold: 'entry_point.lootboxGold',
             shine: 'entry_point.glow',
-            alert: 'entry_point.alert',
+            alertBig: 'entry_point.alert_big',
+            blinkMask: 'entry_point.blink_mask',
+            hover: 'entry_point.hover',
         },
+        videos: { glow: 'entryPoint.glow' },
         texts: { boxes: 'entryPoint.boxes', maxBoxesCount: 'entryPoint.maxBoxesCount', boxesCount: 'entryPoint.count' },
         sounds: { entryHover: 'gui_lb_icon_hover' },
     };
-var V = ((e) => ((e.Boxes = 'boxes'), (e.Empty = 'empty'), e))(V || {});
-const [L, F] = p()(
+var M = ((e) => ((e.Boxes = 'boxes'), (e.Empty = 'empty'), e))(M || {});
+const [F, H] = m()(
         ({ observableModel: e }) => {
             const t = e.object().get().eventName,
-                s = { root: e.object(), style: o.box(D(t, $.EntryPoint)), resources: o.box(k(G, t)) },
+                s = { root: e.object(), style: o.box(S(t, P.EntryPoint)), resources: o.box(V(L, t)) },
                 a = n(() => {
                     const { boxesCount: e } = s.root.get();
                     return e ? 'boxes' : 'empty';
@@ -196,113 +221,116 @@ const [L, F] = p()(
         },
         ({ externalModel: e }) => ({ showLanding: e.createCallbackNoArgs('onEntryClick') }),
     ),
-    H = { base: 'Counter_d19ba807' },
-    M = 1e3;
-function W({ count: s, text: o, maxText: n, className: a }) {
+    z = { base: 'Blink_a1f7a151', blink: 'Blink_86c0f9b0' };
+function W({ mask: s, className: o = '' }) {
     return e.jsx('div', {
-        className: t(H.base, a),
-        children: s < M ? e.jsx(h, { text: o, params: { count: s }, upgradeLegacy: !0 }) : n,
+        className: t(z.base, o),
+        style: { maskImage: `url(${s})` },
+        children: e.jsx('div', { className: z.blink }),
     });
 }
-const z = { base: 'Icon_1d8e6c37' };
-function U({ image: s, brightness: o, disabled: n, className: a, ...r }) {
+const Y = { base: 'Counter_eca0cd46' },
+    U = 1e3;
+function X({ count: s, text: o, maxText: n, className: a }) {
+    return e.jsx('div', {
+        className: t(Y.base, a),
+        children: s < U ? e.jsx(b, { text: o, params: { count: s }, upgradeLegacy: !0 }) : n,
+    });
+}
+const q = { base: 'Icon_1d8e6c37' };
+function Z({ image: s, brightness: o, disabled: n, className: a, ...r }) {
     return e.jsx('div', {
         ...r,
-        className: t(z.base, a),
+        className: t(q.base, a),
         style: { backgroundImage: `url(${s})`, filter: n ? 'brightness(.8) saturate(.5)' : `brightness(${o})` },
     });
 }
-const X = {
-    base: 'Shine_91d96348',
-    shineAnimation: 'Shine_shineAnimation_ead5930d',
-    shineAnimation__reverse: 'Shine_shineAnimation__reverse_de32f2ac',
-};
-function Y({ image: s, style: o }) {
-    return e.jsxs('div', {
-        className: X.base,
-        style: { opacity: o.opacity },
-        children: [
-            e.jsx('div', {
-                className: X.shineAnimation,
-                style: { backgroundImage: `url(${s})`, animationDuration: o.animationDuration },
-            }),
-            e.jsx('div', {
-                className: t(X.shineAnimation, X.shineAnimation__reverse),
-                style: { backgroundImage: `url(${s})`, animationDuration: o.animationDuration },
-            }),
-        ],
-    });
-}
-const Z = {
+const J = {
     root: 'App_root_0',
     'media-wrapper': 'App_media-wrapper_0',
-    base: 'App_db696922',
-    content: 'App_content_d4b05d62',
+    base: 'App_bdab25ef',
+    content: 'App_content_5f00019c',
     base__disabled: 'App_base__disabled_0',
+    glow: 'App_glow_88da8e88',
     wrapper: 'App_wrapper_4cc053c3',
-    text: 'App_text_3332c59',
-    count: 'App_count_fcd52716',
+    text: 'App_text_d01ff07a',
+    count: 'App_count_b19eaa9',
+    blink: 'App_blink_80ba856f',
+    hoverIdle: 'App_hoverIdle_76b3441d',
+    'fade-in': 'App_fade-in_0',
     alert: 'App_alert_72caf50c',
-    alert__empty: 'App_alert__empty_c65c8c2f',
-    alert__boxes: 'App_alert__boxes_ed652a30',
+    alert__empty: 'App_alert__empty_a1617876',
+    alert__boxes: 'App_alert__boxes_b8fa93bc',
     icon: 'App_icon_879c8615',
 };
-const q = a(function () {
-    const s = l.resolve('sounds'),
-        o = l.resolve('aliases'),
-        n = l.resolve('views'),
+const K = a(function () {
+    const s = d.resolve('sounds'),
+        o = d.resolve('aliases'),
+        n = d.resolve('views'),
         a = _({
             resId: o.read((e) => e.hangar.shared.LootboxEntryPoint('resId')),
             contentId: n.read((e) => e.mono.lootbox.tooltips.entry_point('resId')),
         }),
         [i, c] = r.useState(!1),
-        { model: d, controls: u } = F(),
-        { isEnabled: m, boxesCount: p, hasNew: h } = d.root.get(),
-        y = d.computes.getState(),
-        { images: g, texts: f, sounds: v } = d.resources.get(),
-        w = d.style.get(),
-        { opacityCustomNewBox: N, opacityCustom: E, opacityDiff: I, animationDuration: A } = w.shine,
-        j = i ? 1 + w.icon[`${y}IconBrightness`] : 1,
-        R = { opacity: (h ? N : E) + (i ? I : 0), animationDuration: A },
-        $ = y === V.Empty ? g.iconEmpty : g.iconGold;
+        { model: l, controls: u } = H(),
+        { isEnabled: p, boxesCount: m, hasNew: b } = l.root.get(),
+        g = l.computes.getState(),
+        { images: v, videos: w, texts: I, sounds: N } = l.resources.get(),
+        E = l.style.get(),
+        A = i ? 1 + E.icon[`${g}IconBrightness`] : 1,
+        R = { opacity: E.shine.opacity, filter: `brightness(${A})` },
+        $ = E.hover.enabled && i && p,
+        j = g === M.Empty ? v.iconEmpty : v.iconGold;
     return e.jsx('div', {
-        className: t(Z.base, !m && Z.base__disabled),
+        className: t(J.base, !p && J.base__disabled),
         children: e.jsx('div', {
-            className: Z.content,
+            className: J.content,
             ...a,
             children: e.jsxs('div', {
-                className: Z.wrapper,
+                className: J.wrapper,
                 onClick: function () {
                     (s.play('yes1'), u.showLanding());
                 },
                 onMouseEnter: function () {
-                    (x.sound(v.entryHover), c(!0));
+                    (x.sound(N.entryHover), c(!0));
                 },
                 onMouseLeave: () => c(!1),
                 children: [
-                    y === V.Boxes
+                    g === M.Boxes
                         ? e.jsxs(e.Fragment, {
                               children: [
-                                  m && e.jsx(Y, { image: g.shine, style: R }),
-                                  e.jsx(W, {
-                                      className: Z.count,
-                                      maxText: f.maxBoxesCount,
-                                      count: p,
-                                      text: f.boxesCount,
+                                  p && e.jsx(h, { loop: !0, autoplay: !0, className: J.glow, src: w.glow, style: R }),
+                                  e.jsx(X, {
+                                      className: J.count,
+                                      maxText: I.maxBoxesCount,
+                                      count: m,
+                                      text: I.boxesCount,
                                   }),
+                                  p && b && e.jsx(W, { mask: v.blinkMask, className: J.blink }),
+                                  $ &&
+                                      e.jsx('div', {
+                                          className: J.hoverIdle,
+                                          style: { backgroundImage: `url(${v.hover})` },
+                                      }),
                               ],
                           })
-                        : e.jsx('div', { className: Z.text, children: f.boxes }),
-                    e.jsx(U, { disabled: !m, image: $, brightness: j, className: Z.icon }),
-                    !m && e.jsx(b, { className: t(Z.alert, Z[`alert__${y}`]), hasShadow: !0, icon: g.alert }),
+                        : e.jsx('div', { className: J.text, children: I.boxes }),
+                    e.jsx(Z, { disabled: !p, image: j, brightness: A, className: J.icon }),
+                    !p &&
+                        e.jsx(f, {
+                            className: t(J.alert, J[`alert__${g}`]),
+                            hasShadow: !0,
+                            icon: v.alertBig,
+                            size: y.big,
+                        }),
                 ],
             }),
         }),
     });
 });
-function J() {
-    const t = l.resolve('aliases').read((e) => e.hangar.shared.LootboxEntryPoint('resId')),
+function Q() {
+    const t = d.resolve('aliases').read((e) => e.hangar.shared.LootboxEntryPoint('resId')),
         s = r.useMemo(() => ({ rootId: t }), [t]);
-    return e.jsx(L, { options: s, children: e.jsx(q, {}) });
+    return e.jsx(F, { options: s, children: e.jsx(K, {}) });
 }
-export { J as default };
+export { Q as default };

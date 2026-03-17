@@ -807,7 +807,7 @@
                 t.d(u, { Z5: () => n, cy: () => r });
                 const n = {
                         getNumberFormat: (e, u) => systemLocale.getNumberFormat(e, u),
-                        getRealFormat: (e, u) => systemLocale.getRealFormat(e, u),
+                        getRealFormat: (e, u, t = 2) => systemLocale.getRealFormat(e, u, t),
                         getTimeFormat: (e, u) => systemLocale.getTimeFormat(e, u),
                         getDateFormat: (e, u) => systemLocale.getDateFormat(e, u),
                         toUpperCase: (e) => systemLocale.toUpperCase(e),
@@ -3119,31 +3119,39 @@
                                 ),
                             )
                         );
-                    }),
-                    Vu = {
-                        base: 'CButton_base_40',
-                        base__main: 'CButton_base__main_42',
-                        base__primary: 'CButton_base__primary_7f',
-                        base__primaryGreen: 'CButton_base__primaryGreen_6f',
-                        base__primaryRed: 'CButton_base__primaryRed_ec',
-                        base__secondary: 'CButton_base__secondary_50',
-                        base__ghost: 'CButton_base__ghost_ed',
-                        base__extraSmall: 'CButton_base__extraSmall_27',
-                        base__small: 'CButton_base__small_df',
-                        base__medium: 'CButton_base__medium_74',
-                        base__large: 'CButton_base__large_5c',
-                        base__disabled: 'CButton_base__disabled_d9',
-                        back: 'CButton_back_e5',
-                        texture: 'CButton_texture_fe',
-                        state: 'CButton_state_11',
-                        base__focus: 'CButton_base__focus_83',
-                        stateHighlightHover: 'CButton_stateHighlightHover_ff',
-                        stateHighlightActive: 'CButton_stateHighlightActive_35',
-                        stateDisabled: 'CButton_stateDisabled_54',
-                        base__highlightActive: 'CButton_base__highlightActive_b2',
-                        content: 'CButton_content_cc',
-                    };
-                let $u, qu;
+                    });
+                let Vu;
+                !(function (e) {
+                    ((e[(e.LEFT = 0)] = 'LEFT'),
+                        (e[(e.WHEEL = 1)] = 'WHEEL'),
+                        (e[(e.RIGHT = 2)] = 'RIGHT'),
+                        (e[(e.FOURTH = 3)] = 'FOURTH'),
+                        (e[(e.FIFTH = 4)] = 'FIFTH'));
+                })(Vu || (Vu = {}));
+                const $u = {
+                    base: 'CButton_base_40',
+                    base__main: 'CButton_base__main_42',
+                    base__primary: 'CButton_base__primary_7f',
+                    base__primaryGreen: 'CButton_base__primaryGreen_6f',
+                    base__primaryRed: 'CButton_base__primaryRed_ec',
+                    base__secondary: 'CButton_base__secondary_50',
+                    base__ghost: 'CButton_base__ghost_ed',
+                    base__extraSmall: 'CButton_base__extraSmall_27',
+                    base__small: 'CButton_base__small_df',
+                    base__medium: 'CButton_base__medium_74',
+                    base__large: 'CButton_base__large_5c',
+                    base__disabled: 'CButton_base__disabled_d9',
+                    back: 'CButton_back_e5',
+                    texture: 'CButton_texture_fe',
+                    state: 'CButton_state_11',
+                    base__focus: 'CButton_base__focus_83',
+                    stateHighlightHover: 'CButton_stateHighlightHover_ff',
+                    stateHighlightActive: 'CButton_stateHighlightActive_35',
+                    stateDisabled: 'CButton_stateDisabled_54',
+                    base__highlightActive: 'CButton_base__highlightActive_b2',
+                    content: 'CButton_content_cc',
+                };
+                let qu, Yu;
                 (!(function (e) {
                     ((e.main = 'main'),
                         (e.primary = 'primary'),
@@ -3151,14 +3159,14 @@
                         (e.primaryRed = 'primaryRed'),
                         (e.secondary = 'secondary'),
                         (e.ghost = 'ghost'));
-                })($u || ($u = {})),
+                })(qu || (qu = {})),
                     (function (e) {
                         ((e.extraSmall = 'extraSmall'),
                             (e.small = 'small'),
                             (e.medium = 'medium'),
                             (e.large = 'large'));
-                    })(qu || (qu = {})));
-                const Yu = ({
+                    })(Yu || (Yu = {})));
+                const Ku = ({
                         children: e,
                         size: u,
                         disabled: t,
@@ -3170,7 +3178,7 @@
                         onMouseLeave: c,
                         onClick: d,
                         isFocused: E = !1,
-                        type: m = $u.primary,
+                        type: m = qu.primary,
                         soundHover: _ = 'highlight',
                         soundClick: A = 'play',
                     }) => {
@@ -3201,12 +3209,12 @@
                                 {
                                     ref: F,
                                     className: g()(
-                                        Vu.base,
-                                        Vu[`base__${m}`],
-                                        t && Vu.base__disabled,
-                                        u && Vu[`base__${u}`],
-                                        C && Vu.base__focus,
-                                        f && Vu.base__highlightActive,
+                                        $u.base,
+                                        $u[`base__${m}`],
+                                        t && $u.base__disabled,
+                                        u && $u[`base__${u}`],
+                                        C && $u.base__focus,
+                                        f && $u.base__highlightActive,
                                         n,
                                     ),
                                     onMouseEnter: function (e) {
@@ -3219,11 +3227,12 @@
                                         t || (l && l(e), B(!1));
                                     },
                                     onMouseDown: function (e) {
-                                        t ||
-                                            (null !== A && se(A),
+                                        if (t) return;
+                                        const u = e.button === Vu.LEFT;
+                                        (null !== A && u && se(A),
                                             s && s(e),
                                             E && (t || (F.current && (F.current.focus(), D(!0)))),
-                                            B(!0));
+                                            u && B(!0));
                                     },
                                     onMouseLeave: function (e) {
                                         t || (c && c(e), B(!1));
@@ -3232,32 +3241,32 @@
                                         t || (d && d(e));
                                     },
                                 },
-                                m !== $u.ghost &&
+                                m !== qu.ghost &&
                                     i().createElement(
                                         i().Fragment,
                                         null,
-                                        i().createElement('div', { className: Vu.back }),
-                                        i().createElement('span', { className: Vu.texture }),
+                                        i().createElement('div', { className: $u.back }),
+                                        i().createElement('span', { className: $u.texture }),
                                     ),
                                 i().createElement(
                                     'span',
-                                    { className: g()(Vu.state, Vu.state__default) },
-                                    i().createElement('span', { className: Vu.stateDisabled }),
-                                    i().createElement('span', { className: Vu.stateHighlightHover }),
-                                    i().createElement('span', { className: Vu.stateHighlightActive }),
+                                    { className: g()($u.state, $u.state__default) },
+                                    i().createElement('span', { className: $u.stateDisabled }),
+                                    i().createElement('span', { className: $u.stateHighlightHover }),
+                                    i().createElement('span', { className: $u.stateHighlightActive }),
                                 ),
                                 i().createElement(
                                     'span',
-                                    { className: Vu.content, lang: R.strings.settings.LANGUAGE_CODE() },
+                                    { className: $u.content, lang: R.strings.settings.LANGUAGE_CODE() },
                                     e,
                                 ),
                             )
                         );
                     },
-                    Ku = 'Footer_base_66',
-                    Xu = 'Footer_button_be',
-                    Zu = R.strings.achievements_page.editView.footer.button,
-                    Qu = (0, ue.Pi)(({ isVisible: e, className: u }) => {
+                    Xu = 'Footer_base_66',
+                    Zu = 'Footer_button_be',
+                    Qu = R.strings.achievements_page.editView.footer.button,
+                    Ju = (0, ue.Pi)(({ isVisible: e, className: u }) => {
                         const t = Ee(),
                             n = t.model,
                             r = t.controls,
@@ -3277,40 +3286,30 @@
                                 t &&
                                 i().createElement(
                                     j.animated.div,
-                                    { style: e, className: g()(Ku, u) },
+                                    { style: e, className: g()(Xu, u) },
                                     i().createElement(
-                                        Yu,
+                                        Ku,
                                         {
-                                            type: $u.primary,
-                                            size: qu.medium,
+                                            type: qu.primary,
+                                            size: Yu.medium,
                                             disabled: a,
                                             onClick: r.save,
-                                            mixClass: Xu,
+                                            mixClass: Zu,
                                         },
-                                        Zu.save(),
+                                        Qu.save(),
                                     ),
                                     i().createElement(
-                                        Yu,
-                                        { type: $u.secondary, size: qu.medium, disabled: a, onClick: s, mixClass: Xu },
-                                        Zu.cancel(),
+                                        Ku,
+                                        { type: qu.secondary, size: Yu.medium, disabled: a, onClick: s, mixClass: Zu },
+                                        Qu.cancel(),
                                     ),
                                 ),
                         );
                     });
-                let Ju, et, ut, tt;
+                let et, ut, tt;
                 (!(function (e) {
-                    ((e[(e.LEFT = 0)] = 'LEFT'),
-                        (e[(e.WHEEL = 1)] = 'WHEEL'),
-                        (e[(e.RIGHT = 2)] = 'RIGHT'),
-                        (e[(e.FOURTH = 3)] = 'FOURTH'),
-                        (e[(e.FIFTH = 4)] = 'FIFTH'));
-                })(Ju || (Ju = {})),
-                    (function (e) {
-                        ((e.small = 'small'),
-                            (e.medium = 'medium'),
-                            (e.large = 'large'),
-                            (e.extraLarge = 'extraLarge'));
-                    })(et || (et = {})),
+                    ((e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'), (e.extraLarge = 'extraLarge'));
+                })(et || (et = {})),
                     (function (e) {
                         ((e.primary = 'primary'), (e.main = 'main'));
                     })(ut || (ut = {})),
@@ -3427,7 +3426,7 @@
                         ),
                         H = (0, a.useCallback)(
                             (e) => {
-                                const u = e.button === Ju.LEFT;
+                                const u = e.button === Vu.LEFT;
                                 o || (u && T(!0), u && f && f(e), h && se(h));
                             },
                             [o, f, h],
@@ -3652,8 +3651,8 @@
                                         bt.tip(),
                                     ),
                                     i().createElement(
-                                        Yu,
-                                        { type: $u.ghost, size: qu.medium, mixClass: ft.cancelButton },
+                                        Ku,
+                                        { type: qu.ghost, size: Yu.medium, mixClass: ft.cancelButton },
                                         i().createElement('div', { className: ft.cancelText }, bt.cancel()),
                                     ),
                                 ),
@@ -3796,7 +3795,7 @@
                                     i().createElement(Ft, { titleClassName: Tt }),
                                     i().createElement(xt, { className: Nt }),
                                     i().createElement(Gu, { className: Rt, scrollApi: c }),
-                                    i().createElement(Qu, { className: Pt, isVisible: l }),
+                                    i().createElement(Ju, { className: Pt, isVisible: l }),
                                 ),
                                 o && i().createElement('div', { className: Ht }),
                             )

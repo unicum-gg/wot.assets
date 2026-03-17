@@ -1023,16 +1023,17 @@
                 const ie = (u) => {
                         let e = u.value,
                             t = u.isEmpty,
-                            n = u.className,
-                            r = u.size,
-                            i = void 0 === r ? 'normal' : r,
-                            a = u.fadeInAnimation,
-                            A = void 0 !== a && a,
-                            E = u.hide,
-                            s = void 0 !== E && E,
-                            o = u.maximumNumber,
-                            l = void 0 === o ? 99 : o,
-                            D = (function (u, e) {
+                            n = void 0 !== t && t,
+                            r = u.className,
+                            i = u.size,
+                            a = void 0 === i ? 'normal' : i,
+                            A = u.fadeInAnimation,
+                            E = void 0 !== A && A,
+                            s = u.hide,
+                            o = void 0 !== s && s,
+                            l = u.maximumNumber,
+                            D = void 0 === l ? 99 : l,
+                            B = (function (u, e) {
                                 if (null == u) return {};
                                 var t,
                                     n,
@@ -1041,29 +1042,29 @@
                                 for (n = 0; n < i.length; n++) ((t = i[n]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                 return r;
                             })(u, ne);
-                        const B = t ? null : e,
-                            C = 'string' == typeof B;
-                        if ((B && !C && B < 0) || 0 === B) return null;
-                        const c = B && !C && B > l,
-                            d = Mu()(
+                        const C = n ? null : e,
+                            c = 'string' == typeof C;
+                        if ((C && !c && C < 0) || 0 === C) return null;
+                        const d = C && !c && C > D,
+                            m = Mu()(
                                 te.base,
-                                te[`base__${i}`],
-                                A && te.base__animated,
-                                s && te.base__hidden,
-                                !B && te.base__pattern,
-                                t && te.base__empty,
-                                n,
+                                te[`base__${a}`],
+                                E && te.base__animated,
+                                o && te.base__hidden,
+                                !C && te.base__pattern,
+                                n && te.base__empty,
+                                r,
                             );
                         return F().createElement(
                             'div',
-                            re({ className: d }, D),
+                            re({ className: m }, B),
                             F().createElement('div', { className: te.bg }),
                             F().createElement('div', { className: te.pattern }),
                             F().createElement(
                                 'div',
-                                { className: Mu()(te.value, C && te.value__text) },
-                                c ? l : B,
-                                c && F().createElement('span', { className: te.plus }, '+'),
+                                { className: Mu()(te.value, c && te.value__text) },
+                                d ? D : C,
+                                d && F().createElement('span', { className: te.plus }, '+'),
                             ),
                         );
                     },

@@ -106,13 +106,13 @@ function isNumberFormat(e) {
     return e in numberFormats;
 }
 function formatNumber(e, u) {
-    return window.systemLocale.getNumberFormat(u, numberFormats[e]);
+    return window.formatters.getNumberFormat(u, numberFormats[e]);
 }
 function isRealFormat(e) {
     return e in realFormats;
 }
-function formatReal(e, u) {
-    return window.systemLocale.getRealFormat(u, realFormats[e]);
+function formatReal(e, u, t = 2) {
+    return window.formatters.getRealFormat(u, realFormats[e], t);
 }
 function formatDateTime(e, u, t = !0) {
     return window.regionalDateTime.getRegionalDateTime(u, e, t);
@@ -369,6 +369,7 @@ const sounds$1 = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
         onHitTest: createSubscribeHitTest(),
         onDisplayChanged: makeEngineEvent$1('self.onShowingStatusChanged'),
         onFocusUpdated: makeEngineEvent$1('self.onFocusChanged'),
+        onExternalPaddingsUpdated: makeEngineEvent$1('self.onPaddingsUpdated'),
         children: {
             onAdded: makeEngineEvent$1('children.onAdded'),
             onLoaded: makeEngineEvent$1('children.onLoaded'),
@@ -1087,17 +1088,36 @@ function splitKorean(e) {
     for (const [s] of t) u.push(s);
     return u;
 }
+function splitThai(e) {
+    var u;
+    const t = [],
+        s = e
+            .replace(/&nbsp;/g, ' ')
+            .matchAll(
+                /[【「(（『"《]?[\u0E00-\u0E7F%](?:[\u0E31\u0E34-\u0E3A\u0E47-\u0E4E。!?,.:、…・/ー—–!%+?）)】」"》』]+)?|[「【(（『《"]?\d+(?:,\d{3})*(?:-\d+(?:,\d{3})*)?(?:\s*[a-zA-Z\u0E00-\u0E7F/%]+)?(?:[。.,，、:;：；!?）)】」"》・%)、]+)?|[「【(（『《"]?[a-zA-Z0-9]+(?:[-/][a-zA-Z0-9]+)*(?:\s*[。!?、…・ー—–!?"》】」）)』]+)?|[\u00A0 ]|[^\s]/gu,
+            );
+    for (const [n] of s)
+        /^\s+$/.test(n)
+            ? t.length
+                ? (t[t.length - 1] += n)
+                : t.push(n)
+            : 1 === t.length && (null == (u = t[0]) ? void 0 : u.startsWith('  '))
+              ? (t[0] = ' ' + n)
+              : t.push(n);
+    return t;
+}
 const splitters = {
     zh_cn: splitChinese$1,
     zh_sg: splitChinese$1,
     zh_tw: splitChinese$1,
     ja: splitJapanese,
     ko: splitKorean,
+    th: splitThai,
 };
 function defaultSplit(e) {
     return e.split(' ');
 }
-const langsWithoutSpace = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko']);
+const langsWithoutSpace = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko', 'th']);
 function addSpaceAndMap(e, u, t) {
     return langsWithoutSpace.has(u)
         ? e.map(t)
@@ -1840,6 +1860,7 @@ const initializeModelWithContext =
                             controls: { ...(null == t ? void 0 : t(A)), ...F },
                             externalModel: l,
                             mode: n,
+                            rootId: (null == a ? void 0 : a.rootId) ?? 0,
                         };
                     }),
                     F = reactExports.useRef(!1),
@@ -2457,6 +2478,9 @@ var RewardType = ((e) => (
         e
     ))(ValueTypes || {}),
     Specials = ((e) => (
+        (e.ATTACHMENT_RARE = 'rare'),
+        (e.ATTACHMENT_EPIC = 'epic'),
+        (e.ATTACHMENT_LEGENDARY = 'legendary'),
         (e.BATTLE_BOOSTER = 'battleBooster'),
         (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
         (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
@@ -2476,6 +2500,9 @@ var RewardType = ((e) => (
     ))(Specials || {}),
     HighlightClasses = ((e) => ((e.BATTLE_BOOSTER = 'battleBooster'), e))(HighlightClasses || {}),
     OverlayClasses = ((e) => (
+        (e.ATTACHMENT_RARE = 'rare'),
+        (e.ATTACHMENT_EPIC = 'epic'),
+        (e.ATTACHMENT_LEGENDARY = 'legendary'),
         (e.BATTLE_BOOSTER = 'battleBooster'),
         (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
         (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
@@ -2672,6 +2699,12 @@ const multiValueTypes = [
                 return OverlayClasses.PROGRESSION_STYLE_UPGRADED_5;
             case Specials.PROGRESSION_STYLE_UPGRADED_6:
                 return OverlayClasses.PROGRESSION_STYLE_UPGRADED_6;
+            case Specials.ATTACHMENT_RARE:
+                return OverlayClasses.ATTACHMENT_RARE;
+            case Specials.ATTACHMENT_EPIC:
+                return OverlayClasses.ATTACHMENT_EPIC;
+            case Specials.ATTACHMENT_LEGENDARY:
+                return OverlayClasses.ATTACHMENT_LEGENDARY;
         }
     },
     getFormattedValue = (e, u) => {
@@ -3366,7 +3399,7 @@ function dumpViewModel(e) {
 }
 const SystemLocale = {
         getNumberFormat: (e, u) => systemLocale.getNumberFormat(e, u),
-        getRealFormat: (e, u) => systemLocale.getRealFormat(e, u),
+        getRealFormat: (e, u, t = 2) => systemLocale.getRealFormat(e, u, t),
         getTimeFormat: (e, u) => systemLocale.getTimeFormat(e, u),
         getDateFormat: (e, u) => systemLocale.getDateFormat(e, u),
         toUpperCase: (e) => systemLocale.toUpperCase(e),
@@ -3706,59 +3739,93 @@ function withResolvePath(e) {
     });
 }
 const defaultUnknownStyle = {
-        background:
-            'linear-gradient(45deg, #ccc 25%, transparent 25%),\nlinear-gradient(-45deg, #ccc 25%, transparent 25%),\nlinear-gradient(45deg, transparent 75%, #ccc 75%),\nlinear-gradient(-45deg, transparent 75%, #ccc 75%)',
-        backgroundSize: '20rem 20rem',
-        backgroundPosition: '0 0, 0 10rem, 10rem -10rem, -10rem 0rem',
-        backgroundColor: '#000',
-    },
-    Image = withResolvePath(
-        reactExports.forwardRef(function (e, u) {
-            if (e.unknown) {
-                const {
-                    repeat: t,
-                    fit: s,
-                    position: n,
-                    width: r,
-                    src: a,
-                    height: o,
-                    unselectable: i,
-                    unknown: l,
-                    unknownStyle: c = defaultUnknownStyle,
-                    ...d
-                } = e;
-                return jsxRuntimeExports.jsx('div', {
-                    ...d,
-                    ref: u,
-                    style: { width: e.width, height: e.height, ...c, ...e.style },
-                });
-            }
+    background:
+        'linear-gradient(45deg, #ccc 25%, transparent 25%),\nlinear-gradient(-45deg, #ccc 25%, transparent 25%),\nlinear-gradient(45deg, transparent 75%, #ccc 75%),\nlinear-gradient(-45deg, transparent 75%, #ccc 75%)',
+    backgroundSize: '20rem 20rem',
+    backgroundPosition: '0 0, 0 10rem, 10rem -10rem, -10rem 0rem',
+    backgroundColor: '#000',
+};
+reactExports.forwardRef(function (e, u) {
+    if (!e.src) {
+        const {
+            repeat: t,
+            fit: s,
+            position: n,
+            width: r,
+            src: a,
+            height: o,
+            unselectable: i,
+            unknownStyle: l = defaultUnknownStyle,
+            ...c
+        } = e;
+        return jsxRuntimeExports.jsx('div', {
+            ...c,
+            ref: u,
+            style: { width: e.width, height: e.height, ...l, ...e.style },
+        });
+    }
+    const { repeat: t, fit: s, position: n, width: r, height: a, unknownStyle: o, unselectable: i, ...l } = e;
+    return jsxRuntimeExports.jsx('div', {
+        ...l,
+        ref: u,
+        style: {
+            backgroundImage: `url(${e.src})`,
+            backgroundRepeat: t ?? 'no-repeat',
+            backgroundSize: s ?? 'contain',
+            backgroundPosition: n ?? 'center center',
+            width: 'number' == typeof r ? `${r}rem` : r,
+            height: 'number' == typeof a ? `${a}rem` : a,
+            ...l.style,
+        },
+    });
+});
+const Image = withResolvePath(
+    reactExports.forwardRef(function (e, u) {
+        if (e.unknown) {
             const {
                 repeat: t,
                 fit: s,
                 position: n,
                 width: r,
-                height: a,
-                unknownStyle: o,
-                unknown: i,
-                unselectable: l,
-                ...c
+                src: a,
+                height: o,
+                unselectable: i,
+                unknown: l,
+                unknownStyle: c = defaultUnknownStyle,
+                ...d
             } = e;
             return jsxRuntimeExports.jsx('div', {
-                ...c,
+                ...d,
                 ref: u,
-                style: {
-                    backgroundImage: `url(${e.src})`,
-                    backgroundRepeat: t ?? 'no-repeat',
-                    backgroundSize: s ?? 'contain',
-                    backgroundPosition: n ?? 'center center',
-                    width: 'number' == typeof r ? `${r}rem` : r,
-                    height: 'number' == typeof a ? `${a}rem` : a,
-                    ...c.style,
-                },
+                style: { width: e.width, height: e.height, ...c, ...e.style },
             });
-        }),
-    );
+        }
+        const {
+            repeat: t,
+            fit: s,
+            position: n,
+            width: r,
+            height: a,
+            unknownStyle: o,
+            unknown: i,
+            unselectable: l,
+            ...c
+        } = e;
+        return jsxRuntimeExports.jsx('div', {
+            ...c,
+            ref: u,
+            style: {
+                backgroundImage: `url(${e.src})`,
+                backgroundRepeat: t ?? 'no-repeat',
+                backgroundSize: s ?? 'contain',
+                backgroundPosition: n ?? 'center center',
+                width: 'number' == typeof r ? `${r}rem` : r,
+                height: 'number' == typeof a ? `${a}rem` : a,
+                ...c.style,
+            },
+        });
+    }),
+);
 withResolvePath(
     reactExports.forwardRef(function (e, u) {
         const {
@@ -5178,11 +5245,49 @@ const convertNbsp = (e) => e.replace(/&nbsp;/g, ' '),
                 ),
         });
     },
-    base$1 = 'Tooltip_6d997cee',
+    root = 'CloseButton_root_987cb365',
+    base$1 = 'CloseButton_7488a1b8',
+    base__medium = 'CloseButton_base__medium_97d04067',
+    base__small = 'CloseButton_base__small_c1b29bae',
+    base__extraSmall = 'CloseButton_base__extraSmall_f52764c1',
+    base__x96x96 = 'CloseButton_base__x96x96_8157b84d',
+    base__x32x32 = 'CloseButton_base__x32x32_6466ea31',
+    styles$1 = {
+        root: root,
+        base: base$1,
+        base__medium: base__medium,
+        base__small: base__small,
+        base__extraSmall: base__extraSmall,
+        base__x96x96: base__x96x96,
+        base__x32x32: base__x32x32,
+    },
+    sizes = { medium: 'medium', small: 'small', extraSmall: 'extraSmall' },
+    upscaleImageSizes = { [sizes.medium]: 'x96x96', [sizes.small]: sizes.medium, [sizes.extraSmall]: 'x32x32' };
+function CloseButton({
+    size: e = sizes.medium,
+    hoverSound: u = sounds$1.highlight,
+    clickSound: t = sounds$1.click,
+    className: s,
+    onHover: n,
+    onClose: r,
+}) {
+    const a = useUpscale(styles$1[`base__${e}`], styles$1[`base__${upscaleImageSizes[e]}`]);
+    return jsxRuntimeExports.jsx('div', {
+        className: cx(styles$1.base, a, s),
+        onMouseEnter: () => {
+            (play.sound(u), null == n || n());
+        },
+        onClick: () => {
+            (play.sound(t), r());
+        },
+    });
+}
+CloseButton.size = sizes;
+const base = 'Tooltip_6d997cee',
     decorator = 'Tooltip_decorator_b3486d4e',
-    styles$1 = { base: base$1, decorator: decorator },
-    Base = defineStyledComponent('Base', styles$1.base),
-    Decorator = defineStyledComponent('Decorator', styles$1.decorator),
+    styles = { base: base, decorator: decorator },
+    Base = defineStyledComponent('Base', styles.base),
+    Decorator = defineStyledComponent('Decorator', styles.decorator),
     Tooltip = reactExports.forwardRef(function ({ children: e, ...u }, t) {
         const s = reactExports.useRef(null);
         return (
@@ -5208,44 +5313,6 @@ const convertNbsp = (e) => e.replace(/&nbsp;/g, ' '),
         );
     });
 Tooltip.Decorator = Decorator;
-const root = 'CloseButton_root_987cb365',
-    base = 'CloseButton_7488a1b8',
-    base__medium = 'CloseButton_base__medium_97d04067',
-    base__small = 'CloseButton_base__small_c1b29bae',
-    base__extraSmall = 'CloseButton_base__extraSmall_f52764c1',
-    base__x96x96 = 'CloseButton_base__x96x96_8157b84d',
-    base__x32x32 = 'CloseButton_base__x32x32_6466ea31',
-    styles = {
-        root: root,
-        base: base,
-        base__medium: base__medium,
-        base__small: base__small,
-        base__extraSmall: base__extraSmall,
-        base__x96x96: base__x96x96,
-        base__x32x32: base__x32x32,
-    },
-    sizes = { medium: 'medium', small: 'small', extraSmall: 'extraSmall' },
-    upscaleImageSizes = { [sizes.medium]: 'x96x96', [sizes.small]: sizes.medium, [sizes.extraSmall]: 'x32x32' };
-function CloseButton({
-    size: e = sizes.medium,
-    hoverSound: u = sounds$1.highlight,
-    clickSound: t = sounds$1.click,
-    className: s,
-    onHover: n,
-    onClose: r,
-}) {
-    const a = useUpscale(styles[`base__${e}`], styles[`base__${upscaleImageSizes[e]}`]);
-    return jsxRuntimeExports.jsx('div', {
-        className: cx(styles.base, a, s),
-        onMouseEnter: () => {
-            (play.sound(u), null == n || n());
-        },
-        onClick: () => {
-            (play.sound(t), r());
-        },
-    });
-}
-CloseButton.size = sizes;
 export {
     useVerticalScroll as A,
     Button as B,
@@ -5263,13 +5330,13 @@ export {
     runView as N,
     FormatText as O,
     initExternalPaddings$1 as P,
-    noop as Q,
+    CloseButton as Q,
     Rewards as R,
     SceneWrapper as S,
     Tooltip$1 as T,
     UPSCALE as U,
-    Tooltip as V,
-    CloseButton as W,
+    noop as V,
+    Tooltip as W,
     useSimpleTooltip as a,
     onRescale as b,
     computeds as c,

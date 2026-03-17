@@ -9,11 +9,11 @@ import {
     a as asValue,
     b as asClass,
     d as asFunction,
-    e as action,
     r as reactExports,
     j as jsxRuntimeExports,
-    f as cx,
+    e as cx,
     o as observable,
+    f as action,
     u as untracked,
     R as React,
     g as client,
@@ -124,13 +124,13 @@ function isNumberFormat(e) {
     return e in numberFormats;
 }
 function formatNumber(e, t) {
-    return window.systemLocale.getNumberFormat(t, numberFormats[e]);
+    return window.formatters.getNumberFormat(t, numberFormats[e]);
 }
 function isRealFormat(e) {
     return e in realFormats;
 }
-function formatReal(e, t) {
-    return window.systemLocale.getRealFormat(t, realFormats[e]);
+function formatReal(e, t, u = 2) {
+    return window.formatters.getRealFormat(t, realFormats[e], u);
 }
 function formatDateTime(e, t, u = !0) {
     return window.regionalDateTime.getRegionalDateTime(t, e, u);
@@ -403,6 +403,7 @@ const graphicsQuality = {
         onHitTest: createSubscribeHitTest(),
         onDisplayChanged: makeEngineEvent$1('self.onShowingStatusChanged'),
         onFocusUpdated: makeEngineEvent$1('self.onFocusChanged'),
+        onExternalPaddingsUpdated: makeEngineEvent$1('self.onPaddingsUpdated'),
         children: {
             onAdded: makeEngineEvent$1('children.onAdded'),
             onLoaded: makeEngineEvent$1('children.onLoaded'),
@@ -1091,47 +1092,6 @@ function find(e, t) {
         if (t(n, u, e)) return n;
     }
 }
-function makeActions(e) {
-    const t = {};
-    for (const u in e)
-        if (Object.prototype.hasOwnProperty.call(e, u)) {
-            const n = e[u];
-            t[u] = action(n);
-        }
-    return t;
-}
-function readByPath(e, t) {
-    const u = e.split('.');
-    let n = t;
-    for (const r of u) n = null == n ? void 0 : n[r];
-    return n;
-}
-function toPrimitive(e) {
-    return Array.isArray(e)
-        ? '<array>'
-        : 'object' == typeof e
-          ? '<object>'
-          : 'function' == typeof e
-            ? '<function>'
-            : 'symbol' == typeof e
-              ? '<symbol>'
-              : e;
-}
-function shallowExtractPrimitives(e) {
-    return Object.entries(e).reduce((e, [t, u]) => ((e[t] = toPrimitive(u)), e), {});
-}
-function createMockControls(...e) {
-    return e.reduce(
-        (e, t) => (
-            (e[t] = (...e) =>
-                e.length > 0
-                    ? console.log('Call', t, 'with arguments', JSON.stringify(e.map(shallowExtractPrimitives), null, 2))
-                    : console.log('Call', t, 'without arguments')),
-            e
-        ),
-        {},
-    );
-}
 const createLayoutReadyInEffect$1 = (e) => {
     let t,
         u = null;
@@ -1234,11 +1194,36 @@ function splitKorean(e) {
     for (const [n] of u) t.push(n);
     return t;
 }
-const splitters = { zh_cn: splitChinese, zh_sg: splitChinese, zh_tw: splitChinese, ja: splitJapanese, ko: splitKorean };
+function splitThai(e) {
+    var t;
+    const u = [],
+        n = e
+            .replace(/&nbsp;/g, ' ')
+            .matchAll(
+                /[【「(（『"《]?[\u0E00-\u0E7F%](?:[\u0E31\u0E34-\u0E3A\u0E47-\u0E4E。!?,.:、…・/ー—–!%+?）)】」"》』]+)?|[「【(（『《"]?\d+(?:,\d{3})*(?:-\d+(?:,\d{3})*)?(?:\s*[a-zA-Z\u0E00-\u0E7F/%]+)?(?:[。.,，、:;：；!?）)】」"》・%)、]+)?|[「【(（『《"]?[a-zA-Z0-9]+(?:[-/][a-zA-Z0-9]+)*(?:\s*[。!?、…・ー—–!?"》】」）)』]+)?|[\u00A0 ]|[^\s]/gu,
+            );
+    for (const [r] of n)
+        /^\s+$/.test(r)
+            ? u.length
+                ? (u[u.length - 1] += r)
+                : u.push(r)
+            : 1 === u.length && (null == (t = u[0]) ? void 0 : t.startsWith('  '))
+              ? (u[0] = ' ' + r)
+              : u.push(r);
+    return u;
+}
+const splitters = {
+    zh_cn: splitChinese,
+    zh_sg: splitChinese,
+    zh_tw: splitChinese,
+    ja: splitJapanese,
+    ko: splitKorean,
+    th: splitThai,
+};
 function defaultSplit(e) {
     return e.split(' ');
 }
-const langsWithoutSpace = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko']);
+const langsWithoutSpace = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko', 'th']);
 function addSpaceAndMap(e, t, u) {
     return langsWithoutSpace.has(t)
         ? e.map(u)
@@ -1777,14 +1762,8 @@ class DLDict {
     }
 }
 const mockContext = reactExports.createContext({ mode: 'real' }),
-    useMockContext = () => reactExports.useContext(mockContext);
-function createSimpleGetter(e) {
-    return (t, u) => {
-        const n = resolvePath(t, u);
-        return n ? readByPath(n, e) : e;
-    };
-}
-const DEFAULT_BOX_CONFIG = { equals: constFalse, deep: !1 };
+    useMockContext = () => reactExports.useContext(mockContext),
+    DEFAULT_BOX_CONFIG = { equals: constFalse, deep: !1 };
 function createObservableModel(e, t, u) {
     const n = [];
     e.events.subscribersNotified.on(
@@ -1883,6 +1862,7 @@ const initializeModelWithContext =
                             controls: { ...(null == u ? void 0 : u(_)), ...A },
                             externalModel: l,
                             mode: r,
+                            rootId: (null == o ? void 0 : o.rootId) ?? 0,
                         };
                     }),
                     A = reactExports.useRef(!1),
@@ -2941,7 +2921,7 @@ function dumpViewModel(e) {
 }
 const SystemLocale = {
         getNumberFormat: (e, t) => systemLocale.getNumberFormat(e, t),
-        getRealFormat: (e, t) => systemLocale.getRealFormat(e, t),
+        getRealFormat: (e, t, u = 2) => systemLocale.getRealFormat(e, t, u),
         getTimeFormat: (e, t) => systemLocale.getTimeFormat(e, t),
         getDateFormat: (e, t) => systemLocale.getDateFormat(e, t),
         toUpperCase: (e) => systemLocale.toUpperCase(e),
@@ -4258,7 +4238,7 @@ const FormatNumber = ({ value: e, format: t = 'integral' }) => {
                                         o === ValueTypes.MULTI && styles$2.info__multi,
                                         null == c ? void 0 : c.info,
                                     ),
-                                    children: h,
+                                    children: '1' == h ? null : h,
                                 }),
                             i && jsxRuntimeExports.jsx('div', { className: styles$2.title, children: i }),
                         ],
@@ -4713,19 +4693,16 @@ export {
     DynamicTooltipWrapper as D,
     ExtendedText as E,
     FormatText as F,
-    getSize$1 as G,
-    useMount$1 as H,
+    mapRange as G,
+    TooltipDecorator as H,
     ImageSize as I,
     JSXBuilder as J,
-    ValueTypes as K,
-    mapRange as L,
+    useCountdown as K,
+    format as L,
     MultilineOverflow as M,
-    TooltipDecorator as N,
-    useCountdown as O,
-    ONE_MINUTE as P,
-    format as Q,
+    getTimeUnits as N,
+    ONE_MINUTE as O,
     Reward as R,
-    getTimeUnits as S,
     Tooltip as T,
     UIProvider as U,
     Video as V,
@@ -4747,12 +4724,12 @@ export {
     play as p,
     useSpecialTooltip as q,
     runView as r,
-    makeActions as s,
-    createSimpleGetter as t,
+    identity as s,
+    noop$1 as t,
     useMedia as u,
-    createMockControls as v,
-    identity as w,
-    noop$1 as x,
-    graphicsQuality as y,
-    get as z,
+    graphicsQuality as v,
+    get as w,
+    getSize$1 as x,
+    useMount$1 as y,
+    ValueTypes as z,
 };

@@ -1,5 +1,5 @@
-import { i as e, a as r, aM as a, aC as s } from './lib.js';
-import { J as o, H as t, K as l } from './vendor.js';
+import { i as e, h as r, bu as s, b1 as a } from './lib.js';
+import { O as o, M as t, P as l } from './vendor.js';
 var n = ((e) => (
     (e.None = 'none'),
     (e.CeasefireCurrentServer = 'ceasefireCurrentServer'),
@@ -24,7 +24,7 @@ const [c, d] = e()(
                                 goal: l,
                                 periods:
                                     ((r = JSON.parse(n.get())),
-                                    r.map(([e, r]) => [a(e, s.ShortTime), a(r, s.ShortTime)])),
+                                    r.map(([e, r]) => [s(e, a.ShortTime), s(r, a.ShortTime)])),
                             });
                         } catch (o) {
                             console.error(`Error parsing JSON for element ${l}:`, o);

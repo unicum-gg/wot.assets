@@ -1,23 +1,215 @@
-.Title_base_af {
+.CButton_base_40 {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1;
+    border-radius: 2rem;
+    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    position: relative;
+    cursor: pointer;
 }
 
-.Title_line_0c {
+.CButton_base__main_42,
+.CButton_base__primary_7f,
+.CButton_base__primaryGreen_6f,
+.CButton_base__primaryRed_ec,
+.CButton_base__secondary_50 {
+    background-size: 100% 100%;
+}
+
+.CButton_base__main_42 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_main');
+}
+
+.CButton_base__primary_7f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+
+.CButton_base__primaryGreen_6f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+
+.CButton_base__primaryRed_ec {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+
+.CButton_base__secondary_50 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+
+.CButton_base__ghost_ed {
+    border-radius: 3rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.CButton_base__extraSmall_27 {
+    min-height: 17rem;
+    padding: 0 16rem;
+}
+
+.CButton_base__small_df,
+.CButton_base__medium_74 {
+    padding: 0 20rem;
+}
+
+.CButton_base__small_df {
+    min-height: 18rem;
+}
+
+.CButton_base__medium_74 {
+    min-height: 32rem;
+}
+
+.CButton_base__large_5c {
+    min-height: 48rem;
+}
+
+.CButton_base__disabled_d9 {
+    cursor: default;
+}
+/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
+between 'border-image-width' and 'fill'.
+This bug is reproduced in Google Chrome 81.0.4044.113
+*/
+.CButton_back_e5 {
+    border-image-slice: 4 fill;
+    border-image-width: 4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_base__main_42 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+}
+.CButton_base__primary_7f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+.CButton_base__primaryGreen_6f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+.CButton_base__primaryRed_ec .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+.CButton_base__secondary_50 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+.CButton_texture_fe {
+    background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
+    background-size: 155rem 31rem;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_state_11 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: box-shadow 0.16s ease-in-out;
+}
+.CButton_base__focus_83 .CButton_state_11 {
+    border-radius: 2rem;
+    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
+}
+.CButton_stateHighlightHover_ff,
+.CButton_stateHighlightActive_35,
+.CButton_stateDisabled_54 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_stateHighlightHover_ff {
+    background-image: linear-gradient(
+        180deg,
+        rgba(252, 248, 235, 0.25) 0%,
+        rgba(252, 248, 235, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0;
+}
+.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+    opacity: 1;
+}
+.CButton_base_40:active .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
+    background-color: rgba(8, 6, 0, 0.18);
+    background-image: none;
+}
+.CButton_stateHighlightActive_35 {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+    opacity: 0;
+}
+.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+    opacity: 1;
+}
+.CButton_stateDisabled_54 {
+    background-color: rgba(0, 0, 0, 0.25);
+    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
+    background-size: 15rem 15rem;
+    visibility: hidden;
+}
+.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+    visibility: inherit;
+}
+.CButton_content_cc {
     display: flex;
-    flex: 1;
-    height: 1rem;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.Title_text_99 {
-    color: #f2f2f7;
-    font-size: 15rem;
+    align-items: center;
+    color: #f2f2e6;
     font-weight: 700;
-    line-height: 1.15;
-    margin: 0 20rem;
+    line-height: 1.2;
+    text-shadow: 0 -1rem 1rem #000;
+    letter-spacing: 0.03em;
+    transform: translateY(-1rem);
+}
+.CButton_content_cc[lang='ja'],
+.CButton_content_cc[lang='ko'],
+.CButton_content_cc[lang='zh_tw'],
+.CButton_content_cc[lang='zh_sg'],
+.CButton_content_cc[lang='zh_cn'],
+.CButton_content_cc[lang='th'] {
+    font-weight: 400;
+}
+.CButton_base__main_42 .CButton_content_cc,
+.CButton_base__primaryRed_ec .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #600;
+}
+.CButton_base__secondary_50 .CButton_content_cc {
+    color: rgba(254, 254, 236, 0.75);
+}
+.CButton_base__primaryGreen_6f .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #1c2502;
+}
+.CButton_base__extraSmall_27 .CButton_content_cc {
+    font-size: 12rem;
+}
+.CButton_base__small_df .CButton_content_cc {
+    font-size: 14rem;
+}
+.CButton_base__medium_74 .CButton_content_cc {
+    font-size: 15rem;
+}
+.CButton_base__large_5c .CButton_content_cc {
+    font-size: 18rem;
+}
+.CButton_base__disabled_d9 .CButton_content_cc {
+    opacity: 0.6;
 }
 
 .TextOverflow_base_3b {
@@ -26,208 +218,6 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-}
-
-.UserListItem_base_13 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex: 1;
-    height: 20rem;
-}
-
-.UserListItem_base__empty_b4 {
-    justify-content: flex-start;
-    width: 100%;
-}
-
-.UserListItem_emptySign_ae {
-    width: 11rem;
-    height: 1rem;
-    background-color: rgba(242, 242, 247, 0.2);
-}
-
-.UserListItem_name_2a {
-    color: #f2f2f7;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    flex: 1;
-}
-
-.UserListItem_name__smallHeight_40 {
-    font-size: 14rem;
-}
-
-.UserListItem_name__current_ab {
-    color: #ffc363;
-}
-
-.UserListItem_status_34 {
-    color: #7ab300;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin-left: 15rem;
-}
-
-.UserListItem_status__notReady_ad {
-    color: #ff2717;
-}
-
-.TeamListItem_base_70 {
-    color: #ffffff;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    display: flex;
-    justify-content: center;
-    border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
-}
-
-.TeamListItem_base__last_81 {
-    border-bottom: none;
-}
-
-.TeamListItem_teamNumber_2c {
-    color: #f2f2f7;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 20rem;
-    margin: 0 50rem 0 10rem;
-    text-align: center;
-    opacity: 0.6;
-}
-
-.TeamListItem_teamNumber__solo_d4 {
-    margin-right: 20rem;
-}
-
-.TeamListItem_teamNumber__current_9e {
-    color: #feab34;
-    opacity: 1;
-}
-
-.TeamListItem_users_b3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-    padding: 7rem 0;
-}
-
-.TeamListItem_users__team_ce {
-    padding: 13rem 0 14rem;
-}
-
-.TeamListItem_users__smallHeight_ea.TeamListItem_users__team_ce {
-    padding: 7rem 0 8rem;
-}
-
-.TeamListItem_userItem_bd {
-    margin-bottom: 6rem;
-}
-
-.TeamListItem_userItem__smallHeight_29 {
-    margin-bottom: 2rem;
-}
-
-.TeamList_base_91 {
-    color: #ffffff;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.TeamList_column_5a {
-    display: flex;
-    flex-direction: column;
-    width: 350rem;
-}
-
-.UserFooterItem_base_88 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    flex: 1;
-    max-width: 200rem;
-    height: 48rem;
-    padding: 0 5rem;
-}
-
-.UserFooterItem_base__empty_7d {
-    justify-content: center;
-}
-
-.UserFooterItem_emptySign_0c {
-    width: 14rem;
-    height: 1rem;
-    background-color: rgba(242, 242, 247, 0.4);
-}
-
-.UserFooterItem_name_11 {
-    color: #8c8c7e;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    flex: 1;
-    text-align: center;
-}
-
-.UserFooterItem_vehicleName_24 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: -7rem;
-}
-
-.UserFooterItem_icon_30 {
-    width: 24rem;
-    height: 24rem;
-    margin-top: 2rem;
-    background: no-repeat center / contain;
-}
-
-.UserFooterItem_text_b7 {
-    color: #f2f2f7;
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-left: 5rem;
-}
-
-.UserFooterItem_text__current_ea {
-    color: #ffc363;
-}
-
-.UserFooterItem_status_0b {
-    color: #ff2717;
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-
-.TeamFooter_base_ba {
-    width: 100%;
-}
-
-.TeamFooter_team_c4 {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    min-height: 70rem;
-    margin-top: 20rem;
 }
 
 .DropDownControl_base_46 {
@@ -762,220 +752,6 @@ so we just add specificity to css classes here
     transform: translateY(-100%);
 }
 
-.CButton_base_40 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 2rem;
-    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
-    position: relative;
-    cursor: pointer;
-}
-
-.CButton_base__main_42,
-.CButton_base__primary_7f,
-.CButton_base__primaryGreen_6f,
-.CButton_base__primaryRed_ec,
-.CButton_base__secondary_50 {
-    background-size: 100% 100%;
-}
-
-.CButton_base__main_42 {
-    background-image: url('R.images.gui.maps.icons.components.button.back_main');
-}
-
-.CButton_base__primary_7f {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
-}
-
-.CButton_base__primaryGreen_6f {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
-}
-
-.CButton_base__primaryRed_ec {
-    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
-}
-
-.CButton_base__secondary_50 {
-    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
-}
-
-.CButton_base__ghost_ed {
-    border-radius: 3rem;
-    box-shadow:
-        0 0 0 1rem rgba(0, 0, 0, 0.3),
-        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
-    background-color: rgba(0, 0, 0, 0.15);
-}
-
-.CButton_base__extraSmall_27 {
-    min-height: 17rem;
-    padding: 0 16rem;
-}
-
-.CButton_base__small_df,
-.CButton_base__medium_74 {
-    padding: 0 20rem;
-}
-
-.CButton_base__small_df {
-    min-height: 18rem;
-}
-
-.CButton_base__medium_74 {
-    min-height: 32rem;
-}
-
-.CButton_base__large_5c {
-    min-height: 48rem;
-}
-
-.CButton_base__disabled_d9 {
-    cursor: default;
-}
-/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
-The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
-between 'border-image-width' and 'fill'.
-This bug is reproduced in Google Chrome 81.0.4044.113
-*/
-.CButton_back_e5 {
-    border-image-slice: 4 fill;
-    border-image-width: 4rem;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-.CButton_base__main_42 .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
-}
-.CButton_base__primary_7f .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
-}
-.CButton_base__primaryGreen_6f .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
-}
-.CButton_base__primaryRed_ec .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
-}
-.CButton_base__secondary_50 .CButton_back_e5 {
-    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
-}
-.CButton_texture_fe {
-    background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
-    background-size: 155rem 31rem;
-    mix-blend-mode: soft-light;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-.CButton_state_11 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    transition: box-shadow 0.16s ease-in-out;
-}
-.CButton_base__focus_83 .CButton_state_11 {
-    border-radius: 2rem;
-    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
-}
-.CButton_stateHighlightHover_ff,
-.CButton_stateHighlightActive_35,
-.CButton_stateDisabled_54 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-.CButton_stateHighlightHover_ff {
-    background-image: linear-gradient(
-        180deg,
-        rgba(252, 248, 235, 0.25) 0%,
-        rgba(252, 248, 235, 0.1) 50%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    opacity: 0;
-}
-.CButton_base_40:hover .CButton_stateHighlightHover_ff {
-    opacity: 1;
-}
-.CButton_base_40:active .CButton_stateHighlightHover_ff {
-    opacity: 0;
-}
-.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
-    opacity: 0;
-}
-.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
-    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
-    background-color: rgba(8, 6, 0, 0.18);
-    background-image: none;
-}
-.CButton_stateHighlightActive_35 {
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
-    opacity: 0;
-}
-.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
-    opacity: 1;
-}
-.CButton_stateDisabled_54 {
-    background-color: rgba(0, 0, 0, 0.25);
-    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
-    background-size: 15rem 15rem;
-    visibility: hidden;
-}
-.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
-    visibility: inherit;
-}
-.CButton_content_cc {
-    display: flex;
-    align-items: center;
-    color: #f2f2e6;
-    font-weight: 700;
-    line-height: 1.2;
-    text-shadow: 0 -1rem 1rem #000;
-    letter-spacing: 0.03em;
-    transform: translateY(-1rem);
-}
-.CButton_content_cc[lang='ja'],
-.CButton_content_cc[lang='ko'],
-.CButton_content_cc[lang='zh_tw'],
-.CButton_content_cc[lang='zh_sg'],
-.CButton_content_cc[lang='zh_cn'],
-.CButton_content_cc[lang='th'] {
-    font-weight: 400;
-}
-.CButton_base__main_42 .CButton_content_cc,
-.CButton_base__primaryRed_ec .CButton_content_cc {
-    text-shadow: 0 -1rem 1rem #600;
-}
-.CButton_base__secondary_50 .CButton_content_cc {
-    color: rgba(254, 254, 236, 0.75);
-}
-.CButton_base__primaryGreen_6f .CButton_content_cc {
-    text-shadow: 0 -1rem 1rem #1c2502;
-}
-.CButton_base__extraSmall_27 .CButton_content_cc {
-    font-size: 12rem;
-}
-.CButton_base__small_df .CButton_content_cc {
-    font-size: 14rem;
-}
-.CButton_base__medium_74 .CButton_content_cc {
-    font-size: 15rem;
-}
-.CButton_base__large_5c .CButton_content_cc {
-    font-size: 18rem;
-}
-.CButton_base__disabled_d9 .CButton_content_cc {
-    opacity: 0.6;
-}
-
 .SpectatorFooter_base_2f {
     display: flex;
     justify-content: center;
@@ -1003,6 +779,230 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .SpectatorFooter_button_94 {
     width: 140rem;
+}
+
+.Title_base_af {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.Title_line_0c {
+    display: flex;
+    flex: 1;
+    height: 1rem;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.Title_text_99 {
+    color: #f2f2f7;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 20rem;
+}
+
+.TeamFooter_base_ba {
+    width: 100%;
+}
+
+.TeamFooter_team_c4 {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    min-height: 70rem;
+    margin-top: 20rem;
+}
+
+.UserFooterItem_base_88 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    max-width: 200rem;
+    height: 48rem;
+    padding: 0 5rem;
+}
+
+.UserFooterItem_base__empty_7d {
+    justify-content: center;
+}
+
+.UserFooterItem_emptySign_0c {
+    width: 14rem;
+    height: 1rem;
+    background-color: rgba(242, 242, 247, 0.4);
+}
+
+.UserFooterItem_name_11 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    flex: 1;
+    text-align: center;
+}
+
+.UserFooterItem_vehicleName_24 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -7rem;
+}
+
+.UserFooterItem_icon_30 {
+    width: 24rem;
+    height: 24rem;
+    margin-top: 2rem;
+    background: no-repeat center / contain;
+}
+
+.UserFooterItem_text_b7 {
+    color: #f2f2f7;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 5rem;
+}
+
+.UserFooterItem_text__current_ea {
+    color: #ffc363;
+}
+
+.UserFooterItem_status_0b {
+    color: #ff2717;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.UserListItem_base_13 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    height: 20rem;
+}
+
+.UserListItem_base__empty_b4 {
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.UserListItem_emptySign_ae {
+    width: 11rem;
+    height: 1rem;
+    background-color: rgba(242, 242, 247, 0.2);
+}
+
+.UserListItem_name_2a {
+    color: #f2f2f7;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    flex: 1;
+}
+
+.UserListItem_name__smallHeight_40 {
+    font-size: 14rem;
+}
+
+.UserListItem_name__current_ab {
+    color: #ffc363;
+}
+
+.UserListItem_status_34 {
+    color: #7ab300;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-left: 15rem;
+}
+
+.UserListItem_status__notReady_ad {
+    color: #ff2717;
+}
+
+.TeamListItem_base_70 {
+    color: #ffffff;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
+}
+
+.TeamListItem_base__last_81 {
+    border-bottom: none;
+}
+
+.TeamListItem_teamNumber_2c {
+    color: #f2f2f7;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 20rem;
+    margin: 0 50rem 0 10rem;
+    text-align: center;
+    opacity: 0.6;
+}
+
+.TeamListItem_teamNumber__solo_d4 {
+    margin-right: 20rem;
+}
+
+.TeamListItem_teamNumber__current_9e {
+    color: #feab34;
+    opacity: 1;
+}
+
+.TeamListItem_users_b3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    padding: 7rem 0;
+}
+
+.TeamListItem_users__team_ce {
+    padding: 13rem 0 14rem;
+}
+
+.TeamListItem_users__smallHeight_ea.TeamListItem_users__team_ce {
+    padding: 7rem 0 8rem;
+}
+
+.TeamListItem_userItem_bd {
+    margin-bottom: 6rem;
+}
+
+.TeamListItem_userItem__smallHeight_29 {
+    margin-bottom: 2rem;
+}
+
+.TeamList_base_91 {
+    color: #ffffff;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.TeamList_column_5a {
+    display: flex;
+    flex-direction: column;
+    width: 350rem;
 }
 
 .PreBattleViewApp_base_12 {

@@ -44,7 +44,7 @@ function p(e, a, t) {
     return !(!e || a === l || !t) && t.status !== d.unsuitableToQueue && t.maxBpScore > 0;
 }
 const [m, c, v] = a()(({ observableModel: e }) => ({
-        ...e.primitives(['isCrystalEarnEnabled', 'isDailyMultipliedXpEnabled']),
+        ...e.primitives(['isCrystalEarnEnabled', 'isDailyMultipliedXpEnabled', 'isInfiniteAmmo']),
     })),
     _ = () => e.useContext(v.Context);
 export { l as D, n as E, t as N, i as P, s as R, r as U, o as a, u as b, b as c, d, m as e, p as i, _ as u };

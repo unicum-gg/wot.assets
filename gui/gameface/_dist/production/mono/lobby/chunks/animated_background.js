@@ -1,35 +1,35 @@
 import { j as a, J as s } from './vendor.js';
-import { dX as e, cS as i, dY as n, n as t, dZ as m } from './lib.js';
-const c = 'AnimatedBackground_f47e334b',
-    o = 'AnimatedBackground_rays_caf372e5',
-    r = 'AnimatedBackground_sunShineCanvas_21aff824',
-    d = 'AnimatedBackground_staticHighlight_4c4023e9',
-    h = {
+import { e2 as e, d0 as i, e3 as n, n as t, e4 as m } from './lib.js';
+const o = 'AnimatedBackground_f47e334b',
+    r = 'AnimatedBackground_rays_caf372e5',
+    c = 'AnimatedBackground_sunShineCanvas_21aff824',
+    h = 'AnimatedBackground_staticHighlight_4c4023e9',
+    d = {
         width: 400,
         height: 400,
         frameCount: 50,
         chunk: { count: 2, rows: 5, columns: 5 },
         getChunkPath: m('R.images.gui.maps.icons.sequence.sun_shine_big_sprite.sprite_'),
     },
-    g = e(h),
+    g = e(d),
     u = ({ className: e }) =>
         a.jsx('div', {
-            className: s(c, e),
+            className: s(o, e),
             children: i.isHigh()
                 ? a.jsxs(a.Fragment, {
                       children: [
                           a.jsx(n, {
                               onAnimationDone: t,
-                              width: h.width,
-                              height: h.height,
-                              frameCount: h.frameCount,
+                              width: d.width,
+                              height: d.height,
+                              frameCount: d.frameCount,
                               getImageSource: g,
                               frameTime: 50,
-                              className: r,
+                              className: c,
                           }),
-                          a.jsx('div', { className: o }),
+                          a.jsx('div', { className: r }),
                       ],
                   })
-                : a.jsx('div', { className: d }),
+                : a.jsx('div', { className: h }),
         });
 export { u as A };

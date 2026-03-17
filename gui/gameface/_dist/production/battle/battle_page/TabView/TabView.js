@@ -806,7 +806,7 @@
                 t.d(u, { Ew: () => r, Z5: () => a, cy: () => n });
                 const a = {
                         getNumberFormat: (e, u) => systemLocale.getNumberFormat(e, u),
-                        getRealFormat: (e, u) => systemLocale.getRealFormat(e, u),
+                        getRealFormat: (e, u, t = 2) => systemLocale.getRealFormat(e, u, t),
                         getTimeFormat: (e, u) => systemLocale.getTimeFormat(e, u),
                         getDateFormat: (e, u) => systemLocale.getDateFormat(e, u),
                         toUpperCase: (e) => systemLocale.toUpperCase(e),
@@ -3361,16 +3361,17 @@
                 const La = (e) => {
                     let u = e.value,
                         t = e.isEmpty,
-                        a = e.className,
-                        n = e.size,
-                        r = void 0 === n ? 'normal' : n,
-                        s = e.fadeInAnimation,
-                        o = void 0 !== s && s,
-                        l = e.hide,
-                        c = void 0 !== l && l,
-                        d = e.maximumNumber,
-                        m = void 0 === d ? 99 : d,
-                        _ = (function (e, u) {
+                        a = void 0 !== t && t,
+                        n = e.className,
+                        r = e.size,
+                        s = void 0 === r ? 'normal' : r,
+                        o = e.fadeInAnimation,
+                        l = void 0 !== o && o,
+                        c = e.hide,
+                        d = void 0 !== c && c,
+                        m = e.maximumNumber,
+                        _ = void 0 === m ? 99 : m,
+                        E = (function (e, u) {
                             if (null == e) return {};
                             var t,
                                 a,
@@ -3379,29 +3380,29 @@
                             for (a = 0; a < r.length; a++) ((t = r[a]), u.indexOf(t) >= 0 || (n[t] = e[t]));
                             return n;
                         })(e, Sa);
-                    const E = t ? null : u,
-                        A = 'string' == typeof E;
-                    if ((E && !A && E < 0) || 0 === E) return null;
-                    const F = E && !A && E > m,
-                        D = g()(
+                    const A = a ? null : u,
+                        F = 'string' == typeof A;
+                    if ((A && !F && A < 0) || 0 === A) return null;
+                    const D = A && !F && A > _,
+                        C = g()(
                             xa.base,
-                            xa[`base__${r}`],
-                            o && xa.base__animated,
-                            c && xa.base__hidden,
-                            !E && xa.base__pattern,
-                            t && xa.base__empty,
-                            a,
+                            xa[`base__${s}`],
+                            l && xa.base__animated,
+                            d && xa.base__hidden,
+                            !A && xa.base__pattern,
+                            a && xa.base__empty,
+                            n,
                         );
                     return i().createElement(
                         'div',
-                        Pa({ className: D }, _),
+                        Pa({ className: C }, E),
                         i().createElement('div', { className: xa.bg }),
                         i().createElement('div', { className: xa.pattern }),
                         i().createElement(
                             'div',
-                            { className: g()(xa.value, A && xa.value__text) },
-                            F ? m : E,
-                            F && i().createElement('span', { className: xa.plus }, '+'),
+                            { className: g()(xa.value, F && xa.value__text) },
+                            D ? _ : A,
+                            D && i().createElement('span', { className: xa.plus }, '+'),
                         ),
                     );
                 };

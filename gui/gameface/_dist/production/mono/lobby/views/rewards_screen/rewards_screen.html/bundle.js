@@ -1,48 +1,48 @@
 import {
-    S as e,
+    T as e,
     I as a,
     j as s,
     J as n,
     r,
-    Q as t,
-    P as i,
+    S as t,
+    Q as i,
     R as d,
-    X as o,
-    O as l,
-    Z as c,
+    Y as o,
+    P as l,
+    $ as c,
 } from '../../../chunks/vendor.js';
 import {
     i as _,
-    aB as p,
-    cU as m,
-    ah as u,
-    a9 as h,
-    dC as f,
-    aR as w,
-    an as g,
-    b_ as b,
-    aI as S,
-    a7 as x,
-    cf as k,
-    cd as y,
-    C as v,
-    ch as j,
+    aD as p,
+    d2 as m,
+    aj as u,
+    ab as h,
+    dJ as f,
+    aT as w,
+    ap as g,
+    c9 as b,
+    aK as S,
+    a9 as x,
+    cq as k,
+    co as y,
+    D as v,
+    cr as j,
     m as A,
-    dj as N,
-    d9 as I,
-    dg as C,
-    dm as L,
-    cm as T,
-    dD as B,
-    dl as M,
-    cP as Q,
-    cn as $,
+    dt as N,
+    cY as I,
+    dq as C,
+    dw as T,
+    cv as L,
+    dK as B,
+    dv as M,
+    cW as Q,
+    cw as $,
 } from '../../../chunks/lib.js';
 import { g as H, a as U } from '../../../chunks/get_division_name.js';
-import { b as V, a as P, g as E } from '../../../chunks/get_rank_name.js';
-import { R as Y, a as O, i as q, g as W } from '../../../chunks/rank_emblem.js';
-import { A as z } from '../../../chunks/animated_background.js';
-import { R as D } from '../../../chunks/enums.js';
+import { b as V, a as E, g as P } from '../../../chunks/get_rank_name.js';
+import { R as Y, a as q, i as W, g as O } from '../../../chunks/rank_emblem.js';
+import { A as D } from '../../../chunks/animated_background.js';
+import { R as z } from '../../../chunks/enums.js';
 import { C as F } from '../../../chunks/close_button.js';
 import { g as K } from '../../../chunks/get_button_size.js';
 import { c as G } from '../../../chunks/animation_api_factory.js';
@@ -137,8 +137,8 @@ const de = [re.RankRewards, re.QualificationRewards],
         return s.jsxs('div', {
             className: ce,
             children: [
-                s.jsx(z, { className: _e }),
-                s.jsx(Y, { seasonName: t, rank: n, division: r, size: O.x600, className: e }),
+                s.jsx(D, { className: _e }),
+                s.jsx(Y, { seasonName: t, rank: n, division: r, size: q.x600, className: e }),
             ],
         });
     }),
@@ -165,12 +165,12 @@ const de = [re.RankRewards, re.QualificationRewards],
         12: 'comp_7_rank_legend',
     },
     Re = {
-        [D.First]: { start: 0, end: 2 },
-        [D.Second]: { start: 2, end: 4 },
-        [D.Third]: { start: 4, end: 6 },
-        [D.Fourth]: { start: 6, end: 9 },
-        [D.Fifth]: { start: 9, end: 12 },
-        [D.Sixth]: { start: 12, end: 15 },
+        [z.First]: { start: 0, end: 2 },
+        [z.Second]: { start: 2, end: 4 },
+        [z.Third]: { start: 4, end: 6 },
+        [z.Fourth]: { start: 6, end: 9 },
+        [z.Fifth]: { start: 9, end: 12 },
+        [z.Sixth]: { start: 12, end: 15 },
     },
     ge = {
         [re.Rank]: 'rank',
@@ -194,7 +194,7 @@ const de = [re.RankRewards, re.QualificationRewards],
         const { model: o } = le(),
             { rank: l, division: c, seasonName: _ } = o.root.get(),
             p = Re[l],
-            m = q(l),
+            m = W(l),
             [u, h] = r.useState(!1),
             S = r.useRef(!1),
             x = r.useCallback(() => {
@@ -226,7 +226,7 @@ const de = [re.RankRewards, re.QualificationRewards],
             s.jsxs('div', {
                 className: n(be, i),
                 children: [
-                    s.jsx(z, { className: n(xe, u && ke, null == d ? void 0 : d.backLayer) }),
+                    s.jsx(D, { className: n(xe, u && ke, null == d ? void 0 : d.backLayer) }),
                     s.jsx(b, {
                         className: n(Se, null == d ? void 0 : d.rank),
                         src: String(R.videos.comp7.$dyn(`rankAnimation_${_}`)),
@@ -239,7 +239,7 @@ const de = [re.RankRewards, re.QualificationRewards],
                             seasonName: _,
                             rank: l,
                             division: c,
-                            size: O.x600,
+                            size: q.x600,
                             className: n(Se, ye, u && ve, null == d ? void 0 : d.rank),
                         }),
                 ],
@@ -261,8 +261,8 @@ const de = [re.RankRewards, re.QualificationRewards],
     }),
     Ie = 'Achievement_b612c728',
     Ce = 'Achievement_container_2b000480',
-    Le = 'Achievement_container__withNotice_f69304b3',
-    Te = 'Achievement_rank_8fc6e94',
+    Te = 'Achievement_container__withNotice_f69304b3',
+    Le = 'Achievement_rank_8fc6e94',
     Be = 'Achievement_notice_17bb36b',
     Me = a(() => {
         const { model: e } = le(),
@@ -273,14 +273,14 @@ const de = [re.RankRewards, re.QualificationRewards],
             className: Ie,
             children: [
                 s.jsx(i.div, {
-                    className: n(Ce, d && Le),
+                    className: n(Ce, d && Te),
                     style: o,
                     children: (() => {
                         switch (a) {
                             case re.Rank:
-                                return s.jsx(Ne, { className: Te });
+                                return s.jsx(Ne, { className: Le });
                             case re.Division:
-                                return s.jsx(pe, { rankClassname: Te });
+                                return s.jsx(pe, { rankClassname: Le });
                             default:
                                 return (
                                     console.error('[Achievement] Unreachable branch: add separate Achievement type'),
@@ -310,35 +310,35 @@ const de = [re.RankRewards, re.QualificationRewards],
     ),
     Ue = 'AppHeader_a92b2706',
     Ve = 'AppHeader_description_9e9d375d',
-    Pe = 'AppHeader_subTitle_31b055c6',
-    Ee = 'AppHeader_title_d9d173d5',
+    Ee = 'AppHeader_subTitle_31b055c6',
+    Pe = 'AppHeader_title_d9d173d5',
     Ye = ({ description: e, title: a, subTitle: r, className: t, classNames: i }) =>
         s.jsxs('div', {
             className: n(Ue, t),
             children: [
                 e && s.jsx('div', { className: n(Ve, null == i ? void 0 : i.description), children: e }),
-                a && s.jsx('div', { className: n(Ee, null == i ? void 0 : i.title), children: a }),
-                r && s.jsx('div', { className: n(Pe, null == i ? void 0 : i.subTitle), children: r }),
+                a && s.jsx('div', { className: n(Pe, null == i ? void 0 : i.title), children: a }),
+                r && s.jsx('div', { className: n(Ee, null == i ? void 0 : i.subTitle), children: r }),
             ],
         }),
-    Oe = (e) => `${R.strings.comp7_ext.rewardsScreen.title.$dyn(ge[e])}`,
-    qe = (e) => `${R.strings.comp7_ext.rewardsScreen.subtitle.$dyn(ge[e])}`,
-    We = 'Buttons_38c48650',
-    ze = 'Buttons_button_9889e05c',
-    De = a(({ className: e, mainButtonText: a = R.strings.comp7_ext.rewardsScreen.button(), onClick: r }) => {
+    qe = (e) => `${R.strings.comp7_ext.rewardsScreen.title.$dyn(ge[e])}`,
+    We = (e) => `${R.strings.comp7_ext.rewardsScreen.subtitle.$dyn(ge[e])}`,
+    Oe = 'Buttons_38c48650',
+    De = 'Buttons_button_9889e05c',
+    ze = a(({ className: e, mainButtonText: a = R.strings.comp7_ext.rewardsScreen.button(), onClick: r }) => {
         const { model: t, controls: i } = le(),
             { mediaSize: d } = S(),
             o = K(d);
         return s.jsxs('div', {
-            className: n(We, e),
+            className: n(Oe, e),
             children: [
-                s.jsx(x, { theme: x.themes.primary, size: o, onClick: r ?? i.close, className: ze, children: a }),
+                s.jsx(x, { theme: x.themes.primary, size: o, onClick: r ?? i.close, className: De, children: a }),
                 t.computes.hasShopInfo() &&
                     s.jsx(x, {
                         theme: x.themes.secondary,
                         size: o,
                         onClick: i.openShop,
-                        className: ze,
+                        className: De,
                         children: R.strings.comp7_ext.rewardsScreen.buttonToShop(),
                     }),
             ],
@@ -361,7 +361,7 @@ const de = [re.RankRewards, re.QualificationRewards],
         }),
     Ze = (e, a) => {
         var s;
-        const n = null == (s = R.images.comp7.gui.maps.icons.backgrounds.$dyn(e)) ? void 0 : s.$dyn(W(a));
+        const n = null == (s = R.images.comp7.gui.maps.icons.backgrounds.$dyn(e)) ? void 0 : s.$dyn(O(a));
         return n ? `${n}` : (console.error(`no background was found for rank ${a}, season ${e}`), R.invalid());
     },
     ea = 'DivisionApp_achievement_826bdec5',
@@ -377,11 +377,11 @@ const de = [re.RankRewards, re.QualificationRewards],
                     children: [
                         s.jsx(Ye, {
                             description: `${R.strings.comp7_ext.rewardsScreen.description.season.$dyn(n)}`,
-                            title: s.jsx(y, { text: Oe(a), binding: { division: H(t) } }),
-                            subTitle: s.jsx(k, { text: qe(a), binding: { rank: V(r) } }),
+                            title: s.jsx(y, { text: qe(a), binding: { division: H(t) } }),
+                            subTitle: s.jsx(k, { text: We(a), binding: { rank: V(r) } }),
                         }),
                         s.jsx('div', { className: ea, children: s.jsx(Me, {}) }),
-                        s.jsx(De, {}),
+                        s.jsx(ze, {}),
                     ],
                 }),
             ],
@@ -605,8 +605,8 @@ const ua = 'BattleItem_14e04a96',
                 s.jsx(Ye, {
                     className: va.header,
                     description: R.strings.comp7_ext.rewardsScreen.description.qualificationEnded(),
-                    title: s.jsx(k, { text: Oe(a), binding: { rankUpperName: P(R.strings.comp7_ext.rankUpper, n) } }),
-                    subTitle: q(n) ? U(r) : void 0,
+                    title: s.jsx(k, { text: qe(a), binding: { rankUpperName: E(R.strings.comp7_ext.rankUpper, n) } }),
+                    subTitle: W(n) ? U(r) : void 0,
                 }),
                 s.jsx('div', { className: va.qualificationRank, children: s.jsx(ya, {}) }),
             ],
@@ -643,8 +643,8 @@ const ua = 'BattleItem_14e04a96',
             onEntered: Ia,
             children: (e) => s.jsx('div', { className: n(Aa.base, Aa[e]), children: r }),
         }),
-    La = 10,
-    Ta = 'AdditionalRewards_81a45598',
+    Ta = 10,
+    La = 'AdditionalRewards_81a45598',
     Ba = 'AdditionalRewards_reward_f7b41ae4',
     Ma = 'AdditionalRewards_vehiclesRentBase_3afa6e1a',
     Qa = 'AdditionalRewards_vehiclesRentLabel_bed51da4',
@@ -653,8 +653,8 @@ const ua = 'BattleItem_14e04a96',
             { mediaSize: o } = S(),
             l = o >= j.Medium ? N.Big : N.Small,
             c = d.additionalRewards.get().length,
-            _ = c > La;
-        const { appear: p, enter: m } = Na(Math.min(d.additionalRewards.get().length, La), e),
+            _ = c > Ta;
+        const { appear: p, enter: m } = Na(Math.min(d.additionalRewards.get().length, Ta), e),
             u = m + p;
         r.useEffect(
             () =>
@@ -665,7 +665,7 @@ const ua = 'BattleItem_14e04a96',
         );
         const f = _ ? [...C(d.additionalRewards.get(), 0, 8)] : d.additionalRewards.get();
         return s.jsxs('div', {
-            className: n(Ta, t),
+            className: n(La, t),
             children: [
                 h(f, (a, r) => {
                     const t = 'vehicles_rent' === a.name;
@@ -676,7 +676,7 @@ const ua = 'BattleItem_14e04a96',
                             delay: e,
                             children: s.jsx('div', {
                                 className: n(Ba, null == i ? void 0 : i.reward),
-                                children: s.jsx(L, {
+                                children: s.jsx(T, {
                                     ...X({ reward: a, size: l }),
                                     className: n(t && Ma),
                                     classNames: { info: n(t && Qa) },
@@ -692,11 +692,11 @@ const ua = 'BattleItem_14e04a96',
                         delay: e,
                         children: s.jsx('div', {
                             className: Ba,
-                            children: s.jsx(L, {
+                            children: s.jsx(T, {
                                 name: '',
                                 image: `R.images.gui.maps.icons.quests.bonuses.${l}.default`,
                                 size: l,
-                                value: T(R.strings.tooltips.quests.awards.additional.bottom(), { count: c - La + 1 }),
+                                value: L(R.strings.tooltips.quests.awards.additional.bottom(), { count: c - Ta + 1 }),
                                 tooltipArgs: {
                                     contentId: R.views.lobby.tooltips.AdditionalRewardsTooltip('resId'),
                                     args: { showCount: 9 },
@@ -768,7 +768,7 @@ const ua = 'BattleItem_14e04a96',
                                 children: s.jsxs('div', {
                                     className: Ha.rewardWrapper,
                                     children: [
-                                        s.jsx(L, {
+                                        s.jsx(T, {
                                             ...X({ reward: e, size: c }),
                                             className: Ha.reward,
                                             classNames: { ...Ua, ...t },
@@ -792,7 +792,7 @@ const ua = 'BattleItem_14e04a96',
             })
         );
     }),
-    Pa = {
+    Ea = {
         base: 'ShopInfo_ffa91be7',
         icon: 'ShopInfo_icon_e4270d60',
         icon__open: 'ShopInfo_icon__open_68f60f0',
@@ -815,22 +815,22 @@ const ua = 'BattleItem_14e04a96',
         blink: 'ShopInfo_blink_5bddd9f',
         slideUpIn: 'ShopInfo_slideUpIn_5bddd9f',
     },
-    Ea = a(({ className: e }) => {
+    Pa = a(({ className: e }) => {
         const { model: a } = le(),
             { shopInfoType: r } = a.root.get();
         return s.jsxs('div', {
-            className: n(Pa.base, e),
+            className: n(Ea.base, e),
             children: [
-                s.jsx('div', { className: n(Pa.icon, Pa[`icon__${r}`]) }),
+                s.jsx('div', { className: n(Ea.icon, Ea[`icon__${r}`]) }),
                 s.jsxs('div', {
-                    className: Pa.content,
+                    className: Ea.content,
                     children: [
                         s.jsx('div', {
-                            className: Pa.header,
+                            className: Ea.header,
                             children: `${R.strings.comp7_ext.rewardsScreen.shopInfo.header.$dyn(r)}`,
                         }),
                         s.jsx('div', {
-                            className: Pa.text,
+                            className: Ea.text,
                             children: `${R.strings.comp7_ext.rewardsScreen.shopInfo.text.$dyn(r)}`,
                         }),
                     ],
@@ -839,10 +839,10 @@ const ua = 'BattleItem_14e04a96',
         });
     }),
     Ya = 'RewardList_ea855648',
-    Oa = 'RewardList_additional_5346cd7f',
-    qa = 'RewardList_additionalTitle_73a7506c',
-    Wa = 'RewardList_shopInfoContainer_df512c7a',
-    za = a(
+    qa = 'RewardList_additional_5346cd7f',
+    Wa = 'RewardList_additionalTitle_73a7506c',
+    Oa = 'RewardList_shopInfoContainer_df512c7a',
+    Da = a(
         ({
             className: e,
             mainRewardsClassName: a,
@@ -859,7 +859,7 @@ const ua = 'BattleItem_14e04a96',
                 u = p.additionalRewards.get().length,
                 h = p.computes.hasShopInfo(),
                 f = Na(m.length),
-                w = Na(Math.min(La, u)),
+                w = Na(Math.min(Ta, u)),
                 b = f.enter + f.appear,
                 S = b + (w.enter + w.appear);
             return (
@@ -882,26 +882,26 @@ const ua = 'BattleItem_14e04a96',
                     children: [
                         s.jsx(Va, { className: a, classNames: t, rewardClassNames: i, onAnimationComplete: c }),
                         s.jsx('div', {
-                            className: n(Oa, d),
+                            className: n(qa, d),
                             children:
                                 Boolean(u) &&
                                 s.jsxs(s.Fragment, {
                                     children: [
                                         s.jsx('div', {
-                                            className: n(qa, o),
+                                            className: n(Wa, o),
                                             children: R.strings.comp7_ext.rewardsScreen.additionalRewards(),
                                         }),
                                         s.jsx($a, { delay: b, classNames: l, onAnimationComplete: _ }),
                                     ],
                                 }),
                         }),
-                        h && s.jsx(Ea, { className: Wa }),
+                        h && s.jsx(Pa, { className: Oa }),
                     ],
                 })
             );
         },
     ),
-    Da = {
+    za = {
         base: 'BaseRewardList_ce527f64',
         base__singleMainReward: 'BaseRewardList_base__singleMainReward_4a33e8f3',
         base__shopInfo: 'BaseRewardList_base__shopInfo_9db8a5cc',
@@ -924,10 +924,10 @@ const ua = 'BattleItem_14e04a96',
     },
     Fa = a(() => {
         const { model: e } = le();
-        return s.jsx(za, {
-            className: n(Da.base, Da[`base__${e.computes.styleModifier()}`]),
-            additionalContainerClassName: Da.additionalContainer,
-            additionalTitleClassName: Da.additionalTitle,
+        return s.jsx(Da, {
+            className: n(za.base, za[`base__${e.computes.styleModifier()}`]),
+            additionalContainerClassName: za.additionalContainer,
+            additionalTitleClassName: za.additionalTitle,
         });
     }),
     Ka = a(() => {
@@ -938,7 +938,7 @@ const ua = 'BattleItem_14e04a96',
                 s.jsx(Ye, {
                     className: va.header,
                     description: String(R.strings.comp7_ext.rewardsScreen.description.qualificationEnded()),
-                    title: Oe(a),
+                    title: qe(a),
                     subTitle: s.jsx(k, {
                         text: String(R.strings.comp7_ext.rewardsScreen.subtitle.qualificationRewards()),
                         binding: { ranks: e.computes.ranksList() },
@@ -965,7 +965,7 @@ const ua = 'BattleItem_14e04a96',
                 s.jsx(pa, {}),
                 n === re.QualificationRank && s.jsx(ja, {}),
                 n === re.QualificationRewards && s.jsx(Ka, {}),
-                s.jsx(De, { className: va.buttons, onClick: i }),
+                s.jsx(ze, { className: va.buttons, onClick: i }),
             ],
         });
     }),
@@ -996,8 +996,8 @@ const ua = 'BattleItem_14e04a96',
             children: [
                 s.jsx(Ye, {
                     description: `${R.strings.comp7_ext.rewardsScreen.description.season.$dyn(t)}`,
-                    title: s.jsx(k, { text: Oe(a), binding: { rankUpperName: P(R.strings.comp7_ext.rankUpper, n) } }),
-                    subTitle: q(n) ? U(r) : void 0,
+                    title: s.jsx(k, { text: qe(a), binding: { rankUpperName: E(R.strings.comp7_ext.rankUpper, n) } }),
+                    subTitle: W(n) ? U(r) : void 0,
                 }),
                 s.jsx('div', { className: Ja.achievement, children: s.jsx(Me, {}) }),
             ],
@@ -1010,8 +1010,8 @@ const ua = 'BattleItem_14e04a96',
             children: [
                 s.jsx(Ye, {
                     description: `${R.strings.comp7_ext.rewardsScreen.description.season.$dyn(t)}`,
-                    title: s.jsx(k, { text: Oe(a) }),
-                    subTitle: s.jsx(k, { text: qe(a), binding: { rank: V(r) } }),
+                    title: s.jsx(k, { text: qe(a) }),
+                    subTitle: s.jsx(k, { text: We(a), binding: { rank: V(r) } }),
                 }),
                 s.jsx('div', {
                     className: n(Ja.rewardList, Ja[`rewardList__${e.computes.styleModifier()}`]),
@@ -1031,7 +1031,7 @@ const ua = 'BattleItem_14e04a96',
                     children: [
                         a === re.Rank && s.jsx(Xa, {}),
                         a === re.RankRewards && s.jsx(Za, {}),
-                        s.jsx(De, {
+                        s.jsx(ze, {
                             mainButtonText:
                                 a === re.Rank
                                     ? R.strings.comp7_ext.rewardsScreen.buttonToRewards()
@@ -1090,7 +1090,7 @@ const ua = 'BattleItem_14e04a96',
                                               classNames: { rewardLabel: as.rewardLabel },
                                           }),
                             }),
-                            s.jsx(De, {}),
+                            s.jsx(ze, {}),
                         ],
                     }),
                 ],
@@ -1127,7 +1127,7 @@ const ua = 'BattleItem_14e04a96',
                     children: [
                         s.jsx(Ye, {
                             description: R.strings.comp7_ext.featureNameCapitalized(),
-                            title: Oe(r),
+                            title: qe(r),
                             subTitle: s.jsx(k, {
                                 text: String(R.strings.comp7_ext.rewardsScreen.subtitle.tokensRewards(t)),
                                 binding: { tokensCount: t },
@@ -1137,7 +1137,7 @@ const ua = 'BattleItem_14e04a96',
                             className: n(ns.rewardList, ns[`rewardList__${e.computes.styleModifier()}`]),
                             children: s.jsx(Fa, {}),
                         }),
-                        s.jsx(De, {
+                        s.jsx(ze, {
                             mainButtonText: i
                                 ? R.strings.comp7_ext.rewardsScreen.buttonToSelectedRewards()
                                 : R.strings.comp7_ext.rewardsScreen.button(),
@@ -1201,7 +1201,7 @@ const ua = 'BattleItem_14e04a96',
     bs = 'SeasonResult_container_2287c7c2',
     Ss = 'SeasonResult_result_72f16a1e',
     xs = 'SeasonResult_seasonName_d5602aaa',
-    ks = O.x40,
+    ks = q.x40,
     ys = a(({ index: e, className: a }) => {
         const { model: r } = le(),
             { rank: t, seasonName: i, seasonPointsCount: d } = r.computes.seasonResult(e),
@@ -1234,7 +1234,7 @@ const ua = 'BattleItem_14e04a96',
                     children: [
                         s.jsx('div', {
                             className: Ss,
-                            children: o ? R.strings.comp7_ext.rewardsScreen.noSeasonResult() : E(t),
+                            children: o ? R.strings.comp7_ext.rewardsScreen.noSeasonResult() : P(t),
                         }),
                         s.jsx('div', { className: xs, children: ae(i) }),
                     ],
@@ -1248,7 +1248,7 @@ const ua = 'BattleItem_14e04a96',
     Ns = 'YearResult_icon_d50fb6a2',
     Is = 'YearResult_iconBg_cdb73af4',
     Cs = 'YearResult_description_cb2502d5',
-    Ls = a(({ className: e }) => {
+    Ts = a(({ className: e }) => {
         const { model: a } = le(),
             r = a.computes.seasonPointsAmount();
         return s.jsxs('div', {
@@ -1268,7 +1268,7 @@ const ua = 'BattleItem_14e04a96',
             ],
         });
     }),
-    Ts = 'SeasonsResultsHeading_8abb830c',
+    Ls = 'SeasonsResultsHeading_8abb830c',
     Bs = 'SeasonsResultsHeading_plus_1622f752',
     Ms = 'SeasonsResultsHeading_divider_a2d049dc',
     Qs = 'SeasonsResultsHeading_yearResult_272164c1',
@@ -1276,7 +1276,7 @@ const ua = 'BattleItem_14e04a96',
         const { model: a } = le(),
             r = a.seasonsResults.get().length;
         return s.jsxs('div', {
-            className: n(Ts, e),
+            className: n(Ls, e),
             children: [
                 A(r, (e) =>
                     s.jsxs(
@@ -1286,7 +1286,7 @@ const ua = 'BattleItem_14e04a96',
                     ),
                 ),
                 s.jsx('div', { className: Ms }),
-                s.jsx(Ls, { className: Qs }),
+                s.jsx(Ts, { className: Qs }),
             ],
         });
     }),
@@ -1388,7 +1388,7 @@ const ua = 'BattleItem_14e04a96',
                             s.jsx(ms, { className: Hs.header }),
                             o && s.jsx($s, {}),
                             e &&
-                                s.jsx(za, {
+                                s.jsx(Da, {
                                     className: n(Hs.rewardList, Hs[`rewardList__${t.computes.styleModifier()}`]),
                                     mainRewardsClassName: Hs.mainRewards,
                                     mainRewardsClassNames: { ribbon: Hs.ribbon },
@@ -1398,7 +1398,7 @@ const ua = 'BattleItem_14e04a96',
                                     onMainRewardsAnimationComplete: _ ? void 0 : c.resume,
                                     onAdditionalRewardsAnimationComplete: _ ? c.resume : void 0,
                                 }),
-                            s.jsx(De, {
+                            s.jsx(ze, {
                                 className: Hs.buttons,
                                 mainButtonText: Us(d, l),
                                 onClick: d ? () => i.changeType(re.YearlyVehicle) : i.close,
@@ -1409,32 +1409,32 @@ const ua = 'BattleItem_14e04a96',
             })
         );
     }),
-    Ps = {
+    Es = {
         ShowHeader: { name: 'showHeader', delay: 500 },
         ShowPoints: { name: 'showPoints', delay: 1200 },
         ShowContent: { name: 'showContent', delay: 1e3 },
         ShowCrew: { name: 'showCrew', delay: 700, stopNextSteps: !0 },
         ShowButtons: { name: 'showButtons', delay: 0 },
     },
-    Es = r.createContext(null),
+    Ps = r.createContext(null),
     Ys = () => {
-        const e = r.useContext(Es);
+        const e = r.useContext(Ps);
         if (null === e)
             throw new Error(
                 'useYearlyVehicleApi was called in component, which is not wrapped in YearlyVehicleAnimationContext',
             );
         return e;
     },
-    Os = { steps: [Ps.ShowHeader, Ps.ShowPoints, Ps.ShowContent, Ps.ShowCrew, Ps.ShowButtons], autoStart: !1 },
-    qs = { steps: [Ps.ShowHeader, Ps.ShowContent, Ps.ShowCrew, Ps.ShowButtons], autoStart: !1 },
-    Ws = a(({ children: e }) => {
+    qs = { steps: [Es.ShowHeader, Es.ShowPoints, Es.ShowContent, Es.ShowCrew, Es.ShowButtons], autoStart: !1 },
+    Ws = { steps: [Es.ShowHeader, Es.ShowContent, Es.ShowCrew, Es.ShowButtons], autoStart: !1 },
+    Os = a(({ children: e }) => {
         const { model: a } = le(),
             { showSeasonResults: n } = a.root.get(),
-            r = G(n ? Os : qs)();
-        return s.jsx(Es.Provider, { value: r, children: e });
+            r = G(n ? qs : Ws)();
+        return s.jsx(Ps.Provider, { value: r, children: e });
     }),
-    zs = 16 / 9,
-    Ds = 'VehicleVideo_fff13cb5',
+    Ds = 16 / 9,
+    zs = 'VehicleVideo_fff13cb5',
     Fs = 'VehicleVideo_video_c308965d',
     Ks = 'VehicleVideo_loopedVideo_bd56ccea',
     Gs = 'VehicleVideo_loopedVideo__visible_179edfc0',
@@ -1444,14 +1444,14 @@ const ua = 'BattleItem_14e04a96',
             _ = Ys(),
             p = r.useRef(null),
             { screenWidthRem: m, screenHeightRem: u } = S(),
-            h = `yearly_style_${W(e)}`,
+            h = `yearly_style_${O(e)}`,
             g = c === ie.Ended,
             b = r.useMemo(
                 () =>
                     (({ screenWidthRem: e, screenHeightRem: a }) => {
                         let s, n;
                         return (
-                            e / a > zs ? ((s = e), (n = e / zs)) : ((s = a * zs), (n = a)),
+                            e / a > Ds ? ((s = e), (n = e / Ds)) : ((s = a * Ds), (n = a)),
                             { width: `${s}rem`, height: `${n}rem` }
                         );
                     })({ screenWidthRem: m, screenHeightRem: u }),
@@ -1507,7 +1507,7 @@ const ua = 'BattleItem_14e04a96',
                 g && _.start();
             }, [g, _]),
             s.jsxs('div', {
-                className: n(Ds, t),
+                className: n(zs, t),
                 children: [
                     !g &&
                         s.jsx(M, {
@@ -1556,14 +1556,14 @@ const ua = 'BattleItem_14e04a96',
             r.useEffect(() => {
                 const e = (e) => {
                     switch (e) {
-                        case Ps.ShowHeader:
+                        case Es.ShowHeader:
                             g.sound(R.sounds.comp_7_ranks_shine());
                             break;
-                        case Ps.ShowPoints:
-                        case Ps.ShowContent:
+                        case Es.ShowPoints:
+                        case Es.ShowContent:
                             g.sound(R.sounds.comp_7_annual_reward_rank_points());
                             break;
-                        case Ps.ShowCrew:
+                        case Es.ShowCrew:
                             a(!0);
                     }
                 };
@@ -1612,7 +1612,7 @@ const ua = 'BattleItem_14e04a96',
                                     }),
                                 ],
                             }),
-                            s.jsx(De, {
+                            s.jsx(ze, {
                                 className: Hs.buttons,
                                 mainButtonText: d
                                     ? R.strings.comp7_ext.rewardsScreen.selectEquipment()
@@ -1642,7 +1642,7 @@ const ua = 'BattleItem_14e04a96',
             case re.YearlyRewards:
                 return s.jsx(ls, { children: s.jsx(Vs, {}) });
             case re.YearlyVehicle:
-                return s.jsx(Ws, { children: s.jsx(Xs, {}) });
+                return s.jsx(Os, { children: s.jsx(Xs, {}) });
             case re.SelectedRewards:
                 return s.jsx(ss, {});
             default:

@@ -5,8 +5,8 @@ import {
     I as a,
     F as i,
     A as r,
-    L as c,
-    S as l,
+    L as l,
+    S as c,
     H as m,
     M as _,
     E as p,
@@ -86,8 +86,8 @@ const L = 'assault',
             case u.SUPPORT:
                 return s.jsxs(s.Fragment, {
                     children: [
-                        s.jsx(B, { item: c, contentType: 'vehicleTypes' }),
                         s.jsx(B, { item: l, contentType: 'vehicleTypes' }),
+                        s.jsx(B, { item: c, contentType: 'vehicleTypes' }),
                     ],
                 });
             default:
@@ -188,6 +188,7 @@ const L = 'assault',
                             minLevel: h(e.minLevel.get()),
                             maxLevel: h(e.maxLevel.get()),
                         },
+                        split: !0,
                         className: F,
                     }),
                 ],

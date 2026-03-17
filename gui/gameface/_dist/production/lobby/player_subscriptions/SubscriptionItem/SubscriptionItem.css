@@ -3,6 +3,41 @@
     flex-wrap: wrap;
 }
 
+.MultilineOverflow_base_d9 {
+    position: relative;
+}
+
+.MultilineOverflow_base__truncated_a1 .MultilineOverflow_text_ce {
+    opacity: 0;
+}
+
+.MultilineOverflow_base__truncated_a1 .MultilineOverflow_truncatedContent_da {
+    opacity: 1;
+}
+
+.MultilineOverflow_singleLine_bb {
+    white-space: pre;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.MultilineOverflow_truncatedContent_da {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.MultilineOverflow_line_51 {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .CButton_base_40 {
     display: flex;
     justify-content: center;
@@ -219,20 +254,21 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .SubscriptionItem_base_e8 {
     --card-width: var(--base-width);
+    --card-height: var(--base-height);
     --footer-margin: 20rem;
+    --subscription-text-left-distance: 20rem;
+    --image-width: 36rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: var(--card-width);
-    height: var(--base-height);
+    height: var(--card-height);
     margin-bottom: 20rem;
     border: 1rem solid rgba(255, 255, 255, 0.1);
     background-color: rgba(30, 28, 24, 0.75);
     overflow: hidden;
     position: relative;
     cursor: pointer;
-
-    --subscription-text-left-distance: 20rem;
 }
 
 .SubscriptionItem_base_e8:hover .SubscriptionItem_subscriptionImage_4d {
@@ -265,6 +301,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaSmall .SubscriptionItem_base_e8 {
     --footer-margin: 30rem;
     --subscription-text-left-distance: 30rem;
+    --image-width: 24rem;
 }
 
 .mediaSmall .SubscriptionItem_base_e8 .SubscriptionItem_subscriptionText_39 {
@@ -276,23 +313,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 30rem;
 }
 
-.mediaMedium .SubscriptionItem_base_e8 {
-    --footer-margin: 40rem;
-    --subscription-text-left-distance: 40rem;
-}
-
-.mediaMedium .SubscriptionItem_base_e8 .SubscriptionItem_subscriptionText_39 {
-    width: 500rem;
-}
-
-.mediaMedium .SubscriptionItem_base_e8 .SubscriptionItem_refreshTimer_47 {
-    top: 32rem;
-    left: 30rem;
-}
-
 .mediaLarge .SubscriptionItem_base_e8 {
     --footer-margin: 50rem;
     --subscription-text-left-distance: 50rem;
+    --image-width: 32rem;
 }
 
 .mediaLarge .SubscriptionItem_base_e8 .SubscriptionItem_subscriptionText_39 {
@@ -304,6 +328,87 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 22rem;
 }
 
+.SubscriptionItem_base__oneThird_74 {
+    --card-width: 260rem;
+    --footer-margin: 20rem;
+}
+
+.SubscriptionItem_base__oneThird_74:hover .SubscriptionItem_footerText_84 {
+    bottom: 130rem;
+}
+
+.mediaMedium .SubscriptionItem_base__oneThird_74:hover .SubscriptionItem_footerText_84 {
+    bottom: 180rem;
+}
+
+.mediaLarge .SubscriptionItem_base__oneThird_74:hover .SubscriptionItem_footerText_84 {
+    bottom: 230rem;
+}
+
+.SubscriptionItem_base__oneThird_74:hover .SubscriptionItem_footerTitle_a0 {
+    display: block;
+    height: auto;
+}
+
+.SubscriptionItem_base__oneThird_74:hover .SubscriptionItem_footerDescription_e3 {
+    max-height: 100rem;
+    opacity: 1;
+}
+
+.SubscriptionItem_base__oneThird_74:hover .SubscriptionItem_subscriptionImage_4d {
+    filter: none;
+    opacity: 0.1;
+}
+
+.SubscriptionItem_base__oneThird_74 .SubscriptionItem_subscriptionImage_4d {
+    background-image: var(--imageUriSmall);
+}
+
+.SubscriptionItem_base__oneThird_74 .SubscriptionItem_claimedText_23 {
+    margin-right: 20rem;
+}
+
+.SubscriptionItem_base__oneThird_74 .SubscriptionItem_activateButton_3e {
+    min-width: 108rem;
+    height: 20rem;
+    padding: 0;
+}
+
+.SubscriptionItem_base__oneThird_74 .SubscriptionItem_activateButtonLight_ce {
+    width: 411rem;
+    height: 317rem;
+    top: -150rem;
+    right: -156rem;
+}
+
+.SubscriptionItem_base__oneThird_74 .SubscriptionItem_footer_62 {
+    max-width: 80rem;
+}
+
+.mediaMedium .SubscriptionItem_base__oneThird_74 .SubscriptionItem_footer_62 {
+    max-width: 130rem;
+}
+
+.mediaLarge .SubscriptionItem_base__oneThird_74 .SubscriptionItem_footer_62 {
+    max-width: 183rem;
+}
+
+.SubscriptionItem_base__oneThird_74 .SubscriptionItem_cardFooter_ff {
+    justify-content: space-between;
+}
+
+.mediaSmall .SubscriptionItem_base__oneThird_74 {
+    --card-width: 312rem;
+    --footer-margin: 20rem;
+    --subscription-text-left-distance: 20rem;
+}
+
+.mediaLarge .SubscriptionItem_base__oneThird_74 {
+    --card-width: 364rem;
+    --footer-margin: 20rem;
+    --subscription-text-left-distance: 20rem;
+}
+
 .SubscriptionItem_base__twoThirds_16 {
     --card-width: 535rem;
     --footer-margin: 20rem;
@@ -311,17 +416,29 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .SubscriptionItem_base__twoThirds_16:hover .SubscriptionItem_footerText_84 {
-    bottom: 200rem;
+    bottom: 150rem;
+}
+
+.mediaMedium .SubscriptionItem_base__twoThirds_16:hover .SubscriptionItem_footerText_84 {
+    bottom: 180rem;
+}
+
+.mediaLarge .SubscriptionItem_base__twoThirds_16:hover .SubscriptionItem_footerText_84 {
+    bottom: 250rem;
 }
 
 .SubscriptionItem_base__twoThirds_16:hover .SubscriptionItem_footerDescription_e3 {
+    opacity: 1;
+}
+
+.SubscriptionItem_base__twoThirds_16:hover .SubscriptionItem_footerTitle_a0 {
     display: block;
     height: auto;
 }
 
 .SubscriptionItem_base__twoThirds_16:hover .SubscriptionItem_subscriptionImage_4d {
     filter: none;
-    opacity: 0.4;
+    opacity: 0.1;
 }
 
 .SubscriptionItem_base__twoThirds_16 .SubscriptionItem_cardFooter_ff {
@@ -369,75 +486,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     justify-content: space-between;
 }
 
-.mediaMedium .SubscriptionItem_base__twoThirds_16 {
-    --card-width: 697rem;
-    --footer-margin: 20rem;
-    --subscription-text-left-distance: 20rem;
-}
-
 .mediaLarge .SubscriptionItem_base__twoThirds_16 {
     --card-width: 750rem;
     --footer-margin: 20rem;
     --subscription-text-left-distance: 20rem;
-}
-
-.SubscriptionItem_base__oneThird_74 {
-    --card-width: 260rem;
-    --footer-margin: 20rem;
-}
-
-.SubscriptionItem_base__oneThird_74:hover .SubscriptionItem_footerText_84 {
-    bottom: 220rem;
-}
-
-.SubscriptionItem_base__oneThird_74:hover .SubscriptionItem_footerDescription_e3 {
-    display: block;
-    height: auto;
-}
-
-.SubscriptionItem_base__oneThird_74:hover .SubscriptionItem_subscriptionImage_4d {
-    filter: none;
-    opacity: 0.4;
-}
-
-.SubscriptionItem_base__oneThird_74 .SubscriptionItem_subscriptionImage_4d {
-    background-image: var(--imageUriSmall);
-}
-
-.SubscriptionItem_base__oneThird_74 .SubscriptionItem_claimedText_23 {
-    margin-right: 20rem;
-}
-
-.SubscriptionItem_base__oneThird_74 .SubscriptionItem_activateButton_3e {
-    min-width: 108rem;
-    height: 20rem;
-    padding: 0;
-}
-
-.SubscriptionItem_base__oneThird_74 .SubscriptionItem_activateButtonLight_ce {
-    width: 411rem;
-    height: 317rem;
-    top: -150rem;
-    right: -156rem;
-}
-
-.SubscriptionItem_base__oneThird_74 .SubscriptionItem_cardFooter_ff {
-    justify-content: space-between;
-}
-
-.mediaSmall .SubscriptionItem_base__oneThird_74 {
-    --card-width: 312rem;
-    --footer-margin: 20rem;
-}
-
-.mediaMedium .SubscriptionItem_base__oneThird_74 {
-    --card-width: 338rem;
-    --footer-margin: 20rem;
-}
-
-.mediaLarge .SubscriptionItem_base__oneThird_74 {
-    --card-width: 364rem;
-    --footer-margin: 20rem;
 }
 
 .SubscriptionItem_cardFooter_ff {
@@ -454,7 +506,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .SubscriptionItem_subscriptionText_39 {
     width: 340rem;
-    padding-left: var(--subscription-text-left-distance);
+    padding-left: 44rem;
+}
+
+.mediaMedium .SubscriptionItem_subscriptionText_39 {
+    padding-left: 54rem;
+}
+
+.mediaLarge .SubscriptionItem_subscriptionText_39 {
+    padding-left: 86rem;
 }
 
 .SubscriptionItem_subscriptionHeader_1a {
@@ -486,6 +546,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .SubscriptionItem_ctaContainer_71 {
+    margin-left: 20rem;
     position: relative;
 }
 
@@ -578,14 +639,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background: url('R.images.gui.maps.icons.library.alertIcon') center center / cover;
 }
 
-.SubscriptionItem_footerTitle_a0 {
-    color: #e9e2bf;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin-bottom: 2rem;
-}
-
 .SubscriptionItem_spinner_9b {
     display: none;
     width: 14rem;
@@ -624,28 +677,51 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 2;
 }
 
+.SubscriptionItem_footer_62 {
+    margin-left: var(--footer-margin);
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 700;
+    line-height: 20rem;
+}
+
 .SubscriptionItem_footerText_84 {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin-left: var(--footer-margin);
-    position: relative;
+    width: var(--card-width);
+    padding-left: 44rem;
+    padding-right: 44rem;
+    position: absolute;
     bottom: 0rem;
     transition: bottom 0.2s;
 }
 
-.SubscriptionItem_footerDescription_e3 {
+.mediaLarge .SubscriptionItem_footerText_84 {
+    padding-left: 56rem;
+    padding-right: 56rem;
+}
+
+.SubscriptionItem_footerTitle_a0 {
     display: none;
-    width: calc(var(--card-width) - 2 * var(--footer-margin));
     height: 0rem;
-    text-shadow: 0 0 1px #000;
-    position: absolute;
-    top: 25rem;
+    margin-bottom: 10rem;
+    text-shadow: 0 0 1rem #000;
+    position: relative;
     transition: height 0.2s;
+    color: #e9e2bf;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.SubscriptionItem_footerDescription_e3 {
+    text-shadow: 0rem 0 1rem #000;
+    opacity: 0;
+    position: relative;
 }
 
 .SubscriptionItem_wotSubscriptionStatus_glow_c3 {
-    width: 400rem;
+    width: 364rem;
     height: 240rem;
     position: absolute;
     top: 0rem;
@@ -653,22 +729,52 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .SubscriptionItem_wotSubscriptionStatus_icon_active_75 {
-    width: 32rem;
+    width: 24rem;
+    height: 24rem;
+    margin-top: -20rem;
+    transform: translateX(-5rem);
+}
+
+.mediaLarge .SubscriptionItem_wotSubscriptionStatus_icon_active_75 {
+    width: 36rem;
     height: 32rem;
-    margin: -7rem 0rem -7rem -5rem;
+    margin-top: -20rem;
+}
+
+.SubscriptionItem_base__pro_9f .SubscriptionItem_wotSubscriptionStatus_icon_active_75 {
+    margin-top: -40rem;
+}
+
+.mediaLarge .SubscriptionItem_base__pro_9f .SubscriptionItem_wotSubscriptionStatus_icon_active_75 {
+    margin-top: -45rem;
 }
 
 .SubscriptionItem_wotSubscriptionStatus_icon_inactive_52 {
     width: 24rem;
     height: 24rem;
-    margin: -3rem 4rem -3rem 0rem;
+    margin-top: -18rem;
+    transform: translateX(-5rem);
+}
+
+.mediaLarge .SubscriptionItem_wotSubscriptionStatus_icon_inactive_52 {
+    width: 36rem;
+    height: 34rem;
+    margin-top: -22rem;
+}
+
+.SubscriptionItem_base__pro_9f .SubscriptionItem_wotSubscriptionStatus_icon_inactive_52 {
+    margin-top: -38rem;
+}
+
+.mediaLarge .SubscriptionItem_base__pro_9f .SubscriptionItem_wotSubscriptionStatus_icon_inactive_52 {
+    margin-top: -41rem;
 }
 
 .SubscriptionItem_wotSubscriptionStatus_text_fe {
-    color: #8c8c7e;
-    font-size: 14rem;
+    color: #ffffff;
+    font-size: 16rem;
     font-weight: 400;
-    line-height: 1.3;
+    line-height: 1.25;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -678,16 +784,34 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .SubscriptionItem_wotSubscriptionStatus_active_d8 {
     color: #80d43a;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+
+.mediaLarge .SubscriptionItem_wotSubscriptionStatus_active_d8 {
+    color: #80d43a;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 7rem;
 }
 
 .SubscriptionItem_wotSubscriptionStatus_inactive_0f {
     color: #ee7000;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+
+.mediaLarge .SubscriptionItem_wotSubscriptionStatus_inactive_0f {
+    color: #ee7000;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 7rem;
 }
 
 .SubscriptionItem_wotSubscriptionStatusContainer_b8 {
@@ -696,8 +820,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     justify-content: flex-start;
     align-items: center;
     position: absolute;
-    top: 35rem;
+    top: 19rem;
     left: var(--subscription-text-left-distance);
+}
+
+.mediaLarge .SubscriptionItem_wotSubscriptionStatusContainer_b8 {
+    top: 28rem;
 }
 
 .Countdown_base_fe {

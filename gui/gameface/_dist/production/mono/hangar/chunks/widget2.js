@@ -1,22 +1,22 @@
-import { w as e, r as s, j as t, f as a } from './vendor.js';
+import { v as e, r as s, j as t, f as a } from './vendor.js';
 import {
-    aF as o,
-    cm as n,
-    cn as i,
+    aw as o,
+    dr as n,
+    ds as i,
     i as r,
-    q as l,
+    l,
     r as c,
-    dl as d,
-    l as m,
-    N as p,
-    dm as u,
-    P as g,
-    dn as _,
-    dp as v,
-    dq as h,
-    ct as x,
-    dr as b,
-    ds as T,
+    dt as d,
+    T as m,
+    cj as p,
+    du as u,
+    d3 as g,
+    dv as _,
+    dw as v,
+    dx as x,
+    cr as h,
+    dy as b,
+    dz as T,
 } from './lib.js';
 var f = ((e) => ((e.News = 'news'), (e.ShopPromo = 'shopPromo'), (e.None = 'none'), e))(f || {});
 const N = {
@@ -89,7 +89,7 @@ const N = {
             );
         }, [W]);
         const [L, V] = s.useState(null),
-            [q, I] = s.useState(!1);
+            [z, I] = s.useState(!1);
         return (
             s.useEffect(() => {
                 const e = new Image();
@@ -106,7 +106,7 @@ const N = {
                     }
                 );
             }, [E]),
-            q
+            z
                 ? t.jsxs('div', {
                       className: a(j.base, j[`base__${r}Type`], B && j.base__video, e),
                       onClick: function (e) {
@@ -149,7 +149,7 @@ const N = {
                                               }),
                                       ],
                                   }),
-                                  t.jsx(h, {
+                                  t.jsx(x, {
                                       type: 'close',
                                       side: 'right',
                                       classNames: { base: a(j.closeButton, null == o ? void 0 : o.closeButton) },
@@ -164,7 +164,7 @@ const N = {
                                               k &&
                                                   t.jsx('div', {
                                                       className: a(j.description, null == o ? void 0 : o.description),
-                                                      children: t.jsx(x, {
+                                                      children: t.jsx(h, {
                                                           classMix: j.extendedText,
                                                           text: k,
                                                           isTruncationAvailable: !0,

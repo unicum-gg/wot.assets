@@ -9,7 +9,7 @@ import {
     j as c,
     w as _,
     x as m,
-    W as u,
+    Q as u,
     B as g,
     N as b,
     M as p,
@@ -262,33 +262,33 @@ function U({ vehicleImage: a, isAnyNotDone: t }) {
         ],
     });
 }
-const W = {
+const F = {
         base: 'ResultStats_e4f76c93',
         base__animTitleAndRewards: 'ResultStats_base__animTitleAndRewards_e6090ee9',
         stats: 'ResultStats_stats_9b9ef8ba',
         separator: 'ResultStats_separator_6f7d9820',
         separator__failed: 'ResultStats_separator__failed_989f1494',
     },
-    F = i.resolve('strings');
+    W = i.resolve('strings');
 function z({ animState: a, hasReward: t }) {
     const n = T().model,
         i = n.kills.get(),
         r = n.time.get(),
         o = n.allTargets.get(),
         l = [
-            { label: F.readOrEmpty('maps_training.result.kills'), value: i, all: o, icon: $.Destroy },
-            { label: F.readOrEmpty('maps_training.result.time'), value: r, icon: $.Timer },
+            { label: W.readOrEmpty('maps_training.result.kills'), value: i, all: o, icon: $.Destroy },
+            { label: W.readOrEmpty('maps_training.result.time'), value: r, icon: $.Timer },
         ],
         d = n.doneValue.get() !== f.Done;
     return s.jsxs('div', {
-        className: e(v(W.base, W, a), d && W.base__defeat),
+        className: e(v(F.base, F, a), d && F.base__defeat),
         children: [
             s.jsx(U, { vehicleImage: n.vehicleImage.get(), isAnyNotDone: d }),
             s.jsx('div', {
-                className: W.stats,
+                className: F.stats,
                 children: l.map((e, t) => s.jsx(P, { index: t, animState: a, ...e }, `item_${t}`)),
             }),
-            !t && s.jsx('div', { className: e(W.separator, d && W.separator__failed) }),
+            !t && s.jsx('div', { className: e(F.separator, d && F.separator__failed) }),
         ],
     });
 }
@@ -306,13 +306,13 @@ const L = {
         close: 'MapsTrainingResult_close_4c7f7d48',
         button: 'MapsTrainingResult_button_5ef0f480',
     },
-    q = i.resolve('strings'),
-    H = {
-        [f.Undone]: q.readOrEmpty('maps_training.result.title.lose'),
-        [f.PartialDone]: q.readOrEmpty('maps_training.result.title.partial'),
-        [f.Done]: q.readOrEmpty('maps_training.result.title.win'),
+    Q = i.resolve('strings'),
+    q = {
+        [f.Undone]: Q.readOrEmpty('maps_training.result.title.lose'),
+        [f.PartialDone]: Q.readOrEmpty('maps_training.result.title.partial'),
+        [f.Done]: Q.readOrEmpty('maps_training.result.title.win'),
     },
-    J = t(function () {
+    H = t(function () {
         const { model: e, controls: t } = T(),
             [n, i] = a.useState(w.Init),
             o = e.doneValue.get(),
@@ -349,7 +349,7 @@ const L = {
                 },
                 [b],
             ),
-            y = c(q.readOrEmpty('maps_training.result.mapName'), {
+            y = c(Q.readOrEmpty('maps_training.result.mapName'), {
                 map: p,
                 scenario: e.selectedScenario.get(),
                 type: e.selectedVehicleType.get(),
@@ -372,7 +372,7 @@ const L = {
                             className: L.titleWrapper,
                             children: [
                                 x && s.jsx('div', { className: L.titleBG }),
-                                s.jsx('div', { className: L.title, children: H[o] }),
+                                s.jsx('div', { className: L.title, children: q[o] }),
                             ],
                         }),
                         s.jsx(z, { hasReward: j, animState: n }),
@@ -384,9 +384,9 @@ const L = {
                     theme: g.themes.primary,
                     size: g.sizes.small,
                     onClick: t.close,
-                    children: q.readOrEmpty('maps_training.result.submit'),
+                    children: Q.readOrEmpty('maps_training.result.submit'),
                 }),
             ],
         });
     });
-b(s.jsx(p, { children: s.jsx(x, { children: s.jsx(J, {}) }) }));
+b(s.jsx(p, { children: s.jsx(x, { children: s.jsx(H, {}) }) }));

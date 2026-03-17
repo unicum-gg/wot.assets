@@ -1,42 +1,42 @@
-import { w as e, r as t, j as o, f as a } from '../../../chunks/vendor.js';
+import { v as e, r as t, j as o, f as a } from '../../../chunks/vendor.js';
 import {
     i as n,
     c as s,
     n as r,
-    a9 as i,
-    aa as l,
+    g as i,
+    p as l,
     r as c,
     u as d,
-    ab as u,
+    a as u,
     B as m,
-    ac as _,
-    ad as h,
-    ae as f,
-    af as b,
-    h as y,
-    ag as p,
-    E as g,
-    ah as x,
-    ai as v,
-    aj as w,
-    ak as C,
-    q as B,
-    b as N,
+    s as _,
+    t as h,
+    b as f,
+    d as y,
+    e as b,
+    D as p,
+    f as g,
+    h as x,
+    j as v,
+    A as w,
+    k as C,
+    l as B,
+    m as N,
     o as j,
-    U as k,
-    al as S,
-    am as M,
-    z as P,
-    an as R,
-    ao as E,
-    ap as I,
-    v as z,
-    a1 as W,
-    a5 as L,
-    a6 as O,
-    a8 as A,
+    q as k,
+    U as S,
+    v as M,
+    w as P,
+    x as R,
+    L as E,
+    y as I,
+    z,
+    C as L,
+    J as W,
+    E as A,
+    F as O,
 } from '../../../chunks/lib.js';
-import { a as F } from '../../../chunks/divider.js';
+import { D as F } from '../../../chunks/divider.js';
 import { _ as V } from '../../../chunks/preload-helper.js';
 /* empty css                    */ const [D, G] = n('ChatsProvider')(
         ({ observableModel: e }) => {
@@ -231,8 +231,8 @@ function he(e, t, o) {
     var i, l, c;
 }
 const fe = 'ChatButton_58c17ddd',
-    be = 'ChatButton_base__glow_e84e99cd',
-    ye = 'ChatButton_overlay_d0e16554',
+    ye = 'ChatButton_base__glow_e84e99cd',
+    be = 'ChatButton_overlay_d0e16554',
     pe = 'ChatButton_base__unreadMessages_1daa9390',
     ge = 'ChatButton_content_1735f2eb',
     xe = 'ChatButton_name_a3b5f0d7',
@@ -253,9 +253,9 @@ const Ne = e(
                 hasUnreadMessages: l,
                 className: c,
                 onClick: f,
-                onClose: b,
+                onClose: y,
             },
-            y,
+            b,
         ) {
             const p = d({ header: s ? `${s}/header` : void 0, body: s ? `${s}/body` : n }),
                 g = u(
@@ -263,7 +263,7 @@ const Ne = e(
                     t.useMemo(() => ({ clientID: e, canClose: !i }), [e, i]),
                 );
             return o.jsxs(m, {
-                ref: y,
+                ref: b,
                 ...p,
                 ...g,
                 theme: h.secondary,
@@ -272,8 +272,8 @@ const Ne = e(
                     const { left: o, top: a } = t.currentTarget.getBoundingClientRect();
                     (p.onClick(), f(e, me(o, a)));
                 },
-                className: a(fe, (r || l) && be, l && pe, c),
-                classNames: { overlay: ye, content: ge },
+                className: a(fe, (r || l) && ye, l && pe, c),
+                classNames: { overlay: be, content: ge },
                 autoAlignContent: !1,
                 children: [
                     o.jsx('div', { className: xe, children: Be(n) }),
@@ -281,7 +281,7 @@ const Ne = e(
                         o.jsx('div', {
                             className: ve,
                             onClick: function (t) {
-                                (t.stopPropagation(), b(e));
+                                (t.stopPropagation(), y(e));
                             },
                         }),
                 ],
@@ -303,11 +303,11 @@ function ke({ itemWidth: e, api: n, children: s }) {
     const r = t.useRef(null),
         [i, l] = t.useState(!1),
         [c, d] = f(n),
-        { disabled: u, animationScroll: b, applyScroll: y } = n;
+        { disabled: u, animationScroll: y, applyScroll: b } = n;
     function p(t) {
         function o() {
-            const o = b.scrollPosition.get();
-            y(o + t * e);
+            const o = y.scrollPosition.get();
+            b(o + t * e);
         }
         i || (o(), (r.current = window.setInterval(o, 100)), l(!0));
     }
@@ -359,10 +359,10 @@ const Se = 'ChatCarousel_14e3db73',
     Ee = 'ChatCarousel_button__firstItem_e66db7f4',
     Ie = 'ChatCarousel_divider_312a4ca4',
     ze = e(function ({ className: e }) {
-        const { api: n } = b(),
+        const { api: n } = y(),
             { model: s, controls: r } = G(),
             i = s.computes.sortedChats(),
-            l = y(i),
+            l = b(i),
             [c, d] = t.useState(-1),
             [u, m] = t.useState(!1),
             _ = t.useRef(null),
@@ -452,17 +452,17 @@ const Se = 'ChatCarousel_14e3db73',
             ],
         });
     });
-function We(e) {
+function Le(e) {
     return o.jsx(C, { children: o.jsx(ze, { ...e }) });
 }
-const Le = 'ChatChannels_c801bb1d',
-    Oe = 'ChatChannels_icon_a3ff928f';
-const Ae = e(function ({ className: e }) {
+const We = 'ChatChannels_c801bb1d',
+    Ae = 'ChatChannels_icon_a3ff928f';
+const Oe = e(function ({ className: e }) {
         const { controls: t } = G(),
             n = B(),
             s = c.resolve('strings'),
             r = N({ value: ce.small }, { medium: { value: ce.medium } }),
-            u = j(r.value, k),
+            u = j(r.value, S),
             m = d({
                 header: s.readOrEmpty('tooltips.loby_messenger.channels_button.header'),
                 body: s.readOrEmpty('tooltips.loby_messenger.channels_button.body'),
@@ -483,8 +483,8 @@ const Ae = e(function ({ className: e }) {
             onMouseEnter: function (e) {
                 (n.play('mouse-enter', { target: 'ChannelsButton', original: e }), m.onMouseEnter(e));
             },
-            className: a(Le, e),
-            children: o.jsx(S, { ...ue(u, 'chat'), className: Oe }),
+            className: a(We, e),
+            children: o.jsx(k, { ...ue(u, 'chat'), className: Ae }),
         });
     }),
     Fe = 'Contacts_51abbb46',
@@ -496,7 +496,7 @@ const Ae = e(function ({ className: e }) {
             { model: a } = U(),
             n = a.contactsCount.get(),
             s = N({ value: ce.small }, { medium: { value: ce.medium } }),
-            r = j(s.value, k),
+            r = j(s.value, S),
             i = d({
                 header: t.readOrEmpty('tooltips.loby_messenger.contacts_button.header'),
                 body: t.readOrEmpty('tooltips.loby_messenger.contacts_button.body'),
@@ -517,7 +517,7 @@ const Ae = e(function ({ className: e }) {
             },
             'data-test-id': 'contacts',
             children: [
-                o.jsx(S, { ...ue(r, 'contacts'), className: Ve }),
+                o.jsx(k, { ...ue(r, 'contacts'), className: Ve }),
                 n > 0 && o.jsx('div', { className: De, children: e.formatNumber('integral', n) }),
             ],
         });
@@ -590,7 +590,7 @@ const Ye = 'ReferralProgram_valueContainer_a1a1e336',
             i = s.bubbleCount.get() > 0,
             l = s.firstIndication.get(),
             u = N({ value: I.small }, { medium: { value: I.medium } }),
-            m = j(u.value, k),
+            m = j(u.value, S),
             _ = d({
                 header: i
                     ? n.readOrEmpty('tooltips.loby_messenger.referral_button.new_season.header')
@@ -612,7 +612,7 @@ const Ye = 'ReferralProgram_valueContainer_a1a1e336',
             },
             onMouseLeave: null == _ ? void 0 : _.onMouseLeave,
             children: [
-                o.jsx(S, { ...ue(m, 'referral_program', l), className: a(tt, l && ot) }),
+                o.jsx(k, { ...ue(m, 'referral_program', l), className: a(tt, l && ot) }),
                 o.jsx(z.Root, {
                     hidden: !i,
                     className: at,
@@ -646,31 +646,31 @@ const _t = e(function () {
                     : { sessionStatisticState: e ? dt : ut, iconEnabled: e };
             })(s, i),
             m = N({ value: ce.small }, { medium: { value: ce.medium } }),
-            _ = j(m.value, k),
+            _ = j(m.value, S),
             h = c.resolve('strings'),
             f = d({
                 header: h.readOrEmpty('session_stats.tooltip.mainBtn.header'),
                 body: h.readOrEmpty(`session_stats.tooltip.mainBtn.body.${l}`),
             }),
-            b = M('SessionStatsPopover'),
-            y = B();
+            y = M('SessionStatsPopover'),
+            b = B();
         return (
             r &&
             o.jsxs('div', {
-                ...b,
+                ...y,
                 ...f,
                 className: a(st, u && rt),
                 onClick: function (e) {
                     (u &&
-                        (y.play('click', { target: 'SessionStatisticButton', original: e }), null == b || b.onClick(e)),
+                        (b.play('click', { target: 'SessionStatisticButton', original: e }), null == y || y.onClick(e)),
                         null == f || f.onClick());
                 },
                 onMouseEnter: function (e) {
-                    (u && y.play('mouse-enter', { target: 'SessionStatisticButton', original: e }),
+                    (u && b.play('mouse-enter', { target: 'SessionStatisticButton', original: e }),
                         null == f || f.onMouseEnter(e));
                 },
                 children: [
-                    o.jsx(S, { ...ue(_, u ? 'session_stats' : 'session_stats_disabled'), className: a(it, u && lt) }),
+                    o.jsx(k, { ...ue(_, u ? 'session_stats' : 'session_stats_disabled'), className: a(it, u && lt) }),
                     n > 0 && o.jsx('div', { className: ct, children: e.formatNumber('integral', n) }),
                 ],
             })
@@ -678,15 +678,15 @@ const _t = e(function () {
     }),
     ht = 'VehicleCompare_cff2d129',
     ft = 'VehicleCompare_icon_cbce43e9',
-    bt = 'VehicleCompare_vehicleCount_691224b7',
-    yt = e(function (e) {
+    yt = 'VehicleCompare_vehicleCount_691224b7',
+    bt = e(function (e) {
         const { model: t } = oe(),
             a = t.vehicleCount.get(),
             n = a > 0 && t.enabled.get();
         return o.jsx(pt, { className: e.className, count: a, visible: n });
     });
 function pt({ count: e, visible: n, className: s }) {
-    const r = y(e),
+    const r = b(e),
         i = t.useRef(null),
         l = c.resolve('intl'),
         u = c.resolve('strings'),
@@ -701,9 +701,9 @@ function pt({ count: e, visible: n, className: s }) {
         }
     }, [m, e, r]);
     const _ = N({ value: ce.small }, { medium: { value: ce.medium } }),
-        h = j(_.value, k),
+        h = j(_.value, S),
         f = d({ body: u.readOrEmpty('tooltips.loby_messenger.vehicle_compare_button.body') }),
-        b = B();
+        y = B();
     if (n)
         return o.jsxs('div', {
             ...m,
@@ -711,17 +711,17 @@ function pt({ count: e, visible: n, className: s }) {
             ref: i,
             className: a(ht, s),
             onClick: function (e) {
-                (b.play('click', { target: 'VehicleCompareButton', original: e }),
+                (y.play('click', { target: 'VehicleCompareButton', original: e }),
                     null == m || m.onClick(e),
                     null == f || f.onClick());
             },
             onMouseEnter: function (e) {
-                (b.play('mouse-enter', { target: 'VehicleCompareButton', original: e }),
+                (y.play('mouse-enter', { target: 'VehicleCompareButton', original: e }),
                     null == f || f.onMouseEnter(e));
             },
             children: [
-                o.jsx(S, { ...ue(h, 'comparison'), className: ft }),
-                o.jsx('div', { className: bt, children: l.formatNumber('integral', e) }),
+                o.jsx(k, { ...ue(h, 'comparison'), className: ft }),
+                o.jsx('div', { className: yt, children: l.formatNumber('integral', e) }),
             ],
         });
 }
@@ -746,9 +746,9 @@ const Pt = e(
                 m = B(),
                 _ = c.resolve('strings'),
                 h = t.useMemo(() => [], []),
-                f = y(i) ?? i,
-                b = N({ value: I.small }, { medium: { value: I.medium } }),
-                p = j(b.value, k),
+                f = b(i) ?? i,
+                y = N({ value: I.small }, { medium: { value: I.medium } }),
+                p = j(y.value, S),
                 g = P('settingsButton', h),
                 x = d({
                     header: _.readOrEmpty('tooltips.loby_messenger.service_button.header'),
@@ -767,16 +767,16 @@ const Pt = e(
                         className: wt,
                         children: [
                             o.jsx(Ge, {}),
-                            o.jsx(Ae, { className: Ct }),
+                            o.jsx(Oe, { className: Ct }),
                             r.enabled.get() && o.jsx(nt, { className: Ct }),
                             o.jsx(Xe, { options: w }),
                         ],
                     }),
-                    o.jsx(We, {}),
+                    o.jsx(Le, {}),
                     o.jsxs('div', {
                         className: wt,
                         children: [
-                            o.jsx(yt, { className: Mt }),
+                            o.jsx(bt, { className: Mt }),
                             o.jsx(_t, {}),
                             o.jsx(F, { className: St }),
                             o.jsx(Ke, {}),
@@ -793,7 +793,7 @@ const Pt = e(
                                     (m.play('mouse-enter', { target: 'GameMenuButton', original: e }),
                                         null == g || g.onMouseEnter(e));
                                 },
-                                children: o.jsx(S, { ...ue(p, 'game_menu_button'), className: jt }),
+                                children: o.jsx(k, { ...ue(p, 'game_menu_button'), className: jt }),
                             }),
                             o.jsx(F, { className: St }),
                             o.jsxs('div', {
@@ -811,13 +811,13 @@ const Pt = e(
                                         null == x || x.onMouseEnter(e));
                                 },
                                 children: [
-                                    o.jsx(S, { ...ue(p, 'notification_button', l), className: jt }),
+                                    o.jsx(k, { ...ue(p, 'notification_button', l), className: jt }),
                                     o.jsx(z.Root, {
                                         hidden: i <= 0,
                                         className: kt,
                                         children: o.jsx(z.Value, {
                                             value: ((C = i), (R = f), 0 === C ? R : C),
-                                            size: b.value,
+                                            size: y.value,
                                             classNames: { valueContainer: gt, value: xt },
                                         }),
                                     }),
@@ -834,13 +834,13 @@ const Pt = e(
     Et = 'App_footer_8633140e',
     It = 'App_footer__oldStyle_ed955e9f';
 const zt = e(function () {
-    const e = W(250, 0),
+    const e = L(250, 0),
         { model: t } = T();
     return o.jsx('div', { className: Rt, children: o.jsx(Pt, { ref: e, className: a(Et, t.oldStyle.get() && It) }) });
 });
-A(
-    new L()
-        .add(O)
+O(
+    new W()
+        .add(A)
         .add(H)
         .addWithProps($, {
             options: { rootId: c.resolve('aliases').read((e) => e.lobby_footer.default.ContactsList('resId')) },

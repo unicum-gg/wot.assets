@@ -1,5 +1,5 @@
 import { j as s, J as l } from './vendor.js';
-import { dl as o, cS as a } from './lib.js';
+import { dv as o, d0 as a } from './lib.js';
 const i = 'DivineGlow_2b9c4670',
     e = 'DivineGlow_glow_fddce7f8',
     d = 'DivineGlow_glow__bg_a3df35d7',

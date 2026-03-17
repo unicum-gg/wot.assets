@@ -217,14 +217,14 @@
                         getExternalPaddingsRem: () => tu,
                         getFontNames: () => uu,
                         getScale: () => K,
-                        getSize: () => V,
+                        getSize: () => I,
                         getViewGlobalPosition: () => j,
                         initExternalPaddings: () => ru,
                         isEventHandled: () => $,
                         isFocused: () => Z,
                         pxToRem: () => q,
                         remToPx: () => z,
-                        resize: () => I,
+                        resize: () => V,
                         sendEvent: () => R,
                         setAnimateWindow: () => Y,
                         setEventHandled: () => X,
@@ -420,10 +420,10 @@
                 function U(u) {
                     viewEnv.setHitAreaPaddingsRem(u.top, u.right, u.bottom, u.left, 15);
                 }
-                function V(u = 'px') {
+                function I(u = 'px') {
                     return 'rem' === u ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
                 }
-                function I(u, e, t = 'px') {
+                function V(u, e, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(u, e) : viewEnv.resizeViewPx(u, e);
                 }
                 function j(u = 'rem') {
@@ -920,7 +920,7 @@
                 t.d(e, { Z5: () => F, cy: () => A });
                 const F = {
                         getNumberFormat: (u, e) => systemLocale.getNumberFormat(u, e),
-                        getRealFormat: (u, e) => systemLocale.getRealFormat(u, e),
+                        getRealFormat: (u, e, t = 2) => systemLocale.getRealFormat(u, e, t),
                         getTimeFormat: (u, e) => systemLocale.getTimeFormat(u, e),
                         getDateFormat: (u, e) => systemLocale.getDateFormat(u, e),
                         toUpperCase: (u) => systemLocale.toUpperCase(u),
@@ -932,9 +932,17 @@
                         getTimeString: (u, e, t) => userLocale.getTimeString(u, e, void 0 === t || t),
                     };
             },
-            8930: (u, e, t) => {
+            4738: (u, e, t) => {
                 (t(7363), t(6483), t(9924));
-                let F, A;
+                let F;
+                !(function (u) {
+                    ((u[(u.LEFT = 0)] = 'LEFT'),
+                        (u[(u.WHEEL = 1)] = 'WHEEL'),
+                        (u[(u.RIGHT = 2)] = 'RIGHT'),
+                        (u[(u.FOURTH = 3)] = 'FOURTH'),
+                        (u[(u.FIFTH = 4)] = 'FIFTH'));
+                })(F || (F = {}));
+                let A, E;
                 (!(function (u) {
                     ((u.main = 'main'),
                         (u.primary = 'primary'),
@@ -942,13 +950,13 @@
                         (u.primaryRed = 'primaryRed'),
                         (u.secondary = 'secondary'),
                         (u.ghost = 'ghost'));
-                })(F || (F = {})),
+                })(A || (A = {})),
                     (function (u) {
                         ((u.extraSmall = 'extraSmall'),
                             (u.small = 'small'),
                             (u.medium = 'medium'),
                             (u.large = 'large'));
-                    })(A || (A = {})));
+                    })(E || (E = {})));
                 t(9916);
             },
             7363: (u) => {
@@ -1031,6 +1039,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [428], () => __webpack_require__(8930));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [428], () => __webpack_require__(4738));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

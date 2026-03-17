@@ -1,7 +1,7 @@
 import { k as e, j as s, e as o, m as t, r as a } from './vendor.js';
 import { S as n, A as r, M as c } from './use_cover_size.js';
 import { d as i, P as l, R as u, S as m, B as d, a as x } from './statistics2.js';
-import { i as p, P as g, k as b, n as j, a0 as B, d as w, T as h } from './lib.js';
+import { i as p, P as g, F as b, n as j, a0 as B, e as w, T as h } from './lib.js';
 import { a as f, g as C, C as N } from './resources.js';
 import { g as v } from './getConfig.js';
 import { S as y } from './sounds.js';
@@ -110,10 +110,10 @@ const E = t(function () {
         });
     }),
     z = 'App_43bfa38',
-    X = 'App_layer_bb0bfe54',
-    $ = 'App_statsButton_403e9f7b',
-    q = 'App_popover_e06fed7f',
-    F = { context: 'model.noBoxes.statistics' };
+    F = 'App_layer_bb0bfe54',
+    X = 'App_statsButton_403e9f7b',
+    $ = 'App_popover_e06fed7f',
+    q = { context: 'model.noBoxes.statistics' };
 const J = t(function () {
         const [e, o] = a.useState(!1),
             { model: t, controls: n } = A(),
@@ -132,13 +132,13 @@ const J = t(function () {
             s.jsxs(l, {
                 className: z,
                 children: [
-                    s.jsx(u, { className: X, layer: C, loop: !0, autoplay: !0 }),
+                    s.jsx(u, { className: F, layer: C, loop: !0, autoplay: !0 }),
                     s.jsxs(l.PanelControls, {
                         children: [
                             g &&
                                 s.jsx(m, {
                                     onClick: () => o(!0),
-                                    className: $,
+                                    className: X,
                                     label: r.statsButton,
                                     icon: c.statsIcon,
                                 }),
@@ -164,7 +164,7 @@ const J = t(function () {
                                 eventName: j,
                             }),
                         }),
-                    e && s.jsx(x, { options: F, onHidden: () => o(!1), isStatsEnabled: g, className: q }),
+                    e && s.jsx(x, { options: q, onHidden: () => o(!1), isStatsEnabled: g, className: $ }),
                 ],
             })
         );

@@ -1,15 +1,15 @@
-import { G as e, H as s, I as a, v as r, j as t } from '../../../../chunks/vendor.js';
-import { i, a as l, n as c, r as d, ap as n, aK as p, ay as o, ax as h } from '../../../../chunks/lib.js';
+import { L as e, M as s, N as a, v as r, j as t } from '../../../../chunks/vendor.js';
+import { i as l, h as i, n as c, q as d, ax as n, bs as p, r as o, U as h } from '../../../../chunks/lib.js';
 import { A as m, B as u } from '../../../../chunks/model.js';
-const _ = s({ alertType: a(m), battleSchedule: u }),
-    [j, x] = i()((s) => {
+/* empty css                        */ const j = s({ alertType: a(m), battleSchedule: u }),
+    [_, b] = l()((s) => {
         const a = s.observableModel.primitives(['params', 'type']);
         return {
             type: a.type,
             computes: {
-                params: l.primitive(() => {
+                params: i.primitive(() => {
                     try {
-                        return e(_, JSON.parse(a.params.get()));
+                        return e(j, JSON.parse(a.params.get()));
                     } catch (s) {
                         return (console.error(s), { alertType: m.None, battleSchedule: [] });
                     }
@@ -17,8 +17,8 @@ const _ = s({ alertType: a(m), battleSchedule: u }),
             },
         };
     }, c);
-function b() {
-    return x().model.computes.params();
+function x() {
+    return b().model.computes.params();
 }
 const v = {
         base: 'App_b217f952',
@@ -35,8 +35,8 @@ const v = {
     },
     f = d.resolve('strings'),
     N = R.strings.battle_royale.ceasefire,
-    y = r(function () {
-        const { battleSchedule: e } = b();
+    A = r(function () {
+        const { battleSchedule: e } = x();
         return t.jsxs('div', {
             className: v.battleSchedule,
             children: [
@@ -76,8 +76,8 @@ const v = {
             ],
         });
     }),
-    A = r(function () {
-        const { alertType: e } = b(),
+    y = r(function () {
+        const { alertType: e } = x(),
             s = e === m.CeasefireAllServers || e === m.CeasefireCurrentServer;
         return t.jsx(p, {
             children: t.jsx(p.Decorator, {
@@ -100,10 +100,10 @@ const v = {
                                 }),
                             ],
                         }),
-                        s && t.jsx(y, {}),
+                        s && t.jsx(A, {}),
                     ],
                 }),
             }),
         });
     });
-o(t.jsx(h, { children: t.jsx(j, { children: t.jsx(A, {}) }) }));
+o(t.jsx(h, { children: t.jsx(_, { children: t.jsx(y, {}) }) }));

@@ -773,7 +773,7 @@
                 u.d(t, { Ew: () => i, Z5: () => n, cy: () => a });
                 const n = {
                         getNumberFormat: (e, t) => systemLocale.getNumberFormat(e, t),
-                        getRealFormat: (e, t) => systemLocale.getRealFormat(e, t),
+                        getRealFormat: (e, t, u = 2) => systemLocale.getRealFormat(e, t, u),
                         getTimeFormat: (e, t) => systemLocale.getTimeFormat(e, t),
                         getDateFormat: (e, t) => systemLocale.getDateFormat(e, t),
                         toUpperCase: (e) => systemLocale.toUpperCase(e),
@@ -2102,16 +2102,17 @@
                 const tt = (e) => {
                         let t = e.value,
                             u = e.isEmpty,
-                            n = e.className,
-                            i = e.size,
-                            s = void 0 === i ? 'normal' : i,
-                            r = e.fadeInAnimation,
-                            o = void 0 !== r && r,
-                            l = e.hide,
-                            c = void 0 !== l && l,
-                            _ = e.maximumNumber,
-                            d = void 0 === _ ? 99 : _,
-                            m = (function (e, t) {
+                            n = void 0 !== u && u,
+                            i = e.className,
+                            s = e.size,
+                            r = void 0 === s ? 'normal' : s,
+                            o = e.fadeInAnimation,
+                            l = void 0 !== o && o,
+                            c = e.hide,
+                            _ = void 0 !== c && c,
+                            d = e.maximumNumber,
+                            m = void 0 === d ? 99 : d,
+                            E = (function (e, t) {
                                 if (null == e) return {};
                                 var u,
                                     n,
@@ -2120,29 +2121,29 @@
                                 for (n = 0; n < i.length; n++) ((u = i[n]), t.indexOf(u) >= 0 || (a[u] = e[u]));
                                 return a;
                             })(e, Je);
-                        const E = u ? null : t,
-                            b = 'string' == typeof E;
-                        if ((E && !b && E < 0) || 0 === E) return null;
-                        const g = E && !b && E > d,
-                            p = S()(
+                        const b = n ? null : t,
+                            g = 'string' == typeof b;
+                        if ((b && !g && b < 0) || 0 === b) return null;
+                        const p = b && !g && b > m,
+                            A = S()(
                                 Qe.base,
-                                Qe[`base__${s}`],
-                                o && Qe.base__animated,
-                                c && Qe.base__hidden,
-                                !E && Qe.base__pattern,
-                                u && Qe.base__empty,
-                                n,
+                                Qe[`base__${r}`],
+                                l && Qe.base__animated,
+                                _ && Qe.base__hidden,
+                                !b && Qe.base__pattern,
+                                n && Qe.base__empty,
+                                i,
                             );
                         return a().createElement(
                             'div',
-                            et({ className: p }, m),
+                            et({ className: A }, E),
                             a().createElement('div', { className: Qe.bg }),
                             a().createElement('div', { className: Qe.pattern }),
                             a().createElement(
                                 'div',
-                                { className: S()(Qe.value, b && Qe.value__text) },
-                                g ? d : E,
-                                g && a().createElement('span', { className: Qe.plus }, '+'),
+                                { className: S()(Qe.value, g && Qe.value__text) },
+                                p ? m : b,
+                                p && a().createElement('span', { className: Qe.plus }, '+'),
                             ),
                         );
                     },
@@ -3481,11 +3482,12 @@
                                         u || (l && l(e), f(!1));
                                     },
                                     onMouseDown: function (e) {
-                                        u ||
-                                            (null !== b && T(b),
+                                        if (u) return;
+                                        const t = e.button === ru.LEFT;
+                                        (null !== b && t && T(b),
                                             o && o(e),
                                             d && (u || (g.current && (g.current.focus(), h(!0)))),
-                                            f(!0));
+                                            t && f(!0));
                                     },
                                     onMouseLeave: function (e) {
                                         u || (c && c(e), f(!1));

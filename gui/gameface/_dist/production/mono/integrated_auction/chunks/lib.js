@@ -102,14 +102,14 @@ const S = {
         return e in y;
     },
     formatNumber: function (e, t) {
-        return window.systemLocale.getNumberFormat(t, y[e]);
+        return window.formatters.getNumberFormat(t, y[e]);
     },
     numberFormats: b,
     isRealFormat: function (e) {
         return e in _;
     },
-    formatReal: function (e, t) {
-        return window.systemLocale.getRealFormat(t, _[e]);
+    formatReal: function (e, t, n = 2) {
+        return window.formatters.getRealFormat(t, _[e], n);
     },
     realFormats: x,
     formatDateTime: function (e, t, n = !0) {
@@ -256,11 +256,11 @@ function O(e) {
 function N(e) {
     return { [k]: k, value: e, unit: 'millis' };
 }
-const L = N(0);
-function C(e) {
+const C = N(0);
+function F(e) {
     return { [k]: k, value: e, unit: 'seconds' };
 }
-const F = {
+const L = {
         millis: (e) => e,
         seconds: (e) => 1e3 * e,
         minutes: (e) => 1e3 * e * 60,
@@ -274,7 +274,7 @@ const F = {
     z = (e) => e / 1e3 / 60 / 60 / 24,
     V = (e) => e / 1e3 / 60 / 60 / 24 / 7;
 function B(e) {
-    return (0, F[e.unit])(e.value);
+    return (0, L[e.unit])(e.value);
 }
 const U = M(function (e, t) {
         return N(B(e) + B(t));
@@ -417,6 +417,7 @@ const Z = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
         })(),
         onDisplayChanged: G('self.onShowingStatusChanged'),
         onFocusUpdated: G('self.onFocusChanged'),
+        onExternalPaddingsUpdated: G('self.onPaddingsUpdated'),
         children: {
             onAdded: G('children.onAdded'),
             onLoaded: G('children.onLoaded'),
@@ -1071,15 +1072,15 @@ function Ne(e) {
     return a.jsx(Oe.Provider, { value: r, children: e.children });
 }
 s.createContext(null);
-const Le = new Set(['number', 'string', 'boolean', 'bigint', 'undefined', 'function']),
-    Ce = new Set(['number', 'string', 'boolean', 'bigint']),
-    Fe = new Set(['Dict']);
+const Ce = new Set(['number', 'string', 'boolean', 'bigint', 'undefined', 'function']),
+    Fe = new Set(['number', 'string', 'boolean', 'bigint']),
+    Le = new Set(['Dict']);
 function je(e, { shallow: t = !0, depth: n = 0, maxDepth: r = 32 } = {}) {
     var o, i;
     const s = e,
         a = typeof e;
     if (n > r) throw new Error(`Too deeply nested to copy. Max is ${r}.`);
-    if (Le.has(a)) return s;
+    if (Ce.has(a)) return s;
     if (null === s) return s;
     const u = { depth: n + 1, maxDepth: r };
     if (Array.isArray(s)) return s.map((e) => je(e, u));
@@ -1094,7 +1095,7 @@ function je(e, { shallow: t = !0, depth: n = 0, maxDepth: r = 32 } = {}) {
                 const e = {};
                 for (const t in s) {
                     const n = s[t];
-                    Ce.has(typeof n) && (e[t] = n);
+                    Fe.has(typeof n) && (e[t] = n);
                 }
                 return e;
             }
@@ -1103,7 +1104,7 @@ function je(e, { shallow: t = !0, depth: n = 0, maxDepth: r = 32 } = {}) {
                 for (const t in s) {
                     const n = s[t],
                         r = (null == (i = null == s ? void 0 : s.constructor) ? void 0 : i.name) ?? 'UNKNOWN';
-                    Fe.has(r) || (e[t] = je(n, u));
+                    Le.has(r) || (e[t] = je(n, u));
                 }
                 return e;
             }
@@ -1326,7 +1327,13 @@ const He =
                         }),
                         m = { ...h, mode: o, model: f, externalModel: d, cleanup: c, requires: g },
                         p = 'mocks' === o && (null == a ? void 0 : a.controls) ? a.controls(m) : {};
-                    return { model: f, controls: { ...(null == n ? void 0 : n(m)), ...p }, externalModel: d, mode: o };
+                    return {
+                        model: f,
+                        controls: { ...(null == n ? void 0 : n(m)), ...p },
+                        externalModel: d,
+                        mode: o,
+                        rootId: (null == s ? void 0 : s.rootId) ?? 0,
+                    };
                 }),
                 y = s.useRef(!1),
                 [_, b] = s.useState(m);
@@ -1968,7 +1975,7 @@ function Nt({
     const [h] = (function (e) {
         const { type: t, tick: n, limit: r } = e,
             o = e.autostart ?? !1,
-            i = e.start ?? L,
+            i = e.start ?? C,
             [a, u] = s.useState({ current: i, running: o }),
             d = s.useRef(0);
         s.useEffect(
@@ -2007,9 +2014,9 @@ function Nt({
         s.useMemo(
             () => ({
                 type: 'countdown',
-                start: O(e) ? e : C(e),
-                limit: O(t) ? t : C(t),
-                tick: O(n) ? n : C(n),
+                start: O(e) ? e : F(e),
+                limit: O(t) ? t : F(t),
+                tick: O(n) ? n : F(n),
                 autostart: d,
             }),
             [d, t, e, n],

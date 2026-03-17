@@ -1,5 +1,5 @@
-import { x as e, j as s, _ as t } from '../../../../chunks/vendor.js';
-import { i as a, c as r, n, r as o, aE as i, I as p, aD as c } from '../../../../chunks/lib.js';
+import { z as e, j as s, _ as t } from '../../../../chunks/vendor.js';
+import { i as a, c as r, n, r as o, aM as i, I as p, aK as c } from '../../../../chunks/lib.js';
 const [l, d] = a()((e) => {
     const s = e.observableModel.primitives(['params', 'type']);
     return {
@@ -17,8 +17,8 @@ const m = 'App_19d66a47',
     j = 'App_statusInfo_f64a6532',
     v = 'App_image_7518e11e',
     y = 'App_description_4c81e48b',
-    x =
-        ((f = (() => {
+    f =
+        ((x = (() => {
             let e;
             const s = (s, a) => {
                 var r, n;
@@ -68,13 +68,13 @@ const m = 'App_19d66a47',
             return (e, t) => s(JSON.parse(e), t);
         })()),
         function () {
-            return d().model.computes.params(f);
+            return d().model.computes.params(x);
         });
-var f;
+var x;
 const _ = o.resolve('strings'),
     b = 'veh_skill_tree.tooltips.vanityEntryPoint',
     k = e(function () {
-        const { isUnlocked: e } = x();
+        const { isUnlocked: e } = f();
         return s.jsx(i, {
             children: s.jsx(i.Decorator, {
                 children: s.jsxs('div', {

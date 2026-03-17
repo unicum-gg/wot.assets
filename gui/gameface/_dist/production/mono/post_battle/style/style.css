@@ -153,6 +153,58 @@
     color: #a29b70;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.VehicleLevel_3c938122 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    color: var(--color-general-primary);
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.VehicleType_30b4aab0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.VehicleType_base__x24x24_a3dc7aa3 {
+    width: 20rem;
+    height: 24rem;
+}
+.VehicleType_base__x48x48_cb59f57a {
+    width: 32rem;
+    height: 48rem;
+}
+.VehicleType_base__x64x64_bb9b890 {
+    width: 44rem;
+    height: 64rem;
+}
+.VehicleType_base__x96x96_919f9f92 {
+    width: 66rem;
+    height: 96rem;
+}
+.VehicleType_base__premium__x24x24_92335fef {
+    width: 24rem;
+    height: 24rem;
+}
+.VehicleType_base__premium__x48x48_e19c5d21 {
+    width: 48rem;
+    height: 48rem;
+}
+.VehicleType_base__premium__x64x64_ba9a2a05 {
+    width: 64rem;
+    height: 64rem;
+}
+.VehicleType_base__premium__x96x96_d837a523 {
+    width: 96rem;
+    height: 96rem;
+}
+
+.VehicleType_icon_b15d2628 {
+    width: 100%;
+    height: 100%;
+} /* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
 .Value_880359b5::after {
     position: absolute;
     top: 0;
@@ -1224,58 +1276,6 @@ html[lang='ko'] .KeyButton_content_a724f532 {
     height: 304rem;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.VehicleLevel_3c938122 {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.3em;
-    color: var(--color-general-primary);
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.VehicleType_30b4aab0 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.VehicleType_base__x24x24_a3dc7aa3 {
-    width: 20rem;
-    height: 24rem;
-}
-.VehicleType_base__x48x48_cb59f57a {
-    width: 32rem;
-    height: 48rem;
-}
-.VehicleType_base__x64x64_bb9b890 {
-    width: 44rem;
-    height: 64rem;
-}
-.VehicleType_base__x96x96_919f9f92 {
-    width: 66rem;
-    height: 96rem;
-}
-.VehicleType_base__premium__x24x24_92335fef {
-    width: 24rem;
-    height: 24rem;
-}
-.VehicleType_base__premium__x48x48_e19c5d21 {
-    width: 48rem;
-    height: 48rem;
-}
-.VehicleType_base__premium__x64x64_ba9a2a05 {
-    width: 64rem;
-    height: 64rem;
-}
-.VehicleType_base__premium__x96x96_d837a523 {
-    width: 96rem;
-    height: 96rem;
-}
-
-.VehicleType_icon_b15d2628 {
-    width: 100%;
-    height: 100%;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
 .Tooltip_6d997cee {
     display: flex;
     position: absolute;
@@ -1356,32 +1356,46 @@ on a texture and its positioning and sizes should be managed by the texture and 
     opacity: 0;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.BattleInfo_d5226211 {
+.BattleInfo_6333ab61 {
     display: flex;
-    opacity: 0.5;
 }
 
-.BattleInfo_group_962f81f6 {
-    display: flex;
-    color: rgba(var(--color-general-primary-rgb), 0.9);
+.BattleInfo_group_161b6f97,
+.BattleInfo_textString_be34b14f {
     font-size: 16rem;
     line-height: 1;
-    position: relative;
 }
-.mediaMedium .BattleInfo_group_962f81f6 {
+.mediaMedium .BattleInfo_group_161b6f97,
+.mediaMedium .BattleInfo_textString_be34b14f {
     font-size: 18rem;
 }
-.mediaLarge .BattleInfo_group_962f81f6 {
+.mediaLarge .BattleInfo_group_161b6f97,
+.mediaLarge .BattleInfo_textString_be34b14f {
     font-size: 22rem;
 }
-.BattleInfo_group_962f81f6 + .BattleInfo_group_962f81f6::before {
+
+.BattleInfo_group_161b6f97 {
+    display: flex;
+    color: rgba(var(--color-general-primary-rgb), 0.5);
+    position: relative;
+}
+.BattleInfo_6333ab61 .BattleInfo_group_161b6f97 {
+    white-space: pre-wrap;
+}
+.BattleInfo_group_161b6f97 + .BattleInfo_group_161b6f97::before {
     width: 1rem;
     height: 100%;
     margin: 0 12rem;
     background-color: var(--color-general-primary);
     background-image: url(R.images.gui.maps.icons.ui.noise);
-    opacity: 0.5;
+    opacity: 0.25;
     content: '';
+}
+
+.BattleInfo_vehicleName_333dba78 {
+    display: flex;
+    align-items: center;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
 }
 
 .BattleInfo_commendations_731c9f38 {
@@ -1483,12 +1497,12 @@ on a texture and its positioning and sizes should be managed by the texture and 
     font-size: 18rem;
 }
 
-.Items_animatedValue_6a64bc54 {
+.Items_animatedValue_c7d2e119 {
     display: flex;
     justify-content: center;
     min-width: 100%;
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 50%;
 }
 
@@ -2001,6 +2015,9 @@ on a texture and its positioning and sizes should be managed by the texture and 
 }
 .mediaMedium .Total_item_a8580361 + .Total_item_a8580361 {
     margin-top: 13rem;
+}
+.Total_item__extinguished_4be8343f {
+    opacity: 0.4;
 }
 
 .Total_divider_1de1ca28 {
@@ -3212,8 +3229,9 @@ on a texture and its positioning and sizes should be managed by the texture and 
     left: 0;
 }
 
-.Overview_b4108a3c {
+.Overview_2a415431 {
     --status-text-size: 132rem;
+    --status-line-height: 1.5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3223,13 +3241,13 @@ on a texture and its positioning and sizes should be managed by the texture and 
     position: relative;
     z-index: 0;
 }
-.mediaMedium .Overview_b4108a3c {
+.mediaMedium .Overview_2a415431 {
     --status-text-size: 140rem;
 }
-.mediaLarge .Overview_b4108a3c {
+.mediaLarge .Overview_2a415431 {
     --status-text-size: 172rem;
 }
-.mediaExtraLarge .Overview_b4108a3c {
+.mediaExtraLarge .Overview_2a415431 {
     --status-text-size: 220rem;
 }
 
@@ -3266,33 +3284,43 @@ on a texture and its positioning and sizes should be managed by the texture and 
     margin-bottom: 218rem;
 }
 
-.Overview_statusWrapper_cda9b438 {
+.Overview_statusWrapper_633ae157 {
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: var(--status-text-size);
+    height: calc(var(--status-text-size) * var(--status-line-height));
     margin-bottom: -39rem;
 }
-.mediaMedium .Overview_statusWrapper_cda9b438 {
+.mediaMedium .Overview_statusWrapper_633ae157 {
     margin-bottom: -41rem;
 }
-.mediaLarge .Overview_statusWrapper_cda9b438 {
+.mediaLarge .Overview_statusWrapper_633ae157 {
     margin-bottom: -57rem;
 }
-.mediaExtraLarge .Overview_statusWrapper_cda9b438 {
+.mediaExtraLarge .Overview_statusWrapper_633ae157 {
     margin-bottom: -72rem;
 }
-.Overview_info__withoutMedals_6be29b19 .Overview_statusWrapper_cda9b438 {
+.Overview_info__withoutMedals_6be29b19 .Overview_statusWrapper_633ae157 {
     margin-bottom: 30rem;
 }
-.mediaMedium .Overview_info__withoutMedals_6be29b19 .Overview_statusWrapper_cda9b438 {
+.mediaMedium .Overview_info__withoutMedals_6be29b19 .Overview_statusWrapper_633ae157 {
     margin-bottom: 13rem;
 }
-.mediaLarge .Overview_info__withoutMedals_6be29b19 .Overview_statusWrapper_cda9b438 {
+.mediaLarge .Overview_info__withoutMedals_6be29b19 .Overview_statusWrapper_633ae157 {
     margin-bottom: 20rem;
 }
-.mediaExtraLarge .Overview_info__withoutMedals_6be29b19 .Overview_statusWrapper_cda9b438 {
+.mediaExtraLarge .Overview_info__withoutMedals_6be29b19 .Overview_statusWrapper_633ae157 {
     margin-bottom: 16rem;
+}
+
+.Overview_infoWrapper_dfa0b233 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-33rem);
+}
+.mediaLarge .Overview_infoWrapper_dfa0b233 {
+    transform: translateY(-42rem);
 }
 
 .Overview_status_1c902a82 {
@@ -3300,11 +3328,11 @@ on a texture and its positioning and sizes should be managed by the texture and 
     mask-image: linear-gradient(to bottom, #f3ecec 0%, rgba(240, 232, 232, 0.08) 100%);
 }
 
-.Overview_statusText_26db019c {
+.Overview_statusText_22ef8198 {
     color: #f3ecec;
     font-size: var(--status-text-size);
     font-weight: 700;
-    line-height: 1;
+    line-height: var(--status-line-height);
     letter-spacing: 0;
     coh-font-fit-mode: shrink;
     white-space: nowrap;
@@ -5263,19 +5291,20 @@ body .PlayerStatistics_scrollbar_987bbca2 {
     pointer-events: none;
 }
 
-.App_info_e544accb {
+.App_info_ad190031 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
     position: absolute;
     bottom: 52rem;
-    left: 50%;
-    transform: translateX(-50%);
 }
-.mediaMedium .App_info_e544accb {
+.mediaMedium .App_info_ad190031 {
     bottom: 68rem;
 }
-.mediaLarge .App_info_e544accb {
+.mediaLarge .App_info_ad190031 {
     bottom: 75rem;
 }
-.mediaExtraLarge .App_info_e544accb {
+.mediaExtraLarge .App_info_ad190031 {
     bottom: 113rem;
 } /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */

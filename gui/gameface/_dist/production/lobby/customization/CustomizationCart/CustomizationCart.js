@@ -731,7 +731,7 @@
                 t.d(u, { Z5: () => n, cy: () => o });
                 const n = {
                         getNumberFormat: (e, u) => systemLocale.getNumberFormat(e, u),
-                        getRealFormat: (e, u) => systemLocale.getRealFormat(e, u),
+                        getRealFormat: (e, u, t = 2) => systemLocale.getRealFormat(e, u, t),
                         getTimeFormat: (e, u) => systemLocale.getTimeFormat(e, u),
                         getDateFormat: (e, u) => systemLocale.getDateFormat(e, u),
                         toUpperCase: (e) => systemLocale.toUpperCase(e),
@@ -1351,12 +1351,20 @@
                             s().createElement(U, { caption: R.strings.menu.viewHeader.backBtn.label(), onClick: e }),
                         );
                     };
-                function X(e) {
+                let X;
+                function K(e) {
                     engine.call('PlaySound', e).catch((u) => {
                         console.error('[lib/sounds.js] playSound(', e, '): ', u);
                     });
                 }
-                const K = {
+                !(function (e) {
+                    ((e[(e.LEFT = 0)] = 'LEFT'),
+                        (e[(e.WHEEL = 1)] = 'WHEEL'),
+                        (e[(e.RIGHT = 2)] = 'RIGHT'),
+                        (e[(e.FOURTH = 3)] = 'FOURTH'),
+                        (e[(e.FIFTH = 4)] = 'FIFTH'));
+                })(X || (X = {}));
+                const Y = {
                     base: 'CButton_base_40',
                     base__main: 'CButton_base__main_42',
                     base__primary: 'CButton_base__primary_7f',
@@ -1379,7 +1387,7 @@
                     base__highlightActive: 'CButton_base__highlightActive_b2',
                     content: 'CButton_content_cc',
                 };
-                let Y, Z;
+                let Z, Q;
                 (!(function (e) {
                     ((e.main = 'main'),
                         (e.primary = 'primary'),
@@ -1387,14 +1395,14 @@
                         (e.primaryRed = 'primaryRed'),
                         (e.secondary = 'secondary'),
                         (e.ghost = 'ghost'));
-                })(Y || (Y = {})),
+                })(Z || (Z = {})),
                     (function (e) {
                         ((e.extraSmall = 'extraSmall'),
                             (e.small = 'small'),
                             (e.medium = 'medium'),
                             (e.large = 'large'));
-                    })(Z || (Z = {})));
-                const Q = ({
+                    })(Q || (Q = {})));
+                const J = ({
                     children: e,
                     size: u,
                     disabled: t,
@@ -1406,7 +1414,7 @@
                     onMouseLeave: c,
                     onClick: E,
                     isFocused: d = !1,
-                    type: m = Y.primary,
+                    type: m = Z.primary,
                     soundHover: F = 'highlight',
                     soundClick: A = 'play',
                 }) => {
@@ -1437,16 +1445,16 @@
                             {
                                 ref: C,
                                 className: _()(
-                                    K.base,
-                                    K[`base__${m}`],
-                                    t && K.base__disabled,
-                                    u && K[`base__${u}`],
-                                    B && K.base__focus,
-                                    v && K.base__highlightActive,
+                                    Y.base,
+                                    Y[`base__${m}`],
+                                    t && Y.base__disabled,
+                                    u && Y[`base__${u}`],
+                                    B && Y.base__focus,
+                                    v && Y.base__highlightActive,
                                     n,
                                 ),
                                 onMouseEnter: function (e) {
-                                    t || (null !== F && X(F), o && o(e));
+                                    t || (null !== F && K(F), o && o(e));
                                 },
                                 onMouseMove: function (e) {
                                     r && r(e);
@@ -1455,11 +1463,12 @@
                                     t || (l && l(e), f(!1));
                                 },
                                 onMouseDown: function (e) {
-                                    t ||
-                                        (null !== A && X(A),
+                                    if (t) return;
+                                    const u = e.button === X.LEFT;
+                                    (null !== A && u && K(A),
                                         i && i(e),
                                         d && (t || (C.current && (C.current.focus(), p(!0)))),
-                                        f(!0));
+                                        u && f(!0));
                                 },
                                 onMouseLeave: function (e) {
                                     t || (c && c(e), f(!1));
@@ -1468,42 +1477,32 @@
                                     t || (E && E(e));
                                 },
                             },
-                            m !== Y.ghost &&
+                            m !== Z.ghost &&
                                 s().createElement(
                                     s().Fragment,
                                     null,
-                                    s().createElement('div', { className: K.back }),
-                                    s().createElement('span', { className: K.texture }),
+                                    s().createElement('div', { className: Y.back }),
+                                    s().createElement('span', { className: Y.texture }),
                                 ),
                             s().createElement(
                                 'span',
-                                { className: _()(K.state, K.state__default) },
-                                s().createElement('span', { className: K.stateDisabled }),
-                                s().createElement('span', { className: K.stateHighlightHover }),
-                                s().createElement('span', { className: K.stateHighlightActive }),
+                                { className: _()(Y.state, Y.state__default) },
+                                s().createElement('span', { className: Y.stateDisabled }),
+                                s().createElement('span', { className: Y.stateHighlightHover }),
+                                s().createElement('span', { className: Y.stateHighlightActive }),
                             ),
                             s().createElement(
                                 'span',
-                                { className: K.content, lang: R.strings.settings.LANGUAGE_CODE() },
+                                { className: Y.content, lang: R.strings.settings.LANGUAGE_CODE() },
                                 e,
                             ),
                         )
                     );
                 };
-                let J, ee, ue, te;
+                let ee, ue, te;
                 (!(function (e) {
-                    ((e[(e.LEFT = 0)] = 'LEFT'),
-                        (e[(e.WHEEL = 1)] = 'WHEEL'),
-                        (e[(e.RIGHT = 2)] = 'RIGHT'),
-                        (e[(e.FOURTH = 3)] = 'FOURTH'),
-                        (e[(e.FIFTH = 4)] = 'FIFTH'));
-                })(J || (J = {})),
-                    (function (e) {
-                        ((e.small = 'small'),
-                            (e.medium = 'medium'),
-                            (e.large = 'large'),
-                            (e.extraLarge = 'extraLarge'));
-                    })(ee || (ee = {})),
+                    ((e.small = 'small'), (e.medium = 'medium'), (e.large = 'large'), (e.extraLarge = 'extraLarge'));
+                })(ee || (ee = {})),
                     (function (e) {
                         ((e.primary = 'primary'), (e.main = 'main'));
                     })(ue || (ue = {})),
@@ -1620,8 +1619,8 @@
                         ),
                         I = (0, a.useCallback)(
                             (e) => {
-                                const u = e.button === J.LEFT;
-                                r || (u && M(!0), u && v && v(e), D && X(D));
+                                const u = e.button === X.LEFT;
+                                r || (u && M(!0), u && v && v(e), D && K(D));
                             },
                             [r, v, D],
                         ),
@@ -1633,7 +1632,7 @@
                         ),
                         H = (0, a.useCallback)(
                             (e) => {
-                                r || (B && B(e), A && X(A));
+                                r || (B && B(e), A && K(A));
                             },
                             [r, B, A],
                         ),
@@ -2260,10 +2259,10 @@
                                             'div',
                                             null,
                                             s().createElement(
-                                                Q,
+                                                J,
                                                 {
-                                                    type: Y.main,
-                                                    size: Z.medium,
+                                                    type: Z.main,
+                                                    size: Q.medium,
                                                     mixClass: Ve,
                                                     disabled: !P,
                                                     onClick: k,
@@ -2490,7 +2489,7 @@
                             [y],
                         );
                         const w = (e) => {
-                            e.target.classList.contains(au) || X('highlight');
+                            e.target.classList.contains(au) || K('highlight');
                         };
                         return s().createElement(
                             'div',
@@ -2498,7 +2497,7 @@
                             s().createElement('div', {
                                 className: _()(uu, u.leftButton),
                                 onMouseDown: (e) => {
-                                    e.target.classList.contains(au) || 0 !== e.button || (X('play'), h(p.Next));
+                                    e.target.classList.contains(au) || 0 !== e.button || (K('play'), h(p.Next));
                                 },
                                 onMouseUp: y,
                                 ref: i,
@@ -2511,7 +2510,7 @@
                                     onMouseDown: (u) => {
                                         const n = m.current;
                                         if (n && 0 === u.button)
-                                            if ((X('play'), u.target === n))
+                                            if ((K('play'), u.target === n))
                                                 g({ pending: !0, offset: u.screenX - n.getBoundingClientRect().x });
                                             else {
                                                 ((u) => {
@@ -2532,7 +2531,7 @@
                             s().createElement('div', {
                                 className: _()(tu, u.rightButton),
                                 onMouseDown: (e) => {
-                                    e.target.classList.contains(au) || 0 !== e.button || (X('play'), h(p.Prev));
+                                    e.target.classList.contains(au) || 0 !== e.button || (K('play'), h(p.Prev));
                                 },
                                 onMouseUp: y,
                                 ref: l,
@@ -2743,7 +2742,7 @@
                             [w],
                         );
                         const k = (e) => {
-                            e.target.classList.contains(vu) || X('highlight');
+                            e.target.classList.contains(vu) || K('highlight');
                         };
                         return s().createElement(
                             'div',
@@ -2751,7 +2750,7 @@
                             s().createElement('div', {
                                 className: _()(Cu, u.topButton),
                                 onMouseDown: (e) => {
-                                    e.target.classList.contains(vu) || 0 !== e.button || (X('play'), y(p.Next));
+                                    e.target.classList.contains(vu) || 0 !== e.button || (K('play'), y(p.Next));
                                 },
                                 ref: i,
                                 onMouseEnter: k,
@@ -2763,7 +2762,7 @@
                                     onMouseDown: (u) => {
                                         const n = m.current;
                                         if (n && 0 === u.button)
-                                            if ((X('play'), u.target === n))
+                                            if ((K('play'), u.target === n))
                                                 g({ pending: !0, offset: u.screenY - n.getBoundingClientRect().y });
                                             else {
                                                 ((u) => {
@@ -2786,7 +2785,7 @@
                             s().createElement('div', {
                                 className: _()(Du, u.bottomButton),
                                 onMouseDown: (e) => {
-                                    e.target.classList.contains(vu) || 0 !== e.button || (X('play'), y(p.Prev));
+                                    e.target.classList.contains(vu) || 0 !== e.button || (K('play'), y(p.Prev));
                                 },
                                 onMouseUp: w,
                                 ref: l,
@@ -2976,11 +2975,11 @@
                             x = (0, a.useMemo)(() => new xe(B), [B]),
                             S = (0, a.useMemo)(() => !b && !x.isEmpty(), [b, x]),
                             N = (0, a.useCallback)(() => {
-                                k && n && X(n);
+                                k && n && K(n);
                             }, [k, n]),
                             P = (0, a.useCallback)(
                                 (e) => {
-                                    k && o && 0 === e.button && X(o);
+                                    k && o && 0 === e.button && K(o);
                                 },
                                 [k, o],
                             ),

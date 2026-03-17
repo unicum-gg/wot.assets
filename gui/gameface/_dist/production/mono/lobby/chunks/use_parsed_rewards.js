@@ -1,0 +1,34 @@
+import { bo as t, u as e, m as o, M as a, I as i, bp as n, bq as s, br as r } from './lib.js';
+import './vendor.js';
+const m = new t(window),
+    p = (t, e) => {
+        const { name: o } = t,
+            a = r(t, e);
+        if (!m.has(a))
+            switch (o) {
+                case 'attachment':
+                    return r({ name: o, icon: 'attachment' }, e);
+                case 'customizations':
+                    return r({ name: o, icon: 'style' }, e);
+            }
+        return a;
+    },
+    l = (t) => ('overlayType' in t ? t.overlayType : void 0);
+function c(t, r) {
+    const m = ((t, e) => e || (t >= a.Medium ? i.Big : i.Small))(e().mediaSize, r);
+    return {
+        parsedRewards: o(t, ({ ...t }) => ({
+            ...t,
+            special: l(t),
+            image: p(t, m),
+            size: m,
+            valueType: s(t.name),
+            tooltipArgs: n(
+                { tooltipId: t.tooltipId, tooltipContentId: t.tooltipContentId },
+                Number(t.tooltipContentId),
+            ),
+        })),
+        imageSize: m,
+    };
+}
+export { c as u };

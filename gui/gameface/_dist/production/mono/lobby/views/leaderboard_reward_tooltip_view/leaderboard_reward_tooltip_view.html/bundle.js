@@ -1,5 +1,5 @@
 import { j as e, w as s, x as a } from '../../../chunks/vendor.js';
-import { i as d, n as i, F as t, q as l, d as p, e as c, r } from '../../../chunks/lib.js';
+import { i as d, n as i, F as t, d as l, e as p, f as c, r } from '../../../chunks/lib.js';
 /* empty css                     */ var n = ((e) => (
     (e.InProgress = 'inProgress'),
     (e.Completed = 'completed'),
@@ -14,8 +14,8 @@ const [o, _] = d()(({ observableModel: e }) => ({ root: e.object() }), i),
         { victoryPoints: 1, defeatPoints: 0, place: m.top.c_2() },
     ],
     x = 'Table_8cfe9af4',
-    h = 'Table_row_b2b5c28f',
-    f = 'Table_row__bg_e41f9eed',
+    f = 'Table_row_b2b5c28f',
+    h = 'Table_row__bg_e41f9eed',
     j = 'Table_3f81b41',
     v = 'Table_victory_ef69bf65',
     A = 'Table_defeat_996e2f97',
@@ -31,7 +31,7 @@ const [o, _] = d()(({ observableModel: e }) => ({ root: e.object() }), i),
             className: x,
             children: [
                 e.jsxs('div', {
-                    className: s(h, f),
+                    className: s(f, h),
                     children: [
                         e.jsx('div', { className: T }),
                         e.jsx(t, { text: P.column.c_1(), classMix: s(v, g) }),
@@ -47,7 +47,7 @@ const [o, _] = d()(({ observableModel: e }) => ({ root: e.object() }), i),
                                 e.jsxs(
                                     'div',
                                     {
-                                        className: h,
+                                        className: f,
                                         children: [
                                             e.jsx('div', { className: T, children: s }),
                                             e.jsxs('div', {

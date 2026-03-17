@@ -1,14 +1,14 @@
 import { j as e, f as s } from '../../../../chunks/vendor.js';
-import { r as a, aK as r, ay as t, ax as i } from '../../../../chunks/lib.js';
-const l = 'App_4c774088',
+import { q as a, bs as r, r as t, U as i } from '../../../../chunks/lib.js';
+/* empty css                        */ const l = 'App_4c774088',
     d = 'App_headerContainer_bd668828',
     n = 'App_title_7064cb34',
     p = 'App_subtitle_23219c42',
     c = 'App_separator_649b3a29',
     o = 'App_description_9fc178b',
     _ = 'App_footer_9b9830ea',
-    x = 'App_text_1072bf2a',
-    m = a.resolve('strings');
+    m = 'App_text_1072bf2a',
+    x = a.resolve('strings');
 function j() {
     return e.jsx(r, {
         children: e.jsx(r.Decorator, {
@@ -20,23 +20,23 @@ function j() {
                         children: [
                             e.jsx('div', {
                                 className: n,
-                                children: m.readOrEmpty('battle_royale_extention.upgrades.title'),
+                                children: x.readOrEmpty('battle_royale_extention.upgrades.title'),
                             }),
                             e.jsx('div', {
-                                className: s(p, x),
-                                children: m.readOrEmpty('battle_royale_extention.upgrades.subtitle'),
+                                className: s(p, m),
+                                children: x.readOrEmpty('battle_royale_extention.upgrades.subtitle'),
                             }),
                         ],
                     }),
                     e.jsx('div', { className: c }),
                     e.jsx('div', {
-                        className: s(o, x),
-                        children: m.readOrEmpty('battle_royale_extention.upgrades.description'),
+                        className: s(o, m),
+                        children: x.readOrEmpty('battle_royale_extention.upgrades.description'),
                     }),
                     e.jsx('div', { className: c }),
                     e.jsx('div', {
-                        className: s(_, x),
-                        children: m.readOrEmpty('battle_royale_extention.upgrades.footer'),
+                        className: s(_, m),
+                        children: x.readOrEmpty('battle_royale_extention.upgrades.footer'),
                     }),
                 ],
             }),

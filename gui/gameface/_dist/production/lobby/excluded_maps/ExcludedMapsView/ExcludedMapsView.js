@@ -806,7 +806,7 @@
                 t.d(e, { Ew: () => r, Z5: () => n, cy: () => a });
                 const n = {
                         getNumberFormat: (u, e) => systemLocale.getNumberFormat(u, e),
-                        getRealFormat: (u, e) => systemLocale.getRealFormat(u, e),
+                        getRealFormat: (u, e, t = 2) => systemLocale.getRealFormat(u, e, t),
                         getTimeFormat: (u, e) => systemLocale.getTimeFormat(u, e),
                         getDateFormat: (u, e) => systemLocale.getDateFormat(u, e),
                         toUpperCase: (u) => systemLocale.toUpperCase(u),
@@ -822,7 +822,7 @@
                         getFormattedDateTime: (u, e, t = !0) => regionalDateTime.getFormattedDateTime(u, e, t),
                     };
             },
-            747: (u, e, t) => {
+            274: (u, e, t) => {
                 'use strict';
                 var n = t(363),
                     a = t.n(n);
@@ -1195,7 +1195,7 @@
                                 .match(u);
                     })(),
                     V = ['zh_cn', 'zh_sg', 'zh_tw'],
-                    $ = (u, e = k.left) => {
+                    U = (u, e = k.left) => {
                         const t = R.strings.settings.LANGUAGE_CODE().toLowerCase();
                         if (V.includes(t)) return W(u);
                         if ('ja' === t) {
@@ -1211,8 +1211,8 @@
                             return (H(a, /( )/, e).forEach((u) => (t = t.concat(H(u, n, k.left)))), t);
                         })(u, e);
                     },
-                    j = 'FormatText_base_d0',
-                    U = ({ binding: u, text: e = '', classMix: t, alignment: r = k.left, formatWithBrackets: o }) => {
+                    $ = 'FormatText_base_d0',
+                    j = ({ binding: u, text: e = '', classMix: t, alignment: r = k.left, formatWithBrackets: o }) => {
                         if (null === e) return (console.error("FormatText was supplied with 'null'"), null);
                         const s = o && u ? O(e, u) : e;
                         return a().createElement(
@@ -1221,9 +1221,9 @@
                             s.split('\n').map((e, o) =>
                                 a().createElement(
                                     'div',
-                                    { className: F()(j, t), key: `${e}-${o}` },
+                                    { className: F()($, t), key: `${e}-${o}` },
                                     ((u, e, t) =>
-                                        u.split(/%\((.*?)\)(?:[sd])?/g).map((u) => (t && u in t ? t[u] : $(u, e))))(
+                                        u.split(/%\((.*?)\)(?:[sd])?/g).map((u) => (t && u in t ? t[u] : U(u, e))))(
                                         e,
                                         r,
                                         u,
@@ -2152,19 +2152,19 @@
                 }
                 console.log;
                 var Vu = t(174);
-                function $u(u, e) {
+                function Uu(u, e) {
                     var t = ('undefined' != typeof Symbol && u[Symbol.iterator]) || u['@@iterator'];
                     if (t) return (t = t.call(u)).next.bind(t);
                     if (
                         Array.isArray(u) ||
                         (t = (function (u, e) {
                             if (!u) return;
-                            if ('string' == typeof u) return ju(u, e);
+                            if ('string' == typeof u) return $u(u, e);
                             var t = Object.prototype.toString.call(u).slice(8, -1);
                             'Object' === t && u.constructor && (t = u.constructor.name);
                             if ('Map' === t || 'Set' === t) return Array.from(u);
                             if ('Arguments' === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t))
-                                return ju(u, e);
+                                return $u(u, e);
                         })(u)) ||
                         (e && u && 'number' == typeof u.length)
                     ) {
@@ -2178,12 +2178,12 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function ju(u, e) {
+                function $u(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, n = new Array(e); t < e; t++) n[t] = u[t];
                     return n;
                 }
-                const Uu = (u) => (0 === u ? window : window.subViews.get(u));
+                const ju = (u) => (0 === u ? window : window.subViews.get(u));
                 const Gu = () => (u, e) => {
                     const t = (0, n.createContext)({});
                     return [
@@ -2194,7 +2194,7 @@
                                     const s = (function ({
                                             initializer: u = !0,
                                             rootId: e = 0,
-                                            getRoot: t = Uu,
+                                            getRoot: t = ju,
                                             context: n = 'model',
                                         } = {}) {
                                             const a = new Map();
@@ -2241,7 +2241,7 @@
                                                     };
                                                 },
                                                 dispose: function () {
-                                                    for (var u, t = $u(a.keys()); !(u = t()).done; ) r(u.value, e);
+                                                    for (var u, t = Uu(a.keys()); !(u = t()).done; ) r(u.value, e);
                                                 },
                                                 unsubscribe: r,
                                             };
@@ -2577,7 +2577,7 @@
                         return a().createElement(
                             'div',
                             { className: F()(de, u) },
-                            a().createElement(U, { text: Zu.cooldownHeader, binding: r }),
+                            a().createElement(j, { text: Zu.cooldownHeader, binding: r }),
                         );
                     }),
                     me = {
@@ -2797,8 +2797,16 @@
                     }),
                     ke = { context: 'model.mapsFilters' },
                     Re = ({ onFilterClick: u }) =>
-                        a().createElement(xe, { options: ke }, a().createElement(Le, { onFilterClick: u })),
-                    Oe = {
+                        a().createElement(xe, { options: ke }, a().createElement(Le, { onFilterClick: u }));
+                let Oe;
+                !(function (u) {
+                    ((u[(u.LEFT = 0)] = 'LEFT'),
+                        (u[(u.WHEEL = 1)] = 'WHEEL'),
+                        (u[(u.RIGHT = 2)] = 'RIGHT'),
+                        (u[(u.FOURTH = 3)] = 'FOURTH'),
+                        (u[(u.FIFTH = 4)] = 'FIFTH'));
+                })(Oe || (Oe = {}));
+                const Ne = {
                         base: 'CButton_base_40',
                         base__main: 'CButton_base__main_42',
                         base__primary: 'CButton_base__primary_7f',
@@ -2821,7 +2829,7 @@
                         base__highlightActive: 'CButton_base__highlightActive_b2',
                         content: 'CButton_content_cc',
                     },
-                    Ne = ({
+                    Ie = ({
                         children: u,
                         size: e,
                         disabled: t,
@@ -2864,12 +2872,12 @@
                                 {
                                     ref: _,
                                     className: F()(
-                                        Oe.base,
-                                        Oe[`base__${A}`],
-                                        t && Oe.base__disabled,
-                                        e && Oe[`base__${e}`],
-                                        C && Oe.base__focus,
-                                        h && Oe.base__highlightActive,
+                                        Ne.base,
+                                        Ne[`base__${A}`],
+                                        t && Ne.base__disabled,
+                                        e && Ne[`base__${e}`],
+                                        C && Ne.base__focus,
+                                        h && Ne.base__highlightActive,
                                         r,
                                     ),
                                     onMouseEnter: function (u) {
@@ -2882,11 +2890,12 @@
                                         t || (l && l(u), v(!1));
                                     },
                                     onMouseDown: function (u) {
-                                        t ||
-                                            (null !== D && tu(D),
+                                        if (t) return;
+                                        const e = u.button === Oe.LEFT;
+                                        (null !== D && e && tu(D),
                                             i && i(u),
                                             E && (t || (_.current && (_.current.focus(), p(!0)))),
-                                            v(!0));
+                                            e && v(!0));
                                     },
                                     onMouseLeave: function (u) {
                                         t || (c && c(u), v(!1));
@@ -2899,32 +2908,32 @@
                                     a().createElement(
                                         a().Fragment,
                                         null,
-                                        a().createElement('div', { className: Oe.back }),
-                                        a().createElement('span', { className: Oe.texture }),
+                                        a().createElement('div', { className: Ne.back }),
+                                        a().createElement('span', { className: Ne.texture }),
                                     ),
                                 a().createElement(
                                     'span',
-                                    { className: F()(Oe.state, Oe.state__default) },
-                                    a().createElement('span', { className: Oe.stateDisabled }),
-                                    a().createElement('span', { className: Oe.stateHighlightHover }),
-                                    a().createElement('span', { className: Oe.stateHighlightActive }),
+                                    { className: F()(Ne.state, Ne.state__default) },
+                                    a().createElement('span', { className: Ne.stateDisabled }),
+                                    a().createElement('span', { className: Ne.stateHighlightHover }),
+                                    a().createElement('span', { className: Ne.stateHighlightActive }),
                                 ),
                                 a().createElement(
                                     'span',
-                                    { className: Oe.content, lang: R.strings.settings.LANGUAGE_CODE() },
+                                    { className: Ne.content, lang: R.strings.settings.LANGUAGE_CODE() },
                                     u,
                                 ),
                             )
                         );
                     },
-                    Ie = 'MapCounter_base_ef',
-                    Pe = 'MapCounter_highlightedCount_5a',
-                    He = 'MapCounter_label_73',
-                    We = 'MapCounter_clearButton_26',
-                    Ve = 'MapCounter_clearButton__hidden_63',
+                    Pe = 'MapCounter_base_ef',
+                    He = 'MapCounter_highlightedCount_5a',
+                    We = 'MapCounter_label_73',
+                    Ve = 'MapCounter_clearButton_26',
+                    Ue = 'MapCounter_clearButton__hidden_63',
                     $e = 'MapCounter_closeIcon_0a',
                     je = 'MapCounter_filterGlow_8c',
-                    Ue = (0, ku.Pi)(() => {
+                    Ge = (0, ku.Pi)(() => {
                         const u = Xu(),
                             e = u.model,
                             t = u.controls,
@@ -2934,29 +2943,29 @@
                             s = t.onFilterReset;
                         return a().createElement(
                             'div',
-                            { className: Ie },
+                            { className: Pe },
                             n
                                 ? a().createElement(
                                       a().Fragment,
                                       null,
-                                      a().createElement(U, {
+                                      a().createElement(j, {
                                           text: Zu.filteredMapsDisplayed,
-                                          classMix: He,
-                                          binding: { count: a().createElement('span', { className: Pe }, r), total: o },
+                                          classMix: We,
+                                          binding: { count: a().createElement('span', { className: He }, r), total: o },
                                       }),
                                       a().createElement('img', {
                                           src: R.images.gui.maps.icons.excluded_maps.filter_glow(),
                                           className: je,
                                       }),
                                   )
-                                : a().createElement(U, {
+                                : a().createElement(j, {
                                       text: Zu.totalMapsDisplayed,
-                                      classMix: He,
-                                      binding: { count: a().createElement('span', { className: Pe }, o) },
+                                      classMix: We,
+                                      binding: { count: a().createElement('span', { className: He }, o) },
                                   }),
                             a().createElement(
-                                Ne,
-                                { type: 'ghost', mixClass: F()(We, !n && Ve), onClick: () => s() },
+                                Ie,
+                                { type: 'ghost', mixClass: F()(Ve, !n && Ue), onClick: () => s() },
                                 a().createElement('img', {
                                     src: R.images.gui.maps.icons.library.cross(),
                                     className: $e,
@@ -2964,24 +2973,24 @@
                             ),
                         );
                     }),
-                    Ge = 'MapTile_base_fe',
-                    ze = 'MapTile_glowFrame_4e',
-                    Ke = 'MapTile_mapCross_da',
-                    qe = 'MapTile_lockIcon_bb',
-                    Ye = 'MapTile_hoverText_35',
-                    Xe = 'MapTile_mapOverlay_5c',
-                    Ze = 'MapTile_base__available_d2',
-                    Qe = 'MapTile_hoverOverlay_93',
-                    Je = 'MapTile_base__excluded_3c',
-                    ut = 'MapTile_hoverButton_d3',
-                    et = 'MapTile_base__cooldown_d6',
-                    tt = 'MapTile_mapImage_c8',
-                    nt = 'MapTile_disabledTile_ec',
-                    at = 'MapTile_mapName_d1',
-                    rt = 'MapTile_base__disabled_95',
-                    ot = 'MapTile_hoverMapName_db',
-                    st = 'MapTile_hoverButtonContainer_bf',
-                    it = ({
+                    ze = 'MapTile_base_fe',
+                    Ke = 'MapTile_glowFrame_4e',
+                    qe = 'MapTile_mapCross_da',
+                    Ye = 'MapTile_lockIcon_bb',
+                    Xe = 'MapTile_hoverText_35',
+                    Ze = 'MapTile_mapOverlay_5c',
+                    Qe = 'MapTile_base__available_d2',
+                    Je = 'MapTile_hoverOverlay_93',
+                    ut = 'MapTile_base__excluded_3c',
+                    et = 'MapTile_hoverButton_d3',
+                    tt = 'MapTile_base__cooldown_d6',
+                    nt = 'MapTile_mapImage_c8',
+                    at = 'MapTile_disabledTile_ec',
+                    rt = 'MapTile_mapName_d1',
+                    ot = 'MapTile_base__disabled_95',
+                    st = 'MapTile_hoverMapName_db',
+                    it = 'MapTile_hoverButtonContainer_bf',
+                    lt = ({
                         state: u,
                         mapId: e,
                         onMapAddToBlacklist: t,
@@ -2991,40 +3000,40 @@
                         const s = se({ mapId: e }),
                             i = F()(
                                 o,
-                                Ge,
-                                u === Nu.MAPS_BLACKLIST_SLOT_STATE_ACTIVE && Ze,
-                                u === Nu.MAPS_BLACKLIST_SLOT_STATE_COOLDOWN && et,
-                                u === Nu.MAPS_BLACKLIST_SLOT_STATE_CHANGE && Je,
-                                u === Nu.MAPS_BLACKLIST_SLOT_STATE_DISABLED && rt,
+                                ze,
+                                u === Nu.MAPS_BLACKLIST_SLOT_STATE_ACTIVE && Qe,
+                                u === Nu.MAPS_BLACKLIST_SLOT_STATE_COOLDOWN && tt,
+                                u === Nu.MAPS_BLACKLIST_SLOT_STATE_CHANGE && ut,
+                                u === Nu.MAPS_BLACKLIST_SLOT_STATE_DISABLED && ot,
                             ),
                             l = (0, n.useMemo)(
-                                () => ({ mapName: a().createElement('span', { className: ot }, s) }),
+                                () => ({ mapName: a().createElement('span', { className: st }, s) }),
                                 [s],
                             );
                         return u === Nu.MAPS_BLACKLIST_SLOT_STATE_ACTIVE
                             ? a().createElement(
                                   'div',
                                   { className: i },
-                                  a().createElement('img', { src: ie({ mapId: e }), className: tt }),
+                                  a().createElement('img', { src: ie({ mapId: e }), className: nt }),
                                   a().createElement('img', {
                                       src: R.images.gui.maps.icons.excluded_maps.map_shadow(),
-                                      className: Xe,
+                                      className: Ze,
                                   }),
-                                  a().createElement('div', { className: at }, se({ mapId: e })),
+                                  a().createElement('div', { className: rt }, se({ mapId: e })),
                                   a().createElement(
                                       'div',
-                                      { className: Qe },
+                                      { className: Je },
                                       a().createElement(
                                           'div',
                                           null,
-                                          a().createElement(U, { text: Zu.hoverExclude, binding: l, classMix: Ye }),
+                                          a().createElement(j, { text: Zu.hoverExclude, binding: l, classMix: Xe }),
                                       ),
                                       a().createElement(
                                           'div',
-                                          { className: st },
+                                          { className: it },
                                           a().createElement(
-                                              Ne,
-                                              { mixClass: ut, onClick: () => t(e) },
+                                              Ie,
+                                              { mixClass: et, onClick: () => t(e) },
                                               Zu.hoverExcludeButton,
                                           ),
                                       ),
@@ -3037,24 +3046,24 @@
                                     a().createElement(
                                         'div',
                                         { className: i },
-                                        a().createElement('img', { src: ie({ mapId: e }), className: tt }),
+                                        a().createElement('img', { src: ie({ mapId: e }), className: nt }),
                                         a().createElement('img', {
                                             src: R.images.gui.maps.icons.excluded_maps.map_shadow(),
-                                            className: Xe,
+                                            className: Ze,
                                         }),
-                                        a().createElement('div', { className: nt }),
+                                        a().createElement('div', { className: at }),
                                         a().createElement('img', {
                                             src: R.images.gui.maps.icons.excluded_maps.map_glow_frame(),
-                                            className: ze,
+                                            className: Ke,
                                         }),
                                         a().createElement('img', {
                                             src: R.images.gui.maps.icons.excluded_maps.map_deleted_cross(),
-                                            className: Ke,
+                                            className: qe,
                                         }),
-                                        a().createElement('div', { className: at }, se({ mapId: e })),
+                                        a().createElement('div', { className: rt }, se({ mapId: e })),
                                         a().createElement('img', {
                                             src: R.images.gui.maps.icons.excluded_maps.icon_lock(),
-                                            className: qe,
+                                            className: Ye,
                                         }),
                                     ),
                                 )
@@ -3062,34 +3071,34 @@
                                 ? a().createElement(
                                       'div',
                                       { className: i },
-                                      a().createElement('img', { src: ie({ mapId: e }), className: tt }),
+                                      a().createElement('img', { src: ie({ mapId: e }), className: nt }),
                                       a().createElement('img', {
                                           src: R.images.gui.maps.icons.excluded_maps.map_shadow(),
-                                          className: Xe,
+                                          className: Ze,
                                       }),
                                       a().createElement('img', {
                                           src: R.images.gui.maps.icons.excluded_maps.map_glow_frame(),
-                                          className: ze,
+                                          className: Ke,
                                       }),
                                       a().createElement('img', {
                                           src: R.images.gui.maps.icons.excluded_maps.map_deleted_cross(),
-                                          className: Ke,
+                                          className: qe,
                                       }),
-                                      a().createElement('div', { className: at }, se({ mapId: e })),
+                                      a().createElement('div', { className: rt }, se({ mapId: e })),
                                       a().createElement(
                                           'div',
-                                          { className: Qe },
+                                          { className: Je },
                                           a().createElement(
                                               'div',
                                               null,
-                                              a().createElement(U, { text: Zu.hoverInclude, binding: l, classMix: Ye }),
+                                              a().createElement(j, { text: Zu.hoverInclude, binding: l, classMix: Xe }),
                                           ),
                                           a().createElement(
                                               'div',
-                                              { className: st },
+                                              { className: it },
                                               a().createElement(
-                                                  Ne,
-                                                  { mixClass: ut, onClick: () => r(e) },
+                                                  Ie,
+                                                  { mixClass: et, onClick: () => r(e) },
                                                   Zu.hoverIncludeButton,
                                               ),
                                           ),
@@ -3101,29 +3110,29 @@
                                       a().createElement(
                                           'div',
                                           { className: i },
-                                          a().createElement('img', { src: ie({ mapId: e }), className: tt }),
+                                          a().createElement('img', { src: ie({ mapId: e }), className: nt }),
                                           a().createElement('img', {
                                               src: R.images.gui.maps.icons.excluded_maps.map_shadow(),
-                                              className: Xe,
+                                              className: Ze,
                                           }),
-                                          a().createElement('div', { className: at }, se({ mapId: e })),
+                                          a().createElement('div', { className: rt }, se({ mapId: e })),
                                       ),
                                   );
                     },
-                    lt = Gu()(({ observableModel: u }) => {
+                    ct = Gu()(({ observableModel: u }) => {
                         const e = { maps: u.array('items', []) },
                             t = (0, Ku.Om)(() => zu(e.maps.get(), Hu).filter((u) => u.filtered), { equals: Wu });
                         return Object.assign({ computes: { getMaps: t } }, e);
                     }, Pu),
-                    ct = lt[0],
-                    dt = lt[1],
-                    Et = (0, ku.Pi)(({ className: u, onMapAddToBlacklist: e, onMapRemoveFromBlacklist: t }) => {
-                        const n = dt().model.computes.getMaps();
+                    dt = ct[0],
+                    Et = ct[1],
+                    At = (0, ku.Pi)(({ className: u, onMapAddToBlacklist: e, onMapRemoveFromBlacklist: t }) => {
+                        const n = Et().model.computes.getMaps();
                         return a().createElement(
                             'div',
                             { className: u },
                             n.map((u) =>
-                                a().createElement(it, {
+                                a().createElement(lt, {
                                     mapCooldownTime: u.cooldownTime,
                                     mapId: u.mapId,
                                     state: u.state,
@@ -3135,38 +3144,38 @@
                             ),
                         );
                     }),
-                    At = { context: 'model.maps' },
-                    mt = (0, n.memo)(function ({ className: u, onMapAddToBlacklist: e, onMapRemoveFromBlacklist: t }) {
+                    mt = { context: 'model.maps' },
+                    Ft = (0, n.memo)(function ({ className: u, onMapAddToBlacklist: e, onMapRemoveFromBlacklist: t }) {
                         return a().createElement(
-                            ct,
-                            { options: At },
-                            a().createElement(Et, {
+                            dt,
+                            { options: mt },
+                            a().createElement(At, {
                                 className: u,
                                 onMapAddToBlacklist: e,
                                 onMapRemoveFromBlacklist: t,
                             }),
                         );
                     });
-                const Ft = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
-                    Dt = (u) => {
+                const Dt = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
+                    _t = (u) => {
                         const e = (0, n.useRef)(!1);
                         e.current || (u(), (e.current = !0));
                     },
-                    _t = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
-                    Bt = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
-                    Ct = (u) =>
+                    Bt = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
+                    Ct = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
+                    pt = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, t) => {
-                                const n = Ft(`${u}.${t}`, window);
-                                return _t(n) ? e(u, t, n) : `${u}.${t}`;
+                                const n = Dt(`${u}.${t}`, window);
+                                return Bt(n) ? e(u, t, n) : `${u}.${t}`;
                             }))(u, (u, e) => `${u}.${e}.value`),
-                    pt = (u) => {
+                    gt = (u) => {
                         const e = ((u) => {
                                 const e = fu(),
                                     t = e.caller,
                                     n = e.resId,
                                     a = window.__feature && window.__feature !== t && t ? `subViews.${t}` : '';
-                                return { modelPrefix: a, modelPath: Bt(a, u || ''), resId: n };
+                                return { modelPrefix: a, modelPath: Ct(a, u || ''), resId: n };
                             })(),
                             t = e.modelPrefix,
                             n = u.split('.');
@@ -3174,21 +3183,21 @@
                             const u = [n[0]];
                             return (
                                 n.reduce((e, n) => {
-                                    const a = Ft(Bt(t, `${e}.${n}`), window);
-                                    return _t(a) ? (u.push(a.id), `${e}.${n}.value`) : (u.push(n), `${e}.${n}`);
+                                    const a = Dt(Ct(t, `${e}.${n}`), window);
+                                    return Bt(a) ? (u.push(a.id), `${e}.${n}.value`) : (u.push(n), `${e}.${n}`);
                                 }),
                                 u.reduce((u, e) => u + '.' + e)
                             );
                         }
                         return '';
                     };
-                const gt = () => (window.injected || (window.injected = new Map()), window.injected);
-                const ht = bu.Sw.instance;
-                let vt;
+                const ht = () => (window.injected || (window.injected = new Map()), window.injected);
+                const vt = bu.Sw.instance;
+                let ft;
                 !(function (u) {
                     ((u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep'));
-                })(vt || (vt = {}));
-                const ft = (u = 'model', e = vt.Deep) => {
+                })(ft || (ft = {}));
+                const bt = (u = 'model', e = ft.Deep) => {
                         const t = (0, n.useState)(0),
                             a = (t[0], t[1]),
                             r = (0, n.useMemo)(() => fu(), []),
@@ -3197,88 +3206,88 @@
                             i = r.resId,
                             l = (0, n.useMemo)(() => {
                                 const e = (function (u) {
-                                    return gt().has(u);
+                                    return ht().has(u);
                                 })(o.replace('.js', '.html'));
                                 return window.__feature && window.__feature !== s && !e ? `subViews.${s}.${u}` : u;
                             }, [o, s, u]),
                             c = (0, n.useState)(() =>
                                 ((u) => {
-                                    const e = Ft(u, window);
+                                    const e = Dt(u, window);
                                     for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
-                                    return _t(e) ? e.value : e;
-                                })(Ct(l)),
+                                    return Bt(e) ? e.value : e;
+                                })(pt(l)),
                             ),
                             d = c[0],
                             E = c[1],
                             A = (0, n.useRef)(-1);
                         return (
-                            Dt(() => {
+                            _t(() => {
                                 if (
                                     ('boolean' == typeof e &&
-                                        ((e = e ? vt.Deep : vt.None),
+                                        ((e = e ? ft.Deep : ft.None),
                                         console.warn(
                                             'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                         )),
-                                    e !== vt.None)
+                                    e !== ft.None)
                                 ) {
                                     const t = (u) => {
                                             ((u) => u && 'CoherentArrayProxy' === u.__proto__.constructor.name)(u) &&
-                                            e === vt.Deep
+                                            e === ft.Deep
                                                 ? (u === d && a((u) => u + 1), E(u))
                                                 : E(Object.assign([], u));
                                         },
-                                        n = pt(u);
-                                    A.current = ht.addCallback(n, t, i, e === vt.Deep);
+                                        n = gt(u);
+                                    A.current = vt.addCallback(n, t, i, e === ft.Deep);
                                 }
                             }),
                             (0, n.useEffect)(() => {
-                                if (e !== vt.None)
+                                if (e !== ft.None)
                                     return () => {
-                                        ht.removeCallback(A.current, i);
+                                        vt.removeCallback(A.current, i);
                                     };
                             }, [i, e]),
                             d
                         );
                     },
-                    bt = (bu.Sw.instance, {});
-                function wt(u, e, t, n = vt.Deep) {
+                    wt = (bu.Sw.instance, {});
+                function Tt(u, e, t, n = ft.Deep) {
                     const r = (r) => {
                         const o = r.path || e || void 0,
-                            s = ft(o, (o && bt[o]) || !1 ? vt.None : n),
+                            s = bt(o, (o && wt[o]) || !1 ? ft.None : n),
                             i = Object.assign({}, t(s, r), r);
                         return a().createElement(u, i);
                     };
                     var o;
                     return ((r.displayName = `WithModel(${((o = u), o.displayName || o.name || 'Component')})`), r);
                 }
-                const Tt = 'ExcludedMapsBlock_base_6b',
-                    xt = 'ExcludedMapsBlock_base__disabled_68',
-                    St = 'ExcludedMapsBlock_header_d4',
-                    Mt = 'ExcludedMapsBlock_base_background_03',
-                    yt = 'ExcludedMapsBlock_disabledPattern_09',
-                    Lt = 'ExcludedMapsBlock_lock_e8',
-                    kt = 'ExcludedMapsBlock_hover_b0',
-                    Rt = 'ExcludedMapsBlock_disabledContent_b4',
-                    Ot = 'ExcludedMapsBlock_unavailableText_d6',
-                    Nt = 'ExcludedMapsBlock_slotContainer_b6',
-                    It = 'SlotItem_base_5b',
-                    Pt = 'SlotItem_base__reducedSize_7c',
-                    Ht = 'SlotItem_mapImage_6b',
-                    Wt = 'SlotItem_base__select_15',
-                    Vt = 'SlotItem_base__disabled_88',
+                const xt = 'ExcludedMapsBlock_base_6b',
+                    St = 'ExcludedMapsBlock_base__disabled_68',
+                    Mt = 'ExcludedMapsBlock_header_d4',
+                    yt = 'ExcludedMapsBlock_base_background_03',
+                    Lt = 'ExcludedMapsBlock_disabledPattern_09',
+                    kt = 'ExcludedMapsBlock_lock_e8',
+                    Rt = 'ExcludedMapsBlock_hover_b0',
+                    Ot = 'ExcludedMapsBlock_disabledContent_b4',
+                    Nt = 'ExcludedMapsBlock_unavailableText_d6',
+                    It = 'ExcludedMapsBlock_slotContainer_b6',
+                    Pt = 'SlotItem_base_5b',
+                    Ht = 'SlotItem_base__reducedSize_7c',
+                    Wt = 'SlotItem_mapImage_6b',
+                    Vt = 'SlotItem_base__select_15',
+                    Ut = 'SlotItem_base__disabled_88',
                     $t = 'SlotItem_base__replace_c5',
                     jt = 'SlotItem_base__wotPlus_7e',
-                    Ut = 'SlotItem_mapTitle_a4',
-                    Gt = 'SlotItem_base__premium_85',
-                    zt = 'SlotItem_base__cooldown_6a',
-                    Kt = 'SlotItem_removeButton_25',
-                    qt = 'SlotItem_removeButton_icon_7e',
-                    Yt = 'SlotItem_lock_fd',
-                    Xt = 'SlotItem_timerContainer_91',
-                    Zt = 'SlotItem_timerIcon_7c',
-                    Qt = 'SlotItem_timerText_11',
-                    Jt = R.strings.excluded_maps.notSelected(),
-                    un = ({
+                    Gt = 'SlotItem_mapTitle_a4',
+                    zt = 'SlotItem_base__premium_85',
+                    Kt = 'SlotItem_base__cooldown_6a',
+                    qt = 'SlotItem_removeButton_25',
+                    Yt = 'SlotItem_removeButton_icon_7e',
+                    Xt = 'SlotItem_lock_fd',
+                    Zt = 'SlotItem_timerContainer_91',
+                    Qt = 'SlotItem_timerIcon_7c',
+                    Jt = 'SlotItem_timerText_11',
+                    un = R.strings.excluded_maps.notSelected(),
+                    en = ({
                         isEnabled: u = !0,
                         isMapNameDisplayed: e,
                         tooltipStrings: t,
@@ -3292,49 +3301,49 @@
                             ? a().createElement(
                                   fe,
                                   {
-                                      header: (null == t ? void 0 : t.disabledTooltipHeader) || on.selectTooltipHeader,
-                                      body: (null == t ? void 0 : t.selectTooltipBody) || on.selectTooltipBody,
+                                      header: (null == t ? void 0 : t.disabledTooltipHeader) || sn.selectTooltipHeader,
+                                      body: (null == t ? void 0 : t.selectTooltipBody) || sn.selectTooltipBody,
                                   },
                                   a().createElement(
                                       'div',
-                                      { className: F()(It, Wt, n && Pt), 'data-testid': 'slot' },
-                                      e && a().createElement('div', { className: Ut }, Jt),
+                                      { className: F()(Pt, Vt, n && Ht), 'data-testid': 'slot' },
+                                      e && a().createElement('div', { className: Gt }, un),
                                   ),
                               )
                             : a().createElement(
                                   fe,
                                   {
                                       header:
-                                          (null == t ? void 0 : t.disabledTooltipHeader) || on.disabledTooltipHeader,
+                                          (null == t ? void 0 : t.disabledTooltipHeader) || sn.disabledTooltipHeader,
                                       body: o
                                           ? (null == t ? void 0 : t.disabledTooltipBodyWotplus) ||
-                                            on.disabledTooltipBodyWotplus
+                                            sn.disabledTooltipBodyWotplus
                                           : (null == t ? void 0 : t.disabledTooltipBodyPremium) ||
-                                            on.disabledTooltipBodyPremium,
+                                            sn.disabledTooltipBodyPremium,
                                   },
                                   a().createElement(
                                       'div',
-                                      { className: F()(It, Vt, o && jt, s && Gt, n && Pt), 'data-testid': 'slot' },
-                                      i && a().createElement('div', { className: Yt }),
+                                      { className: F()(Pt, Ut, o && jt, s && zt, n && Ht), 'data-testid': 'slot' },
+                                      i && a().createElement('div', { className: Xt }),
                                       e &&
                                           o &&
                                           a().createElement(
                                               'div',
-                                              { className: Ut },
+                                              { className: Gt },
                                               R.strings.excluded_maps.wotplus(),
                                           ),
                                       e &&
                                           s &&
                                           a().createElement(
                                               'div',
-                                              { className: Ut },
+                                              { className: Gt },
                                               R.strings.excluded_maps.premium(),
                                           ),
                                   ),
                               );
                     },
-                    en = ['map'];
-                const tn = (u) => {
+                    tn = ['map'];
+                const nn = (u) => {
                         let e = u.map,
                             t = (function (u, e) {
                                 if (null == u) return {};
@@ -3344,11 +3353,11 @@
                                     r = Object.keys(u);
                                 for (n = 0; n < r.length; n++) ((t = r[n]), e.indexOf(t) >= 0 || (a[t] = u[t]));
                                 return a;
-                            })(u, en);
+                            })(u, tn);
                         const n = Math.floor(e.cooldownEndTimeInSecs - Date.now() / Ju);
-                        return (re(n), a().createElement(sn, Object.assign({ map: e }, t)));
+                        return (re(n), a().createElement(ln, Object.assign({ map: e }, t)));
                     },
-                    nn = ({
+                    an = ({
                         slotState: u,
                         cooldownEndTimeInSecs: e,
                         mapId: t,
@@ -3356,7 +3365,7 @@
                         isMapNameDisplayed: r,
                         onRemoveButtonClick: o,
                         tooltipStrings: s,
-                        MapSlotComponent: i = tn,
+                        MapSlotComponent: i = nn,
                         isReducedSize: l,
                     }) => {
                         if (u === Ru.selected)
@@ -3368,7 +3377,7 @@
                                 isReducedSize: l,
                             });
                         const c = u !== Ru.disabled;
-                        return a().createElement(un, {
+                        return a().createElement(en, {
                             isEnabled: c,
                             isMapNameDisplayed: r,
                             tooltipStrings: s,
@@ -3376,7 +3385,7 @@
                             slotType: n,
                         });
                     },
-                    an = wt(
+                    rn = Tt(
                         ({ className: u, path: e, excludedMaps: t }) => {
                             const n = t.length > 3;
                             return a().createElement(
@@ -3384,7 +3393,7 @@
                                 { className: u },
                                 t.map(
                                     ({ value: { cooldownEndTimeInSecs: u, mapId: t, slotState: r, slotType: o } }, s) =>
-                                        a().createElement(nn, {
+                                        a().createElement(an, {
                                             cooldownEndTimeInSecs: u,
                                             mapId: t,
                                             slotState: r,
@@ -3398,9 +3407,9 @@
                         null,
                         (u, e) => Object.assign({}, e, { excludedMaps: u }),
                     );
-                function rn() {
+                function on() {
                     return (
-                        (rn =
+                        (on =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -3409,10 +3418,10 @@
                                 }
                                 return u;
                             }),
-                        rn.apply(this, arguments)
+                        on.apply(this, arguments)
                     );
                 }
-                const on = {
+                const sn = {
                         get header() {
                             return R.strings.account_dashboard.excludedMaps.header();
                         },
@@ -3447,8 +3456,8 @@
                             return R.strings.account_dashboard.temporarilyUnavailable();
                         },
                     },
-                    sn =
-                        (wt(
+                    ln =
+                        (Tt(
                             ({ className: u, isEnabled: e, onClick: t }) => {
                                 const r = (0, n.useCallback)(() => {
                                         (t(), tu('play'));
@@ -3459,36 +3468,36 @@
                                 return e
                                     ? a().createElement(
                                           'div',
-                                          { className: F()(Tt, u), onClick: r, onMouseEnter: o },
-                                          a().createElement('div', { className: Mt }),
-                                          a().createElement('div', { className: kt }),
-                                          a().createElement('div', { className: St }, on.header),
-                                          a().createElement(an, {
+                                          { className: F()(xt, u), onClick: r, onMouseEnter: o },
+                                          a().createElement('div', { className: yt }),
+                                          a().createElement('div', { className: Rt }),
+                                          a().createElement('div', { className: Mt }, sn.header),
+                                          a().createElement(rn, {
                                               path: 'model.excludedMaps.excludedMaps',
-                                              className: Nt,
+                                              className: It,
                                           }),
                                       )
                                     : a().createElement(
                                           'div',
-                                          { className: F()(Tt, xt) },
-                                          a().createElement('div', { className: Mt }),
+                                          { className: F()(xt, St) },
                                           a().createElement('div', { className: yt }),
+                                          a().createElement('div', { className: Lt }),
                                           a().createElement(
                                               'div',
-                                              { className: Rt },
+                                              { className: Ot },
                                               a().createElement('img', {
                                                   src: R.images.gui.maps.icons.account_dashboard.premium_missions.lock(),
                                                   alt: '',
-                                                  className: Lt,
+                                                  className: kt,
                                               }),
-                                              a().createElement('div', { className: St }, on.header),
-                                              a().createElement('div', { className: Ot }, on.temporarilyUnavailable),
+                                              a().createElement('div', { className: Mt }, sn.header),
+                                              a().createElement('div', { className: Nt }, sn.temporarilyUnavailable),
                                           ),
                                       );
                             },
                             'model.excludedMaps',
                             (u, e) => {
-                                let t = rn({}, u);
+                                let t = on({}, u);
                                 return Object.assign({}, t, e, {
                                     excludedMaps: t.excludedMaps ? t.excludedMaps.map((u) => u.value) : [],
                                 });
@@ -3504,56 +3513,56 @@
                             const o = Math.floor(u.cooldownEndTimeInSecs - Date.now() / Ju),
                                 s = o <= 0 && '' !== u.mapId,
                                 i = o > 0,
-                                l = F()(It, s && $t, i && zt, r && Pt),
+                                l = F()(Pt, s && $t, i && Kt, r && Ht),
                                 c = se(u);
                             if (i) {
                                 const t = ne(o),
                                     n = le(t),
-                                    r = O(on.cooldownTooltipBody, { cooldownStr: ce(t) });
+                                    r = O(sn.cooldownTooltipBody, { cooldownStr: ce(t) });
                                 return a().createElement(
                                     fe,
-                                    { header: on.cooldownTooltipHeader, body: r },
+                                    { header: sn.cooldownTooltipHeader, body: r },
                                     a().createElement(
                                         'div',
                                         { className: l, 'data-testid': 'slot' },
-                                        a().createElement('img', { src: ie(u), className: Ht }),
+                                        a().createElement('img', { src: ie(u), className: Wt }),
                                         a().createElement(
                                             'div',
-                                            { className: Xt, 'data-testid': 'timer' },
+                                            { className: Zt, 'data-testid': 'timer' },
                                             a().createElement('img', {
                                                 src: R.images.gui.maps.icons.account_dashboard.excluded_maps.icon_cooldown_slot(),
-                                                className: Zt,
+                                                className: Qt,
                                             }),
-                                            a().createElement('div', { className: Qt }, n),
+                                            a().createElement('div', { className: Jt }, n),
                                         ),
-                                        e && a().createElement('div', { className: Ut }, c),
+                                        e && a().createElement('div', { className: Gt }, c),
                                     ),
                                 );
                             }
                             return a().createElement(
                                 fe,
                                 {
-                                    header: (null == n ? void 0 : n.replaceTooltipHeader) || on.replaceTooltipHeader,
-                                    body: (null == n ? void 0 : n.replaceTooltipBody) || on.replaceTooltipBody,
+                                    header: (null == n ? void 0 : n.replaceTooltipHeader) || sn.replaceTooltipHeader,
+                                    body: (null == n ? void 0 : n.replaceTooltipBody) || sn.replaceTooltipBody,
                                 },
                                 a().createElement(
                                     'div',
                                     { className: l, 'data-testid': 'slot' },
                                     t &&
                                         a().createElement(
-                                            Ne,
-                                            { type: 'ghost', mixClass: Kt, onClick: () => t(u.mapId) },
+                                            Ie,
+                                            { type: 'ghost', mixClass: qt, onClick: () => t(u.mapId) },
                                             a().createElement('img', {
                                                 src: R.images.gui.maps.icons.library.cross(),
-                                                className: qt,
+                                                className: Yt,
                                             }),
                                         ),
-                                    a().createElement('img', { src: ie(u), className: Ht }),
-                                    e && a().createElement('div', { className: Ut }, c),
+                                    a().createElement('img', { src: ie(u), className: Wt }),
+                                    e && a().createElement('div', { className: Gt }, c),
                                 ),
                             );
                         }),
-                    ln = {
+                    cn = {
                         [Nu.MAPS_BLACKLIST_SLOT_STATE_ACTIVE]: Ru.empty,
                         [Nu.MAPS_BLACKLIST_SLOT_STATE_ACTIVE_NO_HOVER]: Ru.selected,
                         [Nu.MAPS_BLACKLIST_SLOT_STATE_CHANGE]: Ru.selected,
@@ -3561,17 +3570,17 @@
                         [Nu.MAPS_BLACKLIST_SLOT_STATE_DISABLED]: Ru.disabled,
                         [Nu.MAPS_BLACKLIST_SLOT_STATE_SELECTED]: Ru.selected,
                     },
-                    cn = Gu()(({ observableModel: u }) => {
+                    dn = Gu()(({ observableModel: u }) => {
                         const e = { excludedMaps: u.array('items', []) },
                             t = (0, Ku.Om)(
-                                () => zu(e.excludedMaps.get(), (u) => Object.assign({}, u, { state: ln[u.state] })),
+                                () => zu(e.excludedMaps.get(), (u) => Object.assign({}, u, { state: cn[u.state] })),
                                 { equals: Wu },
                             );
                         return Object.assign({ computes: { getExcludedMapSlots: t } }, e);
                     }, Pu),
-                    dn = cn[0],
-                    En = cn[1],
-                    An = {
+                    En = dn[0],
+                    An = dn[1],
+                    mn = {
                         get disabledTooltipBody() {
                             return R.strings.excluded_maps.slot.disabledTooltipBody();
                         },
@@ -3591,37 +3600,37 @@
                             return R.strings.excluded_maps.slot.replaceTooltipBody();
                         },
                     },
-                    mn = (0, ku.Pi)(({ className: u, onMapRemoveFromBlacklist: e }) => {
-                        const t = En().model.computes.getExcludedMapSlots();
+                    Fn = (0, ku.Pi)(({ className: u, onMapRemoveFromBlacklist: e }) => {
+                        const t = An().model.computes.getExcludedMapSlots();
                         return a().createElement(
                             'div',
                             { className: u },
                             t.map((u, t) =>
-                                a().createElement(nn, {
+                                a().createElement(an, {
                                     isMapNameDisplayed: !0,
                                     onRemoveButtonClick: e,
                                     slotState: u.state,
                                     mapId: u.mapId,
                                     cooldownEndTimeInSecs: u.cooldownTime,
                                     key: t,
-                                    tooltipStrings: An,
-                                    MapSlotComponent: sn,
+                                    tooltipStrings: mn,
+                                    MapSlotComponent: ln,
                                     slotType: u.slotType,
                                 }),
                             ),
                         );
                     }),
-                    Fn = { context: 'model.disabledMaps' },
-                    Dn = (0, n.memo)(({ className: u, onMapRemoveFromBlacklist: e }) =>
+                    Dn = { context: 'model.disabledMaps' },
+                    _n = (0, n.memo)(({ className: u, onMapRemoveFromBlacklist: e }) =>
                         a().createElement(
-                            dn,
-                            { options: Fn },
-                            a().createElement(mn, { className: u, onMapRemoveFromBlacklist: e }),
+                            En,
+                            { options: Dn },
+                            a().createElement(Fn, { className: u, onMapRemoveFromBlacklist: e }),
                         ),
                     ),
-                    _n = { base: me.backButton },
-                    Bn = { base: me.scrollBar },
-                    Cn = (0, ku.Pi)(() => {
+                    Bn = { base: me.backButton },
+                    Cn = { base: me.scrollBar },
+                    pn = (0, ku.Pi)(() => {
                         const u = Xu(),
                             e = u.model,
                             t = u.controls,
@@ -3690,10 +3699,10 @@
                                     a().createElement(vu, {
                                         caption: Zu.backButtonLabel,
                                         goto: Zu.backButtonTo,
-                                        classNames: _n,
+                                        classNames: Bn,
                                         onClick: t.onBackAction,
                                     }),
-                                a().createElement(Dn, {
+                                a().createElement(_n, {
                                     className: me.slotsContainer,
                                     onMapRemoveFromBlacklist: t.onMapRemoveFromBlacklist,
                                 }),
@@ -3703,7 +3712,7 @@
                                     a().createElement(
                                         'div',
                                         { className: me.filterContainer },
-                                        a().createElement(Ue, null),
+                                        a().createElement(Ge, null),
                                         a().createElement(
                                             'div',
                                             { className: me.filterContainer_middle },
@@ -3718,7 +3727,7 @@
                                                 a().createElement(
                                                     'div',
                                                     { className: me.filterContainer_lockedStage },
-                                                    a().createElement(U, { text: l, binding: i }),
+                                                    a().createElement(j, { text: l, binding: i }),
                                                 ),
                                         ),
                                         a().createElement(Re, { onFilterClick: t.onFilterClick }),
@@ -3726,8 +3735,8 @@
                                     a().createElement('div', { className: me.divider }),
                                     a().createElement(
                                         Bu,
-                                        { api: eu(), className: me.scrollArea, barClassNames: Bn },
-                                        a().createElement(mt, {
+                                        { api: eu(), className: me.scrollArea, barClassNames: Cn },
+                                        a().createElement(Ft, {
                                             className: me.maps,
                                             onMapAddToBlacklist: t.onMapAddToBlacklist,
                                             onMapRemoveFromBlacklist: t.onMapRemoveFromBlacklist,
@@ -3744,7 +3753,7 @@
                             a().createElement(
                                 Yu,
                                 { mode: 'real' },
-                                a().createElement(S, null, a().createElement(Cn, null)),
+                                a().createElement(S, null, a().createElement(pn, null)),
                             ),
                             document.getElementById('root'),
                         );
@@ -3836,6 +3845,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [182], () => __webpack_require__(747));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [182], () => __webpack_require__(274));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

@@ -1,15 +1,15 @@
 import { j as e, x as s } from '../../../../chunks/vendor.js';
 import {
     m as o,
-    dm as t,
-    co as r,
-    cp as i,
-    dn as a,
-    dp as n,
+    dv as t,
+    cz as r,
+    cA as i,
+    dw as a,
+    dx as n,
     i as l,
     N as d,
-    cj as c,
-    ci as p,
+    cu as c,
+    ct as p,
     r as u,
 } from '../../../../chunks/lib.js';
 import { E as m, D as v } from '../../../../chunks/extended_tooltip_decorator.js';
@@ -63,34 +63,34 @@ const [T, b] = l()(({ observableModel: e }) => ({
         bonuses: e.arrayClone('bonuses'),
     })),
     x = 'BattleQuestTooltip_rewardsText_54d69d4c',
-    g = 'BattleQuestTooltip_divider_31b2f465',
-    w = 'BattleQuestTooltip_rewardItem_462d39e4',
+    w = 'BattleQuestTooltip_divider_31b2f465',
+    g = 'BattleQuestTooltip_rewardItem_462d39e4',
     y = 'BattleQuestTooltip_rewards_863df0c8',
     _ = d.resolve('aliases'),
-    j = R.strings.comp7_light.battleQuestTooltips,
-    h = s(function () {
+    h = R.strings.comp7_light.battleQuestTooltips,
+    j = s(function () {
         const { model: s } = b(),
             o = s.bonuses.get(),
             t = s.countdown.get();
         return e.jsxs(m, {
-            header: j.mission(),
+            header: h.mission(),
             description: c(s.description.get()),
             invertedColors: !0,
-            timerText: j.expiresIn(),
+            timerText: h.expiresIn(),
             timerTimeLeft: t,
             children: [
-                e.jsx(v, { className: g }),
-                e.jsx('div', { className: x, children: j.rewards(o.length) }),
+                e.jsx(v, { className: w }),
+                e.jsx('div', { className: x, children: h.rewards(o.length) }),
                 e.jsx(I, {
                     bonuses: o,
                     questId: s.id.get(),
                     resId: _.read((e) => e.comp7_light.shared.Quests('resId')),
                     size: p.Small,
-                    rewardItemClassMix: w,
+                    rewardItemClassMix: g,
                     count: 3,
                     classMix: y,
                 }),
             ],
         });
     });
-u(e.jsx(T, { children: e.jsx(h, {}) }));
+u(e.jsx(T, { children: e.jsx(j, {}) }));

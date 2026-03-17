@@ -1,5 +1,5 @@
 import { k as e, m as t, j as s } from '../../../../chunks/vendor.js';
-import { i, c as n, A as o, k as r, r as a, E as l } from '../../../../chunks/lib.js';
+import { i, c as n, A as o, F as r, r as a, E as l } from '../../../../chunks/lib.js';
 import { a as c, g as u } from '../../../../chunks/resources.js';
 import '../../../../chunks/getRewardImage.js';
 const d = { dynamicTexts: { remainingCount: 'singleRewardView.tooltip.remainingCount' } },

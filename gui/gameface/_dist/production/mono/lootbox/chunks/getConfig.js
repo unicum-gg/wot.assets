@@ -1,8 +1,9 @@
 import { af as t } from './lib.js';
-const n = {
+const e = {
         ENTRY_POINT: {
-            icon: { emptyIconBrightness: 0.3, boxesIconBrightness: 0.3 },
-            shine: { opacityCustom: 0.15, opacityCustomNewBox: 0.4, opacityDiff: 0.15, animationDuration: '40s' },
+            hover: { enabled: !1 },
+            icon: { emptyIconBrightness: 0.4, boxesIconBrightness: 0.4 },
+            shine: { opacity: 0.8 },
         },
         HAS_BOXES_VIEW: {
             hasIdle: !0,
@@ -15,28 +16,29 @@ const n = {
         INFO_PAGE: { hasDescription: !0 },
         REWARDS: { accentCount: 5 },
     },
-    o = {
-        DEFAULT_CONFIG: n,
+    n = {
+        DEFAULT_CONFIG: e,
         anniversaryCN: {
             ENTRY_POINT: { icon: { emptyIconBrightness: 0.2 } },
             HAS_BOXES_VIEW: { hasIdle: !1, tabsGuaranteedCount: 5 },
             INFO_PAGE: { hasDescription: !0 },
         },
+        lootBoxSystem: { ENTRY_POINT: { hover: { enabled: !0 } } },
     },
-    e = (e, s) => {
-        const i = o[t(e)];
-        return i
-            ? ((t, n) => {
-                  const o = (t, n) => {
-                      const e = { ...t };
-                      for (const s in e)
-                          n &&
-                              s in n &&
-                              ('object' == typeof e[s] ? (e[s] = o(e[s], n[s] ?? e[s])) : (e[s] = n[s] ?? e[s]));
-                      return e;
+    o = (o, s) => {
+        const r = n[t(o)];
+        return r
+            ? ((t, e) => {
+                  const n = (t, e) => {
+                      const o = { ...t };
+                      for (const s in o)
+                          e &&
+                              s in e &&
+                              ('object' == typeof o[s] ? (o[s] = n(o[s], e[s] ?? o[s])) : (o[s] = e[s] ?? o[s]));
+                      return o;
                   };
-                  return o(t, n);
-              })(n[s], i[s])
-            : n[s];
+                  return n(t, e);
+              })(e[s], r[s])
+            : e[s];
     };
-export { e as g };
+export { o as g };

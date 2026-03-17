@@ -1,22 +1,22 @@
-import { S as e, j as s, f as t, I as i, J as r } from '../../../../chunks/vendor.js';
+import { T as e, j as s, f as t, I as i, J as r } from '../../../../chunks/vendor.js';
 import {
     i as a,
-    aB as n,
-    a9 as c,
-    c8 as o,
-    c9 as d,
-    dR as u,
-    cd as l,
-    c2 as _,
-    cf as x,
+    aD as n,
+    ab as c,
+    cj as o,
+    ck as d,
+    dY as u,
+    co as l,
+    cd as _,
+    cq as x,
     m,
-    ci as p,
-    cm as w,
-    bV as b,
-    dS as j,
-    cP as g,
+    cs as p,
+    cv as w,
+    c5 as b,
+    dZ as j,
+    cW as v,
 } from '../../../../chunks/lib.js';
-import { Q as v } from '../../../../chunks/weekly_quests_model.js';
+import { Q as g } from '../../../../chunks/weekly_quests_model.js';
 /* empty css                        */ const [h, N] = a()(({ observableModel: s }) => {
     const t = {
             root: s.object(),
@@ -109,21 +109,21 @@ const k = {
         newMissionsDescription: 'Waiting_newMissionsDescription_3b697f7',
         newMissionsTimer: 'Waiting_newMissionsTimer_6bf867a3',
     },
-    S = R.strings.comp7_ext.weeklyQuestWidgetTooltip,
-    z = i(() => {
+    z = R.strings.comp7_ext.weeklyQuestWidgetTooltip,
+    B = i(() => {
         const { model: e } = N(),
             { timeToNewQuests: t, questsPassed: i, totalQuests: r } = e.root.get(),
             a = e.questNumbersToRewards.get().length - 1;
         return s.jsxs('div', {
             className: A.base,
             children: [
-                s.jsx(l, { text: S.header(), classMix: A.header }),
+                s.jsx(l, { text: z.header(), classMix: A.header }),
                 s.jsx(l, {
-                    text: S.missionsCounter(),
+                    text: z.missionsCounter(),
                     classMix: A.counterContainer,
                     binding: {
                         counter: s.jsx(l, {
-                            text: S.counter(),
+                            text: z.counter(),
                             classMix: A.counter,
                             binding: {
                                 current: s.jsx('span', { className: A.counter__current, children: i }),
@@ -133,7 +133,7 @@ const k = {
                     },
                 }),
                 s.jsx(x, {
-                    text: S.description(),
+                    text: z.description(),
                     classMix: A.description,
                     binding: {
                         questsList: m(a, (s) => e.computes.questRewardsNumber(s)).join(
@@ -151,7 +151,7 @@ const k = {
                             children: [
                                 s.jsx(p, {
                                     classMix: A.newMissionsDescription,
-                                    content: w(S.newMissions(v), { value: v }),
+                                    content: w(z.newMissions(g), { value: g }),
                                 }),
                                 s.jsx(b, { start: t, className: A.newMissionsTimer }),
                             ],
@@ -161,10 +161,10 @@ const k = {
             ],
         });
     }),
-    B = 'WeeklyQuestWidgetTooltip_20195207',
-    P = {
+    S = 'WeeklyQuestWidgetTooltip_20195207',
+    L = {
         [f.Active]: C,
-        [f.Waiting]: z,
+        [f.Waiting]: B,
         [f.Reward]: () =>
             s.jsxs('div', {
                 className: D.base,
@@ -177,13 +177,13 @@ const k = {
                 ],
             }),
     },
-    L = i(() => {
+    P = i(() => {
         const { model: e } = N(),
-            t = P[e.root.get().state];
+            t = L[e.root.get().state];
         return t
             ? s.jsx(j, {
-                  children: s.jsx(j.Decorator, { children: s.jsx('div', { className: B, children: s.jsx(t, {}) }) }),
+                  children: s.jsx(j.Decorator, { children: s.jsx('div', { className: S, children: s.jsx(t, {}) }) }),
               })
             : (console.error('Unreachable code: WeeklyQuestTooltip'), null);
     });
-g(s.jsx(h, { children: s.jsx(L, {}) }));
+v(s.jsx(h, { children: s.jsx(P, {}) }));

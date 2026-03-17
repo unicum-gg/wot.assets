@@ -1,7 +1,7 @@
 import { v as e, j as t, _ as s } from '../../../../chunks/vendor.js';
-import { i as a, a as o, n as r, r as n, aK as c, ap as i, ay as p, ax as d } from '../../../../chunks/lib.js';
+import { i as a, h as o, n as r, q as n, bs as c, ax as i, r as p, U as d } from '../../../../chunks/lib.js';
 import { p as l } from '../../../../chunks/common.js';
-const [m, u] = a()((e) => {
+/* empty css                        */ const [m, u] = a()((e) => {
     const t = e.observableModel.primitives(['params', 'type']);
     return {
         type: t.type,
@@ -12,13 +12,13 @@ const [m, u] = a()((e) => {
         },
     };
 }, r);
-const y = 'App_21e3a147',
-    h = 'App_header_62566856',
+const h = 'App_21e3a147',
+    y = 'App_header_62566856',
     j = 'App_icon_24de08c2',
     x = 'App_headerContainer_b23d7c80',
     f = 'App_title_5ec15df',
-    v = 'App_cooldown_1072bf2a',
-    g = 'App_content_80741629',
+    g = 'App_cooldown_1072bf2a',
+    v = 'App_content_80741629',
     _ = 'App_container_58b78fd8',
     b = 'App_description_fecd9a89',
     A = R.images.gui.maps.icons.battleRoyale.artefact.c_80x80,
@@ -122,12 +122,12 @@ const w = n.resolve('strings'),
         return t.jsx(c, {
             children: t.jsx(c.Decorator, {
                 children: t.jsx('div', {
-                    className: y,
+                    className: h,
                     children: t.jsxs('div', {
                         className: _,
                         children: [
                             t.jsxs('div', {
-                                className: h,
+                                className: y,
                                 children: [
                                     t.jsx('div', { className: j, style: { backgroundImage: `url(${A.$dyn(s)})` } }),
                                     t.jsxs('div', {
@@ -141,7 +141,7 @@ const w = n.resolve('strings'),
                                                         upgradeLegacy: !0,
                                                         text: e,
                                                         params: { ...s, cooldown: a },
-                                                        className: v,
+                                                        className: g,
                                                     },
                                                     e,
                                                 ),
@@ -151,7 +151,7 @@ const w = n.resolve('strings'),
                                 ],
                             }),
                             t.jsx('div', {
-                                className: g,
+                                className: v,
                                 children: n.map(({ text: e, params: s }) =>
                                     t.jsx(
                                         i,
