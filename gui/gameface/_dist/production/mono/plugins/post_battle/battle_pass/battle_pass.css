@@ -612,57 +612,109 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
 .BattlePass_title__freePoints_cdf0d62f {
     margin-bottom: 2rem;
 }
-.BattlePassLogo_36cd0b86 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 68rem;
-    min-height: 60rem;
-    padding-top: 3rem;
-    position: relative;
-}
-.mediaLarge .BattlePassLogo_36cd0b86 {
-    width: 114rem;
-    min-height: 105rem;
-    padding-top: 9rem;
-}
-.BattlePassLogo_flag_59f508c9 {
-    width: 34rem;
-    height: 46rem;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%);
-}
-.mediaLarge .BattlePassLogo_flag_59f508c9 {
-    width: 100rem;
-    height: 120rem;
-}
-.BattlePassLogo_emblemContainer_385eba8a {
-    position: relative;
-}
-.BattlePassLogo_emblem_37b682e9 {
+.Emblem_base__x60x60_d8756e36 {
     width: 60rem;
     height: 60rem;
-    background-repeat: no-repeat;
-    background-size: contain;
 }
-.mediaLarge .BattlePassLogo_emblem_37b682e9 {
+.Emblem_base__x100x100_547cf3ad {
     width: 100rem;
     height: 100rem;
 }
-.BattlePassLogo_icon_d611f01d {
-    width: 30rem;
-    height: 30rem;
-    position: absolute;
-    top: 4rem;
-    left: 50%;
-    transform: translate(-50%);
+.Emblem_base__x160x160_c9c06954 {
+    width: 160rem;
+    height: 160rem;
 }
-.mediaLarge .BattlePassLogo_icon_d611f01d {
-    width: 50rem;
-    height: 50rem;
-    top: 6rem;
+.Emblem_base__x200x200_2ddeb5ee {
+    width: 200rem;
+    height: 200rem;
+}
+.Emblem_base__x240x240_308c1aa9 {
+    width: 240rem;
+    height: 240rem;
+}
+.Emblem_base__x360x360_98f20cf9 {
+    width: 360rem;
+    height: 360rem;
+}
+.Emblem_shield_451cf2c9,
+.Emblem_icon_73d84087 {
+    background: no-repeat center/cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%) translateY(-50%);
+}
+.Emblem_shield_451cf2c9 {
+    z-index: 7;
+}
+.Emblem_shield__x74x74_a298d905 {
+    width: 74rem;
+    height: 74rem;
+    background-size: 74rem;
+}
+.Emblem_shield__x120x120_c8aa5234 {
+    width: 120rem;
+    height: 120rem;
+    background-size: 120rem;
+}
+.Emblem_shield__x200x200_f1ed9db0 {
+    width: 200rem;
+    height: 200rem;
+    background-size: 200rem;
+}
+.Emblem_shield__x260x260_ef1c262b {
+    width: 260rem;
+    height: 260rem;
+    background-size: 260rem;
+}
+.Emblem_shield__x300x300_7c6d6f97 {
+    width: 300rem;
+    height: 300rem;
+    background-size: 300rem;
+}
+.Emblem_shield__x456x456_c818292e {
+    width: 456rem;
+    height: 456rem;
+    background-size: 456rem;
+}
+.Emblem_icon_73d84087 {
+    top: 32%;
+    z-index: 8;
+}
+.Emblem_icon__x28x28_6ea3e635 {
+    width: 28rem;
+    height: 28rem;
+    background-size: 28rem;
+}
+.Emblem_icon__x48x48_f2526f88 {
+    width: 48rem;
+    height: 48rem;
+    background-size: 48rem;
+}
+.Emblem_icon__x60x60_628dbf9a {
+    width: 60rem;
+    height: 60rem;
+    background-size: 60rem;
+}
+.Emblem_icon__x80x80_34079478 {
+    width: 80rem;
+    height: 80rem;
+    background-size: 80rem;
+}
+.Emblem_icon__x100x100_e8181a63 {
+    width: 100rem;
+    height: 100rem;
+    background-size: 100rem;
+}
+.Emblem_icon__x120x120_c8aa5234 {
+    width: 120rem;
+    height: 120rem;
+    background-size: 120rem;
+}
+.Emblem_icon__x160x160_aec06e5c {
+    width: 160rem;
+    height: 160rem;
+    background-size: 160rem;
 }
 .Reward_d65e1e12 {
     display: flex;
@@ -1397,13 +1449,14 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
 .mediaLarge .Stage_lastRewards_9578652b {
     padding-right: 24rem;
 }
-.ChapterContent_header_4a333f {
+.ChapterContent_header_31f4031e {
     display: flex;
     align-items: center;
     height: 110rem;
     padding-right: 20rem;
+    position: relative;
 }
-.mediaLarge .ChapterContent_header_4a333f {
+.mediaLarge .ChapterContent_header_31f4031e {
     height: 135rem;
     padding-right: 24rem;
 }
@@ -1439,4 +1492,11 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
 }
 .mediaLarge .ChapterContent_achievements_ab6a323f {
     margin-top: 5rem;
+}
+.ChapterContent_logo_d27a1604 {
+    margin-right: 12rem;
+    transform: translate(5rem, 28rem);
+}
+.mediaLarge .ChapterContent_logo_d27a1604 {
+    transform: translate(5rem, 20rem);
 }

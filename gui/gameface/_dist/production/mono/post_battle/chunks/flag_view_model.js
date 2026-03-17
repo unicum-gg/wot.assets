@@ -1,5 +1,5 @@
 import './vendor.js';
-import { x as t } from './lib.js';
+import { z as t } from './lib.js';
 const s = {
         overview: 'overview',
         teamsStatistics: 'teamScore',

@@ -2,8 +2,8 @@ import { p as s, j as e } from '../../../../chunks/vendor.js';
 import {
     i as o,
     m as i,
-    v as a,
-    w as r,
+    H as a,
+    K as r,
     p as t,
     n,
     S as l,
@@ -13,8 +13,8 @@ import {
     r as p,
 } from '../../../../chunks/lib.js';
 import { D as u } from '../../../../chunks/divider.js';
-import { E as v } from '../../../../chunks/extended_tooltip_decorator.js';
-import { S as y } from '../../../../chunks/spec_conditions.js';
+import { E as y } from '../../../../chunks/extended_tooltip_decorator.js';
+import { S as v } from '../../../../chunks/spec_conditions.js';
 import { t as _ } from '../../../../chunks/helpers.js';
 const [j, k] = o()(
         ({ observableModel: s }) => ({
@@ -48,20 +48,20 @@ const [j, k] = o()(
     h = 'WeeklyQuestTooltip_divider_18712a6c',
     T = 'WeeklyQuestTooltip_blockTitle_31eb440a',
     b = 'WeeklyQuestTooltip_rewards_b03f0c37',
-    w = 'WeeklyQuestTooltip_rewardItem_e6e09bf9',
-    x = d.resolve('strings'),
+    x = 'WeeklyQuestTooltip_rewardItem_e6e09bf9',
+    w = d.resolve('strings'),
     C = s(function () {
         const { model: s } = k(),
             o = s.specConditions.get();
-        return e.jsxs(v, {
-            header: x.readOrEmpty('user_missions.tooltip.weekly_mission'),
-            description: x.readOrEmpty(`weekly_quests.condition.common.c_${s.commonConditionId.get()}`),
+        return e.jsxs(y, {
+            header: w.readOrEmpty('user_missions.tooltip.weekly_mission'),
+            description: w.readOrEmpty(`weekly_quests.condition.common.c_${s.commonConditionId.get()}`),
             invertedColors: !0,
             children: [
-                o.length > 0 && e.jsx(y, { specConditions: o, className: f }),
+                o.length > 0 && e.jsx(v, { specConditions: o, className: f }),
                 e.jsx(u, { className: h }),
                 e.jsx(m, { path: 'user_missions.tooltip.daily_quests.rewards', className: T }),
-                e.jsx(c, { data: s.rewards.get(), size: t.Small, classMix: b, rewardItemClassMix: w }),
+                e.jsx(c, { data: s.rewards.get(), size: t.Small, classMix: b, rewardItemClassMix: x }),
             ],
         });
     });

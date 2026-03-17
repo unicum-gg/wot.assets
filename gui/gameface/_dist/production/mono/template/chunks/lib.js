@@ -89,14 +89,14 @@ const E = {
         return e in p;
     },
     formatNumber: function (e, t) {
-        return window.systemLocale.getNumberFormat(t, p[e]);
+        return window.formatters.getNumberFormat(t, p[e]);
     },
     numberFormats: y,
     isRealFormat: function (e) {
         return e in g;
     },
-    formatReal: function (e, t) {
-        return window.systemLocale.getRealFormat(t, g[e]);
+    formatReal: function (e, t, n = 2) {
+        return window.formatters.getRealFormat(t, g[e], n);
     },
     realFormats: v,
     formatDateTime: function (e, t, n = !0) {
@@ -156,7 +156,7 @@ class T {
         return this.pluralOr(e, t, () => '', n);
     }
 }
-class L {
+class O {
     constructor(e = window.R.videos, t) {
         ((this.root = e), (this.prefix = t));
     }
@@ -192,7 +192,7 @@ class L {
         return void 0 !== this.read(e);
     }
 }
-function O(e) {
+function L(e) {
     return (t) => (
         engine.on(e, t),
         () => {
@@ -207,7 +207,7 @@ c.register({
     strings: o(() => new T()).singleton(),
     images: o(() => new m(window.R.images.gui.maps.icons)).singleton(),
     atlases: o(() => new m(window.R.atlases)).singleton(),
-    videos: o(() => new L(window.R.videos)).singleton(),
+    videos: o(() => new O(window.R.videos)).singleton(),
     views: i(
         class {
             read(e) {
@@ -235,9 +235,9 @@ c.register({
     langCode: r(R.strings.settings.LANGUAGE_CODE()),
     intl: r(E),
 });
-const D = O('clientResized'),
-    P = O('self.onScaleUpdated'),
-    N = { down: O('mousedown'), up: O('mouseup'), move: O('mousemove') };
+const D = L('clientResized'),
+    P = L('self.onScaleUpdated'),
+    N = { down: L('mousedown'), up: L('mouseup'), move: L('mousemove') };
 !(function () {
     const e = { listeners: 0, enabled: !0, initialized: !1 };
     function t() {
@@ -297,10 +297,10 @@ const M = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
         ),
         { notReady: 0, ready: 1, showing: 2, shown: 3, hiding: 4, hidden: 5 }),
     F = {
-        onTextureFrozen: O('self.onTextureFrozen'),
-        onTextureReady: O('self.onTextureReady'),
-        onDomBuilt: O('self.onDomBuilt'),
-        onLoaded: O('self.onLoaded'),
+        onTextureFrozen: L('self.onTextureFrozen'),
+        onTextureReady: L('self.onTextureReady'),
+        onDomBuilt: L('self.onDomBuilt'),
+        onLoaded: L('self.onLoaded'),
         onHitTest: (() => {
             const e = new Set(),
                 t = (t, n) => {
@@ -318,15 +318,16 @@ const M = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
                 }
             );
         })(),
-        onDisplayChanged: O('self.onShowingStatusChanged'),
-        onFocusUpdated: O('self.onFocusChanged'),
+        onDisplayChanged: L('self.onShowingStatusChanged'),
+        onFocusUpdated: L('self.onFocusChanged'),
+        onExternalPaddingsUpdated: L('self.onPaddingsUpdated'),
         children: {
-            onAdded: O('children.onAdded'),
-            onLoaded: O('children.onLoaded'),
-            onRemoved: O('children.onRemoved'),
-            onAttached: O('children.onAttached'),
-            onTextureReady: O('children.onTextureReady'),
-            onRequestPosition: O('children.requestPosition'),
+            onAdded: L('children.onAdded'),
+            onLoaded: L('children.onLoaded'),
+            onRemoved: L('children.onRemoved'),
+            onAttached: L('children.onAttached'),
+            onTextureReady: L('children.onTextureReady'),
+            onRequestPosition: L('children.requestPosition'),
         },
     };
 function k() {

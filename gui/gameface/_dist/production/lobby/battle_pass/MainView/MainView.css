@@ -4820,7 +4820,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .BattlePassProgressionsViewContent_base__extra_e2 {
     --widget-size: 418rem;
-    background-color: #111820;
+    background-color: #0d131d;
     background-position: 100% 50%;
     background-size: 1640rem 820rem;
 }
@@ -4841,7 +4841,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-size: 3800rem 1900rem;
 }
 .BattlePassProgressionsViewContent_base__extraChapter_17 {
-    background-color: #111820;
+    background-color: #0a1316;
 }
 .BattlePassProgressionsViewContent_header_76 {
     position: absolute;
@@ -11422,7 +11422,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
     width: 100%;
     height: 100%;
-    background: #111820;
+    background: #070a0d;
     overflow: hidden;
     position: relative;
 }
@@ -11460,12 +11460,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .App_base__tankmenState_c9 .App_background_74 {
-    width: 100%;
-    height: 100%;
     background-image: url('R.images.gui.maps.icons.battlePass.holiday_final_screen.bg');
-    top: 0;
-    left: 0;
-    transform: none;
 }
 
 .App_base__rewardsState_39 .App_background_74 {
@@ -11838,13 +11833,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    width: 600rem;
+    width: 400rem;
     height: 36rem;
     margin-bottom: 9rem;
     text-align: center;
 }
 
 .mediaMedium .Purchase_description_b9 {
+    width: 450rem;
     margin-bottom: 20rem;
     font-size: 16rem;
 }

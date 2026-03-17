@@ -1,41 +1,41 @@
 import { r as e, o as a, e as s, n as r, j as t, l as n, m as i, f as o } from '../../../chunks/vendor.js';
 import {
-    ak as l,
-    al as d,
-    O as c,
-    a as _,
-    am as m,
-    an as u,
+    w as l,
+    x as d,
+    y as c,
+    b as _,
+    z as m,
+    A as u,
     r as p,
-    ao as h,
-    W as b,
+    C as h,
+    D as b,
     c as g,
     i as w,
-    af as f,
-    f as v,
-    ap as R,
+    E as v,
+    f,
+    G as R,
     u as N,
-    K as x,
+    H as x,
     e as y,
     R as O,
-    N as j,
+    J as j,
     F as T,
-    ag as I,
+    K as I,
     B as A,
-    A as E,
-    C as P,
+    L as E,
+    M as P,
     I as S,
-    aq as H,
-    ar as C,
+    N as H,
+    O as C,
     V,
-    b as k,
+    a as k,
     o as M,
     k as $,
     d as B,
     U as W,
 } from '../../../chunks/lib.js';
 import { A as L, R as z, s as G } from '../../../chunks/helpers.js';
-/* empty css                    */ const U = (a) => () => {
+/* empty css                    */ const D = (a) => () => {
         const { steps: s, autoStart: r = !0 } = a,
             t = e.useRef(null),
             n = e.useRef('idle'),
@@ -100,7 +100,7 @@ import { A as L, R as z, s as G } from '../../../chunks/helpers.js';
             p
         );
     },
-    q = (e) => ({
+    U = (e) => ({
         index: e.index,
         name: e.name,
         image: (a) =>
@@ -129,10 +129,10 @@ import { A as L, R as z, s as G } from '../../../chunks/helpers.js';
                 .read((e) => e.common.tooltip_window.backport_tooltip_content.BackportTooltipContent('resId')),
         ),
     }),
-    D = 16 / 9,
-    K = (e, a) => {
+    K = 16 / 9,
+    q = (e, a) => {
         const s = e / a;
-        return { width: `${s > D ? e : a * D}rem`, height: `${s < D ? a : e / D}rem` };
+        return { width: `${s > K ? e : a * K}rem`, height: `${s < K ? a : e / K}rem` };
     },
     Y = {
         gui_random_reward_appear: g('gui_random_reward_appear'),
@@ -149,14 +149,14 @@ import { A as L, R as z, s as G } from '../../../chunks/helpers.js';
             const s = {
                     root: e.object(),
                     vehicle: e.object('vehicle'),
-                    rewards: e.transform((e) => f(e, q), 'rewards'),
+                    rewards: e.transform((e) => v(e, U), 'rewards'),
                 },
                 r = a.box(!1),
-                t = v.model(() => {
+                t = f.model(() => {
                     const e = s.root.get().type;
                     return e === z.OPERATION || e === z.VEHICLE_PART ? [] : R(s.rewards.get(), (e, a) => a < 4);
                 }),
-                n = v.model(() =>
+                n = f.model(() =>
                     s.root.get().type === z.OPERATION ? s.rewards.get() : R(s.rewards.get(), (e, a) => a >= 4),
                 );
             return { ...s, introVideoPlaying: r, computes: { mainRegularRewards: t, additionalRewards: n } };
@@ -189,7 +189,7 @@ function _e() {
         throw new Error('useAnimationApi was called in component, which is not wrapped in AnimationProvider');
     return a;
 }
-const me = U({
+const me = D({
         steps: [
             { name: Q, delay: 0 },
             { name: X, delay: 200 },
@@ -206,7 +206,7 @@ const me = U({
         const a = me();
         return t.jsx(ce.Provider, { value: a, children: e });
     }),
-    pe = U({
+    pe = D({
         steps: [
             { name: Q, delay: 0 },
             { name: X, delay: 200 },
@@ -224,7 +224,7 @@ const me = U({
         const a = pe();
         return t.jsx(ce.Provider, { value: a, children: e });
     }),
-    be = U({
+    be = D({
         steps: [
             { name: Z, delay: 200 },
             { name: ee, delay: 200 },
@@ -250,7 +250,7 @@ const me = U({
                 return t.jsx(ue, { children: e });
         }
     });
-const fe = r(function ({ reward: a, onAnimationStart: s, onAnimationEnd: r, index: o, className: l }) {
+const ve = r(function ({ reward: a, onAnimationStart: s, onAnimationEnd: r, index: o, className: l }) {
         const { model: d } = J(),
             { type: c } = d.root.get(),
             _ = N(),
@@ -283,7 +283,7 @@ const fe = r(function ({ reward: a, onAnimationStart: s, onAnimationEnd: r, inde
             t.jsx(i.div, { className: l, style: p, children: t.jsx(O, { ...a, size: u, image: a.image(u) }, o) })
         );
     }),
-    ve = 'AdditionalRewards_ffae6df',
+    fe = 'AdditionalRewards_ffae6df',
     Re = 'AdditionalRewards_title_2d8eb236',
     Ne = 'AdditionalRewards_list_81a45598',
     xe = 'AdditionalRewards_reward_ed90708c',
@@ -291,14 +291,14 @@ const fe = r(function ({ reward: a, onAnimationStart: s, onAnimationEnd: r, inde
         const { model: a } = J(),
             s = _e();
         return t.jsxs('div', {
-            className: o(ve, e.className),
+            className: o(fe, e.className),
             children: [
                 t.jsx(T, { path: 'personal_missions_30.rewards.additional', className: Re }),
                 t.jsx('div', {
                     className: Ne,
-                    children: f(a.computes.additionalRewards(), (e, a, r) =>
+                    children: v(a.computes.additionalRewards(), (e, a, r) =>
                         t.jsx(
-                            fe,
+                            ve,
                             {
                                 index: a,
                                 reward: e,
@@ -495,9 +495,9 @@ function ze({ reward: e }) {
     });
 }
 const Ge = 'VehiclePart_15b78928',
-    Ue = 'VehiclePart_image_f33361cd',
-    qe = 'VehiclePart_label_5cfdac0';
-function De(e) {
+    De = 'VehiclePart_image_f33361cd',
+    Ue = 'VehiclePart_label_5cfdac0';
+function Ke(e) {
     const a = p.resolve('strings');
     return t.jsxs('div', {
         className: Ge,
@@ -507,13 +507,13 @@ function De(e) {
                 width: 720,
                 height: 270,
                 adaptive: { large: { width: 1200, height: 450 } },
-                className: Ue,
+                className: De,
             }),
-            t.jsx('div', { className: qe, children: a.readOrEmpty(`personal_missions_30.detail.name.${e.id}`) }),
+            t.jsx('div', { className: Ue, children: a.readOrEmpty(`personal_missions_30.detail.name.${e.id}`) }),
         ],
     });
 }
-const Ke = {
+const qe = {
         base: 'MainRewards_9aca825a',
         ribbonWrapper: 'MainRewards_ribbonWrapper_30eeaba3',
         ribbon: 'MainRewards_ribbon_7f79f96d',
@@ -541,10 +541,10 @@ const Ke = {
                 return (l.events.on('change', e), () => l.events.off('change', e));
             }, [l.events, i]),
             t.jsxs('div', {
-                className: o(Ke.base, a.className, Ke[`base__${r}`]),
+                className: o(qe.base, a.className, qe[`base__${r}`]),
                 children: [
                     t.jsx('div', {
-                        className: Ke.ribbonWrapper,
+                        className: qe.ribbonWrapper,
                         children:
                             r !== z.VEHICLE_PART &&
                             t.jsx(S, {
@@ -563,16 +563,16 @@ const Ke = {
                                         height: 500,
                                     },
                                 },
-                                className: Ke.ribbon,
+                                className: qe.ribbon,
                             }),
                     }),
                     t.jsxs('div', {
-                        className: Ke.list,
+                        className: qe.list,
                         children: [
-                            t.jsx('div', { className: Ke.rays }),
+                            t.jsx('div', { className: qe.rays }),
                             n
-                                ? t.jsx(De, { id: n })
-                                : f(s.computes.mainRegularRewards(), (e, a) => t.jsx(ze, { reward: e }, a)),
+                                ? t.jsx(Ke, { id: n })
+                                : v(s.computes.mainRegularRewards(), (e, a) => t.jsx(ze, { reward: e }, a)),
                         ],
                     }),
                 ],
@@ -612,7 +612,7 @@ const Ke = {
                         src: ea.readOrEmpty(`personal_missions_30.rewards_screen.operation_${r}`),
                         autoplay: !0,
                         isPrebufferKeyframes: Boolean(o.length),
-                        style: K(c, _),
+                        style: q(c, _),
                         onEnded: () => {
                             var e;
                             (n && (d.start(), s.setIntroVideoPlaying(!1), s.disableVideoOverlaySound()),

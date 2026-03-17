@@ -1,5 +1,5 @@
 import { k as t, l as e, j as a, m as s } from '../../../../chunks/vendor.js';
-import { i as l, c as i, x as o, E as d, m as n, J as p, U as r, N as _, r as c } from '../../../../chunks/lib.js';
+import { i as l, c as i, t as o, E as d, m as n, J as p, U as r, H as _, r as c } from '../../../../chunks/lib.js';
 import { S as u } from '../../../../chunks/battle_result_stat_tooltip_model.js';
 const [f, m] = l()(({ observableModel: e }) => {
         const a = {

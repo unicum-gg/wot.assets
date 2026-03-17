@@ -19,72 +19,72 @@ import {
     z as b,
 } from '../../../chunks/vendor.js';
 import {
-    w as h,
-    c as N,
-    i as I,
+    P as h,
+    c as I,
+    i as N,
     f as v,
     k as x,
-    x as E,
+    Q as E,
     e as y,
-    a as S,
+    b as S,
     r as O,
     p as C,
     I as w,
     B as j,
-    y as A,
-    z as M,
-    D,
-    b as T,
+    S as A,
+    T as M,
+    W as D,
+    a as T,
     h as P,
     n as L,
-    A as k,
+    L as k,
     F as V,
-    C as B,
-    S as H,
-    E as $,
-    L as Q,
-    M as W,
-    H as U,
-    G as q,
-    T as F,
-    J as Y,
-    K as z,
-    N as G,
+    M as B,
+    X as H,
+    Y as $,
+    Z as Q,
+    _ as W,
+    $ as U,
+    a0 as q,
+    a1 as F,
+    a2 as Y,
+    H as z,
+    J as G,
     l as K,
-    O as X,
-    P as Z,
-    Q as J,
+    y as X,
+    a3 as Z,
+    a4 as J,
     R as ee,
-    W as se,
-    X as ae,
-    Y as te,
-    Z as ie,
-    _ as ne,
-    $ as oe,
-    a0 as re,
-    a1 as le,
+    D as se,
+    a5 as ae,
+    a6 as te,
+    a7 as ie,
+    a8 as ne,
+    a9 as oe,
+    aa as re,
+    ab as le,
     u as ce,
-    a2 as de,
-    a3 as _e,
-    a4 as me,
-    a5 as ue,
-    a6 as pe,
-    a7 as ge,
-    a8 as fe,
-    a9 as be,
+    ac as de,
+    ad as _e,
+    ae as me,
+    af as ue,
+    ag as pe,
+    ah as ge,
+    ai as fe,
+    aj as be,
     v as he,
-    aa as Ne,
-    ab as Ie,
+    ak as Ie,
+    al as Ne,
     V as ve,
-    ac as xe,
-    ad as Ee,
-    ae as ye,
+    am as xe,
+    an as Ee,
+    ao as ye,
     m as Se,
-    af as Oe,
-    ag as Ce,
-    ah as we,
-    ai as je,
-    aj as Ae,
+    E as Oe,
+    K as Ce,
+    ap as we,
+    aq as je,
+    ar as Ae,
     d as Me,
     U as De,
 } from '../../../chunks/lib.js';
@@ -184,9 +184,9 @@ function ls(e, s) {
 const cs = 'missions',
     ds = 'assembling',
     _s = 'progression',
-    ms = { carouselButton: N('carouselButton'), bp_slide: N('bp_slide') },
+    ms = { carouselButton: I('carouselButton'), bp_slide: I('bp_slide') },
     us = { step: { ...h.step, factor: 9 }, animationConfig: { ...h.animationConfig, tension: 120 } },
-    [ps, gs] = I()(
+    [ps, gs] = N()(
         (e) => {
             const s = {
                 ...e.observableModel.primitives([
@@ -340,8 +340,8 @@ const cs = 'missions',
                 config: { duration: 300, easing: y.easeOutQuart },
             })),
             [f, b] = d(() => ({ from: { opacity: 0 }, config: { duration: 300, easing: y.easeOutQuart } })),
-            [h, N] = d(() => ({ from: { opacity: 1, transform: 'translateY(0rem)' }, config: { duration: 200 } })),
-            [I, v] = d(() => ({
+            [h, I] = d(() => ({ from: { opacity: 1, transform: 'translateY(0rem)' }, config: { duration: 200 } })),
+            [N, v] = d(() => ({
                 from: { opacity: 1, transform: 'translateY(0rem)' },
                 config: { duration: 300, easing: y.easeOutQuart },
             })),
@@ -367,7 +367,7 @@ const cs = 'missions',
                                     pointerEvents: 'none',
                                     config: { duration: 300, easing: y.easeInQuart },
                                 }),
-                                N.start({
+                                I.start({
                                     opacity: 0,
                                     transform: 'translateY(10rem)',
                                     config: { easing: y.easeInQuart },
@@ -397,7 +397,7 @@ const cs = 'missions',
                                         delay: 620,
                                         config: { duration: 300, easing: y.easeOutQuart },
                                     }),
-                                    N.start({
+                                    I.start({
                                         opacity: 1,
                                         transform: 'translateY(0rem)',
                                         config: { easing: y.easeOutCirc },
@@ -579,7 +579,7 @@ const cs = 'missions',
                             ));
                         break;
                     case Je:
-                        N.start({
+                        I.start({
                             opacity: 0,
                             transform: 'translateY(10rem)',
                             config: { easing: y.easeInQuart, duration: 300 },
@@ -607,7 +607,7 @@ const cs = 'missions',
                                 onRest: () => ts.send({ type: 'TO_IDLE' }),
                             }));
                 }
-            }, [i.missionCategory, i.nextOperationId, i.detailId, i.action, t, a, v, N, O, l, w, g, b, u]),
+            }, [i.missionCategory, i.nextOperationId, i.detailId, i.action, t, a, v, I, O, l, w, g, b, u]),
             _.jsx(fs.Provider, {
                 value: {
                     completedStateStyle: f,
@@ -617,7 +617,7 @@ const cs = 'missions',
                     detailInfoStyle: C,
                     zoomOutStyle: x,
                     statusStyle: h,
-                    menuStyle: I,
+                    menuStyle: N,
                 },
                 children: e,
             })
@@ -628,8 +628,8 @@ const cs = 'missions',
         if (!e) throw new Error('useAnimation must be used within an AnimationProvider');
         return e;
     },
-    Ns = 'ZoomOut_718336b5',
-    Is = 'ZoomOut_line_227e84e1',
+    Is = 'ZoomOut_718336b5',
+    Ns = 'ZoomOut_line_227e84e1',
     vs = 'ZoomOut_icon_ea52efbd';
 function xs({ className: e }) {
     const s = O.resolve('sounds'),
@@ -647,9 +647,9 @@ function xs({ className: e }) {
         );
     return _.jsxs(m.div, {
         style: a,
-        className: u(Ns, e),
+        className: u(Is, e),
         children: [
-            _.jsx('div', { className: Is }),
+            _.jsx('div', { className: Ns }),
             _.jsx(w, {
                 path: 'personal_missions_30.common.zoom_out',
                 ...i,
@@ -663,7 +663,7 @@ function xs({ className: e }) {
                 height: 64,
                 className: vs,
             }),
-            _.jsx('div', { className: Is }),
+            _.jsx('div', { className: Ns }),
         ],
     });
 }
@@ -796,7 +796,7 @@ const $s = 'assault',
 function Ks(e, s, a) {
     return e.find((e) => e[s] === a);
 }
-const [Xs, Zs] = I()(({ observableModel: e }) => {
+const [Xs, Zs] = N()(({ observableModel: e }) => {
         const s = { ...e.primitives(['missionsCategory']), allMissions: e.arrayClone('allMissions') },
             a = v.model((e) => {
                 const a = Ks(s.allMissions.get(), 'operationId', e);
@@ -1066,8 +1066,8 @@ function fa({ currentProgress: e, maxProgress: s, className: a, ...t }) {
 }
 const ba = 'Progress_431da46b',
     ha = 'Progress_separator_5e9f0d5b',
-    Na = 'Progress_line_6fc99c5a',
-    Ia = 'Progress_icon_14b45aa1',
+    Ia = 'Progress_line_6fc99c5a',
+    Na = 'Progress_icon_14b45aa1',
     va = 'Progress_bab84485';
 function xa({ cardIndex: e, cardType: s, currentProgressValue: a, maxProgressValue: t, className: i }) {
     const n = O.resolve('views'),
@@ -1084,14 +1084,14 @@ function xa({ cardIndex: e, cardType: s, currentProgressValue: a, maxProgressVal
                 _.jsxs('div', {
                     className: ha,
                     children: [
-                        _.jsx('div', { className: Na }),
+                        _.jsx('div', { className: Ia }),
                         _.jsx(w, {
-                            className: Ia,
+                            className: Na,
                             path: 'personal_missions_30.common.card.done_separator',
                             width: '16rem',
                             height: '17rem',
                         }),
-                        _.jsx('div', { className: Na }),
+                        _.jsx('div', { className: Ia }),
                     ],
                 }),
             _.jsx(fa, { ...l, currentProgress: a, maxProgress: t, className: va }),
@@ -1150,8 +1150,8 @@ const Ea = (e, s) => window.getComputedStyle(e, null).getPropertyValue(s),
             m = r.useRef(null),
             [p, g] = r.useState(!1),
             [f, b] = r.useState([]),
-            [h, N] = r.useState(0),
-            I = X(),
+            [h, I] = r.useState(0),
+            N = X(),
             v = r.useMemo(() => document.createElement('canvas'), []),
             x = r.useCallback(() => (m.current ? m.current.getBoundingClientRect().height : 0), []),
             E = r.useCallback(
@@ -1176,10 +1176,10 @@ const Ea = (e, s) => window.getComputedStyle(e, null).getPropertyValue(s),
                 b(t);
             }, [v, E, s, e]),
             S = r.useCallback(() => {
-                I.run(() => {
-                    (N(x() * s), y());
+                N.run(() => {
+                    (I(x() * s), y());
                 });
-            }, [x, s, I, y]);
+            }, [x, s, N, y]);
         return (
             r.useEffect(S, [S]),
             Z(S, [S]),
@@ -1514,7 +1514,7 @@ const Ja = {
             f = X(),
             b = ce(),
             h = de(p, me.horizontal, void 0, { gapBeforeStart: 5 }),
-            N = r.useCallback(
+            I = r.useCallback(
                 function (e) {
                     const s = p.getWrapperSize(),
                         a = p.animationScroll.scrollPosition.get(),
@@ -1526,8 +1526,8 @@ const Ja = {
                 [p, b],
             );
         (r.useEffect(() => {
-            void 0 !== l && e === as && f.run(() => N(l));
-        }, [l, N, f, e]),
+            void 0 !== l && e === as && f.run(() => I(l));
+        }, [l, I, f, e]),
             r.useEffect(() => {
                 if (void 0 === l) return;
                 const e = () => {
@@ -1558,7 +1558,7 @@ const Ja = {
                     }
                 );
             }, [l, p, f]));
-        const I = r.useCallback((e) => {
+        const N = r.useCallback((e) => {
                 c.current.push(e);
             }, []),
             v = C(
@@ -1576,7 +1576,7 @@ const Ja = {
                 ),
             );
         function x() {
-            (void 0 !== l && N(l), b.play('carouselButton'), v.onClick());
+            (void 0 !== l && I(l), b.play('carouselButton'), v.onClick());
         }
         function E(e) {
             (b.play('mouse-enter'), v.onMouseEnter(e));
@@ -1588,7 +1588,7 @@ const Ja = {
                     areaClassName: Ja.scroll,
                     children: _.jsx('div', {
                         className: Ja.content,
-                        children: o.map((e, s) => _.jsx(Ka, { mission: e, index: s, ref: I }, e.currentMissionNumber)),
+                        children: o.map((e, s) => _.jsx(Ka, { mission: e, index: s, ref: N }, e.currentMissionNumber)),
                     }),
                 }),
                 void 0 !== l &&
@@ -1637,7 +1637,7 @@ const Ja = {
             [o, l] = d(() => ({ from: { opacity: 0 } })),
             [p, g] = d(() => ({ from: { opacity: 0 } })),
             [f, b] = d(() => ({ from: { opacity: 0, transform: 'translateY(-20rem)' } })),
-            [h, N] = d(() => ({ from: { opacity: 0, transform: 'translateY(20rem)' } }));
+            [h, I] = d(() => ({ from: { opacity: 0, transform: 'translateY(20rem)' } }));
         return (
             S(() => {
                 l.start({
@@ -1647,7 +1647,7 @@ const Ja = {
                         ls(
                             [
                                 b.start({ ...rt, config: { duration: 300, easing: y.easeOutQuart } }),
-                                N.start({ ...rt, config: { duration: 300, easing: y.easeOutQuart } }),
+                                I.start({ ...rt, config: { duration: 300, easing: y.easeOutQuart } }),
                                 g.start({ opacity: 1, config: { duration: 400, easing: y.easeOutQuart } }),
                             ],
                             () => {
@@ -1686,7 +1686,7 @@ const Ja = {
                                 i ||
                                     (ts.send({ type: 'SWITCH_MISSIONS' }),
                                     e.updateAnimationState(He.ANIMATION_STARTED),
-                                    N.start({
+                                    I.start({
                                         opacity: 0,
                                         transform: 'translateY(20rem)',
                                         config: { duration: 400, easing: y.easeInQuart },
@@ -1701,7 +1701,7 @@ const Ja = {
                                                     config: { duration: 500, easing: y.easeOutQuart },
                                                     delay: 300,
                                                 }),
-                                                N.start({
+                                                I.start({
                                                     ...rt,
                                                     config: { duration: 500, easing: y.easeOutQuart },
                                                     delay: 300,
@@ -1711,7 +1711,7 @@ const Ja = {
                                     }),
                                     ls(
                                         [
-                                            N.start({
+                                            I.start({
                                                 opacity: 0,
                                                 transform: 'translateY(20rem)',
                                                 config: { duration: 400, easing: y.easeInQuart },
@@ -1727,7 +1727,7 @@ const Ja = {
                                                             config: { duration: 500, easing: y.easeOutQuart },
                                                             delay: 300,
                                                         }),
-                                                        N.start({
+                                                        I.start({
                                                             ...rt,
                                                             config: { duration: 500, easing: y.easeOutQuart },
                                                             delay: 300,
@@ -1839,7 +1839,7 @@ const ft = (e) =>
         { name: 'credits', value: '250 000' },
     ],
     ht = { maximumMissions: 15, completedMissions: 3, maxProgressValue: 4 },
-    Nt = Y(ht.maximumMissions, (e) => ({
+    It = Y(ht.maximumMissions, (e) => ({
         missionStatus: ft(e + 1).status,
         currentMissionNumber: e + 1,
         allQuestsRequired: fe(),
@@ -1848,7 +1848,7 @@ const ft = (e) =>
         rewards: bt,
         quests: pt(be(1, 2)),
     })),
-    It = {
+    Nt = {
         getter: he({
             missionsModel: {
                 allMissions: [
@@ -1858,9 +1858,9 @@ const ft = (e) =>
                         minRequiredVehicle: 6,
                         maxRequiredVehicle: 10,
                         missionsCategorizations: [
-                            { missionsCategory: Pe.ASSAULT, missions: Nt },
-                            { missionsCategory: Pe.SNIPER, missions: Nt },
-                            { missionsCategory: Pe.SUPPORT, missions: Nt },
+                            { missionsCategory: Pe.ASSAULT, missions: It },
+                            { missionsCategory: Pe.SNIPER, missions: It },
+                            { missionsCategory: Pe.SUPPORT, missions: It },
                         ],
                     },
                     {
@@ -1869,9 +1869,9 @@ const ft = (e) =>
                         minRequiredVehicle: 6,
                         maxRequiredVehicle: 10,
                         missionsCategorizations: [
-                            { missionsCategory: Pe.ASSAULT, missions: Nt },
-                            { missionsCategory: Pe.SNIPER, missions: Nt },
-                            { missionsCategory: Pe.SUPPORT, missions: Nt },
+                            { missionsCategory: Pe.ASSAULT, missions: It },
+                            { missionsCategory: Pe.SNIPER, missions: It },
+                            { missionsCategory: Pe.SUPPORT, missions: It },
                         ],
                     },
                     {
@@ -1880,9 +1880,9 @@ const ft = (e) =>
                         minRequiredVehicle: 6,
                         maxRequiredVehicle: 10,
                         missionsCategorizations: [
-                            { missionsCategory: Pe.ASSAULT, missions: Nt },
-                            { missionsCategory: Pe.SNIPER, missions: Nt },
-                            { missionsCategory: Pe.SUPPORT, missions: Nt },
+                            { missionsCategory: Pe.ASSAULT, missions: It },
+                            { missionsCategory: Pe.SNIPER, missions: It },
+                            { missionsCategory: Pe.SUPPORT, missions: It },
                         ],
                     },
                 ],
@@ -1893,7 +1893,7 @@ const ft = (e) =>
     },
     vt = { context: 'model.missionsModel' };
 function xt() {
-    return _.jsx(Xs, { options: vt, mocks: It, mode: 'real', children: _.jsx(ct, {}) });
+    return _.jsx(Xs, { options: vt, mocks: Nt, mode: 'real', children: _.jsx(ct, {}) });
 }
 const Et = 'Background_af83c19a',
     yt = 'Background_6cd490f5',
@@ -1925,13 +1925,13 @@ const Mt = new Set([Le.COMPLETED, Le.COMPLETED_WITH_HONORS]),
         return _.jsx('div', {
             className: Dt,
             ...s,
-            children: _.jsx(Ne, {
+            children: _.jsx(Ie, {
                 size: 'medium',
                 value: e.value,
                 maxValue: e.maxValue,
                 className: Tt,
                 classNames: { background: Pt },
-                children: _.jsx(Ie, { initValue: e.prevValue, initMaxValue: e.maxValue }),
+                children: _.jsx(Ne, { initValue: e.prevValue, initMaxValue: e.maxValue }),
             }),
         });
     }),
@@ -2079,10 +2079,10 @@ const Ft = 'NotReceived_wrapper_4d14069c',
             g = l.currentState.get(),
             f = l.computes.requiredDetailsPoint(),
             [b, h] = r.useState(s),
-            N = l.computes.firstDetailIndexByStatus(_t.NOT_RECEIVED) === e,
-            I = l.activeDetailId.get(),
+            I = l.computes.firstDetailIndexByStatus(_t.NOT_RECEIVED) === e,
+            N = l.activeDetailId.get(),
             v = b.status === _t.DONE,
-            x = I === b.id,
+            x = N === b.id,
             { animationInProgress: E } = hs(),
             y = C(
                 Te.CUSTOM_SIMPLE,
@@ -2103,7 +2103,7 @@ const Ft = 'NotReceived_wrapper_4d14069c',
         function A(e, s) {
             (g === _s && (l.activeDetailId.set(s), ts.send({ type: 'TO_DETAIL_INFO', detailId: s, action: e })),
                 g === ds &&
-                    ('' === I
+                    ('' === N
                         ? (e === os && (l.activeDetailId.set(s), c.showDetailInfo(s)),
                           e === ns && ts.send({ type: 'HIDE_DETAIL_INFO', detailId: s, action: e }))
                         : ts.send({ type: 'HIDE_DETAIL_INFO', detailId: s, action: e })));
@@ -2112,7 +2112,7 @@ const Ft = 'NotReceived_wrapper_4d14069c',
             (y.onClick(),
                 x ||
                     E ||
-                    (v && (o.play('yes1'), A(os, e)), N && (c.updateAnimationState(He.ANIMATION_STARTED), A(ns, e))));
+                    (v && (o.play('yes1'), A(os, e)), I && (c.updateAnimationState(He.ANIMATION_STARTED), A(ns, e))));
         }
         if (
             (r.useEffect(() => {
@@ -2134,7 +2134,7 @@ const Ft = 'NotReceived_wrapper_4d14069c',
                     Xt[`base__${b.status}`],
                     Xt[`base__${p.operationState}`],
                     x && v && Xt.base__selected,
-                    N && Xt.base__firstNotReceived,
+                    I && Xt.base__firstNotReceived,
                     t,
                 ),
                 children: [
@@ -2150,7 +2150,7 @@ const Ft = 'NotReceived_wrapper_4d14069c',
                         style: S,
                         className: Xt.wrapper,
                         children:
-                            N &&
+                            I &&
                             _.jsx(ve, {
                                 src: n.readOrEmpty('personal_missions_30.main.detail_glow'),
                                 className: Xt.video,
@@ -2171,7 +2171,7 @@ const Ft = 'NotReceived_wrapper_4d14069c',
                                 ...(!x && !v && y),
                                 onClick: () => M(b.id),
                                 onMouseEnter: function (e) {
-                                    (!x && !v && y.onMouseEnter(e), ((v && !x) || N) && o.play('bp_improved_reward'));
+                                    (!x && !v && y.onMouseEnter(e), ((v && !x) || I) && o.play('bp_improved_reward'));
                                 },
                             }),
                             _.jsx(w, { path: 'personal_missions_30.main.progression.arrow', className: Xt.arrow }),
@@ -2187,7 +2187,7 @@ const Ft = 'NotReceived_wrapper_4d14069c',
                                         case _t.IN_PROGRESS:
                                             return _.jsx(qt, { ...b });
                                         case _t.NOT_RECEIVED:
-                                            return _.jsx(Kt, { id: b.id, firstElementByStatus: N, onClaim: M });
+                                            return _.jsx(Kt, { id: b.id, firstElementByStatus: I, onClaim: M });
                                     }
                                 })(),
                             }),
@@ -2438,7 +2438,7 @@ const ni = 'MainReward_fc423f8a',
         background: 'Progression_background_d1d356ae',
         bar: 'Progression_bar_e8c74acd',
     },
-    Ni = l(function ({ className: e }) {
+    Ii = l(function ({ className: e }) {
         const s = r.useRef(null),
             a = r.useRef(null),
             { api: t } = le(),
@@ -2451,8 +2451,8 @@ const ni = 'MainReward_fc423f8a',
             [p, f] = r.useState('hidden'),
             b = de(t, me.horizontal, void 0, { gapBeforeStart: 5 }),
             { model: h } = gs(),
-            N = h.computes.activeOperation(),
-            I = h.activeOperationId.get(),
+            I = h.computes.activeOperation(),
+            N = h.activeOperationId.get(),
             v = h.computes.firstDetailIndexByStatus(_t.NOT_RECEIVED),
             E = h.computes.firstDetailIndexByStatus(_t.IN_PROGRESS),
             y = -1 === v ? E : v,
@@ -2504,7 +2504,7 @@ const ni = 'MainReward_fc423f8a',
             T(x.ARROW_RIGHT, () => R(x.ARROW_RIGHT)),
             r.useEffect(() => {
                 void 0 !== y && (l !== as || (d !== Qe && void 0 !== d) || L(y));
-            }, [I, l]),
+            }, [N, l]),
             r.useEffect(() => {
                 const e = () => {
                     const e = s.current,
@@ -2513,7 +2513,7 @@ const ni = 'MainReward_fc423f8a',
                         r = t.animationScroll.scrollPosition.get(),
                         l = t.getWrapperSize();
                     if (!e || !i || !l) return;
-                    if (N && !Mt.has(N.operationState)) {
+                    if (I && !Mt.has(I.operationState)) {
                         const s = o - e.offsetWidth + j;
                         if (r <= s) {
                             const a = Math.ceil(s - r);
@@ -2544,10 +2544,10 @@ const ni = 'MainReward_fc423f8a',
                             t.events.off('resizeHandled', e));
                     }
                 );
-            }, [N, t, A, y, E, v, j, n]),
+            }, [I, t, A, y, E, v, j, n]),
             _.jsxs('div', {
                 'data-name': 'Progression',
-                className: u(hi.base, hi[`base__${null == N ? void 0 : N.operationState}`], hi[`base__${p}`], e),
+                className: u(hi.base, hi[`base__${null == I ? void 0 : I.operationState}`], hi[`base__${p}`], e),
                 children: [
                     _.jsx('div', { className: u(hi.shadow, hi.shadow__left) }),
                     _.jsx('div', { className: u(hi.shadow, hi.shadow__right) }),
@@ -2592,7 +2592,7 @@ const ni = 'MainReward_fc423f8a',
             })
         );
     }),
-    Ii = new Set([
+    Ni = new Set([
         ut.PRECEDING_OPERATION_NOT_COMPLETED,
         ut.PAUSED,
         ut.NEXT_OPERATION_AVAILABLE,
@@ -2637,7 +2637,7 @@ const ni = 'MainReward_fc423f8a',
             g = xi[l],
             b = l === ut.COMPLETED ? 'secondary' : 'primary',
             { statusStyle: h } = hs(),
-            [N, I] = d(() => ({
+            [I, N] = d(() => ({
                 from: { transform: 'translate(10%, -220%) rotate(30deg)' },
                 to: { transform: 'translate(-60%, 30%) rotate(30deg)' },
                 loop: !0,
@@ -2672,7 +2672,7 @@ const ni = 'MainReward_fc423f8a',
                         }
                     })(),
                 }),
-                Ii.has(l) &&
+                Ni.has(l) &&
                     p !== Le.LOCKED &&
                     _.jsxs('div', {
                         className: Ei.button,
@@ -2690,7 +2690,7 @@ const ni = 'MainReward_fc423f8a',
                                 children: a.readOrEmpty(`personal_missions_30.main.operation.button.${l}`),
                             }),
                             (l === ut.AVAILABLE || l === ut.NEXT_OPERATION_AVAILABLE) &&
-                                _.jsx(m.div, { style: N, className: Ei.glareAttention }),
+                                _.jsx(m.div, { style: I, className: Ei.glareAttention }),
                         ],
                     }),
             ],
@@ -3039,8 +3039,8 @@ const ln = 'DefaultCard_2c35f6e',
     fn = 'DefaultCard_quests_2aaa2468',
     bn = 'DefaultCard_separator_fafec470',
     hn = 'DefaultCard_rewards_14dfa3b1',
-    Nn = ['currentMissionNumber', 'currentProgressValue', 'missionStatus'],
-    In = l(function ({ index: e, mission: s }) {
+    In = ['currentMissionNumber', 'currentProgressValue', 'missionStatus'],
+    Nn = l(function ({ index: e, mission: s }) {
         const a = O.resolve('views'),
             t = O.resolve('sounds'),
             { controls: i } = gs(),
@@ -3052,7 +3052,7 @@ const ln = 'DefaultCard_2c35f6e',
             }),
             [p, g] = d(() => ({ from: { opacity: 0, transform: 'translateY(20rem)' } })),
             b = r.useMemo(
-                () => Nn.some((e) => o[e] !== s[e]),
+                () => In.some((e) => o[e] !== s[e]),
                 [
                     s.currentMissionNumber,
                     s.currentProgressValue,
@@ -3216,8 +3216,8 @@ const ln = 'DefaultCard_2c35f6e',
             g = p && e === s,
             [f, b] = r.useState({ currentPoints: e, maxPoints: s, completed: g, progressShown: p }),
             { animationInProgress: h } = hs(),
-            N = c(ts, (e) => e.value),
-            I = C(
+            I = c(ts, (e) => e.value),
+            N = C(
                 Te.PM3_POINTS,
                 r.useMemo(
                     () => ({
@@ -3230,14 +3230,14 @@ const ln = 'DefaultCard_2c35f6e',
             );
         return (
             r.useEffect(() => {
-                (N !== ss && N !== Qe) || b({ currentPoints: e, maxPoints: s, completed: g, progressShown: p });
-            }, [N, g, e, s, p]),
+                (I !== ss && I !== Qe) || b({ currentPoints: e, maxPoints: s, completed: g, progressShown: p });
+            }, [I, g, e, s, p]),
             r.useEffect(() => {
                 (f.currentPoints === e && f.progressShown === p) ||
-                    N !== as ||
+                    I !== as ||
                     !p ||
                     ts.send({ type: 'HIDE_ADDITIONAL_MISSIONS' });
-            }, [N, e, p, f.currentPoints, f.progressShown]),
+            }, [I, e, p, f.currentPoints, f.progressShown]),
             _.jsx(ie, {
                 className: u(vn.base, f.completed && vn.base__completed, vn[`base__${a}`]),
                 classNames: { wrapper: n },
@@ -3258,7 +3258,7 @@ const ln = 'DefaultCard_2c35f6e',
                             children: [
                                 _.jsxs('div', {
                                     className: vn.status,
-                                    ...I,
+                                    ...N,
                                     children: [
                                         _.jsx(w, {
                                             path: `personal_missions_30.main.additional_card.${a}`,
@@ -3303,7 +3303,7 @@ const ln = 'DefaultCard_2c35f6e',
         return _.jsxs('div', {
             className: u(En, e),
             children: [
-                t.missions.map((e, s) => _.jsx(In, { mission: e, index: s }, s)),
+                t.missions.map((e, s) => _.jsx(Nn, { mission: e, index: s }, s)),
                 t.operationState !== Le.COMPLETED &&
                     t.additionalMissions.some((e) => e.isEnabled) &&
                     _.jsx(m.div, {
@@ -3432,7 +3432,7 @@ const ln = 'DefaultCard_2c35f6e',
                             _.jsx(m.div, {
                                 style: i,
                                 className: Dn.progress,
-                                children: _.jsx(ge, { settings: us, children: _.jsx(Ni, {}) }),
+                                children: _.jsx(ge, { settings: us, children: _.jsx(Ii, {}) }),
                             }),
                         ],
                     }),

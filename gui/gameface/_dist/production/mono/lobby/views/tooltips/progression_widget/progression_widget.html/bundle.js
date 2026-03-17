@@ -1,116 +1,47 @@
-import { j as e, f as a, v as s } from '../../../../chunks/vendor.js';
+import { q as e, v as t, j as s, f as a } from '../../../../chunks/vendor.js';
 import {
-    y as t,
-    aP as r,
-    ah as l,
-    i,
-    a as d,
-    aQ as n,
-    aR as o,
-    aS as c,
-    aT as m,
-    ai as _,
-    n as p,
-    r as b,
-    ap as u,
-    aK as h,
-    ay as x,
-    ax as j,
+    i as r,
+    m as o,
+    bx as n,
+    h as i,
+    n as d,
+    by as l,
+    bz as c,
+    bA as b,
+    bB as _,
+    F as m,
+    r as p,
+    U as u,
+    bs as h,
 } from '../../../../chunks/lib.js';
-const v = {
-        base: 'Column_ff23958e',
-        battleType: 'Column_battleType_66a6d7ec',
-        cell: 'Column_cell_14a5553e',
-        row: 'Column_row_74e84674',
-        row__last: 'Column_row__last_5be9bf05',
-        pointContainer: 'Column_pointContainer_b43f5997',
-        point: 'Column_point_1e454ca5',
-        place: 'Column_place_241dd415',
-        reward: 'Column_reward_e7901f9f',
-        dash: 'Column_dash_f9b9a2c',
-    },
-    f = ({ battleType: s, battleMode: r, isNotFirstColumn: l }) =>
-        e.jsxs('div', {
-            className: a(v.base, l && v.base__notFirstColumn),
-            children: [
-                e.jsx('div', { className: v.battleType, children: s }),
-                t(r, ({ place: s, points: t }, l) => {
-                    const i = r.length - 1 === l;
-                    return e.jsx(
-                        'div',
-                        {
-                            className: v.cell,
-                            children: e.jsxs('div', {
-                                className: a(v.row, i && v.row__last),
-                                children: [
-                                    e.jsx('div', { className: v.place, children: s }),
-                                    t
-                                        ? e.jsxs('div', {
-                                              className: v.pointContainer,
-                                              children: [
-                                                  e.jsx('div', { className: v.point, children: t }),
-                                                  e.jsx('div', { className: v.reward }),
-                                              ],
-                                          })
-                                        : e.jsx('div', { className: v.dash, children: R.strings.common.common.dash() }),
-                                ],
-                            }),
-                        },
-                        l,
-                    );
-                }),
-            ],
-        }),
-    N = 'Table_8cfe9af4',
-    y = 'Table_battleTypeBg_b005c4ad',
-    T = 'Table_a7b52080',
-    C = 'Table_separators_1618eb00',
-    g = 'Table_separator_eea24026',
-    H = ({ battleModes: a, battleType: s }) => {
-        const i = r(a, (e, a) => Math.max(e, a.length), 0);
-        return e.jsxs('div', {
-            className: N,
-            children: [
-                e.jsx('div', { className: y }),
-                e.jsx('div', {
-                    className: T,
-                    children: t(a, (a, t) => {
-                        const r = t > 0;
-                        return e.jsx(f, { battleMode: a, battleType: s(t), isNotFirstColumn: r }, t);
-                    }),
-                }),
-                e.jsx('div', { className: C, children: i > 1 && l(i - 1, (a) => e.jsx('div', { className: g }, a)) }),
-            ],
+import { T as x } from '../../../../chunks/table.js';
+/* empty css                        */ const [f, j] = r()(({ observableModel: t }) => {
+    const s = {
+            root: t.object(),
+            battleTypes: t.transform((e) => o(e, n), 'leaderBoard.battleTypes'),
+            battleModes: t.transform((e) => o(e, n), 'leaderBoard.battleModes'),
+            eventInfo: t.object('eventInfo'),
+        },
+        a = e((e) => {
+            const t = i(s.battleTypes.get(), e);
+            if (!t) throw new Error(`no battleType found on index: ${e}`);
+            return t;
         });
-    },
-    w = R.strings.battle_royale_extention.tooltip.progressionWidget,
-    [M, E] = i()(({ observableModel: e }) => {
-        const a = e.object(),
-            s = d.primitive(() => {
-                const e = a.get().timeTillEnd;
-                let s = '';
-                return (
-                    (s =
-                        e >= n
-                            ? o(R.strings.common.duration.days(), { days: Math.trunc(e / n) })
-                            : e >= c
-                              ? o(R.strings.common.duration.hours(), { hours: Math.trunc(e / c) })
-                              : o(R.strings.common.duration.minutes(), { minutes: Math.trunc(e / m) || 1 })),
-                    { text: w.subTitle(), time: s }
-                );
-            }),
-            t = d.primitive((e) => {
-                const s = a.get().leaderBoard.battleTypes,
-                    t = _(s, e);
-                if (!t) throw Error('battleType is undefined');
-                return t;
-            });
-        return { params: a, computes: { battleLeaveTime: s, battleType: t } };
-    }, p),
-    $ = {
+    return { ...s, computes: { battleType: a } };
+}, d);
+function g(e) {
+    return e >= l
+        ? c(R.strings.common.duration.days(), { days: Math.trunc(e / l) })
+        : e >= b
+          ? c(R.strings.common.duration.hours(), { hours: Math.trunc(e / b) })
+          : c(R.strings.common.duration.minutes(), { minutes: Math.trunc(e / _) || 1 });
+}
+const v = {
         base: 'Header_dd3276f6',
         base__unavailable: 'Header_base__unavailable_45ec0218',
-        header: 'Header_f77580be',
+        header: 'Header_d963ee09',
+        base__default: 'Header_base__default_65f475ba',
+        base__stPatrick: 'Header_base__stPatrick_65f475ba',
         headerContainer: 'Header_headerContainer_56f3a04a',
         base__completed: 'Header_base__completed_65f475ba',
         completedIcon: 'Header_completedIcon_80fa7e3e',
@@ -120,53 +51,64 @@ const v = {
         text: 'Header_text_716171df',
         time: 'Header_time_e49d5d0f',
     },
-    B = 'battle_royale_extention.tooltip.progressionWidget',
-    F = s(() => {
-        const { model: s } = E(),
-            { isCompleted: t } = s.params.get(),
-            { time: r, text: l } = s.computes.battleLeaveTime(),
-            i = b.resolve('strings'),
-            d = t ? 'completed' : 'inProgress';
-        return e.jsxs('div', {
-            className: a($.base, $[`base__${d}`]),
+    y = t(() => {
+        const { model: e } = j(),
+            { timeTillEnd: t, isCompleted: r } = e.root.get(),
+            o = r ? 'completed' : 'inProgress',
+            n = e.eventInfo.get().subMode;
+        return s.jsxs('div', {
+            className: a(v.base, v[`base__${n}`], v[`base__${o}`]),
             children: [
-                e.jsxs('div', {
-                    className: $.header,
+                s.jsxs('div', {
+                    className: v.header,
                     children: [
-                        e.jsx('div', { className: $.completedIcon }),
-                        e.jsxs('div', {
-                            className: $.headerContainer,
+                        s.jsx('div', { className: v.completedIcon }),
+                        s.jsxs('div', {
+                            className: v.headerContainer,
                             children: [
-                                e.jsx('div', { className: $.title, children: i.readOrEmpty(`${B}.title`) }),
-                                e.jsx(u, { text: l, params: { value: r }, className: $.time, upgradeLegacy: !0 }),
+                                s.jsx('div', {
+                                    className: v.title,
+                                    children: R.strings.battle_royale_extention.tooltip.progressionWidget.title(),
+                                }),
+                                s.jsx(m, {
+                                    text: R.strings.battle_royale_extention.tooltip.progressionWidget.subTitle(),
+                                    binding: { value: g(t) },
+                                    classMix: v.time,
+                                }),
                             ],
                         }),
                     ],
                 }),
-                e.jsxs('div', {
-                    className: $.description,
+                s.jsxs('div', {
+                    className: v.description,
                     children: [
-                        e.jsx('div', { className: $.subtitle, children: i.readOrEmpty(`${B}.description.header`) }),
-                        e.jsx('div', { className: $.text, children: i.readOrEmpty(`${B}.description.${d}`) }),
+                        s.jsx('div', {
+                            className: v.subtitle,
+                            children: R.strings.battle_royale_extention.tooltip.progressionWidget.description.header(),
+                        }),
+                        s.jsx('div', {
+                            className: v.text,
+                            children: `${R.strings.battle_royale_extention.tooltip.progressionWidget.description.$dyn(o)}`,
+                        }),
                     ],
                 }),
             ],
         });
     }),
-    I = 'App_54b301f',
-    L = s(function () {
-        const { model: a } = E(),
-            { isCompleted: s, leaderBoard: t } = a.params.get();
-        return e.jsx(h, {
-            children: e.jsx(h.Decorator, {
-                children: e.jsxs('div', {
-                    className: I,
-                    children: [
-                        e.jsx(F, {}),
-                        !s && e.jsx(H, { battleModes: t.battleModes, battleType: a.computes.battleType }),
-                    ],
-                }),
-            }),
+    H = 'App_54b301f',
+    M = t(function () {
+        const { model: e } = j(),
+            { isCompleted: t } = e.root.get();
+        return s.jsxs('div', {
+            className: H,
+            children: [
+                s.jsx(y, {}),
+                !t && s.jsx(x, { battleModes: e.battleModes.get(), battleType: e.computes.battleType }),
+            ],
         });
     });
-x(e.jsx(j, { children: e.jsx(M, { children: e.jsx(L, {}) }) }));
+p(
+    s.jsx(u, {
+        children: s.jsx(f, { children: s.jsx(h, { children: s.jsx(h.Decorator, { children: s.jsx(M, {}) }) }) }),
+    }),
+);

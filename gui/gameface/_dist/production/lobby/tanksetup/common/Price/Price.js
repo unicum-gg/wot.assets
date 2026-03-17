@@ -869,7 +869,7 @@
                 t.d(n, { Z5: () => r, cy: () => i });
                 const r = {
                         getNumberFormat: (e, n) => systemLocale.getNumberFormat(e, n),
-                        getRealFormat: (e, n) => systemLocale.getRealFormat(e, n),
+                        getRealFormat: (e, n, t = 2) => systemLocale.getRealFormat(e, n, t),
                         getTimeFormat: (e, n) => systemLocale.getTimeFormat(e, n),
                         getDateFormat: (e, n) => systemLocale.getDateFormat(e, n),
                         toUpperCase: (e) => systemLocale.toUpperCase(e),

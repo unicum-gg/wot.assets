@@ -1,5 +1,5 @@
 import { l as i, j as s, m as l } from '../../../../chunks/vendor.js';
-import { i as e, x as t, F as c, J as d, U as o, N as a, r as f } from '../../../../chunks/lib.js';
+import { i as e, t, F as c, J as d, U as o, H as a, r as f } from '../../../../chunks/lib.js';
 const [p, n] = e()(({ observableModel: i }) => i.object(), t),
     _ = 'DifficultyTooltipApp_62236aea',
     m = 'DifficultyTooltipApp_title_9bd463f2',
@@ -7,10 +7,10 @@ const [p, n] = e()(({ observableModel: i }) => i.object(), t),
     u = 'DifficultyTooltipApp_subTitle__opacity_8c69defe',
     r = 'DifficultyTooltipApp_status_7aa41ff3',
     j = 'DifficultyTooltipApp_status__selected_98d59d2e',
-    x = 'DifficultyTooltipApp_icon_4ead647',
-    v = 'DifficultyTooltipApp_lock_cae8838d',
-    N = 'DifficultyTooltipApp_iconLock_56c8df26',
-    b = 'DifficultyTooltipApp_dots_8f19148b',
+    v = 'DifficultyTooltipApp_icon_4ead647',
+    x = 'DifficultyTooltipApp_lock_cae8838d',
+    b = 'DifficultyTooltipApp_iconLock_56c8df26',
+    N = 'DifficultyTooltipApp_dots_8f19148b',
     T = 'DifficultyTooltipApp_info_c1ee7fc1',
     A = 'DifficultyTooltipApp_bg_2db03cd0',
     D = 'DifficultyTooltipApp_infoTitle_513f12fe',
@@ -27,14 +27,14 @@ const [p, n] = e()(({ observableModel: i }) => i.object(), t),
             children: [
                 s.jsx('div', { className: m, children: a.$dyn('title') }),
                 s.jsx('div', {
-                    className: x,
+                    className: v,
                     style: {
                         backgroundImage: `url('R.images.story_mode.gui.maps.icons.missionSelection.tooltip.difficulty.${e}')`,
                     },
                 }),
-                s.jsx('div', { className: b }),
+                s.jsx('div', { className: N }),
                 s.jsx('div', { className: y, children: a.$dyn('description') }),
-                s.jsx('div', { className: b }),
+                s.jsx('div', { className: N }),
                 t &&
                     s.jsxs('div', {
                         className: T,
@@ -42,7 +42,7 @@ const [p, n] = e()(({ observableModel: i }) => i.object(), t),
                             s.jsx('div', { className: A }),
                             s.jsx('div', { className: D, children: f.$dyn('title') }),
                             s.jsx(c, { className: h, text: f.$dyn('body') }),
-                            s.jsx('div', { className: b }),
+                            s.jsx('div', { className: N }),
                             s.jsx('div', { className: A }),
                         ],
                     }),
@@ -51,9 +51,9 @@ const [p, n] = e()(({ observableModel: i }) => i.object(), t),
                     s.jsxs('div', {
                         children: [
                             s.jsxs('div', {
-                                className: v,
+                                className: x,
                                 children: [
-                                    s.jsx('div', { className: N }),
+                                    s.jsx('div', { className: b }),
                                     s.jsx('div', { className: r, children: p.title() }),
                                 ],
                             }),

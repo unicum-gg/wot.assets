@@ -3,11 +3,11 @@ import {
     i,
     u as l,
     s as c,
-    f as t,
+    d as t,
     F as r,
     V as o,
-    g as n,
-    v as p,
+    f as n,
+    h as p,
     B as m,
     t as d,
     r as u,
@@ -21,8 +21,8 @@ import { E as v } from '../../../chunks/enums.js';
     j = 'App_a7ca6d5b',
     x = 'App_base__visible_0',
     N = 'App_content_98101af6',
-    g = 'App_title_0',
-    A = 'App_vehicleLvl_0',
+    A = 'App_title_0',
+    g = 'App_vehicleLvl_0',
     f = 'App_vehicleName_2d86a095',
     P = 'App_description_7aa1594a',
     y = 'App_button_1e7b9fc2',
@@ -50,12 +50,12 @@ import { E as v } from '../../../chunks/enums.js';
                     s.jsxs(s.Fragment, {
                         children: [
                             s.jsx(r, {
-                                className: g,
+                                className: A,
                                 text: S.title(),
                                 params: {
                                     vehicleInfo: s.jsxs(o, {
                                         children: [
-                                            s.jsx(o.Level, { className: A, value: R.vehicleLvl }),
+                                            s.jsx(o.Level, { className: g, value: R.vehicleLvl }),
                                             n(R.vehicleType) &&
                                                 s.jsx(o.Type, {
                                                     className: L,

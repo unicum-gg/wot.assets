@@ -2,25 +2,25 @@ import { o as e, k as s, f as a, n as t, j as o, e as i, r, m as n } from '../..
 import {
     i as c,
     m as l,
-    f as d,
+    h as d,
     s as m,
     p as u,
     c as _,
-    h as b,
-    j as h,
+    j as b,
+    k as h,
     R as x,
-    k as f,
-    l as p,
+    F as p,
+    l as f,
     I as g,
     n as v,
     o as N,
     q as j,
     t as k,
-    F as w,
+    a as w,
     D as y,
     v as C,
     w as T,
-    d as L,
+    e as L,
     x as S,
     T as B,
     r as P,
@@ -114,10 +114,10 @@ const W = {
                 c = s((e) => r(e).guaranteedLimit, { equals: _ }),
                 h = s(() => D(W, t)),
                 x = s(() => A(z, t)),
-                f = s(() => o.boxes.get().length > 1);
+                p = s(() => o.boxes.get().length > 1);
             return {
                 ...o,
-                computes: { getSlots: n, getGuaranteed: c, resources: h, dynamicResources: x, displayTabs: f },
+                computes: { getSlots: n, getGuaranteed: c, resources: h, dynamicResources: x, displayTabs: p },
             };
         },
         ({ externalModel: e, model: s, cleanup: o }) => {
@@ -215,7 +215,7 @@ function oe({ reward: e, texts: s, className: a }) {
                 o.jsxs('div', {
                     className: te.title,
                     children: [
-                        o.jsx(f, {
+                        o.jsx(p, {
                             text: q(d),
                             binding: { divider: o.jsx('span', { className: te.label, children: s.divider }) },
                             classMix: i(te.name, c && te.name__aligned),
@@ -227,7 +227,7 @@ function oe({ reward: e, texts: s, className: a }) {
                             }),
                     ],
                 }),
-            o.jsx(f, { text: n, classMix: te.label }),
+            o.jsx(p, { text: n, classMix: te.label }),
         ],
     });
 }
@@ -243,20 +243,20 @@ const ie = 'Reward_2801b9c',
     be = 'Reward_loupeIcon_966a3d73',
     he = 'Reward_tankName_c3434962';
 const xe = 'Rewards_b3634f8b';
-const fe = { base: 'RewardBlock_5c12840f' };
-function pe({ children: e, classNames: s }) {
-    return o.jsxs('div', { className: i(fe.base, s), children: [e, o.jsx(U, {})] });
+const pe = { base: 'RewardBlock_5c12840f' };
+function fe({ children: e, classNames: s }) {
+    return o.jsxs('div', { className: i(pe.base, s), children: [e, o.jsx(U, {})] });
 }
-((pe.Content = function ({ children: e, classNames: s }) {
+((fe.Content = function ({ children: e, classNames: s }) {
     return o.jsx('div', { className: i(Y, s), children: e });
 }),
-    (pe.Probability = function ({ probability: e, unitsName: s, classNames: a }) {
+    (fe.Probability = function ({ probability: e, unitsName: s, classNames: a }) {
         return o.jsx('div', { className: i(ae, a), children: o.jsx(se, { probability: e, unitsName: s }) });
     }),
-    (pe.Rewards = function ({ children: e, classNames: s }) {
+    (fe.Rewards = function ({ children: e, classNames: s }) {
         return o.jsx('div', { className: i(xe, s), children: e });
     }),
-    (pe.Reward = function ({
+    (fe.Reward = function ({
         reward: e,
         resources: s,
         eventName: a,
@@ -281,7 +281,7 @@ function pe({ children: e, classNames: s }) {
         return o.jsxs('div', {
             className: ie,
             children: [
-                o.jsx(p, {
+                o.jsx(f, {
                     ignoreShowDelay: !0,
                     contentId: Number(b),
                     args: { tooltipId: _, boxCategory: k, eventName: a },
@@ -305,7 +305,7 @@ function pe({ children: e, classNames: s }) {
                             h > 1 &&
                                 o.jsx('div', {
                                     className: me,
-                                    children: o.jsx(f, {
+                                    children: o.jsx(p, {
                                         text: d.rewardsMultiplier,
                                         binding: { count: h },
                                         formatWithBrackets: !0,
@@ -480,16 +480,16 @@ const Ae = n(function ({ scrollApi: e }) {
                     o.jsx('div', {
                         children: l(_, ({ probability: e, bonuses: s }, i) =>
                             o.jsx(
-                                pe,
+                                fe,
                                 {
                                     classNames: De.rewardBlock,
-                                    children: o.jsxs(pe.Content, {
+                                    children: o.jsxs(fe.Content, {
                                         children: [
-                                            o.jsx(pe.Probability, { probability: e, unitsName: t.rewardsPercent }),
-                                            o.jsx(pe.Rewards, {
+                                            o.jsx(fe.Probability, { probability: e, unitsName: t.rewardsPercent }),
+                                            o.jsx(fe.Rewards, {
                                                 children: l(s, (e, s) =>
                                                     o.jsx(
-                                                        pe.Reward,
+                                                        fe.Reward,
                                                         {
                                                             reward: e,
                                                             activeCategory: d,
@@ -633,7 +633,7 @@ const ns = n(function () {
                         o.jsx(es.Title, { children: a.headerTitle }),
                         o.jsx(es.Subtitle, {
                             classNames: is,
-                            children: o.jsx(f, {
+                            children: o.jsx(p, {
                                 text: a.headerSubtitle,
                                 binding: {
                                     from: o.jsx(y, { datetime: c, format: C.FullDate }),
@@ -644,7 +644,7 @@ const ns = n(function () {
                         m &&
                             o.jsx(es.Description, {
                                 classNames: os,
-                                children: o.jsx(f, { text: a.headerDescription }),
+                                children: o.jsx(p, { text: a.headerDescription }),
                             }),
                         d &&
                             o.jsx(es.LootLink, {
@@ -682,7 +682,7 @@ const ns = n(function () {
     bs = 'App_stickyTabs_66711e9',
     hs = 'App_stickyTabs__show_4c7ff591',
     xs = 'App_backButton_26dc4949';
-const fs = n(function () {
+const ps = n(function () {
     const e = K(),
         { model: s, controls: a } = e,
         { images: t, texts: r, sounds: n } = s.computes.resources(),
@@ -718,4 +718,4 @@ const fs = n(function () {
         })
     );
 });
-P(o.jsx(J, { children: o.jsx(fs, {}) }));
+P(o.jsx(J, { children: o.jsx(ps, {}) }));

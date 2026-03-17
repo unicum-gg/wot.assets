@@ -1,43 +1,42 @@
-import { j as e, f as t, y as s, o as a, e as l, v as o, H as i } from '../../../../chunks/vendor.js';
+import { j as e, f as t, x as s, o as a, e as l, v as o, J as i } from '../../../../chunks/vendor.js';
 import {
     r as n,
     B as r,
     l as c,
     X as d,
-    bv as u,
+    aZ as u,
     i as m,
     c as p,
-    b0 as y,
-    a$ as h,
+    bn as h,
+    aY as y,
     Y as g,
-    bs as v,
-    bx as b,
-    ao as _,
+    bI as v,
+    bM as b,
+    ae as _,
     J as f,
     E as x,
     F as z,
-    d2 as j,
-    d3 as N,
+    c$ as j,
+    d0 as N,
 } from '../../../../chunks/lib.js';
 import {
-    h as C,
+    i as C,
     I as A,
     t as k,
-    i as O,
+    j as O,
     c as S,
-    g as w,
     f as I,
-    j as T,
-    k as E,
-    d as B,
+    k as w,
+    l as T,
+    h as E,
 } from '../../../../chunks/encode_decode.js';
-const P = {
+const B = {
         closeButton: 'Buttons_closeButton_abd8199',
         buttonsBase: 'Buttons_buttonsBase_baa73d96',
         button: 'Buttons_button_1de2fcc1',
     },
-    $ = n.resolve('strings'),
-    L = function ({ onClick: s, className: a }) {
+    P = n.resolve('strings'),
+    $ = function ({ onClick: s, className: a }) {
         const l = c();
         return e.jsx('div', {
             onClick: function (e) {
@@ -46,11 +45,11 @@ const P = {
             onMouseEnter: function (e) {
                 l.play('mouse-enter', { target: 'vehicle:playlists:overlay:close_button', original: e });
             },
-            className: t(P.closeBase, a),
+            className: t(B.closeBase, a),
             'data-test-id': 'closeOverlay',
             children: e.jsx('div', {
                 onClick: s,
-                className: P.closeButton,
+                className: B.closeButton,
                 children: e.jsx(d, { path: 'ui.close_btn', width: 48, height: 48 }),
             }),
         });
@@ -63,29 +62,29 @@ const P = {
             extraLarge: { size: r.sizes.large },
         },
     };
-function M({ buttons: t, onAction: s }) {
+function L({ buttons: t, onAction: s }) {
     const a = u(J.default, J.breakpoints);
     return e.jsx('div', {
-        className: P.buttonsBase,
+        className: B.buttonsBase,
         children: t.map((t, l) =>
             e.jsx(
                 r,
                 {
-                    className: P.button,
+                    className: B.button,
                     autoAlignContent: !1,
                     theme: 0 === l ? r.themes.primary : r.themes.secondary,
                     size: a.size,
                     onClick: () => s(t.action),
                     soundTarget: t.soundTarget,
                     'data-test-id': t.title,
-                    children: $.readOrEmpty(t.title),
+                    children: P.readOrEmpty(t.title),
                 },
                 l,
             ),
         ),
     });
 }
-const [F, V] = m()(
+const [M, F] = m()(
         ({ observableModel: e }) => {
             const t = e.primitives(['params', 'type']),
                 l = p.primitive(() => {
@@ -105,14 +104,11 @@ const [F, V] = m()(
             return { type: t.type, playlistCode: a.box(''), playlistTitle: l, importParams: o };
         },
         ({ externalModel: e, model: t }) => {
-            const s = e.createCallback(
-                    (e) => ({ action: k.import, id: e.id, data: JSON.stringify(e.initial) }),
-                    'onAction',
-                ),
+            const s = e.createCallback((e) => ({ action: k.import, data: JSON.stringify(e.initial) }), 'onAction'),
                 a = e.createCallback((e) => ({ action: e }), 'onAction');
             return {
                 import: l((e) => {
-                    s({ id: w(), initial: S(I(t.importParams().titles, 'playlists.defaultName'), e) });
+                    s({ initial: S(I(t.importParams().titles, 'playlists.defaultName'), e) });
                 }),
                 doAction: (e) => {
                     if (e === O.import)
@@ -123,33 +119,33 @@ const [F, V] = m()(
             };
         },
     ),
-    D = 'AlertOverlay_6a914e50',
-    H = 'AlertOverlay_close_c8fc8fba',
-    R = 'AlertOverlay_content_be3b87d6',
-    U = 'AlertOverlay_glow_2370fdef',
-    W = 'AlertOverlay_icon_ec1d1576',
-    X = 'AlertOverlay_divider_c054f0d9',
-    Y = 'AlertOverlay_title_f9ee7b93',
-    q = { iconSize: 157, glowSize: [998, 639] },
-    G = { medium: { iconSize: 188, glowSize: [1200, 768] }, extraLarge: { iconSize: 256, glowSize: [1632, 1044] } },
-    K = function ({ titlePath: t, titleParams: s }) {
-        const a = u(q, G);
+    V = 'AlertOverlay_6a914e50',
+    D = 'AlertOverlay_close_c8fc8fba',
+    Y = 'AlertOverlay_content_be3b87d6',
+    R = 'AlertOverlay_glow_2370fdef',
+    U = 'AlertOverlay_icon_ec1d1576',
+    W = 'AlertOverlay_divider_c054f0d9',
+    X = 'AlertOverlay_title_f9ee7b93',
+    Z = { iconSize: 157, glowSize: [998, 639] },
+    q = { medium: { iconSize: 188, glowSize: [1200, 768] }, extraLarge: { iconSize: 256, glowSize: [1632, 1044] } },
+    G = function ({ titlePath: t, titleParams: s }) {
+        const a = u(Z, q);
         return e.jsxs('div', {
-            className: R,
+            className: Y,
             children: [
                 e.jsx(d, {
                     path: 'hangar.playlists.overlay_glow',
                     width: a.glowSize[0],
                     height: a.glowSize[1],
-                    className: U,
+                    className: R,
                 }),
-                e.jsx(d, { path: 'library.icon_alert_256x256', width: a.iconSize, height: a.iconSize, className: W }),
-                e.jsx(g, { className: Y, path: t, params: s }),
-                e.jsx(d, { path: 'ui.noise', className: X, fit: 'contain' }),
+                e.jsx(d, { path: 'library.icon_alert_256x256', width: a.iconSize, height: a.iconSize, className: U }),
+                e.jsx(g, { className: X, path: t, params: s }),
+                e.jsx(d, { path: 'ui.noise', className: W, fit: 'contain' }),
             ],
         });
     };
-function Q(e) {
+function H(e) {
     const t = `playlists.dialogs.${e}.button.submit`,
         s = `playlists.dialogs.${e}.button.cancel`;
     switch (e) {
@@ -178,19 +174,19 @@ function Q(e) {
             ];
     }
 }
-const Z = o(function () {
-        const t = V(),
+const K = o(function () {
+        const t = F(),
             s = t.model.type.get(),
             a = { playlistTitle: s === k.delete ? t.model.playlistTitle() : '' };
         return (
-            y(h.ESCAPE, t.controls.close),
+            h(y.ESCAPE, t.controls.close),
             e.jsxs('div', {
-                className: D,
+                className: V,
                 children: [
-                    e.jsx(L, { onClick: t.controls.close, className: H }),
-                    e.jsx(K, { titlePath: `playlists.dialogs.${s}.title`, titleParams: a }),
-                    e.jsx(M, {
-                        buttons: Q(s),
+                    e.jsx($, { onClick: t.controls.close, className: D }),
+                    e.jsx(G, { titlePath: `playlists.dialogs.${s}.title`, titleParams: a }),
+                    e.jsx(L, {
+                        buttons: H(s),
                         onAction: function (e) {
                             t.controls.doAction(e);
                         },
@@ -199,53 +195,53 @@ const Z = o(function () {
             })
         );
     }),
-    ee = {
+    Q = {
         base: 'Input_1c7ccc50',
         decoration: 'Input_decoration_85fbd35d',
         field: 'Input_field_17ca5da5',
         placeholder: 'Input_placeholder_491fdc9a',
     },
-    te = n.resolve('strings'),
-    se = o(function (s) {
+    ee = n.resolve('strings'),
+    te = o(function (s) {
         const a = u({ size: v.sizes.medium }, { medium: { size: v.sizes.large } });
         return e.jsx(v.Provider, {
             value: s.state.code.get(),
             size: a.size,
             state: s.state.valid.get() ? v.states.default : v.states.alert,
             children: e.jsxs('div', {
-                className: t(ee.base, s.className),
+                className: t(Q.base, s.className),
                 children: [
                     e.jsxs(v.Decoration, {
-                        className: ee.decoration,
+                        className: Q.decoration,
                         children: [
                             e.jsx(v.Field, {
                                 onChange: (e) => s.state.setCode(e.currentTarget.value),
-                                className: ee.field,
-                                classNames: { placeholder: ee.placeholder },
+                                className: Q.field,
+                                classNames: { placeholder: Q.placeholder },
                                 'data-test-id': 'playlistCodeInput',
-                                children: te.readOrEmpty('playlists.dialogs.import.input.message'),
+                                children: ee.readOrEmpty('playlists.dialogs.import.input.message'),
                             }),
                             e.jsx(v.ClearButton, {}),
                         ],
                     }),
                     e.jsx(v.Message, {
                         visible: !s.state.valid.get(),
-                        className: ee.message,
-                        children: te.readOrEmpty('playlists.dialogs.import.input.alert'),
+                        className: Q.message,
+                        children: ee.readOrEmpty('playlists.dialogs.import.input.alert'),
                     }),
                 ],
             }),
         });
     });
-const ae = 'Import_40d148c8',
-    le = 'Import_input_e16c13cf',
-    oe = 'Import_close_a22b55d9',
-    ie = 'Import_content_4f83aea5',
-    ne = 'Import_title_84bfc65',
-    re = 'Import_buttons_cfa84075',
-    ce = 'Import_button_4685dd9f',
-    de = n.resolve('strings'),
-    ue = {
+const se = 'Import_40d148c8',
+    ae = 'Import_input_e16c13cf',
+    le = 'Import_close_a22b55d9',
+    oe = 'Import_content_4f83aea5',
+    ie = 'Import_title_84bfc65',
+    ne = 'Import_buttons_cfa84075',
+    re = 'Import_button_4685dd9f',
+    ce = n.resolve('strings'),
+    de = {
         default: { size: r.sizes.extraSmall },
         breakpoints: {
             medium: { size: r.sizes.small },
@@ -253,52 +249,52 @@ const ae = 'Import_40d148c8',
             extraLarge: { size: r.sizes.large },
         },
     },
-    me = o(function ({ state: t }) {
-        const s = u(ue.default, ue.breakpoints),
-            a = V();
+    ue = o(function ({ state: t }) {
+        const s = u(de.default, de.breakpoints),
+            a = F();
         function l() {
             const e = t.code.get(),
-                s = T(e);
+                s = w(e);
             return (
                 t.setValid('ok' === s.type),
                 'error' === s.type
                     ? console.warn(`Failed to decode the code ${t.code}`, s.error)
-                    : s.value.hash !== E(s.value.numbers)
+                    : s.value.hash !== T(s.value.numbers)
                       ? (console.error('Invalid hash sum. List can be corrupted'), t.setValid(!1))
                       : void a.controls.import(s.value.numbers)
             );
         }
         return (
-            b(h.ENTER, l),
+            b(y.ENTER, l),
             e.jsxs('div', {
-                className: re,
+                className: ne,
                 children: [
                     e.jsx(r, {
-                        className: ce,
+                        className: re,
                         autoAlignContent: !1,
                         theme: r.themes.primary,
                         size: s.size,
                         onClick: l,
                         soundTarget: 'vehicle:playlists:overlay:submit_button',
                         'data-test-id': 'importPlaylist',
-                        children: de.readOrEmpty('playlists.dialogs.import.button.submit'),
+                        children: ce.readOrEmpty('playlists.dialogs.import.button.submit'),
                     }),
                     e.jsx(r, {
-                        className: ce,
+                        className: re,
                         autoAlignContent: !1,
                         theme: r.themes.secondary,
                         size: s.size,
                         onClick: () => a.controls.doAction(O.cancel),
                         soundTarget: 'vehicle:playlists:overlay:cancel_button',
                         'data-test-id': 'cancelImportPlaylist',
-                        children: de.readOrEmpty('dialogs.common.cancel'),
+                        children: ce.readOrEmpty('dialogs.common.cancel'),
                     }),
                 ],
             })
         );
     }),
-    pe = o(function () {
-        const t = V(),
+    me = o(function () {
+        const t = F(),
             s = i(() => {
                 const e = a.box(!0),
                     t = a.box('');
@@ -312,36 +308,36 @@ const ae = 'Import_40d148c8',
                 };
             });
         return (
-            y(h.ESCAPE, t.controls.close),
+            h(y.ESCAPE, t.controls.close),
             e.jsxs('div', {
-                className: ae,
+                className: se,
                 children: [
-                    e.jsx(L, { onClick: t.controls.close, className: oe }),
+                    e.jsx($, { onClick: t.controls.close, className: le }),
                     e.jsxs('div', {
-                        className: ie,
+                        className: oe,
                         children: [
-                            e.jsx('div', { className: ne, children: de.readOrEmpty('playlists.dialogs.import.title') }),
-                            e.jsx(se, { state: s, className: le }),
+                            e.jsx('div', { className: ie, children: ce.readOrEmpty('playlists.dialogs.import.title') }),
+                            e.jsx(te, { state: s, className: ae }),
                         ],
                     }),
-                    e.jsx(me, { state: s }),
+                    e.jsx(ue, { state: s }),
                 ],
             })
         );
     }),
-    ye = o(function () {
-        const t = V().model.type.get();
+    pe = o(function () {
+        const t = F().model.type.get();
         switch (t) {
             case k.import:
-                return e.jsx(pe, {});
+                return e.jsx(me, {});
             case k.delete:
             case k.save:
-                return e.jsx(Z, {});
+                return e.jsx(K, {});
             default:
                 return (console.error(`The overlay type for ${t} is not supported`), null);
         }
     }),
-    he = _(B);
-z(new f().addWithProps(x, { soundsOverrides: he }).add(F).render(e.jsx(ye, {})))
+    he = _(E);
+z(new f().addWithProps(x, { soundsOverrides: he }).add(M).render(e.jsx(pe, {})))
     .then(() => j(document.getElementById('root')))
     .then(() => N());

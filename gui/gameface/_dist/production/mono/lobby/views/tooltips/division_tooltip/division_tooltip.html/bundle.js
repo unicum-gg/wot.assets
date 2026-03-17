@@ -1,6 +1,6 @@
-import { I as s, j as i, J as o } from '../../../../chunks/vendor.js';
-import { i as e, n, cm as r, cd as t, cf as a, cP as c } from '../../../../chunks/lib.js';
-import { T as d } from '../../../../chunks/tooltip_decorator.js';
+import { y as s, j as i, w as o } from '../../../../chunks/vendor.js';
+import { i as e, aC as n, o as r, q as t, n as a, aA as d } from '../../../../chunks/lib.js';
+import { T as c } from '../../../../chunks/tooltip_decorator.js';
 import { g as m } from '../../../../chunks/get_division_name.js';
 import { g as l } from '../../../../chunks/get_rank_name.js';
 import { t as j } from '../../../../chunks/tooltips.module.js';
@@ -8,7 +8,7 @@ import { t as j } from '../../../../chunks/tooltips.module.js';
 const [p, h] = e()(({ observableModel: s }) => ({ root: s.object() }), n),
     x = s(() => {
         const { model: s } = h(),
-            { division: e, rank: n, from: c, to: d } = s.root.get();
+            { division: e, rank: n, from: d, to: c } = s.root.get();
         return i.jsxs('div', {
             className: j.base,
             children: [
@@ -25,10 +25,10 @@ const [p, h] = e()(({ observableModel: s }) => ({ root: s.object() }), n),
                     className: j.description,
                     children: i.jsx(a, {
                         text: R.strings.comp7_ext.divisionTooltip.description(),
-                        binding: { fromScore: c, toScore: d },
+                        binding: { fromScore: d, toScore: c },
                     }),
                 }),
             ],
         });
     });
-c(i.jsx(p, { children: i.jsx(d, { children: i.jsx(x, {}) }) }));
+d(i.jsx(p, { children: i.jsx(c, { children: i.jsx(x, {}) }) }));

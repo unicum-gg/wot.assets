@@ -1,5 +1,5 @@
 import { k as e, m as s, j as o, e as t } from '../../../../chunks/vendor.js';
-import { i as a, c, A as i, F as n, r as l, E as r } from '../../../../chunks/lib.js';
+import { i as a, c, A as i, a as n, r as l, E as r } from '../../../../chunks/lib.js';
 import { l as m } from '../../../../chunks/getRewardImage.js';
 import { a as d, g as x } from '../../../../chunks/resources.js';
 const p = {
@@ -89,9 +89,9 @@ function R({ title: e, size: s = O }) {
 const q = 'App_cab7a561',
     z = 'App_info_3f0f2d4',
     E = 'App_content_21db64d3',
-    F = 'App_arrow_5f9090c6',
-    L = 'App_textBlock_b6e75841',
-    M = 'App_highlight_86866f89',
+    L = 'App_arrow_5f9090c6',
+    M = 'App_textBlock_b6e75841',
+    F = 'App_highlight_86866f89',
     H = 'App_description_a897f85c',
     J = 'App_topDivider_fa28fc4b',
     K = 'App_bottomDivider_d6e091c2',
@@ -109,12 +109,12 @@ const q = 'App_cab7a561',
                     className: E,
                     children: [
                         o.jsx(I, { image: s.vehicles }),
-                        o.jsx(j, { className: F }),
+                        o.jsx(j, { className: L }),
                         o.jsx(I, { image: m('s180x135', i) }),
                     ],
                 }),
                 o.jsxs('div', {
-                    className: L,
+                    className: M,
                     children: [
                         o.jsx(R, { title: a.boxTitle.dynOpt(i) }),
                         o.jsx(n, { className: H, text: a.boxDescription.dynOpt(i) }),
@@ -122,7 +122,7 @@ const q = 'App_cab7a561',
                 }),
                 o.jsx(h, { image: s.divider, className: J }),
                 o.jsxs('div', {
-                    className: M,
+                    className: F,
                     children: [
                         o.jsx(R, { title: t.howGetTitle, size: D }),
                         o.jsx(n, { className: H, text: a.howGetBoxText.dynOpt(i) }),

@@ -4,14 +4,14 @@ import {
     n as t,
     I as a,
     F as i,
-    A as r,
-    L as c,
-    S as l,
-    H as m,
-    M as _,
-    E as p,
+    L as r,
+    Z as l,
+    X as c,
+    $ as m,
+    _,
+    Y as p,
     at as d,
-    C as h,
+    M as h,
     d as x,
 } from '../../../../chunks/lib.js';
 import { G as j } from '../../../../chunks/gradient_decorator.js';
@@ -52,63 +52,63 @@ import { M as u } from '../../../../chunks/enums.js';
         });
     }),
     I = { ['roles']: 'personal_missions_30.common.role', ['vehicleTypes']: 'menu.header.vehicleType' },
-    C = {
+    B = {
         base: 'ColumnItem_f772e009',
         base__roles: 'ColumnItem_base__roles_fabefe49',
         icon: 'ColumnItem_icon_876d9b1b',
         text: 'ColumnItem_text_f537f721',
     };
-function B({ item: e, contentType: o = 'roles', className: t }) {
+function C({ item: e, contentType: o = 'roles', className: t }) {
     return s.jsxs('div', {
-        className: n(C.base, C[`base__${o}`], t),
+        className: n(B.base, B[`base__${o}`], t),
         children: [
-            s.jsx(a, { path: `personal_missions_30.common.${o}.${r(e)}`, className: C.icon }),
-            s.jsx(i, { className: C.text, path: `${I[o]}.${r(e)}` }),
+            s.jsx(a, { path: `personal_missions_30.common.${o}.${r(e)}`, className: B.icon }),
+            s.jsx(i, { className: B.text, path: `${I[o]}.${r(e)}` }),
         ],
     });
 }
-const L = 'assault',
-    $ = 'breakthrough',
+const $ = 'assault',
+    L = 'breakthrough',
     R = 'sniper',
-    S = 'support',
-    w = 'universal',
-    H = (e) => {
+    w = 'support',
+    S = 'universal',
+    M = (e) => {
         switch (e) {
             case u.ASSAULT:
             case u.SNIPER:
                 return s.jsxs(s.Fragment, {
                     children: [
-                        s.jsx(B, { item: m, contentType: 'vehicleTypes' }),
-                        s.jsx(B, { item: _, contentType: 'vehicleTypes' }),
-                        s.jsx(B, { item: p, contentType: 'vehicleTypes' }),
+                        s.jsx(C, { item: m, contentType: 'vehicleTypes' }),
+                        s.jsx(C, { item: _, contentType: 'vehicleTypes' }),
+                        s.jsx(C, { item: p, contentType: 'vehicleTypes' }),
                     ],
                 });
             case u.SUPPORT:
                 return s.jsxs(s.Fragment, {
                     children: [
-                        s.jsx(B, { item: c, contentType: 'vehicleTypes' }),
-                        s.jsx(B, { item: l, contentType: 'vehicleTypes' }),
+                        s.jsx(C, { item: l, contentType: 'vehicleTypes' }),
+                        s.jsx(C, { item: c, contentType: 'vehicleTypes' }),
                     ],
                 });
             default:
                 throw new Error(`unhandled categoryType ${e}`);
         }
     },
-    M = (e) => {
+    P = (e) => {
         switch (e) {
             case u.ASSAULT:
                 return s.jsxs(s.Fragment, {
-                    children: [s.jsx(B, { item: $ }), s.jsx(B, { item: L }), s.jsx(B, { item: w })],
+                    children: [s.jsx(C, { item: L }), s.jsx(C, { item: $ }), s.jsx(C, { item: S })],
                 });
             case u.SNIPER:
-                return s.jsxs(s.Fragment, { children: [s.jsx(B, { item: R }), s.jsx(B, { item: S })] });
+                return s.jsxs(s.Fragment, { children: [s.jsx(C, { item: R }), s.jsx(C, { item: w })] });
             case u.SUPPORT:
                 return null;
             default:
                 throw new Error(`unhandled categoryType ${e}`);
         }
     },
-    P = {
+    F = {
         base: 'InnerBlock_4e0a1101',
         description: 'InnerBlock_description_e25909eb',
         base__support: 'InnerBlock_base__support_8a259d83',
@@ -118,69 +118,69 @@ const L = 'assault',
         column: 'InnerBlock_column_9f423fea',
         verticalLine: 'InnerBlock_verticalLine_af25fb85',
     },
-    A = e(function () {
+    H = e(function () {
         const { model: e } = y(),
             o = e.category.get(),
-            t = Boolean(M(o));
+            t = Boolean(P(o));
         return s.jsxs('div', {
-            className: n(P.base, P[`base__${o}`]),
+            className: n(F.base, F[`base__${o}`]),
             children: [
                 s.jsx(i, {
                     split: !0,
-                    className: P.description,
+                    className: F.description,
                     path: `personal_missions_30.tooltip.missionsCategory.innerBlock.description.${o}`,
                 }),
                 t
                     ? s.jsxs('div', {
-                          className: P.content,
+                          className: F.content,
                           children: [
                               s.jsxs('div', {
-                                  className: P.column,
+                                  className: F.column,
                                   children: [
                                       s.jsx(i, {
-                                          className: P.subtitle,
+                                          className: F.subtitle,
                                           path: 'personal_missions_30.tooltip.missionsCategory.innerBlock.vehiclesTypes',
                                       }),
-                                      H(o),
+                                      M(o),
                                   ],
                               }),
-                              s.jsx('div', { className: P.verticalLine }),
+                              s.jsx('div', { className: F.verticalLine }),
                               s.jsxs('div', {
-                                  className: P.column,
+                                  className: F.column,
                                   children: [
                                       s.jsx(i, {
-                                          className: P.subtitle,
+                                          className: F.subtitle,
                                           path: 'personal_missions_30.tooltip.missionsCategory.innerBlock.withRoles',
                                       }),
-                                      M(o),
+                                      P(o),
                                   ],
                               }),
                           ],
                       })
                     : s.jsxs('div', {
-                          className: n(P.content, P.content__noRoles),
+                          className: n(F.content, F.content__noRoles),
                           children: [
                               s.jsx(i, {
-                                  className: P.subtitle,
+                                  className: F.subtitle,
                                   path: 'personal_missions_30.tooltip.missionsCategory.innerBlock.noRoles',
                               }),
-                              s.jsx('div', { className: P.column, children: H(o) }),
+                              s.jsx('div', { className: F.column, children: M(o) }),
                           ],
                       }),
             ],
         });
     }),
-    E = 'MissionsCategoryTooltip_c7151f3b',
-    F = 'MissionsCategoryTooltip_footer_e1c7b92d',
+    A = 'MissionsCategoryTooltip_c7151f3b',
+    E = 'MissionsCategoryTooltip_footer_e1c7b92d',
     U = e(function () {
         const { model: e } = y();
         return s.jsx(d, {
-            className: E,
+            className: A,
             'data-name': 'MissionsCategoryTooltip',
             children: s.jsxs(d.Decorator, {
                 children: [
                     s.jsx(k, {}),
-                    s.jsx(j, { children: s.jsx(A, {}) }),
+                    s.jsx(j, { children: s.jsx(H, {}) }),
                     s.jsx(i, {
                         path: 'personal_missions_30.tooltip.missionsCategory.footer',
                         params: {
@@ -188,7 +188,8 @@ const L = 'assault',
                             minLevel: h(e.minLevel.get()),
                             maxLevel: h(e.maxLevel.get()),
                         },
-                        className: F,
+                        split: !0,
+                        className: E,
                     }),
                 ],
             }),

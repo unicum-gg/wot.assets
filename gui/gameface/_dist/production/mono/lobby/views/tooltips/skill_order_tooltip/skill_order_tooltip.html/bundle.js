@@ -1,15 +1,15 @@
 import { j as e, R as s } from '../../../../chunks/vendor.js';
 import {
-    $ as a,
-    d2 as r,
-    d3 as c,
-    d4 as i,
-    d5 as o,
-    d6 as t,
-    r as l,
-    d1 as n,
-    F as d,
-    b as p,
+    a9 as a,
+    d8 as c,
+    d9 as r,
+    da as i,
+    db as o,
+    dc as t,
+    o as l,
+    d7 as n,
+    a8 as d,
+    cu as p,
 } from '../../../../chunks/lib.js';
 import { D as _ } from '../../../../chunks/divider.js';
 var x = ((e) => ((e.Firesupport = 'firesupport'), (e.Reconnaissance = 'reconnaissance'), (e.Tactics = 'tactics'), e))(
@@ -44,21 +44,21 @@ const j = {
         [t]: 'light_tank_x48x48',
         [o]: 'medium_tank_x48x48',
         [i]: 'heavy_tank_x48x48',
-        [c]: 'spg_x48x48',
-        [r]: 'tank_destroyer_x48x48',
+        [r]: 'spg_x48x48',
+        [c]: 'tank_destroyer_x48x48',
     };
-function g({ vehicleType: r, categories: c }) {
+function g({ vehicleType: c, categories: r }) {
     return e.jsxs('div', {
         className: j.base,
         children: [
             e.jsx('div', {
                 className: j.vehicleIconWrapper,
-                children: e.jsx(a, { className: j.vehicleIcon, path: `ui_kit.vehicle_type.x48x48.${v[r]}` }),
+                children: e.jsx(a, { className: j.vehicleIcon, path: `ui_kit.vehicle_type.x48x48.${v[c]}` }),
             }),
             e.jsx('div', {
                 className: j.categories,
-                children: c.map((a, r) =>
-                    e.jsx(s.Fragment, { children: e.jsx(h, { category: a, showArrow: r < c.length - 1 }) }, a),
+                children: r.map((a, c) =>
+                    e.jsx(s.Fragment, { children: e.jsx(h, { category: a, showArrow: c < r.length - 1 }) }, a),
                 ),
             }),
         ],
@@ -76,10 +76,10 @@ const u = 'SkillOrderTooltip_f3653ea',
         [t, [x.Reconnaissance, x.Tactics, x.Firesupport]],
         [o, [x.Tactics, x.Firesupport, x.Reconnaissance]],
         [i, [x.Firesupport, x.Tactics, x.Reconnaissance]],
-        [c, [x.Firesupport, x.Reconnaissance, x.Tactics]],
-        [r, [x.Reconnaissance, x.Firesupport, x.Tactics]],
+        [r, [x.Firesupport, x.Reconnaissance, x.Tactics]],
+        [c, [x.Reconnaissance, x.Firesupport, x.Tactics]],
     ];
-function F() {
+function w() {
     return e.jsx(n, {
         children: e.jsx(n.Decorator, {
             children: e.jsxs('div', {
@@ -115,4 +115,4 @@ function F() {
         }),
     });
 }
-p(e.jsx(F, {}));
+p(e.jsx(w, {}));

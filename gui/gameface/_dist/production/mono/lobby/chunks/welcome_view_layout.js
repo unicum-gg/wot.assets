@@ -1,7 +1,7 @@
 import { r as e, j as a, m as o } from './vendor.js';
 import { W as s, S as t } from './sound_constants.js';
 import { g as i } from './utils.js';
-import { u as c, e as l, k as d, p as n, C as r, L as m, B as y, F as u } from './lib.js';
+import { u as c, e as l, k as d, p as n, C as r, G as m, B as y, F as u } from './lib.js';
 const _ = { y: 0, opacity: 1 };
 var b = ((e) => (
     (e.HEADER = 'header'),
@@ -15,7 +15,7 @@ var b = ((e) => (
     e
 ))(b || {});
 const h = 500,
-    L = {
+    j = {
         header: { from: { y: -10, opacity: 0 }, to: _, delay: 0, duration: h },
         block1: { from: { y: 5, opacity: 0 }, to: _, delay: 400, duration: h },
         title1: { from: { y: -15, opacity: 0 }, to: _, delay: 400, duration: h },
@@ -25,7 +25,7 @@ const h = 500,
         title3: { from: { y: -15, opacity: 0 }, to: _, delay: 800, duration: h },
         button: { from: { y: -10, opacity: 0 }, to: _, delay: 1200, duration: h },
     },
-    j = 'WelcomeViewLayout_13f0ed9c',
+    L = 'WelcomeViewLayout_13f0ed9c',
     f = 'WelcomeViewLayout_container_15998999',
     x = 'WelcomeViewLayout_header_790d036d',
     p = 'WelcomeViewLayout_subheader_da7b1ed6',
@@ -49,7 +49,7 @@ const h = 500,
             n.sound(s);
         }, []);
         return a.jsxs('div', {
-            className: o(j, O),
+            className: o(L, O),
             onClick: () => D(!0),
             children: [
                 a.jsx(r, { className: v, onClose: B }),
@@ -57,7 +57,7 @@ const h = 500,
                     className: f,
                     children: [
                         a.jsx(t, {
-                            ...L[b.HEADER],
+                            ...j[b.HEADER],
                             isCanceled: P,
                             children: a.jsxs('div', {
                                 className: V,
@@ -74,7 +74,7 @@ const h = 500,
                                     t,
                                     {
                                         isCanceled: P,
-                                        ...L[b[`BLOCK_${e + 1}`]],
+                                        ...j[b[`BLOCK_${e + 1}`]],
                                         onStart: H,
                                         children: a.jsxs('div', {
                                             className: W,
@@ -82,7 +82,7 @@ const h = 500,
                                                 a.jsx('div', { className: o(N, g[e]) }),
                                                 a.jsxs(t, {
                                                     isCanceled: P,
-                                                    ...L[b[`TITLE_${e + 1}`]],
+                                                    ...j[b[`TITLE_${e + 1}`]],
                                                     children: [
                                                         a.jsx('div', { className: T, children: A.$num(e + 1) }),
                                                         a.jsx(u, {
@@ -102,7 +102,7 @@ const h = 500,
                         }),
                         a.jsx(t, {
                             className: E,
-                            ...L[b.BUTTON],
+                            ...j[b.BUTTON],
                             isCanceled: P,
                             children: a.jsx('div', {
                                 className: k,

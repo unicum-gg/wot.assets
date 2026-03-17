@@ -1,17 +1,17 @@
-import { D as e, r as a, j as s, C as t } from '../../../../chunks/vendor.js';
+import { S as e, r as a, j as s, aa as t } from '../../../../chunks/vendor.js';
 import {
     i as o,
     n,
-    M as r,
-    F as i,
-    c$ as l,
-    cC as c,
-    bU as d,
-    bZ as p,
-    d0 as m,
-    b as _,
+    c1 as r,
+    a8 as i,
+    d5 as l,
+    cA as c,
+    bX as d,
+    c0 as p,
+    d6 as m,
+    cu as _,
 } from '../../../../chunks/lib.js';
-import { F as f, I as x, A as h, a as b, b as T } from '../../../../chunks/event_banner_state.js';
+import { F as f, I as x, A as h, a as T, b } from '../../../../chunks/event_banner_state.js';
 import { D as u } from '../../../../chunks/divider.js';
 const [j, v] = o()(
         ({ observableModel: e }) => ({
@@ -38,17 +38,17 @@ const [j, v] = o()(
     P = 'DateInfo_cooldownIconWrapper_dc30f0ca',
     y = 'DateInfo_cooldownIcon_98fd90f',
     L = 'dateRange',
-    W = 'cooldown',
-    k = 'accent',
-    C = (e, a, o, n) => {
+    S = 'cooldown',
+    W = 'accent',
+    k = (e, a, o, n) => {
         const r = l;
         return {
-            [W]: s.jsx(i, {
+            [S]: s.jsx(i, {
                 className: t(B, D),
                 path: 'fl_tooltips.bannerTooltip.curfewTime',
                 params: { timer: s.jsx(d, { size: 'x24x24', type: 'cooldown', start: n }) },
             }),
-            [k]: s.jsx(d, { size: 'x24x24', type: 'accent', start: n }),
+            [W]: s.jsx(d, { size: 'x24x24', type: 'accent', start: n }),
             [L]: s.jsxs('div', {
                 className: I,
                 children: [
@@ -66,7 +66,7 @@ const [j, v] = o()(
             }),
         }[e];
     },
-    S = e(function ({ type: e }) {
+    A = e(function ({ type: e }) {
         const { model: t } = v(),
             o = t.eventStartDate.get(),
             n = t.eventEndDate.get(),
@@ -79,46 +79,46 @@ const [j, v] = o()(
                 }, r);
                 return () => window.clearTimeout(e);
             }, [n]),
-            s.jsx('div', { className: g, children: C(e, o, n, i) })
+            s.jsx('div', { className: g, children: k(e, o, n, i) })
         );
     }),
     E = {
-        [T]: {
+        [b]: {
             isDisabled: !1,
             shouldShowPoints: !0,
             shouldShowTierData: !0,
-            dateInfoType: k,
+            dateInfoType: W,
             specificDescriptionKey: 'fl_tooltips.bannerTooltip.descriptionActive',
         },
-        [b]: { isDisabled: !1, dateInfoType: k },
+        [T]: { isDisabled: !1, dateInfoType: W },
         [h]: { isDisabled: !0, dateInfoType: L },
-        [x]: { isDisabled: !0, dateInfoType: W },
+        [x]: { isDisabled: !0, dateInfoType: S },
         [f]: {
             isDisabled: !0,
             shouldHideCallToAction: !0,
             specificDescriptionKey: 'fl_tooltips.bannerTooltip.descriptionEnded',
         },
     },
-    F = 'HeaderDecorator_wrapper_47003ef5';
-function M({ children: e, isDisabled: a = !1 }) {
+    C = 'HeaderDecorator_wrapper_47003ef5';
+function F({ children: e, isDisabled: a = !1 }) {
     const t = a
         ? R.images.frontline.gui.maps.icons.hangarEventBanners.tooltips.header_disabled()
         : R.images.frontline.gui.maps.icons.hangarEventBanners.tooltips.header_enabled();
-    return s.jsx('div', { className: F, style: { backgroundImage: `url(${t})` }, children: e });
+    return s.jsx('div', { className: C, style: { backgroundImage: `url(${t})` }, children: e });
 }
-const A = 'ProgressPoints_a5cbe757',
+const M = 'ProgressPoints_a5cbe757',
     H = 'ProgressPoints_progressionValuesWrapper_e7ef156c',
     z = 'ProgressPoints_currentProgress_25705c74',
     K = 'ProgressPoints_progressIcon_9b37bf52',
     V = 'ProgressPoints_description_281855c9',
-    $ = e(function () {
+    X = e(function () {
         const { model: e } = v(),
             a = e.maxPoints.get(),
             t = e.curPoints.get();
         return 0 === a && 0 === t
             ? null
             : s.jsxs('div', {
-                  className: A,
+                  className: M,
                   children: [
                       s.jsxs('div', {
                           className: H,
@@ -135,15 +135,15 @@ const A = 'ProgressPoints_a5cbe757',
                   ],
               });
     }),
-    U = 'BannerTooltip_67cf8ae2',
-    Z = 'BannerTooltip_contentWrapper_69bfdee9',
-    q = 'BannerTooltip_title_eb5c95ad',
-    G = 'BannerTooltip_maxTier_baec7baf',
-    J = 'BannerTooltip_rewardText_9b198a9a',
-    O = 'BannerTooltip_warningText_3870055d',
-    Q = 'BannerTooltip_descriptionText_714dbfec',
-    X = 'BannerTooltip_performanceIcon_4b05a3c8',
-    Y = 'BannerTooltip_performance_acfebd23',
+    $ = 'BannerTooltip_67cf8ae2',
+    q = 'BannerTooltip_contentWrapper_69bfdee9',
+    G = 'BannerTooltip_title_eb5c95ad',
+    J = 'BannerTooltip_maxTier_baec7baf',
+    O = 'BannerTooltip_rewardText_9b198a9a',
+    Q = 'BannerTooltip_warningText_3870055d',
+    U = 'BannerTooltip_descriptionText_714dbfec',
+    Y = 'BannerTooltip_performanceIcon_4b05a3c8',
+    Z = 'BannerTooltip_performance_acfebd23',
     ee = 'BannerTooltip_performanceHeaderWrapper_dbeaaac9',
     ae = 'BannerTooltip_rewardIcon_cba7ea77',
     se = 'BannerTooltip_rewardWrapper_10979df7',
@@ -161,24 +161,24 @@ const A = 'ProgressPoints_a5cbe757',
                 dateInfoType: x,
             } = E[a.get()],
             h = a.get() !== f,
-            b = _ || 'fl_tooltips.bannerTooltip.description';
+            T = _ || 'fl_tooltips.bannerTooltip.description';
         return s.jsx(m, {
             children: s.jsxs('div', {
-                className: U,
+                className: $,
                 children: [
-                    s.jsx(M, {
+                    s.jsx(F, {
                         isDisabled: l,
                         children: s.jsx(i, {
                             path: 'fl_tooltips.bannerTooltip.' + (p ? 'headerWithTier' : 'header'),
-                            params: { curLevel: n.get(), maxLevel: o.get(), maxTierClass: G },
-                            className: q,
+                            params: { curLevel: n.get(), maxLevel: o.get(), maxTierClass: J },
+                            className: G,
                         }),
                     }),
                     s.jsxs('div', {
-                        className: Z,
+                        className: q,
                         children: [
-                            c && s.jsx($, {}),
-                            s.jsx(i, { path: b, params: { vehicleTier: r.get() }, className: Q }),
+                            c && s.jsx(X, {}),
+                            s.jsx(i, { path: T, params: { vehicleTier: r.get() }, className: U }),
                             !d &&
                                 s.jsx(i, {
                                     className: oe,
@@ -193,21 +193,21 @@ const A = 'ProgressPoints_a5cbe757',
                                 }),
                             h &&
                                 s.jsxs('div', {
-                                    className: Y,
+                                    className: Z,
                                     children: [
                                         s.jsxs('div', {
                                             className: ee,
                                             children: [
-                                                s.jsx('div', { className: X }),
+                                                s.jsx('div', { className: Y }),
                                                 s.jsx(i, {
                                                     path: 'fl_tooltips.bannerTooltip.performanceRisk.title',
-                                                    className: O,
+                                                    className: Q,
                                                 }),
                                             ],
                                         }),
                                         s.jsx(i, {
                                             path: 'fl_tooltips.bannerTooltip.performanceRisk.text',
-                                            className: Q,
+                                            className: U,
                                         }),
                                     ],
                                 }),
@@ -225,13 +225,13 @@ const A = 'ProgressPoints_a5cbe757',
                                             path: 'fl_tooltips.bannerTooltip.rewardInfo',
                                             params: { value: t.get() },
                                             split: !0,
-                                            className: J,
+                                            className: O,
                                         }),
                                     ],
                                 }),
                             ],
                         }),
-                    x && s.jsxs(s.Fragment, { children: [s.jsx(u, {}), s.jsx(S, { type: x })] }),
+                    x && s.jsxs(s.Fragment, { children: [s.jsx(u, {}), s.jsx(A, { type: x })] }),
                 ],
             }),
         });

@@ -14,74 +14,73 @@ import {
     q as _,
 } from '../../../chunks/vendor.js';
 import {
-    i as m,
-    v as p,
+    i as p,
+    v as m,
     r as f,
     e as v,
     w as b,
     x as u,
     y as g,
     z as V,
-    A as x,
-    B as S,
-    D as w,
-    j,
-    u as C,
+    B as x,
+    A as S,
+    j as w,
+    u as j,
+    D as C,
     E,
     G as N,
     H as A,
-    K as R,
-    o as y,
+    o as R,
+    K as y,
     L as I,
     M as T,
     N as k,
     O as L,
-    P as W,
-    k as D,
+    k as W,
+    P as D,
     Q as O,
     S as B,
     T as F,
     W as H,
-    X as M,
-    F as U,
+    F as M,
+    X as U,
     Y as P,
-    Z as $,
-    l as z,
-    n as K,
-    d as G,
-    _ as X,
-    C as q,
-    s as J,
-    p as Q,
-    q as Y,
-    J as Z,
-    U as ee,
-    t as ae,
+    l as $,
+    n as z,
+    d as K,
+    Z as G,
+    C as X,
+    s as q,
+    p as J,
+    q as Q,
+    J as Y,
+    U as Z,
+    t as ee,
 } from '../../../chunks/lib.js';
-import { t as se } from '../../../chunks/sounds.js';
+import { t as ae } from '../../../chunks/sounds.js';
 import {
-    b as ie,
-    F as te,
-    c as le,
-    d as ce,
-    P as ne,
-    I as oe,
-    f as re,
-    u as de,
-    l as he,
-    S as _e,
-    h as me,
+    b as se,
+    F as ie,
+    c as te,
+    d as le,
+    P as ce,
+    I as ne,
+    f as oe,
+    u as re,
+    l as de,
+    S as he,
+    h as _e,
     a as pe,
 } from '../../../chunks/easings.js';
-import { T as fe, A as ve, a as be } from '../../../chunks/category.js';
-var ue = ((e) => (
+import { T as me, A as fe, a as ve } from '../../../chunks/category.js';
+var be = ((e) => (
     (e.SELECTION = 'selection'),
     (e.VIEW_REWARD_AFTER_SELECTION = 'viewRewardAfterSelection'),
     (e.VIEW_REWARD = 'viewReward'),
     e
-))(ue || {});
-const ge = (e) => (e === ue.SELECTION ? ie : te),
-    [Ve, xe] = m()(
+))(be || {});
+const ue = (e) => (e === be.SELECTION ? se : ie),
+    [ge, Ve] = p()(
         ({ observableModel: s }) => {
             const i = {
                 root: s.object(),
@@ -105,66 +104,67 @@ const ge = (e) => (e === ue.SELECTION ? ie : te),
             }),
         }),
     );
-var Se = ((e) => (
+var xe = ((e) => (
     (e.Selection = 'selection'),
     (e.ViewRewardAfterSelection = 'viewRewardAfterSelection'),
     (e.ViewReward = 'viewReward'),
     e
-))(Se || {});
-const we = (e) => {
+))(xe || {});
+const Se = (e) => {
         switch (e) {
-            case ue.SELECTION:
+            case be.SELECTION:
                 return 'selection';
-            case ue.VIEW_REWARD_AFTER_SELECTION:
+            case be.VIEW_REWARD_AFTER_SELECTION:
                 return 'viewRewardAfterSelection';
-            case ue.VIEW_REWARD:
+            case be.VIEW_REWARD:
                 return 'viewReward';
         }
     },
-    je = 'TOOLTIP_VEHICLE_REWARD',
-    Ce = 'VehicleRole_b05c9386',
-    Ee = 'VehicleRole_icon_543aab92',
-    Ne = 'VehicleRole_label_f7a3770c',
-    Ae = ({ role: e, roleKey: a, vehicleCD: s }) => {
-        const i = p(a),
-            l = f.resolve('strings'),
-            c = f.resolve('views'),
-            n = v({ value: b.x16x16 }, { extraLarge: { value: b.x24x24 } }),
-            o = u({
-                contentId: c.read((e) => e.lobby.ranked.tooltips.RankedBattlesRolesTooltipView('resId')),
-                args: { tooltipId: 'vehicleRoles', vehicleCD: s },
-            });
+    we = 'TOOLTIP_VEHICLE_REWARD',
+    je = 'VehicleRole_b05c9386',
+    Ce = 'VehicleRole_icon_543aab92',
+    Ee = 'VehicleRole_label_f7a3770c',
+    Ne = ({ roleKey: e, vehicleCD: a }) => {
+        const s = m(e),
+            i = f.resolve('strings'),
+            l = f.resolve('views'),
+            c = v({ value: b.x16x16 }, { extraLarge: { value: b.x24x24 } }),
+            n = u({
+                contentId: l.read((e) => e.lobby.ranked.tooltips.RankedBattlesRolesTooltipView('resId')),
+                args: { tooltipId: 'vehicleRoles', vehicleCD: a },
+            }),
+            o = e.split('_').pop() ?? '';
         return t.jsxs('div', {
-            className: Ce,
-            ...o,
+            className: je,
+            ...n,
             children: [
-                t.jsx(g, { classNames: { base: Ee }, roleKey: V(e), size: n.value }),
-                t.jsx('div', { className: Ne, children: l.readOrEmpty(`menu.roleExp.roleGroupName.${i}`) }),
+                t.jsx(g, { classNames: { base: Ce }, roleKey: o, size: c.value }),
+                t.jsx('div', { className: Ee, children: i.readOrEmpty(`menu.roleExp.roleGroupName.${s}`) }),
             ],
         });
     },
-    Re = 'VehicleDescription_283aa4df',
-    ye = 'VehicleDescription_role_67f72bc6',
-    Ie = 'VehicleDescription_description_e39f2e26',
-    Te = ({ vehicleCD: e, role: a, roleKey: s, description: i, onSubmit: l }) => {
-        const c = f.resolve('strings'),
-            n = v({ value: x.medium }, { medium: { value: x.large } });
+    Ae = 'VehicleDescription_283aa4df',
+    Re = 'VehicleDescription_role_67f72bc6',
+    ye = 'VehicleDescription_description_e39f2e26',
+    Ie = ({ vehicleCD: e, roleKey: a, description: s, onSubmit: i }) => {
+        const l = f.resolve('strings'),
+            c = v({ value: V.medium }, { medium: { value: V.large } });
         return t.jsxs('div', {
-            className: Re,
+            className: Ae,
             children: [
-                s && t.jsx('div', { className: ye, children: t.jsx(Ae, { roleKey: s, role: a, vehicleCD: e }) }),
-                t.jsx('div', { className: Ie, children: i }),
-                t.jsx(S, {
-                    size: n.value,
-                    onClick: l,
-                    theme: w.primary,
+                a && t.jsx('div', { className: Re, children: t.jsx(Ne, { roleKey: a, vehicleCD: e }) }),
+                t.jsx('div', { className: ye, children: s }),
+                t.jsx(x, {
+                    size: c.value,
+                    onClick: i,
+                    theme: S.primary,
                     soundTarget: 'rewards-view:button',
-                    children: c.readOrEmpty('seniority_awards.rewardsView.textButton.select'),
+                    children: l.readOrEmpty('seniority_awards.rewardsView.textButton.select'),
                 }),
             ],
         });
     },
-    ke = {
+    Te = {
         root: 'Vehicle_root_c03ad304',
         base: 'Vehicle_b9c2b42d',
         base__selection: 'Vehicle_base__selection_1df9346b',
@@ -195,7 +195,7 @@ const we = (e) => {
         fadeIn: 'Vehicle_fadeIn_c03ad304',
         scale: 'Vehicle_scale_c03ad304',
     },
-    Le = ({
+    ke = ({
         index: e,
         name: a,
         techName: s,
@@ -203,86 +203,85 @@ const we = (e) => {
         tier: d,
         isPremium: h,
         nation: _,
-        vehicleCD: m,
-        roleKey: p,
-        role: f,
-        description: v,
-        onRestAnimation: b,
-        size: u = 'medium',
-        state: g = Se.ViewReward,
-        isEnabledSound: V = !0,
-        previousTechName: x = null,
-        onSubmitBtnClick: S,
+        vehicleCD: p,
+        roleKey: m,
+        description: f,
+        onRestAnimation: v,
+        size: b = 'medium',
+        state: u = xe.ViewReward,
+        isEnabledSound: g = !0,
+        previousTechName: V = null,
+        onSubmitBtnClick: x,
     }) => {
-        const [w, I] = l.useState(!1),
-            T = j(ie),
-            k = g === Se.Selection,
-            L = g === Se.ViewRewardAfterSelection,
-            W = s !== x,
-            D = C(),
-            O = c(s, {
-                from: L ? { opacity: 0, scale: 0.5 } : { opacity: 0, transform: 'translate(30rem)' },
-                enter: L ? { opacity: 1, scale: 1 } : { opacity: 1, transform: 'translateX(0%)' },
+        const [S, y] = l.useState(!1),
+            I = w(se),
+            T = u === xe.Selection,
+            k = u === xe.ViewRewardAfterSelection,
+            L = s !== V,
+            W = j(),
+            D = c(s, {
+                from: k ? { opacity: 0, scale: 0.5 } : { opacity: 0, transform: 'translate(30rem)' },
+                enter: k ? { opacity: 1, scale: 1 } : { opacity: 1, transform: 'translateX(0%)' },
                 delay: 1e3 * e,
-                config: { duration: L ? 700 : 1e3, easing: L ? ce : le },
+                config: { duration: k ? 700 : 1e3, easing: k ? le : te },
                 onStart: () => {
-                    V && D.play('rewardAppear', { target: 'vehicle' });
+                    g && W.play('rewardAppear', { target: 'vehicle' });
                 },
                 onRest: () => {
-                    b(e);
+                    v(e);
                 },
             }),
-            B = c(s, {
+            O = c(s, {
                 from: { opacity: 1 },
                 enter: { opacity: 0 },
                 delay: 500 * e,
-                config: { duration: 1e3, easing: le },
+                config: { duration: 1e3, easing: te },
             }),
-            F = n({
+            B = n({
                 from: { opacity: 0 },
                 to: { opacity: 1 },
-                reset: k && W,
-                delay: 1e3 * e + (W ? 0 : 500),
-                config: { duration: 500, easing: le },
+                reset: T && L,
+                delay: 1e3 * e + (L ? 0 : 500),
+                config: { duration: 500, easing: te },
             }),
-            H = E({ args: l.useMemo(() => ({ vehicleCD: m, tooltipId: je }), [m]) });
+            F = C({ args: l.useMemo(() => ({ vehicleCD: p, tooltipId: we }), [p]) });
         return t.jsxs('div', {
             className: o(
-                ke.base,
-                ke[`base__${u}`],
-                k && ke.base__selection,
-                L && ke.base__afterSelection,
-                w && ke.base__submitted,
+                Te.base,
+                Te[`base__${b}`],
+                T && Te.base__selection,
+                k && Te.base__afterSelection,
+                S && Te.base__submitted,
             ),
             children: [
-                L &&
+                k &&
                     t.jsx('div', {
-                        className: ke.effectContainer,
-                        children: t.jsx('div', { className: ke.smokeEffect }),
+                        className: Te.effectContainer,
+                        children: t.jsx('div', { className: Te.smokeEffect }),
                     }),
                 t.jsxs('div', {
-                    className: ke.container,
-                    ...H,
+                    className: Te.container,
+                    ...F,
                     children: [
-                        W &&
-                            B((e) =>
+                        L &&
+                            O((e) =>
                                 t.jsx(r.div, {
-                                    className: ke.imageContainer,
+                                    className: Te.imageContainer,
                                     style: e,
                                     children:
-                                        x &&
-                                        t.jsx(N, {
-                                            className: ke.image,
-                                            path: `seniorityAwards.rewards.vehicles.${x}`,
+                                        V &&
+                                        t.jsx(E, {
+                                            className: Te.image,
+                                            path: `seniorityAwards.rewards.vehicles.${V}`,
                                         }),
                                 }),
                             ),
-                        O((e) =>
+                        D((e) =>
                             t.jsx(r.div, {
-                                className: ke.imageContainer,
+                                className: Te.imageContainer,
                                 style: e,
-                                children: t.jsx(N, {
-                                    className: ke.image,
+                                children: t.jsx(E, {
+                                    className: Te.image,
                                     path: `seniorityAwards.rewards.vehicles.${s}`,
                                 }),
                             }),
@@ -290,40 +289,39 @@ const we = (e) => {
                     ],
                 }),
                 t.jsxs(r.div, {
-                    style: F,
-                    className: ke.information,
+                    style: B,
+                    className: Te.information,
                     children: [
                         t.jsx('div', {
-                            className: ke.shadowContainer,
-                            children: t.jsx('div', { className: ke.shadow }),
+                            className: Te.shadowContainer,
+                            children: t.jsx('div', { className: Te.shadow }),
                         }),
                         t.jsxs('div', {
-                            className: ke.content,
+                            className: Te.content,
                             children: [
-                                t.jsxs(A, {
-                                    className: k && p ? ke.name : ke.nameWithRole,
+                                t.jsxs(N, {
+                                    className: T && m ? Te.name : Te.nameWithRole,
                                     children: [
-                                        t.jsx(N, { className: ke.flag, path: `flags.x40x30.${_}` }),
-                                        t.jsx(A.Level, { value: d, className: ke.text }),
-                                        R(i) && t.jsx(A.Type, { type: i, premium: h }),
-                                        t.jsx(A.Name, { className: ke.text, children: a }),
+                                        t.jsx(E, { className: Te.flag, path: `flags.x40x30.${_}` }),
+                                        t.jsx(N.Level, { value: d, className: Te.text }),
+                                        A(i) && t.jsx(N.Type, { type: i, premium: h }),
+                                        t.jsx(N.Name, { className: Te.text, children: a }),
                                     ],
                                 }),
-                                k &&
-                                    t.jsx(Te, {
-                                        vehicleCD: m,
-                                        role: f,
-                                        roleKey: p,
-                                        description: v,
+                                T &&
+                                    t.jsx(Ie, {
+                                        vehicleCD: p,
+                                        roleKey: m,
+                                        description: f,
                                         onSubmit: () => {
-                                            (I(!0),
-                                                S &&
-                                                    (T({
-                                                        action: y.Click,
-                                                        item: oe.SelectButton,
-                                                        parentScreen: ne.VehicleSelectionView,
+                                            (y(!0),
+                                                x &&
+                                                    (I({
+                                                        action: R.Click,
+                                                        item: ne.SelectButton,
+                                                        parentScreen: ce.VehicleSelectionView,
                                                     }),
-                                                    S()));
+                                                    x()));
                                         },
                                     }),
                             ],
@@ -333,13 +331,13 @@ const we = (e) => {
             ],
         });
     },
-    We = {
+    Le = {
         base: 'SelectedVehicleResolver_6c55a431',
         container: 'SelectedVehicleResolver_container_44df0efb',
         item: 'SelectedVehicleResolver_item_d7a9e223',
     },
-    De = d(({ onAnimationEnd: e, onSelect: a }) => {
-        const { model: s } = xe(),
+    We = d(({ onAnimationEnd: e, onSelect: a }) => {
+        const { model: s } = Ve(),
             i = s.vehicles.get(),
             c = s.computes.vehiclesLength(),
             n = s.selectedVehicleIndex.get() > c - 1 ? 0 : s.selectedVehicleIndex.get(),
@@ -349,12 +347,12 @@ const we = (e) => {
             'end' === d && (null == e || e());
         }, [e, d]);
         return t.jsx('div', {
-            className: o(We.base, 'selectionSubmitted' === d && We.base__submitted),
+            className: o(Le.base, 'selectionSubmitted' === d && Le.base__submitted),
             children: t.jsx('div', {
-                className: We.container,
+                className: Le.container,
                 children: t.jsx('div', {
-                    className: We.item,
-                    children: t.jsx(Le, {
+                    className: Le.item,
+                    children: t.jsx(ke, {
                         ...i[n].value,
                         index: 0,
                         onRestAnimation: () => {
@@ -362,7 +360,7 @@ const we = (e) => {
                         },
                         size: 'big',
                         isEnabledSound: 'active' === d,
-                        state: Se.Selection,
+                        state: xe.Selection,
                         previousTechName: r,
                         onSubmitBtnClick: () => {
                             (h('selectionSubmitted'), a && a());
@@ -372,7 +370,7 @@ const we = (e) => {
             }),
         });
     }),
-    Oe = {
+    De = {
         root: 'Vehicles_root_7f03fbab',
         base: 'Vehicles_ca1a88d1',
         base__afterSelection: 'Vehicles_base__afterSelection_663382d1',
@@ -399,23 +397,23 @@ const we = (e) => {
         fadeIn: 'Vehicles_fadeIn_7f03fbab',
         scale: 'Vehicles_scale_7f03fbab',
     },
-    Be = d(({ isStoppedScrolling: e, onScrollChange: a, onAnimationEnd: s }) => {
-        const { model: i } = xe(),
-            c = i.root.get().viewState === ue.VIEW_REWARD_AFTER_SELECTION,
-            { api: n } = I(),
+    Oe = d(({ isStoppedScrolling: e, onScrollChange: a, onAnimationEnd: s }) => {
+        const { model: i } = Ve(),
+            c = i.root.get().viewState === be.VIEW_REWARD_AFTER_SELECTION,
+            { api: n } = y(),
             r = i.vehicles.get(),
             d = l.useRef([]),
             _ = l.useRef(null),
-            [m, p] = l.useState('active'),
-            f = 'active' === m;
+            [p, m] = l.useState('active'),
+            f = 'active' === p;
         l.useEffect(() => {
-            e && p('activeWithoutScroll');
+            e && m('activeWithoutScroll');
         }, [e]);
         const v = l.useCallback(() => {
                 const e = n.animationScroll.scrollPosition.get();
                 a(e);
             }, [a, n.animationScroll.scrollPosition]),
-            b = 'end' === m,
+            b = 'end' === p,
             u = l.useCallback(
                 (e) => {
                     b && n.handleMouseWheel(e);
@@ -439,13 +437,13 @@ const we = (e) => {
                 (e, a) => {
                     const s = _.current;
                     (s ? Math.round(s.getBoundingClientRect().right) : 0) < e &&
-                        (p('pause'), n.applyScroll(n.animationScroll.scrollPosition.goal + a), p('active'));
+                        (m('pause'), n.applyScroll(n.animationScroll.scrollPosition.goal + a), m('active'));
                 },
                 [n],
             ),
             V = l.useCallback(
                 (e) => {
-                    if (e + 1 === r.length) p('end');
+                    if (e + 1 === r.length) m('end');
                     else if (f) {
                         const a = d.current[e],
                             s = d.current[e + 1];
@@ -459,34 +457,34 @@ const we = (e) => {
                 b && (null == s || s());
             }, [s, b]),
             t.jsx('div', {
-                className: o(Oe.base, c && Oe.base__afterSelection),
+                className: o(De.base, c && De.base__afterSelection),
                 children: t.jsx('div', {
-                    className: Oe.container,
+                    className: De.container,
                     ref: _,
                     children: c
-                        ? t.jsx(Le, {
+                        ? t.jsx(ke, {
                               ...r[0].value,
                               index: 0,
                               onRestAnimation: V,
                               size: 'big',
                               isEnabledSound: f,
-                              state: Se.ViewRewardAfterSelection,
+                              state: xe.ViewRewardAfterSelection,
                           })
                         : t.jsxs('div', {
-                              className: o(Oe.scrollList, 'end' !== m && Oe.scrollList__disabled),
+                              className: o(De.scrollList, 'end' !== p && De.scrollList__disabled),
                               children: [
-                                  t.jsx(T, {
-                                      classNames: { wrapper: Oe.scrollWrapper, content: Oe.scrollContent },
+                                  t.jsx(I, {
+                                      classNames: { wrapper: De.scrollWrapper, content: De.scrollContent },
                                       children: t.jsx(h, {
-                                          pause: 'pause' === m,
-                                          children: k(r, (e, a) => {
+                                          pause: 'pause' === p,
+                                          children: T(r, (e, a) => {
                                               const s = 1 === r.length ? 'big' : 'medium';
                                               return t.jsx(
                                                   'div',
                                                   {
                                                       ref: (e) => (d.current[a] = e),
-                                                      className: o(Oe.item, Oe.item__offset, Oe[`item__${s}`]),
-                                                      children: t.jsx(Le, {
+                                                      className: o(De.item, De.item__offset, De[`item__${s}`]),
+                                                      children: t.jsx(ke, {
                                                           ...e,
                                                           index: a,
                                                           onRestAnimation: V,
@@ -500,8 +498,8 @@ const we = (e) => {
                                       }),
                                   }),
                                   t.jsx('div', {
-                                      className: o(Oe.bar, 'end' === m && Oe.bar__visible),
-                                      children: t.jsx(L, {}),
+                                      className: o(De.bar, 'end' === p && De.bar__visible),
+                                      children: t.jsx(k, {}),
                                   }),
                               ],
                           }),
@@ -509,11 +507,11 @@ const we = (e) => {
             })
         );
     }),
-    Fe = ({ isStoppedScrolling: e, onScrollChange: a, onAnimationEnd: s }) =>
-        t.jsx(W, { children: t.jsx(Be, { isStoppedScrolling: e, onScrollChange: a, onAnimationEnd: s }) }),
-    He = 'Content_5701de48',
-    Me = 'Content_vehicles_4f430f99',
-    Ue = ({
+    Be = ({ isStoppedScrolling: e, onScrollChange: a, onAnimationEnd: s }) =>
+        t.jsx(L, { children: t.jsx(Oe, { isStoppedScrolling: e, onScrollChange: a, onAnimationEnd: s }) }),
+    Fe = 'Content_5701de48',
+    He = 'Content_vehicles_4f430f99',
+    Me = ({
         machineState: e,
         isFirstEnter: a,
         isStoppedScrolling: s,
@@ -521,8 +519,8 @@ const we = (e) => {
         onAnimationEnd: c,
         onSelectVehicle: n,
     }) => {
-        const { model: o } = xe(),
-            r = C();
+        const { model: o } = Ve(),
+            r = j();
         return (
             l.useLayoutEffect(
                 () => (
@@ -538,18 +536,18 @@ const we = (e) => {
                 a || c();
             }, [a, c]),
             t.jsx('div', {
-                className: He,
+                className: Fe,
                 children: t.jsx('div', {
-                    className: Me,
+                    className: He,
                     children:
-                        o.root.get().viewState === ue.SELECTION
-                            ? t.jsx(De, { onAnimationEnd: c, onSelect: n })
-                            : t.jsx(Fe, { isStoppedScrolling: s, onScrollChange: i, onAnimationEnd: c }),
+                        o.root.get().viewState === be.SELECTION
+                            ? t.jsx(We, { onAnimationEnd: c, onSelect: n })
+                            : t.jsx(Be, { isStoppedScrolling: s, onScrollChange: i, onAnimationEnd: c }),
                 }),
             })
         );
     },
-    Pe = {
+    Ue = {
         base: 'VehicleSlot_f5381b3',
         flag: 'VehicleSlot_flag_976679d',
         vehicleImage: 'VehicleSlot_vehicleImage_58db275f',
@@ -558,67 +556,67 @@ const we = (e) => {
         vehicleType: 'VehicleSlot_vehicleType_dc959042',
         vehicleText: 'VehicleSlot_vehicleText_a59271f6',
     },
-    $e = ({ name: e, techName: a, type: s, tier: i, isPremium: c, nation: n, vehicleCD: r, selected: d = !1 }) => {
-        const [h, _] = D(ie),
-            m = re({
-                args: l.useMemo(() => ({ vehicleCD: r, tooltipId: je }), [r]),
-                onShowTooltip: () => h(y.Viewed),
+    Pe = ({ name: e, techName: a, type: s, tier: i, isPremium: c, nation: n, vehicleCD: r, selected: d = !1 }) => {
+        const [h, _] = W(se),
+            p = oe({
+                args: l.useMemo(() => ({ vehicleCD: r, tooltipId: we }), [r]),
+                onShowTooltip: () => h(R.Viewed),
                 onHideTooltip: () =>
                     _({
-                        action: y.Viewed,
-                        item: oe.VehicleTooltip,
-                        parentScreen: ne.VehicleSelectionView,
+                        action: R.Viewed,
+                        item: ne.VehicleTooltip,
+                        parentScreen: ce.VehicleSelectionView,
                         info: `vehicle_${r}`,
-                        timeLimit: fe,
+                        timeLimit: me,
                     }),
             });
         return t.jsxs('div', {
-            className: o(Pe.base, d ? Pe.base__selected : Pe.base__unselected),
-            ...m,
+            className: o(Ue.base, d ? Ue.base__selected : Ue.base__unselected),
+            ...p,
             children: [
-                t.jsx(N, {
-                    className: Pe.flag,
+                t.jsx(E, {
+                    className: Ue.flag,
                     path: `hangar.carousel.cards.flags.x400x300.${n}`,
                     position: 'top left',
                 }),
-                t.jsx(N, { className: Pe.vehicleImage, path: `vehicle.c_420x307.${a.toLowerCase()}` }),
-                t.jsxs(A, {
-                    className: Pe.information,
+                t.jsx(E, { className: Ue.vehicleImage, path: `vehicle.c_420x307.${a.toLowerCase()}` }),
+                t.jsxs(N, {
+                    className: Ue.information,
                     children: [
                         t.jsxs('div', {
-                            className: Pe.row,
+                            className: Ue.row,
                             children: [
-                                t.jsx(A.Level, { value: i, className: Pe.vehicleText }),
-                                R(s) &&
-                                    t.jsx(A.Type, { type: s, size: O.x24x24, premium: c, className: Pe.vehicleType }),
+                                t.jsx(N.Level, { value: i, className: Ue.vehicleText }),
+                                A(s) &&
+                                    t.jsx(N.Type, { type: s, size: D.x24x24, premium: c, className: Ue.vehicleType }),
                             ],
                         }),
-                        t.jsx(A.Name, { className: Pe.vehicleText, children: e }),
+                        t.jsx(N.Name, { className: Ue.vehicleText, children: e }),
                     ],
                 }),
             ],
         });
     },
-    ze = 'Cards_item_1511ae6d',
-    Ke = 'Cards_card_ae2a9340',
-    Ge = 'Cards_statusWrapper_50cde2dc',
-    Xe = d(() => {
-        const { model: e, controls: a } = xe(),
+    $e = 'Cards_item_1511ae6d',
+    ze = 'Cards_card_ae2a9340',
+    Ke = 'Cards_statusWrapper_50cde2dc',
+    Ge = d(() => {
+        const { model: e, controls: a } = Ve(),
             s = e.vehicles.get(),
             i = e.selectedVehicleIndex.get() > e.computes.vehiclesLength() - 1 ? 0 : e.selectedVehicleIndex.get(),
-            c = B();
-        l.useEffect(() => F(c.recalculate), [null == s ? void 0 : s.length, c.recalculate]);
-        const n = j(ie);
+            c = O();
+        l.useEffect(() => B(c.recalculate), [null == s ? void 0 : s.length, c.recalculate]);
+        const n = w(se);
         return t.jsx(t.Fragment, {
-            children: k(s, (e, s) =>
+            children: T(s, (e, s) =>
                 t.jsx(
                     'div',
                     {
-                        className: ze,
-                        children: t.jsx(H, {
-                            className: Ke,
-                            classNames: { status: { wrapper: Ge } },
-                            status: M.done,
+                        className: $e,
+                        children: t.jsx(F, {
+                            className: ze,
+                            classNames: { status: { wrapper: Ke } },
+                            status: H.done,
                             soundTarget: 'vehicle-selection:card',
                             selected: s === i,
                             disableMouse: s === i,
@@ -626,14 +624,14 @@ const we = (e) => {
                                 ((e, s) => {
                                     e !== i &&
                                         (n({
-                                            action: y.Click,
-                                            item: oe.VehicleTabButton,
-                                            parentScreen: ne.VehicleSelectionView,
+                                            action: R.Click,
+                                            item: ne.VehicleTabButton,
+                                            parentScreen: ce.VehicleSelectionView,
                                             info: `vehicle_${s}`,
                                         }),
                                         a.setSelectedVehicleIndex(e));
                                 })(s, e.vehicleCD),
-                            children: t.jsx($e, { ...e, selected: s === i }),
+                            children: t.jsx(Pe, { ...e, selected: s === i }),
                         }),
                     },
                     e.vehicleCD,
@@ -641,26 +639,26 @@ const we = (e) => {
             ),
         });
     }),
-    qe = 'VehiclesSelection_d3f32fd7',
-    Je = 'VehiclesSelection_heading_f0acb12a',
-    Qe = 'VehiclesSelection_count_3b1cc792',
-    Ye = 'VehiclesSelection_cardsWrapper_f3be9294',
-    Ze = () => {
+    Xe = 'VehiclesSelection_d3f32fd7',
+    qe = 'VehiclesSelection_heading_f0acb12a',
+    Je = 'VehiclesSelection_count_3b1cc792',
+    Qe = 'VehiclesSelection_cardsWrapper_f3be9294',
+    Ye = () => {
         const e = f.resolve('strings');
         return t.jsxs('div', {
-            className: qe,
+            className: Xe,
             children: [
-                t.jsx(U, {
-                    className: Je,
+                t.jsx(M, {
+                    className: qe,
                     text: e.readOrEmpty('seniority_awards.rewardsView.selection.available'),
-                    params: { count: t.jsx('div', { className: Qe, children: 1 }) },
+                    params: { count: t.jsx('div', { className: Je, children: 1 }) },
                     upgradeLegacy: !0,
                 }),
-                t.jsx(P, { className: Ye, children: t.jsx(Xe, {}) }),
+                t.jsx(U, { className: Qe, children: t.jsx(Ge, {}) }),
             ],
         });
     },
-    ea = {
+    Ze = {
         root: 'App_root_0',
         base: 'App_154e87fb',
         bgWrapper: 'App_bgWrapper_24f22e58',
@@ -684,25 +682,25 @@ const we = (e) => {
         slideRibbonUp: 'App_slideRibbonUp_0',
         scale: 'App_scale_0',
     },
-    aa = (e) => (e === ue.VIEW_REWARD ? ne.RewardsScreen : ne.VehicleSelectionView),
-    sa = d(() => {
-        const { model: e, controls: a } = xe(),
+    ea = (e) => (e === be.VIEW_REWARD ? ce.RewardsScreen : ce.VehicleSelectionView),
+    aa = d(() => {
+        const { model: e, controls: a } = Ve(),
             { category: s, maxCategory: c, fromEntryPoint: n, viewState: r } = e.root.get(),
             d = e.vehicles.get(),
-            h = C(),
-            m = () => h.play('vehicleRewardsViewAppear', { target: 'exit' }),
-            p = j(ge(r)),
-            [f] = $(ge(r));
-        f({ action: y.Displayed, item: ne.VehicleSelectionView });
-        const [v, b] = D(ge(r));
-        (v(y.KeyDown), v(y.Click));
+            h = j(),
+            p = () => h.play('vehicleRewardsViewAppear', { target: 'exit' }),
+            m = w(ue(r)),
+            [f] = P(ue(r));
+        f({ action: R.Displayed, item: ce.VehicleSelectionView });
+        const [v, b] = W(ue(r));
+        (v(R.KeyDown), v(R.Click));
         const [u, g] = l.useState(0),
             [V, x] = l.useState('showHeader'),
             [S] = _(() =>
                 ((e) =>
                     i({
                         id: 'seniority-awards',
-                        initial: we(e),
+                        initial: Se(e),
                         context: { isFirstEnter: !0 },
                         states: {
                             viewReward: { type: 'final' },
@@ -716,58 +714,58 @@ const we = (e) => {
                         },
                     }))(r),
             ),
-            w = (e = !1) => {
-                (b({ action: e ? y.KeyDown : y.Click, item: oe.CloseButton, parentScreen: aa(r) }), m(), J.close());
+            C = (e = !1) => {
+                (b({ action: e ? R.KeyDown : R.Click, item: ne.CloseButton, parentScreen: ea(r) }), p(), q.close());
             },
             E = () => {
-                w(true);
+                C(true);
             };
-        (z(() => {
-            w(true);
+        ($(() => {
+            C(true);
         }),
-            K(Q.ENTER, E),
-            K(Q.SPACE, E));
+            z(J.ENTER, E),
+            z(J.SPACE, E));
         const N = l.useCallback((e) => g(e), []),
             A = l.useCallback(() => {
                 x('showFooter');
             }, []);
         l.useEffect(() => {
-            if ('showHeader' === V) return G(() => x('showContent'), 1e3);
+            if ('showHeader' === V) return K(() => x('showContent'), 1e3);
         }, [V]);
         return t.jsxs('div', {
-            className: o(ea.base, ea[`base__${S.value}`]),
+            className: o(Ze.base, Ze[`base__${S.value}`]),
             children: [
                 t.jsx('div', {
-                    className: o(ea.bgWrapper, de(be, ve) === he.success && ea.bgWrapper__imageLoaded),
+                    className: o(Ze.bgWrapper, re(ve, fe) === de.success && Ze.bgWrapper__imageLoaded),
                     children: t.jsx('div', {
-                        className: o(ea.background, d.length >= 5 && ea.background__indent),
-                        style: { transform: `translateX(-${X(u)}rem)` },
+                        className: o(Ze.background, d.length >= 5 && Ze.background__indent),
+                        style: { transform: `translateX(-${G(u)}rem)` },
                     }),
                 }),
-                t.jsx('div', { className: ea.shadow }),
-                t.jsx('div', { className: ea.gradient }),
-                t.jsx('div', { className: ea.closeButton, children: t.jsx(q, { onClose: () => w() }) }),
+                t.jsx('div', { className: Ze.shadow }),
+                t.jsx('div', { className: Ze.gradient }),
+                t.jsx('div', { className: Ze.closeButton, children: t.jsx(X, { onClose: () => C() }) }),
                 t.jsx('div', {
-                    className: ea.header,
-                    children: t.jsx(_e, {
+                    className: Ze.header,
+                    children: t.jsx(he, {
                         category: s,
                         maxCategory: c,
-                        type: r === ue.VIEW_REWARD_AFTER_SELECTION ? me.secondary : me.primary,
+                        type: r === be.VIEW_REWARD_AFTER_SELECTION ? _e.secondary : _e.primary,
                         onShowTooltip: () => {
-                            v(y.Viewed);
+                            v(R.Viewed);
                         },
                         onHideTooltip: () => {
                             b({
-                                action: y.Viewed,
-                                item: oe.SeniorityAwardsTooltip,
-                                parentScreen: aa(r),
-                                timeLimit: fe,
+                                action: R.Viewed,
+                                item: ne.SeniorityAwardsTooltip,
+                                parentScreen: ea(r),
+                                timeLimit: me,
                             });
                         },
                     }),
                 }),
                 'showHeader' !== V &&
-                    t.jsx(Ue, {
+                    t.jsx(Me, {
                         machineState: S.value,
                         isFirstEnter: S.context.isFirstEnter,
                         isStoppedScrolling: !1,
@@ -775,44 +773,44 @@ const we = (e) => {
                         onAnimationEnd: A,
                         onSelectVehicle: () => {
                             (x('hideFooter'),
-                                G(() => {
+                                K(() => {
                                     const s = e.computes.vehiclesLength() - 1,
                                         i = e.selectedVehicleIndex.get() > s ? s : e.selectedVehicleIndex.get();
                                     a.selectVehicleReward(d[i].value.vehicleId);
                                 }, 500));
                         },
                     }),
-                ((r !== ue.SELECTION && 'showFooter' === V) || 'finished' === V) &&
+                ((r !== be.SELECTION && 'showFooter' === V) || 'finished' === V) &&
                     t.jsx('div', {
-                        className: ea.footer,
+                        className: Ze.footer,
                         children: t.jsx(pe, {
                             hasMoreRewards: !n,
                             isGotoHangarAvailable: n,
                             isShopAvailable: !1,
                             onShowMoreClick: () => {
-                                (p({ action: y.Click, item: oe.ShowMoreButton, parentScreen: aa(r) }),
-                                    m(),
+                                (m({ action: R.Click, item: ne.ShowMoreButton, parentScreen: ea(r) }),
+                                    p(),
                                     a.moreRewards());
                             },
                             onAcceptClick: () => {
-                                (p({ action: y.Click, item: oe.ConfirmButton, parentScreen: aa(r) }),
-                                    m(),
+                                (m({ action: R.Click, item: ne.ConfirmButton, parentScreen: ea(r) }),
+                                    p(),
                                     a.moreRewards());
                             },
                             onGotoHangarBtnClick: () => {
-                                (p({ action: y.Click, item: oe.GoToHangarButton, parentScreen: aa(r) }),
-                                    m(),
+                                (m({ action: R.Click, item: ne.GoToHangarButton, parentScreen: ea(r) }),
+                                    p(),
                                     a.goToHangar());
                             },
                         }),
                     }),
-                r === ue.SELECTION &&
+                r === be.SELECTION &&
                     t.jsx('div', {
-                        className: o(ea.vehiclesSelection, 'hideFooter' === V && ea.vehiclesSelection__hidden),
-                        children: t.jsx(Ze, {}),
+                        className: o(Ze.vehiclesSelection, 'hideFooter' === V && Ze.vehiclesSelection__hidden),
+                        children: t.jsx(Ye, {}),
                     }),
             ],
         });
     }),
-    ia = Y(se);
-ae(new Z().add(Ve).addWithProps(ee, { soundsOverrides: ia }).render(t.jsx(sa, {})));
+    sa = Q(ae);
+ee(new Y().add(ge).addWithProps(Z, { soundsOverrides: sa }).render(t.jsx(aa, {})));

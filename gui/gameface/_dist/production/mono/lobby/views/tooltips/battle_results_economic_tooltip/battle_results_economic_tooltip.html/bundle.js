@@ -1,5 +1,5 @@
 import { x as s, j as e, z as a, y as i } from '../../../../chunks/vendor.js';
-import { a as t, c as d, m as l, a5 as c, w as r, a3 as n, cY as o } from '../../../../chunks/lib.js';
+import { a as t, c as d, m as l, a8 as c, v as r, a6 as n, d9 as o } from '../../../../chunks/lib.js';
 import { P as m, s as _ } from '../../../../chunks/profit.js';
 const j = 2,
     x = 3,
@@ -127,32 +127,32 @@ const j = 2,
         });
     }),
     $ = 'Header_36d24a5c',
-    w = 'Header_icon_442a1490',
-    z = 'Header_description_d221db51',
-    H = i(() => {
+    z = 'Header_icon_442a1490',
+    H = 'Header_description_d221db51',
+    q = i(() => {
         const { model: s } = v(),
             { currencyType: a } = s.root.get();
         return e.jsxs('div', {
             className: $,
             children: [
                 e.jsx('div', {
-                    className: w,
+                    className: z,
                     style: { backgroundImage: `url(${R.images.fun_random.gui.maps.icons.feature.profit.$dyn(a)})` },
                 }),
-                e.jsx('div', { className: z, children: R.strings.quests.bonusName.$dyn(a) }),
+                e.jsx('div', { className: H, children: R.strings.quests.bonusName.$dyn(a) }),
             ],
         });
     }),
-    q = { base: 'App_78b07e4b' },
+    w = { base: 'App_78b07e4b' },
     P = i(() => {
         const { model: s } = v(),
             { premiumAdvertising: a } = s.root.get();
         return e.jsxs('div', {
-            className: q.base,
+            className: w.base,
             children: [
-                e.jsx('div', { className: q.header, children: e.jsx(H, {}) }),
-                e.jsx('div', { className: q.header, children: e.jsx(T, {}) }),
-                a && e.jsx('div', { className: q.footer, children: e.jsx(C, {}) }),
+                e.jsx('div', { className: w.header, children: e.jsx(q, {}) }),
+                e.jsx('div', { className: w.header, children: e.jsx(T, {}) }),
+                a && e.jsx('div', { className: w.footer, children: e.jsx(C, {}) }),
             ],
         });
     });

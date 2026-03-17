@@ -9,7 +9,9 @@ function i({ children: a, className: r }) {
     return n.length <= 1
         ? a
         : s.jsx(s.Fragment, {
-              children: n.map((a, n) => s.jsxs(e.Fragment, { children: [n > 0 && s.jsx(t, { className: r }), a] }, n)),
+              children: n
+                  .filter((s) => s)
+                  .map((a, n) => s.jsxs(e.Fragment, { children: [n > 0 && s.jsx(t, { className: r }), a] }, n)),
           });
 }
 export { t as D, i as a };

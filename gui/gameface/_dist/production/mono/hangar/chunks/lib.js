@@ -110,13 +110,13 @@ function isNumberFormat(e) {
     return e in numberFormats;
 }
 function formatNumber$1(e, t) {
-    return window.systemLocale.getNumberFormat(t, numberFormats[e]);
+    return window.formatters.getNumberFormat(t, numberFormats[e]);
 }
 function isRealFormat(e) {
     return e in realFormats;
 }
-function formatReal(e, t) {
-    return window.systemLocale.getRealFormat(t, realFormats[e]);
+function formatReal(e, t, s = 2) {
+    return window.formatters.getRealFormat(t, realFormats[e], s);
 }
 function formatDateTime(e, t, s = !0) {
     return window.regionalDateTime.getRegionalDateTime(t, e, s);
@@ -432,8 +432,8 @@ function format$2(e, t) {
     const s = toMillis(e);
     return t.map((e) => formats$1[e](s));
 }
-function getRealFormat(e, t) {
-    return window.systemLocale.getRealFormat(e, t);
+function getRealFormat(e, t, s = 2) {
+    return window.systemLocale.getRealFormat(e, t, s);
 }
 function toUpperCase(e) {
     return window.systemLocale.toUpperCase(e);
@@ -569,6 +569,7 @@ const sounds$1 = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
         onHitTest: createSubscribeHitTest(),
         onDisplayChanged: makeEngineEvent$1('self.onShowingStatusChanged'),
         onFocusUpdated: makeEngineEvent$1('self.onFocusChanged'),
+        onExternalPaddingsUpdated: makeEngineEvent$1('self.onPaddingsUpdated'),
         children: {
             onAdded: makeEngineEvent$1('children.onAdded'),
             onLoaded: makeEngineEvent$1('children.onLoaded'),
@@ -1974,11 +1975,36 @@ function splitKorean(e) {
     for (const [r] of s) t.push(r);
     return t;
 }
-const splitters = { zh_cn: splitChinese, zh_sg: splitChinese, zh_tw: splitChinese, ja: splitJapanese, ko: splitKorean };
+function splitThai(e) {
+    var t;
+    const s = [],
+        r = e
+            .replace(/&nbsp;/g, ' ')
+            .matchAll(
+                /[【「(（『"《]?[\u0E00-\u0E7F%](?:[\u0E31\u0E34-\u0E3A\u0E47-\u0E4E。!?,.:、…・/ー—–!%+?）)】」"》』]+)?|[「【(（『《"]?\d+(?:,\d{3})*(?:-\d+(?:,\d{3})*)?(?:\s*[a-zA-Z\u0E00-\u0E7F/%]+)?(?:[。.,，、:;：；!?）)】」"》・%)、]+)?|[「【(（『《"]?[a-zA-Z0-9]+(?:[-/][a-zA-Z0-9]+)*(?:\s*[。!?、…・ー—–!?"》】」）)』]+)?|[\u00A0 ]|[^\s]/gu,
+            );
+    for (const [n] of r)
+        /^\s+$/.test(n)
+            ? s.length
+                ? (s[s.length - 1] += n)
+                : s.push(n)
+            : 1 === s.length && (null == (t = s[0]) ? void 0 : t.startsWith('  '))
+              ? (s[0] = ' ' + n)
+              : s.push(n);
+    return s;
+}
+const splitters = {
+    zh_cn: splitChinese,
+    zh_sg: splitChinese,
+    zh_tw: splitChinese,
+    ja: splitJapanese,
+    ko: splitKorean,
+    th: splitThai,
+};
 function defaultSplit(e) {
     return e.split(' ');
 }
-const langsWithoutSpace = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko']);
+const langsWithoutSpace = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko', 'th']);
 function addSpaceAndMap(e, t, s) {
     return langsWithoutSpace.has(t)
         ? e.map(s)
@@ -2944,6 +2970,23 @@ function useClickOutside(e, t = !0) {
         s
     );
 }
+function useExternalPaddings(e = 'px') {
+    const [t, s] = reactExports.useState(viewEnv.getExternalPaddingsRem()),
+        r = useEvent(() => s(viewEnv.getExternalPaddingsRem())),
+        n = useScaleState$1();
+    return (
+        reactExports.useEffect(() => events$2.onExternalPaddingsUpdated(r), [r]),
+        reactExports.useMemo(
+            () => ({
+                left: 'px' === e ? remToPx$1(t.left) : t.left,
+                right: 'px' === e ? remToPx$1(t.right) : t.right,
+                top: 'px' === e ? remToPx$1(t.top) : t.top,
+                bottom: 'px' === e ? remToPx$1(t.bottom) : t.bottom,
+            }),
+            [e, n, t.left, t.right, t.top, t.bottom],
+        )
+    );
+}
 const nonConvertingTypes = new Set(['number', 'string', 'boolean', 'bigint', 'undefined', 'function']),
     primitives$1 = new Set(['number', 'string', 'boolean', 'bigint']),
     bindingsForbidden = new Set(['Dict']);
@@ -3179,6 +3222,7 @@ const initializeModelWithContext =
                             controls: { ...(null == s ? void 0 : s(f)), ...E },
                             externalModel: l,
                             mode: n,
+                            rootId: (null == a ? void 0 : a.rootId) ?? 0,
                         };
                     }),
                     E = reactExports.useRef(!1),
@@ -3371,59 +3415,93 @@ function withResolvePath(e) {
     });
 }
 const defaultUnknownStyle = {
-        background:
-            'linear-gradient(45deg, #ccc 25%, transparent 25%),\nlinear-gradient(-45deg, #ccc 25%, transparent 25%),\nlinear-gradient(45deg, transparent 75%, #ccc 75%),\nlinear-gradient(-45deg, transparent 75%, #ccc 75%)',
-        backgroundSize: '20rem 20rem',
-        backgroundPosition: '0 0, 0 10rem, 10rem -10rem, -10rem 0rem',
-        backgroundColor: '#000',
-    },
-    Image$1 = withResolvePath(
-        reactExports.forwardRef(function (e, t) {
-            if (e.unknown) {
-                const {
-                    repeat: s,
-                    fit: r,
-                    position: n,
-                    width: o,
-                    src: a,
-                    height: i,
-                    unselectable: u,
-                    unknown: l,
-                    unknownStyle: c = defaultUnknownStyle,
-                    ...d
-                } = e;
-                return jsxRuntimeExports.jsx('div', {
-                    ...d,
-                    ref: t,
-                    style: { width: e.width, height: e.height, ...c, ...e.style },
-                });
-            }
+    background:
+        'linear-gradient(45deg, #ccc 25%, transparent 25%),\nlinear-gradient(-45deg, #ccc 25%, transparent 25%),\nlinear-gradient(45deg, transparent 75%, #ccc 75%),\nlinear-gradient(-45deg, transparent 75%, #ccc 75%)',
+    backgroundSize: '20rem 20rem',
+    backgroundPosition: '0 0, 0 10rem, 10rem -10rem, -10rem 0rem',
+    backgroundColor: '#000',
+};
+reactExports.forwardRef(function (e, t) {
+    if (!e.src) {
+        const {
+            repeat: s,
+            fit: r,
+            position: n,
+            width: o,
+            src: a,
+            height: i,
+            unselectable: u,
+            unknownStyle: l = defaultUnknownStyle,
+            ...c
+        } = e;
+        return jsxRuntimeExports.jsx('div', {
+            ...c,
+            ref: t,
+            style: { width: e.width, height: e.height, ...l, ...e.style },
+        });
+    }
+    const { repeat: s, fit: r, position: n, width: o, height: a, unknownStyle: i, unselectable: u, ...l } = e;
+    return jsxRuntimeExports.jsx('div', {
+        ...l,
+        ref: t,
+        style: {
+            backgroundImage: `url(${e.src})`,
+            backgroundRepeat: s ?? 'no-repeat',
+            backgroundSize: r ?? 'contain',
+            backgroundPosition: n ?? 'center center',
+            width: 'number' == typeof o ? `${o}rem` : o,
+            height: 'number' == typeof a ? `${a}rem` : a,
+            ...l.style,
+        },
+    });
+});
+const Image$1 = withResolvePath(
+    reactExports.forwardRef(function (e, t) {
+        if (e.unknown) {
             const {
                 repeat: s,
                 fit: r,
                 position: n,
                 width: o,
-                height: a,
-                unknownStyle: i,
-                unknown: u,
-                unselectable: l,
-                ...c
+                src: a,
+                height: i,
+                unselectable: u,
+                unknown: l,
+                unknownStyle: c = defaultUnknownStyle,
+                ...d
             } = e;
             return jsxRuntimeExports.jsx('div', {
-                ...c,
+                ...d,
                 ref: t,
-                style: {
-                    backgroundImage: `url(${e.src})`,
-                    backgroundRepeat: s ?? 'no-repeat',
-                    backgroundSize: r ?? 'contain',
-                    backgroundPosition: n ?? 'center center',
-                    width: 'number' == typeof o ? `${o}rem` : o,
-                    height: 'number' == typeof a ? `${a}rem` : a,
-                    ...c.style,
-                },
+                style: { width: e.width, height: e.height, ...c, ...e.style },
             });
-        }),
-    );
+        }
+        const {
+            repeat: s,
+            fit: r,
+            position: n,
+            width: o,
+            height: a,
+            unknownStyle: i,
+            unknown: u,
+            unselectable: l,
+            ...c
+        } = e;
+        return jsxRuntimeExports.jsx('div', {
+            ...c,
+            ref: t,
+            style: {
+                backgroundImage: `url(${e.src})`,
+                backgroundRepeat: s ?? 'no-repeat',
+                backgroundSize: r ?? 'contain',
+                backgroundPosition: n ?? 'center center',
+                width: 'number' == typeof o ? `${o}rem` : o,
+                height: 'number' == typeof a ? `${a}rem` : a,
+                ...c.style,
+            },
+        });
+    }),
+);
 function Atlas(e) {
     const t = e.config.frames[e.icon];
     if (!t) return (console.error(`Error in Atlas: Frame for icon "${e.icon}" not found in path "${e.path}"`), null);
@@ -4696,10 +4774,25 @@ const DEFAULT_VERTICAL_API_CONFIG = {
             ],
         });
     }),
+    maskDirections = { top: 'top', bottom: 'bottom', both: 'both', none: 'none' },
+    getMaskDirection = (e, t) =>
+        e || t ? (e ? (t ? maskDirections.none : maskDirections.bottom) : maskDirections.top) : maskDirections.both,
     content$d = 'VerticalScroll_content_62cb6120',
+    content__top = 'VerticalScroll_content__top_b27098a4',
+    content__bottom = 'VerticalScroll_content__bottom_d6604290',
+    content__both = 'VerticalScroll_content__both_8d905712',
     defaultScroll = 'VerticalScroll_defaultScroll_c69fa70e',
+    bar = 'VerticalScroll_bar_c5afe570',
     area = 'VerticalScroll_area_a3c0086a',
-    styles$Z = { content: content$d, defaultScroll: defaultScroll, area: area },
+    styles$Z = {
+        content: content$d,
+        content__top: content__top,
+        content__bottom: content__bottom,
+        content__both: content__both,
+        defaultScroll: defaultScroll,
+        bar: bar,
+        area: area,
+    },
     DefaultScroll = ({
         children: e,
         className: t,
@@ -4745,6 +4838,17 @@ const DEFAULT_VERTICAL_API_CONFIG = {
             })
         );
     };
+function MaskArea({ classNames: e, ...t }) {
+    const { api: s } = useVerticalScroll(),
+        [r, n] = useScrollBounding(s);
+    return jsxRuntimeExports.jsx(Area, {
+        ...t,
+        classNames: {
+            ...e,
+            content: cx(styles$Z[`content__${getMaskDirection(r, n)}`], null == e ? void 0 : e.content),
+        },
+    });
+}
 function Base$p({ children: e }) {
     const t = useApi(),
         s = reactExports.useMemo(() => ({ api: t }), [t]);
@@ -5213,11 +5317,16 @@ const VideoForwarded = reactExports.forwardRef(function (
         gold: 'gold',
         crystal: 'crystal',
         equipCoin: 'equipCoin',
+        stpCoin: 'stpcoin',
+        brCoin: 'brcoin',
         eliteXp: 'eliteXp',
         depot: 'depot',
         vehicle: 'vehicle',
         crew: 'crew',
         custom: 'custom',
+        xp: 'xp',
+        brProgressionToken: 'brProgressionToken',
+        battlePassPoints: 'battlePassPoints',
     },
     currencyTypes = Object.values(types$3),
     discountTypes = { currency: 'currency', experience: 'experience' },
@@ -5780,121 +5889,1239 @@ function renderResolvedString(e, t = {}) {
     const s = resources.resolve('strings').readOrEmpty(e);
     return 0 === s.length ? s : renderString(s, t);
 }
-const base$F = 'AnimatedDetails_c70d3863',
-    styles$P = { base: base$F },
-    AnimatedDetails = reactExports.forwardRef(function (
-        { opened: e, children: t, className: s, animationSettings: r = {}, ...n },
-        o,
-    ) {
-        const a = React.useRef(null),
-            i = React.useRef(null),
-            [u, l] = useSpring(() => ({ height: 0, opacity: 0 })),
-            c = useEvent((e, t) => {
-                l.start({
-                    height: t ? e : 0,
-                    opacity: t ? 1 : 0,
-                    config: { duration: 350, easing: t ? easings.reverseEaseInOutCirc : easings.easeInOutCirc },
-                    ...r,
+const contextInstance$1 = reactExports.createContext(null),
+    positions = { left: 'left', right: 'right', top: 'top', bottom: 'bottom' };
+Object.values(positions);
+const verticalPositions = ['top', 'bottom'],
+    oppositePositions = { top: 'bottom', bottom: 'top', left: 'right', right: 'left' };
+function isVerticalPosition(e) {
+    return verticalPositions.includes(e);
+}
+function usePopoverOptional() {
+    return reactExports.useContext(contextInstance$1);
+}
+function usePopover() {
+    const e = reactExports.useContext(contextInstance$1);
+    if (!e) throw new Error('usePopover must be used within a Popover');
+    return e;
+}
+const initialState = { opened: !1 };
+function usePopoverInstance(e) {
+    const [t, s] = reactExports.useState(initialState),
+        r = reactExports.useMemo(() => {
+            const t = observable.box(),
+                r = { onBeforeOpen: new Set(), onBeforeClose: new Set() },
+                n = { bounding: observable.box(), position: observable.box() };
+            function o(e) {
+                s((t) => {
+                    const s = e(t);
+                    return (
+                        t.opened === s.opened ||
+                            (s.opened ? r.onBeforeOpen.forEach((e) => e()) : r.onBeforeClose.forEach((e) => e())),
+                        s
+                    );
                 });
-            });
+            }
+            return {
+                id: e,
+                open: () => o((e) => ({ ...e, opened: !0 })),
+                close: () => o((e) => ({ ...e, opened: !1 })),
+                toggle: () => o((e) => ({ ...e, opened: !e.opened })),
+                subscribe: {
+                    onBeforeOpen: (e) => (r.onBeforeOpen.add(e), () => r.onBeforeOpen.delete(e)),
+                    onBeforeClose: (e) => (r.onBeforeClose.add(e), () => r.onBeforeClose.delete(e)),
+                },
+                portal: {
+                    bounding: n.bounding,
+                    setBounding: takeAction(n.bounding),
+                    position: n.position,
+                    setPosition: takeAction(n.position),
+                },
+                trigger: { bounding: t, setBounding: takeAction(t) },
+            };
+        }, [e]);
+    return reactExports.useMemo(() => ({ ...r, ...t }), [r, t]);
+}
+const border$6 = 'Popover_border_d0a76717',
+    title$1 = 'Popover_title_e4a0437a',
+    subtitle = 'Popover_subtitle_1c7535c8',
+    header$1 = 'Popover_header_de23fc15',
+    body = 'Popover_body_22163d58',
+    divider = 'Popover_divider_46fe6f15',
+    decoration$1 = 'Popover_decoration_134219d5',
+    close = 'Popover_close_ad4a9c7b',
+    styles$P = {
+        border: border$6,
+        title: title$1,
+        subtitle: subtitle,
+        header: header$1,
+        body: body,
+        divider: divider,
+        decoration: decoration$1,
+        close: close,
+    },
+    Close = reactExports.forwardRef(({ className: e, children: t, ...s }, r) => {
+        const n = usePopoverOptional(),
+            o = useSounds(),
+            a = useUpscale('ui_kit.close_button.icon_small', 'ui_kit.close_button.icon_medium');
         return (
-            React.useEffect(() => {
-                const t = i.current;
-                if (!t) return;
-                let s = noop;
-                if (e) {
-                    const e = new ResizeObserver(() => c(t.offsetHeight, !0));
-                    (e.observe(t), (s = e.disconnect.bind(e)));
-                }
-                const r = createLayoutReadyInEffect(() => {
-                    c(t.offsetHeight, e);
-                });
-                return () => {
-                    (r(), s());
-                };
-            }, [c, e]),
-            jsxRuntimeExports.jsx(animated.div, {
-                ...n,
-                ref: assignRefs([o, a]),
-                className: cx(styles$P.base, s),
-                style: { ...n.style, ...u },
-                children: jsxRuntimeExports.jsx('div', { ref: i, children: t }),
+            reactExports.useEffect(
+                () =>
+                    onResize(function () {
+                        null == n || n.close();
+                    }),
+                [n],
+            ),
+            jsxRuntimeExports.jsx('div', {
+                ...s,
+                onClick: function (e) {
+                    var t;
+                    (null == (t = s.onClick) || t.call(s, e),
+                        o.play('close', { target: 'react-popover:close', original: e }),
+                        null == n || n.close());
+                },
+                onMouseEnter: function (e) {
+                    var t;
+                    (null == (t = s.onMouseEnter) || t.call(s, e),
+                        o.play('mouse-enter', { target: 'react-popover:close', original: e }));
+                },
+                ref: r,
+                className: cx(styles$P.close, e),
+                children: t ?? jsxRuntimeExports.jsx(Image$1, { path: a, width: 24, height: 24 }),
             })
         );
     }),
-    Context$2 = reactExports.createContext(void 0);
-function useAccordion() {
-    const e = reactExports.useContext(Context$2);
-    if (!e) throw new Error('useAccordion should have Accordion provider');
-    return e;
-}
-const arrow$1 = 'Arrow_f1570a91',
-    arrow__opened = 'Arrow_arrow__opened_134476cd',
-    styles$O = { arrow: arrow$1, arrow__opened: arrow__opened },
-    images$1 = resources.resolve('images'),
-    Arrow = reactExports.forwardRef(function (e, t) {
-        const { opened: s } = useAccordion();
-        return jsxRuntimeExports.jsx('div', {
-            ...e,
-            ref: t,
-            style: { backgroundImage: `url(${images$1.readOrEmpty('library.arrow_accordion')})`, ...e.style },
-            className: cx(styles$O.arrow, s && styles$O.arrow__opened, e.className),
-        });
-    }),
-    content$b = 'Details_content_a5a56462',
-    content__opened = 'Details_content__opened_cc21f43f',
-    styles$N = { content: content$b, content__opened: content__opened },
-    Details = reactExports.forwardRef(function (e, t) {
-        const { opened: s } = useAccordion();
-        return jsxRuntimeExports.jsx('div', {
-            ...e,
-            ref: t,
-            className: cx(styles$N.content, s && styles$N.content__opened, e.className),
-        });
-    }),
-    headerWrapper = 'Summary_headerWrapper_d7c7115',
-    background$6 = 'Summary_background_48ba2ab7',
-    background__scrollable = 'Summary_background__scrollable_a41402ee',
-    header$1 = 'Summary_header_789c868e',
-    styles$M = {
-        headerWrapper: headerWrapper,
-        background: background$6,
-        background__scrollable: background__scrollable,
-        header: header$1,
+    OPEN_ANIMATION_DURATION = 250,
+    animationTransitions = {
+        top: 'translate(0rem, 50rem) scale(0.9)',
+        bottom: 'translate(0rem, -50rem) scale(0.9)',
+        left: 'translate(50rem, 0rem) scale(0.9)',
+        right: 'translate(-50rem, 0rem) scale(0.9)',
     },
-    Summary = reactExports.forwardRef(function ({ children: e, scrollable: t, background: s, ...r }, n) {
-        return jsxRuntimeExports.jsxs('div', {
-            ...r,
-            ref: n,
-            className: cx(styles$M.headerWrapper, r.className),
-            children: [
-                jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$M.background, t && styles$M.background__scrollable, s),
+    defaultPaddingsRem = { top: 0, bottom: 0, left: 0, right: 0 };
+function Portal({
+    children: e,
+    target: t,
+    pivot: s = 0,
+    position: r = 'top',
+    paddingsRem: n = {},
+    lazy: o = !1,
+    closeByEscape: a = !0,
+    onBeforePositionChange: i = noop,
+    freeSpaceRem: u = 8,
+    ...l
+}) {
+    const c = usePopover(),
+        d = React.useRef(null),
+        [_, m] = reactExports.useState(),
+        p = reactExports.useMemo(
+            () => ({
+                top: remToPx$1(n.top || defaultPaddingsRem.top),
+                bottom: remToPx$1(n.bottom || defaultPaddingsRem.bottom),
+                left: remToPx$1(n.left || defaultPaddingsRem.left),
+                right: remToPx$1(n.right || defaultPaddingsRem.right),
+            }),
+            [n.bottom, n.top, n.left, n.right],
+        ),
+        x = remToPx$1(u),
+        f = reactExports.useMemo(() => (t ? (document.querySelector(t) ?? document.body) : document.body), [t]);
+    reactExports.useEffect(() => {
+        const e = d.current;
+        if (!e) return;
+        const t = document.querySelector(`[data-popover-trigger-id="${c.id}"]`),
+            n = e.querySelector(`[data-popover-display-id="${c.id}"]`);
+        if (!t || !n) return;
+        const o = watchResizes([t, e, document.body], ([t, n, o]) => {
+            if (!c.opened) return void m(void 0);
+            if (!1 === i(c, { callerBounding: t, containerBounding: n, bodyBounding: o })) return;
+            const a = getUpdatedPosition(r, p, t, n, o);
+            (m(a),
+                updatePosition(s, x, a, p, t, n, o, e),
+                runInAction(() => {
+                    (c.trigger.setBounding(t), c.portal.setBounding(n), c.portal.setPosition(a));
+                }));
+        });
+        return (o.start(), o.stop);
+    }, [c, i, p, s, x, c.id, c.portal, c.trigger, r, c.opened]);
+    const E = reactExports.useCallback(() => {
+        const e = d.current;
+        e &&
+            document.activeElement &&
+            document.activeElement instanceof HTMLElement &&
+            e.contains(document.activeElement) &&
+            document.activeElement.blur();
+    }, []);
+    (reactExports.useEffect(() => c.subscribe.onBeforeClose(E), [c.subscribe, E]),
+        useHandleKeydown(a && c.opened ? keyCodes.ESCAPE : keyCodes.NONE, () => {
+            c.close();
+        }),
+        reactExports.useEffect(() => {
+            if (!c.opened) return;
+            const e = d.current;
+            if (!e) return;
+            const t = e;
+            function s(e) {
+                const s = e.target;
+                if (!(s instanceof HTMLElement)) return !1;
+                const r = `[data-popover-trigger-id="${c.id}"]`,
+                    n = `[data-popover-outside-click-whitelist-id="${c.id}"]`;
+                return !(t === s || t.contains(s) || s.matches(r) || s.matches(n) || s.closest(r) || s.closest(n));
+            }
+            return new DisposeBuilder()
+                .add(
+                    addEventListener(document, 'click', (e) => {
+                        s(e) && c.close();
+                    }),
+                )
+                .add(
+                    mouse.down(([e, t]) => {
+                        if ('outside' === t) return c.close();
+                        const r = e.button;
+                        (r !== mouseButtons.right && r !== mouseButtons.wheel) || (s(e) && c.close());
+                    }),
+                ).dispose;
+        }, [c]));
+    const [h, b] = useSpring(() => ({
+        from: { opacity: 0, transform: animationTransitions[r] },
+        config: { easing: easings.easeInOutCubic, duration: OPEN_ANIMATION_DURATION },
+    }));
+    return (
+        reactExports.useEffect(() => {
+            if (!_) return;
+            const e = { opacity: 0, transform: animationTransitions[_] };
+            b.start({
+                from: c.opened ? e : void 0,
+                to: c.opened ? { opacity: 1, transform: 'translate(0rem, 0rem) scale(1)' } : e,
+            });
+        }, [b, _, c.opened]),
+        !c.opened && o
+            ? null
+            : jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {
+                  children: ReactDOM.createPortal(
+                      jsxRuntimeExports.jsx(animated.div, {
+                          ...l,
+                          ref: d,
+                          style: {
+                              position: 'absolute',
+                              top: '0',
+                              left: '0',
+                              pointerEvents: h.opacity.to((e) => (1 === e ? 'auto' : 'none')),
+                              display: h.opacity.to((e) => (0 !== e || c.opened ? 'block' : 'none')),
+                              ...l.style,
+                          },
+                          children: jsxRuntimeExports.jsx(animated.div, { style: h, children: e }),
+                      }),
+                      f,
+                  ),
+              })
+    );
+}
+function getUpdatedPosition(e, t, s, r, n) {
+    return ('top' === e && s.top - r.height - t.top < 0) ||
+        ('bottom' === e && s.bottom + r.height + t.bottom > n.height) ||
+        ('left' === e && s.left - r.width - t.left < 0) ||
+        ('right' === e && s.right + r.width + t.right > n.width)
+        ? oppositePositions[e]
+        : e;
+}
+function applyTransform(e, t, s, r, n) {
+    ((e = clamp(s.left, n.width - r.offsetWidth - s.right, e)),
+        (t = clamp(s.top, n.height - r.offsetHeight - s.bottom, t)),
+        (r.style.transform = `translate(${e}px, ${t}px)`));
+}
+function updatePosition(e, t, s, r, n, o, a, i) {
+    if ('top' === s) {
+        const s = (o.width - n.width) * e;
+        applyTransform(n.left - s, n.top - o.height - t, r, i, a);
+    } else if ('bottom' === s) {
+        const s = (o.width - n.width) * e;
+        applyTransform(n.left - s, n.bottom + t, r, i, a);
+    } else if ('left' === s) {
+        const s = n.left - o.width - t,
+            u = (o.height - n.height) * e;
+        applyTransform(s, n.top - u, r, i, a);
+    } else if ('right' === s) {
+        const s = n.right + t,
+            u = (o.height - n.height) * e;
+        applyTransform(s, n.top - u, r, i, a);
+    }
+}
+const base$F = 'PopoverTip_163a336f',
+    arrow$1 = 'PopoverTip_arrow_44c7d6a5',
+    glow$1 = 'PopoverTip_glow_da3f9be9',
+    styles$O = {
+        base: base$F,
+        'base__flip-left': 'PopoverTip_base__flip-left_3cc0dadc',
+        'base__flip-right': 'PopoverTip_base__flip-right_6a5605b6',
+        'base__flip-top': 'PopoverTip_base__flip-top_6bcc69e1',
+        'base__flip-bottom': 'PopoverTip_base__flip-bottom_416a1dc4',
+        arrow: arrow$1,
+        'arrow__position-top': 'PopoverTip_arrow__position-top_a95d47a6',
+        'arrow__position-bottom': 'PopoverTip_arrow__position-bottom_9d75ac12',
+        'arrow__position-left': 'PopoverTip_arrow__position-left_ca4ced33',
+        'arrow__position-right': 'PopoverTip_arrow__position-right_9dc94f7a',
+        glow: glow$1,
+    },
+    verticals = [positions.top, positions.bottom],
+    horizontals = [positions.left, positions.right],
+    rotations = { top: 180, bottom: 0, left: 90, right: -90 },
+    Tip = reactExports.forwardRef(({ ...e }, t) => {
+        const s = reactExports.useRef(null),
+            r = usePopoverOptional(),
+            [n, o] = reactExports.useState(e.size),
+            [a, i] = reactExports.useState(e.position || (r && oppositePositions[r.portal.position.get()]) || 'bottom'),
+            [u, l] = reactExports.useState(e.offset),
+            c = useEvent((t, s, r) => {
+                let n = a;
+                if ((e.position || ((n = oppositePositions[r]), i(n)), !e.size)) {
+                    const e = isVerticalPosition(n)
+                        ? `${Math.min(t.width, s.width)}px`
+                        : `${Math.min(t.height, s.height)}px`;
+                    o(e);
+                }
+                if (!e.offset) {
+                    const e = isVerticalPosition(n)
+                        ? `${Math.max(0, t.left - s.left)}px`
+                        : `${Math.max(0, t.top - s.top)}px`;
+                    l(e);
+                }
+            });
+        return (
+            reactExports.useEffect(() => {
+                if (s.current && r)
+                    return autorun(() => {
+                        const e = r.trigger.bounding.get(),
+                            t = r.portal.bounding.get(),
+                            s = r.portal.position.get();
+                        e && s && t && c(e, t, s);
+                    });
+            }, [r, c]),
+            jsxRuntimeExports.jsxs('div', {
+                ...e,
+                ref: assignRefs([t, s]),
+                style: {
+                    width: (verticals.includes(a) && n) || '1rem',
+                    height: (horizontals.includes(a) && n) || '1rem',
+                    top: (horizontals.includes(a) && u) || 'auto',
+                    bottom: 'bottom' === a ? '0' : 'auto',
+                    left: (verticals.includes(a) && u) || 'auto',
+                    right: 'right' === a ? '0' : 'auto',
+                    ...e.style,
+                },
+                className: cx(styles$O.base, e.flipped && styles$O[`base__flipped-${a}`], e.className),
+                children: [
+                    jsxRuntimeExports.jsx('div', {
+                        className: cx(styles$O.arrow, styles$O[`arrow__position-${a}`]),
+                        style: { transform: `translate(-50%, -50%) rotate(${rotations[a]}deg)` },
+                    }),
+                    !1 === e.noGlow &&
+                        jsxRuntimeExports.jsx('div', {
+                            className: styles$O.glow,
+                            style: { transform: `translate(-50%, -50%) rotate(${rotations[a]}deg)` },
+                        }),
+                ],
+            })
+        );
+    });
+function Trigger({ children: e }) {
+    const t = usePopover();
+    return e({ onClick: t.toggle, 'data-popover-trigger-id': t.id }, t);
+}
+Tip.positions = positions;
+const Title = defineStyledComponent('Title', styles$P.title),
+    Subtitle = defineStyledComponent('Subtitle', styles$P.subtitle),
+    Header = defineStyledComponent('Header', styles$P.header),
+    Divider = defineStyledComponent('Divider', styles$P.divider),
+    Body = defineStyledComponent('Body', styles$P.body),
+    Decoration$1 = defineStyledComponent('Decoration', styles$P.decoration),
+    Display = reactExports.forwardRef((e, t) => {
+        const s = usePopoverOptional();
+        return jsxRuntimeExports.jsxs(Decoration$1, {
+            ...e,
+            ref: t,
+            'data-popover-display-id': null == s ? void 0 : s.id,
+            children: [jsxRuntimeExports.jsx('div', { className: styles$P.border }), e.children],
+        });
+    });
+function Popover(e) {
+    const t = reactExports.useId();
+    return jsxRuntimeExports.jsx(contextInstance$1.Provider, {
+        value: usePopoverInstance(e.id ?? t),
+        children: e.children,
+    });
+}
+((Popover.Close = Close),
+    (Popover.Title = Title),
+    (Popover.Subtitle = Subtitle),
+    (Popover.Header = Header),
+    (Popover.Divider = Divider),
+    (Popover.Body = Body),
+    (Popover.Tip = Tip),
+    (Popover.Display = Display),
+    (Popover.use = usePopover),
+    (Popover.Portal = Portal),
+    (Popover.Trigger = Trigger));
+const getFromCallStack = (e = 1) => {
+    var t;
+    const s = new Error().stack;
+    let r,
+        n = R.invalid('resId'),
+        o = '';
+    return (
+        s &&
+            ((o = (null == (t = s.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : t[0]) || ''),
+            (r = s.split('\n')[e].split('.js')[0].split('/').pop() || ''),
+            window.__feature && window.__feature !== r && window.subViews[r] && (n = window.subViews[r].id)),
+        { callerUrl: o, caller: r, stack: s, resId: n }
+    );
+};
+let ClickOutsideManager$1 =
+    ((_b = class {
+        constructor() {
+            (__publicField(this, 'entries', []),
+                __publicField(this, '_listenMouse', !1),
+                __publicField(this, 'onMouseDown', (e) => {
+                    this.entries.forEach(({ container: t, callback: s }) => {
+                        let r = e.target;
+                        do {
+                            if (r === t) return;
+                            r = r.parentNode;
+                        } while (r);
+                        s();
+                    });
+                }));
+        }
+        static get instance() {
+            return (_b.__instance || (_b.__instance = new _b()), _b.__instance);
+        }
+        register(e, t) {
+            (this.addMouseListener(), this.entries.push({ container: e, callback: t }));
+        }
+        unregister(e, t) {
+            const s = e,
+                r = t;
+            ((this.entries = this.entries.filter(({ container: e, callback: t }) => e !== s || t !== r)),
+                this.removeMouseListener());
+        }
+        addMouseListener() {
+            this._listenMouse || (document.addEventListener('mousedown', this.onMouseDown), (this._listenMouse = !0));
+        }
+        removeMouseListener() {
+            this._listenMouse &&
+                0 === this.entries.length &&
+                (document.removeEventListener('mousedown', this.onMouseDown), (this._listenMouse = !1));
+        }
+    }),
+    __publicField(_b, '__instance'),
+    _b);
+function makeEngineEvent(e) {
+    return (t) => (
+        engine.on(e, t),
+        () => {
+            engine.off(e, t);
+        }
+    );
+}
+function setTrackMouseOutside(e) {
+    viewEnv.setTrackMouseOnStage(e);
+}
+const internalMouse = {
+    down: makeEngineEvent('mousedown'),
+    up: makeEngineEvent('mouseup'),
+    move: makeEngineEvent('mousemove'),
+};
+function initMouseEvents() {
+    const e = { listeners: 0, enabled: !0, initialized: !1 };
+    function t() {
+        e.enabled && setTrackMouseOutside(!1);
+    }
+    function s() {
+        e.enabled && setTrackMouseOutside(!0);
+    }
+    function r() {
+        e.enabled
+            ? e.listeners < 1
+                ? ((e.initialized = !1),
+                  document.body.removeEventListener('mouseenter', t),
+                  document.body.removeEventListener('mouseleave', s))
+                : e.initialized ||
+                  ((e.initialized = !0),
+                  document.body.addEventListener('mouseenter', t),
+                  document.body.addEventListener('mouseleave', s))
+            : setTrackMouseOutside(!1);
+    }
+    return {
+        ...['down', 'up', 'move'].reduce(
+            (t, s) => (
+                (t[s] = (function (t) {
+                    return (s) => {
+                        e.listeners += 1;
+                        let n = !0;
+                        const o = `mouse${t}`,
+                            a = internalMouse[t]((e) => s([e, 'outside']));
+                        function i(e) {
+                            s([e, 'inside']);
+                        }
+                        return (
+                            window.addEventListener(o, i),
+                            r(),
+                            () => {
+                                n && (a(), window.removeEventListener(o, i), (e.listeners -= 1), r(), (n = !1));
+                            }
+                        );
+                    };
+                })(s)),
+                t
+            ),
+            {},
+        ),
+        disable() {
+            ((e.enabled = !1), r());
+        },
+        enable() {
+            ((e.enabled = !0), r());
+        },
+        enableOutside() {
+            e.enabled && setTrackMouseOutside(!0);
+        },
+        disableOutside() {
+            e.enabled && setTrackMouseOutside(!1);
+        },
+    };
+}
+function playSound$1(e) {
+    engine.call('PlaySound', e).catch((t) => {
+        console.error(`playSound('${e}'): `, t);
+    });
+}
+initMouseEvents();
+const sounds = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
+    plays = Object.keys(sounds).reduce((e, t) => ((e[t] = () => playSound$1(sounds[t])), e), {}),
+    play = { ...plays, sound: playSound$1 },
+    sound = { play: play },
+    ROMAN = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
+    ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
+function arabic2roman$1(e) {
+    let t = '';
+    for (let s = ARABIC.length - 1; s >= 0; s--) for (; e >= ARABIC[s]; ) ((t += ROMAN[s]), (e -= ARABIC[s]));
+    return t;
+}
+const ROMAN_FORBIDDEN_LANGUAGE_CODES = ['ko', 'no'];
+function getTextureUrl(e, t, s = 1) {
+    return viewEnv.getChildTexturePath(e, t.width, t.height, s);
+}
+function getBgUrl(e, t, s) {
+    return `url(${getTextureUrl(e, t, s)})`;
+}
+ROMAN_FORBIDDEN_LANGUAGE_CODES.includes(R.strings.settings.LANGUAGE_CODE());
+const children = Object.freeze(
+        Object.defineProperty(
+            { __proto__: null, getBgUrl: getBgUrl, getTextureUrl: getTextureUrl },
+            Symbol.toStringTag,
+            { value: 'Module' },
+        ),
+    ),
+    displayStatus = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+    events = {
+        onTextureFrozen: makeEngineEvent('self.onTextureFrozen'),
+        onTextureReady: makeEngineEvent('self.onTextureReady'),
+        onDomBuilt: makeEngineEvent('self.onDomBuilt'),
+        onLoaded: makeEngineEvent('self.onLoaded'),
+        onDisplayChanged: makeEngineEvent('self.onShowingStatusChanged'),
+        onFocusUpdated: makeEngineEvent('self.onFocusChanged'),
+        children: {
+            onAdded: makeEngineEvent('children.onAdded'),
+            onLoaded: makeEngineEvent('children.onLoaded'),
+            onRemoved: makeEngineEvent('children.onRemoved'),
+            onAttached: makeEngineEvent('children.onAttached'),
+            onTextureReady: makeEngineEvent('children.onTextureReady'),
+            onRequestPosition: makeEngineEvent('children.requestPosition'),
+        },
+    },
+    viewEventTypes = { closePopover: 2, move: 16, close: 32, minimize: 64 },
+    createViewEventArguments$1 = (e) =>
+        Object.entries(e).map(([e, t]) => {
+            const s = 'GFValueProxy';
+            switch (typeof t) {
+                case 'number':
+                    return { __Type: s, name: e, number: t };
+                case 'boolean':
+                    return { __Type: s, name: e, bool: t };
+                default:
+                    return { __Type: s, name: e, string: t.toString() };
+            }
+        }),
+    sendViewEvent = (e, t) => {
+        const s = 'GFViewEventProxy';
+        if (void 0 !== t) {
+            const { args: r, ...n } = t;
+            return void 0 !== r
+                ? viewEnv.handleViewEvent({ __Type: s, type: e, ...n, arguments: createViewEventArguments$1(r) })
+                : viewEnv.handleViewEvent({ __Type: s, type: e, ...n });
+        }
+        return viewEnv.handleViewEvent({ __Type: s, type: e });
+    },
+    sendEvent = {
+        close(e) {
+            sendViewEvent('popover' === e ? viewEventTypes.closePopover : viewEventTypes.close);
+        },
+        minimize() {
+            sendViewEvent(viewEventTypes.minimize);
+        },
+        move(e) {
+            sendViewEvent(viewEventTypes.move, { isMouseEvent: !0, on: e });
+        },
+    },
+    ALL_SIDES = 15;
+function addPreloadTexture(e) {
+    viewEnv.addPreloadTexture(e);
+}
+function setInputPaddingsRem(e) {
+    viewEnv.setHitAreaPaddingsRem(e, e, e, e, ALL_SIDES);
+}
+function getBrowserTexturePath(e, t, s, r = 1) {
+    return viewEnv.getWebBrowserTexturePath(e, t, s, r);
+}
+function addModelObserver(e, t, s) {
+    return viewEnv.addDataChangedCallback(e, t, s);
+}
+function setSidePaddingsRem(e) {
+    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, ALL_SIDES);
+}
+function getSize(e = 'px') {
+    return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
+}
+function resize(e, t, s = 'px') {
+    return 'rem' === s ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
+}
+function getViewGlobalPosition(e = 'rem') {
+    const t = viewEnv.getViewGlobalPositionRem();
+    return 'rem' === e ? t : { x: remToPx(t.x), y: remToPx(t.y) };
+}
+function freezeTextureBeforeResize() {
+    viewEnv.freezeTextureBeforeResize();
+}
+function getScale() {
+    return viewEnv.getScale();
+}
+function pxToRem(e) {
+    return viewEnv.pxToRem(e);
+}
+function remToPx(e) {
+    return viewEnv.remToPx(e);
+}
+function setAnimateWindow(e, t) {
+    viewEnv.setAnimateWindow(e, t);
+}
+function isFocused() {
+    return viewEnv.isFocused();
+}
+function setEventHandled() {
+    return viewEnv.setEventHandled();
+}
+function isEventHandled() {
+    return viewEnv.isEventHandled();
+}
+function forceTriggerMouseMove() {
+    viewEnv.forceTriggerMouseMove();
+}
+function getDisplayStatus() {
+    return viewEnv.getShowingStatus();
+}
+const getFontNames = (() => {
+        let e = [];
+        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
+    })(),
+    arabic2roman = arabic2roman$1;
+function getExternalPaddingsRem() {
+    return viewEnv.getExternalPaddingsRem();
+}
+const displayStatusIs = Object.keys(displayStatus).reduce(
+        (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === displayStatus[t]), e),
+        {},
+    ),
+    extraSize = {
+        set: (e, t) => {
+            viewEnv.setExtraSizeRem(e, t);
+        },
+        get: (e, t) => {
+            viewEnv.getExtraSizeRem(e, t);
+        },
+    },
+    whenTutorialReady = Promise.all([
+        new Promise((e) => {
+            window.isDomBuilt ? e() : events.onDomBuilt(e);
+        }),
+        engine.whenReady,
+    ]);
+function enableFullScreenModeSupported() {
+    viewEnv.setFullscreenModeSupported(!0);
+}
+function initExternalPaddings(e) {
+    function t() {
+        const { top: t, right: s, bottom: r, left: n } = viewEnv.getExternalPaddingsRem();
+        (e.style.setProperty('--external-padding-top', `${t}rem`),
+            e.style.setProperty('--external-padding-right', `${s}rem`),
+            e.style.setProperty('--external-padding-bottom', `${r}rem`),
+            e.style.setProperty('--external-padding-left', `${n}rem`));
+    }
+    (t(), engine.on('self.onPaddingsUpdated', () => t()));
+}
+const view = Object.freeze(
+        Object.defineProperty(
+            {
+                __proto__: null,
+                addModelObserver: addModelObserver,
+                addPreloadTexture: addPreloadTexture,
+                arabic2roman: arabic2roman,
+                children: children,
+                displayStatus: displayStatus,
+                displayStatusIs: displayStatusIs,
+                enableFullScreenModeSupported: enableFullScreenModeSupported,
+                events: events,
+                extraSize: extraSize,
+                forceTriggerMouseMove: forceTriggerMouseMove,
+                freezeTextureBeforeResize: freezeTextureBeforeResize,
+                getBrowserTexturePath: getBrowserTexturePath,
+                getDisplayStatus: getDisplayStatus,
+                getExternalPaddingsRem: getExternalPaddingsRem,
+                getFontNames: getFontNames,
+                getScale: getScale,
+                getSize: getSize,
+                getViewGlobalPosition: getViewGlobalPosition,
+                initExternalPaddings: initExternalPaddings,
+                isEventHandled: isEventHandled,
+                isFocused: isFocused,
+                pxToRem: pxToRem,
+                remToPx: remToPx,
+                resize: resize,
+                sendEvent: sendEvent,
+                setAnimateWindow: setAnimateWindow,
+                setEventHandled: setEventHandled,
+                setInputPaddingsRem: setInputPaddingsRem,
+                setSidePaddingsRem: setSidePaddingsRem,
+                whenTutorialReady: whenTutorialReady,
+            },
+            Symbol.toStringTag,
+            { value: 'Module' },
+        ),
+    ),
+    env = { view: view, sound: sound },
+    _DataTracker = class e {
+        constructor() {
+            (__publicField(this, '_callbacks'),
+                __publicField(this, '_updateHandler'),
+                __publicField(this, '_views'),
+                __publicField(this, 'clearViewCallbacks', (e) => {
+                    this._views[e] &&
+                        (this._views[e].forEach((e) => {
+                            delete this._callbacks[e];
+                        }),
+                        delete this._views[e]);
                 }),
-                jsxRuntimeExports.jsx('div', { className: styles$M.header, children: e }),
+                (this._callbacks = {}),
+                (this._views = {}),
+                (this._updateHandler = void 0));
+        }
+        static get instance() {
+            return (window.__dataTracker || (window.__dataTracker = new e()), window.__dataTracker);
+        }
+        clear() {
+            (void 0 !== this._updateHandler && (this._updateHandler.clear(), (this._updateHandler = void 0)),
+                (this._callbacks = {}));
+        }
+        addCallback(e, t, s = 0, r = !0) {
+            void 0 === this._updateHandler &&
+                (this._updateHandler = engine.on('viewEnv.onDataChanged', this._emmitDataChanged, this));
+            const n = env.view.addModelObserver(e, s, r);
+            return (
+                n > 0
+                    ? ((this._callbacks[n] = t),
+                      s > 0 && (this._views[s] ? this._views[s].push(n) : (this._views[s] = [n])))
+                    : console.error("Can't add callback for model:", e),
+                n
+            );
+        }
+        removeCallback(e, t = 0) {
+            let s = !1;
+            return (
+                void 0 !== e &&
+                    void 0 !== this._callbacks[e] &&
+                    ((s = viewEnv.removeDataChangedCallback(e, t)), delete this._callbacks[e]),
+                s || console.error("Can't remove callback by id:", e),
+                s
+            );
+        }
+        _emmitDataChanged(e, t, s) {
+            s.forEach((s) => {
+                const r = this._callbacks[s];
+                void 0 !== r && r(e, t);
+            });
+        }
+    };
+__publicField(_DataTracker, '__instance');
+let DataTracker = _DataTracker;
+function dumpViewModel(e) {
+    const t = {};
+    if ('object' != typeof e) return e;
+    for (const s in e)
+        if (Object.prototype.hasOwnProperty.call(e, s)) {
+            const r = Object.prototype.toString.call(e[s]);
+            if (r.startsWith('[object CoherentArrayProxy]')) {
+                const r = e[s];
+                t[s] = [];
+                for (let e = 0; e < r.length; e++) t[s].push({ value: dumpViewModel(r[e].value) });
+            } else r.startsWith('[object class BW::WULF::ViewModel') ? (t[s] = dumpViewModel(e[s])) : (t[s] = e[s]);
+        }
+    return t;
+}
+const SystemLocale = {
+        getNumberFormat: (e, t) => systemLocale.getNumberFormat(e, t),
+        getRealFormat: (e, t, s = 2) => systemLocale.getRealFormat(e, t, s),
+        getTimeFormat: (e, t) => systemLocale.getTimeFormat(e, t),
+        getDateFormat: (e, t) => systemLocale.getDateFormat(e, t),
+        toUpperCase: (e) => systemLocale.toUpperCase(e),
+        toLowerCase: (e) => systemLocale.toUpperCase(e),
+    },
+    UserLocale = {
+        getNumberFormat: (e) => userLocale.getNumberFormat(e),
+        getTimeFormat: (e, t, s) => userLocale.getTimeFormat(e, t, void 0 === s || s),
+        getTimeString: (e, t, s) => userLocale.getTimeString(e, t, void 0 === s || s),
+    },
+    RegionalDateTime = {
+        getRegionalDateTime: (e, t, s = !0) => regionalDateTime.getRegionalDateTime(e, t, s),
+        getFormattedDateTime: (e, t, s = !0) => regionalDateTime.getFormattedDateTime(e, t, s),
+    };
+var ViewEventType = ((e) => (
+    (e[(e.UNDEFINED = 0)] = 'UNDEFINED'),
+    (e[(e.TOOLTIP = 1)] = 'TOOLTIP'),
+    (e[(e.POP_OVER = 2)] = 'POP_OVER'),
+    (e[(e.CONTEXT_MENU = 4)] = 'CONTEXT_MENU'),
+    (e[(e.DROP_DOWN = 8)] = 'DROP_DOWN'),
+    (e[(e.MOVE = 16)] = 'MOVE'),
+    (e[(e.CLOSE = 32)] = 'CLOSE'),
+    (e[(e.MINIMIZE = 64)] = 'MINIMIZE'),
+    e
+))(ViewEventType || {});
+const NumberFormatType = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
+    RealFormatType = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
+    TimeFormatType = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
+    DateFormatType = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
+var KEY_CODES = ((e) => (
+    (e[(e.NONE = -1)] = 'NONE'),
+    (e[(e.ALT = 165)] = 'ALT'),
+    (e[(e.ENTER = 13)] = 'ENTER'),
+    (e[(e.ESCAPE = 27)] = 'ESCAPE'),
+    (e[(e.SPACE = 32)] = 'SPACE'),
+    (e[(e.END = 35)] = 'END'),
+    (e[(e.HOME = 36)] = 'HOME'),
+    (e[(e.ARROW_LEFT = 37)] = 'ARROW_LEFT'),
+    (e[(e.ARROW_UP = 38)] = 'ARROW_UP'),
+    (e[(e.ARROW_RIGHT = 39)] = 'ARROW_RIGHT'),
+    (e[(e.ARROW_DOWN = 40)] = 'ARROW_DOWN'),
+    (e[(e.NUM_PLUS = 107)] = 'NUM_PLUS'),
+    (e[(e.NUM_MINUS = 109)] = 'NUM_MINUS'),
+    (e[(e.PLUS = 187)] = 'PLUS'),
+    (e[(e.MINUS = 189)] = 'MINUS'),
+    (e[(e.PAGE_UP = 33)] = 'PAGE_UP'),
+    (e[(e.PAGE_DOWN = 34)] = 'PAGE_DOWN'),
+    (e[(e.BACKSPACE = 8)] = 'BACKSPACE'),
+    (e[(e.DELETE = 46)] = 'DELETE'),
+    (e[(e.TAB = 9)] = 'TAB'),
+    (e[(e.KEY_N = 78)] = 'KEY_N'),
+    (e[(e.KEY_1 = 49)] = 'KEY_1'),
+    (e[(e.KEY_2 = 50)] = 'KEY_2'),
+    (e[(e.KEY_3 = 51)] = 'KEY_3'),
+    (e[(e.KEY_4 = 52)] = 'KEY_4'),
+    (e[(e.KEY_5 = 53)] = 'KEY_5'),
+    (e[(e.KEY_6 = 54)] = 'KEY_6'),
+    (e[(e.KEY_7 = 55)] = 'KEY_7'),
+    (e[(e.KEY_8 = 56)] = 'KEY_8'),
+    (e[(e.KEY_9 = 57)] = 'KEY_9'),
+    e
+))(KEY_CODES || {});
+const makeGlobalBoundingBox = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
+    onBindingsReady = async () =>
+        !(!engine._BindingsReady || !engine._WindowLoaded) ||
+        new Promise((e) => {
+            engine.on('Ready', e);
+        }),
+    onLayoutReady = () =>
+        new Promise((e) => {
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    e();
+                });
+            });
+        }),
+    createViewEventArguments = (e) =>
+        Object.entries(e).map(([e, t]) => {
+            const s = { __Type: 'GFValueProxy', name: e };
+            switch (typeof t) {
+                case 'number':
+                    s.number = t;
+                    break;
+                case 'boolean':
+                    s.bool = t;
+                    break;
+                default:
+                    s.string = t.toString();
+            }
+            return s;
+        }),
+    handleViewEvent$1 = (e, t) => {
+        const s = 'GFViewEventProxy';
+        if (void 0 !== t) {
+            const { args: r, ...n } = t;
+            void 0 !== r
+                ? viewEnv.handleViewEvent({ __Type: s, type: e, ...n, arguments: createViewEventArguments(r) })
+                : viewEnv.handleViewEvent({ __Type: s, type: e, ...n });
+        } else viewEnv.handleViewEvent({ __Type: s, type: e });
+    },
+    sendMoveEvent = (e) => handleViewEvent$1(ViewEventType.MOVE, { isMouseEvent: !0, on: e }),
+    sendCloseEvent = () => handleViewEvent$1(ViewEventType.CLOSE),
+    sendClosePopOverEvent = () => handleViewEvent$1(ViewEventType.POP_OVER, { on: !1 }),
+    sendShowContextMenuEvent = (e, t, s = 0) => {
+        handleViewEvent$1(ViewEventType.CONTEXT_MENU, {
+            isMouseEvent: !0,
+            contentID: e,
+            on: !0,
+            decoratorID: s,
+            args: t,
+        });
+    },
+    sendShowPopOverEvent = (e, t, s, r, n = R.invalid('resId'), o) => {
+        const a = env.view.getViewGlobalPosition(),
+            { x: i, y: u, width: l, height: c } = s.getBoundingClientRect(),
+            d = {
+                x: env.view.pxToRem(i) + a.x,
+                y: env.view.pxToRem(u) + a.y,
+                width: env.view.pxToRem(l),
+                height: env.view.pxToRem(c),
+            };
+        handleViewEvent$1(ViewEventType.POP_OVER, {
+            isMouseEvent: !0,
+            contentID: e,
+            decoratorID: r || R.invalid('resId'),
+            targetID: n,
+            direction: t,
+            bbox: makeGlobalBoundingBox(d),
+            on: !0,
+            args: o,
+        });
+    },
+    isTooltipShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.TOOLTIP),
+    isContextMenuShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.CONTEXT_MENU),
+    isPopOverShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.POP_OVER),
+    callOnEsc = (e, t) => {
+        e.keyCode === KEY_CODES.ESCAPE && t();
+    },
+    closeOnEsc = (e) => {
+        callOnEsc(e, sendCloseEvent);
+    },
+    addEscapeListener = (e) => {
+        const t = (t) => callOnEsc(t, e);
+        return (window.addEventListener('keydown', t), () => window.removeEventListener('keydown', t));
+    };
+class ViewModel {
+    constructor(path, watchingFields = []) {
+        (__publicField(this, 'dataTracker'),
+            __publicField(this, 'modelPath'),
+            __publicField(this, 'callbacks'),
+            __publicField(this, 'data'),
+            __publicField(this, '_notifyObservers', () => {
+                ((this.data = eval(this.modelPath)),
+                    this.callbacks.forEach((e) => {
+                        e(this.data);
+                    }));
+            }),
+            (this.dataTracker = new DataTracker()),
+            (this.modelPath = path),
+            (this.callbacks = new Set()),
+            onBindingsReady().then(() => {
+                (this._addCallback(path),
+                    watchingFields.forEach((e) => {
+                        this._addCallback(path + '.' + e);
+                    }),
+                    this._notifyObservers());
+            }));
+    }
+    subscribe(e) {
+        (this.callbacks.add(e), null !== this.data && void 0 !== this.data && e(this.data));
+    }
+    unsubscribe(e) {
+        this.callbacks.delete(e);
+    }
+    destroy() {
+        (this.dataTracker.clear(), this.callbacks.clear());
+    }
+    _addCallback(e) {
+        this.dataTracker.addCallback(e, this._notifyObservers);
+    }
+}
+const ClickOutsideManager = ClickOutsideManager$1.instance,
+    ViewEnvHelper = {
+        DataTracker: DataTracker,
+        ViewModel: ViewModel,
+        ViewEventType: ViewEventType,
+        NumberFormatType: NumberFormatType,
+        RealFormatType: RealFormatType,
+        TimeFormatType: TimeFormatType,
+        DateFormatType: DateFormatType,
+        makeGlobalBoundingBox: makeGlobalBoundingBox,
+        sendMoveEvent: sendMoveEvent,
+        sendCloseEvent: sendCloseEvent,
+        sendClosePopOverEvent: sendClosePopOverEvent,
+        sendShowContextMenuEvent: sendShowContextMenuEvent,
+        sendShowPopOverEvent: sendShowPopOverEvent,
+        addEscapeListener: addEscapeListener,
+        closeOnEsc: closeOnEsc,
+        handleViewEvent: handleViewEvent$1,
+        onBindingsReady: onBindingsReady,
+        onLayoutReady: onLayoutReady,
+        isTooltipShown: isTooltipShown,
+        isContextMenuShown: isContextMenuShown,
+        isPopOverShown: isPopOverShown,
+        dumpViewModel: dumpViewModel,
+        ClickOutsideManager: ClickOutsideManager,
+        SystemLocale: SystemLocale,
+        UserLocale: UserLocale,
+    };
+window.ViewEnvHelper = ViewEnvHelper;
+const SHOW_DELAY_MIN = 100,
+    SHOW_DELAY_DEFAULT = 400;
+function getViewEventArguments(e) {
+    return Object.entries(e || {}).map(([e, t]) => {
+        const s = { __Type: 'GFValueProxy', name: e };
+        switch (typeof t) {
+            case 'number':
+                s.number = t;
+                break;
+            case 'boolean':
+                s.bool = t;
+                break;
+            case 'undefined':
+                break;
+            default:
+                s.string = t.toString();
+        }
+        return s;
+    });
+}
+const handleViewEvent = (e, t, s = {}, r = 0) => {
+        viewEnv.handleViewEvent({
+            __Type: 'GFViewEventProxy',
+            type: ViewEventType.TOOLTIP,
+            contentID: e,
+            decoratorID: t,
+            targetID: r,
+            ...s,
+        });
+    },
+    Tooltip$2 = ({
+        children: e,
+        contentId: t,
+        args: s,
+        onMouseEnter: r,
+        onMouseLeave: n,
+        onMouseDown: o,
+        onClick: a,
+        ignoreShowDelay: i = !1,
+        ignoreMouseClick: u = !1,
+        decoratorId: l = 0,
+        isEnabled: c = !0,
+        targetId: d = 0,
+        onShow: _,
+        onHide: m,
+        ...p
+    }) => {
+        const x = reactExports.useRef({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
+            f = reactExports.useMemo(() => d || getFromCallStack().resId, [d]),
+            E = reactExports.useCallback(() => {
+                (x.current.isVisible && x.current.timeoutId) ||
+                    (handleViewEvent(t, l, { isMouseEvent: !0, on: !0, arguments: getViewEventArguments(s) }, f),
+                    _ && _(),
+                    (x.current.isVisible = !0));
+            }, [t, l, s, f, _]),
+            h = reactExports.useCallback(() => {
+                if (x.current.isVisible || x.current.timeoutId) {
+                    const e = x.current.timeoutId;
+                    (e > 0 && (clearTimeout(e), (x.current.timeoutId = 0)),
+                        handleViewEvent(t, l, { on: !1 }, f),
+                        x.current.isVisible && m && m(),
+                        (x.current.isVisible = !1));
+                }
+            }, [t, l, f, m]),
+            b = reactExports.useCallback((e) => {
+                x.current.isVisible &&
+                    ((x.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
+                    (x.current.hideTimerId = window.setTimeout(() => {
+                        const t = document.elementFromPoint(e.clientX, e.clientY);
+                        t && !t.isSameNode(x.current.prevTarget) && h();
+                    }, 200)));
+            }, []);
+        (reactExports.useEffect(() => {
+            const e = x.current.hideTimerId;
+            return (
+                document.addEventListener('wheel', b, { capture: !0 }),
+                () => {
+                    (document.removeEventListener('wheel', b, { capture: !0 }), e && window.clearTimeout(e));
+                }
+            );
+        }, []),
+            reactExports.useEffect(() => {
+                !1 === c && h();
+            }, [c, h]),
+            reactExports.useEffect(
+                () => (
+                    window.addEventListener('mouseleave', h),
+                    () => {
+                        (window.removeEventListener('mouseleave', h), h());
+                    }
+                ),
+                [h],
+            ));
+        return c
+            ? reactExports.cloneElement(e, {
+                  onMouseEnter:
+                      ((g = e.props.onMouseEnter),
+                      (e) => {
+                          (e.clientX === window.innerWidth && e.clientY === window.innerHeight) ||
+                              (clearTimeout(x.current.timeoutId),
+                              (x.current.timeoutId = window.setTimeout(E, i ? SHOW_DELAY_MIN : SHOW_DELAY_DEFAULT)),
+                              r && r(e),
+                              g && g(e));
+                      }),
+                  onMouseLeave: ((e) => (t) => {
+                      (h(), null == n || n(t), null == e || e(t));
+                  })(e.props.onMouseLeave),
+                  onClick: ((e) => (t) => {
+                      (!1 === u && h(), null == a || a(t), null == e || e(t));
+                  })(e.props.onClick),
+                  onMouseDown: ((e) => (t) => {
+                      (!1 === u && h(), null == o || o(t), null == e || e(t));
+                  })(e.props.onMouseDown),
+                  ...p,
+              })
+            : e;
+        var g;
+    },
+    UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
+    getTooltipContentId = (e) =>
+        e ? UB_SIMPLE_TOOLTIPS.SimpleTooltipHtmlContent('resId') : UB_SIMPLE_TOOLTIPS.SimpleTooltipContent('resId'),
+    SimpleTooltip$1 = ({ children: e, body: t, header: s, note: r, alert: n, args: o, ...a }) => {
+        const i = reactExports.useMemo(() => {
+            const e = { ...o, body: t, header: s, note: r, alert: n };
+            for (const t in e) void 0 === e[t] && delete e[t];
+            return e;
+        }, [n, t, s, r, o]);
+        return jsxRuntimeExports.jsx(Tooltip$2, {
+            contentId: getTooltipContentId(null == o ? void 0 : o.hasHtmlContent),
+            decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
+            args: i,
+            ...a,
+            children: e,
+        });
+    },
+    background$6 = 'Checkbox_background_ae1fc797',
+    border$5 = 'Checkbox_border_e1946121',
+    overlay$3 = 'Checkbox_overlay_de55e0a5',
+    base$E = 'Checkbox_e00b9a0',
+    base__enabled = 'Checkbox_base__enabled_5bfdfae9',
+    label$1 = 'Checkbox_label_58a00a56',
+    base__small$7 = 'Checkbox_base__small_70ef629e',
+    base__medium$5 = 'Checkbox_base__medium_70ef629e',
+    base__checked = 'Checkbox_base__checked_70ef629e',
+    checkIcon = 'Checkbox_checkIcon_968885f3',
+    check = 'Checkbox_check_8341731a',
+    styles$N = {
+        background: background$6,
+        border: border$5,
+        overlay: overlay$3,
+        base: base$E,
+        base__enabled: base__enabled,
+        label: label$1,
+        base__small: base__small$7,
+        base__medium: base__medium$5,
+        base__checked: base__checked,
+        checkIcon: checkIcon,
+        check: check,
+    },
+    Check = reactExports.forwardRef(function ({ classNames: e, children: t, ...s }, r) {
+        return jsxRuntimeExports.jsxs('div', {
+            ...s,
+            ref: r,
+            className: cx(styles$N.check, s.className, null == e ? void 0 : e.base),
+            children: [
+                jsxRuntimeExports.jsx('div', { className: cx(styles$N.background, null == e ? void 0 : e.background) }),
+                jsxRuntimeExports.jsx('div', { className: cx(styles$N.border, null == e ? void 0 : e.border) }),
+                jsxRuntimeExports.jsx('div', { className: cx(styles$N.overlay, null == e ? void 0 : e.overlay) }),
+                t,
             ],
         });
     }),
-    base$E = 'Accordion_2b56632',
-    styles$L = { base: base$E },
-    Accordion = reactExports.forwardRef(function ({ opened: e, ...t }, s) {
-        return jsxRuntimeExports.jsx(Context$2.Provider, {
-            value: { opened: e },
-            children: jsxRuntimeExports.jsx('div', {
-                ...t,
-                'data-name': 'Accordion',
-                ref: s,
-                className: cx(styles$L.base, t.className),
-            }),
+    sizes$b = { medium: 'medium', small: 'small' },
+    Base$g = defineStyledComponent('Checkbox', styles$N.base, {
+        variants: {
+            size: { [sizes$b.small]: styles$N.base__small, [sizes$b.medium]: styles$N.base__medium },
+            checked: { true: styles$N.base__checked },
+            state: { enabled: styles$N.base__enabled },
+        },
+    }),
+    HeadlessCheckbox = reactExports.forwardRef(function (
+        {
+            checked: e,
+            size: t = sizes$b.medium,
+            disabled: s = !1,
+            children: r,
+            onMouseEnter: n,
+            onClick: o,
+            onCheckedChange: a,
+            ...i
+        },
+        u,
+    ) {
+        const l = useSounds();
+        return jsxRuntimeExports.jsx(Base$g, {
+            ...i,
+            ref: u,
+            size: t,
+            checked: e,
+            state: s ? void 0 : 'enabled',
+            onMouseEnter: function (e) {
+                (l.play('mouse-enter', { target: Base$g.displayName, original: e }), null == n || n(e));
+            },
+            onClick: function (t) {
+                (l.play('click', { target: Base$g.displayName, original: t }), null == o || o(t), a(!e));
+            },
+            children: r,
         });
     });
-((Accordion.Summary = Summary),
-    (Accordion.Details = Details),
-    (Accordion.AnimatedDetails = AnimatedDetails),
-    (Accordion.Arrow = Arrow));
-const MIN_LEVEL = 1,
+function Label({ className: e, children: t }) {
+    return jsxRuntimeExports.jsx('div', { className: cx(styles$N.label, e), children: t });
+}
+const Checkbox = reactExports.forwardRef(function (
+        { checked: e, classNames: t, children: s, checkPath: r = 'ui_kit.checkbox.icon_check', ...n },
+        o,
+    ) {
+        return jsxRuntimeExports.jsxs(HeadlessCheckbox, {
+            ...n,
+            ref: o,
+            checked: e,
+            children: [
+                jsxRuntimeExports.jsx(Check, {
+                    className: null == t ? void 0 : t.check,
+                    children: jsxRuntimeExports.jsx(Image$1, {
+                        path: r,
+                        className: cx(styles$N.checkIcon, null == t ? void 0 : t.checkIcon),
+                    }),
+                }),
+                s && jsxRuntimeExports.jsx(Label, { className: null == t ? void 0 : t.label, children: s }),
+            ],
+        });
+    }),
+    MIN_LEVEL = 1,
     TYPE_PRESTIGE = 'prestige',
-    EMPTY_GRADE = -1,
     directions$1 = { left: 'left', right: 'right' },
     lengths = { short: 'short', medium: 'medium', long: 'long' },
     iconLength = (e) => (e < 10 ? lengths.short : e < 100 ? lengths.medium : lengths.long),
@@ -5912,7 +7139,7 @@ const MIN_LEVEL = 1,
     base__silver = 'VehiclePrestigeLevel_base__silver_4426b46c',
     base__gold = 'VehiclePrestigeLevel_base__gold_4426b46c',
     base__enamel = 'VehiclePrestigeLevel_base__enamel_4426b46c',
-    styles$K = {
+    styles$M = {
         base: base$D,
         icon: icon$9,
         base__left: base__left$1,
@@ -5928,27 +7155,27 @@ const MIN_LEVEL = 1,
         base__enamel: base__enamel,
     };
 function PrestigeLevel({ level: e, grade: t, type: s, direction: r, classNames: n, ...o }) {
-    return e < MIN_LEVEL || t === EMPTY_GRADE
+    return e < MIN_LEVEL
         ? null
         : jsxRuntimeExports.jsxs('div', {
               ...o,
               className: cx(
-                  styles$K.base,
-                  styles$K[`base__${s}`],
-                  styles$K[`base__${r}`],
+                  styles$M.base,
+                  styles$M[`base__${s}`],
+                  styles$M[`base__${r}`],
                   o.className,
                   null == n ? void 0 : n.base,
               ),
               children: [
                   jsxRuntimeExports.jsx(Image$1, {
                       path: `prestige.tab.${icon$a(e, s, t)}`,
-                      className: cx(styles$K.icon, null == n ? void 0 : n.icon),
+                      className: cx(styles$M.icon, null == n ? void 0 : n.icon),
                   }),
                   s !== TYPE_PRESTIGE &&
                       jsxRuntimeExports.jsx('div', {
                           className: cx(
-                              styles$K.level,
-                              styles$K[`level__${iconLength(e)}`],
+                              styles$M.level,
+                              styles$M[`level__${iconLength(e)}`],
                               null == n ? void 0 : n.level,
                           ),
                           children: e,
@@ -6257,7 +7484,7 @@ const SvgAssaultX16X16 = (e) =>
     base__x32x32 = 'VehicleRole_base__x32x32_2180a099',
     base__x48x48 = 'VehicleRole_base__x48x48_2a01e86c',
     icon$8 = 'VehicleRole_icon_7f7f6256',
-    styles$J = {
+    styles$L = {
         base: base$C,
         base__x16x16: base__x16x16,
         base__x24x24: base__x24x24,
@@ -6265,34 +7492,777 @@ const SvgAssaultX16X16 = (e) =>
         base__x48x48: base__x48x48,
         icon: icon$8,
     },
-    sizes$b = { x16x16: 'x16x16', x24x24: 'x24x24', x32x32: 'x32x32', x48x48: 'x48x48' },
-    VehicleRole = reactExports.forwardRef(function ({ roleKey: e, size: t = sizes$b.x24x24, classNames: s, ...r }, n) {
+    sizes$a = { x16x16: 'x16x16', x24x24: 'x24x24', x32x32: 'x32x32', x48x48: 'x48x48' },
+    VehicleRole = reactExports.forwardRef(function ({ roleKey: e, size: t = sizes$a.x24x24, classNames: s, ...r }, n) {
         const o = ROLE_TO_COMPONENT[`${e}_${t}`];
         if (o)
             return jsxRuntimeExports.jsx('div', {
                 ...r,
                 ref: n,
-                className: cx(styles$J.base, styles$J[`base__${t}`], null == s ? void 0 : s.base),
-                children: jsxRuntimeExports.jsx(o, { className: cx(styles$J.icon, null == s ? void 0 : s.icon) }),
+                className: cx(styles$L.base, styles$L[`base__${t}`], null == s ? void 0 : s.base),
+                children: jsxRuntimeExports.jsx(o, { className: cx(styles$L.icon, null == s ? void 0 : s.icon) }),
             });
         console.error(`Unknown vehicle role type ${e} with size ${t}`);
     });
-VehicleRole.sizes = sizes$b;
+VehicleRole.sizes = sizes$a;
 const base$B = 'VehicleInfo_1732f1f0',
     name = 'VehicleInfo_name_3989ca04',
     name__premium = 'VehicleInfo_name__premium_258b3b93',
-    styles$I = { base: base$B, name: name, name__premium: name__premium },
-    VehicleName = defineStyledComponent('VehicleName', styles$I.name, {
-        variants: { premium: { true: styles$I.name__premium } },
+    styles$K = { base: base$B, name: name, name__premium: name__premium },
+    VehicleName = defineStyledComponent('VehicleName', styles$K.name, {
+        variants: { premium: { true: styles$K.name__premium } },
     }),
     VehicleInfo = reactExports.forwardRef(function (e, t) {
-        return jsxRuntimeExports.jsx('div', { ...e, ref: t, className: cx(styles$I.base, e.className) });
+        return jsxRuntimeExports.jsx('div', { ...e, ref: t, className: cx(styles$K.base, e.className) });
     });
 ((VehicleInfo.Prestige = PrestigeLevel),
     (VehicleInfo.Level = VehicleLevel),
     (VehicleInfo.Type = VehicleType),
     (VehicleInfo.Name = VehicleName),
     (VehicleInfo.Role = VehicleRole));
+const base$A = 'AnimatedDetails_c70d3863',
+    styles$J = { base: base$A },
+    AnimatedDetails = reactExports.forwardRef(function (
+        { opened: e, children: t, className: s, animationSettings: r = {}, ...n },
+        o,
+    ) {
+        const a = React.useRef(null),
+            i = React.useRef(null),
+            [u, l] = useSpring(() => ({ height: 0, opacity: 0 })),
+            c = useEvent((e, t) => {
+                l.start({
+                    height: t ? e : 0,
+                    opacity: t ? 1 : 0,
+                    config: { duration: 350, easing: t ? easings.reverseEaseInOutCirc : easings.easeInOutCirc },
+                    ...r,
+                });
+            });
+        return (
+            React.useEffect(() => {
+                const t = i.current;
+                if (!t) return;
+                let s = noop;
+                if (e) {
+                    const e = new ResizeObserver(() => c(t.offsetHeight, !0));
+                    (e.observe(t), (s = e.disconnect.bind(e)));
+                }
+                const r = createLayoutReadyInEffect(() => {
+                    c(t.offsetHeight, e);
+                });
+                return () => {
+                    (r(), s());
+                };
+            }, [c, e]),
+            jsxRuntimeExports.jsx(animated.div, {
+                ...n,
+                ref: assignRefs([o, a]),
+                className: cx(styles$J.base, s),
+                style: { ...n.style, ...u },
+                children: jsxRuntimeExports.jsx('div', { ref: i, children: t }),
+            })
+        );
+    }),
+    Context$2 = reactExports.createContext(void 0);
+function useAccordion() {
+    const e = reactExports.useContext(Context$2);
+    if (!e) throw new Error('useAccordion should have Accordion provider');
+    return e;
+}
+const arrow = 'Arrow_f1570a91',
+    arrow__opened = 'Arrow_arrow__opened_134476cd',
+    styles$I = { arrow: arrow, arrow__opened: arrow__opened },
+    images$1 = resources.resolve('images'),
+    Arrow = reactExports.forwardRef(function (e, t) {
+        const { opened: s } = useAccordion();
+        return jsxRuntimeExports.jsx('div', {
+            ...e,
+            ref: t,
+            style: { backgroundImage: `url(${images$1.readOrEmpty('library.arrow_accordion')})`, ...e.style },
+            className: cx(styles$I.arrow, s && styles$I.arrow__opened, e.className),
+        });
+    }),
+    content$b = 'Details_content_a5a56462',
+    content__opened = 'Details_content__opened_cc21f43f',
+    styles$H = { content: content$b, content__opened: content__opened },
+    Details = reactExports.forwardRef(function (e, t) {
+        const { opened: s } = useAccordion();
+        return jsxRuntimeExports.jsx('div', {
+            ...e,
+            ref: t,
+            className: cx(styles$H.content, s && styles$H.content__opened, e.className),
+        });
+    }),
+    headerWrapper = 'Summary_headerWrapper_d7c7115',
+    background$5 = 'Summary_background_48ba2ab7',
+    background__scrollable = 'Summary_background__scrollable_a41402ee',
+    header = 'Summary_header_789c868e',
+    styles$G = {
+        headerWrapper: headerWrapper,
+        background: background$5,
+        background__scrollable: background__scrollable,
+        header: header,
+    },
+    Summary = reactExports.forwardRef(function ({ children: e, scrollable: t, background: s, ...r }, n) {
+        return jsxRuntimeExports.jsxs('div', {
+            ...r,
+            ref: n,
+            className: cx(styles$G.headerWrapper, r.className),
+            children: [
+                jsxRuntimeExports.jsx('div', {
+                    className: cx(styles$G.background, t && styles$G.background__scrollable, s),
+                }),
+                jsxRuntimeExports.jsx('div', { className: styles$G.header, children: e }),
+            ],
+        });
+    }),
+    base$z = 'Accordion_2b56632',
+    styles$F = { base: base$z },
+    Accordion = reactExports.forwardRef(function ({ opened: e, ...t }, s) {
+        return jsxRuntimeExports.jsx(Context$2.Provider, {
+            value: { opened: e },
+            children: jsxRuntimeExports.jsx('div', {
+                ...t,
+                'data-name': 'Accordion',
+                ref: s,
+                className: cx(styles$F.base, t.className),
+            }),
+        });
+    });
+((Accordion.Summary = Summary),
+    (Accordion.Details = Details),
+    (Accordion.AnimatedDetails = AnimatedDetails),
+    (Accordion.Arrow = Arrow));
+const Slot$1 = React.forwardRef((e, t) => {
+    const { children: s, ...r } = e,
+        n = React.Children.toArray(s),
+        o = n.find(isSlottable);
+    if (o) {
+        const e = o.props.children,
+            s = n.map((t) =>
+                t === o
+                    ? React.Children.count(e) > 1
+                        ? React.Children.only(null)
+                        : React.isValidElement(e)
+                          ? e.props.children
+                          : null
+                    : t,
+            );
+        return jsxRuntimeExports.jsx(SlotClone, {
+            ...r,
+            ref: t,
+            children: React.isValidElement(e) ? React.cloneElement(e, void 0, s) : null,
+        });
+    }
+    return jsxRuntimeExports.jsx(SlotClone, { ...r, ref: t, children: s });
+});
+Slot$1.displayName = 'Slot';
+const SlotClone = React.forwardRef((e, t) => {
+    const { children: s, ...r } = e;
+    if (React.isValidElement(s)) {
+        const e = getElementRef(s),
+            n = mergeProps(r, s.props);
+        return (s.type !== React.Fragment && (n.ref = t ? assignRefs([t, e]) : e), React.cloneElement(s, n));
+    }
+    return (console.warn('Invalid children', s), null);
+});
+SlotClone.displayName = 'SlotClone';
+const Slottable = ({ children: e }) => jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: e });
+function isSlottable(e) {
+    return React.isValidElement(e) && e.type === Slottable;
+}
+function mergeProps(e, t) {
+    const s = { ...e, ...t };
+    for (const r in t) {
+        const n = e[r],
+            o = t[r];
+        r.startsWith('on')
+            ? n && o
+                ? (s[r] = (...e) => {
+                      (o(...e), n(...e));
+                  })
+                : n && (s[r] = n)
+            : 'style' === r
+              ? (s[r] = { ...n, ...o })
+              : 'className' === r && (s[r] = [n, o].filter(Boolean).join(' '));
+    }
+    return s;
+}
+function getElementRef(e) {
+    return e.props.ref || e.ref;
+}
+function useParamTooltipApadter(e) {
+    return useParamTooltip(e.type, e.args, e.params);
+}
+function useWulfTooltipAdapter(e) {
+    return useWulfTooltip(e.tooltipId, e.args, e.params);
+}
+function useSpecialTooltipAdapter(e) {
+    return useSpecialTooltip(e.tooltipId, e.args, e.params);
+}
+function createTooltipComponent(e, t) {
+    function s({ asChild: t, params: s, disabled: r, ...n }) {
+        const o = t ? Slot$1 : 'div',
+            a = e(r ? { ...s, disabled: r } : s);
+        return jsxRuntimeExports.jsx(o, { ...n, ...a });
+    }
+    return ((s.displayName = t), s);
+}
+const Tooltip$1 = createTooltipComponent(useTooltip, 'Tooltip'),
+    SimpleTooltip = createTooltipComponent(useSimpleTooltip, 'SimpleTooltip');
+(createTooltipComponent(useParamTooltipApadter, 'ParamsTooltip'),
+    createTooltipComponent(useWulfTooltipAdapter, 'WulfTooltip'),
+    createTooltipComponent(useSpecialTooltipAdapter, 'SpecialTooltip'));
+const BackportTooltip$1 = createTooltipComponent(useBackdropTooltip, 'BackportTooltip'),
+    BackdropTooltip = BackportTooltip$1,
+    CardContext = reactExports.createContext(void 0);
+function useCardContext() {
+    const e = reactExports.useContext(CardContext);
+    if (!e) throw new Error('Card context must be used only within its provider');
+    return e;
+}
+function CardContextProvider({ selected: e, hover: t, disabled: s, multiple: r, status: n, children: o }) {
+    const a = reactExports.useMemo(
+        () => ({ selected: e, hover: t, disabled: s, multiple: r, status: n }),
+        [s, t, r, e, n],
+    );
+    return jsxRuntimeExports.jsx(CardContext.Provider, { value: a, children: o });
+}
+const CardsWrapperContext = reactExports.createContext(null);
+function useCardsWrapperContext() {
+    const e = reactExports.useContext(CardsWrapperContext);
+    if (!e) throw new Error('CardsWrapper context must be used only within its provider');
+    return e;
+}
+function useCardsWrapperContextOptional() {
+    return reactExports.useContext(CardsWrapperContext);
+}
+const CardsWrapperContextProvider = CardsWrapperContext.Provider,
+    base$y = 'Content_8eaaf71a',
+    content$a = 'Content_ab8563af',
+    disabledOverlay$2 = 'Content_disabledOverlay_af87c441',
+    base__multiple = 'Content_base__multiple_da09528a',
+    base__disabled$5 = 'Content_base__disabled_da09528a',
+    base__hover$1 = 'Content_base__hover_da09528a',
+    base__selectedHover$1 = 'Content_base__selectedHover_da09528a',
+    base__selected$1 = 'Content_base__selected_da09528a',
+    multipleCorner = 'Content_multipleCorner_151c26ee',
+    styles$E = {
+        base: base$y,
+        content: content$a,
+        disabledOverlay: disabledOverlay$2,
+        base__multiple: base__multiple,
+        base__disabled: base__disabled$5,
+        base__hover: base__hover$1,
+        base__selectedHover: base__selectedHover$1,
+        base__selected: base__selected$1,
+        multipleCorner: multipleCorner,
+    },
+    MULTIPLE_CORNER_SIZE = 20,
+    Base$f = defineStyledComponent('Content', styles$E.base, {
+        variants: {
+            multiple: { true: styles$E.base__multiple },
+            selected: { true: styles$E.base__selected },
+            hover: { true: styles$E.base__hover },
+            disabled: { true: styles$E.base__disabled },
+        },
+        compoundVariants: [{ hover: !0, selected: !0, className: styles$E.base__selectedHover }],
+    }),
+    MainContainer = ({ children: e, classNames: t }) => {
+        const s = React.useRef(null),
+            r = useCardContext();
+        return (
+            React.useEffect(() => {
+                if (r.multiple)
+                    return createLayoutReadyInEffect(() => {
+                        if (s.current) {
+                            const e = s.current.getBoundingClientRect(),
+                                t = Math.round((MULTIPLE_CORNER_SIZE / e.width) * 100),
+                                r = Math.round((MULTIPLE_CORNER_SIZE / e.height) * 100);
+                            (s.current.style.setProperty('--corner-width', `${t}%`),
+                                s.current.style.setProperty('--corner-height', `${r}%`));
+                        }
+                    });
+            }),
+            jsxRuntimeExports.jsxs(Base$f, {
+                multiple: r.multiple,
+                selected: r.selected,
+                hover: r.hover,
+                disabled: r.disabled,
+                children: [
+                    r.multiple && jsxRuntimeExports.jsx('div', { className: styles$E.multipleCorner }),
+                    jsxRuntimeExports.jsxs('div', {
+                        ref: s,
+                        className: cx(styles$E.content, null == t ? void 0 : t.mainContainerContent),
+                        children: [
+                            r.disabled && jsxRuntimeExports.jsx('div', { className: styles$E.disabledOverlay }),
+                            e,
+                        ],
+                    }),
+                ],
+            })
+        );
+    },
+    base$x = 'Status_68bd9bc6',
+    icon$7 = 'Status_icon_cef4536',
+    base__done = 'Status_base__done_35b9a31c',
+    base__doneSmall = 'Status_base__doneSmall_35b9a31c',
+    base__alert = 'Status_base__alert_35b9a31c',
+    base__alertSmall = 'Status_base__alertSmall_35b9a31c',
+    line = 'Status_line_8f933ea7',
+    shadow = 'Status_shadow_fc30bf98',
+    base__lockedSmall = 'Status_base__lockedSmall_35b9a31c',
+    glowInner = 'Status_glowInner_f8eb475a',
+    blur = 'Status_blur_5675b854',
+    glowBig = 'Status_glowBig_5954041c',
+    styles$D = {
+        base: base$x,
+        icon: icon$7,
+        base__done: base__done,
+        base__doneSmall: base__doneSmall,
+        base__alert: base__alert,
+        base__alertSmall: base__alertSmall,
+        line: line,
+        shadow: shadow,
+        base__lockedSmall: base__lockedSmall,
+        glowInner: glowInner,
+        blur: blur,
+        glowBig: glowBig,
+    },
+    strings$2 = resources.resolve('strings');
+defineStyledComponent('Status', styles$D.base, {
+    variants: { status: { done: styles$D.base__done, alert: styles$D.base__alert, locked: styles$D.base__locked } },
+});
+const SMALL_SIZE_BREAKPOINT = 100,
+    tooltipEnabled = ({ header: e, body: t }) => Boolean(e && t),
+    Status = ({ reason: e, classNames: t }) => {
+        const s = reactExports.useRef(null),
+            [r, n] = React.useState(!1),
+            o = `base__${useCardContext().status}${r ? 'Small' : ''}`,
+            a = React.useCallback(() => {
+                var e;
+                const t = null == (e = s.current) ? void 0 : e.getBoundingClientRect();
+                t && n(t.width <= SMALL_SIZE_BREAKPOINT);
+            }, [s]);
+        useRefResizeObserver(s, a);
+        const i = e
+                ? {
+                      header: strings$2.readOrEmpty(`tooltips.moduleFits.${e}.header`),
+                      body: strings$2.readOrEmpty(`tooltips.moduleFits.${e}.text`),
+                  }
+                : {},
+            u = useSimpleTooltip(i);
+        return jsxRuntimeExports.jsxs('div', {
+            className: cx(styles$D.base, styles$D[o], null == t ? void 0 : t.wrapper),
+            ref: s,
+            children: [
+                jsxRuntimeExports.jsx('div', { className: styles$D.glowBig }),
+                jsxRuntimeExports.jsx('div', { className: styles$D.line }),
+                jsxRuntimeExports.jsx('div', { className: styles$D.shadow }),
+                jsxRuntimeExports.jsx('div', { className: styles$D.glowInner }),
+                jsxRuntimeExports.jsx('svg', {
+                    width: '42',
+                    height: '42',
+                    viewBox: '0 0 42 42',
+                    className: styles$D.blur,
+                    children: jsxRuntimeExports.jsx('g', {
+                        children: jsxRuntimeExports.jsx('circle', { cx: '21', cy: '21', r: '3' }),
+                    }),
+                }),
+                jsxRuntimeExports.jsx('div', {
+                    ...(tooltipEnabled(i) && u),
+                    className: cx(styles$D.icon, null == t ? void 0 : t.icon),
+                }),
+            ],
+        });
+    },
+    base$w = 'Card_f0963ece',
+    base__wrapped = 'Card_base__wrapped_c6eb8737',
+    base__disableMouse = 'Card_base__disableMouse_5cd80216',
+    base__hover = 'Card_base__hover_f4c22d1c',
+    base__selected = 'Card_base__selected_f4c22d1c',
+    card$1 = 'Card_f7ddaa4a',
+    content$9 = 'Card_content_b6f6a22a',
+    base__active$1 = 'Card_base__active_f4c22d1c',
+    base__activeHover = 'Card_base__activeHover_f4c22d1c',
+    base__selectedHover = 'Card_base__selectedHover_f4c22d1c',
+    centerBorder = 'Card_centerBorder_8a0f28ae',
+    cardStyles = {
+        base: base$w,
+        base__wrapped: base__wrapped,
+        base__disableMouse: base__disableMouse,
+        base__hover: base__hover,
+        base__selected: base__selected,
+        card: card$1,
+        content: content$9,
+        base__active: base__active$1,
+        base__activeHover: base__activeHover,
+        base__selectedHover: base__selectedHover,
+        centerBorder: centerBorder,
+    },
+    Base$e = defineStyledComponent('Card', cardStyles.base, {
+        variants: {
+            active: { true: cardStyles.base__active },
+            selected: { true: cardStyles.base__selected },
+            hover: { true: cardStyles.base__hover },
+            disableMouse: { true: cardStyles.base__disableMouse },
+        },
+        compoundVariants: [
+            { hover: !0, active: !0, className: cardStyles.base__activeHover },
+            { hover: !0, selected: !0, className: cardStyles.base__selectedHover },
+        ],
+    }),
+    Card = reactExports.forwardRef(function (
+        {
+            children: e,
+            active: t,
+            status: s,
+            statusReason: r,
+            disableMouse: n,
+            onMouseOver: o,
+            onMouseOut: a,
+            soundTarget: i,
+            disabled: u = !1,
+            className: l,
+            classNames: c,
+            ...d
+        },
+        _,
+    ) {
+        const [m, p] = reactExports.useState(!1),
+            x = useSounds(),
+            f = useCardsWrapperContextOptional(),
+            E = n || u;
+        return jsxRuntimeExports.jsx(Base$e, {
+            ...d,
+            ref: _,
+            hover: m,
+            disableMouse: n,
+            active: t,
+            className: cx(cardStyles.card, l, (null == f ? void 0 : f.enabled) && cardStyles.base__wrapped),
+            children: jsxRuntimeExports.jsxs(CardContextProvider, {
+                disabled: u,
+                selected: d.selected ?? !1,
+                multiple: d.multiple ?? !1,
+                hover: m,
+                status: s,
+                children: [
+                    jsxRuntimeExports.jsx('div', {
+                        className: cx(cardStyles.content, null == c ? void 0 : c.content),
+                        onClick: function (e) {
+                            E || x.play('click', { target: i || 'react-ui:card', original: e });
+                        },
+                        onMouseEnter: function (e) {
+                            E || x.play('mouse-enter', { target: i || 'react-ui:card', original: e });
+                        },
+                        onMouseOver: function (e) {
+                            E || (p(!0), null == o || o(e));
+                        },
+                        onMouseOut: function (e) {
+                            E || (p(!1), null == a || a(e));
+                        },
+                        children: jsxRuntimeExports.jsx(MainContainer, { classNames: c, children: e }),
+                    }),
+                    jsxRuntimeExports.jsx('div', { className: cardStyles.centerBorder }),
+                    s && jsxRuntimeExports.jsx(Status, { reason: r, classNames: null == c ? void 0 : c.status }),
+                ],
+            }),
+        });
+    }),
+    LINE_THICKNESS = 1,
+    OFFSET = 1,
+    PADDING = 3,
+    borderTypes = { none: 'none', contour: 'contour' },
+    Point = (e, t) => ({ x: e, y: t });
+function getRectangleEdges(e) {
+    let { x: t, y: s, width: r, height: n } = e;
+    const o = Point(t, s),
+        a = Point(t + r, s),
+        i = Point(t + r, s + n),
+        u = Point(t, s + n);
+    return [
+        [o, a],
+        [a, i],
+        [i, u],
+        [u, o],
+    ];
+}
+function getEdgeKey(e) {
+    const [t, s] = e;
+    return t.x < s.x || (t.x === s.x && t.y < s.y) ? `${s.x},${s.y}-${t.x},${t.y}` : `${t.x},${t.y}-${s.x},${s.y}`;
+}
+function buildOuterEdgesAndCenter(e) {
+    const t = e.flatMap(getRectangleEdges),
+        s = new Map();
+    return (
+        t.forEach((e) => {
+            const t = getEdgeKey(e);
+            s.has(t) ? s.delete(t) : s.set(t, e);
+        }),
+        Array.from(s.values())
+    );
+}
+function buildContourPath(e) {
+    if (0 === e.length) return [];
+    const t = e[0],
+        s = { x: t[0].x - PADDING, y: t[0].y - PADDING },
+        r = [s];
+    let n = t[1],
+        o = s,
+        a = s,
+        i = -PADDING,
+        u = -PADDING;
+    for (e.splice(0, 1); e.length > 0; ) {
+        const t = e.findIndex((e) => e[0].x === n.x && e[0].y === n.y);
+        if (-1 === t) break;
+        const s = e[t],
+            l = n;
+        (n.x <= a.x ? (u = PADDING) : (u === PADDING && (o.y -= 2 * PADDING), (u = -PADDING)),
+            n.y >= a.y ? (i = PADDING) : (i === PADDING && (o.x -= 2 * PADDING), (i = -PADDING)),
+            (n = { x: n.x + i, y: n.y + u }),
+            r.push(n),
+            (a = l),
+            (o = n),
+            (n = s[1]),
+            e.splice(t, 1));
+    }
+    return (u === PADDING && i === PADDING && (o = { ...o, x: o.x - 2 * PADDING }), r.push(s), r);
+}
+function buildContour(e, t) {
+    return buildContourPath(buildOuterEdgesAndCenter(e));
+}
+const HORIZONTAL = 'H',
+    VERTICAL = 'V';
+class LinesOptimizer {
+    constructor(e) {
+        (__publicField(this, 'lines', new Map()), (this.containerRect = e));
+    }
+    addLine(e, t, s, r, n) {
+        var o;
+        const a = `${s === LINE_THICKNESS ? VERTICAL : HORIZONTAL}-${s === LINE_THICKNESS ? Math.round(e) : Math.round(t)}-${n}`;
+        this.lines.has(a) || this.lines.set(a, []);
+        const i = { x: e - this.containerRect.x, y: t - this.containerRect.y, width: s, height: r, className: n };
+        null == (o = this.lines.get(a)) || o.push(i);
+    }
+    run() {
+        const e = [];
+        return (
+            this.lines.forEach((t, s) => {
+                const r = s.at(0) === HORIZONTAL,
+                    n = t.sort((e, t) => (r ? e.x - t.x : e.y - t.y));
+                let o = null;
+                (n.forEach((t) => {
+                    if (o)
+                        if (r) {
+                            const s = o.x + o.width,
+                                r = t.x + t.width;
+                            t.x >= o.x && t.x <= s ? (o = { ...o, width: Math.max(r, s) - o.x }) : (e.push(o), (o = t));
+                        } else {
+                            const s = o.y + o.height,
+                                r = t.y + t.height;
+                            t.y >= o.y && t.y <= s
+                                ? (o = { ...o, height: Math.max(r, s) - o.y })
+                                : (e.push(o), (o = t));
+                        }
+                    else o = t;
+                }),
+                    o && e.push(o));
+            }),
+            e
+        );
+    }
+}
+const lineInner = 'LinesBuilder_lineInner_a52dc157',
+    lineOuter = 'LinesBuilder_lineOuter_c57514b2',
+    styles$C = { lineInner: lineInner, lineOuter: lineOuter };
+function buildLines(e, t, s) {
+    const r = [],
+        n = new LinesOptimizer(t);
+    for (let o = 0; o < e.length; o++) {
+        const t = e[o],
+            a = t.getBoundingClientRect();
+        if (0 === a.width || 0 === a.height)
+            return void console.debug(
+                `Card rect has zero size by one side: ${a.width}x${a.height} (${t.getAttribute('data-test-id')}) `,
+            );
+        (s !== borderTypes.none && r.push({ x: a.x, y: a.y, width: a.width, height: a.height }),
+            n.addLine(a.x, a.y, a.width, LINE_THICKNESS, styles$C.lineInner),
+            n.addLine(a.x, a.y + a.height, a.width, LINE_THICKNESS, styles$C.lineInner),
+            n.addLine(a.x, a.y, LINE_THICKNESS, a.height, styles$C.lineInner),
+            n.addLine(a.x + a.width, a.y, LINE_THICKNESS, a.height + OFFSET, styles$C.lineInner));
+    }
+    if (s !== borderTypes.none) {
+        const e = buildContour(r);
+        let t = null;
+        e.forEach((e) => {
+            if (t) {
+                const s = t.y === e.y,
+                    r = t,
+                    o = e;
+                n.addLine(
+                    Math.min(r.x, o.x),
+                    Math.min(r.y, o.y),
+                    s ? Math.abs(o.x - r.x) : LINE_THICKNESS,
+                    s ? LINE_THICKNESS : Math.abs(o.y - r.y) + OFFSET,
+                    styles$C.lineOuter,
+                );
+            }
+            t = e;
+        });
+    }
+    return n.run();
+}
+const Lines = reactExports.memo(({ containerRef: e, generation: t, border: s, cardSelector: r }) => {
+        const [n, o] = reactExports.useState([]),
+            a = useEvent(() => {
+                const t = e.current;
+                if (!t) return;
+                const n = t.getBoundingClientRect(),
+                    a = buildLines(t.querySelectorAll(`.${r || cardStyles.card}`), n, s);
+                o(a ?? []);
+            });
+        return (
+            reactExports.useEffect(a, [a, t]),
+            jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {
+                children: n.map((e, t) =>
+                    jsxRuntimeExports.jsx(
+                        'div',
+                        { className: e.className, style: { left: e.x, top: e.y, width: e.width, height: e.height } },
+                        t,
+                    ),
+                ),
+            })
+        );
+    }),
+    base$v = 'CardsWrapper_3b6cc4f6',
+    card = 'CardsWrapper_card_c7fc9ee7',
+    centerBorderCommon = 'CardsWrapper_centerBorderCommon_b4b27a11',
+    outerBorderCommon = 'CardsWrapper_outerBorderCommon_f4887371',
+    styles$B = {
+        base: base$v,
+        card: card,
+        centerBorderCommon: centerBorderCommon,
+        outerBorderCommon: outerBorderCommon,
+    },
+    Base$d = defineStyledComponent('CardsWrapper', styles$B.base),
+    CardsWrapper = reactExports.forwardRef(function (
+        {
+            children: e,
+            className: t,
+            trashhold: s,
+            border: r = borderTypes.contour,
+            enabled: n = !0,
+            cardSelector: o,
+            ...a
+        },
+        i,
+    ) {
+        const u = reactExports.useRef([]),
+            l = reactExports.useRef(null),
+            [c, d] = reactExports.useState('');
+        reactExports.useImperativeHandle(i, () => l.current);
+        const _ = reactExports.useCallback(
+            (e) => {
+                const t = l.current;
+                if (!t) return;
+                const s = t.querySelectorAll(`.${o || cardStyles.card}`);
+                if (s.length > 0) {
+                    const r = t.getBoundingClientRect(),
+                        n = s.length;
+                    n !== u.current.length && (u.current = Array.from(s));
+                    const o = `${Math.round(r.width)}x${Math.round(r.height)}-${n}|${e}`;
+                    d(o);
+                } else d('');
+            },
+            [o],
+        );
+        (reactExports.useEffect(() => {
+            _(s);
+        }),
+            useRefResizeObserver(
+                l,
+                reactExports.useCallback(() => _(), [_]),
+            ));
+        const m = reactExports.useMemo(() => ({ recalculate: _, enabled: n }), [_, n]);
+        return jsxRuntimeExports.jsx(Base$d, {
+            ...a,
+            ref: l,
+            children: jsxRuntimeExports.jsxs('div', {
+                className: t,
+                children: [
+                    jsxRuntimeExports.jsx(CardsWrapperContextProvider, { value: m, children: e }),
+                    jsxRuntimeExports.jsx(Lines, {
+                        cardsRef: u,
+                        containerRef: l,
+                        border: r,
+                        generation: c,
+                        cardSelector: o,
+                    }),
+                ],
+            }),
+        });
+    }),
+    CardSingle = reactExports.forwardRef(({ className: e, classNames: t, ...s }, r) =>
+        jsxRuntimeExports.jsxs('div', {
+            className: cx(styles$B.base, null == t ? void 0 : t.wrapper),
+            children: [
+                jsxRuntimeExports.jsx('div', { className: styles$B.centerBorderCommon }),
+                jsxRuntimeExports.jsx('div', { className: styles$B.outerBorderCommon }),
+                jsxRuntimeExports.jsx(Card, {
+                    className: cx(styles$B.card, e, null == t ? void 0 : t.card),
+                    classNames: t,
+                    ...s,
+                    ref: r,
+                }),
+            ],
+        }),
+    ),
+    statusTypes = { done: 'done', alert: 'alert' },
+    base$u = 'Discount_bbbebfd',
+    percent = 'Discount_percent_b7ab402',
+    styles$A = {
+        base: base$u,
+        'base__color-red': 'Discount_base__color-red_ce40ab53',
+        'base__color-blue': 'Discount_base__color-blue_29162735',
+        'base__size-medium': 'Discount_base__size-medium_50e2ae9a',
+        'base__size-large': 'Discount_base__size-large_b6f874e0',
+        percent: percent,
+        'percent__size-medium': 'Discount_percent__size-medium_cc14676',
+        'percent__color-red': 'Discount_percent__color-red_4a3faf4f',
+        'percent__color-blue': 'Discount_percent__color-blue_4a3faf4f',
+        'percent__size-large': 'Discount_percent__size-large_8384c978',
+    },
+    colors$1 = { blue: 'blue', red: 'red' },
+    sizes$9 = { medium: 'medium', large: 'large' },
+    StyledDiscount = defineStyledComponent('Discount', styles$A.base, {
+        variants: {
+            color: { [colors$1.blue]: styles$A['base__color-blue'], [colors$1.red]: styles$A['base__color-red'] },
+            size: { [sizes$9.medium]: styles$A['base__size-medium'], [sizes$9.large]: styles$A['base__size-large'] },
+        },
+    }),
+    Discount = React.forwardRef(function (
+        { color: e = colors$1.red, className: t, classNames: s, size: r = sizes$9.large, ...n },
+        o,
+    ) {
+        return jsxRuntimeExports.jsxs(StyledDiscount, {
+            ...n,
+            ref: o,
+            color: e,
+            size: r,
+            className: cx(t, null == s ? void 0 : s.discount),
+            children: [
+                n.children,
+                jsxRuntimeExports.jsx('div', {
+                    className: cx(
+                        styles$A.percent,
+                        styles$A[`percent__color-${e}`],
+                        styles$A[`percent__size-${r}`],
+                        null == s ? void 0 : s.percent,
+                    ),
+                }),
+            ],
+        });
+    });
+((Discount.colors = colors$1), (Discount.sizes = sizes$9));
 const directions = { horizontal: 'horizontal' },
     PERCENT_OF_VISIBLE_ELEMENTS = 1.5,
     SAFETY_FACTOR = 0.25;
@@ -6459,32 +8429,32 @@ class ErrorHandler extends reactExports.Component {
 const base__x120x96 = 'VehicleImage_base__x120x96_32ca06f1',
     base__x190x152 = 'VehicleImage_base__x190x152_41379c70',
     base__x380x304 = 'VehicleImage_base__x380x304_274f87fe',
-    styles$H = { base__x120x96: base__x120x96, base__x190x152: base__x190x152, base__x380x304: base__x380x304 },
-    sizes$a = { x120x96: 'x120x96', x190x152: 'x190x152', x380x304: 'x380x304' },
-    Base$g = defineStyledComponent('VehicleImage', {
+    styles$z = { base__x120x96: base__x120x96, base__x190x152: base__x190x152, base__x380x304: base__x380x304 },
+    sizes$8 = { x120x96: 'x120x96', x190x152: 'x190x152', x380x304: 'x380x304' },
+    Base$c = defineStyledComponent('VehicleImage', {
         element: Image$1,
-        className: styles$H.base,
+        className: styles$z.base,
         cva: {
             variants: {
                 size: {
-                    [sizes$a.x120x96]: styles$H.base__x120x96,
-                    [sizes$a.x190x152]: styles$H.base__x190x152,
-                    [sizes$a.x380x304]: styles$H.base__x380x304,
+                    [sizes$8.x120x96]: styles$z.base__x120x96,
+                    [sizes$8.x190x152]: styles$z.base__x190x152,
+                    [sizes$8.x380x304]: styles$z.base__x380x304,
                 },
             },
         },
     });
-function UnknownVehicleImage({ size: e = sizes$a.x380x304, ...t }) {
-    return jsxRuntimeExports.jsx(Base$g, { ...t, size: e, path: `vehicle.${e}.tank_empty` });
+function UnknownVehicleImage({ size: e = sizes$8.x380x304, ...t }) {
+    return jsxRuntimeExports.jsx(Base$c, { ...t, size: e, path: `vehicle.${e}.tank_empty` });
 }
 const VehicleImage = reactExports.forwardRef(function (
-    { size: e = sizes$a.x380x304, name: t, width: s, height: r, className: n, ...o },
+    { size: e = sizes$8.x380x304, name: t, width: s, height: r, className: n, ...o },
     a,
 ) {
     const i = resources.resolve('images'),
         u = `vehicle.${e}.${getVehicleImageKey(t)}`;
     return i.has(u)
-        ? jsxRuntimeExports.jsx(Base$g, { ...o, ref: a, size: e, className: n, path: u, width: s, height: r })
+        ? jsxRuntimeExports.jsx(Base$c, { ...o, ref: a, size: e, className: n, path: u, width: s, height: r })
         : (console.warn(`Fail to retrieve icon maps/icons/vehicle/${e}/${getVehicleImageKey(t)}`),
           jsxRuntimeExports.jsx(UnknownVehicleImage, { size: e, className: n, width: s, height: r }));
 });
@@ -6510,16 +8480,16 @@ function useCalculateLeftTime(e) {
             ? hours(1)
             : hours(0);
 }
-((VehicleImage.UnknownVehicleImage = UnknownVehicleImage), (VehicleImage.size = sizes$a));
-const base$A = 'IconCounter_33c660e9',
-    styles$G = { base: base$A };
+((VehicleImage.UnknownVehicleImage = UnknownVehicleImage), (VehicleImage.size = sizes$8));
+const base$t = 'IconCounter_33c660e9',
+    styles$y = { base: base$t };
 function IconCounter({ className: e }) {
-    return jsxRuntimeExports.jsx('div', { className: cx(styles$G.base, e) });
+    return jsxRuntimeExports.jsx('div', { className: cx(styles$y.base, e) });
 }
-const base$z = 'ShortCounter_d2d7b370',
+const base$s = 'ShortCounter_d2d7b370',
     text = 'ShortCounter_text_ecf2e742',
     count = 'ShortCounter_count_d7a74fd8',
-    styles$F = { base: base$z, text: text, count: count },
+    styles$x = { base: base$s, text: text, count: count },
     ShortCounter = reactExports.forwardRef(function ({ time: e, wins: t, battles: s, classNames: r, ...n }, o) {
         const a = resources.resolve('intl'),
             i = useCalculateLeftTime(e),
@@ -6538,16 +8508,16 @@ const base$z = 'ShortCounter_d2d7b370',
             return jsxRuntimeExports.jsxs('div', {
                 ...n,
                 ref: o,
-                className: cx(styles$F.base, null == r ? void 0 : r.base),
+                className: cx(styles$x.base, null == r ? void 0 : r.base),
                 children: [
                     jsxRuntimeExports.jsx(IconCounter, { className: null == r ? void 0 : r.icon }),
                     jsxRuntimeExports.jsx(FormatPluralString, {
-                        className: cx(styles$F.text, null == r ? void 0 : r.text),
+                        className: cx(styles$x.text, null == r ? void 0 : r.text),
                         path: u.path,
                         count: u.count,
                         params: {
                             count: jsxRuntimeExports.jsxs('span', {
-                                className: styles$F.count,
+                                className: styles$x.count,
                                 children: [a.formatNumber('integral', u.count), ' '],
                             }),
                         },
@@ -6565,9 +8535,9 @@ function isSerializableReactNode(e) {
     );
 }
 RentalCounter.ShortCounter = ShortCounter;
-const base$y = 'MultilineOverflow_8834bd8e',
-    content$a = 'MultilineOverflow_content_b539970d',
-    styles$E = { base: base$y, content: content$a };
+const base$r = 'MultilineOverflow_8834bd8e',
+    content$8 = 'MultilineOverflow_content_b539970d',
+    styles$w = { base: base$r, content: content$8 };
 function isSerializableParams(e) {
     return !e || Object.values(e).every(isSerializableReactNode);
 }
@@ -6602,7 +8572,7 @@ const MultilineOverflow = reactExports.forwardRef(function (
                 if (!t) return;
                 (r(),
                     (s.style.visibility = 'hidden'),
-                    (s.className = cx(styles$E.content, t.children[0].className)),
+                    (s.className = cx(styles$w.content, t.children[0].className)),
                     (s.innerHTML = ''),
                     t.appendChild(s));
                 for (let r of t.children[0].childNodes.values()) {
@@ -6683,7 +8653,7 @@ const MultilineOverflow = reactExports.forwardRef(function (
                 (null == i || i(e), l || g.onMouseLeave());
             },
             ref: assignRefs([p, x]),
-            className: cx(styles$E.base, d, null == _ ? void 0 : _.base),
+            className: cx(styles$w.base, d, null == _ ? void 0 : _.base),
             children: jsxRuntimeExports.jsx(FormatText, {
                 text: e,
                 brackets: t,
@@ -6752,421 +8722,6 @@ function fromModel(e) {
         vehicleBonusDetails: map$1(e.vehicleBonusDetails, fromVehicleBonusDetailModel),
     };
 }
-const Slot$1 = React.forwardRef((e, t) => {
-    const { children: s, ...r } = e,
-        n = React.Children.toArray(s),
-        o = n.find(isSlottable);
-    if (o) {
-        const e = o.props.children,
-            s = n.map((t) =>
-                t === o
-                    ? React.Children.count(e) > 1
-                        ? React.Children.only(null)
-                        : React.isValidElement(e)
-                          ? e.props.children
-                          : null
-                    : t,
-            );
-        return jsxRuntimeExports.jsx(SlotClone, {
-            ...r,
-            ref: t,
-            children: React.isValidElement(e) ? React.cloneElement(e, void 0, s) : null,
-        });
-    }
-    return jsxRuntimeExports.jsx(SlotClone, { ...r, ref: t, children: s });
-});
-Slot$1.displayName = 'Slot';
-const SlotClone = React.forwardRef((e, t) => {
-    const { children: s, ...r } = e;
-    if (React.isValidElement(s)) {
-        const e = getElementRef(s),
-            n = mergeProps(r, s.props);
-        return (s.type !== React.Fragment && (n.ref = t ? assignRefs([t, e]) : e), React.cloneElement(s, n));
-    }
-    return (console.warn('Invalid children', s), null);
-});
-SlotClone.displayName = 'SlotClone';
-const Slottable = ({ children: e }) => jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: e });
-function isSlottable(e) {
-    return React.isValidElement(e) && e.type === Slottable;
-}
-function mergeProps(e, t) {
-    const s = { ...e, ...t };
-    for (const r in t) {
-        const n = e[r],
-            o = t[r];
-        r.startsWith('on')
-            ? n && o
-                ? (s[r] = (...e) => {
-                      (o(...e), n(...e));
-                  })
-                : n && (s[r] = n)
-            : 'style' === r
-              ? (s[r] = { ...n, ...o })
-              : 'className' === r && (s[r] = [n, o].filter(Boolean).join(' '));
-    }
-    return s;
-}
-function getElementRef(e) {
-    return e.props.ref || e.ref;
-}
-function useParamTooltipApadter(e) {
-    return useParamTooltip(e.type, e.args, e.params);
-}
-function useWulfTooltipAdapter(e) {
-    return useWulfTooltip(e.tooltipId, e.args, e.params);
-}
-function useSpecialTooltipAdapter(e) {
-    return useSpecialTooltip(e.tooltipId, e.args, e.params);
-}
-function createTooltipComponent(e, t) {
-    function s({ asChild: t, params: s, disabled: r, ...n }) {
-        const o = t ? Slot$1 : 'div',
-            a = e(r ? { ...s, disabled: r } : s);
-        return jsxRuntimeExports.jsx(o, { ...n, ...a });
-    }
-    return ((s.displayName = t), s);
-}
-const Tooltip$2 = createTooltipComponent(useTooltip, 'Tooltip'),
-    SimpleTooltip$1 = createTooltipComponent(useSimpleTooltip, 'SimpleTooltip');
-(createTooltipComponent(useParamTooltipApadter, 'ParamsTooltip'),
-    createTooltipComponent(useWulfTooltipAdapter, 'WulfTooltip'),
-    createTooltipComponent(useSpecialTooltipAdapter, 'SpecialTooltip'));
-const BackportTooltip$1 = createTooltipComponent(useBackdropTooltip, 'BackportTooltip'),
-    BackdropTooltip = BackportTooltip$1,
-    contextInstance$1 = reactExports.createContext(null),
-    positions = { left: 'left', right: 'right', top: 'top', bottom: 'bottom' };
-Object.values(positions);
-const verticalPositions = ['top', 'bottom'],
-    oppositePositions = { top: 'bottom', bottom: 'top', left: 'right', right: 'left' };
-function isVerticalPosition(e) {
-    return verticalPositions.includes(e);
-}
-function usePopoverOptional() {
-    return reactExports.useContext(contextInstance$1);
-}
-function usePopover() {
-    const e = reactExports.useContext(contextInstance$1);
-    if (!e) throw new Error('usePopover must be used within a Popover');
-    return e;
-}
-const initialState = { opened: !1 };
-function usePopoverInstance(e) {
-    const [t, s] = reactExports.useState(initialState),
-        r = reactExports.useMemo(() => {
-            const t = observable.box(),
-                r = { onBeforeOpen: new Set(), onBeforeClose: new Set() },
-                n = { bounding: observable.box(), position: observable.box() };
-            function o(e) {
-                s((t) => {
-                    const s = e(t);
-                    return (
-                        t.opened === s.opened ||
-                            (s.opened ? r.onBeforeOpen.forEach((e) => e()) : r.onBeforeClose.forEach((e) => e())),
-                        s
-                    );
-                });
-            }
-            return {
-                id: e,
-                open: () => o((e) => ({ ...e, opened: !0 })),
-                close: () => o((e) => ({ ...e, opened: !1 })),
-                toggle: () => o((e) => ({ ...e, opened: !e.opened })),
-                subscribe: {
-                    onBeforeOpen: (e) => (r.onBeforeOpen.add(e), () => r.onBeforeOpen.delete(e)),
-                    onBeforeClose: (e) => (r.onBeforeClose.add(e), () => r.onBeforeClose.delete(e)),
-                },
-                portal: {
-                    bounding: n.bounding,
-                    setBounding: takeAction(n.bounding),
-                    position: n.position,
-                    setPosition: takeAction(n.position),
-                },
-                trigger: { bounding: t, setBounding: takeAction(t) },
-            };
-        }, [e]);
-    return reactExports.useMemo(() => ({ ...r, ...t }), [r, t]);
-}
-const border$6 = 'Popover_border_d0a76717',
-    title$1 = 'Popover_title_e4a0437a',
-    subtitle = 'Popover_subtitle_1c7535c8',
-    header = 'Popover_header_de23fc15',
-    body = 'Popover_body_22163d58',
-    divider = 'Popover_divider_46fe6f15',
-    decoration$1 = 'Popover_decoration_134219d5',
-    close = 'Popover_close_ad4a9c7b',
-    styles$D = {
-        border: border$6,
-        title: title$1,
-        subtitle: subtitle,
-        header: header,
-        body: body,
-        divider: divider,
-        decoration: decoration$1,
-        close: close,
-    },
-    Close = reactExports.forwardRef(({ className: e, children: t, ...s }, r) => {
-        const n = usePopoverOptional(),
-            o = useSounds(),
-            a = useUpscale('ui_kit.close_button.icon_small', 'ui_kit.close_button.icon_medium');
-        return (
-            reactExports.useEffect(
-                () =>
-                    onResize(function () {
-                        null == n || n.close();
-                    }),
-                [n],
-            ),
-            jsxRuntimeExports.jsx('div', {
-                ...s,
-                onClick: function (e) {
-                    var t;
-                    (null == (t = s.onClick) || t.call(s, e),
-                        o.play('close', { target: 'react-popover:close', original: e }),
-                        null == n || n.close());
-                },
-                onMouseEnter: function (e) {
-                    var t;
-                    (null == (t = s.onMouseEnter) || t.call(s, e),
-                        o.play('mouse-enter', { target: 'react-popover:close', original: e }));
-                },
-                ref: r,
-                className: cx(styles$D.close, e),
-                children: t ?? jsxRuntimeExports.jsx(Image$1, { path: a, width: 24, height: 24 }),
-            })
-        );
-    }),
-    FREE_SPACE = 8,
-    animationTransitions = {
-        top: 'translate(0rem, -50rem) scale(0.9)',
-        bottom: 'translate(0rem, 50rem) scale(0.9)',
-        left: 'translate(-50rem, 0rem) scale(0.9)',
-        right: 'translate(50rem, 0rem) scale(0.9)',
-    };
-function Portal({
-    children: e,
-    target: t,
-    pivot: s = 0,
-    position: r = 'top',
-    lazy: n = !1,
-    closeByEscape: o = !0,
-    ...a
-}) {
-    const i = usePopover(),
-        u = React.useRef(null),
-        l = reactExports.useMemo(() => (t ? (document.querySelector(t) ?? document.body) : document.body), [t]);
-    reactExports.useEffect(() => {
-        const e = u.current;
-        if (!e) return;
-        const t = document.querySelector(`[data-popover-trigger-id="${i.id}"]`),
-            n = e.querySelector(`[data-popover-display-id="${i.id}"]`);
-        if (!t || !n) return;
-        const o = watchResizes([t, e, document.body], ([t, n, o]) => {
-            if (!i.opened) return;
-            const a = getUpdatedPosition(r, t, n, o);
-            (updatePosition(s, a, t, n, o, e),
-                runInAction(() => {
-                    (i.trigger.setBounding(t), i.portal.setBounding(n), i.portal.setPosition(a));
-                }));
-        });
-        return (o.start(), o.stop);
-    }, [s, i.id, i.portal, i.trigger, r, i.opened]);
-    const c = reactExports.useCallback(() => {
-        const e = u.current;
-        e &&
-            document.activeElement &&
-            document.activeElement instanceof HTMLElement &&
-            e.contains(document.activeElement) &&
-            document.activeElement.blur();
-    }, []);
-    (reactExports.useEffect(() => i.subscribe.onBeforeClose(c), [i.subscribe, c]),
-        useHandleKeydown(o && i.opened ? keyCodes.ESCAPE : keyCodes.NONE, () => {
-            i.close();
-        }),
-        reactExports.useEffect(() => {
-            if (!i.opened) return;
-            const e = u.current;
-            if (!e) return;
-            const t = e;
-            function s(e) {
-                const s = e.target;
-                return (
-                    s instanceof HTMLElement &&
-                    !(
-                        t === s ||
-                        t.contains(s) ||
-                        s.closest(`[data-popover-trigger-id="${i.id}"]`) ||
-                        s.closest(`[data-popover-outside-click-whitelist-id="${i.id}"]`)
-                    )
-                );
-            }
-            return new DisposeBuilder()
-                .add(
-                    addEventListener(document, 'click', (e) => {
-                        s(e) && i.close();
-                    }),
-                )
-                .add(
-                    mouse.down(([e, t]) => {
-                        if ('outside' === t) return i.close();
-                        const r = e.button;
-                        (r !== mouseButtons.right && r !== mouseButtons.wheel) || (s(e) && i.close());
-                    }),
-                ).dispose;
-        }, [i]));
-    const d = useSpring({
-        opacity: i.opened ? 1 : 0,
-        transform: i.opened ? 'translate(0rem, 0rem) scale(1)' : animationTransitions[r],
-        config: { easing: easings.easeInOutCubic, duration: 250 },
-    });
-    return !i.opened && n
-        ? null
-        : jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {
-              children: ReactDOM.createPortal(
-                  jsxRuntimeExports.jsx(animated.div, {
-                      ...a,
-                      ref: u,
-                      style: {
-                          position: 'absolute',
-                          top: '0',
-                          left: '0',
-                          pointerEvents: d.opacity.to((e) => (1 === e ? 'auto' : 'none')),
-                          display: d.opacity.to((e) => (0 === e ? 'none' : 'block')),
-                          ...a.style,
-                      },
-                      children: jsxRuntimeExports.jsx(animated.div, { style: d, children: e }),
-                  }),
-                  l,
-              ),
-          });
-}
-function getUpdatedPosition(e, t, s, r) {
-    return ('top' === e && t.top - s.height < 0) ||
-        ('bottom' === e && t.bottom + s.height > r.height) ||
-        ('left' === e && t.left - s.width < 0) ||
-        ('right' === e && t.right + s.width > r.width)
-        ? oppositePositions[e]
-        : e;
-}
-function applyTransform(e, t, s, r) {
-    ((e = clamp(0, r.width - s.offsetWidth, e)),
-        (t = clamp(0, r.height - s.offsetHeight, t)),
-        (s.style.transform = `translate(${e}px, ${t}px)`));
-}
-function updatePosition(e, t, s, r, n, o) {
-    const a = remToPx$1(FREE_SPACE);
-    if ('top' === t) {
-        const t = (r.width - s.width) * e;
-        applyTransform(s.left - t, s.top - r.height - a, o, n);
-    } else if ('bottom' === t) {
-        const t = (r.width - s.width) * e;
-        applyTransform(s.left - t, s.bottom + a, o, n);
-    } else if ('left' === t) {
-        const t = s.left - r.width - a,
-            i = (r.height - s.height) * e;
-        applyTransform(t, s.top - i, o, n);
-    } else if ('right' === t) {
-        const t = s.right + a,
-            i = (r.height - s.height) * e;
-        applyTransform(t, s.top - i, o, n);
-    }
-}
-const base$x = 'PopoverTip_163a336f',
-    arrow = 'PopoverTip_arrow_44c7d6a5',
-    glow$1 = 'PopoverTip_glow_da3f9be9',
-    styles$C = {
-        base: base$x,
-        'base__flip-left': 'PopoverTip_base__flip-left_3cc0dadc',
-        'base__flip-right': 'PopoverTip_base__flip-right_6a5605b6',
-        'base__flip-top': 'PopoverTip_base__flip-top_6bcc69e1',
-        'base__flip-bottom': 'PopoverTip_base__flip-bottom_416a1dc4',
-        arrow: arrow,
-        'arrow__position-top': 'PopoverTip_arrow__position-top_a95d47a6',
-        'arrow__position-bottom': 'PopoverTip_arrow__position-bottom_9d75ac12',
-        'arrow__position-left': 'PopoverTip_arrow__position-left_ca4ced33',
-        'arrow__position-right': 'PopoverTip_arrow__position-right_9dc94f7a',
-        glow: glow$1,
-    },
-    verticals = [positions.top, positions.bottom],
-    horizontals = [positions.left, positions.right],
-    rotations = { top: 180, bottom: 0, left: 90, right: -90 },
-    Tip = reactExports.forwardRef(({ size: e, ...t }, s) => {
-        const r = reactExports.useRef(null),
-            n = usePopoverOptional(),
-            [o, a] = reactExports.useState(t.position),
-            [i, u] = reactExports.useState(t.offset);
-        return (
-            reactExports.useEffect(() => {
-                const e = r.current;
-                if (e && n)
-                    return autorun(() => {
-                        const t = n.trigger.bounding.get(),
-                            s = n.portal.bounding.get(),
-                            r = n.portal.position.get();
-                        if (!t || !r || !s) return;
-                        const o = oppositePositions[r];
-                        (a(o),
-                            isVerticalPosition(o)
-                                ? (u(`${Math.max(0, t.left - s.left)}px`),
-                                  (e.style.width = `${Math.min(t.width, s.width)}px`))
-                                : (u(`${Math.max(0, t.top - s.top)}px`),
-                                  (e.style.height = `${Math.min(t.height, s.height)}px`)));
-                    });
-            }, [n]),
-            jsxRuntimeExports.jsxs('div', {
-                ...t,
-                ref: assignRefs([s, r]),
-                style: {
-                    width: verticals.includes(o) ? e : '1rem',
-                    height: horizontals.includes(o) ? e : '1rem',
-                    top: horizontals.includes(o) ? i : 'auto',
-                    bottom: 'bottom' === o ? '0' : 'auto',
-                    left: verticals.includes(o) ? i : 'auto',
-                    right: 'right' === o ? '0' : 'auto',
-                    ...t.style,
-                },
-                className: cx(styles$C.base, t.flipped && styles$C[`base__flipped-${o}`], t.className),
-                children: [
-                    jsxRuntimeExports.jsx('div', {
-                        className: cx(styles$C.arrow, styles$C[`arrow__position-${o}`]),
-                        style: { transform: `translate(-50%, -50%) rotate(${rotations[o]}deg)` },
-                    }),
-                    !1 === t.noGlow &&
-                        jsxRuntimeExports.jsx('div', {
-                            className: styles$C.glow,
-                            style: { transform: `translate(-50%, -50%) rotate(${rotations[o]}deg)` },
-                        }),
-                ],
-            })
-        );
-    });
-function Trigger({ children: e }) {
-    const t = usePopover();
-    return e({ onClick: t.toggle, 'data-popover-trigger-id': t.id }, t);
-}
-Tip.positions = positions;
-const Title = defineStyledComponent('Title', styles$D.title),
-    Subtitle = defineStyledComponent('Subtitle', styles$D.subtitle),
-    Header = defineStyledComponent('Header', styles$D.header),
-    Divider = defineStyledComponent('Divider', styles$D.divider),
-    Body = defineStyledComponent('Body', styles$D.body),
-    Decoration$1 = defineStyledComponent('Decoration', styles$D.decoration),
-    Display = reactExports.forwardRef((e, t) => {
-        const s = usePopoverOptional();
-        return jsxRuntimeExports.jsxs(Decoration$1, {
-            ...e,
-            ref: t,
-            'data-popover-display-id': null == s ? void 0 : s.id,
-            children: [jsxRuntimeExports.jsx('div', { className: styles$D.border }), e.children],
-        });
-    });
-function Popover(e) {
-    const t = reactExports.useId();
-    return jsxRuntimeExports.jsx(contextInstance$1.Provider, {
-        value: usePopoverInstance(e.id ?? t),
-        children: e.children,
-    });
-}
 function Sprite(e) {
     var t;
     const s = null == (t = e.sprite.frames[e.icon]) ? void 0 : t.frame;
@@ -7186,17 +8741,6 @@ function useHoverState(e) {
     const [t, s] = reactExports.useState(!1);
     return [t ? `${e}_hover` : e, s];
 }
-((Popover.Close = Close),
-    (Popover.Title = Title),
-    (Popover.Subtitle = Subtitle),
-    (Popover.Header = Header),
-    (Popover.Divider = Divider),
-    (Popover.Body = Body),
-    (Popover.Tip = Tip),
-    (Popover.Display = Display),
-    (Popover.use = usePopover),
-    (Popover.Portal = Portal),
-    (Popover.Trigger = Trigger));
 const states = { default: 'default', alert: 'alert', error: 'error', done: 'done' },
     messageTypes = { alert: 'alert', error: 'error' },
     types$2 = {
@@ -7207,9 +8751,9 @@ const states = { default: 'default', alert: 'alert', error: 'error', done: 'done
         email: 'email',
         integer: 'integer',
     },
-    sizes$9 = { medium: 'medium', large: 'large' },
+    sizes$7 = { medium: 'medium', large: 'large' },
     icons = { search: 'search' },
-    defaultConfig = { type: types$2.text, size: sizes$9.medium, state: states.default, disabled: !1 },
+    defaultConfig = { type: types$2.text, size: sizes$7.medium, state: states.default, disabled: !1 },
     placeholderVisibility = { focusedOrValue: 'focusedOrValue', value: 'value' },
     contextInstance = reactExports.createContext(null);
 function useInput() {
@@ -7266,8 +8810,8 @@ function useInputInstance({ value: e, size: t, type: s, state: r, disabled: n })
         )
     );
 }
-const disabledOverlay$2 = 'Input_disabledOverlay_3e980046',
-    icon$7 = 'Input_icon_ed3c6a4a',
+const disabledOverlay$1 = 'Input_disabledOverlay_3e980046',
+    icon$6 = 'Input_icon_ed3c6a4a',
     clearButton = 'Input_clearButton_d26b0bd5',
     decoration = 'Input_decoration_b561de7a',
     decoration__focused = 'Input_decoration__focused_494bd5d6',
@@ -7300,9 +8844,9 @@ const disabledOverlay$2 = 'Input_disabledOverlay_3e980046',
     clearButton__largeSize = 'Input_clearButton__largeSize_240e111e',
     clearButton__visible = 'Input_clearButton__visible_8d3756eb',
     clearButton__upscale = 'Input_clearButton__upscale_494bd5d6',
-    styles$B = {
-        disabledOverlay: disabledOverlay$2,
-        icon: icon$7,
+    styles$v = {
+        disabledOverlay: disabledOverlay$1,
+        icon: icon$6,
         clearButton: clearButton,
         decoration: decoration,
         decoration__focused: decoration__focused,
@@ -7340,15 +8884,15 @@ const disabledOverlay$2 = 'Input_disabledOverlay_3e980046',
     ClearButton = reactExports.forwardRef(function ({ className: e, children: t, ...s }, r) {
         const n = useSounds(),
             { value: o, clear: a, size: i, disabled: u, focus: l } = useInput(),
-            c = useUpscale(void 0, styles$B.clearButton__upscale);
+            c = useUpscale(void 0, styles$v.clearButton__upscale);
         return jsxRuntimeExports.jsx('button', {
             ...s,
             type: 'button',
             ref: r,
             className: cx(
-                styles$B.clearButton,
-                o && !u && styles$B.clearButton__visible,
-                styles$B[`clearButton__${i}Size`],
+                styles$v.clearButton,
+                o && !u && styles$v.clearButton__visible,
+                styles$v[`clearButton__${i}Size`],
                 c,
                 e,
             ),
@@ -7376,10 +8920,10 @@ const disabledOverlay$2 = 'Input_disabledOverlay_3e980046',
             ...s,
             ref: r,
             className: cx(
-                styles$B.decoration,
-                styles$B[`decoration__${o}State`],
-                a && styles$B.decoration__disabled,
-                i && styles$B.decoration__focused,
+                styles$v.decoration,
+                styles$v[`decoration__${o}State`],
+                a && styles$v.decoration__disabled,
+                i && styles$v.decoration__focused,
                 e,
             ),
             onMouseEnter: function (e) {
@@ -7393,7 +8937,7 @@ const disabledOverlay$2 = 'Input_disabledOverlay_3e980046',
                     u(),
                     null == (t = s.onClick) || t.call(s, e));
             },
-            children: [jsxRuntimeExports.jsx('div', { className: styles$B.disabledOverlay }), t],
+            children: [jsxRuntimeExports.jsx('div', { className: styles$v.disabledOverlay }), t],
         });
     }),
     allowSeparators = new Set([',', '.']);
@@ -7430,9 +8974,9 @@ const Placeholder = reactExports.forwardRef(function (
                 ...r,
                 ref: n,
                 className: cx(
-                    styles$B.placeholder,
-                    u && styles$B.placeholder__disabled,
-                    styles$B[`placeholder__${i}Size`],
+                    styles$v.placeholder,
+                    u && styles$v.placeholder__disabled,
+                    styles$v[`placeholder__${i}Size`],
                     t,
                 ),
                 children: s,
@@ -7452,7 +8996,7 @@ const Placeholder = reactExports.forwardRef(function (
     ) {
         const { type: u, value: l, disabled: c, size: d, inputRef: _, focused: m, setFocused: p } = useInput();
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$B.fieldWrapper, null == t ? void 0 : t.wrapper),
+            className: cx(styles$v.fieldWrapper, null == t ? void 0 : t.wrapper),
             ref: s,
             children: [
                 jsxRuntimeExports.jsx('input', {
@@ -7463,10 +9007,10 @@ const Placeholder = reactExports.forwardRef(function (
                     disabled: c,
                     type: typeToHtmlType[u] ?? u,
                     className: cx(
-                        styles$B.field,
-                        styles$B[`field__${d}Size`],
-                        m && styles$B.field__focused,
-                        c && styles$B.field__disabled,
+                        styles$v.field,
+                        styles$v[`field__${d}Size`],
+                        m && styles$v.field__focused,
+                        c && styles$v.field__disabled,
                         e,
                     ),
                     onChange: function (e) {
@@ -7505,15 +9049,15 @@ const Placeholder = reactExports.forwardRef(function (
     iconsSet = new Set(Object.values(icons)),
     Icon = reactExports.forwardRef(function ({ className: e, icon: t, children: s, ...r }, n) {
         const { size: o, focused: a } = useInput(),
-            i = useUpscale(void 0, styles$B.icon__upscale);
+            i = useUpscale(void 0, styles$v.icon__upscale);
         return jsxRuntimeExports.jsx('div', {
             ...r,
             ref: n,
             className: cx(
-                styles$B.icon,
-                styles$B[`icon__${o}Size`],
-                a && styles$B.icon__focused,
-                t && iconsSet.has(t) && styles$B[`icon__${t}Icon`],
+                styles$v.icon,
+                styles$v[`icon__${o}Size`],
+                a && styles$v.icon__focused,
+                t && iconsSet.has(t) && styles$v[`icon__${t}Icon`],
                 i,
                 e,
             ),
@@ -7530,10 +9074,10 @@ const Placeholder = reactExports.forwardRef(function (
             ...n,
             ref: o,
             className: cx(
-                styles$B.message,
-                s && styles$B.message__visible,
-                styles$B[`message__${t}Type`],
-                styles$B[`message__${a}Size`],
+                styles$v.message,
+                s && styles$v.message__visible,
+                styles$v[`message__${t}Type`],
+                styles$v[`message__${a}Size`],
                 e,
             ),
             children: r,
@@ -7554,7 +9098,7 @@ const Input = reactExports.forwardRef(function ({ value: e, state: t, disabled: 
 });
 ((Input.types = types$2),
     (Input.messageTypes = messageTypes),
-    (Input.sizes = sizes$9),
+    (Input.sizes = sizes$7),
     (Input.states = states),
     (Input.icons = icons),
     (Input.Provider = Provider),
@@ -7566,55 +9110,55 @@ const Input = reactExports.forwardRef(function ({ value: e, state: t, disabled: 
     (Input.ClearButton = ClearButton));
 const toggleThemes = { primary: 'primary', custom: 'custom' },
     toggleSizes = { extraSmall: 'extraSmall', small: 'small', medium: 'medium' },
-    base$w = 'Toggle_cdf77db0',
+    base$q = 'Toggle_cdf77db0',
     base__fullSizeContent = 'Toggle_base__fullSizeContent_1b52d9ec',
     base__activated = 'Toggle_base__activated_d584e080',
-    base__disabled$5 = 'Toggle_base__disabled_b564a69b',
-    background$5 = 'Toggle_background_78cd67c0',
-    border$5 = 'Toggle_border_3d0d0d39',
+    base__disabled$4 = 'Toggle_base__disabled_b564a69b',
+    background$4 = 'Toggle_background_78cd67c0',
+    border$4 = 'Toggle_border_3d0d0d39',
     bulb = 'Toggle_bulb_fe6d0fba',
-    overlay$3 = 'Toggle_overlay_e2999686',
-    content$9 = 'Toggle_content_17eff4d2',
-    styles$A = {
-        base: base$w,
+    overlay$2 = 'Toggle_overlay_e2999686',
+    content$7 = 'Toggle_content_17eff4d2',
+    styles$u = {
+        base: base$q,
         'base__size-small': 'Toggle_base__size-small_b76142a1',
         'base__size-medium': 'Toggle_base__size-medium_a0d408f5',
         base__fullSizeContent: base__fullSizeContent,
         'base__theme-primary': 'Toggle_base__theme-primary_3e3de333',
         base__activated: base__activated,
-        base__disabled: base__disabled$5,
-        background: background$5,
-        border: border$5,
+        base__disabled: base__disabled$4,
+        background: background$4,
+        border: border$4,
         bulb: bulb,
-        overlay: overlay$3,
-        content: content$9,
+        overlay: overlay$2,
+        content: content$7,
     },
-    Base$f = defineStyledComponent('Toggle', styles$A.base, {
+    Base$b = defineStyledComponent('Toggle', styles$u.base, {
         variants: {
-            theme: { [toggleThemes.primary]: styles$A['base__theme-primary'], [toggleThemes.custom]: void 0 },
+            theme: { [toggleThemes.primary]: styles$u['base__theme-primary'], [toggleThemes.custom]: void 0 },
             size: {
-                [toggleSizes.extraSmall]: styles$A['base__size-extraSmall'],
-                [toggleSizes.small]: styles$A['base__size-small'],
-                [toggleSizes.medium]: styles$A['base__size-medium'],
+                [toggleSizes.extraSmall]: styles$u['base__size-extraSmall'],
+                [toggleSizes.small]: styles$u['base__size-small'],
+                [toggleSizes.medium]: styles$u['base__size-medium'],
             },
-            activated: { true: styles$A.base__activated },
-            disabled: { true: styles$A.base__disabled },
+            activated: { true: styles$u.base__activated },
+            disabled: { true: styles$u.base__disabled },
         },
         defaultVariants: { theme: toggleThemes.primary, size: toggleSizes.extraSmall },
     }),
     ToggleBase = reactExports.forwardRef(function (e, t) {
         const s = useSounds();
-        return jsxRuntimeExports.jsx(Base$f, {
+        return jsxRuntimeExports.jsx(Base$b, {
             ...e,
             ref: t,
             onMouseEnter: function (t) {
                 var r;
-                (s.play('mouse-enter', { target: Base$f.displayName, original: t }),
+                (s.play('mouse-enter', { target: Base$b.displayName, original: t }),
                     null == (r = e.onMouseEnter) || r.call(e, t));
             },
             onClick: function (t) {
                 var r;
-                (s.play('click', { target: Base$f.displayName, original: t }), null == (r = e.onClick) || r.call(e, t));
+                (s.play('click', { target: Base$b.displayName, original: t }), null == (r = e.onClick) || r.call(e, t));
             },
             children: e.children,
         });
@@ -7636,572 +9180,23 @@ const toggleThemes = { primary: 'primary', custom: 'custom' },
             ref: i,
             size: t,
             theme: s,
-            className: cx(o, r && styles$A.base__fullSizeContent, null == n ? void 0 : n.base),
+            className: cx(o, r && styles$u.base__fullSizeContent, null == n ? void 0 : n.base),
             children: [
-                jsxRuntimeExports.jsx('div', { className: cx(styles$A.border, null == n ? void 0 : n.border) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$A.background, null == n ? void 0 : n.background) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$A.bulb, null == n ? void 0 : n.bulb) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$A.overlay, null == n ? void 0 : n.overlay) }),
+                jsxRuntimeExports.jsx('div', { className: cx(styles$u.border, null == n ? void 0 : n.border) }),
+                jsxRuntimeExports.jsx('div', { className: cx(styles$u.background, null == n ? void 0 : n.background) }),
+                jsxRuntimeExports.jsx('div', { className: cx(styles$u.bulb, null == n ? void 0 : n.bulb) }),
+                jsxRuntimeExports.jsx('div', { className: cx(styles$u.overlay, null == n ? void 0 : n.overlay) }),
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$A.content, null == n ? void 0 : n.content),
+                    className: cx(styles$u.content, null == n ? void 0 : n.content),
                     children: e,
                 }),
             ],
         });
     });
 ((Toggle.themes = toggleThemes), (Toggle.sizes = toggleSizes));
-const CardContext = reactExports.createContext(void 0);
-function useCardContext() {
-    const e = reactExports.useContext(CardContext);
-    if (!e) throw new Error('Card context must be used only within its provider');
-    return e;
-}
-function CardContextProvider({ selected: e, hover: t, disabled: s, multiple: r, status: n, children: o }) {
-    const a = reactExports.useMemo(
-        () => ({ selected: e, hover: t, disabled: s, multiple: r, status: n }),
-        [s, t, r, e, n],
-    );
-    return jsxRuntimeExports.jsx(CardContext.Provider, { value: a, children: o });
-}
-const CardsWrapperContext = reactExports.createContext(null);
-function useCardsWrapperContext() {
-    const e = reactExports.useContext(CardsWrapperContext);
-    if (!e) throw new Error('CardsWrapper context must be used only within its provider');
-    return e;
-}
-function useCardsWrapperContextOptional() {
-    return reactExports.useContext(CardsWrapperContext);
-}
-const CardsWrapperContextProvider = CardsWrapperContext.Provider,
-    base$v = 'Content_8eaaf71a',
-    content$8 = 'Content_ab8563af',
-    disabledOverlay$1 = 'Content_disabledOverlay_af87c441',
-    base__multiple = 'Content_base__multiple_da09528a',
-    base__disabled$4 = 'Content_base__disabled_da09528a',
-    base__hover$1 = 'Content_base__hover_da09528a',
-    base__selectedHover$1 = 'Content_base__selectedHover_da09528a',
-    base__selected$1 = 'Content_base__selected_da09528a',
-    multipleCorner = 'Content_multipleCorner_151c26ee',
-    styles$z = {
-        base: base$v,
-        content: content$8,
-        disabledOverlay: disabledOverlay$1,
-        base__multiple: base__multiple,
-        base__disabled: base__disabled$4,
-        base__hover: base__hover$1,
-        base__selectedHover: base__selectedHover$1,
-        base__selected: base__selected$1,
-        multipleCorner: multipleCorner,
-    },
-    MULTIPLE_CORNER_SIZE = 20,
-    Base$e = defineStyledComponent('Content', styles$z.base, {
-        variants: {
-            multiple: { true: styles$z.base__multiple },
-            selected: { true: styles$z.base__selected },
-            hover: { true: styles$z.base__hover },
-            disabled: { true: styles$z.base__disabled },
-        },
-        compoundVariants: [{ hover: !0, selected: !0, className: styles$z.base__selectedHover }],
-    }),
-    MainContainer = ({ children: e, classNames: t }) => {
-        const s = React.useRef(null),
-            r = useCardContext();
-        return (
-            React.useEffect(() => {
-                if (r.multiple)
-                    return createLayoutReadyInEffect(() => {
-                        if (s.current) {
-                            const e = s.current.getBoundingClientRect(),
-                                t = Math.round((MULTIPLE_CORNER_SIZE / e.width) * 100),
-                                r = Math.round((MULTIPLE_CORNER_SIZE / e.height) * 100);
-                            (s.current.style.setProperty('--corner-width', `${t}%`),
-                                s.current.style.setProperty('--corner-height', `${r}%`));
-                        }
-                    });
-            }),
-            jsxRuntimeExports.jsxs(Base$e, {
-                multiple: r.multiple,
-                selected: r.selected,
-                hover: r.hover,
-                disabled: r.disabled,
-                children: [
-                    r.multiple && jsxRuntimeExports.jsx('div', { className: styles$z.multipleCorner }),
-                    jsxRuntimeExports.jsxs('div', {
-                        ref: s,
-                        className: cx(styles$z.content, null == t ? void 0 : t.mainContainerContent),
-                        children: [
-                            r.disabled && jsxRuntimeExports.jsx('div', { className: styles$z.disabledOverlay }),
-                            e,
-                        ],
-                    }),
-                ],
-            })
-        );
-    },
-    base$u = 'Status_68bd9bc6',
-    icon$6 = 'Status_icon_cef4536',
-    base__done = 'Status_base__done_35b9a31c',
-    base__doneSmall = 'Status_base__doneSmall_35b9a31c',
-    base__alert = 'Status_base__alert_35b9a31c',
-    base__alertSmall = 'Status_base__alertSmall_35b9a31c',
-    line = 'Status_line_8f933ea7',
-    shadow = 'Status_shadow_fc30bf98',
-    base__lockedSmall = 'Status_base__lockedSmall_35b9a31c',
-    glowInner = 'Status_glowInner_f8eb475a',
-    blur = 'Status_blur_5675b854',
-    glowBig = 'Status_glowBig_5954041c',
-    styles$y = {
-        base: base$u,
-        icon: icon$6,
-        base__done: base__done,
-        base__doneSmall: base__doneSmall,
-        base__alert: base__alert,
-        base__alertSmall: base__alertSmall,
-        line: line,
-        shadow: shadow,
-        base__lockedSmall: base__lockedSmall,
-        glowInner: glowInner,
-        blur: blur,
-        glowBig: glowBig,
-    },
-    strings$2 = resources.resolve('strings');
-defineStyledComponent('Status', styles$y.base, {
-    variants: { status: { done: styles$y.base__done, alert: styles$y.base__alert, locked: styles$y.base__locked } },
-});
-const SMALL_SIZE_BREAKPOINT = 100,
-    tooltipEnabled = ({ header: e, body: t }) => Boolean(e && t),
-    Status = ({ reason: e, classNames: t }) => {
-        const s = reactExports.useRef(null),
-            [r, n] = React.useState(!1),
-            o = `base__${useCardContext().status}${r ? 'Small' : ''}`,
-            a = React.useCallback(() => {
-                var e;
-                const t = null == (e = s.current) ? void 0 : e.getBoundingClientRect();
-                t && n(t.width <= SMALL_SIZE_BREAKPOINT);
-            }, [s]);
-        useRefResizeObserver(s, a);
-        const i = e
-                ? {
-                      header: strings$2.readOrEmpty(`tooltips.moduleFits.${e}.header`),
-                      body: strings$2.readOrEmpty(`tooltips.moduleFits.${e}.text`),
-                  }
-                : {},
-            u = useSimpleTooltip(i);
-        return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$y.base, styles$y[o], null == t ? void 0 : t.wrapper),
-            ref: s,
-            children: [
-                jsxRuntimeExports.jsx('div', { className: styles$y.glowBig }),
-                jsxRuntimeExports.jsx('div', { className: styles$y.line }),
-                jsxRuntimeExports.jsx('div', { className: styles$y.shadow }),
-                jsxRuntimeExports.jsx('div', { className: styles$y.glowInner }),
-                jsxRuntimeExports.jsx('svg', {
-                    width: '42',
-                    height: '42',
-                    viewBox: '0 0 42 42',
-                    className: styles$y.blur,
-                    children: jsxRuntimeExports.jsx('g', {
-                        children: jsxRuntimeExports.jsx('circle', { cx: '21', cy: '21', r: '3' }),
-                    }),
-                }),
-                jsxRuntimeExports.jsx('div', {
-                    ...(tooltipEnabled(i) && u),
-                    className: cx(styles$y.icon, null == t ? void 0 : t.icon),
-                }),
-            ],
-        });
-    },
-    base$t = 'Card_f0963ece',
-    base__wrapped = 'Card_base__wrapped_c6eb8737',
-    base__disableMouse = 'Card_base__disableMouse_5cd80216',
-    base__hover = 'Card_base__hover_f4c22d1c',
-    base__selected = 'Card_base__selected_f4c22d1c',
-    card$1 = 'Card_f7ddaa4a',
-    content$7 = 'Card_content_b6f6a22a',
-    base__active$1 = 'Card_base__active_f4c22d1c',
-    base__activeHover = 'Card_base__activeHover_f4c22d1c',
-    base__selectedHover = 'Card_base__selectedHover_f4c22d1c',
-    centerBorder = 'Card_centerBorder_8a0f28ae',
-    cardStyles = {
-        base: base$t,
-        base__wrapped: base__wrapped,
-        base__disableMouse: base__disableMouse,
-        base__hover: base__hover,
-        base__selected: base__selected,
-        card: card$1,
-        content: content$7,
-        base__active: base__active$1,
-        base__activeHover: base__activeHover,
-        base__selectedHover: base__selectedHover,
-        centerBorder: centerBorder,
-    },
-    Base$d = defineStyledComponent('Card', cardStyles.base, {
-        variants: {
-            active: { true: cardStyles.base__active },
-            selected: { true: cardStyles.base__selected },
-            hover: { true: cardStyles.base__hover },
-            disableMouse: { true: cardStyles.base__disableMouse },
-        },
-        compoundVariants: [
-            { hover: !0, active: !0, className: cardStyles.base__activeHover },
-            { hover: !0, selected: !0, className: cardStyles.base__selectedHover },
-        ],
-    }),
-    Card = reactExports.forwardRef(function (
-        {
-            children: e,
-            active: t,
-            status: s,
-            statusReason: r,
-            disableMouse: n,
-            onMouseOver: o,
-            onMouseOut: a,
-            soundTarget: i,
-            disabled: u = !1,
-            className: l,
-            classNames: c,
-            ...d
-        },
-        _,
-    ) {
-        const [m, p] = reactExports.useState(!1),
-            x = useSounds(),
-            f = useCardsWrapperContextOptional(),
-            E = n || u;
-        return jsxRuntimeExports.jsx(Base$d, {
-            ...d,
-            ref: _,
-            hover: m,
-            disableMouse: n,
-            active: t,
-            className: cx(cardStyles.card, l, (null == f ? void 0 : f.enabled) && cardStyles.base__wrapped),
-            children: jsxRuntimeExports.jsxs(CardContextProvider, {
-                disabled: u,
-                selected: d.selected ?? !1,
-                multiple: d.multiple ?? !1,
-                hover: m,
-                status: s,
-                children: [
-                    jsxRuntimeExports.jsx('div', {
-                        className: cx(cardStyles.content, null == c ? void 0 : c.content),
-                        onClick: function (e) {
-                            E || x.play('click', { target: i || 'react-ui:card', original: e });
-                        },
-                        onMouseEnter: function (e) {
-                            E || x.play('mouse-enter', { target: i || 'react-ui:card', original: e });
-                        },
-                        onMouseOver: function (e) {
-                            E || (p(!0), null == o || o(e));
-                        },
-                        onMouseOut: function (e) {
-                            E || (p(!1), null == a || a(e));
-                        },
-                        children: jsxRuntimeExports.jsx(MainContainer, { classNames: c, children: e }),
-                    }),
-                    jsxRuntimeExports.jsx('div', { className: cardStyles.centerBorder }),
-                    s && jsxRuntimeExports.jsx(Status, { reason: r, classNames: null == c ? void 0 : c.status }),
-                ],
-            }),
-        });
-    }),
-    LINE_THICKNESS = 1,
-    OFFSET = 1,
-    PADDING = 3,
-    borderTypes = { none: 'none', contour: 'contour' },
-    Point = (e, t) => ({ x: e, y: t });
-function getRectangleEdges(e) {
-    let { x: t, y: s, width: r, height: n } = e;
-    const o = Point(t, s),
-        a = Point(t + r, s),
-        i = Point(t + r, s + n),
-        u = Point(t, s + n);
-    return [
-        [o, a],
-        [a, i],
-        [i, u],
-        [u, o],
-    ];
-}
-function getEdgeKey(e) {
-    const [t, s] = e;
-    return t.x < s.x || (t.x === s.x && t.y < s.y) ? `${s.x},${s.y}-${t.x},${t.y}` : `${t.x},${t.y}-${s.x},${s.y}`;
-}
-function buildOuterEdgesAndCenter(e) {
-    const t = e.flatMap(getRectangleEdges),
-        s = new Map();
-    return (
-        t.forEach((e) => {
-            const t = getEdgeKey(e);
-            s.has(t) ? s.delete(t) : s.set(t, e);
-        }),
-        Array.from(s.values())
-    );
-}
-function buildContourPath(e) {
-    if (0 === e.length) return [];
-    const t = e[0],
-        s = { x: t[0].x - PADDING, y: t[0].y - PADDING },
-        r = [s];
-    let n = t[1],
-        o = s,
-        a = s,
-        i = -PADDING,
-        u = -PADDING;
-    for (e.splice(0, 1); e.length > 0; ) {
-        const t = e.findIndex((e) => e[0].x === n.x && e[0].y === n.y);
-        if (-1 === t) break;
-        const s = e[t],
-            l = n;
-        (n.x <= a.x ? (u = PADDING) : (u === PADDING && (o.y -= 2 * PADDING), (u = -PADDING)),
-            n.y >= a.y ? (i = PADDING) : (i === PADDING && (o.x -= 2 * PADDING), (i = -PADDING)),
-            (n = { x: n.x + i, y: n.y + u }),
-            r.push(n),
-            (a = l),
-            (o = n),
-            (n = s[1]),
-            e.splice(t, 1));
-    }
-    return (u === PADDING && i === PADDING && (o = { ...o, x: o.x - 2 * PADDING }), r.push(s), r);
-}
-function buildContour(e, t) {
-    return buildContourPath(buildOuterEdgesAndCenter(e));
-}
-const HORIZONTAL = 'H',
-    VERTICAL = 'V';
-class LinesOptimizer {
-    constructor(e) {
-        (__publicField(this, 'lines', new Map()), (this.containerRect = e));
-    }
-    addLine(e, t, s, r, n) {
-        var o;
-        const a = `${s === LINE_THICKNESS ? VERTICAL : HORIZONTAL}-${s === LINE_THICKNESS ? Math.round(e) : Math.round(t)}-${n}`;
-        this.lines.has(a) || this.lines.set(a, []);
-        const i = { x: e - this.containerRect.x, y: t - this.containerRect.y, width: s, height: r, className: n };
-        null == (o = this.lines.get(a)) || o.push(i);
-    }
-    run() {
-        const e = [];
-        return (
-            this.lines.forEach((t, s) => {
-                const r = s.at(0) === HORIZONTAL,
-                    n = t.sort((e, t) => (r ? e.x - t.x : e.y - t.y));
-                let o = null;
-                (n.forEach((t) => {
-                    if (o)
-                        if (r) {
-                            const s = o.x + o.width,
-                                r = t.x + t.width;
-                            t.x >= o.x && t.x <= s ? (o = { ...o, width: Math.max(r, s) - o.x }) : (e.push(o), (o = t));
-                        } else {
-                            const s = o.y + o.height,
-                                r = t.y + t.height;
-                            t.y >= o.y && t.y <= s
-                                ? (o = { ...o, height: Math.max(r, s) - o.y })
-                                : (e.push(o), (o = t));
-                        }
-                    else o = t;
-                }),
-                    o && e.push(o));
-            }),
-            e
-        );
-    }
-}
-const lineInner = 'LinesBuilder_lineInner_a52dc157',
-    lineOuter = 'LinesBuilder_lineOuter_c57514b2',
-    styles$x = { lineInner: lineInner, lineOuter: lineOuter };
-function buildLines(e, t, s) {
-    const r = [],
-        n = new LinesOptimizer(t);
-    for (let o = 0; o < e.length; o++) {
-        const t = e[o],
-            a = t.getBoundingClientRect();
-        if (0 === a.width || 0 === a.height)
-            return void console.debug(
-                `Card rect has zero size by one side: ${a.width}x${a.height} (${t.getAttribute('data-test-id')}) `,
-            );
-        (s !== borderTypes.none && r.push({ x: a.x, y: a.y, width: a.width, height: a.height }),
-            n.addLine(a.x, a.y, a.width, LINE_THICKNESS, styles$x.lineInner),
-            n.addLine(a.x, a.y + a.height, a.width, LINE_THICKNESS, styles$x.lineInner),
-            n.addLine(a.x, a.y, LINE_THICKNESS, a.height, styles$x.lineInner),
-            n.addLine(a.x + a.width, a.y, LINE_THICKNESS, a.height + OFFSET, styles$x.lineInner));
-    }
-    if (s !== borderTypes.none) {
-        const e = buildContour(r);
-        let t = null;
-        e.forEach((e) => {
-            if (t) {
-                const s = t.y === e.y,
-                    r = t,
-                    o = e;
-                n.addLine(
-                    Math.min(r.x, o.x),
-                    Math.min(r.y, o.y),
-                    s ? Math.abs(o.x - r.x) : LINE_THICKNESS,
-                    s ? LINE_THICKNESS : Math.abs(o.y - r.y) + OFFSET,
-                    styles$x.lineOuter,
-                );
-            }
-            t = e;
-        });
-    }
-    return n.run();
-}
-const Lines = reactExports.memo(({ containerRef: e, generation: t, border: s, cardSelector: r }) => {
-        const [n, o] = reactExports.useState([]),
-            a = useEvent(() => {
-                const t = e.current;
-                if (!t) return;
-                const n = t.getBoundingClientRect(),
-                    a = buildLines(t.querySelectorAll(`.${r || cardStyles.card}`), n, s);
-                o(a ?? []);
-            });
-        return (
-            reactExports.useEffect(a, [a, t]),
-            jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {
-                children: n.map((e, t) =>
-                    jsxRuntimeExports.jsx(
-                        'div',
-                        { className: e.className, style: { left: e.x, top: e.y, width: e.width, height: e.height } },
-                        t,
-                    ),
-                ),
-            })
-        );
-    }),
-    base$s = 'CardsWrapper_3b6cc4f6',
-    card = 'CardsWrapper_card_c7fc9ee7',
-    centerBorderCommon = 'CardsWrapper_centerBorderCommon_b4b27a11',
-    outerBorderCommon = 'CardsWrapper_outerBorderCommon_f4887371',
-    styles$w = {
-        base: base$s,
-        card: card,
-        centerBorderCommon: centerBorderCommon,
-        outerBorderCommon: outerBorderCommon,
-    },
-    Base$c = defineStyledComponent('CardsWrapper', styles$w.base),
-    CardsWrapper = reactExports.forwardRef(function (
-        {
-            children: e,
-            className: t,
-            trashhold: s,
-            border: r = borderTypes.contour,
-            enabled: n = !0,
-            cardSelector: o,
-            ...a
-        },
-        i,
-    ) {
-        const u = reactExports.useRef([]),
-            l = reactExports.useRef(null),
-            [c, d] = reactExports.useState('');
-        reactExports.useImperativeHandle(i, () => l.current);
-        const _ = reactExports.useCallback(
-            (e) => {
-                const t = l.current;
-                if (!t) return;
-                const s = t.querySelectorAll(`.${o || cardStyles.card}`);
-                if (s.length > 0) {
-                    const r = t.getBoundingClientRect(),
-                        n = s.length;
-                    n !== u.current.length && (u.current = Array.from(s));
-                    const o = `${Math.round(r.width)}x${Math.round(r.height)}-${n}|${e}`;
-                    d(o);
-                } else d('');
-            },
-            [o],
-        );
-        (reactExports.useEffect(() => {
-            _(s);
-        }),
-            useRefResizeObserver(
-                l,
-                reactExports.useCallback(() => _(), [_]),
-            ));
-        const m = reactExports.useMemo(() => ({ recalculate: _, enabled: n }), [_, n]);
-        return jsxRuntimeExports.jsx(Base$c, {
-            ...a,
-            ref: l,
-            children: jsxRuntimeExports.jsxs('div', {
-                className: t,
-                children: [
-                    jsxRuntimeExports.jsx(CardsWrapperContextProvider, { value: m, children: e }),
-                    jsxRuntimeExports.jsx(Lines, {
-                        cardsRef: u,
-                        containerRef: l,
-                        border: r,
-                        generation: c,
-                        cardSelector: o,
-                    }),
-                ],
-            }),
-        });
-    }),
-    CardSingle = reactExports.forwardRef(({ className: e, classNames: t, ...s }, r) =>
-        jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$w.base, null == t ? void 0 : t.wrapper),
-            children: [
-                jsxRuntimeExports.jsx('div', { className: styles$w.centerBorderCommon }),
-                jsxRuntimeExports.jsx('div', { className: styles$w.outerBorderCommon }),
-                jsxRuntimeExports.jsx(Card, {
-                    className: cx(styles$w.card, e, null == t ? void 0 : t.card),
-                    classNames: t,
-                    ...s,
-                    ref: r,
-                }),
-            ],
-        }),
-    ),
-    statusTypes = { done: 'done', alert: 'alert' },
-    base$r = 'Discount_bbbebfd',
-    percent = 'Discount_percent_b7ab402',
-    styles$v = {
-        base: base$r,
-        'base__color-red': 'Discount_base__color-red_ce40ab53',
-        'base__color-blue': 'Discount_base__color-blue_29162735',
-        'base__size-medium': 'Discount_base__size-medium_50e2ae9a',
-        'base__size-large': 'Discount_base__size-large_b6f874e0',
-        percent: percent,
-        'percent__size-medium': 'Discount_percent__size-medium_cc14676',
-        'percent__color-red': 'Discount_percent__color-red_4a3faf4f',
-        'percent__color-blue': 'Discount_percent__color-blue_4a3faf4f',
-        'percent__size-large': 'Discount_percent__size-large_8384c978',
-    },
-    colors$1 = { blue: 'blue', red: 'red' },
-    sizes$8 = { medium: 'medium', large: 'large' },
-    StyledDiscount = defineStyledComponent('Discount', styles$v.base, {
-        variants: {
-            color: { [colors$1.blue]: styles$v['base__color-blue'], [colors$1.red]: styles$v['base__color-red'] },
-            size: { [sizes$8.medium]: styles$v['base__size-medium'], [sizes$8.large]: styles$v['base__size-large'] },
-        },
-    }),
-    Discount = React.forwardRef(function (
-        { color: e = colors$1.red, className: t, classNames: s, size: r = sizes$8.large, ...n },
-        o,
-    ) {
-        return jsxRuntimeExports.jsxs(StyledDiscount, {
-            ...n,
-            ref: o,
-            color: e,
-            size: r,
-            className: cx(t, null == s ? void 0 : s.discount),
-            children: [
-                n.children,
-                jsxRuntimeExports.jsx('div', {
-                    className: cx(
-                        styles$v.percent,
-                        styles$v[`percent__color-${e}`],
-                        styles$v[`percent__size-${r}`],
-                        null == s ? void 0 : s.percent,
-                    ),
-                }),
-            ],
-        });
-    });
-((Discount.colors = colors$1), (Discount.sizes = sizes$8));
-const base$q = 'CarouselScroll_3690a837',
+const base$p = 'CarouselScroll_3690a837',
     areaContent = 'CarouselScroll_areaContent_f5dd7772',
-    styles$u = { base: base$q, areaContent: areaContent },
+    styles$t = { base: base$p, areaContent: areaContent },
     GAP_BEFORE_START = 5,
     draggingStates = { dragging: 'dragging', idle: 'idle' };
 function CarouselScroll({
@@ -8230,753 +9225,23 @@ function CarouselScroll({
             [i.scrollPosition, c, u],
         ),
         jsxRuntimeExports.jsx('div', {
-            className: cx(styles$u.base, s),
+            className: cx(styles$t.base, s),
             children: jsxRuntimeExports.jsxs(Area$1, {
                 className: null == r ? void 0 : r.base,
                 classNames: {
-                    wrapper: cx(styles$u.areaWrapper, null == r ? void 0 : r.wrapper),
-                    content: cx(styles$u.areaContent, null == r ? void 0 : r.content),
+                    wrapper: cx(styles$t.areaWrapper, null == r ? void 0 : r.wrapper),
+                    content: cx(styles$t.areaContent, null == r ? void 0 : r.content),
                 },
                 children: [t, n],
             }),
         })
     );
 }
-const strings$1 = resources.resolve('strings'),
-    intl = resources.resolve('intl'),
-    keyValue = (e) => intl.toUpperCase(strings$1.readOr(`readable_key_names.KEY_${e}`, () => EMPTY_VALUE)),
-    EMPTY_VALUE = intl.toUpperCase(strings$1.readOrEmpty('readable_key_names.KEY_NONE_ALT')),
-    keyCodeValue = {
-        [keyStringCodes.NONE]: keyValue('NONE_ALT'),
-        [keyStringCodes.ESCAPE]: keyValue('ESCAPE'),
-        [keyStringCodes.ENTER]: keyValue('ENTER'),
-        [keyStringCodes.SPACE]: keyValue('SPACE'),
-        [keyStringCodes.DELETE]: keyValue('DELETE'),
-        [keyStringCodes.BACKSPACE]: keyValue('BACKSPACE'),
-        [keyStringCodes.TAB]: keyValue('TAB'),
-        [keyStringCodes.HOME]: keyValue('HOME'),
-        [keyStringCodes.END]: keyValue('END'),
-        [keyStringCodes.MINUS]: keyValue('MINUS'),
-        [keyStringCodes.SLASH]: keyValue('SLASH'),
-        [keyStringCodes.BACKSLASH]: keyValue('BACKSLASH'),
-        [keyStringCodes.PERIOD]: keyValue('PERIOD'),
-        [keyStringCodes.COMMA]: keyValue('COMMA'),
-        [keyStringCodes.QUOTE]: keyValue('APOSTROPHE'),
-        [keyStringCodes.SEMICOLON]: keyValue('SEMICOLON'),
-        [keyStringCodes.INSERT]: keyValue('INSERT'),
-        [keyStringCodes.KEY_A]: keyValue('A'),
-        [keyStringCodes.KEY_B]: keyValue('B'),
-        [keyStringCodes.KEY_C]: keyValue('C'),
-        [keyStringCodes.KEY_D]: keyValue('D'),
-        [keyStringCodes.KEY_E]: keyValue('E'),
-        [keyStringCodes.KEY_F]: keyValue('F'),
-        [keyStringCodes.KEY_G]: keyValue('G'),
-        [keyStringCodes.KEY_H]: keyValue('H'),
-        [keyStringCodes.KEY_I]: keyValue('I'),
-        [keyStringCodes.KEY_J]: keyValue('J'),
-        [keyStringCodes.KEY_K]: keyValue('K'),
-        [keyStringCodes.KEY_L]: keyValue('L'),
-        [keyStringCodes.KEY_M]: keyValue('M'),
-        [keyStringCodes.KEY_N]: keyValue('N'),
-        [keyStringCodes.KEY_O]: keyValue('O'),
-        [keyStringCodes.KEY_P]: keyValue('P'),
-        [keyStringCodes.KEY_Q]: keyValue('Q'),
-        [keyStringCodes.KEY_R]: keyValue('R'),
-        [keyStringCodes.KEY_S]: keyValue('S'),
-        [keyStringCodes.KEY_T]: keyValue('T'),
-        [keyStringCodes.KEY_U]: keyValue('U'),
-        [keyStringCodes.KEY_V]: keyValue('V'),
-        [keyStringCodes.KEY_W]: keyValue('W'),
-        [keyStringCodes.KEY_X]: keyValue('X'),
-        [keyStringCodes.KEY_Y]: keyValue('Y'),
-        [keyStringCodes.KEY_Z]: keyValue('Z'),
-        [keyStringCodes.DIGIT_0]: keyValue('0'),
-        [keyStringCodes.DIGIT_1]: keyValue('1'),
-        [keyStringCodes.DIGIT_2]: keyValue('2'),
-        [keyStringCodes.DIGIT_3]: keyValue('3'),
-        [keyStringCodes.DIGIT_4]: keyValue('4'),
-        [keyStringCodes.DIGIT_5]: keyValue('5'),
-        [keyStringCodes.DIGIT_6]: keyValue('6'),
-        [keyStringCodes.DIGIT_7]: keyValue('7'),
-        [keyStringCodes.DIGIT_8]: keyValue('8'),
-        [keyStringCodes.DIGIT_9]: keyValue('9'),
-        [keyStringCodes.NUMPAD_0]: keyValue('NUMPAD0'),
-        [keyStringCodes.NUMPAD_1]: keyValue('NUMPAD1'),
-        [keyStringCodes.NUMPAD_2]: keyValue('NUMPAD2'),
-        [keyStringCodes.NUMPAD_3]: keyValue('NUMPAD3'),
-        [keyStringCodes.NUMPAD_4]: keyValue('NUMPAD4'),
-        [keyStringCodes.NUMPAD_5]: keyValue('NUMPAD5'),
-        [keyStringCodes.NUMPAD_6]: keyValue('NUMPAD6'),
-        [keyStringCodes.NUMPAD_7]: keyValue('NUMPAD7'),
-        [keyStringCodes.NUMPAD_8]: keyValue('NUMPAD8'),
-        [keyStringCodes.NUMPAD_9]: keyValue('NUMPAD9'),
-        [keyStringCodes.F_1]: keyValue('F1'),
-        [keyStringCodes.F_2]: keyValue('F2'),
-        [keyStringCodes.F_3]: keyValue('F3'),
-        [keyStringCodes.F_4]: keyValue('F4'),
-        [keyStringCodes.F_5]: keyValue('F5'),
-        [keyStringCodes.F_6]: keyValue('F6'),
-        [keyStringCodes.F_7]: keyValue('F7'),
-        [keyStringCodes.F_8]: keyValue('F8'),
-        [keyStringCodes.F_9]: keyValue('F9'),
-        [keyStringCodes.F_10]: keyValue('F10'),
-        [keyStringCodes.F_11]: keyValue('F11'),
-        [keyStringCodes.F_12]: keyValue('F12'),
-        [keyStringCodes.NUMPAD_MULTIPLY]: keyValue('NUMPADSTAR'),
-        [keyStringCodes.NUMPAD_DIVIDE]: keyValue('NUMPADSLASH'),
-        [keyStringCodes.NUMPAD_ADD]: keyValue('ADD'),
-        [keyStringCodes.NUMPAD_SUBTRACT]: keyValue('NUMPADMINUS'),
-        [keyStringCodes.NUMPAD_DECIMAL]: keyValue('NUMPADPERIOD'),
-        [keyStringCodes.ARROW_LEFT]: keyValue('LEFTARROW'),
-        [keyStringCodes.ARROW_RIGHT]: keyValue('RIGHTARROW'),
-        [keyStringCodes.ARROW_UP]: keyValue('UPARROW'),
-        [keyStringCodes.ARROW_DOWN]: keyValue('DOWNARROW'),
-        [keyStringCodes.PAGE_UP]: keyValue('PGUP'),
-        [keyStringCodes.PAGE_DOWN]: keyValue('PGDN'),
-        [keyStringCodes.BRACKET_LEFT]: keyValue('LBRACKET'),
-        [keyStringCodes.BRACKET_RIGHT]: keyValue('RBRACKET'),
-    },
-    KeyButtonContext = reactExports.createContext(void 0);
-function useKeyButtonContext() {
-    const e = reactExports.useContext(KeyButtonContext);
-    if (!e) throw new Error('useKeyButtonContext must be used within KeyButtonContext');
-    return e;
-}
-const background$4 = 'KeyButton_background_8a852f95',
-    border$4 = 'KeyButton_border_b1c50f01',
-    base$p = 'KeyButton_8fd343f8',
-    content$6 = 'KeyButton_content_a724f532',
-    styles$t = { background: background$4, border: border$4, base: base$p, content: content$6 },
-    StyledBase = defineStyledComponent('KeyButton', styles$t.base);
-function Base$b({ children: e, onClick: t, onMouseEnter: s, ...r }) {
-    const n = useSounds(),
-        { soundTarget: o, silent: a } = useKeyButtonContext();
-    return jsxRuntimeExports.jsx(StyledBase, {
-        ...r,
-        onMouseEnter: function (e) {
-            (a || n.play('mouse-enter', { target: o, original: e }), null == s || s(e));
-        },
-        onClick: function (e) {
-            (a || n.play('click', { target: o, original: e }), null == t || t(e));
-        },
-        children: e,
-    });
-}
-function KeyButtonProvider({ keyCode: e, onActive: t, silent: s, soundTarget: r, idle: n, children: o }) {
-    useHandleKeyup(n ? keyStringCodes.NONE : normalizeKeyCode(e), t);
-    const a = reactExports.useMemo(
-        () => ({ keyCode: e, onActive: t, silent: s, soundTarget: r, idle: n }),
-        [e, t, r, s, n],
-    );
-    return jsxRuntimeExports.jsx(KeyButtonContext.Provider, { value: a, children: o });
-}
-function Code() {
-    const { keyCode: e } = useKeyButtonContext(),
-        t = normalizeKeyCode(e);
-    if (t === keyStringCodes.NONE) return EMPTY_VALUE;
-    const s = getCurrentLayoutKeyName(getScanCodeFromKeyName(t));
-    return s in keyCodeValue
-        ? keyCodeValue[s]
-        : (console.error(
-              e === s
-                  ? `KeyButton: key code "${e}" is not supported.`
-                  : `KeyButton: virtual key code "${s}" for "${e}" is not supported.`,
-          ),
-          EMPTY_VALUE);
-}
-const KeyButton = function ({
-    keyCode: e,
-    onActive: t = noop,
-    silent: s = !1,
-    idle: r = !1,
-    soundTarget: n = 'KeyButton',
-    classNames: o,
-    className: a,
-    children: i,
-    ...u
-}) {
-    return jsxRuntimeExports.jsx(KeyButtonProvider, {
-        keyCode: e,
-        onActive: t,
-        silent: s,
-        idle: r,
-        soundTarget: n,
-        children: jsxRuntimeExports.jsxs(Base$b, {
-            ...u,
-            className: cx(styles$t.base, a, null == o ? void 0 : o.base),
-            children: [
-                jsxRuntimeExports.jsx('div', { className: cx(styles$t.background, null == o ? void 0 : o.background) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$t.border, null == o ? void 0 : o.border) }),
-                jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$t.content, null == o ? void 0 : o.content),
-                    children: i,
-                }),
-            ],
-        }),
-    });
-};
-KeyButton.Code = Code;
-const base$o = 'Background_39e8f2ed',
-    pattern$3 = 'Background_pattern_8cad1521',
-    noise = 'Background_noise_e3254bb3',
-    styles$s = { base: base$o, pattern: pattern$3, noise: noise };
-function Background({ className: e, classNames: t }) {
-    return jsxRuntimeExports.jsxs('div', {
-        className: cx(e, styles$s.base),
-        children: [
-            jsxRuntimeExports.jsx('div', { className: cx(null == t ? void 0 : t.pattern, styles$s.pattern) }),
-            jsxRuntimeExports.jsx('div', { className: cx(null == t ? void 0 : t.noise, styles$s.noise) }),
-        ],
-    });
-}
-function playSound$1(e) {
-    engine.call('PlaySound', e).catch((t) => {
-        console.error('[lib/sounds.js] playSound(', e, '): ', t);
-    });
-}
-var ButtonType = ((e) => (
-        (e.main = 'main'),
-        (e.primary = 'primary'),
-        (e.primaryGreen = 'primaryGreen'),
-        (e.primaryRed = 'primaryRed'),
-        (e.secondary = 'secondary'),
-        (e.ghost = 'ghost'),
-        e
-    ))(ButtonType || {}),
-    ButtonSize = ((e) => (
-        (e.extraSmall = 'extraSmall'),
-        (e.small = 'small'),
-        (e.medium = 'medium'),
-        (e.large = 'large'),
-        e
-    ))(ButtonSize || {});
-const base$n = 'Cbutton_24fc9a0c',
-    base__main = 'Cbutton_base__main_2f199578',
-    base__primary = 'Cbutton_base__primary_9da8a692',
-    base__primaryGreen = 'Cbutton_base__primaryGreen_74301f4e',
-    base__primaryRed = 'Cbutton_base__primaryRed_d184ac',
-    base__secondary = 'Cbutton_base__secondary_22ff48c2',
-    base__ghost = 'Cbutton_base__ghost_fd3acf91',
-    base__extraSmall = 'Cbutton_base__extraSmall_f64ebb9e',
-    base__small$7 = 'Cbutton_base__small_a71bc2a9',
-    base__medium$5 = 'Cbutton_base__medium_d82a1b14',
-    base__large = 'Cbutton_base__large_f02aee17',
-    base__disabled$3 = 'Cbutton_base__disabled_96f239bb',
-    back = 'Cbutton_back_ffaa618f',
-    texture = 'Cbutton_texture_f462b307',
-    state = 'Cbutton_state_bf8d0bab',
-    base__focus = 'Cbutton_base__focus_180a9717',
-    stateHighlightHover = 'Cbutton_stateHighlightHover_7e2b860e',
-    stateHighlightActive = 'Cbutton_stateHighlightActive_f3d8fd6a',
-    stateDisabled = 'Cbutton_stateDisabled_7b91392f',
-    base__highlightActive = 'Cbutton_base__highlightActive_180a9717',
-    content$5 = 'Cbutton_content_faaa9067',
-    styles$r = {
-        base: base$n,
-        base__main: base__main,
-        base__primary: base__primary,
-        base__primaryGreen: base__primaryGreen,
-        base__primaryRed: base__primaryRed,
-        base__secondary: base__secondary,
-        base__ghost: base__ghost,
-        base__extraSmall: base__extraSmall,
-        base__small: base__small$7,
-        base__medium: base__medium$5,
-        base__large: base__large,
-        base__disabled: base__disabled$3,
-        back: back,
-        texture: texture,
-        state: state,
-        base__focus: base__focus,
-        stateHighlightHover: stateHighlightHover,
-        stateHighlightActive: stateHighlightActive,
-        stateDisabled: stateDisabled,
-        base__highlightActive: base__highlightActive,
-        content: content$5,
-    },
-    Button = ({
-        children: e,
-        size: t,
-        disabled: s,
-        mixClass: r,
-        onMouseEnter: n,
-        onMouseMove: o,
-        onMouseDown: a,
-        onMouseUp: i,
-        onMouseLeave: u,
-        onClick: l,
-        isFocused: c = !1,
-        type: d = ButtonType.primary,
-        soundHover: _ = 'highlight',
-        soundClick: m = 'play',
-    }) => {
-        const p = reactExports.useRef(null),
-            [x, f] = reactExports.useState(c),
-            [E, h] = reactExports.useState(!1);
-        return (
-            reactExports.useEffect(() => {
-                function e(e) {
-                    x && null !== p.current && !p.current.contains(e.target) && f(!1);
-                }
-                return (
-                    document.addEventListener('mousedown', e),
-                    () => {
-                        document.removeEventListener('mousedown', e);
-                    }
-                );
-            }, [x]),
-            reactExports.useEffect(() => {
-                f(c);
-            }, [c]),
-            jsxRuntimeExports.jsxs('div', {
-                ref: p,
-                className: cx(
-                    styles$r.base,
-                    styles$r[`base__${d}`],
-                    s && styles$r.base__disabled,
-                    t && styles$r[`base__${t}`],
-                    x && styles$r.base__focus,
-                    E && styles$r.base__highlightActive,
-                    r,
-                ),
-                onMouseEnter: function (e) {
-                    s || (null !== _ && playSound$1(_), n && n(e));
-                },
-                onMouseMove: function (e) {
-                    o && o(e);
-                },
-                onMouseUp: function (e) {
-                    s || (i && i(e), h(!1));
-                },
-                onMouseDown: function (e) {
-                    s ||
-                        (null !== m && playSound$1(m),
-                        a && a(e),
-                        c && (s || (p.current && (p.current.focus(), f(!0)))),
-                        h(!0));
-                },
-                onMouseLeave: function (e) {
-                    s || (u && u(e), h(!1));
-                },
-                onClick: function (e) {
-                    s || (l && l(e));
-                },
-                children: [
-                    d !== ButtonType.ghost &&
-                        jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
-                            children: [
-                                jsxRuntimeExports.jsx('div', { className: styles$r.back }),
-                                jsxRuntimeExports.jsx('span', { className: styles$r.texture }),
-                            ],
-                        }),
-                    jsxRuntimeExports.jsxs('span', {
-                        className: cx(styles$r.state, styles$r.state__default),
-                        children: [
-                            jsxRuntimeExports.jsx('span', { className: styles$r.stateDisabled }),
-                            jsxRuntimeExports.jsx('span', { className: styles$r.stateHighlightHover }),
-                            jsxRuntimeExports.jsx('span', { className: styles$r.stateHighlightActive }),
-                        ],
-                    }),
-                    jsxRuntimeExports.jsx('span', {
-                        className: styles$r.content,
-                        lang: R.strings.settings.LANGUAGE_CODE(),
-                        children: e,
-                    }),
-                ],
-            })
-        );
-    },
-    CButton = Button,
-    base$m = 'Error_741eaf3c',
-    alertIcon = 'Error_alertIcon_e771a05c',
-    errorCaption = 'Error_errorCaption_89c19a4f',
-    button$1 = 'Error_button_2d8a41b6',
-    styles$q = { base: base$m, alertIcon: alertIcon, errorCaption: errorCaption, button: button$1 },
-    Error$1 = ({ errorBtnClickHandler: e, errorBtnLabel: t, errorMessage: s }) =>
-        jsxRuntimeExports.jsxs('div', {
-            className: styles$q.base,
-            children: [
-                jsxRuntimeExports.jsx('div', { className: styles$q.alertIcon }),
-                jsxRuntimeExports.jsx('div', { className: styles$q.errorCaption, children: s }),
-                jsxRuntimeExports.jsx(CButton, {
-                    size: ButtonSize.medium,
-                    mixClass: styles$q.button,
-                    onClick: e,
-                    children: t,
-                }),
-            ],
-        }),
-    base$l = 'Spinner_9ec19f90',
-    caption$1 = 'Spinner_caption_a44b585',
-    gear = 'Spinner_gear_13ca7433',
-    logo = 'Spinner_logo_22e624b',
-    styles$p = { base: base$l, caption: caption$1, gear: gear, logo: logo },
-    Spinner = ({ message: e, className: t, classNames: s }) =>
-        jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$p.base, t),
-            children: [
-                e &&
-                    jsxRuntimeExports.jsx('div', {
-                        className: cx(styles$p.caption, null == s ? void 0 : s.caption),
-                        children: e,
-                    }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$p.gear, null == s ? void 0 : s.gear) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$p.logo, null == s ? void 0 : s.logo) }),
-            ],
-        }),
-    base$k = 'Waiting_f97f6e4b',
-    blackOverlay = 'Waiting_blackOverlay_e659a6de',
-    styles$o = { base: base$k, blackOverlay: blackOverlay },
-    Waiting = ({
-        errorBtnClickHandler: e,
-        message: t = '',
-        isError: s = !1,
-        errorMessage: r = '',
-        errorBtnLabel: n = R.strings.dialogs.disconnected.cancel(),
-        overlayAlpha: o = '0.8',
-    }) => {
-        const a = reactExports.createRef();
-        return (
-            reactExports.useEffect(() => {
-                const e = a.current;
-                e && o && (e.style.opacity = o);
-            }, [a, o]),
-            jsxRuntimeExports.jsxs('div', {
-                className: styles$o.base,
-                children: [
-                    jsxRuntimeExports.jsx('div', { className: styles$o.blackOverlay, ref: a }),
-                    s
-                        ? jsxRuntimeExports.jsx(Error$1, { errorBtnLabel: n, errorMessage: r, errorBtnClickHandler: e })
-                        : jsxRuntimeExports.jsx(Spinner, { message: t }),
-                ],
-            })
-        );
-    },
-    strings = resources.resolve('strings'),
-    emptyHandler = () => null,
-    LoaderComponent = () =>
-        jsxRuntimeExports.jsx(Waiting, {
-            errorBtnClickHandler: emptyHandler,
-            message: strings.readOrEmpty('waiting.loading'),
-            overlayAlpha: '0.5',
-        }),
-    Loader = reactExports.memo(LoaderComponent),
-    SwitcherContext = reactExports.createContext(void 0);
-function useSwitcherContext() {
-    const e = reactExports.useContext(SwitcherContext);
-    if (!e) throw new Error('useSwitcherChecked must be used within SwitcherCheckedContext');
-    return e;
-}
-const background$3 = 'Switcher_background_a88161d0',
-    border$3 = 'Switcher_border_a19f907',
-    overlay$2 = 'Switcher_overlay_de650936',
-    selectedOverlay$1 = 'Switcher_selectedOverlay_959b7a8f',
-    selectedItemBackground = 'Switcher_selectedItemBackground_f3f7ed7e',
-    selectedItemBorder = 'Switcher_selectedItemBorder_7a1a3dd5',
-    base$j = 'Switcher_825add0a',
-    base__disabled$2 = 'Switcher_base__disabled_863a5f47',
-    content$4 = 'Switcher_content_c83e02e5',
-    content__fontAligned = 'Switcher_content__fontAligned_9342bb29',
-    item = 'Switcher_item_ecea23cf',
-    selectedOverlay__moved = 'Switcher_selectedOverlay__moved_beb6c80b',
-    selectedItem = 'Switcher_selectedItem_c6995287',
-    selectedItem__moved = 'Switcher_selectedItem__moved_5f74b720',
-    selectedItemContent = 'Switcher_selectedItemContent_34994102',
-    styles$n = {
-        background: background$3,
-        border: border$3,
-        overlay: overlay$2,
-        selectedOverlay: selectedOverlay$1,
-        selectedItemBackground: selectedItemBackground,
-        selectedItemBorder: selectedItemBorder,
-        base: base$j,
-        base__disabled: base__disabled$2,
-        'base__size-small': 'Switcher_base__size-small_df4dee40',
-        'base__size-medium': 'Switcher_base__size-medium_d287fe48',
-        content: content$4,
-        content__fontAligned: content__fontAligned,
-        'base__type-horizontal': 'Switcher_base__type-horizontal_9ba1e4f',
-        item: item,
-        'base__type-vertical': 'Switcher_base__type-vertical_9ba1e4f',
-        selectedOverlay__moved: selectedOverlay__moved,
-        selectedItem: selectedItem,
-        selectedItem__moved: selectedItem__moved,
-        selectedItemContent: selectedItemContent,
-    };
-function SelectedItem({ children: e, classNames: t }) {
-    const { checked: s } = useSwitcherContext();
-    return jsxRuntimeExports.jsx('div', {
-        className: cx(styles$n.selectedOverlay, s && styles$n.selectedOverlay__moved, null == t ? void 0 : t.base),
-        children: jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$n.selectedItem, s && styles$n.selectedItem__moved, null == t ? void 0 : t.item),
-            children: [
-                jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$n.selectedItemBackground, null == t ? void 0 : t.background),
-                }),
-                jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$n.selectedItemBorder, null == t ? void 0 : t.border),
-                }),
-                jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$n.selectedItemContent, null == t ? void 0 : t.content),
-                    children: e,
-                }),
-            ],
-        }),
-    });
-}
-const sizes$7 = { small: 'small', medium: 'medium' },
-    types$1 = { vertical: 'vertical', horizontal: 'horizontal' },
-    Base$a = defineStyledComponent('Button', styles$n.base, {
-        variants: {
-            type: {
-                [types$1.horizontal]: styles$n['base__type-horizontal'],
-                [types$1.vertical]: styles$n['base__type-vertical'],
-            },
-            size: { [sizes$7.small]: styles$n['base__size-small'], [sizes$7.medium]: styles$n['base__size-medium'] },
-            state: { disabled: styles$n.base__disabled },
-        },
-        defaultVariants: { type: types$1.vertical, size: sizes$7.small },
-    }),
-    Item = defineStyledComponent('ButtonItem', styles$n.item),
-    Switcher$1 = reactExports.forwardRef(function (
-        {
-            type: e = types$1.vertical,
-            checked: t,
-            onMouseEnter: s,
-            onSwitch: r,
-            onClick: n,
-            size: o = sizes$7.small,
-            disabled: a = !1,
-            autoAlignContent: i = !1,
-            classNames: u,
-            className: l,
-            children: c,
-            ...d
-        },
-        _,
-    ) {
-        const [m, p, x] = c,
-            f = useSounds();
-        const E = reactExports.useMemo(() => ({ checked: t }), [t]);
-        return jsxRuntimeExports.jsx(SwitcherContext.Provider, {
-            value: E,
-            children: jsxRuntimeExports.jsxs(Base$a, {
-                ...d,
-                ref: _,
-                type: e,
-                size: o,
-                state: a ? 'disabled' : void 0,
-                className: cx(l, null == u ? void 0 : u.base),
-                onMouseEnter: function (e) {
-                    (f.play('mouse-enter', { target: Base$a.displayName, original: e }), null == s || s(e));
-                },
-                onClick: function (e) {
-                    (f.play('click', { target: Base$a.displayName, original: e }), r(!t), null == n || n(e));
-                },
-                children: [
-                    jsxRuntimeExports.jsx('div', {
-                        className: cx(styles$n.background, null == u ? void 0 : u.background),
-                    }),
-                    jsxRuntimeExports.jsx('div', { className: cx(styles$n.border, null == u ? void 0 : u.border) }),
-                    jsxRuntimeExports.jsx('div', { className: cx(styles$n.overlay, null == u ? void 0 : u.overlay) }),
-                    jsxRuntimeExports.jsxs('div', {
-                        className: cx(
-                            styles$n.content,
-                            i && styles$n.content__fontAligned,
-                            null == u ? void 0 : u.content,
-                        ),
-                        children: [m, p, x],
-                    }),
-                ],
-            }),
-        });
-    });
-((Switcher$1.Item = Item),
-    (Switcher$1.SelectedItem = SelectedItem),
-    (Switcher$1.types = types$1),
-    (Switcher$1.sizes = sizes$7));
 const context = reactExports.createContext(null);
 function useDragAndDrop() {
     const e = reactExports.useContext(context);
     return (assert(null !== e, 'DragAndDropContext is null'), e);
 }
-const sizes$6 = {
-        s24x24: 's24x24',
-        s48x48: 's48x48',
-        s64x64: 's64x64',
-        s80x80: 's80x80',
-        s180x135: 's180x135',
-        s232x174: 's232x174',
-        s296x222: 's296x222',
-        s360x270: 's360x270',
-        s400x300: 's400x300',
-        s600x450: 's600x450',
-    },
-    overlayTypes = {
-        builtInEquipment: 'built_in_equipment',
-        trophy: 'trophy',
-        experimental: 'experimental',
-        improved: 'improved',
-        directiveBooster: 'directive_booster',
-        directiveSubstitute: 'directive_substitute',
-        custom: 'custom',
-        none: 'none',
-    },
-    overlayTypesWithoutLevel = [
-        overlayTypes.improved,
-        overlayTypes.directiveBooster,
-        overlayTypes.directiveSubstitute,
-        overlayTypes.builtInEquipment,
-    ],
-    imageSizes = {
-        [sizes$6.s24x24]: { width: 24, height: 24 },
-        [sizes$6.s48x48]: { width: 48, height: 48 },
-        [sizes$6.s64x64]: { width: 64, height: 64 },
-        [sizes$6.s80x80]: { width: 80, height: 80 },
-        [sizes$6.s180x135]: { width: 180, height: 135 },
-        [sizes$6.s232x174]: { width: 232, height: 174 },
-        [sizes$6.s296x222]: { width: 296, height: 222 },
-        [sizes$6.s360x270]: { width: 360, height: 270 },
-        [sizes$6.s400x300]: { width: 400, height: 300 },
-        [sizes$6.s600x450]: { width: 600, height: 450 },
-    },
-    Base$9 = defineStyledComponent('LoadoutItem', { element: Image$1 });
-function getItemSizeFolderName(e) {
-    switch (e) {
-        case sizes$6.s80x80:
-        case sizes$6.s64x64:
-            return 'big';
-        case sizes$6.s48x48:
-            return 'small';
-        default:
-            return e;
-    }
-}
-const LoadoutItem = reactExports.forwardRef(function (
-    {
-        name: e,
-        path: t,
-        overlayPath: s,
-        size: r,
-        overlayType: n = overlayTypes.none,
-        level: o,
-        classNames: a,
-        className: i,
-        width: u,
-        height: l,
-        ...c
-    },
-    d,
-) {
-    const _ =
-            t ||
-            (r === sizes$6.s24x24
-                ? `vehParams.tooltips.bonuses.${e}`
-                : `quests.bonuses.${getItemSizeFolderName(r)}.${e}`),
-        m = (() => {
-            if (s) return s;
-            if (n === overlayTypes.custom) return void console.error('custom overlay passed without image source path');
-            if (n === overlayTypes.none) return;
-            const e = r === sizes$6.s64x64 ? sizes$6.s80x80 : r;
-            return overlayTypesWithoutLevel.includes(n)
-                ? `components.loadout_item.overlays.${e}.${n}`
-                : o
-                  ? `components.loadout_item.overlays.${e}.${n}_${o}_level`
-                  : void console.error('Item level is not provided, but required!');
-        })(),
-        p = imageSizes[r];
-    return jsxRuntimeExports.jsx(Base$9, {
-        ...c,
-        ref: d,
-        path: _,
-        width: u ?? p.width,
-        height: l ?? p.height,
-        className: cx(i, null == a ? void 0 : a.item),
-        children:
-            n !== overlayTypes.none && m && jsxRuntimeExports.jsx(Image$1, { path: m, width: '100%', height: '100%' }),
-    });
-});
-((LoadoutItem.sizes = sizes$6), (LoadoutItem.overlayTypes = overlayTypes));
-const selectedOverlay = 'Slot_selectedOverlay_5b63484a',
-    disabledOverlay = 'Slot_disabledOverlay_4d0ab64b',
-    content$3 = 'Slot_content_dbf98123',
-    slot = 'Slot_e5fcbf90',
-    slot__hovered = 'Slot_slot__hovered_f72e51c4',
-    slot__disabled = 'Slot_slot__disabled_ba2d5d0e',
-    slot__small = 'Slot_slot__small_2d3a3a74',
-    slot__medium = 'Slot_slot__medium_42bbdb11',
-    slot__extraLarge = 'Slot_slot__extraLarge_d8070c25',
-    content__disabled = 'Slot_content__disabled_1d609e12',
-    emptyContent = 'Slot_emptyContent_ba97d4d8',
-    styles$m = {
-        selectedOverlay: selectedOverlay,
-        disabledOverlay: disabledOverlay,
-        content: content$3,
-        slot: slot,
-        slot__hovered: slot__hovered,
-        slot__disabled: slot__disabled,
-        slot__small: slot__small,
-        slot__medium: slot__medium,
-        slot__extraLarge: slot__extraLarge,
-        content__disabled: content__disabled,
-        emptyContent: emptyContent,
-    },
-    sizes$5 = { small: 'small', medium: 'medium', large: 'large', extraLarge: 'extraLarge' },
-    Content$1 = defineStyledComponent('SlotContent'),
-    Base$8 = defineStyledComponent('Slot', styles$m.slot, {
-        variants: {
-            size: {
-                [sizes$5.small]: styles$m.slot__small,
-                [sizes$5.medium]: styles$m.slot__medium,
-                [sizes$5.large]: styles$m.slot__large,
-                [sizes$5.extraLarge]: styles$m.slot__extraLarge,
-            },
-            hovered: { true: styles$m.slot__hovered },
-            selected: { true: styles$m.slot__selected },
-            disabled: { true: styles$m.slot__disabled },
-        },
-    }),
-    EmptySlot = defineStyledComponent('EmptySlot', styles$m.emptyContent),
-    Slot = reactExports.forwardRef(function (
-        {
-            children: e,
-            size: t,
-            disabled: s = !1,
-            hovered: r = !1,
-            selected: n = !1,
-            classNames: o,
-            className: a,
-            dataDropItem: i,
-            ...u
-        },
-        l,
-    ) {
-        return jsxRuntimeExports.jsxs(Base$8, {
-            ...u,
-            ref: l,
-            size: t,
-            selected: n,
-            disabled: s,
-            hovered: r && !s,
-            className: cx(null == o ? void 0 : o.slot, a),
-            children: [
-                n &&
-                    jsxRuntimeExports.jsx('div', {
-                        className: cx(styles$m.selectedOverlay, null == o ? void 0 : o.selectedOverlay),
-                    }),
-                s &&
-                    jsxRuntimeExports.jsx('div', {
-                        className: cx(styles$m.disabledOverlay, null == o ? void 0 : o.disabledOverlay),
-                    }),
-                jsxRuntimeExports.jsx(Content$1, {
-                    className: cx(styles$m.content, s && styles$m.content__disabled, null == o ? void 0 : o.content),
-                    'data-drop-item': i,
-                    children: e || jsxRuntimeExports.jsx(EmptySlot, { className: null == o ? void 0 : o.emptyContent }),
-                }),
-            ],
-        });
-    });
-((Slot.sizes = sizes$5), (Slot.Empty = EmptySlot));
 const DragArea = reactExports.forwardRef(({ children: e, ...t }, s) => {
         const r = reactExports.useRef(null),
             n = useDragAndDrop();
@@ -9145,104 +9410,746 @@ function DragAndDrop({ children: e, needClamp: t = !0, onStart: s, onMove: r, on
     return jsxRuntimeExports.jsx(context.Provider, { value: l, children: e });
 }
 ((DragAndDrop.DragArea = DragArea), (DragAndDrop.DropArea = DropArea), (DragAndDrop.VirtualItem = VirtualItem));
-const background$2 = 'Checkbox_background_ae1fc797',
-    border$2 = 'Checkbox_border_e1946121',
-    overlay$1 = 'Checkbox_overlay_de55e0a5',
-    base$i = 'Checkbox_e00b9a0',
-    base__enabled = 'Checkbox_base__enabled_5bfdfae9',
-    label$1 = 'Checkbox_label_58a00a56',
-    base__small$6 = 'Checkbox_base__small_70ef629e',
-    base__medium$4 = 'Checkbox_base__medium_70ef629e',
-    base__checked = 'Checkbox_base__checked_70ef629e',
-    checkIcon = 'Checkbox_checkIcon_968885f3',
-    check = 'Checkbox_check_8341731a',
-    styles$l = {
+const strings$1 = resources.resolve('strings'),
+    intl = resources.resolve('intl'),
+    keyValue = (e) => intl.toUpperCase(strings$1.readOr(`readable_key_names.KEY_${e}`, () => EMPTY_VALUE)),
+    EMPTY_VALUE = intl.toUpperCase(strings$1.readOrEmpty('readable_key_names.KEY_NONE_ALT')),
+    keyCodeValue = {
+        [keyStringCodes.NONE]: keyValue('NONE_ALT'),
+        [keyStringCodes.ESCAPE]: keyValue('ESCAPE'),
+        [keyStringCodes.ENTER]: keyValue('ENTER'),
+        [keyStringCodes.SPACE]: keyValue('SPACE'),
+        [keyStringCodes.DELETE]: keyValue('DELETE'),
+        [keyStringCodes.BACKSPACE]: keyValue('BACKSPACE'),
+        [keyStringCodes.TAB]: keyValue('TAB'),
+        [keyStringCodes.HOME]: keyValue('HOME'),
+        [keyStringCodes.END]: keyValue('END'),
+        [keyStringCodes.MINUS]: keyValue('MINUS'),
+        [keyStringCodes.SLASH]: keyValue('SLASH'),
+        [keyStringCodes.BACKSLASH]: keyValue('BACKSLASH'),
+        [keyStringCodes.PERIOD]: keyValue('PERIOD'),
+        [keyStringCodes.COMMA]: keyValue('COMMA'),
+        [keyStringCodes.QUOTE]: keyValue('APOSTROPHE'),
+        [keyStringCodes.SEMICOLON]: keyValue('SEMICOLON'),
+        [keyStringCodes.INSERT]: keyValue('INSERT'),
+        [keyStringCodes.KEY_A]: keyValue('A'),
+        [keyStringCodes.KEY_B]: keyValue('B'),
+        [keyStringCodes.KEY_C]: keyValue('C'),
+        [keyStringCodes.KEY_D]: keyValue('D'),
+        [keyStringCodes.KEY_E]: keyValue('E'),
+        [keyStringCodes.KEY_F]: keyValue('F'),
+        [keyStringCodes.KEY_G]: keyValue('G'),
+        [keyStringCodes.KEY_H]: keyValue('H'),
+        [keyStringCodes.KEY_I]: keyValue('I'),
+        [keyStringCodes.KEY_J]: keyValue('J'),
+        [keyStringCodes.KEY_K]: keyValue('K'),
+        [keyStringCodes.KEY_L]: keyValue('L'),
+        [keyStringCodes.KEY_M]: keyValue('M'),
+        [keyStringCodes.KEY_N]: keyValue('N'),
+        [keyStringCodes.KEY_O]: keyValue('O'),
+        [keyStringCodes.KEY_P]: keyValue('P'),
+        [keyStringCodes.KEY_Q]: keyValue('Q'),
+        [keyStringCodes.KEY_R]: keyValue('R'),
+        [keyStringCodes.KEY_S]: keyValue('S'),
+        [keyStringCodes.KEY_T]: keyValue('T'),
+        [keyStringCodes.KEY_U]: keyValue('U'),
+        [keyStringCodes.KEY_V]: keyValue('V'),
+        [keyStringCodes.KEY_W]: keyValue('W'),
+        [keyStringCodes.KEY_X]: keyValue('X'),
+        [keyStringCodes.KEY_Y]: keyValue('Y'),
+        [keyStringCodes.KEY_Z]: keyValue('Z'),
+        [keyStringCodes.DIGIT_0]: keyValue('0'),
+        [keyStringCodes.DIGIT_1]: keyValue('1'),
+        [keyStringCodes.DIGIT_2]: keyValue('2'),
+        [keyStringCodes.DIGIT_3]: keyValue('3'),
+        [keyStringCodes.DIGIT_4]: keyValue('4'),
+        [keyStringCodes.DIGIT_5]: keyValue('5'),
+        [keyStringCodes.DIGIT_6]: keyValue('6'),
+        [keyStringCodes.DIGIT_7]: keyValue('7'),
+        [keyStringCodes.DIGIT_8]: keyValue('8'),
+        [keyStringCodes.DIGIT_9]: keyValue('9'),
+        [keyStringCodes.NUMPAD_0]: keyValue('NUMPAD0'),
+        [keyStringCodes.NUMPAD_1]: keyValue('NUMPAD1'),
+        [keyStringCodes.NUMPAD_2]: keyValue('NUMPAD2'),
+        [keyStringCodes.NUMPAD_3]: keyValue('NUMPAD3'),
+        [keyStringCodes.NUMPAD_4]: keyValue('NUMPAD4'),
+        [keyStringCodes.NUMPAD_5]: keyValue('NUMPAD5'),
+        [keyStringCodes.NUMPAD_6]: keyValue('NUMPAD6'),
+        [keyStringCodes.NUMPAD_7]: keyValue('NUMPAD7'),
+        [keyStringCodes.NUMPAD_8]: keyValue('NUMPAD8'),
+        [keyStringCodes.NUMPAD_9]: keyValue('NUMPAD9'),
+        [keyStringCodes.F_1]: keyValue('F1'),
+        [keyStringCodes.F_2]: keyValue('F2'),
+        [keyStringCodes.F_3]: keyValue('F3'),
+        [keyStringCodes.F_4]: keyValue('F4'),
+        [keyStringCodes.F_5]: keyValue('F5'),
+        [keyStringCodes.F_6]: keyValue('F6'),
+        [keyStringCodes.F_7]: keyValue('F7'),
+        [keyStringCodes.F_8]: keyValue('F8'),
+        [keyStringCodes.F_9]: keyValue('F9'),
+        [keyStringCodes.F_10]: keyValue('F10'),
+        [keyStringCodes.F_11]: keyValue('F11'),
+        [keyStringCodes.F_12]: keyValue('F12'),
+        [keyStringCodes.NUMPAD_MULTIPLY]: keyValue('NUMPADSTAR'),
+        [keyStringCodes.NUMPAD_DIVIDE]: keyValue('NUMPADSLASH'),
+        [keyStringCodes.NUMPAD_ADD]: keyValue('ADD'),
+        [keyStringCodes.NUMPAD_SUBTRACT]: keyValue('NUMPADMINUS'),
+        [keyStringCodes.NUMPAD_DECIMAL]: keyValue('NUMPADPERIOD'),
+        [keyStringCodes.ARROW_LEFT]: keyValue('LEFTARROW'),
+        [keyStringCodes.ARROW_RIGHT]: keyValue('RIGHTARROW'),
+        [keyStringCodes.ARROW_UP]: keyValue('UPARROW'),
+        [keyStringCodes.ARROW_DOWN]: keyValue('DOWNARROW'),
+        [keyStringCodes.PAGE_UP]: keyValue('PGUP'),
+        [keyStringCodes.PAGE_DOWN]: keyValue('PGDN'),
+        [keyStringCodes.BRACKET_LEFT]: keyValue('LBRACKET'),
+        [keyStringCodes.BRACKET_RIGHT]: keyValue('RBRACKET'),
+    },
+    KeyButtonContext = reactExports.createContext(void 0);
+function useKeyButtonContext() {
+    const e = reactExports.useContext(KeyButtonContext);
+    if (!e) throw new Error('useKeyButtonContext must be used within KeyButtonContext');
+    return e;
+}
+const background$3 = 'KeyButton_background_8a852f95',
+    border$3 = 'KeyButton_border_b1c50f01',
+    base$o = 'KeyButton_8fd343f8',
+    content$6 = 'KeyButton_content_a724f532',
+    styles$s = { background: background$3, border: border$3, base: base$o, content: content$6 },
+    StyledBase = defineStyledComponent('KeyButton', styles$s.base);
+function Base$a({ children: e, onClick: t, onMouseEnter: s, ...r }) {
+    const n = useSounds(),
+        { soundTarget: o, silent: a } = useKeyButtonContext();
+    return jsxRuntimeExports.jsx(StyledBase, {
+        ...r,
+        onMouseEnter: function (e) {
+            (a || n.play('mouse-enter', { target: o, original: e }), null == s || s(e));
+        },
+        onClick: function (e) {
+            (a || n.play('click', { target: o, original: e }), null == t || t(e));
+        },
+        children: e,
+    });
+}
+function KeyButtonProvider({ keyCode: e, onActive: t, silent: s, soundTarget: r, idle: n, children: o }) {
+    useHandleKeyup(n ? keyStringCodes.NONE : normalizeKeyCode(e), t);
+    const a = reactExports.useMemo(
+        () => ({ keyCode: e, onActive: t, silent: s, soundTarget: r, idle: n }),
+        [e, t, r, s, n],
+    );
+    return jsxRuntimeExports.jsx(KeyButtonContext.Provider, { value: a, children: o });
+}
+function Code() {
+    const { keyCode: e } = useKeyButtonContext(),
+        t = normalizeKeyCode(e);
+    if (t === keyStringCodes.NONE) return EMPTY_VALUE;
+    const s = getCurrentLayoutKeyName(getScanCodeFromKeyName(t));
+    return s in keyCodeValue
+        ? keyCodeValue[s]
+        : (console.error(
+              e === s
+                  ? `KeyButton: key code "${e}" is not supported.`
+                  : `KeyButton: virtual key code "${s}" for "${e}" is not supported.`,
+          ),
+          EMPTY_VALUE);
+}
+const KeyButton = function ({
+    keyCode: e,
+    onActive: t = noop,
+    silent: s = !1,
+    idle: r = !1,
+    soundTarget: n = 'KeyButton',
+    classNames: o,
+    className: a,
+    children: i,
+    ...u
+}) {
+    return jsxRuntimeExports.jsx(KeyButtonProvider, {
+        keyCode: e,
+        onActive: t,
+        silent: s,
+        idle: r,
+        soundTarget: n,
+        children: jsxRuntimeExports.jsxs(Base$a, {
+            ...u,
+            className: cx(styles$s.base, a, null == o ? void 0 : o.base),
+            children: [
+                jsxRuntimeExports.jsx('div', { className: cx(styles$s.background, null == o ? void 0 : o.background) }),
+                jsxRuntimeExports.jsx('div', { className: cx(styles$s.border, null == o ? void 0 : o.border) }),
+                jsxRuntimeExports.jsx('div', {
+                    className: cx(styles$s.content, null == o ? void 0 : o.content),
+                    children: i,
+                }),
+            ],
+        }),
+    });
+};
+KeyButton.Code = Code;
+const base$n = 'Background_39e8f2ed',
+    pattern$3 = 'Background_pattern_8cad1521',
+    noise = 'Background_noise_e3254bb3',
+    styles$r = { base: base$n, pattern: pattern$3, noise: noise };
+function Background({ className: e, classNames: t }) {
+    return jsxRuntimeExports.jsxs('div', {
+        className: cx(e, styles$r.base),
+        children: [
+            jsxRuntimeExports.jsx('div', { className: cx(null == t ? void 0 : t.pattern, styles$r.pattern) }),
+            jsxRuntimeExports.jsx('div', { className: cx(null == t ? void 0 : t.noise, styles$r.noise) }),
+        ],
+    });
+}
+var MOUSE_BUTTON_CODES = ((e) => (
+    (e[(e.LEFT = 0)] = 'LEFT'),
+    (e[(e.WHEEL = 1)] = 'WHEEL'),
+    (e[(e.RIGHT = 2)] = 'RIGHT'),
+    (e[(e.FOURTH = 3)] = 'FOURTH'),
+    (e[(e.FIFTH = 4)] = 'FIFTH'),
+    e
+))(MOUSE_BUTTON_CODES || {});
+function playSound(e) {
+    engine.call('PlaySound', e).catch((t) => {
+        console.error('[lib/sounds.js] playSound(', e, '): ', t);
+    });
+}
+var ButtonType = ((e) => (
+        (e.main = 'main'),
+        (e.primary = 'primary'),
+        (e.primaryGreen = 'primaryGreen'),
+        (e.primaryRed = 'primaryRed'),
+        (e.secondary = 'secondary'),
+        (e.ghost = 'ghost'),
+        e
+    ))(ButtonType || {}),
+    ButtonSize = ((e) => (
+        (e.extraSmall = 'extraSmall'),
+        (e.small = 'small'),
+        (e.medium = 'medium'),
+        (e.large = 'large'),
+        e
+    ))(ButtonSize || {});
+const base$m = 'Cbutton_24fc9a0c',
+    base__main = 'Cbutton_base__main_2f199578',
+    base__primary = 'Cbutton_base__primary_9da8a692',
+    base__primaryGreen = 'Cbutton_base__primaryGreen_74301f4e',
+    base__primaryRed = 'Cbutton_base__primaryRed_d184ac',
+    base__secondary = 'Cbutton_base__secondary_22ff48c2',
+    base__ghost = 'Cbutton_base__ghost_fd3acf91',
+    base__extraSmall = 'Cbutton_base__extraSmall_f64ebb9e',
+    base__small$6 = 'Cbutton_base__small_a71bc2a9',
+    base__medium$4 = 'Cbutton_base__medium_d82a1b14',
+    base__large = 'Cbutton_base__large_f02aee17',
+    base__disabled$3 = 'Cbutton_base__disabled_96f239bb',
+    back = 'Cbutton_back_ffaa618f',
+    texture = 'Cbutton_texture_f462b307',
+    state = 'Cbutton_state_bf8d0bab',
+    base__focus = 'Cbutton_base__focus_180a9717',
+    stateHighlightHover = 'Cbutton_stateHighlightHover_7e2b860e',
+    stateHighlightActive = 'Cbutton_stateHighlightActive_f3d8fd6a',
+    stateDisabled = 'Cbutton_stateDisabled_7b91392f',
+    base__highlightActive = 'Cbutton_base__highlightActive_180a9717',
+    content$5 = 'Cbutton_content_faaa9067',
+    styles$q = {
+        base: base$m,
+        base__main: base__main,
+        base__primary: base__primary,
+        base__primaryGreen: base__primaryGreen,
+        base__primaryRed: base__primaryRed,
+        base__secondary: base__secondary,
+        base__ghost: base__ghost,
+        base__extraSmall: base__extraSmall,
+        base__small: base__small$6,
+        base__medium: base__medium$4,
+        base__large: base__large,
+        base__disabled: base__disabled$3,
+        back: back,
+        texture: texture,
+        state: state,
+        base__focus: base__focus,
+        stateHighlightHover: stateHighlightHover,
+        stateHighlightActive: stateHighlightActive,
+        stateDisabled: stateDisabled,
+        base__highlightActive: base__highlightActive,
+        content: content$5,
+    },
+    Button = ({
+        children: e,
+        size: t,
+        disabled: s,
+        mixClass: r,
+        onMouseEnter: n,
+        onMouseMove: o,
+        onMouseDown: a,
+        onMouseUp: i,
+        onMouseLeave: u,
+        onClick: l,
+        isFocused: c = !1,
+        type: d = ButtonType.primary,
+        soundHover: _ = 'highlight',
+        soundClick: m = 'play',
+    }) => {
+        const p = reactExports.useRef(null),
+            [x, f] = reactExports.useState(c),
+            [E, h] = reactExports.useState(!1);
+        return (
+            reactExports.useEffect(() => {
+                function e(e) {
+                    x && null !== p.current && !p.current.contains(e.target) && f(!1);
+                }
+                return (
+                    document.addEventListener('mousedown', e),
+                    () => {
+                        document.removeEventListener('mousedown', e);
+                    }
+                );
+            }, [x]),
+            reactExports.useEffect(() => {
+                f(c);
+            }, [c]),
+            jsxRuntimeExports.jsxs('div', {
+                ref: p,
+                className: cx(
+                    styles$q.base,
+                    styles$q[`base__${d}`],
+                    s && styles$q.base__disabled,
+                    t && styles$q[`base__${t}`],
+                    x && styles$q.base__focus,
+                    E && styles$q.base__highlightActive,
+                    r,
+                ),
+                onMouseEnter: function (e) {
+                    s || (null !== _ && playSound(_), n && n(e));
+                },
+                onMouseMove: function (e) {
+                    o && o(e);
+                },
+                onMouseUp: function (e) {
+                    s || (i && i(e), h(!1));
+                },
+                onMouseDown: function (e) {
+                    if (s) return;
+                    const t = e.button === MOUSE_BUTTON_CODES.LEFT;
+                    (null !== m && t && playSound(m),
+                        a && a(e),
+                        c && (s || (p.current && (p.current.focus(), f(!0)))),
+                        t && h(!0));
+                },
+                onMouseLeave: function (e) {
+                    s || (u && u(e), h(!1));
+                },
+                onClick: function (e) {
+                    s || (l && l(e));
+                },
+                children: [
+                    d !== ButtonType.ghost &&
+                        jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+                            children: [
+                                jsxRuntimeExports.jsx('div', { className: styles$q.back }),
+                                jsxRuntimeExports.jsx('span', { className: styles$q.texture }),
+                            ],
+                        }),
+                    jsxRuntimeExports.jsxs('span', {
+                        className: cx(styles$q.state, styles$q.state__default),
+                        children: [
+                            jsxRuntimeExports.jsx('span', { className: styles$q.stateDisabled }),
+                            jsxRuntimeExports.jsx('span', { className: styles$q.stateHighlightHover }),
+                            jsxRuntimeExports.jsx('span', { className: styles$q.stateHighlightActive }),
+                        ],
+                    }),
+                    jsxRuntimeExports.jsx('span', {
+                        className: styles$q.content,
+                        lang: R.strings.settings.LANGUAGE_CODE(),
+                        children: e,
+                    }),
+                ],
+            })
+        );
+    },
+    CButton = Button,
+    base$l = 'Error_741eaf3c',
+    alertIcon = 'Error_alertIcon_e771a05c',
+    errorCaption = 'Error_errorCaption_89c19a4f',
+    button$1 = 'Error_button_2d8a41b6',
+    styles$p = { base: base$l, alertIcon: alertIcon, errorCaption: errorCaption, button: button$1 },
+    Error$1 = ({ errorBtnClickHandler: e, errorBtnLabel: t, errorMessage: s }) =>
+        jsxRuntimeExports.jsxs('div', {
+            className: styles$p.base,
+            children: [
+                jsxRuntimeExports.jsx('div', { className: styles$p.alertIcon }),
+                jsxRuntimeExports.jsx('div', { className: styles$p.errorCaption, children: s }),
+                jsxRuntimeExports.jsx(CButton, {
+                    size: ButtonSize.medium,
+                    mixClass: styles$p.button,
+                    onClick: e,
+                    children: t,
+                }),
+            ],
+        }),
+    base$k = 'Spinner_9ec19f90',
+    caption$1 = 'Spinner_caption_a44b585',
+    gear = 'Spinner_gear_13ca7433',
+    logo = 'Spinner_logo_22e624b',
+    styles$o = { base: base$k, caption: caption$1, gear: gear, logo: logo },
+    Spinner = ({ message: e, className: t, classNames: s }) =>
+        jsxRuntimeExports.jsxs('div', {
+            className: cx(styles$o.base, t),
+            children: [
+                e &&
+                    jsxRuntimeExports.jsx('div', {
+                        className: cx(styles$o.caption, null == s ? void 0 : s.caption),
+                        children: e,
+                    }),
+                jsxRuntimeExports.jsx('div', { className: cx(styles$o.gear, null == s ? void 0 : s.gear) }),
+                jsxRuntimeExports.jsx('div', { className: cx(styles$o.logo, null == s ? void 0 : s.logo) }),
+            ],
+        }),
+    base$j = 'Waiting_f97f6e4b',
+    blackOverlay = 'Waiting_blackOverlay_e659a6de',
+    styles$n = { base: base$j, blackOverlay: blackOverlay },
+    Waiting = ({
+        errorBtnClickHandler: e,
+        message: t = '',
+        isError: s = !1,
+        errorMessage: r = '',
+        errorBtnLabel: n = R.strings.dialogs.disconnected.cancel(),
+        overlayAlpha: o = '0.8',
+    }) => {
+        const a = reactExports.createRef();
+        return (
+            reactExports.useEffect(() => {
+                const e = a.current;
+                e && o && (e.style.opacity = o);
+            }, [a, o]),
+            jsxRuntimeExports.jsxs('div', {
+                className: styles$n.base,
+                children: [
+                    jsxRuntimeExports.jsx('div', { className: styles$n.blackOverlay, ref: a }),
+                    s
+                        ? jsxRuntimeExports.jsx(Error$1, { errorBtnLabel: n, errorMessage: r, errorBtnClickHandler: e })
+                        : jsxRuntimeExports.jsx(Spinner, { message: t }),
+                ],
+            })
+        );
+    },
+    strings = resources.resolve('strings'),
+    emptyHandler = () => null,
+    LoaderComponent = () =>
+        jsxRuntimeExports.jsx(Waiting, {
+            errorBtnClickHandler: emptyHandler,
+            message: strings.readOrEmpty('waiting.loading'),
+            overlayAlpha: '0.5',
+        }),
+    Loader = reactExports.memo(LoaderComponent),
+    SwitcherContext = reactExports.createContext(void 0);
+function useSwitcherContext() {
+    const e = reactExports.useContext(SwitcherContext);
+    if (!e) throw new Error('useSwitcherChecked must be used within SwitcherCheckedContext');
+    return e;
+}
+const background$2 = 'Switcher_background_a88161d0',
+    border$2 = 'Switcher_border_a19f907',
+    overlay$1 = 'Switcher_overlay_de650936',
+    selectedOverlay$1 = 'Switcher_selectedOverlay_959b7a8f',
+    selectedItemBackground = 'Switcher_selectedItemBackground_f3f7ed7e',
+    selectedItemBorder = 'Switcher_selectedItemBorder_7a1a3dd5',
+    base$i = 'Switcher_825add0a',
+    base__disabled$2 = 'Switcher_base__disabled_863a5f47',
+    content$4 = 'Switcher_content_c83e02e5',
+    content__fontAligned = 'Switcher_content__fontAligned_9342bb29',
+    item = 'Switcher_item_ecea23cf',
+    selectedOverlay__moved = 'Switcher_selectedOverlay__moved_beb6c80b',
+    selectedItem = 'Switcher_selectedItem_c6995287',
+    selectedItem__moved = 'Switcher_selectedItem__moved_5f74b720',
+    selectedItemContent = 'Switcher_selectedItemContent_34994102',
+    styles$m = {
         background: background$2,
         border: border$2,
         overlay: overlay$1,
+        selectedOverlay: selectedOverlay$1,
+        selectedItemBackground: selectedItemBackground,
+        selectedItemBorder: selectedItemBorder,
         base: base$i,
-        base__enabled: base__enabled,
-        label: label$1,
-        base__small: base__small$6,
-        base__medium: base__medium$4,
-        base__checked: base__checked,
-        checkIcon: checkIcon,
-        check: check,
-    },
-    Check = reactExports.forwardRef(function ({ classNames: e, children: t, ...s }, r) {
-        return jsxRuntimeExports.jsxs('div', {
-            ...s,
-            ref: r,
-            className: cx(styles$l.check, s.className, null == e ? void 0 : e.base),
+        base__disabled: base__disabled$2,
+        'base__size-small': 'Switcher_base__size-small_df4dee40',
+        'base__size-medium': 'Switcher_base__size-medium_d287fe48',
+        content: content$4,
+        content__fontAligned: content__fontAligned,
+        'base__type-horizontal': 'Switcher_base__type-horizontal_9ba1e4f',
+        item: item,
+        'base__type-vertical': 'Switcher_base__type-vertical_9ba1e4f',
+        selectedOverlay__moved: selectedOverlay__moved,
+        selectedItem: selectedItem,
+        selectedItem__moved: selectedItem__moved,
+        selectedItemContent: selectedItemContent,
+    };
+function SelectedItem({ children: e, classNames: t }) {
+    const { checked: s } = useSwitcherContext();
+    return jsxRuntimeExports.jsx('div', {
+        className: cx(styles$m.selectedOverlay, s && styles$m.selectedOverlay__moved, null == t ? void 0 : t.base),
+        children: jsxRuntimeExports.jsxs('div', {
+            className: cx(styles$m.selectedItem, s && styles$m.selectedItem__moved, null == t ? void 0 : t.item),
             children: [
-                jsxRuntimeExports.jsx('div', { className: cx(styles$l.background, null == e ? void 0 : e.background) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$l.border, null == e ? void 0 : e.border) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$l.overlay, null == e ? void 0 : e.overlay) }),
-                t,
+                jsxRuntimeExports.jsx('div', {
+                    className: cx(styles$m.selectedItemBackground, null == t ? void 0 : t.background),
+                }),
+                jsxRuntimeExports.jsx('div', {
+                    className: cx(styles$m.selectedItemBorder, null == t ? void 0 : t.border),
+                }),
+                jsxRuntimeExports.jsx('div', {
+                    className: cx(styles$m.selectedItemContent, null == t ? void 0 : t.content),
+                    children: e,
+                }),
             ],
-        });
-    }),
-    sizes$4 = { medium: 'medium', small: 'small' },
-    Base$7 = defineStyledComponent('Checkbox', styles$l.base, {
+        }),
+    });
+}
+const sizes$6 = { small: 'small', medium: 'medium' },
+    types$1 = { vertical: 'vertical', horizontal: 'horizontal' },
+    Base$9 = defineStyledComponent('Button', styles$m.base, {
         variants: {
-            size: { [sizes$4.small]: styles$l.base__small, [sizes$4.medium]: styles$l.base__medium },
-            checked: { true: styles$l.base__checked },
-            state: { enabled: styles$l.base__enabled },
+            type: {
+                [types$1.horizontal]: styles$m['base__type-horizontal'],
+                [types$1.vertical]: styles$m['base__type-vertical'],
+            },
+            size: { [sizes$6.small]: styles$m['base__size-small'], [sizes$6.medium]: styles$m['base__size-medium'] },
+            state: { disabled: styles$m.base__disabled },
         },
+        defaultVariants: { type: types$1.vertical, size: sizes$6.small },
     }),
-    HeadlessCheckbox = reactExports.forwardRef(function (
+    Item = defineStyledComponent('ButtonItem', styles$m.item),
+    Switcher$1 = reactExports.forwardRef(function (
         {
-            checked: e,
-            size: t = sizes$4.medium,
-            disabled: s = !1,
-            children: r,
-            onMouseEnter: n,
-            onClick: o,
-            onCheckedChange: a,
-            ...i
+            type: e = types$1.vertical,
+            checked: t,
+            onMouseEnter: s,
+            onSwitch: r,
+            onClick: n,
+            size: o = sizes$6.small,
+            disabled: a = !1,
+            autoAlignContent: i = !1,
+            classNames: u,
+            className: l,
+            children: c,
+            ...d
         },
-        u,
+        _,
     ) {
-        const l = useSounds();
-        return jsxRuntimeExports.jsx(Base$7, {
-            ...i,
-            ref: u,
-            size: t,
-            checked: e,
-            state: s ? void 0 : 'enabled',
-            onMouseEnter: function (e) {
-                (l.play('mouse-enter', { target: Base$7.displayName, original: e }), null == n || n(e));
-            },
-            onClick: function (t) {
-                (l.play('click', { target: Base$7.displayName, original: t }), null == o || o(t), a(!e));
-            },
-            children: r,
+        const [m, p, x] = c,
+            f = useSounds();
+        const E = reactExports.useMemo(() => ({ checked: t }), [t]);
+        return jsxRuntimeExports.jsx(SwitcherContext.Provider, {
+            value: E,
+            children: jsxRuntimeExports.jsxs(Base$9, {
+                ...d,
+                ref: _,
+                type: e,
+                size: o,
+                state: a ? 'disabled' : void 0,
+                className: cx(l, null == u ? void 0 : u.base),
+                onMouseEnter: function (e) {
+                    (f.play('mouse-enter', { target: Base$9.displayName, original: e }), null == s || s(e));
+                },
+                onClick: function (e) {
+                    (f.play('click', { target: Base$9.displayName, original: e }), r(!t), null == n || n(e));
+                },
+                children: [
+                    jsxRuntimeExports.jsx('div', {
+                        className: cx(styles$m.background, null == u ? void 0 : u.background),
+                    }),
+                    jsxRuntimeExports.jsx('div', { className: cx(styles$m.border, null == u ? void 0 : u.border) }),
+                    jsxRuntimeExports.jsx('div', { className: cx(styles$m.overlay, null == u ? void 0 : u.overlay) }),
+                    jsxRuntimeExports.jsxs('div', {
+                        className: cx(
+                            styles$m.content,
+                            i && styles$m.content__fontAligned,
+                            null == u ? void 0 : u.content,
+                        ),
+                        children: [m, p, x],
+                    }),
+                ],
+            }),
         });
     });
-function Label({ className: e, children: t }) {
-    return jsxRuntimeExports.jsx('div', { className: cx(styles$l.label, e), children: t });
+((Switcher$1.Item = Item),
+    (Switcher$1.SelectedItem = SelectedItem),
+    (Switcher$1.types = types$1),
+    (Switcher$1.sizes = sizes$6));
+const sizes$5 = {
+        s24x24: 's24x24',
+        s48x48: 's48x48',
+        s64x64: 's64x64',
+        s80x80: 's80x80',
+        s180x135: 's180x135',
+        s232x174: 's232x174',
+        s296x222: 's296x222',
+        s360x270: 's360x270',
+        s400x300: 's400x300',
+        s600x450: 's600x450',
+    },
+    overlayTypes = {
+        builtInEquipment: 'built_in_equipment',
+        trophy: 'trophy',
+        experimental: 'experimental',
+        improved: 'improved',
+        directiveBooster: 'directive_booster',
+        directiveSubstitute: 'directive_substitute',
+        custom: 'custom',
+        none: 'none',
+    },
+    overlayTypesWithoutLevel = [
+        overlayTypes.improved,
+        overlayTypes.directiveBooster,
+        overlayTypes.directiveSubstitute,
+        overlayTypes.builtInEquipment,
+    ],
+    imageSizes = {
+        [sizes$5.s24x24]: { width: 24, height: 24 },
+        [sizes$5.s48x48]: { width: 48, height: 48 },
+        [sizes$5.s64x64]: { width: 64, height: 64 },
+        [sizes$5.s80x80]: { width: 80, height: 80 },
+        [sizes$5.s180x135]: { width: 180, height: 135 },
+        [sizes$5.s232x174]: { width: 232, height: 174 },
+        [sizes$5.s296x222]: { width: 296, height: 222 },
+        [sizes$5.s360x270]: { width: 360, height: 270 },
+        [sizes$5.s400x300]: { width: 400, height: 300 },
+        [sizes$5.s600x450]: { width: 600, height: 450 },
+    },
+    Base$8 = defineStyledComponent('LoadoutItem', { element: Image$1 });
+function getItemSizeFolderName(e) {
+    switch (e) {
+        case sizes$5.s80x80:
+        case sizes$5.s64x64:
+            return 'big';
+        case sizes$5.s48x48:
+            return 'small';
+        default:
+            return e;
+    }
 }
-const Checkbox = reactExports.forwardRef(function (
-        { checked: e, classNames: t, children: s, checkPath: r = 'ui_kit.checkbox.icon_check', ...n },
-        o,
+const LoadoutItem = reactExports.forwardRef(function (
+    {
+        name: e,
+        path: t,
+        overlayPath: s,
+        size: r,
+        overlayType: n = overlayTypes.none,
+        level: o,
+        classNames: a,
+        className: i,
+        width: u,
+        height: l,
+        ...c
+    },
+    d,
+) {
+    const _ =
+            t ||
+            (r === sizes$5.s24x24
+                ? `vehParams.tooltips.bonuses.${e}`
+                : `quests.bonuses.${getItemSizeFolderName(r)}.${e}`),
+        m = (() => {
+            if (s) return s;
+            if (n === overlayTypes.custom) return void console.error('custom overlay passed without image source path');
+            if (n === overlayTypes.none) return;
+            const e = r === sizes$5.s64x64 ? sizes$5.s80x80 : r;
+            return overlayTypesWithoutLevel.includes(n)
+                ? `components.loadout_item.overlays.${e}.${n}`
+                : o
+                  ? `components.loadout_item.overlays.${e}.${n}_${o}_level`
+                  : void console.error('Item level is not provided, but required!');
+        })(),
+        p = imageSizes[r];
+    return jsxRuntimeExports.jsx(Base$8, {
+        ...c,
+        ref: d,
+        path: _,
+        width: u ?? p.width,
+        height: l ?? p.height,
+        className: cx(i, null == a ? void 0 : a.item),
+        children:
+            n !== overlayTypes.none && m && jsxRuntimeExports.jsx(Image$1, { path: m, width: '100%', height: '100%' }),
+    });
+});
+((LoadoutItem.sizes = sizes$5), (LoadoutItem.overlayTypes = overlayTypes));
+const selectedOverlay = 'Slot_selectedOverlay_5b63484a',
+    disabledOverlay = 'Slot_disabledOverlay_4d0ab64b',
+    content$3 = 'Slot_content_dbf98123',
+    slot = 'Slot_e5fcbf90',
+    slot__hovered = 'Slot_slot__hovered_f72e51c4',
+    slot__disabled = 'Slot_slot__disabled_ba2d5d0e',
+    slot__small = 'Slot_slot__small_2d3a3a74',
+    slot__medium = 'Slot_slot__medium_42bbdb11',
+    slot__extraLarge = 'Slot_slot__extraLarge_d8070c25',
+    content__disabled = 'Slot_content__disabled_1d609e12',
+    emptyContent = 'Slot_emptyContent_ba97d4d8',
+    styles$l = {
+        selectedOverlay: selectedOverlay,
+        disabledOverlay: disabledOverlay,
+        content: content$3,
+        slot: slot,
+        slot__hovered: slot__hovered,
+        slot__disabled: slot__disabled,
+        slot__small: slot__small,
+        slot__medium: slot__medium,
+        slot__extraLarge: slot__extraLarge,
+        content__disabled: content__disabled,
+        emptyContent: emptyContent,
+    },
+    sizes$4 = { small: 'small', medium: 'medium', large: 'large', extraLarge: 'extraLarge' },
+    Content$1 = defineStyledComponent('SlotContent'),
+    Base$7 = defineStyledComponent('Slot', styles$l.slot, {
+        variants: {
+            size: {
+                [sizes$4.small]: styles$l.slot__small,
+                [sizes$4.medium]: styles$l.slot__medium,
+                [sizes$4.large]: styles$l.slot__large,
+                [sizes$4.extraLarge]: styles$l.slot__extraLarge,
+            },
+            hovered: { true: styles$l.slot__hovered },
+            selected: { true: styles$l.slot__selected },
+            disabled: { true: styles$l.slot__disabled },
+        },
+    }),
+    EmptySlot = defineStyledComponent('EmptySlot', styles$l.emptyContent),
+    Slot = reactExports.forwardRef(function (
+        {
+            children: e,
+            size: t,
+            disabled: s = !1,
+            hovered: r = !1,
+            selected: n = !1,
+            classNames: o,
+            className: a,
+            dataDropItem: i,
+            ...u
+        },
+        l,
     ) {
-        return jsxRuntimeExports.jsxs(HeadlessCheckbox, {
-            ...n,
-            ref: o,
-            checked: e,
+        return jsxRuntimeExports.jsxs(Base$7, {
+            ...u,
+            ref: l,
+            size: t,
+            selected: n,
+            disabled: s,
+            hovered: r && !s,
+            className: cx(null == o ? void 0 : o.slot, a),
             children: [
-                jsxRuntimeExports.jsx(Check, {
-                    className: null == t ? void 0 : t.check,
-                    children: jsxRuntimeExports.jsx(Image$1, {
-                        path: r,
-                        className: cx(styles$l.checkIcon, null == t ? void 0 : t.checkIcon),
+                n &&
+                    jsxRuntimeExports.jsx('div', {
+                        className: cx(styles$l.selectedOverlay, null == o ? void 0 : o.selectedOverlay),
                     }),
+                s &&
+                    jsxRuntimeExports.jsx('div', {
+                        className: cx(styles$l.disabledOverlay, null == o ? void 0 : o.disabledOverlay),
+                    }),
+                jsxRuntimeExports.jsx(Content$1, {
+                    className: cx(styles$l.content, s && styles$l.content__disabled, null == o ? void 0 : o.content),
+                    'data-drop-item': i,
+                    children: e || jsxRuntimeExports.jsx(EmptySlot, { className: null == o ? void 0 : o.emptyContent }),
                 }),
-                s && jsxRuntimeExports.jsx(Label, { className: null == t ? void 0 : t.label, children: s }),
             ],
         });
-    }),
-    base$h = 'SceneWrapper_52fcfc1e',
+    });
+((Slot.sizes = sizes$4), (Slot.Empty = EmptySlot));
+const base$h = 'SceneWrapper_52fcfc1e',
     base__down = 'SceneWrapper_base__down_4ece5089',
     base__moveSpaceDisabled = 'SceneWrapper_base__moveSpaceDisabled_1b1cd939',
     styles$k = { base: base$h, base__down: base__down, base__moveSpaceDisabled: base__moveSpaceDisabled },
@@ -9342,782 +10249,20 @@ const useResizeObserver = (e, t, s = !0) => {
             );
         }, [r, s, e]);
     },
-    getFromCallStack = (e = 1) => {
-        var t;
-        const s = new Error().stack;
-        let r,
-            n = R.invalid('resId'),
-            o = '';
-        return (
-            s &&
-                ((o = (null == (t = s.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : t[0]) || ''),
-                (r = s.split('\n')[e].split('.js')[0].split('/').pop() || ''),
-                window.__feature && window.__feature !== r && window.subViews[r] && (n = window.subViews[r].id)),
-            { callerUrl: o, caller: r, stack: s, resId: n }
-        );
-    };
-let ClickOutsideManager$1 =
-    ((_b = class {
-        constructor() {
-            (__publicField(this, 'entries', []),
-                __publicField(this, '_listenMouse', !1),
-                __publicField(this, 'onMouseDown', (e) => {
-                    this.entries.forEach(({ container: t, callback: s }) => {
-                        let r = e.target;
-                        do {
-                            if (r === t) return;
-                            r = r.parentNode;
-                        } while (r);
-                        s();
-                    });
-                }));
-        }
-        static get instance() {
-            return (_b.__instance || (_b.__instance = new _b()), _b.__instance);
-        }
-        register(e, t) {
-            (this.addMouseListener(), this.entries.push({ container: e, callback: t }));
-        }
-        unregister(e, t) {
-            const s = e,
-                r = t;
-            ((this.entries = this.entries.filter(({ container: e, callback: t }) => e !== s || t !== r)),
-                this.removeMouseListener());
-        }
-        addMouseListener() {
-            this._listenMouse || (document.addEventListener('mousedown', this.onMouseDown), (this._listenMouse = !0));
-        }
-        removeMouseListener() {
-            this._listenMouse &&
-                0 === this.entries.length &&
-                (document.removeEventListener('mousedown', this.onMouseDown), (this._listenMouse = !1));
-        }
-    }),
-    __publicField(_b, '__instance'),
-    _b);
-function makeEngineEvent(e) {
-    return (t) => (
-        engine.on(e, t),
-        () => {
-            engine.off(e, t);
-        }
-    );
-}
-function setTrackMouseOutside(e) {
-    viewEnv.setTrackMouseOnStage(e);
-}
-const internalMouse = {
-    down: makeEngineEvent('mousedown'),
-    up: makeEngineEvent('mouseup'),
-    move: makeEngineEvent('mousemove'),
-};
-function initMouseEvents() {
-    const e = { listeners: 0, enabled: !0, initialized: !1 };
-    function t() {
-        e.enabled && setTrackMouseOutside(!1);
-    }
-    function s() {
-        e.enabled && setTrackMouseOutside(!0);
-    }
-    function r() {
-        e.enabled
-            ? e.listeners < 1
-                ? ((e.initialized = !1),
-                  document.body.removeEventListener('mouseenter', t),
-                  document.body.removeEventListener('mouseleave', s))
-                : e.initialized ||
-                  ((e.initialized = !0),
-                  document.body.addEventListener('mouseenter', t),
-                  document.body.addEventListener('mouseleave', s))
-            : setTrackMouseOutside(!1);
-    }
-    return {
-        ...['down', 'up', 'move'].reduce(
-            (t, s) => (
-                (t[s] = (function (t) {
-                    return (s) => {
-                        e.listeners += 1;
-                        let n = !0;
-                        const o = `mouse${t}`,
-                            a = internalMouse[t]((e) => s([e, 'outside']));
-                        function i(e) {
-                            s([e, 'inside']);
-                        }
-                        return (
-                            window.addEventListener(o, i),
-                            r(),
-                            () => {
-                                n && (a(), window.removeEventListener(o, i), (e.listeners -= 1), r(), (n = !1));
-                            }
-                        );
-                    };
-                })(s)),
-                t
-            ),
-            {},
-        ),
-        disable() {
-            ((e.enabled = !1), r());
-        },
-        enable() {
-            ((e.enabled = !0), r());
-        },
-        enableOutside() {
-            e.enabled && setTrackMouseOutside(!0);
-        },
-        disableOutside() {
-            e.enabled && setTrackMouseOutside(!1);
-        },
-    };
-}
-function playSound(e) {
-    engine.call('PlaySound', e).catch((t) => {
-        console.error(`playSound('${e}'): `, t);
-    });
-}
-initMouseEvents();
-const sounds = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
-    plays = Object.keys(sounds).reduce((e, t) => ((e[t] = () => playSound(sounds[t])), e), {}),
-    play = { ...plays, sound: playSound },
-    sound = { play: play },
-    ROMAN = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
-    ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
-function arabic2roman$1(e) {
-    let t = '';
-    for (let s = ARABIC.length - 1; s >= 0; s--) for (; e >= ARABIC[s]; ) ((t += ROMAN[s]), (e -= ARABIC[s]));
-    return t;
-}
-const ROMAN_FORBIDDEN_LANGUAGE_CODES = ['ko', 'no'];
-function getTextureUrl(e, t, s = 1) {
-    return viewEnv.getChildTexturePath(e, t.width, t.height, s);
-}
-function getBgUrl(e, t, s) {
-    return `url(${getTextureUrl(e, t, s)})`;
-}
-ROMAN_FORBIDDEN_LANGUAGE_CODES.includes(R.strings.settings.LANGUAGE_CODE());
-const children = Object.freeze(
-        Object.defineProperty(
-            { __proto__: null, getBgUrl: getBgUrl, getTextureUrl: getTextureUrl },
-            Symbol.toStringTag,
-            { value: 'Module' },
-        ),
-    ),
-    displayStatus = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-    events = {
-        onTextureFrozen: makeEngineEvent('self.onTextureFrozen'),
-        onTextureReady: makeEngineEvent('self.onTextureReady'),
-        onDomBuilt: makeEngineEvent('self.onDomBuilt'),
-        onLoaded: makeEngineEvent('self.onLoaded'),
-        onDisplayChanged: makeEngineEvent('self.onShowingStatusChanged'),
-        onFocusUpdated: makeEngineEvent('self.onFocusChanged'),
-        children: {
-            onAdded: makeEngineEvent('children.onAdded'),
-            onLoaded: makeEngineEvent('children.onLoaded'),
-            onRemoved: makeEngineEvent('children.onRemoved'),
-            onAttached: makeEngineEvent('children.onAttached'),
-            onTextureReady: makeEngineEvent('children.onTextureReady'),
-            onRequestPosition: makeEngineEvent('children.requestPosition'),
-        },
-    },
-    viewEventTypes = { closePopover: 2, move: 16, close: 32, minimize: 64 },
-    createViewEventArguments$1 = (e) =>
-        Object.entries(e).map(([e, t]) => {
-            const s = 'GFValueProxy';
-            switch (typeof t) {
-                case 'number':
-                    return { __Type: s, name: e, number: t };
-                case 'boolean':
-                    return { __Type: s, name: e, bool: t };
-                default:
-                    return { __Type: s, name: e, string: t.toString() };
-            }
-        }),
-    sendViewEvent = (e, t) => {
-        const s = 'GFViewEventProxy';
-        if (void 0 !== t) {
-            const { args: r, ...n } = t;
-            return void 0 !== r
-                ? viewEnv.handleViewEvent({ __Type: s, type: e, ...n, arguments: createViewEventArguments$1(r) })
-                : viewEnv.handleViewEvent({ __Type: s, type: e, ...n });
-        }
-        return viewEnv.handleViewEvent({ __Type: s, type: e });
-    },
-    sendEvent = {
-        close(e) {
-            sendViewEvent('popover' === e ? viewEventTypes.closePopover : viewEventTypes.close);
-        },
-        minimize() {
-            sendViewEvent(viewEventTypes.minimize);
-        },
-        move(e) {
-            sendViewEvent(viewEventTypes.move, { isMouseEvent: !0, on: e });
-        },
-    },
-    ALL_SIDES = 15;
-function addPreloadTexture(e) {
-    viewEnv.addPreloadTexture(e);
-}
-function setInputPaddingsRem(e) {
-    viewEnv.setHitAreaPaddingsRem(e, e, e, e, ALL_SIDES);
-}
-function getBrowserTexturePath(e, t, s, r = 1) {
-    return viewEnv.getWebBrowserTexturePath(e, t, s, r);
-}
-function addModelObserver(e, t, s) {
-    return viewEnv.addDataChangedCallback(e, t, s);
-}
-function setSidePaddingsRem(e) {
-    viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, ALL_SIDES);
-}
-function getSize(e = 'px') {
-    return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
-}
-function resize(e, t, s = 'px') {
-    return 'rem' === s ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
-}
-function getViewGlobalPosition(e = 'rem') {
-    const t = viewEnv.getViewGlobalPositionRem();
-    return 'rem' === e ? t : { x: remToPx(t.x), y: remToPx(t.y) };
-}
-function freezeTextureBeforeResize() {
-    viewEnv.freezeTextureBeforeResize();
-}
-function getScale() {
-    return viewEnv.getScale();
-}
-function pxToRem(e) {
-    return viewEnv.pxToRem(e);
-}
-function remToPx(e) {
-    return viewEnv.remToPx(e);
-}
-function setAnimateWindow(e, t) {
-    viewEnv.setAnimateWindow(e, t);
-}
-function isFocused() {
-    return viewEnv.isFocused();
-}
-function setEventHandled() {
-    return viewEnv.setEventHandled();
-}
-function isEventHandled() {
-    return viewEnv.isEventHandled();
-}
-function forceTriggerMouseMove() {
-    viewEnv.forceTriggerMouseMove();
-}
-function getDisplayStatus() {
-    return viewEnv.getShowingStatus();
-}
-const getFontNames = (() => {
-        let e = [];
-        return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
-    })(),
-    arabic2roman = arabic2roman$1;
-function getExternalPaddingsRem() {
-    return viewEnv.getExternalPaddingsRem();
-}
-const displayStatusIs = Object.keys(displayStatus).reduce(
-        (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === displayStatus[t]), e),
-        {},
-    ),
-    extraSize = {
-        set: (e, t) => {
-            viewEnv.setExtraSizeRem(e, t);
-        },
-        get: (e, t) => {
-            viewEnv.getExtraSizeRem(e, t);
-        },
-    },
-    whenTutorialReady = Promise.all([
-        new Promise((e) => {
-            window.isDomBuilt ? e() : events.onDomBuilt(e);
-        }),
-        engine.whenReady,
-    ]);
-function enableFullScreenModeSupported() {
-    viewEnv.setFullscreenModeSupported(!0);
-}
-function initExternalPaddings(e) {
-    function t() {
-        const { top: t, right: s, bottom: r, left: n } = viewEnv.getExternalPaddingsRem();
-        (e.style.setProperty('--external-padding-top', `${t}rem`),
-            e.style.setProperty('--external-padding-right', `${s}rem`),
-            e.style.setProperty('--external-padding-bottom', `${r}rem`),
-            e.style.setProperty('--external-padding-left', `${n}rem`));
-    }
-    (t(), engine.on('self.onPaddingsUpdated', () => t()));
-}
-const view = Object.freeze(
-        Object.defineProperty(
-            {
-                __proto__: null,
-                addModelObserver: addModelObserver,
-                addPreloadTexture: addPreloadTexture,
-                arabic2roman: arabic2roman,
-                children: children,
-                displayStatus: displayStatus,
-                displayStatusIs: displayStatusIs,
-                enableFullScreenModeSupported: enableFullScreenModeSupported,
-                events: events,
-                extraSize: extraSize,
-                forceTriggerMouseMove: forceTriggerMouseMove,
-                freezeTextureBeforeResize: freezeTextureBeforeResize,
-                getBrowserTexturePath: getBrowserTexturePath,
-                getDisplayStatus: getDisplayStatus,
-                getExternalPaddingsRem: getExternalPaddingsRem,
-                getFontNames: getFontNames,
-                getScale: getScale,
-                getSize: getSize,
-                getViewGlobalPosition: getViewGlobalPosition,
-                initExternalPaddings: initExternalPaddings,
-                isEventHandled: isEventHandled,
-                isFocused: isFocused,
-                pxToRem: pxToRem,
-                remToPx: remToPx,
-                resize: resize,
-                sendEvent: sendEvent,
-                setAnimateWindow: setAnimateWindow,
-                setEventHandled: setEventHandled,
-                setInputPaddingsRem: setInputPaddingsRem,
-                setSidePaddingsRem: setSidePaddingsRem,
-                whenTutorialReady: whenTutorialReady,
-            },
-            Symbol.toStringTag,
-            { value: 'Module' },
-        ),
-    ),
-    env = { view: view, sound: sound },
-    _DataTracker = class e {
-        constructor() {
-            (__publicField(this, '_callbacks'),
-                __publicField(this, '_updateHandler'),
-                __publicField(this, '_views'),
-                __publicField(this, 'clearViewCallbacks', (e) => {
-                    this._views[e] &&
-                        (this._views[e].forEach((e) => {
-                            delete this._callbacks[e];
-                        }),
-                        delete this._views[e]);
-                }),
-                (this._callbacks = {}),
-                (this._views = {}),
-                (this._updateHandler = void 0));
-        }
-        static get instance() {
-            return (window.__dataTracker || (window.__dataTracker = new e()), window.__dataTracker);
-        }
-        clear() {
-            (void 0 !== this._updateHandler && (this._updateHandler.clear(), (this._updateHandler = void 0)),
-                (this._callbacks = {}));
-        }
-        addCallback(e, t, s = 0, r = !0) {
-            void 0 === this._updateHandler &&
-                (this._updateHandler = engine.on('viewEnv.onDataChanged', this._emmitDataChanged, this));
-            const n = env.view.addModelObserver(e, s, r);
-            return (
-                n > 0
-                    ? ((this._callbacks[n] = t),
-                      s > 0 && (this._views[s] ? this._views[s].push(n) : (this._views[s] = [n])))
-                    : console.error("Can't add callback for model:", e),
-                n
-            );
-        }
-        removeCallback(e, t = 0) {
-            let s = !1;
-            return (
-                void 0 !== e &&
-                    void 0 !== this._callbacks[e] &&
-                    ((s = viewEnv.removeDataChangedCallback(e, t)), delete this._callbacks[e]),
-                s || console.error("Can't remove callback by id:", e),
-                s
-            );
-        }
-        _emmitDataChanged(e, t, s) {
-            s.forEach((s) => {
-                const r = this._callbacks[s];
-                void 0 !== r && r(e, t);
-            });
-        }
-    };
-__publicField(_DataTracker, '__instance');
-let DataTracker = _DataTracker;
-function dumpViewModel(e) {
-    const t = {};
-    if ('object' != typeof e) return e;
-    for (const s in e)
-        if (Object.prototype.hasOwnProperty.call(e, s)) {
-            const r = Object.prototype.toString.call(e[s]);
-            if (r.startsWith('[object CoherentArrayProxy]')) {
-                const r = e[s];
-                t[s] = [];
-                for (let e = 0; e < r.length; e++) t[s].push({ value: dumpViewModel(r[e].value) });
-            } else r.startsWith('[object class BW::WULF::ViewModel') ? (t[s] = dumpViewModel(e[s])) : (t[s] = e[s]);
-        }
-    return t;
-}
-const SystemLocale = {
-        getNumberFormat: (e, t) => systemLocale.getNumberFormat(e, t),
-        getRealFormat: (e, t) => systemLocale.getRealFormat(e, t),
-        getTimeFormat: (e, t) => systemLocale.getTimeFormat(e, t),
-        getDateFormat: (e, t) => systemLocale.getDateFormat(e, t),
-        toUpperCase: (e) => systemLocale.toUpperCase(e),
-        toLowerCase: (e) => systemLocale.toUpperCase(e),
-    },
-    UserLocale = {
-        getNumberFormat: (e) => userLocale.getNumberFormat(e),
-        getTimeFormat: (e, t, s) => userLocale.getTimeFormat(e, t, void 0 === s || s),
-        getTimeString: (e, t, s) => userLocale.getTimeString(e, t, void 0 === s || s),
-    },
-    RegionalDateTime = {
-        getRegionalDateTime: (e, t, s = !0) => regionalDateTime.getRegionalDateTime(e, t, s),
-        getFormattedDateTime: (e, t, s = !0) => regionalDateTime.getFormattedDateTime(e, t, s),
-    };
-var ViewEventType = ((e) => (
-    (e[(e.UNDEFINED = 0)] = 'UNDEFINED'),
-    (e[(e.TOOLTIP = 1)] = 'TOOLTIP'),
-    (e[(e.POP_OVER = 2)] = 'POP_OVER'),
-    (e[(e.CONTEXT_MENU = 4)] = 'CONTEXT_MENU'),
-    (e[(e.DROP_DOWN = 8)] = 'DROP_DOWN'),
-    (e[(e.MOVE = 16)] = 'MOVE'),
-    (e[(e.CLOSE = 32)] = 'CLOSE'),
-    (e[(e.MINIMIZE = 64)] = 'MINIMIZE'),
-    e
-))(ViewEventType || {});
-const NumberFormatType = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
-    RealFormatType = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
-    TimeFormatType = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
-    DateFormatType = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
-var KEY_CODES = ((e) => (
-    (e[(e.NONE = -1)] = 'NONE'),
-    (e[(e.ALT = 165)] = 'ALT'),
-    (e[(e.ENTER = 13)] = 'ENTER'),
-    (e[(e.ESCAPE = 27)] = 'ESCAPE'),
-    (e[(e.SPACE = 32)] = 'SPACE'),
-    (e[(e.END = 35)] = 'END'),
-    (e[(e.HOME = 36)] = 'HOME'),
-    (e[(e.ARROW_LEFT = 37)] = 'ARROW_LEFT'),
-    (e[(e.ARROW_UP = 38)] = 'ARROW_UP'),
-    (e[(e.ARROW_RIGHT = 39)] = 'ARROW_RIGHT'),
-    (e[(e.ARROW_DOWN = 40)] = 'ARROW_DOWN'),
-    (e[(e.NUM_PLUS = 107)] = 'NUM_PLUS'),
-    (e[(e.NUM_MINUS = 109)] = 'NUM_MINUS'),
-    (e[(e.PLUS = 187)] = 'PLUS'),
-    (e[(e.MINUS = 189)] = 'MINUS'),
-    (e[(e.PAGE_UP = 33)] = 'PAGE_UP'),
-    (e[(e.PAGE_DOWN = 34)] = 'PAGE_DOWN'),
-    (e[(e.BACKSPACE = 8)] = 'BACKSPACE'),
-    (e[(e.DELETE = 46)] = 'DELETE'),
-    (e[(e.TAB = 9)] = 'TAB'),
-    (e[(e.KEY_N = 78)] = 'KEY_N'),
-    (e[(e.KEY_1 = 49)] = 'KEY_1'),
-    (e[(e.KEY_2 = 50)] = 'KEY_2'),
-    (e[(e.KEY_3 = 51)] = 'KEY_3'),
-    (e[(e.KEY_4 = 52)] = 'KEY_4'),
-    (e[(e.KEY_5 = 53)] = 'KEY_5'),
-    (e[(e.KEY_6 = 54)] = 'KEY_6'),
-    (e[(e.KEY_7 = 55)] = 'KEY_7'),
-    (e[(e.KEY_8 = 56)] = 'KEY_8'),
-    (e[(e.KEY_9 = 57)] = 'KEY_9'),
-    e
-))(KEY_CODES || {});
-const makeGlobalBoundingBox = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
-    onBindingsReady = async () =>
-        !(!engine._BindingsReady || !engine._WindowLoaded) ||
-        new Promise((e) => {
-            engine.on('Ready', e);
-        }),
-    onLayoutReady = () =>
-        new Promise((e) => {
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    e();
-                });
-            });
-        }),
-    createViewEventArguments = (e) =>
-        Object.entries(e).map(([e, t]) => {
-            const s = { __Type: 'GFValueProxy', name: e };
-            switch (typeof t) {
-                case 'number':
-                    s.number = t;
-                    break;
-                case 'boolean':
-                    s.bool = t;
-                    break;
-                default:
-                    s.string = t.toString();
-            }
-            return s;
-        }),
-    handleViewEvent$1 = (e, t) => {
-        const s = 'GFViewEventProxy';
-        if (void 0 !== t) {
-            const { args: r, ...n } = t;
-            void 0 !== r
-                ? viewEnv.handleViewEvent({ __Type: s, type: e, ...n, arguments: createViewEventArguments(r) })
-                : viewEnv.handleViewEvent({ __Type: s, type: e, ...n });
-        } else viewEnv.handleViewEvent({ __Type: s, type: e });
-    },
-    sendMoveEvent = (e) => handleViewEvent$1(ViewEventType.MOVE, { isMouseEvent: !0, on: e }),
-    sendCloseEvent = () => handleViewEvent$1(ViewEventType.CLOSE),
-    sendClosePopOverEvent = () => handleViewEvent$1(ViewEventType.POP_OVER, { on: !1 }),
-    sendShowContextMenuEvent = (e, t, s = 0) => {
-        handleViewEvent$1(ViewEventType.CONTEXT_MENU, {
-            isMouseEvent: !0,
-            contentID: e,
-            on: !0,
-            decoratorID: s,
-            args: t,
-        });
-    },
-    sendShowPopOverEvent = (e, t, s, r, n = R.invalid('resId'), o) => {
-        const a = env.view.getViewGlobalPosition(),
-            { x: i, y: u, width: l, height: c } = s.getBoundingClientRect(),
-            d = {
-                x: env.view.pxToRem(i) + a.x,
-                y: env.view.pxToRem(u) + a.y,
-                width: env.view.pxToRem(l),
-                height: env.view.pxToRem(c),
-            };
-        handleViewEvent$1(ViewEventType.POP_OVER, {
-            isMouseEvent: !0,
-            contentID: e,
-            decoratorID: r || R.invalid('resId'),
-            targetID: n,
-            direction: t,
-            bbox: makeGlobalBoundingBox(d),
-            on: !0,
-            args: o,
-        });
-    },
-    isTooltipShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.TOOLTIP),
-    isContextMenuShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.CONTEXT_MENU),
-    isPopOverShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.POP_OVER),
-    callOnEsc = (e, t) => {
-        e.keyCode === KEY_CODES.ESCAPE && t();
-    },
-    closeOnEsc = (e) => {
-        callOnEsc(e, sendCloseEvent);
-    },
-    addEscapeListener = (e) => {
-        const t = (t) => callOnEsc(t, e);
-        return (window.addEventListener('keydown', t), () => window.removeEventListener('keydown', t));
-    };
-class ViewModel {
-    constructor(path, watchingFields = []) {
-        (__publicField(this, 'dataTracker'),
-            __publicField(this, 'modelPath'),
-            __publicField(this, 'callbacks'),
-            __publicField(this, 'data'),
-            __publicField(this, '_notifyObservers', () => {
-                ((this.data = eval(this.modelPath)),
-                    this.callbacks.forEach((e) => {
-                        e(this.data);
-                    }));
-            }),
-            (this.dataTracker = new DataTracker()),
-            (this.modelPath = path),
-            (this.callbacks = new Set()),
-            onBindingsReady().then(() => {
-                (this._addCallback(path),
-                    watchingFields.forEach((e) => {
-                        this._addCallback(path + '.' + e);
-                    }),
-                    this._notifyObservers());
-            }));
-    }
-    subscribe(e) {
-        (this.callbacks.add(e), null !== this.data && void 0 !== this.data && e(this.data));
-    }
-    unsubscribe(e) {
-        this.callbacks.delete(e);
-    }
-    destroy() {
-        (this.dataTracker.clear(), this.callbacks.clear());
-    }
-    _addCallback(e) {
-        this.dataTracker.addCallback(e, this._notifyObservers);
-    }
-}
-const ClickOutsideManager = ClickOutsideManager$1.instance,
-    ViewEnvHelper = {
-        DataTracker: DataTracker,
-        ViewModel: ViewModel,
-        ViewEventType: ViewEventType,
-        NumberFormatType: NumberFormatType,
-        RealFormatType: RealFormatType,
-        TimeFormatType: TimeFormatType,
-        DateFormatType: DateFormatType,
-        makeGlobalBoundingBox: makeGlobalBoundingBox,
-        sendMoveEvent: sendMoveEvent,
-        sendCloseEvent: sendCloseEvent,
-        sendClosePopOverEvent: sendClosePopOverEvent,
-        sendShowContextMenuEvent: sendShowContextMenuEvent,
-        sendShowPopOverEvent: sendShowPopOverEvent,
-        addEscapeListener: addEscapeListener,
-        closeOnEsc: closeOnEsc,
-        handleViewEvent: handleViewEvent$1,
-        onBindingsReady: onBindingsReady,
-        onLayoutReady: onLayoutReady,
-        isTooltipShown: isTooltipShown,
-        isContextMenuShown: isContextMenuShown,
-        isPopOverShown: isPopOverShown,
-        dumpViewModel: dumpViewModel,
-        ClickOutsideManager: ClickOutsideManager,
-        SystemLocale: SystemLocale,
-        UserLocale: UserLocale,
-    };
-window.ViewEnvHelper = ViewEnvHelper;
-const SHOW_DELAY_MIN = 100,
-    SHOW_DELAY_DEFAULT = 400;
-function getViewEventArguments(e) {
-    return Object.entries(e || {}).map(([e, t]) => {
-        const s = { __Type: 'GFValueProxy', name: e };
-        switch (typeof t) {
-            case 'number':
-                s.number = t;
-                break;
-            case 'boolean':
-                s.bool = t;
-                break;
-            case 'undefined':
-                break;
-            default:
-                s.string = t.toString();
-        }
-        return s;
-    });
-}
-const handleViewEvent = (e, t, s = {}, r = 0) => {
-        viewEnv.handleViewEvent({
-            __Type: 'GFViewEventProxy',
-            type: ViewEventType.TOOLTIP,
-            contentID: e,
-            decoratorID: t,
-            targetID: r,
-            ...s,
-        });
-    },
-    Tooltip$1 = ({
-        children: e,
-        contentId: t,
-        args: s,
-        onMouseEnter: r,
-        onMouseLeave: n,
-        onMouseDown: o,
-        onClick: a,
-        ignoreShowDelay: i = !1,
-        ignoreMouseClick: u = !1,
-        decoratorId: l = 0,
-        isEnabled: c = !0,
-        targetId: d = 0,
-        onShow: _,
-        onHide: m,
-        ...p
-    }) => {
-        const x = reactExports.useRef({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
-            f = reactExports.useMemo(() => d || getFromCallStack().resId, [d]),
-            E = reactExports.useCallback(() => {
-                (x.current.isVisible && x.current.timeoutId) ||
-                    (handleViewEvent(t, l, { isMouseEvent: !0, on: !0, arguments: getViewEventArguments(s) }, f),
-                    _ && _(),
-                    (x.current.isVisible = !0));
-            }, [t, l, s, f, _]),
-            h = reactExports.useCallback(() => {
-                if (x.current.isVisible || x.current.timeoutId) {
-                    const e = x.current.timeoutId;
-                    (e > 0 && (clearTimeout(e), (x.current.timeoutId = 0)),
-                        handleViewEvent(t, l, { on: !1 }, f),
-                        x.current.isVisible && m && m(),
-                        (x.current.isVisible = !1));
-                }
-            }, [t, l, f, m]),
-            b = reactExports.useCallback((e) => {
-                x.current.isVisible &&
-                    ((x.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
-                    (x.current.hideTimerId = window.setTimeout(() => {
-                        const t = document.elementFromPoint(e.clientX, e.clientY);
-                        t && !t.isSameNode(x.current.prevTarget) && h();
-                    }, 200)));
-            }, []);
-        (reactExports.useEffect(() => {
-            const e = x.current.hideTimerId;
-            return (
-                document.addEventListener('wheel', b, { capture: !0 }),
-                () => {
-                    (document.removeEventListener('wheel', b, { capture: !0 }), e && window.clearTimeout(e));
-                }
-            );
-        }, []),
-            reactExports.useEffect(() => {
-                !1 === c && h();
-            }, [c, h]),
-            reactExports.useEffect(
-                () => (
-                    window.addEventListener('mouseleave', h),
-                    () => {
-                        (window.removeEventListener('mouseleave', h), h());
-                    }
-                ),
-                [h],
-            ));
-        return c
-            ? reactExports.cloneElement(e, {
-                  onMouseEnter:
-                      ((g = e.props.onMouseEnter),
-                      (e) => {
-                          (e.clientX === window.innerWidth && e.clientY === window.innerHeight) ||
-                              (clearTimeout(x.current.timeoutId),
-                              (x.current.timeoutId = window.setTimeout(E, i ? SHOW_DELAY_MIN : SHOW_DELAY_DEFAULT)),
-                              r && r(e),
-                              g && g(e));
-                      }),
-                  onMouseLeave: ((e) => (t) => {
-                      (h(), null == n || n(t), null == e || e(t));
-                  })(e.props.onMouseLeave),
-                  onClick: ((e) => (t) => {
-                      (!1 === u && h(), null == a || a(t), null == e || e(t));
-                  })(e.props.onClick),
-                  onMouseDown: ((e) => (t) => {
-                      (!1 === u && h(), null == o || o(t), null == e || e(t));
-                  })(e.props.onMouseDown),
-                  ...p,
-              })
-            : e;
-        var g;
-    },
     BackportTooltip = ({ children: e, ...t }) =>
-        jsxRuntimeExports.jsx(Tooltip$1, {
+        jsxRuntimeExports.jsx(Tooltip$2, {
             contentId: R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent('resId'),
             ignoreShowDelay: !0,
             ...t,
             children: e,
         }),
-    UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
-    getTooltipContentId = (e) =>
-        e ? UB_SIMPLE_TOOLTIPS.SimpleTooltipHtmlContent('resId') : UB_SIMPLE_TOOLTIPS.SimpleTooltipContent('resId'),
-    SimpleTooltip = ({ children: e, body: t, header: s, note: r, alert: n, args: o, ...a }) => {
-        const i = reactExports.useMemo(() => {
-            const e = { ...o, body: t, header: s, note: r, alert: n };
-            for (const t in e) void 0 === e[t] && delete e[t];
-            return e;
-        }, [n, t, s, r, o]);
-        return jsxRuntimeExports.jsx(Tooltip$1, {
-            contentId: getTooltipContentId(null == o ? void 0 : o.hasHtmlContent),
-            decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
-            args: i,
-            ...a,
-            children: e,
-        });
-    },
     DynamicTooltipWrapper = ({ children: e, tooltipArgs: t, className: s }) => {
         if (!t) return e;
         const r = jsxRuntimeExports.jsx('div', { className: s, children: e });
-        if (t.header || t.body) return jsxRuntimeExports.jsx(SimpleTooltip, { ...t, children: r });
+        if (t.header || t.body) return jsxRuntimeExports.jsx(SimpleTooltip$1, { ...t, children: r });
         const { contentId: n } = t;
         return n
-            ? jsxRuntimeExports.jsx(Tooltip$1, { ...t, contentId: n, children: r })
+            ? jsxRuntimeExports.jsx(Tooltip$2, { ...t, contentId: n, children: r })
             : jsxRuntimeExports.jsx(BackportTooltip, { ...t, children: r });
     };
 function format(e, t) {
@@ -11034,6 +11179,9 @@ var RewardType = ((e) => (
         e
     ))(ValueTypes || {}),
     Specials = ((e) => (
+        (e.ATTACHMENT_RARE = 'rare'),
+        (e.ATTACHMENT_EPIC = 'epic'),
+        (e.ATTACHMENT_LEGENDARY = 'legendary'),
         (e.BATTLE_BOOSTER = 'battleBooster'),
         (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
         (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
@@ -11053,6 +11201,9 @@ var RewardType = ((e) => (
     ))(Specials || {}),
     HighlightClasses = ((e) => ((e.BATTLE_BOOSTER = 'battleBooster'), e))(HighlightClasses || {}),
     OverlayClasses = ((e) => (
+        (e.ATTACHMENT_RARE = 'rare'),
+        (e.ATTACHMENT_EPIC = 'epic'),
+        (e.ATTACHMENT_LEGENDARY = 'legendary'),
         (e.BATTLE_BOOSTER = 'battleBooster'),
         (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
         (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
@@ -11248,6 +11399,12 @@ const multiValueTypes = [
                 return OverlayClasses.PROGRESSION_STYLE_UPGRADED_5;
             case Specials.PROGRESSION_STYLE_UPGRADED_6:
                 return OverlayClasses.PROGRESSION_STYLE_UPGRADED_6;
+            case Specials.ATTACHMENT_RARE:
+                return OverlayClasses.ATTACHMENT_RARE;
+            case Specials.ATTACHMENT_EPIC:
+                return OverlayClasses.ATTACHMENT_EPIC;
+            case Specials.ATTACHMENT_LEGENDARY:
+                return OverlayClasses.ATTACHMENT_LEGENDARY;
         }
     },
     getFormattedValue = (e, t) => {
@@ -12455,7 +12612,7 @@ export {
     filterMap as Z,
     roundTo as _,
     useSpecialContextMenu as a,
-    keyCodes as a$,
+    FormatText as a$,
     sizes$h as a0,
     Currency as a1,
     useLazyModel as a2,
@@ -12463,226 +12620,233 @@ export {
     createLayoutReadyInEffect as a4,
     map$1 as a5,
     TruncatedText as a6,
-    compose as a7,
-    subtract as a8,
-    now as a9,
-    getRoleByKey as aA,
-    comparer as aB,
-    getVehicleImageKey as aC,
-    sameTanksRemap as aD,
-    iter as aE,
-    makeActions as aF,
-    mapNonNullable as aG,
-    useBackdropTooltip as aH,
-    every as aI,
-    findIndexLast as aJ,
-    findIndex as aK,
-    useVerticalScroll as aL,
-    Accordion as aM,
-    Area as aN,
-    Bar as aO,
-    Base$p as aP,
-    reduce as aQ,
-    VehicleInfo as aR,
-    remToPx$1 as aS,
-    WithDiscount as aT,
-    discountTypes as aU,
-    get as aV,
-    VehicleImage as aW,
-    RentalCounter as aX,
-    directions$1 as aY,
-    MultilineOverflow as aZ,
-    ErrorHandler as a_,
-    toDays as aa,
-    days as ab,
-    toHours as ac,
-    hours as ad,
-    minutes as ae,
-    toSeconds as af,
-    map as ag,
-    filter as ah,
-    useWulfTooltip as ai,
-    PlayerInfo as aj,
-    VehicleType as ak,
-    VehicleLevel as al,
-    useRouter as am,
-    matchPath as an,
-    createTargetOverrides as ao,
-    ModelRouterProvider as ap,
-    types$4 as aq,
-    roles$1 as ar,
-    identity as as,
-    atSpgRoles as at,
-    lightTankRoles as au,
-    mediumTankRoles as av,
-    heavyTankRoles as aw,
-    nationById as ax,
-    isRentVehicle as ay,
-    vehicleState as az,
+    useWulfTooltip as a7,
+    PlayerInfo as a8,
+    useParamTooltip as a9,
+    sizes$b as aA,
+    MaskArea as aB,
+    Bar as aC,
+    VehicleInfo as aD,
+    WITHOUT_ROLE as aE,
+    Popover as aF,
+    Base$p as aG,
+    usePopover as aH,
+    useIsFirstRender as aI,
+    useSkipFrame as aJ,
+    useEvent as aK,
+    OPEN_ANIMATION_DURATION as aL,
+    useExternalPaddings as aM,
+    isEqual as aN,
+    useBackdropTooltip as aO,
+    every as aP,
+    findIndexLast as aQ,
+    findIndex as aR,
+    useVerticalScroll as aS,
+    Accordion as aT,
+    Area as aU,
+    reduce as aV,
+    useKeydownListener as aW,
+    play$1 as aX,
+    keyCodes as aY,
+    useAdaptive as aZ,
+    SimpleTooltip as a_,
+    VehicleType as aa,
+    VehicleLevel as ab,
+    useRouter as ac,
+    matchPath as ad,
+    createTargetOverrides as ae,
+    ModelRouterProvider as af,
+    types$4 as ag,
+    roles$1 as ah,
+    identity as ai,
+    atSpgRoles as aj,
+    lightTankRoles as ak,
+    mediumTankRoles as al,
+    heavyTankRoles as am,
+    nationById as an,
+    isRentVehicle as ao,
+    vehicleState as ap,
+    getRoleByKey as aq,
+    comparer as ar,
+    getVehicleImageKey as as,
+    sameTanksRemap as at,
+    iter as au,
+    isNumber as av,
+    makeActions as aw,
+    mapNonNullable as ax,
+    SimpleTooltip$1 as ay,
+    Checkbox as az,
     useScrollBounding as b,
-    useResize as b$,
-    useHandleKeydown as b0,
-    isNumber as b1,
-    List as b2,
-    groupMapBy as b3,
-    mapExists as b4,
-    toArray as b5,
-    fromModel as b6,
-    assert as b7,
-    roles as b8,
-    BackportTooltip$1 as b9,
-    useEvent as bA,
-    FormatText as bB,
-    breakpointsByType as bC,
-    CardSingle as bD,
-    Discount as bE,
-    sizes$c as bF,
-    useSkipFrame as bG,
-    addEventListener as bH,
-    unsafeGet as bI,
-    useEmitter as bJ,
-    mouse as bK,
-    clamp as bL,
-    BackdropTooltip as bM,
-    useMount as bN,
-    CarouselScroll as bO,
-    throttle as bP,
-    sendEvent$1 as bQ,
-    KeyButton as bR,
-    Switcher$1 as bS,
-    find as bT,
-    filter$1 as bU,
-    breakpoints as bV,
-    overlayTypes as bW,
-    sizes$6 as bX,
-    useDragAndDrop as bY,
-    useScaleState$1 as bZ,
-    DragAndDrop as b_,
-    normalizeResource as ba,
-    SimpleTooltip$1 as bb,
-    Tooltip$2 as bc,
-    normilizeVehicleType as bd,
-    Sprite as be,
-    writeClipboard as bf,
-    usePopover as bg,
-    HeadlessButton as bh,
-    useHoverState as bi,
-    Slot$1 as bj,
-    Popover as bk,
-    MediaWrapperElement as bl,
-    Slottable as bm,
-    Toggle as bn,
-    toggleSizes as bo,
-    toggleThemes as bp,
-    DefaultScroll as bq,
-    VehicleRole as br,
-    Input as bs,
-    placeholderVisibility as bt,
-    useInput as bu,
-    useAdaptive as bv,
-    createOptionalDLProvider as bw,
-    useHandleKeyup as bx,
-    useKeydownListener as by,
-    play$1 as bz,
+    filter$1 as b$,
+    BackportTooltip$1 as b0,
+    WithDiscount as b1,
+    get as b2,
+    breakpointsByType as b3,
+    CardSingle as b4,
+    Discount as b5,
+    normalizeResource as b6,
+    sizes$c as b7,
+    addEventListener as b8,
+    unsafeGet as b9,
+    useHoverState as bA,
+    Slot$1 as bB,
+    MediaWrapperElement as bC,
+    Slottable as bD,
+    Toggle as bE,
+    toggleSizes as bF,
+    toggleThemes as bG,
+    VehicleRole as bH,
+    Input as bI,
+    placeholderVisibility as bJ,
+    useInput as bK,
+    createOptionalDLProvider as bL,
+    useHandleKeyup as bM,
+    CarouselScroll as bN,
+    throttle as bO,
+    sendEvent$1 as bP,
+    insertBefore as bQ,
+    UnknownVehicleImage as bR,
+    forceTriggerMouseMove$1 as bS,
+    useDragAndDrop as bT,
+    parseValid as bU,
+    mouseButtons as bV,
+    DragAndDrop as bW,
+    useDebounce as bX,
+    KeyButton as bY,
+    Switcher$1 as bZ,
+    find as b_,
+    useEmitter as ba,
+    mouse as bb,
+    clamp as bc,
+    BackdropTooltip as bd,
+    DefaultScroll as be,
+    useMount as bf,
+    remToPx$1 as bg,
+    discountTypes as bh,
+    VehicleImage as bi,
+    RentalCounter as bj,
+    directions$1 as bk,
+    MultilineOverflow as bl,
+    ErrorHandler as bm,
+    useHandleKeydown as bn,
+    List as bo,
+    groupMapBy as bp,
+    mapExists as bq,
+    toArray as br,
+    fromModel as bs,
+    assert as bt,
+    roles as bu,
+    Tooltip$1 as bv,
+    normilizeVehicleType as bw,
+    Sprite as bx,
+    writeClipboard as by,
+    HeadlessButton as bz,
     computeds as c,
-    Switch as c$,
-    mouseButtons as c0,
-    isNonNullable as c1,
-    Slot as c2,
-    LoadoutItem as c3,
-    get$1 as c4,
-    debounce as c5,
-    useThrottle as c6,
-    useDebounce as c7,
-    useInsideEvent as c8,
-    useParamTooltip as c9,
-    mapFilter as cA,
-    ImageSize as cB,
-    capitalize as cC,
-    sizes$3 as cD,
-    formats as cE,
-    Reward as cF,
-    getRewardValueType as cG,
-    getRewardImage as cH,
-    formatPrintf as cI,
-    forEach as cJ,
-    chunks as cK,
-    imageSizes$1 as cL,
-    currencyTypes as cM,
-    sizes$1 as cN,
-    Slider as cO,
-    getRealFormat as cP,
-    useCardContext as cQ,
-    readKey as cR,
-    Card as cS,
-    statusTypes as cT,
-    useCardsWrapperContext as cU,
-    CardsWrapper as cV,
-    Tabs as cW,
-    themes as cX,
-    sizes$2 as cY,
-    setContentReady as cZ,
-    Background as c_,
-    createSoundPlay as ca,
-    SoundsProvider as cb,
-    Loader as cc,
-    getKeyNameFromScanCode as cd,
-    Checkbox as ce,
-    sizes$4 as cf,
-    useClickOutside as cg,
-    insertBefore as ch,
-    UnknownVehicleImage as ci,
-    forceTriggerMouseMove$1 as cj,
-    parseValid as ck,
+    initExternalPaddings$1 as c$,
+    breakpoints as c0,
+    overlayTypes as c1,
+    sizes$5 as c2,
+    useScaleState$1 as c3,
+    useResize as c4,
+    isNonNullable as c5,
+    Slot as c6,
+    LoadoutItem as c7,
+    get$1 as c8,
+    debounce as c9,
+    sizes$3 as cA,
+    formats as cB,
+    Reward as cC,
+    getRewardValueType as cD,
+    getRewardImage as cE,
+    formatPrintf as cF,
+    forEach as cG,
+    chunks as cH,
+    imageSizes$1 as cI,
+    currencyTypes as cJ,
+    sizes$1 as cK,
+    Slider as cL,
+    getRealFormat as cM,
+    useCardContext as cN,
+    readKey as cO,
+    Card as cP,
+    statusTypes as cQ,
+    useCardsWrapperContext as cR,
+    CardsWrapper as cS,
+    Tabs as cT,
+    themes as cU,
+    sizes$2 as cV,
+    setContentReady as cW,
+    Background as cX,
+    Switch as cY,
+    Route as cZ,
+    createMultipleTargetOverrides as c_,
+    useThrottle as ca,
+    useInsideEvent as cb,
+    createSoundPlay as cc,
+    SoundsProvider as cd,
+    Loader as ce,
+    getKeyNameFromScanCode as cf,
+    renderString as cg,
+    format$2 as ch,
+    subtract as ci,
+    now as cj,
+    useClickOutside as ck,
     assignRefs as cl,
-    createSimpleGetter as cm,
-    createMockControls as cn,
-    SceneWrapper as co,
-    isEmptyObject as cp,
-    useSoundsOptional as cq,
-    onRescale as cr,
-    Timer as cs,
-    ExtendedText as ct,
-    calcPercent as cu,
-    delay as cv,
-    useIsFirstRender as cw,
-    ProgressBar as cx,
-    DateTimeFormatsEnum as cy,
-    getRegionalDateTime$1 as cz,
+    SceneWrapper as cm,
+    isEmptyObject as cn,
+    useSoundsOptional as co,
+    onRescale as cp,
+    Timer as cq,
+    ExtendedText as cr,
+    calcPercent as cs,
+    delay as ct,
+    ProgressBar as cu,
+    DateTimeFormatsEnum as cv,
+    getRegionalDateTime$1 as cw,
+    mapFilter as cx,
+    ImageSize as cy,
+    capitalize as cz,
     useHorizontalScroll as d,
-    Route as d0,
-    createMultipleTargetOverrides as d1,
-    initExternalPaddings$1 as d2,
-    enableFullScreenModeSupported$1 as d3,
-    setSkipFramesAllowed as d4,
-    perkStates as d5,
-    Tooltip as d6,
-    greaterThan as d7,
-    convert as d8,
-    sizes$b as d9,
-    DateTime$1 as da,
-    WITHOUT_ROLE as db,
-    PrestigeEmblem as dc,
-    sizes as dd,
-    grades as de,
-    createString as df,
-    renderResolvedString as dg,
-    LOWER_ALPHABET as dh,
-    NUMBERS_ALPHABET as di,
-    renderString as dj,
-    upgradeLegacy as dk,
-    compare as dl,
-    greaterThanOrEqual as dm,
-    CountdownStyle as dn,
-    Counter as dp,
-    TextButton as dq,
-    Countdown$1 as dr,
-    fromMs as ds,
-    SoundsRClassProvider as dt,
-    concatWithPath as du,
-    logBySeverity$1 as dv,
-    ImagesRClassProvider as dw,
-    snakeToCamel as dx,
+    enableFullScreenModeSupported$1 as d0,
+    setSkipFramesAllowed as d1,
+    perkStates as d2,
+    Tooltip as d3,
+    getRegionalDateTime as d4,
+    compose as d5,
+    toDays as d6,
+    days as d7,
+    toHours as d8,
+    hours as d9,
+    SoundsRClassProvider as dA,
+    concatWithPath as dB,
+    logBySeverity$1 as dC,
+    ImagesRClassProvider as dD,
+    snakeToCamel as dE,
+    minutes as da,
+    toSeconds as db,
+    map as dc,
+    filter as dd,
+    greaterThan as de,
+    convert as df,
+    sizes$a as dg,
+    DateTime$1 as dh,
+    PrestigeEmblem as di,
+    sizes as dj,
+    grades as dk,
+    createString as dl,
+    renderResolvedString as dm,
+    LOWER_ALPHABET as dn,
+    NUMBERS_ALPHABET as dp,
+    upgradeLegacy as dq,
+    createSimpleGetter as dr,
+    createMockControls as ds,
+    compare as dt,
+    greaterThanOrEqual as du,
+    CountdownStyle as dv,
+    Counter as dw,
+    TextButton as dx,
+    Countdown$1 as dy,
+    fromMs as dz,
     usePrevious as e,
     useLayoutReady as f,
     getViewGlobalPosition$1 as g,

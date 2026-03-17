@@ -1,5 +1,5 @@
 import { j as e } from '../../../../chunks/vendor.js';
-import { J as s, U as i, N as a, r as n } from '../../../../chunks/lib.js';
+import { J as s, U as i, H as a, r as n } from '../../../../chunks/lib.js';
 const o = 'NewbieBannerTooltipApp_c22595f8',
     d = 'NewbieBannerTooltipApp_banner_eb58ff0b',
     l = 'NewbieBannerTooltipApp_title_f7939b7d',

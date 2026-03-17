@@ -1168,7 +1168,7 @@
                 t.d(e, { Ew: () => a, Z5: () => n, cy: () => r });
                 const n = {
                         getNumberFormat: (u, e) => systemLocale.getNumberFormat(u, e),
-                        getRealFormat: (u, e) => systemLocale.getRealFormat(u, e),
+                        getRealFormat: (u, e, t = 2) => systemLocale.getRealFormat(u, e, t),
                         getTimeFormat: (u, e) => systemLocale.getTimeFormat(u, e),
                         getDateFormat: (u, e) => systemLocale.getDateFormat(u, e),
                         toUpperCase: (u) => systemLocale.toUpperCase(u),
@@ -1422,16 +1422,17 @@
                 const A = (u) => {
                     let e = u.value,
                         t = u.isEmpty,
-                        n = u.className,
-                        a = u.size,
-                        A = void 0 === a ? 'normal' : a,
-                        F = u.fadeInAnimation,
-                        c = void 0 !== F && F,
-                        D = u.hide,
-                        _ = void 0 !== D && D,
-                        l = u.maximumNumber,
-                        C = void 0 === l ? 99 : l,
-                        B = (function (u, e) {
+                        n = void 0 !== t && t,
+                        a = u.className,
+                        A = u.size,
+                        F = void 0 === A ? 'normal' : A,
+                        c = u.fadeInAnimation,
+                        D = void 0 !== c && c,
+                        _ = u.hide,
+                        l = void 0 !== _ && _,
+                        C = u.maximumNumber,
+                        B = void 0 === C ? 99 : C,
+                        d = (function (u, e) {
                             if (null == u) return {};
                             var t,
                                 n,
@@ -1440,29 +1441,29 @@
                             for (n = 0; n < a.length; n++) ((t = a[n]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                             return r;
                         })(u, E);
-                    const d = t ? null : e,
-                        v = 'string' == typeof d;
-                    if ((d && !v && d < 0) || 0 === d) return null;
-                    const m = d && !v && d > C,
-                        p = r()(
+                    const v = n ? null : e,
+                        m = 'string' == typeof v;
+                    if ((v && !m && v < 0) || 0 === v) return null;
+                    const p = v && !m && v > B,
+                        g = r()(
                             o.base,
-                            o[`base__${A}`],
-                            c && o.base__animated,
-                            _ && o.base__hidden,
-                            !d && o.base__pattern,
-                            t && o.base__empty,
-                            n,
+                            o[`base__${F}`],
+                            D && o.base__animated,
+                            l && o.base__hidden,
+                            !v && o.base__pattern,
+                            n && o.base__empty,
+                            a,
                         );
                     return i().createElement(
                         'div',
-                        s({ className: p }, B),
+                        s({ className: g }, d),
                         i().createElement('div', { className: o.bg }),
                         i().createElement('div', { className: o.pattern }),
                         i().createElement(
                             'div',
-                            { className: r()(o.value, v && o.value__text) },
-                            m ? C : d,
-                            m && i().createElement('span', { className: o.plus }, '+'),
+                            { className: r()(o.value, m && o.value__text) },
+                            p ? B : v,
+                            p && i().createElement('span', { className: o.plus }, '+'),
                         ),
                     );
                 };

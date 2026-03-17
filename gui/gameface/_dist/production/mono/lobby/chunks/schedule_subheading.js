@@ -1,5 +1,5 @@
 import { j as e, w as s, x as a } from './vendor.js';
-import { i as t, dd as o, F as n, de as i, df as r, dg as m, dh as d, di as l, dj as c, dk as p } from './lib.js';
+import { i as t, dl as o, F as n, dm as i, dn as r, dp as m, dq as d, dr as l, ds as c, dt as p } from './lib.js';
 import { u as x } from './use_server_time_polling.js';
 const [v, g] = t()(
         ({ observableModel: e }) => ({
@@ -43,9 +43,9 @@ const [v, g] = t()(
                     : void 0;
     },
     N = R.strings.comp7_ext,
-    f = (e) => ((e, s) => String(e.$dyn(s)))(N.seasonName, e),
-    T = 'ActiveSeasonState_7be3b725',
-    b = 'ActiveSeasonState_calendarIcon_cc4d1c6a',
+    T = (e) => ((e, s) => String(e.$dyn(s)))(N.seasonName, e),
+    b = 'ActiveSeasonState_7be3b725',
+    f = 'ActiveSeasonState_calendarIcon_cc4d1c6a',
     _ = 'ActiveSeasonState_divider_e45543ee',
     M = ({
         startTimestamp: a,
@@ -60,10 +60,10 @@ const [v, g] = t()(
             args: { tooltipId: i },
             isEnabled: Boolean(i),
             children: e.jsxs('div', {
-                className: T,
+                className: b,
                 children: [
-                    e.jsx('div', { className: s(b, null == m ? void 0 : m.calendarIcon) }),
-                    r && e.jsxs(e.Fragment, { children: [f(n), e.jsx('div', { className: _ })] }),
+                    e.jsx('div', { className: s(f, null == m ? void 0 : m.calendarIcon) }),
+                    r && e.jsxs(e.Fragment, { children: [T(n), e.jsx('div', { className: _ })] }),
                     u(a, t, o),
                 ],
             }),
@@ -93,7 +93,7 @@ const [v, g] = t()(
                                   classNames: null == t ? void 0 : t.scheduleClassNames,
                               }),
                           })
-                        : e.jsx(p, { text: R.strings.comp7_ext.season.over(), binding: { seasonName: f(l) } }),
+                        : e.jsx(p, { text: R.strings.comp7_ext.season.over(), binding: { seasonName: T(l) } }),
             })
         );
     });

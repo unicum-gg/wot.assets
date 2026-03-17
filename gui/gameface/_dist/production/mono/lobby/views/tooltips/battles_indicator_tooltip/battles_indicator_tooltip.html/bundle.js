@@ -1,5 +1,5 @@
-import { I as s, j as t, J as a } from '../../../../chunks/vendor.js';
-import { i as o, n as e, cd as i, cU as n, cP as l, cn as c } from '../../../../chunks/lib.js';
+import { y as s, j as t, w as a } from '../../../../chunks/vendor.js';
+import { i as o, aC as e, q as i, F as l, aA as n, aB as c } from '../../../../chunks/lib.js';
 import { T as d } from '../../../../chunks/tooltip_decorator.js';
 import { F as r } from '../../../../chunks/formatted_statistic_value.js';
 import { S as p } from '../../../../chunks/enums.js';
@@ -16,7 +16,7 @@ import { S as p } from '../../../../chunks/enums.js';
     f = 'App_icon__platoon_65811861',
     C = s(function () {
         const { model: s } = m(),
-            { statisticsMode: o, soloBattlesCount: e, superPlatoonBattlesCount: l } = s.root.get();
+            { statisticsMode: o, soloBattlesCount: e, superPlatoonBattlesCount: n } = s.root.get();
         return t.jsxs('div', {
             className: x,
             children: [
@@ -25,7 +25,7 @@ import { S as p } from '../../../../chunks/enums.js';
                         o === p.Season
                             ? R.strings.comp7_ext.battlesIndicatorTooltip.season.heading()
                             : R.strings.comp7_ext.battlesIndicatorTooltip.day.heading(),
-                    binding: { battlesCount: t.jsx('div', { className: u, children: t.jsx(n, { value: e + l }) }) },
+                    binding: { battlesCount: t.jsx('div', { className: u, children: t.jsx(l, { value: e + n }) }) },
                     classMix: j,
                 }),
                 t.jsx('div', { className: h, children: R.strings.comp7_ext.battlesIndicatorTooltip.listHeading() }),
@@ -56,7 +56,7 @@ import { S as p } from '../../../../chunks/enums.js';
                                     binding: {
                                         superPlatoonBattlesCount: t.jsx('div', {
                                             className: g,
-                                            children: t.jsx(r, { value: l }),
+                                            children: t.jsx(r, { value: n }),
                                         }),
                                     },
                                 }),
@@ -67,4 +67,4 @@ import { S as p } from '../../../../chunks/enums.js';
             ],
         });
     });
-l(t.jsx(_, { children: t.jsx(c, { children: t.jsx(d, { children: t.jsx(C, {}) }) }) }));
+n(t.jsx(_, { children: t.jsx(c, { children: t.jsx(d, { children: t.jsx(C, {}) }) }) }));

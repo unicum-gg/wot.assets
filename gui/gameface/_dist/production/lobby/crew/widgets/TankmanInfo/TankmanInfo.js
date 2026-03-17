@@ -2,41 +2,42 @@
     var __webpack_modules__ = {
             3457: (e, u, t) => {
                 'use strict';
-                t.d(u, { L$: () => c.L, qE: () => c.q, u5: () => l });
+                t.d(u, { L$: () => l.L, qE: () => l.q, u5: () => d });
                 var n = t(6483),
                     r = t.n(n),
-                    a = t(7727),
-                    i = t(7363),
-                    s = t.n(i),
-                    o = t(6880),
-                    c = t(2106);
-                const l = ({
+                    a = t(1641),
+                    i = t(7727),
+                    s = t(7363),
+                    o = t.n(s),
+                    c = t(6880),
+                    l = t(2106);
+                const d = ({
                     children: e,
                     size: u,
                     disabled: t,
                     mixClass: n,
-                    onMouseEnter: l,
-                    onMouseMove: d,
-                    onMouseDown: E,
-                    onMouseUp: _,
-                    onMouseLeave: m,
-                    onClick: A,
-                    isFocused: F = !1,
-                    type: g = c.L.primary,
-                    soundHover: h = 'highlight',
-                    soundClick: D = 'play',
+                    onMouseEnter: d,
+                    onMouseMove: E,
+                    onMouseDown: _,
+                    onMouseUp: m,
+                    onMouseLeave: A,
+                    onClick: F,
+                    isFocused: g = !1,
+                    type: h = l.L.primary,
+                    soundHover: D = 'highlight',
+                    soundClick: p = 'play',
                 }) => {
-                    const p = (0, i.useRef)(null),
-                        B = (0, i.useState)(F),
-                        C = B[0],
-                        f = B[1],
-                        v = (0, i.useState)(!1),
-                        b = v[0],
-                        w = v[1];
+                    const B = (0, s.useRef)(null),
+                        C = (0, s.useState)(g),
+                        f = C[0],
+                        v = C[1],
+                        b = (0, s.useState)(!1),
+                        w = b[0],
+                        y = b[1];
                     return (
-                        (0, i.useEffect)(() => {
+                        (0, s.useEffect)(() => {
                             function e(e) {
-                                C && null !== p.current && !p.current.contains(e.target) && f(!1);
+                                f && null !== B.current && !B.current.contains(e.target) && v(!1);
                             }
                             return (
                                 document.addEventListener('mousedown', e),
@@ -44,63 +45,64 @@
                                     document.removeEventListener('mousedown', e);
                                 }
                             );
-                        }, [C]),
-                        (0, i.useEffect)(() => {
-                            f(F);
-                        }, [F]),
-                        s().createElement(
+                        }, [f]),
+                        (0, s.useEffect)(() => {
+                            v(g);
+                        }, [g]),
+                        o().createElement(
                             'div',
                             {
-                                ref: p,
+                                ref: B,
                                 className: r()(
-                                    o.Z.base,
-                                    o.Z[`base__${g}`],
-                                    t && o.Z.base__disabled,
-                                    u && o.Z[`base__${u}`],
-                                    C && o.Z.base__focus,
-                                    b && o.Z.base__highlightActive,
+                                    c.Z.base,
+                                    c.Z[`base__${h}`],
+                                    t && c.Z.base__disabled,
+                                    u && c.Z[`base__${u}`],
+                                    f && c.Z.base__focus,
+                                    w && c.Z.base__highlightActive,
                                     n,
                                 ),
                                 onMouseEnter: function (e) {
-                                    t || (null !== h && (0, a.G)(h), l && l(e));
+                                    t || (null !== D && (0, i.G)(D), d && d(e));
                                 },
                                 onMouseMove: function (e) {
-                                    d && d(e);
+                                    E && E(e);
                                 },
                                 onMouseUp: function (e) {
-                                    t || (_ && _(e), w(!1));
+                                    t || (m && m(e), y(!1));
                                 },
                                 onMouseDown: function (e) {
-                                    t ||
-                                        (null !== D && (0, a.G)(D),
-                                        E && E(e),
-                                        F && (t || (p.current && (p.current.focus(), f(!0)))),
-                                        w(!0));
+                                    if (t) return;
+                                    const u = e.button === a.t.LEFT;
+                                    (null !== p && u && (0, i.G)(p),
+                                        _ && _(e),
+                                        g && (t || (B.current && (B.current.focus(), v(!0)))),
+                                        u && y(!0));
                                 },
                                 onMouseLeave: function (e) {
-                                    t || (m && m(e), w(!1));
+                                    t || (A && A(e), y(!1));
                                 },
                                 onClick: function (e) {
-                                    t || (A && A(e));
+                                    t || (F && F(e));
                                 },
                             },
-                            g !== c.L.ghost &&
-                                s().createElement(
-                                    s().Fragment,
+                            h !== l.L.ghost &&
+                                o().createElement(
+                                    o().Fragment,
                                     null,
-                                    s().createElement('div', { className: o.Z.back }),
-                                    s().createElement('span', { className: o.Z.texture }),
+                                    o().createElement('div', { className: c.Z.back }),
+                                    o().createElement('span', { className: c.Z.texture }),
                                 ),
-                            s().createElement(
+                            o().createElement(
                                 'span',
-                                { className: r()(o.Z.state, o.Z.state__default) },
-                                s().createElement('span', { className: o.Z.stateDisabled }),
-                                s().createElement('span', { className: o.Z.stateHighlightHover }),
-                                s().createElement('span', { className: o.Z.stateHighlightActive }),
+                                { className: r()(c.Z.state, c.Z.state__default) },
+                                o().createElement('span', { className: c.Z.stateDisabled }),
+                                o().createElement('span', { className: c.Z.stateHighlightHover }),
+                                o().createElement('span', { className: c.Z.stateHighlightActive }),
                             ),
-                            s().createElement(
+                            o().createElement(
                                 'span',
-                                { className: o.Z.content, lang: R.strings.settings.LANGUAGE_CODE() },
+                                { className: c.Z.content, lang: R.strings.settings.LANGUAGE_CODE() },
                                 e,
                             ),
                         )
@@ -1510,6 +1512,18 @@
                             (e.SYMBOL_LOCK = 'SymbolLock'));
                     })(r || (r = {})));
             },
+            1641: (e, u, t) => {
+                'use strict';
+                let n;
+                (t.d(u, { t: () => n }),
+                    (function (e) {
+                        ((e[(e.LEFT = 0)] = 'LEFT'),
+                            (e[(e.WHEEL = 1)] = 'WHEEL'),
+                            (e[(e.RIGHT = 2)] = 'RIGHT'),
+                            (e[(e.FOURTH = 3)] = 'FOURTH'),
+                            (e[(e.FIFTH = 4)] = 'FIFTH'));
+                    })(n || (n = {})));
+            },
             9690: (e, u, t) => {
                 'use strict';
                 t.d(u, { HG: () => s, cg: () => a });
@@ -1906,7 +1920,7 @@
                 t.d(u, { Z5: () => n, cy: () => r });
                 const n = {
                         getNumberFormat: (e, u) => systemLocale.getNumberFormat(e, u),
-                        getRealFormat: (e, u) => systemLocale.getRealFormat(e, u),
+                        getRealFormat: (e, u, t = 2) => systemLocale.getRealFormat(e, u, t),
                         getTimeFormat: (e, u) => systemLocale.getTimeFormat(e, u),
                         getDateFormat: (e, u) => systemLocale.getDateFormat(e, u),
                         toUpperCase: (e) => systemLocale.toUpperCase(e),
@@ -2921,8 +2935,8 @@
                     S = 'TankmanFolder_photoFrame_ae',
                     L = 'TankmanFolder_base__big_60',
                     O = 'TankmanFolder_veteranBlick_14',
-                    N = 'TankmanFolder_veteranFrame_9c',
-                    I = 'TankmanFolder_icon_74',
+                    I = 'TankmanFolder_veteranFrame_9c',
+                    N = 'TankmanFolder_icon_74',
                     P = 'TankmanFolder_innerShadow_44',
                     M = R.images.gui.maps.icons.tankmen.icons.c_204x256,
                     H = (0, C.remToPx)(50),
@@ -2978,7 +2992,7 @@
                                 a().createElement(
                                     'div',
                                     { className: S },
-                                    a().createElement(w.G, { name: e, size: d, isSkin: u, classMix: I }),
+                                    a().createElement(w.G, { name: e, size: d, isSkin: u, classMix: N }),
                                     E && a().createElement('div', { className: P }),
                                 ),
                                 c &&
@@ -2986,7 +3000,7 @@
                                         src: E
                                             ? R.videos.crew.profile.veteran_frame_big()
                                             : R.videos.crew.profile.veteran_frame_small(),
-                                        className: N,
+                                        className: I,
                                         loop: !0,
                                         autoplay: !0,
                                     }),
@@ -3154,90 +3168,88 @@
                     De = 'CurrentVehicleTrain_discountText_45',
                     pe = 'CurrentVehicleTrain_retrainDiscountIcon_91',
                     Be = 'CurrentVehicleTrain_penaltyDiscountIcon_33',
-                    Ce = (0, r.memo)(
-                        ({
-                            tankmanId: e,
-                            skillsEfficiency: u,
-                            componentKey: t,
-                            isUntrained: n,
-                            isLowPerksEfficiency: r,
-                            isWrongVehicle: i,
-                            isWrongVehicleType: o,
-                            hasRetrainDiscount: l,
-                            currentVehicle: d,
-                            tooltipArgs: E,
-                            onRetrainClick: _,
-                        }) => {
-                            const m = (0, X.GS)().mediaSize;
-                            return a().createElement(
+                    Ce = ({
+                        tankmanId: e,
+                        skillsEfficiency: u,
+                        componentKey: t,
+                        isUntrained: n,
+                        isLowPerksEfficiency: r,
+                        isWrongVehicle: i,
+                        isWrongVehicleType: o,
+                        hasRetrainDiscount: l,
+                        currentVehicle: d,
+                        tooltipArgs: E,
+                        onRetrainClick: _,
+                    }) => {
+                        const m = (0, X.GS)().mediaSize;
+                        return a().createElement(
+                            'div',
+                            { className: de },
+                            a().createElement(
                                 'div',
-                                { className: de },
-                                a().createElement(
-                                    'div',
-                                    { className: Ee },
-                                    a().createElement(c.w, {
-                                        text: d.name
-                                            ? R.strings.crew.personalFile.inVehicle()
-                                            : R.strings.crew.common.inBarracks(),
-                                        binding: {
-                                            vehicle: a().createElement(
-                                                'div',
-                                                { className: s()(_e, d.isPremium && me) },
-                                                d.name,
-                                            ),
-                                        },
-                                    }),
-                                ),
-                                a().createElement(le, {
-                                    isWrongVehicle: i,
-                                    isPenaltyActive: r,
-                                    isWrongVehicleType: o,
-                                    tankmanID: e,
-                                    efficiencyValue: u,
-                                    componentKey: t,
+                                { className: Ee },
+                                a().createElement(c.w, {
+                                    text: d.name
+                                        ? R.strings.crew.personalFile.inVehicle()
+                                        : R.strings.crew.common.inBarracks(),
+                                    binding: {
+                                        vehicle: a().createElement(
+                                            'div',
+                                            { className: s()(_e, d.isPremium && me) },
+                                            d.name,
+                                        ),
+                                    },
                                 }),
-                                r &&
+                            ),
+                            a().createElement(le, {
+                                isWrongVehicle: i,
+                                isPenaltyActive: r,
+                                isWrongVehicleType: o,
+                                tankmanID: e,
+                                efficiencyValue: u,
+                                componentKey: t,
+                            }),
+                            r &&
+                                a().createElement(
+                                    Y.l,
+                                    { tooltipArgs: E },
                                     a().createElement(
-                                        Y.l,
-                                        { tooltipArgs: E },
+                                        'div',
+                                        { className: Ae },
                                         a().createElement(
                                             'div',
-                                            { className: Ae },
+                                            { className: Fe },
                                             a().createElement(
-                                                'div',
-                                                { className: Fe },
-                                                a().createElement(
-                                                    q.u5,
-                                                    { onClick: _, type: q.L$.secondary, mixClass: ge },
-                                                    n
-                                                        ? R.strings.crew.personalFile.retrain()
-                                                        : R.strings.crew.personalFile.increase(),
-                                                ),
+                                                q.u5,
+                                                { onClick: _, type: q.L$.secondary, mixClass: ge },
+                                                n
+                                                    ? R.strings.crew.personalFile.retrain()
+                                                    : R.strings.crew.personalFile.increase(),
                                             ),
-                                            l && a().createElement('div', { className: Be }),
                                         ),
+                                        l && a().createElement('div', { className: Be }),
                                     ),
-                                l &&
-                                    !r &&
+                                ),
+                            l &&
+                                !r &&
+                                a().createElement(
+                                    Y.l,
+                                    { tooltipArgs: E },
                                     a().createElement(
-                                        Y.l,
-                                        { tooltipArgs: E },
+                                        'div',
+                                        { className: he },
                                         a().createElement(
                                             'div',
-                                            { className: he },
-                                            a().createElement(
-                                                'div',
-                                                { className: De },
-                                                m < X.cJ.Large
-                                                    ? R.strings.crew.personalFile.discount.short()
-                                                    : R.strings.crew.personalFile.discount.full(),
-                                            ),
-                                            a().createElement('div', { className: pe }),
+                                            { className: De },
+                                            m < X.cJ.Large
+                                                ? R.strings.crew.personalFile.discount.short()
+                                                : R.strings.crew.personalFile.discount.full(),
                                         ),
+                                        a().createElement('div', { className: pe }),
                                     ),
-                            );
-                        },
-                    );
+                                ),
+                        );
+                    };
                 var fe = t(6373);
                 const ve = 'Name_base_2d',
                     be = 'Name_labelWrapper_a0',
@@ -3301,8 +3313,8 @@
                 const Le = 'Role_base_e0',
                     Re = 'Role_role_2a',
                     Oe = 'Role_roleName_79',
-                    Ne = 'Role_commanderFeature_e2',
-                    Ie = 'Role_sense_21',
+                    Ie = 'Role_commanderFeature_e2',
+                    Ne = 'Role_sense_21',
                     Pe = 'Role_commanderBonus_99',
                     Me = 'commander',
                     He = (0, r.memo)(({ role: e, componentKey: u, isFemale: t }) => {
@@ -3329,7 +3341,7 @@
                             e === Me &&
                                 a().createElement(
                                     'div',
-                                    { className: Ne },
+                                    { className: Ie },
                                     a().createElement(
                                         J.t,
                                         {
@@ -3342,7 +3354,7 @@
                                             },
                                             targetId: R.views.lobby.crew.personal_case.PersonalFileView('resId'),
                                         },
-                                        a().createElement('div', { className: Ie }),
+                                        a().createElement('div', { className: Ne }),
                                     ),
                                     a().createElement(
                                         J.t,

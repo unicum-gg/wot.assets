@@ -1,22 +1,22 @@
 import { L as e, r as s, j as t, f as a } from './vendor.js';
 import {
     b as o,
-    cf as n,
-    cg as i,
+    dg as n,
+    dh as i,
     a as r,
-    ay as l,
-    E as c,
-    d4 as d,
-    d5 as m,
-    d6 as p,
-    d7 as u,
-    d8 as _,
-    d2 as g,
-    d9 as v,
-    cS as b,
-    da as h,
-    d1 as x,
-    db as T,
+    aB as l,
+    o as c,
+    di as d,
+    co as m,
+    cp as p,
+    dj as u,
+    dk as _,
+    dd as g,
+    dl as v,
+    d8 as h,
+    dm as b,
+    dc as x,
+    dn as T,
 } from './lib.js';
 var f = ((e) => ((e.News = 'news'), (e.ShopPromo = 'shopPromo'), (e.None = 'none'), e))(f || {});
 const N = {
@@ -29,7 +29,7 @@ const N = {
         }),
         controls: () => o(i('onClick', 'onClose')),
     },
-    [y, w] = r('TeaserModel')(
+    [j, w] = r('TeaserModel')(
         ({ observableModel: e }) =>
             e.primitives(['type', 'postCounter', 'description', 'text', 'isVideo', 'finishTime', 'image']),
         ({ externalModel: e }) => ({
@@ -37,7 +37,7 @@ const N = {
             onClose: e.createCallbackNoArgs('onClose'),
         }),
     ),
-    j = {
+    y = {
         root: 'Teaser_root_3d4fdb7e',
         imageWrapper: 'Teaser_imageWrapper_901f1116',
         vignette: 'Teaser_vignette_32737740',
@@ -61,20 +61,20 @@ const N = {
         const { model: n, controls: i } = w(),
             r = n.type.get() || f.News,
             N = n.postCounter.get(),
-            y = n.text.get(),
+            j = n.text.get(),
             k = n.description.get(),
             W = n.finishTime.get(),
-            E = n.isVideo.get(),
-            B = n.image.get(),
+            B = n.isVideo.get(),
+            E = n.image.get(),
             M = l(),
             P = c.resolve('strings');
-        const S = s.useCallback(
+        const L = s.useCallback(
                 (e) => {
                     (e.stopPropagation(), i.onClose());
                 },
                 [i],
             ),
-            [L, $] = s.useState(null);
+            [S, $] = s.useState(null);
         s.useLayoutEffect(() => {
             let e;
             const s = d(m(W || 0), p());
@@ -95,9 +95,9 @@ const N = {
             s.useEffect(() => {
                 const e = new Image();
                 return (
-                    (e.src = B),
+                    (e.src = E),
                     (e.onload = () => {
-                        (V({ path: B, height: e.height, width: e.width }), z(!0));
+                        (V({ path: E, height: e.height, width: e.width }), z(!0));
                     }),
                     (e.onerror = () => {
                         z(!0);
@@ -106,10 +106,10 @@ const N = {
                         ((e.src = ''), V(null));
                     }
                 );
-            }, [B]),
+            }, [E]),
             I
                 ? t.jsxs('div', {
-                      className: a(j.base, j[`base__${r}Type`], E && j.base__video, e),
+                      className: a(y.base, y[`base__${r}Type`], B && y.base__video, e),
                       onClick: function (e) {
                           (M.play('click', { target: C, original: e }), i.onClick());
                       },
@@ -118,13 +118,13 @@ const N = {
                       },
                       children: [
                           t.jsx('div', {
-                              className: a(j.contentWrapper, null == o ? void 0 : o.contentWrapper),
+                              className: a(y.contentWrapper, null == o ? void 0 : o.contentWrapper),
                               children: t.jsx('div', {
-                                  className: a(j.imageWrapper, null == o ? void 0 : o.imageWrapper),
+                                  className: a(y.imageWrapper, null == o ? void 0 : o.imageWrapper),
                                   children:
                                       A &&
                                       t.jsx('div', {
-                                          className: a(j.image, null == o ? void 0 : o.image),
+                                          className: a(y.image, null == o ? void 0 : o.image),
                                           style: {
                                               backgroundImage: `url(${A.path})`,
                                               height: `${A.height}rem`,
@@ -133,48 +133,48 @@ const N = {
                                       }),
                               }),
                           }),
-                          t.jsx('div', { className: a(j.vignette, null == o ? void 0 : o.vignette) }),
+                          t.jsx('div', { className: a(y.vignette, null == o ? void 0 : o.vignette) }),
                           t.jsxs('div', {
-                              className: a(j.contentWrapper, null == o ? void 0 : o.contentWrapper),
+                              className: a(y.contentWrapper, null == o ? void 0 : o.contentWrapper),
                               children: [
                                   t.jsxs('div', {
-                                      className: a(j.title, null == o ? void 0 : o.title),
+                                      className: a(y.title, null == o ? void 0 : o.title),
                                       children: [
                                           P.readOrEmpty('menu.promo.teaser.title'),
                                           Boolean(N) &&
                                               N > 0 &&
                                               t.jsx(v, {
-                                                  className: a(j.counter, null == o ? void 0 : o.counter),
+                                                  className: a(y.counter, null == o ? void 0 : o.counter),
                                                   value: N,
                                                   size: 'small',
                                               }),
                                       ],
                                   }),
-                                  t.jsx(b, {
+                                  t.jsx(h, {
                                       type: 'close',
                                       side: 'right',
-                                      classNames: { base: a(j.closeButton, null == o ? void 0 : o.closeButton) },
-                                      onClick: S,
+                                      classNames: { base: a(y.closeButton, null == o ? void 0 : o.closeButton) },
+                                      onClick: L,
                                       caption: '',
                                   }),
-                                  y && t.jsx('div', { className: a(j.text, null == o ? void 0 : o.text), children: y }),
-                                  (k || L) &&
+                                  j && t.jsx('div', { className: a(y.text, null == o ? void 0 : o.text), children: j }),
+                                  (k || S) &&
                                       t.jsxs('div', {
-                                          className: j.bottomContent,
+                                          className: y.bottomContent,
                                           children: [
                                               k &&
                                                   t.jsx('div', {
-                                                      className: a(j.description, null == o ? void 0 : o.description),
-                                                      children: t.jsx(h, {
-                                                          classMix: j.extendedText,
+                                                      className: a(y.description, null == o ? void 0 : o.description),
+                                                      children: t.jsx(b, {
+                                                          classMix: y.extendedText,
                                                           text: k,
                                                           isTruncationAvailable: !0,
                                                       }),
                                                   }),
-                                              L &&
+                                              S &&
                                                   t.jsx(x, {
-                                                      className: a(j.countdown, null == o ? void 0 : o.countdown),
-                                                      ...L,
+                                                      className: a(y.countdown, null == o ? void 0 : o.countdown),
+                                                      ...S,
                                                   }),
                                           ],
                                       }),
@@ -186,6 +186,6 @@ const N = {
         );
     });
 function W({ className: e, classNames: s, ...a }) {
-    return t.jsx(y, { ...a, mode: 'real', mocks: N, children: t.jsx(k, { className: e, classNames: s }) });
+    return t.jsx(j, { ...a, mode: 'real', mocks: N, children: t.jsx(k, { className: e, classNames: s }) });
 }
 export { W as default };

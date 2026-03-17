@@ -1,4 +1,4 @@
-import { j as a, J as e } from './vendor.js';
+import { j as a, w as e } from './vendor.js';
 const t = {
         base: 'QualificationBattleItem_4eb37328',
         base__x30: 'QualificationBattleItem_base__x30_1c4af689',

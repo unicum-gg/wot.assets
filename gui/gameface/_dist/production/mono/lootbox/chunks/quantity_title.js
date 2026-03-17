@@ -1,5 +1,5 @@
 import { j as s, e as a } from './vendor.js';
-import { al as e, am as c, _ as n, n as t, F as i } from './lib.js';
+import { al as e, am as c, _ as n, n as t, a as i } from './lib.js';
 const o = 'AnimationCheckbox_9598d652',
     r = 'AnimationCheckbox_base__disabled_d45bad7',
     d = 'AnimationCheckbox_text_af0df6f3';
@@ -29,9 +29,9 @@ function _({ img: e, text: c, className: n }) {
         ],
     });
 }
-const h = 'PurchaseButton_cbbf2765',
+const h = 'PurchaseButton_48021a00',
     b = 'PurchaseButton_wrapper_58d7fe80',
-    j = 'PurchaseButton_image_28c18c52',
+    j = 'PurchaseButton_image_5a2e0048',
     N = 'PurchaseButton_textBlock_4db46f09',
     f = 'PurchaseButton_text_6d4bbfc',
     g = 'PurchaseButton_icon_4fb4c378';

@@ -1,50 +1,50 @@
-import { j as e, w as s, x as a, r as t, T as r, U as o, R as n, y as i, z as d } from '../../../chunks/vendor.js';
+import { j as e, w as s, x as a, r as t, U as r, V as o, R as n, y as i, z as d } from '../../../chunks/vendor.js';
 import {
-    cT as l,
-    aO as _,
-    cU as c,
-    cV as p,
-    ct as f,
+    d2 as l,
+    aL as _,
+    d3 as c,
+    d4 as p,
+    cA as f,
     F as m,
     I as g,
     b as u,
     M as h,
     m as b,
-    cW as v,
+    d5 as v,
     i as k,
-    Z as T,
-    aw as C,
-    bB as x,
-    cX as I,
-    ck as B,
-    cY as j,
-    cZ as w,
-    cl as P,
-    c_ as L,
-    c$ as A,
+    P as T,
+    b4 as C,
+    bt as x,
+    d6 as I,
+    cr as B,
+    d7 as j,
+    d8 as w,
+    cs as P,
+    ca as L,
+    d9 as A,
     p as N,
-    j as S,
+    a6 as S,
     R as y,
-    d0 as V,
-    d1 as U,
-    cs as W,
-    l as Q,
-    d2 as E,
-    d3 as H,
+    da as V,
+    db as U,
+    cz as W,
+    c_ as Q,
+    dc as E,
+    dd as H,
     n as O,
-    bg as F,
-    bf as z,
-    d4 as $,
-    h as M,
-    d5 as G,
-    d6 as D,
-    k as q,
-    o as K,
-    bD as Z,
-    r as X,
-    U as Y,
+    aZ as z,
+    az as F,
+    de as $,
+    bv as M,
+    df as G,
+    dg as D,
+    ba as q,
+    aq as K,
+    bI as Z,
+    r as J,
+    U as X,
 } from '../../../chunks/lib.js';
-import { S as J, a as ee } from '../../../chunks/schedule_subheading.js';
+import { S as Y, a as ee } from '../../../chunks/schedule_subheading.js';
 import { P as se, a as ae } from '../../../chunks/consts.js';
 import { u as te } from '../../../chunks/useParseRewards.js';
 /* empty css                     */ import '../../../chunks/use_server_time_polling.js';
@@ -185,7 +185,7 @@ const re = (e, s) =>
         hide: 'TaskType_hide_490b70af',
         base__completedWasVisited: 'TaskType_base__completedWasVisited_490b70af',
         glow: 'TaskType_glow_419d98e5',
-        completedIcon: 'TaskType_completedIcon_af449a47',
+        completedIcon: 'TaskType_completedIcon_16152823',
         fadeIn: 'TaskType_fadeIn_490b70af',
         fadeInThreeQuarters: 'TaskType_fadeInThreeQuarters_490b70af',
         fadeInHalf: 'TaskType_fadeInHalf_490b70af',
@@ -608,8 +608,8 @@ const ke = 'done',
         });
     }),
     Ve = 'BattleQuests_42d8b049',
-    Ue = 'BattleQuests_subTitle_c401841',
-    Re = 'BattleQuests_info_1cd10120',
+    Re = 'BattleQuests_subTitle_c401841',
+    Ue = 'BattleQuests_info_1cd10120',
     We = 'BattleQuests_icon_4f5433ba',
     Qe = R.strings.comp7_light.progressionView,
     Ee = a(function () {
@@ -620,11 +620,11 @@ const ke = 'done',
             children: [
                 e.jsx(m, {
                     text: a ? Qe.subTitle.completed() : Qe.subTitle.inProgress(),
-                    classMix: Ue,
+                    classMix: Re,
                     binding: {
                         infotip: e.jsx(A, {
                             contentId: R.views.comp7_light.mono.lobby.leaderboard_reward_tooltip_view('resId'),
-                            children: e.jsx('div', { className: Re, children: e.jsx('div', { className: We }) }),
+                            children: e.jsx('div', { className: Ue, children: e.jsx('div', { className: We }) }),
                         }),
                     },
                 }),
@@ -634,18 +634,18 @@ const ke = 'done',
     }),
     He = 'LevelLabel_2aeb988e',
     Oe = 'LevelLabel_activeGlow_7b0206b2',
-    Fe = 'LevelLabel_activeGlow__completed_14902b18',
-    ze = 'LevelLabel_level_8a756009',
+    ze = 'LevelLabel_activeGlow__completed_14902b18',
+    Fe = 'LevelLabel_level_8a756009',
     $e = 'LevelLabel_level__completed_14902b18',
     Me = 'LevelLabel_level__active_92cab71e',
     Ge = 'LevelLabel_levelCurrent_bfa6c487',
     De = 'LevelLabel_levelCurrent__completed_14902b18',
     qe = ({ level: a, isActive: t, isCompleted: r }) => {
-        const o = s(ze, r && $e, t && Me);
+        const o = s(Fe, r && $e, t && Me);
         return e.jsxs('div', {
             className: He,
             children: [
-                e.jsx('div', { className: s(Oe, t && Fe) }),
+                e.jsx('div', { className: s(Oe, t && ze) }),
                 e.jsx('div', { className: s(Ge, t && De), children: a }),
                 e.jsx('div', { className: o, children: a }),
             ],
@@ -679,9 +679,9 @@ const ke = 'done',
         slideUpIn: 'LevelCard_slideUpIn_3d180533',
     },
     Ze = 'prevLevel',
-    Xe = 'completed',
-    Ye = 'inProgress',
-    Je = (e, s, a) => (e ? Xe : s ? Ye : a),
+    Je = 'completed',
+    Xe = 'inProgress',
+    Ye = (e, s, a) => (e ? Je : s ? Xe : a),
     es = a(function ({ level: a, isActive: r, isCompleted: o, isLast: n }) {
         const [i, d] = t.useState(),
             { model: l } = Ce(),
@@ -711,7 +711,7 @@ const ke = 'done',
                 children: [
                     e.jsx('div', { className: s(Ke.bgCompleted, o && Ke.bgCompleted__completed), ref: _ }),
                     e.jsxs('div', {
-                        className: s(Ke.completedIconContainer, Ke[`completedIconContainer__${Je(f, !o, i)}`]),
+                        className: s(Ke.completedIconContainer, Ke[`completedIconContainer__${Ye(f, !o, i)}`]),
                         children: [
                             e.jsx('div', { className: Ke.completedIconGlow }),
                             e.jsx('div', { className: Ke.completedIcon }),
@@ -909,7 +909,7 @@ const ke = 'done',
     Ls = { base: 'Content_horizontalBar_e925daa8' },
     As = a(function () {
         const { model: a } = Ce(),
-            { api: r } = F(),
+            { api: r } = z(),
             [o, n] = t.useState(!1),
             i = a.progressAnimationState.get(),
             d = a.curProgressPoints.get(),
@@ -917,7 +917,7 @@ const ke = 'done',
             _ = t.useRef({ moveProgressBars: O }),
             c = t.useRef(null),
             p = t.useRef(null),
-            f = z(),
+            f = F(),
             m = $(r, r.settings.animationConfig),
             g = t.useCallback(() => {
                 const e = r.contentRef.current,
@@ -1006,7 +1006,7 @@ const ke = 'done',
             [l, _] = t.useState(!0),
             c = r.computes.isProgressionCompleted(),
             p = r.computes.wasProgressionCompletedBeforeStart(),
-            { api: f } = F();
+            { api: f } = z();
         return (
             t.useEffect(() => {
                 const e = (e) => {
@@ -1056,14 +1056,14 @@ const ke = 'done',
     }),
     ys = 'App_1e8bf7cf',
     Vs = 'App_bgContainer_bb0bfe54',
-    Us = 'App_bg_844df5e9',
-    Rs = 'App_shade_9bfebdfa',
+    Rs = 'App_bg_844df5e9',
+    Us = 'App_shade_9bfebdfa',
     Ws = 'App_bottomShadow_5ac9bad8',
     Qs = 'App_content_70e4a93b',
     Es = 'App_schedule_e2d8d9fb',
     Hs = 'App_calendarIcon_f2f7cb5f',
     Os = 'App_progression_23dc5ff6',
-    Fs = a(function () {
+    zs = a(function () {
         const { controls: s } = Ce(),
             a = i(ae);
         return (
@@ -1074,12 +1074,12 @@ const ke = 'done',
                     e.jsxs('div', {
                         className: Vs,
                         children: [
-                            e.jsx('div', { className: Us }),
                             e.jsx('div', { className: Rs }),
+                            e.jsx('div', { className: Us }),
                             e.jsx('div', { className: Ws }),
                         ],
                     }),
-                    e.jsx(J, {
+                    e.jsx(Y, {
                         hasSeasonName: !1,
                         className: Es,
                         classNames: { scheduleClassNames: { calendarIcon: Hs } },
@@ -1093,13 +1093,13 @@ const ke = 'done',
             })
         );
     });
-X(
-    e.jsx(Y, {
+J(
+    e.jsx(X, {
         children: e.jsx(Te, {
             options: { context: 'model.progressionModel' },
             children: e.jsx(ee, {
                 options: { context: 'model.progressionModel.scheduleInfo' },
-                children: e.jsx(Fs, {}),
+                children: e.jsx(zs, {}),
             }),
         }),
     }),

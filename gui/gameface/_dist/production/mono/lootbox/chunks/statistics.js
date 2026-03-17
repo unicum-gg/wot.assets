@@ -1,5 +1,5 @@
 import { a as e, l as t } from './getRewardImage.js';
-var s = ((e) => (
+var o = ((e) => (
     (e.LootBox = 'lootBox'),
     (e.Vehicles = 'vehicles'),
     (e.Style = 'style'),
@@ -18,7 +18,11 @@ var s = ((e) => (
     (e.BountyEquipment = 'trophy_equipment'),
     (e.StandardEquipment = 'standard_equipment'),
     (e.Directives = 'battleBooster_gift'),
-    (e.TrainingMaterials = 'training_materials'),
+    (e.MentoringLicense = 'mentoringLicense'),
+    (e.CrewBook = 'crewBook'),
+    (e.Guide = 'guide'),
+    (e.Brochure = 'brochure'),
+    (e.RecertificationForm = 'recertificationForm'),
     (e.Blueprints = 'blueprints'),
     (e.BattleBonusX5 = 'battle_bonus_x5'),
     (e.CrewBonusX3 = 'crew_bonus_x3'),
@@ -26,87 +30,100 @@ var s = ((e) => (
     (e.Consumables = 'consumables'),
     (e.Rations = 'rations'),
     e
-))(s || {});
-const o = {
-        [s.Vehicles]: 'vehicles',
-        [s.Style]: 'style',
-        [s.Style3D]: 'style_3d',
-        [s.CrewMember]: 'tankman',
-        [s.PremiumPlus]: 'premium_plus_universal',
-        [s.Gold]: 'gold',
-        [s.Crystal]: 'crystal',
-        [s.Credits]: 'credits',
-        [s.FreeXP]: 'freeXP',
-        [s.Customizations]: 'customizations',
-        [s.ExperimentalEquipment]: 'expequipments_gift',
-        [s.Components]: 'equipCoin',
-        [s.ImprovedEquipment]: 'deluxe_gift',
-        [s.BountyEquipment]: 'trophy_gift',
-        [s.StandardEquipment]: 'new_device_mi_gift',
-        [s.Directives]: 'battle_booster_gift',
-        [s.TrainingMaterials]: 'training_materials',
-        [s.Blueprints]: 'blueprint_tube',
-        [s.BattleBonusX5]: 'battle_bonus_x5',
-        [s.CrewBonusX3]: 'crew_bonus_x3',
-        [s.PersonalReserves]: 'personal_reserves',
-        [s.Consumables]: 'consumables',
-        [s.Rations]: 'rations',
+))(o || {});
+const s = {
+        [o.Vehicles]: 'vehicles',
+        [o.Style]: 'style',
+        [o.Style3D]: 'style_3d',
+        [o.CrewMember]: 'tankman',
+        [o.PremiumPlus]: 'premium_plus_universal',
+        [o.Gold]: 'gold',
+        [o.Crystal]: 'crystal',
+        [o.Credits]: 'credits',
+        [o.FreeXP]: 'freeXP',
+        [o.Customizations]: 'customizations',
+        [o.ExperimentalEquipment]: 'expequipments_gift',
+        [o.Components]: 'equipCoin',
+        [o.ImprovedEquipment]: 'deluxe_gift',
+        [o.BountyEquipment]: 'trophy_gift',
+        [o.StandardEquipment]: 'new_device_mi_gift',
+        [o.Directives]: 'battle_booster_gift',
+        [o.MentoringLicense]: 'mentoringLicense',
+        [o.CrewBook]: 'crewBook',
+        [o.Guide]: 'guide',
+        [o.Brochure]: 'brochure',
+        [o.RecertificationForm]: 'recertificationForm',
+        [o.Blueprints]: 'blueprint_tube',
+        [o.BattleBonusX5]: 'battle_bonus_x5',
+        [o.CrewBonusX3]: 'crew_bonus_x3',
+        [o.PersonalReserves]: 'personal_reserves',
+        [o.Consumables]: 'consumables',
+        [o.Rations]: 'rations',
     },
-    r = [s.Vehicles, s.Style, s.Style3D, s.Attachment],
-    n = [
-        s.CrewMember,
-        s.Customizations,
-        s.ExperimentalEquipment,
-        s.ImprovedEquipment,
-        s.BountyEquipment,
-        s.StandardEquipment,
-        s.Directives,
-        s.TrainingMaterials,
-        s.Blueprints,
-        s.PersonalReserves,
-        s.Consumables,
-        s.Rations,
+    r = [o.RecertificationForm],
+    n = [o.Vehicles, o.Style, o.Style3D, o.Attachment],
+    i = [
+        o.CrewMember,
+        o.Customizations,
+        o.ExperimentalEquipment,
+        o.ImprovedEquipment,
+        o.BountyEquipment,
+        o.StandardEquipment,
+        o.Directives,
+        o.CrewBook,
+        o.Guide,
+        o.Brochure,
+        o.Blueprints,
+        o.PersonalReserves,
+        o.Consumables,
+        o.Rations,
     ],
-    i = (e) => e.split('_')[0] === s.LootBox,
-    a = (e) => e.replace(`${s.LootBox}_`, ''),
-    u = (e) => o[e] || e,
-    l = (s, o) => {
-        const r = u(s);
-        return i(s) ? t(o, a(s)) : e(R.images, `gui.maps.icons.quests.bonuses.${o}.${r}`);
+    a = (e) => e.split('_')[0] === o.LootBox,
+    u = (e) => e.replace(`${o.LootBox}_`, ''),
+    l = (e) => s[e] || e,
+    d = (o, s) => {
+        const r = l(o);
+        return a(o) ? t(s, u(o)) : e(R.images, `gui.maps.icons.quests.bonuses.${s}.${r}`);
     },
-    d = R.strings.tooltips.awardItem,
-    m = (t, o) => {
-        if (t.startsWith(s.LootBox)) {
-            const e = t.slice(`${s.LootBox}_`.length);
+    m = R.strings.tooltips.awardItem,
+    c = (t, s) => {
+        if (t.startsWith(o.LootBox)) {
+            const e = t.slice(`${o.LootBox}_`.length);
             return {
                 contentId: R.views.mono.lootbox.tooltips.box_tooltip('resId'),
-                args: { boxCategory: e, eventName: o },
+                args: { boxCategory: e, eventName: s },
             };
         }
-        if (r.includes(t) || n.includes(t))
+        if (n.includes(t) || i.includes(t))
             return {
                 contentId: R.views.mono.lootbox.tooltips.statistics_category('resId'),
-                args: { bonusesCategory: t, eventName: o },
+                args: { bonusesCategory: t, eventName: s },
             };
+        if (t === o.MentoringLicense)
+            return {
+                contentId: R.views.lobby.crew.tooltips.MentoringLicenseTooltip('resId'),
+                args: { bonusesCategory: t, eventName: s },
+            };
+        if (r.includes(t)) return { args: { bonusesCategory: t, eventName: s } };
         switch (t) {
-            case s.PremiumPlus:
-                return { header: d.premium_plus.header(), body: d.premium_plus.body() };
-            case s.Credits:
-                return { header: d.credits.header(), body: d.credits.body() };
-            case s.Gold:
-                return { header: d.gold.header(), body: d.gold.body() };
-            case s.Crystal:
-                return { header: d.crystal.header(), body: d.crystal.body() };
-            case s.FreeXP:
-                return { header: d.freeXP.header(), body: d.freeXP.body() };
-            case s.Components:
-                return { header: d.equipCoin.header(), body: d.equipCoin.body() };
-            case s.BattleBonusX5:
+            case o.PremiumPlus:
+                return { header: m.premium_plus.header(), body: m.premium_plus.body() };
+            case o.Credits:
+                return { header: m.credits.header(), body: m.credits.body() };
+            case o.Gold:
+                return { header: m.gold.header(), body: m.gold.body() };
+            case o.Crystal:
+                return { header: m.crystal.header(), body: m.crystal.body() };
+            case o.FreeXP:
+                return { header: m.freeXP.header(), body: m.freeXP.body() };
+            case o.Components:
+                return { header: m.equipCoin.header(), body: m.equipCoin.body() };
+            case o.BattleBonusX5:
                 return {
                     header: R.strings.tooltips.quests.bonuses.token.battle_bonus_x5.header(),
                     body: R.strings.tooltips.quests.bonuses.token.battle_bonus_x5.body(),
                 };
-            case s.CrewBonusX3:
+            case o.CrewBonusX3:
                 return {
                     header: R.strings.tooltips.quests.bonuses.token.crew_bonus_x3.header(),
                     body: R.strings.tooltips.quests.bonuses.token.crew_bonus_x3.body(),
@@ -118,4 +135,4 @@ const o = {
                 };
         }
     };
-export { r as L, s as T, m as a, a as b, l as c, u as g, i };
+export { n as L, o as T, c as a, u as b, d as c, l as g, a as i };

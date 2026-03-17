@@ -1,7 +1,7 @@
 import {
     r as e,
     j as s,
-    f as t,
+    e as t,
     q as a,
     k as i,
     m as o,
@@ -18,82 +18,59 @@ import {
     q as b,
     i as k,
     m as f,
-    s as h,
-    t as p,
-    v as x,
-    c as v,
-    w as y,
-    u as N,
-    B as S,
-    b as g,
-    p as T,
-    E as j,
-    A as I,
-    F as M,
-    a as w,
-    R as E,
-    I as C,
-    d as A,
-    g as L,
-    x as O,
-    M as D,
-    T as B,
-    y as $,
-    V as U,
-    z as V,
-    G as F,
-    H as K,
-    e as P,
-    k as W,
-    J as H,
-    U as G,
-    r as z,
+    c as h,
+    s as p,
+    u as x,
+    B as v,
+    b as y,
+    p as N,
+    E as S,
+    A as g,
+    F as T,
+    a as j,
+    R as I,
+    I as M,
+    d as w,
+    g as E,
+    t as C,
+    M as A,
+    T as L,
+    v as O,
+    V as D,
+    w as B,
+    x as $,
+    y as U,
+    e as V,
+    k as F,
+    J as K,
+    U as P,
+    r as W,
 } from '../../../chunks/lib.js';
-import { L as J, a as Y, F as q, T as X, B as Q } from '../../../chunks/uilogging_constants.js';
-import {
-    E as Z,
-    S as ee,
-    M as se,
-    d as te,
-    e as ae,
-    f as ie,
-    g as oe,
-    h as ne,
-} from '../../../chunks/sound_constants.js';
-import { u as ce } from '../../../chunks/useFormattedCountdown.js';
-import { a as le } from '../../../chunks/formatters.js';
-const re = 'disabled',
-    de = 'enabled',
-    me = 'modeSelector',
-    _e = 'shop',
-    ue = 'storage',
-    be = 'missions',
-    ke = 'personalMissions',
-    fe = 'achievements',
-    he = 'techtree',
-    pe = 'tournament',
-    xe = 'barracks',
-    ve = 'clans',
-    ye = pe,
-    Ne = ve,
-    Se = ke,
-    ge = me,
-    Te = fe,
-    je = {
-        [_e]: 'shop',
-        [ue]: 'storage',
-        [he]: 'techtree',
-        [xe]: 'barracks',
-        [ye]: 'tournament',
-        [Ne]: 'clans',
+import { L as H, a as G, F as z, T as J, B as Y } from '../../../chunks/uilogging_constants.js';
+import { E as q, S as X, M as Q, e as Z, f as ee, g as se, h as te, i as ae } from '../../../chunks/sound_constants.js';
+import { u as ie } from '../../../chunks/useFormattedCountdown.js';
+import { a as oe } from '../../../chunks/formatters.js';
+const ne = 'disabled',
+    ce = 'tournament',
+    le = 'clans',
+    re = 'personalMissions',
+    de = 'modeSelector',
+    me = 'achievements',
+    _e = {
+        ['shop']: 'shop',
+        ['storage']: 'storage',
+        ['techtree']: 'techtree',
+        ['barracks']: 'barracks',
+        [ce]: 'tournament',
+        [le]: 'clans',
         ['clan']: 'clan',
-        [be]: 'missions',
-        [Se]: 'personalMissions',
-        [ge]: 'modeSelector',
-        [Te]: 'profile',
+        ['missions']: 'missions',
+        [re]: 'personalMissions',
+        [de]: 'modeSelector',
+        [me]: 'profile',
         ['replays']: 'replays',
     },
-    Ie = (s) =>
+    ue = (s) =>
         e.createElement(
             'svg',
             { width: 7, height: 18, viewBox: '0 0 7 18', fill: 'none', xmlns: 'http://www.w3.org/2000/svg', ...s },
@@ -103,7 +80,7 @@ const re = 'disabled',
                 fillOpacity: 0.9,
             }),
         ),
-    Me = {
+    be = {
         root: 'MenuItem_root_28be5e00',
         base: 'MenuItem_92bbc5da',
         base__modeSelectorName: 'MenuItem_base__modeSelectorName_28be5e00',
@@ -118,25 +95,25 @@ const re = 'disabled',
         modeName: 'MenuItem_modeName_36c0339e',
         clanEmblem: 'MenuItem_clanEmblem_fe5255ab',
     },
-    we = 'forts',
-    Ee = m.resolve('intl'),
-    Ce = m.resolve('strings'),
-    Ae = {
-        [ge]: 'tooltips.header.battleType',
-        [ye]: 'tooltips.header.buttons.tournaments',
-        [Te]: 'tooltips.header.buttons.profile',
+    ke = 'forts',
+    fe = m.resolve('intl'),
+    he = m.resolve('strings'),
+    pe = {
+        [de]: 'tooltips.header.battleType',
+        [ce]: 'tooltips.header.buttons.tournaments',
+        [me]: 'tooltips.header.buttons.profile',
     },
-    Le = {
-        [Ne]: 'tooltips.header.buttons.clans.turnedOff',
-        [Se]: 'tooltips.header.buttons.personalMissionsDisabled',
-        [we]: 'tooltips.header.buttons.forts.turnedOff',
+    xe = {
+        [le]: 'tooltips.header.buttons.clans.turnedOff',
+        [re]: 'tooltips.header.buttons.personalMissionsDisabled',
+        [ke]: 'tooltips.header.buttons.forts.turnedOff',
     };
-function Oe(e) {
-    return Ee.toUpperCase(
-        Ce.readOrEmpty(`menu.headerButtons.${je[e]}`) || Ce.readOrEmpty(`menu.headerButtons.${e}`) || `{${e}}`,
+function ve(e) {
+    return fe.toUpperCase(
+        he.readOrEmpty(`menu.headerButtons.${_e[e]}`) || he.readOrEmpty(`menu.headerButtons.${e}`) || `{${e}}`,
     );
 }
-function Re({
+function ye({
     name: a,
     state: i,
     modeName: o,
@@ -144,123 +121,106 @@ function Re({
     techTreeEvents: c,
     clanEmblem: l,
     onClick: r,
-    battleTypesPath: d = 'R.images.gui.maps.icons',
+    modeIconPath: d,
+    battleTypesPath: m = 'R.images.gui.maps.icons',
 }) {
-    const m = _(),
-        k = a === Ne && l,
-        f = u(
+    const k = _(),
+        f = a === le && l,
+        h = u(
             e.useMemo(
                 () =>
                     (function (e, s) {
-                        const t = ((s && Le[e]) || Ae[e]) ?? `tooltips.header.buttons.${e}`;
-                        return { header: Ce.readOrEmpty(`${t}.header`), body: Ce.readOrEmpty(`${t}.body`) };
-                    })(k ? we : a, i === re),
-                [a, i, k],
+                        const t = ((s && xe[e]) || pe[e]) ?? `tooltips.header.buttons.${e}`;
+                        return { header: he.readOrEmpty(`${t}.header`), body: he.readOrEmpty(`${t}.body`) };
+                    })(f ? ke : a, i === ne),
+                [a, i, f],
             ),
         ),
-        h = b('techtreeDiscount'),
-        p = c && 'techtree' === a ? h : f;
+        p = b('techtreeDiscount'),
+        x = c && 'techtree' === a ? p : h;
+    const v = d ?? `${m}.battleTypes.c_64x64.${n}`;
     return s.jsx('div', {
-        ...p,
-        className: t(Me.base, Me[`base__${i}State`], Me[`base__${a}Name`]),
+        ...x,
+        className: t(be.base, be[`base__${i}State`], be[`base__${a}Name`]),
         'data-test-id': a,
         onMouseEnter: function (e) {
-            (p.onMouseEnter(e),
-                i !== re && m.play('mouse-enter', { target: 'main-menu-widget:menu-item', original: e }));
+            (x.onMouseEnter(e),
+                i !== ne && k.play('mouse-enter', { target: 'main-menu-widget:menu-item', original: e }));
         },
         onClick: function (e) {
-            (p.onClick(), i !== re && (r(a), m.play('click', { target: 'main-menu-widget:menu-item', original: e })));
+            (x.onClick(), i !== ne && (r(a), k.play('click', { target: 'main-menu-widget:menu-item', original: e })));
         },
         children: (() => {
             switch (a) {
-                case ge:
+                case de:
                     return s.jsxs(s.Fragment, {
                         children: [
                             s.jsxs('div', {
-                                className: Me.modeSelector,
+                                className: be.modeSelector,
                                 children: [
-                                    s.jsx('div', { className: Me.label, children: Oe(a) }),
-                                    o && s.jsx('div', { className: Me.modeName, children: Ee.toUpperCase(o) }),
-                                    s.jsx('div', {
-                                        className: Me.modeIcon,
-                                        style: { backgroundImage: `url(${d}.battleTypes.c_64x64.${n})` },
-                                    }),
+                                    s.jsx('div', { className: be.label, children: ve(a) }),
+                                    o && s.jsx('div', { className: be.modeName, children: fe.toUpperCase(o) }),
+                                    s.jsx('div', { className: be.modeIcon, style: { backgroundImage: `url(${v})` } }),
                                 ],
                             }),
-                            s.jsx(Ie, { className: Me.arrow }),
+                            s.jsx(ue, { className: be.arrow }),
                         ],
                     });
-                case Ne:
+                case le:
                     return s.jsxs('div', {
-                        className: Me.titleWrapper,
+                        className: be.titleWrapper,
                         children: [
-                            l && s.jsx('div', { style: { backgroundImage: `url(${l})` }, className: Me.clanEmblem }),
-                            s.jsx('div', { className: Me.title, children: Oe(k ? 'clan' : a) }),
+                            l && s.jsx('div', { style: { backgroundImage: `url(${l})` }, className: be.clanEmblem }),
+                            s.jsx('div', { className: be.title, children: ve(f ? 'clan' : a) }),
                         ],
                     });
                 default:
                     return s.jsx('div', {
-                        className: Me.titleWrapper,
-                        children: s.jsx('div', { className: Me.title, children: Oe(a) }),
+                        className: be.titleWrapper,
+                        children: s.jsx('div', { className: be.title, children: ve(a) }),
                     });
             }
         })(),
     });
 }
-const [De, Be] = k()(
+const [Ne, Se] = k()(
         ({ observableModel: e }) => ({
             menuItems: e.arrayClone('menuItems'),
             ...e.primitives(['modeName', 'modeId', 'hasTechTreeEvents', 'clanEmblem']),
         }),
         ({ externalModel: e }) => ({ navigateTo: e.createCallback((e) => ({ name: e }), 'onNavigate') }),
     ),
-    $e = 'MainMenu_222da7b7',
-    Ue = a(function ({ className: a, battleTypesPath: i }) {
-        const { model: o, controls: n } = Be(),
-            c = o.menuItems.get(),
-            l = o.modeName.get(),
-            r = o.modeId.get(),
-            d = o.hasTechTreeEvents.get(),
-            m = o.clanEmblem.get();
+    ge = 'MainMenu_222da7b7',
+    Te = a(function ({ className: a, battleTypesPath: i, modeIconPath: o }) {
+        const { model: n, controls: c } = Se(),
+            l = n.menuItems.get(),
+            r = n.modeName.get(),
+            d = n.modeId.get(),
+            m = n.hasTechTreeEvents.get(),
+            _ = n.clanEmblem.get();
         return s.jsx('div', {
-            className: t($e, a),
-            children: f(c, (s) =>
-                e.createElement(Re, {
+            className: t(ge, a),
+            children: f(l, (s) =>
+                e.createElement(ye, {
                     ...s,
                     key: s.name,
                     battleTypesPath: i,
-                    onClick: n.navigateTo,
-                    modeName: l,
-                    modeId: r,
-                    techTreeEvents: d,
-                    clanEmblem: m,
+                    modeIconPath: o,
+                    onClick: c.navigateTo,
+                    modeName: r,
+                    modeId: d,
+                    techTreeEvents: m,
+                    clanEmblem: _,
                 }),
             ),
         });
-    }),
-    Ve = {
-        getter: p({
-            menuItems: [
-                { name: me, state: de },
-                { name: _e, state: de },
-                { name: ue, state: de },
-                { name: be, state: de },
-                { name: ke, state: de },
-                { name: fe, state: de },
-                { name: he, state: de },
-                { name: xe, state: re },
-                { name: pe, state: de },
-                { name: ve, state: de },
-            ],
-            modeName: 'Random Battle',
-        }),
-        controls: () => h(x('navigateTo')),
-    };
-function Fe({ className: e, battleTypesPath: t, ...a }) {
-    return s.jsx(De, { mode: 'real', mocks: Ve, ...a, children: s.jsx(Ue, { className: e, battleTypesPath: t }) });
+    });
+function je(e) {
+    const { className: t, battleTypesPath: a, modeIconPath: i, ...o } = e;
+    return s.jsx(Ne, { ...o, children: s.jsx(Te, { className: t, battleTypesPath: a, modeIconPath: i }) });
 }
-var Ke = ((e) => ((e[(e.NEWBIES = 0)] = 'NEWBIES'), (e[(e.EVENT = 1)] = 'EVENT'), e))(Ke || {});
-const [Pe, We] = k()(
+var Ie = ((e) => ((e[(e.NEWBIES = 0)] = 'NEWBIES'), (e[(e.EVENT = 1)] = 'EVENT'), e))(Ie || {});
+const [Me, we] = k()(
         ({ observableModel: e }) => {
             const s = {
                     root: e.primitives(['selectedTab', 'isTabsVisible', 'isParallaxEnabled']),
@@ -277,10 +237,10 @@ const [Pe, We] = k()(
                 }),
                 a = i(
                     () =>
-                        s.root.isParallaxEnabled.get() ? f(JSON.parse(s.parallax.get().parallaxStructure), y) : void 0,
-                    { equals: v },
+                        s.root.isParallaxEnabled.get() ? f(JSON.parse(s.parallax.get().parallaxStructure), p) : void 0,
+                    { equals: h },
                 ),
-                o = i(() => JSON.parse(s.parallax.get().atlas), { equals: v });
+                o = i(() => JSON.parse(s.parallax.get().atlas), { equals: h });
             return {
                 ...s,
                 computes: { getIsSelectedMissionCompletedFirstTime: t, parallaxStructureObj: a, atlasObj: o },
@@ -296,21 +256,21 @@ const [Pe, We] = k()(
             navigateTo: e.createCallback((e) => ({ name: e }), 'onNavigate'),
         }),
     ),
-    He = 'AboutButton_f119c81f',
-    Ge = 'AboutButton_icon_d14880da',
-    ze = e.memo(function ({ onClick: e }) {
-        const { breakpoint: t } = N();
-        return s.jsx(S, {
-            className: He,
-            size: t.weight >= g.extraLarge.weight ? S.sizes.small : S.sizes.extraSmall,
-            theme: S.themes.secondary,
+    Ee = 'AboutButton_f119c81f',
+    Ce = 'AboutButton_icon_d14880da',
+    Ae = e.memo(function ({ onClick: e }) {
+        const { breakpoint: t } = x();
+        return s.jsx(v, {
+            className: Ee,
+            size: t.weight >= y.extraLarge.weight ? v.sizes.small : v.sizes.extraSmall,
+            theme: v.themes.secondary,
             onClick: () => {
-                (T.click(), e());
+                (N.click(), e());
             },
-            children: s.jsx('div', { className: Ge }),
+            children: s.jsx('div', { className: Ce }),
         });
     });
-var Je = ((e) => (
+var Le = ((e) => (
     (e.COUNTDOWN = 'countdown'),
     (e.TITLE = 'title'),
     (e.SUB_TITLE = 'subTitle'),
@@ -326,21 +286,21 @@ var Je = ((e) => (
     (e.TASK_REWARDS = 'taskRewards'),
     (e.TASK_DESCRIPTION = 'taskDescription'),
     e
-))(Je || {});
-const Ye = { y: -5, opacity: 0 },
-    qe = { y: 0, opacity: 1 },
-    Xe = 150,
-    Qe = 350,
-    Ze = 650,
-    es = {
-        countdown: { from: Ye, to: qe, delay: Xe, duration: Qe },
-        title: { from: Ye, to: qe, delay: 200, duration: Qe },
-        subTitle: { from: Ye, to: qe, delay: 350, duration: Qe },
+))(Le || {});
+const Oe = { y: -5, opacity: 0 },
+    Re = { y: 0, opacity: 1 },
+    De = 150,
+    Be = 350,
+    $e = 650,
+    Ue = {
+        countdown: { from: Oe, to: Re, delay: De, duration: Be },
+        title: { from: Oe, to: Re, delay: 200, duration: Be },
+        subTitle: { from: Oe, to: Re, delay: 350, duration: Be },
         taskShowing: {
             from: { x: 80, filter: 'blur(1px) brightness(5)', opacity: 0 },
             to: { x: 0, filter: 'blur(0px) brightness(1)', opacity: 1 },
-            delay: Ze,
-            easingType: Z.EaseOut,
+            delay: $e,
+            easingType: q.EaseOut,
             duration: 700,
         },
         taskOldState: {
@@ -362,10 +322,10 @@ const Ye = { y: -5, opacity: 0 },
                 { opacity: 0, transform: 'translate(-50%, -50%) scale(1, 1)' },
             ],
             delay: 1350,
-            easingType: Z.Linear,
+            easingType: q.Linear,
             duration: 525,
         },
-        missionState: { from: { opacity: 1 }, to: { opacity: 0 }, delay: 1350, duration: Qe },
+        missionState: { from: { opacity: 1 }, to: { opacity: 0 }, delay: 1350, duration: Be },
         taskLocked: { from: { y: 0, opacity: 1 }, to: { y: 10, opacity: 0 }, delay: 1350, duration: 1050 },
         taskUnlocked: { from: { y: -10, opacity: 0 }, to: { y: 0, opacity: 1 }, delay: 1700, duration: 1050 },
         taskUnlockGlow: {
@@ -375,30 +335,30 @@ const Ye = { y: -5, opacity: 0 },
                 { x: 80, opacity: 0, transform: 'translate(-50%, -50%) scale(5, 1)' },
             ],
             delay: 1350,
-            easingType: Z.Linear,
+            easingType: q.Linear,
             duration: 525,
         },
         missionUnlocked: {
             from: { opacity: 1, transform: 'scale(1)' },
             to: { opacity: 0, transform: 'scale(1.2)' },
             delay: 0,
-            duration: Qe,
+            duration: Be,
         },
-        taskRewards: { from: { y: 10, opacity: 0 }, to: { opacity: 1, y: 0 }, delay: 0, duration: Qe },
-        taskDescription: { from: { opacity: 1, y: 0 }, to: { opacity: 0, y: -10 }, delay: 0, duration: Qe },
+        taskRewards: { from: { y: 10, opacity: 0 }, to: { opacity: 1, y: 0 }, delay: 0, duration: Be },
+        taskDescription: { from: { opacity: 1, y: 0 }, to: { opacity: 0, y: -10 }, delay: 0, duration: Be },
     },
-    ss = 'LockOverlay_6e9eb613',
-    ts = 'LockOverlay_darkOverlay_5f576df6',
-    as = 'LockOverlay_locker_c4f5162f',
-    is = 'LockOverlay_locker__withTabs_fd87956e',
-    os = 'LockOverlay_ribbon_88606474',
-    ns = 'LockOverlay_envelope_6f1862d4',
-    cs = 'LockOverlay_divider_b6c99f7a',
-    ls = 'LockOverlay_line_1f9148f',
-    rs = 'LockOverlay_lock_b6f325cb',
-    ds = 'LockOverlay_mission_2ea23d3e',
-    ms = 'LockOverlay_condition_6785e3d0',
-    _s = e.memo(
+    Ve = 'LockOverlay_6e9eb613',
+    Fe = 'LockOverlay_darkOverlay_5f576df6',
+    Ke = 'LockOverlay_locker_c4f5162f',
+    Pe = 'LockOverlay_locker__withTabs_fd87956e',
+    We = 'LockOverlay_ribbon_88606474',
+    He = 'LockOverlay_envelope_6f1862d4',
+    Ge = 'LockOverlay_divider_b6c99f7a',
+    ze = 'LockOverlay_line_1f9148f',
+    Je = 'LockOverlay_lock_b6f325cb',
+    Ye = 'LockOverlay_mission_2ea23d3e',
+    qe = 'LockOverlay_condition_6785e3d0',
+    Xe = e.memo(
         ({
             missionName: e,
             battlesToUnlock: t,
@@ -406,30 +366,30 @@ const Ye = { y: -5, opacity: 0 },
             shouldPlayUnlockAnimation: i = !1,
             onAnimationFinished: n,
         }) =>
-            s.jsxs(ee, {
-                className: ss,
-                ...es[Je.MISSION_UNLOCKED],
+            s.jsxs(X, {
+                className: Ve,
+                ...Ue[Le.MISSION_UNLOCKED],
                 isDisabled: !i,
                 onRest: n,
                 children: [
-                    s.jsx('div', { className: ts }),
+                    s.jsx('div', { className: Fe }),
                     s.jsxs('div', {
-                        className: o(as, a && is),
+                        className: o(Ke, a && Pe),
                         children: [
-                            s.jsx('div', { className: os }),
+                            s.jsx('div', { className: We }),
                             s.jsxs('div', {
-                                className: ns,
+                                className: He,
                                 children: [
-                                    s.jsx(j, { classMix: ds, justifyContent: I.Center, text: e }),
+                                    s.jsx(S, { classMix: Ye, justifyContent: g.Center, text: e }),
                                     s.jsxs('div', {
-                                        className: cs,
-                                        children: [s.jsx('div', { className: ls }), s.jsx('div', { className: rs })],
+                                        className: Ge,
+                                        children: [s.jsx('div', { className: ze }), s.jsx('div', { className: Je })],
                                     }),
-                                    s.jsx(j, {
-                                        classMix: ms,
+                                    s.jsx(S, {
+                                        classMix: qe,
                                         text: R.strings.sm_lobby.missionSelection.unlockCondition(),
                                         binding: { numBattles: t },
-                                        justifyContent: I.Center,
+                                        justifyContent: g.Center,
                                     }),
                                 ],
                             }),
@@ -438,20 +398,20 @@ const Ye = { y: -5, opacity: 0 },
                 ],
             }),
     ),
-    us = { x: 0, y: -10, opacity: 0, transform: 'scale(1) rotate(0deg)' },
-    bs = { x: 0, y: 0, opacity: 1, transform: 'scale(1) rotate(0deg)' },
-    ks = { x: 0, y: 10, opacity: 0, transform: 'scale(1) rotate(0deg)' },
-    fs = {
+    Qe = { x: 0, y: -10, opacity: 0, transform: 'scale(1) rotate(0deg)' },
+    Ze = { x: 0, y: 0, opacity: 1, transform: 'scale(1) rotate(0deg)' },
+    es = { x: 0, y: 10, opacity: 0, transform: 'scale(1) rotate(0deg)' },
+    ss = {
         linear: (e) => e,
         easeIn: (e) => e * e * e,
         easeOut: (e) => --e * e * e + 1,
         easeInOut: (e) => (e < 0.5 ? 4 * e * e * e : (e - 1) * (2 * e - 2) * (2 * e - 2) + 1),
     },
-    hs = e.memo(function ({
+    ts = e.memo(function ({
         children: t,
-        from: a = us,
-        enter: i = bs,
-        leave: o = ks,
+        from: a = Qe,
+        enter: i = Ze,
+        leave: o = es,
         isCanceled: r = !1,
         isTransition: d = !0,
         duration: m = 500,
@@ -468,7 +428,7 @@ const Ye = { y: -5, opacity: 0 },
         leaveOnRestSound: N,
         className: S,
     }) {
-        const g = fs[b],
+        const g = ss[b],
             T = n(),
             j = c(d, {
                 ref: T,
@@ -504,47 +464,47 @@ const Ye = { y: -5, opacity: 0 },
             j((e, a) => a && s.jsx(l.div, { className: S, style: { ...e, transformOrigin: u }, children: t }))
         );
     }),
-    ps = 'Countdown_2a3608a1',
-    xs = 'Countdown_timer_4646805f',
-    vs = 'Countdown_text_846e7f1b',
-    ys = 'Countdown_icon_d6ccfe65',
-    Ns = 'Countdown_bg_47004406',
-    Ss = 'Countdown_bg__endingSoon_fd34215d',
-    gs = r(() => {
-        const { model: e } = We(),
+    as = 'Countdown_2a3608a1',
+    is = 'Countdown_timer_4646805f',
+    os = 'Countdown_text_846e7f1b',
+    ns = 'Countdown_icon_d6ccfe65',
+    cs = 'Countdown_bg_47004406',
+    ls = 'Countdown_bg__endingSoon_fd34215d',
+    rs = r(() => {
+        const { model: e } = we(),
             t = e.selectedMission.get(),
-            { timeString: a, isEndingSoon: i } = ce(t.secondsCountdown, !0, !0);
+            { timeString: a, isEndingSoon: i } = ie(t.secondsCountdown, !0, !0);
         return s.jsxs('div', {
-            className: ps,
+            className: as,
             children: [
-                s.jsx('div', { className: o(Ns, i && Ss) }),
+                s.jsx('div', { className: o(cs, i && ls) }),
                 s.jsxs('div', {
-                    className: xs,
-                    children: [s.jsx('div', { className: ys }), s.jsx('div', { className: vs, children: a })],
+                    className: is,
+                    children: [s.jsx('div', { className: ns }), s.jsx('div', { className: os, children: a })],
                 }),
             ],
         });
     });
-var Ts = ((e) => (
+var ds = ((e) => (
     (e[(e.UNCOMPLETED = 0)] = 'UNCOMPLETED'),
     (e[(e.COMPLETED = 1)] = 'COMPLETED'),
     (e[(e.LOCKED = 2)] = 'LOCKED'),
     e
-))(Ts || {});
-const js = 'TaskDescription_ea7b717f',
-    Is = 'TaskDescription_text_2294624d',
-    Ms = 'TaskDescription_text__notLocked_8efc321f',
-    ws = 'TaskDescription_timer_3daeb4e4',
-    Es = 'TaskDescription_time_9ed754ce',
-    Cs = 'TaskDescription_clock_81bcabef',
-    As = R.strings.sm_lobby.missionSelection,
-    Ls = function ({ binding: e }) {
-        return s.jsx(M, { className: Is, text: As.taskDescription.locked(), params: e, upgradeLegacy: !0 });
+))(ds || {});
+const ms = 'TaskDescription_ea7b717f',
+    _s = 'TaskDescription_text_2294624d',
+    us = 'TaskDescription_text__notLocked_8efc321f',
+    bs = 'TaskDescription_timer_3daeb4e4',
+    ks = 'TaskDescription_time_9ed754ce',
+    fs = 'TaskDescription_clock_81bcabef',
+    hs = R.strings.sm_lobby.missionSelection,
+    ps = function ({ binding: e }) {
+        return s.jsx(T, { className: _s, text: hs.taskDescription.locked(), params: e, upgradeLegacy: !0 });
     },
-    Os = function ({ description: e }) {
-        return s.jsx(j, { classMix: o(Is, Ms), text: e, isTruncationAvailable: !0 });
+    xs = function ({ description: e }) {
+        return s.jsx(S, { classMix: o(_s, us), text: e, isTruncationAvailable: !0 });
     },
-    Rs = e.memo(function ({
+    vs = e.memo(function ({
         description: e,
         taskState: t,
         isUnlockedFirstTime: a,
@@ -553,37 +513,37 @@ const js = 'TaskDescription_ea7b717f',
         onAnimationFinished: n,
         isLockRunOut: c,
     }) {
-        const l = t === Ts.LOCKED && !c,
+        const l = t === ds.LOCKED && !c,
             r = {
                 timer: s.jsxs('div', {
-                    className: ws,
-                    children: [s.jsx('div', { className: Cs }), s.jsx('div', { className: Es, children: i })],
+                    className: bs,
+                    children: [s.jsx('div', { className: fs }), s.jsx('div', { className: ks, children: i })],
                 }),
             };
         return (a || c) && o
             ? s.jsxs(s.Fragment, {
                   children: [
-                      s.jsx(ee, { className: js, ...es[Je.TASK_LOCKED], children: s.jsx(Ls, { binding: r }) }),
-                      s.jsx(ee, {
-                          className: js,
-                          ...es[Je.TASK_UNLOCKED],
+                      s.jsx(X, { className: ms, ...Ue[Le.TASK_LOCKED], children: s.jsx(ps, { binding: r }) }),
+                      s.jsx(X, {
+                          className: ms,
+                          ...Ue[Le.TASK_UNLOCKED],
                           onRest: n,
-                          children: s.jsx(Os, { description: e }),
+                          children: s.jsx(xs, { description: e }),
                       }),
                   ],
               })
-            : s.jsx('div', { className: js, children: l ? s.jsx(Ls, { binding: r }) : s.jsx(Os, { description: e }) });
+            : s.jsx('div', { className: ms, children: l ? s.jsx(ps, { binding: r }) : s.jsx(xs, { description: e }) });
     }),
-    Ds = 'TaskIcon_5fdfe305',
-    Bs = 'TaskIcon_glow_411f0293',
-    $s = 'TaskIcon_base__completed_a946400a',
-    Us = 'TaskIcon_base__locked_a946400a',
-    Vs = 'TaskIcon_base__hover_a946400a',
-    Fs = 'TaskIcon_iconBody_e49fbd34',
-    Ks = 'TaskIcon_iconGlow_8f8031c7',
-    Ps = 'TaskIcon_iconGlow__switch_ebfee4f8',
-    Ws = 'TaskIcon_iconGlow__unlock_da6602e',
-    Hs = e.memo(function ({
+    ys = 'TaskIcon_5fdfe305',
+    Ns = 'TaskIcon_glow_411f0293',
+    Ss = 'TaskIcon_base__completed_a946400a',
+    gs = 'TaskIcon_base__locked_a946400a',
+    Ts = 'TaskIcon_base__hover_a946400a',
+    js = 'TaskIcon_iconBody_e49fbd34',
+    Is = 'TaskIcon_iconGlow_8f8031c7',
+    Ms = 'TaskIcon_iconGlow__switch_ebfee4f8',
+    ws = 'TaskIcon_iconGlow__unlock_da6602e',
+    Es = e.memo(function ({
         taskState: e,
         isCompletedFirstTime: t,
         isUnlockedFirstTime: a,
@@ -597,126 +557,126 @@ const js = 'TaskDescription_ea7b717f',
         return t && n
             ? s.jsxs(s.Fragment, {
                   children: [
-                      s.jsx(ee, {
-                          className: Ds,
-                          ...es[Je.TASK_OLD_STATE],
+                      s.jsx(X, {
+                          className: ys,
+                          ...Ue[Le.TASK_OLD_STATE],
                           onStart: r,
                           children: s.jsxs('div', {
-                              className: Ds,
+                              className: ys,
                               children: [
-                                  s.jsx('div', { className: Bs }),
-                                  s.jsx('div', { className: Ks }),
-                                  s.jsx('div', { className: Fs }),
+                                  s.jsx('div', { className: Ns }),
+                                  s.jsx('div', { className: Is }),
+                                  s.jsx('div', { className: js }),
                               ],
                           }),
                       }),
-                      s.jsx(ee, {
-                          className: Ds,
-                          ...es[Je.TASK_NEW_STATE],
+                      s.jsx(X, {
+                          className: ys,
+                          ...Ue[Le.TASK_NEW_STATE],
                           onRest: c,
                           children: s.jsxs('div', {
-                              className: o(Ds, $s, i && Vs),
+                              className: o(ys, Ss, i && Ts),
                               children: [
-                                  s.jsx('div', { className: Bs }),
-                                  s.jsx('div', { className: Ks }),
-                                  s.jsx('div', { className: Fs }),
+                                  s.jsx('div', { className: Ns }),
+                                  s.jsx('div', { className: Is }),
+                                  s.jsx('div', { className: js }),
                               ],
                           }),
                       }),
-                      s.jsx(ee, {
-                          className: Ds,
-                          ...es[Je.TASK_SWITCH_GLOW],
-                          children: s.jsx('div', { className: o(Ks, Ps) }),
+                      s.jsx(X, {
+                          className: ys,
+                          ...Ue[Le.TASK_SWITCH_GLOW],
+                          children: s.jsx('div', { className: o(Is, Ms) }),
                       }),
                   ],
               })
             : (a || d) && n
               ? s.jsxs(s.Fragment, {
                     children: [
-                        s.jsx(ee, {
-                            className: Ds,
-                            ...es[Je.TASK_LOCKED],
+                        s.jsx(X, {
+                            className: ys,
+                            ...Ue[Le.TASK_LOCKED],
                             onStart: l,
                             children: s.jsxs('div', {
-                                className: o(Ds, Us),
+                                className: o(ys, gs),
                                 children: [
-                                    s.jsx('div', { className: Bs }),
-                                    s.jsx('div', { className: Ks }),
-                                    s.jsx('div', { className: Fs }),
+                                    s.jsx('div', { className: Ns }),
+                                    s.jsx('div', { className: Is }),
+                                    s.jsx('div', { className: js }),
                                 ],
                             }),
                         }),
-                        s.jsx(ee, {
-                            className: Ds,
-                            ...es[Je.TASK_UNLOCKED],
+                        s.jsx(X, {
+                            className: ys,
+                            ...Ue[Le.TASK_UNLOCKED],
                             onRest: c,
                             children: s.jsxs('div', {
-                                className: o(Ds, i && Vs),
+                                className: o(ys, i && Ts),
                                 children: [
-                                    s.jsx('div', { className: Bs }),
-                                    s.jsx('div', { className: Ks }),
-                                    s.jsx('div', { className: Fs }),
+                                    s.jsx('div', { className: Ns }),
+                                    s.jsx('div', { className: Is }),
+                                    s.jsx('div', { className: js }),
                                 ],
                             }),
                         }),
-                        s.jsx(ee, {
-                            className: Ds,
-                            ...es[Je.TASK_UNLOCK_GLOW],
-                            children: s.jsx('div', { className: o(Ks, Ws) }),
+                        s.jsx(X, {
+                            className: ys,
+                            ...Ue[Le.TASK_UNLOCK_GLOW],
+                            children: s.jsx('div', { className: o(Is, ws) }),
                         }),
                     ],
                 })
               : s.jsxs('div', {
-                    className: o(Ds, e === Ts.COMPLETED && $s, e === Ts.LOCKED && !d && Us, i && Vs),
+                    className: o(ys, e === ds.COMPLETED && Ss, e === ds.LOCKED && !d && gs, i && Ts),
                     children: [
-                        s.jsx('div', { className: Bs }),
-                        s.jsx('div', { className: o(Ks) }),
-                        s.jsx('div', { className: o(Fs) }),
+                        s.jsx('div', { className: Ns }),
+                        s.jsx('div', { className: o(Is) }),
+                        s.jsx('div', { className: o(js) }),
                     ],
                 });
     }),
-    Gs = 'TrackedReward_10911cf8',
-    zs = 'TrackedReward_base__centered_99f5e2bf',
-    Js = 'TrackedReward_info_3fdceea1',
-    Ys = ({ missionId: e, taskId: t, rewardNum: a, ...i }) => {
-        const n = w(q.StoryMode, {
-                action: Y.Watched,
-                parentScreen: J.MissionSelection,
+    Cs = 'TrackedReward_10911cf8',
+    As = 'TrackedReward_base__centered_99f5e2bf',
+    Ls = 'TrackedReward_info_3fdceea1',
+    Os = ({ missionId: e, taskId: t, rewardNum: a, ...i }) => {
+        const n = j(z.StoryMode, {
+                action: G.Watched,
+                parentScreen: H.MissionSelection,
                 timeLimit: 1,
-                item: J.TaskRewardTooltip,
+                item: H.TaskRewardTooltip,
                 itemState: e.toString(),
                 info: JSON.stringify({ task_id: t, task_reward_item: i.name, task_reward_num: a }),
             }),
             c = { ...i.tooltipArgs, ...n },
             l = !i.value && !i.title;
-        return s.jsx(E, { className: o(Gs, l && zs), classNames: { info: Js }, ...i, tooltipArgs: c });
+        return s.jsx(I, { className: o(Cs, l && As), classNames: { info: Ls }, ...i, tooltipArgs: c });
     },
-    qs = 'TaskRewards_985186b',
-    Xs = 'TaskRewards_title_bbd3263c',
-    Qs = 'TaskRewards_rewards_2b6754c2',
-    Zs = e.memo(
+    Rs = 'TaskRewards_985186b',
+    Ds = 'TaskRewards_title_bbd3263c',
+    Bs = 'TaskRewards_rewards_2b6754c2',
+    $s = e.memo(
         ({ rewards: t, missionId: a, taskId: i }) => {
-            const { breakpoint: o } = N(),
-                n = o.weight >= g.extraLarge.weight ? C.Big : C.Small;
+            const { breakpoint: o } = x(),
+                n = o.weight >= y.extraLarge.weight ? M.Big : M.Small;
             return s.jsxs('div', {
-                className: qs,
+                className: Rs,
                 children: [
-                    s.jsx('div', { className: Xs, children: R.strings.sm_lobby.missionSelection.taskRewards() }),
+                    s.jsx('div', { className: Ds, children: R.strings.sm_lobby.missionSelection.taskRewards() }),
                     s.jsx('div', {
-                        className: Qs,
+                        className: Bs,
                         children: f(t, (s, t) => {
-                            const o = A(s.name);
-                            return e.createElement(Ys, {
+                            const o = w(s.name);
+                            return e.createElement(Os, {
                                 ...s,
                                 key: t,
-                                value: le(s.value, o),
+                                value: oe(s.value, o),
                                 valueType: o,
                                 image: s.icon[n],
                                 size: n,
                                 missionId: a,
                                 taskId: i,
                                 rewardNum: t + 1,
-                                tooltipArgs: L({ tooltipId: s.tooltipId }, Number(s.tooltipContentId)),
+                                tooltipArgs: E({ tooltipId: s.tooltipId }, Number(s.tooltipContentId)),
                             });
                         }),
                     }),
@@ -725,12 +685,12 @@ const js = 'TaskDescription_ea7b717f',
         },
         (e, s) => e.missionId === s.missionId && e.taskId === s.taskId,
     ),
-    et = 'TaskListItem_c1a02def',
-    st = 'TaskListItem_frame_94b88bb',
-    tt = 'TaskListItem_frameImg_d444c880',
-    at = 'TaskListItem_frameImg__hover_260842d6',
-    it = 'TaskListItem_description_be63c553',
-    ot = ({
+    Us = 'TaskListItem_c1a02def',
+    Vs = 'TaskListItem_frame_94b88bb',
+    Fs = 'TaskListItem_frameImg_d444c880',
+    Ks = 'TaskListItem_frameImg__hover_260842d6',
+    Ps = 'TaskListItem_description_be63c553',
+    Ws = ({
         index: t,
         missionId: a,
         taskId: i,
@@ -742,90 +702,90 @@ const js = 'TaskDescription_ea7b717f',
         onTaskUnlocked: m,
         animationCounter: _,
         rewards: u,
-        onAppearanceAnimationStart: b = O,
-        onAppearanceAnimationFinished: k = O,
-        onUnlockAnimationStart: f = O,
-        onCompletionAnimationStart: h = O,
-        onAnimationFinished: p = O,
+        onAppearanceAnimationStart: b = C,
+        onAppearanceAnimationFinished: k = C,
+        onUnlockAnimationStart: f = C,
+        onCompletionAnimationStart: h = C,
+        onAnimationFinished: p = C,
     }) => {
         const x = e.useRef(r),
             [v, y] = e.useState(l || d),
-            [N, S] = e.useState(!1),
-            [g, j] = e.useState(!1),
-            [I, M] = e.useState(!1),
-            [E, C] = e.useState(void 0),
-            { timeString: A, secondsLeft: L } = ce(r),
-            { onShow: R, onHide: D } = w(q.StoryMode, {
-                action: Y.Watched,
-                parentScreen: J.MissionSelection,
-                timeLimit: X,
-                item: J.Task,
+            [S, g] = e.useState(!1),
+            [T, I] = e.useState(!1),
+            [M, w] = e.useState(!1),
+            [E, A] = e.useState(void 0),
+            { timeString: L, secondsLeft: O } = ie(r),
+            { onShow: R, onHide: D } = j(z.StoryMode, {
+                action: G.Watched,
+                parentScreen: H.MissionSelection,
+                timeLimit: J,
+                item: H.Task,
                 itemState: a.toString(),
                 info: JSON.stringify({ task_id: i }),
             });
         (e.useEffect(() => () => clearTimeout(E), [E]),
             e.useEffect(() => {
-                0 !== x.current && 0 === L && (y(!0), S(!0), m(i));
-            }, [L, m, i, r]),
+                0 !== x.current && 0 === O && (y(!0), g(!0), m(i));
+            }, [O, m, i, r]),
             e.useEffect(() => {
                 y(!0);
             }, [_]));
         const B = e.useCallback(() => {
                 (y(!1), p());
             }, [p]),
-            $ = c !== Ts.LOCKED && u.length > 0;
+            $ = c !== ds.LOCKED && u.length > 0;
         return s.jsx(
-            ee,
+            X,
             {
-                className: et,
-                ...{ ...es[Je.TASK_SHOWING], delay: Ze + 150 * t },
+                className: Us,
+                ...{ ...Ue[Le.TASK_SHOWING], delay: $e + 150 * t },
                 onStart: b,
                 onRest: k,
                 children: s.jsxs('div', {
-                    className: st,
+                    className: Vs,
                     onMouseEnter: () => {
-                        (C(
+                        (A(
                             window.setTimeout(() => {
-                                M(!0);
+                                w(!0);
                             }, 150),
                         ),
-                            T.highlight(),
-                            j(!0),
+                            N.highlight(),
+                            I(!0),
                             R());
                     },
                     onMouseLeave: () => {
-                        (clearTimeout(E), M(!1), j(!1), D());
+                        (clearTimeout(E), w(!1), I(!1), D());
                     },
                     children: [
-                        s.jsx('div', { className: o(tt, g && at) }),
-                        s.jsx(Hs, {
+                        s.jsx('div', { className: o(Fs, T && Ks) }),
+                        s.jsx(Es, {
                             taskState: c,
                             isCompletedFirstTime: l,
                             isUnlockedFirstTime: d,
-                            isLockRunOut: N,
-                            isHover: g,
+                            isLockRunOut: S,
+                            isHover: T,
                             isShouldPlayAnimation: v,
                             onAnimationFinished: B,
                             onCompletionAnimationStart: h,
                             onUnlockAnimationStart: f,
                         }),
                         $ &&
-                            s.jsx(ee, {
-                                ...es[Je.TASK_REWARDS],
-                                isReverse: !I,
-                                children: s.jsx(Zs, { rewards: u, missionId: a, taskId: i }),
+                            s.jsx(X, {
+                                ...Ue[Le.TASK_REWARDS],
+                                isReverse: !M,
+                                children: s.jsx($s, { rewards: u, missionId: a, taskId: i }),
                             }),
-                        s.jsx(ee, {
-                            className: it,
-                            ...es[Je.TASK_DESCRIPTION],
-                            isReverse: !!$ && !I,
+                        s.jsx(X, {
+                            className: Ps,
+                            ...Ue[Le.TASK_DESCRIPTION],
+                            isReverse: !!$ && !M,
                             isDisabled: !$,
-                            children: s.jsx(Rs, {
+                            children: s.jsx(vs, {
                                 description: n,
                                 taskState: c,
                                 isUnlockedFirstTime: d,
-                                isLockRunOut: N,
-                                timeString: A,
+                                isLockRunOut: S,
+                                timeString: L,
                                 isShouldPlayAnimation: v,
                                 onAnimationFinished: B,
                             }),
@@ -836,21 +796,21 @@ const js = 'TaskDescription_ea7b717f',
             `${a}_${t}`,
         );
     },
-    nt = 'TaskList_31802e',
-    ct = r(({ isChanging: t }) => {
-        const { controls: a, model: i } = We(),
+    Hs = 'TaskList_31802e',
+    Gs = r(({ isChanging: t }) => {
+        const { controls: a, model: i } = we(),
             o = e.useRef(!1),
             n = e.useRef(!1),
             c = i.selectedMission.get(),
             l = i.tasks.get(),
             r = e.useCallback(() => {
-                n.current || (T.sound(se), (n.current = !0));
+                n.current || (N.sound(Q), (n.current = !0));
             }, []),
             d = e.useCallback(() => {
-                n.current || (T.sound(te), (n.current = !0));
+                n.current || (N.sound(Z), (n.current = !0));
             }, []),
             m = e.useCallback(() => {
-                o.current || (T.sound(ae), (o.current = !0));
+                o.current || (N.sound(ee), (o.current = !0));
             }, []),
             _ = e.useCallback(() => {
                 o.current = !1;
@@ -861,10 +821,10 @@ const js = 'TaskDescription_ea7b717f',
         return t && o.current
             ? null
             : s.jsx('div', {
-                  className: nt,
+                  className: Hs,
                   children: f(l, (e, t) =>
                       s.jsx(
-                          ot,
+                          Ws,
                           {
                               missionId: c.missionId,
                               index: t,
@@ -881,42 +841,42 @@ const js = 'TaskDescription_ea7b717f',
                   ),
               });
     }),
-    lt = 'MissionInfo_511576db',
-    rt = 'MissionInfo_base__center_d51dad60',
-    dt = 'MissionInfo_title_2a9e17cc',
-    mt = 'MissionInfo_subTitle_31acb91',
-    _t = r(({ isChanged: e, durationTasks: t }) => {
-        const { model: a } = We(),
-            i = a.root.selectedTab.get() === Ke.EVENT,
+    zs = 'MissionInfo_511576db',
+    Js = 'MissionInfo_base__center_d51dad60',
+    Ys = 'MissionInfo_title_2a9e17cc',
+    qs = 'MissionInfo_subTitle_31acb91',
+    Xs = r(({ isChanged: e, durationTasks: t }) => {
+        const { model: a } = we(),
+            i = a.root.selectedTab.get() === Ie.EVENT,
             n = a.selectedMission.get(),
             c = n.missionId,
             l = a.tasks.get().length,
-            { breakpoint: r } = N(),
-            d = r.weight > g.extraLarge.weight;
+            { breakpoint: r } = x(),
+            d = r.weight > y.extraLarge.weight;
         return s.jsxs('div', {
-            className: o(lt, l > 1 && rt),
+            className: o(zs, l > 1 && Js),
             children: [
                 n.isCountdownVisible &&
                     s.jsx(
-                        ee,
-                        { trigger: c, ...es[Je.COUNTDOWN], children: s.jsx(gs, {}) },
+                        X,
+                        { trigger: c, ...Ue[Le.COUNTDOWN], children: s.jsx(rs, {}) },
                         i ? 'countdown' : `countdown_${c}`,
                     ),
                 s.jsx(
-                    ee,
+                    X,
                     {
-                        ...es[Je.TITLE],
-                        className: dt,
+                        ...Ue[Le.TITLE],
+                        className: Ys,
                         children: R.strings.sm_lobby.missionSelection.missionName.$num(c),
                     },
                     i ? 'title' : `title_${c}`,
                 ),
                 s.jsx(
-                    ee,
+                    X,
                     {
-                        ...es[Je.SUB_TITLE],
-                        children: s.jsx(D, {
-                            className: mt,
+                        ...Ue[Le.SUB_TITLE],
+                        children: s.jsx(A, {
+                            className: qs,
                             text: R.strings.sm_lobby.missionSelection.missionDescription.$num(c),
                         }),
                     },
@@ -925,18 +885,18 @@ const js = 'TaskDescription_ea7b717f',
                 s.jsx('div', {
                     style: { height: (d ? 86 : 84) * l + 'rem' },
                     children: s.jsx(
-                        hs,
-                        { isTransition: e, duration: t, children: s.jsx(ct, { isChanging: !e }) },
+                        ts,
+                        { isTransition: e, duration: t, children: s.jsx(Gs, { isChanging: !e }) },
                         `taskList_${c}`,
                     ),
                 }),
             ],
         });
     });
-var ut = ((e) => ((e.UNDEFINED = ''), (e.NORMAL = 'normal'), (e.HARD = 'hard'), (e.VERY_HARD = 'very_hard'), e))(
-    ut || {},
+var Qs = ((e) => ((e.UNDEFINED = ''), (e.NORMAL = 'normal'), (e.HARD = 'hard'), (e.VERY_HARD = 'very_hard'), e))(
+    Qs || {},
 );
-const bt = {
+const Zs = {
         root: 'DifficultyButton_root_5b8779fb',
         base: 'DifficultyButton_686d798d',
         backSelected: 'DifficultyButton_backSelected_b3a9c627',
@@ -967,7 +927,7 @@ const bt = {
         video__hard: 'DifficultyButton_video__hard_5b8779fb',
         video__very_hard: 'DifficultyButton_video__very_hard_38885378',
     },
-    kt = e.memo(
+    et = e.memo(
         ({
             isSelected: t,
             missionId: a,
@@ -978,11 +938,11 @@ const bt = {
             onClick: r,
         }) => {
             const d = e.useRef(null),
-                m = w(q.StoryMode, {
-                    action: Y.Watched,
-                    parentScreen: J.MissionSelection,
-                    timeLimit: X,
-                    item: J.SelectButtonTooltip,
+                m = j(z.StoryMode, {
+                    action: G.Watched,
+                    parentScreen: H.MissionSelection,
+                    timeLimit: J,
+                    item: H.SelectButtonTooltip,
                     itemState: i.toString(),
                     info: JSON.stringify({
                         select_button_mission: a.toString(),
@@ -994,47 +954,47 @@ const bt = {
                     const e = d.current;
                     if (e) return t ? e.play() : e.pause();
                 }, [t, d]),
-                s.jsx(B, {
+                s.jsx(L, {
                     contentId: R.views.story_mode.mono.lobby.tooltips.difficulty_tooltip('resId'),
                     args: { difficulty: c, isSelected: t, missionId: a },
                     ...m,
                     children: s.jsxs('div', {
-                        className: o(bt.base, t && bt.base__selected, l && bt.base__locked),
+                        className: o(Zs.base, t && Zs.base__selected, l && Zs.base__locked),
                         children: [
-                            s.jsx('div', { className: o(bt.back, bt[`back__${c}`]) }),
+                            s.jsx('div', { className: o(Zs.back, Zs[`back__${c}`]) }),
                             !l &&
                                 s.jsxs(s.Fragment, {
                                     children: [
-                                        !t && s.jsx('div', { className: o(bt.backHover, bt[`backHover__${c}`]) }),
-                                        s.jsx('div', { className: o(bt.backSelected, bt[`backSelected__${c}`]) }),
+                                        !t && s.jsx('div', { className: o(Zs.backHover, Zs[`backHover__${c}`]) }),
+                                        s.jsx('div', { className: o(Zs.backSelected, Zs[`backSelected__${c}`]) }),
                                     ],
                                 }),
-                            l && s.jsx('div', { className: o(bt.backLocked, bt[`backLocked__${c}`]) }),
+                            l && s.jsx('div', { className: o(Zs.backLocked, Zs[`backLocked__${c}`]) }),
                             s.jsx('div', {
-                                className: o(bt.video, bt.video__container),
-                                children: $.isLow()
-                                    ? s.jsx('div', { className: o(bt.video, bt.video__static, bt[`video__${c}`]) })
-                                    : s.jsx(U, {
-                                          className: o(bt.video, bt[`video__${c}`]),
+                                className: o(Zs.video, Zs.video__container),
+                                children: O.isLow()
+                                    ? s.jsx('div', { className: o(Zs.video, Zs.video__static, Zs[`video__${c}`]) })
+                                    : s.jsx(D, {
+                                          className: o(Zs.video, Zs[`video__${c}`]),
                                           src: R.videos.story_mode.v_icon_fire(),
                                           ref: d,
                                           loop: !0,
                                       }),
                             }),
                             s.jsx('div', {
-                                className: o(!l && bt.displayName, l && bt.displayNameLocked),
+                                className: o(!l && Zs.displayName, l && Zs.displayNameLocked),
                                 children: n,
                             }),
                             s.jsx('div', {
-                                className: bt.area,
+                                className: Zs.area,
                                 onClick: () => {
                                     t ||
                                         l ||
-                                        (c === ut.HARD ? T.sound(ie) : c === ut.VERY_HARD ? T.sound(oe) : T.sound(ne),
+                                        (c === Qs.HARD ? N.sound(se) : c === Qs.VERY_HARD ? N.sound(te) : N.sound(ae),
                                         r(a));
                                 },
                                 onMouseEnter: () => {
-                                    t || T.highlight();
+                                    t || N.highlight();
                                 },
                             }),
                         ],
@@ -1043,7 +1003,7 @@ const bt = {
             );
         },
     ),
-    ft = {
+    st = {
         base: 'MissionButton_dfa10c4a',
         base__locked: 'MissionButton_base__locked_4bda7104',
         area: 'MissionButton_area_65a52312',
@@ -1059,7 +1019,7 @@ const bt = {
         video: 'MissionButton_video_b6a3c861',
         video__static: 'MissionButton_video__static_73511407',
     },
-    ht = e.memo(
+    tt = e.memo(
         ({
             isSelected: t,
             missionId: a,
@@ -1076,68 +1036,68 @@ const bt = {
                     if (e) return t ? e.play() : e.pause();
                 }, [t, d]),
                 s.jsxs('div', {
-                    className: o(ft.base, t && ft.base__selected, n && ft.base__complete, l && ft.base__locked),
+                    className: o(st.base, t && st.base__selected, n && st.base__complete, l && st.base__locked),
                     children: [
                         s.jsx('div', {
-                            className: ft.area,
+                            className: st.area,
                             onClick: () => {
-                                t || (T.click(), r(a));
+                                t || (N.click(), r(a));
                             },
-                            onMouseEnter: T.highlight,
+                            onMouseEnter: N.highlight,
                         }),
-                        s.jsx('div', { className: ft.backNormal }),
-                        s.jsx('div', { className: ft.backSelected }),
+                        s.jsx('div', { className: st.backNormal }),
+                        s.jsx('div', { className: st.backSelected }),
                         (!n || c || l) &&
-                            s.jsxs(ee, {
-                                className: ft.missionState,
-                                ...es[Je.MISSION_STATE],
+                            s.jsxs(X, {
+                                className: st.missionState,
+                                ...Ue[Le.MISSION_STATE],
                                 isDisabled: !c,
                                 children: [
-                                    s.jsx('div', { className: ft.iconShadow }),
-                                    s.jsx('div', { className: ft.iconGlow }),
-                                    s.jsx('div', { className: ft.icon }),
+                                    s.jsx('div', { className: st.iconShadow }),
+                                    s.jsx('div', { className: st.iconGlow }),
+                                    s.jsx('div', { className: st.icon }),
                                 ],
                             }),
                         s.jsx('div', {
-                            className: ft.video,
-                            children: $.isLow()
-                                ? s.jsx('div', { className: o(ft.video, ft.video__static) })
-                                : s.jsx(U, {
-                                      className: ft.video,
+                            className: st.video,
+                            children: O.isLow()
+                                ? s.jsx('div', { className: o(st.video, st.video__static) })
+                                : s.jsx(D, {
+                                      className: st.video,
                                       src: R.videos.story_mode.v_icon_fire(),
                                       ref: d,
                                       loop: !0,
                                   }),
                         }),
-                        s.jsx('div', { className: ft.hover }),
-                        s.jsx('div', { className: ft.missionId, children: i }),
+                        s.jsx('div', { className: st.hover }),
+                        s.jsx('div', { className: st.missionId, children: i }),
                     ],
                 })
             );
         },
     ),
-    pt = 'MissionSelector_76541093',
-    xt = 'MissionSelector_line_f1696e16',
-    vt = 'MissionSelector_line__left_3bb808a9',
-    yt = 'MissionSelector_line__right_173c4f2b',
-    Nt = 'MissionSelector_line__selected_e9253750',
-    St = r(({ onClick: t, className: a }) => {
-        const { model: i } = We(),
+    at = 'MissionSelector_76541093',
+    it = 'MissionSelector_line_f1696e16',
+    ot = 'MissionSelector_line__left_3bb808a9',
+    nt = 'MissionSelector_line__right_173c4f2b',
+    ct = 'MissionSelector_line__selected_e9253750',
+    lt = r(({ onClick: t, className: a }) => {
+        const { model: i } = we(),
             n = i.missions.get(),
             c = i.selectedMission.get().missionId,
             l = i.computes.getIsSelectedMissionCompletedFirstTime();
         return s.jsx('div', {
-            className: o(pt, a),
+            className: o(at, a),
             children: f(n, (a, r) => {
                 const d = c === a.missionId,
-                    m = V(n, r + 1),
+                    m = B(n, r + 1),
                     _ = c === (null == m ? void 0 : m.missionId);
                 return s.jsxs(
                     e.Fragment,
                     {
                         children: [
-                            i.root.selectedTab.get() === Ke.EVENT
-                                ? s.jsx(kt, {
+                            i.root.selectedTab.get() === Ie.EVENT
+                                ? s.jsx(et, {
                                       onClick: t,
                                       isSelected: d,
                                       missionId: a.missionId,
@@ -1146,7 +1106,7 @@ const bt = {
                                       selectedMissionId: c,
                                       locked: a.locked,
                                   })
-                                : s.jsx(ht, {
+                                : s.jsx(tt, {
                                       onClick: t,
                                       isSelected: d,
                                       missionId: a.missionId,
@@ -1155,9 +1115,9 @@ const bt = {
                                       isCompletedFirstTime: d && l,
                                       locked: a.locked,
                                   }),
-                            i.root.selectedTab.get() !== Ke.EVENT &&
+                            i.root.selectedTab.get() !== Ie.EVENT &&
                                 r !== n.length - 1 &&
-                                s.jsx('div', { className: o(xt, d && vt, _ && yt, (d || _) && Nt) }),
+                                s.jsx('div', { className: o(it, d && ot, _ && nt, (d || _) && ct) }),
                         ],
                     },
                     a.missionId,
@@ -1165,37 +1125,37 @@ const bt = {
             }),
         });
     }),
-    gt = 'MissionVehicle_d1a7ad80',
-    Tt = 'MissionVehicle_text_c92f6291',
-    jt = 'MissionVehicle_icon_7d9e858',
-    It = ({ className: e }) => {
-        const t = w(q.StoryMode, {
-            action: Y.Watched,
-            item: J.MssVehicleTooltip,
-            parentScreen: J.MissionSelection,
-            timeLimit: X,
+    rt = 'MissionVehicle_d1a7ad80',
+    dt = 'MissionVehicle_text_c92f6291',
+    mt = 'MissionVehicle_icon_7d9e858',
+    _t = ({ className: e }) => {
+        const t = j(z.StoryMode, {
+            action: G.Watched,
+            item: H.MssVehicleTooltip,
+            parentScreen: H.MissionSelection,
+            timeLimit: J,
         });
         return s.jsxs('div', {
-            className: o(gt, e),
+            className: o(rt, e),
             children: [
-                s.jsx('div', { className: Tt, children: R.strings.sm_lobby.missionSelection.specialVehicle() }),
-                s.jsx(B, {
+                s.jsx('div', { className: dt, children: R.strings.sm_lobby.missionSelection.specialVehicle() }),
+                s.jsx(L, {
                     ignoreMouseClick: !0,
                     ignoreShowDelay: !0,
                     contentId: R.views.story_mode.mono.lobby.tooltips.mission_tooltip('resId'),
                     ...t,
-                    children: s.jsx('div', { className: jt }),
+                    children: s.jsx('div', { className: mt }),
                 }),
             ],
         });
     },
-    Mt = 360,
-    wt = { tension: 210, friction: 240 },
-    Et = { tension: 70, friction: 480 },
-    Ct = 'AssetItem_7cff1111',
-    At = 'AssetItem_sprite_c476eaa9',
-    Lt = 'AssetItem_imgLoader_6b833910',
-    Ot = (e, s, t, a) => {
+    ut = 360,
+    bt = { tension: 210, friction: 240 },
+    kt = { tension: 70, friction: 480 },
+    ft = 'AssetItem_7cff1111',
+    ht = 'AssetItem_sprite_c476eaa9',
+    pt = 'AssetItem_imgLoader_6b833910',
+    xt = (e, s, t, a) => {
         const i = s[e.spriteName].frameX,
             o = s[e.spriteName].frameY,
             n = s[e.spriteName].sourceName,
@@ -1218,25 +1178,25 @@ const bt = {
             source: { backgroundSource: `${a}${n}${t}` },
         };
     },
-    Rt = r(({ loadChecker: e, item: t }) => {
-        const { model: a } = We(),
+    vt = r(({ loadChecker: e, item: t }) => {
+        const { model: a } = we(),
             { chunkFileExt: i, chunksAssetsPath: o } = a.parallax.get();
         return s.jsxs('div', {
-            className: Ct,
+            className: ft,
             children: [
-                s.jsx('div', { className: At, style: { ...Ot(t, a.computes.atlasObj(), i, o).style } }),
+                s.jsx('div', { className: ht, style: { ...xt(t, a.computes.atlasObj(), i, o).style } }),
                 s.jsx('img', {
-                    className: Lt,
+                    className: pt,
                     alt: t.keyName,
-                    src: Ot(t, a.computes.atlasObj(), i, o).source.backgroundSource,
+                    src: xt(t, a.computes.atlasObj(), i, o).source.backgroundSource,
                     onLoad: e,
                 }),
             ],
         });
     }),
-    Dt = 'Assets_c481c379',
-    Bt = r(({ dioramaLoaded: t }) => {
-        const { model: a } = We(),
+    yt = 'Assets_c481c379',
+    Nt = r(({ dioramaLoaded: t }) => {
+        const { model: a } = we(),
             i = a.computes.parallaxStructureObj(),
             o = i ? i.length : 0,
             n = e.useRef(0),
@@ -1244,15 +1204,15 @@ const bt = {
                 (n.current++, n.current === o && (t && t(), (n.current = 0)));
             }, [t, o]);
         return s.jsx('div', {
-            className: Dt,
-            children: i && i.map((e, t) => s.jsx(Rt, { item: e, loadChecker: c }, `${i.missionId}_${e.keyName}_${t}`)),
+            className: yt,
+            children: i && i.map((e, t) => s.jsx(vt, { item: e, loadChecker: c }, `${i.missionId}_${e.keyName}_${t}`)),
         });
     }),
-    $t = 2560,
-    Ut = 1440,
-    Vt = $t / Ut,
-    Ft = r(({ children: t }) => {
-        const { model: a } = We(),
+    St = 2560,
+    gt = 1440,
+    Tt = St / gt,
+    jt = r(({ children: t }) => {
+        const { model: a } = we(),
             {
                 perspective: i,
                 overallScale: o,
@@ -1263,9 +1223,9 @@ const bt = {
             } = a.parallax.get(),
             [d, m] = e.useState(1),
             _ = e.useCallback(() => {
-                const e = F('rem');
+                const e = $('rem');
                 let s = 1;
-                (e.width >= e.height * Vt ? (s = e.width / $t) : e.height >= e.width / Vt && (s = e.height / Ut), m(s));
+                (e.width >= e.height * Tt ? (s = e.width / St) : e.height >= e.width / Tt && (s = e.height / gt), m(s));
             }, []);
         return (
             e.useEffect(
@@ -1294,18 +1254,18 @@ const bt = {
             })
         );
     }),
-    Kt = 'Parallax_ac12e19d',
-    Pt = 'Parallax_asset_5a17fdd4',
-    Wt = r(({ refParent: t, dioramaLoaded: a }) => {
-        const { model: i } = We(),
+    It = 'Parallax_ac12e19d',
+    Mt = 'Parallax_asset_5a17fdd4',
+    wt = r(({ refParent: t, dioramaLoaded: a }) => {
+        const { model: i } = we(),
             { xTilt: o, xTiltRange: n, yTilt: c, yTiltRange: r, xSlide: m, ySlide: _ } = i.parallax.get(),
             [u] = ((s, t) => {
                 const a = e.useCallback(
                         (e, t, a) => {
                             const i = Math.min(Math.max((e - a.x) / a.width, 0), 1),
                                 o = Math.min(Math.max((t - a.y) / a.height, 0), 1),
-                                n = s.yTilt + s.yTiltRange + Mt - (s.yTilt - s.yTiltRange + Mt),
-                                c = s.xTilt + s.xTiltRange + Mt - (s.xTilt - s.xTiltRange + Mt),
+                                n = s.yTilt + s.yTiltRange + ut - (s.yTilt - s.yTiltRange + ut),
+                                c = s.xTilt + s.xTiltRange + ut - (s.xTilt - s.xTiltRange + ut),
                                 l = -i * n + n / 2 + s.yTilt,
                                 r = o * c - c / 2 + s.xTilt;
                             return { x: i * a.width - a.width / 2, y: o * a.height - a.height / 2, xR: r, yR: l };
@@ -1326,8 +1286,8 @@ const bt = {
                                         return e >= 2 + t.x && s >= 2 + t.y && e <= a - 2 && s <= i - 2;
                                     })(e, o, n)
                                 )
-                                    return void c.start({ x: 0, y: 0, xR: s.xTilt, yR: s.yTilt, config: Et });
-                                c.start({ ...a(e, o, n), config: wt });
+                                    return void c.start({ x: 0, y: 0, xR: s.xTilt, yR: s.yTilt, config: kt });
+                                c.start({ ...a(e, o, n), config: bt });
                             }
                         };
                         return (
@@ -1340,79 +1300,79 @@ const bt = {
                     i
                 );
             })({ xTilt: o, xTiltRange: n, yTilt: c, yTiltRange: r }, t);
-        return s.jsx(Ft, {
+        return s.jsx(jt, {
             children: s.jsx(l.div, {
                 style: { x: u.x.to((e) => e * m), y: u.y.to((e) => e * _), rotateX: u.xR, rotateY: u.yR },
-                className: Kt,
-                children: s.jsx('div', { className: Pt, children: s.jsx(Bt, { dioramaLoaded: a }) }),
+                className: It,
+                children: s.jsx('div', { className: Mt, children: s.jsx(Nt, { dioramaLoaded: a }) }),
             }),
         });
     }),
-    Ht = 'TabItem_6e36712a',
-    Gt = 'TabItem_base__selected_7fd0198b',
-    zt = 'TabItem_tab_8e3e07cd',
-    Jt = 'TabItem_tab__hoverDecor_4092b1d7',
-    Yt = e.memo(function ({ tabText: e, isSelected: t, onClick: a }) {
+    Et = 'TabItem_6e36712a',
+    Ct = 'TabItem_base__selected_7fd0198b',
+    At = 'TabItem_tab_8e3e07cd',
+    Lt = 'TabItem_tab__hoverDecor_4092b1d7',
+    Ot = e.memo(function ({ tabText: e, isSelected: t, onClick: a }) {
         return s.jsxs('div', {
-            className: o(Ht, t && Gt),
+            className: o(Et, t && Ct),
             children: [
                 s.jsx('div', {
-                    className: zt,
+                    className: At,
                     onClick: () => {
-                        t || (T.click(), a());
+                        t || (N.click(), a());
                     },
                     onMouseEnter: () => {
-                        t || T.highlight();
+                        t || N.highlight();
                     },
                     children: e,
                 }),
-                s.jsx('div', { className: o(zt, Jt), children: e }),
+                s.jsx('div', { className: o(At, Lt), children: e }),
             ],
         });
     }),
-    qt = 'Tabs_16a37c54',
-    Xt = 'Tabs_line_70775af',
-    Qt = 'Tabs_line__second_eef62bb7',
-    Zt = e.memo(({ selectedTab: e, onChange: t }) =>
+    Rt = 'Tabs_16a37c54',
+    Dt = 'Tabs_line_70775af',
+    Bt = 'Tabs_line__second_eef62bb7',
+    $t = e.memo(({ selectedTab: e, onChange: t }) =>
         s.jsxs('div', {
-            className: qt,
+            className: Rt,
             children: [
-                s.jsx('div', { className: Xt }),
-                s.jsx('div', { className: o(Xt, Qt) }),
-                s.jsx(Yt, {
+                s.jsx('div', { className: Dt }),
+                s.jsx('div', { className: o(Dt, Bt) }),
+                s.jsx(Ot, {
                     tabText: R.strings.sm_lobby.missionSelection.tab.newbies(),
-                    onClick: () => t(Ke.NEWBIES),
-                    isSelected: e === Ke.NEWBIES,
+                    onClick: () => t(Ie.NEWBIES),
+                    isSelected: e === Ie.NEWBIES,
                 }),
-                s.jsx(Yt, {
+                s.jsx(Ot, {
                     tabText: R.strings.sm_lobby.missionSelection.tab.event(),
-                    onClick: () => t(Ke.EVENT),
-                    isSelected: e === Ke.EVENT,
+                    onClick: () => t(Ie.EVENT),
+                    isSelected: e === Ie.EVENT,
                 }),
             ],
         }),
     ),
-    ea = 'MissionSelectionViewApp_e1e00eaf',
-    sa = 'MissionSelectionViewApp_blackScreen_b9764bd8',
-    ta = 'MissionSelectionViewApp_blackScreen__overlay_5540cd02',
-    aa = 'MissionSelectionViewApp_shadowTop_65560dd6',
-    ia = 'MissionSelectionViewApp_shadowMissions_1872614',
-    oa = 'MissionSelectionViewApp_shadowLeft_536e08dd',
-    na = 'MissionSelectionViewApp_shadowBottom_3cc6c587',
-    ca = 'MissionSelectionViewApp_about_a212c4ec',
-    la = 'MissionSelectionViewApp_tabs_81d77c84',
-    ra = 'MissionSelectionViewApp_missionSelector_9673efb9',
-    da = 'MissionSelectionViewApp_missionSelector__withoutTabs_6bace1be',
-    ma = 'MissionSelectionViewApp_specialVehicle_8744b153',
-    _a = 'MissionSelectionViewApp_leftSparkles_89820688',
-    ua = 'MissionSelectionViewApp_rightSparkles_e9be7b23',
-    ba = 'MissionSelectionViewApp_logo_a9918fd',
-    ka = 'MissionSelectionViewApp_vignette_e6471868',
-    fa = 'MissionSelectionViewApp_menuItems_c66c1866',
-    ha = 'MissionSelectionViewApp_triggerHint_58ad728',
-    pa = { rootId: m.resolve('aliases').read((e) => e.hangar.shared.MainMenu('resId')) },
-    xa = r(() => {
-        const { controls: t, model: a } = We(),
+    Ut = 'MissionSelectionViewApp_e1e00eaf',
+    Vt = 'MissionSelectionViewApp_blackScreen_b9764bd8',
+    Ft = 'MissionSelectionViewApp_blackScreen__overlay_5540cd02',
+    Kt = 'MissionSelectionViewApp_shadowTop_65560dd6',
+    Pt = 'MissionSelectionViewApp_shadowMissions_1872614',
+    Wt = 'MissionSelectionViewApp_shadowLeft_536e08dd',
+    Ht = 'MissionSelectionViewApp_shadowBottom_3cc6c587',
+    Gt = 'MissionSelectionViewApp_about_a212c4ec',
+    zt = 'MissionSelectionViewApp_tabs_81d77c84',
+    Jt = 'MissionSelectionViewApp_missionSelector_9673efb9',
+    Yt = 'MissionSelectionViewApp_missionSelector__withoutTabs_6bace1be',
+    qt = 'MissionSelectionViewApp_specialVehicle_8744b153',
+    Xt = 'MissionSelectionViewApp_leftSparkles_89820688',
+    Qt = 'MissionSelectionViewApp_rightSparkles_e9be7b23',
+    Zt = 'MissionSelectionViewApp_logo_a9918fd',
+    ea = 'MissionSelectionViewApp_vignette_e6471868',
+    sa = 'MissionSelectionViewApp_menuItems_c66c1866',
+    ta = 'MissionSelectionViewApp_triggerHint_58ad728',
+    aa = { rootId: m.resolve('aliases').read((e) => e.hangar.shared.MainMenu('resId')) },
+    ia = r(() => {
+        const { controls: t, model: a } = we(),
             [i, n] = e.useState({ id: void 0, isTab: !1 }),
             c = a.selectedMission.get(),
             r = e.useRef(null),
@@ -1420,14 +1380,14 @@ const bt = {
             [_, u] = e.useState(!1),
             b = a.root.isTabsVisible.get(),
             k = a.root.selectedTab.get(),
-            f = k === Ke.EVENT,
+            f = k === Ie.EVENT,
             h = i.isTab ? k : c.missionId,
             [p, x] = e.useState(!1),
             [v, y] = d(() => ({}));
         (e.useEffect(() => {
             i.id !== c.missionId && n({ id: c.missionId, isTab: !1 });
         }, [c.missionId]),
-            K(() => {
+            U(() => {
                 m.current = { missionId: c.missionId, locked: c.locked };
             }),
             e.useEffect(() => {
@@ -1456,15 +1416,15 @@ const bt = {
                 (y.start({ to: { opacity: 0 }, config: { duration: 200 } }), t.loaded(), x(!1));
             }, [y, t]);
         return (
-            P(W.ESCAPE, t.exit),
+            V(F.ESCAPE, t.exit),
             s.jsxs('div', {
-                className: ea,
+                className: Ut,
                 ref: r,
                 children: [
-                    s.jsx('div', { className: sa }),
+                    s.jsx('div', { className: Vt }),
                     !c.locked && a.root.isParallaxEnabled.get()
-                        ? s.jsx(Wt, { refParent: r, dioramaLoaded: g })
-                        : s.jsx(Q, {
+                        ? s.jsx(wt, { refParent: r, dioramaLoaded: g })
+                        : s.jsx(Y, {
                               backgroundPath: R.images.story_mode.gui.maps.icons.common.backgrounds.$num(c.missionId),
                               onLoaded: g,
                               grayscaleApplied: c.locked,
@@ -1472,42 +1432,42 @@ const bt = {
                               showBlur: c.locked,
                           }),
                     c.locked
-                        ? s.jsx('div', { className: ka })
+                        ? s.jsx('div', { className: ea })
                         : s.jsxs(e.Fragment, {
                               children: [
-                                  s.jsx('div', { className: _a }),
-                                  s.jsx('div', { className: ua }),
-                                  s.jsx('div', { className: oa }),
+                                  s.jsx('div', { className: Xt }),
+                                  s.jsx('div', { className: Qt }),
+                                  s.jsx('div', { className: Wt }),
                               ],
                           }),
-                    s.jsx('div', { className: aa }),
-                    s.jsx('div', { className: na }),
-                    b && s.jsx('div', { className: ia }),
-                    f && s.jsx('div', { className: ba }),
-                    s.jsx(l.div, { className: o(sa, ta), style: v }),
-                    !c.locked && s.jsx(_t, { isChanged: h === i.id, durationTasks: 250 }),
+                    s.jsx('div', { className: Kt }),
+                    s.jsx('div', { className: Ht }),
+                    b && s.jsx('div', { className: Pt }),
+                    f && s.jsx('div', { className: Zt }),
+                    s.jsx(l.div, { className: o(Vt, Ft), style: v }),
+                    !c.locked && s.jsx(Xs, { isChanged: h === i.id, durationTasks: 250 }),
                     (c.locked || _) &&
-                        s.jsx(_s, {
+                        s.jsx(Xe, {
                             shouldPlayUnlockAnimation: _,
                             missionName: R.strings.sm_lobby.missionSelection.lockedMissionName.$num(c.missionId),
                             battlesToUnlock: c.battlesToUnlock,
                             onAnimationFinished: N,
                             withTabs: b,
                         }),
-                    !f && s.jsx(l.div, { className: o(sa, ta), style: v }),
+                    !f && s.jsx(l.div, { className: o(Vt, Ft), style: v }),
                     b &&
                         s.jsx('div', {
-                            className: la,
-                            children: s.jsx(Zt, { selectedTab: k, onChange: (e) => S(e, !0) }),
+                            className: zt,
+                            children: s.jsx($t, { selectedTab: k, onChange: (e) => S(e, !0) }),
                         }),
-                    s.jsx('div', { className: fa, children: s.jsx(Fe, { options: pa }) }),
-                    s.jsx('div', { className: ca, children: s.jsx(ze, { onClick: t.openAbout }) }),
-                    s.jsx(St, { onClick: (e) => S(e, !1), className: o(ra, !b && da) }),
-                    s.jsx(It, { className: ma }),
-                    i.isTab && s.jsx(l.div, { className: sa, style: v }),
-                    f && !i.isTab && s.jsx('div', { className: ha, id: 'mission-selection-trigger-hint-id' }),
+                    s.jsx('div', { className: sa, children: s.jsx(je, { options: aa }) }),
+                    s.jsx('div', { className: Gt, children: s.jsx(Ae, { onClick: t.openAbout }) }),
+                    s.jsx(lt, { onClick: (e) => S(e, !1), className: o(Jt, !b && Yt) }),
+                    s.jsx(_t, { className: qt }),
+                    i.isTab && s.jsx(l.div, { className: Vt, style: v }),
+                    f && !i.isTab && s.jsx('div', { className: ta, id: 'mission-selection-trigger-hint-id' }),
                 ],
             })
         );
     });
-z(new H().add(G).add(Pe).render(s.jsx(xa, {})), { fullScreen: !0 });
+W(new K().add(P).add(Me).render(s.jsx(ia, {})), { fullScreen: !0 });

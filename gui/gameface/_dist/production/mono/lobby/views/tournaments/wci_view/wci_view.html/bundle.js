@@ -1,11 +1,11 @@
 import { j as i } from '../../../../chunks/vendor.js';
-import { cP as s, cn as n } from '../../../../chunks/lib.js';
-import { T as m, A as o, a, b as e, W as t } from '../../../../chunks/winner_glow.js';
+import { aA as s, aB as n } from '../../../../chunks/lib.js';
+import { T as m, A as a, a as o, b as e, W as t } from '../../../../chunks/winner_glow.js';
 import '../../../../chunks/consts.js';
 import '../../../../chunks/divine_glow.js';
 import '../../../../chunks/animated_background.js';
 const c = ({ children: s }) =>
-    i.jsx(a.Provider, {
+    i.jsx(o.Provider, {
         value: {
             mainBgPath: R.images.comp7.gui.maps.icons.tournaments.wci.bg(),
             blurBgPath: R.images.comp7.gui.maps.icons.tournaments.wci.bg_blurred(),
@@ -35,4 +35,4 @@ const c = ({ children: s }) =>
         },
         children: s,
     });
-s(i.jsx(n, { children: i.jsx(c, { children: i.jsx(m, { children: i.jsx(o, {}) }) }) }), { fullScreen: !0 });
+s(i.jsx(n, { children: i.jsx(c, { children: i.jsx(m, { children: i.jsx(a, {}) }) }) }), { fullScreen: !0 });

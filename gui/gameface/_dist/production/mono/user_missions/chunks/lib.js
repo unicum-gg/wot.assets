@@ -107,13 +107,13 @@ function isNumberFormat(e) {
     return e in numberFormats;
 }
 function formatNumber(e, t) {
-    return window.systemLocale.getNumberFormat(t, numberFormats[e]);
+    return window.formatters.getNumberFormat(t, numberFormats[e]);
 }
 function isRealFormat(e) {
     return e in realFormats;
 }
-function formatReal(e, t) {
-    return window.systemLocale.getRealFormat(t, realFormats[e]);
+function formatReal(e, t, s = 2) {
+    return window.formatters.getRealFormat(t, realFormats[e], s);
 }
 function formatDateTime(e, t, s = !0) {
     return window.regionalDateTime.getRegionalDateTime(t, e, s);
@@ -482,6 +482,7 @@ const sounds$1 = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
         onHitTest: createSubscribeHitTest(),
         onDisplayChanged: makeEngineEvent$1('self.onShowingStatusChanged'),
         onFocusUpdated: makeEngineEvent$1('self.onFocusChanged'),
+        onExternalPaddingsUpdated: makeEngineEvent$1('self.onPaddingsUpdated'),
         children: {
             onAdded: makeEngineEvent$1('children.onAdded'),
             onLoaded: makeEngineEvent$1('children.onLoaded'),
@@ -1240,11 +1241,36 @@ function splitKorean(e) {
     for (const [r] of s) t.push(r);
     return t;
 }
-const splitters = { zh_cn: splitChinese, zh_sg: splitChinese, zh_tw: splitChinese, ja: splitJapanese, ko: splitKorean };
+function splitThai(e) {
+    var t;
+    const s = [],
+        r = e
+            .replace(/&nbsp;/g, ' ')
+            .matchAll(
+                /[【「(（『"《]?[\u0E00-\u0E7F%](?:[\u0E31\u0E34-\u0E3A\u0E47-\u0E4E。!?,.:、…・/ー—–!%+?）)】」"》』]+)?|[「【(（『《"]?\d+(?:,\d{3})*(?:-\d+(?:,\d{3})*)?(?:\s*[a-zA-Z\u0E00-\u0E7F/%]+)?(?:[。.,，、:;：；!?）)】」"》・%)、]+)?|[「【(（『《"]?[a-zA-Z0-9]+(?:[-/][a-zA-Z0-9]+)*(?:\s*[。!?、…・ー—–!?"》】」）)』]+)?|[\u00A0 ]|[^\s]/gu,
+            );
+    for (const [n] of r)
+        /^\s+$/.test(n)
+            ? s.length
+                ? (s[s.length - 1] += n)
+                : s.push(n)
+            : 1 === s.length && (null == (t = s[0]) ? void 0 : t.startsWith('  '))
+              ? (s[0] = ' ' + n)
+              : s.push(n);
+    return s;
+}
+const splitters = {
+    zh_cn: splitChinese,
+    zh_sg: splitChinese,
+    zh_tw: splitChinese,
+    ja: splitJapanese,
+    ko: splitKorean,
+    th: splitThai,
+};
 function defaultSplit(e) {
     return e.split(' ');
 }
-const langsWithoutSpace = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko']);
+const langsWithoutSpace = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko', 'th']);
 function addSpaceAndMap(e, t, s) {
     return langsWithoutSpace.has(t)
         ? e.map(s)
@@ -2083,6 +2109,7 @@ const initializeModelWithContext =
                             controls: { ...(null == s ? void 0 : s(f)), ...x },
                             externalModel: l,
                             mode: n,
+                            rootId: (null == u ? void 0 : u.rootId) ?? 0,
                         };
                     }),
                     x = reactExports.useRef(!1),
@@ -2090,10 +2117,10 @@ const initializeModelWithContext =
                 reactExports.useEffect(() => {
                     g(m);
                 }, [m]);
-                const [b, y] = reactExports.useState(() => f(h, i, p));
+                const [b, A] = reactExports.useState(() => f(h, i, p));
                 return (
                     reactExports.useEffect(() => {
-                        x.current ? y(f(h, i, p)) : (x.current = !0);
+                        x.current ? A(f(h, i, p)) : (x.current = !0);
                     }, [
                         f,
                         p,
@@ -2592,7 +2619,7 @@ const defaultSettings = {
                     },
                     [g, h, i.step],
                 ),
-                y = reactExports.useCallback(
+                A = reactExports.useCallback(
                     function (e) {
                         l ||
                             (0 !== e.deltaY && b(r(e)),
@@ -2600,7 +2627,7 @@ const defaultSettings = {
                     },
                     [f.scrollPosition, b, _, l],
                 ),
-                A = reactExports.useCallback(
+                y = reactExports.useCallback(
                     function () {
                         const e = d.current;
                         e && (g(u(e, f.scrollPosition.goal), { immediate: !0 }), _.trigger('resizeHandled'));
@@ -2611,7 +2638,7 @@ const defaultSettings = {
                 const t = e.target;
                 if (!(t instanceof HTMLElement)) return;
                 const s = n(t);
-                p.current.wrapper !== s && A();
+                p.current.wrapper !== s && y();
             });
             const F = useEvent(function () {
                     const t = d.current;
@@ -2627,7 +2654,7 @@ const defaultSettings = {
                     }
                 }),
                 v = useSkipFrame();
-            reactExports.useEffect(() => addEventListener(window, 'resize', () => v.run(A)), [A, v]);
+            reactExports.useEffect(() => addEventListener(window, 'resize', () => v.run(y)), [y, v]);
             return reactExports.useMemo(
                 () => ({
                     getWrapperSize: () => (m.current ? n(m.current) : void 0),
@@ -2637,7 +2664,7 @@ const defaultSettings = {
                     stepTimeout: i.step.clampedArrowStepTimeout,
                     settings: i,
                     clampPosition: u,
-                    handleMouseWheel: y,
+                    handleMouseWheel: A,
                     applyScroll: g,
                     applyStepTo: b,
                     contentRef: d,
@@ -2649,7 +2676,7 @@ const defaultSettings = {
                     setDisabled: c,
                     events: { on: _.on, off: _.off },
                 }),
-                [i, y, g, b, x, f, F, l, c, _.on, _.off],
+                [i, A, g, b, x, f, F, l, c, _.on, _.off],
             );
         };
     },
@@ -3590,59 +3617,93 @@ function withResolvePath(e) {
     });
 }
 const defaultUnknownStyle = {
-        background:
-            'linear-gradient(45deg, #ccc 25%, transparent 25%),\nlinear-gradient(-45deg, #ccc 25%, transparent 25%),\nlinear-gradient(45deg, transparent 75%, #ccc 75%),\nlinear-gradient(-45deg, transparent 75%, #ccc 75%)',
-        backgroundSize: '20rem 20rem',
-        backgroundPosition: '0 0, 0 10rem, 10rem -10rem, -10rem 0rem',
-        backgroundColor: '#000',
-    },
-    Image = withResolvePath(
-        reactExports.forwardRef(function (e, t) {
-            if (e.unknown) {
-                const {
-                    repeat: s,
-                    fit: r,
-                    position: n,
-                    width: a,
-                    src: u,
-                    height: o,
-                    unselectable: i,
-                    unknown: l,
-                    unknownStyle: c = defaultUnknownStyle,
-                    ...d
-                } = e;
-                return jsxRuntimeExports.jsx('div', {
-                    ...d,
-                    ref: t,
-                    style: { width: e.width, height: e.height, ...c, ...e.style },
-                });
-            }
+    background:
+        'linear-gradient(45deg, #ccc 25%, transparent 25%),\nlinear-gradient(-45deg, #ccc 25%, transparent 25%),\nlinear-gradient(45deg, transparent 75%, #ccc 75%),\nlinear-gradient(-45deg, transparent 75%, #ccc 75%)',
+    backgroundSize: '20rem 20rem',
+    backgroundPosition: '0 0, 0 10rem, 10rem -10rem, -10rem 0rem',
+    backgroundColor: '#000',
+};
+reactExports.forwardRef(function (e, t) {
+    if (!e.src) {
+        const {
+            repeat: s,
+            fit: r,
+            position: n,
+            width: a,
+            src: u,
+            height: o,
+            unselectable: i,
+            unknownStyle: l = defaultUnknownStyle,
+            ...c
+        } = e;
+        return jsxRuntimeExports.jsx('div', {
+            ...c,
+            ref: t,
+            style: { width: e.width, height: e.height, ...l, ...e.style },
+        });
+    }
+    const { repeat: s, fit: r, position: n, width: a, height: u, unknownStyle: o, unselectable: i, ...l } = e;
+    return jsxRuntimeExports.jsx('div', {
+        ...l,
+        ref: t,
+        style: {
+            backgroundImage: `url(${e.src})`,
+            backgroundRepeat: s ?? 'no-repeat',
+            backgroundSize: r ?? 'contain',
+            backgroundPosition: n ?? 'center center',
+            width: 'number' == typeof a ? `${a}rem` : a,
+            height: 'number' == typeof u ? `${u}rem` : u,
+            ...l.style,
+        },
+    });
+});
+const Image = withResolvePath(
+    reactExports.forwardRef(function (e, t) {
+        if (e.unknown) {
             const {
                 repeat: s,
                 fit: r,
                 position: n,
                 width: a,
-                height: u,
-                unknownStyle: o,
-                unknown: i,
-                unselectable: l,
-                ...c
+                src: u,
+                height: o,
+                unselectable: i,
+                unknown: l,
+                unknownStyle: c = defaultUnknownStyle,
+                ...d
             } = e;
             return jsxRuntimeExports.jsx('div', {
-                ...c,
+                ...d,
                 ref: t,
-                style: {
-                    backgroundImage: `url(${e.src})`,
-                    backgroundRepeat: s ?? 'no-repeat',
-                    backgroundSize: r ?? 'contain',
-                    backgroundPosition: n ?? 'center center',
-                    width: 'number' == typeof a ? `${a}rem` : a,
-                    height: 'number' == typeof u ? `${u}rem` : u,
-                    ...c.style,
-                },
+                style: { width: e.width, height: e.height, ...c, ...e.style },
             });
-        }),
-    );
+        }
+        const {
+            repeat: s,
+            fit: r,
+            position: n,
+            width: a,
+            height: u,
+            unknownStyle: o,
+            unknown: i,
+            unselectable: l,
+            ...c
+        } = e;
+        return jsxRuntimeExports.jsx('div', {
+            ...c,
+            ref: t,
+            style: {
+                backgroundImage: `url(${e.src})`,
+                backgroundRepeat: s ?? 'no-repeat',
+                backgroundSize: r ?? 'contain',
+                backgroundPosition: n ?? 'center center',
+                width: 'number' == typeof a ? `${a}rem` : a,
+                height: 'number' == typeof u ? `${u}rem` : u,
+                ...c.style,
+            },
+        });
+    }),
+);
 withResolvePath(
     reactExports.forwardRef(function (e, t) {
         const {
@@ -4181,7 +4242,7 @@ function dumpViewModel(e) {
 }
 const SystemLocale = {
         getNumberFormat: (e, t) => systemLocale.getNumberFormat(e, t),
-        getRealFormat: (e, t) => systemLocale.getRealFormat(e, t),
+        getRealFormat: (e, t, s = 2) => systemLocale.getRealFormat(e, t, s),
         getTimeFormat: (e, t) => systemLocale.getTimeFormat(e, t),
         getDateFormat: (e, t) => systemLocale.getDateFormat(e, t),
         toUpperCase: (e) => systemLocale.toUpperCase(e),
@@ -5349,6 +5410,9 @@ var RewardType = ((e) => (
         e
     ))(ValueTypes || {}),
     Specials = ((e) => (
+        (e.ATTACHMENT_RARE = 'rare'),
+        (e.ATTACHMENT_EPIC = 'epic'),
+        (e.ATTACHMENT_LEGENDARY = 'legendary'),
         (e.BATTLE_BOOSTER = 'battleBooster'),
         (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
         (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
@@ -5368,6 +5432,9 @@ var RewardType = ((e) => (
     ))(Specials || {}),
     HighlightClasses = ((e) => ((e.BATTLE_BOOSTER = 'battleBooster'), e))(HighlightClasses || {}),
     OverlayClasses = ((e) => (
+        (e.ATTACHMENT_RARE = 'rare'),
+        (e.ATTACHMENT_EPIC = 'epic'),
+        (e.ATTACHMENT_LEGENDARY = 'legendary'),
         (e.BATTLE_BOOSTER = 'battleBooster'),
         (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
         (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
@@ -5564,6 +5631,12 @@ const multiValueTypes = [
                 return OverlayClasses.PROGRESSION_STYLE_UPGRADED_5;
             case Specials.PROGRESSION_STYLE_UPGRADED_6:
                 return OverlayClasses.PROGRESSION_STYLE_UPGRADED_6;
+            case Specials.ATTACHMENT_RARE:
+                return OverlayClasses.ATTACHMENT_RARE;
+            case Specials.ATTACHMENT_EPIC:
+                return OverlayClasses.ATTACHMENT_EPIC;
+            case Specials.ATTACHMENT_LEGENDARY:
+                return OverlayClasses.ATTACHMENT_LEGENDARY;
         }
     },
     getFormattedValue = (e, t) => {
@@ -6774,15 +6847,15 @@ export {
     Area as A,
     Base$5 as B,
     CloseButton as C,
-    millis as D,
-    ExtendedText as E,
+    now as D,
+    Tooltip as E,
     FormatText as F,
-    pipe as G,
-    toSeconds as H,
+    Timer as G,
+    getRewardValueType as H,
     Image as I,
     JSXBuilder as J,
-    subtract as K,
-    now as L,
+    getRewardImage as K,
+    ExtendedText as L,
     Alignment as M,
     useSimpleTooltip as N,
     useParamTooltip as O,
@@ -6844,14 +6917,14 @@ export {
     noop as n,
     capitalize as o,
     ImageSize as p,
-    Tooltip as q,
+    computeds as q,
     runView as r,
     sizes$3 as s,
     themes as t,
     useAdaptive as u,
-    getRewardValueType as v,
-    getRewardImage as w,
-    Timer as x,
-    computeds as y,
-    useUntilTimer as z,
+    useUntilTimer as v,
+    millis as w,
+    pipe as x,
+    toSeconds as y,
+    subtract as z,
 };

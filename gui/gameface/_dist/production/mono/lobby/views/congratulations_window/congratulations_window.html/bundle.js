@@ -15,7 +15,7 @@ import {
     r as _,
 } from '../../../chunks/lib.js';
 import { L as h, a as j, T as C, F as w, B as y } from '../../../chunks/uilogging_constants.js';
-import { C as x, i as v, S as N, E as A } from '../../../chunks/sound_constants.js';
+import { C as x, d as v, S as N, E as A } from '../../../chunks/sound_constants.js';
 import { g as k } from '../../../chunks/utils.js';
 const [W, f] = n()(
     ({ observableModel: a }) => a.object(),

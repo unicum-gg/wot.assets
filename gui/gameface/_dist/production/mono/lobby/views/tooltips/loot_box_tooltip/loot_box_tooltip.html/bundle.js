@@ -4,19 +4,19 @@ import {
     c as t,
     g as d,
     d as l,
-    e as n,
-    h as i,
-    a5 as c,
-    d3 as p,
-    R as _,
-    I as m,
-    w as x,
-    n as u,
+    e as i,
+    h as n,
+    a8 as c,
+    df as p,
+    U as _,
+    Q as m,
+    v as x,
+    R as u,
+    a9 as h,
     a6 as w,
-    a3 as h,
-    cY as b,
+    d9 as b,
 } from '../../../../chunks/lib.js';
-import { a as j } from '../../../../chunks/readResource.js';
+import { g as j } from '../../../../chunks/readResource.js';
 const [f, v] = o()(({ observableModel: a }) => {
         const r = { root: a.object(), rewards: a.array('rewards') },
             s = e(() => r.rewards.get().length),
@@ -26,9 +26,9 @@ const [f, v] = o()(({ observableModel: a }) => {
                     if (!a) throw Error(`No reward found with index: ${e}`);
                     return {
                         ...a,
-                        image: i(a),
+                        image: n(a),
                         special: a.overlayType,
-                        valueType: n(a.name),
+                        valueType: i(a.name),
                         tooltipArgs: l({ tooltipId: a.tooltipId }, Number(a.tooltipContentId)),
                     };
                 },
@@ -50,15 +50,15 @@ const [f, v] = o()(({ observableModel: a }) => {
         const { model: a } = v(),
             o = a.computes.length(),
             t = a.computes.reward(e),
-            { probability: d, label: l, valueType: n } = t,
-            i = o > 5 ? e > 1 : e > 0,
-            c = n === p.CURRENCY;
+            { probability: d, label: l, valueType: i } = t,
+            n = o > 5 ? e > 1 : e > 0,
+            c = i === p.CURRENCY;
         return r.jsxs('div', {
             className: g.base,
             children: [
-                i && r.jsx('div', { className: g.separator }),
+                n && r.jsx('div', { className: g.separator }),
                 r.jsxs('div', {
-                    className: s(g.item, i && g.item__separator),
+                    className: s(g.item, n && g.item__separator),
                     children: [
                         r.jsx('div', {
                             className: g.rewardWrapper,
@@ -87,27 +87,27 @@ const [f, v] = o()(({ observableModel: a }) => {
     A = 'App_header_7b99070f',
     L = 'App_icon_1f44f417',
     C = 'App_title_711c3638',
-    I = 'App_description_975d9f61',
-    T = 'App_content_a6dab835',
-    k = a(() => {
+    T = 'App_description_975d9f61',
+    k = 'App_content_a6dab835',
+    I = a(() => {
         const { model: e } = v(),
             { iconKey: a, label: o, assetsPointer: t } = e.root.get(),
             d = e.computes.length(),
             l = d > 5,
-            n = j(t).progression.bonuses.small;
+            i = j(t).progression.bonuses.small;
         return r.jsxs('div', {
             className: s(y, l && B),
             children: [
                 r.jsxs('div', {
                     className: A,
                     children: [
-                        r.jsx('div', { className: L, style: { backgroundImage: `url(${n.$dyn(a)})` } }),
+                        r.jsx('div', { className: L, style: { backgroundImage: `url(${i.$dyn(a)})` } }),
                         r.jsx('div', { className: C, children: o }),
-                        r.jsx('div', { className: I, children: R.strings.fun_random.lootboxTooltip.description() }),
+                        r.jsx('div', { className: T, children: R.strings.fun_random.lootboxTooltip.description() }),
                     ],
                 }),
-                r.jsx('div', { className: T, children: d > 0 && w(d, (e) => r.jsx(N, { index: e }, e)) }),
+                r.jsx('div', { className: k, children: d > 0 && h(d, (e) => r.jsx(N, { index: e }, e)) }),
             ],
         });
     });
-h(r.jsx(f, { children: r.jsx(b, { children: r.jsx(k, {}) }) }));
+w(r.jsx(f, { children: r.jsx(b, { children: r.jsx(I, {}) }) }));

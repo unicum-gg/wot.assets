@@ -1,20 +1,20 @@
-import { S as e, j as s, f as t, I as i, J as r } from '../../../../chunks/vendor.js';
+import { x as e, j as s, f as t, y as i, w as r } from '../../../../chunks/vendor.js';
 import {
     i as a,
-    aB as n,
-    a9 as c,
-    c8 as o,
-    c9 as d,
-    dR as u,
-    cd as l,
-    c2 as _,
-    cf as x,
-    m,
-    ci as p,
-    cm as w,
-    bV as b,
-    dS as j,
-    cP as g,
+    b as n,
+    m as c,
+    dc as d,
+    dd as o,
+    dY as u,
+    q as l,
+    d7 as x,
+    n as _,
+    e as m,
+    ak as p,
+    o as w,
+    c$ as b,
+    dZ as j,
+    aA as g,
 } from '../../../../chunks/lib.js';
 import { Q as v } from '../../../../chunks/weekly_quests_model.js';
 /* empty css                        */ const [h, N] = a()(({ observableModel: s }) => {
@@ -35,7 +35,7 @@ const M = 'Divider_7a72bfaf',
     T = 'Divider_71fcbede',
     W = ({ className: e }) => s.jsx('div', { className: t(M, e), children: s.jsx('div', { className: T }) });
 function Q({ bonuses: e, size: t, ...i }) {
-    const r = c(e, (e) => ({ size: t, name: e.name, image: d(e, t), value: e.value, valueType: o(e.name) }));
+    const r = c(e, (e) => ({ size: t, name: e.name, image: o(e, t), value: e.value, valueType: d(e.name) }));
     return s.jsx(u, { ...i, data: r, size: t });
 }
 const k = {
@@ -60,7 +60,7 @@ const k = {
                 s.jsx(l, { text: t, classMix: k.description }),
                 s.jsx(W, { className: k.divider }),
                 s.jsx('div', { className: k.rewardsText, children: q.rewards(n.length) }),
-                s.jsx(Q, { bonuses: n, size: _.Small, count: 3 }),
+                s.jsx(Q, { bonuses: n, size: x.Small, count: 3 }),
                 s.jsx(W, { className: k.divider }),
                 s.jsx(l, {
                     text: q.missionsCounter(),
@@ -76,7 +76,7 @@ const k = {
                         }),
                     },
                 }),
-                s.jsx(x, {
+                s.jsx(_, {
                     text: q.description(),
                     classMix: r(k.description, k.description__dark),
                     binding: {
@@ -89,15 +89,15 @@ const k = {
             ],
         });
     }),
-    D = {
+    y = {
         header: 'Reward_header_fe1c875b',
         description: 'Reward_description_901b8d14',
         divider: 'Reward_divider_ea66945c',
         rewardsText: 'Reward_rewardsText_ef59fc7c',
         reward: 'Reward_e744e1e2',
     },
-    y = R.strings.comp7_ext.weeklyQuestWidgetTooltip,
-    A = {
+    A = R.strings.comp7_ext.weeklyQuestWidgetTooltip,
+    D = {
         header: 'Waiting_header_3d83166b',
         counterContainer: 'Waiting_counterContainer_440beb40',
         counter: 'Waiting_counter_da0557a8',
@@ -109,32 +109,32 @@ const k = {
         newMissionsDescription: 'Waiting_newMissionsDescription_3b697f7',
         newMissionsTimer: 'Waiting_newMissionsTimer_6bf867a3',
     },
-    S = R.strings.comp7_ext.weeklyQuestWidgetTooltip,
-    z = i(() => {
+    z = R.strings.comp7_ext.weeklyQuestWidgetTooltip,
+    B = i(() => {
         const { model: e } = N(),
             { timeToNewQuests: t, questsPassed: i, totalQuests: r } = e.root.get(),
             a = e.questNumbersToRewards.get().length - 1;
         return s.jsxs('div', {
-            className: A.base,
+            className: D.base,
             children: [
-                s.jsx(l, { text: S.header(), classMix: A.header }),
+                s.jsx(l, { text: z.header(), classMix: D.header }),
                 s.jsx(l, {
-                    text: S.missionsCounter(),
-                    classMix: A.counterContainer,
+                    text: z.missionsCounter(),
+                    classMix: D.counterContainer,
                     binding: {
                         counter: s.jsx(l, {
-                            text: S.counter(),
-                            classMix: A.counter,
+                            text: z.counter(),
+                            classMix: D.counter,
                             binding: {
-                                current: s.jsx('span', { className: A.counter__current, children: i }),
+                                current: s.jsx('span', { className: D.counter__current, children: i }),
                                 total: r,
                             },
                         }),
                     },
                 }),
-                s.jsx(x, {
-                    text: S.description(),
-                    classMix: A.description,
+                s.jsx(_, {
+                    text: z.description(),
+                    classMix: D.description,
                     binding: {
                         questsList: m(a, (s) => e.computes.questRewardsNumber(s)).join(
                             R.strings.comp7_ext.listSeparator(),
@@ -143,17 +143,17 @@ const k = {
                     },
                 }),
                 s.jsxs('div', {
-                    className: A.timerBlock,
+                    className: D.timerBlock,
                     children: [
-                        s.jsx(W, { className: A.divider }),
+                        s.jsx(W, { className: D.divider }),
                         s.jsxs('div', {
-                            className: A.newMissionsDescriptionWrapper,
+                            className: D.newMissionsDescriptionWrapper,
                             children: [
                                 s.jsx(p, {
-                                    classMix: A.newMissionsDescription,
-                                    content: w(S.newMissions(v), { value: v }),
+                                    classMix: D.newMissionsDescription,
+                                    content: w(z.newMissions(v), { value: v }),
                                 }),
-                                s.jsx(b, { start: t, className: A.newMissionsTimer }),
+                                s.jsx(b, { start: t, className: D.newMissionsTimer }),
                             ],
                         }),
                     ],
@@ -161,29 +161,29 @@ const k = {
             ],
         });
     }),
-    B = 'WeeklyQuestWidgetTooltip_20195207',
-    P = {
+    S = 'WeeklyQuestWidgetTooltip_20195207',
+    L = {
         [f.Active]: C,
-        [f.Waiting]: z,
+        [f.Waiting]: B,
         [f.Reward]: () =>
             s.jsxs('div', {
-                className: D.base,
+                className: y.base,
                 children: [
-                    s.jsx(l, { text: y.completed(), classMix: D.header }),
-                    s.jsx(l, { text: y.completedDescription(), classMix: D.description }),
-                    s.jsx(W, { className: D.divider }),
-                    s.jsx('div', { className: D.rewardsText, children: y.rewards() }),
-                    s.jsx('div', { className: D.reward }),
+                    s.jsx(l, { text: A.completed(), classMix: y.header }),
+                    s.jsx(l, { text: A.completedDescription(), classMix: y.description }),
+                    s.jsx(W, { className: y.divider }),
+                    s.jsx('div', { className: y.rewardsText, children: A.rewards() }),
+                    s.jsx('div', { className: y.reward }),
                 ],
             }),
     },
-    L = i(() => {
+    P = i(() => {
         const { model: e } = N(),
-            t = P[e.root.get().state];
+            t = L[e.root.get().state];
         return t
             ? s.jsx(j, {
-                  children: s.jsx(j.Decorator, { children: s.jsx('div', { className: B, children: s.jsx(t, {}) }) }),
+                  children: s.jsx(j.Decorator, { children: s.jsx('div', { className: S, children: s.jsx(t, {}) }) }),
               })
             : (console.error('Unreachable code: WeeklyQuestTooltip'), null);
     });
-g(s.jsx(h, { children: s.jsx(L, {}) }));
+g(s.jsx(h, { children: s.jsx(P, {}) }));

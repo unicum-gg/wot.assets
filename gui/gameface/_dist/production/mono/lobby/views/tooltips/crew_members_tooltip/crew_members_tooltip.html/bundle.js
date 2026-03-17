@@ -1,7 +1,7 @@
-import { j as s, J as e } from '../../../../chunks/vendor.js';
-import { cP as i } from '../../../../chunks/lib.js';
-import { T as c } from '../../../../chunks/tooltip_decorator.js';
-import { t as a } from '../../../../chunks/tooltips.module.js';
+import { j as s, w as e } from '../../../../chunks/vendor.js';
+import { aA as i } from '../../../../chunks/lib.js';
+import { T as a } from '../../../../chunks/tooltip_decorator.js';
+import { t as c } from '../../../../chunks/tooltips.module.js';
 /* empty css                        */ const r = 'App_4fcbfa35',
     d = 'App_crewIcon_f83bbe77',
     o = 'App_title_95edd6ea',
@@ -10,16 +10,16 @@ import { t as a } from '../../../../chunks/tooltips.module.js';
     n = 'App_slotImage_9f9978b0',
     p = () =>
         s.jsxs('div', {
-            className: e(a.base, r),
+            className: e(c.base, r),
             children: [
-                s.jsx('div', { className: a.heading, children: R.strings.comp7_ext.yearlyRewards.rewards.crew() }),
+                s.jsx('div', { className: c.heading, children: R.strings.comp7_ext.yearlyRewards.rewards.crew() }),
                 s.jsx('div', {
-                    className: e(a.subHeading, a.subHeading__topIndent),
+                    className: e(c.subHeading, c.subHeading__topIndent),
                     children: R.strings.comp7_ext.crewMembersTooltip.subHeading(),
                 }),
                 s.jsx('div', { className: d }),
                 s.jsx('div', {
-                    className: e(a.description, a.description__topIndent),
+                    className: e(c.description, c.description__topIndent),
                     children: R.strings.comp7_ext.crewMembersTooltip.description(),
                 }),
                 s.jsx('div', { className: e(o), children: R.strings.comp7_ext.crewMembersTooltip.perks() }),
@@ -33,4 +33,4 @@ import { t as a } from '../../../../chunks/tooltips.module.js';
                 }),
             ],
         });
-i(s.jsx(c, { children: s.jsx(p, {}) }));
+i(s.jsx(a, { children: s.jsx(p, {}) }));

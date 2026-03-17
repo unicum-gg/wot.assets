@@ -6,21 +6,21 @@ import {
     e as r,
     h as d,
     g as c,
-    a5 as l,
-    q as _,
-    P as u,
-    v as m,
-    I as g,
-    w as p,
-    d0 as x,
-    d1 as b,
-    d2 as T,
-    a3 as f,
-    cY as j,
+    a8 as l,
+    W as _,
+    X as u,
+    Y as m,
+    Q as g,
+    v as p,
+    db as x,
+    dc as b,
+    dd as T,
+    a6 as f,
+    d9 as j,
 } from '../../../../chunks/lib.js';
 import { F as v } from '../../../../chunks/fun_random_progression_state.js';
-import { g as I } from '../../../../chunks/readResource.js';
-const [N, E] = n()(({ observableModel: s }) => {
+import { c as N } from '../../../../chunks/readResource.js';
+const [I, E] = n()(({ observableModel: s }) => {
         const t = {
                 progressionState: s.object('state'),
                 currentStage: s.object('currentStage'),
@@ -150,7 +150,7 @@ const [N, E] = n()(({ observableModel: s }) => {
             ],
         });
     }),
-    Y = {
+    W = {
         root: 'ActiveModeContent_root_684b70dc',
         base: 'ActiveModeContent_9a83f24b',
         title: 'ActiveModeContent_title_c8fece42',
@@ -161,22 +161,22 @@ const [N, E] = n()(({ observableModel: s }) => {
         notificationIcon: 'ActiveModeContent_notificationIcon_821a9fa',
         infiniteIcon: 'ActiveModeContent_infiniteIcon_6e6d7165',
     },
-    G = s(() => {
+    X = s(() => {
         var e;
         const { model: s } = E(),
             n = s.isMultipleSubModes.get(),
             { currentStage: o, maximumStage: i, status: r } = s.progressionState.get(),
             d = s.assetsPointer.get(),
-            { dynamicTexts: c } = I('metaProgressionTooltip', { assetsPointer: d }),
+            { dynamicTexts: c } = N('metaProgressionTooltip', { assetsPointer: d }),
             l = [v.ACTIVE_INFINITE_RESETTABLE, v.ACTIVE_INFINITE_FINAL].includes(r);
         return t.jsxs('div', {
-            className: a(Y.base, Y[`base__${r}`]),
+            className: a(W.base, W[`base__${r}`]),
             children: [
                 t.jsxs('div', {
-                    className: Y.title,
+                    className: W.title,
                     children: [
                         t.jsx(_, { text: c.header.active(), binding: { done: o, total: l ? '' : i } }),
-                        l && t.jsx('div', { className: Y.infiniteIcon }),
+                        l && t.jsx('div', { className: W.infiniteIcon }),
                     ],
                 }),
                 t.jsx(L, {}),
@@ -184,38 +184,38 @@ const [N, E] = n()(({ observableModel: s }) => {
                 n &&
                     (null == (e = c.reward) ? void 0 : e.tip) &&
                     t.jsxs('div', {
-                        className: Y.info,
+                        className: W.info,
                         children: [
-                            t.jsx('div', { className: Y.notificationIcon }),
-                            t.jsx('div', { className: Y.infoDescription, children: c.reward.tip && c.reward.tip() }),
+                            t.jsx('div', { className: W.notificationIcon }),
+                            t.jsx('div', { className: W.infoDescription, children: c.reward.tip && c.reward.tip() }),
                         ],
                     }),
                 t.jsx(U, { fullMode: !0 }),
             ],
         });
     }),
-    H = {
+    Y = {
         root: 'CompletedModeContent_root_f3a6d63f',
         base: 'CompletedModeContent_6f4f7052',
         noRewardSubTitle: 'CompletedModeContent_noRewardSubTitle_9917a1cf',
         noRewardTitle: 'CompletedModeContent_noRewardTitle_ae00a2e9',
         base__completedFinal: 'CompletedModeContent_base__completedFinal_f3a6d63f',
     },
-    J = s(() => {
+    G = s(() => {
         const { model: e } = E(),
             { status: s } = e.progressionState.get(),
             n = e.assetsPointer.get(),
-            { staticTexts: o, dynamicTexts: i } = I('metaProgressionTooltip', { assetsPointer: n });
+            { staticTexts: o, dynamicTexts: i } = N('metaProgressionTooltip', { assetsPointer: n });
         return t.jsxs('div', {
-            className: a(H.base, H[`base__${s}`]),
+            className: a(Y.base, Y[`base__${s}`]),
             children: [
-                t.jsx('div', { className: H.noRewardSubTitle, children: i.subheader() }),
-                t.jsx('div', { className: H.noRewardTitle, children: o.header.$dyn(s) }),
+                t.jsx('div', { className: Y.noRewardSubTitle, children: i.subheader() }),
+                t.jsx('div', { className: Y.noRewardTitle, children: o.header.$dyn(s) }),
                 t.jsx(U, {}),
             ],
         });
     }),
-    K = s(() => {
+    H = s(() => {
         const { model: e } = E(),
             { status: s } = e.progressionState.get();
         switch (s) {
@@ -223,12 +223,12 @@ const [N, E] = n()(({ observableModel: s }) => {
             case v.ACTIVE_RESETTABLE:
             case v.ACTIVE_INFINITE_RESETTABLE:
             case v.ACTIVE_INFINITE_FINAL:
-                return t.jsx(G, {});
+                return t.jsx(X, {});
             case v.COMPLETED_FINAL:
             case v.COMPLETED_RESETTABLE:
-                return t.jsx(J, {});
+                return t.jsx(G, {});
             default:
                 return (console.error('Unexpected state:', s), null);
         }
     });
-f(t.jsx(N, { children: t.jsx(j, { children: t.jsx(K, {}) }) }));
+f(t.jsx(I, { children: t.jsx(j, { children: t.jsx(H, {}) }) }));

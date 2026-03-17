@@ -1,20 +1,20 @@
-import { j as s, J as l } from './vendor.js';
-import { dn as o, cV as a } from './lib.js';
+import { j as s, w as a } from './vendor.js';
+import { a9 as l, g as o } from './lib.js';
 const i = 'DivineGlow_2b9c4670',
     e = 'DivineGlow_glow_fddce7f8',
     d = 'DivineGlow_glow__bg_a3df35d7',
-    c = (s) => !!a.isHigh() && s,
-    n = ({ className: a, classNames: n, playerRef: m, animated: r = !0 }) =>
+    c = (s) => !!o.isHigh() && s,
+    m = ({ className: o, classNames: m, playerRef: n, animated: r = !0 }) =>
         s.jsx('div', {
-            className: l(i, a),
+            className: a(i, o),
             children: c(r)
-                ? s.jsx(o, {
-                      className: l(e, null == n ? void 0 : n.glow),
+                ? s.jsx(l, {
+                      className: a(e, null == m ? void 0 : m.glow),
                       src: String(R.videos.comp7.divine_glow()),
                       autoplay: !0,
                       loop: !0,
-                      ref: m,
+                      ref: n,
                   })
-                : s.jsx('div', { className: l(e, d, null == n ? void 0 : n.glow) }),
+                : s.jsx('div', { className: a(e, d, null == m ? void 0 : m.glow) }),
         });
-export { n as D };
+export { m as D };

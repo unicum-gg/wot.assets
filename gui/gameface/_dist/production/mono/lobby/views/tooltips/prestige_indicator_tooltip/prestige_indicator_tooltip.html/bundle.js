@@ -1,5 +1,5 @@
-import { I as e, j as s, J as i } from '../../../../chunks/vendor.js';
-import { i as t, n as r, cd as o, cU as a, cP as c, cn as n } from '../../../../chunks/lib.js';
+import { y as e, j as s, w as i } from '../../../../chunks/vendor.js';
+import { i as t, aC as r, q as a, F as o, aA as c, aB as n } from '../../../../chunks/lib.js';
 import { T as d } from '../../../../chunks/tooltip_decorator.js';
 import { S as p } from '../../../../chunks/enums.js';
 /* empty css                        */ const [l, g] = t()(({ observableModel: e }) => ({ root: e.object() }), r),
@@ -19,17 +19,17 @@ import { S as p } from '../../../../chunks/enums.js';
                 s.jsxs('div', {
                     className: m,
                     children: [
-                        s.jsx(o, {
+                        s.jsx(a, {
                             text:
                                 t === p.Season
                                     ? R.strings.comp7_ext.prestigeIndicatorTooltip.prestige.season.heading()
                                     : R.strings.comp7_ext.prestigeIndicatorTooltip.prestige.day.heading(),
                             binding: {
-                                averagePrestige: s.jsx('div', { className: _, children: s.jsx(a, { value: r }) }),
+                                averagePrestige: s.jsx('div', { className: _, children: s.jsx(o, { value: r }) }),
                             },
                             classMix: h,
                         }),
-                        s.jsx(o, {
+                        s.jsx(a, {
                             text: R.strings.comp7_ext.prestigeIndicatorTooltip.prestige.description(),
                             classMix: v,
                         }),
@@ -38,17 +38,17 @@ import { S as p } from '../../../../chunks/enums.js';
                 s.jsxs('div', {
                     className: i(m, j),
                     children: [
-                        s.jsx(o, {
+                        s.jsx(a, {
                             text:
                                 t === p.Season
                                     ? R.strings.comp7_ext.prestigeIndicatorTooltip.prestigeRecord.season.heading()
                                     : R.strings.comp7_ext.prestigeIndicatorTooltip.prestigeRecord.day.heading(),
                             binding: {
-                                recordPrestige: s.jsx('div', { className: _, children: s.jsx(a, { value: c }) }),
+                                recordPrestige: s.jsx('div', { className: _, children: s.jsx(o, { value: c }) }),
                             },
                             classMix: h,
                         }),
-                        s.jsx(o, {
+                        s.jsx(a, {
                             text: R.strings.comp7_ext.prestigeIndicatorTooltip.prestigeRecord.description(),
                             binding: { vehicleName: s.jsx('div', { className: b, children: n }) },
                             classMix: v,

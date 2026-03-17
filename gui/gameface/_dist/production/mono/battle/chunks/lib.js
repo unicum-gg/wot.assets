@@ -120,20 +120,20 @@ const E = { integral: 0, gold: 1 },
     x = { fractional: 0, woZeroDigits: 1 },
     k = Object.keys(E),
     S = Object.keys(x);
-const F = { full: _.FullTime, short: _.ShortTime };
-const T = {
+const A = { full: _.FullTime, short: _.ShortTime };
+const F = {
     isNumberFormat: function (e) {
         return e in E;
     },
     formatNumber: function (e, t) {
-        return window.systemLocale.getNumberFormat(t, E[e]);
+        return window.formatters.getNumberFormat(t, E[e]);
     },
     numberFormats: k,
     isRealFormat: function (e) {
         return e in x;
     },
-    formatReal: function (e, t) {
-        return window.systemLocale.getRealFormat(t, x[e]);
+    formatReal: function (e, t, n = 2) {
+        return window.formatters.getRealFormat(t, x[e], n);
     },
     realFormats: S,
     formatDateTime: function (e, t, n = !0) {
@@ -143,11 +143,11 @@ const T = {
     formatTime: function (e, t, n = !0) {
         return window.regionalDateTime.getRegionalDateTime(t, e, n);
     },
-    timeFormats: Object.keys(F),
+    timeFormats: Object.keys(A),
     toUpperCase: (e) => window.systemLocale.toUpperCase(e),
     toLowerCase: (e) => window.systemLocale.toLowerCase(e),
 };
-function A(e, t, n) {
+function T(e, t, n) {
     const r = e.split('.');
     if (window.R && window.R.strings) {
         const e = r[r.length - 1];
@@ -169,7 +169,7 @@ class N {
     }
     readOr(e, t, n = 'silent') {
         const r = e.startsWith('R.strings') ? e : w(this.prefix, e),
-            s = A(r, void 0, e.startsWith('R.strings') ? window : this.root);
+            s = T(r, void 0, e.startsWith('R.strings') ? window : this.root);
         return void 0 === s ? ('silent' !== n && y(`Resource not found: ${r}`, n), t()) : s;
     }
     readOrEmpty(e, t = 'warn') {
@@ -177,7 +177,7 @@ class N {
     }
     readOrThrow(e) {
         const t = e.startsWith('R.strings') ? e : w(this.prefix, e),
-            n = A(t, void 0, e.startsWith('R.strings') ? window : this.root);
+            n = T(t, void 0, e.startsWith('R.strings') ? window : this.root);
         if (void 0 === n) throw new Error(`Resource not found: ${t}`);
         return n;
     }
@@ -186,7 +186,7 @@ class N {
     }
     pluralOr(e, t, n, r = 'silent') {
         const s = e.startsWith('R.strings') ? e : w(this.prefix, e),
-            o = A(s, t, e.startsWith('R.strings') ? window : this.root);
+            o = T(s, t, e.startsWith('R.strings') ? window : this.root);
         return void 0 === o ? ('silent' !== r && y(`Resource not found: ${s}`, r), n()) : o;
     }
     pluralOrEmpty(e, t, n = 'warn') {
@@ -270,7 +270,7 @@ function C(e) {
         },
     ).singleton(),
     langCode: s(R.strings.settings.LANGUAGE_CODE()),
-    intl: s(T),
+    intl: s(F),
 }),
     {}.VITE_HOT_LIVE_SERVER && g.register('images', i(() => new v()).singleton()));
 const L = D('clientResized'),
@@ -351,6 +351,7 @@ const B = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
         })(),
         onDisplayChanged: D('self.onShowingStatusChanged'),
         onFocusUpdated: D('self.onFocusChanged'),
+        onExternalPaddingsUpdated: D('self.onPaddingsUpdated'),
         children: {
             onAdded: D('children.onAdded'),
             onLoaded: D('children.onLoaded'),
@@ -419,12 +420,12 @@ function q(e, t = []) {
         ? e
         : new Proxy(e, { get: (e, n) => ('function' == typeof e[n] ? e[n].bind(e) : q(e[n], [...t, n])) });
 }
-const K = (e) => (0 === e ? window : window.subViews.get(e));
-function V(
+const Z = (e) => (0 === e ? window : window.subViews.get(e));
+function K(
     {
         initializer: e = !0,
         rootId: t = 0,
-        getRoot: n = 'true' === H.PUBLIC_DEBUG_MODEL_ACCESS ? W(K, q) : K,
+        getRoot: n = 'true' === H.PUBLIC_DEBUG_MODEL_ACCESS ? W(Z, q) : Z,
         context: r = 'model',
     } = {},
     { name: s = 'DataLayer' } = {},
@@ -509,7 +510,7 @@ function V(
         events: i,
     };
 }
-function X(e, t) {
+function V(e, t) {
     return t
         ? (function (e, t) {
               if (!t) return e;
@@ -520,7 +521,7 @@ function X(e, t) {
           })(e, t.context)
         : e;
 }
-function Z() {}
+function X() {}
 function G() {
     return !1;
 }
@@ -925,11 +926,29 @@ const se = {
         for (const [r] of n) t.push(r);
         return t;
     },
+    th: function (e) {
+        var t;
+        const n = [],
+            r = e
+                .replace(/&nbsp;/g, ' ')
+                .matchAll(
+                    /[【「(（『"《]?[\u0E00-\u0E7F%](?:[\u0E31\u0E34-\u0E3A\u0E47-\u0E4E。!?,.:、…・/ー—–!%+?）)】」"》』]+)?|[「【(（『《"]?\d+(?:,\d{3})*(?:-\d+(?:,\d{3})*)?(?:\s*[a-zA-Z\u0E00-\u0E7F/%]+)?(?:[。.,，、:;：；!?）)】」"》・%)、]+)?|[「【(（『《"]?[a-zA-Z0-9]+(?:[-/][a-zA-Z0-9]+)*(?:\s*[。!?、…・ー—–!?"》】」）)』]+)?|[\u00A0 ]|[^\s]/gu,
+                );
+        for (const [s] of r)
+            /^\s+$/.test(s)
+                ? n.length
+                    ? (n[n.length - 1] += s)
+                    : n.push(s)
+                : 1 === n.length && (null == (t = n[0]) ? void 0 : t.startsWith('  '))
+                  ? (n[0] = ' ' + s)
+                  : n.push(s);
+        return n;
+    },
 };
 function oe(e) {
     return e.split(' ');
 }
-const ie = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko']);
+const ie = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko', 'th']);
 const ae = a.createContext(void 0);
 const ue = 'extraSmall',
     ce = {
@@ -1075,7 +1094,7 @@ const ke = () => {
         };
     },
     Se = a.createContext(void 0);
-function Fe(e) {
+function Ae(e) {
     const t = a.useMemo(ke, []),
         n = a.useMemo(ke, []);
     a.useEffect(() => {
@@ -1104,10 +1123,10 @@ function Fe(e) {
     );
     return u.jsx(Se.Provider, { value: r, children: e.children });
 }
-const Te = (e) => {
+const Fe = (e) => {
     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
 };
-function Ae(e = Q.ESCAPE, t = Te, n = !1) {
+function Te(e = Q.ESCAPE, t = Fe, n = !1) {
     const r = te(e);
     a.useEffect(() => {
         if (r !== Q.NONE)
@@ -1393,13 +1412,13 @@ const qe =
                                           readSafeByPath: e,
                                           readByPath: e,
                                           createCallback: (n, r) => {
-                                              const s = e(X(r, t));
+                                              const s = e(V(r, t));
                                               return (...e) => {
                                                   s(n(...e));
                                               };
                                           },
                                           createCallbackNoArgs: (n) => {
-                                              const r = e(X(n, t));
+                                              const r = e(V(n, t));
                                               return () => {
                                                   r();
                                               };
@@ -1409,7 +1428,7 @@ const qe =
                                           events: { subscribersNotified: new I() },
                                       };
                                   })(a.getter, i)
-                                : V(i, { name: e }),
+                                : K(i, { name: e }),
                         l = (e) => ('mocks' === s ? (null == a ? void 0 : a.getter(e, i)) : c.readByPath(e)),
                         d = (e) => g.current.push(e),
                         h = 'initial' in o && {
@@ -1426,7 +1445,13 @@ const qe =
                         }),
                         m = { ...h, mode: s, model: f, externalModel: c, cleanup: d, requires: w },
                         p = 'mocks' === s && (null == a ? void 0 : a.controls) ? a.controls(m) : {};
-                    return { model: f, controls: { ...(null == n ? void 0 : n(m)), ...p }, externalModel: c, mode: s };
+                    return {
+                        model: f,
+                        controls: { ...(null == n ? void 0 : n(m)), ...p },
+                        externalModel: c,
+                        mode: s,
+                        rootId: (null == i ? void 0 : i.rootId) ?? 0,
+                    };
                 }),
                 b = a.useRef(!1),
                 [v, _] = a.useState(m);
@@ -1494,7 +1519,7 @@ a.forwardRef(function (e, t) {
     );
     var r;
 });
-class Ke {
+class Ze {
     constructor() {
         n(this, 'items', []);
     }
@@ -1510,7 +1535,7 @@ class Ke {
         });
     }
 }
-async function Ve(
+async function Ke(
     e,
     { root: t = document.getElementById('root'), withMedia: n = !0, fullScreen: r = !1, immediateLayout: s = !0 } = {},
 ) {
@@ -1584,7 +1609,7 @@ async function Ve(
     (s && engine.enableImmediateLayout(!0),
         await a,
         document.documentElement.setAttribute('lang', g.resolve('langCode')),
-        m.createRoot(t).render(u.jsx(i, { children: u.jsx(Fe, { children: e }) })),
+        m.createRoot(t).render(u.jsx(i, { children: u.jsx(Ae, { children: e }) })),
         r &&
             (!(function (e) {
                 function t() {
@@ -1598,11 +1623,11 @@ async function Ve(
             })(t),
             viewEnv.setFullscreenModeSupported(!0)));
 }
-function Xe(e) {
+function Ve(e) {
     return u.jsx(u.Fragment, { children: e.children });
 }
-function Ze(e) {
-    return u.jsx(Xe, {
+function Xe(e) {
+    return u.jsx(Ve, {
         children: u.jsx(Ce, {
             overrides: e.soundsOverrides,
             severity: e.soundSeverity,
@@ -2024,4 +2049,4 @@ const Et = (function (e, t, n) {
         });
     });
 ((kt.themes = bt), (kt.sizes = vt));
-export { kt as B, yt as F, Ke as J, Ze as U, _e as a, ce as b, qe as i, J as k, Z as n, M as p, Ve as r, Ae as u };
+export { kt as B, yt as F, Ze as J, Xe as U, _e as a, ce as b, qe as i, J as k, X as n, M as p, Ke as r, Te as u };

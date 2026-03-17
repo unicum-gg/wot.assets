@@ -5,19 +5,19 @@ import {
     d as t,
     e as i,
     h as c,
-    I as d,
-    R as n,
-    w as b,
-    n as m,
-    u as x,
-    aE as _,
-    bu as p,
-    a3 as w,
-    cu as j,
-    a2 as h,
-    a4 as u,
+    Q as d,
+    U as n,
+    v as b,
+    R as m,
+    p as x,
+    aH as _,
+    bG as p,
+    a6 as j,
+    cF as w,
+    a5 as h,
+    a7 as v,
 } from '../../../chunks/lib.js';
-import { a as v, g } from '../../../chunks/readResource.js';
+import { g, c as u } from '../../../chunks/readResource.js';
 const [N, y] = l()(
         ({ observableModel: e }) => ({ root: e.object(), lootBoxes: e.array('lootBoxes') }),
         ({ externalModel: e }) => ({ closeWindow: e.createCallbackNoArgs('onClose') }),
@@ -31,15 +31,15 @@ const [N, y] = l()(
         boxLabel: 'RewardRow_boxLabel_b5c1e1f2',
         divider: 'RewardRow_divider_1aa30952',
         items: 'RewardRow_items_250e268f',
-        item: 'RewardRow_item_90f1944b',
-        label: 'RewardRow_label_45d1bef9',
+        item: 'RewardRow_item_a3515cc5',
+        label: 'RewardRow_label_d4524001',
         percent: 'RewardRow_percent_86c62b10',
     },
-    I = e(({ rewards: e, iconKey: o, label: l, showRewardsNames: x }) => {
+    A = e(({ rewards: e, iconKey: o, label: l, showRewardsNames: x }) => {
         const { model: _ } = y(),
             { assetsPointer: p } = _.root.get(),
-            w = _.lootBoxes.get().length > 2 ? d.Big : d.S232x174,
-            j = ((e, s) =>
+            j = _.lootBoxes.get().length > 2 ? d.Big : d.S232x174,
+            w = ((e, s) =>
                 r(e, (e) => ({
                     name: e.name,
                     image: c(e, s),
@@ -49,10 +49,10 @@ const [N, y] = l()(
                     tooltipArgs: t({ tooltipId: e.tooltipId }, Number(e.tooltipContentId)),
                     label: e.label,
                     probability: e.probability,
-                })))(e, w),
-            h = v(p).progression.bonuses.big;
+                })))(e, j),
+            h = g(p).progression.bonuses.big;
         return s.jsxs('div', {
-            className: a(f.base, f[`base__${w}`]),
+            className: a(f.base, f[`base__${j}`]),
             children: [
                 s.jsxs('div', {
                     className: f.box,
@@ -65,14 +65,14 @@ const [N, y] = l()(
                 s.jsx('div', {
                     className: f.items,
                     children:
-                        j.length > 0 &&
-                        r(j, (e, a) =>
+                        w.length > 0 &&
+                        r(w, (e, a) =>
                             s.jsxs(
                                 'div',
                                 {
                                     className: f.item,
                                     children: [
-                                        s.jsx(n, { ...e, size: w }),
+                                        s.jsx(n, { ...e, size: j }),
                                         x && e.label && s.jsx(b, { classMix: f.label, text: e.label }),
                                         Boolean(e.probability) &&
                                             s.jsx('div', {
@@ -88,42 +88,42 @@ const [N, y] = l()(
             ],
         });
     }),
-    A = 'RewardList_3134028b',
+    I = 'RewardList_3134028b',
     k = e(() => {
         const { model: e } = y(),
             a = e.lootBoxes.get();
         return s.jsx('div', {
-            className: A,
-            children: a.length > 0 && r(a, (e, s) => o.createElement(I, { ...e, key: s })),
+            className: I,
+            children: a.length > 0 && r(a, (e, s) => o.createElement(A, { ...e, key: s })),
         });
     }),
     B = 'App_41da450e',
     L = 'App_background_8bf668c',
     C = 'App_content_c51a1e8f',
     $ = 'App_header_6b270f84',
-    E = 'App_title_ed37f891',
-    M = 'App_description_8e9e0dbe',
-    P = 'App_scroll_ce8f2661',
-    T = e(() => {
+    M = 'App_title_ed37f891',
+    P = 'App_description_8e9e0dbe',
+    T = 'App_scroll_ce8f2661',
+    z = e(() => {
         const { model: e, controls: a } = y(),
             { assetsPointer: o } = e.root.get(),
             { closeWindow: l } = a;
         x(l);
-        const { dynamicTexts: r } = g('tierList', { assetsPointer: o });
+        const { dynamicTexts: r } = u('tierList', { assetsPointer: o });
         return s.jsxs('div', {
             className: B,
             children: [
-                s.jsx('div', { className: L, style: { backgroundImage: `url('${v(o).library.tier_list_bg()}')` } }),
+                s.jsx('div', { className: L, style: { backgroundImage: `url('${g(o).library.tier_list_bg()}')` } }),
                 s.jsx(_, {
                     children: s.jsxs(p, {
                         scrollClassNames: { content: C },
-                        className: P,
+                        className: T,
                         children: [
                             s.jsxs('div', {
                                 className: $,
                                 children: [
-                                    s.jsx('div', { className: E, children: r.title() }),
-                                    s.jsx('div', { className: M, children: r.description() }),
+                                    s.jsx('div', { className: M, children: r.title() }),
+                                    s.jsx('div', { className: P, children: r.description() }),
                                 ],
                             }),
                             s.jsx(k, {}),
@@ -133,6 +133,6 @@ const [N, y] = l()(
             ],
         });
     });
-w(s.jsx(N, { children: s.jsx(j, { children: s.jsx(h, { children: s.jsx(T, {}) }) }) }), { fullScreen: !0 }).then(() =>
-    u(document.getElementById('root')),
+j(s.jsx(N, { children: s.jsx(w, { children: s.jsx(h, { children: s.jsx(z, {}) }) }) }), { fullScreen: !0 }).then(() =>
+    v(document.getElementById('root')),
 );

@@ -1,4 +1,4 @@
-import { j as e, J as s } from './vendor.js';
+import { j as e, w as s } from './vendor.js';
 const a = 'Diff_8f04feea',
     i = 'Diff_base__negative_ebb1426',
     f = 'Diff_base__positive_36979f4d';

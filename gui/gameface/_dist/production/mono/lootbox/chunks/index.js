@@ -5,7 +5,7 @@ import { R as g, d as _, P as h, S as f, B as y, a as v } from './statistics2.js
 import {
     n as B,
     i as C,
-    h as w,
+    j as w,
     P as A,
     m as j,
     g as N,
@@ -15,20 +15,20 @@ import {
     U as I,
     V,
     W as E,
-    k as L,
+    F as L,
     C as T,
-    e as H,
+    f as H,
     B as P,
     X as M,
     Y as G,
-    d as $,
+    e as $,
     Z as R,
     T as q,
     _ as z,
     $ as W,
 } from './lib.js';
-import { a as Y, g as D, C as U, D as Q, R as X } from './resources.js';
-import { u as Z, h as F } from '../views/main/main.html/bundle.js';
+import { a as Y, g as D, C as U, D as F, R as Q } from './resources.js';
+import { u as X, h as Z } from '../views/main/main.html/bundle.js';
 import { g as J } from './getConfig.js';
 import { S as K } from './sounds.js';
 import { G as ee } from './guaranteed.js';
@@ -151,7 +151,7 @@ const ie = {
                                 const i = t[o].dynOpt(n),
                                     r = s[o].dynOpt(n),
                                     c = _(i, a ? r : '');
-                                c.src.includes(Q) || ((e, o) => e.includes(`${o}/default`))(c.src, o)
+                                c.src.includes(F) || ((e, o) => e.includes(`${o}/default`))(c.src, o)
                                     ? (e[o][ce] = c)
                                     : (e[o][n] = c);
                             });
@@ -213,21 +213,21 @@ const ie = {
     Ce = 'CompositeScene_base__graphicsHigh_c16d0a29';
 const we = i(function ({ onClick: s, onLoaded: a }) {
         const { model: n, controls: i } = ue(),
-            { model: r } = Z(),
+            { model: r } = X(),
             { selectedBoxOption: c } = n.root.get(),
             { hasIdle: u, vignette: p, hoverZone: m, backgroundColor: x } = n.computes.viewConfig(),
             { sounds: b } = n.computes.resources(),
             _ = n.showAdditionalLayers.get(),
             h = n.isBoxHovered.get(),
             f = r.subViewIDs.get(),
-            y = F(f),
+            y = Z(f),
             v = A.isHigh(),
             C = n.computes.sublayersNames(le.background),
             w = n.computes.sublayersNames(le.box),
             j = n.computes.sublayersNames(le.hover),
             N = n.computes.sublayersNames(le.idle),
             O = u && v,
-            S = l(X),
+            S = l(Q),
             [I, V] = e.useState(!1),
             E = ((o, t) => {
                 const [s, a] = e.useState(0),
@@ -369,7 +369,7 @@ const Ee = 'BoxOpenPanel_1640485f',
     Re = 'BoxOpenPanel_toggleButton__active_bc254eb1',
     qe = i(({ openClick: s, className: a }) => {
         const { model: n, controls: i } = ue(),
-            { model: r } = Z(),
+            { model: r } = X(),
             { texts: c, images: l, sounds: d } = n.computes.resources(),
             { dynamicTexts: u } = n.computes.dynamicResources(),
             { accentCount: m } = n.computes.viewConfig(),
@@ -379,7 +379,7 @@ const Ee = 'BoxOpenPanel_1640485f',
             f = n.computes.openBoxesCount(),
             { eventName: y } = n.root.get(),
             v = r.subViewIDs.get(),
-            C = F(v),
+            C = Z(v),
             w = { boxesToGuaranteed: b, accent: m },
             A = { title: c.guaranteedTitle, nextBox: c.guaranteedNextBox },
             N = { glow: l.glowIcon, info: l.infoIcon, strongGlow: l.guaranteedGlowIcon },
@@ -475,12 +475,12 @@ const Ee = 'BoxOpenPanel_1640485f',
     Ye = 'initial',
     De = 'prepare',
     Ue = 'back',
-    Qe = 'wait',
-    Xe = 'openView';
-const Ze = i(function () {
+    Fe = 'wait',
+    Qe = 'openView';
+const Xe = i(function () {
         var s;
         const { model: a, controls: n } = ue(),
-            { model: i } = Z(),
+            { model: i } = X(),
             {
                 isAnimationActive: l,
                 isError: d,
@@ -503,21 +503,21 @@ const Ze = i(function () {
                 breakpoint: { weight: D },
             } = G(),
             U = O(() => n.openBoxes(), [n], 1100),
-            [Q, X] = r(() => Ae),
-            [F, J] = r(() => je),
+            [F, Q] = r(() => Ae),
+            [Z, J] = r(() => je),
             K = () => {
                 (a.isBoxHovered.get() && B.sound(k.boxMouseLeave), H || n.close());
             };
         $(K);
         const ee = () => {
-                (P(!0), n.setShowAdditionalLayers(!1), X.start(ke()), J.start(ke()), Y(Qe));
+                (P(!0), n.setShowAdditionalLayers(!1), Q.start(ke()), J.start(ke()), Y(Fe));
             },
             oe = () => {
-                (X.start(Oe), J.start(Oe));
+                (Q.start(Oe), J.start(Oe));
             };
         return (
             e.useEffect(() => {
-                M === Qe && R(U, 250);
+                M === Fe && R(U, 250);
             }, [M, U]),
             e.useEffect(() => {
                 d && (P(!1), Y(Ue), oe(), n.resetError());
@@ -560,7 +560,7 @@ const Ze = i(function () {
                     }),
                     o.jsx(h.Close, { className: ze.close, text: j.closeButton, onClick: K }),
                     o.jsx(c.div, {
-                        style: Q,
+                        style: F,
                         className: ze.headerAnimation,
                         children: o.jsx(h.Heading, { text: S.boxCategory.dynOpt(g) }),
                     }),
@@ -569,14 +569,14 @@ const Ze = i(function () {
                             o.jsx(we, {
                                 onClick: ee,
                                 onLoaded: () => {
-                                    (Y(Xe), X.start(Ne), J.start(Ne));
+                                    (Y(Qe), Q.start(Ne), J.start(Ne));
                                 },
                                 className: ze.boxLayout,
                             }),
                             o.jsxs('div', {
                                 className: ze.footer,
                                 children: [
-                                    o.jsx(c.div, { style: F, children: o.jsx(qe, { openClick: ee }) }),
+                                    o.jsx(c.div, { style: Z, children: o.jsx(qe, { openClick: ee }) }),
                                     H && o.jsx(m, { className: ze.loader, text: j.loader, img: N.loader }),
                                 ],
                             }),
@@ -609,7 +609,7 @@ const Ze = i(function () {
                                     H ||
                                         (e !== g &&
                                             (n.onBoxOptionChanged(e),
-                                            X.start(ke(() => X.start(Oe))),
+                                            Q.start(ke(() => Q.start(Oe))),
                                             J.start(ke(() => J.start(Oe)))));
                                 },
                                 active: g,
@@ -622,7 +622,7 @@ const Ze = i(function () {
                                     guaranteedIco: N.guaranteedIco,
                                 },
                                 tabsGuaranteedCount: V,
-                                startAnimation: M === Xe,
+                                startAnimation: M === Qe,
                                 eventName: u,
                             }),
                         }),
@@ -631,5 +631,5 @@ const Ze = i(function () {
             })
         );
     }),
-    Fe = () => o.jsx(de, { options: u.HAS_BOXES, children: o.jsx(Ze, {}) });
-export { Fe as default };
+    Ze = () => o.jsx(de, { options: u.HAS_BOXES, children: o.jsx(Xe, {}) });
+export { Ze as default };

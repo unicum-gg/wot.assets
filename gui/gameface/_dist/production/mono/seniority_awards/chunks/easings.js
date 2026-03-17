@@ -1,5 +1,5 @@
 import { j as e, r, e as a } from './vendor.js';
-import { r as s, e as t, A as o, B as i, D as n, F as d, x as c, $ as l, a0 as w } from './lib.js';
+import { r as s, e as t, z as o, B as i, A as n, F as d, x as c, _ as l, $ as w } from './lib.js';
 import { g as u } from './category.js';
 const m = 'SeniorityAwardsViewFooter_ee5e4688',
     _ = 'SeniorityAwardsViewFooter_description_ad1f38e5',
@@ -192,10 +192,10 @@ const T = 'HeaderButton_a376d13c',
     },
     $ = 'seniority_awards',
     R = $ + '_vehicle_selection';
-var G = ((e) => ((e.RewardsScreen = 'sa_rewards_screen'), (e.VehicleSelectionView = 'sa_vehicle_selection_view'), e))(
-        G || {},
+var z = ((e) => ((e.RewardsScreen = 'sa_rewards_screen'), (e.VehicleSelectionView = 'sa_vehicle_selection_view'), e))(
+        z || {},
     ),
-    z = ((e) => (
+    G = ((e) => (
         (e.GoToShopButton = 'goto_shop_button'),
         (e.ShowMoreButton = 'show_more_button'),
         (e.ConfirmButton = 'confirm_button'),
@@ -206,9 +206,9 @@ var G = ((e) => ((e.RewardsScreen = 'sa_rewards_screen'), (e.VehicleSelectionVie
         (e.VehicleTooltip = 'vehicle_tooltip'),
         (e.SeniorityAwardsTooltip = 'seniority_awards_tooltip'),
         e
-    ))(z || {});
+    ))(G || {});
 const q = { pending: 'pending', success: 'success', error: 'error' },
-    D = (e, a = 0) => {
+    W = (e, a = 0) => {
         const [s, t] = r.useState(q.pending),
             o = w((e) => t(e), [], a),
             i = r.useCallback(() => {
@@ -232,7 +232,7 @@ const q = { pending: 'pending', success: 'success', error: 'error' },
             s
         );
     },
-    W = (e) => --e * e * e + 1,
+    D = (e) => --e * e * e + 1,
     P = (e) => Math.sqrt(1 - Math.pow(e - 1, 2)),
     U = (e) => {
         const r = 2.5949095;
@@ -240,4 +240,4 @@ const q = { pending: 'pending', success: 'success', error: 'error' },
             ? (Math.pow(2 * e, 2) * (7.189819 * e - r)) / 2
             : (Math.pow(2 * e - 2, 2) * ((r + 1) * (2 * e - 2) + r) + 2) / 2;
     };
-export { $ as F, z as I, G as P, L as S, b as a, R as b, P as c, U as d, W as e, S as f, F as h, q as l, D as u };
+export { $ as F, G as I, z as P, L as S, b as a, R as b, P as c, U as d, D as e, S as f, F as h, q as l, W as u };

@@ -32,7 +32,7 @@ import {
     t as U,
     m as Y,
     a3 as J,
-    k as K,
+    F as K,
     a1 as Q,
     R as Z,
     ac as ee,
@@ -43,7 +43,7 @@ import {
     P as ne,
     _ as re,
     $ as oe,
-    d as ce,
+    e as ce,
 } from './lib.js';
 import { S as le } from './sounds.js';
 import { L as de } from './loupe_button.js';
@@ -241,14 +241,14 @@ const De = 'PreviewButton_fdc3bedf',
 const Le = {
     root: 'Title_root_2e63cf3',
     base: 'Title_4a8f0758',
-    base__premium_plus: 'Title_base__premium_plus_80d3c231',
-    value: 'Title_value_c0c2d5cc',
+    base__premium_plus: 'Title_base__premium_plus_8be25f37',
+    value: 'Title_value_579d86dd',
     base__credits: 'Title_base__credits_2e63cf3',
     base__gold: 'Title_base__gold_2e63cf3',
     base__freeXP: 'Title_base__freeXP_2e63cf3',
     base__bptaler: 'Title_base__bptaler_2e63cf3',
     base__crystal: 'Title_base__crystal_2e63cf3',
-    plural: 'Title_plural_d7d07637',
+    plural: 'Title_plural_347b5b63',
     fadeIn: 'Title_fadeIn_2e63cf3',
 };
 const He = 'VehicleTitle_dd0605a9';
@@ -394,7 +394,7 @@ const qe = { opacity: 1, transform: 'translateX(0rem)', filter: 'brightness(1)' 
     ra = 'Card_reward_ff2c5c28',
     oa = 'Card_compensation_60c06806',
     ca = 'Card_title_43ce242d',
-    la = 'Card_vehicleTitle_c978735f',
+    la = 'Card_vehicleTitle_a2262475',
     da = 'Card_loupeWrapper_e3dd749b',
     ma = 'Card_video_30ee6c3b',
     ua = [Z.Vehicles, Z.TmanToken],

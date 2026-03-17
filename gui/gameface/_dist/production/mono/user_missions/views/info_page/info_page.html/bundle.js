@@ -1,7 +1,7 @@
 import { j as e, e as s, p as a } from '../../../chunks/vendor.js';
 import {
-    b as r,
-    f as n,
+    b as n,
+    f as r,
     F as i,
     d as o,
     I as t,
@@ -15,12 +15,12 @@ import {
     r as x,
     U as I,
 } from '../../../chunks/lib.js';
-import { g as b } from '../../../chunks/utils.js';
-const j = 'weekly',
-    u = 'main',
+const b = 'weekly',
+    j = 'main',
     v = 'additional',
-    h = ['standard', 'premium', j],
-    g = ['conditions', 'bonus', 'reward', 'reroll'],
+    h = ['standard', 'premium', b],
+    u = ['conditions', 'bonus', 'reward', 'reroll'],
+    g = (e, s) => (s > 0 ? (e > 0 ? 'hrs_mins' : 'mins') : 'hrs'),
     N = {
         base: 'InfoItem_a5beac91',
         base__reversed: 'InfoItem_base__reversed_36b9aa51',
@@ -31,23 +31,23 @@ const j = 'weekly',
         iconWrapper: 'InfoItem_iconWrapper_7115ec4b',
         icon: 'InfoItem_icon_9f7d5e9f',
     },
-    k = r.resolve('strings');
-function y({ index: a, item: r, type: c, rerollInterval: d = 0 }) {
+    k = n.resolve('strings');
+function y({ index: a, item: n, type: c, rerollInterval: d = 0 }) {
     const m = c === v || a % 2 != 0,
-        [_, p] = n(l(d), ['h', 'm']);
+        [_, p] = r(l(d), ['h', 'm']);
     return e.jsxs('div', {
         className: s(N.base, N[`base__${c}`], m && N.base__reversed),
         children: [
             e.jsxs('div', {
                 className: N.textBlock,
                 children: [
-                    e.jsx(i, { text: k.readOrEmpty(`user_missions.info_page.${c}.${r}.title`), className: N.title }),
+                    e.jsx(i, { text: k.readOrEmpty(`user_missions.info_page.${c}.${n}.title`), className: N.title }),
                     e.jsx(i, {
-                        text: k.readOrEmpty(`user_missions.info_page.${c}.${r}.description`),
+                        text: k.readOrEmpty(`user_missions.info_page.${c}.${n}.description`),
                         split: !0,
                         params: {
                             time: e.jsx(o, {
-                                path: `user_missions.common.duration.${b(Number(_), Number(p))}`,
+                                path: `user_missions.common.duration.${g(Number(_), Number(p))}`,
                                 params: { hours: _, minutes: p },
                             }),
                         },
@@ -57,7 +57,7 @@ function y({ index: a, item: r, type: c, rerollInterval: d = 0 }) {
             }),
             e.jsx('div', {
                 className: N.iconWrapper,
-                children: e.jsx(t, { path: `userMissions.info_page.${r}`, className: N.icon }),
+                children: e.jsx(t, { path: `userMissions.info_page.${n}`, className: N.icon }),
             }),
         ],
     });
@@ -73,11 +73,11 @@ const [$, P] = c()(
     C = 'InfoPage_verticalBar_a70fa964',
     E = 'InfoPage_header_47fea8de',
     M = 'InfoPage_separator_86a318ea',
-    O = r.resolve('strings'),
+    O = n.resolve('strings'),
     S = a(function () {
         const { model: s, controls: a } = P(),
-            r = s.rerollInterval.get(),
-            n = s.isWeeklySectionAvailable.get();
+            n = s.rerollInterval.get(),
+            r = s.isWeeklySectionAvailable.get();
         return (
             d(a.close),
             e.jsxs('div', {
@@ -94,11 +94,11 @@ const [$, P] = c()(
                                         children: O.readOrEmpty('user_missions.info_page.header'),
                                     }),
                                     h.map((s, a) =>
-                                        n || s !== j ? e.jsx(y, { index: a, item: s, type: u }, `index_${a}`) : null,
+                                        r || s !== b ? e.jsx(y, { index: a, item: s, type: j }, `index_${a}`) : null,
                                     ),
                                     e.jsx('div', { className: M }),
-                                    g.map((s, a) =>
-                                        e.jsx(y, { index: a, item: s, type: v, rerollInterval: r }, `index_${a}`),
+                                    u.map((s, a) =>
+                                        e.jsx(y, { index: a, item: s, type: v, rerollInterval: n }, `index_${a}`),
                                     ),
                                 ],
                             }),

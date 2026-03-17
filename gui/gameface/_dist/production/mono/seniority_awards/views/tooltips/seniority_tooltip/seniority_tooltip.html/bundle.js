@@ -1,5 +1,5 @@
 import { j as e, m as a, e as s, r } from '../../../../chunks/vendor.js';
-import { i as t, a4 as c, r as i, G as o, F as l, a5 as n, a6 as d, t as m, U as p } from '../../../../chunks/lib.js';
+import { i as t, a3 as c, r as i, E as o, F as l, a4 as n, a5 as d, t as m, U as p } from '../../../../chunks/lib.js';
 import { B as _, b as j, g as x } from '../../../../chunks/category.js';
 const h = (e, a) => ({ alphaTester: e.includes(j), betaTester: e.includes(_), notNewbie: a > 0 }),
     [b, g] = t()(({ observableModel: e }) => ({ root: e.object(), categories: e.array('categories', []) }), c),
@@ -17,7 +17,7 @@ const h = (e, a) => ({ alphaTester: e.includes(j), betaTester: e.includes(_), no
     k = 'Header_title_59b528cf',
     w = 'Header_formattedTitle_d01fbd5',
     A = 'seniority_awards.tooltip.medalBlock.label',
-    O = ({ category: a, years: s }) => {
+    E = ({ category: a, years: s }) => {
         const { alphaTester: r, betaTester: t, notNewbie: c } = h(a, s),
             d = i.resolve('intl'),
             m = i.resolve('strings'),
@@ -63,7 +63,7 @@ const h = (e, a) => ({ alphaTester: e.includes(j), betaTester: e.includes(_), no
             ],
         });
     },
-    E = 'App_decorator_5f3651a8',
+    O = 'App_decorator_5f3651a8',
     H = 'App_content_6e357f20',
     D = 'App_content__headerVisible_d70f2fdc',
     L = 'App_section_cfb8f1aa',
@@ -77,11 +77,11 @@ const h = (e, a) => ({ alphaTester: e.includes(j), betaTester: e.includes(_), no
             _ = i.resolve('strings');
         return e.jsx(d, {
             children: e.jsx(d.Decorator, {
-                className: E,
+                className: O,
                 children: e.jsxs('div', {
                     className: s(H, p && D),
                     children: [
-                        p && e.jsx(O, { category: t, years: o }),
+                        p && e.jsx(E, { category: t, years: o }),
                         e.jsxs('div', {
                             className: L,
                             children: [

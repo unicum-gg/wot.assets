@@ -2,7 +2,7 @@ import { r as e, m as s, j as t, e as a } from '../../../chunks/vendor.js';
 import {
     i as r,
     x as o,
-    v as n,
+    h as n,
     p as c,
     y as i,
     z as l,
@@ -26,7 +26,7 @@ import {
     w as E,
     W as y,
     X as T,
-    d as A,
+    c as A,
     C as k,
     Y as P,
     r as V,

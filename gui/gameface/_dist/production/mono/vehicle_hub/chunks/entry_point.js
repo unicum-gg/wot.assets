@@ -7,82 +7,81 @@ var e = Object.defineProperty,
         );
 import {
     j as a,
-    e as s,
-    x as r,
+    f as s,
+    z as r,
     r as n,
     R as o,
     o as i,
-    f as c,
-    A as l,
+    e as c,
+    D as l,
     h as d,
-    B as _,
-    l as m,
-    m as u,
-    C as h,
-    D as b,
-    E as f,
+    q as _,
+    l as u,
+    n as m,
+    A as h,
+    E as b,
+    F as f,
 } from './vendor.js';
 import {
     i as p,
     n as g,
     m as v,
     c as y,
-    a2 as x,
-    aR as N,
-    aS as j,
+    a8 as x,
+    aY as N,
+    aZ as j,
     r as w,
-    P as k,
+    an as k,
     o as P,
-    ap as E,
+    U as E,
     d as B,
-    aT as $,
+    a_ as $,
     I as D,
-    aU as T,
-    a5 as I,
-    aV as M,
-    aW as A,
-    aX as C,
-    aY as S,
-    aZ as F,
-    a_ as z,
-    a$ as L,
-    b0 as O,
-    b1 as H,
-    ai as G,
-    aQ as V,
-    b2 as W,
-    a3 as q,
-    af as Q,
-    b3 as U,
-    C as X,
-    an as Z,
-    a6 as Y,
-    aq as J,
-    b4 as K,
-    ab as ee,
-    b5 as te,
-    b6 as ae,
-    b7 as se,
-    b8 as re,
-    ag as ne,
-    F as oe,
-    b9 as ie,
-    N as ce,
-    aN as le,
-    B as de,
-    Q as _e,
-    ba as me,
+    a$ as I,
+    O as C,
+    b0 as S,
+    b1 as M,
+    b2 as T,
+    b3 as A,
+    aa as F,
+    b4 as z,
+    b5 as L,
+    b6 as O,
+    b7 as H,
+    ak as G,
+    aX as V,
+    b8 as W,
+    a9 as q,
+    ai as U,
+    b9 as Q,
+    C as Z,
+    av as X,
+    N as Y,
+    ax as J,
+    Q as K,
+    Z as ee,
+    ba as te,
+    bb as ae,
+    bc as se,
+    bd as re,
+    F as ne,
+    be as oe,
+    bf as ie,
+    aU as ce,
+    B as le,
+    bg as de,
+    bh as _e,
 } from './lib.js';
-import { T as ue, S as he } from './node_model.js';
-const [be, fe] = p()(({ observableModel: e }) => ({ tree: e.object('tree'), ...e.primitives(['locationId']) }), g);
-var pe = ((e) => (
+import { T as ue, S as me } from './node_model.js';
+const [he, be] = p()(({ observableModel: e }) => ({ tree: e.object('tree'), ...e.primitives(['locationId']) }), g);
+var fe = ((e) => (
     (e.Available = 'available'),
     (e.Blocked = 'blocked'),
     (e.Progress = 'progress'),
     (e.Achieved = 'achieved'),
     e
-))(pe || {});
-const [ge, ve] = p()(
+))(fe || {});
+const [pe, ge] = p()(
         ({ observableModel: e }) => {
             const t = {
                     ...e.primitives(['prestigeState']),
@@ -114,16 +113,16 @@ const [ge, ve] = p()(
                         'rewards',
                     ),
                 },
-                a = y.shallow(() => !x(t.rewards.get(), (e) => e.state !== pe.Achieved));
+                a = y.shallow(() => !x(t.rewards.get(), (e) => e.state !== fe.Achieved));
             return { ...t, computes: { allResearched: a } };
         },
         ({ externalModel: e }) => ({ openSelectedPreview: e.createCallback((e) => ({ level: e }), 'onPreview') }),
     ),
-    ye = new N(window),
-    xe = (e, t) => {
+    ve = new N(window),
+    ye = (e, t) => {
         const { name: a } = e,
             s = j(e, t);
-        if (!ye.has(s))
+        if (!ve.has(s))
             switch (a) {
                 case 'attachment':
                     return j({ name: a, icon: 'attachment' }, t);
@@ -132,7 +131,7 @@ const [ge, ve] = p()(
             }
         return s;
     };
-function Ne({ subtitle: e, rarity: t, ...s }) {
+function xe({ subtitle: e, rarity: t, ...s }) {
     const r = w.resolve('strings');
     return a.jsx('div', {
         ...s,
@@ -145,7 +144,7 @@ function Ne({ subtitle: e, rarity: t, ...s }) {
             : a.jsx(a.Fragment, { children: e }),
     });
 }
-const je = {
+const Ne = {
         root: 'Emblem_root_9b4d607c',
         base: 'Emblem_90452419',
         base__available: 'Emblem_base__available_9b4d607c',
@@ -153,16 +152,16 @@ const je = {
         base__progress: 'Emblem_base__progress_347071b5',
         level: 'Emblem_level_23acdd81',
     },
-    we = function ({ level: e, state: t }) {
+    je = function ({ level: e, state: t }) {
         const r = w.resolve('strings'),
             n = P({ body: r.readOrEmpty('veh_skill_tree.vanity.reward.level.tooltip') });
         return a.jsx('div', {
-            className: s(je.base, je[`base__${t}`]),
+            className: s(Ne.base, Ne[`base__${t}`]),
             ...n,
-            children: a.jsx('div', { className: je.level, children: e }),
+            children: a.jsx('div', { className: Ne.level, children: e }),
         });
     },
-    ke = {
+    we = {
         root: 'Award_root_1ed03553',
         base: 'Award_cc70f470',
         background: 'Award_background_db1f8ace',
@@ -180,22 +179,22 @@ const je = {
         achieved__show: 'Award_achieved__show_f4eff0f6',
         check: 'Award_check_13a829f3',
     },
-    Pe = r(function ({ name: e, icon: t, level: r, title: n, subtitle: o, state: i, hasPreview: c, rarity: l }) {
-        const { controls: d } = ve(),
+    ke = r(function ({ name: e, icon: t, level: r, title: n, subtitle: o, state: i, hasPreview: c, rarity: l }) {
+        const { controls: d } = ge(),
             _ = E(),
-            m = B(
+            u = B(
                 { size: $.S232x174, statTrackerSize: $.S180x135 },
                 {
                     medium: { size: $.S296x222, statTrackerSize: $.S232x174 },
                     large: { size: $.S400x300, statTrackerSize: $.S296x222 },
                 },
             ),
-            u = 'statTracker' === e ? m.statTrackerSize : m.size,
+            m = 'statTracker' === e ? u.statTrackerSize : u.size,
             h = { contentId: R.views.mono.vehicle_hub.tooltips.prestige_reward_tooltip('resId'), args: { level: r } };
         return a.jsxs('div', {
-            className: s(ke.base, ke[`base__${i}`]),
+            className: s(we.base, we[`base__${i}`]),
             children: [
-                i === pe.Progress &&
+                i === fe.Progress &&
                     a.jsx(D, {
                         path: 'skillTree.prestige.rays.small.rays',
                         width: 320,
@@ -204,24 +203,24 @@ const je = {
                             large: { width: 405, height: 600, path: 'skillTree.prestige.rays.big.rays' },
                             extraLarge: { width: 460, height: 682 },
                         },
-                        className: ke.background,
+                        className: we.background,
                     }),
-                a.jsx('div', { className: ke.emblem, children: a.jsx(we, { level: r, state: i }) }),
+                a.jsx('div', { className: we.emblem, children: a.jsx(je, { level: r, state: i }) }),
                 a.jsx('div', {
-                    className: ke.reward,
-                    children: a.jsx(T, {
-                        image: xe({ name: e, icon: t }, u),
+                    className: we.reward,
+                    children: a.jsx(I, {
+                        image: ye({ name: e, icon: t }, m),
                         name: t,
-                        size: u,
-                        classNames: { image: ke.image, overlay: ke.overlay },
+                        size: m,
+                        classNames: { image: we.image, overlay: we.overlay },
                         tooltipArgs: h,
                         special: 'attachment' === e ? l : void 0,
                     }),
                 }),
                 a.jsx('div', {
-                    className: s(ke.container, c && ke.container__show),
+                    className: s(we.container, c && we.container__show),
                     children: a.jsx('div', {
-                        className: ke.preview,
+                        className: we.preview,
                         onClick: () => {
                             return ((e = r), d.openSelectedPreview(e), void _.play('click', { target: 'select' }));
                             var e;
@@ -232,20 +231,20 @@ const je = {
                     }),
                 }),
                 a.jsxs('div', {
-                    className: ke.textContainer,
+                    className: we.textContainer,
                     children: [
-                        a.jsx('div', { className: ke.rewardName, children: n }),
-                        n && o && a.jsx(Ne, { className: ke.rewardType, subtitle: o, rarity: l }),
+                        a.jsx('div', { className: we.rewardName, children: n }),
+                        n && o && a.jsx(xe, { className: we.rewardType, subtitle: o, rarity: l }),
                     ],
                 }),
                 a.jsx('div', {
-                    className: s(ke.achieved, i === pe.Achieved && ke.achieved__show),
-                    children: a.jsx('div', { className: ke.check }),
+                    className: s(we.achieved, i === fe.Achieved && we.achieved__show),
+                    children: a.jsx('div', { className: we.check }),
                 }),
             ],
         });
     }),
-    Ee = {
+    Pe = {
         root: 'Progression_root_61efd8f5',
         wrapper: 'Progression_wrapper_a3b670b1',
         element: 'Progression_element_1dcdd841',
@@ -256,20 +255,20 @@ const je = {
         content__horizontal: 'Progression_content__horizontal_4ee67b69',
         horizontalBar: 'Progression_horizontalBar_c07ecaf4',
     },
-    Be = I('Wrapper', Ee.wrapper),
-    $e = I('Element', Ee.element),
-    De = 'both',
-    Re = 'left',
-    Te = 'right',
+    Ee = C('Wrapper', Pe.wrapper),
+    Be = C('Element', Pe.element),
+    Re = 'both',
+    $e = 'left',
+    De = 'right',
     Ie = 'none';
-function Me({ elements: e }) {
-    const { api: t } = A(),
+function Ce({ elements: e }) {
+    const { api: t } = M(),
         { animationScroll: r, applyScroll: i } = t,
-        c = C(t, O.horizontal),
+        c = T(t, O.horizontal),
         [l, d] = n.useState();
     n.useEffect(
         () =>
-            S(() => {
+            A(() => {
                 'idle' === c.type && r.scrollPosition.idle && i(r.scrollPosition.get());
             }),
         [r.scrollPosition, c, i],
@@ -279,12 +278,12 @@ function Me({ elements: e }) {
             s = t.getContainerSize() ?? 0,
             n = t.getWrapperSize() ?? 0,
             o = t.getBounds()[1];
-        d(n >= s ? Ie : a <= 30 ? Te : a >= o - 30 ? Re : De);
+        d(n >= s ? Ie : a <= 30 ? De : a >= o - 30 ? $e : Re);
     });
     return (
         o.useLayoutEffect(() => {
             function e() {
-                S(() => {
+                A(() => {
                     _();
                 });
             }
@@ -305,27 +304,27 @@ function Me({ elements: e }) {
             ),
             [t, _],
         ),
-        a.jsxs(Be, {
+        a.jsxs(Ee, {
             children: [
                 a.jsx(z, {
                     classNames: {
-                        wrapper: s(Ee.scrollWrapper, Ee[`scrollWrapper__${l}`]),
-                        content: s(Ee.content, Ee.content__horizontal),
+                        wrapper: s(Pe.scrollWrapper, Pe[`scrollWrapper__${l}`]),
+                        content: s(Pe.content, Pe.content__horizontal),
                     },
-                    children: v(e, (e, t) => a.jsx($e, { children: e }, t)),
+                    children: v(e, (e, t) => a.jsx(Be, { children: e }, t)),
                 }),
-                a.jsx(L, { classNames: { base: Ee.horizontalBar } }),
+                a.jsx(L, { classNames: { base: Pe.horizontalBar } }),
             ],
         })
     );
 }
-const Ae = r(function () {
-    const { model: e } = ve(),
+const Se = r(function () {
+    const { model: e } = ge(),
         t = e.rewards.get();
-    return a.jsx(M, { children: a.jsx(Me, { elements: t.map((e) => a.jsx(Pe, { ...e }, e.level)) }) });
+    return a.jsx(S, { children: a.jsx(Ce, { elements: t.map((e) => a.jsx(ke, { ...e }, e.level)) }) });
 });
-var Ce = ((e) => ((e.Available = 'available'), (e.Completed = 'completed'), (e.Disabled = 'disabled'), e))(Ce || {});
-const Se = {
+var Me = ((e) => ((e.Available = 'available'), (e.Completed = 'completed'), (e.Disabled = 'disabled'), e))(Me || {});
+const Te = {
         root: 'Vanity_root_267393fa',
         base: 'Vanity_289eaebe',
         background: 'Vanity_background_b38f23a6',
@@ -336,19 +335,19 @@ const Se = {
         emblem: 'Vanity_emblem_bbc7150',
         disabledEmblem: 'Vanity_disabledEmblem_a6f7bbca',
     },
-    Fe = r(function () {
-        const { model: e } = ve(),
+    Ae = r(function () {
+        const { model: e } = ge(),
             t = w.resolve('strings'),
             r = e.rewards.get().length > 0 && e.computes.allResearched(),
             n = e.prestigeEmblem.get(),
-            o = e.prestigeState.get() ? e.prestigeState.get() : Ce.Disabled,
+            o = e.prestigeState.get() ? e.prestigeState.get() : Me.Disabled,
             i = r
                 ? t.readOrEmpty('veh_skill_tree.vanity.completed.subtitle')
                 : t.readOrEmpty(`veh_skill_tree.vanity.${o}.subtitle`),
             c = P({ body: t.readOrEmpty(`veh_skill_tree.vanity.${o}.tooltip`) }),
             l = B({ size: H.sizes.sm }, { medium: { size: H.sizes.md } });
         return a.jsxs('div', {
-            className: s(Se.base, Se[`base__${o}`], r && Se.base__completed),
+            className: s(Te.base, Te[`base__${o}`], r && Te.base__completed),
             children: [
                 r &&
                     a.jsx(D, {
@@ -358,21 +357,21 @@ const Se = {
                         adaptive: {
                             medium: { width: 530, height: 140, path: 'skillTree.prestige.vanity_bg.big.vanity_bg' },
                         },
-                        className: Se.background,
+                        className: Te.background,
                     }),
                 a.jsxs('div', {
-                    className: Se.description,
+                    className: Te.description,
                     children: [
-                        a.jsx('div', { className: Se.title, children: t.readOrEmpty('veh_skill_tree.vanity.title') }),
-                        a.jsx('div', { className: Se.subtitle, children: i }),
+                        a.jsx('div', { className: Te.title, children: t.readOrEmpty('veh_skill_tree.vanity.title') }),
+                        a.jsx('div', { className: Te.subtitle, children: i }),
                     ],
                 }),
                 a.jsx('div', {
-                    className: Se.emblem,
+                    className: Te.emblem,
                     ...c,
                     children:
-                        o === Ce.Disabled
-                            ? a.jsx('div', { className: Se.disabledEmblem })
+                        o === Me.Disabled
+                            ? a.jsx('div', { className: Te.disabledEmblem })
                             : a.jsx(H, {
                                   level: n.level,
                                   grade: n.grade ?? 1,
@@ -383,7 +382,7 @@ const Se = {
             ],
         });
     });
-var ze = ((e) => (
+var Fe = ((e) => (
     (e.NOT_IN_INVENTORY = 'notInInventory'),
     (e.NOT_ENOUGH_EXP = 'notEnoughExp'),
     (e.IN_BATTLE = 'inBattle'),
@@ -391,17 +390,18 @@ var ze = ((e) => (
     (e.NEEDS_REPAIR = 'needsRepair'),
     (e.AVAILABLE = 'researchAvailable'),
     (e.EMERGENCY_MODE_ENABLED = 'emergencyModeEnabled'),
+    (e.RESEARCH_IN_PROGRESS = 'researchInProgress'),
     e
-))(ze || {});
-const Le = ['right', 'left'],
-    Oe = { right: 'x', left: 'x', bottom: 'y', top: 'y' },
-    He = { x: 'x', y: 'y' },
-    Ge = { right: 'left', left: 'right', top: 'bottom', bottom: 'top' };
-function Ve(e, t) {
+))(Fe || {});
+const ze = ['right', 'left'],
+    Le = { right: 'x', left: 'x', bottom: 'y', top: 'y' },
+    Oe = { x: 'x', y: 'y' },
+    He = { right: 'left', left: 'right', top: 'bottom', bottom: 'top' };
+function Ge(e, t) {
     var a;
     return `${e}To${(null == (a = t[0]) ? void 0 : a.toUpperCase()) + t.slice(1)}`;
 }
-function We(e, t) {
+function Ve(e, t) {
     const a = (function (e, t) {
             return e.map(([e, a]) => {
                 var s, r;
@@ -425,17 +425,17 @@ function We(e, t) {
                     return e;
                 }
                 const [a, s] = e;
-                return (a === he.Researched && s === he.Selected) || (a === he.Selected && s === he.Researched)
-                    ? he.Selected
-                    : he.Default;
+                return (a === me.Researched && s === me.Selected) || (a === me.Selected && s === me.Researched)
+                    ? me.Selected
+                    : me.Default;
             })(e),
         );
-    return s.includes(he.Researched) ? he.Researched : s.includes(he.Selected) ? he.Selected : he.Default;
+    return s.includes(me.Researched) ? me.Researched : s.includes(me.Selected) ? me.Selected : me.Default;
 }
-function qe(e, t, a = []) {
+function We(e, t, a = []) {
     return a.reduce((a, s) => (e.some((e) => e.targetNodeId === s.id) && a.push([t, s.id]), a), []);
 }
-function Qe(e, t) {
+function qe(e, t) {
     return e
         .filter((e) => t.includes(e.id))
         .sort((e, t) => e.x - t.x)
@@ -453,7 +453,7 @@ function Qe(e, t) {
 function Ue(e) {
     return e.reduce((e, t, a) => ({ ...e, [t]: a }), {});
 }
-function Xe(e, t) {
+function Qe(e, t) {
     const a = {};
     return (
         t.forEach((t) => {
@@ -471,7 +471,7 @@ function Xe(e, t) {
 function Ze() {
     return Math.round(1e3 * Math.random() + Date.now());
 }
-class Ye {
+class Xe {
     constructor(e, a) {
         (t(this, 'nodes'),
             t(this, 'ghostNodes'),
@@ -505,13 +505,13 @@ class Ye {
             const r = e.reduce(
                 (e, r) => (
                     this.validateNodeByAxis(r, a, s, t) &&
-                        e.push({ id: r.targetNodeId, lineType: Ve(Ge[r.endPoint], r.endPoint) }),
+                        e.push({ id: r.targetNodeId, lineType: Ge(He[r.endPoint], r.endPoint) }),
                     e
                 ),
                 [],
             );
             return t.length > 1 && s > 0
-                ? [...r, { id: t[s - 1].id, lineType: Ve(Ge[this.axisDirection], this.axisDirection) }]
+                ? [...r, { id: t[s - 1].id, lineType: Ge(He[this.axisDirection], this.axisDirection) }]
                 : r;
         });
     }
@@ -535,8 +535,8 @@ class Ye {
     getEffectedNodes(e, t, a, s) {
         return a.reduce(
             (r, n, o) => (
-                0 === o && s && r.push(...qe(a, n.targetNodeId, this.paths[n.position])),
-                n[e ? He.x : He.y] >= t && r.push(...qe(a, n.targetNodeId, this.paths[n.position])),
+                0 === o && s && r.push(...We(a, n.targetNodeId, this.paths[n.position])),
+                n[e ? Oe.x : Oe.y] >= t && r.push(...We(a, n.targetNodeId, this.paths[n.position])),
                 r
             ),
             [],
@@ -544,13 +544,13 @@ class Ye {
     }
     createNodes(e, t) {
         const a = [t, ...e],
-            s = Le.includes(this.axisDirection),
-            r = s ? He.x : He.y,
+            s = ze.includes(this.axisDirection),
+            r = s ? Oe.x : Oe.y,
             n = s ? t.y : t.x,
             o = (function (e, t, a) {
-                const s = t === He.x ? He.y : He.x;
+                const s = t === Oe.x ? Oe.y : Oe.x;
                 return e.reduce((e, r) => (r[s] !== a && e.push(r[t]), e), []);
-            })(e, He[r], n),
+            })(e, Oe[r], n),
             i = [...new Set(o)].map((e, t) => {
                 const o = 0 === t,
                     i = {
@@ -558,7 +558,7 @@ class Ye {
                         x: 0,
                         y: 0,
                         isHintRequired: !1,
-                        status: he.Default,
+                        status: me.Default,
                         iconName: '',
                         price: 0,
                         type: ue.Ghost,
@@ -567,7 +567,7 @@ class Ye {
                         effectedNodes: this.getEffectedNodes(s, e, a, o),
                         vehicleName: '',
                     };
-                return ((i[r] = e), (i[s ? He.y : He.x] = n), i);
+                return ((i[r] = e), (i[s ? Oe.y : Oe.x] = n), i);
             });
         (this.ghostNodes.push(...i), this.createPaths(a, i));
     }
@@ -598,12 +598,12 @@ class Ye {
     validateNodeByAxis(e, t, a, s) {
         const r = s.length;
         if (1 === r) return !0;
-        const n = Oe[this.axisDirection];
+        const n = Le[this.axisDirection];
         return a > 0 && a < r - 1 ? t[n] === e[n] : a === r - 1 ? e[n] >= t[n] : t[n] >= e[n];
     }
 }
-const Je = [ze.IN_BATTLE, ze.IN_FORMATION, ze.NEEDS_REPAIR],
-    [Ke, et] = p()(
+const Ye = [Fe.IN_BATTLE, Fe.IN_FORMATION, Fe.NEEDS_REPAIR],
+    [Je, Ke] = p()(
         ({ observableModel: e, cleanup: t }) => {
             const a = {
                     ...e.primitives(['rootNodeId', 'rootNodeUiId', 'lockedTree', 'researchAvailability']),
@@ -614,7 +614,7 @@ const Je = [ze.IN_BATTLE, ze.IN_FORMATION, ze.NEEDS_REPAIR],
                                 return G(
                                     e,
                                     (e, { type: t, status: a, id: s }) => (
-                                        t === ue.Final && ((e.id = s), (e.researched = a === he.Researched)),
+                                        t === ue.Final && ((e.id = s), (e.researched = a === me.Researched)),
                                         e
                                     ),
                                     {},
@@ -632,23 +632,23 @@ const Je = [ze.IN_BATTLE, ze.IN_FORMATION, ze.NEEDS_REPAIR],
                 r = y.shallow(() => (0 === s.newNodes.get().length ? s.currentNodes.get() : n())),
                 n = y.shallow(() => {
                     const e = s.currentNodes.get(),
-                        t = s.newNodes.get().map(({ effectedNodes: t, ...a }) => ({ ...a, status: We(t, e) }));
+                        t = s.newNodes.get().map(({ effectedNodes: t, ...a }) => ({ ...a, status: Ve(t, e) }));
                     return [...s.currentNodes.get(), ...t];
                 }),
                 o = y.shallow(() => s.transformedPaths.get().map((e) => e.map((e) => ({ ...e })))),
                 _ = y.shallow(() => ({
                     researched: G(
                         s.currentNodes.get(),
-                        (e, t) => (t.status === he.Researched && t.type !== ue.Final && e++, e),
+                        (e, t) => (t.status === me.Researched && t.type !== ue.Final && e++, e),
                         0,
                     ),
                     total: s.currentNodes.get().length - 1,
                 })),
-                m = y.primitive((e) => {
+                u = y.primitive((e) => {
                     const t = a.researchedPerks.get();
                     return t.includes(e) ? t.length : 0;
                 }),
-                u = c((e, t) => {
+                m = c((e, t) => {
                     (s.newNodes.set(e), s.transformedPaths.set(t));
                 });
             t(
@@ -656,11 +656,11 @@ const Je = [ze.IN_BATTLE, ze.IN_FORMATION, ze.NEEDS_REPAIR],
                     () => s.paths.get(),
                     () => {
                         const e = s.paths.get(),
-                            t = new Ye(s.currentNodes.get(), e);
+                            t = new Xe(s.currentNodes.get(), e);
                         (e.forEach((e, a) => {
                             t.updateTree(t.findMatches(e), a);
                         }),
-                            u(t.newNodes, t.updatedPaths));
+                            m(t.newNodes, t.updatedPaths));
                     },
                     { equals: d.structural, fireImmediately: !0 },
                 ),
@@ -670,10 +670,10 @@ const Je = [ze.IN_BATTLE, ze.IN_FORMATION, ze.NEEDS_REPAIR],
                         r = s.currentNodes.get(),
                         n = a.finalPerk.get().id;
                     return e.includes(n)
-                        ? { finalPerkId: n, animationQueue: Xe(Qe(r, e), t) }
-                        : { finalPerkId: n, animationQueue: Xe(Ue(e), t) };
+                        ? { finalPerkId: n, animationQueue: Qe(qe(r, e), t) }
+                        : { finalPerkId: n, animationQueue: Qe(Ue(e), t) };
                 }),
-                b = y.primitive(() => Je.includes(a.researchAvailability.get()));
+                b = y.primitive(() => Ye.includes(a.researchAvailability.get()));
             return {
                 ...a,
                 computes: {
@@ -681,7 +681,7 @@ const Je = [ze.IN_BATTLE, ze.IN_FORMATION, ze.NEEDS_REPAIR],
                     nodes: r,
                     paths: o,
                     animationQueueInfo: h,
-                    amountResearchedPerks: m,
+                    amountResearchedPerks: u,
                     lockedVehicle: b,
                 },
             };
@@ -692,49 +692,49 @@ const Je = [ze.IN_BATTLE, ze.IN_FORMATION, ze.NEEDS_REPAIR],
             finalNodeResearchAnimationFinished: e.createCallbackNoArgs('onFinalNodeResearchAnimationFinished'),
         }),
     ),
-    tt = 'EntryPointLine_f5426a98',
-    at = 'EntryPointLine_lock_e27404c6',
-    st = 'EntryPointLine_base__locked_d883e9db',
-    rt = r(function () {
-        const { model: e } = et();
+    et = 'EntryPointLine_f5426a98',
+    tt = 'EntryPointLine_lock_e27404c6',
+    at = 'EntryPointLine_base__locked_d883e9db',
+    st = r(function () {
+        const { model: e } = Ke();
         return a.jsx('div', {
-            className: s(tt, !e.finalPerk.get().researched && st),
-            children: a.jsx('div', { className: at }),
+            className: s(et, !e.finalPerk.get().researched && at),
+            children: a.jsx('div', { className: tt }),
         });
     }),
-    nt = {
+    rt = {
         small: { width: 866, height: 480, cell: 7 },
         medium: { width: 975, height: 540, cell: 7.5 },
         large: { width: 1300, height: 720, cell: 10 },
         extraLarge: { width: 1733, height: 960, cell: 12 },
     },
-    ot = {
-        [Q.extraSmall]: { cell: nt.small.cell, container: nt.small },
-        [Q.small]: { cell: nt.small.cell, container: nt.small },
-        [Q.medium]: { cell: nt.medium.cell, container: nt.medium },
-        [Q.large]: { cell: nt.large.cell, container: nt.large },
-        [Q.extraLarge]: { cell: nt.extraLarge.cell, container: nt.extraLarge },
+    nt = {
+        [U.extraSmall]: { cell: rt.small.cell, container: rt.small },
+        [U.small]: { cell: rt.small.cell, container: rt.small },
+        [U.medium]: { cell: rt.medium.cell, container: rt.medium },
+        [U.large]: { cell: rt.large.cell, container: rt.large },
+        [U.extraLarge]: { cell: rt.extraLarge.cell, container: rt.extraLarge },
     },
-    it = {
+    ot = {
         root: 'ResearchedAnimation_root_6660d527',
         video: 'ResearchedAnimation_video_a2258a9e',
         video__major: 'ResearchedAnimation_video__major_6660d527',
         video__final: 'ResearchedAnimation_video__final_d43c2114',
     },
-    ct = w.resolve('videos');
-function lt(e) {
+    it = w.resolve('videos');
+function ct(e) {
     return e.charAt(0).toUpperCase() + e.slice(1);
 }
-const dt = r(function ({ type: e, runAnimation: t, id: r }) {
-        const { model: i, controls: c } = et(),
+const lt = r(function ({ type: e, runAnimation: t, id: r }) {
+        const { model: i, controls: c } = Ke(),
             l = o.useRef(null),
             d = o.useRef({ soundTarget: '', src: '' }),
-            [m, u] = n.useState(!1),
+            [u, m] = n.useState(!1),
             h = E(),
             b = n.useCallback(
                 (e) => {
                     e.currentTime >= e.duration - 1.3 &&
-                        u((e) => (!1 === e && c.finalNodeResearchAnimationFinished(), !0));
+                        m((e) => (!1 === e && c.finalNodeResearchAnimationFinished(), !0));
                 },
                 [c],
             );
@@ -748,17 +748,17 @@ const dt = r(function ({ type: e, runAnimation: t, id: r }) {
                                 if (e === ue.Final)
                                     return {
                                         soundTarget: 'researchFinalPerk',
-                                        src: ct.readOrEmpty('skillTree.perks.final.standard'),
+                                        src: it.readOrEmpty('skillTree.perks.final.standard'),
                                     };
                                 const a = 1 === t ? 'single' : 'chain';
                                 return e === ue.Major
                                     ? {
-                                          soundTarget: `research${lt(a)}LargePerk`,
-                                          src: ct.readOrEmpty(`skillTree.perks.${e}.${a}`),
+                                          soundTarget: `research${ct(a)}LargePerk`,
+                                          src: it.readOrEmpty(`skillTree.perks.${e}.${a}`),
                                       }
                                     : {
-                                          soundTarget: `research${lt(a)}SmallPerk`,
-                                          src: ct.readOrEmpty(`skillTree.perks.${e}.${a}`),
+                                          soundTarget: `research${ct(a)}SmallPerk`,
+                                          src: it.readOrEmpty(`skillTree.perks.${e}.${a}`),
                                       };
                             })(e, t));
                     }),
@@ -778,10 +778,10 @@ const dt = r(function ({ type: e, runAnimation: t, id: r }) {
                         }
                     );
             }, [t, h, e, b]),
-            t ? a.jsx(U, { src: d.current.src, className: s(it.video, it[`video__${e}`]), ref: l }) : null
+            t ? a.jsx(Q, { src: d.current.src, className: s(ot.video, ot[`video__${e}`]), ref: l }) : null
         );
     }),
-    _t = {
+    dt = {
         root: 'BasicBorder_root_7913b3f5',
         base: 'BasicBorder_f5a1f779',
         base__selected: 'BasicBorder_base__selected_7913b3f5',
@@ -793,7 +793,7 @@ const dt = r(function ({ type: e, runAnimation: t, id: r }) {
         selectedBg: 'BasicBorder_selectedBg_5f6a826',
         rotateBackForth: 'BasicBorder_rotateBackForth_7913b3f5',
     },
-    mt = {
+    _t = {
         root: 'MajorBorder_root_1957f8b',
         base: 'MajorBorder_ee641b96',
         base__selected: 'MajorBorder_base__selected_1957f8b',
@@ -804,8 +804,8 @@ const dt = r(function ({ type: e, runAnimation: t, id: r }) {
         selectedBg: 'MajorBorder_selectedBg_5d7cc9ad',
         researchedBg: 'MajorBorder_researchedBg_db572fb9',
     },
-    ut = { common: _t, special: _t, ghost: _t, major: mt, final: mt };
-function ht(e) {
+    ut = { common: dt, special: dt, ghost: dt, major: _t, final: _t };
+function mt(e) {
     const t = ut[e.type];
     return a.jsxs('div', {
         className: s(
@@ -819,7 +819,7 @@ function ht(e) {
         children: [a.jsx('div', { className: t.researchedBg }), a.jsx('div', { className: t.selectedBg })],
     });
 }
-const bt = {
+const ht = {
     root: 'Icon_root_55a8ab20',
     base: 'Icon_1ff370a4',
     icon: 'Icon_4a7e2c0e',
@@ -829,24 +829,24 @@ const bt = {
     glow: 'Icon_glow_5d4d69c5',
     base__default: 'Icon_base__default_55a8ab20',
 };
-function ft({ status: e, iconName: t, className: r, type: n, transitionDelay: o, classNames: i }) {
+function bt({ status: e, iconName: t, className: r, type: n, transitionDelay: o, classNames: i }) {
     const { folderSize: c } = B(
         { folderSize: 'small' },
         { large: { folderSize: 'large' }, extraLarge: { folderSize: 'large' } },
     );
     return a.jsxs('div', {
-        className: s(bt.base, bt[`base__${e}`], r),
+        className: s(ht.base, ht[`base__${e}`], r),
         style: { '--transitionDelay': `${o}ms` },
         children: [
-            a.jsx('div', { className: bt.glow }),
+            a.jsx('div', { className: ht.glow }),
             a.jsx('div', {
-                className: s(bt.icon, bt[`icon__${n}`], null == i ? void 0 : i.icon),
+                className: s(ht.icon, ht[`icon__${n}`], null == i ? void 0 : i.icon),
                 style: { backgroundImage: `url(R.images.gui.maps.icons.skillTree.tree.perks.${n}.skills.${c}.${t})` },
             }),
         ],
     });
 }
-const pt = {
+const ft = {
     root: 'Price_root_29f8d762',
     base: 'Price_e2a305d1',
     base__researched: 'Price_base__researched_16917da8',
@@ -855,21 +855,21 @@ const pt = {
     base__default: 'Price_base__default_29f8d762',
     icon: 'Price_icon_aed4fc8a',
 };
-function gt({ value: e, status: t, transitionDelay: r, className: n }) {
+function pt({ value: e, status: t, transitionDelay: r, className: n }) {
     const o = w.resolve('intl');
     return a.jsx('div', {
-        className: s(pt.base, pt[`base__${t}`], n),
+        className: s(ft.base, ft[`base__${t}`], n),
         style: { '--transitionDelay': `${r}ms` },
-        children: a.jsx(X, {
-            type: X.types.tankXP,
-            size: X.sizes.extraSmall,
+        children: a.jsx(Z, {
+            type: Z.types.tankXP,
+            size: Z.sizes.extraSmall,
             reverse: !0,
-            classNames: { icon: pt.icon },
-            children: a.jsx('div', { className: pt.value, children: o.formatNumber('integral', e) }),
+            classNames: { icon: ft.icon },
+            children: a.jsx('div', { className: ft.value, children: o.formatNumber('integral', e) }),
         }),
     });
 }
-const vt = {
+const gt = {
     root: 'Segments_root_634cda13',
     base: 'Segments_17549bc6',
     base__major: 'Segments_base__major_bd931c2c',
@@ -885,28 +885,28 @@ const vt = {
     base__notDelay: 'Segments_base__notDelay_634cda13',
     base__withDelay: 'Segments_base__withDelay_634cda13',
 };
-function yt({ status: e, className: t, classNames: r, type: n, transitionDelay: o }) {
+function vt({ status: e, className: t, classNames: r, type: n, transitionDelay: o }) {
     return a.jsxs('div', {
         className: s(
-            vt.base,
-            vt[`base__${e}`],
-            vt[`base__${n}`],
-            vt['base__' + (0 === o ? 'notDelay' : 'withDelay')],
+            gt.base,
+            gt[`base__${e}`],
+            gt[`base__${n}`],
+            gt['base__' + (0 === o ? 'notDelay' : 'withDelay')],
             t,
         ),
         style: { '--transitionDelay': `${o}ms` },
         children: [
-            a.jsx('div', { className: s(vt.circle, null == r ? void 0 : r.circle) }),
-            a.jsx('div', { className: vt.segmentTop }),
-            a.jsx('div', { className: vt.segmentRight }),
-            a.jsx('div', { className: vt.segmentBottom }),
-            a.jsx('div', { className: vt.segmentLeft }),
+            a.jsx('div', { className: s(gt.circle, null == r ? void 0 : r.circle) }),
+            a.jsx('div', { className: gt.segmentTop }),
+            a.jsx('div', { className: gt.segmentRight }),
+            a.jsx('div', { className: gt.segmentBottom }),
+            a.jsx('div', { className: gt.segmentLeft }),
         ],
     });
 }
-const xt = { base: 'Glare_a09df11', glare: 'Glare_ed61dd83' },
-    Nt = w.resolve('images');
-function jt({
+const yt = { base: 'Glare_a09df11', glare: 'Glare_ed61dd83' },
+    xt = w.resolve('images');
+function Nt({
     startCoords: e = -55,
     endCoords: t = 65,
     rotation: r = -45,
@@ -915,75 +915,75 @@ function jt({
     pointAnimation: i,
     startAnimation: c,
 }) {
-    const [l] = m(
+    const [l] = u(
         () => ({
             from: c ?? { x: `${e}rem`, y: `${e}rem`, rotateZ: `${r}deg`, opacity: 0 },
             to: i ?? { x: `${t}rem`, y: `${t}rem`, rotateZ: `${r}deg`, opacity: 1 },
             delay: 1500,
             loop: !0,
-            config: { duration: 1500, easing: Z.easeInQuint },
+            config: { duration: 1500, easing: X.easeInQuint },
         }),
         [],
     );
     return a.jsx('div', {
-        className: xt.base,
-        style: { maskImage: `url(${Nt.readOrEmpty(n)})` },
-        children: a.jsx(u.div, { className: s(xt.glare, o), style: l }),
+        className: yt.base,
+        style: { maskImage: `url(${xt.readOrEmpty(n)})` },
+        children: a.jsx(m.div, { className: s(yt.glare, o), style: l }),
     });
 }
-const wt = 'Glare_95e181ec',
-    kt = 'Glare_1be1be9',
-    Pt = { x: '-55rem', y: '-55rem', rotateZ: '-45deg', opacity: 0 },
-    Et = [
-        { ...Pt, opacity: 1 },
+const jt = 'Glare_95e181ec',
+    wt = 'Glare_1be1be9',
+    kt = { x: '-55rem', y: '-55rem', rotateZ: '-45deg', opacity: 0 },
+    Pt = [
+        { ...kt, opacity: 1 },
         { opacity: 1, x: '45rem', y: '45rem', rotateZ: '-45deg' },
     ];
-const Bt = 'Points_ebbc956c',
-    $t = 'Points_arrowContainer_2bd78abc',
-    Dt = 'Points_arrow_cd1850ae',
-    Rt = 'Points_arrow__top_2e330546',
-    Tt = 'Points_arrow__right_fa74c47',
+const Et = 'Points_ebbc956c',
+    Bt = 'Points_arrowContainer_2bd78abc',
+    Rt = 'Points_arrow_cd1850ae',
+    $t = 'Points_arrow__top_2e330546',
+    Dt = 'Points_arrow__right_fa74c47',
     It = 'Points_arrow__bottom_1b669f6e',
-    Mt = 'Points_arrow__left_1453abe0',
-    At = 'Points_outsideGlow_8ec52358',
-    Ct = 'Points_insideGlow_ec6f3f05',
-    St = 'Wrapper_3f1ea42a',
-    Ft = u(({ style: e }) =>
-        a.jsxs(u.div, {
-            className: Bt,
+    Ct = 'Points_arrow__left_1453abe0',
+    St = 'Points_outsideGlow_8ec52358',
+    Mt = 'Points_insideGlow_ec6f3f05',
+    Tt = 'Wrapper_3f1ea42a',
+    At = m(({ style: e }) =>
+        a.jsxs(m.div, {
+            className: Et,
             style: e,
             children: [
-                a.jsx('div', { className: At }),
+                a.jsx('div', { className: St }),
                 a.jsxs('div', {
-                    className: $t,
+                    className: Bt,
                     children: [
-                        a.jsx('div', { className: s(Dt, Rt) }),
-                        a.jsx('div', { className: s(Dt, Tt) }),
-                        a.jsx('div', { className: s(Dt, It) }),
-                        a.jsx('div', { className: s(Dt, Mt) }),
+                        a.jsx('div', { className: s(Rt, $t) }),
+                        a.jsx('div', { className: s(Rt, Dt) }),
+                        a.jsx('div', { className: s(Rt, It) }),
+                        a.jsx('div', { className: s(Rt, Ct) }),
                     ],
                 }),
-                a.jsx('div', { className: Ct }),
+                a.jsx('div', { className: Mt }),
             ],
         }),
     ),
-    zt = u(function ({ style: e }) {
+    Ft = m(function ({ style: e }) {
         const t = B({ value: 'small' }, { large: { value: 'large' } });
-        return a.jsx(u.div, {
-            className: wt,
+        return a.jsx(m.div, {
+            className: jt,
             style: e,
-            children: a.jsx(jt, {
+            children: a.jsx(Nt, {
                 maskPath: `skillTree.tree.perks.special.skills.${t.value}.mask`,
-                classNames: kt,
-                pointAnimation: Et,
-                startAnimation: Pt,
+                classNames: wt,
+                pointAnimation: Pt,
+                startAnimation: kt,
             }),
         });
     });
-function Lt({ children: e, showHint: t, type: s }) {
+function zt({ children: e, showHint: t, type: s }) {
     const r = h(t, { from: { opacity: 0 }, enter: { opacity: 1 }, leave: { opacity: 0 }, config: { duration: 0 } });
     return a.jsxs('div', {
-        className: St,
+        className: Tt,
         children: [
             r(
                 (e, t) =>
@@ -991,9 +991,9 @@ function Lt({ children: e, showHint: t, type: s }) {
                     (() => {
                         switch (s) {
                             case ue.Common:
-                                return a.jsx(Ft, { style: e });
+                                return a.jsx(At, { style: e });
                             case ue.Special:
-                                return a.jsx(zt, { style: e });
+                                return a.jsx(Ft, { style: e });
                             default:
                                 console.error(`There is no hint for type ${s}`);
                         }
@@ -1003,7 +1003,7 @@ function Lt({ children: e, showHint: t, type: s }) {
         ],
     });
 }
-const Ot = {
+const Lt = {
         root: 'Basic_root_9a292541',
         price: 'Basic_price_8863ae4e',
         price__root: 'Basic_price__root_4ebcb0aa',
@@ -1028,7 +1028,7 @@ const Ot = {
         gearContainer: 'Basic_gearContainer_e8e416fa',
         gearIcon: 'Basic_gearIcon_88a263ef',
     },
-    Ht = o.forwardRef(function (e, t) {
+    Ot = o.forwardRef(function (e, t) {
         const r = Y({ contentId: R.views.mono.vehicle_hub.tooltips.perk_tooltip('resId'), args: { nodeID: e.id } });
         const n = o.useRef(null),
             i = o.useRef(null);
@@ -1066,11 +1066,11 @@ const Ot = {
             a.jsxs('div', {
                 ...r,
                 className: s(
-                    Ot.base,
-                    Ot[`base__${e.type}`],
-                    Ot[`base__${e.status}`],
-                    Ot[`base__${e.state}`],
-                    e.enableHover && Ot.base__enableHover,
+                    Lt.base,
+                    Lt[`base__${e.type}`],
+                    Lt[`base__${e.status}`],
+                    Lt[`base__${e.state}`],
+                    e.enableHover && Lt.base__enableHover,
                 ),
                 onClick: function () {
                     (r.onClick(), e.onClick());
@@ -1081,78 +1081,78 @@ const Ot = {
                 ref: n,
                 style: { '--x': `${e.x}rem`, '--y': `${e.y}rem`, '--transitionDelay': `${e.transitionDelay}ms` },
                 children: [
-                    a.jsx(Lt, {
+                    a.jsx(zt, {
                         showHint: e.showHint,
                         type: e.type,
                         children: (t) =>
                             a.jsxs('div', {
-                                className: Ot.container,
+                                className: Lt.container,
                                 children: [
-                                    a.jsx('div', { className: Ot.mainLayer }),
-                                    a.jsx(yt, {
+                                    a.jsx('div', { className: Lt.mainLayer }),
+                                    a.jsx(vt, {
                                         type: e.type,
                                         status: e.status,
-                                        classNames: { circle: Ot.circle },
+                                        classNames: { circle: Lt.circle },
                                         transitionDelay: e.transitionDelay,
                                     }),
-                                    a.jsx(ht, {
+                                    a.jsx(mt, {
                                         type: e.type,
                                         status: e.status,
-                                        className: Ot.border,
+                                        className: Lt.border,
                                         transitionDelay: e.transitionDelay,
                                         showHintAnimation: t,
                                     }),
-                                    a.jsx('div', { className: Ot.texture }),
-                                    a.jsx(ft, {
+                                    a.jsx('div', { className: Lt.texture }),
+                                    a.jsx(bt, {
                                         iconName: e.iconName,
                                         status: e.status,
-                                        className: Ot.iconBase,
+                                        className: Lt.iconBase,
                                         type: e.type,
-                                        classNames: { icon: Ot.icon },
+                                        classNames: { icon: Lt.icon },
                                         transitionDelay: e.transitionDelay,
                                     }),
                                 ],
                             }),
                     }),
-                    e.root && a.jsx('div', { className: Ot.blurCircle }),
-                    a.jsx('div', { className: Ot.glow }),
+                    e.root && a.jsx('div', { className: Lt.blurCircle }),
+                    a.jsx('div', { className: Lt.glow }),
                     e.showGear &&
                         a.jsx('div', {
-                            className: Ot.gearContainer,
+                            className: Lt.gearContainer,
                             ref: i,
-                            children: a.jsx('div', { className: Ot.gearIcon }),
+                            children: a.jsx('div', { className: Lt.gearIcon }),
                         }),
-                    a.jsx(gt, {
+                    a.jsx(pt, {
                         value: e.price,
-                        className: s(Ot.price, e.root && Ot.price__root),
+                        className: s(Lt.price, e.root && Lt.price__root),
                         status: e.status,
                         transitionDelay: e.transitionDelay,
                     }),
-                    a.jsx(dt, { type: e.type, runAnimation: e.status === ea.AnimateResearched, id: e.id }),
+                    a.jsx(lt, { type: e.type, runAnimation: e.status === Kt.AnimateResearched, id: e.id }),
                 ],
             })
         );
     }),
-    Gt = {
+    Ht = {
         root: 'Ghost_root_eea20f5',
         base: 'Ghost_3e19eb13',
         base__selected: 'Ghost_base__selected_f90be090',
         base__researched: 'Ghost_base__researched_eea20f5',
         base__animateResearched: 'Ghost_base__animateResearched_a7c4bb12',
     },
-    Vt = n.forwardRef(function ({ x: e, y: t, status: r }, n) {
+    Gt = n.forwardRef(function ({ x: e, y: t, status: r }, n) {
         return a.jsx('div', {
-            className: s(Gt.base, Gt[`base__${r}`]),
+            className: s(Ht.base, Ht[`base__${r}`]),
             style: { '--x': `${e}rem`, '--y': `${t}rem` },
             ref: n,
         });
     }),
-    Wt = { singe: 2500, chain: 220 };
-function qt(e, t) {
+    Vt = { singe: 2500, chain: 220 };
+function Wt(e, t) {
     const a = e - t;
-    return 1 === a ? Wt.singe : a * Wt.chain;
+    return 1 === a ? Vt.singe : a * Vt.chain;
 }
-const Qt = {
+const qt = {
         root: 'FinalPerkDecoration_root_260dff85',
         base: 'FinalPerkDecoration_543199b0',
         container: 'FinalPerkDecoration_container_9f71bdf0',
@@ -1173,18 +1173,18 @@ const Qt = {
         pulseBorder: 'FinalPerkDecoration_pulseBorder_260dff85',
     },
     Ut = w.resolve('images'),
-    Xt = w.resolve('strings'),
+    Qt = w.resolve('strings'),
     Zt = r(function ({ children: e, showFinalDecoration: t, status: r, transitionDelay: n, classNames: i }) {
-        const { model: c } = et(),
+        const { model: c } = Ke(),
             { researched: l, total: d } = c.computes.perksInfo(),
             _ = (function ({ researched: e, total: t }) {
                 const a = J(),
                     s = K(e) ?? 0,
-                    [{ number: r }] = m(
+                    [{ number: r }] = u(
                         () => ({
                             number: e,
                             from: { number: 0 },
-                            config: { duration: qt(e, s), ...b.molasses },
+                            config: { duration: Wt(e, s), ...b.molasses },
                             immediate: a || e === t,
                         }),
                         [e, t],
@@ -1194,37 +1194,37 @@ const Qt = {
             { researched: h } = c.finalPerk.get();
         return t
             ? a.jsxs('div', {
-                  className: s(Qt.base, Qt[`base__${r}`]),
+                  className: s(qt.base, qt[`base__${r}`]),
                   style: { '--transitionDelay': `${n}ms` },
                   children: [
                       e,
                       a.jsxs('div', {
-                          className: Qt.container,
+                          className: qt.container,
                           children: [
-                              a.jsx('div', { className: Qt.border }),
+                              a.jsx('div', { className: qt.border }),
                               a.jsx('div', {
-                                  className: Qt.starContainer,
-                                  children: a.jsx('div', { className: Qt.star }),
+                                  className: qt.starContainer,
+                                  children: a.jsx('div', { className: qt.star }),
                               }),
-                              a.jsx('div', { className: s(Qt.glow, null == i ? void 0 : i.glow) }),
+                              a.jsx('div', { className: s(qt.glow, null == i ? void 0 : i.glow) }),
                           ],
                       }),
                       a.jsxs('div', {
-                          className: s(Qt.counterContainer, l === d && Qt.counterContainer__hide),
+                          className: s(qt.counterContainer, l === d && qt.counterContainer__hide),
                           children: [
-                              a.jsx('div', { className: Qt.counterIcon }),
+                              a.jsx('div', { className: qt.counterIcon }),
                               a.jsxs('div', {
-                                  className: Qt.values,
+                                  className: qt.values,
                                   children: [
-                                      a.jsx(u.div, { children: _.to((e) => e.toFixed(0)) }),
-                                      Xt.readOrEmpty('common.common.slash'),
+                                      a.jsx(m.div, { children: _.to((e) => e.toFixed(0)) }),
+                                      Qt.readOrEmpty('common.common.slash'),
                                       d,
                                   ],
                               }),
                           ],
                       }),
                       a.jsx('div', {
-                          className: Qt.draftTexture,
+                          className: qt.draftTexture,
                           style: {
                               backgroundImage: `url(${Ut.readOrEmpty('skillTree.tree.' + (h ? 'draftTextureResearched' : 'draftTexture'))})`,
                           },
@@ -1233,7 +1233,7 @@ const Qt = {
               })
             : e;
     }),
-    Yt = {
+    Xt = {
         root: 'Major_root_8ac3c20b',
         price: 'Major_price_c470556f',
         base__final: 'Major_base__final_b1dddd71',
@@ -1254,11 +1254,11 @@ const Qt = {
         texture: 'Major_texture_5f54f0c9',
         glow: 'Major_glow_22ebe17b',
     },
-    Jt = o.forwardRef(function (e, t) {
+    Yt = o.forwardRef(function (e, t) {
         const r = Y({ contentId: R.views.mono.vehicle_hub.tooltips.perk_tooltip('resId'), args: { nodeID: e.id } });
         return a.jsx('div', {
             ...r,
-            className: s(Yt.base, Yt[`base__${e.type}`], Yt[`base__${e.status}`], e.lockedTree && Yt.base__lockedTree),
+            className: s(Xt.base, Xt[`base__${e.type}`], Xt[`base__${e.status}`], e.lockedTree && Xt.base__lockedTree),
             onClick: function () {
                 (r.onClick(), e.onClick());
             },
@@ -1268,69 +1268,69 @@ const Qt = {
             ref: t,
             style: { '--x': `${e.x}rem`, '--y': `${e.y}rem`, '--transitionDelay': `${e.transitionDelay}ms` },
             children: a.jsx('div', {
-                className: Yt.container,
+                className: Xt.container,
                 children: a.jsxs(Zt, {
                     status: e.status,
                     showFinalDecoration: e.showFinalDecoration,
-                    classNames: { glow: Yt.finalGlow },
+                    classNames: { glow: Xt.finalGlow },
                     transitionDelay: e.transitionDelay,
                     children: [
-                        a.jsx('div', { className: Yt.mainLayer }),
-                        a.jsx(yt, {
+                        a.jsx('div', { className: Xt.mainLayer }),
+                        a.jsx(vt, {
                             type: e.type,
                             status: e.status,
-                            classNames: { circle: Yt.circle },
+                            classNames: { circle: Xt.circle },
                             transitionDelay: e.transitionDelay,
                         }),
-                        a.jsx(ht, {
+                        a.jsx(mt, {
                             type: e.type,
                             status: e.status,
-                            className: Yt.border,
+                            className: Xt.border,
                             transitionDelay: e.transitionDelay,
                         }),
-                        a.jsx('div', { className: Yt.texture }),
-                        a.jsx(ft, {
+                        a.jsx('div', { className: Xt.texture }),
+                        a.jsx(bt, {
                             iconName: e.iconName,
                             status: e.status,
-                            className: Yt.iconBase,
+                            className: Xt.iconBase,
                             type: e.type,
-                            classNames: { icon: Yt.icon },
+                            classNames: { icon: Xt.icon },
                             transitionDelay: e.transitionDelay,
                         }),
-                        a.jsx(gt, {
+                        a.jsx(pt, {
                             value: e.price,
-                            className: Yt.price,
+                            className: Xt.price,
                             status: e.status,
                             transitionDelay: e.transitionDelay,
                         }),
-                        !e.showFinalDecoration && a.jsx('div', { className: Yt.glow }),
-                        a.jsx(dt, { type: e.type, runAnimation: e.status === ea.AnimateResearched, id: e.id }),
+                        !e.showFinalDecoration && a.jsx('div', { className: Xt.glow }),
+                        a.jsx(lt, { type: e.type, runAnimation: e.status === Kt.AnimateResearched, id: e.id }),
                     ],
                 }),
             }),
         });
     });
-function Kt(e, t, a, s) {
+function Jt(e, t, a, s) {
     return e
         ? { enableHover: !0, showHint: !1, state: 'lockedTree' }
         : t
           ? { enableHover: !a, showHint: s && a, state: 'lockedVehicle' }
           : { enableHover: !a, showHint: a, state: 'none' };
 }
-const ea = { ...he, AnimateResearched: 'animateResearched' },
-    ta = r(function (e) {
-        const { controls: t, model: s } = et(),
+const Kt = { ...me, AnimateResearched: 'animateResearched' },
+    ea = r(function (e) {
+        const { controls: t, model: s } = Ke(),
             r = s.lockedTree.get(),
             n = s.computes.lockedVehicle(),
-            { status: i, transitionDelay: c } = ra(
+            { status: i, transitionDelay: c } = sa(
                 e.status,
                 o.useMemo(() => [e.id], [e.id]),
                 e.vehicleName,
             ),
             l = ee(),
             d = E(),
-            _ = ot[l.breakpoint.name].cell;
-        const m = {
+            _ = nt[l.breakpoint.name].cell;
+        const u = {
             ...e,
             x: Math.round(e.x * _),
             y: Math.round(e.y * _),
@@ -1341,9 +1341,9 @@ const ea = { ...he, AnimateResearched: 'animateResearched' },
                     needsConfirmation: s,
                     needsSelection: o,
                 } = (function (e, t, a) {
-                    return e !== he.Researched
+                    return e !== me.Researched
                         ? {
-                              soundTarget: e === he.Default ? 'select' : 'deselect',
+                              soundTarget: e === me.Default ? 'select' : 'deselect',
                               needsConfirmation: !1,
                               needsSelection: !0,
                           }
@@ -1359,55 +1359,55 @@ const ea = { ...he, AnimateResearched: 'animateResearched' },
                 d.play('mouse-enter', { target: 'Perk' });
             },
             ref:
-                ((u = e.nodeRefsMap),
+                ((m = e.nodeRefsMap),
                 (h = e.position),
                 (e) => {
-                    e && (u.current[h] = e);
+                    e && (m.current[h] = e);
                 }),
             status: i,
             transitionDelay: c,
             root: s.rootNodeUiId.get() === e.id,
         };
-        var u, h;
+        var m, h;
         switch (e.type) {
             case ue.Common:
             case ue.Special:
-                return a.jsx(Ht, { ...m, ...Kt(r, n, m.isHintRequired, m.root), showGear: e.type === ue.Special });
+                return a.jsx(Ot, { ...u, ...Jt(r, n, u.isHintRequired, u.root), showGear: e.type === ue.Special });
             case ue.Final:
             case ue.Major:
-                return a.jsx(Jt, { ...m, showFinalDecoration: e.type === ue.Final, lockedTree: r });
+                return a.jsx(Yt, { ...u, showFinalDecoration: e.type === ue.Final, lockedTree: r });
             case ue.Ghost:
-                return a.jsx(Vt, { status: m.status, x: m.x, y: m.y, ref: m.ref });
+                return a.jsx(Gt, { status: u.status, x: u.x, y: u.y, ref: u.ref });
             default:
                 console.error(`There is no node type '${e.type}' registered.`);
         }
     }),
-    aa = {
+    ta = {
         queue: { initial: 200, common: 150 },
         transition: { chain: 0, single: 1e3, final: 2e3 },
         path: { single: 200 },
     },
-    sa = {
+    aa = {
         queue(e, t, a) {
-            const { queue: s, transition: r, path: n } = aa;
+            const { queue: s, transition: r, path: n } = ta;
             return 1 === a && 'path' === t ? r.single + n.single : 0 === e ? s.initial : e * s.common + s.initial;
         },
         transition(e, t, a) {
-            const { transition: s } = aa;
+            const { transition: s } = ta;
             return t.includes(e) ? s.final : a > 1 ? s.chain : s.single;
         },
     };
-function ra(e, t, a, s = 'perk') {
+function sa(e, t, a, s = 'perk') {
     const [r, n] = o.useState(() => ({ status: e, transitionDelay: 0 })),
         i = o.useRef(a),
         c = te(),
-        { model: l } = et(),
+        { model: l } = Ke(),
         d = J();
     return (
         o.useLayoutEffect(() => {
             const r = new ae();
             if (!d && i.current === a) {
-                if (e === he.Researched)
+                if (e === me.Researched)
                     return (
                         r.add(
                             f(
@@ -1416,7 +1416,7 @@ function ra(e, t, a, s = 'perk') {
                                     const e = l.researchedPerks.get(),
                                         { animationQueue: a, finalPerkId: r } = l.computes.animationQueueInfo(e),
                                         o = e.length,
-                                        i = sa.queue(
+                                        i = aa.queue(
                                             (function (e, t) {
                                                 const [a, s] = e,
                                                     r = t[a] ?? 0,
@@ -1429,8 +1429,8 @@ function ra(e, t, a, s = 'perk') {
                                     c.run(
                                         () =>
                                             n({
-                                                status: ea.AnimateResearched,
-                                                transitionDelay: sa.transition(r, t, o),
+                                                status: Kt.AnimateResearched,
+                                                transitionDelay: aa.transition(r, t, o),
                                             }),
                                         i,
                                     );
@@ -1449,17 +1449,17 @@ function ra(e, t, a, s = 'perk') {
         r
     );
 }
-const na = {
+const ra = {
     root: 'Path_root_a3514b92',
     base: 'Path_55a8a7fd',
     base__selected: 'Path_base__selected_78814b1d',
     base__researched: 'Path_base__researched_a3514b92',
     base__animateResearched: 'Path_base__animateResearched_8845b1b0',
 };
-function oa({ affectedNodes: e, path: t, nodes: r }) {
+function na({ affectedNodes: e, path: t, nodes: r }) {
     const n = se(),
-        { status: i } = ra(
-            We(e, r),
+        { status: i } = sa(
+            Ve(e, r),
             o.useMemo(() => e.flat(), [e]),
             (function (e) {
                 const t = e[0];
@@ -1467,23 +1467,23 @@ function oa({ affectedNodes: e, path: t, nodes: r }) {
             })(r),
             'path',
         );
-    return a.jsx('path', { d: t, style: { '--scale': `${n}` }, className: s(na.base, na[`base__${i}`]) });
+    return a.jsx('path', { d: t, style: { '--scale': `${n}` }, className: s(ra.base, ra[`base__${i}`]) });
 }
-const ia = 8,
-    ca = '->',
-    la = ['bottom', 'top'];
-function da() {
+const oa = 8,
+    ia = '->',
+    ca = ['bottom', 'top'];
+function la() {
     const e = new Set();
     return (t, a) => {
-        const { path: s, reversePath: r } = { path: `${(n = a)}${ca}${(o = t)}`, reversePath: `${o}${ca}${n}` };
+        const { path: s, reversePath: r } = { path: `${(n = a)}${ia}${(o = t)}`, reversePath: `${o}${ia}${n}` };
         var n, o;
         const i = e.has(s) || e.has(r);
         return (i || e.add(s), i);
     };
 }
-function _a({ start: e, middle: t, end: a }) {
+function da({ start: e, middle: t, end: a }) {
     return t
-        ? (function (e, t, a, s = ia) {
+        ? (function (e, t, a, s = oa) {
               const r = (e, t) => {
                       const a = e.x - t.x,
                           s = e.y - t.y,
@@ -1499,11 +1499,11 @@ function _a({ start: e, middle: t, end: a }) {
                       return { x: t.x + e * s, y: t.y + n * s };
                   })();
               return `M ${e.x} ${e.y} \n            L ${n.x} ${n.y} \n            C ${t.x} ${t.y} ${t.x} ${t.y} ${o.x} ${o.y} \n            L ${a.x} ${a.y}`;
-          })(e, t, a, ia)
+          })(e, t, a, oa)
         : `M ${e.x} ${e.y} L ${a.x} ${a.y}`;
 }
-function ma(e, t, a, s, r) {
-    if (a.top !== s.top && a.left !== s.left) return la.includes(r) ? { x: e.x, y: t.y } : { x: t.x, y: e.y };
+function _a(e, t, a, s, r) {
+    if (a.top !== s.top && a.left !== s.left) return ca.includes(r) ? { x: e.x, y: t.y } : { x: t.x, y: e.y };
 }
 const ua = new (class {
     getElementMetrics(e) {
@@ -1528,18 +1528,18 @@ const ua = new (class {
         (s && n) || V.log(void 0 !== s || void 0 !== n, 'getConnectionPoints didnt find start and end');
         const c = this.getElementConnectionPoints(o)[s],
             l = this.getElementConnectionPoints(i)[n];
-        return { start: c, middle: ma(this.getCenterPoint(o), this.getCenterPoint(i), o, i, s) ?? null, end: l };
+        return { start: c, middle: _a(this.getCenterPoint(o), this.getCenterPoint(i), o, i, s) ?? null, end: l };
     }
 })();
-const ha = 'Container_2a42bba9',
-    ba = r(function ({ nodeRefsMap: e }) {
-        const { model: t } = et(),
+const ma = 'Container_2a42bba9',
+    ha = r(function ({ nodeRefsMap: e }) {
+        const { model: t } = Ke(),
             [s, r] = o.useState([]),
             n = t.computes.nodes(),
             i = F(() => {
                 r(
                     (function (e, t, a, s) {
-                        const r = da();
+                        const r = la();
                         return e.flatMap((n, o) => {
                             const i = s.current[o],
                                 c = t[o];
@@ -1556,7 +1556,7 @@ const ha = 'Container_2a42bba9',
                                               ),
                                               t
                                           );
-                                      const _ = _a(ua.getConnectionPoints(i, d, c.lineType));
+                                      const _ = da(ua.getConnectionPoints(i, d, c.lineType));
                                       return (t.push({ path: _, affectedNodes: [[n.id, c.id]], id: Ze() }), t);
                                   }, [])
                                 : (V.log(
@@ -1572,7 +1572,7 @@ const ha = 'Container_2a42bba9',
             o.useLayoutEffect(() => {
                 const e = new ae(),
                     a = () => {
-                        S(() => {
+                        A(() => {
                             i();
                         });
                     };
@@ -1591,192 +1591,211 @@ const ha = 'Container_2a42bba9',
                 );
             }, [i, t.computes]),
             a.jsx('svg', {
-                className: ha,
+                className: ma,
                 children: s.map(({ id: e, path: t, affectedNodes: s }) =>
-                    a.jsx(oa, { path: t, affectedNodes: s, nodes: n }, `${t}-${e}`),
+                    a.jsx(na, { path: t, affectedNodes: s, nodes: n }, `${t}-${e}`),
                 ),
             })
         );
     }),
-    fa = 'TreeContainer_230b9c81',
-    pa = r(function () {
+    ba = 'TreeContainer_230b9c81',
+    fa = r(function () {
         const e = o.useRef({}),
-            { model: t } = et(),
+            { model: t } = Ke(),
             s = ee(),
-            { width: r, height: i } = ot[s.breakpoint.name].container;
+            { width: r, height: i } = nt[s.breakpoint.name].container;
         return a.jsxs('div', {
-            className: fa,
+            className: ba,
             style: { '--width': `${r}rem`, '--height': `${i}rem` },
             children: [
-                a.jsx(ba, { nodeRefsMap: e }),
+                a.jsx(ha, { nodeRefsMap: e }),
                 t.computes
                     .nodes()
                     .map(({ categories: t, ...a }, s) =>
-                        n.createElement(ta, { ...a, key: `${a.id}-${a.type}`, nodeRefsMap: e, position: s }),
+                        n.createElement(ea, { ...a, key: `${a.id}-${a.type}`, nodeRefsMap: e, position: s }),
                     ),
             ],
         });
     }),
-    [ga, va] = p()(
+    [pa, ga] = p()(
         ({ observableModel: e }) => {
             const t = { nodes: e.arrayClone('nodes'), ...e.primitives(['researchAvailability']) },
-                a = y.shallow(() => q(t.nodes.get(), (e) => e.status === he.Selected)),
-                s = y.shallow(() => G(a(), (e, t) => e + t.price, 0)),
-                r = y.shallow(() => {
-                    if (ne(t.nodes.get(), (e) => e.status === he.Researched))
-                        return { tooltip: '', description: 'allResearched' };
-                    const e = t.researchAvailability.get();
-                    return e === ze.NOT_ENOUGH_EXP || e === ze.AVAILABLE
-                        ? { tooltip: 'notEnoughExp', description: 'noSelected' }
-                        : { tooltip: e, description: e };
-                });
-            return { ...t, computes: { selectedPerks: a, totalPrice: s, textParams: r } };
+                a = y.shallow(() =>
+                    t.nodes
+                        .get()
+                        .reduce(
+                            (e, t) => (
+                                t.status === me.Selected &&
+                                    ((e.price += t.price), e.amount++, e.localizationName.push(t.localizationName)),
+                                e
+                            ),
+                            { price: 0, amount: 0, localizationName: [] },
+                        ),
+                );
+            return { ...t, computes: { selectedPerks: a } };
         },
         ({ externalModel: e }) => ({ research: e.createCallbackNoArgs('onResearch') }),
     ),
-    ya = { root: 'Info_root_3f9bb731', base: 'Info_2def4bb3', perk: 'Info_perk_6719815a' },
-    xa = w.resolve('strings'),
-    Na = (e) => xa.readOr(`veh_skill_tree.tooltips.title.${e}`, () => e);
-const ja = r(function () {
-        const { model: e } = va(),
+    va = {
+        root: 'Info_root_3f9bb731',
+        base: 'Info_2def4bb3',
+        selected: 'Info_selected_3f9bb731',
+        perk: 'Info_perk_6719815a',
+    },
+    ya = w.resolve('strings'),
+    xa = (e) => ya.readOr(`veh_skill_tree.tooltips.title.${e}`, () => e);
+const Na = r(function () {
+        const { model: e } = ga(),
             t = B({ value: 'extraSmall' }, { medium: { value: 'medium' } }),
-            r = e.computes.selectedPerks(),
-            n = r.length,
+            { amount: r, localizationName: n } = e.computes.selectedPerks(),
             o = (function (e) {
                 let t = '';
                 return 1 === e.length
-                    ? Na(e[0].localizationName)
-                    : (e.forEach(({ localizationName: e }, a, s) => {
+                    ? xa(e[0])
+                    : (e.forEach((e, a, s) => {
                           const r = s.length - 1 === a ? 2 : 0;
-                          ((t += xa
-                              .pluralOrEmpty('veh_skill_tree.research.tooltip.description', r)
-                              .replace(/{{selectedPerks}}/g, Na(e))),
+                          ((t += ya
+                              .pluralOrEmpty('veh_skill_tree.footer.tooltip.listSelectedPerks', r)
+                              .replace(/{{selectedPerks}}/g, xa(e))),
                               a < s.length - 1 && (t += '\n'));
                       }),
                       t);
-            })(r),
-            i = P({ header: xa.readOrEmpty('veh_skill_tree.research.infoTooltipTitle'), body: o });
+            })(n),
+            i = P({ header: ya.readOrEmpty('veh_skill_tree.footer.tooltip.header.info'), body: o });
         return a.jsxs('div', {
-            className: s(ya.base, ya[`base__${t.value}`]),
+            className: s(va.base, va[`base__${t.value}`]),
             children: [
-                a.jsx(oe, {
-                    path: 'veh_skill_tree.research.selected',
+                a.jsx(ne, {
+                    path: 'veh_skill_tree.footer.text.selectedItem',
                     params: {
                         selectedItem:
-                            1 === n
-                                ? a.jsx('span', { className: ya.perk, children: o })
-                                : a.jsx(oe, {
-                                      className: ya.perk,
-                                      path: 'veh_skill_tree.research.perks',
-                                      params: { amount: n },
+                            1 === r
+                                ? a.jsx('span', { className: va.perk, children: o })
+                                : a.jsx(k, {
+                                      className: va.perk,
+                                      text: R.strings.veh_skill_tree.footer.text.amountItems(),
+                                      params: { amount: r },
+                                      split: !0,
                                   }),
                     },
                 }),
-                n > 1 && a.jsx(D, { width: 24, height: 24, path: 'skillTree.info_icon', ...i }),
+                r > 1 && a.jsx(D, { width: 24, height: 24, path: 'skillTree.info_icon', ...i }),
             ],
         });
     }),
-    wa = 'Footer_70ef3874',
-    ka = 'Footer_research_37b9a55',
-    Pa = 'Footer_divider_32042895',
-    Ea = 'Footer_content_19cd5319',
-    Ba = 'Footer_selected_eb1709fa',
-    $a = 'Footer_text_d790ec85',
-    Da = 'Footer_currency_408955e2',
-    Ra = 'Footer_value_2988e411',
-    Ta = 'Footer_base__enough_4308958a',
-    Ia = 'Footer_button_7e68acf0',
-    Ma = 'Footer_buttonText_881ef4c9',
-    Aa = w.resolve('intl'),
-    Ca = w.resolve('strings'),
-    Sa = r(function () {
-        const { model: e, controls: t } = va(),
+    ja = {
+        root: 'Footer_root_4308958a',
+        base: 'Footer_70ef3874',
+        research: 'Footer_research_37b9a55',
+        divider: 'Footer_divider_32042895',
+        content: 'Footer_content_19cd5319',
+        selected: 'Footer_selected_eb1709fa',
+        text: 'Footer_text_d790ec85',
+        currency: 'Footer_currency_408955e2',
+        value: 'Footer_value_2988e411',
+        base__enough: 'Footer_base__enough_4308958a',
+        button: 'Footer_button_7e68acf0',
+        buttonContainer: 'Footer_buttonContainer_a9d4232',
+        buttonContainer__researchInProgress: 'Footer_buttonContainer__researchInProgress_3c1ec3a0',
+        spinner: 'Footer_spinner_5ff51e9a',
+        spin: 'Footer_spin_4308958a',
+    },
+    wa = w.resolve('intl'),
+    ka = w.resolve('strings'),
+    Pa = r(function () {
+        const { model: e, controls: t } = ga(),
             r = e.researchAvailability.get(),
-            n = e.computes.selectedPerks(),
-            o = e.computes.totalPrice(),
-            i = r !== ze.NOT_ENOUGH_EXP,
-            c = r !== ze.AVAILABLE,
-            l = B(
-                { buttonSize: ce.small, iconSize: ie.small },
-                { medium: { buttonSize: ce.medium, iconSize: ie.medium } },
+            { price: n, amount: o } = e.computes.selectedPerks(),
+            i = r !== Fe.NOT_ENOUGH_EXP,
+            c = r !== Fe.AVAILABLE,
+            l = e.nodes.get().every((e) => e.status === me.Researched) ? 'allResearched' : r,
+            d = r === Fe.RESEARCH_IN_PROGRESS,
+            _ = B(
+                { buttonSize: ie.small, iconSize: oe.small },
+                { medium: { buttonSize: ie.medium, iconSize: oe.medium } },
             ),
-            { tooltip: d, description: _ } = e.computes.textParams(),
-            m = P({
-                body: Ca.readOr(`veh_skill_tree.research.${d}.body`, () => Ca.read(`veh_skill_tree.research.${d}`)),
-                header: Ca.read(`veh_skill_tree.research.${d}.header`),
+            u = P({
+                body: ka.read(`veh_skill_tree.footer.tooltip.body.${r}`),
+                header: ka.read(`veh_skill_tree.footer.tooltip.header.${r}`),
             });
         return a.jsxs('div', {
-            className: s(wa, i && Ta),
+            className: s(ja.base, i && ja.base__enough),
             children: [
-                a.jsx('div', { className: Pa }),
+                a.jsx('div', { className: ja.divider }),
                 a.jsx('div', {
-                    className: ka,
-                    children: n.length
+                    className: ja.research,
+                    children: o
                         ? a.jsxs('div', {
-                              className: Ea,
+                              className: ja.content,
                               children: [
                                   a.jsxs('div', {
-                                      className: Ba,
+                                      className: ja.selected,
                                       children: [
-                                          a.jsx(X, {
+                                          a.jsx(Z, {
                                               reverse: !0,
-                                              type: le.tankXP,
+                                              type: ce.tankXP,
                                               enough: i,
-                                              size: l.iconSize,
-                                              className: Da,
+                                              size: _.iconSize,
+                                              className: ja.currency,
                                               children: a.jsx('div', {
-                                                  className: Ra,
-                                                  children: Aa.formatNumber('integral', o),
+                                                  className: ja.value,
+                                                  children: wa.formatNumber('integral', n),
                                               }),
                                           }),
-                                          a.jsx(ja, {}),
+                                          a.jsx(Na, {}),
                                       ],
                                   }),
-                                  a.jsx(de, {
-                                      ...(c && m),
+                                  a.jsx(le, {
+                                      ...(c && u),
                                       disabled: c,
-                                      size: l.buttonSize,
-                                      theme: _e.primary,
+                                      size: _.buttonSize,
+                                      theme: d ? de.secondary : de.primary,
                                       onClick: t.research,
-                                      classNames: { base: Ia },
-                                      children: a.jsx('div', {
-                                          className: Ma,
-                                          children: Ca.readOrEmpty('veh_skill_tree.research.button.label'),
+                                      classNames: { base: ja.button },
+                                      children: a.jsxs('div', {
+                                          className: s(ja.buttonContainer, ja[`buttonContainer__${r}`]),
+                                          children: [
+                                              d && a.jsx('div', { className: ja.spinner }),
+                                              ka.readOrEmpty('veh_skill_tree.footer.button.label'),
+                                          ],
                                       }),
                                   }),
                               ],
                           })
-                        : a.jsx('div', { className: $a, children: Ca.readOrEmpty(`veh_skill_tree.research.${_}`) }),
+                        : a.jsx('div', {
+                              className: ja.text,
+                              children: ka.readOrEmpty(`veh_skill_tree.footer.description.text.${l}`),
+                          }),
                 }),
             ],
         });
     }),
-    Fa = 'EntryPoint_28a00af8',
-    za = 'EntryPoint_bg_1daedee',
-    La = 'EntryPoint_base__vanity_25e6c411',
-    Oa = 'EntryPoint_hover_4ee0996f',
-    Ha = 'EntryPoint_glare_c5ebb1f5',
-    Ga = w.resolve('views'),
-    Va = r(function (e) {
+    Ea = 'EntryPoint_28a00af8',
+    Ba = 'EntryPoint_bg_1daedee',
+    Ra = 'EntryPoint_base__vanity_25e6c411',
+    $a = 'EntryPoint_hover_4ee0996f',
+    Da = 'EntryPoint_glare_c5ebb1f5',
+    Ia = w.resolve('views'),
+    Ca = r(function (e) {
         const t = B({ value: 'small' }, { large: { value: 'big' } }),
-            { model: r } = fe(),
+            { model: r } = be(),
             { isProgressionCompleted: n, isPrestigeGlareShown: i } = r.tree.get(),
             c = E(),
-            l = me(
+            l = _e(
                 'vanity_entry_point',
                 o.useMemo(
                     () => ({
                         isUnlocked: n,
-                        resId: Ga.read((e) => e.mono.vehicle_hub.tooltips.vanity_entry_point_tooltip('resId')),
+                        resId: Ia.read((e) => e.mono.vehicle_hub.tooltips.vanity_entry_point_tooltip('resId')),
                     }),
                     [n],
                 ),
             ),
-            d = me(
+            d = _e(
                 'back_to_main_progression',
                 o.useMemo(
                     () => ({
-                        resId: Ga.read((e) => e.mono.vehicle_hub.tooltips.back_to_main_progression_tooltip('resId')),
+                        resId: Ia.read((e) => e.mono.vehicle_hub.tooltips.back_to_main_progression_tooltip('resId')),
                     }),
                     [],
                 ),
@@ -1784,7 +1803,7 @@ const ja = r(function () {
             _ = e.vanity ? d : l;
         return a.jsx('div', {
             ..._,
-            className: s(Fa, e.vanity && La),
+            className: s(Ea, e.vanity && Ra),
             onClick: function () {
                 (_.onClick(), e.onClick());
             },
@@ -1792,18 +1811,18 @@ const ja = r(function () {
                 (_.onMouseEnter(e), c.play('mouse-enter', { target: 'EntryPoint' }));
             },
             children: a.jsxs('div', {
-                className: za,
+                className: Ba,
                 children: [
                     !e.vanity &&
                         n &&
                         !i &&
-                        a.jsx(jt, {
+                        a.jsx(Nt, {
                             maskPath: `skillTree.entryPoint.progression.${t.value}.vanityProgressionMask`,
-                            classNames: Ha,
+                            classNames: Da,
                         }),
-                    a.jsx('div', { className: Oa }),
+                    a.jsx('div', { className: $a }),
                 ],
             }),
         });
     });
-export { Ne as A, rt as E, ga as F, be as M, Ae as P, pa as T, Fe as V, Ke as a, Va as b, Sa as c, ge as d, fe as u };
+export { xe as A, st as E, pa as F, he as M, Se as P, fa as T, Ae as V, Je as a, Ca as b, Pa as c, pe as d, be as u };

@@ -1,4 +1,4 @@
-import { j as e, J as a } from './vendor.js';
+import { j as e, w as a } from './vendor.js';
 const n = {
     base__x16: 'SeasonPoint_base__x16_9df6c1df',
     base__x24: 'SeasonPoint_base__x24_dba010b6',

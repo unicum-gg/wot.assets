@@ -1,5 +1,5 @@
-import { D as e, j as a } from '../../../../chunks/vendor.js';
-import { i as s, s as l, n as t, F as i, b_ as r, t as c, d1 as o, b as n } from '../../../../chunks/lib.js';
+import { S as e, j as a } from '../../../../chunks/vendor.js';
+import { i as s, f as l, n as t, a8 as i, c2 as c, cS as r, d7 as o, cu as n } from '../../../../chunks/lib.js';
 import { D as d } from '../../../../chunks/divider.js';
 import { H as p } from '../../../../chunks/head_decorator.js';
 const [m, _] = s()(({ observableModel: e }) => {
@@ -54,7 +54,7 @@ const [m, _] = s()(({ observableModel: e }) => {
                                                   label: e.name,
                                                   valueClass: x,
                                                   value: a.jsx(
-                                                      r,
+                                                      c,
                                                       {
                                                           text: e.valueTemplate,
                                                           params: { value: e.value, sign: e.sign },
@@ -105,7 +105,7 @@ const [m, _] = s()(({ observableModel: e }) => {
                     a.jsxs('div', {
                         className: g,
                         children: [
-                            a.jsx(r, { text: e.name.get(), className: N }),
+                            a.jsx(c, { text: e.name.get(), className: N }),
                             a.jsxs('div', {
                                 className: y,
                                 children: [
@@ -149,7 +149,7 @@ const [m, _] = s()(({ observableModel: e }) => {
                             {
                                 className: D,
                                 children: [
-                                    a.jsx('div', { children: c(e.level) }),
+                                    a.jsx('div', { children: r(e.level) }),
                                     ' ',
                                     t && a.jsx('div', { className: w }),
                                 ],
@@ -169,7 +169,7 @@ const [m, _] = s()(({ observableModel: e }) => {
                                     ? void 0
                                     : t.map((e, s) =>
                                           a.jsx(
-                                              r,
+                                              c,
                                               {
                                                   text: e.valueTemplate,
                                                   params: { value: e.value, sign: e.sign },
@@ -187,40 +187,40 @@ const [m, _] = s()(({ observableModel: e }) => {
             ],
         });
     }),
-    F = 'BattleAbilityTooltip_b3525077',
+    S = 'BattleAbilityTooltip_b3525077',
     E = 'BattleAbilityTooltip_title_f3f1f3b2',
-    M = 'BattleAbilityTooltip_activationDepends_1375a1fa',
-    O = 'BattleAbilityTooltip_additionalInfo_fe550d87',
-    q = 'BattleAbilityTooltip_description_ae30df8d',
-    z = 'BattleAbilityTooltip_contentWrapper_dd6c2adb',
-    G = 'BattleAbilityTooltip_footerWrapper_ca778cb1',
-    J = 'BattleAbilityTooltip_altBtn_aa9e5a',
-    K = function () {
+    F = 'BattleAbilityTooltip_activationDepends_1375a1fa',
+    M = 'BattleAbilityTooltip_additionalInfo_fe550d87',
+    O = 'BattleAbilityTooltip_description_ae30df8d',
+    q = 'BattleAbilityTooltip_contentWrapper_dd6c2adb',
+    z = 'BattleAbilityTooltip_footerWrapper_ca778cb1',
+    G = 'BattleAbilityTooltip_altBtn_aa9e5a',
+    J = function () {
         return a.jsx(o, {
             children: a.jsx(o.Decorator, {
                 children: a.jsxs('div', {
-                    className: F,
+                    className: S,
                     children: [
                         a.jsx(B, {}),
                         a.jsx(f, {}),
                         a.jsx(d, {}),
                         a.jsxs('div', {
-                            className: z,
+                            className: q,
                             children: [
                                 a.jsx(i, { className: E, path: 'fl_tooltips.battleAbilityTooltip.levelsTitle' }),
                                 a.jsx(P, {}),
                             ],
                         }),
                         a.jsx(d, {}),
-                        a.jsx(i, { className: M, path: 'fl_tooltips.battleAbilityTooltip.activation_depends' }),
+                        a.jsx(i, { className: F, path: 'fl_tooltips.battleAbilityTooltip.activation_depends' }),
                         a.jsx(d, {}),
-                        a.jsx(i, { className: q, split: !0, path: 'fl_tooltips.battleAbilityTooltip.description' }),
+                        a.jsx(i, { className: O, split: !0, path: 'fl_tooltips.battleAbilityTooltip.description' }),
                         a.jsx(d, {}),
                         a.jsxs('div', {
-                            className: G,
+                            className: z,
                             children: [
-                                a.jsx('div', { className: J }),
-                                a.jsx(i, { className: O, path: 'fl_tooltips.battleAbilityTooltip.addInfo' }),
+                                a.jsx('div', { className: G }),
+                                a.jsx(i, { className: M, path: 'fl_tooltips.battleAbilityTooltip.addInfo' }),
                             ],
                         }),
                     ],
@@ -228,4 +228,4 @@ const [m, _] = s()(({ observableModel: e }) => {
             }),
         });
     };
-n(a.jsx(m, { children: a.jsx(K, {}) }));
+n(a.jsx(m, { children: a.jsx(J, {}) }));

@@ -1,6 +1,6 @@
-import { v as e, j as a, _ as r } from '../../../../chunks/vendor.js';
-import { i as s, a as t, n, r as o, aK as m, ay as c, ax as i } from '../../../../chunks/lib.js';
-const [p, d] = s()((e) => {
+import { v as e, j as a, _ as s } from '../../../../chunks/vendor.js';
+import { i as r, O as t, n, _ as o, bs as m, r as c, U as i } from '../../../../chunks/lib.js';
+/* empty css                        */ const [p, d] = r()((e) => {
     const a = e.observableModel.primitives(['params', 'type']);
     return {
         type: a.type,
@@ -17,22 +17,22 @@ const l = 'App_11090d07',
     f = 'App_specialtyName_1072bf2a',
     h = 'App_commanderName_d9ad769f',
     v = 'App_separator_f627df4c',
-    y = 'App_description_1072bf2a',
-    _ = o.resolve('strings'),
-    x =
-        ((N = (() => {
+    _ = 'App_description_1072bf2a',
+    y = o.resolve('strings'),
+    N =
+        ((x = (() => {
             let e;
-            const a = (a, s) => {
+            const a = (a, r) => {
                 var t, n;
                 return (
                     !1 ===
                         ((e) => 'object' == typeof e && null !== e && ((e) => 'string' == typeof e.commanderNation)(e))(
                             a,
                         ) &&
-                        ((e = s),
+                        ((e = r),
                         (n = '$input'),
                         ((('object' == typeof (t = a) && null !== t) ||
-                            r(
+                            s(
                                 !0,
                                 {
                                     method: 'typia.json.createAssertParse',
@@ -42,19 +42,19 @@ const l = 'App_11090d07',
                                 },
                                 e,
                             )) &&
-                            ((a, s, t = !0) =>
+                            ((a, r, t = !0) =>
                                 'string' == typeof a.commanderNation ||
-                                r(
+                                s(
                                     t,
                                     {
                                         method: 'typia.json.createAssertParse',
-                                        path: s + '.commanderNation',
+                                        path: r + '.commanderNation',
                                         expected: 'string',
                                         value: a.commanderNation,
                                     },
                                     e,
                                 ))(t, n + '', !0)) ||
-                            r(
+                            s(
                                 !0,
                                 {
                                     method: 'typia.json.createAssertParse',
@@ -67,14 +67,14 @@ const l = 'App_11090d07',
                     a
                 );
             };
-            return (e, r) => a(JSON.parse(e), r);
+            return (e, s) => a(JSON.parse(e), s);
         })()),
         function () {
-            return d().model.computes.params(N);
+            return d().model.computes.params(x);
         });
-var N;
+var x;
 const b = e(function () {
-    const { commanderNation: e } = x();
+    const { commanderNation: e } = N();
     return a.jsx(m, {
         children: a.jsx(m.Decorator, {
             children: a.jsxs('div', {
@@ -86,18 +86,18 @@ const b = e(function () {
                             a.jsx('div', { className: u }),
                             a.jsx('div', {
                                 className: f,
-                                children: _.readOrEmpty('battle_royale.commanderInfo.commonRank'),
+                                children: y.readOrEmpty('battle_royale.commanderInfo.commonRank'),
                             }),
                         ],
                     }),
                     a.jsx('div', {
                         className: h,
-                        children: _.readOrEmpty(`battle_royale.commanderInfo.fullName.${e}`),
+                        children: y.readOrEmpty(`battle_royale.commanderInfo.fullName.${e}`),
                     }),
                     a.jsx('div', { className: v }),
                     a.jsx('div', {
-                        className: y,
-                        children: _.readOrEmpty(`battle_royale.commanderInfo.description.${e}`),
+                        className: _,
+                        children: y.readOrEmpty(`battle_royale.commanderInfo.description.${e}`),
                     }),
                 ],
             }),

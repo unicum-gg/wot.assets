@@ -99,23 +99,23 @@ var E = ((e) => (
 const x = { integral: 0, gold: 1 },
     k = { fractional: 0, woZeroDigits: 1 },
     S = Object.keys(x),
-    D = Object.keys(k);
-const A = { full: E.FullTime, short: E.ShortTime };
+    A = Object.keys(k);
+const D = { full: E.FullTime, short: E.ShortTime };
 const N = {
     isNumberFormat: function (e) {
         return e in x;
     },
     formatNumber: function (e, t) {
-        return window.systemLocale.getNumberFormat(t, x[e]);
+        return window.formatters.getNumberFormat(t, x[e]);
     },
     numberFormats: S,
     isRealFormat: function (e) {
         return e in k;
     },
-    formatReal: function (e, t) {
-        return window.systemLocale.getRealFormat(t, k[e]);
+    formatReal: function (e, t, n = 2) {
+        return window.formatters.getRealFormat(t, k[e], n);
     },
-    realFormats: D,
+    realFormats: A,
     formatDateTime: function (e, t, n = !0) {
         return window.regionalDateTime.getRegionalDateTime(t, e, n);
     },
@@ -123,7 +123,7 @@ const N = {
     formatTime: function (e, t, n = !0) {
         return window.regionalDateTime.getRegionalDateTime(t, e, n);
     },
-    timeFormats: Object.keys(A),
+    timeFormats: Object.keys(D),
     toUpperCase: (e) => window.systemLocale.toUpperCase(e),
     toLowerCase: (e) => window.systemLocale.toLowerCase(e),
 };
@@ -256,8 +256,8 @@ y.register({
     intl: o(N),
 });
 const M = O('clientResized'),
-    L = O('self.onScaleUpdated'),
-    $ = { down: O('mousedown'), up: O('mouseup'), move: O('mousemove') };
+    $ = O('self.onScaleUpdated'),
+    L = { down: O('mousedown'), up: O('mouseup'), move: O('mousemove') };
 function P(e) {
     engine.call('PlaySound', e);
 }
@@ -288,7 +288,7 @@ function P(e) {
                 return (n) => {
                     e.listeners += 1;
                     const o = `mouse${t}`,
-                        s = $[t]((e) => n([e, 'outside']));
+                        s = L[t]((e) => n([e, 'outside']));
                     function i(e) {
                         n([e, 'inside']);
                     }
@@ -333,6 +333,7 @@ const B = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
         })(),
         onDisplayChanged: O('self.onShowingStatusChanged'),
         onFocusUpdated: O('self.onFocusChanged'),
+        onExternalPaddingsUpdated: O('self.onPaddingsUpdated'),
         children: {
             onAdded: O('children.onAdded'),
             onLoaded: O('children.onLoaded'),
@@ -376,32 +377,32 @@ const X = (e) => {
         }
         return viewEnv.handleViewEvent({ __Type: n, type: e });
     },
-    K = new Map(),
     Z = new Map(),
+    K = new Map(),
     J = {
         tooltip: {
             open(e, t, n = 0, r) {
                 (G(H, { contentID: t, decoratorID: n, targetID: e, isMouseEvent: !0, on: !0, args: r }),
-                    K.set(`${e}-${t}`, { targetID: e, contentID: t }));
+                    Z.set(`${e}-${t}`, { targetID: e, contentID: t }));
             },
             hide(e, t, n = 0) {
-                (G(H, { contentID: t, decoratorID: n, targetID: e, on: !1 }), K.delete(`${e}-${t}`));
+                (G(H, { contentID: t, decoratorID: n, targetID: e, on: !1 }), Z.delete(`${e}-${t}`));
             },
             hideAll() {
-                const e = Array.from(K.values());
+                const e = Array.from(Z.values());
                 for (const t of e) this.hide(t.targetID, t.contentID);
             },
         },
         contextMenu: {
             open(e, t, n = 0, r) {
                 (G(V, { contentID: t, decoratorID: n, targetID: e, isMouseEvent: !0, on: !0, args: r }),
-                    Z.set(`${e}-${t}`, { targetID: e, contentID: t }));
+                    K.set(`${e}-${t}`, { targetID: e, contentID: t }));
             },
             hide(e, t, n = 0) {
-                (G(V, { contentID: t, decoratorID: n, targetID: e, on: !1, isMouseEvent: !1 }), Z.delete(`${e}-${t}`));
+                (G(V, { contentID: t, decoratorID: n, targetID: e, on: !1, isMouseEvent: !1 }), K.delete(`${e}-${t}`));
             },
             hideAll() {
-                const e = Array.from(Z.values());
+                const e = Array.from(K.values());
                 for (const t of e) this.hide(t.targetID, t.contentID);
             },
         },
@@ -1041,12 +1042,30 @@ const ke = {
         for (const [r] of n) t.push(r);
         return t;
     },
+    th: function (e) {
+        var t;
+        const n = [],
+            r = e
+                .replace(/&nbsp;/g, ' ')
+                .matchAll(
+                    /[【「(（『"《]?[\u0E00-\u0E7F%](?:[\u0E31\u0E34-\u0E3A\u0E47-\u0E4E。!?,.:、…・/ー—–!%+?）)】」"》』]+)?|[「【(（『《"]?\d+(?:,\d{3})*(?:-\d+(?:,\d{3})*)?(?:\s*[a-zA-Z\u0E00-\u0E7F/%]+)?(?:[。.,，、:;：；!?）)】」"》・%)、]+)?|[「【(（『《"]?[a-zA-Z0-9]+(?:[-/][a-zA-Z0-9]+)*(?:\s*[。!?、…・ー—–!?"》】」）)』]+)?|[\u00A0 ]|[^\s]/gu,
+                );
+        for (const [o] of r)
+            /^\s+$/.test(o)
+                ? n.length
+                    ? (n[n.length - 1] += o)
+                    : n.push(o)
+                : 1 === n.length && (null == (t = n[0]) ? void 0 : t.startsWith('  '))
+                  ? (n[0] = ' ' + o)
+                  : n.push(o);
+        return n;
+    },
 };
 function Se(e) {
     return e.split(' ');
 }
-const De = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko']);
-const Ae = a.createContext(void 0);
+const Ae = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko', 'th']);
+const De = a.createContext(void 0);
 const Ne = 'extraSmall',
     Te = {
         extraSmall: { weight: 0, name: Ne, className: 'mediaExtraSmall', width: 1280, height: 768 },
@@ -1076,8 +1095,8 @@ var Ce,
         (je[(je.Large = Te.large.height)] = 'Large'),
         (je[(je.ExtraLarge = Te.extraLarge.height)] = 'ExtraLarge'),
         je);
-const Le = Object.values(Te);
-function $e(e, t) {
+const $e = Object.values(Te);
+function Le(e, t) {
     const n = t['width' === e ? 'height' : 'width'],
         r = new Set(t[e].classes),
         o = new Set(n.classes.filter((e) => !(!e.endsWith('Width') && !e.endsWith('Height')) || r.has(e)));
@@ -1092,7 +1111,7 @@ const Pe = () => {
             return 'rem' === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
         })('rem');
         return (function (e, t, n) {
-            const r = Le.reduce(
+            const r = $e.reduce(
                     (n, r) => (
                         r.width <= e &&
                             (n.width.classes.push(r.className, `${r.className}Width`),
@@ -1116,7 +1135,7 @@ const Pe = () => {
                 d = c[c.length - 1] ?? Ne,
                 h = { width: Te[l].width, height: Te[d].height };
             return {
-                mediaClass: $e(o, r),
+                mediaClass: Le(o, r),
                 breakpoint: a,
                 screenWidthRem: e,
                 screenHeightRem: t,
@@ -1138,17 +1157,17 @@ function ze({ children: e }) {
             }
             e();
             const t = M(e),
-                r = L(e);
+                r = $(e);
             return () => {
                 (t(), r());
             };
         }, []),
-        u.jsx(Ae.Provider, { value: t, children: e })
+        u.jsx(De.Provider, { value: t, children: e })
     );
 }
 function Ue() {
     return (function () {
-        const e = a.useContext(Ae);
+        const e = a.useContext(De);
         if (!e) throw new Error('useMediaContext must be used within a MediaProvider');
         return e;
     })();
@@ -1200,7 +1219,7 @@ const Xe = () => {
         };
     },
     Ge = a.createContext(void 0);
-function Ke(e, t, n, r = !1) {
+function Ze(e, t, n, r = !1) {
     const o = le(e),
         s = qe((e) => {
             viewEnv.isEventHandled() || (n(e), viewEnv.setEventHandled(), r && e.stopPropagation());
@@ -1213,8 +1232,8 @@ function Ke(e, t, n, r = !1) {
         u = a.useMemo(() => i[t].register(o, s), [i, t, o, s]);
     a.useEffect(() => u, [u]);
 }
-function Ze(e, t, n = !1) {
-    return Ke(le(e), 'keydown', t, n);
+function Ke(e, t, n = !1) {
+    return Ze(le(e), 'keydown', t, n);
 }
 function Je(e) {
     const t = a.useMemo(Xe, []),
@@ -1680,6 +1699,7 @@ const xt =
                             controls: { ...(null == n ? void 0 : n(m)), ...p },
                             externalModel: c,
                             mode: o,
+                            rootId: (null == i ? void 0 : i.rootId) ?? 0,
                         };
                     }),
                     b = a.useRef(!1),
@@ -1819,7 +1839,7 @@ async function kt(
 function St(e) {
     return u.jsx(u.Fragment, { children: e.children });
 }
-function Dt(e) {
+function At(e) {
     return u.jsx(St, {
         children: u.jsx(at, {
             overrides: e.soundsOverrides,
@@ -1855,9 +1875,9 @@ a.forwardRef(function (e, t) {
     );
     var r;
 });
-const At = a.createContext(void 0);
+const Dt = a.createContext(void 0);
 function Nt() {
-    const e = a.useContext(At);
+    const e = a.useContext(Dt);
     if (!e) throw new Error('useRouter must be used within a RouterProvider');
     return e;
 }
@@ -1906,7 +1926,7 @@ function Ct({ children: e, prefix: t = '', context: n, getRoot: r, initializer: 
             };
         }, [l]),
         g = a.useMemo(() => ({ ...m, ...p }), [p, m]);
-    return u.jsx(At.Provider, { value: g, children: e });
+    return u.jsx(Dt.Provider, { value: g, children: e });
 }
 function It(e) {
     const t = e.indexOf(':');
@@ -1947,7 +1967,7 @@ const Mt = (function (e, t, n) {
             });
         return ((c.displayName = e), c);
     })('Button', { element: 'button', className: 'HeadlessButton_df8536fc' }),
-    Lt = a.forwardRef(function (
+    $t = a.forwardRef(function (
         { children: e, onClick: t, onMouseEnter: n, soundTarget: r, disabled: o = !1, silent: s = !1, ...i },
         a,
     ) {
@@ -1964,7 +1984,7 @@ const Mt = (function (e, t, n) {
             children: e,
         });
     }),
-    $t = {
+    Lt = {
         background: 'Button_background_98ebcfb8',
         border: 'Button_border_7e6390d7',
         overlay: 'Button_overlay_174632c8',
@@ -1994,16 +2014,16 @@ const Mt = (function (e, t, n) {
         },
         d,
     ) {
-        return u.jsxs(Lt, {
+        return u.jsxs($t, {
             ...l,
             ref: d,
             silent: o,
             disabled: r,
             className: c(
-                $t.base,
-                $t[`base__size-${t}`],
-                $t[`base__theme-${n}`],
-                r ? $t.base__disabled : $t.base__enabled,
+                Lt.base,
+                Lt[`base__size-${t}`],
+                Lt[`base__theme-${n}`],
+                r ? Lt.base__disabled : Lt.base__enabled,
                 a,
                 null == i ? void 0 : i.base,
             ),
@@ -2012,11 +2032,11 @@ const Mt = (function (e, t, n) {
                 r || null == (t = l.onClick) || t.call(l, e);
             },
             children: [
-                u.jsx('div', { className: c($t.background, null == i ? void 0 : i.background) }),
-                u.jsx('div', { className: c($t.border, null == i ? void 0 : i.border) }),
-                u.jsx('div', { className: c($t.overlay, null == i ? void 0 : i.overlay) }),
+                u.jsx('div', { className: c(Lt.background, null == i ? void 0 : i.background) }),
+                u.jsx('div', { className: c(Lt.border, null == i ? void 0 : i.border) }),
+                u.jsx('div', { className: c(Lt.overlay, null == i ? void 0 : i.overlay) }),
                 u.jsx('div', {
-                    className: c($t.content, s && $t.content__fontAligned, null == i ? void 0 : i.content),
+                    className: c(Lt.content, s && Lt.content__fontAligned, null == i ? void 0 : i.content),
                     children: e,
                 }),
             ],
@@ -2042,7 +2062,7 @@ const Xt =
 function Gt(e) {
     const t = y.resolve('langCode');
     return (function (e, t, n) {
-        return De.has(t) ? e.map(n) : e.map((e, t, r) => (t === r.length - 1 ? n(e, t, r) : n(`${e} `, t, r)));
+        return Ae.has(t) ? e.map(n) : e.map((e, t, r) => (t === r.length - 1 ? n(e, t, r) : n(`${e} `, t, r)));
     })(
         (function (e, t) {
             return (ke[t] ?? Se)(e);
@@ -2051,7 +2071,7 @@ function Gt(e) {
         (e, t) => e && u.jsx('span', { children: e }, `${e}${t}`),
     );
 }
-function Kt(e) {
+function Zt(e) {
     return Array.isArray(e)
         ? (function (e) {
               const t = [];
@@ -2059,14 +2079,14 @@ function Kt(e) {
                   const r = e[n],
                       o = e[n + 1];
                   if ('string' != typeof o || !Xt.test(o)) {
-                      t.push(Kt(r));
+                      t.push(Zt(r));
                       continue;
                   }
                   const s = Gt(o.slice(1));
                   (t.push(
                       u.jsxs(
                           a.Fragment,
-                          { children: [u.jsxs('span', { className: Wt.nowrap, children: [Kt(r), o[0]] }), s] },
+                          { children: [u.jsxs('span', { className: Wt.nowrap, children: [Zt(r), o[0]] }), s] },
                           qt(),
                       ),
                   ),
@@ -2078,7 +2098,7 @@ function Kt(e) {
           ? u.jsx(a.Fragment, { children: Gt(e) }, qt())
           : e;
 }
-const Zt = {
+const Kt = {
     class: function (e, ...t) {
         return u.jsx(
             'span',
@@ -2093,7 +2113,7 @@ const Zt = {
             : u.jsx('span', { style: { color: `#${t}` }, children: e }, n);
     },
     bold: (e) => ['fontWeight', 'bold'],
-    split: Kt,
+    split: Zt,
     style: function (e, ...t) {
         return u.jsx(
             'span',
@@ -2260,7 +2280,7 @@ const un = { start: '{{', end: '}}' },
                         : e.text,
                 [e.text, e.upgradeLegacy],
             ),
-            m = a.useMemo(() => (e.formatters ? { ...Zt, ...e.formatters } : Zt), [e.formatters]),
+            m = a.useMemo(() => (e.formatters ? { ...Kt, ...e.formatters } : Kt), [e.formatters]),
             p = a.useMemo(
                 () =>
                     (function (e, t) {
@@ -2325,7 +2345,7 @@ export {
     Pt as B,
     cn as F,
     Ct as M,
-    Dt as U,
+    At as U,
     st as a,
     nt as b,
     Rt as c,
@@ -2333,7 +2353,7 @@ export {
     dt as e,
     Nt as f,
     It as g,
-    Ze as h,
+    Ke as h,
     xt as i,
     Y as j,
     ie as k,

@@ -10,7 +10,11 @@ function t(n, s) {
             : s.reduce((n, s) => ('string' != typeof n ? n.$dyn(s) : ''), n)
         : (console.warn('FunRandom.combineRPaths: base folder empty: '), null);
 }
-function o(n, { poFileName: s, assetsPointer: o, isSubMode: r = !1 } = {}) {
+function o({ poFileName: n = 'fun_random', assetsPointer: s = e, isSubMode: t = !1, path: o }) {
+    const r = `R.strings.${n}.${t ? 'sub_modes' : 'modes'}.${s}`;
+    return o ? `${r}.${o}` : r;
+}
+function r(n, { poFileName: s, assetsPointer: o, isSubMode: r = !1 } = {}) {
     const a = s ? R.strings.$dyn(s) : R.strings.fun_random;
     if (!a || 'string' == typeof a) throw Error("Incorrect 'poFileName' argument");
     const i = r ? 'sub_modes' : 'modes',
@@ -19,13 +23,13 @@ function o(n, { poFileName: s, assetsPointer: o, isSubMode: r = !1 } = {}) {
     if (!n) return { staticTexts: a, dynamicTexts: u };
     return { staticTexts: t(a, n), dynamicTexts: t(u, n) };
 }
-function r(s, t) {
+function a(s, t) {
     const o = t ? 'sub_modes' : 'modes',
         r = n.$dyn(o);
     return r.$dyn(s) ?? r.$dyn(e);
 }
-function a(t, o) {
-    const r = 'modes';
+function i(t, o) {
+    const r = o ? 'sub_modes' : 'modes';
     return n.$dyn(r).$dyn(t) ? `${s}.asset_packs.${r}.${t}` : `${s}.asset_packs.${r}.${e}`;
 }
-export { r as a, a as b, o as g };
+export { i as a, o as b, r as c, a as g };

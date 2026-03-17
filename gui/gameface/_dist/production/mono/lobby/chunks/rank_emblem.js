@@ -1,10 +1,10 @@
-import { r as s, j as a, J as e } from './vendor.js';
+import { r as s, j as a, w as e } from './vendor.js';
 import { g as x } from './get_division_name.js';
 import { R as r } from './get_rank_name.js';
 import { R as o } from './enums.js';
-const m = [o.First, o.Second, o.Third, o.Fourth],
-    i = (s) => m.includes(s),
-    n = (s) => r[s];
+const m = (s) => r[s],
+    i = [o.First, o.Second, o.Third, o.Fourth],
+    n = (s) => i.includes(s);
 var t = ((s) => (
     (s[(s.x22 = 22)] = 'x22'),
     (s[(s.x40 = 40)] = 'x40'),
@@ -21,14 +21,14 @@ var t = ((s) => (
     s
 ))(t || {});
 const c = { base: 'RankEmblem_cd03f035' },
-    d = ({ rank: r, size: o, division: m, seasonName: t, className: d }) => {
+    d = ({ rank: r, size: o, division: i, seasonName: t, className: d }) => {
         const g = s.useMemo(() => {
-            const s = i(r) && void 0 !== m ? `_${x(m)}` : '';
+            const s = n(r) && void 0 !== i ? `_${x(i)}` : '';
             return {
-                backgroundImage: `url(${`R.images.comp7.gui.maps.icons.ranks.${t}.c_${o}.${n(r)}${s}`})`,
+                backgroundImage: `url(${`R.images.comp7.gui.maps.icons.ranks.${t}.c_${o}.${m(r)}${s}`})`,
                 '--imageSize': `${o}rem`,
             };
-        }, [t, o, r, m]);
+        }, [t, o, r, i]);
         return a.jsx('div', { className: e(c.base, d), style: g });
     };
-export { d as R, t as a, n as g, i, c as s };
+export { d as R, t as a, m as g, n as i, c as s };

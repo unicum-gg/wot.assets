@@ -1,0 +1,11 @@
+<fun_sub_mode_regular.xml>
+  <common>
+    <regularDevices>	True	</regularDevices>
+    <regularBoosters>	True	</regularBoosters>
+    <regularShells>	True	</regularShells>
+    <regularConsumables>	True	</regularConsumables>
+  </common>
+  <subMode>
+    <hasBattleQueueWarning>	True	</hasBattleQueueWarning>
+  </subMode>
+</fun_sub_mode_regular.xml>

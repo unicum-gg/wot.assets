@@ -106,14 +106,14 @@ const P = {
         return e in A;
     },
     formatNumber: function (e, t) {
-        return window.systemLocale.getNumberFormat(t, A[e]);
+        return window.formatters.getNumberFormat(t, A[e]);
     },
     numberFormats: D,
     isRealFormat: function (e) {
         return e in x;
     },
-    formatReal: function (e, t) {
-        return window.systemLocale.getRealFormat(t, x[e]);
+    formatReal: function (e, t, n = 2) {
+        return window.formatters.getRealFormat(t, x[e], n);
     },
     realFormats: N,
     formatDateTime: function (e, t, n = !0) {
@@ -255,7 +255,7 @@ y.register({
 const k = C('clientResized'),
     L = C('self.onScaleUpdated'),
     U = { down: C('mousedown'), up: C('mouseup'), move: C('mousemove') };
-function j(e) {
+function I(e) {
     engine.call('PlaySound', e);
 }
 !(function () {
@@ -303,8 +303,8 @@ function j(e) {
         {},
     );
 })();
-const I = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
-    $ = { ...Object.keys(I).reduce((e, t) => ((e[t] = () => j(I[t])), e), {}), sound: j },
+const j = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
+    $ = { ...Object.keys(j).reduce((e, t) => ((e[t] = () => I(j[t])), e), {}), sound: I },
     K = { notReady: 0, ready: 1, showing: 2, shown: 3, hiding: 4, hidden: 5 },
     B = {
         onTextureFrozen: C('self.onTextureFrozen'),
@@ -330,6 +330,7 @@ const I = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
         })(),
         onDisplayChanged: C('self.onShowingStatusChanged'),
         onFocusUpdated: C('self.onFocusChanged'),
+        onExternalPaddingsUpdated: C('self.onPaddingsUpdated'),
         children: {
             onAdded: C('children.onAdded'),
             onLoaded: C('children.onLoaded'),
@@ -854,11 +855,29 @@ const te = {
         for (const [r] of n) t.push(r);
         return t;
     },
+    th: function (e) {
+        var t;
+        const n = [],
+            r = e
+                .replace(/&nbsp;/g, ' ')
+                .matchAll(
+                    /[【「(（『"《]?[\u0E00-\u0E7F%](?:[\u0E31\u0E34-\u0E3A\u0E47-\u0E4E。!?,.:、…・/ー—–!%+?）)】」"》』]+)?|[「【(（『《"]?\d+(?:,\d{3})*(?:-\d+(?:,\d{3})*)?(?:\s*[a-zA-Z\u0E00-\u0E7F/%]+)?(?:[。.,，、:;：；!?）)】」"》・%)、]+)?|[「【(（『《"]?[a-zA-Z0-9]+(?:[-/][a-zA-Z0-9]+)*(?:\s*[。!?、…・ー—–!?"》】」）)』]+)?|[\u00A0 ]|[^\s]/gu,
+                );
+        for (const [o] of r)
+            /^\s+$/.test(o)
+                ? n.length
+                    ? (n[n.length - 1] += o)
+                    : n.push(o)
+                : 1 === n.length && (null == (t = n[0]) ? void 0 : t.startsWith('  '))
+                  ? (n[0] = ' ' + o)
+                  : n.push(o);
+        return n;
+    },
 };
 function ne(e) {
     return e.split(' ');
 }
-const re = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko']);
+const re = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko', 'th']);
 const oe = a.createContext(void 0);
 const se = 'extraSmall',
     ie = {
@@ -1155,7 +1174,7 @@ function Me(e, { shallow: t = !0, depth: n = 0, maxDepth: r = 32 } = {}) {
 const ke = { deep: !1, equals: q },
     Le = { cloneItem: !0 },
     Ue = { shallow: !1 };
-class je {
+class Ie {
     constructor(e, t = Le) {
         (n(this, '_data'),
             n(this, '_keys'),
@@ -1237,7 +1256,7 @@ class je {
         return h(() => this._data.get());
     }
 }
-const Ie = a.createContext({ mode: 'real' }),
+const je = a.createContext({ mode: 'real' }),
     $e = { equals: q, deep: !1 };
 function Ke(e, t, n) {
     const r = [];
@@ -1252,7 +1271,7 @@ function Ke(e, t, n) {
             return ('real' === t && e.subscribe((e) => r.push(() => a.set(o(e))), s), a);
         },
         s = (o, s) => {
-            const i = new je(n(o), s);
+            const i = new Ie(n(o), s);
             return ('real' === t && e.subscribe((e, t) => r.push(() => i.update(e, t)), o), i);
         },
         i = (o, s) => {
@@ -1308,7 +1327,7 @@ const Be =
             function s(s) {
                 var i;
                 const { mode: c, options: l, children: d, mocks: h } = s,
-                    f = a.useContext(Ie),
+                    f = a.useContext(je),
                     m = c ?? f.mode,
                     p = h ?? f.mocks,
                     g = a.useRef([]),
@@ -1361,6 +1380,7 @@ const Be =
                             controls: { ...(null == n ? void 0 : n(m)), ...p },
                             externalModel: c,
                             mode: o,
+                            rootId: (null == i ? void 0 : i.rootId) ?? 0,
                         };
                     }),
                     v = a.useRef(!1),

@@ -1,5 +1,5 @@
 import { r as a, j as e, f as s } from './vendor.js';
-import { o as t, d4 as i, a0 as m, au as l, dM as o } from './lib.js';
+import { aR as t, s as i, bo as m, ac as l, dT as o } from './lib.js';
 const n = { small: 'small', big: 'big' },
     r = { full: 'full', medium: 'medium', small: 'small' },
     d = { appear: 'appear', fadeIn: 'fadeIn', slideUpIn: 'slideUpIn' },
@@ -8,14 +8,14 @@ const n = { small: 'small', big: 'big' },
     p = 'DateRange_label_a9603586',
     f = 'DateRange_image_6a8d9b5e',
     h = t.resolve('strings'),
-    g = { full: 'full', numeric: 'numeric', compact: 'compact' },
-    D = { [g.full]: i.DayMonthFull, [g.numeric]: i.DayMonthNumeric };
-function b({ startDate: t, endDate: i, className: n, size: d, isAdaptive: c, isMode: x }) {
+    b = { full: 'full', numeric: 'numeric', compact: 'compact' },
+    g = { [b.full]: i.DayMonthFull, [b.numeric]: i.DayMonthNumeric };
+function D({ startDate: t, endDate: i, className: n, size: d, isAdaptive: c, isMode: x }) {
     const v = o,
         _ = d === r.medium,
         j = d === r.small,
         w = a.useMemo(
-            () => (j || (c && _ && x) ? b.format.compact : c || _ ? b.format.numeric : b.format.full),
+            () => (j || (c && _ && x) ? D.format.compact : c || _ ? D.format.numeric : D.format.full),
             [c, _, x, j],
         );
     return e.jsxs('div', {
@@ -28,16 +28,16 @@ function b({ startDate: t, endDate: i, className: n, size: d, isAdaptive: c, isM
                 height: 17,
                 adaptive: { medium: { path: 'ui_kit.datetime.x24x24.cooldown', width: 24, height: 24 } },
             }),
-            w !== g.compact
+            w !== b.compact
                 ? e.jsx(l, {
                       className: p,
                       text: h.readOrEmpty('user_missions.common.daterange.divider'),
                       split: !0,
-                      params: { startDate: v(t, D[w]), endDate: v(i, D[w]) },
+                      params: { startDate: v(t, g[w]), endDate: v(i, g[w]) },
                   })
                 : null,
         ],
     });
 }
-b.format = g;
-export { b as D, d as a, c as b, r as c, n as w };
+D.format = b;
+export { D, d as a, c as b, r as c, n as w };

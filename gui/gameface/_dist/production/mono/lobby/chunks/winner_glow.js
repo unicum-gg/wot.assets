@@ -1,39 +1,39 @@
-import { r as e, $ as a, U as t, S as s, I as n, j as r, f as o, Q as i, P as c } from './vendor.js';
+import { r as e, a0 as a, C as t, x as s, y as n, j as r, f as o, A as i, B as c } from './vendor.js';
 import {
-    dT as l,
-    dU as d,
+    d_ as l,
+    d$ as d,
     i as m,
-    cX as _,
-    bq as h,
-    dV as u,
-    bp as p,
-    ca as g,
-    dW as x,
-    ab as f,
-    aI as b,
-    a7 as v,
-    ch as N,
-    cd as j,
-    aq as S,
-    a9 as w,
-    cm as I,
-    d3 as T,
-    d4 as M,
-    au as O,
-    ci as F,
-    m as A,
-    ag as y,
-    aJ as L,
-    K as C,
-    _ as D,
-    d5 as k,
-    cG as z,
-    T as B,
-    cI as $,
+    c as _,
+    at as h,
+    e0 as u,
+    w as p,
+    df as g,
+    e1 as x,
+    bw as f,
+    u as b,
+    B as v,
+    M as N,
+    q as j,
+    bE as S,
+    m as w,
+    o as I,
+    D as T,
+    s as M,
+    ac as O,
+    ak as A,
+    e as F,
+    bz as y,
+    K as L,
+    bc as C,
+    bm as D,
+    t as k,
+    dy as z,
+    bg as B,
+    dA as $,
 } from './lib.js';
 import { I as W, P as U } from './consts.js';
-import { D as P } from './divine_glow.js';
-import { A as H } from './animated_background.js';
+import { D as H } from './divine_glow.js';
+import { A as P } from './animated_background.js';
 var E = ((e) => ((e.OLS = 'ols'), (e.WCI = 'wci'), (e.NONE = ''), e))(E || {});
 const G = e.createContext({
         mainBgPath: '',
@@ -491,8 +491,8 @@ const ge = ({
     Te = 'Footer_result_7805495d',
     Me = 'Footer_counter_f418ad46',
     Oe = 'Footer_score_e2ed58a4',
-    Fe = 'Footer_score__winner_fce912eb',
-    Ae = 'Footer_teamLogo_4d32a058',
+    Ae = 'Footer_score__winner_fce912eb',
+    Fe = 'Footer_teamLogo_4d32a058',
     ye = 'Footer_teamLogo__loser_df3967bf',
     Le = n(function ({ team1: e, team2: a, bestOf: t }) {
         const { model: s } = se(),
@@ -527,16 +527,16 @@ const ge = ({
                 return r.jsxs('div', {
                     className: we,
                     children: [
-                        r.jsx(ge, { logos: e.logos, teamName: e.teamName, size: pe.x68, className: o(Ae, !c && ye) }),
+                        r.jsx(ge, { logos: e.logos, teamName: e.teamName, size: pe.x68, className: o(Fe, !c && ye) }),
                         r.jsxs('div', {
                             className: Te,
                             children: [
                                 r.jsxs('div', {
                                     className: Me,
                                     children: [
-                                        r.jsx('div', { className: o(Oe, c && Fe), children: e.score }),
+                                        r.jsx('div', { className: o(Oe, c && Ae), children: e.score }),
                                         r.jsx('div', { className: Ie }),
-                                        r.jsx('div', { className: o(Oe, !c && Fe), children: a.score }),
+                                        r.jsx('div', { className: o(Oe, !c && Ae), children: a.score }),
                                     ],
                                 }),
                                 r.jsx(j, {
@@ -546,7 +546,7 @@ const ge = ({
                                 }),
                             ],
                         }),
-                        r.jsx(ge, { logos: a.logos, teamName: a.teamName, size: pe.x68, className: o(Ae, c && ye) }),
+                        r.jsx(ge, { logos: a.logos, teamName: a.teamName, size: pe.x68, className: o(Fe, c && ye) }),
                     ],
                 });
             default:
@@ -727,8 +727,8 @@ const ge = ({
     }),
     We = 'NextMatch_761307a6',
     Ue = 'NextMatch_date_324e5a0a',
-    Pe = 'NextMatch_time_73b66f84',
-    He = 'NextMatch_teams_d8219813',
+    He = 'NextMatch_time_73b66f84',
+    Pe = 'NextMatch_teams_d8219813',
     Ee = 'NextMatch_teamName_df96bd91',
     Ge = 'NextMatch_textWrapper_6dd0aab3',
     Qe = 'NextMatch_bestOf_412f98dd',
@@ -758,11 +758,11 @@ const ge = ({
                     className: Ue,
                     children: [
                         r.jsx(T, { datetime: e, format: M.DayMonthAbbreviated }),
-                        r.jsx('div', { className: Pe, children: r.jsx(T, { datetime: e, format: M.ShortTime }) }),
+                        r.jsx('div', { className: He, children: r.jsx(T, { datetime: e, format: M.ShortTime }) }),
                     ],
                 }),
                 r.jsxs('div', {
-                    className: He,
+                    className: Pe,
                     children: [
                         r.jsx(ge, { teamName: a.teamName, logos: a.logos, size: m, classNames: Ve }),
                         r.jsx('div', {
@@ -841,7 +841,7 @@ const ge = ({
                                           binding: {
                                               addition:
                                                   i.length > 0 &&
-                                                  r.jsx(F, {
+                                                  r.jsx(A, {
                                                       content: R.strings.comp7_ext.tournament.comingSoonAddition(),
                                                       className: Xe.addition,
                                                   }),
@@ -862,7 +862,7 @@ const ge = ({
                                       i.length > 0
                                           ? r.jsx('div', {
                                                 className: Xe.matches,
-                                                children: A(3, (a) => {
+                                                children: F(3, (a) => {
                                                     const t = i[a];
                                                     return (
                                                         t &&
@@ -1003,7 +1003,7 @@ const ge = ({
                                     r.jsx(j, {
                                         text: R.strings.comp7_ext.tournament.prize(),
                                         binding: {
-                                            addition: r.jsx(F, {
+                                            addition: r.jsx(A, {
                                                 content: R.strings.comp7_ext.tournament.prizeAddition(),
                                                 className: da.addition,
                                             }),
@@ -1067,12 +1067,12 @@ const ge = ({
     Ta = 'MatchByDate_completed_6500368b',
     Ma = 'MatchByDate_matchType_c1acb88b',
     Oa = 'MatchByDate_teams_6593dcc5',
-    Fa = 'MatchByDate_glow_7e4b4988',
-    Aa = 'MatchByDate_teamName_233c3b64',
+    Aa = 'MatchByDate_glow_7e4b4988',
+    Fa = 'MatchByDate_teamName_233c3b64',
     ya = 'MatchByDate_time_11f525f2',
     La = 'MatchByDate_loser_90c34627',
     Ca = [Y.GrandFinals, Y.UBFinals, Y.LBFinals],
-    Da = { teamName: Aa },
+    Da = { teamName: Fa },
     ka = (e, a) => {
         switch (e) {
             case X.Completed:
@@ -1123,7 +1123,7 @@ const ge = ({
                             r.jsxs('div', {
                                 className: wa,
                                 children: [
-                                    _ && m && r.jsx('div', { className: Fa, style: { backgroundImage: `url(${p})` } }),
+                                    _ && m && r.jsx('div', { className: Aa, style: { backgroundImage: `url(${p})` } }),
                                     r.jsx(ge, {
                                         teamName: t.teamName,
                                         logos: t.logos,
@@ -1138,7 +1138,7 @@ const ge = ({
                             r.jsxs('div', {
                                 className: wa,
                                 children: [
-                                    !_ && m && r.jsx('div', { className: Fa, style: { backgroundImage: `url(${p})` } }),
+                                    !_ && m && r.jsx('div', { className: Aa, style: { backgroundImage: `url(${p})` } }),
                                     r.jsx(ge, {
                                         teamName: s.teamName,
                                         logos: s.logos,
@@ -1191,7 +1191,7 @@ const ge = ({
     },
     Wa = 'ScheduleTabContent_6d083e2e',
     Ua = 'ScheduleTabContent_base__withMask_fbcb0d72',
-    Pa = n(function () {
+    Ha = n(function () {
         const { model: a, controls: t } = se(),
             s = a.overviewState.get(),
             n = a.computes.scheduleByDate(),
@@ -1262,7 +1262,7 @@ const ge = ({
             })
         );
     }),
-    Ha = {
+    Pa = {
         base: 'App_b829de78',
         page: 'App_page_8b428d62',
         slider: 'App_slider_87749c8a',
@@ -1295,10 +1295,10 @@ const ge = ({
         return (
             J(a.close),
             r.jsx('div', {
-                className: Ha.base,
+                className: Pa.base,
                 style: { backgroundImage: `url('${d}')` },
                 children: r.jsx(c.div, {
-                    className: o(Ha.page, Ha[`base__${s}`]),
+                    className: o(Pa.page, Pa[`base__${s}`]),
                     style: { ...l },
                     children:
                         n === K.Loading
@@ -1315,7 +1315,7 @@ const ge = ({
                                                   z.Tab,
                                                   {
                                                       tabId: ee,
-                                                      className: Ha.tab,
+                                                      className: Pa.tab,
                                                       children: `${R.strings.comp7_ext.tournament.tab.$dyn(ee)}`,
                                                   },
                                                   `tab_${ee}`,
@@ -1324,7 +1324,7 @@ const ge = ({
                                                   z.Tab,
                                                   {
                                                       tabId: ae,
-                                                      className: Ha.tab,
+                                                      className: Pa.tab,
                                                       children: `${R.strings.comp7_ext.tournament.tab.$dyn(ae)}`,
                                                   },
                                                   `tab_${ae}`,
@@ -1339,7 +1339,7 @@ const ge = ({
                                                   case ae:
                                                       return s === q.Error
                                                           ? r.jsx(le, {})
-                                                          : r.jsx(B, { children: r.jsx(Pa, {}) });
+                                                          : r.jsx(B, { children: r.jsx(Ha, {}) });
                                                   default:
                                                       return (console.error('Unreachable branch in tabs'), null);
                                               }
@@ -1353,9 +1353,9 @@ const ge = ({
     }),
     Ga = 'WinnerGlow_wciWinnerGlow_7c899fb',
     Qa = 'WinnerGlow_olsWinnerGlow_9d477dc8',
-    qa = () => r.jsx(H, { className: Ga }),
+    qa = () => r.jsx(P, { className: Ga }),
     Ka = () => {
         const e = i(W);
-        return r.jsx(c.div, { className: Qa, style: e, children: r.jsx(P, {}) });
+        return r.jsx(c.div, { className: Qa, style: e, children: r.jsx(H, {}) });
     };
 export { Ea as A, Ka as O, te as T, qa as W, G as a, E as b };

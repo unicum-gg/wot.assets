@@ -1,5 +1,5 @@
 import { j as e } from '../../../../chunks/vendor.js';
-import { i as a, x as s, E as i, J as l, U as d, N as c, r as o } from '../../../../chunks/lib.js';
+import { i as a, t as s, E as i, J as l, U as d, H as c, r as o } from '../../../../chunks/lib.js';
 const [p, t] = a()(
         ({ observableModel: e }) =>
             e.primitives([
@@ -23,8 +23,8 @@ const [p, t] = a()(
     h = 'BadgeTooltipApp_vehicleIcon_bc14bff8',
     j = 'BadgeTooltipApp_vehicleLevel_ebb57d27',
     x = 'BadgeTooltipApp_conditions_827aa69e',
-    N = 'BadgeTooltipApp_dots_950688b',
-    B = () => {
+    B = 'BadgeTooltipApp_dots_950688b',
+    N = () => {
         const { model: a } = t();
         return e.jsxs('div', {
             className: r,
@@ -48,9 +48,9 @@ const [p, t] = a()(
                         }),
                     ],
                 }),
-                e.jsx('div', { className: N }),
+                e.jsx('div', { className: B }),
                 e.jsx('div', { className: x, children: a.description.get() }),
             ],
         });
     };
-o(new l().add(d).add(p).add(c).render(e.jsx(B, {})));
+o(new l().add(d).add(p).add(c).render(e.jsx(N, {})));

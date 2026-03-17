@@ -1,5 +1,5 @@
-import { j as e, J as s, I as a } from '../../../../chunks/vendor.js';
-import { i as o, n as t, cd as i, cP as n, cn as c } from '../../../../chunks/lib.js';
+import { j as e, w as s, y as a } from '../../../../chunks/vendor.js';
+import { i as o, aC as t, q as i, aA as n, aB as c } from '../../../../chunks/lib.js';
 import { T as r } from '../../../../chunks/tooltip_decorator.js';
 import { g as _ } from '../../../../chunks/get_statistic_value.js';
 import { S as d } from '../../../../chunks/enums.js';
@@ -49,8 +49,8 @@ const h = 'App_85ba0ddd',
     j = 'App_count_d181c83a',
     v = 'App_description_9be53259',
     g = 'App_list_89b2a732',
-    I = 'App_listItem_72a48a31',
-    b = a(function () {
+    b = 'App_listItem_72a48a31',
+    I = a(function () {
         const { model: s } = w(),
             { statisticsMode: a, winRate: o, winsCount: t, lossCount: n, drawCount: c } = s.root.get();
         return e.jsxs('div', {
@@ -68,12 +68,12 @@ const h = 'App_85ba0ddd',
                 e.jsxs('div', {
                     className: g,
                     children: [
-                        e.jsx(f, { type: 'victory', value: t, className: I }),
-                        e.jsx(f, { type: 'defeat', value: n, className: I }),
-                        e.jsx(f, { type: 'draw', value: c, className: I }),
+                        e.jsx(f, { type: 'victory', value: t, className: b }),
+                        e.jsx(f, { type: 'defeat', value: n, className: b }),
+                        e.jsx(f, { type: 'draw', value: c, className: b }),
                     ],
                 }),
             ],
         });
     });
-n(e.jsx(p, { children: e.jsx(c, { children: e.jsx(r, { children: e.jsx(b, {}) }) }) }));
+n(e.jsx(p, { children: e.jsx(c, { children: e.jsx(r, { children: e.jsx(I, {}) }) }) }));

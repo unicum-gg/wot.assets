@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             3457: (e, t, n) => {
-                (n(6483), n(7727), n(7363), n(6880), n(2106));
+                (n(6483), n(1641), n(7727), n(7363), n(6880), n(2106));
             },
             2106: (e, t, n) => {
                 let i, r;
@@ -232,15 +232,15 @@
                         getScale: () => p,
                         getSize: () => v,
                         getViewGlobalPosition: () => w,
-                        initExternalPaddings: () => A,
-                        isEventHandled: () => O,
+                        initExternalPaddings: () => F,
+                        isEventHandled: () => y,
                         isFocused: () => f,
                         pxToRem: () => m,
                         remToPx: () => g,
                         resize: () => E,
                         sendEvent: () => s.qP,
                         setAnimateWindow: () => b,
-                        setEventHandled: () => y,
+                        setEventHandled: () => O,
                         setInputPaddingsRem: () => _,
                         setSidePaddingsRem: () => u,
                         whenTutorialReady: () => M,
@@ -293,10 +293,10 @@
                 function f() {
                     return viewEnv.isFocused();
                 }
-                function y() {
+                function O() {
                     return viewEnv.setEventHandled();
                 }
-                function O() {
+                function y() {
                     return viewEnv.isEventHandled();
                 }
                 function T() {
@@ -334,7 +334,7 @@
                 function x() {
                     viewEnv.setFullscreenModeSupported(!0);
                 }
-                function A(e) {
+                function F(e) {
                     function t() {
                         const t = viewEnv.getExternalPaddingsRem(),
                             n = t.top,
@@ -453,6 +453,16 @@
                             (e.SYMBOL = 'Symbol'),
                             (e.SYMBOL_LOCK = 'SymbolLock'));
                     })(r || (r = {})));
+            },
+            1641: (e, t, n) => {
+                let i;
+                !(function (e) {
+                    ((e[(e.LEFT = 0)] = 'LEFT'),
+                        (e[(e.WHEEL = 1)] = 'WHEEL'),
+                        (e[(e.RIGHT = 2)] = 'RIGHT'),
+                        (e[(e.FOURTH = 3)] = 'FOURTH'),
+                        (e[(e.FIFTH = 4)] = 'FIFTH'));
+                })(i || (i = {}));
             },
             9690: (e, t, n) => {
                 n.d(t, { cg: () => o });
@@ -710,8 +720,8 @@
                         e.keyCode === u.n.ESCAPE && t();
                     };
                 var f = n(7572);
-                const y = r.instance,
-                    O = {
+                const O = r.instance,
+                    y = {
                         DataTracker: o.Z,
                         ViewModel: f.Z,
                         ViewEventType: s,
@@ -790,17 +800,17 @@
                                 }
                             return n;
                         },
-                        ClickOutsideManager: y,
+                        ClickOutsideManager: O,
                         SystemLocale: a.Z5,
                         UserLocale: a.cy,
                     };
-                window.ViewEnvHelper = O;
+                window.ViewEnvHelper = y;
             },
             8613: (e, t, n) => {
                 n.d(t, { Z5: () => i, cy: () => r });
                 const i = {
                         getNumberFormat: (e, t) => systemLocale.getNumberFormat(e, t),
-                        getRealFormat: (e, t) => systemLocale.getRealFormat(e, t),
+                        getRealFormat: (e, t, n = 2) => systemLocale.getRealFormat(e, t, n),
                         getTimeFormat: (e, t) => systemLocale.getTimeFormat(e, t),
                         getDateFormat: (e, t) => systemLocale.getDateFormat(e, t),
                         toUpperCase: (e) => systemLocale.toUpperCase(e),

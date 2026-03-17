@@ -3165,7 +3165,7 @@
                 t.d(e, { Ew: () => a, Z5: () => r, cy: () => n });
                 const r = {
                         getNumberFormat: (u, e) => systemLocale.getNumberFormat(u, e),
-                        getRealFormat: (u, e) => systemLocale.getRealFormat(u, e),
+                        getRealFormat: (u, e, t = 2) => systemLocale.getRealFormat(u, e, t),
                         getTimeFormat: (u, e) => systemLocale.getTimeFormat(u, e),
                         getDateFormat: (u, e) => systemLocale.getDateFormat(u, e),
                         toUpperCase: (u) => systemLocale.toUpperCase(u),
@@ -3864,7 +3864,11 @@
                         (u.NotStarted = 'notStarted'));
                 })(r || (r = {})),
                     (function (u) {
-                        ((u.Vehicle = 'vehicle'), (u.Style = 'style'), (u.Tankman = 'tankman'));
+                        ((u.Vehicle = 'vehicle'),
+                            (u.VehicleStyle = 'vehicleStyle'),
+                            (u.Style = 'style'),
+                            (u.Tankman = 'tankman'),
+                            (u.PostProgression = 'postProgression'));
                     })(n || (n = {})));
             },
             5287: (u, e, t) => {

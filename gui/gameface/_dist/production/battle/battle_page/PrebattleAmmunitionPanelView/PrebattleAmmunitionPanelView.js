@@ -772,7 +772,7 @@
                 u.d(t, { Ew: () => i, Z5: () => n, cy: () => a });
                 const n = {
                         getNumberFormat: (e, t) => systemLocale.getNumberFormat(e, t),
-                        getRealFormat: (e, t) => systemLocale.getRealFormat(e, t),
+                        getRealFormat: (e, t, u = 2) => systemLocale.getRealFormat(e, t, u),
                         getTimeFormat: (e, t) => systemLocale.getTimeFormat(e, t),
                         getDateFormat: (e, t) => systemLocale.getDateFormat(e, t),
                         toUpperCase: (e) => systemLocale.toUpperCase(e),
@@ -2112,16 +2112,17 @@
                 const it = (e) => {
                         let t = e.value,
                             u = e.isEmpty,
-                            n = e.className,
-                            i = e.size,
-                            r = void 0 === i ? 'normal' : i,
-                            s = e.fadeInAnimation,
-                            o = void 0 !== s && s,
-                            l = e.hide,
-                            c = void 0 !== l && l,
-                            _ = e.maximumNumber,
-                            d = void 0 === _ ? 99 : _,
-                            m = (function (e, t) {
+                            n = void 0 !== u && u,
+                            i = e.className,
+                            r = e.size,
+                            s = void 0 === r ? 'normal' : r,
+                            o = e.fadeInAnimation,
+                            l = void 0 !== o && o,
+                            c = e.hide,
+                            _ = void 0 !== c && c,
+                            d = e.maximumNumber,
+                            m = void 0 === d ? 99 : d,
+                            E = (function (e, t) {
                                 if (null == e) return {};
                                 var u,
                                     n,
@@ -2130,29 +2131,29 @@
                                 for (n = 0; n < i.length; n++) ((u = i[n]), t.indexOf(u) >= 0 || (a[u] = e[u]));
                                 return a;
                             })(e, nt);
-                        const E = u ? null : t,
-                            b = 'string' == typeof E;
-                        if ((E && !b && E < 0) || 0 === E) return null;
-                        const g = E && !b && E > d,
-                            p = S()(
+                        const b = n ? null : t,
+                            g = 'string' == typeof b;
+                        if ((b && !g && b < 0) || 0 === b) return null;
+                        const p = b && !g && b > m,
+                            A = S()(
                                 ut.base,
-                                ut[`base__${r}`],
-                                o && ut.base__animated,
-                                c && ut.base__hidden,
-                                !E && ut.base__pattern,
-                                u && ut.base__empty,
-                                n,
+                                ut[`base__${s}`],
+                                l && ut.base__animated,
+                                _ && ut.base__hidden,
+                                !b && ut.base__pattern,
+                                n && ut.base__empty,
+                                i,
                             );
                         return a().createElement(
                             'div',
-                            at({ className: p }, m),
+                            at({ className: A }, E),
                             a().createElement('div', { className: ut.bg }),
                             a().createElement('div', { className: ut.pattern }),
                             a().createElement(
                                 'div',
-                                { className: S()(ut.value, b && ut.value__text) },
-                                g ? d : E,
-                                g && a().createElement('span', { className: ut.plus }, '+'),
+                                { className: S()(ut.value, g && ut.value__text) },
+                                p ? m : b,
+                                p && a().createElement('span', { className: ut.plus }, '+'),
                             ),
                         );
                     },
@@ -3491,11 +3492,12 @@
                                         u || (l && l(e), D(!1));
                                     },
                                     onMouseDown: function (e) {
-                                        u ||
-                                            (null !== b && T(b),
+                                        if (u) return;
+                                        const t = e.button === _u.LEFT;
+                                        (null !== b && t && T(b),
                                             o && o(e),
                                             d && (u || (g.current && (g.current.focus(), h(!0)))),
-                                            D(!0));
+                                            t && D(!0));
                                     },
                                     onMouseLeave: function (e) {
                                         u || (c && c(e), D(!1));

@@ -5,13 +5,13 @@ import {
     n as _,
     u as t,
     r as p,
-    e as d,
-    s as v,
+    b as d,
+    o as v,
     a as c,
-    o as m,
-    b as l,
-    k as u,
-    V as y,
+    V as m,
+    e as l,
+    s as u,
+    k as y,
     d as f,
     U as h,
 } from '../../../chunks/lib.js';
@@ -37,11 +37,11 @@ import {
             _ = s.useRef(!1),
             f = t(),
             h = p.resolve('videos'),
-            [j, b] = e(() => ({ from: { opacity: 0 }, config: { duration: 400, easing: d.easeInCubic } })),
+            [j, b] = e(() => ({ from: { opacity: 0 }, config: { duration: 400, easing: l.easeInCubic } })),
             [I, k] = e(() => ({
                 from: { opacity: 1 },
-                config: { duration: 200, easing: d.easeInCubic },
-                onRest: () => v.closeView(),
+                config: { duration: 200, easing: l.easeInCubic },
+                onRest: () => u.closeView(),
             }));
         function E() {
             _.current ||
@@ -54,13 +54,13 @@ import {
                 }));
         }
         return (
-            c(() =>
-                m((o) => {
+            d(() =>
+                v((o) => {
                     o ? f.play('vid_pm_pause') : f.play('vid_pm_resume');
                 }),
             ),
-            l(u.ESCAPE, E),
-            c(() => {
+            c(y.ESCAPE, E),
+            d(() => {
                 const o = n.current;
                 o && (o.play(), b.start({ opacity: 1 }), f.play(a), f.play(`${a}_vo`));
             }),
@@ -70,7 +70,7 @@ import {
                 children: i.jsx(r.div, {
                     className: x.wrapper,
                     style: j,
-                    children: i.jsx(y, {
+                    children: i.jsx(m, {
                         ref: n,
                         className: x.video,
                         src: h.readOrEmpty(`personal_missions_30.intro_screens.${a}`),

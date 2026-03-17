@@ -1,4 +1,4 @@
-import { j as s, J as a } from './vendor.js';
+import { j as s, w as a } from './vendor.js';
 import { s as e } from './rank_emblem.js';
 const m = ({ size: m, seasonName: n, className: o }) => {
     const r = R.images.comp7.gui.maps.icons.ranks.$dyn(n).$num(m);
