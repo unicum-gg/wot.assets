@@ -1,23 +1,23 @@
-import { j as e, r, e as a } from './vendor.js';
-import { r as s, e as t, z as o, B as i, A as n, F as d, x as c, _ as l, $ as w } from './lib.js';
+import { j as e, r, h as s } from './vendor.js';
+import { r as a, e as t, z as o, B as i, A as n, F as d, x as c, _ as l, $ as w } from './lib.js';
 import { g as u } from './category.js';
 const m = 'SeniorityAwardsViewFooter_ee5e4688',
     _ = 'SeniorityAwardsViewFooter_description_ad1f38e5',
     p = 'SeniorityAwardsViewFooter_buttonHolder_b0449970',
     y = 'SeniorityAwardsViewFooter_button_925ad150',
-    v = 'SeniorityAwardsViewFooter_buttonWrapper_3ea3a32b',
-    h = 'SeniorityAwardsViewFooter_glow_40376564',
+    h = 'SeniorityAwardsViewFooter_buttonWrapper_3ea3a32b',
+    v = 'SeniorityAwardsViewFooter_glow_40376564',
     x = 'seniority_awards.rewardsView',
     b = ({
         moreReardsCount: r = 0,
-        isGotoHangarAvailable: a = !1,
+        isGotoHangarAvailable: s = !1,
         hasMoreRewards: c,
         isShopAvailable: l,
         onShowMoreClick: w,
         onAcceptClick: u,
         onGotoHangarBtnClick: b,
     }) => {
-        const g = s.resolve('strings'),
+        const g = a.resolve('strings'),
             j = t({ value: o.medium }, { large: { value: o.large } });
         return e.jsx('div', {
             className: m,
@@ -47,9 +47,9 @@ const m = 'SeniorityAwardsViewFooter_ee5e4688',
                               className: p,
                               children: [
                                   e.jsxs('div', {
-                                      className: v,
+                                      className: h,
                                       children: [
-                                          l && e.jsx('div', { className: h }),
+                                          l && e.jsx('div', { className: v }),
                                           e.jsx(i, {
                                               className: y,
                                               size: j.value,
@@ -62,9 +62,9 @@ const m = 'SeniorityAwardsViewFooter_ee5e4688',
                                           }),
                                       ],
                                   }),
-                                  a &&
+                                  s &&
                                       e.jsx('div', {
-                                          className: v,
+                                          className: h,
                                           children: e.jsx(i, {
                                               size: j.value,
                                               onClick: b,
@@ -78,10 +78,9 @@ const m = 'SeniorityAwardsViewFooter_ee5e4688',
                       ],
                   }),
         });
-    },
-    g = 400;
-function j({ resId: e, contentId: a, decoratorId: s, disabled: t, args: o, onShowTooltip: i, onHideTooltip: n }) {
-    const d = c({ resId: e, contentId: a, decoratorId: s, disabled: t, args: o, showDelay: g }),
+    };
+function g({ resId: e, contentId: s, decoratorId: a, disabled: t, args: o, onShowTooltip: i, onHideTooltip: n }) {
+    const d = c({ resId: e, contentId: s, decoratorId: a, disabled: t, args: o, showDelay: 400 }),
         w = r.useRef(),
         [u, m] = r.useState(!1);
     return (
@@ -89,85 +88,80 @@ function j({ resId: e, contentId: a, decoratorId: s, disabled: t, args: o, onSho
         {
             ...d,
             onMouseEnter: (e) => {
-                var r;
-                (null == (r = d.onMouseEnter) || r.call(d, e),
+                (d.onMouseEnter?.(e),
                     w.current && clearTimeout(w.current),
                     (w.current = setTimeout(() => {
-                        (m(!0), null == i || i());
-                    }, g)));
+                        (m(!0), i?.());
+                    }, 400)));
             },
             onMouseLeave: () => {
-                var e;
-                (null == (e = d.onMouseLeave) || e.call(d),
-                    w.current && (clearTimeout(w.current), (w.current = void 0)),
-                    u && (null == n || n()),
-                    m(!1));
+                (d.onMouseLeave?.(), w.current && (clearTimeout(w.current), (w.current = void 0)), u && n?.(), m(!1));
             },
         }
     );
 }
-function S(e) {
-    return j({
+function j(e) {
+    return g({
         ...e,
-        contentId: s
+        contentId: a
             .resolve('views')
             .read((e) => e.common.tooltip_window.backport_tooltip_content.BackportTooltipContent('resId')),
     });
 }
-const T = 'HeaderButton_a376d13c',
-    V = 'HeaderButton_caption_915bc256',
-    N = 'HeaderButton_icon_b123e86b',
-    H = ({ onShowTooltip: r, onHideTooltip: a }) => {
-        const t = s.resolve('strings'),
-            o = j({
-                contentId: s.resolve('views').read((e) => e.mono.seniority_awards.tooltips.seniority_tooltip('resId')),
+const S = 'HeaderButton_a376d13c',
+    T = 'HeaderButton_caption_915bc256',
+    V = 'HeaderButton_icon_b123e86b',
+    N = ({ onShowTooltip: r, onHideTooltip: s }) => {
+        const t = a.resolve('strings'),
+            o = g({
+                contentId: a.resolve('views').read((e) => e.mono.seniority_awards.tooltips.seniority_tooltip('resId')),
                 onShowTooltip: r,
-                onHideTooltip: a,
+                onHideTooltip: s,
             });
         return e.jsxs('div', {
-            className: T,
+            className: S,
             ...o,
             children: [
-                e.jsx('div', { className: V, children: t.readOrEmpty('seniority_awards.rewardsView.info') }),
-                e.jsx('div', { className: N }),
+                e.jsx('div', { className: T, children: t.readOrEmpty('seniority_awards.rewardsView.info') }),
+                e.jsx('div', { className: V }),
             ],
         });
     },
-    A = 'SeniorityAwardsViewHeader_699fc570',
-    B = 'SeniorityAwardsViewHeader_titleBox_dddc842b',
-    f = 'SeniorityAwardsViewHeader_light_23331022',
-    E = 'SeniorityAwardsViewHeader_line_eb9e2523',
-    C = 'SeniorityAwardsViewHeader_line__inverted_fd812922',
-    k = 'SeniorityAwardsViewHeader_square_67a0fdc5',
-    I = 'SeniorityAwardsViewHeader_title_5cda5632',
-    M = 'SeniorityAwardsViewHeader_subTitle_55b48fc7',
-    O = 'SeniorityAwardsViewHeader_rank_ba17e17',
-    F = { primary: 'primary', secondary: 'secondary' },
-    L = ({ type: r = F.primary, category: t, maxCategory: o, onShowTooltip: i, onHideTooltip: n }) => {
-        const c = s.resolve('strings');
+    H = 'SeniorityAwardsViewHeader_699fc570',
+    A = 'SeniorityAwardsViewHeader_titleBox_dddc842b',
+    B = 'SeniorityAwardsViewHeader_light_23331022',
+    f = 'SeniorityAwardsViewHeader_line_eb9e2523',
+    E = 'SeniorityAwardsViewHeader_line__inverted_fd812922',
+    C = 'SeniorityAwardsViewHeader_square_67a0fdc5',
+    k = 'SeniorityAwardsViewHeader_title_5cda5632',
+    I = 'SeniorityAwardsViewHeader_subTitle_55b48fc7',
+    M = 'SeniorityAwardsViewHeader_rank_ba17e17',
+    O = { primary: 'primary', secondary: 'secondary' },
+    F = ({ type: r = O.primary, category: t, maxCategory: o, onShowTooltip: i, onHideTooltip: n }) => {
+        const c = a.resolve('strings');
         return e.jsxs('div', {
-            className: A,
+            className: H,
             children: [
                 e.jsxs('div', {
-                    className: B,
+                    className: A,
                     children: [
-                        e.jsx('div', { className: f }),
-                        e.jsx('div', { className: E, children: e.jsx('div', { className: k }) }),
-                        e.jsx('div', { className: I, children: c.readOrEmpty('seniority_awards.rewardsView.title') }),
-                        e.jsx('div', { className: a(E, C), children: e.jsx('div', { className: k }) }),
+                        e.jsx('div', { className: B }),
+                        e.jsx('div', { className: f, children: e.jsx('div', { className: C }) }),
+                        e.jsx('div', { className: k, children: c.readOrEmpty('seniority_awards.rewardsView.title') }),
+                        e.jsx('div', { className: s(f, E), children: e.jsx('div', { className: C }) }),
                     ],
                 }),
                 (() => {
                     switch (r) {
-                        case F.primary:
+                        case O.primary:
                             return e.jsxs(e.Fragment, {
                                 children: [
                                     e.jsx(d, {
-                                        className: M,
+                                        className: I,
                                         text: c.readOrEmpty('seniority_awards.rewardsView.subTitle.text'),
                                         params: {
                                             rank: e.jsx('span', {
-                                                className: O,
+                                                className: M,
                                                 children: c.readOrEmpty(
                                                     `seniority_awards.rewardsView.subTitle.rank.${u(t, o)}`,
                                                 ),
@@ -175,12 +169,12 @@ const T = 'HeaderButton_a376d13c',
                                         },
                                         upgradeLegacy: !0,
                                     }),
-                                    e.jsx(H, { onShowTooltip: i, onHideTooltip: n }),
+                                    e.jsx(N, { onShowTooltip: i, onHideTooltip: n }),
                                 ],
                             });
-                        case F.secondary:
+                        case O.secondary:
                             return e.jsx('div', {
-                                className: M,
+                                className: I,
                                 children: c.readOrEmpty('seniority_awards.rewardsView.selection.received'),
                             });
                         default:
@@ -190,12 +184,12 @@ const T = 'HeaderButton_a376d13c',
             ],
         });
     },
-    $ = 'seniority_awards',
-    R = $ + '_vehicle_selection';
-var z = ((e) => ((e.RewardsScreen = 'sa_rewards_screen'), (e.VehicleSelectionView = 'sa_vehicle_selection_view'), e))(
-        z || {},
+    L = 'seniority_awards',
+    $ = L + '_vehicle_selection';
+var R = ((e) => ((e.RewardsScreen = 'sa_rewards_screen'), (e.VehicleSelectionView = 'sa_vehicle_selection_view'), e))(
+        R || {},
     ),
-    G = ((e) => (
+    z = ((e) => (
         (e.GoToShopButton = 'goto_shop_button'),
         (e.ShowMoreButton = 'show_more_button'),
         (e.ConfirmButton = 'confirm_button'),
@@ -206,16 +200,16 @@ var z = ((e) => ((e.RewardsScreen = 'sa_rewards_screen'), (e.VehicleSelectionVie
         (e.VehicleTooltip = 'vehicle_tooltip'),
         (e.SeniorityAwardsTooltip = 'seniority_awards_tooltip'),
         e
-    ))(G || {});
-const q = { pending: 'pending', success: 'success', error: 'error' },
-    W = (e, a = 0) => {
-        const [s, t] = r.useState(q.pending),
-            o = w((e) => t(e), [], a),
+    ))(z || {});
+const G = { pending: 'pending', success: 'success', error: 'error' },
+    q = (e, s = 0) => {
+        const [a, t] = r.useState(G.pending),
+            o = w((e) => t(e), [], s),
             i = r.useCallback(() => {
-                o(q.success);
+                o(G.success);
             }, [o]),
             n = r.useCallback(() => {
-                o(q.error);
+                o(G.error);
             }, [o]);
         return (
             r.useLayoutEffect(() => {
@@ -229,15 +223,15 @@ const q = { pending: 'pending', success: 'success', error: 'error' },
                     }
                 );
             }, [e, i, n]),
-            s
+            a
         );
     },
-    D = (e) => --e * e * e + 1,
-    P = (e) => Math.sqrt(1 - Math.pow(e - 1, 2)),
-    U = (e) => {
+    W = (e) => --e * e * e + 1,
+    D = (e) => Math.sqrt(1 - Math.pow(e - 1, 2)),
+    P = (e) => {
         const r = 2.5949095;
         return e < 0.5
             ? (Math.pow(2 * e, 2) * (7.189819 * e - r)) / 2
             : (Math.pow(2 * e - 2, 2) * ((r + 1) * (2 * e - 2) + r) + 2) / 2;
     };
-export { $ as F, G as I, z as P, L as S, b as a, R as b, P as c, U as d, D as e, S as f, F as h, q as l, W as u };
+export { L as F, z as I, R as P, F as S, b as a, $ as b, D as c, P as d, W as e, j as f, O as h, G as l, q as u };

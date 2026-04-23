@@ -1,4 +1,4 @@
-import { m as s, j as e, e as a } from '../../../../chunks/vendor.js';
+import { n as s, j as e, h as a } from '../../../../chunks/vendor.js';
 import {
     i as t,
     r as o,
@@ -11,8 +11,8 @@ import {
     A as m,
     a1 as u,
     q as p,
-    J as j,
-    U as h,
+    J as h,
+    U as j,
     t as b,
 } from '../../../../chunks/lib.js';
 import { t as x } from '../../../../chunks/sounds.js';
@@ -75,4 +75,4 @@ function O() {
     return e.jsx(u, { children: e.jsx(E, {}) });
 }
 const P = p(x);
-b(new j().add(g).addWithProps(h, { soundsOverrides: P }).render(e.jsx(O, {})));
+b(new h().add(g).addWithProps(j, { soundsOverrides: P }).render(e.jsx(O, {})));

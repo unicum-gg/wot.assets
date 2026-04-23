@@ -1,7 +1,7 @@
-import { o as e, m as s, j as t, e as o } from '../../../../chunks/vendor.js';
-import { i, A as r, G as n, H as a, J as c, F as l, r as d, E as m } from '../../../../chunks/lib.js';
+import { o as e, n as s, j as t, e as o } from '../../../../chunks/vendor.js';
+import { i, A as n, G as r, H as a, J as c, F as l, r as d, E as m } from '../../../../chunks/lib.js';
 import { a as _ } from '../../../../chunks/resources.js';
-import '../../../../chunks/getRewardImage.js';
+/* empty css                       */ import '../../../../chunks/getRewardImage.js';
 const x = {
         images: { alert: 'entry_point.alert', lootboxTooltip: 'entry_point.lootboxTooltip', time: 'entry_point.time' },
         texts: {
@@ -16,22 +16,22 @@ const x = {
     [p, u] = i()(({ observableModel: s }) => {
         const t = s.object().get().eventName;
         return { ...{ root: s.object(), resources: e.box(_(x, t)) }, computes: {} };
-    }, r);
+    }, n);
 function j(e) {
     return e < 10 ? '0' + e : e;
 }
 const b = 'Timer_ece32445',
     h = 'Timer_timerText_389b7aec',
-    T = 'Timer_iconWrapper_e0ef602f',
-    g = 'Timer_icon_a6577db7',
+    g = 'Timer_iconWrapper_e0ef602f',
+    T = 'Timer_icon_a6577db7',
     v = 'Timer_value_4ddac53a';
 const f = s(function () {
         const { model: e } = u(),
             { eventExpireTime: s } = e.root.get(),
             { images: o, texts: i } = e.resources.get(),
-            r = n(s, 1),
+            n = r(s, 1),
             l =
-                ((d = a(r)),
+                ((d = a(n)),
                 (m = i.lessThanMinute),
                 d.minutes > 0
                     ? `${d.days ? c(R.strings.common.duration.days(), { days: d.days }) : ''} ${j(d.hours)} : ${j(d.minutes)} : ${j(d.seconds)}`
@@ -42,8 +42,8 @@ const f = s(function () {
             children: [
                 t.jsx('div', { className: h, children: i.timerText }),
                 t.jsx('div', {
-                    className: T,
-                    children: t.jsx('div', { className: g, style: { backgroundImage: `url(${o.time})` } }),
+                    className: g,
+                    children: t.jsx('div', { className: T, style: { backgroundImage: `url(${o.time})` } }),
                 }),
                 t.jsx('div', { className: v, children: l }),
             ],
@@ -67,27 +67,26 @@ const y = s(function () {
             ],
         });
     }),
-    I = {
-        root: 'AlertIcon_root_a8a4098d',
+    w = {
         base: 'AlertIcon_7dcecd8f',
         shadow: 'AlertIcon_shadow_5a06c9a',
         base__big: 'AlertIcon_base__big_a8a4098d',
         icon: 'AlertIcon_icon_3bb8b40',
         fadeIn: 'AlertIcon_fadeIn_a8a4098d',
     },
-    w = { small: 'small' };
-function E({ icon: e, hasShadow: s = !1, size: i = w.small, className: r }) {
+    I = 'small';
+function E({ icon: e, hasShadow: s = !1, size: i = I, className: n }) {
     return t.jsxs('div', {
-        className: o(I.base, I[`base__${i}`], r),
+        className: o(w.base, w[`base__${i}`], n),
         children: [
-            s && t.jsx('div', { className: I.shadow }),
-            t.jsx('div', { className: I.icon, style: { backgroundImage: `url(${e})` } }),
+            s && t.jsx('div', { className: w.shadow }),
+            t.jsx('div', { className: w.icon, style: { backgroundImage: `url(${e})` } }),
         ],
     });
 }
-const A = 'ErrorTooltip_1a899ce5',
+const k = 'ErrorTooltip_1a899ce5',
     $ = 'ErrorTooltip_shadow_c014711a',
-    k = 'ErrorTooltip_alertIcon_8ff91e02',
+    A = 'ErrorTooltip_alertIcon_8ff91e02',
     P = 'ErrorTooltip_title_27846c7',
     M = 'ErrorTooltip_text_49b56fd6',
     B = 'ErrorTooltip_description_791ec4ee';
@@ -95,13 +94,13 @@ const D = s(function () {
         const { model: e } = u(),
             { images: s, texts: o } = e.resources.get();
         return t.jsxs('div', {
-            className: A,
+            className: k,
             children: [
                 t.jsx('div', { className: $ }),
                 t.jsxs('div', {
                     className: P,
                     children: [
-                        t.jsx(E, { className: k, icon: s.alert }),
+                        t.jsx(E, { className: A, icon: s.alert }),
                         t.jsx('div', { className: M, children: t.jsx(l, { text: o.warningTitle }) }),
                     ],
                 }),

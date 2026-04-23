@@ -18,7 +18,7 @@ const [u, b] = i()(
         }),
     ),
     h = 'OnboardingBattleResultViewApp_20ce445e',
-    _ = 'OnboardingBattleResultViewApp_title_3b835295',
+    _ = 'OnboardingBattleResultViewApp_title_62d88016',
     p = 'OnboardingBattleResultViewApp_subTitle_5467ca7f',
     w = 'OnboardingBattleResultViewApp_button_11e079c0',
     k = e(() => {

@@ -324,6 +324,9 @@
     <A83_T110E4>
       <row>	4	</row>
       <column>	10	</column>
+      <lines>
+        <A195_Gorilla></A195_Gorilla>
+      </lines>
     </A83_T110E4>
     <A69_T110E5>
       <row>	6	</row>
@@ -358,6 +361,10 @@
       <row>	12	</row>
       <column>	10	</column>
     </A116_XM551>
+    <A195_Gorilla>
+      <row>	4	</row>
+      <column>	11	</column>
+    </A195_Gorilla>
     <A183_XM69_Hacker>
       <row>	10	</row>
       <column>	11	</column>

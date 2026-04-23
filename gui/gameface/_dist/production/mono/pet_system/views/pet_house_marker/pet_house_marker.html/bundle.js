@@ -1,4 +1,4 @@
-import { q as e, R as s, r as a, j as t, f as r } from '../../../chunks/vendor.js';
+import { s as e, R as s, r as a, j as t, f as r } from '../../../chunks/vendor.js';
 import { i as p, t as i, r as l, j as n, v as c, w as d, x as m, k as o, U as f } from '../../../chunks/lib.js';
 /* empty css                    */ const [h, _] = p()(
         ({ observableModel: e }) => ({ ...{ ...e.primitives(['petNameID', 'hasUpdate', 'isVisible']) } }),

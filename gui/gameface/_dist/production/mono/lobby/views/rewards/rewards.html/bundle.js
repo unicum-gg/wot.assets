@@ -1,25 +1,25 @@
-import { j as e, z as a, x as s, y as d, r, Y as i } from '../../../chunks/vendor.js';
+import { j as e, F as a, h as s, E as d, r, a3 as i } from '../../../chunks/vendor.js';
 import {
     J as n,
-    c_ as t,
+    d9 as t,
     j as l,
-    c$ as _,
+    da as _,
     a as o,
     c,
     g as m,
-    d0 as w,
-    d1 as u,
+    db as w,
+    dc as u,
     d as b,
     e as x,
     h as p,
     Q as f,
     U as g,
-    aW as h,
+    aG as h,
     G as j,
-    a9 as v,
-    p as N,
+    a9 as N,
+    p as v,
     R as y,
-    d2 as M,
+    dd as M,
     a6 as A,
     a5 as C,
 } from '../../../chunks/lib.js';
@@ -41,20 +41,20 @@ const $ = 'Footer_f09fca09',
             }),
         });
     },
-    U = 'Header_edfdfa4a',
-    E = 'Header_title_bef229bc',
-    H = 'Header_status_faf7f728',
-    V = 'Header_subtitle_1008328a',
-    W = ({ title: a, status: s, subtitle: d }) =>
+    E = 'Header_edfdfa4a',
+    U = 'Header_title_bef229bc',
+    G = 'Header_status_faf7f728',
+    H = 'Header_subtitle_1008328a',
+    V = ({ title: a, status: s, subtitle: d }) =>
         e.jsxs('div', {
-            className: U,
+            className: E,
             children: [
-                e.jsx('div', { className: E, children: a }),
-                e.jsx('div', { className: H, children: s }),
-                d && e.jsx('div', { className: V, children: d }),
+                e.jsx('div', { className: U, children: a }),
+                e.jsx('div', { className: G, children: s }),
+                d && e.jsx('div', { className: H, children: d }),
             ],
         }),
-    [G, O] = o()(
+    [O, T] = o()(
         ({ observableModel: e }) => {
             const a = {
                     root: e.object(),
@@ -81,52 +81,51 @@ const $ = 'Footer_f09fca09',
         },
         ({ externalModel: e }) => ({ closeWindow: e.createCallbackNoArgs('onClose') }),
     ),
-    T = [w.Gold, w.Credits],
+    W = [w.Gold, w.Credits],
     q = [1, 2, 3, 7, 14, 30, 90, 180, 360],
     B = (e, a, s) => {
-        var d;
-        const { name: r, icon: i, value: n } = a;
-        if ('' !== e && r === w.Vehicles) {
-            const a = null == (d = I(e)) ? void 0 : d.rewards,
-                r = null == a ? void 0 : a.$dyn(`vehicle_${i.toLowerCase()}_${s}`);
-            return r || R.images.fun_random.gui.maps.icons.feature.rewards.bonuses.$dyn(`vehicle_default_${s}`);
+        const { name: d, icon: r, value: i } = a;
+        if ('' !== e && d === w.Vehicles) {
+            const a = I(e)?.rewards,
+                d = a?.$dyn(`vehicle_${r.toLowerCase()}_${s}`);
+            return d || R.images.fun_random.gui.maps.icons.feature.rewards.bonuses.$dyn(`vehicle_default_${s}`);
         }
-        return r !== w.PremiumPlus || q.includes(Number(n))
+        return d !== w.PremiumPlus || q.includes(Number(i))
             ? p(a, s)
             : `R.images.gui.maps.icons.quests.bonuses.${s}.premium_plus_1`;
     },
-    L = (e, a, s = !0, d = '', r = !0) => {
+    F = (e, a, s = !0, d = '', r = !0) => {
         const { name: i, value: n, label: t } = e,
             l = i === w.PremiumPlus && !q.includes(Number(n)),
             _ = l ? u.PremiumUniversal : i;
         return {
             name: l ? u.PremiumUniversal : i || e.item,
             image: B(d, e, a),
-            value: !r && T.includes(i) ? void 0 : n,
+            value: !r && W.includes(i) ? void 0 : n,
             special: e.overlayType,
             valueType: x(_),
             tooltipArgs: s ? b({ tooltipId: e.tooltipId }, Number(e.tooltipContentId)) : { isEnabled: !1 },
-            label: r || !T.includes(i) ? t : n,
+            label: r || !W.includes(i) ? t : n,
             isCompensation: e.isCompensation,
         };
     },
-    F = (e, a = 0) => ({ appear: a + 400 + 200 * e, enter: 600 }),
+    L = (e, a = 0) => ({ appear: a + 400 + 200 * e, enter: 600 }),
     D = (e) => 1300 + 400 * e,
     J = d(({ index: a, className: s, mainRewardsEnabled: d = !1 }) => {
-        const { model: r } = O(),
+        const { model: r } = T(),
             i = d ? r.computes.mainReward(a) : r.computes.additionalReward(a),
             { mediaSize: t } = n(),
             _ = t >= l.Medium ? f.Big : f.Small,
-            o = L(i, _);
+            o = F(i, _);
         return e.jsx(g, { ...o, size: _, className: s });
     }),
     Q = 'AdditionalRewards_8af994f7',
-    Y = 'AdditionalRewards_title_dd32b80a',
-    K = 'AdditionalRewards_rewardsList_532db93b',
-    X = 'AdditionalRewards_reward_79ca4edb',
+    K = 'AdditionalRewards_title_dd32b80a',
+    X = 'AdditionalRewards_rewardsList_532db93b',
+    Y = 'AdditionalRewards_reward_79ca4edb',
     Z = R.strings.fun_random.rewardsView,
     ee = d(({ className: s }) => {
-        const { model: d } = O(),
+        const { model: d } = T(),
             i = d.additionalRewards.get().length,
             { run: n, clear: t } = h();
         return (
@@ -145,15 +144,15 @@ const $ = 'Footer_f09fca09',
                 className: a(Q, s),
                 style: { '--baseDelay': `${D(d.mainRewards.get().length)}ms` },
                 children: [
-                    e.jsx('div', { className: Y, children: Z.additionalRewards.title() }),
+                    e.jsx('div', { className: K, children: Z.additionalRewards.title() }),
                     e.jsxs('div', {
-                        className: K,
+                        className: X,
                         children: [
-                            v(
+                            N(
                                 d.mainRewards.get().length,
-                                (a) => a >= 4 && e.jsx(J, { index: a, className: X, mainRewardsEnabled: !0 }, a + i),
+                                (a) => a >= 4 && e.jsx(J, { index: a, className: Y, mainRewardsEnabled: !0 }, a + i),
                             ),
-                            v(i, (a) => e.jsx(J, { index: a, className: X }, a)),
+                            N(i, (a) => e.jsx(J, { index: a, className: Y }, a)),
                         ],
                     }),
                 ],
@@ -187,42 +186,45 @@ const $ = 'Footer_f09fca09',
         rotate: 'Reward_rotate_21f091ec',
     },
     ie = d(({ rewardSize: s, rewardIndex: d }) => {
-        const { model: n } = O(),
-            { assetsPointer: t } = n.root.get(),
-            l = n.computes.mainReward(d),
-            { name: _, isCompensation: o } = l,
-            [c, m] = r.useState(!0),
-            w = L(l, s, !c, t, !1),
-            { label: u, valueType: b } = w;
+        const n = r.useRef(null),
+            { model: t } = T(),
+            { assetsPointer: l } = t.root.get(),
+            _ = t.computes.mainReward(d),
+            { name: o, isCompensation: c } = _,
+            [m, w] = r.useState(!0),
+            u = F(_, s, !m, l, !1),
+            { label: b, valueType: R } = u;
         return e.jsx(i, {
             appear: !0,
             in: !0,
-            timeout: F(d, 1300),
+            nodeRef: n,
+            timeout: L(d, 1300),
             onEntered: () => {
-                (j.sound('gui_random_reward_appear'), m(!1));
+                (j.sound('gui_random_reward_appear'), w(!1));
             },
             children: (d) =>
                 e.jsxs('div', {
-                    className: a(re.base, re[`base__${d}`], re[`base__${_}`], re[`base__${s}`]),
+                    ref: n,
+                    className: a(re.base, re[`base__${d}`], re[`base__${o}`], re[`base__${s}`]),
                     children: [
                         e.jsx(g, {
-                            ...w,
+                            ...u,
                             size: s,
                             className: re.reward,
-                            classNames: { info: a(re.info, re[`info__${b}`]) },
+                            classNames: { info: a(re.info, re[`info__${R}`]) },
                         }),
-                        o && e.jsx('div', { className: re.compensationIcon }),
-                        e.jsx('div', { className: re.title, children: u }),
+                        c && e.jsx('div', { className: re.compensationIcon }),
+                        e.jsx('div', { className: re.title, children: b }),
                     ],
                 }),
         });
     }),
     ne = 'Rewards_1a8854f',
     te = d(({ rewardSize: a }) => {
-        const { model: s } = O();
+        const { model: s } = T();
         return e.jsx('div', {
             className: ne,
-            children: v(
+            children: N(
                 s.mainRewards.get().length,
                 (s) => s < 4 && e.jsx(ie, { rewardIndex: s, rewardSize: a }, `reward-${s}`),
             ),
@@ -245,7 +247,7 @@ const $ = 'Footer_f09fca09',
         fadeInC: 'MainRewards_fadeInC_56da68ed',
     },
     _e = d(() => {
-        const { model: s } = O(),
+        const { model: s } = T(),
             { mediaSize: d } = n(),
             r = ((e, a) =>
                 a >= l.Large
@@ -283,12 +285,12 @@ const $ = 'Footer_f09fca09',
     fe = 'App_footer_4c3bf70d',
     ge = R.strings.fun_random,
     he = d(() => {
-        const { model: s, controls: d } = O(),
+        const { model: s, controls: d } = T(),
             { assetsPointer: r } = s.root.get(),
             i = s.mainRewards.get().length,
             n = s.additionalRewards.get().length > 0 || i > 4,
             t = 1 === i;
-        N(d.closeWindow);
+        v(d.closeWindow);
         const { dynamicTexts: l } = S(null, { assetsPointer: r }),
             _ = {
                 title: y(ge.rewardsView.subheader(), { subModeName: l.capsUserName() }),
@@ -317,7 +319,7 @@ const $ = 'Footer_f09fca09',
                             children: [
                                 e.jsx('div', {
                                     className: be,
-                                    children: e.jsx(W, { title: _.title, status: _.subtitle }),
+                                    children: e.jsx(V, { title: _.title, status: _.subtitle }),
                                 }),
                                 e.jsxs('div', {
                                     className: a(Re),
@@ -331,4 +333,4 @@ const $ = 'Footer_f09fca09',
             ],
         });
     });
-A(e.jsx(G, { children: e.jsx(C, { children: e.jsx(he, {}) }) }));
+A(e.jsx(O, { children: e.jsx(C, { children: e.jsx(he, {}) }) }));

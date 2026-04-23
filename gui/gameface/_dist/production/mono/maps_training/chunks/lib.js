@@ -1,9 +1,3 @@
-var __defProp = Object.defineProperty,
-    __defNormalProp = (e, u, t) =>
-        u in e ? __defProp(e, u, { enumerable: !0, configurable: !0, writable: !0, value: t }) : (e[u] = t),
-    __publicField = (e, u, t) => __defNormalProp(e, 'symbol' != typeof u ? u + '' : u, t),
-    _a,
-    _b;
 import {
     c as createContainer,
     a as asValue,
@@ -11,18 +5,19 @@ import {
     d as asFunction,
     r as reactExports,
     j as jsxRuntimeExports,
-    e as cx,
+    e as clsx,
     o as observable,
     f as action,
     u as untracked,
     g as computedFn,
     h as comparer,
     R as React,
-    i as client,
-    k as cva,
-    l as useSpring,
-    m as animated,
-    n as loadDefaultJapaneseParser,
+    i as ReactDOM,
+    k as cx,
+    l as cva,
+    m as useSpring,
+    n as animated,
+    p as loadDefaultJapaneseParser,
 } from './vendor.js';
 const resources = createContainer();
 function concatWithPath(e, u) {
@@ -52,7 +47,7 @@ function readFromR$2(e, u) {
         const u = t[t.length - 1];
         if (!u) return;
         const s = t.slice(0, -1).reduce((e, u) => {
-            if ('object' == typeof (null == e ? void 0 : e[u])) return e[u];
+            if ('object' == typeof e?.[u]) return e[u];
         }, e);
         if (!s) return;
         return 'function' == typeof s[u] ? s[u]() : void 0;
@@ -145,17 +140,13 @@ class SoundsRClassProvider {
     }
 }
 function readFromR$1(e, u, t) {
-    const s = e.split('.');
-    if (window.R && window.R.strings) {
-        const e = s[s.length - 1];
-        if (!e) return;
-        const n = s.slice(0, -1).reduce((e, u) => {
-            if ('object' == typeof (null == e ? void 0 : e[u])) return e[u];
-        }, t);
-        if (!n) return;
-        return 'function' == typeof n[e] ? (u ? n[e](u) : n[e]()) : void 0;
-    }
-    throw new Error('R class with strings field is not defined');
+    const s = e.split('.'),
+        n = s[s.length - 1];
+    if (!n) return;
+    const r = s.slice(0, -1).reduce((e, u) => {
+        if ('object' == typeof e?.[u]) return e[u];
+    }, t);
+    return r && 'function' == typeof r[n] ? (u ? r[n](u) : r[n]()) : void 0;
 }
 class StringsRClassProvider {
     constructor(e = window.R.strings, u) {
@@ -196,7 +187,7 @@ function readFromR(e, u) {
         const u = t[t.length - 1];
         if (!u) return;
         const s = t.slice(0, -1).reduce((e, u) => {
-            if ('object' == typeof (null == e ? void 0 : e[u])) return e[u];
+            if ('object' == typeof e?.[u]) return e[u];
         }, e);
         if (!s) return;
         return 'function' == typeof s[u] ? s[u]() : void 0;
@@ -512,9 +503,7 @@ Object.keys(displayStatus$1).reduce(
     {},
 );
 class SimpleEmitter {
-    constructor() {
-        __publicField(this, 'listeners', new Set());
-    }
+    listeners = new Set();
     on(e) {
         return (this.listeners.add(e), () => this.off(e));
     }
@@ -584,7 +573,7 @@ function create(
             return 'string' != typeof e || 0 === e.length
                 ? u
                 : e.split('.').reduce((e, u) => {
-                      const t = null == e ? void 0 : e[u];
+                      const t = e?.[u];
                       return 'function' == typeof t ? t.bind(e) : t;
                   }, u);
         },
@@ -650,18 +639,16 @@ function constFalse() {
     return !1;
 }
 class DisposeBuilder {
-    constructor() {
-        (__publicField(this, '_disposes', new Set()),
-            __publicField(this, 'dispose', () => {
-                for (const e of this._disposes) e();
-            }));
-    }
+    _disposes = new Set();
     add(e) {
         return (this._disposes.add(e), this);
     }
     remove(e) {
         return (this._disposes.delete(e), this);
     }
+    dispose = () => {
+        for (const e of this._disposes) e();
+    };
 }
 function addEventListener(e, u, t, s) {
     return (e.addEventListener(u, t, s), () => e.removeEventListener(u, t, s));
@@ -990,12 +977,12 @@ function normalizeKeyCode(e) {
     return 'number' == typeof e ? getKeyNameFromKeyCode(e) : e;
 }
 function get(e, u) {
-    var t;
-    if (!(u >= e.length)) return Array.isArray(e) ? e[u] : null == (t = e[u]) ? void 0 : t.value;
+    if (!(u >= e.length)) return Array.isArray(e) ? e[u] : e[u]?.value;
 }
+new Set(Object.values(keyStringCodes));
 const unsafeGet = get;
 function map(e, u) {
-    return Array.isArray(e) ? e.map(u) : e.map((e, t, s) => u(null == e ? void 0 : e.value, t, s));
+    return Array.isArray(e) ? e.map(u) : e.map((e, t, s) => u(e?.value, t, s));
 }
 function forEach(e, u) {
     for (let t = 0; t < e.length; t++) {
@@ -1019,9 +1006,7 @@ const createLayoutReadyInEffect = (e) => {
     ROMAN_FORBIDDEN_LANGUAGE_CODES$1 = ['ko', 'no'];
 ROMAN_FORBIDDEN_LANGUAGE_CODES$1.includes(resources.resolve('langCode'));
 class Stack {
-    constructor() {
-        __publicField(this, 'items', []);
-    }
+    items = [];
     get length() {
         return this.items.length;
     }
@@ -1089,22 +1074,21 @@ function splitKorean(e) {
     return u;
 }
 function splitThai(e) {
-    var u;
-    const t = [],
-        s = e
+    const u = [],
+        t = e
             .replace(/&nbsp;/g, ' ')
             .matchAll(
                 /[【「(（『"《]?[\u0E00-\u0E7F%](?:[\u0E31\u0E34-\u0E3A\u0E47-\u0E4E。!?,.:、…・/ー—–!%+?）)】」"》』]+)?|[「【(（『《"]?\d+(?:,\d{3})*(?:-\d+(?:,\d{3})*)?(?:\s*[a-zA-Z\u0E00-\u0E7F/%]+)?(?:[。.,，、:;：；!?）)】」"》・%)、]+)?|[「【(（『《"]?[a-zA-Z0-9]+(?:[-/][a-zA-Z0-9]+)*(?:\s*[。!?、…・ー—–!?"》】」）)』]+)?|[\u00A0 ]|[^\s]/gu,
             );
-    for (const [n] of s)
-        /^\s+$/.test(n)
-            ? t.length
-                ? (t[t.length - 1] += n)
-                : t.push(n)
-            : 1 === t.length && (null == (u = t[0]) ? void 0 : u.startsWith('  '))
-              ? (t[0] = ' ' + n)
-              : t.push(n);
-    return t;
+    for (const [s] of t)
+        /^\s+$/.test(s)
+            ? u.length
+                ? (u[u.length - 1] += s)
+                : u.push(s)
+            : 1 === u.length && u[0]?.startsWith('  ')
+              ? (u[0] = ' ' + s)
+              : u.push(s);
+    return u;
 }
 const splitters = {
     zh_cn: splitChinese$1,
@@ -1248,7 +1232,7 @@ function useMedia() {
 function MediaWrapperElement({ children: e, className: u, ...t }) {
     const { mediaClass: s, upscale: n } = useMedia();
     return jsxRuntimeExports.jsx('div', {
-        className: cx(u, 'media-wrapper', s, n && 'media-upscale'),
+        className: clsx(u, 'media-wrapper', s, n && 'media-upscale'),
         ...t,
         children: e,
     });
@@ -1269,13 +1253,39 @@ function useUpscale(e, u) {
     return useMedia().upscale ? u : e;
 }
 const usePrevious = (e) => {
-    const u = reactExports.useRef();
+        const u = reactExports.useRef(void 0);
+        return (
+            reactExports.useEffect(() => {
+                u.current = e;
+            }, [e]),
+            u.current
+        );
+    },
+    STATIC_DEPS = [];
+function useEvent(e) {
+    const u = reactExports.useRef(e);
     return (
-        reactExports.useEffect(() => {
+        reactExports.useLayoutEffect(() => {
             u.current = e;
-        }, [e]),
-        u.current
+        }),
+        reactExports.useCallback((...e) => (0, u.current)(...e), STATIC_DEPS)
     );
+}
+const useRefResizeObserver = (e, u, t = !0) => {
+    const s = useEvent((e) => {
+        const t = e[0];
+        t && u(t);
+    });
+    reactExports.useEffect(() => {
+        if (!e.current || !t) return;
+        const u = new ResizeObserver((e) => s(e));
+        return (
+            u.observe(e.current),
+            () => {
+                u.disconnect();
+            }
+        );
+    }, [s, t, e]);
 };
 function throttle(e, u, t, s) {
     let n,
@@ -1329,16 +1339,6 @@ function useEmitter() {
         };
     }, []);
 }
-const STATIC_DEPS = [];
-function useEvent(e) {
-    const u = reactExports.useRef(e);
-    return (
-        reactExports.useLayoutEffect(() => {
-            u.current = e;
-        }),
-        reactExports.useCallback((...e) => (0, u.current)(...e), STATIC_DEPS)
-    );
-}
 function useUnmount(e) {
     reactExports.useEffect(() => e, []);
 }
@@ -1377,12 +1377,10 @@ function Provider$1(e) {
         t = reactExports.useMemo(createApi, []);
     reactExports.useEffect(() => {
         function e(e) {
-            var t;
-            null == (t = u.takeCurrent(e.code)) || t(e);
+            u.takeCurrent(e.code)?.(e);
         }
         function s(e) {
-            var u;
-            null == (u = t.takeCurrent(e.code)) || u(e);
+            t.takeCurrent(e.code)?.(e);
         }
         return (
             window.addEventListener('keydown', e),
@@ -1428,23 +1426,7 @@ function useRepeatCallback(e, u, t = []) {
         n,
     ];
 }
-const useRefResizeObserver = (e, u, t = !0) => {
-        const s = useEvent((e) => {
-            const t = e[0];
-            t && u(t);
-        });
-        reactExports.useEffect(() => {
-            if (!e.current || !t) return;
-            const u = new ResizeObserver((e) => s(e));
-            return (
-                u.observe(e.current),
-                () => {
-                    u.disconnect();
-                }
-            );
-        }, [s, t, e]);
-    },
-    useScaleState = () => {
+const useScaleState = () => {
         const [e, u] = reactExports.useState(getScale$2());
         return (
             reactExports.useEffect(() => {
@@ -1545,7 +1527,7 @@ function useTooltip({
                 d,
                 {
                     onMouseEnter: (e) => {
-                        ((o = null == e ? void 0 : e.currentTarget), i());
+                        ((o = e?.currentTarget), i());
                     },
                     onMouseLeave: s ? noop : c,
                     onClick: s ? noop : c,
@@ -1635,60 +1617,50 @@ const nonConvertingTypes = new Set(['number', 'string', 'boolean', 'bigint', 'un
     primitives$1 = new Set(['number', 'string', 'boolean', 'bigint']),
     bindingsForbidden = new Set(['Dict']);
 function cloneModel(e, { shallow: u = !0, depth: t = 0, maxDepth: s = 32 } = {}) {
-    var n, r;
-    const a = e,
-        o = typeof e;
+    const n = e,
+        r = typeof e;
     if (t > s) throw new Error(`Too deeply nested to copy. Max is ${s}.`);
-    if (nonConvertingTypes.has(o)) return a;
-    if (null === a) return a;
-    const i = { depth: t + 1, maxDepth: s };
-    if (Array.isArray(a)) return a.map((e) => cloneModel(e, i));
-    if ('object' === o) {
-        const s = (null == (n = a.constructor) ? void 0 : n.name) ?? 'UNKNOWN';
-        if (Array.isArray(e)) return e.map((e) => cloneModel(e, i));
-        if ('CoherentArrayProxy' === s) return e.map((e) => cloneModel(e.value, i));
+    if (nonConvertingTypes.has(r)) return n;
+    if (null === n) return n;
+    const a = { depth: t + 1, maxDepth: s };
+    if (Array.isArray(n)) return n.map((e) => cloneModel(e, a));
+    if ('object' === r) {
+        const s = n.constructor?.name ?? 'UNKNOWN';
+        if (Array.isArray(e)) return e.map((e) => cloneModel(e, a));
+        if ('CoherentArrayProxy' === s) return e.map((e) => cloneModel(e.value, a));
         if ('Dict' === s) return;
         if ('UNKNOWN' === s) return;
         if (s.includes(':ViewModel:') || 'Object' === s) {
             if (u && 0 === t) {
                 const e = {};
-                for (const u in a) {
-                    const t = a[u];
+                for (const u in n) {
+                    const t = n[u];
                     primitives$1.has(typeof t) && (e[u] = t);
                 }
                 return e;
             }
             {
                 const e = {};
-                for (const u in a) {
-                    const t = a[u],
-                        s = (null == (r = null == a ? void 0 : a.constructor) ? void 0 : r.name) ?? 'UNKNOWN';
-                    bindingsForbidden.has(s) || (e[u] = cloneModel(t, i));
+                for (const u in n) {
+                    const t = n[u],
+                        s = n?.constructor?.name ?? 'UNKNOWN';
+                    bindingsForbidden.has(s) || (e[u] = cloneModel(t, a));
                 }
                 return e;
             }
         }
-        const o = {};
-        for (const e of Object.keys(a)) o[e] = cloneModel(a[e], i);
-        return o;
+        const r = {};
+        for (const e of Object.keys(n)) r[e] = cloneModel(n[e], a);
+        return r;
     }
-    return (console.error('Incorrect value to clone model', a), a);
+    return (console.error('Incorrect value to clone model', n), n);
 }
 const MOBX_OPTIONS = { deep: !1, equals: constFalse },
     DEFAULT_OPTIONS = { cloneItem: !0 },
     CLONE_OPTIONS = { shallow: !1 };
 class DLDict {
     constructor(e, u = DEFAULT_OPTIONS) {
-        (__publicField(this, '_data'),
-            __publicField(this, '_keys'),
-            __publicField(
-                this,
-                'set',
-                action((e) => {
-                    this._data.set(e);
-                }),
-            ),
-            (this.options = u));
+        this.options = u;
         const t = {},
             s = e.keys();
         for (let n = 0; n < s.length; n++) {
@@ -1697,6 +1669,8 @@ class DLDict {
         }
         ((this._keys = observable.set(new Set(s))), (this._data = observable.box(t, MOBX_OPTIONS)));
     }
+    _data;
+    _keys;
     get keys() {
         return this._keys;
     }
@@ -1755,6 +1729,9 @@ class DLDict {
         const t = e.get(u);
         return this.options.cloneItem ? cloneModel(t, CLONE_OPTIONS) : t;
     }
+    set = action((e) => {
+        this._data.set(e);
+    });
     untrackedData() {
         return untracked(() => this._data.get());
     }
@@ -1829,65 +1806,53 @@ const initializeModelWithContext =
         (u, t, s) => {
             const n = reactExports.createContext(null);
             function r(r) {
-                var a;
-                const { mode: o, options: i, children: l, mocks: c } = r,
-                    d = useMockContext(),
-                    E = o ?? d.mode,
-                    p = c ?? d.mocks,
-                    m = reactExports.useRef([]),
-                    _ = null == (a = null == s ? void 0 : s.useRequires) ? void 0 : a.call(s),
-                    A = useEvent((n, a, o) => {
-                        var i;
-                        const l = 'real' !== n && o ? createMockInstance(o.getter, a) : create(a, { name: e }),
-                            c = (e) => ('mocks' === n ? (null == o ? void 0 : o.getter(e, a)) : l.readByPath(e)),
-                            d = (e) => m.current.push(e),
-                            E = 'initial' in r && {
-                                initial: null == (i = null == s ? void 0 : s.initial) ? void 0 : i.call(s, r.initial),
-                            },
-                            p = u({
-                                ...E,
+                const { mode: a, options: o, children: i, mocks: l } = r,
+                    c = useMockContext(),
+                    d = a ?? c.mode,
+                    E = l ?? c.mocks,
+                    p = reactExports.useRef([]),
+                    m = s?.useRequires?.(),
+                    _ = useEvent((n, a, o) => {
+                        const i = 'real' !== n && o ? createMockInstance(o.getter, a) : create(a, { name: e }),
+                            l = (e) => ('mocks' === n ? o?.getter(e, a) : i.readByPath(e)),
+                            c = (e) => p.current.push(e),
+                            d = 'initial' in r && { initial: s?.initial?.(r.initial) },
+                            E = u({
+                                ...d,
                                 mode: n,
-                                readByPath: c,
-                                requires: _,
-                                externalModel: l,
-                                observableModel: createObservableModel(l, n, c),
-                                cleanup: d,
+                                readByPath: l,
+                                requires: m,
+                                externalModel: i,
+                                observableModel: createObservableModel(i, n, l),
+                                cleanup: c,
                             }),
-                            A = { ...E, mode: n, model: p, externalModel: l, cleanup: d, requires: _ },
-                            F = 'mocks' === n && (null == o ? void 0 : o.controls) ? o.controls(A) : {};
+                            _ = { ...d, mode: n, model: E, externalModel: i, cleanup: c, requires: m },
+                            A = 'mocks' === n && o?.controls ? o.controls(_) : {};
                         return {
-                            model: p,
-                            controls: { ...(null == t ? void 0 : t(A)), ...F },
-                            externalModel: l,
+                            model: E,
+                            controls: { ...t?.(_), ...A },
+                            externalModel: i,
                             mode: n,
-                            rootId: (null == a ? void 0 : a.rootId) ?? 0,
+                            rootId: a?.rootId ?? 0,
                         };
                     }),
-                    F = reactExports.useRef(!1),
-                    [g, f] = reactExports.useState(E);
+                    A = reactExports.useRef(!1),
+                    [F, g] = reactExports.useState(d);
                 reactExports.useEffect(() => {
-                    f(E);
-                }, [E]);
-                const [D, h] = reactExports.useState(() => A(g, i, p));
+                    g(d);
+                }, [d]);
+                const [f, D] = reactExports.useState(() => _(F, o, E));
                 return (
                     reactExports.useEffect(() => {
-                        F.current ? h(A(g, i, p)) : (F.current = !0);
-                    }, [
-                        A,
-                        p,
-                        g,
-                        null == i ? void 0 : i.context,
-                        null == i ? void 0 : i.initializer,
-                        null == i ? void 0 : i.getRoot,
-                        null == i ? void 0 : i.rootId,
-                    ]),
+                        A.current ? D(_(F, o, E)) : (A.current = !0);
+                    }, [_, E, F, o?.context, o?.initializer, o?.getRoot, o?.rootId]),
                     reactExports.useEffect(
                         () => () => {
-                            (D.externalModel.dispose(), m.current.forEach((e) => e()));
+                            (f.externalModel.dispose(), p.current.forEach((e) => e()));
                         },
-                        [D],
+                        [f],
                     ),
-                    jsxRuntimeExports.jsx(n.Provider, { value: D, children: l })
+                    jsxRuntimeExports.jsx(n.Provider, { value: f, children: i })
                 );
             }
             return (
@@ -1930,9 +1895,7 @@ reactExports.forwardRef(function (e, u) {
     );
 });
 class JSXBuilder {
-    constructor() {
-        __publicField(this, 'items', []);
-    }
+    items = [];
     add(e) {
         return (this.items.push([e, {}]), this);
     }
@@ -1947,7 +1910,6 @@ class JSXBuilder {
 }
 function injectShowModel() {
     const e = (u = window.model, { depth: t = 16, convertArrays: s = !0 } = {}) => {
-        var n;
         if (t < 0)
             return (
                 console.warn(
@@ -1966,19 +1928,19 @@ function injectShowModel() {
             case 'function':
                 return 'function';
             case 'object': {
-                const r = { depth: t - 1, convertArrays: s },
-                    a = (null == (n = u.constructor) ? void 0 : n.name) ?? 'UNKNOWN';
+                const n = { depth: t - 1, convertArrays: s },
+                    r = u.constructor?.name ?? 'UNKNOWN';
                 switch (!0) {
-                    case a.includes('CoherentArrayProxy'):
-                        return [...u.values()].map((u) => e(r.convertArrays ? u.value : u, r));
-                    case 'Dict' === a:
-                        return [...u.entries()].reduce((u, [t, s]) => ((u[t] = e(s, r)), u), { $$type: 'Dict' });
-                    case 'UNKNOWN' === a:
+                    case r.includes('CoherentArrayProxy'):
+                        return [...u.values()].map((u) => e(n.convertArrays ? u.value : u, n));
+                    case 'Dict' === r:
+                        return [...u.entries()].reduce((u, [t, s]) => ((u[t] = e(s, n)), u), { $$type: 'Dict' });
+                    case 'UNKNOWN' === r:
                         return 'UNKNOWN_TYPE';
-                    case a.includes('ViewModel'):
+                    case r.includes('ViewModel'):
                     default: {
                         const t = {};
-                        for (const s in u) Object.prototype.hasOwnProperty.call(u, s) && (t[s] = e(u[s], r));
+                        for (const s in u) Object.prototype.hasOwnProperty.call(u, s) && (t[s] = e(u[s], n));
                         return t;
                     }
                 }
@@ -2013,16 +1975,15 @@ async function runView(
     e,
     { root: u = document.getElementById('root'), withMedia: t = !0, fullScreen: s = !1, immediateLayout: n = !0 } = {},
 ) {
-    var r;
     injectShowModel();
-    const a = t ? MediaWrapper : React.Fragment,
-        o = (null == (r = null == window ? void 0 : window.engine) ? void 0 : r.whenReady) ?? Promise.resolve();
+    const r = t ? MediaWrapper : React.Fragment,
+        a = window?.engine?.whenReady ?? Promise.resolve();
     (n && engine.enableImmediateLayout(!0),
-        await o,
+        await a,
         document.documentElement.setAttribute('lang', resources.resolve('langCode')),
-        client
-            .createRoot(u)
-            .render(jsxRuntimeExports.jsx(a, { children: jsxRuntimeExports.jsx(Provider$1, { children: e }) })),
+        ReactDOM.createRoot(u).render(
+            jsxRuntimeExports.jsx(r, { children: jsxRuntimeExports.jsx(Provider$1, { children: e }) }),
+        ),
         s && (initExternalPaddings$1(u), enableFullScreenModeSupported$1()));
 }
 function ColorsProvider(e) {
@@ -2069,7 +2030,7 @@ function SceneWrapper({
             },
             [t],
         ));
-    const m = useEvent((e) => (null == s ? void 0 : s(e)));
+    const m = useEvent((e) => s?.(e));
     function _(e) {
         if (!p.current) return;
         const { left: u, right: t, top: s, bottom: n } = p.current.getBoundingClientRect();
@@ -2085,7 +2046,7 @@ function SceneWrapper({
         jsxRuntimeExports.jsx('div', {
             ...a,
             ref: p,
-            className: cx(styles$e.base, o && styles$e.base__down, !n && styles$e.base__moveSpaceDisabled, r),
+            className: clsx(styles$e.base, o && styles$e.base__down, !n && styles$e.base__moveSpaceDisabled, r),
             onMouseDown: function (e) {
                 (e.preventDefault(), A(e) && (i(!0), c(!0), E({ x: e.clientX, y: e.clientY })));
             },
@@ -2187,7 +2148,7 @@ const COLORS =
     base__fullSize = 'FormatText_base__fullSize_a514958e',
     nowrap = 'FormatText_nowrap_ff69eca3',
     styles$d = { COLORS: COLORS, base: base$b, base__fullSize: base__fullSize, nowrap: nowrap },
-    legacyColors = new Set((null == (_a = styles$d.COLORS) ? void 0 : _a.split(', ')) ?? []);
+    legacyColors = new Set(styles$d.COLORS?.split(', ') ?? []);
 let keyId = 0;
 function takeKey() {
     return ++keyId;
@@ -2388,7 +2349,7 @@ const defaultBrackets = { start: '{{', end: '}}' },
             ),
             E = reactExports.useMemo(() => parse(i ? `{{@ split}}${c}{{/}}` : c, u), [u, c, i]),
             p = reactExports.useMemo(() => render(E, d, e.params), [E, d, e.params]),
-            m = cx(styles$d.base, r && styles$d.base__fullSize, l.className);
+            m = clsx(styles$d.base, r && styles$d.base__fullSize, l.className);
         return e.inline
             ? (console.warn(
                   "[FormatText] using the 'inline' props causes memory leaks due to incorrect working of the 'cohinline' attribute in GF version 1.48.2.3. Can cause client crashes.",
@@ -2398,7 +2359,7 @@ const defaultBrackets = { start: '{{', end: '}}' },
                   ...l,
                   className: m,
                   ref: (e) => {
-                      null == e || e.setAttribute('cohinline', 'true');
+                      e?.setAttribute('cohinline', 'true');
                   },
                   children: p,
               }))
@@ -2732,7 +2693,6 @@ function renderString(e, u = {}) {
     return String(render(t, formatters, u));
 }
 const root$4 = 'Reward_root_21f091ec',
-    base$a = 'Reward_d65e1e12',
     base__s24x24 = 'Reward_base__s24x24_954b5cee',
     base__s48x48 = 'Reward_base__s48x48_21f091ec',
     base__small$1 = 'Reward_base__small_3eddf28d',
@@ -2744,12 +2704,12 @@ const root$4 = 'Reward_root_21f091ec',
     base__s296x222 = 'Reward_base__s296x222_52f0615b',
     base__s400x300 = 'Reward_base__s400x300_a8627e1b',
     base__s600x450 = 'Reward_base__s600x450_e27f3852',
+    base$a = 'Reward_d65e1e12',
     base__dynamicBox = 'Reward_base__dynamicBox_45d7782b',
     tooltipWrapper = 'Reward_tooltipWrapper_75b925a5',
     icon$2 = 'Reward_icon_e152f13b',
     overlay$2 = 'Reward_overlay_8cbe65c9',
     highlight = 'Reward_highlight_f1cd08e0',
-    image = 'Reward_image_810ec3a2',
     image__s24x24 = 'Reward_image__s24x24_954b5cee',
     image__s48x48 = 'Reward_image__s48x48_21f091ec',
     image__small = 'Reward_image__small_3eddf28d',
@@ -2761,6 +2721,7 @@ const root$4 = 'Reward_root_21f091ec',
     image__s296x222 = 'Reward_image__s296x222_52f0615b',
     image__s400x300 = 'Reward_image__s400x300_a8627e1b',
     image__s600x450 = 'Reward_image__s600x450_e27f3852',
+    image = 'Reward_image_810ec3a2',
     image__fixedBox = 'Reward_image__fixedBox_e45bdd8a',
     info = 'Reward_info_26d38c48',
     info__multi = 'Reward_info__multi_465d34bd',
@@ -2772,7 +2733,6 @@ const root$4 = 'Reward_root_21f091ec',
     timer = 'Reward_timer_22ba7b8b',
     styles$c = {
         root: root$4,
-        base: base$a,
         base__s24x24: base__s24x24,
         base__s48x48: base__s48x48,
         base__small: base__small$1,
@@ -2784,12 +2744,12 @@ const root$4 = 'Reward_root_21f091ec',
         base__s296x222: base__s296x222,
         base__s400x300: base__s400x300,
         base__s600x450: base__s600x450,
+        base: base$a,
         base__dynamicBox: base__dynamicBox,
         tooltipWrapper: tooltipWrapper,
         icon: icon$2,
         overlay: overlay$2,
         highlight: highlight,
-        image: image,
         image__s24x24: image__s24x24,
         image__s48x48: image__s48x48,
         image__small: image__small,
@@ -2801,6 +2761,7 @@ const root$4 = 'Reward_root_21f091ec',
         image__s296x222: image__s296x222,
         image__s400x300: image__s400x300,
         image__s600x450: image__s600x450,
+        image: image,
         image__fixedBox: image__fixedBox,
         info: info,
         info__multi: info__multi,
@@ -2837,12 +2798,12 @@ const root$4 = 'Reward_root_21f091ec',
             A = getOverlay(r),
             F = getFormattedValue(a, o),
             g = useTooltip({
-                contentId: (null == E ? void 0 : E.contentId) ?? 0,
-                args: null == E ? void 0 : E.args,
-                resId: null == E ? void 0 : E.resId,
-                decoratorId: null == E ? void 0 : E.decoratorId,
+                contentId: E?.contentId ?? 0,
+                args: E?.args,
+                resId: E?.resId,
+                decoratorId: E?.decoratorId,
             }),
-            f = useSimpleTooltip({ header: null == p ? void 0 : p.header, body: null == p ? void 0 : p.body });
+            f = useSimpleTooltip({ header: p?.header, body: p?.body });
         return jsxRuntimeExports.jsxs('div', {
             className: cx(styles$c.base, styles$c[`base__${n}`], !s && styles$c.base__dynamicBox, c),
             style: l,
@@ -2854,24 +2815,24 @@ const root$4 = 'Reward_root_21f091ec',
                             className: cx(
                                 styles$c.image,
                                 s ? styles$c.image__fixedBox : styles$c[`image__${n}`],
-                                null == d ? void 0 : d.image,
+                                d?.image,
                             ),
                             children: [
                                 _ &&
                                     jsxRuntimeExports.jsx('div', {
-                                        className: cx(styles$c.highlight, null == d ? void 0 : d.highlight),
+                                        className: cx(styles$c.highlight, d?.highlight),
                                         style: {
                                             backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${m}.${_}_highlight`)})`,
                                         },
                                     }),
                                 u &&
                                     jsxRuntimeExports.jsx('div', {
-                                        className: cx(styles$c.icon, null == d ? void 0 : d.rewardIcon),
+                                        className: cx(styles$c.icon, d?.rewardIcon),
                                         style: { backgroundImage: `url(${u})` },
                                     }),
                                 A &&
                                     jsxRuntimeExports.jsx('div', {
-                                        className: cx(styles$c.overlay, null == d ? void 0 : d.overlay),
+                                        className: cx(styles$c.overlay, d?.overlay),
                                         style: {
                                             backgroundImage: `url(${images.readOrEmpty(`quests.bonuses.${m}.${A}_overlay`)})`,
                                         },
@@ -2884,18 +2845,14 @@ const root$4 = 'Reward_root_21f091ec',
                                     styles$c.info,
                                     styles$c[`info__${e}`],
                                     o === ValueTypes.MULTI && styles$c.info__multi,
-                                    null == d ? void 0 : d.info,
+                                    d?.info,
                                 ),
                                 children: F,
                             }),
                         i && jsxRuntimeExports.jsx('div', { className: styles$c.title, children: i }),
                     ],
                 }),
-                t &&
-                    jsxRuntimeExports.jsx('div', {
-                        className: cx(styles$c.timer, null == d ? void 0 : d.periodicIcon),
-                        ...f,
-                    }),
+                t && jsxRuntimeExports.jsx('div', { className: cx(styles$c.timer, d?.periodicIcon), ...f }),
             ],
         });
     },
@@ -2986,58 +2943,53 @@ const root$4 = 'Reward_root_21f091ec',
         });
     }),
     getFromCallStack = (e = 1) => {
-        var u;
-        const t = new Error().stack;
-        let s,
-            n = R.invalid('resId'),
-            r = '';
+        const u = new Error().stack;
+        let t,
+            s = R.invalid('resId'),
+            n = '';
         return (
-            t &&
-                ((r = (null == (u = t.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : u[0]) || ''),
-                (s = t.split('\n')[e].split('.js')[0].split('/').pop() || ''),
-                window.__feature && window.__feature !== s && window.subViews[s] && (n = window.subViews[s].id)),
-            { callerUrl: r, caller: s, stack: t, resId: n }
+            u &&
+                ((n = u.match(/(coui:\/\/[^\s]+\.js)/)?.[0] || ''),
+                (t = u.split('\n')[e].split('.js')[0].split('/').pop() || ''),
+                window.__feature && window.__feature !== t && window.subViews[t] && (s = window.subViews[t].id)),
+            { callerUrl: n, caller: t, stack: u, resId: s }
         );
     };
-let ClickOutsideManager$1 =
-    ((_b = class {
-        constructor() {
-            (__publicField(this, 'entries', []),
-                __publicField(this, '_listenMouse', !1),
-                __publicField(this, 'onMouseDown', (e) => {
-                    this.entries.forEach(({ container: u, callback: t }) => {
-                        let s = e.target;
-                        do {
-                            if (s === u) return;
-                            s = s.parentNode;
-                        } while (s);
-                        t();
-                    });
-                }));
-        }
-        static get instance() {
-            return (_b.__instance || (_b.__instance = new _b()), _b.__instance);
-        }
-        register(e, u) {
-            (this.addMouseListener(), this.entries.push({ container: e, callback: u }));
-        }
-        unregister(e, u) {
-            const t = e,
-                s = u;
-            ((this.entries = this.entries.filter(({ container: e, callback: u }) => e !== t || u !== s)),
-                this.removeMouseListener());
-        }
-        addMouseListener() {
-            this._listenMouse || (document.addEventListener('mousedown', this.onMouseDown), (this._listenMouse = !0));
-        }
-        removeMouseListener() {
-            this._listenMouse &&
-                0 === this.entries.length &&
-                (document.removeEventListener('mousedown', this.onMouseDown), (this._listenMouse = !1));
-        }
-    }),
-    __publicField(_b, '__instance'),
-    _b);
+let ClickOutsideManager$1 = class e {
+    entries = [];
+    _listenMouse = !1;
+    static __instance;
+    static get instance() {
+        return (e.__instance || (e.__instance = new e()), e.__instance);
+    }
+    register(e, u) {
+        (this.addMouseListener(), this.entries.push({ container: e, callback: u }));
+    }
+    unregister(e, u) {
+        const t = e,
+            s = u;
+        ((this.entries = this.entries.filter(({ container: e, callback: u }) => e !== t || u !== s)),
+            this.removeMouseListener());
+    }
+    addMouseListener() {
+        this._listenMouse || (document.addEventListener('mousedown', this.onMouseDown), (this._listenMouse = !0));
+    }
+    removeMouseListener() {
+        this._listenMouse &&
+            0 === this.entries.length &&
+            (document.removeEventListener('mousedown', this.onMouseDown), (this._listenMouse = !1));
+    }
+    onMouseDown = (e) => {
+        this.entries.forEach(({ container: u, callback: t }) => {
+            let s = e.target;
+            do {
+                if (s === u) return;
+                s = s.parentNode;
+            } while (s);
+            t();
+        });
+    };
+};
 function makeEngineEvent(e) {
     return (u) => (
         engine.on(e, u),
@@ -3328,61 +3280,58 @@ const view = Object.freeze(
             { value: 'Module' },
         ),
     ),
-    env = { view: view },
-    _DataTracker = class e {
-        constructor() {
-            (__publicField(this, '_callbacks'),
-                __publicField(this, '_updateHandler'),
-                __publicField(this, '_views'),
-                __publicField(this, 'clearViewCallbacks', (e) => {
-                    this._views[e] &&
-                        (this._views[e].forEach((e) => {
-                            delete this._callbacks[e];
-                        }),
-                        delete this._views[e]);
-                }),
-                (this._callbacks = {}),
-                (this._views = {}),
-                (this._updateHandler = void 0));
-        }
-        static get instance() {
-            return (window.__dataTracker || (window.__dataTracker = new e()), window.__dataTracker);
-        }
-        clear() {
-            (void 0 !== this._updateHandler && (this._updateHandler.clear(), (this._updateHandler = void 0)),
-                (this._callbacks = {}));
-        }
-        addCallback(e, u, t = 0, s = !0) {
-            void 0 === this._updateHandler &&
-                (this._updateHandler = engine.on('viewEnv.onDataChanged', this._emmitDataChanged, this));
-            const n = env.view.addModelObserver(e, t, s);
-            return (
-                n > 0
-                    ? ((this._callbacks[n] = u),
-                      t > 0 && (this._views[t] ? this._views[t].push(n) : (this._views[t] = [n])))
-                    : console.error("Can't add callback for model:", e),
-                n
-            );
-        }
-        removeCallback(e, u = 0) {
-            let t = !1;
-            return (
-                void 0 !== e &&
-                    void 0 !== this._callbacks[e] &&
-                    ((t = viewEnv.removeDataChangedCallback(e, u)), delete this._callbacks[e]),
-                t || console.error("Can't remove callback by id:", e),
-                t
-            );
-        }
-        _emmitDataChanged(e, u, t) {
-            t.forEach((t) => {
-                const s = this._callbacks[t];
-                void 0 !== s && s(e, u);
-            });
-        }
+    env = { view: view };
+class DataTracker {
+    _callbacks;
+    _updateHandler;
+    _views;
+    static __instance;
+    constructor() {
+        ((this._callbacks = {}), (this._views = {}), (this._updateHandler = void 0));
+    }
+    static get instance() {
+        return (window.__dataTracker || (window.__dataTracker = new DataTracker()), window.__dataTracker);
+    }
+    clear() {
+        (void 0 !== this._updateHandler && (this._updateHandler.clear(), (this._updateHandler = void 0)),
+            (this._callbacks = {}));
+    }
+    clearViewCallbacks = (e) => {
+        this._views[e] &&
+            (this._views[e].forEach((e) => {
+                delete this._callbacks[e];
+            }),
+            delete this._views[e]);
     };
-__publicField(_DataTracker, '__instance');
-let DataTracker = _DataTracker;
+    addCallback(e, u, t = 0, s = !0) {
+        void 0 === this._updateHandler &&
+            (this._updateHandler = engine.on('viewEnv.onDataChanged', this._emmitDataChanged, this));
+        const n = env.view.addModelObserver(e, t, s);
+        return (
+            n > 0
+                ? ((this._callbacks[n] = u),
+                  t > 0 && (this._views[t] ? this._views[t].push(n) : (this._views[t] = [n])))
+                : console.error("Can't add callback for model:", e),
+            n
+        );
+    }
+    removeCallback(e, u = 0) {
+        let t = !1;
+        return (
+            void 0 !== e &&
+                void 0 !== this._callbacks[e] &&
+                ((t = viewEnv.removeDataChangedCallback(e, u)), delete this._callbacks[e]),
+            t || console.error("Can't remove callback by id:", e),
+            t
+        );
+    }
+    _emmitDataChanged(e, u, t) {
+        t.forEach((t) => {
+            const s = this._callbacks[t];
+            void 0 !== s && s(e, u);
+        });
+    }
+}
 function dumpViewModel(e) {
     const u = {};
     if ('object' != typeof e) return e;
@@ -3460,7 +3409,7 @@ var KEY_CODES = ((e) => (
 ))(KEY_CODES || {});
 const makeGlobalBoundingBox = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
     onBindingsReady = async () =>
-        !(!engine._BindingsReady || !engine._WindowLoaded) ||
+        !(!engine._BindingsReady || !engine._ContentLoaded) ||
         new Promise((e) => {
             engine.on('Ready', e);
         }),
@@ -3542,24 +3491,18 @@ const makeGlobalBoundingBox = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y,
         return (window.addEventListener('keydown', u), () => window.removeEventListener('keydown', u));
     };
 class ViewModel {
-    constructor(path, watchingFields = []) {
-        (__publicField(this, 'dataTracker'),
-            __publicField(this, 'modelPath'),
-            __publicField(this, 'callbacks'),
-            __publicField(this, 'data'),
-            __publicField(this, '_notifyObservers', () => {
-                ((this.data = eval(this.modelPath)),
-                    this.callbacks.forEach((e) => {
-                        e(this.data);
-                    }));
-            }),
-            (this.dataTracker = new DataTracker()),
-            (this.modelPath = path),
+    dataTracker;
+    modelPath;
+    callbacks;
+    data;
+    constructor(e, u = []) {
+        ((this.dataTracker = new DataTracker()),
+            (this.modelPath = e),
             (this.callbacks = new Set()),
             onBindingsReady().then(() => {
-                (this._addCallback(path),
-                    watchingFields.forEach((e) => {
-                        this._addCallback(path + '.' + e);
+                (this._addCallback(e),
+                    u.forEach((u) => {
+                        this._addCallback(e + '.' + u);
                     }),
                     this._notifyObservers());
             }));
@@ -3576,6 +3519,12 @@ class ViewModel {
     _addCallback(e) {
         this.dataTracker.addCallback(e, this._notifyObservers);
     }
+    _notifyObservers = () => {
+        ((this.data = eval(this.modelPath)),
+            this.callbacks.forEach((e) => {
+                e(this.data);
+            }));
+    };
 }
 const ClickOutsideManager = ClickOutsideManager$1.instance,
     ViewEnvHelper = {
@@ -3711,13 +3660,13 @@ const handleViewEvent = (e, u, t = {}, s = 0) => {
                               D && D(e));
                       }),
                   onMouseLeave: ((e) => (u) => {
-                      (g(), null == n || n(u), null == e || e(u));
+                      (g(), n?.(u), e?.(u));
                   })(e.props.onMouseLeave),
                   onClick: ((e) => (u) => {
-                      (!1 === i && g(), null == a || a(u), null == e || e(u));
+                      (!1 === i && g(), a?.(u), e?.(u));
                   })(e.props.onClick),
                   onMouseDown: ((e) => (u) => {
-                      (!1 === i && g(), null == r || r(u), null == e || e(u));
+                      (!1 === i && g(), r?.(u), e?.(u));
                   })(e.props.onMouseDown),
                   ...m,
               })
@@ -3845,34 +3794,26 @@ withResolvePath(
 const themes = { primary: 'primary', secondary: 'secondary', custom: 'custom' },
     sizes$2 = { extraSmall: 'extraSmall', small: 'small', medium: 'medium', large: 'large' };
 function defineStyledComponent(e, u, t) {
-    var s;
-    const n =
-            'object' == typeof u && 'cva' in u
-                ? null == (s = u.cva)
-                    ? void 0
-                    : s.variants
-                : null == t
-                  ? void 0
-                  : t.variants,
-        r = n ? Object.keys(n) : [];
+    const s = 'object' == typeof u && 'cva' in u ? u.cva?.variants : t?.variants,
+        n = s ? Object.keys(s) : [];
     if ('object' == typeof u) {
         const t = u,
             s = cva(t.className, t.cva),
-            n = t.element,
+            r = t.element,
             a = reactExports.forwardRef(function (e, u) {
-                return reactExports.createElement(n, {
-                    ...('function' == typeof n ? e : cleanProps(r, e)),
+                return reactExports.createElement(r, {
+                    ...('function' == typeof r ? e : cleanProps(n, e)),
                     ref: u,
                     className: s(e),
                 });
             });
         return ((a.displayName = e), t.cva && (a.cva = t.cva), a);
     }
-    const a = cva(u, t),
-        o = reactExports.forwardRef(function (u, t) {
-            return jsxRuntimeExports.jsx('div', { 'data-name': e, ...cleanProps(r, u), ref: t, className: a(u) });
+    const r = cva(u, t),
+        a = reactExports.forwardRef(function (u, t) {
+            return jsxRuntimeExports.jsx('div', { 'data-name': e, ...cleanProps(n, u), ref: t, className: r(u) });
         });
-    return ((o.displayName = e), t && (o.cva = t), o);
+    return ((a.displayName = e), t && (a.cva = t), a);
 }
 function cleanProps(e, u) {
     if (0 === e.length) return u;
@@ -3892,10 +3833,10 @@ const base$8 = 'HeadlessButton_df8536fc',
             ...a,
             ref: o,
             onMouseEnter: function (e) {
-                (n || r || i.play('mouse-enter', { target: s || 'Button', original: e }), null == t || t(e));
+                (n || r || i.play('mouse-enter', { target: s || 'Button', original: e }), t?.(e));
             },
             onClick: function (e) {
-                n || (r || i.play('click', { target: s || 'Button', original: e }), null == u || u(e));
+                n || (r || i.play('click', { target: s || 'Button', original: e }), u?.(e));
             },
             children: e,
         });
@@ -3945,24 +3886,23 @@ const base$8 = 'HeadlessButton_df8536fc',
             ref: l,
             silent: n,
             disabled: s,
-            className: cx(
+            className: clsx(
                 styles$9.base,
                 styles$9[`base__size-${u}`],
                 styles$9[`base__theme-${t}`],
                 s ? styles$9.base__disabled : styles$9.base__enabled,
                 o,
-                null == a ? void 0 : a.base,
+                a?.base,
             ),
             onClick: function (e) {
-                var u;
-                s || null == (u = i.onClick) || u.call(i, e);
+                s || i.onClick?.(e);
             },
             children: [
-                jsxRuntimeExports.jsx('div', { className: cx(styles$9.background, null == a ? void 0 : a.background) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$9.border, null == a ? void 0 : a.border) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$9.overlay, null == a ? void 0 : a.overlay) }),
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$9.background, a?.background) }),
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$9.border, a?.border) }),
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$9.overlay, a?.overlay) }),
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$9.content, r && styles$9.content__fontAligned, null == a ? void 0 : a.content),
+                    className: clsx(styles$9.content, r && styles$9.content__fontAligned, a?.content),
                     children: e,
                 }),
             ],
@@ -3993,32 +3933,22 @@ function useInputInstance({ value: e, size: u, type: t, state: s, disabled: n })
     const r = reactExports.useRef(null),
         [a, o] = reactExports.useState(!1),
         i = useEvent((e) => {
-            var u;
             if (!r.current) return;
-            const t =
-                null == (u = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')) ? void 0 : u.set;
-            if (t) {
-                t.call(r.current, e);
-                const u = new Event('input', { bubbles: !0 });
-                r.current.dispatchEvent(u);
+            const u = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value')?.set;
+            if (u) {
+                u.call(r.current, e);
+                const t = new Event('input', { bubbles: !0 });
+                r.current.dispatchEvent(t);
             }
         }),
         l = n ?? defaultConfig.disabled,
         c = usePrevious(l);
     return (
         reactExports.useLayoutEffect(() => {
-            var e;
-            !c && l && (null == (e = r.current) || e.blur());
+            !c && l && r.current?.blur();
         }, [l, c]),
         reactExports.useLayoutEffect(() => {
-            var e, u;
-            a
-                ? (null == (e = r.current) || e.blur(),
-                  setTimeout(() => {
-                      var e;
-                      return null == (e = r.current) ? void 0 : e.focus();
-                  }))
-                : null == (u = r.current) || u.blur();
+            a ? (r.current?.blur(), setTimeout(() => r.current?.focus())) : r.current?.blur();
         }, [a]),
         reactExports.useMemo(
             () => ({
@@ -4119,7 +4049,7 @@ const root$2 = 'Input_root_494bd5d6',
             ...t,
             type: 'button',
             ref: s,
-            className: cx(
+            className: clsx(
                 styles$8.clearButton,
                 r && !i && styles$8.clearButton__visible,
                 styles$8[`clearButton__${o}Size`],
@@ -4127,17 +4057,14 @@ const root$2 = 'Input_root_494bd5d6',
                 e,
             ),
             onMouseEnter: function (e) {
-                var u;
-                (n.play('mouse-enter', { target: soundPlayEventTarget$1, original: e }),
-                    null == (u = t.onMouseEnter) || u.call(t, e));
+                (n.play('mouse-enter', { target: soundPlayEventTarget$1, original: e }), t.onMouseEnter?.(e));
             },
             onClick: function (e) {
-                var u;
                 (n.play('close', { target: soundPlayEventTarget$1, original: e }),
                     e.stopPropagation(),
                     r && a(),
                     l(),
-                    null == (u = t.onClick) || u.call(t, e));
+                    t.onClick?.(e));
             },
             children: u,
         });
@@ -4149,7 +4076,7 @@ const root$2 = 'Input_root_494bd5d6',
         return jsxRuntimeExports.jsxs('div', {
             ...t,
             ref: s,
-            className: cx(
+            className: clsx(
                 styles$8.decoration,
                 styles$8[`decoration__${r}State`],
                 a && styles$8.decoration__disabled,
@@ -4157,15 +4084,10 @@ const root$2 = 'Input_root_494bd5d6',
                 e,
             ),
             onMouseEnter: function (e) {
-                var u;
-                (n.play('mouse-enter', { target: soundPlayEventTarget, original: e }),
-                    null == (u = t.onMouseEnter) || u.call(t, e));
+                (n.play('mouse-enter', { target: soundPlayEventTarget, original: e }), t.onMouseEnter?.(e));
             },
             onClick: function (e) {
-                var u;
-                (n.play('click', { target: soundPlayEventTarget, original: e }),
-                    i(),
-                    null == (u = t.onClick) || u.call(t, e));
+                (n.play('click', { target: soundPlayEventTarget, original: e }), i(), t.onClick?.(e));
             },
             children: [jsxRuntimeExports.jsx('div', { className: styles$8.disabledOverlay }), u],
         });
@@ -4203,7 +4125,7 @@ const Placeholder = reactExports.forwardRef(function (
             return jsxRuntimeExports.jsx('div', {
                 ...s,
                 ref: n,
-                className: cx(
+                className: clsx(
                     styles$8.placeholder,
                     i && styles$8.placeholder__disabled,
                     styles$8[`placeholder__${o}Size`],
@@ -4226,7 +4148,7 @@ const Placeholder = reactExports.forwardRef(function (
     ) {
         const { type: i, value: l, disabled: c, size: d, inputRef: E, focused: p, setFocused: m } = useInput();
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$8.fieldWrapper, null == u ? void 0 : u.wrapper),
+            className: clsx(styles$8.fieldWrapper, u?.wrapper),
             ref: t,
             children: [
                 jsxRuntimeExports.jsx('input', {
@@ -4236,7 +4158,7 @@ const Placeholder = reactExports.forwardRef(function (
                     value: l,
                     disabled: c,
                     type: typeToHtmlType[i] ?? i,
-                    className: cx(
+                    className: clsx(
                         styles$8.field,
                         styles$8[`field__${d}Size`],
                         p && styles$8.field__focused,
@@ -4244,30 +4166,26 @@ const Placeholder = reactExports.forwardRef(function (
                         e,
                     ),
                     onChange: function (e) {
-                        var u, t;
-                        if (c) return (e.preventDefault(), void (null == (u = E.current) || u.blur()));
-                        const { value: s } = e.target;
+                        if (c) return (e.preventDefault(), void E.current?.blur());
+                        const { value: u } = e.target;
                         (i === types.number
-                            ? (e.target.value = cleanInputNumber(s))
-                            : i === types.integer && (e.target.value = cleanInputInteger(s)),
-                            null == (t = a.onChange) || t.call(a, e));
+                            ? (e.target.value = cleanInputNumber(u))
+                            : i === types.integer && (e.target.value = cleanInputInteger(u)),
+                            a.onChange?.(e));
                     },
                     onFocus: function (e) {
-                        var u;
-                        (m(!0), null == (u = a.onFocus) || u.call(a, e));
+                        (m(!0), a.onFocus?.(e));
                     },
                     onBlur: function (e) {
-                        var u;
-                        (m(!1), null == (u = a.onBlur) || u.call(a, e));
+                        (m(!1), a.onBlur?.(e));
                     },
                     onDoubleClick: function (e) {
-                        var u, t;
-                        (null == (u = E.current) || u.select(), null == (t = a.onDoubleClick) || t.call(a, e));
+                        (E.current?.select(), a.onDoubleClick?.(e));
                     },
                 }),
                 'string' == typeof r || 'number' == typeof r
                     ? jsxRuntimeExports.jsx(Placeholder, {
-                          className: null == u ? void 0 : u.placeholder,
+                          className: u?.placeholder,
                           ref: s,
                           visibility: n,
                           children: r,
@@ -4283,7 +4201,7 @@ const Placeholder = reactExports.forwardRef(function (
         return jsxRuntimeExports.jsx('div', {
             ...s,
             ref: n,
-            className: cx(
+            className: clsx(
                 styles$8.icon,
                 styles$8[`icon__${r}Size`],
                 a && styles$8.icon__focused,
@@ -4303,7 +4221,7 @@ const Placeholder = reactExports.forwardRef(function (
         return jsxRuntimeExports.jsx('div', {
             ...n,
             ref: r,
-            className: cx(
+            className: clsx(
                 styles$8.message,
                 t && styles$8.message__visible,
                 styles$8[`message__${u}Type`],
@@ -4451,7 +4369,7 @@ const defaultSettings = {
                 const t = n(u);
                 p.current.wrapper !== t && B();
             });
-            const b = useEvent(function () {
+            const C = useEvent(function () {
                     const u = d.current;
                     if (!u) return;
                     const t = e(u),
@@ -4464,8 +4382,8 @@ const defaultSettings = {
                             m.trigger('recalculateContent'));
                     }
                 }),
-                C = useSkipFrame();
-            reactExports.useEffect(() => addEventListener(window, 'resize', () => C.run(B)), [B, C]);
+                b = useSkipFrame();
+            reactExports.useEffect(() => addEventListener(window, 'resize', () => b.run(B)), [B, b]);
             return reactExports.useMemo(
                 () => ({
                     getWrapperSize: () => (E.current ? n(E.current) : void 0),
@@ -4482,12 +4400,12 @@ const defaultSettings = {
                     wrapperRef: E,
                     scrollPosition: F,
                     animationScroll: A,
-                    recalculateContent: b,
+                    recalculateContent: C,
                     disabled: l,
                     setDisabled: c,
                     events: { on: m.on, off: m.off },
                 }),
-                [i, h, f, D, F, A, b, l, c, m.on, m.off],
+                [i, h, f, D, F, A, C, l, c, m.on, m.off],
             );
         };
     },
@@ -4572,43 +4490,40 @@ function Thumb(e) {
             ? a.start({
                   to: e.styles.opened,
                   onRest() {
-                      var e;
-                      null == (e = u.current) || e.classList.add(styles$7.base__active);
+                      u.current?.classList.add(styles$7.base__active);
                   },
               })
             : a.start({
                   to: e.styles.closed,
                   delay: 500,
                   onRest() {
-                      var e;
-                      null == (e = u.current) || e.classList.remove(styles$7.base__active);
+                      u.current?.classList.remove(styles$7.base__active);
                   },
               });
     }, [t, e.dragging, e.styles.closed, e.styles.opened, a]);
     const o = useEvent(function () {
-            var t;
-            const s = e.trackRef.current,
-                n = u.current,
-                r = e.railBeforeRef.current,
-                o = e.railAfterRef.current,
-                i = e.api.getWrapperSize(),
-                l = e.api.getContainerSize();
-            if (!(i && s && n && r && o && l)) return;
-            const c = e.api.animationScroll.scrollPosition.get(),
-                d = Math.min(1, i / l),
-                E = clamp(0, 1, c / (l - i)),
-                p = e.calculateSize(s, d),
-                m = (('horizontal' === e.direction ? s.offsetWidth : s.offsetHeight) - p) * E || 0,
-                _ = Math.round((2 * E - 1) * BOUNCING_OFFSET);
-            (n.style.setProperty('--thumbOffset', `${m}px`),
-                null == (t = e.onUpdate) || t.call(e, { thumbSize: p, thumbOffset: m, newBouncingCorrection: _ }));
-            const A = 0 === m || e.isBoundThumb(m) ? 0 : _;
+            const t = e.trackRef.current,
+                s = u.current,
+                n = e.railBeforeRef.current,
+                r = e.railAfterRef.current,
+                o = e.api.getWrapperSize(),
+                i = e.api.getContainerSize();
+            if (!(o && t && s && n && r && i)) return;
+            const l = e.api.animationScroll.scrollPosition.get(),
+                c = Math.min(1, o / i),
+                d = i !== o ? clamp(0, 1, l / (i - o)) : 0,
+                E = e.calculateSize(t, c),
+                p = (('horizontal' === e.direction ? t.offsetWidth : t.offsetHeight) - E) * d || 0,
+                m = Math.round((2 * d - 1) * BOUNCING_OFFSET);
+            (s.style.setProperty('--thumbOffset', `${p}px`),
+                e.onUpdate?.({ thumbSize: E, thumbOffset: p, newBouncingCorrection: m }));
+            const _ = 0 === p || e.isBoundThumb(p) ? 0 : m;
             return (
                 a.start({
-                    to: { '--bouncingCorrection': `${A}px` },
-                    ...(0 === A ? { delay: 100, config: { duration: 100 } } : { immediate: !0 }),
+                    to: { '--bouncingCorrection': `${_}px` },
+                    ...(0 === _ ? { delay: 100, config: { duration: 100 } } : { immediate: !0 }),
                 }),
-                m
+                p
             );
         }),
         i = useSkipFrame(),
@@ -4639,7 +4554,7 @@ function Thumb(e) {
         }, [c, i, l]),
         jsxRuntimeExports.jsxs(animated.div, {
             ref: assignRefs([u, e.thumbRef]),
-            className: cx(styles$7.base, styles$7[`base__${e.direction}`], e.className),
+            className: clsx(styles$7.base, styles$7[`base__${e.direction}`], e.className),
             style: r,
             onMouseEnter: () => s(!0),
             onMouseLeave: () => s(!1),
@@ -4857,7 +4772,7 @@ reactExports.memo(function ({ classNames: e = {}, onDrag: u = noop }) {
             scrollOrientations.horizontal,
         );
     return jsxRuntimeExports.jsxs('div', {
-        className: cx(styles$6.base, e.base),
+        className: clsx(styles$6.base, e.base),
         ref: t,
         onWheel: d.handleMouseWheel,
         onMouseDown: g,
@@ -4865,15 +4780,15 @@ reactExports.memo(function ({ classNames: e = {}, onDrag: u = noop }) {
         children: [
             jsxRuntimeExports.jsx('div', {
                 ref: s,
-                className: cx(styles$6.button, styles$6.button__left, e.leftButton),
+                className: clsx(styles$6.button, styles$6.button__left, e.leftButton),
             }),
             jsxRuntimeExports.jsxs('div', {
                 ref: r,
-                className: cx(styles$6.track, e.track),
+                className: clsx(styles$6.track, e.track),
                 children: [
                     jsxRuntimeExports.jsx('div', {
                         ref: o,
-                        className: cx(styles$6.rail, styles$6.rail__left, e.leftRail),
+                        className: clsx(styles$6.rail, styles$6.rail__left, e.leftRail),
                     }),
                     jsxRuntimeExports.jsx(Thumb, {
                         dragging: l,
@@ -4891,13 +4806,13 @@ reactExports.memo(function ({ classNames: e = {}, onDrag: u = noop }) {
                     }),
                     jsxRuntimeExports.jsx('div', {
                         ref: i,
-                        className: cx(styles$6.rail, styles$6.rail__right, e.rightRail),
+                        className: clsx(styles$6.rail, styles$6.rail__right, e.rightRail),
                     }),
                 ],
             }),
             jsxRuntimeExports.jsx('div', {
                 ref: n,
-                className: cx(styles$6.button, styles$6.button__right, e.rightButton),
+                className: clsx(styles$6.button, styles$6.button__right, e.rightButton),
             }),
         ],
     });
@@ -4977,7 +4892,7 @@ const DEFAULT_VERTICAL_API_CONFIG = {
                 scrollOrientations.vertical,
             );
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$5.base, e.base),
+            className: clsx(styles$5.base, e.base),
             ref: t,
             onWheel: d.handleMouseWheel,
             onMouseDown: g,
@@ -4985,15 +4900,15 @@ const DEFAULT_VERTICAL_API_CONFIG = {
             children: [
                 jsxRuntimeExports.jsx('div', {
                     ref: s,
-                    className: cx(styles$5.button, styles$5.button__top, e.topButton),
+                    className: clsx(styles$5.button, styles$5.button__top, e.topButton),
                 }),
                 jsxRuntimeExports.jsxs('div', {
                     ref: r,
-                    className: cx(styles$5.track, e.track),
+                    className: clsx(styles$5.track, e.track),
                     children: [
                         jsxRuntimeExports.jsx('div', {
                             ref: o,
-                            className: cx(styles$5.rail, styles$5.rail__top, e.topRail),
+                            className: clsx(styles$5.rail, styles$5.rail__top, e.topRail),
                         }),
                         jsxRuntimeExports.jsx(Thumb, {
                             dragging: l,
@@ -5011,18 +4926,18 @@ const DEFAULT_VERTICAL_API_CONFIG = {
                         }),
                         jsxRuntimeExports.jsx('div', {
                             ref: i,
-                            className: cx(styles$5.rail, styles$5.rail__bottom, e.bottomRail),
+                            className: clsx(styles$5.rail, styles$5.rail__bottom, e.bottomRail),
                         }),
                     ],
                 }),
                 jsxRuntimeExports.jsx('div', {
                     ref: n,
-                    className: cx(styles$5.button, styles$5.button__bottom, e.bottomButton),
+                    className: clsx(styles$5.button, styles$5.button__bottom, e.bottomButton),
                 }),
             ],
         });
     }),
-    content$1 = 'VerticalScroll_content_62cb6120',
+    content$1 = 'VerticalScroll_content_f30246e6',
     defaultScroll = 'VerticalScroll_defaultScroll_c69fa70e',
     area = 'VerticalScroll_area_a3c0086a',
     styles$4 = { content: content$1, defaultScroll: defaultScroll, area: area },
@@ -5038,14 +4953,14 @@ const DEFAULT_VERTICAL_API_CONFIG = {
         const { api: o } = useVerticalScroll(),
             i = reactExports.useMemo(() => {
                 const e = t || {};
-                return { ...e, base: cx(styles$4.base, e.base) };
+                return { ...e, base: clsx(styles$4.base, e.base) };
             }, [t]);
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$4.defaultScroll, u),
+            className: clsx(styles$4.defaultScroll, u),
             onWheel: o.handleMouseWheel,
             children: [
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$4.area, s),
+                    className: clsx(styles$4.area, s),
                     children: jsxRuntimeExports.jsx(Area, { className: n, classNames: r, children: e }),
                 }),
                 jsxRuntimeExports.jsx(Bar, { onDrag: a, classNames: i }),
@@ -5059,12 +4974,12 @@ const DEFAULT_VERTICAL_API_CONFIG = {
                 createLayoutReadyInEffect(() => createLayoutReadyInEffect(n.recalculateContent)),
             ),
             jsxRuntimeExports.jsx('div', {
-                className: cx(styles$4.base, null == u ? void 0 : u.wrapper, e),
+                className: clsx(styles$4.base, u?.wrapper, e),
                 ref: n.wrapperRef,
                 onWheel: n.handleMouseWheel,
                 children: jsxRuntimeExports.jsx('div', {
                     ...s,
-                    className: cx(styles$4.content, null == u ? void 0 : u.content),
+                    className: clsx(styles$4.content, u?.content),
                     ref: n.contentRef,
                     children: t,
                 }),
@@ -5121,13 +5036,10 @@ const toggleThemes = { primary: 'primary', custom: 'custom' },
             ...e,
             ref: u,
             onMouseEnter: function (u) {
-                var s;
-                (t.play('mouse-enter', { target: Base$1.displayName, original: u }),
-                    null == (s = e.onMouseEnter) || s.call(e, u));
+                (t.play('mouse-enter', { target: Base$1.displayName, original: u }), e.onMouseEnter?.(u));
             },
             onClick: function (u) {
-                var s;
-                (t.play('click', { target: Base$1.displayName, original: u }), null == (s = e.onClick) || s.call(e, u));
+                (t.play('click', { target: Base$1.displayName, original: u }), e.onClick?.(u));
             },
             children: e.children,
         });
@@ -5149,16 +5061,13 @@ const toggleThemes = { primary: 'primary', custom: 'custom' },
             ref: o,
             size: u,
             theme: t,
-            className: cx(r, s && styles$3.base__fullSizeContent, null == n ? void 0 : n.base),
+            className: clsx(r, s && styles$3.base__fullSizeContent, n?.base),
             children: [
-                jsxRuntimeExports.jsx('div', { className: cx(styles$3.border, null == n ? void 0 : n.border) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$3.background, null == n ? void 0 : n.background) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$3.bulb, null == n ? void 0 : n.bulb) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$3.overlay, null == n ? void 0 : n.overlay) }),
-                jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$3.content, null == n ? void 0 : n.content),
-                    children: e,
-                }),
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$3.border, n?.border) }),
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$3.background, n?.background) }),
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$3.bulb, n?.bulb) }),
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$3.overlay, n?.overlay) }),
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$3.content, n?.content), children: e }),
             ],
         });
     });
@@ -5275,7 +5184,7 @@ function CloseButton({
     return jsxRuntimeExports.jsx('div', {
         className: cx(styles$1.base, a, s),
         onMouseEnter: () => {
-            (play.sound(u), null == n || n());
+            (play.sound(u), n?.());
         },
         onClick: () => {
             (play.sound(t), r());

@@ -1,54 +1,52 @@
-import { dt as e, dK as o, dE as r, dS as n, ab as i } from './lib.js';
-import './vendor.js';
-const s = [e.Big, e.Small],
+import { dy as e, eg as r, dL as o, em as n, ag as s } from './lib.js';
+const i = [e.Big, e.Small],
     a = [e.S232x174, e.S296x222, e.S400x300, e.S600x450],
     t = R.images.comp7.gui.maps.icons.rewards,
-    d = (e, o) => 'styleProgress' === e.name && s.includes(o),
-    l = (e, o) => ('progressLevel' in e && d(e, o) ? `progressionStyleUpgraded_${e.progressLevel}` : e.overlayType),
+    d = (e, r) => 'styleProgress' === e.name && i.includes(r),
+    l = (e, r) => ('progressLevel' in e && d(e, r) ? `progressionStyleUpgraded_${e.progressLevel}` : e.overlayType),
     m = (e) => ('vehicles_rent' === e.name ? e.label : e.value),
-    u = ({ reward: e, rank: o, index: n }) => {
-        const { tooltipId: i, tooltipContentId: s } = e;
-        return r({ tooltipId: i, ...(void 0 !== o && { rank: o }), ...(void 0 !== n && { index: n }) }, Number(s), {
+    g = ({ reward: e, rank: r, index: n }) => {
+        const { tooltipId: s, tooltipContentId: i } = e;
+        return o({ tooltipId: s, ...(void 0 !== r && { rank: r }), ...(void 0 !== n && { index: n }) }, Number(i), {
             ignoreShowDelay: !0,
         });
     },
-    p = (e, o) => {
-        var r;
+    p = (e, r) => {
         if ('tankman' === e.name) {
-            const n = null == (r = R.images.comp7.gui.maps.icons.crew.$dyn(o)) ? void 0 : r.$dyn(e.groupName);
-            if (n) return `${n}`;
-            console.info(`Folder for reward size ${o} was not found for crew with groupName: ${e.groupName}`);
+            const o = R.images.comp7.gui.maps.icons.crew.$dyn(r)?.$dyn(e.groupName);
+            if (o) return `${o}`;
+            console.info(`Folder for reward size ${r} was not found for crew with groupName: ${e.groupName}`);
         }
-        if (d(e, o)) return `R.images.gui.maps.icons.quests.bonuses.${o}.camouflage`;
-        if ('customizations' === e.name && a.includes(o)) {
-            const r = t.$dyn(o),
-                n = (null == r ? void 0 : r.$dyn(`style_${e.styleID}`)) || (null == r ? void 0 : r.$dyn(e.icon));
+        if (d(e, r)) return `R.images.gui.maps.icons.quests.bonuses.${r}.camouflage`;
+        if ('customizations' === e.name && a.includes(r)) {
+            const o = t.$dyn(r),
+                n = o?.$dyn(`style_${e.styleID}`) || o?.$dyn(e.icon);
             if (n) return `${n}`;
-            console.info(`asset with styleID: ${e.styleID}, size:${o} was not found, using common icon`);
+            console.info(`asset with styleID: ${e.styleID}, size:${r} was not found, using common icon`);
         }
-        return n(e, o);
+        return n(e, r);
     },
-    c = ({ reward: r, size: n, rank: i, index: s }) => {
-        const a = ((o, r) => {
-            if ('dogTagComponents' === o.name) {
-                if (r === e.Big) return e.S80x80;
-                if (r === e.Small) return e.S48x48;
+    c = ({ reward: o, size: n, rank: s, index: i }) => {
+        const a = ((r, o) => {
+            if ('dogTagComponents' === r.name) {
+                if (o === e.Big) return e.S80x80;
+                if (o === e.Small) return e.S48x48;
             }
-            return r;
-        })(r, n);
+            return o;
+        })(o, n);
         return {
-            ...r,
+            ...o,
             size: a,
-            image: p(r, a),
-            value: m(r),
-            valueType: o(r.name),
-            special: l(r, a),
-            tooltipArgs: u({ reward: r, rank: i, index: s }),
+            image: p(o, a),
+            value: m(o),
+            valueType: r(o.name),
+            special: l(o, a),
+            tooltipArgs: g({ reward: o, rank: s, index: i }),
             periodicIconTooltipArgs: {
                 header: R.strings.tooltips.periodicReward.header(),
                 body: R.strings.tooltips.periodicReward.comp7.body(),
             },
         };
     },
-    g = ({ rewards: e, size: o, rank: r, index: n }) => i(e, (e) => c({ reward: e, size: o, rank: r, index: n }));
-export { c as g, g as m };
+    u = ({ rewards: e, size: r, rank: o, index: n }) => s(e, (e) => c({ reward: e, size: r, rank: o, index: n }));
+export { c as g, u as m };

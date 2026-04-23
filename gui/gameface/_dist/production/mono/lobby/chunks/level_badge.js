@@ -1,5 +1,5 @@
-import { r as e, j as _, aa as a } from './vendor.js';
-import { bG as c, o as s, b$ as o } from './lib.js';
+import { r as e, j as _, a0 as a } from './vendor.js';
+import { bJ as c, o as s, c2 as o } from './lib.js';
 const d = {
         bg0: [0],
         bg1: [1, 2, 3, 4],
@@ -29,10 +29,10 @@ const d = {
         video: 'LevelBadge_video_74ea48c7',
     },
     l = { x110: 'c_110x110', x130: 'c_130x130', x190: 'c_190x190', x270: 'c_270x270', x320: 'c_320x320' },
-    b = new Map([[l.x110, l.x130]]),
-    n = s.resolve('videos');
+    n = new Map([[l.x110, l.x130]]),
+    b = s.resolve('videos');
 function r({ level: c, size: s, showAnimation: g }) {
-    const l = b.has(s) ? b.get(s) : s,
+    const l = n.has(s) ? n.get(s) : s,
         r = ((e) => Object.keys(d).find((_) => d[_].includes(e)) || 'bg0')(c),
         v = e.useMemo(
             () => ({ backgroundImage: `url(${R.images.frontline.gui.maps.icons.levelBadge.$dyn(l).$dyn(r)})` }),
@@ -49,7 +49,7 @@ function r({ level: c, size: s, showAnimation: g }) {
             g &&
                 _.jsx(o, {
                     className: i.video,
-                    src: n.readOrEmpty('flProgressionScreen.badge_reflection'),
+                    src: b.readOrEmpty('flProgressionScreen.badge_reflection'),
                     loop: !0,
                     autoplay: !0,
                 }),

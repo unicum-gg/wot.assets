@@ -1,7 +1,7 @@
 (self.webpackChunkgameface = self.webpackChunkgameface || []).push([
     [976],
     {
-        686: (t, e, n) => {
+        311: (t, e, n) => {
             'use strict';
             n.d(e, {
                 He: () => l,
@@ -13,7 +13,7 @@
                 sb: () => g,
                 ys: () => o,
             });
-            var s = n(810),
+            var s = n(398),
                 r = n(363);
             const i = Symbol.for('Animated:node'),
                 o = (t) => t && t[i],
@@ -254,12 +254,12 @@
                 b = (t) =>
                     s.is.str(t) ? t : t && s.is.str(t.displayName) ? t.displayName : (s.is.fun(t) && t.name) || null;
         },
-        738: (t, e, n) => {
+        216: (t, e, n) => {
             'use strict';
             n.d(e, { Globals: () => s.OH, useSpring: () => bt });
-            var s = n(810),
+            var s = n(398),
                 r = n(363),
-                i = n(686);
+                i = n(311);
             function o(t, e, n, s, r, i, o) {
                 try {
                     var a = t[i](o),
@@ -291,12 +291,18 @@
                 if (
                     Array.isArray(t) ||
                     (n = (function (t, e) {
-                        if (!t) return;
-                        if ('string' == typeof t) return u(t, e);
-                        var n = Object.prototype.toString.call(t).slice(8, -1);
-                        'Object' === n && t.constructor && (n = t.constructor.name);
-                        if ('Map' === n || 'Set' === n) return Array.from(t);
-                        if ('Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return u(t, e);
+                        if (t) {
+                            if ('string' == typeof t) return u(t, e);
+                            var n = {}.toString.call(t).slice(8, -1);
+                            return (
+                                'Object' === n && t.constructor && (n = t.constructor.name),
+                                'Map' === n || 'Set' === n
+                                    ? Array.from(t)
+                                    : 'Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
+                                      ? u(t, e)
+                                      : void 0
+                            );
+                        }
                     })(t)) ||
                     (e && t && 'number' == typeof t.length)
                 ) {
@@ -312,7 +318,7 @@
             }
             function u(t, e) {
                 (null == e || e > t.length) && (e = t.length);
-                for (var n = 0, s = new Array(e); n < e; n++) s[n] = t[n];
+                for (var n = 0, s = Array(e); n < e; n++) s[n] = t[n];
                 return s;
             }
             function c() {
@@ -485,7 +491,9 @@
                         (i.resumeQueue.add(y), i.timeouts.delete(f), f.cancel(), (p = f.time - s.Wn.now()));
                     }
                     function y() {
-                        p > 0 ? ((f = s.Wn.setTimeout(W, p)), i.pauseQueue.add(g), i.timeouts.add(f)) : W();
+                        p > 0 && !s.OH.skipAnimation
+                            ? ((f = s.Wn.setTimeout(W, p)), i.pauseQueue.add(g), i.timeouts.add(f))
+                            : W();
                     }
                     function W() {
                         (i.pauseQueue.delete(g), i.timeouts.delete(f), t <= (i.cancelId || 0) && (m = !0));
@@ -651,8 +659,8 @@
                 q = (t) => (1 & t[$]) > 0,
                 D = (t) => (2 & t[$]) > 0,
                 F = (t) => (4 & t[$]) > 0,
-                z = (t, e) => (e ? (t[$] |= 3) : (t[$] &= -3)),
-                H = (t, e) => (e ? (t[$] |= 4) : (t[$] &= -5));
+                H = (t, e) => (e ? (t[$] |= 3) : (t[$] &= -3)),
+                z = (t, e) => (e ? (t[$] |= 4) : (t[$] &= -5));
             class G extends (44 == n.j ? V : null) {
                 constructor(t, e) {
                     if (
@@ -875,13 +883,13 @@
                         actions: {
                             pause: () => {
                                 F(this) ||
-                                    (H(this, !0),
+                                    (z(this, !0),
                                     (0, s.bl)(a.pauseQueue),
                                     nt(this, 'onPause', A(this, X(this, this.animation.to)), this));
                             },
                             resume: () => {
                                 F(this) &&
-                                    (H(this, !1),
+                                    (z(this, !1),
                                     D(this) && this._resume(),
                                     (0, s.bl)(a.resumeQueue),
                                     nt(this, 'onResume', A(this, X(this, this.animation.to)), this));
@@ -1037,14 +1045,14 @@
                     const t = this.animation;
                     ((0, i.ys)(this).reset((0, s.je)(t.to)),
                         t.immediate || (t.fromValues = t.values.map((t) => t.lastPosition)),
-                        D(this) || (z(this, !0), F(this) || this._resume()));
+                        D(this) || (H(this, !0), F(this) || this._resume()));
                 }
                 _resume() {
                     s.OH.skipAnimation ? this.finish() : s.fT.start(this);
                 }
                 _stop(t, e) {
                     if (D(this)) {
-                        z(this, !1);
+                        H(this, !1);
                         const n = this.animation;
                         ((0, s.S6)(n.values, (t) => {
                             t.done = !0;
@@ -1477,10 +1485,9 @@
             function bt(t, e) {
                 const n = s.is.fun(t),
                     r = Bt(1, n ? t : [t], n ? e || [] : e),
-                    i = r[0],
-                    o = i[0],
-                    a = r[1];
-                return n || 2 == arguments.length ? [o, a] : o;
+                    i = r[0][0],
+                    o = r[1];
+                return n || 2 == arguments.length ? [i, o] : i;
             }
             let Tt;
             !(function (t) {
@@ -1565,14 +1572,14 @@
             s.OH.assign({ createStringInterpolator: s.qS, to: (t, e) => new _t(t, e) });
             s.fT.advance;
         },
-        810: (t, e, n) => {
+        398: (t, e, n) => {
             'use strict';
             n.d(e, {
                 B0: () => Ut,
                 OH: () => N,
                 UI: () => Bt,
                 k0: () => Wt,
-                O9: () => z,
+                O9: () => H,
                 mD: () => dt,
                 qS: () => kt,
                 dE: () => T,
@@ -1827,7 +1834,7 @@
                 }
                 return ((M = 0), (L = R), (L.length = 0), (R = e), R.length > 0);
             }
-            const z = {
+            const H = {
                     transparent: 0,
                     aliceblue: 4042850303,
                     antiquewhite: 4209760255,
@@ -1979,15 +1986,15 @@
                     yellow: 4294902015,
                     yellowgreen: 2597139199,
                 },
-                H = '[-+]?\\d*\\.?\\d+',
-                G = H + '%';
+                z = '[-+]?\\d*\\.?\\d+',
+                G = z + '%';
             function X(...t) {
                 return '\\(\\s*(' + t.join(')\\s*,\\s*(') + ')\\s*\\)';
             }
-            const Z = new RegExp('rgb' + X(H, H, H)),
-                Y = new RegExp('rgba' + X(H, H, H, H)),
-                K = new RegExp('hsl' + X(H, G, G)),
-                J = new RegExp('hsla' + X(H, G, G, H)),
+            const Z = new RegExp('rgb' + X(z, z, z)),
+                Y = new RegExp('rgba' + X(z, z, z, z)),
+                K = new RegExp('hsl' + X(z, G, G)),
+                J = new RegExp('hsla' + X(z, G, G, z)),
                 tt = /^#([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
                 et = /^#([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})([0-9a-fA-F]{1})$/,
                 nt = /^#([0-9a-fA-F]{6})$/,
@@ -2245,13 +2252,13 @@
                     ? B.useLayoutEffect
                     : B.useEffect;
         },
-        6: (t, e, n) => {
+        45: (t, e, n) => {
             'use strict';
             n.d(e, { useSpring: () => s.useSpring });
-            var s = n(738),
+            var s = n(216),
                 r = n(533),
-                i = n(810),
-                o = n(686);
+                i = n(398),
+                o = n(311);
             function a(t, e) {
                 if (null == t) return {};
                 var n,
@@ -2565,7 +2572,7 @@
                 },
             ).animated;
         },
-        769: (t, e, n) => {
+        187: (t, e, n) => {
             'use strict';
             n.d(e, { A: () => s });
             const s = /^(898|99)$/.test(n.j)
@@ -2595,14 +2602,14 @@
                   ]
                 : null;
         },
-        906: (t, e, n) => {
+        657: (t, e, n) => {
             'use strict';
             n.d(e, { X: () => s });
             const s = (t) => new DOMParser().parseFromString(t, 'text/html');
         },
-        281: (t, e, n) => {
+        354: (t, e, n) => {
             'use strict';
-            if ((n.d(e, { D4: () => S }), /^(898|99)$/.test(n.j))) var s = n(769);
+            if ((n.d(e, { D4: () => S }), /^(898|99)$/.test(n.j))) var s = n(187);
             const r = {
                 'BB2:108120': 1817,
                 'BP2:OO': 790,
@@ -3089,19 +3096,25 @@
                 'UW1:く': 13,
                 'UW4:私': 12,
             };
-            if (/^(898|99)$/.test(n.j)) var i = n(906);
+            if (/^(898|99)$/.test(n.j)) var i = n(657);
             function o(t, e) {
                 var n = ('undefined' != typeof Symbol && t[Symbol.iterator]) || t['@@iterator'];
                 if (n) return (n = n.call(t)).next.bind(n);
                 if (
                     Array.isArray(t) ||
                     (n = (function (t, e) {
-                        if (!t) return;
-                        if ('string' == typeof t) return a(t, e);
-                        var n = Object.prototype.toString.call(t).slice(8, -1);
-                        'Object' === n && t.constructor && (n = t.constructor.name);
-                        if ('Map' === n || 'Set' === n) return Array.from(t);
-                        if ('Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return a(t, e);
+                        if (t) {
+                            if ('string' == typeof t) return a(t, e);
+                            var n = {}.toString.call(t).slice(8, -1);
+                            return (
+                                'Object' === n && t.constructor && (n = t.constructor.name),
+                                'Map' === n || 'Set' === n
+                                    ? Array.from(t)
+                                    : 'Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
+                                      ? a(t, e)
+                                      : void 0
+                            );
+                        }
                     })(t)) ||
                     (e && t && 'number' == typeof t.length)
                 ) {
@@ -3117,7 +3130,7 @@
             }
             function a(t, e) {
                 (null == e || e > t.length) && (e = t.length);
-                for (var n = 0, s = new Array(e); n < e; n++) s[n] = t[n];
+                for (var n = 0, s = Array(e); n < e; n++) s[n] = t[n];
                 return s;
             }
             const l = console.assert,
@@ -3341,19 +3354,25 @@
                         t.head.appendChild(n));
                 }
             }
-            if (/^(898|99)$/.test(n.j)) var U = n(759);
+            if (/^(898|99)$/.test(n.j)) var U = n(422);
             function v(t, e) {
                 var n = ('undefined' != typeof Symbol && t[Symbol.iterator]) || t['@@iterator'];
                 if (n) return (n = n.call(t)).next.bind(n);
                 if (
                     Array.isArray(t) ||
                     (n = (function (t, e) {
-                        if (!t) return;
-                        if ('string' == typeof t) return B(t, e);
-                        var n = Object.prototype.toString.call(t).slice(8, -1);
-                        'Object' === n && t.constructor && (n = t.constructor.name);
-                        if ('Map' === n || 'Set' === n) return Array.from(t);
-                        if ('Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return B(t, e);
+                        if (t) {
+                            if ('string' == typeof t) return B(t, e);
+                            var n = {}.toString.call(t).slice(8, -1);
+                            return (
+                                'Object' === n && t.constructor && (n = t.constructor.name),
+                                'Map' === n || 'Set' === n
+                                    ? Array.from(t)
+                                    : 'Arguments' === n || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)
+                                      ? B(t, e)
+                                      : void 0
+                            );
+                        }
                     })(t)) ||
                     (e && t && 'number' == typeof t.length)
                 ) {
@@ -3369,7 +3388,7 @@
             }
             function B(t, e) {
                 (null == e || e > t.length) && (e = t.length);
-                for (var n = 0, s = new Array(e); n < e; n++) s[n] = t[n];
+                for (var n = 0, s = Array(e); n < e; n++) s[n] = t[n];
                 return s;
             }
             const b = 1e3,
@@ -3485,7 +3504,7 @@
             }
             const S = () => new _(new Map(Object.entries(r)));
         },
-        759: (t, e, n) => {
+        422: (t, e, n) => {
             'use strict';
             n.d(e, { UI: () => r, ml: () => s });
             const s = (t, e) => {
@@ -3502,7 +3521,7 @@
                 },
                 r = '▔';
         },
-        483: (t, e) => {
+        849: (t, e) => {
             var n;
             !(function () {
                 'use strict';
@@ -3529,7 +3548,7 @@
                           }.apply(e, [])) || (t.exports = n);
             })();
         },
-        70: (t, e, n) => {
+        343: (t, e, n) => {
             'use strict';
             function s(t, e) {
                 return t.classList
@@ -3538,47 +3557,38 @@
             }
             n.d(e, { Z: () => s });
         },
-        30: (t, e, n) => {
-            'use strict';
-            var s = n(6);
-            n.o(s, 'useSpring') &&
-                n.d(e, {
-                    useSpring: function () {
-                        return s.useSpring;
-                    },
-                });
-        },
-        664: (t, e, n) => {
+        623: (t, e, n) => {
             'use strict';
             function s() {
                 return (
-                    (s =
-                        Object.assign ||
-                        function (t) {
-                            for (var e = 1; e < arguments.length; e++) {
-                                var n = arguments[e];
-                                for (var s in n) Object.prototype.hasOwnProperty.call(n, s) && (t[s] = n[s]);
-                            }
-                            return t;
-                        }),
-                    s.apply(this, arguments)
+                    (s = Object.assign
+                        ? Object.assign.bind()
+                        : function (t) {
+                              for (var e = 1; e < arguments.length; e++) {
+                                  var n = arguments[e];
+                                  for (var s in n) ({}).hasOwnProperty.call(n, s) && (t[s] = n[s]);
+                              }
+                              return t;
+                          }),
+                    s.apply(null, arguments)
                 );
             }
             function r(t, e) {
                 if (null == t) return {};
-                var n,
-                    s,
-                    r = {},
-                    i = Object.keys(t);
-                for (s = 0; s < i.length; s++) ((n = i[s]), e.indexOf(n) >= 0 || (r[n] = t[n]));
-                return r;
+                var n = {};
+                for (var s in t)
+                    if ({}.hasOwnProperty.call(t, s)) {
+                        if (-1 !== e.indexOf(s)) continue;
+                        n[s] = t[s];
+                    }
+                return n;
             }
             n.d(e, { Z: () => E });
-            var i = n(720);
+            var i = n(301);
             function o(t, e) {
                 ((t.prototype = Object.create(e.prototype)), (t.prototype.constructor = t), (0, i.Z)(t, e));
             }
-            var a = n(70);
+            var a = n(343);
             function l(t, e) {
                 return t
                     .replace(new RegExp('(^|\\s)' + e + '(?:\\s|$)', 'g'), '$1')
@@ -3899,19 +3909,29 @@
             ((S.defaultProps = { classNames: '' }), (S.propTypes = {}));
             const E = S;
         },
-        720: (t, e, n) => {
+        301: (t, e, n) => {
             'use strict';
             function s(t, e) {
                 return (
-                    (s =
-                        Object.setPrototypeOf ||
-                        function (t, e) {
-                            return ((t.__proto__ = e), t);
-                        }),
+                    (s = Object.setPrototypeOf
+                        ? Object.setPrototypeOf.bind()
+                        : function (t, e) {
+                              return ((t.__proto__ = e), t);
+                          }),
                     s(t, e)
                 );
             }
             n.d(e, { Z: () => s });
+        },
+        374: (t, e, n) => {
+            'use strict';
+            var s = n(45);
+            n.o(s, 'useSpring') &&
+                n.d(e, {
+                    useSpring: function () {
+                        return s.useSpring;
+                    },
+                });
         },
     },
 ]);

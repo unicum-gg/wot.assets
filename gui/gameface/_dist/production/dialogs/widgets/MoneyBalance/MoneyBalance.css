@@ -1,8 +1,8 @@
-.Waiting_waiting_48 {
+.Waiting_waiting_e0758 {
     color: #ffc363;
 }
 
-.Waiting_alertIcon_9d {
+.Waiting_alertIcon_f8a6e {
     width: 20rem;
     height: 16rem;
     background: url('R.images.gui.maps.icons.library.alertIcon') no-repeat 100% 1rem / contain;
@@ -11,22 +11,22 @@
     left: 2rem;
 }
 
-.Waiting_frame1_c0 {
-    animation: Waiting_colors_ae 3s linear infinite;
+.Waiting_frame1_ab1b7 {
+    animation: Waiting_colors_b4c61 3s linear infinite;
     animation-delay: 0.1s;
 }
 
-.Waiting_frame2_bb {
-    animation: Waiting_colors_ae 3s linear infinite;
+.Waiting_frame2_d50db {
+    animation: Waiting_colors_b4c61 3s linear infinite;
     animation-delay: 0.2s;
 }
 
-.Waiting_frame3_4c {
-    animation: Waiting_colors_ae 3s linear infinite;
+.Waiting_frame3_d202d {
+    animation: Waiting_colors_b4c61 3s linear infinite;
     animation-delay: 0.3s;
 }
 
-@keyframes Waiting_colors_ae {
+@keyframes Waiting_colors_b4c61 {
     0%,
     10%,
     20%,
@@ -48,7 +48,7 @@
     }
 }
 
-.CurrencyItem_base_a5 {
+.CurrencyItem_base_b4958 {
     height: 20rem;
     margin-left: 20rem;
     padding-left: 20rem;
@@ -58,14 +58,14 @@
     position: relative;
 }
 
-.CurrencyItem_base__credits_87 {
+.CurrencyItem_base__credits_e2bf8 {
     color: #ced9d9;
 }
 
-.CurrencyItem_base__gold_83 {
+.CurrencyItem_base__gold_f660b {
     color: #ffc363;
 }
-.CurrencyItem_icon_e3 {
+.CurrencyItem_icon_faaff {
     width: 16rem;
     height: 16rem;
     background: no-repeat 0 0 / contain;
@@ -73,28 +73,28 @@
     top: 2rem;
     left: 0;
 }
-.CurrencyItem_base__credits_87 .CurrencyItem_icon_e3 {
+.CurrencyItem_base__credits_e2bf8 .CurrencyItem_icon_faaff {
     background-image: url('R.images.gui.maps.icons.library.CreditsIcon_2');
     top: 3rem;
 }
-.CurrencyItem_base__gold_83 .CurrencyItem_icon_e3 {
+.CurrencyItem_base__gold_f660b .CurrencyItem_icon_faaff {
     background-image: url('R.images.gui.maps.icons.library.GoldIcon_2');
 }
-.CurrencyItem_base__crystal_0b .CurrencyItem_icon_e3 {
+.CurrencyItem_base__crystal_bc26b .CurrencyItem_icon_faaff {
     background-image: url('R.images.gui.maps.icons.library.CrystalIcon_2');
 }
-.CurrencyItem_base__freeXP_a0 .CurrencyItem_icon_e3 {
+.CurrencyItem_base__freeXP_adee5 .CurrencyItem_icon_faaff {
     width: 18rem;
     height: 18rem;
     background-image: url('R.images.gui.maps.icons.library.FreeXpIcon_2');
     top: 1rem;
     left: -1rem;
 }
-.CurrencyItem_base__equipCoin_49 .CurrencyItem_icon_e3 {
+.CurrencyItem_base__equipCoin_fd3b6 .CurrencyItem_icon_faaff {
     background-image: url('R.images.gui.maps.icons.library.equipCoin_1');
 }
 
-.MoneyBalanceApp_base_6a {
+.MoneyBalanceApp_base_f8d3a {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;

@@ -1,0 +1,107 @@
+{
+  "l0_007": {
+    "frameX": 2,
+    "frameY": 2,
+    "sourceName": "parallaxS4-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "grass_l0_002": {
+    "frameX": 798,
+    "frameY": 2,
+    "sourceName": "parallaxS4-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "smoke_p2": {
+    "frameX": 1593,
+    "frameY": 2,
+    "sourceName": "parallaxS4-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "sky_010": {
+    "frameX": 798,
+    "frameY": 248,
+    "sourceName": "parallaxS4-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "smoke_near_011": {
+    "frameX": 1549,
+    "frameY": 334,
+    "sourceName": "parallaxS4-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "attach_p2": {
+    "frameX": 1549,
+    "frameY": 733,
+    "sourceName": "parallaxS4-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "sky": {
+    "frameX": 2,
+    "frameY": 520,
+    "sourceName": "parallaxS4-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "smoke_near_001": {
+    "frameX": 752,
+    "frameY": 839,
+    "sourceName": "parallaxS4-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "effe2": {
+    "frameX": 1493,
+    "frameY": 1220,
+    "sourceName": "parallaxS4-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "effe1": {
+    "frameX": 2,
+    "frameY": 1398,
+    "sourceName": "parallaxS4-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "l1_006": {
+    "frameX": 371,
+    "frameY": 1004,
+    "sourceName": "parallaxS4-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "sky_004": {
+    "frameX": 2,
+    "frameY": 1004,
+    "sourceName": "parallaxS4-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "grass_l0": {
+    "frameX": 371,
+    "frameY": 1398,
+    "sourceName": "parallaxS4-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "smoke_near_003": {
+    "frameX": 683,
+    "frameY": 1534,
+    "sourceName": "parallaxS4-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "smoke_near_002": {
+    "frameX": 1310,
+    "frameY": 1534,
+    "sourceName": "parallaxS4-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  }
+}

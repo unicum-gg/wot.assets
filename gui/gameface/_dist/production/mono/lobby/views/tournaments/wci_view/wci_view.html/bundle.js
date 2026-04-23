@@ -1,11 +1,12 @@
-import { j as i } from '../../../../chunks/vendor.js';
-import { cW as s, cw as n } from '../../../../chunks/lib.js';
+import { j as s } from '../../../../chunks/vendor.js';
+import { r as i, cE as n } from '../../../../chunks/lib.js';
 import { T as m, A as o, a, b as e, W as t } from '../../../../chunks/winner_glow.js';
-import '../../../../chunks/consts.js';
+/* empty css                        */ import '../../../../chunks/consts.js';
+import '../../../../chunks/use_server_time_polling.js';
 import '../../../../chunks/divine_glow.js';
 import '../../../../chunks/animated_background.js';
-const c = ({ children: s }) =>
-    i.jsx(a.Provider, {
+const r = ({ children: i }) =>
+    s.jsx(a.Provider, {
         value: {
             mainBgPath: R.images.comp7.gui.maps.icons.tournaments.wci.bg(),
             blurBgPath: R.images.comp7.gui.maps.icons.tournaments.wci.bg_blurred(),
@@ -31,8 +32,8 @@ const c = ({ children: s }) =>
             visitShopDescription: R.strings.comp7_ext.tournament.visitShop.description.wci(),
             roundRobinText: R.strings.comp7_ext.tournament.wci.roundRobin(),
             tournamentName: e.WCI,
-            winnerGlowComponent: i.jsx(t, {}),
+            winnerGlowComponent: s.jsx(t, {}),
         },
-        children: s,
+        children: i,
     });
-s(i.jsx(n, { children: i.jsx(c, { children: i.jsx(m, { children: i.jsx(o, {}) }) }) }), { fullScreen: !0 });
+i(s.jsx(n, { children: s.jsx(r, { children: s.jsx(m, { children: s.jsx(o, {}) }) }) }), { fullScreen: !0 });

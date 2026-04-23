@@ -1,10 +1,9 @@
-import { j as s, J as a } from './vendor.js';
-import { s as e } from './rank_emblem.js';
-const m = ({ size: m, seasonName: n, className: o }) => {
-    const r = R.images.comp7.gui.maps.icons.ranks.$dyn(n).$num(m);
-    return s.jsx('div', {
-        className: a(e.base, o),
-        style: { backgroundImage: `url(${r.$dyn('qualification')})`, '--imageSize': `${m}rem` },
-    });
+import { j as s, a3 as a } from './vendor.js';
+import { b as i, s as e } from './rank_emblem.js';
+const m = ({ size: m, seasonName: o, className: r, isSimplified: c }) => {
+    const n = i(m, c)
+        ? `R.images.comp7.gui.maps.icons.ranks.c_${m}.qualification`
+        : `R.images.comp7.gui.maps.icons.ranks.${o}.c_${m}.qualification`;
+    return s.jsx('div', { className: a(e.base, r), style: { backgroundImage: `url(${n})`, '--imageSize': `${m}rem` } });
 };
 export { m as Q };

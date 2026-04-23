@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,20 +11,20 @@
     position: relative;
 }
 
-.ConversionTooltipBook_base_cb {
+.ConversionTooltipBook_base_b0d01 {
     display: flex;
     width: 200rem;
     height: 48rem;
     position: relative;
 }
 
-.ConversionTooltipBook_icon_a6 {
+.ConversionTooltipBook_icon_cc514 {
     width: 48rem;
     height: 48rem;
     background: no-repeat center / contain;
 }
 
-.ConversionTooltipBook_labelsBlock_a9 {
+.ConversionTooltipBook_labelsBlock_a73ee {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -34,26 +34,26 @@
     margin-left: 10rem;
 }
 
-.ConversionTooltipBook_titleLabel_64 {
+.ConversionTooltipBook_titleLabel_a940a {
     margin-top: 6rem;
     color: #e9e2bf;
 }
 
-.ConversionTooltipBook_bottomLabels_b0 {
+.ConversionTooltipBook_bottomLabels_bd03d {
     display: flex;
     margin-top: -1rem;
 }
 
-.ConversionTooltipBook_nationLabel_e2 {
+.ConversionTooltipBook_nationLabel_a2d1e {
     margin-right: 5rem;
     color: #8c8c7e;
 }
 
-.ConversionTooltipBook_valueLabel_90 {
+.ConversionTooltipBook_valueLabel_a0971 {
     color: #fefeec;
 }
 
-.ConversionTooltipApp_base_ff {
+.ConversionTooltipApp_base_abb63 {
     display: flex;
     flex-direction: column;
     width: 316rem;
@@ -61,11 +61,11 @@
     position: relative;
 }
 
-.ConversionTooltipApp_base__wide_4c {
+.ConversionTooltipApp_base__wide_df882 {
     width: 460rem;
 }
 
-.ConversionTooltipApp_header_22 {
+.ConversionTooltipApp_header_f9c8f {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 700;
@@ -73,7 +73,7 @@
     margin-bottom: 16rem;
 }
 
-.ConversionTooltipApp_body_5a {
+.ConversionTooltipApp_body_ca7ff {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -81,22 +81,22 @@
     margin-bottom: 17rem;
 }
 
-.ConversionTooltipApp_books_32 {
+.ConversionTooltipApp_books_fd5e8 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.ConversionTooltipApp_bookWrapper_3f {
+.ConversionTooltipApp_bookWrapper_cb26c {
     display: flex;
     flex-direction: column;
     position: relative;
 }
 
-.ConversionTooltipApp_book_a9 {
+.ConversionTooltipApp_book_e93a6 {
     margin: 0 10rem 25rem 0;
 }
 
-.ConversionTooltipApp_divider_61 {
+.ConversionTooltipApp_divider_f613b {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.tooltip.tool_tip_separator') no-repeat center / cover;
@@ -105,7 +105,7 @@
     left: 0;
 }
 
-.ConversionTooltipApp_base__wide_4c .ConversionTooltipApp_divider_61 {
+.ConversionTooltipApp_base__wide_df882 .ConversionTooltipApp_divider_f613b {
     width: 360rem;
     background-image: url('R.images.gui.maps.icons.tooltip.tooltip_perks_divider');
     left: 20rem;

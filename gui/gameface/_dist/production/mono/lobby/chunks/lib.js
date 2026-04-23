@@ -1,9 +1,3 @@
-var __defProp = Object.defineProperty,
-    __defNormalProp = (e, t, u) =>
-        t in e ? __defProp(e, t, { enumerable: !0, configurable: !0, writable: !0, value: u }) : (e[t] = u),
-    __publicField = (e, t, u) => __defNormalProp(e, 'symbol' != typeof t ? t + '' : t, u),
-    _a,
-    _b;
 import {
     c as createContainer,
     a as asValue,
@@ -11,14 +5,14 @@ import {
     d as asFunction,
     r as reactExports,
     j as jsxRuntimeExports,
-    e as cx,
+    e as clsx,
     o as observable,
     f as action,
     u as untracked,
     R as React,
-    g as client,
+    g as ReactDOM,
     h as cva,
-    i as index,
+    i as cx,
 } from './vendor.js';
 const resources = createContainer();
 function concatWithPath(e, t) {
@@ -48,7 +42,7 @@ function readFromR$2(e, t) {
         const t = u[u.length - 1];
         if (!t) return;
         const n = u.slice(0, -1).reduce((e, t) => {
-            if ('object' == typeof (null == e ? void 0 : e[t])) return e[t];
+            if ('object' == typeof e?.[t]) return e[t];
         }, e);
         if (!n) return;
         return 'function' == typeof n[t] ? n[t]() : void 0;
@@ -64,8 +58,8 @@ class ImagesRClassProvider {
     }
     readOr(e, t, u = 'silent') {
         const n = e.startsWith('R.images') ? e : concatWithPath(this.prefix, e),
-            r = readFromR$2(e.startsWith('R.images') ? window : this.root, n);
-        return void 0 === r ? ('silent' !== u && logBySeverity$1(`Resource not found: ${n}`, u), t()) : r;
+            s = readFromR$2(e.startsWith('R.images') ? window : this.root, n);
+        return void 0 === s ? ('silent' !== u && logBySeverity$1(`Resource not found: ${n}`, u), t()) : s;
     }
     readOrEmpty(e, t = 'warn') {
         return this.readOr(e, () => '', t);
@@ -80,28 +74,6 @@ class ImagesRClassProvider {
     }
 }
 Math.random().toString(36).slice(2);
-class ImagesServerRedirectProvider {
-    constructor(e) {
-        (__publicField(this, 'prefix'),
-            (this.EXT = e),
-            (this.prefix = e ? `R.images.${e}.gui.maps.icons` : 'R.images.gui.maps.icons'));
-    }
-    has() {
-        return !0;
-    }
-    read(e) {
-        return `/${this.prefix}.${e}`;
-    }
-    readOr(e, t, u = 'silent') {
-        return this.read(e);
-    }
-    readOrEmpty(e, t = 'warn') {
-        return this.read(e);
-    }
-    readOrThrow(e) {
-        return this.read(e);
-    }
-}
 var DateTimeFormatsEnum = ((e) => (
     (e.DayMonthNumeric = 'dayMonthNumeric'),
     (e.DayMonthFull = 'dayMonthFull'),
@@ -163,17 +135,13 @@ class SoundsRClassProvider {
     }
 }
 function readFromR$1(e, t, u) {
-    const n = e.split('.');
-    if (window.R && window.R.strings) {
-        const e = n[n.length - 1];
-        if (!e) return;
-        const r = n.slice(0, -1).reduce((e, t) => {
-            if ('object' == typeof (null == e ? void 0 : e[t])) return e[t];
-        }, u);
-        if (!r) return;
-        return 'function' == typeof r[e] ? (t ? r[e](t) : r[e]()) : void 0;
-    }
-    throw new Error('R class with strings field is not defined');
+    const n = e.split('.'),
+        s = n[n.length - 1];
+    if (!s) return;
+    const r = n.slice(0, -1).reduce((e, t) => {
+        if ('object' == typeof e?.[t]) return e[t];
+    }, u);
+    return r && 'function' == typeof r[s] ? (t ? r[s](t) : r[s]()) : void 0;
 }
 class StringsRClassProvider {
     constructor(e = window.R.strings, t) {
@@ -184,8 +152,8 @@ class StringsRClassProvider {
     }
     readOr(e, t, u = 'silent') {
         const n = e.startsWith('R.strings') ? e : concatWithPath(this.prefix, e),
-            r = readFromR$1(n, void 0, e.startsWith('R.strings') ? window : this.root);
-        return void 0 === r ? ('silent' !== u && logBySeverity$1(`Resource not found: ${n}`, u), t()) : r;
+            s = readFromR$1(n, void 0, e.startsWith('R.strings') ? window : this.root);
+        return void 0 === s ? ('silent' !== u && logBySeverity$1(`Resource not found: ${n}`, u), t()) : s;
     }
     readOrEmpty(e, t = 'warn') {
         return this.readOr(e, () => '', t);
@@ -200,9 +168,9 @@ class StringsRClassProvider {
         return this.pluralOr(e, t, () => {});
     }
     pluralOr(e, t, u, n = 'silent') {
-        const r = e.startsWith('R.strings') ? e : concatWithPath(this.prefix, e),
-            s = readFromR$1(r, t, e.startsWith('R.strings') ? window : this.root);
-        return void 0 === s ? ('silent' !== n && logBySeverity$1(`Resource not found: ${r}`, n), u()) : s;
+        const s = e.startsWith('R.strings') ? e : concatWithPath(this.prefix, e),
+            r = readFromR$1(s, t, e.startsWith('R.strings') ? window : this.root);
+        return void 0 === r ? ('silent' !== n && logBySeverity$1(`Resource not found: ${s}`, n), u()) : r;
     }
     pluralOrEmpty(e, t, u = 'warn') {
         return this.pluralOr(e, t, () => '', u);
@@ -214,7 +182,7 @@ function readFromR(e, t) {
         const t = u[u.length - 1];
         if (!t) return;
         const n = u.slice(0, -1).reduce((e, t) => {
-            if ('object' == typeof (null == e ? void 0 : e[t])) return e[t];
+            if ('object' == typeof e?.[t]) return e[t];
         }, e);
         if (!n) return;
         return 'function' == typeof n[t] ? n[t]() : void 0;
@@ -230,8 +198,8 @@ class VideosRClassProvider {
     }
     readOr(e, t, u = 'silent') {
         const n = e.startsWith('R.videos') ? e : concatWithPath(this.prefix, e),
-            r = readFromR(e.startsWith('R.videos') ? window : this.root, n);
-        return void 0 === r ? ('silent' !== u && logBySeverity$1(`Resource not found: ${e}`, u), t()) : r;
+            s = readFromR(e.startsWith('R.videos') ? window : this.root, n);
+        return void 0 === s ? ('silent' !== u && logBySeverity$1(`Resource not found: ${e}`, u), t()) : s;
     }
     readOrEmpty(e, t = 'warn') {
         return this.readOr(e, () => '', t);
@@ -255,8 +223,7 @@ class AliasesRClassProvider {
         return e(window.R.aliases);
     }
 }
-var define_import_meta_env_default = {};
-(resources.register({
+resources.register({
     strings: asFunction(() => new StringsRClassProvider()).singleton(),
     images: asFunction(() => new ImagesRClassProvider(window.R.images.gui.maps.icons)).singleton(),
     atlases: asFunction(() => new ImagesRClassProvider(window.R.atlases)).singleton(),
@@ -266,9 +233,7 @@ var define_import_meta_env_default = {};
     sounds: asClass(SoundsRClassProvider).singleton(),
     langCode: asValue(R.strings.settings.LANGUAGE_CODE()),
     intl: asValue(intl),
-}),
-    define_import_meta_env_default.VITE_HOT_LIVE_SERVER &&
-        resources.register('images', asFunction(() => new ImagesServerRedirectProvider()).singleton()));
+});
 const HOURS_IN_DAY = 24,
     ONE_MINUTE = 60,
     ONE_HOUR = 60 * ONE_MINUTE,
@@ -279,8 +244,8 @@ function getTimeUnits(e = 0) {
     t -= u * ONE_DAY;
     const n = Math.trunc(t / ONE_HOUR);
     t -= n * ONE_HOUR;
-    const r = Math.trunc(t / ONE_MINUTE);
-    return ((t -= r * ONE_MINUTE), { days: u, hours: n, minutes: r, seconds: t });
+    const s = Math.trunc(t / ONE_MINUTE);
+    return ((t -= s * ONE_MINUTE), { days: u, hours: n, minutes: s, seconds: t });
 }
 function format(e, t) {
     return e.replace(/\{\w+\}/g, (e) => String(t[e.slice(1, -1)]));
@@ -296,7 +261,7 @@ function makeEngineEvent$1(e) {
 function setTrackMouseOutside$1(e) {
     viewEnv.setTrackMouseOnStage(e);
 }
-const onResize = makeEngineEvent$1('clientResized'),
+const onResize$1 = makeEngineEvent$1('clientResized'),
     onRescale = makeEngineEvent$1('self.onScaleUpdated'),
     internalMouse$1 = {
         down: makeEngineEvent$1('mousedown'),
@@ -330,16 +295,16 @@ function initMouseEvents$1() {
                 (t[u] = (function (t) {
                     return (u) => {
                         e.listeners += 1;
-                        const r = `mouse${t}`,
-                            s = internalMouse$1[t]((e) => u([e, 'outside']));
+                        const s = `mouse${t}`,
+                            r = internalMouse$1[t]((e) => u([e, 'outside']));
                         function o(e) {
                             u([e, 'inside']);
                         }
                         return (
-                            window.addEventListener(r, o),
+                            window.addEventListener(s, o),
                             n(),
                             () => {
-                                (s(), window.removeEventListener(r, o), (e.listeners -= 1), n());
+                                (r(), window.removeEventListener(s, o), (e.listeners -= 1), n());
                             }
                         );
                     };
@@ -362,14 +327,14 @@ function initMouseEvents$1() {
         },
     };
 }
-function getSize$2(e = 'px') {
+function getSize$3(e = 'px') {
     return 'rem' === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
 }
 function playSound$1(e) {
     engine.call('PlaySound', e);
 }
 initMouseEvents$1();
-const graphicsQuality = {
+const graphicsQuality$1 = {
         isLow: () => 1 === viewEnv.getGraphicsQuality(),
         isHigh: () => 0 === viewEnv.getGraphicsQuality(),
         get: () => viewEnv.getGraphicsQuality(),
@@ -395,7 +360,7 @@ const graphicsQuality = {
             }
         );
     },
-    events$1 = {
+    events$2 = {
         onTextureFrozen: makeEngineEvent$1('self.onTextureFrozen'),
         onTextureReady: makeEngineEvent$1('self.onTextureReady'),
         onDomBuilt: makeEngineEvent$1('self.onDomBuilt'),
@@ -439,10 +404,10 @@ const createViewEventArguments$2 = (e) => {
     sendViewEvent$1 = (e, t) => {
         const u = 'GFViewEventProxy';
         if (void 0 !== t) {
-            const { args: n, ...r } = t;
+            const { args: n, ...s } = t;
             return void 0 !== n
-                ? viewEnv.handleViewEvent({ __Type: u, type: e, ...r, arguments: createViewEventArguments$2(n) })
-                : viewEnv.handleViewEvent({ __Type: u, type: e, ...r });
+                ? viewEnv.handleViewEvent({ __Type: u, type: e, ...s, arguments: createViewEventArguments$2(n) })
+                : viewEnv.handleViewEvent({ __Type: u, type: e, ...s });
         }
         return viewEnv.handleViewEvent({ __Type: u, type: e });
     },
@@ -476,7 +441,7 @@ function ids() {
 function addModelObserver$1(e, t, u) {
     return viewEnv.addDataChangedCallback(e, t, u);
 }
-function getSize$1(e = 'px') {
+function getSize$2(e = 'px') {
     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
 }
 function remToPx$1(e) {
@@ -493,18 +458,18 @@ function enableFullScreenModeSupported$1() {
 }
 function initExternalPaddings$1(e) {
     function t() {
-        const { top: t, right: u, bottom: n, left: r } = viewEnv.getExternalPaddingsRem();
+        const { top: t, right: u, bottom: n, left: s } = viewEnv.getExternalPaddingsRem();
         (e.style.setProperty('--external-padding-top', `${t}rem`),
             e.style.setProperty('--external-padding-right', `${u}rem`),
             e.style.setProperty('--external-padding-bottom', `${n}rem`),
-            e.style.setProperty('--external-padding-left', `${r}rem`));
+            e.style.setProperty('--external-padding-left', `${s}rem`));
     }
     (t(), engine.on('self.onPaddingsUpdated', () => t()));
 }
 function getKeyNameFromKeyCode(e) {
     return window.systemInput.getKeyName(e);
 }
-function pipe(e, t, u, n, r, s, o, i, a) {
+function pipe(e, t, u, n, s, r, o, i, a) {
     switch (arguments.length) {
         case 1:
             return e;
@@ -515,15 +480,15 @@ function pipe(e, t, u, n, r, s, o, i, a) {
         case 4:
             return n(u(t(e)));
         case 5:
-            return r(n(u(t(e))));
+            return s(n(u(t(e))));
         case 6:
-            return s(r(n(u(t(e)))));
+            return r(s(n(u(t(e)))));
         case 7:
-            return o(s(r(n(u(t(e))))));
+            return o(r(s(n(u(t(e))))));
         case 8:
-            return i(o(s(r(n(u(t(e)))))));
+            return i(o(r(s(n(u(t(e)))))));
         case 9:
-            return a(i(o(s(r(n(u(t(e))))))));
+            return a(i(o(r(s(n(u(t(e))))))));
         default: {
             let e = arguments[0];
             for (let t = 1; t < arguments.length; t++) e = arguments[t](e);
@@ -531,7 +496,7 @@ function pipe(e, t, u, n, r, s, o, i, a) {
         }
     }
 }
-function compose(e, t, u, n, r, s, o, i, a) {
+function compose(e, t, u, n, s, r, o, i, a) {
     switch (arguments.length) {
         case 1:
             return e;
@@ -549,23 +514,23 @@ function compose(e, t, u, n, r, s, o, i, a) {
             };
         case 5:
             return function () {
-                return r(n(u(t(e.apply(this, arguments)))));
+                return s(n(u(t(e.apply(this, arguments)))));
             };
         case 6:
             return function () {
-                return s(r(n(u(t(e.apply(this, arguments))))));
+                return r(s(n(u(t(e.apply(this, arguments))))));
             };
         case 7:
             return function () {
-                return o(s(r(n(u(t(e.apply(this, arguments)))))));
+                return o(r(s(n(u(t(e.apply(this, arguments)))))));
             };
         case 8:
             return function () {
-                return i(o(s(r(n(u(t(e.apply(this, arguments))))))));
+                return i(o(r(s(n(u(t(e.apply(this, arguments))))))));
             };
         case 9:
             return function () {
-                return a(i(o(s(r(n(u(t(e.apply(this, arguments)))))))));
+                return a(i(o(r(s(n(u(t(e.apply(this, arguments)))))))));
             };
     }
 }
@@ -574,9 +539,7 @@ Object.keys(displayStatus$1).reduce(
     {},
 );
 class SimpleEmitter {
-    constructor() {
-        __publicField(this, 'listeners', new Set());
-    }
+    listeners = new Set();
     on(e) {
         return (this.listeners.add(e), () => this.off(e));
     }
@@ -605,14 +568,14 @@ function create(
             : getRootDefault,
         context: n = 'model',
     } = {},
-    { name: r = 'DataLayer' } = {},
+    { name: s = 'DataLayer' } = {},
 ) {
-    const s = new Map(),
+    const r = new Map(),
         o = { subscribersNotified: new SimpleEmitter() },
         i = engine.whenReady.then(() => {
             function e(e, t, u) {
                 (u.forEach((u) => {
-                    const n = s.get(u);
+                    const n = r.get(u);
                     void 0 !== n && n(e, t);
                 }),
                     o.subscribersNotified.emit());
@@ -631,7 +594,7 @@ function create(
             const e = u(t);
             return n.split('.').reduce((e, t) => e[t], e);
         } catch (e) {
-            throw new Error(`Failure get root of ${r}. Root id: ${t}. Context: ${n}`);
+            throw new Error(`Failure get root of ${s}. Root id: ${t}. Context: ${n}`);
         }
     }
     const l = (e) => {
@@ -643,17 +606,17 @@ function create(
                 const u = e[t];
                 return 'function' == typeof u ? u.bind(e) : u;
             }, u);
-        } catch (s) {
-            throw new Error(`Failure readByPath in ${r}. Root id: ${t}. Context: ${n}:\n${s}\n`);
+        } catch (r) {
+            throw new Error(`Failure readByPath in ${s}. Root id: ${t}. Context: ${n}:\n${r}\n`);
         }
     };
     function c(e) {
-        viewEnv.removeDataChangedCallback(e, t) ? s.delete(e) : console.error("Can't remove callback by id:", e);
+        viewEnv.removeDataChangedCallback(e, t) ? r.delete(e) : console.error("Can't remove callback by id:", e);
     }
     return {
-        subscribe: (u, r) => {
-            const o = addModelObserver$1('string' == typeof r ? `${n}.${r}` : n, t, !0);
-            return (s.set(o, u), e && u(l(r), []), o);
+        subscribe: (u, s) => {
+            const o = addModelObserver$1('string' == typeof s ? `${n}.${s}` : n, t, !0);
+            return (r.set(o, u), e && u(l(s), []), o);
         },
         readByPath: l,
         readSafeByPath: (e) => {
@@ -661,7 +624,7 @@ function create(
             return 'string' != typeof e || 0 === e.length
                 ? t
                 : e.split('.').reduce((e, t) => {
-                      const u = null == e ? void 0 : e[t];
+                      const u = e?.[t];
                       return 'function' == typeof u ? u.bind(e) : u;
                   }, t);
         },
@@ -678,7 +641,7 @@ function create(
             };
         },
         dispose: function () {
-            if (0 === t || ids().includes(t)) for (const e of s.keys()) c(e);
+            if (0 === t || ids().includes(t)) for (const e of r.keys()) c(e);
             i.then((e) => e());
         },
         unsubscribe: c,
@@ -705,9 +668,9 @@ function createMockInstance(e, t) {
         readSafeByPath: e,
         readByPath: e,
         createCallback: (u, n) => {
-            const r = e(resolvePath(n, t));
+            const s = e(resolvePath(n, t));
             return (...e) => {
-                r(u(...e));
+                s(u(...e));
             };
         },
         createCallbackNoArgs: (u) => {
@@ -721,6 +684,9 @@ function createMockInstance(e, t) {
         events: { subscribersNotified: new SimpleEmitter() },
     };
 }
+function relativeOffset(e, t) {
+    return { x: t.x - e.x, y: t.y - e.y };
+}
 function noop$1() {}
 function identity(e) {
     return e;
@@ -729,18 +695,16 @@ function constFalse() {
     return !1;
 }
 class DisposeBuilder {
-    constructor() {
-        (__publicField(this, '_disposes', new Set()),
-            __publicField(this, 'dispose', () => {
-                for (const e of this._disposes) e();
-            }));
-    }
+    _disposes = new Set();
     add(e) {
         return (this._disposes.add(e), this);
     }
     remove(e) {
         return (this._disposes.delete(e), this);
     }
+    dispose = () => {
+        for (const e of this._disposes) e();
+    };
 }
 function addEventListener(e, t, u, n) {
     return (e.addEventListener(t, u, n), () => e.removeEventListener(t, u, n));
@@ -751,25 +715,25 @@ function addEventListener(e, t, u, n) {
     (function () {
         if (!self.fetch) {
             ((o.prototype.append = function (e, t) {
-                ((e = r(e)), (t = s(t)));
+                ((e = s(e)), (t = r(t)));
                 var u = this.map[e];
                 (u || ((u = []), (this.map[e] = u)), u.push(t));
             }),
                 (o.prototype.delete = function (e) {
-                    delete this.map[r(e)];
+                    delete this.map[s(e)];
                 }),
                 (o.prototype.get = function (e) {
-                    var t = this.map[r(e)];
+                    var t = this.map[s(e)];
                     return t ? t[0] : null;
                 }),
                 (o.prototype.getAll = function (e) {
-                    return this.map[r(e)] || [];
+                    return this.map[s(e)] || [];
                 }),
                 (o.prototype.has = function (e) {
-                    return this.map.hasOwnProperty(r(e));
+                    return this.map.hasOwnProperty(s(e));
                 }),
                 (o.prototype.set = function (e, t) {
-                    this.map[r(e)] = [s(t)];
+                    this.map[s(e)] = [r(t)];
                 }),
                 (o.prototype.forEach = function (e) {
                     var t = this;
@@ -800,63 +764,63 @@ function addEventListener(e, t, u, n) {
                 (self.Request = d),
                 (self.Response = m),
                 (self.fetch = function (t, u) {
-                    var r;
+                    var s;
                     return (
-                        (r = d.prototype.isPrototypeOf(t) && !u ? t : new d(t, u)),
+                        (s = d.prototype.isPrototypeOf(t) && !u ? t : new d(t, u)),
                         new fetch.Promise(function (t, u) {
-                            var s = (function () {
+                            var r = (function () {
                                 return n && !/^(get|post|head|put|delete|options)$/i.test(this.method)
                                     ? ((this.usingActiveXhr = !0), new ActiveXObject('Microsoft.XMLHTTP'))
                                     : new XMLHttpRequest();
                             })();
                             function o() {
-                                if (4 === s.readyState) {
-                                    var e = 1223 === s.status ? 204 : s.status;
+                                if (4 === r.readyState) {
+                                    var e = 1223 === r.status ? 204 : r.status;
                                     if (e < 100 || e > 599) u(new TypeError('Network request failed'));
                                     else {
                                         var n = {
                                                 status: e,
-                                                statusText: s.statusText,
-                                                headers: p(s),
+                                                statusText: r.statusText,
+                                                headers: p(r),
                                                 url:
-                                                    'responseURL' in s
-                                                        ? s.responseURL
-                                                        : /^X-Request-URL:/m.test(s.getAllResponseHeaders())
-                                                          ? s.getResponseHeader('X-Request-URL')
+                                                    'responseURL' in r
+                                                        ? r.responseURL
+                                                        : /^X-Request-URL:/m.test(r.getAllResponseHeaders())
+                                                          ? r.getResponseHeader('X-Request-URL')
                                                           : void 0,
                                             },
-                                            r = 'response' in s ? s.response : s.responseText;
-                                        t(new m(r, n));
+                                            s = 'response' in r ? r.response : r.responseText;
+                                        t(new m(s, n));
                                     }
                                 }
                             }
-                            ('cors' === r.credentials && (s.withCredentials = !0),
-                                (s.onreadystatechange = o),
+                            ('cors' === s.credentials && (r.withCredentials = !0),
+                                (r.onreadystatechange = o),
                                 self.usingActiveXhr ||
-                                    ((s.onload = o),
-                                    (s.onerror = function () {
+                                    ((r.onload = o),
+                                    (r.onerror = function () {
                                         u(new TypeError('Network request failed'));
                                     })),
-                                s.open(r.method, r.url, !0),
-                                'responseType' in s && e && (s.responseType = 'blob'),
-                                r.headers.forEach(function (e, t) {
+                                r.open(s.method, s.url, !0),
+                                'responseType' in r && e && (r.responseType = 'blob'),
+                                s.headers.forEach(function (e, t) {
                                     t.forEach(function (t) {
-                                        s.setRequestHeader(e, t);
+                                        r.setRequestHeader(e, t);
                                     });
                                 }),
-                                s.send(void 0 === r._bodyInit ? null : r._bodyInit));
+                                r.send(void 0 === s._bodyInit ? null : s._bodyInit));
                         })
                     );
                 }),
                 (fetch.Promise = self.Promise),
                 (self.fetch.polyfill = !0));
         }
-        function r(e) {
+        function s(e) {
             if (('string' != typeof e && (e = e.toString()), /[^a-z0-9\-#$%&'*+.\^_`|~]/i.test(e)))
                 throw new TypeError('Invalid character in header field name');
             return e.toLowerCase();
         }
-        function s(e) {
+        function r(e) {
             return ('string' != typeof e && (e = e.toString()), e);
         }
         function o(e) {
@@ -940,13 +904,13 @@ function addEventListener(e, t, u, n) {
             );
         }
         function d(e, t) {
-            var n, r;
+            var n, s;
             if (
                 ((t = t || {}),
                 (this.url = e),
                 (this.credentials = t.credentials || 'omit'),
                 (this.headers = new o(t.headers)),
-                (this.method = ((n = t.method || 'GET'), (r = n.toUpperCase()), u.indexOf(r) > -1 ? r : n)),
+                (this.method = ((n = t.method || 'GET'), (s = n.toUpperCase()), u.indexOf(s) > -1 ? s : n)),
                 (this.mode = t.mode || null),
                 (this.referrer = null),
                 ('GET' === this.method || 'HEAD' === this.method) && t.body)
@@ -964,8 +928,8 @@ function addEventListener(e, t, u, n) {
                         if (e) {
                             var u = e.split('='),
                                 n = u.shift().replace(/\+/g, ' '),
-                                r = u.join('=').replace(/\+/g, ' ');
-                            t.append(decodeURIComponent(n), decodeURIComponent(r));
+                                s = u.join('=').replace(/\+/g, ' ');
+                            t.append(decodeURIComponent(n), decodeURIComponent(s));
                         }
                     }),
                 t
@@ -981,8 +945,8 @@ function addEventListener(e, t, u, n) {
                     .forEach(function (e) {
                         var u = e.trim().split(':'),
                             n = u.shift().trim(),
-                            r = u.join(':').trim();
-                        t.append(n, r);
+                            s = u.join(':').trim();
+                        t.append(n, s);
                     }),
                 t
             );
@@ -1069,22 +1033,13 @@ function normalizeKeyCode(e) {
     return 'number' == typeof e ? getKeyNameFromKeyCode(e) : e;
 }
 function get(e, t) {
-    var u;
-    if (!(t >= e.length)) return Array.isArray(e) ? e[t] : null == (u = e[t]) ? void 0 : u.value;
+    if (!(t >= e.length)) return Array.isArray(e) ? e[t] : e[t]?.value;
 }
 function unwrapItem(e) {
-    var t;
-    return e &&
-        'object' == typeof e &&
-        'value' in e &&
-        (null == (t = e.constructor) ? void 0 : t.name.includes('ArrayItem'))
-        ? null == e
-            ? void 0
-            : e.value
-        : e;
+    return e && 'object' == typeof e && 'value' in e && e.constructor?.name.includes('ArrayItem') ? e?.value : e;
 }
 function map(e, t) {
-    return Array.isArray(e) ? e.map(t) : e.map((e, u, n) => t(null == e ? void 0 : e.value, u, n));
+    return Array.isArray(e) ? e.map(t) : e.map((e, u, n) => t(e?.value, u, n));
 }
 function find(e, t) {
     for (let u = 0; u < e.length; u++) {
@@ -1092,6 +1047,7 @@ function find(e, t) {
         if (t(n, u, e)) return n;
     }
 }
+new Set(Object.values(keyStringCodes));
 const createLayoutReadyInEffect$1 = (e) => {
     let t,
         u = null;
@@ -1116,7 +1072,7 @@ function mapRange(e, t, u) {
 }
 function _mapRange(e, t, u) {
     const n = new Array(t - e);
-    for (let r = e; r < t; r++) n[r] = u(r);
+    for (let s = e; s < t; s++) n[s] = u(s);
     return n;
 }
 assert.log = function (e, t) {
@@ -1125,9 +1081,7 @@ assert.log = function (e, t) {
 const ROMAN_FORBIDDEN_LANGUAGE_CODES$1 = ['ko', 'no'];
 ROMAN_FORBIDDEN_LANGUAGE_CODES$1.includes(resources.resolve('langCode'));
 class Stack {
-    constructor() {
-        __publicField(this, 'items', []);
-    }
+    items = [];
     get length() {
         return this.items.length;
     }
@@ -1195,22 +1149,21 @@ function splitKorean(e) {
     return t;
 }
 function splitThai(e) {
-    var t;
-    const u = [],
-        n = e
+    const t = [],
+        u = e
             .replace(/&nbsp;/g, ' ')
             .matchAll(
                 /[【「(（『"《]?[\u0E00-\u0E7F%](?:[\u0E31\u0E34-\u0E3A\u0E47-\u0E4E。!?,.:、…・/ー—–!%+?）)】」"》』]+)?|[「【(（『《"]?\d+(?:,\d{3})*(?:-\d+(?:,\d{3})*)?(?:\s*[a-zA-Z\u0E00-\u0E7F/%]+)?(?:[。.,，、:;：；!?）)】」"》・%)、]+)?|[「【(（『《"]?[a-zA-Z0-9]+(?:[-/][a-zA-Z0-9]+)*(?:\s*[。!?、…・ー—–!?"》】」）)』]+)?|[\u00A0 ]|[^\s]/gu,
             );
-    for (const [r] of n)
-        /^\s+$/.test(r)
-            ? u.length
-                ? (u[u.length - 1] += r)
-                : u.push(r)
-            : 1 === u.length && (null == (t = u[0]) ? void 0 : t.startsWith('  '))
-              ? (u[0] = ' ' + r)
-              : u.push(r);
-    return u;
+    for (const [n] of u)
+        /^\s+$/.test(n)
+            ? t.length
+                ? (t[t.length - 1] += n)
+                : t.push(n)
+            : 1 === t.length && t[0]?.startsWith('  ')
+              ? (t[0] = ' ' + n)
+              : t.push(n);
+    return t;
 }
 const splitters = {
     zh_cn: splitChinese,
@@ -1286,8 +1239,8 @@ const BREAKPOINTS = Object.values(breakpointsByType);
 function generateMediaClasses(e, t) {
     const u = t['width' === e ? 'height' : 'width'],
         n = new Set(t[e].classes),
-        r = new Set(u.classes.filter((e) => !(!e.endsWith('Width') && !e.endsWith('Height')) || n.has(e)));
-    return Array.from(new Set([...n, ...r])).join(' ');
+        s = new Set(u.classes.filter((e) => !(!e.endsWith('Width') && !e.endsWith('Height')) || n.has(e)));
+    return Array.from(new Set([...n, ...s])).join(' ');
 }
 function calculateMedia(e, t, u) {
     const n = BREAKPOINTS.reduce(
@@ -1304,9 +1257,9 @@ function calculateMedia(e, t, u) {
             ),
             { width: { classes: [], names: [], weight: 0 }, height: { classes: [], names: [], weight: 0 } },
         ),
-        r = n.width.weight <= n.height.weight ? 'width' : 'height',
-        s = n[r],
-        o = s.names[s.names.length - 1] ?? breakpoints.extraSmall,
+        s = n.width.weight <= n.height.weight ? 'width' : 'height',
+        r = n[s],
+        o = r.names[r.names.length - 1] ?? breakpoints.extraSmall,
         i = breakpointsByType[o],
         a = n.width.names,
         l = n.height.names,
@@ -1314,11 +1267,11 @@ function calculateMedia(e, t, u) {
         d = l[l.length - 1] ?? breakpoints.extraSmall,
         E = { width: breakpointsByType[c].width, height: breakpointsByType[d].height };
     return {
-        mediaClass: generateMediaClasses(r, n),
+        mediaClass: generateMediaClasses(s, n),
         breakpoint: i,
         screenWidthRem: e,
         screenHeightRem: t,
-        breaks: s.names,
+        breaks: r.names,
         sides: E,
         mediaSize: i.width,
         mediaWidth: E.width,
@@ -1328,7 +1281,7 @@ function calculateMedia(e, t, u) {
 }
 const getScale$1 = () => remToPx$1(1),
     calcMediaState = () => {
-        const e = getSize$2('rem');
+        const e = getSize$3('rem');
         return calculateMedia(e.width, e.height, getScale$1());
     };
 function MediaProvider({ children: e }) {
@@ -1339,7 +1292,7 @@ function MediaProvider({ children: e }) {
                 u(calcMediaState);
             }
             e();
-            const t = onResize(e),
+            const t = onResize$1(e),
                 n = onRescale(e);
             return () => {
                 (t(), n());
@@ -1352,9 +1305,9 @@ function useMedia() {
     return useMediaContext();
 }
 function MediaWrapperElement({ children: e, className: t, ...u }) {
-    const { mediaClass: n, upscale: r } = useMedia();
+    const { mediaClass: n, upscale: s } = useMedia();
     return jsxRuntimeExports.jsx('div', {
-        className: cx(t, 'media-wrapper', n, r && 'media-upscale'),
+        className: clsx(t, 'media-wrapper', n, s && 'media-upscale'),
         ...u,
         children: e,
     });
@@ -1400,8 +1353,8 @@ const createApi = () => {
             obtain: t,
             register: function (e, n) {
                 if (e === keyStringCodes.NONE) return constFalse;
-                const r = t(e);
-                return (r.includes(n) || r.push(n), () => u(e, n));
+                const s = t(e);
+                return (s.includes(n) || s.push(n), () => u(e, n));
             },
             unregister: u,
             takeCurrent: function (t) {
@@ -1418,12 +1371,10 @@ function Provider(e) {
         u = reactExports.useMemo(createApi, []);
     reactExports.useEffect(() => {
         function e(e) {
-            var u;
-            null == (u = t.takeCurrent(e.code)) || u(e);
+            t.takeCurrent(e.code)?.(e);
         }
         function n(e) {
-            var t;
-            null == (t = u.takeCurrent(e.code)) || t(e);
+            u.takeCurrent(e.code)?.(e);
         }
         return (
             window.addEventListener('keydown', e),
@@ -1463,8 +1414,8 @@ function useTooltip({
     contentId: t,
     decoratorId: u,
     disabled: n,
-    args: r,
-    showDelay: s = 400,
+    args: s,
+    showDelay: r = 400,
 }) {
     const o = reactExports.useRef({ status: statuses.idle, resId: e, timeoutId: 0 }),
         [i, a] = reactExports.useMemo(() => {
@@ -1473,11 +1424,11 @@ function useTooltip({
                 n ||
                     ((o.current.status = statuses.await),
                     window.clearTimeout(o.current.timeoutId),
-                    (o.current.timeoutId = window.setTimeout(l, s)));
+                    (o.current.timeoutId = window.setTimeout(l, r)));
             }
             function l() {
                 ((o.current.status = statuses.display),
-                    sendEvent$1.tooltip.open(e, t, u, r),
+                    sendEvent$1.tooltip.open(e, t, u, s),
                     i && displayedTooltips.set(i, d));
             }
             function c() {
@@ -1507,13 +1458,13 @@ function useTooltip({
                 d,
                 {
                     onMouseEnter: (e) => {
-                        ((i = null == e ? void 0 : e.currentTarget), a());
+                        ((i = e?.currentTarget), a());
                     },
                     onMouseLeave: n ? noop$1 : c,
                     onClick: n ? noop$1 : c,
                 },
             ];
-        }, [r, t, u, n, e, s]);
+        }, [s, t, u, n, e, r]);
     return (
         reactExports.useEffect(() => {
             i.rerun();
@@ -1522,12 +1473,12 @@ function useTooltip({
         a
     );
 }
-function useSimpleTooltip({ alert: e, body: t, header: u, note: n, hasHtmlContent: r, disabled: s }) {
+function useSimpleTooltip({ alert: e, body: t, header: u, note: n, hasHtmlContent: s, disabled: r }) {
     const o = resources.resolve('views');
     return useTooltip({
-        disabled: s,
+        disabled: r,
         contentId: o.read((e) =>
-            r
+            s
                 ? e.common.tooltip_window.simple_tooltip_content.SimpleTooltipHtmlContent('resId')
                 : e.common.tooltip_window.simple_tooltip_content.SimpleTooltipContent('resId'),
         ),
@@ -1539,18 +1490,18 @@ const NO_ARGS = [];
 function useSpecialTooltip(e, t = NO_ARGS, u) {
     return useTooltip({
         ...u,
-        disabled: null == u ? void 0 : u.disabled,
+        disabled: u?.disabled,
         contentId: resources.resolve('aliases').read((e) => e.common.tooltip.Backport('resId')),
         args: reactExports.useMemo(
-            () => ({ tooltipId: e, tooltipArgs: JSON.stringify(t), ...(null == u ? void 0 : u.args) }),
-            [t, e, null == u ? void 0 : u.args],
+            () => ({ tooltipId: e, tooltipArgs: JSON.stringify(t), ...u?.args }),
+            [t, e, u?.args],
         ),
     });
 }
 function useParamTooltip(e, t, u) {
     return useTooltip({
         ...u,
-        disabled: null == u ? void 0 : u.disabled,
+        disabled: u?.disabled,
         contentId: resources.resolve('aliases').read((e) => e.common.tooltip.Param('resId')),
         args: reactExports.useMemo(() => ({ type: e, params: JSON.stringify(t), resId: t.resId }), [t, e]),
     });
@@ -1594,19 +1545,19 @@ function logBySeverity(e, t) {
 }
 const Context = reactExports.createContext(null);
 function SoundsProvider({ severity: e = 'warn', overrides: t, silent: u = !1, children: n }) {
-    const r = reactExports.useMemo(() => ({ ...soundConfig, ...t }), [t]),
-        s = reactExports.useMemo(
+    const s = reactExports.useMemo(() => ({ ...soundConfig, ...t }), [t]),
+        r = reactExports.useMemo(
             () => ({
                 play: function (t, n) {
                     if (u) return;
-                    const s = r[t];
-                    s ? s(n) : logBySeverity(`There is no sound for event: ${t}`, e);
+                    const r = s[t];
+                    r ? r(n) : logBySeverity(`There is no sound for event: ${t}`, e);
                 },
-                settings: { plays: r, severity: e, silent: u },
+                settings: { plays: s, severity: e, silent: u },
             }),
-            [r, e, u],
+            [s, e, u],
         );
-    return jsxRuntimeExports.jsx(Context.Provider, { value: s, children: n });
+    return jsxRuntimeExports.jsx(Context.Provider, { value: r, children: n });
 }
 function useSounds() {
     const e = reactExports.useContext(Context);
@@ -1615,90 +1566,82 @@ function useSounds() {
 }
 const MS_IN_SECOND = 1e3,
     useCountdown = (e = 0, t, u = 0, n = noop$1) => {
-        const [r, s] = reactExports.useState(e);
+        const [s, r] = reactExports.useState(e);
         return (
             reactExports.useEffect(() => {
                 if (e > 0) {
-                    s(e);
-                    const r = Date.now(),
+                    r(e);
+                    const s = Date.now(),
                         o = setInterval(() => {
-                            const t = e - Math.floor((Date.now() - r) / MS_IN_SECOND);
-                            null !== u && t <= u ? (s(u), n && n(), clearInterval(o)) : s(t);
+                            const t = e - Math.floor((Date.now() - s) / MS_IN_SECOND);
+                            null !== u && t <= u ? (r(u), n && n(), clearInterval(o)) : r(t);
                         }, t * MS_IN_SECOND);
                     return () => {
                         clearInterval(o);
                     };
                 }
             }, [e, t, u, n]),
-            r
+            s
         );
     },
     nonConvertingTypes = new Set(['number', 'string', 'boolean', 'bigint', 'undefined', 'function']),
     primitives$1 = new Set(['number', 'string', 'boolean', 'bigint']),
     bindingsForbidden = new Set(['Dict']);
 function cloneModel(e, { shallow: t = !0, depth: u = 0, maxDepth: n = 32 } = {}) {
-    var r, s;
-    const o = e,
-        i = typeof e;
+    const s = e,
+        r = typeof e;
     if (u > n) throw new Error(`Too deeply nested to copy. Max is ${n}.`);
-    if (nonConvertingTypes.has(i)) return o;
-    if (null === o) return o;
-    const a = { depth: u + 1, maxDepth: n };
-    if (Array.isArray(o)) return o.map((e) => cloneModel(e, a));
-    if ('object' === i) {
-        const n = (null == (r = o.constructor) ? void 0 : r.name) ?? 'UNKNOWN';
-        if (Array.isArray(e)) return e.map((e) => cloneModel(e, a));
-        if ('CoherentArrayProxy' === n) return e.map((e) => cloneModel(e.value, a));
+    if (nonConvertingTypes.has(r)) return s;
+    if (null === s) return s;
+    const o = { depth: u + 1, maxDepth: n };
+    if (Array.isArray(s)) return s.map((e) => cloneModel(e, o));
+    if ('object' === r) {
+        const n = s.constructor?.name ?? 'UNKNOWN';
+        if (Array.isArray(e)) return e.map((e) => cloneModel(e, o));
+        if ('CoherentArrayProxy' === n) return e.map((e) => cloneModel(e.value, o));
         if ('Dict' === n) return;
         if ('UNKNOWN' === n) return;
         if (n.includes(':ViewModel:') || 'Object' === n) {
             if (t && 0 === u) {
                 const e = {};
-                for (const t in o) {
-                    const u = o[t];
+                for (const t in s) {
+                    const u = s[t];
                     primitives$1.has(typeof u) && (e[t] = u);
                 }
                 return e;
             }
             {
                 const e = {};
-                for (const t in o) {
-                    const u = o[t],
-                        n = (null == (s = null == o ? void 0 : o.constructor) ? void 0 : s.name) ?? 'UNKNOWN';
-                    bindingsForbidden.has(n) || (e[t] = cloneModel(u, a));
+                for (const t in s) {
+                    const u = s[t],
+                        n = s?.constructor?.name ?? 'UNKNOWN';
+                    bindingsForbidden.has(n) || (e[t] = cloneModel(u, o));
                 }
                 return e;
             }
         }
-        const i = {};
-        for (const e of Object.keys(o)) i[e] = cloneModel(o[e], a);
-        return i;
+        const r = {};
+        for (const e of Object.keys(s)) r[e] = cloneModel(s[e], o);
+        return r;
     }
-    return (console.error('Incorrect value to clone model', o), o);
+    return (console.error('Incorrect value to clone model', s), s);
 }
 const MOBX_OPTIONS = { deep: !1, equals: constFalse },
     DEFAULT_OPTIONS = { cloneItem: !0 },
     CLONE_OPTIONS = { shallow: !1 };
 class DLDict {
     constructor(e, t = DEFAULT_OPTIONS) {
-        (__publicField(this, '_data'),
-            __publicField(this, '_keys'),
-            __publicField(
-                this,
-                'set',
-                action((e) => {
-                    this._data.set(e);
-                }),
-            ),
-            (this.options = t));
+        this.options = t;
         const u = {},
             n = e.keys();
-        for (let r = 0; r < n.length; r++) {
-            const t = n[r];
+        for (let s = 0; s < n.length; s++) {
+            const t = n[s];
             u[t] = observable.box(this.takeItem(e, t), MOBX_OPTIONS);
         }
         ((this._keys = observable.set(new Set(n))), (this._data = observable.box(u, MOBX_OPTIONS)));
     }
+    _data;
+    _keys;
     get keys() {
         return this._keys;
     }
@@ -1711,13 +1654,13 @@ class DLDict {
     update(e, t) {
         const u = this._data.get();
         for (let n = 0; n < t.length; n++) {
-            const r = t[n],
-                s = this.takeItem(e, r);
-            r in u
-                ? null === s
-                    ? (delete u[r], this._keys.delete(r), this.set(u))
-                    : u[r].set(s)
-                : null !== s && ((u[r] = observable.box(s, MOBX_OPTIONS)), this._keys.add(r), this.set(u));
+            const s = t[n],
+                r = this.takeItem(e, s);
+            s in u
+                ? null === r
+                    ? (delete u[s], this._keys.delete(s), this.set(u))
+                    : u[s].set(r)
+                : null !== r && ((u[s] = observable.box(r, MOBX_OPTIONS)), this._keys.add(s), this.set(u));
         }
     }
     entries() {
@@ -1750,13 +1693,16 @@ class DLDict {
     reduce(e, t) {
         let u = t;
         const n = this._data.get();
-        for (const r of this.keys.values()) u = e(u, n[r].get(), r);
+        for (const s of this.keys.values()) u = e(u, n[s].get(), s);
         return u;
     }
     takeItem(e, t) {
         const u = e.get(t);
         return this.options.cloneItem ? cloneModel(u, CLONE_OPTIONS) : u;
     }
+    set = action((e) => {
+        this._data.set(e);
+    });
     untrackedData() {
         return untracked(() => this._data.get());
     }
@@ -1772,43 +1718,43 @@ function createObservableModel(e, t, u) {
             n.splice(0, n.length);
         }),
     );
-    const r = (r, s, o = DEFAULT_BOX_CONFIG) => {
-            const i = observable.box(r(u(s)), o);
-            return ('real' === t && e.subscribe((e) => n.push(() => i.set(r(e))), s), i);
+    const s = (s, r, o = DEFAULT_BOX_CONFIG) => {
+            const i = observable.box(s(u(r)), o);
+            return ('real' === t && e.subscribe((e) => n.push(() => i.set(s(e))), r), i);
         },
-        s = (r, s) => {
-            const o = new DLDict(u(r), s);
-            return ('real' === t && e.subscribe((e, t) => n.push(() => o.update(e, t)), r), o);
+        r = (s, r) => {
+            const o = new DLDict(u(s), r);
+            return ('real' === t && e.subscribe((e, t) => n.push(() => o.update(e, t)), s), o);
         },
-        o = (r, s) => {
-            const o = observable.box(u(r) ?? s, DEFAULT_BOX_CONFIG);
-            return ('real' === t && e.subscribe((e) => n.push(() => o.set(e)), r), o);
+        o = (s, r) => {
+            const o = observable.box(u(s) ?? r, DEFAULT_BOX_CONFIG);
+            return ('real' === t && e.subscribe((e) => n.push(() => o.set(e)), s), o);
         };
     return {
-        dict: s,
-        dictRef: (e, t) => s(e, { cloneItem: !1, ...t }),
-        arrayClone: (e) => r(cloneModel, e),
+        dict: r,
+        dictRef: (e, t) => r(e, { cloneItem: !1, ...t }),
+        arrayClone: (e) => s(cloneModel, e),
         array: o,
         object: o,
-        transform: r,
-        primitives: (r, s) => {
-            const o = u(s);
-            if (Array.isArray(r)) {
-                const u = r.reduce((e, t) => ((e[t] = observable.box(o[t], {})), e), {});
+        transform: s,
+        primitives: (s, r) => {
+            const o = u(r);
+            if (Array.isArray(s)) {
+                const u = s.reduce((e, t) => ((e[t] = observable.box(o[t], {})), e), {});
                 return (
                     'real' === t &&
                         e.subscribe((e) => {
                             n.push(() =>
-                                r.forEach((t) => {
+                                s.forEach((t) => {
                                     u[t].set(e[t]);
                                 }),
                             );
-                        }, s),
+                        }, r),
                     u
                 );
             }
             {
-                const u = r,
+                const u = s,
                     i = Object.entries(u),
                     a = i.reduce((e, [t, u]) => ((e[u] = observable.box(o[t], {})), e), {});
                 return (
@@ -1819,7 +1765,7 @@ function createObservableModel(e, t, u) {
                                     a[u].set(e[t]);
                                 }),
                             );
-                        }, s),
+                        }, r),
                     a
                 );
             }
@@ -1829,79 +1775,67 @@ function createObservableModel(e, t, u) {
 const initializeModelWithContext =
         (e = 'DataLayerProvider') =>
         (t, u, n) => {
-            const r = reactExports.createContext(null);
-            function s(s) {
-                var o;
-                const { mode: i, options: a, children: l, mocks: c } = s,
-                    d = useMockContext(),
-                    E = i ?? d.mode,
-                    p = c ?? d.mocks,
-                    m = reactExports.useRef([]),
-                    h = null == (o = null == n ? void 0 : n.useRequires) ? void 0 : o.call(n),
-                    _ = useEvent((r, o, i) => {
-                        var a;
-                        const l = 'real' !== r && i ? createMockInstance(i.getter, o) : create(o, { name: e }),
-                            c = (e) => ('mocks' === r ? (null == i ? void 0 : i.getter(e, o)) : l.readByPath(e)),
-                            d = (e) => m.current.push(e),
-                            E = 'initial' in s && {
-                                initial: null == (a = null == n ? void 0 : n.initial) ? void 0 : a.call(n, s.initial),
-                            },
-                            p = t({
-                                ...E,
-                                mode: r,
-                                readByPath: c,
-                                requires: h,
-                                externalModel: l,
-                                observableModel: createObservableModel(l, r, c),
-                                cleanup: d,
+            const s = reactExports.createContext(null);
+            function r(r) {
+                const { mode: o, options: i, children: a, mocks: l } = r,
+                    c = useMockContext(),
+                    d = o ?? c.mode,
+                    E = l ?? c.mocks,
+                    p = reactExports.useRef([]),
+                    m = n?.useRequires?.(),
+                    A = useEvent((s, o, i) => {
+                        const a = 'real' !== s && i ? createMockInstance(i.getter, o) : create(o, { name: e }),
+                            l = (e) => ('mocks' === s ? i?.getter(e, o) : a.readByPath(e)),
+                            c = (e) => p.current.push(e),
+                            d = 'initial' in r && { initial: n?.initial?.(r.initial) },
+                            E = t({
+                                ...d,
+                                mode: s,
+                                readByPath: l,
+                                requires: m,
+                                externalModel: a,
+                                observableModel: createObservableModel(a, s, l),
+                                cleanup: c,
                             }),
-                            _ = { ...E, mode: r, model: p, externalModel: l, cleanup: d, requires: h },
-                            A = 'mocks' === r && (null == i ? void 0 : i.controls) ? i.controls(_) : {};
+                            A = { ...d, mode: s, model: E, externalModel: a, cleanup: c, requires: m },
+                            F = 'mocks' === s && i?.controls ? i.controls(A) : {};
                         return {
-                            model: p,
-                            controls: { ...(null == u ? void 0 : u(_)), ...A },
-                            externalModel: l,
-                            mode: r,
-                            rootId: (null == o ? void 0 : o.rootId) ?? 0,
+                            model: E,
+                            controls: { ...u?.(A), ...F },
+                            externalModel: a,
+                            mode: s,
+                            rootId: o?.rootId ?? 0,
                         };
                     }),
-                    A = reactExports.useRef(!1),
-                    [f, F] = reactExports.useState(E);
+                    F = reactExports.useRef(!1),
+                    [h, f] = reactExports.useState(d);
                 reactExports.useEffect(() => {
-                    F(E);
-                }, [E]);
-                const [g, y] = reactExports.useState(() => _(f, a, p));
+                    f(d);
+                }, [d]);
+                const [g, _] = reactExports.useState(() => A(h, i, E));
                 return (
                     reactExports.useEffect(() => {
-                        A.current ? y(_(f, a, p)) : (A.current = !0);
-                    }, [
-                        _,
-                        p,
-                        f,
-                        null == a ? void 0 : a.context,
-                        null == a ? void 0 : a.initializer,
-                        null == a ? void 0 : a.getRoot,
-                        null == a ? void 0 : a.rootId,
-                    ]),
+                        F.current ? _(A(h, i, E)) : (F.current = !0);
+                    }, [A, E, h, i?.context, i?.initializer, i?.getRoot, i?.rootId]),
                     reactExports.useEffect(
                         () => () => {
-                            (g.externalModel.dispose(), m.current.forEach((e) => e()));
+                            (g.externalModel.dispose(), p.current.forEach((e) => e()));
                         },
                         [g],
                     ),
-                    jsxRuntimeExports.jsx(r.Provider, { value: g, children: l })
+                    jsxRuntimeExports.jsx(s.Provider, { value: g, children: a })
                 );
             }
             return (
-                (s.displayName = e),
+                (r.displayName = e),
                 [
-                    s,
+                    r,
                     function () {
-                        const e = reactExports.useContext(r);
-                        if (!e) throw new Error(`hook useModel must be used within a ${s.displayName}.`);
+                        const e = reactExports.useContext(s);
+                        if (!e) throw new Error(`hook useModel must be used within a ${r.displayName}.`);
                         return e;
                     },
-                    { Context: r },
+                    { Context: s },
                 ]
             );
         },
@@ -1917,7 +1851,7 @@ reactExports.forwardRef(function (e, t) {
         reactExports.useEffect(() => {
             const e = u.current;
             if (null !== e)
-                return events$1.onHitTest((t) => {
+                return events$2.onHitTest((t) => {
                     const u = e.getBoundingClientRect();
                     return u.left <= t.x && t.x <= u.right && u.top <= t.y && t.y <= u.bottom;
                 });
@@ -1926,9 +1860,7 @@ reactExports.forwardRef(function (e, t) {
     );
 });
 class JSXBuilder {
-    constructor() {
-        __publicField(this, 'items', []);
-    }
+    items = [];
     add(e) {
         return (this.items.push([e, {}]), this);
     }
@@ -1943,7 +1875,6 @@ class JSXBuilder {
 }
 function injectShowModel() {
     const e = (t = window.model, { depth: u = 16, convertArrays: n = !0 } = {}) => {
-        var r;
         if (u < 0)
             return (
                 console.warn(
@@ -1963,15 +1894,15 @@ function injectShowModel() {
                 return 'function';
             case 'object': {
                 const s = { depth: u - 1, convertArrays: n },
-                    o = (null == (r = t.constructor) ? void 0 : r.name) ?? 'UNKNOWN';
+                    r = t.constructor?.name ?? 'UNKNOWN';
                 switch (!0) {
-                    case o.includes('CoherentArrayProxy'):
+                    case r.includes('CoherentArrayProxy'):
                         return [...t.values()].map((t) => e(s.convertArrays ? t.value : t, s));
-                    case 'Dict' === o:
+                    case 'Dict' === r:
                         return [...t.entries()].reduce((t, [u, n]) => ((t[u] = e(n, s)), t), { $$type: 'Dict' });
-                    case 'UNKNOWN' === o:
+                    case 'UNKNOWN' === r:
                         return 'UNKNOWN_TYPE';
-                    case o.includes('ViewModel'):
+                    case r.includes('ViewModel'):
                     default: {
                         const u = {};
                         for (const n in t) Object.prototype.hasOwnProperty.call(t, n) && (u[n] = e(t[n], s));
@@ -2007,18 +1938,17 @@ function injectShowModel() {
 }
 async function runView(
     e,
-    { root: t = document.getElementById('root'), withMedia: u = !0, fullScreen: n = !1, immediateLayout: r = !0 } = {},
+    { root: t = document.getElementById('root'), withMedia: u = !0, fullScreen: n = !1, immediateLayout: s = !0 } = {},
 ) {
-    var s;
     injectShowModel();
-    const o = u ? MediaWrapper : React.Fragment,
-        i = (null == (s = null == window ? void 0 : window.engine) ? void 0 : s.whenReady) ?? Promise.resolve();
-    (r && engine.enableImmediateLayout(!0),
-        await i,
+    const r = u ? MediaWrapper : React.Fragment,
+        o = window?.engine?.whenReady ?? Promise.resolve();
+    (s && engine.enableImmediateLayout(!0),
+        await o,
         document.documentElement.setAttribute('lang', resources.resolve('langCode')),
-        client
-            .createRoot(t)
-            .render(jsxRuntimeExports.jsx(o, { children: jsxRuntimeExports.jsx(Provider, { children: e }) })),
+        ReactDOM.createRoot(t).render(
+            jsxRuntimeExports.jsx(r, { children: jsxRuntimeExports.jsx(Provider, { children: e }) }),
+        ),
         n && (initExternalPaddings$1(t), enableFullScreenModeSupported$1()));
 }
 function ColorsProvider(e) {
@@ -2037,16 +1967,8 @@ function UIProvider(e) {
 const themes = { primary: 'primary', secondary: 'secondary', custom: 'custom' },
     sizes$1 = { extraSmall: 'extraSmall', small: 'small', medium: 'medium', large: 'large' };
 function defineStyledComponent(e, t, u) {
-    var n;
-    const r =
-            'object' == typeof t && 'cva' in t
-                ? null == (n = t.cva)
-                    ? void 0
-                    : n.variants
-                : null == u
-                  ? void 0
-                  : u.variants,
-        s = r ? Object.keys(r) : [];
+    const n = 'object' == typeof t && 'cva' in t ? t.cva?.variants : u?.variants,
+        s = n ? Object.keys(n) : [];
     if ('object' == typeof t) {
         const u = t,
             n = cva(u.className, u.cva),
@@ -2060,11 +1982,11 @@ function defineStyledComponent(e, t, u) {
             });
         return ((o.displayName = e), u.cva && (o.cva = u.cva), o);
     }
-    const o = cva(t, u),
-        i = reactExports.forwardRef(function (t, u) {
-            return jsxRuntimeExports.jsx('div', { 'data-name': e, ...cleanProps(s, t), ref: u, className: o(t) });
+    const r = cva(t, u),
+        o = reactExports.forwardRef(function (t, u) {
+            return jsxRuntimeExports.jsx('div', { 'data-name': e, ...cleanProps(s, t), ref: u, className: r(t) });
         });
-    return ((i.displayName = e), i);
+    return ((o.displayName = e), o);
 }
 function cleanProps(e, t) {
     if (0 === e.length) return t;
@@ -2072,11 +1994,11 @@ function cleanProps(e, t) {
     for (const n of e) delete u[n];
     return u;
 }
-const base$7 = 'HeadlessButton_df8536fc',
-    styles$8 = { base: base$7 },
-    HeadlessButtonBase = defineStyledComponent('Button', { element: 'button', className: styles$8.base }),
+const base$6 = 'HeadlessButton_df8536fc',
+    styles$6 = { base: base$6 },
+    HeadlessButtonBase = defineStyledComponent('Button', { element: 'button', className: styles$6.base }),
     HeadlessButton = reactExports.forwardRef(function (
-        { children: e, onClick: t, onMouseEnter: u, soundTarget: n, disabled: r = !1, silent: s = !1, ...o },
+        { children: e, onClick: t, onMouseEnter: u, soundTarget: n, disabled: s = !1, silent: r = !1, ...o },
         i,
     ) {
         const a = useSounds();
@@ -2084,29 +2006,29 @@ const base$7 = 'HeadlessButton_df8536fc',
             ...o,
             ref: i,
             onMouseEnter: function (e) {
-                (r || s || a.play('mouse-enter', { target: n || 'Button', original: e }), null == u || u(e));
+                (s || r || a.play('mouse-enter', { target: n || 'Button', original: e }), u?.(e));
             },
             onClick: function (e) {
-                r || (s || a.play('click', { target: n || 'Button', original: e }), null == t || t(e));
+                s || (r || a.play('click', { target: n || 'Button', original: e }), t?.(e));
             },
             children: e,
         });
     }),
-    root$5 = 'Button_root_6bcdc8c',
+    root$3 = 'Button_root_6bcdc8c',
     background = 'Button_background_98ebcfb8',
     border = 'Button_border_7e6390d7',
     overlay$1 = 'Button_overlay_174632c8',
-    base$6 = 'Button_70871946',
+    base$5 = 'Button_70871946',
     base__enabled = 'Button_base__enabled_96634d40',
     base__disabled = 'Button_base__disabled_b713e04a',
     content$1 = 'Button_content_298de63f',
     content__fontAligned = 'Button_content__fontAligned_66115778',
-    styles$7 = {
-        root: root$5,
+    styles$5 = {
+        root: root$3,
         background: background,
         border: border,
         overlay: overlay$1,
-        base: base$6,
+        base: base$5,
         base__enabled: base__enabled,
         base__disabled: base__disabled,
         'base__size-extraSmall': 'Button_base__size-extraSmall_d0cdb5ed',
@@ -2124,8 +2046,8 @@ const base$7 = 'HeadlessButton_df8536fc',
             size: t = sizes$1.large,
             theme: u = themes.primary,
             disabled: n = !1,
-            silent: r = !1,
-            autoAlignContent: s = !0,
+            silent: s = !1,
+            autoAlignContent: r = !0,
             classNames: o,
             className: i,
             ...a
@@ -2135,26 +2057,25 @@ const base$7 = 'HeadlessButton_df8536fc',
         return jsxRuntimeExports.jsxs(HeadlessButton, {
             ...a,
             ref: l,
-            silent: r,
+            silent: s,
             disabled: n,
-            className: cx(
-                styles$7.base,
-                styles$7[`base__size-${t}`],
-                styles$7[`base__theme-${u}`],
-                n ? styles$7.base__disabled : styles$7.base__enabled,
+            className: clsx(
+                styles$5.base,
+                styles$5[`base__size-${t}`],
+                styles$5[`base__theme-${u}`],
+                n ? styles$5.base__disabled : styles$5.base__enabled,
                 i,
-                null == o ? void 0 : o.base,
+                o?.base,
             ),
             onClick: function (e) {
-                var t;
-                n || null == (t = a.onClick) || t.call(a, e);
+                n || a.onClick?.(e);
             },
             children: [
-                jsxRuntimeExports.jsx('div', { className: cx(styles$7.background, null == o ? void 0 : o.background) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$7.border, null == o ? void 0 : o.border) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$7.overlay, null == o ? void 0 : o.overlay) }),
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$5.background, o?.background) }),
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$5.border, o?.border) }),
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$5.overlay, o?.overlay) }),
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$7.content, s && styles$7.content__fontAligned, null == o ? void 0 : o.content),
+                    className: clsx(styles$5.content, r && styles$5.content__fontAligned, o?.content),
                     children: e,
                 }),
             ],
@@ -2166,51 +2087,51 @@ function parseArguments(e) {
     const t = [];
     let u = '',
         n = !1,
-        r = !1,
-        s = '';
+        s = !1,
+        r = '';
     for (let o = 0; o < e.length; o++) {
         const i = e[o];
-        ("'" !== i && '"' !== i) || r || n
-            ? i === s && r
-                ? ((r = !1), (u += i))
-                : '(' !== i || r
-                  ? ')' === i && n && !r
+        ("'" !== i && '"' !== i) || s || n
+            ? i === r && s
+                ? ((s = !1), (u += i))
+                : '(' !== i || s
+                  ? ')' === i && n && !s
                       ? ((n = !1), (u += i))
-                      : ' ' !== i || n || r
+                      : ' ' !== i || n || s
                         ? (u += i)
                         : u && (t.push(u), (u = ''))
                   : ((n = !0), (u += i))
-            : ((r = !0), (s = i), (u += i));
+            : ((s = !0), (r = i), (u += i));
     }
     return (u && t.push(u), t);
 }
 function parse(e, t) {
     const u = [],
         n = [];
-    let r = '',
-        s = !1,
+    let s = '',
+        r = !1,
         o = '',
         i = 0;
     for (let a = 0; a < e.length; a++) {
         const l = e[a];
         if (l === t.start[0] && e.slice(a, a + t.start.length) === t.start) {
-            if (r) {
+            if (s) {
                 if (n.length > 0) {
-                    n[n.length - 1].node.children.push({ type: NodeTypes.Text, value: r });
-                } else u.push({ type: NodeTypes.Text, value: r });
-                r = '';
+                    n[n.length - 1].node.children.push({ type: NodeTypes.Text, value: s });
+                } else u.push({ type: NodeTypes.Text, value: s });
+                s = '';
             }
-            ((s = !0), (a += t.start.length - 1));
+            ((r = !0), (a += t.start.length - 1));
         } else if (l === t.end[0] && e.slice(a, a + t.end.length) === t.end) {
-            ((s = !1), (a += t.end.length - 1));
+            ((r = !1), (a += t.end.length - 1));
             const e = o.trim();
             if (e.startsWith('@')) {
                 const t = e.slice(1).trim(),
-                    r = { type: NodeTypes.Tag, attrs: t.split('|'), instanceId: ++i, children: [] };
+                    s = { type: NodeTypes.Tag, attrs: t.split('|'), instanceId: ++i, children: [] };
                 if (n.length > 0) {
-                    n[n.length - 1].node.children.push(r);
-                } else u.push(r);
-                n.push({ node: r, startIndex: u.length });
+                    n[n.length - 1].node.children.push(s);
+                } else u.push(s);
+                n.push({ node: s, startIndex: u.length });
             } else if ('/' === e) n.length > 0 && n.pop();
             else {
                 const t = { type: NodeTypes.Var, instanceId: ++i, name: e };
@@ -2219,21 +2140,21 @@ function parse(e, t) {
                 } else u.push(t);
             }
             o = '';
-        } else s ? (o += l) : (r += l);
+        } else r ? (o += l) : (s += l);
     }
-    if (r)
+    if (s)
         if (n.length) {
-            n[n.length - 1].node.children.push({ type: NodeTypes.Text, value: r });
-        } else u.push({ type: NodeTypes.Text, value: r });
+            n[n.length - 1].node.children.push({ type: NodeTypes.Text, value: s });
+        } else u.push({ type: NodeTypes.Text, value: s });
     return u;
 }
 const COLORS =
         'blackReal, whiteReal, white, whiteOrange, whiteSpanish, par, parSecondary, parTertiary, infoRed, red, redDark, yellow, orange, cream, brown, greenBright, green, greenDark, blueBooster, blueTeamkiller, cred, gold, bond, prom',
-    base$5 = 'FormatText_db904f12',
+    base$4 = 'FormatText_db904f12',
     base__fullSize = 'FormatText_base__fullSize_a514958e',
     nowrap = 'FormatText_nowrap_ff69eca3',
-    styles$6 = { COLORS: COLORS, base: base$5, base__fullSize: base__fullSize, nowrap: nowrap },
-    legacyColors = new Set((null == (_a = styles$6.COLORS) ? void 0 : _a.split(', ')) ?? []);
+    styles$4 = { COLORS: COLORS, base: base$4, base__fullSize: base__fullSize, nowrap: nowrap },
+    legacyColors = new Set(styles$4.COLORS?.split(', ') ?? []);
 let keyId = 0;
 function takeKey() {
     return ++keyId;
@@ -2252,19 +2173,19 @@ function splitArray(e) {
     const t = [];
     for (let u = 0; u < e.length; u++) {
         const n = e[u],
-            r = e[u + 1];
-        if ('string' != typeof r || !startsWithPunctuationRe.test(r)) {
-            t.push(split$1(n));
+            s = e[u + 1];
+        if ('string' != typeof s || !startsWithPunctuationRe.test(s)) {
+            t.push(split(n));
             continue;
         }
-        const s = splitString(r.slice(1));
+        const r = splitString(s.slice(1));
         (t.push(
             jsxRuntimeExports.jsxs(
                 reactExports.Fragment,
                 {
                     children: [
-                        jsxRuntimeExports.jsxs('span', { className: styles$6.nowrap, children: [split$1(n), r[0]] }),
-                        s,
+                        jsxRuntimeExports.jsxs('span', { className: styles$4.nowrap, children: [split(n), s[0]] }),
+                        r,
                     ],
                 },
                 takeKey(),
@@ -2274,7 +2195,7 @@ function splitArray(e) {
     }
     return t;
 }
-function split$1(e) {
+function split(e) {
     return Array.isArray(e)
         ? splitArray(e)
         : 'string' == typeof e
@@ -2319,7 +2240,7 @@ const defaultFormatters = {
     class: className,
     colorLegacy: colorLegacy,
     bold: bold,
-    split: split$1,
+    split: split,
     style: style,
     color: color,
     fontSize: fontSize,
@@ -2327,22 +2248,22 @@ const defaultFormatters = {
     textDecoration: textDecoration,
 };
 function applyFunction(e, t, u, n) {
-    const r = u.map((t) => {
+    const s = u.map((t) => {
             if ('string' != typeof t) return t;
             const u = t.trim();
             if (u.startsWith('(') && u.endsWith(')')) {
-                const [t, ...r] = u.slice(1, -1).split(' ');
-                return t ? applyFunction(e, t, r, n) : e;
+                const [t, ...s] = u.slice(1, -1).split(' ');
+                return t ? applyFunction(e, t, s, n) : e;
             }
             return u.startsWith("'") && u.endsWith("'") ? u.slice(1, -1) : u;
         }),
-        s = n[t];
-    return s ? s(e, ...r) : (console.error(`Function ${t} is not registered`), e);
+        r = n[t];
+    return r ? r(e, ...s) : (console.error(`Function ${t} is not registered`), e);
 }
 function applyFunctions(e, t, u) {
     return e.reduce((e, t) => {
-        const [n, ...r] = parseArguments(t.trim());
-        return n ? applyFunction(e, n, r, u) : e;
+        const [n, ...s] = parseArguments(t.trim());
+        return n ? applyFunction(e, n, s, u) : e;
     }, t);
 }
 function isEnd(e) {
@@ -2353,9 +2274,9 @@ function resolveAttrParams(e, t) {
         if ('$' === e[u]) {
             let n = u + 1;
             for (; n < e.length && !isEnd(e[n]); ) n++;
-            const r = e.slice(u + 1, n),
-                s = t[r];
-            if (s) return resolveAttrParams(e.replace(`$${r}`, String(s)), t);
+            const s = e.slice(u + 1, n),
+                r = t[s];
+            if (r) return resolveAttrParams(e.replace(`$${s}`, String(r)), t);
         }
     }
     return e;
@@ -2368,20 +2289,20 @@ function resolveAttrsParams(e, t) {
 const primitives = ['number', 'string', 'undefined'];
 function render(e, t, u = {}, n = !0) {
     n && (keyId = 0);
-    const r = [];
-    function s(e) {
+    const s = [];
+    function r(e) {
         if (primitives.includes(typeof e)) {
-            const t = r.at(-1);
-            if ('string' == typeof t) return void (r[r.length - 1] = t + e);
+            const t = s.at(-1);
+            if ('string' == typeof t) return void (s[s.length - 1] = t + e);
         }
-        r.push(e);
+        s.push(e);
     }
     for (const o of e)
-        if (o.type === NodeTypes.Text) s(o.value);
+        if (o.type === NodeTypes.Text) r(o.value);
         else if (o.type === NodeTypes.Var)
             null === u[o.name] || primitives.includes(typeof u[o.name])
-                ? s(u[o.name] ?? `{{${o.name}}}`)
-                : r.push(
+                ? r(u[o.name] ?? `{{${o.name}}}`)
+                : s.push(
                       jsxRuntimeExports.jsx(
                           reactExports.Fragment,
                           { children: u[o.name] },
@@ -2391,9 +2312,9 @@ function render(e, t, u = {}, n = !0) {
         else if (o.type === NodeTypes.Tag) {
             const e = render(o.children, t, u, !1),
                 n = applyFunctions(resolveAttrsParams(o.attrs, u), e, t);
-            r.push(n);
+            s.push(n);
         }
-    return r;
+    return s;
 }
 function upgradeColorTag(e) {
     return e
@@ -2417,8 +2338,8 @@ const defaultBrackets = { start: '{{', end: '}}' },
                 brackets: t = defaultBrackets,
                 text: u,
                 params: n,
-                upgradeLegacy: r,
-                fullSize: s,
+                upgradeLegacy: s,
+                fullSize: r,
                 inline: o,
                 formatters: i,
                 split: a,
@@ -2434,7 +2355,7 @@ const defaultBrackets = { start: '{{', end: '}}' },
             ),
             E = reactExports.useMemo(() => parse(a ? `{{@ split}}${c}{{/}}` : c, t), [t, c, a]),
             p = reactExports.useMemo(() => render(E, d, e.params), [E, d, e.params]),
-            m = cx(styles$6.base, s && styles$6.base__fullSize, l.className);
+            m = clsx(styles$4.base, r && styles$4.base__fullSize, l.className);
         return e.inline
             ? (console.warn(
                   "[FormatText] using the 'inline' props causes memory leaks due to incorrect working of the 'cohinline' attribute in GF version 1.48.2.3. Can cause client crashes.",
@@ -2444,22 +2365,22 @@ const defaultBrackets = { start: '{{', end: '}}' },
                   ...l,
                   className: m,
                   ref: (e) => {
-                      null == e || e.setAttribute('cohinline', 'true');
+                      e?.setAttribute('cohinline', 'true');
                   },
                   children: p,
               }))
             : jsxRuntimeExports.jsx('span', { ...l, className: m, children: p });
     }),
-    root$4 = 'CloseButton_root_987cb365',
-    base$4 = 'CloseButton_7488a1b8',
+    root$2 = 'CloseButton_root_987cb365',
+    base$3 = 'CloseButton_7488a1b8',
     base__medium = 'CloseButton_base__medium_97d04067',
     base__small$1 = 'CloseButton_base__small_c1b29bae',
     base__extraSmall = 'CloseButton_base__extraSmall_f52764c1',
     base__x96x96 = 'CloseButton_base__x96x96_8157b84d',
     base__x32x32 = 'CloseButton_base__x32x32_6466ea31',
-    styles$5 = {
-        root: root$4,
-        base: base$4,
+    styles$3 = {
+        root: root$2,
+        base: base$3,
         base__medium: base__medium,
         base__small: base__small$1,
         base__extraSmall: base__extraSmall,
@@ -2473,93 +2394,239 @@ function CloseButton({
     hoverSound: t = sounds$1.highlight,
     clickSound: u = sounds$1.click,
     className: n,
-    onHover: r,
-    onClose: s,
+    onHover: s,
+    onClose: r,
 }) {
-    const o = useUpscale(styles$5[`base__${e}`], styles$5[`base__${upscaleImageSizes[e]}`]);
+    const o = useUpscale(styles$3[`base__${e}`], styles$3[`base__${upscaleImageSizes[e]}`]);
     return jsxRuntimeExports.jsx('div', {
-        className: cx(styles$5.base, o, n),
+        className: cx(styles$3.base, o, n),
         onMouseEnter: () => {
-            (play.sound(t), null == r || r());
+            (play.sound(t), s?.());
         },
         onClick: () => {
-            (play.sound(u), s());
+            (play.sound(u), r());
         },
     });
 }
 CloseButton.size = sizes;
-const useResizeObserver = (e, t, u = !0) => {
-        const n = reactExports.useCallback(
-            (e) => {
-                const u = e[0];
-                t && t(u);
-            },
-            [t],
-        );
-        reactExports.useEffect(() => {
-            if (!e.current || !u) return;
-            const t = new index((e) => n(e));
-            return (
-                t.observe(e.current),
-                () => {
-                    t.disconnect();
-                }
-            );
-        }, [n, u, e]);
+var Alignment = ((e) => ((e.FlexStart = 'flex-start'), (e.Center = 'center'), (e.FlexEnd = 'flex-end'), e))(
+    Alignment || {},
+);
+const THAI_LANGUAGE_CODE = 'th',
+    SPLIT_BY_SYMBOL_LANGUAGE_CODES = ['zh_cn', 'zh_sg', 'zh_tw', 'ja', THAI_LANGUAGE_CODE];
+function isSerializableReactNode(e) {
+    return (
+        !(null != e && !['string', 'number', 'boolean'].includes(typeof e)) ||
+        (!reactExports.isValidElement(e) && !!Array.isArray(e) && e.every(isSerializableReactNode))
+    );
+}
+SPLIT_BY_SYMBOL_LANGUAGE_CODES.includes(R.strings.settings.LANGUAGE_CODE().toLowerCase());
+const base$2 = 'MultilineOverflow_8834bd8e',
+    content = 'MultilineOverflow_content_b539970d',
+    styles$2 = { base: base$2, content: content };
+function isSerializableParams(e) {
+    return !e || Object.values(e).every(isSerializableReactNode);
+}
+const MultilineOverflow = reactExports.forwardRef(function (
+    {
+        text: e,
+        brackets: t,
+        params: u,
+        formatters: n,
+        upgradeLegacy: s,
+        split: r = !0,
+        onMouseEnter: o,
+        onMouseLeave: i,
+        onClick: a,
+        tooltipDisabled: l = !1,
+        tooltip: c,
+        className: d,
+        classNames: E,
+        style: p,
+        styleBase: m,
+        ...A
     },
-    getFromCallStack = (e = 1) => {
-        var t;
-        const u = new Error().stack;
-        let n,
-            r = R.invalid('resId'),
-            s = '';
+    F,
+) {
+    const h = reactExports.useRef(null),
+        [f, g] = reactExports.useState(!1);
+    reactExports.useEffect(() => {
+        if (0 === e.length) return;
+        const t = h.current;
+        if (!t) return;
+        const u = document.createElement('div');
+        let n = noop$1;
+        function s() {
+            if (!t) return;
+            (n(),
+                (u.style.visibility = 'hidden'),
+                (u.className = clsx(styles$2.content, t.children[0].className)),
+                (u.innerHTML = ''),
+                t.appendChild(u));
+            const e = t.children[0];
+            if (!e) return console.warn("MultilineOverflow can't get first child to handle it", t);
+            const s = relativeOffset(t.getBoundingClientRect(), e.getBoundingClientRect());
+            (e instanceof HTMLElement && (u.style.cssText = e.style.cssText),
+                (u.style.left = `${s.x}px`),
+                (u.style.top = `${s.y}px`));
+            for (let t of e.childNodes.values()) {
+                if (t instanceof HTMLElement) {
+                    const e = t.cloneNode(!0);
+                    u.appendChild(e);
+                }
+                if (t.nodeType === Node.TEXT_NODE) {
+                    const e = document.createTextNode(t.nodeValue ?? '');
+                    u.appendChild(e);
+                }
+            }
+            const r = document.createElement('div');
+            ((r.innerHTML = '...'),
+                u.appendChild(r),
+                (n = createLayoutReadyInEffect$1(() => {
+                    const e = [];
+                    for (let n = u.childNodes.length - 2; 0 !== n; n--) {
+                        const s = u.childNodes[n];
+                        if (s instanceof HTMLElement) {
+                            if (s.offsetTop + s.offsetHeight <= t.offsetHeight) break;
+                            e.push(s);
+                        }
+                    }
+                    if (0 === e.length) (g(!1), r.remove());
+                    else {
+                        (g(!0), e.forEach((e) => e.remove()));
+                        let u = 0;
+                        for (; u++ < 1e3 && r.previousSibling && r.offsetTop + r.offsetHeight > t.offsetHeight; )
+                            r.previousSibling?.remove();
+                    }
+                    u.style.visibility = '';
+                })));
+        }
+        const r = new ResizeObserver(s);
         return (
-            u &&
-                ((s = (null == (t = u.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : t[0]) || ''),
-                (n = u.split('\n')[e].split('.js')[0].split('/').pop() || ''),
-                window.__feature && window.__feature !== n && window.subViews[n] && (r = window.subViews[n].id)),
-            { callerUrl: s, caller: n, stack: u, resId: r }
+            r.observe(t),
+            new DisposeBuilder()
+                .add(() => n())
+                .add(addEventListener(window, 'resize', s))
+                .add(r.disconnect.bind(r))
+                .add(u.remove.bind(u)).dispose
         );
+    }, [F, e]);
+    const _ = isSerializableParams(u),
+        D = useParamTooltip(
+            'format_text',
+            reactExports.useMemo(
+                () => ({
+                    text: e,
+                    params: _ ? u : void 0,
+                    split: r,
+                    upgradeLegacy: s,
+                    brackets: t,
+                    resId: resources.resolve('views').read((e) => e.mono.tooltips.tooltips('resId')),
+                }),
+                [e, t, r, s, u, _],
+            ),
+        ),
+        y = c ?? D;
+    if (
+        (reactExports.useEffect(() => {
+            l || f || y.onMouseLeave();
+        }, [f, y, c, l, _]),
+        0 === e.length)
+    )
+        return null;
+    return jsxRuntimeExports.jsx('div', {
+        ...A,
+        onMouseEnter: function (e) {
+            (o?.(e), f && !l && y.onMouseEnter(e));
+        },
+        onClick: function (e) {
+            (a?.(e), l || y.onClick());
+        },
+        onMouseLeave: function (e) {
+            (i?.(e), l || y.onMouseLeave());
+        },
+        ref: assignRefs([F, h]),
+        className: clsx(styles$2.base, d, E?.base),
+        style: m,
+        children: jsxRuntimeExports.jsx(FormatText, {
+            text: e,
+            brackets: t,
+            params: u,
+            upgradeLegacy: s,
+            split: r,
+            formatters: n,
+            className: E?.text,
+            style: { ...p, visibility: 'hidden' },
+        }),
+    });
+});
+function FormatTextSplited({ className: e, ...t }) {
+    return jsxRuntimeExports.jsx('div', {
+        className: e,
+        children: t.text.split('\n').map((e) => jsxRuntimeExports.jsx(FormatText, { ...t, text: e }, e)),
+    });
+}
+function ExtendedText(e) {
+    (void 0 !== e.onSizeChanged && console.warn('[ExtendedText Adapter] Property "onSizeChanged" doesn\'t support'),
+        void 0 !== e.targetId && console.warn('[ExtendedText Adapter] Property "targetId" doesn\'t support'));
+    const t = e.isTruncationAvailable || e.truncateIdentify ? MultilineOverflow : FormatTextSplited;
+    return jsxRuntimeExports.jsx(t, {
+        split: e.split ?? !0,
+        text: e.text,
+        params: e.binding,
+        style: { alignContent: e.alignContent, justifyContent: e.justifyContent },
+        upgradeLegacy: !0,
+        className: clsx(e.className, e.classMix),
+    });
+}
+const getFromCallStack = (e = 1) => {
+    const t = new Error().stack;
+    let u,
+        n = R.invalid('resId'),
+        s = '';
+    return (
+        t &&
+            ((s = t.match(/(coui:\/\/[^\s]+\.js)/)?.[0] || ''),
+            (u = t.split('\n')[e].split('.js')[0].split('/').pop() || ''),
+            window.__feature && window.__feature !== u && window.subViews[u] && (n = window.subViews[u].id)),
+        { callerUrl: s, caller: u, stack: t, resId: n }
+    );
+};
+let ClickOutsideManager$1 = class e {
+    entries = [];
+    _listenMouse = !1;
+    static __instance;
+    static get instance() {
+        return (e.__instance || (e.__instance = new e()), e.__instance);
+    }
+    register(e, t) {
+        (this.addMouseListener(), this.entries.push({ container: e, callback: t }));
+    }
+    unregister(e, t) {
+        const u = e,
+            n = t;
+        ((this.entries = this.entries.filter(({ container: e, callback: t }) => e !== u || t !== n)),
+            this.removeMouseListener());
+    }
+    addMouseListener() {
+        this._listenMouse || (document.addEventListener('mousedown', this.onMouseDown), (this._listenMouse = !0));
+    }
+    removeMouseListener() {
+        this._listenMouse &&
+            0 === this.entries.length &&
+            (document.removeEventListener('mousedown', this.onMouseDown), (this._listenMouse = !1));
+    }
+    onMouseDown = (e) => {
+        this.entries.forEach(({ container: t, callback: u }) => {
+            let n = e.target;
+            do {
+                if (n === t) return;
+                n = n.parentNode;
+            } while (n);
+            u();
+        });
     };
-let ClickOutsideManager$1 =
-    ((_b = class {
-        constructor() {
-            (__publicField(this, 'entries', []),
-                __publicField(this, '_listenMouse', !1),
-                __publicField(this, 'onMouseDown', (e) => {
-                    this.entries.forEach(({ container: t, callback: u }) => {
-                        let n = e.target;
-                        do {
-                            if (n === t) return;
-                            n = n.parentNode;
-                        } while (n);
-                        u();
-                    });
-                }));
-        }
-        static get instance() {
-            return (_b.__instance || (_b.__instance = new _b()), _b.__instance);
-        }
-        register(e, t) {
-            (this.addMouseListener(), this.entries.push({ container: e, callback: t }));
-        }
-        unregister(e, t) {
-            const u = e,
-                n = t;
-            ((this.entries = this.entries.filter(({ container: e, callback: t }) => e !== u || t !== n)),
-                this.removeMouseListener());
-        }
-        addMouseListener() {
-            this._listenMouse || (document.addEventListener('mousedown', this.onMouseDown), (this._listenMouse = !0));
-        }
-        removeMouseListener() {
-            this._listenMouse &&
-                0 === this.entries.length &&
-                (document.removeEventListener('mousedown', this.onMouseDown), (this._listenMouse = !1));
-        }
-    }),
-    __publicField(_b, '__instance'),
-    _b);
+};
 function makeEngineEvent(e) {
     return (t) => (
         engine.on(e, t),
@@ -2571,11 +2638,16 @@ function makeEngineEvent(e) {
 function setTrackMouseOutside(e) {
     viewEnv.setTrackMouseOnStage(e);
 }
-const internalMouse = {
-    down: makeEngineEvent('mousedown'),
-    up: makeEngineEvent('mouseup'),
-    move: makeEngineEvent('mousemove'),
-};
+const onResize = makeEngineEvent('clientResized'),
+    onScaleUpdated = makeEngineEvent('self.onScaleUpdated'),
+    onMinimize = makeEngineEvent('clientMinimized'),
+    on = (e, t) => engine.on(e, t),
+    off = (e, t) => engine.off(e, t),
+    internalMouse = {
+        down: makeEngineEvent('mousedown'),
+        up: makeEngineEvent('mouseup'),
+        move: makeEngineEvent('mousemove'),
+    };
 function initMouseEvents() {
     const e = { listeners: 0, enabled: !0, initialized: !1 };
     function t() {
@@ -2602,17 +2674,17 @@ function initMouseEvents() {
                 (t[u] = (function (t) {
                     return (u) => {
                         e.listeners += 1;
-                        let r = !0;
-                        const s = `mouse${t}`,
+                        let s = !0;
+                        const r = `mouse${t}`,
                             o = internalMouse[t]((e) => u([e, 'outside']));
                         function i(e) {
                             u([e, 'inside']);
                         }
                         return (
-                            window.addEventListener(s, i),
+                            window.addEventListener(r, i),
                             n(),
                             () => {
-                                r && (o(), window.removeEventListener(s, i), (e.listeners -= 1), n(), (r = !1));
+                                s && (o(), window.removeEventListener(r, i), (e.listeners -= 1), n(), (s = !1));
                             }
                         );
                     };
@@ -2635,13 +2707,59 @@ function initMouseEvents() {
         },
     };
 }
+const mouse = initMouseEvents(),
+    events$1 = Object.freeze(
+        Object.defineProperty(
+            {
+                __proto__: null,
+                mouse: mouse,
+                off: off,
+                on: on,
+                onMinimize: onMinimize,
+                onResize: onResize,
+                onScaleUpdated: onScaleUpdated,
+            },
+            Symbol.toStringTag,
+            { value: 'Module' },
+        ),
+    );
 function playSound(e) {
     engine.call('PlaySound', e).catch((t) => {
         console.error(`playSound('${e}'): `, t);
     });
 }
-initMouseEvents();
-const sounds = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
+function setRTPC(e, t) {
+    engine.call('SetRTPCGlobal', e, t).catch((u) => {
+        console.error(`setRTPC('${e}', '${t}'): `, u);
+    });
+}
+function getSize$1(e = 'px') {
+    return 'rem' === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
+}
+function getMouseGlobalPosition(e = 'px') {
+    return 'rem' === e ? viewEnv.getMouseGlobalPositionRem() : viewEnv.getMouseGlobalPositionPx();
+}
+const graphicsQuality = {
+        isLow: () => 1 === viewEnv.getGraphicsQuality(),
+        isHigh: () => 0 === viewEnv.getGraphicsQuality(),
+        get: () => viewEnv.getGraphicsQuality(),
+    },
+    client = Object.freeze(
+        Object.defineProperty(
+            {
+                __proto__: null,
+                events: events$1,
+                getMouseGlobalPosition: getMouseGlobalPosition,
+                getSize: getSize$1,
+                graphicsQuality: graphicsQuality,
+                playSound: playSound,
+                setRTPC: setRTPC,
+            },
+            Symbol.toStringTag,
+            { value: 'Module' },
+        ),
+    ),
+    sounds = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
     plays = Object.keys(sounds).reduce((e, t) => ((e[t] = () => playSound(sounds[t])), e), {}),
     ROMAN = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
     ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
@@ -2698,10 +2816,10 @@ const children = Object.freeze(
     sendViewEvent = (e, t) => {
         const u = 'GFViewEventProxy';
         if (void 0 !== t) {
-            const { args: n, ...r } = t;
+            const { args: n, ...s } = t;
             return void 0 !== n
-                ? viewEnv.handleViewEvent({ __Type: u, type: e, ...r, arguments: createViewEventArguments$1(n) })
-                : viewEnv.handleViewEvent({ __Type: u, type: e, ...r });
+                ? viewEnv.handleViewEvent({ __Type: u, type: e, ...s, arguments: createViewEventArguments$1(n) })
+                : viewEnv.handleViewEvent({ __Type: u, type: e, ...s });
         }
         return viewEnv.handleViewEvent({ __Type: u, type: e });
     },
@@ -2803,11 +2921,11 @@ function enableFullScreenModeSupported() {
 }
 function initExternalPaddings(e) {
     function t() {
-        const { top: t, right: u, bottom: n, left: r } = viewEnv.getExternalPaddingsRem();
+        const { top: t, right: u, bottom: n, left: s } = viewEnv.getExternalPaddingsRem();
         (e.style.setProperty('--external-padding-top', `${t}rem`),
             e.style.setProperty('--external-padding-right', `${u}rem`),
             e.style.setProperty('--external-padding-bottom', `${n}rem`),
-            e.style.setProperty('--external-padding-left', `${r}rem`));
+            e.style.setProperty('--external-padding-left', `${s}rem`));
     }
     (t(), engine.on('self.onPaddingsUpdated', () => t()));
 }
@@ -2850,61 +2968,58 @@ const view = Object.freeze(
             { value: 'Module' },
         ),
     ),
-    env = { view: view },
-    _DataTracker = class e {
-        constructor() {
-            (__publicField(this, '_callbacks'),
-                __publicField(this, '_updateHandler'),
-                __publicField(this, '_views'),
-                __publicField(this, 'clearViewCallbacks', (e) => {
-                    this._views[e] &&
-                        (this._views[e].forEach((e) => {
-                            delete this._callbacks[e];
-                        }),
-                        delete this._views[e]);
-                }),
-                (this._callbacks = {}),
-                (this._views = {}),
-                (this._updateHandler = void 0));
-        }
-        static get instance() {
-            return (window.__dataTracker || (window.__dataTracker = new e()), window.__dataTracker);
-        }
-        clear() {
-            (void 0 !== this._updateHandler && (this._updateHandler.clear(), (this._updateHandler = void 0)),
-                (this._callbacks = {}));
-        }
-        addCallback(e, t, u = 0, n = !0) {
-            void 0 === this._updateHandler &&
-                (this._updateHandler = engine.on('viewEnv.onDataChanged', this._emmitDataChanged, this));
-            const r = env.view.addModelObserver(e, u, n);
-            return (
-                r > 0
-                    ? ((this._callbacks[r] = t),
-                      u > 0 && (this._views[u] ? this._views[u].push(r) : (this._views[u] = [r])))
-                    : console.error("Can't add callback for model:", e),
-                r
-            );
-        }
-        removeCallback(e, t = 0) {
-            let u = !1;
-            return (
-                void 0 !== e &&
-                    void 0 !== this._callbacks[e] &&
-                    ((u = viewEnv.removeDataChangedCallback(e, t)), delete this._callbacks[e]),
-                u || console.error("Can't remove callback by id:", e),
-                u
-            );
-        }
-        _emmitDataChanged(e, t, u) {
-            u.forEach((u) => {
-                const n = this._callbacks[u];
-                void 0 !== n && n(e, t);
-            });
-        }
+    env = { view: view, client: client };
+class DataTracker {
+    _callbacks;
+    _updateHandler;
+    _views;
+    static __instance;
+    constructor() {
+        ((this._callbacks = {}), (this._views = {}), (this._updateHandler = void 0));
+    }
+    static get instance() {
+        return (window.__dataTracker || (window.__dataTracker = new DataTracker()), window.__dataTracker);
+    }
+    clear() {
+        (void 0 !== this._updateHandler && (this._updateHandler.clear(), (this._updateHandler = void 0)),
+            (this._callbacks = {}));
+    }
+    clearViewCallbacks = (e) => {
+        this._views[e] &&
+            (this._views[e].forEach((e) => {
+                delete this._callbacks[e];
+            }),
+            delete this._views[e]);
     };
-__publicField(_DataTracker, '__instance');
-let DataTracker = _DataTracker;
+    addCallback(e, t, u = 0, n = !0) {
+        void 0 === this._updateHandler &&
+            (this._updateHandler = engine.on('viewEnv.onDataChanged', this._emmitDataChanged, this));
+        const s = env.view.addModelObserver(e, u, n);
+        return (
+            s > 0
+                ? ((this._callbacks[s] = t),
+                  u > 0 && (this._views[u] ? this._views[u].push(s) : (this._views[u] = [s])))
+                : console.error("Can't add callback for model:", e),
+            s
+        );
+    }
+    removeCallback(e, t = 0) {
+        let u = !1;
+        return (
+            void 0 !== e &&
+                void 0 !== this._callbacks[e] &&
+                ((u = viewEnv.removeDataChangedCallback(e, t)), delete this._callbacks[e]),
+            u || console.error("Can't remove callback by id:", e),
+            u
+        );
+    }
+    _emmitDataChanged(e, t, u) {
+        u.forEach((u) => {
+            const n = this._callbacks[u];
+            void 0 !== n && n(e, t);
+        });
+    }
+}
 function dumpViewModel(e) {
     const t = {};
     if ('object' != typeof e) return e;
@@ -2986,7 +3101,7 @@ var KEY_CODES = ((e) => (
 ))(KEY_CODES || {});
 const makeGlobalBoundingBox = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
     onBindingsReady = async () =>
-        !(!engine._BindingsReady || !engine._WindowLoaded) ||
+        !(!engine._BindingsReady || !engine._ContentLoaded) ||
         new Promise((e) => {
             engine.on('Ready', e);
         }),
@@ -3016,10 +3131,10 @@ const makeGlobalBoundingBox = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y,
     handleViewEvent$1 = (e, t) => {
         const u = 'GFViewEventProxy';
         if (void 0 !== t) {
-            const { args: n, ...r } = t;
+            const { args: n, ...s } = t;
             void 0 !== n
-                ? viewEnv.handleViewEvent({ __Type: u, type: e, ...r, arguments: createViewEventArguments(n) })
-                : viewEnv.handleViewEvent({ __Type: u, type: e, ...r });
+                ? viewEnv.handleViewEvent({ __Type: u, type: e, ...s, arguments: createViewEventArguments(n) })
+                : viewEnv.handleViewEvent({ __Type: u, type: e, ...s });
         } else viewEnv.handleViewEvent({ __Type: u, type: e });
     },
     sendMoveEvent = (e) => handleViewEvent$1(ViewEventType.MOVE, { isMouseEvent: !0, on: e }),
@@ -3034,7 +3149,7 @@ const makeGlobalBoundingBox = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y,
             args: t,
         });
     },
-    sendShowPopOverEvent = (e, t, u, n, r = R.invalid('resId'), s) => {
+    sendShowPopOverEvent = (e, t, u, n, s = R.invalid('resId'), r) => {
         const o = env.view.getViewGlobalPosition(),
             { x: i, y: a, width: l, height: c } = u.getBoundingClientRect(),
             d = {
@@ -3047,11 +3162,11 @@ const makeGlobalBoundingBox = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y,
             isMouseEvent: !0,
             contentID: e,
             decoratorID: n || R.invalid('resId'),
-            targetID: r,
+            targetID: s,
             direction: t,
             bbox: makeGlobalBoundingBox(d),
             on: !0,
-            args: s,
+            args: r,
         });
     },
     isTooltipShown = () => viewEnv.isWindowShownByViewEvent(ViewEventType.TOOLTIP),
@@ -3068,24 +3183,18 @@ const makeGlobalBoundingBox = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y,
         return (window.addEventListener('keydown', t), () => window.removeEventListener('keydown', t));
     };
 class ViewModel {
-    constructor(path, watchingFields = []) {
-        (__publicField(this, 'dataTracker'),
-            __publicField(this, 'modelPath'),
-            __publicField(this, 'callbacks'),
-            __publicField(this, 'data'),
-            __publicField(this, '_notifyObservers', () => {
-                ((this.data = eval(this.modelPath)),
-                    this.callbacks.forEach((e) => {
-                        e(this.data);
-                    }));
-            }),
-            (this.dataTracker = new DataTracker()),
-            (this.modelPath = path),
+    dataTracker;
+    modelPath;
+    callbacks;
+    data;
+    constructor(e, t = []) {
+        ((this.dataTracker = new DataTracker()),
+            (this.modelPath = e),
             (this.callbacks = new Set()),
             onBindingsReady().then(() => {
-                (this._addCallback(path),
-                    watchingFields.forEach((e) => {
-                        this._addCallback(path + '.' + e);
+                (this._addCallback(e),
+                    t.forEach((t) => {
+                        this._addCallback(e + '.' + t);
                     }),
                     this._notifyObservers());
             }));
@@ -3102,6 +3211,12 @@ class ViewModel {
     _addCallback(e) {
         this.dataTracker.addCallback(e, this._notifyObservers);
     }
+    _notifyObservers = () => {
+        ((this.data = eval(this.modelPath)),
+            this.callbacks.forEach((e) => {
+                e(this.data);
+            }));
+    };
 }
 const ClickOutsideManager = ClickOutsideManager$1.instance,
     ViewEnvHelper = {
@@ -3167,8 +3282,8 @@ const handleViewEvent = (e, t, u = {}, n = 0) => {
         contentId: t,
         args: u,
         onMouseEnter: n,
-        onMouseLeave: r,
-        onMouseDown: s,
+        onMouseLeave: s,
+        onMouseDown: r,
         onClick: o,
         ignoreShowDelay: i = !1,
         ignoreMouseClick: a = !1,
@@ -3179,37 +3294,37 @@ const handleViewEvent = (e, t, u = {}, n = 0) => {
         onHide: p,
         ...m
     }) => {
-        const h = reactExports.useRef({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
-            _ = reactExports.useMemo(() => d || getFromCallStack().resId, [d]),
-            A = reactExports.useCallback(() => {
-                (h.current.isVisible && h.current.timeoutId) ||
-                    (handleViewEvent(t, l, { isMouseEvent: !0, on: !0, arguments: getViewEventArguments(u) }, _),
+        const A = reactExports.useRef({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
+            F = reactExports.useMemo(() => d || getFromCallStack().resId, [d]),
+            h = reactExports.useCallback(() => {
+                (A.current.isVisible && A.current.timeoutId) ||
+                    (handleViewEvent(t, l, { isMouseEvent: !0, on: !0, arguments: getViewEventArguments(u) }, F),
                     E && E(),
-                    (h.current.isVisible = !0));
-            }, [t, l, u, _, E]),
+                    (A.current.isVisible = !0));
+            }, [t, l, u, F, E]),
             f = reactExports.useCallback(() => {
-                if (h.current.isVisible || h.current.timeoutId) {
-                    const e = h.current.timeoutId;
-                    (e > 0 && (clearTimeout(e), (h.current.timeoutId = 0)),
-                        handleViewEvent(t, l, { on: !1 }, _),
-                        h.current.isVisible && p && p(),
-                        (h.current.isVisible = !1));
+                if (A.current.isVisible || A.current.timeoutId) {
+                    const e = A.current.timeoutId;
+                    (e > 0 && (clearTimeout(e), (A.current.timeoutId = 0)),
+                        handleViewEvent(t, l, { on: !1 }, F),
+                        A.current.isVisible && p && p(),
+                        (A.current.isVisible = !1));
                 }
-            }, [t, l, _, p]),
-            F = reactExports.useCallback((e) => {
-                h.current.isVisible &&
-                    ((h.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
-                    (h.current.hideTimerId = window.setTimeout(() => {
+            }, [t, l, F, p]),
+            g = reactExports.useCallback((e) => {
+                A.current.isVisible &&
+                    ((A.current.prevTarget = document.elementFromPoint(e.clientX, e.clientY)),
+                    (A.current.hideTimerId = window.setTimeout(() => {
                         const t = document.elementFromPoint(e.clientX, e.clientY);
-                        t && !t.isSameNode(h.current.prevTarget) && f();
+                        t && !t.isSameNode(A.current.prevTarget) && f();
                     }, 200)));
             }, []);
         (reactExports.useEffect(() => {
-            const e = h.current.hideTimerId;
+            const e = A.current.hideTimerId;
             return (
-                document.addEventListener('wheel', F, { capture: !0 }),
+                document.addEventListener('wheel', g, { capture: !0 }),
                 () => {
-                    (document.removeEventListener('wheel', F, { capture: !0 }), e && window.clearTimeout(e));
+                    (document.removeEventListener('wheel', g, { capture: !0 }), e && window.clearTimeout(e));
                 }
             );
         }, []),
@@ -3228,529 +3343,28 @@ const handleViewEvent = (e, t, u = {}, n = 0) => {
         return c
             ? reactExports.cloneElement(e, {
                   onMouseEnter:
-                      ((g = e.props.onMouseEnter),
+                      ((_ = e.props.onMouseEnter),
                       (e) => {
                           (e.clientX === window.innerWidth && e.clientY === window.innerHeight) ||
-                              (clearTimeout(h.current.timeoutId),
-                              (h.current.timeoutId = window.setTimeout(A, i ? SHOW_DELAY_MIN : SHOW_DELAY_DEFAULT)),
+                              (clearTimeout(A.current.timeoutId),
+                              (A.current.timeoutId = window.setTimeout(h, i ? SHOW_DELAY_MIN : SHOW_DELAY_DEFAULT)),
                               n && n(e),
-                              g && g(e));
+                              _ && _(e));
                       }),
                   onMouseLeave: ((e) => (t) => {
-                      (f(), null == r || r(t), null == e || e(t));
+                      (f(), s?.(t), e?.(t));
                   })(e.props.onMouseLeave),
                   onClick: ((e) => (t) => {
-                      (!1 === a && f(), null == o || o(t), null == e || e(t));
+                      (!1 === a && f(), o?.(t), e?.(t));
                   })(e.props.onClick),
                   onMouseDown: ((e) => (t) => {
-                      (!1 === a && f(), null == s || s(t), null == e || e(t));
+                      (!1 === a && f(), r?.(t), e?.(t));
                   })(e.props.onMouseDown),
                   ...m,
               })
             : e;
-        var g;
-    },
-    BackportTooltip = ({ children: e, ...t }) =>
-        jsxRuntimeExports.jsx(Tooltip, {
-            contentId: R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent('resId'),
-            ignoreShowDelay: !0,
-            ...t,
-            children: e,
-        }),
-    UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
-    getTooltipContentId = (e) =>
-        e ? UB_SIMPLE_TOOLTIPS.SimpleTooltipHtmlContent('resId') : UB_SIMPLE_TOOLTIPS.SimpleTooltipContent('resId'),
-    SimpleTooltip = ({ children: e, body: t, header: u, note: n, alert: r, args: s, ...o }) => {
-        const i = reactExports.useMemo(() => {
-            const e = { ...s, body: t, header: u, note: n, alert: r };
-            for (const t in e) void 0 === e[t] && delete e[t];
-            return e;
-        }, [r, t, u, n, s]);
-        return jsxRuntimeExports.jsx(Tooltip, {
-            contentId: getTooltipContentId(null == s ? void 0 : s.hasHtmlContent),
-            decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
-            args: i,
-            ...o,
-            children: e,
-        });
-    },
-    DynamicTooltipWrapper = ({ children: e, tooltipArgs: t, className: u }) => {
-        if (!t) return e;
-        const n = jsxRuntimeExports.jsx('div', { className: u, children: e });
-        if (t.header || t.body) return jsxRuntimeExports.jsx(SimpleTooltip, { ...t, children: n });
-        const { contentId: r } = t;
-        return r
-            ? jsxRuntimeExports.jsx(Tooltip, { ...t, contentId: r, children: n })
-            : jsxRuntimeExports.jsx(BackportTooltip, { ...t, children: n });
-    },
-    convertNbsp = (e) => e.replace(/&nbsp;/g, ' '),
-    convertZwnbsp = (e) => e.replace(/&zwnbsp;/g, '\ufeff');
-(() => {
-    const e = new RegExp(
-        [
-            /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
-            /[\(\xAB\u201C\u275D][\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?|[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[\)\xBB\u201D\u275E][\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
-            /[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[ \):;\u2022\u3001\u3002\u300A-\u300D\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]|[\(,1A-Za-\{\}\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
-            /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
-        ]
-            .map((e) => e.source)
-            .join('|'),
-        'gum',
-    );
-})();
-var BlockType = ((e) => (
-        (e[(e.Word = 0)] = 'Word'),
-        (e[(e.LineBreak = 1)] = 'LineBreak'),
-        (e[(e.NewLine = 2)] = 'NewLine'),
-        (e[(e.NoBreakSymbol = 3)] = 'NoBreakSymbol'),
-        (e[(e.NoBreakWrapper = 4)] = 'NoBreakWrapper'),
-        (e[(e.Binding = 5)] = 'Binding'),
-        e
-    ))(BlockType || {}),
-    Alignment = ((e) => ((e.FlexStart = 'flex-start'), (e.Center = 'center'), (e.FlexEnd = 'flex-end'), e))(
-        Alignment || {},
-    );
-const isTextBlock = (e) => void 0 !== e.childList,
-    TRUNCATE_IDENTIFY = '...',
-    BLOCK_TYPE = 'data-block-type',
-    SYMBOL_MAP = { ' ': 3, '\ufeff': 3, '\n': 1 },
-    THAI_LANGUAGE_CODE = 'th',
-    SPLIT_BY_SYMBOL_LANGUAGE_CODES = ['zh_cn', 'zh_sg', 'zh_tw', 'ja', THAI_LANGUAGE_CODE],
-    IS_SPLIT_BY_SYMBOL = SPLIT_BY_SYMBOL_LANGUAGE_CODES.includes(R.strings.settings.LANGUAGE_CODE().toLowerCase()),
-    root$3 = 'Colors_root_f72ccf75',
-    blackReal = 'Colors_blackReal_d82460d6',
-    whiteReal = 'Colors_whiteReal_195c4fc9',
-    white = 'Colors_white_f65ff909',
-    whiteOrange = 'Colors_whiteOrange_fe1307be',
-    whiteSpanish = 'Colors_whiteSpanish_6c839fc3',
-    par = 'Colors_par_c2d70a43',
-    parSecondary = 'Colors_parSecondary_fc54d1eb',
-    parTertiary = 'Colors_parTertiary_bd916d5b',
-    red = 'Colors_red_871ce654',
-    redDark = 'Colors_redDark_fa750314',
-    yellow = 'Colors_yellow_a0599898',
-    orange = 'Colors_orange_900d653e',
-    cream = 'Colors_cream_58f5b8e5',
-    brown = 'Colors_brown_f7996d65',
-    greenBright = 'Colors_greenBright_485ee4dc',
-    green = 'Colors_green_c091337d',
-    greenDark = 'Colors_greenDark_232f113d',
-    blueBooster = 'Colors_blueBooster_edd8a14b',
-    blueTeamkiller = 'Colors_blueTeamkiller_377a3f7',
-    cred = 'Colors_cred_75fadd7e',
-    gold = 'Colors_gold_7149760b',
-    bond = 'Colors_bond_6d725a61',
-    prom = 'Colors_prom_4b004087',
-    colors = {
-        root: root$3,
-        blackReal: blackReal,
-        whiteReal: whiteReal,
-        white: white,
-        whiteOrange: whiteOrange,
-        whiteSpanish: whiteSpanish,
-        par: par,
-        parSecondary: parSecondary,
-        parTertiary: parTertiary,
-        red: red,
-        redDark: redDark,
-        yellow: yellow,
-        orange: orange,
-        cream: cream,
-        brown: brown,
-        greenBright: greenBright,
-        green: green,
-        greenDark: greenDark,
-        blueBooster: blueBooster,
-        blueTeamkiller: blueTeamkiller,
-        cred: cred,
-        gold: gold,
-        bond: bond,
-        prom: prom,
-    },
-    noBreakWrapper = 'Renderers_noBreakWrapper_bd4985a8',
-    lineBreak = 'Renderers_lineBreak_8503dd13',
-    newLine = 'Renderers_newLine_9ec86e16',
-    word = 'Renderers_word_188ad896',
-    styles$4 = { noBreakWrapper: noBreakWrapper, lineBreak: lineBreak, newLine: newLine, word: word },
-    createStyle = (e) => ({ color: `#${e}` }),
-    getWordBlock = ({ elementList: e, textBlock: t, key: u }) => {
-        const n = t.colorTag;
-        return n
-            ? colors[n]
-                ? React.createElement(
-                      'span',
-                      { key: u, 'data-block-type': t.blockType, className: cx(styles$4.word, colors[n]) },
-                      e,
-                  )
-                : React.createElement(
-                      'span',
-                      { key: u, 'data-block-type': t.blockType, className: styles$4.word, style: createStyle(n) },
-                      e,
-                  )
-            : React.createElement('span', { key: u, 'data-block-type': t.blockType, className: styles$4.word }, e);
-    },
-    getLineBreak = ({ key: e }) =>
-        React.createElement('span', { key: e, 'data-block-type': BlockType.LineBreak, className: styles$4.lineBreak }),
-    getNewLine = ({ elementList: e, key: t }) =>
-        React.createElement('span', { key: t, 'data-block-type': BlockType.NewLine, className: styles$4.newLine }, e),
-    getNoBreakWrapper = ({ elementList: e, key: t }) =>
-        React.createElement(
-            'span',
-            { key: t, 'data-block-type': BlockType.NoBreakWrapper, className: styles$4.noBreakWrapper },
-            e,
-        ),
-    getBinding = ({ elementList: e, textBlock: t, key: u }) =>
-        React.createElement(
-            'span',
-            { key: u, 'data-block-type': t.blockType },
-            e.map((e) => React.createElement(React.Fragment, { key: u }, e)),
-        ),
-    RENDER_MAP = {
-        [BlockType.Word]: getWordBlock,
-        [BlockType.NoBreakSymbol]: getWordBlock,
-        [BlockType.Binding]: getBinding,
-        [BlockType.LineBreak]: getLineBreak,
-        [BlockType.NewLine]: getNewLine,
-        [BlockType.NoBreakWrapper]: getNoBreakWrapper,
-    },
-    renderChildList = (e, t, u) => {
-        const n = [];
-        return (
-            e.childList.forEach((r, s) => {
-                const o = `${u}_${s}`;
-                if (isTextBlock(r)) {
-                    const e = r,
-                        t = e.blockType,
-                        u = RENDER_MAP[t],
-                        s = renderChildList(e, u, o);
-                    n.push(...s);
-                } else n.push(t({ elementList: [r], textBlock: e, key: o }));
-            }),
-            n
-        );
-    },
-    renderTextBlock = (e, t) => {
-        const u = [],
-            n = e.blockType,
-            r = RENDER_MAP[n],
-            s = renderChildList(e, r, t);
-        return (
-            n === BlockType.NoBreakWrapper ? u.push(r({ elementList: s, textBlock: e, key: `${t}` })) : u.push(...s),
-            u
-        );
-    },
-    convertTextBlocksToJsxList = (e) => {
-        const t = [];
-        return (
-            e.forEach((e, u) => {
-                t.push(...renderTextBlock(e, u));
-            }),
-            t
-        );
-    },
-    split = (e, t, u, n) => {
-        let r = t.exec(e),
-            s = 0;
-        for (; r; ) (s !== r.index && u(e.slice(s, r.index)), n(r), (s = t.lastIndex), (r = t.exec(e)));
-        s !== e.length && u(e.slice(s));
-    },
-    thaiGraphemeRegex = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
-    splitThaiGraphemes = (e) => e.match(thaiGraphemeRegex) || [],
-    splitNewLines = (e) => {
-        const t = [{ blockType: BlockType.LineBreak, colorTag: '', childList: [e.charAt(0)] }];
-        for (let u = 0; u < e.length - 1; u++)
-            t.push({ blockType: BlockType.NewLine, colorTag: '', childList: [e.charAt(0)] });
-        return t;
-    },
-    splitBySymbols = (e) => {
-        const t = [];
-        return (
-            split(
-                e,
-                /\S\s+/g,
-                (e) => {
-                    R.strings.settings.LANGUAGE_CODE().toLowerCase() === THAI_LANGUAGE_CODE
-                        ? t.push(...splitThaiGraphemes(e))
-                        : t.push(...e.split(''));
-                },
-                (e) => {
-                    t.push(e[0]);
-                },
-            ),
-            t
-        );
-    },
-    splitWordsCustom = (e) => {
-        const t = [];
-        return (
-            split(
-                e,
-                /[^a-zA-Z0-9]+/g,
-                (e) => {
-                    t.push(e);
-                },
-                (e) => {
-                    t.push(...splitBySymbols(e[0]));
-                },
-            ),
-            t
-        );
-    },
-    splitWords = (e, t) => {
-        const u = /[\s\u002d]/g;
-        let n = u.exec(e);
-        if (!n) return [e];
-        const r = [];
-        let s = 0;
-        for (; n; ) {
-            const o = t.justifyContent === Alignment.FlexEnd ? n.index : u.lastIndex;
-            (r.push(e.slice(s, o)), (s = o), (n = u.exec(e)));
-        }
-        return (s !== e.length && r.push(e.slice(s)), r);
-    },
-    splitByWordsMethod = IS_SPLIT_BY_SYMBOL ? splitWordsCustom : splitWords,
-    splitSpecialSymbols = (e, t = '', u) => {
-        const n = [];
-        return (
-            split(
-                e,
-                /(\n+|[\xa0\ufeff]+)/g,
-                (e) => {
-                    n.push({ blockType: BlockType.Word, colorTag: t, childList: splitByWordsMethod(e, u) });
-                },
-                (e) => {
-                    const u = e[0],
-                        r = SYMBOL_MAP[u.charAt(0)];
-                    r === BlockType.LineBreak
-                        ? n.push(...splitNewLines(u))
-                        : n.push({ blockType: r, colorTag: t, childList: [u.replace(/\ufeff+/g, '')] });
-                },
-            ),
-            n
-        );
-    },
-    splitBinding = (e, t, u = '', n) => {
-        const r = [],
-            s = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
-        return (
-            split(
-                s,
-                /(?:%\(|{)(.*?)[)}][sd]?/g,
-                (e) => {
-                    r.push(...splitSpecialSymbols(e, u, n));
-                },
-                (e) => {
-                    const s = e[1],
-                        o = void 0 === t[s] ? e[0] : t[s];
-                    'string' == typeof o || 'number' == typeof o
-                        ? r.push(...splitSpecialSymbols(String(o), u, n))
-                        : r.push({ blockType: BlockType.Binding, colorTag: u, childList: [o] });
-                },
-            ),
-            r
-        );
-    },
-    splitColorTags = (e, t, u) => {
-        const n = [];
-        return (
-            split(
-                e,
-                /(?:%\(|{)(\w*)(?:_[Oo]pen|_Start)(?:\)s|})([\s\S]*?)(?:%\(|{)\w*(?:_[Cc]lose|_End)(?:\)s|})(\s*)/g,
-                (e) => {
-                    n.push(...splitBinding(e, t, '', u));
-                },
-                (e) => {
-                    n.push(...splitBinding(e[2] + e[3], t, e[1], u));
-                },
-            ),
-            n
-        );
-    },
-    wrapNoBreak = (e, t) => {
-        if (!e) return [t];
-        const u = [],
-            n = { ...t, childList: t.childList.splice(0, 1) };
-        if (e.blockType === BlockType.NoBreakWrapper) (e.childList.push(n), u.push(e));
-        else {
-            const t = { ...e, childList: e.childList.splice(-1) };
-            (e.childList.length > 0 && u.push(e),
-                u.push({ blockType: BlockType.NoBreakWrapper, colorTag: '', childList: [t, n] }));
-        }
-        return (t.childList.length > 0 && u.push(t), u);
-    },
-    processTextBlocks = (e) => {
-        const t = [];
-        let u = !1;
-        return (
-            e.forEach((e) => {
-                if (e.blockType === BlockType.NoBreakSymbol) ((u = !0), t.push(...wrapNoBreak(t.pop(), e)));
-                else (u ? t.push(...wrapNoBreak(t.pop(), e)) : t.push(e), (u = !1));
-            }),
-            t
-        );
-    },
-    getJsxElementsList = (e, t = {}, u) => {
-        if (!e) return [];
-        const n = convertZwnbsp(convertNbsp(e)),
-            r = processTextBlocks(splitColorTags(n, t, u));
-        return convertTextBlocksToJsxList(r);
-    },
-    isVerticalOverflow = (e, t) => !e || e.offsetTop + e.offsetHeight > t,
-    getPositionDiff = (e, t) => e.offsetLeft + e.offsetWidth - t,
-    isElementAvailableForTruncation = (e, t, u) => {
-        if (!e || !e.textContent) return [!1, 0];
-        if (e.offsetLeft > t) return [!1, 0];
-        const n = getPositionDiff(e, t),
-            r = e.textContent.length,
-            s = e.offsetWidth / r,
-            o = Math.ceil(n / s);
-        if (n > 0) {
-            const n = Math.floor((t - e.offsetLeft) / s);
-            return n >= u ? [!0, u + o] : [!1, n];
-        }
-        const i = Math.max(u + o, 0);
-        return r < i ? [!1, 0] : [!0, i];
-    },
-    truncateElement = (e, t, u, n, r, s) => {
-        let o = -1,
-            i = null;
-        for (let a = u; a >= 0; a--) {
-            const u = e[a],
-                l = Number(e[a].getAttribute(BLOCK_TYPE));
-            if (l === BlockType.LineBreak || l === BlockType.NewLine || l === BlockType.Binding) continue;
-            const c = u.textContent || '';
-            if (!(u.childElementCount > 1)) {
-                const [e, l] = isElementAvailableForTruncation(u, n, r);
-                if (!e) {
-                    l > 0 && (r -= l);
-                    continue;
-                }
-                const d = c.slice(0, c.length - l) + s,
-                    E = t[a];
-                ((i = React.cloneElement(E, E.props, d)), (o = a));
-                break;
-            }
-            {
-                const e = u.children,
-                    l = t[a],
-                    d = l.props.children,
-                    [E, p] = truncateElement(e, d, e.length - 1, n, r, s);
-                if (!(E < 0)) {
-                    const e = d.slice(0, E);
-                    ((i = React.cloneElement(l, l.props, e, p)), (o = a));
-                    break;
-                }
-                r -= c.length;
-            }
-        }
-        return [o, i];
-    },
-    searchLastInHeight = (e, t) => {
-        let u = 0,
-            n = e.length - 1;
-        for (; n - u >= 0; ) {
-            const r = u + Math.ceil(0.5 * (n - u));
-            isVerticalOverflow(e[r], t) ? (n = r - 1) : (u = r + 1);
-        }
-        return u - 1;
-    },
-    truncateJsxElements = (e, t, u, n = TRUNCATE_IDENTIFY) => {
-        const r = [...t],
-            s = e.current;
-        if (!s) return [r, !1];
-        const o = u.height,
-            i = u.width,
-            a = s.lastElementChild;
-        if (!isVerticalOverflow(a, o) && getPositionDiff(a, i) <= 0) return [r, !1];
-        const l = s.children,
-            c = searchLastInHeight(l, o);
-        if (c < 0) return [r, !1];
-        const [d, E] = truncateElement(l, r, c, i, n.length, n);
-        return (E && (r.splice(d, 1, E), r.splice(d + 1)), [r, !0]);
-    },
-    root$2 = 'Extendedtext_root_56f425a9',
-    base$3 = 'Extendedtext_34df2a2c',
-    base__zeroPadding = 'Extendedtext_base__zeroPadding_bd1dbfd0',
-    base__isTruncationAvailable = 'Extendedtext_base__isTruncationAvailable_21b9eaa',
-    truncated = 'Extendedtext_truncated_6b4a3b66',
-    truncated__hide = 'Extendedtext_truncated__hide_a75f6d91',
-    unTruncated = 'Extendedtext_unTruncated_6ec70ccb',
-    tooltip = 'Extendedtext_tooltip_7c24081e',
-    styles$3 = {
-        root: root$2,
-        base: base$3,
-        base__zeroPadding: base__zeroPadding,
-        base__isTruncationAvailable: base__isTruncationAvailable,
-        truncated: truncated,
-        truncated__hide: truncated__hide,
-        unTruncated: unTruncated,
-        tooltip: tooltip,
-        'tooltip__justify-flex-start': 'Extendedtext_tooltip__justify-flex-start_e5cbb138',
-        'tooltip__justify-center': 'Extendedtext_tooltip__justify-center_f94c1d9b',
-        'tooltip__justify-flex-end': 'Extendedtext_tooltip__justify-flex-end_3064a421',
-        'tooltip__align-flex-start': 'Extendedtext_tooltip__align-flex-start_6ee44914',
-        'tooltip__align-center': 'Extendedtext_tooltip__align-center_cfba61d0',
-        'tooltip__align-flex-end': 'Extendedtext_tooltip__align-flex-end_b3a277de',
-    },
-    ExtendedTextComponent = ({
-        text: e,
-        classMix: t,
-        onSizeChanged: u,
-        binding: n,
-        isTooltipEnable: r = !1,
-        isTruncationAvailable: s = !1,
-        customTooltipArgs: o,
-        targetId: i,
-        justifyContent: a = Alignment.FlexStart,
-        alignContent: l = Alignment.FlexStart,
-        truncateIdentify: c = TRUNCATE_IDENTIFY,
-    }) => {
-        const d = reactExports.useRef(null),
-            E = reactExports.useRef({ height: 0, width: 0 }),
-            [p, m] = reactExports.useState({ elementList: [], isTruncated: !1, isTruncateFinished: !1 }),
-            h = reactExports.useMemo(() => getJsxElementsList(e, n, { justifyContent: a }), [n, a, e]),
-            _ = reactExports.useMemo(() => {
-                if (r && p.isTruncated && (!n || !Object.values(n).find((e) => 'object' == typeof e)))
-                    return {
-                        args: { text: e, ...o, stringifyKwargs: n ? JSON.stringify(n) : '' },
-                        contentId: R.views.lobby.common.tooltips.ExtendedTextTooltip('resId'),
-                        targetId: i,
-                    };
-            }, [n, r, i, e, o, p.isTruncated]),
-            A = reactExports.useCallback(
-                (e) => {
-                    ((E.current.width = e.contentRect.width), (E.current.height = e.contentRect.height));
-                    const [t, n] = truncateJsxElements(d, h, E.current, c);
-                    (m({ elementList: t, isTruncated: n, isTruncateFinished: !0 }), u && u(n));
-                },
-                [u, c, h],
-            ),
-            f = reactExports.useMemo(() => ({ justifyContent: a, alignContent: l }), [l, a]);
-        return (
-            useResizeObserver(d, A, s),
-            jsxRuntimeExports.jsxs('div', {
-                className: cx(styles$3.base, t, styles$3.base__zeroPadding, s && styles$3.base__isTruncationAvailable),
-                style: f,
-                children: [
-                    jsxRuntimeExports.jsx('div', { className: styles$3.unTruncated, ref: d, children: h }),
-                    jsxRuntimeExports.jsx(DynamicTooltipWrapper, {
-                        tooltipArgs: _,
-                        className: cx(
-                            styles$3.tooltip,
-                            styles$3[`tooltip__justify-${a}`],
-                            styles$3[`tooltip__align-${l}`],
-                        ),
-                        children: jsxRuntimeExports.jsx('div', {
-                            className: cx(styles$3.truncated, !p.isTruncateFinished && s && styles$3.truncated__hide),
-                            style: f,
-                            children: p.isTruncateFinished && s ? p.elementList : h,
-                        }),
-                    }),
-                ],
-            })
-        );
-    },
-    ExtendedText = React.memo(ExtendedTextComponent);
+        var _;
+    };
 var LogLevel = ((e) => (
     (e[(e.NonSet = 0)] = 'NonSet'),
     (e[(e.Debug = 10)] = 'Debug'),
@@ -3765,24 +3379,24 @@ const TOOLTIP_ACTION = 'tooltip_watched',
     METRICS_GROUP = 'metrics',
     getDate = () => Date.now(),
     addTimeSpent = (e, t) => (void 0 === e && (e = {}), (e.timeSpent = t), e),
-    convertMetricsParams = ({ partnerID: e, item: t, parentScreen: u, itemState: n, info: r }) => ({
+    convertMetricsParams = ({ partnerID: e, item: t, parentScreen: u, itemState: n, info: s }) => ({
         item: t,
         partnerID: e || null,
         parent_screen: u || null,
         item_state: n || null,
-        additional_info: r || null,
+        additional_info: s || null,
     }),
     _useLog = (e, t) => {
         const u = reactExports.useCallback(
-            (u, n = LogLevel.Info, r) => {
-                (r || (r = {}),
-                    Object.keys(r).length >= PROPERTIES_LIMIT ||
+            (u, n = LogLevel.Info, s) => {
+                (s || (s = {}),
+                    Object.keys(s).length >= PROPERTIES_LIMIT ||
                         window.uiLoggerModel.log({
                             feature: e,
                             group: t,
                             action: u,
                             logLevel: n,
-                            params: JSON.stringify(r),
+                            params: JSON.stringify(s),
                         }));
             },
             [e, t],
@@ -3792,8 +3406,8 @@ const TOOLTIP_ACTION = 'tooltip_watched',
     _useLogTimeSpent = (e, t) => {
         const u = _useLog(e, t),
             n = reactExports.useRef(new Map()),
-            r = reactExports.useRef(new Map()),
-            s = reactExports.useCallback(
+            s = reactExports.useRef(new Map()),
+            r = reactExports.useCallback(
                 (e) => {
                     if (!e) return;
                     const t = n.current.get(e);
@@ -3802,59 +3416,59 @@ const TOOLTIP_ACTION = 'tooltip_watched',
                 [n],
             ),
             o = reactExports.useCallback(() => {
-                (n.current.clear(), r.current.clear());
-            }, [n, r]),
+                (n.current.clear(), s.current.clear());
+            }, [n, s]),
             i = reactExports.useCallback(
                 (e) => {
-                    e && void 0 !== n.current.get(e) && void 0 === r.current.get(e) && r.current.set(e, getDate());
+                    e && void 0 !== n.current.get(e) && void 0 === s.current.get(e) && s.current.set(e, getDate());
                 },
-                [n, r],
+                [n, s],
             ),
             a = reactExports.useCallback(
                 (e) => {
                     if (!e) return;
                     const t = n.current.get(e);
                     if (void 0 === t) return;
-                    const u = r.current.get(e);
+                    const u = s.current.get(e);
                     if (void 0 === u) return;
-                    r.current.delete(e);
-                    const s = getDate() - u;
-                    n.current.set(e, t + s);
+                    s.current.delete(e);
+                    const r = getDate() - u;
+                    n.current.set(e, t + r);
                 },
-                [n, r],
+                [n, s],
             ),
             l = reactExports.useCallback(
-                (e, t = 0, s, o) => {
+                (e, t = 0, r, o) => {
                     const i = n.current.get(e);
                     if (void 0 === i) return;
-                    (void 0 !== r.current.get(e) && a(e), n.current.delete(e));
+                    (void 0 !== s.current.get(e) && a(e), n.current.delete(e));
                     const l = (getDate() - i) / MILLISECONDS;
-                    l <= t || ((o = addTimeSpent(o, l)), u(e, s, o));
+                    l <= t || ((o = addTimeSpent(o, l)), u(e, r, o));
                 },
-                [n, r, u, a],
+                [n, s, u, a],
             );
-        return [(e) => s(e), (e, t, u, n) => l(e, t, u, n), () => o(), (e) => i(e), (e) => a(e)];
+        return [(e) => r(e), (e, t, u, n) => l(e, t, u, n), () => o(), (e) => i(e), (e) => a(e)];
     },
     useMetricsLogTimeSpent = (e) => {
-        const [t, u, n, r, s] = _useLogTimeSpent(e, METRICS_GROUP),
+        const [t, u, n, s, r] = _useLogTimeSpent(e, METRICS_GROUP),
             o = reactExports.useCallback(
                 (e) => {
-                    const { action: t, timeLimit: n, logLevel: r } = e;
-                    u(t, n, r, convertMetricsParams(e));
+                    const { action: t, timeLimit: n, logLevel: s } = e;
+                    u(t, n, s, convertMetricsParams(e));
                 },
                 [u],
             );
-        return [(e) => t(e), (e) => o(e), () => n(), (e) => r(e), (e) => s(e)];
+        return [(e) => t(e), (e) => o(e), () => n(), (e) => s(e), (e) => r(e)];
     },
     useTooltipLogger = (e, t) => {
         const [u, n] = useMetricsLogTimeSpent(e),
-            { action: r, timeLimit: s, ...o } = t;
+            { action: s, timeLimit: r, ...o } = t;
         return reactExports.useMemo(
             () => ({
-                onShow: () => u(r || TOOLTIP_ACTION),
-                onHide: () => n({ action: r || TOOLTIP_ACTION, timeLimit: s || TOOLTIP_TIME_LIMIT, ...o }),
+                onShow: () => u(s || TOOLTIP_ACTION),
+                onHide: () => n({ action: s || TOOLTIP_ACTION, timeLimit: r || TOOLTIP_TIME_LIMIT, ...o }),
             }),
-            [r, s, o, u, n],
+            [s, r, o, u, n],
         );
     };
 var RewardType = ((e) => (
@@ -3978,7 +3592,40 @@ var RewardType = ((e) => (
         (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'),
         e
     ))(OverlayClasses || {});
-const NORMALIZE_OVERLAYS_LIST = ['attachment'];
+const NORMALIZE_OVERLAYS_LIST = ['attachment'],
+    BackportTooltip = ({ children: e, ...t }) =>
+        jsxRuntimeExports.jsx(Tooltip, {
+            contentId: R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent('resId'),
+            ignoreShowDelay: !0,
+            ...t,
+            children: e,
+        }),
+    UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
+    getTooltipContentId = (e) =>
+        e ? UB_SIMPLE_TOOLTIPS.SimpleTooltipHtmlContent('resId') : UB_SIMPLE_TOOLTIPS.SimpleTooltipContent('resId'),
+    SimpleTooltip = ({ children: e, body: t, header: u, note: n, alert: s, args: r, ...o }) => {
+        const i = reactExports.useMemo(() => {
+            const e = { ...r, body: t, header: u, note: n, alert: s };
+            for (const t in e) void 0 === e[t] && delete e[t];
+            return e;
+        }, [s, t, u, n, r]);
+        return jsxRuntimeExports.jsx(Tooltip, {
+            contentId: getTooltipContentId(r?.hasHtmlContent),
+            decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
+            args: i,
+            ...o,
+            children: e,
+        });
+    },
+    DynamicTooltipWrapper = ({ children: e, tooltipArgs: t, className: u }) => {
+        if (!t) return e;
+        const n = jsxRuntimeExports.jsx('div', { className: u, children: e });
+        if (t.header || t.body) return jsxRuntimeExports.jsx(SimpleTooltip, { ...t, children: n });
+        const { contentId: s } = t;
+        return s
+            ? jsxRuntimeExports.jsx(Tooltip, { ...t, contentId: s, children: n })
+            : jsxRuntimeExports.jsx(BackportTooltip, { ...t, children: n });
+    };
 function getNumberFormatType(e) {
     return 'gold' === e ? NumberFormatType.GOLD : NumberFormatType.INTEGRAL;
 }
@@ -4119,7 +3766,7 @@ const FormatNumber = ({ value: e, format: t = 'integral' }) => {
         }
     },
     root$1 = 'Reward_root_ab59d545',
-    base$2 = 'Reward_c5dc614c',
+    base$1 = 'Reward_c5dc614c',
     base__s48x48 = 'Reward_base__s48x48_ab59d545',
     base__small = 'Reward_base__small_69779e9c',
     base__s80x80 = 'Reward_base__s80x80_ab59d545',
@@ -4145,9 +3792,9 @@ const FormatNumber = ({ value: e, format: t = 'integral' }) => {
     info__premiumTank = 'Reward_info__premiumTank_67c21f6d',
     title = 'Reward_title_50579ad9',
     timer = 'Reward_timer_98cb5bca',
-    styles$2 = {
+    styles$1 = {
         root: root$1,
-        base: base$2,
+        base: base$1,
         base__s48x48: base__s48x48,
         base__small: base__small,
         base__s80x80: base__s80x80,
@@ -4179,8 +3826,8 @@ const FormatNumber = ({ value: e, format: t = 'integral' }) => {
         image: t,
         isPeriodic: u = !1,
         size: n = ImageSize.Big,
-        special: r,
-        value: s,
+        special: s,
+        value: r,
         valueType: o,
         title: i,
         style: a,
@@ -4189,213 +3836,87 @@ const FormatNumber = ({ value: e, format: t = 'integral' }) => {
         tooltipArgs: d,
         periodicIconTooltipArgs: E,
     }) => {
-        const p = getBottomHighlight(n, r),
-            m = getOverlay(r),
-            h = getFormattedValue(s, o);
+        const p = getBottomHighlight(n, s),
+            m = getOverlay(s),
+            A = getFormattedValue(r, o);
         return jsxRuntimeExports.jsxs('div', {
             className: cx(
-                styles$2.base,
-                styles$2[`base__${n}`],
-                NORMALIZE_OVERLAYS_LIST.includes(e) && styles$2.base__normalize,
+                styles$1.base,
+                styles$1[`base__${n}`],
+                NORMALIZE_OVERLAYS_LIST.includes(e) && styles$1.base__normalize,
                 l,
             ),
             style: a,
             children: [
                 jsxRuntimeExports.jsx(DynamicTooltipWrapper, {
                     tooltipArgs: d,
-                    className: styles$2.tooltipWrapper,
+                    className: styles$1.tooltipWrapper,
                     children: jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
                         children: [
                             jsxRuntimeExports.jsxs('div', {
-                                className: cx(styles$2.image, null == c ? void 0 : c.image),
+                                className: cx(styles$1.image, c?.image),
                                 children: [
                                     p &&
                                         jsxRuntimeExports.jsx('div', {
-                                            className: cx(styles$2.highlight, null == c ? void 0 : c.highlight),
+                                            className: cx(styles$1.highlight, c?.highlight),
                                             style: {
                                                 backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${n}.${p}_highlight)`,
                                             },
                                         }),
                                     t &&
                                         jsxRuntimeExports.jsx('div', {
-                                            className: cx(styles$2.icon, null == c ? void 0 : c.rewardIcon),
+                                            className: cx(styles$1.icon, c?.rewardIcon),
                                             style: { backgroundImage: `url(${t})` },
                                         }),
                                     m &&
                                         jsxRuntimeExports.jsx('div', {
-                                            className: cx(styles$2.overlay, null == c ? void 0 : c.overlay),
+                                            className: cx(styles$1.overlay, c?.overlay),
                                             style: {
                                                 backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${n}.${m}_overlay)`,
                                             },
                                         }),
                                 ],
                             }),
-                            h &&
+                            A &&
                                 jsxRuntimeExports.jsx('div', {
                                     className: cx(
-                                        styles$2.info,
-                                        styles$2[`info__${e}`],
-                                        o === ValueTypes.MULTI && styles$2.info__multi,
-                                        null == c ? void 0 : c.info,
+                                        styles$1.info,
+                                        styles$1[`info__${e}`],
+                                        o === ValueTypes.MULTI && styles$1.info__multi,
+                                        c?.info,
                                     ),
-                                    children: '1' == h ? null : h,
+                                    children: A,
                                 }),
-                            i && jsxRuntimeExports.jsx('div', { className: styles$2.title, children: i }),
+                            i && jsxRuntimeExports.jsx('div', { className: styles$1.title, children: i }),
                         ],
                     }),
                 }),
                 u &&
                     jsxRuntimeExports.jsx(DynamicTooltipWrapper, {
                         tooltipArgs: E,
-                        children: jsxRuntimeExports.jsx('div', {
-                            className: cx(styles$2.timer, null == c ? void 0 : c.periodicIcon),
-                        }),
+                        children: jsxRuntimeExports.jsx('div', { className: cx(styles$1.timer, c?.periodicIcon) }),
                     }),
             ],
         });
-    },
-    getRegionalDateTime = RegionalDateTime.getRegionalDateTime,
+    };
+(() => {
+    const e = new RegExp(
+        [
+            /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
+            /[\(\xAB\u201C\u275D][\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?|[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[\)\xBB\u201D\u275E][\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
+            /[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[ \):;\u2022\u3001\u3002\u300A-\u300D\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]|[\(,1A-Za-\{\}\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
+            /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
+        ]
+            .map((e) => e.source)
+            .join('|'),
+        'gum',
+    );
+})();
+const getRegionalDateTime = RegionalDateTime.getRegionalDateTime,
     getFormattedDateTime = RegionalDateTime.getFormattedDateTime,
     DateTime = ({ datetime: e, format: t = DateTimeFormatsEnum.ShortDate, isConvertedToLocal: u = !0 }) =>
         Object.values(DateTimeFormatsEnum).includes(t) ? getRegionalDateTime(e, t, u) : getFormattedDateTime(e, t, u),
-    DateTime$1 = reactExports.memo(DateTime);
-function isSerializableReactNode(e) {
-    return (
-        !(null != e && !['string', 'number', 'boolean'].includes(typeof e)) ||
-        (!reactExports.isValidElement(e) && !!Array.isArray(e) && e.every(isSerializableReactNode))
-    );
-}
-const base$1 = 'MultilineOverflow_8834bd8e',
-    content = 'MultilineOverflow_content_b539970d',
-    styles$1 = { base: base$1, content: content };
-function isSerializableParams(e) {
-    return !e || Object.values(e).every(isSerializableReactNode);
-}
-const MultilineOverflow = reactExports.forwardRef(function (
-        {
-            text: e,
-            brackets: t,
-            params: u,
-            formatters: n,
-            upgradeLegacy: r,
-            split: s = !0,
-            onMouseEnter: o,
-            onMouseLeave: i,
-            onClick: a,
-            tooltipDisabled: l = !1,
-            tooltip: c,
-            className: d,
-            classNames: E,
-            ...p
-        },
-        m,
-    ) {
-        const h = reactExports.useRef(null),
-            [_, A] = reactExports.useState(!1);
-        reactExports.useEffect(() => {
-            if (0 === e.length) return;
-            const t = h.current;
-            if (!t) return;
-            const u = document.createElement('div');
-            let n = noop$1;
-            function r() {
-                if (!t) return;
-                (n(),
-                    (u.style.visibility = 'hidden'),
-                    (u.className = cx(styles$1.content, t.children[0].className)),
-                    (u.innerHTML = ''),
-                    t.appendChild(u));
-                for (let n of t.children[0].childNodes.values()) {
-                    if (n instanceof HTMLElement) {
-                        const e = n.cloneNode(!0);
-                        u.appendChild(e);
-                    }
-                    if (n.nodeType === Node.TEXT_NODE) {
-                        const e = document.createTextNode(n.nodeValue ?? '');
-                        u.appendChild(e);
-                    }
-                }
-                const e = document.createElement('div');
-                ((e.innerHTML = '...'),
-                    u.appendChild(e),
-                    (n = createLayoutReadyInEffect$1(() => {
-                        var n, r;
-                        const s = [];
-                        for (let e = u.childNodes.length - 2; 0 !== e; e--) {
-                            const n = u.childNodes[e];
-                            if (n instanceof HTMLElement) {
-                                if (n.offsetTop + n.offsetHeight <= t.offsetHeight) break;
-                                s.push(n);
-                            }
-                        }
-                        s.forEach((e) => e.remove());
-                        const o = null == (n = u.lastChild) ? void 0 : n.previousSibling;
-                        (0 === s.length
-                            ? (null == (r = u.lastChild) || r.remove(), A(!1))
-                            : o.offsetWidth + o.offsetLeft + e.offsetWidth > t.offsetWidth
-                              ? (o.remove(), A(!0))
-                              : A(!0),
-                            (u.style.visibility = ''));
-                    })));
-            }
-            const s = new ResizeObserver(r);
-            return (
-                s.observe(t),
-                new DisposeBuilder()
-                    .add(() => n())
-                    .add(addEventListener(window, 'resize', r))
-                    .add(s.disconnect.bind(s))
-                    .add(u.remove.bind(u)).dispose
-            );
-        }, [m, e]);
-        const f = isSerializableParams(u),
-            F = useParamTooltip(
-                'format_text',
-                reactExports.useMemo(
-                    () => ({
-                        text: e,
-                        params: f ? u : void 0,
-                        split: s,
-                        upgradeLegacy: r,
-                        brackets: t,
-                        resId: resources.resolve('views').read((e) => e.mono.tooltips.tooltips('resId')),
-                    }),
-                    [e, t, s, r, u, f],
-                ),
-            ),
-            g = c ?? F;
-        if (
-            (reactExports.useEffect(() => {
-                l || _ || g.onMouseLeave();
-            }, [_, g, c, l, f]),
-            0 === e.length)
-        )
-            return null;
-        return jsxRuntimeExports.jsx('div', {
-            ...p,
-            onMouseEnter: function (e) {
-                (null == o || o(e), _ && !l && g.onMouseEnter(e));
-            },
-            onClick: function (e) {
-                (null == a || a(e), l || g.onClick());
-            },
-            onMouseLeave: function (e) {
-                (null == i || i(e), l || g.onMouseLeave());
-            },
-            ref: assignRefs([m, h]),
-            className: cx(styles$1.base, d, null == E ? void 0 : E.base),
-            children: jsxRuntimeExports.jsx(FormatText, {
-                text: e,
-                brackets: t,
-                params: u,
-                upgradeLegacy: r,
-                split: s,
-                formatters: n,
-                className: null == E ? void 0 : E.text,
-                style: { visibility: 'hidden' },
-            }),
-        });
-    }),
+    DateTime$1 = reactExports.memo(DateTime),
     clamp = (e, t, u) => (u < e ? e : u > t ? t : u),
     createLayoutReadyInEffect = (e) => {
         let t,
@@ -4417,8 +3938,10 @@ const useMount = (e) => {
     },
     useUnmount = (e) => {
         reactExports.useEffect(() => e, []);
-    };
-function requestAnimationFrameLoop(e) {
+    },
+    DEFAULT_NAME_KEYFRAME = 'Point',
+    THRESHOLD = 0.02;
+function createLoop(e) {
     let t = 0;
     return [
         function u() {
@@ -4429,16 +3952,14 @@ function requestAnimationFrameLoop(e) {
         },
     ];
 }
-const DEFAULT_NAME_KEYFRAME = 'Point',
-    THRESHOLD = 0.02,
-    VideoForwarded = reactExports.forwardRef(function (
+const VideoForwarded = reactExports.forwardRef(function (
         {
             src: e,
             className: t,
             autoplay: u = !1,
             style: n,
-            loop: r = !1,
-            isPrebufferKeyframes: s,
+            loop: s = !1,
+            isPrebufferKeyframes: r,
             keyframesNameConfig: o,
             onClick: i,
             ...a
@@ -4448,47 +3969,60 @@ const DEFAULT_NAME_KEYFRAME = 'Point',
         const c = l,
             d = reactExports.useRef(null);
         return (
-            useMount(() =>
-                env.view.events.onDisplayChanged((e, t) => {
-                    var u, n;
-                    (t === displayStatus.hidden && (null == (u = d.current) || u.pause()),
-                        t === displayStatus.shown && (null == (n = d.current) || n.play()));
-                }),
-            ),
+            useMount(() => {
+                let e = !1;
+                return env.view.events.onDisplayChanged((t, u) => {
+                    const n = d.current;
+                    n &&
+                        (u === env.view.displayStatus.hidden
+                            ? ((e = n.paused), n.pause())
+                            : e || u !== env.view.displayStatus.shown || n.play());
+                });
+            }),
+            useMount(() => {
+                let e = !1;
+                return env.client.events.onMinimize((t) => {
+                    const u = d.current;
+                    u && (t ? ((e = u.paused), u.pause()) : e || u.play());
+                });
+            }),
             reactExports.useEffect(
                 () =>
                     createLayoutReadyInEffect(() => {
                         const e = d.current;
-                        if (!c || !e || !s) return void ((null == e ? void 0 : e.cohFastSeek) && (e.cohFastSeek = !1));
-                        const t = e.cohGetKeyframeTimestamps();
+                        if (!c || !e || !r) return void (e?.cohFastSeek && (e.cohFastSeek = !1));
+                        const t = e.cohGetKeyframeTimestamps ? e.cohGetKeyframeTimestamps() : [];
                         t.length > 0
                             ? ((e.cohFastSeek = !0),
                               t.map((t) => {
-                                  null == e || e.cohPrebufferKeyframe(t);
+                                  e?.cohPrebufferKeyframe && e.cohPrebufferKeyframe(t);
                               }))
                             : console.warn("Can't prebuffered keyframes, keyframes was not found");
                     }),
-                [s, c],
+                [r, c],
             ),
             reactExports.useEffect(() => {
                 if (c && d.current) {
                     const e = { changeTimeHandlers: [], changeKeyframeHandlers: [], changeTimeLoop: noop },
                         t = () => {
                             let t = 0;
-                            const [u, n] = requestAnimationFrameLoop(() => {
+                            const [u, n] = createLoop(() => {
                                 if (d.current) {
                                     const { currentTime: u, duration: n } = d.current;
                                     if (
                                         (t !== u &&
                                             (e.changeTimeHandlers.forEach((e) => e({ currentTime: u, duration: n })),
                                             (t = u)),
-                                        d.current.paused || !c || !s)
+                                        d.current.paused || !c || !r)
                                     )
                                         return;
-                                    const r = d.current.cohGetKeyframeTimestamps();
-                                    r.forEach((t, n) => {
-                                        u > r[n] - THRESHOLD &&
-                                            u < r[n] &&
+                                    const s = d.current.cohGetKeyframeTimestamps
+                                        ? d.current.cohGetKeyframeTimestamps()
+                                        : [];
+                                    s.forEach((t, n) => {
+                                        void 0 !== s[n] &&
+                                            u > s[n] - THRESHOLD &&
+                                            u < s[n] &&
                                             e.changeKeyframeHandlers.forEach((e) => {
                                                 const u = Object.keys(o ?? {})[n];
                                                 return e({
@@ -4524,130 +4058,66 @@ const DEFAULT_NAME_KEYFRAME = 'Point',
                                     : u.splice(n, 1);
                             }
                         ),
-                        r = () => {
-                            var e;
-                            return null == (e = d.current) ? void 0 : e.currentTime;
-                        },
-                        i = () => {
-                            var e;
-                            return null == (e = d.current) ? void 0 : e.duration;
-                        },
+                        s = () => d.current?.currentTime,
+                        i = () => d.current?.duration,
                         a = (e) => {
                             d.current && (d.current.currentTime = clamp(0, d.current.duration, e));
                         },
-                        l = () => {
-                            var e;
-                            return null == (e = d.current) ? void 0 : e.play();
-                        },
-                        E = () => {
-                            var e;
-                            return null == (e = d.current) ? void 0 : e.pause();
-                        },
+                        l = () => d.current?.play(),
+                        E = () => d.current?.pause(),
                         p = () => {
                             (E(), a(0));
                         },
-                        m = () => {
-                            var e;
-                            return (null == (e = d.current) ? void 0 : e.cohGetKeyframeTimestamps()) ?? [];
-                        },
-                        h = (e) => {
+                        m = () => (d.current?.cohGetKeyframeTimestamps ? d.current.cohGetKeyframeTimestamps() : []),
+                        A = (e) => {
                             (a(e), l());
                         },
-                        _ = (e) => {
+                        F = (e) => {
                             (a(e), E());
                         },
-                        A = () => {
-                            var t;
-                            ((e.changeTimeHandlers = []),
-                                (e.changeKeyframeHandlers = []),
-                                null == (t = e.changeTimeLoop) || t.call(e));
+                        h = () => {
+                            ((e.changeTimeHandlers = []), (e.changeKeyframeHandlers = []), e.changeTimeLoop?.());
                         },
-                        f = (e, t) => {
-                            var u;
-                            return (
-                                null == (u = d.current) || u.addEventListener(e, t),
-                                () => {
-                                    var u;
-                                    return null == (u = d.current) ? void 0 : u.removeEventListener(e, t);
-                                }
-                            );
-                        },
-                        F = (e, t) => {
-                            var u;
-                            return (
-                                null == (u = d.current) || u.removeEventListener(e, t),
-                                () => {
-                                    var u;
-                                    return null == (u = d.current) ? void 0 : u.removeEventListener(e, t);
-                                }
-                            );
-                        };
+                        f = (e, t) => (d.current?.addEventListener(e, t), () => d.current?.removeEventListener(e, t)),
+                        g = (e, t) => (
+                            d.current?.removeEventListener(e, t),
+                            () => d.current?.removeEventListener(e, t)
+                        );
                     return (
                         (c.current = {
                             on: f,
-                            off: F,
+                            off: g,
                             play: l,
                             pause: E,
                             stop: p,
-                            cleanup: A,
-                            getCurrentTime: r,
+                            cleanup: h,
+                            getCurrentTime: s,
                             getDuration: i,
                             getCachedKeyframes: m,
-                            goToAndPlay: h,
-                            goToAndStop: _,
+                            goToAndPlay: A,
+                            goToAndStop: F,
                             setCurrentTime: a,
                             domRef: d.current,
                             onChangeTime: u,
                             onKeyframes: n,
                         }),
                         () => {
-                            (A(), (c.current = null));
+                            (h(), (c.current = null));
                         }
                     );
                 }
-            }, [o, c, s]),
+            }, [o, c, r]),
             reactExports.useEffect(() => {
                 d.current && u && d.current.play();
-            }, [u, r]),
-            reactExports.useEffect(() => {
-                if (d.current)
-                    return () => {
-                        d.current && d.current.pause();
-                    };
-            }, []),
-            jsxRuntimeExports.jsx('video', { src: e, className: t, style: n, loop: r, ref: d, onClick: i, ...a })
+            }, [u, s]),
+            useUnmount(() => {
+                d.current?.pause();
+            }),
+            jsxRuntimeExports.jsx('video', { src: e, className: t, style: n, loop: s, ref: d, onClick: i, ...a })
         );
     }),
     Video = reactExports.memo(VideoForwarded),
-    NO_RAF_ID = 0;
-function useSkipFrame() {
-    const e = reactExports.useRef(NO_RAF_ID);
-    return (
-        useUnmount(() => {
-            window.cancelAnimationFrame(e.current);
-        }),
-        reactExports.useMemo(
-            () => ({
-                run: (t) => {
-                    (window.cancelAnimationFrame(e.current),
-                        (e.current = window.requestAnimationFrame(() => {
-                            e.current = window.requestAnimationFrame(() => {
-                                ((e.current = NO_RAF_ID), t());
-                            });
-                        })));
-                },
-                clear: () => {
-                    (window.cancelAnimationFrame(e.current), (e.current = NO_RAF_ID));
-                },
-                get isRunning() {
-                    return e.current !== NO_RAF_ID;
-                },
-            }),
-            [],
-        )
-    );
-}
-const root = 'Tooltipdecorator_root_a254689f',
+    root = 'Tooltipdecorator_root_a254689f',
     base = 'Tooltipdecorator_ea72f443',
     decorator = 'Tooltipdecorator_decorator_3580e101',
     styles = {
@@ -4656,14 +4126,16 @@ const root = 'Tooltipdecorator_root_a254689f',
         'base__theme-default': 'Tooltipdecorator_base__theme-default_a254689f',
         decorator: decorator,
     },
-    TooltipDecorator = React.forwardRef(function ({ children: e, className: t, theme: u = 'default', ...n }, r) {
-        const s = useSkipFrame(),
-            o = React.useRef(null);
+    TooltipDecorator = React.forwardRef(function ({ children: e, className: t, theme: u = 'default', ...n }, s) {
+        const r = React.useRef(null);
         return (
             useMount(() => {
-                s.run(() => {
-                    const e = o.current;
-                    if (!e) return;
+                const e = r.current;
+                if (!e)
+                    return void console.warn(
+                        'Uncexpected to have base div as not setup in ref to calculate and invoke resize',
+                    );
+                const t = new ResizeObserver(() => {
                     const t = e.scrollWidth,
                         u = e.scrollHeight;
                     env.view.resize(t, u);
@@ -4675,12 +4147,13 @@ const root = 'Tooltipdecorator_root_a254689f',
                         bottom: parseInt(n.getPropertyValue('padding-bottom'), 10),
                     });
                 });
+                return (t.observe(e), t.disconnect);
             }),
             jsxRuntimeExports.jsx('div', {
                 ...n,
                 className: cx(styles.base, styles[`base__theme-${u}`], t),
                 ref: function (e) {
-                    ((o.current = e), 'function' == typeof r ? r(e) : r && (r.current = e));
+                    ((r.current = e), 'function' == typeof s ? s(e) : s && (s.current = e));
                 },
                 children: jsxRuntimeExports.jsx('div', { className: styles.decorator, children: e }),
             })
@@ -4693,7 +4166,7 @@ export {
     DynamicTooltipWrapper as D,
     ExtendedText as E,
     FormatText as F,
-    mapRange as G,
+    ValueTypes as G,
     TooltipDecorator as H,
     ImageSize as I,
     JSXBuilder as J,
@@ -4717,19 +4190,19 @@ export {
     initializeModelWithContext as i,
     DateTimeFormatsEnum as j,
     keyCodes as k,
-    resources as l,
+    mapRange as l,
     map as m,
-    useSounds as n,
-    useSimpleTooltip as o,
+    noop$1 as n,
+    resources as o,
     play as p,
-    useSpecialTooltip as q,
+    useSounds as q,
     runView as r,
-    identity as s,
-    noop$1 as t,
+    useSimpleTooltip as s,
+    useSpecialTooltip as t,
     useMedia as u,
-    graphicsQuality as v,
-    get as w,
-    getSize$1 as x,
-    useMount$1 as y,
-    ValueTypes as z,
+    identity as v,
+    graphicsQuality$1 as w,
+    get as x,
+    getSize$2 as y,
+    useMount$1 as z,
 };

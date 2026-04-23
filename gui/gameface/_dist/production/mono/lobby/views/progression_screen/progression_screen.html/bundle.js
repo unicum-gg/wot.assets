@@ -1,26 +1,26 @@
-import { j as e, f as s, r as a, S as r, R as t } from '../../../chunks/vendor.js';
+import { j as e, f as s, r as a, W as r, R as t } from '../../../chunks/vendor.js';
 import {
     i as o,
     o as n,
-    b$ as i,
-    al as c,
-    a3 as l,
+    c2 as c,
+    am as i,
+    a4 as l,
     B as d,
-    cX as _,
-    cY as m,
-    c2 as b,
-    bX as u,
-    b2 as v,
-    m as f,
+    d1 as m,
+    d2 as _,
+    c6 as u,
+    b_ as b,
+    b4 as f,
+    m as v,
     ax as g,
-    aR as p,
-    bR as x,
-    c0 as j,
-    cZ as N,
+    aS as p,
+    bU as x,
+    c3 as j,
+    d3 as N,
     E as S,
-    cV as h,
-    cu as k,
-    c3 as w,
+    cE as h,
+    cz as w,
+    c7 as k,
 } from '../../../chunks/lib.js';
 import { L as B, l as C, s as P } from '../../../chunks/level_badge.js';
 import { F as L, A as R } from '../../../chunks/event_banner_state.js';
@@ -44,68 +44,61 @@ const [T, y] = o()(
             close: e.createCallbackNoArgs('onClose'),
         }),
     ),
-    I = {
-        base: 'Glow_fb7467e0',
-        sparksBgFx: 'Glow_sparksBgFx_d40a78ff',
-        base__appearing: 'Glow_base__appearing_a44066b8',
-        sparksBg: 'Glow_sparksBg_80ab367d',
-        video: 'Glow_video_8a929657',
-        base__visible: 'Glow_base__visible_a44066b8',
-    },
-    E = n.resolve('videos');
-function M({ isAppearing: a, className: r }) {
+    I = 'Glow_fb7467e0',
+    E = 'Glow_sparksBgFx_d40a78ff',
+    M = 'Glow_base__appearing_a44066b8',
+    A = 'Glow_sparksBg_80ab367d',
+    O = 'Glow_video_8a929657',
+    $ = 'Glow_base__visible_a44066b8',
+    G = n.resolve('videos');
+function F({ isAppearing: a, className: r }) {
     return e.jsxs('div', {
-        className: s(I.base, a ? I.base__appearing : I.base__visible, r),
+        className: s(I, a ? M : $, r),
         children: [
-            e.jsx('div', { className: I.sparksBgFx }),
-            e.jsx('div', { className: I.sparksBg }),
-            e.jsx(i, {
-                className: I.video,
-                src: E.readOrEmpty('flProgressionScreen.sparks_orange'),
-                loop: !0,
-                autoplay: !0,
-            }),
+            e.jsx('div', { className: E }),
+            e.jsx('div', { className: A }),
+            e.jsx(c, { className: O, src: G.readOrEmpty('flProgressionScreen.sparks_orange'), loop: !0, autoplay: !0 }),
         ],
     });
 }
-const A = 'ClaimRewardButton_6a9b8fa0',
-    O = 'ClaimRewardButton_glow_433d746e',
-    $ = 'ClaimRewardButton_container_741d3600',
-    F = 'ClaimRewardButton_base__appearing_a2ccee13',
-    G = 'ClaimRewardButton_base__visible_a2ccee13',
-    V = 'ClaimRewardButton_button_7e382552',
-    J = 'ClaimRewardButton_bubble_66a9d9b0',
-    W = 'ClaimRewardButton_valueContainer_937dcb63',
-    X = n.resolve('strings');
-function Y({ amount: r, isAppearing: t, size: o, onClick: n }) {
-    const i = c({ body: X.readOrEmpty('fl_progression_screen.claimRewardsTooltip') }),
-        b = l();
+const W = 'ClaimRewardButton_6a9b8fa0',
+    J = 'ClaimRewardButton_glow_433d746e',
+    V = 'ClaimRewardButton_container_741d3600',
+    U = 'ClaimRewardButton_base__appearing_a2ccee13',
+    q = 'ClaimRewardButton_base__visible_a2ccee13',
+    D = 'ClaimRewardButton_button_7e382552',
+    H = 'ClaimRewardButton_bubble_66a9d9b0',
+    K = 'ClaimRewardButton_valueContainer_937dcb63',
+    Q = n.resolve('strings');
+function X({ amount: r, isAppearing: t, size: o, onClick: n }) {
+    const c = i({ body: Q.readOrEmpty('fl_progression_screen.claimRewardsTooltip') }),
+        u = l();
     return (
         a.useEffect(() => {
-            t && b.play('progression_rewards_appearing');
-        }, [t, b]),
+            t && u.play('progression_rewards_appearing');
+        }, [t, u]),
         e.jsxs('div', {
-            className: s(A, t ? F : G),
+            className: s(W, t ? U : q),
             children: [
-                e.jsx(M, { isAppearing: t, className: O }),
+                e.jsx(F, { isAppearing: t, className: J }),
                 e.jsxs('div', {
-                    className: $,
+                    className: V,
                     children: [
                         e.jsx(d, {
-                            ...i,
+                            ...c,
                             theme: d.themes.primary,
                             size: o,
-                            className: V,
+                            className: D,
                             onClick: n,
-                            children: X.readOrEmpty('fl_progression_screen.claimRewards'),
+                            children: Q.readOrEmpty('fl_progression_screen.claimRewards'),
                         }),
                         e.jsx('div', {
-                            className: J,
-                            children: e.jsx(_.Root, {
-                                children: e.jsx(_.Value, {
+                            className: H,
+                            children: e.jsx(m.Root, {
+                                children: e.jsx(m.Value, {
                                     value: r,
-                                    size: m.medium,
-                                    classNames: { valueContainer: W },
+                                    size: _.medium,
+                                    classNames: { valueContainer: K },
                                 }),
                             }),
                         }),
@@ -115,119 +108,119 @@ function Y({ amount: r, isAppearing: t, size: o, onClick: n }) {
         })
     );
 }
-const Z = 'LevelInformation_9271d1b9',
-    q = 'LevelInformation_glow_6d32019',
-    D = 'LevelInformation_labelContainer_f4fe6337',
-    H = 'LevelInformation_eventState_b7f5b33e',
-    K = 'LevelInformation_timerLabel_45f69a5d',
-    Q = 'LevelInformation_timerIcon_9d27acc0',
-    U = 'LevelInformation_maxLevelContainer_9271d1b9',
-    ee = 'LevelInformation_maxLevelReachedMessage_c2d7a634',
-    se = 'LevelInformation_currentPoints_6c13d58c',
-    ae = 'LevelInformation_separator_b7f5b33e',
-    re = 'LevelInformation_needPoints_e8a11fbf',
-    te = 'LevelInformation_upIcon_efa7dc88',
-    oe = n.resolve('strings'),
-    ne = n.resolve('intl');
-function ie({
+const Y = 'LevelInformation_9271d1b9',
+    Z = 'LevelInformation_glow_6d32019',
+    ee = 'LevelInformation_labelContainer_e9afd167',
+    se = 'LevelInformation_eventState_b7f5b33e',
+    ae = 'LevelInformation_timerLabel_bfb2cd22',
+    re = 'LevelInformation_timerIcon_9d27acc0',
+    te = 'LevelInformation_maxLevelContainer_9271d1b9',
+    oe = 'LevelInformation_maxLevelReachedMessage_c2d7a634',
+    ne = 'LevelInformation_currentPoints_6c13d58c',
+    ce = 'LevelInformation_separator_b7f5b33e',
+    ie = 'LevelInformation_needPoints_e8a11fbf',
+    le = 'LevelInformation_upIcon_efa7dc88',
+    de = n.resolve('strings'),
+    me = n.resolve('intl');
+function _e({
     level: a,
     isMaxLevel: r,
     currentPoints: t,
     needPoints: o,
     className: n,
-    badgeSize: i,
-    frontlineState: c,
+    badgeSize: c,
+    frontlineState: i,
     countdownSeconds: l,
 }) {
     return e.jsxs('div', {
-        className: s(Z, n),
+        className: s(Y, n),
         children: [
-            e.jsx(B, { level: a, size: i, showAnimation: r }),
-            c === L
+            e.jsx(B, { level: a, size: c, showAnimation: r }),
+            i === L
                 ? e.jsx('div', {
-                      className: D,
-                      children: e.jsx(b, { text: oe.readOrEmpty('fl_progression_screen.eventEnded'), className: H }),
+                      className: ee,
+                      children: e.jsx(u, { text: de.readOrEmpty('fl_progression_screen.eventEnded'), className: se }),
                   })
                 : r
                   ? e.jsxs('div', {
-                        className: U,
+                        className: te,
                         children: [
-                            e.jsx(M, { className: q }),
+                            e.jsx(F, { className: Z }),
                             e.jsx('div', {
-                                className: ee,
-                                children: oe.readOrEmpty('fl_progression_screen.maxTierReachedMessage'),
+                                className: oe,
+                                children: de.readOrEmpty('fl_progression_screen.maxTierReachedMessage'),
                             }),
                         ],
                     })
                   : e.jsx('div', {
-                        className: D,
+                        className: ee,
                         children:
-                            c === R
-                                ? e.jsx(b, {
-                                      text: oe.readOrEmpty('fl_progression_screen.eventStarts'),
-                                      className: H,
-                                      params: { left: e.jsx(u, { classNames: { icon: Q, label: K }, start: l }) },
+                            i === R
+                                ? e.jsx(u, {
+                                      text: de.readOrEmpty('fl_progression_screen.eventStarts'),
+                                      className: se,
+                                      params: { left: e.jsx(b, { classNames: { icon: re, label: ae }, start: l }) },
                                   })
                                 : e.jsxs(e.Fragment, {
                                       children: [
-                                          e.jsx('div', { className: se, children: ne.formatNumber('integral', t) }),
+                                          e.jsx('div', { className: ne, children: me.formatNumber('integral', t) }),
                                           e.jsx('div', {
-                                              className: ae,
-                                              children: oe.readOrEmpty('common.common.slash'),
+                                              className: ce,
+                                              children: de.readOrEmpty('common.common.slash'),
                                           }),
-                                          e.jsx('div', { className: re, children: ne.formatNumber('gold', o) }),
-                                          e.jsx('div', { className: te }),
+                                          e.jsx('div', { className: ie, children: me.formatNumber('gold', o) }),
+                                          e.jsx('div', { className: le }),
                                       ],
                                   }),
                     }),
         ],
     });
 }
-const ce = 'LevelBlock_4febf6d6',
-    le = 'LevelBlock_level_d685b90a',
-    de = r(function ({ className: a }) {
+const ue = 'LevelBlock_4febf6d6',
+    be = 'LevelBlock_level_d685b90a',
+    fe = r(function ({ className: a }) {
         const { model: r, controls: t } = y(),
             o = r.frontlineState.get(),
             n = r.amountRewardsToClaim.get(),
-            i = v(
+            c = f(
                 { buttonSize: d.sizes.small, badgeSize: C.x130 },
                 { large: { buttonSize: d.sizes.medium, badgeSize: C.x190 } },
             );
         return e.jsxs('div', {
-            className: s(ce, a),
+            className: s(ue, a),
             children: [
-                e.jsx(ie, {
+                e.jsx(_e, {
                     level: o === R ? 0 : r.level.get(),
                     isMaxLevel: r.isMaxLevel.get(),
                     currentPoints: r.currentPoints.get(),
                     frontlineState: o,
                     countdownSeconds: r.countdownSeconds.get(),
                     needPoints: r.neededPoints.get(),
-                    className: le,
-                    badgeSize: i.badgeSize,
+                    className: be,
+                    badgeSize: c.badgeSize,
                 }),
                 n > 0 &&
-                    e.jsx(Y, {
+                    e.jsx(X, {
                         amount: n,
-                        size: i.buttonSize,
+                        size: c.buttonSize,
                         onClick: t.claimRewards,
                         isAppearing: r.areRewardsJustEarned.get(),
                     }),
             ],
         });
     }),
-    _e = 'CustomProgressBar_f7c1daea',
-    me = 'CustomProgressBar_content_a6264339',
-    be = 'CustomProgressBar_background_3f6eaea9',
-    ue = 'CustomProgressBar_fillPattern_372b4dd0',
-    ve = 'CustomProgressBar_completeProgressCover_35fea46d',
-    fe = 'CustomProgressBar_pointer_21613146',
-    ge = r(function ({ className: r }) {
+    ve = 'CustomProgressBar_f7c1daea',
+    ge = 'CustomProgressBar_content_a6264339',
+    pe = 'CustomProgressBar_background_3f6eaea9',
+    xe = 'CustomProgressBar_fillPattern_372b4dd0',
+    je = 'CustomProgressBar_completeProgressCover_35fea46d',
+    Ne = 'CustomProgressBar_pointer_21613146',
+    Se = r(function ({ className: r }) {
         const { model: t } = y(),
             o = t.level.get(),
             n = t.tiersSections.get(),
-            i = t.currentPoints.get(),
-            c = t.neededPoints.get(),
+            c = t.currentPoints.get(),
+            i = t.neededPoints.get(),
             l = a.useMemo(() => {
                 const e = 100 / n.length;
                 let s = 0;
@@ -237,45 +230,45 @@ const ce = 'LevelBlock_4febf6d6',
                         if (s.start === s.end) a.push(e);
                         else {
                             const r = s.end - s.start + 1;
-                            f(r, () => a.push(e / r));
+                            v(r, () => a.push(e / r));
                         }
                     }),
-                    f(o, (e) => {
-                        ((s += a[e] || 0), e === o - 1 && a.length > e + 1 && (s += ((a[e + 1] || 0) * i) / c));
+                    v(o, (e) => {
+                        ((s += a[e] || 0), e === o - 1 && a.length > e + 1 && (s += ((a[e + 1] || 0) * c) / i));
                     }),
                     s
                 );
-            }, [n, o, i, c]),
-            [d, _] = a.useState(0),
-            m = a.useRef(null),
-            { breakpoint: b } = g();
+            }, [n, o, c, i]),
+            [d, m] = a.useState(0),
+            _ = a.useRef(null),
+            { breakpoint: u } = g();
         return (
             a.useEffect(() => {
                 p(() => {
-                    const e = m.current;
-                    e && _(Math.round((x(e.offsetWidth) * l) / 100) - 2);
+                    const e = _.current;
+                    e && m(Math.round((x(e.offsetWidth) * l) / 100) - 2);
                 });
-            }, [m, l, b]),
+            }, [_, l, u]),
             e.jsx('div', {
-                className: s(_e, r),
+                className: s(ve, r),
                 children: e.jsxs('div', {
-                    className: me,
-                    ref: m,
+                    className: ge,
+                    ref: _,
                     children: [
                         e.jsx(j, {
                             value: l,
                             maxValue: 100,
-                            classNames: { background: be },
-                            filledClassNames: { pattern: ue },
+                            classNames: { background: pe },
+                            filledClassNames: { pattern: xe },
                         }),
-                        e.jsx('div', { className: fe, style: { left: `${d}rem` } }),
-                        t.isMaxLevel.get() && e.jsx('div', { className: ve }),
+                        e.jsx('div', { className: Ne, style: { left: `${d}rem` } }),
+                        t.isMaxLevel.get() && e.jsx('div', { className: je }),
                     ],
                 }),
             })
         );
     }),
-    pe = {
+    he = {
         root: 'Background_root_26effab7',
         'media-wrapper': 'Background_media-wrapper_26effab7',
         base: 'Background_76b8cae4',
@@ -288,67 +281,62 @@ const ce = 'LevelBlock_4febf6d6',
         bottom__white: 'Background_bottom__white_2d624d43',
         bottom__black: 'Background_bottom__black_2cee6b06',
     };
-function xe({ state: a, className: r }) {
+function we({ state: a, className: r }) {
     return e.jsxs('div', {
-        className: s(pe.base, pe[`base__${a}`], r),
+        className: s(he.base, he[`base__${a}`], r),
         children: [
-            a === Me.Completed &&
+            a === Ue.Completed &&
                 e.jsxs('div', {
-                    className: pe.layer,
+                    className: he.layer,
                     children: [
-                        e.jsx('div', { className: s(pe.top, pe.top__black) }),
-                        e.jsx('div', { className: s(pe.bottom, pe.bottom__black) }),
+                        e.jsx('div', { className: s(he.top, he.top__black) }),
+                        e.jsx('div', { className: s(he.bottom, he.bottom__black) }),
                     ],
                 }),
             e.jsxs('div', {
-                className: pe.layer,
+                className: he.layer,
                 children: [
-                    e.jsx('div', { className: s(pe.top, pe.top__white) }),
-                    e.jsx('div', { className: s(pe.bottom, pe.bottom__white) }),
+                    e.jsx('div', { className: s(he.top, he.top__white) }),
+                    e.jsx('div', { className: s(he.bottom, he.bottom__white) }),
                 ],
             }),
         ],
     });
 }
-const je = {
-    base: 'SectionSeparator_d0aad5ae',
-    top: 'SectionSeparator_top_9a011b6f',
-    bottom: 'SectionSeparator_bottom_ab2fed8e',
-};
-function Ne({ className: a }) {
+const ke = 'SectionSeparator_d0aad5ae',
+    Be = 'SectionSeparator_top_9a011b6f',
+    Ce = 'SectionSeparator_bottom_ab2fed8e';
+function Pe({ className: a }) {
     return e.jsxs('div', {
-        className: s(je.base, a),
-        children: [e.jsx('div', { className: je.top }), e.jsx('div', { className: je.bottom })],
+        className: s(ke, a),
+        children: [e.jsx('div', { className: Be }), e.jsx('div', { className: Ce })],
     });
 }
-const Se = {
-        base: 'TiersSeparators_be26eda0',
-        container: 'TiersSeparators_container_879f1c8',
-        top: 'TiersSeparators_top_dd3750ab',
-        bottom: 'TiersSeparators_bottom_9f4aa714',
-    },
-    he = 2;
-function ke({ amount: r, className: t }) {
+const Le = 'TiersSeparators_be26eda0',
+    Re = 'TiersSeparators_container_879f1c8',
+    ze = 'TiersSeparators_top_dd3750ab',
+    Te = 'TiersSeparators_bottom_9f4aa714';
+function ye({ amount: r, className: t }) {
     const [o, n] = a.useState(0),
-        i = a.useRef(null),
-        { breakpoint: c } = g();
+        c = a.useRef(null),
+        { breakpoint: i } = g();
     return (
         a.useEffect(() => {
             p(() => {
-                const e = i.current;
-                e && n(Math.floor(x(e.offsetWidth) / (r + 1)) - he);
+                const e = c.current;
+                e && n(Math.floor(x(e.offsetWidth) / (r + 1)) - 2);
             });
-        }, [i, r, c]),
+        }, [c, r, i]),
         e.jsx('div', {
-            className: s(Se.base, t),
-            ref: i,
-            children: f(r, (s) =>
+            className: s(Le, t),
+            ref: c,
+            children: v(r, (s) =>
                 e.jsxs(
                     'div',
                     {
-                        className: Se.container,
+                        className: Re,
                         style: { marginLeft: `${o}rem` },
-                        children: [e.jsx('div', { className: Se.top }), e.jsx('div', { className: Se.bottom })],
+                        children: [e.jsx('div', { className: ze }), e.jsx('div', { className: Te })],
                     },
                     `separator_${s}`,
                 ),
@@ -356,68 +344,68 @@ function ke({ amount: r, className: t }) {
         })
     );
 }
-const we = 'TiersSection_b122bb9f',
-    Be = 'TiersSection_background_ddc4d980',
-    Ce = 'TiersSection_doneIcon_cb7f26ee',
-    Pe = 'TiersSection_glow_9a0c5716',
-    Le = 'TiersSection_tiers_ea289110',
-    Re = 'TiersSection_tiers__locked_9c1ac494',
-    ze = 'TiersSection_tiersSeparators_42b277a8',
-    Te = 'TiersSection_content_32433d0c',
-    ye = 'TiersSection_rewardsContainer_efc03b65',
-    Ie = 'TiersSection_reward_5fc7980a',
-    Ee = 'TiersSection_sectionSeparator_ddc4d980';
-var Me = ((e) => ((e.Locked = 'locked'), (e.InProgress = 'inProgress'), (e.Completed = 'completed'), e))(Me || {});
-function Ae({ start: r, end: o, rewards: n, currentLevel: i, withSeparator: c = !1, frontlineState: l }) {
+const Ie = 'TiersSection_b122bb9f',
+    Ee = 'TiersSection_background_ddc4d980',
+    Me = 'TiersSection_doneIcon_cb7f26ee',
+    Ae = 'TiersSection_glow_9a0c5716',
+    Oe = 'TiersSection_tiers_ea289110',
+    $e = 'TiersSection_tiers__locked_9c1ac494',
+    Ge = 'TiersSection_tiersSeparators_42b277a8',
+    Fe = 'TiersSection_content_32433d0c',
+    We = 'TiersSection_rewardsContainer_efc03b65',
+    Je = 'TiersSection_reward_5fc7980a',
+    Ve = 'TiersSection_sectionSeparator_ddc4d980';
+var Ue = ((e) => ((e.Locked = 'locked'), (e.InProgress = 'inProgress'), (e.Completed = 'completed'), e))(Ue || {});
+function qe({ start: r, end: o, rewards: n, currentLevel: c, withSeparator: i = !1, frontlineState: l }) {
     const d = r !== o,
-        _ = d ? `${r}-${o}` : r,
-        m = a.useMemo(() => (i < r - 1 ? 'locked' : i >= o ? 'completed' : 'inProgress'), [i, r, o]),
-        b = 'locked' === m,
-        u = l === R,
-        f = v({ rewardSize: N.Small }, { medium: { rewardSize: N.Big } });
+        m = d ? `${r}-${o}` : r,
+        _ = a.useMemo(() => (c < r - 1 ? 'locked' : c >= o ? 'completed' : 'inProgress'), [c, r, o]),
+        u = 'locked' === _,
+        b = l === R,
+        v = f({ rewardSize: N.Small }, { medium: { rewardSize: N.Big } });
     return e.jsxs('div', {
-        className: we,
+        className: Ie,
         children: [
-            !b && !u && e.jsx(xe, { className: Be, state: m }),
+            !u && !b && e.jsx(we, { className: Ee, state: _ }),
             e.jsxs('div', {
-                className: Te,
+                className: Fe,
                 children: [
-                    'completed' === m && e.jsx('div', { className: Ce }),
+                    'completed' === _ && e.jsx('div', { className: Me }),
                     e.jsxs('div', {
-                        className: s(Le, (b || u) && Re),
-                        children: ['inProgress' === m && !u && e.jsx('div', { className: Pe }), _],
+                        className: s(Oe, (u || b) && $e),
+                        children: ['inProgress' === _ && !b && e.jsx('div', { className: Ae }), m],
                     }),
-                    d && e.jsx(ke, { amount: o - r, className: ze }),
+                    d && e.jsx(ye, { amount: o - r, className: Ge }),
                     e.jsx('div', {
-                        className: ye,
+                        className: We,
                         children: S(n, (s, a) =>
                             e.jsx(
                                 t.Fragment,
-                                { children: e.jsx(z, { ...s, rewardSize: f.rewardSize, className: Ie }) },
+                                { children: e.jsx(z, { ...s, rewardSize: v.rewardSize, className: Je }) },
                                 a,
                             ),
                         ),
                     }),
                 ],
             }),
-            c && e.jsx(Ne, { className: Ee }),
+            i && e.jsx(Pe, { className: Ve }),
         ],
     });
 }
-const Oe = 'ProgressBlock_4a6dca',
-    $e = 'ProgressBlock_progressBar_7da7bc49',
-    Fe = r(function ({ className: a }) {
+const De = 'ProgressBlock_22f7d395',
+    He = 'ProgressBlock_progressBar_7da7bc49',
+    Ke = r(function ({ className: a }) {
         const { model: r } = y(),
             o = r.level.get(),
             n = r.tiersSections.get();
         return e.jsxs('div', {
-            className: s(Oe, a),
+            className: s(De, a),
             children: [
                 S(n, (s, a) =>
                     e.jsx(
                         t.Fragment,
                         {
-                            children: e.jsx(Ae, {
+                            children: e.jsx(qe, {
                                 ...s,
                                 currentLevel: o,
                                 withSeparator: a > 0,
@@ -427,25 +415,25 @@ const Oe = 'ProgressBlock_4a6dca',
                         `tier_section_${a}`,
                     ),
                 ),
-                e.jsx(ge, { className: $e }),
+                e.jsx(Se, { className: He }),
             ],
         });
     }),
-    Ge = 'ProgressionScreen_64dc73b7',
-    Ve = 'ProgressionScreen_content_8178663f',
-    Je = 'ProgressionScreen_levelBlock_5336bf8c',
-    We = 'ProgressionScreen_progressBlock_241efddb',
-    Xe = r(() => {
+    Qe = 'ProgressionScreen_64dc73b7',
+    Xe = 'ProgressionScreen_content_8178663f',
+    Ye = 'ProgressionScreen_levelBlock_5336bf8c',
+    Ze = 'ProgressionScreen_progressBlock_241efddb',
+    es = r(() => {
         const { controls: s } = y();
         return (
             h(s.close),
             e.jsx('div', {
-                className: Ge,
+                className: Qe,
                 children: e.jsxs('div', {
-                    className: Ve,
-                    children: [e.jsx(de, { className: Je }), e.jsx(Fe, { className: We })],
+                    className: Xe,
+                    children: [e.jsx(fe, { className: Ye }), e.jsx(Ke, { className: Ze })],
                 }),
             })
         );
     });
-k(e.jsx(w, { soundsOverrides: P, children: e.jsx(T, { children: e.jsx(Xe, {}) }) }), { fullScreen: !0 });
+w(e.jsx(k, { soundsOverrides: P, children: e.jsx(T, { children: e.jsx(es, {}) }) }), { fullScreen: !0 });

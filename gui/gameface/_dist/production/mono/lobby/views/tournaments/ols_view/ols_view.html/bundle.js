@@ -1,11 +1,12 @@
 import { j as s } from '../../../../chunks/vendor.js';
-import { cW as o, cw as n } from '../../../../chunks/lib.js';
-import { T as m, A as i, a, b as e, O as t } from '../../../../chunks/winner_glow.js';
-import '../../../../chunks/consts.js';
+import { r as o, cE as n } from '../../../../chunks/lib.js';
+import { T as m, A as i, a as e, b as a, O as t } from '../../../../chunks/winner_glow.js';
+/* empty css                        */ import '../../../../chunks/consts.js';
+import '../../../../chunks/use_server_time_polling.js';
 import '../../../../chunks/divine_glow.js';
 import '../../../../chunks/animated_background.js';
 const r = ({ children: o }) =>
-    s.jsx(a.Provider, {
+    s.jsx(e.Provider, {
         value: {
             mainBgPath: R.images.comp7.gui.maps.icons.tournaments.ols.bg(),
             blurBgPath: R.images.comp7.gui.maps.icons.tournaments.ols.bg_blurred(),
@@ -30,7 +31,7 @@ const r = ({ children: o }) =>
             visitShopHeading: R.strings.comp7_ext.tournament.visitShop.heading.ols(),
             visitShopDescription: R.strings.comp7_ext.tournament.visitShop.description.ols(),
             roundRobinText: R.strings.comp7_ext.tournament.ols.roundRobin(),
-            tournamentName: e.OLS,
+            tournamentName: a.OLS,
             winnerGlowComponent: s.jsx(t, {}),
         },
         children: o,

@@ -1,5 +1,5 @@
-import { q as s, j as e } from '../../../../chunks/vendor.js';
-import { i as r, t as a, r as i, ac as o, ad as c, k as t } from '../../../../chunks/lib.js';
+import { s, j as e } from '../../../../chunks/vendor.js';
+import { i as r, t as a, r as i, af as o, ag as t, k as c } from '../../../../chunks/lib.js';
 /* empty css                       */ const [l, d] = r()(({ observableModel: s }) => ({ root: s.object() }), a),
     n = 'App_28e29989',
     p = 'App_header_5ad7c3ec',
@@ -28,7 +28,7 @@ import { i as r, t as a, r as i, ac as o, ad as c, k as t } from '../../../../ch
                                             className: h,
                                             children: x.readOrEmpty('pet_system.synergyTooltip.title'),
                                         }),
-                                        e.jsx(c, { value: r, size: 'small', maxValue: 100 }),
+                                        e.jsx(t, { value: r, size: 'small', maxValue: 100 }),
                                     ],
                                 }),
                             ],
@@ -44,4 +44,4 @@ import { i as r, t as a, r as i, ac as o, ad as c, k as t } from '../../../../ch
             }),
         });
     });
-t(e.jsx(l, { children: e.jsx(v, {}) }), { withMedia: !1 });
+c(e.jsx(l, { children: e.jsx(v, {}) }), { withMedia: !1 });

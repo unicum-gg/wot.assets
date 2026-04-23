@@ -1,11 +1,11 @@
-import { r as s, j as a, J as e } from './vendor.js';
-import { g as x } from './get_division_name.js';
-import { R as r } from './get_rank_name.js';
-import { R as o } from './enums.js';
-const m = [o.First, o.Second, o.Third, o.Fourth],
-    i = (s) => m.includes(s),
-    n = (s) => r[s];
-var t = ((s) => (
+import { j as s, a3 as a } from './vendor.js';
+import { g as e } from './get_division_name.js';
+import { R as i } from './get_rank_name.js';
+import { R as n } from './enums.js';
+const r = [n.First, n.Second, n.Third, n.Fourth],
+    m = (s) => r.includes(s),
+    o = (s) => i[s];
+var x = ((s) => (
     (s[(s.x22 = 22)] = 'x22'),
     (s[(s.x40 = 40)] = 'x40'),
     (s[(s.x48 = 48)] = 'x48'),
@@ -19,16 +19,21 @@ var t = ((s) => (
     (s[(s.x420 = 420)] = 'x420'),
     (s[(s.x600 = 600)] = 'x600'),
     s
-))(t || {});
-const c = { base: 'RankEmblem_cd03f035' },
-    d = ({ rank: r, size: o, division: m, seasonName: t, className: d }) => {
-        const g = s.useMemo(() => {
-            const s = i(r) && void 0 !== m ? `_${x(m)}` : '';
-            return {
-                backgroundImage: `url(${`R.images.comp7.gui.maps.icons.ranks.${t}.c_${o}.${n(r)}${s}`})`,
-                '--imageSize': `${o}rem`,
-            };
-        }, [t, o, r, m]);
-        return a.jsx('div', { className: e(c.base, d), style: g });
+))(x || {});
+function c(s, a) {
+    return a || s === x.x22;
+}
+const t = { base: 'RankEmblem_cd03f035' },
+    d = ({ rank: i, size: n, division: r, seasonName: x, className: d, isSimplified: u }) => {
+        if (!i) return (console.warn(`RankEmblem received rank: ${i}`), null);
+        const g = o(i),
+            l = m(i) && void 0 !== r ? `${g}_${e(r)}` : g,
+            p = c(n, u)
+                ? `R.images.comp7.gui.maps.icons.ranks.c_${n}.${l}`
+                : `R.images.comp7.gui.maps.icons.ranks.${x}.c_${n}.${l}`;
+        return s.jsx('div', {
+            className: a(t.base, d),
+            style: { backgroundImage: `url(${p})`, '--imageSize': `${n}rem` },
+        });
     };
-export { d as R, t as a, n as g, i, c as s };
+export { d as R, x as a, c as b, o as g, m as i, t as s };

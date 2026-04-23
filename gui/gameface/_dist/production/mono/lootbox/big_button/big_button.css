@@ -1,0 +1,22 @@
+@keyframes BigButton_fadeIn_5e1b6377 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.BigButton_button_cefd48f3 {
+    min-width: 160rem;
+    min-height: 48rem;
+    padding: 0 32rem;
+}
+
+.BigButton_text_2935ad61 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: #fefeec;
+}

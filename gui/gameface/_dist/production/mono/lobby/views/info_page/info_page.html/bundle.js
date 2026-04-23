@@ -1,25 +1,25 @@
-import { q as e, j as t, t as i, R as a, v as s, r as l } from '../../../chunks/vendor.js';
+import { h as e, j as t, f as i, R as a, t as s, r as l } from '../../../chunks/vendor.js';
 import {
     i as r,
     h as o,
-    aq as n,
+    j as n,
     m as c,
-    a$ as g,
-    ax as p,
+    k as g,
+    l as p,
     F as m,
-    b0 as _,
-    b1 as b,
-    aQ as d,
-    b2 as f,
-    b3 as h,
+    D as _,
+    o as b,
+    p as d,
+    q as f,
+    s as h,
     e as u,
     f as y,
-    aM as x,
-    aN as v,
-    aF as k,
+    t as x,
+    v,
+    J as k,
     U as j,
     r as N,
-    aG as P,
+    w as P,
 } from '../../../chunks/lib.js';
 import { S as T } from '../../../chunks/enums.js';
 /* empty css                     */ const [w, D] = r()(
@@ -38,17 +38,12 @@ import { S as T } from '../../../chunks/enums.js';
                 }),
                 s = o.shallow(
                     () => {
-                        var e;
-                        const t =
-                            null ==
-                            (e = n(
-                                c(i.bp.get(), (e) => e),
-                                0,
-                            ))
-                                ? void 0
-                                : e.tableRows;
-                        if (!t) throw Error('Tables of BP are undefined');
-                        return t;
+                        const e = n(
+                            c(i.bp.get(), (e) => e),
+                            0,
+                        )?.tableRows;
+                        if (!e) throw Error('Tables of BP are undefined');
+                        return e;
                     },
                     { equals: g },
                 ),
@@ -303,7 +298,7 @@ import { S as T } from '../../../chunks/enums.js';
             subtitles: [{ subtitle: R.strings.battle_royale_infopage.pointsSHDetailsSettings.stPatrick.subtitle() }],
         },
     },
-    $ = {
+    E = {
         title: R.strings.battle_royale_infopage.marauders.title(),
         textBlock: [{ text: R.strings.battle_royale_infopage.marauders.text() }],
         list: [
@@ -314,11 +309,11 @@ import { S as T } from '../../../chunks/enums.js';
         footer: R.strings.battle_royale_infopage.marauders.footer(),
         imagePath: R.images.battle_royale.gui.maps.infopage.marauders(),
     },
-    q = {
+    $ = {
         default: R.strings.battle_royale_infopage.footer(),
         stPatrick: R.strings.battle_royale_infopage.stPatrickFooter(),
     },
-    E = {
+    q = {
         base: 'Article_4c8e50ad',
         title: 'Article_title_659722c4',
         subtitle: 'Article_subtitle_49e05acb',
@@ -332,32 +327,28 @@ import { S as T } from '../../../chunks/enums.js';
     },
     O = ({ description: e, className: s, classNames: l, mapsStyle: r }) =>
         t.jsxs('div', {
-            className: i(E.base, null == l ? void 0 : l.alignCenter, s),
+            className: i(q.base, l?.alignCenter, s),
             children: [
                 t.jsxs('div', {
-                    className: i(E.head, null == l ? void 0 : l.head),
+                    className: i(q.head, l?.head),
                     children: [
-                        t.jsx('div', { className: i(E.title, null == l ? void 0 : l.title), children: e.title }),
+                        t.jsx('div', { className: i(q.title, l?.title), children: e.title }),
                         e.subtitles.map(({ subtitle: e }, i) =>
                             t.jsx(
                                 'div',
                                 {
-                                    className: E.subtitle,
-                                    children: t.jsx(p, {
-                                        text: e,
-                                        split: !0,
-                                        className: null == l ? void 0 : l.alignCenter,
-                                    }),
+                                    className: q.subtitle,
+                                    children: t.jsx(p, { text: e, split: !0, className: l?.alignCenter }),
                                 },
                                 i,
                             ),
                         ),
-                        e.accent && t.jsx('div', { className: E.accent, children: e.accent }),
+                        e.accent && t.jsx('div', { className: q.accent, children: e.accent }),
                     ],
                 }),
                 e.images &&
                     t.jsx('div', {
-                        className: i(E.images, r && E.images__mapStyle),
+                        className: i(q.images, r && q.images__mapStyle),
                         children: e.images.map(({ imagePath: e, title: s, subtitle: r }, o) =>
                             t.jsxs(
                                 a.Fragment,
@@ -366,23 +357,16 @@ import { S as T } from '../../../chunks/enums.js';
                                         t.jsxs(
                                             'div',
                                             {
-                                                className: E.imageContainer,
+                                                className: q.imageContainer,
                                                 children: [
-                                                    t.jsx('img', {
-                                                        className: i(E.image, null == l ? void 0 : l.image),
-                                                        src: e,
-                                                        alt: s,
-                                                    }),
-                                                    t.jsx('div', {
-                                                        className: i(E.text, null == l ? void 0 : l.text),
-                                                        children: s,
-                                                    }),
-                                                    r && t.jsx('div', { className: E.subtitle, children: r }),
+                                                    t.jsx('img', { className: i(q.image, l?.image), src: e, alt: s }),
+                                                    t.jsx('div', { className: i(q.text, l?.text), children: s }),
+                                                    r && t.jsx('div', { className: q.subtitle, children: r }),
                                                 ],
                                             },
                                             o,
                                         ),
-                                        1 !== o && t.jsx('div', { className: E.divider }),
+                                        1 !== o && t.jsx('div', { className: q.divider }),
                                     ],
                                 },
                                 o,
@@ -392,55 +376,48 @@ import { S as T } from '../../../chunks/enums.js';
             ],
         }),
     Y = 'Details_82317705',
-    Q = 'Details_base__reverse_e972fe9f',
+    J = 'Details_base__reverse_e972fe9f',
     U = 'Details_base__noIndent_ee7aedc9',
     X = 'Details_title_b7b0344f',
-    J = 'Details_subtitle_90dc25e7',
+    Q = 'Details_subtitle_90dc25e7',
     ee = 'Details_text_96c8da9a',
     te = 'Details_image_e176a953',
     ie = 'Details_description_27a0d131',
     ae = 'Details_devider_eb6cc254',
     se = 'Details_textBlock_51423ea5',
-    le = ({ description: e, reverse: a, smallImage: s, classNames: l, className: r, binding: o }) => {
-        var n;
-        return t.jsxs('div', {
-            className: i(Y, a && Q, s && U, r),
+    le = ({ description: e, reverse: a, smallImage: s, classNames: l, className: r, binding: o }) =>
+        t.jsxs('div', {
+            className: i(Y, a && J, s && U, r),
             children: [
                 t.jsxs('div', {
-                    className: i(ie, null == l ? void 0 : l.description),
+                    className: i(ie, l?.description),
                     children: [
-                        e.title &&
-                            t.jsx('div', { className: i(X, null == l ? void 0 : l.titleStyling), children: e.title }),
+                        e.title && t.jsx('div', { className: i(X, l?.titleStyling), children: e.title }),
                         e.textBlock.map(({ subtitle: e, text: i }, a) =>
                             t.jsxs(
                                 'div',
                                 {
                                     className: se,
                                     children: [
-                                        e && t.jsx('div', { className: J, children: e }),
+                                        e && t.jsx('div', { className: Q, children: e }),
                                         i &&
                                             t.jsx('div', {
                                                 className: ee,
-                                                children: t.jsx(p, { params: o, text: i, split: !0 }),
+                                                children: t.jsx(m, { binding: o, text: i }),
                                             }),
                                     ],
                                 },
                                 a,
                             ),
                         ),
-                        null == (n = e.list)
-                            ? void 0
-                            : n.map((e, i) =>
-                                  t.jsx('div', { className: ee, children: t.jsx(p, { text: e, split: !0 }) }, i),
-                              ),
+                        e.list?.map((e, i) => t.jsx('div', { className: ee, children: t.jsx(m, { text: e }) }, i)),
                         e.footer && t.jsx('div', { className: ee, children: e.footer }),
                     ],
                 }),
                 t.jsx('div', { className: ae }),
-                t.jsx('img', { className: i(!s && te, null == l ? void 0 : l.image), src: e.imagePath, alt: e.title }),
+                t.jsx('img', { className: i(!s && te, l?.image), src: e.imagePath, alt: e.title }),
             ],
-        });
-    },
+        }),
     re = 'InfoBlock_bc3a412a',
     oe = 'InfoBlock_cardsWrapper_f2cef6b3',
     ne = 'InfoBlock_card_77d87e0a',
@@ -493,10 +470,10 @@ import { S as T } from '../../../chunks/enums.js';
     fe = 'Header_8ee81185',
     he = 'Header_title_7819f4a0',
     ue = 'Header_subtitle_3cf5efe9',
-    ye = 'Header_eventTime_780cc4d5',
+    ye = 'Header_eventTime_12062330',
     xe = 'Header_container_500d6c3d',
-    ve = 'Header_video_60c6b98f',
-    Re = 'Header_preview_a64158df',
+    Re = 'Header_video_60c6b98f',
+    ve = 'Header_preview_a64158df',
     ke = s(() => {
         const { controls: e, model: i } = D(),
             { openVideo: a } = e,
@@ -530,7 +507,7 @@ import { S as T } from '../../../chunks/enums.js';
                     },
                     onMouseEnter: () => d.highlight(),
                     className: xe,
-                    children: [t.jsx('div', { className: Re }), t.jsx('div', { className: ve })],
+                    children: [t.jsx('div', { className: ve }), t.jsx('div', { className: Re })],
                 }),
             ],
         });
@@ -731,18 +708,18 @@ import { S as T } from '../../../chunks/enums.js';
             ],
         }),
     Le = R.strings.battle_royale_vehicles,
-    $e = 'light',
-    qe = 'medium',
-    Ee = 'heavy',
+    Ee = 'light',
+    $e = 'medium',
+    qe = 'heavy',
     Oe = 'ussr',
     Ye = 'germany',
-    Qe = 'usa',
+    Je = 'usa',
     Ue = 'britain',
     Xe = 'france',
-    Je = 'china',
+    Qe = 'china',
     et = 'poland',
     tt = 'sweden',
-    it = [Oe, Ye, Qe, Ue, Xe, Je, et, tt],
+    it = [Oe, Ye, Je, Ue, Xe, Qe, et, tt],
     at = [
         {
             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.repairKit',
@@ -774,7 +751,7 @@ import { S as T } from '../../../chunks/enums.js';
                     description: Le.abilities.recoveryZoneDescription(),
                 },
             ],
-            vehicleType: Ee,
+            vehicleType: qe,
         },
         [Ye]: {
             name: Le.tanks.germany.title(),
@@ -794,9 +771,9 @@ import { S as T } from '../../../chunks/enums.js';
                     description: Le.abilities.recoveryDotDescription(),
                 },
             ],
-            vehicleType: Ee,
+            vehicleType: qe,
         },
-        [Qe]: {
+        [Je]: {
             name: Le.tanks.usa.title(),
             description: Le.tanks.usa.description(),
             tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.usa',
@@ -814,7 +791,7 @@ import { S as T } from '../../../chunks/enums.js';
                     description: Le.abilities.trapDescription(),
                 },
             ],
-            vehicleType: qe,
+            vehicleType: $e,
         },
         [Ue]: {
             name: Le.tanks.britain.title(),
@@ -834,7 +811,7 @@ import { S as T } from '../../../chunks/enums.js';
                     description: Le.abilities.berserkDescription(),
                 },
             ],
-            vehicleType: qe,
+            vehicleType: $e,
         },
         [Xe]: {
             name: Le.tanks.france.title(),
@@ -854,10 +831,10 @@ import { S as T } from '../../../chunks/enums.js';
                     description: Le.abilities.branderDescription(),
                 },
             ],
-            vehicleType: $e,
+            vehicleType: Ee,
             hasCN360Image: !0,
         },
-        [Je]: {
+        [Qe]: {
             name: Le.tanks.china.title(),
             description: Le.tanks.china.description(),
             tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.china',
@@ -875,7 +852,7 @@ import { S as T } from '../../../chunks/enums.js';
                     description: Le.abilities.clingBranderDescription(),
                 },
             ],
-            vehicleType: $e,
+            vehicleType: Ee,
         },
         [et]: {
             name: Le.tanks.poland.title(),
@@ -895,7 +872,7 @@ import { S as T } from '../../../chunks/enums.js';
                     description: Le.abilities.shotPassionDescription(),
                 },
             ],
-            vehicleType: qe,
+            vehicleType: $e,
         },
         [tt]: {
             name: Le.tanks.sweden.title(),
@@ -915,7 +892,7 @@ import { S as T } from '../../../chunks/enums.js';
                     description: Le.abilities.adaptationHealthRestoreDescription(),
                 },
             ],
-            vehicleType: Ee,
+            vehicleType: qe,
         },
     },
     lt = {
@@ -1054,7 +1031,7 @@ const ot = () => {
         titleStyling: 'App_titleStyling_0',
         textStyle: 'App_textStyle_cd5a0ce1',
         bpTitleStyling: 'App_bpTitleStyling_ff830e8a',
-        footer: 'App_footer_ca67060c',
+        footer: 'App_footer_1d76016a',
         defaultVertical: 'App_defaultVertical_790cf5a6',
         frame: 'App_frame_6302ad2b',
         maraudersTitle: 'App_maraudersTitle_53ec438c',
@@ -1131,7 +1108,7 @@ const ot = () => {
                                         t.jsx('div', { className: nt.divider }),
                                         t.jsx(Ze, { parameters: C[s] }),
                                         t.jsx(le, {
-                                            description: $,
+                                            description: E,
                                             className: nt.maraudersContainer,
                                             classNames: { titleStyling: nt.maraudersTitle, image: nt.marauder },
                                             reverse: !0,
@@ -1211,7 +1188,7 @@ const ot = () => {
                                                     t.jsx('div', { className: nt.divider }),
                                                 ],
                                             }),
-                                        t.jsx('div', { className: nt.footer, children: t.jsx(p, { text: q[s] }) }),
+                                        t.jsx('div', { className: nt.footer, children: t.jsx(p, { text: $[s] }) }),
                                     ],
                                 }),
                             }),

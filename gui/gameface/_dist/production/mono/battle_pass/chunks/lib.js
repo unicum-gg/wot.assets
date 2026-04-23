@@ -1,7 +1,7 @@
 var __defProp = Object.defineProperty,
-    __defNormalProp = (e, t, r) =>
-        t in e ? __defProp(e, t, { enumerable: !0, configurable: !0, writable: !0, value: r }) : (e[t] = r),
-    __publicField = (e, t, r) => __defNormalProp(e, 'symbol' != typeof t ? t + '' : t, r),
+    __defNormalProp = (e, t, s) =>
+        t in e ? __defProp(e, t, { enumerable: !0, configurable: !0, writable: !0, value: s }) : (e[t] = s),
+    __publicField = (e, t, s) => __defNormalProp(e, 'symbol' != typeof t ? t + '' : t, s),
     _a,
     _b;
 import {
@@ -12,20 +12,21 @@ import {
     e as action,
     r as reactExports,
     j as jsxRuntimeExports,
-    f as cx,
+    f as clsx,
     o as observable,
     u as untracked,
     g as computedFn,
     h as comparer$1,
     R as React,
-    i as client$1,
+    i as ReactDOM,
     l as loadDefaultJapaneseParser,
-    k as useSpring,
-    m as cva,
-    n as animated,
-    p as ReactDOM,
-    q as runInAction,
-    s as autorun,
+    k as cx,
+    m as useSpring,
+    n as cva,
+    p as animated,
+    q as ReactDOM$1,
+    s as runInAction,
+    t as autorun,
 } from './vendor.js';
 const resources = createContainer();
 function concatWithPath(e, t) {
@@ -50,15 +51,15 @@ function logBySeverity$1(e, t) {
     }
 }
 function readFromR$2(e, t) {
-    const r = t.split('.');
+    const s = t.split('.');
     if (window.R && window.R.images) {
-        const t = r[r.length - 1];
+        const t = s[s.length - 1];
         if (!t) return;
-        const s = r.slice(0, -1).reduce((e, t) => {
+        const r = s.slice(0, -1).reduce((e, t) => {
             if ('object' == typeof (null == e ? void 0 : e[t])) return e[t];
         }, e);
-        if (!s) return;
-        return 'function' == typeof s[t] ? s[t]() : void 0;
+        if (!r) return;
+        return 'function' == typeof r[t] ? r[t]() : void 0;
     }
     throw new Error('R class with images field is not defined');
 }
@@ -69,10 +70,10 @@ class ImagesRClassProvider {
     read(e) {
         return this.readOr(e, () => {});
     }
-    readOr(e, t, r = 'silent') {
-        const s = e.startsWith('R.images') ? e : concatWithPath(this.prefix, e),
-            n = readFromR$2(e.startsWith('R.images') ? window : this.root, s);
-        return void 0 === n ? ('silent' !== r && logBySeverity$1(`Resource not found: ${s}`, r), t()) : n;
+    readOr(e, t, s = 'silent') {
+        const r = e.startsWith('R.images') ? e : concatWithPath(this.prefix, e),
+            n = readFromR$2(e.startsWith('R.images') ? window : this.root, r);
+        return void 0 === n ? ('silent' !== s && logBySeverity$1(`Resource not found: ${r}`, s), t()) : n;
     }
     readOrEmpty(e, t = 'warn') {
         return this.readOr(e, () => '', t);
@@ -99,7 +100,7 @@ class ImagesServerRedirectProvider {
     read(e) {
         return `/${this.prefix}.${e}`;
     }
-    readOr(e, t, r = 'silent') {
+    readOr(e, t, s = 'silent') {
         return this.read(e);
     }
     readOrEmpty(e, t = 'warn') {
@@ -136,16 +137,16 @@ function formatNumber(e, t) {
 function isRealFormat(e) {
     return e in realFormats;
 }
-function formatReal(e, t, r = 2) {
-    return window.formatters.getRealFormat(t, realFormats[e], r);
+function formatReal(e, t, s = 2) {
+    return window.formatters.getRealFormat(t, realFormats[e], s);
 }
-function formatDateTime(e, t, r = !0) {
-    return window.regionalDateTime.getRegionalDateTime(t, e, r);
+function formatDateTime(e, t, s = !0) {
+    return window.regionalDateTime.getRegionalDateTime(t, e, s);
 }
 const timeFormats = { full: DateTimeFormatsEnum.FullTime, short: DateTimeFormatsEnum.ShortTime },
     timeFormatList = Object.keys(timeFormats);
-function formatTime(e, t, r = !0) {
-    return window.regionalDateTime.getRegionalDateTime(t, e, r);
+function formatTime(e, t, s = !0) {
+    return window.regionalDateTime.getRegionalDateTime(t, e, s);
 }
 const intl$1 = {
     isNumberFormat: isNumberFormat,
@@ -169,18 +170,14 @@ class SoundsRClassProvider {
             : logBySeverity$1(`Sound not found: ${e}`, 'warn');
     }
 }
-function readFromR$1(e, t, r) {
-    const s = e.split('.');
-    if (window.R && window.R.strings) {
-        const e = s[s.length - 1];
-        if (!e) return;
-        const n = s.slice(0, -1).reduce((e, t) => {
-            if ('object' == typeof (null == e ? void 0 : e[t])) return e[t];
-        }, r);
-        if (!n) return;
-        return 'function' == typeof n[e] ? (t ? n[e](t) : n[e]()) : void 0;
-    }
-    throw new Error('R class with strings field is not defined');
+function readFromR$1(e, t, s) {
+    const r = e.split('.'),
+        n = r[r.length - 1];
+    if (!n) return;
+    const a = r.slice(0, -1).reduce((e, t) => {
+        if ('object' == typeof (null == e ? void 0 : e[t])) return e[t];
+    }, s);
+    return a && 'function' == typeof a[n] ? (t ? a[n](t) : a[n]()) : void 0;
 }
 class StringsRClassProvider {
     constructor(e = window.R.strings, t) {
@@ -189,42 +186,42 @@ class StringsRClassProvider {
     read(e) {
         return this.readOr(e, () => {});
     }
-    readOr(e, t, r = 'silent') {
-        const s = e.startsWith('R.strings') ? e : concatWithPath(this.prefix, e),
-            n = readFromR$1(s, void 0, e.startsWith('R.strings') ? window : this.root);
-        return void 0 === n ? ('silent' !== r && logBySeverity$1(`Resource not found: ${s}`, r), t()) : n;
+    readOr(e, t, s = 'silent') {
+        const r = e.startsWith('R.strings') ? e : concatWithPath(this.prefix, e),
+            n = readFromR$1(r, void 0, e.startsWith('R.strings') ? window : this.root);
+        return void 0 === n ? ('silent' !== s && logBySeverity$1(`Resource not found: ${r}`, s), t()) : n;
     }
     readOrEmpty(e, t = 'warn') {
         return this.readOr(e, () => '', t);
     }
     readOrThrow(e) {
         const t = e.startsWith('R.strings') ? e : concatWithPath(this.prefix, e),
-            r = readFromR$1(t, void 0, e.startsWith('R.strings') ? window : this.root);
-        if (void 0 === r) throw new Error(`Resource not found: ${t}`);
-        return r;
+            s = readFromR$1(t, void 0, e.startsWith('R.strings') ? window : this.root);
+        if (void 0 === s) throw new Error(`Resource not found: ${t}`);
+        return s;
     }
     plural(e, t) {
         return this.pluralOr(e, t, () => {});
     }
-    pluralOr(e, t, r, s = 'silent') {
+    pluralOr(e, t, s, r = 'silent') {
         const n = e.startsWith('R.strings') ? e : concatWithPath(this.prefix, e),
             a = readFromR$1(n, t, e.startsWith('R.strings') ? window : this.root);
-        return void 0 === a ? ('silent' !== s && logBySeverity$1(`Resource not found: ${n}`, s), r()) : a;
+        return void 0 === a ? ('silent' !== r && logBySeverity$1(`Resource not found: ${n}`, r), s()) : a;
     }
-    pluralOrEmpty(e, t, r = 'warn') {
-        return this.pluralOr(e, t, () => '', r);
+    pluralOrEmpty(e, t, s = 'warn') {
+        return this.pluralOr(e, t, () => '', s);
     }
 }
 function readFromR(e, t) {
-    const r = t.split('.');
+    const s = t.split('.');
     if (window.R && window.R.videos) {
-        const t = r[r.length - 1];
+        const t = s[s.length - 1];
         if (!t) return;
-        const s = r.slice(0, -1).reduce((e, t) => {
+        const r = s.slice(0, -1).reduce((e, t) => {
             if ('object' == typeof (null == e ? void 0 : e[t])) return e[t];
         }, e);
-        if (!s) return;
-        return 'function' == typeof s[t] ? s[t]() : void 0;
+        if (!r) return;
+        return 'function' == typeof r[t] ? r[t]() : void 0;
     }
     throw new Error('R class with videos field is not defined');
 }
@@ -235,10 +232,10 @@ class VideosRClassProvider {
     read(e) {
         return this.readOr(e, () => {});
     }
-    readOr(e, t, r = 'silent') {
-        const s = e.startsWith('R.videos') ? e : concatWithPath(this.prefix, e),
-            n = readFromR(e.startsWith('R.videos') ? window : this.root, s);
-        return void 0 === n ? ('silent' !== r && logBySeverity$1(`Resource not found: ${e}`, r), t()) : n;
+    readOr(e, t, s = 'silent') {
+        const r = e.startsWith('R.videos') ? e : concatWithPath(this.prefix, e),
+            n = readFromR(e.startsWith('R.videos') ? window : this.root, r);
+        return void 0 === n ? ('silent' !== s && logBySeverity$1(`Resource not found: ${e}`, s), t()) : n;
     }
     readOrEmpty(e, t = 'warn') {
         return this.readOr(e, () => '', t);
@@ -283,14 +280,14 @@ const easings = {
     easeOutQuint: (e) => 1 + --e * e * e * e * e,
 };
 function curry2(e) {
-    return function (t, r) {
+    return function (t, s) {
         switch (arguments.length) {
             case 1:
-                return function (r) {
-                    return e(t, r);
+                return function (s) {
+                    return e(t, s);
                 };
             case 2:
-                return e(t, r);
+                return e(t, s);
         }
     };
 }
@@ -331,9 +328,9 @@ function toMillis(e) {
     return (0, toMs[e.unit])(e.value);
 }
 const convert = (e, t) => {
-        const r = toMillis(e),
-            s = (0, fromMs[t])(r);
-        return { [typeId]: typeId, value: s, unit: t };
+        const s = toMillis(e),
+            r = (0, fromMs[t])(s);
+        return { [typeId]: typeId, value: r, unit: t };
     },
     add = curry2(function (e, t) {
         return millis(toMillis(e) + toMillis(t));
@@ -380,8 +377,8 @@ const convert = (e, t) => {
                 .padStart(3, '0'),
     };
 function format$2(e, t) {
-    const r = toMillis(e);
-    return t.map((e) => formats$1[e](r));
+    const s = toMillis(e);
+    return t.map((e) => formats$1[e](s));
 }
 function getNumberFormat(e, t) {
     return window.systemLocale.getNumberFormat(e, t);
@@ -392,12 +389,12 @@ const HOURS_IN_DAY = 24,
     ONE_DAY = HOURS_IN_DAY * ONE_HOUR;
 function getTimeUnits(e = 0) {
     let t = e;
-    const r = Math.trunc(t / ONE_DAY);
-    t -= r * ONE_DAY;
-    const s = Math.trunc(t / ONE_HOUR);
-    t -= s * ONE_HOUR;
+    const s = Math.trunc(t / ONE_DAY);
+    t -= s * ONE_DAY;
+    const r = Math.trunc(t / ONE_HOUR);
+    t -= r * ONE_HOUR;
     const n = Math.trunc(t / ONE_MINUTE);
-    return ((t -= n * ONE_MINUTE), { days: r, hours: s, minutes: n, seconds: t });
+    return ((t -= n * ONE_MINUTE), { days: s, hours: r, minutes: n, seconds: t });
 }
 function normalizeResource(e) {
     return e.replaceAll('-', '_');
@@ -406,8 +403,8 @@ const convertNbsp$1 = (e) => e.replace(/&nbsp;/g, ' ');
 function format$1(e, t) {
     return e.replace(/\{\w+\}/g, (e) => String(t[e.slice(1, -1)]));
 }
-function getRegionalDateTime(e, t, r = !0) {
-    return window.regionalDateTime.getRegionalDateTime(e, t, r);
+function getRegionalDateTime(e, t, s = !0) {
+    return window.regionalDateTime.getRegionalDateTime(e, t, s);
 }
 function makeEngineEvent$1(e) {
     return (t) => (
@@ -422,7 +419,7 @@ function setTrackMouseOutside$1(e) {
 }
 const onResize$1 = makeEngineEvent$1('clientResized'),
     onRescale = makeEngineEvent$1('self.onScaleUpdated'),
-    onMinimize = makeEngineEvent$1('clientMinimized'),
+    onMinimize$1 = makeEngineEvent$1('clientMinimized'),
     internalMouse$1 = {
         down: makeEngineEvent$1('mousedown'),
         up: makeEngineEvent$1('mouseup'),
@@ -433,51 +430,51 @@ function initMouseEvents$1() {
     function t() {
         e.enabled && setTrackMouseOutside$1(!1);
     }
-    function r() {
+    function s() {
         e.enabled && setTrackMouseOutside$1(!0);
     }
-    function s() {
+    function r() {
         e.enabled
             ? e.listeners < 1
                 ? ((e.initialized = !1),
                   document.body.removeEventListener('mouseenter', t),
-                  document.body.removeEventListener('mouseleave', r),
+                  document.body.removeEventListener('mouseleave', s),
                   setTrackMouseOutside$1(!1))
                 : e.initialized ||
                   ((e.initialized = !0),
                   document.body.addEventListener('mouseenter', t),
-                  document.body.addEventListener('mouseleave', r))
+                  document.body.addEventListener('mouseleave', s))
             : setTrackMouseOutside$1(!1);
     }
     return {
         ...['down', 'up', 'move'].reduce(
-            (t, r) => (
-                (t[r] = (function (t) {
-                    return (r) => {
+            (t, s) => (
+                (t[s] = (function (t) {
+                    return (s) => {
                         e.listeners += 1;
                         const n = `mouse${t}`,
-                            a = internalMouse$1[t]((e) => r([e, 'outside']));
+                            a = internalMouse$1[t]((e) => s([e, 'outside']));
                         function o(e) {
-                            r([e, 'inside']);
+                            s([e, 'inside']);
                         }
                         return (
                             window.addEventListener(n, o),
-                            s(),
+                            r(),
                             () => {
-                                (a(), window.removeEventListener(n, o), (e.listeners -= 1), s());
+                                (a(), window.removeEventListener(n, o), (e.listeners -= 1), r());
                             }
                         );
                     };
-                })(r)),
+                })(s)),
                 t
             ),
             {},
         ),
         disable() {
-            ((e.enabled = !1), s());
+            ((e.enabled = !1), r());
         },
         enable() {
-            ((e.enabled = !0), s());
+            ((e.enabled = !0), r());
         },
         enableOutside() {
             e.enabled && setTrackMouseOutside$1(!0);
@@ -500,18 +497,18 @@ const sounds$1 = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
     displayStatus$1 = { notReady: 0, ready: 1, showing: 2, shown: 3, hiding: 4, hidden: 5 },
     createSubscribeHitTest = () => {
         const e = new Set(),
-            t = (t, r) => {
-                for (const s of e.values())
-                    if (s(t)) {
-                        r.value = !1;
+            t = (t, s) => {
+                for (const r of e.values())
+                    if (r(t)) {
+                        s.value = !1;
                         break;
                     }
             };
-        return (r) => (
-            e.add(r),
+        return (s) => (
+            e.add(s),
             1 === e.size && (viewEnv.setHitTestEnabled(!0), engine.on('self.onHitTest', t)),
             () => {
-                (e.delete(r), 0 === e.size && (viewEnv.setHitTestEnabled(!1), engine.off('self.onHitTest', t)));
+                (e.delete(s), 0 === e.size && (viewEnv.setHitTestEnabled(!1), engine.off('self.onHitTest', t)));
             }
         );
     },
@@ -553,21 +550,21 @@ function serializeEventArgument(e) {
 }
 const createViewEventArguments$2 = (e) => {
         const t = [];
-        for (const [r, s] of Object.entries(e)) {
-            const e = serializeEventArgument(s);
-            void 0 !== e && t.push({ __Type: 'GFValueProxy', name: r, ...e });
+        for (const [s, r] of Object.entries(e)) {
+            const e = serializeEventArgument(r);
+            void 0 !== e && t.push({ __Type: 'GFValueProxy', name: s, ...e });
         }
         return t;
     },
     sendViewEvent$1 = (e, t) => {
-        const r = 'GFViewEventProxy';
+        const s = 'GFViewEventProxy';
         if (void 0 !== t) {
-            const { args: s, ...n } = t;
-            return void 0 !== s
-                ? viewEnv.handleViewEvent({ __Type: r, type: e, ...n, arguments: createViewEventArguments$2(s) })
-                : viewEnv.handleViewEvent({ __Type: r, type: e, ...n });
+            const { args: r, ...n } = t;
+            return void 0 !== r
+                ? viewEnv.handleViewEvent({ __Type: s, type: e, ...n, arguments: createViewEventArguments$2(r) })
+                : viewEnv.handleViewEvent({ __Type: s, type: e, ...n });
         }
-        return viewEnv.handleViewEvent({ __Type: r, type: e });
+        return viewEnv.handleViewEvent({ __Type: s, type: e });
     },
     openedTooltips = new Map(),
     openedContextMenus = new Map(),
@@ -585,12 +582,12 @@ const createViewEventArguments$2 = (e) => {
             sendViewEvent$1(viewEventTypes$1.move, { isMouseEvent: !0, on: e });
         },
         popover: {
-            open({ contentID: e, decoratorID: t = 0, targetID: r, direction: s, boundingBox: n, args: a }) {
+            open({ contentID: e, decoratorID: t = 0, targetID: s, direction: r, boundingBox: n, args: a }) {
                 sendViewEvent$1(viewEventTypes$1.popover, {
                     contentID: e,
                     decoratorID: t,
-                    targetID: r,
-                    direction: s,
+                    targetID: s,
+                    direction: r,
                     bbox: serializeGlobalBoundingBox(n),
                     on: !0,
                     isMouseEvent: !0,
@@ -602,19 +599,19 @@ const createViewEventArguments$2 = (e) => {
             },
         },
         tooltip: {
-            open(e, t, r = 0, s) {
+            open(e, t, s = 0, r) {
                 (sendViewEvent$1(viewEventTypes$1.tooltip, {
                     contentID: t,
-                    decoratorID: r,
+                    decoratorID: s,
                     targetID: e,
                     isMouseEvent: !0,
                     on: !0,
-                    args: s,
+                    args: r,
                 }),
                     openedTooltips.set(`${e}-${t}`, { targetID: e, contentID: t }));
             },
-            hide(e, t, r = 0) {
-                (sendViewEvent$1(viewEventTypes$1.tooltip, { contentID: t, decoratorID: r, targetID: e, on: !1 }),
+            hide(e, t, s = 0) {
+                (sendViewEvent$1(viewEventTypes$1.tooltip, { contentID: t, decoratorID: s, targetID: e, on: !1 }),
                     openedTooltips.delete(`${e}-${t}`));
             },
             hideAll() {
@@ -623,21 +620,21 @@ const createViewEventArguments$2 = (e) => {
             },
         },
         contextMenu: {
-            open(e, t, r = 0, s) {
+            open(e, t, s = 0, r) {
                 (sendViewEvent$1(viewEventTypes$1.contextMenu, {
                     contentID: t,
-                    decoratorID: r,
+                    decoratorID: s,
                     targetID: e,
                     isMouseEvent: !0,
                     on: !0,
-                    args: s,
+                    args: r,
                 }),
                     openedContextMenus.set(`${e}-${t}`, { targetID: e, contentID: t }));
             },
-            hide(e, t, r = 0) {
+            hide(e, t, s = 0) {
                 (sendViewEvent$1(viewEventTypes$1.contextMenu, {
                     contentID: t,
-                    decoratorID: r,
+                    decoratorID: s,
                     targetID: e,
                     on: !1,
                     isMouseEvent: !1,
@@ -654,14 +651,14 @@ function ids() {
     return window.subViews.ids();
 }
 const ALL_SIDES$1 = 15;
-function addModelObserver$1(e, t, r) {
-    return viewEnv.addDataChangedCallback(e, t, r);
+function addModelObserver$1(e, t, s) {
+    return viewEnv.addDataChangedCallback(e, t, s);
 }
 function setSidePaddingsRem$1(e) {
     viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, ALL_SIDES$1);
 }
-function resize$1(e, t, r = 'px') {
-    return 'rem' === r ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
+function resize$1(e, t, s = 'px') {
+    return 'rem' === s ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
 }
 function getScale$2() {
     return viewEnv.getScale();
@@ -686,10 +683,10 @@ function enableFullScreenModeSupported$1() {
 }
 function initExternalPaddings$1(e) {
     function t() {
-        const { top: t, right: r, bottom: s, left: n } = viewEnv.getExternalPaddingsRem();
+        const { top: t, right: s, bottom: r, left: n } = viewEnv.getExternalPaddingsRem();
         (e.style.setProperty('--external-padding-top', `${t}rem`),
-            e.style.setProperty('--external-padding-right', `${r}rem`),
-            e.style.setProperty('--external-padding-bottom', `${s}rem`),
+            e.style.setProperty('--external-padding-right', `${s}rem`),
+            e.style.setProperty('--external-padding-bottom', `${r}rem`),
             e.style.setProperty('--external-padding-left', `${n}rem`));
     }
     (t(), engine.on('self.onPaddingsUpdated', () => t()));
@@ -697,26 +694,26 @@ function initExternalPaddings$1(e) {
 function getKeyNameFromKeyCode(e) {
     return window.systemInput.getKeyName(e);
 }
-function pipe(e, t, r, s, n, a, o, u, i) {
+function pipe(e, t, s, r, n, a, o, u, i) {
     switch (arguments.length) {
         case 1:
             return e;
         case 2:
             return t(e);
         case 3:
-            return r(t(e));
+            return s(t(e));
         case 4:
-            return s(r(t(e)));
+            return r(s(t(e)));
         case 5:
-            return n(s(r(t(e))));
+            return n(r(s(t(e))));
         case 6:
-            return a(n(s(r(t(e)))));
+            return a(n(r(s(t(e)))));
         case 7:
-            return o(a(n(s(r(t(e))))));
+            return o(a(n(r(s(t(e))))));
         case 8:
-            return u(o(a(n(s(r(t(e)))))));
+            return u(o(a(n(r(s(t(e)))))));
         case 9:
-            return i(u(o(a(n(s(r(t(e))))))));
+            return i(u(o(a(n(r(s(t(e))))))));
         default: {
             let e = arguments[0];
             for (let t = 1; t < arguments.length; t++) e = arguments[t](e);
@@ -744,16 +741,16 @@ class SimpleEmitter {
 }
 const getRootDefault = (e) => (0 === e ? window : window.subViews.get(e));
 function create(
-    { initializer: e = !0, rootId: t = 0, getRoot: r = getRootDefault, context: s = 'model' } = {},
+    { initializer: e = !0, rootId: t = 0, getRoot: s = getRootDefault, context: r = 'model' } = {},
     { name: n = 'DataLayer' } = {},
 ) {
     const a = new Map(),
         o = { subscribersNotified: new SimpleEmitter() },
         u = engine.whenReady.then(() => {
-            function e(e, t, r) {
-                (r.forEach((r) => {
-                    const s = a.get(r);
-                    void 0 !== s && s(e, t);
+            function e(e, t, s) {
+                (s.forEach((s) => {
+                    const r = a.get(s);
+                    void 0 !== r && r(e, t);
                 }),
                     o.subscribersNotified.emit());
             }
@@ -768,32 +765,32 @@ function create(
         });
     function i() {
         try {
-            const e = r(t);
-            return s.split('.').reduce((e, t) => e[t], e);
+            const e = s(t);
+            return r.split('.').reduce((e, t) => e[t], e);
         } catch (e) {
-            throw new Error(`Failure get root of ${n}. Root id: ${t}. Context: ${s}`);
+            throw new Error(`Failure get root of ${n}. Root id: ${t}. Context: ${r}`);
         }
     }
     const l = (e) => {
-        const r = i();
-        if ('string' != typeof e || 0 === e.length) return r;
+        const s = i();
+        if ('string' != typeof e || 0 === e.length) return s;
         try {
             return e.split('.').reduce((e, t) => {
                 if (!(t in e)) throw new Error(`Key "${t}" doesn't exists in part of model`);
-                const r = e[t];
-                return 'function' == typeof r ? r.bind(e) : r;
-            }, r);
+                const s = e[t];
+                return 'function' == typeof s ? s.bind(e) : s;
+            }, s);
         } catch (a) {
-            throw new Error(`Failure readByPath in ${n}. Root id: ${t}. Context: ${s}:\n${a}\n`);
+            throw new Error(`Failure readByPath in ${n}. Root id: ${t}. Context: ${r}:\n${a}\n`);
         }
     };
     function c(e) {
         viewEnv.removeDataChangedCallback(e, t) ? a.delete(e) : console.error("Can't remove callback by id:", e);
     }
     return {
-        subscribe: (r, n) => {
-            const o = addModelObserver$1('string' == typeof n ? `${s}.${n}` : s, t, !0);
-            return (a.set(o, r), e && r(l(n), []), o);
+        subscribe: (s, n) => {
+            const o = addModelObserver$1('string' == typeof n ? `${r}.${n}` : r, t, !0);
+            return (a.set(o, s), e && s(l(n), []), o);
         },
         readByPath: l,
         readSafeByPath: (e) => {
@@ -801,14 +798,14 @@ function create(
             return 'string' != typeof e || 0 === e.length
                 ? t
                 : e.split('.').reduce((e, t) => {
-                      const r = null == e ? void 0 : e[t];
-                      return 'function' == typeof r ? r.bind(e) : r;
+                      const s = null == e ? void 0 : e[t];
+                      return 'function' == typeof s ? s.bind(e) : s;
                   }, t);
         },
         createCallback: (e, t) => {
-            const r = l(t);
+            const s = l(t);
             return (...t) => {
-                r(e(...t));
+                s(e(...t));
             };
         },
         createCallbackNoArgs: (e) => {
@@ -833,8 +830,8 @@ function cleanContext(e) {
 }
 function resolvePathContext(e, t) {
     if (!t) return e;
-    const r = cleanContext(t);
-    return e ? (0 === r.length ? e : `${r}.${e}`) : r;
+    const s = cleanContext(t);
+    return e ? (0 === s.length ? e : `${s}.${e}`) : s;
 }
 function resolvePath(e, t) {
     return t ? resolvePathContext(e, t.context) : e;
@@ -844,16 +841,16 @@ function createMockInstance(e, t) {
         subscribe: () => 0,
         readSafeByPath: e,
         readByPath: e,
-        createCallback: (r, s) => {
-            const n = e(resolvePath(s, t));
+        createCallback: (s, r) => {
+            const n = e(resolvePath(r, t));
             return (...e) => {
-                n(r(...e));
+                n(s(...e));
             };
         },
-        createCallbackNoArgs: (r) => {
-            const s = e(resolvePath(r, t));
+        createCallbackNoArgs: (s) => {
+            const r = e(resolvePath(s, t));
             return () => {
-                s();
+                r();
             };
         },
         dispose: () => {},
@@ -861,7 +858,7 @@ function createMockInstance(e, t) {
         events: { subscribersNotified: new SimpleEmitter() },
     };
 }
-const clamp$1 = (e, t, r) => (r < e ? e : r > t ? t : r);
+const clamp$1 = (e, t, s) => (s < e ? e : s > t ? t : s);
 function noop$1() {}
 const emptyFunction$2 = noop$1;
 function identity(e) {
@@ -887,8 +884,8 @@ class DisposeBuilder {
         return (this._disposes.delete(e), this);
     }
 }
-function addEventListener(e, t, r, s) {
-    return (e.addEventListener(t, r, s), () => e.removeEventListener(t, r, s));
+function addEventListener(e, t, s, r) {
+    return (e.addEventListener(t, s, r), () => e.removeEventListener(t, s, r));
 }
 ('symbol' != typeof Symbol.dispose && Object.defineProperty(Symbol, 'dispose', { value: Symbol.for('dispose') }),
     'symbol' != typeof Symbol.asyncDispose &&
@@ -897,8 +894,8 @@ function addEventListener(e, t, r, s) {
         if (!self.fetch) {
             ((o.prototype.append = function (e, t) {
                 ((e = n(e)), (t = a(t)));
-                var r = this.map[e];
-                (r || ((r = []), (this.map[e] = r)), r.push(t));
+                var s = this.map[e];
+                (s || ((s = []), (this.map[e] = s)), s.push(t));
             }),
                 (o.prototype.delete = function (e) {
                     delete this.map[n(e)];
@@ -918,8 +915,8 @@ function addEventListener(e, t, r, s) {
                 }),
                 (o.prototype.forEach = function (e) {
                     var t = this;
-                    Object.getOwnPropertyNames(this.map).forEach(function (r) {
-                        e(r, t.map[r]);
+                    Object.getOwnPropertyNames(this.map).forEach(function (s) {
+                        e(s, t.map[s]);
                     });
                 }));
             var e =
@@ -933,8 +930,8 @@ function addEventListener(e, t, r, s) {
                         }
                     })(),
                 t = 'FormData' in self,
-                r = ['DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT'],
-                s = !(
+                s = ['DELETE', 'GET', 'HEAD', 'OPTIONS', 'POST', 'PUT'],
+                r = !(
                     'undefined' == typeof window ||
                     !window.ActiveXObject ||
                     (window.XMLHttpRequest && new XMLHttpRequest().dispatchEvent)
@@ -944,22 +941,22 @@ function addEventListener(e, t, r, s) {
                 (self.Headers = o),
                 (self.Request = d),
                 (self.Response = m),
-                (self.fetch = function (t, r) {
+                (self.fetch = function (t, s) {
                     var n;
                     return (
-                        (n = d.prototype.isPrototypeOf(t) && !r ? t : new d(t, r)),
-                        new fetch.Promise(function (t, r) {
+                        (n = d.prototype.isPrototypeOf(t) && !s ? t : new d(t, s)),
+                        new fetch.Promise(function (t, s) {
                             var a = (function () {
-                                return s && !/^(get|post|head|put|delete|options)$/i.test(this.method)
+                                return r && !/^(get|post|head|put|delete|options)$/i.test(this.method)
                                     ? ((this.usingActiveXhr = !0), new ActiveXObject('Microsoft.XMLHTTP'))
                                     : new XMLHttpRequest();
                             })();
                             function o() {
                                 if (4 === a.readyState) {
                                     var e = 1223 === a.status ? 204 : a.status;
-                                    if (e < 100 || e > 599) r(new TypeError('Network request failed'));
+                                    if (e < 100 || e > 599) s(new TypeError('Network request failed'));
                                     else {
-                                        var s = {
+                                        var r = {
                                                 status: e,
                                                 statusText: a.statusText,
                                                 headers: p(a),
@@ -971,7 +968,7 @@ function addEventListener(e, t, r, s) {
                                                           : void 0,
                                             },
                                             n = 'response' in a ? a.response : a.responseText;
-                                        t(new m(n, s));
+                                        t(new m(n, r));
                                     }
                                 }
                             }
@@ -980,7 +977,7 @@ function addEventListener(e, t, r, s) {
                                 self.usingActiveXhr ||
                                     ((a.onload = o),
                                     (a.onerror = function () {
-                                        r(new TypeError('Network request failed'));
+                                        s(new TypeError('Network request failed'));
                                     })),
                                 a.open(n.method, n.url, !0),
                                 'responseType' in a && e && (a.responseType = 'blob'),
@@ -1008,14 +1005,14 @@ function addEventListener(e, t, r, s) {
             this.map = {};
             var t = this;
             e instanceof o
-                ? e.forEach(function (e, r) {
-                      r.forEach(function (r) {
-                          t.append(e, r);
+                ? e.forEach(function (e, s) {
+                      s.forEach(function (s) {
+                          t.append(e, s);
                       });
                   })
                 : e &&
-                  Object.getOwnPropertyNames(e).forEach(function (r) {
-                      t.append(r, e[r]);
+                  Object.getOwnPropertyNames(e).forEach(function (s) {
+                      t.append(s, e[s]);
                   });
         }
         function u(e) {
@@ -1023,12 +1020,12 @@ function addEventListener(e, t, r, s) {
             e.bodyUsed = !0;
         }
         function i(e) {
-            return new fetch.Promise(function (t, r) {
+            return new fetch.Promise(function (t, s) {
                 ((e.onload = function () {
                     t(e.result);
                 }),
                     (e.onerror = function () {
-                        r(e.error);
+                        s(e.error);
                     }));
             });
         }
@@ -1039,12 +1036,12 @@ function addEventListener(e, t, r, s) {
         function c() {
             return (
                 (this.bodyUsed = !1),
-                (this._initBody = function (r) {
-                    if (((this._bodyInit = r), 'string' == typeof r)) this._bodyText = r;
-                    else if (e && Blob.prototype.isPrototypeOf(r)) this._bodyBlob = r;
-                    else if (t && FormData.prototype.isPrototypeOf(r)) this._bodyFormData = r;
+                (this._initBody = function (s) {
+                    if (((this._bodyInit = s), 'string' == typeof s)) this._bodyText = s;
+                    else if (e && Blob.prototype.isPrototypeOf(s)) this._bodyBlob = s;
+                    else if (t && FormData.prototype.isPrototypeOf(s)) this._bodyFormData = s;
                     else {
-                        if (r) throw new Error('unsupported BodyInit type');
+                        if (s) throw new Error('unsupported BodyInit type');
                         this._bodyText = '';
                     }
                 }),
@@ -1062,8 +1059,8 @@ function addEventListener(e, t, r, s) {
                       (this.text = function () {
                           var e,
                               t,
-                              r = u(this);
-                          if (r) return r;
+                              s = u(this);
+                          if (s) return s;
                           if (this._bodyBlob) return ((e = this._bodyBlob), (t = new FileReader()).readAsText(e), i(t));
                           if (this._bodyFormData) throw new Error('could not read FormData body as text');
                           return fetch.Promise.resolve(this._bodyText);
@@ -1085,13 +1082,13 @@ function addEventListener(e, t, r, s) {
             );
         }
         function d(e, t) {
-            var s, n;
+            var r, n;
             if (
                 ((t = t || {}),
                 (this.url = e),
                 (this.credentials = t.credentials || 'omit'),
                 (this.headers = new o(t.headers)),
-                (this.method = ((s = t.method || 'GET'), (n = s.toUpperCase()), r.indexOf(n) > -1 ? n : s)),
+                (this.method = ((r = t.method || 'GET'), (n = r.toUpperCase()), s.indexOf(n) > -1 ? n : r)),
                 (this.mode = t.mode || null),
                 (this.referrer = null),
                 ('GET' === this.method || 'HEAD' === this.method) && t.body)
@@ -1107,10 +1104,10 @@ function addEventListener(e, t, r, s) {
                     .split('&')
                     .forEach(function (e) {
                         if (e) {
-                            var r = e.split('='),
-                                s = r.shift().replace(/\+/g, ' '),
-                                n = r.join('=').replace(/\+/g, ' ');
-                            t.append(decodeURIComponent(s), decodeURIComponent(n));
+                            var s = e.split('='),
+                                r = s.shift().replace(/\+/g, ' '),
+                                n = s.join('=').replace(/\+/g, ' ');
+                            t.append(decodeURIComponent(r), decodeURIComponent(n));
                         }
                     }),
                 t
@@ -1124,10 +1121,10 @@ function addEventListener(e, t, r, s) {
                     .trim()
                     .split('\n')
                     .forEach(function (e) {
-                        var r = e.trim().split(':'),
-                            s = r.shift().trim(),
-                            n = r.join(':').trim();
-                        t.append(s, n);
+                        var s = e.trim().split(':'),
+                            r = s.shift().trim(),
+                            n = s.join(':').trim();
+                        t.append(r, n);
                     }),
                 t
             );
@@ -1157,7 +1154,7 @@ const keyCodes = {
     ARROW_DOWN: 40,
 };
 function makeMapWithPrefix(e, t) {
-    return e.reduce((e, r) => ({ ...e, [`${t}_${r}`.toUpperCase()]: `${t}${r}` }), {});
+    return e.reduce((e, s) => ({ ...e, [`${t}_${s}`.toUpperCase()]: `${t}${s}` }), {});
 }
 function makeMap(e) {
     return e.reduce((e, t) => ({ ...e, [`${t}`.toUpperCase()]: t }), {});
@@ -1224,6 +1221,7 @@ const keyStringCodes = {
 function normalizeKeyCode(e) {
     return 'number' == typeof e ? getKeyNameFromKeyCode(e) : e;
 }
+new Set(Object.values(keyStringCodes));
 class Iter {
     constructor(e) {
         (__publicField(this, 'iterable'), __publicField(this, 'index', 0), (this.iterable = e));
@@ -1231,7 +1229,7 @@ class Iter {
     static range(e, t) {
         return new Iter({
             *[Symbol.iterator]() {
-                for (let r = e; r < t; r++) yield r;
+                for (let s = e; s < t; s++) yield s;
             },
         });
     }
@@ -1275,16 +1273,16 @@ class Iter {
         const t = this.iterable;
         return new Iter({
             *[Symbol.iterator]() {
-                for (const r of t) r !== e && (yield r);
+                for (const s of t) s !== e && (yield s);
             },
         });
     }
     map(e) {
         const t = this,
-            r = this.iterable;
+            s = this.iterable;
         return new Iter({
             *[Symbol.iterator]() {
-                for (const s of r) yield e(s, t.index++);
+                for (const r of s) yield e(r, t.index++);
             },
         });
     }
@@ -1301,10 +1299,10 @@ class Iter {
     }
     filter(e) {
         const t = this,
-            r = this.iterable;
+            s = this.iterable;
         return new Iter({
             *[Symbol.iterator]() {
-                for (const s of r) e(s, t.index++) && (yield s);
+                for (const r of s) e(r, t.index++) && (yield r);
             },
         });
     }
@@ -1318,22 +1316,22 @@ class Iter {
     }
     take(e) {
         const t = this,
-            r = this.iterable;
+            s = this.iterable;
         return new Iter({
             *[Symbol.iterator]() {
-                for (const s of r) {
+                for (const r of s) {
                     if (t.index++ >= e) break;
-                    yield s;
+                    yield r;
                 }
             },
         });
     }
     skip(e) {
         const t = this,
-            r = this.iterable;
+            s = this.iterable;
         return new Iter({
             *[Symbol.iterator]() {
-                for (const s of r) t.index++ < e || (yield s);
+                for (const r of s) t.index++ < e || (yield r);
             },
         });
     }
@@ -1341,16 +1339,16 @@ class Iter {
         const t = this.iterable;
         return new Iter({
             *[Symbol.iterator]() {
-                let r = [];
-                for (const s of t) (r.push(s), r.length >= e && (yield r, (r = [])));
-                r.length > 0 && (yield r);
+                let s = [];
+                for (const r of t) (s.push(r), s.length >= e && (yield s, (s = [])));
+                s.length > 0 && (yield s);
             },
         });
     }
     reduce(e, t) {
-        let r = t;
-        for (const s of this.iterable) r = e(r, s, this.index++);
-        return r;
+        let s = t;
+        for (const r of this.iterable) s = e(s, r, this.index++);
+        return s;
     }
     count() {
         let e = 0;
@@ -1377,8 +1375,8 @@ function isNonNullable(e) {
     return !1 === isNullable(e);
 }
 function get(e, t) {
-    var r;
-    if (!(t >= e.length)) return Array.isArray(e) ? e[t] : null == (r = e[t]) ? void 0 : r.value;
+    var s;
+    if (!(t >= e.length)) return Array.isArray(e) ? e[t] : null == (s = e[t]) ? void 0 : s.value;
 }
 const unsafeGet = get;
 function unwrapItem(e) {
@@ -1393,44 +1391,44 @@ function unwrapItem(e) {
         : e;
 }
 function map(e, t) {
-    return Array.isArray(e) ? e.map(t) : e.map((e, r, s) => t(null == e ? void 0 : e.value, r, s));
+    return Array.isArray(e) ? e.map(t) : e.map((e, s, r) => t(null == e ? void 0 : e.value, s, r));
 }
 function every(e, t) {
     if (Array.isArray(e)) return e.every(t);
-    for (let r = 0; r < e.length; r++) {
-        if (!t(unsafeGet(e, r), r, e)) return !1;
+    for (let s = 0; s < e.length; s++) {
+        if (!t(unsafeGet(e, s), s, e)) return !1;
     }
     return !0;
 }
 function some(e, t) {
     if (Array.isArray(e)) return e.some(t);
-    for (let r = 0; r < e.length; r++) {
-        if (t(unsafeGet(e, r), r, e)) return !0;
+    for (let s = 0; s < e.length; s++) {
+        if (t(unsafeGet(e, s), s, e)) return !0;
     }
     return !1;
 }
 function filter(e, t) {
-    var r;
+    var s;
     if (Array.isArray(e)) return e.filter(t);
-    const s = [];
+    const r = [];
     for (let n = 0; n < e.length; n++) {
-        const a = null == (r = e[n]) ? void 0 : r.value;
-        t(a, n, e) && s.push(a);
+        const a = null == (s = e[n]) ? void 0 : s.value;
+        t(a, n, e) && r.push(a);
     }
-    return s;
+    return r;
 }
 function lastIndexZero(e) {
     return Math.max(0, e.length - 1);
 }
-function slice(e, t = 0, r = e.length - 1) {
+function slice(e, t = 0, s = e.length - 1) {
     return {
         [Symbol.iterator]() {
-            let s = Math.max(t, 0);
-            const n = Math.min(r, lastIndexZero(e));
+            let r = Math.max(t, 0);
+            const n = Math.min(s, lastIndexZero(e));
             return {
                 next: function () {
-                    if (s > n) return { done: !0, value: null };
-                    const t = e[s++];
+                    if (r > n) return { done: !0, value: null };
+                    const t = e[r++];
                     return t ? { value: unwrapItem(t), done: !1 } : { done: !0, value: null };
                 },
             };
@@ -1438,61 +1436,61 @@ function slice(e, t = 0, r = e.length - 1) {
     };
 }
 function find(e, t) {
-    for (let r = 0; r < e.length; r++) {
-        const s = unwrapItem(e[r]);
-        if (t(s, r, e)) return s;
+    for (let s = 0; s < e.length; s++) {
+        const r = unwrapItem(e[s]);
+        if (t(r, s, e)) return r;
     }
 }
-function filterMap(e, t, r) {
-    const s = [];
+function filterMap(e, t, s) {
+    const r = [];
     for (let n = 0; n < e.length; n++) {
         const a = unsafeGet(e, n);
-        t(a, n, e) && s.push(r(a, n, e));
+        t(a, n, e) && r.push(s(a, n, e));
     }
-    return s;
+    return r;
 }
-function mapFilter(e, t, r) {
-    const s = [];
+function mapFilter(e, t, s) {
+    const r = [];
     for (let n = 0; n < e.length; n++) {
         const a = t(unsafeGet(e, n), n, e);
-        r(a, n, e) && s.push(a);
+        s(a, n, e) && r.push(a);
     }
-    return s;
+    return r;
 }
 function mapNonNullable(e, t) {
     return mapFilter(e, t, isNonNullable);
 }
 function findIndexLast(e, t) {
-    for (let r = e.length - 1; r >= 0; r--) {
-        if (t(unsafeGet(e, r), r, e)) return r;
+    for (let s = e.length - 1; s >= 0; s--) {
+        if (t(unsafeGet(e, s), s, e)) return s;
     }
 }
 function join(e, t = ',') {
-    let r = '';
-    for (let s = 0; s < e.length; s++) {
-        s > 0 && (r += t);
-        const n = unsafeGet(e, s);
-        r += null == n ? '' : String(n);
-    }
-    return r;
-}
-function reduce(e, t, r) {
-    if (Array.isArray(e)) return e.reduce(t, r);
-    let s = r;
-    for (let n = 0; n < e.length; n++) {
-        s = t(s, unsafeGet(e, n), n, e);
+    let s = '';
+    for (let r = 0; r < e.length; r++) {
+        r > 0 && (s += t);
+        const n = unsafeGet(e, r);
+        s += null == n ? '' : String(n);
     }
     return s;
+}
+function reduce(e, t, s) {
+    if (Array.isArray(e)) return e.reduce(t, s);
+    let r = s;
+    for (let n = 0; n < e.length; n++) {
+        r = t(r, unsafeGet(e, n), n, e);
+    }
+    return r;
 }
 function sort(e, t) {
     return map(e, identity).sort(t);
 }
 function makeActions(e) {
     const t = {};
-    for (const r in e)
-        if (Object.prototype.hasOwnProperty.call(e, r)) {
-            const s = e[r];
-            t[r] = action(s);
+    for (const s in e)
+        if (Object.prototype.hasOwnProperty.call(e, s)) {
+            const r = e[s];
+            t[s] = action(r);
         }
     return t;
 }
@@ -1503,39 +1501,39 @@ function takeAction(e) {
 }
 const createLayoutReadyInEffect$1 = (e) => {
         let t,
-            r = null;
+            s = null;
         return (
-            (r = requestAnimationFrame(() => {
-                r = requestAnimationFrame(() => {
-                    ((r = null), (t = e()));
+            (s = requestAnimationFrame(() => {
+                s = requestAnimationFrame(() => {
+                    ((s = null), (t = e()));
                 });
             })),
             () => {
-                ('function' == typeof t && t(), null !== r && cancelAnimationFrame(r));
+                ('function' == typeof t && t(), null !== s && cancelAnimationFrame(s));
             }
         );
     },
     createTimeoutInEffect$1 = (e, t) => {
-        let r;
-        const s = setTimeout(() => {
-            r = e();
+        let s;
+        const r = setTimeout(() => {
+            s = e();
         }, t);
         return () => {
-            ('function' == typeof r && r(), clearTimeout(s));
+            ('function' == typeof s && s(), clearTimeout(r));
         };
     };
 function assert(e, t) {
     e || console.error(t || 'Assertion failed');
 }
-function mapRange(e, t, r) {
+function mapRange(e, t, s) {
     return 'function' == typeof t
         ? _mapRange(0, e, t)
-        : (assert(void 0 !== r, 'fn must be defined'), _mapRange(e, t, r));
+        : (assert(void 0 !== s, 'fn must be defined'), _mapRange(e, t, s));
 }
-function _mapRange(e, t, r) {
-    const s = new Array(t - e);
-    for (let n = e; n < t; n++) s[n] = r(n);
-    return s;
+function _mapRange(e, t, s) {
+    const r = new Array(t - e);
+    for (let n = e; n < t; n++) r[n] = s(n);
+    return r;
 }
 assert.log = function (e, t) {
     e || console.error(t || 'Assertion failed');
@@ -1548,9 +1546,9 @@ const ROMAN$1 = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM
 function arabicToRoman(e) {
     if (e <= 10) return ROMAN_SUBSET[e] ?? String(e);
     let t = '';
-    for (let r = ARABIC$1.length - 1; r >= 0; r--) {
-        let s = ARABIC$1[r];
-        for (; void 0 !== s && e >= s; ) ((t += ROMAN$1[r]), (e -= s));
+    for (let s = ARABIC$1.length - 1; s >= 0; s--) {
+        let r = ARABIC$1[s];
+        for (; void 0 !== r && e >= r; ) ((t += ROMAN$1[s]), (e -= r));
     }
     return t;
 }
@@ -1568,15 +1566,16 @@ const LOWER_ALPHABET = 'abcdefghijklmnopqrstuvwxyz',
     NUMBERS_ALPHABET = '0123456789',
     createString =
         (e) =>
-        (t, r = int(-Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)) => {
-            const s = e.length;
-            let n = r;
-            let a = '';
-            for (let o = 0; o < t; o++) {
-                const t = Math.abs(Math.floor(((n = (9301 * n + 49297) % 233280), (n / 233280) * s)));
-                a += e[t % e.length];
+        (t, s = int(-Number.MAX_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)) => {
+            const r = e.length;
+            let n = s;
+            const a = () => ((n = (9301 * n + 49297) % 233280), n / 233280);
+            let o = '';
+            for (let u = 0; u < t; u++) {
+                const t = Math.abs(Math.floor(a() * r));
+                o += e[t % e.length];
             }
-            return a;
+            return o;
         };
 function isValid(e) {
     return 'number' == typeof e && !Number.isNaN(e) && Number.isFinite(e);
@@ -1618,10 +1617,10 @@ class Stack {
         return this.items.slice();
     }
 }
-function deepEqual(e, t, r = -1) {
-    return eq(e, t, r);
+function deepEqual(e, t, s = -1) {
+    return eq(e, t, s);
 }
-function eq(e, t, r, s, n) {
+function eq(e, t, s, r, n) {
     if (e === t) return 0 !== e || 1 / Number(e) == 1 / Number(t);
     if (null == e || null == t) return !1;
     if (e != e) return t != t;
@@ -1646,7 +1645,7 @@ function eq(e, t, r, s, n) {
             return 'undefined' != typeof Symbol && Symbol.valueOf.call(e) === Symbol.valueOf.call(t);
         case '[object Map]':
         case '[object Set]':
-            r >= 0 && r++;
+            s >= 0 && s++;
     }
     const u = unwrap(e),
         i = unwrap(t),
@@ -1663,13 +1662,13 @@ function eq(e, t, r, s, n) {
         )
             return !1;
     }
-    if (0 === r) return !1;
-    (r < 0 && (r = -1), (n = n || []));
-    let c = (s = s || []).length;
-    for (; c--; ) if (s[c] === u) return n[c] === i;
-    if ((s.push(e), n.push(t), l)) {
+    if (0 === s) return !1;
+    (s < 0 && (s = -1), (n = n || []));
+    let c = (r = r || []).length;
+    for (; c--; ) if (r[c] === u) return n[c] === i;
+    if ((r.push(e), n.push(t), l)) {
         if (((c = u.length), c !== i.length)) return !1;
-        for (; c--; ) if (!eq(u[c], i[c], r - 1, s, n)) return !1;
+        for (; c--; ) if (!eq(u[c], i[c], s - 1, r, n)) return !1;
     } else {
         const e = Object.keys(u);
         let t;
@@ -1677,10 +1676,10 @@ function eq(e, t, r, s, n) {
         for (; c--; ) {
             if (((t = e[c]), void 0 === t))
                 return (console.error('Error: met undefined in object during deepEqual comparison'), !1);
-            if (!Object.prototype.hasOwnProperty.call(i, t) || !eq(u[t], i[t], r - 1, s, n)) return !1;
+            if (!Object.prototype.hasOwnProperty.call(i, t) || !eq(u[t], i[t], s - 1, r, n)) return !1;
         }
     }
-    return (s.pop(), n.pop(), !0);
+    return (r.pop(), n.pop(), !0);
 }
 function unwrap(e) {
     return e instanceof Map || e instanceof Set ? Array.from(e.entries()) : e;
@@ -1706,55 +1705,55 @@ const comparer = {
     mouseButtons = { left: 0, wheel: 1, right: 2 };
 function splitChinese$1(e) {
     const t = [],
-        r = e
+        s = e
             .replace(/&nbsp;/g, ' ')
             .replace(/ /g, ' ')
             .matchAll(/[(（《「]*["'][^'"]*["'][。，:;：；—！!？?》」•%)、]*|.*?(?=[(（《「]*["'])|.*/gsu);
-    for (const [s] of r) {
-        const e = s.matchAll(
+    for (const [r] of s) {
+        const e = r.matchAll(
             /[(（《「“‘'"]*[\u4E00-\u9FFF\u3400-\u4DBF%][。，:;：；—！!？?》」•%)、’”'"]*|[(（《「“‘'"]*[a-zA-Z0-9-.,]+[。，:;：；—！!？?》」•%)、’”'"]*|\xa0|[^\u4E00-\u9FFF\u3400-\u4DBF\s]/gu,
         );
-        for (const [r] of e) t.push(r);
+        for (const [s] of e) t.push(s);
     }
     return t;
 }
 function splitJapanese(e) {
     const t = [],
-        r = e
+        s = e
             .replace(/&nbsp;/g, ' ')
             .matchAll(
                 /[【「(（『《]?[\u4E00-\u9FFF\u3040-\u309F\u30A0-\u30FF%](?:[。!?、…・ー—–!%?）)】」》』]+)?|[「【(（『《]?\d+(?:,\d{3})*(?:\s*[a-zA-Z\u3040-\u30FF/%]+)?(?:[。，、:;：；!?）)】」》・%)、]+)?|[「【(（『《]?[a-zA-Z0-9]+(?:[-/][a-zA-Z0-9]+)*(?:\s*[。!?、…・ー—–!?》】」）)』]+)?|\u00A0|[^\s]/gu,
             );
-    for (const [s] of r) t.push(s);
+    for (const [r] of s) t.push(r);
     return t;
 }
 function splitKorean(e) {
     const t = [],
-        r = e
+        s = e
             .replace(/&nbsp;/g, ' ')
             .matchAll(
                 /\s+|\u00A0|[【「(（『《]?[\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F%](?:[。!?、…・ー—–!%?）)】」》『]+)?|[「【(（『《]?\d+(?:,\d{3})*(?:\s*[a-zA-Z\uAC00-\uD7AF\u1100-\u11FF\u3130-\u318F/%]+)?(?:[。，、:;：；!?）)】」》・%)、]+)?|[「【(（『《]?[a-zA-Z0-9]+(?:[-/][a-zA-Z0-9]+)*(?:\s*[。!?、…・ー—–!?》】」）)』]+)?|[^\s]/gu,
             );
-    for (const [s] of r) t.push(s);
+    for (const [r] of s) t.push(r);
     return t;
 }
 function splitThai(e) {
     var t;
-    const r = [],
-        s = e
+    const s = [],
+        r = e
             .replace(/&nbsp;/g, ' ')
             .matchAll(
                 /[【「(（『"《]?[\u0E00-\u0E7F%](?:[\u0E31\u0E34-\u0E3A\u0E47-\u0E4E。!?,.:、…・/ー—–!%+?）)】」"》』]+)?|[「【(（『《"]?\d+(?:,\d{3})*(?:-\d+(?:,\d{3})*)?(?:\s*[a-zA-Z\u0E00-\u0E7F/%]+)?(?:[。.,，、:;：；!?）)】」"》・%)、]+)?|[「【(（『《"]?[a-zA-Z0-9]+(?:[-/][a-zA-Z0-9]+)*(?:\s*[。!?、…・ー—–!?"》】」）)』]+)?|[\u00A0 ]|[^\s]/gu,
             );
-    for (const [n] of s)
+    for (const [n] of r)
         /^\s+$/.test(n)
-            ? r.length
-                ? (r[r.length - 1] += n)
-                : r.push(n)
-            : 1 === r.length && (null == (t = r[0]) ? void 0 : t.startsWith('  '))
-              ? (r[0] = ' ' + n)
-              : r.push(n);
-    return r;
+            ? s.length
+                ? (s[s.length - 1] += n)
+                : s.push(n)
+            : 1 === s.length && (null == (t = s[0]) ? void 0 : t.startsWith('  '))
+              ? (s[0] = ' ' + n)
+              : s.push(n);
+    return s;
 }
 const splitters = {
     zh_cn: splitChinese$1,
@@ -1768,10 +1767,10 @@ function defaultSplit(e) {
     return e.split(' ');
 }
 const langsWithoutSpace = new Set(['zh_cn', 'zh_sg', 'zh_tw', 'ja', 'ko', 'th']);
-function addSpaceAndMap(e, t, r) {
+function addSpaceAndMap(e, t, s) {
     return langsWithoutSpace.has(t)
-        ? e.map(r)
-        : e.map((e, t, s) => (t === s.length - 1 ? r(e, t, s) : r(`${e} `, t, s)));
+        ? e.map(s)
+        : e.map((e, t, r) => (t === r.length - 1 ? s(e, t, r) : s(`${e} `, t, r)));
 }
 function splitLocale(e, t) {
     return (splitters[t] ?? defaultSplit)(e);
@@ -1828,37 +1827,37 @@ var MediaSize =
     MediaHeight2;
 const BREAKPOINTS = Object.values(breakpointsByType);
 function generateMediaClasses(e, t) {
-    const r = t['width' === e ? 'height' : 'width'],
-        s = new Set(t[e].classes),
-        n = new Set(r.classes.filter((e) => !(!e.endsWith('Width') && !e.endsWith('Height')) || s.has(e)));
-    return Array.from(new Set([...s, ...n])).join(' ');
+    const s = t['width' === e ? 'height' : 'width'],
+        r = new Set(t[e].classes),
+        n = new Set(s.classes.filter((e) => !(!e.endsWith('Width') && !e.endsWith('Height')) || r.has(e)));
+    return Array.from(new Set([...r, ...n])).join(' ');
 }
-function calculateMedia(e, t, r) {
-    const s = BREAKPOINTS.reduce(
-            (r, s) => (
-                s.width <= e &&
-                    (r.width.classes.push(s.className, `${s.className}Width`),
-                    r.width.names.push(s.name),
-                    (r.width.weight += 1)),
-                s.height <= t &&
-                    (r.height.classes.push(s.className, `${s.className}Height`),
-                    r.height.names.push(s.name),
-                    (r.height.weight += 1)),
-                r
+function calculateMedia(e, t, s) {
+    const r = BREAKPOINTS.reduce(
+            (s, r) => (
+                r.width <= e &&
+                    (s.width.classes.push(r.className, `${r.className}Width`),
+                    s.width.names.push(r.name),
+                    (s.width.weight += 1)),
+                r.height <= t &&
+                    (s.height.classes.push(r.className, `${r.className}Height`),
+                    s.height.names.push(r.name),
+                    (s.height.weight += 1)),
+                s
             ),
             { width: { classes: [], names: [], weight: 0 }, height: { classes: [], names: [], weight: 0 } },
         ),
-        n = s.width.weight <= s.height.weight ? 'width' : 'height',
-        a = s[n],
+        n = r.width.weight <= r.height.weight ? 'width' : 'height',
+        a = r[n],
         o = a.names[a.names.length - 1] ?? breakpoints.extraSmall,
         u = breakpointsByType[o],
-        i = s.width.names,
-        l = s.height.names,
+        i = r.width.names,
+        l = r.height.names,
         c = i[i.length - 1] ?? breakpoints.extraSmall,
         d = l[l.length - 1] ?? breakpoints.extraSmall,
         _ = { width: breakpointsByType[c].width, height: breakpointsByType[d].height };
     return {
-        mediaClass: generateMediaClasses(n, s),
+        mediaClass: generateMediaClasses(n, r),
         breakpoint: u,
         screenWidthRem: e,
         screenHeightRem: t,
@@ -1867,7 +1866,7 @@ function calculateMedia(e, t, r) {
         mediaSize: u.width,
         mediaWidth: _.width,
         mediaHeight: _.height,
-        upscale: r > 1,
+        upscale: s > 1,
     };
 }
 const getScale$1 = () => remToPx$1(1),
@@ -1876,17 +1875,17 @@ const getScale$1 = () => remToPx$1(1),
         return calculateMedia(e.width, e.height, getScale$1());
     };
 function MediaProvider({ children: e }) {
-    const [t, r] = reactExports.useState(calcMediaState);
+    const [t, s] = reactExports.useState(calcMediaState);
     return (
         reactExports.useLayoutEffect(() => {
             function e() {
-                r(calcMediaState);
+                s(calcMediaState);
             }
             e();
             const t = onResize$1(e),
-                s = onRescale(e);
+                r = onRescale(e);
             return () => {
-                (t(), s());
+                (t(), r());
             };
         }, []),
         jsxRuntimeExports.jsx(MediaContext.Provider, { value: t, children: e })
@@ -1895,11 +1894,11 @@ function MediaProvider({ children: e }) {
 function useMedia() {
     return useMediaContext();
 }
-function MediaWrapperElement({ children: e, className: t, ...r }) {
-    const { mediaClass: s, upscale: n } = useMedia();
+function MediaWrapperElement({ children: e, className: t, ...s }) {
+    const { mediaClass: r, upscale: n } = useMedia();
     return jsxRuntimeExports.jsx('div', {
-        className: cx(t, 'media-wrapper', s, n && 'media-upscale'),
-        ...r,
+        className: clsx(t, 'media-wrapper', r, n && 'media-upscale'),
+        ...s,
         children: e,
     });
 }
@@ -1908,8 +1907,8 @@ function MediaWrapper({ children: e, ...t }) {
         children: jsxRuntimeExports.jsx(MediaWrapperElement, { ...t, children: e }),
     });
 }
-function accumulate(e, t, r) {
-    return r ? e.breaks.reduce((e, t) => (r[t] ? { ...e, ...r[t] } : e), t) : t;
+function accumulate(e, t, s) {
+    return s ? e.breaks.reduce((e, t) => (s[t] ? { ...e, ...s[t] } : e), t) : t;
 }
 function useAdaptive(e, t) {
     return accumulate(useMedia(), e, t);
@@ -1918,7 +1917,7 @@ function useUpscale(e, t) {
     return useMedia().upscale ? t : e;
 }
 const usePrevious = (e) => {
-    const t = reactExports.useRef();
+    const t = reactExports.useRef(void 0);
     return (
         reactExports.useEffect(() => {
             t.current = e;
@@ -1933,66 +1932,14 @@ function useScreenSize() {
             function e() {
                 t(getSize$2('rem'));
             }
-            const r = onResize$1(e),
-                s = onRescale(e);
+            const s = onResize$1(e),
+                r = onRescale(e);
             return () => {
-                (r(), s());
+                (s(), r());
             };
         }, []),
         e
     );
-}
-function throttle$1(e, t, r, s) {
-    let n,
-        a = !1,
-        o = 0;
-    function u() {
-        n && clearTimeout(n);
-    }
-    function i(...i) {
-        const l = this,
-            c = Date.now() - o;
-        function d() {
-            ((o = Date.now()), r.apply(l, i));
-        }
-        a ||
-            (s && !n && d(),
-            u(),
-            void 0 === s && c > e
-                ? d()
-                : !0 !== t &&
-                  (n = setTimeout(
-                      s
-                          ? function () {
-                                n = void 0;
-                            }
-                          : d,
-                      void 0 === s ? e - c : e,
-                  )));
-    }
-    return (
-        'boolean' != typeof t && ((s = r), (r = t), (t = void 0)),
-        (i.cancel = function () {
-            (u(), (a = !0));
-        }),
-        i
-    );
-}
-function useEmitter$1() {
-    return reactExports.useMemo(() => {
-        const e = {},
-            t = (t) => (e[t] || (e[t] = new Set()), e[t]),
-            r = (e, r) => {
-                t(e).delete(r);
-            };
-        return {
-            on: (e, s) => (t(e).add(s), () => r(e, s)),
-            off: r,
-            trigger: (e, ...r) => {
-                for (const s of t(e).values()) s(...r);
-            },
-        };
-    }, []);
 }
 const STATIC_DEPS$1 = [];
 function useEvent$1(e) {
@@ -2004,10 +1951,78 @@ function useEvent$1(e) {
         reactExports.useCallback((...e) => (0, t.current)(...e), STATIC_DEPS$1)
     );
 }
+const useRefResizeObserver = (e, t, s = !0) => {
+    const r = useEvent$1((e) => {
+        const s = e[0];
+        s && t(s);
+    });
+    reactExports.useEffect(() => {
+        if (!e.current || !s) return;
+        const t = new ResizeObserver((e) => r(e));
+        return (
+            t.observe(e.current),
+            () => {
+                t.disconnect();
+            }
+        );
+    }, [r, s, e]);
+};
+function throttle$1(e, t, s, r) {
+    let n,
+        a = !1,
+        o = 0;
+    function u() {
+        n && clearTimeout(n);
+    }
+    function i(...i) {
+        const l = this,
+            c = Date.now() - o;
+        function d() {
+            ((o = Date.now()), s.apply(l, i));
+        }
+        a ||
+            (r && !n && d(),
+            u(),
+            void 0 === r && c > e
+                ? d()
+                : !0 !== t &&
+                  (n = setTimeout(
+                      r
+                          ? function () {
+                                n = void 0;
+                            }
+                          : d,
+                      void 0 === r ? e - c : e,
+                  )));
+    }
+    return (
+        'boolean' != typeof t && ((r = s), (s = t), (t = void 0)),
+        (i.cancel = function () {
+            (u(), (a = !0));
+        }),
+        i
+    );
+}
+function useEmitter$1() {
+    return reactExports.useMemo(() => {
+        const e = {},
+            t = (t) => (e[t] || (e[t] = new Set()), e[t]),
+            s = (e, s) => {
+                t(e).delete(s);
+            };
+        return {
+            on: (e, r) => (t(e).add(r), () => s(e, r)),
+            off: s,
+            trigger: (e, ...s) => {
+                for (const r of t(e).values()) r(...s);
+            },
+        };
+    }, []);
+}
 function useMount$1(e) {
     reactExports.useEffect(e, []);
 }
-function useUnmount(e) {
+function useUnmount$1(e) {
     reactExports.useEffect(() => e, []);
 }
 function useIsFirstRender() {
@@ -2022,29 +2037,29 @@ function useIsFirstRender() {
 const createApi = () => {
         const e = new Map();
         function t(t) {
-            const r = e.get(t);
-            if (r) return r;
-            const s = new Stack();
-            return (e.set(t, s), s);
-        }
-        function r(t, r) {
             const s = e.get(t);
-            return !!s && s.remove(r);
+            if (s) return s;
+            const r = new Stack();
+            return (e.set(t, r), r);
+        }
+        function s(t, s) {
+            const r = e.get(t);
+            return !!r && r.remove(s);
         }
         return {
             handlers: e,
             obtain: t,
-            register: function (e, s) {
+            register: function (e, r) {
                 if (e === keyStringCodes.NONE) return constFalse;
                 const n = t(e);
-                return (n.includes(s) || n.push(s), () => r(e, s));
+                return (n.includes(r) || n.push(r), () => s(e, r));
             },
-            unregister: r,
+            unregister: s,
             takeCurrent: function (t) {
-                const r = e.get(t);
-                if (!r) return;
-                const s = r.peek();
-                return s || void 0;
+                const s = e.get(t);
+                if (!s) return;
+                const r = s.peek();
+                return r || void 0;
             },
         };
     },
@@ -2054,59 +2069,59 @@ function useApi$2() {
     if (!e) throw new Error('useHierarchicalKeyEvents must be used within a hierarchyKeyDown.Provider');
     return e;
 }
-function useHandleKey(e, t, r, s = !1) {
+function useHandleKey(e, t, s, r = !1) {
     const n = normalizeKeyCode(e),
         a = useEvent$1((e) => {
-            isEventHandled$1() || (r(e), setEventHandled$1(), s && e.stopPropagation());
+            isEventHandled$1() || (s(e), setEventHandled$1(), r && e.stopPropagation());
         }),
         o = useApi$2(),
         u = reactExports.useMemo(() => o[t].register(n, a), [o, t, n, a]);
     reactExports.useEffect(() => u, [u]);
 }
-function useHandleKeydown(e, t, r = !1) {
-    return useHandleKey(normalizeKeyCode(e), 'keydown', t, r);
+function useHandleKeydown(e, t, s = !1) {
+    return useHandleKey(normalizeKeyCode(e), 'keydown', t, s);
 }
 function Provider(e) {
     const t = reactExports.useMemo(createApi, []),
-        r = reactExports.useMemo(createApi, []);
+        s = reactExports.useMemo(createApi, []);
     reactExports.useEffect(() => {
         function e(e) {
-            var r;
-            null == (r = t.takeCurrent(e.code)) || r(e);
+            var s;
+            null == (s = t.takeCurrent(e.code)) || s(e);
         }
-        function s(e) {
+        function r(e) {
             var t;
-            null == (t = r.takeCurrent(e.code)) || t(e);
+            null == (t = s.takeCurrent(e.code)) || t(e);
         }
         return (
             window.addEventListener('keydown', e),
-            window.addEventListener('keyup', s),
+            window.addEventListener('keyup', r),
             () => {
-                (window.removeEventListener('keydown', e), window.removeEventListener('keyup', s));
+                (window.removeEventListener('keydown', e), window.removeEventListener('keyup', r));
             }
         );
-    }, [t, r]);
-    const s = reactExports.useMemo(
+    }, [t, s]);
+    const r = reactExports.useMemo(
         () => ({
             keydown: { register: t.register, unregister: t.unregister },
-            keyup: { register: r.register, unregister: r.unregister },
+            keyup: { register: s.register, unregister: s.unregister },
         }),
-        [t, r],
+        [t, s],
     );
-    return jsxRuntimeExports.jsx(Context$4.Provider, { value: s, children: e.children });
+    return jsxRuntimeExports.jsx(Context$4.Provider, { value: r, children: e.children });
 }
 const defaultCallback = (e) => {
     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
 };
-function useKeydownListener(e = keyStringCodes.ESCAPE, t = defaultCallback, r = !1) {
-    const s = normalizeKeyCode(e);
+function useKeydownListener(e = keyStringCodes.ESCAPE, t = defaultCallback, s = !1) {
+    const r = normalizeKeyCode(e);
     reactExports.useEffect(() => {
-        if (s !== keyStringCodes.NONE)
-            return (window.addEventListener('keydown', e, r), () => window.removeEventListener('keydown', e, r));
+        if (r !== keyStringCodes.NONE)
+            return (window.addEventListener('keydown', e, s), () => window.removeEventListener('keydown', e, s));
         function e(e) {
-            e.code !== s || isEventHandled$1() || (t(e), setEventHandled$1(), r && e.stopPropagation());
+            e.code !== r || isEventHandled$1() || (t(e), setEventHandled$1(), s && e.stopPropagation());
         }
-    }, [t, s, r]);
+    }, [t, r, s]);
 }
 function useCloseOnKeyPress(e = keyStringCodes.ESCAPE) {
     return useHandleKeydown(normalizeKeyCode(e), sendEvent$1.closeView, !0);
@@ -2120,15 +2135,15 @@ function useCloseOnEsc() {
 const useLayoutReady = (e, t) => {
         reactExports.useEffect(() => {
             let t,
-                r = null;
+                s = null;
             return (
-                (r = requestAnimationFrame(() => {
-                    r = requestAnimationFrame(() => {
-                        ((r = null), (t = e()));
+                (s = requestAnimationFrame(() => {
+                    s = requestAnimationFrame(() => {
+                        ((s = null), (t = e()));
                     });
                 })),
                 () => {
-                    ('function' == typeof t && t(), null !== r && cancelAnimationFrame(r));
+                    ('function' == typeof t && t(), null !== s && cancelAnimationFrame(s));
                 }
             );
         }, t);
@@ -2138,24 +2153,24 @@ const useLayoutReady = (e, t) => {
         reactExports.useEffect(() => () => cancelAnimationFrame(t.current), []);
         return [
             () => {
-                const r = () => {
-                    e() && (t.current = requestAnimationFrame(r));
+                const s = () => {
+                    e() && (t.current = requestAnimationFrame(s));
                 };
-                r();
+                s();
             },
             () => cancelAnimationFrame(t.current),
         ];
     };
-function useRepeatCallback$1(e, t, r = []) {
-    const s = reactExports.useRef(0),
+function useRepeatCallback$1(e, t, s = []) {
+    const r = reactExports.useRef(0),
         n = reactExports.useCallback(() => {
-            (window.clearInterval(s.current), (s.current = 0));
-        }, r || []);
+            (window.clearInterval(r.current), (r.current = 0));
+        }, s || []);
     reactExports.useEffect(() => n, [n]);
-    const a = (r ?? []).concat([t]);
+    const a = (s ?? []).concat([t]);
     return [
-        reactExports.useCallback((r) => {
-            (0 !== s.current && n(), (s.current = window.setInterval(() => e(r, !0), t)), e(r, !1));
+        reactExports.useCallback((s) => {
+            (0 !== r.current && n(), (r.current = window.setInterval(() => e(s, !0), t)), e(s, !1));
         }, a),
         n,
     ];
@@ -2169,34 +2184,18 @@ function useResize(e, t) {
 function useResizeLayoutReady(e, t) {
     reactExports.useEffect(() => {
         let t = () => {};
-        const r = () => {
+        const s = () => {
             (t(), (t = createLayoutReadyInEffect$1(e)));
         };
         return (
-            window.addEventListener('resize', r),
+            window.addEventListener('resize', s),
             () => {
-                (t(), window.removeEventListener('resize', r));
+                (t(), window.removeEventListener('resize', s));
             }
         );
     }, t);
 }
-const useRefResizeObserver = (e, t, r = !0) => {
-        const s = useEvent$1((e) => {
-            const r = e[0];
-            r && t(r);
-        });
-        reactExports.useEffect(() => {
-            if (!e.current || !r) return;
-            const t = new ResizeObserver((e) => s(e));
-            return (
-                t.observe(e.current),
-                () => {
-                    t.disconnect();
-                }
-            );
-        }, [s, r, e]);
-    },
-    useScaleState = () => {
+const useScaleState = () => {
         const [e, t] = reactExports.useState(getScale$2());
         return (
             reactExports.useEffect(() => {
@@ -2217,7 +2216,7 @@ const useRefResizeObserver = (e, t, r = !0) => {
 function useSkipFrame() {
     const e = reactExports.useRef(NO_RAF_ID);
     return (
-        useUnmount(() => {
+        useUnmount$1(() => {
             window.cancelAnimationFrame(e.current);
         }),
         reactExports.useMemo(
@@ -2241,24 +2240,24 @@ function useSkipFrame() {
         )
     );
 }
-function useThrottle$1(e, t, r) {
-    const s = reactExports.useMemo(() => throttle$1(r, e), t);
-    return (reactExports.useEffect(() => s.cancel, [s]), s);
+function useThrottle$1(e, t, s) {
+    const r = reactExports.useMemo(() => throttle$1(s, e), t);
+    return (reactExports.useEffect(() => r.cancel, [r]), r);
 }
 const NO_TIMEOUT_ID = 0;
 function useTimeout() {
     const e = reactExports.useRef(NO_TIMEOUT_ID);
     return (
-        useUnmount(() => {
+        useUnmount$1(() => {
             window.clearTimeout(e.current);
         }),
         reactExports.useMemo(
             () => ({
-                run: (t, r) => {
+                run: (t, s) => {
                     (window.clearTimeout(e.current),
                         (e.current = window.setTimeout(() => {
                             ((e.current = NO_TIMEOUT_ID), t());
-                        }, r)));
+                        }, s)));
                 },
                 clear: () => {
                     (window.clearTimeout(e.current), (e.current = NO_TIMEOUT_ID));
@@ -2272,13 +2271,13 @@ function useTimeout() {
     );
 }
 function useThrottleCall(e, t = !1) {
-    const r = reactExports.useRef(0),
-        s = reactExports.useRef(0),
+    const s = reactExports.useRef(0),
+        r = reactExports.useRef(0),
         n = reactExports.useRef(noop$1);
     return (
         reactExports.useEffect(
             () => () => {
-                window.clearTimeout(r.current);
+                window.clearTimeout(s.current);
             },
             [],
         ),
@@ -2288,15 +2287,15 @@ function useThrottleCall(e, t = !1) {
                 call: function (a) {
                     n.current = a;
                     const o = Date.now();
-                    o - s.current < e ||
+                    o - r.current < e ||
                         (t && (n.current(), (n.current = noop$1)),
-                        (s.current = o),
-                        (r.current = window.setTimeout(() => {
-                            (n.current(), (r.current = 0));
+                        (r.current = o),
+                        (s.current = window.setTimeout(() => {
+                            (n.current(), (s.current = 0));
                         }, e)));
                 },
                 cancel: function () {
-                    (window.clearTimeout(r.current), (r.current = 0));
+                    (window.clearTimeout(s.current), (s.current = 0));
                 },
             };
         }, [e, t])
@@ -2308,7 +2307,7 @@ const justCall = (e) => e(),
         return e ? t : [!1, justCall];
     };
 function useTicker(e) {
-    const { type: t, tick: r, limit: s } = e,
+    const { type: t, tick: s, limit: r } = e,
         n = e.autostart ?? !1,
         a = e.start ?? zero,
         [o, u] = reactExports.useState({ current: a, running: n }),
@@ -2318,23 +2317,23 @@ function useTicker(e) {
             (i.current = window.setInterval(() => {
                 o.running
                     ? u((e) => {
-                          const n = 'countdown' === t ? subtract(e.current, r) : add(e.current, r),
+                          const n = 'countdown' === t ? subtract(e.current, s) : add(e.current, s),
                               a = { ...e, current: n };
                           return (
-                              isDuration(s) &&
+                              isDuration(r) &&
                                   ('countdown' === t
-                                      ? lt(subtract(n, r), s) && ((a.current = s), (a.running = !1))
-                                      : gt(add(n, r), s) && ((a.current = s), (a.running = !1))),
+                                      ? lt(subtract(n, s), r) && ((a.current = r), (a.running = !1))
+                                      : gt(add(n, s), r) && ((a.current = r), (a.running = !1))),
                               a
                           );
                       })
                     : window.clearInterval(i.current);
-            }, toMillis(r))),
+            }, toMillis(s))),
             () => {
                 window.clearInterval(i.current);
             }
         ),
-        [s, r, o.running, t],
+        [r, s, o.running, t],
     );
     const l = reactExports.useMemo(
         () => ({
@@ -2348,28 +2347,28 @@ function useTicker(e) {
 }
 const parameters = ['top', 'left', 'width', 'height', 'bottom', 'right', 'x', 'y'];
 function isEqual(e, t) {
-    return parameters.every((r) => e[r] === t[r]);
+    return parameters.every((s) => e[s] === t[s]);
 }
 const initialSize = { top: 0, left: 0, width: 0, height: 0, bottom: 0, right: 0, x: 0, y: 0 };
 function watchResizes(e, t) {
-    let r = 0;
-    const s = e.map(() => initialSize);
+    let s = 0;
+    const r = e.map(() => initialSize);
     function n() {
         let a = !1;
         for (let t = 0; t < e.length; t++) {
-            const r = e[t],
-                n = s[t],
-                o = r.getBoundingClientRect();
-            isEqual(o, n) || ((s[t] = o), (a = !0));
+            const s = e[t],
+                n = r[t],
+                o = s.getBoundingClientRect();
+            isEqual(o, n) || ((r[t] = o), (a = !0));
         }
-        (a && t(s), (r = requestAnimationFrame(n)));
+        (a && t(r), (s = requestAnimationFrame(n)));
     }
     return {
         start() {
             n();
         },
         stop() {
-            cancelAnimationFrame(r);
+            cancelAnimationFrame(s);
         },
     };
 }
@@ -2379,8 +2378,8 @@ const displayedTooltips = new WeakMap(),
 function useTooltip({
     resId: e = DEFAULT_RES_ID,
     contentId: t,
-    decoratorId: r,
-    disabled: s,
+    decoratorId: s,
+    disabled: r,
     args: n,
     showDelay: a = 400,
 }) {
@@ -2388,20 +2387,20 @@ function useTooltip({
         [u, i] = reactExports.useMemo(() => {
             let u = null;
             function i() {
-                s ||
+                r ||
                     ((o.current.status = statuses.await),
                     window.clearTimeout(o.current.timeoutId),
                     (o.current.timeoutId = window.setTimeout(l, a)));
             }
             function l() {
                 ((o.current.status = statuses.display),
-                    sendEvent$1.tooltip.open(e, t, r, n),
+                    sendEvent$1.tooltip.open(e, t, s, n),
                     u && displayedTooltips.set(u, d));
             }
             function c() {
                 if (
                     (window.clearTimeout(o.current.timeoutId),
-                    o.current.status === statuses.display && sendEvent$1.tooltip.hide(e, t, r),
+                    o.current.status === statuses.display && sendEvent$1.tooltip.hide(e, t, s),
                     (o.current.status = statuses.idle),
                     u)
                 ) {
@@ -2418,7 +2417,7 @@ function useTooltip({
                 hide: c,
                 show: l,
                 rerun: function () {
-                    o.current.status !== statuses.idle && (s ? d.hide() : i());
+                    o.current.status !== statuses.idle && (r ? d.hide() : i());
                 },
             };
             return [
@@ -2427,20 +2426,20 @@ function useTooltip({
                     onMouseEnter: (e) => {
                         ((u = null == e ? void 0 : e.currentTarget), i());
                     },
-                    onMouseLeave: s ? noop$1 : c,
-                    onClick: s ? noop$1 : c,
+                    onMouseLeave: r ? noop$1 : c,
+                    onClick: r ? noop$1 : c,
                 },
             ];
-        }, [n, t, r, s, e, a]);
+        }, [n, t, s, r, e, a]);
     return (
         reactExports.useEffect(() => {
             u.rerun();
         }, [u]),
-        useUnmount(useEvent$1(u.hide)),
+        useUnmount$1(useEvent$1(u.hide)),
         i
     );
 }
-function useSimpleTooltip({ alert: e, body: t, header: r, note: s, hasHtmlContent: n, disabled: a }) {
+function useSimpleTooltip({ alert: e, body: t, header: s, note: r, hasHtmlContent: n, disabled: a }) {
     const o = resources.resolve('views');
     return useTooltip({
         disabled: a,
@@ -2450,27 +2449,19 @@ function useSimpleTooltip({ alert: e, body: t, header: r, note: s, hasHtmlConten
                 : e.common.tooltip_window.simple_tooltip_content.SimpleTooltipContent('resId'),
         ),
         decoratorId: o.read((e) => e.common.tooltip_window.tooltip_window.TooltipWindow('resId')),
-        args: reactExports.useMemo(() => ({ body: t, header: r, note: s, alert: e }), [e, t, r, s]),
+        args: reactExports.useMemo(() => ({ body: t, header: s, note: r, alert: e }), [e, t, s, r]),
     });
 }
 const NO_ARGS = [];
-function useSpecialTooltip(e, t = NO_ARGS, r) {
+function useSpecialTooltip(e, t = NO_ARGS, s) {
     return useTooltip({
-        ...r,
-        disabled: null == r ? void 0 : r.disabled,
+        ...s,
+        disabled: null == s ? void 0 : s.disabled,
         contentId: resources.resolve('aliases').read((e) => e.common.tooltip.Backport('resId')),
         args: reactExports.useMemo(
-            () => ({ tooltipId: e, tooltipArgs: JSON.stringify(t), ...(null == r ? void 0 : r.args) }),
-            [t, e, null == r ? void 0 : r.args],
+            () => ({ tooltipId: e, tooltipArgs: JSON.stringify(t), ...(null == s ? void 0 : s.args) }),
+            [t, e, null == s ? void 0 : s.args],
         ),
-    });
-}
-function useParamTooltip(e, t, r) {
-    return useTooltip({
-        ...r,
-        disabled: null == r ? void 0 : r.disabled,
-        contentId: resources.resolve('aliases').read((e) => e.common.tooltip.Param('resId')),
-        args: reactExports.useMemo(() => ({ type: e, params: JSON.stringify(t), resId: t.resId }), [t, e]),
     });
 }
 const ROMAN_FORBIDDEN_LANGUAGE_CODES$1 = ['ko', 'no'];
@@ -2516,20 +2507,20 @@ function logBySeverity(e, t) {
     }
 }
 const Context$3 = reactExports.createContext(null);
-function SoundsProvider({ severity: e = 'warn', overrides: t, silent: r = !1, children: s }) {
+function SoundsProvider({ severity: e = 'warn', overrides: t, silent: s = !1, children: r }) {
     const n = reactExports.useMemo(() => ({ ...soundConfig, ...t }), [t]),
         a = reactExports.useMemo(
             () => ({
-                play: function (t, s) {
-                    if (r) return;
+                play: function (t, r) {
+                    if (s) return;
                     const a = n[t];
-                    a ? a(s) : logBySeverity(`There is no sound for event: ${t}`, e);
+                    a ? a(r) : logBySeverity(`There is no sound for event: ${t}`, e);
                 },
-                settings: { plays: n, severity: e, silent: r },
+                settings: { plays: n, severity: e, silent: s },
             }),
-            [n, e, r],
+            [n, e, s],
         );
-    return jsxRuntimeExports.jsx(Context$3.Provider, { value: a, children: s });
+    return jsxRuntimeExports.jsx(Context$3.Provider, { value: a, children: r });
 }
 function useSounds() {
     const e = reactExports.useContext(Context$3);
@@ -2540,16 +2531,16 @@ const RIGHT_KEY_CODE = 2;
 function isRightClick(e) {
     return e.button === RIGHT_KEY_CODE;
 }
-function useContextMenu({ resId: e = 0, contentId: t, decoratorId: r, args: s, disabled: n, soundTarget: a }) {
+function useContextMenu({ resId: e = 0, contentId: t, decoratorId: s, args: r, disabled: n, soundTarget: a }) {
     const o = useSounds(),
         [{ hide: u }, i] = reactExports.useMemo(() => {
             function u() {
-                n || sendEvent$1.contextMenu.open(e, t, r, s);
+                n || sendEvent$1.contextMenu.open(e, t, s, r);
             }
             return [
                 {
                     hide: function () {
-                        sendEvent$1.contextMenu.hide(e, t, r);
+                        sendEvent$1.contextMenu.hide(e, t, s);
                     },
                     show: u,
                 },
@@ -2564,24 +2555,24 @@ function useContextMenu({ resId: e = 0, contentId: t, decoratorId: r, args: s, d
                     },
                 },
             ];
-        }, [s, t, r, e, n, o, a]);
+        }, [r, t, s, e, n, o, a]);
     return (reactExports.useEffect(() => u, [u]), i);
 }
-function useSpecialContextMenu(e, t, r) {
+function useSpecialContextMenu(e, t, s) {
     return useContextMenu(
-        reactExports.useMemo(
-            () => ({
-                ...r,
+        reactExports.useMemo(() => {
+            const r = { menuId: e, menuArgs: JSON.stringify(t), ...(null == s ? void 0 : s.args) };
+            return {
+                ...s,
                 contentId: resources.resolve('aliases').read((e) => e.common.contextMenu.Backport('resId')),
-                disabled: null == r ? void 0 : r.disabled,
-                args: { menuId: e, menuArgs: JSON.stringify(t), ...(null == r ? void 0 : r.args) },
-            }),
-            [t, e, r],
-        ),
+                disabled: null == s ? void 0 : s.disabled,
+                args: r,
+            };
+        }, [t, e, s]),
     );
 }
 const MS_IN_SECOND = 1e3,
-    useCountdown = (e = 0, t, r = 0, s = noop$1) => {
+    useCountdown = (e = 0, t, s = 0, r = noop$1) => {
         const [n, a] = reactExports.useState(e);
         return (
             reactExports.useEffect(() => {
@@ -2590,22 +2581,22 @@ const MS_IN_SECOND = 1e3,
                     const n = Date.now(),
                         o = setInterval(() => {
                             const t = e - Math.floor((Date.now() - n) / MS_IN_SECOND);
-                            null !== r && t <= r ? (a(r), s && s(), clearInterval(o)) : a(t);
+                            null !== s && t <= s ? (a(s), r && r(), clearInterval(o)) : a(t);
                         }, t * MS_IN_SECOND);
                     return () => {
                         clearInterval(o);
                     };
                 }
-            }, [e, t, r, s]),
+            }, [e, t, s, r]),
             n
         );
     };
 function useExternalPaddings(e = 'px') {
-    const [t, r] = reactExports.useState(viewEnv.getExternalPaddingsRem()),
-        s = useEvent$1(() => r(viewEnv.getExternalPaddingsRem())),
+    const [t, s] = reactExports.useState(viewEnv.getExternalPaddingsRem()),
+        r = useEvent$1(() => s(viewEnv.getExternalPaddingsRem())),
         n = useScaleState();
     return (
-        reactExports.useEffect(() => events$2.onExternalPaddingsUpdated(s), [s]),
+        reactExports.useEffect(() => events$2.onExternalPaddingsUpdated(r), [r]),
         reactExports.useMemo(
             () => ({
                 left: 'px' === e ? remToPx$1(t.left) : t.left,
@@ -2620,36 +2611,36 @@ function useExternalPaddings(e = 'px') {
 const nonConvertingTypes = new Set(['number', 'string', 'boolean', 'bigint', 'undefined', 'function']),
     primitives$1 = new Set(['number', 'string', 'boolean', 'bigint']),
     bindingsForbidden = new Set(['Dict']);
-function cloneModel(e, { shallow: t = !0, depth: r = 0, maxDepth: s = 32 } = {}) {
+function cloneModel(e, { shallow: t = !0, depth: s = 0, maxDepth: r = 32 } = {}) {
     var n, a;
     const o = e,
         u = typeof e;
-    if (r > s) throw new Error(`Too deeply nested to copy. Max is ${s}.`);
+    if (s > r) throw new Error(`Too deeply nested to copy. Max is ${r}.`);
     if (nonConvertingTypes.has(u)) return o;
     if (null === o) return o;
-    const i = { depth: r + 1, maxDepth: s };
+    const i = { depth: s + 1, maxDepth: r };
     if (Array.isArray(o)) return o.map((e) => cloneModel(e, i));
     if ('object' === u) {
-        const s = (null == (n = o.constructor) ? void 0 : n.name) ?? 'UNKNOWN';
+        const r = (null == (n = o.constructor) ? void 0 : n.name) ?? 'UNKNOWN';
         if (Array.isArray(e)) return e.map((e) => cloneModel(e, i));
-        if ('CoherentArrayProxy' === s) return e.map((e) => cloneModel(e.value, i));
-        if ('Dict' === s) return;
-        if ('UNKNOWN' === s) return;
-        if (s.includes(':ViewModel:') || 'Object' === s) {
-            if (t && 0 === r) {
+        if ('CoherentArrayProxy' === r) return e.map((e) => cloneModel(e.value, i));
+        if ('Dict' === r) return;
+        if ('UNKNOWN' === r) return;
+        if (r.includes(':ViewModel:') || 'Object' === r) {
+            if (t && 0 === s) {
                 const e = {};
                 for (const t in o) {
-                    const r = o[t];
-                    primitives$1.has(typeof r) && (e[t] = r);
+                    const s = o[t];
+                    primitives$1.has(typeof s) && (e[t] = s);
                 }
                 return e;
             }
             {
                 const e = {};
                 for (const t in o) {
-                    const r = o[t],
-                        s = (null == (a = null == o ? void 0 : o.constructor) ? void 0 : a.name) ?? 'UNKNOWN';
-                    bindingsForbidden.has(s) || (e[t] = cloneModel(r, i));
+                    const s = o[t],
+                        r = (null == (a = null == o ? void 0 : o.constructor) ? void 0 : a.name) ?? 'UNKNOWN';
+                    bindingsForbidden.has(r) || (e[t] = cloneModel(s, i));
                 }
                 return e;
             }
@@ -2675,13 +2666,13 @@ class DLDict {
                 }),
             ),
             (this.options = t));
-        const r = {},
-            s = e.keys();
-        for (let n = 0; n < s.length; n++) {
-            const t = s[n];
-            r[t] = observable.box(this.takeItem(e, t), MOBX_OPTIONS);
+        const s = {},
+            r = e.keys();
+        for (let n = 0; n < r.length; n++) {
+            const t = r[n];
+            s[t] = observable.box(this.takeItem(e, t), MOBX_OPTIONS);
         }
-        ((this._keys = observable.set(new Set(s))), (this._data = observable.box(r, MOBX_OPTIONS)));
+        ((this._keys = observable.set(new Set(r))), (this._data = observable.box(s, MOBX_OPTIONS)));
     }
     get keys() {
         return this._keys;
@@ -2693,15 +2684,15 @@ class DLDict {
         return this._keys.size;
     }
     update(e, t) {
-        const r = this._data.get();
-        for (let s = 0; s < t.length; s++) {
-            const n = t[s],
+        const s = this._data.get();
+        for (let r = 0; r < t.length; r++) {
+            const n = t[r],
                 a = this.takeItem(e, n);
-            n in r
+            n in s
                 ? null === a
-                    ? (delete r[n], this._keys.delete(n), this.set(r))
-                    : r[n].set(a)
-                : null !== a && ((r[n] = observable.box(a, MOBX_OPTIONS)), this._keys.add(n), this.set(r));
+                    ? (delete s[n], this._keys.delete(n), this.set(s))
+                    : s[n].set(a)
+                : null !== a && ((s[n] = observable.box(a, MOBX_OPTIONS)), this._keys.add(n), this.set(s));
         }
     }
     entries() {
@@ -2722,24 +2713,24 @@ class DLDict {
     }
     mapKeys(e) {
         const t = [];
-        for (const r of this.keys.values()) t.push(e(r));
+        for (const s of this.keys.values()) t.push(e(s));
         return t;
     }
     map(e) {
         const t = [],
-            r = this._data.get();
-        for (const s of this.keys.values()) t.push(e(r[s].get(), s));
+            s = this._data.get();
+        for (const r of this.keys.values()) t.push(e(s[r].get(), r));
         return t;
     }
     reduce(e, t) {
-        let r = t;
-        const s = this._data.get();
-        for (const n of this.keys.values()) r = e(r, s[n].get(), n);
-        return r;
+        let s = t;
+        const r = this._data.get();
+        for (const n of this.keys.values()) s = e(s, r[n].get(), n);
+        return s;
     }
     takeItem(e, t) {
-        const r = e.get(t);
-        return this.options.cloneItem ? cloneModel(r, CLONE_OPTIONS) : r;
+        const s = e.get(t);
+        return this.options.cloneItem ? cloneModel(s, CLONE_OPTIONS) : s;
     }
     untrackedData() {
         return untracked(() => this._data.get());
@@ -2748,25 +2739,25 @@ class DLDict {
 const mockContext = reactExports.createContext({ mode: 'real' }),
     useMockContext = () => reactExports.useContext(mockContext),
     DEFAULT_BOX_CONFIG = { equals: constFalse, deep: !1 };
-function createObservableModel(e, t, r) {
-    const s = [];
+function createObservableModel(e, t, s) {
+    const r = [];
     e.events.subscribersNotified.on(
         action(() => {
-            for (const e of s) e();
-            s.splice(0, s.length);
+            for (const e of r) e();
+            r.splice(0, r.length);
         }),
     );
     const n = (n, a, o = DEFAULT_BOX_CONFIG) => {
-            const u = observable.box(n(r(a)), o);
-            return ('real' === t && e.subscribe((e) => s.push(() => u.set(n(e))), a), u);
+            const u = observable.box(n(s(a)), o);
+            return ('real' === t && e.subscribe((e) => r.push(() => u.set(n(e))), a), u);
         },
         a = (n, a) => {
-            const o = new DLDict(r(n), a);
-            return ('real' === t && e.subscribe((e, t) => s.push(() => o.update(e, t)), n), o);
+            const o = new DLDict(s(n), a);
+            return ('real' === t && e.subscribe((e, t) => r.push(() => o.update(e, t)), n), o);
         },
         o = (n, a) => {
-            const o = observable.box(r(n) ?? a, DEFAULT_BOX_CONFIG);
-            return ('real' === t && e.subscribe((e) => s.push(() => o.set(e)), n), o);
+            const o = observable.box(s(n) ?? a, DEFAULT_BOX_CONFIG);
+            return ('real' === t && e.subscribe((e) => r.push(() => o.set(e)), n), o);
         };
     return {
         dict: a,
@@ -2776,31 +2767,31 @@ function createObservableModel(e, t, r) {
         object: o,
         transform: n,
         primitives: (n, a) => {
-            const o = r(a);
+            const o = s(a);
             if (Array.isArray(n)) {
-                const r = n.reduce((e, t) => ((e[t] = observable.box(o[t], {})), e), {});
+                const s = n.reduce((e, t) => ((e[t] = observable.box(o[t], {})), e), {});
                 return (
                     'real' === t &&
                         e.subscribe((e) => {
-                            s.push(() =>
+                            r.push(() =>
                                 n.forEach((t) => {
-                                    r[t].set(e[t]);
+                                    s[t].set(e[t]);
                                 }),
                             );
                         }, a),
-                    r
+                    s
                 );
             }
             {
-                const r = n,
-                    u = Object.entries(r),
-                    i = u.reduce((e, [t, r]) => ((e[r] = observable.box(o[t], {})), e), {});
+                const s = n,
+                    u = Object.entries(s),
+                    i = u.reduce((e, [t, s]) => ((e[s] = observable.box(o[t], {})), e), {});
                 return (
                     'real' === t &&
                         e.subscribe((e) => {
-                            s.push(() =>
-                                u.forEach(([t, r]) => {
-                                    i[r].set(e[t]);
+                            r.push(() =>
+                                u.forEach(([t, s]) => {
+                                    i[s].set(e[t]);
                                 }),
                             );
                         }, a),
@@ -2812,7 +2803,7 @@ function createObservableModel(e, t, r) {
 }
 const initializeModelWithContext =
         (e = 'DataLayerProvider') =>
-        (t, r, s) => {
+        (t, s, r) => {
             const n = reactExports.createContext(null);
             function a(a) {
                 var o;
@@ -2821,14 +2812,14 @@ const initializeModelWithContext =
                     _ = u ?? d.mode,
                     p = c ?? d.mocks,
                     m = reactExports.useRef([]),
-                    E = null == (o = null == s ? void 0 : s.useRequires) ? void 0 : o.call(s),
+                    E = null == (o = null == r ? void 0 : r.useRequires) ? void 0 : o.call(r),
                     f = useEvent$1((n, o, u) => {
                         var i;
                         const l = 'real' !== n && u ? createMockInstance(u.getter, o) : create(o, { name: e }),
                             c = (e) => ('mocks' === n ? (null == u ? void 0 : u.getter(e, o)) : l.readByPath(e)),
                             d = (e) => m.current.push(e),
                             _ = 'initial' in a && {
-                                initial: null == (i = null == s ? void 0 : s.initial) ? void 0 : i.call(s, a.initial),
+                                initial: null == (i = null == r ? void 0 : r.initial) ? void 0 : i.call(r, a.initial),
                             },
                             p = t({
                                 ..._,
@@ -2843,7 +2834,7 @@ const initializeModelWithContext =
                             b = 'mocks' === n && (null == u ? void 0 : u.controls) ? u.controls(f) : {};
                         return {
                             model: p,
-                            controls: { ...(null == r ? void 0 : r(f)), ...b },
+                            controls: { ...(null == s ? void 0 : s(f)), ...b },
                             externalModel: l,
                             mode: n,
                             rootId: (null == o ? void 0 : o.rootId) ?? 0,
@@ -2902,17 +2893,17 @@ const initializeModelWithContext =
         e.forEach((e) => assignRef(e, t));
     };
 reactExports.forwardRef(function (e, t) {
-    const r = reactExports.useRef(null);
+    const s = reactExports.useRef(null);
     return (
         reactExports.useEffect(() => {
-            const e = r.current;
+            const e = s.current;
             if (null !== e)
                 return events$2.onHitTest((t) => {
-                    const r = e.getBoundingClientRect();
-                    return r.left <= t.x && t.x <= r.right && r.top <= t.y && t.y <= r.bottom;
+                    const s = e.getBoundingClientRect();
+                    return s.left <= t.x && t.x <= s.right && s.top <= t.y && t.y <= s.bottom;
                 });
         }, []),
-        jsxRuntimeExports.jsx('div', { ...e, ref: assignRefs([t, r]) })
+        jsxRuntimeExports.jsx('div', { ...e, ref: assignRefs([t, s]) })
     );
 });
 class JSXBuilder {
@@ -2927,14 +2918,14 @@ class JSXBuilder {
     }
     render(e) {
         return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {
-            children: this.items.reduceRight((e, [t, r], s) => reactExports.createElement(t, { ...r, key: s }, e), e),
+            children: this.items.reduceRight((e, [t, s], r) => reactExports.createElement(t, { ...s, key: r }, e), e),
         });
     }
 }
 function injectShowModel() {
-    const e = (t = window.model, { depth: r = 16, convertArrays: s = !0 } = {}) => {
+    const e = (t = window.model, { depth: s = 16, convertArrays: r = !0 } = {}) => {
         var n;
-        if (r < 0)
+        if (s < 0)
             return (
                 console.warn(
                     'Depth limit has been reached.\n                You can change the limit with second argument.\n                Use _showModel(model, { depth = <number> }) for this. 16 is default.',
@@ -2952,20 +2943,20 @@ function injectShowModel() {
             case 'function':
                 return 'function';
             case 'object': {
-                const a = { depth: r - 1, convertArrays: s },
+                const a = { depth: s - 1, convertArrays: r },
                     o = (null == (n = t.constructor) ? void 0 : n.name) ?? 'UNKNOWN';
                 switch (!0) {
                     case o.includes('CoherentArrayProxy'):
                         return [...t.values()].map((t) => e(a.convertArrays ? t.value : t, a));
                     case 'Dict' === o:
-                        return [...t.entries()].reduce((t, [r, s]) => ((t[r] = e(s, a)), t), { $$type: 'Dict' });
+                        return [...t.entries()].reduce((t, [s, r]) => ((t[s] = e(r, a)), t), { $$type: 'Dict' });
                     case 'UNKNOWN' === o:
                         return 'UNKNOWN_TYPE';
                     case o.includes('ViewModel'):
                     default: {
-                        const r = {};
-                        for (const s in t) Object.prototype.hasOwnProperty.call(t, s) && (r[s] = e(t[s], a));
-                        return r;
+                        const s = {};
+                        for (const r in t) Object.prototype.hasOwnProperty.call(t, r) && (s[r] = e(t[r], a));
+                        return s;
                     }
                 }
             }
@@ -2977,14 +2968,14 @@ function injectShowModel() {
     const t = {
         subViews: function () {
             const t = {};
-            for (const r of window.subViews.ids()) {
-                const s = window.subViews.get(r);
-                t[r] = {
-                    id: r,
-                    uid: s.uid,
-                    path: s.path,
+            for (const s of window.subViews.ids()) {
+                const r = window.subViews.get(s);
+                t[s] = {
+                    id: s,
+                    uid: r.uid,
+                    path: r.path,
                     get model() {
-                        return e(s.model);
+                        return e(r.model);
                     },
                 };
             }
@@ -2997,19 +2988,19 @@ function injectShowModel() {
 }
 async function runView(
     e,
-    { root: t = document.getElementById('root'), withMedia: r = !0, fullScreen: s = !1, immediateLayout: n = !0 } = {},
+    { root: t = document.getElementById('root'), withMedia: s = !0, fullScreen: r = !1, immediateLayout: n = !0 } = {},
 ) {
     var a;
     injectShowModel();
-    const o = r ? MediaWrapper : React.Fragment,
+    const o = s ? MediaWrapper : React.Fragment,
         u = (null == (a = null == window ? void 0 : window.engine) ? void 0 : a.whenReady) ?? Promise.resolve();
     (n && engine.enableImmediateLayout(!0),
         await u,
         document.documentElement.setAttribute('lang', resources.resolve('langCode')),
-        client$1
-            .createRoot(t)
-            .render(jsxRuntimeExports.jsx(o, { children: jsxRuntimeExports.jsx(Provider, { children: e }) })),
-        s && (initExternalPaddings$1(t), enableFullScreenModeSupported$1()));
+        ReactDOM.createRoot(t).render(
+            jsxRuntimeExports.jsx(o, { children: jsxRuntimeExports.jsx(Provider, { children: e }) }),
+        ),
+        r && (initExternalPaddings$1(t), enableFullScreenModeSupported$1()));
 }
 var RewardType$1 = ((e) => (
         (e.Items = 'items'),
@@ -3139,13 +3130,13 @@ let ClickOutsideManager$1 =
             (__publicField(this, 'entries', []),
                 __publicField(this, '_listenMouse', !1),
                 __publicField(this, 'onMouseDown', (e) => {
-                    this.entries.forEach(({ container: t, callback: r }) => {
-                        let s = e.target;
+                    this.entries.forEach(({ container: t, callback: s }) => {
+                        let r = e.target;
                         do {
-                            if (s === t) return;
-                            s = s.parentNode;
-                        } while (s);
-                        r();
+                            if (r === t) return;
+                            r = r.parentNode;
+                        } while (r);
+                        s();
                     });
                 }));
         }
@@ -3156,9 +3147,9 @@ let ClickOutsideManager$1 =
             (this.addMouseListener(), this.entries.push({ container: e, callback: t }));
         }
         unregister(e, t) {
-            const r = e,
-                s = t;
-            ((this.entries = this.entries.filter(({ container: e, callback: t }) => e !== r || t !== s)),
+            const s = e,
+                r = t;
+            ((this.entries = this.entries.filter(({ container: e, callback: t }) => e !== s || t !== r)),
                 this.removeMouseListener());
         }
         addMouseListener() {
@@ -3185,6 +3176,7 @@ function setTrackMouseOutside(e) {
 }
 const onResize = makeEngineEvent('clientResized'),
     onScaleUpdated = makeEngineEvent('self.onScaleUpdated'),
+    onMinimize = makeEngineEvent('clientMinimized'),
     on = (e, t) => engine.on(e, t),
     off = (e, t) => engine.off(e, t),
     internalMouse = {
@@ -3197,51 +3189,51 @@ function initMouseEvents() {
     function t() {
         e.enabled && setTrackMouseOutside(!1);
     }
-    function r() {
+    function s() {
         e.enabled && setTrackMouseOutside(!0);
     }
-    function s() {
+    function r() {
         e.enabled
             ? e.listeners < 1
                 ? ((e.initialized = !1),
                   document.body.removeEventListener('mouseenter', t),
-                  document.body.removeEventListener('mouseleave', r))
+                  document.body.removeEventListener('mouseleave', s))
                 : e.initialized ||
                   ((e.initialized = !0),
                   document.body.addEventListener('mouseenter', t),
-                  document.body.addEventListener('mouseleave', r))
+                  document.body.addEventListener('mouseleave', s))
             : setTrackMouseOutside(!1);
     }
     return {
         ...['down', 'up', 'move'].reduce(
-            (t, r) => (
-                (t[r] = (function (t) {
-                    return (r) => {
+            (t, s) => (
+                (t[s] = (function (t) {
+                    return (s) => {
                         e.listeners += 1;
                         let n = !0;
                         const a = `mouse${t}`,
-                            o = internalMouse[t]((e) => r([e, 'outside']));
+                            o = internalMouse[t]((e) => s([e, 'outside']));
                         function u(e) {
-                            r([e, 'inside']);
+                            s([e, 'inside']);
                         }
                         return (
                             window.addEventListener(a, u),
-                            s(),
+                            r(),
                             () => {
-                                n && (o(), window.removeEventListener(a, u), (e.listeners -= 1), s(), (n = !1));
+                                n && (o(), window.removeEventListener(a, u), (e.listeners -= 1), r(), (n = !1));
                             }
                         );
                     };
-                })(r)),
+                })(s)),
                 t
             ),
             {},
         ),
         disable() {
-            ((e.enabled = !1), s());
+            ((e.enabled = !1), r());
         },
         enable() {
-            ((e.enabled = !0), s());
+            ((e.enabled = !0), r());
         },
         enableOutside() {
             e.enabled && setTrackMouseOutside(!0);
@@ -3254,7 +3246,15 @@ function initMouseEvents() {
 const mouse = initMouseEvents(),
     events$1 = Object.freeze(
         Object.defineProperty(
-            { __proto__: null, mouse: mouse, off: off, on: on, onResize: onResize, onScaleUpdated: onScaleUpdated },
+            {
+                __proto__: null,
+                mouse: mouse,
+                off: off,
+                on: on,
+                onMinimize: onMinimize,
+                onResize: onResize,
+                onScaleUpdated: onScaleUpdated,
+            },
             Symbol.toStringTag,
             { value: 'Module' },
         ),
@@ -3265,8 +3265,8 @@ function playSound$1(e) {
     });
 }
 function setRTPC(e, t) {
-    engine.call('SetRTPCGlobal', e, t).catch((r) => {
-        console.error(`setRTPC('${e}', '${t}'): `, r);
+    engine.call('SetRTPCGlobal', e, t).catch((s) => {
+        console.error(`setRTPC('${e}', '${t}'): `, s);
     });
 }
 function getSize$1(e = 'px') {
@@ -3303,15 +3303,15 @@ const graphicsQuality = {
     ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
 function arabic2roman$1(e) {
     let t = '';
-    for (let r = ARABIC.length - 1; r >= 0; r--) for (; e >= ARABIC[r]; ) ((t += ROMAN[r]), (e -= ARABIC[r]));
+    for (let s = ARABIC.length - 1; s >= 0; s--) for (; e >= ARABIC[s]; ) ((t += ROMAN[s]), (e -= ARABIC[s]));
     return t;
 }
 const ROMAN_FORBIDDEN_LANGUAGE_CODES = ['ko', 'no'];
-function getTextureUrl(e, t, r = 1) {
-    return viewEnv.getChildTexturePath(e, t.width, t.height, r);
+function getTextureUrl(e, t, s = 1) {
+    return viewEnv.getChildTexturePath(e, t.width, t.height, s);
 }
-function getBgUrl(e, t, r) {
-    return `url(${getTextureUrl(e, t, r)})`;
+function getBgUrl(e, t, s) {
+    return `url(${getTextureUrl(e, t, s)})`;
 }
 ROMAN_FORBIDDEN_LANGUAGE_CODES.includes(R.strings.settings.LANGUAGE_CODE());
 const children = Object.freeze(
@@ -3341,25 +3341,25 @@ const children = Object.freeze(
     viewEventTypes = { closePopover: 2, move: 16, close: 32, minimize: 64 },
     createViewEventArguments$1 = (e) =>
         Object.entries(e).map(([e, t]) => {
-            const r = 'GFValueProxy';
+            const s = 'GFValueProxy';
             switch (typeof t) {
                 case 'number':
-                    return { __Type: r, name: e, number: t };
+                    return { __Type: s, name: e, number: t };
                 case 'boolean':
-                    return { __Type: r, name: e, bool: t };
+                    return { __Type: s, name: e, bool: t };
                 default:
-                    return { __Type: r, name: e, string: t.toString() };
+                    return { __Type: s, name: e, string: t.toString() };
             }
         }),
     sendViewEvent = (e, t) => {
-        const r = 'GFViewEventProxy';
+        const s = 'GFViewEventProxy';
         if (void 0 !== t) {
-            const { args: s, ...n } = t;
-            return void 0 !== s
-                ? viewEnv.handleViewEvent({ __Type: r, type: e, ...n, arguments: createViewEventArguments$1(s) })
-                : viewEnv.handleViewEvent({ __Type: r, type: e, ...n });
+            const { args: r, ...n } = t;
+            return void 0 !== r
+                ? viewEnv.handleViewEvent({ __Type: s, type: e, ...n, arguments: createViewEventArguments$1(r) })
+                : viewEnv.handleViewEvent({ __Type: s, type: e, ...n });
         }
-        return viewEnv.handleViewEvent({ __Type: r, type: e });
+        return viewEnv.handleViewEvent({ __Type: s, type: e });
     },
     sendEvent = {
         close(e) {
@@ -3379,11 +3379,11 @@ function addPreloadTexture(e) {
 function setInputPaddingsRem(e) {
     viewEnv.setHitAreaPaddingsRem(e, e, e, e, ALL_SIDES);
 }
-function getBrowserTexturePath(e, t, r, s = 1) {
-    return viewEnv.getWebBrowserTexturePath(e, t, r, s);
+function getBrowserTexturePath(e, t, s, r = 1) {
+    return viewEnv.getWebBrowserTexturePath(e, t, s, r);
 }
-function addModelObserver(e, t, r) {
-    return viewEnv.addDataChangedCallback(e, t, r);
+function addModelObserver(e, t, s) {
+    return viewEnv.addDataChangedCallback(e, t, s);
 }
 function setSidePaddingsRem(e) {
     viewEnv.setHitAreaPaddingsRem(e.top, e.right, e.bottom, e.left, ALL_SIDES);
@@ -3391,8 +3391,8 @@ function setSidePaddingsRem(e) {
 function getSize(e = 'px') {
     return 'rem' === e ? viewEnv.getViewSizeRem() : viewEnv.getViewSizePx();
 }
-function resize(e, t, r = 'px') {
-    return 'rem' === r ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
+function resize(e, t, s = 'px') {
+    return 'rem' === s ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
 }
 function getViewGlobalPosition(e = 'rem') {
     const t = viewEnv.getViewGlobalPositionRem();
@@ -3459,10 +3459,10 @@ function enableFullScreenModeSupported() {
 }
 function initExternalPaddings(e) {
     function t() {
-        const { top: t, right: r, bottom: s, left: n } = viewEnv.getExternalPaddingsRem();
+        const { top: t, right: s, bottom: r, left: n } = viewEnv.getExternalPaddingsRem();
         (e.style.setProperty('--external-padding-top', `${t}rem`),
-            e.style.setProperty('--external-padding-right', `${r}rem`),
-            e.style.setProperty('--external-padding-bottom', `${s}rem`),
+            e.style.setProperty('--external-padding-right', `${s}rem`),
+            e.style.setProperty('--external-padding-bottom', `${r}rem`),
             e.style.setProperty('--external-padding-left', `${n}rem`));
     }
     (t(), engine.on('self.onPaddingsUpdated', () => t()));
@@ -3530,32 +3530,32 @@ const view = Object.freeze(
             (void 0 !== this._updateHandler && (this._updateHandler.clear(), (this._updateHandler = void 0)),
                 (this._callbacks = {}));
         }
-        addCallback(e, t, r = 0, s = !0) {
+        addCallback(e, t, s = 0, r = !0) {
             void 0 === this._updateHandler &&
                 (this._updateHandler = engine.on('viewEnv.onDataChanged', this._emmitDataChanged, this));
-            const n = env.view.addModelObserver(e, r, s);
+            const n = env.view.addModelObserver(e, s, r);
             return (
                 n > 0
                     ? ((this._callbacks[n] = t),
-                      r > 0 && (this._views[r] ? this._views[r].push(n) : (this._views[r] = [n])))
+                      s > 0 && (this._views[s] ? this._views[s].push(n) : (this._views[s] = [n])))
                     : console.error("Can't add callback for model:", e),
                 n
             );
         }
         removeCallback(e, t = 0) {
-            let r = !1;
+            let s = !1;
             return (
                 void 0 !== e &&
                     void 0 !== this._callbacks[e] &&
-                    ((r = viewEnv.removeDataChangedCallback(e, t)), delete this._callbacks[e]),
-                r || console.error("Can't remove callback by id:", e),
-                r
+                    ((s = viewEnv.removeDataChangedCallback(e, t)), delete this._callbacks[e]),
+                s || console.error("Can't remove callback by id:", e),
+                s
             );
         }
-        _emmitDataChanged(e, t, r) {
-            r.forEach((r) => {
-                const s = this._callbacks[r];
-                void 0 !== s && s(e, t);
+        _emmitDataChanged(e, t, s) {
+            s.forEach((s) => {
+                const r = this._callbacks[s];
+                void 0 !== r && r(e, t);
             });
         }
     };
@@ -3564,20 +3564,20 @@ let DataTracker = _DataTracker;
 function dumpViewModel(e) {
     const t = {};
     if ('object' != typeof e) return e;
-    for (const r in e)
-        if (Object.prototype.hasOwnProperty.call(e, r)) {
-            const s = Object.prototype.toString.call(e[r]);
-            if (s.startsWith('[object CoherentArrayProxy]')) {
-                const s = e[r];
-                t[r] = [];
-                for (let e = 0; e < s.length; e++) t[r].push({ value: dumpViewModel(s[e].value) });
-            } else s.startsWith('[object class BW::WULF::ViewModel') ? (t[r] = dumpViewModel(e[r])) : (t[r] = e[r]);
+    for (const s in e)
+        if (Object.prototype.hasOwnProperty.call(e, s)) {
+            const r = Object.prototype.toString.call(e[s]);
+            if (r.startsWith('[object CoherentArrayProxy]')) {
+                const r = e[s];
+                t[s] = [];
+                for (let e = 0; e < r.length; e++) t[s].push({ value: dumpViewModel(r[e].value) });
+            } else r.startsWith('[object class BW::WULF::ViewModel') ? (t[s] = dumpViewModel(e[s])) : (t[s] = e[s]);
         }
     return t;
 }
 const SystemLocale = {
         getNumberFormat: (e, t) => systemLocale.getNumberFormat(e, t),
-        getRealFormat: (e, t, r = 2) => systemLocale.getRealFormat(e, t, r),
+        getRealFormat: (e, t, s = 2) => systemLocale.getRealFormat(e, t, s),
         getTimeFormat: (e, t) => systemLocale.getTimeFormat(e, t),
         getDateFormat: (e, t) => systemLocale.getDateFormat(e, t),
         toUpperCase: (e) => systemLocale.toUpperCase(e),
@@ -3585,8 +3585,8 @@ const SystemLocale = {
     },
     UserLocale = {
         getNumberFormat: (e) => userLocale.getNumberFormat(e),
-        getTimeFormat: (e, t, r) => userLocale.getTimeFormat(e, t, void 0 === r || r),
-        getTimeString: (e, t, r) => userLocale.getTimeString(e, t, void 0 === r || r),
+        getTimeFormat: (e, t, s) => userLocale.getTimeFormat(e, t, void 0 === s || s),
+        getTimeString: (e, t, s) => userLocale.getTimeString(e, t, void 0 === s || s),
     };
 var ViewEventType = ((e) => (
     (e[(e.UNDEFINED = 0)] = 'UNDEFINED'),
@@ -3638,7 +3638,7 @@ var KEY_CODES = ((e) => (
 ))(KEY_CODES || {});
 const makeGlobalBoundingBox = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
     onBindingsReady = async () =>
-        !(!engine._BindingsReady || !engine._WindowLoaded) ||
+        !(!engine._BindingsReady || !engine._ContentLoaded) ||
         new Promise((e) => {
             engine.on('Ready', e);
         }),
@@ -3652,43 +3652,43 @@ const makeGlobalBoundingBox = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y,
         }),
     createViewEventArguments = (e) =>
         Object.entries(e).map(([e, t]) => {
-            const r = { __Type: 'GFValueProxy', name: e };
+            const s = { __Type: 'GFValueProxy', name: e };
             switch (typeof t) {
                 case 'number':
-                    r.number = t;
+                    s.number = t;
                     break;
                 case 'boolean':
-                    r.bool = t;
+                    s.bool = t;
                     break;
                 default:
-                    r.string = t.toString();
+                    s.string = t.toString();
             }
-            return r;
+            return s;
         }),
     handleViewEvent$1 = (e, t) => {
-        const r = 'GFViewEventProxy';
+        const s = 'GFViewEventProxy';
         if (void 0 !== t) {
-            const { args: s, ...n } = t;
-            void 0 !== s
-                ? viewEnv.handleViewEvent({ __Type: r, type: e, ...n, arguments: createViewEventArguments(s) })
-                : viewEnv.handleViewEvent({ __Type: r, type: e, ...n });
-        } else viewEnv.handleViewEvent({ __Type: r, type: e });
+            const { args: r, ...n } = t;
+            void 0 !== r
+                ? viewEnv.handleViewEvent({ __Type: s, type: e, ...n, arguments: createViewEventArguments(r) })
+                : viewEnv.handleViewEvent({ __Type: s, type: e, ...n });
+        } else viewEnv.handleViewEvent({ __Type: s, type: e });
     },
     sendMoveEvent = (e) => handleViewEvent$1(ViewEventType.MOVE, { isMouseEvent: !0, on: e }),
     sendCloseEvent = () => handleViewEvent$1(ViewEventType.CLOSE),
     sendClosePopOverEvent = () => handleViewEvent$1(ViewEventType.POP_OVER, { on: !1 }),
-    sendShowContextMenuEvent = (e, t, r = 0) => {
+    sendShowContextMenuEvent = (e, t, s = 0) => {
         handleViewEvent$1(ViewEventType.CONTEXT_MENU, {
             isMouseEvent: !0,
             contentID: e,
             on: !0,
-            decoratorID: r,
+            decoratorID: s,
             args: t,
         });
     },
-    sendShowPopOverEvent = (e, t, r, s, n = R.invalid('resId'), a) => {
+    sendShowPopOverEvent = (e, t, s, r, n = R.invalid('resId'), a) => {
         const o = env.view.getViewGlobalPosition(),
-            { x: u, y: i, width: l, height: c } = r.getBoundingClientRect(),
+            { x: u, y: i, width: l, height: c } = s.getBoundingClientRect(),
             d = {
                 x: env.view.pxToRem(u) + o.x,
                 y: env.view.pxToRem(i) + o.y,
@@ -3698,7 +3698,7 @@ const makeGlobalBoundingBox = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y,
         handleViewEvent$1(ViewEventType.POP_OVER, {
             isMouseEvent: !0,
             contentID: e,
-            decoratorID: s || R.invalid('resId'),
+            decoratorID: r || R.invalid('resId'),
             targetID: n,
             direction: t,
             bbox: makeGlobalBoundingBox(d),
@@ -3788,9 +3788,9 @@ function getNumberFormatType(e) {
 }
 window.ViewEnvHelper = ViewEnvHelper;
 const FormatNumber = ({ value: e, format: t = 'integral' }) => {
-        const r = getNumberFormatType(t),
-            s = SystemLocale.getNumberFormat(e, r);
-        return void 0 !== e && void 0 !== s ? s : null;
+        const s = getNumberFormatType(t),
+            r = SystemLocale.getNumberFormat(e, s);
+        return void 0 !== e && void 0 !== r ? r : null;
     },
     multiValueTypes = [
         RewardType$1.Items,
@@ -3864,11 +3864,11 @@ const FormatNumber = ({ value: e, format: t = 'integral' }) => {
                   : ValueTypes.STRING,
     DOG_TAG_FOLDER_NAMES = ['engravings', 'backgrounds'],
     DOG_TAG_DEFAULT_ICON_NAME = ['engraving', 'background'],
-    getDogTypeImage = (e, t, r) => {
-        const s = DOG_TAG_FOLDER_NAMES[e];
-        if (s) {
-            const n = R.images.gui.maps.icons.dogtags.$dyn(t).$dyn(s),
-                a = n.$dyn(r);
+    getDogTypeImage = (e, t, s) => {
+        const r = DOG_TAG_FOLDER_NAMES[e];
+        if (r) {
+            const n = R.images.gui.maps.icons.dogtags.$dyn(t).$dyn(r),
+                a = n.$dyn(s);
             return a ? `${a}` : `${n.$dyn(DOG_TAG_DEFAULT_ICON_NAME[e])}`;
         }
         return (
@@ -3877,15 +3877,15 @@ const FormatNumber = ({ value: e, format: t = 'integral' }) => {
         );
     },
     getRewardImage = (e, t = ImageSize$1.Small) => {
-        const { name: r, type: s, value: n, icon: a, item: o, dogTagType: u } = e,
+        const { name: s, type: r, value: n, icon: a, item: o, dogTagType: u } = e,
             i = getSizeFolder(t);
-        switch (r) {
+        switch (s) {
             case 'basic':
             case 'plus':
-                return `R.images.gui.maps.icons.quests.bonuses.${t}.${s}_${n}`;
+                return `R.images.gui.maps.icons.quests.bonuses.${t}.${r}_${n}`;
             case 'premium':
             case 'premium_plus':
-                return `R.images.gui.maps.icons.quests.bonuses.${t}.${r}_${n}`;
+                return `R.images.gui.maps.icons.quests.bonuses.${t}.${s}_${n}`;
             case 'items':
                 return `R.images.gui.maps.icons.quests.bonuses.${t}.${o}`;
             case 'blueprints':
@@ -3933,18 +3933,18 @@ const FormatNumber = ({ value: e, format: t = 'integral' }) => {
             case 'statTracker':
                 return `R.images.gui.maps.vehicles.statTrackers.${t}.${a}`;
             default:
-                return `R.images.gui.maps.icons.quests.bonuses.${t}.${r}`;
+                return `R.images.gui.maps.icons.quests.bonuses.${t}.${s}`;
         }
     },
-    getRewardTooltipConfig = (e, t, r) => {
-        const s = t && { contentId: t };
+    getRewardTooltipConfig = (e, t, s) => {
+        const r = t && { contentId: t };
         return {
             args: e,
             isEnabled: Boolean((e && e.tooltipId) || t),
             ignoreMouseClick: !0,
             ignoreShowDelay: !t,
-            ...s,
             ...r,
+            ...s,
         };
     },
     SIZES_WITH_BOTTOM_HIGHLIGHT = [ImageSize$1.Small, ImageSize$1.Big],
@@ -4015,44 +4015,47 @@ const FormatNumber = ({ value: e, format: t = 'integral' }) => {
                 return e;
         }
     },
-    clamp = (e, t, r) => (r < e ? e : r > t ? t : r),
+    clamp = (e, t, s) => (s < e ? e : s > t ? t : s),
     createLayoutReadyInEffect = (e) => {
         let t,
-            r = null;
+            s = null;
         return (
-            (r = requestAnimationFrame(() => {
-                r = requestAnimationFrame(() => {
-                    ((r = null), (t = e()));
+            (s = requestAnimationFrame(() => {
+                s = requestAnimationFrame(() => {
+                    ((s = null), (t = e()));
                 });
             })),
             () => {
-                ('function' == typeof t && t(), null !== r && cancelAnimationFrame(r));
+                ('function' == typeof t && t(), null !== s && cancelAnimationFrame(s));
             }
         );
     };
 function noop() {}
 const useMount = (e) => {
-    reactExports.useEffect(e, []);
-};
-function requestAnimationFrameLoop(e) {
+        reactExports.useEffect(e, []);
+    },
+    useUnmount = (e) => {
+        reactExports.useEffect(() => e, []);
+    },
+    DEFAULT_NAME_KEYFRAME$1 = 'Point',
+    THRESHOLD$1 = 0.02;
+function createLoop$1(e) {
     let t = 0;
     return [
-        function r() {
-            (e(), (t = requestAnimationFrame(r)));
+        function s() {
+            (e(), (t = requestAnimationFrame(s)));
         },
         function () {
             cancelAnimationFrame(t);
         },
     ];
 }
-const DEFAULT_NAME_KEYFRAME$1 = 'Point',
-    THRESHOLD$1 = 0.02,
-    VideoForwarded$1 = reactExports.forwardRef(function (
+const VideoForwarded$1 = reactExports.forwardRef(function (
         {
             src: e,
             className: t,
-            autoplay: r = !1,
-            style: s,
+            autoplay: s = !1,
+            style: r,
             loop: n = !1,
             isPrebufferKeyframes: a,
             keyframesNameConfig: o,
@@ -4064,23 +4067,33 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
         const c = l,
             d = reactExports.useRef(null);
         return (
-            useMount(() =>
-                env.view.events.onDisplayChanged((e, t) => {
-                    var r, s;
-                    (t === displayStatus.hidden && (null == (r = d.current) || r.pause()),
-                        t === displayStatus.shown && (null == (s = d.current) || s.play()));
-                }),
-            ),
+            useMount(() => {
+                let e = !1;
+                return env.view.events.onDisplayChanged((t, s) => {
+                    const r = d.current;
+                    r &&
+                        (s === env.view.displayStatus.hidden
+                            ? ((e = r.paused), r.pause())
+                            : e || s !== env.view.displayStatus.shown || r.play());
+                });
+            }),
+            useMount(() => {
+                let e = !1;
+                return env.client.events.onMinimize((t) => {
+                    const s = d.current;
+                    s && (t ? ((e = s.paused), s.pause()) : e || s.play());
+                });
+            }),
             reactExports.useEffect(
                 () =>
                     createLayoutReadyInEffect(() => {
                         const e = d.current;
                         if (!c || !e || !a) return void ((null == e ? void 0 : e.cohFastSeek) && (e.cohFastSeek = !1));
-                        const t = e.cohGetKeyframeTimestamps();
+                        const t = e.cohGetKeyframeTimestamps ? e.cohGetKeyframeTimestamps() : [];
                         t.length > 0
                             ? ((e.cohFastSeek = !0),
                               t.map((t) => {
-                                  null == e || e.cohPrebufferKeyframe(t);
+                                  (null == e ? void 0 : e.cohPrebufferKeyframe) && e.cohPrebufferKeyframe(t);
                               }))
                             : console.warn("Can't prebuffered keyframes, keyframes was not found");
                     }),
@@ -4091,53 +4104,56 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
                     const e = { changeTimeHandlers: [], changeKeyframeHandlers: [], changeTimeLoop: noop },
                         t = () => {
                             let t = 0;
-                            const [r, s] = requestAnimationFrameLoop(() => {
+                            const [s, r] = createLoop$1(() => {
                                 if (d.current) {
-                                    const { currentTime: r, duration: s } = d.current;
+                                    const { currentTime: s, duration: r } = d.current;
                                     if (
-                                        (t !== r &&
-                                            (e.changeTimeHandlers.forEach((e) => e({ currentTime: r, duration: s })),
-                                            (t = r)),
+                                        (t !== s &&
+                                            (e.changeTimeHandlers.forEach((e) => e({ currentTime: s, duration: r })),
+                                            (t = s)),
                                         d.current.paused || !c || !a)
                                     )
                                         return;
-                                    const n = d.current.cohGetKeyframeTimestamps();
-                                    n.forEach((t, s) => {
-                                        r > n[s] - THRESHOLD$1 &&
-                                            r < n[s] &&
+                                    const n = d.current.cohGetKeyframeTimestamps
+                                        ? d.current.cohGetKeyframeTimestamps()
+                                        : [];
+                                    n.forEach((t, r) => {
+                                        void 0 !== n[r] &&
+                                            s > n[r] - THRESHOLD$1 &&
+                                            s < n[r] &&
                                             e.changeKeyframeHandlers.forEach((e) => {
-                                                const r = Object.keys(o ?? {})[s];
+                                                const s = Object.keys(o ?? {})[r];
                                                 return e({
                                                     time: t,
-                                                    name: `${o ? r : `${DEFAULT_NAME_KEYFRAME$1}_${s}`}`,
+                                                    name: `${o ? s : `${DEFAULT_NAME_KEYFRAME$1}_${r}`}`,
                                                 });
                                             });
                                     });
                                 }
                             });
-                            return (r(), s);
+                            return (s(), r);
                         };
                     e.changeTimeLoop = t();
-                    const r = (t) => (
+                    const s = (t) => (
                             e.changeTimeHandlers.push(t),
                             () => {
-                                const { changeTimeHandlers: r } = e,
-                                    s = r.indexOf(t);
-                                s < 0
+                                const { changeTimeHandlers: s } = e,
+                                    r = s.indexOf(t);
+                                r < 0
                                     ? console.warn("Can't unsubscribe changeTimeHandler, this reference was not found")
-                                    : r.splice(s, 1);
+                                    : s.splice(r, 1);
                             }
                         ),
-                        s = (t) => (
+                        r = (t) => (
                             e.changeKeyframeHandlers.push(t),
                             () => {
-                                const { changeKeyframeHandlers: r } = e,
-                                    s = r.indexOf(t);
-                                s < 0
+                                const { changeKeyframeHandlers: s } = e,
+                                    r = s.indexOf(t);
+                                r < 0
                                     ? console.warn(
                                           "Can't unsubscribe changeKeyframeHandlers, this reference was not found",
                                       )
-                                    : r.splice(s, 1);
+                                    : s.splice(r, 1);
                             }
                         ),
                         n = () => {
@@ -4164,7 +4180,9 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
                         },
                         m = () => {
                             var e;
-                            return (null == (e = d.current) ? void 0 : e.cohGetKeyframeTimestamps()) ?? [];
+                            return (null == (e = d.current) ? void 0 : e.cohGetKeyframeTimestamps)
+                                ? d.current.cohGetKeyframeTimestamps()
+                                : [];
                         },
                         E = (e) => {
                             (i(e), l());
@@ -4179,22 +4197,22 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
                                 null == (t = e.changeTimeLoop) || t.call(e));
                         },
                         x = (e, t) => {
-                            var r;
+                            var s;
                             return (
-                                null == (r = d.current) || r.addEventListener(e, t),
+                                null == (s = d.current) || s.addEventListener(e, t),
                                 () => {
-                                    var r;
-                                    return null == (r = d.current) ? void 0 : r.removeEventListener(e, t);
+                                    var s;
+                                    return null == (s = d.current) ? void 0 : s.removeEventListener(e, t);
                                 }
                             );
                         },
                         g = (e, t) => {
-                            var r;
+                            var s;
                             return (
-                                null == (r = d.current) || r.removeEventListener(e, t),
+                                null == (s = d.current) || s.removeEventListener(e, t),
                                 () => {
-                                    var r;
-                                    return null == (r = d.current) ? void 0 : r.removeEventListener(e, t);
+                                    var s;
+                                    return null == (s = d.current) ? void 0 : s.removeEventListener(e, t);
                                 }
                             );
                         };
@@ -4213,8 +4231,8 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
                             goToAndStop: f,
                             setCurrentTime: i,
                             domRef: d.current,
-                            onChangeTime: r,
-                            onKeyframes: s,
+                            onChangeTime: s,
+                            onKeyframes: r,
                         }),
                         () => {
                             (b(), (c.current = null));
@@ -4223,15 +4241,13 @@ const DEFAULT_NAME_KEYFRAME$1 = 'Point',
                 }
             }, [o, c, a]),
             reactExports.useEffect(() => {
-                d.current && r && d.current.play();
-            }, [r, n]),
-            reactExports.useEffect(() => {
-                if (d.current)
-                    return () => {
-                        d.current && d.current.pause();
-                    };
-            }, []),
-            jsxRuntimeExports.jsx('video', { src: e, className: t, style: s, loop: n, ref: d, onClick: u, ...i })
+                d.current && s && d.current.play();
+            }, [s, n]),
+            useUnmount(() => {
+                var e;
+                null == (e = d.current) || e.pause();
+            }),
+            jsxRuntimeExports.jsx('video', { src: e, className: t, style: r, loop: n, ref: d, onClick: u, ...i })
         );
     }),
     Video$1 = reactExports.memo(VideoForwarded$1);
@@ -4253,30 +4269,30 @@ function format(e, t) {
     return e.replace(/\{\w+\}/g, (e) => String(t[e.slice(1, -1)]));
 }
 const convertNbsp = (e) => e.replace(/&nbsp;/g, ' '),
-    addSeparatorToRight = (e, t, r) => {
-        if (r % 2) {
-            const r = e.pop();
-            return [...e, r + t];
+    addSeparatorToRight = (e, t, s) => {
+        if (s % 2) {
+            const s = e.pop();
+            return [...e, s + t];
         }
         return [...e, t];
     },
-    addSeparatorToLeft = (e, t, r) => {
-        if (0 === r) return [t];
-        if (r % 2) return [...e, ' ' === t ? ' ' : t];
+    addSeparatorToLeft = (e, t, s) => {
+        if (0 === s) return [t];
+        if (s % 2) return [...e, ' ' === t ? ' ' : t];
         {
-            const r = e.pop();
-            return [...e, r + t];
+            const s = e.pop();
+            return [...e, s + t];
         }
     },
-    splitAndFormat = (e, t, r = 0) => e.split(t).reduce(0 === r ? addSeparatorToRight : addSeparatorToLeft, []),
+    splitAndFormat = (e, t, s = 0) => e.split(t).reduce(0 === s ? addSeparatorToRight : addSeparatorToLeft, []),
     splitEuropean = (e, t = 0) => {
-        let r = [];
-        const s = new RegExp(
+        let s = [];
+        const r = new RegExp(
                 '(?<=[a-z\\xB5\\xDF-\\xF6\\xF8-\\xFF\\u0101\\u0103\\u0105\\u0107\\u0109\\u010B\\u010D\\u010F\\u0111\\u0113\\u0115\\u0117\\u0119\\u011B\\u011D\\u011F\\u0121\\u0123\\u0125\\u0127\\u0129\\u012B\\u012D\\u012F\\u0131\\u0133\\u0135\\u0137\\u0138\\u013A\\u013C\\u013E\\u0140\\u0142\\u0144\\u0146\\u0148\\u0149\\u014B\\u014D\\u014F\\u0151\\u0153\\u0155\\u0157\\u0159\\u015B\\u015D\\u015F\\u0161\\u0163\\u0165\\u0167\\u0169\\u016B\\u016D\\u016F\\u0171\\u0173\\u0175\\u0177\\u017A\\u017C\\u017E-\\u0180\\u0183\\u0185\\u0188\\u018C\\u018D\\u0192\\u0195\\u0199-\\u019B\\u019E\\u01A1\\u01A3\\u01A5\\u01A8\\u01AA\\u01AB\\u01AD\\u01B0\\u01B4\\u01B6\\u01B9\\u01BA\\u01BD-\\u01BF\\u01C6\\u01C9\\u01CC\\u01CE\\u01D0\\u01D2\\u01D4\\u01D6\\u01D8\\u01DA\\u01DC\\u01DD\\u01DF\\u01E1\\u01E3\\u01E5\\u01E7\\u01E9\\u01EB\\u01ED\\u01EF\\u01F0\\u01F3\\u01F5\\u01F9\\u01FB\\u01FD\\u01FF\\u0201\\u0203\\u0205\\u0207\\u0209\\u020B\\u020D\\u020F\\u0211\\u0213\\u0215\\u0217\\u0219\\u021B\\u021D\\u021F\\u0221\\u0223\\u0225\\u0227\\u0229\\u022B\\u022D\\u022F\\u0231\\u0233-\\u0239\\u023C\\u023F\\u0240\\u0242\\u0247\\u0249\\u024B\\u024D\\u024F-\\u0293\\u0295-\\u02AF\\u0371\\u0373\\u0377\\u037B-\\u037D\\u0390\\u03AC-\\u03CE\\u03D0\\u03D1\\u03D5-\\u03D7\\u03D9\\u03DB\\u03DD\\u03DF\\u03E1\\u03E3\\u03E5\\u03E7\\u03E9\\u03EB\\u03ED\\u03EF-\\u03F3\\u03F5\\u03F8\\u03FB\\u03FC\\u0430-\\u045F\\u0461\\u0463\\u0465\\u0467\\u0469\\u046B\\u046D\\u046F\\u0471\\u0473\\u0475\\u0477\\u0479\\u047B\\u047D\\u047F\\u0481\\u048B\\u048D\\u048F\\u0491\\u0493\\u0495\\u0497\\u0499\\u049B\\u049D\\u049F\\u04A1\\u04A3\\u04A5\\u04A7\\u04A9\\u04AB\\u04AD\\u04AF\\u04B1\\u04B3\\u04B5\\u04B7\\u04B9\\u04BB\\u04BD\\u04BF\\u04C2\\u04C4\\u04C6\\u04C8\\u04CA\\u04CC\\u04CE\\u04CF\\u04D1\\u04D3\\u04D5\\u04D7\\u04D9\\u04DB\\u04DD\\u04DF\\u04E1\\u04E3\\u04E5\\u04E7\\u04E9\\u04EB\\u04ED\\u04EF\\u04F1\\u04F3\\u04F5\\u04F7\\u04F9\\u04FB\\u04FD\\u04FF\\u0501\\u0503\\u0505\\u0507\\u0509\\u050B\\u050D\\u050F\\u0511\\u0513\\u0515\\u0517\\u0519\\u051B\\u051D\\u051F\\u0521\\u0523\\u0525\\u0527\\u0529\\u052B\\u052D\\u052F\\u0560-\\u0588\\u10D0-\\u10FA\\u10FD-\\u10FF\\u13F8-\\u13FD\\u1C80-\\u1C88\\u1D00-\\u1D2B\\u1D6B-\\u1D77\\u1D79-\\u1D9A\\u1E01\\u1E03\\u1E05\\u1E07\\u1E09\\u1E0B\\u1E0D\\u1E0F\\u1E11\\u1E13\\u1E15\\u1E17\\u1E19\\u1E1B\\u1E1D\\u1E1F\\u1E21\\u1E23\\u1E25\\u1E27\\u1E29\\u1E2B\\u1E2D\\u1E2F\\u1E31\\u1E33\\u1E35\\u1E37\\u1E39\\u1E3B\\u1E3D\\u1E3F\\u1E41\\u1E43\\u1E45\\u1E47\\u1E49\\u1E4B\\u1E4D\\u1E4F\\u1E51\\u1E53\\u1E55\\u1E57\\u1E59\\u1E5B\\u1E5D\\u1E5F\\u1E61\\u1E63\\u1E65\\u1E67\\u1E69\\u1E6B\\u1E6D\\u1E6F\\u1E71\\u1E73\\u1E75\\u1E77\\u1E79\\u1E7B\\u1E7D\\u1E7F\\u1E81\\u1E83\\u1E85\\u1E87\\u1E89\\u1E8B\\u1E8D\\u1E8F\\u1E91\\u1E93\\u1E95-\\u1E9D\\u1E9F\\u1EA1\\u1EA3\\u1EA5\\u1EA7\\u1EA9\\u1EAB\\u1EAD\\u1EAF\\u1EB1\\u1EB3\\u1EB5\\u1EB7\\u1EB9\\u1EBB\\u1EBD\\u1EBF\\u1EC1\\u1EC3\\u1EC5\\u1EC7\\u1EC9\\u1ECB\\u1ECD\\u1ECF\\u1ED1\\u1ED3\\u1ED5\\u1ED7\\u1ED9\\u1EDB\\u1EDD\\u1EDF\\u1EE1\\u1EE3\\u1EE5\\u1EE7\\u1EE9\\u1EEB\\u1EED\\u1EEF\\u1EF1\\u1EF3\\u1EF5\\u1EF7\\u1EF9\\u1EFB\\u1EFD\\u1EFF-\\u1F07\\u1F10-\\u1F15\\u1F20-\\u1F27\\u1F30-\\u1F37\\u1F40-\\u1F45\\u1F50-\\u1F57\\u1F60-\\u1F67\\u1F70-\\u1F7D\\u1F80-\\u1F87\\u1F90-\\u1F97\\u1FA0-\\u1FA7\\u1FB0-\\u1FB4\\u1FB6\\u1FB7\\u1FBE\\u1FC2-\\u1FC4\\u1FC6\\u1FC7\\u1FD0-\\u1FD3\\u1FD6\\u1FD7\\u1FE0-\\u1FE7\\u1FF2-\\u1FF4\\u1FF6\\u1FF7\\u210A\\u210E\\u210F\\u2113\\u212F\\u2134\\u2139\\u213C\\u213D\\u2146-\\u2149\\u214E\\u2184\\u2C30-\\u2C5F\\u2C61\\u2C65\\u2C66\\u2C68\\u2C6A\\u2C6C\\u2C71\\u2C73\\u2C74\\u2C76-\\u2C7B\\u2C81\\u2C83\\u2C85\\u2C87\\u2C89\\u2C8B\\u2C8D\\u2C8F\\u2C91\\u2C93\\u2C95\\u2C97\\u2C99\\u2C9B\\u2C9D\\u2C9F\\u2CA1\\u2CA3\\u2CA5\\u2CA7\\u2CA9\\u2CAB\\u2CAD\\u2CAF\\u2CB1\\u2CB3\\u2CB5\\u2CB7\\u2CB9\\u2CBB\\u2CBD\\u2CBF\\u2CC1\\u2CC3\\u2CC5\\u2CC7\\u2CC9\\u2CCB\\u2CCD\\u2CCF\\u2CD1\\u2CD3\\u2CD5\\u2CD7\\u2CD9\\u2CDB\\u2CDD\\u2CDF\\u2CE1\\u2CE3\\u2CE4\\u2CEC\\u2CEE\\u2CF3\\u2D00-\\u2D25\\u2D27\\u2D2D\\uA641\\uA643\\uA645\\uA647\\uA649\\uA64B\\uA64D\\uA64F\\uA651\\uA653\\uA655\\uA657\\uA659\\uA65B\\uA65D\\uA65F\\uA661\\uA663\\uA665\\uA667\\uA669\\uA66B\\uA66D\\uA681\\uA683\\uA685\\uA687\\uA689\\uA68B\\uA68D\\uA68F\\uA691\\uA693\\uA695\\uA697\\uA699\\uA69B\\uA723\\uA725\\uA727\\uA729\\uA72B\\uA72D\\uA72F-\\uA731\\uA733\\uA735\\uA737\\uA739\\uA73B\\uA73D\\uA73F\\uA741\\uA743\\uA745\\uA747\\uA749\\uA74B\\uA74D\\uA74F\\uA751\\uA753\\uA755\\uA757\\uA759\\uA75B\\uA75D\\uA75F\\uA761\\uA763\\uA765\\uA767\\uA769\\uA76B\\uA76D\\uA76F\\uA771-\\uA778\\uA77A\\uA77C\\uA77F\\uA781\\uA783\\uA785\\uA787\\uA78C\\uA78E\\uA791\\uA793-\\uA795\\uA797\\uA799\\uA79B\\uA79D\\uA79F\\uA7A1\\uA7A3\\uA7A5\\uA7A7\\uA7A9\\uA7AF\\uA7B5\\uA7B7\\uA7B9\\uA7BB\\uA7BD\\uA7BF\\uA7C1\\uA7C3\\uA7C8\\uA7CA\\uA7D1\\uA7D3\\uA7D5\\uA7D7\\uA7D9\\uA7F6\\uA7FA\\uAB30-\\uAB5A\\uAB60-\\uAB68\\uAB70-\\uABBF\\uFB00-\\uFB06\\uFB13-\\uFB17\\uFF41-\\uFF5A\\u{10428}-\\u{1044F}\\u{104D8}-\\u{104FB}\\u{10597}-\\u{105A1}\\u{105A3}-\\u{105B1}\\u{105B3}-\\u{105B9}\\u{105BB}\\u{105BC}\\u{10CC0}-\\u{10CF2}\\u{118C0}-\\u{118DF}\\u{16E60}-\\u{16E7F}\\u{1D41A}-\\u{1D433}\\u{1D44E}-\\u{1D454}\\u{1D456}-\\u{1D467}\\u{1D482}-\\u{1D49B}\\u{1D4B6}-\\u{1D4B9}\\u{1D4BB}\\u{1D4BD}-\\u{1D4C3}\\u{1D4C5}-\\u{1D4CF}\\u{1D4EA}-\\u{1D503}\\u{1D51E}-\\u{1D537}\\u{1D552}-\\u{1D56B}\\u{1D586}-\\u{1D59F}\\u{1D5BA}-\\u{1D5D3}\\u{1D5EE}-\\u{1D607}\\u{1D622}-\\u{1D63B}\\u{1D656}-\\u{1D66F}\\u{1D68A}-\\u{1D6A5}\\u{1D6C2}-\\u{1D6DA}\\u{1D6DC}-\\u{1D6E1}\\u{1D6FC}-\\u{1D714}\\u{1D716}-\\u{1D71B}\\u{1D736}-\\u{1D74E}\\u{1D750}-\\u{1D755}\\u{1D770}-\\u{1D788}\\u{1D78A}-\\u{1D78F}\\u{1D7AA}-\\u{1D7C2}\\u{1D7C4}-\\u{1D7C9}\\u{1D7CB}\\u{1DF00}-\\u{1DF09}\\u{1DF0B}-\\u{1DF1E}\\u{1E922}-\\u{1E943}])(\\x2D)(?=[a-z\\xB5\\xDF-\\xF6\\xF8-\\xFF\\u0101\\u0103\\u0105\\u0107\\u0109\\u010B\\u010D\\u010F\\u0111\\u0113\\u0115\\u0117\\u0119\\u011B\\u011D\\u011F\\u0121\\u0123\\u0125\\u0127\\u0129\\u012B\\u012D\\u012F\\u0131\\u0133\\u0135\\u0137\\u0138\\u013A\\u013C\\u013E\\u0140\\u0142\\u0144\\u0146\\u0148\\u0149\\u014B\\u014D\\u014F\\u0151\\u0153\\u0155\\u0157\\u0159\\u015B\\u015D\\u015F\\u0161\\u0163\\u0165\\u0167\\u0169\\u016B\\u016D\\u016F\\u0171\\u0173\\u0175\\u0177\\u017A\\u017C\\u017E-\\u0180\\u0183\\u0185\\u0188\\u018C\\u018D\\u0192\\u0195\\u0199-\\u019B\\u019E\\u01A1\\u01A3\\u01A5\\u01A8\\u01AA\\u01AB\\u01AD\\u01B0\\u01B4\\u01B6\\u01B9\\u01BA\\u01BD-\\u01BF\\u01C6\\u01C9\\u01CC\\u01CE\\u01D0\\u01D2\\u01D4\\u01D6\\u01D8\\u01DA\\u01DC\\u01DD\\u01DF\\u01E1\\u01E3\\u01E5\\u01E7\\u01E9\\u01EB\\u01ED\\u01EF\\u01F0\\u01F3\\u01F5\\u01F9\\u01FB\\u01FD\\u01FF\\u0201\\u0203\\u0205\\u0207\\u0209\\u020B\\u020D\\u020F\\u0211\\u0213\\u0215\\u0217\\u0219\\u021B\\u021D\\u021F\\u0221\\u0223\\u0225\\u0227\\u0229\\u022B\\u022D\\u022F\\u0231\\u0233-\\u0239\\u023C\\u023F\\u0240\\u0242\\u0247\\u0249\\u024B\\u024D\\u024F-\\u0293\\u0295-\\u02AF\\u0371\\u0373\\u0377\\u037B-\\u037D\\u0390\\u03AC-\\u03CE\\u03D0\\u03D1\\u03D5-\\u03D7\\u03D9\\u03DB\\u03DD\\u03DF\\u03E1\\u03E3\\u03E5\\u03E7\\u03E9\\u03EB\\u03ED\\u03EF-\\u03F3\\u03F5\\u03F8\\u03FB\\u03FC\\u0430-\\u045F\\u0461\\u0463\\u0465\\u0467\\u0469\\u046B\\u046D\\u046F\\u0471\\u0473\\u0475\\u0477\\u0479\\u047B\\u047D\\u047F\\u0481\\u048B\\u048D\\u048F\\u0491\\u0493\\u0495\\u0497\\u0499\\u049B\\u049D\\u049F\\u04A1\\u04A3\\u04A5\\u04A7\\u04A9\\u04AB\\u04AD\\u04AF\\u04B1\\u04B3\\u04B5\\u04B7\\u04B9\\u04BB\\u04BD\\u04BF\\u04C2\\u04C4\\u04C6\\u04C8\\u04CA\\u04CC\\u04CE\\u04CF\\u04D1\\u04D3\\u04D5\\u04D7\\u04D9\\u04DB\\u04DD\\u04DF\\u04E1\\u04E3\\u04E5\\u04E7\\u04E9\\u04EB\\u04ED\\u04EF\\u04F1\\u04F3\\u04F5\\u04F7\\u04F9\\u04FB\\u04FD\\u04FF\\u0501\\u0503\\u0505\\u0507\\u0509\\u050B\\u050D\\u050F\\u0511\\u0513\\u0515\\u0517\\u0519\\u051B\\u051D\\u051F\\u0521\\u0523\\u0525\\u0527\\u0529\\u052B\\u052D\\u052F\\u0560-\\u0588\\u10D0-\\u10FA\\u10FD-\\u10FF\\u13F8-\\u13FD\\u1C80-\\u1C88\\u1D00-\\u1D2B\\u1D6B-\\u1D77\\u1D79-\\u1D9A\\u1E01\\u1E03\\u1E05\\u1E07\\u1E09\\u1E0B\\u1E0D\\u1E0F\\u1E11\\u1E13\\u1E15\\u1E17\\u1E19\\u1E1B\\u1E1D\\u1E1F\\u1E21\\u1E23\\u1E25\\u1E27\\u1E29\\u1E2B\\u1E2D\\u1E2F\\u1E31\\u1E33\\u1E35\\u1E37\\u1E39\\u1E3B\\u1E3D\\u1E3F\\u1E41\\u1E43\\u1E45\\u1E47\\u1E49\\u1E4B\\u1E4D\\u1E4F\\u1E51\\u1E53\\u1E55\\u1E57\\u1E59\\u1E5B\\u1E5D\\u1E5F\\u1E61\\u1E63\\u1E65\\u1E67\\u1E69\\u1E6B\\u1E6D\\u1E6F\\u1E71\\u1E73\\u1E75\\u1E77\\u1E79\\u1E7B\\u1E7D\\u1E7F\\u1E81\\u1E83\\u1E85\\u1E87\\u1E89\\u1E8B\\u1E8D\\u1E8F\\u1E91\\u1E93\\u1E95-\\u1E9D\\u1E9F\\u1EA1\\u1EA3\\u1EA5\\u1EA7\\u1EA9\\u1EAB\\u1EAD\\u1EAF\\u1EB1\\u1EB3\\u1EB5\\u1EB7\\u1EB9\\u1EBB\\u1EBD\\u1EBF\\u1EC1\\u1EC3\\u1EC5\\u1EC7\\u1EC9\\u1ECB\\u1ECD\\u1ECF\\u1ED1\\u1ED3\\u1ED5\\u1ED7\\u1ED9\\u1EDB\\u1EDD\\u1EDF\\u1EE1\\u1EE3\\u1EE5\\u1EE7\\u1EE9\\u1EEB\\u1EED\\u1EEF\\u1EF1\\u1EF3\\u1EF5\\u1EF7\\u1EF9\\u1EFB\\u1EFD\\u1EFF-\\u1F07\\u1F10-\\u1F15\\u1F20-\\u1F27\\u1F30-\\u1F37\\u1F40-\\u1F45\\u1F50-\\u1F57\\u1F60-\\u1F67\\u1F70-\\u1F7D\\u1F80-\\u1F87\\u1F90-\\u1F97\\u1FA0-\\u1FA7\\u1FB0-\\u1FB4\\u1FB6\\u1FB7\\u1FBE\\u1FC2-\\u1FC4\\u1FC6\\u1FC7\\u1FD0-\\u1FD3\\u1FD6\\u1FD7\\u1FE0-\\u1FE7\\u1FF2-\\u1FF4\\u1FF6\\u1FF7\\u210A\\u210E\\u210F\\u2113\\u212F\\u2134\\u2139\\u213C\\u213D\\u2146-\\u2149\\u214E\\u2184\\u2C30-\\u2C5F\\u2C61\\u2C65\\u2C66\\u2C68\\u2C6A\\u2C6C\\u2C71\\u2C73\\u2C74\\u2C76-\\u2C7B\\u2C81\\u2C83\\u2C85\\u2C87\\u2C89\\u2C8B\\u2C8D\\u2C8F\\u2C91\\u2C93\\u2C95\\u2C97\\u2C99\\u2C9B\\u2C9D\\u2C9F\\u2CA1\\u2CA3\\u2CA5\\u2CA7\\u2CA9\\u2CAB\\u2CAD\\u2CAF\\u2CB1\\u2CB3\\u2CB5\\u2CB7\\u2CB9\\u2CBB\\u2CBD\\u2CBF\\u2CC1\\u2CC3\\u2CC5\\u2CC7\\u2CC9\\u2CCB\\u2CCD\\u2CCF\\u2CD1\\u2CD3\\u2CD5\\u2CD7\\u2CD9\\u2CDB\\u2CDD\\u2CDF\\u2CE1\\u2CE3\\u2CE4\\u2CEC\\u2CEE\\u2CF3\\u2D00-\\u2D25\\u2D27\\u2D2D\\uA641\\uA643\\uA645\\uA647\\uA649\\uA64B\\uA64D\\uA64F\\uA651\\uA653\\uA655\\uA657\\uA659\\uA65B\\uA65D\\uA65F\\uA661\\uA663\\uA665\\uA667\\uA669\\uA66B\\uA66D\\uA681\\uA683\\uA685\\uA687\\uA689\\uA68B\\uA68D\\uA68F\\uA691\\uA693\\uA695\\uA697\\uA699\\uA69B\\uA723\\uA725\\uA727\\uA729\\uA72B\\uA72D\\uA72F-\\uA731\\uA733\\uA735\\uA737\\uA739\\uA73B\\uA73D\\uA73F\\uA741\\uA743\\uA745\\uA747\\uA749\\uA74B\\uA74D\\uA74F\\uA751\\uA753\\uA755\\uA757\\uA759\\uA75B\\uA75D\\uA75F\\uA761\\uA763\\uA765\\uA767\\uA769\\uA76B\\uA76D\\uA76F\\uA771-\\uA778\\uA77A\\uA77C\\uA77F\\uA781\\uA783\\uA785\\uA787\\uA78C\\uA78E\\uA791\\uA793-\\uA795\\uA797\\uA799\\uA79B\\uA79D\\uA79F\\uA7A1\\uA7A3\\uA7A5\\uA7A7\\uA7A9\\uA7AF\\uA7B5\\uA7B7\\uA7B9\\uA7BB\\uA7BD\\uA7BF\\uA7C1\\uA7C3\\uA7C8\\uA7CA\\uA7D1\\uA7D3\\uA7D5\\uA7D7\\uA7D9\\uA7F6\\uA7FA\\uAB30-\\uAB5A\\uAB60-\\uAB68\\uAB70-\\uABBF\\uFB00-\\uFB06\\uFB13-\\uFB17\\uFF41-\\uFF5A\\u{10428}-\\u{1044F}\\u{104D8}-\\u{104FB}\\u{10597}-\\u{105A1}\\u{105A3}-\\u{105B1}\\u{105B3}-\\u{105B9}\\u{105BB}\\u{105BC}\\u{10CC0}-\\u{10CF2}\\u{118C0}-\\u{118DF}\\u{16E60}-\\u{16E7F}\\u{1D41A}-\\u{1D433}\\u{1D44E}-\\u{1D454}\\u{1D456}-\\u{1D467}\\u{1D482}-\\u{1D49B}\\u{1D4B6}-\\u{1D4B9}\\u{1D4BB}\\u{1D4BD}-\\u{1D4C3}\\u{1D4C5}-\\u{1D4CF}\\u{1D4EA}-\\u{1D503}\\u{1D51E}-\\u{1D537}\\u{1D552}-\\u{1D56B}\\u{1D586}-\\u{1D59F}\\u{1D5BA}-\\u{1D5D3}\\u{1D5EE}-\\u{1D607}\\u{1D622}-\\u{1D63B}\\u{1D656}-\\u{1D66F}\\u{1D68A}-\\u{1D6A5}\\u{1D6C2}-\\u{1D6DA}\\u{1D6DC}-\\u{1D6E1}\\u{1D6FC}-\\u{1D714}\\u{1D716}-\\u{1D71B}\\u{1D736}-\\u{1D74E}\\u{1D750}-\\u{1D755}\\u{1D770}-\\u{1D788}\\u{1D78A}-\\u{1D78F}\\u{1D7AA}-\\u{1D7C2}\\u{1D7C4}-\\u{1D7C9}\\u{1D7CB}\\u{1DF00}-\\u{1DF09}\\u{1DF0B}-\\u{1DF1E}\\u{1E922}-\\u{1E943}])',
                 'gu',
             ),
             n = convertNbsp(e);
-        return (splitAndFormat(n, /( )/, t).forEach((e) => (r = r.concat(splitAndFormat(e, s, 0)))), r);
+        return (splitAndFormat(n, /( )/, t).forEach((e) => (s = s.concat(splitAndFormat(e, r, 0)))), s);
     },
     splitChinese = (() => {
         const e = new RegExp(
@@ -4298,23 +4314,23 @@ const convertNbsp = (e) => e.replace(/&nbsp;/g, ' '),
     })(),
     CHINESE_LANGUAGE_CODES = ['zh_cn', 'zh_sg', 'zh_tw'],
     splitWords = (e, t = 0) => {
-        const r = R.strings.settings.LANGUAGE_CODE().toLowerCase();
-        if (CHINESE_LANGUAGE_CODES.includes(r)) return splitChinese(e);
-        if ('ja' === r) {
+        const s = R.strings.settings.LANGUAGE_CODE().toLowerCase();
+        if (CHINESE_LANGUAGE_CODES.includes(s)) return splitChinese(e);
+        if ('ja' === s) {
             return loadDefaultJapaneseParser()
                 .parse(e)
                 .map((e) => convertNbsp(e));
         }
         return splitEuropean(e, t);
     },
-    formatString = (e, t, r) => e.split(/%\((.*?)\)(?:[sd])?/g).map((e) => (r && e in r ? r[e] : splitWords(e, t))),
-    base$M = 'Formattext_bb80854d',
-    styles$T = { base: base$M },
+    formatString = (e, t, s) => e.split(/%\((.*?)\)(?:[sd])?/g).map((e) => (s && e in s ? s[e] : splitWords(e, t))),
+    base$K = 'Formattext_bb80854d',
+    styles$R = { base: base$K },
     FormatText$1 = ({
         binding: e,
         text: t = '',
-        classMix: r,
-        alignment: s = Alignment.left,
+        classMix: s,
+        alignment: r = Alignment.left,
         formatWithBrackets: n,
     }) => {
         if (null === t) return (console.error("FormatText was supplied with 'null'"), null);
@@ -4326,8 +4342,8 @@ const convertNbsp = (e) => e.replace(/&nbsp;/g, ' '),
                     jsxRuntimeExports.jsx(
                         'div',
                         {
-                            className: cx(styles$T.base, r),
-                            children: formatString(t, s, e).map((e, t) =>
+                            className: cx(styles$R.base, s),
+                            children: formatString(t, r, e).map((e, t) =>
                                 jsxRuntimeExports.jsx(reactExports.Fragment, { children: e }, `${t}-${e}`),
                             ),
                         },
@@ -4366,7 +4382,7 @@ var ButtonType = ((e) => (
         e
     ))(ButtonSize || {});
 const root$o = 'Cbutton_root_180a9717',
-    base$L = 'Cbutton_24fc9a0c',
+    base$J = 'Cbutton_24fc9a0c',
     base__main = 'Cbutton_base__main_2f199578',
     base__primary = 'Cbutton_base__primary_9da8a692',
     base__primaryGreen = 'Cbutton_base__primaryGreen_74301f4e',
@@ -4386,7 +4402,7 @@ const root$o = 'Cbutton_root_180a9717',
     stateHighlightActive = 'Cbutton_stateHighlightActive_f3d8fd6a',
     stateDisabled = 'Cbutton_stateDisabled_7b91392f',
     base__highlightActive = 'Cbutton_base__highlightActive_180a9717',
-    content$7 = 'Cbutton_content_faaa9067',
+    content$6 = 'Cbutton_content_faaa9067',
     fadeInWithScale$o = 'Cbutton_fadeInWithScale_180a9717',
     slideUp$o = 'Cbutton_slideUp_180a9717',
     blink$o = 'Cbutton_blink_180a9717',
@@ -4395,9 +4411,9 @@ const root$o = 'Cbutton_root_180a9717',
     windowIn$o = 'Cbutton_windowIn_180a9717',
     fadeOut$o = 'Cbutton_fadeOut_180a9717',
     fadeIn$o = 'Cbutton_fadeIn_180a9717',
-    styles$S = {
+    styles$Q = {
         root: root$o,
-        base: base$L,
+        base: base$J,
         base__main: base__main,
         base__primary: base__primary,
         base__primaryGreen: base__primaryGreen,
@@ -4417,7 +4433,7 @@ const root$o = 'Cbutton_root_180a9717',
         stateHighlightActive: stateHighlightActive,
         stateDisabled: stateDisabled,
         base__highlightActive: base__highlightActive,
-        content: content$7,
+        content: content$6,
         fadeInWithScale: fadeInWithScale$o,
         slideUp: slideUp$o,
         blink: blink$o,
@@ -4430,8 +4446,8 @@ const root$o = 'Cbutton_root_180a9717',
     Button$1 = ({
         children: e,
         size: t,
-        disabled: r,
-        mixClass: s,
+        disabled: s,
+        mixClass: r,
         onMouseEnter: n,
         onMouseMove: a,
         onMouseDown: o,
@@ -4464,55 +4480,55 @@ const root$o = 'Cbutton_root_180a9717',
             jsxRuntimeExports.jsxs('div', {
                 ref: m,
                 className: cx(
-                    styles$S.base,
-                    styles$S[`base__${d}`],
-                    r && styles$S.base__disabled,
-                    t && styles$S[`base__${t}`],
-                    E && styles$S.base__focus,
-                    b && styles$S.base__highlightActive,
-                    s,
+                    styles$Q.base,
+                    styles$Q[`base__${d}`],
+                    s && styles$Q.base__disabled,
+                    t && styles$Q[`base__${t}`],
+                    E && styles$Q.base__focus,
+                    b && styles$Q.base__highlightActive,
+                    r,
                 ),
                 onMouseEnter: function (e) {
-                    r || (null !== _ && playSound(_), n && n(e));
+                    s || (null !== _ && playSound(_), n && n(e));
                 },
                 onMouseMove: function (e) {
                     a && a(e);
                 },
                 onMouseUp: function (e) {
-                    r || (u && u(e), x(!1));
+                    s || (u && u(e), x(!1));
                 },
                 onMouseDown: function (e) {
-                    if (r) return;
+                    if (s) return;
                     const t = e.button === MOUSE_BUTTON_CODES.LEFT;
                     (null !== p && t && playSound(p),
                         o && o(e),
-                        c && (r || (m.current && (m.current.focus(), f(!0)))),
+                        c && (s || (m.current && (m.current.focus(), f(!0)))),
                         t && x(!0));
                 },
                 onMouseLeave: function (e) {
-                    r || (i && i(e), x(!1));
+                    s || (i && i(e), x(!1));
                 },
                 onClick: function (e) {
-                    r || (l && l(e));
+                    s || (l && l(e));
                 },
                 children: [
                     d !== ButtonType.ghost &&
                         jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
                             children: [
-                                jsxRuntimeExports.jsx('div', { className: styles$S.back }),
-                                jsxRuntimeExports.jsx('span', { className: styles$S.texture }),
+                                jsxRuntimeExports.jsx('div', { className: styles$Q.back }),
+                                jsxRuntimeExports.jsx('span', { className: styles$Q.texture }),
                             ],
                         }),
                     jsxRuntimeExports.jsxs('span', {
-                        className: cx(styles$S.state, styles$S.state__default),
+                        className: cx(styles$Q.state, styles$Q.state__default),
                         children: [
-                            jsxRuntimeExports.jsx('span', { className: styles$S.stateDisabled }),
-                            jsxRuntimeExports.jsx('span', { className: styles$S.stateHighlightHover }),
-                            jsxRuntimeExports.jsx('span', { className: styles$S.stateHighlightActive }),
+                            jsxRuntimeExports.jsx('span', { className: styles$Q.stateDisabled }),
+                            jsxRuntimeExports.jsx('span', { className: styles$Q.stateHighlightHover }),
+                            jsxRuntimeExports.jsx('span', { className: styles$Q.stateHighlightActive }),
                         ],
                     }),
                     jsxRuntimeExports.jsx('span', {
-                        className: styles$S.content,
+                        className: styles$Q.content,
                         lang: R.strings.settings.LANGUAGE_CODE(),
                         children: e,
                     }),
@@ -4524,29 +4540,29 @@ const root$o = 'Cbutton_root_180a9717',
     NodeTypes = { Text: 1, Tag: 2, Var: 3 };
 function parseArguments(e) {
     const t = [];
-    let r = '',
-        s = !1,
+    let s = '',
+        r = !1,
         n = !1,
         a = '';
     for (let o = 0; o < e.length; o++) {
         const u = e[o];
-        ("'" !== u && '"' !== u) || n || s
+        ("'" !== u && '"' !== u) || n || r
             ? u === a && n
-                ? ((n = !1), (r += u))
+                ? ((n = !1), (s += u))
                 : '(' !== u || n
-                  ? ')' === u && s && !n
-                      ? ((s = !1), (r += u))
-                      : ' ' !== u || s || n
-                        ? (r += u)
-                        : r && (t.push(r), (r = ''))
-                  : ((s = !0), (r += u))
-            : ((n = !0), (a = u), (r += u));
+                  ? ')' === u && r && !n
+                      ? ((r = !1), (s += u))
+                      : ' ' !== u || r || n
+                        ? (s += u)
+                        : s && (t.push(s), (s = ''))
+                  : ((r = !0), (s += u))
+            : ((n = !0), (a = u), (s += u));
     }
-    return (r && t.push(r), t);
+    return (s && t.push(s), t);
 }
 function parse(e, t) {
-    const r = [],
-        s = [];
+    const s = [],
+        r = [];
     let n = '',
         a = !1,
         o = '',
@@ -4555,9 +4571,9 @@ function parse(e, t) {
         const l = e[i];
         if (l === t.start[0] && e.slice(i, i + t.start.length) === t.start) {
             if (n) {
-                if (s.length > 0) {
-                    s[s.length - 1].node.children.push({ type: NodeTypes.Text, value: n });
-                } else r.push({ type: NodeTypes.Text, value: n });
+                if (r.length > 0) {
+                    r[r.length - 1].node.children.push({ type: NodeTypes.Text, value: n });
+                } else s.push({ type: NodeTypes.Text, value: n });
                 n = '';
             }
             ((a = !0), (i += t.start.length - 1));
@@ -4567,33 +4583,33 @@ function parse(e, t) {
             if (e.startsWith('@')) {
                 const t = e.slice(1).trim(),
                     n = { type: NodeTypes.Tag, attrs: t.split('|'), instanceId: ++u, children: [] };
-                if (s.length > 0) {
-                    s[s.length - 1].node.children.push(n);
-                } else r.push(n);
-                s.push({ node: n, startIndex: r.length });
-            } else if ('/' === e) s.length > 0 && s.pop();
+                if (r.length > 0) {
+                    r[r.length - 1].node.children.push(n);
+                } else s.push(n);
+                r.push({ node: n, startIndex: s.length });
+            } else if ('/' === e) r.length > 0 && r.pop();
             else {
                 const t = { type: NodeTypes.Var, instanceId: ++u, name: e };
-                if (s.length > 0) {
-                    s[s.length - 1].node.children.push(t);
-                } else r.push(t);
+                if (r.length > 0) {
+                    r[r.length - 1].node.children.push(t);
+                } else s.push(t);
             }
             o = '';
         } else a ? (o += l) : (n += l);
     }
     if (n)
-        if (s.length) {
-            s[s.length - 1].node.children.push({ type: NodeTypes.Text, value: n });
-        } else r.push({ type: NodeTypes.Text, value: n });
-    return r;
+        if (r.length) {
+            r[r.length - 1].node.children.push({ type: NodeTypes.Text, value: n });
+        } else s.push({ type: NodeTypes.Text, value: n });
+    return s;
 }
 const COLORS =
         'blackReal, whiteReal, white, whiteOrange, whiteSpanish, par, parSecondary, parTertiary, infoRed, red, redDark, yellow, orange, cream, brown, greenBright, green, greenDark, blueBooster, blueTeamkiller, cred, gold, bond, prom',
-    base$K = 'FormatText_db904f12',
+    base$I = 'FormatText_db904f12',
     base__fullSize = 'FormatText_base__fullSize_a514958e',
     nowrap = 'FormatText_nowrap_ff69eca3',
-    styles$R = { COLORS: COLORS, base: base$K, base__fullSize: base__fullSize, nowrap: nowrap },
-    legacyColors = new Set((null == (_b = styles$R.COLORS) ? void 0 : _b.split(', ')) ?? []);
+    styles$P = { COLORS: COLORS, base: base$I, base__fullSize: base__fullSize, nowrap: nowrap },
+    legacyColors = new Set((null == (_b = styles$P.COLORS) ? void 0 : _b.split(', ')) ?? []);
 let keyId = 0;
 function takeKey() {
     return ++keyId;
@@ -4610,11 +4626,11 @@ function splitString(e) {
 }
 function splitArray(e) {
     const t = [];
-    for (let r = 0; r < e.length; r++) {
-        const s = e[r],
-            n = e[r + 1];
+    for (let s = 0; s < e.length; s++) {
+        const r = e[s],
+            n = e[s + 1];
         if ('string' != typeof n || !startsWithPunctuationRe.test(n)) {
-            t.push(split(s));
+            t.push(split(r));
             continue;
         }
         const a = splitString(n.slice(1));
@@ -4623,14 +4639,14 @@ function splitArray(e) {
                 reactExports.Fragment,
                 {
                     children: [
-                        jsxRuntimeExports.jsxs('span', { className: styles$R.nowrap, children: [split(s), n[0]] }),
+                        jsxRuntimeExports.jsxs('span', { className: styles$P.nowrap, children: [split(r), n[0]] }),
                         a,
                     ],
                 },
                 takeKey(),
             ),
         ),
-            (r += 1));
+            (s += 1));
     }
     return t;
 }
@@ -4645,12 +4661,12 @@ function style(e, ...t) {
     return jsxRuntimeExports.jsx(
         'span',
         {
-            style: t.reduce((r, s) => {
-                if (Array.isArray(s)) {
-                    const [e, t] = s;
-                    return ((r[e] = t), r);
+            style: t.reduce((s, r) => {
+                if (Array.isArray(r)) {
+                    const [e, t] = r;
+                    return ((s[e] = t), s);
                 }
-                return (console.warn(`Invalid argument ${s} in ${e}: ${t}`), r);
+                return (console.warn(`Invalid argument ${r} in ${e}: ${t}`), s);
             }, {}),
             children: e,
         },
@@ -4670,10 +4686,10 @@ const color = (e, t) => ['color', t],
     textDecoration = (e, t) => ['textDecoration', t],
     bold = (e) => ['fontWeight', 'bold'];
 function colorLegacy(e, t) {
-    const r = takeKey();
+    const s = takeKey();
     return legacyColors.has(String(t))
-        ? jsxRuntimeExports.jsx('span', { className: `FormatText_colorLegacy__${t}`, children: e }, r)
-        : jsxRuntimeExports.jsx('span', { style: { color: `#${t}` }, children: e }, r);
+        ? jsxRuntimeExports.jsx('span', { className: `FormatText_colorLegacy__${t}`, children: e }, s)
+        : jsxRuntimeExports.jsx('span', { style: { color: `#${t}` }, children: e }, s);
 }
 const defaultFormatters = {
     class: className,
@@ -4686,34 +4702,34 @@ const defaultFormatters = {
     fontWeight: fontWeight,
     textDecoration: textDecoration,
 };
-function applyFunction(e, t, r, s) {
-    const n = r.map((t) => {
+function applyFunction(e, t, s, r) {
+    const n = s.map((t) => {
             if ('string' != typeof t) return t;
-            const r = t.trim();
-            if (r.startsWith('(') && r.endsWith(')')) {
-                const [t, ...n] = r.slice(1, -1).split(' ');
-                return t ? applyFunction(e, t, n, s) : e;
+            const s = t.trim();
+            if (s.startsWith('(') && s.endsWith(')')) {
+                const [t, ...n] = s.slice(1, -1).split(' ');
+                return t ? applyFunction(e, t, n, r) : e;
             }
-            return r.startsWith("'") && r.endsWith("'") ? r.slice(1, -1) : r;
+            return s.startsWith("'") && s.endsWith("'") ? s.slice(1, -1) : s;
         }),
-        a = s[t];
+        a = r[t];
     return a ? a(e, ...n) : (console.error(`Function ${t} is not registered`), e);
 }
-function applyFunctions(e, t, r) {
+function applyFunctions(e, t, s) {
     return e.reduce((e, t) => {
-        const [s, ...n] = parseArguments(t.trim());
-        return s ? applyFunction(e, s, n, r) : e;
+        const [r, ...n] = parseArguments(t.trim());
+        return r ? applyFunction(e, r, n, s) : e;
     }, t);
 }
 function isEnd(e) {
     return !((e >= 'a' && e <= 'z') || (e >= 'A' && e <= 'Z') || (e >= '0' && e <= '9') || '_' === e);
 }
 function resolveAttrParams(e, t) {
-    for (let r = 0; r < e.length; r++) {
-        if ('$' === e[r]) {
-            let s = r + 1;
-            for (; s < e.length && !isEnd(e[s]); ) s++;
-            const n = e.slice(r + 1, s),
+    for (let s = 0; s < e.length; s++) {
+        if ('$' === e[s]) {
+            let r = s + 1;
+            for (; r < e.length && !isEnd(e[r]); ) r++;
+            const n = e.slice(s + 1, r),
                 a = t[n];
             if (a) return resolveAttrParams(e.replace(`$${n}`, String(a)), t);
         }
@@ -4721,13 +4737,13 @@ function resolveAttrParams(e, t) {
     return e;
 }
 function resolveAttrsParams(e, t) {
-    const r = [];
-    for (let s = 0; s < e.length; s++) r[s] = resolveAttrParams(e[s], t);
-    return r;
+    const s = [];
+    for (let r = 0; r < e.length; r++) s[r] = resolveAttrParams(e[r], t);
+    return s;
 }
 const primitives = ['number', 'string', 'undefined'];
-function render(e, t, r = {}, s = !0) {
-    s && (keyId = 0);
+function render(e, t, s = {}, r = !0) {
+    r && (keyId = 0);
     const n = [];
     function a(e) {
         if (primitives.includes(typeof e)) {
@@ -4739,19 +4755,19 @@ function render(e, t, r = {}, s = !0) {
     for (const o of e)
         if (o.type === NodeTypes.Text) a(o.value);
         else if (o.type === NodeTypes.Var)
-            null === r[o.name] || primitives.includes(typeof r[o.name])
-                ? a(r[o.name] ?? `{{${o.name}}}`)
+            null === s[o.name] || primitives.includes(typeof s[o.name])
+                ? a(s[o.name] ?? `{{${o.name}}}`)
                 : n.push(
                       jsxRuntimeExports.jsx(
                           reactExports.Fragment,
-                          { children: r[o.name] },
+                          { children: s[o.name] },
                           `var-${o.name}-${o.instanceId}`,
                       ),
                   );
         else if (o.type === NodeTypes.Tag) {
-            const e = render(o.children, t, r, !1),
-                s = applyFunctions(resolveAttrsParams(o.attrs, r), e, t);
-            n.push(s);
+            const e = render(o.children, t, s, !1),
+                r = applyFunctions(resolveAttrsParams(o.attrs, s), e, t);
+            n.push(r);
         }
     return n;
 }
@@ -4775,8 +4791,8 @@ const defaultBrackets = { start: '{{', end: '}}' },
     FormatText = reactExports.memo(function (e) {
         const {
                 brackets: t = defaultBrackets,
-                text: r,
-                params: s,
+                text: s,
+                params: r,
                 upgradeLegacy: n,
                 fullSize: a,
                 inline: o,
@@ -4794,7 +4810,7 @@ const defaultBrackets = { start: '{{', end: '}}' },
             ),
             _ = reactExports.useMemo(() => parse(i ? `{{@ split}}${c}{{/}}` : c, t), [t, c, i]),
             p = reactExports.useMemo(() => render(_, d, e.params), [_, d, e.params]),
-            m = cx(styles$R.base, a && styles$R.base__fullSize, l.className);
+            m = clsx(styles$P.base, a && styles$P.base__fullSize, l.className);
         return e.inline
             ? (console.warn(
                   "[FormatText] using the 'inline' props causes memory leaks due to incorrect working of the 'cohinline' attribute in GF version 1.48.2.3. Can cause client crashes.",
@@ -4813,17 +4829,17 @@ const defaultBrackets = { start: '{{', end: '}}' },
 function FormatString({ path: e, ...t }) {
     return jsxRuntimeExports.jsx(FormatText, { text: resources.resolve('strings').readOrEmpty(e), ...t });
 }
-function FormatPluralString({ path: e, count: t, ...r }) {
-    return jsxRuntimeExports.jsx(FormatText, { text: resources.resolve('strings').pluralOrEmpty(e, t), ...r });
+function FormatPluralString({ path: e, count: t, ...s }) {
+    return jsxRuntimeExports.jsx(FormatText, { text: resources.resolve('strings').pluralOrEmpty(e, t), ...s });
 }
 const undef = () => {};
 function withResolvePath(e) {
     const t = e;
-    return reactExports.forwardRef(function (e, r) {
-        const s = useAdaptive(e, e.adaptive),
-            { path: n, ...a } = s,
-            o = s.images ?? resources.resolve('images'),
-            u = { ...a, ref: r };
+    return reactExports.forwardRef(function (e, s) {
+        const r = useAdaptive(e, e.adaptive),
+            { path: n, ...a } = r,
+            o = r.images ?? resources.resolve('images'),
+            u = { ...a, ref: s };
         {
             const e = n ? o.readOr(n, undef, 'warn') : void 0;
             return e ? jsxRuntimeExports.jsx(t, { ...u, src: e }) : jsxRuntimeExports.jsx(t, { ...u, unknown: !0 });
@@ -4840,8 +4856,8 @@ const defaultUnknownStyle = {
     ResourceImage = reactExports.forwardRef(function (e, t) {
         if (!e.src) {
             const {
-                repeat: r,
-                fit: s,
+                repeat: s,
+                fit: r,
                 position: n,
                 width: a,
                 src: o,
@@ -4856,14 +4872,14 @@ const defaultUnknownStyle = {
                 style: { width: e.width, height: e.height, ...l, ...e.style },
             });
         }
-        const { repeat: r, fit: s, position: n, width: a, height: o, unknownStyle: u, unselectable: i, ...l } = e;
+        const { repeat: s, fit: r, position: n, width: a, height: o, unknownStyle: u, unselectable: i, ...l } = e;
         return jsxRuntimeExports.jsx('div', {
             ...l,
             ref: t,
             style: {
                 backgroundImage: `url(${e.src})`,
-                backgroundRepeat: r ?? 'no-repeat',
-                backgroundSize: s ?? 'contain',
+                backgroundRepeat: s ?? 'no-repeat',
+                backgroundSize: r ?? 'contain',
                 backgroundPosition: n ?? 'center center',
                 width: 'number' == typeof a ? `${a}rem` : a,
                 height: 'number' == typeof o ? `${o}rem` : o,
@@ -4875,8 +4891,8 @@ const defaultUnknownStyle = {
         reactExports.forwardRef(function (e, t) {
             if (e.unknown) {
                 const {
-                    repeat: r,
-                    fit: s,
+                    repeat: s,
+                    fit: r,
                     position: n,
                     width: a,
                     src: o,
@@ -4893,8 +4909,8 @@ const defaultUnknownStyle = {
                 });
             }
             const {
-                repeat: r,
-                fit: s,
+                repeat: s,
+                fit: r,
                 position: n,
                 width: a,
                 height: o,
@@ -4908,8 +4924,8 @@ const defaultUnknownStyle = {
                 ref: t,
                 style: {
                     backgroundImage: `url(${e.src})`,
-                    backgroundRepeat: r ?? 'no-repeat',
-                    backgroundSize: s ?? 'contain',
+                    backgroundRepeat: s ?? 'no-repeat',
+                    backgroundSize: r ?? 'contain',
                     backgroundPosition: n ?? 'center center',
                     width: 'number' == typeof a ? `${a}rem` : a,
                     height: 'number' == typeof o ? `${o}rem` : o,
@@ -4921,8 +4937,8 @@ const defaultUnknownStyle = {
 withResolvePath(
     reactExports.forwardRef(function (e, t) {
         const {
-            width: r,
-            height: s,
+            width: s,
+            height: r,
             src: n,
             unselectable: a,
             unknown: o,
@@ -4931,58 +4947,58 @@ withResolvePath(
         } = e;
         return e.unknown
             ? jsxRuntimeExports.jsx('div', { ...i, style: { width: e.width, height: e.height, ...u } })
-            : jsxRuntimeExports.jsx('img', { ...i, ref: t, src: n, width: r, height: s });
+            : jsxRuntimeExports.jsx('img', { ...i, ref: t, src: n, width: s, height: r });
     }),
 );
 const getFromCallStack = (e = 1) => {
         var t;
-        const r = new Error().stack;
-        let s,
+        const s = new Error().stack;
+        let r,
             n = R.invalid('resId'),
             a = '';
         return (
-            r &&
-                ((a = (null == (t = r.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : t[0]) || ''),
-                (s = r.split('\n')[e].split('.js')[0].split('/').pop() || ''),
-                window.__feature && window.__feature !== s && window.subViews[s] && (n = window.subViews[s].id)),
-            { callerUrl: a, caller: s, stack: r, resId: n }
+            s &&
+                ((a = (null == (t = s.match(/(coui:\/\/[^\s]+\.js)/)) ? void 0 : t[0]) || ''),
+                (r = s.split('\n')[e].split('.js')[0].split('/').pop() || ''),
+                window.__feature && window.__feature !== r && window.subViews[r] && (n = window.subViews[r].id)),
+            { callerUrl: a, caller: r, stack: s, resId: n }
         );
     },
     SHOW_DELAY_MIN = 100,
     SHOW_DELAY_DEFAULT = 400;
 function getViewEventArguments(e) {
     return Object.entries(e || {}).map(([e, t]) => {
-        const r = { __Type: 'GFValueProxy', name: e };
+        const s = { __Type: 'GFValueProxy', name: e };
         switch (typeof t) {
             case 'number':
-                r.number = t;
+                s.number = t;
                 break;
             case 'boolean':
-                r.bool = t;
+                s.bool = t;
                 break;
             case 'undefined':
                 break;
             default:
-                r.string = t.toString();
+                s.string = t.toString();
         }
-        return r;
+        return s;
     });
 }
-const handleViewEvent = (e, t, r = {}, s = 0) => {
+const handleViewEvent = (e, t, s = {}, r = 0) => {
         viewEnv.handleViewEvent({
             __Type: 'GFViewEventProxy',
             type: ViewEventType.TOOLTIP,
             contentID: e,
             decoratorID: t,
-            targetID: s,
-            ...r,
+            targetID: r,
+            ...s,
         });
     },
     Tooltip$1 = ({
         children: e,
         contentId: t,
-        args: r,
-        onMouseEnter: s,
+        args: s,
+        onMouseEnter: r,
         onMouseLeave: n,
         onMouseDown: a,
         onClick: o,
@@ -4999,10 +5015,10 @@ const handleViewEvent = (e, t, r = {}, s = 0) => {
             f = reactExports.useMemo(() => d || getFromCallStack().resId, [d]),
             b = reactExports.useCallback(() => {
                 (E.current.isVisible && E.current.timeoutId) ||
-                    (handleViewEvent(t, l, { isMouseEvent: !0, on: !0, arguments: getViewEventArguments(r) }, f),
+                    (handleViewEvent(t, l, { isMouseEvent: !0, on: !0, arguments: getViewEventArguments(s) }, f),
                     _ && _(),
                     (E.current.isVisible = !0));
-            }, [t, l, r, f, _]),
+            }, [t, l, s, f, _]),
             x = reactExports.useCallback(() => {
                 if (E.current.isVisible || E.current.timeoutId) {
                     const e = E.current.timeoutId;
@@ -5049,7 +5065,7 @@ const handleViewEvent = (e, t, r = {}, s = 0) => {
                           (e.clientX === window.innerWidth && e.clientY === window.innerHeight) ||
                               (clearTimeout(E.current.timeoutId),
                               (E.current.timeoutId = window.setTimeout(b, u ? SHOW_DELAY_MIN : SHOW_DELAY_DEFAULT)),
-                              s && s(e),
+                              r && r(e),
                               h && h(e));
                       }),
                   onMouseLeave: ((e) => (t) => {
@@ -5069,7 +5085,7 @@ const handleViewEvent = (e, t, r = {}, s = 0) => {
     TooltipWrapper = ({ tooltipArgs: e, children: t }) =>
         e ? jsxRuntimeExports.jsx(Tooltip$1, { ...e, children: t }) : t,
     root$n = 'Paginationarrowbutton_root_7e61bd42',
-    base$J = 'Paginationarrowbutton_9603d7f5',
+    base$H = 'Paginationarrowbutton_9603d7f5',
     icon$c = 'Paginationarrowbutton_icon_51dba56d',
     icon__back$1 = 'Paginationarrowbutton_icon__back_693f6a12',
     icon__forward$1 = 'Paginationarrowbutton_icon__forward_5da20ed5',
@@ -5082,9 +5098,9 @@ const handleViewEvent = (e, t, r = {}, s = 0) => {
     windowIn$n = 'Paginationarrowbutton_windowIn_7e61bd42',
     fadeOut$n = 'Paginationarrowbutton_fadeOut_7e61bd42',
     fadeIn$n = 'Paginationarrowbutton_fadeIn_7e61bd42',
-    styles$Q = {
+    styles$O = {
         root: root$n,
-        base: base$J,
+        base: base$H,
         icon: icon$c,
         icon__back: icon__back$1,
         icon__forward: icon__forward$1,
@@ -5099,30 +5115,30 @@ const handleViewEvent = (e, t, r = {}, s = 0) => {
         fadeIn: fadeIn$n,
     };
 var ArrowDirection = ((e) => ((e.Back = 'back'), (e.Forward = 'forward'), e))(ArrowDirection || {});
-const PaginationArrowButton = ({ onClick: e, direction: t, isLocked: r, tooltipArgs: s, className: n }) => {
-        const a = cx(styles$Q.icon, styles$Q[`icon__${t}`]),
+const PaginationArrowButton = ({ onClick: e, direction: t, isLocked: s, tooltipArgs: r, className: n }) => {
+        const a = cx(styles$O.icon, styles$O[`icon__${t}`]),
             o = reactExports.useCallback(() => {
-                r || (e(), playSound('play'));
-            }, [e, r]),
+                s || (e(), playSound('play'));
+            }, [e, s]),
             u = reactExports.useCallback(() => {
-                r || playSound('highlight');
-            }, [r]),
-            i = cx(styles$Q.base, r && styles$Q.base__locked, n);
+                s || playSound('highlight');
+            }, [s]),
+            i = cx(styles$O.base, s && styles$O.base__locked, n);
         return jsxRuntimeExports.jsx(TooltipWrapper, {
-            tooltipArgs: s,
+            tooltipArgs: r,
             children: jsxRuntimeExports.jsx('div', {
                 className: i,
                 children: jsxRuntimeExports.jsx('div', { className: a, onClick: o, onMouseEnter: u }),
             }),
         });
     },
-    base$I = 'Paginationrender_7c84d97d',
+    base$G = 'Paginationrender_7c84d97d',
     base__completed = 'Paginationrender_base__completed_738d6d59',
     base__inaccessible = 'Paginationrender_base__inaccessible_48314b99',
     base__selected$2 = 'Paginationrender_base__selected_6018b389',
     selectedImage = 'Paginationrender_selectedImage_a1492f5',
-    styles$P = {
-        base: base$I,
+    styles$N = {
+        base: base$G,
         base__completed: base__completed,
         base__inaccessible: base__inaccessible,
         base__selected: base__selected$2,
@@ -5131,22 +5147,22 @@ const PaginationArrowButton = ({ onClick: e, direction: t, isLocked: r, tooltipA
     PaginationRender = ({
         className: e,
         index: t,
-        onClick: r,
-        isSelected: s,
+        onClick: s,
+        isSelected: r,
         isCompleted: n,
         isInaccessible: a,
         tooltipArgs: o,
     }) => {
         const u = cx(
-                styles$P.base,
-                s && styles$P.base__selected,
-                n && styles$P.base__completed,
-                a && styles$P.base__inaccessible,
+                styles$N.base,
+                r && styles$N.base__selected,
+                n && styles$N.base__completed,
+                a && styles$N.base__inaccessible,
                 e,
             ),
             i = reactExports.useCallback(() => {
-                (r(t), playSound('yes1'));
-            }, [t, r]),
+                (s(t), playSound('yes1'));
+            }, [t, s]),
             l = reactExports.useCallback(() => {
                 playSound('highlight');
             }, []);
@@ -5156,46 +5172,46 @@ const PaginationArrowButton = ({ onClick: e, direction: t, isLocked: r, tooltipA
                 className: u,
                 onClick: i,
                 onMouseEnter: l,
-                children: [s && jsxRuntimeExports.jsx('span', { className: styles$P.selectedImage }), t + 1],
+                children: [r && jsxRuntimeExports.jsx('span', { className: styles$N.selectedImage }), t + 1],
             }),
         });
     },
-    base$H = 'Paginationlist_891dda95',
+    base$F = 'Paginationlist_891dda95',
     item = 'Paginationlist_item_ffe61403',
     item__last = 'Paginationlist_item__last_9bbe906a',
-    styles$O = { base: base$H, item: item, item__last: item__last },
-    PaginationList = ({ className: e, selectedStep: t, data: r, onChange: s }) => {
-        const n = r.length - 1,
-            a = cx(styles$O.base, e),
+    styles$M = { base: base$F, item: item, item__last: item__last },
+    PaginationList = ({ className: e, selectedStep: t, data: s, onChange: r }) => {
+        const n = s.length - 1,
+            a = cx(styles$M.base, e),
             o = reactExports.useCallback(
                 (e) => {
-                    s(e);
+                    r(e);
                 },
-                [s],
+                [r],
             );
         return jsxRuntimeExports.jsx('div', {
             className: a,
-            children: r.map((e, r) =>
+            children: s.map((e, s) =>
                 jsxRuntimeExports.jsx(
                     PaginationRender,
                     {
                         onClick: o,
-                        index: r,
-                        className: cx(styles$O.item, r === n && styles$O.item__last),
-                        isSelected: t === r,
+                        index: s,
+                        className: cx(styles$M.item, s === n && styles$M.item__last),
+                        isSelected: t === s,
                         ...e,
                     },
-                    r,
+                    s,
                 ),
             ),
         });
     },
-    base$G = 'Pagination_d4b3e554',
-    content$6 = 'Pagination_content_ff273982',
+    base$E = 'Pagination_d4b3e554',
+    content$5 = 'Pagination_content_ff273982',
     list$1 = 'Pagination_list_15505166',
-    styles$N = { base: base$G, content: content$6, list: list$1 },
-    Pagination = ({ className: e, hasArrow: t, arrowOffset: r, selectedIndex: s, children: n }) => {
-        r = r || 0;
+    styles$L = { base: base$E, content: content$5, list: list$1 },
+    Pagination = ({ className: e, hasArrow: t, arrowOffset: s, selectedIndex: r, children: n }) => {
+        s = s || 0;
         const a = reactExports.useMemo(
                 () =>
                     n.map((e) => ({
@@ -5210,7 +5226,7 @@ const PaginationArrowButton = ({ onClick: e, direction: t, isLocked: r, tooltipA
                 const e = a.findIndex((e) => void 0 === e.isInaccessible && void 0 === e.isCompleted);
                 return -1 === e ? 0 : e;
             }, [a]),
-            [i, l] = reactExports.useState(s || u),
+            [i, l] = reactExports.useState(r || u),
             c = reactExports.useCallback(
                 (e) => {
                     l(e);
@@ -5223,8 +5239,8 @@ const PaginationArrowButton = ({ onClick: e, direction: t, isLocked: r, tooltipA
             _ = reactExports.useCallback(() => {
                 l(i + 1);
             }, [l, i]),
-            p = cx(styles$N.base, e),
-            m = reactExports.useMemo(() => ({ marginLeft: r, marginRight: r }), [r]),
+            p = cx(styles$L.base, e),
+            m = reactExports.useMemo(() => ({ marginLeft: s, marginRight: s }), [s]),
             E = 0 === i,
             f = i === o,
             b = reactExports.useMemo(() => (E ? void 0 : n[i - 1].tooltipArgs), [n, E, i]),
@@ -5233,7 +5249,7 @@ const PaginationArrowButton = ({ onClick: e, direction: t, isLocked: r, tooltipA
             className: p,
             children: [
                 jsxRuntimeExports.jsxs('div', {
-                    className: styles$N.content,
+                    className: styles$L.content,
                     children: [
                         t &&
                             jsxRuntimeExports.jsx(PaginationArrowButton, {
@@ -5253,7 +5269,7 @@ const PaginationArrowButton = ({ onClick: e, direction: t, isLocked: r, tooltipA
                     ],
                 }),
                 jsxRuntimeExports.jsx(PaginationList, {
-                    className: styles$N.list,
+                    className: styles$L.list,
                     selectedStep: i,
                     data: a,
                     onChange: c,
@@ -5262,7 +5278,7 @@ const PaginationArrowButton = ({ onClick: e, direction: t, isLocked: r, tooltipA
         });
     },
     root$m = 'Textbutton_root_599b35e4',
-    base$F = 'Textbutton_b1283086',
+    base$D = 'Textbutton_b1283086',
     base__right$1 = 'Textbutton_base__right_78d4c03f',
     icon$b = 'Textbutton_icon_9ba4c60',
     icon__back = 'Textbutton_icon__back_599b35e4',
@@ -5286,9 +5302,9 @@ const PaginationArrowButton = ({ onClick: e, direction: t, isLocked: r, tooltipA
     windowIn$m = 'Textbutton_windowIn_599b35e4',
     fadeOut$m = 'Textbutton_fadeOut_599b35e4',
     fadeIn$m = 'Textbutton_fadeIn_599b35e4',
-    styles$M = {
+    styles$K = {
         root: root$m,
-        base: base$F,
+        base: base$D,
         base__right: base__right$1,
         icon: icon$b,
         icon__back: icon__back,
@@ -5316,8 +5332,8 @@ const PaginationArrowButton = ({ onClick: e, direction: t, isLocked: r, tooltipA
     TextButton = ({
         caption: e,
         onClick: t,
-        goto: r,
-        classNames: s,
+        goto: s,
+        classNames: r,
         onMouseEnter: n,
         onMouseLeave: a,
         onMouseDown: o,
@@ -5353,7 +5369,7 @@ const PaginationArrowButton = ({ onClick: e, direction: t, isLocked: r, tooltipA
                 [u],
             );
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$M.base, styles$M[`base__${l}`], styles$M[`base__${i}`], null == s ? void 0 : s.base),
+            className: cx(styles$K.base, styles$K[`base__${l}`], styles$K[`base__${i}`], null == r ? void 0 : r.base),
             onMouseEnter: p,
             onMouseLeave: m,
             onMouseDown: E,
@@ -5361,26 +5377,26 @@ const PaginationArrowButton = ({ onClick: e, direction: t, isLocked: r, tooltipA
             onClick: t,
             ..._,
             children: [
-                'info' !== l && jsxRuntimeExports.jsx('div', { className: styles$M.shine }),
+                'info' !== l && jsxRuntimeExports.jsx('div', { className: styles$K.shine }),
                 jsxRuntimeExports.jsx('div', {
                     className: cx(
-                        styles$M.icon,
-                        styles$M[`icon__${l}`],
-                        styles$M[`icon__${i}`],
-                        null == s ? void 0 : s.icon,
+                        styles$K.icon,
+                        styles$K[`icon__${l}`],
+                        styles$K[`icon__${i}`],
+                        null == r ? void 0 : r.icon,
                     ),
                     children: jsxRuntimeExports.jsx('div', {
-                        className: cx(styles$M.glow, null == s ? void 0 : s.glow),
+                        className: cx(styles$K.glow, null == r ? void 0 : r.glow),
                     }),
                 }),
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$M.caption, styles$M[`caption__${l}`], null == s ? void 0 : s.caption),
+                    className: cx(styles$K.caption, styles$K[`caption__${l}`], null == r ? void 0 : r.caption),
                     children: e,
                 }),
-                r &&
+                s &&
                     jsxRuntimeExports.jsx('div', {
-                        className: cx(styles$M.goto, null == s ? void 0 : s.goto),
-                        children: r,
+                        className: cx(styles$K.goto, null == r ? void 0 : r.goto),
+                        children: s,
                     }),
             ],
         });
@@ -5395,10 +5411,17 @@ var define_process_env_default = {};
 function removeLastSlash(e) {
     return e.endsWith('/') ? e.slice(0, -1) : e;
 }
-function ModelRouterProvider({ children: e, prefix: t = '', context: r, getRoot: s, initializer: n, rootId: a }) {
+function safeJsonParse(e) {
+    try {
+        return JSON.parse(e);
+    } catch (t) {
+        return {};
+    }
+}
+function ModelRouterProvider({ children: e, prefix: t = '', context: s, getRoot: r, initializer: n, rootId: a }) {
     const o = reactExports.useRef([]),
         u = reactExports.useRef(null),
-        i = reactExports.useMemo(() => create({ context: r, getRoot: s, initializer: n, rootId: a }), [r, s, n, a]),
+        i = reactExports.useMemo(() => create({ context: s, getRoot: r, initializer: n, rootId: a }), [s, r, n, a]),
         l = reactExports.useCallback(
             (e) => {
                 const t = i.subscribe(e);
@@ -5408,14 +5431,14 @@ function ModelRouterProvider({ children: e, prefix: t = '', context: r, getRoot:
         ),
         c = reactExports.useCallback(() => {
             const e = i.readByPath(),
-                r = { location: removeLastSlash(t + e.route), params: e.params };
-            return u.current && comparer.shallow(u.current, r) ? u.current : ((u.current = r), r);
+                s = { location: removeLastSlash(t + e.route), params: e.params };
+            return u.current && comparer.shallow(u.current, s) ? u.current : ((u.current = s), s);
         }, [i, t]),
         d = reactExports.useSyncExternalStore(l, c);
     reactExports.useEffect(() => i.dispose, [i]);
     const _ = reactExports.useMemo(() => {
         const e = [...o.current, d];
-        return ((o.current = e), { ...d, history: e });
+        return ((o.current = e), { ...d, history: e, paramsStruct: safeJsonParse(d.params) });
     }, [d]);
     define_process_env_default.PUBLIC_ROUTER_DEBUG && console.log('🗺️ Route updated:', _);
     const p = reactExports.useMemo(() => {
@@ -5443,7 +5466,7 @@ function ModelRouterProvider({ children: e, prefix: t = '', context: r, getRoot:
 var Size = ((e) => ((e.Small = 'small'), (e.Medium = 'medium'), (e.Default = 'medium'), e))(Size || {}),
     AnimationType = ((e) => ((e[(e.Simple = 0)] = 'Simple'), (e[(e.Growing = 1)] = 'Growing'), e))(AnimationType || {});
 const root$l = 'Progressbar_root_27f917f7',
-    base$E = 'Progressbar_a6e35bd7',
+    base$C = 'Progressbar_a6e35bd7',
     base__small$8 = 'Progressbar_base__small_7338ff19',
     background$5 = 'Progressbar_background_27d9dd7c',
     background__small = 'Progressbar_background__small_7338ff19',
@@ -5456,9 +5479,9 @@ const root$l = 'Progressbar_root_27f917f7',
     windowIn$l = 'Progressbar_windowIn_27f917f7',
     fadeOut$l = 'Progressbar_fadeOut_27f917f7',
     fadeIn$l = 'Progressbar_fadeIn_27f917f7',
-    styles$L = {
+    styles$J = {
         root: root$l,
-        base: base$E,
+        base: base$C,
         base__small: base__small$8,
         background: background$5,
         background__small: background__small,
@@ -5473,11 +5496,11 @@ const root$l = 'Progressbar_root_27f917f7',
         fadeIn: fadeIn$l,
     },
     ProgressBarBackground = ({ size: e = Size.Default }) => {
-        const t = cx(styles$L.background, styles$L[`background__${e}`]);
+        const t = cx(styles$J.background, styles$J[`background__${e}`]);
         return jsxRuntimeExports.jsx('div', { className: t });
     },
     root$k = 'Progressbarblink_root_6fa3e54',
-    base$D = 'Progressbarblink_c6146c1c',
+    base$B = 'Progressbarblink_c6146c1c',
     base__small$7 = 'Progressbarblink_base__small_9a4d3786',
     fadeInWithScale$k = 'Progressbarblink_fadeInWithScale_6fa3e54',
     slideUp$k = 'Progressbarblink_slideUp_6fa3e54',
@@ -5487,9 +5510,9 @@ const root$l = 'Progressbar_root_27f917f7',
     windowIn$k = 'Progressbarblink_windowIn_6fa3e54',
     fadeOut$k = 'Progressbarblink_fadeOut_6fa3e54',
     fadeIn$k = 'Progressbarblink_fadeIn_6fa3e54',
-    styles$K = {
+    styles$I = {
         root: root$k,
-        base: base$D,
+        base: base$B,
         base__small: base__small$7,
         fadeInWithScale: fadeInWithScale$k,
         slideUp: slideUp$k,
@@ -5501,11 +5524,11 @@ const root$l = 'Progressbar_root_27f917f7',
         fadeIn: fadeIn$k,
     },
     ProgressBarBlink = ({ size: e }) => {
-        const t = cx(styles$K.base, styles$K[`base__${e}`]);
+        const t = cx(styles$I.base, styles$I[`base__${e}`]);
         return jsxRuntimeExports.jsx('div', { className: t });
     },
     root$j = 'Progresslineimpose_root_577e82cf',
-    base$C = 'Progresslineimpose_24e17c02',
+    base$A = 'Progresslineimpose_24e17c02',
     base__disabled$3 = 'Progresslineimpose_base__disabled_bcd461f4',
     base__finished = 'Progresslineimpose_base__finished_803677d6',
     base__withoutBounce$1 = 'Progresslineimpose_base__withoutBounce_df0aed59',
@@ -5522,9 +5545,9 @@ const root$l = 'Progressbar_root_27f917f7',
     windowIn$j = 'Progresslineimpose_windowIn_577e82cf',
     fadeOut$j = 'Progresslineimpose_fadeOut_577e82cf',
     fadeIn$j = 'Progresslineimpose_fadeIn_577e82cf',
-    styles$J = {
+    styles$H = {
         root: root$j,
-        base: base$C,
+        base: base$A,
         base__disabled: base__disabled$3,
         base__finished: base__finished,
         base__withoutBounce: base__withoutBounce$1,
@@ -5545,63 +5568,63 @@ const root$l = 'Progressbar_root_27f917f7',
     ProgressLineImposeComponent = ({
         size: e,
         lineRef: t,
-        disabled: r,
-        baseStyles: s,
+        disabled: s,
+        baseStyles: r,
         isComplete: n,
         withoutBounce: a,
     }) => {
         const o = cx(
-                styles$J.base,
-                styles$J[`base__${e}`],
-                r && styles$J.base__disabled,
-                n && styles$J.base__finished,
-                a && styles$J.base__withoutBounce,
+                styles$H.base,
+                styles$H[`base__${e}`],
+                s && styles$H.base__disabled,
+                n && styles$H.base__finished,
+                a && styles$H.base__withoutBounce,
             ),
-            u = !r && !n;
+            u = !s && !n;
         return jsxRuntimeExports.jsxs('div', {
             className: o,
-            style: s,
+            style: r,
             ref: t,
             children: [
-                jsxRuntimeExports.jsx('div', { className: styles$J.pattern }),
-                jsxRuntimeExports.jsx('div', { className: styles$J.gradient }),
+                jsxRuntimeExports.jsx('div', { className: styles$H.pattern }),
+                jsxRuntimeExports.jsx('div', { className: styles$H.gradient }),
                 u && jsxRuntimeExports.jsx(ProgressBarBlink, { size: e }),
             ],
         });
     },
     ProgressLineImpose = reactExports.memo(ProgressLineImposeComponent),
     createTimeoutInEffect = (e, t) => {
-        let r;
-        const s = setTimeout(() => {
-            r = e();
+        let s;
+        const r = setTimeout(() => {
+            s = e();
         }, t);
         return () => {
-            ('function' == typeof r && r(), clearTimeout(s));
+            ('function' == typeof s && s(), clearTimeout(r));
         };
     };
 var GrowAnimationState = ((e) => ((e.Idle = 'Idle'), (e.Grow = 'Grow'), (e.Shrink = 'Shrink'), (e.End = 'End'), e))(
         GrowAnimationState || {},
     ),
     SimpleAnimationState = ((e) => ((e.Idle = 'Idle'), (e.In = 'In'), (e.End = 'End'), e))(SimpleAnimationState || {});
-const base$B = 'Progressbardeltagrow_c42a7a2c',
+const base$z = 'Progressbardeltagrow_c42a7a2c',
     base__withoutBounce = 'Progressbardeltagrow_base__withoutBounce_8900411d',
     glow$1 = 'Progressbardeltagrow_glow_e08fafeb',
-    styles$I = { base: base$B, base__withoutBounce: base__withoutBounce, glow: glow$1 },
+    styles$G = { base: base$z, base__withoutBounce: base__withoutBounce, glow: glow$1 },
     getGlowSideWithReverse = (e) => (e ? { left: 0 } : { right: 0 }),
     getBaseSideWithReverse = (e, t) => (e ? { right: 100 - t + '%' } : { left: `${t}%` }),
     getAnimationStyles = (e) => ({ transitionDuration: `${e}ms` }),
     ProgressBarDeltaGrowComponent = ({
         transitionDuration: e,
         transitionDelay: t,
-        freezed: r,
-        from: s,
+        freezed: s,
+        from: r,
         size: n,
         to: a,
         onEndAnimation: o,
         onChangeAnimationState: u,
         className: i,
     }) => {
-        const l = a < s,
+        const l = a < r,
             [c, d] = reactExports.useState(GrowAnimationState.Idle),
             _ = c === GrowAnimationState.End,
             p = c === GrowAnimationState.Idle,
@@ -5621,7 +5644,7 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
                 [f],
             );
         reactExports.useEffect(() => {
-            if (!r)
+            if (!s)
                 return p
                     ? b(GrowAnimationState.Grow, t)
                     : m
@@ -5629,7 +5652,7 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
                       : E
                         ? b(GrowAnimationState.End, e)
                         : void (_ && o && o());
-        }, [b, r, _, m, p, E, o, t, e]);
+        }, [b, s, _, m, p, E, o, t, e]);
         const x = reactExports.useMemo(
                 () => ({ width: '100%', ...getAnimationStyles(e), ...getGlowSideWithReverse(l) }),
                 [l, e],
@@ -5639,21 +5662,21 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
                 [l, e],
             ),
             h = reactExports.useMemo(
-                () => ({ width: '0%', ...getBaseSideWithReverse(l, s), ...getAnimationStyles(e) }),
-                [s, l, e],
+                () => ({ width: '0%', ...getBaseSideWithReverse(l, r), ...getAnimationStyles(e) }),
+                [r, l, e],
             ),
             y = reactExports.useMemo(
-                () => ({ width: `${Math.abs(a - s)}%`, ...getBaseSideWithReverse(l, s), ...getAnimationStyles(e) }),
-                [s, l, a, e],
+                () => ({ width: `${Math.abs(a - r)}%`, ...getBaseSideWithReverse(l, r), ...getAnimationStyles(e) }),
+                [r, l, a, e],
             );
         if (_) return null;
-        const v = cx(styles$I.base, i, l && 0 === a && styles$I.base__withoutBounce);
+        const v = cx(styles$G.base, i, l && 0 === a && styles$G.base__withoutBounce);
         return jsxRuntimeExports.jsx('div', {
             style: p ? h : y,
             className: v,
             children: jsxRuntimeExports.jsx('div', {
                 style: E ? g : x,
-                className: styles$I.glow,
+                className: styles$G.glow,
                 children: jsxRuntimeExports.jsx(ProgressBarBlink, { size: n }),
             }),
         });
@@ -5662,15 +5685,15 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
     ProgressBarGrowLineComponent = ({
         to: e,
         size: t,
-        from: r,
-        lineRef: s,
+        from: s,
+        lineRef: r,
         disabled: n,
         isComplete: a,
         animationSettings: o,
         onEndAnimation: u,
         onChangeAnimationState: i,
     }) => {
-        const l = e < r,
+        const l = e < s,
             [c, d] = reactExports.useState(!1),
             _ = reactExports.useCallback(
                 (e) => {
@@ -5678,7 +5701,7 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
                 },
                 [i],
             ),
-            p = reactExports.useMemo(() => ({ width: `${r}%`, transitionProperty: 'none' }), [r]),
+            p = reactExports.useMemo(() => ({ width: `${s}%`, transitionProperty: 'none' }), [s]),
             m = reactExports.useMemo(
                 () => ({ width: `${e}%`, transitionDuration: `${o.line.duration}ms` }),
                 [o.line.duration, e],
@@ -5687,20 +5710,20 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
             children: [
                 jsxRuntimeExports.jsx(ProgressLineImpose, {
                     size: t,
-                    lineRef: s,
+                    lineRef: r,
                     disabled: n,
                     isComplete: a,
                     withoutBounce: l && 0 === e,
                     baseStyles: c ? m : p,
                 }),
-                r >= 0 &&
+                s >= 0 &&
                     jsxRuntimeExports.jsx(ProgressBarDeltaGrow, {
                         transitionDuration: o.delta.duration,
                         transitionDelay: o.delta.delay,
                         onChangeAnimationState: _,
                         freezed: o.freezed,
                         onEndAnimation: u,
-                        from: r,
+                        from: s,
                         size: t,
                         to: e,
                         className: o.delta.className,
@@ -5709,20 +5732,20 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
         });
     },
     ProgressBarGrowLine = reactExports.memo(ProgressBarGrowLineComponent),
-    base$A = 'Progressbardeltasimple_4b8901e3',
+    base$y = 'Progressbardeltasimple_4b8901e3',
     delta = 'Progressbardeltasimple_delta_9a540ec7',
-    styles$H = { base: base$A, delta: delta },
+    styles$F = { base: base$y, delta: delta },
     ProgressBarDeltaSimpleComponent = ({
         transitionDuration: e,
         transitionDelay: t,
-        freezed: r,
-        from: s,
+        freezed: s,
+        from: r,
         size: n,
         to: a,
         onEndAnimation: o,
         onChangeAnimationState: u,
     }) => {
-        const i = a < s,
+        const i = a < r,
             [l, c] = reactExports.useState(SimpleAnimationState.Idle),
             d = l === SimpleAnimationState.In,
             _ = l === SimpleAnimationState.End,
@@ -5734,12 +5757,12 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
                 [u],
             );
         (reactExports.useEffect(() => {
-            if (p && !r) {
+            if (p && !s) {
                 return createTimeoutInEffect(() => {
                     m(SimpleAnimationState.In);
                 }, t);
             }
-        }, [m, r, p, t]),
+        }, [m, s, p, t]),
             reactExports.useEffect(() => {
                 if (d) {
                     return createTimeoutInEffect(() => {
@@ -5765,15 +5788,15 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
                 }),
                 [i, t, e],
             ),
-            b = reactExports.useMemo(() => ({ width: `${Math.abs(s - a)}%`, left: `${i ? a : s}%` }), [s, i, a]);
+            b = reactExports.useMemo(() => ({ width: `${Math.abs(r - a)}%`, left: `${i ? a : r}%` }), [r, i, a]);
         return _
             ? null
             : jsxRuntimeExports.jsx('div', {
-                  className: styles$H.base,
+                  className: styles$F.base,
                   style: b,
                   children: jsxRuntimeExports.jsx('div', {
                       style: p ? E : f,
-                      className: styles$H.delta,
+                      className: styles$F.delta,
                       children: jsxRuntimeExports.jsx(ProgressBarBlink, { size: n }),
                   }),
               });
@@ -5782,8 +5805,8 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
     ProgressBarSimpleLineComponent = ({
         to: e,
         size: t,
-        from: r,
-        lineRef: s,
+        from: s,
+        lineRef: r,
         disabled: n,
         isComplete: a,
         animationSettings: o,
@@ -5802,17 +5825,17 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
             children: [
                 jsxRuntimeExports.jsx(ProgressLineImpose, {
                     size: t,
-                    lineRef: s,
+                    lineRef: r,
                     disabled: n,
                     isComplete: a,
                     baseStyles: l,
                 }),
-                r >= 0 &&
+                s >= 0 &&
                     jsxRuntimeExports.jsx(ProgressBarDeltaSimple, {
                         transitionDuration: o.delta.duration,
                         transitionDelay: o.delta.delay,
                         freezed: o.freezed,
-                        from: r,
+                        from: s,
                         size: t,
                         to: e,
                         onChangeAnimationState: u,
@@ -5822,40 +5845,40 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
         });
     },
     ProgressBarSimpleLine = reactExports.memo(ProgressBarSimpleLineComponent),
-    WithAnimationLineComponent = ({ onComplete: e, onEndAnimation: t, ...r }) => {
-        const [s, n] = reactExports.useState(!1),
+    WithAnimationLineComponent = ({ onComplete: e, onEndAnimation: t, ...s }) => {
+        const [r, n] = reactExports.useState(!1),
             a = reactExports.useCallback(() => {
-                const a = 100 === r.to;
-                (a !== s && n(a), a && e && e(), t && t());
-            }, [s, e, t, r.to]);
-        switch (r.animationSettings.type) {
+                const a = 100 === s.to;
+                (a !== r && n(a), a && e && e(), t && t());
+            }, [r, e, t, s.to]);
+        switch (s.animationSettings.type) {
             case AnimationType.Simple:
-                return jsxRuntimeExports.jsx(ProgressBarSimpleLine, { ...r, onEndAnimation: a, isComplete: s });
+                return jsxRuntimeExports.jsx(ProgressBarSimpleLine, { ...s, onEndAnimation: a, isComplete: r });
             case AnimationType.Growing:
-                return jsxRuntimeExports.jsx(ProgressBarGrowLine, { ...r, onEndAnimation: a, isComplete: s });
+                return jsxRuntimeExports.jsx(ProgressBarGrowLine, { ...s, onEndAnimation: a, isComplete: r });
             default:
                 return null;
         }
     },
     WithAnimationLine = reactExports.memo(WithAnimationLineComponent),
     WithStackAnimationLineComponent = ({ onEndAnimation: e, ...t }) => {
-        const r = reactExports.useRef({}),
-            s = reactExports.useCallback(() => {
-                ((r.current.from = void 0), e && e());
+        const s = reactExports.useRef({}),
+            r = reactExports.useCallback(() => {
+                ((s.current.from = void 0), e && e());
             }, [e]),
-            n = 'number' == typeof r.current.from ? r.current.from : t.from;
+            n = 'number' == typeof s.current.from ? s.current.from : t.from;
         return (
-            (r.current.from = n),
+            (s.current.from = n),
             reactExports.createElement(WithAnimationLine, {
                 ...t,
-                onEndAnimation: s,
+                onEndAnimation: r,
                 key: `${n}-${t.to}-${null == t ? void 0 : t.additionalKey}`,
                 from: n,
             })
         );
     },
     WithStackAnimationLine = reactExports.memo(WithStackAnimationLineComponent),
-    WithoutAnimationLine = ({ size: e, value: t, lineRef: r, disabled: s, onComplete: n }) => {
+    WithoutAnimationLine = ({ size: e, value: t, lineRef: s, disabled: r, onComplete: n }) => {
         const a = reactExports.useMemo(() => ({ width: `${t}%`, transitionProperty: 'none' }), [t]),
             o = 100 === t;
         return (
@@ -5864,18 +5887,18 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
             }, [o, n]),
             jsxRuntimeExports.jsx(ProgressLineImpose, {
                 size: e,
-                disabled: s,
+                disabled: r,
                 baseStyles: a,
                 isComplete: o,
-                lineRef: r,
+                lineRef: s,
             })
         );
     },
     ProgressBarLineComponent = ({
         size: e,
         value: t,
-        lineRef: r,
-        disabled: s,
+        lineRef: s,
+        disabled: r,
         deltaFrom: n,
         additionalKey: a,
         animationSettings: o,
@@ -5886,7 +5909,7 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
         if (n === t)
             return jsxRuntimeExports.jsx(
                 WithoutAnimationLine,
-                { size: e, value: t, lineRef: r, disabled: s, onComplete: l },
+                { size: e, value: t, lineRef: s, disabled: r, onComplete: l },
                 `${n}-${t}-${a}`,
             );
         const c = {
@@ -5894,8 +5917,8 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
             to: t,
             size: e,
             additionalKey: a,
-            lineRef: r,
-            disabled: s,
+            lineRef: s,
+            disabled: r,
             animationSettings: o,
             onComplete: l,
             onEndAnimation: u,
@@ -5907,11 +5930,11 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
     },
     ProgressBarLine = reactExports.memo(ProgressBarLineComponent),
     createSkin = (e) => {
-        var t, r, s, n, a, o, u;
+        var t, s, r, n, a, o, u;
         return {
             '--progress-base': `url(${e.bgImageBase})`,
             '--progress-bg-height': (null == (t = e.bg) ? void 0 : t.height) ?? '12rem',
-            '--progress-bg-height-small': (null == (r = e.bg) ? void 0 : r.heightSmall) ?? '2rem',
+            '--progress-bg-height-small': (null == (s = e.bg) ? void 0 : s.heightSmall) ?? '2rem',
             '--progress-line-base': e.line.bgColorBase,
             '--progress-line-disabled': e.line.bgColorDisabled,
             '--progress-line-finished': e.line.bgColorFinished,
@@ -5928,7 +5951,7 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
                 'linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5))',
             '--progress-pattern-gradient-mixBlendMode': e.pattern.mixBlendMode ?? 'overlay',
             '--progress-glow': `url('${e.glow}')`,
-            '--progress-glow-width': (null == (s = e.glowSettings) ? void 0 : s.width) ?? '60rem',
+            '--progress-glow-width': (null == (r = e.glowSettings) ? void 0 : r.width) ?? '60rem',
             '--progress-glow-height': (null == (n = e.glowSettings) ? void 0 : n.height) ?? '100rem',
             '--progress-glow-small-width': (null == (a = e.glowSettings) ? void 0 : a.smallWidth) ?? '44rem',
             '--progress-glow-small-height': (null == (o = e.glowSettings) ? void 0 : o.smallHeight) ?? '43rem',
@@ -5991,17 +6014,17 @@ const base$B = 'Progressbardeltagrow_c42a7a2c',
         },
     };
 (BlueNoise.line, BlueNoise.pattern);
-const prepareDeltaFrom = (e, t, r) => {
-    if ('number' == typeof r) {
-        return (clamp(0, t, r) / t) * 100;
+const prepareDeltaFrom = (e, t, s) => {
+    if ('number' == typeof s) {
+        return (clamp(0, t, s) / t) * 100;
     }
     return e;
 };
-function useCalculatePercents(e, t, r) {
+function useCalculatePercents(e, t, s) {
     return reactExports.useMemo(() => {
-        const s = (clamp(0, t, e) / t) * 100;
-        return { value: s, deltaFrom: prepareDeltaFrom(s, t, r) };
-    }, [r, t, e]);
+        const r = (clamp(0, t, e) / t) * 100;
+        return { value: r, deltaFrom: prepareDeltaFrom(r, t, s) };
+    }, [s, t, e]);
 }
 const defaultTheme = Orange,
     defaultAnimationSettings = {
@@ -6014,8 +6037,8 @@ const defaultTheme = Orange,
     ProgressBarComponent = ({
         maxValue: e = 100,
         theme: t = defaultTheme,
-        size: r = Size.Default,
-        animationSettings: s = defaultAnimationSettings,
+        size: s = Size.Default,
+        animationSettings: r = defaultAnimationSettings,
         disabled: n = !1,
         withoutBackground: a = !1,
         value: o,
@@ -6029,18 +6052,18 @@ const defaultTheme = Orange,
     }) => {
         const m = useCalculatePercents(o, e, u);
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$L.base, p, styles$L[`base__${r}`]),
+            className: cx(styles$J.base, p, styles$J[`base__${s}`]),
             style: createSkin(t),
             children: [
-                !a && jsxRuntimeExports.jsx(ProgressBarBackground, { size: r }),
+                !a && jsxRuntimeExports.jsx(ProgressBarBackground, { size: s }),
                 jsxRuntimeExports.jsx(ProgressBarLine, {
-                    size: r,
+                    size: s,
                     lineRef: l,
                     disabled: n,
                     value: m.value,
                     deltaFrom: m.deltaFrom,
                     additionalKey: i,
-                    animationSettings: s,
+                    animationSettings: r,
                     onEndAnimation: d,
                     onChangeAnimationState: c,
                     onComplete: _,
@@ -6059,12 +6082,12 @@ const defaultTheme = Orange,
     UB_SIMPLE_TOOLTIPS = R.views.common.tooltip_window.simple_tooltip_content,
     getTooltipContentId = (e) =>
         e ? UB_SIMPLE_TOOLTIPS.SimpleTooltipHtmlContent('resId') : UB_SIMPLE_TOOLTIPS.SimpleTooltipContent('resId'),
-    SimpleTooltip = ({ children: e, body: t, header: r, note: s, alert: n, args: a, ...o }) => {
+    SimpleTooltip = ({ children: e, body: t, header: s, note: r, alert: n, args: a, ...o }) => {
         const u = reactExports.useMemo(() => {
-            const e = { ...a, body: t, header: r, note: s, alert: n };
+            const e = { ...a, body: t, header: s, note: r, alert: n };
             for (const t in e) void 0 === e[t] && delete e[t];
             return e;
-        }, [n, t, r, s, a]);
+        }, [n, t, s, r, a]);
         return jsxRuntimeExports.jsx(Tooltip$1, {
             contentId: getTooltipContentId(null == a ? void 0 : a.hasHtmlContent),
             decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
@@ -6073,17 +6096,17 @@ const defaultTheme = Orange,
             children: e,
         });
     },
-    DynamicTooltipWrapper = ({ children: e, tooltipArgs: t, className: r }) => {
+    DynamicTooltipWrapper = ({ children: e, tooltipArgs: t, className: s }) => {
         if (!t) return e;
-        const s = jsxRuntimeExports.jsx('div', { className: r, children: e });
-        if (t.header || t.body) return jsxRuntimeExports.jsx(SimpleTooltip, { ...t, children: s });
+        const r = jsxRuntimeExports.jsx('div', { className: s, children: e });
+        if (t.header || t.body) return jsxRuntimeExports.jsx(SimpleTooltip, { ...t, children: r });
         const { contentId: n } = t;
         return n
-            ? jsxRuntimeExports.jsx(Tooltip$1, { ...t, contentId: n, children: s })
-            : jsxRuntimeExports.jsx(BackportTooltip, { ...t, children: s });
+            ? jsxRuntimeExports.jsx(Tooltip$1, { ...t, contentId: n, children: r })
+            : jsxRuntimeExports.jsx(BackportTooltip, { ...t, children: r });
     },
     root$i = 'Reward_root_ab59d545',
-    base$z = 'Reward_c5dc614c',
+    base$x = 'Reward_c5dc614c',
     base__s48x48 = 'Reward_base__s48x48_ab59d545',
     base__small$5 = 'Reward_base__small_69779e9c',
     base__s80x80 = 'Reward_base__s80x80_ab59d545',
@@ -6117,9 +6140,9 @@ const defaultTheme = Orange,
     windowIn$i = 'Reward_windowIn_ab59d545',
     fadeOut$i = 'Reward_fadeOut_ab59d545',
     fadeIn$i = 'Reward_fadeIn_ab59d545',
-    styles$G = {
+    styles$E = {
         root: root$i,
-        base: base$z,
+        base: base$x,
         base__s48x48: base__s48x48,
         base__small: base__small$5,
         base__s80x80: base__s80x80,
@@ -6157,8 +6180,8 @@ const defaultTheme = Orange,
     Reward = ({
         name: e,
         image: t,
-        isPeriodic: r = !1,
-        size: s = ImageSize$1.Big,
+        isPeriodic: s = !1,
+        size: r = ImageSize$1.Big,
         special: n,
         value: a,
         valueType: o,
@@ -6169,43 +6192,43 @@ const defaultTheme = Orange,
         tooltipArgs: d,
         periodicIconTooltipArgs: _,
     }) => {
-        const p = getBottomHighlight(s, n),
+        const p = getBottomHighlight(r, n),
             m = getOverlay(n),
             E = getFormattedValue(a, o);
         return jsxRuntimeExports.jsxs('div', {
             className: cx(
-                styles$G.base,
-                styles$G[`base__${s}`],
-                NORMALIZE_OVERLAYS_LIST.includes(e) && styles$G.base__normalize,
+                styles$E.base,
+                styles$E[`base__${r}`],
+                NORMALIZE_OVERLAYS_LIST.includes(e) && styles$E.base__normalize,
                 l,
             ),
             style: i,
             children: [
                 jsxRuntimeExports.jsx(DynamicTooltipWrapper, {
                     tooltipArgs: d,
-                    className: styles$G.tooltipWrapper,
+                    className: styles$E.tooltipWrapper,
                     children: jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
                         children: [
                             jsxRuntimeExports.jsxs('div', {
-                                className: cx(styles$G.image, null == c ? void 0 : c.image),
+                                className: cx(styles$E.image, null == c ? void 0 : c.image),
                                 children: [
                                     p &&
                                         jsxRuntimeExports.jsx('div', {
-                                            className: cx(styles$G.highlight, null == c ? void 0 : c.highlight),
+                                            className: cx(styles$E.highlight, null == c ? void 0 : c.highlight),
                                             style: {
-                                                backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${s}.${p}_highlight)`,
+                                                backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${r}.${p}_highlight)`,
                                             },
                                         }),
                                     t &&
                                         jsxRuntimeExports.jsx('div', {
-                                            className: cx(styles$G.icon, null == c ? void 0 : c.rewardIcon),
+                                            className: cx(styles$E.icon, null == c ? void 0 : c.rewardIcon),
                                             style: { backgroundImage: `url(${t})` },
                                         }),
                                     m &&
                                         jsxRuntimeExports.jsx('div', {
-                                            className: cx(styles$G.overlay, null == c ? void 0 : c.overlay),
+                                            className: cx(styles$E.overlay, null == c ? void 0 : c.overlay),
                                             style: {
-                                                backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${s}.${m}_overlay)`,
+                                                backgroundImage: `url(R.images.gui.maps.icons.quests.bonuses.${r}.${m}_overlay)`,
                                             },
                                         }),
                                 ],
@@ -6213,22 +6236,22 @@ const defaultTheme = Orange,
                             E &&
                                 jsxRuntimeExports.jsx('div', {
                                     className: cx(
-                                        styles$G.info,
-                                        styles$G[`info__${e}`],
-                                        o === ValueTypes.MULTI && styles$G.info__multi,
+                                        styles$E.info,
+                                        styles$E[`info__${e}`],
+                                        o === ValueTypes.MULTI && styles$E.info__multi,
                                         null == c ? void 0 : c.info,
                                     ),
-                                    children: '1' == E ? null : E,
+                                    children: E,
                                 }),
-                            u && jsxRuntimeExports.jsx('div', { className: styles$G.title, children: u }),
+                            u && jsxRuntimeExports.jsx('div', { className: styles$E.title, children: u }),
                         ],
                     }),
                 }),
-                r &&
+                s &&
                     jsxRuntimeExports.jsx(DynamicTooltipWrapper, {
                         tooltipArgs: _,
                         children: jsxRuntimeExports.jsx('div', {
-                            className: cx(styles$G.timer, null == c ? void 0 : c.periodicIcon),
+                            className: cx(styles$E.timer, null == c ? void 0 : c.periodicIcon),
                         }),
                     }),
             ],
@@ -6254,23 +6277,23 @@ class ErrorBoundary extends reactExports.Component {
 }
 const splitPath = (e) => e.split('/').filter(Boolean);
 function matchPath(e, t) {
-    const { paths: r, exact: s = !1 } = t,
+    const { paths: s, exact: r = !1 } = t,
         n = splitPath(e);
-    for (const a of r) {
+    for (const a of s) {
         const t = splitPath(a);
-        if (s && n.length !== t.length) continue;
-        const r = {};
+        if (r && n.length !== t.length) continue;
+        const s = {};
         let o = !0;
         for (let e = 0; e < t.length; e++) {
-            const s = t[e],
+            const r = t[e],
                 a = n[e];
             if (!a) {
                 o = !1;
                 break;
             }
-            if (s.startsWith(':')) {
-                r[s.slice(1)] = a;
-            } else if (s !== a) {
+            if (r.startsWith(':')) {
+                s[r.slice(1)] = a;
+            } else if (r !== a) {
                 o = !1;
                 break;
             }
@@ -6278,8 +6301,8 @@ function matchPath(e, t) {
         if (o) {
             const o = `/${n.slice(0, t.length).join('/')}`,
                 u = e === o;
-            if (s && !u) continue;
-            return { params: r, exact: u, path: a, url: o };
+            if (r && !u) continue;
+            return { params: s, exact: u, path: a, url: o };
         }
     }
     return null;
@@ -6290,24 +6313,27 @@ function useSwitch() {
     if (!e) throw new Error('useSwitch must be used within a SwitchProvider');
     return e;
 }
-function Switch({ children: e, route: t, fallback: r = null }) {
-    const { location: s } = useRouter();
+function Switch({ children: e, route: t, fallback: s = null }) {
+    const { location: r } = useRouter();
     let n;
     return (
         reactExports.Children.forEach(e, (e) => {
             if (!reactExports.isValidElement(e)) return void console.error('Switch children must be valid elements');
-            const r = t ? `${t}${e.props.path}` : e.props.path;
+            if ('object' != typeof e.props || null === e.props)
+                return console.error('Child props is not an object or null', e);
+            const s = e.props,
+                a = t ? `${t}${s.path}` : s.path;
             if (void 0 !== n) return;
-            const a = matchPath(s, { paths: [r], exact: e.props.exact });
-            a && (n = { child: e, match: a });
+            const o = matchPath(r, { paths: [a], exact: s.exact });
+            o && (n = { child: e, match: o });
         }),
-        n ? jsxRuntimeExports.jsx(SwitchContext.Provider, { value: { match: n.match }, children: n.child }) : r
+        n ? jsxRuntimeExports.jsx(SwitchContext.Provider, { value: { match: n.match }, children: n.child }) : s
     );
 }
 function Route({ component: e, exact: t }) {
-    const { match: r } = useSwitch();
+    const { match: s } = useSwitch();
     return jsxRuntimeExports.jsx(ErrorBoundary, {
-        children: jsxRuntimeExports.jsx(e, { path: r.path, location: r.url, params: r.params, exact: t ?? !1 }),
+        children: jsxRuntimeExports.jsx(e, { path: s.path, location: s.url, params: s.params, exact: t ?? !1 }),
     });
 }
 var CurrencyType = ((e) => (
@@ -6322,7 +6348,7 @@ var CurrencyType = ((e) => (
     ))(CurrencyType || {}),
     StockBackgroundName = ((e) => ((e.Red = 'RedActionBG'), (e.Blue = 'BlueActionBG'), e))(StockBackgroundName || {});
 const root$h = 'Currency_root_3c6cfaf0',
-    base$y = 'Currency_37b937ed',
+    base$w = 'Currency_37b937ed',
     icon$9 = 'Currency_icon_7e0ceeb1',
     base__small$4 = 'Currency_base__small_3c6cfaf0',
     base__big$1 = 'Currency_base__big_3c6cfaf0',
@@ -6349,9 +6375,9 @@ const root$h = 'Currency_root_3c6cfaf0',
     windowIn$h = 'Currency_windowIn_3c6cfaf0',
     fadeOut$h = 'Currency_fadeOut_3c6cfaf0',
     fadeIn$h = 'Currency_fadeIn_3c6cfaf0',
-    styles$F = {
+    styles$D = {
         root: root$h,
-        base: base$y,
+        base: base$w,
         icon: icon$9,
         base__small: base__small$4,
         base__big: base__big$1,
@@ -6410,8 +6436,8 @@ const root$h = 'Currency_root_3c6cfaf0',
     CurrencyComponent = ({
         isDiscount: e,
         isInteractiveDiscount: t,
-        size: r,
-        type: s,
+        size: s,
+        type: r,
         value: n,
         discountValue: a,
         showPlus: o,
@@ -6421,37 +6447,37 @@ const root$h = 'Currency_root_3c6cfaf0',
         classNames: c,
     }) =>
         jsxRuntimeExports.jsxs('span', {
-            className: cx(styles$F.base, styles$F[`base__${r}`], l),
+            className: cx(styles$D.base, styles$D[`base__${s}`], l),
             children: [
                 jsxRuntimeExports.jsxs('span', {
                     className: cx(
-                        styles$F.value,
-                        styles$F[`value__${s}`],
-                        !u && styles$F.value__notEnough,
+                        styles$D.value,
+                        styles$D[`value__${r}`],
+                        !u && styles$D.value__notEnough,
                         null == c ? void 0 : c.value,
                     ),
                     children: [
                         o && n > 0 && '+',
                         jsxRuntimeExports.jsx(FormatNumber, {
                             value: n,
-                            format: s === CurrencyType.gold ? 'gold' : 'integral',
+                            format: r === CurrencyType.gold ? 'gold' : 'integral',
                         }),
                     ],
                 }),
                 jsxRuntimeExports.jsx('span', {
-                    className: cx(styles$F.icon, styles$F[`icon__${s}-${r}`], null == c ? void 0 : c.icon),
+                    className: cx(styles$D.icon, styles$D[`icon__${r}-${s}`], null == c ? void 0 : c.icon),
                 }),
                 e &&
                     jsxRuntimeExports.jsxs('span', {
                         className: cx(
-                            styles$F.stock,
-                            a && styles$F.stock__indent,
-                            t && styles$F.stock__interactive,
+                            styles$D.stock,
+                            a && styles$D.stock__indent,
+                            t && styles$D.stock__interactive,
                             null == c ? void 0 : c.stock,
                         ),
                         children: [
                             jsxRuntimeExports.jsx('span', {
-                                className: styles$F.stockBackground,
+                                className: styles$D.stockBackground,
                                 style: { backgroundImage: `url(R.images.gui.maps.icons.library.${i})` },
                             }),
                             Boolean(a) && a,
@@ -6470,50 +6496,50 @@ function useEvent(e) {
         reactExports.useCallback((...e) => (0, t.current)(...e), STATIC_DEPS)
     );
 }
-function useRepeatCallback(e, t, r = []) {
-    const s = reactExports.useRef(0),
+function useRepeatCallback(e, t, s = []) {
+    const r = reactExports.useRef(0),
         n = reactExports.useCallback(() => {
-            (window.clearInterval(s.current), (s.current = 0));
-        }, r || []);
+            (window.clearInterval(r.current), (r.current = 0));
+        }, s || []);
     reactExports.useEffect(() => n, [n]);
-    const a = (r ?? []).concat([t]);
+    const a = (s ?? []).concat([t]);
     return [
-        reactExports.useCallback((r) => {
-            (0 !== s.current && n(), (s.current = window.setInterval(() => e(r, !0), t)), e(r, !1));
+        reactExports.useCallback((s) => {
+            (0 !== r.current && n(), (r.current = window.setInterval(() => e(s, !0), t)), e(s, !1));
         }, a),
         n,
     ];
 }
 const useCallbackEffect = (e, t = []) => {
-        const r = reactExports.useRef(),
-            s = reactExports.useCallback((...t) => {
-                (r.current && r.current(), (r.current = e(...t)));
+        const s = reactExports.useRef(),
+            r = reactExports.useCallback((...t) => {
+                (s.current && s.current(), (s.current = e(...t)));
             }, t);
         return (
             reactExports.useEffect(
                 () => () => {
-                    r.current && r.current();
+                    s.current && s.current();
                 },
-                [s],
+                [r],
             ),
-            s
+            r
         );
     },
     useEmitter = () => {
         const e = reactExports.useMemo(() => ({}), []),
             t = (t) => (e[t] || (e[t] = new Map()), e[t]),
-            r = (e, r) => {
-                t(e).set(r, r);
+            s = (e, s) => {
+                t(e).set(s, s);
             },
-            s = (e, r) => {
-                t(e).delete(r);
+            r = (e, s) => {
+                t(e).delete(s);
             },
-            n = (e, ...r) => {
-                for (const s of t(e).values()) s(...r);
+            n = (e, ...s) => {
+                for (const r of t(e).values()) r(...s);
             };
-        return reactExports.useMemo(() => ({ on: r, off: s, trigger: n }), []);
+        return reactExports.useMemo(() => ({ on: s, off: r, trigger: n }), []);
     };
-function throttle(e, t, r, s) {
+function throttle(e, t, s, r) {
     let n,
         a = !1,
         o = 0;
@@ -6524,34 +6550,34 @@ function throttle(e, t, r, s) {
         const l = this,
             c = Date.now() - o;
         function d() {
-            ((o = Date.now()), r.apply(l, i));
+            ((o = Date.now()), s.apply(l, i));
         }
         a ||
-            (s && !n && d(),
+            (r && !n && d(),
             u(),
-            void 0 === s && c > e
+            void 0 === r && c > e
                 ? d()
                 : !0 !== t &&
                   (n = setTimeout(
-                      s
+                      r
                           ? function () {
                                 n = void 0;
                             }
                           : d,
-                      void 0 === s ? e - c : e,
+                      void 0 === r ? e - c : e,
                   )));
     }
     return (
-        'boolean' != typeof t && ((s = r), (r = t), (t = void 0)),
+        'boolean' != typeof t && ((r = s), (s = t), (t = void 0)),
         (i.cancel = function () {
             (u(), (a = !0));
         }),
         i
     );
 }
-function useThrottle(e, t, r) {
-    const s = reactExports.useMemo(() => throttle(r, e), t);
-    return (reactExports.useEffect(() => s.cancel, [s]), s);
+function useThrottle(e, t, s) {
+    const r = reactExports.useMemo(() => throttle(s, e), t);
+    return (reactExports.useEffect(() => r.cancel, [r]), r);
 }
 var Direction$1 = ((e) => ((e[(e.Next = -1)] = 'Next'), (e[(e.Prev = 1)] = 'Prev'), e))(Direction$1 || {});
 const defaultSettings$1 = {
@@ -6561,14 +6587,14 @@ const defaultSettings$1 = {
     createApiHook$1 = ({
         getContainerSize: e,
         getBounds: t,
-        setScrollPosition: r,
-        getDirection: s,
+        setScrollPosition: s,
+        getDirection: r,
         getWrapperSize: n,
         forceTriggerMouseMove: a,
     }) => {
-        const o = (e, r) => {
-            const [s, n] = t(e);
-            return n <= s ? 0 : clamp(s, n, r);
+        const o = (e, s) => {
+            const [r, n] = t(e);
+            return n <= r ? 0 : clamp(r, n, s);
         };
         return (u = {}) => {
             const { settings: i = defaultSettings$1 } = u,
@@ -6587,30 +6613,30 @@ const defaultSettings$1 = {
                     scrollPosition: 0,
                     onChange: (e) => {
                         const t = l.current;
-                        t && (r(t, e), _.trigger('change', e), a && d.current && p());
+                        t && (s(t, e), _.trigger('change', e), a && d.current && p());
                     },
                     onRest: (e) => _.trigger('rest', e),
                     onStart: (e) => _.trigger('start', e),
                     onPause: (e) => _.trigger('pause', e),
                 })),
                 f = reactExports.useCallback(
-                    (e, t, r) => {
-                        const s = m.scrollPosition.get(),
-                            n = (m.scrollPosition.goal ?? 0) - s;
-                        return o(e, t * r + n + s);
+                    (e, t, s) => {
+                        const r = m.scrollPosition.get(),
+                            n = (m.scrollPosition.goal ?? 0) - r;
+                        return o(e, t * s + n + r);
                     },
                     [m.scrollPosition],
                 ),
                 b = reactExports.useCallback(
-                    (e, { immediate: t = !1, reset: r = !0 } = {}) => {
-                        const s = l.current;
-                        s &&
+                    (e, { immediate: t = !1, reset: s = !0 } = {}) => {
+                        const r = l.current;
+                        r &&
                             E.start({
-                                scrollPosition: o(s, e),
+                                scrollPosition: o(r, e),
                                 immediate: t,
-                                reset: r,
+                                reset: s,
                                 config: i.animationConfig,
-                                from: { scrollPosition: o(s, m.scrollPosition.get()) },
+                                from: { scrollPosition: o(r, m.scrollPosition.get()) },
                             });
                     },
                     [E, i.animationConfig, m.scrollPosition],
@@ -6618,24 +6644,24 @@ const defaultSettings$1 = {
                 x = reactExports.useCallback(
                     (e) => {
                         const t = l.current,
-                            r = c.current;
-                        if (!t || !r) return;
-                        const s = ((e, t) => {
+                            s = c.current;
+                        if (!t || !s) return;
+                        const r = ((e, t) => {
                                 switch (t.type) {
                                     case 'proportional':
                                         return n(e) / t.factor;
                                     case 'fixed':
                                         return t.value;
                                 }
-                            })(r, i.step),
-                            a = f(t, e, s);
+                            })(s, i.step),
+                            a = f(t, e, r);
                         b(a);
                     },
                     [b, f, i.step],
                 ),
                 g = reactExports.useCallback(
                     (e) => {
-                        (0 !== e.deltaY && x(s(e)),
+                        (0 !== e.deltaY && x(r(e)),
                             l.current && _.trigger('mouseWheel', e, m.scrollPosition, t(l.current)));
                     },
                     [m.scrollPosition, x, _],
@@ -6669,14 +6695,14 @@ const defaultSettings$1 = {
                     const t = () => {
                             d.current = !0;
                         },
-                        r = () => {
+                        s = () => {
                             d.current = !1;
                         };
                     return (
                         e.addEventListener('mouseenter', t),
-                        e.addEventListener('mouseleave', r),
+                        e.addEventListener('mouseleave', s),
                         () => {
-                            (e.removeEventListener('mouseenter', t), e.removeEventListener('mouseleave', r));
+                            (e.removeEventListener('mouseenter', t), e.removeEventListener('mouseleave', s));
                         }
                     );
                 }, [l]));
@@ -6716,15 +6742,15 @@ const defaultSettings$1 = {
         forceTriggerMouseMove: env.view.forceTriggerMouseMove,
     },
     useHorizontalScrollApi = createApiHook$1(DEFAULT_HORIZONTAL_API_CONTEXT),
-    base$x = 'Horizontalbar_bdf22414',
+    base$v = 'Horizontalbar_bdf22414',
     base__active$3 = 'Horizontalbar_base__active_5a3d92a0',
     leftButton = 'Horizontalbar_leftButton_ba80ec4f',
     rightButton = 'Horizontalbar_rightButton_847c1c78',
     track$3 = 'Horizontalbar_track_388b12f',
     thumb$1 = 'Horizontalbar_thumb_9d4dd30f',
     rail$3 = 'Horizontalbar_rail_b8667e3c',
-    styles$E = {
-        base: base$x,
+    styles$C = {
+        base: base$v,
         base__active: base__active$3,
         leftButton: leftButton,
         rightButton: rightButton,
@@ -6738,14 +6764,14 @@ const defaultSettings$1 = {
     MOUSE_BUTTON_LEFT$2 = 0,
     initDraggingState$1 = { pending: !1, offset: 0 },
     getStepByRailClickDefault$1 = (e) => 0.9 * (e.getWrapperSize() ?? 0),
-    isBoundThumb = (e, t, r) => r - (e.offsetWidth - t.offsetWidth) >= -0.5,
+    isBoundThumb = (e, t, s) => s - (e.offsetWidth - t.offsetWidth) >= -0.5,
     emptyFunction$1 = () => {},
     calculateThumbSize$3 = (e, t) => Math.max(MIN_THUMB_SIZE$2, e.offsetWidth * t),
     BarFC$1 = ({
         api: e,
         classNames: t = {},
-        getStepByRailClick: r = getStepByRailClickDefault$1,
-        onDrag: s = emptyFunction$1,
+        getStepByRailClick: s = getStepByRailClickDefault$1,
+        onDrag: r = emptyFunction$1,
     }) => {
         const n = reactExports.useRef(null),
             a = reactExports.useRef(null),
@@ -6756,21 +6782,21 @@ const defaultSettings$1 = {
             [c, d] = reactExports.useState(initDraggingState$1),
             _ = reactExports.useCallback(
                 (e) => {
-                    (d(e), i.current && s({ type: e.pending ? 'dragStart' : 'dragEnd', thumb: i.current }));
+                    (d(e), i.current && r({ type: e.pending ? 'dragStart' : 'dragEnd', thumb: i.current }));
                 },
-                [s],
+                [r],
             ),
             p = () => {
                 const t = u.current,
-                    r = i.current,
-                    s = e.getWrapperSize(),
+                    s = i.current,
+                    r = e.getWrapperSize(),
                     n = e.getContainerSize();
-                if (!(s && t && r && n)) return;
+                if (!(r && t && s && n)) return;
                 const l = e.animationScroll.scrollPosition.get(),
-                    c = Math.min(1, s / n),
-                    d = clamp(0, 1, l / (n - s)),
+                    c = Math.min(1, r / n),
+                    d = clamp(0, 1, l / (n - r)),
                     _ = (t.offsetWidth - calculateThumbSize$3(t, c)) * d;
-                ((r.style.transform = `translateX(${0 | _}px)`),
+                ((s.style.transform = `translateX(${0 | _}px)`),
                     ((e) => {
                         if (a.current && o.current && u.current && i.current) {
                             if (0 === e)
@@ -6790,17 +6816,17 @@ const defaultSettings$1 = {
             m = useEvent(() => {
                 ((() => {
                     const t = i.current,
-                        r = u.current,
-                        s = e.getWrapperSize(),
+                        s = u.current,
+                        r = e.getWrapperSize(),
                         a = e.getContainerSize();
-                    if (!(a && t && s && r)) return;
-                    const o = Math.min(1, s / a);
-                    ((t.style.width = `${calculateThumbSize$3(r, o)}px`),
+                    if (!(a && t && r && s)) return;
+                    const o = Math.min(1, r / a);
+                    ((t.style.width = `${calculateThumbSize$3(s, o)}px`),
                         (t.style.display = 'flex'),
                         n.current &&
                             (1 !== o
-                                ? n.current.classList.add(styles$E.base__active)
-                                : n.current.classList.remove(styles$E.base__active)));
+                                ? n.current.classList.add(styles$C.base__active)
+                                : n.current.classList.remove(styles$C.base__active)));
                 })(),
                     p());
             });
@@ -6811,21 +6837,21 @@ const defaultSettings$1 = {
                         const t = () => {
                             p();
                         };
-                        let r = emptyFunction$1;
-                        const s = () => {
-                            (r(), (r = createLayoutReadyInEffect(m)));
+                        let s = emptyFunction$1;
+                        const r = () => {
+                            (s(), (s = createLayoutReadyInEffect(m)));
                         };
                         return (
                             e.events.on('recalculateContent', m),
                             e.events.on('rest', t),
                             e.events.on('change', t),
-                            e.events.on('resizeHandled', s),
+                            e.events.on('resizeHandled', r),
                             () => {
-                                (r(),
+                                (s(),
                                     e.events.off('recalculateContent', m),
                                     e.events.off('rest', t),
                                     e.events.off('change', t),
-                                    e.events.off('resizeHandled', s));
+                                    e.events.off('resizeHandled', r));
                             }
                         );
                     }),
@@ -6833,14 +6859,14 @@ const defaultSettings$1 = {
             ),
             reactExports.useEffect(() => {
                 if (!c.pending) return;
-                const t = env.client.events.mouse.move(([t, r]) => {
+                const t = env.client.events.mouse.move(([t, s]) => {
                         const n = e.contentRef.current,
                             a = e.wrapperRef.current;
                         if (!n || !a) return;
                         const o = u.current,
                             l = i.current;
                         if (!o || !l) return;
-                        if ('inside' === r && t.clientX < 0) return;
+                        if ('inside' === s && t.clientX < 0) return;
                         const d = t.clientX - c.offset - o.getBoundingClientRect().x,
                             _ = (d / o.offsetWidth) * (e.getContainerSize() ?? 0);
                         (e.scrollPosition.start({
@@ -6849,15 +6875,15 @@ const defaultSettings$1 = {
                             immediate: !0,
                             from: { scrollPosition: e.animationScroll.scrollPosition.get() },
                         }),
-                            s({ type: 'dragging', thumb: l, thumbOffset: d, contentOffset: _ }));
+                            r({ type: 'dragging', thumb: l, thumbOffset: d, contentOffset: _ }));
                     }),
-                    r = env.client.events.mouse.up(() => {
+                    s = env.client.events.mouse.up(() => {
                         (t(), _(initDraggingState$1));
                     });
                 return () => {
-                    (t(), r());
+                    (t(), s());
                 };
-            }, [e, c.offset, c.pending, s, _]));
+            }, [e, c.offset, c.pending, r, _]));
         const [E, f] = useRepeatCallback((t) => e.applyStepTo(t), l, [e]);
         reactExports.useEffect(
             () => (document.addEventListener('mouseup', f, !0), () => document.removeEventListener('mouseup', f, !0)),
@@ -6867,12 +6893,12 @@ const defaultSettings$1 = {
             e.target.classList.contains(DISABLE_CLASS$2) || playSound('highlight');
         };
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$E.base, t.base),
+            className: cx(styles$C.base, t.base),
             ref: n,
             onWheel: e.handleMouseWheel,
             children: [
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$E.leftButton, t.leftButton),
+                    className: cx(styles$C.leftButton, t.leftButton),
                     onMouseDown: (e) => {
                         e.target.classList.contains(DISABLE_CLASS$2) ||
                             e.button !== MOUSE_BUTTON_LEFT$2 ||
@@ -6883,31 +6909,31 @@ const defaultSettings$1 = {
                     onMouseEnter: b,
                 }),
                 jsxRuntimeExports.jsxs('div', {
-                    className: cx(styles$E.track, t.track),
+                    className: cx(styles$C.track, t.track),
                     onMouseDown: (t) => {
-                        const s = i.current;
-                        if (s && t.button === MOUSE_BUTTON_LEFT$2)
-                            if ((playSound('play'), t.target === s))
-                                _({ pending: !0, offset: t.screenX - s.getBoundingClientRect().x });
+                        const r = i.current;
+                        if (r && t.button === MOUSE_BUTTON_LEFT$2)
+                            if ((playSound('play'), t.target === r))
+                                _({ pending: !0, offset: t.screenX - r.getBoundingClientRect().x });
                             else {
                                 ((t) => {
-                                    const s = i.current,
+                                    const r = i.current,
                                         n = e.contentRef.current;
-                                    if (!s || !n) return;
-                                    const a = r(e);
+                                    if (!r || !n) return;
+                                    const a = s(e);
                                     e.applyScroll(e.animationScroll.scrollPosition.get() + a * t);
-                                })(t.screenX > s.getBoundingClientRect().x ? Direction$1.Prev : Direction$1.Next);
+                                })(t.screenX > r.getBoundingClientRect().x ? Direction$1.Prev : Direction$1.Next);
                             }
                     },
                     ref: u,
                     onMouseEnter: b,
                     children: [
-                        jsxRuntimeExports.jsx('div', { ref: i, className: cx(styles$E.thumb, t.thumb) }),
-                        jsxRuntimeExports.jsx('div', { className: cx(styles$E.rail, t.rail) }),
+                        jsxRuntimeExports.jsx('div', { ref: i, className: cx(styles$C.thumb, t.thumb) }),
+                        jsxRuntimeExports.jsx('div', { className: cx(styles$C.rail, t.rail) }),
                     ],
                 }),
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$E.rightButton, t.rightButton),
+                    className: cx(styles$C.rightButton, t.rightButton),
                     onMouseDown: (e) => {
                         e.target.classList.contains(DISABLE_CLASS$2) ||
                             e.button !== MOUSE_BUTTON_LEFT$2 ||
@@ -6921,15 +6947,15 @@ const defaultSettings$1 = {
         });
     },
     Bar$3 = reactExports.memo(BarFC$1),
-    base$w = 'Horizontalscroll_f316f2c6',
+    base$u = 'Horizontalscroll_f316f2c6',
     wrapper$3 = 'Horizontalscroll_wrapper_a8daa0f5',
     defaultScrollArea$1 = 'Horizontalscroll_defaultScrollArea_a99fc00c',
-    styles$D = { base: base$w, wrapper: wrapper$3, defaultScrollArea: defaultScrollArea$1 },
+    styles$B = { base: base$u, wrapper: wrapper$3, defaultScrollArea: defaultScrollArea$1 },
     DefaultScroll$3 = ({
         children: e,
         api: t,
-        className: r,
-        barClassNames: s,
+        className: s,
+        barClassNames: r,
         areaClassName: n,
         classNames: a,
         scrollClassName: o,
@@ -6937,34 +6963,34 @@ const defaultSettings$1 = {
         onDrag: i,
     }) => {
         const l = reactExports.useMemo(() => {
-                const e = s || {};
-                return { ...e, base: cx(styles$D.base, e.base) };
-            }, [s]),
+                const e = r || {};
+                return { ...e, base: cx(styles$B.base, e.base) };
+            }, [r]),
             c = reactExports.useMemo(() => ({ ...t, handleMouseWheel: () => {} }), [t]);
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$D.defaultScroll, r),
+            className: cx(styles$B.defaultScroll, s),
             onWheel: t.handleMouseWheel,
             children: [
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$D.defaultScrollArea, n),
+                    className: cx(styles$B.defaultScrollArea, n),
                     children: jsxRuntimeExports.jsx(Area$3, { className: o, api: c, classNames: a, children: e }),
                 }),
                 jsxRuntimeExports.jsx(Bar$3, { getStepByRailClick: u, api: t, onDrag: i, classNames: l }),
             ],
         });
     },
-    Area$3 = ({ api: e, className: t, classNames: r, children: s }) => (
+    Area$3 = ({ api: e, className: t, classNames: s, children: r }) => (
         reactExports.useEffect(() => createLayoutReadyInEffect(e.recalculateContent)),
         jsxRuntimeExports.jsx('div', {
-            className: cx(styles$D.base, t),
+            className: cx(styles$B.base, t),
             children: jsxRuntimeExports.jsx('div', {
-                className: cx(styles$D.wrapper, null == r ? void 0 : r.wrapper),
+                className: cx(styles$B.wrapper, null == s ? void 0 : s.wrapper),
                 onWheel: e.handleMouseWheel,
                 ref: e.wrapperRef,
                 children: jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$D.content, null == r ? void 0 : r.content),
+                    className: cx(styles$B.content, null == s ? void 0 : s.content),
                     ref: e.contentRef,
-                    children: s,
+                    children: r,
                 }),
             }),
         })
@@ -6995,15 +7021,15 @@ const Horizontal = Object.freeze(
         getDirection: (e) => (e.deltaY > 1 ? Direction$1.Next : Direction$1.Prev),
     },
     useVerticalScrollApi = createApiHook$1(DEFAULT_VERTICAL_API_CONTEXT),
-    base$v = 'Verticalbar_89dc020b',
+    base$t = 'Verticalbar_89dc020b',
     base__active$2 = 'Verticalbar_base__active_1e0d5e44',
     topButton = 'Verticalbar_topButton_1ce852b9',
     bottomButton = 'Verticalbar_bottomButton_bc76d779',
     track$2 = 'Verticalbar_track_7532d39a',
     thumb = 'Verticalbar_thumb_264988ce',
     rail$2 = 'Verticalbar_rail_85a58f07',
-    styles$C = {
-        base: base$v,
+    styles$A = {
+        base: base$t,
         base__active: base__active$2,
         topButton: topButton,
         bottomButton: bottomButton,
@@ -7018,7 +7044,7 @@ const Horizontal = Object.freeze(
     emptyFunction = () => {},
     initDraggingState = { pending: !1, offset: 0 },
     getStepByRailClickDefault = (e) => 0.9 * (e.getWrapperSize() ?? 0),
-    isBottomBoundThumb = (e, t, r) => r - (e.offsetHeight - t.offsetHeight) >= -0.5,
+    isBottomBoundThumb = (e, t, s) => s - (e.offsetHeight - t.offsetHeight) >= -0.5,
     handleContainer = (e, t) => {
         e.contentRef.current && t(e.contentRef.current);
     },
@@ -7026,8 +7052,8 @@ const Horizontal = Object.freeze(
     BarFC = ({
         api: e,
         classNames: t = {},
-        getStepByRailClick: r = getStepByRailClickDefault,
-        onDrag: s = emptyFunction,
+        getStepByRailClick: s = getStepByRailClickDefault,
+        onDrag: r = emptyFunction,
     }) => {
         const n = reactExports.useRef(null),
             a = reactExports.useRef(null),
@@ -7038,38 +7064,38 @@ const Horizontal = Object.freeze(
             [c, d] = reactExports.useState(initDraggingState),
             _ = reactExports.useCallback(
                 (e) => {
-                    (d(e), i.current && s({ type: e.pending ? 'dragStart' : 'dragEnd', thumb: i.current }));
+                    (d(e), i.current && r({ type: e.pending ? 'dragStart' : 'dragEnd', thumb: i.current }));
                 },
-                [s],
+                [r],
             ),
             p = useEvent(() => {
                 const t = i.current,
-                    r = u.current,
-                    s = e.getWrapperSize(),
+                    s = u.current,
+                    r = e.getWrapperSize(),
                     a = e.getContainerSize();
-                if (!(s && a && t && r)) return;
-                const o = Math.min(1, s / a);
+                if (!(r && a && t && s)) return;
+                const o = Math.min(1, r / a);
                 return (
-                    (t.style.height = `${calculateThumbSize$2(r, o)}px`),
+                    (t.style.height = `${calculateThumbSize$2(s, o)}px`),
                     (t.style.display = 'flex'),
                     n.current &&
                         (1 !== o
-                            ? n.current.classList.add(styles$C.base__active)
-                            : n.current.classList.remove(styles$C.base__active)),
+                            ? n.current.classList.add(styles$A.base__active)
+                            : n.current.classList.remove(styles$A.base__active)),
                     o
                 );
             }),
             m = useEvent(() => {
                 const t = u.current,
-                    r = i.current,
-                    s = e.getWrapperSize(),
+                    s = i.current,
+                    r = e.getWrapperSize(),
                     n = e.getContainerSize();
-                if (!(s && t && r && n)) return;
+                if (!(r && t && s && n)) return;
                 const l = e.animationScroll.scrollPosition.get(),
-                    c = Math.min(1, s / n),
-                    d = clamp(0, 1, l / (n - s)),
+                    c = Math.min(1, r / n),
+                    d = clamp(0, 1, l / (n - r)),
                     _ = (t.offsetHeight - calculateThumbSize$2(t, c)) * d;
-                ((r.style.transform = `translateY(${0 | _}px)`),
+                ((s.style.transform = `translateY(${0 | _}px)`),
                     ((e) => {
                         if (a.current && o.current && u.current && i.current) {
                             if (0 === Math.round(e))
@@ -7098,21 +7124,21 @@ const Horizontal = Object.freeze(
                         m();
                     });
                 };
-                let r = emptyFunction;
-                const s = () => {
-                    (r(), (r = createLayoutReadyInEffect(E)));
+                let s = emptyFunction;
+                const r = () => {
+                    (s(), (s = createLayoutReadyInEffect(E)));
                 };
                 return (
                     e.events.on('recalculateContent', E),
                     e.events.on('rest', t),
                     e.events.on('change', t),
-                    e.events.on('resizeHandled', s),
+                    e.events.on('resizeHandled', r),
                     () => {
-                        (r(),
+                        (s(),
                             e.events.off('recalculateContent', E),
                             e.events.off('rest', t),
                             e.events.off('change', t),
-                            e.events.off('resizeHandled', s));
+                            e.events.off('resizeHandled', r));
                     }
                 );
             }, [e]),
@@ -7121,8 +7147,8 @@ const Horizontal = Object.freeze(
                 const t = env.client.events.mouse.up(() => {
                         _(initDraggingState);
                     }),
-                    r = env.client.events.mouse.move(([t]) => {
-                        handleContainer(e, (r) => {
+                    s = env.client.events.mouse.move(([t]) => {
+                        handleContainer(e, (s) => {
                             const n = u.current,
                                 a = i.current,
                                 o = e.getContainerSize();
@@ -7130,18 +7156,18 @@ const Horizontal = Object.freeze(
                             const l = t.screenY - c.offset - n.getBoundingClientRect().y,
                                 d = (l / n.offsetHeight) * o;
                             (e.scrollPosition.start({
-                                scrollPosition: e.clampPosition(r, d),
+                                scrollPosition: e.clampPosition(s, d),
                                 reset: !0,
                                 immediate: !0,
-                                from: { scrollPosition: r.scrollTop },
+                                from: { scrollPosition: s.scrollTop },
                             }),
-                                s({ type: 'dragging', thumb: a, thumbOffset: l, contentOffset: d }));
+                                r({ type: 'dragging', thumb: a, thumbOffset: l, contentOffset: d }));
                         });
                     });
                 return () => {
-                    (t(), r());
+                    (t(), s());
                 };
-            }, [e, c.offset, c.pending, s, _]));
+            }, [e, c.offset, c.pending, r, _]));
         const [f, b] = useRepeatCallback((t) => e.applyStepTo(t), l, [e]);
         reactExports.useEffect(
             () => (document.addEventListener('mouseup', b, !0), () => document.removeEventListener('mouseup', b, !0)),
@@ -7151,12 +7177,12 @@ const Horizontal = Object.freeze(
             e.target.classList.contains(DISABLE_CLASS$1) || playSound('highlight');
         };
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$C.base, t.base),
+            className: cx(styles$A.base, t.base),
             ref: n,
             onWheel: e.handleMouseWheel,
             children: [
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$C.topButton, t.topButton),
+                    className: cx(styles$A.topButton, t.topButton),
                     onMouseDown: (e) => {
                         e.target.classList.contains(DISABLE_CLASS$1) ||
                             e.button !== MOUSE_BUTTON_LEFT$1 ||
@@ -7166,33 +7192,33 @@ const Horizontal = Object.freeze(
                     onMouseEnter: x,
                 }),
                 jsxRuntimeExports.jsxs('div', {
-                    className: cx(styles$C.track, t.track),
+                    className: cx(styles$A.track, t.track),
                     onMouseDown: (t) => {
-                        const s = i.current;
-                        if (s && t.button === MOUSE_BUTTON_LEFT$1)
-                            if ((playSound('play'), t.target === s))
-                                _({ pending: !0, offset: t.screenY - s.getBoundingClientRect().y });
+                        const r = i.current;
+                        if (r && t.button === MOUSE_BUTTON_LEFT$1)
+                            if ((playSound('play'), t.target === r))
+                                _({ pending: !0, offset: t.screenY - r.getBoundingClientRect().y });
                             else {
                                 ((t) => {
                                     i.current &&
-                                        handleContainer(e, (s) => {
-                                            if (!s) return;
-                                            const n = r(e),
-                                                a = e.clampPosition(s, s.scrollTop + n * t);
+                                        handleContainer(e, (r) => {
+                                            if (!r) return;
+                                            const n = s(e),
+                                                a = e.clampPosition(r, r.scrollTop + n * t);
                                             e.applyScroll(a);
                                         });
-                                })(t.screenY > s.getBoundingClientRect().y ? Direction$1.Prev : Direction$1.Next);
+                                })(t.screenY > r.getBoundingClientRect().y ? Direction$1.Prev : Direction$1.Next);
                             }
                     },
                     ref: u,
                     onMouseEnter: x,
                     children: [
-                        jsxRuntimeExports.jsx('div', { ref: i, className: cx(styles$C.thumb, t.thumb) }),
-                        jsxRuntimeExports.jsx('div', { className: cx(styles$C.rail, t.rail) }),
+                        jsxRuntimeExports.jsx('div', { ref: i, className: cx(styles$A.thumb, t.thumb) }),
+                        jsxRuntimeExports.jsx('div', { className: cx(styles$A.rail, t.rail) }),
                     ],
                 }),
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$C.bottomButton, t.bottomButton),
+                    className: cx(styles$A.bottomButton, t.bottomButton),
                     onMouseDown: (e) => {
                         e.target.classList.contains(DISABLE_CLASS$1) ||
                             e.button !== MOUSE_BUTTON_LEFT$1 ||
@@ -7206,15 +7232,15 @@ const Horizontal = Object.freeze(
         });
     },
     Bar$2 = reactExports.memo(BarFC),
-    content$5 = 'Verticalscroll_content_848080fa',
+    content$4 = 'Verticalscroll_content_848080fa',
     defaultScroll$1 = 'Verticalscroll_defaultScroll_5f9d259',
     area$1 = 'Verticalscroll_area_39a5f7ae',
-    styles$B = { content: content$5, defaultScroll: defaultScroll$1, area: area$1 },
+    styles$z = { content: content$4, defaultScroll: defaultScroll$1, area: area$1 },
     DefaultScroll$2 = ({
         children: e,
         api: t,
-        className: r,
-        barClassNames: s,
+        className: s,
+        barClassNames: r,
         areaClassName: n,
         scrollClassName: a,
         scrollClassNames: o,
@@ -7222,32 +7248,32 @@ const Horizontal = Object.freeze(
         onDrag: i,
     }) => {
         const l = reactExports.useMemo(() => {
-                const e = s || {};
-                return { ...e, base: cx(styles$B.base, e.base) };
-            }, [s]),
+                const e = r || {};
+                return { ...e, base: cx(styles$z.base, e.base) };
+            }, [r]),
             c = reactExports.useMemo(() => ({ ...t, handleMouseWheel: () => {} }), [t]);
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$B.defaultScroll, r),
+            className: cx(styles$z.defaultScroll, s),
             onWheel: t.handleMouseWheel,
             children: [
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$B.area, n),
+                    className: cx(styles$z.area, n),
                     children: jsxRuntimeExports.jsx(Area$2, { className: a, classNames: o, api: c, children: e }),
                 }),
                 jsxRuntimeExports.jsx(Bar$2, { getStepByRailClick: u, api: t, onDrag: i, classNames: l }),
             ],
         });
     },
-    Area$2 = ({ className: e, classNames: t, children: r, api: s }) => (
-        reactExports.useEffect(() => createLayoutReadyInEffect(s.recalculateContent)),
+    Area$2 = ({ className: e, classNames: t, children: s, api: r }) => (
+        reactExports.useEffect(() => createLayoutReadyInEffect(r.recalculateContent)),
         jsxRuntimeExports.jsx('div', {
-            className: cx(styles$B.base, e),
-            ref: s.wrapperRef,
-            onWheel: s.handleMouseWheel,
+            className: cx(styles$z.base, e),
+            ref: r.wrapperRef,
+            onWheel: r.handleMouseWheel,
             children: jsxRuntimeExports.jsx('div', {
-                className: cx(styles$B.content, null == t ? void 0 : t.content),
-                ref: s.contentRef,
-                children: r,
+                className: cx(styles$z.content, null == t ? void 0 : t.content),
+                ref: r.contentRef,
+                children: s,
             }),
         })
     );
@@ -7268,47 +7294,47 @@ const Vertical = Object.freeze(
     Scroll = { Vertical: Vertical, Horizontal: Horizontal },
     themes = { primary: 'primary', secondary: 'secondary', custom: 'custom' },
     sizes$7 = { extraSmall: 'extraSmall', small: 'small', medium: 'medium', large: 'large' };
-function defineStyledComponent(e, t, r) {
-    var s;
+function defineStyledComponent(e, t, s) {
+    var r;
     const n =
             'object' == typeof t && 'cva' in t
-                ? null == (s = t.cva)
+                ? null == (r = t.cva)
                     ? void 0
-                    : s.variants
-                : null == r
+                    : r.variants
+                : null == s
                   ? void 0
-                  : r.variants,
+                  : s.variants,
         a = n ? Object.keys(n) : [];
     if ('object' == typeof t) {
-        const r = t,
-            s = cva(r.className, r.cva),
-            n = r.element,
+        const s = t,
+            r = cva(s.className, s.cva),
+            n = s.element,
             o = reactExports.forwardRef(function (e, t) {
                 return reactExports.createElement(n, {
                     ...('function' == typeof n ? e : cleanProps(a, e)),
                     ref: t,
-                    className: s(e),
+                    className: r(e),
                 });
             });
-        return ((o.displayName = e), r.cva && (o.cva = r.cva), o);
+        return ((o.displayName = e), s.cva && (o.cva = s.cva), o);
     }
-    const o = cva(t, r),
-        u = reactExports.forwardRef(function (t, r) {
-            return jsxRuntimeExports.jsx('div', { 'data-name': e, ...cleanProps(a, t), ref: r, className: o(t) });
+    const o = cva(t, s),
+        u = reactExports.forwardRef(function (t, s) {
+            return jsxRuntimeExports.jsx('div', { 'data-name': e, ...cleanProps(a, t), ref: s, className: o(t) });
         });
-    return ((u.displayName = e), r && (u.cva = r), u);
+    return ((u.displayName = e), s && (u.cva = s), u);
 }
 function cleanProps(e, t) {
     if (0 === e.length) return t;
-    const r = { ...t };
-    for (const s of e) delete r[s];
-    return r;
+    const s = { ...t };
+    for (const r of e) delete s[r];
+    return s;
 }
-const base$u = 'HeadlessButton_df8536fc',
-    styles$A = { base: base$u },
-    HeadlessButtonBase = defineStyledComponent('Button', { element: 'button', className: styles$A.base }),
+const base$s = 'HeadlessButton_df8536fc',
+    styles$y = { base: base$s },
+    HeadlessButtonBase = defineStyledComponent('Button', { element: 'button', className: styles$y.base }),
     HeadlessButton = reactExports.forwardRef(function (
-        { children: e, onClick: t, onMouseEnter: r, soundTarget: s, disabled: n = !1, silent: a = !1, ...o },
+        { children: e, onClick: t, onMouseEnter: s, soundTarget: r, disabled: n = !1, silent: a = !1, ...o },
         u,
     ) {
         const i = useSounds();
@@ -7316,10 +7342,10 @@ const base$u = 'HeadlessButton_df8536fc',
             ...o,
             ref: u,
             onMouseEnter: function (e) {
-                (n || a || i.play('mouse-enter', { target: s || 'Button', original: e }), null == r || r(e));
+                (n || a || i.play('mouse-enter', { target: r || 'Button', original: e }), null == s || s(e));
             },
             onClick: function (e) {
-                n || (a || i.play('click', { target: s || 'Button', original: e }), null == t || t(e));
+                n || (a || i.play('click', { target: r || 'Button', original: e }), null == t || t(e));
             },
             children: e,
         });
@@ -7328,10 +7354,10 @@ const base$u = 'HeadlessButton_df8536fc',
     border$3 = 'Button_border_7e6390d7',
     overlay$1 = 'Button_overlay_174632c8',
     root$g = 'Button_root_6bcdc8c',
-    base$t = 'Button_70871946',
+    base$r = 'Button_70871946',
     base__enabled$1 = 'Button_base__enabled_96634d40',
     base__disabled$2 = 'Button_base__disabled_b713e04a',
-    content$4 = 'Button_content_298de63f',
+    content$3 = 'Button_content_298de63f',
     content__fontAligned = 'Button_content__fontAligned_66115778',
     fadeInWithScale$g = 'Button_fadeInWithScale_6bcdc8c',
     slideUp$g = 'Button_slideUp_6bcdc8c',
@@ -7341,12 +7367,12 @@ const base$u = 'HeadlessButton_df8536fc',
     windowIn$g = 'Button_windowIn_6bcdc8c',
     fadeOut$g = 'Button_fadeOut_6bcdc8c',
     fadeIn$g = 'Button_fadeIn_6bcdc8c',
-    styles$z = {
+    styles$x = {
         background: background$4,
         border: border$3,
         overlay: overlay$1,
         root: root$g,
-        base: base$t,
+        base: base$r,
         base__enabled: base__enabled$1,
         base__disabled: base__disabled$2,
         'base__size-extraSmall': 'Button_base__size-extraSmall_d0cdb5ed',
@@ -7355,7 +7381,7 @@ const base$u = 'HeadlessButton_df8536fc',
         'base__size-large': 'Button_base__size-large_83da852e',
         'base__theme-primary': 'Button_base__theme-primary_8ba55469',
         'base__theme-secondary': 'Button_base__theme-secondary_3fa4afc',
-        content: content$4,
+        content: content$3,
         content__fontAligned: content__fontAligned,
         fadeInWithScale: fadeInWithScale$g,
         slideUp: slideUp$g,
@@ -7370,8 +7396,8 @@ const base$u = 'HeadlessButton_df8536fc',
         {
             children: e,
             size: t = sizes$7.large,
-            theme: r = themes.primary,
-            disabled: s = !1,
+            theme: s = themes.primary,
+            disabled: r = !1,
             silent: n = !1,
             autoAlignContent: a = !0,
             classNames: o,
@@ -7384,25 +7410,31 @@ const base$u = 'HeadlessButton_df8536fc',
             ...i,
             ref: l,
             silent: n,
-            disabled: s,
-            className: cx(
-                styles$z.base,
-                styles$z[`base__size-${t}`],
-                styles$z[`base__theme-${r}`],
-                s ? styles$z.base__disabled : styles$z.base__enabled,
+            disabled: r,
+            className: clsx(
+                styles$x.base,
+                styles$x[`base__size-${t}`],
+                styles$x[`base__theme-${s}`],
+                r ? styles$x.base__disabled : styles$x.base__enabled,
                 u,
                 null == o ? void 0 : o.base,
             ),
             onClick: function (e) {
                 var t;
-                s || null == (t = i.onClick) || t.call(i, e);
+                r || null == (t = i.onClick) || t.call(i, e);
             },
             children: [
-                jsxRuntimeExports.jsx('div', { className: cx(styles$z.background, null == o ? void 0 : o.background) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$z.border, null == o ? void 0 : o.border) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$z.overlay, null == o ? void 0 : o.overlay) }),
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$z.content, a && styles$z.content__fontAligned, null == o ? void 0 : o.content),
+                    className: clsx(styles$x.background, null == o ? void 0 : o.background),
+                }),
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$x.border, null == o ? void 0 : o.border) }),
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$x.overlay, null == o ? void 0 : o.overlay) }),
+                jsxRuntimeExports.jsx('div', {
+                    className: clsx(
+                        styles$x.content,
+                        a && styles$x.content__fontAligned,
+                        null == o ? void 0 : o.content,
+                    ),
                     children: e,
                 }),
             ],
@@ -7462,7 +7494,7 @@ const types$2 = {
         [sizes$6.xxl]: { width: '140rem', height: '84rem' },
     },
     root$f = 'Currency_root_271064ec',
-    base$s = 'Currency_72d4be39',
+    base$q = 'Currency_72d4be39',
     base__reverse = 'Currency_base__reverse_f12e61b0',
     base__notEnough = 'Currency_base__notEnough_9a7842f',
     base__credits = 'Currency_base__credits_7b9ae721',
@@ -7478,9 +7510,9 @@ const types$2 = {
     windowIn$f = 'Currency_windowIn_271064ec',
     fadeOut$f = 'Currency_fadeOut_271064ec',
     fadeIn$f = 'Currency_fadeIn_271064ec',
-    styles$y = {
+    styles$w = {
         root: root$f,
-        base: base$s,
+        base: base$q,
         base__reverse: base__reverse,
         base__notEnough: base__notEnough,
         base__credits: base__credits,
@@ -7498,22 +7530,22 @@ const types$2 = {
         fadeIn: fadeIn$f,
     },
     intl = resources.resolve('intl'),
-    Base$9 = defineStyledComponent('Currency', styles$y.base, {
-        variants: { reverse: { true: styles$y.base__reverse } },
+    Base$9 = defineStyledComponent('Currency', styles$w.base, {
+        variants: { reverse: { true: styles$w.base__reverse } },
     });
 function formatCurrencyValue(e, t) {
-    const r = t === types$2.gold ? 'gold' : 'integral';
+    const s = t === types$2.gold ? 'gold' : 'integral';
     return Array.isArray(e)
-        ? e.map((e) => ('number' == typeof e ? intl.formatNumber(r, e) : e))
+        ? e.map((e) => ('number' == typeof e ? intl.formatNumber(s, e) : e))
         : 'number' == typeof e
-          ? intl.formatNumber(r, e)
+          ? intl.formatNumber(s, e)
           : e;
 }
 function Currency({
     children: e,
     type: t,
-    className: r,
-    classNames: s,
+    className: s,
+    classNames: r,
     imagePath: n,
     size: a = sizes$6.small,
     enough: o = !0,
@@ -7527,14 +7559,14 @@ function Currency({
         p = useUpscale(`library.currency.${l}`, `library.currency.${d}`);
     return jsxRuntimeExports.jsxs(Base$9, {
         ...u,
-        className: cx(null == s ? void 0 : s.base, o ? styles$y[`base__${t}`] : styles$y.base__notEnough, r),
+        className: clsx(null == r ? void 0 : r.base, o ? styles$w[`base__${t}`] : styles$w.base__notEnough, s),
         children: [
             _ &&
                 jsxRuntimeExports.jsx(Image, {
                     width: i,
                     height: i,
                     path: n ?? p,
-                    className: null == s ? void 0 : s.icon,
+                    className: null == r ? void 0 : r.icon,
                 }),
             formatCurrencyValue(e, t),
         ],
@@ -7542,7 +7574,7 @@ function Currency({
 }
 ((Currency.sizes = sizes$6), (Currency.types = types$2));
 const root$e = 'WithDiscount_root_60ee455a',
-    base$r = 'WithDiscount_b8b3aa7f',
+    base$p = 'WithDiscount_b8b3aa7f',
     discount = 'WithDiscount_discount_f7ce1b97',
     icon$8 = 'WithDiscount_icon_a6c57ca8',
     icon__extraSmall = 'WithDiscount_icon__extraSmall_97673105',
@@ -7559,9 +7591,9 @@ const root$e = 'WithDiscount_root_60ee455a',
     windowIn$e = 'WithDiscount_windowIn_60ee455a',
     fadeOut$e = 'WithDiscount_fadeOut_60ee455a',
     fadeIn$e = 'WithDiscount_fadeIn_60ee455a',
-    styles$x = {
+    styles$v = {
         root: root$e,
-        base: base$r,
+        base: base$p,
         discount: discount,
         icon: icon$8,
         icon__extraSmall: icon__extraSmall,
@@ -7582,30 +7614,30 @@ const root$e = 'WithDiscount_root_60ee455a',
 function WithDiscount({
     children: e,
     imagePath: t,
-    size: r = sizes$6.small,
-    customImageSize: s,
+    size: s = sizes$6.small,
+    customImageSize: r,
     type: n,
     enabled: a = !1,
     className: o,
     classNames: u,
 }) {
-    const i = s ?? discountSizesConfig[r];
+    const i = r ?? discountSizesConfig[s];
     return jsxRuntimeExports.jsxs('div', {
-        className: cx(styles$x.base, null == u ? void 0 : u.base, o),
+        className: clsx(styles$v.base, null == u ? void 0 : u.base, o),
         children: [
             e,
             a &&
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(
-                        styles$x.discount,
+                    className: clsx(
+                        styles$v.discount,
                         null == u ? void 0 : u.discount,
-                        n === discountTypes.experience && styles$x.discount__experience,
+                        n === discountTypes.experience && styles$v.discount__experience,
                     ),
                     children: jsxRuntimeExports.jsx(Image, {
                         width: i.width,
                         height: i.height,
-                        path: t ?? `library.currency.discount_${n}_${r === sizes$6.xxl ? sizes$6.extraLarge : r}`,
-                        className: cx(styles$x.icon, null == u ? void 0 : u.icon, styles$x[`icon__${r}`]),
+                        path: t ?? `library.currency.discount_${n}_${s === sizes$6.xxl ? sizes$6.extraLarge : s}`,
+                        className: clsx(styles$v.icon, null == u ? void 0 : u.icon, styles$v[`icon__${s}`]),
                     }),
                 }),
         ],
@@ -7614,7 +7646,7 @@ function WithDiscount({
 const background$3 = 'Checkbox_background_ae1fc797',
     border$2 = 'Checkbox_border_e1946121',
     overlay = 'Checkbox_overlay_de55e0a5',
-    base$q = 'Checkbox_e00b9a0',
+    base$o = 'Checkbox_e00b9a0',
     base__enabled = 'Checkbox_base__enabled_5bfdfae9',
     label$2 = 'Checkbox_label_58a00a56',
     base__small$3 = 'Checkbox_base__small_70ef629e',
@@ -7622,11 +7654,11 @@ const background$3 = 'Checkbox_background_ae1fc797',
     base__checked = 'Checkbox_base__checked_70ef629e',
     checkIcon = 'Checkbox_checkIcon_968885f3',
     check = 'Checkbox_check_8341731a',
-    styles$w = {
+    styles$u = {
         background: background$3,
         border: border$2,
         overlay: overlay,
-        base: base$q,
+        base: base$o,
         base__enabled: base__enabled,
         label: label$2,
         base__small: base__small$3,
@@ -7635,33 +7667,35 @@ const background$3 = 'Checkbox_background_ae1fc797',
         checkIcon: checkIcon,
         check: check,
     },
-    Check = reactExports.forwardRef(function ({ classNames: e, children: t, ...r }, s) {
+    Check = reactExports.forwardRef(function ({ classNames: e, children: t, ...s }, r) {
         return jsxRuntimeExports.jsxs('div', {
-            ...r,
-            ref: s,
-            className: cx(styles$w.check, r.className, null == e ? void 0 : e.base),
+            ...s,
+            ref: r,
+            className: clsx(styles$u.check, s.className, null == e ? void 0 : e.base),
             children: [
-                jsxRuntimeExports.jsx('div', { className: cx(styles$w.background, null == e ? void 0 : e.background) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$w.border, null == e ? void 0 : e.border) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$w.overlay, null == e ? void 0 : e.overlay) }),
+                jsxRuntimeExports.jsx('div', {
+                    className: clsx(styles$u.background, null == e ? void 0 : e.background),
+                }),
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$u.border, null == e ? void 0 : e.border) }),
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$u.overlay, null == e ? void 0 : e.overlay) }),
                 t,
             ],
         });
     }),
     sizes$5 = { medium: 'medium', small: 'small' },
-    Base$8 = defineStyledComponent('Checkbox', styles$w.base, {
+    Base$8 = defineStyledComponent('Checkbox', styles$u.base, {
         variants: {
-            size: { [sizes$5.small]: styles$w.base__small, [sizes$5.medium]: styles$w.base__medium },
-            checked: { true: styles$w.base__checked },
-            state: { enabled: styles$w.base__enabled },
+            size: { [sizes$5.small]: styles$u.base__small, [sizes$5.medium]: styles$u.base__medium },
+            checked: { true: styles$u.base__checked },
+            state: { enabled: styles$u.base__enabled },
         },
     }),
     HeadlessCheckbox = reactExports.forwardRef(function (
         {
             checked: e,
             size: t = sizes$5.medium,
-            disabled: r = !1,
-            children: s,
+            disabled: s = !1,
+            children: r,
             onMouseEnter: n,
             onClick: a,
             onCheckedChange: o,
@@ -7675,21 +7709,21 @@ const background$3 = 'Checkbox_background_ae1fc797',
             ref: i,
             size: t,
             checked: e,
-            state: r ? void 0 : 'enabled',
+            state: s ? void 0 : 'enabled',
             onMouseEnter: function (e) {
                 (l.play('mouse-enter', { target: Base$8.displayName, original: e }), null == n || n(e));
             },
             onClick: function (t) {
                 (l.play('click', { target: Base$8.displayName, original: t }), null == a || a(t), o(!e));
             },
-            children: s,
+            children: r,
         });
     });
 function Label({ className: e, children: t }) {
-    return jsxRuntimeExports.jsx('div', { className: cx(styles$w.label, e), children: t });
+    return jsxRuntimeExports.jsx('div', { className: clsx(styles$u.label, e), children: t });
 }
 const Checkbox = reactExports.forwardRef(function (
-        { checked: e, classNames: t, children: r, checkPath: s = 'ui_kit.checkbox.icon_check', ...n },
+        { checked: e, classNames: t, children: s, checkPath: r = 'ui_kit.checkbox.icon_check', ...n },
         a,
     ) {
         return jsxRuntimeExports.jsxs(HeadlessCheckbox, {
@@ -7700,11 +7734,11 @@ const Checkbox = reactExports.forwardRef(function (
                 jsxRuntimeExports.jsx(Check, {
                     className: null == t ? void 0 : t.check,
                     children: jsxRuntimeExports.jsx(Image, {
-                        path: s,
-                        className: cx(styles$w.checkIcon, null == t ? void 0 : t.checkIcon),
+                        path: r,
+                        className: clsx(styles$u.checkIcon, null == t ? void 0 : t.checkIcon),
                     }),
                 }),
-                r && jsxRuntimeExports.jsx(Label, { className: null == t ? void 0 : t.label, children: r }),
+                s && jsxRuntimeExports.jsx(Label, { className: null == t ? void 0 : t.label, children: s }),
             ],
         });
     }),
@@ -7722,14 +7756,14 @@ const defaultSettings = {
     createApiHook = ({
         getContainerSize: e,
         getBounds: t,
-        setScrollPosition: r,
-        getDirection: s,
+        setScrollPosition: s,
+        getDirection: r,
         getWrapperSize: n,
         triggerMouseMoveOnUpdate: a = !1,
     }) => {
-        const o = (e, r) => {
-            const [s, n] = t(e);
-            return clamp$1(s, n, r);
+        const o = (e, s) => {
+            const [r, n] = t(e);
+            return clamp$1(r, n, s);
         };
         return (u = {}) => {
             const { settings: i = defaultSettings } = u,
@@ -7749,32 +7783,32 @@ const defaultSettings = {
                     scrollPosition: 0,
                     onChange: (e) => {
                         const t = d.current;
-                        t && (r(t, e), m.trigger('change', e));
+                        t && (s(t, e), m.trigger('change', e));
                     },
                     onRest: (e) => m.trigger('rest', e),
                     onStart: (e) => m.trigger('start', e),
                     onPause: (e) => m.trigger('pause', e),
                 })),
                 x = reactExports.useCallback(
-                    (e, t, r) => {
-                        const s = f.scrollPosition.get(),
-                            n = (f.scrollPosition.goal ?? 0) - s;
-                        return o(e, t * r + n + s);
+                    (e, t, s) => {
+                        const r = f.scrollPosition.get(),
+                            n = (f.scrollPosition.goal ?? 0) - r;
+                        return o(e, t * s + n + r);
                     },
                     [f.scrollPosition],
                 ),
                 g = reactExports.useCallback(
-                    function (e, { immediate: t = !1, reset: r = !0 } = {}) {
-                        const s = d.current;
-                        if (!s) return;
-                        const n = o(s, e);
+                    function (e, { immediate: t = !1, reset: s = !0 } = {}) {
+                        const r = d.current;
+                        if (!r) return;
+                        const n = o(r, e);
                         f.scrollPosition.goal !== n &&
                             b.start({
                                 scrollPosition: n,
                                 immediate: t,
-                                reset: r,
+                                reset: s,
                                 config: i.animationConfig,
-                                from: { scrollPosition: o(s, f.scrollPosition.get()) },
+                                from: { scrollPosition: o(r, f.scrollPosition.get()) },
                                 onChange: () => {
                                     a && E();
                                 },
@@ -7785,17 +7819,17 @@ const defaultSettings = {
                 h = reactExports.useCallback(
                     function (e) {
                         const t = d.current,
-                            r = _.current;
-                        if (!t || !r) return;
-                        const s = ((e, t) => {
+                            s = _.current;
+                        if (!t || !s) return;
+                        const r = ((e, t) => {
                                 switch (t.type) {
                                     case 'proportional':
                                         return n(e) / t.factor;
                                     case 'fixed':
                                         return t.value;
                                 }
-                            })(r, i.step),
-                            a = x(t, e, s);
+                            })(s, i.step),
+                            a = x(t, e, r);
                         g(a);
                     },
                     [g, x, i.step],
@@ -7803,7 +7837,7 @@ const defaultSettings = {
                 y = reactExports.useCallback(
                     function (e) {
                         l ||
-                            (0 !== e.deltaY && h(s(e)),
+                            (0 !== e.deltaY && h(r(e)),
                             d.current && m.trigger('mouseWheel', e, f.scrollPosition, t(d.current)));
                     },
                     [f.scrollPosition, h, m, l],
@@ -7818,24 +7852,24 @@ const defaultSettings = {
             useRefResizeObserver(_, (e) => {
                 const t = e.target;
                 if (!(t instanceof HTMLElement)) return;
-                const r = n(t);
-                p.current.wrapper !== r && v();
+                const s = n(t);
+                p.current.wrapper !== s && v();
             });
-            const C = useEvent$1(function () {
+            const A = useEvent$1(function () {
                     const t = d.current;
                     if (!t) return;
-                    const r = e(t),
-                        s = _.current ? n(_.current) : 0;
-                    if (p.current.container !== r || p.current.wrapper !== s) {
+                    const s = e(t),
+                        r = _.current ? n(_.current) : 0;
+                    if (p.current.container !== s || p.current.wrapper !== r) {
                         const e = o(t, f.scrollPosition.goal);
                         (e !== f.scrollPosition.goal && g(e, { immediate: !0 }),
-                            (p.current.container = r),
-                            (p.current.wrapper = s),
+                            (p.current.container = s),
+                            (p.current.wrapper = r),
                             m.trigger('recalculateContent'));
                     }
                 }),
-                A = useSkipFrame();
-            reactExports.useEffect(() => addEventListener(window, 'resize', () => A.run(v)), [v, A]);
+                C = useSkipFrame();
+            reactExports.useEffect(() => addEventListener(window, 'resize', () => C.run(v)), [v, C]);
             return reactExports.useMemo(
                 () => ({
                     getWrapperSize: () => (_.current ? n(_.current) : void 0),
@@ -7852,19 +7886,19 @@ const defaultSettings = {
                     wrapperRef: _,
                     scrollPosition: b,
                     animationScroll: f,
-                    recalculateContent: C,
+                    recalculateContent: A,
                     disabled: l,
                     setDisabled: c,
                     events: { on: m.on, off: m.off },
                 }),
-                [i, y, g, h, b, f, C, l, c, m.on, m.off],
+                [i, y, g, h, b, f, A, l, c, m.on, m.off],
             );
         };
     },
     DEFAULT_HORIZONTAL_API_CONFIG = {
         getBounds: (e) => {
             var t;
-            return [0, e.offsetWidth - ((null == (t = e.parentElement) ? void 0 : t.offsetWidth) ?? 0)];
+            return [0, Math.max(0, e.offsetWidth - ((null == (t = e.parentElement) ? void 0 : t.offsetWidth) ?? 0))];
         },
         getContainerSize: (e) => e.offsetWidth,
         getWrapperSize: (e) => e.offsetWidth,
@@ -7876,25 +7910,25 @@ const defaultSettings = {
     },
     useApi$1 = createApiHook(DEFAULT_HORIZONTAL_API_CONFIG),
     IGNORE_DEFAULT = [2, 2];
-function useScrollBounding(e, [t, r] = IGNORE_DEFAULT) {
-    const [s, n] = reactExports.useState(!0),
+function useScrollBounding(e, [t, s] = IGNORE_DEFAULT) {
+    const [r, n] = reactExports.useState(!0),
         [a, o] = reactExports.useState(!0);
     return (
         reactExports.useEffect(() => {
-            function s() {
+            function r() {
                 if (!e.contentRef.current) return;
-                const s = e.animationScroll.scrollPosition.get(),
+                const r = e.animationScroll.scrollPosition.get(),
                     [a, u] = e.getBounds(),
-                    i = s >= u - r;
-                (n(s <= a + t), o(i));
+                    i = r >= u - s;
+                (n(r <= a + t), o(i));
             }
             return new DisposeBuilder()
-                .add(createLayoutReadyInEffect$1(s))
-                .add(e.events.on('resizeHandled', s))
-                .add(e.events.on('recalculateContent', s))
-                .add(e.events.on('change', s)).dispose;
-        }, [e, t, r]),
-        [s, a]
+                .add(createLayoutReadyInEffect$1(r))
+                .add(e.events.on('resizeHandled', r))
+                .add(e.events.on('recalculateContent', r))
+                .add(e.events.on('change', r)).dispose;
+        }, [e, t, s]),
+        [r, a]
     );
 }
 const scrollOrientations = { horizontal: 'horizontal', vertical: 'vertical' },
@@ -7905,7 +7939,7 @@ const scrollOrientations = { horizontal: 'horizontal', vertical: 'vertical' },
     root$d = 'Thumb_root_830942bb',
     innerBorder = 'Thumb_innerBorder_42bafd18',
     icon$7 = 'Thumb_icon_dca8bf26',
-    base$p = 'Thumb_6ff3e706',
+    base$n = 'Thumb_6ff3e706',
     base__vertical = 'Thumb_base__vertical_55a67c91',
     base__horizontal = 'Thumb_base__horizontal_27ca7ace',
     base__active$1 = 'Thumb_base__active_830942bb',
@@ -7917,13 +7951,13 @@ const scrollOrientations = { horizontal: 'horizontal', vertical: 'vertical' },
     windowIn$d = 'Thumb_windowIn_830942bb',
     fadeOut$d = 'Thumb_fadeOut_830942bb',
     fadeIn$d = 'Thumb_fadeIn_830942bb',
-    styles$v = {
+    styles$t = {
         background: background$2,
         border: border$1,
         root: root$d,
         innerBorder: innerBorder,
         icon: icon$7,
-        base: base$p,
+        base: base$n,
         base__vertical: base__vertical,
         base__horizontal: base__horizontal,
         base__active: base__active$1,
@@ -7942,25 +7976,25 @@ const scrollOrientations = { horizontal: 'horizontal', vertical: 'vertical' },
     BACKWARD_DISABLED = 'backwardDisabled';
 function updateDisabledStates(e, t) {
     if (!e.trackRef.current || !e.thumbRef.current) return;
-    const r = e.trackRef.current.parentNode;
-    if (r instanceof HTMLElement) {
-        if (0 === t) return (r.classList.add(BACKWARD_DISABLED), void r.classList.remove(FORWARD_DISABLED));
-        if (e.isBoundThumb(t)) return (r.classList.remove(BACKWARD_DISABLED), void r.classList.add(FORWARD_DISABLED));
-        (r.classList.remove(BACKWARD_DISABLED), r.classList.remove(FORWARD_DISABLED));
+    const s = e.trackRef.current.parentNode;
+    if (s instanceof HTMLElement) {
+        if (0 === t) return (s.classList.add(BACKWARD_DISABLED), void s.classList.remove(FORWARD_DISABLED));
+        if (e.isBoundThumb(t)) return (s.classList.remove(BACKWARD_DISABLED), void s.classList.add(FORWARD_DISABLED));
+        (s.classList.remove(BACKWARD_DISABLED), s.classList.remove(FORWARD_DISABLED));
     }
 }
 function Thumb(e) {
     const t = reactExports.useRef(null),
-        [r, s] = reactExports.useState(!1),
+        [s, r] = reactExports.useState(!1),
         n = useEvent$1(function () {
-            const r = t.current,
-                s = e.trackRef.current,
+            const s = t.current,
+                r = e.trackRef.current,
                 n = e.api.getWrapperSize(),
                 a = e.api.getContainerSize();
-            if (!(n && a && r && s)) return;
+            if (!(n && a && s && r)) return;
             const o = Math.min(1, n / a),
                 u = 'horizontal' === e.direction ? 'width' : 'height';
-            return ((r.style[u] = `${e.calculateSize(s, o)}px`), (r.style.display = 'flex'), o);
+            return ((s.style[u] = `${e.calculateSize(r, o)}px`), (s.style.display = 'flex'), o);
         }),
         [a, o] = useSpring(() => ({
             from: { ...e.styles.closed, '--bouncingCorrection': '0px' },
@@ -7968,12 +8002,12 @@ function Thumb(e) {
             config: { duration: 200 },
         }));
     reactExports.useEffect(() => {
-        r || e.dragging
+        s || e.dragging
             ? o.start({
                   to: e.styles.opened,
                   onRest() {
                       var e;
-                      null == (e = t.current) || e.classList.add(styles$v.base__active);
+                      null == (e = t.current) || e.classList.add(styles$t.base__active);
                   },
               })
             : o.start({
@@ -7981,27 +8015,27 @@ function Thumb(e) {
                   delay: 500,
                   onRest() {
                       var e;
-                      null == (e = t.current) || e.classList.remove(styles$v.base__active);
+                      null == (e = t.current) || e.classList.remove(styles$t.base__active);
                   },
               });
-    }, [r, e.dragging, e.styles.closed, e.styles.opened, o]);
+    }, [s, e.dragging, e.styles.closed, e.styles.opened, o]);
     const u = useEvent$1(function () {
-            var r;
-            const s = e.trackRef.current,
+            var s;
+            const r = e.trackRef.current,
                 n = t.current,
                 a = e.railBeforeRef.current,
                 u = e.railAfterRef.current,
                 i = e.api.getWrapperSize(),
                 l = e.api.getContainerSize();
-            if (!(i && s && n && a && u && l)) return;
+            if (!(i && r && n && a && u && l)) return;
             const c = e.api.animationScroll.scrollPosition.get(),
                 d = Math.min(1, i / l),
-                _ = clamp$1(0, 1, c / (l - i)),
-                p = e.calculateSize(s, d),
-                m = (('horizontal' === e.direction ? s.offsetWidth : s.offsetHeight) - p) * _ || 0,
+                _ = l !== i ? clamp$1(0, 1, c / (l - i)) : 0,
+                p = e.calculateSize(r, d),
+                m = (('horizontal' === e.direction ? r.offsetWidth : r.offsetHeight) - p) * _ || 0,
                 E = Math.round((2 * _ - 1) * BOUNCING_OFFSET);
             (n.style.setProperty('--thumbOffset', `${m}px`),
-                null == (r = e.onUpdate) || r.call(e, { thumbSize: p, thumbOffset: m, newBouncingCorrection: E }));
+                null == (s = e.onUpdate) || s.call(e, { thumbSize: p, thumbOffset: m, newBouncingCorrection: E }));
             const f = 0 === m || e.isBoundThumb(m) ? 0 : E;
             return (
                 o.start({
@@ -8039,21 +8073,21 @@ function Thumb(e) {
         }, [c, i, l]),
         jsxRuntimeExports.jsxs(animated.div, {
             ref: assignRefs([t, e.thumbRef]),
-            className: cx(styles$v.base, styles$v[`base__${e.direction}`], e.className),
+            className: clsx(styles$t.base, styles$t[`base__${e.direction}`], e.className),
             style: a,
-            onMouseEnter: () => s(!0),
-            onMouseLeave: () => s(!1),
+            onMouseEnter: () => r(!0),
+            onMouseLeave: () => r(!1),
             children: [
-                jsxRuntimeExports.jsx('div', { className: styles$v.background }),
-                jsxRuntimeExports.jsx('div', { className: styles$v.border }),
-                jsxRuntimeExports.jsx('div', { className: styles$v.innerBorder }),
-                jsxRuntimeExports.jsx('div', { className: styles$v.icon }),
+                jsxRuntimeExports.jsx('div', { className: styles$t.background }),
+                jsxRuntimeExports.jsx('div', { className: styles$t.border }),
+                jsxRuntimeExports.jsx('div', { className: styles$t.innerBorder }),
+                jsxRuntimeExports.jsx('div', { className: styles$t.icon }),
             ],
         })
     );
 }
 const initBarDraggingState = { pending: !1, offset: 0 };
-function useBarDragging(e, t, r, s, n) {
+function useBarDragging(e, t, s, r, n) {
     const [a, o] = reactExports.useState(initBarDraggingState),
         u = useEvent$1(t),
         i = reactExports.useCallback(
@@ -8066,18 +8100,18 @@ function useBarDragging(e, t, r, s, n) {
         reactExports.useEffect(() => {
             if (!a.pending) return;
             const t = mouse$1.move(function ([t]) {
-                    const o = r.contentRef.current;
+                    const o = s.contentRef.current;
                     if (!o) return;
-                    const i = s.current,
+                    const i = r.current,
                         l = e.current;
                     if (!o || !i || !l) return;
                     const c = n(t, a, { parent: i, thumb: l }),
-                        d = c * (r.getContainerSize() ?? 0);
-                    (r.scrollPosition.start({
-                        scrollPosition: r.clampPosition(o, d),
+                        d = c * (s.getContainerSize() ?? 0);
+                    (s.scrollPosition.start({
+                        scrollPosition: s.clampPosition(o, d),
                         reset: !0,
                         immediate: !0,
-                        from: { scrollPosition: r.animationScroll.scrollPosition.get() },
+                        from: { scrollPosition: s.animationScroll.scrollPosition.get() },
                     }),
                         u({ type: 'dragging', dragElement: l, elementOffset: c, contentOffset: d }));
                 }),
@@ -8087,26 +8121,26 @@ function useBarDragging(e, t, r, s, n) {
             return () => {
                 (t(), o());
             };
-        }, [r, a.offset, a.pending, u, i, e, s, a, n]),
+        }, [s, a.offset, a.pending, u, i, e, r, a, n]),
         i
     );
 }
 const DISABLE_CLASS = 'disable',
     ACTIVE_CLASS = 'scroll-active';
 function useUpdateStatesBar({ api: e, baseRef: t }) {
-    const r = useSkipFrame(),
-        s = useEvent$1(function () {
-            const r = e.getWrapperSize(),
-                s = e.getContainerSize();
-            if (null === t.current || void 0 === s || void 0 === r) return;
-            1 === Math.min(1, r / s || 1)
+    const s = useSkipFrame(),
+        r = useEvent$1(function () {
+            const s = e.getWrapperSize(),
+                r = e.getContainerSize();
+            if (null === t.current || void 0 === r || void 0 === s) return;
+            1 === Math.min(1, s / r || 1)
                 ? t.current.classList.remove(ACTIVE_CLASS)
                 : t.current.classList.add(ACTIVE_CLASS);
         });
-    (reactExports.useEffect(() => r.run(s)),
+    (reactExports.useEffect(() => s.run(r)),
         reactExports.useEffect(() => {
             function t() {
-                r.run(s);
+                s.run(r);
             }
             return (
                 e.events.on('recalculateContent', t),
@@ -8115,23 +8149,23 @@ function useUpdateStatesBar({ api: e, baseRef: t }) {
                     (e.events.off('recalculateContent', t), e.events.off('resizeHandled', t));
                 }
             );
-        }, [e, r, s]));
+        }, [e, s, r]));
 }
 function getElementCoordinates(e, t) {
-    const r = e.getBoundingClientRect(),
-        s = t === scrollOrientations.horizontal ? r.x : r.y;
-    return { start: s, end: t === scrollOrientations.horizontal ? s + r.width : s + r.height };
+    const s = e.getBoundingClientRect(),
+        r = t === scrollOrientations.horizontal ? s.x : s.y;
+    return { start: r, end: t === scrollOrientations.horizontal ? r + s.width : r + s.height };
 }
-function getCoordinate(e, t, r, s, n, a) {
+function getCoordinate(e, t, s, r, n, a) {
     return {
         occurredEvent: a === scrollOrientations.horizontal ? e.screenX : e.screenY,
         bar: getElementCoordinates(t, a),
-        thumb: getElementCoordinates(r, a),
-        backButton: getElementCoordinates(s, a),
+        thumb: getElementCoordinates(s, a),
+        backButton: getElementCoordinates(r, a),
         forwardButton: getElementCoordinates(n, a),
     };
 }
-function useBarHandlers(e, t, r, s, n, a, o) {
+function useBarHandlers(e, t, s, r, n, a, o) {
     const u = useSounds(),
         i = n.stepTimeout || CLAMPED_ARROW_STEP_TIMEOUT_DEFAULT,
         [l, c] = useRepeatCallback$1((e) => n.applyStepTo(e), i, [n]);
@@ -8157,8 +8191,8 @@ function useBarHandlers(e, t, r, s, n, a, o) {
             (i) => {
                 const l = e.current,
                     c = t.current,
-                    p = r.current,
-                    m = s.current;
+                    p = s.current,
+                    m = r.current;
                 if (!(l && c && p && m && i.button === MOUSE_BUTTON_LEFT)) return;
                 const E = getCoordinate(i, l, c, p, m, o),
                     f = E.thumb.start <= E.occurredEvent && E.occurredEvent <= E.thumb.end,
@@ -8171,15 +8205,15 @@ function useBarHandlers(e, t, r, s, n, a, o) {
                 } else {
                     const e = E.occurredEvent - E.bar.start,
                         t = E.thumb.end - E.thumb.start,
-                        r = E.bar.end - E.bar.start,
-                        s = n.getContainerSize();
-                    if ('number' != typeof s || Number.isNaN(s)) return console.error('Incorrect container size');
-                    const a = ((e - t / 2) / r) * s;
+                        s = E.bar.end - E.bar.start,
+                        r = n.getContainerSize();
+                    if ('number' != typeof r || Number.isNaN(r)) return console.error('Incorrect container size');
+                    const a = ((e - t / 2) / s) * r;
                     n.applyScroll(a);
                 }
                 u.play('click', { target: 'Scroll:' + (f ? 'thumb' : b ? 'button' : ''), original: i });
             },
-            [e, t, r, s, u, o, a, d, _, n],
+            [e, t, s, r, u, o, a, d, _, n],
         ),
         m = reactExports.useCallback(
             (e) => {
@@ -8201,16 +8235,16 @@ function useBarHandlers(e, t, r, s, n, a, o) {
     );
 }
 const rail$1 = 'HorizontalBar_rail_37858d8f',
-    base$o = 'HorizontalBar_4df27ac3',
+    base$m = 'HorizontalBar_4df27ac3',
     track$1 = 'HorizontalBar_track_649dc296',
     rail__left = 'HorizontalBar_rail__left_1a906b4e',
     rail__right = 'HorizontalBar_rail__right_cd24364e',
     button__right = 'HorizontalBar_button__right_e8f0aa2d',
     button__left = 'HorizontalBar_button__left_da330e13',
     button$1 = 'HorizontalBar_button_cbabd91',
-    styles$u = {
+    styles$s = {
         rail: rail$1,
-        base: base$o,
+        base: base$m,
         track: track$1,
         rail__left: rail__left,
         rail__right: rail__right,
@@ -8222,8 +8256,8 @@ const rail$1 = 'HorizontalBar_rail_37858d8f',
     THUMB_STYLES$1 = { closed: { height: '3rem', top: '4rem' }, opened: { height: '11rem', top: '0rem' } },
     calculateThumbSize$1 = (e, t) => Math.max(remToPx$1(MIN_THUMB_SIZE), e.offsetWidth * t),
     Bar$1 = reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop$1 }) {
-        const r = reactExports.useRef(null),
-            s = reactExports.useRef(null),
+        const s = reactExports.useRef(null),
+            r = reactExports.useRef(null),
             n = reactExports.useRef(null),
             a = reactExports.useRef(null),
             o = reactExports.useRef(null),
@@ -8231,9 +8265,9 @@ const rail$1 = 'HorizontalBar_rail_37858d8f',
             i = reactExports.useRef(null),
             [l, c] = reactExports.useState(!1),
             { api: d } = useHorizontalScroll();
-        useUpdateStatesBar({ baseRef: r, api: d });
+        useUpdateStatesBar({ baseRef: s, api: d });
         const _ = useEvent$1(
-                (e, t, { parent: r }) => (e.screenX - t.offset - r.getBoundingClientRect().x) / r.offsetWidth,
+                (e, t, { parent: s }) => (e.screenX - t.offset - s.getBoundingClientRect().x) / s.offsetWidth,
             ),
             p = useEvent$1((e) => e - (a.current.offsetWidth - o.current.offsetWidth) >= -0.5),
             m = reactExports.useCallback(
@@ -8241,41 +8275,41 @@ const rail$1 = 'HorizontalBar_rail_37858d8f',
                 [t],
             ),
             E = useBarDragging(o, m, d, a, _),
-            f = useEvent$1(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: r }) => {
-                const s = a.current,
+            f = useEvent$1(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: s }) => {
+                const r = a.current,
                     n = u.current,
                     o = i.current;
-                if (!s || !n || !o) return;
+                if (!r || !n || !o) return;
                 const l = remToPx$1(THUMB_TO_RAIL_OFFSET$1);
-                ((n.style.width = `${t - l + r}px`), (o.style.width = s.offsetWidth - e - t - l - r + 'px'));
+                ((n.style.width = `${t - l + s}px`), (o.style.width = r.offsetWidth - e - t - l - s + 'px'));
             }),
             { handleMouseEnter: b, handleMouseDownTrack: x } = useBarHandlers(
-                r,
+                s,
                 o,
                 n,
-                s,
+                r,
                 d,
                 E,
                 scrollOrientations.horizontal,
             );
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$u.base, e.base),
-            ref: r,
+            className: clsx(styles$s.base, e.base),
+            ref: s,
             onWheel: d.handleMouseWheel,
             onMouseDown: x,
             onMouseEnter: b,
             children: [
                 jsxRuntimeExports.jsx('div', {
-                    ref: s,
-                    className: cx(styles$u.button, styles$u.button__left, e.leftButton),
+                    ref: r,
+                    className: clsx(styles$s.button, styles$s.button__left, e.leftButton),
                 }),
                 jsxRuntimeExports.jsxs('div', {
                     ref: a,
-                    className: cx(styles$u.track, e.track),
+                    className: clsx(styles$s.track, e.track),
                     children: [
                         jsxRuntimeExports.jsx('div', {
                             ref: u,
-                            className: cx(styles$u.rail, styles$u.rail__left, e.leftRail),
+                            className: clsx(styles$s.rail, styles$s.rail__left, e.leftRail),
                         }),
                         jsxRuntimeExports.jsx(Thumb, {
                             dragging: l,
@@ -8293,59 +8327,59 @@ const rail$1 = 'HorizontalBar_rail_37858d8f',
                         }),
                         jsxRuntimeExports.jsx('div', {
                             ref: i,
-                            className: cx(styles$u.rail, styles$u.rail__right, e.rightRail),
+                            className: clsx(styles$s.rail, styles$s.rail__right, e.rightRail),
                         }),
                     ],
                 }),
                 jsxRuntimeExports.jsx('div', {
                     ref: n,
-                    className: cx(styles$u.button, styles$u.button__right, e.rightButton),
+                    className: clsx(styles$s.button, styles$s.button__right, e.rightButton),
                 }),
             ],
         });
     }),
-    base$n = 'HorizontalScroll_5b201d2b',
-    wrapper$2 = 'HorizontalScroll_wrapper_abec8dee',
+    base$l = 'HorizontalScroll_5b201d2b',
+    wrapper$2 = 'HorizontalScroll_wrapper_2fb60496',
     defaultScrollArea = 'HorizontalScroll_defaultScrollArea_a5c0f45',
-    styles$t = { base: base$n, wrapper: wrapper$2, defaultScrollArea: defaultScrollArea },
+    styles$r = { base: base$l, wrapper: wrapper$2, defaultScrollArea: defaultScrollArea },
     DefaultScroll$1 = ({
         children: e,
         className: t,
-        barClassNames: r,
-        areaClassName: s,
+        barClassNames: s,
+        areaClassName: r,
         classNames: n,
         scrollClassName: a,
         onDrag: o,
     }) => {
         const { api: u } = useHorizontalScroll(),
             i = reactExports.useMemo(() => {
-                const e = r || {};
-                return { ...e, base: cx(styles$t.base, e.base) };
-            }, [r]);
+                const e = s || {};
+                return { ...e, base: clsx(styles$r.base, e.base) };
+            }, [s]);
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$t.defaultScroll, t),
+            className: clsx(styles$r.defaultScroll, t),
             onWheel: u.handleMouseWheel,
             children: [
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$t.defaultScrollArea, s),
+                    className: clsx(styles$r.defaultScrollArea, r),
                     children: jsxRuntimeExports.jsx(Area$1, { className: a, classNames: n, children: e }),
                 }),
                 jsxRuntimeExports.jsx(Bar$1, { onDrag: o, classNames: i }),
             ],
         });
     };
-function Area$1({ className: e, classNames: t, children: r }) {
-    const { api: s } = useHorizontalScroll();
+function Area$1({ className: e, classNames: t, children: s }) {
+    const { api: r } = useHorizontalScroll();
     return jsxRuntimeExports.jsx('div', {
-        className: cx(styles$t.base, e),
+        className: clsx(styles$r.base, e),
         children: jsxRuntimeExports.jsx('div', {
-            className: cx(styles$t.wrapper, null == t ? void 0 : t.wrapper),
-            onWheel: s.handleMouseWheel,
-            ref: s.wrapperRef,
+            className: clsx(styles$r.wrapper, null == t ? void 0 : t.wrapper),
+            onWheel: r.handleMouseWheel,
+            ref: r.wrapperRef,
             children: jsxRuntimeExports.jsx('div', {
-                className: cx(styles$t.content, null == t ? void 0 : t.content),
-                ref: s.contentRef,
-                children: r,
+                className: clsx(styles$r.content, null == t ? void 0 : t.content),
+                ref: r.contentRef,
+                children: s,
             }),
         }),
     });
@@ -8373,7 +8407,7 @@ function getScreenCoordinate(e, t) {
     }
 }
 const INITIAL_DRAGGING_STATE = { type: 'idle' };
-function useScrollByDragElements(e, t, r, s) {
+function useScrollByDragElements(e, t, s, r) {
     const {
             contentRef: n,
             wrapperRef: a,
@@ -8385,14 +8419,14 @@ function useScrollByDragElements(e, t, r, s) {
         } = e,
         [d, _] = reactExports.useState(INITIAL_DRAGGING_STATE),
         [p, m] = reactExports.useState(0),
-        { gapBeforeStart: E } = s ?? {},
+        { gapBeforeStart: E } = r ?? {},
         f = useSkipFrame(),
         b = useEvent$1(() => {
             f.run(() => {
                 const t = e.contentRef.current,
-                    r = e.getWrapperSize(),
-                    s = e.getContainerSize();
-                t && r && s && !c && (t.style.cursor = s <= r ? 'auto' : 'dragging' === d.type ? 'move' : 'grab');
+                    s = e.getWrapperSize(),
+                    r = e.getContainerSize();
+                t && s && r && !c && (t.style.cursor = r <= s ? 'auto' : 'dragging' === d.type ? 'move' : 'grab');
             });
         });
     return (
@@ -8405,39 +8439,39 @@ function useScrollByDragElements(e, t, r, s) {
         reactExports.useEffect(() => {
             if ('pending' !== d.type) return;
             const e = n.current,
-                r = a.current;
-            if (null === e || null === r) return;
-            const s = mouse$1.move(([e]) => {
-                    const r = getScreenCoordinate(e, t);
-                    (void 0 === E || Math.abs(p - r) > E) &&
-                        _({ type: 'dragging', positionFrom: r, previousScrollPosition: i.scrollPosition.get() });
+                s = a.current;
+            if (null === e || null === s) return;
+            const r = mouse$1.move(([e]) => {
+                    const s = getScreenCoordinate(e, t);
+                    (void 0 === E || Math.abs(p - s) > E) &&
+                        _({ type: 'dragging', positionFrom: s, previousScrollPosition: i.scrollPosition.get() });
                 }),
                 o = mouse$1.up(() => _({ type: 'scrollComplete' }));
             return () => {
-                (s(), o());
+                (r(), o());
             };
         }, [i.scrollPosition, n, p, t, d, E, a]),
         reactExports.useEffect(() => {
             if ('dragging' !== d.type) return;
-            const e = mouse$1.move(([e, s]) => {
+            const e = mouse$1.move(([e, r]) => {
                 const l = n.current,
                     c = a.current;
-                if ('outside' === s) return void _({ type: 'scrollComplete' });
+                if ('outside' === r) return void _({ type: 'scrollComplete' });
                 const p = getEventCoordinate(e, t);
-                if (null === l || null === c || ('inside' === s && p < 0)) return;
+                if (null === l || null === c || ('inside' === r && p < 0)) return;
                 const m = c.offsetLeft,
-                    E = 'inside' === s ? p : p - m,
+                    E = 'inside' === r ? p : p - m,
                     f = d.positionFrom - E,
                     b = d.previousScrollPosition + f;
-                o.start({ scrollPosition: u(l, b), from: { scrollPosition: i.scrollPosition.get() }, ...r });
+                o.start({ scrollPosition: u(l, b), from: { scrollPosition: i.scrollPosition.get() }, ...s });
             });
-            const s = mouse$1.up(function () {
+            const r = mouse$1.up(function () {
                 _({ type: 'scrollComplete' });
             });
             return () => {
-                (e(), s());
+                (e(), r());
             };
-        }, [i.scrollPosition, u, n, d, o, a, r, t]),
+        }, [i.scrollPosition, u, n, d, o, a, s, t]),
         reactExports.useEffect(() => {
             if ('scrollComplete' !== d.type) return;
             const e = () => {
@@ -8449,25 +8483,25 @@ function useScrollByDragElements(e, t, r, s) {
             if (c) return;
             const e = n.current;
             if (!e) return;
-            const r = (e) => {
+            const s = (e) => {
                 if (e.button !== mouseButtons.left) return;
-                const r = getScreenCoordinate(e, t);
-                (m(r),
+                const s = getScreenCoordinate(e, t);
+                (m(s),
                     _(
                         void 0 === E || E <= 0
-                            ? { type: 'dragging', positionFrom: r, previousScrollPosition: i.scrollPosition.get() }
+                            ? { type: 'dragging', positionFrom: s, previousScrollPosition: i.scrollPosition.get() }
                             : { type: 'pending' },
                     ));
             };
-            return (e.addEventListener('mousedown', r), () => e.removeEventListener('mousedown', r));
+            return (e.addEventListener('mousedown', s), () => e.removeEventListener('mousedown', s));
         }, [i.scrollPosition, n, c, t, E]),
         d
     );
 }
 function Base$7({ settings: e, children: t }) {
-    const r = useApi$1({ settings: e }),
-        s = reactExports.useMemo(() => ({ api: r }), [r]);
-    return jsxRuntimeExports.jsx(Context$2.Provider, { value: s, children: t });
+    const s = useApi$1({ settings: e }),
+        r = reactExports.useMemo(() => ({ api: s }), [s]);
+    return jsxRuntimeExports.jsx(Context$2.Provider, { value: r, children: t });
 }
 const Context$1 = reactExports.createContext(void 0);
 function useVerticalScroll() {
@@ -8486,16 +8520,16 @@ const DEFAULT_VERTICAL_API_CONFIG = {
     },
     useApi = createApiHook(DEFAULT_VERTICAL_API_CONFIG),
     rail = 'VerticalBar_rail_3d663c9',
-    base$m = 'VerticalBar_7187fa00',
+    base$k = 'VerticalBar_7187fa00',
     track = 'VerticalBar_track_ff482708',
     rail__top = 'VerticalBar_rail__top_ee531f43',
     rail__bottom = 'VerticalBar_rail__bottom_3eaa33b1',
     button__bottom = 'VerticalBar_button__bottom_6880f123',
     button__top = 'VerticalBar_button__top_b8383775',
     button = 'VerticalBar_button_7b0e4aca',
-    styles$s = {
+    styles$q = {
         rail: rail,
-        base: base$m,
+        base: base$k,
         track: track,
         rail__top: rail__top,
         rail__bottom: rail__bottom,
@@ -8507,8 +8541,8 @@ const DEFAULT_VERTICAL_API_CONFIG = {
     THUMB_STYLES = { closed: { width: '3rem', left: '3rem' }, opened: { width: '9rem', left: '0rem' } },
     calculateThumbSize = (e, t) => Math.max(remToPx$1(MIN_THUMB_SIZE), e.offsetHeight * t),
     Bar = reactExports.memo(function ({ classNames: e = {}, onDrag: t = noop$1 }) {
-        const r = reactExports.useRef(null),
-            s = reactExports.useRef(null),
+        const s = reactExports.useRef(null),
+            r = reactExports.useRef(null),
             n = reactExports.useRef(null),
             a = reactExports.useRef(null),
             o = reactExports.useRef(null),
@@ -8516,51 +8550,51 @@ const DEFAULT_VERTICAL_API_CONFIG = {
             i = reactExports.useRef(null),
             [l, c] = reactExports.useState(!1),
             { api: d } = useVerticalScroll();
-        useUpdateStatesBar({ baseRef: r, api: d });
+        useUpdateStatesBar({ baseRef: s, api: d });
         const _ = useEvent$1((e) => e - (a.current.offsetHeight - o.current.offsetHeight) >= -0.5),
             p = useEvent$1(
-                (e, t, { parent: r }) => (e.screenY - t.offset - r.getBoundingClientRect().y) / r.offsetHeight,
+                (e, t, { parent: s }) => (e.screenY - t.offset - s.getBoundingClientRect().y) / s.offsetHeight,
             ),
             m = reactExports.useCallback(
                 (e) => ('dragStart' === e.type ? c(!0) : 'dragEnd' === e.type && c(!1), t(e)),
                 [t],
             ),
             E = useBarDragging(o, m, d, a, p),
-            f = useEvent$1(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: r }) => {
-                const s = a.current,
+            f = useEvent$1(({ thumbSize: e, thumbOffset: t, newBouncingCorrection: s }) => {
+                const r = a.current,
                     n = u.current,
                     o = i.current;
-                if (!s || !n || !o) return;
+                if (!r || !n || !o) return;
                 const l = remToPx$1(THUMB_TO_RAIL_OFFSET);
-                ((n.style.height = `${t - l + r}px`), (o.style.height = s.offsetHeight - e - t - l - r + 'px'));
+                ((n.style.height = `${t - l + s}px`), (o.style.height = r.offsetHeight - e - t - l - s + 'px'));
             }),
             { handleMouseEnter: b, handleMouseDownTrack: x } = useBarHandlers(
-                r,
-                o,
                 s,
+                o,
+                r,
                 n,
                 d,
                 E,
                 scrollOrientations.vertical,
             );
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$s.base, e.base),
-            ref: r,
+            className: clsx(styles$q.base, e.base),
+            ref: s,
             onWheel: d.handleMouseWheel,
             onMouseDown: x,
             onMouseEnter: b,
             children: [
                 jsxRuntimeExports.jsx('div', {
-                    ref: s,
-                    className: cx(styles$s.button, styles$s.button__top, e.topButton),
+                    ref: r,
+                    className: clsx(styles$q.button, styles$q.button__top, e.topButton),
                 }),
                 jsxRuntimeExports.jsxs('div', {
                     ref: a,
-                    className: cx(styles$s.track, e.track),
+                    className: clsx(styles$q.track, e.track),
                     children: [
                         jsxRuntimeExports.jsx('div', {
                             ref: u,
-                            className: cx(styles$s.rail, styles$s.rail__top, e.topRail),
+                            className: clsx(styles$q.rail, styles$q.rail__top, e.topRail),
                         }),
                         jsxRuntimeExports.jsx(Thumb, {
                             dragging: l,
@@ -8578,13 +8612,13 @@ const DEFAULT_VERTICAL_API_CONFIG = {
                         }),
                         jsxRuntimeExports.jsx('div', {
                             ref: i,
-                            className: cx(styles$s.rail, styles$s.rail__bottom, e.bottomRail),
+                            className: clsx(styles$q.rail, styles$q.rail__bottom, e.bottomRail),
                         }),
                     ],
                 }),
                 jsxRuntimeExports.jsx('div', {
                     ref: n,
-                    className: cx(styles$s.button, styles$s.button__bottom, e.bottomButton),
+                    className: clsx(styles$q.button, styles$q.button__bottom, e.bottomButton),
                 }),
             ],
         });
@@ -8593,7 +8627,7 @@ const DEFAULT_VERTICAL_API_CONFIG = {
     getMaskDirection = (e, t) =>
         e || t ? (e ? (t ? maskDirections.none : maskDirections.bottom) : maskDirections.top) : maskDirections.both,
     root$c = 'VerticalScroll_root_29606297',
-    content$3 = 'VerticalScroll_content_62cb6120',
+    content$2 = 'VerticalScroll_content_f30246e6',
     content__top = 'VerticalScroll_content__top_b27098a4',
     content__bottom = 'VerticalScroll_content__bottom_d6604290',
     content__both = 'VerticalScroll_content__both_8d905712',
@@ -8608,9 +8642,9 @@ const DEFAULT_VERTICAL_API_CONFIG = {
     windowIn$c = 'VerticalScroll_windowIn_29606297',
     fadeOut$c = 'VerticalScroll_fadeOut_29606297',
     fadeIn$c = 'VerticalScroll_fadeIn_29606297',
-    styles$r = {
+    styles$p = {
         root: root$c,
-        content: content$3,
+        content: content$2,
         content__top: content__top,
         content__bottom: content__bottom,
         content__both: content__both,
@@ -8629,66 +8663,66 @@ const DEFAULT_VERTICAL_API_CONFIG = {
     DefaultScroll = ({
         children: e,
         className: t,
-        barClassNames: r,
-        areaClassName: s,
+        barClassNames: s,
+        areaClassName: r,
         scrollClassName: n,
         scrollClassNames: a,
         onDrag: o,
     }) => {
         const { api: u } = useVerticalScroll(),
             i = reactExports.useMemo(() => {
-                const e = r || {};
-                return { ...e, base: cx(styles$r.base, e.base) };
-            }, [r]);
+                const e = s || {};
+                return { ...e, base: clsx(styles$p.base, e.base) };
+            }, [s]);
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$r.defaultScroll, t),
+            className: clsx(styles$p.defaultScroll, t),
             onWheel: u.handleMouseWheel,
             children: [
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$r.area, s),
+                    className: clsx(styles$p.area, r),
                     children: jsxRuntimeExports.jsx(Area, { className: n, classNames: a, children: e }),
                 }),
                 jsxRuntimeExports.jsx(Bar, { onDrag: o, classNames: i }),
             ],
         });
     },
-    Area = ({ className: e, classNames: t, children: r, ...s }) => {
+    Area = ({ className: e, classNames: t, children: s, ...r }) => {
         const { api: n } = useVerticalScroll();
         return (
             reactExports.useEffect(() =>
                 createLayoutReadyInEffect$1(() => createLayoutReadyInEffect$1(n.recalculateContent)),
             ),
             jsxRuntimeExports.jsx('div', {
-                className: cx(styles$r.base, null == t ? void 0 : t.wrapper, e),
+                className: clsx(styles$p.base, null == t ? void 0 : t.wrapper, e),
                 ref: n.wrapperRef,
                 onWheel: n.handleMouseWheel,
                 children: jsxRuntimeExports.jsx('div', {
-                    ...s,
-                    className: cx(styles$r.content, null == t ? void 0 : t.content),
+                    ...r,
+                    className: clsx(styles$p.content, null == t ? void 0 : t.content),
                     ref: n.contentRef,
-                    children: r,
+                    children: s,
                 }),
             })
         );
     };
 function MaskArea({ classNames: e, ...t }) {
-    const { api: r } = useVerticalScroll(),
-        [s, n] = useScrollBounding(r);
+    const { api: s } = useVerticalScroll(),
+        [r, n] = useScrollBounding(s);
     return jsxRuntimeExports.jsx(Area, {
         ...t,
         classNames: {
             ...e,
-            content: cx(styles$r[`content__${getMaskDirection(s, n)}`], null == e ? void 0 : e.content),
+            content: clsx(styles$p[`content__${getMaskDirection(r, n)}`], null == e ? void 0 : e.content),
         },
     });
 }
 function Base$6({ children: e }) {
     const t = useApi(),
-        r = reactExports.useMemo(() => ({ api: t }), [t]);
-    return jsxRuntimeExports.jsx(Context$1.Provider, { value: r, children: e });
+        s = reactExports.useMemo(() => ({ api: t }), [t]);
+    return jsxRuntimeExports.jsx(Context$1.Provider, { value: s, children: e });
 }
-function checkOnBorder(e, [t, r]) {
-    return Math.floor(e) === t || Math.ceil(e) === r;
+function checkOnBorder(e, [t, s]) {
+    return Math.floor(e) === t || Math.ceil(e) === s;
 }
 Area.Default = DefaultScroll;
 const DEFAULT_NAME_KEYFRAME = 'Point',
@@ -8696,8 +8730,8 @@ const DEFAULT_NAME_KEYFRAME = 'Point',
 function createLoop(e) {
     let t = 0;
     return [
-        function r() {
-            (e(), (t = requestAnimationFrame(r)));
+        function s() {
+            (e(), (t = requestAnimationFrame(s)));
         },
         function () {
             cancelAnimationFrame(t);
@@ -8708,8 +8742,8 @@ const VideoForwarded = reactExports.forwardRef(function (
         {
             src: e,
             className: t,
-            autoplay: r = !1,
-            style: s,
+            autoplay: s = !1,
+            style: r,
             loop: n = !1,
             isPrebufferKeyframes: a,
             keyframesNameConfig: o,
@@ -8723,19 +8757,19 @@ const VideoForwarded = reactExports.forwardRef(function (
         return (
             useMount$1(() => {
                 let e = !1;
-                return events$2.onDisplayChanged((t, r) => {
-                    const s = d.current;
-                    s &&
-                        (r === displayStatus$1.hidden
-                            ? ((e = s.paused), s.pause())
-                            : e || r !== displayStatus$1.shown || s.play());
+                return events$2.onDisplayChanged((t, s) => {
+                    const r = d.current;
+                    r &&
+                        (s === displayStatus$1.hidden
+                            ? ((e = r.paused), r.pause())
+                            : e || s !== displayStatus$1.shown || r.play());
                 });
             }),
             useMount$1(() => {
                 let e = !1;
-                return onMinimize((t) => {
-                    const r = d.current;
-                    r && (t ? ((e = r.paused), r.pause()) : e || r.play());
+                return onMinimize$1((t) => {
+                    const s = d.current;
+                    s && (t ? ((e = s.paused), s.pause()) : e || s.play());
                 });
             }),
             reactExports.useEffect(
@@ -8758,56 +8792,56 @@ const VideoForwarded = reactExports.forwardRef(function (
                     const e = { changeTimeHandlers: [], changeKeyframeHandlers: [], changeTimeLoop: noop$1 },
                         t = () => {
                             let t = 0;
-                            const [r, s] = createLoop(() => {
+                            const [s, r] = createLoop(() => {
                                 if (d.current) {
-                                    const { currentTime: r, duration: s } = d.current;
+                                    const { currentTime: s, duration: r } = d.current;
                                     if (
-                                        (t !== r &&
-                                            (e.changeTimeHandlers.forEach((e) => e({ currentTime: r, duration: s })),
-                                            (t = r)),
+                                        (t !== s &&
+                                            (e.changeTimeHandlers.forEach((e) => e({ currentTime: s, duration: r })),
+                                            (t = s)),
                                         d.current.paused || !c || !a)
                                     )
                                         return;
                                     const n = d.current.cohGetKeyframeTimestamps
                                         ? d.current.cohGetKeyframeTimestamps()
                                         : [];
-                                    n.forEach((t, s) => {
-                                        void 0 !== n[s] &&
-                                            r > n[s] - THRESHOLD &&
-                                            r < n[s] &&
+                                    n.forEach((t, r) => {
+                                        void 0 !== n[r] &&
+                                            s > n[r] - THRESHOLD &&
+                                            s < n[r] &&
                                             e.changeKeyframeHandlers.forEach((e) => {
-                                                const r = Object.keys(o ?? {})[s];
+                                                const s = Object.keys(o ?? {})[r];
                                                 return e({
                                                     time: t,
-                                                    name: `${o ? r : `${DEFAULT_NAME_KEYFRAME}_${s}`}`,
+                                                    name: `${o ? s : `${DEFAULT_NAME_KEYFRAME}_${r}`}`,
                                                 });
                                             });
                                     });
                                 }
                             });
-                            return (r(), s);
+                            return (s(), r);
                         };
                     e.changeTimeLoop = t();
-                    const r = (t) => (
+                    const s = (t) => (
                             e.changeTimeHandlers.push(t),
                             () => {
-                                const { changeTimeHandlers: r } = e,
-                                    s = r.indexOf(t);
-                                s < 0
+                                const { changeTimeHandlers: s } = e,
+                                    r = s.indexOf(t);
+                                r < 0
                                     ? console.warn("Can't unsubscribe changeTimeHandler, this reference was not found")
-                                    : r.splice(s, 1);
+                                    : s.splice(r, 1);
                             }
                         ),
-                        s = (t) => (
+                        r = (t) => (
                             e.changeKeyframeHandlers.push(t),
                             () => {
-                                const { changeKeyframeHandlers: r } = e,
-                                    s = r.indexOf(t);
-                                s < 0
+                                const { changeKeyframeHandlers: s } = e,
+                                    r = s.indexOf(t);
+                                r < 0
                                     ? console.warn(
                                           "Can't unsubscribe changeKeyframeHandlers, this reference was not found",
                                       )
-                                    : r.splice(s, 1);
+                                    : s.splice(r, 1);
                             }
                         ),
                         n = () => {
@@ -8851,22 +8885,22 @@ const VideoForwarded = reactExports.forwardRef(function (
                                 null == (t = e.changeTimeLoop) || t.call(e));
                         },
                         x = (e, t) => {
-                            var r;
+                            var s;
                             return (
-                                null == (r = d.current) || r.addEventListener(e, t),
+                                null == (s = d.current) || s.addEventListener(e, t),
                                 () => {
-                                    var r;
-                                    return null == (r = d.current) ? void 0 : r.removeEventListener(e, t);
+                                    var s;
+                                    return null == (s = d.current) ? void 0 : s.removeEventListener(e, t);
                                 }
                             );
                         },
                         g = (e, t) => {
-                            var r;
+                            var s;
                             return (
-                                null == (r = d.current) || r.removeEventListener(e, t),
+                                null == (s = d.current) || s.removeEventListener(e, t),
                                 () => {
-                                    var r;
-                                    return null == (r = d.current) ? void 0 : r.removeEventListener(e, t);
+                                    var s;
+                                    return null == (s = d.current) ? void 0 : s.removeEventListener(e, t);
                                 }
                             );
                         };
@@ -8885,8 +8919,8 @@ const VideoForwarded = reactExports.forwardRef(function (
                             goToAndStop: f,
                             setCurrentTime: i,
                             domRef: d.current,
-                            onChangeTime: r,
-                            onKeyframes: s,
+                            onChangeTime: s,
+                            onKeyframes: r,
                         }),
                         () => {
                             (b(), (c.current = null));
@@ -8895,13 +8929,13 @@ const VideoForwarded = reactExports.forwardRef(function (
                 }
             }, [o, c, a]),
             reactExports.useEffect(() => {
-                d.current && r && d.current.play();
-            }, [r, n]),
-            useUnmount(() => {
+                d.current && s && d.current.play();
+            }, [s, n]),
+            useUnmount$1(() => {
                 var e;
                 null == (e = d.current) || e.pause();
             }),
-            jsxRuntimeExports.jsx('video', { src: e, className: t, style: s, loop: n, ref: d, onClick: u, ...i })
+            jsxRuntimeExports.jsx('video', { src: e, className: t, style: r, loop: n, ref: d, onClick: u, ...i })
         );
     }),
     Video = reactExports.memo(VideoForwarded),
@@ -8963,12 +8997,12 @@ const RUDY_PL = 51345,
     vehicleState = { UNSUITABLE_TO_QUEUE: 'unsuitableToQueue' },
     formatters = Object.fromEntries(Object.entries(defaultFormatters).map(([e]) => [e, (e) => e]));
 function renderString(e, t = {}) {
-    const r = parse(e, defaultBrackets);
-    return String(render(r, formatters, t));
+    const s = parse(e, defaultBrackets);
+    return String(render(s, formatters, t));
 }
 function renderResolvedString(e, t = {}) {
-    const r = resources.resolve('strings').readOrEmpty(e);
-    return 0 === r.length ? r : renderString(r, t);
+    const s = resources.resolve('strings').readOrEmpty(e);
+    return 0 === s.length ? s : renderString(s, t);
 }
 const contextInstance = reactExports.createContext(null),
     positions = { left: 'left', right: 'right', top: 'top', bottom: 'bottom' };
@@ -8988,18 +9022,18 @@ function usePopover() {
 }
 const initialState = { opened: !1 };
 function usePopoverInstance(e) {
-    const [t, r] = reactExports.useState(initialState),
-        s = reactExports.useMemo(() => {
+    const [t, s] = reactExports.useState(initialState),
+        r = reactExports.useMemo(() => {
             const t = observable.box(),
-                s = { onBeforeOpen: new Set(), onBeforeClose: new Set() },
+                r = { onBeforeOpen: new Set(), onBeforeClose: new Set() },
                 n = { bounding: observable.box(), position: observable.box() };
             function a(e) {
-                r((t) => {
-                    const r = e(t);
+                s((t) => {
+                    const s = e(t);
                     return (
-                        t.opened === r.opened ||
-                            (r.opened ? s.onBeforeOpen.forEach((e) => e()) : s.onBeforeClose.forEach((e) => e())),
-                        r
+                        t.opened === s.opened ||
+                            (s.opened ? r.onBeforeOpen.forEach((e) => e()) : r.onBeforeClose.forEach((e) => e())),
+                        s
                     );
                 });
             }
@@ -9009,8 +9043,8 @@ function usePopoverInstance(e) {
                 close: () => a((e) => ({ ...e, opened: !1 })),
                 toggle: () => a((e) => ({ ...e, opened: !e.opened })),
                 subscribe: {
-                    onBeforeOpen: (e) => (s.onBeforeOpen.add(e), () => s.onBeforeOpen.delete(e)),
-                    onBeforeClose: (e) => (s.onBeforeClose.add(e), () => s.onBeforeClose.delete(e)),
+                    onBeforeOpen: (e) => (r.onBeforeOpen.add(e), () => r.onBeforeOpen.delete(e)),
+                    onBeforeClose: (e) => (r.onBeforeClose.add(e), () => r.onBeforeClose.delete(e)),
                 },
                 portal: {
                     bounding: n.bounding,
@@ -9021,7 +9055,7 @@ function usePopoverInstance(e) {
                 trigger: { bounding: t, setBounding: takeAction(t) },
             };
         }, [e]);
-    return reactExports.useMemo(() => ({ ...s, ...t }), [s, t]);
+    return reactExports.useMemo(() => ({ ...r, ...t }), [r, t]);
 }
 const border = 'Popover_border_d0a76717',
     title = 'Popover_title_e4a0437a',
@@ -9031,7 +9065,7 @@ const border = 'Popover_border_d0a76717',
     divider = 'Popover_divider_46fe6f15',
     decoration = 'Popover_decoration_134219d5',
     close = 'Popover_close_ad4a9c7b',
-    styles$q = {
+    styles$o = {
         border: border,
         title: title,
         subtitle: subtitle,
@@ -9041,7 +9075,7 @@ const border = 'Popover_border_d0a76717',
         decoration: decoration,
         close: close,
     },
-    Close = reactExports.forwardRef(({ className: e, children: t, ...r }, s) => {
+    Close = reactExports.forwardRef(({ className: e, children: t, ...s }, r) => {
         const n = usePopoverOptional(),
             a = useSounds(),
             o = useUpscale('ui_kit.close_button.icon_small', 'ui_kit.close_button.icon_medium');
@@ -9054,20 +9088,20 @@ const border = 'Popover_border_d0a76717',
                 [n],
             ),
             jsxRuntimeExports.jsx('div', {
-                ...r,
+                ...s,
                 onClick: function (e) {
                     var t;
-                    (null == (t = r.onClick) || t.call(r, e),
+                    (null == (t = s.onClick) || t.call(s, e),
                         a.play('close', { target: 'react-popover:close', original: e }),
                         null == n || n.close());
                 },
                 onMouseEnter: function (e) {
                     var t;
-                    (null == (t = r.onMouseEnter) || t.call(r, e),
+                    (null == (t = s.onMouseEnter) || t.call(s, e),
                         a.play('mouse-enter', { target: 'react-popover:close', original: e }));
                 },
-                ref: s,
-                className: cx(styles$q.close, e),
+                ref: r,
+                className: clsx(styles$o.close, e),
                 children: t ?? jsxRuntimeExports.jsx(Image, { path: o, width: 24, height: 24 }),
             })
         );
@@ -9083,8 +9117,8 @@ const border = 'Popover_border_d0a76717',
 function Portal({
     children: e,
     target: t,
-    pivot: r = 0,
-    position: s = 'top',
+    pivot: s = 0,
+    position: r = 'top',
     paddingsRem: n = {},
     lazy: a = !1,
     closeByEscape: o = !0,
@@ -9115,15 +9149,15 @@ function Portal({
         const a = watchResizes([t, e, document.body], ([t, n, a]) => {
             if (!c.opened) return void p(void 0);
             if (!1 === u(c, { callerBounding: t, containerBounding: n, bodyBounding: a })) return;
-            const o = getUpdatedPosition(s, m, t, n, a);
+            const o = getUpdatedPosition(r, m, t, n, a);
             (p(o),
-                updatePosition(r, E, o, m, t, n, a, e),
+                updatePosition(s, E, o, m, t, n, a, e),
                 runInAction(() => {
                     (c.trigger.setBounding(t), c.portal.setBounding(n), c.portal.setPosition(o));
                 }));
         });
         return (a.start(), a.stop);
-    }, [c, u, m, r, E, c.id, c.portal, c.trigger, s, c.opened]);
+    }, [c, u, m, s, E, c.id, c.portal, c.trigger, r, c.opened]);
     const b = reactExports.useCallback(() => {
         const e = d.current;
         e &&
@@ -9141,29 +9175,29 @@ function Portal({
             const e = d.current;
             if (!e) return;
             const t = e;
-            function r(e) {
-                const r = e.target;
-                if (!(r instanceof HTMLElement)) return !1;
-                const s = `[data-popover-trigger-id="${c.id}"]`,
+            function s(e) {
+                const s = e.target;
+                if (!(s instanceof HTMLElement)) return !1;
+                const r = `[data-popover-trigger-id="${c.id}"]`,
                     n = `[data-popover-outside-click-whitelist-id="${c.id}"]`;
-                return !(t === r || t.contains(r) || r.matches(s) || r.matches(n) || r.closest(s) || r.closest(n));
+                return !(t === s || t.contains(s) || s.matches(r) || s.matches(n) || s.closest(r) || s.closest(n));
             }
             return new DisposeBuilder()
                 .add(
                     addEventListener(document, 'click', (e) => {
-                        r(e) && c.close();
+                        s(e) && c.close();
                     }),
                 )
                 .add(
                     mouse$1.down(([e, t]) => {
                         if ('outside' === t) return c.close();
-                        const s = e.button;
-                        (s !== mouseButtons.right && s !== mouseButtons.wheel) || (r(e) && c.close());
+                        const r = e.button;
+                        (r !== mouseButtons.right && r !== mouseButtons.wheel) || (s(e) && c.close());
                     }),
                 ).dispose;
         }, [c]));
     const [x, g] = useSpring(() => ({
-        from: { opacity: 0, transform: animationTransitions[s] },
+        from: { opacity: 0, transform: animationTransitions[r] },
         config: { easing: easings.easeInOutCubic, duration: OPEN_ANIMATION_DURATION },
     }));
     return (
@@ -9178,7 +9212,7 @@ function Portal({
         !c.opened && a
             ? null
             : jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {
-                  children: ReactDOM.createPortal(
+                  children: ReactDOM$1.createPortal(
                       jsxRuntimeExports.jsx(animated.div, {
                           ...l,
                           ref: d,
@@ -9197,38 +9231,38 @@ function Portal({
               })
     );
 }
-function getUpdatedPosition(e, t, r, s, n) {
-    return ('top' === e && r.top - s.height - t.top < 0) ||
-        ('bottom' === e && r.bottom + s.height + t.bottom > n.height) ||
-        ('left' === e && r.left - s.width - t.left < 0) ||
-        ('right' === e && r.right + s.width + t.right > n.width)
+function getUpdatedPosition(e, t, s, r, n) {
+    return ('top' === e && s.top - r.height - t.top < 0) ||
+        ('bottom' === e && s.bottom + r.height + t.bottom > n.height) ||
+        ('left' === e && s.left - r.width - t.left < 0) ||
+        ('right' === e && s.right + r.width + t.right > n.width)
         ? oppositePositions[e]
         : e;
 }
-function applyTransform(e, t, r, s, n) {
-    ((e = clamp$1(r.left, n.width - s.offsetWidth - r.right, e)),
-        (t = clamp$1(r.top, n.height - s.offsetHeight - r.bottom, t)),
-        (s.style.transform = `translate(${e}px, ${t}px)`));
+function applyTransform(e, t, s, r, n) {
+    ((e = clamp$1(s.left, n.width - r.offsetWidth - s.right, e)),
+        (t = clamp$1(s.top, n.height - r.offsetHeight - s.bottom, t)),
+        (r.style.transform = `translate(${e}px, ${t}px)`));
 }
-function updatePosition(e, t, r, s, n, a, o, u) {
-    if ('top' === r) {
-        const r = (a.width - n.width) * e;
-        applyTransform(n.left - r, n.top - a.height - t, s, u, o);
-    } else if ('bottom' === r) {
-        const r = (a.width - n.width) * e;
-        applyTransform(n.left - r, n.bottom + t, s, u, o);
-    } else if ('left' === r) {
-        const r = n.left - a.width - t,
+function updatePosition(e, t, s, r, n, a, o, u) {
+    if ('top' === s) {
+        const s = (a.width - n.width) * e;
+        applyTransform(n.left - s, n.top - a.height - t, r, u, o);
+    } else if ('bottom' === s) {
+        const s = (a.width - n.width) * e;
+        applyTransform(n.left - s, n.bottom + t, r, u, o);
+    } else if ('left' === s) {
+        const s = n.left - a.width - t,
             i = (a.height - n.height) * e;
-        applyTransform(r, n.top - i, s, u, o);
-    } else if ('right' === r) {
-        const r = n.right + t,
+        applyTransform(s, n.top - i, r, u, o);
+    } else if ('right' === s) {
+        const s = n.right + t,
             i = (a.height - n.height) * e;
-        applyTransform(r, n.top - i, s, u, o);
+        applyTransform(s, n.top - i, r, u, o);
     }
 }
 const root$b = 'PopoverTip_root_a48d88bb',
-    base$l = 'PopoverTip_163a336f',
+    base$j = 'PopoverTip_163a336f',
     arrow = 'PopoverTip_arrow_44c7d6a5',
     glow = 'PopoverTip_glow_da3f9be9',
     fadeInWithScale$b = 'PopoverTip_fadeInWithScale_a48d88bb',
@@ -9239,9 +9273,9 @@ const root$b = 'PopoverTip_root_a48d88bb',
     windowIn$b = 'PopoverTip_windowIn_a48d88bb',
     fadeOut$b = 'PopoverTip_fadeOut_a48d88bb',
     fadeIn$b = 'PopoverTip_fadeIn_a48d88bb',
-    styles$p = {
+    styles$n = {
         root: root$b,
-        base: base$l,
+        base: base$j,
         'base__flip-left': 'PopoverTip_base__flip-left_3cc0dadc',
         'base__flip-right': 'PopoverTip_base__flip-right_6a5605b6',
         'base__flip-top': 'PopoverTip_base__flip-top_6bcc69e1',
@@ -9265,39 +9299,39 @@ const root$b = 'PopoverTip_root_a48d88bb',
     horizontals = [positions.left, positions.right],
     rotations = { top: 180, bottom: 0, left: 90, right: -90 },
     Tip = reactExports.forwardRef(({ ...e }, t) => {
-        const r = reactExports.useRef(null),
-            s = usePopoverOptional(),
+        const s = reactExports.useRef(null),
+            r = usePopoverOptional(),
             [n, a] = reactExports.useState(e.size),
-            [o, u] = reactExports.useState(e.position || (s && oppositePositions[s.portal.position.get()]) || 'bottom'),
+            [o, u] = reactExports.useState(e.position || (r && oppositePositions[r.portal.position.get()]) || 'bottom'),
             [i, l] = reactExports.useState(e.offset),
-            c = useEvent$1((t, r, s) => {
+            c = useEvent$1((t, s, r) => {
                 let n = o;
-                if ((e.position || ((n = oppositePositions[s]), u(n)), !e.size)) {
+                if ((e.position || ((n = oppositePositions[r]), u(n)), !e.size)) {
                     const e = isVerticalPosition(n)
-                        ? `${Math.min(t.width, r.width)}px`
-                        : `${Math.min(t.height, r.height)}px`;
+                        ? `${Math.min(t.width, s.width)}px`
+                        : `${Math.min(t.height, s.height)}px`;
                     a(e);
                 }
                 if (!e.offset) {
                     const e = isVerticalPosition(n)
-                        ? `${Math.max(0, t.left - r.left)}px`
-                        : `${Math.max(0, t.top - r.top)}px`;
+                        ? `${Math.max(0, t.left - s.left)}px`
+                        : `${Math.max(0, t.top - s.top)}px`;
                     l(e);
                 }
             });
         return (
             reactExports.useEffect(() => {
-                if (r.current && s)
+                if (s.current && r)
                     return autorun(() => {
-                        const e = s.trigger.bounding.get(),
-                            t = s.portal.bounding.get(),
-                            r = s.portal.position.get();
-                        e && r && t && c(e, t, r);
+                        const e = r.trigger.bounding.get(),
+                            t = r.portal.bounding.get(),
+                            s = r.portal.position.get();
+                        e && s && t && c(e, t, s);
                     });
-            }, [s, c]),
+            }, [r, c]),
             jsxRuntimeExports.jsxs('div', {
                 ...e,
-                ref: assignRefs([t, r]),
+                ref: assignRefs([t, s]),
                 style: {
                     width: (verticals.includes(o) && n) || '1rem',
                     height: (horizontals.includes(o) && n) || '1rem',
@@ -9307,15 +9341,15 @@ const root$b = 'PopoverTip_root_a48d88bb',
                     right: 'right' === o ? '0' : 'auto',
                     ...e.style,
                 },
-                className: cx(styles$p.base, e.flipped && styles$p[`base__flipped-${o}`], e.className),
+                className: clsx(styles$n.base, e.flipped && styles$n[`base__flipped-${o}`], e.className),
                 children: [
                     jsxRuntimeExports.jsx('div', {
-                        className: cx(styles$p.arrow, styles$p[`arrow__position-${o}`]),
+                        className: clsx(styles$n.arrow, styles$n[`arrow__position-${o}`]),
                         style: { transform: `translate(-50%, -50%) rotate(${rotations[o]}deg)` },
                     }),
                     !1 === e.noGlow &&
                         jsxRuntimeExports.jsx('div', {
-                            className: styles$p.glow,
+                            className: styles$n.glow,
                             style: { transform: `translate(-50%, -50%) rotate(${rotations[o]}deg)` },
                         }),
                 ],
@@ -9327,19 +9361,19 @@ function Trigger({ children: e }) {
     return e({ onClick: t.toggle, 'data-popover-trigger-id': t.id }, t);
 }
 Tip.positions = positions;
-const Title = defineStyledComponent('Title', styles$q.title),
-    Subtitle = defineStyledComponent('Subtitle', styles$q.subtitle),
-    Header = defineStyledComponent('Header', styles$q.header),
-    Divider = defineStyledComponent('Divider', styles$q.divider),
-    Body = defineStyledComponent('Body', styles$q.body),
-    Decoration = defineStyledComponent('Decoration', styles$q.decoration),
+const Title = defineStyledComponent('Title', styles$o.title),
+    Subtitle = defineStyledComponent('Subtitle', styles$o.subtitle),
+    Header = defineStyledComponent('Header', styles$o.header),
+    Divider = defineStyledComponent('Divider', styles$o.divider),
+    Body = defineStyledComponent('Body', styles$o.body),
+    Decoration = defineStyledComponent('Decoration', styles$o.decoration),
     Display = reactExports.forwardRef((e, t) => {
-        const r = usePopoverOptional();
+        const s = usePopoverOptional();
         return jsxRuntimeExports.jsxs(Decoration, {
             ...e,
             ref: t,
-            'data-popover-display-id': null == r ? void 0 : r.id,
-            children: [jsxRuntimeExports.jsx('div', { className: styles$q.border }), e.children],
+            'data-popover-display-id': null == s ? void 0 : s.id,
+            children: [jsxRuntimeExports.jsx('div', { className: styles$o.border }), e.children],
         });
     });
 function Popover(e) {
@@ -9360,18 +9394,15 @@ function Popover(e) {
     (Popover.use = usePopover),
     (Popover.Portal = Portal),
     (Popover.Trigger = Trigger));
-const base$k = 'TruncateText_dcb41d92',
-    styles$o = { base: base$k },
-    TruncatedText = reactExports.forwardRef(function ({ text: e, tooltipParams: t, className: r, ...s }, n) {
+const base$i = 'TruncateText_dcb41d92',
+    styles$m = { base: base$i },
+    TruncatedText = reactExports.forwardRef(function ({ text: e, tooltipParams: t, className: s, ...r }, n) {
         const a = useSimpleTooltip({ header: null == t ? void 0 : t.header, body: (null == t ? void 0 : t.body) || e }),
             o = reactExports.useRef(null),
-            [u, i] = reactExports.useState(!1);
-        const l = reactExports.useCallback(() => {
-            if (o.current) {
-                const { scrollWidth: e, offsetWidth: t } = o.current;
-                i(e > t);
-            }
-        }, []);
+            [u, i] = reactExports.useState(!1),
+            l = reactExports.useCallback(() => {
+                o.current && i(o.current.scrollWidth - Math.ceil(o.current.getBoundingClientRect().width) > 0);
+            }, []);
         return (
             reactExports.useEffect(() => {
                 u || a.onMouseLeave();
@@ -9380,29 +9411,27 @@ const base$k = 'TruncateText_dcb41d92',
             useResizeLayoutReady(l, [l]),
             useRefResizeObserver(o, l),
             jsxRuntimeExports.jsx('div', {
-                ...s,
-                ref: function (e) {
-                    ((o.current = e), 'function' == typeof n ? n(e) : n && (n.current = e));
-                },
-                className: cx(styles$o.base, r),
+                ...r,
+                ref: assignRefs([n, o]),
+                className: clsx(styles$m.base, s),
                 ...(u ? a : {}),
                 children: e,
             })
         );
     }),
-    base$j = 'VehicleLevel_3c938122',
-    styles$n = { base: base$j },
+    base$h = 'VehicleLevel_3c938122',
+    styles$l = { base: base$h },
     numberTypes = { arabic: 'arabic', roman: 'roman' };
 function getLevelType(e, t) {
     return e || (t ? numberTypes.arabic : numberTypes.roman);
 }
-const VehicleLevel = reactExports.forwardRef(function ({ value: e, numberType: t, ...r }, s) {
+const VehicleLevel = reactExports.forwardRef(function ({ value: e, numberType: t, ...s }, r) {
     const n = getLevelType(t, useRomanForbidden()) === numberTypes.roman ? arabicToRoman(e) : e;
     return jsxRuntimeExports.jsx('div', {
-        ...r,
+        ...s,
         'data-name': 'VehicleLevel',
-        className: cx(styles$n.base, r.className),
-        ref: s,
+        className: clsx(styles$l.base, s.className),
+        ref: r,
         children: n,
     });
 });
@@ -9412,9 +9441,9 @@ const MIN_LEVEL = 1,
     directions$1 = { left: 'left', right: 'right' },
     lengths = { short: 'short', medium: 'medium', long: 'long' },
     iconLength = (e) => (e < 10 ? lengths.short : e < 100 ? lengths.medium : lengths.long),
-    icon$6 = (e, t, r) => (t === TYPE_PRESTIGE ? TYPE_PRESTIGE : `${t}.${iconLength(e)}.c_${r}`),
+    icon$6 = (e, t, s) => (t === TYPE_PRESTIGE ? TYPE_PRESTIGE : `${t}.${iconLength(e)}.c_${s}`),
     root$a = 'VehiclePrestigeLevel_root_4426b46c',
-    base$i = 'VehiclePrestigeLevel_a750cce',
+    base$g = 'VehiclePrestigeLevel_a750cce',
     icon$5 = 'VehiclePrestigeLevel_icon_ef024cc3',
     base__left = 'VehiclePrestigeLevel_base__left_4426b46c',
     level = 'VehiclePrestigeLevel_level_10f410ba',
@@ -9435,9 +9464,9 @@ const MIN_LEVEL = 1,
     windowIn$a = 'VehiclePrestigeLevel_windowIn_4426b46c',
     fadeOut$a = 'VehiclePrestigeLevel_fadeOut_4426b46c',
     fadeIn$a = 'VehiclePrestigeLevel_fadeIn_4426b46c',
-    styles$m = {
+    styles$k = {
         root: root$a,
-        base: base$i,
+        base: base$g,
         icon: icon$5,
         base__left: base__left,
         level: level,
@@ -9459,28 +9488,28 @@ const MIN_LEVEL = 1,
         fadeOut: fadeOut$a,
         fadeIn: fadeIn$a,
     };
-function PrestigeLevel({ level: e, grade: t, type: r, direction: s, classNames: n, ...a }) {
+function PrestigeLevel({ level: e, grade: t, type: s, direction: r, classNames: n, ...a }) {
     return e < MIN_LEVEL
         ? null
         : jsxRuntimeExports.jsxs('div', {
               ...a,
-              className: cx(
-                  styles$m.base,
-                  styles$m[`base__${r}`],
-                  styles$m[`base__${s}`],
+              className: clsx(
+                  styles$k.base,
+                  styles$k[`base__${s}`],
+                  styles$k[`base__${r}`],
                   a.className,
                   null == n ? void 0 : n.base,
               ),
               children: [
                   jsxRuntimeExports.jsx(Image, {
-                      path: `prestige.tab.${icon$6(e, r, t)}`,
-                      className: cx(styles$m.icon, null == n ? void 0 : n.icon),
+                      path: `prestige.tab.${icon$6(e, s, t)}`,
+                      className: clsx(styles$k.icon, null == n ? void 0 : n.icon),
                   }),
-                  r !== TYPE_PRESTIGE &&
+                  s !== TYPE_PRESTIGE &&
                       jsxRuntimeExports.jsx('div', {
-                          className: cx(
-                              styles$m.level,
-                              styles$m[`level__${iconLength(e)}`],
+                          className: clsx(
+                              styles$k.level,
+                              styles$k[`level__${iconLength(e)}`],
                               null == n ? void 0 : n.level,
                           ),
                           children: e,
@@ -9784,7 +9813,7 @@ const SvgAssaultX16X16 = (e) =>
         [`${roles.wheeled}_x48x48`]: SvgWheeledX48X48,
     },
     root$9 = 'VehicleRole_root_741b56a9',
-    base$h = 'VehicleRole_e70537d3',
+    base$f = 'VehicleRole_e70537d3',
     base__x16x16 = 'VehicleRole_base__x16x16_f444f190',
     base__x24x24$1 = 'VehicleRole_base__x24x24_cc02d077',
     base__x32x32$1 = 'VehicleRole_base__x32x32_2180a099',
@@ -9798,9 +9827,9 @@ const SvgAssaultX16X16 = (e) =>
     windowIn$9 = 'VehicleRole_windowIn_741b56a9',
     fadeOut$9 = 'VehicleRole_fadeOut_741b56a9',
     fadeIn$9 = 'VehicleRole_fadeIn_741b56a9',
-    styles$l = {
+    styles$j = {
         root: root$9,
-        base: base$h,
+        base: base$f,
         base__x16x16: base__x16x16,
         base__x24x24: base__x24x24$1,
         base__x32x32: base__x32x32$1,
@@ -9816,14 +9845,14 @@ const SvgAssaultX16X16 = (e) =>
         fadeIn: fadeIn$9,
     },
     sizes$4 = { x16x16: 'x16x16', x24x24: 'x24x24', x32x32: 'x32x32', x48x48: 'x48x48' },
-    VehicleRole = reactExports.forwardRef(function ({ roleKey: e, size: t = sizes$4.x24x24, classNames: r, ...s }, n) {
+    VehicleRole = reactExports.forwardRef(function ({ roleKey: e, size: t = sizes$4.x24x24, classNames: s, ...r }, n) {
         const a = ROLE_TO_COMPONENT[`${e}_${t}`];
         if (a)
             return jsxRuntimeExports.jsx('div', {
-                ...s,
+                ...r,
                 ref: n,
-                className: cx(styles$l.base, styles$l[`base__${t}`], null == r ? void 0 : r.base),
-                children: jsxRuntimeExports.jsx(a, { className: cx(styles$l.icon, null == r ? void 0 : r.icon) }),
+                className: clsx(styles$j.base, styles$j[`base__${t}`], null == s ? void 0 : s.base),
+                children: jsxRuntimeExports.jsx(a, { className: clsx(styles$j.icon, null == s ? void 0 : s.icon) }),
             });
         console.error(`Unknown vehicle role type ${e} with size ${t}`);
     });
@@ -9838,7 +9867,7 @@ const sizes$3 = { x24x24: 'x24x24', x48x48: 'x48x48', x64x64: 'x64x64', x96x96: 
         [types$1['AT-SPG']]: 'tank_destroyer',
     },
     root$8 = 'VehicleType_root_4e0d61e4',
-    base$g = 'VehicleType_30b4aab0',
+    base$e = 'VehicleType_30b4aab0',
     base__x24x24 = 'VehicleType_base__x24x24_a3dc7aa3',
     base__x48x48 = 'VehicleType_base__x48x48_cb59f57a',
     base__x64x64 = 'VehicleType_base__x64x64_bb9b890',
@@ -9856,9 +9885,9 @@ const sizes$3 = { x24x24: 'x24x24', x48x48: 'x48x48', x64x64: 'x64x64', x96x96: 
     windowIn$8 = 'VehicleType_windowIn_4e0d61e4',
     fadeOut$8 = 'VehicleType_fadeOut_4e0d61e4',
     fadeIn$8 = 'VehicleType_fadeIn_4e0d61e4',
-    styles$k = {
+    styles$i = {
         root: root$8,
-        base: base$g,
+        base: base$e,
         base__x24x24: base__x24x24,
         base__x48x48: base__x48x48,
         base__x64x64: base__x64x64,
@@ -9878,28 +9907,28 @@ const sizes$3 = { x24x24: 'x24x24', x48x48: 'x48x48', x64x64: 'x64x64', x96x96: 
         fadeIn: fadeIn$8,
     },
     VehicleType = reactExports.forwardRef(function (
-        { type: e, size: t = sizes$3.x48x48, premium: r = !1, fit: s = 'contain', ...n },
+        { type: e, size: t = sizes$3.x48x48, premium: s = !1, fit: r = 'contain', ...n },
         a,
     ) {
         const o = useUpscale(sizes$3[t], upscaledSizes[t]);
         return jsxRuntimeExports.jsx(Image, {
             ...n,
             ref: a,
-            fit: s,
-            className: cx(styles$k.base, r ? styles$k[`base__premium__${t}`] : styles$k[`base__${t}`], n.className),
-            path: `ui_kit.vehicle_type.${o}.${r ? 'premium_' : ''}${normalizeResource(mapTypes[e])}_${o}`,
+            fit: r,
+            className: clsx(styles$i.base, s ? styles$i[`base__premium__${t}`] : styles$i[`base__${t}`], n.className),
+            path: `ui_kit.vehicle_type.${o}.${s ? 'premium_' : ''}${normalizeResource(mapTypes[e])}_${o}`,
         });
     });
 ((VehicleType.types = types$1), (VehicleType.sizes = sizes$3));
-const base$f = 'VehicleInfo_1732f1f0',
+const base$d = 'VehicleInfo_1732f1f0',
     name = 'VehicleInfo_name_3989ca04',
     name__premium = 'VehicleInfo_name__premium_258b3b93',
-    styles$j = { base: base$f, name: name, name__premium: name__premium },
-    VehicleName = defineStyledComponent('VehicleName', styles$j.name, {
-        variants: { premium: { true: styles$j.name__premium } },
+    styles$h = { base: base$d, name: name, name__premium: name__premium },
+    VehicleName = defineStyledComponent('VehicleName', styles$h.name, {
+        variants: { premium: { true: styles$h.name__premium } },
     }),
     VehicleInfo = reactExports.forwardRef(function (e, t) {
-        return jsxRuntimeExports.jsx('div', { ...e, ref: t, className: cx(styles$j.base, e.className) });
+        return jsxRuntimeExports.jsx('div', { ...e, ref: t, className: clsx(styles$h.base, e.className) });
     });
 ((VehicleInfo.Prestige = PrestigeLevel),
     (VehicleInfo.Level = VehicleLevel),
@@ -9932,17 +9961,17 @@ class ErrorHandler extends reactExports.Component {
 const base__x120x96 = 'VehicleImage_base__x120x96_32ca06f1',
     base__x190x152 = 'VehicleImage_base__x190x152_41379c70',
     base__x380x304 = 'VehicleImage_base__x380x304_274f87fe',
-    styles$i = { base__x120x96: base__x120x96, base__x190x152: base__x190x152, base__x380x304: base__x380x304 },
+    styles$g = { base__x120x96: base__x120x96, base__x190x152: base__x190x152, base__x380x304: base__x380x304 },
     sizes$2 = { x120x96: 'x120x96', x190x152: 'x190x152', x380x304: 'x380x304' },
     Base$5 = defineStyledComponent('VehicleImage', {
         element: Image,
-        className: styles$i.base,
+        className: styles$g.base,
         cva: {
             variants: {
                 size: {
-                    [sizes$2.x120x96]: styles$i.base__x120x96,
-                    [sizes$2.x190x152]: styles$i.base__x190x152,
-                    [sizes$2.x380x304]: styles$i.base__x380x304,
+                    [sizes$2.x120x96]: styles$g.base__x120x96,
+                    [sizes$2.x190x152]: styles$g.base__x190x152,
+                    [sizes$2.x380x304]: styles$g.base__x380x304,
                 },
             },
         },
@@ -9951,76 +9980,76 @@ function UnknownVehicleImage({ size: e = sizes$2.x380x304, ...t }) {
     return jsxRuntimeExports.jsx(Base$5, { ...t, size: e, path: `vehicle.${e}.tank_empty` });
 }
 const VehicleImage = reactExports.forwardRef(function (
-    { size: e = sizes$2.x380x304, name: t, width: r, height: s, className: n, ...a },
+    { size: e = sizes$2.x380x304, name: t, width: s, height: r, className: n, ...a },
     o,
 ) {
     const u = resources.resolve('images'),
         i = `vehicle.${e}.${getVehicleImageKey(t)}`;
     return u.has(i)
-        ? jsxRuntimeExports.jsx(Base$5, { ...a, ref: o, size: e, className: n, path: i, width: r, height: s })
+        ? jsxRuntimeExports.jsx(Base$5, { ...a, ref: o, size: e, className: n, path: i, width: s, height: r })
         : (console.warn(`Fail to retrieve icon maps/icons/vehicle/${e}/${getVehicleImageKey(t)}`),
-          jsxRuntimeExports.jsx(UnknownVehicleImage, { size: e, className: n, width: r, height: s }));
+          jsxRuntimeExports.jsx(UnknownVehicleImage, { size: e, className: n, width: s, height: r }));
 });
 function useCalculateLeftTime(e) {
-    const [t, r] = reactExports.useState(e);
+    const [t, s] = reactExports.useState(e);
     (reactExports.useEffect(() => {
-        r(e);
+        s(e);
     }, [e]),
         reactExports.useEffect(() => {
             if (0 === t) return;
             const e = Math.min(t, 60),
-                s = setTimeout(() => {
-                    r((t) => Math.max(t - e, 0));
+                r = setTimeout(() => {
+                    s((t) => Math.max(t - e, 0));
                 }, 1e3 * e);
-            return () => clearTimeout(s);
+            return () => clearTimeout(r);
         }, [t]));
-    const s = seconds(t);
-    return greaterThan(s, days(1))
-        ? convert(s, 'days')
-        : greaterThan(s, hours(1))
-          ? convert(s, 'hours')
-          : greaterThan(s, seconds(1))
+    const r = seconds(t);
+    return greaterThan(r, days(1))
+        ? convert(r, 'days')
+        : greaterThan(r, hours(1))
+          ? convert(r, 'hours')
+          : greaterThan(r, seconds(1))
             ? hours(1)
             : hours(0);
 }
 ((VehicleImage.UnknownVehicleImage = UnknownVehicleImage), (VehicleImage.size = sizes$2));
-const base$e = 'IconCounter_33c660e9',
-    styles$h = { base: base$e };
+const base$c = 'IconCounter_33c660e9',
+    styles$f = { base: base$c };
 function IconCounter({ className: e }) {
-    return jsxRuntimeExports.jsx('div', { className: cx(styles$h.base, e) });
+    return jsxRuntimeExports.jsx('div', { className: clsx(styles$f.base, e) });
 }
-const base$d = 'ShortCounter_d2d7b370',
+const base$b = 'ShortCounter_d2d7b370',
     text = 'ShortCounter_text_ecf2e742',
     count = 'ShortCounter_count_d7a74fd8',
-    styles$g = { base: base$d, text: text, count: count },
-    ShortCounter = reactExports.forwardRef(function ({ time: e, wins: t, battles: r, classNames: s, ...n }, a) {
+    styles$e = { base: base$b, text: text, count: count },
+    ShortCounter = reactExports.forwardRef(function ({ time: e, wins: t, battles: s, classNames: r, ...n }, a) {
         const o = resources.resolve('intl'),
             u = useCalculateLeftTime(e),
             i = reactExports.useMemo(
                 () =>
                     u.value > 0
                         ? { path: `hangar.rentalCounter.count.${u.unit}`, count: Math.ceil(u.value) }
-                        : r > 0
-                          ? { path: 'hangar.rentalCounter.count.battles', count: r }
+                        : s > 0
+                          ? { path: 'hangar.rentalCounter.count.battles', count: s }
                           : t > 0
                             ? { path: 'hangar.rentalCounter.count.wins', count: t }
                             : null,
-                [u, t, r],
+                [u, t, s],
             );
         if (i)
             return jsxRuntimeExports.jsxs('div', {
                 ...n,
                 ref: a,
-                className: cx(styles$g.base, null == s ? void 0 : s.base),
+                className: clsx(styles$e.base, null == r ? void 0 : r.base),
                 children: [
-                    jsxRuntimeExports.jsx(IconCounter, { className: null == s ? void 0 : s.icon }),
+                    jsxRuntimeExports.jsx(IconCounter, { className: null == r ? void 0 : r.icon }),
                     jsxRuntimeExports.jsx(FormatPluralString, {
-                        className: cx(styles$g.text, null == s ? void 0 : s.text),
+                        className: clsx(styles$e.text, null == r ? void 0 : r.text),
                         path: i.path,
                         count: i.count,
                         params: {
                             count: jsxRuntimeExports.jsxs('span', {
-                                className: styles$g.count,
+                                className: styles$e.count,
                                 children: [o.formatNumber('integral', i.count), ' '],
                             }),
                         },
@@ -10028,233 +10057,53 @@ const base$d = 'ShortCounter_d2d7b370',
                 ],
             });
     }),
-    RentalCounter = reactExports.forwardRef(function ({ className: e, ...t }, r) {
-        return jsxRuntimeExports.jsx('div', { ...t, ref: r, className: e });
+    RentalCounter = reactExports.forwardRef(function ({ className: e, ...t }, s) {
+        return jsxRuntimeExports.jsx('div', { ...t, ref: s, className: e });
     });
-function isSerializableReactNode(e) {
-    return (
-        !(null != e && !['string', 'number', 'boolean'].includes(typeof e)) ||
-        (!reactExports.isValidElement(e) && !!Array.isArray(e) && e.every(isSerializableReactNode))
-    );
-}
 RentalCounter.ShortCounter = ShortCounter;
-const base$c = 'MultilineOverflow_8834bd8e',
-    content$2 = 'MultilineOverflow_content_b539970d',
-    styles$f = { base: base$c, content: content$2 };
-function isSerializableParams(e) {
-    return !e || Object.values(e).every(isSerializableReactNode);
-}
-const MultilineOverflow = reactExports.forwardRef(function (
-        {
-            text: e,
-            brackets: t,
-            params: r,
-            formatters: s,
-            upgradeLegacy: n,
-            split: a = !0,
-            onMouseEnter: o,
-            onMouseLeave: u,
-            onClick: i,
-            tooltipDisabled: l = !1,
-            tooltip: c,
-            className: d,
-            classNames: _,
-            ...p
-        },
-        m,
-    ) {
-        const E = reactExports.useRef(null),
-            [f, b] = reactExports.useState(!1);
-        reactExports.useEffect(() => {
-            if (0 === e.length) return;
-            const t = E.current;
-            if (!t) return;
-            const r = document.createElement('div');
-            let s = noop$1;
-            function n() {
-                if (!t) return;
-                (s(),
-                    (r.style.visibility = 'hidden'),
-                    (r.className = cx(styles$f.content, t.children[0].className)),
-                    (r.innerHTML = ''),
-                    t.appendChild(r));
-                for (let s of t.children[0].childNodes.values()) {
-                    if (s instanceof HTMLElement) {
-                        const e = s.cloneNode(!0);
-                        r.appendChild(e);
-                    }
-                    if (s.nodeType === Node.TEXT_NODE) {
-                        const e = document.createTextNode(s.nodeValue ?? '');
-                        r.appendChild(e);
-                    }
-                }
-                const e = document.createElement('div');
-                ((e.innerHTML = '...'),
-                    r.appendChild(e),
-                    (s = createLayoutReadyInEffect$1(() => {
-                        var s, n;
-                        const a = [];
-                        for (let e = r.childNodes.length - 2; 0 !== e; e--) {
-                            const s = r.childNodes[e];
-                            if (s instanceof HTMLElement) {
-                                if (s.offsetTop + s.offsetHeight <= t.offsetHeight) break;
-                                a.push(s);
-                            }
-                        }
-                        a.forEach((e) => e.remove());
-                        const o = null == (s = r.lastChild) ? void 0 : s.previousSibling;
-                        (0 === a.length
-                            ? (null == (n = r.lastChild) || n.remove(), b(!1))
-                            : o.offsetWidth + o.offsetLeft + e.offsetWidth > t.offsetWidth
-                              ? (o.remove(), b(!0))
-                              : b(!0),
-                            (r.style.visibility = ''));
-                    })));
-            }
-            const a = new ResizeObserver(n);
-            return (
-                a.observe(t),
-                new DisposeBuilder()
-                    .add(() => s())
-                    .add(addEventListener(window, 'resize', n))
-                    .add(a.disconnect.bind(a))
-                    .add(r.remove.bind(r)).dispose
-            );
-        }, [m, e]);
-        const x = isSerializableParams(r),
-            g = useParamTooltip(
-                'format_text',
-                reactExports.useMemo(
-                    () => ({
-                        text: e,
-                        params: x ? r : void 0,
-                        split: a,
-                        upgradeLegacy: n,
-                        brackets: t,
-                        resId: resources.resolve('views').read((e) => e.mono.tooltips.tooltips('resId')),
-                    }),
-                    [e, t, a, n, r, x],
-                ),
-            ),
-            h = c ?? g;
-        if (
-            (reactExports.useEffect(() => {
-                l || f || h.onMouseLeave();
-            }, [f, h, c, l, x]),
-            0 === e.length)
-        )
-            return null;
-        return jsxRuntimeExports.jsx('div', {
-            ...p,
-            onMouseEnter: function (e) {
-                (null == o || o(e), f && !l && h.onMouseEnter(e));
-            },
-            onClick: function (e) {
-                (null == i || i(e), l || h.onClick());
-            },
-            onMouseLeave: function (e) {
-                (null == u || u(e), l || h.onMouseLeave());
-            },
-            ref: assignRefs([m, E]),
-            className: cx(styles$f.base, d, null == _ ? void 0 : _.base),
-            children: jsxRuntimeExports.jsx(FormatText, {
-                text: e,
-                brackets: t,
-                params: r,
-                upgradeLegacy: n,
-                split: a,
-                formatters: s,
-                className: null == _ ? void 0 : _.text,
-                style: { visibility: 'hidden' },
-            }),
-        });
-    }),
-    base$b = 'CarouselScroll_3690a837',
-    areaContent = 'CarouselScroll_areaContent_f5dd7772',
-    styles$e = { base: base$b, areaContent: areaContent },
-    GAP_BEFORE_START = 5,
-    draggingStates = { dragging: 'dragging', idle: 'idle' };
-function CarouselScroll({
-    api: e,
-    children: t,
-    className: r,
-    areaClassNames: s,
-    staticContent: n,
-    disabled: a,
-    onDraggingState: o,
-}) {
-    const { animationScroll: u, applyScroll: i, setDisabled: l } = e,
-        c = useScrollByDragElements(e, dragDirections.horizontal, void 0, { gapBeforeStart: GAP_BEFORE_START });
-    return (
-        reactExports.useEffect(() => {
-            null == o || o(c.type === draggingStates.dragging);
-        }, [c.type, o]),
-        reactExports.useEffect(() => {
-            l(a);
-        }, [a, l]),
-        reactExports.useEffect(
-            () =>
-                createLayoutReadyInEffect$1(() => {
-                    c.type === draggingStates.idle && u.scrollPosition.idle && i(u.scrollPosition.get());
-                }),
-            [u.scrollPosition, c, i],
-        ),
-        jsxRuntimeExports.jsx('div', {
-            className: cx(styles$e.base, r),
-            children: jsxRuntimeExports.jsxs(Area$1, {
-                className: null == s ? void 0 : s.base,
-                classNames: {
-                    wrapper: cx(styles$e.areaWrapper, null == s ? void 0 : s.wrapper),
-                    content: cx(styles$e.areaContent, null == s ? void 0 : s.content),
-                },
-                children: [t, n],
-            }),
-        })
-    );
-}
 const directions = { horizontal: 'horizontal' },
     PERCENT_OF_VISIBLE_ELEMENTS = 1.5,
     SAFETY_FACTOR = 0.25;
-function calculateRangeRows(e, t, r) {
+function calculateRangeRows(e, t, s) {
     if (0 === t) return [0, 0];
-    const s = e.animationScroll.scrollPosition.get(),
+    const r = e.animationScroll.scrollPosition.get(),
         n = e.getWrapperSize();
     if ('number' != typeof n || 0 === n) return [0, 0];
-    const a = Math.ceil((n / r) * PERCENT_OF_VISIBLE_ELEMENTS),
-        o = Math.max(0, Math.ceil(s / r) - Math.floor(a * SAFETY_FACTOR));
+    const a = Math.ceil((n / s) * PERCENT_OF_VISIBLE_ELEMENTS),
+        o = Math.max(0, Math.ceil(r / s) - Math.floor(a * SAFETY_FACTOR));
     return [o, Math.min(t, o + a)];
 }
 function DefaultWrapper(e) {
     return jsxRuntimeExports.jsx('div', { ...e });
 }
-function calculateRangeItems(e, t, r) {
+function calculateRangeItems(e, t, s) {
     if (0 === t) return [0, 0];
-    const s = e.animationScroll.scrollPosition.get(),
+    const r = e.animationScroll.scrollPosition.get(),
         n = e.getWrapperSize();
-    if ('number' != typeof n || 0 === n || Number.isNaN(s)) return [0, 0];
-    const a = Math.ceil((n / r) * PERCENT_OF_VISIBLE_ELEMENTS),
-        o = clamp$1(0, t, Math.ceil(s / r) - Math.floor(a * SAFETY_FACTOR));
+    if ('number' != typeof n || 0 === n || Number.isNaN(r)) return [0, 0];
+    const a = Math.ceil((n / s) * PERCENT_OF_VISIBLE_ELEMENTS),
+        o = clamp$1(0, t, Math.ceil(r / s) - Math.floor(a * SAFETY_FACTOR));
     return [o, Math.min(t, o + a)];
 }
 const initVisibleRange = [0, 0];
-function useVisibleRange(e, t, r, s, n) {
+function useVisibleRange(e, t, s, r, n) {
     const [a, o] = reactExports.useState(initVisibleRange),
         u = reactExports.useRef(initVisibleRange),
-        [i, l] = useOptionalTransition(r),
+        [i, l] = useOptionalTransition(s),
         c = usePrevious(i),
         d = useThrottleCall(t, !0),
         _ = useEvent$1(() => {
             l(() => {
                 const [e, t] = u.current;
-                o((r) => {
-                    const [s, n] = r;
-                    return e === s && t === n ? r : [e, t];
+                o((s) => {
+                    const [r, n] = s;
+                    return e === r && t === n ? s : [e, t];
                 });
             });
         }),
         p = useEvent$1(() => {
             d.call(() => {
-                const e = s();
+                const e = r();
                 (u.current[0] === e[0] && u.current[1] === e[1]) || ((u.current = e), i || _());
             });
         });
@@ -10283,15 +10132,15 @@ const renderScrollDefault$1 = (e) => jsxRuntimeExports.jsx(DefaultScroll$1, { ..
 function HorizontalList({
     totalElements: e,
     throttle: t = 0,
-    api: r,
-    elementWidth: s,
+    api: s,
+    elementWidth: r,
     wrappers: n,
     className: a,
     renderElement: o,
     asyncRenderEnabled: u = !1,
     renderScroll: i = renderScrollDefault$1,
 }) {
-    const l = useVisibleRange(r, t, u, () => calculateRangeItems(r, e, s), e),
+    const l = useVisibleRange(s, t, u, () => calculateRangeItems(s, e, r), e),
         c = (null == n ? void 0 : n.Element) ?? reactExports.Fragment,
         d = (null == n ? void 0 : n.Content) ?? DefaultWrapper,
         [_, p] = l,
@@ -10302,9 +10151,9 @@ function HorizontalList({
             className: a,
             children: jsxRuntimeExports.jsxs(d, {
                 children: [
-                    jsxRuntimeExports.jsx('div', { style: { width: _ * s } }),
+                    jsxRuntimeExports.jsx('div', { style: { width: _ * r } }),
                     mapRange(E, Math.max(m, E), (e) => jsxRuntimeExports.jsx(c, { children: o(e) }, e)),
-                    jsxRuntimeExports.jsx('div', { style: { width: Math.max(0, e - p) * s } }),
+                    jsxRuntimeExports.jsx('div', { style: { width: Math.max(0, e - p) * r } }),
                 ],
             }),
         },
@@ -10315,8 +10164,8 @@ const renderScrollDefault = (e) => jsxRuntimeExports.jsx(DefaultScroll, { ...e }
 function VerticalList({
     api: e,
     className: t,
-    totalElements: r,
-    elementHeight: s,
+    totalElements: s,
+    elementHeight: r,
     itemsPerRow: n = 1,
     wrappers: a,
     throttle: o = 0,
@@ -10324,22 +10173,22 @@ function VerticalList({
     renderElement: i,
     renderScroll: l = renderScrollDefault,
 }) {
-    const c = Math.ceil(r / n),
-        d = useVisibleRange(e, o, u, () => calculateRangeRows(e, c, s));
+    const c = Math.ceil(s / n),
+        d = useVisibleRange(e, o, u, () => calculateRangeRows(e, c, r));
     reactExports.useEffect(e.recalculateContent, [e, d]);
     const [_, p] = d,
         m = (null == a ? void 0 : a.Element) ?? reactExports.Fragment,
         E = (null == a ? void 0 : a.Content) ?? DefaultWrapper,
-        f = Math.min(r, p * n),
+        f = Math.min(s, p * n),
         b = clamp$1(0, f, _ * n);
     return l(
         {
             className: t,
             children: jsxRuntimeExports.jsxs(E, {
                 children: [
-                    jsxRuntimeExports.jsx('div', { style: { width: '100%', height: _ * s } }),
+                    jsxRuntimeExports.jsx('div', { style: { width: '100%', height: _ * r } }),
                     mapRange(b, Math.max(b, f), (e) => jsxRuntimeExports.jsx(m, { children: i(e) }, e)),
-                    jsxRuntimeExports.jsx('div', { style: { width: '100%', height: Math.max(0, c - p) * s } }),
+                    jsxRuntimeExports.jsx('div', { style: { width: '100%', height: Math.max(0, c - p) * r } }),
                 ],
             }),
         },
@@ -10358,10 +10207,10 @@ function useCardContext() {
     if (!e) throw new Error('Card context must be used only within its provider');
     return e;
 }
-function CardContextProvider({ selected: e, hover: t, disabled: r, multiple: s, status: n, children: a }) {
+function CardContextProvider({ selected: e, hover: t, disabled: s, multiple: r, status: n, children: a }) {
     const o = reactExports.useMemo(
-        () => ({ selected: e, hover: t, disabled: r, multiple: s, status: n }),
-        [r, t, s, e, n],
+        () => ({ selected: e, hover: t, disabled: s, multiple: r, status: n }),
+        [s, t, r, e, n],
     );
     return jsxRuntimeExports.jsx(CardContext.Provider, { value: o, children: a });
 }
@@ -10401,33 +10250,33 @@ const CardsWrapperContextProvider = CardsWrapperContext.Provider,
         compoundVariants: [{ hover: !0, selected: !0, className: styles$d.base__selectedHover }],
     }),
     MainContainer = ({ children: e, classNames: t }) => {
-        const r = React.useRef(null),
-            s = useCardContext();
+        const s = React.useRef(null),
+            r = useCardContext();
         return (
             React.useEffect(() => {
-                if (s.multiple)
+                if (r.multiple)
                     return createLayoutReadyInEffect$1(() => {
-                        if (r.current) {
-                            const e = r.current.getBoundingClientRect(),
+                        if (s.current) {
+                            const e = s.current.getBoundingClientRect(),
                                 t = Math.round((MULTIPLE_CORNER_SIZE / e.width) * 100),
-                                s = Math.round((MULTIPLE_CORNER_SIZE / e.height) * 100);
-                            (r.current.style.setProperty('--corner-width', `${t}%`),
-                                r.current.style.setProperty('--corner-height', `${s}%`));
+                                r = Math.round((MULTIPLE_CORNER_SIZE / e.height) * 100);
+                            (s.current.style.setProperty('--corner-width', `${t}%`),
+                                s.current.style.setProperty('--corner-height', `${r}%`));
                         }
                     });
             }),
             jsxRuntimeExports.jsxs(Base$4, {
-                multiple: s.multiple,
-                selected: s.selected,
-                hover: s.hover,
-                disabled: s.disabled,
+                multiple: r.multiple,
+                selected: r.selected,
+                hover: r.hover,
+                disabled: r.disabled,
                 children: [
-                    s.multiple && jsxRuntimeExports.jsx('div', { className: styles$d.multipleCorner }),
+                    r.multiple && jsxRuntimeExports.jsx('div', { className: styles$d.multipleCorner }),
                     jsxRuntimeExports.jsxs('div', {
-                        ref: r,
-                        className: cx(styles$d.content, null == t ? void 0 : t.mainContainerContent),
+                        ref: s,
+                        className: clsx(styles$d.content, null == t ? void 0 : t.mainContainerContent),
                         children: [
-                            s.disabled && jsxRuntimeExports.jsx('div', { className: styles$d.disabledOverlay }),
+                            r.disabled && jsxRuntimeExports.jsx('div', { className: styles$d.disabledOverlay }),
                             e,
                         ],
                     }),
@@ -10486,15 +10335,15 @@ defineStyledComponent('Status', styles$c.base, {
 const SMALL_SIZE_BREAKPOINT = 100,
     tooltipEnabled = ({ header: e, body: t }) => Boolean(e && t),
     Status = ({ reason: e, classNames: t }) => {
-        const r = reactExports.useRef(null),
-            [s, n] = React.useState(!1),
-            a = `base__${useCardContext().status}${s ? 'Small' : ''}`,
+        const s = reactExports.useRef(null),
+            [r, n] = React.useState(!1),
+            a = `base__${useCardContext().status}${r ? 'Small' : ''}`,
             o = React.useCallback(() => {
                 var e;
-                const t = null == (e = r.current) ? void 0 : e.getBoundingClientRect();
+                const t = null == (e = s.current) ? void 0 : e.getBoundingClientRect();
                 t && n(t.width <= SMALL_SIZE_BREAKPOINT);
-            }, [r]);
-        useRefResizeObserver(r, o);
+            }, [s]);
+        useRefResizeObserver(s, o);
         const u = e
                 ? {
                       header: strings.readOrEmpty(`tooltips.moduleFits.${e}.header`),
@@ -10503,8 +10352,8 @@ const SMALL_SIZE_BREAKPOINT = 100,
                 : {},
             i = useSimpleTooltip(u);
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$c.base, styles$c[a], null == t ? void 0 : t.wrapper),
-            ref: r,
+            className: clsx(styles$c.base, styles$c[a], null == t ? void 0 : t.wrapper),
+            ref: s,
             children: [
                 jsxRuntimeExports.jsx('div', { className: styles$c.glowBig }),
                 jsxRuntimeExports.jsx('div', { className: styles$c.line }),
@@ -10521,7 +10370,7 @@ const SMALL_SIZE_BREAKPOINT = 100,
                 }),
                 jsxRuntimeExports.jsx('div', {
                     ...(tooltipEnabled(u) && i),
-                    className: cx(styles$c.icon, null == t ? void 0 : t.icon),
+                    className: clsx(styles$c.icon, null == t ? void 0 : t.icon),
                 }),
             ],
         });
@@ -10566,8 +10415,8 @@ const SMALL_SIZE_BREAKPOINT = 100,
         {
             children: e,
             active: t,
-            status: r,
-            statusReason: s,
+            status: s,
+            statusReason: r,
             disableMouse: n,
             onMouseOver: a,
             onMouseOut: o,
@@ -10589,16 +10438,16 @@ const SMALL_SIZE_BREAKPOINT = 100,
             hover: p,
             disableMouse: n,
             active: t,
-            className: cx(cardStyles.card, l, (null == f ? void 0 : f.enabled) && cardStyles.base__wrapped),
+            className: clsx(cardStyles.card, l, (null == f ? void 0 : f.enabled) && cardStyles.base__wrapped),
             children: jsxRuntimeExports.jsxs(CardContextProvider, {
                 disabled: i,
                 selected: d.selected ?? !1,
                 multiple: d.multiple ?? !1,
                 hover: p,
-                status: r,
+                status: s,
                 children: [
                     jsxRuntimeExports.jsx('div', {
-                        className: cx(cardStyles.content, null == c ? void 0 : c.content),
+                        className: clsx(cardStyles.content, null == c ? void 0 : c.content),
                         onClick: function (e) {
                             b || E.play('click', { target: u || 'react-ui:card', original: e });
                         },
@@ -10614,7 +10463,7 @@ const SMALL_SIZE_BREAKPOINT = 100,
                         children: jsxRuntimeExports.jsx(MainContainer, { classNames: c, children: e }),
                     }),
                     jsxRuntimeExports.jsx('div', { className: cardStyles.centerBorder }),
-                    r && jsxRuntimeExports.jsx(Status, { reason: s, classNames: null == c ? void 0 : c.status }),
+                    s && jsxRuntimeExports.jsx(Status, { reason: r, classNames: null == c ? void 0 : c.status }),
                 ],
             }),
         });
@@ -10625,11 +10474,11 @@ const SMALL_SIZE_BREAKPOINT = 100,
     borderTypes = { none: 'none', contour: 'contour' },
     Point = (e, t) => ({ x: e, y: t });
 function getRectangleEdges(e) {
-    let { x: t, y: r, width: s, height: n } = e;
-    const a = Point(t, r),
-        o = Point(t + s, r),
-        u = Point(t + s, r + n),
-        i = Point(t, r + n);
+    let { x: t, y: s, width: r, height: n } = e;
+    const a = Point(t, s),
+        o = Point(t + r, s),
+        u = Point(t + r, s + n),
+        i = Point(t, s + n);
     return [
         [a, o],
         [o, u],
@@ -10638,45 +10487,45 @@ function getRectangleEdges(e) {
     ];
 }
 function getEdgeKey(e) {
-    const [t, r] = e;
-    return t.x < r.x || (t.x === r.x && t.y < r.y) ? `${r.x},${r.y}-${t.x},${t.y}` : `${t.x},${t.y}-${r.x},${r.y}`;
+    const [t, s] = e;
+    return t.x < s.x || (t.x === s.x && t.y < s.y) ? `${s.x},${s.y}-${t.x},${t.y}` : `${t.x},${t.y}-${s.x},${s.y}`;
 }
 function buildOuterEdgesAndCenter(e) {
     const t = e.flatMap(getRectangleEdges),
-        r = new Map();
+        s = new Map();
     return (
         t.forEach((e) => {
             const t = getEdgeKey(e);
-            r.has(t) ? r.delete(t) : r.set(t, e);
+            s.has(t) ? s.delete(t) : s.set(t, e);
         }),
-        Array.from(r.values())
+        Array.from(s.values())
     );
 }
 function buildContourPath(e) {
     if (0 === e.length) return [];
     const t = e[0],
-        r = { x: t[0].x - PADDING, y: t[0].y - PADDING },
-        s = [r];
+        s = { x: t[0].x - PADDING, y: t[0].y - PADDING },
+        r = [s];
     let n = t[1],
-        a = r,
-        o = r,
+        a = s,
+        o = s,
         u = -PADDING,
         i = -PADDING;
     for (e.splice(0, 1); e.length > 0; ) {
         const t = e.findIndex((e) => e[0].x === n.x && e[0].y === n.y);
         if (-1 === t) break;
-        const r = e[t],
+        const s = e[t],
             l = n;
         (n.x <= o.x ? (i = PADDING) : (i === PADDING && (a.y -= 2 * PADDING), (i = -PADDING)),
             n.y >= o.y ? (u = PADDING) : (u === PADDING && (a.x -= 2 * PADDING), (u = -PADDING)),
             (n = { x: n.x + u, y: n.y + i }),
-            s.push(n),
+            r.push(n),
             (o = l),
             (a = n),
-            (n = r[1]),
+            (n = s[1]),
             e.splice(t, 1));
     }
-    return (i === PADDING && u === PADDING && (a = { ...a, x: a.x - 2 * PADDING }), s.push(r), s);
+    return (i === PADDING && u === PADDING && (a = { ...a, x: a.x - 2 * PADDING }), r.push(s), r);
 }
 function buildContour(e, t) {
     return buildContourPath(buildOuterEdgesAndCenter(e));
@@ -10687,31 +10536,31 @@ class LinesOptimizer {
     constructor(e) {
         (__publicField(this, 'lines', new Map()), (this.containerRect = e));
     }
-    addLine(e, t, r, s, n) {
+    addLine(e, t, s, r, n) {
         var a;
-        const o = `${r === LINE_THICKNESS ? VERTICAL : HORIZONTAL}-${r === LINE_THICKNESS ? Math.round(e) : Math.round(t)}-${n}`;
+        const o = `${s === LINE_THICKNESS ? VERTICAL : HORIZONTAL}-${s === LINE_THICKNESS ? Math.round(e) : Math.round(t)}-${n}`;
         this.lines.has(o) || this.lines.set(o, []);
-        const u = { x: e - this.containerRect.x, y: t - this.containerRect.y, width: r, height: s, className: n };
+        const u = { x: e - this.containerRect.x, y: t - this.containerRect.y, width: s, height: r, className: n };
         null == (a = this.lines.get(o)) || a.push(u);
     }
     run() {
         const e = [];
         return (
-            this.lines.forEach((t, r) => {
-                const s = r.at(0) === HORIZONTAL,
-                    n = t.sort((e, t) => (s ? e.x - t.x : e.y - t.y));
+            this.lines.forEach((t, s) => {
+                const r = s.at(0) === HORIZONTAL,
+                    n = t.sort((e, t) => (r ? e.x - t.x : e.y - t.y));
                 let a = null;
                 (n.forEach((t) => {
                     if (a)
-                        if (s) {
-                            const r = a.x + a.width,
-                                s = t.x + t.width;
-                            t.x >= a.x && t.x <= r ? (a = { ...a, width: Math.max(s, r) - a.x }) : (e.push(a), (a = t));
+                        if (r) {
+                            const s = a.x + a.width,
+                                r = t.x + t.width;
+                            t.x >= a.x && t.x <= s ? (a = { ...a, width: Math.max(r, s) - a.x }) : (e.push(a), (a = t));
                         } else {
-                            const r = a.y + a.height,
-                                s = t.y + t.height;
-                            t.y >= a.y && t.y <= r
-                                ? (a = { ...a, height: Math.max(s, r) - a.y })
+                            const s = a.y + a.height,
+                                r = t.y + t.height;
+                            t.y >= a.y && t.y <= s
+                                ? (a = { ...a, height: Math.max(r, s) - a.y })
                                 : (e.push(a), (a = t));
                         }
                     else a = t;
@@ -10725,8 +10574,8 @@ class LinesOptimizer {
 const lineInner = 'LinesBuilder_lineInner_a52dc157',
     lineOuter = 'LinesBuilder_lineOuter_c57514b2',
     styles$b = { lineInner: lineInner, lineOuter: lineOuter };
-function buildLines(e, t, r) {
-    const s = [],
+function buildLines(e, t, s) {
+    const r = [],
         n = new LinesOptimizer(t);
     for (let a = 0; a < e.length; a++) {
         const t = e[a],
@@ -10735,25 +10584,25 @@ function buildLines(e, t, r) {
             return void console.debug(
                 `Card rect has zero size by one side: ${o.width}x${o.height} (${t.getAttribute('data-test-id')}) `,
             );
-        (r !== borderTypes.none && s.push({ x: o.x, y: o.y, width: o.width, height: o.height }),
+        (s !== borderTypes.none && r.push({ x: o.x, y: o.y, width: o.width, height: o.height }),
             n.addLine(o.x, o.y, o.width, LINE_THICKNESS, styles$b.lineInner),
             n.addLine(o.x, o.y + o.height, o.width, LINE_THICKNESS, styles$b.lineInner),
             n.addLine(o.x, o.y, LINE_THICKNESS, o.height, styles$b.lineInner),
             n.addLine(o.x + o.width, o.y, LINE_THICKNESS, o.height + OFFSET, styles$b.lineInner));
     }
-    if (r !== borderTypes.none) {
-        const e = buildContour(s);
+    if (s !== borderTypes.none) {
+        const e = buildContour(r);
         let t = null;
         e.forEach((e) => {
             if (t) {
-                const r = t.y === e.y,
-                    s = t,
+                const s = t.y === e.y,
+                    r = t,
                     a = e;
                 n.addLine(
-                    Math.min(s.x, a.x),
-                    Math.min(s.y, a.y),
-                    r ? Math.abs(a.x - s.x) : LINE_THICKNESS,
-                    r ? LINE_THICKNESS : Math.abs(a.y - s.y) + OFFSET,
+                    Math.min(r.x, a.x),
+                    Math.min(r.y, a.y),
+                    s ? Math.abs(a.x - r.x) : LINE_THICKNESS,
+                    s ? LINE_THICKNESS : Math.abs(a.y - r.y) + OFFSET,
                     styles$b.lineOuter,
                 );
             }
@@ -10762,13 +10611,13 @@ function buildLines(e, t, r) {
     }
     return n.run();
 }
-const Lines = reactExports.memo(({ containerRef: e, generation: t, border: r, cardSelector: s }) => {
+const Lines = reactExports.memo(({ containerRef: e, generation: t, border: s, cardSelector: r }) => {
         const [n, a] = reactExports.useState([]),
             o = useEvent$1(() => {
                 const t = e.current;
                 if (!t) return;
                 const n = t.getBoundingClientRect(),
-                    o = buildLines(t.querySelectorAll(`.${s || cardStyles.card}`), n, r);
+                    o = buildLines(t.querySelectorAll(`.${r || cardStyles.card}`), n, s);
                 a(o ?? []);
             });
         return (
@@ -10799,8 +10648,8 @@ const Lines = reactExports.memo(({ containerRef: e, generation: t, border: r, ca
     {
         children: e,
         className: t,
-        trashhold: r,
-        border: s = borderTypes.contour,
+        threshold: s,
+        border: r = borderTypes.contour,
         enabled: n = !0,
         cardSelector: a,
         ...o
@@ -10815,19 +10664,19 @@ const Lines = reactExports.memo(({ containerRef: e, generation: t, border: r, ca
         (e) => {
             const t = l.current;
             if (!t) return;
-            const r = t.querySelectorAll(`.${a || cardStyles.card}`);
-            if (r.length > 0) {
-                const s = t.getBoundingClientRect(),
-                    n = r.length;
-                n !== i.current.length && (i.current = Array.from(r));
-                const a = `${Math.round(s.width)}x${Math.round(s.height)}-${n}|${e}`;
+            const s = t.querySelectorAll(`.${a || cardStyles.card}`);
+            if (s.length > 0) {
+                const r = t.getBoundingClientRect(),
+                    n = s.length;
+                n !== i.current.length && (i.current = Array.from(s));
+                const a = `${Math.round(r.width)}x${Math.round(r.height)}-${n}|${e}`;
                 d(a);
             } else d('');
         },
         [a],
     );
     (reactExports.useEffect(() => {
-        _(r);
+        _(s);
     }),
         useRefResizeObserver(
             l,
@@ -10844,7 +10693,7 @@ const Lines = reactExports.memo(({ containerRef: e, generation: t, border: r, ca
                 jsxRuntimeExports.jsx(Lines, {
                     cardsRef: i,
                     containerRef: l,
-                    border: s,
+                    border: r,
                     generation: c,
                     cardSelector: a,
                 }),
@@ -10852,17 +10701,17 @@ const Lines = reactExports.memo(({ containerRef: e, generation: t, border: r, ca
         }),
     });
 }),
-    reactExports.forwardRef(({ className: e, classNames: t, ...r }, s) =>
+    reactExports.forwardRef(({ className: e, classNames: t, ...s }, r) =>
         jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$a.base, null == t ? void 0 : t.wrapper),
+            className: clsx(styles$a.base, null == t ? void 0 : t.wrapper),
             children: [
                 jsxRuntimeExports.jsx('div', { className: styles$a.centerBorderCommon }),
                 jsxRuntimeExports.jsx('div', { className: styles$a.outerBorderCommon }),
                 jsxRuntimeExports.jsx(Card, {
-                    className: cx(styles$a.card, e, null == t ? void 0 : t.card),
+                    className: clsx(styles$a.card, e, null == t ? void 0 : t.card),
                     classNames: t,
-                    ...r,
-                    ref: s,
+                    ...s,
+                    ref: r,
                 }),
             ],
         }),
@@ -10906,21 +10755,21 @@ const fill = 'Filled_fill_32930ca9',
         fadeOut: fadeOut$6,
         fadeIn: fadeIn$6,
     },
-    Filled = reactExports.forwardRef(function ({ className: e, classNames: t, ...r }, s) {
+    Filled = reactExports.forwardRef(function ({ className: e, classNames: t, ...s }, r) {
         const n = useProgressBar();
         return jsxRuntimeExports.jsx('div', {
-            ...r,
-            ref: s,
-            className: cx(styles$9.filled, styles$9[`filled__${n.size}`], e),
+            ...s,
+            ref: r,
+            className: clsx(styles$9.filled, styles$9[`filled__${n.size}`], e),
             children: jsxRuntimeExports.jsxs('div', {
-                className: cx(styles$9.wrapper, null == t ? void 0 : t.wrapper),
+                className: clsx(styles$9.wrapper, null == t ? void 0 : t.wrapper),
                 children: [
                     jsxRuntimeExports.jsx('div', {
-                        className: cx(styles$9.fill, null == t ? void 0 : t.fill),
+                        className: clsx(styles$9.fill, null == t ? void 0 : t.fill),
                         style: { width: 100 * n.percentage + '%' },
                     }),
                     jsxRuntimeExports.jsx('div', {
-                        className: cx(styles$9.pattern, null == t ? void 0 : t.pattern),
+                        className: clsx(styles$9.pattern, null == t ? void 0 : t.pattern),
                         style: { width: 100 * n.percentage + '%' },
                     }),
                 ],
@@ -10928,11 +10777,11 @@ const fill = 'Filled_fill_32930ca9',
         });
     });
 function ProgressBarProvider(e) {
-    const [t, r] = reactExports.useState(Math.min(e.value, e.maxValue)),
-        [s, n] = reactExports.useState(e.maxValue),
+    const [t, s] = reactExports.useState(Math.min(e.value, e.maxValue)),
+        [r, n] = reactExports.useState(e.maxValue),
         a = usePrevious(t),
-        o = usePrevious(s),
-        u = useEvent$1((t) => r(Math.min(t, e.maxValue)));
+        o = usePrevious(r),
+        u = useEvent$1((t) => s(Math.min(t, e.maxValue)));
     (reactExports.useLayoutEffect(() => {
         u(e.value);
     }, [e.value, u]),
@@ -10940,35 +10789,35 @@ function ProgressBarProvider(e) {
             n(e.maxValue);
         }, [e.maxValue]));
     const i = useEvent$1((t) => {
-        var r;
-        return null == (r = e.onValueChange) ? void 0 : r.call(e, t);
+        var s;
+        return null == (s = e.onValueChange) ? void 0 : s.call(e, t);
     });
     reactExports.useEffect(() => {
         i(t);
     }, [i, t]);
     const l = useEvent$1((t) => {
-        var r;
-        return null == (r = e.onMaxValueChange) ? void 0 : r.call(e, t);
+        var s;
+        return null == (s = e.onMaxValueChange) ? void 0 : s.call(e, t);
     });
     reactExports.useEffect(() => {
-        l(s);
-    }, [l, s]);
+        l(r);
+    }, [l, r]);
     const c = reactExports.useMemo(() => {
         if (void 0 !== a && void 0 !== o) return { value: a, maxValue: o, percentage: a / o };
     }, [a, o]);
-    assert(s > 0, 'ProgressBar: maxValue must be greater than 0');
+    assert(r > 0, 'ProgressBar: maxValue must be greater than 0');
     const d = reactExports.useMemo(
         () => ({
             value: t,
-            maxValue: s,
+            maxValue: r,
             setValue: u,
             setMaxValue: n,
             size: e.size,
             previous: c,
-            percentage: t / s,
+            percentage: t / r,
             animationEnabled: e.animationEnabled,
         }),
-        [t, s, u, n, c, e.size, e.animationEnabled],
+        [t, r, u, n, c, e.size, e.animationEnabled],
     );
     return jsxRuntimeExports.jsx(Context.Provider, { value: d, children: e.children });
 }
@@ -10992,8 +10841,8 @@ const background$1 = 'ProgressBar_background_b40cdfdf',
 function ProgressBar({
     size: e = 'medium',
     className: t,
-    classNames: r,
-    filledClassName: s,
+    classNames: s,
+    filledClassName: r,
     filledClassNames: n,
     ...a
 }) {
@@ -11004,11 +10853,13 @@ function ProgressBar({
             size: e,
             className: t,
             children: [
-                jsxRuntimeExports.jsx('div', { className: cx(styles$8.background, null == r ? void 0 : r.background) }),
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$8.backgroundPattern, null == r ? void 0 : r.backgroundPattern),
+                    className: clsx(styles$8.background, null == s ? void 0 : s.background),
                 }),
-                jsxRuntimeExports.jsx(Filled, { className: s, classNames: n }),
+                jsxRuntimeExports.jsx('div', {
+                    className: clsx(styles$8.backgroundPattern, null == s ? void 0 : s.backgroundPattern),
+                }),
+                jsxRuntimeExports.jsx(Filled, { className: r, classNames: n }),
                 a.children,
             ],
         }),
@@ -11070,40 +10921,40 @@ const formats = { superCompact: 'superCompact', compact: 'compact', default: 'de
         fadeIn: fadeIn$5,
     };
 function FormattedValue({ size: e, preFormatted: t }) {
-    var r;
-    const s = [];
+    var s;
+    const r = [];
     for (let n = 0; n < t.items.length; ++n)
         (t.separator &&
             n > 0 &&
-            s.push(
+            r.push(
                 jsxRuntimeExports.jsx(
                     'span',
                     { className: cx(styles$7.detailedSeparator, styles$7[`detailedSeparator__${e}`]) },
                     'separator',
                 ),
             ),
-            s.push(
+            r.push(
                 jsxRuntimeExports.jsx(
                     'span',
                     {
                         className: cx(styles$7.item, styles$7[`item__${e}`]),
                         children:
-                            null == (r = t.items[n])
+                            null == (s = t.items[n])
                                 ? void 0
-                                : r
+                                : s
                                       .split(' ')
-                                      .map((t, r) =>
+                                      .map((t, s) =>
                                           jsxRuntimeExports.jsx(
                                               'span',
                                               { className: cx(styles$7.part, styles$7[`part__${e}`]), children: t },
-                                              `part_${r}`,
+                                              `part_${s}`,
                                           ),
                                       ),
                     },
                     `item_${n}`,
                 ),
             ));
-    return s;
+    return r;
 }
 const STRING_RESOURCES = resources.resolve('strings'),
     COLON = ':',
@@ -11140,55 +10991,55 @@ const STRING_RESOURCES = resources.resolve('strings'),
     };
 function detailedFormatter(e) {
     var t;
-    const [r, ...s] = e,
-        n = s.join(COLON);
+    const [s, ...r] = e,
+        n = r.join(COLON);
     return {
         separator: !0,
         items:
-            Number(r) > 0
-                ? [null == (t = LOCALE_FORMATTERS[DAYS_FORMAT]) ? void 0 : t.call(LOCALE_FORMATTERS, r), n]
+            Number(s) > 0
+                ? [null == (t = LOCALE_FORMATTERS[DAYS_FORMAT]) ? void 0 : t.call(LOCALE_FORMATTERS, s), n]
                 : [n],
     };
 }
 function defaultFormatter(e, t) {
-    var r;
-    let s = 0;
+    var s;
+    let r = 0;
     const n = e.length - 1,
         a = FORMAT_PARTS[t],
         o = { separator: !1, items: [] };
-    for (; s < n && !(Number(e[s]) > 0); ++s);
+    for (; r < n && !(Number(e[r]) > 0); ++r);
     return (
-        a[s] === MINUTES_FORMAT && 0 === Number(e[s])
+        a[r] === MINUTES_FORMAT && 0 === Number(e[r])
             ? (o.items = [
-                  null == (r = LOCALE_FORMATTERS[MINUTES_FORMAT])
+                  null == (s = LOCALE_FORMATTERS[MINUTES_FORMAT])
                       ? void 0
-                      : r.call(LOCALE_FORMATTERS, DEFAULT_MIN_VALUE),
+                      : s.call(LOCALE_FORMATTERS, DEFAULT_MIN_VALUE),
               ])
-            : (o.items = [s, s + 1].map((t) => {
-                  var r;
-                  return null == (r = LOCALE_FORMATTERS[a[t]]) ? void 0 : r.call(LOCALE_FORMATTERS, e[t]);
+            : (o.items = [r, r + 1].map((t) => {
+                  var s;
+                  return null == (s = LOCALE_FORMATTERS[a[t]]) ? void 0 : s.call(LOCALE_FORMATTERS, e[t]);
               })),
         o
     );
 }
 function compactFormatter(e, t) {
-    var r, s;
+    var s, r;
     const n = e.length,
         a = FORMAT_PARTS[t],
         o = { separator: !1, items: [] };
     for (let u = 0; u < n; ++u)
         if (Number(e[u]) > 0)
-            return ((o.items = [null == (r = LOCALE_FORMATTERS[a[u]]) ? void 0 : r.call(LOCALE_FORMATTERS, e[u])]), o);
+            return ((o.items = [null == (s = LOCALE_FORMATTERS[a[u]]) ? void 0 : s.call(LOCALE_FORMATTERS, e[u])]), o);
     return (
         (o.items = [
-            null == (s = LOCALE_FORMATTERS[MINUTES_FORMAT]) ? void 0 : s.call(LOCALE_FORMATTERS, DEFAULT_MIN_VALUE),
+            null == (r = LOCALE_FORMATTERS[MINUTES_FORMAT]) ? void 0 : r.call(LOCALE_FORMATTERS, DEFAULT_MIN_VALUE),
         ]),
         o
     );
 }
 const formatValue = (e, t) => {
-        var r;
-        return null == (r = FORMATTER[t]) ? void 0 : r.call(FORMATTER, format$2(e, FORMAT_PARTS[t]), t);
+        var s;
+        return null == (s = FORMATTER[t]) ? void 0 : s.call(FORMATTER, format$2(e, FORMAT_PARTS[t]), t);
     },
     root$4 = 'Timer_root_6ee5dd6c',
     base$5 = 'Timer_dac0a0aa',
@@ -11247,8 +11098,8 @@ const formatValue = (e, t) => {
 function Timer({
     start: e,
     limit: t = 0,
-    tick: r = 1,
-    size: s = sizes$1.x24x24,
+    tick: s = 1,
+    size: r = sizes$1.x24x24,
     type: n = types.accent,
     format: a = formats.default,
     autostart: o = !0,
@@ -11261,10 +11112,10 @@ function Timer({
                 type: 'countdown',
                 start: isDuration(e) ? e : seconds(e),
                 limit: isDuration(t) ? t : seconds(t),
-                tick: isDuration(r) ? r : seconds(r),
+                tick: isDuration(s) ? s : seconds(s),
                 autostart: o,
             }),
-            [o, t, e, r],
+            [o, t, e, s],
         ),
     );
     return jsxRuntimeExports.jsxs('div', {
@@ -11273,7 +11124,7 @@ function Timer({
             jsxRuntimeExports.jsx('div', {
                 className: cx(
                     styles$6.icon,
-                    styles$6[`icon__${s}`],
+                    styles$6[`icon__${r}`],
                     styles$6[`icon__${n}`],
                     null == i ? void 0 : i.icon,
                 ),
@@ -11282,11 +11133,11 @@ function Timer({
                 jsxRuntimeExports.jsx('div', {
                     className: cx(
                         styles$6.label,
-                        styles$6[`label__${s}`],
+                        styles$6[`label__${r}`],
                         styles$6[`label__${n}`],
                         null == i ? void 0 : i.label,
                     ),
-                    children: jsxRuntimeExports.jsx(FormattedValue, { size: s, preFormatted: formatValue(l, a) }),
+                    children: jsxRuntimeExports.jsx(FormattedValue, { size: r, preFormatted: formatValue(l, a) }),
                 }),
         ],
     });
@@ -11343,8 +11194,8 @@ const root$3 = 'Counter_root_f40ddf91',
     Counter = ({
         value: e,
         isEmpty: t = !1,
-        className: r,
-        size: s = 'normal',
+        className: s,
+        size: r = 'normal',
         fadeInAnimation: n = !1,
         hide: a = !1,
         maximumNumber: o = 99,
@@ -11356,12 +11207,12 @@ const root$3 = 'Counter_root_f40ddf91',
         const c = i && !l && i > o,
             d = cx(
                 styles$5.base,
-                styles$5[`base__${s}`],
+                styles$5[`base__${r}`],
                 n && styles$5.base__animated,
                 a && styles$5.base__hidden,
                 !i && styles$5.base__pattern,
                 t && styles$5.base__empty,
-                r,
+                s,
             );
         return jsxRuntimeExports.jsxs('div', {
             className: d,
@@ -11381,8 +11232,8 @@ const root$3 = 'Counter_root_f40ddf91',
     },
     makeOptionalCaller =
         (e, t) =>
-        (...r) => {
-            if (e(...r)) return t(...r);
+        (...s) => {
+            if (e(...s)) return t(...s);
         },
     root$2 = 'Iconbutton_root_81e1e86b',
     base$3 = 'Iconbutton_4670fff1',
@@ -11433,8 +11284,8 @@ const root$3 = 'Counter_root_f40ddf91',
     IconButton = ({
         type: e,
         children: t,
-        className: r,
-        classNames: s,
+        className: s,
+        classNames: r,
         disabled: n = !1,
         isVisibleLabel: a = !1,
         soundHover: o = R.sounds.highlight(),
@@ -11453,14 +11304,14 @@ const root$3 = 'Counter_root_f40ddf91',
             [g, h] = reactExports.useState(!1),
             y = reactExports.useRef(null),
             v = () => !1 === n,
-            C = (e) => v() && ((e) => e.button === MOUSE_BUTTON_CODES.LEFT)(e),
-            A = makeOptionalCaller(v, (e) => {
+            A = (e) => v() && ((e) => e.button === MOUSE_BUTTON_CODES.LEFT)(e),
+            C = makeOptionalCaller(v, (e) => {
                 null == l || l(e);
             }),
-            $ = makeOptionalCaller(C, (e) => {
+            $ = makeOptionalCaller(A, (e) => {
                 (x(!0), null == _ || _(e), u && playSound(u));
             }),
-            F = makeOptionalCaller(C, (e) => {
+            F = makeOptionalCaller(A, (e) => {
                 (x(!1), null == p || p(e));
             }),
             w = makeOptionalCaller(v, (e) => {
@@ -11480,9 +11331,9 @@ const root$3 = 'Counter_root_f40ddf91',
                 a && styles$4.base__visibleLabel,
                 !n && b && styles$4.base__mouseDown,
                 !n && g && styles$4.base__hovered,
-                r,
+                s,
             ),
-            onClick: A,
+            onClick: C,
             onMouseEnter: w,
             onMouseLeave: (e) => {
                 (h(!1), x(!1), null == d || d(e));
@@ -11498,12 +11349,12 @@ const root$3 = 'Counter_root_f40ddf91',
                         styles$4.icon,
                         styles$4[`icon__${i}`],
                         styles$4[`icon__${e}`],
-                        null == s ? void 0 : s.icon,
+                        null == r ? void 0 : r.icon,
                     ),
                 }),
                 t &&
                     jsxRuntimeExports.jsx('div', {
-                        className: cx(styles$4.label, styles$4[`label__${i}`], null == s ? void 0 : s.label),
+                        className: cx(styles$4.label, styles$4[`label__${i}`], null == r ? void 0 : r.label),
                         children: t,
                     }),
             ],
@@ -11517,22 +11368,22 @@ const root$3 = 'Counter_root_f40ddf91',
     MAX_WIDTH = 8e3,
     getInitialApi = () => ({ update: () => {} }),
     getLeftOffset = (e, t) => ('number' == typeof t ? t : e.offsetLeft),
-    moveLine = ({ horizontalScrollPosition: e, leftOffset: t }, r, { container: s, line: n }) => {
-        const a = Math.max(0, Math.floor(s.offsetWidth * r) - MAX_WIDTH),
-            o = (e - getLeftOffset(s, t)) | 0,
+    moveLine = ({ horizontalScrollPosition: e, leftOffset: t }, s, { container: r, line: n }) => {
+        const a = Math.max(0, Math.floor(r.offsetWidth * s) - MAX_WIDTH),
+            o = (e - getLeftOffset(r, t)) | 0,
             u = clamp(0, a, o);
         n.style.transform = `translateX(${u}px)`;
     },
-    moveBackground = ({ horizontalScrollPosition: e, leftOffset: t }, r, s) => {
-        const n = (e - getLeftOffset(r, t)) | 0,
-            a = clamp(0, r.offsetWidth, n);
-        s.style.transform = `translateX(${a}px)`;
+    moveBackground = ({ horizontalScrollPosition: e, leftOffset: t }, s, r) => {
+        const n = (e - getLeftOffset(s, t)) | 0,
+            a = clamp(0, s.offsetWidth, n);
+        r.style.transform = `translateX(${a}px)`;
     },
-    OptimizedProgressBar = ({ api: e, value: t, maxValue: r = 100, theme: s = defaultTheme, className: n, ...a }) => {
+    OptimizedProgressBar = ({ api: e, value: t, maxValue: s = 100, theme: r = defaultTheme, className: n, ...a }) => {
         const o = reactExports.useRef(null),
             u = reactExports.useRef(null),
             i = reactExports.useRef(null),
-            l = clamp(0, t, r) / r,
+            l = clamp(0, t, s) / s,
             c = reactExports.useCallback(
                 (e) => {
                     (i.current && o.current && moveBackground(e, o.current, i.current),
@@ -11540,7 +11391,7 @@ const root$3 = 'Counter_root_f40ddf91',
                 },
                 [l],
             ),
-            d = reactExports.useMemo(() => createSkin(s), [s]);
+            d = reactExports.useMemo(() => createSkin(r), [r]);
         return (
             (e.current.update = c),
             jsxRuntimeExports.jsx('div', {
@@ -11562,8 +11413,8 @@ const root$3 = 'Counter_root_f40ddf91',
                             ...a,
                             lineRef: u,
                             value: t,
-                            theme: s,
-                            maxValue: r,
+                            theme: r,
+                            maxValue: s,
                             withoutBackground: !0,
                         }),
                     ],
@@ -11680,8 +11531,8 @@ var RewardType = ((e) => (
     ImageSize.Big);
 const formatPrintf = (e, t) =>
         e.replace(/(\{|%\()\w+(\}|\)s)/g, (e) => {
-            const r = 0 === e.indexOf('%') ? 2 : 1;
-            return String(t[e.slice(r, -r)]);
+            const s = 0 === e.indexOf('%') ? 2 : 1;
+            return String(t[e.slice(s, -s)]);
         }),
     root$1 = 'CloseButton_root_987cb365',
     base$1 = 'CloseButton_7488a1b8',
@@ -11720,19 +11571,19 @@ const formatPrintf = (e, t) =>
 function CloseButton({
     size: e = sizes.medium,
     hoverSound: t = sounds$1.highlight,
-    clickSound: r = sounds$1.click,
-    className: s,
+    clickSound: s = sounds$1.click,
+    className: r,
     onHover: n,
     onClose: a,
 }) {
     const o = useUpscale(styles$2[`base__${e}`], styles$2[`base__${upscaleImageSizes[e]}`]);
     return jsxRuntimeExports.jsx('div', {
-        className: cx(styles$2.base, o, s),
+        className: cx(styles$2.base, o, r),
         onMouseEnter: () => {
             (play$1.sound(t), null == n || n());
         },
         onClick: () => {
-            (play$1.sound(r), a());
+            (play$1.sound(s), a());
         },
     });
 }
@@ -11742,25 +11593,25 @@ const base = 'Tooltip_6d997cee',
     styles$1 = { base: base, decorator: decorator },
     Base = defineStyledComponent('Base', styles$1.base),
     Decorator = defineStyledComponent('Decorator', styles$1.decorator),
-    Tooltip = reactExports.forwardRef(function ({ children: e, ...t }, r) {
-        const s = reactExports.useRef(null);
+    Tooltip = reactExports.forwardRef(function ({ children: e, ...t }, s) {
+        const r = reactExports.useRef(null);
         return (
-            useRefResizeObserver(s, (e) => {
+            useRefResizeObserver(r, (e) => {
                 const t = e.target;
                 if (!(t instanceof HTMLElement)) return;
                 resize$1(t.scrollWidth, t.scrollHeight);
-                const r = window.getComputedStyle(t);
+                const s = window.getComputedStyle(t);
                 setSidePaddingsRem$1({
-                    top: parseInt(r.getPropertyValue('padding-top'), 10),
-                    left: parseInt(r.getPropertyValue('padding-left'), 10),
-                    right: parseInt(r.getPropertyValue('padding-right'), 10),
-                    bottom: parseInt(r.getPropertyValue('padding-bottom'), 10),
+                    top: parseInt(s.getPropertyValue('padding-top'), 10),
+                    left: parseInt(s.getPropertyValue('padding-left'), 10),
+                    right: parseInt(s.getPropertyValue('padding-right'), 10),
+                    bottom: parseInt(s.getPropertyValue('padding-bottom'), 10),
                 });
             }),
             jsxRuntimeExports.jsx(Base, {
                 ...t,
                 ref: function (e) {
-                    ((s.current = e), 'function' == typeof r ? r(e) : r && (r.current = e));
+                    ((r.current = e), 'function' == typeof s ? s(e) : s && (s.current = e));
                 },
                 children: e,
             })
@@ -11838,34 +11689,34 @@ const root = 'Formattextwithcolortags_root_7219dca0',
     TAGGED_PHRASE_REGEXP = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
     COLOR_REGEXP = new RegExp('(?<=(?:%\\(|{))(.*?)(?=(?:_[Oo]pen|Start))'),
     WORDS_REGEXP = new RegExp('(?<=(?:_[Oo]pen|Start)(?:\\)s?|}))(.*?)(?=(?:%\\(|{))'),
-    FormatTextWithColorTagsComponent = ({ text: e, binding: t, classMix: r }) => {
-        const s = reactExports.useCallback((e) => ({ color: `#${e}` }), []),
+    FormatTextWithColorTagsComponent = ({ text: e, binding: t, classMix: s }) => {
+        const r = reactExports.useCallback((e) => ({ color: `#${e}` }), []),
             n = reactExports.useMemo(() => t || {}, [t]);
         let a = TAGGED_PHRASE_REGEXP.exec(e),
             o = e,
             u = 0;
         for (; a; ) {
-            const r = a[0],
-                i = COLOR_REGEXP.exec(r),
-                l = WORDS_REGEXP.exec(r),
+            const s = a[0],
+                i = COLOR_REGEXP.exec(s),
+                l = WORDS_REGEXP.exec(s),
                 c = a[1];
             if (i && l) {
                 const e = i[0],
                     a = e + u++ + e;
-                ((o = o.replace(r, `%(${a})`)),
+                ((o = o.replace(s, `%(${a})`)),
                     (n[a] = styles[e]
                         ? jsxRuntimeExports.jsx('span', {
                               className: styles[e],
                               children: jsxRuntimeExports.jsx(FormatText$1, { text: c, binding: t }),
                           })
                         : jsxRuntimeExports.jsx('span', {
-                              style: s(e),
+                              style: r(e),
                               children: jsxRuntimeExports.jsx(FormatText$1, { text: c, binding: t }),
                           })));
             }
             a = TAGGED_PHRASE_REGEXP.exec(e);
         }
-        return jsxRuntimeExports.jsx(FormatText$1, { text: o, classMix: r, binding: n });
+        return jsxRuntimeExports.jsx(FormatText$1, { text: o, classMix: s, binding: n });
     },
     FormatTextWithColorTags = reactExports.memo(FormatTextWithColorTagsComponent);
 export {
@@ -11924,7 +11775,7 @@ export {
     useTimeout as aM,
     useSkipFrame as aN,
     OPEN_ANIMATION_DURATION as aO,
-    useUnmount as aP,
+    useUnmount$1 as aP,
     useExternalPaddings as aQ,
     isEqual as aR,
     usePrevious as aS,
@@ -11963,77 +11814,75 @@ export {
     makeActions as ay,
     mapNonNullable as az,
     useCallbackOnEsc as b,
-    emptyFunction$2 as b$,
+    format as b$,
     intl$1 as b0,
     directions$1 as b1,
-    MultilineOverflow as b2,
-    useSpecialContextMenu as b3,
-    DisposeBuilder as b4,
-    remToPx$1 as b5,
-    useScrollBounding as b6,
-    List as b7,
-    CarouselScroll as b8,
-    useHorizontalScroll as b9,
-    getRewardValueType as bA,
-    getRewardImage as bB,
-    Tooltip$1 as bC,
-    useLayoutReady as bD,
-    getInitialApi as bE,
-    OptimizedProgressBar as bF,
-    useMount$1 as bG,
-    useCountdown as bH,
-    format$1 as bI,
-    normalizeResource as bJ,
-    formatPrintf as bK,
-    getScale$2 as bL,
-    Gray as bM,
-    RewardType$1 as bN,
-    useHorizontalScrollApi as bO,
-    Switch as bP,
-    Route as bQ,
-    ModelRouterProvider as bR,
-    initExternalPaddings$1 as bS,
-    enableFullScreenModeSupported$1 as bT,
-    CurrencyType as bU,
-    pxToRem$1 as bV,
-    BackportTooltip as bW,
-    setEventHandled$1 as bX,
-    findIndexLast as bY,
-    CloseButton as bZ,
-    Tooltip as b_,
-    throttle$1 as ba,
-    ErrorHandler as bb,
-    ProgressBar as bc,
-    statusTypes as bd,
-    useScrollByDragElements as be,
-    dragDirections as bf,
-    Area$1 as bg,
-    Bar$1 as bh,
-    checkOnBorder as bi,
-    Timer as bj,
-    sizes$1 as bk,
-    getRegionalDateTime as bl,
-    DateTimeFormatsEnum as bm,
-    VehicleLevel as bn,
-    sizes$3 as bo,
-    join as bp,
-    FormatNumber as bq,
-    Base$7 as br,
-    Counter as bs,
-    slice as bt,
-    IconButton as bu,
-    convertNbsp$1 as bv,
-    MediaHeight as bw,
-    MediaWidth as bx,
-    unsafeGet as by,
-    getRewardTooltipConfig as bz,
+    useSpecialContextMenu as b2,
+    DisposeBuilder as b3,
+    remToPx$1 as b4,
+    useScrollBounding as b5,
+    useScrollByDragElements as b6,
+    Area$1 as b7,
+    dragDirections as b8,
+    List as b9,
+    Tooltip$1 as bA,
+    useLayoutReady as bB,
+    getInitialApi as bC,
+    OptimizedProgressBar as bD,
+    useMount$1 as bE,
+    useCountdown as bF,
+    format$1 as bG,
+    normalizeResource as bH,
+    formatPrintf as bI,
+    getScale$2 as bJ,
+    Gray as bK,
+    RewardType$1 as bL,
+    useHorizontalScrollApi as bM,
+    Switch as bN,
+    Route as bO,
+    ModelRouterProvider as bP,
+    initExternalPaddings$1 as bQ,
+    enableFullScreenModeSupported$1 as bR,
+    CurrencyType as bS,
+    pxToRem$1 as bT,
+    BackportTooltip as bU,
+    setEventHandled$1 as bV,
+    findIndexLast as bW,
+    CloseButton as bX,
+    Tooltip as bY,
+    emptyFunction$2 as bZ,
+    ResourceImage as b_,
+    useHorizontalScroll as ba,
+    throttle$1 as bb,
+    ErrorHandler as bc,
+    ProgressBar as bd,
+    statusTypes as be,
+    Bar$1 as bf,
+    checkOnBorder as bg,
+    Timer as bh,
+    sizes$1 as bi,
+    getRegionalDateTime as bj,
+    DateTimeFormatsEnum as bk,
+    VehicleLevel as bl,
+    sizes$3 as bm,
+    join as bn,
+    FormatNumber as bo,
+    Base$7 as bp,
+    Counter as bq,
+    slice as br,
+    IconButton as bs,
+    convertNbsp$1 as bt,
+    MediaHeight as bu,
+    MediaWidth as bv,
+    unsafeGet as bw,
+    getRewardTooltipConfig as bx,
+    getRewardValueType as by,
+    getRewardImage as bz,
     createTimeoutInEffect$1 as c,
-    ResourceImage as c0,
-    format as c1,
-    ONE_DAY as c2,
-    Specials as c3,
-    FormatTextWithColorTags as c4,
-    getNumberFormat as c5,
+    ONE_DAY as c0,
+    Specials as c1,
+    FormatTextWithColorTags as c2,
+    getNumberFormat as c3,
     runView as d,
     constFalse as e,
     find as f,

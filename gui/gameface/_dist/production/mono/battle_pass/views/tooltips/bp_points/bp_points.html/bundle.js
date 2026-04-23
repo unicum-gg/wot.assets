@@ -1,5 +1,5 @@
-import { j as s, t as e, f as t } from '../../../../chunks/vendor.js';
-import { i as a, N as i, g as r, h as l, n, b_ as o, J as d, U as c, d as h } from '../../../../chunks/lib.js';
+import { j as s, v as e, k as t } from '../../../../chunks/vendor.js';
+import { i as a, N as i, g as r, h as l, n, bY as o, J as d, U as c, d as h } from '../../../../chunks/lib.js';
 import { V as _ } from '../../../../chunks/vehicle_list.js';
 import { W as m } from '../../../../chunks/wot_plus_banner.js';
 import { P as j, a as x } from '../../../../chunks/per_battle_points_table.js';
@@ -15,8 +15,8 @@ const [p, v] = a()(
         i,
     ),
     b = 'Header_a103bd21',
-    f = 'Header_icon_eed746ab',
-    u = 'Header_labels_f416515f',
+    u = 'Header_icon_eed746ab',
+    f = 'Header_labels_f416515f',
     N = 'Header_title_381c9f5b',
     P = 'Header_subtitle_632b6de',
     g = R.strings.battle_pass.tooltips.points,
@@ -24,9 +24,9 @@ const [p, v] = a()(
         s.jsxs('div', {
             className: b,
             children: [
-                s.jsx('div', { className: f }),
+                s.jsx('div', { className: u }),
                 s.jsxs('div', {
-                    className: u,
+                    className: f,
                     children: [
                         s.jsx('div', { className: N, children: g.title() }),
                         s.jsx('div', { className: P, children: g.subtitle() }),
@@ -98,5 +98,5 @@ const [p, v] = a()(
             ],
         });
     }),
-    q = () => s.jsx(o, { children: s.jsx(o.Decorator, { children: s.jsx(U, {}) }) });
-h(new d().add(c).addWithProps(p, {}).render(s.jsx(q, {})));
+    Y = () => s.jsx(o, { children: s.jsx(o.Decorator, { children: s.jsx(U, {}) }) });
+h(new d().add(c).addWithProps(p, {}).render(s.jsx(Y, {})));

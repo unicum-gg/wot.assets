@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,7 +11,7 @@
     position: relative;
 }
 
-.Tooltip_base_fc {
+.Tooltip_base_fae13 {
     display: flex;
     flex-direction: column;
     width: 292rem;
@@ -19,7 +19,7 @@
     color: #8c8c7e;
 }
 
-.Tooltip_compatibleTanksTitle_37 {
+.Tooltip_compatibleTanksTitle_ad149 {
     color: #595950;
     font-size: 14rem;
     font-weight: 400;

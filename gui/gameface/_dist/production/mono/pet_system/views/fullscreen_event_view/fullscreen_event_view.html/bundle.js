@@ -1,6 +1,6 @@
-import { p as e, q as s, s as a, t, j as r, k as d } from '../../../chunks/vendor.js';
+import { q as e, s, t as a, v as t, j as r, l } from '../../../chunks/vendor.js';
 import {
-    r as l,
+    r as d,
     i as p,
     m as o,
     g as i,
@@ -9,8 +9,8 @@ import {
     I as _,
     e as m,
     h as j,
-    o as x,
-    M as v,
+    o as v,
+    M as x,
     B as y,
     A as h,
     F as w,
@@ -21,7 +21,7 @@ import {
     l as N,
 } from '../../../chunks/lib.js';
 import { S as b } from '../../../chunks/synergy_rewards.js';
-/* empty css                    */ const k = l.resolve('aliases'),
+/* empty css                    */ const k = d.resolve('aliases'),
     [E, I] = p()(
         ({ observableModel: s }) => {
             const a = { root: s.object(), rewards: s.array('rewards') },
@@ -56,14 +56,14 @@ import { S as b } from '../../../chunks/synergy_rewards.js';
     U = 'App_rewards_d0d451da',
     D = 'App_reward_d2e6a341',
     G = 'App_buttons_149abdc7',
-    H = l.resolve('strings'),
-    J = l.resolve('images'),
-    K = l.resolve('sounds'),
+    H = d.resolve('strings'),
+    J = d.resolve('images'),
+    K = d.resolve('sounds'),
     Q = s(function () {
         const { model: e, controls: s } = I(),
-            l = e.root.get().eventId,
-            p = H.readOrEmpty(`pet_events.joke.event_${l}`),
-            o = J.read(`petSystem.event_view.reward_${l}_400x400`),
+            d = e.root.get().eventId,
+            p = H.readOrEmpty(`pet_events.joke.event_${d}`),
+            o = J.read(`petSystem.event_view.reward_${d}_400x400`),
             i = [...Array(p ? 5 : 4).keys()],
             n = e.computes.getRewards(),
             c = e.computes.hasRewards();
@@ -89,7 +89,7 @@ import { S as b } from '../../../chunks/synergy_rewards.js';
             children: r.jsxs('div', {
                 className: S,
                 children: [
-                    r.jsxs(d.div, {
+                    r.jsxs(l.div, {
                         style: _[0],
                         children: [
                             o &&
@@ -97,7 +97,7 @@ import { S as b } from '../../../chunks/synergy_rewards.js';
                                     children: [
                                         r.jsx('div', { className: C, style: { backgroundImage: `url(${o})` } }),
                                         !j.isLow() &&
-                                            r.jsx(x, {
+                                            r.jsx(v, {
                                                 className: $,
                                                 src: R.videos.pet_system.pet_rays(),
                                                 autoplay: !0,
@@ -105,10 +105,10 @@ import { S as b } from '../../../chunks/synergy_rewards.js';
                                             }),
                                     ],
                                 }),
-                            r.jsx(v, { className: B, text: H.readOrEmpty(`pet_events.title.event_${l}`) }),
+                            r.jsx(x, { className: B, text: H.readOrEmpty(`pet_events.title.event_${d}`) }),
                         ],
                     }),
-                    r.jsx(d.div, {
+                    r.jsx(l.div, {
                         style: _[1],
                         className: z,
                         children: r.jsxs(y, {
@@ -116,7 +116,7 @@ import { S as b } from '../../../chunks/synergy_rewards.js';
                                 r.jsx(h, {
                                     classNames: { wrapper: M, content: W },
                                     children: r.jsx(w, {
-                                        text: H.readOrEmpty(`pet_events.text.event_${l}`),
+                                        text: H.readOrEmpty(`pet_events.text.event_${d}`),
                                         params: {
                                             color: '#eeede9e6',
                                             defaultColor: '#eeede980',
@@ -130,7 +130,7 @@ import { S as b } from '../../../chunks/synergy_rewards.js';
                             ],
                         }),
                     }),
-                    r.jsxs(d.div, {
+                    r.jsxs(l.div, {
                         style: _[2],
                         children: [
                             r.jsx('div', { className: L, children: H.readOrEmpty('pet_events.rewards.title') }),
@@ -143,8 +143,8 @@ import { S as b } from '../../../chunks/synergy_rewards.js';
                             }),
                         ],
                     }),
-                    p && r.jsx(d.div, { style: _[3], children: r.jsx(v, { className: q, text: p }) }),
-                    r.jsx(d.div, {
+                    p && r.jsx(l.div, { style: _[3], children: r.jsx(x, { className: q, text: p }) }),
+                    r.jsx(l.div, {
                         style: _[p ? 4 : 3],
                         className: G,
                         children: r.jsx(u, {

@@ -1,0 +1,168 @@
+@keyframes AnimationCheckbox_fadeIn_f57b04ae {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.AnimationCheckbox_9598d652 {
+    display: flex;
+    align-items: center;
+}
+.AnimationCheckbox_base__disabled_d45bad7 {
+    opacity: 0.5;
+}
+
+.AnimationCheckbox_text_af0df6f3 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    color: #f2f2f7;
+    opacity: 0.9;
+}
+@keyframes Loader_fadeIn_12c9bceb {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Loader_a1c28e8a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    opacity: 0.8;
+}
+
+.Loader_icon_aa53996d {
+    width: 56rem;
+    height: 56rem;
+    background: center/contain no-repeat;
+    animation: Loader_rotate_12c9bceb 1s infinite;
+    pointer-events: none;
+}
+
+.Loader_text_b342656c {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    color: #f2f2f7;
+}
+.mediaMedium .Loader_text_b342656c {
+    font-size: 24rem;
+}
+
+@keyframes Loader_rotate_12c9bceb {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes PurchaseButton_fadeIn_78b7ea64 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.PurchaseButton_48021a00 {
+    width: 160rem;
+    height: 140rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.PurchaseButton_wrapper_58d7fe80 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.PurchaseButton_image_5a2e0048 {
+    width: 160rem;
+    height: 120rem;
+    background: no-repeat center/cover;
+    animation: PurchaseButton_brightOut_78b7ea64 0.25s ease-in-out forwards;
+}
+.PurchaseButton_wrapper_58d7fe80:hover .PurchaseButton_image_5a2e0048 {
+    animation: PurchaseButton_bright_78b7ea64 0.25s ease-in-out forwards;
+}
+
+.PurchaseButton_textBlock_4db46f09 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    display: flex;
+    align-items: center;
+    color: #ffc363;
+    position: absolute;
+    bottom: 14rem;
+}
+
+.PurchaseButton_text_6d4bbfc {
+    text-align: center;
+}
+
+.PurchaseButton_icon_4fb4c378 {
+    width: 24rem;
+    height: 24rem;
+    background: no-repeat center/cover;
+}
+
+@keyframes PurchaseButton_bright_78b7ea64 {
+    from {
+        filter: brightness(1);
+    }
+    to {
+        filter: brightness(1.3);
+    }
+}
+@keyframes PurchaseButton_brightOut_78b7ea64 {
+    from {
+        filter: brightness(1.3);
+    }
+    to {
+        filter: brightness(1);
+    }
+}
+@keyframes QuantityTitle_fadeIn_8263dab {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.QuantityTitle_daea9f96 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #f2f2f7;
+    opacity: 0.9;
+    position: relative;
+    z-index: 0;
+}
+
+.QuantityTitle_daea9f96 .QuantityTitle_count_271d2628 {
+    color: #ffdd99;
+}

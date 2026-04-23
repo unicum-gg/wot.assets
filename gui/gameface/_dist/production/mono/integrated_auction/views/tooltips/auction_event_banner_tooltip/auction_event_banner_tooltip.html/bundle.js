@@ -1,31 +1,31 @@
-import { h as e, j as t, e as n } from '../../../../chunks/vendor.js';
+import { j as e, e as t, i as n } from '../../../../chunks/vendor.js';
 import { i as s, n as a, r, T as i, a as o, b as c } from '../../../../chunks/lib.js';
 const [l, d] = s()(({ observableModel: e }) => ({ ...{ root: e.object() } }), a),
-    m = 'TimeInfo_50670ca',
-    _ = 'TimeInfo_label_1737ef0d',
-    p = 'TimeInfo_timeLabel_9d8fe702',
-    v = 'TimeInfo_timeIcon_35f6c1e8',
-    b = r.resolve('strings');
-const g = e(function () {
-        const { model: e } = d(),
-            { timerValue: n, isAvailable: s } = e.root.get(),
+    m = 'Divider_558be4f4';
+function _({ className: n }) {
+    return e.jsx('div', { className: t(m, n) });
+}
+const p = 'TimeInfo_50670ca',
+    v = 'TimeInfo_label_1737ef0d',
+    b = 'TimeInfo_timeLabel_9d8fe702',
+    g = 'TimeInfo_timeIcon_35f6c1e8',
+    f = r.resolve('strings');
+const j = n(function () {
+        const { model: t } = d(),
+            { timerValue: n, isAvailable: s } = t.root.get(),
             a = s
-                ? b.readOrEmpty('hangar_event_banners.event.IntegratedAuctionEntryPont.timer.progress')
-                : b.readOrEmpty('hangar_event_banners.event.IntegratedAuctionEntryPont.timer.inactive');
-        return t.jsxs('div', {
-            className: m,
+                ? f.readOrEmpty('hangar_event_banners.event.IntegratedAuctionEntryPont.timer.progress')
+                : f.readOrEmpty('hangar_event_banners.event.IntegratedAuctionEntryPont.timer.inactive');
+        return e.jsxs('div', {
+            className: p,
             children: [
-                t.jsx('div', { className: _, children: a }),
-                t.jsx(i, { start: n, type: s ? i.type.accent : i.type.cooldown, classNames: { icon: v, label: p } }),
+                e.jsx('div', { className: v, children: a }),
+                e.jsx(i, { start: n, type: s ? i.type.accent : i.type.cooldown, classNames: { icon: g, label: b } }),
             ],
         });
     }),
-    f = { base: 'Divider_558be4f4' };
-function j({ className: e }) {
-    return t.jsx('div', { className: n(f.base, e) });
-}
-const h = 'App_9836d87a',
-    u = 'App_image_89e6469b',
+    u = 'App_9836d87a',
+    h = 'App_image_89e6469b',
     x = 'App_base__disabled_0',
     y = 'App_title_28652cf1',
     A = 'App_message_774c9b45',
@@ -33,29 +33,29 @@ const h = 'App_9836d87a',
     I = 'App_footer_e144caef',
     N = r.resolve('images'),
     O = r.resolve('strings');
-const P = e(function () {
-    const { model: e } = d(),
-        { isAvailable: s } = e.root.get();
-    return t.jsxs('div', {
-        className: n(h, !s && x),
+const P = n(function () {
+    const { model: n } = d(),
+        { isAvailable: s } = n.root.get();
+    return e.jsxs('div', {
+        className: t(u, !s && x),
         children: [
-            t.jsx('div', {
-                className: u,
+            e.jsx('div', {
+                className: h,
                 style: {
                     backgroundImage: `url(${N.readOrEmpty('hangarEventBanners.event.IntegratedAuctionEntryPont.bg_tooltip')})`,
                 },
             }),
-            t.jsx('div', {
+            e.jsx('div', {
                 className: y,
                 children: O.readOrEmpty('hangar_event_banners.event.IntegratedAuctionEntryPont.tooltip.title'),
             }),
-            t.jsx('div', {
+            e.jsx('div', {
                 className: A,
                 children: O.readOrEmpty('hangar_event_banners.event.IntegratedAuctionEntryPont.tooltip.description'),
             }),
-            t.jsx(j, { className: E }),
-            t.jsx('div', { className: I, children: t.jsx(g, {}) }),
+            e.jsx(_, { className: E }),
+            e.jsx('div', { className: I, children: e.jsx(j, {}) }),
         ],
     });
 });
-o(t.jsx(l, { children: t.jsx(c, { children: t.jsx(P, {}) }) }));
+o(e.jsx(l, { children: e.jsx(c, { children: e.jsx(P, {}) }) }));

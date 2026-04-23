@@ -1,21 +1,21 @@
-import { q as e, v as t, j as s, f as a } from '../../../../chunks/vendor.js';
+import { h as e, t, j as s, f as a } from '../../../../chunks/vendor.js';
 import {
     i as r,
     m as o,
-    bx as n,
-    aq as i,
+    bF as n,
+    j as i,
     n as d,
-    by as l,
-    bz as c,
-    bA as b,
-    bB as _,
+    bG as l,
+    bH as c,
+    bI as b,
+    bJ as _,
     F as m,
     r as p,
     U as u,
-    bs as h,
+    bv as h,
 } from '../../../../chunks/lib.js';
-import { T as x } from '../../../../chunks/table.js';
-/* empty css                        */ const [f, j] = r()(({ observableModel: t }) => {
+import { T as f } from '../../../../chunks/table.js';
+/* empty css                        */ const [x, j] = r()(({ observableModel: t }) => {
     const s = {
             root: t.object(),
             battleTypes: t.transform((e) => o(e, n), 'leaderBoard.battleTypes'),
@@ -103,12 +103,12 @@ const v = {
             className: H,
             children: [
                 s.jsx(y, {}),
-                !t && s.jsx(x, { battleModes: e.battleModes.get(), battleType: e.computes.battleType }),
+                !t && s.jsx(f, { battleModes: e.battleModes.get(), battleType: e.computes.battleType }),
             ],
         });
     });
 p(
     s.jsx(u, {
-        children: s.jsx(f, { children: s.jsx(h, { children: s.jsx(h.Decorator, { children: s.jsx(M, {}) }) }) }),
+        children: s.jsx(x, { children: s.jsx(h, { children: s.jsx(h.Decorator, { children: s.jsx(M, {}) }) }) }),
     }),
 );

@@ -1,5 +1,5 @@
 import { r as s, f as e, j as o } from './vendor.js';
-import { c4 as c } from './lib.js';
+import { c2 as c } from './lib.js';
 const t = 'IconTextBlock_4710821f',
     a = 'IconTextBlock_icon_f2e57275',
     r = 'IconTextBlock_text_e1bd5a75',

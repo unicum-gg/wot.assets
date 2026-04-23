@@ -1,11 +1,11 @@
-.App_base_3c {
+.App_base_b6a77 {
     width: 100%;
     max-width: 292rem;
     height: 100%;
     max-height: 283rem;
     color: #fff;
 }
-.App_backShadow_1e {
+.App_backShadow_ed8f6 {
     min-width: 292rem;
     min-height: 283rem;
     background-repeat: no-repeat;
@@ -14,9 +14,9 @@
     position: absolute;
     top: 0;
     left: 0;
-    animation: App_opacityAnimation_f9 4s ease-in both;
+    animation: App_opacityAnimation_f8fb5 4s ease-in both;
 }
-.App_resultBackground_6f {
+.App_resultBackground_b7463 {
     min-width: 292rem;
     min-height: 42rem;
     background-repeat: no-repeat;
@@ -24,19 +24,19 @@
     background-size: contain;
     position: absolute;
     top: 80rem;
-    animation-name: App_resultBackgroundAnimation_e3, App_slideOut_a4;
+    animation-name: App_resultBackgroundAnimation_d5978, App_slideOut_e4276;
     animation-duration: 0.5s, 3s;
     animation-fill-mode: both;
     animation-timing-function: ease-in;
     animation-delay: 0s, 0.5s;
 }
-.App_base__victory_a3 .App_resultBackground_6f {
+.App_base__victory_d20a3 .App_resultBackground_b7463 {
     background-size: contain;
 }
-.App_base__defeat_1e .App_resultBackground_6f {
+.App_base__defeat_bb621 .App_resultBackground_b7463 {
     background-size: contain;
 }
-.App_resultBackgroundFadeOut_e8 {
+.App_resultBackgroundFadeOut_cfdca {
     min-width: 292rem;
     min-height: 42rem;
     background-repeat: no-repeat;
@@ -44,19 +44,19 @@
     background-size: contain;
     position: absolute;
     top: 80rem;
-    animation-name: App_resultBackgroundFadeOutAnimation_d0;
+    animation-name: App_resultBackgroundFadeOutAnimation_dfab4;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
     animation-delay: 0.2s;
 }
-.App_base__victory_a3 .App_resultBackgroundFadeOut_e8 {
+.App_base__victory_d20a3 .App_resultBackgroundFadeOut_cfdca {
     background-size: contain;
 }
-.App_base__defeat_1e .App_resultBackgroundFadeOut_e8 {
+.App_base__defeat_bb621 .App_resultBackgroundFadeOut_cfdca {
     background-size: contain;
 }
-.App_result_50 {
+.App_result_af5b9 {
     min-width: 292rem;
     color: #fff;
     font-size: 18rem;
@@ -64,32 +64,32 @@
     text-shadow: 0 0 12rem #fff;
     position: relative;
     top: 85rem;
-    animation: App_resultAnimation_99 3s ease-out both 0.2s;
+    animation: App_resultAnimation_d4c16 3s ease-out both 0.2s;
 }
-.App_base__victory_a3 .App_result_50 {
+.App_base__victory_d20a3 .App_result_af5b9 {
     color: #bae3ef;
     text-shadow: 0 0 12rem #009dcf;
 }
-.App_base__defeat_1e .App_result_50 {
+.App_base__defeat_bb621 .App_result_af5b9 {
     color: #d9caca;
     text-shadow: 0 0 12rem #fd0000;
 }
-.App_upperStatBase_f1 {
+.App_upperStatBase_ceff0 {
     min-width: 292rem;
     font-size: 14rem;
     position: relative;
     top: 90rem;
     left: 10rem;
 }
-.App_base__victory_a3 .App_upperStatBase_f1 {
+.App_base__victory_d20a3 .App_upperStatBase_ceff0 {
     color: #bae3ef;
     text-shadow: 0 0 12rem #009dcf;
 }
-.App_base__defeat_1e .App_upperStatBase_f1 {
+.App_base__defeat_bb621 .App_upperStatBase_ceff0 {
     color: #d9caca;
     text-shadow: 0 0 12rem #fd0000;
 }
-.App_lowerStatBase_4d {
+.App_lowerStatBase_b5d68 {
     min-width: 292rem;
     padding-left: 25rem;
     background-position: left center;
@@ -98,35 +98,35 @@
     top: 100rem;
     left: 10rem;
 }
-.App_map_3b {
-    animation: App_upperStatAnimation_81 3s ease-out both 0.5s;
+.App_map_b70ae {
+    animation: App_upperStatAnimation_caad9 3s ease-out both 0.5s;
 }
-.App_vehicle_0f {
+.App_vehicle_a4608 {
     display: flex;
     flex-direction: row;
     align-items: center;
     min-width: 292rem;
-    animation: App_upperStatAnimation_81 3s both 0.6s;
+    animation: App_upperStatAnimation_caad9 3s both 0.6s;
 }
-.App_credits_9c {
+.App_credits_c78ef {
     background-repeat: no-repeat;
     background-position: left center;
     background-size: contain;
-    animation: App_lowerStatAnimation_f0 3s both 0.7s;
+    animation: App_lowerStatAnimation_a3ecb 3s both 0.7s;
 }
-.App_experience_44 {
+.App_experience_b6e28 {
     background-repeat: no-repeat;
     background-position: left center;
     background-size: contain;
-    animation: App_lowerStatAnimation_f0 3s both 0.8s;
+    animation: App_lowerStatAnimation_a3ecb 3s both 0.8s;
 }
-.App_crystals_47 {
+.App_crystals_d7fb7 {
     background-repeat: no-repeat;
     background-position: left top;
     background-size: contain;
-    animation: App_lowerStatAnimation_f0 3s both 0.9s;
+    animation: App_lowerStatAnimation_a3ecb 3s both 0.9s;
 }
-.App_upperGlow_f9 {
+.App_upperGlow_b8e87 {
     min-width: 292rem;
     min-height: 283rem;
     background-repeat: no-repeat;
@@ -135,18 +135,18 @@
     position: absolute;
     top: 0;
     left: 0;
-    animation-name: App_opacityAnimation_f9;
+    animation-name: App_opacityAnimation_f8fb5;
     animation-duration: 4s;
     animation-fill-mode: both;
     animation-timing-function: ease-in;
 }
-.App_base__victory_a3 .App_upperGlow_f9 {
+.App_base__victory_d20a3 .App_upperGlow_b8e87 {
     background-size: contain;
 }
-.App_base__defeat_1e .App_upperGlow_f9 {
+.App_base__defeat_bb621 .App_upperGlow_b8e87 {
     background-size: contain;
 }
-.App_upperGlowFadeOut_81 {
+.App_upperGlowFadeOut_f962f {
     min-width: 292rem;
     min-height: 283rem;
     background-repeat: no-repeat;
@@ -155,23 +155,23 @@
     position: absolute;
     top: 0;
     left: 0;
-    animation-name: App_upperGlowFadeOutAnimation_a3;
+    animation-name: App_upperGlowFadeOutAnimation_fbb0b;
     animation-duration: 1.5s;
     animation-fill-mode: both;
     animation-timing-function: ease-out;
     animation-delay: 0.2s;
 }
-.App_base__victory_a3 .App_upperGlowFadeOut_81 {
+.App_base__victory_d20a3 .App_upperGlowFadeOut_f962f {
     background-size: contain;
 }
-.App_base__defeat_1e .App_upperGlowFadeOut_81 {
+.App_base__defeat_bb621 .App_upperGlowFadeOut_f962f {
     background-size: contain;
 }
-.App_vehicleIcon_c5 {
+.App_vehicleIcon_da0e7 {
     width: 16rem;
     height: 16rem;
 }
-@keyframes App_slideOut_a4 {
+@keyframes App_slideOut_e4276 {
     from {
         margin-left: -1rem;
 
@@ -184,7 +184,7 @@
         left: -292rem;
     }
 }
-@keyframes App_resultBackgroundAnimation_e3 {
+@keyframes App_resultBackgroundAnimation_d5978 {
     0% {
         opacity: 0;
         transform: scaleX(1.5);
@@ -199,7 +199,7 @@
         transform: scaleX(1);
     }
 }
-@keyframes App_resultBackgroundFadeOutAnimation_d0 {
+@keyframes App_resultBackgroundFadeOutAnimation_dfab4 {
     from {
         opacity: 1;
     }
@@ -208,7 +208,7 @@
         opacity: 0;
     }
 }
-@keyframes App_resultAnimation_99 {
+@keyframes App_resultAnimation_d4c16 {
     0% {
         opacity: 0;
         left: -20rem;
@@ -229,7 +229,7 @@
         left: -100rem;
     }
 }
-@keyframes App_opacityAnimation_f9 {
+@keyframes App_opacityAnimation_f8fb5 {
     0% {
         opacity: 0;
     }
@@ -246,7 +246,7 @@
         opacity: 0;
     }
 }
-@keyframes App_upperStatAnimation_81 {
+@keyframes App_upperStatAnimation_caad9 {
     0% {
         opacity: 0;
         top: 70rem;
@@ -267,7 +267,7 @@
         left: -100rem;
     }
 }
-@keyframes App_lowerStatAnimation_f0 {
+@keyframes App_lowerStatAnimation_a3ecb {
     0% {
         opacity: 0;
         top: 80rem;
@@ -288,7 +288,7 @@
         left: -100rem;
     }
 }
-@keyframes App_upperGlowFadeOutAnimation_a3 {
+@keyframes App_upperGlowFadeOutAnimation_fbb0b {
     from {
         opacity: 0.8;
         transform: scaleX(1.5);

@@ -1,10 +1,10 @@
-import { r as a, j as e, f as s, s as r, t, v as i } from '../../../chunks/vendor.js';
+import { r as a, j as e, f as s, t as r, v as t, w as i } from '../../../chunks/vendor.js';
 import {
-    u as d,
-    a as n,
+    u as n,
+    a as d,
     i as o,
-    c as l,
-    b as c,
+    c,
+    b as l,
     r as m,
     e as p,
     d as _,
@@ -12,9 +12,9 @@ import {
     m as u,
     R as x,
     g,
-    f as v,
-    h as f,
-    V as h,
+    f,
+    h,
+    V as v,
     C as j,
     B as N,
     t as b,
@@ -44,12 +44,12 @@ const [E, H] = o()(
             ],
         }),
     W = ({ text: a, openTag: s, closeTag: r, classNames: t }) => {
-        const [i, d] = a.split(s);
-        if (!d) return a;
-        const [n, o] = d.split(r);
+        const [i, n] = a.split(s);
+        if (!n) return a;
+        const [d, o] = n.split(r);
         return e.jsxs('span', {
-            className: null == t ? void 0 : t.title,
-            children: [i && l(i), n && e.jsx(Q, { className: null == t ? void 0 : t.highlight, text: n }), o && l(o)],
+            className: t?.title,
+            children: [i && c(i), d && e.jsx(Q, { className: t?.highlight, text: d }), o && c(o)],
         });
     },
     z = 'Header_7d83acf6',
@@ -61,18 +61,18 @@ const [E, H] = o()(
     L = 'Header_arrow__left_65f475ba',
     U = 'Header_arrow__right_65f475ba',
     V = 'Header_title_c5f44fd0',
-    q = 'Header_underTitleWrapper_1ee34789',
-    F = 'Header_wing_c2ef7d92',
+    q = 'Header_underTitleWrapper_4dc05e5a',
+    F = 'Header_wing_c1b09cf4',
     G = 'Header_wing__left_a6e40196',
     J = 'Header_wing__right_f408d2da',
     K = 'Header_underTitle_a88a751e',
     X = r(function () {
-        const a = c(),
+        const a = l(),
             r = m.resolve('strings'),
-            d = r.readOrEmpty('awards.collector20.title'),
-            n = r.readOrEmpty('awards.collector20.subTitle'),
+            n = r.readOrEmpty('awards.collector20.title'),
+            d = r.readOrEmpty('awards.collector20.subTitle'),
             o = r.readOrEmpty('awards.collector20.underTitle'),
-            l = t(
+            c = t(
                 ((a) => ({
                     from: { opacity: 0, y: '-20rem' },
                     to: { opacity: 1, y: '0rem' },
@@ -98,25 +98,25 @@ const [E, H] = o()(
             className: z,
             children: [
                 e.jsxs(i.div, {
-                    style: l,
+                    style: c,
                     className: B,
                     children: [
                         e.jsxs('div', {
                             className: s(D, L),
                             children: [e.jsx('div', { className: $ }), e.jsx('div', { className: P })],
                         }),
-                        n && e.jsx(Q, { className: I, text: n }),
+                        d && e.jsx(Q, { className: I, text: d }),
                         e.jsxs('div', {
                             className: s(D, U),
                             children: [e.jsx('div', { className: P }), e.jsx('div', { className: $ })],
                         }),
                     ],
                 }),
-                d &&
+                n &&
                     e.jsx(i.div, {
                         style: _,
                         className: V,
-                        children: e.jsx(W, { text: d, openTag: '{gold_Open}', closeTag: '{gold_Close}' }),
+                        children: e.jsx(W, { text: n, openTag: '{gold_Open}', closeTag: '{gold_Close}' }),
                     }),
                 e.jsxs('div', {
                     className: q,
@@ -130,9 +130,9 @@ const [E, H] = o()(
         });
     }),
     Y = 'AnimatedReward_1789d927',
-    Z = ({ children: a, animationConfig: r, className: d }) => {
-        const n = t(r);
-        return e.jsx(i.div, { style: n, className: s(Y, d), children: a });
+    Z = ({ children: a, animationConfig: r, className: n }) => {
+        const d = t(r);
+        return e.jsx(i.div, { style: d, className: s(Y, n), children: a });
     },
     aa = 'MainRewards_title_b9294abf',
     ea = 'MainRewards_f647a436',
@@ -149,30 +149,30 @@ const [E, H] = o()(
         },
     }),
     ia = ({ rewards: a, classNames: r, oneCountDelay: t, duration: i }) => {
-        const d = _({ size: y.S296x222 }, { medium: { size: y.S400x300 } }),
-            n = c();
+        const n = _({ size: y.S296x222 }, { medium: { size: y.S400x300 } }),
+            d = l();
         return e.jsx('div', {
-            className: s(ea, null == r ? void 0 : r.base),
+            className: s(ea, r?.base),
             children: u(a, (a, o) =>
                 e.jsxs(
                     Z,
                     {
-                        animationConfig: ta(i, t, o, n),
+                        animationConfig: ta(i, t, o, d),
                         className: sa,
                         children: [
                             e.jsx(x, {
                                 name: a.name,
-                                image: v(
+                                image: f(
                                     { item: a.item, type: a.overlayType, icon: a.icon, name: a.name, value: a.value },
-                                    d.size,
+                                    n.size,
                                 ),
                                 special: a.overlayType,
-                                size: d.size,
+                                size: n.size,
                                 tooltipArgs: g({ tooltipId: a.tooltipId }, Number(a.tooltipContentId)),
                             }),
                             e.jsx('div', {
-                                className: s(ra, null == r ? void 0 : r.caption),
-                                children: e.jsx('div', { className: aa, children: l(a.label) }),
+                                className: s(ra, r?.caption),
+                                children: e.jsx('div', { className: aa, children: c(a.label) }),
                             }),
                         ],
                     },
@@ -181,54 +181,55 @@ const [E, H] = o()(
             ),
         });
     },
-    da = 'App_video_b460a12e',
-    na = 'App_decorWrapper_bb0bfe54',
+    na = 'App_video_b460a12e',
+    da = 'App_decorWrapper_bb0bfe54',
     oa = 'App_5c487cff',
-    la = 'App_closeButton_f5179698',
-    ca = 'App_content_6d450fd7',
+    ca = 'App_closeButton_f5179698',
+    la = 'App_content_6d450fd7',
     ma = 'App_wrapperRewards_af08fa77',
     pa = 'App_reward_da80d895',
     _a = 'App_mainRewardCaption_5929e7e0',
-    ya = 'App_ribbonWrapper_94247f4d',
-    ua = 'App_godraysWrapper_edb55c07',
+    ya = 'App_ribbonWrapper_2210ce95',
+    ua = 'App_godraysWrapper_bbc67cd8',
     xa = 'App_ribbon_f6a1d903',
     ga = 'App_raysWrapper_e48e223c',
-    va = 'App_godrays_3df409cd',
-    fa = 'App_rays_20aa2b69',
-    ha = 'App_wrapperButton_6d5ac65d',
+    fa = 'App_godrays_3df409cd',
+    ha = 'App_rays_20aa2b69',
+    va = 'App_wrapperButton_6d5ac65d',
     ja = 'App_button_7b36300d',
     Na = 'App_buttonContent_cd42fca3',
     ba = 300,
     wa = 2400,
-    Aa = (a) => ({
+    Aa = wa,
+    Ta = (a) => ({
         from: { opacity: 0, y: '0rem' },
         to: { opacity: 1, y: '-20rem' },
         delay: a,
         config: { duration: 400, easings: p.easeOutQuad },
     }),
-    Ta = (a) => ({
+    Ra = (a) => ({
         from: { opacity: 0 },
         to: { opacity: 1 },
         delay: a,
         config: { duration: 600, easings: p.easeOutQuad },
     }),
-    Ra = (a) => ({
+    Ca = (a) => ({
         from: { opacity: 0 },
         to: { opacity: 1 },
         delay: a,
         config: { duration: ba, easings: p.easeOutQuad },
     }),
-    Ca = (a) => ({
+    Ea = (a) => ({
         from: { opacity: 0, y: '0rem' },
         to: { opacity: 1, y: '-10rem' },
         delay: a,
         config: { duration: ba, easings: p.easeOutQuad },
     }),
-    Ea = r(function () {
+    Ha = r(function () {
         const [r, o] = a.useState(!1),
-            l = (() => {
-                const e = d(),
-                    s = n(),
+            c = (() => {
+                const e = n(),
+                    s = d(),
                     r = 2560 / 1440,
                     t = viewEnv.pxToRem(e.width) * s,
                     i = viewEnv.pxToRem(e.height) * s,
@@ -242,35 +243,35 @@ const [E, H] = o()(
                 );
             })(),
             { model: p, controls: _ } = H(),
-            y = c(),
+            y = l(),
             u = m.resolve('strings'),
             x = () => {
                 r && _.close('cancel');
             };
-        (f(w.ESCAPE, x), f(w.ENTER, x), f(w.SPACE, x));
+        (h(w.ESCAPE, x), h(w.ENTER, x), h(w.SPACE, x));
         const g = u.readOrEmpty('awards.collector20.button.affirmative'),
-            v = a.useCallback(() => {
+            f = a.useCallback(() => {
                 const a = p.mainRewards.get().items.length;
                 return wa + a * ba;
             }, [p.mainRewards]),
-            [A, T] = t(() => Aa(2e3)),
-            [C, E] = t(() => Ta(2400)),
-            [O, k] = t(() => Ra(v())),
-            [M, S] = t(() => Ca(v()));
+            [A, T] = t(() => Ta(2e3)),
+            [C, E] = t(() => Ra(Aa)),
+            [O, k] = t(() => Ca(f())),
+            [M, S] = t(() => Ea(f()));
         return (
             a.useLayoutEffect(() => {
                 o(!1);
-                const a = v();
-                (T.start({ ...Aa(2e3) }),
+                const a = f();
+                (T.start({ ...Ta(2e3) }),
                     E.start({
-                        ...Ta(2400),
+                        ...Ra(Aa),
                         onStart: () => {
                             y.play('animation', { target: 'godrays' });
                         },
                     }),
-                    k.start({ ...Ra(a) }),
+                    k.start({ ...Ca(a) }),
                     S.start({
-                        ...Ca(a),
+                        ...Ea(a),
                         onStart: () => {
                             y.play('animation', { target: 'end' });
                         },
@@ -280,19 +281,19 @@ const [E, H] = o()(
                     E.set({ opacity: 0 }),
                     k.set({ opacity: 0 }),
                     S.set({ opacity: 0, y: '0rem' }));
-            }, [S, k, E, T, v, y]),
+            }, [S, k, E, T, f, y]),
             e.jsxs('div', {
                 className: s(oa),
                 children: [
-                    e.jsx(h, {
+                    e.jsx(v, {
                         src: R.videos.achievements.bg_reward_screen(),
                         autoplay: !0,
                         loop: !0,
-                        className: da,
-                        style: l,
+                        className: na,
+                        style: c,
                     }),
                     e.jsxs('div', {
-                        className: na,
+                        className: da,
                         children: [
                             e.jsx(i.div, { style: A, className: ya, children: e.jsx('div', { className: xa }) }),
                             e.jsx(i.div, {
@@ -300,15 +301,15 @@ const [E, H] = o()(
                                 className: ua,
                                 children: e.jsxs('div', {
                                     className: ga,
-                                    children: [e.jsx('div', { className: va }), e.jsx('div', { className: fa })],
+                                    children: [e.jsx('div', { className: fa }), e.jsx('div', { className: ha })],
                                 }),
                             }),
                         ],
                     }),
-                    e.jsx(i.div, { style: O, className: la, children: e.jsx(j, { onClose: x }) }),
+                    e.jsx(i.div, { style: O, className: ca, children: e.jsx(j, { onClose: x }) }),
                     e.jsx(X, {}),
                     e.jsxs('div', {
-                        className: ca,
+                        className: la,
                         children: [
                             e.jsx('div', {
                                 className: ma,
@@ -324,7 +325,7 @@ const [E, H] = o()(
                             }),
                             e.jsx(i.div, {
                                 style: M,
-                                className: ha,
+                                className: va,
                                 children: e.jsx(N, {
                                     theme: b.primary,
                                     classNames: { base: ja, content: Na },
@@ -340,7 +341,7 @@ const [E, H] = o()(
             })
         );
     }),
-    Ha = A({
+    Oa = A({
         animation: {
             title: 'ach_cup_hover',
             subtitle: 'gui_random_reward_red_ribbon_appear',
@@ -349,4 +350,4 @@ const [E, H] = o()(
             end: 'gui_random_reward_end',
         },
     });
-T(e.jsx(E, { children: e.jsx(C, { soundsOverrides: Ha, children: e.jsx(Ea, {}) }) }));
+T(e.jsx(E, { children: e.jsx(C, { soundsOverrides: Oa, children: e.jsx(Ha, {}) }) }));

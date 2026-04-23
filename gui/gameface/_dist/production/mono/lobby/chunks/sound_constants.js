@@ -1,4 +1,4 @@
-import { r as a, v as e, j as s, w as n } from './vendor.js';
+import { r as a, n as e, j as s, p as n } from './vendor.js';
 const t = { x: 0, y: 0, opacity: 0, transform: 'scale(1) rotate(0deg)' },
     r = { x: 0, y: 0, opacity: 1, transform: 'scale(1) rotate(0deg)' };
 var i = ((a) => (
@@ -33,37 +33,37 @@ const o = {
         duration: l = 250,
         delay: m = 0,
         transformOrigin: f = '50% 50%',
-        easingType: O = 'easeInOut',
-        onRest: h,
-        onStart: p,
-        trigger: w,
-        className: y,
+        easingType: p = 'easeInOut',
+        onRest: O,
+        onStart: h,
+        trigger: y,
+        className: w,
         isReverse: E = !1,
         playSoundOnStart: x,
         playSoundOnFinish: I,
     }) {
-        const v = o[O],
-            [S, b] = e(() => _),
-            M = g && !c ? u : { ...S, transformOrigin: f };
+        const S = o[p],
+            [b, v] = e(() => _),
+            M = g && !c ? u : { ...b, transformOrigin: f };
         return (
             a.useEffect(() => {
-                b.start({
+                v.start({
                     from: _,
                     to: u,
                     delay: m,
                     immediate: g,
-                    config: d ? { ...d } : { duration: l, easing: v },
+                    config: d ? { ...d } : { duration: l, easing: S },
                     cancel: g || c,
                     reverse: E,
                     onRest: (a) => {
-                        !0 === a.finished && (I && I(), h && h());
+                        !0 === a.finished && (I && I(), O && O());
                     },
                     onStart: () => {
-                        (x && x(), p && p());
+                        (x && x(), h && h());
                     },
                 });
-            }, [b, m, l, v, _, g, h, u, w, c, E, I, x, p, d]),
-            s.jsx(n.div, { className: y, style: M, children: i })
+            }, [v, m, l, S, _, g, O, u, y, c, E, I, x, h, d]),
+            s.jsx(n.div, { className: w, style: M, children: i })
         );
     }),
     u = 'bp_glide_01',
@@ -73,26 +73,26 @@ const o = {
     l = 'gui_hangar_award_banner',
     m = 'gui_hangar_award_woosh',
     f = 'gui_hangar_award_random_appear',
-    O = 'gui_hangar_award_banner',
-    h = 'gui_hangar_sm_difficulty_01',
-    p = 'gui_hangar_sm_difficulty_02',
-    w = 'gui_hangar_sm_difficulty_03',
-    y = 'gui_hangar_award_item_rollout',
+    p = 'gui_hangar_award_banner',
+    O = 'gui_hangar_sm_difficulty_01',
+    h = 'gui_hangar_sm_difficulty_02',
+    y = 'gui_hangar_sm_difficulty_03',
+    w = 'gui_hangar_award_item_rollout',
     E = 'gui_hangar_reward_main_icon';
 export {
     f as B,
-    y as C,
+    w as C,
     i as E,
     g as M,
     _ as S,
     u as W,
     l as a,
     m as b,
-    O as c,
+    p as c,
     E as d,
     c as e,
     d as f,
-    p as g,
-    w as h,
-    h as i,
+    h as g,
+    y as h,
+    O as i,
 };

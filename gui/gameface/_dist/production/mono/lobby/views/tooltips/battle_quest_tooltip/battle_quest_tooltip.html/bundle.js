@@ -1,15 +1,15 @@
-import { j as e, x as s } from '../../../../chunks/vendor.js';
+import { j as e, D as s } from '../../../../chunks/vendor.js';
 import {
     m as o,
-    dv as t,
-    cz as r,
-    cA as i,
-    dw as a,
-    dx as n,
+    dz as t,
+    cD as r,
+    cE as i,
+    dA as a,
+    dB as n,
     i as l,
-    N as d,
-    cu as c,
-    ct as p,
+    O as d,
+    cy as c,
+    cx as p,
     r as u,
 } from '../../../../chunks/lib.js';
 import { E as m, D as v } from '../../../../chunks/extended_tooltip_decorator.js';
@@ -63,9 +63,9 @@ const [T, b] = l()(({ observableModel: e }) => ({
         bonuses: e.arrayClone('bonuses'),
     })),
     x = 'BattleQuestTooltip_rewardsText_54d69d4c',
-    w = 'BattleQuestTooltip_divider_31b2f465',
+    y = 'BattleQuestTooltip_divider_31b2f465',
     g = 'BattleQuestTooltip_rewardItem_462d39e4',
-    y = 'BattleQuestTooltip_rewards_863df0c8',
+    w = 'BattleQuestTooltip_rewards_863df0c8',
     _ = d.resolve('aliases'),
     h = R.strings.comp7_light.battleQuestTooltips,
     j = s(function () {
@@ -79,7 +79,7 @@ const [T, b] = l()(({ observableModel: e }) => ({
             timerText: h.expiresIn(),
             timerTimeLeft: t,
             children: [
-                e.jsx(v, { className: w }),
+                e.jsx(v, { className: y }),
                 e.jsx('div', { className: x, children: h.rewards(o.length) }),
                 e.jsx(I, {
                     bonuses: o,
@@ -88,7 +88,7 @@ const [T, b] = l()(({ observableModel: e }) => ({
                     size: p.Small,
                     rewardItemClassMix: g,
                     count: 3,
-                    classMix: y,
+                    classMix: w,
                 }),
             ],
         });

@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,30 +11,30 @@
     position: relative;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.Content_base_7d {
+.Content_base_df7f3 {
     display: flex;
     flex-direction: column;
     width: 390rem;
     padding: 20rem;
 }
 
-.Content_header_8e {
+.Content_header_e43d9 {
     color: #ee7000;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
 }
 
-.Content_header__critical_93 {
+.Content_header__critical_cd1eb {
     color: #ff2717;
 }
 
-.Content_description_66 {
+.Content_description_f9618 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;

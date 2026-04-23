@@ -1,4 +1,4 @@
-.RewardSelectionViewApp_base_90 {
+.RewardSelectionViewApp_base_a3878 {
     display: flex;
     width: 100vw;
     height: 100vh;
@@ -6,13 +6,13 @@
     position: relative;
 }
 
-.RewardSelectionViewApp_content_f6 {
+.RewardSelectionViewApp_content_ac6af {
     width: 100%;
     height: 100%;
     z-index: 1;
 }
 
-.RewardSelectionViewApp_background_12 {
+.RewardSelectionViewApp_background_eda6e {
     position: absolute;
     top: 0;
     right: 0;
@@ -23,14 +23,14 @@
         url('R.images.frontline.gui.maps.bg.reward_selection') no-repeat center / cover;
 }
 
-.RewardSelectionViewApp_close_42 {
+.RewardSelectionViewApp_close_ecc83 {
     position: absolute;
     top: 40rem;
     right: 40rem;
     z-index: 2;
 }
 
-.TextButton_base_b6 {
+.TextButton_base_a231c {
     display: flex;
     align-items: center;
     padding: 0 3rem;
@@ -39,33 +39,33 @@
     cursor: pointer;
 }
 
-.TextButton_base__right_39 {
+.TextButton_base__right_bfac3 {
     flex-direction: row-reverse;
 }
-.TextButton_icon_17 {
+.TextButton_icon_cdfc0 {
     width: 32rem;
     height: 32rem;
     background: no-repeat center / contain;
     position: relative;
 }
-.TextButton_icon__back_43,
-.TextButton_icon__forward_59 {
+.TextButton_icon__back_fc1bb,
+.TextButton_icon__forward_efa2d {
     margin: -1rem -5rem;
     background-image: url('R.images.gui.maps.icons.components.text_button.back');
     transform: translateY(1rem);
 }
-.TextButton_icon__forward_59 {
+.TextButton_icon__forward_efa2d {
     transform: rotate(180deg) translateY(1rem);
 }
-.TextButton_icon__close_53 {
+.TextButton_icon__close_e2f0f {
     margin: -1rem 0;
     background-image: url('R.images.gui.maps.icons.components.text_button.close');
 }
-.TextButton_icon__info_33 {
+.TextButton_icon__info_e32c0 {
     margin: -1rem -5rem;
     background-image: url('R.images.gui.maps.icons.components.text_button.info');
 }
-.TextButton_glow_a4 {
+.TextButton_glow_d6e04 {
     width: 100%;
     height: 100%;
     background: no-repeat center / contain;
@@ -74,31 +74,31 @@
     top: 0;
     transition: opacity 0.16s;
 }
-.TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
+.TextButton_icon__back_fc1bb .TextButton_glow_d6e04,
+.TextButton_icon__forward_efa2d .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
 }
-.TextButton_icon__close_53 .TextButton_glow_a4 {
+.TextButton_icon__close_e2f0f .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
 }
-.TextButton_icon__info_33 .TextButton_glow_a4 {
+.TextButton_icon__info_e32c0 .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
 }
-.TextButton_base_b6:hover .TextButton_glow_a4 {
+.TextButton_base_a231c:hover .TextButton_glow_d6e04 {
     opacity: 1;
 }
-.TextButton_base_b6:active .TextButton_glow_a4 {
+.TextButton_base_a231c:active .TextButton_glow_d6e04 {
     opacity: 0;
 }
-.TextButton_caption_82 {
+.TextButton_caption_f4e8d {
     position: relative;
     transition:
         color 0.16s,
         text-shadow 0.16s;
 }
-.TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
+.TextButton_caption__back_d358d,
+.TextButton_caption__forward_ff93d,
+.TextButton_caption__close_fc554 {
     color: #ffdd99;
     text-shadow:
         0 0 10rem rgba(255, 42, 0, 1),
@@ -109,46 +109,46 @@
         0 0 2rem rgba(255, 42, 0, 0.4),
         0 0 1rem rgba(255, 42, 0, 0.4);
 }
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
+.TextButton_base_a231c:hover .TextButton_caption__back_d358d,
+.TextButton_base_a231c:hover .TextButton_caption__forward_ff93d,
+.TextButton_base_a231c:hover .TextButton_caption__close_fc554 {
     color: #fffa9f;
 }
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
+.TextButton_base_a231c:active .TextButton_caption__back_d358d,
+.TextButton_base_a231c:active .TextButton_caption__forward_ff93d,
+.TextButton_base_a231c:active .TextButton_caption__close_fc554 {
     color: #ffdd99;
 }
-.TextButton_caption__info_23 {
+.TextButton_caption__info_c263a {
     padding: 0 5rem;
     color: #ccffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.8),
         0 0 8rem #00eaff;
 }
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
+.TextButton_base_a231c:hover .TextButton_caption__info_c263a {
     color: #e3ffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.8),
         0 0 12rem rgba(0, 234, 255, 1),
         0 0 8rem #00eaff;
 }
-.TextButton_base_b6:active .TextButton_caption__info_23 {
+.TextButton_base_a231c:active .TextButton_caption__info_c263a {
     color: #ccffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.6),
         0 0 8rem #00eaff;
 }
-.TextButton_goto_e7 {
+.TextButton_goto_d3960 {
     color: #7c7c6c;
 }
-.TextButton_base__left_ff .TextButton_goto_e7 {
+.TextButton_base__left_ec79d .TextButton_goto_d3960 {
     margin-left: 8rem;
 }
-.TextButton_base__right_39 .TextButton_goto_e7 {
+.TextButton_base__right_bfac3 .TextButton_goto_d3960 {
     margin-right: 8rem;
 }
-.TextButton_shine_e2 {
+.TextButton_shine_f8873 {
     width: 90rem;
     height: 40rem;
     background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
@@ -158,21 +158,21 @@
     transition: opacity 0.16s;
     pointer-events: none;
 }
-.TextButton_base__left_ff .TextButton_shine_e2 {
+.TextButton_base__left_ec79d .TextButton_shine_f8873 {
     left: -4rem;
 }
-.TextButton_base__right_39 .TextButton_shine_e2 {
+.TextButton_base__right_bfac3 .TextButton_shine_f8873 {
     right: -4rem;
     transform: rotate(180deg);
 }
-.TextButton_base_b6:hover .TextButton_shine_e2 {
+.TextButton_base_a231c:hover .TextButton_shine_f8873 {
     opacity: 1;
 }
-.TextButton_base_b6:active .TextButton_shine_e2 {
+.TextButton_base_a231c:active .TextButton_shine_f8873 {
     opacity: 0;
 }
 
-@keyframes Category_slideUp_0b {
+@keyframes Category_slideUp_fadf2 {
     0% {
         opacity: 0;
         transform: translateY(20rem);
@@ -184,7 +184,7 @@
     }
 }
 
-@keyframes Category_blink_76 {
+@keyframes Category_blink_a0ccd {
     0% {
         filter: brightness(1);
     }
@@ -198,7 +198,7 @@
     }
 }
 
-.Category_base_23 {
+.Category_base_ece98 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -209,16 +209,16 @@
     cursor: pointer;
 }
 
-.mediaMedium .Category_base_23 {
+.mediaMedium .Category_base_ece98 {
     width: 160rem;
     padding-bottom: 33rem;
 }
 
-.Category_base__viewReady_69 {
+.Category_base__viewReady_f9def {
     opacity: 1;
 }
 
-.Category_glow_a9 {
+.Category_glow_c4a60 {
     width: 400rem;
     height: 148rem;
     background: url('R.images.gui.maps.icons.selectableReward.tabs.glow') no-repeat center / cover;
@@ -232,11 +232,11 @@
     pointer-events: none;
 }
 
-.Category_base__viewReady_69.Category_base__selected_9e .Category_glow_a9 {
+.Category_base__viewReady_f9def.Category_base__selected_cdac7 .Category_glow_c4a60 {
     opacity: 1;
 }
 
-.Category_title_54 {
+.Category_title_f557d {
     color: transparent;
     font-size: 12rem;
     font-weight: 400;
@@ -253,7 +253,7 @@
     transition: color 0.5s;
 }
 
-.mediaMedium .Category_title_54 {
+.mediaMedium .Category_title_f557d {
     color: #fefeec;
     font-size: 14rem;
     font-weight: 700;
@@ -262,19 +262,19 @@
     transform: translateY(-100%);
 }
 
-.Category_base_23:hover .Category_title_54 {
+.Category_base_ece98:hover .Category_title_f557d {
     color: #8c8c7e;
 }
 
-.Category_base__selected_9e .Category_title_54 {
+.Category_base__selected_cdac7 .Category_title_f557d {
     color: #f2f2f7;
 }
 
-.Category_base__selected_9e:hover .Category_title_54 {
+.Category_base__selected_cdac7:hover .Category_title_f557d {
     color: #f2f2f7;
 }
 
-.Category_imageContainer_e0 {
+.Category_imageContainer_c977e {
     width: 48rem;
     height: 48rem;
     display: flex;
@@ -283,12 +283,12 @@
     position: relative;
 }
 
-.mediaMedium .Category_imageContainer_e0 {
+.mediaMedium .Category_imageContainer_c977e {
     width: 80rem;
     height: 80rem;
 }
 
-.Category_image_ff {
+.Category_image_b699f {
     position: absolute;
     top: 0;
     right: 0;
@@ -299,27 +299,28 @@
     transition: filter 0.5s;
 }
 
-.Category_base_23:hover .Category_image_ff {
+.Category_base_ece98:hover .Category_image_b699f {
     filter: brightness(150%);
 }
 
-.Category_base__completed_0d .Category_image_ff {
+.Category_base__completed_ca230 .Category_image_b699f {
     opacity: 0.5;
 }
 
-.Category_base__selected_9e .Category_image_ff {
+.Category_base__selected_cdac7 .Category_image_b699f {
     mask-image: linear-gradient(180deg, #c4c4c4 0%, #c4c4c4 51.04%, transparent 100%);
+    mask-repeat: no-repeat;
 }
 
-.Category_base__accepting_c8 .Category_image_ff {
-    animation-name: Category_blink_76;
+.Category_base__accepting_ea3de .Category_image_b699f {
+    animation-name: Category_blink_a0ccd;
     animation-duration: 0.6s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
     animation-iteration-count: 1;
 }
 
-.Category_check_6c {
+.Category_check_ae600 {
     width: 46rem;
     height: 48rem;
     background: url('R.images.gui.maps.icons.selectableReward.tabs.check') no-repeat center / contain;
@@ -328,11 +329,11 @@
     transition: opacity 0.5s;
 }
 
-.Category_base__completed_0d .Category_check_6c {
+.Category_base__completed_ca230 .Category_check_ae600 {
     opacity: 1;
 }
 
-.Category_counter_3c {
+.Category_counter_cd664 {
     color: #8c8c7e;
     font-size: 15rem;
     font-weight: 700;
@@ -344,7 +345,7 @@
     transition: color 0.5s;
 }
 
-.mediaMedium .Category_counter_3c {
+.mediaMedium .Category_counter_cd664 {
     color: #8c8c7e;
     font-size: 18rem;
     font-weight: 700;
@@ -352,7 +353,7 @@
     bottom: 15rem;
 }
 
-.Category_base__selected_9e .Category_counter_3c {
+.Category_base__selected_cdac7 .Category_counter_cd664 {
     color: #f2f2f7;
     font-size: 18rem;
     font-weight: 700;
@@ -360,14 +361,14 @@
     text-shadow: 0 0 14rem rgba(255, 255, 255, 0.5);
 }
 
-.mediaMedium .Category_base__selected_9e .Category_counter_3c {
+.mediaMedium .Category_base__selected_cdac7 .Category_counter_cd664 {
     color: #f2f2f7;
     font-size: 22rem;
     font-weight: 700;
     line-height: 1.2;
 }
 
-.HorizontalBar_base_49 {
+.HorizontalBar_base_fa517 {
     display: flex;
     width: 100%;
     height: 13rem;
@@ -375,18 +376,18 @@
     position: relative;
 }
 
-.HorizontalBar_base__active_5e {
+.HorizontalBar_base__active_ad89b {
     visibility: visible;
 }
 
-.HorizontalBar_base_49 .disable,
-.HorizontalBar_base_49 .disable:hover {
+.HorizontalBar_base_fa517 .disable,
+.HorizontalBar_base_fa517 .disable:hover {
     opacity: 0.3;
     cursor: default;
 }
 
-.HorizontalBar_leftButton_5f,
-.HorizontalBar_rightButton_03 {
+.HorizontalBar_leftButton_eb8c3,
+.HorizontalBar_rightButton_f5116 {
     width: 13rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
@@ -399,27 +400,27 @@
     cursor: pointer;
 }
 
-.HorizontalBar_leftButton_5f:hover,
-.HorizontalBar_rightButton_03:hover {
+.HorizontalBar_leftButton_eb8c3:hover,
+.HorizontalBar_rightButton_f5116:hover {
     opacity: 1;
 }
 
-.HorizontalBar_leftButton_5f {
+.HorizontalBar_leftButton_eb8c3 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
 }
 
-.HorizontalBar_rightButton_03 {
+.HorizontalBar_rightButton_f5116 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
 }
 
-.HorizontalBar_track_0d {
+.HorizontalBar_track_fd3af {
     flex: 1;
     margin: 0 1rem;
     position: relative;
     cursor: pointer;
 }
 
-.HorizontalBar_thumb_fd {
+.HorizontalBar_thumb_bb7e0 {
     display: none;
     flex: 0 0 100%;
     width: 100%;
@@ -436,11 +437,11 @@
     cursor: pointer;
 }
 
-.HorizontalBar_thumb_fd:hover {
+.HorizontalBar_thumb_bb7e0:hover {
     opacity: 1;
 }
 
-.HorizontalBar_rail_32 {
+.HorizontalBar_rail_a3d9e {
     height: 0;
     border-top: 1rem solid #2f2e24;
     position: absolute;
@@ -449,26 +450,26 @@
     left: 5rem;
 }
 
-.HorizontalBar_rail_32:hover {
+.HorizontalBar_rail_a3d9e:hover {
     opacity: 0.7;
 }
 
-.HorizontalScroll_base_29 {
+.HorizontalScroll_base_a33a9 {
     width: 100%;
 }
 
-.HorizontalScroll_wrapper_1e {
+.HorizontalScroll_wrapper_b622e {
     display: flex;
     width: 100%;
     overflow-x: hidden;
 }
 
-.HorizontalScroll_defaultScrollArea_8d {
+.HorizontalScroll_defaultScrollArea_a2315 {
     width: 100%;
     margin-bottom: 7rem;
 }
 
-.VerticalBar_base_f3 {
+.VerticalBar_base_b5610 {
     display: flex;
     flex-direction: column;
     width: 13rem;
@@ -477,18 +478,18 @@
     position: relative;
 }
 
-.VerticalBar_base__active_72 {
+.VerticalBar_base__active_be260 {
     visibility: visible;
 }
 
-.VerticalBar_base_f3 .disable,
-.VerticalBar_base_f3 .disable:hover {
+.VerticalBar_base_b5610 .disable,
+.VerticalBar_base_b5610 .disable:hover {
     opacity: 0.3;
     cursor: default;
 }
 
-.VerticalBar_topButton_d7,
-.VerticalBar_bottomButton_06 {
+.VerticalBar_topButton_c2227,
+.VerticalBar_bottomButton_ef09b {
     width: 13rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
@@ -500,27 +501,27 @@
     cursor: pointer;
 }
 
-.VerticalBar_topButton_d7:hover,
-.VerticalBar_bottomButton_06:hover {
+.VerticalBar_topButton_c2227:hover,
+.VerticalBar_bottomButton_ef09b:hover {
     opacity: 1;
 }
 
-.VerticalBar_topButton_d7 {
+.VerticalBar_topButton_c2227 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
 }
 
-.VerticalBar_bottomButton_06 {
+.VerticalBar_bottomButton_ef09b {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
 }
 
-.VerticalBar_track_df {
+.VerticalBar_track_e3345 {
     flex: 1;
     margin: 1rem 0;
     position: relative;
     cursor: pointer;
 }
 
-.VerticalBar_thumb_32 {
+.VerticalBar_thumb_a34e7 {
     display: none;
     flex: 0 0 13rem;
     width: 13rem;
@@ -536,11 +537,11 @@
     cursor: pointer;
 }
 
-.VerticalBar_thumb_32:hover {
+.VerticalBar_thumb_a34e7:hover {
     opacity: 1;
 }
 
-.VerticalBar_rail_43 {
+.VerticalBar_rail_ff232 {
     width: 0;
     height: 100%;
     border-left: 1rem solid #2f2e24;
@@ -552,29 +553,29 @@
     z-index: 0;
 }
 
-.VerticalBar_rail_43:hover {
+.VerticalBar_rail_ff232:hover {
     opacity: 0.7;
 }
 
-.VerticalScroll_content_cb {
+.VerticalScroll_content_fe263 {
     height: 100%;
     overflow-y: hidden;
 }
 
-.VerticalScroll_defaultScroll_f8 {
+.VerticalScroll_defaultScroll_e27f5 {
     display: flex;
 }
 
-.VerticalScroll_bar_1e {
+.VerticalScroll_bar_b8700 {
     flex: 1;
     margin-left: 7rem;
 }
 
-.VerticalScroll_area_af {
+.VerticalScroll_area_b5a82 {
     flex: 1;
 }
 
-@keyframes Reward_slideUp_29 {
+@keyframes Reward_slideUp_dd648 {
     0% {
         opacity: 0;
         transform: translateY(20rem);
@@ -586,7 +587,7 @@
     }
 }
 
-@keyframes Reward_blink_91 {
+@keyframes Reward_blink_e9897 {
     0% {
         filter: brightness(1);
     }
@@ -600,7 +601,7 @@
     }
 }
 
-.Reward_base_ae {
+.Reward_base_d860a {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -610,26 +611,27 @@
     border-radius: 2rem;
     background-color: rgba(0, 0, 0, 0.07);
     position: relative;
+    z-index: 0;
 }
 
-.Reward_base_ae:hover {
+.Reward_base_d860a:hover {
     border-color: rgba(255, 255, 255, 0.1);
     box-shadow: inset 0 0 25rem rgba(255, 255, 255, 0.1);
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-.Reward_base__selected_e6,
-.Reward_base__selected_e6:hover {
+.Reward_base__selected_e3b51,
+.Reward_base__selected_e3b51:hover {
     border-color: #ffb266;
     box-shadow: inset 0 0 30rem rgba(255, 122, 0, 0.3);
     background: linear-gradient(0deg, rgba(255, 107, 0, 0.1), rgba(255, 107, 0, 0.1)), rgba(0, 0, 0, 0.4);
 }
 
-.Reward_base__stateNormal_8c {
+.Reward_base__stateNormal_cb031 {
     cursor: pointer;
 }
 
-.Reward_optDeviceType_87 {
+.Reward_optDeviceType_c303e {
     width: 180rem;
     height: 135rem;
     background: no-repeat center / cover;
@@ -638,7 +640,7 @@
     left: 0;
 }
 
-.Reward_reward_63 {
+.Reward_reward_eb05d {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -648,33 +650,34 @@
     position: relative;
 }
 
-.Reward_image_b3 {
+.Reward_image_e35a9 {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     background: no-repeat center / contain;
+    z-index: 1;
 }
 
-.Reward_base__stateReceived_45 .Reward_image_b3,
-.Reward_base__stateLimited_d7 .Reward_image_b3 {
+.Reward_base__stateReceived_cca85 .Reward_image_e35a9,
+.Reward_base__stateLimited_f7121 .Reward_image_e35a9 {
     opacity: 0.4;
 }
 
-.Reward_base__stateLimited_d7.Reward_base__selected_e6 .Reward_image_b3 {
+.Reward_base__stateLimited_f7121.Reward_base__selected_e3b51 .Reward_image_e35a9 {
     opacity: 1;
 }
 
-.Reward_base__accepting_72 .Reward_image_b3 {
-    animation-name: Reward_blink_91;
+.Reward_base__accepting_eca09 .Reward_image_e35a9 {
+    animation-name: Reward_blink_e9897;
     animation-duration: 0.6s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
     animation-iteration-count: 1;
 }
 
-.Reward_disabled_34 {
+.Reward_disabled_cc4c6 {
     position: absolute;
     top: 0;
     right: 0;
@@ -683,11 +686,12 @@
     background: url('R.images.gui.maps.icons.selectableReward.reward.s180x135.disable') no-repeat center / contain;
     opacity: 0.2;
     mask-size: contain;
+    mask-repeat: no-repeat;
     mix-blend-mode: overlay;
     pointer-events: none;
 }
 
-.Reward_packSize_26 {
+.Reward_packSize_d87a2 {
     color: #e9e2bf;
     font-size: 16rem;
     font-weight: 400;
@@ -695,9 +699,10 @@
     position: absolute;
     right: 0;
     bottom: 0;
+    z-index: 2;
 }
 
-.Reward_label_1e {
+.Reward_label_f1e55 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
@@ -709,9 +714,10 @@
     height: 53rem;
     margin-top: 5rem;
     text-align: center;
+    z-index: 2;
 }
 
-.Reward_storage_06 {
+.Reward_storage_d7efc {
     color: #c9c9b6;
     font-size: 14rem;
     font-weight: 400;
@@ -722,11 +728,11 @@
     right: 9rem;
 }
 
-.Reward_storage__hidden_de {
+.Reward_storage__hidden_c9077 {
     display: none;
 }
 
-.Reward_storageIcon_53 {
+.Reward_storageIcon_b5221 {
     width: 30rem;
     height: 24rem;
     margin-top: -2rem;
@@ -734,7 +740,7 @@
     background: url('R.images.gui.maps.icons.selectableReward.reward.storage') no-repeat center / contain;
 }
 
-.Reward_countText_cc {
+.Reward_countText_fe729 {
     color: #f2f2f7;
     font-size: 18rem;
     font-weight: 700;
@@ -747,12 +753,12 @@
     transform: translateX(-50%);
 }
 
-.Reward_base__selected_e6 .Reward_countText_cc,
-.Reward_base_ae:hover .Reward_countText_cc {
+.Reward_base__selected_e3b51 .Reward_countText_fe729,
+.Reward_base_d860a:hover .Reward_countText_fe729 {
     opacity: 1;
 }
 
-.Reward_select_8f {
+.Reward_select_e907e {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -763,11 +769,11 @@
     transform: translateX(-50%);
 }
 
-.Reward_base_ae:hover .Reward_select_8f {
+.Reward_base_d860a:hover .Reward_select_e907e {
     opacity: 1;
 }
 
-.Reward_state_8e {
+.Reward_state_c1c43 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -779,17 +785,17 @@
     pointer-events: none;
 }
 
-.Reward_base__stateLimited_d7 .Reward_state_8e {
+.Reward_base__stateLimited_f7121 .Reward_state_c1c43 {
     opacity: 0;
     pointer-events: auto;
 }
 
-.Reward_base__stateLimited_d7.Reward_base__selected_e6 .Reward_state_8e,
-.Reward_base__stateLimited_d7.Reward_base_ae:hover .Reward_state_8e {
+.Reward_base__stateLimited_f7121.Reward_base__selected_e3b51 .Reward_state_c1c43,
+.Reward_base__stateLimited_f7121.Reward_base_d860a:hover .Reward_state_c1c43 {
     opacity: 1;
 }
 
-.Reward_stateText_a8 {
+.Reward_stateText_c6721 {
     color: #8c8c7e;
     font-size: 12rem;
     font-weight: 400;
@@ -799,29 +805,29 @@
     text-align: center;
 }
 
-.Reward_base__stateLimited_d7 .Reward_stateText_a8 {
+.Reward_base__stateLimited_f7121 .Reward_stateText_c6721 {
     color: #ee7000;
 }
 
-.Reward_base__stateReceived_45 .Reward_stateText_a8 {
+.Reward_base__stateReceived_cca85 .Reward_stateText_c6721 {
     color: #7ab300;
 }
 
-.Reward_stateIcon_9b {
+.Reward_stateIcon_b62d6 {
     width: 48rem;
     height: 48rem;
     background: no-repeat center / contain;
 }
 
-.Reward_base__stateLimited_d7 .Reward_stateIcon_9b {
+.Reward_base__stateLimited_f7121 .Reward_stateIcon_b62d6 {
     background-image: url('R.images.gui.maps.icons.selectableReward.reward.state.alert');
 }
 
-.Reward_base__stateReceived_45 .Reward_stateIcon_9b {
+.Reward_base__stateReceived_cca85 .Reward_stateIcon_b62d6 {
     background-image: url('R.images.gui.maps.icons.selectableReward.reward.state.check');
 }
 
-.Reward_glow_81 {
+.Reward_glow_fb1bd {
     width: 206rem;
     height: 78rem;
     background: no-repeat center / contain;
@@ -833,24 +839,24 @@
     pointer-events: none;
 }
 
-.Reward_base__stateNormal_8c .Reward_glow_81,
-.Reward_base__stateLimited_d7 .Reward_glow_81 {
+.Reward_base__stateNormal_cb031 .Reward_glow_fb1bd,
+.Reward_base__stateLimited_f7121 .Reward_glow_fb1bd {
     background-image: url('R.images.gui.maps.icons.selectableReward.reward.state.orange_glow');
     opacity: 0;
 }
 
-.Reward_base__stateNormal_8c.Reward_base__selected_e6 .Reward_glow_81,
-.Reward_base__stateNormal_8c.Reward_base_ae:hover .Reward_glow_81,
-.Reward_base__stateLimited_d7.Reward_base__selected_e6 .Reward_glow_81,
-.Reward_base__stateLimited_d7.Reward_base_ae:hover .Reward_glow_81 {
+.Reward_base__stateNormal_cb031.Reward_base__selected_e3b51 .Reward_glow_fb1bd,
+.Reward_base__stateNormal_cb031.Reward_base_d860a:hover .Reward_glow_fb1bd,
+.Reward_base__stateLimited_f7121.Reward_base__selected_e3b51 .Reward_glow_fb1bd,
+.Reward_base__stateLimited_f7121.Reward_base_d860a:hover .Reward_glow_fb1bd {
     opacity: 1;
 }
 
-.Reward_base__stateReceived_45 .Reward_glow_81 {
+.Reward_base__stateReceived_cca85 .Reward_glow_fb1bd {
     background-image: url('R.images.gui.maps.icons.selectableReward.reward.state.green_glow');
 }
 
-.SelectButton_base_fd {
+.SelectButton_base_f943c {
     width: 46rem;
     height: 42rem;
     margin: 0 22rem;
@@ -860,61 +866,61 @@
     cursor: pointer;
 }
 
-.SelectButton_base__plus_d3 {
+.SelectButton_base__plus_b2222 {
     background-image: url('R.images.gui.maps.icons.selectableReward.reward.selectButton.plus_enabled');
 }
 
-.SelectButton_base__plus_d3:hover {
+.SelectButton_base__plus_b2222:hover {
     background-image: url('R.images.gui.maps.icons.selectableReward.reward.selectButton.plus_hover');
 }
 
-.SelectButton_base__plus_d3.SelectButton_base__disabled_86 {
+.SelectButton_base__plus_b2222.SelectButton_base__disabled_adc25 {
     background-image: url('R.images.gui.maps.icons.selectableReward.reward.selectButton.plus_disabled');
     cursor: default;
 }
 
-.SelectButton_base__minus_0b {
+.SelectButton_base__minus_dc7f4 {
     background-image: url('R.images.gui.maps.icons.selectableReward.reward.selectButton.minus_enabled');
 }
 
-.SelectButton_base__minus_0b:hover {
+.SelectButton_base__minus_dc7f4:hover {
     background-image: url('R.images.gui.maps.icons.selectableReward.reward.selectButton.minus_hover');
 }
 
-.SelectButton_base__minus_0b.SelectButton_base__disabled_86 {
+.SelectButton_base__minus_dc7f4.SelectButton_base__disabled_adc25 {
     background-image: url('R.images.gui.maps.icons.selectableReward.reward.selectButton.minus_disabled');
     cursor: default;
 }
 
-.ContentGrid_base_f7 {
+.ContentGrid_base_b9ce1 {
     display: flex;
     height: 100%;
     border-top: 1rem solid rgba(255, 255, 255, 0.1);
     border-bottom: 1rem solid rgba(255, 255, 255, 0.1);
     position: relative;
 }
-.mediaExtraLarge .ContentGrid_base_f7 {
+.mediaExtraLarge .ContentGrid_base_b9ce1 {
     height: 570rem;
 }
 
-.ContentGrid_scrollArea_98 {
+.ContentGrid_scrollArea_af071 {
     width: auto;
     min-width: 100%;
     margin-right: -24rem;
 }
 
-.ContentGrid_scrollAreaInner_32 {
+.ContentGrid_scrollAreaInner_ff582 {
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 24rem;
 }
 
-.ContentGrid_reward_4b {
+.ContentGrid_reward_df6ca {
     margin-top: 24rem;
     margin-right: 24rem;
 }
 
-.ContentGrid_lip_7e {
+.ContentGrid_lip_a75b5 {
     width: 100%;
     padding-bottom: 12%;
     background: url('R.images.gui.maps.icons.selectableReward.lip') no-repeat center / cover;
@@ -923,17 +929,17 @@
     pointer-events: none;
 }
 
-.ContentGrid_lip__top_2c {
+.ContentGrid_lip__top_fe67c {
     top: 0;
     transform: translateY(-50%);
 }
 
-.ContentGrid_lip__bottom_70 {
+.ContentGrid_lip__bottom_bc812 {
     bottom: 0;
     transform: translateY(50%) rotate(180deg);
 }
 
-.CButton_base_40 {
+.CButton_base_bb13f {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -943,35 +949,35 @@
     cursor: pointer;
 }
 
-.CButton_base__main_42,
-.CButton_base__primary_7f,
-.CButton_base__primaryGreen_6f,
-.CButton_base__primaryRed_ec,
-.CButton_base__secondary_50 {
+.CButton_base__main_dd05d,
+.CButton_base__primary_c75a2,
+.CButton_base__primaryGreen_ae65b,
+.CButton_base__primaryRed_b1341,
+.CButton_base__secondary_f2c20 {
     background-size: 100% 100%;
 }
 
-.CButton_base__main_42 {
+.CButton_base__main_dd05d {
     background-image: url('R.images.gui.maps.icons.components.button.back_main');
 }
 
-.CButton_base__primary_7f {
+.CButton_base__primary_c75a2 {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary');
 }
 
-.CButton_base__primaryGreen_6f {
+.CButton_base__primaryGreen_ae65b {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
 }
 
-.CButton_base__primaryRed_ec {
+.CButton_base__primaryRed_b1341 {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
 }
 
-.CButton_base__secondary_50 {
+.CButton_base__secondary_f2c20 {
     background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
 }
 
-.CButton_base__ghost_ed {
+.CButton_base__ghost_f452b {
     border-radius: 3rem;
     box-shadow:
         0 0 0 1rem rgba(0, 0, 0, 0.3),
@@ -979,29 +985,29 @@
     background-color: rgba(0, 0, 0, 0.15);
 }
 
-.CButton_base__extraSmall_27 {
+.CButton_base__extraSmall_e1273 {
     min-height: 17rem;
     padding: 0 16rem;
 }
 
-.CButton_base__small_df,
-.CButton_base__medium_74 {
+.CButton_base__small_c20a3,
+.CButton_base__medium_ef59a {
     padding: 0 20rem;
 }
 
-.CButton_base__small_df {
+.CButton_base__small_c20a3 {
     min-height: 18rem;
 }
 
-.CButton_base__medium_74 {
+.CButton_base__medium_ef59a {
     min-height: 32rem;
 }
 
-.CButton_base__large_5c {
+.CButton_base__large_bafd5 {
     min-height: 48rem;
 }
 
-.CButton_base__disabled_d9 {
+.CButton_base__disabled_eef7a {
     cursor: default;
 }
 /* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
@@ -1009,7 +1015,7 @@ The bug is that under certain conditions, when using border-image, stripes appea
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113
 */
-.CButton_back_e5 {
+.CButton_back_e957b {
     border-image-slice: 4 fill;
     border-image-width: 4rem;
     position: absolute;
@@ -1018,22 +1024,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
 }
-.CButton_base__main_42 .CButton_back_e5 {
+.CButton_base__main_dd05d .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
 }
-.CButton_base__primary_7f .CButton_back_e5 {
+.CButton_base__primary_c75a2 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
 }
-.CButton_base__primaryGreen_6f .CButton_back_e5 {
+.CButton_base__primaryGreen_ae65b .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
 }
-.CButton_base__primaryRed_ec .CButton_back_e5 {
+.CButton_base__primaryRed_b1341 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
 }
-.CButton_base__secondary_50 .CButton_back_e5 {
+.CButton_base__secondary_f2c20 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
 }
-.CButton_texture_fe {
+.CButton_texture_ccd7e {
     background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
     background-size: 155rem 31rem;
     mix-blend-mode: soft-light;
@@ -1043,7 +1049,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
 }
-.CButton_state_11 {
+.CButton_state_f2bb4 {
     position: absolute;
     top: 0;
     right: 0;
@@ -1051,20 +1057,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
     transition: box-shadow 0.16s ease-in-out;
 }
-.CButton_base__focus_83 .CButton_state_11 {
+.CButton_base__focus_b0875 .CButton_state_f2bb4 {
     border-radius: 2rem;
     box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
 }
-.CButton_stateHighlightHover_ff,
-.CButton_stateHighlightActive_35,
-.CButton_stateDisabled_54 {
+.CButton_stateHighlightHover_bd0cb,
+.CButton_stateHighlightActive_e9a8a,
+.CButton_stateDisabled_ed209 {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
 }
-.CButton_stateHighlightHover_ff {
+.CButton_stateHighlightHover_bd0cb {
     background-image: linear-gradient(
         180deg,
         rgba(252, 248, 235, 0.25) 0%,
@@ -1073,37 +1079,37 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     );
     opacity: 0;
 }
-.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+.CButton_base_bb13f:hover .CButton_stateHighlightHover_bd0cb {
     opacity: 1;
 }
-.CButton_base_40:active .CButton_stateHighlightHover_ff {
+.CButton_base_bb13f:active .CButton_stateHighlightHover_bd0cb {
     opacity: 0;
 }
-.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+.CButton_base__disabled_eef7a:hover .CButton_stateHighlightHover_bd0cb {
     opacity: 0;
 }
-.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+.CButton_base__ghost_f452b .CButton_stateHighlightHover_bd0cb {
     box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
     background-color: rgba(8, 6, 0, 0.18);
     background-image: none;
 }
-.CButton_stateHighlightActive_35 {
+.CButton_stateHighlightActive_e9a8a {
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
     opacity: 0;
 }
-.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+.CButton_base__highlightActive_db27d .CButton_stateHighlightActive_e9a8a {
     opacity: 1;
 }
-.CButton_stateDisabled_54 {
+.CButton_stateDisabled_ed209 {
     background-color: rgba(0, 0, 0, 0.25);
     background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
     background-size: 15rem 15rem;
     visibility: hidden;
 }
-.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+.CButton_base__disabled_eef7a .CButton_stateDisabled_ed209 {
     visibility: inherit;
 }
-.CButton_content_cc {
+.CButton_content_a99fc {
     display: flex;
     align-items: center;
     color: #f2f2e6;
@@ -1113,64 +1119,64 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     letter-spacing: 0.03em;
     transform: translateY(-1rem);
 }
-.CButton_content_cc[lang='ja'],
-.CButton_content_cc[lang='ko'],
-.CButton_content_cc[lang='zh_tw'],
-.CButton_content_cc[lang='zh_sg'],
-.CButton_content_cc[lang='zh_cn'],
-.CButton_content_cc[lang='th'] {
+.CButton_content_a99fc[lang='ja'],
+.CButton_content_a99fc[lang='ko'],
+.CButton_content_a99fc[lang='zh_tw'],
+.CButton_content_a99fc[lang='zh_sg'],
+.CButton_content_a99fc[lang='zh_cn'],
+.CButton_content_a99fc[lang='th'] {
     font-weight: 400;
 }
-.CButton_base__main_42 .CButton_content_cc,
-.CButton_base__primaryRed_ec .CButton_content_cc {
+.CButton_base__main_dd05d .CButton_content_a99fc,
+.CButton_base__primaryRed_b1341 .CButton_content_a99fc {
     text-shadow: 0 -1rem 1rem #600;
 }
-.CButton_base__secondary_50 .CButton_content_cc {
+.CButton_base__secondary_f2c20 .CButton_content_a99fc {
     color: rgba(254, 254, 236, 0.75);
 }
-.CButton_base__primaryGreen_6f .CButton_content_cc {
+.CButton_base__primaryGreen_ae65b .CButton_content_a99fc {
     text-shadow: 0 -1rem 1rem #1c2502;
 }
-.CButton_base__extraSmall_27 .CButton_content_cc {
+.CButton_base__extraSmall_e1273 .CButton_content_a99fc {
     font-size: 12rem;
 }
-.CButton_base__small_df .CButton_content_cc {
+.CButton_base__small_c20a3 .CButton_content_a99fc {
     font-size: 14rem;
 }
-.CButton_base__medium_74 .CButton_content_cc {
+.CButton_base__medium_ef59a .CButton_content_a99fc {
     font-size: 15rem;
 }
-.CButton_base__large_5c .CButton_content_cc {
+.CButton_base__large_bafd5 .CButton_content_a99fc {
     font-size: 18rem;
 }
-.CButton_base__disabled_d9 .CButton_content_cc {
+.CButton_base__disabled_eef7a .CButton_content_a99fc {
     opacity: 0.6;
 }
 
-.Footer_base_2b {
+.Footer_base_ecead {
     display: flex;
     flex-direction: column;
     width: 100%;
     position: relative;
 }
 
-.Footer_description_9a {
+.Footer_description_bfd35 {
     display: flex;
     justify-content: center;
 }
 
-.Footer_selectRewards_f9 {
+.Footer_selectRewards_b413c {
     display: flex;
     margin-bottom: 16rem;
     color: #e9e2bf;
     font-size: 14rem;
 }
 
-.mediaMedium .Footer_selectRewards_f9 {
+.mediaMedium .Footer_selectRewards_b413c {
     font-size: 16rem;
 }
 
-.Footer_rewardsSelected_19 {
+.Footer_rewardsSelected_e0fa1 {
     display: flex;
     margin-top: 2rem;
     margin-bottom: 15rem;
@@ -1178,11 +1184,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 14rem;
 }
 
-.mediaMedium .Footer_rewardsSelected_19 {
+.mediaMedium .Footer_rewardsSelected_e0fa1 {
     font-size: 16rem;
 }
 
-.Footer_rewardsSelectedCount_5b {
+.Footer_rewardsSelectedCount_e5667 {
     margin-left: 7rem;
     margin-top: -6rem;
     color: #f2f2f7;
@@ -1190,33 +1196,33 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-weight: 700;
 }
 
-.mediaMedium .Footer_rewardsSelectedCount_5b {
+.mediaMedium .Footer_rewardsSelectedCount_e5667 {
     margin-top: -8rem;
     font-size: 24rem;
 }
 
-.Footer_rewardsSelectedIcon_59 {
+.Footer_rewardsSelectedIcon_b4475 {
     width: 14rem;
     height: 14rem;
     margin-left: 5rem;
     background: url('R.images.gui.maps.icons.selectableReward.footer.info') no-repeat center / contain;
 }
 
-.mediaMedium .Footer_rewardsSelectedIcon_59 {
+.mediaMedium .Footer_rewardsSelectedIcon_b4475 {
     margin-top: 2rem;
 }
 
-.Footer_buttons_12 {
+.Footer_buttons_f8e7f {
     display: flex;
     justify-content: center;
 }
 
-.Footer_cButton_f7 {
+.Footer_cButton_f8381 {
     min-width: 160rem;
     margin: 0 10rem;
 }
 
-@keyframes Content_slideUp_aa {
+@keyframes Content_slideUp_adb3f {
     0% {
         opacity: 0;
         transform: translateY(20rem);
@@ -1228,7 +1234,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes Content_blink_77 {
+@keyframes Content_blink_c8c88 {
     0% {
         filter: brightness(1);
     }
@@ -1242,17 +1248,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-.Content_base_32 {
+.Content_base_ee2f0 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.Content_base__accepting_82 {
+.Content_base__accepting_e3e67 {
     pointer-events: none;
 }
 
-.Content_heading_33 {
+.Content_heading_e9769 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1260,21 +1266,21 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.mediaMedium .Content_heading_33 {
+.mediaMedium .Content_heading_e9769 {
     flex: 0 0 167rem;
 }
 
-.mediaLarge .Content_heading_33 {
+.mediaLarge .Content_heading_e9769 {
     flex: 0 0 208rem;
 }
 
-.mediaExtraLarge .Content_heading_33 {
+.mediaExtraLarge .Content_heading_e9769 {
     flex: 1 1 100%;
 }
 
-.Content_title_b6 {
+.Content_title_e40ef {
     opacity: 0;
-    animation-name: Content_slideUp_aa;
+    animation-name: Content_slideUp_adb3f;
     animation-duration: 0.8s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -1288,7 +1294,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 20rem;
 }
 
-.mediaLarge .Content_title_b6 {
+.mediaLarge .Content_title_e40ef {
     color: #f2f2f7;
     font-size: 24rem;
     font-weight: 700;
@@ -1296,9 +1302,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-top: 38rem;
 }
 
-.Content_subTitle_77 {
+.Content_subTitle_f8205 {
     opacity: 0;
-    animation-name: Content_slideUp_aa;
+    animation-name: Content_slideUp_adb3f;
     animation-duration: 0.8s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -1311,7 +1317,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-top: 5rem;
 }
 
-.mediaLarge .Content_subTitle_77 {
+.mediaLarge .Content_subTitle_f8205 {
     color: #f2f2f7;
     font-size: 56rem;
     font-weight: 700;
@@ -1320,33 +1326,33 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 62rem;
 }
 
-.Content_wrapper_f2 {
+.Content_wrapper_a794d {
     display: flex;
     flex-direction: column;
     flex: 1 0 260rem;
     width: 936rem;
 }
 
-.mediaMedium .Content_wrapper_f2 {
+.mediaMedium .Content_wrapper_a794d {
     width: 1176rem;
 }
 
-.mediaLarge .Content_wrapper_f2 {
+.mediaLarge .Content_wrapper_a794d {
     width: 1416rem;
 }
 
-.mediaExtraLarge .Content_wrapper_f2 {
+.mediaExtraLarge .Content_wrapper_a794d {
     flex: 0 0 auto;
 }
 
-.Content_categories_36 {
+.Content_categories_e2793 {
     display: flex;
     justify-content: center;
 }
 
-.Content_footer_6a {
+.Content_footer_d2e99 {
     opacity: 0;
-    animation-name: Content_slideUp_aa;
+    animation-name: Content_slideUp_adb3f;
     animation-duration: 0.8s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -1359,28 +1365,28 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding-bottom: 27rem;
 }
 
-.mediaMedium .Content_footer_6a {
+.mediaMedium .Content_footer_d2e99 {
     flex: 0 0 168rem;
     margin-top: 110rem;
     padding-bottom: 77rem;
 }
 
-.mediaLarge .Content_footer_6a {
+.mediaLarge .Content_footer_d2e99 {
     flex: 0 0 191rem;
 }
 
-.mediaExtraLarge .Content_footer_6a {
+.mediaExtraLarge .Content_footer_d2e99 {
     flex: 1 1 100%;
     margin-top: 0;
     padding-bottom: 80rem;
 }
 
-.Content_base__windowed_c5 .Content_footer_6a {
+.Content_base__windowed_f5b19 .Content_footer_d2e99 {
     flex: 1 0 128rem;
     padding-bottom: 37rem;
 }
 
-.Error_base_bc {
+.Error_base_b3f19 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1389,13 +1395,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 1;
 }
 
-.Error_image_a5 {
+.Error_image_ec2c1 {
     width: 432rem;
     height: 278rem;
     background: url('R.images.gui.maps.icons.selectableReward.tabs.error') no-repeat center / contain;
 }
 
-.Error_title_0e {
+.Error_title_e2f6e {
     color: #e9e2bf;
     font-size: 24rem;
     font-weight: 700;
@@ -1404,7 +1410,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     text-align: center;
 }
 
-.Error_description_f4 {
+.Error_description_fc18b {
     color: #e9e2bf;
     font-size: 16rem;
     font-weight: 400;
@@ -1414,17 +1420,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     text-align: center;
 }
 
-.Error_footer_63 {
+.Error_footer_fc5f1 {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
-.Error_button_81 {
+.Error_button_c01a9 {
     min-width: 160rem;
 }
 
-.SelectableRewardBase_base_68 {
+.SelectableRewardBase_base_dc0f1 {
     display: flex;
     width: 100%;
     height: 100%;

@@ -1,17 +1,17 @@
-import { o as e, g as a, e as s, t, j as o, f as n, r as i } from '../../../chunks/vendor.js';
+import { o as e, g as a, e as s, v as t, j as o, f as n, r as i } from '../../../chunks/vendor.js';
 import {
     i as c,
     e as l,
-    by as r,
+    bw as r,
     aa as d,
     G as _,
-    bv as b,
+    bt as b,
     g as u,
     h as m,
     p,
     n as g,
-    bW as f,
-    bK as w,
+    bU as f,
+    bI as w,
     aA as h,
     W as x,
     K as v,
@@ -20,11 +20,11 @@ import {
     z as y,
     B as N,
     aM as k,
-    bC as S,
+    bA as S,
     C as I,
     q as T,
     c as B,
-    bX as $,
+    bV as $,
     aP as z,
     b as A,
     T as L,
@@ -32,8 +32,8 @@ import {
     U as W,
     d as M,
 } from '../../../chunks/lib.js';
-import { s as O } from '../../../chunks/utils.js';
-import { g as U, a as F } from '../../../chunks/filename.js';
+import { s as U } from '../../../chunks/utils.js';
+import { g as O, a as F } from '../../../chunks/filename.js';
 var P = ((e) => ((e.None = 'none'), (e.Accepting = 'accepting'), e))(P || {});
 const [D, q] = c()(
     ({ observableModel: s }) => {
@@ -72,7 +72,7 @@ var H = ((e) => (
     (e.BattleBooster = 'battleBooster'),
     e
 ))(H || {});
-function K(e) {
+function V(e) {
     return e.includes('delux')
         ? 'deluxe'
         : e.includes('modernized')
@@ -83,23 +83,23 @@ function K(e) {
               ? 'battleBooster'
               : 'none';
 }
-function V(e, a) {
+function J(e, a) {
     return a && 'none' !== a ? a : e;
 }
-const X = (e, a = _.Small, s) => {
+const K = (e, a = _.Small, s) => {
         if ('modernized_device' === s) {
             const s = G(e);
             if (s) return `R.images.gui.maps.icons.quests.bonuses.${a}.modernized_devices_t${s}_gift`;
         }
-        return `R.images.gui.maps.icons.quests.bonuses.${a}.${V(e, s)}_gift`;
+        return `R.images.gui.maps.icons.quests.bonuses.${a}.${J(e, s)}_gift`;
     },
-    J = (e, a) => {
+    Q = (e, a) => {
         const s = e.match(/^offer:([^:]+):/);
         return s
             ? `${R.strings.selectable_reward.tabs.items.$dyn(s[1])}`
-            : `${R.strings.selectable_reward.tabs.items.$dyn(V(e, a))}`;
+            : `${R.strings.selectable_reward.tabs.items.$dyn(J(e, a))}`;
     },
-    Q = (e) => {
+    X = (e) => {
         var a;
         const s = e.split('_')[1],
             t = s && R.strings.blueprints.nations.$dyn(s),
@@ -147,7 +147,7 @@ const Z = (e, a = 's180x135', s = 'R.images.gui.maps.icons.selectableReward.rewa
             d = r.count === r.limit,
             b = i.root.get().selectedTab === r.type,
             w = t >= m.medium.weight ? _.Big : _.Small,
-            h = K(r.type);
+            h = V(r.type);
         return o.jsxs('div', {
             className: n(ee.base, d && ee.base__completed, b ? ee.base__selected : r.count && ee[`base__${l}`], a),
             onClick: () => {
@@ -159,7 +159,7 @@ const Z = (e, a = 's180x135', s = 'R.images.gui.maps.icons.selectableReward.rewa
                 o.jsx('div', {
                     className: n(ee.title, null == s ? void 0 : s.title),
                     children: o.jsx(g, {
-                        text: J(r.type, h),
+                        text: Q(r.type, h),
                         binding: { equipmentType: R.strings.selectable_reward.tabs.items.$dyn(h) },
                     }),
                 }),
@@ -170,7 +170,7 @@ const Z = (e, a = 's180x135', s = 'R.images.gui.maps.icons.selectableReward.rewa
                         children: [
                             o.jsx('div', {
                                 className: ee.image,
-                                style: { backgroundImage: `url(${X(r.type, w, h)})` },
+                                style: { backgroundImage: `url(${K(r.type, w, h)})` },
                             }),
                             o.jsx('div', { className: ee.check }),
                         ],
@@ -249,9 +249,9 @@ const ce = ({ type: e = 'plus', isEnabled: a = !0, onClick: s }) =>
             { addReward: b, reduceReward: u } = s,
             m = l > 0 && 'state_received' !== r,
             g = t === P.Accepting && m,
-            x = K(c);
+            x = V(c);
         return o.jsxs('div', {
-            className: n(le.base, m && le.base__selected, g && le.base__accepting, le[`base__${O(r)}`]),
+            className: n(le.base, m && le.base__selected, g && le.base__accepting, le[`base__${U(r)}`]),
             onClick: () => {
                 r === te ? (p.sound(R.sounds.bp_click()), b(c)) : r === oe && p.sound('bp_click_limit');
             },
@@ -283,7 +283,7 @@ const ce = ({ type: e = 'plus', isEnabled: a = !0, onClick: s }) =>
                         ],
                     }),
                 }),
-                o.jsx('div', { className: le.label, children: Q(c) }),
+                o.jsx('div', { className: le.label, children: X(c) }),
                 m || r === te
                     ? o.jsxs(o.Fragment, {
                           children: [
@@ -590,7 +590,7 @@ const ue = ({ position: e, visible: a }) =>
         });
     }),
     Me = 'RewardSelection_496b50e',
-    Oe = t(({ title: e, subTitle: a, classNames: s, buttonsSize: t }) => {
+    Ue = t(({ title: e, subTitle: a, classNames: s, buttonsSize: t }) => {
         const { model: n } = q(),
             i = n.tabs.get();
         return o.jsx('div', {
@@ -599,8 +599,8 @@ const ue = ({ position: e, visible: a }) =>
                 i.length > 0 ? o.jsx(Ie, { title: e, subTitle: a, classNames: s, buttonsSize: t }) : o.jsx(We, {}),
         });
     }),
-    Ue = ({ title: e, subTitle: a, modelProviderContext: s }) =>
-        o.jsx(D, { options: { context: s }, children: o.jsx(Oe, { title: e, subTitle: a }) }),
+    Oe = ({ title: e, subTitle: a, modelProviderContext: s }) =>
+        o.jsx(D, { options: { context: s }, children: o.jsx(Ue, { title: e, subTitle: a }) }),
     [Fe, Pe] = c()(
         ({ observableModel: e }) => ({ ...{ root: e.object() } }),
         ({ externalModel: e }) => ({ close: e.createCallbackNoArgs('selectableRewardModel.onCloseClick') }),
@@ -609,11 +609,11 @@ const ue = ({ position: e, visible: a }) =>
     qe = 'App_base__hide_3c612cca',
     Ge = 'App_content_54c70e4',
     He = 'App_background_189ce663',
-    Ke = 'App_backgroundBlur_b6c090aa',
-    Ve = 'App_shadow_b56b33f2',
-    Xe = 'App_close_f9a2b686',
-    Je = R.strings.battle_pass.rewardChoice,
-    Qe = t(() => {
+    Ve = 'App_backgroundBlur_b6c090aa',
+    Je = 'App_shadow_b56b33f2',
+    Ke = 'App_close_f9a2b686',
+    Qe = R.strings.battle_pass.rewardChoice,
+    Xe = t(() => {
         const { model: e, controls: a } = Pe(),
             { chapterID: s, level: t } = e.root.get(),
             c = Boolean(t),
@@ -636,19 +636,19 @@ const ue = ({ position: e, visible: a }) =>
             ));
         const u = ((e, a) =>
             a
-                ? { backgroundImage: `url(${U(R.images.gui.maps.icons.battlePass.backgrounds.chapter_general, e)})` }
+                ? { backgroundImage: `url(${O(R.images.gui.maps.icons.battlePass.backgrounds.chapter_general, e)})` }
                 : F())(s, c);
         return o.jsxs('div', {
             className: n(De, d && qe),
             children: [
-                o.jsx('div', { className: He, style: u, children: o.jsx('div', { className: Ke }) }),
-                o.jsx('div', { className: Ve }),
+                o.jsx('div', { className: He, style: u, children: o.jsx('div', { className: Ve }) }),
+                o.jsx('div', { className: Je }),
                 l &&
                     o.jsxs('div', {
                         className: Ge,
                         children: [
                             o.jsx('div', {
-                                className: Xe,
+                                className: Ke,
                                 children: o.jsx(L, {
                                     caption: R.strings.menu.viewHeader.closeBtn.label(),
                                     type: 'close',
@@ -656,14 +656,14 @@ const ue = ({ position: e, visible: a }) =>
                                     onClick: b,
                                 }),
                             }),
-                            o.jsx(Ue, {
+                            o.jsx(Oe, {
                                 modelProviderContext: 'model.selectableRewardModel',
-                                title: Je.title(),
-                                subTitle: Je.subTitle(),
+                                title: Qe.title(),
+                                subTitle: Qe.subTitle(),
                             }),
                         ],
                     }),
             ],
         });
     });
-M(new E().add(W).addWithProps(Fe, {}).render(o.jsx(Qe, {})));
+M(new E().add(W).addWithProps(Fe, {}).render(o.jsx(Xe, {})));

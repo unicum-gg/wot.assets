@@ -1,0 +1,191 @@
+{
+  "front_018": {
+    "frameX": 2,
+    "frameY": 2,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_030": {
+    "frameX": 859,
+    "frameY": 2,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_036": {
+    "frameX": 1672,
+    "frameY": 2,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "eff1": {
+    "frameX": 1672,
+    "frameY": 206,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "sky_018": {
+    "frameX": 859,
+    "frameY": 434,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "obelisk3_008": {
+    "frameX": 1663,
+    "frameY": 661,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_041": {
+    "frameX": 2,
+    "frameY": 455,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_037": {
+    "frameX": 796,
+    "frameY": 702,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_029": {
+    "frameX": 1529,
+    "frameY": 702,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "eff2_006": {
+    "frameX": 1663,
+    "frameY": 850,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "sky_010": {
+    "frameX": 2,
+    "frameY": 1324,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "sky_003": {
+    "frameX": 2,
+    "frameY": 1023,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "wave_2_003": {
+    "frameX": 2,
+    "frameY": 896,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "wave11_004": {
+    "frameX": 263,
+    "frameY": 1018,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_038": {
+    "frameX": 284,
+    "frameY": 850,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_011": {
+    "frameX": 611,
+    "frameY": 896,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_032": {
+    "frameX": 892,
+    "frameY": 1012,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "eff1_001": {
+    "frameX": 892,
+    "frameY": 1257,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_013": {
+    "frameX": 1415,
+    "frameY": 1324,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "wave_2_005": {
+    "frameX": 1415,
+    "frameY": 1651,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "wave11_008": {
+    "frameX": 1588,
+    "frameY": 1651,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "wave_12_005": {
+    "frameX": 1588,
+    "frameY": 1836,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "middle_010": {
+    "frameX": 293,
+    "frameY": 1323,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "sky_008": {
+    "frameX": 567,
+    "frameY": 1323,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "bg": {
+    "frameX": 567,
+    "frameY": 1590,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_043": {
+    "frameX": 780,
+    "frameY": 1590,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "obelisk1_005": {
+    "frameX": 1522,
+    "frameY": 1023,
+    "sourceName": "parallaxS2-3",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  }
+}

@@ -1,4 +1,4 @@
-import { i as t, j as e, e as a } from '../../../../chunks/vendor.js';
+import { k as t, j as e, i as a } from '../../../../chunks/vendor.js';
 import {
     i as s,
     n as o,
@@ -102,7 +102,7 @@ const [x, h] = s()(({ observableModel: t }) => ({ root: t.object() }), o),
         content__bottom: 'App_content__bottom_663c34c6',
         title: 'App_title_5d35a33',
         paragraph: 'App_paragraph_ec5a23b3',
-        divider: 'App_divider_629b2bb7',
+        divider: 'App_divider_d0d43aa1',
         status: 'App_status_59a9c25',
     },
     w = t(() => {

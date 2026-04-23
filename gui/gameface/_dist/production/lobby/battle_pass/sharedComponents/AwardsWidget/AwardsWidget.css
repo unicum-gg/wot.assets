@@ -1,4 +1,4 @@
-.Background_base_67 {
+.Background_base_f3073 {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -6,9 +6,9 @@
     position: relative;
 }
 
-.Background_bg_e8,
-.Background_bgDisabled_e0,
-.Background_bgHover_b4 {
+.Background_bg_a03fd,
+.Background_bgDisabled_abb43,
+.Background_bgHover_a39f3 {
     width: 76rem;
     height: 91rem;
     background: no-repeat center / contain;
@@ -19,53 +19,53 @@
     transition: opacity 0.3s linear;
 }
 
-.mediaMedium .Background_bg_e8,
-.mediaMedium .Background_bgDisabled_e0,
-.mediaMedium .Background_bgHover_b4 {
+.mediaMedium .Background_bg_a03fd,
+.mediaMedium .Background_bgDisabled_abb43,
+.mediaMedium .Background_bgHover_a39f3 {
     height: 136rem;
 }
 
-.Background_base__big_56 .Background_bg_e8,
-.Background_base__big_56 .Background_bgDisabled_e0,
-.Background_base__big_56 .Background_bgHover_b4 {
+.Background_base__big_a6d00 .Background_bg_a03fd,
+.Background_base__big_a6d00 .Background_bgDisabled_abb43,
+.Background_base__big_a6d00 .Background_bgHover_a39f3 {
     width: 96rem;
     height: 171rem;
     bottom: 2rem;
 }
 
-.mediaMedium .Background_base__big_56 .Background_bg_e8,
-.mediaMedium .Background_base__big_56 .Background_bgDisabled_e0,
-.mediaMedium .Background_base__big_56 .Background_bgHover_b4 {
+.mediaMedium .Background_base__big_a6d00 .Background_bg_a03fd,
+.mediaMedium .Background_base__big_a6d00 .Background_bgDisabled_abb43,
+.mediaMedium .Background_base__big_a6d00 .Background_bgHover_a39f3 {
     width: 152rem;
     height: 272rem;
     bottom: 4rem;
 }
 
-.mediaMedium .Background_bg_e8 {
+.mediaMedium .Background_bg_a03fd {
     height: 131rem;
 }
 
-.Background_base__hovered_32 .Background_bg_e8 {
+.Background_base__hovered_a74f9 .Background_bg_a03fd {
     opacity: 0;
 }
 
-.Background_base__big_56 .Background_bg_e8 {
+.Background_base__big_a6d00 .Background_bg_a03fd {
     height: 166rem;
 }
 
-.mediaMedium .Background_base__big_56 .Background_bg_e8 {
+.mediaMedium .Background_base__big_a6d00 .Background_bg_a03fd {
     height: 262rem;
 }
 
-.Background_bgHover_b4 {
+.Background_bgHover_a39f3 {
     opacity: 0;
 }
 
-.Background_base__hovered_32 .Background_bgHover_b4 {
+.Background_base__hovered_a74f9 .Background_bgHover_a39f3 {
     opacity: 1;
 }
 
-.Border_base_5a {
+.Border_base_a4523 {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -73,8 +73,8 @@
     position: absolute;
 }
 
-.Border_border_bd,
-.Border_borderHover_ab {
+.Border_border_d8967,
+.Border_borderHover_e30d7 {
     width: 100%;
     height: 100%;
     background: no-repeat center bottom / contain;
@@ -84,20 +84,20 @@
     transition: opacity 0.3s linear;
 }
 
-.Border_base__hovered_83 .Border_border_bd,
-.Border_base__hovered_83 .Border_borderHover_ab {
+.Border_base__hovered_d4ec9 .Border_border_d8967,
+.Border_base__hovered_d4ec9 .Border_borderHover_e30d7 {
     opacity: 0;
 }
 
-.Border_borderHover_ab {
+.Border_borderHover_e30d7 {
     opacity: 0;
 }
 
-.Border_base__hovered_83 .Border_borderHover_ab {
+.Border_base__hovered_d4ec9 .Border_borderHover_e30d7 {
     opacity: 1;
 }
 
-.Border_borderDisabled_8b {
+.Border_borderDisabled_eb6d6 {
     width: 80rem;
     height: 95rem;
     background: no-repeat center bottom / contain;
@@ -105,26 +105,26 @@
     z-index: 2;
 }
 
-.mediaMedium .Border_borderDisabled_8b {
+.mediaMedium .Border_borderDisabled_eb6d6 {
     height: 140rem;
 }
 
-.Border_borderDisabled__big_12 {
+.Border_borderDisabled__big_f5398 {
     width: 100rem;
     height: 175rem;
 }
 
-.mediaMedium .Border_borderDisabled__big_12 {
+.mediaMedium .Border_borderDisabled__big_f5398 {
     width: 160rem;
     height: 280rem;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.CountValue_base_fe {
+.CountValue_base_b47f3 {
     width: 33rem;
     height: 29rem;
     background: url('R.images.gui.maps.icons.battlePass.awards_widget.collectionCompleted_small') no-repeat center /
@@ -133,20 +133,20 @@
     z-index: 4;
 }
 
-.CountValue_base__big_ea {
+.CountValue_base__big_b1f00 {
     width: 33rem;
     height: 29rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.collectionCompleted_big');
     top: 6rem;
 }
 
-.mediaMedium .CountValue_base__big_ea {
+.mediaMedium .CountValue_base__big_b1f00 {
     width: 46rem;
     height: 40rem;
     top: 10rem;
 }
 
-.Count_base_a6 {
+.Count_base_d2aba {
     color: #f2f2f7;
     font-size: 24rem;
     font-weight: 700;
@@ -161,10 +161,10 @@
     left: 0;
     z-index: 5;
 }
-.mediaMedium .Count_base_a6 {
+.mediaMedium .Count_base_d2aba {
     top: 47rem;
 }
-.Count_base__big_2c {
+.Count_base__big_fa81f {
     font-size: 30rem;
     font-weight: 700;
     line-height: 36rem;
@@ -173,20 +173,20 @@
         0 0 12rem #9d4b00;
     top: 61rem;
 }
-.mediaMedium .Count_base__big_2c {
+.mediaMedium .Count_base__big_fa81f {
     font-size: 48rem;
     line-height: 58rem;
     top: 98rem;
 }
-.Count_base__locked_e3 {
+.Count_base__locked_cb8f9 {
     text-shadow: none;
 }
-.Count_base__disabled_66 {
+.Count_base__disabled_ac367 {
     text-shadow: none;
     opacity: 0.5;
 }
 
-.Icon_base_05 {
+.Icon_base_be976 {
     width: 52rem;
     height: 52rem;
     background: no-repeat center / contain;
@@ -197,31 +197,31 @@
     transition: filter 0.3s linear;
 }
 
-.Icon_base__big_9e {
+.Icon_base__big_b2756 {
     width: 64rem;
     height: 64rem;
     top: 9rem;
 }
 
-.mediaMedium .Icon_base__big_9e {
+.mediaMedium .Icon_base__big_b2756 {
     width: 100rem;
     height: 100rem;
     top: 14rem;
 }
 
-.Icon_base__darkened_2b {
+.Icon_base__darkened_d968e {
     filter: grayscale(80%);
 }
 
-.Icon_base__hover_03 {
+.Icon_base__hover_e2ee8 {
     filter: grayscale(0%);
 }
 
-.Icon_base__disabled_a1 {
+.Icon_base__disabled_a1f6f {
     filter: grayscale(100%);
 }
 
-.Label_base_05 {
+.Label_base_f2adf {
     color: #e9e2bf;
     font-size: 12rem;
     font-weight: 400;
@@ -242,10 +242,10 @@
     z-index: 5;
     transition: opacity 0.3s linear;
 }
-.mediaMedium .Label_base_05 {
+.mediaMedium .Label_base_f2adf {
     display: flex;
 }
-.Label_base__big_3c {
+.Label_base__big_dbfd8 {
     color: #fefeec;
     font-size: 14rem;
     font-weight: 700;
@@ -257,38 +257,38 @@
     top: 86rem;
     transition: color 0.3s linear;
 }
-.mediaMedium .Label_base__big_3c {
+.mediaMedium .Label_base__big_dbfd8 {
     height: 104rem;
     font-size: 24rem;
     top: 138rem;
     right: 6rem;
     left: 6rem;
 }
-.Label_base__gold_dc {
+.Label_base__gold_bb470 {
     color: #ffc363;
     text-shadow:
         0 0 4rem rgba(255, 127, 0, 0.25),
         0 0 15rem rgba(238, 85, 34, 0.7);
     opacity: 1;
 }
-.Label_base__hover_51 {
+.Label_base__hover_e4ce6 {
     opacity: 1;
 }
-.Label_base__hover_51.Label_base__big_3c {
+.Label_base__hover_e4ce6.Label_base__big_dbfd8 {
     color: #e9e2bf;
 }
-.Label_base__hover_51.Label_base__gold_dc {
+.Label_base__hover_e4ce6.Label_base__gold_bb470 {
     color: #ffc363;
 }
-.Label_base__disabled_df {
+.Label_base__disabled_dad1b {
     color: #8c8c7e;
     text-shadow: none;
 }
-.mediaMedium .Label_base__disabled_df {
+.mediaMedium .Label_base__disabled_dad1b {
     color: #8c8c7e;
 }
 
-.ChoiceAward_base_0d {
+.ChoiceAward_base_ab1a3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -300,97 +300,97 @@
     cursor: pointer;
 }
 
-.mediaMedium .ChoiceAward_base_0d {
+.mediaMedium .ChoiceAward_base_ab1a3 {
     height: 140rem;
 }
 
-.ChoiceAward_base__big_ec {
+.ChoiceAward_base__big_febd0 {
     width: 100rem;
     height: 175rem;
 }
 
-.mediaMedium .ChoiceAward_base__big_ec {
+.mediaMedium .ChoiceAward_base__big_febd0 {
     width: 160rem;
     height: 280rem;
 }
 
-.ChoiceAward_base__disabled_f1 {
+.ChoiceAward_base__disabled_d33bf {
     cursor: default;
 }
 
-.ChoiceAward_base__hasAppearAnimation_a0 {
+.ChoiceAward_base__hasAppearAnimation_cfc1a {
     opacity: 0;
     visibility: hidden;
-    animation: ChoiceAward_baseAppear_89 0.3s ease-in-out 1.2s forwards;
+    animation: ChoiceAward_baseAppear_df31e 0.3s ease-in-out 1.2s forwards;
 }
 
-.ChoiceAward_shine_d5 {
+.ChoiceAward_shine_c0a04 {
     width: 27rem;
     height: 48rem;
     background: url('R.images.gui.maps.icons.battlePass.awards_widget.award_borderShine_small_s') no-repeat center /
         contain;
     position: absolute;
     top: 0;
-    animation: ChoiceAward_shine_small_s_f2 2s linear infinite alternate;
+    animation: ChoiceAward_shine_small_s_b113b 2s linear infinite alternate;
     pointer-events: none;
 }
 
-.mediaMedium .ChoiceAward_shine_d5 {
+.mediaMedium .ChoiceAward_shine_c0a04 {
     width: 31rem;
     height: 72rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.award_borderShine_small_m');
-    animation: ChoiceAward_shine_small_m_de 2s linear infinite alternate;
+    animation: ChoiceAward_shine_small_m_a346a 2s linear infinite alternate;
 }
 
-.ChoiceAward_base__big_ec .ChoiceAward_shine_d5 {
+.ChoiceAward_base__big_febd0 .ChoiceAward_shine_c0a04 {
     width: 45rem;
     height: 85rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.award_borderShine_big_s');
-    animation: ChoiceAward_shine_big_s_02 2s linear infinite alternate;
+    animation: ChoiceAward_shine_big_s_f2580 2s linear infinite alternate;
 }
 
-.mediaMedium .ChoiceAward_base__big_ec .ChoiceAward_shine_d5 {
+.mediaMedium .ChoiceAward_base__big_febd0 .ChoiceAward_shine_c0a04 {
     width: 46rem;
     height: 116rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.award_borderShine_big_m');
-    animation: ChoiceAward_shine_big_m_ed 2s linear infinite alternate;
+    animation: ChoiceAward_shine_big_m_e95e2 2s linear infinite alternate;
 }
 
-.ChoiceAward_shine__left_2e {
+.ChoiceAward_shine__left_c76a8 {
     left: -13rem;
 }
 
-.mediaMedium .ChoiceAward_shine__left_2e {
+.mediaMedium .ChoiceAward_shine__left_c76a8 {
     left: -14rem;
 }
 
-.ChoiceAward_base__big_ec .ChoiceAward_shine__left_2e {
+.ChoiceAward_base__big_febd0 .ChoiceAward_shine__left_c76a8 {
     left: -21rem;
 }
 
-.mediaMedium .ChoiceAward_base__big_ec .ChoiceAward_shine__left_2e {
+.mediaMedium .ChoiceAward_base__big_febd0 .ChoiceAward_shine__left_c76a8 {
     left: -22rem;
 }
 
-.ChoiceAward_shine__right_64 {
+.ChoiceAward_shine__right_d7679 {
     right: -13rem;
 }
 
-.mediaMedium .ChoiceAward_shine__right_64 {
+.mediaMedium .ChoiceAward_shine__right_d7679 {
     right: -14rem;
     animation-direction: alternate-reverse;
 }
 
-.ChoiceAward_base__big_ec .ChoiceAward_shine__right_64 {
+.ChoiceAward_base__big_febd0 .ChoiceAward_shine__right_d7679 {
     right: -21rem;
 }
 
-.mediaMedium .ChoiceAward_base__big_ec .ChoiceAward_shine__right_64 {
+.mediaMedium .ChoiceAward_base__big_febd0 .ChoiceAward_shine__right_d7679 {
     right: -22rem;
     animation-direction: alternate-reverse;
 }
 
-.ChoiceAward_arrow_30 {
+.ChoiceAward_arrow_d0fa6 {
     width: 68rem;
     height: 90rem;
     background: url('R.images.gui.maps.icons.battlePass.awards_widget.award_arrow_small_s') no-repeat center / contain;
@@ -401,18 +401,18 @@
     transition: all 0.3s;
 }
 
-.mediaMedium .ChoiceAward_arrow_30 {
+.mediaMedium .ChoiceAward_arrow_d0fa6 {
     width: 68rem;
     height: 90rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.award_arrow_small_m');
 }
 
-.ChoiceAward_base_0d:hover .ChoiceAward_arrow_30 {
+.ChoiceAward_base_ab1a3:hover .ChoiceAward_arrow_d0fa6 {
     opacity: 1;
     transform: translateY(5rem);
 }
 
-.ChoiceAward_base__big_ec .ChoiceAward_arrow_30 {
+.ChoiceAward_base__big_febd0 .ChoiceAward_arrow_d0fa6 {
     width: 86rem;
     height: 113rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.award_arrow_big_s');
@@ -420,13 +420,13 @@
     transition: all 0.3s;
 }
 
-.mediaMedium .ChoiceAward_base__big_ec .ChoiceAward_arrow_30 {
+.mediaMedium .ChoiceAward_base__big_febd0 .ChoiceAward_arrow_d0fa6 {
     width: 136rem;
     height: 180rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.award_arrow_big_m');
 }
 
-.ChoiceAward_blinkShape_89 {
+.ChoiceAward_blinkShape_a9abc {
     width: 100%;
     height: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
@@ -434,26 +434,27 @@
     top: 0;
     left: 0;
     mask-image: linear-gradient(180deg, transparent 0%, #000000 50%);
+    mask-repeat: no-repeat;
     pointer-events: none;
 }
 
-.mediaMedium .ChoiceAward_blinkShape_89 {
+.mediaMedium .ChoiceAward_blinkShape_a9abc {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
 }
 
-.ChoiceAward_base_0d:hover .ChoiceAward_blinkShape_89 {
+.ChoiceAward_base_ab1a3:hover .ChoiceAward_blinkShape_a9abc {
     mask-image: none;
 }
 
-.ChoiceAward_base__big_ec .ChoiceAward_blinkShape_89 {
+.ChoiceAward_base__big_febd0 .ChoiceAward_blinkShape_a9abc {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
 }
 
-.mediaMedium .ChoiceAward_base__big_ec .ChoiceAward_blinkShape_89 {
+.mediaMedium .ChoiceAward_base__big_febd0 .ChoiceAward_blinkShape_a9abc {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
 }
 
-.ChoiceAward_blink_f0 {
+.ChoiceAward_blink_b918b {
     width: 14rem;
     height: 300rem;
     background: #fff;
@@ -465,14 +466,14 @@
     z-index: 99;
     transform: rotate(45deg) translate(-200rem, 0rem);
     transform-origin: center;
-    animation: ChoiceAward_blinker_0c 5s linear infinite;
+    animation: ChoiceAward_blinker_e8cd4 5s linear infinite;
 }
 
-.ChoiceAward_base__big_ec .ChoiceAward_blink_f0 {
+.ChoiceAward_base__big_febd0 .ChoiceAward_blink_b918b {
     width: 28rem;
 }
 
-@keyframes ChoiceAward_baseAppear_89 {
+@keyframes ChoiceAward_baseAppear_df31e {
     0% {
         opacity: 0;
         visibility: visible;
@@ -486,7 +487,7 @@
     }
 }
 
-@keyframes ChoiceAward_blinker_0c {
+@keyframes ChoiceAward_blinker_e8cd4 {
     0% {
         transform: rotate(45deg) translate(-200rem, 0rem);
     }
@@ -500,7 +501,7 @@
     }
 }
 
-@keyframes ChoiceAward_shine_small_s_f2 {
+@keyframes ChoiceAward_shine_small_s_b113b {
     0% {
         opacity: 0;
         transform: translateY(0);
@@ -520,7 +521,7 @@
     }
 }
 
-@keyframes ChoiceAward_shine_small_m_de {
+@keyframes ChoiceAward_shine_small_m_a346a {
     0% {
         opacity: 0;
         transform: translateY(0);
@@ -540,7 +541,7 @@
     }
 }
 
-@keyframes ChoiceAward_shine_big_s_02 {
+@keyframes ChoiceAward_shine_big_s_f2580 {
     0% {
         opacity: 0;
         transform: translateY(0);
@@ -560,7 +561,7 @@
     }
 }
 
-@keyframes ChoiceAward_shine_big_m_ed {
+@keyframes ChoiceAward_shine_big_m_e95e2 {
     0% {
         opacity: 0;
         transform: translateY(0);
@@ -580,7 +581,7 @@
     }
 }
 
-.CoinAward_base_75 {
+.CoinAward_base_eb565 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -591,50 +592,50 @@
     position: relative;
     cursor: pointer;
 }
-.mediaMedium .CoinAward_base_75 {
+.mediaMedium .CoinAward_base_eb565 {
     height: 140rem;
 }
-.CoinAward_base__big_1f {
+.CoinAward_base__big_ddf7f {
     width: 100rem;
     height: 175rem;
 }
-.mediaMedium .CoinAward_base__big_1f {
+.mediaMedium .CoinAward_base__big_ddf7f {
     width: 160rem;
     height: 280rem;
 }
 
-.Counter_base_9e {
+.Counter_base_b457c {
     display: flex;
     min-width: 14rem;
     height: 14rem;
     position: relative;
     z-index: 0;
-    animation: Counter_show_be ease-in-out forwards;
+    animation: Counter_show_a62c2 ease-in-out forwards;
 }
 
-.Counter_base__big_19 {
+.Counter_base__big_d6a57 {
     min-width: 21rem;
     height: 21rem;
 }
 
-.Counter_base__small_3b {
+.Counter_base__small_ea547 {
     min-width: 13rem;
     height: 13rem;
 }
 
-.Counter_base__empty_98 {
+.Counter_base__empty_c2ad2 {
     min-width: 6rem;
     height: 6rem;
 }
 
-.Counter_base__animated_40 {
+.Counter_base__animated_fb5ef {
     animation-duration: 0.2s;
 }
 
-.Counter_base__hidden_56 {
-    animation-name: Counter_hide_b6;
+.Counter_base__hidden_b1e71 {
+    animation-name: Counter_hide_d1bf0;
 }
-.Counter_bg_74 {
+.Counter_bg_f25ac {
     border: 1rem solid #fe4e0f;
     border-radius: 7rem;
     box-shadow:
@@ -649,13 +650,13 @@
     left: 0;
     z-index: -1;
 }
-.Counter_base__big_19 .Counter_bg_74 {
+.Counter_base__big_d6a57 .Counter_bg_f25ac {
     border-radius: 11rem;
 }
-.Counter_base__small_3b .Counter_bg_74 {
+.Counter_base__small_ea547 .Counter_bg_f25ac {
     border-radius: 7rem;
 }
-.Counter_value_3e {
+.Counter_value_d1de3 {
     display: flex;
     padding: 0 4rem;
     color: #fefeec;
@@ -663,36 +664,36 @@
     line-height: 13rem;
     white-space: nowrap;
 }
-.Counter_base__big_19 .Counter_value_3e {
+.Counter_base__big_d6a57 .Counter_value_d1de3 {
     padding: 0 7rem;
     font-size: 14rem;
     line-height: 20rem;
 }
-.Counter_base__small_3b .Counter_value_3e {
+.Counter_base__small_ea547 .Counter_value_d1de3 {
     font-size: 9rem;
     line-height: 12rem;
 }
-.Counter_value__text_d6 {
+.Counter_value__text_bb007 {
     padding: 0 7rem;
 }
-.Counter_base__big_19 .Counter_value__text_d6 {
+.Counter_base__big_d6a57 .Counter_value__text_bb007 {
     padding: 0 10rem;
 }
-.Counter_base__small_3b .Counter_value__text_d6 {
+.Counter_base__small_ea547 .Counter_value__text_bb007 {
     padding: 0 5rem;
     font-size: 10rem;
 }
-.Counter_base__pattern_71 .Counter_value_3e {
+.Counter_base__pattern_d1fff .Counter_value_d1de3 {
     display: none;
 }
-.Counter_plus_15 {
+.Counter_plus_a405c {
     position: relative;
     top: -1rem;
 }
-.Counter_pattern_83 {
+.Counter_pattern_a4be2 {
     display: none;
 }
-.Counter_base__pattern_71 .Counter_pattern_83 {
+.Counter_base__pattern_d1fff .Counter_pattern_a4be2 {
     display: block;
     border-radius: 50%;
     background-image: url('R.images.gui.maps.icons.components.counter.pattern');
@@ -703,7 +704,7 @@
     bottom: 0;
     left: 0;
 }
-@keyframes Counter_show_be {
+@keyframes Counter_show_a62c2 {
     0% {
         transform: scale(0);
     }
@@ -712,7 +713,7 @@
         transform: scale(1);
     }
 }
-@keyframes Counter_hide_b6 {
+@keyframes Counter_hide_d1bf0 {
     0% {
         transform: scale(1);
     }
@@ -722,7 +723,7 @@
     }
 }
 
-.CollectionAward_base_0c {
+.CollectionAward_base_f6b67 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -733,26 +734,26 @@
     position: relative;
     cursor: pointer;
 }
-.mediaMedium .CollectionAward_base_0c {
+.mediaMedium .CollectionAward_base_f6b67 {
     height: 140rem;
 }
-.CollectionAward_base__big_ca {
+.CollectionAward_base__big_a4e03 {
     width: 100rem;
     height: 175rem;
 }
-.mediaMedium .CollectionAward_base__big_ca {
+.mediaMedium .CollectionAward_base__big_a4e03 {
     width: 160rem;
     height: 280rem;
 }
 
-.CollectionAward_bubble_65 {
+.CollectionAward_bubble_c556b {
     position: absolute;
     top: -5rem;
     right: -5rem;
     z-index: 5;
 }
 
-.CommanderAward_base_11 {
+.CommanderAward_base_ad575 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -763,11 +764,11 @@
     position: relative;
     cursor: pointer;
 }
-.mediaMedium .CommanderAward_base_11 {
+.mediaMedium .CommanderAward_base_ad575 {
     height: 140rem;
 }
 
-.CommanderAward_icon_92 {
+.CommanderAward_icon_e1e10 {
     width: 76rem;
     height: 91rem;
     border-radius: 3rem;
@@ -779,11 +780,11 @@
     transition: filter 0.3s linear;
 }
 
-.CommanderAward_base__hover_fc .CommanderAward_icon_92 {
+.CommanderAward_base__hover_cedd4 .CommanderAward_icon_e1e10 {
     filter: brightness(1.2);
 }
 
-.TalerAward_base_ef {
+.TalerAward_base_bd8d2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -794,19 +795,19 @@
     position: relative;
     cursor: pointer;
 }
-.mediaMedium .TalerAward_base_ef {
+.mediaMedium .TalerAward_base_bd8d2 {
     height: 140rem;
 }
-.TalerAward_base__big_6b {
+.TalerAward_base__big_e13b6 {
     width: 100rem;
     height: 175rem;
 }
-.mediaMedium .TalerAward_base__big_6b {
+.mediaMedium .TalerAward_base__big_e13b6 {
     width: 160rem;
     height: 280rem;
 }
 
-.TicketAward_base_76 {
+.TicketAward_base_f3d98 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -818,80 +819,80 @@
     cursor: pointer;
 }
 
-.mediaMedium .TicketAward_base_76 {
+.mediaMedium .TicketAward_base_f3d98 {
     height: 140rem;
 }
 
-.TicketAward_base__big_91 {
+.TicketAward_base__big_a6dda {
     width: 100rem;
     height: 175rem;
 }
 
-.mediaMedium .TicketAward_base__big_91 {
+.mediaMedium .TicketAward_base__big_a6dda {
     width: 160rem;
     height: 280rem;
 }
 
-.TicketAward_base__hasAppearAnimation_09 {
+.TicketAward_base__hasAppearAnimation_d3808 {
     opacity: 0;
     visibility: hidden;
-    animation: TicketAward_baseAppear_ef 0.3s ease-in-out 1.2s forwards;
+    animation: TicketAward_baseAppear_cbc10 0.3s ease-in-out 1.2s forwards;
 }
-.TicketAward_shine_46 {
+.TicketAward_shine_d75b9 {
     width: 27rem;
     height: 48rem;
     background: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_borderShine_small_s') no-repeat center /
         contain;
     position: absolute;
     top: 0;
-    animation: TicketAward_shine_small_s_22 2s linear infinite alternate;
+    animation: TicketAward_shine_small_s_b2d1d 2s linear infinite alternate;
     pointer-events: none;
 }
-.mediaMedium .TicketAward_shine_46 {
+.mediaMedium .TicketAward_shine_d75b9 {
     width: 31rem;
     height: 72rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_borderShine_small_m');
-    animation: TicketAward_shine_small_m_5b 2s linear infinite alternate;
+    animation: TicketAward_shine_small_m_aa1d4 2s linear infinite alternate;
 }
-.TicketAward_base__big_91 .TicketAward_shine_46 {
+.TicketAward_base__big_a6dda .TicketAward_shine_d75b9 {
     width: 45rem;
     height: 85rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_borderShine_big_s');
-    animation: TicketAward_shine_big_s_43 2s linear infinite alternate;
+    animation: TicketAward_shine_big_s_ddf65 2s linear infinite alternate;
 }
-.mediaMedium .TicketAward_base__big_91 .TicketAward_shine_46 {
+.mediaMedium .TicketAward_base__big_a6dda .TicketAward_shine_d75b9 {
     width: 46rem;
     height: 116rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_borderShine_big_m');
-    animation: TicketAward_shine_big_m_80 2s linear infinite alternate;
+    animation: TicketAward_shine_big_m_ef804 2s linear infinite alternate;
 }
-.TicketAward_shine__left_15 {
+.TicketAward_shine__left_c8f17 {
     left: -13rem;
 }
-.mediaMedium .TicketAward_shine__left_15 {
+.mediaMedium .TicketAward_shine__left_c8f17 {
     left: -14rem;
 }
-.TicketAward_base__big_91 .TicketAward_shine__left_15 {
+.TicketAward_base__big_a6dda .TicketAward_shine__left_c8f17 {
     left: -21rem;
 }
-.mediaMedium .TicketAward_base__big_91 .TicketAward_shine__left_15 {
+.mediaMedium .TicketAward_base__big_a6dda .TicketAward_shine__left_c8f17 {
     left: -22rem;
 }
-.TicketAward_shine__right_4b {
+.TicketAward_shine__right_c0a9f {
     right: -13rem;
 }
-.mediaMedium .TicketAward_shine__right_4b {
+.mediaMedium .TicketAward_shine__right_c0a9f {
     right: -14rem;
     animation-direction: alternate-reverse;
 }
-.TicketAward_base__big_91 .TicketAward_shine__right_4b {
+.TicketAward_base__big_a6dda .TicketAward_shine__right_c0a9f {
     right: -21rem;
 }
-.mediaMedium .TicketAward_base__big_91 .TicketAward_shine__right_4b {
+.mediaMedium .TicketAward_base__big_a6dda .TicketAward_shine__right_c0a9f {
     right: -22rem;
     animation-direction: alternate-reverse;
 }
-.TicketAward_arrow_d4 {
+.TicketAward_arrow_d5617 {
     width: 68rem;
     height: 90rem;
     background: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_arrow_small_s') no-repeat center / contain;
@@ -901,28 +902,28 @@
     z-index: 3;
     transition: all 0.3s;
 }
-.mediaMedium .TicketAward_arrow_d4 {
+.mediaMedium .TicketAward_arrow_d5617 {
     width: 68rem;
     height: 90rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_arrow_small_m');
 }
-.TicketAward_base_76:hover .TicketAward_arrow_d4 {
+.TicketAward_base_f3d98:hover .TicketAward_arrow_d5617 {
     opacity: 1;
     transform: translateY(5rem);
 }
-.TicketAward_base__big_91 .TicketAward_arrow_d4 {
+.TicketAward_base__big_a6dda .TicketAward_arrow_d5617 {
     width: 86rem;
     height: 113rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_arrow_big_s');
     opacity: 0;
     transition: all 0.3s;
 }
-.mediaMedium .TicketAward_base__big_91 .TicketAward_arrow_d4 {
+.mediaMedium .TicketAward_base__big_a6dda .TicketAward_arrow_d5617 {
     width: 136rem;
     height: 180rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_arrow_big_m');
 }
-.TicketAward_blinkShape_17 {
+.TicketAward_blinkShape_c798a {
     width: 100%;
     height: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
@@ -930,21 +931,22 @@
     top: 0;
     left: 0;
     mask-image: linear-gradient(180deg, transparent 0%, #000000 50%);
+    mask-repeat: no-repeat;
     pointer-events: none;
 }
-.mediaMedium .TicketAward_blinkShape_17 {
+.mediaMedium .TicketAward_blinkShape_c798a {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
 }
-.TicketAward_base_76:hover .TicketAward_blinkShape_17 {
+.TicketAward_base_f3d98:hover .TicketAward_blinkShape_c798a {
     mask-image: none;
 }
-.TicketAward_base__big_91 .TicketAward_blinkShape_17 {
+.TicketAward_base__big_a6dda .TicketAward_blinkShape_c798a {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
 }
-.mediaMedium .TicketAward_base__big_91 .TicketAward_blinkShape_17 {
+.mediaMedium .TicketAward_base__big_a6dda .TicketAward_blinkShape_c798a {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
 }
-.TicketAward_blink_1b {
+.TicketAward_blink_d9f53 {
     width: 14rem;
     height: 300rem;
     background: #fff;
@@ -956,12 +958,12 @@
     z-index: 99;
     transform: rotate(45deg) translate(-200rem, 0rem);
     transform-origin: center;
-    animation: TicketAward_blinker_1e 5s linear infinite;
+    animation: TicketAward_blinker_ee314 5s linear infinite;
 }
-.TicketAward_base__big_91 .TicketAward_blink_1b {
+.TicketAward_base__big_a6dda .TicketAward_blink_d9f53 {
     width: 28rem;
 }
-@keyframes TicketAward_baseAppear_ef {
+@keyframes TicketAward_baseAppear_cbc10 {
     0% {
         opacity: 0;
         visibility: visible;
@@ -974,7 +976,7 @@
         transform: none;
     }
 }
-@keyframes TicketAward_blinker_1e {
+@keyframes TicketAward_blinker_ee314 {
     0% {
         transform: rotate(45deg) translate(-200rem, 0rem);
     }
@@ -987,7 +989,7 @@
         transform: rotate(45deg) translate(200rem, 0rem);
     }
 }
-@keyframes TicketAward_shine_small_s_22 {
+@keyframes TicketAward_shine_small_s_b2d1d {
     0% {
         opacity: 0;
         transform: translateY(0);
@@ -1006,7 +1008,7 @@
         transform: translateY(30%);
     }
 }
-@keyframes TicketAward_shine_small_m_5b {
+@keyframes TicketAward_shine_small_m_aa1d4 {
     0% {
         opacity: 0;
         transform: translateY(0);
@@ -1025,7 +1027,7 @@
         transform: translateY(60%);
     }
 }
-@keyframes TicketAward_shine_big_s_43 {
+@keyframes TicketAward_shine_big_s_ddf65 {
     0% {
         opacity: 0;
         transform: translateY(0);
@@ -1044,7 +1046,7 @@
         transform: translateY(90%);
     }
 }
-@keyframes TicketAward_shine_big_m_80 {
+@keyframes TicketAward_shine_big_m_ef804 {
     0% {
         opacity: 0;
         transform: translateY(0);
@@ -1068,30 +1070,30 @@
 
 /* buttons*/
 
-.AwardsWrapper_base_e5 {
+.AwardsWrapper_base_c2632 {
     display: flex;
 }
 
-.AwardsWrapper_award_49 {
+.AwardsWrapper_award_a5575 {
     margin-left: 3rem;
 }
 
-.mediaSmall .AwardsWrapper_award_49 {
+.mediaSmall .AwardsWrapper_award_a5575 {
     margin-left: 10rem;
 }
 
-.mediaMedium .AwardsWrapper_award_49 {
+.mediaMedium .AwardsWrapper_award_a5575 {
     margin-left: 20rem;
 }
 
-.AwardsWrapper_base__big_6b .AwardsWrapper_award_49 {
+.AwardsWrapper_base__big_c4528 .AwardsWrapper_award_a5575 {
     margin-left: 20rem;
 }
 
-.mediaMedium .AwardsWrapper_base__big_6b .AwardsWrapper_award_49 {
+.mediaMedium .AwardsWrapper_base__big_c4528 .AwardsWrapper_award_a5575 {
     margin-left: 30rem;
 }
 
-.AwardsWrapper_base_e5 .AwardsWrapper_award_49:first-child {
+.AwardsWrapper_base_c2632 .AwardsWrapper_award_a5575:first-child {
     margin-left: 0;
 }

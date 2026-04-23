@@ -1,0 +1,202 @@
+import { r as e, u as s, j as a, E as t, t as o, D as r } from '../../../chunks/vendor.js';
+import {
+    i,
+    co as n,
+    p as c,
+    Q as d,
+    D as l,
+    G as h,
+    N as m,
+    K as p,
+    C as u,
+    E as _,
+    A as f,
+    d9 as g,
+    da as b,
+    db as j,
+    B as v,
+    J as C,
+    r as x,
+    U as y,
+} from '../../../chunks/lib.js';
+import { S as A } from '../../../chunks/spring_wrapper.js';
+import { i as N, j as E } from '../../../chunks/sound.js';
+const [D, P] = i()(
+        ({ observableModel: e }) => ({ root: e.object() }),
+        ({ externalModel: e }) => ({ close: e.createCallbackNoArgs('onClose') }),
+    ),
+    w = 1920,
+    S = 1080,
+    T = w / S,
+    W = { width: 300, height: 150 },
+    B = { y: 0, opacity: 1 };
+var k = ((e) => ((e.HEADER = 'header'), (e.SUBHEADER = 'subheader'), (e.BUTTON = 'button'), e))(k || {});
+const H = 1e3,
+    U = {
+        header: { from: { y: -10, opacity: 0 }, to: B, delay: H, duration: 500 },
+        subheader: { from: { y: -10, opacity: 0 }, to: B, delay: 1150, duration: 500 },
+        button: { from: { y: -10, opacity: 0 }, to: B, delay: 1450, duration: 1e3 },
+    },
+    $ = 'ContainerAnimation_dc99b0bc',
+    L = 'ContainerAnimation_content_9f9d6eae',
+    M = 'ContainerAnimation_img_89f111a1',
+    z = 'ContainerAnimation_frame_d123d03b',
+    O = 'ContainerAnimation_base__started_448f44b3',
+    G = (e) => (e < 0.5 ? 4 * e * e * e : (e - 1) * (2 * e - 2) * (2 * e - 2) + 1),
+    J = (e, s, a, t) => (a ? t.width / e : t.height / s),
+    K = e.memo(function ({
+        isStarted: r,
+        scaleCover: i,
+        screenWidth: n,
+        screenHeight: c,
+        scaleState: d,
+        isCoverWidth: l,
+        className: h,
+    }) {
+        const m = e.useRef(null),
+            [p, u] = s(() => ({ transform: `scale(${i})`, x: 0, y: 0, opacity: 1 }));
+        return (
+            e.useEffect(() => {
+                r &&
+                    u.start({
+                        to: [
+                            {
+                                transform: `scale(${J(n, c, l, { width: c * T * 0.6, height: (n / T) * 0.6 })})`,
+                                x: 0,
+                                y: 0,
+                                opacity: 1,
+                                config: { duration: 800 },
+                            },
+                            {
+                                transform: `scale(${J(n, c, l, W)})})`,
+                                x: ((n / 2 - 200) / i) * d,
+                                y: ((-c / 2 + 180) / i) * d,
+                                opacity: 0,
+                                config: { duration: 1e3 },
+                            },
+                        ],
+                        config: { easing: G },
+                    });
+            }, [u, l, r, d, c, i, n]),
+            e.useEffect(() => {
+                const e = m.current;
+                e && (r ? e.pause() : e.play());
+            }, [r]),
+            a.jsx('div', {
+                className: t($, r && O, h),
+                children: a.jsxs(o.div, {
+                    className: L,
+                    style: p,
+                    children: [a.jsx('div', { className: M }), a.jsx('div', { className: z })],
+                }),
+            })
+        );
+    }),
+    Q = 'PromoApp_6e17783a',
+    q = 'PromoApp_container_c21d069a',
+    F = 'PromoApp_vignetteBg_3b32fdde',
+    I = 'PromoApp_header_70c24a9c',
+    V = 'PromoApp_base__started_a4fe4c39',
+    X = 'PromoApp_subheader_e22f84af',
+    Y = 'PromoApp_gradient_5d52cdb6',
+    Z = 'PromoApp_bottomContainer_8e2a2910',
+    ee = 'PromoApp_topContainer_609c5a3b',
+    se = 'PromoApp_btn_aecf72bb',
+    ae = 'PromoApp_closeBtn_dec55232',
+    te = R.strings.last_stand_lobby.promoWindow,
+    oe = r(function () {
+        const { model: s, controls: o } = P(),
+            { startDate: r, endDate: i, regularArtefactsLength: x } = s.root.get(),
+            [y, D] = e.useState(!1),
+            W = n(),
+            B = () => {
+                D(!0);
+            };
+        (e.useEffect(() => {
+            if (y) {
+                c.sound(N);
+                const e = setTimeout(o.close, 1800);
+                return () => clearTimeout(e);
+            }
+        }, [o.close, y]),
+            d(B),
+            l(h.ENTER, B));
+        const [H, $] = e.useState({ width: 0, height: 0, scaleCover: 1, isCoverWidth: !1 }),
+            L = () => {
+                const e = C('rem');
+                $(
+                    ((e, s) => {
+                        let a = 1,
+                            t = !1;
+                        return (
+                            e >= s * T ? ((a = e / w), (t = !0)) : s >= e / T && ((a = s / S), (t = !1)),
+                            { width: e, height: s, scaleCover: a, isCoverWidth: t }
+                        );
+                    })(e.width, e.height),
+                );
+            };
+        return (
+            e.useEffect(() => {
+                (c.sound(E), L(), m(L), p(L));
+            }, []),
+            a.jsxs('div', {
+                className: t(Q, y && V),
+                children: [
+                    a.jsx(u, { className: ae, onClose: B }),
+                    a.jsx('div', {
+                        className: q,
+                        style: { width: w * W, height: S * W, transform: `scale(${H.scaleCover})` },
+                        children: a.jsx(K, {
+                            isStarted: y,
+                            scaleCover: H.scaleCover,
+                            screenHeight: H.height,
+                            screenWidth: H.width,
+                            scaleState: W,
+                            isCoverWidth: H.isCoverWidth,
+                        }),
+                    }),
+                    a.jsx('div', { className: F }),
+                    a.jsx('div', { className: Y }),
+                    a.jsx(A, {
+                        className: ee,
+                        ...U[k.HEADER],
+                        children: a.jsx('div', { className: I, children: te.header() }),
+                    }),
+                    a.jsx(A, {
+                        className: ee,
+                        ...U[k.SUBHEADER],
+                        children: a.jsx(_, {
+                            classMix: X,
+                            text: te.subheader(),
+                            binding: {
+                                dateRange: a.jsx(g, {
+                                    start: r,
+                                    end: i,
+                                    rangeType: j.DateShort,
+                                    rangeDividerType: b.DashDivider,
+                                    isConvertedToLocal: !0,
+                                }),
+                                regularArtefactsLength: x,
+                            },
+                            alignContent: f.Center,
+                            justifyContent: f.Center,
+                        }),
+                    }),
+                    a.jsx(A, {
+                        className: Z,
+                        ...U[k.BUTTON],
+                        children: a.jsx('div', {
+                            className: se,
+                            children: a.jsx(v, {
+                                theme: v.themes.primary,
+                                size: v.sizes.large,
+                                onClick: B,
+                                children: R.strings.last_stand_lobby.common.yes(),
+                            }),
+                        }),
+                    }),
+                ],
+            })
+        );
+    });
+x(a.jsx(y, { children: a.jsx(D, { children: a.jsx(oe, {}) }) }));

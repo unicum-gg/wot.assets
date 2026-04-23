@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,28 +11,28 @@
     position: relative;
 }
 
-.Content_base_d9 {
+.Content_base_cc86a {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 320rem;
 }
 
-.Content_image_65 {
+.Content_image_b83c9 {
     width: 296rem;
     height: 222rem;
     background: center / contain no-repeat;
 }
 
-.Content_base__unreceived_ef .Content_image_65 {
+.Content_base__unreceived_ba6eb .Content_image_b83c9 {
     display: none;
 }
 
-.Content_base__shop_be .Content_image_65 {
+.Content_base__shop_c7e65 .Content_image_b83c9 {
     display: flex;
 }
 
-.Content_titleBase_aa {
+.Content_titleBase_a176a {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,7 +42,7 @@
     background: url('R.images.gui.maps.icons.collections.tooltips.title_background');
 }
 
-.Content_title_69 {
+.Content_title_f1bd6 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 700;
@@ -51,7 +51,7 @@
     opacity: 0.5;
 }
 
-.Content_itemName_a1 {
+.Content_itemName_b78ca {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -60,21 +60,21 @@
     text-align: center;
 }
 
-.Content_separator_ea {
+.Content_separator_b1e71 {
     width: 100%;
     height: 1rem;
     background: url('R.images.gui.maps.icons.collections.tooltips.devider_points') center / contain no-repeat;
 }
 
-.Content_base__unreceived_ef .Content_separator__hidden_7f {
+.Content_base__unreceived_ba6eb .Content_separator__hidden_cb16a {
     display: none;
 }
 
-.Content_base__shop_be .Content_separator__hidden_7f {
+.Content_base__shop_c7e65 .Content_separator__hidden_cb16a {
     display: flex;
 }
 
-.Content_status_16 {
+.Content_status_b9e79 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,23 +84,23 @@
         no-repeat;
 }
 
-.Content_base__unreceived_ef .Content_status_16 {
+.Content_base__unreceived_ba6eb .Content_status_b9e79 {
     height: 70rem;
     padding-bottom: 23rem;
     background-image: url('R.images.gui.maps.icons.collections.tooltips.status_background_unreceived');
 }
 
-.Content_statusImage_4a {
+.Content_statusImage_d4f10 {
     width: 36rem;
     height: 36rem;
     background: url('R.images.gui.maps.icons.collections.tooltips.status_icon_received') center / contain no-repeat;
 }
 
-.Content_base__unreceived_ef .Content_statusImage_4a {
+.Content_base__unreceived_ba6eb .Content_statusImage_d4f10 {
     background-image: url('R.images.gui.maps.icons.collections.tooltips.status_icon_unreceived');
 }
 
-.Content_statusTitle_50 {
+.Content_statusTitle_f9f97 {
     color: #80d43a;
     font-size: 14rem;
     font-weight: 700;
@@ -108,14 +108,14 @@
     margin-bottom: 3rem;
 }
 
-.Content_base__unreceived_ef .Content_statusTitle_50 {
+.Content_base__unreceived_ba6eb .Content_statusTitle_f9f97 {
     color: #ffdd99;
     font-size: 14rem;
     font-weight: 700;
     line-height: 1.15;
 }
 
-.Content_description_00 {
+.Content_description_e0819 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -126,6 +126,6 @@
     text-align: center;
 }
 
-.Content_base__unreceived_ef .Content_description_00 {
+.Content_base__unreceived_ba6eb .Content_description_e0819 {
     display: inline;
 }

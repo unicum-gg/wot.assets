@@ -1,22 +1,22 @@
-import { T as e, j as s, f as t, I as i, J as r } from '../../../../chunks/vendor.js';
+import { i as e, j as s, f as t, V as i, a3 as r } from '../../../../chunks/vendor.js';
 import {
     i as a,
-    aD as n,
-    ab as c,
-    cj as o,
-    ck as d,
-    dY as u,
-    co as l,
-    cd as _,
-    cq as x,
+    aJ as n,
+    ag as c,
+    cq as o,
+    cr as d,
+    er as u,
+    cv as l,
+    ck as _,
+    cy as x,
     m,
-    cs as p,
-    cv as w,
-    c5 as b,
-    dZ as j,
-    cW as v,
+    cA as p,
+    cD as w,
+    cc as b,
+    es as j,
+    r as g,
 } from '../../../../chunks/lib.js';
-import { Q as g } from '../../../../chunks/weekly_quests_model.js';
+import { Q as v } from '../../../../chunks/weekly_quests_model.js';
 /* empty css                        */ const [h, N] = a()(({ observableModel: s }) => {
     const t = {
             root: s.object(),
@@ -151,7 +151,7 @@ const k = {
                             children: [
                                 s.jsx(p, {
                                     classMix: A.newMissionsDescription,
-                                    content: w(z.newMissions(g), { value: g }),
+                                    content: w(z.newMissions(v), { value: v }),
                                 }),
                                 s.jsx(b, { start: t, className: A.newMissionsTimer }),
                             ],
@@ -186,4 +186,4 @@ const k = {
               })
             : (console.error('Unreachable code: WeeklyQuestTooltip'), null);
     });
-v(s.jsx(h, { children: s.jsx(P, {}) }));
+g(s.jsx(h, { children: s.jsx(P, {}) }));

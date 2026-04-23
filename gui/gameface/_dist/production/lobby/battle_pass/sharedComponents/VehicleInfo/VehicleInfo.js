@@ -2,8 +2,8 @@
     'use strict';
     var e,
         r = {
-            6583: (e, r, t) => {
-                (t(7363), t(6483));
+            7687: (e, r, t) => {
+                (t(7363), t(9849));
                 R.images.gui.maps.icons.vehicleTypes;
             },
             7363: (e) => {
@@ -74,6 +74,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t))));
         })());
-    var n = o.O(void 0, [1519], () => o(6583));
+    var n = o.O(void 0, [1519], () => o(7687));
     n = o.O(n);
 })();

@@ -2,7 +2,7 @@
 (self.webpackChunkgameface = self.webpackChunkgameface || []).push([
     ['lib/battle_modifiers.vendors'],
     {
-        394: (W, U) => {
+        378: (W, U) => {
             'use strict';
             (Object.defineProperty(U, '__esModule', { value: !0 }),
                 (U.model = void 0),
@@ -493,7 +493,7 @@
                     'UW4:私': 12,
                 }));
         },
-        444: (W, U) => {
+        226: (W, U) => {
             'use strict';
             (Object.defineProperty(U, '__esModule', { value: !0 }),
                 (U.model = void 0),
@@ -1810,7 +1810,7 @@
                     'UW6:空': 3,
                 }));
         },
-        826: (W, U) => {
+        861: (W, U) => {
             'use strict';
             (Object.defineProperty(U, '__esModule', { value: !0 }),
                 (U.unicodeBlocks = void 0),
@@ -1839,13 +1839,13 @@
                     178208, 183984, 194560, 196608, 917504, 917760, 983040, 1048576,
                 ]));
         },
-        456: (W, U) => {
+        24: (W, U) => {
             'use strict';
             (Object.defineProperty(U, '__esModule', { value: !0 }),
                 (U.parseFromString = void 0),
                 (U.parseFromString = (W) => new DOMParser().parseFromString(W, 'text/html')));
         },
-        834: (W, U, B) => {
+        94: (W, U, B) => {
             'use strict';
             function e(W, U) {
                 var B = ('undefined' != typeof Symbol && W[Symbol.iterator]) || W['@@iterator'];
@@ -1855,7 +1855,7 @@
                     (B = (function (W, U) {
                         if (W) {
                             if ('string' == typeof W) return t(W, U);
-                            var B = Object.prototype.toString.call(W).slice(8, -1);
+                            var B = {}.toString.call(W).slice(8, -1);
                             return (
                                 'Object' === B && W.constructor && (B = W.constructor.name),
                                 'Map' === B || 'Set' === B
@@ -1880,11 +1880,11 @@
             }
             function t(W, U) {
                 (null == U || U > W.length) && (U = W.length);
-                for (var B = 0, e = new Array(U); B < U; B++) e[B] = W[B];
+                for (var B = 0, e = Array(U); B < U; B++) e[B] = W[B];
                 return e;
             }
             (Object.defineProperty(U, '__esModule', { value: !0 }), (U.HTMLProcessor = void 0));
-            const r = B(91),
+            const r = B(798),
                 o = console.assert,
                 n = {
                     AREA: 2,
@@ -2101,7 +2101,7 @@
                 }
             };
         },
-        948: function (W, U, B) {
+        795: function (W, U, B) {
             'use strict';
             var e =
                     (this && this.__createBinding) ||
@@ -2126,13 +2126,13 @@
                     function (W, U) {
                         for (var B in W) 'default' === B || Object.prototype.hasOwnProperty.call(U, B) || e(U, W, B);
                     };
-            (Object.defineProperty(U, '__esModule', { value: !0 }), t(B(91), U));
+            (Object.defineProperty(U, '__esModule', { value: !0 }), t(B(798), U));
         },
-        91: (W, U, B) => {
+        798: (W, U, B) => {
             'use strict';
             function e(W, U) {
                 (null == U || U > W.length) && (U = W.length);
-                for (var B = 0, e = new Array(U); B < U; B++) e[B] = W[B];
+                for (var B = 0, e = Array(U); B < U; B++) e[B] = W[B];
                 return e;
             }
             (Object.defineProperty(U, '__esModule', { value: !0 }),
@@ -2141,12 +2141,12 @@
                     U.Parser =
                     U.DEFAULT_THRES =
                         void 0));
-            const t = B(826),
-                r = B(394),
-                o = B(444),
-                n = B(456),
-                s = B(834),
-                a = B(39);
+            const t = B(861),
+                r = B(378),
+                o = B(226),
+                n = B(24),
+                s = B(94),
+                a = B(468);
             U.DEFAULT_THRES = 1e3;
             class i {
                 constructor(W) {
@@ -2164,7 +2164,7 @@
                         d = i.getUnicodeBlockFeature(e),
                         u = i.getUnicodeBlockFeature(t),
                         h = i.getUnicodeBlockFeature(r),
-                        p = {
+                        Q = {
                             UP1: o,
                             UP2: n,
                             UP3: s,
@@ -2208,7 +2208,7 @@
                             TQ3: s + l + T + c,
                             TQ4: s + T + c + d,
                         };
-                    return Object.entries(p)
+                    return Object.entries(Q)
                         .filter((W) => !W[1].includes(a.INVALID))
                         .map(([W, U]) => `${W}:${U}`);
                 }
@@ -2223,7 +2223,7 @@
                                     (B = (function (W, U) {
                                         if (W) {
                                             if ('string' == typeof W) return e(W, U);
-                                            var B = Object.prototype.toString.call(W).slice(8, -1);
+                                            var B = {}.toString.call(W).slice(8, -1);
                                             return (
                                                 'Object' === B && W.constructor && (B = W.constructor.name),
                                                 'Map' === B || 'Set' === B
@@ -2298,7 +2298,7 @@
                 (U.loadDefaultJapaneseParser = () => new i(new Map(Object.entries(r.model)))),
                 (U.loadDefaultSimplifiedChineseParser = () => new i(new Map(Object.entries(o.model)))));
         },
-        39: (W, U) => {
+        468: (W, U) => {
             'use strict';
             (Object.defineProperty(U, '__esModule', { value: !0 }),
                 (U.INVALID = U.SEP = U.bisectRight = void 0),
@@ -2317,7 +2317,7 @@
                 (U.SEP = '▁'),
                 (U.INVALID = '▔'));
         },
-        483: (W, U) => {
+        849: (W, U) => {
             var B;
             !(function () {
                 'use strict';

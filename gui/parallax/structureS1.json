@@ -1,0 +1,1632 @@
+[
+  {
+    "keyName": "sky2_0",
+    "spriteName": "sky2",
+    "width": "352rem",
+    "height": "253rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-1875.855rem, -166.858rem, -1557.961rem) rotateX(0.0deg) rotateZ(-0.0deg) rotateY(0.0deg) scale(2.0, 2.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky2.001_1",
+    "spriteName": "sky2_001",
+    "width": "450rem",
+    "height": "356rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(1999.327rem, -322.71rem, -1557.961rem) rotateX(0.0deg) rotateZ(0.0deg) rotateY(0.0deg) scale(2.0, 2.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky2.002_2",
+    "spriteName": "sky2_002",
+    "width": "519rem",
+    "height": "186rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-1013.755rem, -100.226rem, -1557.961rem) rotateX(0.0deg) rotateZ(-0.0deg) rotateY(0.0deg) scale(2.0, 2.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky2.003_3",
+    "spriteName": "sky2_003",
+    "width": "519rem",
+    "height": "155rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(20.226rem, -68.9rem, -1557.961rem) rotateX(0.0deg) rotateZ(-0.0deg) rotateY(0.0deg) scale(2.0, 2.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky2.004_4",
+    "spriteName": "sky2_004",
+    "width": "254rem",
+    "height": "532rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(1052.462rem, -194.925rem, -1557.961rem) rotateX(0.0deg) rotateZ(87.0deg) rotateY(0.0deg) scale(2.0, 2.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l1_5",
+    "spriteName": "l1",
+    "width": "581rem",
+    "height": "311rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-1705.592rem, 48.557rem, -1075.69rem) rotateX(0.0deg) rotateZ(6.0deg) rotateY(0.0deg) scale(1.25, 1.25)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l1.001_6",
+    "spriteName": "l1_001",
+    "width": "652rem",
+    "height": "206rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(1824.147rem, 38.727rem, -1075.69rem) rotateX(0.0deg) rotateZ(0.0deg) rotateY(0.0deg) scale(1.429, 1.429)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l1.002_7",
+    "spriteName": "l1_002",
+    "width": "107rem",
+    "height": "462rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-908.226rem, 45.741rem, -1075.69rem) rotateX(0.0deg) rotateZ(86.0deg) rotateY(0.0deg) scale(2.0, 2.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l1.003_8",
+    "spriteName": "l1_003",
+    "width": "456rem",
+    "height": "69rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(0.841rem, 47.333rem, -1075.69rem) rotateX(0.0deg) rotateZ(0.0deg) rotateY(0.0deg) scale(2.0, 2.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l1.004_9",
+    "spriteName": "l1_004",
+    "width": "744rem",
+    "height": "230rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(909.908rem, 9.88rem, -1075.69rem) rotateX(0.0deg) rotateZ(4.0deg) rotateY(0.0deg) scale(1.25, 1.25)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1_10",
+    "spriteName": "sky1_1",
+    "width": "253rem",
+    "height": "691rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-1339.728rem, -186.88rem, -75.111rem) rotateX(104.688deg) rotateZ(51.788deg) rotateY(139.412deg) scale(1.25, 1.25)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.011_11",
+    "spriteName": "sky1_1_011",
+    "width": "383rem",
+    "height": "1212rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-479.723rem, -81.849rem, -672.546rem) rotateX(103.648deg) rotateZ(52.408deg) rotateY(138.691deg) scale(1.25, 1.25)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.015_12",
+    "spriteName": "sky1_1_015",
+    "width": "451rem",
+    "height": "388rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-998.268rem, -131.93rem, -78.802rem) rotateX(-10.168deg) rotateZ(0.0deg) rotateY(0.0deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.017_13",
+    "spriteName": "sky1_1_017",
+    "width": "453rem",
+    "height": "390rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(1002.407rem, -174.171rem, -344.33rem) rotateX(-9.644deg) rotateZ(-3.246deg) rotateY(-17.005deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.012_14",
+    "spriteName": "sky1_1_012",
+    "width": "336rem",
+    "height": "233rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-1432.953rem, -488.071rem, 244.641rem) rotateX(76.084deg) rotateZ(63.698deg) rotateY(114.986deg) scale(1.667, 1.667)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.021_15",
+    "spriteName": "sky1_1_021",
+    "width": "462rem",
+    "height": "312rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-1118.066rem, -479.695rem, 53.213rem) rotateX(83.772deg) rotateZ(61.792deg) rotateY(121.823deg) scale(1.25, 1.25)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.013_16",
+    "spriteName": "sky1_1_013",
+    "width": "714rem",
+    "height": "443rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-280.816rem, -447.611rem, -465.314rem) rotateX(43.298deg) rotateZ(66.249deg) rotateY(85.268deg) scale(1.25, 1.25)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.019_17",
+    "spriteName": "sky1_1_019",
+    "width": "582rem",
+    "height": "470rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-750.151rem, -460.329rem, -179.189rem) rotateX(65.285deg) rotateZ(65.381deg) rotateY(105.295deg) scale(1.25, 1.25)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.001_18",
+    "spriteName": "sky1_1_001",
+    "width": "1068rem",
+    "height": "419rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(445.625rem, -115.574rem, -720.124rem) rotateX(-34.15deg) rotateZ(-26.902deg) rotateY(-19.719deg) scale(1.25, 1.25)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.004_19",
+    "spriteName": "sky1_1_004",
+    "width": "522rem",
+    "height": "340rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(1558.351rem, -614.449rem, 233.913rem) rotateX(-32.171deg) rotateZ(-31.595deg) rotateY(-20.687deg) scale(1.25, 1.25)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.020_20",
+    "spriteName": "sky1_1_020",
+    "width": "422rem",
+    "height": "506rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(1142.095rem, -493.791rem, -60.684rem) rotateX(-38.968deg) rotateZ(-13.646deg) rotateY(-18.038deg) scale(1.25, 1.25)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.005_21",
+    "spriteName": "sky1_1_005",
+    "width": "429rem",
+    "height": "630rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(218.551rem, -479.4rem, -475.078rem) rotateX(-42.662deg) rotateZ(-2.216deg) rotateY(-17.525deg) scale(1.25, 1.25)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.018_22",
+    "spriteName": "sky1_1_018",
+    "width": "328rem",
+    "height": "423rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(687.663rem, -486.315rem, -264.96rem) rotateX(-40.841deg) rotateZ(-7.935deg) rotateY(-17.686deg) scale(1.667, 1.667)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.014_23",
+    "spriteName": "sky1_1_014",
+    "width": "135rem",
+    "height": "572rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-39.751rem, -490.019rem, -477.302rem) rotateX(-32.241deg) rotateZ(0.0deg) rotateY(0.0deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.006_24",
+    "spriteName": "sky1_1_006",
+    "width": "951rem",
+    "height": "289rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(1468.851rem, -255.9rem, -143.539rem) rotateX(-32.171deg) rotateZ(-31.594deg) rotateY(-20.687deg) scale(1.25, 1.25)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.002_25",
+    "spriteName": "sky1_1_002",
+    "width": "55rem",
+    "height": "118rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-1397.717rem, -708.529rem, 501.325rem) rotateX(86.598deg) rotateZ(61.182deg) rotateY(164.8deg) scale(3.333, 3.333)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.009_26",
+    "spriteName": "sky1_1_009",
+    "width": "74rem",
+    "height": "240rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-334.237rem, -748.466rem, -53.017rem) rotateX(86.692deg) rotateZ(61.004deg) rotateY(165.012deg) scale(3.333, 3.333)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.010_27",
+    "spriteName": "sky1_1_010",
+    "width": "65rem",
+    "height": "230rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-940.707rem, -726.056rem, 265.18rem) rotateX(86.644deg) rotateZ(61.095deg) rotateY(164.905deg) scale(3.333, 3.333)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.003_28",
+    "spriteName": "sky1_1_003",
+    "width": "186rem",
+    "height": "127rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(1487.932rem, -758.543rem, 506.962rem) rotateX(-77.883deg) rotateZ(-27.796deg) rotateY(-5.124deg) scale(3.333, 3.333)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.007_29",
+    "spriteName": "sky1_1_007",
+    "width": "252rem",
+    "height": "93rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(279.675rem, -755.591rem, -76.576rem) rotateX(-77.487deg) rotateZ(-27.791deg) rotateY(-5.292deg) scale(3.333, 3.333)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.008_30",
+    "spriteName": "sky1_1_008",
+    "width": "243rem",
+    "height": "113rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(920.613rem, -756.76rem, 230.598rem) rotateX(-77.731deg) rotateZ(-27.794deg) rotateY(-5.188deg) scale(3.333, 3.333)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_0.008_31",
+    "spriteName": "sky1_0_008",
+    "width": "474rem",
+    "height": "1092rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(656.667rem, -301.025rem, 196.483rem) rotateX(-47.547deg) rotateZ(87.516deg) rotateY(4.184deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_0.001_32",
+    "spriteName": "sky1_0_001",
+    "width": "675rem",
+    "height": "583rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(250.801rem, -496.277rem, 680.617rem) rotateX(62.134deg) rotateZ(88.391deg) rotateY(140.828deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_0.007_33",
+    "spriteName": "sky1_0_007",
+    "width": "881rem",
+    "height": "643rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(809.715rem, -528.527rem, 791.474rem) rotateX(-66.665deg) rotateZ(85.14deg) rotateY(12.082deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_0.009_34",
+    "spriteName": "sky1_0_009",
+    "width": "794rem",
+    "height": "501rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(183.748rem, -591.422rem, 1163.041rem) rotateX(-77.987deg) rotateZ(35.241deg) rotateY(1.244deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_0.002_35",
+    "spriteName": "sky1_0_002",
+    "width": "486rem",
+    "height": "429rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-1107.885rem, -619.664rem, 1261.742rem) rotateX(-60.581deg) rotateZ(12.889deg) rotateY(-6.921deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_0.011_36",
+    "spriteName": "sky1_0_011",
+    "width": "368rem",
+    "height": "1028rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-590.332rem, -651.127rem, 1433.133rem) rotateX(-69.669deg) rotateZ(57.352deg) rotateY(-12.576deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_0.005_37",
+    "spriteName": "sky1_0_005",
+    "width": "353rem",
+    "height": "735rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-1317.453rem, -480.802rem, 982.189rem) rotateX(-69.275deg) rotateZ(56.375deg) rotateY(-12.247deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_0.003_38",
+    "spriteName": "sky1_0_003",
+    "width": "463rem",
+    "height": "882rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(1194.893rem, -628.456rem, 968.937rem) rotateX(80.824deg) rotateZ(71.835deg) rotateY(144.756deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_0.010_39",
+    "spriteName": "sky1_0_010",
+    "width": "297rem",
+    "height": "1058rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(494.055rem, -628.149rem, 1275.014rem) rotateX(80.824deg) rotateZ(71.835deg) rotateY(144.756deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_0.004_40",
+    "spriteName": "sky1_0_004",
+    "width": "639rem",
+    "height": "1558rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-798.549rem, -414.327rem, 715.617rem) rotateX(31.357deg) rotateZ(83.464deg) rotateY(110.011deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_0.006_41",
+    "spriteName": "sky1_0_006",
+    "width": "537rem",
+    "height": "1097rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-363.767rem, -535.378rem, 1085.26rem) rotateX(-69.334deg) rotateZ(56.738deg) rotateY(11.246deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "detail_42",
+    "spriteName": "detail",
+    "width": "493rem",
+    "height": "538rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-9.173rem, -166.391rem, -47.788rem) rotateX(0.0deg) rotateZ(0.0deg) rotateY(0.0deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "detail.001_43",
+    "spriteName": "detail_001",
+    "width": "145rem",
+    "height": "141rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-10.919rem, -181.929rem, 28.232rem) rotateX(0.0deg) rotateZ(0.0deg) rotateY(0.0deg) scale(2.5, 2.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "additive"
+  },
+  {
+    "keyName": "smoke_44",
+    "spriteName": "smoke",
+    "width": "662rem",
+    "height": "472rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(27.59rem, -55.576rem, 214.835rem) rotateX(23.492deg) rotateZ(0.0deg) rotateY(0.0deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5.007_45",
+    "spriteName": "l0_5_007",
+    "width": "122rem",
+    "height": "98rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(596.478rem, 29.861rem, 254.388rem) rotateX(29.057deg) rotateZ(-0.0deg) rotateY(0.0deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5.008_46",
+    "spriteName": "l0_5_008",
+    "width": "173rem",
+    "height": "471rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(1541.255rem, 133.685rem, 466.702rem) rotateX(74.158deg) rotateZ(70.567deg) rotateY(48.945deg) scale(1.429, 1.429)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5.001_47",
+    "spriteName": "l0_5_001",
+    "width": "150rem",
+    "height": "250rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(669.543rem, 97.124rem, 701.462rem) rotateX(97.494deg) rotateZ(74.637deg) rotateY(71.254deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5.010_48",
+    "spriteName": "l0_5_010",
+    "width": "205rem",
+    "height": "71rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(1196.958rem, 99.889rem, 549.611rem) rotateX(108.779deg) rotateZ(75.33deg) rotateY(82.156deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5.011_49",
+    "spriteName": "l0_5_011",
+    "width": "165rem",
+    "height": "132rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(1103.146rem, 114.675rem, 584.366rem) rotateX(112.721deg) rotateZ(75.434deg) rotateY(85.971deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5.012_50",
+    "spriteName": "l0_5_012",
+    "width": "216rem",
+    "height": "76rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(1006.146rem, 86.267rem, 598.15rem) rotateX(116.701deg) rotateZ(75.47deg) rotateY(89.823deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5.013_51",
+    "spriteName": "l0_5_013",
+    "width": "125rem",
+    "height": "159rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(901.963rem, 119.721rem, 645.383rem) rotateX(97.494deg) rotateZ(74.637deg) rotateY(71.254deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5.014_52",
+    "spriteName": "l0_5_014",
+    "width": "180rem",
+    "height": "63rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(806.454rem, 93.276rem, 659.728rem) rotateX(128.506deg) rotateZ(75.179deg) rotateY(101.246deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5_53",
+    "spriteName": "l0_5",
+    "width": "307rem",
+    "height": "221rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-1472.324rem, 122.308rem, 403.661rem) rotateX(30.175deg) rotateZ(7.516deg) rotateY(-13.195deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5.009_54",
+    "spriteName": "l0_5_009",
+    "width": "525rem",
+    "height": "264rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-1098.534rem, 87.36rem, 484.21rem) rotateX(30.404deg) rotateZ(6.542deg) rotateY(-13.167deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5.002_55",
+    "spriteName": "l0_5_002",
+    "width": "140rem",
+    "height": "85rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-479.934rem, 62.336rem, 1065.103rem) rotateX(29.056deg) rotateZ(72.0deg) rotateY(-0.0deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5.003_56",
+    "spriteName": "l0_5_003",
+    "width": "94rem",
+    "height": "109rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-404.225rem, 17.407rem, 1004.247rem) rotateX(31.402deg) rotateZ(82.111deg) rotateY(1.436deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5.004_57",
+    "spriteName": "l0_5_004",
+    "width": "119rem",
+    "height": "102rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-289.481rem, 25.808rem, 714.081rem) rotateX(-0.945deg) rotateZ(0.0deg) rotateY(0.0deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5.015_58",
+    "spriteName": "l0_5_015",
+    "width": "208rem",
+    "height": "103rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-59.764rem, 25.352rem, 714.088rem) rotateX(-0.945deg) rotateZ(0.0deg) rotateY(0.0deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5.016_59",
+    "spriteName": "l0_5_016",
+    "width": "142rem",
+    "height": "79rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-197.923rem, 8.64rem, 714.364rem) rotateX(-0.945deg) rotateZ(86.0deg) rotateY(0.0deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5.005_60",
+    "spriteName": "l0_5_005",
+    "width": "159rem",
+    "height": "274rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(161.243rem, 59.934rem, 704.478rem) rotateX(29.057deg) rotateZ(87.0deg) rotateY(-0.0deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_5.006_61",
+    "spriteName": "l0_5_006",
+    "width": "145rem",
+    "height": "77rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(459.891rem, 24.404rem, 171.519rem) rotateX(4.73deg) rotateZ(0.0deg) rotateY(0.0deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.016_62",
+    "spriteName": "leaves_016",
+    "width": "267rem",
+    "height": "137rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(227.263rem, -32.787rem, 479.762rem) rotateX(0.0deg) rotateZ(72.0deg) rotateY(0.0deg) scale(0.913, 0.913)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.001_63",
+    "spriteName": "l0_4_001",
+    "width": "168rem",
+    "height": "252rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(82.106rem, 76.521rem, 1228.012rem) rotateX(73.558deg) rotateZ(31.557deg) rotateY(-3.608deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.029_64",
+    "spriteName": "l0_4_029",
+    "width": "80rem",
+    "height": "257rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(185.048rem, 81.959rem, 1288.09rem) rotateX(73.603deg) rotateZ(31.768deg) rotateY(-10.099deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.007_65",
+    "spriteName": "l0_4_007",
+    "width": "246rem",
+    "height": "1028rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-1040.559rem, 108.715rem, 1498.559rem) rotateX(85.984deg) rotateZ(19.339deg) rotateY(10.211deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.003_66",
+    "spriteName": "l0_4_003",
+    "width": "430rem",
+    "height": "158rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(1136.665rem, 136.35rem, 1430.071rem) rotateX(74.091deg) rotateZ(16.674deg) rotateY(-2.439deg) scale(1.429, 1.429)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.006_67",
+    "spriteName": "l0_4_006",
+    "width": "364rem",
+    "height": "624rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(1048.425rem, 177.922rem, 1820.11rem) rotateX(85.023deg) rotateZ(18.912deg) rotateY(-2.14deg) scale(1.429, 1.429)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.009_68",
+    "spriteName": "l0_4_009",
+    "width": "904rem",
+    "height": "356rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-944.267rem, 152.534rem, 1777.98rem) rotateX(99.053deg) rotateZ(79.802deg) rotateY(14.196deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.010_69",
+    "spriteName": "l0_4_010",
+    "width": "285rem",
+    "height": "101rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-753.022rem, 35.125rem, 1089.514rem) rotateX(4.845deg) rotateZ(6.587deg) rotateY(-29.606deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.034_70",
+    "spriteName": "l0_4_034",
+    "width": "225rem",
+    "height": "173rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-529.471rem, 17.034rem, 1205.343rem) rotateX(3.703deg) rotateZ(7.283deg) rotateY(-26.129deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.012_71",
+    "spriteName": "l0_4_012",
+    "width": "370rem",
+    "height": "789rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(625.503rem, 173.631rem, 1803.107rem) rotateX(85.148deg) rotateZ(14.151deg) rotateY(3.679deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.013_72",
+    "spriteName": "l0_4_013",
+    "width": "90rem",
+    "height": "219rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(439.672rem, 60.712rem, 1339.583rem) rotateX(110.003deg) rotateZ(81.965deg) rotateY(105.83deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.004_73",
+    "spriteName": "l0_4_004",
+    "width": "241rem",
+    "height": "169rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(250.872rem, -17.804rem, 1359.74rem) rotateX(80.897deg) rotateZ(82.068deg) rotateY(76.991deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.014_74",
+    "spriteName": "l0_4_014",
+    "width": "92rem",
+    "height": "58rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(565.247rem, 77.698rem, 1321.211rem) rotateX(12.978deg) rotateZ(30.329deg) rotateY(16.827deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.030_75",
+    "spriteName": "l0_4_030",
+    "width": "83rem",
+    "height": "33rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(839.968rem, 89.936rem, 1251.039rem) rotateX(7.714deg) rotateZ(12.999deg) rotateY(14.859deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.031_76",
+    "spriteName": "l0_4_031",
+    "width": "152rem",
+    "height": "92rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(762.486rem, 22.092rem, 1265.99rem) rotateX(92.033deg) rotateZ(75.519deg) rotateY(87.806deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.032_77",
+    "spriteName": "l0_4_032",
+    "width": "39rem",
+    "height": "69rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(692.97rem, 83.7rem, 1288.61rem) rotateX(54.976deg) rotateZ(71.553deg) rotateY(52.152deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.033_78",
+    "spriteName": "l0_4_033",
+    "width": "27rem",
+    "height": "63rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(633.257rem, 84.851rem, 1304.149rem) rotateX(88.049deg) rotateZ(75.448deg) rotateY(83.952deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.016_79",
+    "spriteName": "l0_4_016",
+    "width": "118rem",
+    "height": "216rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(31.837rem, 7.996rem, 1348.733rem) rotateX(5.219deg) rotateZ(0.092deg) rotateY(-11.944deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.002_80",
+    "spriteName": "l0_4_002",
+    "width": "434rem",
+    "height": "129rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-231.986rem, 45.82rem, 1296.159rem) rotateX(4.803deg) rotateZ(2.049deg) rotateY(-11.952deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.017_81",
+    "spriteName": "l0_4_017",
+    "width": "602rem",
+    "height": "221rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-168.517rem, 114.962rem, 1363.513rem) rotateX(81.741deg) rotateZ(-0.045deg) rotateY(-0.623deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.019_82",
+    "spriteName": "l0_4_019",
+    "width": "45rem",
+    "height": "688rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(118.529rem, 157.762rem, 1801.343rem) rotateX(84.577deg) rotateZ(2.818deg) rotateY(-3.829deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.020_83",
+    "spriteName": "l0_4_020",
+    "width": "374rem",
+    "height": "718rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(294.752rem, 160.58rem, 1805.732rem) rotateX(84.695deg) rotateZ(7.06deg) rotateY(1.303deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.021_84",
+    "spriteName": "l0_4_021",
+    "width": "155rem",
+    "height": "420rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(351.81rem, 117.898rem, 1427.105rem) rotateX(84.516deg) rotateZ(82.059deg) rotateY(8.899deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.022_85",
+    "spriteName": "l0_4_022",
+    "width": "731rem",
+    "height": "598rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-133.581rem, 161.092rem, 1798.18rem) rotateX(78.398deg) rotateZ(83.934deg) rotateY(-6.199deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.023_86",
+    "spriteName": "l0_4_023",
+    "width": "128rem",
+    "height": "80rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(145.933rem, 112.582rem, 1410.616rem) rotateX(60.868deg) rotateZ(63.892deg) rotateY(-18.981deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.024_87",
+    "spriteName": "l0_4_024",
+    "width": "239rem",
+    "height": "411rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(709.708rem, 126.521rem, 1399.848rem) rotateX(90.061deg) rotateZ(75.998deg) rotateY(15.197deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.025_88",
+    "spriteName": "l0_4_025",
+    "width": "585rem",
+    "height": "257rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-684.01rem, 107.043rem, 1266.164rem) rotateX(81.342deg) rotateZ(27.943deg) rotateY(-0.856deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_4.026_89",
+    "spriteName": "l0_4_026",
+    "width": "914rem",
+    "height": "362rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-601.711rem, 156.797rem, 1728.799rem) rotateX(87.097deg) rotateZ(80.011deg) rotateY(2.444deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.017_90",
+    "spriteName": "leaves_017",
+    "width": "40rem",
+    "height": "189rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(367.548rem, -19.81rem, 915.424rem) rotateX(0.0deg) rotateZ(52.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3_91",
+    "spriteName": "l0_3",
+    "width": "348rem",
+    "height": "443rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(620.433rem, 187.393rem, 2560.402rem) rotateX(86.224deg) rotateZ(4.022deg) rotateY(0.664deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.001_92",
+    "spriteName": "l0_3_001",
+    "width": "202rem",
+    "height": "292rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(895.904rem, 172.052rem, 2534.901rem) rotateX(84.622deg) rotateZ(18.63deg) rotateY(-8.304deg) scale(1.429, 1.429)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.002_93",
+    "spriteName": "l0_3_002",
+    "width": "265rem",
+    "height": "50rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(32.277rem, 138.178rem, 2251.892rem) rotateX(170.75deg) rotateZ(39.171deg) rotateY(90.853deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.003_94",
+    "spriteName": "l0_3_003",
+    "width": "243rem",
+    "height": "73rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(940.876rem, 151.079rem, 2366.92rem) rotateX(46.052deg) rotateZ(14.461deg) rotateY(-9.113deg) scale(1.429, 1.429)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.004_95",
+    "spriteName": "l0_3_004",
+    "width": "164rem",
+    "height": "453rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-680.117rem, 164.778rem, 2609.152rem) rotateX(91.696deg) rotateZ(70.796deg) rotateY(40.374deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.005_96",
+    "spriteName": "l0_3_005",
+    "width": "153rem",
+    "height": "567rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-237.327rem, 151.201rem, 2436.662rem) rotateX(80.27deg) rotateZ(66.067deg) rotateY(29.604deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.006_97",
+    "spriteName": "l0_3_006",
+    "width": "316rem",
+    "height": "591rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(341.808rem, 158.899rem, 2238.847rem) rotateX(82.507deg) rotateZ(36.986deg) rotateY(-0.275deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.007_98",
+    "spriteName": "l0_3_007",
+    "width": "361rem",
+    "height": "540rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(210.912rem, 265.723rem, 3553.329rem) rotateX(85.257deg) rotateZ(2.982deg) rotateY(-0.425deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.021_99",
+    "spriteName": "l0_3_021",
+    "width": "165rem",
+    "height": "425rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(813.44rem, 204.209rem, 2897.665rem) rotateX(83.535deg) rotateZ(19.566deg) rotateY(-8.154deg) scale(1.429, 1.429)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.009_100",
+    "spriteName": "l0_3_009",
+    "width": "317rem",
+    "height": "462rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-634.796rem, 225.408rem, 2818.131rem) rotateX(94.564deg) rotateZ(71.879deg) rotateY(9.754deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.010_101",
+    "spriteName": "l0_3_010",
+    "width": "142rem",
+    "height": "394rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-40.826rem, 271.832rem, 3567.262rem) rotateX(85.285deg) rotateZ(-0.102deg) rotateY(-2.484deg) scale(1.25, 1.25)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.011_102",
+    "spriteName": "l0_3_011",
+    "width": "163rem",
+    "height": "424rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(612.272rem, 220.108rem, 2985.896rem) rotateX(85.299deg) rotateZ(7.035deg) rotateY(0.857deg) scale(1.429, 1.429)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.008_103",
+    "spriteName": "l0_3_008",
+    "width": "172rem",
+    "height": "563rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(500.376rem, 221.675rem, 3024.356rem) rotateX(85.239deg) rotateZ(3.035deg) rotateY(0.852deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.012_104",
+    "spriteName": "l0_3_012",
+    "width": "393rem",
+    "height": "587rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(228.316rem, 223.539rem, 3044.226rem) rotateX(85.254deg) rotateZ(2.982deg) rotateY(-0.423deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.013_105",
+    "spriteName": "l0_3_013",
+    "width": "485rem",
+    "height": "589rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-199.289rem, 242.191rem, 3124.782rem) rotateX(71.603deg) rotateZ(79.6deg) rotateY(-13.894deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.014_106",
+    "spriteName": "l0_3_014",
+    "width": "274rem",
+    "height": "162rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(560.602rem, 141.673rem, 2284.011rem) rotateX(70.154deg) rotateZ(16.631deg) rotateY(-8.185deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.020_107",
+    "spriteName": "l0_3_020",
+    "width": "365rem",
+    "height": "110rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(631.125rem, 140.875rem, 2309.44rem) rotateX(48.997deg) rotateZ(3.937deg) rotateY(-2.85deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.015_108",
+    "spriteName": "l0_3_015",
+    "width": "422rem",
+    "height": "538rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(242.965rem, 189.208rem, 2584.627rem) rotateX(86.228deg) rotateZ(2.98deg) rotateY(-0.61deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.016_109",
+    "spriteName": "l0_3_016",
+    "width": "433rem",
+    "height": "766rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-213.76rem, 212.365rem, 2721.389rem) rotateX(80.309deg) rotateZ(65.774deg) rotateY(-6.521deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.017_110",
+    "spriteName": "l0_3_017",
+    "width": "279rem",
+    "height": "592rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(108.997rem, 137.714rem, 2066.8rem) rotateX(82.506deg) rotateZ(36.985deg) rotateY(-0.292deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.018_111",
+    "spriteName": "l0_3_018",
+    "width": "72rem",
+    "height": "179rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(598.839rem, 257.779rem, 3436.469rem) rotateX(85.304deg) rotateZ(7.035deg) rotateY(0.857deg) scale(2.0, 2.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.019_112",
+    "spriteName": "l0_3_019",
+    "width": "271rem",
+    "height": "564rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(516.921rem, 266.94rem, 3560.053rem) rotateX(85.258deg) rotateZ(4.035deg) rotateY(0.852deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_3.022_113",
+    "spriteName": "l0_3_022",
+    "width": "315rem",
+    "height": "228rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-609.589rem, 257.454rem, 3150.378rem) rotateX(91.508deg) rotateZ(65.958deg) rotateY(7.896deg) scale(1.429, 1.429)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_stones_114",
+    "spriteName": "l0_stones",
+    "width": "121rem",
+    "height": "70rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(358.853rem, 122.834rem, 2116.251rem) rotateX(-9.538deg) rotateZ(26.238deg) rotateY(-72.633deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_stones.004_115",
+    "spriteName": "l0_stones_004",
+    "width": "40rem",
+    "height": "23rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(452.84rem, 157.359rem, 2306.878rem) rotateX(4.764deg) rotateZ(2.802deg) rotateY(-10.044deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_stones.005_116",
+    "spriteName": "l0_stones_005",
+    "width": "156rem",
+    "height": "61rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(405.471rem, 96.146rem, 2130.876rem) rotateX(65.783deg) rotateZ(75.682deg) rotateY(-6.045deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_stones.006_117",
+    "spriteName": "l0_stones_006",
+    "width": "154rem",
+    "height": "50rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(407.912rem, 138.725rem, 2234.949rem) rotateX(2.315deg) rotateZ(16.992deg) rotateY(-63.942deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_stones.007_118",
+    "spriteName": "l0_stones_007",
+    "width": "167rem",
+    "height": "50rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(437.14rem, 128.302rem, 2237.449rem) rotateX(73.826deg) rotateZ(69.97deg) rotateY(-0.614deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_stones.001_119",
+    "spriteName": "l0_stones_001",
+    "width": "96rem",
+    "height": "279rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(56.299rem, 145.987rem, 2244.236rem) rotateX(70.338deg) rotateZ(-3.702deg) rotateY(-83.435deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_stones.002_120",
+    "spriteName": "l0_stones_002",
+    "width": "58rem",
+    "height": "28rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(95.418rem, 157.704rem, 2378.863rem) rotateX(10.428deg) rotateZ(0.059deg) rotateY(0.071deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_stones.003_121",
+    "spriteName": "l0_stones_003",
+    "width": "268rem",
+    "height": "55rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(85.802rem, 100.582rem, 2253.294rem) rotateX(69.118deg) rotateZ(86.99deg) rotateY(-0.998deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "bash1_122",
+    "spriteName": "bash1",
+    "width": "278rem",
+    "height": "173rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(685.616rem, 149.571rem, 2802.596rem) rotateX(7.945deg) rotateZ(7.613deg) rotateY(-33.768deg) scale(0.833, 0.833)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0a_0.001_123",
+    "spriteName": "l0a_0_001",
+    "width": "156rem",
+    "height": "596rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(534.46rem, 191.733rem, 2939.119rem) rotateX(85.615deg) rotateZ(-2.134deg) rotateY(-51.89deg) scale(0.625, 0.625)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0a_0.008_124",
+    "spriteName": "l0a_0_008",
+    "width": "164rem",
+    "height": "501rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(547.635rem, 216.527rem, 3273.7rem) rotateX(85.615deg) rotateZ(-2.134deg) rotateY(-51.89deg) scale(0.625, 0.625)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0a_0_125",
+    "spriteName": "l0a_0",
+    "width": "263rem",
+    "height": "151rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-631.089rem, 210.789rem, 3161.446rem) rotateX(64.102deg) rotateZ(74.596deg) rotateY(-6.694deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0a_0.004_126",
+    "spriteName": "l0a_0_004",
+    "width": "561rem",
+    "height": "359rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-102.109rem, 214.323rem, 3182.289rem) rotateX(56.961deg) rotateZ(7.035deg) rotateY(-3.282deg) scale(0.625, 0.625)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0a_0.006_127",
+    "spriteName": "l0a_0_006",
+    "width": "580rem",
+    "height": "293rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-412.461rem, 219.768rem, 3158.04rem) rotateX(56.961deg) rotateZ(7.035deg) rotateY(-3.282deg) scale(0.625, 0.625)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0a_0.005_128",
+    "spriteName": "l0a_0_005",
+    "width": "320rem",
+    "height": "151rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(653.935rem, 231.928rem, 3322.58rem) rotateX(27.418deg) rotateZ(25.141deg) rotateY(-46.171deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.008_129",
+    "spriteName": "leaves_008",
+    "width": "109rem",
+    "height": "65rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(6.361rem, 203.137rem, 3446.243rem) rotateX(0.0deg) rotateZ(0.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0a_0.002_130",
+    "spriteName": "l0a_0_002",
+    "width": "99rem",
+    "height": "164rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-552.941rem, 217.82rem, 3395.161rem) rotateX(28.132deg) rotateZ(-6.589deg) rotateY(-15.887deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0a_0.007_131",
+    "spriteName": "l0a_0_007",
+    "width": "450rem",
+    "height": "276rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-223.157rem, 255.869rem, 3517.849rem) rotateX(23.193deg) rotateZ(10.727deg) rotateY(-16.067deg) scale(0.625, 0.625)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0a_0.009_132",
+    "spriteName": "l0a_0_009",
+    "width": "375rem",
+    "height": "206rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-414.116rem, 224.83rem, 3442.363rem) rotateX(23.474deg) rotateZ(9.765deg) rotateY(-16.017deg) scale(0.625, 0.625)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0a_0.003_133",
+    "spriteName": "l0a_0_003",
+    "width": "287rem",
+    "height": "394rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-37.346rem, 255.751rem, 3523.361rem) rotateX(99.192deg) rotateZ(77.848deg) rotateY(63.846deg) scale(0.625, 0.625)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0b_0_134",
+    "spriteName": "l0b_0",
+    "width": "378rem",
+    "height": "265rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-435.518rem, 208.536rem, 3588.785rem) rotateX(10.256deg) rotateZ(76.971deg) rotateY(-47.881deg) scale(0.625, 0.625)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0b_0.001_135",
+    "spriteName": "l0b_0_001",
+    "width": "758rem",
+    "height": "368rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-209.708rem, 258.877rem, 3735.122rem) rotateX(51.767deg) rotateZ(26.759deg) rotateY(-10.595deg) scale(0.625, 0.625)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "l0_0.001_136",
+    "spriteName": "l0_0_001",
+    "width": "483rem",
+    "height": "162rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(611.43rem, 233.291rem, 3538.551rem) rotateX(-1.239deg) rotateZ(13.683deg) rotateY(-71.06deg) scale(0.625, 0.625)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "bush_L0_137",
+    "spriteName": "bush_L0",
+    "width": "491rem",
+    "height": "310rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-369.119rem, 170.054rem, 4017.912rem) rotateX(0.788deg) rotateZ(-2.619deg) rotateY(-16.753deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "sky1_1.016_138",
+    "spriteName": "sky1_1_016",
+    "width": "270rem",
+    "height": "208rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-29.408rem, -532.204rem, 1011.879rem) rotateX(-70.24deg) rotateZ(-0.0deg) rotateY(0.0deg) scale(1.0, 1.0)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.026_139",
+    "spriteName": "leaves_026",
+    "width": "104rem",
+    "height": "197rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(981.489rem, -187.091rem, 1749.912rem) rotateX(0.0deg) rotateZ(34.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.005_140",
+    "spriteName": "leaves_005",
+    "width": "111rem",
+    "height": "59rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-926.582rem, -207.814rem, 1783.53rem) rotateX(0.0deg) rotateZ(38.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.025_141",
+    "spriteName": "leaves_025",
+    "width": "58rem",
+    "height": "76rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(774.076rem, -86.579rem, 2000.0rem) rotateX(0.0deg) rotateZ(63.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.014_142",
+    "spriteName": "leaves_014",
+    "width": "50rem",
+    "height": "74rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-378.693rem, -240.244rem, 2010.87rem) rotateX(0.0deg) rotateZ(89.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.013_143",
+    "spriteName": "leaves_013",
+    "width": "46rem",
+    "height": "69rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-321.482rem, -256.264rem, 2146.677rem) rotateX(0.0deg) rotateZ(86.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.022_144",
+    "spriteName": "leaves_022",
+    "width": "90rem",
+    "height": "123rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(440.03rem, -133.896rem, 2207.89rem) rotateX(0.0deg) rotateZ(52.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.012_145",
+    "spriteName": "leaves_012",
+    "width": "85rem",
+    "height": "134rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-450.941rem, -313.631rem, 2226.781rem) rotateX(0.0deg) rotateZ(82.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.004_146",
+    "spriteName": "leaves_004",
+    "width": "82rem",
+    "height": "132rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-666.785rem, -138.032rem, 2500.0rem) rotateX(0.0deg) rotateZ(76.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.024_147",
+    "spriteName": "leaves_024",
+    "width": "121rem",
+    "height": "164rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(621.446rem, -120.72rem, 2628.648rem) rotateX(0.0deg) rotateZ(56.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.003_148",
+    "spriteName": "leaves_003",
+    "width": "115rem",
+    "height": "73rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-549.604rem, 0.434rem, 3000.0rem) rotateX(0.0deg) rotateZ(46.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.011_149",
+    "spriteName": "leaves_011",
+    "width": "89rem",
+    "height": "64rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-289.682rem, -79.971rem, 3223.952rem) rotateX(0.0deg) rotateZ(33.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.027_150",
+    "spriteName": "leaves_027",
+    "width": "84rem",
+    "height": "67rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(472.954rem, 51.305rem, 2910.288rem) rotateX(0.0deg) rotateZ(87.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.002_151",
+    "spriteName": "leaves_002",
+    "width": "164rem",
+    "height": "80rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-708.647rem, -52.997rem, 2629.234rem) rotateX(0.0deg) rotateZ(12.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.009_152",
+    "spriteName": "leaves_009",
+    "width": "42rem",
+    "height": "34rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(25.093rem, 191.07rem, 3092.087rem) rotateX(0.0deg) rotateZ(13.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.010_153",
+    "spriteName": "leaves_010",
+    "width": "28rem",
+    "height": "44rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(51.608rem, 179.073rem, 3188.12rem) rotateX(0.0deg) rotateZ(80.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.028_154",
+    "spriteName": "leaves_028",
+    "width": "103rem",
+    "height": "166rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(317.211rem, 81.567rem, 3662.462rem) rotateX(0.0deg) rotateZ(33.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.007_155",
+    "spriteName": "leaves_007",
+    "width": "74rem",
+    "height": "119rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-221.254rem, 130.331rem, 4038.857rem) rotateX(-0.001deg) rotateZ(58.0deg) rotateY(-0.002deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.030_156",
+    "spriteName": "leaves_030",
+    "width": "88rem",
+    "height": "172rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(375.132rem, 100.721rem, 3884.679rem) rotateX(0.0deg) rotateZ(34.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.006_157",
+    "spriteName": "leaves_006",
+    "width": "61rem",
+    "height": "100rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-276.044rem, 120.193rem, 3814.306rem) rotateX(0.0deg) rotateZ(10.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.029_158",
+    "spriteName": "leaves_029",
+    "width": "131rem",
+    "height": "246rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(489.015rem, 20.717rem, 3565.234rem) rotateX(0.0deg) rotateZ(37.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.015_159",
+    "spriteName": "leaves_015",
+    "width": "187rem",
+    "height": "122rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-184.609rem, -50.525rem, 3726.203rem) rotateX(0.0deg) rotateZ(67.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.031_160",
+    "spriteName": "leaves_031",
+    "width": "130rem",
+    "height": "255rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(447.408rem, 39.741rem, 4068.335rem) rotateX(0.0deg) rotateZ(43.0deg) rotateY(0.0deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.001_161",
+    "spriteName": "leaves_001",
+    "width": "337rem",
+    "height": "187rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(-453.204rem, -79.531rem, 3976.483rem) rotateX(24.76deg) rotateZ(75.176deg) rotateY(1.067deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  },
+  {
+    "keyName": "leaves.023_162",
+    "spriteName": "leaves_023",
+    "width": "310rem",
+    "height": "540rem",
+    "opacity": "1.0",
+    "transform": "translate(-50%, -50%) translate3d(260.075rem, -133.502rem, 4253.452rem) rotateX(43.776deg) rotateZ(36.071deg) rotateY(-2.707deg) scale(0.5, 0.5)",
+    "transformOrigin": "50% 50%",
+    "mixBlendMode": "normal"
+  }
+]

@@ -1,62 +1,59 @@
-import { j as e, w as s, x as a, y as r, r as t, z as i, A as n } from '../../../chunks/vendor.js';
+import { j as e, C as s, D as a, q as r, r as t, t as i, E as n } from '../../../chunks/vendor.js';
 import {
-    u as l,
-    p as o,
-    i as c,
+    u as o,
+    p as c,
+    i as l,
     M as d,
     I as b,
     c as _,
-    g as u,
-    C as m,
+    g as m,
+    C as u,
     n as p,
     a as h,
     b as g,
     m as A,
-    R as w,
-    F as f,
-    B as v,
-    r as x,
-    U as j,
+    R as f,
+    F as w,
+    B as j,
+    r as v,
+    U as x,
 } from '../../../chunks/lib.js';
 import { u as L } from '../../../chunks/useParseRewards.js';
 /* empty css                     */ const N = 'CloseButton_49a682e7',
-    k = 'CloseButton_icon_b31f68a5',
-    C = 'CloseButton_iconHover_b5894825',
+    C = 'CloseButton_icon_b31f68a5',
+    k = 'CloseButton_iconHover_b5894825',
     I = 'Page_close_401a9518',
-    y = ({
+    M = ({
         onClick: a,
         className: r,
         classNames: t,
         onMouseEnter: i,
         onMouseLeave: n,
-        onMouseDown: c,
+        onMouseDown: l,
         onMouseUp: d,
         soundHover: b = 'highlight',
         soundClick: _ = 'play',
     }) => {
-        l(a);
+        o(a);
         return e.jsxs('div', {
             className: s(N, I, r),
             onMouseEnter: (e) => {
-                (null == i || i(e), o.sound(b));
+                (i?.(e), c.sound(b));
             },
             onMouseLeave: (e) => {
-                null == n || n(e);
+                n?.(e);
             },
             onMouseDown: (e) => {
-                (null == c || c(e), o.sound(_));
+                (l?.(e), c.sound(_));
             },
             onMouseUp: (e) => {
-                null == d || d(e);
+                d?.(e);
             },
             onClick: a,
-            children: [
-                e.jsx('div', { className: s(k, null == t ? void 0 : t.icon) }),
-                e.jsx('div', { className: s(C, null == t ? void 0 : t.iconHover) }),
-            ],
+            children: [e.jsx('div', { className: s(C, t?.icon) }), e.jsx('div', { className: s(k, t?.iconHover) })],
         });
     },
-    [M, S] = c()(
+    [S, y] = l()(
         ({ observableModel: e }) => ({ ...{ root: e.object(), rewards: e.array('rewards') } }),
         ({ externalModel: e }) => ({
             approve: e.createCallbackNoArgs('onApprove'),
@@ -75,19 +72,19 @@ const H = 'AnimatedBackground_f47e334b',
         chunk: { count: 2, rows: 5, columns: 5 },
         getChunkPath: h('R.images.gui.maps.icons.sequence.sun_shine_big_sprite.sprite_'),
     },
-    Q = _(T),
-    D = ({ className: a }) =>
+    D = _(T),
+    E = ({ className: a }) =>
         e.jsx('div', {
             className: s(H, a),
-            children: u.isHigh()
+            children: m.isHigh()
                 ? e.jsxs(e.Fragment, {
                       children: [
-                          e.jsx(m, {
+                          e.jsx(u, {
                               onAnimationDone: p,
                               width: T.width,
                               height: T.height,
                               frameCount: T.frameCount,
-                              getImageSource: Q,
+                              getImageSource: D,
                               frameTime: 50,
                               className: U,
                           }),
@@ -96,7 +93,7 @@ const H = 'AnimatedBackground_f47e334b',
                   })
                 : e.jsx('div', { className: z }),
         }),
-    E = {
+    Q = {
         base: 'AwardsList_fd6f2000',
         value: 'AwardsList_value_294b63f8',
         reward: 'AwardsList_reward_61da62c0',
@@ -122,25 +119,25 @@ const H = 'AnimatedBackground_f47e334b',
     },
     W = a(function () {
         const { mediaSize: a } = g(),
-            { model: r } = S(),
+            { model: r } = y(),
             { parsedRewards: t } = L(
                 r.rewards.get(),
                 ((e) => (e >= d.Large ? b.S400x300 : e >= d.Small ? b.S296x222 : b.S232x174))(a),
             ),
             { battleStatus: i } = r.root.get();
         return e.jsxs('div', {
-            className: s(E.base, E[`base__${i}`]),
+            className: s(Q.base, Q[`base__${i}`]),
             children: [
-                i === B.Completed && e.jsx(D, { className: E.animatedBg }),
-                e.jsx('div', { className: E.ribbon }),
+                i === B.Completed && e.jsx(E, { className: Q.animatedBg }),
+                e.jsx('div', { className: Q.ribbon }),
                 A(t, (s, a) =>
                     e.jsxs(
                         'div',
                         {
-                            className: E.reward,
+                            className: Q.reward,
                             children: [
-                                e.jsx(w, { ...s, classNames: { info: E.value } }),
-                                e.jsx('span', { className: E.label, children: s.userName }),
+                                e.jsx(f, { ...s, classNames: { info: Q.value } }),
+                                e.jsx('span', { className: Q.label, children: s.userName }),
                             ],
                         },
                         a,
@@ -150,17 +147,17 @@ const H = 'AnimatedBackground_f47e334b',
         });
     }),
     $ = 'Header_bbfb94eb',
-    F = 'Header_subTitle_ab861848',
-    O = 'Header_title_818ec59a',
-    q = R.strings.comp7_light.battleQuestAwards,
+    q = 'Header_subTitle_ab861848',
+    F = 'Header_title_818ec59a',
+    O = R.strings.comp7_light.battleQuestAwards,
     G = a(function () {
-        const { model: s } = S(),
+        const { model: s } = y(),
             { battleStatus: a, level: r } = s.root.get();
         return e.jsxs('div', {
             className: $,
             children: [
-                e.jsx('span', { className: F, children: q.subTitle() }),
-                e.jsx(f, { text: `${q.title.$dyn(a)}`, classMix: O, binding: { level: r } }),
+                e.jsx('span', { className: q, children: O.subTitle() }),
+                e.jsx(w, { text: `${O.title.$dyn(a)}`, classMix: F, binding: { level: r } }),
             ],
         });
     }),
@@ -170,15 +167,15 @@ const H = 'AnimatedBackground_f47e334b',
     X = 'App_button_5120fb02',
     Y = 'App_rewardList_6063ee6e',
     Z = a(function () {
-        const { controls: s } = S(),
+        const { controls: s } = y(),
             { mediaSize: a } = g(),
-            c = a >= d.Large ? v.sizes.large : v.sizes.small,
+            l = a >= d.Large ? j.sizes.large : j.sizes.small,
             b = r({ from: { opacity: 0 }, to: { opacity: 1 }, leave: { opacity: 0 }, config: n.molasses });
         return (
             t.useEffect(() => {
-                o.sound('pr_reward_screen');
+                c.sound('pr_reward_screen');
             }, []),
-            l(s.close),
+            o(s.close),
             e.jsx('div', {
                 className: J,
                 children: e.jsxs(i.div, {
@@ -189,18 +186,18 @@ const H = 'AnimatedBackground_f47e334b',
                         e.jsx('div', { className: Y, children: e.jsx(W, {}) }),
                         e.jsx('div', {
                             className: V,
-                            children: e.jsx(v, {
-                                theme: v.themes.primary,
-                                size: c,
+                            children: e.jsx(j, {
+                                theme: j.themes.primary,
+                                size: l,
                                 onClick: s.approve,
                                 className: X,
                                 children: R.strings.comp7_light.battleQuestAwards.button(),
                             }),
                         }),
-                        e.jsx(y, { onClick: s.close }),
+                        e.jsx(M, { onClick: s.close }),
                     ],
                 }),
             })
         );
     });
-x(e.jsx(j, { children: e.jsx(M, { children: e.jsx(Z, {}) }) }));
+v(e.jsx(x, { children: e.jsx(S, { children: e.jsx(Z, {}) }) }));

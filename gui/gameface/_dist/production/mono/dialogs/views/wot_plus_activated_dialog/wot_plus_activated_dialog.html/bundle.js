@@ -1,11 +1,11 @@
 import { i as e, j as i, e as s, k as a, m as t, n, s as o } from '../../../chunks/vendor.js';
-import { D as l, R as c, F as r, d as g, u as d, c as m, r as p, U as b } from '../../../chunks/lib.js';
+import { D as l, R as c, F as r, d as g, u as m, k as d, r as p, U as b } from '../../../chunks/lib.js';
 import {
-    B as u,
+    B as _,
     a as f,
-    u as _,
-    e as v,
-    c as x,
+    u,
+    e as x,
+    c as v,
     f as h,
     g as w,
     h as N,
@@ -15,10 +15,10 @@ import {
 } from '../../../chunks/mono_dialog_template_button_model.js';
 (f.confirm,
     R.strings.dialogs.wotPlusProBoostActivationDialog.confirm(),
-    u.Primary,
+    _.Primary,
     f.cancel,
     R.strings.dialogs.common.cancel(),
-    u.Secondary);
+    _.Secondary);
 const S = {
         titleString: R.strings.dialogs.wotPlusActivationDialog.pro.heading(),
         iconImage: R.images.gui.maps.icons.subscription.activation_dialog.pro(),
@@ -110,15 +110,15 @@ const U = {
         size: l = '80x80',
         emphasized: g = !1,
     }) {
-        const d = o.replace('{{size}}', `c_${l}`).replace('{{type}}', n),
-            [m, p] = l.split('x').map(Number);
+        const m = o.replace('{{size}}', `c_${l}`).replace('{{type}}', n),
+            [d, p] = l.split('x').map(Number);
         return i.jsx('div', {
             className: s(U.benefit, e, g && U.benefit__emphasized),
             children: i.jsxs('div', {
                 className: s(U.benefit_wrapper, e),
-                style: { maxWidth: `${m + 20}rem` },
+                style: { maxWidth: `${d + 20}rem` },
                 children: [
-                    i.jsx(c, { src: d, fit: 'contain', className: s(U.benefit_icon, a.image), width: m, height: p }),
+                    i.jsx(c, { src: m, fit: 'contain', className: s(U.benefit_icon, a.image), width: d, height: p }),
                     i.jsx(r, { text: t, className: s(U.benefit_label, a.label) }),
                 ],
             }),
@@ -137,28 +137,25 @@ const U = {
     }) {
         const c = l.xs,
             r = l.m ?? l.xs,
-            d = l.l ?? l.m ?? l.xs,
-            m = l.xl ?? l.l ?? l.m ?? l.xs,
-            { model: p } = _(),
+            m = l.l ?? l.m ?? l.xs,
+            d = l.xl ?? l.l ?? l.m ?? l.xs,
+            { model: p } = u(),
             { benefitSize: b } = g(
                 { benefitSize: c },
-                { medium: { benefitSize: r }, large: { benefitSize: d }, extraLarge: { benefitSize: m } },
+                { medium: { benefitSize: r }, large: { benefitSize: m }, extraLarge: { benefitSize: d } },
             ),
-            u = p.computes.getParsedContent(t, C, false);
-        return u
+            _ = p.computes.getParsedContent(t, C, false);
+        return _
             ? i.jsx('div', {
                   className: s(U.base, e, o && U.base__emphasized),
                   children: i.jsx('div', {
                       className: U.wrapper,
-                      children: u.map((e) =>
+                      children: _.map((e) =>
                           i.jsx(
                               T,
                               {
-                                  className: null == a ? void 0 : a.benefit,
-                                  classNames: {
-                                      label: null == a ? void 0 : a.label,
-                                      image: null == a ? void 0 : a.image,
-                                  },
+                                  className: a?.benefit,
+                                  classNames: { label: a?.label, image: a?.image },
                                   emphasized: o,
                                   imageUriTemplate: n,
                                   type: e.type,
@@ -175,55 +172,56 @@ const U = {
     M = 'SideImage_109b8ca',
     $ = 'SideImage_image_e09cdce0',
     F = 'SideImage_glow_9814931f',
-    V = e(function ({ className: e, classNames: a }) {
-        const { model: t } = _(),
-            n = t.computes.getResource('iconImage', false),
-            o = t.computes.getResource('iconGlowImage', false);
+    V = !1,
+    W = e(function ({ className: e, classNames: a }) {
+        const { model: t } = u(),
+            n = t.computes.getResource('iconImage', V),
+            o = t.computes.getResource('iconGlowImage', V);
         return n
             ? i.jsxs('div', {
                   className: s(M, e),
                   children: [
-                      i.jsx(c, { className: s($, null == a ? void 0 : a.image), src: n, fit: 'contain' }),
-                      o && i.jsx(c, { className: s(F, e, null == a ? void 0 : a.glow), src: o, fit: 'contain' }),
+                      i.jsx(c, { className: s($, a?.image), src: n, fit: 'contain' }),
+                      o && i.jsx(c, { className: s(F, e, a?.glow), src: o, fit: 'contain' }),
                   ],
               })
             : null;
     }),
-    W = 'Index_body_d18bc871',
-    X = 'Index_main_20bd2c1e',
-    H = 'Index_aside_cebb2516',
-    K = 'Index_emphasizedBenefits_d6979b70',
-    Q = 'Index_benefits_e04cc6e8',
-    Y = 'Index_title_e8853572',
-    Z = 'Index_description_51c077a',
-    ee = 'R.images.gui.maps.icons.subscription.activation_dialog.benefits.{{size}}.{{type}}',
-    ie = e(function () {
-        const { model: e, controls: s } = _(),
+    X = 'Index_body_d18bc871',
+    H = 'Index_main_20bd2c1e',
+    K = 'Index_aside_cebb2516',
+    Q = 'Index_emphasizedBenefits_d6979b70',
+    Y = 'Index_benefits_e04cc6e8',
+    Z = 'Index_title_e8853572',
+    ee = 'Index_description_51c077a',
+    ie = 'R.images.gui.maps.icons.subscription.activation_dialog.benefits.{{size}}.{{type}}',
+    se = e(function () {
+        const { model: e, controls: s } = u(),
             a = e.buttons.get().length > 0;
         return (
-            d(m.ESCAPE, () => {
+            m(d.ESCAPE, () => {
                 s.onAction(f.escape);
             }),
-            i.jsxs(v, {
+            i.jsxs(x, {
                 children: [
-                    i.jsx(x, {}),
+                    i.jsx(v, {}),
                     i.jsxs('div', {
-                        className: W,
+                        className: X,
                         children: [
-                            i.jsx('div', { className: H, children: i.jsx(V, {}) }),
+                            i.jsx('div', { className: K, children: i.jsx(W, {}) }),
                             i.jsxs('div', {
-                                className: X,
+                                className: H,
                                 children: [
-                                    i.jsx(h, { className: Y }),
-                                    i.jsx(w, { className: Z }),
+                                    i.jsx(h, { className: Z }),
+                                    i.jsx(w, { className: ee }),
                                     i.jsx(G, {
-                                        className: K,
+                                        className: Q,
                                         paramsPath: 'emphasizedBenefits',
-                                        imageUriTemplate: ee,
+                                        imageUriTemplate: ie,
                                         sizing: q,
                                         emphasized: !0,
                                     }),
-                                    i.jsx(G, { className: Q, paramsPath: 'benefits', imageUriTemplate: ee }),
+                                    i.jsx(G, { className: Y, paramsPath: 'benefits', imageUriTemplate: ie }),
                                     a && i.jsx(N, {}),
                                 ],
                             }),
@@ -235,4 +233,4 @@ const U = {
             })
         );
     });
-p(i.jsx(b, { children: i.jsx(j, { children: i.jsx(ie, {}) }) }));
+p(i.jsx(b, { children: i.jsx(j, { children: i.jsx(se, {}) }) }));

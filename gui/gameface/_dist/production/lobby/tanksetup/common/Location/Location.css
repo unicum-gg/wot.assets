@@ -1,38 +1,38 @@
-.Location_base_44 {
+.Location_base_fc9a2 {
     display: flex;
     align-items: center;
 }
 
-.Location_base__countFirst_60 {
+.Location_base__countFirst_cfa10 {
     flex-direction: row-reverse;
 }
 
-.Location_icon_7f {
+.Location_icon_b69e6 {
     width: 34rem;
     height: 24rem;
     background: no-repeat center / contain;
 }
 
-.Location_base__countFirst_60 .Location_icon_7f {
+.Location_base__countFirst_cfa10 .Location_icon_b69e6 {
     transform: translateY(4rem);
 }
 
-.Location_base__storage_bf .Location_icon_7f {
+.Location_base__storage_e4a74 .Location_icon_b69e6 {
     background-image: url('R.images.gui.maps.icons.library.storage_icon');
 }
 
-.Location_base__vehicle_a9 .Location_icon_7f {
+.Location_base__vehicle_f5008 .Location_icon_b69e6 {
     background-image: url('R.images.gui.maps.icons.tanksetup.proposals.location.tank');
 }
 
-.Location_count_45 {
+.Location_count_e7c86 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.Location_base__countFirst_60 .Location_count_45 {
+.Location_base__countFirst_cfa10 .Location_count_e7c86 {
     color: #c9c9b6;
     font-size: 24rem;
     font-weight: 700;
@@ -40,6 +40,6 @@
     line-height: 1;
 }
 
-.Location_count__zero_f5 {
+.Location_count__zero_a5474 {
     color: #b70000;
 }

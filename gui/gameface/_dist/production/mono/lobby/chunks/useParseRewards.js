@@ -1,13 +1,13 @@
-import { b as o, m as t, M as e, I as i, dh as a, di as s, dj as d } from './lib.js';
+import { b as o, m as t, M as e, I as i, dl as a, dm as s, dn as n } from './lib.js';
 import './vendor.js';
-const n = (o) => ('overlayType' in o ? o.overlayType : void 0);
-function p(p, l) {
-    const r = ((o, t) => t || (o >= e.Medium ? i.Big : i.Small))(o().mediaSize, l);
+const d = (o) => ('overlayType' in o ? o.overlayType : void 0);
+function l(l, p) {
+    const r = ((o, t) => t || (o >= e.Medium ? i.Big : i.Small))(o().mediaSize, p);
     return {
-        parsedRewards: t(p, ({ ...o }) => ({
+        parsedRewards: t(l, ({ ...o }) => ({
             ...o,
-            special: n(o),
-            image: d(o, r),
+            special: d(o),
+            image: n(o, r),
             size: r,
             valueType: s(o.name),
             tooltipArgs: a(
@@ -18,4 +18,4 @@ function p(p, l) {
         imageSize: r,
     };
 }
-export { p as u };
+export { l as u };

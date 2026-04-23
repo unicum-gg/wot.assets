@@ -1,27 +1,27 @@
-.Countdown_base_fe {
+.Countdown_base_d0c0c {
     display: flex;
     align-items: center;
 }
 
-.Countdown_icon_8b {
+.Countdown_icon_a453a {
     width: 32rem;
     height: 32rem;
     background: no-repeat center / contain;
 }
 
-.Countdown_description_8d {
+.Countdown_description_ee2e0 {
     color: #ffdd99;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.HorizontalBar_base_49 {
+.HorizontalBar_base_fa517 {
     display: flex;
     width: 100%;
     height: 13rem;
@@ -29,18 +29,18 @@
     position: relative;
 }
 
-.HorizontalBar_base__active_5e {
+.HorizontalBar_base__active_ad89b {
     visibility: visible;
 }
 
-.HorizontalBar_base_49 .disable,
-.HorizontalBar_base_49 .disable:hover {
+.HorizontalBar_base_fa517 .disable,
+.HorizontalBar_base_fa517 .disable:hover {
     opacity: 0.3;
     cursor: default;
 }
 
-.HorizontalBar_leftButton_5f,
-.HorizontalBar_rightButton_03 {
+.HorizontalBar_leftButton_eb8c3,
+.HorizontalBar_rightButton_f5116 {
     width: 13rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
@@ -53,27 +53,27 @@
     cursor: pointer;
 }
 
-.HorizontalBar_leftButton_5f:hover,
-.HorizontalBar_rightButton_03:hover {
+.HorizontalBar_leftButton_eb8c3:hover,
+.HorizontalBar_rightButton_f5116:hover {
     opacity: 1;
 }
 
-.HorizontalBar_leftButton_5f {
+.HorizontalBar_leftButton_eb8c3 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
 }
 
-.HorizontalBar_rightButton_03 {
+.HorizontalBar_rightButton_f5116 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
 }
 
-.HorizontalBar_track_0d {
+.HorizontalBar_track_fd3af {
     flex: 1;
     margin: 0 1rem;
     position: relative;
     cursor: pointer;
 }
 
-.HorizontalBar_thumb_fd {
+.HorizontalBar_thumb_bb7e0 {
     display: none;
     flex: 0 0 100%;
     width: 100%;
@@ -90,11 +90,11 @@
     cursor: pointer;
 }
 
-.HorizontalBar_thumb_fd:hover {
+.HorizontalBar_thumb_bb7e0:hover {
     opacity: 1;
 }
 
-.HorizontalBar_rail_32 {
+.HorizontalBar_rail_a3d9e {
     height: 0;
     border-top: 1rem solid #2f2e24;
     position: absolute;
@@ -103,26 +103,26 @@
     left: 5rem;
 }
 
-.HorizontalBar_rail_32:hover {
+.HorizontalBar_rail_a3d9e:hover {
     opacity: 0.7;
 }
 
-.HorizontalScroll_base_29 {
+.HorizontalScroll_base_a33a9 {
     width: 100%;
 }
 
-.HorizontalScroll_wrapper_1e {
+.HorizontalScroll_wrapper_b622e {
     display: flex;
     width: 100%;
     overflow-x: hidden;
 }
 
-.HorizontalScroll_defaultScrollArea_8d {
+.HorizontalScroll_defaultScrollArea_a2315 {
     width: 100%;
     margin-bottom: 7rem;
 }
 
-.VerticalBar_base_f3 {
+.VerticalBar_base_b5610 {
     display: flex;
     flex-direction: column;
     width: 13rem;
@@ -131,18 +131,18 @@
     position: relative;
 }
 
-.VerticalBar_base__active_72 {
+.VerticalBar_base__active_be260 {
     visibility: visible;
 }
 
-.VerticalBar_base_f3 .disable,
-.VerticalBar_base_f3 .disable:hover {
+.VerticalBar_base_b5610 .disable,
+.VerticalBar_base_b5610 .disable:hover {
     opacity: 0.3;
     cursor: default;
 }
 
-.VerticalBar_topButton_d7,
-.VerticalBar_bottomButton_06 {
+.VerticalBar_topButton_c2227,
+.VerticalBar_bottomButton_ef09b {
     width: 13rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
@@ -154,27 +154,27 @@
     cursor: pointer;
 }
 
-.VerticalBar_topButton_d7:hover,
-.VerticalBar_bottomButton_06:hover {
+.VerticalBar_topButton_c2227:hover,
+.VerticalBar_bottomButton_ef09b:hover {
     opacity: 1;
 }
 
-.VerticalBar_topButton_d7 {
+.VerticalBar_topButton_c2227 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
 }
 
-.VerticalBar_bottomButton_06 {
+.VerticalBar_bottomButton_ef09b {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
 }
 
-.VerticalBar_track_df {
+.VerticalBar_track_e3345 {
     flex: 1;
     margin: 1rem 0;
     position: relative;
     cursor: pointer;
 }
 
-.VerticalBar_thumb_32 {
+.VerticalBar_thumb_a34e7 {
     display: none;
     flex: 0 0 13rem;
     width: 13rem;
@@ -190,11 +190,11 @@
     cursor: pointer;
 }
 
-.VerticalBar_thumb_32:hover {
+.VerticalBar_thumb_a34e7:hover {
     opacity: 1;
 }
 
-.VerticalBar_rail_43 {
+.VerticalBar_rail_ff232 {
     width: 0;
     height: 100%;
     border-left: 1rem solid #2f2e24;
@@ -206,128 +206,128 @@
     z-index: 0;
 }
 
-.VerticalBar_rail_43:hover {
+.VerticalBar_rail_ff232:hover {
     opacity: 0.7;
 }
 
-.VerticalScroll_content_cb {
+.VerticalScroll_content_fe263 {
     height: 100%;
     overflow-y: hidden;
 }
 
-.VerticalScroll_defaultScroll_f8 {
+.VerticalScroll_defaultScroll_e27f5 {
     display: flex;
 }
 
-.VerticalScroll_bar_1e {
+.VerticalScroll_bar_b8700 {
     flex: 1;
     margin-left: 7rem;
 }
 
-.VerticalScroll_area_af {
+.VerticalScroll_area_b5a82 {
     flex: 1;
 }
 
-.FormatTextWithColorTags_blackReal_3c {
+.FormatTextWithColorTags_blackReal_ae104 {
     color: #000000;
 }
 
-.FormatTextWithColorTags_whiteReal_8a {
+.FormatTextWithColorTags_whiteReal_c12a8 {
     color: #ffffff;
 }
 
-.FormatTextWithColorTags_white_16 {
+.FormatTextWithColorTags_white_c5665 {
     color: #f2f2f7;
 }
 
-.FormatTextWithColorTags_whiteOrange_18 {
+.FormatTextWithColorTags_whiteOrange_fff65 {
     color: #fefeec;
 }
 
-.FormatTextWithColorTags_whiteSpanish_10 {
+.FormatTextWithColorTags_whiteSpanish_d24b3 {
     color: #e9e2bf;
 }
 
-.FormatTextWithColorTags_par_ca {
+.FormatTextWithColorTags_par_ee7d9 {
     color: #8c8c7e;
 }
 
-.FormatTextWithColorTags_parSecondary_8d {
+.FormatTextWithColorTags_parSecondary_a5b8c {
     color: #595950;
 }
 
-.FormatTextWithColorTags_parTertiary_a3 {
+.FormatTextWithColorTags_parTertiary_a0c09 {
     color: #37362e;
 }
 
-.FormatTextWithColorTags_red_60 {
+.FormatTextWithColorTags_red_ad70c {
     color: #ff2717;
 }
 
-.FormatTextWithColorTags_redDark_03 {
+.FormatTextWithColorTags_redDark_afb30 {
     color: #b70000;
 }
 
-.FormatTextWithColorTags_yellow_ad {
+.FormatTextWithColorTags_yellow_e47d1 {
     color: #feab34;
 }
 
-.FormatTextWithColorTags_orange_e4 {
+.FormatTextWithColorTags_orange_e08c4 {
     color: #ee7000;
 }
 
-.FormatTextWithColorTags_cream_cd {
+.FormatTextWithColorTags_cream_f2e96 {
     color: #ffdd99;
 }
 
-.FormatTextWithColorTags_brown_c8 {
+.FormatTextWithColorTags_brown_ed7be {
     color: #cbac77;
 }
 
-.FormatTextWithColorTags_greenBright_f0 {
+.FormatTextWithColorTags_greenBright_b0875 {
     color: #80d43a;
 }
 
-.FormatTextWithColorTags_green_c5 {
+.FormatTextWithColorTags_green_d0263 {
     color: #7ab300;
 }
 
-.FormatTextWithColorTags_greenDark_af {
+.FormatTextWithColorTags_greenDark_f19b8 {
     color: #497212;
 }
 
-.FormatTextWithColorTags_blueBooster_ac {
+.FormatTextWithColorTags_blueBooster_fd3be {
     color: #ccffff;
 }
 
-.FormatTextWithColorTags_blueTeamkiller_6f {
+.FormatTextWithColorTags_blueTeamkiller_fd915 {
     color: #09e2ff;
 }
 
-.FormatTextWithColorTags_cred_4e {
+.FormatTextWithColorTags_cred_fdafa {
     color: #ced9d9;
 }
 
-.FormatTextWithColorTags_gold_90 {
+.FormatTextWithColorTags_gold_ab90e {
     color: #ffc363;
 }
 
-.FormatTextWithColorTags_bond_71 {
+.FormatTextWithColorTags_bond_e83f5 {
     color: #c9c9b6;
 }
 
-.FormatTextWithColorTags_prom_dd {
+.FormatTextWithColorTags_prom_aa30c {
     color: #a29b70;
 }
 
 /* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
 
-.FormatTextWithColorTags_parNoWidth_5a {
+.FormatTextWithColorTags_parNoWidth_bf7ac {
     width: 0;
     color: #8c8c7e;
 }
 
-.App_base_d1 {
+.App_base_d9097 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -339,7 +339,7 @@
     overflow: hidden;
 }
 
-.App_title_23 {
+.App_title_b3712 {
     color: #f2f2f7;
     font-size: 24rem;
     font-weight: 700;
@@ -350,7 +350,7 @@
     margin-bottom: 8rem;
 }
 
-.App_title_icon_72 {
+.App_title_icon_f5be7 {
     width: 40rem;
     height: 40rem;
     margin-top: 5rem;
@@ -358,7 +358,7 @@
     background: url('R.images.gui.maps.icons.personal_reserves.icon_boosters') no-repeat center / contain;
 }
 
-.mediaMedium .App_title_23 {
+.mediaMedium .App_title_b3712 {
     color: #f2f2f7;
     font-size: 36rem;
     font-weight: 700;
@@ -367,7 +367,7 @@
     margin-bottom: 16rem;
 }
 
-.mediaLarge .App_title_23 {
+.mediaLarge .App_title_b3712 {
     color: #f2f2f7;
     font-size: 56rem;
     font-weight: 700;
@@ -375,11 +375,11 @@
     margin-top: calc(var(--external-padding-top) + 17rem);
 }
 
-.mediaExtraLarge .App_title_23 {
+.mediaExtraLarge .App_title_b3712 {
     margin-top: calc(var(--external-padding-top) + 19rem);
 }
 
-.App_subTitle_1f {
+.App_subTitle_b3f48 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -389,7 +389,7 @@
     margin-bottom: 20rem;
 }
 
-.mediaMedium .App_subTitle_1f {
+.mediaMedium .App_subTitle_b3f48 {
     color: #8c8c7e;
     font-size: 16rem;
     font-weight: 400;
@@ -398,44 +398,44 @@
     margin-bottom: 32rem;
 }
 
-.mediaLarge .App_subTitle_1f {
+.mediaLarge .App_subTitle_b3f48 {
     margin-bottom: 60rem;
 }
 
-.App_subTitle_store_21 {
+.App_subTitle_store_a9923 {
     border-bottom: 1rem solid #ee7000;
     color: #ee7000;
     cursor: pointer;
 }
 
-.App_pageContent_b8 {
+.App_pageContent_e0f0b {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
 }
 
-.App_groupWrapper_e9 {
+.App_groupWrapper_fca15 {
     padding-bottom: 0;
 }
 
-.mediaMedium .App_groupWrapper_e9 {
+.mediaMedium .App_groupWrapper_fca15 {
     padding-bottom: 10rem;
 }
 
-.App_groupWrapper_clan_bc {
+.App_groupWrapper_clan_bb47b {
     margin-left: 15rem;
 }
 
-.App_groupWrapper_clan_bc + .App_groupWrapper_clan_bc {
+.App_groupWrapper_clan_bb47b + .App_groupWrapper_clan_bb47b {
     margin-left: 0rem;
 }
 
-.App_scrollWrapper_5c {
+.App_scrollWrapper_f3048 {
     max-width: 80%;
     overflow: hidden;
 }
 
-.App_footerWrapper_bf {
+.App_footerWrapper_d581d {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -444,7 +444,7 @@
     padding-bottom: var(--external-padding-bottom);
 }
 
-.App_footer_f2 {
+.App_footer_bd74b {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -453,11 +453,11 @@
     min-height: 30rem;
 }
 
-.mediaLarge .App_footer_f2 {
+.mediaLarge .App_footer_bd74b {
     bottom: -20rem;
 }
 
-.App_footer_icon_c4 {
+.App_footer_icon_c3a67 {
     width: 64rem;
     height: 76rem;
     margin-top: 3rem;
@@ -465,15 +465,15 @@
     background: url('R.images.gui.maps.icons.personal_reserves.icon_red_boosters') no-repeat center / contain;
 }
 
-.App_footer_text_ea {
+.App_footer_text_dd99b {
     color: #e9e2bf;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
 }
 
-.App_footer_amount_62,
-.App_footer_timer_57 {
+.App_footer_amount_a6cc1,
+.App_footer_timer_bc11b {
     display: flex;
     align-items: center;
     color: #f2f2f7;
@@ -487,19 +487,19 @@
         0px 0px 4px rgba(255, 127, 0, 0.25);
 }
 
-.App_footer_timer_57 {
+.App_footer_timer_bc11b {
     width: 75rem;
     position: relative;
 }
 
-.App_footer_timerIcon_2e {
+.App_footer_timerIcon_d3f2d {
     width: 14rem;
     height: 14rem;
     margin-right: 4rem;
     background: url('R.images.gui.maps.icons.personal_reserves.clock_icon_14x14') no-repeat center / contain;
 }
 
-.App_footer_timerGlow_df {
+.App_footer_timerGlow_ca5fd {
     width: 380rem;
     height: 225rem;
     background: url('R.images.gui.maps.icons.personal_reserves.footer_timer_glow') no-repeat center / contain;
@@ -509,14 +509,14 @@
     z-index: -1;
 }
 
-.App_subFooter_74 {
+.App_subFooter_b477e {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.App_subFooter_infoIcon_72 {
+.App_subFooter_infoIcon_bb865 {
     width: 16rem;
     height: 16rem;
     margin-right: 5rem;
@@ -524,20 +524,20 @@
     background: url('R.images.gui.maps.icons.personal_reserves.info') no-repeat center / contain;
 }
 
-.App_subFooter_text_2f {
+.App_subFooter_text_dee3f {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.App_subFooter_depot_58 {
+.App_subFooter_depot_e24a5 {
     border-bottom: 1rem solid #e9e2bf;
     color: #e9e2bf;
     cursor: pointer;
 }
 
-.App_subFooter_depotIcon_da {
+.App_subFooter_depotIcon_c3791 {
     display: block;
     width: 30rem;
     max-height: 24rem;
@@ -546,38 +546,38 @@
     background: url('R.images.gui.maps.icons.buttons.icon_table_comparison_inhangar') center center / cover;
 }
 
-.Counter_base_9e {
+.Counter_base_b457c {
     display: flex;
     min-width: 14rem;
     height: 14rem;
     position: relative;
     z-index: 0;
-    animation: Counter_show_be ease-in-out forwards;
+    animation: Counter_show_a62c2 ease-in-out forwards;
 }
 
-.Counter_base__big_19 {
+.Counter_base__big_d6a57 {
     min-width: 21rem;
     height: 21rem;
 }
 
-.Counter_base__small_3b {
+.Counter_base__small_ea547 {
     min-width: 13rem;
     height: 13rem;
 }
 
-.Counter_base__empty_98 {
+.Counter_base__empty_c2ad2 {
     min-width: 6rem;
     height: 6rem;
 }
 
-.Counter_base__animated_40 {
+.Counter_base__animated_fb5ef {
     animation-duration: 0.2s;
 }
 
-.Counter_base__hidden_56 {
-    animation-name: Counter_hide_b6;
+.Counter_base__hidden_b1e71 {
+    animation-name: Counter_hide_d1bf0;
 }
-.Counter_bg_74 {
+.Counter_bg_f25ac {
     border: 1rem solid #fe4e0f;
     border-radius: 7rem;
     box-shadow:
@@ -592,13 +592,13 @@
     left: 0;
     z-index: -1;
 }
-.Counter_base__big_19 .Counter_bg_74 {
+.Counter_base__big_d6a57 .Counter_bg_f25ac {
     border-radius: 11rem;
 }
-.Counter_base__small_3b .Counter_bg_74 {
+.Counter_base__small_ea547 .Counter_bg_f25ac {
     border-radius: 7rem;
 }
-.Counter_value_3e {
+.Counter_value_d1de3 {
     display: flex;
     padding: 0 4rem;
     color: #fefeec;
@@ -606,36 +606,36 @@
     line-height: 13rem;
     white-space: nowrap;
 }
-.Counter_base__big_19 .Counter_value_3e {
+.Counter_base__big_d6a57 .Counter_value_d1de3 {
     padding: 0 7rem;
     font-size: 14rem;
     line-height: 20rem;
 }
-.Counter_base__small_3b .Counter_value_3e {
+.Counter_base__small_ea547 .Counter_value_d1de3 {
     font-size: 9rem;
     line-height: 12rem;
 }
-.Counter_value__text_d6 {
+.Counter_value__text_bb007 {
     padding: 0 7rem;
 }
-.Counter_base__big_19 .Counter_value__text_d6 {
+.Counter_base__big_d6a57 .Counter_value__text_bb007 {
     padding: 0 10rem;
 }
-.Counter_base__small_3b .Counter_value__text_d6 {
+.Counter_base__small_ea547 .Counter_value__text_bb007 {
     padding: 0 5rem;
     font-size: 10rem;
 }
-.Counter_base__pattern_71 .Counter_value_3e {
+.Counter_base__pattern_d1fff .Counter_value_d1de3 {
     display: none;
 }
-.Counter_plus_15 {
+.Counter_plus_a405c {
     position: relative;
     top: -1rem;
 }
-.Counter_pattern_83 {
+.Counter_pattern_a4be2 {
     display: none;
 }
-.Counter_base__pattern_71 .Counter_pattern_83 {
+.Counter_base__pattern_d1fff .Counter_pattern_a4be2 {
     display: block;
     border-radius: 50%;
     background-image: url('R.images.gui.maps.icons.components.counter.pattern');
@@ -646,7 +646,7 @@
     bottom: 0;
     left: 0;
 }
-@keyframes Counter_show_be {
+@keyframes Counter_show_a62c2 {
     0% {
         transform: scale(0);
     }
@@ -655,7 +655,7 @@
         transform: scale(1);
     }
 }
-@keyframes Counter_hide_b6 {
+@keyframes Counter_hide_d1bf0 {
     0% {
         transform: scale(1);
     }
@@ -665,12 +665,12 @@
     }
 }
 
-.Currency_base_57 {
+.Currency_base_ed02c {
     display: flex;
     align-items: center;
     position: relative;
 }
-.Currency_icon_c5 {
+.Currency_icon_d34e3 {
     width: 16rem;
     height: 16rem;
     background-repeat: no-repeat;
@@ -678,257 +678,257 @@
     position: relative;
     z-index: 1;
 }
-.Currency_base__small_af .Currency_icon_c5,
-.Currency_base__big_bc .Currency_icon_c5,
-.Currency_base__large_65 .Currency_icon_c5,
-.Currency_base__extraLarge_4d .Currency_icon_c5 {
+.Currency_base__small_af876 .Currency_icon_d34e3,
+.Currency_base__big_f6388 .Currency_icon_d34e3,
+.Currency_base__large_fb228 .Currency_icon_d34e3,
+.Currency_base__extraLarge_d0b11 .Currency_icon_d34e3 {
     transform: translateY(3rem);
 }
-.Currency_icon__credits-small_9b {
+.Currency_icon__credits-small_cb645 {
     background-image: url('R.images.gui.maps.icons.library.CreditsIcon_2');
 }
-.Currency_icon__credits-big_96 {
+.Currency_icon__credits-big_bb614 {
     background-image: url('R.images.gui.maps.icons.library.CreditsIcon_1');
 }
-.Currency_icon__credits-large_ac {
+.Currency_icon__credits-large_b65af {
     width: 48rem;
     height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_silver');
 }
-.Currency_base__large_65 .Currency_icon__credits-large_ac {
+.Currency_base__large_fb228 .Currency_icon__credits-large_b65af {
     transform: translateY(4rem);
 }
-.Currency_icon__credits-extraLarge_16 {
+.Currency_icon__credits-extraLarge_a4a53 {
     width: 80rem;
     height: 80rem;
     margin-right: -2rem;
     background-image: url('R.images.gui.maps.icons.library.credits_icon_80x80');
 }
-.Currency_icon__gold-small_86 {
+.Currency_icon__gold-small_eee32 {
     background-image: url('R.images.gui.maps.icons.library.GoldIcon_2');
 }
-.Currency_base__small_af .Currency_icon__gold-small_86 {
+.Currency_base__small_af876 .Currency_icon__gold-small_eee32 {
     transform: translateY(2rem);
 }
-.Currency_icon__gold-big_15 {
+.Currency_icon__gold-big_e419a {
     background-image: url('R.images.gui.maps.icons.library.GoldIcon_1');
 }
-.Currency_base__big_bc .Currency_icon__gold-big_15 {
+.Currency_base__big_f6388 .Currency_icon__gold-big_e419a {
     transform: translateY(4rem);
 }
-.Currency_icon__gold-large_36 {
+.Currency_icon__gold-large_c3a99 {
     width: 48rem;
     height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_gold');
 }
-.Currency_base__large_65 .Currency_icon__gold-large_36 {
+.Currency_base__large_fb228 .Currency_icon__gold-large_c3a99 {
     transform: translateY(4rem);
 }
-.Currency_icon__gold-extraLarge_a0 {
+.Currency_icon__gold-extraLarge_f2852 {
     width: 80rem;
     height: 80rem;
     background-image: url('R.images.gui.maps.icons.library.gold_icon_80x80');
 }
-.Currency_icon__crystal-small_27 {
+.Currency_icon__crystal-small_d8644 {
     background-image: url('R.images.gui.maps.icons.library.CrystalIcon_2');
 }
-.Currency_base__small_af .Currency_icon__crystal-small_27 {
+.Currency_base__small_af876 .Currency_icon__crystal-small_d8644 {
     transform: translateY(2rem);
 }
-.Currency_icon__crystal-big_cd {
+.Currency_icon__crystal-big_f2873 {
     width: 23rem;
     height: 22rem;
     background-image: url('R.images.gui.maps.icons.library.crystal_23x22');
 }
-.Currency_base__big_bc .Currency_icon__crystal-big_cd {
+.Currency_base__big_f6388 .Currency_icon__crystal-big_f2873 {
     transform: translateY(4rem);
 }
-.Currency_icon__crystal-large_d3 {
+.Currency_icon__crystal-large_cf068 {
     width: 48rem;
     height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_bonds');
 }
-.Currency_icon__crystal-extraLarge_09 {
+.Currency_icon__crystal-extraLarge_a9843 {
     width: 80rem;
     height: 80rem;
     background-image: url('R.images.gui.maps.icons.library.crystal_80x80');
 }
-.Currency_base__extraLarge_4d .Currency_icon__crystal-extraLarge_09 {
+.Currency_base__extraLarge_d0b11 .Currency_icon__crystal-extraLarge_a9843 {
     transform: translateY(7rem);
 }
-.Currency_icon__xp-small_a7 {
+.Currency_icon__xp-small_f3b46 {
     background-image: url('R.images.gui.maps.icons.library.NormalXpIcon');
 }
-.Currency_base__small_af .Currency_icon__xp-small_a7 {
+.Currency_base__small_af876 .Currency_icon__xp-small_f3b46 {
     transform: translateY(1rem);
 }
-.Currency_icon__xp-big_97 {
+.Currency_icon__xp-big_c984a {
     width: 23rem;
     height: 22rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.xpIcon_23x22');
 }
-.Currency_base__big_bc .Currency_icon__xp-big_97 {
+.Currency_base__big_f6388 .Currency_icon__xp-big_c984a {
     transform: translateY(2rem);
 }
-.Currency_icon__xp-large_6b {
+.Currency_icon__xp-large_e9a09 {
     width: 48rem;
     height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.exp');
 }
-.Currency_icon__xp-extraLarge_67 {
+.Currency_icon__xp-extraLarge_f90f7 {
     width: 80rem;
     height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.xp_tank_icon_80x80');
 }
-.Currency_icon__freeXP-small_ca {
+.Currency_icon__freeXP-small_bcda1 {
     background-image: url('R.images.gui.maps.icons.library.freeXPIcon16x16');
 }
-.Currency_base__small_af .Currency_icon__freeXP-small_ca {
+.Currency_base__small_af876 .Currency_icon__freeXP-small_bcda1 {
     transform: translateY(1rem);
 }
-.Currency_icon__freeXP-big_21 {
+.Currency_icon__freeXP-big_eb64e {
     width: 24rem;
     height: 24rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.freeXPIconBig24x24');
 }
-.Currency_icon__freeXP-large_c8 {
+.Currency_icon__freeXP-large_e46b0 {
     width: 48rem;
     height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.freeExp');
 }
-.Currency_icon__freeXP-extraLarge_58 {
+.Currency_icon__freeXP-extraLarge_e41b1 {
     width: 80rem;
     height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.free_xp_icon_80x80');
 }
-.Currency_base__extraLarge_4d .Currency_icon__freeXP-extraLarge_58 {
+.Currency_base__extraLarge_d0b11 .Currency_icon__freeXP-extraLarge_e41b1 {
     transform: translateY(4rem);
 }
-.Currency_icon__eliteXP-small_45 {
+.Currency_icon__eliteXP-small_c4a51 {
     background-image: url('R.images.gui.maps.icons.library.EliteXpIcon-2');
 }
-.Currency_base__small_af .Currency_icon__eliteXP-small_45 {
+.Currency_base__small_af876 .Currency_icon__eliteXP-small_c4a51 {
     transform: translateY(1rem);
 }
-.Currency_icon__eliteXP-big_c0 {
+.Currency_icon__eliteXP-big_eceb0 {
     width: 24rem;
     height: 24rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.EliteXpIconBig');
 }
-.Currency_icon__eliteXP-large_1b {
+.Currency_icon__eliteXP-large_e35ab {
     width: 48rem;
     height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.icons.library.elite_exp_48x48');
 }
-.Currency_icon__eliteXP-extraLarge_9b {
+.Currency_icon__eliteXP-extraLarge_a17d5 {
     width: 80rem;
     height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.elite_exp_80x80');
 }
-.Currency_base__extraLarge_4d .Currency_icon__eliteXP-extraLarge_9b {
+.Currency_base__extraLarge_d0b11 .Currency_icon__eliteXP-extraLarge_a17d5 {
     transform: translateY(4rem);
 }
-.Currency_icon__equipCoin-small_32 {
+.Currency_icon__equipCoin-small_d3b9a {
     width: 16rem;
     height: 16rem;
     margin-right: -2rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoin_1');
 }
-.Currency_base__small_af .Currency_icon__equipCoin-small_32 {
+.Currency_base__small_af876 .Currency_icon__equipCoin-small_d3b9a {
     transform: translateX(-1rem) translateY(1rem);
 }
-.Currency_icon__equipCoin-big_79 {
+.Currency_icon__equipCoin-big_c34e1 {
     width: 24rem;
     height: 24rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoinBig');
 }
-.Currency_base__big_bc .Currency_icon__equipCoin-big_79 {
+.Currency_base__big_f6388 .Currency_icon__equipCoin-big_c34e1 {
     transform: translateX(-5rem) translateY(3rem);
 }
-.Currency_icon__equipCoin-large_2c {
+.Currency_icon__equipCoin-large_b1b5e {
     width: 48rem;
     height: 48rem;
     margin-right: 2rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.equipCoin');
 }
-.Currency_icon__equipCoin-extraLarge_8a {
+.Currency_icon__equipCoin-extraLarge_a7b90 {
     width: 80rem;
     height: 80rem;
     margin-right: 8rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoin_icon_80x80');
 }
-.Currency_base__extraLarge_4d .Currency_icon__equipCoin-extraLarge_8a {
+.Currency_base__extraLarge_d0b11 .Currency_icon__equipCoin-extraLarge_a7b90 {
     transform: translateX(2rem) translateY(4rem);
 }
-.Currency_value_e1 {
+.Currency_value_bb176 {
     /* font-size inherit does not work here, so 1em means the size does not change */
     /* stylelint-disable-next-line */
     font-size: 1em;
     position: relative;
     z-index: 2;
 }
-.Currency_base__small_af .Currency_value_e1 {
+.Currency_base__small_af876 .Currency_value_bb176 {
     padding-right: 2rem;
 }
-.Currency_base__big_bc .Currency_value_e1 {
+.Currency_base__big_f6388 .Currency_value_bb176 {
     padding-right: 5rem;
     font-size: 24rem;
     font-weight: 700;
 }
-.Currency_base__big_bc .Currency_value_e1 + .Currency_icon_c5 {
+.Currency_base__big_f6388 .Currency_value_bb176 + .Currency_icon_d34e3 {
     font-size: 24rem;
 }
-.Currency_base__large_65 .Currency_value_e1 {
+.Currency_base__large_fb228 .Currency_value_bb176 {
     font-size: 36rem;
     font-weight: 700;
 }
-.Currency_base__large_65 .Currency_value_e1 + .Currency_icon_c5 {
+.Currency_base__large_fb228 .Currency_value_bb176 + .Currency_icon_d34e3 {
     font-size: 36rem;
 }
-.Currency_base__extraLarge_4d .Currency_value_e1 {
+.Currency_base__extraLarge_d0b11 .Currency_value_bb176 {
     font-size: 56rem;
     font-weight: 700;
 }
-.Currency_value__freeXP_cb {
+.Currency_value__freeXP_db401 {
     color: #f2f2f7;
 }
-.Currency_value__credits_76 {
+.Currency_value__credits_c98c5 {
     color: #ced9d9;
 }
-.Currency_value__gold_dd {
+.Currency_value__gold_b8214 {
     color: #ffc363;
 }
-.Currency_value__xp_b0,
-.Currency_value__crystal_19,
-.Currency_value__equipCoin_d0,
-.Currency_value__eliteXP_62 {
+.Currency_value__xp_eda0a,
+.Currency_value__crystal_cf72e,
+.Currency_value__equipCoin_cb08d,
+.Currency_value__eliteXP_de450 {
     color: #c9c9b6;
 }
-.Currency_base__small_af .Currency_value__notEnough_56 {
+.Currency_base__small_af876 .Currency_value__notEnough_db10a {
     color: #ff2717;
 }
-.Currency_base__big_bc .Currency_value__notEnough_56 {
+.Currency_base__big_f6388 .Currency_value__notEnough_db10a {
     color: #b70000;
 }
-.Currency_base__large_65 .Currency_value__notEnough_56 {
+.Currency_base__large_fb228 .Currency_value__notEnough_db10a {
     color: #b70000;
 }
-.Currency_base__extraLarge_4d .Currency_value__notEnough_56 {
+.Currency_base__extraLarge_d0b11 .Currency_value__notEnough_db10a {
     color: #b70000;
 }
-.Currency_stock_87 {
+.Currency_stock_bffbc {
     height: 13rem;
     color: #ffdd99;
     font-size: 13rem;
@@ -937,25 +937,25 @@
     z-index: 0;
     pointer-events: none;
 }
-.Currency_stock__indent_a1 {
+.Currency_stock__indent_c4c0d {
     margin-left: 2rem;
 }
-.Currency_base__small_af .Currency_stock_87 {
+.Currency_base__small_af876 .Currency_stock_bffbc {
     transform: translateY(0rem);
 }
-.Currency_base__big_bc .Currency_stock_87 {
+.Currency_base__big_f6388 .Currency_stock_bffbc {
     transform: translateY(4rem);
 }
-.Currency_base__large_65 .Currency_stock_87 {
+.Currency_base__large_fb228 .Currency_stock_bffbc {
     transform: translateY(10rem);
 }
-.Currency_base__extraLarge_4d .Currency_stock_87 {
+.Currency_base__extraLarge_d0b11 .Currency_stock_bffbc {
     transform: translateY(18rem);
 }
-.Currency_stock__interactive_93 {
+.Currency_stock__interactive_e78a9 {
     pointer-events: auto;
 }
-.Currency_stockBackground_82 {
+.Currency_stockBackground_c8ab1 {
     width: 80rem;
     height: 45rem;
     background-repeat: no-repeat;
@@ -967,7 +967,7 @@
     transform: translateY(17rem);
 }
 
-.Quantity_base_e7 {
+.Quantity_base_dac90 {
     color: #8c8c7e;
     font-size: 16rem;
     font-weight: 400;
@@ -978,7 +978,7 @@
     text-shadow: 0 0 8rem rgba(0, 0, 0, 0.5);
 }
 
-.Quantity_base__highlighted_3d {
+.Quantity_base__highlighted_df4e3 {
     color: #ffdd99;
     text-shadow:
         0px 0px 15px #e52,
@@ -986,11 +986,11 @@
         0px 0px 4px rgba(255, 127, 0, 0.25);
 }
 
-.Quantity_icon_e5 {
+.Quantity_icon_a2d90 {
     display: none;
 }
 
-.mediaMedium .Quantity_icon_e5 {
+.mediaMedium .Quantity_icon_a2d90 {
     display: block;
     width: 30rem;
     height: 24rem;
@@ -998,15 +998,15 @@
     background: url('R.images.gui.maps.icons.buttons.icon_table_comparison_inhangar') center center / cover;
 }
 
-.Quantity_price_5f .Quantity_price_icon_83 {
+.Quantity_price_c0967 .Quantity_price_icon_dd315 {
     transform: none;
 }
 
-.Quantity_price__discount_41 {
+.Quantity_price__discount_b2a1f {
     margin-right: 14rem;
 }
 
-.ReserveCard_base_37 {
+.ReserveCard_base_b67bb {
     --card-width: 190rem;
     --card-height: 190rem;
     width: var(--card-width);
@@ -1017,58 +1017,58 @@
     position: relative;
 }
 
-.mediaMedium .ReserveCard_base_37 {
+.mediaMedium .ReserveCard_base_b67bb {
     --card-width: 230rem;
     --card-height: 230rem;
 }
 
-.ReserveCard_base__tooltipSize_15 {
+.ReserveCard_base__tooltipSize_c0077 {
     --card-width: 100rem;
     --card-height: 100rem;
     margin-right: 10rem;
 }
 
-.ReserveCard_base__doubleSize_fc {
+.ReserveCard_base__doubleSize_eba31 {
     --card-height: 385rem;
 }
 
-.mediaMedium .ReserveCard_base__doubleSize_fc {
+.mediaMedium .ReserveCard_base__doubleSize_eba31 {
     --card-height: 475rem;
 }
 
-.ReserveCard_base__clan_64 .ReserveCard_activeLight_be {
+.ReserveCard_base__clan_cf992 .ReserveCard_activeLight_c2929 {
     background: url('R.images.gui.maps.icons.personal_reserves.activated_light_clan_activation') no-repeat center
         center / cover;
 }
 
-.ReserveCard_base__clan_64.ReserveCard_base__tooltipSize_15 .ReserveCard_boosterIcon_37 {
+.ReserveCard_base__clan_cf992.ReserveCard_base__tooltipSize_c0077 .ReserveCard_boosterIcon_eaef4 {
     width: 80rem;
     height: 80rem;
 }
 
-.ReserveCard_base__expiringToday_d3 {
+.ReserveCard_base__expiringToday_ad918 {
     border: 1rem solid rgba(255, 170, 51, 0.34);
 }
 
-.ReserveCard_base__inactive_20,
-.ReserveCard_base__disabled_9c {
+.ReserveCard_base__inactive_a6030,
+.ReserveCard_base__disabled_b536b {
     border: 1rem solid rgba(255, 255, 255, 0.1);
 }
 
-.ReserveCard_base__inactive_20 .ReserveCard_timerContainer_65,
-.ReserveCard_base__disabled_9c .ReserveCard_timerContainer_65 {
+.ReserveCard_base__inactive_a6030 .ReserveCard_timerContainer_d80a4,
+.ReserveCard_base__disabled_b536b .ReserveCard_timerContainer_d80a4 {
     visibility: hidden;
 }
 
-.ReserveCard_base__inactive_20.ReserveCard_base__clan_64 .ReserveCard_boosterIcon_37 {
+.ReserveCard_base__inactive_a6030.ReserveCard_base__clan_cf992 .ReserveCard_boosterIcon_eaef4 {
     opacity: 0.25;
 }
 
-.ReserveCard_base__inactive_20:hover {
+.ReserveCard_base__inactive_a6030:hover {
     cursor: pointer;
 }
 
-.ReserveCard_base__inactive_20:hover::before {
+.ReserveCard_base__inactive_a6030:hover::before {
     border: 1rem solid rgba(0, 0, 0, 0.2);
     border-radius: 2rem;
     content: '';
@@ -1079,11 +1079,11 @@
     left: -2rem;
 }
 
-.ReserveCard_base__inactive_20:hover .ReserveCard_boosterIcon_37 {
+.ReserveCard_base__inactive_a6030:hover .ReserveCard_boosterIcon_eaef4 {
     opacity: 0.2;
 }
 
-.ReserveCard_base__inactive_20:hover .ReserveCard_overlay_1c {
+.ReserveCard_base__inactive_a6030:hover .ReserveCard_overlay_fd8c2 {
     display: flex;
     border-radius: 2rem;
     border-image: radial-gradient(
@@ -1098,45 +1098,45 @@
     box-shadow: 0rem 0rem 25rem 0rem rgba(255, 255, 255, 0.1) inset;
 }
 
-.ReserveCard_base__inactive_20:hover .ReserveCard_plusIcon_27 {
+.ReserveCard_base__inactive_a6030:hover .ReserveCard_plusIcon_d88fc {
     background: url('R.images.gui.maps.icons.personal_reserves.plus_icon_hover') center center / cover;
 }
 
-.ReserveCard_base__disabled_9c {
+.ReserveCard_base__disabled_b536b {
     opacity: 0.5;
 }
 
-.ReserveCard_base__activatedAnimation_aa .ReserveCard_cardFill_15 {
+.ReserveCard_base__activatedAnimation_a6d49 .ReserveCard_cardFill_f4012 {
     transform-origin: bottom center;
-    animation: ReserveCard_fillIn_2b 0.6s;
+    animation: ReserveCard_fillIn_f2147 0.6s;
     animation-fill-mode: forwards;
 }
 
-.ReserveCard_base__activatedAnimation_aa .ReserveCard_cardFill_border_c0 {
-    animation: ReserveCard_borderBrightness_e5 1s;
+.ReserveCard_base__activatedAnimation_a6d49 .ReserveCard_cardFill_border_e156d {
+    animation: ReserveCard_borderBrightness_bc608 1s;
 }
 
-.ReserveCard_base__activatedAnimation_aa .ReserveCard_activeLight_be,
-.ReserveCard_base__activatedAnimation_aa .ReserveCard_activeLight_border_97 {
-    animation: ReserveCard_timerSpark_2f 0.3s;
+.ReserveCard_base__activatedAnimation_a6d49 .ReserveCard_activeLight_c2929,
+.ReserveCard_base__activatedAnimation_a6d49 .ReserveCard_activeLight_border_e71f1 {
+    animation: ReserveCard_timerSpark_fb37a 0.3s;
 }
 
-.ReserveCard_base__activatedAnimation_aa .ReserveCard_timerContainer_65,
-.ReserveCard_base__activatedAnimation_aa .ReserveCard_boosterIcon_37 {
-    animation: ReserveCard_scaleUpDown_74 0.6s;
+.ReserveCard_base__activatedAnimation_a6d49 .ReserveCard_timerContainer_d80a4,
+.ReserveCard_base__activatedAnimation_a6d49 .ReserveCard_boosterIcon_eaef4 {
+    animation: ReserveCard_scaleUpDown_e2a9b 0.6s;
 }
 
-.ReserveCard_base__activatedAnimation_aa .ReserveCard_timerContainer_65 {
+.ReserveCard_base__activatedAnimation_a6d49 .ReserveCard_timerContainer_d80a4 {
     opacity: 0;
-    animation: ReserveCard_fadeIn_50 0.3s;
+    animation: ReserveCard_fadeIn_a81c6 0.3s;
     animation-fill-mode: forwards;
 }
 
-.ReserveCard_base__zeroTime_c0 .ReserveCard_timerContainer_65 {
-    animation: ReserveCard_fadeIn_50 1s alternate infinite;
+.ReserveCard_base__zeroTime_b8c2a .ReserveCard_timerContainer_d80a4 {
+    animation: ReserveCard_fadeIn_a81c6 1s alternate infinite;
 }
 
-.ReserveCard_base__gradient_f3 {
+.ReserveCard_base__gradient_a3097 {
     border: 1px solid #ffb266;
     border-radius: 2px;
     box-shadow: 0px 0px 30px 0px rgba(255, 122, 0, 0.3) inset;
@@ -1144,15 +1144,15 @@
     position: relative;
 }
 
-.ReserveCard_base_37 + .ReserveCard_base_37 {
+.ReserveCard_base_b67bb + .ReserveCard_base_b67bb {
     margin-top: 5rem;
 }
 
-.mediaMedium .ReserveCard_base_37 + .ReserveCard_base_37 {
+.mediaMedium .ReserveCard_base_b67bb + .ReserveCard_base_b67bb {
     margin-top: 15rem;
 }
 
-.ReserveCard_boosterIcon_37 {
+.ReserveCard_boosterIcon_eaef4 {
     width: 180rem;
     height: 135rem;
     background-repeat: no-repeat;
@@ -1165,17 +1165,17 @@
     transform: translate(-50%, -50%);
 }
 
-.mediaMedium .ReserveCard_boosterIcon_37 {
+.mediaMedium .ReserveCard_boosterIcon_eaef4 {
     width: 232rem;
     height: 174rem;
 }
 
-.ReserveCard_base__tooltipSize_15 .ReserveCard_boosterIcon_37 {
+.ReserveCard_base__tooltipSize_c0077 .ReserveCard_boosterIcon_eaef4 {
     width: 80rem;
     height: 80rem;
 }
 
-.ReserveCard_disabledPattern_5d {
+.ReserveCard_disabledPattern_ddb41 {
     width: 100%;
     height: 100%;
     background: url('R.images.gui.maps.icons.personal_reserves.bg_fill_disabled') center center;
@@ -1184,7 +1184,7 @@
     left: 0;
 }
 
-.ReserveCard_overlay_1c {
+.ReserveCard_overlay_fd8c2 {
     display: none;
     width: 100%;
     height: 100%;
@@ -1193,8 +1193,8 @@
     left: 1rem;
 }
 
-.ReserveCard_overlayButton_c6,
-.ReserveCard_overlayClanButton_af {
+.ReserveCard_overlayButton_d0f5d,
+.ReserveCard_overlayClanButton_ddfc7 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1209,13 +1209,13 @@
     z-index: 999;
 }
 
-.ReserveCard_overlayButton_c6.ReserveCard_overlayClanButton_af,
-.ReserveCard_overlayClanButton_af.ReserveCard_overlayClanButton_af {
+.ReserveCard_overlayButton_d0f5d.ReserveCard_overlayClanButton_ddfc7,
+.ReserveCard_overlayClanButton_ddfc7.ReserveCard_overlayClanButton_ddfc7 {
     text-shadow: 0px 0px 14px rgba(255, 255, 255, 0.5);
 }
 
-.ReserveCard_overlayButton_light_39,
-.ReserveCard_overlayClanButton_light_02 {
+.ReserveCard_overlayButton_light_d8bff,
+.ReserveCard_overlayClanButton_light_cbe79 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1228,12 +1228,12 @@
     transform: translate(-50%, -50%);
 }
 
-.ReserveCard_overlayButton_icon_89 {
+.ReserveCard_overlayButton_icon_d4a44 {
     width: 48rem;
     height: 48rem;
 }
 
-.ReserveCard_cardContent_98 {
+.ReserveCard_cardContent_e44b0 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1244,22 +1244,22 @@
     z-index: 3;
 }
 
-.ReserveCard_cardContent_quantity_32 {
+.ReserveCard_cardContent_quantity_d6db2 {
     position: absolute;
     top: 7rem;
     right: 14rem;
 }
 
-.ReserveCard_base__tooltipSize_15 .ReserveCard_cardContent_quantity_32 {
+.ReserveCard_base__tooltipSize_c0077 .ReserveCard_cardContent_quantity_d6db2 {
     top: 3rem;
     right: 8rem;
 }
 
-.ReserveCard_base__tooltipSize_15.ReserveCard_base__active_7e .ReserveCard_cardContent_quantity_32 {
+.ReserveCard_base__tooltipSize_c0077.ReserveCard_base__active_de8c2 .ReserveCard_cardContent_quantity_d6db2 {
     display: none;
 }
 
-.ReserveCard_cardContent_expiringQuantity_a6 {
+.ReserveCard_cardContent_expiringQuantity_c6933 {
     color: #fefeec;
     font-size: 15rem;
     font-weight: 700;
@@ -1273,16 +1273,16 @@
     right: 14rem;
 }
 
-.ReserveCard_base__tooltipSize_15 .ReserveCard_cardContent_expiringQuantity_a6 {
+.ReserveCard_base__tooltipSize_c0077 .ReserveCard_cardContent_expiringQuantity_c6933 {
     top: 20rem;
     right: 8rem;
 }
 
-.ReserveCard_base__tooltipSize_15.ReserveCard_base__active_7e .ReserveCard_cardContent_expiringQuantity_a6 {
+.ReserveCard_base__tooltipSize_c0077.ReserveCard_base__active_de8c2 .ReserveCard_cardContent_expiringQuantity_c6933 {
     display: none;
 }
 
-.ReserveCard_plusIcon_27 {
+.ReserveCard_plusIcon_d88fc {
     width: 48rem;
     height: 48rem;
     background: url('R.images.gui.maps.icons.personal_reserves.plus_icon_small') center center / cover;
@@ -1291,11 +1291,11 @@
     right: 0;
 }
 
-.ReserveCard_base__tooltipSize_15 .ReserveCard_plusIcon_27 {
+.ReserveCard_base__tooltipSize_c0077 .ReserveCard_plusIcon_d88fc {
     display: none;
 }
 
-.ReserveCard_cardFill_15 {
+.ReserveCard_cardFill_f4012 {
     width: var(--card-width);
     height: var(--card-height);
     clip-path: inset(calc(100% - var(--fillPercentage)) 0 0 0);
@@ -1303,7 +1303,7 @@
     z-index: 1;
 }
 
-.ReserveCard_cardFill_pattern_55 {
+.ReserveCard_cardFill_pattern_a4c3c {
     width: calc(var(--card-width) - 4rem);
     height: calc(var(--card-height) - 4rem);
     /* intentionally no cover*/
@@ -1313,7 +1313,7 @@
     left: 2rem;
 }
 
-.ReserveCard_cardFill_borderTop_4f {
+.ReserveCard_cardFill_borderTop_b5ac3 {
     height: 1rem;
     background: linear-gradient(
         90deg,
@@ -1327,7 +1327,7 @@
     left: 2rem;
 }
 
-.ReserveCard_timerContainer_65 {
+.ReserveCard_timerContainer_d80a4 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1344,7 +1344,7 @@
     line-height: 1.15;
 }
 
-.mediaMedium .ReserveCard_timerContainer_65 {
+.mediaMedium .ReserveCard_timerContainer_d80a4 {
     top: 12rem;
     color: #fefeec;
     font-size: 22rem;
@@ -1352,7 +1352,7 @@
     line-height: 1.2;
 }
 
-.ReserveCard_base__tooltipSize_15 .ReserveCard_timerContainer_65 {
+.ReserveCard_base__tooltipSize_c0077 .ReserveCard_timerContainer_d80a4 {
     color: #fefeec;
     font-size: 14rem;
     font-weight: 700;
@@ -1360,7 +1360,7 @@
     top: 0;
 }
 
-.ReserveCard_timerContainer_icon_c9 {
+.ReserveCard_timerContainer_icon_dbd48 {
     width: 16rem;
     height: 16rem;
     margin-right: 4rem;
@@ -1369,23 +1369,23 @@
     position: relative;
 }
 
-.mediaMedium .ReserveCard_timerContainer_icon_c9 {
+.mediaMedium .ReserveCard_timerContainer_icon_dbd48 {
     top: 2rem;
 }
 
-.ReserveCard_base__tooltipSize_15 .ReserveCard_timerContainer_icon_c9 {
+.ReserveCard_base__tooltipSize_c0077 .ReserveCard_timerContainer_icon_dbd48 {
     display: none;
 }
 
-.ReserveCard_timerContainer_timer_44 {
+.ReserveCard_timerContainer_timer_e503a {
     min-width: 30rem;
 }
 
-.mediaMedium .ReserveCard_timerContainer_timer_44 {
+.mediaMedium .ReserveCard_timerContainer_timer_e503a {
     min-width: 50rem;
 }
 
-.ReserveCard_bonus_d5 {
+.ReserveCard_bonus_b3f28 {
     color: #fefeec;
     font-size: 24rem;
     font-weight: 700;
@@ -1396,18 +1396,18 @@
     bottom: 14rem;
 }
 
-.mediaMedium .ReserveCard_bonus_d5 {
+.mediaMedium .ReserveCard_bonus_b3f28 {
     color: #fefeec;
     font-size: 28rem;
     font-weight: 700;
     line-height: 1.1;
 }
 
-.ReserveCard_base__tooltipSize_15 .ReserveCard_bonus_d5 {
+.ReserveCard_base__tooltipSize_c0077 .ReserveCard_bonus_b3f28 {
     display: none;
 }
 
-.ReserveCard_base__tooltipSize_15.ReserveCard_base__active_7e .ReserveCard_bonus_d5 {
+.ReserveCard_base__tooltipSize_c0077.ReserveCard_base__active_de8c2 .ReserveCard_bonus_b3f28 {
     display: block;
     right: 5rem;
     bottom: 7rem;
@@ -1417,17 +1417,18 @@
     line-height: 1.1;
 }
 
-.ReserveCard_bonusText_b7 {
+.ReserveCard_bonusText_e2117 {
     color: rgba(233, 226, 191, 0);
 }
 
-.ReserveCard_bonusText__copied_26 {
+.ReserveCard_bonusText__copied_acf7d {
     color: #e9e2bf;
     position: absolute;
     mask-image: linear-gradient(180deg, #e9e2bf 41.94%, rgba(233, 226, 191, 0) 203.23%);
+    mask-repeat: no-repeat;
 }
 
-.ReserveCard_activeLight_be {
+.ReserveCard_activeLight_c2929 {
     width: 190rem;
     height: 95rem;
     background: url('R.images.gui.maps.icons.personal_reserves.activated_light_personal_activation') no-repeat center
@@ -1438,17 +1439,17 @@
     transform: translateX(-50%);
 }
 
-.mediaMedium .ReserveCard_activeLight_be {
+.mediaMedium .ReserveCard_activeLight_c2929 {
     width: 230rem;
     height: 114rem;
 }
 
-.ReserveCard_base__tooltipSize_15 .ReserveCard_activeLight_be {
+.ReserveCard_base__tooltipSize_c0077 .ReserveCard_activeLight_c2929 {
     width: 100rem;
     height: 50rem;
 }
 
-.ReserveCard_expiringLight_c0 {
+.ReserveCard_expiringLight_e26f1 {
     width: 159rem;
     height: 105rem;
     background: url('R.images.gui.maps.icons.personal_reserves.expiration_light') no-repeat center center / cover;
@@ -1458,27 +1459,27 @@
     transform: translateX(-100%);
 }
 
-.mediaMedium .ReserveCard_expiringLight_c0 {
+.mediaMedium .ReserveCard_expiringLight_e26f1 {
     left: 231rem;
 }
 
-.ReserveCard_base__tooltipSize_15 .ReserveCard_expiringLight_c0 {
+.ReserveCard_base__tooltipSize_c0077 .ReserveCard_expiringLight_e26f1 {
     width: 100rem;
     left: 101rem;
 }
 
-.ReserveCard_expiringIndicator_bb {
+.ReserveCard_expiringIndicator_abb7a {
     position: absolute;
     top: -4rem;
     left: 101%;
     transform: translateX(-100%);
 }
 
-.ReserveCard_base__tooltipSize_15 .ReserveCard_expiringIndicator_bb {
+.ReserveCard_base__tooltipSize_c0077 .ReserveCard_expiringIndicator_abb7a {
     display: none;
 }
 
-@keyframes ReserveCard_fillIn_2b {
+@keyframes ReserveCard_fillIn_f2147 {
     from {
         transform: scaleY(0);
     }
@@ -1488,7 +1489,7 @@
     }
 }
 
-@keyframes ReserveCard_fadeIn_50 {
+@keyframes ReserveCard_fadeIn_a81c6 {
     from {
         opacity: 0;
     }
@@ -1498,7 +1499,7 @@
     }
 }
 
-@keyframes ReserveCard_timerSpark_2f {
+@keyframes ReserveCard_timerSpark_fb37a {
     from {
         filter: brightness(1);
     }
@@ -1512,7 +1513,7 @@
     }
 }
 
-@keyframes ReserveCard_borderBrightness_e5 {
+@keyframes ReserveCard_borderBrightness_bc608 {
     from {
         filter: brightness(2);
     }
@@ -1522,7 +1523,7 @@
     }
 }
 
-@keyframes ReserveCard_scaleUpDown_74 {
+@keyframes ReserveCard_scaleUpDown_e2a9b {
     from {
         transform: translate(-50%, -50%) scale(1);
     }
@@ -1536,7 +1537,7 @@
     }
 }
 
-.ReserveGroup_base_86 {
+.ReserveGroup_base_e1884 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -1545,7 +1546,7 @@
     position: relative;
 }
 
-.ReserveGroup_header_58 {
+.ReserveGroup_header_d9d97 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1553,21 +1554,21 @@
     margin-bottom: 10rem;
 }
 
-.ReserveGroup_header_title_e4 {
+.ReserveGroup_header_title_fff3f {
     color: #f2f2f7;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
 }
 
-.mediaMedium .ReserveGroup_header_title_e4 {
+.mediaMedium .ReserveGroup_header_title_fff3f {
     color: #f2f2f7;
     font-size: 22rem;
     font-weight: 700;
     line-height: 1.2;
 }
 
-.ReserveGroup_header_description_03 {
+.ReserveGroup_header_description_cf5e4 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;

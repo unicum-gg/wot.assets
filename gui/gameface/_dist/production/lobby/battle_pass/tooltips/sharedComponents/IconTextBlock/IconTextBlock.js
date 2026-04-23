@@ -2,14 +2,14 @@
     'use strict';
     var u,
         F = {
-            280: (u, F, A) => {
+            2616: (u, F, A) => {
                 A.d(F, { z: () => r });
-                var E = A(6483),
+                var E = A(9849),
                     D = A.n(E),
-                    B = A(3649),
+                    B = A(6758),
                     C = A(7363),
                     e = A.n(C),
-                    t = A(5287);
+                    t = A(4880);
                 const r = ({
                     binding: u,
                     text: F = '',
@@ -34,16 +34,15 @@
                     );
                 };
             },
-            3649: (u, F, A) => {
+            6758: (u, F, A) => {
                 A.d(F, { Uw: () => l, WU: () => B, v2: () => D });
-                var E = A(1281);
-                let D;
+                var E = A(8354);
+                let D = (function (u) {
+                    return ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'), u);
+                })({});
                 function B(u, F) {
                     return u.replace(/\{\w+\}/g, (u) => String(F[u.slice(1, -1)]));
                 }
-                !(function (u) {
-                    ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
-                })(D || (D = {}));
                 const C = (u) => u.replace(/&nbsp;/g, ' '),
                     e = (u, F, A) => {
                         if (A % 2) {
@@ -97,37 +96,37 @@
                     },
                     l = (u, F, A) => u.split(/%\((.*?)\)(?:[sd])?/g).map((u) => (A && u in A ? A[u] : n(u, F)));
             },
-            4981: (u, F, A) => {
-                var E = A(6483),
+            3073: (u, F, A) => {
+                var E = A(9849),
                     D = A.n(E),
                     B = A(7363),
                     C = A.n(B),
-                    e = A(280);
+                    e = A(2616);
                 const t = {
-                        blackReal: 'FormatTextWithColorTags_blackReal_3c',
-                        whiteReal: 'FormatTextWithColorTags_whiteReal_8a',
-                        white: 'FormatTextWithColorTags_white_16',
-                        whiteOrange: 'FormatTextWithColorTags_whiteOrange_18',
-                        whiteSpanish: 'FormatTextWithColorTags_whiteSpanish_10',
-                        par: 'FormatTextWithColorTags_par_ca',
-                        parSecondary: 'FormatTextWithColorTags_parSecondary_8d',
-                        parTertiary: 'FormatTextWithColorTags_parTertiary_a3',
-                        red: 'FormatTextWithColorTags_red_60',
-                        redDark: 'FormatTextWithColorTags_redDark_03',
-                        yellow: 'FormatTextWithColorTags_yellow_ad',
-                        orange: 'FormatTextWithColorTags_orange_e4',
-                        cream: 'FormatTextWithColorTags_cream_cd',
-                        brown: 'FormatTextWithColorTags_brown_c8',
-                        greenBright: 'FormatTextWithColorTags_greenBright_f0',
-                        green: 'FormatTextWithColorTags_green_c5',
-                        greenDark: 'FormatTextWithColorTags_greenDark_af',
-                        blueBooster: 'FormatTextWithColorTags_blueBooster_ac',
-                        blueTeamkiller: 'FormatTextWithColorTags_blueTeamkiller_6f',
-                        cred: 'FormatTextWithColorTags_cred_4e',
-                        gold: 'FormatTextWithColorTags_gold_90',
-                        bond: 'FormatTextWithColorTags_bond_71',
-                        prom: 'FormatTextWithColorTags_prom_dd',
-                        parNoWidth: 'FormatTextWithColorTags_parNoWidth_5a',
+                        blackReal: 'FormatTextWithColorTags_blackReal_ae104',
+                        whiteReal: 'FormatTextWithColorTags_whiteReal_c12a8',
+                        white: 'FormatTextWithColorTags_white_c5665',
+                        whiteOrange: 'FormatTextWithColorTags_whiteOrange_fff65',
+                        whiteSpanish: 'FormatTextWithColorTags_whiteSpanish_d24b3',
+                        par: 'FormatTextWithColorTags_par_ee7d9',
+                        parSecondary: 'FormatTextWithColorTags_parSecondary_a5b8c',
+                        parTertiary: 'FormatTextWithColorTags_parTertiary_a0c09',
+                        red: 'FormatTextWithColorTags_red_ad70c',
+                        redDark: 'FormatTextWithColorTags_redDark_afb30',
+                        yellow: 'FormatTextWithColorTags_yellow_e47d1',
+                        orange: 'FormatTextWithColorTags_orange_e08c4',
+                        cream: 'FormatTextWithColorTags_cream_f2e96',
+                        brown: 'FormatTextWithColorTags_brown_ed7be',
+                        greenBright: 'FormatTextWithColorTags_greenBright_b0875',
+                        green: 'FormatTextWithColorTags_green_d0263',
+                        greenDark: 'FormatTextWithColorTags_greenDark_f19b8',
+                        blueBooster: 'FormatTextWithColorTags_blueBooster_fd3be',
+                        blueTeamkiller: 'FormatTextWithColorTags_blueTeamkiller_fd915',
+                        cred: 'FormatTextWithColorTags_cred_fdafa',
+                        gold: 'FormatTextWithColorTags_gold_ab90e',
+                        bond: 'FormatTextWithColorTags_bond_e83f5',
+                        prom: 'FormatTextWithColorTags_prom_aa30c',
+                        parNoWidth: 'FormatTextWithColorTags_parNoWidth_bf7ac',
                     },
                     r = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
                     a = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
@@ -163,9 +162,9 @@
                         }
                         return C().createElement(e.z, { text: l, classMix: A, binding: D });
                     }),
-                    l = 'IconTextBlock_base_46',
-                    s = 'IconTextBlock_icon_c9',
-                    i = 'IconTextBlock_text_89';
+                    l = 'IconTextBlock_base_a1f93',
+                    s = 'IconTextBlock_icon_eb0c1',
+                    i = 'IconTextBlock_text_ea28b';
                 (0, B.memo)(({ icon: u, text: F, className: A }) => {
                     const E = (0, B.useMemo)(() => ({ backgroundImage: `url(${u})` }), [u]),
                         e = D()(l, A);
@@ -177,9 +176,9 @@
                     );
                 });
             },
-            5287: (u, F, A) => {
+            4880: (u, F, A) => {
                 A.d(F, { Z: () => E });
-                const E = { base: 'FormatText_base_d0' };
+                const E = { base: 'FormatText_base_f27a4' };
             },
             7363: (u) => {
                 u.exports = React;
@@ -249,6 +248,6 @@
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (A.forEach(F.bind(null, 0)), (A.push = F.bind(null, A.push.bind(A))));
         })());
-    var D = E.O(void 0, [1519], () => E(4981));
+    var D = E.O(void 0, [1519], () => E(3073));
     D = E.O(D);
 })();

@@ -1,15 +1,15 @@
-import { r as e, j as o, e as t, o as s, k as a, f as n, m as i, h as r, i as c } from './vendor.js';
+import { r as e, j as o, e as t, o as s, m as a, f as n, n as i, i as r, k as c } from './vendor.js';
 import { u as l, R as d, M as u } from './use_cover_size.js';
 import { Q as p, L as m, A as x, P as b } from './quantity_title.js';
-import { R as g, d as _, P as h, S as f, B as y, a as v } from './statistics2.js';
+import { R as g, d as _, P as h, S as f, B as y, a as B } from './statistics2.js';
 import {
-    n as B,
+    t as v,
     i as C,
-    j as w,
+    n as w,
     P as A,
     m as j,
     g as N,
-    z as k,
+    j as k,
     Q as O,
     A as S,
     U as I,
@@ -38,17 +38,17 @@ import './title2.js';
 import './getRewardImage.js';
 import './scroll_with_lips.js';
 import './statistics.js';
-const oe = 'Hover_55af9f42',
+/* empty css      */ const oe = 'Hover_55af9f42',
     te = 'Hover_hoverTrigger_82df64e5';
 const se = 'Vignette_96c6d4bc';
-const ae = { base: 'BoxLayout_5663f366' };
+const ae = 'BoxLayout_5663f366';
 function ne({ children: e, style: s, className: a }) {
-    return o.jsx('div', { className: t(ae.base, a), style: s, children: e });
+    return o.jsx('div', { className: t(ae, a), style: s, children: e });
 }
 ((ne.Box = function ({ layer: t, onLoaded: s, sound: a, onVideoEnded: n, playVideo: i, onVideoPlay: r, className: c }) {
     return (
         e.useEffect(() => {
-            i && B.sound(a);
+            i && v.sound(a);
         }, [a, i]),
         o.jsx('div', {
             className: c,
@@ -208,8 +208,8 @@ const ie = {
     he = 'CompositeScene_background__show_5ad4ed30',
     fe = 'CompositeScene_glow__show_6d031a33',
     ye = 'CompositeScene_idle__show_314703c5',
-    ve = 'CompositeScene_hover_63da4085',
-    Be = 'CompositeScene_box__show_5ad4ed30',
+    Be = 'CompositeScene_hover_63da4085',
+    ve = 'CompositeScene_box__show_5ad4ed30',
     Ce = 'CompositeScene_base__graphicsHigh_c16d0a29';
 const we = i(function ({ onClick: s, onLoaded: a }) {
         const { model: n, controls: i } = ue(),
@@ -221,12 +221,12 @@ const we = i(function ({ onClick: s, onLoaded: a }) {
             h = n.isBoxHovered.get(),
             f = r.subViewIDs.get(),
             y = Z(f),
-            v = A.isHigh(),
+            B = A.isHigh(),
             C = n.computes.sublayersNames(le.background),
             w = n.computes.sublayersNames(le.box),
             j = n.computes.sublayersNames(le.hover),
             N = n.computes.sublayersNames(le.idle),
-            O = u && v,
+            O = u && B,
             S = l(Q),
             [I, V] = e.useState(!1),
             E = ((o, t) => {
@@ -246,7 +246,7 @@ const we = i(function ({ onClick: s, onLoaded: a }) {
             L = () => i.setShowAdditionalLayers(!0),
             T = () => i.setShowAdditionalLayers(!1),
             H = () => {
-                (B.sound(b.boxMouseLeave), i.setIsBoxHovered(!1));
+                (v.sound(b.boxMouseLeave), i.setIsBoxHovered(!1));
             },
             P = (e, o) => {
                 const t = n.computes.extractSublayers(e);
@@ -257,11 +257,11 @@ const we = i(function ({ onClick: s, onLoaded: a }) {
                 const e = n.computes.extractSublayers(le.box),
                     o = e[c] || e[ce];
                 return k(() => {
-                    (null == o ? void 0 : o.type) === d.image && i.setShowAdditionalLayers(!0);
+                    o?.type === d.image && i.setShowAdditionalLayers(!0);
                 });
             }, [c]),
             o.jsxs(ne, {
-                className: t(pe, v && Ce),
+                className: t(pe, B && Ce),
                 style: { backgroundColor: x },
                 children: [
                     C.map((e) => {
@@ -273,7 +273,7 @@ const we = i(function ({ onClick: s, onLoaded: a }) {
                                 layer: a,
                                 loop: !0,
                                 onLoaded: E,
-                                playVideo: I && (null == a ? void 0 : a.type) === d.video && s,
+                                playVideo: I && a?.type === d.video && s,
                             },
                             `${le.background}_${e}`,
                         );
@@ -283,12 +283,12 @@ const we = i(function ({ onClick: s, onLoaded: a }) {
                         return o.jsx(
                             ne.Box,
                             {
-                                className: t(xe, s && Be),
+                                className: t(xe, s && ve),
                                 layer: a,
                                 sound: b.boxAppear,
                                 onLoaded: E,
                                 onVideoEnded: L,
-                                playVideo: I && (null == a ? void 0 : a.type) === d.video && s,
+                                playVideo: I && a?.type === d.video && s,
                                 onVideoPlay: T,
                             },
                             `${le.box}_${e}`,
@@ -303,7 +303,7 @@ const we = i(function ({ onClick: s, onLoaded: a }) {
                                     className: t(ge, _ && s && h && fe),
                                     layer: a,
                                     onLoaded: E,
-                                    playVideo: I && (null == a ? void 0 : a.type) === d.video && s,
+                                    playVideo: I && a?.type === d.video && s,
                                     loop: !0,
                                     shouldCleanUp: !0,
                                 },
@@ -318,7 +318,7 @@ const we = i(function ({ onClick: s, onLoaded: a }) {
                                 g,
                                 {
                                     className: t(be, _ && s && ye),
-                                    playVideo: I && (null == a ? void 0 : a.type) === d.video && s,
+                                    playVideo: I && a?.type === d.video && s,
                                     layer: a,
                                     onLoaded: E,
                                     loop: !0,
@@ -330,15 +330,15 @@ const we = i(function ({ onClick: s, onLoaded: a }) {
                     p.isEnabled && o.jsx(ne.Vignette, { className: me, style: { opacity: p.opacity } }),
                     _ &&
                         o.jsx(ne.Hover, {
-                            className: ve,
+                            className: Be,
                             settings: m,
                             wrapperSize: S,
                             onMouseEnter: () => {
-                                (B.sound(b.boxMouseEnter), i.setIsBoxHovered(!0));
+                                (v.sound(b.boxMouseEnter), i.setIsBoxHovered(!0));
                             },
                             onMouseLeave: H,
                             onClick: () => {
-                                y || (H(), B.click(), s());
+                                y || (H(), v.click(), s());
                             },
                         }),
                 ],
@@ -378,13 +378,13 @@ const Ee = 'BoxOpenPanel_1640485f',
             h = _.length > 1,
             f = n.computes.openBoxesCount(),
             { eventName: y } = n.root.get(),
-            v = r.subViewIDs.get(),
-            C = Z(v),
+            B = r.subViewIDs.get(),
+            C = Z(B),
             w = { boxesToGuaranteed: b, accent: m },
             A = { title: c.guaranteedTitle, nextBox: c.guaranteedNextBox },
             N = { glow: l.glowIcon, info: l.infoIcon, strongGlow: l.guaranteedGlowIcon },
             k = () => {
-                (B.sound(d.boxMouseLeave), i.setIsBoxHovered(!1));
+                (v.sound(d.boxMouseLeave), i.setIsBoxHovered(!1));
             },
             S = O(
                 () => {
@@ -446,7 +446,6 @@ const Ee = 'BoxOpenPanel_1640485f',
         );
     }),
     ze = {
-        root: 'App_root_0',
         base: 'App_f851716e',
         boxLayout: 'App_boxLayout_d3aa6393',
         base__prepareAnimation: 'App_base__prepareAnimation_0',
@@ -478,155 +477,154 @@ const Ee = 'BoxOpenPanel_1640485f',
     Fe = 'wait',
     Qe = 'openView';
 const Xe = i(function () {
-        var s;
-        const { model: a, controls: n } = ue(),
-            { model: i } = X(),
+        const { model: s, controls: a } = ue(),
+            { model: n } = X(),
             {
-                isAnimationActive: l,
-                isError: d,
-                eventName: u,
-                useStats: p,
-                selectedBoxOption: g,
-                isShopVisible: _,
-            } = a.root.get(),
-            C = i.overlayClosed.get(),
-            w = i.computes.awardViewOpened(),
-            { texts: j, images: N, sounds: k } = a.computes.resources(),
-            { dynamicTexts: S } = a.computes.dynamicResources(),
-            I = a.boxesInfo.get(),
-            { tabsGuaranteedCount: V } = a.computes.viewConfig(),
-            E = null == (s = a.computes.boxInfo()) ? void 0 : s.boxesCount,
-            [L, T] = e.useState(!1),
-            [H, P] = e.useState(!1),
-            [M, Y] = e.useState(Ye),
+                isAnimationActive: i,
+                isError: l,
+                eventName: d,
+                useStats: u,
+                selectedBoxOption: p,
+                isShopVisible: g,
+            } = s.root.get(),
+            _ = n.overlayClosed.get(),
+            C = n.computes.awardViewOpened(),
+            { texts: w, images: j, sounds: N } = s.computes.resources(),
+            { dynamicTexts: k } = s.computes.dynamicResources(),
+            S = s.boxesInfo.get(),
+            { tabsGuaranteedCount: I } = s.computes.viewConfig(),
+            V = s.computes.boxInfo()?.boxesCount,
+            [E, L] = e.useState(!1),
+            [T, H] = e.useState(!1),
+            [P, M] = e.useState(Ye),
             {
-                breakpoint: { weight: D },
+                breakpoint: { weight: Y },
             } = G(),
-            U = O(() => n.openBoxes(), [n], 1100),
-            [F, Q] = r(() => Ae),
-            [Z, J] = r(() => je),
-            K = () => {
-                (a.isBoxHovered.get() && B.sound(k.boxMouseLeave), H || n.close());
+            D = O(() => a.openBoxes(), [a], 1100),
+            [U, F] = r(() => Ae),
+            [Q, Z] = r(() => je),
+            J = () => {
+                (s.isBoxHovered.get() && v.sound(N.boxMouseLeave), T || a.close());
             };
-        $(K);
-        const ee = () => {
-                (P(!0), n.setShowAdditionalLayers(!1), Q.start(ke()), J.start(ke()), Y(Fe));
+        $(J);
+        const K = () => {
+                (H(!0), a.setShowAdditionalLayers(!1), F.start(ke()), Z.start(ke()), M(Fe));
             },
-            oe = () => {
-                (Q.start(Oe), J.start(Oe));
+            ee = () => {
+                (F.start(Oe), Z.start(Oe));
             };
         return (
             e.useEffect(() => {
-                M === Fe && R(U, 250);
-            }, [M, U]),
+                P === Fe && R(D, 250);
+            }, [P, D]),
             e.useEffect(() => {
-                d && (P(!1), Y(Ue), oe(), n.resetError());
-            }, [d]),
+                l && (H(!1), M(Ue), ee(), a.resetError());
+            }, [l]),
             e.useEffect(() => {
-                C && (Y(Ue), oe(), n.setShowAdditionalLayers(!0));
+                _ && (M(Ue), ee(), a.setShowAdditionalLayers(!0));
+            }, [_]),
+            e.useEffect(() => {
+                C && T && H(!1);
             }, [C]),
             e.useEffect(() => {
-                w && H && P(!1);
-            }, [w]),
+                A.isLow() && a.setAnimationState(!1);
+            }, [a]),
             e.useEffect(() => {
-                A.isLow() && n.setAnimationState(!1);
-            }, [n]),
-            e.useEffect(() => {
-                (Y(De), P(!1));
+                (M(De), H(!1));
             }, []),
             o.jsxs(h, {
-                className: t(ze.base, ze[`base__${M}Animation`]),
+                className: t(ze.base, ze[`base__${P}Animation`]),
                 children: [
                     o.jsxs(h.PanelControls, {
                         className: ze.panelControls,
                         children: [
-                            p &&
+                            u &&
                                 o.jsx(f, {
-                                    onClick: () => T(!0),
+                                    onClick: () => L(!0),
                                     className: ze.statsButton,
-                                    label: j.statsButton,
-                                    icon: N.statsIcon,
+                                    label: w.statsButton,
+                                    icon: j.statsIcon,
                                 }),
                             o.jsx(q, {
-                                caption: j.infoButton,
+                                caption: w.infoButton,
                                 type: 'info',
                                 side: 'left',
                                 onClick: () => {
-                                    H || n.openInfoPage();
+                                    T || a.openInfoPage();
                                 },
                                 classNames: { base: ze.info },
                             }),
                         ],
                     }),
-                    o.jsx(h.Close, { className: ze.close, text: j.closeButton, onClick: K }),
+                    o.jsx(h.Close, { className: ze.close, text: w.closeButton, onClick: J }),
                     o.jsx(c.div, {
-                        style: F,
+                        style: U,
                         className: ze.headerAnimation,
-                        children: o.jsx(h.Heading, { text: S.boxCategory.dynOpt(g) }),
+                        children: o.jsx(h.Heading, { text: k.boxCategory.dynOpt(p) }),
                     }),
                     o.jsxs(h.Body, {
                         children: [
                             o.jsx(we, {
-                                onClick: ee,
+                                onClick: K,
                                 onLoaded: () => {
-                                    (Y(Qe), Q.start(Ne), J.start(Ne));
+                                    (M(Qe), F.start(Ne), Z.start(Ne));
                                 },
                                 className: ze.boxLayout,
                             }),
                             o.jsxs('div', {
                                 className: ze.footer,
                                 children: [
-                                    o.jsx(c.div, { style: Z, children: o.jsx(qe, { openClick: ee }) }),
-                                    H && o.jsx(m, { className: ze.loader, text: j.loader, img: N.loader }),
+                                    o.jsx(c.div, { style: Q, children: o.jsx(qe, { openClick: K }) }),
+                                    T && o.jsx(m, { className: ze.loader, text: w.loader, img: j.loader }),
                                 ],
                             }),
                             A.isHigh() &&
                                 o.jsx(x, {
-                                    isActive: l,
-                                    onClick: n.changeAnimationState,
+                                    isActive: i,
+                                    onClick: a.changeAnimationState,
                                     className: ze.checkbox,
-                                    text: j.animationCheckbox,
-                                    size: D >= W.medium.weight ? z.extraLarge : z.large,
+                                    text: w.animationCheckbox,
+                                    size: Y >= W.medium.weight ? z.extraLarge : z.large,
                                 }),
-                            _ &&
-                                E &&
-                                E > 0 &&
+                            g &&
+                                V &&
+                                V > 0 &&
                                 o.jsx(b, {
-                                    text: j.footerPurchaseButtonText,
-                                    image: N.iconEmpty,
-                                    sounds: k,
-                                    onClick: n.buyBoxes,
+                                    text: w.footerPurchaseButtonText,
+                                    image: j.iconEmpty,
+                                    sounds: N,
+                                    onClick: a.buyBoxes,
                                     className: ze.purchaseButton,
                                 }),
                         ],
                     }),
-                    I.length > 1 &&
+                    S.length > 1 &&
                         o.jsx(h.Switcher, {
                             className: ze.tabs,
                             children: o.jsx(y, {
-                                tabs: I,
+                                tabs: S,
                                 changeTab: (e) => {
-                                    H ||
-                                        (e !== g &&
-                                            (n.onBoxOptionChanged(e),
-                                            Q.start(ke(() => Q.start(Oe))),
-                                            J.start(ke(() => J.start(Oe)))));
+                                    T ||
+                                        (e !== p &&
+                                            (a.onBoxOptionChanged(e),
+                                            F.start(ke(() => F.start(Oe))),
+                                            Z.start(ke(() => Z.start(Oe)))));
                                 },
-                                active: g,
-                                texts: S.tabText,
-                                sounds: { switch: k.switch, entryHover: k.entryHover },
+                                active: p,
+                                texts: k.tabText,
+                                sounds: { switch: N.switch, entryHover: N.entryHover },
                                 icons: {
-                                    slotGlow: N.slotGlow,
-                                    numberGlow: N.guaranteedGlowIcon,
-                                    glowIcon: N.glowIcon,
-                                    guaranteedIco: N.guaranteedIco,
+                                    slotGlow: j.slotGlow,
+                                    numberGlow: j.guaranteedGlowIcon,
+                                    glowIcon: j.glowIcon,
+                                    guaranteedIco: j.guaranteedIco,
                                 },
-                                tabsGuaranteedCount: V,
-                                startAnimation: M === Qe,
-                                eventName: u,
+                                tabsGuaranteedCount: I,
+                                startAnimation: P === Qe,
+                                eventName: d,
                             }),
                         }),
-                    L && o.jsx(v, { options: We, onHidden: () => T(!1), isStatsEnabled: p, className: ze.popover }),
+                    E && o.jsx(B, { options: We, onHidden: () => L(!1), isStatsEnabled: u, className: ze.popover }),
                 ],
             })
         );

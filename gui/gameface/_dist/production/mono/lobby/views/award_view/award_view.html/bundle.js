@@ -1,4 +1,4 @@
-import { m as e, n as s, j as a, p as r, r as o, e as i } from '../../../chunks/vendor.js';
+import { q as e, n as s, j as a, p as r, r as o, e as i } from '../../../chunks/vendor.js';
 import {
     i as c,
     e as l,
@@ -78,10 +78,10 @@ import { G as b, S as v, a as N, O as w } from '../../../chunks/sounds.js';
     L = 'App_bg_284705ab',
     P = 'App_body_6d450fd7',
     B = 'App_rewardList_af08fa77',
-    F = 'App_reward_2dfb015f',
-    G = 'App_rewardTitle_f0e624d0',
-    U = 'App_rewardImg_fc694a0d',
-    q = 'App_personalNumber_61bc77b0',
+    q = 'App_reward_2dfb015f',
+    F = 'App_rewardTitle_f0e624d0',
+    G = 'App_rewardImg_fc694a0d',
+    U = 'App_personalNumber_61bc77b0',
     D = 'App_decorationList_bb0bfe54',
     J = 'App_ribbonWrapper_81a4bb44',
     K = 'App_ribbon_d3f167d7',
@@ -183,18 +183,18 @@ import { G as b, S as v, a as N, O as w } from '../../../chunks/sounds.js';
                             children: a.jsx('div', {
                                 className: B,
                                 children: a.jsxs('div', {
-                                    className: F,
+                                    className: q,
                                     children: [
-                                        a.jsx(r.div, { style: T, children: a.jsx('div', { style: C, className: U }) }),
+                                        a.jsx(r.div, { style: T, children: a.jsx('div', { style: C, className: G }) }),
                                         a.jsx(r.div, {
                                             style: k,
-                                            className: G,
+                                            className: F,
                                             children: a.jsx(S, { vehicleInfo: e.vehicleInfo.get(), personalNumber: n }),
                                         }),
                                         n &&
                                             a.jsx(r.div, {
                                                 style: A,
-                                                className: q,
+                                                className: U,
                                                 children: a.jsx(x, { personalNumber: n }),
                                             }),
                                     ],

@@ -1,4 +1,4 @@
-import { p as s, j as e } from '../../../../chunks/vendor.js';
+import { q as s, j as e } from '../../../../chunks/vendor.js';
 import { i, j as n, k as o, t as r, l as a, r as t, U as c } from '../../../../chunks/lib.js';
 const [l, d] = i()(
         ({ observableModel: s }) => ({ ...s.primitives(['header', 'description', 'buttonText', 'icon']) }),

@@ -1,4 +1,3 @@
-import './vendor.js';
-import { d1 as o } from './lib.js';
-const r = (r, s) => r.map((r) => o(r.value)).join(s);
-export { r as g };
+import { d6 as o } from './lib.js';
+const a = (a, s) => a.map((a) => o(a.value)).join(s);
+export { a as g };

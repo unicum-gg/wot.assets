@@ -1,4 +1,4 @@
-import { y as e, j as s, z as a, r as o } from '../../../chunks/vendor.js';
+import { E as e, j as s, F as a, r as o } from '../../../chunks/vendor.js';
 import {
     a as l,
     m as r,
@@ -10,10 +10,10 @@ import {
     v as b,
     R as m,
     p as x,
-    aH as _,
-    bG as p,
+    aE as _,
+    bm as p,
     a6 as j,
-    cF as w,
+    cI as w,
     a5 as h,
     a7 as v,
 } from '../../../chunks/lib.js';
@@ -32,10 +32,10 @@ const [N, y] = l()(
         divider: 'RewardRow_divider_1aa30952',
         items: 'RewardRow_items_250e268f',
         item: 'RewardRow_item_a3515cc5',
-        label: 'RewardRow_label_d4524001',
+        label: 'RewardRow_label_49f63c71',
         percent: 'RewardRow_percent_86c62b10',
     },
-    A = e(({ rewards: e, iconKey: o, label: l, showRewardsNames: x }) => {
+    I = e(({ rewards: e, iconKey: o, label: l, showRewardsNames: x }) => {
         const { model: _ } = y(),
             { assetsPointer: p } = _.root.get(),
             j = _.lootBoxes.get().length > 2 ? d.Big : d.S232x174,
@@ -88,23 +88,23 @@ const [N, y] = l()(
             ],
         });
     }),
-    I = 'RewardList_3134028b',
+    A = 'RewardList_3134028b',
     k = e(() => {
         const { model: e } = y(),
             a = e.lootBoxes.get();
         return s.jsx('div', {
-            className: I,
-            children: a.length > 0 && r(a, (e, s) => o.createElement(A, { ...e, key: s })),
+            className: A,
+            children: a.length > 0 && r(a, (e, s) => o.createElement(I, { ...e, key: s })),
         });
     }),
     B = 'App_41da450e',
     L = 'App_background_8bf668c',
     C = 'App_content_c51a1e8f',
-    $ = 'App_header_6b270f84',
-    M = 'App_title_ed37f891',
-    P = 'App_description_8e9e0dbe',
-    T = 'App_scroll_ce8f2661',
-    z = e(() => {
+    E = 'App_header_6b270f84',
+    $ = 'App_title_ed37f891',
+    M = 'App_description_8e9e0dbe',
+    P = 'App_scroll_90d3bf78',
+    T = e(() => {
         const { model: e, controls: a } = y(),
             { assetsPointer: o } = e.root.get(),
             { closeWindow: l } = a;
@@ -117,13 +117,13 @@ const [N, y] = l()(
                 s.jsx(_, {
                     children: s.jsxs(p, {
                         scrollClassNames: { content: C },
-                        className: T,
+                        className: P,
                         children: [
                             s.jsxs('div', {
-                                className: $,
+                                className: E,
                                 children: [
-                                    s.jsx('div', { className: M, children: r.title() }),
-                                    s.jsx('div', { className: P, children: r.description() }),
+                                    s.jsx('div', { className: $, children: r.title() }),
+                                    s.jsx('div', { className: M, children: r.description() }),
                                 ],
                             }),
                             s.jsx(k, {}),
@@ -133,6 +133,6 @@ const [N, y] = l()(
             ],
         });
     });
-j(s.jsx(N, { children: s.jsx(w, { children: s.jsx(h, { children: s.jsx(z, {}) }) }) }), { fullScreen: !0 }).then(() =>
+j(s.jsx(N, { children: s.jsx(w, { children: s.jsx(h, { children: s.jsx(T, {}) }) }) }), { fullScreen: !0 }).then(() =>
     v(document.getElementById('root')),
 );

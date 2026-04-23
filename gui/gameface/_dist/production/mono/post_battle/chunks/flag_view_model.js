@@ -1,4 +1,3 @@
-import './vendor.js';
 import { z as t } from './lib.js';
 const s = {
         overview: 'overview',
@@ -13,13 +12,13 @@ const s = {
         [s.progression]: '/postBattleResults/missionProgress',
         [s.financialReport]: '/postBattleResults/financialReport',
     };
-function r(s) {
-    const r = e.find((t) => o[t] === s);
-    return (t(void 0 !== r, `The post battle screen is not found by path ${s}`), r);
+function a(s) {
+    const a = e.find((t) => o[t] === s);
+    return (t(void 0 !== a, `The post battle screen is not found by path ${s}`), a);
 }
-const a = ['markOfMastery', 'right', 'marksOnGun'];
-function i() {
+const i = ['markOfMastery', 'right', 'marksOnGun'];
+function r() {
     return Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 9);
 }
 const n = 'win';
-export { n as W, s as a, r as f, i as g, o as r, a as s };
+export { n as W, s as a, a as f, r as g, o as r, i as s };

@@ -1,17 +1,17 @@
-import { l as e, m as a, i as s, j as n, k as o, e as t, r, n as i, p as d, q as l } from '../../../chunks/vendor.js';
+import { m as e, n as a, k as s, j as n, l as o, h as t, r, p as i, q as d, s as l } from '../../../chunks/vendor.js';
 import {
     i as c,
     m as p,
     u as _,
     r as m,
-    g as u,
-    R as b,
+    g as b,
+    R as u,
     a as w,
     I as h,
     b as A,
     V as x,
-    c as v,
-    d as g,
+    c as g,
+    d as v,
     F as f,
     e as C,
     f as j,
@@ -55,7 +55,7 @@ const [J, Q] = c()(
             openShop: e.createCallbackNoArgs('onShopBtnClick'),
         }),
     ),
-    X = (e) => ((null == e ? void 0 : e.match(/^\d/)) ? `c_${e}` : e),
+    X = (e) => (e?.match(/^\d/) ? `c_${e}` : e),
     Z = 'AnimatedReward_d4667790',
     ee = 'AnimatedReward_base__withCoins_802dd312',
     ae = a(({ delay: e, duration: a, onRest: r, children: i }) => {
@@ -98,14 +98,14 @@ const [J, Q] = c()(
                 n.jsx('div', {
                     className: oe,
                     children: a.map((s, o) => {
-                        const r = u(s.name);
+                        const r = b(s.name);
                         return n.jsx(
                             ae,
                             {
                                 delay: 150 * (o + 1),
                                 duration: 150,
                                 onRest: o === a.length - 1 ? e : void 0,
-                                children: n.jsx(b, {
+                                children: n.jsx(u, {
                                     ...s,
                                     name: s.name,
                                     image: A({ ...s, icon: X(s.icon) }, h.Big),
@@ -142,14 +142,14 @@ const [J, Q] = c()(
     _e = 'medium',
     me = ({ size: e, count: a, isTooltipEnabled: s = !0 }) => {
         const o = m.resolve('strings'),
-            r = v({
+            r = g({
                 header: o.readOrEmpty(`${ce}.header`).replace('{count}', a.toString()),
                 body: o.readOrEmpty(`${ce}.body`),
             });
         return n.jsx('div', { className: t(le.base, le[`base__${e}`]), ...(s && r) });
     },
-    ue = 'AnimatedCount_289e911e',
-    be = 'AnimatedCount_value_a13566f1',
+    be = 'AnimatedCount_289e911e',
+    ue = 'AnimatedCount_value_a13566f1',
     we = ({ goalValue: e, onAnimationEnd: a }) => {
         const [s, o] = r.useState(1),
             [t, i] = r.useState(!1),
@@ -158,7 +158,7 @@ const [J, Q] = c()(
         return (
             r.useEffect(() => {
                 if (t && s < e)
-                    return g(() => {
+                    return v(() => {
                         (o((e) => e + 1), d.play('rewardAppear', { target: 'coin-count' }));
                     }, 100);
             }, [e, t, s, d]),
@@ -166,12 +166,12 @@ const [J, Q] = c()(
                 a && s === e && a();
             }, [e, a, s]),
             n.jsx('div', {
-                className: ue,
+                className: be,
                 onAnimationEnd: () => i(!0),
                 children: n.jsx(f, {
                     text: l.readOrEmpty('seniority_awards.rewardsView.wdrcoin.counter'),
                     params: { count: s },
-                    className: be,
+                    className: ue,
                     upgradeLegacy: !0,
                 }),
             })
@@ -180,7 +180,7 @@ const [J, Q] = c()(
     he = 'AwardCoin_cb1f70f6',
     Ae = 'AwardCoin_coin_7b7b454f',
     xe = 'AwardCoin_count_1120c4b4',
-    ve = ({ count: e, onAnimationEnd: a }) => {
+    ge = ({ count: e, onAnimationEnd: a }) => {
         const [s, o] = r.useState(!1),
             t = _();
         r.useEffect(() => t.play('rewardAppear', { target: 'coin' }), [t]);
@@ -197,15 +197,15 @@ const [J, Q] = c()(
             ],
         });
     },
-    ge = 'Value_1ad9fa26',
+    ve = 'Value_1ad9fa26',
     fe = 'Value_currencyValue_2e5d861e',
     Ce = 'Value_label_f36098d',
     je = ({ value: e, name: a, label: s }) => {
-        const o = j(e, u(a)),
+        const o = j(e, b(a)),
             t = y.includes(a);
         return n.jsxs(n.Fragment, {
             children: [
-                e && n.jsx('div', { className: t ? fe : ge, children: o }),
+                e && n.jsx('div', { className: t ? fe : ve, children: o }),
                 !t && n.jsx('div', { className: Ce, children: s }),
             ],
         });
@@ -218,7 +218,7 @@ const [J, Q] = c()(
         return n.jsxs('div', {
             className: ye.base,
             children: [
-                n.jsx(b, {
+                n.jsx(u, {
                     className: ye.reward,
                     name: a,
                     image: A({ ...e, icon: X(r) }, d.size),
@@ -283,7 +283,7 @@ const [J, Q] = c()(
                             className: Be,
                             children: [
                                 n.jsx('div', { className: Te }),
-                                n.jsx(ve, { count: s, onAnimationEnd: () => c(!0) }),
+                                n.jsx(ge, { count: s, onAnimationEnd: () => c(!0) }),
                             ],
                         }),
                     n.jsx('div', {
@@ -340,17 +340,18 @@ const Pe = {
         slideRibbonUp: 'App_slideRibbonUp_0',
         scale: 'App_scale_0',
     },
-    Ye = a(() => {
+    Ye = !0,
+    qe = a(() => {
         const { model: e, controls: a } = Q(),
             { computes: s } = e,
             { category: o, maxCategory: c } = e.root.get(),
             p = _(),
             m = () => p.play('rewardsViewAppear', { target: 'exit' }),
-            u = R(Y),
-            [b, w] = S(Y),
+            b = R(Y),
+            [u, w] = S(Y),
             [h, A] = r.useState('showHeader'),
             x = s.bonuses(),
-            v = s.hasCoins(),
+            g = s.hasCoins(),
             f = s.isShopAvailable(),
             [C, j] = l(() =>
                 ((e, a, s) => {
@@ -361,7 +362,7 @@ const Pe = {
                         context: { visibleRewards: a.slice(0, n), rewardWatchedCount: n, isFirstEnter: !0 },
                         states: {
                             ribbon: {
-                                exit: d((e) => ({
+                                exit: d.assign((e) => ({
                                     visibleRewards: e.visibleRewards,
                                     rewardWatchedCount: e.rewardWatchedCount,
                                     isFirstEnter: !1,
@@ -370,7 +371,7 @@ const Pe = {
                                     showMoreRewards: {
                                         target: 'ribbon',
                                         internal: !0,
-                                        actions: d((e) => {
+                                        actions: d.assign((e) => {
                                             const s = e.rewardWatchedCount + n;
                                             return {
                                                 visibleRewards: a.slice(e.rewardWatchedCount, s),
@@ -384,7 +385,7 @@ const Pe = {
                             },
                         },
                     });
-                })($e.Ribbon, x, v),
+                })($e.Ribbon, x, g),
             ),
             y = s.bonusesLength(),
             B = C.context.rewardWatchedCount < y,
@@ -392,7 +393,7 @@ const Pe = {
             O = z(K, q) === D.success,
             T = r.useMemo(() => ({ rewards: C.context.visibleRewards }), [C.context.visibleRewards]),
             F = (e = !1) => {
-                (u({ action: e ? I.KeyDown : I.Click, item: P.CloseButton, parentScreen: H.RewardsScreen }),
+                (b({ action: e ? I.KeyDown : I.Click, item: P.CloseButton, parentScreen: H.RewardsScreen }),
                     m(),
                     V.close());
             },
@@ -400,7 +401,7 @@ const Pe = {
                 'showContent' !== h && (A('showContent'), j(He.ShowMoreRewards));
             },
             G = (e = !1) => {
-                (u({
+                (b({
                     action: e ? I.KeyDown : I.Click,
                     item: s.isShopAvailable() ? P.GoToShopButton : P.ConfirmButton,
                     parentScreen: H.RewardsScreen,
@@ -410,10 +411,10 @@ const Pe = {
                     a.onOpenBtnClick());
             };
         N(() => {
-            B ? M() : F(true);
+            B ? M() : F(Ye);
         });
         const J = () => {
-            B ? M() : G(true);
+            B ? M() : G(Ye);
         };
         (E(W.ENTER, J), E(W.SPACE, J));
         const X = r.useCallback(() => {
@@ -421,7 +422,7 @@ const Pe = {
         }, []);
         return (
             r.useEffect(() => {
-                if ('showHeader' === h) return g(() => A('showContent'), 700);
+                if ('showHeader' === h) return v(() => A('showContent'), 700);
             }, [h]),
             n.jsxs('div', {
                 className: t(Pe.base, Pe[`base__${C.value}`]),
@@ -439,7 +440,7 @@ const Pe = {
                             maxCategory: c,
                             category: o,
                             onShowTooltip: () => {
-                                b(I.Viewed);
+                                u(I.Viewed);
                             },
                             onHideTooltip: () => {
                                 w({
@@ -477,5 +478,5 @@ const Pe = {
             })
         );
     }),
-    qe = B(F);
-T(new L().add(J).addWithProps(O, { soundsOverrides: qe }).render(n.jsx(Ye, {})));
+    Ke = B(F);
+T(new L().add(J).addWithProps(O, { soundsOverrides: Ke }).render(n.jsx(qe, {})));

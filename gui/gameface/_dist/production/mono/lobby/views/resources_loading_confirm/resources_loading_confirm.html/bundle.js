@@ -1,5 +1,5 @@
-import { e, j as r, m as c } from '../../../chunks/vendor.js';
-import { v as s, i as o, u as n, B as t, F as a, g as u, C as _, r as i, U as l } from '../../../chunks/lib.js';
+import { e, j as r, q as c } from '../../../chunks/vendor.js';
+import { j as s, i as o, u as n, B as t, F as a, g as u, C as _, r as i, U as l } from '../../../chunks/lib.js';
 import { V as d } from '../../../chunks/vehicle_count.js';
 import { V as p } from '../../../chunks/vignette.js';
 /* empty css                     */ const m = {
@@ -66,7 +66,7 @@ const [f, x] = o()(
     j = 'Buttons_3e326d4',
     I = 'Buttons_button_8aa2a9b',
     N = R.strings.resource_well.confirm,
-    v = ({ operationType: c, handleOnConfirm: s, handleOnCancel: o, className: a }) => {
+    g = ({ operationType: c, handleOnConfirm: s, handleOnCancel: o, className: a }) => {
         const u = n({ buttonSize: 'small' }, { large: { buttonSize: 'medium' } });
         return r.jsxs('div', {
             className: e(j, a),
@@ -91,13 +91,13 @@ const [f, x] = o()(
             ],
         });
     },
-    g = 'Description_da993e7b',
+    v = 'Description_da993e7b',
     C = 'Description_text_78de58ff',
     y = 'Description_percentText_5e5c85be',
     w = R.strings.resource_well.confirm,
     A = ({ operationType: c, progressDiff: s = 0, vehicleName: o, className: n }) =>
         r.jsx('div', {
-            className: e(g, n),
+            className: e(v, n),
             children: r.jsx('div', {
                 className: C,
                 children: (() => {
@@ -153,8 +153,8 @@ const [f, x] = o()(
             })(),
         }),
     z = 'App_58db4e8d',
-    D = 'App_vehiclesCount_23229913',
-    O = 'App_close_90a88f64',
+    D = 'App_vehiclesCount_8dd11cc4',
+    O = 'App_close_4c62abb0',
     L = 'App_content_961d00cf',
     P = 'App_title_1f5b1f7b',
     X = 'App_resourcesWrapper_220e785a',
@@ -162,7 +162,7 @@ const [f, x] = o()(
     M = 'App_description_7d4b61ef',
     V = 'App_resources_9eced206',
     $ = 'App_buttons_3b1e176b',
-    F = c(function () {
+    q = c(function () {
         const { model: e, controls: c } = x(),
             { operationType: s, progressDiff: o, vehicleName: n } = e.root.get();
         return (
@@ -190,7 +190,7 @@ const [f, x] = o()(
                                 ],
                             }),
                             r.jsx(A, { progressDiff: o, operationType: s, vehicleName: n, className: M }),
-                            r.jsx(v, {
+                            r.jsx(g, {
                                 operationType: s,
                                 handleOnCancel: c.cancel,
                                 handleOnConfirm: c.confirm,
@@ -202,4 +202,4 @@ const [f, x] = o()(
             })
         );
     });
-i(r.jsx(l, { children: r.jsx(f, { children: r.jsx(F, {}) }) }));
+i(r.jsx(l, { children: r.jsx(f, { children: r.jsx(q, {}) }) }));

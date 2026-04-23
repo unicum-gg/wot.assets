@@ -1,17 +1,17 @@
 import {
     o as e,
-    l as a,
+    m as a,
     f as s,
-    n as i,
+    p as i,
     j as t,
     r as l,
-    s as c,
-    i as n,
-    e as o,
-    k as r,
-    m as d,
+    t as c,
+    k as n,
+    h as o,
+    l as r,
+    n as d,
     S as h,
-    q as _,
+    s as _,
 } from '../../../chunks/vendor.js';
 import {
     i as p,
@@ -344,7 +344,7 @@ const Se = (e) => {
             r = i[s.previousVehicleIndex.get() > c - 1 ? 0 : s.previousVehicleIndex.get()].value.techName,
             [d, h] = l.useState('active');
         l.useEffect(() => {
-            'end' === d && (null == e || e());
+            'end' === d && e?.();
         }, [e, d]);
         return t.jsx('div', {
             className: o(Le.base, 'selectionSubmitted' === d && Le.base__submitted),
@@ -454,7 +454,7 @@ const Se = (e) => {
             );
         return (
             l.useEffect(() => {
-                b && (null == s || s());
+                b && s?.();
             }, [s, b]),
             t.jsx('div', {
                 className: o(De.base, c && De.base__afterSelection),
@@ -549,7 +549,7 @@ const Se = (e) => {
     },
     Ue = {
         base: 'VehicleSlot_f5381b3',
-        flag: 'VehicleSlot_flag_976679d',
+        flag: 'VehicleSlot_flag_6032f4a',
         vehicleImage: 'VehicleSlot_vehicleImage_58db275f',
         information: 'VehicleSlot_information_12c38e80',
         row: 'VehicleSlot_row_11c93287',
@@ -605,7 +605,7 @@ const Se = (e) => {
             s = e.vehicles.get(),
             i = e.selectedVehicleIndex.get() > e.computes.vehiclesLength() - 1 ? 0 : e.selectedVehicleIndex.get(),
             c = O();
-        l.useEffect(() => B(c.recalculate), [null == s ? void 0 : s.length, c.recalculate]);
+        l.useEffect(() => B(c.recalculate), [s?.length, c.recalculate]);
         const n = w(se);
         return t.jsx(t.Fragment, {
             children: T(s, (e, s) =>
@@ -682,8 +682,9 @@ const Se = (e) => {
         slideRibbonUp: 'App_slideRibbonUp_0',
         scale: 'App_scale_0',
     },
-    ea = (e) => (e === be.VIEW_REWARD ? ce.RewardsScreen : ce.VehicleSelectionView),
-    aa = d(() => {
+    ea = !0,
+    aa = (e) => (e === be.VIEW_REWARD ? ce.RewardsScreen : ce.VehicleSelectionView),
+    sa = d(() => {
         const { model: e, controls: a } = Ve(),
             { category: s, maxCategory: c, fromEntryPoint: n, viewState: r } = e.root.get(),
             d = e.vehicles.get(),
@@ -715,13 +716,13 @@ const Se = (e) => {
                     }))(r),
             ),
             C = (e = !1) => {
-                (b({ action: e ? R.KeyDown : R.Click, item: ne.CloseButton, parentScreen: ea(r) }), p(), q.close());
+                (b({ action: e ? R.KeyDown : R.Click, item: ne.CloseButton, parentScreen: aa(r) }), p(), q.close());
             },
             E = () => {
-                C(true);
+                C(ea);
             };
         ($(() => {
-            C(true);
+            C(ea);
         }),
             z(J.ENTER, E),
             z(J.SPACE, E));
@@ -758,7 +759,7 @@ const Se = (e) => {
                             b({
                                 action: R.Viewed,
                                 item: ne.SeniorityAwardsTooltip,
-                                parentScreen: ea(r),
+                                parentScreen: aa(r),
                                 timeLimit: me,
                             });
                         },
@@ -788,17 +789,17 @@ const Se = (e) => {
                             isGotoHangarAvailable: n,
                             isShopAvailable: !1,
                             onShowMoreClick: () => {
-                                (m({ action: R.Click, item: ne.ShowMoreButton, parentScreen: ea(r) }),
+                                (m({ action: R.Click, item: ne.ShowMoreButton, parentScreen: aa(r) }),
                                     p(),
                                     a.moreRewards());
                             },
                             onAcceptClick: () => {
-                                (m({ action: R.Click, item: ne.ConfirmButton, parentScreen: ea(r) }),
+                                (m({ action: R.Click, item: ne.ConfirmButton, parentScreen: aa(r) }),
                                     p(),
                                     a.moreRewards());
                             },
                             onGotoHangarBtnClick: () => {
-                                (m({ action: R.Click, item: ne.GoToHangarButton, parentScreen: ea(r) }),
+                                (m({ action: R.Click, item: ne.GoToHangarButton, parentScreen: aa(r) }),
                                     p(),
                                     a.goToHangar());
                             },
@@ -812,5 +813,5 @@ const Se = (e) => {
             ],
         });
     }),
-    sa = Q(ae);
-ee(new Y().add(ge).addWithProps(Z, { soundsOverrides: sa }).render(t.jsx(aa, {})));
+    ia = Q(ae);
+ee(new Y().add(ge).addWithProps(Z, { soundsOverrides: ia }).render(t.jsx(sa, {})));

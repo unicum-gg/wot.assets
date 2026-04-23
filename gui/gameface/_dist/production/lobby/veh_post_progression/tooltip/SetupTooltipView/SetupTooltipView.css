@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,115 +11,115 @@
     position: relative;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.FormatTextWithColorTags_blackReal_3c {
+.FormatTextWithColorTags_blackReal_ae104 {
     color: #000000;
 }
 
-.FormatTextWithColorTags_whiteReal_8a {
+.FormatTextWithColorTags_whiteReal_c12a8 {
     color: #ffffff;
 }
 
-.FormatTextWithColorTags_white_16 {
+.FormatTextWithColorTags_white_c5665 {
     color: #f2f2f7;
 }
 
-.FormatTextWithColorTags_whiteOrange_18 {
+.FormatTextWithColorTags_whiteOrange_fff65 {
     color: #fefeec;
 }
 
-.FormatTextWithColorTags_whiteSpanish_10 {
+.FormatTextWithColorTags_whiteSpanish_d24b3 {
     color: #e9e2bf;
 }
 
-.FormatTextWithColorTags_par_ca {
+.FormatTextWithColorTags_par_ee7d9 {
     color: #8c8c7e;
 }
 
-.FormatTextWithColorTags_parSecondary_8d {
+.FormatTextWithColorTags_parSecondary_a5b8c {
     color: #595950;
 }
 
-.FormatTextWithColorTags_parTertiary_a3 {
+.FormatTextWithColorTags_parTertiary_a0c09 {
     color: #37362e;
 }
 
-.FormatTextWithColorTags_red_60 {
+.FormatTextWithColorTags_red_ad70c {
     color: #ff2717;
 }
 
-.FormatTextWithColorTags_redDark_03 {
+.FormatTextWithColorTags_redDark_afb30 {
     color: #b70000;
 }
 
-.FormatTextWithColorTags_yellow_ad {
+.FormatTextWithColorTags_yellow_e47d1 {
     color: #feab34;
 }
 
-.FormatTextWithColorTags_orange_e4 {
+.FormatTextWithColorTags_orange_e08c4 {
     color: #ee7000;
 }
 
-.FormatTextWithColorTags_cream_cd {
+.FormatTextWithColorTags_cream_f2e96 {
     color: #ffdd99;
 }
 
-.FormatTextWithColorTags_brown_c8 {
+.FormatTextWithColorTags_brown_ed7be {
     color: #cbac77;
 }
 
-.FormatTextWithColorTags_greenBright_f0 {
+.FormatTextWithColorTags_greenBright_b0875 {
     color: #80d43a;
 }
 
-.FormatTextWithColorTags_green_c5 {
+.FormatTextWithColorTags_green_d0263 {
     color: #7ab300;
 }
 
-.FormatTextWithColorTags_greenDark_af {
+.FormatTextWithColorTags_greenDark_f19b8 {
     color: #497212;
 }
 
-.FormatTextWithColorTags_blueBooster_ac {
+.FormatTextWithColorTags_blueBooster_fd3be {
     color: #ccffff;
 }
 
-.FormatTextWithColorTags_blueTeamkiller_6f {
+.FormatTextWithColorTags_blueTeamkiller_fd915 {
     color: #09e2ff;
 }
 
-.FormatTextWithColorTags_cred_4e {
+.FormatTextWithColorTags_cred_fdafa {
     color: #ced9d9;
 }
 
-.FormatTextWithColorTags_gold_90 {
+.FormatTextWithColorTags_gold_ab90e {
     color: #ffc363;
 }
 
-.FormatTextWithColorTags_bond_71 {
+.FormatTextWithColorTags_bond_e83f5 {
     color: #c9c9b6;
 }
 
-.FormatTextWithColorTags_prom_dd {
+.FormatTextWithColorTags_prom_aa30c {
     color: #a29b70;
 }
 
 /* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
 
-.FormatTextWithColorTags_parNoWidth_5a {
+.FormatTextWithColorTags_parNoWidth_bf7ac {
     width: 0;
     color: #8c8c7e;
 }
 
-.DisabledBlock_base_ce {
+.DisabledBlock_base_f4a90 {
     padding-top: 14rem;
 }
 
-.DisabledBlock_warningTitle_e9 {
+.DisabledBlock_warningTitle_fc3a0 {
     color: #ee7000;
     font-size: 15rem;
     font-weight: 700;
@@ -128,40 +128,40 @@
     align-items: center;
 }
 
-.DisabledBlock_warningIcon_54 {
+.DisabledBlock_warningIcon_cb907 {
     width: 16rem;
     height: 16rem;
     margin-right: 5rem;
     background: url('R.images.gui.maps.icons.library.alertIcon') no-repeat 50% / contain;
 }
 
-.FeatureLevelSubtitle_level_83 {
+.FeatureLevelSubtitle_level_bd52c {
     color: #c9c9b6;
 }
 
-.Lock_base_f9 {
+.Lock_base_d629d {
     padding-top: 14rem;
 }
 
-.Lock_title_ca {
+.Lock_title_a9aad {
     color: #ff2717;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
 }
 
-.Lock_level_df {
+.Lock_level_dd37a {
     color: #ffdd99;
 }
 
-.Separator_base_73 {
+.Separator_base_e9e05 {
     display: flex;
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.components.tooltip.devider_points') 50% / contain no-repeat;
 }
 
-.Content_base_1f {
+.Content_base_a8751 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -172,30 +172,30 @@
     position: relative;
 }
 
-.Content_title_7e {
+.Content_title_ed50a {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
 }
 
-.Content_imageWrapper_16 {
+.Content_imageWrapper_be356 {
     display: flex;
     justify-content: center;
     margin: 20rem 0 25rem;
 }
 
-.Content_image_48 {
+.Content_image_e945b {
     width: 160rem;
     height: 100rem;
     background: center / contain no-repeat;
 }
 
-.Content_disabledSeparator_32 {
+.Content_disabledSeparator_cab36 {
     margin-top: 18rem;
 }
 
-.Content_content_79 {
+.Content_content_b3606 {
     padding-top: 10rem;
     padding-bottom: 12rem;
     background: linear-gradient(
@@ -207,7 +207,7 @@
     );
 }
 
-.Content_description_a4 {
+.Content_description_e1bbf {
     margin-top: 10rem;
     color: #595950;
 }

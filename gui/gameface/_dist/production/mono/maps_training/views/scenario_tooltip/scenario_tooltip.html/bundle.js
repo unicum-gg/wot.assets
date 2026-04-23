@@ -25,7 +25,7 @@ const [T, x] = s()(
         }),
         r,
     ),
-    j = { base: 'Target_ff1ba91c' },
+    j = 'Target_ff1ba91c',
     u = c.resolve('images');
 function N({ vehicleType: a }) {
     const s = e.useMemo(
@@ -34,7 +34,7 @@ function N({ vehicleType: a }) {
         },
         [a],
     );
-    return i.jsx('div', { className: j.base, style: s });
+    return i.jsx('div', { className: j, style: s });
 }
 const f = {
         root: 'ScenarioTooltip_root_cb0d5a74',
@@ -56,8 +56,8 @@ const f = {
         info: 'ScenarioTooltip_info_655ab6a9',
         infoIcon: 'ScenarioTooltip_infoIcon_833c8879',
     },
-    b = c.resolve('strings');
-function S() {
+    S = c.resolve('strings');
+function b() {
     const { model: s } = x(),
         r = s.isComplete.get(),
         c = R.strings.maps_training.scenarioTooltip,
@@ -68,7 +68,7 @@ function S() {
         }),
         T = t(c.scenario.title(), {
             num: s.scenarioNum.get(),
-            vehicleType: b.readOrEmpty(`maps_training.vehicleType.${s.vehicleType.get()}`),
+            vehicleType: S.readOrEmpty(`maps_training.vehicleType.${s.vehicleType.get()}`),
         }),
         j = e.useMemo(
             function () {
@@ -77,7 +77,7 @@ function S() {
             [s],
         ),
         u = a(f.base, r && f.base__complete),
-        S = a(f.title, r && f.title__green),
+        b = a(f.title, r && f.title__green),
         y = a(f.vehicle, f[`vehicle__${s.vehicleType.get()}`]);
     return i.jsx(m, {
         'data-name': 'ScenarioTooltip',
@@ -106,7 +106,7 @@ function S() {
                             children: [i.jsx('div', { className: y }), s.vehicleName.get()],
                         }),
                     }),
-                    i.jsx('div', { className: S, children: r ? c.rewardReceived() : c.reward() }),
+                    i.jsx('div', { className: b, children: r ? c.rewardReceived() : c.reward() }),
                     i.jsxs('div', {
                         className: f.rewards,
                         children: [
@@ -126,4 +126,4 @@ function S() {
         }),
     });
 }
-p(i.jsx(g, { children: i.jsx(T, { children: i.jsx(S, {}) }) }));
+p(i.jsx(g, { children: i.jsx(T, { children: i.jsx(b, {}) }) }));

@@ -1,5 +1,5 @@
-import { j as e, w as s, x as a } from './vendor.js';
-import { i as t, dl as o, F as n, dm as i, dn as r, dp as m, dq as d, dr as l, ds as c, dt as p } from './lib.js';
+import { j as e, C as s, D as a } from './vendor.js';
+import { i as t, dq as o, F as n, dr as r, ds as i, dt as m, du as d, dv as l, dw as c, dx as p } from './lib.js';
 import { u as x } from './use_server_time_polling.js';
 const [v, g] = t()(
         ({ observableModel: e }) => ({
@@ -23,27 +23,27 @@ const [v, g] = t()(
         };
     },
     h = R.strings.comp7_ext.season,
-    S = (s, a, t = i.ShortDate) => ({
+    S = (s, a, t = r.ShortDate) => ({
         startDate: e.jsx(l, { datetime: s, format: t }),
         endDate: e.jsx(l, { datetime: a, format: t }),
     }),
-    u = (s, a, t) => {
-        const i = a - t,
+    N = (s, a, t) => {
+        const r = a - t,
             l = ((e, s) => j(e - s))(a, t);
-        return i >= o
+        return r >= o
             ? e.jsx(n, { text: h.range(), binding: S(s, a) })
-            : i >= r
+            : r >= i
               ? e.jsx(n, { text: h.daysLeft(), binding: l })
-              : i >= m
+              : r >= m
                 ? e.jsx(n, { text: h.hoursLeft(), binding: l })
-                : i >= d
+                : r >= d
                   ? e.jsx(n, { text: h.minutesLeft(), binding: l })
-                  : i >= 1
+                  : r >= 1
                     ? e.jsx(n, { text: h.secondsLeft(), binding: l })
                     : void 0;
     },
-    N = R.strings.comp7_ext,
-    T = (e) => ((e, s) => String(e.$dyn(s)))(N.seasonName, e),
+    u = R.strings.comp7_ext,
+    T = (e) => ((e, s) => String(e.$dyn(s)))(u.seasonName, e),
     b = 'ActiveSeasonState_7be3b725',
     f = 'ActiveSeasonState_calendarIcon_cc4d1c6a',
     _ = 'ActiveSeasonState_divider_e45543ee',
@@ -52,49 +52,49 @@ const [v, g] = t()(
         endTimestamp: t,
         currentTimestamp: o,
         seasonName: n,
-        tooltipId: i = '',
-        hasSeasonName: r = !0,
+        tooltipId: r = '',
+        hasSeasonName: i = !0,
         classNames: m,
     }) =>
         e.jsx(c, {
-            args: { tooltipId: i },
-            isEnabled: Boolean(i),
+            args: { tooltipId: r },
+            isEnabled: Boolean(r),
             children: e.jsxs('div', {
                 className: b,
                 children: [
-                    e.jsx('div', { className: s(f, null == m ? void 0 : m.calendarIcon) }),
-                    r && e.jsxs(e.Fragment, { children: [T(n), e.jsx('div', { className: _ })] }),
-                    u(a, t, o),
+                    e.jsx('div', { className: s(f, m?.calendarIcon) }),
+                    i && e.jsxs(e.Fragment, { children: [T(n), e.jsx('div', { className: _ })] }),
+                    N(a, t, o),
                 ],
             }),
         }),
-    I = 'ScheduleSubheading_6a634a68',
-    y = a(({ className: a, classNames: t, hasSeasonName: o = !0 }) => {
-        const { model: n, controls: i } = g(),
-            r = n.season.startTimestamp.get(),
+    D = 'ScheduleSubheading_6a634a68',
+    I = a(({ className: a, classNames: t, hasSeasonName: o = !0 }) => {
+        const { model: n, controls: r } = g(),
+            i = n.season.startTimestamp.get(),
             m = n.season.endTimestamp.get(),
             d = n.season.serverTimestamp.get(),
             l = n.season.name.get();
         return (
-            x(d, m, i.pollServerTime),
+            x(d, m, r.pollServerTime),
             e.jsx('div', {
-                className: s(I, a),
+                className: s(D, a),
                 children:
                     d < m
                         ? e.jsx('div', {
-                              className: null == t ? void 0 : t.activeSeasonState,
+                              className: t?.activeSeasonState,
                               children: e.jsx(M, {
-                                  startTimestamp: r,
+                                  startTimestamp: i,
                                   endTimestamp: m,
                                   currentTimestamp: d,
                                   seasonName: l,
                                   tooltipId: n.root.get().tooltipId,
                                   hasSeasonName: o,
-                                  classNames: null == t ? void 0 : t.scheduleClassNames,
+                                  classNames: t?.scheduleClassNames,
                               }),
                           })
                         : e.jsx(p, { text: R.strings.comp7_ext.season.over(), binding: { seasonName: T(l) } }),
             })
         );
     });
-export { y as S, v as a, g as u };
+export { I as S, v as a, g as u };

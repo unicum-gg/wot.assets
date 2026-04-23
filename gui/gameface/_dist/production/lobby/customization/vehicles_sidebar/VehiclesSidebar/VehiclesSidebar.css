@@ -1,4 +1,4 @@
-.CButton_base_40 {
+.CButton_base_bb13f {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,35 +8,35 @@
     cursor: pointer;
 }
 
-.CButton_base__main_42,
-.CButton_base__primary_7f,
-.CButton_base__primaryGreen_6f,
-.CButton_base__primaryRed_ec,
-.CButton_base__secondary_50 {
+.CButton_base__main_dd05d,
+.CButton_base__primary_c75a2,
+.CButton_base__primaryGreen_ae65b,
+.CButton_base__primaryRed_b1341,
+.CButton_base__secondary_f2c20 {
     background-size: 100% 100%;
 }
 
-.CButton_base__main_42 {
+.CButton_base__main_dd05d {
     background-image: url('R.images.gui.maps.icons.components.button.back_main');
 }
 
-.CButton_base__primary_7f {
+.CButton_base__primary_c75a2 {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary');
 }
 
-.CButton_base__primaryGreen_6f {
+.CButton_base__primaryGreen_ae65b {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
 }
 
-.CButton_base__primaryRed_ec {
+.CButton_base__primaryRed_b1341 {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
 }
 
-.CButton_base__secondary_50 {
+.CButton_base__secondary_f2c20 {
     background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
 }
 
-.CButton_base__ghost_ed {
+.CButton_base__ghost_f452b {
     border-radius: 3rem;
     box-shadow:
         0 0 0 1rem rgba(0, 0, 0, 0.3),
@@ -44,29 +44,29 @@
     background-color: rgba(0, 0, 0, 0.15);
 }
 
-.CButton_base__extraSmall_27 {
+.CButton_base__extraSmall_e1273 {
     min-height: 17rem;
     padding: 0 16rem;
 }
 
-.CButton_base__small_df,
-.CButton_base__medium_74 {
+.CButton_base__small_c20a3,
+.CButton_base__medium_ef59a {
     padding: 0 20rem;
 }
 
-.CButton_base__small_df {
+.CButton_base__small_c20a3 {
     min-height: 18rem;
 }
 
-.CButton_base__medium_74 {
+.CButton_base__medium_ef59a {
     min-height: 32rem;
 }
 
-.CButton_base__large_5c {
+.CButton_base__large_bafd5 {
     min-height: 48rem;
 }
 
-.CButton_base__disabled_d9 {
+.CButton_base__disabled_eef7a {
     cursor: default;
 }
 /* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
@@ -74,7 +74,7 @@ The bug is that under certain conditions, when using border-image, stripes appea
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113
 */
-.CButton_back_e5 {
+.CButton_back_e957b {
     border-image-slice: 4 fill;
     border-image-width: 4rem;
     position: absolute;
@@ -83,22 +83,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
 }
-.CButton_base__main_42 .CButton_back_e5 {
+.CButton_base__main_dd05d .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
 }
-.CButton_base__primary_7f .CButton_back_e5 {
+.CButton_base__primary_c75a2 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
 }
-.CButton_base__primaryGreen_6f .CButton_back_e5 {
+.CButton_base__primaryGreen_ae65b .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
 }
-.CButton_base__primaryRed_ec .CButton_back_e5 {
+.CButton_base__primaryRed_b1341 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
 }
-.CButton_base__secondary_50 .CButton_back_e5 {
+.CButton_base__secondary_f2c20 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
 }
-.CButton_texture_fe {
+.CButton_texture_ccd7e {
     background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
     background-size: 155rem 31rem;
     mix-blend-mode: soft-light;
@@ -108,7 +108,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
 }
-.CButton_state_11 {
+.CButton_state_f2bb4 {
     position: absolute;
     top: 0;
     right: 0;
@@ -116,20 +116,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
     transition: box-shadow 0.16s ease-in-out;
 }
-.CButton_base__focus_83 .CButton_state_11 {
+.CButton_base__focus_b0875 .CButton_state_f2bb4 {
     border-radius: 2rem;
     box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
 }
-.CButton_stateHighlightHover_ff,
-.CButton_stateHighlightActive_35,
-.CButton_stateDisabled_54 {
+.CButton_stateHighlightHover_bd0cb,
+.CButton_stateHighlightActive_e9a8a,
+.CButton_stateDisabled_ed209 {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
 }
-.CButton_stateHighlightHover_ff {
+.CButton_stateHighlightHover_bd0cb {
     background-image: linear-gradient(
         180deg,
         rgba(252, 248, 235, 0.25) 0%,
@@ -138,37 +138,37 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     );
     opacity: 0;
 }
-.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+.CButton_base_bb13f:hover .CButton_stateHighlightHover_bd0cb {
     opacity: 1;
 }
-.CButton_base_40:active .CButton_stateHighlightHover_ff {
+.CButton_base_bb13f:active .CButton_stateHighlightHover_bd0cb {
     opacity: 0;
 }
-.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+.CButton_base__disabled_eef7a:hover .CButton_stateHighlightHover_bd0cb {
     opacity: 0;
 }
-.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+.CButton_base__ghost_f452b .CButton_stateHighlightHover_bd0cb {
     box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
     background-color: rgba(8, 6, 0, 0.18);
     background-image: none;
 }
-.CButton_stateHighlightActive_35 {
+.CButton_stateHighlightActive_e9a8a {
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
     opacity: 0;
 }
-.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+.CButton_base__highlightActive_db27d .CButton_stateHighlightActive_e9a8a {
     opacity: 1;
 }
-.CButton_stateDisabled_54 {
+.CButton_stateDisabled_ed209 {
     background-color: rgba(0, 0, 0, 0.25);
     background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
     background-size: 15rem 15rem;
     visibility: hidden;
 }
-.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+.CButton_base__disabled_eef7a .CButton_stateDisabled_ed209 {
     visibility: inherit;
 }
-.CButton_content_cc {
+.CButton_content_a99fc {
     display: flex;
     align-items: center;
     color: #f2f2e6;
@@ -178,37 +178,37 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     letter-spacing: 0.03em;
     transform: translateY(-1rem);
 }
-.CButton_content_cc[lang='ja'],
-.CButton_content_cc[lang='ko'],
-.CButton_content_cc[lang='zh_tw'],
-.CButton_content_cc[lang='zh_sg'],
-.CButton_content_cc[lang='zh_cn'],
-.CButton_content_cc[lang='th'] {
+.CButton_content_a99fc[lang='ja'],
+.CButton_content_a99fc[lang='ko'],
+.CButton_content_a99fc[lang='zh_tw'],
+.CButton_content_a99fc[lang='zh_sg'],
+.CButton_content_a99fc[lang='zh_cn'],
+.CButton_content_a99fc[lang='th'] {
     font-weight: 400;
 }
-.CButton_base__main_42 .CButton_content_cc,
-.CButton_base__primaryRed_ec .CButton_content_cc {
+.CButton_base__main_dd05d .CButton_content_a99fc,
+.CButton_base__primaryRed_b1341 .CButton_content_a99fc {
     text-shadow: 0 -1rem 1rem #600;
 }
-.CButton_base__secondary_50 .CButton_content_cc {
+.CButton_base__secondary_f2c20 .CButton_content_a99fc {
     color: rgba(254, 254, 236, 0.75);
 }
-.CButton_base__primaryGreen_6f .CButton_content_cc {
+.CButton_base__primaryGreen_ae65b .CButton_content_a99fc {
     text-shadow: 0 -1rem 1rem #1c2502;
 }
-.CButton_base__extraSmall_27 .CButton_content_cc {
+.CButton_base__extraSmall_e1273 .CButton_content_a99fc {
     font-size: 12rem;
 }
-.CButton_base__small_df .CButton_content_cc {
+.CButton_base__small_c20a3 .CButton_content_a99fc {
     font-size: 14rem;
 }
-.CButton_base__medium_74 .CButton_content_cc {
+.CButton_base__medium_ef59a .CButton_content_a99fc {
     font-size: 15rem;
 }
-.CButton_base__large_5c .CButton_content_cc {
+.CButton_base__large_bafd5 .CButton_content_a99fc {
     font-size: 18rem;
 }
-.CButton_base__disabled_d9 .CButton_content_cc {
+.CButton_base__disabled_eef7a .CButton_content_a99fc {
     opacity: 0.6;
 }
 
@@ -216,20 +216,20 @@ body {
     overflow: hidden;
 }
 
-.Layout_base_ee {
+.Layout_base_c35d1 {
     display: flex;
     width: 100%;
     height: 100%;
     background: #0000 no-repeat center center / cover;
 }
 
-.Layout_leftBlock_c0 {
+.Layout_leftBlock_fd0b9 {
     flex-grow: 2;
     width: 100rem;
     position: relative;
 }
 
-.Layout_rightBlock_87 {
+.Layout_rightBlock_af575 {
     width: 440rem;
     height: 100%;
     background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.bg') center center / cover;
@@ -238,7 +238,7 @@ body {
     right: 0;
 }
 
-.Layout_pin_ce {
+.Layout_pin_e739e {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -248,28 +248,28 @@ body {
     z-index: 100;
 }
 
-.Layout_closeBtn_26 {
+.Layout_closeBtn_ae2ed {
     width: 13rem;
     height: 13rem;
     background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.closeX') center / contain no-repeat;
     cursor: pointer;
 }
 
-.Layout_close_c5 {
+.Layout_close_f1dbe {
     margin: 14rem 14rem 0 0;
 }
 
-.App_base_ca {
+.App_base_e3c89 {
     display: flex;
     flex-direction: column;
     height: 100vh;
 }
 
-.App_header_b8 {
+.App_header_abe3a {
     margin: 30rem 0 0;
 }
 
-.App_headerText_49 {
+.App_headerText_d019e {
     color: #fefeec;
     font-size: 14rem;
     font-weight: 700;
@@ -280,26 +280,26 @@ body {
     text-align: center;
 }
 
-.App_vehiclesList_cf {
+.App_vehiclesList_d1f3a {
     flex-grow: 2;
     margin: -9rem 0 0;
 }
 
-.App_footer_32 {
+.App_footer_e44a6 {
     margin: 0;
 }
 
-.App_submitBtnContainer_ac {
+.App_submitBtnContainer_e709f {
     margin-bottom: 38rem;
     text-align: center;
 }
 
-.App_submitBtn_ec {
+.App_submitBtn_ee8aa {
     width: 160rem;
     height: 32rem;
 }
 
-.HorizontalBar_base_49 {
+.HorizontalBar_base_fa517 {
     display: flex;
     width: 100%;
     height: 13rem;
@@ -307,18 +307,18 @@ body {
     position: relative;
 }
 
-.HorizontalBar_base__active_5e {
+.HorizontalBar_base__active_ad89b {
     visibility: visible;
 }
 
-.HorizontalBar_base_49 .disable,
-.HorizontalBar_base_49 .disable:hover {
+.HorizontalBar_base_fa517 .disable,
+.HorizontalBar_base_fa517 .disable:hover {
     opacity: 0.3;
     cursor: default;
 }
 
-.HorizontalBar_leftButton_5f,
-.HorizontalBar_rightButton_03 {
+.HorizontalBar_leftButton_eb8c3,
+.HorizontalBar_rightButton_f5116 {
     width: 13rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
@@ -331,27 +331,27 @@ body {
     cursor: pointer;
 }
 
-.HorizontalBar_leftButton_5f:hover,
-.HorizontalBar_rightButton_03:hover {
+.HorizontalBar_leftButton_eb8c3:hover,
+.HorizontalBar_rightButton_f5116:hover {
     opacity: 1;
 }
 
-.HorizontalBar_leftButton_5f {
+.HorizontalBar_leftButton_eb8c3 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
 }
 
-.HorizontalBar_rightButton_03 {
+.HorizontalBar_rightButton_f5116 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
 }
 
-.HorizontalBar_track_0d {
+.HorizontalBar_track_fd3af {
     flex: 1;
     margin: 0 1rem;
     position: relative;
     cursor: pointer;
 }
 
-.HorizontalBar_thumb_fd {
+.HorizontalBar_thumb_bb7e0 {
     display: none;
     flex: 0 0 100%;
     width: 100%;
@@ -368,11 +368,11 @@ body {
     cursor: pointer;
 }
 
-.HorizontalBar_thumb_fd:hover {
+.HorizontalBar_thumb_bb7e0:hover {
     opacity: 1;
 }
 
-.HorizontalBar_rail_32 {
+.HorizontalBar_rail_a3d9e {
     height: 0;
     border-top: 1rem solid #2f2e24;
     position: absolute;
@@ -381,26 +381,26 @@ body {
     left: 5rem;
 }
 
-.HorizontalBar_rail_32:hover {
+.HorizontalBar_rail_a3d9e:hover {
     opacity: 0.7;
 }
 
-.HorizontalScroll_base_29 {
+.HorizontalScroll_base_a33a9 {
     width: 100%;
 }
 
-.HorizontalScroll_wrapper_1e {
+.HorizontalScroll_wrapper_b622e {
     display: flex;
     width: 100%;
     overflow-x: hidden;
 }
 
-.HorizontalScroll_defaultScrollArea_8d {
+.HorizontalScroll_defaultScrollArea_a2315 {
     width: 100%;
     margin-bottom: 7rem;
 }
 
-.VerticalBar_base_f3 {
+.VerticalBar_base_b5610 {
     display: flex;
     flex-direction: column;
     width: 13rem;
@@ -409,18 +409,18 @@ body {
     position: relative;
 }
 
-.VerticalBar_base__active_72 {
+.VerticalBar_base__active_be260 {
     visibility: visible;
 }
 
-.VerticalBar_base_f3 .disable,
-.VerticalBar_base_f3 .disable:hover {
+.VerticalBar_base_b5610 .disable,
+.VerticalBar_base_b5610 .disable:hover {
     opacity: 0.3;
     cursor: default;
 }
 
-.VerticalBar_topButton_d7,
-.VerticalBar_bottomButton_06 {
+.VerticalBar_topButton_c2227,
+.VerticalBar_bottomButton_ef09b {
     width: 13rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
@@ -432,27 +432,27 @@ body {
     cursor: pointer;
 }
 
-.VerticalBar_topButton_d7:hover,
-.VerticalBar_bottomButton_06:hover {
+.VerticalBar_topButton_c2227:hover,
+.VerticalBar_bottomButton_ef09b:hover {
     opacity: 1;
 }
 
-.VerticalBar_topButton_d7 {
+.VerticalBar_topButton_c2227 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
 }
 
-.VerticalBar_bottomButton_06 {
+.VerticalBar_bottomButton_ef09b {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
 }
 
-.VerticalBar_track_df {
+.VerticalBar_track_e3345 {
     flex: 1;
     margin: 1rem 0;
     position: relative;
     cursor: pointer;
 }
 
-.VerticalBar_thumb_32 {
+.VerticalBar_thumb_a34e7 {
     display: none;
     flex: 0 0 13rem;
     width: 13rem;
@@ -468,11 +468,11 @@ body {
     cursor: pointer;
 }
 
-.VerticalBar_thumb_32:hover {
+.VerticalBar_thumb_a34e7:hover {
     opacity: 1;
 }
 
-.VerticalBar_rail_43 {
+.VerticalBar_rail_ff232 {
     width: 0;
     height: 100%;
     border-left: 1rem solid #2f2e24;
@@ -484,29 +484,29 @@ body {
     z-index: 0;
 }
 
-.VerticalBar_rail_43:hover {
+.VerticalBar_rail_ff232:hover {
     opacity: 0.7;
 }
 
-.VerticalScroll_content_cb {
+.VerticalScroll_content_fe263 {
     height: 100%;
     overflow-y: hidden;
 }
 
-.VerticalScroll_defaultScroll_f8 {
+.VerticalScroll_defaultScroll_e27f5 {
     display: flex;
 }
 
-.VerticalScroll_bar_1e {
+.VerticalScroll_bar_b8700 {
     flex: 1;
     margin-left: 7rem;
 }
 
-.VerticalScroll_area_af {
+.VerticalScroll_area_b5a82 {
     flex: 1;
 }
 
-.SortToggleButton_base_46 {
+.SortToggleButton_base_fc26a {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -515,54 +515,54 @@ body {
     cursor: pointer;
 }
 
-.SortToggleButton_base__disabled_56 {
+.SortToggleButton_base__disabled_aa738 {
     cursor: default;
 }
 
-.SortToggleButton_icon_d8 {
+.SortToggleButton_icon_a5b83 {
     width: 37rem;
     height: 48rem;
     background: center / contain no-repeat;
     position: relative;
 }
 
-.SortToggleButton_icon__nation_ae {
+.SortToggleButton_icon__nation_fe1bf {
     background-image: url('R.images.gui.maps.icons.customization.vehicles_sidebar.nationIcon');
 }
 
-.SortToggleButton_icon__type_51 {
+.SortToggleButton_icon__type_eff46 {
     background-image: url('R.images.gui.maps.icons.customization.vehicles_sidebar.tierIcon');
 }
 
-.SortToggleButton_icon__tier_d3 {
+.SortToggleButton_icon__tier_bc579 {
     background-image: url('R.images.gui.maps.icons.customization.vehicles_sidebar.levelIcon');
 }
 
-.SortToggleButton_icon__amountOf3DAttachments_89 {
+.SortToggleButton_icon__amountOf3DAttachments_ffae7 {
     width: 44rem;
     background-image: url('R.images.gui.maps.icons.customization.vehicles_sidebar.attachmentsIcon');
 }
 
-.SortToggleButton_icon__inDepot_db {
+.SortToggleButton_icon__inDepot_d6113 {
     width: 54rem;
     height: 50rem;
     background-image: url('R.images.gui.maps.icons.customization.vehicles_sidebar.onwarehouseIcon');
     transform: translateX(-7rem);
 }
 
-.SortToggleButton_select_04 {
+.SortToggleButton_select_c6c12 {
     position: absolute;
     bottom: 0;
 }
 
-.SortToggleButton_indicator_de {
+.SortToggleButton_indicator_f42f0 {
     width: 16rem;
     height: 8rem;
     background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.selectIndicator') center / contain no-repeat;
     transform: translateY(7rem);
 }
 
-.SortToggleTextButton_base_4f {
+.SortToggleTextButton_base_c880c {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -571,11 +571,11 @@ body {
     cursor: pointer;
 }
 
-.SortToggleTextButton_base__disabled_d4 {
+.SortToggleTextButton_base__disabled_f9d9e {
     cursor: default;
 }
 
-.SortToggleTextButton_container_2b {
+.SortToggleTextButton_container_a7c55 {
     color: #fefeec;
     font-size: 14rem;
     font-weight: 700;
@@ -591,28 +591,28 @@ body {
     text-align: left;
 }
 
-.SortToggleTextButton_container__name_55 {
+.SortToggleTextButton_container__name_e420e {
     width: 178rem;
     color: #d1cfc0;
 }
 
-.SortToggleTextButton_base__selected_96 .SortToggleTextButton_container__name_55 {
+.SortToggleTextButton_base__selected_c63dc .SortToggleTextButton_container__name_e420e {
     color: #e9e2bf;
 }
 
-.SortToggleTextButton_select_9e {
+.SortToggleTextButton_select_f271c {
     position: absolute;
     bottom: 0;
 }
 
-.SortToggleTextButton_indicator_64 {
+.SortToggleTextButton_indicator_c78a5 {
     width: 16rem;
     height: 8rem;
     background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.selectIndicator') center / contain no-repeat;
     transform: translateY(7rem);
 }
 
-.ControlsPanel_base_4c {
+.ControlsPanel_base_c44e7 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -621,36 +621,36 @@ body {
     text-align: center;
 }
 
-.ControlsPanel_separator_de {
+.ControlsPanel_separator_a6948 {
     width: 2rem;
     height: 32rem;
     background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.separator') center / contain no-repeat;
     pointer-events: none;
 }
 
-.ControlsPanel_separator__last_d1 {
+.ControlsPanel_separator__last_dc35d {
     margin-left: -10rem;
 }
 
-.ControlsPanel_base_4c:hover .ControlsPanel_toggleButtonContainer_31 {
+.ControlsPanel_base_c44e7:hover .ControlsPanel_toggleButtonContainer_af454 {
     opacity: 0.7;
 }
 
-.ControlsPanel_base_4c:hover .ControlsPanel_toggleButtonContainer_31:hover {
+.ControlsPanel_base_c44e7:hover .ControlsPanel_toggleButtonContainer_af454:hover {
     opacity: 1;
 }
 
-.ControlsPanel_fill_60 {
+.ControlsPanel_fill_f9bc3 {
     width: 10rem;
 }
 
-.VehicleItemWrapper_base_fd {
+.VehicleItemWrapper_base_fffeb {
     width: 407rem;
     height: 57rem;
     position: relative;
 }
 
-.VehicleItemWrapper_light_8c {
+.VehicleItemWrapper_light_b57e5 {
     background:
         linear-gradient(90deg, #f2e3d500 0, #f2e3d51a 51%, #f2e3d500 0),
         linear-gradient(270deg, #f2e3d500 0, #f2e3d51a 50%, #f2e3d500 0);
@@ -664,17 +664,17 @@ body {
     pointer-events: none;
 }
 
-.VehicleItemWrapper_base__withContent_63:hover .VehicleItemWrapper_light_8c {
+.VehicleItemWrapper_base__withContent_d6669:hover .VehicleItemWrapper_light_b57e5 {
     opacity: 1;
 }
 
-.VehicleItemWrapper_content_59 {
+.VehicleItemWrapper_content_e8bda {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
-.VehicleItem_base_92 {
+.VehicleItem_base_f2f2e {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -683,56 +683,57 @@ body {
     position: relative;
 }
 
-.VehicleItem_nationContainer_c5 {
+.VehicleItem_nationContainer_c0543 {
     width: 26rem;
     margin-left: 25rem;
     text-align: center;
 }
 
-.VehicleItem_nation_44 {
+.VehicleItem_nation_acaac {
     width: 26rem;
     height: 16rem;
     background: center / contain no-repeat;
 }
 
-.VehicleItem_typeContainer_e2 {
+.VehicleItem_typeContainer_aa3d9 {
     width: 40rem;
     text-align: center;
 }
 
-.VehicleItem_type_63 {
+.VehicleItem_type_f710c {
     width: 44rem;
     height: 44rem;
     background: center / contain no-repeat;
 }
 
-.VehicleItem_tierContainer_57 {
+.VehicleItem_tierContainer_e3e79 {
     width: 30rem;
     height: 20rem;
     text-align: center;
 }
 
-.VehicleItem_tier_69 {
+.VehicleItem_tier_d4e73 {
     width: 29rem;
     height: 20rem;
     background: center / contain no-repeat;
 }
 
-.VehicleItem_vehicleInfoContainer_ff {
+.VehicleItem_vehicleInfoContainer_c505a {
     display: flex;
     flex-direction: row;
     align-items: center;
     text-align: center;
 }
 
-.VehicleItem_vehicleIcon_3e {
+.VehicleItem_vehicleIcon_b56d1 {
     width: 124rem;
     height: 31rem;
     background: center / contain no-repeat;
     mask-image: linear-gradient(to bottom, #000 60%, transparent);
+    mask-repeat: no-repeat;
 }
 
-.VehicleItem_vehicleName_fa {
+.VehicleItem_vehicleName_f6ada {
     color: #fefeec;
     font-size: 14rem;
     font-weight: 700;
@@ -745,7 +746,7 @@ body {
     text-align: left;
 }
 
-.VehicleItem_amountOf3DAttachments_c6 {
+.VehicleItem_amountOf3DAttachments_bd857 {
     color: #fefeec;
     font-size: 14rem;
     font-weight: 700;
@@ -756,14 +757,14 @@ body {
     font-weight: 400;
 }
 
-.VehicleItem_warehouseIcon_1d {
+.VehicleItem_warehouseIcon_ece6b {
     width: 54rem;
     height: 50rem;
     background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.onwarehouseIcon') center / contain no-repeat;
     transform: translateX(-5rem);
 }
 
-.VehicleItem_separator_77 {
+.VehicleItem_separator_a3537 {
     align-self: center;
     width: 358rem;
     height: 3rem;
@@ -771,17 +772,17 @@ body {
     transform: translateY(-3rem);
 }
 
-.VehiclesList_base_d7 {
+.VehiclesList_base_cb486 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 
-.VehiclesList_controlsPanel_ab {
+.VehiclesList_controlsPanel_f1c44 {
     margin-top: 24rem;
 }
 
-.VehiclesList_lipTop_f4 {
+.VehiclesList_lipTop_c63a2 {
     width: 439rem;
     height: 55rem;
     background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.lipTop') center / contain no-repeat;
@@ -791,7 +792,7 @@ body {
     pointer-events: none;
 }
 
-.VehiclesList_lipBottom_42 {
+.VehiclesList_lipBottom_fc4b8 {
     width: 439rem;
     height: 55rem;
     background: url('R.images.gui.maps.icons.customization.vehicles_sidebar.lipBottom') center / contain no-repeat;
@@ -801,12 +802,12 @@ body {
     pointer-events: none;
 }
 
-.VehiclesList_itemsContainer_9b {
+.VehiclesList_itemsContainer_fa4c7 {
     width: 435rem;
     position: absolute;
     top: 113rem;
 }
 
-.VehiclesList_scroll_57 {
+.VehiclesList_scroll_c6b49 {
     transform: scale(1, 0.96);
 }

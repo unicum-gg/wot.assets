@@ -1,27 +1,27 @@
-.TankmanSkills_base_59 {
+.TankmanSkills_base_e6387 {
     display: flex;
     position: relative;
     z-index: 0;
 }
 
-.TankmanSkills_skill_2d {
+.TankmanSkills_skill_fb3a8 {
     display: flex;
     align-items: center;
     position: relative;
 }
 
-.TankmanSkills_zeroSkill_e7 {
+.TankmanSkills_zeroSkill_a5243 {
     width: 24rem;
     height: 24rem;
     position: absolute;
 }
 
-.mediaMedium .TankmanSkills_zeroSkill_e7 {
+.mediaMedium .TankmanSkills_zeroSkill_a5243 {
     width: 32rem;
     height: 32rem;
 }
 
-.TankmanSkills_glow_b1 {
+.TankmanSkills_glow_f8c3e {
     width: 52rem;
     height: 52rem;
     background: url('R.images.gui.maps.icons.battlePass.icons.zero_perk_glow') no-repeat center / contain;
@@ -31,14 +31,14 @@
     pointer-events: none;
 }
 
-.mediaMedium .TankmanSkills_glow_b1 {
+.mediaMedium .TankmanSkills_glow_f8c3e {
     width: 72rem;
     height: 72rem;
     top: -60%;
     left: -50%;
 }
 
-.TankmanSkills_zeroSkillIcon_f8 {
+.TankmanSkills_zeroSkillIcon_c9c99 {
     width: 12rem;
     height: 12rem;
     background: url('R.images.gui.maps.icons.battlePass.icons.zero_perk') no-repeat center / contain;
@@ -47,28 +47,28 @@
     right: -24%;
 }
 
-.mediaMedium .TankmanSkills_zeroSkillIcon_f8 {
+.mediaMedium .TankmanSkills_zeroSkillIcon_c9c99 {
     width: 16rem;
     height: 16rem;
 }
 
-.TankmanSkills_skillIcon_9c {
+.TankmanSkills_skillIcon_a90e0 {
     width: 24rem;
     height: 24rem;
     margin: 0 4rem;
     background: center / contain;
 }
 
-.TankmanSkills_skillIcon__specificPerk_23 {
+.TankmanSkills_skillIcon__specificPerk_b46ae {
     margin: 0;
 }
 
-.mediaMedium .TankmanSkills_skillIcon_9c {
+.mediaMedium .TankmanSkills_skillIcon_a90e0 {
     width: 32rem;
     height: 32rem;
 }
 
-.TankmanSkills_divider_38 {
+.TankmanSkills_divider_f3eec {
     width: 0;
     height: 16rem;
     margin: 0 2rem;
@@ -77,12 +77,12 @@
     pointer-events: none;
 }
 
-.mediaMedium .TankmanSkills_divider_38 {
+.mediaMedium .TankmanSkills_divider_f3eec {
     height: 24rem;
     margin: 0 4rem;
 }
 
-.TankmanSkills_light_6b {
+.TankmanSkills_light_ab3d8 {
     width: 338rem;
     height: 168rem;
     background: url('R.images.gui.maps.icons.battlePass.lights.perk_light') no-repeat center / contain;

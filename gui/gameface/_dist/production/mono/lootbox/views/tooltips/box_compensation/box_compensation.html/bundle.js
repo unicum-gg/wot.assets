@@ -1,8 +1,8 @@
-import { k as e, m as s, j as o, e as t } from '../../../../chunks/vendor.js';
+import { m as e, n as s, j as o, e as t } from '../../../../chunks/vendor.js';
 import { i as a, c, A as i, a as n, r as l, E as r } from '../../../../chunks/lib.js';
 import { l as m } from '../../../../chunks/getRewardImage.js';
 import { a as d, g as x } from '../../../../chunks/resources.js';
-const p = {
+/* empty css                       */ const p = {
         images: {
             glow: 'tooltips.glow',
             divider: 'tooltips.divider',
@@ -75,12 +75,7 @@ function C({ icon: e, text: s, className: a = '' }) {
         ],
     });
 }
-const $ = {
-        root: 'Title_root_2e63cf3',
-        base: 'Title_bc528df2',
-        base__small: 'Title_base__small_919c2807',
-        fadeIn: 'Title_fadeIn_2e63cf3',
-    },
+const $ = { base: 'Title_bc528df2', base__small: 'Title_base__small_919c2807', fadeIn: 'Title_fadeIn_2e63cf3' },
     D = 'small',
     O = 'medium';
 function R({ title: e, size: s = O }) {

@@ -1,13 +1,13 @@
-import { j as e, f as s } from './vendor.js';
-import { r as a } from './lib.js';
-const r = 'Breed_45af4a36',
+import { j as e, h as s } from './vendor.js';
+import { r } from './lib.js';
+const a = 'Breed_7533cf8b',
     l = 'Breed_animal_d884042f',
-    { toUpperCase: i } = a.resolve('intl');
-function n({ petType: a, breedName: n, className: o }) {
-    return a || n
+    { toUpperCase: i } = r.resolve('intl');
+function n({ petType: r, breedName: n, className: o }) {
+    return r || n
         ? e.jsxs('div', {
-              className: s(r, o),
-              children: [a && e.jsx('div', { className: l, children: i(a) }), n && i(n)],
+              className: s(a, o),
+              children: [r && e.jsx('div', { className: l, children: i(r) }), n && i(n)],
           })
         : null;
 }

@@ -1,28 +1,28 @@
-import { o as e, l as i, m as r, e as o, r as a, R as n, j as t, n as s, p as l } from '../../../chunks/vendor.js';
+import { o as e, l as i, m as r, e as o, r as a, R as n, j as t, n as s } from '../../../chunks/vendor.js';
 import {
-    i as c,
-    c as d,
-    a as h,
-    r as _,
-    u as m,
-    b as u,
-    d as g,
-    e as b,
-    g as p,
-    t as v,
+    i as l,
+    c,
+    a as d,
+    r as h,
+    u as _,
+    b as m,
+    d as u,
+    e as g,
+    g as b,
+    t as p,
     B as f,
-    s as N,
-    m as x,
-    F as y,
-    f as T,
-    h as w,
-    j,
-    k as S,
-    l as P,
-    M,
-    U as V,
+    s as v,
+    m as N,
+    F as x,
+    f as y,
+    h as T,
+    j as w,
+    k as j,
+    l as S,
+    M as P,
+    U as M,
 } from '../../../chunks/lib.js';
-var R = ((e) => (
+var V = ((e) => (
         (e.China = 'china'),
         (e.Czechoslovakia = 'czech'),
         (e.France = 'france'),
@@ -35,16 +35,16 @@ var R = ((e) => (
         (e.Usa = 'usa'),
         (e.Ussr = 'ussr'),
         e
-    ))(R || {}),
-    C = ((e) => (
+    ))(V || {}),
+    R = ((e) => (
         (e.LightTank = 'lightTank'),
         (e.ATSPG = 'AT-SPG'),
         (e.MediumTank = 'mediumTank'),
         (e.SPG = 'SPG'),
         (e.HeavyTank = 'heavyTank'),
         e
-    ))(C || {}),
-    I = ((e) => (
+    ))(R || {}),
+    C = ((e) => (
         (e.Unresearched = 'Unresearched'),
         (e.ReadyForResearch = 'ReadyForResearch'),
         (e.Researched = 'Researched'),
@@ -55,18 +55,18 @@ var R = ((e) => (
         (e.Rented = 'Rented'),
         (e.RentedRecoverable = 'RentedRecoverable'),
         e
-    ))(I || {}),
-    D = ((e) => ((e.Credits = 'credits'), (e.Gold = 'gold'), e))(D || {});
-const k = (e) => {
-    return 'object' == typeof e && null !== e && 'type' in e && ((i = e.type), Object.values(C).includes(i));
+    ))(C || {}),
+    I = ((e) => ((e.Credits = 'credits'), (e.Gold = 'gold'), e))(I || {});
+const D = (e) => {
+    return 'object' == typeof e && null !== e && 'type' in e && ((i = e.type), Object.values(R).includes(i));
     var i;
 };
-var B = ((e) => ((e.None = 'None'), (e.Unresearched = 'Unresearched'), (e.Researched = 'Researched'), e))(B || {});
-const A = ['Researched', 'Unresearched', 'None'];
-function O({ state: e = 'Unresearched' }) {
+var k = ((e) => ((e.None = 'None'), (e.Unresearched = 'Unresearched'), (e.Researched = 'Researched'), e))(k || {});
+const B = ['Researched', 'Unresearched', 'None'];
+function A({ state: e = 'Unresearched' }) {
     return 'Unresearched' !== e;
 }
-const E = {
+const O = {
         isResearched: !1,
         readyForResearch: !1,
         hasEnoughXp: !1,
@@ -85,21 +85,21 @@ const E = {
         readyForTradeIn: !1,
         readyForComparison: !1,
     },
-    L = ({ id: e = '-1', level: i = 1, priceCurrency: r, ...o }, a) => {
+    E = ({ id: e = '-1', level: i = 1, priceCurrency: r, ...o }, a) => {
         const n = {
             id: isNaN(a) ? Number(e) : a,
             name: '',
             techName: '',
-            type: C.LightTank,
+            type: R.LightTank,
             tier: i,
             isPremium: !1,
             isHighlighted: !1,
-            state: I.Unresearched,
+            state: C.Unresearched,
             childIds: [],
             parentIds: [],
             childBranchOrders: [],
             priceCurrency: r,
-            ...E,
+            ...O,
             ...o,
             nation: o.nation,
         };
@@ -115,38 +115,38 @@ const E = {
             }) =>
                 t
                     ? o
-                        ? I.RentedRecoverable
-                        : I.Rented
+                        ? C.RentedRecoverable
+                        : C.Rented
                     : e
-                      ? I.Owned
+                      ? C.Owned
                       : n
-                        ? I.ReadyForPurchase
+                        ? C.ReadyForPurchase
                         : i
-                          ? I.ReadyForResearch
+                          ? C.ReadyForResearch
                           : a
-                            ? I.ReadyForTradeIn
+                            ? C.ReadyForTradeIn
                             : o
-                              ? I.ReadyForRecovery
+                              ? C.ReadyForRecovery
                               : r
-                                ? I.Researched
-                                : I.Unresearched)(n)),
+                                ? C.Researched
+                                : C.Unresearched)(n)),
             n
         );
     };
-function H(e) {
+function L(e) {
     return JSON.parse(e);
 }
-const [z, F] = c()(
+const [H, z] = l()(
         ({ observableModel: o, cleanup: a }) => {
             const n = {
                     ...o.primitives(['firstHighlightedLevel', 'collectableVehiclesAvailable', 'showWelcomeAnimation']),
-                    selectedNation: e.box(R.Czechoslovakia),
+                    selectedNation: e.box(V.Czechoslovakia),
                     techTreeNodes: e.box({}),
                     premiumNodesByTier: e.box({}),
                     maxCombinedTier: e.box(0),
                 },
                 t = o.arrayClone('availableNations'),
-                s = d.shallow(() => t.get());
+                s = c.shallow(() => t.get());
             return (
                 a(
                     i(() => {
@@ -156,10 +156,10 @@ const [z, F] = c()(
                         const t = {},
                             s = {};
                         (e.entries().forEach(([e, r]) => {
-                            const o = H(r.get()),
-                                n = null == i ? void 0 : i.get(e),
-                                l = n ? H(n) : {},
-                                c = L(Object.assign(o, l), Number(e));
+                            const o = L(r.get()),
+                                n = i?.get(e),
+                                l = n ? L(n) : {},
+                                c = E(Object.assign(o, l), Number(e));
                             ((a = Math.max(a, c.tier)),
                                 c.isPremium ? ((s[c.tier] = s[c.tier] || []), s[c.tier].push(c)) : (t[e] = c));
                         }),
@@ -185,71 +185,76 @@ const [z, F] = c()(
             ),
         }),
     ),
-    W = {
-        increaseAmount: h('tabs'),
-        decreaseAmount: h('tabs'),
-        'vehicle-hover': h('highlight'),
-        'vehicle-click': h('yes1'),
-        'nation-hover': h('highlightx'),
-        'nation-click': h('tabs'),
-        'scroll-hover': h('highlight'),
-        'scroll-click': h('play'),
-        'tier-paging-hover': h('highlight'),
-        'tier-paging-click': h('arrow'),
-        'vehicle-right-click': h('tabb'),
-        'collector-vehicles-hover': h('highlight'),
-        'collector-vehicles-click': h('play'),
-        'premium-vehicles-mouse-over': h('researches_premium_panel_slide_in'),
-        'premium-vehicles-mouse-out': h('researches_premium_panel_slide_out'),
-        'vehicle-highlighted-tier-appear': h('gui_tech_tree_top_tier_anim'),
-    },
-    X = (e, i, r, o) => {
-        const a = e.nodeMap[i.parentIds[0]],
-            n = e.nodeMap[r.parentIds[0]],
-            t = !!a && a.tier === i.tier,
-            s = !!n && n.tier === r.tier;
-        return (Number(t) - Number(s)) * (o ? 1 : -1);
+    F = {
+        increaseAmount: d('tabs'),
+        decreaseAmount: d('tabs'),
+        'vehicle-hover': d('highlight'),
+        'vehicle-click': d('yes1'),
+        'nation-hover': d('highlightx'),
+        'nation-click': d('tabs'),
+        'scroll-hover': d('highlight'),
+        'scroll-click': d('play'),
+        'tier-paging-hover': d('highlight'),
+        'tier-paging-click': d('arrow'),
+        'vehicle-right-click': d('tabb'),
+        'collector-vehicles-hover': d('highlight'),
+        'collector-vehicles-click': d('play'),
+        'premium-vehicles-mouse-over': d('researches_premium_panel_slide_in'),
+        'premium-vehicles-mouse-out': d('researches_premium_panel_slide_out'),
+        'vehicle-highlighted-tier-appear': d('gui_tech_tree_top_tier_anim'),
     };
-function U(e, i) {
+function W(e, i) {
     return (r, o) => (r[i] < o[i] ? ('desc' === e ? 1 : -1) : r[i] > o[i] ? ('desc' === e ? -1 : 1) : 0);
 }
-const $ = { asc: U('asc', 'tier'), desc: U('desc', 'tier') },
-    G = !0;
-function Y(e, i, r) {
-    const o = 'asc' === i ? G : !G;
-    (e.nodes.sort((r, a) => $[i](r, a) + X(e, r, a, o) / 10),
+const X = { asc: W('asc', 'tier'), desc: W('desc', 'tier') },
+    U = !0;
+function $(e, i, r) {
+    const o = 'asc' === i && U;
+    (e.nodes.sort((r, a) => {
+        const n =
+            X[i](r, a) +
+            ((e, i, r, o) => {
+                const a = e.nodeMap[i.parentIds[0]],
+                    n = e.nodeMap[r.parentIds[0]],
+                    t = !!a && a.tier === i.tier,
+                    s = !!n && n.tier === r.tier;
+                return (Number(t) - Number(s)) * (o ? 1 : -1);
+            })(e, r, a, o) /
+                10;
+        return n;
+    }),
         e.nodes.forEach((e, i, o) => {
             r(e, i, o);
         }));
 }
-function K(e) {
+function G(e) {
     const i = new Set();
     return (
         e.rootNodes.forEach((r) => {
             ((r.isMainLine = !0), i.add(r.position[1]));
-            q(r, e).forEach((e) => {
+            Y(r, e).forEach((e) => {
                 e.isMainLine = !0;
             });
         }),
         Array.from(i)
     );
 }
-function q(e, i) {
+function Y(e, i) {
     const r = e.directChildId && i.nodeMap[e.directChildId];
-    return r ? [r, ...q(r, i)] : [];
+    return r ? [r, ...Y(r, i)] : [];
 }
-function J(e, i) {
-    const r = A.indexOf(e),
-        o = A.indexOf(i);
-    return A[Math.min(r, o)];
+function K(e, i) {
+    const r = B.indexOf(e),
+        o = B.indexOf(i);
+    return B[Math.min(r, o)];
 }
-function Q(e, i) {
+function q(e, i) {
     if (!e) {
         if (!i) throw (console.error('Cannot combine zero nodes'), new Error('Cannot combine zero nodes'));
         return i;
     }
     if (!i) return e;
-    const r = [e, i].filter(k);
+    const r = [e, i].filter(D);
     if (r.length > 1)
         throw (
             console.error('Cannot combine two or more vehicleNodes', e, i),
@@ -263,19 +268,19 @@ function Q(e, i) {
         lineSegments:
             ((o = e.lineSegments),
             (a = i.lineSegments),
-            { up: J(o.up, a.up), right: J(o.right, a.right), down: J(o.down, a.down), left: J(o.left, a.left) }),
+            { up: K(o.up, a.up), right: K(o.right, a.right), down: K(o.down, a.down), left: K(o.left, a.left) }),
     };
 }
-function Z(e, i) {
-    return e ? (i ? B.Researched : B.Unresearched) : B.None;
+function J(e, i) {
+    return e ? (i ? k.Researched : k.Unresearched) : k.None;
 }
-function ee(e, i) {
+function Q(e, i) {
     return e.reduce((e, r) => {
         const o = i.nodeMap[r];
         return e + 1 + (o.subTreeNodesAbove ?? 0) + (o.subTreeNodesBelow ?? 0);
     }, 0);
 }
-function ie(e, i, r, o, a) {
+function Z(e, i, r, o, a) {
     const n = r[1] - i[1],
         t = r[0] - i[0];
     if (0 === n && 0 === t) return void console.warn('Skipping line between', i, 'and', r);
@@ -290,29 +295,29 @@ function ie(e, i, r, o, a) {
         for (let i = 0; i < m; i++) {
             const r = _ ? [h + i, d] : [h, c + i],
                 a = i !== m - 1,
-                n = Z(0 !== i, o),
-                t = Z(a, o),
+                n = J(0 !== i, o),
+                t = J(a, o),
                 s = {
                     type: 'line',
                     lineSegments: _
-                        ? { left: n, right: t, up: B.None, down: B.None }
-                        : { left: B.None, right: B.None, up: n, down: t },
+                        ? { left: n, right: t, up: k.None, down: k.None }
+                        : { left: k.None, right: k.None, up: n, down: t },
                     position: r,
                 },
                 l = r.join('x'),
                 u = e.gridPositionMap[l],
-                g = u ? Q(s, u) : s;
+                g = u ? q(s, u) : s;
             (e.gridItems.push(g), (e.gridPositionMap[l] = g));
         }
         return;
     }
     const u = a ? [r[0], i[1]] : [i[0], r[1]];
-    (ie(e, [i[0], i[1]], u, o, a), ie(e, u, [r[0], r[1]], o, a));
+    (Z(e, [i[0], i[1]], u, o, a), Z(e, u, [r[0], r[1]], o, a));
 }
-function re(e) {
+function ee(e) {
     let i = 0;
     function r(r, o) {
-        const a = k(r) ? r.subTreeNodesBelow : 0;
+        const a = D(r) ? r.subTreeNodesBelow : 0;
         ((i = Math.max(i, o[1] + a)), (r.position = o));
         const n = r.position[0] + 'x' + r.position[1];
         ((e.gridPositionMap[n] = r), e.gridItems.push(r));
@@ -325,17 +330,16 @@ function re(e) {
                 r && s.push(r);
             }),
             s.forEach((i) => {
-                var o;
                 if (!i.position || !r.position)
                     return void console.error('parent.position or nodeOrLine.position is undefined', i, r);
-                const a = O(i),
-                    n = O(r),
-                    t = a && n,
-                    s = Boolean(null == (o = i.secondaryChildIds) ? void 0 : o.includes(r.id));
-                ie(e, [i.position[0], i.position[1]], [r.position[0], r.position[1]], t, s);
+                const o = A(i),
+                    a = A(r),
+                    n = o && a,
+                    t = Boolean(i.secondaryChildIds?.includes(r.id));
+                Z(e, [i.position[0], i.position[1]], [r.position[0], r.position[1]], n, t);
             }));
     }
-    Y(e, 'asc', (o) => {
+    $(e, 'asc', (o) => {
         if (0 === o.parentIds.length) {
             const a = o.childIds.reduce(
                 (i, r) => {
@@ -356,7 +360,7 @@ function re(e) {
         }
         const a = e.nodeMap[o.parentIds[0]],
             n = o.tier - a.tier;
-        if (a.directChildId !== o.id)
+        if (a.directChildId !== o.id) {
             if (a.childIdsAbove.includes(o.id)) {
                 const i = a.childIdsAbove.indexOf(o.id),
                     t = a.childIdsAbove.slice(0, i).reduce((i, r) => {
@@ -365,8 +369,9 @@ function re(e) {
                     }, 0),
                     s = e.nodeMap[a.directChildId],
                     l = 1 + t + o.subTreeNodesBelow + s.subTreeNodesAbove;
-                r(o, [a.position[0] + n, a.position[1] - l]);
-            } else if (a.childIdsBelow.includes(o.id)) {
+                return void r(o, [a.position[0] + n, a.position[1] - l]);
+            }
+            if (a.childIdsBelow.includes(o.id)) {
                 const i = a.childIdsBelow.indexOf(o.id),
                     t = a.childIdsBelow.slice(0, i).reduce((i, r) => {
                         const o = e.nodeMap[r];
@@ -374,20 +379,15 @@ function re(e) {
                     }, 0),
                     s = e.nodeMap[a.directChildId],
                     l = 1 + t + o.subTreeNodesAbove + s.subTreeNodesBelow;
-                r(o, [a.position[0] + n, a.position[1] + l]);
-            } else;
-        else r(o, [a.position[0] + n, a.position[1]]);
+                return void r(o, [a.position[0] + n, a.position[1] + l]);
+            }
+        } else r(o, [a.position[0] + n, a.position[1]]);
     });
 }
-function oe(e) {
+function ie(e) {
     const i = e.nodes.find((e) => 11777 === e.id);
     if (!i) return;
-    const r = Math.max(
-            ...Object.values(e.gridPositionMap).map((e) => {
-                var i;
-                return (null == (i = e.position) ? void 0 : i[0]) ?? -1 / 0;
-            }),
-        ),
+    const r = Math.max(...Object.values(e.gridPositionMap).map((e) => e.position?.[0] ?? -1 / 0)),
         [o, a] = i.position,
         n = r - (o + 2),
         t = Array.from({ length: n }, (e, i) => [o + 3 + i, a - 2]),
@@ -398,23 +398,18 @@ function oe(e) {
             return (
                 !e.gridPositionMap[i.join('x')] ||
                 ((r = e.gridPositionMap[i.join('x')]),
-                (null == (o = r.lineSegments) ? void 0 : o.up) !== B.None &&
-                    (null == (a = r.lineSegments) ? void 0 : a.down) !== B.None &&
-                    (null == (n = r.lineSegments) ? void 0 : n.left) === B.None &&
-                    (null == (t = r.lineSegments) ? void 0 : t.right) === B.None)
+                r.lineSegments?.up !== k.None &&
+                    r.lineSegments?.down !== k.None &&
+                    r.lineSegments?.left === k.None &&
+                    r.lineSegments?.right === k.None)
             );
-            var r, o, a, n, t;
+            var r;
         })
     )
         return void console.error(
             'Configuration does not match the KV-2 exception. Please update the exception or remove handleKv2Exception.',
         );
-    const c = Math.max(
-        ...Object.values(e.gridPositionMap).map((e) => {
-            var i;
-            return (null == (i = e.position) ? void 0 : i[1]) ?? -1 / 0;
-        }),
-    );
+    const c = Math.max(...Object.values(e.gridPositionMap).map((e) => e.position?.[1] ?? -1 / 0));
     l.forEach((i) => {
         const [r, o] = i,
             a = c - o;
@@ -423,13 +418,13 @@ function oe(e) {
                 a = e.gridPositionMap[i],
                 t = [r, o + n].join('x');
             if (a) {
-                const i = k(a) ? a.id : void 0;
+                const i = D(a) ? a.id : void 0;
                 (i && (e.nodeMap[i].position = [r, o + n]), (a.position = [r, o + n]), (e.gridPositionMap[t] = a));
             }
         }
     });
 }
-function ae(e) {
+function re(e) {
     const i = { nodes: [], gridItems: [], rootNodes: [], leafNodes: [], nodeMap: {}, gridPositionMap: {} };
     ((i.nodes = Object.values(e).map(({ childIds: e = [], parentIds: r = [], childBranchOrders: o = [], ...a }) => {
         const n = {
@@ -443,7 +438,7 @@ function ae(e) {
             childIdsBelow: [],
             subTreeNodesAbove: 0,
             subTreeNodesBelow: 0,
-            lineSegments: { up: B.None, right: B.None, down: B.None, left: B.None },
+            lineSegments: { up: k.None, right: k.None, down: k.None, left: k.None },
             childIds: [...e],
             parentIds: [...r],
             childBranchOrders: [...o],
@@ -483,7 +478,7 @@ function ae(e) {
             });
         })(i),
         (function (e) {
-            Y(e, 'desc', (i) => {
+            $(e, 'desc', (i) => {
                 const r = [...i.childIds].sort((i, r) => e.nodeMap[i].branchingOrder - e.nodeMap[r].branchingOrder);
                 let o,
                     a = 1 / 0,
@@ -497,14 +492,13 @@ function ae(e) {
                     (i.childIdsAbove = r.slice(0, n).reverse()),
                     (i.childIdsBelow = r.slice(n + 1)));
                 const t = i.directChildId ? e.nodeMap[i.directChildId] : null,
-                    s = (null == t ? void 0 : t.subTreeNodesAbove) ?? 0,
-                    l = (null == t ? void 0 : t.subTreeNodesBelow) ?? 0;
-                ((i.subTreeNodesAbove = s + ee(i.childIdsAbove, e)),
-                    (i.subTreeNodesBelow = l + ee(i.childIdsBelow, e)));
+                    s = t?.subTreeNodesAbove ?? 0,
+                    l = t?.subTreeNodesBelow ?? 0;
+                ((i.subTreeNodesAbove = s + Q(i.childIdsAbove, e)), (i.subTreeNodesBelow = l + Q(i.childIdsBelow, e)));
             });
         })(i),
-        re(i),
-        oe(i),
+        ee(i),
+        ie(i),
         (function (e) {
             let i = 1 / 0,
                 r = 1 / 0;
@@ -517,18 +511,8 @@ function ae(e) {
                     }));
         })(i));
     const { rows: r, maxColumnIndex: o } = (function (e) {
-        const i = Math.max(
-                ...Object.values(e.gridPositionMap).map((e) => {
-                    var i;
-                    return (null == (i = e.position) ? void 0 : i[0]) ?? -1 / 0;
-                }),
-            ),
-            r = Math.max(
-                ...Object.values(e.gridPositionMap).map((e) => {
-                    var i;
-                    return (null == (i = e.position) ? void 0 : i[1]) ?? -1 / 0;
-                }),
-            ),
+        const i = Math.max(...Object.values(e.gridPositionMap).map((e) => e.position?.[0] ?? -1 / 0)),
+            r = Math.max(...Object.values(e.gridPositionMap).map((e) => e.position?.[1] ?? -1 / 0)),
             o = Array.from({ length: r + 1 }, () => Array.from({ length: i + 1 }, () => null)),
             a = Object.values(e.gridPositionMap).reduce((e, i) => {
                 const r = i.position[1],
@@ -537,15 +521,15 @@ function ae(e) {
             }, o);
         return { maxColumnIndex: i, rows: a };
     })(i);
-    return { maxColumnIndex: o, mainLineRowIndexes: K(i), rows: r };
+    return { maxColumnIndex: o, mainLineRowIndexes: G(i), rows: r };
 }
-const ne = 'ScrollArea_container_3fed0135',
-    te = 'ScrollArea_overflow_ddc994b6',
-    se = 'ScrollArea_content_cb204ae5',
-    le = 'ScrollArea_content__dragging_7fce95db',
-    ce = 'ScrollArea_draggable_3a0e372e',
-    de = 'ScrollArea_draggable__dragging_a4e4410f';
-var he = ((e) => (
+const oe = 'ScrollArea_container_3fed0135',
+    ae = 'ScrollArea_overflow_ddc994b6',
+    ne = 'ScrollArea_content_cb204ae5',
+    te = 'ScrollArea_content__dragging_7fce95db',
+    se = 'ScrollArea_draggable_3a0e372e',
+    le = 'ScrollArea_draggable__dragging_a4e4410f';
+var ce = ((e) => (
     (e[(e.SetOptions = 0)] = 'SetOptions'),
     (e[(e.SetSizes = 1)] = 'SetSizes'),
     (e[(e.SetIsMouseDown = 2)] = 'SetIsMouseDown'),
@@ -553,8 +537,8 @@ var he = ((e) => (
     (e[(e.SetThumbDragging = 4)] = 'SetThumbDragging'),
     (e[(e.MoveScrollPosition = 5)] = 'MoveScrollPosition'),
     e
-))(he || {});
-const _e = (e) => {
+))(ce || {});
+const de = (e) => {
         const i = ((e) => {
                 const { containerWidth: i, contentWidth: r, initialScrollRight: o, isHorizontalBarVisible: a } = e;
                 return a ? (o ? r - i : Math.max(0, Math.min(r - i, e.horizontalScrollPosition))) : 0;
@@ -567,7 +551,7 @@ const _e = (e) => {
             ? { ...e, horizontalScrollPosition: i, verticalScrollPosition: r }
             : e;
     },
-    me = (e) => {
+    he = (e) => {
         const {
                 isMouseDown: i,
                 isDragging: r,
@@ -577,24 +561,24 @@ const _e = (e) => {
             } = e,
             s = i && r,
             l = s || null !== a,
-            c = o((n || t) && ce, l && de);
+            c = o((n || t) && se, l && le);
         return { ...e, isDragging: s, isAnyDragging: l, draggableClassName: c };
     };
-function ue(e, i) {
-    if (0 === i.type) return _e({ ...e, ...i.payload });
+function _e(e, i) {
+    if (0 === i.type) return de({ ...e, ...i.payload });
     if (1 === i.type) {
         const { containerWidth: r, containerHeight: o, contentWidth: a, contentHeight: n } = i.payload,
             t = a > r,
             s = n > o;
-        return _e(me({ ...e, ...i.payload, isHorizontalBarVisible: t, isVerticalBarVisible: s }));
+        return de(he({ ...e, ...i.payload, isHorizontalBarVisible: t, isVerticalBarVisible: s }));
     }
     if (2 === i.type) {
         const r = i.payload,
             o = { ...e, isMouseDown: r };
         return (r || ((o.isDragging = !1), (o.thumbDragging = null)), o);
     }
-    if (3 === i.type) return me({ ...e, isDragging: i.payload });
-    if (4 === i.type) return me({ ...e, thumbDragging: i.payload });
+    if (3 === i.type) return he({ ...e, isDragging: i.payload });
+    if (4 === i.type) return he({ ...e, thumbDragging: i.payload });
     if (5 === i.type) {
         const { offsetX: r, offsetY: o, byPassMaxDragOffsetDelta: a } = i.payload,
             { maxDragOffsetDelta: n } = e;
@@ -605,7 +589,7 @@ function ue(e, i) {
     }
     return e;
 }
-const ge = () => ({
+const me = () => ({
         maxDragOffsetDelta: 200,
         containerWidth: 0,
         containerHeight: 0,
@@ -623,77 +607,77 @@ const ge = () => ({
         initialVerticalCenter: !1,
         draggableClassName: void 0,
     }),
-    be = a.createContext(void 0),
-    pe = () => {
-        const e = a.useContext(be);
+    ue = a.createContext(void 0),
+    ge = () => {
+        const e = a.useContext(ue);
         if (!e) throw new Error('useScrollAreaContext must be used within a ScrollAreaProvider');
         return e;
     },
-    ve = ({ children: e, maxDragOffsetDelta: i = 200, initialScrollRight: r = !1, initialVerticalCenter: o = !1 }) => {
-        const [s, l] = n.useReducer(ue, void 0, ge);
+    be = ({ children: e, maxDragOffsetDelta: i = 200, initialScrollRight: r = !1, initialVerticalCenter: o = !1 }) => {
+        const [s, l] = n.useReducer(_e, void 0, me);
         a.useEffect(() => {
             l({
-                type: he.SetOptions,
+                type: ce.SetOptions,
                 payload: { maxDragOffsetDelta: i, initialScrollRight: r, initialVerticalCenter: o },
             });
         }, [i, r, o]);
         const c = {
             setSizes: a.useCallback((e) => {
-                l({ type: he.SetSizes, payload: e });
+                l({ type: ce.SetSizes, payload: e });
             }, []),
             setIsMouseDown: a.useCallback((e) => {
-                l({ type: he.SetIsMouseDown, payload: e });
+                l({ type: ce.SetIsMouseDown, payload: e });
             }, []),
             setIsDragging: a.useCallback((e) => {
-                l({ type: he.SetIsDragging, payload: e });
+                l({ type: ce.SetIsDragging, payload: e });
             }, []),
             setIsVerticalThumbDragging: a.useCallback((e) => {
-                l({ type: he.SetThumbDragging, payload: e ? 'vertical' : null });
+                l({ type: ce.SetThumbDragging, payload: e ? 'vertical' : null });
             }, []),
             setIsHorizontalThumbDragging: a.useCallback((e) => {
-                l({ type: he.SetThumbDragging, payload: e ? 'horizontal' : null });
+                l({ type: ce.SetThumbDragging, payload: e ? 'horizontal' : null });
             }, []),
             moveScrollPosition: a.useCallback((e = 0, i = 0, r = !1) => {
-                l({ type: he.MoveScrollPosition, payload: { offsetX: e, offsetY: i, byPassMaxDragOffsetDelta: r } });
+                l({ type: ce.MoveScrollPosition, payload: { offsetX: e, offsetY: i, byPassMaxDragOffsetDelta: r } });
             }, []),
         };
-        return t.jsx(be.Provider, { value: { ...s, ...c }, children: e });
+        return t.jsx(ue.Provider, { value: { ...s, ...c }, children: e });
     },
-    fe = 'Nations_db5e6f50',
-    Ne = 'Nations_nation_c0adf454',
-    xe = 'Nations_nation__selected_e9b0b5e7',
-    ye = 'Nations_nation_flag_8a32ffab',
-    Te = 'Nations_nation_glow_3d65e334',
-    we = _.resolve('strings'),
-    je = _.resolve('images'),
-    Se = ({ nation: e, onSelect: i, isSelected: r }) => {
-        const o = m().play,
-            a = u({ body: we.readOrEmpty(`tech_tree.nationTooltip.${e}`) });
+    pe = 'Nations_db5e6f50',
+    fe = 'Nations_nation_c0adf454',
+    ve = 'Nations_nation__selected_e9b0b5e7',
+    Ne = 'Nations_nation_flag_8a32ffab',
+    xe = 'Nations_nation_glow_3d65e334',
+    ye = h.resolve('strings'),
+    Te = h.resolve('images'),
+    we = ({ nation: e, onSelect: i, isSelected: r }) => {
+        const a = _().play,
+            n = m({ body: ye.readOrEmpty(`tech_tree.nationTooltip.${e}`) });
         return t.jsxs('div', {
-            className: s(Ne, r && xe),
+            className: o(fe, r && ve),
             'data-test-id': 'nation-' + e,
-            ...a,
+            ...n,
             onMouseEnter: (e) => {
-                (a.onMouseEnter(e), o('nation-hover', { target: Se.name, original: e }));
+                (n.onMouseEnter(e), a('nation-hover', { target: we.name, original: e }));
             },
             onClick: (r) => {
-                (o('nation-click', { target: Se.name, original: r }), i(e), a.onClick());
+                (a('nation-click', { target: we.name, original: r }), i(e), n.onClick());
             },
             children: [
-                t.jsx('img', { className: ye, src: je.readOrEmpty(`tech_tree.nations.${e}`) }),
-                t.jsx('div', { className: Te }),
+                t.jsx('img', { className: Ne, src: Te.readOrEmpty(`tech_tree.nations.${e}`) }),
+                t.jsx('div', { className: xe }),
             ],
         });
     };
-function Pe(e) {
-    const { className: i, onSelectNation: r, availableNations: o, selectedNation: a, children: n, ...l } = e;
+function je(e) {
+    const { className: i, onSelectNation: r, availableNations: a, selectedNation: n, children: s, ...l } = e;
     return t.jsxs('div', {
-        className: s(fe, i),
+        className: o(pe, i),
         ...l,
-        children: [o.map((e) => t.jsx(Se, { nation: e, isSelected: e === a, onSelect: r }, e)), n],
+        children: [a.map((e) => t.jsx(we, { nation: e, isSelected: e === n, onSelect: r }, e)), s],
     });
 }
-const Me = {
+const Se = {
         base: 'TreeLine_bf1e6ad1',
         segment: 'TreeLine_segment_6341a113',
         segment__researched: 'TreeLine_segment__researched_d1b0e541',
@@ -709,60 +693,61 @@ const Me = {
         segment__bendRight: 'TreeLine_segment__bendRight_7be3a40e',
         segment__bendDown: 'TreeLine_segment__bendDown_225b1f70',
     },
-    Ve = { up: Me.segment__up, right: Me.segment__right, down: Me.segment__down, left: Me.segment__left },
-    Re = {
-        up: Me.segment__bendUp,
-        right: Me.segment__bendRight,
-        down: Me.segment__bendDown,
-        left: Me.segment__bendLeft,
+    Pe = { up: Se.segment__up, right: Se.segment__right, down: Se.segment__down, left: Se.segment__left },
+    Me = {
+        up: Se.segment__bendUp,
+        right: Se.segment__bendRight,
+        down: Se.segment__bendDown,
+        left: Se.segment__bendLeft,
     },
-    Ce = { [B.Unresearched]: void 0, [B.Researched]: Me.segment__researched },
-    Ie = (e, i, r, o) => o.includes(e) && o.includes(i) && r[e] === r[i],
-    De = (e) => {
-        let i = Object.keys(e).filter((i) => e[i] !== B.None);
+    Ve = { [k.Unresearched]: void 0, [k.Researched]: Se.segment__researched },
+    Re = (e, i, r, o) => o.includes(e) && o.includes(i) && r[e] === r[i],
+    Ce = (e) => {
+        let i = Object.keys(e).filter((i) => e[i] !== k.None);
         const r = [];
         if (
             (((e, i) => i.includes('left') && i.includes('right') && e.left === e.right)(e, i) &&
                 ((i = i.filter((e) => 'left' !== e && 'right' !== e)),
                 r.push(
-                    t.jsx('div', { className: o(Me.segment, Me.segment__horizontal, Ce[e.left]) }, 'bend-horizontal'),
+                    t.jsx('div', { className: o(Se.segment, Se.segment__horizontal, Ve[e.left]) }, 'bend-horizontal'),
                 )),
             ((e, i) => i.includes('up') && i.includes('down') && e.up === e.down)(e, i) &&
                 ((i = i.filter((e) => 'up' !== e && 'down' !== e)),
-                r.push(t.jsx('div', { className: o(Me.segment, Me.segment__vertical, Ce[e.up]) }, 'bend-vertical'))),
+                r.push(t.jsx('div', { className: o(Se.segment, Se.segment__vertical, Ve[e.up]) }, 'bend-vertical'))),
             ((e, i) =>
                 2 === i.length &&
                 !!(
-                    Ie('up', 'right', e, i) ||
-                    Ie('up', 'left', e, i) ||
-                    Ie('down', 'right', e, i) ||
-                    Ie('down', 'left', e, i)
+                    Re('up', 'right', e, i) ||
+                    Re('up', 'left', e, i) ||
+                    Re('down', 'right', e, i) ||
+                    Re('down', 'left', e, i)
                 ))(e, i))
         )
             return (
                 r.push(
                     t.jsx(
                         'div',
-                        { className: o(Me.segment, Me.segment__bend, Ce[e[i[0]]], ...i.map((e) => Re[e])) },
+                        { className: o(Se.segment, Se.segment__bend, Ve[e[i[0]]], ...i.map((e) => Me[e])) },
                         'bend-' + i.join('-'),
                     ),
                 ),
                 (i = []),
                 r
             );
-        for (const a of i) r.push(t.jsx('div', { className: o(Me.segment, Ve[a], Ce[e[a]]) }, a));
+        for (const a of i) r.push(t.jsx('div', { className: o(Se.segment, Pe[a], Ve[e[a]]) }, a));
         return r;
     },
-    ke = ({ lineSegments: e, isMainLine: i = !1, className: r, ...a }) => {
+    Ie = ({ lineSegments: e, isMainLine: i = !1, className: r, ...a }) => {
         if (!e) return null;
-        const n = De(e);
-        return t.jsx('div', { className: o(Me.base, r, i && Me.base__mainLine), ...a, children: n });
+        const n = Ce(e);
+        return t.jsx('div', { className: o(Se.base, r, i && Se.base__mainLine), ...a, children: n });
     },
-    Be = { base: 'Discount_744a9b2a', base__xp: 'Discount_base__xp_621a6178' };
-function Ae({ type: e, className: i }) {
-    return t.jsx('div', { className: o(Be.base, i, 'xp' === e && Be.base__xp) });
+    De = 'Discount_744a9b2a',
+    ke = 'Discount_base__xp_621a6178';
+function Be({ type: e, className: i }) {
+    return t.jsx('div', { className: o(De, i, 'xp' === e && ke) });
 }
-const Oe = {
+const Ae = {
         base: 'Price_3f023563',
         amountWrapper: 'Price_amountWrapper_b6b117e2',
         base__amountHidden: 'Price_base__amountHidden_29f8d762',
@@ -776,9 +761,9 @@ const Oe = {
         discount: 'Price_discount_5f22dc90',
         icon: 'Price_icon_83ab23b8',
     },
-    Ee = { [D.Credits]: Oe.base__credits, [D.Gold]: Oe.base__gold, xp: Oe.base__xp, combatXp: Oe.base__combatXp },
-    Le = _.resolve('intl');
-function He({
+    Oe = { [I.Credits]: Ae.base__credits, [I.Gold]: Ae.base__gold, xp: Ae.base__xp, combatXp: Ae.base__combatXp },
+    Ee = h.resolve('intl');
+function Le({
     type: e,
     amount: i,
     isDiscountedXp: r = !1,
@@ -790,59 +775,59 @@ function He({
     const c = ((e, i, r) => ('xp' === r && e ? 'xp' : i ? 'price' : void 0))(r, a, e);
     return t.jsxs('div', {
         className: o(
-            Oe.base,
+            Ae.base,
             l,
-            Ee[e],
-            (r || a) && Oe.base__discounted,
-            n && Oe.base__amountHidden,
-            s && Oe.base__hasEnough,
+            Oe[e],
+            (r || a) && Ae.base__discounted,
+            n && Ae.base__amountHidden,
+            s && Ae.base__hasEnough,
         ),
         children: [
             t.jsxs('div', {
-                className: Oe.amountWrapper,
+                className: Ae.amountWrapper,
                 children: [
-                    t.jsx('div', { className: Oe.amount, children: Le.formatNumber('integral', i) }),
-                    t.jsx('div', { className: Oe.icon }),
+                    t.jsx('div', { className: Ae.amount, children: Ee.formatNumber('integral', i) }),
+                    t.jsx('div', { className: Ae.icon }),
                 ],
             }),
-            c && t.jsx(Ae, { type: c, className: Oe.discount }),
+            c && t.jsx(Be, { type: c, className: Ae.discount }),
         ],
     });
 }
-const ze = 'TopTierReleaseHighlight_6eda7632',
-    Fe = 'TopTierReleaseHighlight_fire_ad0fa0b',
-    We = 'TopTierReleaseHighlight_fire_mask_fa609d6',
-    Xe = 'TopTierReleaseHighlight_fire__1_abb5023d',
-    Ue = 'TopTierReleaseHighlight_fire__2_107c868c',
-    $e = 'TopTierReleaseHighlight_particles_e8af8c7b',
-    Ge = 'TopTierReleaseHighlight_particles_mask_3d3d8c03',
-    Ye = 'TopTierReleaseHighlight_particles__1_9f7d6b1a',
-    Ke = 'TopTierReleaseHighlight_particles__2_7f499670',
-    qe = a.memo(function ({ className: e, animationDelay: i }) {
+const He = 'TopTierReleaseHighlight_6eda7632',
+    ze = 'TopTierReleaseHighlight_fire_ad0fa0b',
+    Fe = 'TopTierReleaseHighlight_fire_mask_fa609d6',
+    We = 'TopTierReleaseHighlight_fire__1_abb5023d',
+    Xe = 'TopTierReleaseHighlight_fire__2_107c868c',
+    Ue = 'TopTierReleaseHighlight_particles_e8af8c7b',
+    $e = 'TopTierReleaseHighlight_particles_mask_3d3d8c03',
+    Ge = 'TopTierReleaseHighlight_particles__1_9f7d6b1a',
+    Ye = 'TopTierReleaseHighlight_particles__2_7f499670',
+    Ke = a.memo(function ({ className: e, animationDelay: i }) {
         return t.jsxs('div', {
-            className: o(ze, e),
+            className: o(He, e),
             style: { '--animationDelay': i },
             children: [
                 t.jsxs('div', {
-                    className: We,
-                    children: [t.jsx('div', { className: o(Fe, Xe) }), t.jsx('div', { className: o(Fe, Ue) })],
+                    className: Fe,
+                    children: [t.jsx('div', { className: o(ze, We) }), t.jsx('div', { className: o(ze, Xe) })],
                 }),
                 t.jsxs('div', {
-                    className: Ge,
-                    children: [t.jsx('div', { className: o($e, Ye) }), t.jsx('div', { className: o($e, Ke) })],
+                    className: $e,
+                    children: [t.jsx('div', { className: o(Ue, Ge) }), t.jsx('div', { className: o(Ue, Ye) })],
                 }),
             ],
         });
     }),
-    Je = 'TopTierSoftHighlight_4fc28aec',
-    Qe = a.memo(function ({ className: e, animationDelay: i }) {
-        return t.jsx('div', { className: o(Je, e), style: { '--animationDelay': i } });
+    qe = 'TopTierSoftHighlight_4fc28aec',
+    Je = a.memo(function ({ className: e, animationDelay: i }) {
+        return t.jsx('div', { className: o(qe, e), style: { '--animationDelay': i } });
     }),
-    Ze = {
+    Qe = {
         base: 'VehicleNode_3dce40e1',
         container: 'VehicleNode_container_eae43526',
         base__mainLine: 'VehicleNode_base__mainLine_88e59920',
-        hover: 'VehicleNode_hover_83b9caaa',
+        hover: 'VehicleNode_hover_ad35307f',
         base__premium: 'VehicleNode_base__premium_88e59920',
         image: 'VehicleNode_image_90d33006',
         base__unaffordable: 'VehicleNode_base__unaffordable_88e59920',
@@ -873,37 +858,37 @@ const ze = 'TopTierReleaseHighlight_6eda7632',
         topTierReleaseHighlight: 'VehicleNode_topTierReleaseHighlight_4843ca8c',
         topTierSoftHighlight: 'VehicleNode_topTierSoftHighlight_62c01848',
     },
-    ei = _.resolve('strings'),
-    ii = _.resolve('images'),
+    Ze = h.resolve('strings'),
+    ei = h.resolve('images'),
+    ii = {
+        [C.Unresearched]: Qe.base__unresearched,
+        [C.ReadyForResearch]: Qe.base__readyForResearch,
+        [C.Researched]: Qe.base__researched,
+        [C.ReadyForPurchase]: Qe.base__readyForPurchase,
+        [C.Owned]: Qe.base__owned,
+        [C.ReadyForTradeIn]: Qe.base__readyForTradeIn,
+        [C.ReadyForRecovery]: Qe.base__readyForRecovery,
+        [C.RentedRecoverable]: o(Qe.base__readyForRecovery, Qe.base__rented),
+        [C.Rented]: Qe.base__rented,
+    },
     ri = {
-        [I.Unresearched]: Ze.base__unresearched,
-        [I.ReadyForResearch]: Ze.base__readyForResearch,
-        [I.Researched]: Ze.base__researched,
-        [I.ReadyForPurchase]: Ze.base__readyForPurchase,
-        [I.Owned]: Ze.base__owned,
-        [I.ReadyForTradeIn]: Ze.base__readyForTradeIn,
-        [I.ReadyForRecovery]: Ze.base__readyForRecovery,
-        [I.RentedRecoverable]: o(Ze.base__readyForRecovery, Ze.base__rented),
-        [I.Rented]: Ze.base__rented,
+        [R.ATSPG]: Qe.base__atSpg,
+        [R.HeavyTank]: Qe.base__heavyTank,
+        [R.LightTank]: Qe.base__lightTank,
+        [R.MediumTank]: Qe.base__mediumTank,
+        [R.SPG]: Qe.base__spg,
     },
-    oi = {
-        [C.ATSPG]: Ze.base__atSpg,
-        [C.HeavyTank]: Ze.base__heavyTank,
-        [C.LightTank]: Ze.base__lightTank,
-        [C.MediumTank]: Ze.base__mediumTank,
-        [C.SPG]: Ze.base__spg,
-    },
-    ai = [I.Unresearched, I.ReadyForResearch, I.ReadyForPurchase],
-    ni = a.memo(function e(i) {
+    oi = [C.Unresearched, C.ReadyForResearch, C.ReadyForPurchase],
+    ai = a.memo(function e(i) {
         const {
                 name: r,
                 techName: n,
                 id: s,
-                state: l = I.Unresearched,
+                state: l = C.Unresearched,
                 hasEnoughXp: c,
                 isDiscountedXp: d,
                 requiredXp: h,
-                hasEnoughCurrency: _,
+                hasEnoughCurrency: v,
                 isDiscountedPrice: N,
                 priceCurrency: x,
                 priceAmount: y,
@@ -915,7 +900,7 @@ const ze = 'TopTierReleaseHighlight_6eda7632',
                 isHighlighted: M,
                 readyForComparison: V,
                 onAddToCompare: R,
-                isMainLine: C = !1,
+                isMainLine: I = !1,
                 style: D,
                 className: k,
                 tier: B,
@@ -923,18 +908,18 @@ const ze = 'TopTierReleaseHighlight_6eda7632',
                 showWelcomeAnimation: O,
                 animationDelay: E,
             } = i,
-            { controls: L } = F(),
-            H = m().play,
-            z = g({ args: a.useMemo(() => ({ vehCD: s, tooltipId: 'techtreeVehicle' }), [s]) }),
-            W = u({ body: ei.readOrEmpty('tech_tree.comparisonTooltip') }),
-            X = g({ args: a.useMemo(() => ({ vehCD: s, tooltipId: 'tradeIn' }), [s]) }),
-            U = !w && (l === I.Unresearched || l === I.ReadyForResearch),
-            $ = !w && l === I.Unresearched,
-            G = l === I.Researched || l === I.ReadyForPurchase || l === I.ReadyForTradeIn || l === I.Rented,
-            Y = !w && l === I.Researched,
+            { controls: L } = z(),
+            H = _().play,
+            F = u({ args: a.useMemo(() => ({ vehCD: s, tooltipId: 'techtreeVehicle' }), [s]) }),
+            W = m({ body: Ze.readOrEmpty('tech_tree.comparisonTooltip') }),
+            X = u({ args: a.useMemo(() => ({ vehCD: s, tooltipId: 'tradeIn' }), [s]) }),
+            U = !w && (l === C.Unresearched || l === C.ReadyForResearch),
+            $ = !w && l === C.Unresearched,
+            G = l === C.Researched || l === C.ReadyForPurchase || l === C.ReadyForTradeIn || l === C.Rented,
+            Y = !w && l === C.Researched,
             K = T > 0 && !j,
-            q = (l === I.ReadyForResearch && !c) || (l === I.ReadyForPurchase && !_),
-            J = b(
+            q = (l === C.ReadyForResearch && !c) || (l === C.ReadyForPurchase && !v),
+            J = g(
                 'researchVehicle',
                 a.useMemo(() => ({ vehCD: s }), [s]),
                 a.useMemo(() => ({ disabled: !1 }), []),
@@ -948,41 +933,41 @@ const ze = 'TopTierReleaseHighlight_6eda7632',
                     2 === i.button &&
                     (H('vehicle-right-click', { target: e.name, original: i }), J.onMouseDown(i));
             },
-            ee = p(n),
+            ee = b(n),
             ie = 'vehicle.x120x96',
             re = `${ie}.${ee}`,
-            oe = ii.readOr(re, () => ii.readOrEmpty(`${ie}.tank_empty`)),
+            oe = ei.readOr(re, () => ei.readOrEmpty(`${ie}.tank_empty`)),
             ae = P && O,
-            ne = P && !O && ai.includes(l);
+            ne = P && !O && oi.includes(l);
         return t.jsxs('div', {
             className: o(
-                Ze.base,
-                Oe.vehicle,
-                oi[A],
-                j && Ze.base__elite,
-                w && Ze.base__premium,
-                S && Ze.base__selected,
-                O && Ze.base__welcomeAnimation,
-                M && Ze.base__highlighted,
-                P && Ze.base__topTier,
-                C && Ze.base__mainLine,
-                q && Ze.base__unaffordable,
-                ri[l],
+                Qe.base,
+                Ae.vehicle,
+                ri[A],
+                j && Qe.base__elite,
+                w && Qe.base__premium,
+                S && Qe.base__selected,
+                O && Qe.base__welcomeAnimation,
+                M && Qe.base__highlighted,
+                P && Qe.base__topTier,
+                I && Qe.base__mainLine,
+                q && Qe.base__unaffordable,
+                ii[l],
                 k,
             ),
             style: { ...D, '--animationDelay': E },
             'data-test-state': l,
             children: [
                 t.jsxs('div', {
-                    className: Ze.container,
+                    className: Qe.container,
                     style: { animationDelay: E },
                     onMouseEnter: (i) => {
                         H('vehicle-hover', { target: e.name, original: i });
                     },
                     children: [
-                        t.jsx('div', { className: Ze.hover }),
+                        t.jsx('div', { className: Qe.hover }),
                         t.jsx('div', {
-                            className: Ze.image,
+                            className: Qe.image,
                             ...J,
                             'data-test-id': s + '-image',
                             onClick: Q,
@@ -990,58 +975,58 @@ const ze = 'TopTierReleaseHighlight_6eda7632',
                             style: { backgroundImage: `url('${oe}')` },
                         }),
                         t.jsxs('div', {
-                            className: Ze.content,
-                            ...z,
+                            className: Qe.content,
+                            ...F,
                             ...J,
                             'data-test-id': s + '-content',
                             onClick: (e) => {
-                                (Q(e), z.onClick());
+                                (Q(e), F.onClick());
                             },
                             onMouseDown: Z,
                             children: [
-                                K && t.jsx(He, { amount: T, className: Ze.combatXp, type: 'combatXp' }),
+                                K && t.jsx(Le, { amount: T, className: Qe.combatXp, type: 'combatXp' }),
                                 t.jsxs('div', {
-                                    className: Ze.rightBlockBelowLine,
+                                    className: Qe.rightBlockBelowLine,
                                     children: [
                                         t.jsxs('div', {
-                                            className: Ze.name,
+                                            className: Qe.name,
                                             children: [
-                                                t.jsx('div', { className: Ze.name_wrapper, children: r }),
-                                                l === I.ReadyForTradeIn &&
-                                                    t.jsx('div', { ...X, className: Ze.tradeInIcon }),
-                                                (l === I.Rented || l === I.RentedRecoverable) &&
-                                                    t.jsx('div', { className: Ze.rentedIcon }),
-                                                l === I.Owned && t.jsx('div', { className: Ze.ownedIcon }),
+                                                t.jsx('div', { className: Qe.name_wrapper, children: r }),
+                                                l === C.ReadyForTradeIn &&
+                                                    t.jsx('div', { ...X, className: Qe.tradeInIcon }),
+                                                (l === C.Rented || l === C.RentedRecoverable) &&
+                                                    t.jsx('div', { className: Qe.rentedIcon }),
+                                                l === C.Owned && t.jsx('div', { className: Qe.ownedIcon }),
                                             ],
                                         }),
                                         U &&
-                                            t.jsx(He, {
+                                            t.jsx(Le, {
                                                 type: 'xp',
                                                 amount: h,
-                                                className: Ze.price,
+                                                className: Qe.price,
                                                 isDiscountedXp: d,
                                                 isDiscountedPrice: N,
                                                 isAmountHidden: $,
                                                 hasEnough: c,
                                             }),
                                         G &&
-                                            t.jsx(He, {
+                                            t.jsx(Le, {
                                                 type: x,
                                                 amount: y,
-                                                className: Ze.price,
+                                                className: Qe.price,
                                                 isDiscountedXp: d,
                                                 isDiscountedPrice: N,
                                                 isAmountHidden: Y,
-                                                hasEnough: _,
+                                                hasEnough: v,
                                             }),
-                                        (l === I.ReadyForRecovery || l === I.RentedRecoverable) &&
+                                        (l === C.ReadyForRecovery || l === C.RentedRecoverable) &&
                                             t.jsx('div', {
-                                                className: Ze.recover,
-                                                children: ei.readOrEmpty('tech_tree.vehicle.recover'),
+                                                className: Qe.recover,
+                                                children: Ze.readOrEmpty('tech_tree.vehicle.recover'),
                                             }),
                                     ],
                                 }),
-                                t.jsx('div', { className: Ze.tier, children: v(B) }),
+                                t.jsx('div', { className: Qe.tier, children: p(B) }),
                             ],
                         }),
                         t.jsx(f, {
@@ -1049,65 +1034,65 @@ const ze = 'TopTierReleaseHighlight_6eda7632',
                             theme: 'custom',
                             'data-test-id': s + '-add-to-comparison',
                             disabled: !V,
-                            className: o(Ze.toggleComparison, !V && Ze.toggleComparison__disabled),
+                            className: o(Qe.toggleComparison, !V && Qe.toggleComparison__disabled),
                             ...W,
                             onClick: () => {
                                 V && (R(i.id), W.onClick());
                             },
-                            children: t.jsx('div', { className: Ze.comparisonIcon }),
+                            children: t.jsx('div', { className: Qe.comparisonIcon }),
                         }),
-                        ae && t.jsx(qe, { className: Ze.topTierReleaseHighlight, animationDelay: E }),
-                        ne && t.jsx(Qe, { className: Ze.topTierSoftHighlight, animationDelay: E }),
+                        ae && t.jsx(Ke, { className: Qe.topTierReleaseHighlight, animationDelay: E }),
+                        ne && t.jsx(Je, { className: Qe.topTierSoftHighlight, animationDelay: E }),
                     ],
                 }),
-                t.jsx(ke, {
-                    className: Ze.line,
+                t.jsx(Ie, {
+                    className: Qe.line,
                     lineSegments: i.lineSegments,
-                    isMainLine: C,
+                    isMainLine: I,
                     style: { animationDelay: E },
                 }),
             ],
         });
     }),
-    ti = 'ScrollBar_87455c97',
-    si = 'ScrollBar_base__hidden_47c6bd22',
-    li = 'ScrollBar_base__vertical_ccc162d5',
-    ci = 'ScrollBar_base__horizontal_2d8f67c3',
-    di = 'ScrollBar_arrow_182cfca2',
-    hi = 'ScrollBar_arrow__end_80774b27',
-    _i = 'ScrollBar_arrow__start_2c4e1a03',
-    mi = 'ScrollBar_track_b216f0bd',
-    ui = 'ScrollBar_rail_bcfdaef9',
-    gi = 'ScrollBar_rail__start_e300a356',
-    bi = 'ScrollBar_rail__end_6b3e6c68',
-    pi = 'ScrollBar_rail_target_2110f62',
-    vi = 'ScrollBar_thumb_89853eb4',
+    ni = 'ScrollBar_87455c97',
+    ti = 'ScrollBar_base__hidden_47c6bd22',
+    si = 'ScrollBar_base__vertical_ccc162d5',
+    li = 'ScrollBar_base__horizontal_2d8f67c3',
+    ci = 'ScrollBar_arrow_182cfca2',
+    di = 'ScrollBar_arrow__end_80774b27',
+    hi = 'ScrollBar_arrow__start_2c4e1a03',
+    _i = 'ScrollBar_track_b216f0bd',
+    mi = 'ScrollBar_rail_bcfdaef9',
+    ui = 'ScrollBar_rail__start_e300a356',
+    gi = 'ScrollBar_rail__end_6b3e6c68',
+    bi = 'ScrollBar_rail_target_2110f62',
+    pi = 'ScrollBar_thumb_89853eb4',
     fi = 'ScrollBar_thumb_background_f48a5061',
-    Ni = 'ScrollBar_thumb_icon_a83ea3f3',
-    xi = 'ScrollBar_thumb_innerBorder_106d8a38',
-    yi = 'ScrollBar_thumb_border_183c86c5';
-function Ti({ className: e, orientation: i = 'vertical', arrowClickStep: r = 50, ...n }) {
+    vi = 'ScrollBar_thumb_icon_a83ea3f3',
+    Ni = 'ScrollBar_thumb_innerBorder_106d8a38',
+    xi = 'ScrollBar_thumb_border_183c86c5';
+function yi({ className: e, orientation: i = 'vertical', arrowClickStep: r = 50, ...n }) {
     const {
             containerWidth: s,
             containerHeight: l,
             contentWidth: c,
             contentHeight: d,
             horizontalScrollPosition: h,
-            verticalScrollPosition: _,
+            verticalScrollPosition: m,
             thumbDragging: u,
             setIsHorizontalThumbDragging: g,
             setIsVerticalThumbDragging: b,
             moveScrollPosition: p,
-        } = pe(),
-        v = m().play,
-        f = () => v('scroll-hover', { target: Ti.name }),
-        N = () => v('scroll-click', { target: Ti.name }),
+        } = ge(),
+        f = _().play,
+        v = () => f('scroll-hover', { target: yi.name }),
+        N = () => f('scroll-click', { target: yi.name }),
         x = 'vertical' === i,
         y = x ? b : g,
         T = u === i,
         w = a.useRef({ x: 0, y: 0 }),
         j = x ? (l / d) * 100 : (s / c) * 100,
-        S = x ? (_ / (d - l)) * (100 - j) : (h / (c - s)) * (100 - j),
+        S = x ? (m / (d - l)) * (100 - j) : (h / (c - s)) * (100 - j),
         P = x ? d > l : c > s,
         M = `${Math.floor(Math.max(j, 5))}%`,
         V = `${Math.ceil(Math.max(S, 0))}%`,
@@ -1132,31 +1117,31 @@ function Ti({ className: e, orientation: i = 'vertical', arrowClickStep: r = 50,
         l && s && d && c
             ? t.jsxs('div', {
                   ...n,
-                  className: o(ti, e, x ? li : ci, !P && si),
+                  className: o(ni, e, x ? si : li, !P && ti),
                   style: { '--thumbSize': M, '--thumbPosition': V },
                   children: [
                       t.jsx('div', {
-                          className: o(di, _i),
-                          onMouseEnter: f,
+                          className: o(ci, hi),
+                          onMouseEnter: v,
                           onClick: (e) => {
                               (N(), e.preventDefault(), e.stopPropagation(), p(x ? 0 : -r, x ? -r : 0, R));
                           },
                       }),
                       t.jsxs('div', {
-                          className: mi,
+                          className: _i,
                           children: [
                               t.jsx('div', {
-                                  className: o(ui, gi),
+                                  className: o(mi, ui),
                                   children: t.jsx('div', {
-                                      className: pi,
-                                      onMouseEnter: f,
+                                      className: bi,
+                                      onMouseEnter: v,
                                       onClick: (e) => {
                                           (N(), e.preventDefault(), e.stopPropagation(), p(x ? 0 : -r, x ? -r : 0, R));
                                       },
                                   }),
                               }),
                               t.jsxs('div', {
-                                  className: vi,
+                                  className: pi,
                                   onMouseDown: (e) => {
                                       (e.preventDefault(),
                                           e.stopPropagation(),
@@ -1164,19 +1149,19 @@ function Ti({ className: e, orientation: i = 'vertical', arrowClickStep: r = 50,
                                           y(!0),
                                           (w.current = { x: e.screenX, y: e.screenY }));
                                   },
-                                  onMouseEnter: f,
+                                  onMouseEnter: v,
                                   children: [
                                       t.jsx('div', { className: fi }),
-                                      t.jsx('div', { className: yi }),
                                       t.jsx('div', { className: xi }),
                                       t.jsx('div', { className: Ni }),
+                                      t.jsx('div', { className: vi }),
                                   ],
                               }),
                               t.jsx('div', {
-                                  className: o(ui, bi),
+                                  className: o(mi, gi),
                                   children: t.jsx('div', {
-                                      className: pi,
-                                      onMouseEnter: f,
+                                      className: bi,
+                                      onMouseEnter: v,
                                       onClick: (e) => {
                                           (N(), e.preventDefault(), e.stopPropagation(), p(x ? 0 : r, x ? r : 0, R));
                                       },
@@ -1185,8 +1170,8 @@ function Ti({ className: e, orientation: i = 'vertical', arrowClickStep: r = 50,
                           ],
                       }),
                       t.jsx('div', {
-                          className: o(di, hi),
-                          onMouseEnter: f,
+                          className: o(ci, di),
+                          onMouseEnter: v,
                           onClick: (e) => {
                               (N(), e.preventDefault(), e.stopPropagation(), p(x ? 0 : r, x ? r : 0, R));
                           },
@@ -1196,14 +1181,14 @@ function Ti({ className: e, orientation: i = 'vertical', arrowClickStep: r = 50,
             : null
     );
 }
-const wi = ({
+const Ti = ({
         children: e,
         scrollBarOffsetTop: i = 0,
         scrollBarOffsetLeft: r = 0,
         scrollBarOffsetRight: n = 0,
         scrollBarOffsetBottom: s = 0,
-        HorizontalScrollBar: l = Ti,
-        VerticalScrollBar: c = Ti,
+        HorizontalScrollBar: l = yi,
+        VerticalScrollBar: c = yi,
         mouseWheelOrientation: d,
         classNames: h,
         dragLimit: _ = 5,
@@ -1214,8 +1199,8 @@ const wi = ({
             {
                 isMouseDown: b,
                 isDragging: p,
-                thumbDragging: v,
-                horizontalScrollPosition: f,
+                thumbDragging: f,
+                horizontalScrollPosition: N,
                 verticalScrollPosition: x,
                 containerHeight: y,
                 containerWidth: T,
@@ -1226,8 +1211,8 @@ const wi = ({
                 setIsMouseDown: M,
                 moveScrollPosition: V,
                 setIsDragging: R,
-            } = pe(),
-            C = null !== v,
+            } = ge(),
+            C = null !== f,
             I = a.useRef({ x: 0, y: 0 });
         a.useEffect(() => {
             const e = u.current,
@@ -1281,12 +1266,12 @@ const wi = ({
                 );
             }, [M]),
             a.useEffect(() => {
-                (N.tooltip.hide(0, 0), N.contextMenu.hide(0, 0));
-            }, [x, f]));
+                (v.tooltip.hide(0, 0), v.contextMenu.hide(0, 0));
+            }, [x, N]));
         return t.jsxs('div', {
             ...m,
             ref: u,
-            className: o(ne, w, m.className),
+            className: o(oe, w, m.className),
             onMouseDown: (e) => {
                 const i = 0 === e.button,
                     r = 1 === e.button;
@@ -1297,7 +1282,7 @@ const wi = ({
             },
             style: {
                 ...m.style,
-                '--ScrollArea-offsetX': `${f}px`,
+                '--ScrollArea-offsetX': `${N}px`,
                 '--ScrollArea-offsetY': `${x}px`,
                 '--ScrollArea-containerHeight': `${y}px`,
                 '--ScrollArea-containerWidth': `${T}px`,
@@ -1308,11 +1293,11 @@ const wi = ({
             },
             children: [
                 t.jsx('div', {
-                    className: te,
+                    className: ae,
                     children: t.jsx('div', {
                         ref: g,
-                        className: o(se, (p || C) && le, null == h ? void 0 : h.content),
-                        style: { top: -x, left: -f },
+                        className: o(ne, (p || C) && te, h?.content),
+                        style: { top: -x, left: -N },
                         children: e,
                     }),
                 }),
@@ -1321,44 +1306,44 @@ const wi = ({
             ],
         });
     },
-    ji = 'PremiumVehicles_b00872',
-    Si = 'PremiumVehicles_base__empty_3543548f',
-    Pi = 'PremiumVehicles_base__enabled_1d7ebd1',
-    Mi = 'PremiumVehicles_base__keepOpen_4f37b78e',
-    Vi = 'PremiumVehicles_base__locallyDragging_1d7ebd1',
-    Ri = 'PremiumVehicles_header_65f73eb8',
-    Ci = 'PremiumVehicles_header_title_a0941b8f',
-    Ii = 'PremiumVehicles_header_glow_c912503',
-    Di = 'PremiumVehicles_columnsMask_999f5c65',
-    ki = 'PremiumVehicles_columns_8fbdce9',
-    Bi = 'PremiumVehicles_column_1f7baf80',
-    Ai = 'PremiumVehicles_column_texture_1631537a',
-    Oi = 'PremiumVehicles_column_more_83e52a45',
-    Ei = 'PremiumVehicles_column_more_buttonContent_6f68a138',
-    Li = 'PremiumVehicles_column_more_amount_693e3431',
-    Hi = 'PremiumVehicles_vehicle_9465d6ef',
-    zi = 'PremiumVehicles_backgroundShadow_6a11087a',
-    Fi = 'PremiumVehicles_shadow_21360769',
-    Wi = _.resolve('strings'),
-    Xi = _.resolve('intl'),
-    Ui = l(function e({ isContentVisible: i = !0 }) {
-        const { model: r, controls: n } = F(),
+    wi = 'PremiumVehicles_b00872',
+    ji = 'PremiumVehicles_base__empty_3543548f',
+    Si = 'PremiumVehicles_base__enabled_1d7ebd1',
+    Pi = 'PremiumVehicles_base__keepOpen_4f37b78e',
+    Mi = 'PremiumVehicles_base__locallyDragging_1d7ebd1',
+    Vi = 'PremiumVehicles_header_65f73eb8',
+    Ri = 'PremiumVehicles_header_title_a0941b8f',
+    Ci = 'PremiumVehicles_header_glow_c912503',
+    Ii = 'PremiumVehicles_columnsMask_999f5c65',
+    Di = 'PremiumVehicles_columns_8fbdce9',
+    ki = 'PremiumVehicles_column_1f7baf80',
+    Bi = 'PremiumVehicles_column_texture_1631537a',
+    Ai = 'PremiumVehicles_column_more_83e52a45',
+    Oi = 'PremiumVehicles_column_more_buttonContent_6f68a138',
+    Ei = 'PremiumVehicles_column_more_amount_693e3431',
+    Li = 'PremiumVehicles_vehicle_9465d6ef',
+    Hi = 'PremiumVehicles_backgroundShadow_6a11087a',
+    zi = 'PremiumVehicles_shadow_21360769',
+    Fi = h.resolve('strings'),
+    Wi = h.resolve('intl'),
+    Xi = s(function e({ isContentVisible: i = !0 }) {
+        const { model: r, controls: n } = z(),
             {
                 horizontalScrollPosition: s,
                 isDragging: l,
                 isHorizontalThumbDragging: c,
                 isVerticalThumbDragging: d,
                 draggableClassName: h,
-                isHorizontalBarVisible: _,
+                isHorizontalBarVisible: m,
                 isMouseDown: u,
                 setIsMouseDown: g,
-            } = pe(),
+            } = ge(),
             [b, p] = a.useState(!1),
-            [v, N] = a.useState(!1),
+            [v, y] = a.useState(!1),
             T = r.premiumNodesByTier.get(),
             w = T ? Object.values(T).reduce((e, i) => Math.max(e, i.length), 0) : 0,
             j = r.maxCombinedTier.get(),
-            S = m().play,
+            S = _().play,
             P = !l && !(d || c),
             M = b && l,
             V = M || v,
@@ -1369,7 +1354,7 @@ const wi = ({
             }, [u]),
             a.useEffect(() => {
                 const e = () => {
-                        viewEnv.isWindowShownByViewEvent(4) || N(!1);
+                        viewEnv.isWindowShownByViewEvent(4) || y(!1);
                     },
                     i = document.getElementById('techTreeNormalView');
                 return (
@@ -1378,51 +1363,51 @@ const wi = ({
                         i && i.removeEventListener('mouseup', e);
                     }
                 );
-            }, [N]),
+            }, [y]),
             t.jsxs('div', {
                 'data-test-id': 'premium-vehicles',
-                className: o(ji, 0 === w && Si, P && Pi, _ && h, V && Mi, M && Vi),
+                className: o(wi, 0 === w && ji, P && Si, m && h, V && Pi, M && Mi),
                 onMouseDown: (e) => {
-                    if (2 === e.button) return void N(!0);
+                    if (2 === e.button) return void y(!0);
                     const i = 0 === e.button,
                         r = 1 === e.button;
-                    (i || r) && _ && (g(!0), p(!0), (R.current = e.screenX));
+                    (i || r) && m && (g(!0), p(!0), (R.current = e.screenX));
                 },
                 onMouseEnter: () => S('premium-vehicles-mouse-over', { target: e.name }),
                 onMouseLeave: () => S('premium-vehicles-mouse-out', { target: e.name }),
                 children: [
-                    t.jsx('div', { className: zi }),
+                    t.jsx('div', { className: Hi }),
                     t.jsx('div', {
-                        className: Ri,
+                        className: Vi,
                         children: t.jsxs('div', {
-                            className: Ci,
+                            className: Ri,
                             children: [
-                                Xi.toUpperCase(Wi.readOrEmpty('tech_tree.premiumVehicles.title')),
-                                t.jsx('div', { className: Ii }),
+                                Wi.toUpperCase(Fi.readOrEmpty('tech_tree.premiumVehicles.title')),
+                                t.jsx('div', { className: Ci }),
                             ],
                         }),
                     }),
                     t.jsx('div', {
-                        className: Di,
+                        className: Ii,
                         children: t.jsx('div', {
-                            className: ki,
+                            className: Di,
                             style: { transform: `translateX(-${s}px)`, visibility: i ? 'visible' : 'hidden' },
-                            children: x(j, (e) => {
+                            children: N(j, (e) => {
                                 const i = T[e + 1] ?? [],
                                     r = i.length > 4 ? i.length - 4 + 1 : 0,
                                     o = r ? i.slice(0, i.length - r) : i;
                                 return t.jsxs(
                                     'div',
                                     {
-                                        className: Bi,
+                                        className: ki,
                                         children: [
-                                            t.jsx('div', { className: Ai }),
+                                            t.jsx('div', { className: Bi }),
                                             o.map((e) =>
                                                 t.jsx(
-                                                    ni,
+                                                    ai,
                                                     {
                                                         ...e,
-                                                        className: Hi,
+                                                        className: Li,
                                                         isSelected: !1,
                                                         onAddToCompare: n.onAddToCompare,
                                                     },
@@ -1431,18 +1416,18 @@ const wi = ({
                                             ),
                                             r > 0 &&
                                                 t.jsx('div', {
-                                                    className: Oi,
+                                                    className: Ai,
                                                     children: t.jsx(f, {
                                                         theme: 'secondary',
                                                         size: 'small',
                                                         onClick: () => n.onOpenPremiumShop(e + 1),
                                                         children: t.jsx('span', {
-                                                            className: Ei,
-                                                            children: t.jsx(y, {
-                                                                text: Wi.readOrEmpty('tech_tree.premiumVehicles.more'),
+                                                            className: Oi,
+                                                            children: t.jsx(x, {
+                                                                text: Fi.readOrEmpty('tech_tree.premiumVehicles.more'),
                                                                 params: {
                                                                     amount: t.jsx('span', {
-                                                                        className: Li,
+                                                                        className: Ei,
                                                                         children: r,
                                                                     }),
                                                                 },
@@ -1457,63 +1442,64 @@ const wi = ({
                             }),
                         }),
                     }),
-                    t.jsx('div', { className: Fi }),
+                    t.jsx('div', { className: zi }),
                 ],
             })
         );
     }),
-    $i = {
+    Ui = {
         base: 'TierPaging_47475918',
         base__hidden: 'TierPaging_base__hidden_e6a3f596',
         arrow: 'TierPaging_arrow_e55a1dbb',
         arrow__start: 'TierPaging_arrow__start_f6b082f5',
         arrow__disabled: 'TierPaging_arrow__disabled_a58a039b',
     };
-function Gi({ className: e, orientation: i = 'vertical', arrowClickStep: r, ...a }) {
-    const { horizontalScrollPosition: n, containerWidth: s, contentWidth: l, moveScrollPosition: c } = pe(),
+function $i({ className: e, orientation: i = 'vertical', arrowClickStep: r, ...a }) {
+    const { horizontalScrollPosition: n, containerWidth: s, contentWidth: l, moveScrollPosition: c } = ge(),
         d = l > s,
         h = d ? l - s : 0,
-        _ = n < 10,
+        m = n < 10,
         u = n > h - 10,
-        g = m().play,
-        b = () => g('tier-paging-hover', { target: Gi.name }),
-        p = () => g('tier-paging-click', { target: Gi.name });
+        g = !0,
+        b = _().play,
+        p = () => b('tier-paging-hover', { target: $i.name }),
+        f = () => b('tier-paging-click', { target: $i.name });
     return t.jsxs('div', {
         ...a,
-        className: o($i.base, e, !d && $i.base__hidden),
+        className: o(Ui.base, e, !d && Ui.base__hidden),
         children: [
             t.jsx('div', {
-                className: o($i.arrow, $i.arrow__start, _ && $i.arrow__disabled),
-                onMouseEnter: b,
+                className: o(Ui.arrow, Ui.arrow__start, m && Ui.arrow__disabled),
+                onMouseEnter: p,
                 onClick: (e) => {
-                    (p(), e.preventDefault(), e.stopPropagation(), c(-h, 0, true));
+                    (f(), e.preventDefault(), e.stopPropagation(), c(-h, 0, g));
                 },
             }),
             t.jsx('div', {
-                className: o($i.arrow, $i.arrow__end, u && $i.arrow__disabled),
-                onMouseEnter: b,
+                className: o(Ui.arrow, Ui.arrow__end, u && Ui.arrow__disabled),
+                onMouseEnter: p,
                 onClick: (e) => {
-                    (p(), e.preventDefault(), e.stopPropagation(), c(h, 0, true));
+                    (f(), e.preventDefault(), e.stopPropagation(), c(h, 0, g));
                 },
             }),
         ],
     });
 }
-const Yi = 'DoubleScrollWrapper_hidden_81d74f4d';
-function Ki({ isContentVisible: e = !0, ...i }) {
+const Gi = 'DoubleScrollWrapper_hidden_81d74f4d';
+function Yi({ isContentVisible: e = !0, ...i }) {
     return t.jsxs(t.Fragment, {
         children: [
-            t.jsx(wi, {
+            t.jsx(Ti, {
                 ...i,
                 mouseWheelOrientation: 'vertical',
-                HorizontalScrollBar: Gi,
-                classNames: { content: e ? void 0 : Yi },
+                HorizontalScrollBar: $i,
+                classNames: { content: e ? void 0 : Gi },
             }),
-            t.jsx(Ui, { isContentVisible: e }),
+            t.jsx(Xi, { isContentVisible: e }),
         ],
     });
 }
-const qi = {
+const Ki = {
         base: 'TechTreeNormalView_37f334c7',
         background: 'TechTreeNormalView_background_c76beb2c',
         sidebar: 'TechTreeNormalView_sidebar_19f40f2f',
@@ -1526,57 +1512,57 @@ const qi = {
         table: 'TechTreeNormalView_table_77c9a5bc',
         table_header: 'TechTreeNormalView_table_header_92b362ca',
         table_header_column: 'TechTreeNormalView_table_header_column_9ee471fa',
-        table_header_column_ruler: 'TechTreeNormalView_table_header_column_ruler_4fb95a16',
+        table_header_column_ruler: 'TechTreeNormalView_table_header_column_ruler_e6877679',
         base__welcomeAnimation: 'TechTreeNormalView_base__welcomeAnimation_3890db25',
         table_header_column__topTier: 'TechTreeNormalView_table_header_column__topTier_3890db25',
         table_header_column_description: 'TechTreeNormalView_table_header_column_description_8fa80837',
         table_header_column_description_text: 'TechTreeNormalView_table_header_column_description_text_ee35c63f',
         grid: 'TechTreeNormalView_grid_c8faea0a',
         grid_rows: 'TechTreeNormalView_grid_rows_ebc0ed3',
-        grid_row: 'TechTreeNormalView_grid_row_72f015fa',
+        grid_row: 'TechTreeNormalView_grid_row_b23199dc',
         grid_row__mainLine: 'TechTreeNormalView_grid_row__mainLine_3890db25',
         grid_cell: 'TechTreeNormalView_grid_cell_2f7658f7',
         grid_tierHighlight: 'TechTreeNormalView_grid_tierHighlight_f3b67982',
     },
-    Ji = _.resolve('strings'),
-    Qi = _.resolve('intl'),
-    Zi = { args: { tooltipId: 'vehicleCollectorInfo' } },
-    er = l(function e() {
-        const { model: i, controls: r } = F(),
-            s = T(),
-            l = m().play,
+    qi = h.resolve('strings'),
+    Ji = h.resolve('intl'),
+    Qi = { args: { tooltipId: 'vehicleCollectorInfo' } },
+    Zi = s(function e() {
+        const { model: i, controls: r } = z(),
+            s = y(),
+            l = _().play,
             c = i.selectedNation.get(),
             d = i.showWelcomeAnimation.get(),
-            [h, _] = n.useState(!1),
-            u = i.collectableVehiclesAvailable.get(),
+            [h, m] = n.useState(!1),
+            g = i.collectableVehiclesAvailable.get(),
             b = i.computes.getAvailableNations(),
-            p = i.techTreeNodes.get(),
-            f = i.firstHighlightedLevel.get(),
-            N = i.maxCombinedTier.get(),
-            y = i.premiumNodesByTier.get(),
-            P = Object.keys(y).length > 0,
-            M = d ? Math.max(N - f + 1, 0) : 0,
-            V = x(M, (e) => f - 1 + e),
+            f = i.techTreeNodes.get(),
+            v = i.firstHighlightedLevel.get(),
+            x = i.maxCombinedTier.get(),
+            S = i.premiumNodesByTier.get(),
+            P = Object.keys(S).length > 0,
+            M = d ? Math.max(x - v + 1, 0) : 0,
+            V = N(M, (e) => v - 1 + e),
             R =
                 d ||
-                Object.values(p).some((e) => e.tier >= 5 && e.state !== I.Unresearched) ||
-                Object.values(y)
+                Object.values(f).some((e) => e.tier >= 5 && e.state !== C.Unresearched) ||
+                Object.values(S)
                     .flat()
-                    .some((e) => e.tier >= 3 && e.state !== I.Researched),
-            C = a.useCallback(
+                    .some((e) => e.tier >= 3 && e.state !== C.Researched),
+            I = a.useCallback(
                 (e, i = 0) => {
-                    if (!(e >= f - 1)) return 0;
+                    if (!(e >= v - 1)) return 0;
                     if (!d) return 3e3 + 1e3 * i;
                     return 150 * i;
                 },
-                [f, d],
+                [v, d],
             );
         a.useEffect(() => {
             const i = [];
             return (
-                Array.from({ length: N }, (r, o) => {
-                    const a = C(o);
-                    if (o >= f - 1 && d) {
+                Array.from({ length: x }, (r, o) => {
+                    const a = I(o);
+                    if (o >= v - 1 && d) {
                         const r = 'vehicle-highlighted-tier-appear',
                             o = setTimeout(() => {
                                 l(r, { target: e.name });
@@ -1588,118 +1574,118 @@ const qi = {
                     i.forEach((e) => clearTimeout(e));
                 }
             );
-        }, [c, N, l, d, f, C]);
+        }, [c, x, l, d, v, I]);
         const D = (e) => {
             s.push(s.location, { nation: e });
         };
-        w(S.ESCAPE, () => {
+        T(j.ESCAPE, () => {
             s.goBack();
         });
         const k = b.indexOf(c);
-        (w(S.ARROW_UP, (i) => {
+        (T(j.ARROW_UP, (i) => {
             const r = b[k - 1];
             r && (l('increaseAmount', { target: e.name, original: i }), D(r));
         }),
-            w(S.ARROW_DOWN, (i) => {
+            T(j.ARROW_DOWN, (i) => {
                 const r = b[k + 1];
                 r && (l('decreaseAmount', { target: e.name, original: i }), D(r));
             }));
-        const { mainLineRowIndexes: B, rows: A } = ae(p),
-            O = 100 / N,
-            E = g(Zi),
+        const { mainLineRowIndexes: B, rows: A } = re(f),
+            O = 100 / x,
+            E = u(Qi),
             L = n.useRef(null),
             H = n.useRef(null),
-            z = L.current,
-            W = [N, A.length, P ? 'premium' : '_', R ? 'right' : 'left'].join('-');
+            F = L.current,
+            W = [x, A.length, P ? 'premium' : '_', R ? 'right' : 'left'].join('-');
         return (
-            z !== W &&
+            F !== W &&
                 ((L.current = W),
-                _(!1),
+                m(!1),
                 H.current && clearTimeout(H.current),
                 (H.current = setTimeout(() => {
-                    (_(!0), j(!0));
+                    (m(!0), w(!0));
                 }, 150))),
             t.jsxs('div', {
                 id: 'techTreeNormalView',
-                className: o(qi.base, d && qi.base__welcomeAnimation),
-                style: { '--nodeWidth': Math.floor(100 * O) / 100 + '%', '--columnCount': N },
+                className: o(Ki.base, d && Ki.base__welcomeAnimation),
+                style: { '--nodeWidth': Math.floor(100 * O) / 100 + '%', '--columnCount': x },
                 children: [
-                    t.jsx('div', { className: qi.background }),
+                    t.jsx('div', { className: Ki.background }),
                     t.jsxs('div', {
-                        className: qi.title,
+                        className: Ki.title,
                         children: [
-                            Qi.toUpperCase(Ji.readOrEmpty(`tech_tree.nation.${c}`)),
+                            Ji.toUpperCase(qi.readOrEmpty(`tech_tree.nation.${c}`)),
                             t.jsx('div', {
-                                'data-test-id': u ? 'collector-vehicles' : 'no-collector-vehicles',
+                                'data-test-id': g ? 'collector-vehicles' : 'no-collector-vehicles',
                                 ...E,
                                 onMouseEnter: (i) => {
                                     (E.onMouseEnter(i),
-                                        u && l('collector-vehicles-hover', { target: e.name, original: i }));
+                                        g && l('collector-vehicles-hover', { target: e.name, original: i }));
                                 },
                                 onClick: (i) => {
                                     (l('collector-vehicles-click', { target: e.name, original: i }),
                                         r.onOpenCollectableVehicles(c),
                                         E.onClick());
                                 },
-                                className: o(qi.collectorVehiclesLink, !u && qi.collectorVehiclesLink__hidden),
+                                className: o(Ki.collectorVehiclesLink, !g && Ki.collectorVehiclesLink__hidden),
                             }),
                         ],
                     }),
                     t.jsx('div', {
-                        className: qi.sidebar,
-                        children: t.jsx(Pe, {
-                            className: qi.nations,
+                        className: Ki.sidebar,
+                        children: t.jsx(je, {
+                            className: Ki.nations,
                             availableNations: b,
                             selectedNation: c,
                             onSelectNation: D,
                         }),
                     }),
                     t.jsx('div', {
-                        className: o(qi.tableWrapper, P && qi.tableWrapper__withPremium),
-                        children: t.jsx(ve, {
+                        className: o(Ki.tableWrapper, P && Ki.tableWrapper__withPremium),
+                        children: t.jsx(be, {
                             initialVerticalCenter: !0,
                             initialScrollRight: R,
                             children: t.jsx(
-                                Ki,
+                                Yi,
                                 {
                                     scrollBarOffsetTop: 30,
                                     scrollBarOffsetBottom: 10,
                                     scrollBarOffsetRight: -15,
                                     isContentVisible: h,
                                     children: t.jsxs('div', {
-                                        className: qi.table,
+                                        className: Ki.table,
                                         children: [
                                             t.jsx(
                                                 'div',
                                                 {
-                                                    className: qi.table_header,
-                                                    children: Array.from({ length: N }, (e, i) => {
+                                                    className: Ki.table_header,
+                                                    children: Array.from({ length: x }, (e, i) => {
                                                         const r = i + 1,
-                                                            a = r >= f,
-                                                            n = `${C(i)}ms`;
+                                                            a = r >= v,
+                                                            n = `${I(i)}ms`;
                                                         return t.jsxs(
                                                             'div',
                                                             {
                                                                 className: o(
-                                                                    qi.table_header_column,
-                                                                    a && qi.table_header_column__topTier,
+                                                                    Ki.table_header_column,
+                                                                    a && Ki.table_header_column__topTier,
                                                                 ),
                                                                 style: { animationDelay: n },
                                                                 children: [
-                                                                    v(r),
+                                                                    p(r),
                                                                     t.jsx('div', {
-                                                                        className: qi.table_header_column_ruler,
+                                                                        className: Ki.table_header_column_ruler,
                                                                     }),
                                                                     a &&
                                                                         d &&
                                                                         t.jsx('div', {
                                                                             className:
-                                                                                qi.table_header_column_description,
+                                                                                Ki.table_header_column_description,
                                                                             children: t.jsx('div', {
                                                                                 className:
-                                                                                    qi.table_header_column_description_text,
-                                                                                children: Qi.toUpperCase(
-                                                                                    Ji.readOrEmpty(
+                                                                                    Ki.table_header_column_description_text,
+                                                                                children: Ji.toUpperCase(
+                                                                                    qi.readOrEmpty(
                                                                                         'tech_tree.highlightedTierLabel',
                                                                                     ),
                                                                                 ),
@@ -1714,26 +1700,26 @@ const qi = {
                                                 c + '-table_header',
                                             ),
                                             t.jsxs('div', {
-                                                className: o(qi.grid),
+                                                className: o(Ki.grid),
                                                 style: { '--rowCount': A.length },
                                                 children: [
                                                     t.jsx('div', {
-                                                        className: qi.grid_rows,
+                                                        className: Ki.grid_rows,
                                                         children: A.map((e, i) =>
                                                             t.jsx(
                                                                 'div',
                                                                 {
                                                                     className: o(
-                                                                        qi.grid_row,
-                                                                        B.includes(i) && qi.grid_row__mainLine,
+                                                                        Ki.grid_row,
+                                                                        B.includes(i) && Ki.grid_row__mainLine,
                                                                     ),
                                                                     children: e.map((e, a) => {
-                                                                        const n = a + 1 >= f,
+                                                                        const n = a + 1 >= v,
                                                                             s = o(
-                                                                                qi.grid_cell,
-                                                                                !e && qi.grid_cell__empty,
-                                                                                qi.grid_cell__node,
-                                                                                n && qi.grid_cell__topTier,
+                                                                                Ki.grid_cell,
+                                                                                !e && Ki.grid_cell__empty,
+                                                                                Ki.grid_cell__node,
+                                                                                n && Ki.grid_cell__topTier,
                                                                             ),
                                                                             l =
                                                                                 c +
@@ -1753,7 +1739,7 @@ const qi = {
                                                                                   'line' === h.type,
                                                                               )
                                                                                   ? t.jsx(
-                                                                                        ke,
+                                                                                        Ie,
                                                                                         {
                                                                                             lineSegments: {
                                                                                                 ...e.lineSegments,
@@ -1763,7 +1749,7 @@ const qi = {
                                                                                         l,
                                                                                     )
                                                                                   : t.jsx(
-                                                                                        ni,
+                                                                                        ai,
                                                                                         {
                                                                                             ...e,
                                                                                             className: s,
@@ -1772,7 +1758,7 @@ const qi = {
                                                                                             showWelcomeAnimation: d,
                                                                                             onAddToCompare: () =>
                                                                                                 r.onAddToCompare(e.id),
-                                                                                            animationDelay: `${C(a, i)}ms`,
+                                                                                            animationDelay: `${I(a, i)}ms`,
                                                                                         },
                                                                                         e.id,
                                                                                     ))
@@ -1788,10 +1774,10 @@ const qi = {
                                                         t.jsx(
                                                             'div',
                                                             {
-                                                                className: qi.grid_tierHighlight,
+                                                                className: Ki.grid_tierHighlight,
                                                                 style: {
                                                                     '--columnIndex': e,
-                                                                    animationDelay: `${C(e)}ms`,
+                                                                    animationDelay: `${I(e)}ms`,
                                                                 },
                                                             },
                                                             c + '-highlightedTier-' + e,
@@ -1810,15 +1796,15 @@ const qi = {
             })
         );
     }),
-    ir = 'App_e7ddee44';
-function rr() {
-    const e = T();
-    return (w(S.ESCAPE, e.goBack), t.jsx('div', { className: ir, children: t.jsx(er, {}) }));
+    er = 'App_e7ddee44';
+function ir() {
+    const e = y();
+    return (T(j.ESCAPE, e.goBack), t.jsx('div', { className: er, children: t.jsx(Zi, {}) }));
 }
-P(
-    t.jsx(M, {
+S(
+    t.jsx(P, {
         context: 'model.router',
-        children: t.jsx(z, { children: t.jsx(V, { soundsOverrides: W, children: t.jsx(rr, {}) }) }),
+        children: t.jsx(H, { children: t.jsx(M, { soundsOverrides: F, children: t.jsx(ir, {}) }) }),
     }),
     { fullScreen: !0 },
-).then(() => j(!1));
+).then(() => w(!1));

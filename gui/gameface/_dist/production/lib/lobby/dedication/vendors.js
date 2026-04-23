@@ -1,7 +1,7 @@
 (self.webpackChunkgameface = self.webpackChunkgameface || []).push([
     [540],
     {
-        281: () => {
+        354: () => {
             'use strict';
             (console.assert,
                 new Set([
@@ -52,7 +52,7 @@
                     'MARQUEE',
                 ]));
         },
-        483: (e, r) => {
+        849: (e, r) => {
             var a;
             !(function () {
                 'use strict';

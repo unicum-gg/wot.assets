@@ -1,45 +1,45 @@
-.SkillIcon_base_43 {
+.SkillIcon_base_a1c9a {
     display: flex;
     background: no-repeat center / contain;
     position: relative;
 }
 
-.SkillIcon_base__c_22x22_14 {
+.SkillIcon_base__c_22x22_dcf9f {
     width: 22rem;
     height: 22rem;
 }
 
-.SkillIcon_base__medium_d0 {
+.SkillIcon_base__medium_d67ae {
     width: 24rem;
     height: 24rem;
 }
 
-.SkillIcon_base__c_36x36_flat_7e {
+.SkillIcon_base__c_36x36_flat_e0291 {
     width: 36rem;
     height: 36rem;
 }
 
-.SkillIcon_base__big_ae {
+.SkillIcon_base__big_b5b33 {
     width: 52rem;
     height: 52rem;
 }
 
-.SkillIcon_base__c_80x80_79 {
+.SkillIcon_base__c_80x80_ee59c {
     width: 80rem;
     height: 80rem;
 }
 
-.SkillIcon_base__c_120x90_8c {
+.SkillIcon_base__c_120x90_cc537 {
     width: 120rem;
     height: 90rem;
 }
 
-.SkillIcon_base__dialogs_e5 {
+.SkillIcon_base__dialogs_a9262 {
     width: 180rem;
     height: 135rem;
 }
 
-.Skills_base_9c {
+.Skills_base_c9f43 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -49,61 +49,61 @@
     cursor: pointer;
 }
 
-.Skills_base__rows2_9e {
+.Skills_base__rows2_bd200 {
     padding: 17rem 0;
 }
 
-.Skills_base__rows3_ae {
+.Skills_base__rows3_ad53b {
     padding: 11rem 0;
 }
 
-.Skills_base__rows4_21 {
+.Skills_base__rows4_cd1b3 {
     padding: 8rem 0;
 }
 
-.Skills_row_05 {
+.Skills_row_ab72b {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-content: flex-start;
 }
 
-.Skills_row_05 + .Skills_row_05 {
+.Skills_row_ab72b + .Skills_row_ab72b {
     margin-top: 5rem;
 }
 
-.Skills_row__big_35 + .Skills_row__big_35 {
+.Skills_row__big_b959b + .Skills_row__big_b959b {
     margin-top: 10rem;
 }
 
-.Skills_hitBox_7e + .Skills_hitBox_7e {
+.Skills_hitBox_c8a83 + .Skills_hitBox_c8a83 {
     margin-left: 28rem;
 }
 
-.Skills_hitBox__big_e6 + .Skills_hitBox__big_e6 {
+.Skills_hitBox__big_b69d9 + .Skills_hitBox__big_b69d9 {
     margin-left: 15rem;
 }
 
-.mediaMedium .Skills_hitBox_7e + .Skills_hitBox_7e {
+.mediaMedium .Skills_hitBox_c8a83 + .Skills_hitBox_c8a83 {
     margin-left: 15rem;
 }
 
-.Skills_skill_c2 {
+.Skills_skill_e5c96 {
     width: 36rem;
     height: 36rem;
 }
 
-.Skills_skill__big_7c {
+.Skills_skill__big_df459 {
     width: 48rem;
     height: 48rem;
 }
 
-.mediaMedium .Skills_skill_c2 {
+.mediaMedium .Skills_skill_e5c96 {
     width: 48rem;
     height: 48rem;
 }
 
-.EmptyPanel_base_09 {
+.EmptyPanel_base_e0576 {
     width: 100%;
     height: 100%;
     display: flex;
@@ -113,7 +113,7 @@
     position: relative;
 }
 
-.EmptyPanel_plus_43 {
+.EmptyPanel_plus_ab12a {
     width: 28rem;
     height: 28rem;
     background: url('R.images.gui.maps.icons.vehCompare.plus') no-repeat center / contain;
@@ -121,11 +121,11 @@
     transition: opacity 0.2s;
 }
 
-.EmptyPanel_base_09:hover .EmptyPanel_plus_43 {
+.EmptyPanel_base_e0576:hover .EmptyPanel_plus_ab12a {
     opacity: 1;
 }
 
-.EmptyPanel_text_71 {
+.EmptyPanel_text_f304c {
     color: #fefeec;
     font-size: 14rem;
     font-weight: 400;
@@ -134,7 +134,7 @@
     transition: opacity 0.2s;
 }
 
-.EmptyPanel_base_09:hover .EmptyPanel_text_71 {
+.EmptyPanel_base_e0576:hover .EmptyPanel_text_f304c {
     opacity: 0.7;
 }
 
@@ -142,7 +142,7 @@ body {
     margin: 1rem;
 }
 
-.CompareSkillsPanelApp_base_73 {
+.CompareSkillsPanelApp_base_c5b4a {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -151,7 +151,7 @@ body {
     position: relative;
 }
 
-.CompareSkillsPanelApp_header_de {
+.CompareSkillsPanelApp_header_fea76 {
     color: #e9e2bf;
     font-size: 16rem;
     font-weight: 400;
@@ -161,7 +161,7 @@ body {
     margin-bottom: 5rem;
 }
 
-.CompareSkillsPanelApp_infoIcon_3d {
+.CompareSkillsPanelApp_infoIcon_f43c1 {
     width: 16rem;
     height: 16rem;
     display: flex;
@@ -169,14 +169,14 @@ body {
     background: url('R.images.gui.maps.icons.library.InformationIcon') no-repeat center / contain;
 }
 
-.CompareSkillsPanelApp_content_0e {
+.CompareSkillsPanelApp_content_b61c2 {
     display: flex;
     margin-right: 12rem;
     position: relative;
     cursor: pointer;
 }
 
-.CompareSkillsPanelApp_hitBox_ca {
+.CompareSkillsPanelApp_hitBox_f833c {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -188,11 +188,11 @@ body {
     cursor: pointer;
 }
 
-.CompareSkillsPanelApp_hitBox_ca:hover {
+.CompareSkillsPanelApp_hitBox_f833c:hover {
     background-color: rgba(242, 242, 247, 0.07);
 }
 
-.CompareSkillsPanelApp_closeButton_e4 {
+.CompareSkillsPanelApp_closeButton_ff3b3 {
     width: 16rem;
     height: 16rem;
     background: #000000 url('R.images.gui.maps.icons.vehCompare.cross') no-repeat center / 10rem;
@@ -204,6 +204,6 @@ body {
     cursor: pointer;
 }
 
-.CompareSkillsPanelApp_closeButton_e4:hover {
+.CompareSkillsPanelApp_closeButton_ff3b3:hover {
     opacity: 1;
 }

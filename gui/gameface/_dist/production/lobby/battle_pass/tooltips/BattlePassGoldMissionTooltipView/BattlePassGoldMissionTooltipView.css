@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,24 +11,24 @@
     position: relative;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.Content_base_17 {
+.Content_base_b2efe {
     line-height: normal;
 }
 /* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
 /* instead of this one*/
-.Content_separator_9c {
+.Content_separator_d563b {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
 /* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
 /* instead of this one*/
-.Content_rewards_bb {
+.Content_rewards_d44c8 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,11 +39,11 @@
     color: #c9c9b6;
     font-size: 14rem;
 }
-.Content_base_17 {
+.Content_base_b2efe {
     width: 372rem;
     padding: 16rem 17rem 18rem 25rem;
 }
-.Content_title_01 {
+.Content_title_c6830 {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -51,7 +51,7 @@
     margin-bottom: 7rem;
     line-height: 20rem;
 }
-.Content_text_bc {
+.Content_text_ed90d {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -59,28 +59,28 @@
     margin-bottom: 8rem;
     line-height: 18rem;
 }
-.Content_currency_1a {
+.Content_currency_a015a {
     color: #ffc363;
 }
-.Content_icon_eb {
+.Content_icon_bbd27 {
     width: 16rem;
     height: 16rem;
     margin: 2rem -5rem 0;
     background: url('R.images.gui.maps.icons.library.GoldIcon_2') no-repeat center / contain;
     position: relative;
 }
-.Content_duration_9f {
+.Content_duration_d499c {
     color: #e9e2bf;
 }
-.Content_separator_9c {
+.Content_separator_d563b {
     width: 372rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
-.Content_description_b6 {
+.Content_description_c6759 {
     margin-top: 8rem;
     color: #8c8c7e;
 }
-.Content_highlight_bd {
+.Content_highlight_fe069 {
     color: #ffdd99;
 }

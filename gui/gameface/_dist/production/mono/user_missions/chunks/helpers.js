@@ -1,8 +1,9 @@
 import { b as e, at as t } from './lib.js';
-import './vendor.js';
-const s = e.resolve('strings'),
-    o = e.resolve('images'),
-    i = (e) =>
+import { s, A as a, t as o } from './vendor.js';
+const i = e.resolve('strings'),
+    r = e.resolve('images'),
+    n = s({ id: o(), textPath: a(), iconPath: a() }),
+    c = (e) =>
         t(
             e,
             (e) => ({
@@ -10,13 +11,13 @@ const s = e.resolve('strings'),
                 textPath: `weekly_quests.condition.special.c_${e}`,
                 iconPath: `userMissions.weekly.specialCond.c_${e}`,
             }),
-            (e) => void 0 !== s.read(e.textPath) && o.has(e.iconPath),
+            (e) => void 0 !== i.read(e.textPath) && r.has(e.iconPath),
         ),
-    a = (e, t) => {
-        const o = s.readOrEmpty(`weekly_quests.condition.common.c_${e}`),
-            i = s.readOrEmpty('weekly_quests.specialCondition.container'),
-            a = s.readOrEmpty('weekly_quests.specialCondition.separator'),
-            r = t.map((e) => s.readOrEmpty(e.textPath)).join(a);
-        return `${o}${r ? i.replace('{{specialConditions}}', r) : ''}`;
+    d = (e, t) => {
+        const s = i.readOrEmpty(`weekly_quests.condition.common.c_${e}`),
+            a = i.readOrEmpty('weekly_quests.specialCondition.container'),
+            o = i.readOrEmpty('weekly_quests.specialCondition.separator'),
+            r = t.map((e) => i.readOrEmpty(e.textPath)).join(o);
+        return `${s}${r ? a.replace('{{specialConditions}}', r) : ''}`;
     };
-export { a as g, i as t };
+export { n as S, d as g, c as t };

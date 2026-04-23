@@ -1,4 +1,4 @@
-import { t as e, r as s, j as a } from '../../../chunks/vendor.js';
+import { v as e, r as s, j as a } from '../../../chunks/vendor.js';
 import {
     i as o,
     u as r,
@@ -13,16 +13,16 @@ import {
     d as m,
 } from '../../../chunks/lib.js';
 import { v as f } from '../../../chunks/utils.js';
-const [b, h] = o()(
+const [v, b] = o()(
         ({ observableModel: e }) => ({ ...{ root: e.object() } }),
         ({ externalModel: e }) => ({ close: e.createCallbackNoArgs('onClose') }),
     ),
-    j = 'App_fab90a23',
-    v = 'App_video_826e570a',
+    h = 'App_fab90a23',
+    j = 'App_video_826e570a',
     g = e(() => {
-        const { model: e, controls: o } = h(),
+        const { model: e, controls: o } = b(),
             { videoName: u, audioName: p, isWindowAccessible: m } = e.root.get(),
-            { width: b, height: g } = r(),
+            { width: v, height: g } = r(),
             y = n(),
             N = s.useRef(null),
             k = t.resolve('videos').readOrEmpty(u);
@@ -45,9 +45,9 @@ const [b, h] = o()(
             }, [N]),
             c(o.close),
             a.jsx('div', {
-                className: j,
-                children: a.jsx(i, { className: v, src: k, onEnded: o.close, ref: N, style: f(b, g, y, u) }),
+                className: h,
+                children: a.jsx(i, { className: j, src: k, onEnded: o.close, ref: N, style: f(v, g, y, u) }),
             })
         );
     });
-m(new u().add(p).addWithProps(b, {}).render(a.jsx(g, {})));
+m(new u().add(p).addWithProps(v, {}).render(a.jsx(g, {})));

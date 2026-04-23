@@ -1,22 +1,22 @@
-import { v as e, r as s, j as t, f as a } from './vendor.js';
+import { D as e, r as s, j as t, f as a } from './vendor.js';
 import {
     aw as o,
-    dr as n,
-    ds as i,
-    i as r,
-    l,
-    r as c,
-    dt as d,
-    T as m,
-    cj as p,
-    du as u,
-    d3 as g,
-    dv as _,
-    dw as v,
-    dx as x,
-    cr as h,
-    dy as b,
-    dz as T,
+    dw as n,
+    dx as r,
+    i,
+    l as c,
+    r as l,
+    dy as d,
+    W as m,
+    cl as p,
+    dz as g,
+    dc as _,
+    dA as u,
+    dB as x,
+    dC as h,
+    ct as b,
+    dD as v,
+    dE as T,
 } from './lib.js';
 var f = ((e) => ((e.News = 'news'), (e.ShopPromo = 'shopPromo'), (e.None = 'none'), e))(f || {});
 const N = {
@@ -27,9 +27,9 @@ const N = {
             isVideo: !0,
             image: 'https://pie-webbrg-cdn-stg.wgcdn.co/dcont/fb/image/whats_new_475x230_2.png',
         }),
-        controls: () => o(i('onClick', 'onClose')),
+        controls: () => o(r('onClick', 'onClose')),
     },
-    [w, y] = r('TeaserModel')(
+    [w, y] = i('TeaserModel')(
         ({ observableModel: e }) =>
             e.primitives(['type', 'postCounter', 'description', 'text', 'isVideo', 'finishTime', 'image']),
         ({ externalModel: e }) => ({
@@ -57,49 +57,49 @@ const N = {
     },
     C = 'Teaser:Base',
     k = e(function ({ className: e, classNames: o }) {
-        const { model: n, controls: i } = y(),
-            r = n.type.get() || f.News,
+        const { model: n, controls: r } = y(),
+            i = n.type.get() || f.News,
             N = n.postCounter.get(),
             w = n.text.get(),
             k = n.description.get(),
             W = n.finishTime.get(),
             B = n.isVideo.get(),
             E = n.image.get(),
-            M = l(),
-            P = c.resolve('strings');
-        const S = s.useCallback(
+            M = c(),
+            P = l.resolve('strings');
+        const A = s.useCallback(
                 (e) => {
-                    (e.stopPropagation(), i.onClose());
+                    (e.stopPropagation(), r.onClose());
                 },
-                [i],
+                [r],
             ),
-            [$, A] = s.useState(null);
+            [S, $] = s.useState(null);
         s.useLayoutEffect(() => {
             let e;
             const s = d(m(W || 0), p());
-            if (!W || s <= 0) return void A(null);
+            if (!W || s <= 0) return void $(null);
             const t = Math.floor(T.seconds(s)),
-                a = u(m(W), g(1)) ? _.Extended : _.Long;
+                a = g(m(W), _(1)) ? u.Extended : u.Long;
             return (
-                A({ duration: t, style: a }),
-                a === _.Extended && (e = setTimeout(() => A((e) => ({ ...e, style: _.Long })), d(m(t + 1), g(1)))),
+                $({ duration: t, style: a }),
+                a === u.Extended && (e = setTimeout(() => $((e) => ({ ...e, style: u.Long })), d(m(t + 1), _(1)))),
                 () => {
                     e && (clearTimeout(e), (e = void 0));
                 }
             );
         }, [W]);
         const [L, V] = s.useState(null),
-            [z, I] = s.useState(!1);
+            [z, D] = s.useState(!1);
         return (
             s.useEffect(() => {
                 const e = new Image();
                 return (
                     (e.src = E),
                     (e.onload = () => {
-                        (V({ path: E, height: e.height, width: e.width }), I(!0));
+                        (V({ path: E, height: e.height, width: e.width }), D(!0));
                     }),
                     (e.onerror = () => {
-                        I(!0);
+                        D(!0);
                     }),
                     () => {
                         ((e.src = ''), V(null));
@@ -108,22 +108,22 @@ const N = {
             }, [E]),
             z
                 ? t.jsxs('div', {
-                      className: a(j.base, j[`base__${r}Type`], B && j.base__video, e),
+                      className: a(j.base, j[`base__${i}Type`], B && j.base__video, e),
                       onClick: function (e) {
-                          (M.play('click', { target: C, original: e }), i.onClick());
+                          (M.play('click', { target: C, original: e }), r.onClick());
                       },
                       onMouseEnter: function (e) {
                           M.play('mouse-enter', { target: C, original: e });
                       },
                       children: [
                           t.jsx('div', {
-                              className: a(j.contentWrapper, null == o ? void 0 : o.contentWrapper),
+                              className: a(j.contentWrapper, o?.contentWrapper),
                               children: t.jsx('div', {
-                                  className: a(j.imageWrapper, null == o ? void 0 : o.imageWrapper),
+                                  className: a(j.imageWrapper, o?.imageWrapper),
                                   children:
                                       L &&
                                       t.jsx('div', {
-                                          className: a(j.image, null == o ? void 0 : o.image),
+                                          className: a(j.image, o?.image),
                                           style: {
                                               backgroundImage: `url(${L.path})`,
                                               height: `${L.height}rem`,
@@ -132,49 +132,45 @@ const N = {
                                       }),
                               }),
                           }),
-                          t.jsx('div', { className: a(j.vignette, null == o ? void 0 : o.vignette) }),
+                          t.jsx('div', { className: a(j.vignette, o?.vignette) }),
                           t.jsxs('div', {
-                              className: a(j.contentWrapper, null == o ? void 0 : o.contentWrapper),
+                              className: a(j.contentWrapper, o?.contentWrapper),
                               children: [
                                   t.jsxs('div', {
-                                      className: a(j.title, null == o ? void 0 : o.title),
+                                      className: a(j.title, o?.title),
                                       children: [
                                           P.readOrEmpty('menu.promo.teaser.title'),
                                           Boolean(N) &&
                                               N > 0 &&
-                                              t.jsx(v, {
-                                                  className: a(j.counter, null == o ? void 0 : o.counter),
+                                              t.jsx(x, {
+                                                  className: a(j.counter, o?.counter),
                                                   value: N,
                                                   size: 'small',
                                               }),
                                       ],
                                   }),
-                                  t.jsx(x, {
+                                  t.jsx(h, {
                                       type: 'close',
                                       side: 'right',
-                                      classNames: { base: a(j.closeButton, null == o ? void 0 : o.closeButton) },
-                                      onClick: S,
+                                      classNames: { base: a(j.closeButton, o?.closeButton) },
+                                      onClick: A,
                                       caption: '',
                                   }),
-                                  w && t.jsx('div', { className: a(j.text, null == o ? void 0 : o.text), children: w }),
-                                  (k || $) &&
+                                  w && t.jsx('div', { className: a(j.text, o?.text), children: w }),
+                                  (k || S) &&
                                       t.jsxs('div', {
                                           className: j.bottomContent,
                                           children: [
                                               k &&
                                                   t.jsx('div', {
-                                                      className: a(j.description, null == o ? void 0 : o.description),
-                                                      children: t.jsx(h, {
+                                                      className: a(j.description, o?.description),
+                                                      children: t.jsx(b, {
                                                           classMix: j.extendedText,
                                                           text: k,
                                                           isTruncationAvailable: !0,
                                                       }),
                                                   }),
-                                              $ &&
-                                                  t.jsx(b, {
-                                                      className: a(j.countdown, null == o ? void 0 : o.countdown),
-                                                      ...$,
-                                                  }),
+                                              S && t.jsx(v, { className: a(j.countdown, o?.countdown), ...S }),
                                           ],
                                       }),
                               ],

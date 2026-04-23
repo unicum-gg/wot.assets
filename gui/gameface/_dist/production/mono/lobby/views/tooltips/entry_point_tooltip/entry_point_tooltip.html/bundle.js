@@ -1,7 +1,7 @@
-import { y as e, j as t, z as s } from '../../../../chunks/vendor.js';
-import { a, F as i, cE as n, aJ as r, dc as o, q as c, a6 as p, d9 as m } from '../../../../chunks/lib.js';
-import { c as d, g as l } from '../../../../chunks/readResource.js';
-const [_, f] = a()(({ observableModel: e }) => ({ root: e.object(), performance: e.object('performance') })),
+import { E as e, j as t, F as s } from '../../../../chunks/vendor.js';
+import { a, F as i, cH as n, aX as r, dg as o, q as c, a6 as p, de as m } from '../../../../chunks/lib.js';
+import { c as d, g as _ } from '../../../../chunks/readResource.js';
+const [l, f] = a()(({ observableModel: e }) => ({ root: e.object(), performance: e.object('performance') })),
     x = {
         root: 'App_root_0',
         base: 'App_db75b9f1',
@@ -21,7 +21,7 @@ const [_, f] = a()(({ observableModel: e }) => ({ root: e.object(), performance:
         base__highRisk: 'App_base__highRisk_0',
         performanceText: 'App_performanceText_bb4921fa',
         performanceIcon: 'App_performanceIcon_460c7fbb',
-        divider: 'App_divider_25372ba3',
+        divider: 'App_divider_a40e0bd4',
         timerContainer: 'App_timerContainer_74f63437',
         inactiveTimer: 'App_inactiveTimer_aa4edbb',
         timer: 'App_timer_581f55cf',
@@ -100,23 +100,22 @@ const [_, f] = a()(({ observableModel: e }) => ({ root: e.object(), performance:
         }
     }),
     j = e(() => {
-        var e, a;
-        const { model: n } = f(),
-            { assetsPointer: o, modeState: c } = n.root.get(),
-            p = n.performance.get(),
-            { dynamicTexts: m } = d(null, { assetsPointer: o });
+        const { model: e } = f(),
+            { assetsPointer: a, modeState: n } = e.root.get(),
+            o = e.performance.get(),
+            { dynamicTexts: c } = d(null, { assetsPointer: a });
         return t.jsxs('div', {
-            className: s(x.base, x[`base__${c}`], x[`base__${p.performanceRisk}`]),
+            className: s(x.base, x[`base__${n}`], x[`base__${o.performanceRisk}`]),
             children: [
-                t.jsx('img', { className: x.topContentBg, src: l(o).event_banner_tooltip.bg(), alt: 'background' }),
+                t.jsx('img', { className: x.topContentBg, src: _(a).event_banner_tooltip.bg(), alt: 'background' }),
                 t.jsx('div', {
                     className: x.topContent,
-                    children: t.jsx('div', { className: x.title, children: m.userName() }),
+                    children: t.jsx('div', { className: x.title, children: c.userName() }),
                 }),
                 t.jsxs('div', {
                     className: x.bottomContent,
                     children: [
-                        t.jsx(i, { text: m.entryPoint.tooltip.description(), className: x.paragraph }),
+                        t.jsx(i, { text: c.entryPoint.tooltip.description(), className: x.paragraph }),
                         t.jsx(i, {
                             text: R.strings.fun_random.entryPoint.tooltip.modeDescription(),
                             params: {
@@ -127,7 +126,7 @@ const [_, f] = a()(({ observableModel: e }) => ({ root: e.object(), performance:
                             },
                             classMix: x.mode,
                         }),
-                        p.showPerfRisk &&
+                        o.showPerfRisk &&
                             t.jsxs('div', {
                                 className: x.performance,
                                 children: [
@@ -139,17 +138,13 @@ const [_, f] = a()(({ observableModel: e }) => ({ root: e.object(), performance:
                                     }),
                                     t.jsx('div', {
                                         className: x.performanceTitle,
-                                        children:
-                                            null == (e = m.entryPoint.tooltip.performance.$dyn(p.performanceRisk))
-                                                ? void 0
-                                                : e.header(),
+                                        children: c.entryPoint.tooltip.performance.$dyn(o.performanceRisk)?.header(),
                                     }),
                                     t.jsx('div', {
                                         className: x.performanceText,
-                                        children:
-                                            null == (a = m.entryPoint.tooltip.performance.$dyn(p.performanceRisk))
-                                                ? void 0
-                                                : a.description(),
+                                        children: c.entryPoint.tooltip.performance
+                                            .$dyn(o.performanceRisk)
+                                            ?.description(),
                                     }),
                                 ],
                             }),
@@ -160,4 +155,4 @@ const [_, f] = a()(({ observableModel: e }) => ({ root: e.object(), performance:
             ],
         });
     });
-p(t.jsx(_, { children: t.jsx(m, { children: t.jsx(j, {}) }) }));
+p(t.jsx(l, { children: t.jsx(m, { children: t.jsx(j, {}) }) }));

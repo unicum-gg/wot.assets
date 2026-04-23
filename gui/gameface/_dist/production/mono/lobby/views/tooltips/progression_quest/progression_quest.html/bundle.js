@@ -3,13 +3,13 @@ import {
     i as s,
     n as o,
     m as t,
-    bv as r,
-    ar as i,
-    as as a,
-    bw as n,
-    q as d,
-    al as l,
-    ak as u,
+    bD as r,
+    aY as a,
+    aZ as i,
+    bE as n,
+    a5 as d,
+    aU as l,
+    aT as u,
     r as c,
     U as p,
 } from '../../../../chunks/lib.js';
@@ -25,9 +25,9 @@ function I({ bonuses: s, questId: o, size: d, resId: l, ...u }) {
     const c = t(s, (e) => ({
             size: d,
             name: e.name,
-            image: a(e, d),
+            image: i(e, d),
             value: e.value,
-            valueType: i(e.name),
+            valueType: a(e.name),
             special: 'overlayType' in e ? e.overlayType : void 0,
             tooltipArgs: {
                 ...r(

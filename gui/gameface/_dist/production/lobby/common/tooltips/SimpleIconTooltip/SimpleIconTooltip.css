@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,14 +11,14 @@
     position: relative;
 }
 
-.App_base_1d {
+.App_base_a22c4 {
     display: flex;
     flex-direction: column;
     width: 310rem;
     padding: 16rem 19rem;
 }
 
-.App_header_d5 {
+.App_header_bd16d {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
@@ -28,38 +28,38 @@
     margin-bottom: 7rem;
 }
 
-.App_base__attention_02 .App_header_d5 {
+.App_base__attention_c1439 .App_header_bd16d {
     color: #feab34;
 }
 
-.App_base__alert_4e .App_header_d5 {
+.App_base__alert_d37c3 .App_header_bd16d {
     color: #ee7000;
 }
 
-.App_base__blocker_7d .App_header_d5 {
+.App_base__blocker_f711f .App_header_bd16d {
     color: #ff2717;
 }
 
-.App_headerIcon_56 {
+.App_headerIcon_f2cb0 {
     width: 16rem;
     height: 16rem;
     margin-right: 4rem;
     background: no-repeat left / contain;
 }
 
-.App_base__attention_02 .App_headerIcon_56 {
+.App_base__attention_c1439 .App_headerIcon_f2cb0 {
     background-image: url('R.images.gui.maps.icons.library.attentionIcon');
 }
 
-.App_base__alert_4e .App_headerIcon_56 {
+.App_base__alert_d37c3 .App_headerIcon_f2cb0 {
     background-image: url('R.images.gui.maps.icons.library.alertBigIcon');
 }
 
-.App_base__blocker_7d .App_headerIcon_56 {
+.App_base__blocker_f711f .App_headerIcon_f2cb0 {
     background-image: url('R.images.gui.maps.icons.library.CancelBigIcon');
 }
 
-.App_text_31 {
+.App_text_a4ccf {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;

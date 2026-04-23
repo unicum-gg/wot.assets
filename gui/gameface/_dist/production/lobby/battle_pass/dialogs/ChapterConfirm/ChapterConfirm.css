@@ -1,11 +1,11 @@
-.Illustration_base_e1 {
+.Illustration_base_c83ed {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 30rem;
 }
 
-.Illustration_chapter_6b {
+.Illustration_chapter_f4f51 {
     width: 234rem;
     height: 313rem;
     background: no-repeat center / contain;
@@ -13,22 +13,22 @@
     z-index: 1;
 }
 
-.mediaMedium .Illustration_chapter_6b {
+.mediaMedium .Illustration_chapter_f4f51 {
     width: 334rem;
     height: 444rem;
 }
 
-.mediaLarge .Illustration_chapter_6b {
+.mediaLarge .Illustration_chapter_f4f51 {
     width: 414rem;
     height: 550rem;
 }
 
-.mediaExtraLarge .Illustration_chapter_6b {
+.mediaExtraLarge .Illustration_chapter_f4f51 {
     width: 608rem;
     height: 808rem;
 }
 
-.Illustration_tank_f9 {
+.Illustration_tank_cbaff {
     width: 242rem;
     height: 159rem;
     background: no-repeat center / contain;
@@ -39,59 +39,59 @@
     transform: translateX(-50%);
 }
 
-.mediaMedium .Illustration_tank_f9 {
+.mediaMedium .Illustration_tank_cbaff {
     width: 376rem;
     height: 248rem;
 }
 
-.mediaLarge .Illustration_tank_f9 {
+.mediaLarge .Illustration_tank_cbaff {
     width: 452rem;
     height: 298rem;
 }
 
-.mediaExtraLarge .Illustration_tank_f9 {
+.mediaExtraLarge .Illustration_tank_cbaff {
     width: 608rem;
     height: 400rem;
 }
 
-.ExtraChapterDescription_base_fe {
+.ExtraChapterDescription_base_ebf1b {
     width: 100%;
     color: #ffdd99;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
-.mediaMedium .ExtraChapterDescription_base_fe {
+.mediaMedium .ExtraChapterDescription_base_ebf1b {
     font-size: 16rem;
 }
 
-.ExtraChapterDescription_description_8f {
+.ExtraChapterDescription_description_c13f6 {
     justify-content: center;
     align-items: center;
 }
 
-.ExtraChapterDescription_warningIcon_9e {
+.ExtraChapterDescription_warningIcon_cae4c {
     width: 24rem;
     height: 24rem;
     background: url('R.images.gui.maps.icons.library.alertBigIcon') no-repeat center / contain;
 }
 
-.ExtraChapterDescription_highlightText_7e {
+.ExtraChapterDescription_highlightText_df1f3 {
     color: #feab34;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.App_base_92 {
+.App_base_fe612 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.App_title_95 {
+.App_title_cc0c0 {
     color: #f2f2f7;
     font-size: 24rem;
     font-weight: 700;
@@ -101,21 +101,21 @@
     text-align: center;
 }
 
-.mediaMedium .App_title_95 {
+.mediaMedium .App_title_cc0c0 {
     color: #f2f2f7;
     font-size: 28rem;
     font-weight: 700;
     line-height: 1.1;
 }
 
-.mediaLarge .App_title_95 {
+.mediaLarge .App_title_cc0c0 {
     color: #f2f2f7;
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
 }
 
-.App_subTitle_5f {
+.App_subTitle_f4cd9 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
@@ -124,7 +124,7 @@
     text-align: center;
 }
 
-.mediaMedium .App_subTitle_5f {
+.mediaMedium .App_subTitle_f4cd9 {
     color: #e9e2bf;
     font-size: 16rem;
     font-weight: 400;

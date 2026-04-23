@@ -1,14 +1,28 @@
-import { q as e, s as t, v as s, j as a, f as i } from '../../../../chunks/vendor.js';
-import { i as n, n as r, bt as o, F as c, aa as l, am as p, r as d, U as m, bs as _ } from '../../../../chunks/lib.js';
-import { S as b } from '../../../../chunks/enums.js';
-/* empty css                        */ var x = ((e) => ((e.Low = 'low'), (e.Medium = 'medium'), (e.High = 'high'), e))(
-    x || {},
+import { h as e, i as t, t as s, j as a, f as i } from '../../../../chunks/vendor.js';
+import {
+    i as n,
+    n as r,
+    bx as o,
+    F as c,
+    aI as l,
+    aV as p,
+    by as m,
+    bz as d,
+    bA as _,
+    bB as b,
+    r as x,
+    U as g,
+    bv as u,
+} from '../../../../chunks/lib.js';
+import { S as f } from '../../../../chunks/enums.js';
+/* empty css                        */ var h = ((e) => ((e.Low = 'low'), (e.Medium = 'medium'), (e.High = 'high'), e))(
+    h || {},
 );
-const [g, u] = n()(({ observableModel: s }) => {
+const [j, v] = n()(({ observableModel: s }) => {
         const a = { root: s.object(), eventInfo: s.object('eventInfo') },
             i = e(
                 () =>
-                    a.eventInfo.get().subMode === b.StPatrick
+                    a.eventInfo.get().subMode === f.StPatrick
                         ? {
                               subTitle: R.strings.battle_royale_extention.tooltip.banner.stPatrickTitle(),
                               description: R.strings.battle_royale_extention.tooltip.banner.stPatrickDescription(),
@@ -23,16 +37,15 @@ const [g, u] = n()(({ observableModel: s }) => {
             );
         return { ...a, computes: { settings: i } };
     }, r),
-    f = {
+    y = {
         base: 'App_97a7e598',
         img: 'App_img_f167336c',
         base__inactive: 'App_base__inactive_0',
         header: 'App_header_648d499b',
         subTitle: 'App_subTitle_413725f4',
         description: 'App_description_8018f8cc',
-        modeContainer: 'App_modeContainer_593dbf6b',
-        modeLabel: 'App_modeLabel_beab2506',
-        modeDescription: 'App_modeDescription_54d4fd4c',
+        modeContainer: 'App_modeContainer_f5052f31',
+        modeLabel: 'App_modeLabel_2cc9bbac',
         performance: 'App_performance_414926ee',
         performanceIcon: 'App_performanceIcon_6b1ac9c2',
         base__medium: 'App_base__medium_0',
@@ -41,63 +54,61 @@ const [g, u] = n()(({ observableModel: s }) => {
         performanceText: 'App_performanceText_380aef3c',
         separator: 'App_separator_bad28223',
         timerStatus: 'App_timerStatus_a52e51dd',
-    },
-    j = s(function () {
-        const { model: e } = u(),
-            { performanceRisk: t, time: s, modeState: n } = e.root.get(),
-            r = 'inactive' === n ? o.cooldown : o.accent,
-            { backgroundImage: d, description: m, subTitle: _ } = e.computes.settings();
-        return a.jsxs('div', {
-            className: i(f.base, f[`base__${t}`], f[`base__${n}`]),
-            children: [
-                a.jsx('div', { className: f.img, style: { backgroundImage: `url(${d})` } }),
-                a.jsx('div', {
-                    className: f.header,
-                    children: R.strings.battle_royale_extention.tooltip.banner.title(),
-                }),
-                _ && a.jsx('div', { className: f.subTitle, children: _ }),
-                a.jsx('div', { className: f.description, children: a.jsx(c, { text: m }) }),
+    };
+function A(e, t = {}) {
+    const s = m(`{{@ split}}${e}{{/}}`, d);
+    return _(s, b, t);
+}
+const k = s(function () {
+    const { model: e } = v(),
+        { performanceRisk: t, time: s, modeState: n } = e.root.get(),
+        r = 'inactive' === n ? o.cooldown : o.accent,
+        { backgroundImage: m, description: d, subTitle: _ } = e.computes.settings();
+    return a.jsxs('div', {
+        className: i(y.base, y[`base__${t}`], y[`base__${n}`]),
+        children: [
+            a.jsx('div', { className: y.img, style: { backgroundImage: `url(${m})` } }),
+            a.jsx('div', { className: y.header, children: R.strings.battle_royale_extention.tooltip.banner.title() }),
+            _ && a.jsx('div', { className: y.subTitle, children: _ }),
+            a.jsx('div', { className: y.description, children: a.jsx(c, { text: d }) }),
+            a.jsxs('div', {
+                className: y.modeContainer,
+                children: [
+                    a.jsx('div', {
+                        className: y.modeLabel,
+                        children: R.strings.battle_royale_extention.tooltip.banner.mode.label(),
+                    }),
+                    A(R.strings.battle_royale_extention.tooltip.banner.mode.description()),
+                ],
+            }),
+            t !== h.Low &&
                 a.jsxs('div', {
-                    className: f.modeContainer,
+                    className: y.performance,
                     children: [
+                        a.jsx('div', { className: y.performanceIcon }),
                         a.jsx('div', {
-                            className: f.modeLabel,
-                            children: R.strings.battle_royale_extention.tooltip.banner.mode.label(),
+                            className: y.performanceTitle,
+                            children: `${R.strings.battle_royale_extention.tooltip.banner.performanceRisk.title.$dyn(t)}`,
                         }),
                         a.jsx('div', {
-                            className: f.modeDescription,
-                            children: R.strings.battle_royale_extention.tooltip.banner.mode.description(),
+                            className: y.performanceText,
+                            children: a.jsx(c, {
+                                text: `${R.strings.battle_royale_extention.tooltip.banner.performanceRisk.description.$dyn(t)}`,
+                            }),
                         }),
                     ],
                 }),
-                t !== x.Low &&
-                    a.jsxs('div', {
-                        className: f.performance,
-                        children: [
-                            a.jsx('div', { className: f.performanceIcon }),
-                            a.jsx('div', {
-                                className: f.performanceTitle,
-                                children: `${R.strings.battle_royale_extention.tooltip.banner.performanceRisk.title.$dyn(t)}`,
-                            }),
-                            a.jsx('div', {
-                                className: f.performanceText,
-                                children: a.jsx(c, {
-                                    text: `${R.strings.battle_royale_extention.tooltip.banner.performanceRisk.description.$dyn(t)}`,
-                                }),
-                            }),
-                        ],
-                    }),
-                a.jsx('div', { className: f.separator }),
-                a.jsx(c, {
-                    text: `${R.strings.battle_royale_extention.tooltip.banner.timer.text.$dyn(r)}`,
-                    binding: { timer: a.jsx(l, { size: p.x24x24, type: r, start: s }) },
-                    classMix: f.timerStatus,
-                }),
-            ],
-        });
+            a.jsx('div', { className: y.separator }),
+            a.jsx(c, {
+                text: `${R.strings.battle_royale_extention.tooltip.banner.timer.text.$dyn(r)}`,
+                binding: { timer: a.jsx(l, { size: p.x24x24, type: r, start: s }) },
+                classMix: y.timerStatus,
+            }),
+        ],
     });
-d(
-    a.jsx(m, {
-        children: a.jsx(g, { children: a.jsx(_, { children: a.jsx(_.Decorator, { children: a.jsx(j, {}) }) }) }),
+});
+x(
+    a.jsx(g, {
+        children: a.jsx(j, { children: a.jsx(u, { children: a.jsx(u.Decorator, { children: a.jsx(k, {}) }) }) }),
     }),
 );

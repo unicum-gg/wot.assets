@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,19 +11,19 @@
     position: relative;
 }
 
-.TooltipAdvancedFooter_base_d6 {
+.TooltipAdvancedFooter_base_b214f {
     display: flex;
     padding: 12rem 20rem 20rem;
 }
 
-.TooltipAdvancedFooter_altBtn_e0 {
+.TooltipAdvancedFooter_altBtn_e7239 {
     width: 29rem;
     height: 26rem;
     margin-right: 8rem;
     background: url('R.images.gui.maps.icons.tooltip.tooltip_alt_btn') no-repeat center / cover;
 }
 
-.GradientDecorator_base_ee {
+.GradientDecorator_base_d854f {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,7 +31,7 @@
     position: relative;
 }
 
-.GradientDecorator_bg_21 {
+.GradientDecorator_bg_b0fba {
     position: absolute;
     top: 0;
     right: 0;
@@ -44,17 +44,17 @@
     background: url('R.images.gui.maps.icons.library.white_bg') no-repeat 50% / 100% 100%;
 }
 
-.GradientDecorator_divider_13 {
+.GradientDecorator_divider_cbfcf {
     width: 360rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.tooltip.tooltip_perks_divider') no-repeat center / cover;
 }
 
-.SkillUntrainedHeader_base_74 {
+.SkillUntrainedHeader_base_cf135 {
     display: flex;
 }
 
-.SkillUntrainedHeader_gradient_03 {
+.SkillUntrainedHeader_gradient_b8ff6 {
     width: 200rem;
     height: 144rem;
     background: radial-gradient(73% 76% at 0% 0%, rgba(177, 0, 21, 0.5) 0%, rgba(177, 0, 21, 0) 100%);
@@ -63,14 +63,14 @@
     left: 0;
 }
 
-.SkillUntrainedHeader_icon_21 {
+.SkillUntrainedHeader_icon_c3dbf {
     width: 62rem;
     height: 40rem;
     margin: -7rem 10rem 0 -9rem;
     background: url('R.images.gui.maps.icons.tooltip.skill_untrained_icon') no-repeat center / cover;
 }
 
-.SkillUntrainedHeader_header_96 {
+.SkillUntrainedHeader_header_afce5 {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -78,7 +78,7 @@
     margin-top: 3rem;
 }
 
-.SkillUntrainedApp_base_1a {
+.SkillUntrainedApp_base_a515c {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -90,16 +90,16 @@
     position: relative;
 }
 
-.SkillUntrainedApp_body_78 {
+.SkillUntrainedApp_body_bbfbf {
     margin: 18rem 0 16rem;
     color: #ff2717;
 }
 
-.SkillUntrainedApp_explanation_69 {
+.SkillUntrainedApp_explanation_af12e {
     margin-top: 4rem;
     color: #8c8c7e;
 }
 
-.SkillUntrainedApp_footer_d8 {
+.SkillUntrainedApp_footer_d6f2c {
     padding: 18rem 0 0;
 }

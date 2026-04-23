@@ -1,16 +1,16 @@
-.BlockCompleted_base_0a {
+.BlockCompleted_base_deee1 {
     line-height: normal;
 }
 /* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
 /* instead of this one*/
-.BlockCompleted_separator_c8 {
+.BlockCompleted_separator_c71ae {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
 /* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
 /* instead of this one*/
-.BlockCompleted_rewards_d5 {
+.BlockCompleted_rewards_fbe78 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,7 +21,7 @@
     color: #c9c9b6;
     font-size: 14rem;
 }
-.BlockCompleted_whiteBg_52 {
+.BlockCompleted_whiteBg_e7f07 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,21 +31,21 @@
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Gradient_devider') center / cover repeat-y;
     position: relative;
 }
-.BlockCompleted_whiteBgLine_94 {
+.BlockCompleted_whiteBgLine_bdce1 {
     display: flex;
     flex-direction: row;
     align-items: center;
     color: #80d43a;
     font-size: 14rem;
 }
-.BlockCompleted_whiteBgIcon_17 {
+.BlockCompleted_whiteBgIcon_dd9d8 {
     width: 12rem;
     height: 12rem;
     margin-top: 2rem;
     margin-right: 4rem;
     background: url('R.images.gui.maps.icons.library.done') center / contain no-repeat;
 }
-.BlockCompleted_description_a4 {
+.BlockCompleted_description_d0972 {
     width: 100%;
     padding: 20rem 20rem 0;
     color: #cbac77;

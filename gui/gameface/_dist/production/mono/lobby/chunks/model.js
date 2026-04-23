@@ -1,35 +1,32 @@
-import { i as e, h as r, bu as s, b1 as a } from './lib.js';
-import { O as o, M as t, P as l } from './vendor.js';
-var n = ((e) => (
+import { i as e, h as r, bC as s, o as a } from './lib.js';
+import { J as o, F as t, G as n } from './vendor.js';
+var l = ((e) => (
     (e.None = 'none'),
     (e.CeasefireCurrentServer = 'ceasefireCurrentServer'),
     (e.CeasefireAllServers = 'ceasefireAllServers'),
     (e.ModeIsUnavailable = 'modeIsUnavailable'),
     (e.ModeIsFinished = 'modeIsFinished'),
     e
-))(n || {});
-const i = o(t({ goal: l(), periods: o(o(l())) }));
-const [c, d] = e()(
+))(l || {});
+const i = o(t({ goal: n(), periods: o(o(n())) }));
+function c(e) {
+    return e.map(([e, r]) => [s(e, a.ShortTime), s(r, a.ShortTime)]);
+}
+const [d, h] = e()(
     ({ observableModel: e }) => {
-        const o = { ...e.primitives(['alertType']) },
-            t = e.dict('battleSchedule');
+        const s = { ...e.primitives(['alertType']) },
+            a = e.dict('battleSchedule');
         return {
-            ...o,
+            ...s,
             computes: {
                 battleSchedule: r.shallow(() => {
                     const e = [];
-                    for (const [l, n] of t.entries())
+                    for (const [s, o] of a.entries())
                         try {
-                            e.push({
-                                goal: l,
-                                periods:
-                                    ((r = JSON.parse(n.get())),
-                                    r.map(([e, r]) => [s(e, a.ShortTime), s(r, a.ShortTime)])),
-                            });
-                        } catch (o) {
-                            console.error(`Error parsing JSON for element ${l}:`, o);
+                            e.push({ goal: s, periods: c(JSON.parse(o.get())) });
+                        } catch (r) {
+                            console.error(`Error parsing JSON for element ${s}:`, r);
                         }
-                    var r;
                     return e;
                 }),
             },
@@ -37,4 +34,4 @@ const [c, d] = e()(
     },
     ({ externalModel: e }) => ({ changeServer: e.createCallbackNoArgs('onChangeServer') }),
 );
-export { n as A, i as B, c as a, d as u };
+export { l as A, i as B, d as a, h as u };

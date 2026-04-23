@@ -1,15 +1,11 @@
-import { cv as e } from './lib.js';
+import { cQ as e, cD as s } from './lib.js';
 const t = -1,
-    s = 0,
+    r = 0,
     a = 1,
-    r = window.systemLocale,
-    o = (t, o, i) => {
-        const n =
-            Number.isInteger(t) || Number.isInteger(10 * t)
-                ? r.getRealFormat(t, a)
-                : r.getRealFormat(parseFloat(t.toFixed(i)), s);
-        return o ? e(R.strings.comp7_ext.percentage(), { percentageValue: n }) : n;
+    i = (t, i, n) => {
+        const c = Number.isInteger(t) || Number.isInteger(10 * t) ? e(t, a) : e(parseFloat(t.toFixed(n)), r);
+        return i ? s(R.strings.comp7_ext.percentage(), { percentageValue: c }) : c;
     },
-    i = ({ value: e, isPercentage: t = !1, fractionDigits: s = 2 }) =>
-        -1 === e ? R.strings.comp7_ext.dash() : o(e, t, s);
-export { t as N, o as f, i as g };
+    n = ({ value: e, isPercentage: s = !1, fractionDigits: t = 2 }) =>
+        -1 === e ? R.strings.comp7_ext.dash() : i(e, s, t);
+export { t as N, i as f, n as g };

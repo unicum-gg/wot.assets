@@ -7,8 +7,12 @@ const t = -1,
     i = 'pending',
     n = -1,
     r = 'undamaged',
-    u = { ['54033']: 'alpha', ['50705']: 'alpha', ['51201']: 'super', ['56833']: 'super' },
-    d = {
+    u = '54033',
+    d = '50705',
+    b = '56833',
+    p = '51201',
+    m = { [u]: 'alpha', [d]: 'alpha', [p]: 'super', [b]: 'super' },
+    c = {
         ammoNotFull: 'ammoNotFull',
         crewNotFull: 'crewNotFull',
         exploded: 'exploded',
@@ -24,27 +28,27 @@ const t = -1,
         battle: 'battle',
         wot_plus_exclusive_vehicle_disabled: 'wot_plus_exclusive_vehicle_disabled',
     },
-    b = {
-        [d.ammoNotFull]: 'ammo',
-        [d.crewNotFull]: 'crew',
-        [d.exploded]: 'repair',
-        [d.destroyed]: 'repair',
-        [d.damaged]: 'repair',
-        [d.rentable]: 'rental',
-        [d.rentableAgain]: 'rental',
-        [d.rentalIsOver]: 'rental',
-        [d.tooHeavy]: 'notSuitable',
-        [d.unsuitableToQueue]: 'notSuitable',
-        [d.unsuitableToUnit]: 'notSuitable',
-        [d.inPrebattle]: 'inPlatoon',
-        [d.battle]: 'inBattle',
-        [d.wot_plus_exclusive_vehicle_disabled]: 'notSuitable',
+    v = {
+        [c.ammoNotFull]: 'ammo',
+        [c.crewNotFull]: 'crew',
+        [c.exploded]: 'repair',
+        [c.destroyed]: 'repair',
+        [c.damaged]: 'repair',
+        [c.rentable]: 'rental',
+        [c.rentableAgain]: 'rental',
+        [c.rentalIsOver]: 'rental',
+        [c.tooHeavy]: 'notSuitable',
+        [c.unsuitableToQueue]: 'notSuitable',
+        [c.unsuitableToUnit]: 'notSuitable',
+        [c.inPrebattle]: 'inPlatoon',
+        [c.battle]: 'inBattle',
+        [c.wot_plus_exclusive_vehicle_disabled]: 'notSuitable',
     };
-function p(e, a, t) {
-    return !(!e || a === l || !t) && t.status !== d.unsuitableToQueue && t.maxBpScore > 0;
+function _(e, a, t) {
+    return !(!e || a === l || !t) && t.status !== c.unsuitableToQueue && t.maxBpScore > 0;
 }
-const [m, c, v] = a()(({ observableModel: e }) => ({
+const [x, y, g] = a()(({ observableModel: e }) => ({
         ...e.primitives(['isCrystalEarnEnabled', 'isDailyMultipliedXpEnabled', 'isInfiniteAmmo']),
     })),
-    _ = () => e.useContext(v.Context);
-export { l as D, n as E, t as N, i as P, s as R, r as U, o as a, u as b, b as c, d, m as e, p as i, _ as u };
+    T = () => e.useContext(g.Context);
+export { l as D, n as E, t as N, i as P, s as R, r as U, o as a, m as b, v as c, c as d, x as e, _ as i, T as u };

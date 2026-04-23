@@ -1,16 +1,16 @@
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.Separator_base_73 {
+.Separator_base_e9e05 {
     display: flex;
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.components.tooltip.devider_points') 50% / contain no-repeat;
 }
 
-.Content_base_21 {
+.Content_base_e98b4 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -21,7 +21,7 @@
     position: relative;
 }
 
-.Content_title_d8 {
+.Content_title_b10b0 {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -29,28 +29,28 @@
     margin-bottom: 13rem;
 }
 
-.Content_content_41 {
+.Content_content_e33d4 {
     display: flex;
 }
 
-.Content_separator_f2 {
+.Content_separator_dd420 {
     margin: 15rem 0 10rem;
 }
 
-.Content_accent_9e {
+.Content_accent_d9d7a {
     color: #ffdd99;
 }
 
-.Content_unit_53 {
+.Content_unit_bec52 {
     color: #80d43a;
 }
 
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;

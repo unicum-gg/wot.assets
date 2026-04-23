@@ -1,5 +1,5 @@
-import { S as t, j as e } from '../../../../chunks/vendor.js';
-import { i, n as s, d7 as l, c2 as a, cu as o } from '../../../../chunks/lib.js';
+import { W as t, j as e } from '../../../../chunks/vendor.js';
+import { i, n as s, dc as l, c6 as a, cz as o } from '../../../../chunks/lib.js';
 const [d, c] = i()(({ observableModel: t }) => ({ ...t.primitives(['name', 'videoName', 'description']) }), s),
     r = 'BattleAbilityAltTooltip_d5041564',
     n = 'BattleAbilityAltTooltip_name_76054ad5',

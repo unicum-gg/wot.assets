@@ -1,4 +1,4 @@
-import { t as s, j as t } from './vendor.js';
+import { v as s, j as t } from './vendor.js';
 import { I as a, l as o } from './lib.js';
 const l = 'WotPlusBanner_df826e64',
     e = 'WotPlusBanner_text_a6efd270',

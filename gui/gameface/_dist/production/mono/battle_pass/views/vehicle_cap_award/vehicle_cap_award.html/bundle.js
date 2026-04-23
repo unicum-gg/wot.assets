@@ -1,8 +1,8 @@
-import { t as e, j as s, f as a } from '../../../chunks/vendor.js';
+import { v as e, j as s, f as a } from '../../../chunks/vendor.js';
 import {
     i as c,
     N as i,
-    bJ as l,
+    bH as l,
     g as d,
     h as n,
     C as t,
@@ -13,8 +13,8 @@ import {
     w as _,
     T as b,
     J as j,
-    U as p,
-    d as v,
+    U as v,
+    d as p,
 } from '../../../chunks/lib.js';
 import { g as u, a as x } from '../../../chunks/filename.js';
 import { H as g, u as N } from '../../../chunks/useKeyup.js';
@@ -29,13 +29,13 @@ const [A, f] = c()(({ observableModel: e }) => ({ ...{ root: e.object(), vehicle
     E = 'VehicleAward_image_e1085013',
     T = 'VehicleAward_score_9fcd64fb',
     $ = 'VehicleAward_scoreIcon_79b6ff35',
-    B = 'VehicleAward_level_be403845',
-    H = 'VehicleAward_name_db659683',
-    J = 'VehicleAward_title_d2db4e25',
-    L = 'VehicleAward_levelIcon_c18df12e',
-    S = 'VehicleAward_light_8a441018',
-    W = 'VehicleAward_rays_79b688e2',
-    q = e(() => {
+    H = 'VehicleAward_level_be403845',
+    B = 'VehicleAward_name_db659683',
+    L = 'VehicleAward_title_d2db4e25',
+    S = 'VehicleAward_levelIcon_c18df12e',
+    W = 'VehicleAward_light_8a441018',
+    q = 'VehicleAward_rays_79b688e2',
+    z = e(() => {
         const { model: e } = f(),
             { techName: a, vehicleLevelPoints: c } = e.root.get(),
             { vehicleType: i, vehicleName: d, vehicleLvl: n, isElite: t } = e.vehicleInfo.get(),
@@ -46,7 +46,7 @@ const [A, f] = c()(({ observableModel: e }) => ({ ...{ root: e.object(), vehicle
             children: s.jsxs('div', {
                 className: C,
                 children: [
-                    s.jsx('div', { className: S }),
+                    s.jsx('div', { className: W }),
                     s.jsxs('div', {
                         className: k,
                         children: [
@@ -54,7 +54,7 @@ const [A, f] = c()(({ observableModel: e }) => ({ ...{ root: e.object(), vehicle
                                 s.jsxs('div', {
                                     className: y,
                                     children: [
-                                        s.jsx('div', { className: W }),
+                                        s.jsx('div', { className: q }),
                                         s.jsx('div', {
                                             className: I,
                                             children: s.jsx('div', {
@@ -71,19 +71,19 @@ const [A, f] = c()(({ observableModel: e }) => ({ ...{ root: e.object(), vehicle
                         ],
                     }),
                     s.jsxs('span', {
-                        className: J,
+                        className: L,
                         children: [
-                            s.jsx('span', { className: B, children: w(n) }),
-                            s.jsx('div', { className: L, style: o }),
-                            s.jsx('span', { className: H, children: d }),
+                            s.jsx('span', { className: H, children: w(n) }),
+                            s.jsx('div', { className: S, style: o }),
+                            s.jsx('span', { className: B, children: d }),
                         ],
                     }),
                 ],
             }),
         });
     }),
-    z = 'Content_deaba007',
-    D = 'Content_subTitle_15c1ed7d',
+    D = 'Content_deaba007',
+    J = 'Content_subTitle_15c1ed7d',
     K = 'Content_bonusPoints_20fbc1ad',
     M = 'Content_bonusIcon_3cb2baa3',
     U = 'Content_2d9b5dc0',
@@ -97,20 +97,20 @@ const [A, f] = c()(({ observableModel: e }) => ({ ...{ root: e.object(), vehicle
             { breakpoint: c } = d(),
             i = c.weight >= n.medium.weight;
         return s.jsxs('div', {
-            className: z,
+            className: D,
             children: [
                 s.jsx(g, { title: Q.content.title(), status: Q.content.description() }),
                 s.jsxs('div', {
                     className: U,
                     children: [
-                        s.jsx(q, {}),
+                        s.jsx(z, {}),
                         s.jsxs('div', {
                             className: F,
                             children: [
                                 s.jsxs('div', {
                                     className: G,
                                     children: [
-                                        s.jsx('div', { className: D, children: Q.content.subTitle() }),
+                                        s.jsx('div', { className: J, children: Q.content.subTitle() }),
                                         s.jsxs('span', { className: K, children: [a, s.jsx('div', { className: M })] }),
                                     ],
                                 }),
@@ -164,4 +164,4 @@ const [A, f] = c()(({ observableModel: e }) => ({ ...{ root: e.object(), vehicle
         });
         var l;
     });
-v(new j().add(p).addWithProps(A, {}).render(s.jsx(ae, {})));
+p(new j().add(v).addWithProps(A, {}).render(s.jsx(ae, {})));

@@ -1,8 +1,8 @@
-import { k as e, j as s, m as t } from '../../../../chunks/vendor.js';
+import { m as e, j as s, n as t } from '../../../../chunks/vendor.js';
 import { i as o, c as a, A as c, a as i, r, E as l } from '../../../../chunks/lib.js';
 import { l as n } from '../../../../chunks/getRewardImage.js';
 import { a as d, g as p } from '../../../../chunks/resources.js';
-const x = {
+/* empty css                       */ const x = {
         images: { glow: 'tooltips.glow', divider: 'tooltips.divider' },
         texts: { howGetTitle: 'boxTooltip.howGet.title' },
     },
@@ -21,9 +21,9 @@ const x = {
             computes: { resources: e(() => d(x, t), { equals: a }), dynamicResources: e(() => p(m, t), { equals: a }) },
         };
     }, c),
-    g = { base: 'Divider_a108a991' };
+    g = 'Divider_a108a991';
 function j({ image: e }) {
-    return s.jsx('div', { className: g.base, style: { backgroundImage: `url(${e})` } });
+    return s.jsx('div', { className: g, style: { backgroundImage: `url(${e})` } });
 }
 const _ = 'App_fef503db',
     h = 'App_icon_370a809b',

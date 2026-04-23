@@ -1,11 +1,11 @@
-import { x as s, j as e, z as a, y as i } from '../../../../chunks/vendor.js';
-import { a as t, c as d, m as l, a8 as c, v as r, a6 as n, d9 as o } from '../../../../chunks/lib.js';
+import { h as s, j as e, F as a, E as i } from '../../../../chunks/vendor.js';
+import { a as t, c as d, m as l, a8 as c, v as r, a6 as n, de as o } from '../../../../chunks/lib.js';
 import { P as m, s as _ } from '../../../../chunks/profit.js';
 const j = 2,
-    x = 3,
-    [u, v] = t()(({ observableModel: e, readByPath: a }) => {
+    u = 3,
+    [x, v] = t()(({ observableModel: e, readByPath: a }) => {
         const i = { root: e.object(), results: [a('earned'), a('expenses'), a('total'), a('additional')] },
-            t = s(() => l(i.results, (s, e) => ({ ...s, isTotal: e === j, isAdditional: e === x })), { equals: d });
+            t = s(() => l(i.results, (s, e) => ({ ...s, isTotal: e === j, isAdditional: e === u })), { equals: d });
         return { ...i, computes: { getResultsList: t } };
     }, c),
     h = 'ListItem_9ed21754',
@@ -84,7 +84,7 @@ const j = 2,
         block: 'Content_block_604708c6',
         block__additional: 'Content_block__additional_315b276a',
     },
-    T = i(() => {
+    F = i(() => {
         const { model: s } = v();
         return e.jsx('div', {
             className: V.base,
@@ -115,45 +115,45 @@ const j = 2,
             ),
         });
     }),
-    A = 'Footer_1b733abe',
-    F = 'Footer_icon_cb4ec2ad',
+    T = 'Footer_1b733abe',
+    A = 'Footer_icon_cb4ec2ad',
     S = 'Footer_description_398ba227',
     C = i(() => {
         const { model: s } = v(),
             { premiumAdvertising: a } = s.root.get();
         return e.jsxs('div', {
-            className: A,
-            children: [e.jsx('div', { className: F }), e.jsx('div', { className: S, children: a })],
+            className: T,
+            children: [e.jsx('div', { className: A }), e.jsx('div', { className: S, children: a })],
         });
     }),
     $ = 'Header_36d24a5c',
-    z = 'Header_icon_442a1490',
-    H = 'Header_description_d221db51',
-    q = i(() => {
+    H = 'Header_icon_442a1490',
+    q = 'Header_description_d221db51',
+    w = i(() => {
         const { model: s } = v(),
             { currencyType: a } = s.root.get();
         return e.jsxs('div', {
             className: $,
             children: [
                 e.jsx('div', {
-                    className: z,
+                    className: H,
                     style: { backgroundImage: `url(${R.images.fun_random.gui.maps.icons.feature.profit.$dyn(a)})` },
                 }),
-                e.jsx('div', { className: H, children: R.strings.quests.bonusName.$dyn(a) }),
+                e.jsx('div', { className: q, children: R.strings.quests.bonusName.$dyn(a) }),
             ],
         });
     }),
-    w = { base: 'App_78b07e4b' },
+    z = { base: 'App_78b07e4b' },
     P = i(() => {
         const { model: s } = v(),
             { premiumAdvertising: a } = s.root.get();
         return e.jsxs('div', {
-            className: w.base,
+            className: z.base,
             children: [
-                e.jsx('div', { className: w.header, children: e.jsx(q, {}) }),
-                e.jsx('div', { className: w.header, children: e.jsx(T, {}) }),
-                a && e.jsx('div', { className: w.footer, children: e.jsx(C, {}) }),
+                e.jsx('div', { className: z.header, children: e.jsx(w, {}) }),
+                e.jsx('div', { className: z.header, children: e.jsx(F, {}) }),
+                a && e.jsx('div', { className: z.footer, children: e.jsx(C, {}) }),
             ],
         });
     });
-n(e.jsx(u, { children: e.jsx(o, { children: e.jsx(P, {}) }) }));
+n(e.jsx(x, { children: e.jsx(o, { children: e.jsx(P, {}) }) }));

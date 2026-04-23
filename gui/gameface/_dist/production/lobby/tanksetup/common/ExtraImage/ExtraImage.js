@@ -2,12 +2,8 @@
     'use strict';
     var e,
         r = {
-            8750: (e, r, t) => {
-                (t(7363), t(6483));
-                let o;
-                !(function (e) {
-                    ((e.SMALL = 'small'), (e.MEDIUM = 'medium'), (e.BIG = 'big'));
-                })(o || (o = {}));
+            6558: (e, r, t) => {
+                (t(7363), t(9849));
             },
             7363: (e) => {
                 e.exports = React;
@@ -26,14 +22,14 @@
             if (!t) {
                 var i = 1 / 0;
                 for (s = 0; s < e.length; s++) {
-                    for (var [t, n, a] = e[s], f = !0, l = 0; l < t.length; l++)
-                        (!1 & a || i >= a) && Object.keys(o.O).every((e) => o.O[e](t[l]))
-                            ? t.splice(l--, 1)
+                    for (var [t, n, a] = e[s], f = !0, u = 0; u < t.length; u++)
+                        (!1 & a || i >= a) && Object.keys(o.O).every((e) => o.O[e](t[u]))
+                            ? t.splice(u--, 1)
                             : ((f = !1), a < i && (i = a));
                     if (f) {
                         e.splice(s--, 1);
-                        var u = n();
-                        void 0 !== u && (r = u);
+                        var l = n();
+                        void 0 !== l && (r = l);
                     }
                 }
                 return r;
@@ -65,18 +61,18 @@
             var r = (r, t) => {
                     var n,
                         a,
-                        [i, f, l] = t,
-                        u = 0;
+                        [i, f, u] = t,
+                        l = 0;
                     if (i.some((r) => 0 !== e[r])) {
                         for (n in f) o.o(f, n) && (o.m[n] = f[n]);
-                        if (l) var s = l(o);
+                        if (u) var s = u(o);
                     }
-                    for (r && r(t); u < i.length; u++) ((a = i[u]), o.o(e, a) && e[a] && e[a][0](), (e[a] = 0));
+                    for (r && r(t); l < i.length; l++) ((a = i[l]), o.o(e, a) && e[a] && e[a][0](), (e[a] = 0));
                     return o.O(s);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t))));
         })());
-    var n = o.O(void 0, [727], () => o(8750));
+    var n = o.O(void 0, [727], () => o(6558));
     n = o.O(n);
 })();

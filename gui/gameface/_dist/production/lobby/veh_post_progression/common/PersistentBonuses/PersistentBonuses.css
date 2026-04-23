@@ -1,9 +1,9 @@
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.PersistentBonuses_base_46 {
+.PersistentBonuses_base_e1be9 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -14,22 +14,22 @@
     padding-bottom: 8rem;
 }
 
-.PersistentBonuses_base__medium_43 .PersistentBonuses_base_46,
-.PersistentBonuses_base__large_a8 .PersistentBonuses_base_46,
-.PersistentBonuses_base__extraLarge_8e .PersistentBonuses_base_46 {
+.PersistentBonuses_base__medium_a3475 .PersistentBonuses_base_e1be9,
+.PersistentBonuses_base__large_bd636 .PersistentBonuses_base_e1be9,
+.PersistentBonuses_base__extraLarge_b05a5 .PersistentBonuses_base_e1be9 {
     min-height: 38rem;
     padding-bottom: 13rem;
 }
-.PersistentBonuses_description_16 {
+.PersistentBonuses_description_fbef1 {
     line-height: 1.6;
 }
-.PersistentBonuses_description__withOpacity_11 {
+.PersistentBonuses_description__withOpacity_a5f12 {
     opacity: 0.5;
 }
-.PersistentBonuses_bonusBase_b8 {
+.PersistentBonuses_bonusBase_c89c2 {
     color: #ffdd99;
 }
-.PersistentBonuses_roleIcon_29 {
+.PersistentBonuses_roleIcon_d6437 {
     width: 24rem;
     height: 24rem;
     margin-right: 2rem;

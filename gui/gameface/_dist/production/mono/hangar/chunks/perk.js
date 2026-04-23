@@ -1,4 +1,4 @@
-import { db as e, r as n, M as a } from './lib.js';
+import { d7 as e, r as n, M as a } from './lib.js';
 import { j as s, f as i } from './vendor.js';
 const r = -1,
     t = 1,
@@ -9,8 +9,8 @@ const r = -1,
     d = 100,
     u = 'doge_role',
     v = 8,
-    b = 'new_skill',
-    m = 'brotherhood',
+    m = 'new_skill',
+    b = 'brotherhood',
     k = 'default',
     g = 'active',
     _ = 'activeDisable',
@@ -25,8 +25,7 @@ const r = -1,
     I = [h, p, D, _, P],
     j = [p, y];
 function B(e) {
-    var n;
-    return null == (n = e.find((e) => e.bonus === d)) ? void 0 : n.name;
+    return e.find((e) => 100 === e.bonus)?.name;
 }
 function L(n) {
     const {
@@ -40,9 +39,9 @@ function L(n) {
             nativeTank: c,
             vehicleBonusDetails: f,
         } = n,
-        u = [];
+        d = [];
     for (const e of s)
-        u.push({
+        d.push({
             id: a,
             name: e.name,
             state: e.state,
@@ -52,11 +51,11 @@ function L(n) {
             nativeTank: c,
             instruction: B(f),
         });
-    for (let v = 0; v < i; v++) {
-        const n = r !== d && v === i - 1 ? e.learning : e.learned;
-        u.push({ id: a, name: b, state: n, vehEfficacy: t, efficacy: o, role: l, nativeTank: c });
+    for (let u = 0; u < i; u++) {
+        const n = 100 !== r && u === i - 1 ? e.learning : e.learned;
+        d.push({ id: a, name: m, state: n, vehEfficacy: t, efficacy: o, role: l, nativeTank: c });
     }
-    return u;
+    return d;
 }
 function C(e) {
     const {
@@ -111,9 +110,9 @@ function N(n) {
             ? 1
             : n.state !== e.learning && a.state === e.learning
               ? -1
-              : n.name === b && a.name !== b
+              : n.name === m && a.name !== m
                 ? 1
-                : n.name !== b && a.name === b
+                : n.name !== m && a.name === m
                   ? -1
                   : 0,
     );
@@ -186,12 +185,12 @@ export {
     f as M,
     l as N,
     A as O,
-    m as P,
+    b as P,
     r as S,
     c as T,
     t as a,
     d as b,
-    b as c,
+    m as c,
     I as d,
     N as e,
     O as f,

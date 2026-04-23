@@ -1,7 +1,7 @@
-import { k as e, m as t, j as s } from '../../../../chunks/vendor.js';
-import { i, c as n, A as o, F as r, r as a, E as l } from '../../../../chunks/lib.js';
+import { m as e, n as t, j as s } from '../../../../chunks/vendor.js';
+import { i as n, c as i, A as o, F as r, r as a, E as l } from '../../../../chunks/lib.js';
 import { a as c, g as u } from '../../../../chunks/resources.js';
-import '../../../../chunks/getRewardImage.js';
+/* empty css                       */ import '../../../../chunks/getRewardImage.js';
 const d = { dynamicTexts: { remainingCount: 'singleRewardView.tooltip.remainingCount' } },
     m = {
         texts: {
@@ -15,24 +15,24 @@ const d = { dynamicTexts: { remainingCount: 'singleRewardView.tooltip.remainingC
             otherCount: 'singleRewardView.tooltip.count.other',
         },
     },
-    [p, g] = i()(({ observableModel: t }) => {
+    [p, g] = n()(({ observableModel: t }) => {
         const s = { root: t.object() },
-            i = e(() => c(m, s.root.get().eventName), { equals: n }),
-            o = e(() => u(d, s.root.get().eventName), { equals: n });
-        return { ...s, computes: { resources: i, dynamicResources: o } };
+            n = e(() => c(m, s.root.get().eventName), { equals: i }),
+            o = e(() => u(d, s.root.get().eventName), { equals: i });
+        return { ...s, computes: { resources: n, dynamicResources: o } };
     }, o),
     b = 'App_ba71ae1b',
     w = 'App_title_e78d7565',
-    x = 'App_text_b5591bdf',
-    h = 'App_label_db244be6';
+    h = 'App_text_b5591bdf',
+    x = 'App_label_db244be6';
 const j = t(function () {
     const { model: e } = g(),
         { texts: t } = e.computes.resources(),
-        { dynamicTexts: i } = e.computes.dynamicResources(),
-        n = e.root.get().guaranteedFrequency,
+        { dynamicTexts: n } = e.computes.dynamicResources(),
+        i = e.root.get().guaranteedFrequency,
         o = (() => {
-            if (n > 10 && n < 14) return t.otherCount;
-            switch (n % 10) {
+            if (i > 10 && i < 14) return t.otherCount;
+            switch (i % 10) {
                 case 1:
                     return t.firstCount;
                 case 2:
@@ -49,17 +49,17 @@ const j = t(function () {
             s.jsx('div', { className: w, children: t.title }),
             s.jsx(r, {
                 text: t.subtitle,
-                classMix: x,
+                classMix: h,
                 binding: {
-                    count: s.jsx(r, { text: o, binding: { count: n } }),
+                    count: s.jsx(r, { text: o, binding: { count: i } }),
                     remainingCount: s.jsx(r, {
-                        text: i.remainingCount.plural('remainingCount', e.root.get().guaranteedFrequency - 1),
-                        binding: { remainingCount: n - 1 },
+                        text: n.remainingCount.plural('remainingCount', e.root.get().guaranteedFrequency - 1),
+                        binding: { remainingCount: i - 1 },
                     }),
                 },
             }),
-            s.jsx('div', { className: h, children: t.label }),
-            s.jsx('div', { className: x, children: t.description }),
+            s.jsx('div', { className: x, children: t.label }),
+            s.jsx('div', { className: h, children: t.description }),
         ],
     });
 });

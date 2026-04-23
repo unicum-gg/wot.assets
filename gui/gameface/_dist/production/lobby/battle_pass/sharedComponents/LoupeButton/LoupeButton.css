@@ -1,11 +1,11 @@
-.LoupeButton_base_ba {
+.LoupeButton_base_bb1aa {
     width: 60rem;
     height: 60rem;
     position: relative;
     cursor: pointer;
 }
 
-.LoupeButton_icon_44 {
+.LoupeButton_icon_f984f {
     width: 100rem;
     height: 100rem;
     background: center / contain no-repeat;
@@ -17,7 +17,7 @@
     background-image: url('R.images.gui.maps.icons.battlePass.icons.loupe');
 }
 
-.LoupeButton_iconHover_91 {
+.LoupeButton_iconHover_dc9e3 {
     width: 100rem;
     height: 100rem;
     background: center / contain no-repeat;
@@ -31,15 +31,15 @@
     transition: opacity 0.2s ease-in-out;
 }
 
-.LoupeButton_base_ba:hover .LoupeButton_iconHover_91 {
+.LoupeButton_base_bb1aa:hover .LoupeButton_iconHover_dc9e3 {
     opacity: 1;
 }
 
-.LoupeButton_base_ba:active .LoupeButton_iconHover_91 {
+.LoupeButton_base_bb1aa:active .LoupeButton_iconHover_dc9e3 {
     opacity: 0.5;
 }
 
-.LoupeButton_hoverArea_d0 {
+.LoupeButton_hoverArea_b1c43 {
     position: absolute;
     cursor: pointer;
 }

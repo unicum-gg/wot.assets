@@ -1,0 +1,212 @@
+{
+  "middle_008": {
+    "frameX": 2,
+    "frameY": 2,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "middle_004": {
+    "frameX": 2,
+    "frameY": 731,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_045": {
+    "frameX": 2,
+    "frameY": 1459,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "middle_009": {
+    "frameX": 267,
+    "frameY": 731,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "eff2_005": {
+    "frameX": 404,
+    "frameY": 1421,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_035": {
+    "frameX": 826,
+    "frameY": 1421,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "obelisk3_004": {
+    "frameX": 1134,
+    "frameY": 1421,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_019": {
+    "frameX": 1298,
+    "frameY": 1421,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "eff2_008": {
+    "frameX": 1298,
+    "frameY": 1654,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "middle_007": {
+    "frameX": 1502,
+    "frameY": 1654,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "eff1_002": {
+    "frameX": 1711,
+    "frameY": 1654,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "obelisk3_007": {
+    "frameX": 336,
+    "frameY": 2,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "obelisk3": {
+    "frameX": 336,
+    "frameY": 529,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_024": {
+    "frameX": 497,
+    "frameY": 2,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "sky_013": {
+    "frameX": 566,
+    "frameY": 727,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "bg_002": {
+    "frameX": 652,
+    "frameY": 518,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "middle_002": {
+    "frameX": 566,
+    "frameY": 1228,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "obelisk1_009": {
+    "frameX": 791,
+    "frameY": 1228,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_012": {
+    "frameX": 1391,
+    "frameY": 2,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "sky_015": {
+    "frameX": 768,
+    "frameY": 231,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "sky_006": {
+    "frameX": 768,
+    "frameY": 2,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_046": {
+    "frameX": 922,
+    "frameY": 230,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "near_001": {
+    "frameX": 1391,
+    "frameY": 231,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_014": {
+    "frameX": 867,
+    "frameY": 535,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "wave11_003": {
+    "frameX": 867,
+    "frameY": 724,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_021": {
+    "frameX": 1042,
+    "frameY": 724,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_040": {
+    "frameX": 1305,
+    "frameY": 724,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "front_004": {
+    "frameX": 1305,
+    "frameY": 1132,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "sky_012": {
+    "frameX": 1391,
+    "frameY": 1228,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "sky_005": {
+    "frameX": 1687,
+    "frameY": 1228,
+    "sourceName": "parallaxS2-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  }
+}

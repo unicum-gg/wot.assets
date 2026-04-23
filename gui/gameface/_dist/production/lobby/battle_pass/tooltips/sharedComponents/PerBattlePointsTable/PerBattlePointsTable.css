@@ -1,16 +1,16 @@
-.styles_base_86 {
+.styles_base_fc5e8 {
     line-height: normal;
 }
 /* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
 /* instead of this one*/
-.styles_separator_f8 {
+.styles_separator_f2234 {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
 /* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
 /* instead of this one*/
-.styles_rewards_26 {
+.styles_rewards_d7c68 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,7 +21,7 @@
     color: #c9c9b6;
     font-size: 14rem;
 }
-.styles_base_86 {
+.styles_base_fc5e8 {
     display: flex;
     flex-direction: row;
     width: 403rem;
@@ -30,7 +30,7 @@
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Gradient_devider') center top / 100% 40rem no-repeat;
     position: relative;
 }
-.styles_separators_5c {
+.styles_separators_e6de5 {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -38,13 +38,13 @@
     position: absolute;
 }
 /* override*/
-.styles_separator_f8 {
+.styles_separator_f2234 {
     position: absolute;
     top: 80rem;
     left: 50%;
     transform: translateX(-50%);
 }
-.styles_tableHeader_a0 {
+.styles_tableHeader_b24d2 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -52,7 +52,7 @@
     color: #8c8c7e;
     font-size: 14rem;
 }
-.styles_label_d5 {
+.styles_label_cd216 {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -60,11 +60,11 @@
     height: 40rem;
     font-size: 14rem;
 }
-.styles_label__table_9e {
+.styles_label__table_cb3cb {
     justify-content: flex-start;
     color: #8c8c7e;
 }
-.styles_pointsColumn_20 {
+.styles_pointsColumn_be3de {
     display: flex;
     flex-direction: column;
     align-items: center;

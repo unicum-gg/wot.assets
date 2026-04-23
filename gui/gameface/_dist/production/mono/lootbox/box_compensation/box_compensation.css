@@ -1,0 +1,224 @@
+@keyframes Arrow_fadeIn_4d7c987d {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Arrow_6d88c43b {
+    width: 120rem;
+    height: 73rem;
+    background: no-repeat center/contain;
+}
+@keyframes Divider_fadeIn_76b1f722 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Divider_a108a991 {
+    width: 408rem;
+    height: 9rem;
+    background: no-repeat center/contain;
+}
+@keyframes GlowBlock_fadeIn_3b12d961 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.GlowBlock_480232de {
+    width: 410rem;
+    height: 24rem;
+    position: relative;
+}
+
+.GlowBlock_glow_e73efd9c {
+    width: 350rem;
+    height: 180rem;
+    background-repeat: no-repeat;
+    background-position: -100rem 60rem;
+    background-size: cover;
+    opacity: 0.6;
+    mix-blend-mode: screen;
+    position: absolute;
+    bottom: -18rem;
+    left: -18rem;
+    z-index: 0;
+}
+
+.GlowBlock_text_7ba8322b {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    color: #e9e2bf;
+}
+
+.GlowBlock_count_7d740 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: #f2f2f7;
+    text-shadow: 0 0 12px rgb(255, 168, 0);
+}
+@keyframes Icon_fadeIn_55a8ab20 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Icon_8243dc1d {
+    width: 180rem;
+    height: 135rem;
+    background: no-repeat center/contain;
+}
+@keyframes TextIcon_fadeIn_e765c01d {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.TextIcon_cc0a0891 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 20rem;
+}
+
+.TextIcon_icon_d1b62560 {
+    width: 16rem;
+    height: 16rem;
+    margin-right: 4rem;
+    background: no-repeat center/contain;
+}
+
+.TextIcon_notification_f69487e6 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.2em;
+    color: #8c8c7e;
+}
+@keyframes Title_fadeIn_2e63cf3 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Title_bc528df2 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: #e9e2bf;
+}
+.Title_base__small_919c2807 {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: #e9e2bf;
+}
+@keyframes App_fadeIn_0 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.App_cab7a561 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450rem;
+    padding: 18rem 20rem;
+    background-color: #0d0d0c;
+}
+
+.App_info_3f0f2d4 {
+    position: absolute;
+    top: 12rem;
+    left: 20rem;
+}
+
+.App_content_21db64d3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400rem;
+    height: 170rem;
+    position: relative;
+}
+
+.App_arrow_5f9090c6 {
+    position: absolute;
+    top: 50rem;
+    left: 130rem;
+}
+
+.App_textBlock_b6e75841,
+.App_highlight_86866f89 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.App_textBlock_b6e75841 {
+    width: 100%;
+    margin: 12rem 0 3rem;
+}
+
+.App_highlight_86866f89 {
+    width: 410rem;
+    padding: 12rem 0 16rem;
+    background: linear-gradient(
+        90deg,
+        rgba(201, 201, 182, 0) 0%,
+        rgba(201, 201, 182, 0.08) 33.33%,
+        rgba(201, 201, 182, 0.08) 66.67%,
+        rgba(201, 201, 182, 0) 100%
+    );
+}
+
+.App_description_a897f85c {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    margin-top: 8rem;
+    color: #8c8c7e;
+}
+
+.App_topDivider_fa28fc4b {
+    transform: translateY(5rem);
+}
+
+.App_bottomDivider_d6e091c2 {
+    transform: translateY(-5rem);
+}
+
+.App_glow_4704b493 {
+    margin-top: 12rem;
+}

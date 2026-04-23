@@ -1,7 +1,7 @@
-import { k as e, j as s, e as o, m as t, r as a } from './vendor.js';
+import { m as e, j as s, e as o, n as t, r as a } from './vendor.js';
 import { S as n, A as r, M as c } from './use_cover_size.js';
 import { d as i, P as l, R as u, S as m, B as d, a as x } from './statistics2.js';
-import { i as p, P as g, F as b, n as j, a0 as B, e as w, T as h } from './lib.js';
+import { i as p, P as g, F as b, t as j, a0 as B, e as w, T as h } from './lib.js';
 import { a as f, g as C, C as N } from './resources.js';
 import { g as v } from './getConfig.js';
 import { S as y } from './sounds.js';
@@ -65,9 +65,9 @@ const k = {
     H = 'Asset_ebe8cb3e';
 const V = 'Content_5b2426e4';
 const T = 'Shadow_6b416642';
-const G = { base: 'Body_4f642c84' };
+const G = 'Body_4f642c84';
 function P({ children: e, className: t }) {
-    return s.jsx('div', { className: o(G.base, t), children: e });
+    return s.jsx('div', { className: o(G, t), children: e });
 }
 ((P.Shadow = function ({ classNames: e = '' }) {
     return s.jsx('div', { className: o(T, e) });

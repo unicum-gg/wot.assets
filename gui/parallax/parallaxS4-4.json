@@ -1,0 +1,93 @@
+{
+  "l0_003": {
+    "frameX": 2,
+    "frameY": 2,
+    "sourceName": "parallaxS4-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "tank_005": {
+    "frameX": 740,
+    "frameY": 2,
+    "sourceName": "parallaxS4-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "l0_005": {
+    "frameX": 1469,
+    "frameY": 2,
+    "sourceName": "parallaxS4-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "sky_007": {
+    "frameX": 1469,
+    "frameY": 232,
+    "sourceName": "parallaxS4-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "l0_001": {
+    "frameX": 740,
+    "frameY": 275,
+    "sourceName": "parallaxS4-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "smoke_near_006": {
+    "frameX": 2,
+    "frameY": 664,
+    "sourceName": "parallaxS4-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "l0_002": {
+    "frameX": 1461,
+    "frameY": 579,
+    "sourceName": "parallaxS4-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "smoke_near_008": {
+    "frameX": 698,
+    "frameY": 937,
+    "sourceName": "parallaxS4-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "grass_l0_1_001": {
+    "frameX": 1383,
+    "frameY": 1293,
+    "sourceName": "parallaxS4-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "smoke_p1": {
+    "frameX": 2,
+    "frameY": 1534,
+    "sourceName": "parallaxS4-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "attach_p1_007": {
+    "frameX": 2,
+    "frameY": 1181,
+    "sourceName": "parallaxS4-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "sky_008": {
+    "frameX": 471,
+    "frameY": 1534,
+    "sourceName": "parallaxS4-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  },
+  "sky_002": {
+    "frameX": 471,
+    "frameY": 1778,
+    "sourceName": "parallaxS4-4",
+    "sourceWidth": 2048,
+    "sourceHeight": 2048
+  }
+}

@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,119 +11,119 @@
     position: relative;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.FormatTextWithColorTags_blackReal_3c {
+.FormatTextWithColorTags_blackReal_ae104 {
     color: #000000;
 }
 
-.FormatTextWithColorTags_whiteReal_8a {
+.FormatTextWithColorTags_whiteReal_c12a8 {
     color: #ffffff;
 }
 
-.FormatTextWithColorTags_white_16 {
+.FormatTextWithColorTags_white_c5665 {
     color: #f2f2f7;
 }
 
-.FormatTextWithColorTags_whiteOrange_18 {
+.FormatTextWithColorTags_whiteOrange_fff65 {
     color: #fefeec;
 }
 
-.FormatTextWithColorTags_whiteSpanish_10 {
+.FormatTextWithColorTags_whiteSpanish_d24b3 {
     color: #e9e2bf;
 }
 
-.FormatTextWithColorTags_par_ca {
+.FormatTextWithColorTags_par_ee7d9 {
     color: #8c8c7e;
 }
 
-.FormatTextWithColorTags_parSecondary_8d {
+.FormatTextWithColorTags_parSecondary_a5b8c {
     color: #595950;
 }
 
-.FormatTextWithColorTags_parTertiary_a3 {
+.FormatTextWithColorTags_parTertiary_a0c09 {
     color: #37362e;
 }
 
-.FormatTextWithColorTags_red_60 {
+.FormatTextWithColorTags_red_ad70c {
     color: #ff2717;
 }
 
-.FormatTextWithColorTags_redDark_03 {
+.FormatTextWithColorTags_redDark_afb30 {
     color: #b70000;
 }
 
-.FormatTextWithColorTags_yellow_ad {
+.FormatTextWithColorTags_yellow_e47d1 {
     color: #feab34;
 }
 
-.FormatTextWithColorTags_orange_e4 {
+.FormatTextWithColorTags_orange_e08c4 {
     color: #ee7000;
 }
 
-.FormatTextWithColorTags_cream_cd {
+.FormatTextWithColorTags_cream_f2e96 {
     color: #ffdd99;
 }
 
-.FormatTextWithColorTags_brown_c8 {
+.FormatTextWithColorTags_brown_ed7be {
     color: #cbac77;
 }
 
-.FormatTextWithColorTags_greenBright_f0 {
+.FormatTextWithColorTags_greenBright_b0875 {
     color: #80d43a;
 }
 
-.FormatTextWithColorTags_green_c5 {
+.FormatTextWithColorTags_green_d0263 {
     color: #7ab300;
 }
 
-.FormatTextWithColorTags_greenDark_af {
+.FormatTextWithColorTags_greenDark_f19b8 {
     color: #497212;
 }
 
-.FormatTextWithColorTags_blueBooster_ac {
+.FormatTextWithColorTags_blueBooster_fd3be {
     color: #ccffff;
 }
 
-.FormatTextWithColorTags_blueTeamkiller_6f {
+.FormatTextWithColorTags_blueTeamkiller_fd915 {
     color: #09e2ff;
 }
 
-.FormatTextWithColorTags_cred_4e {
+.FormatTextWithColorTags_cred_fdafa {
     color: #ced9d9;
 }
 
-.FormatTextWithColorTags_gold_90 {
+.FormatTextWithColorTags_gold_ab90e {
     color: #ffc363;
 }
 
-.FormatTextWithColorTags_bond_71 {
+.FormatTextWithColorTags_bond_e83f5 {
     color: #c9c9b6;
 }
 
-.FormatTextWithColorTags_prom_dd {
+.FormatTextWithColorTags_prom_aa30c {
     color: #a29b70;
 }
 
 /* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
 
-.FormatTextWithColorTags_parNoWidth_5a {
+.FormatTextWithColorTags_parNoWidth_bf7ac {
     width: 0;
     color: #8c8c7e;
 }
 
-.List_base_65 {
+.List_base_c5b5b {
     background: linear-gradient(90deg, #c9c9b600 0%, #c9c9b612 38.22%, #c9c9b612 64.56%, #c9c9b600 100%);
 }
 
-.List_item_f9 {
+.List_item_c9813 {
     display: flex;
 }
 
-.List_circle_65 {
+.List_circle_ee54b {
     display: flex;
     width: 4rem;
     height: 4rem;
@@ -132,7 +132,7 @@
     background-color: #8c8c7e;
 }
 
-.Content_base_f9 {
+.Content_base_f177b {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -141,13 +141,13 @@
     padding: 0 20rem 20rem;
 }
 
-.Content_image_d9 {
+.Content_image_ac2bd {
     width: 232rem;
     height: 174rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.random_quest') no-repeat center / contain;
 }
 
-.Content_title_33 {
+.Content_title_a517a {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -157,7 +157,7 @@
     text-align: left;
 }
 
-.Content_subTitle_97 {
+.Content_subTitle_ec3e1 {
     color: #8c8c7e;
     font-size: 16rem;
     font-weight: 400;
@@ -167,20 +167,20 @@
     text-align: left;
 }
 
-.Content_divider_52 {
+.Content_divider_de0d9 {
     width: 420rem;
     height: 9rem;
     margin-top: 8rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.random_quest_divider') no-repeat center / contain;
 }
 
-.Content_rewardBase_31 {
+.Content_rewardBase_da649 {
     width: 100%;
     margin: -4rem 0 -12rem;
     padding: 7rem 0 12rem 0rem;
 }
 
-.Content_reward_b0 {
+.Content_reward_cae77 {
     color: #8c8c7e;
     font-size: 16rem;
     font-weight: 400;
@@ -190,7 +190,7 @@
     padding-right: 4rem;
 }
 
-.Content_expireTime_7c {
+.Content_expireTime_b4bed {
     color: #8c8c7e;
     font-size: 16rem;
     font-weight: 400;

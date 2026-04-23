@@ -1,43 +1,43 @@
-import { j as e, e as s, k as a, m as t } from '../../../chunks/vendor.js';
+import { j as e, e as s, m as a, n } from '../../../chunks/vendor.js';
 import {
-    F as n,
-    i as o,
-    g as r,
-    c as l,
+    F as t,
+    i as l,
+    g as o,
+    c as r,
     a as c,
     I as i,
-    R as d,
-    b as m,
+    R as m,
+    b as d,
     d as u,
-    u as b,
-    m as _,
+    u as _,
+    m as b,
     e as p,
     T as x,
     C as h,
     B as w,
     f as j,
     r as f,
-    S as v,
+    S as g,
 } from '../../../chunks/lib.js';
-import { T as g } from '../../../chunks/title.js';
+import { T as v } from '../../../chunks/title.js';
 import { g as N, a as C, b as I } from '../../../chunks/resources.js';
 import { S as y } from '../../../chunks/scroll_with_lips.js';
 import { g as T, o as k } from '../../../chunks/getRewardImage.js';
 import { i as L } from '../../../chunks/utils.js';
 import { L as P } from '../../../chunks/loupe_button.js';
-const B = { base: 'Footer_877c593c' };
-function D({ children: a, className: t = '' }) {
-    return e.jsx('div', { className: s(B.base, t), children: a });
+const B = 'Footer_877c593c';
+function D({ children: a, className: n = '' }) {
+    return e.jsx('div', { className: s(B, n), children: a });
 }
 const A = 'SubTitle_a83825c5';
-const V = { base: 'Header_ee5a2d07' };
-function $({ children: a, className: t = '' }) {
-    return e.jsx('div', { className: s(V.base, t), children: a });
+const V = 'Header_ee5a2d07';
+function $({ children: a, className: n = '' }) {
+    return e.jsx('div', { className: s(V, n), children: a });
 }
-$.SubTitle = function ({ text: s, boxesCount: a, boxesCountText: t }) {
+$.SubTitle = function ({ text: s, boxesCount: a, boxesCountText: n }) {
     return e.jsx('div', {
         className: A,
-        children: e.jsx(n, { text: s, binding: { boxCount: e.jsx(n, { text: t, binding: { count: a } }) } }),
+        children: e.jsx(t, { text: s, binding: { boxCount: e.jsx(t, { text: n, binding: { count: a } }) } }),
     });
 };
 const z = {
@@ -56,29 +56,29 @@ const z = {
         },
     },
     H = { dynamicTexts: { rewardsPremiumDay: 'common.rewards.premiumDay', boxCount: 'autoOpenView.boxCount' } },
-    [O, S] = o()(
+    [O, S] = l()(
         ({ observableModel: e }) => {
             const s = e.object().get().eventName,
-                t = { ...e.primitives(['boxesQuantity']), rewardRows: e.arrayClone('rewardRows') },
-                n = a((e) => r(t.rewardRows.get(), e)),
-                o = a((e) => {
-                    const s = n(e);
-                    return null == s ? void 0 : s.rewards.items;
+                n = { ...e.primitives(['boxesQuantity']), rewardRows: e.arrayClone('rewardRows') },
+                t = a((e) => o(n.rewardRows.get(), e)),
+                l = a((e) => {
+                    const s = t(e);
+                    return s?.rewards.items;
                 }),
-                c = a(() => C(z, s), { equals: l }),
-                i = a(() => N(H, s), { equals: l }),
-                d = Boolean(R.strings.$dyn(`lootbox_${s}`)),
-                m = a(() => {
+                c = a(() => C(z, s), { equals: r }),
+                i = a(() => N(H, s), { equals: r }),
+                m = Boolean(R.strings.$dyn(`lootbox_${s}`)),
+                d = a(() => {
                     const { texts: e } = c(),
                         { dynamicTexts: s } = i(),
-                        a = t.boxesQuantity.get();
+                        a = n.boxesQuantity.get();
                     return { boxesCount: a, text: e.subTitle, boxesCountText: s.boxCount.plural('boxCount', a) };
                 });
             return {
-                ...t,
+                ...n,
                 eventName: s,
-                hasResources: d,
-                computes: { resources: c, dynamicResources: i, getRewards: n, getRewardsList: o, subTitleData: m },
+                hasResources: m,
+                computes: { resources: c, dynamicResources: i, getRewards: t, getRewardsList: l, subTitleData: d },
             };
         },
         ({ externalModel: e }) => ({
@@ -91,25 +91,25 @@ const F = 'Header_7ffd36d',
     G = 'Header_label_d1d657ae',
     q = 'Header_count_98f5c325';
 const Q = 'Item_35ab220c';
-const X = { base: 'RewardRow_ca050985' };
+const X = 'RewardRow_ca050985';
 function E({ children: s }) {
-    return e.jsx('div', { className: X.base, children: s });
+    return e.jsx('div', { className: X, children: s });
 }
-((E.Header = function ({ label: a, rewardsCount: t, className: n = '' }) {
+((E.Header = function ({ label: a, rewardsCount: n, className: t = '' }) {
     return e.jsxs('div', {
-        className: s(F, n),
-        children: [e.jsx('div', { className: G, children: a }), e.jsx('div', { className: q, children: t })],
+        className: s(F, t),
+        children: [e.jsx('div', { className: G, children: a }), e.jsx('div', { className: q, children: n })],
     });
 }),
-    (E.Content = function ({ children: a, classNames: t }) {
-        return e.jsx('div', { className: s(M, t), children: a });
+    (E.Content = function ({ children: a, classNames: n }) {
+        return e.jsx('div', { className: s(M, n), children: a });
     }),
-    (E.Item = function ({ children: a, classNames: t }) {
-        return e.jsx('div', { className: s(Q, t), children: a });
+    (E.Item = function ({ children: a, classNames: n }) {
+        return e.jsx('div', { className: s(Q, n), children: a });
     }));
 const J = 'Count_b8c644a4';
-function K({ path: s, children: a, className: t = '' }) {
-    return e.jsx('div', { className: t, style: { backgroundImage: `url(${s})` }, children: a });
+function K({ path: s, children: a, className: n = '' }) {
+    return e.jsx('div', { className: n, style: { backgroundImage: `url(${s})` }, children: a });
 }
 const U = 'Image_e025628e',
     W = 'Image_overlay_ed672d5e',
@@ -117,7 +117,6 @@ const U = 'Image_e025628e',
     Z = 'Image_iconCompensation_9f702d91',
     ee = i.Big;
 const se = {
-    root: 'Label_root_e3f8b3ce',
     label: 'Label_4119cdba',
     label__credits: 'Label_label__credits_de46e2c4',
     label__vehicles: 'Label_label__vehicles_e3f8b3ce',
@@ -131,145 +130,146 @@ const se = {
     accentGold: 'Label_accentGold_177d9045',
     fadeIn: 'Label_fadeIn_e3f8b3ce',
 };
-const ae = { base: 'Reward_76393f28', wrapper: 'Reward_wrapper_b54b4dc5' };
+const ae = 'Reward_76393f28',
+    ne = 'Reward_wrapper_b54b4dc5';
 function te({ reward: s, children: a }) {
-    const { tooltipId: t, tooltipContentId: n } = s,
-        o = b({ contentId: Number(n), args: { tooltipId: t }, showDelay: 100 });
-    return e.jsx('div', { ...o, className: ae.base, children: e.jsx('div', { className: ae.wrapper, children: a }) });
+    const { tooltipId: n, tooltipContentId: t } = s,
+        l = _({ contentId: Number(t), args: { tooltipId: n }, showDelay: 100 });
+    return e.jsx('div', { ...l, className: ae, children: e.jsx('div', { className: ne, children: a }) });
 }
-((te.Image = function ({ reward: a, images: t, showPreview: n }) {
-    const { name: o, id: r, isCompensation: l, styleID: c, overlayType: i } = a,
-        m = (() => {
-            switch (o) {
-                case d.Vehicles:
-                    return T({ ...a, id: 0, icon: '' }, ee, l);
-                case d.PremiumPlus:
+((te.Image = function ({ reward: a, images: n, showPreview: t }) {
+    const { name: l, id: o, isCompensation: r, styleID: c, overlayType: i } = a,
+        d = (() => {
+            switch (l) {
+                case m.Vehicles:
+                    return T({ ...a, id: 0, icon: '' }, ee, r);
+                case m.PremiumPlus:
                     return T({ ...a, id: 0, icon: 'premium_plus_universal' }, ee);
                 default:
                     return T({ ...a, id: 0 }, ee);
             }
         })();
     return e.jsxs(K, {
-        path: m,
+        path: d,
         className: U,
         children: [
-            l && e.jsx(K, { path: t.compensationIcon, className: Z }),
-            i && e.jsx(K, { path: k(ee, o, i), className: s(W, I.includes(o) && Y) }),
+            r && e.jsx(K, { path: n.compensationIcon, className: Z }),
+            i && e.jsx(K, { path: k(ee, l, i), className: s(W, I.includes(l) && Y) }),
             L(a) &&
                 e.jsx(P, {
-                    icon: { img: t.previewIcon },
-                    onClick: () => n({ bonusType: o, bonusId: r || '', styleID: c }),
+                    icon: { img: n.previewIcon },
+                    onClick: () => t({ bonusType: l, bonusId: o || '', styleID: c }),
                 }),
         ],
     });
 }),
-    (te.Label = function ({ reward: a, premiumText: t }) {
-        const { name: n, compensation: o, isCompensation: r, value: l } = a,
-            c = m(n),
-            i = r ? o.label : a.label,
-            b = a.name === d.Customizations,
-            _ = a.name === d.PremiumPlus,
-            p = a.name === d.TmanToken,
-            x = b || _ || p ? null : u(l || i, c);
+    (te.Label = function ({ reward: a, premiumText: n }) {
+        const { name: t, compensation: l, isCompensation: o, value: r } = a,
+            c = d(t),
+            i = o ? l.label : a.label,
+            _ = a.name === m.Customizations,
+            b = a.name === m.PremiumPlus,
+            p = a.name === m.TmanToken,
+            x = _ || b || p ? null : u(r || i, c);
         return e.jsxs(e.Fragment, {
             children: [
                 x && e.jsx('div', { className: s(se.label, se[`label__${a.name}`]), children: x }),
-                b && e.jsx('div', { className: s(se.label, se.label__customizations), children: a.label }),
-                _ &&
+                _ && e.jsx('div', { className: s(se.label, se.label__customizations), children: a.label }),
+                b &&
                     e.jsxs('div', {
                         className: s(se.label, se.label__premium),
-                        children: [e.jsx('span', { className: se.accentGold, children: a.value }), ' ', t],
+                        children: [e.jsx('span', { className: se.accentGold, children: a.value }), ' ', n],
                     }),
             ],
         });
     }),
-    (te.Count = function ({ text: a, count: t, classNames: n }) {
+    (te.Count = function ({ text: a, count: n, classNames: t }) {
         return e.jsx('div', {
-            className: s(J, n),
-            children: e.jsx(c, { text: a, params: { count: t }, upgradeLegacy: !0 }),
+            className: s(J, t),
+            children: e.jsx(c, { text: a, params: { count: n }, upgradeLegacy: !0 }),
         });
     }));
-const ne = t(function ({ reward: s }) {
-        const { model: a, controls: t } = S(),
-            { texts: n, images: o } = a.computes.resources(),
-            { dynamicTexts: r } = a.computes.dynamicResources(),
-            { count: l, value: c } = s;
+const le = n(function ({ reward: s }) {
+        const { model: a, controls: n } = S(),
+            { texts: t, images: l } = a.computes.resources(),
+            { dynamicTexts: o } = a.computes.dynamicResources(),
+            { count: r, value: c } = s;
         return e.jsxs(te, {
             reward: s,
             children: [
                 e.jsx(te.Image, {
                     reward: s,
-                    images: { compensationIcon: o.compensationIcon, previewIcon: o.previewIcon },
-                    showPreview: t.showPreview,
+                    images: { compensationIcon: l.compensationIcon, previewIcon: l.previewIcon },
+                    showPreview: n.showPreview,
                 }),
-                l > 1
-                    ? e.jsx(te.Count, { text: n.rewardsMultiplier, count: l })
-                    : e.jsx(te.Label, { reward: s, premiumText: r.rewardsPremiumDay.plural('premiumDay', Number(c)) }),
+                r > 1
+                    ? e.jsx(te.Count, { text: t.rewardsMultiplier, count: r })
+                    : e.jsx(te.Label, { reward: s, premiumText: o.rewardsPremiumDay.plural('premiumDay', Number(c)) }),
             ],
         });
     }),
-    oe = { header: 'RewardRow_header_101fdc8c' };
+    oe = 'RewardRow_header_101fdc8c';
 function re({ row: s }) {
-    const { label: a, rewardsCount: t, rewards: n } = s;
+    const { label: a, rewardsCount: n, rewards: t } = s;
     return e.jsxs(E, {
         children: [
-            e.jsx(E.Header, { label: a, rewardsCount: t, className: oe.header }),
+            e.jsx(E.Header, { label: a, rewardsCount: n, className: oe }),
             e.jsx(E.Content, {
-                children: n && _(n.items, (s, a) => e.jsx(E.Item, { children: e.jsx(ne, { reward: s }) }, a)),
+                children: t && b(t.items, (s, a) => e.jsx(E.Item, { children: e.jsx(le, { reward: s }) }, a)),
             }),
         ],
     });
 }
-const le = 'Content_a7c73ed5',
-    ce = 'Content_63e92260';
-const ie = t(function ({ className: a }) {
-        const { model: t } = S(),
-            { images: n } = t.computes.resources(),
-            o = t.rewardRows.get();
+const ce = 'Content_a7c73ed5',
+    ie = 'Content_63e92260';
+const me = n(function ({ className: a }) {
+        const { model: n } = S(),
+            { images: t } = n.computes.resources(),
+            l = n.rewardRows.get();
         return e.jsx('div', {
-            className: s(le, a),
+            className: s(ce, a),
             children: e.jsx(y, {
-                lipImage: n.scrollLipTop,
+                lipImage: t.scrollLipTop,
                 children: e.jsx('div', {
-                    className: ce,
-                    children: _(o, (s, a) => e.jsx(re, { row: s }, `${s.label}_${a}`)),
+                    className: ie,
+                    children: b(l, (s, a) => e.jsx(re, { row: s }, `${s.label}_${a}`)),
                 }),
             }),
         });
     }),
     de = 'App_6a538000',
-    me = 'App_closeButton_96e37994',
-    ue = 'App_header_d674f46d',
+    ue = 'App_closeButton_d9ee7ae6',
+    _e = 'App_header_d674f46d',
     be = 'App_base__top_0',
-    _e = 'App_scrollArea_1edf1cbf',
-    pe = 'App_footer_77faf485';
-const xe = t(function () {
-    const { model: a, controls: t } = S(),
-        { images: n, texts: o } = a.computes.resources(),
-        r = a.computes.subTitleData();
+    pe = 'App_scrollArea_1edf1cbf',
+    xe = 'App_footer_77faf485';
+const he = n(function () {
+    const { model: a, controls: n } = S(),
+        { images: t, texts: l } = a.computes.resources(),
+        o = a.computes.subTitleData();
     return (
-        p(t.close),
+        p(n.close),
         e.jsxs('div', {
             className: s(de, a.hasResources && be),
-            style: { backgroundImage: `url(${n.background})` },
+            style: { backgroundImage: `url(${t.background})` },
             children: [
                 e.jsx('div', {
-                    className: me,
-                    children: e.jsx(x, { caption: o.closeButton, type: 'close', side: 'right', onClick: t.close }),
+                    className: ue,
+                    children: e.jsx(x, { caption: l.closeButton, type: 'close', side: 'right', onClick: n.close }),
                 }),
-                e.jsxs($, { className: ue, children: [r && e.jsx($.SubTitle, { ...r }), e.jsx(g, { text: o.title })] }),
-                e.jsx(ie, { className: _e }),
+                e.jsxs($, { className: _e, children: [o && e.jsx($.SubTitle, { ...o }), e.jsx(v, { text: l.title })] }),
+                e.jsx(me, { className: pe }),
                 e.jsx(D, {
-                    className: pe,
+                    className: xe,
                     children: e.jsx(h, {
                         type: j.primary,
                         size: w.medium,
-                        onClick: t.close,
-                        children: o.submitButtonText,
+                        onClick: n.close,
+                        children: l.submitButtonText,
                     }),
                 }),
             ],
         })
     );
 });
-f(e.jsx(O, { children: e.jsx(v, { children: e.jsx(xe, {}) }) }));
+f(e.jsx(O, { children: e.jsx(g, { children: e.jsx(he, {}) }) }));
