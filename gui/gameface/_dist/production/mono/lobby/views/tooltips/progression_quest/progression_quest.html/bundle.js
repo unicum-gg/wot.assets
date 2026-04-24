@@ -3,15 +3,15 @@ import {
     i as s,
     n as o,
     m as t,
-    bv as r,
-    aO as i,
-    aP as a,
-    bw as n,
-    _ as d,
-    aK as l,
-    aJ as u,
-    r as c,
-    U as p,
+    bD as r,
+    av as i,
+    aw as a,
+    bE as n,
+    q as d,
+    ap as l,
+    ao as p,
+    r as u,
+    U as c,
 } from '../../../../chunks/lib.js';
 import { E as m, D as _ } from '../../../../chunks/extended_tooltip_decorator.js';
 /* empty css                        */ const [b, x] = s()(
@@ -21,8 +21,8 @@ import { E as m, D as _ } from '../../../../chunks/extended_tooltip_decorator.js
     }),
     o,
 );
-function I({ bonuses: s, questId: o, size: d, resId: l, ...u }) {
-    const c = t(s, (e) => ({
+function I({ bonuses: s, questId: o, size: d, resId: l, ...p }) {
+    const u = t(s, (e) => ({
             size: d,
             name: e.name,
             image: a(e, d),
@@ -38,12 +38,12 @@ function I({ bonuses: s, questId: o, size: d, resId: l, ...u }) {
                 resId: l,
             },
         })),
-        p = {
+        c = {
             contentId: R.views.lobby.tooltips.AdditionalRewardsTooltip('resId'),
-            args: { showFromIndex: u.count, questId: o },
+            args: { showFromIndex: p.count, questId: o },
             resId: l,
         };
-    return e.jsx(n, { ...u, data: c, boxRewardTooltip: p, size: d });
+    return e.jsx(n, { ...p, data: u, boxRewardTooltip: c, size: d });
 }
 const g = 'ProgressionQuest_rewardsText_f9c93221',
     v = 'ProgressionQuest_divider_c563a46d',
@@ -70,11 +70,11 @@ const g = 'ProgressionQuest_rewardsText_f9c93221',
                     bonuses: o,
                     questId: s.id.get(),
                     resId: y.read((e) => e.user_missions.hangarWidget.Quests('resId')),
-                    size: u.Small,
+                    size: p.Small,
                     rewardItemClassMix: w,
                     classMix: h,
                 }),
             ],
         });
     };
-c(e.jsx(p, { children: e.jsx(b, { children: e.jsx(T, {}) }) }));
+u(e.jsx(c, { children: e.jsx(b, { children: e.jsx(T, {}) }) }));

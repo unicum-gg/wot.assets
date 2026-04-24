@@ -1,20 +1,20 @@
-import { j as s, w as a } from './vendor.js';
-import { a9 as l, g as o } from './lib.js';
-const i = 'DivineGlow_2b9c4670',
-    e = 'DivineGlow_glow_fddce7f8',
+import { j as s, a3 as a } from './vendor.js';
+import { dy as o, d3 as i } from './lib.js';
+const e = 'DivineGlow_2b9c4670',
+    l = 'DivineGlow_glow_fddce7f8',
     d = 'DivineGlow_glow__bg_a3df35d7',
-    c = (s) => !!o.isHigh() && s,
-    m = ({ className: o, classNames: m, playerRef: n, animated: r = !0 }) =>
+    c = (s) => !!i.isHigh() && s,
+    m = ({ className: i, classNames: m, playerRef: r, animated: n = !0 }) =>
         s.jsx('div', {
-            className: a(i, o),
-            children: c(r)
-                ? s.jsx(l, {
-                      className: a(e, null == m ? void 0 : m.glow),
+            className: a(e, i),
+            children: c(n)
+                ? s.jsx(o, {
+                      className: a(l, m?.glow),
                       src: String(R.videos.comp7.divine_glow()),
                       autoplay: !0,
                       loop: !0,
-                      ref: n,
+                      ref: r,
                   })
-                : s.jsx('div', { className: a(e, d, null == m ? void 0 : m.glow) }),
+                : s.jsx('div', { className: a(l, d, m?.glow) }),
         });
 export { m as D };

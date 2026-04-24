@@ -1,12 +1,12 @@
-import { j as s, f as e, t as a } from '../../../../chunks/vendor.js';
-import { i as t, N as i, l as n, e as c, b_ as r, J as d, U as l, j as o } from '../../../../chunks/lib.js';
+import { j as s, f as e, v as a } from '../../../../chunks/vendor.js';
+import { i as t, N as i, a as n, n as c, bY as r, J as d, U as o, d as l } from '../../../../chunks/lib.js';
 const [_, j] = t()(({ observableModel: s }) => ({ ...{ root: s.object() } }), i),
     p = 'Message_2be04282',
     x = 'Message_separator_8e93a926',
     h = 'Message_content_892e4ad6',
     m = 'Message_text_4b17d86',
-    b = 'Message_lightWrapper_3117043c',
-    v = 'Message_lightWrapper__x2_2e75acbc',
+    v = 'Message_lightWrapper_3117043c',
+    b = 'Message_lightWrapper__x2_2e75acbc',
     g = 'Message_light_b62af34c',
     N = 'Message_points_65c3ecdb',
     f = 'Message_check_3a018192',
@@ -28,7 +28,7 @@ const [_, j] = t()(({ observableModel: s }) => ({ ...{ root: s.object() } }), i)
                                     className: N,
                                     children: [
                                         s.jsx('div', {
-                                            className: e(b, 2 === t && v),
+                                            className: e(v, 2 === t && b),
                                             children: s.jsx('div', { className: g }),
                                         }),
                                         s.jsx('div', { className: f, children: a }),
@@ -65,5 +65,5 @@ const [_, j] = t()(({ observableModel: s }) => ({ ...{ root: s.object() } }), i)
             ],
         });
     }),
-    q = () => s.jsx(r, { children: s.jsx(r.Decorator, { children: s.jsx(U, {}) }) });
-o(new d().add(l).addWithProps(_, {}).render(s.jsx(q, {})));
+    Y = () => s.jsx(r, { children: s.jsx(r.Decorator, { children: s.jsx(U, {}) }) });
+l(new d().add(o).addWithProps(_, {}).render(s.jsx(Y, {})));

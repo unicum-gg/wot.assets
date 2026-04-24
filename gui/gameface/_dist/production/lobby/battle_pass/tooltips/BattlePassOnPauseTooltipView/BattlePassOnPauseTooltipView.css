@@ -1,16 +1,16 @@
-.Content_base_2e {
+.Content_base_ddc48 {
     line-height: normal;
 }
 /* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
 /* instead of this one*/
-.Content_separator_0e {
+.Content_separator_cdb6f {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
 /* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
 /* instead of this one*/
-.Content_rewards_c9 {
+.Content_rewards_e3826 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,19 +21,19 @@
     color: #c9c9b6;
     font-size: 14rem;
 }
-.Content_base_2e {
+.Content_base_ddc48 {
     display: flex;
     flex-direction: column;
     width: 264rem;
     padding: 17rem 20rem;
 }
-.Content_title_71 {
+.Content_title_b3978 {
     color: #c9c9b6;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
 }
-.Content_description_38 {
+.Content_description_e6947 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -42,12 +42,12 @@
     white-space: pre-wrap;
 }
 
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;

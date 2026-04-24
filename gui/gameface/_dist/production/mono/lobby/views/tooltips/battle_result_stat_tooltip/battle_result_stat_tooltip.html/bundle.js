@@ -1,7 +1,7 @@
 import { k as t, l as e, j as a, m as s } from '../../../../chunks/vendor.js';
-import { i as l, c as i, t as o, E as d, m as n, J as p, U as r, H as _, r as c } from '../../../../chunks/lib.js';
+import { i as l, c as i, q as o, E as d, m as n, J as p, U as r, H as _, r as c } from '../../../../chunks/lib.js';
 import { S as u } from '../../../../chunks/battle_result_stat_tooltip_model.js';
-const [f, m] = l()(({ observableModel: e }) => {
+const [m, f] = l()(({ observableModel: e }) => {
         const a = {
                 root: e.primitives(['stat']),
                 detailedStats: e.array('detailedStats', []),
@@ -26,7 +26,7 @@ const [f, m] = l()(({ observableModel: e }) => {
         info__bullet: 'BattleResultStatTooltipApp_info__bullet_ea1d1fd2',
         info__heHits: 'BattleResultStatTooltipApp_info__heHits_3bff7b88',
         infoItem: 'BattleResultStatTooltipApp_infoItem_5f0efa33',
-        divider: 'BattleResultStatTooltipApp_divider_fb7bf1fa',
+        divider: 'BattleResultStatTooltipApp_divider_60483f7d',
         detailedStat: 'BattleResultStatTooltipApp_detailedStat_661d15ea',
         detailed: 'BattleResultStatTooltipApp_detailed_1e3a43fc',
         value: 'BattleResultStatTooltipApp_value_3a240ec7',
@@ -38,7 +38,7 @@ const [f, m] = l()(({ observableModel: e }) => {
         return window.systemLocale.getNumberFormat(e, 0);
     },
     g = e(() => {
-        const { model: t } = m(),
+        const { model: t } = f(),
             e = t.root.stat.get(),
             l = t.computes.getDetailedStatsLength(),
             i = t.computes.getDetailedStats(),
@@ -104,4 +104,4 @@ const [f, m] = l()(({ observableModel: e }) => {
             ],
         });
     });
-c(new p().add(r).add(f).add(_).render(a.jsx(g, {})));
+c(new p().add(r).add(m).add(_).render(a.jsx(g, {})));

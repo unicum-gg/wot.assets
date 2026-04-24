@@ -1,4 +1,4 @@
-import { j as e, e as a, r as t, p as s } from '../../../chunks/vendor.js';
+import { j as e, e as a, r as t, q as s } from '../../../chunks/vendor.js';
 import {
     i,
     c as n,
@@ -13,8 +13,8 @@ import {
     g as u,
     e as h,
     f as b,
-    m as v,
-    h as g,
+    m as g,
+    h as v,
     j as f,
     k as x,
     l as j,
@@ -45,8 +45,8 @@ import {
     M as U,
     N as Z,
 } from '../../../chunks/lib.js';
-const Q = 'disabled',
-    [q, J] = i()(
+const q = 'disabled',
+    [Q, J] = i()(
         ({ observableModel: e }) => {
             const a = {
                     ...e.primitives([
@@ -115,7 +115,9 @@ const Q = 'disabled',
         }),
     ),
     X = 'modeSelector',
-    Y = {
+    Y = 'achievements',
+    ee = 'tournament',
+    ae = {
         root: 'MenuItem_root_28be5e00',
         base: 'MenuItem_862e4b38',
         base__modeSelectorName: 'MenuItem_base__modeSelectorName_28be5e00',
@@ -130,29 +132,28 @@ const Q = 'disabled',
         arrow__verticalCenter: 'MenuItem_arrow__verticalCenter_4e18b706',
         modeName: 'MenuItem_modeName_36c0339e',
     },
-    ee = 2,
-    ae = o.resolve('strings'),
-    te = {
+    te = o.resolve('strings'),
+    se = {
         [X]: {
-            header: ae.readOrEmpty('tooltips.header.battleType.header'),
-            body: ae.readOrEmpty('tooltips.header.battleType.body'),
+            header: te.readOrEmpty('tooltips.header.battleType.header'),
+            body: te.readOrEmpty('tooltips.header.battleType.body'),
         },
-        tournament: {
-            header: ae.readOrEmpty('tooltips.header.buttons.tournaments.header'),
-            body: ae.readOrEmpty('tooltips.header.buttons.tournaments.body'),
+        [ee]: {
+            header: te.readOrEmpty('tooltips.header.buttons.tournaments.header'),
+            body: te.readOrEmpty('tooltips.header.buttons.tournaments.body'),
         },
-        achievements: {
-            header: ae.readOrEmpty('tooltips.header.buttons.profile.header'),
-            body: ae.readOrEmpty('tooltips.header.buttons.profile.body'),
+        [Y]: {
+            header: te.readOrEmpty('tooltips.header.buttons.profile.header'),
+            body: te.readOrEmpty('tooltips.header.buttons.profile.body'),
         },
     };
-function se(e) {
-    return ae.readOrEmpty(`menu.headerButtons.${e}`);
-}
 function ie(e) {
+    return te.readOrEmpty(`menu.headerButtons.${e}`);
+}
+function ne(e) {
     return 'string' == typeof e ? c(e) : e;
 }
-function ne({
+function oe({
     name: t,
     state: s,
     modeName: i,
@@ -164,26 +165,21 @@ function ne({
     withArrow: p = !1,
     className: u,
 }) {
-    const h = r() >= ee;
+    const h = r() >= 2;
     const b = l(
         (function (e, a) {
-            const t = te[e];
-            return {
-                header: a ? ((null == t ? void 0 : t.header) ?? '') : '',
-                body: a ? ((null == t ? void 0 : t.body) ?? '') : '',
-                disabled: !a,
-            };
+            const t = se[e];
+            return { header: a ? (t?.header ?? '') : '', body: a ? (t?.body ?? '') : '', disabled: !a };
         })(t, m),
     );
     return e.jsx('div', {
-        className: a(Y.base, Y[`base__${s}State`], Y[`base__${t}Name`], u),
+        className: a(ae.base, ae[`base__${s}State`], ae[`base__${t}Name`], u),
         ...b,
         onMouseEnter: (e) => {
-            var a;
-            (null == (a = b.onMouseEnter) || a.call(b, e), s !== Q && d.sound('highlight'));
+            (b.onMouseEnter?.(e), s !== q && d.sound('highlight'));
         },
         onClick: function () {
-            s !== Q && c(t);
+            s !== q && c(t);
         },
         lang: R.strings.settings.LANGUAGE_CODE(),
         children:
@@ -191,15 +187,15 @@ function ne({
                 ? e.jsxs(e.Fragment, {
                       children: [
                           e.jsxs('div', {
-                              className: Y.modeSelector,
+                              className: ae.modeSelector,
                               children: [
                                   e.jsx('div', {
-                                      className: a(Y.label, h && Y.label__upscale),
-                                      children: ie(_ || se(t)),
+                                      className: a(ae.label, h && ae.label__upscale),
+                                      children: ne(_ || ie(t)),
                                   }),
-                                  i && e.jsx('div', { className: Y.modeName, children: ie(i) }),
+                                  i && e.jsx('div', { className: ae.modeName, children: ne(i) }),
                                   e.jsx('div', {
-                                      className: Y.modeIcon,
+                                      className: ae.modeIcon,
                                       style: {
                                           backgroundImage: `url(${o ?? `R.images.gui.maps.icons.battleTypes.c_64x64.${n}`})`,
                                       },
@@ -207,7 +203,7 @@ function ne({
                               ],
                           }),
                           e.jsx('svg', {
-                              className: a(Y.arrow, h && Y.arrow__upscale),
+                              className: a(ae.arrow, h && ae.arrow__upscale),
                               width: '7',
                               height: '18',
                               viewBox: '0 0 7 18',
@@ -222,12 +218,12 @@ function ne({
                       ],
                   })
                 : e.jsxs('div', {
-                      className: Y.titleWrapper,
+                      className: ae.titleWrapper,
                       children: [
-                          e.jsx('div', { className: Y.title, children: ie(_ || se(t)) }),
+                          e.jsx('div', { className: ae.title, children: ne(_ || ie(t)) }),
                           p &&
                               e.jsx('svg', {
-                                  className: a(Y.arrow, Y.arrow__verticalCenter),
+                                  className: a(ae.arrow, ae.arrow__verticalCenter),
                                   width: '7',
                                   height: '18',
                                   viewBox: '0 0 7 18',
@@ -243,7 +239,7 @@ function ne({
                   }),
     });
 }
-const oe = {
+const re = {
     root: 'Tooltip_root_648bdb8d',
     base: 'Tooltip_d6454088',
     base__left: 'Tooltip_base__left_9ad90f1d',
@@ -252,19 +248,19 @@ const oe = {
     base__visible: 'Tooltip_base__visible_69ef4f3f',
     image: 'Tooltip_image_af622229',
 };
-function re({ image: t, isLeft: s, isTop: i, isTeamPoint: n, isVisible: o }) {
+function le({ image: t, isLeft: s, isTop: i, isTeamPoint: n, isVisible: o }) {
     return e.jsx('div', {
         className: a(
-            oe.base,
-            oe['base__' + (s ? 'left' : 'right')],
-            n && oe.base__teamPoint,
-            i && oe.base__top,
-            o && oe.base__visible,
+            re.base,
+            re['base__' + (s ? 'left' : 'right')],
+            n && re.base__teamPoint,
+            i && re.base__top,
+            o && re.base__visible,
         ),
-        children: e.jsx('div', { className: oe.image, style: { backgroundImage: `url(${t})` } }),
+        children: e.jsx('div', { className: re.image, style: { backgroundImage: `url(${t})` } }),
     });
 }
-const le = {
+const ce = {
         root: 'Point_root_d8b7e333',
         base: 'Point_8a5de05a',
         title: 'Point_title_41667fa8',
@@ -277,11 +273,11 @@ const le = {
         bullet: 'Point_bullet_aedfa7e4',
         bulletTeamPointBG: 'Point_bulletTeamPointBG_88bf7cc6',
         teamLabel: 'Point_teamLabel_b2bb7afb',
-        teamLabel__mask: 'Point_teamLabel__mask_924edb47',
+        teamLabel__mask: 'Point_teamLabel__mask_8fd6388a',
     },
-    ce = o.resolve('strings'),
-    de = (e) => (e / 5.7) * 3.32;
-function _e({
+    de = o.resolve('strings'),
+    _e = (e) => (e / 5.7) * 3.32;
+function me({
     id: s,
     isLeft: i,
     type: n,
@@ -291,11 +287,11 @@ function _e({
     isSmall: c,
     isShowTooltip: h,
     index: b,
-    isHighlighted: v,
-    onPointEvent: g,
+    isHighlighted: g,
+    onPointEvent: v,
 }) {
     const f = t.useRef(0),
-        [x, j] = t.useState(v),
+        [x, j] = t.useState(g),
         { model: M } = J(),
         N = M.selectedMapModel.get().id,
         S = 'point' !== n,
@@ -304,7 +300,7 @@ function _e({
         E = t.useRef(!0),
         [k, w] = t.useState(window.innerHeight),
         I = function () {
-            !y || (x && f.current) || (d.highlight(), j(!0), g(s, !0));
+            !y || (x && f.current) || (d.highlight(), j(!0), v(s, !0));
         };
     function T() {
         if (!C.current) return;
@@ -330,18 +326,18 @@ function _e({
             [k],
         ));
     const O = S
-            ? ce.readOrEmpty('maps_training.mapSelection.options.minimapBase')
-            : ce.readOrEmpty(`maps_training.c_${N}.${s}`),
+            ? de.readOrEmpty('maps_training.mapSelection.options.minimapBase')
+            : de.readOrEmpty(`maps_training.c_${N}.${s}`),
         $ = b + 1;
     return e.jsxs('div', {
-        className: a(le.base, le[`base__${n}`], i ? le.base__left : le.base__right, (x || v) && le.base__hover),
+        className: a(ce.base, ce[`base__${n}`], i ? ce.base__left : ce.base__right, (x || g) && ce.base__hover),
         style: (function () {
-            const e = c ? de(o) : o;
-            return { top: `${c ? de(r) : r}rem`, left: `${e}rem` };
+            const e = c ? _e(o) : o;
+            return { top: `${c ? _e(r) : r}rem`, left: `${e}rem` };
         })(),
         ref: C,
         children: [
-            S && e.jsx('div', { className: le.bulletTeamPointBG }),
+            S && e.jsx('div', { className: ce.bulletTeamPointBG }),
             e.jsxs('div', {
                 onMouseEnter: function () {
                     f.current = window.setTimeout(I, 100);
@@ -349,24 +345,24 @@ function _e({
                 onMouseLeave: function () {
                     if (y && (x || f.current)) {
                         const e = f.current;
-                        (e > 0 && (clearTimeout(e), (f.current = 0)), j(!1), g(s, !1));
+                        (e > 0 && (clearTimeout(e), (f.current = 0)), j(!1), v(s, !1));
                     }
                 },
                 children: [
                     e.jsxs('div', {
-                        className: le.bullet,
+                        className: ce.bullet,
                         children: [
-                            S && e.jsx('div', { className: le.teamLabel, children: $ }),
+                            S && e.jsx('div', { className: ce.teamLabel, children: $ }),
                             'main' === n &&
-                                e.jsx('div', { className: a(le.teamLabel, le.teamLabel__mask), children: $ }),
+                                e.jsx('div', { className: a(ce.teamLabel, ce.teamLabel__mask), children: $ }),
                         ],
                     }),
                     e.jsxs('div', {
-                        className: le.title,
+                        className: ce.title,
                         children: [
                             O,
                             h &&
-                                e.jsx(re, { image: l, isLeft: i, isTeamPoint: S, isTop: E.current, isVisible: x || v }),
+                                e.jsx(le, { image: l, isLeft: i, isTeamPoint: S, isTop: E.current, isVisible: x || g }),
                         ],
                     }),
                 ],
@@ -374,27 +370,27 @@ function _e({
         ],
     });
 }
-const me = 'Minimap_56313038',
-    pe = 'Minimap_scenario_d0d9ef72',
-    ue = 'Minimap_bg_85adfa16';
-function he(e, a) {
+const pe = 'Minimap_56313038',
+    ue = 'Minimap_scenario_d0d9ef72',
+    he = 'Minimap_bg_85adfa16';
+function be(e, a) {
     return { backgroundImage: `url(${e})`, width: `${a}rem`, height: `${a}rem` };
 }
-const be = s(function ({ highlightedPoint: a, onPointEvent: t }) {
+const ge = s(function ({ highlightedPoint: a, onPointEvent: t }) {
         const { model: s } = J(),
             { id: i, points: n, scenarioImage: o } = s.selectedMapModel.get(),
             { breakpoint: r } = h(),
             l = r.weight < b.medium.weight,
             c = l ? 332 : 570;
         return e.jsxs('div', {
-            className: me,
-            style: he(`img://spaces/${i}/mmap.dds`, c),
+            className: pe,
+            style: be(`img://spaces/${i}/mmap.dds`, c),
             children: [
-                e.jsx('div', { className: ue }),
-                e.jsx('div', { className: pe, style: he(o, c) }),
-                v(n, (s, i) =>
+                e.jsx('div', { className: he }),
+                e.jsx('div', { className: ue, style: be(o, c) }),
+                g(n, (s, i) =>
                     e.jsx(
-                        _e,
+                        me,
                         { isSmall: l, index: i, onPointEvent: t, isHighlighted: a === s.id, ...s },
                         `point_${s.id}`,
                     ),
@@ -403,11 +399,11 @@ const be = s(function ({ highlightedPoint: a, onPointEvent: t }) {
         });
     }),
     ve = 'Info_80cc32c',
-    ge = 'Info_icon_7889eaa8',
-    fe = 'Info_text_55959f92',
-    xe = o.resolve('strings');
-function je({ id: a, header: t }) {
-    const s = l({ header: t, body: xe.readOrEmpty(`arenas.c_${a}.description`) });
+    fe = 'Info_icon_7889eaa8',
+    xe = 'Info_text_55959f92',
+    je = o.resolve('strings');
+function Me({ id: a, header: t }) {
+    const s = l({ header: t, body: je.readOrEmpty(`arenas.c_${a}.description`) });
     return e.jsxs('div', {
         className: ve,
         ...s,
@@ -415,59 +411,59 @@ function je({ id: a, header: t }) {
             (s.onMouseEnter(e), d.highlight());
         },
         children: [
-            e.jsx('div', { className: ge }),
-            e.jsx('div', { className: fe, children: xe.readOrEmpty('maps_training.descriptionInfo') }),
+            e.jsx('div', { className: fe }),
+            e.jsx('div', { className: xe, children: je.readOrEmpty('maps_training.descriptionInfo') }),
         ],
     });
 }
-const Me = 'TextKey_583f19c3',
-    Ne = 'TextKey_content_954e2172',
-    Se = 'TextKey_base__highlight_591e8197',
-    ye = 'TextKey_bullet_3d33d938';
-function Ce({ textKey: t, pointId: s, isHighlighted: i, onMouseEnter: n, onMouseLeave: o, value: r, punctuation: l }) {
+const Ne = 'TextKey_583f19c3',
+    Se = 'TextKey_content_954e2172',
+    ye = 'TextKey_base__highlight_591e8197',
+    Ce = 'TextKey_bullet_3d33d938';
+function Ee({ textKey: t, pointId: s, isHighlighted: i, onMouseEnter: n, onMouseLeave: o, value: r, punctuation: l }) {
     return e.jsxs('div', {
-        className: a(Me, i && Se),
+        className: a(Ne, i && ye),
         children: [
             e.jsxs('div', {
-                className: Ne,
+                className: Se,
                 onMouseEnter: () => n(t, s),
                 onMouseLeave: () => o(t, s),
-                children: [e.jsx('div', { className: ye }), r],
+                children: [e.jsx('div', { className: Ce }), r],
             }),
             l,
         ],
     });
 }
-const Ee = 'ScenarioInfo_b19f2c76',
-    ke = 'ScenarioInfo_shadow_22e6654b',
-    we = 'ScenarioInfo_baseTitle_f08f6c2f',
-    Ie = 'ScenarioInfo_title_934c522d',
-    Te = 'ScenarioInfo_tacticTitle_aa75be90',
-    Oe = 'ScenarioInfo_tacticDescr_b6c38411',
-    $e = 'ScenarioInfo_paragraph_3d99fe50',
-    Le = o.resolve('strings'),
-    Pe = o.resolve('intl'),
-    Be = /<([A-Za-z][A-Za-z0-9_]*)>.*?<\/\1>/g,
-    Re = new RegExp('(?<=<).*?(?=>)'),
-    Ae = new RegExp('(?<=>).*(?=<)'),
-    ze = /%\([A-Za-z0-9_]*\)s[.,?!;:] ?/g,
-    Ge = /%\([A-Za-z0-9_]*\)(?![sd])/g,
-    He = /[.,?!;:] ?/g,
-    Ve = s(function ({ highlightedPoint: a, onKeywordEvent: s }) {
+const ke = 'ScenarioInfo_b19f2c76',
+    we = 'ScenarioInfo_shadow_22e6654b',
+    Ie = 'ScenarioInfo_baseTitle_f08f6c2f',
+    Te = 'ScenarioInfo_title_934c522d',
+    Oe = 'ScenarioInfo_tacticTitle_aa75be90',
+    $e = 'ScenarioInfo_tacticDescr_b6c38411',
+    Le = 'ScenarioInfo_paragraph_3d99fe50',
+    Pe = o.resolve('strings'),
+    Be = o.resolve('intl'),
+    Re = /<([A-Za-z][A-Za-z0-9_]*)>.*?<\/\1>/g,
+    Ae = new RegExp('(?<=<).*?(?=>)'),
+    ze = new RegExp('(?<=>).*(?=<)'),
+    Ge = /%\([A-Za-z0-9_]*\)s[.,?!;:] ?/g,
+    He = /%\([A-Za-z0-9_]*\)(?![sd])/g,
+    Ve = /[.,?!;:] ?/g,
+    Fe = s(function ({ highlightedPoint: a, onKeywordEvent: s }) {
         const [i, n] = t.useState(''),
             { model: o } = J(),
             { id: r, selectedScenario: l, points: c, scenarios: _ } = o.selectedMapModel.get(),
-            m = g(_, l),
-            p = Le.readOrEmpty(`arenas.c_${r}.name`),
-            u = Pe.toUpperCase(p),
+            m = v(_, l),
+            p = Pe.readOrEmpty(`arenas.c_${r}.name`),
+            u = Be.toUpperCase(p),
             h = t.useMemo(
                 function () {
                     const { team: e, scenarioNum: a, vehicleType: t } = m,
-                        s = f(Le.readOrEmpty('maps_training.baseNum'), { base: e }),
-                        i = f(Le.readOrEmpty('maps_training.scenarioNum'), { scenario: a });
-                    return f(Le.readOrEmpty('maps_training.scenario.baseTitle'), {
+                        s = f(Pe.readOrEmpty('maps_training.baseNum'), { base: e }),
+                        i = f(Pe.readOrEmpty('maps_training.scenarioNum'), { scenario: a });
+                    return f(Pe.readOrEmpty('maps_training.scenario.baseTitle'), {
                         scenario: i,
-                        vehicle: Le.readOrEmpty(`maps_training.vehicleType.${t}`),
+                        vehicle: Pe.readOrEmpty(`maps_training.vehicleType.${t}`),
                         team: x(s),
                     });
                 },
@@ -479,7 +475,7 @@ const Ee = 'ScenarioInfo_b19f2c76',
                 },
                 [s],
             ),
-            v = t.useCallback(
+            g = t.useCallback(
                 function (e, a) {
                     (n(''), s(a, !1));
                 },
@@ -487,23 +483,23 @@ const Ee = 'ScenarioInfo_b19f2c76',
             ),
             [N, S, y] = t.useMemo(
                 function () {
-                    let e = Le.readOrEmpty(`maps_training.c_${r}.team${m.team}.${m.vehicleType}.descr`);
-                    e = e.replace(Ge, '$&s');
+                    let e = Pe.readOrEmpty(`maps_training.c_${r}.team${m.team}.${m.vehicleType}.descr`);
+                    e = e.replace(He, '$&s');
                     const a = {},
-                        t = e.match(Be);
+                        t = e.match(Re);
                     t &&
                         t.forEach((t, s) => {
-                            const [i] = t.match(Re) || [''],
-                                [n] = t.match(Ae) || [''],
+                            const [i] = t.match(Ae) || [''],
+                                [n] = t.match(ze) || [''],
                                 o = `matched${s}`;
                             ((a[o] = [i, n]), (e = e.replace(t, `%(${o})s`)));
                         });
                     const s = {},
-                        i = e.match(ze);
+                        i = e.match(Ge);
                     return (
                         i &&
                             i.forEach((a) => {
-                                const [t] = a.match(He) || [''],
+                                const [t] = a.match(Ve) || [''],
                                     i = a.slice(2, a.length - 2 - t.length);
                                 ((s[i] = t), (e = e.replace(a, a.slice(0, a.length - t.length))));
                             }),
@@ -514,21 +510,21 @@ const Ee = 'ScenarioInfo_b19f2c76',
             ),
             C = t.useMemo(
                 function () {
-                    const t = { p: e.jsx('div', { className: $e }) };
+                    const t = { p: e.jsx('div', { className: Le }) };
                     return (
                         j(c, (s) => {
                             const n = s.id;
                             j(s.textKeys, (s) => {
                                 t[s] = e.jsx(
-                                    Ce,
+                                    Ee,
                                     {
-                                        value: Le.readOrEmpty(`maps_training.c_${r}.${s}`),
+                                        value: Pe.readOrEmpty(`maps_training.c_${r}.${s}`),
                                         pointId: n,
                                         textKey: s,
                                         punctuation: y[s],
                                         isHighlighted: i === s || a === n,
                                         onMouseEnter: b,
-                                        onMouseLeave: v,
+                                        onMouseLeave: g,
                                     },
                                     `${l}_${s}`,
                                 );
@@ -536,7 +532,7 @@ const Ee = 'ScenarioInfo_b19f2c76',
                         }),
                         Object.entries(S).forEach(([s, [n, o]]) => {
                             t[s] = e.jsx(
-                                Ce,
+                                Ee,
                                 {
                                     value: o,
                                     pointId: n,
@@ -544,7 +540,7 @@ const Ee = 'ScenarioInfo_b19f2c76',
                                     punctuation: y[s],
                                     isHighlighted: i === s || a === n,
                                     onMouseEnter: b,
-                                    onMouseLeave: v,
+                                    onMouseLeave: g,
                                 },
                                 `${l}_${s}`,
                             );
@@ -552,42 +548,42 @@ const Ee = 'ScenarioInfo_b19f2c76',
                         t
                     );
                 },
-                [c, S, y, l, i, a, b, v, r],
+                [c, S, y, l, i, a, b, g, r],
             );
         return e.jsxs('div', {
-            className: Ee,
+            className: ke,
             children: [
-                e.jsx('div', { className: ke }),
-                e.jsx('div', { className: we, children: h }),
-                e.jsx('div', { className: Ie, children: u }),
-                e.jsx('div', {
-                    className: Te,
-                    children: Le.readOrEmpty(`maps_training.c_${r}.team${m.team}.${m.vehicleType}.title`),
-                }),
+                e.jsx('div', { className: we }),
+                e.jsx('div', { className: Ie, children: h }),
+                e.jsx('div', { className: Te, children: u }),
                 e.jsx('div', {
                     className: Oe,
+                    children: Pe.readOrEmpty(`maps_training.c_${r}.team${m.team}.${m.vehicleType}.title`),
+                }),
+                e.jsx('div', {
+                    className: $e,
                     children: e.jsx(M, { text: N, params: C, upgradeLegacy: !0, split: !0 }),
                 }),
-                e.jsx(je, { id: r, header: p }),
+                e.jsx(Me, { id: r, header: p }),
             ],
         });
     }),
-    Fe = {
+    Ke = {
         base: 'ScenarioRewards_61c38a7d',
         rewards: 'ScenarioRewards_rewards_cf548827',
         title: 'ScenarioRewards_title_d8c2d359',
         shine: 'ScenarioRewards_shine_3e53614c',
         rewardClassMix: 'ScenarioRewards_rewardClassMix_4167dff2',
     },
-    Ke = o.resolve('strings');
-function De() {
+    De = o.resolve('strings');
+function We() {
     const { model: a } = J(),
         s = a.selectedMapModel.get().rewards,
         { screenWidthRem: i } = h(),
         n = i < b.medium.width ? N.Small : N.Big,
         o = t.useMemo(
             function () {
-                return v(s, (e) => {
+                return g(s, (e) => {
                     const { name: a, value: t, tooltipId: s, tooltipContentId: i } = e;
                     return {
                         name: a,
@@ -605,43 +601,43 @@ function De() {
             [n, s],
         );
     return e.jsx('div', {
-        className: Fe.base,
+        className: Ke.base,
         children:
             s.length > 0 &&
             e.jsxs(e.Fragment, {
                 children: [
-                    e.jsx('div', { className: Fe.arrow }),
+                    e.jsx('div', { className: Ke.arrow }),
                     e.jsxs('div', {
-                        className: Fe.rewards,
+                        className: Ke.rewards,
                         children: [
-                            e.jsx('div', { className: Fe.shine }),
+                            e.jsx('div', { className: Ke.shine }),
                             e.jsx('div', {
-                                className: Fe.title,
-                                children: Ke.readOrEmpty('maps_training.mapSelection.options.rewardsTitle'),
+                                className: Ke.title,
+                                children: De.readOrEmpty('maps_training.mapSelection.options.rewardsTitle'),
                             }),
-                            e.jsx(E, { data: o, size: n, rewardItemClassMix: Fe.rewardClassMix }),
+                            e.jsx(E, { data: o, size: n, rewardItemClassMix: Ke.rewardClassMix }),
                         ],
                     }),
                 ],
             }),
     });
 }
-const We = 'ScenarioCard_ce43d9d5',
-    Ue = 'ScenarioCard_base__selected_2f057ace',
-    Ze = 'ScenarioCard_card_71406647',
+const Ue = 'ScenarioCard_ce43d9d5',
+    Ze = 'ScenarioCard_base__selected_2f057ace',
+    qe = 'ScenarioCard_card_71406647',
     Qe = 'ScenarioCard_base__completed_cc1adb57',
-    qe = 'ScenarioCard_base__hover_cc1adb57',
-    Je = 'ScenarioCard_borderShine_2675039f',
-    Xe = 'ScenarioCard_borderShine__bottom_28816297',
-    Ye = 'ScenarioCard_selectedOverlay_ee536659',
-    ea = 'ScenarioCard_shine_8e6c402e',
-    aa = 'ScenarioCard_title_6b61c9ef',
-    ta = 'ScenarioCard_rewards_a3b83018',
-    sa = 'ScenarioCard_base__anim_cc1adb57',
-    ia = 'ScenarioCard_completed_cf825958',
-    na = 'ScenarioCard_checkmark_44ed786',
-    oa = o.resolve('strings');
-function ra({
+    Je = 'ScenarioCard_base__hover_cc1adb57',
+    Xe = 'ScenarioCard_borderShine_2675039f',
+    Ye = 'ScenarioCard_borderShine__bottom_28816297',
+    ea = 'ScenarioCard_selectedOverlay_ee536659',
+    aa = 'ScenarioCard_shine_8e6c402e',
+    ta = 'ScenarioCard_title_6b61c9ef',
+    sa = 'ScenarioCard_rewards_a3b83018',
+    ia = 'ScenarioCard_base__anim_cc1adb57',
+    na = 'ScenarioCard_completed_cf825958',
+    oa = 'ScenarioCard_checkmark_44ed786',
+    ra = o.resolve('strings');
+function la({
     scenarioNum: s,
     vehicleType: i,
     isSelected: n,
@@ -660,7 +656,7 @@ function ra({
     );
     const u = t.useMemo(
             function () {
-                return v(r, (e) => {
+                return g(r, (e) => {
                     const { name: a, value: t, tooltipId: s, tooltipContentId: i } = e;
                     return {
                         name: a,
@@ -677,7 +673,7 @@ function ra({
             },
             [r],
         ),
-        h = f(oa.readOrEmpty('maps_training.scenarioNum'), { scenario: s }),
+        h = f(ra.readOrEmpty('maps_training.scenarioNum'), { scenario: s }),
         b = t.useMemo(
             function () {
                 return { scenario: o };
@@ -685,7 +681,7 @@ function ra({
             [o],
         );
     return e.jsxs('div', {
-        className: a(We, l && Qe, n && Ue, m && !n && qe, l && c && sa),
+        className: a(Ue, l && Qe, n && Ze, m && !n && Je, l && c && ia),
         onClick: function () {
             n || (d.click(), _.scenarioSelect(o));
         },
@@ -702,52 +698,52 @@ function ra({
                 contentId: R.views.mono.maps_training.scenario_tooltip('resId'),
                 args: b,
                 children: e.jsxs('div', {
-                    className: Ze,
-                    lang: oa.readOrEmpty('settings.LANGUAGE_CODE'),
+                    className: qe,
+                    lang: ra.readOrEmpty('settings.LANGUAGE_CODE'),
                     children: [
                         n &&
                             e.jsxs(e.Fragment, {
-                                children: [e.jsx('div', { className: Ye }), e.jsx('div', { className: ea })],
+                                children: [e.jsx('div', { className: ea }), e.jsx('div', { className: aa })],
                             }),
-                        e.jsx('div', { className: Je }),
-                        e.jsx('div', { className: a(Je, Xe) }),
-                        e.jsx('div', { className: aa, children: h }),
-                        e.jsx('div', { className: aa, children: oa.readOrEmpty(`maps_training.vehicleType.${i}`) }),
+                        e.jsx('div', { className: Xe }),
+                        e.jsx('div', { className: a(Xe, Ye) }),
+                        e.jsx('div', { className: ta, children: h }),
+                        e.jsx('div', { className: ta, children: ra.readOrEmpty(`maps_training.vehicleType.${i}`) }),
                         l &&
                             e.jsxs(e.Fragment, {
                                 children: [
                                     e.jsx('div', {
-                                        className: ia,
-                                        children: oa.readOrEmpty(
+                                        className: na,
+                                        children: ra.readOrEmpty(
                                             'maps_training.mapSelection.options.scenarioCompleted',
                                         ),
                                     }),
-                                    e.jsx('div', { className: na }),
+                                    e.jsx('div', { className: oa }),
                                 ],
                             }),
                     ],
                 }),
             }),
-            (!l || c) && e.jsx('div', { className: ta, children: e.jsx(E, { data: u, size: N.Small }) }),
+            (!l || c) && e.jsx('div', { className: sa, children: e.jsx(E, { data: u, size: N.Small }) }),
         ],
     });
 }
-const la = 'Scenarios_638d959b',
-    ca = s(function () {
+const ca = 'Scenarios_638d959b',
+    da = s(function () {
         const { model: a } = J(),
             { scenarios: t, selectedScenario: s, isShowCompleteAnimation: i } = a.selectedMapModel.get();
         return e.jsx('div', {
-            className: la,
-            children: v(t, (a, t) =>
+            className: ca,
+            children: g(t, (a, t) =>
                 e.jsx(
-                    ra,
+                    la,
                     { isSelected: t === s, index: t, isShowCompleteAnimation: i && t === s, ...a },
                     `scenario_${a.team}_${a.vehicleType}`,
                 ),
             ),
         });
     }),
-    da = {
+    _a = {
         root: 'VehicleMarker_root_20624c4',
         base: 'VehicleMarker_516481a7',
         fadeIn: 'VehicleMarker_fadeIn_20624c4',
@@ -758,30 +754,30 @@ const la = 'Scenarios_638d959b',
         descr: 'VehicleMarker_descr_e2b83108',
         info: 'VehicleMarker_info_6781f30a',
     },
-    _a = o.resolve('strings'),
-    ma = s(function () {
+    ma = o.resolve('strings'),
+    pa = s(function () {
         const { model: t } = J(),
             s = t.vehicleMarker.get().top,
             { vehicleName: i, selectedScenario: n, scenarios: o } = t.selectedMapModel.get(),
             { screenWidthRem: r } = h(),
             c = r < b.medium.width ? 20 : 0,
-            { vehicleType: _ } = g(o, n),
+            { vehicleType: _ } = v(o, n),
             m = l({
-                header: _a.readOrEmpty(`maps_training.vehicleMarker.${_}.tooltip.title`),
-                body: _a.readOrEmpty(`maps_training.vehicleMarker.${_}.tooltip.body`),
+                header: ma.readOrEmpty(`maps_training.vehicleMarker.${_}.tooltip.title`),
+                body: ma.readOrEmpty(`maps_training.vehicleMarker.${_}.tooltip.body`),
             });
         return e.jsxs('div', {
-            className: da.base,
+            className: _a.base,
             style: { transform: 'translate(-50%, ' + Math.max(s - c, 0) + 'rem)' },
             children: [
-                e.jsx('div', { className: a(da.vehicle, da[`vehicle__${_}`]) }),
-                e.jsx('div', { className: da.title, children: i }),
+                e.jsx('div', { className: a(_a.vehicle, _a[`vehicle__${_}`]) }),
+                e.jsx('div', { className: _a.title, children: i }),
                 e.jsxs('div', {
-                    className: da.descr,
+                    className: _a.descr,
                     children: [
-                        _a.readOrEmpty(`maps_training.vehicleMarker.${_}.descr`),
+                        ma.readOrEmpty(`maps_training.vehicleMarker.${_}.descr`),
                         e.jsx('div', {
-                            className: da.info,
+                            className: _a.info,
                             ...m,
                             onMouseEnter: (e) => {
                                 (m.onMouseEnter(e), d.highlight());
@@ -792,17 +788,17 @@ const la = 'Scenarios_638d959b',
             ],
         });
     }),
-    pa = 'MapOptions_ce83a9ee',
-    ua = 'MapOptions_topPanel_ce2d0924',
-    ha = 'MapOptions_leftPanel_6743a995',
-    ba = 'MapOptions_sceneWrapper_9de28b9c',
+    ua = 'MapOptions_ce83a9ee',
+    ha = 'MapOptions_topPanel_ce2d0924',
+    ba = 'MapOptions_leftPanel_6743a995',
+    ga = 'MapOptions_sceneWrapper_9de28b9c',
     va = 'MapOptions_marker_975481e1',
-    ga = 'MapOptions_rightPanel_f88edffc',
-    fa = 'MapOptions_bottomPanel_a1410d79',
-    xa = 'MapOptions_bottomPanelTitle_ae5b3b6f',
-    ja = 'MapOptions_menuItems_764d3737',
-    Ma = o.resolve('strings');
-function Na() {
+    fa = 'MapOptions_rightPanel_f88edffc',
+    xa = 'MapOptions_bottomPanel_a1410d79',
+    ja = 'MapOptions_bottomPanelTitle_ae5b3b6f',
+    Ma = 'MapOptions_menuItems_764d3737',
+    Na = o.resolve('strings');
+function Sa() {
     const { controls: a } = J(),
         { breakpoint: s } = h(),
         [i, n] = t.useState(''),
@@ -839,40 +835,40 @@ function Na() {
             };
         }, [a, s]),
         e.jsxs('div', {
-            className: pa,
+            className: ua,
             children: [
-                e.jsx('div', { className: ua }),
-                e.jsx('div', { className: ba, children: e.jsx(O, { moveSpace: c, onMouseOver3dScene: l }) }),
-                e.jsx('div', { className: va, children: e.jsx(ma, {}) }),
+                e.jsx('div', { className: ha }),
+                e.jsx('div', { className: ga, children: e.jsx(O, { moveSpace: c, onMouseOver3dScene: l }) }),
+                e.jsx('div', { className: va, children: e.jsx(pa, {}) }),
                 e.jsx('div', {
-                    className: ja,
-                    children: e.jsx(ne, {
+                    className: Ma,
+                    children: e.jsx(oe, {
                         name: 'mapsTraining',
                         state: 'enabled',
-                        title: Ma.readOrEmpty('maps_training.mapSelection.options.backGoto'),
+                        title: Na.readOrEmpty('maps_training.mapSelection.options.backGoto'),
                         onClick: a.back,
                         withArrow: !0,
                         withTooltip: !1,
                     }),
                 }),
-                e.jsx('div', { className: ha, children: e.jsx(Ve, { highlightedPoint: i, onKeywordEvent: p }) }),
+                e.jsx('div', { className: ba, children: e.jsx(Fe, { highlightedPoint: i, onKeywordEvent: p }) }),
                 e.jsxs('div', {
-                    className: fa,
+                    className: xa,
                     children: [
                         e.jsx('div', {
-                            className: xa,
-                            children: Ma.readOrEmpty('maps_training.mapSelection.options.scenariosTitle'),
+                            className: ja,
+                            children: Na.readOrEmpty('maps_training.mapSelection.options.scenariosTitle'),
                         }),
-                        e.jsx(ca, {}),
-                        e.jsx(De, {}),
+                        e.jsx(da, {}),
+                        e.jsx(We, {}),
                     ],
                 }),
-                e.jsx('div', { className: ga, children: e.jsx(be, { onPointEvent: d, highlightedPoint: o }) }),
+                e.jsx('div', { className: fa, children: e.jsx(ge, { onPointEvent: d, highlightedPoint: o }) }),
             ],
         })
     );
 }
-const Sa = {
+const ya = {
         root: 'InfoButton_root_c58f1a93',
         border: 'InfoButton_border_f3a2eae1',
         base: 'InfoButton_74c97479',
@@ -882,9 +878,9 @@ const Sa = {
         label: 'InfoButton_label_7fc8e38b',
         icon: 'InfoButton_icon_c58f1a93',
     },
-    ya = { small: 'small', medium: 'medium' },
-    Ca = { [ya.small]: 16, [ya.medium]: 24 },
-    Ea = t.forwardRef(function (
+    Ca = { small: 'small', medium: 'medium' },
+    Ea = { [Ca.small]: 16, [Ca.medium]: 24 },
+    ka = t.forwardRef(function (
         { size: t, infoType: s, label: i, tooltipHeader: n, tooltipBody: o, classNames: r = {}, ...c },
         d,
     ) {
@@ -894,38 +890,35 @@ const Sa = {
         return e.jsxs(L, {
             ...c,
             onClick: function (e) {
-                var a;
-                (_ && m.onClick(), null == (a = c.onClick) || a.call(c, e));
+                (_ && m.onClick(), c.onClick?.(e));
             },
             onMouseEnter: function (e) {
-                var a;
-                (_ && m.onMouseEnter(e), null == (a = c.onMouseEnter) || a.call(c, e));
+                (_ && m.onMouseEnter(e), c.onMouseEnter?.(e));
             },
             onMouseLeave: function (e) {
-                var a;
-                (m.onMouseLeave(), null == (a = c.onMouseLeave) || a.call(c, e));
+                (m.onMouseLeave(), c.onMouseLeave?.(e));
             },
             ref: d,
             size: L.sizes.small,
             theme: L.themes.secondary,
             autoAlignContent: !1,
-            className: a(Sa.base, Sa[`base__${t}Size`], c.className),
-            classNames: { ...r, content: a(Sa.content, null == r ? void 0 : r.content) },
+            className: a(ya.base, ya[`base__${t}Size`], c.className),
+            classNames: { ...r, content: a(ya.content, r?.content) },
             children: [
-                e.jsx('div', { className: Sa.border }),
+                e.jsx('div', { className: ya.border }),
                 e.jsx(P, {
-                    className: Sa.icon,
+                    className: ya.icon,
                     path: `header_footer.info_icon_${s}_${p}`,
-                    height: Ca[t],
-                    width: Ca[t],
+                    height: Ea[t],
+                    width: Ea[t],
                 }),
-                i && e.jsx('div', { className: Sa.label, children: i }),
+                i && e.jsx('div', { className: ya.label, children: i }),
             ],
         });
     });
-Ea.sizes = ya;
-var ka = ((e) => ((e.Info = 'Info'), (e.Question = 'Question'), (e.Video = 'Video'), e))(ka || {});
-const wa = {
+ka.sizes = Ca;
+var wa = ((e) => ((e.Info = 'Info'), (e.Question = 'Question'), (e.Video = 'Video'), e))(wa || {});
+const Ia = {
         base: 'MapCard_7b82d161',
         base__disabled: 'MapCard_base__disabled_b4b722ef',
         base__completed: 'MapCard_base__completed_b07cd4fd',
@@ -940,11 +933,11 @@ const wa = {
         overlaySaturation: 'MapCard_overlaySaturation_64c7d29',
         overlayHover: 'MapCard_overlayHover_300d3bfc',
     },
-    Ia = o.resolve('strings');
-function Ta({ title: s, image: i, id: n, onClick: o, isEnabled: r, isCompleted: l }) {
+    Ta = o.resolve('strings');
+function Oa({ title: s, image: i, id: n, onClick: o, isEnabled: r, isCompleted: l }) {
     const [c, _] = t.useState(!1);
     return e.jsxs('div', {
-        className: a(wa.base, l && wa.base__completed, !r && wa.base__disabled, c && r && !l && wa.base__hover),
+        className: a(Ia.base, l && Ia.base__completed, !r && Ia.base__disabled, c && r && !l && Ia.base__hover),
         onClick: function () {
             r && (d.click(), o(n));
         },
@@ -956,117 +949,117 @@ function Ta({ title: s, image: i, id: n, onClick: o, isEnabled: r, isCompleted: 
         },
         children: [
             e.jsx('div', {
-                className: wa.background,
+                className: Ia.background,
                 style: { backgroundImage: `url(${i})` },
-                children: e.jsx('div', { className: wa.contextShadow }),
+                children: e.jsx('div', { className: Ia.contextShadow }),
             }),
-            !r && e.jsx('div', { className: wa.overlayImage }),
-            e.jsx('div', { className: a(wa.title, !r && wa.title__disabled), children: s }),
-            !r && e.jsx('div', { className: wa.overlaySaturation }),
+            !r && e.jsx('div', { className: Ia.overlayImage }),
+            e.jsx('div', { className: a(Ia.title, !r && Ia.title__disabled), children: s }),
+            !r && e.jsx('div', { className: Ia.overlaySaturation }),
             l &&
                 e.jsxs(e.Fragment, {
                     children: [
                         e.jsx('div', {
-                            className: wa.completed,
-                            children: Ia.readOrEmpty('maps_training.mapSelection.MapCard.completed'),
+                            className: Ia.completed,
+                            children: Ta.readOrEmpty('maps_training.mapSelection.MapCard.completed'),
                         }),
-                        e.jsx('div', { className: wa.checkmark }),
+                        e.jsx('div', { className: Ia.checkmark }),
                     ],
                 }),
-            r && !l && e.jsx('div', { className: a(wa.overlayHover, !r && wa.overlayHover__disabled) }),
+            r && !l && e.jsx('div', { className: a(Ia.overlayHover, !r && Ia.overlayHover__disabled) }),
         ],
     });
 }
-const Oa = 'MapGroup_71166309',
-    $a = 'MapGroup_titleBlock_616330c6',
-    La = 'MapGroup_title_6b6ba6a9',
-    Pa = 'MapGroup_count_d9bfeba6',
-    Ba = 'MapGroup_status_c6ce8de',
-    Ra = 'MapGroup_statusTitle_5c4dffbf',
-    Aa = 'MapGroup_icon_ef9f14c8',
-    za = o.resolve('strings');
-function Ga({ groupTitle: t, count: s, status: i, classMix: n }) {
-    const o = f(za.readOrEmpty('maps_training.countTitle'), { count: s }),
+const $a = 'MapGroup_71166309',
+    La = 'MapGroup_titleBlock_616330c6',
+    Pa = 'MapGroup_title_6b6ba6a9',
+    Ba = 'MapGroup_count_d9bfeba6',
+    Ra = 'MapGroup_status_c6ce8de',
+    Aa = 'MapGroup_statusTitle_5c4dffbf',
+    za = 'MapGroup_icon_ef9f14c8',
+    Ga = o.resolve('strings');
+function Ha({ groupTitle: t, count: s, status: i, classMix: n }) {
+    const o = f(Ga.readOrEmpty('maps_training.countTitle'), { count: s }),
         r = l({
-            header: za.readOrEmpty('maps_training.mapSelection.statusTitle.tips.header'),
-            body: za.readOrEmpty('maps_training.mapSelection.statusTitle.tips.body'),
+            header: Ga.readOrEmpty('maps_training.mapSelection.statusTitle.tips.header'),
+            body: Ga.readOrEmpty('maps_training.mapSelection.statusTitle.tips.body'),
         });
     return e.jsxs('div', {
-        className: a(Oa, n),
+        className: a($a, n),
         children: [
             e.jsxs('div', {
-                className: $a,
-                children: [e.jsx('div', { className: La, children: t }), e.jsx('div', { className: Pa, children: o })],
+                className: La,
+                children: [e.jsx('div', { className: Pa, children: t }), e.jsx('div', { className: Ba, children: o })],
             }),
             i &&
                 e.jsxs('div', {
-                    className: Ba,
+                    className: Ra,
                     ...r,
                     children: [
-                        e.jsx('div', { className: Aa }),
+                        e.jsx('div', { className: za }),
                         e.jsx('div', {
-                            className: Ra,
-                            children: za.readOrEmpty('maps_training.mapSelection.statusTitle.status'),
+                            className: Aa,
+                            children: Ga.readOrEmpty('maps_training.mapSelection.statusTitle.status'),
                         }),
                     ],
                 }),
         ],
     });
 }
-const Ha = 'MapListEmpty_2a00c67b',
-    Va = 'MapListEmpty_block_b2e31e1f',
-    Fa = 'MapListEmpty_title_b5425c3d',
-    Ka = 'MapListEmpty_description_d9491eca',
-    Da = o.resolve('strings');
-function Wa({ title: t, description: s, className: i }) {
-    const n = f(Da.readOrEmpty('maps_training.mapSelection.MapListEmpty.text'), { searchTxt: s });
+const Va = 'MapListEmpty_2a00c67b',
+    Fa = 'MapListEmpty_block_b2e31e1f',
+    Ka = 'MapListEmpty_title_b5425c3d',
+    Da = 'MapListEmpty_description_d9491eca',
+    Wa = o.resolve('strings');
+function Ua({ title: t, description: s, className: i }) {
+    const n = f(Wa.readOrEmpty('maps_training.mapSelection.MapListEmpty.text'), { searchTxt: s });
     return e.jsx('div', {
-        className: a(Ha, i),
+        className: a(Va, i),
         children: e.jsxs('div', {
-            className: Va,
-            children: [e.jsx('div', { className: Fa, children: t }), e.jsx('div', { className: Ka, children: n })],
+            className: Fa,
+            children: [e.jsx('div', { className: Ka, children: t }), e.jsx('div', { className: Da, children: n })],
         }),
     });
 }
-const Ua = {
+const Za = {
         root: 'ScrollContainer_root_14e26b7c',
-        base: 'ScrollContainer_9b1bf0d9',
+        base: 'ScrollContainer_a913c1cf',
         base__top: 'ScrollContainer_base__top_1b8e4a94',
         base__bottom: 'ScrollContainer_base__bottom_a417efd7',
         base__both: 'ScrollContainer_base__both_3ad63038',
         scrollContent: 'ScrollContainer_scrollContent_aca70867',
     },
-    Za = 'top',
+    qa = 'top',
     Qa = 'bottom',
-    qa = 'both',
-    Ja = 'none';
-const Xa = s(function ({ children: t }) {
+    Ja = 'both',
+    Xa = 'none';
+const Ya = s(function ({ children: t }) {
         const { api: s } = A(),
             [i, n] = z(s);
         return e.jsx(G, {
-            className: a(Ua.base, Ua[`base__${((o = i), (r = n), o || r ? (o ? (r ? Ja : Qa) : Za) : qa)}`]),
-            children: e.jsx('div', { className: Ua.scrollContent, children: t }),
+            className: a(Za.base, Za[`base__${((o = i), (r = n), o || r ? (o ? (r ? Xa : Qa) : qa) : Ja)}`]),
+            children: e.jsx('div', { className: Za.scrollContent, children: t }),
         });
         var o, r;
     }),
-    Ya = 'MapSelect_ad19ca6e',
-    et = 'MapSelect_scrollArea_4adbceb3',
-    at = 'MapSelect_scrollBar_24aba26a',
-    tt = 'MapSelect_group_2f1b30b1',
-    st = 'MapSelect_topBlock_5aab0dce',
-    it = 'MapSelect_title_78aa501',
-    nt = 'MapSelect_subtitle_839e0c65',
-    ot = 'MapSelect_filter_5b3ef8dd',
-    rt = 'MapSelect_line_a3a84e69',
-    lt = 'MapSelect_maps_226e2e8a',
-    ct = 'MapSelect_filterBlock_dee82ed1',
-    dt = 'MapSelect_toggle_e1d33cf9',
-    _t = 'MapSelect_iconToggle_596a6b63',
-    mt = 'MapSelect_input_d0f986df',
-    pt = 'MapSelect_info_aeb4de90',
-    ut = 'MapSelect_menuItems_3b44c8c5',
-    ht = o.resolve('strings'),
-    bt = s(function () {
+    et = 'MapSelect_ad19ca6e',
+    at = 'MapSelect_scrollArea_4adbceb3',
+    tt = 'MapSelect_scrollBar_24aba26a',
+    st = 'MapSelect_group_2f1b30b1',
+    it = 'MapSelect_topBlock_5aab0dce',
+    nt = 'MapSelect_title_78aa501',
+    ot = 'MapSelect_subtitle_839e0c65',
+    rt = 'MapSelect_filter_5b3ef8dd',
+    lt = 'MapSelect_line_a3a84e69',
+    ct = 'MapSelect_maps_226e2e8a',
+    dt = 'MapSelect_filterBlock_dee82ed1',
+    _t = 'MapSelect_toggle_e1d33cf9',
+    mt = 'MapSelect_iconToggle_596a6b63',
+    pt = 'MapSelect_input_d0f986df',
+    ut = 'MapSelect_info_aeb4de90',
+    ht = 'MapSelect_menuItems_3b44c8c5',
+    bt = o.resolve('strings'),
+    gt = s(function () {
         const { model: a, controls: s } = J(),
             i = a.groups.get(),
             n = a.menuItems.get(),
@@ -1076,8 +1069,7 @@ const Xa = s(function ({ children: t }) {
         const m = a.sortedMaps(Boolean(o), c),
             p = {};
         m.forEach((e) => {
-            var a;
-            (p[(a = e.groupId)] ?? (p[a] = new Array())).push(e);
+            (p[e.groupId] ??= new Array()).push(e);
         });
         const u = t.useCallback(
                 function () {
@@ -1085,13 +1077,13 @@ const Xa = s(function ({ children: t }) {
                 },
                 [s],
             ),
-            v = t.useCallback(
+            g = t.useCallback(
                 function (e) {
                     (s.filteringChange(Boolean(o), c), s.select(e));
                 },
                 [s, o, c],
             ),
-            g = t.useCallback(
+            v = t.useCallback(
                 function () {
                     (s.filteringChange(!o, c), r(!o));
                 },
@@ -1103,36 +1095,36 @@ const Xa = s(function ({ children: t }) {
                 },
                 [s, o],
             ),
-            x = l({ body: ht.readOrEmpty('maps_training.mapSelection.filters.tip1') }),
+            x = l({ body: bt.readOrEmpty('maps_training.mapSelection.filters.tip1') }),
             {
                 breakpoint: { weight: j },
             } = h();
         return e.jsxs('div', {
-            className: Ya,
+            className: et,
             children: [
                 e.jsxs('div', {
-                    className: st,
+                    className: it,
                     children: [
-                        e.jsx('div', { className: it, children: ht.readOrEmpty('maps_training.mapSelection.title') }),
-                        e.jsx('div', {
-                            className: nt,
-                            children: ht.readOrEmpty('maps_training.mapSelection.subtitle'),
-                        }),
+                        e.jsx('div', { className: nt, children: bt.readOrEmpty('maps_training.mapSelection.title') }),
                         e.jsx('div', {
                             className: ot,
+                            children: bt.readOrEmpty('maps_training.mapSelection.subtitle'),
+                        }),
+                        e.jsx('div', {
+                            className: rt,
                             children: e.jsxs('div', {
-                                className: ct,
+                                className: dt,
                                 children: [
                                     e.jsx(H, {
                                         ...x,
                                         activated: o,
-                                        onClick: g,
-                                        className: dt,
+                                        onClick: v,
+                                        className: _t,
                                         size: V.medium,
-                                        children: e.jsx('div', { className: _t }),
+                                        children: e.jsx('div', { className: mt }),
                                     }),
                                     e.jsx('div', {
-                                        className: mt,
+                                        className: pt,
                                         children: e.jsx(F.Provider, {
                                             value: c,
                                             children: e.jsxs(F.Decoration, {
@@ -1140,7 +1132,7 @@ const Xa = s(function ({ children: t }) {
                                                     e.jsx(F.Icon, { icon: F.icons.search }),
                                                     e.jsx(F.Field, {
                                                         onChange: f,
-                                                        children: ht.readOrEmpty(
+                                                        children: bt.readOrEmpty(
                                                             'maps_training.mapSelection.filters.tip2',
                                                         ),
                                                     }),
@@ -1154,12 +1146,12 @@ const Xa = s(function ({ children: t }) {
                         }),
                     ],
                 }),
-                e.jsx('div', { className: rt }),
+                e.jsx('div', { className: lt }),
                 e.jsx('div', {
-                    className: et,
+                    className: at,
                     children: e.jsxs(K, {
                         children: [
-                            e.jsxs(Xa, {
+                            e.jsxs(Ya, {
                                 children: [
                                     i.map((a, t) => {
                                         const s = p[a.groupId];
@@ -1170,19 +1162,19 @@ const Xa = s(function ({ children: t }) {
                                                   {
                                                       children: [
                                                           e.jsx(
-                                                              Ga,
+                                                              Ha,
                                                               {
                                                                   count: s.length,
                                                                   groupTitle: a.groupTitle,
                                                                   status: a.isGroupDisabled,
-                                                                  classMix: tt,
+                                                                  classMix: st,
                                                               },
                                                               `${a.groupId}${a.groupTitle}`,
                                                           ),
                                                           e.jsx('div', {
-                                                              className: lt,
+                                                              className: ct,
                                                               children: s.map((a) =>
-                                                                  e.jsx(Ta, { onClick: v, ...a }, `${a.id}${a.title}`),
+                                                                  e.jsx(Oa, { onClick: g, ...a }, `${a.id}${a.title}`),
                                                               ),
                                                           }),
                                                       ],
@@ -1192,31 +1184,31 @@ const Xa = s(function ({ children: t }) {
                                     }),
                                     0 === m.length &&
                                         a.isDataLoaded.get() &&
-                                        e.jsx(Wa, {
-                                            title: ht.readOrEmpty('maps_training.mapSelection.MapListEmpty.title'),
+                                        e.jsx(Ua, {
+                                            title: bt.readOrEmpty('maps_training.mapSelection.MapListEmpty.title'),
                                             description: c,
                                         }),
                                 ],
                             }),
-                            e.jsx(D, { classNames: { base: at } }),
+                            e.jsx(D, { classNames: { base: tt } }),
                         ],
                     }),
                 }),
                 e.jsx('div', {
-                    className: pt,
-                    children: e.jsx(Ea, {
-                        size: j > b.large.weight ? Ea.sizes.medium : Ea.sizes.small,
+                    className: ut,
+                    children: e.jsx(ka, {
+                        size: j > b.large.weight ? ka.sizes.medium : ka.sizes.small,
                         onClick: u,
-                        infoType: ka.Info,
+                        infoType: wa.Info,
                         label: '',
                         tooltipHeader: '',
                         tooltipBody: '',
                     }),
                 }),
                 e.jsx('div', {
-                    className: ut,
+                    className: ht,
                     children: n.map((e) =>
-                        t.createElement(ne, {
+                        t.createElement(oe, {
                             ...e,
                             key: e.name,
                             modeName: a.modeName.get(),
@@ -1231,11 +1223,11 @@ const Xa = s(function ({ children: t }) {
         });
     }),
     vt = 'MapsTrainingPage_da7db6ae',
-    gt = 'MapsTrainingPage_base__select_cf7858dc',
-    ft = s(function () {
+    ft = 'MapsTrainingPage_base__select_cf7858dc',
+    xt = s(function () {
         const { model: t } = J(),
             s = t.isMapSelected.get(),
-            i = a(vt, !s && gt);
-        return e.jsx('div', { className: i, children: s ? e.jsx(Na, {}) : e.jsx(bt, {}) });
+            i = a(vt, !s && ft);
+        return e.jsx('div', { className: i, children: s ? e.jsx(Sa, {}) : e.jsx(gt, {}) });
     });
-Z(new W().add(U).add(q).render(e.jsx(ft, {})), { fullScreen: !0 });
+Z(new W().add(U).add(Q).render(e.jsx(xt, {})), { fullScreen: !0 });

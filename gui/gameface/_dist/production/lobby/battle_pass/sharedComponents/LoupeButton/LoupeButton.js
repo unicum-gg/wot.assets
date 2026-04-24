@@ -2,9 +2,9 @@
     'use strict';
     var e,
         r = {
-            7727: (e, r, t) => {},
-            1481: (e, r, t) => {
-                (t(7363), t(6483), t(7727));
+            4029: (e, r, t) => {},
+            7927: (e, r, t) => {
+                (t(7363), t(9849), t(4029));
             },
             7363: (e) => {
                 e.exports = React;
@@ -74,6 +74,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t))));
         })());
-    var n = o.O(void 0, [1519], () => o(1481));
+    var n = o.O(void 0, [1519], () => o(7927));
     n = o.O(n);
 })();

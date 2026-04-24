@@ -2,7 +2,7 @@
 
 /* buttons*/
 
-@keyframes Header_fadeOut_bf {
+@keyframes Header_fadeOut_cbbd6 {
     0% {
         opacity: 1;
     }
@@ -12,7 +12,7 @@
     }
 }
 
-@keyframes Header_fadeIn_cd {
+@keyframes Header_fadeIn_aa4df {
     0% {
         opacity: 0;
     }
@@ -22,7 +22,7 @@
     }
 }
 
-@keyframes Header_fadeInWithScale_2b {
+@keyframes Header_fadeInWithScale_e5756 {
     0% {
         opacity: 0;
         transform: scale(1.2);
@@ -34,7 +34,7 @@
     }
 }
 
-@keyframes Header_slideUp_83 {
+@keyframes Header_slideUp_dea85 {
     0% {
         opacity: 0;
         transform: translateY(20rem);
@@ -46,7 +46,7 @@
     }
 }
 
-@keyframes Header_scale_a1 {
+@keyframes Header_scale_bbd9e {
     0% {
         transform: scale(0);
     }
@@ -56,7 +56,7 @@
     }
 }
 
-@keyframes Header_rotate_98 {
+@keyframes Header_rotate_e3353 {
     0% {
         transform: rotate(0deg);
     }
@@ -66,13 +66,13 @@
     }
 }
 
-.Header_base_a0 {
+.Header_base_e1d5e {
     align-items: center;
 }
 
-.Header_title_09 {
+.Header_title_a4581 {
     opacity: 0;
-    animation-name: Header_slideUp_83;
+    animation-name: Header_slideUp_dea85;
     animation-duration: 0.8s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -84,13 +84,13 @@
     text-align: center;
 }
 
-.mediaSmall .Header_title_09 {
+.mediaSmall .Header_title_a4581 {
     font-size: 24rem;
 }
 
-.Header_status_74 {
+.Header_status_b9684 {
     opacity: 0;
-    animation-name: Header_slideUp_83;
+    animation-name: Header_slideUp_dea85;
     animation-duration: 0.8s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -102,17 +102,17 @@
     text-align: center;
 }
 
-.mediaSmall .Header_status_74 {
+.mediaSmall .Header_status_b9684 {
     font-size: 56rem;
 }
 
-.mediaExtraLarge .Header_status_74 {
+.mediaExtraLarge .Header_status_b9684 {
     font-size: 73rem;
 }
 
-.Header_subtitle_3a {
+.Header_subtitle_d54f8 {
     opacity: 0;
-    animation-name: Header_slideUp_83;
+    animation-name: Header_slideUp_dea85;
     animation-duration: 0.8s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -125,6 +125,6 @@
     text-align: center;
 }
 
-.mediaSmall .Header_subtitle_3a {
+.mediaSmall .Header_subtitle_d54f8 {
     font-size: 56rem;
 }

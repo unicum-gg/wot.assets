@@ -1,4 +1,4 @@
-import { s as e, j as s, f as a } from '../../../../chunks/vendor.js';
+import { t as e, j as s, l as a } from '../../../../chunks/vendor.js';
 import { i as r, m as d, r as l, a1 as t, l as i, U as c } from '../../../../chunks/lib.js';
 const [o, n] = r()(
         ({ observableModel: e }) => ({

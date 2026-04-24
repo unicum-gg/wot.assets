@@ -1,17 +1,17 @@
-import { j as a, w as s } from './vendor.js';
-import { e2 as e, g as i, e3 as n, aC as t, e4 as m } from './lib.js';
+import { j as a, a3 as s } from './vendor.js';
+import { et as e, d3 as i, eu as n, n as t, ev as m } from './lib.js';
 const o = 'AnimatedBackground_f47e334b',
     r = 'AnimatedBackground_rays_caf372e5',
     c = 'AnimatedBackground_sunShineCanvas_21aff824',
     h = 'AnimatedBackground_staticHighlight_4c4023e9',
-    g = {
+    d = {
         width: 400,
         height: 400,
         frameCount: 50,
         chunk: { count: 2, rows: 5, columns: 5 },
         getChunkPath: m('R.images.gui.maps.icons.sequence.sun_shine_big_sprite.sprite_'),
     },
-    d = e(g),
+    g = e(d),
     u = ({ className: e }) =>
         a.jsx('div', {
             className: s(o, e),
@@ -20,10 +20,10 @@ const o = 'AnimatedBackground_f47e334b',
                       children: [
                           a.jsx(n, {
                               onAnimationDone: t,
-                              width: g.width,
-                              height: g.height,
-                              frameCount: g.frameCount,
-                              getImageSource: d,
+                              width: d.width,
+                              height: d.height,
+                              frameCount: d.frameCount,
+                              getImageSource: g,
                               frameTime: 50,
                               className: c,
                           }),

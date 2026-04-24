@@ -1,9 +1,9 @@
-import { m as e, j as s, e as a } from '../../../chunks/vendor.js';
+import { q as e, j as s, e as a } from '../../../chunks/vendor.js';
 import {
     i,
     u as l,
-    s as c,
-    d as t,
+    d as c,
+    s as t,
     F as r,
     V as o,
     f as n,
@@ -38,8 +38,8 @@ import { E as v } from '../../../chunks/enums.js';
             { isVisible: u, regularRewardsCount: h, topRewardsCount: v, eventMode: _ } = e.root.get(),
             R = e.vehicleInfo.get(),
             T = l(
-                { buttonSize: c.small, vehicleIconSize: t.x24x24 },
-                { large: { buttonSize: c.medium, vehicleIconSize: t.x48x48 } },
+                { buttonSize: t.small, vehicleIconSize: c.x24x24 },
+                { large: { buttonSize: t.medium, vehicleIconSize: c.x48x48 } },
             );
         return s.jsx('div', {
             className: a(j, u && x),

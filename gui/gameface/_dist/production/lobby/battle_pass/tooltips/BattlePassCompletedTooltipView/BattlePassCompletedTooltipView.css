@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,116 +11,116 @@
     position: relative;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.FormatTextWithColorTags_blackReal_3c {
+.FormatTextWithColorTags_blackReal_ae104 {
     color: #000000;
 }
 
-.FormatTextWithColorTags_whiteReal_8a {
+.FormatTextWithColorTags_whiteReal_c12a8 {
     color: #ffffff;
 }
 
-.FormatTextWithColorTags_white_16 {
+.FormatTextWithColorTags_white_c5665 {
     color: #f2f2f7;
 }
 
-.FormatTextWithColorTags_whiteOrange_18 {
+.FormatTextWithColorTags_whiteOrange_fff65 {
     color: #fefeec;
 }
 
-.FormatTextWithColorTags_whiteSpanish_10 {
+.FormatTextWithColorTags_whiteSpanish_d24b3 {
     color: #e9e2bf;
 }
 
-.FormatTextWithColorTags_par_ca {
+.FormatTextWithColorTags_par_ee7d9 {
     color: #8c8c7e;
 }
 
-.FormatTextWithColorTags_parSecondary_8d {
+.FormatTextWithColorTags_parSecondary_a5b8c {
     color: #595950;
 }
 
-.FormatTextWithColorTags_parTertiary_a3 {
+.FormatTextWithColorTags_parTertiary_a0c09 {
     color: #37362e;
 }
 
-.FormatTextWithColorTags_red_60 {
+.FormatTextWithColorTags_red_ad70c {
     color: #ff2717;
 }
 
-.FormatTextWithColorTags_redDark_03 {
+.FormatTextWithColorTags_redDark_afb30 {
     color: #b70000;
 }
 
-.FormatTextWithColorTags_yellow_ad {
+.FormatTextWithColorTags_yellow_e47d1 {
     color: #feab34;
 }
 
-.FormatTextWithColorTags_orange_e4 {
+.FormatTextWithColorTags_orange_e08c4 {
     color: #ee7000;
 }
 
-.FormatTextWithColorTags_cream_cd {
+.FormatTextWithColorTags_cream_f2e96 {
     color: #ffdd99;
 }
 
-.FormatTextWithColorTags_brown_c8 {
+.FormatTextWithColorTags_brown_ed7be {
     color: #cbac77;
 }
 
-.FormatTextWithColorTags_greenBright_f0 {
+.FormatTextWithColorTags_greenBright_b0875 {
     color: #80d43a;
 }
 
-.FormatTextWithColorTags_green_c5 {
+.FormatTextWithColorTags_green_d0263 {
     color: #7ab300;
 }
 
-.FormatTextWithColorTags_greenDark_af {
+.FormatTextWithColorTags_greenDark_f19b8 {
     color: #497212;
 }
 
-.FormatTextWithColorTags_blueBooster_ac {
+.FormatTextWithColorTags_blueBooster_fd3be {
     color: #ccffff;
 }
 
-.FormatTextWithColorTags_blueTeamkiller_6f {
+.FormatTextWithColorTags_blueTeamkiller_fd915 {
     color: #09e2ff;
 }
 
-.FormatTextWithColorTags_cred_4e {
+.FormatTextWithColorTags_cred_fdafa {
     color: #ced9d9;
 }
 
-.FormatTextWithColorTags_gold_90 {
+.FormatTextWithColorTags_gold_ab90e {
     color: #ffc363;
 }
 
-.FormatTextWithColorTags_bond_71 {
+.FormatTextWithColorTags_bond_e83f5 {
     color: #c9c9b6;
 }
 
-.FormatTextWithColorTags_prom_dd {
+.FormatTextWithColorTags_prom_aa30c {
     color: #a29b70;
 }
 
 /* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
 
-.FormatTextWithColorTags_parNoWidth_5a {
+.FormatTextWithColorTags_parNoWidth_bf7ac {
     width: 0;
     color: #8c8c7e;
 }
 
-.IconTextBlock_base_46 {
+.IconTextBlock_base_a1f93 {
     display: flex;
     align-items: center;
 }
 
-.IconTextBlock_icon_c9 {
+.IconTextBlock_icon_eb0c1 {
     width: 36rem;
     height: 36rem;
     background-repeat: no-repeat;
@@ -128,24 +128,24 @@
     background-size: cover;
 }
 
-.IconTextBlock_text_89 {
+.IconTextBlock_text_ea28b {
     width: 90%;
     margin-left: 10rem;
 }
 
-.Message_base_12 {
+.Message_base_d9665 {
     line-height: normal;
 }
 /* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
 /* instead of this one*/
-.Message_separator_9c {
+.Message_separator_ae673 {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
 /* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
 /* instead of this one*/
-.Message_rewards_b8 {
+.Message_rewards_ec8ae {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -156,14 +156,14 @@
     color: #c9c9b6;
     font-size: 14rem;
 }
-.Message_base_12 {
+.Message_base_d9665 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
 }
-.Message_content_6d {
+.Message_content_f9596 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -172,7 +172,7 @@
     padding: 7rem 28rem 11rem;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(39, 39, 39, 0.5) 50%, rgba(0, 0, 0, 0) 100%);
 }
-.Message_text_03 {
+.Message_text_ea54c {
     color: #7ab300;
     font-size: 14rem;
     font-weight: 400;
@@ -181,19 +181,19 @@
     text-align: center;
 }
 
-.Content_base_c5 {
+.Content_base_f7abb {
     line-height: normal;
 }
 /* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
 /* instead of this one*/
-.Content_separator_df {
+.Content_separator_b5ecb {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
 /* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
 /* instead of this one*/
-.Content_rewards_fc {
+.Content_rewards_d5ec7 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -204,7 +204,7 @@
     color: #c9c9b6;
     font-size: 14rem;
 }
-.Content_base_c5 {
+.Content_base_f7abb {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -212,17 +212,17 @@
     padding: 28rem 0;
     overflow: hidden;
 }
-.Content_base__noDescription_3f {
+.Content_base__noDescription_b25cd {
     padding: 28rem 28rem 0;
 }
-.Content_title_e5 {
+.Content_title_ee0f1 {
     color: #f2f2f7;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
     text-align: center;
 }
-.Content_subTitle_bf {
+.Content_subTitle_bc74f {
     color: #e9e2bf;
     font-size: 28rem;
     font-weight: 700;
@@ -230,20 +230,20 @@
     margin-top: 8rem;
     text-align: center;
 }
-.Content_tank_95 {
+.Content_tank_d5973 {
     width: 130rem;
     height: 130rem;
     background: url('R.images.gui.maps.icons.battlePass.progression.tank') no-repeat center / contain;
     transform: translateY(15%);
 }
-.Content_footer_1a {
+.Content_footer_fc76b {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     position: relative;
 }
-.Content_flare_50 {
+.Content_flare_e0fab {
     width: 400rem;
     height: 400rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.c_45_lvl_Flare_complited') center / cover no-repeat;
@@ -251,22 +251,22 @@
     position: absolute;
     transform: translate(0, -230rem);
 }
-.Content_messageWrapper_e3 {
+.Content_messageWrapper_b414a {
     width: 440rem;
 }
-.Content_info_f4 {
+.Content_info_ef782 {
     width: 100%;
     margin-top: 14rem;
     margin-bottom: -7rem;
     padding: 0 28rem;
 }
-.Content_separatorWrapper_b1 {
+.Content_separatorWrapper_de78b {
     display: flex;
     justify-content: center;
     width: 100%;
     margin: 1rem 0;
 }
-.Content_unlock_f4 {
+.Content_unlock_d221a {
     color: #cbac77;
     font-size: 14rem;
     font-weight: 400;
@@ -275,19 +275,19 @@
     margin: 7rem 0;
 }
 
-.CustomContent_base_08 {
+.CustomContent_base_d8b2e {
     line-height: normal;
 }
 /* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
 /* instead of this one*/
-.CustomContent_separator_57 {
+.CustomContent_separator_d7f4c {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
 /* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
 /* instead of this one*/
-.CustomContent_rewards_cd {
+.CustomContent_rewards_bcbf5 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -298,7 +298,7 @@
     color: #c9c9b6;
     font-size: 14rem;
 }
-.CustomContent_background_f2 {
+.CustomContent_background_caa09 {
     position: absolute;
     top: 0;
     right: 0;
@@ -308,13 +308,13 @@
     background: url('R.images.gui.maps.icons.battlePass.tooltips.custom_bg') no-repeat top / contain;
     z-index: -1;
 }
-.CustomContent_tank_74 {
+.CustomContent_tank_fb331 {
     width: 130rem;
     height: 130rem;
     margin-top: 4rem;
     transform: translateY(15%);
 }
-.CustomContent_footer_dd {
+.CustomContent_footer_df2d3 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -322,10 +322,10 @@
     margin-top: 9rem;
     position: relative;
 }
-.CustomContent_messageWrapper_79 {
+.CustomContent_messageWrapper_ed737 {
     width: 440rem;
 }
-.CustomContent_textWrapper_33 {
+.CustomContent_textWrapper_af528 {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -333,13 +333,13 @@
     width: 100%;
     margin: 5rem 0;
 }
-.CustomContent_check_37 {
+.CustomContent_check_afc3a {
     width: 24rem;
     height: 24rem;
     margin-right: 6rem;
     background: no-repeat center bottom / contain;
 }
-.CustomContent_text_e9 {
+.CustomContent_text_b688f {
     color: #7ab300;
     font-size: 16rem;
     font-weight: 400;

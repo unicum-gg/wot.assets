@@ -1,6 +1,6 @@
 import { j as e } from './vendor.js';
 import { V as i } from './vehicle_info.js';
-import { m as s, e as t } from './lib.js';
+import { m as s, n as t } from './lib.js';
 const l = 'VehicleList_82a6a4d',
     o = 'VehicleList_info_41a84ef',
     c = 'VehicleList_points_9c8e2f92',

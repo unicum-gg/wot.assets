@@ -1,5 +1,5 @@
-import { j as e, w as s, x as l } from '../../../chunks/vendor.js';
-import { i, d0 as c, u as o, F as a, r as t } from '../../../chunks/lib.js';
+import { j as e, C as s, D as l } from '../../../chunks/vendor.js';
+import { i, d5 as c, u as o, F as a, r as t } from '../../../chunks/lib.js';
 import { a as r, S as n } from '../../../chunks/schedule_subheading.js';
 import { g as d } from '../../../chunks/get_roman_levels.js';
 /* empty css                     */ import '../../../chunks/use_server_time_polling.js';
@@ -10,8 +10,8 @@ const [h, m] = i()(
     _ = 'HowToGetVehicles_3befc43e',
     p = 'HowToGetVehicles_heading_f698099b',
     v = 'HowToGetVehicles_items_9f75d953',
-    x = 'HowToGetVehicles_item_1ba81632',
-    j = 'HowToGetVehicles_title_62dbf737',
+    j = 'HowToGetVehicles_item_1ba81632',
+    x = 'HowToGetVehicles_title_62dbf737',
     g = 'HowToGetVehicles_image_616e4275',
     b = ['tasks', 'premium', 'reserves'],
     u = ({ levelsStr: l, className: i }) =>
@@ -28,7 +28,7 @@ const [h, m] = i()(
                         e.jsxs(
                             'div',
                             {
-                                className: x,
+                                className: j,
                                 children: [
                                     e.jsx('div', {
                                         className: g,
@@ -37,7 +37,7 @@ const [h, m] = i()(
                                         },
                                     }),
                                     e.jsx('div', {
-                                        className: j,
+                                        className: x,
                                         children: `${R.strings.comp7_light.noVehicles.howTo.$dyn(s)}`,
                                     }),
                                 ],
@@ -51,9 +51,9 @@ const [h, m] = i()(
     N = 'App_b0b6a04b',
     f = 'App_header_9ff1dc47',
     k = 'App_content_a6634164',
-    w = 'App_iconContainer_27ee149e',
-    A = 'App_icon_6ec08bc',
-    V = 'App_title_3d1094ed',
+    A = 'App_iconContainer_27ee149e',
+    V = 'App_icon_6ec08bc',
+    w = 'App_title_3d1094ed',
     T = 'App_divider_278fa8a8',
     $ = 'App_text_51f38cc1',
     G = R.strings.comp7_light.noVehicles,
@@ -73,8 +73,8 @@ const [h, m] = i()(
                 e.jsxs('div', {
                     className: k,
                     children: [
-                        e.jsx('div', { className: w, children: e.jsx('div', { className: A }) }),
-                        e.jsx(a, { text: `${G.title()}`, classMix: V }),
+                        e.jsx('div', { className: A, children: e.jsx('div', { className: V }) }),
+                        e.jsx(a, { text: `${G.title()}`, classMix: w }),
                         e.jsx(a, { text: `${G.text.$dyn(i)}`, binding: { levels: c }, classMix: $ }),
                         e.jsx('div', { className: T }),
                         e.jsx(u, { levelsStr: c }),

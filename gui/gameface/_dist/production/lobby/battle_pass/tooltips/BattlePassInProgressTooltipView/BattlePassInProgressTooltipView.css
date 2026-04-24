@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,116 +11,116 @@
     position: relative;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.FormatTextWithColorTags_blackReal_3c {
+.FormatTextWithColorTags_blackReal_ae104 {
     color: #000000;
 }
 
-.FormatTextWithColorTags_whiteReal_8a {
+.FormatTextWithColorTags_whiteReal_c12a8 {
     color: #ffffff;
 }
 
-.FormatTextWithColorTags_white_16 {
+.FormatTextWithColorTags_white_c5665 {
     color: #f2f2f7;
 }
 
-.FormatTextWithColorTags_whiteOrange_18 {
+.FormatTextWithColorTags_whiteOrange_fff65 {
     color: #fefeec;
 }
 
-.FormatTextWithColorTags_whiteSpanish_10 {
+.FormatTextWithColorTags_whiteSpanish_d24b3 {
     color: #e9e2bf;
 }
 
-.FormatTextWithColorTags_par_ca {
+.FormatTextWithColorTags_par_ee7d9 {
     color: #8c8c7e;
 }
 
-.FormatTextWithColorTags_parSecondary_8d {
+.FormatTextWithColorTags_parSecondary_a5b8c {
     color: #595950;
 }
 
-.FormatTextWithColorTags_parTertiary_a3 {
+.FormatTextWithColorTags_parTertiary_a0c09 {
     color: #37362e;
 }
 
-.FormatTextWithColorTags_red_60 {
+.FormatTextWithColorTags_red_ad70c {
     color: #ff2717;
 }
 
-.FormatTextWithColorTags_redDark_03 {
+.FormatTextWithColorTags_redDark_afb30 {
     color: #b70000;
 }
 
-.FormatTextWithColorTags_yellow_ad {
+.FormatTextWithColorTags_yellow_e47d1 {
     color: #feab34;
 }
 
-.FormatTextWithColorTags_orange_e4 {
+.FormatTextWithColorTags_orange_e08c4 {
     color: #ee7000;
 }
 
-.FormatTextWithColorTags_cream_cd {
+.FormatTextWithColorTags_cream_f2e96 {
     color: #ffdd99;
 }
 
-.FormatTextWithColorTags_brown_c8 {
+.FormatTextWithColorTags_brown_ed7be {
     color: #cbac77;
 }
 
-.FormatTextWithColorTags_greenBright_f0 {
+.FormatTextWithColorTags_greenBright_b0875 {
     color: #80d43a;
 }
 
-.FormatTextWithColorTags_green_c5 {
+.FormatTextWithColorTags_green_d0263 {
     color: #7ab300;
 }
 
-.FormatTextWithColorTags_greenDark_af {
+.FormatTextWithColorTags_greenDark_f19b8 {
     color: #497212;
 }
 
-.FormatTextWithColorTags_blueBooster_ac {
+.FormatTextWithColorTags_blueBooster_fd3be {
     color: #ccffff;
 }
 
-.FormatTextWithColorTags_blueTeamkiller_6f {
+.FormatTextWithColorTags_blueTeamkiller_fd915 {
     color: #09e2ff;
 }
 
-.FormatTextWithColorTags_cred_4e {
+.FormatTextWithColorTags_cred_fdafa {
     color: #ced9d9;
 }
 
-.FormatTextWithColorTags_gold_90 {
+.FormatTextWithColorTags_gold_ab90e {
     color: #ffc363;
 }
 
-.FormatTextWithColorTags_bond_71 {
+.FormatTextWithColorTags_bond_e83f5 {
     color: #c9c9b6;
 }
 
-.FormatTextWithColorTags_prom_dd {
+.FormatTextWithColorTags_prom_aa30c {
     color: #a29b70;
 }
 
 /* This specific rule is used to fix https://jira.wargaming.net/browse/WOTPRG-9871 */
 
-.FormatTextWithColorTags_parNoWidth_5a {
+.FormatTextWithColorTags_parNoWidth_bf7ac {
     width: 0;
     color: #8c8c7e;
 }
 
-.IconTextBlock_base_46 {
+.IconTextBlock_base_a1f93 {
     display: flex;
     align-items: center;
 }
 
-.IconTextBlock_icon_c9 {
+.IconTextBlock_icon_eb0c1 {
     width: 36rem;
     height: 36rem;
     background-repeat: no-repeat;
@@ -128,12 +128,12 @@
     background-size: cover;
 }
 
-.IconTextBlock_text_89 {
+.IconTextBlock_text_ea28b {
     width: 90%;
     margin-left: 10rem;
 }
 
-.Rewards_base_f3 {
+.Rewards_base_e723d {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -145,7 +145,7 @@
     font-size: 14rem;
 }
 
-.Separator_base_9c {
+.Separator_base_df792 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,21 +153,21 @@
     position: relative;
 }
 
-.Separator_base_9c::after {
+.Separator_base_df792::after {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
     content: '';
 }
 
-.ClaimInfo_base_f5 {
+.ClaimInfo_base_a34a7 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-.ClaimInfo_unlock_0e {
+.ClaimInfo_unlock_a4c2d {
     color: #cbac77;
     font-size: 14rem;
     font-weight: 400;
@@ -175,19 +175,19 @@
     width: 100%;
 }
 
-.styles_base_86 {
+.styles_base_fc5e8 {
     line-height: normal;
 }
 /* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
 /* instead of this one*/
-.styles_separator_f8 {
+.styles_separator_f2234 {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
 /* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
 /* instead of this one*/
-.styles_rewards_26 {
+.styles_rewards_d7c68 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -198,7 +198,7 @@
     color: #c9c9b6;
     font-size: 14rem;
 }
-.styles_base_86 {
+.styles_base_fc5e8 {
     display: flex;
     flex-direction: row;
     width: 403rem;
@@ -207,7 +207,7 @@
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Gradient_devider') center top / 100% 40rem no-repeat;
     position: relative;
 }
-.styles_separators_5c {
+.styles_separators_e6de5 {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -215,13 +215,13 @@
     position: absolute;
 }
 /* override*/
-.styles_separator_f8 {
+.styles_separator_f2234 {
     position: absolute;
     top: 80rem;
     left: 50%;
     transform: translateX(-50%);
 }
-.styles_tableHeader_a0 {
+.styles_tableHeader_b24d2 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -229,7 +229,7 @@
     color: #8c8c7e;
     font-size: 14rem;
 }
-.styles_label_d5 {
+.styles_label_cd216 {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -237,34 +237,34 @@
     height: 40rem;
     font-size: 14rem;
 }
-.styles_label__table_9e {
+.styles_label__table_cb3cb {
     justify-content: flex-start;
     color: #8c8c7e;
 }
-.styles_pointsColumn_20 {
+.styles_pointsColumn_be3de {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-right: 25rem;
 }
 
-.Point_base_e9 {
+.Point_base_c2fb7 {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.Point_points_2a {
+.Point_points_c0c0c {
     color: #e9e2bf;
     font-size: 16rem;
 }
 
-.Point_points__special_c7 {
+.Point_points__special_c9030 {
     color: #80d43a;
     font-size: 16rem;
 }
 
-.Point_pointIcon_9e {
+.Point_pointIcon_aae9f {
     width: 24rem;
     height: 24rem;
     margin-left: 6rem;
@@ -272,25 +272,25 @@
     background: url('R.images.gui.maps.icons.battlePass.tooltips.points_24') center / contain no-repeat;
 }
 
-.BattleRoyaleTable_pointsColumn_f0 {
+.BattleRoyaleTable_pointsColumn_da0d8 {
     padding-right: 32rem;
 }
 
-.BattleRoyaleTable_header_7e {
+.BattleRoyaleTable_header_a1ed9 {
     color: #c9c9b6;
     font-size: 14rem;
     font-weight: 700;
     line-height: 1.15;
 }
 
-.BattleRoyaleTable_label_e2 {
+.BattleRoyaleTable_label_f9706 {
     color: #8c8c7e;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
 }
 
-.HeaderWithPoints_base_1c {
+.HeaderWithPoints_base_eff59 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -301,42 +301,42 @@
     width: 100%;
 }
 
-.HeaderWithPoints_modeIcon_b6 {
+.HeaderWithPoints_modeIcon_ff5e5 {
     width: 32rem;
     height: 32rem;
     margin-right: 10rem;
     background: no-repeat center / contain;
 }
 
-.HeaderWithPoints_modeIcon__battleRoyale_87,
-.HeaderWithPoints_modeIcon__epic_85 {
+.HeaderWithPoints_modeIcon__battleRoyale_d8387,
+.HeaderWithPoints_modeIcon__epic_c59ee {
     margin-left: 3rem;
     margin-top: 2rem;
 }
 
-.HeaderWithPoints_modeIcon__battleRoyale_87 {
+.HeaderWithPoints_modeIcon__battleRoyale_d8387 {
     background-image: url('R.images.gui.maps.icons.battleTypes.c_40x40.battleRoyaleQueue');
 }
 
-.HeaderWithPoints_modeIcon__epic_85 {
+.HeaderWithPoints_modeIcon__epic_c59ee {
     background-image: url('R.images.gui.maps.icons.battleTypes.c_40x40.epicQueue');
 }
 
-.HeaderWithPoints_highlight_71 {
+.HeaderWithPoints_highlight_f15df {
     color: #c9c9b6;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.RulesTable_header_19 {
+.RulesTable_header_a938b {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     padding: 10rem 28rem 0;
 }
-.RulesTable_playGame_4a {
+.RulesTable_playGame_d7777 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -345,13 +345,13 @@
     margin-top: 0;
     margin-bottom: 20rem;
 }
-.RulesTable_perBattlePointsTable_f9 {
+.RulesTable_perBattlePointsTable_d1249 {
     width: 100%;
     padding-left: 28rem;
     padding-right: 28rem;
 }
 
-.EndSoon_base_c7 {
+.EndSoon_base_fd38b {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -359,7 +359,7 @@
     width: 100%;
     padding-bottom: 28rem;
 }
-.EndSoon_content_0e {
+.EndSoon_content_b2e91 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -368,7 +368,7 @@
     margin: 0 -28rem -28rem;
     padding: 4rem 28rem 26rem;
 }
-.EndSoon_timerLight_7f {
+.EndSoon_timerLight_bd17c {
     width: 280rem;
     height: 280rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.end_date_light') no-repeat center / contain;
@@ -379,7 +379,7 @@
     z-index: 0;
     transform: translate(-50%, -50%);
 }
-.EndSoon_timer_15 {
+.EndSoon_timer_e9bad {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -390,25 +390,25 @@
         0 0 15rem #e52;
     position: relative;
 }
-.EndSoon_timerIcon_ba {
+.EndSoon_timerIcon_b3647 {
     width: 37rem;
     height: 37rem;
     background: url('R.images.gui.maps.icons.library.marathon.time_icon_glow') center / cover no-repeat;
 }
-.EndSoon_timerLabel_da {
+.EndSoon_timerLabel_e527e {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
     margin-right: 8rem;
 }
-.EndSoon_timerValue_98 {
+.EndSoon_timerValue_b6ba4 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
-.EndSoon_hurryUp_12 {
+.EndSoon_hurryUp_e94ac {
     color: #cbac77;
     font-size: 14rem;
     font-weight: 400;
@@ -417,7 +417,7 @@
     text-align: center;
 }
 
-.Level_level_a4 {
+.Level_level_d1376 {
     color: #f2f2f7;
     font-size: 73rem;
     font-weight: 700;
@@ -426,7 +426,7 @@
     margin-bottom: -2rem;
 }
 
-.Level_label_be {
+.Level_label_f962e {
     color: #e9e2bf;
     font-size: 15rem;
     font-weight: 700;
@@ -439,15 +439,15 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressBar_base_45 {
+.ProgressBar_base_c37bf {
     width: 100%;
     height: var(--progress-bg-height);
     position: relative;
 }
-.ProgressBar_base__small_df {
+.ProgressBar_base__small_af6d6 {
     height: var(--progress-bg-height-small);
 }
-.ProgressBar_background_51 {
+.ProgressBar_background_a4e18 {
     width: 100%;
     max-width: 8001px;
     height: 100%;
@@ -459,15 +459,15 @@
     top: 0;
     left: 0;
 }
-.ProgressBar_background__small_46 {
+.ProgressBar_background__small_e2b95 {
     height: var(--progress-bg-height-small);
 }
-.ProgressBar_lineWrapper_6a {
+.ProgressBar_lineWrapper_e670c {
     display: flex;
     flex: 1;
 }
 
-.ProgressBarBlink_base_24 {
+.ProgressBarBlink_base_d7125 {
     width: var(--progress-glow-width);
     height: var(--progress-glow-height);
     background-image: var(--progress-glow);
@@ -480,7 +480,7 @@
     pointer-events: none;
 }
 
-.ProgressBarBlink_base__small_0f {
+.ProgressBarBlink_base__small_b92f8 {
     width: var(--progress-glow-small-width);
     height: var(--progress-glow-small-height);
     background-image: var(--progress-glow-small);
@@ -491,7 +491,7 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressLineImpose_base_80 {
+.ProgressLineImpose_base_a3558 {
     max-width: 8001px;
     height: 100%;
     background-color: var(--progress-line-base);
@@ -500,16 +500,16 @@
     transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
     transition-property: width;
 }
-.ProgressLineImpose_base__disabled_cc {
+.ProgressLineImpose_base__disabled_a9e8e {
     background-color: var(--progress-line-disabled);
 }
-.ProgressLineImpose_base__finished_d4 {
+.ProgressLineImpose_base__finished_f889e {
     background-color: var(--progress-line-finished);
 }
-.ProgressLineImpose_base__withoutBounce_56 {
+.ProgressLineImpose_base__withoutBounce_c0ff9 {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
 }
-.ProgressLineImpose_pattern_1c {
+.ProgressLineImpose_pattern_a4023 {
     max-width: 8001px;
     background-image: var(--progress-pattern-base);
     background-repeat: repeat;
@@ -521,18 +521,18 @@
     bottom: var(--progress-pattern-border-size);
     left: var(--progress-pattern-border-size);
 }
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
+.ProgressLineImpose_base__small_da260 .ProgressLineImpose_pattern_a4023 {
     top: 0;
     bottom: 0;
 }
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
+.ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_pattern_a4023 {
     background-image: var(--progress-pattern-disabled);
     left: 0;
 }
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
+.ProgressLineImpose_base__finished_f889e .ProgressLineImpose_pattern_a4023 {
     background-image: var(--progress-pattern-finished);
 }
-.ProgressLineImpose_gradient_35 {
+.ProgressLineImpose_gradient_f73c0 {
     max-width: 8001px;
     background-image: var(--progress-pattern-gradient);
     mix-blend-mode: var(--progress-pattern-gradient-mixBlendMode);
@@ -542,17 +542,17 @@
     bottom: var(--progress-pattern-border-size);
     left: 0;
 }
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
+.ProgressLineImpose_base__small_da260 .ProgressLineImpose_gradient_f73c0 {
     top: 0;
     bottom: 0;
 }
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
+.ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_gradient_f73c0 {
     display: none;
 }
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
+.ProgressLineImpose_base__finished_f889e .ProgressLineImpose_gradient_f73c0 {
     background-image: var(--progress-pattern-gradient-finished);
 }
-.ProgressLineImpose_glow_a5 {
+.ProgressLineImpose_glow_f237a {
     width: var(--progress-glow-width);
     max-width: 8001px;
     height: var(--progress-glow-height);
@@ -565,14 +565,14 @@
     transform: translate(-50%, -50%);
     pointer-events: none;
 }
-.ProgressLineImpose_glow__left_d8 {
+.ProgressLineImpose_glow__left_b7ffa {
     left: var(--progress-pattern-border-size);
 }
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+.ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_glow_f237a,
+.ProgressLineImpose_base__finished_f889e .ProgressLineImpose_glow_f237a {
     display: none;
 }
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
+.ProgressLineImpose_base__small_da260 .ProgressLineImpose_glow_f237a {
     width: var(--progress-glow-small-width);
     height: var(--progress-glow-small-height);
     background-image: var(--progress-glow-small);
@@ -583,7 +583,7 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressBarDeltaGrow_base_7e {
+.ProgressBarDeltaGrow_base_f4d46 {
     width: 0;
     height: 100%;
     position: absolute;
@@ -591,10 +591,10 @@
     transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
     transition-property: width;
 }
-.ProgressBarDeltaGrow_base__withoutBounce_b5 {
+.ProgressBarDeltaGrow_base__withoutBounce_b1398 {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
 }
-.ProgressBarDeltaGrow_glow_68 {
+.ProgressBarDeltaGrow_glow_c912d {
     width: 0;
     max-width: 8001px;
     height: 100%;
@@ -606,7 +606,7 @@
     transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
     transition-property: width;
 }
-.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
+.ProgressBarDeltaGrow_base__withoutBounce_b1398 .ProgressBarDeltaGrow_glow_c912d {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
 }
 
@@ -615,13 +615,13 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
+.ProgressBarDeltaSimple_base_cfcd3 {
     width: 0;
     height: 100%;
     position: absolute;
     top: 0;
 }
-.ProgressBarDeltaSimple_delta_99 {
+.ProgressBarDeltaSimple_delta_dc2b6 {
     width: 0;
     max-width: 8001px;
     height: 100%;
@@ -634,42 +634,42 @@
     transition-property: width, transform;
 }
 
-.Points_base_d1 {
+.Points_base_a8aa2 {
     display: flex;
     flex-direction: row;
     align-items: center;
     color: #8c8c7e;
     font-size: 14rem;
 }
-.Points_pointsCurrent_5a {
+.Points_pointsCurrent_b22ac {
     margin-right: 4rem;
     color: #e9e2bf;
 }
-.Points_pointsMax_82 {
+.Points_pointsMax_dccf9 {
     margin-left: 4rem;
 }
-.Points_pointsIcon_19 {
+.Points_pointsIcon_c4cac {
     width: 24rem;
     height: 24rem;
     margin-left: 10rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.points_24') center / contain no-repeat;
 }
 
-.Progression_base_07 {
+.Progression_base_eb8b0 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 330rem;
 }
-.Progression_progressionBar_9d {
+.Progression_progressionBar_a4bbe {
     width: 100%;
     margin-bottom: 10rem;
 }
-.Progression_points_3d {
+.Progression_points_ca10e {
     margin-left: 34rem;
 }
 
-.ExpireTime_base_a6 {
+.ExpireTime_base_e62ec {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -681,7 +681,7 @@
     position: relative;
 }
 
-.ExpireTime_light_d5 {
+.ExpireTime_light_be18e {
     width: 250rem;
     height: 173rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.expire_time_light') no-repeat center / contain;
@@ -692,33 +692,33 @@
     z-index: 0;
 }
 
-.ExpireTime_icon_9d {
+.ExpireTime_icon_c9219 {
     width: 37rem;
     height: 37rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.time_icon_glow') center / cover no-repeat;
 }
 
-.ExpireTime_value_41 {
+.ExpireTime_value_f6f09 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.Header_base_eb {
+.Header_base_c2371 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-.Header_chapter_1d {
+.Header_chapter_c314c {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
-.Header_name_39 {
+.Header_name_a1e46 {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -728,59 +728,59 @@
     opacity: 0.5;
 }
 
-.Reward_base_ea {
+.Reward_base_b1fec {
     display: flex;
     flex-direction: column;
     position: relative;
 }
 
-.Reward_base__s48x48_46,
-.Reward_base__small_c0 {
+.Reward_base__s48x48_ea3ee,
+.Reward_base__small_d4940 {
     width: 48rem;
     height: 48rem;
 }
 
-.Reward_base__s80x80_ce,
-.Reward_base__big_e5 {
+.Reward_base__s80x80_de3ac,
+.Reward_base__big_a4f0e {
     width: 80rem;
     height: 80rem;
 }
 
-.Reward_base__s128x100_c3 {
+.Reward_base__s128x100_c29f0 {
     width: 128rem;
     height: 100rem;
 }
 
-.Reward_base__s180x135_7c {
+.Reward_base__s180x135_cb4c8 {
     width: 180rem;
     height: 135rem;
 }
 
-.Reward_base__s232x174_67 {
+.Reward_base__s232x174_aea24 {
     width: 232rem;
     height: 174rem;
 }
 
-.Reward_base__s296x222_78 {
+.Reward_base__s296x222_cbf7c {
     width: 296rem;
     height: 222rem;
 }
 
-.Reward_base__s400x300_07 {
+.Reward_base__s400x300_bb29d {
     width: 400rem;
     height: 300rem;
 }
 
-.Reward_base__s600x450_f8 {
+.Reward_base__s600x450_c4f07 {
     width: 600rem;
     height: 450rem;
 }
 
-.Reward_tooltipWrapper_b5 {
+.Reward_tooltipWrapper_af665 {
     height: 100%;
 }
 
-.Reward_icon_df {
+.Reward_icon_b619b {
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
@@ -790,7 +790,7 @@
     z-index: 1;
 }
 
-.Reward_overlay_68 {
+.Reward_overlay_dac5c {
     background: no-repeat center / 100%;
     position: absolute;
     top: 50%;
@@ -800,51 +800,51 @@
     pointer-events: none;
 }
 
-.Reward_base__s48x48_46 .Reward_overlay_68,
-.Reward_base__small_c0 .Reward_overlay_68 {
+.Reward_base__s48x48_ea3ee .Reward_overlay_dac5c,
+.Reward_base__small_d4940 .Reward_overlay_dac5c {
     width: 96rem;
     height: 96rem;
     background-size: 100%;
     overflow: visible;
 }
 
-.Reward_base__s80x80_ce .Reward_overlay_68,
-.Reward_base__big_e5 .Reward_overlay_68 {
+.Reward_base__s80x80_de3ac .Reward_overlay_dac5c,
+.Reward_base__big_a4f0e .Reward_overlay_dac5c {
     width: 128rem;
     height: 128rem;
 }
 
-.Reward_base__s180x135_7c .Reward_overlay_68 {
+.Reward_base__s180x135_cb4c8 .Reward_overlay_dac5c {
     width: 266rem;
     height: 241rem;
 }
 
-.Reward_base__s232x174_67 .Reward_overlay_68 {
+.Reward_base__s232x174_aea24 .Reward_overlay_dac5c {
     width: 344rem;
     height: 312rem;
 }
 
-.Reward_base__s296x222_78 .Reward_overlay_68 {
+.Reward_base__s296x222_cbf7c .Reward_overlay_dac5c {
     width: 450rem;
     height: 408rem;
 }
 
-.Reward_base__s400x300_07 .Reward_overlay_68 {
+.Reward_base__s400x300_bb29d .Reward_overlay_dac5c {
     width: 618rem;
     height: 590rem;
 }
 
-.Reward_base__s600x450_f8 .Reward_overlay_68 {
+.Reward_base__s600x450_c4f07 .Reward_overlay_dac5c {
     width: 670rem;
     height: 575rem;
 }
 
-.Reward_base__normalize_a6 .Reward_overlay_68 {
+.Reward_base__normalize_b8703 .Reward_overlay_dac5c {
     width: 100%;
     height: 100%;
 }
 
-.Reward_highlight_36 {
+.Reward_highlight_df36b {
     width: 100%;
     height: 100%;
     background: no-repeat center / contain;
@@ -852,11 +852,11 @@
     z-index: 0;
 }
 
-.Reward_image_89 {
+.Reward_image_e2997 {
     position: relative;
 }
 
-.Reward_info_72 {
+.Reward_info_b27d2 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
@@ -867,39 +867,39 @@
     z-index: 1;
 }
 
-.Reward_base__s48x48_46 .Reward_info_72,
-.Reward_base__small_c0 .Reward_info_72 {
+.Reward_base__s48x48_ea3ee .Reward_info_b27d2,
+.Reward_base__small_d4940 .Reward_info_b27d2 {
     margin: -10rem -10rem 0;
 }
 
-.Reward_info__multi_63 {
+.Reward_info__multi_e08a5 {
     margin-right: 2rem;
     text-align: right;
 }
 
-.Reward_base__s48x48_46 .Reward_info__multi_63,
-.Reward_base__small_c0 .Reward_info__multi_63 {
+.Reward_base__s48x48_ea3ee .Reward_info__multi_e08a5,
+.Reward_base__small_d4940 .Reward_info__multi_e08a5 {
     margin-right: 0;
 }
 
-.Reward_info__credits_ef {
+.Reward_info__credits_ccc0d {
     color: #ced9d9;
 }
 
-.Reward_info__gold_36 {
+.Reward_info__gold_af0a5 {
     color: #ffc363;
 }
 
-.Reward_info__bptaler_82,
-.Reward_info__crystal_36 {
+.Reward_info__bptaler_d4229,
+.Reward_info__crystal_b0d9d {
     color: #c9c9b6;
 }
 
-.Reward_info__premiumTank_d3 {
+.Reward_info__premiumTank_f53be {
     color: #ffdd99;
 }
 
-.Reward_title_36 {
+.Reward_title_ab4e2 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
@@ -914,25 +914,25 @@
     z-index: 1;
 }
 
-.mediaMedium .Reward_title_36 {
+.mediaMedium .Reward_title_ab4e2 {
     max-width: 100rem;
     margin-left: -10rem;
     margin-right: -10rem;
 }
 
-.Reward_base__s48x48_46 .Reward_title_36,
-.Reward_base__small_c0 .Reward_title_36 {
+.Reward_base__s48x48_ea3ee .Reward_title_ab4e2,
+.Reward_base__small_d4940 .Reward_title_ab4e2 {
     margin: -10rem -10rem 0;
 }
 
-.Reward_timer_d3 {
+.Reward_timer_c097c {
     background: no-repeat center / contain;
     position: absolute;
     z-index: 1;
 }
 
-.Reward_base__s48x48_46 .Reward_timer_d3,
-.Reward_base__small_c0 .Reward_timer_d3 {
+.Reward_base__s48x48_ea3ee .Reward_timer_c097c,
+.Reward_base__small_d4940 .Reward_timer_c097c {
     width: 23rem;
     height: 23rem;
     background-image: url('R.images.gui.maps.icons.quests.bonuses.small.timer');
@@ -940,8 +940,8 @@
     right: -6rem;
 }
 
-.Reward_base__s80x80_ce .Reward_timer_d3,
-.Reward_base__big_e5 .Reward_timer_d3 {
+.Reward_base__s80x80_de3ac .Reward_timer_c097c,
+.Reward_base__big_a4f0e .Reward_timer_c097c {
     width: 48rem;
     height: 48rem;
     background-image: url('R.images.gui.maps.icons.quests.bonuses.big.timer');
@@ -949,13 +949,13 @@
     right: -14rem;
 }
 
-.RewardsBlock_base_f6 {
+.RewardsBlock_base_f3526 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 190rem;
 }
-.RewardsBlock_nextRewards_01 {
+.RewardsBlock_nextRewards_c6494 {
     color: #c9c9b6;
     font-size: 14rem;
     font-weight: 400;
@@ -964,56 +964,56 @@
     align-items: center;
     margin-bottom: 6rem;
 }
-.RewardsBlock_rewardsList_59 {
+.RewardsBlock_rewardsList_e7ce2 {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100rem;
 }
-.RewardsBlock_rewardsList__locked_85 {
+.RewardsBlock_rewardsList__locked_af0fc {
     opacity: 0.5;
 }
-.RewardsBlock_reward_29 {
+.RewardsBlock_reward_f98cc {
     margin-top: 30rem;
 }
-.RewardsBlock_reward__shiftUp_3f {
+.RewardsBlock_reward__shiftUp_b5021 {
     margin-top: -30rem;
 }
-.RewardsBlock_reward__styleUpgrade_84,
-.RewardsBlock_reward__wide_1c {
+.RewardsBlock_reward__styleUpgrade_d5529,
+.RewardsBlock_reward__wide_ca8bb {
     margin-right: 10rem;
 }
-.RewardsBlock_reward__next_d4 {
+.RewardsBlock_reward__next_d22db {
     margin-left: 5rem;
 }
-.RewardsBlock_reward__single_71 {
+.RewardsBlock_reward__single_f3d93 {
     width: 140rem;
     height: 105rem;
     margin: 0;
 }
-.RewardsBlock_lockIcon_2e {
+.RewardsBlock_lockIcon_b7e70 {
     width: 36rem;
     height: 36rem;
     margin: -14rem -4rem -12rem -12rem;
     background: url('R.images.gui.maps.icons.battlePass.progression.icon_lock_current_small') center / contain no-repeat;
 }
-.RewardsBlock_base_f6 .RewardsBlock_overlay_46 {
+.RewardsBlock_base_f3526 .RewardsBlock_overlay_ec03c {
     width: 180rem;
     height: 135rem;
 }
 
-.InProgressContent_base_2a {
+.InProgressContent_base_fef27 {
     width: 440rem;
 }
-.InProgressContent_content_8f {
+.InProgressContent_content_bb31b {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     padding: 10rem 28rem 0;
 }
-.InProgressContent_rewards_a5 {
+.InProgressContent_rewards_ebc72 {
     display: flex;
     flex-direction: row;
     width: 440rem;
@@ -1021,7 +1021,7 @@
     padding-left: 28rem;
     padding-right: 28rem;
 }
-.InProgressContent_unlockBattlePass_e1 {
+.InProgressContent_unlockBattlePass_b978a {
     color: #cbac77;
     font-size: 14rem;
     font-weight: 400;
@@ -1029,21 +1029,21 @@
     width: 100%;
     margin-bottom: 20rem;
 }
-.InProgressContent_claim_b3 {
+.InProgressContent_claim_aded2 {
     padding: 10rem 28rem 15rem;
 }
-.InProgressContent_separatorWrapper_ad {
+.InProgressContent_separatorWrapper_f3e77 {
     margin-top: -15rem;
 }
 
-.Header_base_07 {
+.Header_base_d3041 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
 }
 
-.Header_name_59 {
+.Header_name_e98bb {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -1055,7 +1055,7 @@
     opacity: 0.5;
 }
 
-.RewardsBlock_base_49 {
+.RewardsBlock_base_c65e2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1064,7 +1064,7 @@
     position: relative;
 }
 
-.RewardsBlock_ribbon_86 {
+.RewardsBlock_ribbon_df8d3 {
     display: flex;
     width: 100%;
     height: 100%;
@@ -1074,35 +1074,35 @@
     left: 0;
 }
 
-.RewardsBlock_rewards_1d {
+.RewardsBlock_rewards_a17d1 {
     display: flex;
 }
 
-.RewardsBlock_reward__big_2f {
+.RewardsBlock_reward__big_eec7e {
     margin: 0 17rem;
 }
 
-.PostProgressionContent_base_68 {
+.PostProgressionContent_base_a81bb {
     width: 440rem;
 }
-.PostProgressionContent_header_e2,
-.PostProgressionContent_content_30 {
+.PostProgressionContent_header_cd4dd,
+.PostProgressionContent_content_bcc72 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     padding: 5rem 28rem 0;
 }
-.PostProgressionContent_rewardsBlock_c7 {
+.PostProgressionContent_rewardsBlock_bcfa3 {
     margin: 18rem 0 15rem;
 }
-.PostProgressionContent_claim_1c {
+.PostProgressionContent_claim_eb125 {
     margin-bottom: 20rem;
 }
-.PostProgressionContent_separatorWrapper_a8 {
+.PostProgressionContent_separatorWrapper_a40cd {
     margin: 10rem -28rem 5rem;
 }
-.PostProgressionContent_unlockBattlePass_fa {
+.PostProgressionContent_unlockBattlePass_f27d9 {
     color: #cbac77;
     font-size: 14rem;
     font-weight: 400;

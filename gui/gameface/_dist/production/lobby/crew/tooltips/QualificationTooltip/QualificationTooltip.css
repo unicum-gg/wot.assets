@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,32 +11,32 @@
     position: relative;
 }
 
-.ExtendedText_base_71 {
+.ExtendedText_base_d9fc1 {
     display: flex;
     line-height: 1.2;
     position: relative;
 }
 
-.ExtendedText_base__zeroPadding_25 {
+.ExtendedText_base__zeroPadding_d1a1c {
     padding: 0;
 }
 
-.ExtendedText_base__isTruncationAvailable_5b {
+.ExtendedText_base__isTruncationAvailable_cb880 {
     width: 100%;
 }
 
-.ExtendedText_truncated_97 {
+.ExtendedText_truncated_a4268 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     position: relative;
 }
 
-.ExtendedText_truncated__hide_31 {
+.ExtendedText_truncated__hide_d75b4 {
     opacity: 0;
 }
 
-.ExtendedText_unTruncated_b8 {
+.ExtendedText_unTruncated_ff478 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -53,198 +53,198 @@
     pointer-events: none;
 }
 
-.ExtendedText_tooltip_91 {
+.ExtendedText_tooltip_b5abd {
     display: flex;
 }
 
-.ExtendedText_tooltip__justify-flex-start_00 {
+.ExtendedText_tooltip__justify-flex-start_ade81 {
     justify-content: flex-start;
 }
 
-.ExtendedText_tooltip__justify-center_08 {
+.ExtendedText_tooltip__justify-center_aa541 {
     justify-content: center;
 }
 
-.ExtendedText_tooltip__justify-flex-end_90 {
+.ExtendedText_tooltip__justify-flex-end_af6c3 {
     justify-content: flex-end;
 }
 
-.ExtendedText_tooltip__align-flex-start_40 {
+.ExtendedText_tooltip__align-flex-start_fbfc0 {
     align-content: flex-start;
 }
 
-.ExtendedText_tooltip__align-center_54 {
+.ExtendedText_tooltip__align-center_d5b4a {
     align-content: center;
 }
 
-.ExtendedText_tooltip__align-flex-end_d2 {
+.ExtendedText_tooltip__align-flex-end_fc0e0 {
     align-content: flex-end;
 }
 
-.colors_blackReal_fc {
+.colors_blackReal_a68be {
     color: #000000;
 }
 
-.colors_whiteReal_31 {
+.colors_whiteReal_f79f8 {
     color: #ffffff;
 }
 
-.colors_white_45 {
+.colors_white_b5c87 {
     color: #f2f2f7;
 }
 
-.colors_whiteOrange_81 {
+.colors_whiteOrange_ba58d {
     color: #fefeec;
 }
 
-.colors_whiteSpanish_c3 {
+.colors_whiteSpanish_fd764 {
     color: #e9e2bf;
 }
 
-.colors_par_5b {
+.colors_par_e836f {
     color: #8c8c7e;
 }
 
-.colors_parSecondary_fd {
+.colors_parSecondary_f260a {
     color: #595950;
 }
 
-.colors_parTertiary_97 {
+.colors_parTertiary_d47f7 {
     color: #37362e;
 }
 
-.colors_red_79 {
+.colors_red_c02cb {
     color: #ff2717;
 }
 
-.colors_redDark_73 {
+.colors_redDark_cdd63 {
     color: #b70000;
 }
 
-.colors_yellow_76 {
+.colors_yellow_ec93b {
     color: #feab34;
 }
 
-.colors_orange_cd {
+.colors_orange_bbde2 {
     color: #ee7000;
 }
 
-.colors_cream_0f {
+.colors_cream_e3bb8 {
     color: #ffdd99;
 }
 
-.colors_brown_82 {
+.colors_brown_bcb6a {
     color: #cbac77;
 }
 
-.colors_greenBright_68 {
+.colors_greenBright_e6055 {
     color: #80d43a;
 }
 
-.colors_green_fa {
+.colors_green_b6f21 {
     color: #7ab300;
 }
 
-.colors_greenDark_a9 {
+.colors_greenDark_ce9bf {
     color: #497212;
 }
 
-.colors_blueBooster_26 {
+.colors_blueBooster_b2848 {
     color: #ccffff;
 }
 
-.colors_blueTeamkiller_86 {
+.colors_blueTeamkiller_e7dd8 {
     color: #09e2ff;
 }
 
-.colors_cred_35 {
+.colors_cred_ddb07 {
     color: #ced9d9;
 }
 
-.colors_gold_c3 {
+.colors_gold_c405a {
     color: #ffc363;
 }
 
-.colors_bond_ce {
+.colors_bond_bb139 {
     color: #c9c9b6;
 }
 
-.colors_prom_83 {
+.colors_prom_d1186 {
     color: #a29b70;
 }
 
-.renderers_noBreakWrapper_10 {
+.renderers_noBreakWrapper_d986b {
     display: flex;
     flex-wrap: nowrap;
 }
 
-.renderers_lineBreak_b5 {
+.renderers_lineBreak_f90ed {
     width: 100%;
     height: 0;
 }
 
-.renderers_newLine_bd {
+.renderers_newLine_ee778 {
     flex: 1;
     width: 100%;
 }
 
-.renderers_word_f3 {
+.renderers_word_ac32d {
     white-space: pre;
     overflow-wrap: normal;
 }
 
-.RoleIcon_base_51 {
+.RoleIcon_base_dfff1 {
     background: no-repeat center / contain;
 }
 
-.RoleIcon_base__small_68 {
+.RoleIcon_base__small_a4262 {
     width: 13rem;
     height: 13rem;
 }
 
-.RoleIcon_base__c_14x14_8f {
+.RoleIcon_base__c_14x14_f9e09 {
     width: 14rem;
     height: 14rem;
 }
 
-.RoleIcon_base__c_18x18_0b {
+.RoleIcon_base__c_18x18_a626e {
     width: 18rem;
     height: 18rem;
 }
 
-.RoleIcon_base__c_24x24_new_fe,
-.RoleIcon_base__c_24x24_52 {
+.RoleIcon_base__c_24x24_new_bcf57,
+.RoleIcon_base__c_24x24_acd19 {
     width: 24rem;
     height: 24rem;
 }
 
-.RoleIcon_base__c_30x30_red_85,
-.RoleIcon_base__c_30x30_e9 {
+.RoleIcon_base__c_30x30_red_b2d4c,
+.RoleIcon_base__c_30x30_bb8b2 {
     width: 30rem;
     height: 30rem;
 }
 
-.RoleIcon_base__c_40x40_99 {
+.RoleIcon_base__c_40x40_b7c41 {
     width: 40rem;
     height: 40rem;
 }
 
-.RoleIcon_base__medium_5d {
+.RoleIcon_base__medium_c4adb {
     width: 33rem;
     height: 33rem;
 }
 
-.RoleIcon_base__white_2a {
+.RoleIcon_base__white_edcf3 {
     width: 44rem;
     height: 44rem;
 }
 
-.RoleIcon_base__big_b4 {
+.RoleIcon_base__big_eccb9 {
     width: 60rem;
     height: 60rem;
 }
 
-.QualificationTooltipApp_base_01 {
+.QualificationTooltipApp_base_c40c2 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -253,22 +253,22 @@
     padding: 20rem 0;
 }
 
-.QualificationTooltipApp_header_0e {
+.QualificationTooltipApp_header_d5ed2 {
     display: flex;
     padding: 0 20rem;
 }
 
-.QualificationTooltipApp_roleIcon_d3 {
+.QualificationTooltipApp_roleIcon_e245e {
     margin-right: 14rem;
     opacity: 0.6;
 }
 
-.QualificationTooltipApp_titles_ab {
+.QualificationTooltipApp_titles_aaff6 {
     display: flex;
     flex-direction: column;
 }
 
-.QualificationTooltipApp_roleLabel_1e {
+.QualificationTooltipApp_roleLabel_b27e6 {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -276,7 +276,7 @@
     margin-bottom: 2rem;
 }
 
-.QualificationTooltipApp_description_ee {
+.QualificationTooltipApp_description_e9cf8 {
     display: flex;
     justify-content: center;
     margin-top: 16rem;
@@ -291,17 +291,17 @@
     position: relative;
 }
 
-.QualificationTooltipApp_divider_df {
+.QualificationTooltipApp_divider_e99d6 {
     width: 363rem;
     height: 9rem;
     background: url('R.images.gui.maps.icons.tooltip.tooltip_perks_divider') no-repeat center / contain;
     position: absolute;
 }
 
-.QualificationTooltipApp_divider__top_0e {
+.QualificationTooltipApp_divider__top_f0a06 {
     top: -5rem;
 }
 
-.QualificationTooltipApp_divider__bottom_d3 {
+.QualificationTooltipApp_divider__bottom_bc67f {
     bottom: -5rem;
 }

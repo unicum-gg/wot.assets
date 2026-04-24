@@ -1,5 +1,5 @@
-import { j as o, f as e } from '../../../../chunks/vendor.js';
-import { i as s, n as i, aM as n, an as r, aG as t, aK as a } from '../../../../chunks/lib.js';
+import { j as o, t as e } from '../../../../chunks/vendor.js';
+import { i as s, n as i, aN as r, ao as n, aH as t, aL as a } from '../../../../chunks/lib.js';
 const [c, d] = s()(({ observableModel: o }) => o.primitives(['icon', 'header', 'description']), i),
     p = 'MinorShortTooltipApp_c7f66d5d',
     l = 'MinorShortTooltipApp_icon_e512c4',
@@ -10,8 +10,8 @@ const [c, d] = s()(({ observableModel: o }) => o.primitives(['icon', 'header', '
 function x() {
     const { model: s } = d(),
         i = s.icon.get();
-    return o.jsx(n, {
-        children: o.jsx(n.Decorator, {
+    return o.jsx(r, {
+        children: o.jsx(r.Decorator, {
             children: o.jsxs('div', {
                 className: p,
                 children: [
@@ -20,7 +20,7 @@ function x() {
                         className: e(h, !i && _),
                         children: [
                             o.jsx('div', { className: m, children: s.header.get() }),
-                            o.jsx(r, { className: j, text: s.description.get() }),
+                            o.jsx(n, { className: j, text: s.description.get() }),
                         ],
                     }),
                 ],

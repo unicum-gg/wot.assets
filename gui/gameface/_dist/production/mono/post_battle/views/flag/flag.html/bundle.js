@@ -1,4 +1,4 @@
-import { F as e, j as s, e as a } from '../../../chunks/vendor.js';
+import { J as e, j as s, e as a } from '../../../chunks/vendor.js';
 import { i as o, c as t, s as i, d as r, r as n, u as c, V as p, J as l, M as d, a as _ } from '../../../chunks/lib.js';
 import { s as b, r as u, a as m, W as v } from '../../../chunks/flag_view_model.js';
 /* empty css                    */ const [h, f] = o()(({ observableModel: e }) => {

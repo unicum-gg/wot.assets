@@ -1,35 +1,35 @@
-import { e, r as a, j as s, p as t } from '../../../chunks/vendor.js';
+import { k as e, r as a, j as s, e as t, q as n } from '../../../chunks/vendor.js';
 import {
-    i as n,
-    r as i,
-    p as r,
-    T as o,
-    s as l,
-    I as d,
-    j as c,
-    w as _,
-    x as m,
-    W as u,
-    B as g,
+    i,
+    r,
+    p as o,
+    T as l,
+    s as d,
+    I as c,
+    j as _,
+    w as m,
+    x as u,
+    Q as g,
+    B as p,
     N as b,
-    M as p,
+    M as f,
 } from '../../../chunks/lib.js';
-var f = ((e) => (
+var w = ((e) => (
         (e[(e.Undone = 0)] = 'Undone'),
         (e[(e.PartialDone = 1)] = 'PartialDone'),
         (e[(e.Done = 2)] = 'Done'),
         e
-    ))(f || {}),
-    w = ((e) => (
+    ))(w || {}),
+    v = ((e) => (
         (e[(e.Init = 0)] = 'Init'),
         (e[(e.TitleAndRewards = 1)] = 'TitleAndRewards'),
         (e[(e.Done = 2)] = 'Done'),
         e
-    ))(w || {});
-function v(a, s, t) {
+    ))(v || {});
+function x(a, s, t) {
     return e(a, t >= 1 && s.base__animTitleAndRewards, t >= 2 && s.base__done);
 }
-const [x, T] = n()(
+const [T, j] = i()(
         ({ observableModel: e }) => ({
             ...{
                 ...e.primitives([
@@ -50,37 +50,34 @@ const [x, T] = n()(
         }),
         ({ externalModel: e }) => ({ close: e.createCallbackNoArgs('onClose') }),
     ),
-    j = {
+    h = {
         base: 'NoReward_df5f369d',
         base__animTitleAndRewards: 'NoReward_base__animTitleAndRewards_33d8d8dc',
         item: 'NoReward_item_609c8ec6',
         item__got: 'NoReward_item__got_2dcf33e6',
     },
-    h = i.resolve('strings'),
-    N = {
-        [f.Undone]: h.readOrEmpty('maps_training.result.rewardNotGot'),
-        [f.PartialDone]: h.readOrEmpty('maps_training.result.rewardGot'),
-        [f.Done]: h.readOrEmpty('maps_training.result.allRewardGot'),
+    N = r.resolve('strings'),
+    y = {
+        [w.Undone]: N.readOrEmpty('maps_training.result.rewardNotGot'),
+        [w.PartialDone]: N.readOrEmpty('maps_training.result.rewardGot'),
+        [w.Done]: N.readOrEmpty('maps_training.result.allRewardGot'),
     };
-function y({ rewardGot: a, doneValue: t, wasDone: n, animState: i }) {
+function I({ rewardGot: e, doneValue: a, wasDone: n, animState: i }) {
     return s.jsx('div', {
-        className: v(j.base, j, i),
+        className: x(h.base, h, i),
         children: s.jsx('div', {
-            className: e(j.item, (a || n) && j.item__got),
-            children: n ? h.readOrEmpty('maps_training.result.allRewardGot') : N[t],
+            className: t(h.item, (e || n) && h.item__got),
+            children: n ? N.readOrEmpty('maps_training.result.allRewardGot') : y[a],
         }),
     });
 }
-const I = {
-        base: 'Reward_9adeba6d',
-        base__animTitleAndRewards: 'Reward_base__animTitleAndRewards_5453263b',
-        icon: 'Reward_icon_14f53da',
-        info: 'Reward_info_ecc88b80',
-    },
-    S = 1.2,
-    k = 1e3,
-    D = 0.3;
-function A({ image: e, value: t, tooltipId: n, animState: i, index: l, onAnimationCompete: d }) {
+const S = {
+    base: 'Reward_9adeba6d',
+    base__animTitleAndRewards: 'Reward_base__animTitleAndRewards_5453263b',
+    icon: 'Reward_icon_14f53da',
+    info: 'Reward_info_ecc88b80',
+};
+function D({ image: e, value: t, tooltipId: n, animState: i, index: r, onAnimationCompete: d }) {
     const c = (function (e) {
             const s = a.useRef(null),
                 t = a.useCallback(
@@ -112,15 +109,15 @@ function A({ image: e, value: t, tooltipId: n, animState: i, index: l, onAnimati
             },
             [n],
         ),
-        m = S + D * l,
-        u = i > w.Init;
+        m = 1.2 + 0.3 * r,
+        u = i > v.Init;
     return (
         a.useEffect(
             function () {
                 if (u) {
                     const e = setTimeout(function () {
-                        r.sound(R.sounds.gui_random_reward_appear());
-                    }, m * k);
+                        o.sound(R.sounds.gui_random_reward_appear());
+                    }, 1e3 * m);
                     return function () {
                         clearTimeout(e);
                     };
@@ -128,35 +125,35 @@ function A({ image: e, value: t, tooltipId: n, animState: i, index: l, onAnimati
             },
             [m, u],
         ),
-        s.jsx(o, {
+        s.jsx(l, {
             ignoreShowDelay: !0,
             ignoreMouseClick: !0,
             contentId: R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent('resId'),
             decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
             args: _,
             children: s.jsxs('div', {
-                className: v(I.base, I, i),
+                className: x(S.base, S, i),
                 style: { transitionDelay: `${m}s` },
                 ref: c,
                 children: [
-                    s.jsx('div', { className: I.icon, style: { backgroundImage: `url(${e})` } }),
-                    Number(t) > 1 && s.jsx('div', { className: I.info, children: t }),
+                    s.jsx('div', { className: S.icon, style: { backgroundImage: `url(${e})` } }),
+                    Number(t) > 1 && s.jsx('div', { className: S.info, children: t }),
                 ],
             }),
         })
     );
 }
-const E = {
+const k = {
     base: 'ResultRewards_85664010',
     base__animTitleAndRewards: 'ResultRewards_base__animTitleAndRewards_dcbfbde',
     ribbon: 'ResultRewards_ribbon_58ccf247',
     rewards: 'ResultRewards_rewards_14b6654c',
 };
-function M({ doneValue: e, wasDone: t, animState: n, onAnimationCompete: i }) {
-    const r = T().model.rewards.get(),
+function A({ doneValue: e, wasDone: t, animState: n, onAnimationCompete: i }) {
+    const r = j().model.rewards.get(),
         o = r.length > 0,
-        c = e !== f.Undone,
-        _ = n > w.Init,
+        l = e !== w.Undone,
+        _ = n > v.Init,
         m = (function (e, s) {
             const [t, n] = a.useState(0);
             return a.useCallback(
@@ -171,7 +168,7 @@ function M({ doneValue: e, wasDone: t, animState: n, onAnimationCompete: i }) {
         a.useEffect(
             function () {
                 if (!o && i && _) {
-                    const e = setTimeout(i, S * k);
+                    const e = setTimeout(i, 1200);
                     return function () {
                         clearTimeout(e);
                     };
@@ -180,19 +177,19 @@ function M({ doneValue: e, wasDone: t, animState: n, onAnimationCompete: i }) {
             [_, o, i],
         ),
         s.jsx('div', {
-            className: v(E.base, E, n),
+            className: x(k.base, k, n),
             children: o
                 ? s.jsxs(s.Fragment, {
                       children: [
-                          s.jsx('div', { className: E.ribbon }),
+                          s.jsx('div', { className: k.ribbon }),
                           s.jsx('div', {
-                              className: E.rewards,
+                              className: k.rewards,
                               children: r.map((e, a) =>
                                   s.jsx(
-                                      A,
+                                      D,
                                       {
                                           index: a,
-                                          image: l(e, d.Big),
+                                          image: d(e, c.Big),
                                           value: e.value,
                                           tooltipId: e.tooltipId,
                                           animState: n,
@@ -204,11 +201,11 @@ function M({ doneValue: e, wasDone: t, animState: n, onAnimationCompete: i }) {
                           }),
                       ],
                   })
-                : s.jsx(y, { animState: n, doneValue: e, rewardGot: c, wasDone: t }),
+                : s.jsx(I, { animState: n, doneValue: e, rewardGot: l, wasDone: t }),
         })
     );
 }
-const C = {
+const E = {
         root: 'StatItem_root_8e756938',
         base: 'StatItem_a31bdbd0',
         base__animTitleAndRewards: 'StatItem_base__animTitleAndRewards_74e8ec86',
@@ -219,80 +216,76 @@ const C = {
         valueAll: 'StatItem_valueAll_868af080',
         description: 'StatItem_description_76994ec8',
     },
-    O = i.resolve('strings');
-var $ = ((e) => ((e.Destroy = 'destroy'), (e.Timer = 'timer'), e))($ || {});
-const G = 0.9,
-    V = 0.1;
-function P({ value: a, label: t, icon: n, index: i, animState: r, all: o }) {
-    const l = c(O.readOrEmpty('maps_training.progress'), { currentProgress: a, maxProgress: o });
+    M = r.resolve('strings');
+var C = ((e) => ((e.Destroy = 'destroy'), (e.Timer = 'timer'), e))(C || {});
+function O({ value: e, label: a, icon: n, index: i, animState: r, all: o }) {
+    const l = _(M.readOrEmpty('maps_training.progress'), { currentProgress: e, maxProgress: o });
     return s.jsxs('div', {
-        className: v(C.base, C, r),
-        style: { transitionDelay: `${G + V * i}s` },
+        className: x(E.base, E, r),
+        style: { transitionDelay: 0.9 + 0.1 * i + 's' },
         children: [
-            s.jsx('div', { className: e(C.icon, C[`icon__${n}`]) }),
+            s.jsx('div', { className: t(E.icon, E[`icon__${n}`]) }),
             s.jsx('div', {
-                className: C.value,
-                children: void 0 !== o && o > 0 ? s.jsx('div', { className: C.valueAll, children: l }) : a,
+                className: E.value,
+                children: void 0 !== o && o > 0 ? s.jsx('div', { className: E.valueAll, children: l }) : e,
             }),
-            s.jsx('div', { className: C.description, children: t }),
+            s.jsx('div', { className: E.description, children: a }),
         ],
     });
 }
-const B = {
-    base: 'Tank_64c86de0',
-    wrap: 'Tank_wrap_51cfa705',
-    image: 'Tank_image_20e440df',
-    bg: 'Tank_bg_73a7932a',
-    bg__back: 'Tank_bg__back_9e9e3ca6',
-    base__defeat: 'Tank_base__defeat_ac0a1e29',
-    bg__foreground: 'Tank_bg__foreground_e800b10c',
-    back: 'Tank_back_29d05476',
-};
-function U({ vehicleImage: a, isAnyNotDone: t }) {
+const G = 'Tank_64c86de0',
+    V = 'Tank_wrap_51cfa705',
+    $ = 'Tank_image_20e440df',
+    P = 'Tank_bg_73a7932a',
+    B = 'Tank_bg__back_9e9e3ca6',
+    U = 'Tank_base__defeat_ac0a1e29',
+    F = 'Tank_bg__foreground_e800b10c',
+    W = 'Tank_back_29d05476';
+function z({ vehicleImage: e, isAnyNotDone: a }) {
     return s.jsxs('div', {
-        className: e(B.base, t && B.base__defeat),
+        className: t(G, a && U),
         children: [
-            s.jsx('div', { className: e(B.bg, B.bg__back) }),
+            s.jsx('div', { className: t(P, B) }),
             s.jsx('div', {
-                className: B.wrap,
-                children: s.jsx('div', { className: B.image, style: { backgroundImage: `url(${a})` } }),
+                className: V,
+                children: s.jsx('div', { className: $, style: { backgroundImage: `url(${e})` } }),
             }),
-            s.jsx('div', { className: e(B.bg, B.bg__foreground) }),
-            s.jsx('div', { className: B.back }),
+            s.jsx('div', { className: t(P, F) }),
+            s.jsx('div', { className: W }),
         ],
     });
 }
-const W = {
+const L = {
         base: 'ResultStats_e4f76c93',
         base__animTitleAndRewards: 'ResultStats_base__animTitleAndRewards_e6090ee9',
         stats: 'ResultStats_stats_9b9ef8ba',
         separator: 'ResultStats_separator_6f7d9820',
         separator__failed: 'ResultStats_separator__failed_989f1494',
     },
-    F = i.resolve('strings');
-function z({ animState: a, hasReward: t }) {
-    const n = T().model,
+    q = r.resolve('strings');
+function Q({ animState: e, hasReward: a }) {
+    const n = j().model,
         i = n.kills.get(),
         r = n.time.get(),
         o = n.allTargets.get(),
         l = [
-            { label: F.readOrEmpty('maps_training.result.kills'), value: i, all: o, icon: $.Destroy },
-            { label: F.readOrEmpty('maps_training.result.time'), value: r, icon: $.Timer },
+            { label: q.readOrEmpty('maps_training.result.kills'), value: i, all: o, icon: C.Destroy },
+            { label: q.readOrEmpty('maps_training.result.time'), value: r, icon: C.Timer },
         ],
-        d = n.doneValue.get() !== f.Done;
+        d = n.doneValue.get() !== w.Done;
     return s.jsxs('div', {
-        className: e(v(W.base, W, a), d && W.base__defeat),
+        className: t(x(L.base, L, e), d && L.base__defeat),
         children: [
-            s.jsx(U, { vehicleImage: n.vehicleImage.get(), isAnyNotDone: d }),
+            s.jsx(z, { vehicleImage: n.vehicleImage.get(), isAnyNotDone: d }),
             s.jsx('div', {
-                className: W.stats,
-                children: l.map((e, t) => s.jsx(P, { index: t, animState: a, ...e }, `item_${t}`)),
+                className: L.stats,
+                children: l.map((a, t) => s.jsx(O, { index: t, animState: e, ...a }, `item_${t}`)),
             }),
-            !t && s.jsx('div', { className: e(W.separator, d && W.separator__failed) }),
+            !a && s.jsx('div', { className: t(L.separator, d && L.separator__failed) }),
         ],
     });
 }
-const L = {
+const H = {
         base: 'MapsTrainingResult_15b08403',
         bg: 'MapsTrainingResult_bg_cc8b01b4',
         bgFogging: 'MapsTrainingResult_bgFogging_e9f701a4',
@@ -302,91 +295,91 @@ const L = {
         mapTitle: 'MapsTrainingResult_mapTitle_9022ef51',
         titleWrapper: 'MapsTrainingResult_titleWrapper_10cffc1b',
         titleBG: 'MapsTrainingResult_titleBG_8d4d9b39',
-        title: 'MapsTrainingResult_title_2d317224',
+        title: 'MapsTrainingResult_title_dda0f6aa',
         close: 'MapsTrainingResult_close_4c7f7d48',
         button: 'MapsTrainingResult_button_5ef0f480',
     },
-    q = i.resolve('strings'),
-    H = {
-        [f.Undone]: q.readOrEmpty('maps_training.result.title.lose'),
-        [f.PartialDone]: q.readOrEmpty('maps_training.result.title.partial'),
-        [f.Done]: q.readOrEmpty('maps_training.result.title.win'),
+    J = r.resolve('strings'),
+    K = {
+        [w.Undone]: J.readOrEmpty('maps_training.result.title.lose'),
+        [w.PartialDone]: J.readOrEmpty('maps_training.result.title.partial'),
+        [w.Done]: J.readOrEmpty('maps_training.result.title.win'),
     },
-    J = t(function () {
-        const { model: e, controls: t } = T(),
-            [n, i] = a.useState(w.Init),
-            o = e.doneValue.get(),
+    X = n(function () {
+        const { model: e, controls: t } = j(),
+            [n, i] = a.useState(v.Init),
+            r = e.doneValue.get(),
             l = e.hangarReady.get(),
             d = e.wasDone.get(),
-            b = e.mapID.get(),
-            p = e.mapName.get(),
-            x = o === f.Done,
-            j = e.rewards.get().length > 0;
+            c = e.mapID.get(),
+            b = e.mapName.get(),
+            f = r === w.Done,
+            T = e.rewards.get().length > 0;
         a.useEffect(
             function () {
-                n === w.Init &&
+                n === v.Init &&
                     l &&
-                    (i(w.TitleAndRewards),
-                    r.sound(
-                        x
+                    (i(v.TitleAndRewards),
+                    o.sound(
+                        f
                             ? R.sounds.gui_random_reward_red_ribbon_appear()
                             : R.sounds.gui_hangar_simple_execution_screen(),
                     ));
             },
-            [n, l, x],
+            [n, l, f],
         );
         const h = a.useCallback(
             function () {
-                (j || x ? r.sound(R.sounds.gui_random_reward_end()) : d && r.sound(R.sounds.gui_random_reward_appear()),
-                    i(w.Done));
+                (T || f ? o.sound(R.sounds.gui_random_reward_end()) : d && o.sound(R.sounds.gui_random_reward_appear()),
+                    i(v.Done));
             },
-            [j, x, d],
+            [T, f, d],
         );
-        _(m.ESCAPE, t.close);
+        m(u.ESCAPE, t.close);
         const N = a.useMemo(
                 function () {
-                    return b ? { backgroundImage: `url(img://gui/maps/icons/map/screen/${b}.dds)` } : {};
+                    return c ? { backgroundImage: `url(img://gui/maps/icons/map/screen/${c}.dds)` } : {};
                 },
-                [b],
+                [c],
             ),
-            y = c(q.readOrEmpty('maps_training.result.mapName'), {
-                map: p,
+            y = _(J.readOrEmpty('maps_training.result.mapName'), {
+                map: b,
                 scenario: e.selectedScenario.get(),
                 type: e.selectedVehicleType.get(),
             }),
-            I = v(L.base, L, n);
+            I = x(H.base, H, n);
         return s.jsxs('div', {
             className: I,
             children: [
-                s.jsx('div', { className: L.close, children: s.jsx(u, { onClose: t.close }) }),
+                s.jsx('div', { className: H.close, children: s.jsx(g, { onClose: t.close }) }),
                 s.jsxs('div', {
-                    className: L.bg,
+                    className: H.bg,
                     style: N,
-                    children: [s.jsx('div', { className: L.bgFogging }), x && s.jsx('div', { className: L.bgShape })],
+                    children: [s.jsx('div', { className: H.bgFogging }), f && s.jsx('div', { className: H.bgShape })],
                 }),
                 s.jsxs('div', {
-                    className: L.box,
+                    className: H.box,
                     children: [
-                        s.jsx('div', { className: L.mapTitle, children: y }),
+                        s.jsx('div', { className: H.mapTitle, children: y }),
                         s.jsxs('div', {
-                            className: L.titleWrapper,
+                            className: H.titleWrapper,
                             children: [
-                                x && s.jsx('div', { className: L.titleBG }),
-                                s.jsx('div', { className: L.title, children: H[o] }),
+                                f && s.jsx('div', { className: H.titleBG }),
+                                s.jsx('div', { className: H.title, children: K[r] }),
                             ],
                         }),
-                        s.jsx(z, { hasReward: j, animState: n }),
-                        s.jsx(M, { animState: n, doneValue: o, wasDone: d, onAnimationCompete: h }),
+                        s.jsx(Q, { hasReward: T, animState: n }),
+                        s.jsx(A, { animState: n, doneValue: r, wasDone: d, onAnimationCompete: h }),
                     ],
                 }),
-                s.jsx(g, {
-                    className: L.button,
-                    theme: g.themes.primary,
-                    size: g.sizes.small,
+                s.jsx(p, {
+                    className: H.button,
+                    theme: p.themes.primary,
+                    size: p.sizes.small,
                     onClick: t.close,
-                    children: q.readOrEmpty('maps_training.result.submit'),
+                    children: J.readOrEmpty('maps_training.result.submit'),
                 }),
             ],
         });
     });
-b(s.jsx(p, { children: s.jsx(x, { children: s.jsx(J, {}) }) }));
+b(s.jsx(f, { children: s.jsx(T, { children: s.jsx(X, {}) }) }));

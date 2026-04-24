@@ -1,7 +1,7 @@
-import { j as s, s as e, r as a, F as i, f as c, m as l } from '../../../../chunks/vendor.js';
+import { j as s, t as e, r as a, G as i, f as c, n as l } from '../../../../chunks/vendor.js';
 import {
-    c as o,
-    i as n,
+    c as n,
+    i as o,
     J as t,
     aF as d,
     Q as r,
@@ -23,10 +23,10 @@ const u = 'Description_9a429ac6',
             children: [
                 s.jsx('div', { className: v, children: a }),
                 s.jsx('div', { className: f, style: { backgroundImage: `url(${e})` } }),
-                s.jsx('div', { className: N, children: i && o(i) }),
+                s.jsx('div', { className: N, children: i && n(i) }),
             ],
         }),
-    [C, g] = n()(
+    [C, g] = o()(
         ({ observableModel: s }) => {
             const e = { slides: s.arrayClone('slides'), ...s.primitives(['title', 'buttonLabel']) },
                 a = t.shallow((s) => {
@@ -46,12 +46,12 @@ const u = 'Description_9a429ac6',
     S = 'App_arrowButton__left_1ff87043',
     $ = 'App_arrowButton__disabled_6db15a44',
     I = e(function () {
-        const { model: e, controls: o } = g(),
-            [n, t] = a.useState(0),
+        const { model: e, controls: n } = g(),
+            [o, t] = a.useState(0),
             d = e.slides.get().length;
-        (p(m.ESCAPE, o.onClose), p(m.ENTER, o.onClose));
-        const r = i(n, {
-            key: n,
+        (p(m.ESCAPE, n.onClose), p(m.ENTER, n.onClose));
+        const r = i(o, {
+            key: o,
             from: { opacity: 0 },
             enter: { opacity: 1 },
             leave: { opacity: 0 },
@@ -64,8 +64,8 @@ const u = 'Description_9a429ac6',
                     className: k,
                     children: [
                         s.jsx(_, {
-                            classNames: { base: c(E, S, 0 === n && $) },
-                            disabled: 0 === n,
+                            classNames: { base: c(E, S, 0 === o && $) },
+                            disabled: 0 === o,
                             theme: b.secondary,
                             onClick: () => {
                                 t((s) => s - 1);
@@ -85,8 +85,8 @@ const u = 'Description_9a429ac6',
                             ),
                         }),
                         s.jsx(_, {
-                            classNames: { base: c(E, n === d - 1 && $) },
-                            disabled: n === d - 1,
+                            classNames: { base: c(E, o === d - 1 && $) },
+                            disabled: o === d - 1,
                             theme: b.secondary,
                             onClick: () => {
                                 t((s) => s + 1);
@@ -94,7 +94,7 @@ const u = 'Description_9a429ac6',
                         }),
                     ],
                 }),
-                s.jsx(_, { size: h.medium, theme: b.primary, onClick: o.onClose, children: e.buttonLabel.get() }),
+                s.jsx(_, { size: h.medium, theme: b.primary, onClick: n.onClose, children: e.buttonLabel.get() }),
             ],
         });
     });

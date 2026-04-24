@@ -1,25 +1,25 @@
-import { q as e, j as t, t as i, R as a, v as s, r as l } from '../../../chunks/vendor.js';
+import { h as e, j as t, f as i, R as a, t as s, r as l } from '../../../chunks/vendor.js';
 import {
     i as r,
-    O as o,
-    h as n,
+    h as o,
+    au as n,
     m as c,
-    bp as g,
-    aU as p,
+    b2 as g,
+    aB as p,
     F as m,
-    bj as _,
-    bk as b,
-    t as d,
-    bq as f,
-    br as h,
+    b3 as _,
+    b4 as b,
+    aU as d,
+    b5 as f,
+    b6 as h,
     e as u,
     f as y,
-    q as x,
-    D as v,
-    N as k,
+    aQ as x,
+    aR as v,
+    aJ as k,
     U as j,
     r as N,
-    a_ as P,
+    aK as P,
 } from '../../../chunks/lib.js';
 import { S as T } from '../../../chunks/enums.js';
 /* empty css                     */ const [w, D] = r()(
@@ -38,17 +38,12 @@ import { S as T } from '../../../chunks/enums.js';
                 }),
                 s = o.shallow(
                     () => {
-                        var e;
-                        const t =
-                            null ==
-                            (e = n(
-                                c(i.bp.get(), (e) => e),
-                                0,
-                            ))
-                                ? void 0
-                                : e.tableRows;
-                        if (!t) throw Error('Tables of BP are undefined');
-                        return t;
+                        const e = n(
+                            c(i.bp.get(), (e) => e),
+                            0,
+                        )?.tableRows;
+                        if (!e) throw Error('Tables of BP are undefined');
+                        return e;
                     },
                     { equals: g },
                 ),
@@ -267,12 +262,12 @@ import { S as T } from '../../../chunks/enums.js';
         title: R.strings.battle_royale_infopage.articleBP.title(),
         subtitles: [{ subtitle: R.strings.battle_royale_infopage.articleBP.subtitle() }],
     },
-    W = {
+    K = {
         title: R.strings.battle_royale_infopage.pointsBPDetailsSettings.title(),
         textBlock: [{ text: R.strings.battle_royale_infopage.pointsBPDetailsSettings.subtitle() }],
         imagePath: R.images.battle_royale.gui.maps.infopage.pointsBP(),
     },
-    K = {
+    W = {
         textBlock: [
             {
                 text: R.strings.battle_royale_infopage.respawn.text(),
@@ -293,7 +288,7 @@ import { S as T } from '../../../chunks/enums.js';
         title: R.strings.battle_royale_infopage.tableBPDetailsSettings.title(),
         subtitles: [{ subtitle: R.strings.battle_royale_infopage.tableBPDetailsSettings.subtitle() }],
     },
-    q = {
+    L = {
         default: {
             title: R.strings.battle_royale_infopage.pointsSHDetailsSettings.title(),
             subtitles: [{ subtitle: R.strings.battle_royale_infopage.pointsSHDetailsSettings.subtitle() }],
@@ -303,7 +298,7 @@ import { S as T } from '../../../chunks/enums.js';
             subtitles: [{ subtitle: R.strings.battle_royale_infopage.pointsSHDetailsSettings.stPatrick.subtitle() }],
         },
     },
-    L = {
+    E = {
         title: R.strings.battle_royale_infopage.marauders.title(),
         textBlock: [{ text: R.strings.battle_royale_infopage.marauders.text() }],
         list: [
@@ -314,7 +309,7 @@ import { S as T } from '../../../chunks/enums.js';
         footer: R.strings.battle_royale_infopage.marauders.footer(),
         imagePath: R.images.battle_royale.gui.maps.infopage.marauders(),
     },
-    E = {
+    $ = {
         default: R.strings.battle_royale_infopage.footer(),
         stPatrick: R.strings.battle_royale_infopage.stPatrickFooter(),
     },
@@ -330,24 +325,20 @@ import { S as T } from '../../../chunks/enums.js';
         accent: 'Article_accent_c8f4f12c',
         divider: 'Article_divider_c3c15108',
     },
-    $ = ({ description: e, className: s, classNames: l, mapsStyle: r }) =>
+    U = ({ description: e, className: s, classNames: l, mapsStyle: r }) =>
         t.jsxs('div', {
-            className: i(O.base, null == l ? void 0 : l.alignCenter, s),
+            className: i(O.base, l?.alignCenter, s),
             children: [
                 t.jsxs('div', {
-                    className: i(O.head, null == l ? void 0 : l.head),
+                    className: i(O.head, l?.head),
                     children: [
-                        t.jsx('div', { className: i(O.title, null == l ? void 0 : l.title), children: e.title }),
+                        t.jsx('div', { className: i(O.title, l?.title), children: e.title }),
                         e.subtitles.map(({ subtitle: e }, i) =>
                             t.jsx(
                                 'div',
                                 {
                                     className: O.subtitle,
-                                    children: t.jsx(p, {
-                                        text: e,
-                                        split: !0,
-                                        className: null == l ? void 0 : l.alignCenter,
-                                    }),
+                                    children: t.jsx(p, { text: e, split: !0, className: l?.alignCenter }),
                                 },
                                 i,
                             ),
@@ -368,15 +359,8 @@ import { S as T } from '../../../chunks/enums.js';
                                             {
                                                 className: O.imageContainer,
                                                 children: [
-                                                    t.jsx('img', {
-                                                        className: i(O.image, null == l ? void 0 : l.image),
-                                                        src: e,
-                                                        alt: s,
-                                                    }),
-                                                    t.jsx('div', {
-                                                        className: i(O.text, null == l ? void 0 : l.text),
-                                                        children: s,
-                                                    }),
+                                                    t.jsx('img', { className: i(O.image, l?.image), src: e, alt: s }),
+                                                    t.jsx('div', { className: i(O.text, l?.text), children: s }),
                                                     r && t.jsx('div', { className: O.subtitle, children: r }),
                                                 ],
                                             },
@@ -391,56 +375,49 @@ import { S as T } from '../../../chunks/enums.js';
                     }),
             ],
         }),
-    U = 'Details_82317705',
-    Y = 'Details_base__reverse_e972fe9f',
-    X = 'Details_base__noIndent_ee7aedc9',
-    J = 'Details_title_b7b0344f',
-    Q = 'Details_subtitle_90dc25e7',
+    Y = 'Details_82317705',
+    q = 'Details_base__reverse_e972fe9f',
+    J = 'Details_base__noIndent_ee7aedc9',
+    Q = 'Details_title_b7b0344f',
+    X = 'Details_subtitle_90dc25e7',
     ee = 'Details_text_96c8da9a',
     te = 'Details_image_e176a953',
     ie = 'Details_description_27a0d131',
     ae = 'Details_devider_eb6cc254',
     se = 'Details_textBlock_51423ea5',
-    le = ({ description: e, reverse: a, smallImage: s, classNames: l, className: r, binding: o }) => {
-        var n;
-        return t.jsxs('div', {
-            className: i(U, a && Y, s && X, r),
+    le = ({ description: e, reverse: a, smallImage: s, classNames: l, className: r, binding: o }) =>
+        t.jsxs('div', {
+            className: i(Y, a && q, s && J, r),
             children: [
                 t.jsxs('div', {
-                    className: i(ie, null == l ? void 0 : l.description),
+                    className: i(ie, l?.description),
                     children: [
-                        e.title &&
-                            t.jsx('div', { className: i(J, null == l ? void 0 : l.titleStyling), children: e.title }),
+                        e.title && t.jsx('div', { className: i(Q, l?.titleStyling), children: e.title }),
                         e.textBlock.map(({ subtitle: e, text: i }, a) =>
                             t.jsxs(
                                 'div',
                                 {
                                     className: se,
                                     children: [
-                                        e && t.jsx('div', { className: Q, children: e }),
+                                        e && t.jsx('div', { className: X, children: e }),
                                         i &&
                                             t.jsx('div', {
                                                 className: ee,
-                                                children: t.jsx(p, { params: o, text: i, split: !0 }),
+                                                children: t.jsx(m, { binding: o, text: i }),
                                             }),
                                     ],
                                 },
                                 a,
                             ),
                         ),
-                        null == (n = e.list)
-                            ? void 0
-                            : n.map((e, i) =>
-                                  t.jsx('div', { className: ee, children: t.jsx(p, { text: e, split: !0 }) }, i),
-                              ),
+                        e.list?.map((e, i) => t.jsx('div', { className: ee, children: t.jsx(m, { text: e }) }, i)),
                         e.footer && t.jsx('div', { className: ee, children: e.footer }),
                     ],
                 }),
                 t.jsx('div', { className: ae }),
-                t.jsx('img', { className: i(!s && te, null == l ? void 0 : l.image), src: e.imagePath, alt: e.title }),
+                t.jsx('img', { className: i(!s && te, l?.image), src: e.imagePath, alt: e.title }),
             ],
-        });
-    },
+        }),
     re = 'InfoBlock_bc3a412a',
     oe = 'InfoBlock_cardsWrapper_f2cef6b3',
     ne = 'InfoBlock_card_77d87e0a',
@@ -493,10 +470,10 @@ import { S as T } from '../../../chunks/enums.js';
     fe = 'Header_8ee81185',
     he = 'Header_title_7819f4a0',
     ue = 'Header_subtitle_3cf5efe9',
-    ye = 'Header_eventTime_780cc4d5',
+    ye = 'Header_eventTime_12062330',
     xe = 'Header_container_500d6c3d',
-    ve = 'Header_video_60c6b98f',
-    Re = 'Header_preview_a64158df',
+    Re = 'Header_video_60c6b98f',
+    ve = 'Header_preview_a64158df',
     ke = s(() => {
         const { controls: e, model: i } = D(),
             { openVideo: a } = e,
@@ -530,7 +507,7 @@ import { S as T } from '../../../chunks/enums.js';
                     },
                     onMouseEnter: () => d.highlight(),
                     className: xe,
-                    children: [t.jsx('div', { className: Re }), t.jsx('div', { className: ve })],
+                    children: [t.jsx('div', { className: ve }), t.jsx('div', { className: Re })],
                 }),
             ],
         });
@@ -672,14 +649,14 @@ import { S as T } from '../../../chunks/enums.js';
             ],
         }),
     Fe = 'TableSh_ef0a0d78',
-    We = s(() => {
+    Ke = s(() => {
         const { model: e } = D();
         return t.jsx('div', {
             className: Fe,
             children: c(e.sh.modes.get(), (i, a) => t.jsx(Ge, { rewards: i, type: e.computes.battleTypeSH(a) }, a)),
         });
     }),
-    Ke = {
+    We = {
         base: 'TowerBlock_20368ecb',
         title: 'TowerBlock_title_41014c13',
         subTitle: 'TowerBlock_subTitle_5cc2e27f',
@@ -691,35 +668,35 @@ import { S as T } from '../../../chunks/enums.js';
     },
     Ze = ({ parameters: e }) =>
         t.jsxs('div', {
-            className: Ke.base,
+            className: We.base,
             children: [
                 t.jsxs('div', {
-                    className: Ke.head,
+                    className: We.head,
                     children: [
                         t.jsx('div', {
-                            className: Ke.title,
+                            className: We.title,
                             children: R.strings.battle_royale_infopage.towerBlock.title(),
                         }),
                         t.jsx('div', {
-                            className: Ke.subTitle,
+                            className: We.subTitle,
                             children: R.strings.battle_royale_infopage.towerBlock.subtitle(),
                         }),
                     ],
                 }),
                 t.jsx('div', {
-                    className: Ke.loots,
+                    className: We.loots,
                     children: e.map(({ imagePath: e, title: i, subtitle: a }, s) =>
                         t.jsxs(
                             'div',
                             {
-                                className: Ke.lootsContainer,
+                                className: We.lootsContainer,
                                 children: [
-                                    t.jsx('img', { className: Ke.image, src: e, alt: i }),
+                                    t.jsx('img', { className: We.image, src: e, alt: i }),
                                     t.jsxs('div', {
-                                        className: Ke.description,
+                                        className: We.description,
                                         children: [
-                                            t.jsx('div', { className: Ke.descriptionTitle, children: i }),
-                                            t.jsx('div', { className: Ke.descriptionSubtitle, children: a }),
+                                            t.jsx('div', { className: We.descriptionTitle, children: i }),
+                                            t.jsx('div', { className: We.descriptionSubtitle, children: a }),
                                         ],
                                     }),
                                 ],
@@ -730,189 +707,189 @@ import { S as T } from '../../../chunks/enums.js';
                 }),
             ],
         }),
-    qe = R.strings.battle_royale_vehicles,
-    Le = 'light',
-    Ee = 'medium',
+    Le = R.strings.battle_royale_vehicles,
+    Ee = 'light',
+    $e = 'medium',
     Oe = 'heavy',
-    $e = 'ussr',
-    Ue = 'germany',
-    Ye = 'usa',
-    Xe = 'britain',
-    Je = 'france',
-    Qe = 'china',
+    Ue = 'ussr',
+    Ye = 'germany',
+    qe = 'usa',
+    Je = 'britain',
+    Qe = 'france',
+    Xe = 'china',
     et = 'poland',
     tt = 'sweden',
-    it = [$e, Ue, Ye, Xe, Je, Qe, et, tt],
+    it = [Ue, Ye, qe, Je, Qe, Xe, et, tt],
     at = [
         {
             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.repairKit',
-            title: qe.abilities.repairKit(),
-            description: qe.abilities.repairKitDescription(),
+            title: Le.abilities.repairKit(),
+            description: Le.abilities.repairKitDescription(),
         },
         {
             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.recoveryKit',
-            title: qe.abilities.recoveryKit(),
-            description: qe.abilities.recoveryKitDescription(),
+            title: Le.abilities.recoveryKit(),
+            description: Le.abilities.recoveryKitDescription(),
         },
     ],
     st = {
-        [$e]: {
-            name: qe.tanks.ussr.title(),
-            description: qe.tanks.ussr.description(),
+        [Ue]: {
+            name: Le.tanks.ussr.title(),
+            description: Le.tanks.ussr.description(),
             tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.ussr',
             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.ussr',
             abilities: [
                 ...at,
                 {
                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.minefield',
-                    title: qe.abilities.minefield(),
-                    description: qe.abilities.minefieldDescription(),
+                    title: Le.abilities.minefield(),
+                    description: Le.abilities.minefieldDescription(),
                 },
                 {
                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.recoveryZone',
-                    title: qe.abilities.recoveryZone(),
-                    description: qe.abilities.recoveryZoneDescription(),
+                    title: Le.abilities.recoveryZone(),
+                    description: Le.abilities.recoveryZoneDescription(),
                 },
             ],
             vehicleType: Oe,
         },
-        [Ue]: {
-            name: qe.tanks.germany.title(),
-            description: qe.tanks.germany.description(),
+        [Ye]: {
+            name: Le.tanks.germany.title(),
+            description: Le.tanks.germany.description(),
             tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.germany',
             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.germany',
             abilities: [
                 ...at,
                 {
                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.nitro',
-                    title: qe.abilities.nitro(),
-                    description: qe.abilities.nitroDescription(),
+                    title: Le.abilities.nitro(),
+                    description: Le.abilities.nitroDescription(),
                 },
                 {
                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.recoveryDot',
-                    title: qe.abilities.recoveryDot(),
-                    description: qe.abilities.recoveryDotDescription(),
+                    title: Le.abilities.recoveryDot(),
+                    description: Le.abilities.recoveryDotDescription(),
                 },
             ],
             vehicleType: Oe,
         },
-        [Ye]: {
-            name: qe.tanks.usa.title(),
-            description: qe.tanks.usa.description(),
+        [qe]: {
+            name: Le.tanks.usa.title(),
+            description: Le.tanks.usa.description(),
             tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.usa',
             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.usa',
             abilities: [
                 ...at,
                 {
                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.extremeConcentration',
-                    title: qe.abilities.extremeConcentration(),
-                    description: qe.abilities.extremeConcentrationDescription(),
+                    title: Le.abilities.extremeConcentration(),
+                    description: Le.abilities.extremeConcentrationDescription(),
                 },
                 {
                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.trap',
-                    title: qe.abilities.trap(),
-                    description: qe.abilities.trapDescription(),
+                    title: Le.abilities.trap(),
+                    description: Le.abilities.trapDescription(),
                 },
             ],
-            vehicleType: Ee,
+            vehicleType: $e,
         },
-        [Xe]: {
-            name: qe.tanks.britain.title(),
-            description: qe.tanks.britain.description(),
+        [Je]: {
+            name: Le.tanks.britain.title(),
+            description: Le.tanks.britain.description(),
             tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.britain',
             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.britain',
             abilities: [
                 ...at,
                 {
                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.rustCloud',
-                    title: qe.abilities.rustCloud(),
-                    description: qe.abilities.rustCloudDescription(),
+                    title: Le.abilities.rustCloud(),
+                    description: Le.abilities.rustCloudDescription(),
                 },
                 {
                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.berserk',
-                    title: qe.abilities.berserk(),
-                    description: qe.abilities.berserkDescription(),
+                    title: Le.abilities.berserk(),
+                    description: Le.abilities.berserkDescription(),
                 },
             ],
-            vehicleType: Ee,
+            vehicleType: $e,
         },
-        [Je]: {
-            name: qe.tanks.france.title(),
-            description: qe.tanks.france.description(),
+        [Qe]: {
+            name: Le.tanks.france.title(),
+            description: Le.tanks.france.description(),
             tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.france',
             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.france',
             abilities: [
                 ...at,
                 {
                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.airstrike',
-                    title: qe.abilities.airstrike(),
-                    description: qe.abilities.airstrikeDescription(),
+                    title: Le.abilities.airstrike(),
+                    description: Le.abilities.airstrikeDescription(),
                 },
                 {
                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.brander',
-                    title: qe.abilities.brander(),
-                    description: qe.abilities.branderDescription(),
+                    title: Le.abilities.brander(),
+                    description: Le.abilities.branderDescription(),
                 },
             ],
-            vehicleType: Le,
+            vehicleType: Ee,
             hasCN360Image: !0,
         },
-        [Qe]: {
-            name: qe.tanks.china.title(),
-            description: qe.tanks.china.description(),
+        [Xe]: {
+            name: Le.tanks.china.title(),
+            description: Le.tanks.china.description(),
             tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.china',
             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.china',
             abilities: [
                 ...at,
                 {
                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.corrodingShot',
-                    title: qe.abilities.corrodingShot(),
-                    description: qe.abilities.corrodingShotDescription(),
+                    title: Le.abilities.corrodingShot(),
+                    description: Le.abilities.corrodingShotDescription(),
                 },
                 {
                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.clingBrander',
-                    title: qe.abilities.clingBrander(),
-                    description: qe.abilities.clingBranderDescription(),
+                    title: Le.abilities.clingBrander(),
+                    description: Le.abilities.clingBranderDescription(),
                 },
             ],
-            vehicleType: Le,
+            vehicleType: Ee,
         },
         [et]: {
-            name: qe.tanks.poland.title(),
-            description: qe.tanks.poland.description(),
+            name: Le.tanks.poland.title(),
+            description: Le.tanks.poland.description(),
             tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.poland',
             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.poland',
             abilities: [
                 ...at,
                 {
                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.thunderStrike',
-                    title: qe.abilities.thunderStrike(),
-                    description: qe.abilities.thunderStrikeDescription(),
+                    title: Le.abilities.thunderStrike(),
+                    description: Le.abilities.thunderStrikeDescription(),
                 },
                 {
                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.shotPassion',
-                    title: qe.abilities.shotPassion(),
-                    description: qe.abilities.shotPassionDescription(),
+                    title: Le.abilities.shotPassion(),
+                    description: Le.abilities.shotPassionDescription(),
                 },
             ],
-            vehicleType: Ee,
+            vehicleType: $e,
         },
         [tt]: {
-            name: qe.tanks.sweden.title(),
-            description: qe.tanks.sweden.description(),
+            name: Le.tanks.sweden.title(),
+            description: Le.tanks.sweden.description(),
             tabImagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.slots.sweden',
             imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.sweden',
             abilities: [
                 ...at,
                 {
                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.fireCircle',
-                    title: qe.abilities.fireCircle(),
-                    description: qe.abilities.fireCircleDescription(),
+                    title: Le.abilities.fireCircle(),
+                    description: Le.abilities.fireCircleDescription(),
                 },
                 {
                     imagePath: 'R.images.battle_royale.gui.maps.infopage.vehicles.abilities.adaptationHealthRestore',
-                    title: qe.abilities.adaptationHealthRestore(),
-                    description: qe.abilities.adaptationHealthRestoreDescription(),
+                    title: Le.abilities.adaptationHealthRestore(),
+                    description: Le.abilities.adaptationHealthRestoreDescription(),
                 },
             ],
             vehicleType: Oe,
@@ -1054,7 +1031,7 @@ const ot = () => {
         titleStyling: 'App_titleStyling_0',
         textStyle: 'App_textStyle_cd5a0ce1',
         bpTitleStyling: 'App_bpTitleStyling_ff830e8a',
-        footer: 'App_footer_ca67060c',
+        footer: 'App_footer_1d76016a',
         defaultVertical: 'App_defaultVertical_790cf5a6',
         frame: 'App_frame_6302ad2b',
         maraudersTitle: 'App_maraudersTitle_53ec438c',
@@ -1107,19 +1084,19 @@ const ot = () => {
                                             parameters: B[s],
                                         }),
                                         t.jsx('div', { className: nt.divider }),
-                                        t.jsx($, {
+                                        t.jsx(U, {
                                             description: S,
                                             classNames: { alignCenter: nt.alignCenter, image: nt.map },
                                             mapsStyle: !0,
                                         }),
                                         t.jsx('div', { className: nt.divider }),
-                                        t.jsx($, {
+                                        t.jsx(U, {
                                             description: A,
                                             classNames: { alignCenter: i(nt.alignCenter, nt.generalDescription) },
                                         }),
                                         t.jsx(ot, {}),
                                         t.jsx(le, {
-                                            description: K,
+                                            description: W,
                                             binding: {
                                                 soloRespawnPeriod: e.soloRespawnPeriod.get(),
                                                 platoonTimeToResurrect: e.platoonTimeToResurrect.get(),
@@ -1131,13 +1108,13 @@ const ot = () => {
                                         t.jsx('div', { className: nt.divider }),
                                         t.jsx(Ze, { parameters: C[s] }),
                                         t.jsx(le, {
-                                            description: L,
+                                            description: E,
                                             className: nt.maraudersContainer,
                                             classNames: { titleStyling: nt.maraudersTitle, image: nt.marauder },
                                             reverse: !0,
                                         }),
                                         t.jsx('div', { className: nt.divider }),
-                                        t.jsx($, { description: I, classNames: { image: nt.zone, text: nt.zoneText } }),
+                                        t.jsx(U, { description: I, classNames: { image: nt.zone, text: nt.zoneText } }),
                                         t.jsx('div', { className: nt.divider }),
                                         t.jsx(le, {
                                             description: V,
@@ -1165,15 +1142,15 @@ const ot = () => {
                                                         },
                                                         reverse: !0,
                                                     }),
-                                                    t.jsx($, {
-                                                        description: q[s],
+                                                    t.jsx(U, {
+                                                        description: L[s],
                                                         classNames: {
                                                             alignCenter: nt.indentBPTable,
                                                             title: nt.progressionTitle,
                                                             head: nt.bpDetailsHead,
                                                         },
                                                     }),
-                                                    t.jsx(We, {}),
+                                                    t.jsx(Ke, {}),
                                                 ],
                                             }),
                                         t.jsx('div', { className: nt.divider }),
@@ -1185,12 +1162,12 @@ const ot = () => {
                                         e.bp.get().length > 0 &&
                                             t.jsxs(t.Fragment, {
                                                 children: [
-                                                    t.jsx($, {
+                                                    t.jsx(U, {
                                                         description: F,
                                                         classNames: { alignCenter: nt.articleBPSettings },
                                                     }),
                                                     t.jsx(le, {
-                                                        description: W,
+                                                        description: K,
                                                         classNames: {
                                                             titleStyling: nt.bpTitleStyling,
                                                             image: nt.pointsBattleTask,
@@ -1198,7 +1175,7 @@ const ot = () => {
                                                         smallImage: !0,
                                                         reverse: !0,
                                                     }),
-                                                    t.jsx($, {
+                                                    t.jsx(U, {
                                                         description: Z,
                                                         className: nt.bpDetails,
                                                         classNames: {
@@ -1211,7 +1188,7 @@ const ot = () => {
                                                     t.jsx('div', { className: nt.divider }),
                                                 ],
                                             }),
-                                        t.jsx('div', { className: nt.footer, children: t.jsx(p, { text: E[s] }) }),
+                                        t.jsx('div', { className: nt.footer, children: t.jsx(p, { text: $[s] }) }),
                                     ],
                                 }),
                             }),

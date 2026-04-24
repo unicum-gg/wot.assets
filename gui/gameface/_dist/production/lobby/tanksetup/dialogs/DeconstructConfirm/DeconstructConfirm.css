@@ -1,4 +1,4 @@
-.CButton_base_40 {
+.CButton_base_bb13f {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,35 +8,35 @@
     cursor: pointer;
 }
 
-.CButton_base__main_42,
-.CButton_base__primary_7f,
-.CButton_base__primaryGreen_6f,
-.CButton_base__primaryRed_ec,
-.CButton_base__secondary_50 {
+.CButton_base__main_dd05d,
+.CButton_base__primary_c75a2,
+.CButton_base__primaryGreen_ae65b,
+.CButton_base__primaryRed_b1341,
+.CButton_base__secondary_f2c20 {
     background-size: 100% 100%;
 }
 
-.CButton_base__main_42 {
+.CButton_base__main_dd05d {
     background-image: url('R.images.gui.maps.icons.components.button.back_main');
 }
 
-.CButton_base__primary_7f {
+.CButton_base__primary_c75a2 {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary');
 }
 
-.CButton_base__primaryGreen_6f {
+.CButton_base__primaryGreen_ae65b {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
 }
 
-.CButton_base__primaryRed_ec {
+.CButton_base__primaryRed_b1341 {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
 }
 
-.CButton_base__secondary_50 {
+.CButton_base__secondary_f2c20 {
     background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
 }
 
-.CButton_base__ghost_ed {
+.CButton_base__ghost_f452b {
     border-radius: 3rem;
     box-shadow:
         0 0 0 1rem rgba(0, 0, 0, 0.3),
@@ -44,29 +44,29 @@
     background-color: rgba(0, 0, 0, 0.15);
 }
 
-.CButton_base__extraSmall_27 {
+.CButton_base__extraSmall_e1273 {
     min-height: 17rem;
     padding: 0 16rem;
 }
 
-.CButton_base__small_df,
-.CButton_base__medium_74 {
+.CButton_base__small_c20a3,
+.CButton_base__medium_ef59a {
     padding: 0 20rem;
 }
 
-.CButton_base__small_df {
+.CButton_base__small_c20a3 {
     min-height: 18rem;
 }
 
-.CButton_base__medium_74 {
+.CButton_base__medium_ef59a {
     min-height: 32rem;
 }
 
-.CButton_base__large_5c {
+.CButton_base__large_bafd5 {
     min-height: 48rem;
 }
 
-.CButton_base__disabled_d9 {
+.CButton_base__disabled_eef7a {
     cursor: default;
 }
 /* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
@@ -74,7 +74,7 @@ The bug is that under certain conditions, when using border-image, stripes appea
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113
 */
-.CButton_back_e5 {
+.CButton_back_e957b {
     border-image-slice: 4 fill;
     border-image-width: 4rem;
     position: absolute;
@@ -83,22 +83,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
 }
-.CButton_base__main_42 .CButton_back_e5 {
+.CButton_base__main_dd05d .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
 }
-.CButton_base__primary_7f .CButton_back_e5 {
+.CButton_base__primary_c75a2 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
 }
-.CButton_base__primaryGreen_6f .CButton_back_e5 {
+.CButton_base__primaryGreen_ae65b .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
 }
-.CButton_base__primaryRed_ec .CButton_back_e5 {
+.CButton_base__primaryRed_b1341 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
 }
-.CButton_base__secondary_50 .CButton_back_e5 {
+.CButton_base__secondary_f2c20 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
 }
-.CButton_texture_fe {
+.CButton_texture_ccd7e {
     background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
     background-size: 155rem 31rem;
     mix-blend-mode: soft-light;
@@ -108,7 +108,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
 }
-.CButton_state_11 {
+.CButton_state_f2bb4 {
     position: absolute;
     top: 0;
     right: 0;
@@ -116,20 +116,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
     transition: box-shadow 0.16s ease-in-out;
 }
-.CButton_base__focus_83 .CButton_state_11 {
+.CButton_base__focus_b0875 .CButton_state_f2bb4 {
     border-radius: 2rem;
     box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
 }
-.CButton_stateHighlightHover_ff,
-.CButton_stateHighlightActive_35,
-.CButton_stateDisabled_54 {
+.CButton_stateHighlightHover_bd0cb,
+.CButton_stateHighlightActive_e9a8a,
+.CButton_stateDisabled_ed209 {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
 }
-.CButton_stateHighlightHover_ff {
+.CButton_stateHighlightHover_bd0cb {
     background-image: linear-gradient(
         180deg,
         rgba(252, 248, 235, 0.25) 0%,
@@ -138,37 +138,37 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     );
     opacity: 0;
 }
-.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+.CButton_base_bb13f:hover .CButton_stateHighlightHover_bd0cb {
     opacity: 1;
 }
-.CButton_base_40:active .CButton_stateHighlightHover_ff {
+.CButton_base_bb13f:active .CButton_stateHighlightHover_bd0cb {
     opacity: 0;
 }
-.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+.CButton_base__disabled_eef7a:hover .CButton_stateHighlightHover_bd0cb {
     opacity: 0;
 }
-.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+.CButton_base__ghost_f452b .CButton_stateHighlightHover_bd0cb {
     box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
     background-color: rgba(8, 6, 0, 0.18);
     background-image: none;
 }
-.CButton_stateHighlightActive_35 {
+.CButton_stateHighlightActive_e9a8a {
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
     opacity: 0;
 }
-.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+.CButton_base__highlightActive_db27d .CButton_stateHighlightActive_e9a8a {
     opacity: 1;
 }
-.CButton_stateDisabled_54 {
+.CButton_stateDisabled_ed209 {
     background-color: rgba(0, 0, 0, 0.25);
     background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
     background-size: 15rem 15rem;
     visibility: hidden;
 }
-.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+.CButton_base__disabled_eef7a .CButton_stateDisabled_ed209 {
     visibility: inherit;
 }
-.CButton_content_cc {
+.CButton_content_a99fc {
     display: flex;
     align-items: center;
     color: #f2f2e6;
@@ -178,41 +178,41 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     letter-spacing: 0.03em;
     transform: translateY(-1rem);
 }
-.CButton_content_cc[lang='ja'],
-.CButton_content_cc[lang='ko'],
-.CButton_content_cc[lang='zh_tw'],
-.CButton_content_cc[lang='zh_sg'],
-.CButton_content_cc[lang='zh_cn'],
-.CButton_content_cc[lang='th'] {
+.CButton_content_a99fc[lang='ja'],
+.CButton_content_a99fc[lang='ko'],
+.CButton_content_a99fc[lang='zh_tw'],
+.CButton_content_a99fc[lang='zh_sg'],
+.CButton_content_a99fc[lang='zh_cn'],
+.CButton_content_a99fc[lang='th'] {
     font-weight: 400;
 }
-.CButton_base__main_42 .CButton_content_cc,
-.CButton_base__primaryRed_ec .CButton_content_cc {
+.CButton_base__main_dd05d .CButton_content_a99fc,
+.CButton_base__primaryRed_b1341 .CButton_content_a99fc {
     text-shadow: 0 -1rem 1rem #600;
 }
-.CButton_base__secondary_50 .CButton_content_cc {
+.CButton_base__secondary_f2c20 .CButton_content_a99fc {
     color: rgba(254, 254, 236, 0.75);
 }
-.CButton_base__primaryGreen_6f .CButton_content_cc {
+.CButton_base__primaryGreen_ae65b .CButton_content_a99fc {
     text-shadow: 0 -1rem 1rem #1c2502;
 }
-.CButton_base__extraSmall_27 .CButton_content_cc {
+.CButton_base__extraSmall_e1273 .CButton_content_a99fc {
     font-size: 12rem;
 }
-.CButton_base__small_df .CButton_content_cc {
+.CButton_base__small_c20a3 .CButton_content_a99fc {
     font-size: 14rem;
 }
-.CButton_base__medium_74 .CButton_content_cc {
+.CButton_base__medium_ef59a .CButton_content_a99fc {
     font-size: 15rem;
 }
-.CButton_base__large_5c .CButton_content_cc {
+.CButton_base__large_bafd5 .CButton_content_a99fc {
     font-size: 18rem;
 }
-.CButton_base__disabled_d9 .CButton_content_cc {
+.CButton_base__disabled_eef7a .CButton_content_a99fc {
     opacity: 0.6;
 }
 
-.TextOverflow_base_3b {
+.TextOverflow_base_f252d {
     max-width: 100%;
     line-height: 1.3;
     text-overflow: ellipsis;
@@ -220,28 +220,28 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     overflow: hidden;
 }
 
-.DialogTemplateButton_base_0b {
+.DialogTemplateButton_base_aad71 {
     min-width: 160rem;
 }
 
-.DialogTemplateButton_base_0b + .DialogTemplateButton_base_0b {
+.DialogTemplateButton_base_aad71 + .DialogTemplateButton_base_aad71 {
     margin-left: 14rem;
 }
 
-.DialogTemplateButton_label_83 {
+.DialogTemplateButton_label_e6dd2 {
     line-height: 1.2;
     text-align: center;
 }
 
-.DialogTemplateButton_label__noTooltip_14 {
+.DialogTemplateButton_label__noTooltip_b14f4 {
     pointer-events: none;
 }
 
-.DialogTemplateButtonList_base_8e {
+.DialogTemplateButtonList_base_c60dd {
     display: flex;
 }
 
-.TextButton_base_b6 {
+.TextButton_base_a231c {
     display: flex;
     align-items: center;
     padding: 0 3rem;
@@ -250,33 +250,33 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     cursor: pointer;
 }
 
-.TextButton_base__right_39 {
+.TextButton_base__right_bfac3 {
     flex-direction: row-reverse;
 }
-.TextButton_icon_17 {
+.TextButton_icon_cdfc0 {
     width: 32rem;
     height: 32rem;
     background: no-repeat center / contain;
     position: relative;
 }
-.TextButton_icon__back_43,
-.TextButton_icon__forward_59 {
+.TextButton_icon__back_fc1bb,
+.TextButton_icon__forward_efa2d {
     margin: -1rem -5rem;
     background-image: url('R.images.gui.maps.icons.components.text_button.back');
     transform: translateY(1rem);
 }
-.TextButton_icon__forward_59 {
+.TextButton_icon__forward_efa2d {
     transform: rotate(180deg) translateY(1rem);
 }
-.TextButton_icon__close_53 {
+.TextButton_icon__close_e2f0f {
     margin: -1rem 0;
     background-image: url('R.images.gui.maps.icons.components.text_button.close');
 }
-.TextButton_icon__info_33 {
+.TextButton_icon__info_e32c0 {
     margin: -1rem -5rem;
     background-image: url('R.images.gui.maps.icons.components.text_button.info');
 }
-.TextButton_glow_a4 {
+.TextButton_glow_d6e04 {
     width: 100%;
     height: 100%;
     background: no-repeat center / contain;
@@ -285,31 +285,31 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: 0;
     transition: opacity 0.16s;
 }
-.TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
+.TextButton_icon__back_fc1bb .TextButton_glow_d6e04,
+.TextButton_icon__forward_efa2d .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
 }
-.TextButton_icon__close_53 .TextButton_glow_a4 {
+.TextButton_icon__close_e2f0f .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
 }
-.TextButton_icon__info_33 .TextButton_glow_a4 {
+.TextButton_icon__info_e32c0 .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
 }
-.TextButton_base_b6:hover .TextButton_glow_a4 {
+.TextButton_base_a231c:hover .TextButton_glow_d6e04 {
     opacity: 1;
 }
-.TextButton_base_b6:active .TextButton_glow_a4 {
+.TextButton_base_a231c:active .TextButton_glow_d6e04 {
     opacity: 0;
 }
-.TextButton_caption_82 {
+.TextButton_caption_f4e8d {
     position: relative;
     transition:
         color 0.16s,
         text-shadow 0.16s;
 }
-.TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
+.TextButton_caption__back_d358d,
+.TextButton_caption__forward_ff93d,
+.TextButton_caption__close_fc554 {
     color: #ffdd99;
     text-shadow:
         0 0 10rem rgba(255, 42, 0, 1),
@@ -320,46 +320,46 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         0 0 2rem rgba(255, 42, 0, 0.4),
         0 0 1rem rgba(255, 42, 0, 0.4);
 }
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
+.TextButton_base_a231c:hover .TextButton_caption__back_d358d,
+.TextButton_base_a231c:hover .TextButton_caption__forward_ff93d,
+.TextButton_base_a231c:hover .TextButton_caption__close_fc554 {
     color: #fffa9f;
 }
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
+.TextButton_base_a231c:active .TextButton_caption__back_d358d,
+.TextButton_base_a231c:active .TextButton_caption__forward_ff93d,
+.TextButton_base_a231c:active .TextButton_caption__close_fc554 {
     color: #ffdd99;
 }
-.TextButton_caption__info_23 {
+.TextButton_caption__info_c263a {
     padding: 0 5rem;
     color: #ccffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.8),
         0 0 8rem #00eaff;
 }
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
+.TextButton_base_a231c:hover .TextButton_caption__info_c263a {
     color: #e3ffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.8),
         0 0 12rem rgba(0, 234, 255, 1),
         0 0 8rem #00eaff;
 }
-.TextButton_base_b6:active .TextButton_caption__info_23 {
+.TextButton_base_a231c:active .TextButton_caption__info_c263a {
     color: #ccffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.6),
         0 0 8rem #00eaff;
 }
-.TextButton_goto_e7 {
+.TextButton_goto_d3960 {
     color: #7c7c6c;
 }
-.TextButton_base__left_ff .TextButton_goto_e7 {
+.TextButton_base__left_ec79d .TextButton_goto_d3960 {
     margin-left: 8rem;
 }
-.TextButton_base__right_39 .TextButton_goto_e7 {
+.TextButton_base__right_bfac3 .TextButton_goto_d3960 {
     margin-right: 8rem;
 }
-.TextButton_shine_e2 {
+.TextButton_shine_f8873 {
     width: 90rem;
     height: 40rem;
     background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
@@ -369,21 +369,21 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transition: opacity 0.16s;
     pointer-events: none;
 }
-.TextButton_base__left_ff .TextButton_shine_e2 {
+.TextButton_base__left_ec79d .TextButton_shine_f8873 {
     left: -4rem;
 }
-.TextButton_base__right_39 .TextButton_shine_e2 {
+.TextButton_base__right_bfac3 .TextButton_shine_f8873 {
     right: -4rem;
     transform: rotate(180deg);
 }
-.TextButton_base_b6:hover .TextButton_shine_e2 {
+.TextButton_base_a231c:hover .TextButton_shine_f8873 {
     opacity: 1;
 }
-.TextButton_base_b6:active .TextButton_shine_e2 {
+.TextButton_base_a231c:active .TextButton_shine_f8873 {
     opacity: 0;
 }
 
-.DefaultDialogTemplate_base_d2 {
+.DefaultDialogTemplate_base_d84ce {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -392,7 +392,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     overflow: hidden;
 }
 
-.DefaultDialogTemplate_topRight_eb {
+.DefaultDialogTemplate_topRight_dbb60 {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -401,7 +401,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 1;
 }
 
-.DefaultDialogTemplate_center_b4 {
+.DefaultDialogTemplate_center_d9442 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -411,34 +411,34 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.DefaultDialogTemplate_center__shown_e1 {
-    animation-name: DefaultDialogTemplate_windowIn_3b;
+.DefaultDialogTemplate_center__shown_cc2b1 {
+    animation-name: DefaultDialogTemplate_windowIn_faf19;
     animation-duration: 0.5s;
     animation-fill-mode: both;
 }
 
-.DefaultDialogTemplate_center__withIcon_f9 {
+.DefaultDialogTemplate_center__withIcon_e030f {
     margin-top: -164rem;
 }
 
-.DefaultDialogTemplate_base__extraSmallHeight_f5
-    .DefaultDialogTemplate_center__withIcon_f9.DefaultDialogTemplate_center__responsive_21,
-.DefaultDialogTemplate_base__smallHeight_52
-    .DefaultDialogTemplate_center__withIcon_f9.DefaultDialogTemplate_center__responsive_21 {
+.DefaultDialogTemplate_base__extraSmallHeight_fb083
+    .DefaultDialogTemplate_center__withIcon_e030f.DefaultDialogTemplate_center__responsive_eaa36,
+.DefaultDialogTemplate_base__smallHeight_a78da
+    .DefaultDialogTemplate_center__withIcon_e030f.DefaultDialogTemplate_center__responsive_eaa36 {
     margin-top: -82rem;
 }
 
-.DefaultDialogTemplate_icon_36 {
+.DefaultDialogTemplate_icon_b6bcb {
     margin-bottom: 32rem;
     z-index: 1;
 }
 
-.DefaultDialogTemplate_base__extraSmallHeight_f5 .DefaultDialogTemplate_icon__responsive_e0,
-.DefaultDialogTemplate_base__smallHeight_52 .DefaultDialogTemplate_icon__responsive_e0 {
+.DefaultDialogTemplate_base__extraSmallHeight_fb083 .DefaultDialogTemplate_icon__responsive_b5c3a,
+.DefaultDialogTemplate_base__smallHeight_a78da .DefaultDialogTemplate_icon__responsive_b5c3a {
     margin-bottom: 43rem;
 }
 
-.DefaultDialogTemplate_title_c6 {
+.DefaultDialogTemplate_title_e9c1e {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -450,15 +450,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 2;
 }
 
-.DefaultDialogTemplate_base__extraSmallHeight_f5 .DefaultDialogTemplate_title__responsive_6e,
-.DefaultDialogTemplate_base__smallHeight_52 .DefaultDialogTemplate_title__responsive_6e {
+.DefaultDialogTemplate_base__extraSmallHeight_fb083 .DefaultDialogTemplate_title__responsive_a5dc7,
+.DefaultDialogTemplate_base__smallHeight_a78da .DefaultDialogTemplate_title__responsive_a5dc7 {
     color: #f2f2f7;
     font-size: 24rem;
     font-weight: 700;
     line-height: 1.2;
 }
 
-.DefaultDialogTemplate_content_22 {
+.DefaultDialogTemplate_content_bb554 {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -469,7 +469,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 3;
 }
 
-.DefaultDialogTemplate_footer_4e {
+.DefaultDialogTemplate_footer_c1ddd {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -480,7 +480,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 14rem;
 }
 
-.DefaultDialogTemplate_buttons_f7 {
+.DefaultDialogTemplate_buttons_c3948 {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -488,7 +488,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 2;
 }
 
-.DefaultDialogTemplate_divider_d5 {
+.DefaultDialogTemplate_divider_fda36 {
     width: 100%;
     height: 1rem;
     margin: 25rem 0 27rem;
@@ -496,25 +496,25 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.1;
 }
 
-.DefaultDialogTemplate_divider__noContent_3f {
+.DefaultDialogTemplate_divider__noContent_f9b0d {
     margin-top: 23rem;
 }
 
-.DefaultDialogTemplate_divider__noFooter_10 {
+.DefaultDialogTemplate_divider__noFooter_f69e3 {
     margin-bottom: 29rem;
 }
 
-.DefaultDialogTemplate_closeBtn_5e {
+.DefaultDialogTemplate_closeBtn_b0612 {
     align-self: flex-end;
     margin: 31rem 28rem 0 0;
 }
 
-.DefaultDialogTemplate_base__extraSmallHeight_f5 .DefaultDialogTemplate_closeBtn__responsive_49,
-.DefaultDialogTemplate_base__smallHeight_52 .DefaultDialogTemplate_closeBtn__responsive_49 {
+.DefaultDialogTemplate_base__extraSmallHeight_fb083 .DefaultDialogTemplate_closeBtn__responsive_bae67,
+.DefaultDialogTemplate_base__smallHeight_a78da .DefaultDialogTemplate_closeBtn__responsive_bae67 {
     margin: 11rem 8rem 0 0;
 }
 
-@keyframes DefaultDialogTemplate_windowIn_3b {
+@keyframes DefaultDialogTemplate_windowIn_faf19 {
     from {
         opacity: 0;
         transform: scale(1.1);
@@ -526,11 +526,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-.CurrentBalanceCurrencies_base_50 {
+.CurrentBalanceCurrencies_base_a267f {
     margin-right: 1rem;
 }
 
-.CurrentBalanceCurrencies_currencyBlock_af {
+.CurrentBalanceCurrencies_currencyBlock_f96f2 {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -538,60 +538,60 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 40rem;
 }
 
-.CurrentBalanceCurrencies_currencyContainer_9a {
+.CurrentBalanceCurrencies_currencyContainer_dd28b {
     display: flex;
     margin-right: 10rem;
 }
 
-.CurrentBalanceCurrencies_currencyContainer_9a + .CurrentBalanceCurrencies_currencyContainer_9a {
+.CurrentBalanceCurrencies_currencyContainer_dd28b + .CurrentBalanceCurrencies_currencyContainer_dd28b {
     margin-left: 7rem;
 }
 
-.CurrentBalanceCurrencies_currency_44 {
+.CurrentBalanceCurrencies_currency_b3a71 {
     height: 20rem;
     padding-left: 20rem;
     background-repeat: no-repeat;
     background-size: 16rem 16rem;
 }
 
-.CurrentBalanceCurrencies_currency__credits_e0 {
+.CurrentBalanceCurrencies_currency__credits_ddb57 {
     background-image: url('R.images.gui.maps.icons.library.CreditsIcon_2');
     background-position: 0 2rem;
 }
 
-.CurrentBalanceCurrencies_currency__gold_75 {
+.CurrentBalanceCurrencies_currency__gold_d76fb {
     background-image: url('R.images.gui.maps.icons.library.GoldIcon_2');
     background-position: 0 1rem;
 }
 
-.CurrentBalanceCurrencies_currency__crystal_a8 {
+.CurrentBalanceCurrencies_currency__crystal_a02bc {
     background-image: url('R.images.gui.maps.icons.library.CrystalIcon_2');
 }
 
-.CurrentBalanceCurrencies_currency__freeXP_5b {
+.CurrentBalanceCurrencies_currency__freeXP_c80ba {
     background-image: url('R.images.gui.maps.icons.library.FreeXpIcon_2');
     background-position: 0 1rem;
 }
 
-.CurrentBalanceCurrencies_currency__equipCoin_13 {
+.CurrentBalanceCurrencies_currency__equipCoin_f9abe {
     background-image: url('R.images.gui.maps.icons.library.equipCoin_1');
     background-position: 0 1rem;
 }
 
-.CurrentBalanceCurrencies_balance_81 {
+.CurrentBalanceCurrencies_balance_cf001 {
     color: #c9c9b6;
     font-size: 14rem;
 }
 
-.CurrentBalanceCurrencies_balance__credits_37 {
+.CurrentBalanceCurrencies_balance__credits_b8ea6 {
     color: #ced9d9;
 }
 
-.CurrentBalanceCurrencies_balance__gold_2f {
+.CurrentBalanceCurrencies_balance__gold_f9930 {
     color: #ffc363;
 }
 
-.CurrentBalanceCurrencies_line_a6 {
+.CurrentBalanceCurrencies_line_b26ed {
     height: 1.3rem;
     background-image: linear-gradient(
         to right,
@@ -602,12 +602,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     );
 }
 
-.Currency_base_57 {
+.Currency_base_ed02c {
     display: flex;
     align-items: center;
     position: relative;
 }
-.Currency_icon_c5 {
+.Currency_icon_d34e3 {
     width: 16rem;
     height: 16rem;
     background-repeat: no-repeat;
@@ -615,257 +615,257 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
     z-index: 1;
 }
-.Currency_base__small_af .Currency_icon_c5,
-.Currency_base__big_bc .Currency_icon_c5,
-.Currency_base__large_65 .Currency_icon_c5,
-.Currency_base__extraLarge_4d .Currency_icon_c5 {
+.Currency_base__small_af876 .Currency_icon_d34e3,
+.Currency_base__big_f6388 .Currency_icon_d34e3,
+.Currency_base__large_fb228 .Currency_icon_d34e3,
+.Currency_base__extraLarge_d0b11 .Currency_icon_d34e3 {
     transform: translateY(3rem);
 }
-.Currency_icon__credits-small_9b {
+.Currency_icon__credits-small_cb645 {
     background-image: url('R.images.gui.maps.icons.library.CreditsIcon_2');
 }
-.Currency_icon__credits-big_96 {
+.Currency_icon__credits-big_bb614 {
     background-image: url('R.images.gui.maps.icons.library.CreditsIcon_1');
 }
-.Currency_icon__credits-large_ac {
+.Currency_icon__credits-large_b65af {
     width: 48rem;
     height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_silver');
 }
-.Currency_base__large_65 .Currency_icon__credits-large_ac {
+.Currency_base__large_fb228 .Currency_icon__credits-large_b65af {
     transform: translateY(4rem);
 }
-.Currency_icon__credits-extraLarge_16 {
+.Currency_icon__credits-extraLarge_a4a53 {
     width: 80rem;
     height: 80rem;
     margin-right: -2rem;
     background-image: url('R.images.gui.maps.icons.library.credits_icon_80x80');
 }
-.Currency_icon__gold-small_86 {
+.Currency_icon__gold-small_eee32 {
     background-image: url('R.images.gui.maps.icons.library.GoldIcon_2');
 }
-.Currency_base__small_af .Currency_icon__gold-small_86 {
+.Currency_base__small_af876 .Currency_icon__gold-small_eee32 {
     transform: translateY(2rem);
 }
-.Currency_icon__gold-big_15 {
+.Currency_icon__gold-big_e419a {
     background-image: url('R.images.gui.maps.icons.library.GoldIcon_1');
 }
-.Currency_base__big_bc .Currency_icon__gold-big_15 {
+.Currency_base__big_f6388 .Currency_icon__gold-big_e419a {
     transform: translateY(4rem);
 }
-.Currency_icon__gold-large_36 {
+.Currency_icon__gold-large_c3a99 {
     width: 48rem;
     height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_gold');
 }
-.Currency_base__large_65 .Currency_icon__gold-large_36 {
+.Currency_base__large_fb228 .Currency_icon__gold-large_c3a99 {
     transform: translateY(4rem);
 }
-.Currency_icon__gold-extraLarge_a0 {
+.Currency_icon__gold-extraLarge_f2852 {
     width: 80rem;
     height: 80rem;
     background-image: url('R.images.gui.maps.icons.library.gold_icon_80x80');
 }
-.Currency_icon__crystal-small_27 {
+.Currency_icon__crystal-small_d8644 {
     background-image: url('R.images.gui.maps.icons.library.CrystalIcon_2');
 }
-.Currency_base__small_af .Currency_icon__crystal-small_27 {
+.Currency_base__small_af876 .Currency_icon__crystal-small_d8644 {
     transform: translateY(2rem);
 }
-.Currency_icon__crystal-big_cd {
+.Currency_icon__crystal-big_f2873 {
     width: 23rem;
     height: 22rem;
     background-image: url('R.images.gui.maps.icons.library.crystal_23x22');
 }
-.Currency_base__big_bc .Currency_icon__crystal-big_cd {
+.Currency_base__big_f6388 .Currency_icon__crystal-big_f2873 {
     transform: translateY(4rem);
 }
-.Currency_icon__crystal-large_d3 {
+.Currency_icon__crystal-large_cf068 {
     width: 48rem;
     height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_bonds');
 }
-.Currency_icon__crystal-extraLarge_09 {
+.Currency_icon__crystal-extraLarge_a9843 {
     width: 80rem;
     height: 80rem;
     background-image: url('R.images.gui.maps.icons.library.crystal_80x80');
 }
-.Currency_base__extraLarge_4d .Currency_icon__crystal-extraLarge_09 {
+.Currency_base__extraLarge_d0b11 .Currency_icon__crystal-extraLarge_a9843 {
     transform: translateY(7rem);
 }
-.Currency_icon__xp-small_a7 {
+.Currency_icon__xp-small_f3b46 {
     background-image: url('R.images.gui.maps.icons.library.NormalXpIcon');
 }
-.Currency_base__small_af .Currency_icon__xp-small_a7 {
+.Currency_base__small_af876 .Currency_icon__xp-small_f3b46 {
     transform: translateY(1rem);
 }
-.Currency_icon__xp-big_97 {
+.Currency_icon__xp-big_c984a {
     width: 23rem;
     height: 22rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.xpIcon_23x22');
 }
-.Currency_base__big_bc .Currency_icon__xp-big_97 {
+.Currency_base__big_f6388 .Currency_icon__xp-big_c984a {
     transform: translateY(2rem);
 }
-.Currency_icon__xp-large_6b {
+.Currency_icon__xp-large_e9a09 {
     width: 48rem;
     height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.exp');
 }
-.Currency_icon__xp-extraLarge_67 {
+.Currency_icon__xp-extraLarge_f90f7 {
     width: 80rem;
     height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.xp_tank_icon_80x80');
 }
-.Currency_icon__freeXP-small_ca {
+.Currency_icon__freeXP-small_bcda1 {
     background-image: url('R.images.gui.maps.icons.library.freeXPIcon16x16');
 }
-.Currency_base__small_af .Currency_icon__freeXP-small_ca {
+.Currency_base__small_af876 .Currency_icon__freeXP-small_bcda1 {
     transform: translateY(1rem);
 }
-.Currency_icon__freeXP-big_21 {
+.Currency_icon__freeXP-big_eb64e {
     width: 24rem;
     height: 24rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.freeXPIconBig24x24');
 }
-.Currency_icon__freeXP-large_c8 {
+.Currency_icon__freeXP-large_e46b0 {
     width: 48rem;
     height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.freeExp');
 }
-.Currency_icon__freeXP-extraLarge_58 {
+.Currency_icon__freeXP-extraLarge_e41b1 {
     width: 80rem;
     height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.free_xp_icon_80x80');
 }
-.Currency_base__extraLarge_4d .Currency_icon__freeXP-extraLarge_58 {
+.Currency_base__extraLarge_d0b11 .Currency_icon__freeXP-extraLarge_e41b1 {
     transform: translateY(4rem);
 }
-.Currency_icon__eliteXP-small_45 {
+.Currency_icon__eliteXP-small_c4a51 {
     background-image: url('R.images.gui.maps.icons.library.EliteXpIcon-2');
 }
-.Currency_base__small_af .Currency_icon__eliteXP-small_45 {
+.Currency_base__small_af876 .Currency_icon__eliteXP-small_c4a51 {
     transform: translateY(1rem);
 }
-.Currency_icon__eliteXP-big_c0 {
+.Currency_icon__eliteXP-big_eceb0 {
     width: 24rem;
     height: 24rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.EliteXpIconBig');
 }
-.Currency_icon__eliteXP-large_1b {
+.Currency_icon__eliteXP-large_e35ab {
     width: 48rem;
     height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.icons.library.elite_exp_48x48');
 }
-.Currency_icon__eliteXP-extraLarge_9b {
+.Currency_icon__eliteXP-extraLarge_a17d5 {
     width: 80rem;
     height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.elite_exp_80x80');
 }
-.Currency_base__extraLarge_4d .Currency_icon__eliteXP-extraLarge_9b {
+.Currency_base__extraLarge_d0b11 .Currency_icon__eliteXP-extraLarge_a17d5 {
     transform: translateY(4rem);
 }
-.Currency_icon__equipCoin-small_32 {
+.Currency_icon__equipCoin-small_d3b9a {
     width: 16rem;
     height: 16rem;
     margin-right: -2rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoin_1');
 }
-.Currency_base__small_af .Currency_icon__equipCoin-small_32 {
+.Currency_base__small_af876 .Currency_icon__equipCoin-small_d3b9a {
     transform: translateX(-1rem) translateY(1rem);
 }
-.Currency_icon__equipCoin-big_79 {
+.Currency_icon__equipCoin-big_c34e1 {
     width: 24rem;
     height: 24rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoinBig');
 }
-.Currency_base__big_bc .Currency_icon__equipCoin-big_79 {
+.Currency_base__big_f6388 .Currency_icon__equipCoin-big_c34e1 {
     transform: translateX(-5rem) translateY(3rem);
 }
-.Currency_icon__equipCoin-large_2c {
+.Currency_icon__equipCoin-large_b1b5e {
     width: 48rem;
     height: 48rem;
     margin-right: 2rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.equipCoin');
 }
-.Currency_icon__equipCoin-extraLarge_8a {
+.Currency_icon__equipCoin-extraLarge_a7b90 {
     width: 80rem;
     height: 80rem;
     margin-right: 8rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoin_icon_80x80');
 }
-.Currency_base__extraLarge_4d .Currency_icon__equipCoin-extraLarge_8a {
+.Currency_base__extraLarge_d0b11 .Currency_icon__equipCoin-extraLarge_a7b90 {
     transform: translateX(2rem) translateY(4rem);
 }
-.Currency_value_e1 {
+.Currency_value_bb176 {
     /* font-size inherit does not work here, so 1em means the size does not change */
     /* stylelint-disable-next-line */
     font-size: 1em;
     position: relative;
     z-index: 2;
 }
-.Currency_base__small_af .Currency_value_e1 {
+.Currency_base__small_af876 .Currency_value_bb176 {
     padding-right: 2rem;
 }
-.Currency_base__big_bc .Currency_value_e1 {
+.Currency_base__big_f6388 .Currency_value_bb176 {
     padding-right: 5rem;
     font-size: 24rem;
     font-weight: 700;
 }
-.Currency_base__big_bc .Currency_value_e1 + .Currency_icon_c5 {
+.Currency_base__big_f6388 .Currency_value_bb176 + .Currency_icon_d34e3 {
     font-size: 24rem;
 }
-.Currency_base__large_65 .Currency_value_e1 {
+.Currency_base__large_fb228 .Currency_value_bb176 {
     font-size: 36rem;
     font-weight: 700;
 }
-.Currency_base__large_65 .Currency_value_e1 + .Currency_icon_c5 {
+.Currency_base__large_fb228 .Currency_value_bb176 + .Currency_icon_d34e3 {
     font-size: 36rem;
 }
-.Currency_base__extraLarge_4d .Currency_value_e1 {
+.Currency_base__extraLarge_d0b11 .Currency_value_bb176 {
     font-size: 56rem;
     font-weight: 700;
 }
-.Currency_value__freeXP_cb {
+.Currency_value__freeXP_db401 {
     color: #f2f2f7;
 }
-.Currency_value__credits_76 {
+.Currency_value__credits_c98c5 {
     color: #ced9d9;
 }
-.Currency_value__gold_dd {
+.Currency_value__gold_b8214 {
     color: #ffc363;
 }
-.Currency_value__xp_b0,
-.Currency_value__crystal_19,
-.Currency_value__equipCoin_d0,
-.Currency_value__eliteXP_62 {
+.Currency_value__xp_eda0a,
+.Currency_value__crystal_cf72e,
+.Currency_value__equipCoin_cb08d,
+.Currency_value__eliteXP_de450 {
     color: #c9c9b6;
 }
-.Currency_base__small_af .Currency_value__notEnough_56 {
+.Currency_base__small_af876 .Currency_value__notEnough_db10a {
     color: #ff2717;
 }
-.Currency_base__big_bc .Currency_value__notEnough_56 {
+.Currency_base__big_f6388 .Currency_value__notEnough_db10a {
     color: #b70000;
 }
-.Currency_base__large_65 .Currency_value__notEnough_56 {
+.Currency_base__large_fb228 .Currency_value__notEnough_db10a {
     color: #b70000;
 }
-.Currency_base__extraLarge_4d .Currency_value__notEnough_56 {
+.Currency_base__extraLarge_d0b11 .Currency_value__notEnough_db10a {
     color: #b70000;
 }
-.Currency_stock_87 {
+.Currency_stock_bffbc {
     height: 13rem;
     color: #ffdd99;
     font-size: 13rem;
@@ -874,25 +874,25 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 0;
     pointer-events: none;
 }
-.Currency_stock__indent_a1 {
+.Currency_stock__indent_c4c0d {
     margin-left: 2rem;
 }
-.Currency_base__small_af .Currency_stock_87 {
+.Currency_base__small_af876 .Currency_stock_bffbc {
     transform: translateY(0rem);
 }
-.Currency_base__big_bc .Currency_stock_87 {
+.Currency_base__big_f6388 .Currency_stock_bffbc {
     transform: translateY(4rem);
 }
-.Currency_base__large_65 .Currency_stock_87 {
+.Currency_base__large_fb228 .Currency_stock_bffbc {
     transform: translateY(10rem);
 }
-.Currency_base__extraLarge_4d .Currency_stock_87 {
+.Currency_base__extraLarge_d0b11 .Currency_stock_bffbc {
     transform: translateY(18rem);
 }
-.Currency_stock__interactive_93 {
+.Currency_stock__interactive_e78a9 {
     pointer-events: auto;
 }
-.Currency_stockBackground_82 {
+.Currency_stockBackground_c8ab1 {
     width: 80rem;
     height: 45rem;
     background-repeat: no-repeat;
@@ -904,19 +904,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(17rem);
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.Alert_alert_66 {
+.Alert_alert_f4585 {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     margin: 5rem 0 4rem;
 }
 
-.Alert_icon_ea {
+.Alert_icon_f29cd {
     width: 16rem;
     height: 16rem;
     margin-right: 5rem;
@@ -924,26 +924,26 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(1rem);
 }
 
-.Alert_alertText_14 {
+.Alert_alertText_fdc2f {
     color: #ee7000;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
 }
 
-.PriceBlock_base_7a {
+.PriceBlock_base_a5106 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.PriceBlock_priceContainer_d3 {
+.PriceBlock_priceContainer_b1585 {
     display: flex;
     align-items: flex-end;
     margin-bottom: 5rem;
 }
 
-.PriceBlock_text_2c {
+.PriceBlock_text_b2c8a {
     color: #c9c9b6;
     font-size: 16rem;
     font-weight: 400;
@@ -952,18 +952,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-right: 5rem;
 }
 
-.PriceBlock_currency_13 {
+.PriceBlock_currency_e7fb0 {
     margin-bottom: -3rem;
 }
 
-.PriceBlock_alert_b3 {
+.PriceBlock_alert_d9713 {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     margin: 5rem 0 4rem;
 }
 
-.PriceBlock_icon_99 {
+.PriceBlock_icon_a1793 {
     width: 16rem;
     height: 16rem;
     margin-right: 5rem;
@@ -971,14 +971,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(1rem);
 }
 
-.PriceBlock_alertText_7b {
+.PriceBlock_alertText_ef14a {
     color: #ee7000;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
 }
 
-.App_base_0e {
+.App_base_cd80f {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -988,29 +988,29 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.App_footer_de {
+.App_footer_c3e7c {
     margin-top: 20rem;
 }
 
-.App_divider_01 {
+.App_divider_a3cc1 {
     display: none;
 }
 
-.App_additionalText_29 {
+.App_additionalText_f1877 {
     color: #8c8c7e;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
 }
 
-.App_counter_d7 {
+.App_counter_bf242 {
     color: #e9e2bf;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
 }
 
-.HorizontalBar_base_49 {
+.HorizontalBar_base_fa517 {
     display: flex;
     width: 100%;
     height: 13rem;
@@ -1018,18 +1018,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.HorizontalBar_base__active_5e {
+.HorizontalBar_base__active_ad89b {
     visibility: visible;
 }
 
-.HorizontalBar_base_49 .disable,
-.HorizontalBar_base_49 .disable:hover {
+.HorizontalBar_base_fa517 .disable,
+.HorizontalBar_base_fa517 .disable:hover {
     opacity: 0.3;
     cursor: default;
 }
 
-.HorizontalBar_leftButton_5f,
-.HorizontalBar_rightButton_03 {
+.HorizontalBar_leftButton_eb8c3,
+.HorizontalBar_rightButton_f5116 {
     width: 13rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
@@ -1042,27 +1042,27 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     cursor: pointer;
 }
 
-.HorizontalBar_leftButton_5f:hover,
-.HorizontalBar_rightButton_03:hover {
+.HorizontalBar_leftButton_eb8c3:hover,
+.HorizontalBar_rightButton_f5116:hover {
     opacity: 1;
 }
 
-.HorizontalBar_leftButton_5f {
+.HorizontalBar_leftButton_eb8c3 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
 }
 
-.HorizontalBar_rightButton_03 {
+.HorizontalBar_rightButton_f5116 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
 }
 
-.HorizontalBar_track_0d {
+.HorizontalBar_track_fd3af {
     flex: 1;
     margin: 0 1rem;
     position: relative;
     cursor: pointer;
 }
 
-.HorizontalBar_thumb_fd {
+.HorizontalBar_thumb_bb7e0 {
     display: none;
     flex: 0 0 100%;
     width: 100%;
@@ -1079,11 +1079,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     cursor: pointer;
 }
 
-.HorizontalBar_thumb_fd:hover {
+.HorizontalBar_thumb_bb7e0:hover {
     opacity: 1;
 }
 
-.HorizontalBar_rail_32 {
+.HorizontalBar_rail_a3d9e {
     height: 0;
     border-top: 1rem solid #2f2e24;
     position: absolute;
@@ -1092,26 +1092,26 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 5rem;
 }
 
-.HorizontalBar_rail_32:hover {
+.HorizontalBar_rail_a3d9e:hover {
     opacity: 0.7;
 }
 
-.HorizontalScroll_base_29 {
+.HorizontalScroll_base_a33a9 {
     width: 100%;
 }
 
-.HorizontalScroll_wrapper_1e {
+.HorizontalScroll_wrapper_b622e {
     display: flex;
     width: 100%;
     overflow-x: hidden;
 }
 
-.HorizontalScroll_defaultScrollArea_8d {
+.HorizontalScroll_defaultScrollArea_a2315 {
     width: 100%;
     margin-bottom: 7rem;
 }
 
-.VerticalBar_base_f3 {
+.VerticalBar_base_b5610 {
     display: flex;
     flex-direction: column;
     width: 13rem;
@@ -1120,18 +1120,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.VerticalBar_base__active_72 {
+.VerticalBar_base__active_be260 {
     visibility: visible;
 }
 
-.VerticalBar_base_f3 .disable,
-.VerticalBar_base_f3 .disable:hover {
+.VerticalBar_base_b5610 .disable,
+.VerticalBar_base_b5610 .disable:hover {
     opacity: 0.3;
     cursor: default;
 }
 
-.VerticalBar_topButton_d7,
-.VerticalBar_bottomButton_06 {
+.VerticalBar_topButton_c2227,
+.VerticalBar_bottomButton_ef09b {
     width: 13rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
@@ -1143,27 +1143,27 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     cursor: pointer;
 }
 
-.VerticalBar_topButton_d7:hover,
-.VerticalBar_bottomButton_06:hover {
+.VerticalBar_topButton_c2227:hover,
+.VerticalBar_bottomButton_ef09b:hover {
     opacity: 1;
 }
 
-.VerticalBar_topButton_d7 {
+.VerticalBar_topButton_c2227 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
 }
 
-.VerticalBar_bottomButton_06 {
+.VerticalBar_bottomButton_ef09b {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
 }
 
-.VerticalBar_track_df {
+.VerticalBar_track_e3345 {
     flex: 1;
     margin: 1rem 0;
     position: relative;
     cursor: pointer;
 }
 
-.VerticalBar_thumb_32 {
+.VerticalBar_thumb_a34e7 {
     display: none;
     flex: 0 0 13rem;
     width: 13rem;
@@ -1179,11 +1179,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     cursor: pointer;
 }
 
-.VerticalBar_thumb_32:hover {
+.VerticalBar_thumb_a34e7:hover {
     opacity: 1;
 }
 
-.VerticalBar_rail_43 {
+.VerticalBar_rail_ff232 {
     width: 0;
     height: 100%;
     border-left: 1rem solid #2f2e24;
@@ -1195,81 +1195,81 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 0;
 }
 
-.VerticalBar_rail_43:hover {
+.VerticalBar_rail_ff232:hover {
     opacity: 0.7;
 }
 
-.VerticalScroll_content_cb {
+.VerticalScroll_content_fe263 {
     height: 100%;
     overflow-y: hidden;
 }
 
-.VerticalScroll_defaultScroll_f8 {
+.VerticalScroll_defaultScroll_e27f5 {
     display: flex;
 }
 
-.VerticalScroll_bar_1e {
+.VerticalScroll_bar_b8700 {
     flex: 1;
     margin-left: 7rem;
 }
 
-.VerticalScroll_area_af {
+.VerticalScroll_area_b5a82 {
     flex: 1;
 }
 
-.Reward_base_ea {
+.Reward_base_b1fec {
     display: flex;
     flex-direction: column;
     position: relative;
 }
 
-.Reward_base__s48x48_46,
-.Reward_base__small_c0 {
+.Reward_base__s48x48_ea3ee,
+.Reward_base__small_d4940 {
     width: 48rem;
     height: 48rem;
 }
 
-.Reward_base__s80x80_ce,
-.Reward_base__big_e5 {
+.Reward_base__s80x80_de3ac,
+.Reward_base__big_a4f0e {
     width: 80rem;
     height: 80rem;
 }
 
-.Reward_base__s128x100_c3 {
+.Reward_base__s128x100_c29f0 {
     width: 128rem;
     height: 100rem;
 }
 
-.Reward_base__s180x135_7c {
+.Reward_base__s180x135_cb4c8 {
     width: 180rem;
     height: 135rem;
 }
 
-.Reward_base__s232x174_67 {
+.Reward_base__s232x174_aea24 {
     width: 232rem;
     height: 174rem;
 }
 
-.Reward_base__s296x222_78 {
+.Reward_base__s296x222_cbf7c {
     width: 296rem;
     height: 222rem;
 }
 
-.Reward_base__s400x300_07 {
+.Reward_base__s400x300_bb29d {
     width: 400rem;
     height: 300rem;
 }
 
-.Reward_base__s600x450_f8 {
+.Reward_base__s600x450_c4f07 {
     width: 600rem;
     height: 450rem;
 }
 
-.Reward_tooltipWrapper_b5 {
+.Reward_tooltipWrapper_af665 {
     height: 100%;
 }
 
-.Reward_icon_df {
+.Reward_icon_b619b {
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
@@ -1279,7 +1279,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 1;
 }
 
-.Reward_overlay_68 {
+.Reward_overlay_dac5c {
     background: no-repeat center / 100%;
     position: absolute;
     top: 50%;
@@ -1289,51 +1289,51 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: none;
 }
 
-.Reward_base__s48x48_46 .Reward_overlay_68,
-.Reward_base__small_c0 .Reward_overlay_68 {
+.Reward_base__s48x48_ea3ee .Reward_overlay_dac5c,
+.Reward_base__small_d4940 .Reward_overlay_dac5c {
     width: 96rem;
     height: 96rem;
     background-size: 100%;
     overflow: visible;
 }
 
-.Reward_base__s80x80_ce .Reward_overlay_68,
-.Reward_base__big_e5 .Reward_overlay_68 {
+.Reward_base__s80x80_de3ac .Reward_overlay_dac5c,
+.Reward_base__big_a4f0e .Reward_overlay_dac5c {
     width: 128rem;
     height: 128rem;
 }
 
-.Reward_base__s180x135_7c .Reward_overlay_68 {
+.Reward_base__s180x135_cb4c8 .Reward_overlay_dac5c {
     width: 266rem;
     height: 241rem;
 }
 
-.Reward_base__s232x174_67 .Reward_overlay_68 {
+.Reward_base__s232x174_aea24 .Reward_overlay_dac5c {
     width: 344rem;
     height: 312rem;
 }
 
-.Reward_base__s296x222_78 .Reward_overlay_68 {
+.Reward_base__s296x222_cbf7c .Reward_overlay_dac5c {
     width: 450rem;
     height: 408rem;
 }
 
-.Reward_base__s400x300_07 .Reward_overlay_68 {
+.Reward_base__s400x300_bb29d .Reward_overlay_dac5c {
     width: 618rem;
     height: 590rem;
 }
 
-.Reward_base__s600x450_f8 .Reward_overlay_68 {
+.Reward_base__s600x450_c4f07 .Reward_overlay_dac5c {
     width: 670rem;
     height: 575rem;
 }
 
-.Reward_base__normalize_a6 .Reward_overlay_68 {
+.Reward_base__normalize_b8703 .Reward_overlay_dac5c {
     width: 100%;
     height: 100%;
 }
 
-.Reward_highlight_36 {
+.Reward_highlight_df36b {
     width: 100%;
     height: 100%;
     background: no-repeat center / contain;
@@ -1341,11 +1341,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 0;
 }
 
-.Reward_image_89 {
+.Reward_image_e2997 {
     position: relative;
 }
 
-.Reward_info_72 {
+.Reward_info_b27d2 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
@@ -1356,39 +1356,39 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 1;
 }
 
-.Reward_base__s48x48_46 .Reward_info_72,
-.Reward_base__small_c0 .Reward_info_72 {
+.Reward_base__s48x48_ea3ee .Reward_info_b27d2,
+.Reward_base__small_d4940 .Reward_info_b27d2 {
     margin: -10rem -10rem 0;
 }
 
-.Reward_info__multi_63 {
+.Reward_info__multi_e08a5 {
     margin-right: 2rem;
     text-align: right;
 }
 
-.Reward_base__s48x48_46 .Reward_info__multi_63,
-.Reward_base__small_c0 .Reward_info__multi_63 {
+.Reward_base__s48x48_ea3ee .Reward_info__multi_e08a5,
+.Reward_base__small_d4940 .Reward_info__multi_e08a5 {
     margin-right: 0;
 }
 
-.Reward_info__credits_ef {
+.Reward_info__credits_ccc0d {
     color: #ced9d9;
 }
 
-.Reward_info__gold_36 {
+.Reward_info__gold_af0a5 {
     color: #ffc363;
 }
 
-.Reward_info__bptaler_82,
-.Reward_info__crystal_36 {
+.Reward_info__bptaler_d4229,
+.Reward_info__crystal_b0d9d {
     color: #c9c9b6;
 }
 
-.Reward_info__premiumTank_d3 {
+.Reward_info__premiumTank_f53be {
     color: #ffdd99;
 }
 
-.Reward_title_36 {
+.Reward_title_ab4e2 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
@@ -1403,25 +1403,25 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 1;
 }
 
-.mediaMedium .Reward_title_36 {
+.mediaMedium .Reward_title_ab4e2 {
     max-width: 100rem;
     margin-left: -10rem;
     margin-right: -10rem;
 }
 
-.Reward_base__s48x48_46 .Reward_title_36,
-.Reward_base__small_c0 .Reward_title_36 {
+.Reward_base__s48x48_ea3ee .Reward_title_ab4e2,
+.Reward_base__small_d4940 .Reward_title_ab4e2 {
     margin: -10rem -10rem 0;
 }
 
-.Reward_timer_d3 {
+.Reward_timer_c097c {
     background: no-repeat center / contain;
     position: absolute;
     z-index: 1;
 }
 
-.Reward_base__s48x48_46 .Reward_timer_d3,
-.Reward_base__small_c0 .Reward_timer_d3 {
+.Reward_base__s48x48_ea3ee .Reward_timer_c097c,
+.Reward_base__small_d4940 .Reward_timer_c097c {
     width: 23rem;
     height: 23rem;
     background-image: url('R.images.gui.maps.icons.quests.bonuses.small.timer');
@@ -1429,8 +1429,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: -6rem;
 }
 
-.Reward_base__s80x80_ce .Reward_timer_d3,
-.Reward_base__big_e5 .Reward_timer_d3 {
+.Reward_base__s80x80_de3ac .Reward_timer_c097c,
+.Reward_base__big_a4f0e .Reward_timer_c097c {
     width: 48rem;
     height: 48rem;
     background-image: url('R.images.gui.maps.icons.quests.bonuses.big.timer');
@@ -1438,11 +1438,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: -14rem;
 }
 
-.Items_base_ef {
+.Items_base_cf454 {
     padding-bottom: 25rem;
 }
 
-.Items_info_0a {
+.Items_info_f402f {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -1451,49 +1451,49 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-top: 25rem;
 }
 
-.Items_items_f3 {
+.Items_items_fe4f4 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.Items_reward_bf {
+.Items_reward_b0c8c {
     margin: 25rem 10rem 0;
 }
 
-.Items_value_fe {
+.Items_value_c0e00 {
     color: #e9e2bf;
 }
 
-.Items_overlay_b6 {
+.Items_overlay_a39ad {
     top: 34rem;
     left: 30rem;
 }
 
-.Content_base_98 {
+.Content_base_ed93e {
     width: 720rem;
 }
 
-.Content_divider_b1 {
+.Content_divider_a55ea {
     height: 1rem;
     background-color: #ffffff;
     opacity: 0.1;
 }
 
-.Content_divider__scroll_d2 {
+.Content_divider__scroll_be92b {
     margin-right: 23rem;
 }
 
-.Content_content_8c {
+.Content_content_febe6 {
     height: 321rem;
 }
 
-.mediaLarge .Content_content_8c {
+.mediaLarge .Content_content_febe6 {
     height: 426rem;
 }
 
-.Header_base_20 {
+.Header_base_fc8dd {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1501,7 +1501,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 100%;
 }
 
-.Header_title_4c {
+.Header_title_db4e8 {
     justify-content: center;
     padding-bottom: 8rem;
     color: #f2f2f7;
@@ -1509,7 +1509,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 1;
 }
 
-.Header_icon_8f {
+.Header_icon_bd01b {
     width: 128rem;
     height: 100rem;
     margin-bottom: 5rem;
@@ -1518,7 +1518,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.Header_glow_6d {
+.Header_glow_b8d56 {
     width: 800rem;
     height: 800rem;
     background: url('R.images.gui.maps.icons.tanksetup.dialogs.deconstructConfirm.alert_glow') no-repeat center / cover;
@@ -1526,7 +1526,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(-50rem);
 }
 
-.Header_equiptName_07 {
+.Header_equiptName_a8074 {
     color: #e9e2bf;
     font-size: 36rem;
     font-weight: 700;

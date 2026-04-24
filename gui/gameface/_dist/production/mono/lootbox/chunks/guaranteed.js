@@ -1,5 +1,5 @@
 import { j as o } from './vendor.js';
-import { k as e, u as t, a as s } from './lib.js';
+import { o as e, u as t, a as s } from './lib.js';
 import { T as a, N as n } from './title2.js';
 function r({ counts: r, texts: c, icons: i, category: x, eventName: g, className: l }) {
     const m = e.resolve('views'),

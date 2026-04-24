@@ -1,85 +1,83 @@
-import { j as t, r as s } from '../../../chunks/vendor.js';
+import { j as e, R as a, r as s } from '../../../chunks/vendor.js';
 import {
-    s as e,
-    X as a,
-    m as o,
-    p as i,
-    E as n,
-    A as r,
-    i as l,
-    a8 as c,
-    u as d,
-    k as m,
-    Y as g,
-    C as p,
-    B as _,
-    J as b,
-    P as y,
+    u as t,
+    aS as o,
+    m as i,
+    p as n,
+    E as r,
+    A as l,
+    i as c,
+    d2 as d,
+    G as m,
+    aR as g,
+    b as _,
+    B as p,
+    C as b,
+    r as y,
+    U as u,
 } from '../../../chunks/lib.js';
-import { S as u } from '../../../chunks/spring_wrapper.js';
-import { i as h } from '../../../chunks/sound.js';
-import { T as f } from '../../../chunks/text.module.js';
-import { T as I } from '../../../chunks/text_simple.js';
-const x = { y: 0, opacity: 1 };
-var j = ((t) => (
-    (t.HEADER = 'header'),
-    (t.BLOCK_1 = 'block1'),
-    (t.TITLE_1 = 'title1'),
-    (t.BLOCK_2 = 'block2'),
-    (t.TITLE_2 = 'title2'),
-    (t.BLOCK_3 = 'block3'),
-    (t.TITLE_3 = 'title3'),
-    (t.BUTTON = 'button'),
-    t
-))(j || {});
-const k = 500,
+import { e as h } from '../../../chunks/sound.js';
+import { S as f } from '../../../chunks/spring_wrapper.js';
+const I = { y: 0, opacity: 1 };
+var x = ((e) => (
+    (e.HEADER = 'header'),
+    (e.BLOCK_1 = 'block1'),
+    (e.TITLE_1 = 'title1'),
+    (e.BLOCK_2 = 'block2'),
+    (e.TITLE_2 = 'title2'),
+    (e.BLOCK_3 = 'block3'),
+    (e.TITLE_3 = 'title3'),
+    (e.BUTTON = 'button'),
+    e
+))(x || {});
+const j = 500,
     C = {
-        header: { from: { y: -10, opacity: 0 }, to: x, delay: 0, duration: k },
-        block1: { from: { y: 5, opacity: 0 }, to: x, delay: 400, duration: k },
-        title1: { from: { y: -15, opacity: 0 }, to: x, delay: 400, duration: k },
-        block2: { from: { y: 5, opacity: 0 }, to: x, delay: 600, duration: k },
-        title2: { from: { y: -15, opacity: 0 }, to: x, delay: 600, duration: k },
-        block3: { from: { y: 5, opacity: 0 }, to: x, delay: 800, duration: k },
-        title3: { from: { y: -15, opacity: 0 }, to: x, delay: 800, duration: k },
-        button: { from: { y: -10, opacity: 0 }, to: x, delay: 1200, duration: k },
+        header: { from: { y: -10, opacity: 0 }, to: I, delay: 0, duration: j },
+        block1: { from: { y: 5, opacity: 0 }, to: I, delay: 400, duration: j },
+        title1: { from: { y: -15, opacity: 0 }, to: I, delay: 400, duration: j },
+        block2: { from: { y: 5, opacity: 0 }, to: I, delay: 600, duration: j },
+        title2: { from: { y: -15, opacity: 0 }, to: I, delay: 600, duration: j },
+        block3: { from: { y: 5, opacity: 0 }, to: I, delay: 800, duration: j },
+        title3: { from: { y: -15, opacity: 0 }, to: I, delay: 800, duration: j },
+        button: { from: { y: -10, opacity: 0 }, to: I, delay: 1200, duration: j },
     },
-    B = 'InfoImage_dcfad64c',
-    N = ({ image: s, imageBig: o }) => {
-        const { breakpoint: i } = e();
-        return t.jsx('div', {
-            className: B,
-            style: ((t, s) => {
-                let e = t;
-                return (i.weight > a.medium.weight && (e = s), { backgroundImage: `url('${e}')` });
-            })(s, o),
-        });
-    },
-    A = 'InfoBlock_c1dba0f8',
-    T = 'InfoBlock_infoBlock_6c954df0',
-    E = 'InfoBlock_title_21748742',
-    v = 'InfoBlock_subTitle_4f8757df',
-    M = ({ items: e, canceledAnim: a = !1 }) =>
-        t.jsx('div', {
-            className: A,
-            children: o(e, (e, o) =>
+    k = 'InfoImage_dcfad64c';
+function B({ image: a, imageBig: s }) {
+    const { breakpoint: i } = t();
+    return e.jsx('div', {
+        className: k,
+        style: ((e, a) => {
+            let s = e;
+            return (i.weight > o.medium.weight && (s = a), { backgroundImage: `url('${s}')` });
+        })(a, s),
+    });
+}
+const N = 'InfoBlock_f854eb14',
+    A = 'InfoBlock_infoBlock_6c954df0',
+    v = 'InfoBlock_title_2476dc97',
+    E = 'InfoBlock_subTitle_a648caba',
+    M = a.memo(function ({ items: a, canceledAnim: t = !1 }) {
+        return e.jsx('div', {
+            className: N,
+            children: i(a, (a, o) =>
                 s.createElement(
-                    u,
-                    { isCanceled: a, ...C[`block${o + 1}`], onStart: () => i.sound(h), key: `block_${o}` },
-                    t.jsxs('div', {
-                        className: T,
+                    f,
+                    { isCanceled: t, ...C[`block${o + 1}`], onStart: () => n.sound(h), key: `block_${o}` },
+                    e.jsxs('div', {
+                        className: A,
                         children: [
-                            t.jsx(N, { image: e.image, imageBig: e.imageBig }),
-                            t.jsxs(u, {
-                                isCanceled: a,
+                            e.jsx(B, { image: a.image, imageBig: a.imageBig }),
+                            e.jsxs(f, {
+                                isCanceled: t,
                                 ...C[`title${o + 1}`],
                                 children: [
-                                    t.jsx('div', { className: E, children: e.header }),
-                                    t.jsx(n, {
-                                        classMix: v,
-                                        text: e.text,
-                                        alignContent: r.Center,
-                                        justifyContent: r.Center,
-                                        binding: e.binding,
+                                    e.jsx('div', { className: v, children: a.header }),
+                                    e.jsx(r, {
+                                        classMix: E,
+                                        text: a.text,
+                                        alignContent: l.Center,
+                                        justifyContent: l.Center,
+                                        binding: a.binding,
                                     }),
                                 ],
                             }),
@@ -87,84 +85,80 @@ const k = 500,
                     }),
                 ),
             ),
-        }),
-    [w, L] = l()(
-        ({ observableModel: t }) => ({ root: t.object() }),
-        ({ externalModel: t }) => ({ onClose: t.createCallbackNoArgs('onClose') }),
+        });
+    }),
+    [T, z] = c()(
+        ({ observableModel: e }) => ({ root: e.object() }),
+        ({ externalModel: e }) => ({ onClose: e.createCallbackNoArgs('onClose') }),
     ),
-    O = 'MetaIntroApp_b72c7723',
-    S = 'MetaIntroApp_header_7bf5bfe7',
-    $ = 'MetaIntroApp_content_a7b52449',
-    H = 'MetaIntroApp_bottomContainer_341b7343',
-    K = 'MetaIntroApp_topContainer_9352c5d0',
-    D = 'MetaIntroApp_btn_80e916b1',
-    P = 'MetaIntroApp_closeBtn_9ab412a0',
-    U = () => {
-        const { controls: e } = L(),
-            a = [
-                {
-                    header: R.strings.last_stand_lobby.metaIntro.header.fight(),
-                    text: R.strings.last_stand_lobby.metaIntro.description.fight(),
-                    image: R.images.last_stand.gui.maps.icons.metaIntro.fight(),
-                    imageBig: R.images.last_stand.gui.maps.icons.metaIntro.big.fight(),
-                },
-                {
-                    header: R.strings.last_stand_lobby.metaIntro.header.progress(),
-                    text: R.strings.last_stand_lobby.metaIntro.description.progress(),
-                    image: R.images.last_stand.gui.maps.icons.metaIntro.progress(),
-                    imageBig: R.images.last_stand.gui.maps.icons.metaIntro.big.progress(),
-                },
-                {
-                    header: R.strings.last_stand_lobby.metaIntro.header.reward(),
-                    text: R.strings.last_stand_lobby.metaIntro.description.reward(),
-                    image: R.images.last_stand.gui.maps.icons.metaIntro.reward(),
-                    imageBig: R.images.last_stand.gui.maps.icons.metaIntro.big.reward(),
-                },
-            ],
-            [o, i] = s.useState(!1);
-        return (
-            c(e.onClose),
-            d(m.ENTER, e.onClose),
-            d(m.SPACE, e.onClose),
-            t.jsxs('div', {
-                className: O,
-                onClick: () => i(!0),
-                children: [
-                    t.jsx(g, {
-                        classNames: { base: P },
-                        caption: R.strings.last_stand_lobby.common.close(),
-                        type: 'close',
-                        side: 'right',
-                        onClick: e.onClose,
-                    }),
-                    t.jsx(u, {
-                        className: K,
-                        isCanceled: o,
-                        ...C[j.HEADER],
-                        children: t.jsx(I, {
-                            text: R.strings.last_stand_lobby.metaIntro.title(),
-                            className: S,
-                            type: f.Heading,
-                            shadow: !0,
-                        }),
-                    }),
-                    t.jsx('div', { className: $, children: t.jsx(M, { canceledAnim: o, items: a }) }),
-                    t.jsx(u, {
-                        isCanceled: o,
-                        className: H,
-                        ...C[j.BUTTON],
-                        children: t.jsx('div', {
-                            className: D,
-                            children: t.jsx(p, {
-                                type: _.primary,
-                                size: b.medium,
-                                onClick: e.onClose,
-                                children: R.strings.last_stand_lobby.common.yes(),
-                            }),
-                        }),
-                    }),
-                ],
-            })
+    w = 'MetaIntroApp_f24aa649',
+    L = 'MetaIntroApp_background_47115184',
+    S = 'MetaIntroApp_container_1d43a669',
+    O = 'MetaIntroApp_content_7027a85a',
+    $ = 'MetaIntroApp_header_b706abdc',
+    K = 'MetaIntroApp_bottomContainer_341b7343',
+    U = 'MetaIntroApp_topContainer_9352c5d0',
+    D = 'MetaIntroApp_btn_4fa2f453',
+    H = 'MetaIntroApp_closeBtn_f6844130',
+    G = [
+        {
+            header: R.strings.last_stand_lobby.metaIntro.header.fight(),
+            text: R.strings.last_stand_lobby.metaIntro.description.fight(),
+            image: R.images.last_stand.gui.maps.icons.metaIntro.fight(),
+            imageBig: R.images.last_stand.gui.maps.icons.metaIntro.big.fight(),
+        },
+        {
+            header: R.strings.last_stand_lobby.metaIntro.header.progress(),
+            text: R.strings.last_stand_lobby.metaIntro.description.progress(),
+            image: R.images.last_stand.gui.maps.icons.metaIntro.progress(),
+            imageBig: R.images.last_stand.gui.maps.icons.metaIntro.big.progress(),
+        },
+        {
+            header: R.strings.last_stand_lobby.metaIntro.header.reward(),
+            text: R.strings.last_stand_lobby.metaIntro.description.reward(),
+            image: R.images.last_stand.gui.maps.icons.metaIntro.reward(),
+            imageBig: R.images.last_stand.gui.maps.icons.metaIntro.big.reward(),
+        },
+    ],
+    P = () => {
+        const { controls: a } = z(),
+            [t, o] = s.useState(!1);
+        (d(a.onClose), m(g.ENTER, a.onClose), m(g.SPACE, a.onClose));
+        const i = _(
+            { size: p.sizes.extraSmall },
+            { medium: { size: p.sizes.small }, large: { size: p.sizes.medium }, extraLarge: { size: p.sizes.large } },
         );
+        return e.jsxs('div', {
+            className: w,
+            onClick: () => o(!0),
+            children: [
+                e.jsx(b, { className: H, onClose: a.onClose }),
+                e.jsx('div', { className: L }),
+                e.jsx(f, {
+                    className: U,
+                    isCanceled: t,
+                    ...C[x.HEADER],
+                    children: e.jsx('div', { className: $, children: R.strings.last_stand_lobby.metaIntro.title() }),
+                }),
+                e.jsx('div', {
+                    className: S,
+                    children: e.jsx('div', { className: O, children: e.jsx(M, { canceledAnim: t, items: G }) }),
+                }),
+                e.jsx(f, {
+                    isCanceled: t,
+                    className: K,
+                    ...C[x.BUTTON],
+                    children: e.jsx('div', {
+                        className: D,
+                        children: e.jsx(p, {
+                            theme: p.themes.primary,
+                            size: i.size,
+                            onClick: a.onClose,
+                            children: R.strings.last_stand_lobby.common.yes(),
+                        }),
+                    }),
+                }),
+            ],
+        });
     };
-y(t.jsx(w, { children: t.jsx(U, {}) }));
+y(e.jsx(u, { children: e.jsx(T, { children: e.jsx(P, {}) }) }));

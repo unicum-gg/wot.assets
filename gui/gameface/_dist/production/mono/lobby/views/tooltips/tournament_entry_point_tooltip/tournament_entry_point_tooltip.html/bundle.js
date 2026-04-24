@@ -1,16 +1,16 @@
-import { y as e, j as t, w as a } from '../../../../chunks/vendor.js';
-import { i as s, q as n, c$ as i, aA as p } from '../../../../chunks/lib.js';
+import { V as e, j as t, a3 as a } from '../../../../chunks/vendor.js';
+import { i as s, cv as n, cc as i, r as p } from '../../../../chunks/lib.js';
 import { T as o } from '../../../../chunks/tooltip_decorator.js';
 import { T as r } from '../../../../chunks/enums.js';
 import { t as _ } from '../../../../chunks/tooltips.module.js';
-var l = ((e) => (
+var c = ((e) => (
     (e[(e.StartingSoon = 0)] = 'StartingSoon'),
     (e[(e.Live = 1)] = 'Live'),
     (e[(e.BetweenShowmatches = 2)] = 'BetweenShowmatches'),
     (e[(e.Finished = 3)] = 'Finished'),
     e
-))(l || {});
-const [c, d] = s()(({ observableModel: e }) => ({ root: e.object() })),
+))(c || {});
+const [l, d] = s()(({ observableModel: e }) => ({ root: e.object() })),
     m = {
         base: 'App_db75b9f1',
         topContentBg: 'App_topContentBg_83729a80',
@@ -38,27 +38,27 @@ const [c, d] = s()(({ observableModel: e }) => ({ root: e.object() })),
         blink: 'App_blink_0',
         slideUpIn: 'App_slideUpIn_0',
     },
-    h = [l.Live, l.BetweenShowmatches],
+    h = [c.Live, c.BetweenShowmatches],
     v = e(() => {
         const { model: e } = d(),
-            { state: s, timeLeftUntilLiveMatch: p, timeLeftUntilNextShowMatchDay: o, tournamentName: c } = e.root.get();
+            { state: s, timeLeftUntilLiveMatch: p, timeLeftUntilNextShowMatchDay: o, tournamentName: l } = e.root.get();
         return t.jsxs('div', {
-            className: a(m.base, m[`base__${c}${s === l.Live ? 'Live' : ''}`]),
+            className: a(m.base, m[`base__${l}${s === c.Live ? 'Live' : ''}`]),
             children: [
                 t.jsx('div', { className: m.topContentBg }),
-                s === l.Live && c === r.WCI && t.jsx('div', { className: m.live }),
+                s === c.Live && l === r.WCI && t.jsx('div', { className: m.live }),
                 t.jsx('div', {
                     className: m.topContent,
                     children: t.jsx('div', {
                         className: m.title,
-                        children: `${R.strings.comp7_ext.tournamentsEntryPointTooltip.heading.$dyn(c)}`,
+                        children: `${R.strings.comp7_ext.tournamentsEntryPointTooltip.heading.$dyn(l)}`,
                     }),
                 }),
                 t.jsxs('div', {
                     className: m.bottomContent,
                     children: [
                         t.jsx(n, {
-                            text: `${R.strings.comp7_ext.tournamentsEntryPointTooltip.description.$dyn(c)}`,
+                            text: `${R.strings.comp7_ext.tournamentsEntryPointTooltip.description.$dyn(l)}`,
                             classMix: m.paragraph,
                         }),
                         h.includes(s) &&
@@ -69,12 +69,12 @@ const [c, d] = s()(({ observableModel: e }) => ({ root: e.object() })),
                                         className: m.timerContainer,
                                         children: t.jsx(n, {
                                             text:
-                                                s === l.Live
+                                                s === c.Live
                                                     ? R.strings.comp7_ext.tournamentsEntryPointTooltip.live()
                                                     : R.strings.comp7_ext.tournamentsEntryPointTooltip.showmatch(),
                                             binding: {
                                                 timer: t.jsx(i, {
-                                                    start: s === l.Live ? p : o,
+                                                    start: s === c.Live ? p : o,
                                                     format: i.format.default,
                                                     type: i.type.accent,
                                                     size: i.size.x24x24,
@@ -89,4 +89,4 @@ const [c, d] = s()(({ observableModel: e }) => ({ root: e.object() })),
             ],
         });
     });
-p(t.jsx(c, { children: t.jsx(o, { children: t.jsx(v, {}) }) }));
+p(t.jsx(l, { children: t.jsx(o, { children: t.jsx(v, {}) }) }));

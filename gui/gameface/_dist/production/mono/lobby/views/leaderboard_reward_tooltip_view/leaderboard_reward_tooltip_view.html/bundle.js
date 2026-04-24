@@ -1,5 +1,5 @@
-import { j as e, w as s, x as a } from '../../../chunks/vendor.js';
-import { i as d, n as i, F as t, d as l, cY as p, cZ as c, r } from '../../../chunks/lib.js';
+import { j as e, C as s, D as a } from '../../../chunks/vendor.js';
+import { i as d, n as i, F as t, e as l, d1 as p, d2 as c, r } from '../../../chunks/lib.js';
 /* empty css                     */ var n = ((e) => (
     (e.InProgress = 'inProgress'),
     (e.Completed = 'completed'),
@@ -24,8 +24,8 @@ const [o, _] = d()(({ observableModel: e }) => ({ root: e.object() }), i),
     T = 'Table_place_7ea53afb',
     I = 'Table_reward_34902bd5',
     u = 'Table_point_e3b5c2ca',
-    w = 'Table_separator_b233bbf2',
-    P = R.strings.comp7_light.leaderboardRewardTooltip,
+    P = 'Table_separator_b233bbf2',
+    w = R.strings.comp7_light.leaderboardRewardTooltip,
     y = () =>
         e.jsxs('div', {
             className: x,
@@ -34,8 +34,8 @@ const [o, _] = d()(({ observableModel: e }) => ({ root: e.object() }), i),
                     className: s(h, f),
                     children: [
                         e.jsx('div', { className: T }),
-                        e.jsx(t, { text: P.column.c_1(), classMix: s(v, g) }),
-                        e.jsx(t, { text: P.column.c_2(), classMix: s(A, N) }),
+                        e.jsx(t, { text: w.column.c_1(), classMix: s(v, g) }),
+                        e.jsx(t, { text: w.column.c_2(), classMix: s(A, N) }),
                     ],
                 }),
                 e.jsx('div', {
@@ -43,7 +43,7 @@ const [o, _] = d()(({ observableModel: e }) => ({ root: e.object() }), i),
                     children: b.map(({ place: s, defeatPoints: a, victoryPoints: d }, i) =>
                         e.jsxs(e.Fragment, {
                             children: [
-                                0 !== i && e.jsx('div', { className: w }),
+                                0 !== i && e.jsx('div', { className: P }),
                                 e.jsxs(
                                     'div',
                                     {
@@ -101,7 +101,7 @@ const [o, _] = d()(({ observableModel: e }) => ({ root: e.object() }), i),
         slideUpIn: 'App_slideUpIn_0',
     },
     k = R.strings.comp7_light.leaderboardRewardTooltip,
-    M = a(() => {
+    C = a(() => {
         const { model: a } = _(),
             { state: d, seasonEndTimestamp: i } = a.root.get(),
             r = d === n.Simplified;
@@ -151,4 +151,4 @@ const [o, _] = d()(({ observableModel: e }) => ({ root: e.object() }), i),
             }),
         });
     });
-r(e.jsx(o, { children: e.jsx(M, {}) }));
+r(e.jsx(o, { children: e.jsx(C, {}) }));

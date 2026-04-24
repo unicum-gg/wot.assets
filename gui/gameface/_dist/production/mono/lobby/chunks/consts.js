@@ -1,5 +1,5 @@
 import { j as o } from './vendor.js';
-import { dk as a, dd as t } from './lib.js';
+import { dp as a, di as t } from './lib.js';
 function i(i) {
     return o.jsx(a, { theme: t, ...i });
 }

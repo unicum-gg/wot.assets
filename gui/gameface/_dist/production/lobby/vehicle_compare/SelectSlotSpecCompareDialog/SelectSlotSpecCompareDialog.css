@@ -1,4 +1,4 @@
-.CButton_base_40 {
+.CButton_base_bb13f {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,35 +8,35 @@
     cursor: pointer;
 }
 
-.CButton_base__main_42,
-.CButton_base__primary_7f,
-.CButton_base__primaryGreen_6f,
-.CButton_base__primaryRed_ec,
-.CButton_base__secondary_50 {
+.CButton_base__main_dd05d,
+.CButton_base__primary_c75a2,
+.CButton_base__primaryGreen_ae65b,
+.CButton_base__primaryRed_b1341,
+.CButton_base__secondary_f2c20 {
     background-size: 100% 100%;
 }
 
-.CButton_base__main_42 {
+.CButton_base__main_dd05d {
     background-image: url('R.images.gui.maps.icons.components.button.back_main');
 }
 
-.CButton_base__primary_7f {
+.CButton_base__primary_c75a2 {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary');
 }
 
-.CButton_base__primaryGreen_6f {
+.CButton_base__primaryGreen_ae65b {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
 }
 
-.CButton_base__primaryRed_ec {
+.CButton_base__primaryRed_b1341 {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
 }
 
-.CButton_base__secondary_50 {
+.CButton_base__secondary_f2c20 {
     background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
 }
 
-.CButton_base__ghost_ed {
+.CButton_base__ghost_f452b {
     border-radius: 3rem;
     box-shadow:
         0 0 0 1rem rgba(0, 0, 0, 0.3),
@@ -44,29 +44,29 @@
     background-color: rgba(0, 0, 0, 0.15);
 }
 
-.CButton_base__extraSmall_27 {
+.CButton_base__extraSmall_e1273 {
     min-height: 17rem;
     padding: 0 16rem;
 }
 
-.CButton_base__small_df,
-.CButton_base__medium_74 {
+.CButton_base__small_c20a3,
+.CButton_base__medium_ef59a {
     padding: 0 20rem;
 }
 
-.CButton_base__small_df {
+.CButton_base__small_c20a3 {
     min-height: 18rem;
 }
 
-.CButton_base__medium_74 {
+.CButton_base__medium_ef59a {
     min-height: 32rem;
 }
 
-.CButton_base__large_5c {
+.CButton_base__large_bafd5 {
     min-height: 48rem;
 }
 
-.CButton_base__disabled_d9 {
+.CButton_base__disabled_eef7a {
     cursor: default;
 }
 /* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
@@ -74,7 +74,7 @@ The bug is that under certain conditions, when using border-image, stripes appea
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113
 */
-.CButton_back_e5 {
+.CButton_back_e957b {
     border-image-slice: 4 fill;
     border-image-width: 4rem;
     position: absolute;
@@ -83,22 +83,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
 }
-.CButton_base__main_42 .CButton_back_e5 {
+.CButton_base__main_dd05d .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
 }
-.CButton_base__primary_7f .CButton_back_e5 {
+.CButton_base__primary_c75a2 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
 }
-.CButton_base__primaryGreen_6f .CButton_back_e5 {
+.CButton_base__primaryGreen_ae65b .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
 }
-.CButton_base__primaryRed_ec .CButton_back_e5 {
+.CButton_base__primaryRed_b1341 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
 }
-.CButton_base__secondary_50 .CButton_back_e5 {
+.CButton_base__secondary_f2c20 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
 }
-.CButton_texture_fe {
+.CButton_texture_ccd7e {
     background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
     background-size: 155rem 31rem;
     mix-blend-mode: soft-light;
@@ -108,7 +108,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
 }
-.CButton_state_11 {
+.CButton_state_f2bb4 {
     position: absolute;
     top: 0;
     right: 0;
@@ -116,20 +116,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
     transition: box-shadow 0.16s ease-in-out;
 }
-.CButton_base__focus_83 .CButton_state_11 {
+.CButton_base__focus_b0875 .CButton_state_f2bb4 {
     border-radius: 2rem;
     box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
 }
-.CButton_stateHighlightHover_ff,
-.CButton_stateHighlightActive_35,
-.CButton_stateDisabled_54 {
+.CButton_stateHighlightHover_bd0cb,
+.CButton_stateHighlightActive_e9a8a,
+.CButton_stateDisabled_ed209 {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
 }
-.CButton_stateHighlightHover_ff {
+.CButton_stateHighlightHover_bd0cb {
     background-image: linear-gradient(
         180deg,
         rgba(252, 248, 235, 0.25) 0%,
@@ -138,37 +138,37 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     );
     opacity: 0;
 }
-.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+.CButton_base_bb13f:hover .CButton_stateHighlightHover_bd0cb {
     opacity: 1;
 }
-.CButton_base_40:active .CButton_stateHighlightHover_ff {
+.CButton_base_bb13f:active .CButton_stateHighlightHover_bd0cb {
     opacity: 0;
 }
-.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+.CButton_base__disabled_eef7a:hover .CButton_stateHighlightHover_bd0cb {
     opacity: 0;
 }
-.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+.CButton_base__ghost_f452b .CButton_stateHighlightHover_bd0cb {
     box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
     background-color: rgba(8, 6, 0, 0.18);
     background-image: none;
 }
-.CButton_stateHighlightActive_35 {
+.CButton_stateHighlightActive_e9a8a {
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
     opacity: 0;
 }
-.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+.CButton_base__highlightActive_db27d .CButton_stateHighlightActive_e9a8a {
     opacity: 1;
 }
-.CButton_stateDisabled_54 {
+.CButton_stateDisabled_ed209 {
     background-color: rgba(0, 0, 0, 0.25);
     background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
     background-size: 15rem 15rem;
     visibility: hidden;
 }
-.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+.CButton_base__disabled_eef7a .CButton_stateDisabled_ed209 {
     visibility: inherit;
 }
-.CButton_content_cc {
+.CButton_content_a99fc {
     display: flex;
     align-items: center;
     color: #f2f2e6;
@@ -178,41 +178,41 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     letter-spacing: 0.03em;
     transform: translateY(-1rem);
 }
-.CButton_content_cc[lang='ja'],
-.CButton_content_cc[lang='ko'],
-.CButton_content_cc[lang='zh_tw'],
-.CButton_content_cc[lang='zh_sg'],
-.CButton_content_cc[lang='zh_cn'],
-.CButton_content_cc[lang='th'] {
+.CButton_content_a99fc[lang='ja'],
+.CButton_content_a99fc[lang='ko'],
+.CButton_content_a99fc[lang='zh_tw'],
+.CButton_content_a99fc[lang='zh_sg'],
+.CButton_content_a99fc[lang='zh_cn'],
+.CButton_content_a99fc[lang='th'] {
     font-weight: 400;
 }
-.CButton_base__main_42 .CButton_content_cc,
-.CButton_base__primaryRed_ec .CButton_content_cc {
+.CButton_base__main_dd05d .CButton_content_a99fc,
+.CButton_base__primaryRed_b1341 .CButton_content_a99fc {
     text-shadow: 0 -1rem 1rem #600;
 }
-.CButton_base__secondary_50 .CButton_content_cc {
+.CButton_base__secondary_f2c20 .CButton_content_a99fc {
     color: rgba(254, 254, 236, 0.75);
 }
-.CButton_base__primaryGreen_6f .CButton_content_cc {
+.CButton_base__primaryGreen_ae65b .CButton_content_a99fc {
     text-shadow: 0 -1rem 1rem #1c2502;
 }
-.CButton_base__extraSmall_27 .CButton_content_cc {
+.CButton_base__extraSmall_e1273 .CButton_content_a99fc {
     font-size: 12rem;
 }
-.CButton_base__small_df .CButton_content_cc {
+.CButton_base__small_c20a3 .CButton_content_a99fc {
     font-size: 14rem;
 }
-.CButton_base__medium_74 .CButton_content_cc {
+.CButton_base__medium_ef59a .CButton_content_a99fc {
     font-size: 15rem;
 }
-.CButton_base__large_5c .CButton_content_cc {
+.CButton_base__large_bafd5 .CButton_content_a99fc {
     font-size: 18rem;
 }
-.CButton_base__disabled_d9 .CButton_content_cc {
+.CButton_base__disabled_eef7a .CButton_content_a99fc {
     opacity: 0.6;
 }
 
-.TextButton_base_b6 {
+.TextButton_base_a231c {
     display: flex;
     align-items: center;
     padding: 0 3rem;
@@ -221,33 +221,33 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     cursor: pointer;
 }
 
-.TextButton_base__right_39 {
+.TextButton_base__right_bfac3 {
     flex-direction: row-reverse;
 }
-.TextButton_icon_17 {
+.TextButton_icon_cdfc0 {
     width: 32rem;
     height: 32rem;
     background: no-repeat center / contain;
     position: relative;
 }
-.TextButton_icon__back_43,
-.TextButton_icon__forward_59 {
+.TextButton_icon__back_fc1bb,
+.TextButton_icon__forward_efa2d {
     margin: -1rem -5rem;
     background-image: url('R.images.gui.maps.icons.components.text_button.back');
     transform: translateY(1rem);
 }
-.TextButton_icon__forward_59 {
+.TextButton_icon__forward_efa2d {
     transform: rotate(180deg) translateY(1rem);
 }
-.TextButton_icon__close_53 {
+.TextButton_icon__close_e2f0f {
     margin: -1rem 0;
     background-image: url('R.images.gui.maps.icons.components.text_button.close');
 }
-.TextButton_icon__info_33 {
+.TextButton_icon__info_e32c0 {
     margin: -1rem -5rem;
     background-image: url('R.images.gui.maps.icons.components.text_button.info');
 }
-.TextButton_glow_a4 {
+.TextButton_glow_d6e04 {
     width: 100%;
     height: 100%;
     background: no-repeat center / contain;
@@ -256,31 +256,31 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: 0;
     transition: opacity 0.16s;
 }
-.TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
+.TextButton_icon__back_fc1bb .TextButton_glow_d6e04,
+.TextButton_icon__forward_efa2d .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
 }
-.TextButton_icon__close_53 .TextButton_glow_a4 {
+.TextButton_icon__close_e2f0f .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
 }
-.TextButton_icon__info_33 .TextButton_glow_a4 {
+.TextButton_icon__info_e32c0 .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
 }
-.TextButton_base_b6:hover .TextButton_glow_a4 {
+.TextButton_base_a231c:hover .TextButton_glow_d6e04 {
     opacity: 1;
 }
-.TextButton_base_b6:active .TextButton_glow_a4 {
+.TextButton_base_a231c:active .TextButton_glow_d6e04 {
     opacity: 0;
 }
-.TextButton_caption_82 {
+.TextButton_caption_f4e8d {
     position: relative;
     transition:
         color 0.16s,
         text-shadow 0.16s;
 }
-.TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
+.TextButton_caption__back_d358d,
+.TextButton_caption__forward_ff93d,
+.TextButton_caption__close_fc554 {
     color: #ffdd99;
     text-shadow:
         0 0 10rem rgba(255, 42, 0, 1),
@@ -291,46 +291,46 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         0 0 2rem rgba(255, 42, 0, 0.4),
         0 0 1rem rgba(255, 42, 0, 0.4);
 }
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
+.TextButton_base_a231c:hover .TextButton_caption__back_d358d,
+.TextButton_base_a231c:hover .TextButton_caption__forward_ff93d,
+.TextButton_base_a231c:hover .TextButton_caption__close_fc554 {
     color: #fffa9f;
 }
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
+.TextButton_base_a231c:active .TextButton_caption__back_d358d,
+.TextButton_base_a231c:active .TextButton_caption__forward_ff93d,
+.TextButton_base_a231c:active .TextButton_caption__close_fc554 {
     color: #ffdd99;
 }
-.TextButton_caption__info_23 {
+.TextButton_caption__info_c263a {
     padding: 0 5rem;
     color: #ccffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.8),
         0 0 8rem #00eaff;
 }
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
+.TextButton_base_a231c:hover .TextButton_caption__info_c263a {
     color: #e3ffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.8),
         0 0 12rem rgba(0, 234, 255, 1),
         0 0 8rem #00eaff;
 }
-.TextButton_base_b6:active .TextButton_caption__info_23 {
+.TextButton_base_a231c:active .TextButton_caption__info_c263a {
     color: #ccffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.6),
         0 0 8rem #00eaff;
 }
-.TextButton_goto_e7 {
+.TextButton_goto_d3960 {
     color: #7c7c6c;
 }
-.TextButton_base__left_ff .TextButton_goto_e7 {
+.TextButton_base__left_ec79d .TextButton_goto_d3960 {
     margin-left: 8rem;
 }
-.TextButton_base__right_39 .TextButton_goto_e7 {
+.TextButton_base__right_bfac3 .TextButton_goto_d3960 {
     margin-right: 8rem;
 }
-.TextButton_shine_e2 {
+.TextButton_shine_f8873 {
     width: 90rem;
     height: 40rem;
     background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
@@ -340,21 +340,21 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transition: opacity 0.16s;
     pointer-events: none;
 }
-.TextButton_base__left_ff .TextButton_shine_e2 {
+.TextButton_base__left_ec79d .TextButton_shine_f8873 {
     left: -4rem;
 }
-.TextButton_base__right_39 .TextButton_shine_e2 {
+.TextButton_base__right_bfac3 .TextButton_shine_f8873 {
     right: -4rem;
     transform: rotate(180deg);
 }
-.TextButton_base_b6:hover .TextButton_shine_e2 {
+.TextButton_base_a231c:hover .TextButton_shine_f8873 {
     opacity: 1;
 }
-.TextButton_base_b6:active .TextButton_shine_e2 {
+.TextButton_base_a231c:active .TextButton_shine_f8873 {
     opacity: 0;
 }
 
-.CurrencyItem_currency_b6 {
+.CurrencyItem_currency_e980f {
     height: 20rem;
     margin-left: 20rem;
     padding-left: 20rem;
@@ -364,28 +364,28 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 14rem;
 }
 
-.CurrencyItem_currency__credits_eb {
+.CurrencyItem_currency__credits_e56bd {
     background-image: url('R.images.gui.maps.icons.library.CreditsIcon_2');
     background-position: 0 2rem;
     color: #ced9d9;
 }
 
-.CurrencyItem_currency__gold_af {
+.CurrencyItem_currency__gold_d119a {
     background-image: url('R.images.gui.maps.icons.library.GoldIcon_2');
     background-position: 0 1rem;
     color: #ffc363;
 }
 
-.CurrencyItem_currency__crystal_fc {
+.CurrencyItem_currency__crystal_bace1 {
     background-image: url('R.images.gui.maps.icons.library.CrystalIcon_2');
 }
 
-.CurrencyItem_currency__freeXP_36 {
+.CurrencyItem_currency__freeXP_ab43a {
     background-image: url('R.images.gui.maps.icons.library.FreeXpIcon_2');
     background-position: 0 1rem;
 }
 
-.CurrencyBalance_base_97 {
+.CurrencyBalance_base_dbe23 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -396,7 +396,7 @@ body {
     overflow: hidden;
 }
 
-.DialogTemplate_base_bb {
+.DialogTemplate_base_af4d2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -406,7 +406,7 @@ body {
     position: relative;
 }
 
-.DialogTemplate_control_3e {
+.DialogTemplate_control_c4d8e {
     padding-right: 10rem;
     position: absolute;
     top: 0;
@@ -414,13 +414,13 @@ body {
     z-index: 2;
 }
 
-.DialogTemplate_closeButton_2c {
+.DialogTemplate_closeButton_a5c05 {
     align-self: flex-end;
     margin-top: 30rem;
     margin-right: 21rem;
 }
 
-.DialogTemplate_view_78 {
+.DialogTemplate_view_a731a {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -430,30 +430,30 @@ body {
     opacity: 0;
 }
 
-.DialogTemplate_view__show_51 {
-    animation: DialogTemplate_window-in_b6 0.5s;
+.DialogTemplate_view__show_db47f {
+    animation: DialogTemplate_window-in_fdf59 0.5s;
     animation-fill-mode: both;
 }
 
-.DialogTemplate_content_dc {
+.DialogTemplate_content_eed26 {
     color: #8c8c7e;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
 }
 
-.DialogTemplate_line_af {
+.DialogTemplate_line_bc7d8 {
     height: 1rem;
     background-color: #ffffff;
     opacity: 0.1;
 }
 
-.DialogTemplate_divider_cb {
+.DialogTemplate_divider_aebd3 {
     width: 700rem;
     margin: 24rem 0;
 }
 
-.DialogTemplate_footer_2b {
+.DialogTemplate_footer_e5125 {
     color: #c9c9b6;
     font-size: 16rem;
     font-weight: 400;
@@ -463,25 +463,25 @@ body {
     line-height: 1;
 }
 
-.DialogTemplate_buttons_f5 {
+.DialogTemplate_buttons_ac2f8 {
     display: flex;
     justify-content: center;
 }
 
-.DialogTemplate_buttonWrapper_d9 {
+.DialogTemplate_buttonWrapper_c8080 {
     padding: 0 5rem;
 }
 
-.DialogTemplate_button_f0 {
+.DialogTemplate_button_bf4fc {
     width: 170rem;
     padding: 0 10rem;
 }
 
-.DialogTemplate_button_f0 + .DialogTemplate_button_f0 {
+.DialogTemplate_button_bf4fc + .DialogTemplate_button_bf4fc {
     margin-left: 12rem;
 }
 
-@keyframes DialogTemplate_window-in_b6 {
+@keyframes DialogTemplate_window-in_fdf59 {
     0% {
         opacity: 0;
         transform: scale(1.1);
@@ -493,12 +493,12 @@ body {
     }
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.VehicleInfo_base_01 {
+.VehicleInfo_base_ee337 {
     color: #f2f2f7;
     font-size: 24rem;
     font-weight: 700;
@@ -507,14 +507,14 @@ body {
     align-items: center;
 }
 
-.VehicleInfo_base__small_2b {
+.VehicleInfo_base__small_cc975 {
     color: #f2f2f7;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
 }
 
-.VehicleInfo_type_5a {
+.VehicleInfo_type_c60d4 {
     width: 81rem;
     height: 73rem;
     margin: -12rem;
@@ -522,20 +522,20 @@ body {
     background: center / contain no-repeat;
 }
 
-.VehicleInfo_base__small_2b .VehicleInfo_type_5a {
+.VehicleInfo_base__small_cc975 .VehicleInfo_type_c60d4 {
     width: 54rem;
     height: 48rem;
     margin: -6rem;
     margin-top: -1rem;
 }
 
-.Slot_base_70 {
+.Slot_base_f062f {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.Slot_icon_bb {
+.Slot_icon_ae1f8 {
     width: 68rem;
     height: 68rem;
     margin: 6rem 0;
@@ -543,14 +543,14 @@ body {
         no-repeat;
 }
 
-.Slot_base__active_67 .Slot_icon_bb {
+.Slot_base__active_e9cdf .Slot_icon_ae1f8 {
     width: 80rem;
     height: 80rem;
     margin: 0;
     background-image: url('R.images.gui.maps.icons.vehPostProgression.selectSlotSpecDialog.slots.active');
 }
 
-.Slot_specialization_ed {
+.Slot_specialization_c2541 {
     width: 48rem;
     height: 48rem;
     margin-top: -12rem;
@@ -558,11 +558,11 @@ body {
     opacity: 0.5;
 }
 
-.Slot_base__active_67 .Slot_specialization_ed {
+.Slot_base__active_e9cdf .Slot_specialization_c2541 {
     opacity: 1;
 }
 
-.Slot_arrow_2d {
+.Slot_arrow_c62d5 {
     width: 120rem;
     height: 88rem;
     margin: -35rem -20rem 0;
@@ -570,15 +570,15 @@ body {
         no-repeat;
 }
 
-.Slots_base_3d {
+.Slots_base_c63f3 {
     display: flex;
 }
 
-.Slots_slot_b9 + .Slots_slot_b9 {
+.Slots_slot_f2bdd + .Slots_slot_f2bdd {
     margin-left: 4rem;
 }
 
-.Card_base_b6 {
+.Card_base_a05fc {
     width: 150rem;
     height: 150rem;
     display: flex;
@@ -587,7 +587,7 @@ body {
     position: relative;
 }
 
-.Card_background_77 {
+.Card_background_b9b33 {
     width: 150rem;
     height: 150rem;
     background: url('R.images.gui.maps.icons.vehPostProgression.selectSlotSpecDialog.cards.normal') center / contain
@@ -598,39 +598,39 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.Card_base__normal_50 .Card_background_77 {
+.Card_base__normal_fcd86 .Card_background_b9b33 {
     cursor: pointer;
 }
 
-.Card_base__normal_50 .Card_background_77:hover {
+.Card_base__normal_fcd86 .Card_background_b9b33:hover {
     background-image: url('R.images.gui.maps.icons.vehPostProgression.selectSlotSpecDialog.cards.hover');
 }
 
-.Card_base__active_ef .Card_background_77 {
+.Card_base__active_ea920 .Card_background_b9b33 {
     width: 180rem;
     height: 180rem;
     background-image: url('R.images.gui.maps.icons.vehPostProgression.selectSlotSpecDialog.cards.active');
 }
 
-.Card_base__disabled_e4 .Card_background_77 {
+.Card_base__disabled_e7736 .Card_background_b9b33 {
     background-image: url('R.images.gui.maps.icons.vehPostProgression.selectSlotSpecDialog.cards.disabled');
 }
 
-.Card_specialization_32 {
+.Card_specialization_edcab {
     width: 100rem;
     height: 100rem;
     margin-top: 16rem;
     background: center / contain no-repeat;
 }
 
-.Card_name_be {
+.Card_name_d0009 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.Card_checkmark_a3 {
+.Card_checkmark_f49c8 {
     width: 62rem;
     height: 32rem;
     background: url('R.images.gui.maps.icons.vehPostProgression.selectSlotSpecDialog.cards.checkmark') center / contain
@@ -641,22 +641,22 @@ body {
     transform: translate(-50%, 50%);
 }
 
-.Cards_base_38 {
+.Cards_base_e1fc8 {
     display: flex;
 }
 
-.Cards_card_c8 + .Cards_card_c8 {
+.Cards_card_dee46 + .Cards_card_dee46 {
     margin-left: 24rem;
 }
 
-.DialogContent_base_c6 {
+.DialogContent_base_daa14 {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
 
-.DialogContent_title_66 {
+.DialogContent_title_e59cf {
     color: #f2f2f7;
     font-size: 36rem;
     font-weight: 700;
@@ -669,24 +669,24 @@ body {
     text-align: center;
 }
 
-.DialogContent_base__small_e7 .DialogContent_title_66 {
+.DialogContent_base__small_b4022 .DialogContent_title_e59cf {
     color: #f2f2f7;
     font-size: 24rem;
     font-weight: 700;
     line-height: 1.2;
 }
 
-.DialogContent_slots_99 {
+.DialogContent_slots_df160 {
     display: flex;
     align-items: center;
     margin-top: 38rem;
 }
 
-.DialogContent_base__small_e7 .DialogContent_slots_99 {
+.DialogContent_base__small_b4022 .DialogContent_slots_df160 {
     margin-top: 26rem;
 }
 
-.DialogContent_cards_17 {
+.DialogContent_cards_d9cbd {
     display: flex;
     align-items: center;
 }

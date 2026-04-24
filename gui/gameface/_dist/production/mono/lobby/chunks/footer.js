@@ -48,7 +48,7 @@ const m = ({ children: s, header: t, body: r, bindings: o, disabled: i }) =>
                     from: n,
                     steps: ['shrinking'],
                     onState: (e) => {
-                        'done' === e && (l(a), null == i || i());
+                        'done' === e && (l(a), i?.());
                     },
                 }),
                 e.jsx(v, { value: c }, a),

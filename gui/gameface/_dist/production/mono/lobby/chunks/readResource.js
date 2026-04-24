@@ -19,7 +19,7 @@ function r(n, { poFileName: s, assetsPointer: o, isSubMode: r = !1 } = {}) {
     if (!a || 'string' == typeof a) throw Error("Incorrect 'poFileName' argument");
     const i = r ? 'sub_modes' : 'modes',
         d = a.$dyn(i),
-        u = (o ? (null == d ? void 0 : d.$dyn(o)) : a) || (null == d ? void 0 : d.$dyn(e));
+        u = (o ? d?.$dyn(o) : a) || d?.$dyn(e);
     if (!n) return { staticTexts: a, dynamicTexts: u };
     return { staticTexts: t(a, n), dynamicTexts: t(u, n) };
 }

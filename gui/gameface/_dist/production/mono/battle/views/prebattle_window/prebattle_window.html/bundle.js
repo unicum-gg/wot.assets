@@ -94,7 +94,7 @@ const g = {
             a.jsxs('div', {
                 className: x.base,
                 children: [
-                    a.jsx(c, { backgroundPath: null == i ? void 0 : i.background(), onLoaded: s.loaded }),
+                    a.jsx(c, { backgroundPath: i?.background(), onLoaded: s.loaded }),
                     a.jsx(m, { className: x.lore, folder: i, text: f.text.$num(l) }),
                     a.jsx('div', { className: x.vignette }),
                     a.jsxs('div', {

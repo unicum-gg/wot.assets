@@ -1,36 +1,39 @@
-import { j as s, w as e } from '../../../../chunks/vendor.js';
-import { aA as i } from '../../../../chunks/lib.js';
-import { T as a } from '../../../../chunks/tooltip_decorator.js';
+import { j as s, a3 as e } from '../../../../chunks/vendor.js';
+import { r as i } from '../../../../chunks/lib.js';
+import { T as r } from '../../../../chunks/tooltip_decorator.js';
 import { t as c } from '../../../../chunks/tooltips.module.js';
-/* empty css                        */ const r = 'App_4fcbfa35',
-    d = 'App_crewIcon_f83bbe77',
-    o = 'App_title_95edd6ea',
-    l = 'App_perk_74555613',
-    t = 'App_slots_cb654453',
-    n = 'App_slotImage_9f9978b0',
-    p = () =>
+/* empty css                        */ const a = 'App_4fcbfa35',
+    o = 'App_crewIcon_f83bbe77',
+    d = 'App_title_bd033b57',
+    p = 'App_title__second_5cbf6889',
+    t = 'App_perk_0',
+    l = 'App_zeroPerk_fecfd061',
+    n = 'App_slots_cb654453',
+    m = 'App_slotImage_9f9978b0',
+    _ = () =>
         s.jsxs('div', {
-            className: e(c.base, r),
+            className: e(c.base, a),
             children: [
                 s.jsx('div', { className: c.heading, children: R.strings.comp7_ext.yearlyRewards.rewards.crew() }),
                 s.jsx('div', {
                     className: e(c.subHeading, c.subHeading__topIndent),
                     children: R.strings.comp7_ext.crewMembersTooltip.subHeading(),
                 }),
-                s.jsx('div', { className: d }),
+                s.jsx('div', { className: o }),
                 s.jsx('div', {
                     className: e(c.description, c.description__topIndent),
                     children: R.strings.comp7_ext.crewMembersTooltip.description(),
                 }),
-                s.jsx('div', { className: e(o), children: R.strings.comp7_ext.crewMembersTooltip.perks() }),
+                s.jsx('div', { className: d, children: R.strings.comp7_ext.crewMembersTooltip.zeroPerks() }),
+                s.jsx('div', { className: l }),
+                s.jsx('div', { className: e(d, p), children: R.strings.comp7_ext.crewMembersTooltip.perks() }),
                 s.jsxs('div', {
-                    className: t,
+                    className: n,
                     children: [
-                        s.jsx('div', { className: l, children: s.jsx('div', { className: n }) }),
-                        s.jsx('div', { className: l, children: s.jsx('div', { className: n }) }),
-                        s.jsx('div', { className: l, children: s.jsx('div', { className: n }) }),
+                        s.jsx('div', { className: t, children: s.jsx('div', { className: m }) }),
+                        s.jsx('div', { className: t, children: s.jsx('div', { className: m }) }),
                     ],
                 }),
             ],
         });
-i(s.jsx(a, { children: s.jsx(p, {}) }));
+i(s.jsx(r, { children: s.jsx(_, {}) }));

@@ -1,16 +1,16 @@
-import { n as o, r as s, l as e, j as i, m as r } from '../../../chunks/vendor.js';
+import { q as o, r as s, l as e, j as i, m as r } from '../../../chunks/vendor.js';
 import {
     c as a,
-    i as n,
-    n as _,
-    u as t,
+    i as _,
+    v as t,
+    u as n,
     r as p,
-    b as d,
-    o as v,
-    a as c,
-    V as m,
-    e as l,
-    s as u,
+    e as d,
+    s as v,
+    b as c,
+    o as m,
+    a as l,
+    V as u,
     k as y,
     d as f,
     U as h,
@@ -28,24 +28,24 @@ import {
         vid_pm_pause: a('vid_pm_pause'),
         vid_pm_resume: a('vid_pm_resume'),
     },
-    [b, g] = n()(({ observableModel: o }) => ({ ...o.primitives({ videoPath: 'videoPath' }) }), _),
+    [b, g] = _()(({ observableModel: o }) => ({ ...o.primitives({ videoPath: 'videoPath' }) }), t),
     x = { base: 'IntroScreen_187cc925', video: 'IntroScreen_video_16d069c3' },
     I = o(function () {
         const { model: o } = g(),
             a = o.videoPath.get(),
-            n = s.useRef(null),
-            _ = s.useRef(!1),
-            f = t(),
+            _ = s.useRef(null),
+            t = s.useRef(!1),
+            f = n(),
             h = p.resolve('videos'),
-            [j, b] = e(() => ({ from: { opacity: 0 }, config: { duration: 400, easing: l.easeInCubic } })),
+            [j, b] = e(() => ({ from: { opacity: 0 }, config: { duration: 400, easing: d.easeInCubic } })),
             [I, k] = e(() => ({
                 from: { opacity: 1 },
-                config: { duration: 200, easing: l.easeInCubic },
-                onRest: () => u.closeView(),
+                config: { duration: 200, easing: d.easeInCubic },
+                onRest: () => v.closeView(),
             }));
         function E() {
-            _.current ||
-                ((_.current = !0),
+            t.current ||
+                ((t.current = !0),
                 f.play('stopIntro'),
                 b.start({
                     to: { opacity: 0 },
@@ -54,14 +54,14 @@ import {
                 }));
         }
         return (
-            d(() =>
-                v((o) => {
+            c(() =>
+                m((o) => {
                     o ? f.play('vid_pm_pause') : f.play('vid_pm_resume');
                 }),
             ),
-            c(y.ESCAPE, E),
-            d(() => {
-                const o = n.current;
+            l(y.ESCAPE, E),
+            c(() => {
+                const o = _.current;
                 o && (o.play(), b.start({ opacity: 1 }), f.play(a), f.play(`${a}_vo`));
             }),
             i.jsx(r.div, {
@@ -70,8 +70,8 @@ import {
                 children: i.jsx(r.div, {
                     className: x.wrapper,
                     style: j,
-                    children: i.jsx(m, {
-                        ref: n,
+                    children: i.jsx(u, {
+                        ref: _,
                         className: x.video,
                         src: h.readOrEmpty(`personal_missions_30.intro_screens.${a}`),
                         onEnded: E,

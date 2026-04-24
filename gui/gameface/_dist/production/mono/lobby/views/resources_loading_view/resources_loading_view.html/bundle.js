@@ -1,4 +1,4 @@
-import { r as e, m as s, j as t, e as a } from '../../../chunks/vendor.js';
+import { r as e, q as s, j as t, e as a } from '../../../chunks/vendor.js';
 import {
     i as r,
     x as o,
@@ -8,15 +8,15 @@ import {
     z as l,
     A as u,
     E as d,
-    G as _,
-    k as m,
+    k as _,
+    G as m,
     H as p,
     F as b,
     J as f,
     K as g,
     L as x,
-    M as v,
-    N as h,
+    M as h,
+    N as v,
     T as C,
     O as N,
     P as j,
@@ -32,11 +32,11 @@ import {
     r as V,
     U as D,
 } from '../../../chunks/lib.js';
-import { a as L, b as M, c as H, d as W, e as U, f as B, g as $, h as O, t as F } from '../../../chunks/sounds.js';
+import { a as L, b as M, c as H, d as U, e as W, f as B, g as $, h as O, t as F } from '../../../chunks/sounds.js';
 import { S as z, F as q } from '../../../chunks/footer.js';
 import { V as K } from '../../../chunks/vehicle_count.js';
 import { g as G } from '../../../chunks/utils.js';
-import '../../../chunks/enums.js';
+/* empty css                     */ import '../../../chunks/enums.js';
 var X = ((e) => ((e.Active = 'active'), (e.NoProgress = 'noProgress'), (e.NoVehicles = 'noVehicles'), e))(X || {});
 const [Y, J] = r()(
         ({ observableModel: e }) => ({
@@ -75,15 +75,15 @@ const te = e.createContext({}),
             [m, p] = e.useState(0),
             [b, f] = e.useState(!1),
             [g, x] = e.useState(!1),
-            { controls: v } = J(),
-            h = e.useCallback(() => {
+            { controls: h } = J(),
+            v = e.useCallback(() => {
                 const e = ((e) => {
                     const s = {};
                     for (const [t, a] of Object.entries(e)) a.value > 0 && (s[t] = a.value);
                     return s;
                 })(a);
-                (v.loadResources(e), n(e));
-            }, [v, a]);
+                (h.loadResources(e), n(e));
+            }, [h, a]);
         return t.jsx(te.Provider, {
             value: {
                 progression: l,
@@ -102,7 +102,7 @@ const te = e.createContext({}),
                 setIsCardAnimationEnabled: x,
                 tabsAnimated: c,
                 setTabsAnimated: i,
-                loadResources: h,
+                loadResources: v,
             },
             children: s,
         });
@@ -113,10 +113,8 @@ const te = e.createContext({}),
         base__down: 'NumericControl_base__down_45f28a03',
         base__disabled: 'NumericControl_base__disabled_ec26e91e',
         arrow: 'NumericControl_arrow_4ae15c4d',
-    },
-    oe = 50,
-    ne = 300;
-function ce({ className: s, enabled: r, direction: o, onChange: n, onClick: i }) {
+    };
+function oe({ className: s, enabled: r, direction: o, onChange: n, onClick: i }) {
     const l = e.useRef(null),
         u = () => {
             null !== l.current && (clearTimeout(l.current), (l.current = null));
@@ -129,11 +127,11 @@ function ce({ className: s, enabled: r, direction: o, onChange: n, onClick: i })
                 r &&
                     (n(),
                     (l.current = setTimeout(function e() {
-                        (n(), (l.current = setTimeout(e, oe)));
-                    }, ne))));
+                        (n(), (l.current = setTimeout(e, 50)));
+                    }, 300))));
         },
         onClick: (e) => {
-            (e.stopPropagation(), e.preventDefault(), null == i || i());
+            (e.stopPropagation(), e.preventDefault(), i?.());
         },
         onMouseUp: u,
         onMouseLeave: u,
@@ -143,23 +141,23 @@ function ce({ className: s, enabled: r, direction: o, onChange: n, onClick: i })
         children: t.jsx('span', { className: re.arrow }),
     });
 }
-const ie = 'NumericStepper_decoration_430dcd23',
-    le = 'NumericStepper_decoration__focused_881e8c85',
-    ue = 'NumericStepper_decoration__notEmpty_1a5818dd',
-    de = 'NumericStepper_decoration__disabled_bd5f8631',
-    _e = 'NumericStepper_field_1f69b03a',
-    me = 'NumericStepper_field__notEmpty_8dbebc59',
-    pe = 'NumericStepper_field__focused_56f5ba82',
-    be = 'NumericStepper_control_a4673ab5',
-    fe = 'NumericStepper_control__up_5cd004d3',
-    ge = 'NumericStepper_control__down_59a15715';
-function xe(e, s) {
+const ne = 'NumericStepper_decoration_430dcd23',
+    ce = 'NumericStepper_decoration__focused_881e8c85',
+    ie = 'NumericStepper_decoration__notEmpty_1a5818dd',
+    le = 'NumericStepper_decoration__disabled_bd5f8631',
+    ue = 'NumericStepper_field_1f69b03a',
+    de = 'NumericStepper_field__notEmpty_8dbebc59',
+    _e = 'NumericStepper_field__focused_56f5ba82',
+    me = 'NumericStepper_control_a4673ab5',
+    pe = 'NumericStepper_control__up_5cd004d3',
+    be = 'NumericStepper_control__down_59a15715';
+function fe(e, s) {
     return s > 0 && e > 0 ? Math.round(e / s) * s : e;
 }
-function ve(e) {
+function ge(e) {
     return parseInt(String(e).replace(/\D/g, ''), 10);
 }
-function he({
+function xe({
     currentValue: s,
     step: r,
     addResources: o,
@@ -169,9 +167,9 @@ function he({
     canDecrease: f,
     onChangeValue: g,
     onInputMouseDown: x,
-    onInputMouseUp: v,
+    onInputMouseUp: h,
 }) {
-    const { focused: h, setFocused: C, inputRef: R, disabled: N, value: j, focus: S } = i(),
+    const { focused: v, setFocused: C, inputRef: R, disabled: N, value: j, focus: S } = i(),
         I = l(s),
         w = e.useRef(j),
         E = e.useRef(!1);
@@ -181,20 +179,20 @@ function he({
         e.useEffect(() => {
             const e = R.current;
             if (!e) return;
-            const s = se(ve(j)).length,
-                t = (null == e ? void 0 : e.selectionStart) ?? 0,
-                a = (null == e ? void 0 : e.selectionEnd) ?? 0;
+            const s = se(ge(j)).length,
+                t = e?.selectionStart ?? 0,
+                a = e?.selectionEnd ?? 0;
             0 !== t || a !== s ? e.setSelectionRange(t === a ? s : t, s) : e.setSelectionRange(s, s);
         }, [R, j]),
         e.useEffect(() => {
             const e = (e) => {
                 const s = R.current;
-                if (!s || !h) return;
+                if (!s || !v) return;
                 const t = e.target;
                 t === s || s.contains(t) || (C(!1), (E.current = !1));
             };
             return (document.addEventListener('mousedown', e), () => document.removeEventListener('mousedown', e));
-        }, [h, R, C]),
+        }, [v, R, C]),
         e.useEffect(() => {
             const e = R.current;
             E.current && e && document.activeElement !== e && S();
@@ -206,11 +204,11 @@ function he({
             N || (C(!0), (E.current = !0));
         }, [C, N]),
         A = () => {
-            const e = _(n, p, xe(ve(w.current) + r, r));
+            const e = m(n, p, fe(ge(w.current) + r, r));
             (o(e), g(se(e)), c.sound(M));
         },
         k = () => {
-            const e = _(n, p, xe(ve(w.current) - r, r));
+            const e = m(n, p, fe(ge(w.current) - r, r));
             (o(e), g(se(e)), c.sound(H));
         },
         P = (e, s) => {
@@ -223,8 +221,8 @@ function he({
             const s = e.target,
                 { selectionStart: t, selectionEnd: a, value: r } = s;
             if (null === t || null === a || t !== a) return;
-            const o = e.code === m.BACKSPACE,
-                n = e.code === m.DELETE,
+            const o = e.code === _.BACKSPACE,
+                n = e.code === _.DELETE,
                 c = /\D/,
                 i = r.length,
                 l = o && t ? t - 1 : t;
@@ -237,88 +235,87 @@ function he({
         },
         D = u(),
         L = (e = '') => {
-            var s, t, a;
-            const i = e === m.BACKSPACE,
-                l = e === m.DELETE,
-                u = (null == (s = R.current) ? void 0 : s.selectionStart) || 0,
-                d = (null == (t = R.current) ? void 0 : t.selectionEnd) || 0;
-            let b = (null == (a = R.current) ? void 0 : a.value) || '';
-            const f = Math.max(u, d);
-            (l && (b = b.substring(0, f) + b.substring(f + 1, b.length)), i && 1 === u && 1 === b.length && (b = '0'));
-            const x = Number(b.trim().replace(/\D/g, '')),
-                v = Number.isSafeInteger(x) ? x : Number.MAX_SAFE_INTEGER,
-                C = se(v);
-            w.current = C;
-            let N = 0;
-            for (let r = 0; r < f; r++) {
-                const e = b[r] || '',
-                    s = C[N] || '';
+            const s = e === _.BACKSPACE,
+                t = e === _.DELETE,
+                a = R.current?.selectionStart || 0,
+                i = R.current?.selectionEnd || 0;
+            let l = R.current?.value || '';
+            const u = Math.max(a, i);
+            (t && (l = l.substring(0, u) + l.substring(u + 1, l.length)), s && 1 === a && 1 === l.length && (l = '0'));
+            const d = Number(l.trim().replace(/\D/g, '')),
+                b = Number.isSafeInteger(d) ? d : Number.MAX_SAFE_INTEGER,
+                f = se(b);
+            w.current = f;
+            let x = 0;
+            for (let r = 0; r < u; r++) {
+                const e = l[r] || '',
+                    s = f[x] || '';
                 if (e.match(/\d/g) || e === s) {
-                    for (; e !== C[N] && N < C.length; ) N++;
-                    N++;
+                    for (; e !== f[x] && x < f.length; ) x++;
+                    x++;
                 }
             }
-            ('' === b && (N = 1),
+            ('' === l && (x = 1),
                 R.current && R.current.setSelectionRange(0, 0),
-                P(N, N),
-                g(C),
+                P(x, x),
+                g(f),
                 D.run(() => {
-                    const e = _(n, p, xe(v, r)),
+                    const e = m(n, p, fe(b, r)),
                         s = e - (I ?? 0);
-                    (s > 0 ? c.sound(M) : s < 0 && c.sound(H), h && (o(e), g(se(e))), D.clear());
+                    (s > 0 ? c.sound(M) : s < 0 && c.sound(H), v && (o(e), g(se(e))), D.clear());
                 }, 800));
         };
     return t.jsxs(d.Decoration, {
-        className: a(ie, h && le, N && de, s > 0 && ue),
+        className: a(ne, v && ce, N && le, s > 0 && ie),
         children: [
             t.jsx(d.Field, {
-                className: a(_e, h && pe, s > 0 && me),
+                className: a(ue, v && _e, s > 0 && de),
                 onChange: () => {
                     N || L();
                 },
                 onWheel: (e) => {
                     !N &&
-                        h &&
+                        v &&
                         (e.preventDefault(), e.stopPropagation(), e.deltaY < 0 && f && k(), e.deltaY > 0 && b && A());
                 },
                 onKeyDown: (e) => {
-                    if (h)
+                    if (v)
                         switch (e.code) {
-                            case m.ARROW_UP:
-                            case m.NUMPAD_ADD:
+                            case _.ARROW_UP:
+                            case _.NUMPAD_ADD:
                             case 'Equals':
                                 (e.preventDefault(), b && A());
                                 break;
-                            case m.ARROW_DOWN:
-                            case m.MINUS:
-                            case m.NUMPAD_SUBTRACT:
+                            case _.ARROW_DOWN:
+                            case _.MINUS:
+                            case _.NUMPAD_SUBTRACT:
                                 (e.preventDefault(), f && k());
                                 break;
-                            case m.PAGE_DOWN:
-                            case m.HOME:
+                            case _.PAGE_DOWN:
+                            case _.HOME:
                                 (e.preventDefault(), o(n), g(se(n)));
                                 break;
-                            case m.PAGE_UP:
-                            case m.END:
+                            case _.PAGE_UP:
+                            case _.END:
                                 (e.preventDefault(), o(p), g(se(p)));
                                 break;
-                            case m.BACKSPACE:
-                            case m.DELETE:
+                            case _.BACKSPACE:
+                            case _.DELETE:
                                 V(e);
                         }
                 },
-                onMouseUp: v,
+                onMouseUp: h,
                 onMouseDown: x,
                 onFocus: T,
                 onBlur: y,
             }),
-            t.jsx(ce, { className: a(be, fe), direction: 'up', enabled: b, onChange: A, onClick: T }),
-            t.jsx(ce, { className: a(be, ge), direction: 'down', enabled: f, onChange: k, onClick: T }),
+            t.jsx(oe, { className: a(me, pe), direction: 'up', enabled: b, onChange: A, onClick: T }),
+            t.jsx(oe, { className: a(me, be), direction: 'down', enabled: f, onChange: k, onClick: T }),
         ],
     });
 }
-const Ce = 'ResourceStepper_7487cb5a',
-    Re = ({
+const he = 'ResourceStepper_7487cb5a',
+    ve = ({
         limit: s,
         rate: r,
         currentValue: o,
@@ -341,12 +338,12 @@ const Ce = 'ResourceStepper_7487cb5a',
             p(se(o));
         }, [o]);
         return t.jsx('div', {
-            className: a(Ce, n),
+            className: a(he, n),
             children: t.jsx(d.Provider, {
                 value: m,
                 type: d.types.text,
                 disabled: i,
-                children: t.jsx(he, {
+                children: t.jsx(xe, {
                     step: r,
                     minimum: 0,
                     maximum: s,
@@ -363,7 +360,7 @@ const Ce = 'ResourceStepper_7487cb5a',
             }),
         });
     },
-    Ne = {
+    Ce = {
         text: 'Rate_text_a2e91ef6',
         text__gold: 'Rate_text__gold_99844245',
         text__credits: 'Rate_text__credits_5f95f14c',
@@ -373,18 +370,18 @@ const Ce = 'ResourceStepper_7487cb5a',
         icon__intelligence: 'Rate_icon__intelligence_92d7abca',
         icon__currency: 'Rate_icon__currency_e39c71be',
     },
-    je = function ({ type: e, rate: s }) {
+    Re = function ({ type: e, rate: s }) {
         const r = p.resolve('intl');
         return t.jsx(b, {
-            className: a(Ne.text, Ne[`text__${e}`]),
+            className: a(Ce.text, Ce[`text__${e}`]),
             text: R.strings.resource_well.resourcesLoadingView.resourceRate.text(),
             params: {
                 icon: t.jsx('span', {
-                    className: a(Ne.icon, e === Q ? Ne.icon__intelligence : Z.includes(e) && Ne.icon__currency),
+                    className: a(Ce.icon, e === Q ? Ce.icon__intelligence : Z.includes(e) && Ce.icon__currency),
                     style: G(e),
                 }),
                 minValue: t.jsx(b, {
-                    className: a(Ne.text, Ne.text__min),
+                    className: a(Ce.text, Ce.text__min),
                     text: R.strings.resource_well.commonTexts.percent(),
                     params: { percent: (1).toString() },
                     upgradeLegacy: !0,
@@ -395,28 +392,25 @@ const Ce = 'ResourceStepper_7487cb5a',
             upgradeLegacy: !0,
         });
     },
-    Se = 'Storage_icon_ee526815',
-    Ie = 'Storage_icon__reverse_e8e0a133',
-    we = 'Storage_value_f68f8626',
-    Ee = 'Storage_value__zero_c2260cb9';
-function ye({ itemsInStorage: e, valueFirst: s }) {
+    Ne = 'Storage_icon_ee526815',
+    je = 'Storage_icon__reverse_e8e0a133',
+    Se = 'Storage_value_f68f8626',
+    Ie = 'Storage_value__zero_c2260cb9';
+function we({ itemsInStorage: e, valueFirst: s }) {
     return t.jsx(f, {
-        type: g.depot,
+        type: x.depot,
         reverse: s,
-        size: x.extraSmall,
+        size: g.extraSmall,
         enough: e > 0,
-        classNames: { base: a(we, 0 === e && Ee), icon: a(Se, s && Ie) },
+        classNames: { base: a(Se, 0 === e && Ie), icon: a(Ne, s && je) },
         children: e,
     });
 }
-const Te = {
+const Ee = {
         base: 'ResourcesCard_3fbe6840',
-        imageWrapper: 'ResourcesCard_imageWrapper_4361447a',
-        imageWrapper__disabled: 'ResourcesCard_imageWrapper__disabled_3a26ca19',
         storage: 'ResourcesCard_storage_b66b29fe',
         image: 'ResourcesCard_image_f3f1affe',
         image__disabled: 'ResourcesCard_image__disabled_8b1dc9a8',
-        base__selected: 'ResourcesCard_base__selected_96c8a160',
         name: 'ResourcesCard_name_7341031a',
         rate: 'ResourcesCard_rate_7d72cca6',
         base__hasVehicle: 'ResourcesCard_base__hasVehicle_96c8a160',
@@ -431,8 +425,8 @@ const Te = {
         card: 'ResourcesCard_card_ffbb6603',
         statusWrapper: 'ResourcesCard_statusWrapper_70d16500',
     },
-    Ae = R.strings.resource_well,
-    ke = ({ value: s, currentValue: r, progressionState: n }) => {
+    ye = R.strings.resource_well,
+    Te = ({ value: s, currentValue: r, progressionState: n }) => {
         const { type: c, inventoryCount: i, rate: l, limit: u, tooltipId: d, balance: _ } = s,
             { setResources: m, progression: f, delta: g } = e.useContext(te),
             x = p.resolve('intl'),
@@ -448,25 +442,24 @@ const Te = {
             I && m({ [c]: { value: 0, rate: l } });
         }, [I, l, m, c]);
         const k = ((e) => {
-                var s;
-                const t = e && R.strings.blueprints.nations.$dyn(e),
-                    a = R.strings.quests.bonusName.$dyn(e);
+                const s = e && R.strings.blueprints.nations.$dyn(e),
+                    t = R.strings.quests.bonusName.$dyn(e);
                 switch (!0) {
                     case e === Q:
                         return R.strings.resource_well.resourcesLoadingView.resourceCard.intelligenceBlueprints();
+                    case Boolean(s):
+                        return s;
                     case Boolean(t):
-                        return t;
-                    case Boolean(a):
-                        return o((null == (s = R.strings.quests.bonusName.$dyn(e)) ? void 0 : s.toString()) || '');
+                        return o(R.strings.quests.bonusName.$dyn(e)?.toString() || '');
                     default:
                         console.error('title for reward is not provided');
                 }
             })(c),
             P = I || 0 === i || y;
-        return t.jsx(v, {
-            className: Te.card,
-            classNames: { status: { wrapper: Te.statusWrapper } },
-            status: h.done,
+        return t.jsx(h, {
+            className: Ee.card,
+            classNames: { status: { wrapper: Ee.statusWrapper } },
+            status: v.done,
             selected: Boolean(r),
             disableMouse: P,
             disabled: P,
@@ -481,23 +474,23 @@ const Te = {
             },
             soundTarget: 'resource-card',
             children: t.jsxs('div', {
-                className: a(Te.base, I || (0 === i && Te.base__disabled), !I && Te.base__hasVehicle),
+                className: a(Ee.base, I || (0 === i && Ee.base__disabled), !I && Ee.base__hasVehicle),
                 children: [
-                    t.jsx('div', { className: Te.storage, children: t.jsx(ye, { itemsInStorage: i - r }) }),
+                    t.jsx('div', { className: Ee.storage, children: t.jsx(we, { itemsInStorage: i - r }) }),
                     t.jsx(C, {
                         contentId:
                             R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent('resId'),
                         args: { tooltipId: d },
                         children: t.jsx(N, {
-                            className: a(Te.image, y && Te.image__disabled),
+                            className: a(Ee.image, y && Ee.image__disabled),
                             path: `R.images.resource_well.gui.maps.icons.resourcesLoading.resources.${c}`,
                             width: 180,
                             height: 135,
                         }),
                     }),
-                    'string' == typeof k && t.jsx('div', { className: Te.name, children: k }),
-                    t.jsx('div', { className: Te.rate, children: t.jsx(je, { type: c, rate: l }) }),
-                    t.jsx(Re, {
+                    'string' == typeof k && t.jsx('div', { className: Ee.name, children: k }),
+                    t.jsx('div', { className: Ee.rate, children: t.jsx(Re, { type: c, rate: l }) }),
+                    t.jsx(ve, {
                         currentValue: r,
                         limit: T,
                         rate: l,
@@ -514,12 +507,12 @@ const Te = {
                     }),
                     S &&
                         t.jsx(z, {
-                            header: Ae.tooltips.resourcesLoadingView.resourcesLoaded.header(),
-                            body: Ae.tooltips.resourcesLoadingView.resourcesLoaded.body(),
+                            header: ye.tooltips.resourcesLoadingView.resourcesLoaded.header(),
+                            body: ye.tooltips.resourcesLoadingView.resourcesLoaded.body(),
                             children: t.jsx(b, {
-                                className: a(Te.limitText, Te.limitText__loaded, Te.limitText__show),
-                                text: Ae.resourcesLoadingView.resourceRate.resourceLoadedText(),
-                                params: { iconLoaded: t.jsx('div', { className: a(Te.icon, Te.icon__loaded) }) },
+                                className: a(Ee.limitText, Ee.limitText__loaded, Ee.limitText__show),
+                                text: ye.resourcesLoadingView.resourceRate.resourceLoadedText(),
+                                params: { iconLoaded: t.jsx('div', { className: a(Ee.icon, Ee.icon__loaded) }) },
                                 upgradeLegacy: !0,
                             }),
                         }),
@@ -531,16 +524,16 @@ const Te = {
                             args: { currentValue: r + _, maxValue: u, type: c },
                             children: j
                                 ? t.jsx(b, {
-                                      className: a(Te.limitText, Te.limitText__max),
-                                      text: Ae.resourcesLoadingView.resourceRate.maxReachedText(),
-                                      params: { iconMax: t.jsx('div', { className: a(Te.icon, Te.icon__max) }) },
+                                      className: a(Ee.limitText, Ee.limitText__max),
+                                      text: ye.resourcesLoadingView.resourceRate.maxReachedText(),
+                                      params: { iconMax: t.jsx('div', { className: a(Ee.icon, Ee.icon__max) }) },
                                       upgradeLegacy: !0,
                                   })
                                 : t.jsx(b, {
-                                      className: Te.limitText,
-                                      text: Ae.resourcesLoadingView.resourceRate.maxText(),
+                                      className: Ee.limitText,
+                                      text: ye.resourcesLoadingView.resourceRate.maxText(),
                                       params: {
-                                          iconInfo: t.jsx('div', { className: a(Te.icon, Te.icon__limit) }),
+                                          iconInfo: t.jsx('div', { className: a(Ee.icon, Ee.icon__limit) }),
                                           maxValue: x.formatNumber('integral', u),
                                       },
                                       upgradeLegacy: !0,
@@ -550,7 +543,7 @@ const Te = {
             }),
         });
     },
-    Pe = {
+    Ae = {
         base: 'ResourcesCards_f29eea8f',
         scrollWrapper: 'ResourcesCards_scrollWrapper_2cc8cbf8',
         fadeIn: 'ResourcesCards_fadeIn_54b5634',
@@ -567,23 +560,23 @@ const Te = {
         slideUpCenter: 'ResourcesCards_slideUpCenter_54b5634',
         blink: 'ResourcesCards_blink_54b5634',
     },
-    Ve = [
+    ke = [
         { position: 0, index: 0 },
         { position: 0, index: 1 },
     ],
-    De = 'top',
-    Le = 'bottom',
-    Me = 'both',
-    He = 'none';
-const We = s(function ({ activeTabIndex: s }) {
+    Pe = 'top',
+    Ve = 'bottom',
+    De = 'both',
+    Le = 'none';
+const Me = s(function ({ activeTabIndex: s }) {
     const { resources: r } = e.useContext(te),
         { model: o } = J(),
         n = o.resourcesTabs.get(),
         { progressionState: c } = o.root.get(),
         { api: i } = j(),
         u = n[s],
-        [d, _] = e.useState(Ve),
-        [m, p] = e.useState(He);
+        [d, _] = e.useState(ke),
+        [m, p] = e.useState(Le);
     e.useLayoutEffect(() => {
         const e = () => {
                 const e = i.getContainerSize() ?? 0,
@@ -591,7 +584,7 @@ const We = s(function ({ activeTabIndex: s }) {
                     t = i.animationScroll.scrollPosition.get();
                 p(
                     (function (e, s, t) {
-                        return e <= s ? He : t <= 10 ? Le : s + t >= e - 10 ? De : Me;
+                        return e <= s ? Le : t <= 10 ? Ve : s + t >= e - 10 ? Pe : De;
                     })(e, s, t),
                 );
             },
@@ -617,41 +610,40 @@ const We = s(function ({ activeTabIndex: s }) {
             f();
         }, [f, s]),
         t.jsxs('div', {
-            className: a(Pe.base, Pe[`base__${m}`]),
+            className: a(Ae.base, Ae[`base__${m}`]),
             children: [
                 t.jsx(I, {
-                    classNames: { wrapper: Pe.scrollWrapper, content: Pe.scrollContent },
+                    classNames: { wrapper: Ae.scrollWrapper, content: Ae.scrollContent },
                     children: (() => {
                         if (u && 0 !== u.value.resources.length)
                             return t.jsx(w, {
-                                className: Pe.cardsWrapper,
-                                children: E(u.value.resources, (e, a) => {
-                                    var o;
-                                    return t.jsx(
+                                className: Ae.cardsWrapper,
+                                children: E(u.value.resources, (e, a) =>
+                                    t.jsx(
                                         'div',
                                         {
-                                            className: Pe.item,
-                                            children: t.jsx(ke, {
+                                            className: Ae.item,
+                                            children: t.jsx(Te, {
                                                 value: e,
-                                                currentValue: (null == (o = r[e.type]) ? void 0 : o.value) || 0,
+                                                currentValue: r[e.type]?.value || 0,
                                                 progressionState: c,
                                             }),
                                         },
                                         `card_${a}_${e.type}_${s}`,
-                                    );
-                                }),
+                                    ),
+                                ),
                             });
                     })(),
                 }),
-                t.jsx(y, { classNames: { base: Pe.scrollBarPosition } }),
+                t.jsx(y, { classNames: { base: Ae.scrollBarPosition } }),
             ],
         })
     );
 });
-function Ue(e) {
-    return t.jsx(T, { children: t.jsx(We, { ...e }) });
+function He(e) {
+    return t.jsx(T, { children: t.jsx(Me, { ...e }) });
 }
-const Be = {
+const Ue = {
         base: 'ResourcesHeaderItem_571dd076',
         base__active: 'ResourcesHeaderItem_base__active_953d6379',
         label: 'ResourcesHeaderItem_label_73933285',
@@ -669,12 +661,11 @@ const Be = {
         slideUp: 'ResourcesHeaderItem_slideUp_b8d7a3f9',
         slideUpCenter: 'ResourcesHeaderItem_slideUpCenter_b8d7a3f9',
     },
-    $e = R.strings.resource_well,
-    Oe = ({ type: s, delta: r, activeTabIndex: o, tabIndex: n, onClick: i }) => {
-        var l, u, d;
-        const { isCardAnimationEnabled: _, tabsAnimated: m } = e.useContext(te);
+    We = R.strings.resource_well,
+    Be = ({ type: s, delta: r, activeTabIndex: o, tabIndex: n, onClick: i }) => {
+        const { isCardAnimationEnabled: l, tabsAnimated: u } = e.useContext(te);
         return t.jsxs('div', {
-            className: a(Be.base, o === n && Be.base__active, m[s] && m[s] > 0 && o !== n && _ && Be.base__animated),
+            className: a(Ue.base, o === n && Ue.base__active, u[s] && u[s] > 0 && o !== n && l && Ue.base__animated),
             onClick: () => {
                 (c.sound(W), i(n));
             },
@@ -682,33 +673,27 @@ const Be = {
                 c.sound(U);
             },
             children: [
-                t.jsx('div', { className: Be.glow }),
+                t.jsx('div', { className: Ue.glow }),
                 t.jsx('div', {
-                    className: Be.label,
-                    children: null == (l = $e.resourcesLoadingView.resourcesHeader.$dyn(s)) ? void 0 : l.toString(),
+                    className: Ue.label,
+                    children: We.resourcesLoadingView.resourcesHeader.$dyn(s)?.toString(),
                 }),
                 t.jsx(z, {
-                    header:
-                        null == (u = $e.tooltips.resourcesLoadingView.header.$dyn(`${s}_title`))
-                            ? void 0
-                            : u.toString(),
-                    body:
-                        null == (d = $e.tooltips.resourcesLoadingView.header.$dyn(`${s}_description`))
-                            ? void 0
-                            : d.toString(),
-                    children: t.jsx('div', { className: a(Be.image, Be[`image__${s}`]) }),
+                    header: We.tooltips.resourcesLoadingView.header.$dyn(`${s}_title`)?.toString(),
+                    body: We.tooltips.resourcesLoadingView.header.$dyn(`${s}_description`)?.toString(),
+                    children: t.jsx('div', { className: a(Ue.image, Ue[`image__${s}`]) }),
                 }),
                 t.jsx(b, {
-                    className: a(Be.deltaPercent, r > 0 && Be.deltaPercent__loaded),
-                    text: 0 === r ? $e.commonTexts.percent() : $e.resourcesLoadingView.counter.delta(),
+                    className: a(Ue.deltaPercent, r > 0 && Ue.deltaPercent__loaded),
+                    text: 0 === r ? We.commonTexts.percent() : We.resourcesLoadingView.counter.delta(),
                     params: { delta: r.toFixed(), percent: 0 },
                     upgradeLegacy: !0,
                 }),
             ],
         });
     },
-    Fe = 'ResourcesHeader_839e69c3',
-    ze = s(function ({ handleTabClick: s, activeTabIndex: a }) {
+    $e = 'ResourcesHeader_839e69c3',
+    Oe = s(function ({ handleTabClick: s, activeTabIndex: a }) {
         const { model: r } = J(),
             o = r.resourcesTabs.get(),
             { resources: n, setDelta: c, setTabsAnimated: i } = e.useContext(te),
@@ -737,10 +722,10 @@ const Be = {
             [s, l, n, i],
         );
         return t.jsx('div', {
-            className: Fe,
+            className: $e,
             children: o.map(({ value: e }, s) =>
                 t.jsx(
-                    Oe,
+                    Be,
                     {
                         type: e.type,
                         resources: e.resources,
@@ -754,11 +739,11 @@ const Be = {
             ),
         });
     }),
-    qe = 'Content_d86d909',
-    Ke = 'Content_header_9d26a7f4',
-    Ge = 'Content_c84d5903',
-    Xe = 'Content_content__center_41e47377',
-    Ye = s(function () {
+    Fe = 'Content_d86d909',
+    ze = 'Content_header_9d26a7f4',
+    qe = 'Content_c84d5903',
+    Ke = 'Content_content__center_41e47377',
+    Ge = s(function () {
         const { model: s } = J(),
             r = s.resourcesTabs.get(),
             [o, n] = e.useState(0),
@@ -766,37 +751,37 @@ const Be = {
                 n(e);
             }, []);
         return t.jsxs('div', {
-            className: qe,
+            className: Fe,
             children: [
-                t.jsx('div', { className: Ke, children: t.jsx(ze, { handleTabClick: c, activeTabIndex: o }) }),
+                t.jsx('div', { className: ze, children: t.jsx(Oe, { handleTabClick: c, activeTabIndex: o }) }),
                 t.jsx('div', {
-                    className: a(Ge, r[o] && r[o].value.resources.length <= 5 && Xe),
-                    children: t.jsx(Ue, { activeTabIndex: o }),
+                    className: a(qe, r[o] && r[o].value.resources.length <= 5 && Ke),
+                    children: t.jsx(He, { activeTabIndex: o }),
                 }),
             ],
         });
     }),
-    Je = 'Header_7d83acf6',
-    Qe = 'Header_title_848ac8f3',
-    Ze = 'Header_subtitle_ebe5184e',
-    es = () =>
+    Xe = 'Header_7d83acf6',
+    Ye = 'Header_title_848ac8f3',
+    Je = 'Header_subtitle_ebe5184e',
+    Qe = () =>
         t.jsxs('div', {
-            className: Je,
+            className: Xe,
             children: [
-                t.jsx('div', { className: Qe, children: R.strings.resource_well.commonTexts.eventTitle() }),
-                t.jsx('div', { className: Ze, children: R.strings.resource_well.resourcesLoadingView.subtitle() }),
+                t.jsx('div', { className: Ye, children: R.strings.resource_well.commonTexts.eventTitle() }),
+                t.jsx('div', { className: Je, children: R.strings.resource_well.resourcesLoadingView.subtitle() }),
             ],
         }),
-    ss = 'App_ee95fab5',
-    ts = 'App_base__blur_0',
-    as = 'App_background_b5ce4082',
-    rs = 'App_wrapper_f23099db',
-    os = 'App_solidBackground_fab1cfb4',
-    ns = 'App_header_eefc9528',
-    cs = 'App_close_c4e6c691',
-    is = 'App_counter_bb31fd22',
-    ls = 'App_footer_1a5766c7',
-    us = s(function () {
+    Ze = 'App_ee95fab5',
+    es = 'App_base__blur_0',
+    ss = 'App_background_b5ce4082',
+    ts = 'App_wrapper_f23099db',
+    as = 'App_solidBackground_fab1cfb4',
+    rs = 'App_header_eefc9528',
+    os = 'App_close_c4e6c691',
+    ns = 'App_counter_bb31fd22',
+    cs = 'App_footer_1a5766c7',
+    is = s(function () {
         const { model: s, controls: r } = J(),
             { progression: o, progressionState: n, isLoadingError: i, showBlur: l } = s.root.get();
         A();
@@ -810,7 +795,7 @@ const Be = {
             delta: f,
             setIsCardAnimationEnabled: g,
             setResourcesAnimated: x,
-            setTabsAnimated: v,
+            setTabsAnimated: h,
         } = e.useContext(te);
         (e.useEffect(() => {
             d(o);
@@ -832,23 +817,23 @@ const Be = {
             e.useEffect(() => {
                 o + f === 100 && 100 !== o && c.sound($);
             }, [o, f]));
-        const h = e.useCallback(() => {
-            (_(o), f || (o !== p && c.sound(O)), x({}), v({}), g(!1));
-        }, [_, o, f, x, v, g, p]);
+        const v = e.useCallback(() => {
+            (_(o), f || (o !== p && c.sound(O)), x({}), h({}), g(!1));
+        }, [_, o, f, x, h, g, p]);
         return t.jsxs('div', {
-            className: a(ss, l && ts),
+            className: a(Ze, l && es),
             children: [
-                t.jsx('div', { className: os }),
                 t.jsx('div', { className: as }),
+                t.jsx('div', { className: ss }),
                 t.jsxs('div', {
-                    className: rs,
+                    className: ts,
                     children: [
-                        t.jsx('div', { className: is, children: t.jsx(K, { vehicleCounter: s.vehicleCounter.get() }) }),
-                        t.jsx('div', { className: ns, children: t.jsx(es, {}) }),
-                        t.jsx(k, { className: cs, onClose: r.close }),
-                        t.jsx(Ye, {}),
+                        t.jsx('div', { className: ns, children: t.jsx(K, { vehicleCounter: s.vehicleCounter.get() }) }),
+                        t.jsx('div', { className: rs, children: t.jsx(Qe, {}) }),
+                        t.jsx(k, { className: os, onClose: r.close }),
+                        t.jsx(Ge, {}),
                         t.jsx(q, {
-                            className: ls,
+                            className: cs,
                             variant: 'resources',
                             counterUnavailable: !s.vehicleCounter.get().isVehicleCountAvailable,
                             progressionState: n === X.NoProgress ? X.Active : n,
@@ -856,7 +841,7 @@ const Be = {
                             onHangarShow: r.showHangar,
                             onClose: r.close,
                             onResourcesLoad: u,
-                            onProgressBarAnimate: h,
+                            onProgressBarAnimate: v,
                             progressValue: o,
                             deltaValue: f,
                         }),
@@ -865,5 +850,5 @@ const Be = {
             ],
         });
     }),
-    ds = P(F);
-V(t.jsx(D, { soundsOverrides: ds, children: t.jsx(Y, { children: t.jsx(ae, { children: t.jsx(us, {}) }) }) }));
+    ls = P(F);
+V(t.jsx(D, { soundsOverrides: ls, children: t.jsx(Y, { children: t.jsx(ae, { children: t.jsx(is, {}) }) }) }));

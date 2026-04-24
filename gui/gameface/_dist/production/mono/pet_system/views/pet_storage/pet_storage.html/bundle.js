@@ -1,56 +1,59 @@
-import { r as e, j as t, q as s, f as a, l as n } from '../../../chunks/vendor.js';
+import { r as e, j as t, s, f as a, h as n, m as r } from '../../../chunks/vendor.js';
 import {
-    i as r,
-    y as o,
-    r as i,
-    T as l,
-    w as c,
-    x as d,
-    z as m,
-    C as u,
-    D as _,
-    B as p,
-    E as b,
-    p as g,
-    d as v,
-    G as N,
-    H as h,
-    P as y,
-    K as x,
-    L as j,
-    N as C,
-    O as f,
+    i as o,
+    y as i,
+    r as l,
+    T as c,
+    w as d,
+    x as m,
+    z as u,
+    C as _,
+    D as p,
+    B as b,
+    E as g,
+    q as v,
+    d as N,
+    G as h,
+    H as y,
+    P as x,
+    K as j,
+    L as C,
+    N as f,
+    O as S,
     Q as P,
-    o as B,
-    S,
-    v as k,
-    W as I,
-    M as E,
-    X as O,
-    Y as D,
-    Z as w,
-    _ as $,
-    $ as A,
-    a0 as M,
-    a1 as T,
-    a2 as V,
-    a3 as W,
-    a4 as z,
-    a5 as F,
-    a6 as R,
-    a7 as U,
-    a8 as H,
+    p as B,
+    S as k,
+    v as I,
+    W as E,
+    M as O,
+    X as D,
+    Y as w,
+    Z as $,
+    _ as A,
+    $ as M,
+    a0 as T,
+    a1 as V,
+    a2 as W,
+    a3 as z,
+    a4 as F,
+    a5 as R,
+    a6 as U,
+    a7 as H,
+    a8 as L,
     a9 as q,
-    aa as L,
-    ab as G,
-    k as K,
-    U as Q,
-    q as X,
-    l as Y,
+    aa as G,
+    ab as K,
+    ac as Q,
+    ad as X,
+    ae as Y,
+    k as Z,
+    U as J,
+    n as ee,
+    l as te,
 } from '../../../chunks/lib.js';
-import { B as Z } from '../../../chunks/breed.js';
-import { S as J } from '../../../chunks/warning_icon.js';
-/* empty css                    */ const [ee, te] = r()(
+import { B as se } from '../../../chunks/breed.js';
+import { S as ae } from '../../../chunks/warning_icon.js';
+/* empty css                    */ const [ne, re] = o()(
     ({ observableModel: e }) => ({
         ...{
             root: e.object(),
@@ -74,19 +77,19 @@ import { S as J } from '../../../chunks/warning_icon.js';
         selectPurchase: e.createCallbackNoArgs('promotionModel.onPurchaseSelect'),
     }),
 );
-var se = ((e) => (
+var oe = ((e) => (
         (e.Incomplete = 'incomplete'),
         (e.UpdatedRecently = 'updatedRecently'),
         (e.Complete = 'complete'),
         e
-    ))(se || {}),
-    ae = ((e) => (
+    ))(oe || {}),
+    ie = ((e) => (
         (e[(e.Always = 0)] = 'Always'),
         (e[(e.DisableAnimation = 1)] = 'DisableAnimation'),
         (e[(e.OnlyIntoPetPlace = 2)] = 'OnlyIntoPetPlace'),
         e
-    ))(ae || {});
-const ne = {
+    ))(ie || {});
+const le = {
         background: 'NameCard_background_b22002dd',
         base: 'NameCard_173ccdb7',
         card: 'NameCard_card_2fda0d9e',
@@ -95,46 +98,46 @@ const ne = {
         bubble: 'NameCard_bubble_231d156f',
         border: 'NameCard_border_c95f2f7e',
     },
-    re = o('NameCard', ne.base, {
+    ce = i('NameCard', le.base, {
         variants: {
-            active: { true: ne.base__active },
-            selected: { true: ne.base__selected },
-            hover: { true: ne.base__hover },
+            active: { true: le.base__active },
+            selected: { true: le.base__selected },
+            hover: { true: le.base__hover },
         },
-        compoundVariants: [{ hover: !0, selected: !0, className: ne.base__selectedHover }],
+        compoundVariants: [{ hover: !0, selected: !0, className: le.base__selectedHover }],
     }),
-    oe = i.resolve('strings');
-function ie({ petName: s, currentNameID: a, setCurrentNameID: n }) {
+    de = l.resolve('strings');
+function me({ petName: s, currentNameID: a, setCurrentNameID: n }) {
     const [r, o] = e.useState(s.isNew);
-    return t.jsxs(re, {
+    return t.jsxs(ce, {
         selected: a === s.petNameID,
-        className: ne.base,
+        className: le.base,
         children: [
             t.jsx('div', {
-                className: ne.card,
+                className: le.card,
                 onClick: () => {
-                    s.petNameID !== a && (m.sound(u.click), o(!1), n(s.petNameID));
+                    s.petNameID !== a && (u.sound(_.click), o(!1), n(s.petNameID));
                 },
-                children: t.jsx(l, {
-                    className: ne.cardText,
-                    text: oe.readOrEmpty(`pet_names.petName_${s.petNameID}`),
+                children: t.jsx(c, {
+                    className: le.cardText,
+                    text: de.readOrEmpty(`pet_names.petName_${s.petNameID}`),
                 }),
             }),
-            t.jsx(c.Root, { hidden: !r, className: ne.bubble, children: t.jsx(c.Icon, { type: d.bubble }) }),
-            t.jsx('div', { className: ne.background }),
-            t.jsx('div', { className: ne.border }),
+            t.jsx(d.Root, { hidden: !r, className: le.bubble, children: t.jsx(d.Icon, { type: m.bubble }) }),
+            t.jsx('div', { className: le.background }),
+            t.jsx('div', { className: le.border }),
         ],
     });
 }
-const le = 'NamingContent_19d112f7',
-    ce = 'NamingContent_content_947fb074',
-    de = 'NamingContent_card_4767309e',
-    me = 'NamingContent_card__last_c7c2ca5b',
-    ue = i.resolve('sounds'),
-    _e = s(function ({ currentNameID: s, setCurrentNameID: n }) {
-        const { model: r, controls: o } = te(),
+const ue = 'NamingContent_19d112f7',
+    _e = 'NamingContent_content_947fb074',
+    pe = 'NamingContent_card_4767309e',
+    be = 'NamingContent_card__last_c7c2ca5b',
+    ge = l.resolve('sounds'),
+    ve = s(function ({ currentNameID: s, setCurrentNameID: n }) {
+        const { model: r, controls: o } = re(),
             i = r.petNames.get(),
-            l = _();
+            l = p();
         return (
             e.useEffect(() => {
                 const e = l.subscribe.onBeforeClose(() => {
@@ -144,19 +147,19 @@ const le = 'NamingContent_19d112f7',
                     e();
                 };
             }, [l.subscribe, o]),
-            t.jsx(p, {
-                children: t.jsx(b, {
-                    className: le,
+            t.jsx(b, {
+                children: t.jsx(g, {
+                    className: ue,
                     children: t.jsx('div', {
-                        className: ce,
-                        children: g(i, (e, r) =>
+                        className: _e,
+                        children: v(i, (e, r) =>
                             t.jsx(
                                 'div',
                                 {
-                                    className: a(de, r >= i.length - 3 && me),
-                                    onClick: () => ue.play('play'),
-                                    onMouseEnter: () => ue.play('highlight'),
-                                    children: t.jsx(ie, { petName: e, currentNameID: s, setCurrentNameID: n }),
+                                    className: a(pe, r >= i.length - 3 && be),
+                                    onClick: () => ge.play('play'),
+                                    onMouseEnter: () => ge.play('highlight'),
+                                    children: t.jsx(me, { petName: e, currentNameID: s, setCurrentNameID: n }),
                                 },
                                 `${e.petNameID}_${r}`,
                             ),
@@ -166,128 +169,128 @@ const le = 'NamingContent_19d112f7',
             })
         );
     }),
-    pe = 'CloseOutsideButton_803af006',
-    be = i.resolve('strings'),
-    ge = 'save',
-    ve = 'cancel';
-function Ne({ closeMode: e, onClick: s, disabled: a = !1 }) {
-    const n = _();
-    return t.jsx(v, {
-        theme: e === ge ? h.primary : h.secondary,
-        size: N.small,
-        className: pe,
+    Ne = 'CloseOutsideButton_803af006',
+    he = l.resolve('strings'),
+    ye = 'save',
+    xe = 'cancel';
+function je({ closeMode: e, onClick: s, disabled: a = !1 }) {
+    const n = p();
+    return t.jsx(N, {
+        theme: e === ye ? y.primary : y.secondary,
+        size: h.small,
+        className: Ne,
         disabled: a,
         onClick: () => {
-            (null == s || s(), n.close());
+            (s?.(), n.close());
         },
-        children: be.readOrEmpty('pet_system.petSettings.' + (e === ge ? 'saveButton.label' : 'cancelButton')),
+        children: he.readOrEmpty('pet_system.petSettings.' + (e === ye ? 'saveButton.label' : 'cancelButton')),
     });
 }
-const he = 'SettingsFooter_8ecc89b6',
-    ye = 'SettingsFooter_divider_a8b75a83',
-    xe = 'SettingsFooter_curtain_8cdd3fd9',
-    je = 'SettingsFooter_buttons_a8a280b',
-    Ce = 'SettingsFooter_saveButton_a922b33f',
-    fe = s(function ({ settingsMode: e, currentNameID: s, currentVisibility: a }) {
-        const { model: n, controls: r } = te(),
+const Ce = 'SettingsFooter_8ecc89b6',
+    fe = 'SettingsFooter_divider_a8b75a83',
+    Se = 'SettingsFooter_curtain_8cdd3fd9',
+    Pe = 'SettingsFooter_buttons_a8a280b',
+    Be = 'SettingsFooter_saveButton_a922b33f',
+    ke = s(function ({ settingsMode: e, currentNameID: s, currentVisibility: a }) {
+        const { model: n, controls: r } = re(),
             { petID: o } = n.root.get();
         return t.jsxs('div', {
-            className: he,
+            className: Ce,
             children: [
-                t.jsx(y.Divider, { className: ye }),
-                t.jsx('div', { className: xe }),
+                t.jsx(x.Divider, { className: fe }),
+                t.jsx('div', { className: Se }),
                 t.jsxs('div', {
-                    className: je,
+                    className: Pe,
                     children: [
                         t.jsx('div', {
-                            className: Ce,
-                            children: t.jsx(Ne, {
-                                closeMode: ge,
-                                onClick: () => (e === Ue.naming && r.saveName(s, o), r.saveVisibility(a)),
+                            className: Be,
+                            children: t.jsx(je, {
+                                closeMode: ye,
+                                onClick: () => (e === Ge.naming && r.saveName(s, o), r.saveVisibility(a)),
                             }),
                         }),
-                        t.jsx(Ne, { closeMode: ve }),
+                        t.jsx(je, { closeMode: xe }),
                     ],
                 }),
             ],
         });
     }),
-    Pe = 'VisibilityContent_3fcd2c1',
-    Be = 'VisibilityContent_radioButton_ed8388d0',
-    Se = i.resolve('strings'),
-    ke = [
-        { value: ae.Always, label: 'always' },
-        { value: ae.DisableAnimation, label: 'disableAnimation' },
-        { value: ae.OnlyIntoPetPlace, label: 'onlyIntoPetPlace' },
+    Ie = 'VisibilityContent_3fcd2c1',
+    Ee = 'VisibilityContent_radioButton_ed8388d0',
+    Oe = l.resolve('strings'),
+    De = [
+        { value: ie.Always, label: 'always' },
+        { value: ie.DisableAnimation, label: 'disableAnimation' },
+        { value: ie.OnlyIntoPetPlace, label: 'onlyIntoPetPlace' },
     ],
-    Ie = ({ currentVisibility: e, onVisibilityChange: s }) =>
+    we = ({ currentVisibility: e, onVisibilityChange: s }) =>
         t.jsx('div', {
-            className: Pe,
-            children: t.jsx(x.Group, {
+            className: Ie,
+            children: t.jsx(j.Group, {
                 value: e,
                 onChange: (e) => s(e),
-                children: ke.map((e) =>
+                children: De.map((e) =>
                     t.jsx(
-                        x,
+                        j,
                         {
-                            size: j.small,
+                            size: C.small,
                             value: e.value,
-                            className: Be,
-                            children: Se.readOrEmpty(`pet_system.petSettings.visibility.select.${e.label}`),
+                            className: Ee,
+                            children: Oe.readOrEmpty(`pet_system.petSettings.visibility.select.${e.label}`),
                         },
                         e.value,
                     ),
                 ),
             }),
         }),
-    Ee = 'SettingsPopover_2b148be2',
-    Oe = 'SettingsPopover_base__namingContainer_30c0eb6a',
-    De = 'SettingsPopover_tip_814526f',
-    we = 'SettingsPopover_header_c2cd6ca0',
-    $e = 'SettingsPopover_title_32a77f01',
-    Ae = 'SettingsPopover_subtitle_12abaab2',
-    Me = 'SettingsPopover_body_7eedca0a',
-    Te = 'SettingsPopover_divider_31e0231d',
-    Ve = 'SettingsPopover_curtain_152d577b',
-    We = i.resolve('strings'),
-    ze = s(function ({ settingsMode: s }) {
-        const { model: n } = te(),
-            { petNameID: r, visibilityState: o } = n.root.get(),
+    $e = 'SettingsPopover_2b148be2',
+    Ae = 'SettingsPopover_base__namingContainer_30c0eb6a',
+    Me = 'SettingsPopover_tip_814526f',
+    Te = 'SettingsPopover_header_c2cd6ca0',
+    Ve = 'SettingsPopover_title_32a77f01',
+    We = 'SettingsPopover_subtitle_12abaab2',
+    ze = 'SettingsPopover_body_7eedca0a',
+    Fe = 'SettingsPopover_divider_31e0231d',
+    Re = 'SettingsPopover_curtain_152d577b',
+    Ue = l.resolve('strings'),
+    He = s(function ({ settingsMode: s }) {
+        const { model: a } = re(),
+            { petNameID: r, visibilityState: o } = a.root.get(),
             [i, l] = e.useState(r),
             [c, d] = e.useState(o);
-        return t.jsxs(y.Display, {
-            className: a(Ee, s === Ue.naming && Oe),
+        return t.jsxs(x.Display, {
+            className: n($e, s === Ge.naming && Ae),
             children: [
-                t.jsx(C, { path: 'petSystem.selected_light', className: De }),
-                t.jsx(y.Close, {}),
-                t.jsxs(y.Header, {
-                    className: we,
+                t.jsx(f, { path: 'petSystem.selected_light', className: Me }),
+                t.jsx(x.Close, {}),
+                t.jsxs(x.Header, {
+                    className: Te,
                     children: [
-                        t.jsx(y.Title, {
-                            className: $e,
-                            children: We.readOrEmpty(`pet_system.petSettings.${s}.title`),
+                        t.jsx(x.Title, {
+                            className: Ve,
+                            children: Ue.readOrEmpty(`pet_system.petSettings.${s}.title`),
                         }),
-                        t.jsx(y.Subtitle, {
-                            className: Ae,
-                            children: We.readOrEmpty(`pet_system.petSettings.${s}.subtitle`),
+                        t.jsx(x.Subtitle, {
+                            className: We,
+                            children: Ue.readOrEmpty(`pet_system.petSettings.${s}.subtitle`),
                         }),
-                        t.jsx(y.Divider, { className: Te }),
-                        t.jsx('div', { className: Ve }),
+                        t.jsx(x.Divider, { className: Fe }),
+                        t.jsx('div', { className: Re }),
                     ],
                 }),
-                t.jsxs(y.Body, {
-                    className: Me,
+                t.jsxs(x.Body, {
+                    className: ze,
                     children: [
-                        s === Ue.naming
-                            ? t.jsx(_e, { currentNameID: i, setCurrentNameID: l })
-                            : t.jsx(Ie, { currentVisibility: c, onVisibilityChange: d }),
-                        t.jsx(fe, { settingsMode: s, currentNameID: i, currentVisibility: c }),
+                        s === Ge.naming
+                            ? t.jsx(ve, { currentNameID: i, setCurrentNameID: l })
+                            : t.jsx(we, { currentVisibility: c, onVisibilityChange: d }),
+                        t.jsx(ke, { settingsMode: s, currentNameID: i, currentVisibility: c }),
                     ],
                 }),
             ],
         });
     }),
-    Fe = {
+    Le = {
         base: 'SettingsTrigger_7dd3c4df',
         trigger: 'SettingsTrigger_trigger_2aeef7a',
         buttonBackground: 'SettingsTrigger_buttonBackground_a7f7b3cc',
@@ -295,289 +298,287 @@ const he = 'SettingsFooter_8ecc89b6',
         buttonBackground__naming: 'SettingsTrigger_buttonBackground__naming_1b881499',
         bubble: 'SettingsTrigger_bubble_e9b79e2f',
     },
-    Re = i.resolve('strings'),
-    Ue = { visibility: 'visibility', naming: 'naming' },
-    He = s(function ({ settingsMode: e }) {
-        const { model: s } = te(),
-            { hasNewNames: n, hasUniqueName: r } = s.root.get(),
-            o = e === Ue.naming,
+    qe = l.resolve('strings'),
+    Ge = { visibility: 'visibility', naming: 'naming' },
+    Ke = s(function ({ settingsMode: e }) {
+        const { model: s } = re(),
+            { hasNewNames: a, hasUniqueName: r } = s.root.get(),
+            o = e === Ge.naming,
             i = o && r ? 'uniqueName' : e,
-            l = f({
-                header: Re.readOrEmpty(`pet_system.petSettings.${i}.tip.title`),
-                body: Re.readOrEmpty(`pet_system.petSettings.${i}.tip.subtitle`),
+            l = S({
+                header: qe.readOrEmpty(`pet_system.petSettings.${i}.tip.title`),
+                body: qe.readOrEmpty(`pet_system.petSettings.${i}.tip.subtitle`),
             }),
-            m = (o && !r) || e === Ue.visibility;
+            c = (o && !r) || e === Ge.visibility;
         return t.jsx('div', {
-            className: Fe.base,
-            children: t.jsxs(y, {
+            className: Le.base,
+            children: t.jsxs(x, {
                 children: [
-                    t.jsx(y.Trigger, {
+                    t.jsx(x.Trigger, {
                         children: (s, i) =>
-                            t.jsxs(v, {
+                            t.jsxs(N, {
                                 ...(!i.opened && l),
                                 ...s,
-                                size: N.small,
-                                theme: h.secondary,
-                                className: Fe.trigger,
-                                disabled: !m,
+                                size: h.small,
+                                theme: y.secondary,
+                                className: Le.trigger,
+                                disabled: !c,
                                 onClick: (e) => {
-                                    m && (l.onClick(), s.onClick(e));
+                                    c && (l.onClick(), s.onClick(e));
                                 },
                                 children: [
-                                    t.jsx('div', { className: a(Fe.buttonBackground, Fe[`buttonBackground__${e}`]) }),
+                                    t.jsx('div', { className: n(Le.buttonBackground, Le[`buttonBackground__${e}`]) }),
                                     o &&
                                         !r &&
-                                        t.jsx(c.Root, {
-                                            hidden: !n,
-                                            className: Fe.bubble,
-                                            children: t.jsx(c.Icon, { type: d.bubble }),
+                                        t.jsx(d.Root, {
+                                            hidden: !a,
+                                            className: Le.bubble,
+                                            children: t.jsx(d.Icon, { type: m.bubble }),
                                         }),
                                 ],
                             }),
                     }),
-                    t.jsx(y.Portal, {
+                    t.jsx(x.Portal, {
                         lazy: !0,
                         position: 'bottom',
                         pivot: 1,
-                        children: t.jsx(ze, { settingsMode: e }),
+                        children: t.jsx(He, { settingsMode: e }),
                     }),
                 ],
             }),
         });
     }),
-    qe = 'SettingsBar_680417a7',
-    Le = 'SettingsBar_breed_867ab9f7',
-    Ge = 'SettingsBar_triggers_b1100faf',
-    Ke = 'SettingsBar_visibility_99637c86',
-    Qe = i.resolve('strings'),
-    Xe = s(function () {
-        const { model: e } = te(),
+    Qe = 'SettingsBar_680417a7',
+    Xe = 'SettingsBar_breed_867ab9f7',
+    Ye = 'SettingsBar_triggers_b1100faf',
+    Ze = 'SettingsBar_visibility_99637c86',
+    Je = l.resolve('strings'),
+    et = s(function () {
+        const { model: e } = re(),
             { petType: s, breedName: a } = e.root.get(),
             { isPromotionEnabled: n } = e.promo.get();
         return t.jsxs('div', {
-            className: qe,
+            className: Qe,
             children: [
-                t.jsx(Z, {
-                    className: Le,
-                    petType: Qe.readOrEmpty(`pet_system.petType.${s}`),
-                    breedName: Qe.readOrEmpty(`pet_system.breedName.${a}`),
+                t.jsx(se, {
+                    className: Xe,
+                    petType: Je.readOrEmpty(`pet_system.petType.${s}`),
+                    breedName: Je.readOrEmpty(`pet_system.breedName.${a}`),
                 }),
                 !n &&
                     t.jsxs('div', {
-                        className: Ge,
+                        className: Ye,
                         children: [
-                            t.jsx('div', { className: Ke, children: t.jsx(He, { settingsMode: Ue.visibility }) }),
-                            t.jsx(He, { settingsMode: Ue.naming }),
+                            t.jsx('div', { className: Ze, children: t.jsx(Ke, { settingsMode: Ge.visibility }) }),
+                            t.jsx(Ke, { settingsMode: Ge.naming }),
                         ],
                     }),
             ],
         });
     }),
-    Ye = 'Head_petName_517ee482',
-    Ze = 'Head_petIcon_f5722299',
-    Je = 'Head_settingsBar_6368c5fb',
-    et = 'Head_video_bf7e9181',
-    tt = i.resolve('views'),
-    st = i.resolve('strings'),
-    at = i.resolve('images'),
-    nt = i.resolve('videos'),
-    rt = s(function () {
-        const { model: s } = te(),
+    tt = 'Head_petName_22258542',
+    st = 'Head_petIcon_f5722299',
+    at = 'Head_settingsBar_6368c5fb',
+    nt = 'Head_video_bf7e9181',
+    rt = l.resolve('views'),
+    ot = l.resolve('strings'),
+    it = l.resolve('images'),
+    lt = l.resolve('videos'),
+    ct = s(function () {
+        const { model: s } = re(),
             { petNameID: a, SynergyState: n } = s.root.get(),
             { isPromotionEnabled: r } = s.promo.get(),
             o = e.useRef(null),
             i = e.useRef(null),
-            l = P({ contentId: tt.read((e) => e.mono.pet_system.tooltips.synergy_tooltip('resId')) });
+            l = P({ contentId: rt.read((e) => e.mono.pet_system.tooltips.synergy_tooltip('resId')) });
         return (
-            e.useEffect(() => {
-                var e;
-                return (
-                    n === se.UpdatedRecently
-                        ? null == (e = o.current) ||
-                          e.on('ended', () => {
+            e.useEffect(
+                () => (
+                    n === oe.UpdatedRecently
+                        ? o.current?.on('ended', () => {
                               i.current = setTimeout(() => {
-                                  var e;
-                                  null == (e = o.current) || e.play();
+                                  o.current?.play();
                               }, 1e3);
                           })
-                        : (null == i ? void 0 : i.current) && clearTimeout(i.current),
+                        : i?.current && clearTimeout(i.current),
                     () => {
-                        (null == i ? void 0 : i.current) && clearTimeout(i.current);
+                        i?.current && clearTimeout(i.current);
                     }
-                );
-            }, [o, i, n]),
+                ),
+                [o, i, n],
+            ),
             t.jsxs(t.Fragment, {
                 children: [
                     t.jsx('div', {
-                        className: Ye,
+                        className: tt,
                         children: t.jsxs('div', {
                             children: [
-                                st.readOrEmpty(`pet_names.petName_${a}`),
+                                ot.readOrEmpty(`pet_names.petName_${a}`),
                                 !r &&
                                     t.jsx('div', {
                                         ...l,
                                         style: {
-                                            backgroundImage: `url(${at.readOrEmpty('petSystem.pet_' + (n === se.Complete ? 'active' : 'disabled'))})`,
+                                            backgroundImage: `url(${it.readOrEmpty('petSystem.pet_' + (n === oe.Complete ? 'active' : 'disabled'))})`,
                                         },
-                                        className: Ze,
+                                        className: st,
                                         children:
-                                            n === se.UpdatedRecently &&
+                                            n === oe.UpdatedRecently &&
                                             t.jsx(B, {
-                                                src: nt.readOrEmpty('pet_system.synergy_blick'),
+                                                src: lt.readOrEmpty('pet_system.synergy_blick'),
                                                 ref: o,
                                                 autoplay: !0,
-                                                className: et,
+                                                className: nt,
                                             }),
                                     }),
                             ],
                         }),
                     }),
-                    t.jsx('div', { className: Je, children: t.jsx(Xe, {}) }),
+                    t.jsx('div', { className: at, children: t.jsx(et, {}) }),
                 ],
             })
         );
     }),
-    ot = 'ArcProgressbar_46a212bd',
-    it = 'ArcProgressbar_progress_684236c8',
-    lt = 'ArcProgressbar_blick_985e05f6',
-    ct = 'ArcProgressbar_values_d8302045',
-    dt = 'ArcProgressbar_current_2a7ce7de';
-function mt({ total: e, current: s }) {
+    dt = 'ArcProgressbar_46a212bd',
+    mt = 'ArcProgressbar_progress_dc08b57a',
+    ut = 'ArcProgressbar_blick_985e05f6',
+    _t = 'ArcProgressbar_values_d8302045',
+    pt = 'ArcProgressbar_current_2a7ce7de';
+function bt({ total: e, current: s }) {
     const a = Math.min((s / e) * 100, 100) + '%',
         n = Math.min((s / e) * 360, 360) + 'deg';
     return t.jsxs('div', {
-        className: ot,
+        className: dt,
         style: { '--progressbarMaskPercentage': `${a}`, '--blickRotateAngle': `${n}` },
         children: [
-            t.jsx('div', { className: it }),
-            t.jsx('div', { className: lt }),
-            t.jsxs('div', { className: ct, children: [t.jsx('div', { className: dt, children: s }), '/', e] }),
+            t.jsx('div', { className: mt }),
+            t.jsx('div', { className: ut }),
+            t.jsxs('div', { className: _t, children: [t.jsx('div', { className: pt, children: s }), '/', e] }),
         ],
     });
 }
-const ut = 'BonusCard_b7b7b0c4',
-    _t = 'BonusCard_base__selected_65ff400e',
-    pt = 'BonusCard_img_d748a277',
-    bt = 'BonusCard_content_55446e37',
-    gt = 'BonusCard_statusIcon_48a0db7c',
-    vt = 'BonusCard_background_6ade597b',
-    Nt = 'BonusCard_background__selected_4ba38d69',
-    ht = i.resolve('images'),
-    yt = i.resolve('strings'),
-    xt = s(function ({ name: e, value: s, id: n }) {
-        const { model: r, controls: o } = te(),
+const gt = 'BonusCard_b7b7b0c4',
+    vt = 'BonusCard_base__selected_65ff400e',
+    Nt = 'BonusCard_img_d748a277',
+    ht = 'BonusCard_content_55446e37',
+    yt = 'BonusCard_statusIcon_48a0db7c',
+    xt = 'BonusCard_background_6ade597b',
+    jt = 'BonusCard_background__selected_4ba38d69',
+    Ct = l.resolve('images'),
+    ft = l.resolve('strings'),
+    St = s(function ({ name: e, value: s, id: n }) {
+        const { model: r, controls: o } = re(),
             { selectedBonus: i } = r.root.get(),
             l = i === n,
-            c = f({
-                header: yt.readOrEmpty(`pet_system.bonus.${e}.title`),
-                body: yt.readOrEmpty('pet_system.petStorage.petBonus.tooltip.content'),
+            c = S({
+                header: ft.readOrEmpty(`pet_system.bonus.${e}.title`),
+                body: ft.readOrEmpty('pet_system.petStorage.petBonus.tooltip.content'),
             });
-        return t.jsxs(S, {
+        return t.jsxs(k, {
             ...c,
-            className: a(ut, l && _t),
+            className: a(gt, l && vt),
             selected: l,
             status: l ? 'done' : void 0,
-            classNames: { status: { icon: gt } },
+            classNames: { status: { icon: yt } },
             onClick: l ? void 0 : () => o.selectBonus(n),
             children: [
                 t.jsx('div', {
-                    className: pt,
-                    style: { backgroundImage: `url(${ht.readOrEmpty(`library.currency.${e}_80x80`)})` },
+                    className: Nt,
+                    style: { backgroundImage: `url(${Ct.readOrEmpty(`library.currency.${e}_80x80`)})` },
                 }),
                 t.jsx('div', {
-                    className: bt,
-                    children: t.jsx(k, { path: 'pet_system.plusPercentValue', params: { value: s } }),
+                    className: ht,
+                    children: t.jsx(I, { path: 'pet_system.plusPercentValue', params: { value: s } }),
                 }),
-                t.jsx('div', { className: a(vt, l && Nt) }),
+                t.jsx('div', { className: a(xt, l && jt) }),
             ],
         });
     }),
-    jt = 'PetBonus_c10cb3e0',
-    Ct = s(function () {
-        const { model: e } = te(),
+    Pt = 'PetBonus_c10cb3e0',
+    Bt = s(function () {
+        const { model: e } = re(),
             s = e.bonuses.get();
-        return t.jsx(I, {
-            className: jt,
-            children: g(s, (e) => t.jsx(xt, { name: e.name, value: e.value, id: e.id }, e.id)),
+        return t.jsx(E, {
+            className: Pt,
+            children: v(s, (e) => t.jsx(St, { name: e.name, value: e.value, id: e.id }, e.id)),
         });
     }),
-    ft = 'Status_9a38fa07',
-    Pt = 'Status_background_eebcfca7',
-    Bt = 'Status_blur_bf1a0a06',
-    St = 'Status_content_c5cb37ff',
-    kt = i.resolve('strings'),
-    It = s(function () {
-        const { model: e, controls: s } = te(),
+    kt = 'Status_9a38fa07',
+    It = 'Status_background_36fd567d',
+    Et = 'Status_blur_bf1a0a06',
+    Ot = 'Status_content_c5cb37ff',
+    Dt = l.resolve('strings'),
+    wt = s(function () {
+        const { model: e, controls: s } = re(),
             { isPetSelected: a, petID: n } = e.root.get();
         return t.jsx(t.Fragment, {
             children: a
                 ? t.jsxs('div', {
-                      className: ft,
+                      className: kt,
                       children: [
                           t.jsx('div', {
-                              className: St,
-                              children: kt.readOrEmpty('pet_system.petStorage.status.selected'),
+                              className: Ot,
+                              children: Dt.readOrEmpty('pet_system.petStorage.status.selected'),
                           }),
-                          t.jsx('div', { className: Pt }),
-                          t.jsx('div', { className: Bt }),
+                          t.jsx('div', { className: It }),
+                          t.jsx('div', { className: Et }),
                       ],
                   })
-                : t.jsx(v, {
+                : t.jsx(N, {
                       onClick: () => s.selectPet(n),
-                      children: kt.readOrEmpty('pet_system.petStorage.status.select'),
+                      children: Dt.readOrEmpty('pet_system.petStorage.status.select'),
                   }),
         });
     }),
-    Et = 'PetDescription_d0fd37f9',
-    Ot = i.resolve('strings'),
-    Dt = s(function () {
-        const { model: e } = te(),
+    $t = 'PetDescription_d0fd37f9',
+    At = l.resolve('strings'),
+    Mt = s(function () {
+        const { model: e } = re(),
             { breedName: s } = e.root.get();
-        return t.jsx(E, { className: Et, text: Ot.readOrEmpty(`pet_system.petDescription.${s}`) });
+        return t.jsx(O, { className: $t, text: At.readOrEmpty(`pet_system.petDescription.${s}`) });
     }),
-    wt = 'PrimaryContent_block_cd150e59',
-    $t = 'PrimaryContent_title_2c3b0ca3',
-    At = 'PrimaryContent_title__pet_ae10c939',
-    Mt = 'PrimaryContent_title__progressbar_656a9391',
-    Tt = 'PrimaryContent_progressbar_9867c107',
-    Vt = 'PrimaryContent_progressbarWrapper_13d35760',
-    Wt = 'PrimaryContent_progressbarInfo_ed3f6d13',
-    zt = 'PrimaryContent_status_b56886f5',
-    Ft = 'PrimaryContent_warning_cee338cb',
-    Rt = 'PrimaryContent_warningIcon_3c4068ae',
-    Ut = 'PrimaryContent_warningText_3090b32',
-    Ht = i.resolve('strings'),
-    qt = s(function () {
-        const { model: e } = te(),
+    Tt = 'PrimaryContent_block_cd150e59',
+    Vt = 'PrimaryContent_title_aaba23af',
+    Wt = 'PrimaryContent_title__pet_ae10c939',
+    zt = 'PrimaryContent_title__progressbar_656a9391',
+    Ft = 'PrimaryContent_progressbar_9867c107',
+    Rt = 'PrimaryContent_progressbarWrapper_13d35760',
+    Ut = 'PrimaryContent_progressbarInfo_ed3f6d13',
+    Ht = 'PrimaryContent_status_b56886f5',
+    Lt = 'PrimaryContent_warning_cee338cb',
+    qt = 'PrimaryContent_warningIcon_3c4068ae',
+    Gt = 'PrimaryContent_warningText_3090b32',
+    Kt = l.resolve('strings'),
+    Qt = s(function () {
+        const { model: e } = re(),
             { totalCount: s, currentCount: n, isUnsuitableMode: r } = e.root.get(),
-            o = f({
-                header: Ht.readOrEmpty('pet_system.petStorage.progressbarTooltip.title'),
-                body: Ht.readOrEmpty('pet_system.petStorage.progressbarTooltip.content'),
+            o = S({
+                header: Kt.readOrEmpty('pet_system.petStorage.progressbarTooltip.title'),
+                body: Kt.readOrEmpty('pet_system.petStorage.progressbarTooltip.content'),
             });
         return t.jsxs(t.Fragment, {
             children: [
                 t.jsx('div', {
-                    className: wt,
+                    className: Tt,
                     children: t.jsxs('div', {
-                        className: Tt,
+                        className: Ft,
                         children: [
-                            t.jsx('div', { ...o, className: Vt, children: t.jsx(mt, { total: s, current: n }) }),
+                            t.jsx('div', { ...o, className: Rt, children: t.jsx(bt, { total: s, current: n }) }),
                             t.jsxs('div', {
-                                className: Wt,
+                                className: Ut,
                                 children: [
                                     t.jsx('div', {
-                                        className: a($t, Mt),
-                                        children: Ht.readOrEmpty('pet_system.petStorage.progressbarTitle'),
+                                        className: a(Vt, zt),
+                                        children: Kt.readOrEmpty('pet_system.petStorage.progressbarTitle'),
                                     }),
-                                    Ht.readOrEmpty('pet_system.petStorage.progressbarDescription'),
-                                    Ht.readOrEmpty('pet_system.petStorage.progressbarBonuses'),
+                                    Kt.readOrEmpty('pet_system.petStorage.progressbarDescription'),
+                                    Kt.readOrEmpty('pet_system.petStorage.progressbarBonuses'),
                                     r &&
                                         t.jsxs('div', {
-                                            className: Ft,
+                                            className: Lt,
                                             children: [
-                                                t.jsx(J, { className: Rt }),
-                                                t.jsx(k, {
-                                                    className: Ut,
+                                                t.jsx(ae, { className: qt }),
+                                                t.jsx(I, {
+                                                    className: Gt,
                                                     path: 'pet_system.petStorage.progressbarWarning',
                                                     split: !0,
                                                 }),
@@ -589,60 +590,60 @@ const ut = 'BonusCard_b7b7b0c4',
                     }),
                 }),
                 t.jsxs('div', {
-                    className: wt,
+                    className: Tt,
                     children: [
                         t.jsx('div', {
-                            className: a($t, At),
-                            children: Ht.readOrEmpty('pet_system.petStorage.petBonus.title'),
+                            className: a(Vt, Wt),
+                            children: Kt.readOrEmpty('pet_system.petStorage.petBonus.title'),
                         }),
-                        t.jsx(Ct, {}),
+                        t.jsx(Bt, {}),
                     ],
                 }),
                 t.jsxs('div', {
-                    className: wt,
-                    children: [t.jsx(Dt, {}), t.jsx('div', { className: zt, children: t.jsx(It, {}) })],
+                    className: Tt,
+                    children: [t.jsx(Mt, {}), t.jsx('div', { className: Ht, children: t.jsx(wt, {}) })],
                 }),
             ],
         });
     }),
-    Lt = 'PromotionBonuses_e7412a66',
-    Gt = 'PromotionBonuses_bonus_cba5b56f',
-    Kt = 'PromotionBonuses_header_b1113ed9',
-    Qt = 'PromotionBonuses_img_cb948ce5',
-    Xt = 'PromotionBonuses_title_3c2cfcb9',
-    Yt = 'PromotionBonuses_text_227fa49e',
-    Zt = i.resolve('images'),
-    Jt = i.resolve('strings'),
-    es = s(function () {
-        const e = O(),
-            { model: s } = te(),
+    Xt = 'PromotionBonuses_e7412a66',
+    Yt = 'PromotionBonuses_bonus_cba5b56f',
+    Zt = 'PromotionBonuses_header_b1113ed9',
+    Jt = 'PromotionBonuses_img_cb948ce5',
+    es = 'PromotionBonuses_title_3c2cfcb9',
+    ts = 'PromotionBonuses_text_227fa49e',
+    ss = l.resolve('images'),
+    as = l.resolve('strings'),
+    ns = s(function () {
+        const e = D(),
+            { model: s } = re(),
             a = s.promotionBonuses.get();
         return t.jsx('div', {
-            className: Lt,
-            children: g(a, (s) =>
+            className: Xt,
+            children: v(a, (s) =>
                 t.jsxs(
                     'div',
                     {
-                        className: Gt,
+                        className: Yt,
                         children: [
                             t.jsxs('div', {
-                                className: Kt,
+                                className: Zt,
                                 children: [
                                     t.jsx('div', {
-                                        className: Qt,
+                                        className: Jt,
                                         style: {
-                                            backgroundImage: `url(${Zt.readOrEmpty(`petSystem.promotion.${s}${e.breakpoint.weight < D.medium.weight ? '_sm' : ''}`)})`,
+                                            backgroundImage: `url(${ss.readOrEmpty(`petSystem.promotion.${s}${e.breakpoint.weight < w.medium.weight ? '_sm' : ''}`)})`,
                                         },
                                     }),
                                     t.jsx('div', {
-                                        className: Xt,
-                                        children: Jt.readOrEmpty(`pet_system.bonus.${s}.title`),
+                                        className: es,
+                                        children: as.readOrEmpty(`pet_system.bonus.${s}.title`),
                                     }),
                                 ],
                             }),
                             t.jsx('div', {
-                                className: Yt,
-                                children: Jt.readOrEmpty(`pet_system.bonus.${s}.description`),
+                                className: ts,
+                                children: as.readOrEmpty(`pet_system.bonus.${s}.description`),
                             }),
                         ],
                     },
@@ -651,75 +652,75 @@ const ut = 'BonusCard_b7b7b0c4',
             ),
         });
     }),
-    ts = 'PromotionalContent_descriptionWrapper_d0793a29',
-    ss = 'PromotionalContent_bonusesWrapper_b512891d',
-    as = 'PromotionalContent_bonuses_c5451a13',
-    ns = 'PromotionalContent_title_85a152c0',
-    rs = 'PromotionalContent_text_8bfa7ca5',
-    os = 'PromotionalContent_text__challenge_b5c408bf',
-    is = 'PromotionalContent_buttons_a5156779',
-    ls = 'PromotionalContent_btn_9f57b1f6',
-    cs = i.resolve('strings'),
-    ds = s(function () {
-        const { model: e, controls: s } = te(),
+    rs = 'PromotionalContent_descriptionWrapper_d0793a29',
+    os = 'PromotionalContent_bonusesWrapper_b512891d',
+    is = 'PromotionalContent_bonuses_c5451a13',
+    ls = 'PromotionalContent_title_6c31b3d3',
+    cs = 'PromotionalContent_text_8bfa7ca5',
+    ds = 'PromotionalContent_text__challenge_b5c408bf',
+    ms = 'PromotionalContent_buttons_a5156779',
+    us = 'PromotionalContent_btn_9f57b1f6',
+    _s = l.resolve('strings'),
+    ps = s(function () {
+        const { model: e, controls: s } = re(),
             { petID: n } = e.root.get(),
             { isChallengeButtonEnabled: r, isPurchaseButtonEnabled: o } = e.promo.get(),
             i = e.promotionBonuses.get(),
-            l = O().breakpoint.weight >= D.medium.weight ? v.sizes.large : v.sizes.medium;
+            l = D().breakpoint.weight >= w.medium.weight ? N.sizes.large : N.sizes.medium;
         return t.jsxs(t.Fragment, {
             children: [
-                t.jsx('div', { className: ts, children: t.jsx(Dt, {}) }),
+                t.jsx('div', { className: rs, children: t.jsx(Mt, {}) }),
                 i.length > 0 &&
                     t.jsxs('div', {
-                        className: ss,
+                        className: os,
                         children: [
-                            t.jsx('div', { className: as, children: t.jsx(es, {}) }),
-                            t.jsx(k, { className: rs, path: 'pet_system.promotion.bonuses.text_1', split: !0 }),
-                            t.jsx(k, { className: rs, path: 'pet_system.promotion.bonuses.text_2', split: !0 }),
+                            t.jsx('div', { className: is, children: t.jsx(ns, {}) }),
+                            t.jsx(I, { className: cs, path: 'pet_system.promotion.bonuses.text_1', split: !0 }),
+                            t.jsx(I, { className: cs, path: 'pet_system.promotion.bonuses.text_2', split: !0 }),
                         ],
                     }),
                 t.jsx('div', {
-                    className: ns,
-                    children: cs.readOrEmpty(`pet_system.promotion.challengeInfo.title_${n}`),
+                    className: ls,
+                    children: _s.readOrEmpty(`pet_system.promotion.challengeInfo.title_${n}`),
                 }),
                 t.jsx('div', {
-                    className: a(rs, os),
-                    children: cs.readOrEmpty(`pet_system.promotion.challengeInfo.text_${n}`),
+                    className: a(cs, ds),
+                    children: _s.readOrEmpty(`pet_system.promotion.challengeInfo.text_${n}`),
                 }),
                 t.jsxs('div', {
-                    className: is,
+                    className: ms,
                     children: [
                         r &&
-                            t.jsx(v, {
-                                className: ls,
+                            t.jsx(N, {
+                                className: us,
                                 size: l,
                                 onClick: () => s.selectChallenge(),
-                                children: cs.readOrEmpty('pet_system.promotion.button.challenge'),
+                                children: _s.readOrEmpty('pet_system.promotion.button.challenge'),
                             }),
                         o &&
-                            t.jsx(v, {
-                                className: ls,
+                            t.jsx(N, {
+                                className: us,
                                 size: l,
                                 onClick: () => s.selectPurchase(),
-                                theme: v.themes.secondary,
-                                children: cs.readOrEmpty('pet_system.promotion.button.purchase'),
+                                theme: N.themes.secondary,
+                                children: _s.readOrEmpty('pet_system.promotion.button.purchase'),
                             }),
                     ],
                 }),
             ],
         });
     }),
-    ms = s(function () {
-        const { model: e } = te(),
+    bs = s(function () {
+        const { model: e } = re(),
             { isPromotionEnabled: s } = e.promo.get();
-        return t.jsxs(t.Fragment, { children: [t.jsx(rt, {}), s ? t.jsx(ds, {}) : t.jsx(qt, {})] });
+        return t.jsxs(t.Fragment, { children: [t.jsx(ct, {}), s ? t.jsx(ps, {}) : t.jsx(Qt, {})] });
     });
-w(1, 12, $);
-const us = 'left',
-    _s = 'right',
-    ps = 'both',
-    bs = 'none',
-    gs = {
+$(1, 12, A);
+const gs = 'left',
+    vs = 'right',
+    Ns = 'both',
+    hs = 'none',
+    ys = {
         button: 'ArrowButton_button_7654af94',
         icon: 'ArrowButton_icon_35e5294f',
         button__left: 'ArrowButton_button__left_5327085d',
@@ -729,46 +730,45 @@ const us = 'left',
         content: 'ArrowButton_content_4666fd05',
         button__right: 'ArrowButton_button__right_5327085d',
     };
-function vs({ direction: e, className: s, ...n }) {
-    return t.jsx(v, {
+function xs({ direction: e, className: s, ...n }) {
+    return t.jsx(N, {
         ...n,
         classNames: {
-            base: a(gs.button, gs[`button__${e}`], s),
-            background: gs.background,
-            border: gs.border,
-            overlay: gs.overlay,
-            content: gs.content,
+            base: a(ys.button, ys[`button__${e}`], s),
+            background: ys.background,
+            border: ys.border,
+            overlay: ys.overlay,
+            content: ys.content,
         },
-        theme: v.themes.secondary,
-        size: v.sizes.small,
+        theme: N.themes.secondary,
+        size: N.sizes.small,
         autoAlignContent: !1,
         soundTarget: 'carousel:arrow_button',
-        children: t.jsx(C, { path: 'hangar.carousel.buttonArrow', className: gs.icon }),
+        children: t.jsx(f, { path: 'hangar.carousel.buttonArrow', className: ys.icon }),
     });
 }
-vs.direction = { right: 'right', left: 'left' };
-const Ns = {
-        navButtonWrapper: 'CarouselNavButtons_navButtonWrapper_a13c2a68',
-        navButton: 'CarouselNavButtons_navButton_adcc2e9b',
-        navButton__left: 'CarouselNavButtons_navButton__left_5f6dc3a0',
-        navButton__right: 'CarouselNavButtons_navButton__right_66b4f03f',
-        navButton__hidden: 'CarouselNavButtons_navButton__hidden_69011a0b',
-        mask: 'CarouselNavButtons_mask_d54421e2',
-        mask__both: 'CarouselNavButtons_mask__both_7294632e',
-        mask__left: 'CarouselNavButtons_mask__left_e8bc4c90',
-        mask__right: 'CarouselNavButtons_mask__right_6be519f7',
-    },
-    hs = 0;
-function ys(e) {
+xs.direction = { right: 'right', left: 'left' };
+const js = {
+    navButtonWrapper: 'CarouselNavButtons_navButtonWrapper_a13c2a68',
+    navButton: 'CarouselNavButtons_navButton_adcc2e9b',
+    navButton__left: 'CarouselNavButtons_navButton__left_5f6dc3a0',
+    navButton__right: 'CarouselNavButtons_navButton__right_66b4f03f',
+    navButton__hidden: 'CarouselNavButtons_navButton__hidden_69011a0b',
+    mask: 'CarouselNavButtons_mask_17bb1a0e',
+    mask__both: 'CarouselNavButtons_mask__both_7294632e',
+    mask__left: 'CarouselNavButtons_mask__left_e8bc4c90',
+    mask__right: 'CarouselNavButtons_mask__right_6be519f7',
+};
+function Cs(e) {
     return ({ button: t }) => {
-        t === hs && e();
+        0 === t && e();
     };
 }
-function xs({ itemWidth: s, api: n, children: r }) {
+function fs({ itemWidth: s, api: n, children: r }) {
     const o = e.useRef(null),
         [i, l] = e.useState(!1),
         { applyScroll: c, animationScroll: d, disabled: m } = n,
-        [u, _] = A(n),
+        [u, _] = M(n),
         p = u || m,
         b = _ || m;
     function g(e) {
@@ -782,43 +782,81 @@ function xs({ itemWidth: s, api: n, children: r }) {
         (null !== o.current && (clearInterval(o.current), (o.current = null)), l(!1));
     }
     return t.jsxs('div', {
-        className: Ns.navButtonWrapper,
+        className: js.navButtonWrapper,
         children: [
-            t.jsx(vs, {
-                direction: vs.direction.left,
-                onMouseDown: ys(() => g(-1)),
+            t.jsx(xs, {
+                direction: xs.direction.left,
+                onMouseDown: Cs(() => g(-1)),
                 onMouseUp: v,
                 onMouseLeave: v,
-                className: a(Ns.navButton, Ns.navButton__left, p && Ns.navButton__hidden),
+                className: a(js.navButton, js.navButton__left, p && js.navButton__hidden),
             }),
             t.jsx('div', {
-                className: a(Ns.mask, Ns[`mask__${((N = u), (h = _), N || h ? (N ? (h ? bs : _s) : us) : ps)}`]),
+                className: a(js.mask, js[`mask__${((N = u), (h = _), N || h ? (N ? (h ? hs : vs) : gs) : Ns)}`]),
                 children: r,
             }),
-            t.jsx(vs, {
-                direction: vs.direction.right,
-                onMouseDown: ys(() => g(1)),
+            t.jsx(xs, {
+                direction: xs.direction.right,
+                onMouseDown: Cs(() => g(1)),
                 onMouseUp: v,
                 onMouseLeave: v,
-                className: a(Ns.navButton, Ns.navButton__right, b && Ns.navButton__hidden),
+                className: a(js.navButton, js.navButton__right, b && js.navButton__hidden),
             }),
         ],
     });
     var N, h;
 }
-const js = 'PetCard_background_1e63f02a',
-    Cs = 'PetCard_bf81336e',
-    fs = 'PetCard_cardContent_202be88e',
-    Ps = 'PetCard_petName_adc2e0e7',
-    Bs = 'PetCard_petImage_ffe959dd',
-    Ss = 'PetCard_bonusContainer_ad77c415',
-    ks = 'PetCard_bonusValue_7fc2b9ba',
-    Is = 'PetCard_promo_189845c7',
-    Es = 'PetCard_maxSynergy_24397566',
-    Os = 'PetCard_statusIcon_57abf9a1',
-    Ds = i.resolve('images'),
-    ws = i.resolve('strings');
-function $s({
+const Ss = { base: 'CarouselScroll_3690a837', areaContent: 'CarouselScroll_areaContent_f5dd7772' },
+    Ps = 'dragging',
+    Bs = 'idle';
+function ks({
+    api: s,
+    children: n,
+    className: r,
+    areaClassNames: o,
+    staticContent: i,
+    disabled: l,
+    onDraggingState: c,
+}) {
+    const { animationScroll: d, applyScroll: m, setDisabled: u } = s,
+        _ = T(s, z.horizontal, void 0, { gapBeforeStart: 5 });
+    return (
+        e.useEffect(() => {
+            c?.(_.type === Ps);
+        }, [_.type, c]),
+        e.useEffect(() => {
+            u(l);
+        }, [l, u]),
+        e.useEffect(
+            () =>
+                V(() => {
+                    _.type === Bs && d.scrollPosition.idle && m(d.scrollPosition.get());
+                }),
+            [d.scrollPosition, _, m],
+        ),
+        t.jsx('div', {
+            className: a(Ss.base, r),
+            children: t.jsxs(W, {
+                className: o?.base,
+                classNames: { wrapper: a(Ss.areaWrapper, o?.wrapper), content: a(Ss.areaContent, o?.content) },
+                children: [n, i],
+            }),
+        })
+    );
+}
+const Is = 'PetCard_background_1e63f02a',
+    Es = 'PetCard_bf81336e',
+    Os = 'PetCard_cardContent_202be88e',
+    Ds = 'PetCard_petName_adc2e0e7',
+    ws = 'PetCard_petImage_ffe959dd',
+    $s = 'PetCard_bonusContainer_ad77c415',
+    As = 'PetCard_bonusValue_7fc2b9ba',
+    Ms = 'PetCard_promo_189845c7',
+    Ts = 'PetCard_maxSynergy_24397566',
+    Vs = 'PetCard_statusIcon_57abf9a1',
+    Ws = l.resolve('images'),
+    zs = l.resolve('strings');
+function Fs({
     petId: e,
     petNameId: s,
     selected: n,
@@ -826,96 +864,96 @@ function $s({
     maxSynergyReached: o = !1,
     active: i,
     bonusName: l,
-    bonusValue: d,
+    bonusValue: c,
     className: m,
     ...u
 }) {
-    return t.jsxs(M, {
+    return t.jsxs(F, {
         ...u,
         selected: n,
-        status: i ? T.done : void 0,
-        className: a(Cs, m),
-        classNames: { mainContainerContent: fs, status: { icon: Os } },
+        status: i ? R.done : void 0,
+        className: a(Es, m),
+        classNames: { mainContainerContent: Os, status: { icon: Vs } },
         children: [
             t.jsx('div', {
-                className: js,
+                className: Is,
                 style: {
-                    backgroundImage: `url(${Ds.readOr(`petSystem.backgrounds.x184x84.pet_${e}`, () => Ds.readOrEmpty('petSystem.backgrounds.x184x84.default'))})`,
+                    backgroundImage: `url(${Ws.readOr(`petSystem.backgrounds.x184x84.pet_${e}`, () => Ws.readOrEmpty('petSystem.backgrounds.x184x84.default'))})`,
                 },
             }),
             t.jsx('div', {
-                className: Bs,
-                style: { backgroundImage: `url(${Ds.readOrEmpty(`petSystem.pets.x184x108.pet_${e}`)})` },
+                className: ws,
+                style: { backgroundImage: `url(${Ws.readOrEmpty(`petSystem.pets.x184x108.pet_${e}`)})` },
             }),
             l &&
                 t.jsxs('div', {
-                    className: Ss,
+                    className: $s,
                     children: [
-                        t.jsx(V, { type: l }),
+                        t.jsx(U, { type: l }),
                         t.jsx('div', {
-                            className: ks,
-                            children: t.jsx(k, { path: 'pet_system.plusPercentValue', params: { value: d } }),
+                            className: As,
+                            children: t.jsx(I, { path: 'pet_system.plusPercentValue', params: { value: c } }),
                         }),
                     ],
                 }),
-            o && !r && t.jsx(C, { path: 'petSystem.pet_active_24', className: Es, width: 24, height: 24 }),
+            o && !r && t.jsx(f, { path: 'petSystem.pet_active_24', className: Ts, width: 24, height: 24 }),
             r &&
                 t.jsx('div', {
-                    className: Is,
-                    children: t.jsx(c.Root, {
-                        children: t.jsx(c.Value, {
-                            value: ws.readOrEmpty('pet_system.petStorage.petCard.promo'),
-                            size: W.medium,
+                    className: Ms,
+                    children: t.jsx(d.Root, {
+                        children: t.jsx(d.Value, {
+                            value: zs.readOrEmpty('pet_system.petStorage.petCard.promo'),
+                            size: H.medium,
                         }),
                     }),
                 }),
             t.jsx('div', {
-                className: Ps,
-                children: ws.readOr(`pet_names.petName_${s}`, () => ws.readOrEmpty('pet_names.petName_default')),
+                className: Ds,
+                children: zs.readOr(`pet_names.petName_${s}`, () => zs.readOrEmpty('pet_names.petName_default')),
             }),
         ],
     });
 }
-const As = 'Carousel_draggingOverlay_2ac699b0',
-    Ms = 'Carousel_content_bca51e20',
-    Ts = 'Carousel_cardsWrapper_ef51bc77',
-    Vs = 'Carousel_card_c8c3acdf',
-    Ws = 'Carousel_scrollWrapper_aa4cb2bd';
-function zs(e) {
-    return t.jsx('div', { ...e, className: a(Ms, e.className) });
+const Rs = 'Carousel_draggingOverlay_2ac699b0',
+    Us = 'Carousel_content_bca51e20',
+    Hs = 'Carousel_cardsWrapper_ef51bc77',
+    Ls = 'Carousel_card_c8c3acdf',
+    qs = 'Carousel_scrollWrapper_aa4cb2bd';
+function Gs(e) {
+    return t.jsx('div', { ...e, className: a(Us, e.className) });
 }
-const Fs = s(function () {
+const Ks = s(function () {
         const [s, a] = e.useState(!1),
-            { api: r } = z(),
-            o = F(196, []),
-            { model: i, controls: l } = te(),
+            { api: n } = L(),
+            o = q(196, []),
+            { model: i, controls: l } = re(),
             c = i.cards.get(),
             d = i.root.get(),
             m = d.petID,
             u = d.activePetID;
         return t.jsxs(t.Fragment, {
             children: [
-                t.jsx(xs, {
-                    api: r,
+                t.jsx(fs, {
+                    api: n,
                     itemWidth: o,
-                    children: t.jsx(R, {
-                        api: r,
+                    children: t.jsx(G, {
+                        api: n,
                         elementWidth: o,
                         direction: 'horizontal',
                         totalElements: c.length,
                         throttle: 80,
-                        wrappers: { Content: zs },
-                        renderScroll: (e, [s, n]) =>
-                            t.jsx(U, {
+                        wrappers: { Content: Gs },
+                        renderScroll: (e, [s, r]) =>
+                            t.jsx(ks, {
                                 ...e,
                                 disabled: !1,
-                                api: r,
-                                areaClassNames: { wrapper: Ws },
+                                api: n,
+                                areaClassNames: { wrapper: qs },
                                 onDraggingState: a,
-                                children: t.jsx(I, {
-                                    className: Ts,
-                                    border: H.contour,
-                                    trashhold: `${s}-${n}`,
+                                children: t.jsx(E, {
+                                    className: Hs,
+                                    border: K.contour,
+                                    threshold: `${s}-${r}`,
                                     children: e.children,
                                 }),
                             }),
@@ -930,8 +968,8 @@ const Fs = s(function () {
                                 } = c[e],
                                 d = s === m,
                                 _ = s === u;
-                            return t.jsx($s, {
-                                className: Vs,
+                            return t.jsx(Fs, {
+                                className: Ls,
                                 petId: s,
                                 petNameId: a,
                                 selected: d,
@@ -945,44 +983,44 @@ const Fs = s(function () {
                         },
                     }),
                 }),
-                n.createPortal(s && t.jsx('div', { className: As }), document.body),
+                r.createPortal(s && t.jsx('div', { className: Rs }), document.body),
             ],
         });
     }),
-    Rs = { base: 'InfoPageEntry_4b0e1346' },
-    Us = i.resolve('strings'),
-    Hs = i.resolve('sounds');
-function qs() {
-    const { controls: e } = te();
+    Qs = 'InfoPageEntry_4b0e1346',
+    Xs = l.resolve('strings'),
+    Ys = l.resolve('sounds');
+function Zs() {
+    const { controls: e } = re();
     return t.jsx('div', {
-        className: Rs.base,
+        className: Qs,
         onClick: function () {
-            (Hs.play('play'), e.infoPageOpen());
+            (Ys.play('play'), e.infoPageOpen());
         },
-        onMouseEnter: () => Hs.play('highlight'),
-        children: Us.readOrEmpty('pet_system.infoPageEntryPoint'),
+        onMouseEnter: () => Ys.play('highlight'),
+        children: Xs.readOrEmpty('pet_system.infoPageEntryPoint'),
     });
 }
-const Ls = 'Footer_1c31242f',
-    Gs = 'Footer_carouselContainer_9ed2d931';
-function Ks() {
+const Js = 'Footer_1c31242f',
+    ea = 'Footer_carouselContainer_9ed2d931';
+function ta() {
     return t.jsxs('div', {
-        className: Ls,
-        children: [t.jsx('div', { className: Gs, children: t.jsx(q, { children: t.jsx(Fs, {}) }) }), t.jsx(qs, {})],
+        className: Js,
+        children: [t.jsx('div', { className: ea, children: t.jsx(Q, { children: t.jsx(Ks, {}) }) }), t.jsx(Zs, {})],
     });
 }
-const Qs = 'App_72d9d6ee',
-    Xs = 'App_contentWrapper_3f125c71',
-    Ys = s(function () {
-        const { controls: e } = te();
+const sa = 'App_72d9d6ee',
+    aa = 'App_contentWrapper_3f125c71',
+    na = s(function () {
+        const { controls: e } = re();
         return (
-            L(G.ESCAPE, e.close),
+            X(Y.ESCAPE, e.close),
             t.jsxs('div', {
-                className: Qs,
-                children: [t.jsx('div', { className: Xs, children: t.jsx(ms, {}) }), t.jsx(Ks, {})],
+                className: sa,
+                children: [t.jsx('div', { className: aa, children: t.jsx(bs, {}) }), t.jsx(ta, {})],
             })
         );
     });
-K(t.jsx(ee, { children: t.jsx(Q, { children: t.jsx(Ys, {}) }) }))
-    .then(() => X(document.getElementById('root')))
-    .then(() => Y());
+Z(t.jsx(ne, { children: t.jsx(J, { children: t.jsx(na, {}) }) }))
+    .then(() => ee(document.getElementById('root')))
+    .then(() => te());

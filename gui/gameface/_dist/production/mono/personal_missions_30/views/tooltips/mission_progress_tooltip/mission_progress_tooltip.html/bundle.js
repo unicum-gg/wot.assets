@@ -1,30 +1,30 @@
-import { j as s, f as e, n as o } from '../../../../chunks/vendor.js';
-import { i, n as t, F as l, a2 as n, h as a, at as c, d as r } from '../../../../chunks/lib.js';
+import { j as s, f as e, q as o } from '../../../../chunks/vendor.js';
+import { i, v as l, F as t, J as n, h as a, ay as c, d as r } from '../../../../chunks/lib.js';
 import { G as m } from '../../../../chunks/gradient_decorator.js';
 /* empty css                       */ const [d, _] = i()(
         ({ observableModel: s }) => ({
             ...s.primitives(['totalMissionsAmount', 'completedMissionsAmount']),
             vehicles: s.arrayClone('vehicles'),
         }),
-        t,
+        l,
     ),
     p = 'VehicleItem_586f927b',
     h = 'VehicleItem_vehicleIcon_be065974',
     j = 'VehicleItem_base__completed_e538d77c',
     x = 'VehicleItem_label_d360b547',
-    g = 'VehicleItem_line_45efcf11',
-    v = 'VehicleItem_line__vertical_b60df039',
-    b = ({ vehicleName: o, completed: i, last: t }) =>
+    v = 'VehicleItem_line_45efcf11',
+    g = 'VehicleItem_line__vertical_b60df039',
+    b = ({ vehicleName: o, completed: i, last: l }) =>
         s.jsxs('div', {
             className: e(p, i && j),
             children: [
                 s.jsx('div', { className: h }),
                 s.jsx('div', {
                     className: x,
-                    children: o || s.jsx(l, { path: 'personal_missions_30.tooltip.missionProgress.unknownVehicle' }),
+                    children: o || s.jsx(t, { path: 'personal_missions_30.tooltip.missionProgress.unknownVehicle' }),
                 }),
-                s.jsx('div', { className: e(g, v) }),
-                !t && s.jsx('div', { className: g }),
+                s.jsx('div', { className: e(v, g) }),
+                !l && s.jsx('div', { className: v }),
             ],
         }),
     u = 'InnerBlock_a92b837',
@@ -38,15 +38,15 @@ import { G as m } from '../../../../chunks/gradient_decorator.js';
         return s.jsxs('div', {
             className: u,
             children: [
-                s.jsx(l, {
+                s.jsx(t, {
                     path: 'personal_missions_30.tooltip.missionProgress.completed',
                     params: { completed: o, total: i, totalClass: f },
                     className: N,
                 }),
                 s.jsx('div', {
                     className: M,
-                    children: n(i, (t) =>
-                        s.jsx(b, { vehicleName: a(e.vehicles.get(), t), completed: t + 1 <= o, last: t + 1 === i }, t),
+                    children: n(i, (l) =>
+                        s.jsx(b, { vehicleName: a(e.vehicles.get(), l), completed: l + 1 <= o, last: l + 1 === i }, l),
                     ),
                 }),
             ],
@@ -67,13 +67,13 @@ import { G as m } from '../../../../chunks/gradient_decorator.js';
                 children: s.jsxs('div', {
                     className: P,
                     children: [
-                        s.jsx(l, { path: 'personal_missions_30.tooltip.missionProgress.title', className: k }),
-                        s.jsx(l, { path: 'personal_missions_30.tooltip.missionProgress.description', className: V }),
+                        s.jsx(t, { path: 'personal_missions_30.tooltip.missionProgress.title', className: k }),
+                        s.jsx(t, { path: 'personal_missions_30.tooltip.missionProgress.description', className: V }),
                         o < i &&
                             s.jsxs(s.Fragment, {
                                 children: [
                                     s.jsx(m, { className: A, children: s.jsx(I, {}) }),
-                                    s.jsx(l, {
+                                    s.jsx(t, {
                                         path: 'personal_missions_30.tooltip.missionProgress.footer',
                                         className: T,
                                     }),

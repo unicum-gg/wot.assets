@@ -1,100 +1,103 @@
 import {
-    q as e,
-    s,
-    t as a,
+    t as e,
+    v as s,
+    w as a,
     o as t,
-    v as i,
+    x as i,
     e as n,
-    w as o,
+    y as o,
     r,
-    n as l,
-    x as c,
+    q as l,
+    z as c,
     l as d,
     j as _,
     m,
     f as u,
-    R as p,
-    y as g,
-    p as f,
-    z as b,
+    n as p,
+    R as g,
+    A as f,
+    s as h,
+    B as b,
 } from '../../../chunks/vendor.js';
 import {
-    P as h,
+    w as N,
     c as I,
-    i as N,
-    f as v,
-    k as x,
-    Q as E,
-    e as y,
-    b as S,
-    r as O,
-    p as C,
+    i as v,
+    f as x,
+    k as E,
+    x as y,
+    e as S,
+    b as O,
+    r as C,
+    n as j,
     I as w,
-    B as j,
-    S as A,
-    T as M,
-    W as D,
-    a as T,
-    h as P,
-    n as L,
-    L as k,
-    F as V,
-    M as B,
-    X as H,
-    Y as $,
-    Z as Q,
-    _ as W,
-    $ as U,
-    a0 as q,
-    a1 as F,
-    a2 as Y,
-    H as z,
-    J as G,
-    l as K,
-    y as X,
-    a3 as Z,
-    a4 as J,
-    R as ee,
-    D as se,
-    a5 as ae,
-    a6 as te,
-    a7 as ie,
-    a8 as ne,
-    a9 as oe,
-    aa as re,
-    ab as le,
-    u as ce,
-    ac as de,
-    ad as _e,
-    ae as me,
-    af as ue,
-    ag as pe,
-    ah as ge,
-    ai as fe,
-    aj as be,
-    v as he,
-    ak as Ie,
-    al as Ne,
-    V as ve,
-    am as xe,
-    an as Ee,
-    ao as ye,
-    m as Se,
-    E as Oe,
-    K as Ce,
-    ap as we,
-    aq as je,
-    ar as Ae,
-    d as Me,
-    U as De,
+    B as A,
+    y as M,
+    z as D,
+    D as T,
+    a as P,
+    h as L,
+    v as k,
+    A as V,
+    F as B,
+    C as H,
+    S as $,
+    E as Q,
+    L as W,
+    M as U,
+    H as q,
+    G as F,
+    T as Y,
+    J as z,
+    K as G,
+    N as K,
+    l as X,
+    O as Z,
+    P as J,
+    Q as ee,
+    R as se,
+    W as ae,
+    X as te,
+    Y as ie,
+    Z as ne,
+    _ as oe,
+    $ as re,
+    a0 as le,
+    a1 as ce,
+    u as de,
+    a2 as _e,
+    a3 as me,
+    a4 as ue,
+    a5 as pe,
+    a6 as ge,
+    a7 as fe,
+    a8 as he,
+    a9 as be,
+    q as Ne,
+    aa as Ie,
+    ab as ve,
+    V as xe,
+    ac as Ee,
+    ad as ye,
+    ae as Se,
+    m as Oe,
+    af as Ce,
+    ag as je,
+    ah as we,
+    ai as Ae,
+    aj as Me,
+    d as De,
+    U as Te,
 } from '../../../chunks/lib.js';
-import { P as Te, M as Pe, O as Le } from '../../../chunks/enums.js';
-import { s as Re, b as ke } from '../../../chunks/helpers.js';
-/* empty css                    */ const Ve = 'detailId';
-var Be = ((e) => ((e.ASSEMBLING = 'assembling'), (e.MISSIONS = 'missions'), (e.PROGRESSION = 'progression'), e))(
-        Be || {},
+import { P as Pe, M as Le, O as Re } from '../../../chunks/enums.js';
+import { s as ke, b as Ve } from '../../../chunks/helpers.js';
+/* empty css                    */ const Be = 'operationId',
+    He = 'detailId',
+    $e = 'animationState';
+var Qe = ((e) => ((e.ASSEMBLING = 'assembling'), (e.MISSIONS = 'missions'), (e.PROGRESSION = 'progression'), e))(
+        Qe || {},
     ),
-    He = ((e) => (
+    We = ((e) => (
         (e.IDLE = 'idle'),
         (e.ANIMATION_STARTED = 'animationStarted'),
         (e.ASSEMBLING = 'assembling'),
@@ -102,91 +105,92 @@ var Be = ((e) => ((e.ASSEMBLING = 'assembling'), (e.MISSIONS = 'missions'), (e.P
         (e.CONTINUE_CLAIM_DETAIL = 'continueClaimDetail'),
         (e.CONTINUE_BACK = 'continueBack'),
         e
-    ))(He || {});
-const $e = 'leaveOperation',
-    Qe = 'openOperation',
-    We = 'leaveProgression',
-    Ue = 'switchMissions',
-    qe = 'showMissions',
-    Fe = 'hideMissions',
-    Ye = 'toFreeCamera',
-    ze = 'showProgressions',
-    Ge = 'toDetailInfo',
-    Ke = 'showDetailInfo',
-    Xe = 'hideDetailInfo',
-    Ze = 'leaveAssembling',
-    Je = 'updateStatus',
-    es = 'hideAdditionalMissions',
-    ss = 'showAdditionalMissions',
-    as = 'idle',
-    ts = s(
+    ))(We || {});
+const Ue = 'leaveOperation',
+    qe = 'openOperation',
+    Fe = 'leaveProgression',
+    Ye = 'switchMissions',
+    ze = 'showMissions',
+    Ge = 'hideMissions',
+    Ke = 'toFreeCamera',
+    Xe = 'showProgressions',
+    Ze = 'toDetailInfo',
+    Je = 'showDetailInfo',
+    es = 'hideDetailInfo',
+    ss = 'leaveAssembling',
+    as = 'updateStatus',
+    ts = 'hideAdditionalMissions',
+    is = 'showAdditionalMissions',
+    ns = 'idle',
+    os = s(
         e({
             id: 'animation',
-            initial: as,
+            initial: ns,
             context: { nextOperationId: null, missionCategory: null, detailId: null, action: null },
             states: {
-                [as]: {
+                [ns]: {
                     on: {
-                        SWITCH_OPERATION: { target: $e, actions: a({ nextOperationId: (e, s) => s.operationId }) },
-                        TO_MISSIONS: { target: We, actions: a({ missionCategory: (e, s) => s.missionCategory }) },
+                        SWITCH_OPERATION: { target: Ue, actions: a({ nextOperationId: (e, s) => s.operationId }) },
+                        TO_MISSIONS: { target: Fe, actions: a({ missionCategory: (e, s) => s.missionCategory }) },
                         TO_DETAIL_INFO: {
-                            target: Ge,
+                            target: Ze,
                             actions: a({ detailId: (e, s) => s.detailId, action: (e, s) => s.action }),
                         },
                         HIDE_DETAIL_INFO: {
-                            target: Xe,
+                            target: es,
                             actions: a({
                                 action: (e, s) => (s.action ? s.action : null),
                                 detailId: (e, s) => (s.detailId ? s.detailId : null),
                             }),
                         },
-                        SHOW_DETAIL_INFO: { target: Ke, actions: a({ action: (e, s) => s.action }) },
+                        SHOW_DETAIL_INFO: { target: Je, actions: a({ action: (e, s) => s.action }) },
                         LEAVE_ASSEMBLING: {
-                            target: Ze,
+                            target: ss,
                             actions: a({ detailId: (e, s) => (s.detailId ? s.detailId : null) }),
                         },
-                        HIDE_MISSIONS: { target: Fe },
-                        SWITCH_MISSIONS: { target: Ue },
-                        TO_FREE_CAMERA: { target: Ye },
-                        UPDATE_STATUS: { target: Je },
-                        HIDE_ADDITIONAL_MISSIONS: { target: es },
+                        HIDE_MISSIONS: { target: Ge },
+                        SWITCH_MISSIONS: { target: Ye },
+                        TO_FREE_CAMERA: { target: Ke },
+                        UPDATE_STATUS: { target: as },
+                        HIDE_ADDITIONAL_MISSIONS: { target: ts },
                     },
                 },
-                [$e]: { on: { LEAVE_OPERATION_DONE: Qe } },
-                [Qe]: { on: { TO_IDLE: { target: as } } },
-                [We]: { on: { LEAVE_PROGRESSION_DONE: { target: qe } } },
-                [Ye]: { on: { TO_IDLE: { target: as } } },
-                [qe]: { on: { TO_IDLE: { target: as } } },
-                [Ue]: { on: { TO_IDLE: { target: as } } },
-                [Fe]: { on: { HIDE_MISSIONS_DONE: { target: ze } } },
-                [ze]: { on: { TO_IDLE: { target: as } } },
-                [Ge]: { on: { SHOW_DETAIL_INFO: { target: Ke } } },
-                [Ke]: { on: { TO_IDLE: { target: as } } },
-                [Xe]: {
-                    on: { TO_IDLE: { target: as }, SHOW_DETAIL_INFO: { target: Ke }, LEAVE_ASSEMBLING: { target: Ze } },
+                [Ue]: { on: { LEAVE_OPERATION_DONE: qe } },
+                [qe]: { on: { TO_IDLE: { target: ns } } },
+                [Fe]: { on: { LEAVE_PROGRESSION_DONE: { target: ze } } },
+                [Ke]: { on: { TO_IDLE: { target: ns } } },
+                [ze]: { on: { TO_IDLE: { target: ns } } },
+                [Ye]: { on: { TO_IDLE: { target: ns } } },
+                [Ge]: { on: { HIDE_MISSIONS_DONE: { target: Xe } } },
+                [Xe]: { on: { TO_IDLE: { target: ns } } },
+                [Ze]: { on: { SHOW_DETAIL_INFO: { target: Je } } },
+                [Je]: { on: { TO_IDLE: { target: ns } } },
+                [es]: {
+                    on: { TO_IDLE: { target: ns }, SHOW_DETAIL_INFO: { target: Je }, LEAVE_ASSEMBLING: { target: ss } },
                 },
-                [Ze]: { on: { TO_IDLE: { target: as } } },
-                [Je]: { on: { TO_IDLE: { target: as } } },
-                [es]: { on: { HIDE_ADDITIONAL_MISSIONS_DONE: { target: ss } } },
-                [ss]: { on: { TO_IDLE: { target: as } } },
+                [ss]: { on: { TO_IDLE: { target: ns } } },
+                [as]: { on: { TO_IDLE: { target: ns } } },
+                [ts]: { on: { HIDE_ADDITIONAL_MISSIONS_DONE: { target: is } } },
+                [is]: { on: { TO_IDLE: { target: ns } } },
             },
         }),
     ),
-    is = { default: 'default', missions: 'missions' },
-    ns = 'claim',
-    os = 'showInfo',
-    rs = 'back';
-function ls(e, s) {
+    rs = 'default',
+    ls = 'missions',
+    cs = 'claim',
+    ds = 'showInfo',
+    _s = 'back';
+function ms(e, s) {
     Promise.all(e.flat()).then(() => {
-        null == s || s();
+        s?.();
     });
 }
-const cs = 'missions',
-    ds = 'assembling',
-    _s = 'progression',
-    ms = { carouselButton: I('carouselButton'), bp_slide: I('bp_slide') },
-    us = { step: { ...h.step, factor: 9 }, animationConfig: { ...h.animationConfig, tension: 120 } },
-    [ps, gs] = N()(
+const us = 'missions',
+    ps = 'assembling',
+    gs = 'progression',
+    fs = { carouselButton: I('carouselButton'), bp_slide: I('bp_slide') },
+    hs = { step: { ...N.step, factor: 9 }, animationConfig: { ...N.animationConfig, tension: 120 } },
+    [bs, Ns] = v()(
         (e) => {
             const s = {
                 ...e.observableModel.primitives([
@@ -210,60 +214,47 @@ const cs = 'missions',
                         t = s.animationState.get(),
                         i = s.activeDetailId.get();
                     switch (
-                        (a === cs && e === Be.PROGRESSION
-                            ? ts.send({ type: 'HIDE_MISSIONS' })
-                            : a === ds && e === Be.PROGRESSION && i
-                              ? ts.send({ type: 'HIDE_DETAIL_INFO', action: rs })
-                              : a === _s &&
-                                e === Be.MISSIONS &&
+                        (a === us && e === Qe.PROGRESSION
+                            ? os.send({ type: 'HIDE_MISSIONS' })
+                            : a === ps && e === Qe.PROGRESSION && i
+                              ? os.send({ type: 'HIDE_DETAIL_INFO', action: _s })
+                              : a === gs &&
+                                e === Qe.MISSIONS &&
                                 o(() => {
-                                    s.currentState.set(cs);
+                                    s.currentState.set(us);
                                 }),
                         t)
                     ) {
-                        case He.ASSEMBLING:
-                            return ts.send({ type: 'TO_FREE_CAMERA' });
-                        case He.CONTINUE_DETAIL_INFO:
-                            return ts.send({ type: 'SHOW_DETAIL_INFO', action: os });
-                        case He.CONTINUE_CLAIM_DETAIL:
-                            return ts.send({ type: 'SHOW_DETAIL_INFO', action: ns });
-                        case He.CONTINUE_BACK:
-                            return ts.send({ type: 'LEAVE_ASSEMBLING' });
+                        case We.ASSEMBLING:
+                            return os.send({ type: 'TO_FREE_CAMERA' });
+                        case We.CONTINUE_DETAIL_INFO:
+                            return os.send({ type: 'SHOW_DETAIL_INFO', action: ds });
+                        case We.CONTINUE_CLAIM_DETAIL:
+                            return os.send({ type: 'SHOW_DETAIL_INFO', action: cs });
+                        case We.CONTINUE_BACK:
+                            return os.send({ type: 'LEAVE_ASSEMBLING' });
                     }
                 }),
             );
-            const a = v.model(() => {
+            const a = x.model(() => {
                     const e = s.operations.get(),
                         a = s.activeOperationId.get();
                     return e.find((e) => e.operationId === a);
                 }),
-                n = v.model((e) => {
-                    var s;
-                    return null == (s = a()) ? void 0 : s.details.find((s) => s.id === e);
+                n = x.model((e) => a()?.details.find((s) => s.id === e)),
+                r = x.model((e) => a()?.details.findIndex((s) => s.status === e)),
+                l = x.model((e) => {
+                    const a = s.operations.get();
+                    return a.find((s) => s.operationId === e)?.operationState;
                 }),
-                r = v.model((e) => {
-                    var s;
-                    return null == (s = a()) ? void 0 : s.details.findIndex((s) => s.status === e);
-                }),
-                l = v.model((e) => {
-                    var a;
-                    return null == (a = s.operations.get().find((s) => s.operationId === e))
-                        ? void 0
-                        : a.operationState;
-                }),
-                c = v.model(() => {
-                    var e;
-                    return null == (e = a())
-                        ? void 0
-                        : e.details.reduce((e, { maxPoint: s }, a) => (e.push((e[a - 1] ?? 0) + s), e), []);
-                }),
-                d = v.model((e) => {
+                c = x.model(() => a()?.details.reduce((e, { maxPoint: s }, a) => (e.push((e[a - 1] ?? 0) + s), e), [])),
+                d = x.model((e) => {
                     const t = s.activeDetailId.get();
                     if (!t) return;
                     const i = a();
                     if (!i) return;
                     const n = i.details.findIndex((e) => e.id === t),
-                        o = e === x.ARROW_LEFT ? n - 1 : n + 1,
+                        o = e === E.ARROW_LEFT ? n - 1 : n + 1,
                         r = i.details[o];
                     return r ? { index: o, detail: r } : void 0;
                 });
@@ -287,13 +278,13 @@ const cs = 'missions',
             handleOperationStatusButtonClick: s.createCallbackNoArgs('onOperationStatusButtonClick'),
             playIntroVideoClick: s.createCallbackNoArgs('showOperationVehicleVideo'),
             openAdditionalMission: s.createCallbackNoArgs('onAdditionalMission'),
-            showDetailVideo: s.createCallback((e) => ({ [Ve]: e }), 'showDetailVideo'),
-            showDetailInfo: s.createCallback((e) => ({ [Ve]: e }), 'onDetailInfo'),
-            updateAnimationState: s.createCallback((e) => ({ animationState: e }), 'updateAnimationState'),
+            showDetailVideo: s.createCallback((e) => ({ [He]: e }), 'showDetailVideo'),
+            showDetailInfo: s.createCallback((e) => ({ [He]: e }), 'onDetailInfo'),
+            updateAnimationState: s.createCallback((e) => ({ [$e]: e }), 'updateAnimationState'),
             changeCategory: s.createCallback((e) => ({ category: e }), 'missionsModel.changeCategory'),
             openMissions: s.createCallback((e) => ({ category: e }), 'onMission'),
-            switchOperation: s.createCallback((e) => ({ operationId: e }), 'onSwitchOperation'),
-            claimDetail: s.createCallback((e) => ({ [Ve]: e }), 'onClaimDetail'),
+            switchOperation: s.createCallback((e) => ({ [Be]: e }), 'onSwitchOperation'),
+            claimDetail: s.createCallback((e) => ({ [He]: e }), 'onClaimDetail'),
             mouseOver3dScene: s.createCallback((e) => e, 'onMouseOver3dScene'),
             moveSpace: s.createCallback((e) => e, 'onMoveSpace'),
             setActiveDetailId: n((s) => {
@@ -304,28 +295,28 @@ const cs = 'missions',
             }),
         }),
     ),
-    fs = r.createContext(null),
-    bs = l(function ({ children: e }) {
-        const { model: s, controls: a } = gs(),
-            t = c(ts, (e) => e.value),
-            i = c(ts, (e) => e.context),
+    Is = r.createContext(null),
+    vs = l(function ({ children: e }) {
+        const { model: s, controls: a } = Ns(),
+            t = c(os, (e) => e.value),
+            i = c(os, (e) => e.context),
             n = s.cameraFlightInProgress.get(),
-            o = t !== as || n,
-            l = E((e) => {
-                ls(
+            o = t !== ns || n,
+            l = y((e) => {
+                ms(
                     [
                         v.start({
                             opacity: 0,
                             transform: 'translateY(-20rem)',
                             delay: 300,
-                            config: { duration: 300, easing: y.easeInQuart },
+                            config: { duration: 300, easing: S.easeInQuart },
                         }),
-                        b.start({ opacity: 0, config: { duration: 300, easing: y.easeInQuart } }),
+                        h.start({ opacity: 0, config: { duration: 300, easing: S.easeInQuart } }),
                         u.start({
                             opacity: 0,
                             transform: 'translateY(-20rem)',
                             delay: 240,
-                            config: { duration: 250, easing: y.easeInQuart },
+                            config: { duration: 250, easing: S.easeInQuart },
                         }),
                     ],
                     e,
@@ -333,282 +324,282 @@ const cs = 'missions',
             }),
             [m, u] = d(() => ({
                 from: { opacity: 0, transform: 'translateY(20rem)' },
-                config: { duration: 300, easing: y.easeOutQuart },
+                config: { duration: 300, easing: S.easeOutQuart },
             })),
             [p, g] = d(() => ({
                 from: { opacity: 0, transform: 'translateY(20rem)', pointerEvents: 'none' },
-                config: { duration: 300, easing: y.easeOutQuart },
+                config: { duration: 300, easing: S.easeOutQuart },
             })),
-            [f, b] = d(() => ({ from: { opacity: 0 }, config: { duration: 300, easing: y.easeOutQuart } })),
-            [h, I] = d(() => ({ from: { opacity: 1, transform: 'translateY(0rem)' }, config: { duration: 200 } })),
-            [N, v] = d(() => ({
+            [f, h] = d(() => ({ from: { opacity: 0 }, config: { duration: 300, easing: S.easeOutQuart } })),
+            [b, N] = d(() => ({ from: { opacity: 1, transform: 'translateY(0rem)' }, config: { duration: 200 } })),
+            [I, v] = d(() => ({
                 from: { opacity: 1, transform: 'translateY(0rem)' },
-                config: { duration: 300, easing: y.easeOutQuart },
+                config: { duration: 300, easing: S.easeOutQuart },
             })),
-            [x, O] = d(() => ({
+            [x, E] = d(() => ({
                 from: { opacity: 0, transform: 'translate(-50%, 20rem)' },
                 config: { duration: 300 },
             })),
-            [C, w] = d(() => ({ from: { opacity: 0, transform: 'translateX(-20rem)' }, config: { duration: 300 } }));
+            [C, j] = d(() => ({ from: { opacity: 0, transform: 'translateX(-20rem)' }, config: { duration: 300 } }));
         return (
-            S(() => {
+            O(() => {
                 (u.start({ opacity: 1, transform: 'translateY(0rem)', delay: 360 }),
                     g.start({ opacity: 1, transform: 'translateY(0rem)', pointerEvents: 'auto' }),
-                    b.start({ opacity: 1, config: { duration: 300, easing: y.easeInQuart } }));
+                    h.start({ opacity: 1, config: { duration: 300, easing: S.easeInQuart } }));
             }),
             r.useEffect(() => {
                 switch (t) {
-                    case $e:
-                        ls(
+                    case Ue:
+                        ms(
                             [
                                 g.start({
                                     opacity: 0,
                                     transform: 'translateY(-20rem)',
                                     pointerEvents: 'none',
-                                    config: { duration: 300, easing: y.easeInQuart },
+                                    config: { duration: 300, easing: S.easeInQuart },
                                 }),
-                                I.start({
+                                N.start({
                                     opacity: 0,
                                     transform: 'translateY(10rem)',
-                                    config: { easing: y.easeInQuart },
+                                    config: { easing: S.easeInQuart },
                                 }),
-                                b.start({ opacity: 0, config: { duration: 300, easing: y.easeInQuart } }),
+                                h.start({ opacity: 0, config: { duration: 300, easing: S.easeInQuart } }),
                                 u.start({
                                     opacity: 0,
                                     transform: 'translateY(-20rem)',
                                     delay: 150,
-                                    config: { duration: 300, easing: y.easeInQuart },
+                                    config: { duration: 300, easing: S.easeInQuart },
                                 }),
                             ],
                             () => {
                                 i.nextOperationId &&
-                                    (a.switchOperation(i.nextOperationId), ts.send({ type: 'LEAVE_OPERATION_DONE' }));
+                                    (a.switchOperation(i.nextOperationId), os.send({ type: 'LEAVE_OPERATION_DONE' }));
                             },
                         );
                         break;
-                    case Qe:
+                    case qe:
                         (u.set({ transform: 'translateY(20rem)' }),
                             g.set({ transform: 'translateY(20rem)' }),
-                            ls(
+                            ms(
                                 [
                                     u.start({
                                         opacity: 1,
                                         transform: 'translateY(0rem)',
                                         delay: 620,
-                                        config: { duration: 300, easing: y.easeOutQuart },
+                                        config: { duration: 300, easing: S.easeOutQuart },
                                     }),
-                                    I.start({
+                                    N.start({
                                         opacity: 1,
                                         transform: 'translateY(0rem)',
-                                        config: { easing: y.easeOutCirc },
+                                        config: { easing: S.easeOutCirc },
                                     }),
-                                    b.start({ opacity: 1, config: { duration: 300, easing: y.easeInQuart } }),
+                                    h.start({ opacity: 1, config: { duration: 300, easing: S.easeInQuart } }),
                                     g.start({
                                         opacity: 1,
                                         transform: 'translateY(0rem)',
                                         pointerEvents: 'auto',
-                                        config: { duration: 500, easing: y.easeInOutCirc },
+                                        config: { duration: 500, easing: S.easeInOutCirc },
                                         delay: 100,
                                     }),
                                 ],
-                                () => ts.send({ type: 'TO_IDLE' }),
+                                () => os.send({ type: 'TO_IDLE' }),
                             ));
                         break;
-                    case We:
-                        ls(
+                    case Fe:
+                        ms(
                             [
                                 v.start({
                                     opacity: 0,
                                     transform: 'translateY(-20rem)',
                                     delay: 300,
-                                    config: { duration: 300, easing: y.easeOutQuart },
+                                    config: { duration: 300, easing: S.easeOutQuart },
                                 }),
                                 g.start({
                                     opacity: 0,
                                     transform: 'translateY(20rem)',
                                     pointerEvents: 'none',
-                                    config: { duration: 300, easing: y.easeInQuart },
+                                    config: { duration: 300, easing: S.easeInQuart },
                                 }),
-                                b.start({ opacity: 0, config: { duration: 300, easing: y.easeInQuart } }),
+                                h.start({ opacity: 0, config: { duration: 300, easing: S.easeInQuart } }),
                                 u.start({
                                     opacity: 0,
                                     transform: 'translateY(-20rem)',
                                     delay: 200,
-                                    config: { duration: 250, easing: y.easeInQuart },
+                                    config: { duration: 250, easing: S.easeInQuart },
                                 }),
                             ],
                             () => {
                                 i.missionCategory &&
-                                    (ts.send({ type: 'LEAVE_PROGRESSION_DONE' }), a.openMissions(i.missionCategory));
+                                    (os.send({ type: 'LEAVE_PROGRESSION_DONE' }), a.openMissions(i.missionCategory));
                             },
                         );
                         break;
-                    case ze:
+                    case Xe:
                         (u.set({ transform: 'translateY(20rem)' }),
-                            ls(
+                            ms(
                                 [
                                     v.start({
                                         opacity: 1,
                                         transform: 'translateY(0rem)',
                                         delay: 300,
-                                        config: { duration: 300, easing: y.easeOutQuart },
+                                        config: { duration: 300, easing: S.easeOutQuart },
                                     }),
                                     u.start({ opacity: 1, transform: 'translateY(0rem)', delay: 480 }),
                                     g.start({
                                         opacity: 1,
                                         transform: 'translateY(0rem)',
                                         pointerEvents: 'auto',
-                                        config: { duration: 500, easing: y.easeInOutCirc },
+                                        config: { duration: 500, easing: S.easeInOutCirc },
                                         delay: 200,
                                     }),
-                                    b.start({ opacity: 1, config: { duration: 300, easing: y.easeInQuart } }),
+                                    h.start({ opacity: 1, config: { duration: 300, easing: S.easeInQuart } }),
                                 ],
-                                () => ts.send({ type: 'TO_IDLE' }),
+                                () => os.send({ type: 'TO_IDLE' }),
                             ));
                         break;
-                    case Ye:
+                    case Ke:
                         l(() => {
-                            (a.setFreeCamera(), a.setCurrentState(ds), ts.send({ type: 'TO_IDLE' }));
+                            (a.setFreeCamera(), a.setCurrentState(ps), os.send({ type: 'TO_IDLE' }));
                         });
                         break;
-                    case Ge:
-                        (i.action === ns &&
+                    case Ze:
+                        (i.action === cs &&
                             g.start({
                                 opacity: 0,
                                 transform: 'translateY(20rem)',
                                 pointerEvents: 'none',
-                                config: { duration: 250, easing: y.easeInQuart },
+                                config: { duration: 250, easing: S.easeInQuart },
                             }),
                             l(() => {
-                                if (i.action === os) {
+                                if (i.action === ds) {
                                     if (!i.detailId) return;
-                                    (a.showDetailInfo(i.detailId), a.setCurrentState(ds));
-                                } else if (i.action === ns) {
+                                    (a.showDetailInfo(i.detailId), a.setCurrentState(ps));
+                                } else if (i.action === cs) {
                                     if (!i.detailId) return;
-                                    (a.claimDetail(i.detailId), a.setCurrentState(ds));
+                                    (a.claimDetail(i.detailId), a.setCurrentState(ps));
                                 }
                             }));
                         break;
-                    case Ke:
-                        (i.action === ns &&
+                    case Je:
+                        (i.action === cs &&
                             g.start({
                                 opacity: 1,
                                 transform: 'translateY(0rem)',
                                 pointerEvents: 'auto',
-                                config: { easing: y.easeOutQuart },
-                                onRest: () => a.updateAnimationState(He.IDLE),
+                                config: { easing: S.easeOutQuart },
+                                onRest: () => a.updateAnimationState(We.IDLE),
                             }),
-                            ls(
+                            ms(
                                 [
-                                    O.start({
+                                    E.start({
                                         opacity: 1,
                                         transform: 'translate(-50%, 0rem)',
-                                        config: { easing: y.easeOutQuart },
+                                        config: { easing: S.easeOutQuart },
                                     }),
-                                    w.start({
+                                    j.start({
                                         opacity: 1,
                                         transform: 'translateX(0rem)',
-                                        config: { easing: y.easeOutQuart },
+                                        config: { easing: S.easeOutQuart },
                                     }),
                                 ],
                                 () => {
-                                    (a.updateAnimationState(He.IDLE), ts.send({ type: 'TO_IDLE' }));
+                                    (a.updateAnimationState(We.IDLE), os.send({ type: 'TO_IDLE' }));
                                 },
                             ));
                         break;
-                    case Xe:
-                        (i.action === ns &&
+                    case es:
+                        (i.action === cs &&
                             g.start({
                                 opacity: 0,
                                 transform: 'translateY(20rem)',
                                 pointerEvents: 'none',
-                                config: { duration: 300, easing: y.easeInCirc },
+                                config: { duration: 300, easing: S.easeInCirc },
                                 onRest: () => {
                                     i.detailId && (a.setActiveDetailId(i.detailId), a.claimDetail(i.detailId));
                                 },
                             }),
-                            ls(
+                            ms(
                                 [
-                                    w.start({
+                                    j.start({
                                         opacity: 0,
                                         transform: 'translateX(20rem)',
-                                        config: { easing: y.easeInCirc },
+                                        config: { easing: S.easeInCirc },
                                     }),
-                                    O.start({
+                                    E.start({
                                         opacity: 0,
                                         transform: 'translate(-50%, 20rem)',
-                                        config: { easing: y.easeInCirc },
+                                        config: { easing: S.easeInCirc },
                                     }),
                                 ],
                                 () => {
-                                    i.action === rs
+                                    i.action === _s
                                         ? a.setActiveDetailId('')
-                                        : i.action === os &&
+                                        : i.action === ds &&
                                           (i.detailId
                                               ? (a.setActiveDetailId(i.detailId), a.showDetailInfo(i.detailId))
                                               : (a.setFreeCamera(),
                                                 a.setActiveDetailId(''),
-                                                ts.send({ type: 'TO_IDLE' })));
+                                                os.send({ type: 'TO_IDLE' })));
                                 },
                             ));
                         break;
-                    case Ze:
-                        (a.setCurrentState(_s),
+                    case ss:
+                        (a.setCurrentState(gs),
                             u.set({ transform: 'translateY(20rem)', opacity: 0 }),
-                            ls(
+                            ms(
                                 [
                                     v.start({
                                         opacity: 1,
                                         transform: 'translateY(0rem)',
                                         delay: 300,
-                                        config: { duration: 300, easing: y.easeOutQuart },
+                                        config: { duration: 300, easing: S.easeOutQuart },
                                     }),
                                     u.start({ opacity: 1, transform: 'translateY(0rem)', delay: 630 }),
                                     g.start({
                                         opacity: 1,
                                         transform: 'translateY(0rem)',
                                         pointerEvents: 'auto',
-                                        config: { duration: 500, easing: y.easeInOutCirc },
+                                        config: { duration: 500, easing: S.easeInOutCirc },
                                         delay: 200,
                                     }),
-                                    b.start({ opacity: 1, config: { duration: 300, easing: y.easeInQuart } }),
+                                    h.start({ opacity: 1, config: { duration: 300, easing: S.easeInQuart } }),
                                 ],
                                 () => {
-                                    (ts.send({ type: 'TO_IDLE' }), a.updateAnimationState(He.IDLE));
+                                    (os.send({ type: 'TO_IDLE' }), a.updateAnimationState(We.IDLE));
                                 },
                             ));
                         break;
-                    case Je:
-                        I.start({
+                    case as:
+                        N.start({
                             opacity: 0,
                             transform: 'translateY(10rem)',
-                            config: { easing: y.easeInQuart, duration: 300 },
+                            config: { easing: S.easeInQuart, duration: 300 },
                             onRest: () => {
-                                (a.handleOperationStatusButtonClick(), ts.send({ type: 'TO_IDLE' }));
+                                (a.handleOperationStatusButtonClick(), os.send({ type: 'TO_IDLE' }));
                             },
                         });
                         break;
-                    case es:
+                    case ts:
                         u.start({
                             opacity: 0,
                             transform: 'translateY(-20rem)',
                             delay: 200,
-                            config: { duration: 300, easing: y.easeInQuart },
-                            onRest: () => ts.send({ type: 'HIDE_ADDITIONAL_MISSIONS_DONE' }),
+                            config: { duration: 300, easing: S.easeInQuart },
+                            onRest: () => os.send({ type: 'HIDE_ADDITIONAL_MISSIONS_DONE' }),
                         });
                         break;
-                    case ss:
+                    case is:
                         (u.set({ transform: 'translateY(20rem)' }),
                             u.start({
                                 opacity: 1,
                                 transform: 'translateY(0rem)',
                                 delay: 200,
-                                config: { duration: 300, easing: y.easeOutQuart },
-                                onRest: () => ts.send({ type: 'TO_IDLE' }),
+                                config: { duration: 300, easing: S.easeOutQuart },
+                                onRest: () => os.send({ type: 'TO_IDLE' }),
                             }));
                 }
-            }, [i.missionCategory, i.nextOperationId, i.detailId, i.action, t, a, v, I, O, l, w, g, b, u]),
-            _.jsx(fs.Provider, {
+            }, [i.missionCategory, i.nextOperationId, i.detailId, i.action, t, a, v, N, E, l, j, g, h, u]),
+            _.jsx(Is.Provider, {
                 value: {
                     completedStateStyle: f,
                     additionalCardStyle: m,
@@ -616,78 +607,78 @@ const cs = 'missions',
                     progressionStyle: p,
                     detailInfoStyle: C,
                     zoomOutStyle: x,
-                    statusStyle: h,
-                    menuStyle: N,
+                    statusStyle: b,
+                    menuStyle: I,
                 },
                 children: e,
             })
         );
     }),
-    hs = () => {
-        const e = r.useContext(fs);
+    xs = () => {
+        const e = r.useContext(Is);
         if (!e) throw new Error('useAnimation must be used within an AnimationProvider');
         return e;
     },
-    Is = 'ZoomOut_718336b5',
-    Ns = 'ZoomOut_line_227e84e1',
-    vs = 'ZoomOut_icon_ea52efbd';
-function xs({ className: e }) {
-    const s = O.resolve('sounds'),
-        { zoomOutStyle: a, animationInProgress: t } = hs(),
-        i = C(
-            Te.CUSTOM_SIMPLE,
+    Es = 'ZoomOut_718336b5',
+    ys = 'ZoomOut_line_227e84e1',
+    Ss = 'ZoomOut_icon_ea52efbd';
+function Os({ className: e }) {
+    const s = C.resolve('sounds'),
+        { zoomOutStyle: a, animationInProgress: t } = xs(),
+        i = j(
+            Pe.CUSTOM_SIMPLE,
             r.useMemo(
                 () => ({
-                    body: O.resolve('strings').readOrEmpty('personal_missions_30.tooltip.assembling.zoomOut'),
+                    body: C.resolve('strings').readOrEmpty('personal_missions_30.tooltip.assembling.zoomOut'),
                     split: !1,
-                    resId: O.resolve('views').read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
+                    resId: C.resolve('views').read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
                 }),
                 [],
             ),
         );
     return _.jsxs(m.div, {
         style: a,
-        className: u(Is, e),
+        className: u(Es, e),
         children: [
-            _.jsx('div', { className: Ns }),
+            _.jsx('div', { className: ys }),
             _.jsx(w, {
                 path: 'personal_missions_30.common.zoom_out',
                 ...i,
                 onClick: function () {
-                    t || (s.play('yes'), i.onClick(), ts.send({ type: 'HIDE_DETAIL_INFO', action: os }));
+                    t || (s.play('yes'), i.onClick(), os.send({ type: 'HIDE_DETAIL_INFO', action: ds }));
                 },
                 onMouseEnter: function (e) {
                     t || (i.onMouseEnter(e), s.play('highlight'));
                 },
                 width: 64,
                 height: 64,
-                className: vs,
+                className: Ss,
             }),
-            _.jsx('div', { className: Ns }),
+            _.jsx('div', { className: ys }),
         ],
     });
 }
-const Es = 'InfoBox_ea99595d',
-    ys = 'InfoBox_header_7764560e',
-    Ss = 'InfoBox_button_54dcf703',
-    Os = 'InfoBox_buttonIcon_68293c83',
-    Cs = 'InfoBox_title_b1b49d70',
-    ws = 'InfoBox_componentName_ce19d1c0',
-    js = 'InfoBox_scrollArea_4137adea',
-    As = 'InfoBox_textArea_58ae1c7b',
-    Ms = 'InfoBox_text_860b4630',
-    Ds = l(function ({ className: e }) {
-        const s = O.resolve('strings'),
-            { model: a, controls: t } = gs(),
+const Cs = 'InfoBox_ea99595d',
+    js = 'InfoBox_header_7764560e',
+    ws = 'InfoBox_button_54dcf703',
+    As = 'InfoBox_buttonIcon_68293c83',
+    Ms = 'InfoBox_title_b1b49d70',
+    Ds = 'InfoBox_componentName_ce19d1c0',
+    Ts = 'InfoBox_scrollArea_4137adea',
+    Ps = 'InfoBox_textArea_fbe24a5d',
+    Ls = 'InfoBox_text_860b4630',
+    Rs = l(function ({ className: e }) {
+        const s = C.resolve('strings'),
+            { model: a, controls: t } = Ns(),
             i = a.activeDetailId.get(),
             n = a.computes.detailById(i),
-            { detailInfoStyle: o } = hs(),
-            l = C(
-                Te.CUSTOM_SIMPLE,
+            { detailInfoStyle: o } = xs(),
+            l = j(
+                Pe.CUSTOM_SIMPLE,
                 r.useMemo(
                     () => ({
                         body: s.readOrEmpty('personal_missions_30.tooltip.assembling.viewAnimation'),
-                        resId: O.resolve('views').read((e) =>
+                        resId: C.resolve('views').read((e) =>
                             e.mono.personal_missions_30.tooltips.param_tooltip('resId'),
                         ),
                     }),
@@ -697,19 +688,19 @@ const Es = 'InfoBox_ea99595d',
         const c = s.readOrEmpty(`personal_missions_30.detail.descr.historical.${i}`).split('\n');
         return _.jsxs(m.div, {
             style: o,
-            className: u(Es, e),
+            className: u(Cs, e),
             children: [
                 _.jsxs('div', {
-                    className: ys,
+                    className: js,
                     children: [
                         _.jsx('div', {
-                            className: Cs,
+                            className: Ms,
                             children: s.readOrEmpty('personal_missions_30.main.assembling.component'),
                         }),
-                        (null == n ? void 0 : n.hasAssemblingVideo) &&
-                            _.jsx(j, {
+                        n?.hasAssemblingVideo &&
+                            _.jsx(A, {
                                 theme: 'secondary',
-                                className: Ss,
+                                className: ws,
                                 ...l,
                                 onClick: function () {
                                     (t.showDetailVideo(i), l.onClick());
@@ -718,130 +709,130 @@ const Es = 'InfoBox_ea99595d',
                                     path: 'personal_missions_30.common.video',
                                     width: 32,
                                     height: 32,
-                                    className: Os,
+                                    className: As,
                                 }),
                             }),
                     ],
                 }),
-                _.jsx(A, { split: !0, text: s.readOrEmpty(`personal_missions_30.detail.name.${i}`), className: ws }),
-                _.jsx(M, {
-                    children: _.jsx(D, {
-                        className: js,
-                        areaClassName: As,
-                        children: c.map((e, s) => _.jsx(A, { split: !0, text: e, className: Ms }, s)),
+                _.jsx(M, { split: !0, text: s.readOrEmpty(`personal_missions_30.detail.name.${i}`), className: Ds }),
+                _.jsx(D, {
+                    children: _.jsx(T, {
+                        className: Ts,
+                        areaClassName: Ps,
+                        children: c.map((e, s) => _.jsx(M, { split: !0, text: e, className: Ls }, s)),
                     }),
                 }),
             ],
         });
     }),
-    Ts = 'Assembling_aad1dbe5',
-    Ps = 'Assembling_wrapper_455363c4',
-    Ls = 'Assembling_infoBox_ec2ebc27',
-    Rs = 'Assembling_base__disabled_ca5e9f6e',
-    ks = 'Assembling_zoomOut_8760d796',
-    Vs = l(function () {
-        const { model: e, controls: s } = gs(),
+    ks = 'Assembling_aad1dbe5',
+    Vs = 'Assembling_wrapper_455363c4',
+    Bs = 'Assembling_infoBox_ec2ebc27',
+    Hs = 'Assembling_base__disabled_ca5e9f6e',
+    $s = 'Assembling_zoomOut_8760d796',
+    Qs = l(function () {
+        const { model: e, controls: s } = Ns(),
             a = e.activeDetailId.get(),
-            { animationInProgress: t } = hs();
+            { animationInProgress: t } = xs();
         return (
-            T(x.ESCAPE, function () {
-                t || (a ? ts.send({ type: 'HIDE_DETAIL_INFO', action: os }) : s.goBack());
+            P(E.ESCAPE, function () {
+                t || (a ? os.send({ type: 'HIDE_DETAIL_INFO', action: ds }) : s.goBack());
             }),
             _.jsx('div', {
-                className: u(Ts, t && Rs),
+                className: u(ks, t && Hs),
                 children:
                     a &&
                     _.jsxs('div', {
-                        className: Ps,
-                        children: [_.jsx(Ds, { className: Ls }), _.jsx(xs, { className: ks })],
+                        className: Vs,
+                        children: [_.jsx(Rs, { className: Bs }), _.jsx(Os, { className: $s })],
                     }),
             })
         );
     }),
-    Bs = {
+    Ws = {
         base: 'Separator_ad87e1c2',
         separator: 'Separator_a31c4ceb',
         separator__left: 'Separator_separator__left_99aa190',
         separatorPattern: 'Separator_separatorPattern_151b0785',
     };
-function Hs({ className: e, type: s = 'default' }) {
+function Us({ className: e, type: s = 'default' }) {
     return _.jsxs('div', {
-        className: u(Bs.base, Bs[`base__${s}`], e),
+        className: u(Ws.base, Ws[`base__${s}`], e),
         children: [
-            'default' === s && _.jsx('div', { className: u(Bs.separator, Bs.separator__left) }),
-            _.jsx('div', { className: Bs.separatorPattern }),
-            'default' === s && _.jsx('div', { className: Bs.separator }),
+            'default' === s && _.jsx('div', { className: u(Ws.separator, Ws.separator__left) }),
+            _.jsx('div', { className: Ws.separatorPattern }),
+            'default' === s && _.jsx('div', { className: Ws.separator }),
         ],
     });
 }
-const $s = 'assault',
-    Qs = 'breakthrough',
-    Ws = 'sniper',
-    Us = 'support',
-    qs = 'universal',
-    Fs = 'default',
-    Ys = 'role',
-    zs = [Pe.ASSAULT, Pe.SNIPER, Pe.SUPPORT],
-    Gs = zs.map((e) => {
+const qs = 'assault',
+    Fs = 'breakthrough',
+    Ys = 'sniper',
+    zs = 'support',
+    Gs = 'universal',
+    Ks = 'default',
+    Xs = 'role',
+    Zs = [Le.ASSAULT, Le.SNIPER, Le.SUPPORT],
+    Js = Zs.map((e) => {
         return {
             id: e,
             label:
                 ((s = e),
-                O.resolve('intl').toUpperCase(
-                    O.resolve('strings').readOrEmpty(`personal_missions_30.common.category.${s}`),
+                C.resolve('intl').toUpperCase(
+                    C.resolve('strings').readOrEmpty(`personal_missions_30.common.category.${s}`),
                 )),
         };
         var s;
     });
-function Ks(e, s, a) {
+function ea(e, s, a) {
     return e.find((e) => e[s] === a);
 }
-const [Xs, Zs] = N()(({ observableModel: e }) => {
+const [sa, aa] = v()(({ observableModel: e }) => {
         const s = { ...e.primitives(['missionsCategory']), allMissions: e.arrayClone('allMissions') },
-            a = v.model((e) => {
-                const a = Ks(s.allMissions.get(), 'operationId', e);
+            a = x.model((e) => {
+                const a = ea(s.allMissions.get(), 'operationId', e);
                 if (!a) throw new Error(`operation with operationId: ${e} was not found`);
                 return a;
             }),
-            t = v.model((e) => {
+            t = x.model((e) => {
                 const t = a(e).missionsCategorizations;
                 if (!t) throw new Error(`missionsCategorizations with operationId: ${e} was not found`);
                 const i = s.missionsCategory.get(),
-                    n = Ks(t, 'missionsCategory', i);
+                    n = ea(t, 'missionsCategory', i);
                 if (!n) throw new Error(`missions with missionsCategory: ${i} was not found`);
                 return n.missions;
             }),
-            i = v.model((e, s) => {
-                const a = P(t(s), e);
+            i = x.model((e, s) => {
+                const a = L(t(s), e);
                 if (!a) throw new Error(`mission with index ${e} was not found`);
                 return a;
             }),
-            n = v.primitive((e) => a(e).operationName),
-            o = v.primitive((e) => ({ minLevel: a(e).minRequiredVehicle, maxLevel: a(e).maxRequiredVehicle }));
+            n = x.primitive((e) => a(e).operationName),
+            o = x.primitive((e) => ({ minLevel: a(e).minRequiredVehicle, maxLevel: a(e).maxRequiredVehicle }));
         return {
             ...s,
             computes: { missionsByCategory: t, missionByIndex: i, operationNameById: n, vehicleLevelsById: o },
         };
-    }, L),
-    Js = {
+    }, k),
+    ta = {
         base: 'VehicleItem_4773539d',
         base__role: 'VehicleItem_base__role_f4574026',
         icon: 'VehicleItem_icon_622e4ecc',
         header: 'VehicleItem_header_5a7536ee',
     };
-function ea({ item: e, type: s = Fs, className: a }) {
-    const t = O.resolve('strings'),
-        i = s === Ys ? 'roles' : 'vehicleTypes',
-        n = s === Ys ? 'personal_missions_30.common.role' : 'menu.header.vehicleType';
+function ia({ item: e, type: s = Ks, className: a }) {
+    const t = C.resolve('strings'),
+        i = s === Xs ? 'roles' : 'vehicleTypes',
+        n = s === Xs ? 'personal_missions_30.common.role' : 'menu.header.vehicleType';
     return _.jsxs('div', {
-        className: u(Js.base, Js[`base__${s}`], a),
+        className: u(ta.base, ta[`base__${s}`], a),
         children: [
-            _.jsx(w, { path: `personal_missions_30.common.${i}.${k(e)}`, className: Js.icon }),
-            _.jsx('div', { className: Js.header, children: t.readOrEmpty(`${n}.${k(e)}`) }),
+            _.jsx(w, { path: `personal_missions_30.common.${i}.${V(e)}`, className: ta.icon }),
+            _.jsx('div', { className: ta.header, children: t.readOrEmpty(`${n}.${V(e)}`) }),
         ],
     });
 }
-const sa = {
+const na = {
         base: 'CategoryInfo_c4876b8',
         icon: 'CategoryInfo_icon_2d0fb57a',
         title: 'CategoryInfo_title_3745f90',
@@ -850,80 +841,80 @@ const sa = {
         description: 'CategoryInfo_description_3c4aef16',
         highlightedText: 'CategoryInfo_highlightedText_76a530ff',
     },
-    aa = l(function ({ className: e }) {
-        const s = O.resolve('strings'),
-            { model: a } = gs(),
-            { model: t } = Zs(),
+    oa = l(function ({ className: e }) {
+        const s = C.resolve('strings'),
+            { model: a } = Ns(),
+            { model: t } = aa(),
             i = t.missionsCategory.get(),
             n = a.activeOperationId.get();
         return _.jsxs('div', {
-            className: u(sa.base, e),
+            className: u(na.base, e),
             children: [
                 _.jsx(w, {
                     path: `personal_missions_30.category.c_64x64.${i}`,
                     width: '64rem',
                     height: '64rem',
                     adaptive: { large: { width: 80, height: 80, path: `personal_missions_30.category.c_80x80.${i}` } },
-                    className: sa.icon,
+                    className: na.icon,
                 }),
                 _.jsx('div', {
-                    className: sa.title,
+                    className: na.title,
                     children: s.readOrEmpty(`personal_missions_30.common.category.${i}`),
                 }),
-                _.jsx(Hs, { type: 'withoutAlpha', className: sa.separator }),
+                _.jsx(Us, { type: 'withoutAlpha', className: na.separator }),
                 _.jsxs('div', {
-                    className: sa.descriptionBlock,
+                    className: na.descriptionBlock,
                     children: [
-                        _.jsx(V, {
+                        _.jsx(B, {
                             path: 'personal_missions_30.main.missions.category.description',
                             params: {
                                 category: s.readOrEmpty(`personal_missions_30.common.category.${i}`),
                                 operationName: _.jsx('div', {
-                                    className: sa.highlightedText,
+                                    className: na.highlightedText,
                                     children: t.computes.operationNameById(n),
                                 }),
-                                minLevel: B(t.computes.vehicleLevelsById(n).minLevel),
-                                maxLevel: B(t.computes.vehicleLevelsById(n).maxLevel),
+                                minLevel: H(t.computes.vehicleLevelsById(n).minLevel),
+                                maxLevel: H(t.computes.vehicleLevelsById(n).maxLevel),
                             },
-                            className: sa.description,
+                            className: na.description,
                         }),
-                        _.jsx(V, {
+                        _.jsx(B, {
                             path: `personal_missions_30.main.missions.category.vehicles.${i}`,
                             params: {
-                                HT: _.jsx(ea, { item: U }),
-                                MT: _.jsx(ea, { item: W }),
-                                LT: _.jsx(ea, { item: Q }),
-                                TD: _.jsx(ea, { item: $ }),
-                                SPG: _.jsx(ea, { item: H }),
-                                breakthrough: _.jsx(ea, { item: Qs, type: Ys }),
-                                assault: _.jsx(ea, { item: $s, type: Ys }),
-                                universal: _.jsx(ea, { item: qs, type: Ys }),
-                                sniper: _.jsx(ea, { item: Ws, type: Ys }),
-                                support: _.jsx(ea, { item: Us, type: Ys }),
+                                HT: _.jsx(ia, { item: q }),
+                                MT: _.jsx(ia, { item: U }),
+                                LT: _.jsx(ia, { item: W }),
+                                TD: _.jsx(ia, { item: Q }),
+                                SPG: _.jsx(ia, { item: $ }),
+                                breakthrough: _.jsx(ia, { item: Fs, type: Xs }),
+                                assault: _.jsx(ia, { item: qs, type: Xs }),
+                                universal: _.jsx(ia, { item: Gs, type: Xs }),
+                                sniper: _.jsx(ia, { item: Ys, type: Xs }),
+                                support: _.jsx(ia, { item: zs, type: Xs }),
                             },
-                            className: sa.vehicles,
+                            className: na.vehicles,
                         }),
                     ],
                 }),
             ],
         });
     });
-function ta({ id: e, label: s }) {
-    const a = O.resolve('views'),
-        t = q({
+function ra({ id: e, label: s }) {
+    const a = C.resolve('views'),
+        t = F({
             contentId: a.read((e) => e.mono.personal_missions_30.tooltips.missions_category_tooltip('resId')),
             args: { category: e },
         });
-    return _.jsx(F.Tab, { tabId: e, ...t, children: s });
+    return _.jsx(Y.Tab, { tabId: e, ...t, children: s });
 }
-var ia = ((e) => (
+var la = ((e) => (
     (e.ACTIVE = 'active'),
     (e.DISABLED = 'disabled'),
     (e.COMPLETED = 'completed'),
     (e.LOCKED = 'locked'),
     e
-))(ia || {});
-const na = {
+))(la || {});
+const ca = {
         base: 'ArrowButton_472a47bc',
         base__small: 'ArrowButton_base__small_406dfd6e',
         base__medium: 'ArrowButton_base__medium_3ee48459',
@@ -933,43 +924,41 @@ const na = {
         base__left: 'ArrowButton_base__left_45ed34a5',
         icon: 'ArrowButton_icon_440f072',
     },
-    oa = { up: 'up', right: 'right', down: 'down', left: 'left' },
-    ra = 'small',
-    la = 'medium',
-    ca = 'large',
-    da = r.forwardRef(function ({ arrowDirection: e = oa.right, size: s, className: a, classNames: t, ...i }, n) {
-        return _.jsx(j, {
+    da = { up: 'up', right: 'right', down: 'down', left: 'left' },
+    _a = 'small',
+    ma = 'medium',
+    ua = 'large',
+    pa = r.forwardRef(function ({ arrowDirection: e = da.right, size: s, className: a, classNames: t, ...i }, n) {
+        return _.jsx(A, {
             ...i,
             theme: 'secondary',
-            className: u(na.base, na[`base__${s}`], na[`base__${e}`], a),
+            className: u(ca.base, ca[`base__${s}`], ca[`base__${e}`], a),
             autoAlignContent: !1,
             classNames: t,
             ref: n,
-            children: _.jsx('div', { className: u(na.icon, null == t ? void 0 : t.icon) }),
+            children: _.jsx('div', { className: u(ca.icon, t?.icon) }),
         });
     });
-da.direction = oa;
-const _a = {
-    base: 'ShadowLine_a5bf2ece',
-    glow: 'ShadowLine_glow_2c471335',
-    line: 'ShadowLine_line_f4e55e79',
-    dash: 'ShadowLine_dash_24e41869',
-    dash__left: 'ShadowLine_dash__left_1f7623b0',
-    dash__right: 'ShadowLine_dash__right_81c6c0e4',
-};
-function ma({ children: e }) {
+pa.direction = da;
+const ga = 'ShadowLine_a5bf2ece',
+    fa = 'ShadowLine_glow_2c471335',
+    ha = 'ShadowLine_line_f4e55e79',
+    ba = 'ShadowLine_dash_24e41869',
+    Na = 'ShadowLine_dash__left_1f7623b0',
+    Ia = 'ShadowLine_dash__right_81c6c0e4';
+function va({ children: e }) {
     return _.jsxs('div', {
-        className: _a.base,
+        className: ga,
         children: [
             e,
-            _.jsx('div', { className: _a.glow }),
-            _.jsx('div', { className: _a.line }),
-            _.jsx('div', { className: u(_a.dash, _a.dash__left) }),
-            _.jsx('div', { className: u(_a.dash, _a.dash__right) }),
+            _.jsx('div', { className: fa }),
+            _.jsx('div', { className: ha }),
+            _.jsx('div', { className: u(ba, Na) }),
+            _.jsx('div', { className: u(ba, Ia) }),
         ],
     });
 }
-const ua = {
+const xa = {
     base: 'MissionNumber_36d5d4af',
     base__missions: 'MissionNumber_base__missions_59467b17',
     base__completed: 'MissionNumber_base__completed_59467b17',
@@ -984,36 +973,36 @@ const ua = {
     mission: 'MissionNumber_mission_9ce6f188',
     subtitle: 'MissionNumber_subtitle_f0005ad0',
 };
-function pa({ cardType: e, missionStatus: s, currentMissionNumber: a, maxMissions: t, className: i }) {
+function Ea({ cardType: e, missionStatus: s, currentMissionNumber: a, maxMissions: t, className: i }) {
     return _.jsxs('div', {
-        className: u(ua.base, ua[`base__${s}`], ua[`base__${e}`], i),
+        className: u(xa.base, xa[`base__${s}`], xa[`base__${e}`], i),
         children: [
-            _.jsx('div', { className: ua.line }),
-            _.jsx(ma, {
+            _.jsx('div', { className: xa.line }),
+            _.jsx(va, {
                 children: _.jsx('div', {
-                    className: ua.content,
+                    className: xa.content,
                     children: (() => {
                         switch (e) {
-                            case is.default:
-                                return _.jsx(V, {
-                                    className: ua.counter,
+                            case rs:
+                                return _.jsx(B, {
+                                    className: xa.counter,
                                     path: 'personal_missions_30.main.mission.counter',
                                     params: {
                                         maxValue: t,
                                         currentValue: _.jsx('div', {
-                                            className: u(ua.currentValue, a === t && ua.currentValue__done),
+                                            className: u(xa.currentValue, a === t && xa.currentValue__done),
                                             children: a,
                                         }),
                                     },
                                 });
-                            case is.missions:
+                            case ls:
                                 return _.jsxs(_.Fragment, {
                                     children: [
-                                        _.jsx('div', { className: ua.mission, children: a }),
-                                        s === ia.ACTIVE &&
+                                        _.jsx('div', { className: xa.mission, children: a }),
+                                        s === la.ACTIVE &&
                                             _.jsx('div', {
-                                                className: ua.subtitle,
-                                                children: _.jsx(V, {
+                                                className: xa.subtitle,
+                                                children: _.jsx(B, {
                                                     path: 'personal_missions_30.main.mission.subtitle',
                                                 }),
                                             }),
@@ -1028,31 +1017,29 @@ function pa({ cardType: e, missionStatus: s, currentMissionNumber: a, maxMission
         ],
     });
 }
-const ga = {
-    base: 'VehiclesProgress_d2b4bea6',
-    container: 'VehiclesProgress_container_3dc9329c',
-    done: 'VehiclesProgress_done_db1d3990',
-    vehicle: 'VehiclesProgress_vehicle_3344a8a1',
-    done__visible: 'VehiclesProgress_done__visible_b31330f7',
-};
-function fa({ currentProgress: e, maxProgress: s, className: a, ...t }) {
+const ya = 'VehiclesProgress_d2b4bea6',
+    Sa = 'VehiclesProgress_container_3dc9329c',
+    Oa = 'VehiclesProgress_done_db1d3990',
+    Ca = 'VehiclesProgress_vehicle_3344a8a1',
+    ja = 'VehiclesProgress_done__visible_b31330f7';
+function wa({ currentProgress: e, maxProgress: s, className: a, ...t }) {
     return _.jsx('div', {
         ...t,
-        className: u(ga.base, a),
-        children: Y(s, (s) =>
+        className: u(ya, a),
+        children: z(s, (s) =>
             _.jsxs(
                 'div',
                 {
-                    className: ga.container,
+                    className: Sa,
                     children: [
                         _.jsx(w, {
-                            className: ga.vehicle,
+                            className: Ca,
                             path: 'personal_missions_30.common.card.vehicle',
                             width: '64rem',
                             height: '64rem',
                         }),
                         _.jsx(w, {
-                            className: u(ga.done, s < e && ga.done__visible),
+                            className: u(Oa, s < e && ja),
                             path: 'personal_missions_30.common.card.done',
                             width: '64rem',
                             height: '64rem',
@@ -1064,82 +1051,82 @@ function fa({ currentProgress: e, maxProgress: s, className: a, ...t }) {
         ),
     });
 }
-const ba = 'Progress_431da46b',
-    ha = 'Progress_separator_5e9f0d5b',
-    Ia = 'Progress_line_6fc99c5a',
-    Na = 'Progress_icon_14b45aa1',
-    va = 'Progress_bab84485';
-function xa({ cardIndex: e, cardType: s, currentProgressValue: a, maxProgressValue: t, className: i }) {
-    const n = O.resolve('views'),
-        { breakpoint: o } = z(),
-        r = Re(o.weight, G.medium) && s === is.default,
-        l = q({
+const Aa = 'Progress_431da46b',
+    Ma = 'Progress_separator_5e9f0d5b',
+    Da = 'Progress_line_6fc99c5a',
+    Ta = 'Progress_icon_14b45aa1',
+    Pa = 'Progress_bab84485';
+function La({ cardIndex: e, cardType: s, currentProgressValue: a, maxProgressValue: t, className: i }) {
+    const n = C.resolve('views'),
+        { breakpoint: o } = G(),
+        r = ke(o.weight, K.medium) && s === rs,
+        l = F({
             contentId: n.read((e) => e.mono.personal_missions_30.tooltips.mission_progress_tooltip('resId')),
             args: { missionIndex: e },
         });
     return _.jsxs('div', {
-        className: u(ba, i),
+        className: u(Aa, i),
         children: [
             !r &&
                 _.jsxs('div', {
-                    className: ha,
+                    className: Ma,
                     children: [
-                        _.jsx('div', { className: Ia }),
+                        _.jsx('div', { className: Da }),
                         _.jsx(w, {
-                            className: Na,
+                            className: Ta,
                             path: 'personal_missions_30.common.card.done_separator',
                             width: '16rem',
                             height: '17rem',
                         }),
-                        _.jsx('div', { className: Ia }),
+                        _.jsx('div', { className: Da }),
                     ],
                 }),
-            _.jsx(fa, { ...l, currentProgress: a, maxProgress: t, className: va }),
+            _.jsx(wa, { ...l, currentProgress: a, maxProgress: t, className: Pa }),
         ],
     });
 }
-const Ea = (e, s) => window.getComputedStyle(e, null).getPropertyValue(s),
-    ya = (e, s, a) => {
+const Ra = (e, s) => window.getComputedStyle(e, null).getPropertyValue(s),
+    ka = (e, s, a) => {
         const t = a.getContext('2d'),
             i = Array.from(e).length;
         if (!t || 0 === i) return 0;
         t.font = ((e) => {
-            const s = Ea(e, 'font-weight'),
-                a = Ea(e, 'font-size'),
-                t = Ea(e, 'font-family');
-            return `${s} ${K(parseFloat(a))}px ${t}`;
+            const s = Ra(e, 'font-weight'),
+                a = Ra(e, 'font-size'),
+                t = Ra(e, 'font-family');
+            return `${s} ${X(parseFloat(a))}px ${t}`;
         })(s);
         const n = t.measureText(e),
             o = ((e) => {
-                const s = Ea(e, 'letter-spacing'),
+                const s = Ra(e, 'letter-spacing'),
                     [a] = s.match(/[a-z%]+$/);
-                return 'em' === a ? parseFloat(Ea(e, 'font-size')) * parseFloat(s) : parseFloat(s);
+                return 'em' === a ? parseFloat(Ra(e, 'font-size')) * parseFloat(s) : parseFloat(s);
             })(s);
-        return Math.ceil(n.width + (i - 1) * K(o));
+        return Math.ceil(n.width + (i - 1) * X(o));
     },
-    Sa = (e) => {
+    Va = (e) => {
         if (e.start >= e.end - 1) return e.start;
         const s = Math.floor((e.start + e.end) / 2),
             a = e.words.slice(0, s).join(' '),
-            t = Math.ceil(ya(a, e.element, e.canvas) / e.element.getBoundingClientRect().width);
-        return Sa(t <= 1 ? { ...e, start: s } : { ...e, end: s });
+            t = Math.ceil(ka(a, e.element, e.canvas) / e.element.getBoundingClientRect().width);
+        return Va(t <= 1 ? { ...e, start: s } : { ...e, end: s });
     },
-    Oa = 'MultilineOverflow_ec9f8e47',
-    Ca = 'MultilineOverflow_base__truncated_f602d646',
-    wa = 'MultilineOverflow_text_b39629e',
-    ja = 'MultilineOverflow_truncatedContent_b0ee4004',
-    Aa = 'MultilineOverflow_singleLine_c231496e',
-    Ma = 'MultilineOverflow_line_ffcfe2ce',
-    Da = r.forwardRef(function (
+    Ba = 'MultilineOverflow_ec9f8e47',
+    Ha = 'MultilineOverflow_base__truncated_f602d646',
+    $a = 'MultilineOverflow_text_b39629e',
+    Qa = 'MultilineOverflow_truncatedContent_b0ee4004',
+    Wa = 'MultilineOverflow_singleLine_c231496e',
+    Ua = 'MultilineOverflow_line_ffcfe2ce',
+    qa = r.forwardRef(function (
         { text: e, lines: s, className: a, onChange: t, split: i, simpleTooltipParams: n, ...o },
         l,
     ) {
-        const c = C(
-                Te.CUSTOM_SIMPLE,
+        const c = j(
+                Pe.CUSTOM_SIMPLE,
                 r.useMemo(
                     () => ({
                         ...n,
-                        resId: O.resolve('views').read((e) =>
+                        resId: C.resolve('views').read((e) =>
                             e.mono.personal_missions_30.tooltips.param_tooltip('resId'),
                         ),
                     }),
@@ -1148,10 +1135,10 @@ const Ea = (e, s) => window.getComputedStyle(e, null).getPropertyValue(s),
             ),
             d = r.useRef(null),
             m = r.useRef(null),
-            [p, g] = r.useState(!1),
-            [f, b] = r.useState([]),
-            [h, I] = r.useState(0),
-            N = X(),
+            [u, g] = r.useState(!1),
+            [f, h] = r.useState([]),
+            [b, N] = r.useState(0),
+            I = Z(),
             v = r.useMemo(() => document.createElement('canvas'), []),
             x = r.useCallback(() => (m.current ? m.current.getBoundingClientRect().height : 0), []),
             E = r.useCallback(
@@ -1170,77 +1157,72 @@ const Ea = (e, s) => window.getComputedStyle(e, null).getPropertyValue(s),
                         const n = e.reduce((e, s) => e + s.length, 0),
                             o = a.slice(n);
                         if (i === s - 1) return (e.push(o), e);
-                        const r = Sa({ start: 0, end: o.length, words: o, element: d.current, canvas: v });
+                        const r = Va({ start: 0, end: o.length, words: o, element: d.current, canvas: v });
                         return (e.push(o.slice(0, r)), e);
                     }, []);
-                b(t);
+                h(t);
             }, [v, E, s, e]),
             S = r.useCallback(() => {
-                N.run(() => {
-                    (I(x() * s), y());
+                I.run(() => {
+                    (N(x() * s), y());
                 });
-            }, [x, s, N, y]);
+            }, [x, s, I, y]);
         return (
             r.useEffect(S, [S]),
-            Z(S, [S]),
+            J(S, [S]),
             r.useEffect(() => {
-                null == t || t(p);
-            }, [t, p]),
+                t?.(u);
+            }, [t, u]),
             _.jsxs('div', {
                 ...o,
                 ref: l,
-                className: u(Oa, a, p && Ca),
+                className: p(Ba, a, u && Ha),
                 onMouseEnter: function (e) {
-                    var s;
-                    (null == (s = o.onMouseEnter) || s.call(o, e), p && c.onMouseEnter(e));
+                    (o.onMouseEnter?.(e), u && c.onMouseEnter(e));
                 },
                 onClick: function (e) {
-                    var s;
-                    (null == (s = o.onClick) || s.call(o, e), p && c.onClick());
+                    (o.onClick?.(e), u && c.onClick());
                 },
                 onMouseLeave: function (e) {
-                    var s;
-                    (null == (s = o.onMouseLeave) || s.call(o, e), p && c.onMouseLeave());
+                    (o.onMouseLeave?.(e), u && c.onMouseLeave());
                 },
                 children: [
                     _.jsx('div', {
                         ref: d,
-                        className: wa,
-                        style: { maxHeight: `${J(h)}rem` },
-                        children: _.jsx(A, { text: e, split: i }),
+                        className: $a,
+                        style: { maxHeight: `${ee(b)}rem` },
+                        children: _.jsx(M, { text: e, split: i }),
                     }),
                     _.jsx('div', {
-                        className: ja,
-                        children: f.map((e, s) => _.jsx('div', { className: Ma, children: e.join(' ') }, s)),
+                        className: Qa,
+                        children: f.map((e, s) => _.jsx('div', { className: Ua, children: e.join(' ') }, s)),
                     }),
-                    _.jsx('div', { ref: m, className: Aa, children: R.strings.common.common.dot() }),
+                    _.jsx('div', { ref: m, className: Wa, children: R.strings.common.common.dot() }),
                 ],
             })
         );
     }),
-    Ta = 64,
-    Pa = 90,
-    La = 128,
-    Ra = {
-        [is.default]: {
-            [G.extraSmall]: { double: 2, doubleRequired: 1, single: 5 },
-            [G.small]: { double: 2, doubleRequired: 1, single: 5 },
-            [G.medium]: { double: 3, doubleRequired: 3, single: 8 },
-            [G.large]: { double: 3, doubleRequired: 3, single: 8 },
-            [G.extraLarge]: { double: 3, doubleRequired: 3, single: 9 },
+    Fa = 128,
+    Ya = {
+        [rs]: {
+            [K.extraSmall]: { double: 2, doubleRequired: 1, single: 5 },
+            [K.small]: { double: 2, doubleRequired: 1, single: 5 },
+            [K.medium]: { double: 3, doubleRequired: 3, single: 8 },
+            [K.large]: { double: 3, doubleRequired: 3, single: 8 },
+            [K.extraLarge]: { double: 3, doubleRequired: 3, single: 9 },
         },
-        [is.missions]: {
-            [G.extraSmall]: { double: 4, doubleRequired: 3, single: 8 },
-            [G.small]: { double: 4, doubleRequired: 3, single: 8 },
-            [G.medium]: { double: 5, doubleRequired: 4, single: 10 },
-            [G.large]: { double: 5, doubleRequired: 4, single: 10 },
-            [G.extraLarge]: { double: 5, doubleRequired: 4, single: 10 },
+        [ls]: {
+            [K.extraSmall]: { double: 4, doubleRequired: 3, single: 8 },
+            [K.small]: { double: 4, doubleRequired: 3, single: 8 },
+            [K.medium]: { double: 5, doubleRequired: 4, single: 10 },
+            [K.large]: { double: 5, doubleRequired: 4, single: 10 },
+            [K.extraLarge]: { double: 5, doubleRequired: 4, single: 10 },
         },
     };
-function ka(e, s, a) {
+function za(e, s, a) {
     return s ? a.single : e ? a.doubleRequired : a.double;
 }
-const Va = {
+const Ga = {
     base: 'Quest_555c39f7',
     image: 'Quest_image_83f034ec',
     base__missions: 'Quest_base__missions_3236e985',
@@ -1248,33 +1230,33 @@ const Va = {
     title: 'Quest_title_e8e4a50f',
     quest: 'Quest_a31e9bfc',
 };
-function Ba({
+function Ka({
     cardType: e,
     quest: { questCondition: s, summary: a, questType: t },
     singleQuest: i,
     allQuestsRequired: n,
     className: o,
 }) {
-    const { breakpoint: l } = z(),
+    const { breakpoint: l } = G(),
         c = (function (e, s) {
-            return Ra[e][s];
+            return Ya[e][s];
         })(e, l.name),
-        d = e === is.missions,
+        d = e === ls,
         m = r.useMemo(() => ({ header: a, body: s }), [s, a]);
     return _.jsxs('div', {
-        className: u(Va.base, Va[`base__${e}`], o),
+        className: u(Ga.base, Ga[`base__${e}`], o),
         children: [
             _.jsx(w, {
-                className: Va.image,
+                className: Ga.image,
                 path: d
                     ? `personal_missions_30.quest_type.c_128x128.icon_battle_condition_${t}`
                     : `personal_missions_30.quest_type.c_64x64.icon_battle_condition_${t}`,
-                width: d ? La : Ta,
-                height: d ? La : Ta,
+                width: d ? Fa : 64,
+                height: d ? Fa : 64,
                 adaptive: {
                     medium: {
-                        width: d ? La : Pa,
-                        height: d ? La : Pa,
+                        width: d ? Fa : 90,
+                        height: d ? Fa : 90,
                         path: d
                             ? `personal_missions_30.quest_type.c_128x128.icon_battle_condition_${t}`
                             : `personal_missions_30.quest_type.c_90x90.icon_battle_condition_${t}`,
@@ -1282,65 +1264,58 @@ function Ba({
                 },
             }),
             _.jsxs('div', {
-                className: Va.wrapper,
+                className: Ga.wrapper,
                 children: [
-                    _.jsx('div', { className: Va.title, children: a }),
-                    _.jsx(Da, { split: !0, text: s, className: Va.quest, simpleTooltipParams: m, lines: ka(!n, i, c) }),
+                    _.jsx('div', { className: Ga.title, children: a }),
+                    _.jsx(qa, { split: !0, text: s, className: Ga.quest, simpleTooltipParams: m, lines: za(!n, i, c) }),
                 ],
             }),
         ],
     });
 }
-const Ha = {
-    base: 'QuestSeparator_43fba5a4',
-    dots: 'QuestSeparator_dots_e1abf39e',
-    arrow: 'QuestSeparator_arrow_9ef069fe',
-    text: 'QuestSeparator_text_a5a5c2eb',
-};
-function $a({ className: e }) {
+const Xa = 'QuestSeparator_43fba5a4',
+    Za = 'QuestSeparator_dots_e1abf39e',
+    Ja = 'QuestSeparator_arrow_9ef069fe',
+    et = 'QuestSeparator_text_a5a5c2eb';
+function st({ className: e }) {
     return _.jsxs('div', {
-        className: u(Ha.base, e),
+        className: u(Xa, e),
         children: [
             _.jsx(w, { path: 'personal_missions_30.common.card.dots', width: '48rem', height: '4rem' }),
             _.jsx(w, { path: 'personal_missions_30.common.card.arrow', width: '16rem', height: '16rem' }),
-            _.jsx(V, { className: Ha.text, path: 'personal_missions_30.main.mission.mission.quest.separator' }),
+            _.jsx(B, { className: et, path: 'personal_missions_30.main.mission.mission.quest.separator' }),
             _.jsx(w, {
-                className: Ha.arrow,
+                className: Ja,
                 path: 'personal_missions_30.common.card.arrow',
                 width: '16rem',
                 height: '16rem',
             }),
-            _.jsx(w, {
-                className: Ha.dots,
-                path: 'personal_missions_30.common.card.dots',
-                width: '48rem',
-                height: '4rem',
-            }),
+            _.jsx(w, { className: Za, path: 'personal_missions_30.common.card.dots', width: '48rem', height: '4rem' }),
         ],
     });
 }
-const Qa = {
+const at = {
     base: 'Quests_36d28d52',
     quest: 'Quests_quest_55d2c50',
     base__missions: 'Quests_base__missions_f09ce410',
     base__default: 'Quests_base__default_f09ce410',
     questSeparator: 'Quests_questSeparator_622bda04',
 };
-function Wa({ cardType: e, mission: { allQuestsRequired: s, quests: a }, className: t }) {
+function tt({ cardType: e, mission: { allQuestsRequired: s, quests: a }, className: t }) {
     return _.jsx('div', {
-        className: u(Qa.base, Qa[`base__${e}`], t),
+        className: u(at.base, at[`base__${e}`], t),
         children: a.map((t, i) =>
             _.jsxs(
-                p.Fragment,
+                g.Fragment,
                 {
                     children: [
-                        !s && i > 0 && _.jsx($a, { className: Qa.questSeparator }),
-                        _.jsx(Ba, {
+                        !s && i > 0 && _.jsx(st, { className: at.questSeparator }),
+                        _.jsx(Ka, {
                             quest: t,
                             cardType: e,
                             singleQuest: 1 === a.length,
                             allQuestsRequired: s,
-                            className: Qa.quest,
+                            className: at.quest,
                         }),
                     ],
                 },
@@ -1349,32 +1324,32 @@ function Wa({ cardType: e, mission: { allQuestsRequired: s, quests: a }, classNa
         ),
     });
 }
-const Ua = { base: 'Rewards_1a8854f', reward: 'Rewards_reward_28325b8d', base__big: 'Rewards_base__big_405577a5' };
-function qa({ rewards: e, imageSize: s = se.Small, className: a }) {
+const it = { base: 'Rewards_1a8854f', reward: 'Rewards_reward_28325b8d', base__big: 'Rewards_base__big_405577a5' };
+function nt({ rewards: e, imageSize: s = ae.Small, className: a }) {
     return _.jsx('div', {
-        className: u(Ua.base, Ua[`base__${s}`], a),
-        children: e.map((e, a) => _.jsx('div', { className: Ua.reward, children: _.jsx(ee, { ...ke(e, s) }) }, a)),
+        className: u(it.base, it[`base__${s}`], a),
+        children: e.map((e, a) => _.jsx('div', { className: it.reward, children: _.jsx(se, { ...Ve(e, s) }) }, a)),
     });
 }
-const Fa = {
+const ot = {
     base: 'Disabled_e625fb0e',
     text: 'Disabled_text_291ac5b3',
     base__missions: 'Disabled_base__missions_3cd47f61',
 };
-function Ya({ cardType: e = is.default }) {
-    const s = O.resolve('strings');
+function rt({ cardType: e = rs }) {
+    const s = C.resolve('strings');
     return _.jsxs('div', {
-        className: u(Fa.base, Fa[`base__${e}`]),
+        className: u(ot.base, ot[`base__${e}`]),
         children: [
             _.jsx(w, { path: 'personal_missions_30.common.card.alert', width: '48rem', height: '48rem' }),
             _.jsx('div', {
-                className: Fa.text,
+                className: ot.text,
                 children: s.readOrEmpty('personal_missions_30.main.mission.text.alert'),
             }),
         ],
     });
 }
-const za = {
+const lt = {
     card: 'MissionsCard_card_397fd5a8',
     base: 'MissionsCard_87d065e9',
     base__active: 'MissionsCard_base__active_612e59cb',
@@ -1395,23 +1370,23 @@ const za = {
     shadowLine: 'MissionsCard_shadowLine_32ae564b',
     missionNumber: 'MissionsCard_missionNumber_1408b413',
 };
-function Ga(e) {
-    return e === ia.COMPLETED ? ae.done : e === ia.LOCKED ? ae.locked : void 0;
+function ct(e) {
+    return e === la.COMPLETED ? te.done : e === la.LOCKED ? te.locked : void 0;
 }
-const Ka = r.memo(
+const dt = r.memo(
         r.forwardRef(function ({ index: e, mission: s }, a) {
-            const t = O.resolve('strings'),
-                i = s.missionStatus === ia.ACTIVE,
-                n = s.missionStatus === ia.ACTIVE ? se.Big : se.Small,
-                o = s.missionStatus === ia.LOCKED || s.missionStatus === ia.DISABLED,
-                l = C(
-                    Te.CUSTOM_SIMPLE,
+            const t = C.resolve('strings'),
+                i = s.missionStatus === la.ACTIVE,
+                n = s.missionStatus === la.ACTIVE ? ae.Big : ae.Small,
+                o = s.missionStatus === la.LOCKED || s.missionStatus === la.DISABLED,
+                l = j(
+                    Pe.CUSTOM_SIMPLE,
                     r.useMemo(
                         () => ({
                             body: t.readOrEmpty(
-                                `personal_missions_30.main.missions.card.tooltip.${s.missionStatus === ia.COMPLETED ? ae.done : ae.locked}`,
+                                `personal_missions_30.main.missions.card.tooltip.${s.missionStatus === la.COMPLETED ? te.done : te.locked}`,
                             ),
-                            resId: O.resolve('views').read((e) =>
+                            resId: C.resolve('views').read((e) =>
                                 e.mono.personal_missions_30.tooltips.param_tooltip('resId'),
                             ),
                         }),
@@ -1419,119 +1394,119 @@ const Ka = r.memo(
                     ),
                 );
             return _.jsxs('div', {
-                ref: te([a]),
-                className: u(za.base, za[`base__${s.missionStatus}`]),
+                ref: ie([a]),
+                className: u(lt.base, lt[`base__${s.missionStatus}`]),
                 children: [
-                    _.jsx(pa, { ...s, cardType: is.missions, className: u(i && za.missionNumber) }),
-                    _.jsx(ie, {
+                    _.jsx(Ea, { ...s, cardType: ls, className: u(i && lt.missionNumber) }),
+                    _.jsx(ne, {
                         disableMouse: !0,
                         selected: i,
-                        status: Ga(s.missionStatus),
+                        status: ct(s.missionStatus),
                         disabled: o,
-                        className: za.content,
-                        classNames: { wrapper: u(!o && za.cardWrapper), card: za.cardComponent },
+                        className: lt.content,
+                        classNames: { wrapper: u(!o && lt.cardWrapper), card: lt.cardComponent },
                         children: _.jsx('div', {
-                            className: za.card,
+                            className: lt.card,
                             children: (() => {
                                 switch (s.missionStatus) {
-                                    case ia.ACTIVE:
-                                    case ia.COMPLETED:
-                                    case ia.LOCKED:
+                                    case la.ACTIVE:
+                                    case la.COMPLETED:
+                                    case la.LOCKED:
                                         return _.jsxs('div', {
-                                            className: za.innerContent,
+                                            className: lt.innerContent,
                                             children: [
-                                                _.jsx(Wa, { mission: s, className: za.quests, cardType: is.missions }),
+                                                _.jsx(tt, { mission: s, className: lt.quests, cardType: ls }),
                                                 _.jsxs('div', {
-                                                    className: za.footer,
+                                                    className: lt.footer,
                                                     children: [
                                                         s.maxProgressValue > 1 &&
-                                                            _.jsx(xa, {
+                                                            _.jsx(La, {
                                                                 ...s,
                                                                 cardIndex: e,
-                                                                cardType: is.missions,
-                                                                className: za.progress,
+                                                                cardType: ls,
+                                                                className: lt.progress,
                                                             }),
-                                                        _.jsx(Hs, { type: 'withoutAlpha', className: za.separator }),
-                                                        _.jsx(qa, {
+                                                        _.jsx(Us, { type: 'withoutAlpha', className: lt.separator }),
+                                                        _.jsx(nt, {
                                                             rewards: s.rewards,
                                                             imageSize: n,
-                                                            className: za.rewards,
+                                                            className: lt.rewards,
                                                         }),
                                                     ],
                                                 }),
                                             ],
                                         });
-                                    case ia.DISABLED:
-                                        return _.jsx(Ya, { cardType: is.missions });
+                                    case la.DISABLED:
+                                        return _.jsx(rt, { cardType: ls });
                                     default:
                                         console.error(`Unexpected mission status: ${s.missionStatus}`);
                                 }
                             })(),
                         }),
                     }),
-                    s.missionStatus === ia.LOCKED &&
+                    s.missionStatus === la.LOCKED &&
                         _.jsxs(_.Fragment, {
                             children: [
-                                _.jsx('div', { className: za.brightLine }),
-                                _.jsx('div', { className: za.shadowLine }),
+                                _.jsx('div', { className: lt.brightLine }),
+                                _.jsx('div', { className: lt.shadowLine }),
                                 _.jsx(w, {
                                     path: 'personal_missions_30.common.card.status_lock_icon',
-                                    className: za.lockedIcon,
+                                    className: lt.lockedIcon,
                                 }),
                             ],
                         }),
-                    Ga(s.missionStatus) && _.jsx('div', { className: za.tooltipZone, ...l }),
+                    ct(s.missionStatus) && _.jsx('div', { className: lt.tooltipZone, ...l }),
                 ],
             });
         }),
     ),
-    Xa = 'DraggingOverlay_599243d';
-function Za() {
-    const e = X();
-    return (ne(() => e.run(oe)), _.jsx('div', { className: Xa }));
+    _t = 'DraggingOverlay_599243d';
+function mt() {
+    const e = Z();
+    return (oe(() => e.run(re)), _.jsx('div', { className: _t }));
 }
-const Ja = {
+const ut = {
         base: 'ScrollableCards_cede7903',
         content: 'ScrollableCards_content_8c53892b',
-        scroll: 'ScrollableCards_scroll_dc0445ca',
+        scroll: 'ScrollableCards_scroll_9fc4c76',
         button: 'ScrollableCards_button_189502f8',
         button__left: 'ScrollableCards_button__left_3baf8988',
         button__right: 'ScrollableCards_button__right_619f434e',
     },
-    et = 'visible',
-    st = l(function ({ currentAnimationState: e }) {
-        const { model: s } = gs(),
-            { model: a } = Zs(),
-            { breakpoint: t } = z(),
-            i = Re(t.weight, G.medium) ? la : ca,
+    pt = 'visible',
+    gt = l(function ({ currentAnimationState: e }) {
+        const { model: s } = Ns(),
+            { model: a } = aa(),
+            { breakpoint: t } = G(),
+            i = ke(t.weight, K.medium) ? ma : ua,
             n = s.activeOperationId.get(),
             o = a.computes.missionsByCategory(n),
-            l = re(o, (e) => e.missionStatus === ia.ACTIVE),
+            l = le(o, (e) => e.missionStatus === la.ACTIVE),
             c = r.useRef([]),
             d = r.useRef(null),
             m = r.useRef(null),
-            { api: p } = le(),
-            f = X(),
-            b = ce(),
-            h = de(p, me.horizontal, void 0, { gapBeforeStart: 5 }),
-            I = r.useCallback(
+            { api: p } = ce(),
+            g = Z(),
+            h = de(),
+            b = _e(p, ue.horizontal, void 0, { gapBeforeStart: 5 }),
+            N = r.useCallback(
                 function (e) {
                     const s = p.getWrapperSize(),
                         a = p.animationScroll.scrollPosition.get(),
                         t = c.current[e];
                     if (!t || !s) return;
                     const i = t.offsetLeft - s / 2 + t.offsetWidth / 2;
-                    (0 === a && i < 0) || a === i || (b.play('bp_slide'), p.applyScroll(i));
+                    (0 === a && i < 0) || a === i || (h.play('bp_slide'), p.applyScroll(i));
                 },
-                [p, b],
+                [p, h],
             );
         (r.useEffect(() => {
-            void 0 !== l && e === as && f.run(() => I(l));
-        }, [l, I, f, e]),
+            void 0 !== l && e === ns && g.run(() => N(l));
+        }, [l, N, g, e]),
             r.useEffect(() => {
                 if (void 0 === l) return;
                 const e = () => {
-                    f.run(() => {
+                    g.run(() => {
                         const e = c.current[l],
                             s = d.current,
                             a = m.current,
@@ -1541,10 +1516,10 @@ const Ja = {
                             s &&
                             a &&
                             (p.animationScroll.scrollPosition.get() > e.offsetLeft + e.offsetWidth
-                                ? (s.classList.add(et), a.classList.remove(et))
+                                ? (s.classList.add(pt), a.classList.remove(pt))
                                 : e.offsetLeft > p.animationScroll.scrollPosition.get() + t
-                                  ? (a.classList.add(et), s.classList.remove(et))
-                                  : (a.classList.remove(et), s.classList.remove(et)));
+                                  ? (a.classList.add(pt), s.classList.remove(pt))
+                                  : (a.classList.remove(pt), s.classList.remove(pt)));
                     });
                 };
                 return (
@@ -1557,18 +1532,18 @@ const Ja = {
                             p.events.off('resizeHandled', e));
                     }
                 );
-            }, [l, p, f]));
-        const N = r.useCallback((e) => {
+            }, [l, p, g]));
+        const I = r.useCallback((e) => {
                 c.current.push(e);
             }, []),
-            v = C(
-                Te.CUSTOM_SIMPLE,
+            v = j(
+                Pe.CUSTOM_SIMPLE,
                 r.useMemo(
                     () => ({
-                        body: O.resolve('strings').readOrEmpty(
+                        body: C.resolve('strings').readOrEmpty(
                             'personal_missions_30.main.missions.button.tooltip.toActiveMission',
                         ),
-                        resId: O.resolve('views').read((e) =>
+                        resId: C.resolve('views').read((e) =>
                             e.mono.personal_missions_30.tooltips.param_tooltip('resId'),
                         ),
                     }),
@@ -1576,25 +1551,25 @@ const Ja = {
                 ),
             );
         function x() {
-            (void 0 !== l && I(l), b.play('carouselButton'), v.onClick());
+            (void 0 !== l && N(l), h.play('carouselButton'), v.onClick());
         }
         function E(e) {
-            (b.play('mouse-enter'), v.onMouseEnter(e));
+            (h.play('mouse-enter'), v.onMouseEnter(e));
         }
         return _.jsxs('div', {
-            className: Ja.base,
+            className: ut.base,
             children: [
-                _.jsx(_e, {
-                    areaClassName: Ja.scroll,
+                _.jsx(me, {
+                    areaClassName: ut.scroll,
                     children: _.jsx('div', {
-                        className: Ja.content,
-                        children: o.map((e, s) => _.jsx(Ka, { mission: e, index: s, ref: N }, e.currentMissionNumber)),
+                        className: ut.content,
+                        children: o.map((e, s) => _.jsx(dt, { mission: e, index: s, ref: I }, e.currentMissionNumber)),
                     }),
                 }),
                 void 0 !== l &&
                     _.jsxs(_.Fragment, {
                         children: [
-                            _.jsx(da, {
+                            _.jsx(pa, {
                                 silent: !0,
                                 ...v,
                                 ref: d,
@@ -1602,9 +1577,9 @@ const Ja = {
                                 arrowDirection: 'left',
                                 onClick: x,
                                 onMouseEnter: E,
-                                className: u(Ja.button, Ja.button__left, Ja.button__hidden),
+                                className: u(ut.button, ut.button__left, ut.button__hidden),
                             }),
-                            _.jsx(da, {
+                            _.jsx(pa, {
                                 silent: !0,
                                 ...v,
                                 size: i,
@@ -1612,129 +1587,129 @@ const Ja = {
                                 arrowDirection: 'right',
                                 onClick: x,
                                 onMouseEnter: E,
-                                className: u(Ja.button, Ja.button__right, Ja.button__hidden),
+                                className: u(ut.button, ut.button__right, ut.button__hidden),
                             }),
                         ],
                     }),
-                g.createPortal('dragging' === h.type && _.jsx(Za, {}), document.body),
+                f.createPortal('dragging' === b.type && _.jsx(mt, {}), document.body),
             ],
         });
     }),
-    at = 'Missions_aa7824d8',
-    tt = 'Missions_tabs_41232459',
-    it = 'Missions_tabs__disabled_44072e35',
-    nt = 'Missions_category_a34a8a14',
-    ot = 'Missions_separator_cf7f866c',
-    rt = { opacity: 1, transform: 'translateY(0rem)' },
-    lt = { opacity: 0, transform: 'translateY(-20rem)' },
-    ct = l(function () {
-        const { controls: e } = gs(),
-            { model: s } = Zs(),
-            { breakpoint: a } = z(),
-            t = Re(a.weight, G.large),
-            { animationInProgress: i } = hs(),
-            n = c(ts, (e) => e.value),
+    ft = 'Missions_aa7824d8',
+    ht = 'Missions_tabs_41232459',
+    bt = 'Missions_tabs__disabled_44072e35',
+    Nt = 'Missions_category_a34a8a14',
+    It = 'Missions_separator_cf7f866c',
+    vt = { opacity: 1, transform: 'translateY(0rem)' },
+    xt = { opacity: 0, transform: 'translateY(-20rem)' },
+    Et = l(function () {
+        const { controls: e } = Ns(),
+            { model: s } = aa(),
+            { breakpoint: a } = G(),
+            t = ke(a.weight, K.large),
+            { animationInProgress: i } = xs(),
+            n = c(os, (e) => e.value),
             [o, l] = d(() => ({ from: { opacity: 0 } })),
             [p, g] = d(() => ({ from: { opacity: 0 } })),
-            [f, b] = d(() => ({ from: { opacity: 0, transform: 'translateY(-20rem)' } })),
-            [h, I] = d(() => ({ from: { opacity: 0, transform: 'translateY(20rem)' } }));
+            [f, h] = d(() => ({ from: { opacity: 0, transform: 'translateY(-20rem)' } })),
+            [b, N] = d(() => ({ from: { opacity: 0, transform: 'translateY(20rem)' } }));
         return (
-            S(() => {
+            O(() => {
                 l.start({
                     opacity: 1,
-                    config: { duration: 300, easing: y.easeOutCubic },
+                    config: { duration: 300, easing: S.easeOutCubic },
                     onRest: () => {
-                        ls(
+                        ms(
                             [
-                                b.start({ ...rt, config: { duration: 300, easing: y.easeOutQuart } }),
-                                I.start({ ...rt, config: { duration: 300, easing: y.easeOutQuart } }),
-                                g.start({ opacity: 1, config: { duration: 400, easing: y.easeOutQuart } }),
+                                h.start({ ...vt, config: { duration: 300, easing: S.easeOutQuart } }),
+                                N.start({ ...vt, config: { duration: 300, easing: S.easeOutQuart } }),
+                                g.start({ opacity: 1, config: { duration: 400, easing: S.easeOutQuart } }),
                             ],
                             () => {
-                                (ts.send({ type: 'TO_IDLE' }), e.updateAnimationState(He.IDLE));
+                                (os.send({ type: 'TO_IDLE' }), e.updateAnimationState(We.IDLE));
                             },
                         );
                     },
                 });
             }),
-            T(x.ESCAPE, () => {
+            P(E.ESCAPE, () => {
                 i || e.goBack();
             }),
             r.useEffect(() => {
-                n === Fe &&
+                n === Ge &&
                     l.start({
                         opacity: 0,
                         config: { duration: 200 },
                         onRest: () => {
-                            (ts.send({ type: 'HIDE_MISSIONS_DONE' }), e.setCurrentState(_s));
+                            (os.send({ type: 'HIDE_MISSIONS_DONE' }), e.setCurrentState(gs));
                         },
                     });
             }, [e, n, l]),
             _.jsxs(m.div, {
                 style: o,
-                className: at,
+                className: ft,
                 children: [
-                    _.jsx(F, {
+                    _.jsx(Y, {
                         active: s.missionsCategory.get(),
-                        theme: pe.primary,
-                        size: t ? ue.small : ue.large,
+                        theme: ge.primary,
+                        size: t ? pe.small : pe.large,
                         onActiveChange: (s) => {
                             var a;
                             ((a = () => {
                                 e.changeCategory(s);
                             }),
                                 i ||
-                                    (ts.send({ type: 'SWITCH_MISSIONS' }),
-                                    e.updateAnimationState(He.ANIMATION_STARTED),
-                                    I.start({
+                                    (os.send({ type: 'SWITCH_MISSIONS' }),
+                                    e.updateAnimationState(We.ANIMATION_STARTED),
+                                    N.start({
                                         opacity: 0,
                                         transform: 'translateY(20rem)',
-                                        config: { duration: 400, easing: y.easeInQuart },
+                                        config: { duration: 400, easing: S.easeInQuart },
                                     }),
-                                    b.start({
-                                        ...lt,
-                                        config: { duration: 400, easing: y.easeInQuart },
+                                    h.start({
+                                        ...xt,
+                                        config: { duration: 400, easing: S.easeInQuart },
                                         onRest: () => {
                                             (a(),
-                                                b.start({
-                                                    ...rt,
-                                                    config: { duration: 500, easing: y.easeOutQuart },
+                                                h.start({
+                                                    ...vt,
+                                                    config: { duration: 500, easing: S.easeOutQuart },
                                                     delay: 300,
                                                 }),
-                                                I.start({
-                                                    ...rt,
-                                                    config: { duration: 500, easing: y.easeOutQuart },
+                                                N.start({
+                                                    ...vt,
+                                                    config: { duration: 500, easing: S.easeOutQuart },
                                                     delay: 300,
-                                                    onRest: () => ts.send({ type: 'TO_IDLE' }),
+                                                    onRest: () => os.send({ type: 'TO_IDLE' }),
                                                 }));
                                         },
                                     }),
-                                    ls(
+                                    ms(
                                         [
-                                            I.start({
+                                            N.start({
                                                 opacity: 0,
                                                 transform: 'translateY(20rem)',
-                                                config: { duration: 400, easing: y.easeInQuart },
+                                                config: { duration: 400, easing: S.easeInQuart },
                                             }),
-                                            b.start({ ...lt, config: { duration: 400, easing: y.easeInQuart } }),
+                                            h.start({ ...xt, config: { duration: 400, easing: S.easeInQuart } }),
                                         ],
                                         () => {
                                             (a(),
-                                                ls(
+                                                ms(
                                                     [
-                                                        b.start({
-                                                            ...rt,
-                                                            config: { duration: 500, easing: y.easeOutQuart },
+                                                        h.start({
+                                                            ...vt,
+                                                            config: { duration: 500, easing: S.easeOutQuart },
                                                             delay: 300,
                                                         }),
-                                                        I.start({
-                                                            ...rt,
-                                                            config: { duration: 500, easing: y.easeOutQuart },
+                                                        N.start({
+                                                            ...vt,
+                                                            config: { duration: 500, easing: S.easeOutQuart },
                                                             delay: 300,
                                                         }),
                                                     ],
                                                     () => {
-                                                        (ts.send({ type: 'TO_IDLE' }), e.updateAnimationState(He.IDLE));
+                                                        (os.send({ type: 'TO_IDLE' }), e.updateAnimationState(We.IDLE));
                                                     },
                                                 ));
                                         },
@@ -1742,34 +1717,34 @@ const Ja = {
                         },
                         children: _.jsx(m.div, {
                             style: p,
-                            children: _.jsx(F.Switcher, {
-                                className: u(tt, i && it),
-                                children: Gs.map(({ id: e, label: s }) => _.jsx(ta, { id: e, label: s }, e)),
+                            children: _.jsx(Y.Switcher, {
+                                className: u(ht, i && bt),
+                                children: Js.map(({ id: e, label: s }) => _.jsx(ra, { id: e, label: s }, e)),
                             }),
                         }),
                     }),
                     _.jsxs(m.div, {
                         style: f,
-                        children: [_.jsx(aa, { className: nt }), _.jsx(Hs, { type: 'withoutAlpha', className: ot })],
+                        children: [_.jsx(oa, { className: Nt }), _.jsx(Us, { type: 'withoutAlpha', className: It })],
                     }),
                     _.jsx(m.div, {
-                        style: h,
-                        children: _.jsx(ge, { settings: us, children: _.jsx(st, { currentAnimationState: n }) }),
+                        style: b,
+                        children: _.jsx(fe, { settings: hs, children: _.jsx(gt, { currentAnimationState: n }) }),
                     }),
                 ],
             })
         );
     });
-var dt = ((e) => ((e.DAILY = 'daily'), (e.WEEKLY = 'weekly'), e))(dt || {}),
-    _t = ((e) => (
+var yt = ((e) => ((e.DAILY = 'daily'), (e.WEEKLY = 'weekly'), e))(yt || {}),
+    St = ((e) => (
         (e.DONE = 'done'),
         (e.IN_PROGRESS = 'inProgress'),
         (e.NOT_RECEIVED = 'notReceived'),
         (e.DEFAULT = 'default'),
         e
-    ))(_t || {}),
-    mt = ((e) => ((e.MAIN = 'main'), (e.OPERATION = 'operation'), (e.CAMPAIGN = 'campaign'), e))(mt || {}),
-    ut = ((e) => (
+    ))(St || {}),
+    Ot = ((e) => ((e.MAIN = 'main'), (e.OPERATION = 'operation'), (e.CAMPAIGN = 'campaign'), e))(Ot || {}),
+    Ct = ((e) => (
         (e.CAMPAIGN_FINISHED = 'campaignFinished'),
         (e.NOT_ALL_COMPLETED = 'notAllCompleted'),
         (e.NOT_ALL_COMPLETED_WITH_HONOR = 'notAllCompletedWithHonor'),
@@ -1782,74 +1757,74 @@ var dt = ((e) => ((e.DAILY = 'daily'), (e.WEEKLY = 'weekly'), e))(dt || {}),
         (e.ACTIVE = 'active'),
         (e.AVAILABLE = 'available'),
         e
-    ))(ut || {});
-function pt(e) {
-    return Y(e, (e) => ({
+    ))(Ct || {});
+function jt(e) {
+    return z(e, (e) => ({
         id: `quest_${e}`,
         questType: 'damage',
         questCondition: 'Kill 10 000 vehicles',
         summary: 'Kill them all',
     }));
 }
-(mt.MAIN,
-    mt.OPERATION,
-    mt.CAMPAIGN,
-    _t.DONE,
-    _t.DONE,
-    _t.DONE,
-    _t.DONE,
-    _t.DONE,
-    _t.DONE,
-    _t.DONE,
-    _t.DONE,
-    _t.NOT_RECEIVED,
-    _t.NOT_RECEIVED,
-    _t.IN_PROGRESS,
-    _t.DEFAULT,
-    _t.DEFAULT,
-    _t.DEFAULT,
-    _t.DEFAULT);
-const gt = [
+(Ot.MAIN,
+    Ot.OPERATION,
+    Ot.CAMPAIGN,
+    St.DONE,
+    St.DONE,
+    St.DONE,
+    St.DONE,
+    St.DONE,
+    St.DONE,
+    St.DONE,
+    St.DONE,
+    St.NOT_RECEIVED,
+    St.NOT_RECEIVED,
+    St.IN_PROGRESS,
+    St.DEFAULT,
+    St.DEFAULT,
+    St.DEFAULT,
+    St.DEFAULT);
+const wt = [
     { name: 'style_3d' },
     { name: 'premium_universal' },
     { name: 'camouflage' },
     { name: 'credits', value: '250 000' },
 ];
-(ia.ACTIVE, Pe.ASSAULT, pt(2), ia.ACTIVE, Pe.SNIPER, pt(2), ia.ACTIVE, Pe.SUPPORT, pt(2), dt.DAILY, dt.WEEKLY);
-(Le.ACTIVE,
-    Le.AVAILABLE,
-    Le.UNAVAILABLE,
-    Le.COMPLETED,
-    Le.AVAILABLE,
-    Le.COMPLETED_WITH_HONORS,
-    ut.AVAILABLE,
-    Be.ASSEMBLING);
-const ft = (e) =>
-        e < ht.completedMissions
-            ? { status: ia.COMPLETED, currentProgressValue: 4 }
-            : e === ht.completedMissions
-              ? { status: ia.ACTIVE, currentProgressValue: 2 }
-              : e === ht.completedMissions + 1
-                ? { status: ia.DISABLED, currentProgressValue: 0 }
-                : { status: ia.LOCKED, currentProgressValue: 0 },
-    bt = [
+(la.ACTIVE, Le.ASSAULT, jt(2), la.ACTIVE, Le.SNIPER, jt(2), la.ACTIVE, Le.SUPPORT, jt(2), yt.DAILY, yt.WEEKLY);
+(Re.ACTIVE,
+    Re.AVAILABLE,
+    Re.UNAVAILABLE,
+    Re.COMPLETED,
+    Re.AVAILABLE,
+    Re.COMPLETED_WITH_HONORS,
+    Ct.AVAILABLE,
+    Qe.ASSEMBLING);
+const At = (e) =>
+        e < Dt.completedMissions
+            ? { status: la.COMPLETED, currentProgressValue: 4 }
+            : e === Dt.completedMissions
+              ? { status: la.ACTIVE, currentProgressValue: 2 }
+              : e === Dt.completedMissions + 1
+                ? { status: la.DISABLED, currentProgressValue: 0 }
+                : { status: la.LOCKED, currentProgressValue: 0 },
+    Mt = [
         { name: 'style_3d' },
         { name: 'premium_universal' },
         { name: 'camouflage' },
         { name: 'credits', value: '250 000' },
     ],
-    ht = { maximumMissions: 15, completedMissions: 3, maxProgressValue: 4 },
-    It = Y(ht.maximumMissions, (e) => ({
-        missionStatus: ft(e + 1).status,
+    Dt = { maximumMissions: 15, completedMissions: 3, maxProgressValue: 4 },
+    Tt = z(Dt.maximumMissions, (e) => ({
+        missionStatus: At(e + 1).status,
         currentMissionNumber: e + 1,
-        allQuestsRequired: fe(),
-        currentProgressValue: ft(e + 1).currentProgressValue,
-        maxProgressValue: ht.maxProgressValue,
-        rewards: bt,
-        quests: pt(be(1, 2)),
+        allQuestsRequired: he(),
+        currentProgressValue: At(e + 1).currentProgressValue,
+        maxProgressValue: Dt.maxProgressValue,
+        rewards: Mt,
+        quests: jt(be(1, 2)),
     })),
-    Nt = {
-        getter: he({
+    Pt = {
+        getter: Ne({
             missionsModel: {
                 allMissions: [
                     {
@@ -1858,9 +1833,9 @@ const ft = (e) =>
                         minRequiredVehicle: 6,
                         maxRequiredVehicle: 10,
                         missionsCategorizations: [
-                            { missionsCategory: Pe.ASSAULT, missions: It },
-                            { missionsCategory: Pe.SNIPER, missions: It },
-                            { missionsCategory: Pe.SUPPORT, missions: It },
+                            { missionsCategory: Le.ASSAULT, missions: Tt },
+                            { missionsCategory: Le.SNIPER, missions: Tt },
+                            { missionsCategory: Le.SUPPORT, missions: Tt },
                         ],
                     },
                     {
@@ -1869,9 +1844,9 @@ const ft = (e) =>
                         minRequiredVehicle: 6,
                         maxRequiredVehicle: 10,
                         missionsCategorizations: [
-                            { missionsCategory: Pe.ASSAULT, missions: It },
-                            { missionsCategory: Pe.SNIPER, missions: It },
-                            { missionsCategory: Pe.SUPPORT, missions: It },
+                            { missionsCategory: Le.ASSAULT, missions: Tt },
+                            { missionsCategory: Le.SNIPER, missions: Tt },
+                            { missionsCategory: Le.SUPPORT, missions: Tt },
                         ],
                     },
                     {
@@ -1880,110 +1855,104 @@ const ft = (e) =>
                         minRequiredVehicle: 6,
                         maxRequiredVehicle: 10,
                         missionsCategorizations: [
-                            { missionsCategory: Pe.ASSAULT, missions: It },
-                            { missionsCategory: Pe.SNIPER, missions: It },
-                            { missionsCategory: Pe.SUPPORT, missions: It },
+                            { missionsCategory: Le.ASSAULT, missions: Tt },
+                            { missionsCategory: Le.SNIPER, missions: Tt },
+                            { missionsCategory: Le.SUPPORT, missions: Tt },
                         ],
                     },
                 ],
-                missionsCategory: Pe.ASSAULT,
+                missionsCategory: Le.ASSAULT,
             },
         }),
-        controls: () => L,
+        controls: () => k,
     },
-    vt = { context: 'model.missionsModel' };
-function xt() {
-    return _.jsx(Xs, { options: vt, mocks: Nt, mode: 'real', children: _.jsx(ct, {}) });
+    Lt = { context: 'model.missionsModel' };
+function Rt() {
+    return _.jsx(sa, { options: Lt, mocks: Pt, mode: 'real', children: _.jsx(Et, {}) });
 }
-const Et = 'Background_af83c19a',
-    yt = 'Background_6cd490f5',
-    St = 'Background_noise_c5b84c8b';
-function Ot({ className: e }) {
+const kt = 'Background_af83c19a',
+    Vt = 'Background_6cd490f5',
+    Bt = 'Background_noise_c5b84c8b';
+function Ht({ className: e }) {
     return _.jsxs('div', {
-        className: u(Et, e),
-        children: [_.jsx('div', { className: yt }), _.jsx('div', { className: St })],
+        className: u(kt, e),
+        children: [_.jsx('div', { className: Vt }), _.jsx('div', { className: Bt })],
     });
 }
-const Ct = { rewardWidth: 296, detailWidth: 380 },
-    wt = { rewardWidth: 248, detailWidth: 260 },
-    jt = 'done',
-    At = 'inProgress';
-const Mt = new Set([Le.COMPLETED, Le.COMPLETED_WITH_HONORS]),
-    Dt = 'ProgressBar_13ab2776',
-    Tt = 'ProgressBar_progressBar_f19231cf',
-    Pt = 'ProgressBar_progressBackground_129fd0d3',
-    Lt = p.memo(function (e) {
-        const s = C(
-            Te.PROGRESSION,
+const $t = { rewardWidth: 296, detailWidth: 380 },
+    Qt = { rewardWidth: 248, detailWidth: 260 },
+    Wt = 'done',
+    Ut = 'inProgress';
+const qt = new Set([Re.COMPLETED, Re.COMPLETED_WITH_HONORS]),
+    Ft = 'ProgressBar_13ab2776',
+    Yt = 'ProgressBar_progressBar_f19231cf',
+    zt = 'ProgressBar_progressBackground_129fd0d3',
+    Gt = g.memo(function (e) {
+        const s = j(
+            Pe.PROGRESSION,
             r.useMemo(
                 () => ({
-                    resId: O.resolve('views').read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
+                    resId: C.resolve('views').read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
                 }),
                 [],
             ),
         );
         return _.jsx('div', {
-            className: Dt,
+            className: Ft,
             ...s,
             children: _.jsx(Ie, {
                 size: 'medium',
                 value: e.value,
                 maxValue: e.maxValue,
-                className: Tt,
-                classNames: { background: Pt },
-                children: _.jsx(Ne, { initValue: e.prevValue, initMaxValue: e.maxValue }),
+                className: Yt,
+                classNames: { background: zt },
+                children: _.jsx(ve, { initValue: e.prevValue, initMaxValue: e.maxValue }),
             }),
         });
     }),
-    Rt = 'Divider_657ed92',
-    kt = 'Divider_separator_5e4040d8',
-    Vt = 'Divider_base__completed_76b1f722',
-    Bt = 'Divider_point_cccdd49a';
-function Ht({ operationState: e, maxPoint: s, className: a }) {
-    const t = Mt.has(e);
+    Kt = 'Divider_657ed92',
+    Xt = 'Divider_separator_5e4040d8',
+    Zt = 'Divider_base__completed_76b1f722',
+    Jt = 'Divider_point_cccdd49a';
+function ei({ operationState: e, maxPoint: s, className: a }) {
+    const t = qt.has(e);
     return _.jsxs('div', {
-        className: u(Rt, t && Vt, a),
-        children: [_.jsx('div', { className: kt }), !t && _.jsx('div', { className: Bt, children: s })],
+        className: u(Kt, t && Zt, a),
+        children: [_.jsx('div', { className: Xt }), !t && _.jsx('div', { className: Jt, children: s })],
     });
 }
-const $t = {
-    border: 'ContentWrapper_border_e0f7c2c',
-    border__bottom: 'ContentWrapper_border__bottom_e728cfac',
-    border__top: 'ContentWrapper_border__top_89652dc7',
-};
-function Qt({ children: e }) {
+const si = 'ContentWrapper_border_e0f7c2c',
+    ai = 'ContentWrapper_border__bottom_e728cfac',
+    ti = 'ContentWrapper_border__top_89652dc7';
+function ii({ children: e }) {
     return _.jsxs(_.Fragment, {
-        children: [
-            _.jsx(Hs, { className: u($t.border, $t.border__top) }),
-            e,
-            _.jsx(Hs, { className: u($t.border, $t.border__bottom) }),
-        ],
+        children: [_.jsx(Us, { className: u(si, ti) }), e, _.jsx(Us, { className: u(si, ai) })],
     });
 }
-const Wt = 'InProgress_status_a90e1754',
-    Ut = 'InProgress_point_12655571';
-function qt({ earnedPoint: e, id: s, maxPoint: a }) {
-    const t = O.resolve('strings'),
-        i = C(
-            Te.PM3_POINTS,
+const ni = 'InProgress_status_a90e1754',
+    oi = 'InProgress_point_12655571';
+function ri({ earnedPoint: e, id: s, maxPoint: a }) {
+    const t = C.resolve('strings'),
+        i = j(
+            Pe.PM3_POINTS,
             r.useMemo(
                 () => ({
-                    resId: O.resolve('views').read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
+                    resId: C.resolve('views').read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
                 }),
                 [],
             ),
         );
-    return _.jsx(Qt, {
-        children: _.jsx(V, {
+    return _.jsx(ii, {
+        children: _.jsx(B, {
             ...i,
-            className: Wt,
+            className: ni,
             path: 'personal_missions_30.main.progression.detail.status.active',
             params: {
                 icon: _.jsx(w, {
                     path: 'personal_missions_30.points.c_24x24',
                     width: '24rem',
                     height: '24rem',
-                    className: Ut,
+                    className: oi,
                 }),
                 detailName: t.readOrEmpty(`personal_missions_30.detail.name.${s}`),
                 earnedPoint: e,
@@ -1992,22 +1961,22 @@ function qt({ earnedPoint: e, id: s, maxPoint: a }) {
         }),
     });
 }
-const Ft = 'NotReceived_wrapper_4d14069c',
-    Yt = 'NotReceived_button_75c05936',
-    zt = 'NotReceived_buttonContent_bee7d2fd',
-    Gt = 'NotReceived_glareAttention_c2d53c79',
-    Kt = l(function ({ firstElementByStatus: e, id: s, onClaim: a }) {
-        const { controls: t } = gs(),
-            i = O.resolve('strings'),
-            { animationInProgress: n } = hs(),
-            o = C(
-                Te.CUSTOM_SIMPLE,
+const li = 'NotReceived_wrapper_4d14069c',
+    ci = 'NotReceived_button_75c05936',
+    di = 'NotReceived_buttonContent_bee7d2fd',
+    _i = 'NotReceived_glareAttention_c2d53c79',
+    mi = l(function ({ firstElementByStatus: e, id: s, onClaim: a }) {
+        const { controls: t } = Ns(),
+            i = C.resolve('strings'),
+            { animationInProgress: n } = xs(),
+            o = j(
+                Pe.CUSTOM_SIMPLE,
                 r.useMemo(
                     () => ({
                         body: i.readOrEmpty(
                             'personal_missions_30.main.progression.mountButton.' + (e ? 'active' : 'disable'),
                         ),
-                        resId: O.resolve('views').read((e) =>
+                        resId: C.resolve('views').read((e) =>
                             e.mono.personal_missions_30.tooltips.param_tooltip('resId'),
                         ),
                     }),
@@ -2019,30 +1988,30 @@ const Ft = 'NotReceived_wrapper_4d14069c',
                 to: { transform: 'translate(-60%, 30%) rotate(30deg)' },
                 loop: !0,
                 delay: 3e3,
-                config: { duration: 1e3, easing: y.easeOutCirc },
+                config: { duration: 1e3, easing: S.easeOutCirc },
             }));
-        return _.jsx(Qt, {
+        return _.jsx(ii, {
             children: _.jsxs('div', {
-                className: Ft,
+                className: li,
                 children: [
-                    _.jsx(j, {
+                    _.jsx(A, {
                         disabled: !e,
                         theme: 'primary',
                         size: 'small',
-                        className: Yt,
-                        classNames: { content: zt },
+                        className: ci,
+                        classNames: { content: di },
                         ...o,
                         onClick: function () {
                             (o.onClick(), n || a(s));
                         },
                         children: i.readOrEmpty('personal_missions_30.main.progression.button'),
                     }),
-                    e && _.jsx(m.div, { style: l, className: Gt }),
+                    e && _.jsx(m.div, { style: l, className: _i }),
                 ],
             }),
         });
     }),
-    Xt = {
+    ui = {
         base: 'Detail_391b711d',
         content: 'Detail_content_f72ba27c',
         wrapper: 'Detail_wrapper_959320e3',
@@ -2070,132 +2039,132 @@ const Ft = 'NotReceived_wrapper_4d14069c',
         divider__last: 'Detail_divider__last_4e63ed3b',
         video: 'Detail_video_82d3b729',
     },
-    Zt = l(function ({ index: e, detail: s, detailsLength: a, className: t }) {
-        const i = O.resolve('strings'),
-            n = O.resolve('videos'),
-            o = O.resolve('sounds'),
-            { model: l, controls: c } = gs(),
+    pi = l(function ({ index: e, detail: s, detailsLength: a, className: t }) {
+        const i = C.resolve('strings'),
+            n = C.resolve('videos'),
+            o = C.resolve('sounds'),
+            { model: l, controls: c } = Ns(),
             p = l.computes.activeOperation(),
             g = l.currentState.get(),
             f = l.computes.requiredDetailsPoint(),
-            [b, h] = r.useState(s),
-            I = l.computes.firstDetailIndexByStatus(_t.NOT_RECEIVED) === e,
-            N = l.activeDetailId.get(),
-            v = b.status === _t.DONE,
-            x = N === b.id,
-            { animationInProgress: E } = hs(),
-            y = C(
-                Te.CUSTOM_SIMPLE,
+            [h, b] = r.useState(s),
+            N = l.computes.firstDetailIndexByStatus(St.NOT_RECEIVED) === e,
+            I = l.activeDetailId.get(),
+            v = h.status === St.DONE,
+            x = I === h.id,
+            { animationInProgress: E } = xs(),
+            y = j(
+                Pe.CUSTOM_SIMPLE,
                 r.useMemo(
                     () => ({
-                        body: O.resolve('strings').readOrEmpty(
+                        body: C.resolve('strings').readOrEmpty(
                             'personal_missions_30.main.progression.tooltip.detail.notDone',
                         ),
                         split: !1,
-                        resId: O.resolve('views').read((e) =>
+                        resId: C.resolve('views').read((e) =>
                             e.mono.personal_missions_30.tooltips.param_tooltip('resId'),
                         ),
                     }),
                     [],
                 ),
             ),
-            [S, j] = d(() => ({ from: { opacity: 1 }, config: { duration: 200 } }));
+            [S, O] = d(() => ({ from: { opacity: 1 }, config: { duration: 200 } }));
         function A(e, s) {
-            (g === _s && (l.activeDetailId.set(s), ts.send({ type: 'TO_DETAIL_INFO', detailId: s, action: e })),
-                g === ds &&
-                    ('' === N
-                        ? (e === os && (l.activeDetailId.set(s), c.showDetailInfo(s)),
-                          e === ns && ts.send({ type: 'HIDE_DETAIL_INFO', detailId: s, action: e }))
-                        : ts.send({ type: 'HIDE_DETAIL_INFO', detailId: s, action: e })));
+            (g === gs && (l.activeDetailId.set(s), os.send({ type: 'TO_DETAIL_INFO', detailId: s, action: e })),
+                g === ps &&
+                    ('' === I
+                        ? (e === ds && (l.activeDetailId.set(s), c.showDetailInfo(s)),
+                          e === cs && os.send({ type: 'HIDE_DETAIL_INFO', detailId: s, action: e }))
+                        : os.send({ type: 'HIDE_DETAIL_INFO', detailId: s, action: e })));
         }
         function M(e) {
             (y.onClick(),
                 x ||
                     E ||
-                    (v && (o.play('yes1'), A(os, e)), I && (c.updateAnimationState(He.ANIMATION_STARTED), A(ns, e))));
+                    (v && (o.play('yes1'), A(ds, e)), N && (c.updateAnimationState(We.ANIMATION_STARTED), A(cs, e))));
         }
         if (
             (r.useEffect(() => {
-                b.status !== s.status
-                    ? j.start({
+                h.status !== s.status
+                    ? O.start({
                           opacity: 0,
                           onRest: () => {
-                              (h({ ...s }), j.start({ opacity: 1, delay: 150 }));
+                              (b({ ...s }), O.start({ opacity: 1, delay: 150 }));
                           },
                       })
-                    : b.earnedPoint !== s.earnedPoint && h({ ...s });
-            }, [j, s, b.status, b.earnedPoint]),
+                    : h.earnedPoint !== s.earnedPoint && b({ ...s });
+            }, [O, s, h.status, h.earnedPoint]),
             p && f)
         )
             return _.jsxs('div', {
                 'data-name': 'Detail',
                 className: u(
-                    Xt.base,
-                    Xt[`base__${b.status}`],
-                    Xt[`base__${p.operationState}`],
-                    x && v && Xt.base__selected,
-                    I && Xt.base__firstNotReceived,
+                    ui.base,
+                    ui[`base__${h.status}`],
+                    ui[`base__${p.operationState}`],
+                    x && v && ui.base__selected,
+                    N && ui.base__firstNotReceived,
                     t,
                 ),
                 children: [
                     0 === e &&
-                        _.jsx(Ht, {
+                        _.jsx(ei, {
                             maxPoint: 0,
                             operationState: p.operationState,
-                            className: u(Xt.divider, Xt.divider__first),
+                            className: u(ui.divider, ui.divider__first),
                         }),
-                    _.jsx('div', { className: Xt.background }),
-                    _.jsx('div', { className: Xt.glow }),
+                    _.jsx('div', { className: ui.background }),
+                    _.jsx('div', { className: ui.glow }),
                     _.jsx(m.div, {
                         style: S,
-                        className: Xt.wrapper,
+                        className: ui.wrapper,
                         children:
-                            I &&
-                            _.jsx(ve, {
+                            N &&
+                            _.jsx(xe, {
                                 src: n.readOrEmpty('personal_missions_30.main.detail_glow'),
-                                className: Xt.video,
+                                className: ui.video,
                                 loop: !0,
                                 autoplay: !0,
                             }),
                     }),
                     _.jsxs('div', {
-                        className: Xt.content,
+                        className: ui.content,
                         children: [
                             _.jsx('div', {
-                                className: Xt.detailName,
-                                children: i.readOrEmpty(`personal_missions_30.detail.name.${b.id}`),
+                                className: ui.detailName,
+                                children: i.readOrEmpty(`personal_missions_30.detail.name.${h.id}`),
                             }),
                             _.jsx(w, {
-                                path: `personal_missions_30.vehicle_detail.c_400x150.${b.id}`,
-                                className: Xt.detail,
+                                path: `personal_missions_30.vehicle_detail.c_400x150.${h.id}`,
+                                className: ui.detail,
                                 ...(!x && !v && y),
-                                onClick: () => M(b.id),
+                                onClick: () => M(h.id),
                                 onMouseEnter: function (e) {
-                                    (!x && !v && y.onMouseEnter(e), ((v && !x) || I) && o.play('bp_improved_reward'));
+                                    (!x && !v && y.onMouseEnter(e), ((v && !x) || N) && o.play('bp_improved_reward'));
                                 },
                             }),
-                            _.jsx(w, { path: 'personal_missions_30.main.progression.arrow', className: Xt.arrow }),
+                            _.jsx(w, { path: 'personal_missions_30.main.progression.arrow', className: ui.arrow }),
                             _.jsx(w, {
                                 path: 'personal_missions_30.main.progression.preview_icon',
-                                className: Xt.preview,
+                                className: ui.preview,
                             }),
                             _.jsx(m.div, {
                                 style: S,
-                                className: u(Xt.wrapper, b.status === _t.DONE && Xt.wrapper__disabled),
+                                className: u(ui.wrapper, h.status === St.DONE && ui.wrapper__disabled),
                                 children: (() => {
-                                    switch (b.status) {
-                                        case _t.IN_PROGRESS:
-                                            return _.jsx(qt, { ...b });
-                                        case _t.NOT_RECEIVED:
-                                            return _.jsx(Kt, { id: b.id, firstElementByStatus: I, onClaim: M });
+                                    switch (h.status) {
+                                        case St.IN_PROGRESS:
+                                            return _.jsx(ri, { ...h });
+                                        case St.NOT_RECEIVED:
+                                            return _.jsx(mi, { id: h.id, firstElementByStatus: N, onClaim: M });
                                     }
                                 })(),
                             }),
-                            _.jsx(V, {
+                            _.jsx(B, {
                                 path: 'personal_missions_30.main.progression.detailNumber',
                                 className: u(
-                                    Xt.detailNumber,
-                                    b.status === _t.IN_PROGRESS && Xt.detailNumber__inProgress,
+                                    ui.detailNumber,
+                                    h.status === St.IN_PROGRESS && ui.detailNumber__inProgress,
                                 ),
                                 params: {
                                     number: String(e + 1).padStart(
@@ -2206,17 +2175,17 @@ const Ft = 'NotReceived_wrapper_4d14069c',
                             }),
                         ],
                     }),
-                    _.jsx(Ht, {
+                    _.jsx(ei, {
                         maxPoint: f[e],
-                        className: u(Xt.divider, e === a - 1 && Xt.divider__last),
+                        className: u(ui.divider, e === a - 1 && ui.divider__last),
                         operationState: p.operationState,
                     }),
                 ],
             });
     }),
-    Jt = 'Progress_dc1d47d2',
-    ei = 'Progress_wrapper_95c599d8';
-function si(e, s, a, t = []) {
+    gi = 'Progress_dc1d47d2',
+    fi = 'Progress_wrapper_95c599d8';
+function hi(e, s, a, t = []) {
     const i = t.findIndex((e) => e >= s),
         n = t[i];
     if (0 === s || -1 === i || void 0 === n) return s;
@@ -2224,32 +2193,32 @@ function si(e, s, a, t = []) {
     if (!o) return 0;
     return i * e + ((s - (n - o.maxPoint)) / o.maxPoint) * e;
 }
-const ai = l(
+const bi = l(
         r.forwardRef(function ({ className: e }, s) {
-            const { model: a } = gs(),
+            const { model: a } = Ns(),
                 t = a.computes.activeOperation(),
                 i = a.computes.requiredDetailsPoint();
             if (!t) return;
             const { operationId: n, details: o, maxValue: r, value: l, deltaFrom: c, operationState: d } = t,
                 m = o.length,
                 p = r / m,
-                g = si(p, l, o, i),
-                f = si(p, c, o, i);
+                g = hi(p, l, o, i),
+                f = hi(p, c, o, i);
             return _.jsxs('div', {
-                className: u(Jt, e),
+                className: u(gi, e),
                 ref: s,
                 children: [
-                    !Mt.has(d) &&
+                    !qt.has(d) &&
                         _.jsx('div', {
-                            className: ei,
-                            children: _.jsx(Lt, { value: g, prevValue: f, maxValue: r }, n),
+                            className: fi,
+                            children: _.jsx(Gt, { value: g, prevValue: f, maxValue: r }, n),
                         }),
-                    o.map((e, s) => _.jsx(Zt, { index: s, detail: e, detailsLength: m }, e.id)),
+                    o.map((e, s) => _.jsx(pi, { index: s, detail: e, detailsLength: m }, e.id)),
                 ],
             });
         }),
     ),
-    ti = {
+    Ni = {
         base: 'AdditionalReward_2db51724',
         title: 'AdditionalReward_title_9b676874',
         items: 'AdditionalReward_items_e9141083',
@@ -2261,52 +2230,52 @@ const ai = l(
         bold: 'AdditionalReward_bold_22e4e246',
         icon: 'AdditionalReward_icon_286945a9',
     };
-function ii({ reward: { completedTasks: e, items: s, rewardsType: a, tasksNumber: t }, index: i }) {
-    const n = O.resolve('strings'),
-        o = e === t ? jt : At,
-        l = C(
-            Te.CUSTOM_SIMPLE,
+function Ii({ reward: { completedTasks: e, items: s, rewardsType: a, tasksNumber: t }, index: i }) {
+    const n = C.resolve('strings'),
+        o = e === t ? Wt : Ut,
+        l = j(
+            Pe.CUSTOM_SIMPLE,
             r.useMemo(
                 () => ({
                     body: n.readOrEmpty(`personal_missions_30.main.progression.tooltip.rewards.${a}`),
-                    resId: O.resolve('views').read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
+                    resId: C.resolve('views').read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
                 }),
                 [a, n],
             ),
         );
     return _.jsxs('div', {
-        className: u(ti.base, ti[`base__${o}`], 0 === i && ti.status__hidden),
+        className: u(Ni.base, Ni[`base__${o}`], 0 === i && Ni.status__hidden),
         children: [
-            _.jsx(V, { ...l, className: ti.title, path: `personal_missions_30.main.progression.reward.title.${a}` }),
+            _.jsx(B, { ...l, className: Ni.title, path: `personal_missions_30.main.progression.reward.title.${a}` }),
             _.jsx('div', {
-                className: ti.items,
+                className: Ni.items,
                 children: s.map((e, s) =>
-                    _.jsx('div', { className: ti.reward, children: _.jsx(ee, { ...ke(e, se.Big) }) }, s),
+                    _.jsx('div', { className: Ni.reward, children: _.jsx(se, { ...Ve(e, ae.Big) }) }, s),
                 ),
             }),
             _.jsx('div', {
-                className: ti.status,
+                className: Ni.status,
                 children: (() => {
                     switch (o) {
-                        case At:
+                        case Ut:
                             return (
-                                a !== mt.MAIN &&
-                                _.jsx(V, {
+                                a !== Ot.MAIN &&
+                                _.jsx(B, {
                                     path: `personal_missions_30.main.progression.reward.status.inProgress.${a}`,
                                     params: {
-                                        completedTasks: _.jsx('div', { className: ti.bold, children: e }),
-                                        tasksNumber: _.jsx('div', { className: ti.bold, children: t }),
+                                        completedTasks: _.jsx('div', { className: Ni.bold, children: e }),
+                                        tasksNumber: _.jsx('div', { className: Ni.bold, children: t }),
                                     },
                                 })
                             );
-                        case jt:
+                        case Wt:
                             return _.jsxs(_.Fragment, {
                                 children: [
                                     _.jsx(w, {
                                         path: 'personal_missions_30.main.progression.arrow__small',
                                         height: '24rem',
                                         width: '24rem',
-                                        className: ti.icon,
+                                        className: Ni.icon,
                                     }),
                                     _.jsx(_.Fragment, {
                                         children: n.readOrEmpty(
@@ -2323,38 +2292,35 @@ function ii({ reward: { completedTasks: e, items: s, rewardsType: a, tasksNumber
         ],
     });
 }
-const ni = 'MainReward_fc423f8a',
-    oi = 'MainReward_vehicle_79e7db29',
-    ri = 'MainReward_vehicleInfo_567bd76c',
-    li = 'MainReward_vehicleName_2f6f9e18',
-    ci = 'MainReward_preview_ac8bfcb1',
-    di = 'MainReward_button_10f377d',
-    _i = 'MainReward_buttonContent_e44cd18e',
-    mi = l(function ({ className: e }) {
-        const s = O.resolve('strings'),
-            a = O.resolve('sounds'),
-            { model: t, controls: i } = gs(),
+const vi = 'MainReward_fc423f8a',
+    xi = 'MainReward_vehicle_79e7db29',
+    Ei = 'MainReward_vehicleInfo_567bd76c',
+    yi = 'MainReward_vehicleName_2f6f9e18',
+    Si = 'MainReward_preview_ac8bfcb1',
+    Oi = 'MainReward_button_10f377d',
+    Ci = 'MainReward_buttonContent_e44cd18e',
+    ji = l(function ({ className: e }) {
+        const s = C.resolve('strings'),
+            a = C.resolve('sounds'),
+            { model: t, controls: i } = Ns(),
             n = t.computes.activeOperation(),
             o = t.activeOperationId.get(),
             { isElite: r, vehicleLvl: l, vehicleType: c, vehicleShortName: d } = t.vehicle.get(),
-            { animationInProgress: m } = hs();
+            { animationInProgress: m } = xs();
         function p() {
-            m ||
-                ((null == n ? void 0 : n.vehicleInHangar)
-                    ? i.showVehicleInHangar()
-                    : (a.play('yes'), i.showVehiclePreview()));
+            m || (n?.vehicleInHangar ? i.showVehicleInHangar() : (a.play('yes'), i.showVehiclePreview()));
         }
         return _.jsxs('div', {
-            className: u(ni, e),
+            className: u(vi, e),
             'data-name': 'MainReward',
             children: [
-                _.jsx(w, { className: oi, path: `personal_missions_30.operation_vehicle.c_296x222.vehicle_3_${o}` }),
-                (null == n ? void 0 : n.vehicleInHangar)
-                    ? _.jsx(j, {
+                _.jsx(w, { className: xi, path: `personal_missions_30.operation_vehicle.c_296x222.vehicle_3_${o}` }),
+                n?.vehicleInHangar
+                    ? _.jsx(A, {
                           theme: 'secondary',
                           size: 'small',
-                          className: di,
-                          classNames: { content: _i },
+                          className: Oi,
+                          classNames: { content: Ci },
                           onClick: p,
                           children: s.readOrEmpty('personal_missions_30.main.progression.reward.previewButton'),
                       })
@@ -2362,52 +2328,52 @@ const ni = 'MainReward_fc423f8a',
                           path: 'personal_missions_30.main.progression.preview_icon',
                           width: '100rem',
                           height: '100rem',
-                          className: ci,
+                          className: Si,
                           onClick: p,
                           onMouseEnter: function () {
                               m || a.play('highlight');
                           },
                       }),
-                _.jsxs(xe, {
-                    className: ri,
+                _.jsxs(Ee, {
+                    className: Ei,
                     children: [
-                        _.jsx(xe.Level, { className: li, value: l, numberType: 'roman' }),
-                        Ee(c) && _.jsx(xe.Type, { type: c, premium: r }),
-                        _.jsx(xe.Name, { className: li, children: d }),
+                        _.jsx(Ee.Level, { className: yi, value: l, numberType: 'roman' }),
+                        ye(c) && _.jsx(Ee.Type, { type: c, premium: r }),
+                        _.jsx(Ee.Name, { className: yi, children: d }),
                     ],
                 }),
             ],
         });
     }),
-    ui = 'Rewards_855b83d9',
-    pi = 'Rewards_reward_17816b38',
-    gi = 'Rewards_divider_f047eb1d',
-    fi = 'Rewards_mainReward_feb5fd02',
-    bi = l(
+    wi = 'Rewards_855b83d9',
+    Ai = 'Rewards_reward_17816b38',
+    Mi = 'Rewards_divider_f047eb1d',
+    Di = 'Rewards_mainReward_feb5fd02',
+    Ti = l(
         r.forwardRef(function ({ className: e }, s) {
-            const { model: a } = gs(),
+            const { model: a } = Ns(),
                 t = a.computes.activeOperation();
             if (t)
                 return _.jsxs('div', {
                     ref: s,
-                    className: u(ui, e),
+                    className: u(wi, e),
                     children: [
-                        _.jsx('div', { className: pi, children: _.jsx(mi, { className: fi }) }),
+                        _.jsx('div', { className: Ai, children: _.jsx(ji, { className: Di }) }),
                         t.rewards.map((e, s) =>
                             _.jsx(
                                 'div',
                                 {
                                     children: _.jsxs('div', {
-                                        className: pi,
+                                        className: Ai,
                                         children: [
                                             s > 0 &&
                                                 _.jsx(w, {
                                                     path: 'personal_missions_30.main.progression.divider',
                                                     width: '3rem',
                                                     height: '110rem',
-                                                    className: gi,
+                                                    className: Mi,
                                                 }),
-                                            _.jsx(ii, { index: s, reward: e }),
+                                            _.jsx(Ii, { index: s, reward: e }),
                                         ],
                                     }),
                                 },
@@ -2418,13 +2384,13 @@ const ni = 'MainReward_fc423f8a',
                 });
         }),
     ),
-    hi = {
+    Pi = {
         base: 'Progression_cd193b8c',
         content: 'Progression_content_5aca907b',
         content__disabled: 'Progression_content__disabled_884002f1',
-        progressbar: 'Progression_progressbar_c3f75238',
+        progressbar: 'Progression_progressbar_b1b67356',
         wrapper: 'Progression_wrapper_4bac8bb7',
-        scrollArea: 'Progression_scrollArea_12caa5b2',
+        scrollArea: 'Progression_scrollArea_336ec7ea',
         shadow: 'Progression_shadow_b01cb69a',
         shadow__left: 'Progression_shadow__left_4cf02a8',
         shadow__right: 'Progression_shadow__right_753d7bf7',
@@ -2438,36 +2404,36 @@ const ni = 'MainReward_fc423f8a',
         background: 'Progression_background_d1d356ae',
         bar: 'Progression_bar_e8c74acd',
     },
-    Ii = l(function ({ className: e }) {
+    Li = l(function ({ className: e }) {
         const s = r.useRef(null),
             a = r.useRef(null),
-            { api: t } = le(),
-            i = X(),
-            n = X(),
-            { animationInProgress: o } = hs(),
-            l = c(ts, (e) => e.value),
-            d = ye(l),
-            m = ce(),
-            [p, f] = r.useState('hidden'),
-            b = de(t, me.horizontal, void 0, { gapBeforeStart: 5 }),
-            { model: h } = gs(),
-            I = h.computes.activeOperation(),
-            N = h.activeOperationId.get(),
-            v = h.computes.firstDetailIndexByStatus(_t.NOT_RECEIVED),
-            E = h.computes.firstDetailIndexByStatus(_t.IN_PROGRESS),
-            y = -1 === v ? E : v,
-            { breakpoint: S } = z(),
-            w = Re(S.weight, G.large) ? wt : Ct,
-            j = K(w.rewardWidth),
-            A = K(w.detailWidth),
-            M = C(
-                Te.CUSTOM_SIMPLE,
+            { api: t } = ce(),
+            i = Z(),
+            n = Z(),
+            { animationInProgress: o } = xs(),
+            l = c(os, (e) => e.value),
+            d = Se(l),
+            m = de(),
+            [p, g] = r.useState('hidden'),
+            h = _e(t, ue.horizontal, void 0, { gapBeforeStart: 5 }),
+            { model: b } = Ns(),
+            N = b.computes.activeOperation(),
+            I = b.activeOperationId.get(),
+            v = b.computes.firstDetailIndexByStatus(St.NOT_RECEIVED),
+            x = b.computes.firstDetailIndexByStatus(St.IN_PROGRESS),
+            y = -1 === v ? x : v,
+            { breakpoint: S } = G(),
+            O = ke(S.weight, K.large) ? Qt : $t,
+            w = X(O.rewardWidth),
+            A = X(O.detailWidth),
+            M = j(
+                Pe.CUSTOM_SIMPLE,
                 r.useMemo(
                     () => ({
-                        body: O.resolve('strings').readOrEmpty(
+                        body: C.resolve('strings').readOrEmpty(
                             'personal_missions_30.main.progression.tooltip.toActiveStage',
                         ),
-                        resId: O.resolve('views').read((e) =>
+                        resId: C.resolve('views').read((e) =>
                             e.mono.personal_missions_30.tooltips.param_tooltip('resId'),
                         ),
                     }),
@@ -2477,7 +2443,7 @@ const ni = 'MainReward_fc423f8a',
         function D() {
             void 0 !== y && (m.play('carouselButton'), M.onClick(), L(y));
         }
-        function P(e) {
+        function T(e) {
             (m.play('mouse-enter'), M.onMouseEnter(e));
         }
         function L(e) {
@@ -2487,24 +2453,24 @@ const ni = 'MainReward_fc423f8a',
                     o = t.animationScroll.scrollPosition.get(),
                     r = t.getWrapperSize();
                 if (!a || !r) return;
-                const l = -1 === e ? n : A * e - r / 2 + j / 2;
+                const l = -1 === e ? n : A * e - r / 2 + w / 2;
                 (0 === o && l < 0) || o === l || (m.play('bp_slide'), t.applyScroll(l));
             });
         }
         function R(e) {
             if (o) return;
-            const s = h.computes.nextActiveDetail(e);
+            const s = b.computes.nextActiveDetail(e);
             s &&
                 s.index !== v &&
-                s.index !== E &&
-                (ts.send({ type: 'HIDE_DETAIL_INFO', detailId: s.detail.id, action: os }), L(s.index));
+                s.index !== x &&
+                (os.send({ type: 'HIDE_DETAIL_INFO', detailId: s.detail.id, action: ds }), L(s.index));
         }
         return (
-            T(x.ARROW_LEFT, () => R(x.ARROW_LEFT)),
-            T(x.ARROW_RIGHT, () => R(x.ARROW_RIGHT)),
+            P(E.ARROW_LEFT, () => R(E.ARROW_LEFT)),
+            P(E.ARROW_RIGHT, () => R(E.ARROW_RIGHT)),
             r.useEffect(() => {
-                void 0 !== y && (l !== as || (d !== Qe && void 0 !== d) || L(y));
-            }, [N, l]),
+                void 0 !== y && (l !== ns || (d !== qe && void 0 !== d) || L(y));
+            }, [I, l]),
             r.useEffect(() => {
                 const e = () => {
                     const e = s.current,
@@ -2513,8 +2479,8 @@ const ni = 'MainReward_fc423f8a',
                         r = t.animationScroll.scrollPosition.get(),
                         l = t.getWrapperSize();
                     if (!e || !i || !l) return;
-                    if (I && !Mt.has(I.operationState)) {
-                        const s = o - e.offsetWidth + j;
+                    if (N && !qt.has(N.operationState)) {
+                        const s = o - e.offsetWidth + w;
                         if (r <= s) {
                             const a = Math.ceil(s - r);
                             (i.classList.add('mask'),
@@ -2522,16 +2488,16 @@ const ni = 'MainReward_fc423f8a',
                                 (i.style.maskPosition = `-${a}px 100%`));
                         } else (i.classList.remove('mask'), (e.style.transform = 'translateX(-0px)'));
                     } else (i.classList.remove('mask'), (e.style.transform = 'translateX(-0px)'));
-                    if (-1 === v && -1 === E) {
+                    if (-1 === v && -1 === x) {
                         const s = o - r > e.offsetWidth ? 'right' : 'hidden';
-                        return void f(s);
+                        return void g(s);
                     }
                     const c = (function (e, s, a, t) {
                         if (void 0 === t) return 'hidden';
                         const i = t * s;
                         return e > i + s ? 'left' : e <= i - a ? 'right' : 'hidden';
-                    })(r, A, l - j, y);
-                    f(c);
+                    })(r, A, l - w, y);
+                    g(c);
                 };
                 return (
                     n.run(() => e()),
@@ -2544,76 +2510,76 @@ const ni = 'MainReward_fc423f8a',
                             t.events.off('resizeHandled', e));
                     }
                 );
-            }, [I, t, A, y, E, v, j, n]),
+            }, [N, t, A, y, x, v, w, n]),
             _.jsxs('div', {
                 'data-name': 'Progression',
-                className: u(hi.base, hi[`base__${null == I ? void 0 : I.operationState}`], hi[`base__${p}`], e),
+                className: u(Pi.base, Pi[`base__${N?.operationState}`], Pi[`base__${p}`], e),
                 children: [
-                    _.jsx('div', { className: u(hi.shadow, hi.shadow__left) }),
-                    _.jsx('div', { className: u(hi.shadow, hi.shadow__right) }),
+                    _.jsx('div', { className: u(Pi.shadow, Pi.shadow__left) }),
+                    _.jsx('div', { className: u(Pi.shadow, Pi.shadow__right) }),
                     _.jsxs('div', {
-                        className: hi.wrapper,
+                        className: Pi.wrapper,
                         children: [
-                            _.jsx(Ot, { className: hi.background }),
-                            _.jsx(_e, {
-                                className: hi.scroll,
-                                areaClassName: hi.scrollArea,
-                                barClassNames: { base: hi.bar },
+                            _.jsx(Ht, { className: Pi.background }),
+                            _.jsx(me, {
+                                className: Pi.scroll,
+                                areaClassName: Pi.scrollArea,
+                                barClassNames: { base: Pi.bar },
                                 children: _.jsxs('div', {
-                                    className: u(hi.content, o && hi.content__disabled),
+                                    className: u(Pi.content, o && Pi.content__disabled),
                                     children: [
-                                        _.jsx(ai, { ref: a, className: hi.progressbar }),
-                                        _.jsx(bi, { ref: s, className: hi.rewards }),
+                                        _.jsx(bi, { ref: a, className: Pi.progressbar }),
+                                        _.jsx(Ti, { ref: s, className: Pi.rewards }),
                                     ],
                                 }),
                             }),
                         ],
                     }),
-                    _.jsx(da, {
+                    _.jsx(pa, {
                         silent: !0,
-                        size: ra,
+                        size: _a,
                         arrowDirection: 'left',
                         ...M,
                         onClick: D,
-                        onMouseEnter: P,
-                        className: u(hi.arrowButton, hi.arrowButton__left, 'left' === p && hi.arrowButton__visible),
+                        onMouseEnter: T,
+                        className: u(Pi.arrowButton, Pi.arrowButton__left, 'left' === p && Pi.arrowButton__visible),
                     }),
-                    _.jsx(da, {
+                    _.jsx(pa, {
                         silent: !0,
-                        size: ra,
+                        size: _a,
                         arrowDirection: 'right',
                         ...M,
                         onClick: D,
-                        onMouseEnter: P,
-                        className: u(hi.arrowButton, hi.arrowButton__right, 'right' === p && hi.arrowButton__visible),
+                        onMouseEnter: T,
+                        className: u(Pi.arrowButton, Pi.arrowButton__right, 'right' === p && Pi.arrowButton__visible),
                     }),
-                    g.createPortal('dragging' === b.type && _.jsx(Za, {}), document.body),
+                    f.createPortal('dragging' === h.type && _.jsx(mt, {}), document.body),
                 ],
             })
         );
     }),
-    Ni = new Set([
-        ut.PRECEDING_OPERATION_NOT_COMPLETED,
-        ut.PAUSED,
-        ut.NEXT_OPERATION_AVAILABLE,
-        ut.COMPLETED,
-        ut.AVAILABLE,
+    Ri = new Set([
+        Ct.PRECEDING_OPERATION_NOT_COMPLETED,
+        Ct.PAUSED,
+        Ct.NEXT_OPERATION_AVAILABLE,
+        Ct.COMPLETED,
+        Ct.AVAILABLE,
     ]),
-    vi = new Set([ut.REQUIRES_VEHICLE, ut.PRECEDING_OPERATION_NOT_COMPLETED, ut.VEHICLE_IS_IN_BATTLE]),
-    xi = {
-        [ut.REQUIRES_VEHICLE]: 'lock_closed',
-        [ut.PRECEDING_OPERATION_NOT_COMPLETED]: 'lock_closed',
-        [ut.VEHICLE_IS_IN_BATTLE]: 'lock_closed',
-        [ut.PAUSED]: 'pause',
-        [ut.NEXT_OPERATION_AVAILABLE]: 'checkMark',
-        [ut.COMPLETED]: 'checkMark',
-        [ut.AVAILABLE]: null,
-        [ut.ACTIVE]: null,
-        [ut.CAMPAIGN_FINISHED]: null,
-        [ut.NOT_ALL_COMPLETED]: null,
-        [ut.NOT_ALL_COMPLETED_WITH_HONOR]: null,
+    ki = new Set([Ct.REQUIRES_VEHICLE, Ct.PRECEDING_OPERATION_NOT_COMPLETED, Ct.VEHICLE_IS_IN_BATTLE]),
+    Vi = {
+        [Ct.REQUIRES_VEHICLE]: 'lock_closed',
+        [Ct.PRECEDING_OPERATION_NOT_COMPLETED]: 'lock_closed',
+        [Ct.VEHICLE_IS_IN_BATTLE]: 'lock_closed',
+        [Ct.PAUSED]: 'pause',
+        [Ct.NEXT_OPERATION_AVAILABLE]: 'checkMark',
+        [Ct.COMPLETED]: 'checkMark',
+        [Ct.AVAILABLE]: null,
+        [Ct.ACTIVE]: null,
+        [Ct.CAMPAIGN_FINISHED]: null,
+        [Ct.NOT_ALL_COMPLETED]: null,
+        [Ct.NOT_ALL_COMPLETED_WITH_HONOR]: null,
     },
-    Ei = {
+    Bi = {
         base: 'OperationStatus_7bc3be55',
         base__hasGradient: 'OperationStatus_base__hasGradient_3d20021',
         icon: 'OperationStatus_icon_e0618634',
@@ -2621,11 +2587,11 @@ const ni = 'MainReward_fc423f8a',
         glareAttention: 'OperationStatus_glareAttention_18133b71',
         buttonContent: 'OperationStatus_buttonContent_664edec7',
     },
-    yi = new Set([ut.COMPLETED, ut.PAUSED, ut.AVAILABLE]),
-    Si = l(function ({ currentAnimationState: e, className: s }) {
-        const a = O.resolve('strings'),
-            t = O.resolve('images'),
-            { model: i } = gs(),
+    Hi = new Set([Ct.COMPLETED, Ct.PAUSED, Ct.AVAILABLE]),
+    $i = l(function ({ currentAnimationState: e, className: s }) {
+        const a = C.resolve('strings'),
+            t = C.resolve('images'),
+            { model: i } = Ns(),
             {
                 currentOperationName: n,
                 nextOperationName: o,
@@ -2634,69 +2600,69 @@ const ni = 'MainReward_fc423f8a',
                 operationIdToPerform: c,
             } = i.status.get(),
             p = i.computes.operationStateToPerform(c),
-            g = xi[l],
-            b = l === ut.COMPLETED ? 'secondary' : 'primary',
-            { statusStyle: h } = hs(),
-            [I, N] = d(() => ({
+            g = Vi[l],
+            f = l === Ct.COMPLETED ? 'secondary' : 'primary',
+            { statusStyle: b } = xs(),
+            [N, I] = d(() => ({
                 from: { transform: 'translate(10%, -220%) rotate(30deg)' },
                 to: { transform: 'translate(-60%, 30%) rotate(30deg)' },
                 loop: !0,
-                delay: l === ut.NEXT_OPERATION_AVAILABLE ? 15e3 : 3e3,
-                config: { duration: 1e3, easing: f.easeOutCirc },
+                delay: l === Ct.NEXT_OPERATION_AVAILABLE ? 15e3 : 3e3,
+                config: { duration: 1e3, easing: h.easeOutCirc },
             }));
         return _.jsxs(m.div, {
-            style: h,
-            className: u(Ei.base, vi.has(l) && Ei.base__hasGradient, s),
+            style: b,
+            className: u(Bi.base, ki.has(l) && Bi.base__hasGradient, s),
             children: [
                 g &&
                     _.jsx('div', {
-                        className: Ei.icon,
+                        className: Bi.icon,
                         style: {
                             backgroundImage: `url(${t.readOrEmpty(`personal_missions_30.main.menu.icons.solid.${g}`)})`,
                         },
                     }),
-                _.jsx(V, {
+                _.jsx(B, {
                     path: `personal_missions_30.main.operation.status.${l}`,
                     params: (() => {
                         switch (l) {
-                            case ut.REQUIRES_VEHICLE:
-                                return { requiredVehicleLevel: B(r) };
-                            case ut.PAUSED:
-                            case ut.COMPLETED:
-                            case ut.AVAILABLE:
+                            case Ct.REQUIRES_VEHICLE:
+                                return { requiredVehicleLevel: H(r) };
+                            case Ct.PAUSED:
+                            case Ct.COMPLETED:
+                            case Ct.AVAILABLE:
                                 return { currentOperationName: n };
-                            case ut.NEXT_OPERATION_AVAILABLE:
+                            case Ct.NEXT_OPERATION_AVAILABLE:
                                 return { currentOperationName: n, nextOperationName: o };
                             default:
                                 return {};
                         }
                     })(),
                 }),
-                Ni.has(l) &&
-                    p !== Le.LOCKED &&
+                Ri.has(l) &&
+                    p !== Re.LOCKED &&
                     _.jsxs('div', {
-                        className: Ei.button,
+                        className: Bi.button,
                         children: [
-                            _.jsx(j, {
+                            _.jsx(A, {
                                 onClick: function () {
-                                    e === as &&
-                                        (yi.has(l)
-                                            ? ts.send({ type: 'UPDATE_STATUS' })
-                                            : ts.send({ type: 'SWITCH_OPERATION', operationId: c }));
+                                    e === ns &&
+                                        (Hi.has(l)
+                                            ? os.send({ type: 'UPDATE_STATUS' })
+                                            : os.send({ type: 'SWITCH_OPERATION', operationId: c }));
                                 },
-                                theme: b,
+                                theme: f,
                                 size: 'small',
-                                classNames: { content: u(Ei.buttonContent, Ei[`buttonContent__${b}`]) },
+                                classNames: { content: u(Bi.buttonContent, Bi[`buttonContent__${f}`]) },
                                 children: a.readOrEmpty(`personal_missions_30.main.operation.button.${l}`),
                             }),
-                            (l === ut.AVAILABLE || l === ut.NEXT_OPERATION_AVAILABLE) &&
-                                _.jsx(m.div, { style: I, className: Ei.glareAttention }),
+                            (l === Ct.AVAILABLE || l === Ct.NEXT_OPERATION_AVAILABLE) &&
+                                _.jsx(m.div, { style: N, className: Bi.glareAttention }),
                         ],
                     }),
             ],
         });
     }),
-    Oi = {
+    Qi = {
         base: 'State_c71b06cc',
         icon: 'State_icon_2d3ccaa3',
         base__selected: 'State_base__selected_9f725de9',
@@ -2708,40 +2674,40 @@ const ni = 'MainReward_fc423f8a',
         base__available: 'State_base__available_9f725de9',
         base__textHidden: 'State_base__textHidden_9f725de9',
     },
-    Ci = {
-        [Le.COMPLETED_WITH_HONORS]: 'checkMark_double',
-        [Le.COMPLETED]: 'checkMark',
-        [Le.ACTIVE]: 'triangularFlag',
-        [Le.UNAVAILABLE]: 'lock_closed',
-        [Le.AVAILABLE]: 'lock_open',
-        [Le.LOCKED]: 'lock_closed',
+    Wi = {
+        [Re.COMPLETED_WITH_HONORS]: 'checkMark_double',
+        [Re.COMPLETED]: 'checkMark',
+        [Re.ACTIVE]: 'triangularFlag',
+        [Re.UNAVAILABLE]: 'lock_closed',
+        [Re.AVAILABLE]: 'lock_open',
+        [Re.LOCKED]: 'lock_closed',
     };
-function wi({ state: e, selected: s, className: a }) {
-    const t = O.resolve('strings');
+function Ui({ state: e, selected: s, className: a }) {
+    const t = C.resolve('strings');
     return _.jsxs('div', {
-        className: u(Oi.base, Oi[`base__${e}`], s ? Oi.base__selected : Oi.base__textHidden, a),
+        className: u(Qi.base, Qi[`base__${e}`], s ? Qi.base__selected : Qi.base__textHidden, a),
         children: [
-            _.jsx(w, { path: `personal_missions_30.main.menu.icons.${Ci[e]}`, className: Oi.icon }),
+            _.jsx(w, { path: `personal_missions_30.main.menu.icons.${Wi[e]}`, className: Qi.icon }),
             _.jsx('div', {
-                className: Oi.text,
+                className: Qi.text,
                 children: t.readOrEmpty(`personal_missions_30.main.menuItem.state.${e}`),
             }),
         ],
     });
 }
-const ji = 'VehicleName_c038d9d8',
-    Ai = 'VehicleName_name_13a273f',
-    Mi = 'VehicleName_playVideoButton_10de3bdb',
-    Di = l(function ({ operationName: e }) {
-        const { controls: s } = gs(),
-            a = O.resolve('strings'),
-            t = O.resolve('sounds'),
-            i = C(
-                Te.CUSTOM_SIMPLE,
+const qi = 'VehicleName_c038d9d8',
+    Fi = 'VehicleName_name_13a273f',
+    Yi = 'VehicleName_playVideoButton_10de3bdb',
+    zi = l(function ({ operationName: e }) {
+        const { controls: s } = Ns(),
+            a = C.resolve('strings'),
+            t = C.resolve('sounds'),
+            i = j(
+                Pe.CUSTOM_SIMPLE,
                 r.useMemo(
                     () => ({
                         body: a.readOrEmpty('personal_missions_30.main.menuItem.tooltip.videoIntro'),
-                        resId: O.resolve('views').read((e) =>
+                        resId: C.resolve('views').read((e) =>
                             e.mono.personal_missions_30.tooltips.param_tooltip('resId'),
                         ),
                     }),
@@ -2749,11 +2715,11 @@ const ji = 'VehicleName_c038d9d8',
                 ),
             );
         return _.jsxs('div', {
-            className: ji,
+            className: qi,
             children: [
-                _.jsx('div', { className: Ai, children: e }),
+                _.jsx('div', { className: Fi, children: e }),
                 _.jsx(w, {
-                    className: Mi,
+                    className: Yi,
                     path: 'personal_missions_30.main.menu.icons.solid.video',
                     width: 32,
                     height: 32,
@@ -2768,7 +2734,7 @@ const ji = 'VehicleName_c038d9d8',
             ],
         });
     }),
-    Ti = {
+    Gi = {
         base: 'MenuItem_d36069b6',
         base__selected: 'MenuItem_base__selected_b91feb1b',
         wrapper: 'MenuItem_wrapper_d941deee',
@@ -2779,19 +2745,19 @@ const ji = 'VehicleName_c038d9d8',
         vehicleName: 'MenuItem_vehicleName_a562c8af',
         state: 'MenuItem_state_b65b146b',
     };
-function Pi({ state: e, operationId: s, operationIcon: a, operationName: t, selected: i }) {
-    const n = O.resolve('strings'),
-        o = O.resolve('sounds'),
-        l = Se(
+function Ki({ state: e, operationId: s, operationIcon: a, operationName: t, selected: i }) {
+    const n = C.resolve('strings'),
+        o = C.resolve('sounds'),
+        l = Oe(
             'operation',
             r.useMemo(() => [s], [s]),
         ),
-        c = C(
-            Te.CUSTOM_SIMPLE,
+        c = j(
+            Pe.CUSTOM_SIMPLE,
             r.useMemo(
                 () => ({
                     body: n.readOrEmpty('personal_missions_30.campaignSelector.operation.tooltip.locked'),
-                    resId: O.resolve('views').read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
+                    resId: C.resolve('views').read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
                 }),
                 [n],
             ),
@@ -2802,7 +2768,7 @@ function Pi({ state: e, operationId: s, operationIcon: a, operationName: t, sele
             enter: {
                 opacity: 1,
                 onStart() {
-                    e === Le.ACTIVE && o.play('gui_hangar_ammunition_panel_removed_dk');
+                    e === Re.ACTIVE && o.play('gui_hangar_ammunition_panel_removed_dk');
                 },
             },
             leave: { opacity: 0 },
@@ -2810,14 +2776,14 @@ function Pi({ state: e, operationId: s, operationIcon: a, operationName: t, sele
             exitBeforeEnter: !0,
         });
     return _.jsx('div', {
-        className: u(Ti.base, Ti[`base__${e}`], i && Ti.base__selected),
+        className: u(Gi.base, Gi[`base__${e}`], i && Gi.base__selected),
         children: _.jsxs('div', {
-            className: Ti.wrapper,
-            ...(e === Le.LOCKED ? c : l),
+            className: Gi.wrapper,
+            ...(e === Re.LOCKED ? c : l),
             children: [
                 _.jsx(w, {
                     path: `personal_missions_30.operation_vehicle.c_150x100.${a}`,
-                    className: Ti.vehicleImage,
+                    className: Gi.vehicleImage,
                     onMouseEnter: function () {
                         i || o.play('highlight');
                     },
@@ -2826,13 +2792,13 @@ function Pi({ state: e, operationId: s, operationIcon: a, operationName: t, sele
                     },
                 }),
                 _.jsxs('div', {
-                    className: Ti.infoBox,
+                    className: Gi.infoBox,
                     children: [
-                        _.jsx('div', { className: Ti.vehicleName, children: _.jsx(Di, { operationName: t }) }),
+                        _.jsx('div', { className: Gi.vehicleName, children: _.jsx(zi, { operationName: t }) }),
                         d((e, s) =>
                             _.jsx(m.div, {
                                 style: e,
-                                children: _.jsx(wi, { selected: i, state: s, className: Ti.state }),
+                                children: _.jsx(Ui, { selected: i, state: s, className: Gi.state }),
                             }),
                         ),
                     ],
@@ -2841,25 +2807,25 @@ function Pi({ state: e, operationId: s, operationIcon: a, operationName: t, sele
         }),
     });
 }
-const Li = 'Menu_f1a51291',
-    Ri = 'Menu_list_bb43d3a9',
-    ki = 'Menu_status_3546b8c6',
-    Vi = 'Menu_chevron_64fd0b8c',
-    Bi = new Set([ut.ACTIVE, ut.NOT_ALL_COMPLETED_WITH_HONOR, ut.NOT_ALL_COMPLETED, ut.CAMPAIGN_FINISHED]),
-    Hi = l(function ({ className: e }) {
-        const { model: s } = gs(),
+const Xi = 'Menu_f1a51291',
+    Zi = 'Menu_list_bb43d3a9',
+    Ji = 'Menu_status_3546b8c6',
+    en = 'Menu_chevron_64fd0b8c',
+    sn = new Set([Ct.ACTIVE, Ct.NOT_ALL_COMPLETED_WITH_HONOR, Ct.NOT_ALL_COMPLETED, Ct.CAMPAIGN_FINISHED]),
+    an = l(function ({ className: e }) {
+        const { model: s } = Ns(),
             a = s.menuItems.get(),
             { status: t } = s.status.get(),
             i = s.activeOperationId.get(),
-            n = c(ts, (e) => e.value),
-            { menuStyle: o } = hs();
+            n = c(os, (e) => e.value),
+            { menuStyle: o } = xs();
         return _.jsxs(m.div, {
             style: o,
-            className: u(Li, e),
+            className: u(Xi, e),
             children: [
                 _.jsx('div', {
-                    className: Ri,
-                    children: Oe(a, (e, s) =>
+                    className: Zi,
+                    children: Ce(a, (e, s) =>
                         _.jsxs(
                             r.Fragment,
                             {
@@ -2870,22 +2836,22 @@ const Li = 'Menu_f1a51291',
                                                 (s = e.state),
                                                 (a = e.operationId),
                                                 void (
-                                                    s !== Le.LOCKED &&
-                                                    n === as &&
+                                                    s !== Re.LOCKED &&
+                                                    n === ns &&
                                                     i !== a &&
-                                                    ts.send({ type: 'SWITCH_OPERATION', operationId: a })
+                                                    os.send({ type: 'SWITCH_OPERATION', operationId: a })
                                                 )
                                             );
                                             var s, a;
                                         },
-                                        children: _.jsx(Pi, { ...e, selected: i === e.operationId }),
+                                        children: _.jsx(Ki, { ...e, selected: i === e.operationId }),
                                     }),
                                     s !== a.length - 1 &&
                                         _.jsx(w, {
                                             path: 'personal_missions_30.main.menu.icons.chevron_right',
                                             width: 10,
                                             height: 26,
-                                            className: Vi,
+                                            className: en,
                                         }),
                                 ],
                             },
@@ -2893,35 +2859,35 @@ const Li = 'Menu_f1a51291',
                         ),
                     ),
                 }),
-                !Bi.has(t) && _.jsx(Si, { currentAnimationState: n, className: ki }),
+                !sn.has(t) && _.jsx($i, { currentAnimationState: n, className: Ji }),
             ],
         });
     }),
-    $i = 'Completed_f9b3442',
-    Qi = 'Completed_image_68376a7c',
-    Wi = 'Completed_title_53a638e0',
-    Ui = 'Completed_description_dd74aea4',
-    qi = 'Completed_button_2f65c2e1',
-    Fi = 'Completed_operation_681298f',
-    Yi = 'Completed_glow_a9f265a3',
-    zi = 'Completed_rays_8566affd',
-    Gi = l(function ({ className: e }) {
-        const s = O.resolve('strings'),
-            { model: a } = gs(),
+    tn = 'Completed_f9b3442',
+    nn = 'Completed_image_68376a7c',
+    on = 'Completed_title_53a638e0',
+    rn = 'Completed_description_dd74aea4',
+    ln = 'Completed_button_2f65c2e1',
+    cn = 'Completed_operation_681298f',
+    dn = 'Completed_glow_a9f265a3',
+    _n = 'Completed_rays_8566affd',
+    mn = l(function ({ className: e }) {
+        const s = C.resolve('strings'),
+            { model: a } = Ns(),
             { currentOperationName: t, nextOperationName: i, operationIdToPerform: n, status: o } = a.status.get(),
             r = a.computes.operationStateToPerform(n),
             l = a.campaignName.get(),
-            { breakpoint: c } = z(),
-            d = Re(c.weight, G.large) ? Ce.small : Ce.medium,
-            { completedStateStyle: p, animationInProgress: g } = hs();
+            { breakpoint: c } = G(),
+            d = ke(c.weight, K.large) ? je.small : je.medium,
+            { completedStateStyle: p, animationInProgress: g } = xs();
         return _.jsxs(m.div, {
             style: p,
-            className: u($i, e),
+            className: u(tn, e),
             children: [
-                _.jsx('div', { className: Yi }),
-                _.jsx('div', { className: zi }),
+                _.jsx('div', { className: dn }),
+                _.jsx('div', { className: _n }),
                 _.jsx(w, {
-                    className: Qi,
+                    className: nn,
                     path: 'personal_missions_30.campaign_selector.done_160',
                     width: '160rem',
                     height: '160rem',
@@ -2929,40 +2895,40 @@ const Li = 'Menu_f1a51291',
                         large: { width: 220, height: 220, path: 'personal_missions_30.campaign_selector.done_220' },
                     },
                 }),
-                _.jsx('div', { className: Wi, children: s.readOrEmpty('personal_missions_30.main.complete.title') }),
-                _.jsx(V, {
-                    className: Ui,
+                _.jsx('div', { className: on, children: s.readOrEmpty('personal_missions_30.main.complete.title') }),
+                _.jsx(B, {
+                    className: rn,
                     path: `personal_missions_30.main.complete.description.${o}`,
                     params: {
-                        currentOperationName: _.jsx('span', { className: Fi, children: t }),
-                        nextOperationName: _.jsx('span', { className: Fi, children: i }),
-                        campaignName: _.jsx('span', { className: Fi, children: l }),
+                        currentOperationName: _.jsx('span', { className: cn, children: t }),
+                        nextOperationName: _.jsx('span', { className: cn, children: i }),
+                        campaignName: _.jsx('span', { className: cn, children: l }),
                     },
                 }),
-                o !== ut.CAMPAIGN_FINISHED &&
-                    r !== Le.LOCKED &&
-                    _.jsx(j, {
-                        className: qi,
+                o !== Ct.CAMPAIGN_FINISHED &&
+                    r !== Re.LOCKED &&
+                    _.jsx(A, {
+                        className: ln,
                         theme: 'primary',
                         size: d,
                         onClick: function () {
-                            g || ts.send({ type: 'SWITCH_OPERATION', operationId: n });
+                            g || os.send({ type: 'SWITCH_OPERATION', operationId: n });
                         },
                         children: s.readOrEmpty('personal_missions_30.main.complete.button'),
                     }),
             ],
         });
     }),
-    Ki = 'Completed_cc94136f',
-    Xi = 'Completed_image_3b32a21f',
-    Zi = 'Completed_text_3d00c33a';
-function Ji({ missionCategory: e }) {
-    const s = O.resolve('strings');
+    un = 'Completed_cc94136f',
+    pn = 'Completed_image_3b32a21f',
+    gn = 'Completed_text_3d00c33a';
+function fn({ missionCategory: e }) {
+    const s = C.resolve('strings');
     return _.jsxs('div', {
-        className: Ki,
+        className: un,
         children: [
             _.jsx(w, {
-                className: Xi,
+                className: pn,
                 path: 'personal_missions_30.common.card.done_small',
                 width: '80rem',
                 height: '80rem',
@@ -2973,11 +2939,11 @@ function Ji({ missionCategory: e }) {
                 .split('\n')
                 .map((s) =>
                     _.jsx(
-                        A,
+                        M,
                         {
-                            className: Zi,
+                            className: gn,
                             text: s,
-                            params: { missionType: _.jsx(V, { path: `personal_missions_30.common.category.${e}` }) },
+                            params: { missionType: _.jsx(B, { path: `personal_missions_30.common.category.${e}` }) },
                         },
                         s,
                     ),
@@ -2985,16 +2951,16 @@ function Ji({ missionCategory: e }) {
         ],
     });
 }
-function en(e, s = 0) {
+function hn(e, s = 0) {
     return 100 * (e + s) + 20 * e;
 }
-const sn = 'Title_1676083a',
-    an = 'Title_text_3a1c405f',
-    tn = 'Title_image_899d070e';
-function nn({ missionCategory: e }) {
-    const s = O.resolve('strings');
+const bn = 'Title_1676083a',
+    Nn = 'Title_text_3a1c405f',
+    In = 'Title_image_899d070e';
+function vn({ missionCategory: e }) {
+    const s = C.resolve('strings');
     return _.jsxs('div', {
-        className: sn,
+        className: bn,
         children: [
             _.jsx(w, {
                 path: `personal_missions_30.category.c_32x32.${e}`,
@@ -3004,13 +2970,13 @@ function nn({ missionCategory: e }) {
                     medium: { width: 36, height: 36, path: `personal_missions_30.category.c_36x36.${e}` },
                     extraLarge: { width: 48, height: 48, path: `personal_missions_30.category.c_48x48.${e}` },
                 },
-                className: tn,
+                className: In,
             }),
-            _.jsx('div', { className: an, children: s.readOrEmpty(`personal_missions_30.common.category.${e}`) }),
+            _.jsx('div', { className: Nn, children: s.readOrEmpty(`personal_missions_30.common.category.${e}`) }),
         ],
     });
 }
-const on = {
+const xn = {
     base: 'VehicleTypes_54108783',
     image: 'VehicleTypes_image_41f6ac8c',
     base__assault: 'VehicleTypes_base__assault_8f698c7c',
@@ -3018,41 +2984,41 @@ const on = {
     base__sniper: 'VehicleTypes_base__sniper_8f698c7c',
     line: 'VehicleTypes_line_d3555d32',
 };
-function rn({ missionCategory: e, className: s }) {
+function En({ missionCategory: e, className: s }) {
     return _.jsxs('div', {
-        className: u(on.base, on[`base__${e}`], s),
+        className: u(xn.base, xn[`base__${e}`], s),
         children: [
-            _.jsx('div', { className: on.line }),
-            _.jsx(w, { path: `personal_missions_30.common.card.${e}_types`, className: on.image }),
-            _.jsx('div', { className: on.line }),
+            _.jsx('div', { className: xn.line }),
+            _.jsx(w, { path: `personal_missions_30.common.card.${e}_types`, className: xn.image }),
+            _.jsx('div', { className: xn.line }),
         ],
     });
 }
-const ln = 'DefaultCard_2c35f6e',
-    cn = 'DefaultCard_content_ac73ae55',
-    dn = 'DefaultCard_cardWrapper_e41c5beb',
-    _n = 'DefaultCard_card_43ca4f26',
-    mn = 'DefaultCard_header_7ac329f8',
-    un = 'DefaultCard_vehicleTypes_c0edf390',
-    pn = 'DefaultCard_innerContent_9d3b73d1',
-    gn = 'DefaultCard_footer_93929a8f',
-    fn = 'DefaultCard_quests_2aaa2468',
-    bn = 'DefaultCard_separator_fafec470',
-    hn = 'DefaultCard_rewards_14dfa3b1',
-    In = ['currentMissionNumber', 'currentProgressValue', 'missionStatus'],
-    Nn = l(function ({ index: e, mission: s }) {
-        const a = O.resolve('views'),
-            t = O.resolve('sounds'),
-            { controls: i } = gs(),
-            n = c(ts, (e) => e.value),
+const yn = 'DefaultCard_2c35f6e',
+    Sn = 'DefaultCard_content_ac73ae55',
+    On = 'DefaultCard_cardWrapper_e41c5beb',
+    Cn = 'DefaultCard_card_43ca4f26',
+    jn = 'DefaultCard_header_7ac329f8',
+    wn = 'DefaultCard_vehicleTypes_c0edf390',
+    An = 'DefaultCard_innerContent_9d3b73d1',
+    Mn = 'DefaultCard_footer_93929a8f',
+    Dn = 'DefaultCard_quests_2aaa2468',
+    Tn = 'DefaultCard_separator_fafec470',
+    Pn = 'DefaultCard_rewards_14dfa3b1',
+    Ln = ['currentMissionNumber', 'currentProgressValue', 'missionStatus'],
+    Rn = l(function ({ index: e, mission: s }) {
+        const a = C.resolve('views'),
+            t = C.resolve('sounds'),
+            { controls: i } = Ns(),
+            n = c(os, (e) => e.value),
             [o, l] = r.useState(s),
-            u = q({
+            u = F({
                 contentId: a.read((e) => e.mono.personal_missions_30.tooltips.missions_category_tooltip('resId')),
                 args: { category: o.missionCategory },
             }),
             [p, g] = d(() => ({ from: { opacity: 0, transform: 'translateY(20rem)' } })),
-            b = r.useMemo(
-                () => In.some((e) => o[e] !== s[e]),
+            f = r.useMemo(
+                () => Ln.some((e) => o[e] !== s[e]),
                 [
                     s.currentMissionNumber,
                     s.currentProgressValue,
@@ -3063,24 +3029,24 @@ const ln = 'DefaultCard_2c35f6e',
                 ],
             );
         return (
-            S(() => {
-                n === as &&
+            O(() => {
+                n === ns &&
                     g.start({
                         opacity: 1,
                         transform: 'translateY(0rem)',
-                        config: { duration: 300, easing: f.easeOutQuart },
-                        delay: en(e),
+                        config: { duration: 300, easing: h.easeOutQuart },
+                        delay: hn(e),
                     });
             }),
             r.useEffect(() => {
-                n === Qe || (s.missionStatus === ia.ACTIVE && o.missionStatus === ia.LOCKED)
+                n === qe || (s.missionStatus === la.ACTIVE && o.missionStatus === la.LOCKED)
                     ? l(s)
-                    : b &&
-                      n === as &&
+                    : f &&
+                      n === ns &&
                       g.start({
                           opacity: 0,
                           transform: 'translateY(-20rem)',
-                          config: { duration: 300, easing: f.easeInQuart },
+                          config: { duration: 300, easing: h.easeInQuart },
                           delay: 50 * e,
                           onRest: () => {
                               (l(s),
@@ -3088,96 +3054,96 @@ const ln = 'DefaultCard_2c35f6e',
                                   g.start({
                                       opacity: 1,
                                       transform: 'translateY(0rem)',
-                                      config: { duration: 300, easing: f.easeOutQuart },
-                                      delay: en(e, 3),
+                                      config: { duration: 300, easing: h.easeOutQuart },
+                                      delay: hn(e, 3),
                                   }));
                           },
                       });
-            }, [g, n, e, s, b, o.missionStatus]),
+            }, [g, n, e, s, f, o.missionStatus]),
             r.useEffect(() => {
                 switch (n) {
-                    case $e:
-                    case We:
-                    case Ye:
-                    case Ge:
+                    case Ue:
+                    case Fe:
+                    case Ke:
+                    case Ze:
                         g.start({
                             opacity: 0,
                             transform: 'translateY(-20rem)',
-                            config: { duration: 300, easing: f.easeInQuart },
+                            config: { duration: 300, easing: h.easeInQuart },
                             delay: 50 * e,
                         });
                         break;
-                    case Qe:
-                    case Ze:
-                    case ze:
+                    case qe:
+                    case ss:
+                    case Xe:
                         (g.set({ transform: 'translateY(20rem)' }),
                             g.start({
                                 opacity: 1,
                                 transform: 'translateY(0rem)',
-                                config: { duration: 300, easing: f.easeOutQuart },
-                                delay: en(e, 3),
+                                config: { duration: 300, easing: h.easeOutQuart },
+                                delay: hn(e, 3),
                             }));
                 }
             }, [g, n, e]),
             _.jsxs(m.div, {
                 style: p,
-                className: ln,
+                className: yn,
                 onClick: function () {
-                    n === as &&
+                    n === ns &&
                         (t.play('yes'),
-                        i.updateAnimationState(He.ANIMATION_STARTED),
-                        ts.send({ type: 'TO_MISSIONS', missionCategory: o.missionCategory }));
+                        i.updateAnimationState(We.ANIMATION_STARTED),
+                        os.send({ type: 'TO_MISSIONS', missionCategory: o.missionCategory }));
                 },
                 children: [
-                    _.jsx(pa, {
-                        cardType: is.default,
+                    _.jsx(Ea, {
+                        cardType: rs,
                         missionStatus: o.missionStatus,
                         currentMissionNumber: o.currentMissionNumber,
                         maxMissions: o.maxMissions,
                     }),
-                    _.jsx(ie, {
-                        className: cn,
-                        classNames: { wrapper: dn },
+                    _.jsx(ne, {
+                        className: Sn,
+                        classNames: { wrapper: On },
                         multiple: !0,
                         children: _.jsxs('div', {
-                            className: _n,
+                            className: Cn,
                             children: [
                                 _.jsxs('div', {
-                                    className: mn,
+                                    className: jn,
                                     ...u,
                                     children: [
-                                        _.jsx(nn, { missionCategory: o.missionCategory }),
-                                        _.jsx(rn, { missionCategory: o.missionCategory, className: un }),
+                                        _.jsx(vn, { missionCategory: o.missionCategory }),
+                                        _.jsx(En, { missionCategory: o.missionCategory, className: wn }),
                                     ],
                                 }),
                                 (() => {
                                     switch (o.missionStatus) {
-                                        case ia.ACTIVE:
-                                        case ia.LOCKED:
+                                        case la.ACTIVE:
+                                        case la.LOCKED:
                                             return _.jsxs('div', {
-                                                className: pn,
+                                                className: An,
                                                 children: [
-                                                    _.jsx(Wa, { mission: o, className: fn, cardType: is.default }),
+                                                    _.jsx(tt, { mission: o, className: Dn, cardType: rs }),
                                                     _.jsxs('div', {
-                                                        className: gn,
+                                                        className: Mn,
                                                         children: [
                                                             o.maxProgressValue > 1 &&
-                                                                _.jsx(xa, {
+                                                                _.jsx(La, {
                                                                     cardIndex: e,
-                                                                    cardType: is.default,
+                                                                    cardType: rs,
                                                                     currentProgressValue: o.currentProgressValue,
                                                                     maxProgressValue: o.maxProgressValue,
                                                                 }),
-                                                            _.jsx(Hs, { type: 'withoutAlpha', className: bn }),
-                                                            _.jsx(qa, { rewards: o.rewards, className: hn }),
+                                                            _.jsx(Us, { type: 'withoutAlpha', className: Tn }),
+                                                            _.jsx(nt, { rewards: o.rewards, className: Pn }),
                                                         ],
                                                     }),
                                                 ],
                                             });
-                                        case ia.DISABLED:
-                                            return _.jsx(Ya, {});
-                                        case ia.COMPLETED:
-                                            return _.jsx(Ji, { missionCategory: o.missionCategory });
+                                        case la.DISABLED:
+                                            return _.jsx(rt, {});
+                                        case la.COMPLETED:
+                                            return _.jsx(fn, { missionCategory: o.missionCategory });
                                         default:
                                             console.error(`Unexpected previousMission status: ${o.missionStatus}`);
                                     }
@@ -3189,7 +3155,7 @@ const ln = 'DefaultCard_2c35f6e',
             })
         );
     }),
-    vn = {
+    kn = {
         base: 'AdditionalCard_15bcf296',
         wrapper: 'AdditionalCard_wrapper_a2077e5e',
         title: 'AdditionalCard_title_4c575969',
@@ -3203,25 +3169,25 @@ const ln = 'DefaultCard_2c35f6e',
         currentValue: 'AdditionalCard_currentValue_9b3afc4c',
         text: 'AdditionalCard_text_4b72abae',
     },
-    xn = l(function ({
+    Vn = l(function ({
         additionalMission: { currentPoints: e, maxPoints: s, type: a },
         operationState: t,
         progressHidden: i,
         className: n,
     }) {
-        const o = O.resolve('strings'),
-            { model: l, controls: d } = gs(),
+        const o = C.resolve('strings'),
+            { model: l, controls: d } = Ns(),
             { status: m } = l.status.get(),
-            p = t === Le.ACTIVE && m !== ut.PAUSED && !i,
+            p = t === Re.ACTIVE && m !== Ct.PAUSED && !i,
             g = p && e === s,
-            [f, b] = r.useState({ currentPoints: e, maxPoints: s, completed: g, progressShown: p }),
-            { animationInProgress: h } = hs(),
-            I = c(ts, (e) => e.value),
-            N = C(
-                Te.PM3_POINTS,
+            [f, h] = r.useState({ currentPoints: e, maxPoints: s, completed: g, progressShown: p }),
+            { animationInProgress: b } = xs(),
+            N = c(os, (e) => e.value),
+            I = j(
+                Pe.PM3_POINTS,
                 r.useMemo(
                     () => ({
-                        resId: O.resolve('views').read((e) =>
+                        resId: C.resolve('views').read((e) =>
                             e.mono.personal_missions_30.tooltips.param_tooltip('resId'),
                         ),
                     }),
@@ -3230,47 +3196,47 @@ const ln = 'DefaultCard_2c35f6e',
             );
         return (
             r.useEffect(() => {
-                (I !== ss && I !== Qe) || b({ currentPoints: e, maxPoints: s, completed: g, progressShown: p });
-            }, [I, g, e, s, p]),
+                (N !== is && N !== qe) || h({ currentPoints: e, maxPoints: s, completed: g, progressShown: p });
+            }, [N, g, e, s, p]),
             r.useEffect(() => {
                 (f.currentPoints === e && f.progressShown === p) ||
-                    I !== as ||
+                    N !== ns ||
                     !p ||
-                    ts.send({ type: 'HIDE_ADDITIONAL_MISSIONS' });
-            }, [I, e, p, f.currentPoints, f.progressShown]),
-            _.jsx(ie, {
-                className: u(vn.base, f.completed && vn.base__completed, vn[`base__${a}`]),
+                    os.send({ type: 'HIDE_ADDITIONAL_MISSIONS' });
+            }, [N, e, p, f.currentPoints, f.progressShown]),
+            _.jsx(ne, {
+                className: u(kn.base, f.completed && kn.base__completed, kn[`base__${a}`]),
                 classNames: { wrapper: n },
                 onClick: function () {
                     d.openAdditionalMission();
                 },
-                status: f.completed ? ae.done : void 0,
+                status: f.completed ? te.done : void 0,
                 children: _.jsxs('div', {
-                    className: vn.wrapper,
+                    className: kn.wrapper,
                     children: [
                         _.jsx('div', {
-                            className: vn.title,
+                            className: kn.title,
                             children: o.readOrEmpty(`personal_missions_30.main.additionalMission.title.${a}`),
                         }),
-                        _.jsx(Hs, { type: 'withoutAlpha', className: vn.separator }),
+                        _.jsx(Us, { type: 'withoutAlpha', className: kn.separator }),
                         _.jsxs('div', {
-                            className: vn.content,
+                            className: kn.content,
                             children: [
                                 _.jsxs('div', {
-                                    className: vn.status,
-                                    ...N,
+                                    className: kn.status,
+                                    ...I,
                                     children: [
                                         _.jsx(w, {
                                             path: `personal_missions_30.main.additional_card.${a}`,
-                                            className: vn.image,
+                                            className: kn.image,
                                         }),
                                         f.progressShown &&
-                                            _.jsx(V, {
-                                                className: vn.progress,
+                                            _.jsx(B, {
+                                                className: kn.progress,
                                                 path: 'personal_missions_30.main.mission.counter',
                                                 params: {
                                                     currentValue: _.jsx('span', {
-                                                        className: vn.currentValue,
+                                                        className: kn.currentValue,
                                                         children: f.currentPoints,
                                                     }),
                                                     maxValue: s,
@@ -3279,8 +3245,8 @@ const ln = 'DefaultCard_2c35f6e',
                                     ],
                                 }),
                                 _.jsx('div', {
-                                    children: _.jsx(V, {
-                                        className: vn.text,
+                                    children: _.jsx(B, {
+                                        className: kn.text,
                                         path: `personal_missions_30.main.additionalMission.text.${f.completed ? 'completed' : a}`,
                                     }),
                                 }),
@@ -3291,33 +3257,33 @@ const ln = 'DefaultCard_2c35f6e',
             })
         );
     }),
-    En = 'Missions_74bb97b6',
-    yn = 'Missions_additionalCardsWrapper_8e829c9b',
-    Sn = 'Missions_additionalCard_8b2b9913',
-    On = l(function ({ className: e }) {
-        const { model: s } = gs(),
-            { additionalCardStyle: a } = hs(),
+    Bn = 'Missions_74bb97b6',
+    Hn = 'Missions_additionalCardsWrapper_8e829c9b',
+    $n = 'Missions_additionalCard_8b2b9913',
+    Qn = l(function ({ className: e }) {
+        const { model: s } = Ns(),
+            { additionalCardStyle: a } = xs(),
             t = s.computes.activeOperation();
         if (!t) return null;
         const i = t.additionalMissions.some((e) => e.isProgressHidden);
         return _.jsxs('div', {
-            className: u(En, e),
+            className: u(Bn, e),
             children: [
-                t.missions.map((e, s) => _.jsx(Nn, { mission: e, index: s }, s)),
-                t.operationState !== Le.COMPLETED &&
+                t.missions.map((e, s) => _.jsx(Rn, { mission: e, index: s }, s)),
+                t.operationState !== Re.COMPLETED &&
                     t.additionalMissions.some((e) => e.isEnabled) &&
                     _.jsx(m.div, {
                         style: a,
-                        className: yn,
+                        className: Hn,
                         children: t.additionalMissions.map((e) =>
                             e.isEnabled
                                 ? _.jsx(
-                                      xn,
+                                      Vn,
                                       {
                                           additionalMission: e,
                                           operationState: t.operationState,
                                           progressHidden: i,
-                                          className: Sn,
+                                          className: $n,
                                       },
                                       e.type,
                                   )
@@ -3327,25 +3293,25 @@ const ln = 'DefaultCard_2c35f6e',
             ],
         });
     }),
-    Cn = 'Progression_c7c2323d',
-    wn = 'Progression_missions_a14a8547',
-    jn = 'Progression_completed_95b1e94b',
-    An = 'Progression_menu_ad782db3',
-    Mn = l(function () {
-        const { model: e } = gs(),
+    Wn = 'Progression_c7c2323d',
+    Un = 'Progression_missions_a14a8547',
+    qn = 'Progression_completed_95b1e94b',
+    Fn = 'Progression_menu_ad782db3',
+    Yn = l(function () {
+        const { model: e } = Ns(),
             s = e.computes.activeOperation(),
             a = e.activeOperationId.get();
         return _.jsxs('div', {
-            className: Cn,
+            className: Wn,
             children: [
-                _.jsx(Hi, { className: An }),
-                (null == s ? void 0 : s.operationState) === Le.COMPLETED_WITH_HONORS
-                    ? _.jsx(Gi, { className: jn }, a)
-                    : _.jsx(On, { className: wn }),
+                _.jsx(an, { className: Fn }),
+                s?.operationState === Re.COMPLETED_WITH_HONORS
+                    ? _.jsx(mn, { className: qn }, a)
+                    : _.jsx(Qn, { className: Un }),
             ],
         });
     }),
-    Dn = {
+    zn = {
         sceneWrapper: 'Main_sceneWrapper_84c5dae7',
         progressionShadow: 'Main_progressionShadow_ca6ff6b5',
         missionsShadow: 'Main_missionsShadow_eb81cd44',
@@ -3367,72 +3333,72 @@ const ln = 'DefaultCard_2c35f6e',
         raysAppearance: 'Main_raysAppearance_84c5dae7',
         rotate: 'Main_rotate_84c5dae7',
     },
-    Tn = l(function () {
-        const { model: e, controls: s } = gs(),
+    Gn = l(function () {
+        const { model: e, controls: s } = Ns(),
             a = e.computes.activeOperation(),
             t = e.currentState.get(),
-            { progressionStyle: i, animationInProgress: n } = hs(),
-            o = t === ds || n;
-        T(x.ESCAPE, function () {
+            { progressionStyle: i, animationInProgress: n } = xs(),
+            o = t === ps || n;
+        P(E.ESCAPE, function () {
             if (n) return;
             s.goBack();
         });
-        const l = E((e) => {
+        const l = y((e) => {
                 o || s.mouseOver3dScene(e);
             }),
-            c = E((e) => {
-                t === _s || n || s.moveSpace(e);
+            c = y((e) => {
+                t === gs || n || s.moveSpace(e);
             });
         return (
             r.useEffect(() => {
-                if (t === ds || t === cs || n) s.mouseOver3dScene({ isOver3dScene: !1 });
+                if (t === ps || t === us || n) s.mouseOver3dScene({ isOver3dScene: !1 });
                 else {
                     const e = we(),
                         a = document.elementFromPoint(e.x, e.y);
-                    a && s.mouseOver3dScene({ isOver3dScene: a.classList.contains(Dn.sceneWrapper) });
+                    a && s.mouseOver3dScene({ isOver3dScene: a.classList.contains(zn.sceneWrapper) });
                 }
             }, [t, n, s]),
             r.useEffect(
                 () => (
-                    ts.start(),
+                    os.start(),
                     () => {
-                        ts.stop();
+                        os.stop();
                     }
                 ),
                 [],
             ),
             r.useLayoutEffect(() => {
-                je(!0);
+                Ae(!0);
             }),
             _.jsxs('div', {
-                className: u(Dn.base, Dn[`base__${t}`], Dn[`base__${null == a ? void 0 : a.operationState}`]),
+                className: u(zn.base, zn[`base__${t}`], zn[`base__${a?.operationState}`]),
                 'data-name': 'Dashboard',
                 children: [
-                    _.jsx(Ae, { className: Dn.sceneWrapper, moveSpace: c, onMouseOver3dScene: l, moveSpaceEnabled: o }),
-                    _.jsx('div', { className: Dn.completedWithHonorsShadow }),
-                    _.jsx('div', { className: Dn.vignette }),
-                    _.jsx('div', { className: Dn.progressionShadow }),
-                    _.jsx('div', { className: Dn.missionsShadow }),
+                    _.jsx(Me, { className: zn.sceneWrapper, moveSpace: c, onMouseOver3dScene: l, moveSpaceEnabled: o }),
+                    _.jsx('div', { className: zn.completedWithHonorsShadow }),
+                    _.jsx('div', { className: zn.vignette }),
+                    _.jsx('div', { className: zn.progressionShadow }),
+                    _.jsx('div', { className: zn.missionsShadow }),
                     _.jsxs('div', {
-                        className: u(Dn.wrapper, n && Dn.wrapper__disabled),
+                        className: u(zn.wrapper, n && zn.wrapper__disabled),
                         'data-test-id': `isDisabled-${String(n)}`,
                         children: [
                             (() => {
                                 switch (t) {
-                                    case _s:
-                                        return _.jsx(Mn, {});
-                                    case cs:
-                                        return _.jsx(xt, {});
-                                    case ds:
-                                        return _.jsx(Vs, {});
+                                    case gs:
+                                        return _.jsx(Yn, {});
+                                    case us:
+                                        return _.jsx(Rt, {});
+                                    case ps:
+                                        return _.jsx(Qs, {});
                                     default:
                                         console.error(`Unexpected main screen state: ${t}`);
                                 }
                             })(),
                             _.jsx(m.div, {
                                 style: i,
-                                className: Dn.progress,
-                                children: _.jsx(ge, { settings: us, children: _.jsx(Ii, {}) }),
+                                className: zn.progress,
+                                children: _.jsx(fe, { settings: hs, children: _.jsx(Li, {}) }),
                             }),
                         ],
                     }),
@@ -3440,6 +3406,6 @@ const ln = 'DefaultCard_2c35f6e',
             })
         );
     });
-Me(_.jsx(ps, { children: _.jsx(bs, { children: _.jsx(De, { soundsOverrides: ms, children: _.jsx(Tn, {}) }) }) }), {
+De(_.jsx(bs, { children: _.jsx(vs, { children: _.jsx(Te, { soundsOverrides: fs, children: _.jsx(Gn, {}) }) }) }), {
     fullScreen: !0,
-}).then(() => je(!1));
+}).then(() => Ae(!1));

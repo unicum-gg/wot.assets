@@ -1,4 +1,4 @@
-import { p as t, j as e } from '../../../../chunks/vendor.js';
+import { q as t, j as e } from '../../../../chunks/vendor.js';
 import { i as r, n, b as a, d as s, r as i, E as o } from '../../../../chunks/lib.js';
 /* empty css                       */ var p = ((t) => (
     (t.PM3EntryPointTeaser = 'PM3EntryPointTeaser'),

@@ -1,4 +1,4 @@
-import { m as e, j as s } from '../../../chunks/vendor.js';
+import { q as e, j as s } from '../../../chunks/vendor.js';
 import {
     i as c,
     u as a,
@@ -7,10 +7,10 @@ import {
     C as r,
     F as o,
     B as n,
-    t,
-    p as m,
-    r as p,
-    U as d,
+    p as t,
+    t as m,
+    r as d,
+    U as p,
 } from '../../../chunks/lib.js';
 import { V as h } from '../../../chunks/vehicle_count.js';
 import { V as j } from '../../../chunks/vignette.js';
@@ -24,9 +24,9 @@ import { a as u } from '../../../chunks/sounds.js';
         }),
     ),
     _ = 'App_3a3d3624',
-    N = 'App_vehiclesCount_23229913',
-    f = 'App_close_90a88f64',
-    b = 'App_imageWrapper_66a77c8b',
+    b = 'App_vehiclesCount_8dd11cc4',
+    N = 'App_close_4c62abb0',
+    f = 'App_imageWrapper_66a77c8b',
     g = 'App_image_9e0e59ff',
     C = 'App_title_7d76a07e',
     A = 'App_divider_8739c0e7',
@@ -36,24 +36,24 @@ import { a as u } from '../../../chunks/sounds.js';
     M = R.strings.resource_well.confirm.NoSerialVehicles,
     V = e(function () {
         const { model: e, controls: c } = x(),
-            { vehicleName: p } = e.root.get(),
-            d = a({ size: i.small }, { large: { size: i.medium } });
+            { vehicleName: d } = e.root.get(),
+            p = a({ size: i.small }, { large: { size: i.medium } });
         return (
             l(c.cancel),
             s.jsxs('div', {
                 className: _,
                 children: [
                     s.jsx(j, {}),
-                    s.jsx('div', { className: N, children: s.jsx(h, { vehicleCounter: e.vehicleCounter.get() }) }),
-                    s.jsx('div', { className: f, children: s.jsx(r, { onClose: c.close }) }),
-                    s.jsx('div', { className: b, children: s.jsx('div', { className: g }) }),
+                    s.jsx('div', { className: b, children: s.jsx(h, { vehicleCounter: e.vehicleCounter.get() }) }),
+                    s.jsx('div', { className: N, children: s.jsx(r, { onClose: c.close }) }),
+                    s.jsx('div', { className: f, children: s.jsx('div', { className: g }) }),
                     s.jsx('div', {
                         className: C,
-                        children: s.jsx(o, { text: M.title(), params: { vehicleName: p }, upgradeLegacy: !0 }),
+                        children: s.jsx(o, { text: M.title(), params: { vehicleName: d }, upgradeLegacy: !0 }),
                     }),
                     s.jsx('div', {
                         className: k,
-                        children: s.jsx(o, { text: M.description(), params: { vehicleName: p }, upgradeLegacy: !0 }),
+                        children: s.jsx(o, { text: M.description(), params: { vehicleName: d }, upgradeLegacy: !0 }),
                     }),
                     s.jsx('div', { className: A }),
                     s.jsxs('div', {
@@ -61,18 +61,18 @@ import { a as u } from '../../../chunks/sounds.js';
                         children: [
                             s.jsx(n, {
                                 className: y,
-                                theme: t.primary,
+                                theme: m.primary,
                                 onClick: c.confirm,
-                                onMouseEnter: () => m.sound(u),
-                                size: d.size,
+                                onMouseEnter: () => t.sound(u),
+                                size: p.size,
                                 children: M.buttonConfirm.title(),
                             }),
                             s.jsx(n, {
                                 className: y,
-                                theme: t.secondary,
+                                theme: m.secondary,
                                 onClick: c.cancel,
-                                onMouseEnter: () => m.sound(u),
-                                size: d.size,
+                                onMouseEnter: () => t.sound(u),
+                                size: p.size,
                                 children: M.buttonCancel.title(),
                             }),
                         ],
@@ -81,4 +81,4 @@ import { a as u } from '../../../chunks/sounds.js';
             })
         );
     });
-p(s.jsx(d, { children: s.jsx(v, { children: s.jsx(V, {}) }) }));
+d(s.jsx(p, { children: s.jsx(v, { children: s.jsx(V, {}) }) }));

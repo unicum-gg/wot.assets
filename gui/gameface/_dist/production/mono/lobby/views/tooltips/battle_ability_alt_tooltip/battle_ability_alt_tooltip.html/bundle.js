@@ -1,11 +1,11 @@
-import { S as t, j as e } from '../../../../chunks/vendor.js';
-import { i, n as s, d7 as l, c2 as a, cu as o } from '../../../../chunks/lib.js';
+import { L as t, j as e } from '../../../../chunks/vendor.js';
+import { i, n as s, dc as l, cd as a, b as o } from '../../../../chunks/lib.js';
 const [d, c] = i()(({ observableModel: t }) => ({ ...t.primitives(['name', 'videoName', 'description']) }), s),
     r = 'BattleAbilityAltTooltip_d5041564',
     n = 'BattleAbilityAltTooltip_name_76054ad5',
     m = 'BattleAbilityAltTooltip_description_276f2bbd',
-    p = 'BattleAbilityAltTooltip_videoWrapper_3a3622f1',
-    b = 'BattleAbilityAltTooltip_video_db3faea6',
+    b = 'BattleAbilityAltTooltip_videoWrapper_3a3622f1',
+    p = 'BattleAbilityAltTooltip_video_db3faea6',
     j = t(function () {
         const { model: t } = c();
         return e.jsx(l, {
@@ -15,9 +15,9 @@ const [d, c] = i()(({ observableModel: t }) => ({ ...t.primitives(['name', 'vide
                     children: [
                         e.jsx(a, { text: t.name.get(), className: n }),
                         e.jsx('div', {
-                            className: p,
+                            className: b,
                             children: e.jsx('video', {
-                                className: b,
+                                className: p,
                                 src: R.videos.battleAblity.$dyn(t.videoName.get()),
                                 loop: !0,
                                 autoPlay: !0,

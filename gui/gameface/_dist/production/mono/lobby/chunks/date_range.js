@@ -1,6 +1,6 @@
-import { r as a, j as e, f as s } from './vendor.js';
-import { aR as t, s as i, bo as m, ac as l, dT as o } from './lib.js';
-const n = { small: 'small', big: 'big' },
+import { r as a, j as e, z as s } from './vendor.js';
+import { q as t, de as i, a6 as m, aC as l, en as n } from './lib.js';
+const o = { small: 'small', big: 'big' },
     r = { full: 'full', medium: 'medium', small: 'small' },
     d = { appear: 'appear', fadeIn: 'fadeIn', slideUpIn: 'slideUpIn' },
     c = { battlePass: 'battlePass', events: 'events', missions: 'missions' },
@@ -8,18 +8,18 @@ const n = { small: 'small', big: 'big' },
     p = 'DateRange_label_a9603586',
     f = 'DateRange_image_6a8d9b5e',
     h = t.resolve('strings'),
-    b = { full: 'full', numeric: 'numeric', compact: 'compact' },
-    g = { [b.full]: i.DayMonthFull, [b.numeric]: i.DayMonthNumeric };
-function D({ startDate: t, endDate: i, className: n, size: d, isAdaptive: c, isMode: x }) {
-    const v = o,
+    g = { full: 'full', numeric: 'numeric', compact: 'compact' },
+    D = { [g.full]: i.DayMonthFull, [g.numeric]: i.DayMonthNumeric };
+function b({ startDate: t, endDate: i, className: o, size: d, isAdaptive: c, isMode: x }) {
+    const v = n,
         _ = d === r.medium,
         j = d === r.small,
         w = a.useMemo(
-            () => (j || (c && _ && x) ? D.format.compact : c || _ ? D.format.numeric : D.format.full),
+            () => (j || (c && _ && x) ? b.format.compact : c || _ ? b.format.numeric : b.format.full),
             [c, _, x, j],
         );
     return e.jsxs('div', {
-        className: s(u, n),
+        className: s(u, o),
         children: [
             e.jsx(m, {
                 className: f,
@@ -28,16 +28,16 @@ function D({ startDate: t, endDate: i, className: n, size: d, isAdaptive: c, isM
                 height: 17,
                 adaptive: { medium: { path: 'ui_kit.datetime.x24x24.cooldown', width: 24, height: 24 } },
             }),
-            w !== b.compact
+            w !== g.compact
                 ? e.jsx(l, {
                       className: p,
                       text: h.readOrEmpty('user_missions.common.daterange.divider'),
                       split: !0,
-                      params: { startDate: v(t, g[w]), endDate: v(i, g[w]) },
+                      params: { startDate: v(t, D[w]), endDate: v(i, D[w]) },
                   })
                 : null,
         ],
     });
 }
-D.format = b;
-export { D, d as a, c as b, r as c, n as w };
+b.format = g;
+export { b as D, d as a, c as b, r as c, o as w };

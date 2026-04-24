@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,24 +11,24 @@
     position: relative;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.Content_base_d2 {
+.Content_base_fe18b {
     line-height: normal;
 }
 /* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
 /* instead of this one*/
-.Content_separator_b4 {
+.Content_separator_e8ecc {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
 /* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
 /* instead of this one*/
-.Content_rewards_dc {
+.Content_rewards_ec768 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,20 +39,20 @@
     color: #c9c9b6;
     font-size: 14rem;
 }
-.Content_base_d2 {
+.Content_base_fe18b {
     width: 420rem;
     padding: 11rem 20rem 8rem;
 }
-.Content_base__bottom_ab {
+.Content_base__bottom_d9af0 {
     padding-bottom: 0;
 }
-.Content_image_90 {
+.Content_image_e2daa {
     width: 100%;
     height: 222rem;
     margin-bottom: 12rem;
     background: url('R.images.gui.maps.icons.battlePass.rewards.progression_style_not_chosen') no-repeat 50% / contain;
 }
-.Content_section_83 {
+.Content_section_c4bb5 {
     display: flex;
     flex-direction: column;
     background: linear-gradient(
@@ -63,7 +63,7 @@
         transparent
     );
 }
-.Content_sectionBottom_01 {
+.Content_sectionBottom_e52ae {
     display: flex;
     flex-direction: column;
     background: linear-gradient(
@@ -75,14 +75,14 @@
     );
     padding-bottom: 10rem;
 }
-.Content_title_c5 {
+.Content_title_db0a3 {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
     margin: 18rem 0 12rem;
 }
-.Content_warning_d0 {
+.Content_warning_f4572 {
     color: #ee7000;
     font-size: 14rem;
     font-weight: 400;
@@ -94,7 +94,7 @@
     padding-left: 28rem;
     background: url('R.images.gui.maps.icons.library.alertBigIcon') no-repeat 0 50% / contain;
 }
-.Content_text_bf {
+.Content_text_e0df9 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -102,24 +102,24 @@
     margin-bottom: 20rem;
     line-height: 1.5;
 }
-.Content_highlightedText_e0 {
+.Content_highlightedText_fe344 {
     color: #cbac77;
 }
-.Content_subtitle_55 {
+.Content_subtitle_bd117 {
     color: #e9e2bf;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
     margin: 15rem 0 5rem;
 }
-.Content_footerSeparator_9c {
+.Content_footerSeparator_f4d73 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     margin: 12rem 0;
 }
-.Content_paragraphs_c3 {
+.Content_paragraphs_eb6b5 {
     color: #595950;
     font-size: 14rem;
     font-weight: 400;
@@ -129,6 +129,6 @@
     margin: 16rem 0 17rem;
     line-height: 1.5;
 }
-.Content_paragraphTop_18 {
+.Content_paragraphTop_a95b2 {
     margin-bottom: 20rem;
 }

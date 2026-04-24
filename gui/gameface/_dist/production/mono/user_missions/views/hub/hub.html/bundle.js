@@ -1,6 +1,11 @@
-import { R as e, p as t, r as n, j as r } from '../../../chunks/vendor.js';
+const __vite__mapDeps = (
+    i,
+    m = __vite__mapDeps,
+    d = m.f || (m.f = ['../../../lib/lib.css', '../../../index/index.css', '../../../global/global.css']),
+) => i.map((i) => d[i]);
+import { R as e, q as t, r as n, j as s } from '../../../chunks/vendor.js';
 import {
-    c as s,
+    c as r,
     i as u,
     a as o,
     u as a,
@@ -9,8 +14,8 @@ import {
     s as c,
     J as _,
     U as h,
-    r as d,
-    n as m,
+    r as m,
+    n as d,
 } from '../../../chunks/lib.js';
 /* empty css                    */ const b = {
         umg_hub_quest_progress: 'umg_hub_quest_progress',
@@ -21,12 +26,12 @@ import {
         umg_hub_quest_reroll: 'umg_hub_quest_reroll',
     },
     g = {
-        [b.umg_hub_quest_progress]: s(b.umg_hub_quest_progress),
-        [b.umg_hub_quest_complete]: s(b.umg_hub_quest_complete),
-        [b.umg_hub_highlight]: s(b.umg_hub_highlight),
-        [b.umg_hub_unlock_bonus]: s(b.umg_hub_unlock_bonus),
-        [b.umg_hub_unlock_premium]: s(b.umg_hub_unlock_premium),
-        [b.umg_hub_quest_reroll]: s(b.umg_hub_quest_reroll),
+        [b.umg_hub_quest_progress]: r(b.umg_hub_quest_progress),
+        [b.umg_hub_quest_complete]: r(b.umg_hub_quest_complete),
+        [b.umg_hub_highlight]: r(b.umg_hub_highlight),
+        [b.umg_hub_unlock_bonus]: r(b.umg_hub_unlock_bonus),
+        [b.umg_hub_unlock_premium]: r(b.umg_hub_unlock_premium),
+        [b.umg_hub_quest_reroll]: r(b.umg_hub_quest_reroll),
     },
     p = (function () {
         const e = 'undefined' != typeof document && document.createElement('link').relList;
@@ -34,42 +39,52 @@ import {
     })(),
     f = {},
     v = function (e, t, n) {
-        let r = Promise.resolve();
+        let s = Promise.resolve();
         if (t && t.length > 0) {
-            const e = document.getElementsByTagName('link'),
-                s = document.querySelector('meta[property=csp-nonce]'),
-                u = (null == s ? void 0 : s.nonce) || (null == s ? void 0 : s.getAttribute('nonce'));
-            r = Promise.allSettled(
-                t.map((t) => {
+            let e = function (e) {
+                return Promise.all(
+                    e.map((e) =>
+                        Promise.resolve(e).then(
+                            (e) => ({ status: 'fulfilled', value: e }),
+                            (e) => ({ status: 'rejected', reason: e }),
+                        ),
+                    ),
+                );
+            };
+            const r = document.getElementsByTagName('link'),
+                u = document.querySelector('meta[property=csp-nonce]'),
+                o = u?.nonce || u?.getAttribute('nonce');
+            s = e(
+                t.map((e) => {
                     if (
-                        ((t = (function (e, t) {
+                        ((e = (function (e, t) {
                             return new URL(e, t).href;
-                        })(t, n)),
-                        t in f)
+                        })(e, n)),
+                        e in f)
                     )
                         return;
-                    f[t] = !0;
-                    const r = t.endsWith('.css'),
-                        s = r ? '[rel="stylesheet"]' : '';
-                    if (!!n)
-                        for (let n = e.length - 1; n >= 0; n--) {
-                            const s = e[n];
-                            if (s.href === t && (!r || 'stylesheet' === s.rel)) return;
+                    f[e] = !0;
+                    const t = e.endsWith('.css'),
+                        s = t ? '[rel="stylesheet"]' : '';
+                    if (n)
+                        for (let n = r.length - 1; n >= 0; n--) {
+                            const s = r[n];
+                            if (s.href === e && (!t || 'stylesheet' === s.rel)) return;
                         }
-                    else if (document.querySelector(`link[href="${t}"]${s}`)) return;
-                    const o = document.createElement('link');
+                    else if (document.querySelector(`link[href="${e}"]${s}`)) return;
+                    const u = document.createElement('link');
                     return (
-                        (o.rel = r ? 'stylesheet' : p),
-                        r || (o.as = 'script'),
-                        (o.crossOrigin = ''),
-                        (o.href = t),
-                        u && o.setAttribute('nonce', u),
-                        document.head.appendChild(o),
-                        r
-                            ? new Promise((e, n) => {
-                                  (o.addEventListener('load', e),
-                                      o.addEventListener('error', () =>
-                                          n(new Error(`Unable to preload CSS for ${t}`)),
+                        (u.rel = t ? 'stylesheet' : p),
+                        t || (u.as = 'script'),
+                        (u.crossOrigin = ''),
+                        (u.href = e),
+                        o && u.setAttribute('nonce', o),
+                        document.head.appendChild(u),
+                        t
+                            ? new Promise((t, n) => {
+                                  (u.addEventListener('load', t),
+                                      u.addEventListener('error', () =>
+                                          n(new Error(`Unable to preload CSS for ${e}`)),
                                       ));
                               })
                             : void 0
@@ -77,30 +92,31 @@ import {
                 }),
             );
         }
-        function s(e) {
+        function r(e) {
             const t = new Event('vite:preloadError', { cancelable: !0 });
             if (((t.payload = e), window.dispatchEvent(t), !t.defaultPrevented)) throw e;
         }
-        return r.then((t) => {
-            for (const e of t || []) 'rejected' === e.status && s(e.reason);
-            return e().catch(s);
+        return s.then((t) => {
+            for (const e of t || []) 'rejected' === e.status && r(e.reason);
+            return e().catch(r);
         });
     },
-    [k, C] = u()(
+    k = 'basic',
+    [C, y] = u()(
         ({ observableModel: e }) => ({ ...e.primitives(['currentTabId']), tabsList: e.arrayClone('tabsList') }),
         ({ externalModel: e }) => ({
             onTabChange: e.createCallback((e) => ({ tabId: e }), 'onTabChange'),
             onContentLayoutChanged: e.createCallback((e, t) => ({ y: e, height: t }), 'onContentLayoutChanged'),
         }),
     ),
-    y = 'Hub_a7d012e0',
-    E = 'Hub_tabsContainer_e39aa10a',
-    j = 'Hub_tab_5c9743bd',
-    q = 'Hub_content_39db32f3',
-    w = { basic: e.lazy(() => v(() => import('../../../chunks/index.js'), [], import.meta.url)) },
-    L = t(() => {
-        const { controls: t, model: s } = C(),
-            u = s.currentTabId.get(),
+    E = 'Hub_a7d012e0',
+    j = 'Hub_tabsContainer_e39aa10a',
+    q = 'Hub_tab_5c9743bd',
+    w = 'Hub_content_39db32f3',
+    L = { [k]: e.lazy(() => v(() => import('../../../chunks/index.js'), __vite__mapDeps([0, 1, 2]), import.meta.url)) },
+    x = t(() => {
+        const { controls: t, model: r } = y(),
+            u = r.currentTabId.get(),
             _ = n.useRef(null),
             h = n.useCallback(() => {
                 o(() =>
@@ -126,30 +142,30 @@ import {
             n.useEffect(() => {
                 h();
             }, [_, h]));
-        const d = a({ tabSize: c.small }, { large: { tabSize: c.medium } });
-        return r.jsxs('div', {
-            className: y,
+        const m = a({ tabSize: c.small }, { large: { tabSize: c.medium } });
+        return s.jsxs('div', {
+            className: E,
             children: [
-                r.jsx(l, {
+                s.jsx(l, {
                     active: u,
                     theme: 'primary',
-                    size: d.tabSize,
+                    size: m.tabSize,
                     onActiveChange: t.onTabChange,
-                    children: r.jsx(l.Switcher, {
-                        classNames: { base: E },
-                        children: i(s.tabsList.get(), (e) =>
-                            r.jsx(l.Tab, { tabId: e.id, className: j, children: e.title }, `tab_${e.id}`),
+                    children: s.jsx(l.Switcher, {
+                        classNames: { base: j },
+                        children: i(r.tabsList.get(), (e) =>
+                            s.jsx(l.Tab, { tabId: e.id, className: q, children: e.title }, `tab_${e.id}`),
                         ),
                     }),
                 }),
-                r.jsx('div', {
-                    className: q,
+                s.jsx('div', {
+                    className: w,
                     ref: _,
                     children:
-                        w[u] && r.jsx(n.Suspense, { fallback: r.jsx('div', {}), children: e.createElement(w[u]) }),
+                        L[u] && s.jsx(n.Suspense, { fallback: s.jsx('div', {}), children: e.createElement(L[u]) }),
                 }),
             ],
         });
     });
-d(new _().addWithProps(h, { soundsOverrides: g }).add(k).render(r.jsx(L, {}))).then(m);
+m(new _().addWithProps(h, { soundsOverrides: g }).add(C).render(s.jsx(x, {}))).then(d);
 export { b as s };

@@ -1,5 +1,5 @@
-import { y as e, j as a, w as s } from '../../../../chunks/vendor.js';
-import { i, aC as n, F as t, q as r, aA as o, aB as c } from '../../../../chunks/lib.js';
+import { V as e, j as s, a3 as a } from '../../../../chunks/vendor.js';
+import { i, n, cw as t, cv as r, r as o, cE as c } from '../../../../chunks/lib.js';
 import { T as p } from '../../../../chunks/tooltip_decorator.js';
 import { D as d } from '../../../../chunks/diff.js';
 import { R as _, a as l } from '../../../../chunks/rank_emblem.js';
@@ -37,8 +37,8 @@ const [g, h] = i()(({ observableModel: e }) => ({ root: e.object() }), n),
         blink: 'App_blink_0',
         slideUpIn: 'App_slideUpIn_0',
     },
-    A = { [x.Day]: 'day', [x.Season]: 'season' },
-    f = e(function () {
+    f = { [x.Day]: 'day', [x.Season]: 'season' },
+    A = e(function () {
         const { model: e } = h(),
             {
                 statisticsMode: i,
@@ -47,69 +47,69 @@ const [g, h] = i()(({ observableModel: e }) => ({ root: e.object() }), n),
                 division: c,
                 ratingPoints: p,
                 diff: g,
-                maxAchievedRatingPoints: f,
+                maxAchievedRatingPoints: A,
                 dayOfMaxRatingIndex: j,
             } = e.root.get();
-        return a.jsxs('div', {
-            className: s(m.base, m[`base__${A[i]}`]),
+        return s.jsxs('div', {
+            className: a(m.base, m[`base__${f[i]}`]),
             children: [
-                a.jsxs('div', {
-                    className: s(m.section, m.section__centered, m.section__rank),
+                s.jsxs('div', {
+                    className: a(m.section, m.section__centered, m.section__rank),
                     children: [
-                        a.jsx(_, { rank: o, division: c, seasonName: n, size: l.x150 }),
-                        a.jsx('div', {
+                        s.jsx(_, { rank: o, division: c, seasonName: n, size: l.x150 }),
+                        s.jsx('div', {
                             className: m.indicatorValue,
-                            children: a.jsx(t, { value: i === x.Season ? f : p }),
+                            children: s.jsx(t, { value: i === x.Season ? A : p }),
                         }),
                         i === x.Season
-                            ? a.jsx(r, {
+                            ? s.jsx(r, {
                                   text: R.strings.comp7_ext.rankIndicatorTooltip.season.ratingDescription(),
                                   binding: {
-                                      dayOfRecord: a.jsx(r, {
+                                      dayOfRecord: s.jsx(r, {
                                           text: R.strings.comp7_ext.rankIndicatorTooltip.season.dayOfRecord(),
                                           binding: { day: j + 1 },
                                           classMix: m.dayText,
                                       }),
                                   },
-                                  classMix: s(m.description, m.description__centered),
+                                  classMix: a(m.description, m.description__centered),
                               })
-                            : a.jsx(r, {
+                            : s.jsx(r, {
                                   text: R.strings.comp7_ext.rankIndicatorTooltip.day.ratingDescription(),
                                   classMix: m.ratingDescription,
                               }),
                     ],
                 }),
                 i === x.Day &&
-                    a.jsxs(a.Fragment, {
+                    s.jsxs(s.Fragment, {
                         children: [
-                            a.jsxs('div', {
+                            s.jsxs('div', {
                                 className: m.bgSection,
                                 children: [
-                                    a.jsx(r, {
+                                    s.jsx(r, {
                                         text: R.strings.comp7_ext.rankIndicatorTooltip.day.ratingDiff(),
-                                        binding: { diff: a.jsx(d, { value: g }) },
+                                        binding: { diff: s.jsx(d, { value: g }) },
                                         classMix: m.heading,
                                     }),
-                                    a.jsx(r, {
+                                    s.jsx(r, {
                                         text: R.strings.comp7_ext.rankIndicatorTooltip.day.ratingDiffDescription(),
                                         classMix: m.description,
                                     }),
                                 ],
                             }),
-                            a.jsxs('div', {
+                            s.jsxs('div', {
                                 className: m.section,
                                 children: [
-                                    a.jsx(r, {
+                                    s.jsx(r, {
                                         text: R.strings.comp7_ext.rankIndicatorTooltip.day.ratingRecord(),
                                         binding: {
-                                            maxAchievedRatingPoints: a.jsx('div', {
+                                            maxAchievedRatingPoints: s.jsx('div', {
                                                 className: m.highlightedValue,
-                                                children: a.jsx(t, { value: f }),
+                                                children: s.jsx(t, { value: A }),
                                             }),
                                         },
                                         classMix: m.heading,
                                     }),
-                                    a.jsx(r, {
+                                    s.jsx(r, {
                                         text: R.strings.comp7_ext.rankIndicatorTooltip.day.ratingRecordDescription(),
                                         classMix: m.description,
                                     }),
@@ -120,4 +120,4 @@ const [g, h] = i()(({ observableModel: e }) => ({ root: e.object() }), n),
             ],
         });
     });
-o(a.jsx(g, { children: a.jsx(c, { children: a.jsx(p, { children: a.jsx(f, {}) }) }) }));
+o(s.jsx(g, { children: s.jsx(c, { children: s.jsx(p, { children: s.jsx(A, {}) }) }) }));

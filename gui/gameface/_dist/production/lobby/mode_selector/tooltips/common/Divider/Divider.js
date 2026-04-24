@@ -2,21 +2,20 @@
     'use strict';
     var e,
         r = {
-            5394: (e, r, t) => {
-                var a = t(6483),
+            5062: (e, r, t) => {
+                var a = t(9849),
                     o = t.n(a),
                     s = t(7363),
                     n = t.n(s);
                 const i = {
-                    base: 'Divider_base_0f',
-                    base__dots: 'Divider_base__dots_be',
-                    base__dashed: 'Divider_base__dashed_d5',
-                    base__short: 'Divider_base__short_92',
+                    base: 'Divider_base_dfa2d',
+                    base__dots: 'Divider_base__dots_df8bc',
+                    base__dashed: 'Divider_base__dashed_f7200',
+                    base__short: 'Divider_base__short_de63d',
                 };
-                var d;
-                !(function (e) {
-                    ((e.Dots = 'dots'), (e.Dashed = 'dashed'), (e.Short = 'short'));
-                })(d || (d = {}));
+                var d = (function (e) {
+                    return ((e.Dots = 'dots'), (e.Dashed = 'dashed'), (e.Short = 'short'), e);
+                })(d || {});
                 n().memo(({ type: e = d.Dashed, classMix: r }) =>
                     n().createElement('div', { className: o()(i.base, i[`base__${e}`], r) }),
                 );
@@ -89,6 +88,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t))));
         })());
-    var o = a.O(void 0, [705], () => a(5394));
+    var o = a.O(void 0, [705], () => a(5062));
     o = a.O(o);
 })();

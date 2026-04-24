@@ -1,16 +1,16 @@
 import { j as s } from '../../../../chunks/vendor.js';
-import { b_ as e, J as t, U as a, j as n } from '../../../../chunks/lib.js';
+import { bY as e, J as t, U as a, d as n } from '../../../../chunks/lib.js';
 const c = 'Content_7bb15980',
     i = 'Content_separator_9582cf97',
     d = 'Content_image_2c4b4824',
     o = 'Content_section_cf0c3481',
     l = 'Content_title_73d62fc4',
     r = 'Content_text_8f35597f',
-    j = 'Content_secondaryText_69f1894',
-    x = R.strings.battle_pass.tooltips.battlePassCoins,
-    _ = x.title(),
-    m = x.text(),
-    h = x.secondaryText(),
+    x = 'Content_secondaryText_69f1894',
+    j = R.strings.battle_pass.tooltips.battlePassCoins,
+    _ = j.title(),
+    m = j.text(),
+    h = j.secondaryText(),
     v = () =>
         s.jsxs('div', {
             className: c,
@@ -25,7 +25,7 @@ const c = 'Content_7bb15980',
                         s.jsx('div', { className: i }),
                     ],
                 }),
-                s.jsx('div', { className: j, children: h }),
+                s.jsx('div', { className: x, children: h }),
             ],
         }),
     f = () => s.jsx(e, { children: s.jsx(e.Decorator, { children: s.jsx(v, {}) }) });

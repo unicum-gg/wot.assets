@@ -1,28 +1,28 @@
-import { y as s, j as t, w as a } from '../../../../chunks/vendor.js';
-import { i as e, aC as o, q as i, D as r, s as d, aA as c } from '../../../../chunks/lib.js';
+import { V as s, j as t, a3 as e } from '../../../../chunks/vendor.js';
+import { i as o, n as a, cv as i, dd as r, de as d, r as c } from '../../../../chunks/lib.js';
 import { T as l } from '../../../../chunks/tooltip_decorator.js';
-import { t as m } from '../../../../chunks/tooltips.module.js';
-/* empty css                        */ const [n, j] = e()(({ observableModel: s }) => ({ root: s.object() }), o),
+import { t as n } from '../../../../chunks/tooltips.module.js';
+/* empty css                        */ const [m, j] = o()(({ observableModel: s }) => ({ root: s.object() }), a),
     p = 'App_formattedText_5a12c957',
     x = s(() => {
         const { model: s } = j(),
-            { leaderboardUpdateTimestamp: e, description: o } = s.root.get();
+            { leaderboardUpdateTimestamp: o, description: a } = s.root.get();
         return t.jsxs('div', {
-            className: m.base,
+            className: n.base,
             children: [
                 t.jsx(i, {
                     text: R.strings.comp7_ext.lastUpdateNote.tooltip.info(),
                     binding: {
                         date: t.jsx('span', {
-                            className: m.highlight,
-                            children: t.jsx(r, { datetime: e, format: d.ShortTime }),
+                            className: n.highlight,
+                            children: t.jsx(r, { datetime: o, format: d.ShortTime }),
                         }),
                     },
-                    classMix: a(m.subHeading, p),
+                    classMix: e(n.subHeading, p),
                 }),
-                t.jsx('div', { className: m.divider }),
-                t.jsx('div', { className: m.description, children: t.jsx(i, { text: o }) }),
+                t.jsx('div', { className: n.divider }),
+                t.jsx('div', { className: n.description, children: t.jsx(i, { text: a }) }),
             ],
         });
     });
-c(t.jsx(n, { children: t.jsx(l, { children: t.jsx(x, {}) }) }));
+c(t.jsx(m, { children: t.jsx(l, { children: t.jsx(x, {}) }) }));

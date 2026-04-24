@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,37 +11,37 @@
     position: relative;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.ExtendedText_base_71 {
+.ExtendedText_base_d9fc1 {
     display: flex;
     line-height: 1.2;
     position: relative;
 }
 
-.ExtendedText_base__zeroPadding_25 {
+.ExtendedText_base__zeroPadding_d1a1c {
     padding: 0;
 }
 
-.ExtendedText_base__isTruncationAvailable_5b {
+.ExtendedText_base__isTruncationAvailable_cb880 {
     width: 100%;
 }
 
-.ExtendedText_truncated_97 {
+.ExtendedText_truncated_a4268 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     position: relative;
 }
 
-.ExtendedText_truncated__hide_31 {
+.ExtendedText_truncated__hide_d75b4 {
     opacity: 0;
 }
 
-.ExtendedText_unTruncated_b8 {
+.ExtendedText_unTruncated_ff478 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -58,147 +58,147 @@
     pointer-events: none;
 }
 
-.ExtendedText_tooltip_91 {
+.ExtendedText_tooltip_b5abd {
     display: flex;
 }
 
-.ExtendedText_tooltip__justify-flex-start_00 {
+.ExtendedText_tooltip__justify-flex-start_ade81 {
     justify-content: flex-start;
 }
 
-.ExtendedText_tooltip__justify-center_08 {
+.ExtendedText_tooltip__justify-center_aa541 {
     justify-content: center;
 }
 
-.ExtendedText_tooltip__justify-flex-end_90 {
+.ExtendedText_tooltip__justify-flex-end_af6c3 {
     justify-content: flex-end;
 }
 
-.ExtendedText_tooltip__align-flex-start_40 {
+.ExtendedText_tooltip__align-flex-start_fbfc0 {
     align-content: flex-start;
 }
 
-.ExtendedText_tooltip__align-center_54 {
+.ExtendedText_tooltip__align-center_d5b4a {
     align-content: center;
 }
 
-.ExtendedText_tooltip__align-flex-end_d2 {
+.ExtendedText_tooltip__align-flex-end_fc0e0 {
     align-content: flex-end;
 }
 
-.colors_blackReal_fc {
+.colors_blackReal_a68be {
     color: #000000;
 }
 
-.colors_whiteReal_31 {
+.colors_whiteReal_f79f8 {
     color: #ffffff;
 }
 
-.colors_white_45 {
+.colors_white_b5c87 {
     color: #f2f2f7;
 }
 
-.colors_whiteOrange_81 {
+.colors_whiteOrange_ba58d {
     color: #fefeec;
 }
 
-.colors_whiteSpanish_c3 {
+.colors_whiteSpanish_fd764 {
     color: #e9e2bf;
 }
 
-.colors_par_5b {
+.colors_par_e836f {
     color: #8c8c7e;
 }
 
-.colors_parSecondary_fd {
+.colors_parSecondary_f260a {
     color: #595950;
 }
 
-.colors_parTertiary_97 {
+.colors_parTertiary_d47f7 {
     color: #37362e;
 }
 
-.colors_red_79 {
+.colors_red_c02cb {
     color: #ff2717;
 }
 
-.colors_redDark_73 {
+.colors_redDark_cdd63 {
     color: #b70000;
 }
 
-.colors_yellow_76 {
+.colors_yellow_ec93b {
     color: #feab34;
 }
 
-.colors_orange_cd {
+.colors_orange_bbde2 {
     color: #ee7000;
 }
 
-.colors_cream_0f {
+.colors_cream_e3bb8 {
     color: #ffdd99;
 }
 
-.colors_brown_82 {
+.colors_brown_bcb6a {
     color: #cbac77;
 }
 
-.colors_greenBright_68 {
+.colors_greenBright_e6055 {
     color: #80d43a;
 }
 
-.colors_green_fa {
+.colors_green_b6f21 {
     color: #7ab300;
 }
 
-.colors_greenDark_a9 {
+.colors_greenDark_ce9bf {
     color: #497212;
 }
 
-.colors_blueBooster_26 {
+.colors_blueBooster_b2848 {
     color: #ccffff;
 }
 
-.colors_blueTeamkiller_86 {
+.colors_blueTeamkiller_e7dd8 {
     color: #09e2ff;
 }
 
-.colors_cred_35 {
+.colors_cred_ddb07 {
     color: #ced9d9;
 }
 
-.colors_gold_c3 {
+.colors_gold_c405a {
     color: #ffc363;
 }
 
-.colors_bond_ce {
+.colors_bond_bb139 {
     color: #c9c9b6;
 }
 
-.colors_prom_83 {
+.colors_prom_d1186 {
     color: #a29b70;
 }
 
-.renderers_noBreakWrapper_10 {
+.renderers_noBreakWrapper_d986b {
     display: flex;
     flex-wrap: nowrap;
 }
 
-.renderers_lineBreak_b5 {
+.renderers_lineBreak_f90ed {
     width: 100%;
     height: 0;
 }
 
-.renderers_newLine_bd {
+.renderers_newLine_ee778 {
     flex: 1;
     width: 100%;
 }
 
-.renderers_word_f3 {
+.renderers_word_ac32d {
     white-space: pre;
     overflow-wrap: normal;
 }
 
-.CrewHeaderTooltipApp_base_e2 {
+.CrewHeaderTooltipApp_base_b5658 {
     --base-width: 372rem;
     width: var(--base-width);
     padding: 25rem 20rem;
@@ -207,11 +207,11 @@
     position: relative;
 }
 
-.CrewHeaderTooltipApp_base_e2 > * {
+.CrewHeaderTooltipApp_base_b5658 > * {
     position: relative;
 }
 
-.CrewHeaderTooltipApp_bodyTexture_e9 {
+.CrewHeaderTooltipApp_bodyTexture_cb397 {
     width: 364rem;
     height: 306rem;
     position: absolute;
@@ -219,7 +219,7 @@
     left: 0;
 }
 
-.CrewHeaderTooltipApp_footerTexture_02 {
+.CrewHeaderTooltipApp_footerTexture_cc3e0 {
     width: 232rem;
     height: 134rem;
     position: absolute;
@@ -228,11 +228,11 @@
     transform: translateX(-50%);
 }
 
-.CrewHeaderTooltipApp_gap_c2 {
+.CrewHeaderTooltipApp_gap_f8e07 {
     margin: 15rem 0;
 }
 
-.CrewHeaderTooltipApp_heading_6d {
+.CrewHeaderTooltipApp_heading_f3a13 {
     color: #e9e2bf;
     font-size: 24rem;
     font-weight: 700;
@@ -241,7 +241,7 @@
     position: relative;
 }
 
-.CrewHeaderTooltipApp_bonus_c5 {
+.CrewHeaderTooltipApp_bonus_d879c {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -249,20 +249,20 @@
     position: relative;
 }
 
-.CrewHeaderTooltipApp_bonus_c5 .CrewHeaderTooltipApp_bonus_icon_51 {
+.CrewHeaderTooltipApp_bonus_d879c .CrewHeaderTooltipApp_bonus_icon_bb916 {
     width: 16rem;
     height: 16rem;
     margin-right: 3rem;
 }
 
-.CrewHeaderTooltipApp_bonus_c5 .CrewHeaderTooltipApp_bonus_label_b5 {
+.CrewHeaderTooltipApp_bonus_d879c .CrewHeaderTooltipApp_bonus_label_ee186 {
     color: #ffdd99;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.CrewHeaderTooltipApp_boost_64 {
+.CrewHeaderTooltipApp_boost_e71fb {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -280,21 +280,21 @@
     position: relative;
 }
 
-.CrewHeaderTooltipApp_boost_64 .CrewHeaderTooltipApp_topDivider_1f {
+.CrewHeaderTooltipApp_boost_e71fb .CrewHeaderTooltipApp_topDivider_b35a1 {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.CrewHeaderTooltipApp_boost_64 .CrewHeaderTooltipApp_bottomDivider_30 {
+.CrewHeaderTooltipApp_boost_e71fb .CrewHeaderTooltipApp_bottomDivider_d4588 {
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 50%);
 }
 
-.CrewHeaderTooltipApp_boost_64 .CrewHeaderTooltipApp_boost_wrapper_02 {
+.CrewHeaderTooltipApp_boost_e71fb .CrewHeaderTooltipApp_boost_wrapper_ab472 {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -302,7 +302,7 @@
     height: 60rem;
 }
 
-.CrewHeaderTooltipApp_boost_64 .CrewHeaderTooltipApp_boost_wrapper_02 .CrewHeaderTooltipApp_boost_label_79 {
+.CrewHeaderTooltipApp_boost_e71fb .CrewHeaderTooltipApp_boost_wrapper_ab472 .CrewHeaderTooltipApp_boost_label_f84c8 {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -319,7 +319,7 @@
     line-height: 1.1;
 }
 
-.CrewHeaderTooltipApp_boost_64 .CrewHeaderTooltipApp_boost_wrapper_02 .CrewHeaderTooltipApp_boost_XP_icon_6f {
+.CrewHeaderTooltipApp_boost_e71fb .CrewHeaderTooltipApp_boost_wrapper_ab472 .CrewHeaderTooltipApp_boost_XP_icon_c9380 {
     display: flex;
     align-items: flex-end;
     width: 115rem;
@@ -327,14 +327,14 @@
     margin: -25rem;
 }
 
-.CrewHeaderTooltipApp_boost_64 .CrewHeaderTooltipApp_perFiveMinutes_fe {
+.CrewHeaderTooltipApp_boost_e71fb .CrewHeaderTooltipApp_perFiveMinutes_da01e {
     color: #8c8c7e;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
 }
 
-.CrewHeaderTooltipApp_description_d9 {
+.CrewHeaderTooltipApp_description_a6ae6 {
     color: #8c8c7e;
     font-size: 16rem;
     font-weight: 400;
@@ -343,45 +343,47 @@
     position: relative;
 }
 
-.CrewHeaderTooltipApp_divider_55 {
+.CrewHeaderTooltipApp_divider_ee3fa {
     width: 332rem;
     height: 10rem;
 }
 
-.CrewHeaderTooltipApp_status_64 {
+.CrewHeaderTooltipApp_status_b00d8 {
     text-align: center;
     position: relative;
 }
 
-.CrewHeaderTooltipApp_status__active_2b {
+.CrewHeaderTooltipApp_status__active_eccc4 {
     color: #80d43a;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
 }
 
-.CrewHeaderTooltipApp_status__inactive_f8 {
+.CrewHeaderTooltipApp_status__inactive_b8019 {
     color: #cbac77;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
 }
 
-.CrewHeaderTooltipApp_status__unavailable_3d {
+.CrewHeaderTooltipApp_status__unavailable_c592d {
     color: #feab34;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
 }
 
-.CrewHeaderTooltipApp_status_64 .CrewHeaderTooltipApp_status_description_0c {
+.CrewHeaderTooltipApp_status_b00d8 .CrewHeaderTooltipApp_status_description_e7642 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.CrewHeaderTooltipApp_status_64 .CrewHeaderTooltipApp_status_description_0c .CrewHeaderTooltipApp_textAccent_c2 {
+.CrewHeaderTooltipApp_status_b00d8
+    .CrewHeaderTooltipApp_status_description_e7642
+    .CrewHeaderTooltipApp_textAccent_ccdfc {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;

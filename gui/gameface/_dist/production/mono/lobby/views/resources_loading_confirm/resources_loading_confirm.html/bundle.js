@@ -1,4 +1,4 @@
-import { e, j as r, m as c } from '../../../chunks/vendor.js';
+import { e, j as r, q as c } from '../../../chunks/vendor.js';
 import { h as s, i as o, u as n, B as t, F as a, g as u, C as _, r as i, U as l } from '../../../chunks/lib.js';
 import { V as d } from '../../../chunks/vehicle_count.js';
 import { V as p } from '../../../chunks/vignette.js';
@@ -153,8 +153,8 @@ const [f, x] = o()(
             })(),
         }),
     z = 'App_58db4e8d',
-    D = 'App_vehiclesCount_23229913',
-    O = 'App_close_90a88f64',
+    D = 'App_vehiclesCount_8dd11cc4',
+    O = 'App_close_4c62abb0',
     L = 'App_content_961d00cf',
     P = 'App_title_1f5b1f7b',
     X = 'App_resourcesWrapper_220e785a',
@@ -162,7 +162,7 @@ const [f, x] = o()(
     M = 'App_description_7d4b61ef',
     V = 'App_resources_9eced206',
     $ = 'App_buttons_3b1e176b',
-    F = c(function () {
+    q = c(function () {
         const { model: e, controls: c } = x(),
             { operationType: s, progressDiff: o, vehicleName: n } = e.root.get();
         return (
@@ -202,4 +202,4 @@ const [f, x] = o()(
             })
         );
     });
-i(r.jsx(l, { children: r.jsx(f, { children: r.jsx(F, {}) }) }));
+i(r.jsx(l, { children: r.jsx(f, { children: r.jsx(q, {}) }) }));

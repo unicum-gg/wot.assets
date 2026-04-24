@@ -2,7 +2,7 @@ html {
     overflow: hidden;
 }
 
-.App_base_82 {
+.App_base_d370f {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -12,14 +12,14 @@ html {
     margin: 1rem; /* required for injected components*/
 }
 
-.App_entryIcon_d6 {
+.App_entryIcon_fc428 {
     width: 66rem;
     height: 51rem;
     background: url('R.images.gui.maps.icons.personal_reserves.entry_icon') -3rem center / cover;
     position: relative;
 }
 
-.App_entryIcon_d6 .App_counter_3a {
+.App_entryIcon_fc428 .App_counter_d5fa5 {
     color: #ccffff;
     font-size: 14rem;
     font-weight: 400;
@@ -40,19 +40,19 @@ html {
     bottom: 3rem;
 }
 
-.App_entryIcon_d6 .App_counter_3a .App_counter_content_32 {
+.App_entryIcon_fc428 .App_counter_d5fa5 .App_counter_content_f678e {
     padding: 0 2rem 2rem;
 }
 
-.App_entryIcon__hasNonExpiringBoosters_76 {
+.App_entryIcon__hasNonExpiringBoosters_b2d70 {
     background: url('R.images.gui.maps.icons.personal_reserves.entry_icon_boosters') -3rem center / cover;
 }
 
-.App_entryIcon__hasExpiringBoostersAfterToday_fa {
+.App_entryIcon__hasExpiringBoostersAfterToday_c11b6 {
     background: url('R.images.gui.maps.icons.personal_reserves.entry_icon_expiring') -3rem center / cover;
 }
 
-.App_entryIcon__hasExpiringBoostersAfterToday_fa .App_counter_3a {
+.App_entryIcon__hasExpiringBoostersAfterToday_c11b6 .App_counter_d5fa5 {
     color: #ffdd99;
     font-size: 14rem;
     font-weight: 400;
@@ -64,11 +64,11 @@ html {
         0px 0px 4px rgba(255, 127, 0, 0.25);
 }
 
-.App_entryIcon__hasExpiringBoostersToday_82 {
+.App_entryIcon__hasExpiringBoostersToday_a8f88 {
     background: url('R.images.gui.maps.icons.personal_reserves.entry_icon_expiring_today') -3rem center / cover;
 }
 
-.App_entryIcon__hasExpiringBoostersToday_82 .App_counter_3a {
+.App_entryIcon__hasExpiringBoostersToday_a8f88 .App_counter_d5fa5 {
     color: #fefeec;
     font-size: 14rem;
     font-weight: 400;
@@ -81,36 +81,36 @@ html {
         0px 0px 4px rgba(255, 127, 0, 0.25);
 }
 
-.App_entryIcon__disabled_e9 {
+.App_entryIcon__disabled_c2a7a {
     filter: saturate(0);
 }
 
-.App_reserveBlocksContainer_46 {
+.App_reserveBlocksContainer_a5d55 {
     display: flex;
     align-items: center;
     height: 100%;
 }
 
-.App_reserveBlock_c0 {
+.App_reserveBlock_cd7e4 {
     display: flex;
     align-items: center;
     height: 100%;
 }
 
-.App_reserveBlock__disabled_79 {
+.App_reserveBlock__disabled_f15f5 {
     filter: saturate(0);
 }
 
-.App_reserveButton_89 {
+.App_reserveButton_b1146 {
     margin-right: 2rem;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.ReserveIcon_base_26 {
+.ReserveIcon_base_cda7b {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,29 +125,29 @@ html {
     position: relative;
 }
 
-.ReserveIcon_base__disabled_99 {
+.ReserveIcon_base__disabled_d2078 {
     opacity: 0.7;
 }
 
-.ReserveIcon_base__active_93 {
+.ReserveIcon_base__active_f8459 {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #211f16;
 }
 
-.ReserveIcon_base__clan_7b .ReserveIcon_fill_48 {
+.ReserveIcon_base__clan_feb8c .ReserveIcon_fill_ffe44 {
     background:
         radial-gradient(100% 3rem at 50% 0%, rgba(225, 255, 186, 0.2), transparent 100%),
         linear-gradient(180deg, #496019 0%, #1f3b1b 100%);
 }
 
-.ReserveIcon_base__clan_7b .ReserveIcon_fill_pattern_03 {
+.ReserveIcon_base__clan_feb8c .ReserveIcon_fill_pattern_e1dfa {
     background: url('R.images.gui.maps.icons.personal_reserves.bg_fill_green') 0 0 / 2rem 2rem repeat;
 }
 
-.ReserveIcon_base__clan_7b .ReserveIcon_fill_border_14 {
+.ReserveIcon_base__clan_feb8c .ReserveIcon_fill_border_c3373 {
     border-color: #41711b;
 }
 
-.ReserveIcon_base__clan_7b .ReserveIcon_minutesLeft_fe {
+.ReserveIcon_base__clan_feb8c .ReserveIcon_minutesLeft_db643 {
     text-shadow:
         -1rem -1rem 0rem #1f3b1b,
         1rem 1rem 0rem #1f3b1b,
@@ -155,21 +155,21 @@ html {
         1rem -1rem 0rem #1f3b1b;
 }
 
-.ReserveIcon_base__event_b6 .ReserveIcon_fill_48 {
+.ReserveIcon_base__event_ecce7 .ReserveIcon_fill_ffe44 {
     background:
         radial-gradient(100% 3rem at 50% 0%, rgba(249, 255, 186, 0.2), transparent 100%),
         linear-gradient(180deg, #98752f 0%, #72500f 100%);
 }
 
-.ReserveIcon_base__event_b6 .ReserveIcon_fill_pattern_03 {
+.ReserveIcon_base__event_ecce7 .ReserveIcon_fill_pattern_e1dfa {
     background: url('R.images.gui.maps.icons.personal_reserves.bg_fill_orange') 0 0 / 2rem 2rem repeat;
 }
 
-.ReserveIcon_base__event_b6 .ReserveIcon_fill_border_14 {
+.ReserveIcon_base__event_ecce7 .ReserveIcon_fill_border_c3373 {
     border-color: #8e4501;
 }
 
-.ReserveIcon_base__event_b6 .ReserveIcon_minutesLeft_fe {
+.ReserveIcon_base__event_ecce7 .ReserveIcon_minutesLeft_db643 {
     text-shadow:
         -1rem -1rem 0rem #583a00,
         1rem 1rem 0rem #583a00,
@@ -177,7 +177,7 @@ html {
         1rem -1rem 0rem #583a00;
 }
 
-.ReserveIcon_base__medium_6d {
+.ReserveIcon_base__medium_eade9 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,7 +192,7 @@ html {
     position: relative;
 }
 
-.ReserveIcon_minutesLeft_fe {
+.ReserveIcon_minutesLeft_db643 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -209,29 +209,29 @@ html {
     position: absolute;
     bottom: 4rem;
     z-index: 3;
-    animation: ReserveIcon_fadeIn_74 0.5s;
+    animation: ReserveIcon_fadeIn_d9a9e 0.5s;
 }
 
-.ReserveIcon_minutesLeft__smallMinutes_42 {
+.ReserveIcon_minutesLeft__smallMinutes_ecd3d {
     font-size: 12rem;
     font-weight: 100;
 }
 
-.ReserveIcon_icon_aa {
+.ReserveIcon_icon_b96c2 {
     display: block;
     width: 32rem;
     height: 32rem;
     z-index: 2;
 }
 
-.ReserveIcon_icon__active_f5 {
+.ReserveIcon_icon__active_ce2b0 {
     margin-bottom: 7rem;
     animation:
-        ReserveIcon_fadeIn_74 0.5s,
-        ReserveIcon_moveUp_11 0.5s;
+        ReserveIcon_fadeIn_d9a9e 0.5s,
+        ReserveIcon_moveUp_b548a 0.5s;
 }
 
-.ReserveIcon_fill_48 {
+.ReserveIcon_fill_ffe44 {
     display: block;
     height: var(--height);
     max-height: 38rem;
@@ -246,11 +246,11 @@ html {
     z-index: 1;
     transform-origin: left bottom;
     transition: height 2s;
-    animation: ReserveIcon_fillIn_ae 0.25s;
+    animation: ReserveIcon_fillIn_ace6c 0.25s;
     animation-fill-mode: both;
 }
 
-.ReserveIcon_fill_wrapper_76 {
+.ReserveIcon_fill_wrapper_baae6 {
     position: absolute;
     top: 2rem;
     right: 2rem;
@@ -258,7 +258,7 @@ html {
     left: 2rem;
 }
 
-.ReserveIcon_fill_wrapper__medium_c3 {
+.ReserveIcon_fill_wrapper__medium_e1050 {
     position: absolute;
     top: 0;
     right: 0;
@@ -266,15 +266,16 @@ html {
     left: 0;
 }
 
-.ReserveIcon_fill_pattern_03 {
+.ReserveIcon_fill_pattern_e1dfa {
     width: 100%;
     height: 100%;
     box-shadow: 0 1rem rgba(255, 255, 255, 0.03) inset;
     background: url('R.images.gui.maps.icons.personal_reserves.bg_fill_blue') 0 0 / 2rem 2rem repeat;
     mask-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1));
+    mask-repeat: no-repeat;
 }
 
-.ReserveIcon_fill_border_14 {
+.ReserveIcon_fill_border_c3373 {
     border: 1rem solid #0e5075;
     border-radius: 0 0 5rem 5rem;
     border-top: 0;
@@ -285,7 +286,7 @@ html {
     left: -2rem;
 }
 
-@keyframes ReserveIcon_fillIn_ae {
+@keyframes ReserveIcon_fillIn_ace6c {
     from {
         transform: scaleY(0);
     }
@@ -295,7 +296,7 @@ html {
     }
 }
 
-@keyframes ReserveIcon_fadeIn_74 {
+@keyframes ReserveIcon_fadeIn_d9a9e {
     from {
         opacity: 0;
     }
@@ -305,7 +306,7 @@ html {
     }
 }
 
-@keyframes ReserveIcon_moveUp_11 {
+@keyframes ReserveIcon_moveUp_b548a {
     from {
         transform: translateY(3rem);
     }

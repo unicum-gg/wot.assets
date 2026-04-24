@@ -1,39 +1,39 @@
-import { o as e, k as s, f as a, n as t, j as o, e as i, r, m as n } from '../../../chunks/vendor.js';
+import { o as e, m as s, f as a, p as t, j as o, e as r, r as i, n } from '../../../chunks/vendor.js';
 import {
     i as c,
     m as l,
-    h as d,
-    s as m,
+    k as d,
+    l as m,
     p as u,
     c as _,
-    j as b,
-    k as h,
-    R as x,
-    F as p,
-    l as f,
+    n as h,
+    o as b,
+    R as p,
+    F as x,
+    q as f,
     I as g,
-    n as v,
-    o as N,
-    q as j,
-    t as k,
+    t as v,
+    v as N,
+    s as j,
+    w as k,
     a as w,
     D as y,
-    v as C,
-    w as T,
+    x as C,
+    y as T,
     e as L,
-    x as S,
+    z as S,
     T as B,
     r as P,
 } from '../../../chunks/lib.js';
-import { C as I, c as R, a as D, g as A } from '../../../chunks/resources.js';
+import { C as R, c as I, a as D, g as A } from '../../../chunks/resources.js';
 import { g as M } from '../../../chunks/getConfig.js';
 import { S as $ } from '../../../chunks/sounds.js';
-import { L as H } from '../../../chunks/loupe_button.js';
-import { T as V } from '../../../chunks/tank_name.js';
-import { g as E, o as F, l as O } from '../../../chunks/getRewardImage.js';
-import { f as q, i as G } from '../../../chunks/utils.js';
+import { g as H, o as V, l as E } from '../../../chunks/getRewardImage.js';
+import { f as F, i as O } from '../../../chunks/utils.js';
+import { L as q } from '../../../chunks/loupe_button.js';
+import { T as G } from '../../../chunks/tank_name.js';
 import { B as X } from '../../../chunks/big_button.js';
-const W = {
+/* empty css                    */ const z = {
         images: {
             background: 'infopage.background',
             mask: 'infopage.mask',
@@ -70,23 +70,23 @@ const W = {
             infoPageTabHover: $.infoPageTabHover,
         },
     },
-    z = { dynamicTexts: { boxNames: 'common.boxCategory.lowerCase', rewardsPremiumDay: 'common.rewards.premiumDay' } },
+    W = { dynamicTexts: { boxNames: 'common.boxCategory.lowerCase', rewardsPremiumDay: 'common.rewards.premiumDay' } },
     [J, K] = c()(
         ({ observableModel: a }) => {
             const t = a.object().get().eventName,
                 o = {
                     root: a.object(),
                     boxes: a.arrayClone('boxes'),
-                    hasDescription: e.box(M(t, I.InfoPage).hasDescription),
+                    hasDescription: e.box(M(t, R.InfoPage).hasDescription),
                     sticky: e.box(!1),
                     activeCategory: e.box(''),
                     eventName: t,
                 },
-                i = s((e) => {
+                r = s((e) => {
                     const s = [];
                     return (
                         l(e, (e) => {
-                            if (R.includes(e.name)) {
+                            if (I.includes(e.name)) {
                                 const a = d(s, (s) => s.name === e.name);
                                 if (void 0 !== a)
                                     return void m(s, a, { ...s[a], value: `${s[a].value} %(divider) ${e.value}` });
@@ -96,9 +96,9 @@ const W = {
                         s
                     );
                 }),
-                r = s(
+                i = s(
                     (e) => {
-                        const s = b(o.boxes.get(), (s) => s.category === e);
+                        const s = h(o.boxes.get(), (s) => s.category === e);
                         if (!s) throw new Error(`Box with category ${e} is not found`);
                         return s;
                     },
@@ -106,29 +106,29 @@ const W = {
                 ),
                 n = s(
                     (e) => {
-                        const s = r(e).slots;
-                        return s ? l(s, (e) => ({ probability: e.probability, bonuses: i(e.bonuses.items) })) : [];
+                        const s = i(e).slots;
+                        return s ? l(s, (e) => ({ probability: e.probability, bonuses: r(e.bonuses.items) })) : [];
                     },
                     { equals: _ },
                 ),
-                c = s((e) => r(e).guaranteedLimit, { equals: _ }),
-                h = s(() => D(W, t)),
-                x = s(() => A(z, t)),
-                p = s(() => o.boxes.get().length > 1);
+                c = s((e) => i(e).guaranteedLimit, { equals: _ }),
+                b = s(() => D(z, t)),
+                p = s(() => A(W, t)),
+                x = s(() => o.boxes.get().length > 1);
             return {
                 ...o,
-                computes: { getSlots: n, getGuaranteed: c, resources: h, dynamicResources: x, displayTabs: p },
+                computes: { getSlots: n, getGuaranteed: c, resources: b, dynamicResources: p, displayTabs: x },
             };
         },
         ({ externalModel: e, model: s, cleanup: o }) => {
-            const i = a((e) => {
+            const r = a((e) => {
                 s.activeCategory.get() !== e && s.activeCategory.set(e);
             });
             return (
                 o(
                     t(() => {
                         const { chosenCategory: e } = s.root.get();
-                        i(e);
+                        r(e);
                     }),
                 ),
                 {
@@ -143,47 +143,48 @@ const W = {
             );
         },
     ),
-    Q = { base: 'Divider_d6e02c14', base__first: 'Divider_base__first_d2793de3' };
-function U({ isFirst: e = !1 }) {
-    return o.jsx('div', { className: i(Q.base, e && Q.base__first) });
+    Q = 'Divider_d6e02c14',
+    U = 'Divider_base__first_d2793de3';
+function Y({ isFirst: e = !1 }) {
+    return o.jsx('div', { className: r(Q, e && U) });
 }
-const Y = 'Content_8eaaf71a';
-const Z = {
-        base__fraction: 'ComplexNumber_base__fraction_1b24306e',
-        unitsName: 'ComplexNumber_unitsName_1b24306e',
-        fraction: 'ComplexNumber_fraction_c9ed5457',
-        base: 'ComplexNumber_b295d3a2',
-        integer: 'ComplexNumber_integer_61932fde',
-    },
-    ee = (e) => {
-        if (Number.isInteger(e)) return { integer: String(e), separator: '', fraction: '' };
-        const s = h.resolve('intl').formatReal('fractional', e),
-            a = s.match(/[^0-9]/);
-        if (a) {
-            const e = a[0],
-                t = s.indexOf(e);
-            return { integer: s.substring(0, t), separator: e, fraction: s.substring(t + 1).replace(/^|0+$/g, '') };
-        }
-        return (
-            console.warn(`number isn't an integer or contains an unsupported separator ${e}`),
-            { integer: String(e), separator: '', fraction: '' }
-        );
-    };
-function se({ probability: e, unitsName: s }) {
-    const { integer: a, separator: t, fraction: r } = ee(e),
+const Z = 'Content_8eaaf71a';
+const ee = 'ComplexNumber_base__fraction_1b24306e',
+    se = 'ComplexNumber_unitsName_1b24306e',
+    ae = 'ComplexNumber_fraction_c9ed5457',
+    te = 'ComplexNumber_b295d3a2',
+    oe = 'ComplexNumber_integer_61932fde';
+function re({ probability: e, unitsName: s }) {
+    const {
+            integer: a,
+            separator: t,
+            fraction: i,
+        } = ((e) => {
+            if (Number.isInteger(e)) return { integer: String(e), separator: '', fraction: '' };
+            const s = b.resolve('intl').formatReal('fractional', e),
+                a = s.match(/[^0-9]/);
+            if (a) {
+                const e = a[0],
+                    t = s.indexOf(e);
+                return { integer: s.substring(0, t), separator: e, fraction: s.substring(t + 1).replace(/^|0+$/g, '') };
+            }
+            return (
+                console.warn(`number isn't an integer or contains an unsupported separator ${e}`),
+                { integer: String(e), separator: '', fraction: '' }
+            );
+        })(e),
         n = e % 1 > 0;
     return o.jsxs('div', {
-        className: i(Z.base, n && Z.base__fraction),
+        className: r(te, n && ee),
         children: [
-            o.jsxs('div', { className: Z.integer, children: [a, t] }),
-            Boolean(r) && o.jsx('span', { className: Z.fraction, children: r }),
-            o.jsx('div', { className: Z.unitsName, children: s }),
+            o.jsxs('div', { className: oe, children: [a, t] }),
+            Boolean(i) && o.jsx('span', { className: ae, children: i }),
+            o.jsx('div', { className: se, children: s }),
         ],
     });
 }
-const ae = 'Probability_b2962f58';
-const te = {
-    root: 'Title_root_2e63cf3',
+const ie = 'Probability_b2962f58';
+const ne = {
     base: 'Title_953a4d89',
     title: 'Title_4a8f0758',
     name: 'Title_name_db913f2d',
@@ -199,64 +200,64 @@ const te = {
     label: 'Title_label_ad626d6',
     fadeIn: 'Title_fadeIn_2e63cf3',
 };
-function oe({ reward: e, texts: s, className: a }) {
-    const { name: t, value: r, label: n } = e,
-        c = t === x.PremiumPlus,
-        l = t === x.TmanToken,
-        d = r
+function ce({ reward: e, texts: s, className: a }) {
+    const { name: t, value: i, label: n } = e,
+        c = t === p.PremiumPlus,
+        l = t === p.TmanToken,
+        d = i
             .split(' %(divider) ')
             .sort((e, s) => Number(e) - Number(s))
             .join(' %(divider) ');
     return o.jsxs('div', {
-        className: i(te.base, te[`base__${t}`], a),
+        className: r(ne.base, ne[`base__${t}`], a),
         children: [
-            r &&
+            i &&
                 !l &&
                 o.jsxs('div', {
-                    className: te.title,
+                    className: ne.title,
                     children: [
-                        o.jsx(p, {
-                            text: q(d),
-                            binding: { divider: o.jsx('span', { className: te.label, children: s.divider }) },
-                            classMix: i(te.name, c && te.name__aligned),
+                        o.jsx(x, {
+                            text: F(d),
+                            binding: { divider: o.jsx('span', { className: ne.label, children: s.divider }) },
+                            classMix: r(ne.name, c && ne.name__aligned),
                         }),
                         c &&
                             o.jsx('span', {
-                                className: te.pluralText,
-                                children: s.premiumDay(Number(r.split(' ').at(-1))),
+                                className: ne.pluralText,
+                                children: s.premiumDay(Number(i.split(' ').at(-1))),
                             }),
                     ],
                 }),
-            o.jsx(p, { text: n, classMix: te.label }),
+            o.jsx(x, { text: n, classMix: ne.label }),
         ],
     });
 }
-const ie = 'Reward_2801b9c',
-    re = 'Reward_rewardImage_16a3dbae',
-    ne = 'Reward_icon_fb678067',
-    ce = 'Reward_icon__semiTransparent_54390a49',
-    le = 'Reward_icon__hovered_ec5f1ec2',
-    de = 'Reward_overlay_a7650b10',
-    me = 'Reward_count_1f55fab4',
-    ue = 'Reward_checkmark_5d7fcdff',
-    _e = 'Reward_loupeButton_20f8acb7',
-    be = 'Reward_loupeIcon_966a3d73',
-    he = 'Reward_tankName_c3434962';
-const xe = 'Rewards_b3634f8b';
-const pe = { base: 'RewardBlock_5c12840f' };
-function fe({ children: e, classNames: s }) {
-    return o.jsxs('div', { className: i(pe.base, s), children: [e, o.jsx(U, {})] });
+const le = 'Reward_2801b9c',
+    de = 'Reward_rewardImage_16a3dbae',
+    me = 'Reward_icon_fb678067',
+    ue = 'Reward_icon__semiTransparent_54390a49',
+    _e = 'Reward_icon__hovered_ec5f1ec2',
+    he = 'Reward_overlay_a7650b10',
+    be = 'Reward_count_1f55fab4',
+    pe = 'Reward_checkmark_5d7fcdff',
+    xe = 'Reward_loupeButton_20f8acb7',
+    fe = 'Reward_loupeIcon_966a3d73',
+    ge = 'Reward_tankName_c3434962';
+const ve = 'Rewards_b3634f8b';
+const Ne = 'RewardBlock_5c12840f';
+function je({ children: e, classNames: s }) {
+    return o.jsxs('div', { className: r(Ne, s), children: [e, o.jsx(Y, {})] });
 }
-((fe.Content = function ({ children: e, classNames: s }) {
-    return o.jsx('div', { className: i(Y, s), children: e });
+((je.Content = function ({ children: e, classNames: s }) {
+    return o.jsx('div', { className: r(Z, s), children: e });
 }),
-    (fe.Probability = function ({ probability: e, unitsName: s, classNames: a }) {
-        return o.jsx('div', { className: i(ae, a), children: o.jsx(se, { probability: e, unitsName: s }) });
+    (je.Probability = function ({ probability: e, unitsName: s, classNames: a }) {
+        return o.jsx('div', { className: r(ie, a), children: o.jsx(re, { probability: e, unitsName: s }) });
     }),
-    (fe.Rewards = function ({ children: e, classNames: s }) {
-        return o.jsx('div', { className: i(xe, s), children: e });
+    (je.Rewards = function ({ children: e, classNames: s }) {
+        return o.jsx('div', { className: r(ve, s), children: e });
     }),
-    (fe.Reward = function ({
+    (je.Reward = function ({
         reward: e,
         resources: s,
         eventName: a,
@@ -269,52 +270,52 @@ function fe({ children: e, classNames: s }) {
                 name: m,
                 id: u,
                 tooltipId: _,
-                tooltipContentId: b,
-                count: h,
+                tooltipContentId: h,
+                count: b,
                 overlayType: v,
                 styleID: N,
                 isInHangar: j,
                 icon: k,
             } = e,
-            [w, y] = r.useState(!1),
-            C = m === x.Vehicles;
+            [w, y] = i.useState(!1),
+            C = m === p.Vehicles;
         return o.jsxs('div', {
-            className: ie,
+            className: le,
             children: [
                 o.jsx(f, {
                     ignoreShowDelay: !0,
-                    contentId: Number(b),
+                    contentId: Number(h),
                     args: { tooltipId: _, boxCategory: k, eventName: a },
                     children: o.jsxs('div', {
-                        className: re,
+                        className: de,
                         onMouseEnter: () => {
-                            G(e) && y(!0);
+                            O(e) && y(!0);
                         },
                         onMouseLeave: () => y(!1),
                         children: [
                             o.jsx('div', {
-                                className: i(ne, j && ce, w && le),
-                                style: { backgroundImage: `url(${E(e)})` },
+                                className: r(me, j && ue, w && _e),
+                                style: { backgroundImage: `url(${H(e)})` },
                             }),
                             v &&
                                 o.jsx('div', {
-                                    className: de,
-                                    style: { backgroundImage: `url(${F(g.S180x135, m, v)})` },
+                                    className: he,
+                                    style: { backgroundImage: `url(${V(g.S180x135, m, v)})` },
                                 }),
-                            j && o.jsx('div', { className: ue, style: { backgroundImage: `url(${l.checkmark})` } }),
-                            h > 1 &&
+                            j && o.jsx('div', { className: pe, style: { backgroundImage: `url(${l.checkmark})` } }),
+                            b > 1 &&
                                 o.jsx('div', {
-                                    className: me,
-                                    children: o.jsx(p, {
+                                    className: be,
+                                    children: o.jsx(x, {
                                         text: d.rewardsMultiplier,
-                                        binding: { count: h },
+                                        binding: { count: b },
                                         formatWithBrackets: !0,
                                     }),
                                 }),
-                            G(e) &&
-                                o.jsx(H, {
-                                    className: _e,
-                                    icon: { img: l.previewIcon, className: be },
+                            O(e) &&
+                                o.jsx(q, {
+                                    className: xe,
+                                    icon: { img: l.previewIcon, className: fe },
                                     onClick: () => {
                                         (c(t), n({ bonusType: m, bonusId: u || '', styleID: N }));
                                     },
@@ -323,104 +324,104 @@ function fe({ children: e, classNames: s }) {
                     }),
                 }),
                 C
-                    ? o.jsx(V, { reward: e, style: { nameHeight: '14rem' }, className: he, hasShortName: !0 })
-                    : o.jsx(oe, { reward: e, texts: { divider: d.divider, premiumDay: d.premiumDay } }),
+                    ? o.jsx(G, { reward: e, style: { nameHeight: '14rem' }, className: ge, hasShortName: !0 })
+                    : o.jsx(ce, { reward: e, texts: { divider: d.divider, premiumDay: d.premiumDay } }),
             ],
         });
     }));
-const ge = 'Shadow_bf167c05',
-    ve = 'Shadow_shadowSlice_72a105f9',
-    Ne = 'Shadow_shadowSlice__middle_57439790';
-const je = 'Tab_80082bae',
-    ke = 'Tab_image_8d117dd4',
-    we = 'Tab_box_86eb6858',
-    ye = 'Tab_base__hover_0',
-    Ce = 'Tab_base__active_0',
-    Te = 'Tab_title_a5c917ce',
-    Le = 'Tab_shine_b3052800';
-const Se = 'TabList_87138e48';
-const Be = { base: 'Tabs_1545335a' };
-function Pe({ className: e, forwardRef: s, children: a }) {
-    return o.jsx('div', { className: i(Be.base, e), ref: s, children: a });
+const ke = 'Shadow_bf167c05',
+    we = 'Shadow_shadowSlice_72a105f9',
+    ye = 'Shadow_shadowSlice__middle_57439790';
+const Ce = 'Tab_80082bae',
+    Te = 'Tab_image_8d117dd4',
+    Le = 'Tab_box_86eb6858',
+    Se = 'Tab_base__hover_0',
+    Be = 'Tab_base__active_0',
+    Pe = 'Tab_title_a5c917ce',
+    Re = 'Tab_shine_b3052800';
+const Ie = 'TabList_87138e48';
+const De = 'Tabs_1545335a';
+function Ae({ className: e, forwardRef: s, children: a }) {
+    return o.jsx('div', { className: r(De, e), ref: s, children: a });
 }
-((Pe.Tab = function ({ category: e, resources: s, sticky: a, activeCategory: t, saveCategory: n }) {
-    const [c, l] = r.useState(!1),
+((Ae.Tab = function ({ category: e, resources: s, sticky: a, activeCategory: t, saveCategory: n }) {
+    const [c, l] = i.useState(!1),
         { images: d, sounds: m, texts: u } = s,
         _ = t === e,
-        b = () => {
+        h = () => {
             _ || (v.sound(m.click), n(e));
         },
-        h = () => {
+        b = () => {
             (_ || v.sound(m.hover), l(!0));
         };
     return o.jsxs('div', {
-        className: i(je, c && ye, _ && Ce),
+        className: r(Ce, c && Se, _ && Be),
         children: [
             o.jsx('div', {
-                className: ke,
+                className: Te,
                 children: o.jsx('div', {
-                    className: we,
-                    style: { backgroundImage: `url(${O('s600x450', e)})` },
-                    onMouseEnter: h,
+                    className: Le,
+                    style: { backgroundImage: `url(${E('s600x450', e)})` },
+                    onMouseEnter: b,
                     onMouseLeave: () => l(!1),
-                    onClick: b,
+                    onClick: h,
                 }),
             }),
-            o.jsx('div', { className: Le, style: { backgroundImage: `url(${d.shine})` } }),
+            o.jsx('div', { className: Re, style: { backgroundImage: `url(${d.shine})` } }),
             !a &&
                 o.jsx('div', {
-                    className: Te,
-                    onMouseEnter: h,
+                    className: Pe,
+                    onMouseEnter: b,
                     onMouseLeave: () => l(!1),
-                    onClick: b,
+                    onClick: h,
                     children: u.title(e),
                 }),
         ],
     });
 }),
-    (Pe.TabList = function ({ children: e, classNames: s }) {
-        return o.jsx('div', { className: i(Se, s), children: e });
+    (Ae.TabList = function ({ children: e, classNames: s }) {
+        return o.jsx('div', { className: r(Ie, s), children: e });
     }),
-    (Pe.Shadow = function ({ images: e }) {
+    (Ae.Shadow = function ({ images: e }) {
         return o.jsxs('div', {
-            className: ge,
+            className: ke,
             children: [
-                o.jsx('img', { className: ve, src: e.shadowLeft }),
-                o.jsx('img', { className: i(Ne, ve), src: e.shadowMiddle }),
-                o.jsx('img', { className: ve, src: e.shadowRight }),
+                o.jsx('img', { className: we, src: e.shadowLeft }),
+                o.jsx('img', { className: r(ye, we), src: e.shadowMiddle }),
+                o.jsx('img', { className: we, src: e.shadowRight }),
             ],
         });
     }));
-const Ie = h.resolve('views').read((e) => e.mono.lootbox.tooltips.box_tooltip('resId'));
-const Re = n(function ({ className: e, forwardRef: s }) {
+const Me = b.resolve('views').read((e) => e.mono.lootbox.tooltips.box_tooltip('resId'));
+const $e = n(function ({ className: e, forwardRef: s }) {
         const { model: a, controls: t } = K(),
-            { images: i, sounds: r } = a.computes.resources(),
+            { images: r, sounds: i } = a.computes.resources(),
             { dynamicTexts: n } = a.computes.dynamicResources(),
             c = a.boxes.get(),
             d = a.sticky.get(),
             m = a.activeCategory.get(),
             u = a.eventName,
-            _ = { shadowLeft: i.shadowLeft, shadowMiddle: i.shadowMiddle, shadowRight: i.shadowRight },
-            b = {
-                images: { shine: i.tabShine },
-                sounds: { hover: r.infoPageTabHover, click: r.infoPageTabClick },
+            _ = { shadowLeft: r.shadowLeft, shadowMiddle: r.shadowMiddle, shadowRight: r.shadowRight },
+            h = {
+                images: { shine: r.tabShine },
+                sounds: { hover: i.infoPageTabHover, click: i.infoPageTabClick },
                 texts: { title: (e) => n.boxNames.dynOpt(e) },
             };
-        return o.jsxs(Pe, {
+        return o.jsxs(Ae, {
             className: e,
             forwardRef: s,
             children: [
-                o.jsx(Pe.TabList, {
+                o.jsx(Ae.TabList, {
                     children: l(c, (e) =>
                         o.jsx(
                             N,
                             {
-                                params: { contentId: Ie, args: { boxCategory: e.category, eventName: u } },
+                                params: { contentId: Me, args: { boxCategory: e.category, eventName: u } },
                                 children: o.jsx(
-                                    Pe.Tab,
+                                    Ae.Tab,
                                     {
                                         category: e.category,
-                                        resources: b,
+                                        resources: h,
                                         saveCategory: t.saveCategory,
                                         activeCategory: m,
                                         sticky: d,
@@ -432,16 +433,16 @@ const Re = n(function ({ className: e, forwardRef: s }) {
                         ),
                     ),
                 }),
-                o.jsx(Pe.Shadow, { images: _ }),
+                o.jsx(Ae.Shadow, { images: _ }),
             ],
         });
     }),
-    De = {
+    He = {
         base: 'Content_d65784d',
         tabs__hide: 'Content_tabs__hide_eb9be4e6',
         rewardBlock: 'Content_rewardBlock_513f629c',
     };
-const Ae = n(function ({ scrollApi: e }) {
+const Ve = n(function ({ scrollApi: e }) {
         const { model: s, controls: a } = K(),
             { texts: t, images: n } = s.computes.resources(),
             { dynamicTexts: c } = s.computes.dynamicResources(),
@@ -449,9 +450,9 @@ const Ae = n(function ({ scrollApi: e }) {
             m = s.eventName,
             u = s.sticky.get(),
             _ = s.computes.getSlots(d),
-            b = s.computes.displayTabs(),
-            h = r.useRef(null),
-            x = {
+            h = s.computes.displayTabs(),
+            b = i.useRef(null),
+            p = {
                 images: { checkmark: n.checkmark, previewIcon: n.previewIcon },
                 texts: {
                     rewardsMultiplier: t.rewardsMultiplier,
@@ -460,9 +461,9 @@ const Ae = n(function ({ scrollApi: e }) {
                 },
             };
         return (
-            r.useEffect(() => {
+            i.useEffect(() => {
                 const s = (e) => {
-                    a.setSticky(Boolean(h.current && e.value.scrollPosition >= h.current.offsetTop));
+                    a.setSticky(Boolean(b.current && e.value.scrollPosition >= b.current.offsetTop));
                 };
                 return (
                     e.events.on('change', s),
@@ -472,31 +473,31 @@ const Ae = n(function ({ scrollApi: e }) {
                 );
             }, [a, e.events]),
             o.jsxs('div', {
-                className: De.base,
+                className: He.base,
                 children: [
-                    b
-                        ? o.jsx(Re, { className: i(De.tabs, u && De.tabs__hide), forwardRef: h })
-                        : o.jsx(U, { isFirst: !0 }),
+                    h
+                        ? o.jsx($e, { className: r(He.tabs, u && He.tabs__hide), forwardRef: b })
+                        : o.jsx(Y, { isFirst: !0 }),
                     o.jsx('div', {
-                        children: l(_, ({ probability: e, bonuses: s }, i) =>
+                        children: l(_, ({ probability: e, bonuses: s }, r) =>
                             o.jsx(
-                                fe,
+                                je,
                                 {
-                                    classNames: De.rewardBlock,
-                                    children: o.jsxs(fe.Content, {
+                                    classNames: He.rewardBlock,
+                                    children: o.jsxs(je.Content, {
                                         children: [
-                                            o.jsx(fe.Probability, { probability: e, unitsName: t.rewardsPercent }),
-                                            o.jsx(fe.Rewards, {
+                                            o.jsx(je.Probability, { probability: e, unitsName: t.rewardsPercent }),
+                                            o.jsx(je.Rewards, {
                                                 children: l(s, (e, s) =>
                                                     o.jsx(
-                                                        fe.Reward,
+                                                        je.Reward,
                                                         {
                                                             reward: e,
                                                             activeCategory: d,
                                                             eventName: m,
                                                             saveCategory: a.saveCategory,
                                                             showPreview: a.showPreview,
-                                                            resources: x,
+                                                            resources: p,
                                                         },
                                                         s,
                                                     ),
@@ -505,7 +506,7 @@ const Ae = n(function ({ scrollApi: e }) {
                                         ],
                                     }),
                                 },
-                                i,
+                                r,
                             ),
                         ),
                     }),
@@ -513,127 +514,122 @@ const Ae = n(function ({ scrollApi: e }) {
             })
         );
     }),
-    Me = {
-        base: 'TextBlock_a2d952f',
-        title: 'TextBlock_title_d152d79f',
-        description: 'TextBlock_description_5db34e07',
-    };
-function $e({ title: e, description: s, className: a }) {
+    Ee = 'TextBlock_a2d952f',
+    Fe = 'TextBlock_title_d152d79f',
+    Oe = 'TextBlock_description_5db34e07';
+function qe({ title: e, description: s, className: a }) {
     return o.jsxs('div', {
-        className: i(Me.base, a),
-        children: [
-            o.jsx('div', { className: Me.title, children: e }),
-            o.jsx('div', { className: Me.description, children: s }),
-        ],
+        className: r(Ee, a),
+        children: [o.jsx('div', { className: Fe, children: e }), o.jsx('div', { className: Oe, children: s })],
     });
 }
-const He = 'Footer_4604fd6b',
-    Ve = 'Footer_text_384f7588',
-    Ee = 'Footer_textBlock_e36860cc';
-function Fe(e, s) {
+const Ge = 'Footer_4604fd6b',
+    Xe = 'Footer_text_384f7588',
+    ze = 'Footer_textBlock_e36860cc';
+function We(e, s) {
     return j(e, (e) => s(e.category) > 0);
 }
-function Oe(e, s, a) {
+function Je(e, s, a) {
     const t = k(e, (e, a, t) => ((e[`guaranteed${t}`] = s(a.category)), e), {});
     return o.jsx(w, { text: a, params: t, upgradeLegacy: !0 });
 }
-const qe = n(function () {
+const Ke = n(function () {
         const { model: e } = K(),
             { texts: s } = e.computes.resources(),
             a = e.boxes.get(),
             t = e.computes.getGuaranteed;
         return o.jsx('div', {
-            className: He,
+            className: Ge,
             children: o.jsxs('div', {
-                className: Ve,
+                className: Xe,
                 children: [
-                    Fe(a, t) &&
-                        o.jsx($e, {
+                    We(a, t) &&
+                        o.jsx(qe, {
                             title: s.titleGuaranteed,
-                            description: Oe(a, t, s.descriptionGuaranteed),
-                            className: Ee,
+                            description: Je(a, t, s.descriptionGuaranteed),
+                            className: ze,
                         }),
-                    o.jsx($e, { title: s.titleCompensation, description: s.descriptionCompensation, className: Ee }),
-                    o.jsx($e, { title: s.titleAutoOpen, description: s.descriptionAutoOpen, className: Ee }),
+                    o.jsx(qe, { title: s.titleCompensation, description: s.descriptionCompensation, className: ze }),
+                    o.jsx(qe, { title: s.titleAutoOpen, description: s.descriptionAutoOpen, className: ze }),
                 ],
             }),
         });
     }),
-    Ge = { base: 'ExternalLink_3e4af53', text: 'ExternalLink_text_c8545bfe', icon: 'ExternalLink_icon_887a2bf3' };
-function Xe({ text: e, icon: s, onClick: a, classNames: t }) {
+    Qe = 'ExternalLink_3e4af53',
+    Ue = 'ExternalLink_text_c8545bfe',
+    Ye = 'ExternalLink_icon_887a2bf3';
+function Ze({ text: e, icon: s, onClick: a, classNames: t }) {
     return o.jsxs('div', {
-        className: i(Ge.base, t),
+        className: r(Qe, t),
         onClick: a,
         children: [
-            o.jsx('div', { className: Ge.text, children: e }),
-            o.jsx('div', { className: Ge.icon, style: { backgroundImage: `url(${s})` } }),
+            o.jsx('div', { className: Ue, children: e }),
+            o.jsx('div', { className: Ye, style: { backgroundImage: `url(${s})` } }),
         ],
     });
 }
-const We = 'Button_a211aeba';
-const ze = 'Content_a26f6580';
-const Je = 'Description_d9500488';
-const Ke = 'LootLink_951fc13b';
-const Qe = 'Subtitle_816e5b9e';
-const Ue = 'Title_852f27cf';
-const Ye = 'VideoButton_26790f4';
-const Ze = { base: 'Header_bc33b80e' };
-function es({ children: e, classNames: s }) {
-    return o.jsx('div', { className: i(Ze.base, s), children: e });
+const es = 'Button_a211aeba';
+const ss = 'Content_a26f6580';
+const as = 'Description_d9500488';
+const ts = 'LootLink_951fc13b';
+const os = 'Subtitle_816e5b9e';
+const rs = 'Title_852f27cf';
+const is = 'VideoButton_26790f4';
+const ns = 'Header_bc33b80e';
+function cs({ children: e, classNames: s }) {
+    return o.jsx('div', { className: r(ns, s), children: e });
 }
-((es.Button = function ({ children: e, classNames: s }) {
-    return o.jsx('div', { className: i(We, s), children: e });
+((cs.Button = function ({ children: e, classNames: s }) {
+    return o.jsx('div', { className: r(es, s), children: e });
 }),
-    (es.VideoButton = function ({ children: e, classNames: s }) {
-        return o.jsx('div', { className: i(Ye, s), children: e });
+    (cs.VideoButton = function ({ children: e, classNames: s }) {
+        return o.jsx('div', { className: r(is, s), children: e });
     }),
-    (es.Content = function ({ children: e, classNames: s }) {
-        return o.jsx('div', { className: i(ze, s), children: e });
+    (cs.Content = function ({ children: e, classNames: s }) {
+        return o.jsx('div', { className: r(ss, s), children: e });
     }),
-    (es.Description = function ({ children: e, classNames: s }) {
-        return o.jsx('div', { className: i(Je, s), children: e });
+    (cs.Description = function ({ children: e, classNames: s }) {
+        return o.jsx('div', { className: r(as, s), children: e });
     }),
-    (es.Subtitle = function ({ children: e, classNames: s }) {
-        return o.jsx('div', { className: i(Qe, s), children: e });
+    (cs.Subtitle = function ({ children: e, classNames: s }) {
+        return o.jsx('div', { className: r(os, s), children: e });
     }),
-    (es.Title = function ({ children: e, classNames: s }) {
-        return o.jsx('div', { className: i(Ue, s), children: e });
+    (cs.Title = function ({ children: e, classNames: s }) {
+        return o.jsx('div', { className: r(rs, s), children: e });
     }),
-    (es.LootLink = function ({ children: e, classNames: s }) {
-        return o.jsx('div', { className: i(Ke, s), children: e });
+    (cs.LootLink = function ({ children: e, classNames: s }) {
+        return o.jsx('div', { className: r(ts, s), children: e });
     }));
-const ss = {
-    base: 'VideoButton_48d93b73',
-    videoIcon: 'VideoButton_videoIcon_bc784850',
-    videoText: 'VideoButton_videoText_a951280b',
-};
-function as({ onClick: e, text: s }) {
+const ls = 'VideoButton_48d93b73',
+    ds = 'VideoButton_videoIcon_bc784850',
+    ms = 'VideoButton_videoText_a951280b';
+function us({ onClick: e, text: s }) {
     return o.jsxs('div', {
-        className: ss.base,
+        className: ls,
         onMouseEnter: v.highlight,
         onClick: function () {
             (v.click(), e());
         },
-        children: [o.jsx('div', { className: ss.videoIcon }), o.jsx('div', { className: ss.videoText, children: s })],
+        children: [o.jsx('div', { className: ds }), o.jsx('div', { className: ms, children: s })],
     });
 }
-const ts = 'Header_lootLink_526646ae',
-    os = 'Header_description_3cd4f9ef',
-    is = 'Header_subtitle_4a9a6a75',
-    rs = 'Header_button_dc4dfa71';
-const ns = n(function () {
+const _s = 'Header_lootLink_526646ae',
+    hs = 'Header_description_3cd4f9ef',
+    bs = 'Header_subtitle_4a9a6a75',
+    ps = 'Header_button_dc4dfa71';
+const xs = n(function () {
         const { model: e, controls: s } = K(),
-            { texts: a, images: t, sounds: i } = e.computes.resources(),
-            { hasVideoButton: r, hasShopButton: n, startDate: c, endDate: l, hasLootListLink: d } = e.root.get(),
+            { texts: a, images: t, sounds: r } = e.computes.resources(),
+            { hasVideoButton: i, hasShopButton: n, startDate: c, endDate: l, hasLootListLink: d } = e.root.get(),
             m = e.hasDescription.get();
-        return o.jsxs(es, {
+        return o.jsxs(cs, {
             children: [
-                o.jsxs(es.Content, {
+                o.jsxs(cs.Content, {
                     children: [
-                        o.jsx(es.Title, { children: a.headerTitle }),
-                        o.jsx(es.Subtitle, {
-                            classNames: is,
-                            children: o.jsx(p, {
+                        o.jsx(cs.Title, { children: a.headerTitle }),
+                        o.jsx(cs.Subtitle, {
+                            classNames: bs,
+                            children: o.jsx(x, {
                                 text: a.headerSubtitle,
                                 binding: {
                                     from: o.jsx(y, { datetime: c, format: C.FullDate }),
@@ -642,80 +638,80 @@ const ns = n(function () {
                             }),
                         }),
                         m &&
-                            o.jsx(es.Description, {
-                                classNames: os,
-                                children: o.jsx(p, { text: a.headerDescription }),
+                            o.jsx(cs.Description, {
+                                classNames: hs,
+                                children: o.jsx(x, { text: a.headerDescription }),
                             }),
                         d &&
-                            o.jsx(es.LootLink, {
-                                classNames: ts,
-                                children: o.jsx(Xe, {
+                            o.jsx(cs.LootLink, {
+                                classNames: _s,
+                                children: o.jsx(Ze, {
                                     text: a.lootListLink,
                                     icon: t.externalLinkSmall,
                                     onClick: s.showLootList,
                                 }),
                             }),
                         n &&
-                            o.jsx(es.Button, {
-                                classNames: rs,
+                            o.jsx(cs.Button, {
+                                classNames: ps,
                                 children: o.jsx(X, {
                                     text: a.headerShopButton,
                                     onClick: s.showShop,
-                                    soundHover: i.purchaseHover,
+                                    soundHover: r.purchaseHover,
                                 }),
                             }),
                     ],
                 }),
-                r &&
-                    o.jsx(es.VideoButton, {
-                        children: o.jsx(as, { onClick: s.showVideo, text: a.headerVideoButtonText }),
+                i &&
+                    o.jsx(cs.VideoButton, {
+                        children: o.jsx(us, { onClick: s.showVideo, text: a.headerVideoButtonText }),
                     }),
             ],
         });
     }),
-    cs = 'App_64fd6dfc',
-    ls = 'App_shadow_dde54256',
-    ds = 'App_scroll_54c70e4',
-    ms = 'App_scrollBar_2ae0a958',
-    us = 'App_scrollArea_59a9c25',
-    _s = 'App_content_9af800a',
-    bs = 'App_stickyTabs_66711e9',
-    hs = 'App_stickyTabs__show_4c7ff591',
-    xs = 'App_backButton_26dc4949';
-const ps = n(function () {
+    fs = 'App_64fd6dfc',
+    gs = 'App_shadow_eac0adb7',
+    vs = 'App_scroll_54c70e4',
+    Ns = 'App_scrollBar_2ae0a958',
+    js = 'App_scrollArea_59a9c25',
+    ks = 'App_content_9af800a',
+    ws = 'App_stickyTabs_66711e9',
+    ys = 'App_stickyTabs__show_4c7ff591',
+    Cs = 'App_backButton_26dc4949';
+const Ts = n(function () {
     const e = K(),
         { model: s, controls: a } = e,
-        { images: t, texts: r, sounds: n } = s.computes.resources(),
+        { images: t, texts: i, sounds: n } = s.computes.resources(),
         c = s.sticky.get(),
         l = s.computes.displayTabs(),
         d = T();
     return (
         L(a.close),
         o.jsxs('div', {
-            className: cs,
+            className: fs,
             style: { backgroundImage: `url(${t.background})` },
             children: [
                 o.jsx('div', {
-                    className: ls,
+                    className: gs,
                     style: { maskImage: `url(${t.mask})` },
                     children: o.jsx(S.Vertical.Default, {
                         api: d,
-                        className: ds,
-                        barClassNames: { base: ms },
-                        scrollClassNames: { content: us },
+                        className: vs,
+                        barClassNames: { base: Ns },
+                        scrollClassNames: { content: js },
                         children: o.jsxs('div', {
-                            className: _s,
-                            children: [o.jsx(ns, {}), o.jsx(Ae, { scrollApi: d }), o.jsx(qe, {})],
+                            className: ks,
+                            children: [o.jsx(xs, {}), o.jsx(Ve, { scrollApi: d }), o.jsx(Ke, {})],
                         }),
                     }),
                 }),
-                l && o.jsx('div', { className: i(bs, c && hs), children: o.jsx(Re, {}) }),
+                l && o.jsx('div', { className: r(ws, c && ys), children: o.jsx($e, {}) }),
                 o.jsx('div', {
-                    className: xs,
-                    children: o.jsx(B, { caption: r.backButton, type: 'back', side: 'left', onClick: a.close }),
+                    className: Cs,
+                    children: o.jsx(B, { caption: i.backButton, type: 'back', side: 'left', onClick: a.close }),
                 }),
             ],
         })
     );
 });
-P(o.jsx(J, { children: o.jsx(ps, {}) }));
+P(o.jsx(J, { children: o.jsx(Ts, {}) }));

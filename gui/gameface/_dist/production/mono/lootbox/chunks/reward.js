@@ -1,17 +1,17 @@
-import { r as e, q as t, s, t as a, h as n, p as i, j as o, e as r } from './vendor.js';
+import { r as e, s as t, t as s, v as n, i as a, q as i, j as o, e as r } from './vendor.js';
 import {
     ag as c,
     ah as l,
-    ai as d,
-    aj as u,
+    ai as u,
+    aj as d,
     a1 as m,
     a3 as f,
-    n as p,
+    t as p,
     T as g,
-    C as _,
+    C as x,
     B as h,
-    f as v,
-    F as x,
+    f as _,
+    F as v,
     Q as y,
     U as b,
     X as N,
@@ -34,29 +34,29 @@ const q = (t) => {
 };
 function F(t) {
     return () => {
-        const { steps: s, autoStart: a = !0 } = t,
-            n = e.useRef(0),
+        const { steps: s, autoStart: n = !0 } = t,
+            a = e.useRef(0),
             i = e.useRef(null),
             o = e.useRef('idle'),
             r = c(),
             m = l(),
-            f = d(),
+            f = u(),
             p = e.useMemo(() => {
                 const e = () => {
-                    if (n.current >= s.length) return ((o.current = 'end'), void r.trigger('end'));
-                    const t = s[n.current],
-                        a = s[n.current - 1],
-                        c = (a && !a.pauseNextSteps && a.duration) || 0,
+                    if (a.current >= s.length) return ((o.current = 'end'), void r.trigger('end'));
+                    const t = s[a.current],
+                        n = s[a.current - 1],
+                        c = (n && !n.pauseNextSteps && n.duration) || 0,
                         l = (t.delay || 0) + c;
                     (m.run(() => {
                         if (!i.current)
                             return void console.error(
-                                `${s[n.current].name} step don't know on what rootRef it should be set`,
+                                `${s[a.current].name} step don't know on what rootRef it should be set`,
                             );
-                        const t = s[n.current];
+                        const t = s[a.current];
                         if ((i.current.classList.add(t.name), r.trigger('change', t), t.pauseNextSteps))
-                            return ((o.current = 'paused'), r.trigger('pause'), void n.current++);
-                        (n.current++, e());
+                            return ((o.current = 'paused'), r.trigger('pause'), void a.current++);
+                        (a.current++, e());
                     }, l),
                         (o.current = 'running'));
                 };
@@ -98,28 +98,30 @@ function F(t) {
                                   r.trigger('reset'))
                                 : console.error(`${e} tried to be set, but rootRef was not received in api`);
                         }),
-                            (n.current = 0));
+                            (a.current = 0));
                     },
                 };
-            }, [m, n, r, f, s]);
+            }, [m, a, r, f, s]);
         return (
-            u(() => {
-                a && p.start();
+            d(() => {
+                n && p.start();
             }),
             p
         );
     };
 }
-const M = (e, t = '') => {
-        if (!t) return { video: '', image: '', sound: '', stopSound: '' };
-        const s = `lootbox.events.${e}.rarityOverlay.${t}`,
-            a = `gui.maps.icons.lootBoxSystem.events.${e}.rarityOverlay.${t}`,
-            n = `gui_lb_video_appear_${e}_${t}`,
-            i = `${n}_stop`;
-        return { video: O(R.videos, s), image: O(R.images, a), sound: n, stopSound: i };
-    },
-    H = (e, t = '') => '' !== M(e, t).video,
-    D = (t) => {
+function M(e, t = '') {
+    if (!t) return { video: '', image: '', sound: '', stopSound: '' };
+    const s = `lootbox.events.${e}.rarityOverlay.${t}`,
+        n = `gui.maps.icons.lootBoxSystem.events.${e}.rarityOverlay.${t}`,
+        a = `gui_lb_video_appear_${e}_${t}`,
+        i = `${a}_stop`;
+    return { video: O(R.videos, s), image: O(R.images, n), sound: a, stopSound: i };
+}
+function H(e, t = '') {
+    return '' !== M(e, t).video;
+}
+const D = (t) => {
         e.useEffect(() => {
             const e = t.current;
             return () => {
@@ -127,11 +129,11 @@ const M = (e, t = '') => {
             };
         }, [t]);
     },
-    Q = (t, s = !0, a) => {
+    Q = (t, s = !0, n) => {
         e.useEffect(() => {
             const e = t.current;
-            if (s && e) return a ? e.pause() : e.play();
-        }, [a, t]);
+            if (s && e) return n ? e.pause() : e.play();
+        }, [n, t]);
     },
     U = {
         initial: 'initial',
@@ -165,7 +167,7 @@ const M = (e, t = '') => {
             id: 'animation',
             initial: U.initial,
             context: { isAnimationActive: !0 },
-            on: { [ee.setAnimationActive]: { actions: a({ isAnimationActive: (e, t) => t.isAnimationActive }) } },
+            on: { [ee.setAnimationActive]: { actions: n({ isAnimationActive: (e, t) => t.isAnimationActive }) } },
             states: {
                 [U.initial]: { on: { [ee.toSkip]: U.skip, [ee.toPreparation]: U.preparation, [ee.toOpen]: U.open } },
                 [U.skip]: { after: { 100: { target: U.initial } } },
@@ -187,94 +189,91 @@ const M = (e, t = '') => {
     );
 function se(e, t = '-') {
     if ('string' == typeof e) return e;
-    const [s, a] = Object.entries(e)[0];
-    return [s, se(a, t)].join(t);
+    const [s, n] = Object.entries(e)[0];
+    return [s, se(n, t)].join(t);
 }
-const ae = { opacity: 1, display: 'flex', config: { duration: 100, easing: m.easeInOutCubic } },
-    ne = { opacity: 0, config: { duration: 200, easing: m.easeOutCubic } },
+const ne = { opacity: 1, display: 'flex', config: { duration: 100, easing: m.easeInOutCubic } },
+    ae = { opacity: 0, config: { duration: 200, easing: m.easeOutCubic } },
     ie = { opacity: 1, immediate: !0 },
     oe = (t, s) => {
-        const [a, i] = n(() => ({ from: { opacity: 0, display: 'none' } })),
-            [o, r] = n(() => ({ from: { opacity: 1 } }));
+        const [n, i] = a(() => ({ from: { opacity: 0, display: 'none' } })),
+            [o, r] = a(() => ({ from: { opacity: 1 } }));
         return (
             e.useEffect(() => {
                 switch (se(t)) {
                     case U.preparation:
-                        r.start({ ...ne, onRest: s });
+                        r.start({ ...ae, onRest: s });
                         break;
                     case U.waiting:
-                        i.start(ae);
+                        i.start(ne);
                         break;
                     case K:
                     case Y:
                         r.start(ie);
                 }
             }, [t]),
-            e.useMemo(() => ({ loadingStyle: a, contentStyle: o }), [])
+            e.useMemo(() => ({ loadingStyle: n, contentStyle: o }), [])
         );
     },
-    re = (t, s, a) => {
+    re = (t, s, n) => {
         (e.useEffect(() => {
-            a === U.preparation && s
+            n === U.preparation && s
                 ? te.send({ type: ee.toWaiting })
-                : a !== U.waiting || s || te.send({ type: ee.toOpen });
-        }, [s, a]),
+                : n !== U.waiting || s || te.send({ type: ee.toOpen });
+        }, [s, n]),
             e.useEffect(() => {
                 t ? te.send({ type: ee.toSkip }) : te.send({ type: ee.toOpen });
             }, []));
     },
-    ce = {
-        base: 'Background_c9c07c32',
-        image: 'Background_image_935043b1',
-        image__show: 'Background_image__show_7f14a6c7',
-        video: 'Background_video_ef91df',
-        video__show: 'Background_video__show_7f14a6c7',
-        video__hide: 'Background_video__hide_d60dcdcb',
-    },
-    le = { initial: 'initial', video: 'video', image: 'image' };
-function de({ className: t, res: s, enabled: a, minimized: n, onPlay: c, onEnded: l }) {
-    const [d, u] = e.useState(le.initial),
+    ce = 'Background_c9c07c32',
+    le = 'Background_image_935043b1',
+    ue = 'Background_image__show_7f14a6c7',
+    de = 'Background_video_ef91df',
+    me = 'Background_video__show_7f14a6c7',
+    fe = 'Background_video__hide_d60dcdcb',
+    pe = 'initial',
+    ge = 'video',
+    xe = 'image';
+function he({ className: t, res: s, enabled: n, minimized: a, onPlay: c, onEnded: l }) {
+    const [u, d] = e.useState(pe),
         m = e.useRef(null),
         g = se(i(te, (e) => e.value)),
-        _ = $(T),
+        x = $(T),
         h = () => {
-            (d !== le.image && u(le.image), te.send({ type: ee.toRewards }));
+            (u !== xe && d(xe), te.send({ type: ee.toRewards }));
         };
     return (
         e.useEffect(() => {
             switch (g) {
                 case U.skip:
-                    u(le.image);
+                    d(xe);
                     break;
                 case Y:
-                    (u(le.video),
-                        a &&
+                    (d(ge),
+                        n &&
                             (() => {
                                 const e = m.current;
-                                (null == e || e.play(), p.sound(s.sound));
+                                (e?.play(), p.sound(s.sound));
                             })());
                     break;
                 case K:
-                    (u(le.image),
-                        a &&
+                    (d(xe),
+                        n &&
                             (() => {
                                 const e = setTimeout(h, 400);
                             })());
             }
         }, [g]),
-        Q(m, a && d === le.video, n),
+        Q(m, n && u === ge, a),
         D(m),
         o.jsxs('div', {
-            className: r(ce.base, t),
+            className: r(ce, t),
             children: [
-                o.jsx('div', {
-                    className: r(ce.image, d === le.image && ce.image__show),
-                    style: { backgroundImage: `url(${s.image})` },
-                }),
+                o.jsx('div', { className: r(le, u === xe && ue), style: { backgroundImage: `url(${s.image})` } }),
                 o.jsx(f, {
                     ref: m,
-                    className: r(ce.video, d === le.video && ce.video__show, d === le.image && ce.video__hide),
-                    style: _,
+                    className: r(de, u === ge && me, u === xe && fe),
+                    style: x,
                     src: s.video,
                     onEnded: () => {
                         (h(), l());
@@ -285,131 +284,131 @@ function de({ className: t, res: s, enabled: a, minimized: n, onPlay: c, onEnded
         })
     );
 }
-const ue = 'BackgroundSwitcher_61eb6080',
-    me = 'BackgroundSwitcher_background_52e8d550',
-    fe = 'BackgroundSwitcher_background__show_121a5362',
-    pe = 'BackgroundSwitcher_background__hide_e139ddcb';
-function ge({ minimized: e, activeType: t, res: s, onEnded: a, onPlay: n, className: i }) {
+const _e = 'BackgroundSwitcher_61eb6080',
+    ve = 'BackgroundSwitcher_background_52e8d550',
+    ye = 'BackgroundSwitcher_background__show_121a5362',
+    be = 'BackgroundSwitcher_background__hide_e139ddcb';
+function Ne({ minimized: e, activeType: t, res: s, onEnded: n, onPlay: a, className: i }) {
     return o.jsx('div', {
-        className: r(ue, i),
+        className: r(_e, i),
         children: Object.keys(s).map((i) => {
             const c = t === i;
             return o.jsx(
-                de,
-                { className: r(me, c ? fe : pe), enabled: c, minimized: e, res: { ...s[i] }, onPlay: n, onEnded: a },
+                he,
+                { className: r(ve, c ? ye : be), enabled: c, minimized: e, res: { ...s[i] }, onPlay: a, onEnded: n },
                 i,
             );
         }),
     });
 }
-const _e = 'Content_8ce13fac';
-const he = 'Waiting_fd38e6db',
-    ve = 'Waiting_loader_e8fbd359';
-const xe = 'Page_36a49111',
-    ye = e.forwardRef(function ({ children: e, className: t }, s) {
-        return o.jsx('div', { ref: s, className: r(xe, t), children: e });
+const je = 'Content_8ce13fac';
+const we = 'Waiting_fd38e6db',
+    ke = 'Waiting_loader_e8fbd359';
+const Ce = 'Page_36a49111',
+    Be = e.forwardRef(function ({ children: e, className: t }, s) {
+        return o.jsx('div', { ref: s, className: r(Ce, t), children: e });
     });
-((ye.Content = function ({ children: e, className: t }) {
-    return o.jsx('div', { className: r(_e, t), children: e });
+((Be.Content = function ({ children: e, className: t }) {
+    return o.jsx('div', { className: r(je, t), children: e });
 }),
-    (ye.Waiting = function ({ image: e, text: t, className: s }) {
-        return o.jsx('div', { className: r(he, s), children: o.jsx(P, { text: t, img: e, className: ve }) });
+    (Be.Waiting = function ({ image: e, text: t, className: s }) {
+        return o.jsx('div', { className: r(we, s), children: o.jsx(P, { text: t, img: e, className: ke }) });
     }));
-const be = 'Body_201f95c6';
-const Ne = 'Checkbox_979f5137';
-const je = 'CloseButton_6aed9432';
-const we = 'Footer_db988f04';
-const ke = 'Header_d0cdba36';
-const Ce = 'Overlay_36dda45e';
-const Be = 'Content_b64ef737';
-function Re({ children: e, className: t }) {
-    return o.jsx('div', { className: r(Be, t), children: e });
+const Re = 'Body_201f95c6';
+const Oe = 'Checkbox_979f5137';
+const Se = 'CloseButton_22c46e56';
+const Ee = 'Footer_db988f04';
+const ze = 'Header_d0cdba36';
+const Te = 'Overlay_36dda45e';
+const Ae = 'Content_b64ef737';
+function $e({ children: e, className: t }) {
+    return o.jsx('div', { className: r(Ae, t), children: e });
 }
-((Re.Overlay = function ({ children: e, className: t }) {
-    return o.jsx('div', { className: r(Ce, t), children: e });
+(($e.Overlay = function ({ children: e, className: t }) {
+    return o.jsx('div', { className: r(Te, t), children: e });
 }),
-    (Re.Header = function ({ children: e, className: t }) {
-        return o.jsx('div', { className: r(ke, t), children: e });
+    ($e.Header = function ({ children: e, className: t }) {
+        return o.jsx('div', { className: r(ze, t), children: e });
     }),
-    (Re.CloseButton = function ({ text: e, onClick: t, className: s }) {
+    ($e.CloseButton = function ({ text: e, onClick: t, className: s }) {
         return o.jsx('div', {
-            className: r(je, s),
+            className: r(Se, s),
             children: o.jsx(g, { caption: e, type: 'close', side: 'right', onClick: t }),
         });
     }),
-    (Re.Body = function ({ children: e, className: t }) {
-        return o.jsx('div', { className: r(be, t), children: e });
+    ($e.Body = function ({ children: e, className: t }) {
+        return o.jsx('div', { className: r(Re, t), children: e });
     }),
-    (Re.Footer = function ({ children: e, className: t }) {
-        return o.jsx('div', { className: r(we, t), children: e });
+    ($e.Footer = function ({ children: e, className: t }) {
+        return o.jsx('div', { className: r(Ee, t), children: e });
     }),
-    (Re.Checkbox = function ({ isActive: e, onClick: t, text: s, size: a, className: n }) {
-        return o.jsx(I, { isActive: e, onClick: t, className: r(Ne, n), text: s, size: a });
+    ($e.Checkbox = function ({ isActive: e, onClick: t, text: s, size: n, className: a }) {
+        return o.jsx(I, { isActive: e, onClick: t, className: r(Oe, a), text: s, size: n });
     }));
-const Oe = 'Buttons_82277d53',
-    Se = 'Buttons_button_c941212c',
-    Ee = 'Buttons_button__first_1b371712';
-const ze = 'Quantity_ee16e2a';
-const Te = { base: 'Controls_405d637b' };
-function Ae({ children: e, className: t }) {
-    return o.jsx('div', { className: r(Te.base, t), children: e });
+const Pe = 'Buttons_82277d53',
+    Ie = 'Buttons_button_c941212c',
+    Le = 'Buttons_button__first_1b371712';
+const Ve = 'Quantity_ee16e2a';
+const We = 'Controls_405d637b';
+function qe({ children: e, className: t }) {
+    return o.jsx('div', { className: r(We, t), children: e });
 }
-((Ae.Buttons = function ({
+((qe.Buttons = function ({
     onOpenClick: e,
     onBackClick: t,
     boxesCount: s,
-    texts: a,
-    openingCount: n = 0,
+    texts: n,
+    openingCount: a = 0,
     className: i,
 }) {
     return o.jsxs('div', {
-        className: r(Oe, i),
+        className: r(Pe, i),
         children: [
             Boolean(s) &&
-                o.jsx(_, {
-                    type: v.main,
+                o.jsx(x, {
+                    type: _.main,
                     size: h.medium,
-                    mixClass: r(Se, Ee),
+                    mixClass: r(Ie, Le),
                     onClick: e,
-                    children: o.jsx(x, { text: a.footerOpenNextButton, binding: { count: Math.min(s, n) } }),
+                    children: o.jsx(v, { text: n.footerOpenNextButton, binding: { count: Math.min(s, a) } }),
                 }),
-            o.jsx(_, { type: v.primary, size: h.medium, mixClass: Se, onClick: t, children: a.footerBackButton }),
+            o.jsx(x, { type: _.primary, size: h.medium, mixClass: Ie, onClick: t, children: n.footerBackButton }),
         ],
     });
 }),
-    (Ae.Quantity = function ({ boxesCount: e, texts: t, className: s }) {
+    (qe.Quantity = function ({ boxesCount: e, texts: t, className: s }) {
         return o.jsx('div', {
-            className: r(ze, s),
+            className: r(Ve, s),
             children: o.jsx(L, { text: e ? t.quantityAvailableTitle : t.quantityNoBoxesTitle, boxesCount: e }),
         });
     }));
-const $e = 'Footer_4308958a',
-    Pe = 'Footer_buttons_b35b594e',
-    Ie = 'Footer_quantity_78248d31',
-    Le = 'Footer_purchase_7e6b81d6';
-function Ve({ actions: e, boxesCount: t, texts: s, images: a, sounds: n, openingCount: r = 0, isShopVisible: c }) {
+const Fe = 'Footer_4308958a',
+    Me = 'Footer_buttons_b35b594e',
+    He = 'Footer_quantity_78248d31',
+    De = 'Footer_purchase_7e6b81d6';
+function Qe({ actions: e, boxesCount: t, texts: s, images: n, sounds: a, openingCount: r = 0, isShopVisible: c }) {
     const l = y(() => e.openNext(), [e], 1100),
-        d = i(te, (e) => e.value),
-        u = () => {
-            d === U.initial && t && l();
+        u = i(te, (e) => e.value),
+        d = () => {
+            u === U.initial && t && l();
         };
     return (
-        b(N.SPACE, u, !0),
-        o.jsxs(Ae, {
-            className: $e,
+        b(N.SPACE, d, !0),
+        o.jsxs(qe, {
+            className: Fe,
             children: [
-                o.jsx(Ae.Buttons, {
+                o.jsx(qe.Buttons, {
                     boxesCount: t,
-                    onOpenClick: u,
+                    onOpenClick: d,
                     onBackClick: () => {
-                        d === U.initial && e.goBack();
+                        u === U.initial && e.goBack();
                     },
                     texts: { footerOpenNextButton: s.footerOpenNextButton, footerBackButton: s.footerBackButton },
                     openingCount: r,
-                    className: Pe,
+                    className: Me,
                 }),
-                o.jsx(Ae.Quantity, {
-                    className: Ie,
+                o.jsx(qe.Quantity, {
+                    className: He,
                     boxesCount: t,
                     texts: {
                         quantityAvailableTitle: s.quantityAvailableTitle,
@@ -420,80 +419,80 @@ function Ve({ actions: e, boxesCount: t, texts: s, images: a, sounds: n, opening
                     0 === t &&
                     o.jsx(V, {
                         text: s.footerPurchaseButtonText,
-                        image: a.iconEmpty,
-                        sounds: n,
-                        className: Le,
+                        image: n.iconEmpty,
+                        sounds: a,
+                        className: De,
                         onClick: () => {
-                            d === U.initial && e.buyBoxes();
+                            u === U.initial && e.buyBoxes();
                         },
                     }),
             ],
         })
     );
 }
-const We = 'Close_64793949';
-const qe = 'Content_ea4d5755';
-const Fe = 'Box_1c599cfe';
-const Me = 'Customization_9089d288',
-    He = 'Customization_styleTitle_7be89690',
-    De = 'Customization_styleDescription_36891f79',
-    Qe = 'Customization_vehicleInfoStyle_db26eef3',
-    Ue = 'Customization_vehicleTypeStyle_bb8b9045';
-const Xe = 'Vehicle_c03ad304',
-    Ze = 'Vehicle_vehicleInfo_6e425a48',
-    Ge = 'Vehicle_vehicleType_dd95ec68';
-const Je = 'Media_5cb01c57',
-    Ke = 'Media_video_40807d1',
-    Ye = 'Media_image_a3b21141';
-const et = 'Title_1f51204b';
-const tt = { base: 'Page_9fc130d7' };
-function st({ children: e, className: t }) {
-    return o.jsx('div', { className: r(tt.base, t), children: e });
+const Ue = 'Close_ef44eba3';
+const Xe = 'Content_ea4d5755';
+const Ze = 'Box_1c599cfe';
+const Ge = 'Customization_9089d288',
+    Je = 'Customization_styleTitle_7be89690',
+    Ke = 'Customization_styleDescription_36891f79',
+    Ye = 'Customization_vehicleInfoStyle_db26eef3',
+    et = 'Customization_vehicleTypeStyle_bb8b9045';
+const tt = 'Vehicle_c03ad304',
+    st = 'Vehicle_vehicleInfo_6e425a48',
+    nt = 'Vehicle_vehicleType_dd95ec68';
+const at = 'Media_5cb01c57',
+    it = 'Media_video_40807d1',
+    ot = 'Media_image_a3b21141';
+const rt = 'Title_1f51204b';
+const ct = 'Page_9fc130d7';
+function lt({ children: e, className: t }) {
+    return o.jsx('div', { className: r(ct, t), children: e });
 }
-((st.Media = function ({ videoSrc: e, playerRef: t, onVideoEnded: s, image: a, className: n, forceImage: i = !0 }) {
+((lt.Media = function ({ videoSrc: e, playerRef: t, onVideoEnded: s, image: n, className: a, forceImage: i = !0 }) {
     const c = $(T);
     return (
         D(t),
         o.jsx('div', {
-            className: r(Je, n),
+            className: r(at, a),
             children: i
-                ? o.jsx('div', { className: Ye, style: { backgroundImage: `url(${a})` } })
-                : o.jsx(f, { style: c, src: e, ref: t, autoplay: !0, onEnded: s, className: Ke }),
+                ? o.jsx('div', { className: ot, style: { backgroundImage: `url(${n})` } })
+                : o.jsx(f, { style: c, src: e, ref: t, autoplay: !0, onEnded: s, className: it }),
         })
     );
 }),
-    (st.Close = function ({ onClose: e, text: t, className: s }) {
+    (lt.Close = function ({ onClose: e, text: t, className: s }) {
         return o.jsx('div', {
-            className: r(We, s),
+            className: r(Ue, s),
             children: o.jsx(g, { caption: t, type: 'close', side: 'right', onClick: e }),
         });
     }),
-    (st.Content = function ({ children: e, className: t }) {
-        return o.jsx('div', { className: r(qe, t), children: e });
+    (lt.Content = function ({ children: e, className: t }) {
+        return o.jsx('div', { className: r(Xe, t), children: e });
     }),
-    (st.Title = function ({ text: e, className: t }) {
-        return o.jsx('div', { className: r(et, t), children: e });
+    (lt.Title = function ({ text: e, className: t }) {
+        return o.jsx('div', { className: r(rt, t), children: e });
     }),
-    (st.Vehicle = function ({ info: e, className: t }) {
+    (lt.Vehicle = function ({ info: e, className: t }) {
         return o.jsx('div', {
-            className: r(Xe, t),
+            className: r(tt, t),
             children: o.jsx(W, {
                 vehicleName: e.vehicleName,
                 vehicleLvl: e.vehicleLvl,
                 isElite: e.isElite,
                 vehicleType: e.vehicleType,
-                classNames: { base: Ze, type: Ge },
+                classNames: { base: st, type: nt },
             }),
         });
     }),
-    (st.Box = function ({ text: e, className: t }) {
-        return o.jsx('div', { className: r(Fe, t), children: e });
+    (lt.Box = function ({ text: e, className: t }) {
+        return o.jsx('div', { className: r(Ze, t), children: e });
     }),
-    (st.Customization = function ({ bonus: e, texts: t }) {
+    (lt.Customization = function ({ bonus: e, texts: t }) {
         return o.jsxs('div', {
-            className: Me,
+            className: Ge,
             children: [
-                o.jsx(j, { text: t.title, params: { style: e.label }, className: He, upgradeLegacy: !0 }),
+                o.jsx(j, { text: t.title, params: { style: e.label }, className: Je, upgradeLegacy: !0 }),
                 o.jsx(j, {
                     text: t.description,
                     params: {
@@ -502,24 +501,24 @@ function st({ children: e, className: t }) {
                             vehicleLvl: e.level,
                             isElite: e.isElite,
                             vehicleType: e.type,
-                            classNames: { base: Qe, type: Ue },
+                            classNames: { base: Ye, type: et },
                         }),
                     },
-                    className: De,
+                    className: Ke,
                     upgradeLegacy: !0,
                 }),
             ],
         });
     }));
-const at = { base: 'Description_dc593933' };
-function nt({ rareBonus: e, texts: t }) {
+const ut = 'Description_dc593933';
+function dt({ rareBonus: e, texts: t }) {
     return e
         ? o.jsx('div', {
-              className: at.base,
+              className: ut,
               children: (() => {
                   switch (e.name) {
                       case 'vehicles':
-                          return o.jsx(st.Vehicle, {
+                          return o.jsx(lt.Vehicle, {
                               info: {
                                   vehicleName: e.label,
                                   vehicleLvl: e.level,
@@ -528,9 +527,9 @@ function nt({ rareBonus: e, texts: t }) {
                               },
                           });
                       case 'lootBox':
-                          return o.jsx(st.Box, { text: e.label });
+                          return o.jsx(lt.Box, { text: e.label });
                       case 'customizations':
-                          return o.jsx(st.Customization, {
+                          return o.jsx(lt.Customization, {
                               bonus: e,
                               texts: { title: t.rareOverlayStyleTitle, description: t.rareOverlayStyleDescription },
                           });
@@ -541,19 +540,19 @@ function nt({ rareBonus: e, texts: t }) {
           })
         : null;
 }
-const it = 'RewardOverlay_fbbf0c4d',
-    ot = 'RewardOverlay_content_24ee1d81',
-    rt = 'RewardOverlay_title_4f6ab0a9',
-    ct = 'RewardOverlay_continueButton_df861671',
-    lt = 'RewardOverlay_close_b07c6e27',
-    dt = 'RewardOverlay_media_1a313407';
-function ut({ res: t, rareBonus: s, texts: a, minimized: n, controls: { onClose: i, onPlay: r, onEnded: c } }) {
-    const [l, d] = e.useState(!1),
-        [u, m] = e.useState(!1),
+const mt = 'RewardOverlay_fbbf0c4d',
+    ft = 'RewardOverlay_content_24ee1d81',
+    pt = 'RewardOverlay_title_4f6ab0a9',
+    gt = 'RewardOverlay_continueButton_df861671',
+    xt = 'RewardOverlay_close_b07c6e27',
+    ht = 'RewardOverlay_media_1a313407';
+function _t({ res: t, rareBonus: s, texts: n, minimized: a, controls: { onClose: i, onPlay: r, onEnded: c } }) {
+    const [l, u] = e.useState(!1),
+        [d, m] = e.useState(!1),
         [f, g] = e.useState(!1),
-        x = e.useRef(null),
+        v = e.useRef(null),
         y = () => {
-            (m(!1), d(!0), c());
+            (m(!1), u(!0), c());
         };
     return (
         e.useEffect(() => {
@@ -562,16 +561,16 @@ function ut({ res: t, rareBonus: s, texts: a, minimized: n, controls: { onClose:
         k(() => {
             l ? i() : w.isHigh() && (p.sound(t.stopSound), g(!0), y());
         }),
-        Q(x, u, n),
+        Q(v, d, a),
         e.useEffect(() => {
-            if (w.isLow()) return C(() => d(!0), 300);
+            if (w.isLow()) return C(() => u(!0), 300);
         }, []),
-        o.jsxs(st, {
-            className: it,
+        o.jsxs(lt, {
+            className: mt,
             children: [
-                o.jsx(st.Media, {
-                    className: dt,
-                    playerRef: x,
+                o.jsx(lt.Media, {
+                    className: ht,
+                    playerRef: v,
                     videoSrc: t.video,
                     onVideoEnded: y,
                     forceImage: w.isLow() || f,
@@ -580,100 +579,92 @@ function ut({ res: t, rareBonus: s, texts: a, minimized: n, controls: { onClose:
                 l &&
                     o.jsxs(o.Fragment, {
                         children: [
-                            o.jsxs(st.Content, {
-                                className: ot,
+                            o.jsxs(lt.Content, {
+                                className: ft,
                                 children: [
-                                    o.jsx(st.Title, { className: rt, text: a.rareOverlayTitle }),
-                                    o.jsx(nt, { rareBonus: s, texts: a }),
-                                    o.jsx(_, {
-                                        type: v.primary,
+                                    o.jsx(lt.Title, { className: pt, text: n.rareOverlayTitle }),
+                                    o.jsx(dt, { rareBonus: s, texts: n }),
+                                    o.jsx(x, {
+                                        type: _.primary,
                                         size: h.medium,
-                                        mixClass: ct,
+                                        mixClass: gt,
                                         onClick: i,
-                                        children: a.rareOverlayButtonContinue,
+                                        children: n.rareOverlayButtonContinue,
                                     }),
                                 ],
                             }),
-                            o.jsx(st.Close, { className: lt, text: a.closeButton, onClose: i }),
+                            o.jsx(lt.Close, { className: xt, text: n.closeButton, onClose: i }),
                         ],
                     }),
             ],
         })
     );
 }
-const mt = 'RewardVideo_7d4ca677',
-    ft = 'RewardVideo_video_d1f193ab',
-    pt = 'RewardVideo_video__show_7ae3a7e8';
-function gt({ className: t, style: s = {}, src: a, sound: n, show: i, timer: c, onEnded: l }) {
-    const d = e.useRef(null),
-        u = e.useRef(!1);
+const vt = 'RewardVideo_7d4ca677',
+    yt = 'RewardVideo_video_d1f193ab',
+    bt = 'RewardVideo_video__show_7ae3a7e8';
+function Nt({ className: t, style: s = {}, src: n, sound: a, show: i, timer: c, onEnded: l }) {
+    const u = e.useRef(null),
+        d = e.useRef(!1);
     return (
-        D(d),
+        D(u),
         e.useEffect(() => {
-            var e;
-            i && ((u.current = !1), null == (e = d.current) || e.play(), p.sound(n));
-        }, [i, n]),
+            i && ((d.current = !1), u.current?.play(), p.sound(a));
+        }, [i, a]),
         e.useEffect(() => {
-            var e, t;
-            const s = (null == (e = d.current) ? void 0 : e.getDuration()) || 0;
-            null == (t = d.current) ||
-                t.onChangeTime((e) => {
-                    if (u && !u.current) {
-                        const t = e.currentTime;
-                        if (i && s && t && s - t <= c.remainder) return ((u.current = !0), void c.next());
-                    }
-                });
-        }, [d.current, i]),
+            const e = u.current?.getDuration() || 0;
+            u.current?.onChangeTime((t) => {
+                if (d && !d.current) {
+                    const s = t.currentTime;
+                    if (i && e && s && e - s <= c.remainder) return ((d.current = !0), void c.next());
+                }
+            });
+        }, [u.current, i]),
         o.jsx('div', {
-            className: r(mt, t),
+            className: r(vt, t),
             style: s,
-            children: o.jsx(f, { className: r(ft, i && pt), src: a, ref: d, onEnded: l }),
+            children: o.jsx(f, { className: r(yt, i && bt), src: n, ref: u, onEnded: l }),
         })
     );
 }
-const _t = 'Count_1b4af16d';
-const ht = {
-    root: 'Overlay_root_3c7155a',
-    base: 'Overlay_4754cdca',
-    base__big: 'Overlay_base__big_354ebcfe',
-    fadeIn: 'Overlay_fadeIn_3c7155a',
-};
-const vt = { base: 'Badge_5baf6f33' };
-function xt({ children: e, className: t = '' }) {
-    return o.jsx('div', { className: r(vt.base, t), children: e });
+const jt = 'Count_1b4af16d';
+const wt = { base: 'Overlay_4754cdca', base__big: 'Overlay_base__big_354ebcfe', fadeIn: 'Overlay_fadeIn_3c7155a' };
+const kt = 'Badge_5baf6f33';
+function Ct({ children: e, className: t = '' }) {
+    return o.jsx('div', { className: r(kt, t), children: e });
 }
-((xt.Count = function ({ count: e, text: t, className: s = '', style: a = {} }) {
+((Ct.Count = function ({ count: e, text: t, className: s = '', style: n = {} }) {
     return o.jsx('div', {
-        className: r(_t, s),
-        style: a,
-        children: o.jsx(x, { text: t, binding: { count: e }, formatWithBrackets: !0 }),
+        className: r(jt, s),
+        style: n,
+        children: o.jsx(v, { text: t, binding: { count: e }, formatWithBrackets: !0 }),
     });
 }),
-    (xt.Overlay = function ({ reward: e, size: t, className: s = '' }) {
-        const { name: a, overlayType: n } = e;
+    (Ct.Overlay = function ({ reward: e, size: t, className: s = '' }) {
+        const { name: n, overlayType: a } = e;
         return o.jsx('div', {
-            className: r(ht.base, !A.includes(a) && ht[`base__${t}`], s),
-            style: { backgroundImage: `url(${S(t, a, n)})` },
+            className: r(wt.base, !A.includes(n) && wt[`base__${t}`], s),
+            style: { backgroundImage: `url(${S(t, n, a)})` },
         });
     }));
-const yt = { base: 'Icon_2beee90a' };
-function bt({ icon: e, sizes: t, className: s = '' }) {
+const Bt = 'Icon_2beee90a';
+function Rt({ icon: e, sizes: t, className: s = '' }) {
     return o.jsx('div', {
-        className: r(yt.base, s),
+        className: r(Bt, s),
         style: { backgroundImage: `url(${e})`, width: t.width, height: t.height },
     });
 }
-const Nt = 'Reward_2df31201',
-    jt = 'Reward_count_298a4419',
-    wt = (e, t) => {
-        const { name: s, isRent: a } = e;
+const Ot = 'Reward_2df31201',
+    St = 'Reward_count_298a4419',
+    Et = (e, t) => {
+        const { name: s, isRent: n } = e;
         return s === E.vehicles && t === B.Big
-            ? 'R.images.gui.maps.icons.quests.bonuses.big.vehicles' + (a ? '_rent' : '')
+            ? 'R.images.gui.maps.icons.quests.bonuses.big.vehicles' + (n ? '_rent' : '')
             : s === E.customizations && t === B.Big
               ? z({ ...e, id: 0 }, t)
               : z(e, t);
     },
-    kt = (e, t) => {
+    zt = (e, t) => {
         if (t === B.Big)
             switch (e) {
                 case E.tokens:
@@ -684,41 +675,41 @@ const Nt = 'Reward_2df31201',
             }
         return { right: '13%', bottom: '1%' };
     };
-function Ct({ reward: e, sizes: t, countText: s, className: a = '' }) {
-    const { count: n, name: i, overlayType: c } = e,
+function Tt({ reward: e, sizes: t, countText: s, className: n = '' }) {
+    const { count: a, name: i, overlayType: c } = e,
         l =
             i === E.premiumPlus
                 ? { height: t.premDaysHeight || t.rewardHeight, width: t.premDaysWidth || t.rewardWidth }
                 : { height: t.rewardHeight, width: t.rewardWidth };
-    return o.jsxs(xt, {
-        className: r(Nt, a),
+    return o.jsxs(Ct, {
+        className: r(Ot, n),
         children: [
-            o.jsx(bt, { icon: wt(e, t.imageSize), sizes: l }),
-            n > 1 &&
-                o.jsx(xt.Count, {
+            o.jsx(Rt, { icon: Et(e, t.imageSize), sizes: l }),
+            a > 1 &&
+                o.jsx(Ct.Count, {
                     count: e.count,
                     text: s,
-                    className: jt,
-                    style: { fontSize: t.countHeight, ...kt(i, t.imageSize) },
+                    className: St,
+                    style: { fontSize: t.countHeight, ...zt(i, t.imageSize) },
                 }),
-            c && o.jsx(xt.Overlay, { reward: e, size: t.imageSize }),
+            c && o.jsx(Ct.Overlay, { reward: e, size: t.imageSize }),
         ],
     });
 }
 export {
-    ge as B,
-    Re as C,
-    Ve as F,
-    bt as I,
+    Ne as B,
+    $e as C,
+    Qe as F,
+    Rt as I,
     J as O,
-    ye as P,
-    Ct as R,
+    Be as P,
+    Tt as R,
     U as a,
     te as b,
     F as c,
     ee as d,
-    gt as e,
-    ut as f,
+    Nt as e,
+    _t as f,
     re as g,
     H as h,
     oe as i,

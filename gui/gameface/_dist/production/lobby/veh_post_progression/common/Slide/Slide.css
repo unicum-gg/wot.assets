@@ -1,14 +1,14 @@
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.Description_base_a1 {
+.Description_base_ba836 {
     display: flex;
     justify-content: center;
 }
 
-.SlideContent_base_73 {
+.SlideContent_base_f2d29 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,56 +16,56 @@
     position: relative;
 }
 
-.SlideContent_base__little_77 {
+.SlideContent_base__little_aa9ab {
     height: 400rem;
     margin-left: 30rem;
     margin-right: 30rem;
 }
 
-.SlideContent_base__small_5c.SlideContent_base__little_77,
-.SlideContent_base__extraSmall_93.SlideContent_base__little_77 {
+.SlideContent_base__small_fb458.SlideContent_base__little_aa9ab,
+.SlideContent_base__extraSmall_f6476.SlideContent_base__little_aa9ab {
     height: 300rem;
     margin-left: 40rem;
     margin-right: 40rem;
 }
-.SlideContent_content_3b {
+.SlideContent_content_c6ac9 {
     height: 475rem;
     margin: 0 30rem;
 }
-.SlideContent_content__small_ff,
-.SlideContent_content__extraSmall_0d {
+.SlideContent_content__small_c9d7d,
+.SlideContent_content__extraSmall_ef528 {
     height: 375rem;
     margin: 0 40rem;
 }
-.SlideContent_imageWrapper_d9 {
+.SlideContent_imageWrapper_b8a46 {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 960rem;
     height: 400rem;
 }
-.SlideContent_base__little_77 .SlideContent_imageWrapper_d9 {
+.SlideContent_base__little_aa9ab .SlideContent_imageWrapper_b8a46 {
     width: 288rem;
     height: 300rem;
 }
-.SlideContent_imageWrapper__small_b3,
-.SlideContent_imageWrapper__extraSmall_c0 {
+.SlideContent_imageWrapper__small_b6d20,
+.SlideContent_imageWrapper__extraSmall_fd6fe {
     width: 700rem;
     height: 300rem;
 }
-.SlideContent_base__little_77 .SlideContent_imageWrapper__small_b3,
-.SlideContent_base__little_77 .SlideContent_imageWrapper__extraSmall_c0 {
+.SlideContent_base__little_aa9ab .SlideContent_imageWrapper__small_b6d20,
+.SlideContent_base__little_aa9ab .SlideContent_imageWrapper__extraSmall_fd6fe {
     width: 192rem;
     height: 192rem;
 }
-.SlideContent_image_74 {
+.SlideContent_image_f05ee {
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
-.SlideContent_description_5e {
+.SlideContent_description_cea05 {
     width: 754rem;
     color: #8c8c7e;
     font-size: 16rem;
@@ -76,37 +76,37 @@
     left: 50%;
     transform: translateX(-50%);
 }
-.SlideContent_base__little_77 .SlideContent_description_5e {
+.SlideContent_base__little_aa9ab .SlideContent_description_cea05 {
     width: 300rem;
     top: 315rem;
 }
-.SlideContent_description__extraLarge_76 {
+.SlideContent_description__extraLarge_f420a {
     top: 425rem;
 }
-.SlideContent_base__little_77 .SlideContent_description__extraLarge_76 {
+.SlideContent_base__little_aa9ab .SlideContent_description__extraLarge_f420a {
     top: 325rem;
 }
-.SlideContent_description__small_ca,
-.SlideContent_description__extraSmall_4c {
+.SlideContent_description__small_f5ec2,
+.SlideContent_description__extraSmall_d1cc3 {
     font-size: 14rem;
     top: 315rem;
 }
-.SlideContent_base__little_77 .SlideContent_description__small_ca,
-.SlideContent_base__little_77 .SlideContent_description__extraSmall_4c {
+.SlideContent_base__little_aa9ab .SlideContent_description__small_f5ec2,
+.SlideContent_base__little_aa9ab .SlideContent_description__extraSmall_d1cc3 {
     width: 230rem;
     top: 207rem;
 }
-.SlideContent_descriptionTagAccent_d0 {
+.SlideContent_descriptionTagAccent_dfa70 {
     color: #ffdd99;
 }
 
-.Slide_base_90 {
+.Slide_base_bcca4 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.Slide_title_9b {
+.Slide_title_f90da {
     color: #f2f2f7;
     font-size: 24rem;
     font-weight: 700;
@@ -115,9 +115,9 @@
     text-align: center;
 }
 
-.Slide_title__medium_4c,
-.Slide_title__large_6b,
-.Slide_title__extraLarge_9a {
+.Slide_title__medium_d43b0,
+.Slide_title__large_def08,
+.Slide_title__extraLarge_acf9d {
     color: #f2f2f7;
     font-size: 36rem;
     font-weight: 700;
@@ -125,13 +125,13 @@
     height: 80rem;
 }
 
-.Slide_content_a1 {
+.Slide_content_b8d47 {
     display: flex;
     justify-content: center;
     width: 960rem;
 }
 
-.Slide_content__small_4d,
-.Slide_content__extraSmall_bb {
+.Slide_content__small_badfd,
+.Slide_content__extraSmall_b5fef {
     width: 700rem;
 }

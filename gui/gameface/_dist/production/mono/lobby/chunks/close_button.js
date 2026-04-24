@@ -1,40 +1,37 @@
-import { j as o, w as s } from './vendor.js';
-import { az as e, p as n } from './lib.js';
-const l = 'CloseButton_49a682e7',
-    a = 'CloseButton_icon_b31f68a5',
-    u = 'CloseButton_iconHover_b5894825',
-    i = { heading: 'Page_heading_2dd55438', close: 'Page_close_401a9518' },
-    c = ({
-        onClick: c,
+import { j as o, a3 as s } from './vendor.js';
+import { dO as e, av as n } from './lib.js';
+const a = 'CloseButton_49a682e7',
+    i = 'CloseButton_icon_b31f68a5',
+    l = 'CloseButton_iconHover_b5894825',
+    c = { heading: 'Page_heading_2dd55438', close: 'Page_close_401a9518' },
+    u = ({
+        onClick: u,
         className: d,
         classNames: r,
         onMouseEnter: t,
         onMouseLeave: v,
         onMouseDown: m,
         onMouseUp: _,
-        soundHover: p = 'highlight',
-        soundClick: M = 'play',
+        soundHover: M = 'highlight',
+        soundClick: p = 'play',
     }) => {
-        e(c);
+        e(u);
         return o.jsxs('div', {
-            className: s(l, i.close, d),
+            className: s(a, c.close, d),
             onMouseEnter: (o) => {
-                (null == t || t(o), n.sound(p));
+                (t?.(o), n.sound(M));
             },
             onMouseLeave: (o) => {
-                null == v || v(o);
+                v?.(o);
             },
             onMouseDown: (o) => {
-                (null == m || m(o), n.sound(M));
+                (m?.(o), n.sound(p));
             },
             onMouseUp: (o) => {
-                null == _ || _(o);
+                _?.(o);
             },
-            onClick: c,
-            children: [
-                o.jsx('div', { className: s(a, null == r ? void 0 : r.icon) }),
-                o.jsx('div', { className: s(u, null == r ? void 0 : r.iconHover) }),
-            ],
+            onClick: u,
+            children: [o.jsx('div', { className: s(i, r?.icon) }), o.jsx('div', { className: s(l, r?.iconHover) })],
         });
     };
-export { c as C, i as p };
+export { u as C, c as p };

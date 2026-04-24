@@ -1,4 +1,4 @@
-import { m as e, j as s, r as a, n as c, p as i, e as r } from '../../../chunks/vendor.js';
+import { q as e, j as s, r as a, n as c, p as i, e as r } from '../../../chunks/vendor.js';
 import {
     i as l,
     e as o,
@@ -8,8 +8,8 @@ import {
     c as p,
     F as h,
     B as m,
-    t as _,
-    p as v,
+    p as _,
+    t as v,
     r as u,
     U as j,
 } from '../../../chunks/lib.js';
@@ -53,11 +53,11 @@ import { a as f } from '../../../chunks/sounds.js';
     L = 'App_vehicleInfo_81a4bb44',
     P = 'App_receiveWrapper_31b438f8',
     W = 'App_receiveDecoration_8cd659f9',
-    F = 'App_receiveTitle_292b078d',
-    O = 'App_header_34ccd58f',
-    Q = 'App_hangarButton_6d5ac65d',
-    U = 'App_formatText_8ecdbb0e',
-    q = R.strings.resource_well,
+    q = 'App_receiveTitle_292b078d',
+    F = 'App_header_34ccd58f',
+    O = 'App_hangarButton_6d5ac65d',
+    Q = 'App_formatText_8ecdbb0e',
+    U = R.strings.resource_well,
     G = e(function () {
         const { model: e, controls: l } = A(),
             u = e.personalNumber.get(),
@@ -90,8 +90,8 @@ import { a as f } from '../../../chunks/sounds.js';
                                           className: D,
                                           children: [
                                               s.jsx(h, {
-                                                  className: U,
-                                                  text: q.awardView.vehicleNumberTitle(),
+                                                  className: Q,
+                                                  text: U.awardView.vehicleNumberTitle(),
                                                   params: {
                                                       vehicleInfo: s.jsx(b, { vehicleInfo: e.vehicleInfo.get() }),
                                                   },
@@ -109,8 +109,8 @@ import { a as f } from '../../../chunks/sounds.js';
                                                   children: [
                                                       s.jsx('div', { className: W }),
                                                       s.jsx('div', {
-                                                          className: F,
-                                                          children: q.awardView.completedProgressionView.received(),
+                                                          className: q,
+                                                          children: U.awardView.completedProgressionView.received(),
                                                       }),
                                                   ],
                                               }),
@@ -122,15 +122,15 @@ import { a as f } from '../../../chunks/sounds.js';
                     s.jsxs('div', {
                         className: M,
                         children: [
-                            s.jsx('div', { className: O, children: s.jsx(I, {}) }),
+                            s.jsx('div', { className: F, children: s.jsx(I, {}) }),
                             s.jsx('div', {
-                                className: Q,
+                                className: O,
                                 children: s.jsx(m, {
-                                    theme: _.primary,
+                                    theme: v.primary,
                                     onClick: j,
-                                    onMouseEnter: () => v.sound(f),
+                                    onMouseEnter: () => _.sound(f),
                                     size: N.size,
-                                    children: q.awardView.toHangar(),
+                                    children: U.awardView.toHangar(),
                                 }),
                             }),
                         ],

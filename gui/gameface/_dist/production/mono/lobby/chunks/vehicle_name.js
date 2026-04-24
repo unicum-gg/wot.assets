@@ -1,5 +1,5 @@
-import { j as e, w as a } from './vendor.js';
-import { bQ as l, bq as i, Z as s, ad as _, T as c } from './lib.js';
+import { j as e, a3 as a } from './vendor.js';
+import { aO as l, a8 as s, dq as i, dB as _, dc as c } from './lib.js';
 const n = {
     base: 'VehicleRole_b05c9386',
     icon: 'VehicleRole_icon_a3da323b',
@@ -22,20 +22,17 @@ const n = {
     blink: 'VehicleRole_blink_741b56a9',
     slideUpIn: 'VehicleRole_slideUpIn_741b56a9',
 };
-var o = ((e) => ((e.x16 = '16x16'), (e.x24 = '24x24'), (e.x32 = '32x32'), (e.x48 = '32x32'), e))(o || {});
-function r({ role: s, size: _ = '24x24', roleIconFolderPath: c, className: o, classNames: r }) {
+var r = ((e) => ((e.x16 = '16x16'), (e.x24 = '24x24'), (e.x32 = '32x32'), (e.x48 = '32x32'), e))(r || {});
+function o({ role: i, size: _ = '24x24', roleIconFolderPath: c, className: r, classNames: o }) {
     const h = (function (e) {
         const a = e.split('_');
         return a[a.length - 1] || '';
-    })(l(s));
+    })(l(i));
     return e.jsx('div', {
-        className: a(n.base, n[`base__${_}`], o),
+        className: a(n.base, n[`base__${_}`], r),
         children: c
-            ? e.jsx('div', {
-                  className: a(n.icon, null == r ? void 0 : r.icon),
-                  style: { backgroundImage: `url(${null == c ? void 0 : c.$dyn(h)})` },
-              })
-            : e.jsx(i, { roleKey: h, size: `x${_}`, classNames: { base: null == r ? void 0 : r.base } }),
+            ? e.jsx('div', { className: a(n.icon, o?.icon), style: { backgroundImage: `url(${c?.$dyn(h)})` } })
+            : e.jsx(s, { roleKey: h, size: `x${_}`, classNames: { base: o?.base } }),
     });
 }
 const h = {
@@ -66,44 +63,44 @@ const h = {
     slideUpIn: 'VehicleName_slideUpIn_e43b4676',
 };
 var t = ((e) => ((e.x24 = '24x24'), (e.x48 = '48x48'), (e.x64 = '64x64'), (e.x96 = '96x96'), e))(t || {});
-const b = { '24x24': o.x16, '48x48': o.x24, '64x64': o.x32, '96x96': o.x32 },
+const b = { '24x24': r.x16, '48x48': r.x24, '64x64': r.x32, '96x96': r.x32 },
     d = (e) => R.images.comp7.gui.maps.icons.vehicleTypes.$dyn(`c_${e}`);
 function m({
-    name: i,
+    name: s,
     tier: n,
-    type: o,
+    type: r,
     role: t,
     vehicleCD: m,
     size: x = '24x24',
     typeIconFolderPath: p = d(x),
     isPremium: V = !1,
     className: N,
-    classNames: v,
-    tooltipArgs: f,
-    roleClassName: u,
-    roleClassNames: I,
+    classNames: f,
+    tooltipArgs: v,
+    roleClassName: I,
+    roleClassNames: g,
 }) {
-    const g = l(o),
-        y = V ? `${g}_elite` : g,
-        j = `url(${null == p ? void 0 : p.$dyn(y)})`;
+    const y = l(r),
+        u = V ? `${y}_elite` : y,
+        j = `url(${p?.$dyn(u)})`;
     return e.jsxs('div', {
         className: a(h.base, h[`base__${x}`], V && h.base__elite, N),
         children: [
-            e.jsx(s, {
-                args: f,
-                isEnabled: void 0 !== f,
+            e.jsx(i, {
+                args: v,
+                isEnabled: void 0 !== v,
                 children: e.jsxs('div', {
-                    className: a(h.nameContainer, null == v ? void 0 : v.nameContainer),
+                    className: a(h.nameContainer, f?.nameContainer),
                     children: [
-                        e.jsx('div', { className: null == v ? void 0 : v.level, children: _(n) }),
+                        e.jsx('div', { className: f?.level, children: _(n) }),
                         e.jsx('div', {
-                            className: a(h.vehicleTypeContainer, null == v ? void 0 : v.vehicleTypeContainer),
+                            className: a(h.vehicleTypeContainer, f?.vehicleTypeContainer),
                             children: e.jsx('div', {
-                                className: a(h.vehicleType, null == v ? void 0 : v.type),
+                                className: a(h.vehicleType, f?.type),
                                 style: { backgroundImage: j },
                             }),
                         }),
-                        e.jsx('div', { className: a(h.shortName, null == v ? void 0 : v.shortName), children: i }),
+                        e.jsx('div', { className: a(h.shortName, f?.shortName), children: s }),
                     ],
                 }),
             }),
@@ -114,8 +111,8 @@ function m({
                     ignoreShowDelay: !0,
                     isEnabled: void 0 !== m,
                     children: e.jsx('div', {
-                        className: a(h.roleContainer, null == I ? void 0 : I.roleContainer),
-                        children: e.jsx(r, { role: t, size: b[x], className: u, classNames: I }),
+                        className: a(h.roleContainer, g?.roleContainer),
+                        children: e.jsx(o, { role: t, size: b[x], className: I, classNames: g }),
                     }),
                 }),
         ],

@@ -1,27 +1,27 @@
-import { C as e, x as a, y as s, j as i, w as t, A as n, B as r, R as c } from '../../../chunks/vendor.js';
+import { o as e, i as a, V as s, j as i, a3 as t, u as n, q as r, R as c } from '../../../chunks/vendor.js';
 import {
-    y as o,
-    a_ as _,
-    i as d,
-    c as l,
-    b as m,
-    n as p,
-    P as h,
-    u as f,
-    T as b,
-    M as g,
-    e as u,
-    F as x,
-    B as S,
-    aA as v,
-    aB as y,
+    ap as o,
+    C as d,
+    i as _,
+    d5 as l,
+    aJ as m,
+    cy as p,
+    d8 as h,
+    aQ as f,
+    dc as b,
+    cz as g,
+    m as u,
+    cw as x,
+    ae as S,
+    r as v,
+    cE as y,
 } from '../../../chunks/lib.js';
 import { C as j } from '../../../chunks/close_button.js';
 import { g as N } from '../../../chunks/get_button_size.js';
-import { i as A, R as w, a as I, g as k } from '../../../chunks/rank_emblem.js';
+import { i as w, R as A, a as I, g as k } from '../../../chunks/rank_emblem.js';
 import { D as H } from '../../../chunks/divine_glow.js';
-import { L as P } from '../../../chunks/lace_divider.js';
-import { a as V } from '../../../chunks/get_division_name.js';
+import { L as V } from '../../../chunks/lace_divider.js';
+import { a as P } from '../../../chunks/get_division_name.js';
 import { g as T } from '../../../chunks/get_rank_name.js';
 import { S as C, a as U } from '../../../chunks/season_point.js';
 import { g as D } from '../../../chunks/get_statistic_value.js';
@@ -60,7 +60,7 @@ const $ = [
             },
             {},
         ),
-    [L, Q] = d()(
+    [Q, L] = _()(
         ({ observableModel: s }) => {
             const i = { root: s.object() },
                 t = s.array('summaryStatistics'),
@@ -80,8 +80,8 @@ const $ = [
                         ),
                     ),
                 }))(r),
-                _ = a(() => i.root.get().leaderboardPosition < 3),
-                d = a(() => t.get().length),
+                d = a(() => i.root.get().leaderboardPosition < 3),
+                _ = a(() => t.get().length),
                 p = a(
                     (e) => {
                         const a = m(t.get(), e);
@@ -91,13 +91,13 @@ const $ = [
                     { equals: l },
                 ),
                 h = a((e) => m(n.get(), e), { equals: l }),
-                f = a((e) => (0 === d() ? 0 : e / d()));
+                f = a((e) => (0 === _() ? 0 : e / _()));
             return {
                 ...i,
                 animation: { model: r, computes: c },
                 computes: {
-                    hasPositionIcon: _,
-                    summaryStatisticsLength: d,
+                    hasPositionIcon: d,
+                    summaryStatisticsLength: _,
                     summaryStatistic: p,
                     vehicleStatistic: h,
                     summaryItemDelay: f,
@@ -108,7 +108,7 @@ const $ = [
             const i = ((e, a) => {
                 let s = 0;
                 a(() => window.clearTimeout(s));
-                const { setAnimationState: i } = _({
+                const { setAnimationState: i } = d({
                         setAnimationState: (a) => {
                             e.animationState.set(a);
                         },
@@ -120,7 +120,7 @@ const $ = [
                             t(n.nextStep);
                         }, n.delay);
                     };
-                return _({
+                return d({
                     start: () => {
                         t('idle');
                     },
@@ -129,8 +129,8 @@ const $ = [
             return (i.start(), { animation: i, close: e.createCallbackNoArgs('onClose') });
         },
     ),
-    M = () => Q().model.animation,
-    F = {
+    M = () => L().model.animation,
+    z = {
         base: 'Header_abbd0f2b',
         season: 'Header_season_a2462352',
         title: 'Header_title_d739332c',
@@ -158,42 +158,42 @@ const $ = [
         blink: 'Header_blink_65f475ba',
         slideUpIn: 'Header_slideUpIn_65f475ba',
     },
-    z = ['first', 'second', 'third'],
+    F = ['first', 'second', 'third'],
     E = s(({ className: e }) => {
-        const { model: a } = Q(),
+        const { model: a } = L(),
             s = M(),
-            { season: n, leaderboardPosition: r, clanTagColor: c, userName: o, clanTag: _ } = a.root.get(),
-            d = a.computes.hasPositionIcon();
+            { season: n, leaderboardPosition: r, clanTagColor: c, userName: o, clanTag: d } = a.root.get(),
+            _ = a.computes.hasPositionIcon();
         return i.jsxs('div', {
-            className: t(F.base, e, s.computes.getAnimationStepStyles(F)),
+            className: t(z.base, e, s.computes.getAnimationStepStyles(z)),
             style: { '--clanTagColor': c },
             children: [
                 i.jsx('div', {
-                    className: F.season,
+                    className: z.season,
                     children: i.jsx(p, {
                         text: R.strings.comp7_ext.seasonStatistics.description.season(),
                         binding: { seasonNameUpper: `${R.strings.comp7_ext.seasonStatistics.seasonNameUpper.$dyn(n)}` },
                     }),
                 }),
                 i.jsx('div', {
-                    className: F.title,
+                    className: z.title,
                     children: i.jsx(p, {
                         text: R.strings.comp7_ext.seasonStatistics.title(),
                         binding: {
-                            name: i.jsx(h, { userName: o, clanAbbrev: _, clanTagClassName: t(c && F.clanTag) }),
+                            name: i.jsx(h, { userName: o, clanAbbrev: d, clanTagClassName: t(c && z.clanTag) }),
                         },
                     }),
                 }),
                 i.jsx('div', {
-                    className: F.position,
+                    className: z.position,
                     children:
                         -1 !== r &&
                         i.jsx(p, {
                             text: R.strings.comp7_ext.seasonStatistics.description.leaderboardPosition(),
                             binding: {
                                 position: i.jsx('div', {
-                                    className: t(F.order, d && F.order__icon, d && F[`order__${z[r]}`]),
-                                    children: !d && r + 1,
+                                    className: t(z.order, _ && z.order__icon, _ && z[`order__${F[r]}`]),
+                                    children: !_ && r + 1,
                                 }),
                             },
                         }),
@@ -201,7 +201,7 @@ const $ = [
             ],
         });
     }),
-    B = {
+    q = {
         base__notAchieved: 'Point_base__notAchieved_a641ca05',
         fadeIn: 'Point_fadeIn_d8b7e333',
         fadeInThreeQuarters: 'Point_fadeInThreeQuarters_d8b7e333',
@@ -218,9 +218,9 @@ const $ = [
         blink: 'Point_blink_d8b7e333',
         slideUpIn: 'Point_slideUpIn_d8b7e333',
     },
-    q = (e) => (e >= g.Medium ? U.x48 : U.x32),
-    G = s(({ pointIndex: e, className: a }) => {
-        const { model: s } = Q(),
+    B = (e) => (e >= g.Medium ? U.x48 : U.x32),
+    J = s(({ pointIndex: e, className: a }) => {
+        const { model: s } = L(),
             { season: t, achievedSeasonPoints: n } = s.root.get(),
             { mediaSize: r } = f(),
             c = e + 1 <= n ? 'achieved' : 'notAchieved';
@@ -230,11 +230,11 @@ const $ = [
             ignoreShowDelay: !0,
             children: i.jsx('div', {
                 className: a,
-                children: i.jsx(C, { state: c, season: t, className: B[`base__${c}`], size: q(r) }),
+                children: i.jsx(C, { state: c, season: t, className: q[`base__${c}`], size: B(r) }),
             }),
         });
     }),
-    J = {
+    G = {
         base: 'Rating_74881404',
         shine: 'Rating_shine_b6446be3',
         base__showRank: 'Rating_base__showRank_bece95f1',
@@ -269,41 +269,41 @@ const $ = [
         slideUpIn: 'Rating_slideUpIn_bece95f1',
     },
     K = s(({ className: e }) => {
-        const { model: a } = Q(),
+        const { model: a } = L(),
             { mediaSize: s } = f(),
             n = M(),
-            { rank: r, division: c, score: o, season: _, achievedSeasonPoints: d, seasonPointsLimit: l } = a.root.get(),
+            { rank: r, division: c, score: o, season: d, achievedSeasonPoints: _, seasonPointsLimit: l } = a.root.get(),
             m = ((e) => (e >= g.ExtraLarge ? I.x600 : e >= g.Large ? I.x320 : e >= g.Medium ? I.x260 : I.x200))(s);
         return i.jsxs('div', {
-            className: t(J.base, e, n.computes.getAnimationStepStyles(J)),
+            className: t(G.base, e, n.computes.getAnimationStepStyles(G)),
             children: [
-                i.jsx('div', { className: J.shine }),
-                i.jsx('div', { className: J.title, children: T(r) }),
-                i.jsx('div', { className: t(J.subTitle, !A(r) && J.subTitle__hide), children: V(c) }),
+                i.jsx('div', { className: G.shine }),
+                i.jsx('div', { className: G.title, children: T(r) }),
+                i.jsx('div', { className: t(G.subTitle, !w(r) && G.subTitle__hide), children: P(c) }),
                 i.jsxs('div', {
-                    className: J.rankEmblemContainer,
+                    className: G.rankEmblemContainer,
                     children: [
-                        i.jsx(H, { className: J.glowContainer, classNames: { glow: J.glow } }),
-                        i.jsx(w, { seasonName: _, rank: r, division: c, size: m, className: J.rank }),
+                        i.jsx(H, { className: G.glowContainer, classNames: { glow: G.glow } }),
+                        i.jsx(A, { seasonName: d, rank: r, division: c, size: m, className: G.rank }),
                     ],
                 }),
                 i.jsxs('div', {
-                    className: J.content,
+                    className: G.content,
                     children: [
-                        i.jsx('div', { className: J.score, children: o }),
+                        i.jsx('div', { className: G.score, children: o }),
                         i.jsx('div', {
-                            className: J.scoreDescription,
+                            className: G.scoreDescription,
                             children: R.strings.comp7_ext.seasonStatistics.description.finalScore(),
                         }),
-                        i.jsx(P, { className: J.laceDivider }),
+                        i.jsx(V, { className: G.laceDivider }),
                         i.jsx('div', {
-                            className: J.seasonPoints,
-                            children: u(l, (e) => i.jsx(G, { pointIndex: e, className: J.point }, e)),
+                            className: G.seasonPoints,
+                            children: u(l, (e) => i.jsx(J, { pointIndex: e, className: G.point }, e)),
                         }),
                         i.jsx(p, {
-                            text: R.strings.comp7_ext.seasonStatistics.description.seasonPoint(d),
-                            binding: { points: d },
-                            classMix: J.pointDescription,
+                            text: R.strings.comp7_ext.seasonStatistics.description.seasonPoint(_),
+                            binding: { points: _ },
+                            classMix: G.pointDescription,
                         }),
                     ],
                 }),
@@ -339,14 +339,14 @@ var ne = ((e) => (
 const re = 'LineDivider_2b197ae0',
     ce = 'LineDivider_divider_b112bc14',
     oe = 'LineDivider_divider__center_7b6f39a7',
-    _e = 'LineDivider_divider__right_169584a0',
-    de = ({ className: e }) =>
+    de = 'LineDivider_divider__right_169584a0',
+    _e = ({ className: e }) =>
         i.jsxs('div', {
             className: t(re, e),
             children: [
                 i.jsx('div', { className: ce }),
                 i.jsx('div', { className: t(ce, oe) }),
-                i.jsx('div', { className: t(ce, _e) }),
+                i.jsx('div', { className: t(ce, de) }),
             ],
         }),
     le = 'Card_3b7c47bf',
@@ -366,9 +366,9 @@ const re = 'LineDivider_2b197ae0',
         }
     },
     ue = s(({ index: e, className: a }) => {
-        const { model: s } = Q(),
+        const { model: s } = L(),
             c = M(),
-            { type: o, main: _, additional: d } = s.computes.summaryStatistic(e),
+            { type: o, main: d, additional: _ } = s.computes.summaryStatistic(e),
             l = R.strings.comp7_ext.seasonStatistics.section.statistics.$dyn(o),
             m = s.computes.summaryItemDelay(c.computes.stepDelay(W.ShowSummary)),
             h = n({
@@ -385,10 +385,10 @@ const re = 'LineDivider_2b197ae0',
                     className: me,
                     style: { backgroundImage: `url(${R.images.comp7.gui.maps.icons.statistics.$dyn(o)})` },
                 }),
-                i.jsx('div', { className: pe, children: i.jsx(x, { value: _ }) }),
+                i.jsx('div', { className: pe, children: i.jsx(x, { value: d }) }),
                 i.jsx(p, { text: l.$dyn('main'), classMix: he }),
-                i.jsx(de, { className: fe }),
-                i.jsx(p, { text: String(l.$dyn('additional')), classMix: be, binding: { additional: ge(o, d) } }),
+                i.jsx(_e, { className: fe }),
+                i.jsx(p, { text: String(l.$dyn('additional')), classMix: be, binding: { additional: ge(o, _) } }),
             ],
         });
     }),
@@ -417,7 +417,7 @@ const re = 'LineDivider_2b197ae0',
         slideUpIn: 'Summary_slideUpIn_e35a9ef7',
     },
     Se = s(({ className: e }) => {
-        const { model: a } = Q(),
+        const { model: a } = L(),
             s = M();
         return i.jsxs('div', {
             className: t(xe.base, e, s.computes.getAnimationStepStyles(xe)),
@@ -448,16 +448,16 @@ const re = 'LineDivider_2b197ae0',
         });
     }),
     ve = 'VehicleCard_6e479d72',
-    ye = 'VehicleCard_back_18a8331d',
+    ye = 'VehicleCard_back_a983d9f0',
     je = 'VehicleCard_params_80d347eb',
     Ne = 'VehicleCard_vehicleName_8e56a0d8',
-    Ae = 'VehicleCard_propsWrapper_920c0c92',
-    we = 'VehicleCard_propsName_84760f10',
+    we = 'VehicleCard_propsWrapper_920c0c92',
+    Ae = 'VehicleCard_propsName_84760f10',
     Ie = 'VehicleCard_separator_46dce3cf',
     Re = 'VehicleCard_value_60e6abc7',
     ke = 'VehicleCard_icon_22839420',
     He = s(({ index: e }) => {
-        const { model: a } = Q(),
+        const { model: a } = L(),
             { mediaSize: s } = f(),
             t = M(),
             c = a.computes.vehicleStatistic(e),
@@ -470,16 +470,16 @@ const re = 'LineDivider_2b197ae0',
                       e >= g.Large
                           ? R.images.comp7.gui.maps.icons.statistics.no_vehicle_360x270()
                           : R.images.comp7.gui.maps.icons.statistics.no_vehicle_180x135())(s),
-            _ = t.computes.stepDelay(W.ShowVehicles) / Ve,
-            d = n({
+            d = t.computes.stepDelay(W.ShowVehicles) / Pe,
+            _ = n({
                 from: { opacity: 0 },
                 to: { opacity: 1 },
-                delay: _ * e,
+                delay: d * e,
                 pause: !t.computes.isStepActive(W.ShowVehicles),
             });
         return i.jsxs(r.div, {
             className: ve,
-            style: d,
+            style: _,
             children: [
                 i.jsx('div', { className: ye, children: e + 1 }),
                 i.jsxs('div', {
@@ -492,10 +492,10 @@ const re = 'LineDivider_2b197ae0',
                                 : R.strings.comp7_ext.seasonStatistics.section.vehicles.noVehicles(),
                         }),
                         i.jsxs('div', {
-                            className: Ae,
+                            className: we,
                             children: [
                                 i.jsx('div', {
-                                    className: we,
+                                    className: Ae,
                                     children: R.strings.comp7_ext.seasonStatistics.section.vehicles.battles(),
                                 }),
                                 i.jsx('div', { className: Ie }),
@@ -508,10 +508,10 @@ const re = 'LineDivider_2b197ae0',
                             ],
                         }),
                         i.jsxs('div', {
-                            className: Ae,
+                            className: we,
                             children: [
                                 i.jsx('div', {
-                                    className: we,
+                                    className: Ae,
                                     children: R.strings.comp7_ext.seasonStatistics.section.vehicles.wins(),
                                 }),
                                 i.jsx('div', { className: Ie }),
@@ -532,7 +532,7 @@ const re = 'LineDivider_2b197ae0',
             ],
         });
     }),
-    Pe = {
+    Ve = {
         base: 'Vehicles_1d0249fc',
         header: 'Vehicles_header_fbbbd526',
         base__idle: 'Vehicles_base__idle_7f03fbab',
@@ -554,18 +554,18 @@ const re = 'LineDivider_2b197ae0',
         blink: 'Vehicles_blink_7f03fbab',
         slideUpIn: 'Vehicles_slideUpIn_7f03fbab',
     },
-    Ve = 3,
+    Pe = 3,
     Te = s(() => {
         const e = M();
         return i.jsxs('div', {
-            className: t(Pe.base, e.computes.getAnimationStepStyles(Pe)),
+            className: t(Ve.base, e.computes.getAnimationStepStyles(Ve)),
             children: [
                 i.jsx(te, {
-                    className: Pe.header,
+                    className: Ve.header,
                     text: R.strings.comp7_ext.seasonStatistics.section.vehicles.title(),
                 }),
-                i.jsx('div', { className: Pe.cards, children: u(Ve, (e) => i.jsx(He, { index: e }, e)) }),
-                i.jsx('div', { className: Pe.vehiclePlace }),
+                i.jsx('div', { className: Ve.cards, children: u(Pe, (e) => i.jsx(He, { index: e }, e)) }),
+                i.jsx('div', { className: Ve.vehiclePlace }),
             ],
         });
     }),
@@ -597,7 +597,7 @@ const re = 'LineDivider_2b197ae0',
         slideUpIn: 'App_slideUpIn_0',
     },
     Ue = s(() => {
-        const { controls: e, model: a } = Q(),
+        const { controls: e, model: a } = L(),
             { mediaSize: s } = f(),
             n = M(),
             { rank: r, season: c } = a.root.get();
@@ -629,4 +629,4 @@ const re = 'LineDivider_2b197ae0',
             ],
         });
     });
-v(i.jsx(y, { children: i.jsx(L, { children: i.jsx(Ue, {}) }) }));
+v(i.jsx(y, { children: i.jsx(Q, { children: i.jsx(Ue, {}) }) }));

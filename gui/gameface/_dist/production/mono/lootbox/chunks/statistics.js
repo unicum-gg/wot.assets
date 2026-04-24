@@ -80,59 +80,59 @@ const s = {
     ],
     a = (e) => e.split('_')[0] === o.LootBox,
     u = (e) => e.replace(`${o.LootBox}_`, ''),
-    l = (e) => s[e] || e,
-    d = (o, s) => {
-        const r = l(o);
-        return a(o) ? t(s, u(o)) : e(R.images, `gui.maps.icons.quests.bonuses.${s}.${r}`);
-    },
-    m = R.strings.tooltips.awardItem,
-    c = (t, s) => {
-        if (t.startsWith(o.LootBox)) {
-            const e = t.slice(`${o.LootBox}_`.length);
+    l = (e) => s[e] || e;
+function d(o, s) {
+    const r = l(o);
+    return a(o) ? t(s, u(o)) : e(R.images, `gui.maps.icons.quests.bonuses.${s}.${r}`);
+}
+const m = R.strings.tooltips.awardItem;
+function c(t, s) {
+    if (t.startsWith(o.LootBox)) {
+        const e = t.slice(`${o.LootBox}_`.length);
+        return {
+            contentId: R.views.mono.lootbox.tooltips.box_tooltip('resId'),
+            args: { boxCategory: e, eventName: s },
+        };
+    }
+    if (n.includes(t) || i.includes(t))
+        return {
+            contentId: R.views.mono.lootbox.tooltips.statistics_category('resId'),
+            args: { bonusesCategory: t, eventName: s },
+        };
+    if (t === o.MentoringLicense)
+        return {
+            contentId: R.views.lobby.crew.tooltips.MentoringLicenseTooltip('resId'),
+            args: { bonusesCategory: t, eventName: s },
+        };
+    if (r.includes(t)) return { args: { bonusesCategory: t, eventName: s } };
+    switch (t) {
+        case o.PremiumPlus:
+            return { header: m.premium_plus.header(), body: m.premium_plus.body() };
+        case o.Credits:
+            return { header: m.credits.header(), body: m.credits.body() };
+        case o.Gold:
+            return { header: m.gold.header(), body: m.gold.body() };
+        case o.Crystal:
+            return { header: m.crystal.header(), body: m.crystal.body() };
+        case o.FreeXP:
+            return { header: m.freeXP.header(), body: m.freeXP.body() };
+        case o.Components:
+            return { header: m.equipCoin.header(), body: m.equipCoin.body() };
+        case o.BattleBonusX5:
             return {
-                contentId: R.views.mono.lootbox.tooltips.box_tooltip('resId'),
-                args: { boxCategory: e, eventName: s },
+                header: R.strings.tooltips.quests.bonuses.token.battle_bonus_x5.header(),
+                body: R.strings.tooltips.quests.bonuses.token.battle_bonus_x5.body(),
             };
-        }
-        if (n.includes(t) || i.includes(t))
+        case o.CrewBonusX3:
             return {
-                contentId: R.views.mono.lootbox.tooltips.statistics_category('resId'),
-                args: { bonusesCategory: t, eventName: s },
+                header: R.strings.tooltips.quests.bonuses.token.crew_bonus_x3.header(),
+                body: R.strings.tooltips.quests.bonuses.token.crew_bonus_x3.body(),
             };
-        if (t === o.MentoringLicense)
+        default:
             return {
-                contentId: R.views.lobby.crew.tooltips.MentoringLicenseTooltip('resId'),
-                args: { bonusesCategory: t, eventName: s },
+                header: e(R.strings, `tooltips.awardItem.${t}.header`),
+                body: e(R.strings, `tooltips.awardItem.${t}.body`),
             };
-        if (r.includes(t)) return { args: { bonusesCategory: t, eventName: s } };
-        switch (t) {
-            case o.PremiumPlus:
-                return { header: m.premium_plus.header(), body: m.premium_plus.body() };
-            case o.Credits:
-                return { header: m.credits.header(), body: m.credits.body() };
-            case o.Gold:
-                return { header: m.gold.header(), body: m.gold.body() };
-            case o.Crystal:
-                return { header: m.crystal.header(), body: m.crystal.body() };
-            case o.FreeXP:
-                return { header: m.freeXP.header(), body: m.freeXP.body() };
-            case o.Components:
-                return { header: m.equipCoin.header(), body: m.equipCoin.body() };
-            case o.BattleBonusX5:
-                return {
-                    header: R.strings.tooltips.quests.bonuses.token.battle_bonus_x5.header(),
-                    body: R.strings.tooltips.quests.bonuses.token.battle_bonus_x5.body(),
-                };
-            case o.CrewBonusX3:
-                return {
-                    header: R.strings.tooltips.quests.bonuses.token.crew_bonus_x3.header(),
-                    body: R.strings.tooltips.quests.bonuses.token.crew_bonus_x3.body(),
-                };
-            default:
-                return {
-                    header: e(R.strings, `tooltips.awardItem.${t}.header`),
-                    body: e(R.strings, `tooltips.awardItem.${t}.body`),
-                };
-        }
-    };
+    }
+}
 export { n as L, o as T, c as a, u as b, d as c, l as g, a as i };

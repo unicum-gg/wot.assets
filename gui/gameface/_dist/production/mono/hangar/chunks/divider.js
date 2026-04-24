@@ -1,17 +1,17 @@
-import { j as s, f as a, R as e } from './vendor.js';
-import { X as r } from './lib.js';
-const n = { base: 'Divider_1632862f' };
-function t(e) {
-    return s.jsx(r, { path: 'ui.noise', className: a(n.base, e.className), fit: 'cover' });
+import { j as s, f as a, R as r } from './vendor.js';
+import { Y as e } from './lib.js';
+const n = 'Divider_9939af4b';
+function t(r) {
+    return s.jsx(e, { path: 'ui.noise', className: a(n, r.className), fit: 'cover' });
 }
-function i({ children: a, className: r }) {
-    const n = e.Children.toArray(a);
+function i({ children: a, className: e }) {
+    const n = r.Children.toArray(a);
     return n.length <= 1
         ? a
         : s.jsx(s.Fragment, {
               children: n
                   .filter((s) => s)
-                  .map((a, n) => s.jsxs(e.Fragment, { children: [n > 0 && s.jsx(t, { className: r }), a] }, n)),
+                  .map((a, n) => s.jsxs(r.Fragment, { children: [n > 0 && s.jsx(t, { className: e }), a] }, n)),
           });
 }
 export { t as D, i as a };

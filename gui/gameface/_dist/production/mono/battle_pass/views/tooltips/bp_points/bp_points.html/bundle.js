@@ -1,10 +1,10 @@
-import { j as s, t as e, f as t } from '../../../../chunks/vendor.js';
-import { i as a, N as i, u as r, b as l, e as o, b_ as n, J as d, U as c, j as h } from '../../../../chunks/lib.js';
+import { j as s, v as e, k as t } from '../../../../chunks/vendor.js';
+import { i as a, N as i, g as r, h as l, n, bY as o, J as d, U as c, d as h } from '../../../../chunks/lib.js';
 import { V as _ } from '../../../../chunks/vehicle_list.js';
-import { W as j } from '../../../../chunks/wot_plus_banner.js';
-import { P as m, a as x } from '../../../../chunks/per_battle_points_table.js';
+import { W as m } from '../../../../chunks/wot_plus_banner.js';
+import { P as j, a as x } from '../../../../chunks/per_battle_points_table.js';
 import '../../../../chunks/vehicle_info.js';
-const [p, b] = a()(
+const [p, v] = a()(
         ({ observableModel: s }) => ({
             ...{
                 ...s.primitives(['isWotPlusShown']),
@@ -14,22 +14,22 @@ const [p, b] = a()(
         }),
         i,
     ),
-    v = 'Header_a103bd21',
+    b = 'Header_a103bd21',
     u = 'Header_icon_eed746ab',
     f = 'Header_labels_f416515f',
     N = 'Header_title_381c9f5b',
     P = 'Header_subtitle_632b6de',
-    w = R.strings.battle_pass.tooltips.points,
-    g = () =>
+    g = R.strings.battle_pass.tooltips.points,
+    w = () =>
         s.jsxs('div', {
-            className: v,
+            className: b,
             children: [
                 s.jsx('div', { className: u }),
                 s.jsxs('div', {
                     className: f,
                     children: [
-                        s.jsx('div', { className: N, children: w.title() }),
-                        s.jsx('div', { className: P, children: w.subtitle() }),
+                        s.jsx('div', { className: N, children: g.title() }),
+                        s.jsx('div', { className: P, children: g.subtitle() }),
                     ],
                 }),
             ],
@@ -39,7 +39,7 @@ const [p, b] = a()(
     W = 'Points_105728d0',
     H = 'Points_table_eac25b11',
     S = e(() => {
-        const { model: e } = b(),
+        const { model: e } = v(),
             t = e.rewardPoints.get(),
             a = e.isWotPlusShown.get(),
             { breakpoint: i } = r();
@@ -49,7 +49,7 @@ const [p, b] = a()(
                 s.jsx('div', { className: k }),
                 s.jsx('div', {
                     className: W,
-                    children: s.jsx(m, {
+                    children: s.jsx(j, {
                         showSeparator: !1,
                         stretchBg: !0,
                         separatorRows: t.items,
@@ -74,17 +74,17 @@ const [p, b] = a()(
     J = 'Content_footer__offset_9202885e',
     M = R.strings.battle_pass.tooltips.points,
     U = e(() => {
-        const { model: e } = b(),
+        const { model: e } = v(),
             { items: a } = e.vehiclesList.get(),
             i = e.isWotPlusShown.get();
         return s.jsxs('div', {
             className: L,
             children: [
-                s.jsx(g, {}),
+                s.jsx(w, {}),
                 s.jsx('div', { className: y, children: M.rules() }),
                 s.jsxs('div', {
                     className: B,
-                    children: [s.jsx(S, {}), i && s.jsx(j, {}), s.jsx('div', { className: V })],
+                    children: [s.jsx(S, {}), i && s.jsx(m, {}), s.jsx('div', { className: V })],
                 }),
                 a.length > 0 &&
                     s.jsxs(s.Fragment, {
@@ -94,9 +94,9 @@ const [p, b] = a()(
                             s.jsx('div', { className: D, children: s.jsx('div', { className: V }) }),
                         ],
                     }),
-                s.jsx('div', { className: t(F, !a.length && J), children: s.jsx(o, { text: M.footer() }) }),
+                s.jsx('div', { className: t(F, !a.length && J), children: s.jsx(n, { text: M.footer() }) }),
             ],
         });
     }),
-    q = () => s.jsx(n, { children: s.jsx(n.Decorator, { children: s.jsx(U, {}) }) });
-h(new d().add(c).addWithProps(p, {}).render(s.jsx(q, {})));
+    Y = () => s.jsx(o, { children: s.jsx(o.Decorator, { children: s.jsx(U, {}) }) });
+h(new d().add(c).addWithProps(p, {}).render(s.jsx(Y, {})));

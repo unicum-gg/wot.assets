@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,12 +11,12 @@
     position: relative;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.App_base_67 {
+.App_base_ed15c {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -25,7 +25,7 @@
     position: relative;
 }
 
-.App_header_65 {
+.App_header_aef0e {
     margin-bottom: 12rem;
     color: #ffffff;
     font-size: 16rem;
@@ -33,7 +33,7 @@
     letter-spacing: 2%;
 }
 
-.App_description_0e {
+.App_description_a1201 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -41,7 +41,7 @@
     margin-bottom: 24rem;
 }
 
-.App_highlightDesc_f3 {
+.App_highlightDesc_dc775 {
     display: flex;
     flex-direction: row;
     margin-left: 8rem;
@@ -52,7 +52,7 @@
     line-height: 1.3;
 }
 
-.App_rule_38 {
+.App_rule_d7285 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -62,7 +62,7 @@
     margin-left: 8rem;
 }
 
-.App_dot_e1 {
+.App_dot_a4074 {
     width: 3rem;
     height: 3rem;
     margin-top: 9rem;
@@ -71,6 +71,6 @@
     background-color: #8c8c7e;
 }
 
-.App_highlightDesc_f3 .App_dot_e1 {
+.App_highlightDesc_dc775 .App_dot_a4074 {
     background-color: #cbac77;
 }

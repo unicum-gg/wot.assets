@@ -1,4 +1,4 @@
-import { x as e, y as a, j as r, z as s } from '../../../../chunks/vendor.js';
+import { h as e, E as a, j as r, F as s } from '../../../../chunks/vendor.js';
 import {
     a as o,
     c as t,
@@ -7,14 +7,14 @@ import {
     e as i,
     h as n,
     a8 as c,
-    df as p,
+    dh as p,
     U as _,
     Q as m,
     v as x,
-    R as u,
-    a9 as h,
+    R as h,
+    a9 as u,
     a6 as w,
-    d9 as b,
+    de as b,
 } from '../../../../chunks/lib.js';
 import { g as j } from '../../../../chunks/readResource.js';
 const [f, v] = o()(({ observableModel: a }) => {
@@ -74,7 +74,7 @@ const [f, v] = o()(({ observableModel: a }) => {
                                 className: g.percent,
                                 children: r.jsx(x, {
                                     text: R.strings.fun_random.lootboxTooltip.chance(),
-                                    binding: { percent: u(R.strings.common.percentValue(), { value: d }) },
+                                    binding: { percent: h(R.strings.common.percentValue(), { value: d }) },
                                 }),
                             }),
                     ],
@@ -106,7 +106,7 @@ const [f, v] = o()(({ observableModel: a }) => {
                         r.jsx('div', { className: T, children: R.strings.fun_random.lootboxTooltip.description() }),
                     ],
                 }),
-                r.jsx('div', { className: k, children: d > 0 && h(d, (e) => r.jsx(N, { index: e }, e)) }),
+                r.jsx('div', { className: k, children: d > 0 && u(d, (e) => r.jsx(N, { index: e }, e)) }),
             ],
         });
     });

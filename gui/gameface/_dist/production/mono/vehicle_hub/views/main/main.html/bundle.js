@@ -1,147 +1,145 @@
-var e = Object.defineProperty,
-    t = (t, s, a) =>
-        ((t, s, a) => (s in t ? e(t, s, { enumerable: !0, configurable: !0, writable: !0, value: a }) : (t[s] = a)))(
-            t,
-            'symbol' != typeof s ? s + '' : s,
-            a,
-        );
 import {
-    _ as s,
-    z as a,
-    r,
-    j as i,
-    f as n,
-    l as o,
-    A as c,
-    n as l,
-    o as d,
-    e as h,
-    R as m,
+    B as e,
+    C as t,
+    D as s,
+    E as a,
+    F as r,
+    A as i,
+    r as n,
+    j as o,
+    f as c,
+    l,
+    G as d,
+    n as h,
+    o as m,
+    e as u,
+    R as _,
 } from '../../../chunks/vendor.js';
 import {
-    i as u,
-    c as _,
-    a as p,
-    b as v,
-    n as b,
-    r as x,
-    m as g,
-    D as f,
-    u as N,
-    d as j,
-    C as y,
-    F as C,
-    g as k,
-    e as w,
-    f as I,
-    h as S,
-    M as T,
-    j as M,
-    k as P,
-    I as E,
-    l as A,
-    o as R,
-    p as O,
-    q as B,
-    B as L,
-    s as D,
-    t as V,
-    v as $,
-    T as z,
+    i as p,
+    c as v,
+    a as b,
+    b as x,
+    n as g,
+    d as f,
+    r as N,
+    m as j,
+    D as C,
+    u as y,
+    e as k,
+    C as w,
+    F as I,
+    g as S,
+    f as T,
+    h as M,
+    j as P,
+    M as E,
+    k as A,
+    l as R,
+    I as O,
+    o as L,
+    p as B,
+    q as D,
+    s as V,
+    B as $,
+    t as z,
+    v as H,
     w as F,
-    x as H,
-    y as W,
-    z as G,
-    A as U,
-    E as X,
-    G as K,
-    V as Z,
-    W as Y,
-    H as J,
-    R as q,
-    J as Q,
-    K as ee,
-    L as te,
-    N as se,
-    O as ae,
-    P as re,
-    Q as ie,
-    S as ne,
-    U as oe,
-    X as ce,
-    Y as le,
-    Z as de,
-    _ as he,
-    $ as me,
-    a0 as ue,
-    a1 as _e,
-    a2 as pe,
-    a3 as ve,
-    a4 as be,
-    a5 as xe,
-    a6 as ge,
-    a7 as fe,
-    a8 as Ne,
-    a9 as je,
-    aa as ye,
-    ab as Ce,
-    ac as ke,
-    ad as we,
-    ae as Ie,
-    af as Se,
-    ag as Te,
-    ah as Me,
-    ai as Pe,
-    aj as Ee,
-    ak as Ae,
-    al as Re,
-    am as Oe,
-    an as Be,
-    ao as Le,
-    ap as De,
-    aq as Ve,
-    ar as $e,
-    as as ze,
-    at as Fe,
-    au as He,
-    av as We,
-    aw as Ge,
-    ax as Ue,
-    ay as Xe,
-    az as Ke,
-    aA as Ze,
-    aB as Ye,
-    aC as Je,
-    aD as qe,
-    aE as Qe,
-    aF as et,
-    aG as tt,
-    aH as st,
-    aI as at,
-    aJ as rt,
-    aK as it,
+    T as W,
+    x as G,
+    y as U,
+    z as X,
+    A as K,
+    E as Z,
+    G as Y,
+    H as q,
+    V as J,
+    W as Q,
+    J as ee,
+    R as te,
+    K as se,
+    L as ae,
+    N as re,
+    O as ie,
+    P as ne,
+    Q as oe,
+    S as ce,
+    U as le,
+    X as de,
+    Y as he,
+    Z as me,
+    _ as ue,
+    $ as _e,
+    a0 as pe,
+    a1 as ve,
+    a2 as be,
+    a3 as xe,
+    a4 as ge,
+    a5 as fe,
+    a6 as Ne,
+    a7 as je,
+    a8 as Ce,
+    a9 as ye,
+    aa as ke,
+    ab as we,
+    ac as Ie,
+    ad as Se,
+    ae as Te,
+    af as Me,
+    ag as Pe,
+    ah as Ee,
+    ai as Ae,
+    aj as Re,
+    ak as Oe,
+    al as Le,
+    am as Be,
+    an as De,
+    ao as Ve,
+    ap as $e,
+    aq as ze,
+    ar as He,
+    as as Fe,
+    at as We,
+    au as Ge,
+    av as Ue,
+    aw as Xe,
+    ax as Ke,
+    ay as Ze,
+    az as Ye,
+    aA as qe,
+    aB as Je,
+    aC as Qe,
+    aD as et,
+    aE as tt,
+    aF as st,
+    aG as at,
+    aH as rt,
+    aI as it,
+    aJ as nt,
+    aK as ot,
+    aL as ct,
 } from '../../../chunks/lib.js';
-import { M as nt, a as ot } from '../../../chunks/armor_model.js';
+import { M as lt, a as dt } from '../../../chunks/armor_model.js';
 import {
-    V as ct,
-    P as lt,
-    T as dt,
-    E as ht,
-    u as mt,
-    a as ut,
-    b as _t,
-    F as pt,
-    c as vt,
-    d as bt,
-    M as xt,
+    V as ht,
+    P as mt,
+    T as ut,
+    E as _t,
+    u as pt,
+    a as vt,
+    b as bt,
+    F as xt,
+    c as gt,
+    d as ft,
+    M as Nt,
 } from '../../../chunks/entry_point.js';
 import '../../../chunks/node_model.js';
-const [gt, ft] = u('WalletModel')(
+const [jt, Ct] = p('WalletModel')(
         ({ observableModel: e }) => {
             const t = { currencies: e.dict('currencies') };
             return {
                 ...t,
-                list: _.shallow((e) =>
+                list: v.shallow((e) =>
                     Array.from(t.currencies.keys.values()).sort((t, s) => {
                         const a = e.indexOf(t),
                             r = e.indexOf(s),
@@ -153,7 +151,7 @@ const [gt, ft] = u('WalletModel')(
         },
         ({ externalModel: e }) => ({ currencyAction: e.createCallback((e) => ({ type: e }), 'onCurrencyAction') }),
     ),
-    [Nt, jt] = u()(
+    [yt, kt] = p()(
         ({ observableModel: e }) => ({
             ...e.primitives({
                 vehicleId: 'vehicleId',
@@ -173,190 +171,38 @@ const [gt, ft] = u('WalletModel')(
                 tags: 'tags',
                 inventoryId: 'inventoryId',
             }),
-            type: e.transform((e) => (v(e.vehicleType) ? e.vehicleType : void 0)),
-            state: e.transform((e) => (p(e.state) ? e.state : void 0)),
+            type: e.transform((e) => (x(e.vehicleType) ? e.vehicleType : void 0)),
+            state: e.transform((e) => (b(e.state) ? e.state : void 0)),
         }),
-        b,
+        g,
     ),
-    yt = x.resolve('strings'),
-    [Ct, kt] = u()(({ observableModel: e }) => {
+    wt = f(e({ key: t(), name: t() })),
+    It = f(s(e({ value: a([r(), t()]), state: t() }))),
+    St = N.resolve('strings'),
+    [Tt, Mt] = p()(({ observableModel: e }) => {
         const t = { groups: e.arrayClone('groups') },
-            s = _.structural(() =>
-                g(t.groups.get(), ({ id: e, tooltipID: t, indicator: s, params: a, extraParams: r }) => ({
+            s = v.structural(() =>
+                j(t.groups.get(), ({ id: e, tooltipID: t, indicator: s, params: a, extraParams: r }) => ({
                     id: e,
-                    header: St(e, t, s),
-                    characteristics: It(a),
-                    modifications: It(r),
+                    header: At(e, t, s),
+                    characteristics: Et(a),
+                    modifications: Et(r),
                 })),
             );
         return { ...t, computes: { columns: s } };
-    }, b);
-function wt({ id: e, value: t, name: a, tooltipID: r, template: i, measureUnit: n }) {
-    const o = (() => {
-            let e;
-            const t = (t, a) => {
-                var r, i;
-                return (
-                    !1 ===
-                        ((e) =>
-                            Array.isArray(e) &&
-                            e.every(
-                                (e) =>
-                                    'object' == typeof e &&
-                                    null !== e &&
-                                    ((e) =>
-                                        ('string' == typeof e.value || 'number' == typeof e.value) &&
-                                        'string' == typeof e.state)(e),
-                            ))(t) &&
-                        ((e = a),
-                        (r = t),
-                        (i = '$input'),
-                        ((Array.isArray(r) ||
-                            s(
-                                !0,
-                                {
-                                    method: 'typia.json.assertParse',
-                                    path: i + '',
-                                    expected: 'Array<ParamValue>',
-                                    value: r,
-                                },
-                                e,
-                            )) &&
-                            r.every(
-                                (t, a) =>
-                                    ((('object' == typeof t && null !== t) ||
-                                        s(
-                                            !0,
-                                            {
-                                                method: 'typia.json.assertParse',
-                                                path: i + '[' + a + ']',
-                                                expected: 'ParamValue',
-                                                value: t,
-                                            },
-                                            e,
-                                        )) &&
-                                        ((t, a, r = !0) =>
-                                            ('string' == typeof t.value ||
-                                                'number' == typeof t.value ||
-                                                s(
-                                                    r,
-                                                    {
-                                                        method: 'typia.json.assertParse',
-                                                        path: a + '.value',
-                                                        expected: '(number | string)',
-                                                        value: t.value,
-                                                    },
-                                                    e,
-                                                )) &&
-                                            ('string' == typeof t.state ||
-                                                s(
-                                                    r,
-                                                    {
-                                                        method: 'typia.json.assertParse',
-                                                        path: a + '.state',
-                                                        expected: 'string',
-                                                        value: t.state,
-                                                    },
-                                                    e,
-                                                )))(t, i + '[' + a + ']', !0)) ||
-                                    s(
-                                        !0,
-                                        {
-                                            method: 'typia.json.assertParse',
-                                            path: i + '[' + a + ']',
-                                            expected: 'ParamValue',
-                                            value: t,
-                                        },
-                                        e,
-                                    ),
-                            )) ||
-                            s(
-                                !0,
-                                {
-                                    method: 'typia.json.assertParse',
-                                    path: i + '',
-                                    expected: 'Array<ParamValue>',
-                                    value: r,
-                                },
-                                e,
-                            )),
-                    t
-                );
-            };
-            return (e, s) => t(JSON.parse(e), s);
-        })()(t).map((e) => e.value),
-        c = a
-            ? (() => {
-                  let e;
-                  const t = (t, a) => {
-                      var r, i;
-                      return (
-                          !1 ===
-                              ((e) =>
-                                  'object' == typeof e &&
-                                  null !== e &&
-                                  ((e) => 'string' == typeof e.key && 'string' == typeof e.name)(e))(t) &&
-                              ((e = a),
-                              (i = '$input'),
-                              ((('object' == typeof (r = t) && null !== r) ||
-                                  s(
-                                      !0,
-                                      {
-                                          method: 'typia.json.assertParse',
-                                          path: i + '',
-                                          expected: 'KpiBonusParams',
-                                          value: r,
-                                      },
-                                      e,
-                                  )) &&
-                                  ((t, a, r = !0) =>
-                                      ('string' == typeof t.key ||
-                                          s(
-                                              r,
-                                              {
-                                                  method: 'typia.json.assertParse',
-                                                  path: a + '.key',
-                                                  expected: 'string',
-                                                  value: t.key,
-                                              },
-                                              e,
-                                          )) &&
-                                      ('string' == typeof t.name ||
-                                          s(
-                                              r,
-                                              {
-                                                  method: 'typia.json.assertParse',
-                                                  path: a + '.name',
-                                                  expected: 'string',
-                                                  value: t.name,
-                                              },
-                                              e,
-                                          )))(r, i + '', !0)) ||
-                                  s(
-                                      !0,
-                                      {
-                                          method: 'typia.json.assertParse',
-                                          path: i + '',
-                                          expected: 'KpiBonusParams',
-                                          value: r,
-                                      },
-                                      e,
-                                  )),
-                          t
-                      );
-                  };
-                  return (e, s) => t(JSON.parse(e), s);
-              })()(a)
-            : { key: '', name: '' };
-    return { type: e, tooltipId: r, templatePath: i, amount: o.length > 1 ? o : o[0], name: Tt(e, c), measure: n };
+    }, g);
+function Pt({ id: e, value: t, name: s, tooltipID: a, template: r, measureUnit: i }) {
+    const n = It(t).map((e) => e.value),
+        o = s ? wt(s) : { key: '', name: '' };
+    return { type: e, tooltipId: a, templatePath: r, amount: n.length > 1 ? n : n[0], name: Rt(e, o), measure: i };
 }
-function It(e) {
-    const t = g(e, wt);
+function Et(e) {
+    const t = j(e, Pt);
     return t.length > 0 ? t : void 0;
 }
-function St(e, t, s) {
+function At(e, t, s) {
     return {
-        name: yt.readOrEmpty(`menu.tank_params.${e}`),
+        name: St.readOrEmpty(`menu.tank_params.${e}`),
         type: e,
         vehicleAmount: s.markerValue,
         maxAmount: s.maxValue,
@@ -364,12 +210,12 @@ function St(e, t, s) {
         tooltipId: t,
     };
 }
-function Tt(e, { key: t, name: s }) {
+function Rt(e, { key: t, name: s }) {
     return '' !== s && '' !== t
-        ? yt.readOr(`tank_setup.kpi.bonus.ttc.${t}.${s}`, () => yt.readOrEmpty(`tank_setup.kpi.bonus.${t}.${s}`))
-        : yt.readOrEmpty(`menu.tank_params.${e}`);
+        ? St.readOr(`tank_setup.kpi.bonus.ttc.${t}.${s}`, () => St.readOrEmpty(`tank_setup.kpi.bonus.${t}.${s}`))
+        : St.readOrEmpty(`menu.tank_params.${e}`);
 }
-const [Mt, Pt] = u()(
+const [Ot, Lt] = p()(
         ({ observableModel: e }) => {
             const t = e.primitives([
                     'action',
@@ -390,26 +236,26 @@ const [Mt, Pt] = u()(
                     'canTradeIn',
                 ]),
                 s = e.primitives(['elite', 'premium']),
-                a = _.primitive(() => t.combatXp.get() + t.freeXp.get());
-            return { ...t, computes: { totalXp: a, isPremium: _.primitive(() => s.elite.get() || s.premium.get()) } };
+                a = v.primitive(() => t.combatXp.get() + t.freeXp.get());
+            return { ...t, computes: { totalXp: a, isPremium: v.primitive(() => s.elite.get() || s.premium.get()) } };
         },
         ({ externalModel: e }) => ({
             action: e.createCallback((e) => ({ action: e }), 'onAction'),
             blueprintAction: e.createCallbackNoArgs('onBlueprint'),
         }),
     ),
-    [Et, At] = u()(
+    [Bt, Dt] = p()(
         ({ observableModel: e }) => ({ ...e.primitives(['status']) }),
         ({ externalModel: e }) => ({ addToComparison: e.createCallbackNoArgs('onAddToComparison') }),
     ),
-    Rt = 'action_research',
-    Ot = 'action_purchase',
-    Bt = 'action_purchase_shop',
-    Lt = 'action_restore',
-    Dt = 'action_in_garage',
-    Vt = 'action_state_enabled',
-    $t = 'readyForTradeIn',
-    zt = {
+    Vt = 'action_research',
+    $t = 'action_purchase',
+    zt = 'action_purchase_shop',
+    Ht = 'action_restore',
+    Ft = 'action_in_garage',
+    Wt = 'action_state_enabled',
+    Gt = 'readyForTradeIn',
+    Ut = {
         root: 'Price_root_29f8d762',
         priceBlock: 'Price_priceBlock_8de1ae95',
         priceContainer: 'Price_priceContainer_23342f1a',
@@ -422,198 +268,198 @@ const [Mt, Pt] = u()(
         'discountTimer__color-red': 'Price_discountTimer__color-red_6a4bb2b4',
         'discountTimer__color-blue': 'Price_discountTimer__color-blue_1db7d566',
     },
-    Ft = a(function ({ className: e }) {
-        const t = x.resolve('intl'),
-            { model: s } = Pt(),
+    Xt = i(function ({ className: e }) {
+        const t = N.resolve('intl'),
+            { model: s } = Lt(),
             a = s.action.get(),
-            o = s.actionStateReason.get(),
-            c = s.oldPrice.get(),
+            r = s.actionStateReason.get(),
+            i = s.oldPrice.get(),
             l = s.price.get(),
             d = s.currency.get(),
             h = s.priceDiscount.get(),
-            m = a === Rt ? f.colors.blue : f.colors.red,
+            m = a === Vt ? C.colors.blue : C.colors.red,
             u = s.promoFinishTime.get(),
-            _ = r.useRef(),
-            [p, v] = r.useState(0);
-        (r.useLayoutEffect(() => {
-            const e = Math.max(u - Math.floor(Date.now() / T), 0);
+            _ = n.useRef(),
+            [p, v] = n.useState(0);
+        (n.useLayoutEffect(() => {
+            const e = Math.max(u - Math.floor(Date.now() / E), 0);
             if ((v(e), !(e <= 0)))
                 return ((_.current = setTimeout(() => v(0), 1e3 * (e + 1))), () => clearTimeout(_.current));
         }, [u]),
-            N(() => clearTimeout(_.current)));
-        const b = j(
-            { currencySize: y.sizes.small, discountSize: f.sizes.medium },
-            { medium: { currencySize: y.sizes.large, discountSize: f.sizes.large } },
+            y(() => clearTimeout(_.current)));
+        const b = k(
+            { currencySize: w.sizes.small, discountSize: C.sizes.medium },
+            { medium: { currencySize: w.sizes.large, discountSize: C.sizes.large } },
         );
-        return i.jsxs('div', {
-            className: n(zt.priceBlock, e),
+        return o.jsxs('div', {
+            className: c(Ut.priceBlock, e),
             children: [
-                c > 0 && c !== l && i.jsx('div', { className: zt.oldPrice, children: t.formatNumber('integral', c) }),
-                i.jsxs(y, {
+                i > 0 && i !== l && o.jsx('div', { className: Ut.oldPrice, children: t.formatNumber('integral', i) }),
+                o.jsxs(w, {
                     type: d,
                     size: b.currencySize,
-                    enough: 'notEnoughCredits' !== o && 'notEnoughXp' !== o,
-                    className: zt.priceContainer,
+                    enough: 'notEnoughCredits' !== r && 'notEnoughXp' !== r,
+                    className: Ut.priceContainer,
                     reverse: !0,
                     children: [
                         h > 0 &&
-                            i.jsxs('div', {
-                                className: zt.discountContainer,
+                            o.jsxs('div', {
+                                className: Ut.discountContainer,
                                 children: [
-                                    i.jsx(f, {
+                                    o.jsx(C, {
                                         color: m,
                                         size: b.discountSize,
-                                        className: n(zt.discount, a === Rt && zt.discount__research),
+                                        className: c(Ut.discount, a === Vt && Ut.discount__research),
                                         children: t.formatNumber('integral', -h),
                                     }),
-                                    a !== $t &&
+                                    a !== Gt &&
                                         p > 0 &&
-                                        i.jsx('div', {
-                                            className: n(zt.discountTimer, zt[`discountTimer__color-${m}`]),
-                                            children: i.jsx(C, {
+                                        o.jsx('div', {
+                                            className: c(Ut.discountTimer, Ut[`discountTimer__color-${m}`]),
+                                            children: o.jsx(I, {
                                                 path: 'vehicle_hub.researchPurchase.discountTimer',
-                                                params: { date: k(u, I(p).days > 0 ? w.ShortDate : w.ShortTime) },
+                                                params: { date: S(u, M(p).days > 0 ? T.ShortDate : T.ShortTime) },
                                             }),
                                         }),
                                 ],
                             }),
-                        i.jsx('div', { className: zt.price, children: S(l, d) }),
+                        o.jsx('div', { className: Ut.price, children: P(l, d) }),
                     ],
                 }),
             ],
         });
     }),
-    Ht = 'TradeInLabel_8e59d58a',
-    Wt = 'TradeInLabel_icon_370a8f6b';
-function Gt() {
-    const e = x.resolve('strings'),
-        t = M('vehicle_hub.research_purchase.trade_in', 'vehicle_hub.research_purchase.trade_in_big'),
-        s = P({ args: r.useMemo(() => ({ tooltipId: 'tradeInInfo' }), []) });
-    return i.jsxs('div', {
+    Kt = 'TradeInLabel_8e59d58a',
+    Zt = 'TradeInLabel_icon_370a8f6b';
+function Yt() {
+    const e = N.resolve('strings'),
+        t = A('vehicle_hub.research_purchase.trade_in', 'vehicle_hub.research_purchase.trade_in_big'),
+        s = R({ args: n.useMemo(() => ({ tooltipId: 'tradeInInfo' }), []) });
+    return o.jsxs('div', {
         ...s,
-        className: Ht,
-        children: [i.jsx(E, { className: Wt, path: t }), e.readOrEmpty('tooltips.vehicle.trade')],
+        className: Kt,
+        children: [o.jsx(O, { className: Zt, path: t }), e.readOrEmpty('tooltips.vehicle.trade')],
     });
 }
-const Ut = 'VehicleExperience_54fa17d7',
-    Xt = 'VehicleExperience_row_4f00afbf',
-    Kt = 'VehicleExperience_label_452b09a4',
-    Zt = 'VehicleExperience_experience_718161f',
-    Yt = 'VehicleExperience_dots_2b70188e',
-    Jt = a(function ({ className: e }) {
-        const t = x.resolve('intl'),
-            s = x.resolve('strings'),
-            { model: a } = Pt(),
+const qt = 'VehicleExperience_54fa17d7',
+    Jt = 'VehicleExperience_row_4f00afbf',
+    Qt = 'VehicleExperience_label_452b09a4',
+    es = 'VehicleExperience_experience_718161f',
+    ts = 'VehicleExperience_dots_2b70188e',
+    ss = i(function ({ className: e }) {
+        const t = N.resolve('intl'),
+            s = N.resolve('strings'),
+            { model: a } = Lt(),
             r = a.combatXp.get(),
-            o = a.computes.totalXp(),
-            c = a.computes.isPremium();
-        return i.jsxs('div', {
-            className: n(Ut, e),
+            i = a.computes.totalXp(),
+            n = a.computes.isPremium();
+        return o.jsxs('div', {
+            className: c(qt, e),
             children: [
-                i.jsxs('div', {
-                    className: Xt,
+                o.jsxs('div', {
+                    className: Jt,
                     children: [
-                        i.jsx('div', { className: Kt, children: s.readOrEmpty('session_stats.label.gamingXp') }),
-                        i.jsx('div', { className: Yt }),
-                        i.jsx(y, {
-                            type: c ? y.types.eliteXp : y.types.tankXP,
-                            size: y.sizes.extraSmall,
+                        o.jsx('div', { className: Qt, children: s.readOrEmpty('session_stats.label.gamingXp') }),
+                        o.jsx('div', { className: ts }),
+                        o.jsx(w, {
+                            type: n ? w.types.eliteXp : w.types.tankXP,
+                            size: w.sizes.extraSmall,
                             reverse: !0,
-                            children: i.jsx('div', { className: Zt, children: t.formatNumber('integral', r) }),
+                            children: o.jsx('div', { className: es, children: t.formatNumber('integral', r) }),
                         }),
                     ],
                 }),
-                i.jsxs('div', {
-                    className: Xt,
+                o.jsxs('div', {
+                    className: Jt,
                     children: [
-                        i.jsx('div', { className: Kt, children: s.readOrEmpty('session_stats.label.totalXp') }),
-                        i.jsx('div', { className: Yt }),
-                        i.jsx(y, {
-                            type: y.types.custom,
-                            size: y.sizes.extraSmall,
-                            imagePath: c
+                        o.jsx('div', { className: Qt, children: s.readOrEmpty('session_stats.label.totalXp') }),
+                        o.jsx('div', { className: ts }),
+                        o.jsx(w, {
+                            type: w.types.custom,
+                            size: w.sizes.extraSmall,
+                            imagePath: n
                                 ? 'vehicle_hub.research_purchase.total_experience_elite'
                                 : 'vehicle_hub.research_purchase.total_experience',
                             reverse: !0,
-                            children: i.jsx('div', { className: Zt, children: t.formatNumber('integral', o) }),
+                            children: o.jsx('div', { className: es, children: t.formatNumber('integral', i) }),
                         }),
                     ],
                 }),
             ],
         });
     }),
-    qt = 'ResearchPurchaseControl_fce6cc10',
-    Qt = 'ResearchPurchaseControl_priceBlock_b9fd7559',
-    es = 'ResearchPurchaseControl_controls_9dac55a2',
-    ts = 'ResearchPurchaseControl_controls__rent_35316773',
-    ss = 'ResearchPurchaseControl_actionButton_d5574927',
-    as = 'ResearchPurchaseControl_buttonContent_11e8b840',
-    rs = 'ResearchPurchaseControl_buttonContent__blueprintAssembled_bd87c171',
-    is = 'ResearchPurchaseControl_base__inGarage_32499cd8',
-    ns = 'ResearchPurchaseControl_purchaseShopButton_1d51e5f2',
-    os = 'ResearchPurchaseControl_recoveryUntil_6b79fd3b',
-    cs = 'ResearchPurchaseControl_garageButton_60f5bbd3',
-    ls = 'ResearchPurchaseControl_blueprintGarageButton_32499cd8',
-    ds = 'ResearchPurchaseControl_garageIcon_7a613811',
-    hs = 'ResearchPurchaseControl_blueprintIcon_a923cdd9',
-    ms = 'ResearchPurchaseControl_blueprintTotal_7c0becbb',
-    us = 'ResearchPurchaseControl_experienceBlock_cd2e5ad7',
-    _s = 'ResearchPurchaseControl_experienceBlock__rent_35316773',
-    ps = 'ResearchPurchaseControl_experienceBlock__topOffset_8a525c2',
-    vs = 'ResearchPurchaseControl_experienceBlock__bottomOffset_b7ecf008',
-    bs = [Dt, Lt, Bt];
-function xs({ actionType: e }) {
-    const t = x.resolve('strings');
+    as = 'ResearchPurchaseControl_fce6cc10',
+    rs = 'ResearchPurchaseControl_priceBlock_b9fd7559',
+    is = 'ResearchPurchaseControl_controls_9dac55a2',
+    ns = 'ResearchPurchaseControl_controls__rent_35316773',
+    os = 'ResearchPurchaseControl_actionButton_d5574927',
+    cs = 'ResearchPurchaseControl_buttonContent_11e8b840',
+    ls = 'ResearchPurchaseControl_buttonContent__blueprintAssembled_bd87c171',
+    ds = 'ResearchPurchaseControl_base__inGarage_32499cd8',
+    hs = 'ResearchPurchaseControl_purchaseShopButton_1d51e5f2',
+    ms = 'ResearchPurchaseControl_recoveryUntil_6b79fd3b',
+    us = 'ResearchPurchaseControl_garageButton_60f5bbd3',
+    _s = 'ResearchPurchaseControl_blueprintGarageButton_32499cd8',
+    ps = 'ResearchPurchaseControl_garageIcon_7a613811',
+    vs = 'ResearchPurchaseControl_blueprintIcon_a923cdd9',
+    bs = 'ResearchPurchaseControl_blueprintTotal_7c0becbb',
+    xs = 'ResearchPurchaseControl_experienceBlock_cd2e5ad7',
+    gs = 'ResearchPurchaseControl_experienceBlock__rent_35316773',
+    fs = 'ResearchPurchaseControl_experienceBlock__topOffset_8a525c2',
+    Ns = 'ResearchPurchaseControl_experienceBlock__bottomOffset_b7ecf008',
+    js = [Ft, Ht, zt];
+function Cs({ actionType: e }) {
+    const t = N.resolve('strings');
     switch (e) {
-        case Rt:
+        case Vt:
             return t.readOrEmpty('menu.unlocks.unlockButton');
-        case Ot:
+        case $t:
             return t.readOrEmpty('menu.research.labels.button.buy');
-        case Bt:
-            return i.jsxs(i.Fragment, {
+        case zt:
+            return o.jsxs(o.Fragment, {
                 children: [
-                    i.jsx(E, { path: 'vehicle_hub.research_purchase.purchase_shop', className: ns }),
+                    o.jsx(O, { path: 'vehicle_hub.research_purchase.purchase_shop', className: hs }),
                     t.readOrEmpty('vehicle_preview.buyingPanel.buyBtn.label.buy'),
                 ],
             });
-        case Lt:
+        case Ht:
             return t.readOrEmpty('menu.research.labels.button.restore');
-        case $t:
+        case Gt:
             return t.readOrEmpty('hangar.buyVehicleWindow.tradeInBtnLabel');
         default:
             return void console.error(`ResearchPurchaseControl_Action: met unexpected action ${e}`);
     }
 }
-function gs({ blueprintFragments: e, blueprintTotal: t }) {
-    const s = x.resolve('strings');
+function ys({ blueprintFragments: e, blueprintTotal: t }) {
+    const s = N.resolve('strings');
     return e === t
-        ? i.jsxs(i.Fragment, {
+        ? o.jsxs(o.Fragment, {
               children: [
-                  i.jsx(E, { path: 'vehicle_hub.research_purchase.blueprint_assembled', className: hs }),
+                  o.jsx(O, { path: 'vehicle_hub.research_purchase.blueprint_assembled', className: vs }),
                   s.readOrEmpty('blueprints.blueprintProgressBar.complete'),
               ],
           })
-        : i.jsxs(i.Fragment, {
+        : o.jsxs(o.Fragment, {
               children: [
-                  i.jsx(C, {
+                  o.jsx(I, {
                       path: 'blueprints.blueprintProgressBar.inProgress.progress',
                       params: { values: e },
                       upgradeLegacy: !0,
                   }),
-                  i.jsx(C, {
+                  o.jsx(I, {
                       path: 'blueprints.blueprintProgressBar.inProgress.values',
                       params: { current: '', total: t },
-                      className: ms,
+                      className: bs,
                       upgradeLegacy: !0,
                   }),
               ],
           });
 }
-const fs = a(function ({ className: e }) {
-        const t = x.resolve('strings'),
-            { model: s, controls: a } = Pt(),
-            { model: o } = jt(),
-            c = s.action.get(),
+const ks = i(function ({ className: e }) {
+        const t = N.resolve('strings'),
+            { model: s, controls: a } = Lt(),
+            { model: r } = kt(),
+            i = s.action.get(),
             l = s.timeLeft.get(),
             d = s.cooldownTimeLeft.get(),
             h = s.notInShopVehicle.get(),
@@ -622,239 +468,237 @@ const fs = a(function ({ className: e }) {
             _ = s.blueprintFragments.get(),
             p = s.blueprintTotal.get(),
             v = s.canTradeIn.get(),
-            b = A(V(d), D.compact),
-            g = r.useMemo(() => k(Date.now() / T + l, I(l).days > 0 ? w.FullDate : w.ShortTime), [l]),
-            f = R({
+            b = L(H(d), z.compact),
+            x = n.useMemo(() => S(Date.now() / E + l, M(l).days > 0 ? T.FullDate : T.ShortTime), [l]),
+            g = B({
                 header: u ? t.readOrEmpty(`tooltips.vehiclePreview.buyButton.${u}.header`) : void 0,
                 body: u
-                    ? O(B(t.readOrEmpty(`tooltips.vehiclePreview.buyButton.${u}.body`)), {
+                    ? D(V(t.readOrEmpty(`tooltips.vehiclePreview.buyButton.${u}.body`)), {
                           timeLeft: b.items.join(' '),
                       })
                     : void 0,
             }),
-            N = (function (e, t) {
-                const s = x.resolve('strings'),
-                    a = R({
+            f = (function (e, t) {
+                const s = N.resolve('strings'),
+                    a = B({
                         header: s.readOrEmpty('tooltips.blueprint.VehicleBlueprintTooltip.vehicleUnlocked.header'),
                         body: s.readOrEmpty('tooltips.blueprint.VehicleBlueprintTooltip.vehicleUnlocked.body'),
                     }),
-                    i = r.useMemo(() => [t], [t]),
-                    n = $('blueprintInfo', i);
-                return e !== Rt ? a : n;
-            })(c, o.vehicleId.get()),
-            y = j(
-                { buttonSize: L.sizes.extraSmall, recoveryButtonSize: L.sizes.small },
-                { small: { buttonSize: L.sizes.small }, medium: { recoveryButtonSize: L.sizes.large } },
+                    r = n.useMemo(() => [t], [t]),
+                    i = F('blueprintInfo', r);
+                return e !== Vt ? a : i;
+            })(i, r.vehicleId.get()),
+            j = k(
+                { buttonSize: $.sizes.extraSmall, recoveryButtonSize: $.sizes.small },
+                { small: { buttonSize: $.sizes.small }, medium: { recoveryButtonSize: $.sizes.large } },
             );
-        if (h && !bs.includes(c)) return;
-        const S = _ === p;
-        return i.jsx('div', {
-            className: n(qt, c === Dt && is, e),
+        if (h && !js.includes(i)) return;
+        const C = _ === p;
+        return o.jsx('div', {
+            className: c(as, i === Ft && ds, e),
             children: (() => {
-                switch (c) {
-                    case Dt:
-                        return i.jsxs(i.Fragment, {
+                switch (i) {
+                    case Ft:
+                        return o.jsxs(o.Fragment, {
                             children: [
-                                s.combatXp.get() >= 0 && i.jsx(Jt, { className: n(us, vs) }),
-                                i.jsxs('div', {
-                                    className: es,
+                                s.combatXp.get() >= 0 && o.jsx(ss, { className: c(xs, Ns) }),
+                                o.jsxs('div', {
+                                    className: is,
                                     children: [
-                                        i.jsxs(L, {
-                                            theme: L.themes.secondary,
-                                            size: y.buttonSize,
-                                            className: cs,
-                                            classNames: { content: as },
-                                            onClick: () => a.action(c),
+                                        o.jsxs($, {
+                                            theme: $.themes.secondary,
+                                            size: j.buttonSize,
+                                            className: us,
+                                            classNames: { content: cs },
+                                            onClick: () => a.action(i),
                                             children: [
-                                                i.jsx('div', { className: ds }),
+                                                o.jsx('div', { className: ps }),
                                                 t.readOrEmpty('menu.research.labels.button.showInHangar'),
                                             ],
                                         }),
                                         p > 0 &&
-                                            i.jsx(L, {
-                                                ...N,
-                                                theme: L.themes.secondary,
-                                                size: y.buttonSize,
+                                            o.jsx($, {
+                                                ...f,
+                                                theme: $.themes.secondary,
+                                                size: j.buttonSize,
                                                 onClick: () => {
-                                                    (N.onClick(), a.blueprintAction());
+                                                    (f.onClick(), a.blueprintAction());
                                                 },
-                                                className: ls,
-                                                classNames: { content: n(as, S && rs) },
-                                                children: i.jsx(gs, { blueprintFragments: _, blueprintTotal: p }),
+                                                className: _s,
+                                                classNames: { content: c(cs, C && ls) },
+                                                children: o.jsx(ys, { blueprintFragments: _, blueprintTotal: p }),
                                             }),
                                     ],
                                 }),
                             ],
                         });
                     case 'action_purchase_can_view_in_garage':
-                        return i.jsxs(i.Fragment, {
+                        return o.jsxs(o.Fragment, {
                             children: [
-                                i.jsx(Ft, { className: Qt }),
-                                i.jsxs('div', {
-                                    className: n(es, ts),
+                                o.jsx(Xt, { className: rs }),
+                                o.jsxs('div', {
+                                    className: c(is, ns),
                                     children: [
-                                        i.jsx(L, {
-                                            ...(u && f),
-                                            theme: L.themes.primary,
-                                            size: y.recoveryButtonSize,
-                                            className: ss,
-                                            classNames: { content: as },
-                                            disabled: m !== Vt,
+                                        o.jsx($, {
+                                            ...(u && g),
+                                            theme: $.themes.primary,
+                                            size: j.recoveryButtonSize,
+                                            className: os,
+                                            classNames: { content: cs },
+                                            disabled: m !== Wt,
                                             onClick: () => {
-                                                m === Vt && (u && (null == f || f.onClick()), a.action(Ot));
+                                                m === Wt && (u && g?.onClick(), a.action($t));
                                             },
-                                            children: i.jsx(xs, { actionType: Ot }),
+                                            children: o.jsx(Cs, { actionType: $t }),
                                         }),
-                                        i.jsxs(L, {
-                                            theme: L.themes.secondary,
-                                            size: y.recoveryButtonSize,
-                                            classNames: { content: as },
-                                            onClick: () => a.action(Dt),
+                                        o.jsxs($, {
+                                            theme: $.themes.secondary,
+                                            size: j.recoveryButtonSize,
+                                            classNames: { content: cs },
+                                            onClick: () => a.action(Ft),
                                             children: [
-                                                i.jsx('div', { className: ds }),
+                                                o.jsx('div', { className: ps }),
                                                 t.readOrEmpty('menu.research.labels.button.showInHangar'),
                                             ],
                                         }),
                                     ],
                                 }),
-                                s.combatXp.get() >= 0 && i.jsx(Jt, { className: n(us, ps, _s) }),
+                                s.combatXp.get() >= 0 && o.jsx(ss, { className: c(xs, fs, gs) }),
                             ],
                         });
-                    case Rt:
-                    case Ot:
-                    case Bt:
-                    case Lt:
+                    case Vt:
                     case $t:
-                        return i.jsxs(i.Fragment, {
+                    case zt:
+                    case Ht:
+                    case Gt:
+                        return o.jsxs(o.Fragment, {
                             children: [
-                                c !== Bt && i.jsx(Ft, { className: Qt }),
-                                i.jsxs('div', {
-                                    className: es,
+                                i !== zt && o.jsx(Xt, { className: rs }),
+                                o.jsxs('div', {
+                                    className: is,
                                     children: [
-                                        i.jsx(L, {
-                                            ...(u && f),
-                                            theme: L.themes.primary,
-                                            size: y.recoveryButtonSize,
-                                            className: ss,
-                                            classNames: { content: as },
-                                            disabled: m !== Vt,
+                                        o.jsx($, {
+                                            ...(u && g),
+                                            theme: $.themes.primary,
+                                            size: j.recoveryButtonSize,
+                                            className: os,
+                                            classNames: { content: cs },
+                                            disabled: m !== Wt,
                                             onClick: () => {
-                                                m === Vt && (u && (null == f || f.onClick()), a.action(c));
+                                                m === Wt && (u && g?.onClick(), a.action(i));
                                             },
-                                            children: i.jsx(xs, { actionType: c }),
+                                            children: o.jsx(Cs, { actionType: i }),
                                         }),
                                         p > 0 &&
-                                            i.jsx(L, {
-                                                ...N,
-                                                theme: L.themes.secondary,
-                                                size: y.recoveryButtonSize,
-                                                className: ss,
-                                                onClick: () => {
-                                                    (N.onClick(), a.blueprintAction());
-                                                },
-                                                classNames: { content: n(as, S && rs) },
-                                                children: i.jsx(gs, { blueprintFragments: _, blueprintTotal: p }),
-                                            }),
-                                        c === Lt &&
-                                            !h &&
-                                            i.jsx('div', {
+                                            o.jsx($, {
+                                                ...f,
+                                                theme: $.themes.secondary,
+                                                size: j.recoveryButtonSize,
                                                 className: os,
-                                                children: i.jsx(C, {
+                                                onClick: () => {
+                                                    (f.onClick(), a.blueprintAction());
+                                                },
+                                                classNames: { content: c(cs, C && ls) },
+                                                children: o.jsx(ys, { blueprintFragments: _, blueprintTotal: p }),
+                                            }),
+                                        i === Ht &&
+                                            !h &&
+                                            o.jsx('div', {
+                                                className: ms,
+                                                children: o.jsx(I, {
                                                     path: 'vehicle_hub.researchPurchase.recover',
-                                                    params: { date: g },
+                                                    params: { date: x },
                                                 }),
                                             }),
-                                        v && i.jsx(Gt, {}),
+                                        v && o.jsx(Yt, {}),
                                     ],
                                 }),
-                                s.combatXp.get() >= 0 && i.jsx(Jt, { className: n(us, ps) }),
+                                s.combatXp.get() >= 0 && o.jsx(ss, { className: c(xs, fs) }),
                             ],
                         });
                     default:
-                        console.error(`RestorePurchaseControl error: got unhandled action ${c}`);
+                        console.error(`RestorePurchaseControl error: got unhandled action ${i}`);
                 }
             })(),
         });
     }),
-    Ns = {
-        base: 'VehicleHubTab_41897c7c',
-        tab: 'VehicleHubTab_tab_d12e2d0b',
-        content: 'VehicleHubTab_content_562b0c6',
-        bubble: 'VehicleHubTab_bubble_90a22cab',
-    };
-function js({ id: e, label: t, counter: s, className: a }) {
-    const r = x.resolve('intl'),
-        o = j({ size: G.small }, { large: { size: G.medium } });
-    return i.jsxs('div', {
-        className: n(Ns.base, a),
+    ws = 'VehicleHubTab_41897c7c',
+    Is = 'VehicleHubTab_tab_d12e2d0b',
+    Ss = 'VehicleHubTab_content_562b0c6',
+    Ts = 'VehicleHubTab_bubble_90a22cab';
+function Ms({ id: e, label: t, counter: s, className: a }) {
+    const r = N.resolve('intl'),
+        i = k({ size: K.small }, { large: { size: K.medium } });
+    return o.jsxs('div', {
+        className: c(ws, a),
         children: [
-            i.jsx(z.Tab, {
+            o.jsx(W.Tab, {
                 tabId: e,
-                classNames: { base: Ns.tab, content: Ns.content },
-                children: i.jsx(F, { text: r.toUpperCase(t) }),
+                classNames: { base: Is, content: Ss },
+                children: o.jsx(G, { text: r.toUpperCase(t) }),
             }),
-            i.jsx(H.Root, {
+            o.jsx(U.Root, {
                 hidden: 0 === s,
-                children: i.jsx(H.Icon, { size: o.size, type: W.bubble, className: Ns.bubble }),
+                children: o.jsx(U.Icon, { size: i.size, type: X.bubble, className: Ts }),
             }),
         ],
     });
 }
-const ys = 'TabsNavigation_tabsNavigation_f7e0f60f',
-    Cs = 'TabsNavigation_switcher_bdc43d73',
-    ks = 'TabsNavigation_outerBorder_66e2c4c4',
-    ws = 'TabsNavigation_mainBorder_1ed0bb59',
-    Is = 'TabsNavigation_content_7ea34759';
-function Ss({ tabsList: e, activeTab: t, className: s, ...a }) {
-    return i.jsx('div', {
-        className: n(ys, s),
-        children: i.jsx(z, {
+const Ps = 'TabsNavigation_tabsNavigation_f7e0f60f',
+    Es = 'TabsNavigation_switcher_bdc43d73',
+    As = 'TabsNavigation_outerBorder_66e2c4c4',
+    Rs = 'TabsNavigation_mainBorder_1ed0bb59',
+    Os = 'TabsNavigation_content_7ea34759';
+function Ls({ tabsList: e, activeTab: t, className: s, ...a }) {
+    return o.jsx('div', {
+        className: c(Ps, s),
+        children: o.jsx(W, {
             ...a,
             active: t,
-            children: i.jsx(z.Switcher, {
-                classNames: { base: Cs, outerBorder: ks, mainBorder: ws, content: Is },
-                children: e.map((e) => i.jsx(js, { id: e.id, label: e.label, counter: e.counter }, e.id)),
+            children: o.jsx(W.Switcher, {
+                classNames: { base: Es, outerBorder: As, mainBorder: Rs, content: Os },
+                children: e.map((e) => o.jsx(Ms, { id: e.id, label: e.label, counter: e.counter }, e.id)),
             }),
         }),
     });
 }
-const Ts = 'enabled',
-    Ms = 'VehicleInfo_47f4ed8c',
-    Ps = 'VehicleInfo_flag_5ec44a26',
-    Es = 'VehicleInfo_level_e071b40b',
-    As = 'VehicleInfo_type_3740e975',
-    Rs = 'VehicleInfo_name_a6f9c3ff',
-    Os = 'VehicleInfo_name__premium_ac75a868',
-    Bs = 'VehicleInfo_additionalInfo_96947fa6',
-    Ls = 'VehicleInfo_role_dbc46b2d',
-    Ds = 'VehicleInfo_roleIcon_918ece55',
-    Vs = 'VehicleInfo_roleLabel_32656129',
-    $s = 'VehicleInfo_comparison_606a8b9b',
-    zs = 'VehicleInfo_rent_1732f1f0',
-    Fs = 'VehicleInfo_rentLabel_33c8aaa',
-    Hs = 'VehicleInfo_rentCounter_771ad73b',
-    Ws = 'VehicleInfo_rentIcon_1d418163',
-    Gs = { [U.lightTank]: 'LT', [U.mediumTank]: 'MT', [U.heavyTank]: 'HT', [U.SPG]: 'SPG', [U['AT-SPG']]: 'ATSPG' },
-    Us = 'x60x45',
-    Xs = 'x40x30',
-    Ks = [Y, J.spg];
-const Zs = {
-        [Q.RENTAL_IS_OVER]: 'rentalIsOver',
-        [Q.WOT_PLUS_EXCLUSIVE_VEHICLE_DISABLED]: 'subscriptionSuspended',
-        [Q.SUBSCRIPTION_SUSPENDED]: 'subscriptionSuspended',
+const Bs = 'enabled',
+    Ds = 'VehicleInfo_47f4ed8c',
+    Vs = 'VehicleInfo_flag_5ec44a26',
+    $s = 'VehicleInfo_level_e071b40b',
+    zs = 'VehicleInfo_type_3740e975',
+    Hs = 'VehicleInfo_name_a6f9c3ff',
+    Fs = 'VehicleInfo_name__premium_ac75a868',
+    Ws = 'VehicleInfo_additionalInfo_96947fa6',
+    Gs = 'VehicleInfo_role_dbc46b2d',
+    Us = 'VehicleInfo_roleIcon_918ece55',
+    Xs = 'VehicleInfo_roleLabel_32656129',
+    Ks = 'VehicleInfo_comparison_606a8b9b',
+    Zs = 'VehicleInfo_rent_1732f1f0',
+    Ys = 'VehicleInfo_rentLabel_33c8aaa',
+    qs = 'VehicleInfo_rentCounter_771ad73b',
+    Js = 'VehicleInfo_rentIcon_1d418163',
+    Qs = { [Z.lightTank]: 'LT', [Z.mediumTank]: 'MT', [Z.heavyTank]: 'HT', [Z.SPG]: 'SPG', [Z['AT-SPG']]: 'ATSPG' },
+    ea = 'x60x45',
+    ta = 'x40x30',
+    sa = [Q, ee.spg];
+const aa = {
+        [se.RENTAL_IS_OVER]: 'rentalIsOver',
+        [se.WOT_PLUS_EXCLUSIVE_VEHICLE_DISABLED]: 'subscriptionSuspended',
+        [se.SUBSCRIPTION_SUSPENDED]: 'subscriptionSuspended',
     },
-    Ys = a(function (e) {
-        const t = x.resolve('strings'),
-            { model: s } = jt(),
-            a = At(),
-            o = s.type.get(),
-            c = s.vehicleId.get(),
-            l = X(s.role.get()),
+    ra = i(function (e) {
+        const t = N.resolve('strings'),
+            { model: s } = kt(),
+            a = Dt(),
+            r = s.type.get(),
+            i = s.vehicleId.get(),
+            l = Y(s.role.get()),
             d = (function (e, t) {
-                if (void 0 === e || t === Y) return;
-                const s = Gs[e];
-                return e === U.SPG ? `role_${s}` : `role_${s}_${t}`;
-            })(o, l),
+                if (void 0 === e || t === Q) return;
+                const s = Qs[e];
+                return e === Z.SPG ? `role_${s}` : `role_${s}_${t}`;
+            })(r, l),
             h = a.model.status.get(),
             m = s.state.get(),
             u = s.rentLeftTime.get(),
@@ -862,16 +706,16 @@ const Zs = {
             p = s.rentLeftBattles.get(),
             v = s.nation.get(),
             b = s.longName.get(),
-            g = s.shortName.get(),
-            f = b.length > 36 ? g : b,
-            N = K(
+            x = s.shortName.get(),
+            g = b.length > 36 ? x : b,
+            f = q(
                 'vehicleRoles',
-                r.useMemo(() => [c], [c]),
+                n.useMemo(() => [i], [i]),
             ),
-            y = R(
+            j = B(
                 (() => {
                     switch (h) {
-                        case Ts:
+                        case Bs:
                             return {
                                 body: t.readOrEmpty(
                                     'veh_compare.vehPreview.compareVehicleBtn.tooltips.addToCompare.body',
@@ -907,52 +751,52 @@ const Zs = {
                     }
                 })(),
             ),
-            k = j(
-                { roleSize: Z.Role.sizes.x16x16, flagSize: Xs },
-                { medium: { roleSize: Z.Role.sizes.x24x24, flagSize: Us } },
+            C = k(
+                { roleSize: J.Role.sizes.x16x16, flagSize: ta },
+                { medium: { roleSize: J.Role.sizes.x24x24, flagSize: ea } },
             ),
-            w = M('vehicle_hub.comparison', 'vehicle_hub.comparison_large');
-        return i.jsxs('div', {
-            className: n(Ms, e.className),
+            y = A('vehicle_hub.comparison', 'vehicle_hub.comparison_large');
+        return o.jsxs('div', {
+            className: c(Ds, e.className),
             children: [
-                i.jsxs(Z, {
+                o.jsxs(J, {
                     children: [
-                        i.jsx(E, { path: `flags.${k.flagSize}.${v}`, className: Ps }),
-                        i.jsx(Z.Level, { value: s.level.get(), className: Es }),
-                        o &&
-                            i.jsx(Z.Type, {
-                                type: o,
-                                size: Z.Type.sizes.x64x64,
+                        o.jsx(O, { path: `flags.${C.flagSize}.${v}`, className: Vs }),
+                        o.jsx(J.Level, { value: s.level.get(), className: $s }),
+                        r &&
+                            o.jsx(J.Type, {
+                                type: r,
+                                size: J.Type.sizes.x64x64,
                                 premium: s.elite.get(),
-                                className: As,
+                                className: zs,
                             }),
-                        i.jsx(Z.Name, { className: n(Rs, s.premium.get() && Os), children: f }),
-                        i.jsx(L, {
-                            ...y,
-                            theme: L.themes.secondary,
-                            size: L.sizes.extraSmall,
+                        o.jsx(J.Name, { className: c(Hs, s.premium.get() && Fs), children: g }),
+                        o.jsx($, {
+                            ...j,
+                            theme: $.themes.secondary,
+                            size: $.sizes.extraSmall,
                             onClick: a.controls.addToComparison,
-                            className: $s,
+                            className: Ks,
                             autoAlignContent: !1,
-                            disabled: h !== Ts,
-                            children: i.jsx(E, { path: w, width: '20rem', height: '20rem' }),
+                            disabled: h !== Bs,
+                            children: o.jsx(O, { path: y, width: '20rem', height: '20rem' }),
                         }),
                     ],
                 }),
-                i.jsxs('div', {
-                    className: Bs,
+                o.jsxs('div', {
+                    className: Ws,
                     children: [
-                        l !== Y &&
-                            i.jsxs('div', {
-                                ...N,
-                                className: Ls,
+                        l !== Q &&
+                            o.jsxs('div', {
+                                ...f,
+                                className: Gs,
                                 children: [
-                                    !Ks.includes(l) &&
-                                        i.jsx(Z.Role, { size: k.roleSize, roleKey: l, classNames: { base: Ds } }),
+                                    !sa.includes(l) &&
+                                        o.jsx(J.Role, { size: C.roleSize, roleKey: l, classNames: { base: Us } }),
                                     d &&
-                                        i.jsx('div', {
-                                            className: Vs,
-                                            children: i.jsx(C, {
+                                        o.jsx('div', {
+                                            className: Xs,
+                                            children: o.jsx(I, {
                                                 upgradeLegacy: !0,
                                                 path: `menu.roleExp.roleName.${d}`,
                                                 params: { groupName: t.readOrEmpty(`menu.roleExp.roleGroupName.${d}`) },
@@ -960,32 +804,32 @@ const Zs = {
                                         }),
                                 ],
                             }),
-                        i.jsx(q, {
-                            className: zs,
+                        o.jsx(te, {
+                            className: Zs,
                             children: (() => {
                                 switch (m) {
-                                    case Q.RENTAL_IS_OVER:
-                                    case Q.WOT_PLUS_EXCLUSIVE_VEHICLE_DISABLED:
-                                    case Q.SUBSCRIPTION_SUSPENDED:
-                                        return i.jsxs(i.Fragment, {
+                                    case se.RENTAL_IS_OVER:
+                                    case se.WOT_PLUS_EXCLUSIVE_VEHICLE_DISABLED:
+                                    case se.SUBSCRIPTION_SUSPENDED:
+                                        return o.jsxs(o.Fragment, {
                                             children: [
-                                                i.jsx(ee, { className: Ws }),
-                                                i.jsx('div', {
-                                                    className: Fs,
-                                                    children: t.readOrEmpty(`vehicle_hub.vehicleState.${Zs[m]}`),
+                                                o.jsx(ae, { className: Js }),
+                                                o.jsx('div', {
+                                                    className: Ys,
+                                                    children: t.readOrEmpty(`vehicle_hub.vehicleState.${aa[m]}`),
                                                 }),
                                             ],
                                         });
                                     default:
                                         if (s.fromWotPlus.get() || (u <= 0 && p <= 0 && _ <= 0)) return;
-                                        return i.jsxs(i.Fragment, {
+                                        return o.jsxs(o.Fragment, {
                                             children: [
-                                                i.jsx('div', {
-                                                    className: Fs,
+                                                o.jsx('div', {
+                                                    className: Ys,
                                                     children: t.readOrEmpty('subscription.rentButton.label'),
                                                 }),
-                                                i.jsx(q.ShortCounter, {
-                                                    classNames: { text: Hs, icon: Ws },
+                                                o.jsx(te.ShortCounter, {
+                                                    classNames: { text: qs, icon: Js },
                                                     time: u,
                                                     wins: _,
                                                     battles: p,
@@ -1000,18 +844,18 @@ const Zs = {
             ],
         });
     }),
-    Js = 'overview',
-    qs = x.resolve('strings'),
-    [Qs, ea] = u()(
+    ia = 'overview',
+    na = N.resolve('strings'),
+    [oa, ca] = p()(
         ({ observableModel: e }) => ({
             ...{
                 root: e.object(),
                 researchPurchase: e.object('researchPurchaseModel'),
                 menuItems: e.transform(
                     (e) =>
-                        g(e, (e) => ({
+                        j(e, (e) => ({
                             id: e.tabName,
-                            label: qs.readOrEmpty(`vehicle_hub.tabs.${e.tabName}`),
+                            label: na.readOrEmpty(`vehicle_hub.tabs.${e.tabName}`),
                             counter: e.counter,
                         })),
                     'menuItems',
@@ -1028,7 +872,7 @@ const Zs = {
             onResize: e.createCallback((e) => e, 'onResize'),
         }),
     ),
-    ta = {
+    la = {
         root: '/vehicleHub',
         overview: '/vehicleHub/overview',
         modules: '/vehicleHub/modules',
@@ -1036,46 +880,46 @@ const Zs = {
         stats: '/vehicleHub/stats',
         armor: '/vehicleHub/armor',
     };
-function sa({ selectedKey: e, render: t, className: s }) {
-    const a = r.useRef(null),
-        [n, d] = o(() => ({ height: 0, config: { tension: 210, friction: 26 } }));
-    (r.useLayoutEffect(() => {
+function da({ selectedKey: e, render: t, className: s }) {
+    const a = n.useRef(null),
+        [r, i] = l(() => ({ height: 0, config: { tension: 210, friction: 26 } }));
+    (n.useLayoutEffect(() => {
         const e = a.current;
         if (!e) return;
         const t = e.offsetHeight || 0;
-        d.start({ height: t, immediate: !1 });
-    }, [e, d]),
-        te(() => {
+        i.start({ height: t, immediate: !1 });
+    }, [e, i]),
+        re(() => {
             const e = a.current;
             if (!e) return;
             const t = e.offsetHeight || 0;
-            d.start({ height: t, immediate: !0 });
-        }, [d]));
-    const h = c(e, {
+            i.start({ height: t, immediate: !0 });
+        }, [i]));
+    const c = d(e, {
         from: { opacity: 0, y: 8 },
         enter: { opacity: 1, y: 0 },
         leave: { opacity: 0, y: -6 },
         config: { tension: 210, friction: 26 },
     });
-    return i.jsx(l.div, {
+    return o.jsx(h.div, {
         className: s,
-        style: { overflow: 'hidden', height: n.height.to((e) => `${Math.max(0, Math.round(e))}px`) },
-        children: h((e, s) =>
-            i.jsx(l.div, {
+        style: { overflow: 'hidden', height: r.height.to((e) => `${Math.max(0, Math.round(e))}px`) },
+        children: c((e, s) =>
+            o.jsx(h.div, {
                 style: { opacity: e.opacity, transform: e.y.to((e) => `translateY(${e}rem)`) },
-                children: i.jsx('div', { ref: a, children: t(s) }),
+                children: o.jsx('div', { ref: a, children: t(s) }),
             }),
         ),
     });
 }
-const aa = x.resolve('views');
-function ra(e) {
-    return se({
-        contentId: aa.read((e) => e.mono.vehicle_hub.tooltips.minor_short_tooltip('resId')),
+const ha = N.resolve('views');
+function ma(e) {
+    return ie({
+        contentId: ha.read((e) => e.mono.vehicle_hub.tooltips.minor_short_tooltip('resId')),
         args: { tooltipType: e },
     });
 }
-const [ia, na] = u()(
+const [ua, _a] = p()(
         ({ observableModel: e }) => {
             const t = e.primitives(['currentGun', 'currentShell', 'shells'], 'attacker'),
                 s = {
@@ -1094,7 +938,7 @@ const [ia, na] = u()(
                     attacker: {
                         model: e.object('attacker.vehicle'),
                         guns: e.arrayClone('attacker.guns'),
-                        shells: _.shallow(() => t.shells.get().split(',')),
+                        shells: v.shallow(() => t.shells.get().split(',')),
                         currentGun: t.currentGun,
                         currentShell: t.currentShell,
                     },
@@ -1102,11 +946,11 @@ const [ia, na] = u()(
                         model: e.object('vehicle'),
                         vehicleTurrets: e.arrayClone('vehicle.turrets'),
                         vehicleGuns: e.arrayClone('vehicle.guns'),
-                        hoveredTurret: d.box(0),
-                        hoveredGun: d.box(0),
+                        hoveredTurret: m.box(0),
+                        hoveredGun: m.box(0),
                     },
                 },
-                a = _.model((e) => g(s.noDamage.get(), (t, s) => ({ ...t, tooltipProps: e[s] })));
+                a = v.model((e) => j(s.noDamage.get(), (t, s) => ({ ...t, tooltipProps: e[s] })));
             return { ...s, computes: { noDamageWithTooltips: a } };
         },
         ({ model: e, externalModel: t }) => ({
@@ -1116,8 +960,8 @@ const [ia, na] = u()(
             vehicle: {
                 turretItemClick: t.createCallback((e) => ({ compactDescr: e }), 'onTurretItemClick'),
                 gunItemClick: t.createCallback((e) => ({ compactDescr: e }), 'onGunItemClick'),
-                setHoveredTurret: h((t) => e.vehicle.hoveredTurret.set(t)),
-                setHoveredGun: h((t) => e.vehicle.hoveredGun.set(t)),
+                setHoveredTurret: u((t) => e.vehicle.hoveredTurret.set(t)),
+                setHoveredGun: u((t) => e.vehicle.hoveredGun.set(t)),
             },
             attacker: {
                 click: t.createCallbackNoArgs('onAttackerClicked'),
@@ -1126,10 +970,10 @@ const [ia, na] = u()(
             },
         }),
     ),
-    [oa, ca, la] = u()(({ observableModel: e }) => ({
+    [pa, va, ba] = p()(({ observableModel: e }) => ({
         ...e.primitives(['isCrystalEarnEnabled', 'isDailyMultipliedXpEnabled', 'isInfiniteAmmo']),
     })),
-    da = {
+    xa = {
         base: 'ProBoost_7490b440',
         arrow: 'ProBoost_arrow_346b5e61',
         glow: 'ProBoost_glow_280ac9aa',
@@ -1143,250 +987,238 @@ const [ia, na] = u()(
         triangle__3: 'ProBoost_triangle__3_e738f7f2',
         base__deactivating: 'ProBoost_base__deactivating_7b71aa2e',
     },
-    ha = {
-        inactive: da.base__inactive,
-        activating: da.base__activating,
-        active: da.base__active,
-        deactivating: da.base__deactivating,
+    ga = {
+        inactive: xa.base__inactive,
+        activating: xa.base__activating,
+        active: xa.base__active,
+        deactivating: xa.base__deactivating,
     };
-function ma({ className: e, doubleRow: t, state: s = 'inactive', isCornerHidden: a = !1 }) {
+function fa({ className: e, doubleRow: t, state: s = 'inactive', isCornerHidden: a = !1 }) {
     return 'inactive' === s
         ? null
-        : i.jsxs('div', {
-              className: n(da.base, s && ha[s], t && da.base__double, e),
+        : o.jsxs('div', {
+              className: c(xa.base, s && ga[s], t && xa.base__double, e),
               children: [
-                  i.jsx('div', { className: da.glow }),
-                  !a && i.jsx('div', { className: da.corner }),
-                  i.jsx('div', { className: da.arrow }),
-                  [da.triangle__1, da.triangle__2, da.triangle__3].map((e) =>
-                      i.jsx('div', { className: n(da.triangle, e) }, e),
+                  o.jsx('div', { className: xa.glow }),
+                  !a && o.jsx('div', { className: xa.corner }),
+                  o.jsx('div', { className: xa.arrow }),
+                  [xa.triangle__1, xa.triangle__2, xa.triangle__3].map((e) =>
+                      o.jsx('div', { className: c(xa.triangle, e) }, e),
                   ),
               ],
           });
 }
-const ua = 'Background_wotPlus_3cf6035a',
-    _a = 'Background_crystal_6112fa42',
-    pa = 'Background_bpBonus_86685469',
-    va = 'Background_flag_57525fcb',
-    ba = 'Background_flag__active_de322c1b',
-    xa = 'Background_crystal__limit_61072361';
-function ga({ vehicle: e, selected: t, active: s, className: a }) {
-    return i.jsx(E, {
-        className: n(va, t || (s && ba), a),
-        path: `hangar.carousel.cards.flags.x400x300.${ne(e.nationId)}`,
+const Na = 'Background_wotPlus_3cf6035a',
+    ja = 'Background_crystal_6112fa42',
+    Ca = 'Background_bpBonus_86685469',
+    ya = 'Background_flag_beb58b8',
+    ka = 'Background_flag__active_de322c1b',
+    wa = 'Background_crystal__limit_61072361';
+function Ia({ vehicle: e, selected: t, active: s, className: a }) {
+    return o.jsx(O, {
+        className: c(ya, t || (s && ka), a),
+        path: `hangar.carousel.cards.flags.x400x300.${le(e.nationId)}`,
         position: 'top left',
     });
 }
-(ae('Favorite', 'Background_favorite_d98f92cc', {
+(ne('Favorite', 'Background_favorite_d98f92cc', {
     variants: { active: { true: 'Background_favorite__active_7f14a6c7' } },
 }),
-    a(function ({ vehicle: e, statistic: t, validBP: s, doubleRow: a, classNames: o }) {
-        var c;
-        const l = (null == (c = r.useContext(la.Context)) ? void 0 : c.model.isCrystalEarnEnabled.get()) ?? !0,
-            d =
-                (re((null == t ? void 0 : t.numberOfCrystalEarned) ?? [], 1) ?? 0) <=
-                (re((null == t ? void 0 : t.numberOfCrystalEarned) ?? [], 0) ?? 0),
-            h = null == t ? void 0 : t.proBoostActive,
-            m = l && e.crystalEarning,
-            u = ie(h),
-            _ = r.useMemo(() => (h ? (!1 === u ? 'activating' : 'active') : u ? 'deactivating' : 'inactive'), [h, u]);
-        return i.jsxs(i.Fragment, {
+    i(function ({ vehicle: e, statistic: t, validBP: s, doubleRow: a, classNames: r }) {
+        const i = n.useContext(ba.Context)?.model.isCrystalEarnEnabled.get() ?? !0,
+            l = (oe(t?.numberOfCrystalEarned ?? [], 1) ?? 0) <= (oe(t?.numberOfCrystalEarned ?? [], 0) ?? 0),
+            d = t?.proBoostActive,
+            h = t?.fromWotPlus,
+            m = i && e.crystalEarning && !h,
+            u = ce(d),
+            _ = n.useMemo(() => (d ? (!1 === u ? 'activating' : 'active') : u ? 'deactivating' : 'inactive'), [d, u]);
+        return o.jsxs(o.Fragment, {
             children: [
-                (null == t ? void 0 : t.fromWotPlus) &&
-                    i.jsx('div', { className: n(ua, null == o ? void 0 : o.wotPlus) }),
-                i.jsx(ma, {
-                    state: _,
-                    className: null == o ? void 0 : o.proBoostIcon,
-                    doubleRow: a,
-                    isCornerHidden: m,
-                }),
-                m && i.jsx('div', { className: n(_a, d && xa, null == o ? void 0 : o.crystal) }),
-                (null == t ? void 0 : t.bpSpecial) &&
-                    s &&
-                    i.jsx('div', { className: n(pa, null == o ? void 0 : o.bpBonus) }),
+                h && o.jsx('div', { className: c(Na, r?.wotPlus) }),
+                o.jsx(fa, { state: _, className: r?.proBoostIcon, doubleRow: a, isCornerHidden: m }),
+                m && o.jsx('div', { className: c(ja, l && wa, r?.crystal) }),
+                t?.bpSpecial && s && o.jsx('div', { className: c(Ca, r?.bpBonus) }),
             ],
         });
     }));
-const fa = {
-    base: 'Content_7ccb81a0',
-    disabledOverlay: 'Content_disabledOverlay_a8908196',
-    base__disabled: 'Content_base__disabled_da09528a',
-    base__selected: 'Content_base__selected_da09528a',
-    base__empty: 'Content_base__empty_da09528a',
-};
-function Na({ children: e, selected: t, disabled: s, empty: a }) {
-    return i.jsxs('div', {
+const Sa = 'Content_7ccb81a0',
+    Ta = 'Content_disabledOverlay_a8908196',
+    Ma = 'Content_base__disabled_da09528a',
+    Pa = 'Content_base__selected_da09528a',
+    Ea = 'Content_base__empty_da09528a';
+function Aa({ children: e, selected: t, disabled: s, empty: a }) {
+    return o.jsxs('div', {
         'data-name': 'Content',
-        className: n(fa.base, a && fa.base__empty, t && fa.base__selected, s && fa.base__disabled),
-        children: [e, s && i.jsx('div', { className: fa.disabledOverlay })],
+        className: c(Sa, a && Ea, t && Pa, s && Ma),
+        children: [e, s && o.jsx('div', { className: Ta })],
     });
 }
-const ja = 'Slot_977dd8f1',
-    ya = 'Slot_base__wrapper_ae3081b5',
-    Ca = 'Slot_base__disabled_334cc10f',
-    ka = 'Slot_base__empty_d386066c',
-    wa = 'Slot_content_1a27c8cf',
-    Ia = 'Slot_base__active_71f19f5c',
-    Sa = 'Slot_base__selected_71f19f5c',
-    Ta = 'Slot_selected_6e9f21df',
-    Ma = 'Slot_selected__border_e2a17304';
-function Pa({ children: e, selected: t = !1, disabled: s = !1, active: a, className: r, ...o }) {
-    const c = s || void 0 === o.onClick;
-    return i.jsx('div', {
-        ...o,
-        'data-name': 'Slot',
-        className: n(ja, a && Ia, t && Sa, s && Ca, c && ka, ya, r),
-        children: i.jsxs('div', {
-            className: wa,
-            children: [
-                i.jsx(Na, { selected: t, disabled: s, empty: c, children: e }),
-                t && i.jsx('div', { className: n(Ta, Ma) }),
-                i.jsx('div', { className: Ta }),
-            ],
-        }),
-    });
-}
-const Ea = 'AttackerButton_back_f3468fb6',
-    Aa = 'AttackerButton_d0427a70',
-    Ra = 'AttackerButton_info_862cb902',
-    Oa = 'AttackerButton_details_79ecbf83',
-    Ba = 'AttackerButton_text_f887a965',
-    La = 'AttackerButton_text__premium_22deecb8',
-    Da = 'AttackerButton_text__level_f95a8a25',
-    Va = 'AttackerButton_vehicleImage_4e081b7d',
-    $a = 'AttackerButton_flag_ba7772a9',
-    za = a(function (e) {
-        const { model: t, controls: s } = na(),
-            a = t.attacker.model.get(),
-            r = oe(),
-            o = x.resolve('strings'),
-            c = R({
-                header: o.readOrEmpty('armor_inspector.attackerTooltip.header'),
-                body: o.readOrEmpty('armor_inspector.attackerTooltip.body'),
-            });
-        return i.jsx('div', {
-            className: n(Aa, e.className),
-            children: i.jsxs(Pa, {
-                onClick: function (e) {
-                    (c.onClick(), r.play('click', { target: 'vehicle-card', original: e }), s.attacker.click());
-                },
-                onMouseEnter: function (e) {
-                    (c.onMouseEnter(e), r.play('mouse-enter', { target: 'vehicle-card', original: e }));
-                },
-                onMouseLeave: c.onMouseLeave,
+const Ra = 'Slot_977dd8f1',
+    Oa = 'Slot_base__wrapper_ae3081b5',
+    La = 'Slot_base__disabled_334cc10f',
+    Ba = 'Slot_base__empty_d386066c',
+    Da = 'Slot_content_1a27c8cf',
+    Va = 'Slot_base__active_71f19f5c',
+    $a = 'Slot_base__selected_71f19f5c',
+    za = 'Slot_selected_6e9f21df',
+    Ha = 'Slot_selected__border_e2a17304',
+    Fa = n.memo(function ({ children: e, selected: t = !1, disabled: s = !1, active: a, className: r, ...i }) {
+        const n = s || void 0 === i.onClick;
+        return o.jsx('div', {
+            ...i,
+            'data-name': 'Slot',
+            className: c(Ra, a && Va, t && $a, s && La, n && Ba, Oa, r),
+            children: o.jsxs('div', {
+                className: Da,
                 children: [
-                    i.jsxs(Z, {
-                        className: Ra,
-                        children: [
-                            i.jsxs('div', {
-                                className: Oa,
-                                children: [
-                                    i.jsx(Z.Level, { className: n(Ba, Da), value: a.tier }),
-                                    v(a.type) &&
-                                        i.jsx(Z.Type, {
-                                            type: a.type,
-                                            premium: a.isPremium,
-                                            size: Z.Type.sizes.x24x24,
-                                        }),
-                                ],
-                            }),
-                            i.jsx('div', { className: n(Ba, a.isPremium && La), children: i.jsx(F, { text: a.name }) }),
-                        ],
-                    }),
-                    i.jsx(ce, { className: Va, name: a.techName }),
-                    i.jsx(ga, { vehicle: { nationId: le.indexOf(a.nation) }, className: $a }),
-                    i.jsx('div', { className: Ea }),
+                    o.jsx(Aa, { selected: t, disabled: s, empty: n, children: e }),
+                    t && o.jsx('div', { className: c(za, Ha) }),
+                    o.jsx('div', { className: za }),
                 ],
             }),
         });
     }),
-    Fa = 'Shell_background_fc3cb1f9',
-    Ha = 'Shell_hover_68f02b96',
-    Wa = 'Shell_7ff268b0',
-    Ga = 'Shell_base__installed_7aaeeab0',
-    Ua = 'Shell_check_3f0798fd',
-    Xa = 'Shell_icon_a7dbf5ed',
-    Ka = x.resolve('images'),
-    Za = x.resolve('sounds'),
-    Ya = r.memo(function ({ type: e, index: t, installed: s, className: a, onItemClick: o }) {
-        const c = P({ args: r.useMemo(() => ({ shellIndex: t, tooltipId: 'armorInspectorShell' }), [t]) });
-        return i.jsxs('div', {
-            className: n(Wa, a, s && Ga),
+    Wa = 'AttackerButton_back_f3468fb6',
+    Ga = 'AttackerButton_d0427a70',
+    Ua = 'AttackerButton_info_862cb902',
+    Xa = 'AttackerButton_details_79ecbf83',
+    Ka = 'AttackerButton_text_f887a965',
+    Za = 'AttackerButton_text__premium_22deecb8',
+    Ya = 'AttackerButton_text__level_f95a8a25',
+    qa = 'AttackerButton_vehicleImage_4e081b7d',
+    Ja = 'AttackerButton_flag_ba7772a9',
+    Qa = i(function (e) {
+        const { model: t, controls: s } = _a(),
+            a = t.attacker.model.get(),
+            r = de(),
+            i = N.resolve('strings'),
+            n = B({
+                header: i.readOrEmpty('armor_inspector.attackerTooltip.header'),
+                body: i.readOrEmpty('armor_inspector.attackerTooltip.body'),
+            });
+        return o.jsx('div', {
+            className: c(Ga, e.className),
+            children: o.jsxs(Fa, {
+                onClick: function (e) {
+                    (n.onClick(), r.play('click', { target: 'vehicle-card', original: e }), s.attacker.click());
+                },
+                onMouseEnter: function (e) {
+                    (n.onMouseEnter(e), r.play('mouse-enter', { target: 'vehicle-card', original: e }));
+                },
+                onMouseLeave: n.onMouseLeave,
+                children: [
+                    o.jsxs(J, {
+                        className: Ua,
+                        children: [
+                            o.jsxs('div', {
+                                className: Xa,
+                                children: [
+                                    o.jsx(J.Level, { className: c(Ka, Ya), value: a.tier }),
+                                    x(a.type) &&
+                                        o.jsx(J.Type, {
+                                            type: a.type,
+                                            premium: a.isPremium,
+                                            size: J.Type.sizes.x24x24,
+                                        }),
+                                ],
+                            }),
+                            o.jsx('div', { className: c(Ka, a.isPremium && Za), children: o.jsx(G, { text: a.name }) }),
+                        ],
+                    }),
+                    o.jsx(he, { className: qa, name: a.techName }),
+                    o.jsx(Ia, { vehicle: { nationId: me.indexOf(a.nation) }, className: Ja }),
+                    o.jsx('div', { className: Wa }),
+                ],
+            }),
+        });
+    }),
+    er = 'Shell_background_fc3cb1f9',
+    tr = 'Shell_hover_68f02b96',
+    sr = 'Shell_7ff268b0',
+    ar = 'Shell_base__installed_7aaeeab0',
+    rr = 'Shell_check_3f0798fd',
+    ir = 'Shell_icon_a7dbf5ed',
+    nr = N.resolve('images'),
+    or = N.resolve('sounds'),
+    cr = n.memo(function ({ type: e, index: t, installed: s, className: a, onItemClick: r }) {
+        const i = R({ args: n.useMemo(() => ({ shellIndex: t, tooltipId: 'armorInspectorShell' }), [t]) });
+        return o.jsxs('div', {
+            className: c(sr, a, s && ar),
             onClick: function () {
-                (c.onClick(), Za.play('play'), !s && o(t));
+                (i.onClick(), or.play('play'), !s && r(t));
             },
             onMouseEnter: function (e) {
-                (Za.play('highlight'), c.onMouseEnter(e));
+                (or.play('highlight'), i.onMouseEnter(e));
             },
-            onMouseLeave: c.onMouseLeave,
+            onMouseLeave: i.onMouseLeave,
             children: [
-                i.jsx('div', { className: Fa }),
-                i.jsx('div', {
-                    className: Xa,
-                    style: { backgroundImage: `url(${Ka.readOrEmpty(`shell.small.${e}`)})` },
+                o.jsx('div', { className: er }),
+                o.jsx('div', {
+                    className: ir,
+                    style: { backgroundImage: `url(${nr.readOrEmpty(`shell.small.${e}`)})` },
                 }),
-                s && i.jsx('div', { className: Ua }),
-                i.jsx('div', { className: Ha }),
+                s && o.jsx('div', { className: rr }),
+                o.jsx('div', { className: tr }),
             ],
         });
     }),
-    Ja = 'VehicleModule_background_998eb8e8',
-    qa = 'VehicleModule_highlight_15fcd2d7',
-    Qa = 'VehicleModule_hover_fff9fc30',
-    er = 'VehicleModule_95b5da3',
-    tr = 'VehicleModule_base__installed_3e6eae19',
-    sr = 'VehicleModule_check_2b8f10d8',
-    ar = 'VehicleModule_icon_4a44e387',
-    rr = 'VehicleModule_level_7daa91b3',
-    ir = 'VehicleModule_mechanics_206965c5',
-    nr = 'VehicleModule_mechanic_8c3eaf17',
-    or = x.resolve('images'),
-    cr = x.resolve('sounds'),
-    lr = r.memo(function ({
+    lr = 'VehicleModule_background_998eb8e8',
+    dr = 'VehicleModule_highlight_15fcd2d7',
+    hr = 'VehicleModule_hover_fff9fc30',
+    mr = 'VehicleModule_95b5da3',
+    ur = 'VehicleModule_base__installed_3e6eae19',
+    _r = 'VehicleModule_check_2b8f10d8',
+    pr = 'VehicleModule_icon_4a44e387',
+    vr = 'VehicleModule_level_7daa91b3',
+    br = 'VehicleModule_mechanics_206965c5',
+    xr = 'VehicleModule_mechanic_8c3eaf17',
+    gr = N.resolve('images'),
+    fr = N.resolve('sounds'),
+    Nr = n.memo(function ({
         data: e,
         installed: t,
         onItemClick: s,
         highlight: a,
-        className: o,
-        isAttacker: c,
+        className: r,
+        isAttacker: i,
         onHovered: l,
     }) {
-        const d = P({
-            args: r.useMemo(
-                () => ({ compactDescr: e.compactDescr, tooltipId: 'contextVehicleModule', isAttacker: c }),
-                [e.compactDescr, c],
+        const d = R({
+            args: n.useMemo(
+                () => ({ compactDescr: e.compactDescr, tooltipId: 'contextVehicleModule', isAttacker: i }),
+                [e.compactDescr, i],
             ),
         });
-        return i.jsxs('div', {
-            className: n(er, o, t && tr),
+        return o.jsxs('div', {
+            className: c(mr, r, t && ur),
             onClick: function () {
-                (d.onClick(), cr.play('play'), !t && s(e.compactDescr));
+                (d.onClick(), fr.play('play'), !t && s(e.compactDescr));
             },
             onMouseEnter: function (t) {
-                (d.onMouseEnter(t), cr.play('highlight'), l && l(e.compactDescr));
+                (d.onMouseEnter(t), fr.play('highlight'), l && l(e.compactDescr));
             },
             onMouseLeave: function () {
                 (d.onMouseLeave(), l && l(0));
             },
             children: [
-                i.jsx('div', { className: Ja }),
-                i.jsx('div', {
-                    className: ar,
-                    style: { backgroundImage: `url(${or.readOrEmpty(`modules.${e.image}`)})` },
+                o.jsx('div', { className: lr }),
+                o.jsx('div', {
+                    className: pr,
+                    style: { backgroundImage: `url(${gr.readOrEmpty(`modules.${e.image}`)})` },
                 }),
-                t && i.jsx('div', { className: sr }),
-                a && i.jsx('div', { className: qa }),
-                i.jsx('div', { className: Qa }),
-                i.jsx(Z.Level, { className: rr, value: e.level }),
-                i.jsx('div', {
-                    className: ir,
-                    children: g(e.mechanics, (e) =>
-                        i.jsx(
+                t && o.jsx('div', { className: _r }),
+                a && o.jsx('div', { className: dr }),
+                o.jsx('div', { className: hr }),
+                o.jsx(J.Level, { className: vr, value: e.level }),
+                o.jsx('div', {
+                    className: br,
+                    children: j(e.mechanics, (e) =>
+                        o.jsx(
                             'div',
                             {
-                                className: nr,
+                                className: xr,
                                 style: {
-                                    backgroundImage: `url(${or.readOrEmpty(`vehicle_hub.mechanics.x20x20.${e}`)})`,
+                                    backgroundImage: `url(${gr.readOrEmpty(`vehicle_hub.mechanics.x20x20.${e}`)})`,
                                 },
                             },
                             e,
@@ -1396,34 +1228,34 @@ const Ea = 'AttackerButton_back_f3468fb6',
             ],
         });
     }),
-    dr = 'AttackerConfiguration_c298d361',
-    hr = 'AttackerConfiguration_title_769ee3f8',
-    mr = 'AttackerConfiguration_attackerButton_709cc1e9',
-    ur = 'AttackerConfiguration_row_27dd5b68',
-    _r = 'AttackerConfiguration_item_3eff6e9f',
-    pr = 'AttackerConfiguration_base__fiveGuns_d70d456b',
-    vr = 'AttackerConfiguration_item__disappearing_be1130fa',
-    br = a(function ({ shells: e, vehicleCD: t, currentGun: s }) {
-        const { model: a, controls: o } = na(),
-            c = a.attacker.currentShell.get(),
-            l = r.useRef(c),
-            d = r.useRef(s),
-            h = r.useRef(t),
+    jr = 'AttackerConfiguration_c298d361',
+    Cr = 'AttackerConfiguration_title_769ee3f8',
+    yr = 'AttackerConfiguration_attackerButton_709cc1e9',
+    kr = 'AttackerConfiguration_row_27dd5b68',
+    wr = 'AttackerConfiguration_item_3eff6e9f',
+    Ir = 'AttackerConfiguration_base__fiveGuns_d70d456b',
+    Sr = 'AttackerConfiguration_item__disappearing_be1130fa',
+    Tr = i(function ({ shells: e, vehicleCD: t, currentGun: s }) {
+        const { model: a, controls: r } = _a(),
+            i = a.attacker.currentShell.get(),
+            l = n.useRef(i),
+            d = n.useRef(s),
+            h = n.useRef(t),
             m = d.current !== s || h.current !== t;
         return (
-            m || (l.current = c),
-            i.jsx(
+            m || (l.current = i),
+            o.jsx(
                 'div',
                 {
-                    className: ur,
-                    children: g(e, (e, a) =>
-                        i.jsx(
-                            Ya,
+                    className: kr,
+                    children: j(e, (e, a) =>
+                        o.jsx(
+                            cr,
                             {
                                 type: e,
                                 index: a,
-                                className: n(_r, m && vr),
-                                onItemClick: o.attacker.shellItemClick,
+                                className: c(wr, m && Sr),
+                                onItemClick: r.attacker.shellItemClick,
                                 installed: l.current === a,
                             },
                             `${t}_${s}_${a}`,
@@ -1434,210 +1266,205 @@ const Ea = 'AttackerButton_back_f3468fb6',
             )
         );
     }),
-    xr = a(function () {
-        const e = x.resolve('strings'),
-            { model: t, controls: s } = na(),
+    Mr = i(function () {
+        const e = N.resolve('strings'),
+            { model: t, controls: s } = _a(),
             a = t.attacker.currentGun.get(),
-            o = t.attacker.model.get(),
-            c = t.attacker.guns.get(),
-            l = `${o.vehicleCD}_${a}`,
-            d = r.useRef(new Map());
+            r = t.attacker.model.get(),
+            i = t.attacker.guns.get(),
+            l = `${r.vehicleCD}_${a}`,
+            d = n.useRef(new Map());
         d.current.has(l) || d.current.set(l, [...t.attacker.shells()]);
-        const h = ra(nt.ATTACKING_CONFIGURATION);
-        return i.jsxs('div', {
-            className: n(dr, 5 === c.length && pr),
+        const h = ma(lt.ATTACKING_CONFIGURATION);
+        return o.jsxs('div', {
+            className: c(jr, 5 === i.length && Ir),
             children: [
-                i.jsx('div', { ...h, className: hr, children: e.readOrEmpty('armor_inspector.attackerTitle') }),
-                i.jsx(za, { className: mr }),
-                i.jsx(
+                o.jsx('div', { ...h, className: Cr, children: e.readOrEmpty('armor_inspector.attackerTitle') }),
+                o.jsx(Qa, { className: yr }),
+                o.jsx(
                     'div',
                     {
-                        className: ur,
-                        children: g(c, (e) =>
-                            i.jsx(
-                                lr,
+                        className: kr,
+                        children: j(i, (e) =>
+                            o.jsx(
+                                Nr,
                                 {
                                     data: e,
-                                    className: _r,
+                                    className: wr,
                                     onItemClick: s.attacker.gunItemClick,
                                     installed: a === e.compactDescr,
                                     isAttacker: !0,
                                 },
-                                `${o.vehicleCD}_${e.compactDescr}_gun`,
+                                `${r.vehicleCD}_${e.compactDescr}_gun`,
                             ),
                         ),
                     },
-                    `${o.vehicleCD}_guns`,
+                    `${r.vehicleCD}_guns`,
                 ),
-                i.jsx(sa, {
+                o.jsx(da, {
                     selectedKey: l,
-                    render: (e) => i.jsx(br, { shells: d.current.get(e), vehicleCD: o.vehicleCD, currentGun: a }),
+                    render: (e) => o.jsx(Tr, { shells: d.current.get(e), vehicleCD: r.vehicleCD, currentGun: a }),
                 }),
             ],
         });
     }),
-    gr = 'Dropdown_itemBg_84c73399',
-    fr = 'Dropdown_a0f4fd41',
-    Nr = 'Dropdown_trigger_b4489099',
-    jr = 'Dropdown_triggerBase_ada4928c',
-    yr = 'Dropdown_triggerContent_1541ceab',
-    Cr = 'Dropdown_triggerLabel_2cca2ece',
-    kr = 'Dropdown_arrow_9e61cc83',
-    wr = 'Dropdown_arrow__opened_c6f1e212',
-    Ir = 'Dropdown_popover_9b57a2dd',
-    Sr = 'Dropdown_list_989491cc',
-    Tr = 'Dropdown_item_e54f38ae',
-    Mr = 'Dropdown_item__selected_a91993a3',
-    Pr = a(function ({ items: e, selectedId: t, onChange: s, className: a }) {
-        const { breakpoint: r } = de(),
-            o = r.weight >= he.large.weight;
-        return i.jsx('div', {
-            className: n(fr, a),
-            children: i.jsxs(me, {
+    Pr = 'Dropdown_itemBg_84c73399',
+    Er = 'Dropdown_a0f4fd41',
+    Ar = 'Dropdown_trigger_b4489099',
+    Rr = 'Dropdown_triggerBase_ada4928c',
+    Or = 'Dropdown_triggerContent_1541ceab',
+    Lr = 'Dropdown_triggerLabel_2cca2ece',
+    Br = 'Dropdown_arrow_9e61cc83',
+    Dr = 'Dropdown_arrow__opened_c6f1e212',
+    Vr = 'Dropdown_popover_9b57a2dd',
+    $r = 'Dropdown_list_989491cc',
+    zr = 'Dropdown_item_e54f38ae',
+    Hr = 'Dropdown_item__selected_a91993a3',
+    Fr = i(function ({ items: e, selectedId: t, onChange: s, className: a }) {
+        const { breakpoint: r } = ue(),
+            i = r.weight >= _e.large.weight;
+        return o.jsx('div', {
+            className: c(Er, a),
+            children: o.jsxs(pe, {
                 children: [
-                    i.jsx(me.Portal, {
+                    o.jsx(pe.Portal, {
                         position: 'bottom',
                         pivot: 0,
                         lazy: !0,
-                        children: i.jsx(Rr, {
-                            children: i.jsx('div', {
-                                className: Sr,
+                        children: o.jsx(Ur, {
+                            children: o.jsx('div', {
+                                className: $r,
                                 children: e.map((e) =>
-                                    i.jsx(Er, { option: e, selected: e.id === t, onSelect: s }, e.id),
+                                    o.jsx(Wr, { option: e, selected: e.id === t, onSelect: s }, e.id),
                                 ),
                             }),
                         }),
                     }),
-                    i.jsx(me.Trigger, {
-                        children: (s) => {
-                            var a;
-                            return i.jsxs(L, {
+                    o.jsx(pe.Trigger, {
+                        children: (s) =>
+                            o.jsxs($, {
                                 theme: 'secondary',
-                                size: o ? L.sizes.large : L.sizes.small,
-                                className: Nr,
-                                classNames: { content: yr, base: jr },
+                                size: i ? $.sizes.large : $.sizes.small,
+                                className: Ar,
+                                classNames: { content: Or, base: Rr },
                                 onClick: s.onClick,
                                 'data-popover-trigger-id': s['data-popover-trigger-id'],
                                 children: [
-                                    i.jsx('span', {
-                                        className: Cr,
-                                        children: null == (a = e.find((e) => e.id === t)) ? void 0 : a.label,
-                                    }),
-                                    i.jsx(Ar, {}),
+                                    o.jsx('span', { className: Lr, children: e.find((e) => e.id === t)?.label }),
+                                    o.jsx(Gr, {}),
                                 ],
-                            });
-                        },
+                            }),
                     }),
                 ],
             }),
         });
     }),
-    Er = a(function ({ option: e, selected: t, onSelect: s }) {
-        const a = me.use();
-        return i.jsxs('div', {
-            className: n(Tr, t && Mr),
+    Wr = i(function ({ option: e, selected: t, onSelect: s }) {
+        const a = pe.use();
+        return o.jsxs('div', {
+            className: c(zr, t && Hr),
             onClick: function () {
                 (s(e.id), a.close());
             },
-            children: [i.jsx('div', { className: gr }), i.jsx('span', { children: e.label })],
+            children: [o.jsx('div', { className: Pr }), o.jsx('span', { children: e.label })],
         });
     });
-function Ar(e) {
-    const t = me.use();
-    return i.jsx('div', { className: n(kr, t.opened && wr, e.className) });
+function Gr(e) {
+    const t = pe.use();
+    return o.jsx('div', { className: c(Br, t.opened && Dr, e.className) });
 }
-function Rr({ children: e }) {
-    const t = me.use(),
+function Ur({ children: e }) {
+    const t = pe.use(),
         s = t.trigger.bounding.get(),
-        [a, r] = m.useState(null == s ? void 0 : s.width),
-        n = m.useRef(null);
-    (m.useLayoutEffect(() => {
+        [a, r] = _.useState(s?.width),
+        i = _.useRef(null);
+    (_.useLayoutEffect(() => {
         t.opened &&
-            ((n.current = document.querySelector(`[data-popover-trigger-id="${t.id}"]`)),
-            n.current && r(n.current.offsetWidth));
+            ((i.current = document.querySelector(`[data-popover-trigger-id="${t.id}"]`)),
+            i.current && r(i.current.offsetWidth));
     }, [t.id, t.opened]),
-        ue(() => {
-            const e = n.current;
+        ve(() => {
+            const e = i.current;
             e && t.opened && r(e.offsetWidth);
         }, [t.opened]));
-    const o = a ?? (null == s ? void 0 : s.width);
-    return i.jsx(_e, {
-        children: i.jsx(me.Display, { className: Ir, style: { width: o ? `${o}px` : void 0 }, children: e }),
+    const n = a ?? s?.width;
+    return o.jsx(be, {
+        children: o.jsx(pe.Display, { className: Vr, style: { width: n ? `${n}px` : void 0 }, children: e }),
     });
 }
-const Or = 'ArmorMeterValue_armor_c708c6a5',
-    Br = 'ArmorMeterValue_overlay_67fa364',
-    Lr = 'ArmorMeterValue_disabled_b9c2da32',
-    Dr = 'ArmorMeterValue_e0f8b036',
-    Vr = 'ArmorMeterValue_values_edf27e48',
-    $r = r.memo(function ({ leftValue: e, rightValue: t, color: s, overlay: a, isActive: r, tooltipProps: n }) {
-        return i.jsxs('div', {
-            className: Dr,
+const Xr = 'ArmorMeterValue_armor_c708c6a5',
+    Kr = 'ArmorMeterValue_overlay_67fa364',
+    Zr = 'ArmorMeterValue_disabled_b9c2da32',
+    Yr = 'ArmorMeterValue_e0f8b036',
+    qr = 'ArmorMeterValue_values_edf27e48',
+    Jr = n.memo(function ({ leftValue: e, rightValue: t, color: s, overlay: a, isActive: r, tooltipProps: i }) {
+        return o.jsxs('div', {
+            className: Yr,
             style: { backgroundColor: s },
-            ...n,
+            ...i,
             children: [
-                !r && i.jsx('div', { className: Lr }),
-                i.jsx('div', { className: Or }),
-                a && i.jsx('div', { className: Br, style: { backgroundImage: `url(${a})` } }),
-                i.jsxs('div', {
-                    className: Vr,
-                    children: [i.jsx('div', { children: e }), i.jsx('div', { children: t })],
+                !r && o.jsx('div', { className: Zr }),
+                o.jsx('div', { className: Xr }),
+                a && o.jsx('div', { className: Kr, style: { backgroundImage: `url(${a})` } }),
+                o.jsxs('div', {
+                    className: qr,
+                    children: [o.jsx('div', { children: e }), o.jsx('div', { children: t })],
                 }),
             ],
         });
     }),
-    zr = 'ArmorMeter_header_878d962e',
-    Fr = 'ArmorMeter_title_c2ee230',
-    Hr = 'ArmorMeter_title__units_d774d0df',
-    Wr = 'ArmorMeter_meter_78fb8137';
-function Gr({ title: e, units: t, className: s, armorValues: a, gradient: r, isLastSegmentStatic: o = !0 }) {
-    const c = o ? (100 * (a.length - 1)) / a.length : 100;
-    return i.jsxs('div', {
+    Qr = 'ArmorMeter_header_878d962e',
+    ei = 'ArmorMeter_title_c2ee230',
+    ti = 'ArmorMeter_title__units_d774d0df',
+    si = 'ArmorMeter_meter_78fb8137';
+function ai({ title: e, units: t, className: s, armorValues: a, gradient: r, isLastSegmentStatic: i = !0 }) {
+    const n = i ? (100 * (a.length - 1)) / a.length : 100;
+    return o.jsxs('div', {
         className: s,
         children: [
             e &&
-                i.jsxs('div', {
-                    className: zr,
+                o.jsxs('div', {
+                    className: Qr,
                     children: [
-                        i.jsx(F, { text: e, className: Fr }),
-                        t && i.jsx('div', { className: n(Fr, Hr), children: t }),
+                        o.jsx(G, { text: e, className: ei }),
+                        t && o.jsx('div', { className: c(ei, ti), children: t }),
                     ],
                 }),
-            i.jsx('div', {
-                className: Wr,
-                style: r ? { background: `url(${r}) left center / ${c}% 100% no-repeat` } : void 0,
-                children: a.map((e, t) => i.jsx($r, { ...e }, t)),
+            o.jsx('div', {
+                className: si,
+                style: r ? { background: `url(${r}) left center / ${n}% 100% no-repeat` } : void 0,
+                children: a.map((e, t) => o.jsx(Jr, { ...e }, t)),
             }),
         ],
     });
 }
-const Ur = 'NominalArmor_5be295bc',
-    Xr = 'NominalArmor_armor_ab870a58',
-    Kr = 'NominalArmor_armor__spaced_a4926c3',
-    Zr = x.resolve('strings'),
-    Yr = a(function () {
-        const { model: e } = na(),
-            t = ra(nt.MAIN_ARMOR),
-            s = ra(nt.SPACED_ARMOR);
-        return i.jsxs('div', {
-            className: Ur,
+const ri = 'NominalArmor_5be295bc',
+    ii = 'NominalArmor_armor_ab870a58',
+    ni = 'NominalArmor_armor__spaced_a4926c3',
+    oi = N.resolve('strings'),
+    ci = i(function () {
+        const { model: e } = _a(),
+            t = ma(lt.MAIN_ARMOR),
+            s = ma(lt.SPACED_ARMOR);
+        return o.jsxs('div', {
+            className: ri,
             children: [
-                i.jsx('div', {
+                o.jsx('div', {
                     ...t,
-                    children: i.jsx(Gr, {
-                        className: Xr,
-                        title: Zr.readOrEmpty('armor_inspector.armorValues.title.main'),
-                        units: Zr.readOrEmpty('armor_inspector.armorValues.title.values'),
+                    children: o.jsx(ai, {
+                        className: ii,
+                        title: oi.readOrEmpty('armor_inspector.armorValues.title.main'),
+                        units: oi.readOrEmpty('armor_inspector.armorValues.title.values'),
                         armorValues: e.mainArmor.get(),
                         gradient: e.mainGradient.get(),
                     }),
                 }),
-                i.jsx('div', {
+                o.jsx('div', {
                     ...s,
-                    children: i.jsx(Gr, {
-                        className: n(Xr, Kr),
-                        title: Zr.readOrEmpty('armor_inspector.armorValues.title.spaced'),
-                        units: Zr.readOrEmpty('armor_inspector.armorValues.title.values'),
+                    children: o.jsx(ai, {
+                        className: c(ii, ni),
+                        title: oi.readOrEmpty('armor_inspector.armorValues.title.spaced'),
+                        units: oi.readOrEmpty('armor_inspector.armorValues.title.values'),
                         armorValues: e.spacedArmor.get(),
                         gradient: e.spacedGradient.get(),
                     }),
@@ -1645,102 +1472,102 @@ const Ur = 'NominalArmor_5be295bc',
             ],
         });
     }),
-    Jr = 'PenetrationChance_45438766',
-    qr = 'PenetrationChance_armor_af76e8b0',
-    Qr = 'PenetrationChance_armor__noDamage_7d565334',
-    ei = x.resolve('strings'),
-    ti = a(function () {
-        const { model: e } = na(),
-            t = ra(nt.DEALING_DAMAGE_CHANCE),
-            s = [ra(nt.RICOCHET), ra(nt.NO_DAMAGE)];
-        return i.jsxs('div', {
-            className: Jr,
+    li = 'PenetrationChance_45438766',
+    di = 'PenetrationChance_armor_af76e8b0',
+    hi = 'PenetrationChance_armor__noDamage_7d565334',
+    mi = N.resolve('strings'),
+    ui = i(function () {
+        const { model: e } = _a(),
+            t = ma(lt.DEALING_DAMAGE_CHANCE),
+            s = [ma(lt.RICOCHET), ma(lt.NO_DAMAGE)];
+        return o.jsxs('div', {
+            className: li,
             children: [
-                i.jsx('div', {
+                o.jsx('div', {
                     ...t,
-                    children: i.jsx(Gr, {
-                        className: qr,
-                        title: ei.readOrEmpty('armor_inspector.armorValues.title.penetration'),
-                        units: ei.readOrEmpty('armor_inspector.armorValues.title.percent'),
+                    children: o.jsx(ai, {
+                        className: di,
+                        title: mi.readOrEmpty('armor_inspector.armorValues.title.penetration'),
+                        units: mi.readOrEmpty('armor_inspector.armorValues.title.percent'),
                         armorValues: e.penetrationChance.get(),
                         gradient: e.penetrationGradient.get(),
                         isLastSegmentStatic: !1,
                     }),
                 }),
-                i.jsx(Gr, {
-                    className: n(qr, Qr),
-                    title: ei.readOrEmpty('armor_inspector.armorValues.title.other'),
+                o.jsx(ai, {
+                    className: c(di, hi),
+                    title: mi.readOrEmpty('armor_inspector.armorValues.title.other'),
                     armorValues: e.computes.noDamageWithTooltips(s),
                 }),
             ],
         });
     }),
-    si = 'Separator_1dc887a0',
-    ai = 'Separator_noise_ee3f6dd1';
-function ri({ className: e }) {
-    return i.jsx('div', { className: n(si, e), children: i.jsx('div', { className: n(ai) }) });
+    _i = 'Separator_1dc887a0',
+    pi = 'Separator_noise_ee3f6dd1';
+function vi({ className: e }) {
+    return o.jsx('div', { className: c(_i, e), children: o.jsx('div', { className: c(pi) }) });
 }
-const ii = 'VehicleConfiguration_6403517c',
-    ni = 'VehicleConfiguration_modulesTitle_3d4a7e5b',
-    oi = 'VehicleConfiguration_configuration_a3eac7e9',
-    ci = 'VehicleConfiguration_row_1fad8087',
-    li = 'VehicleConfiguration_item_3d2220d2',
-    di = 'VehicleConfiguration_base__fiveGuns_1dc0c44',
-    hi = r.memo(function ({
+const bi = 'VehicleConfiguration_6403517c',
+    xi = 'VehicleConfiguration_modulesTitle_3d4a7e5b',
+    gi = 'VehicleConfiguration_configuration_a3eac7e9',
+    fi = 'VehicleConfiguration_row_1fad8087',
+    Ni = 'VehicleConfiguration_item_3d2220d2',
+    ji = 'VehicleConfiguration_base__fiveGuns_1dc0c44',
+    Ci = n.memo(function ({
         modules: e,
         currentModule: t,
         hoveredDependent: s,
         dependentModules: a,
         onItemClick: r,
-        onHovered: n,
+        onHovered: i,
     }) {
-        let o = 0;
+        let n = 0;
         if (s) {
-            const e = pe(a, (e) => e.compactDescr === s);
-            e && !ve(e.dependencies, t) && (o = be(e.dependencies) || 0);
+            const e = xe(a, (e) => e.compactDescr === s);
+            e && !ge(e.dependencies, t) && (n = fe(e.dependencies) || 0);
         }
-        return i.jsx('div', {
-            className: ci,
-            children: g(e, (e) =>
-                i.jsx(
-                    lr,
+        return o.jsx('div', {
+            className: fi,
+            children: j(e, (e) =>
+                o.jsx(
+                    Nr,
                     {
                         data: e,
                         onItemClick: r,
                         installed: t === e.compactDescr,
-                        highlight: o === e.compactDescr,
-                        className: li,
-                        onHovered: n,
+                        highlight: n === e.compactDescr,
+                        className: Ni,
+                        onHovered: i,
                     },
                     e.compactDescr,
                 ),
             ),
         });
     }),
-    mi = a(function () {
-        const e = x.resolve('strings'),
-            { model: t, controls: s } = na(),
+    yi = i(function () {
+        const e = N.resolve('strings'),
+            { model: t, controls: s } = _a(),
             a = t.vehicle.model.get(),
             r = t.vehicle.vehicleTurrets.get(),
-            o = t.vehicle.vehicleGuns.get();
-        return i.jsxs('div', {
-            className: n(ii, 5 === o.length && di),
+            i = t.vehicle.vehicleGuns.get();
+        return o.jsxs('div', {
+            className: c(bi, 5 === i.length && ji),
             children: [
-                i.jsx('div', { className: ni, children: e.readOrEmpty('armor_inspector.modules.title') }),
-                i.jsx('div', { className: oi, children: a.configurationTitle }),
+                o.jsx('div', { className: xi, children: e.readOrEmpty('armor_inspector.modules.title') }),
+                o.jsx('div', { className: gi, children: a.configurationTitle }),
                 r.length > 0 &&
-                    i.jsx(hi, {
+                    o.jsx(Ci, {
                         modules: r,
                         currentModule: a.currentTurret,
                         hoveredDependent: t.vehicle.hoveredGun.get(),
-                        dependentModules: o,
+                        dependentModules: i,
                         onHovered: s.vehicle.setHoveredTurret,
                         onItemClick: s.vehicle.turretItemClick,
                     }),
-                i.jsx('div', {
-                    className: ci,
-                    children: i.jsx(hi, {
-                        modules: o,
+                o.jsx('div', {
+                    className: fi,
+                    children: o.jsx(Ci, {
+                        modules: i,
                         currentModule: a.currentGun,
                         hoveredDependent: t.vehicle.hoveredTurret.get(),
                         dependentModules: r,
@@ -1751,84 +1578,84 @@ const ii = 'VehicleConfiguration_6403517c',
             ],
         });
     }),
-    ui = {
+    ki = {
         base: 'Armor_508e908c',
         header: 'Armor_header_3d9358d9',
         icon: 'Armor_icon_5182a32c',
         dropdown: 'Armor_dropdown_5c6128da',
         content: 'Armor_content_f9da42bf',
         sceneWrapper: 'Armor_sceneWrapper_c36410b4',
-        tint: 'Armor_tint_40fb2864',
+        tint: 'Armor_tint_a12f2cc7',
         tint__right: 'Armor_tint__right_3baf8f03',
     },
-    _i = x.resolve('strings'),
-    pi = x.resolve('views'),
-    vi = a(function () {
-        const { controls: e } = ea(),
-            { model: t, controls: s } = na(),
-            [a, o] = r.useState(!1),
-            c = se({ contentId: pi.read((e) => e.mono.vehicle_hub.tooltips.minor_tooltip('resId')) }),
-            l = Object.values(ot).map((e) => ({ id: e, label: _i.readOrEmpty(`armor_inspector.menu.${e}`) }));
+    wi = N.resolve('strings'),
+    Ii = N.resolve('views'),
+    Si = i(function () {
+        const { controls: e } = ca(),
+            { model: t, controls: s } = _a(),
+            [a, r] = n.useState(!1),
+            i = ie({ contentId: Ii.read((e) => e.mono.vehicle_hub.tooltips.minor_tooltip('resId')) }),
+            l = Object.values(dt).map((e) => ({ id: e, label: wi.readOrEmpty(`armor_inspector.menu.${e}`) }));
         function d(e) {
             switch (e) {
-                case ot.NOMINAL:
-                    return i.jsx(Yr, {});
-                case ot.PENETRATION:
-                    return i.jsx(ti, {});
+                case dt.NOMINAL:
+                    return o.jsx(ci, {});
+                case dt.PENETRATION:
+                    return o.jsx(ui, {});
                 default:
                     return null;
             }
         }
         const h = t.selectedMode.get(),
             m = d(h);
-        return i.jsxs('div', {
-            className: ui.base,
+        return o.jsxs('div', {
+            className: ki.base,
             children: [
-                i.jsx(xe, {
-                    className: ui.sceneWrapper,
+                o.jsx(Ne, {
+                    className: ki.sceneWrapper,
                     moveSpace: function (t) {
                         a ? s.dragModule(t) : e.sceneWrapper.onMoveSpace(t);
                     },
                     onDragStateChange: function (e) {
-                        ((e && t.dragModuleMode.get()) || (!e && a)) && (o(e), s.onDragStateChanged(e));
+                        ((e && t.dragModuleMode.get()) || (!e && a)) && (r(e), s.onDragStateChanged(e));
                     },
                     onMouseOver3dScene: e.sceneWrapper.onMouseOver3dScene,
                 }),
-                i.jsx('div', { className: ui.tint }),
-                i.jsx('div', { className: n(ui.tint, ui.tint__right) }),
-                i.jsx(mi, {}),
-                i.jsxs('div', {
-                    className: ui.content,
+                o.jsx('div', { className: ki.tint }),
+                o.jsx('div', { className: c(ki.tint, ki.tint__right) }),
+                o.jsx(yi, {}),
+                o.jsxs('div', {
+                    className: ki.content,
                     children: [
-                        i.jsxs('div', {
-                            ...c,
-                            className: ui.header,
+                        o.jsxs('div', {
+                            ...i,
+                            className: ki.header,
                             children: [
-                                i.jsx('span', { children: _i.readOrEmpty('armor_inspector.menu.header') }),
-                                i.jsx('div', { className: ui.icon }),
+                                o.jsx('span', { children: wi.readOrEmpty('armor_inspector.menu.header') }),
+                                o.jsx('div', { className: ki.icon }),
                             ],
                         }),
-                        i.jsx('div', {
-                            className: ui.dropdown,
-                            children: i.jsx(Pr, {
+                        o.jsx('div', {
+                            className: ki.dropdown,
+                            children: o.jsx(Fr, {
                                 items: l,
                                 selectedId: t.selectedMode.get(),
                                 onChange: s.modeChanged,
                             }),
                         }),
-                        i.jsx(ri, { className: ui.separator }),
-                        i.jsx(sa, { selectedKey: h, render: d }),
-                        m && i.jsx(ri, { className: ui.separator }),
-                        i.jsx(xr, {}),
+                        o.jsx(vi, { className: ki.separator }),
+                        o.jsx(da, { selectedKey: h, render: d }),
+                        m && o.jsx(vi, { className: ki.separator }),
+                        o.jsx(Mr, {}),
                     ],
                 }),
             ],
         });
     });
-function bi() {
-    return i.jsx(ia, { options: { context: 'model.armorModel' }, children: i.jsx(ge, { children: i.jsx(vi, {}) }) });
+function Ti() {
+    return o.jsx(ua, { options: { context: 'model.armorModel' }, children: o.jsx(je, { children: o.jsx(Si, {}) }) });
 }
-var xi = ((e) => (
+var Mi = ((e) => (
         (e.UNKNOWN = 'unknown'),
         (e.MAGAZINE_GUN = 'magazineGun'),
         (e.AUTO_LOADER_GUN = 'autoLoaderGun'),
@@ -1862,67 +1689,61 @@ var xi = ((e) => (
         (e.STATIONARY_RELOAD = 'stationaryReload'),
         (e.OVERHEAT_GUN = 'overheatGun'),
         (e.HEATING_ZONES_GUN = 'heatingZonesGun'),
+        (e.LOW_CHARGE_SHOT = 'lowChargeShot'),
         (e.STAGED_JET_BOOSTERS = 'stagedJetBoosters'),
+        (e.PROPELLANT_GUN = 'propellantAfterburnerGun'),
+        (e.WHEELED_DASH = 'wheeledDash'),
         e
-    ))(xi || {}),
-    gi = ((e) => ((e.UNDEFINED = 'undefined'), (e.SILVER = 'silver'), (e.GOLD = 'gold'), e))(gi || {});
-const fi = {
-        [xi.AUTO_SHOOT_GUN]: 10,
-        [xi.MAGAZINE_GUN]: 20,
-        [xi.AUTO_LOADER_GUN]: 30,
-        [xi.AUTO_LOADER_GUN_BOOST]: 40,
-        [xi.DAMAGE_MUTABLE]: 50,
-        [xi.DUAL_GUN]: 60,
-        [xi.DUAL_ACCURACY]: 70,
-        [xi.HYDRAULIC_CHASSIS]: 80,
-        [xi.TRACK_WITHIN_TRACK]: 90,
-        [xi.TWIN_GUN]: 100,
-        [xi.SIEGE_MODE]: 110,
-        [xi.STUN]: 120,
-        [xi.HYDRAULIC_WHEELED_CHASSIS]: 130,
-        [xi.TURBOSHAFT_ENGINE]: 140,
-        [xi.ROCKET_ACCELERATION]: 150,
+    ))(Mi || {}),
+    Pi = ((e) => ((e.UNDEFINED = 'undefined'), (e.SILVER = 'silver'), (e.GOLD = 'gold'), e))(Pi || {});
+const Ei = {
+        [Mi.AUTO_SHOOT_GUN]: 10,
+        [Mi.MAGAZINE_GUN]: 20,
+        [Mi.AUTO_LOADER_GUN]: 30,
+        [Mi.AUTO_LOADER_GUN_BOOST]: 40,
+        [Mi.DAMAGE_MUTABLE]: 50,
+        [Mi.DUAL_GUN]: 60,
+        [Mi.DUAL_ACCURACY]: 70,
+        [Mi.HYDRAULIC_CHASSIS]: 80,
+        [Mi.TRACK_WITHIN_TRACK]: 90,
+        [Mi.TWIN_GUN]: 100,
+        [Mi.SIEGE_MODE]: 110,
+        [Mi.STUN]: 120,
+        [Mi.HYDRAULIC_WHEELED_CHASSIS]: 130,
+        [Mi.TURBOSHAFT_ENGINE]: 140,
+        [Mi.ROCKET_ACCELERATION]: 150,
     },
-    [Ni, ji] = u()(
+    [Ai, Ri] = p()(
         ({ observableModel: e }) => {
             const t = {
                     root: e.object(),
                     prevResearchItems: e.arrayClone('prevResearchItems'),
                     currentResearchItems: e.arrayClone('currentResearchItems'),
                     researchItems: e.dict('researchItems'),
-                    selectedId: d.box(0),
-                    hoveredId: d.box(0),
-                    fieldModificationHover: d.box(!1),
+                    selectedId: m.box(0),
+                    hoveredId: m.box(0),
+                    fieldModificationHover: m.box(!1),
                 },
-                s = _.model((e) => {
+                s = v.model((e) => {
                     const s = t.researchItems.get(e);
-                    return s ? fe(s.mechanics, (e, t) => fi[e.name] - fi[t.name]) : [];
+                    return s ? Ce(s.mechanics, (e, t) => Ei[e.name] - Ei[t.name]) : [];
                 }),
-                a = _.primitive((e) => {
+                a = v.primitive((e) => {
                     const s = t.researchItems.get(e);
                     return (
                         !(!s || 0 === s.path.length) &&
-                        Ne(s.path, (e) => {
+                        ye(s.path, (e) => {
                             const s = t.researchItems.get(e);
                             return !!s && !s.isResearched;
                         })
                     );
                 }),
-                r = _.model((e) => {
-                    var s;
-                    return je((null == (s = t.researchItems.get(e)) ? void 0 : s.urgentIds) ?? [], (e) => {
-                        var s;
-                        return !(null == (s = t.researchItems.get(e)) ? void 0 : s.isInstalled);
-                    });
-                }),
-                i = _.model((e) =>
-                    g(r(e), (e) => {
-                        var s;
-                        return (null == (s = t.researchItems.get(e)) ? void 0 : s.primaryClass) ?? '';
-                    }),
+                r = v.model((e) =>
+                    ke(t.researchItems.get(e)?.urgentIds ?? [], (e) => !t.researchItems.get(e)?.isInstalled),
                 ),
-                n = _.primitive((e) => ve(r(t.selectedId.get()), e)),
-                o = _.primitive((e) => ve(r(t.hoveredId.get()), e));
+                i = v.model((e) => j(r(e), (e) => t.researchItems.get(e)?.primaryClass ?? '')),
+                n = v.primitive((e) => ge(r(t.selectedId.get()), e)),
+                o = v.primitive((e) => ge(r(t.hoveredId.get()), e));
             return {
                 ...t,
                 computes: {
@@ -1936,16 +1757,16 @@ const fi = {
             };
         },
         ({ externalModel: e, model: t }) => {
-            const s = h((e) => {
+            const s = u((e) => {
                     t.fieldModificationHover.set(e);
                 }),
-                a = h((e) => {
+                a = u((e) => {
                     t.selectedId.set(e);
                 }),
-                r = h((e) => {
+                r = u((e) => {
                     t.hoveredId.set(e);
                 }),
-                i = h(() => t.hoveredId.set(0));
+                i = u(() => t.hoveredId.set(0));
             return {
                 changeVehicle: e.createCallback((e) => ({ itemCD: e }), 'onVehicleChange'),
                 installItem: e.createCallback((e) => ({ itemCD: e }), 'onInstallItem'),
@@ -1959,26 +1780,25 @@ const fi = {
             };
         },
     ),
-    [yi, Ci] = u()(
+    [Oi, Li] = p()(
         ({ observableModel: e }) => ({ ...e.primitives(['state', 'counter']) }),
         ({ externalModel: e }) => ({ openPostProgression: e.createCallbackNoArgs('onVehiclePostProgression') }),
     ),
-    ki = 'BlockWithCoords_vehicleBox_5d1a08b4',
-    wi = function ({ onCoordsChange: e, className: t }) {
-        const s = r.useRef(null),
-            a = ye(() => {
-                var t;
-                const a = null == (t = s.current) ? void 0 : t.getBoundingClientRect();
-                a &&
+    Bi = 'BlockWithCoords_vehicleBox_5d1a08b4',
+    Di = function ({ onCoordsChange: e, className: t }) {
+        const s = n.useRef(null),
+            a = we(() => {
+                const t = s.current?.getBoundingClientRect();
+                t &&
                     e({
-                        xmin: Math.floor(a.left),
-                        ymin: Math.floor(a.top),
-                        xmax: Math.floor(a.right),
-                        ymax: Math.floor(a.bottom),
+                        xmin: Math.floor(t.left),
+                        ymin: Math.floor(t.top),
+                        xmax: Math.floor(t.right),
+                        ymax: Math.floor(t.bottom),
                     });
             });
         return (
-            r.useLayoutEffect(
+            n.useLayoutEffect(
                 () => (
                     a(),
                     window.addEventListener('resize', a),
@@ -1988,24 +1808,24 @@ const fi = {
                 ),
                 [a],
             ),
-            i.jsx('div', { className: n(ki, t), ref: s })
+            o.jsx('div', { className: c(Bi, t), ref: s })
         );
     },
-    Ii = 'VehicleBox_vehicleBox_2620d40',
-    Si = function ({ className: e, classNames: t }) {
-        const [s, a] = r.useState({ xmin: 0, ymin: 0, xmax: 0, ymax: 0 }),
-            { controls: o } = ea();
+    Vi = 'VehicleBox_vehicleBox_2620d40',
+    $i = function ({ className: e, classNames: t }) {
+        const [s, a] = n.useState({ xmin: 0, ymin: 0, xmax: 0, ymax: 0 }),
+            { controls: r } = ca();
         return (
-            r.useEffect(() => {
-                s.xmax > s.xmin && o.onResize(s);
-            }, [o, s]),
-            i.jsx('div', {
+            n.useEffect(() => {
+                s.xmax > s.xmin && r.onResize(s);
+            }, [r, s]),
+            o.jsx('div', {
                 className: e,
-                children: i.jsx(wi, { onCoordsChange: a, className: n(Ii, null == t ? void 0 : t.boxWithCoords) }),
+                children: o.jsx(Di, { onCoordsChange: a, className: c(Vi, t?.boxWithCoords) }),
             })
         );
     },
-    Ti = {
+    zi = {
         background: 'FieldModification_background_ee006933',
         base: 'FieldModification_9fc9bb71',
         button: 'FieldModification_button_6d46a00e',
@@ -2024,63 +1844,63 @@ const fi = {
         description__visible: 'FieldModification_description__visible_b9aeadbc',
         bubble: 'FieldModification_bubble_df0e85ba',
     },
-    Mi = ae('FieldModificationButton', {
-        element: L,
-        className: n(Ti.button, Ti.button__secondary, Ti.button__enabled),
-        cva: { variants: { locked: { true: Ti.button__locked, false: Ti.button__unlocked } } },
+    Hi = ne('FieldModificationButton', {
+        element: $,
+        className: c(zi.button, zi.button__secondary, zi.button__enabled),
+        cva: { variants: { locked: { true: zi.button__locked, false: zi.button__unlocked } } },
     });
-const Pi = a(function ({ className: e }) {
-        const t = x.resolve('strings'),
-            s = x.resolve('views'),
-            { model: a, controls: r } = Ci(),
-            { model: o, controls: c } = ji(),
+const Fi = i(function ({ className: e }) {
+        const t = N.resolve('strings'),
+            s = N.resolve('views'),
+            { model: a, controls: r } = Li(),
+            { model: i, controls: n } = Ri(),
             l = a.state.get(),
-            d = o.currentResearchItems.get()[0],
-            h = d ? o.researchItems.get(d.id) : void 0,
-            m = se({ contentId: s.read((e) => e.lobby.tooltips.VehPostProgressionEntryPointTooltip('resId')) });
-        const u = j(
-            { buttonSize: L.sizes.small, bubbleSize: G.small },
-            { large: { buttonSize: L.sizes.large, bubbleSize: G.medium } },
+            d = i.currentResearchItems.get()[0],
+            h = d ? i.researchItems.get(d.id) : void 0,
+            m = ie({ contentId: s.read((e) => e.lobby.tooltips.VehPostProgressionEntryPointTooltip('resId')) });
+        const u = k(
+            { buttonSize: $.sizes.small, bubbleSize: K.small },
+            { large: { buttonSize: $.sizes.large, bubbleSize: K.medium } },
         );
         var _, p;
         if (0 !== l)
-            return i.jsxs('div', {
-                className: n(Ti.base, e),
+            return o.jsxs('div', {
+                className: c(zi.base, e),
                 children: [
-                    i.jsxs(Mi, {
-                        theme: L.themes.secondary,
+                    o.jsxs(Hi, {
+                        theme: $.themes.secondary,
                         size: u.buttonSize,
-                        classNames: { background: Ti.background, overlay: Ti.overlay, content: Ti.content },
+                        classNames: { background: zi.background, overlay: zi.overlay, content: zi.content },
                         locked: 1 === l,
                         onMouseEnter: function (e) {
-                            (m.onMouseEnter(e), c.setFieldModificationHover(!0));
+                            (m.onMouseEnter(e), n.setFieldModificationHover(!0));
                         },
                         onMouseLeave: function () {
-                            (m.onMouseLeave(), c.setFieldModificationHover(!1));
+                            (m.onMouseLeave(), n.setFieldModificationHover(!1));
                         },
                         onClick: function () {
                             (m.onClick(), r.openPostProgression());
                         },
                         autoAlignContent: !1,
                         children: [
-                            i.jsx('div', { className: Ti.icon }),
+                            o.jsx('div', { className: zi.icon }),
                             t.readOrEmpty('vehicle_hub.modules.controls.button.field_modification'),
                         ],
                     }),
-                    i.jsx('div', { className: n(Ti.lock, 1 === l && Ti.lock__visible) }),
-                    i.jsx('div', { className: n(Ti.corners, 1 === l && Ti.corners__locked) }),
-                    i.jsx(H.Root, {
+                    o.jsx('div', { className: c(zi.lock, 1 === l && zi.lock__visible) }),
+                    o.jsx('div', { className: c(zi.corners, 1 === l && zi.corners__locked) }),
+                    o.jsx(U.Root, {
                         hidden: 0 === a.counter.get(),
-                        className: Ti.bubble,
-                        children: i.jsx(H.Icon, { size: u.bubbleSize, type: W.bubble }),
+                        className: zi.bubble,
+                        children: o.jsx(U.Icon, { size: u.bubbleSize, type: X.bubble }),
                     }),
                     h &&
-                        i.jsx('div', {
-                            className: Ti.descriptionContainer,
-                            children: i.jsx('div', {
-                                className: n(
-                                    Ti.description,
-                                    1 === l && o.fieldModificationHover.get() && Ti.description__visible,
+                        o.jsx('div', {
+                            className: zi.descriptionContainer,
+                            children: o.jsx('div', {
+                                className: c(
+                                    zi.description,
+                                    1 === l && i.fieldModificationHover.get() && zi.description__visible,
                                 ),
                                 children: t.readOrEmpty(
                                     `veh_post_progression.researchEntry.status.${((_ = h.isElite), (p = h.isInInventory), _ || p ? (_ ? (p ? void 0 : 'notPurchased') : 'notResearched') : 'notResearchedNotPurchased')}`,
@@ -2091,68 +1911,68 @@ const Pi = a(function ({ className: e }) {
                 ],
             });
     }),
-    Ei = 'Control_6fe95751',
-    Ai = 'Control_topContainer_5fe23b14',
-    Ri = 'Control_fieldModification_9434b7fa',
-    Oi = 'Control_separator_523d2573',
-    Bi = 'Control_descriptor_6451bfc5',
-    Li = 'Control_controls_c1ed063f',
-    Di = 'Control_info_76cccc17',
-    Vi = 'Control_currency_6bfd0c7d',
-    $i = 'Control_name_91f33520',
-    zi = 'Control_moduleName_b5e482cd',
-    Fi = 'Control_secondaryButton_e863701f',
-    Hi = x.resolve('strings'),
-    Wi = 'researched',
-    Gi = 'vehicleInBattle',
-    Ui = 'eliteVehicle',
-    Xi = 'disableVehicle',
-    Ki = 'moduleMounted',
-    Zi = 'disableModule',
-    Yi = 'buyVehicle',
-    Ji = 'buyAndInstall',
-    qi = 'research',
-    Qi = 'mount',
-    en = 'enabled',
-    tn = 'battle',
-    sn = 'damaged',
-    an = 'prebattle',
-    rn = 'incompatible',
-    nn = 'notEnoughCurrency',
-    on = 'notEnoughXP',
-    cn = 'wgmDisabled',
-    ln = [Qi, Ji],
-    dn = [Q.DAMAGED, Q.EXPLODED, Q.DESTROYED];
-function hn(e, t) {
+    Wi = 'Control_6fe95751',
+    Gi = 'Control_topContainer_5fe23b14',
+    Ui = 'Control_fieldModification_9434b7fa',
+    Xi = 'Control_separator_523d2573',
+    Ki = 'Control_descriptor_6451bfc5',
+    Zi = 'Control_controls_c1ed063f',
+    Yi = 'Control_info_76cccc17',
+    qi = 'Control_currency_6bfd0c7d',
+    Ji = 'Control_name_91f33520',
+    Qi = 'Control_moduleName_b5e482cd',
+    en = 'Control_secondaryButton_e863701f',
+    tn = N.resolve('strings'),
+    sn = 'researched',
+    an = 'vehicleInBattle',
+    rn = 'eliteVehicle',
+    nn = 'disableVehicle',
+    on = 'moduleMounted',
+    cn = 'disableModule',
+    ln = 'buyVehicle',
+    dn = 'buyAndInstall',
+    hn = 'research',
+    mn = 'mount',
+    un = 'enabled',
+    _n = 'battle',
+    pn = 'damaged',
+    vn = 'prebattle',
+    bn = 'incompatible',
+    xn = 'notEnoughCurrency',
+    gn = 'notEnoughXP',
+    fn = 'wgmDisabled',
+    Nn = [mn, dn],
+    jn = [se.DAMAGED, se.EXPLODED, se.DESTROYED];
+function Cn(e, t) {
     switch (e) {
-        case en:
+        case un:
             return;
-        case cn:
+        case fn:
             return {
-                body: Hi.readOrEmpty('tooltips.vehiclePreview.buyButton.walletUnavailable.body'),
-                header: Hi.readOrEmpty('tooltips.vehiclePreview.buyButton.walletUnavailable.header'),
+                body: tn.readOrEmpty('tooltips.vehiclePreview.buyButton.walletUnavailable.body'),
+                header: tn.readOrEmpty('tooltips.vehiclePreview.buyButton.walletUnavailable.header'),
             };
-        case nn:
+        case xn:
             return {
-                body: Hi.readOrEmpty('tooltips.vehiclePreview.buyButton.notEnoughCredits.body'),
-                header: Hi.readOrEmpty('tooltips.vehiclePreview.buyButton.notEnoughCredits.header'),
+                body: tn.readOrEmpty('tooltips.vehiclePreview.buyButton.notEnoughCredits.body'),
+                header: tn.readOrEmpty('tooltips.vehiclePreview.buyButton.notEnoughCredits.header'),
             };
-        case on:
+        case gn:
             return {
-                body: Hi.readOrEmpty('tooltips.researchPage.module.status.notEnoughXP.text'),
-                header: Hi.readOrEmpty('tooltips.researchPage.module.status.notEnoughXP.header'),
+                body: tn.readOrEmpty('tooltips.researchPage.module.status.notEnoughXP.text'),
+                header: tn.readOrEmpty('tooltips.researchPage.module.status.notEnoughXP.header'),
             };
-        case tn:
-            return { body: Hi.readOrEmpty('vehicle_hub.modules.controls.button.tooltip.disableReason.battle') };
-        case sn:
-            return { body: Hi.readOrEmpty('vehicle_hub.modules.controls.button.tooltip.disableReason.damaged') };
-        case an:
-            return { body: Hi.readOrEmpty('vehicle_hub.modules.controls.button.tooltip.disableReason.prebattle') };
-        case rn: {
-            const e = Hi.readOrEmpty('vehicle_hub.modules.name.separator'),
-                s = t.map((e) => Hi.readOrEmpty(`vehicle_hub.modules.name.${e}`));
+        case _n:
+            return { body: tn.readOrEmpty('vehicle_hub.modules.controls.button.tooltip.disableReason.battle') };
+        case pn:
+            return { body: tn.readOrEmpty('vehicle_hub.modules.controls.button.tooltip.disableReason.damaged') };
+        case vn:
+            return { body: tn.readOrEmpty('vehicle_hub.modules.controls.button.tooltip.disableReason.prebattle') };
+        case bn: {
+            const e = tn.readOrEmpty('vehicle_hub.modules.name.separator'),
+                s = t.map((e) => tn.readOrEmpty(`vehicle_hub.modules.name.${e}`));
             return {
-                body: Ce('vehicle_hub.modules.controls.button.tooltip.disableReason.incompatible', {
+                body: Ie('vehicle_hub.modules.controls.button.tooltip.disableReason.incompatible', {
                     module: s.join(e),
                 }),
             };
@@ -2161,138 +1981,137 @@ function hn(e, t) {
             return void console.error('Unknown button state: ', e);
     }
 }
-const mn = a(function () {
-        var e;
-        const { model: t, controls: s } = ji(),
-            a = jt().model,
-            { model: r } = ft(),
-            n = a.vehicleId.get(),
-            o = a.state.get(),
-            c = t.researchItems.get(n),
-            l = t.selectedId.get(),
-            d = t.researchItems.get(l),
-            h = !!d && 'AVAILABLE' === (null == (e = r.currencies.get(d.priceCurrency)) ? void 0 : e.status),
-            m = Boolean(d && !d.hasEnoughCurrency && !d.isInInventory),
-            u = Boolean(d && !d.hasEnoughXP && !d.isResearched),
-            _ = (function (e, t, s, a, r, i) {
+const yn = i(function () {
+        const { model: e, controls: t } = Ri(),
+            s = kt().model,
+            { model: a } = Ct(),
+            r = s.vehicleId.get(),
+            i = s.state.get(),
+            n = e.researchItems.get(r),
+            c = e.selectedId.get(),
+            l = e.researchItems.get(c),
+            d = !!l && 'AVAILABLE' === a.currencies.get(l.priceCurrency)?.status,
+            h = Boolean(l && !l.hasEnoughCurrency && !l.isInInventory),
+            m = Boolean(l && !l.hasEnoughXP && !l.isResearched),
+            u = (function (e, t, s, a, r, i) {
                 if (r) {
-                    if (r.isInstalled) return Ki;
-                    if (t) return Ui;
-                    if (!(null == a ? void 0 : a.isResearched)) return Xi;
-                    if (i && !r.isResearched) return Zi;
-                    if (a.isResearched && !a.isInInventory && r.isResearched) return Yi;
+                    if (r.isInstalled) return on;
+                    if (t) return rn;
+                    if (!a?.isResearched) return nn;
+                    if (i && !r.isResearched) return cn;
+                    if (a.isResearched && !a.isInInventory && r.isResearched) return ln;
                 } else {
-                    if (e) return Ui;
-                    if (s) return Gi;
-                    if (!(null == a ? void 0 : a.isResearched)) return Xi;
-                    if (a.isResearched) return Wi;
+                    if (e) return rn;
+                    if (s) return an;
+                    if (!a?.isResearched) return nn;
+                    if (a.isResearched) return sn;
                 }
-            })(a.elite.get(), a.premium.get(), o === Q.BATTLE, c, d, t.computes.isDisabled(l)),
-            p = d
+            })(s.elite.get(), s.premium.get(), i === se.BATTLE, n, l, e.computes.isDisabled(c)),
+            _ = l
                 ? (function (e) {
                       return e.isResearched
                           ? e.isInInventory
                               ? e.isInstalled
                                   ? void console.error('buttonTypes is not defined')
-                                  : Qi
-                              : Ji
-                          : qi;
-                  })(d)
+                                  : mn
+                              : dn
+                          : hn;
+                  })(l)
                 : void 0,
-            v = (function (e, t, s, a, r, i) {
-                const n = e && ln.includes(e);
+            p = (function (e, t, s, a, r, i) {
+                const n = e && Nn.includes(e);
                 return s
-                    ? e === qi && r
-                        ? on
+                    ? e === hn && r
+                        ? gn
                         : n
                           ? t.length > 0
-                              ? rn
-                              : i === Q.BATTLE
-                                ? tn
-                                : i && dn.includes(i)
-                                  ? sn
-                                  : i === Q.IN_PREBATTLE
-                                    ? an
-                                    : e === Ji && a
-                                      ? nn
-                                      : en
-                          : en
-                    : cn;
-            })(p, t.computes.getUrgentNames(l), h, m, u, o),
-            b = v !== en,
-            x = R({ ...hn(v, t.computes.getUrgentNames(l)) }),
-            g = j(
-                { currency: y.sizes.small, button: L.sizes.small },
-                { medium: { currency: y.sizes.medium, button: L.sizes.large }, large: { currency: y.sizes.large } },
+                              ? bn
+                              : i === se.BATTLE
+                                ? _n
+                                : i && jn.includes(i)
+                                  ? pn
+                                  : i === se.IN_PREBATTLE
+                                    ? vn
+                                    : e === dn && a
+                                      ? xn
+                                      : un
+                          : un
+                    : fn;
+            })(_, e.computes.getUrgentNames(c), d, h, m, i),
+            v = p !== un,
+            b = B({ ...Cn(p, e.computes.getUrgentNames(c)) }),
+            x = k(
+                { currency: w.sizes.small, button: $.sizes.small },
+                { medium: { currency: w.sizes.medium, button: $.sizes.large }, large: { currency: w.sizes.large } },
             );
-        return i.jsxs('div', {
-            className: Ei,
+        return o.jsxs('div', {
+            className: Wi,
             children: [
-                i.jsxs('div', {
-                    className: Ai,
-                    children: [i.jsx(Pi, { className: Ri }), i.jsx('div', { className: Oi })],
+                o.jsxs('div', {
+                    className: Gi,
+                    children: [o.jsx(Fi, { className: Ui }), o.jsx('div', { className: Xi })],
                 }),
-                _
-                    ? i.jsx('div', {
-                          className: Bi,
-                          children: Hi.readOrEmpty(`vehicle_hub.modules.controls.descriptor.${_}`),
+                u
+                    ? o.jsx('div', {
+                          className: Ki,
+                          children: tn.readOrEmpty(`vehicle_hub.modules.controls.descriptor.${u}`),
                       })
-                    : i.jsxs('div', {
-                          className: Li,
+                    : o.jsxs('div', {
+                          className: Zi,
                           children: [
-                              d &&
-                                  i.jsxs('div', {
-                                      className: Di,
+                              l &&
+                                  o.jsxs('div', {
+                                      className: Yi,
                                       children: [
-                                          p !== Qi &&
-                                              i.jsx(y, {
-                                                  className: Vi,
-                                                  type: d.isResearched ? y.types.credits : y.types.tankXP,
-                                                  size: g.currency,
+                                          _ !== mn &&
+                                              o.jsx(w, {
+                                                  className: qi,
+                                                  type: l.isResearched ? w.types.credits : w.types.tankXP,
+                                                  size: x.currency,
                                                   reverse: !0,
-                                                  children: d.isResearched ? d.priceAmount : d.requiredXp,
+                                                  children: l.isResearched ? l.priceAmount : l.requiredXp,
                                               }),
-                                          i.jsx(C, {
-                                              className: $i,
+                                          o.jsx(I, {
+                                              className: Ji,
                                               path: 'vehicle_hub.modules.controls.name',
-                                              params: { name: d.userName, classModuleName: zi },
+                                              params: { name: l.userName, classModuleName: Qi },
                                           }),
                                       ],
                                   }),
-                              p === Qi &&
-                                  i.jsx('div', {
-                                      ...(v === cn && x),
-                                      children: i.jsx(L, {
-                                          theme: L.themes.secondary,
-                                          size: g.button,
-                                          className: Fi,
-                                          disabled: !h,
+                              _ === mn &&
+                                  o.jsx('div', {
+                                      ...(p === fn && b),
+                                      children: o.jsx($, {
+                                          theme: $.themes.secondary,
+                                          size: x.button,
+                                          className: en,
+                                          disabled: !d,
                                           onClick: function () {
-                                              h && s.sellItem(l);
+                                              d && t.sellItem(c);
                                           },
-                                          children: Hi.readOrEmpty('vehicle_hub.modules.controls.button.sell'),
+                                          children: tn.readOrEmpty('vehicle_hub.modules.controls.button.sell'),
                                       }),
                                   }),
-                              i.jsx('div', {
-                                  ...(b && x),
-                                  children: i.jsx(L, {
-                                      theme: L.themes.primary,
-                                      size: g.button,
+                              o.jsx('div', {
+                                  ...(v && b),
+                                  children: o.jsx($, {
+                                      theme: $.themes.primary,
+                                      size: x.button,
                                       onClick: function () {
-                                          if (!b)
-                                              switch (p) {
-                                                  case qi:
-                                                      return s.unlockItem(l);
-                                                  case Qi:
-                                                      return s.installItem(l);
-                                                  case Ji:
-                                                      return s.buyAndInstallItem(l);
+                                          if (!v)
+                                              switch (_) {
+                                                  case hn:
+                                                      return t.unlockItem(c);
+                                                  case mn:
+                                                      return t.installItem(c);
+                                                  case dn:
+                                                      return t.buyAndInstallItem(c);
                                                   default:
-                                                      console.error(`buttonType is not correct by id item ${l}`);
+                                                      console.error(`buttonType is not correct by id item ${c}`);
                                               }
                                       },
-                                      disabled: b,
-                                      children: Hi.readOrEmpty(`vehicle_hub.modules.controls.button.${p}`),
+                                      disabled: v,
+                                      children: tn.readOrEmpty(`vehicle_hub.modules.controls.button.${_}`),
                                   }),
                               }),
                           ],
@@ -2300,8 +2119,8 @@ const mn = a(function () {
             ],
         });
     }),
-    un = {
-        background: 'Module_background_e500b413',
+    kn = {
+        background: 'Module_background_490b842',
         frame: 'Module_frame_a88cf4e0',
         urgent: 'Module_urgent_309334a1',
         hover: 'Module_hover_83c84d48',
@@ -2323,120 +2142,120 @@ const mn = a(function () {
         mechanics: 'Module_mechanics_a51a15dd',
         mechanic: 'Module_mechanic_c7fffcbc',
     },
-    _n = x.resolve('images'),
-    pn = x.resolve('sounds'),
-    vn = 'small',
-    bn = 'large',
-    xn = 'default',
-    gn = 'locked',
-    fn = 'disabled',
-    Nn = 'mounted',
-    jn = 'default',
-    yn = 'selected',
-    Cn = 'pressed',
-    kn = ae('Module', un.base, {
+    wn = N.resolve('images'),
+    In = N.resolve('sounds'),
+    Sn = 'small',
+    Tn = 'large',
+    Mn = 'default',
+    Pn = 'locked',
+    En = 'disabled',
+    An = 'mounted',
+    Rn = 'default',
+    On = 'selected',
+    Ln = 'pressed',
+    Bn = ne('Module', kn.base, {
         variants: {
             state: {
-                default: un.base__default,
-                locked: un.base__locked,
-                disabled: un.base__disabled,
-                mounted: un.base__mounted,
+                default: kn.base__default,
+                locked: kn.base__locked,
+                disabled: kn.base__disabled,
+                mounted: kn.base__mounted,
             },
-            status: { default: un.base__default, selected: un.base__selected, pressed: un.base__pressed },
-            hover: { true: un.base__hover },
-            withPrice: { true: un.base__withPrice },
-            withLongPrice: { true: un.base__withLongPrice },
+            status: { default: kn.base__default, selected: kn.base__selected, pressed: kn.base__pressed },
+            hover: { true: kn.base__hover },
+            withPrice: { true: kn.base__withPrice },
+            withLongPrice: { true: kn.base__withLongPrice },
         },
     }),
-    wn = (e, t) => (e ? Cn : t ? yn : jn),
-    In = a(function ({ id: e }) {
-        const [t, s] = r.useState(!1),
-            [a, n] = r.useState(!1),
-            { model: o, controls: c } = ji(),
-            l = jt().model,
+    Dn = (e, t) => (e ? Ln : t ? On : Rn),
+    Vn = i(function ({ id: e }) {
+        const [t, s] = n.useState(!1),
+            [a, r] = n.useState(!1),
+            { model: i, controls: c } = Ri(),
+            l = kt().model,
             d = l.vehicleId.get(),
-            h = o.researchItems.get(e),
-            m = o.researchItems.get(d),
-            u = o.computes.isUrgentSelected(e),
-            _ = o.computes.isUrgentHover(e),
+            h = i.researchItems.get(e),
+            m = i.researchItems.get(d),
+            u = i.computes.isUrgentSelected(e),
+            _ = i.computes.isUrgentHover(e),
             p = l.elite.get(),
-            v = o.fieldModificationHover.get() && !h.isResearched && !p,
+            v = i.fieldModificationHover.get() && !h.isResearched && !p,
             b =
-                ((x = o.computes.isDisabled(e)),
-                (f = h.isInstalled),
-                (N = h.isInInventory),
-                (C = h.isResearched),
-                (k = m.isResearched && !m.isInInventory && h.isResearched),
-                x && !C ? fn : f ? Nn : (N && C) || k ? xn : gn);
-        var x, f, N, C, k;
-        const w = ((e, t, s, a) => !(e !== gn && e !== fn) && (s || (!a && !t)))(
+                ((x = i.computes.isDisabled(e)),
+                (g = h.isInstalled),
+                (f = h.isInInventory),
+                (N = h.isResearched),
+                (C = m.isResearched && !m.isInInventory && h.isResearched),
+                x && !N ? En : g ? An : (f && N) || C ? Mn : Pn);
+        var x, g, f, N, C;
+        const y = ((e, t, s, a) => !(e !== Pn && e !== En) && (s || (!a && !t)))(
                 b,
                 h.autoUnlocked,
                 m.isInInventory,
                 h.isResearched,
             ),
-            I = j({ size: vn }, { large: { size: bn } }),
+            I = k({ size: Sn }, { large: { size: Tn } }),
             S = h.isResearched ? h.priceAmount : h.requiredXp,
-            T = w && String(S).length >= (I.size === vn ? 5 : 7);
+            T = y && String(S).length >= (I.size === Sn ? 5 : 7);
         return (
-            r.useEffect(() => {
-                if (t) return ke.up(() => s(!1));
+            n.useEffect(() => {
+                if (t) return Se.up(() => s(!1));
             }, [t]),
             h
-                ? i.jsxs(kn, {
+                ? o.jsxs(Bn, {
                       state: b,
-                      status: wn(t, o.selectedId.get() === e),
+                      status: Dn(t, i.selectedId.get() === e),
                       hover: a || v,
-                      withPrice: w,
+                      withPrice: y,
                       withLongPrice: T,
                       onClick: function () {
-                          (pn.play('play'), c.setSelectedID(e));
+                          (In.play('play'), c.setSelectedID(e));
                       },
                       onMouseDown: function () {
                           s(!0);
                       },
                       onMouseEnter: function () {
-                          (n(!0), pn.play('highlight'), c.setHoverID(e));
+                          (r(!0), In.play('highlight'), c.setHoverID(e));
                       },
                       onMouseLeave: function () {
-                          (n(!1), c.clearUrgentHover());
+                          (r(!1), c.clearUrgentHover());
                       },
                       children: [
-                          i.jsxs('div', {
-                              className: un.background,
+                          o.jsxs('div', {
+                              className: kn.background,
                               children: [
-                                  i.jsx('div', { className: un.frame }),
-                                  i.jsx('div', { className: un.check }),
-                                  (u || _) && i.jsx('div', { className: un.urgent }),
-                                  i.jsx('div', { className: un.hover }),
+                                  o.jsx('div', { className: kn.frame }),
+                                  o.jsx('div', { className: kn.check }),
+                                  (u || _) && o.jsx('div', { className: kn.urgent }),
+                                  o.jsx('div', { className: kn.hover }),
                               ],
                           }),
-                          i.jsx('div', {
-                              className: un.icon,
+                          o.jsx('div', {
+                              className: kn.icon,
                               style: {
-                                  backgroundImage: `url(${_n.readOrEmpty(`modules.${((M = h.image), (P = I.size), P === vn ? M : M + 'Big')}`)})`,
+                                  backgroundImage: `url(${wn.readOrEmpty(`modules.${((M = h.image), (P = I.size), P === Sn ? M : M + 'Big')}`)})`,
                               },
                           }),
-                          b === fn && i.jsx('div', { className: un.disabledPattern }),
-                          i.jsx(Z.Level, { className: un.level, value: h.level }),
-                          w &&
-                              i.jsx(y, {
-                                  className: un.price,
-                                  type: h.isResearched ? y.types.credits : y.types.tankXP,
-                                  size: y.sizes.extraSmall,
+                          b === En && o.jsx('div', { className: kn.disabledPattern }),
+                          o.jsx(J.Level, { className: kn.level, value: h.level }),
+                          y &&
+                              o.jsx(w, {
+                                  className: kn.price,
+                                  type: h.isResearched ? w.types.credits : w.types.tankXP,
+                                  size: w.sizes.extraSmall,
                                   reverse: !0,
                                   children: S,
                               }),
-                          i.jsx('div', { className: un.name, children: i.jsx(F, { text: h.userName }) }),
-                          i.jsx('div', {
-                              className: un.mechanics,
-                              children: g(o.computes.mechanics(e), (e) =>
-                                  i.jsx(
+                          o.jsx('div', { className: kn.name, children: o.jsx(G, { text: h.userName }) }),
+                          o.jsx('div', {
+                              className: kn.mechanics,
+                              children: j(i.computes.mechanics(e), (e) =>
+                                  o.jsx(
                                       'div',
                                       {
-                                          className: un.mechanic,
+                                          className: kn.mechanic,
                                           style: {
-                                              backgroundImage: `url(${_n.readOrEmpty(`vehicle_hub.mechanics.x20x20.${e.name}`)})`,
+                                              backgroundImage: `url(${wn.readOrEmpty(`vehicle_hub.mechanics.x20x20.${e.name}`)})`,
                                           },
                                       },
                                       e.name,
@@ -2449,24 +2268,21 @@ const mn = a(function () {
         );
         var M, P;
     }),
-    Sn = a(function ({ id: e }) {
-        const { model: t } = ji(),
-            s = jt().model,
+    $n = i(function ({ id: e }) {
+        const { model: t } = Ri(),
+            s = kt().model,
             a = t.researchItems.get(e),
-            n = s.vehicleId.get(),
-            o = t.computes.getUrgent(e).length > 0,
-            c = we(
+            r = s.vehicleId.get(),
+            i = t.computes.getUrgent(e).length > 0,
+            c = Te(
                 'researchItem',
-                r.useMemo(
-                    () => ({ nodeCD: e, rootCD: n, nodeState: null == a ? void 0 : a.state, hasUrgent: o }),
-                    [e, n, null == a ? void 0 : a.state, o],
-                ),
+                n.useMemo(() => ({ nodeCD: e, rootCD: r, nodeState: a?.state, hasUrgent: i }), [e, r, a?.state, i]),
                 { disabled: !1 },
             ),
-            l = P({ args: r.useMemo(() => ({ nodeCD: e, tooltipId: 'techtreeModule' }), [e]) });
-        return i.jsx('div', { ...c, 'data-test-id': e, ...l, children: i.jsx(In, { id: e }) });
+            l = R({ args: n.useMemo(() => ({ nodeCD: e, tooltipId: 'techtreeModule' }), [e]) });
+        return o.jsx('div', { ...c, 'data-test-id': e, ...l, children: o.jsx(Vn, { id: e }) });
     }),
-    Tn = {
+    zn = {
         vignette: 'Vehicle_vignette_8d4f73b8',
         disabled: 'Vehicle_disabled_cc23a1e0',
         hover: 'Vehicle_hover_ce20ff1b',
@@ -2494,126 +2310,126 @@ const mn = a(function () {
         price__discountedCredits: 'Vehicle_price__discountedCredits_c03ad304',
         price__discountedXp: 'Vehicle_price__discountedXp_c03ad304',
     },
-    Mn = x.resolve('images'),
-    Pn = x.resolve('sounds'),
-    En = 'default',
-    An = 'locked',
-    Rn = 'disabled',
-    On = 'inGarage',
-    Bn = ae('Vehicle', Tn.base, {
+    Hn = N.resolve('images'),
+    Fn = N.resolve('sounds'),
+    Wn = 'default',
+    Gn = 'locked',
+    Un = 'disabled',
+    Xn = 'inGarage',
+    Kn = ne('Vehicle', zn.base, {
         variants: {
             state: {
-                default: Tn.base__default,
-                locked: Tn.base__locked,
-                disabled: Tn.base__disabled,
-                inGarage: Tn.base__inGarage,
+                default: zn.base__default,
+                locked: zn.base__locked,
+                disabled: zn.base__disabled,
+                inGarage: zn.base__inGarage,
             },
-            hover: { true: Tn.base__hover },
+            hover: { true: zn.base__hover },
         },
     });
-const Ln = a(function ({ id: e, isPrevNode: t = !1 }) {
-        const [s, a] = r.useState(!1),
-            { model: o, controls: c } = ji(),
-            l = o.researchItems.get(e),
-            d = jt().model.elite.get(),
-            h = o.fieldModificationHover.get() && !t && !l.isResearched && !d,
+const Zn = i(function ({ id: e, isPrevNode: t = !1 }) {
+        const [s, a] = n.useState(!1),
+            { model: r, controls: i } = Ri(),
+            l = r.researchItems.get(e),
+            d = kt().model.elite.get(),
+            h = r.fieldModificationHover.get() && !t && !l.isResearched && !d,
             m = (function (e) {
-                if (e && v(e)) return e;
+                if (e && x(e)) return e;
             })(l.primaryClass),
-            u = ((_ = l.isDisabled), (p = l.isInInventory), (b = l.isResearched), p ? On : b ? En : _ ? Rn : An);
-        var _, p, b;
-        const x = l.isResearched ? l.priceAmount : l.requiredXp,
-            g = x > 0 || l.isDiscountedPrice || l.isDiscountedXp;
+            u = ((_ = l.isDisabled), (p = l.isInInventory), (v = l.isResearched), p ? Xn : v ? Wn : _ ? Un : Gn);
+        var _, p, v;
+        const b = l.isResearched ? l.priceAmount : l.requiredXp,
+            g = b > 0 || l.isDiscountedPrice || l.isDiscountedXp;
         return l
-            ? i.jsxs(Bn, {
+            ? o.jsxs(Kn, {
                   hover: s || h,
                   state: u,
                   onMouseEnter: () => {
-                      (Pn.play('highlight'), a(!0));
+                      (Fn.play('highlight'), a(!0));
                   },
                   onMouseLeave: () => {
                       a(!1);
                   },
                   onClick: () => {
-                      (Pn.play('play'), c.changeVehicle(e));
+                      (Fn.play('play'), i.changeVehicle(e));
                   },
                   children: [
-                      i.jsx('div', { className: Tn.vignette }),
-                      i.jsx('div', { className: Tn.hover }),
-                      i.jsx('div', {
-                          className: n(
-                              Tn.outsideHoverFrame,
-                              Tn.outsideHoverFrame__top,
-                              h && Tn.outsideHoverFrame__visible,
+                      o.jsx('div', { className: zn.vignette }),
+                      o.jsx('div', { className: zn.hover }),
+                      o.jsx('div', {
+                          className: c(
+                              zn.outsideHoverFrame,
+                              zn.outsideHoverFrame__top,
+                              h && zn.outsideHoverFrame__visible,
                           ),
                       }),
-                      i.jsx('div', {
-                          className: n(
-                              Tn.outsideHoverFrame,
-                              Tn.outsideHoverFrame__bottom,
-                              h && Tn.outsideHoverFrame__visible,
+                      o.jsx('div', {
+                          className: c(
+                              zn.outsideHoverFrame,
+                              zn.outsideHoverFrame__bottom,
+                              h && zn.outsideHoverFrame__visible,
                           ),
                       }),
-                      i.jsx('div', {
-                          className: n(
-                              Tn.outsideHoverFrame,
-                              Tn.outsideHoverFrame__left,
-                              h && Tn.outsideHoverFrame__visible,
+                      o.jsx('div', {
+                          className: c(
+                              zn.outsideHoverFrame,
+                              zn.outsideHoverFrame__left,
+                              h && zn.outsideHoverFrame__visible,
                           ),
                       }),
-                      i.jsx('div', {
-                          className: n(
-                              Tn.outsideHoverFrame,
-                              Tn.outsideHoverFrame__right,
-                              h && Tn.outsideHoverFrame__visible,
+                      o.jsx('div', {
+                          className: c(
+                              zn.outsideHoverFrame,
+                              zn.outsideHoverFrame__right,
+                              h && zn.outsideHoverFrame__visible,
                           ),
                       }),
-                      i.jsx('div', {
-                          className: Tn.icon,
-                          style: { backgroundImage: `url(${Mn.readOrEmpty(`vehicle.x190x152.${Ie(l.image)}`)})` },
+                      o.jsx('div', {
+                          className: zn.icon,
+                          style: { backgroundImage: `url(${Hn.readOrEmpty(`vehicle.x190x152.${Me(l.image)}`)})` },
                       }),
-                      u === Rn && i.jsx('div', { className: Tn.disabled }),
-                      i.jsxs('div', {
-                          className: Tn.tankInfo,
+                      u === Un && o.jsx('div', { className: zn.disabled }),
+                      o.jsxs('div', {
+                          className: zn.tankInfo,
                           children: [
-                              i.jsx(Z.Level, { className: Tn.level, value: l.level }),
-                              m && i.jsx(Z.Type, { type: m, size: Z.Type.sizes.x24x24, premium: l.isElite }),
+                              o.jsx(J.Level, { className: zn.level, value: l.level }),
+                              m && o.jsx(J.Type, { type: m, size: J.Type.sizes.x24x24, premium: l.isElite }),
                           ],
                       }),
-                      u === On && i.jsx('div', { className: Tn.garageIcon }),
-                      i.jsxs('div', {
-                          className: Tn.description,
+                      u === Xn && o.jsx('div', { className: zn.garageIcon }),
+                      o.jsxs('div', {
+                          className: zn.description,
                           children: [
-                              u === On &&
+                              u === Xn &&
                                   l.earnedXp > 0 &&
-                                  i.jsx(y, {
-                                      className: Tn.exp,
-                                      type: y.types.tankXP,
-                                      size: y.sizes.extraSmall,
+                                  o.jsx(w, {
+                                      className: zn.exp,
+                                      type: w.types.tankXP,
+                                      size: w.sizes.extraSmall,
                                       reverse: !0,
                                       children: l.earnedXp,
                                   }),
-                              i.jsx('div', { className: Tn.name, children: i.jsx(F, { text: l.userName }) }),
-                              (u === En || u === An || u === Rn) &&
-                                  i.jsxs('div', {
-                                      className: n(
-                                          Tn.price,
-                                          l.isDiscountedPrice && Tn.price__discountedCredits,
-                                          l.isDiscountedXp && Tn.price__discountedXp,
+                              o.jsx('div', { className: zn.name, children: o.jsx(G, { text: l.userName }) }),
+                              (u === Wn || u === Gn || u === Un) &&
+                                  o.jsxs('div', {
+                                      className: c(
+                                          zn.price,
+                                          l.isDiscountedPrice && zn.price__discountedCredits,
+                                          l.isDiscountedXp && zn.price__discountedXp,
                                       ),
                                       children: [
                                           g &&
-                                              i.jsx(y, {
-                                                  className: Tn.currency,
-                                                  type: l.isResearched ? y.types.credits : y.types.tankXP,
-                                                  size: y.sizes.extraSmall,
+                                              o.jsx(w, {
+                                                  className: zn.currency,
+                                                  type: l.isResearched ? w.types.credits : w.types.tankXP,
+                                                  size: w.sizes.extraSmall,
                                                   reverse: !0,
-                                                  children: x,
+                                                  children: b,
                                               }),
                                           (l.isDiscountedPrice || l.isDiscountedXp) &&
-                                              i.jsx('div', {
-                                                  className: Tn.discountWrapper,
-                                                  children: i.jsx('div', { className: Tn.discount }),
+                                              o.jsx('div', {
+                                                  className: zn.discountWrapper,
+                                                  children: o.jsx('div', { className: zn.discount }),
                                               }),
                                       ],
                                   }),
@@ -2623,42 +2439,42 @@ const Ln = a(function ({ id: e, isPrevNode: t = !1 }) {
               })
             : null;
     }),
-    Dn = a(function ({ id: e, isPrevNode: t = !1 }) {
-        const { model: s } = ji(),
+    Yn = i(function ({ id: e, isPrevNode: t = !1 }) {
+        const { model: s } = Ri(),
             a = s.researchItems.get(e),
-            n = P({ args: r.useMemo(() => ({ vehCD: e, tooltipId: 'techtreeVehicle', topLevel: t }), [e]) }),
-            o = we(
+            r = R({ args: n.useMemo(() => ({ vehCD: e, tooltipId: 'techtreeVehicle', topLevel: t }), [e]) }),
+            i = Te(
                 'researchVehicle',
-                r.useMemo(() => ({ vehCD: e, nodeState: a.state, newCM: !1 }), [a.state, e]),
+                n.useMemo(() => ({ vehCD: e, nodeState: a.state, newCM: !1 }), [a.state, e]),
                 { disabled: !1 },
             );
-        return i.jsx('div', { ...o, ...n, children: i.jsx(Ln, { id: e, isPrevNode: t }) });
+        return o.jsx('div', { ...i, ...r, children: o.jsx(Zn, { id: e, isPrevNode: t }) });
     });
-function Vn({ id: e, isPrevNode: t = !1 }) {
-    const { model: s } = ji(),
+function qn({ id: e, isPrevNode: t = !1 }) {
+    const { model: s } = Ri(),
         a = s.researchItems.get(e);
-    switch (null == a ? void 0 : a.renderer) {
+    switch (a?.renderer) {
         case 'item':
-            return i.jsx(Sn, { id: e });
+            return o.jsx($n, { id: e });
         case 'vehicle':
-            return i.jsx(Dn, { isPrevNode: t, id: e });
+            return o.jsx(Yn, { isPrevNode: t, id: e });
         default:
             return null;
     }
 }
-const $n = { [Pe.extraLarge]: 40, [Pe.large]: 40, [Pe.medium]: 28, [Pe.small]: 28, [Pe.extraSmall]: 28 },
-    zn = function ({ lines: e, cellSize: t, classNames: s }) {
+const Jn = { [Re.extraLarge]: 40, [Re.large]: 40, [Re.medium]: 28, [Re.small]: 28, [Re.extraSmall]: 28 },
+    Qn = function ({ lines: e, cellSize: t, classNames: s }) {
         const a = new Map(),
-            n = de(),
-            [o, c] = r.useState(Se()),
-            [l, d] = r.useMemo(
-                () => [{ width: Te(t.width), height: Te(t.height) }, Te($n[n.breakpoint.name])],
-                [o, t.width, t.height, n.breakpoint.name],
+            r = ue(),
+            [i, c] = n.useState(Pe()),
+            [l, d] = n.useMemo(
+                () => [{ width: Ee(t.width), height: Ee(t.height) }, Ee(Jn[r.breakpoint.name])],
+                [i, t.width, t.height, r.breakpoint.name],
             );
         return (
-            r.useEffect(() => Me(() => c(Se())), []),
-            i.jsx('svg', {
-                className: null == s ? void 0 : s.base,
+            n.useEffect(() => Ae(() => c(Pe())), []),
+            o.jsx('svg', {
+                className: s?.base,
                 width: '100%',
                 height: '100%',
                 viewBox: '0 0 100% 100%',
@@ -2666,10 +2482,10 @@ const $n = { [Pe.extraLarge]: 40, [Pe.large]: 40, [Pe.medium]: 28, [Pe.small]: 2
                     const t = e.isFirstPointReal ? e.x1 * l.width + d : e.x1 * l.width,
                         s = e.y1 * l.height,
                         r = ((e.x2 - e.x1) / 2 + e.x1) * l.width,
-                        n = e.isSecondPointReal ? e.x2 * l.width - d : e.x2 * l.width,
-                        o = e.y2 * l.height,
+                        i = e.isSecondPointReal ? e.x2 * l.width - d : e.x2 * l.width,
+                        n = e.y2 * l.height,
                         c = `${t},${s} ${r},${s}`,
-                        h = `${r},${o} ${n},${o}`;
+                        h = `${r},${n} ${i},${n}`;
                     let m = '';
                     const u = a.get(c),
                         _ = void 0 !== u,
@@ -2678,12 +2494,12 @@ const $n = { [Pe.extraLarge]: 40, [Pe.large]: 40, [Pe.medium]: 28, [Pe.small]: 2
                         _ && (p || !e.isResearched)
                             ? (m = `${r},${s} ${h}`)
                             : (a.set(c, e.isResearched), (m = `${c} ${h}`)),
-                        i.jsx(
+                        o.jsx(
                             'polyline',
                             {
                                 points: m,
                                 stroke: e.isResearched ? '#FFF7E1' : '#52565A',
-                                strokeWidth: Te(2),
+                                strokeWidth: Ee(2),
                                 fill: 'none',
                                 strokeLinejoin: 'round',
                             },
@@ -2694,60 +2510,59 @@ const $n = { [Pe.extraLarge]: 40, [Pe.large]: 40, [Pe.medium]: 28, [Pe.small]: 2
             })
         );
     },
-    Fn = 'PrevResearchTree_6c159758',
-    Hn = 'PrevResearchTree_content_61e4d925',
-    Wn = 'PrevResearchTree_researchItem_aa96ef47',
-    Gn = 'PrevResearchTree_treeLines_1da899c9',
-    Un = { [Pe.extraLarge]: 208, [Pe.large]: 208, [Pe.medium]: 160, [Pe.small]: 160, [Pe.extraSmall]: 160 },
-    Xn = { [Pe.extraLarge]: 140, [Pe.large]: 140, [Pe.medium]: 110, [Pe.small]: 110, [Pe.extraSmall]: 110 },
-    Kn = a(function () {
-        const { model: e } = ji(),
+    eo = 'PrevResearchTree_6c159758',
+    to = 'PrevResearchTree_content_61e4d925',
+    so = 'PrevResearchTree_researchItem_aa96ef47',
+    ao = 'PrevResearchTree_treeLines_e80f67ba',
+    ro = { [Re.extraLarge]: 208, [Re.large]: 208, [Re.medium]: 160, [Re.small]: 160, [Re.extraSmall]: 160 },
+    io = { [Re.extraLarge]: 140, [Re.large]: 140, [Re.medium]: 110, [Re.small]: 110, [Re.extraSmall]: 110 },
+    no = i(function () {
+        const { model: e } = Ri(),
             t = e.prevResearchItems.get(),
             s = e.researchItems,
-            a = de(),
-            n = Un[a.breakpoint.name],
-            o = t.length * Xn[a.breakpoint.name],
-            c = { width: n / 2, height: Xn[a.breakpoint.name] },
+            a = ue(),
+            r = ro[a.breakpoint.name],
+            i = t.length * io[a.breakpoint.name],
+            c = { width: r / 2, height: io[a.breakpoint.name] },
             l = (e) => (e ? { top: e.y * c.height + 'rem', left: e.x * c.width + 'rem' } : { top: 0, left: 0 }),
-            d = r.useMemo(
+            d = n.useMemo(
                 () => t.reduce((e, t, s) => ((e[s] = { x: 1.3, y: 0 === s ? s + 0.5 : s + 1 - 0.5 }), e), {}),
                 [t],
             ),
-            h = r.useMemo(
+            h = n.useMemo(
                 () =>
                     t.reduce((e, a, r) => {
-                        var i;
-                        const n = d[r];
+                        const i = d[r];
                         return (
-                            n &&
+                            i &&
                                 e.push({
                                     isFirstPointReal: !1,
                                     isSecondPointReal: !0,
                                     x1: -0.7,
                                     y1: t.length / 2,
-                                    x2: n.x,
-                                    y2: n.y,
-                                    isResearched: Boolean(null == (i = s.get(a.id)) ? void 0 : i.isResearched),
+                                    x2: i.x,
+                                    y2: i.y,
+                                    isResearched: Boolean(s.get(a.id)?.isResearched),
                                 }),
                             e
                         );
                     }, []),
                 [d, t, s],
             );
-        return i.jsx('div', {
-            className: Fn,
-            children: i.jsxs('div', {
-                className: Hn,
-                style: { width: `${n}rem`, height: `${o}rem` },
+        return o.jsx('div', {
+            className: eo,
+            children: o.jsxs('div', {
+                className: to,
+                style: { width: `${r}rem`, height: `${i}rem` },
                 children: [
-                    i.jsx(zn, { lines: h, cellSize: c, classNames: { base: Gn } }),
+                    o.jsx(Qn, { lines: h, cellSize: c, classNames: { base: ao } }),
                     t.map((t, s) => {
                         const a = e.researchItems.get(t.id),
                             r = d[s];
                         return a
-                            ? i.jsx(
+                            ? o.jsx(
                                   'div',
-                                  { className: Wn, style: l(r), children: i.jsx(Vn, { id: t.id, isPrevNode: !0 }) },
+                                  { className: so, style: l(r), children: o.jsx(qn, { id: t.id, isPrevNode: !0 }) },
                                   t.id,
                               )
                             : null;
@@ -2756,22 +2571,22 @@ const $n = { [Pe.extraLarge]: 40, [Pe.large]: 40, [Pe.medium]: 28, [Pe.small]: 2
             }),
         });
     });
-let Zn = class {
-    constructor(e, s) {
-        (t(this, 'row'), t(this, 'col'), (this.row = e), (this.col = s));
+let oo = class {
+    row;
+    col;
+    constructor(e, t) {
+        ((this.row = e), (this.col = t));
     }
 };
-class Yn {
-    constructor() {
-        (t(this, 'C', []),
-            t(this, 'rowCovered', []),
-            t(this, 'columnCovered', []),
-            t(this, 'n', 0),
-            t(this, 'Z0Row', 0),
-            t(this, 'Z0Column', 0),
-            t(this, 'marked', []),
-            t(this, 'path', []));
-    }
+class co {
+    C = [];
+    rowCovered = [];
+    columnCovered = [];
+    n = 0;
+    Z0Row = 0;
+    Z0Column = 0;
+    marked = [];
+    path = [];
     static padMatrix(e, t = 0) {
         let s = 0;
         const a = e.length;
@@ -2802,7 +2617,7 @@ class Yn {
         return s;
     }
     compute(e) {
-        ((this.C = Yn.padMatrix(e)), (this.n = this.C.length));
+        ((this.C = co.padMatrix(e)), (this.n = this.C.length));
         const t = e.length,
             s = e[0].length;
         this.rowCovered = [];
@@ -2811,8 +2626,8 @@ class Yn {
         for (let n = 0; n < this.n; n++) this.columnCovered.push(!1);
         ((this.Z0Row = 0),
             (this.Z0Column = 0),
-            (this.path = Yn.makeMatrix(2 * this.n, 0)),
-            (this.marked = Yn.makeMatrix(this.n, 0)));
+            (this.path = co.makeMatrix(2 * this.n, 0)),
+            (this.marked = co.makeMatrix(this.n, 0)));
         let a = 1,
             r = !1;
         for (; !r; )
@@ -2839,7 +2654,7 @@ class Yn {
                     r = !0;
             }
         const i = [];
-        for (let n = 0; n < t; n++) for (let e = 0; e < s; e++) 1 === this.marked[n][e] && i.push(new Zn(n, e));
+        for (let n = 0; n < t; n++) for (let e = 0; e < s; e++) 1 === this.marked[n][e] && i.push(new oo(n, e));
         return i;
     }
     makeCostMatrix(e, t) {
@@ -2988,24 +2803,24 @@ class Yn {
         return 4;
     }
 }
-class Jn {
+class lo {
     constructor(e, t) {
         ((this.row = e), (this.col = t));
     }
 }
-class qn {
-    constructor(e, s) {
-        (t(this, 'matrixDimension'),
-            t(this, 'widthPartitioning', 0),
-            t(this, 'maxLevelWidth'),
-            t(this, 'adjacencyMatrix', []),
-            t(this, 'maxPaths', []),
-            t(this, 'levels', []),
-            t(this, 'fixedPaths', {}),
-            t(this, 'parentLevelIdxs', {}),
-            t(this, 'childrenLevelIdxs', {}),
-            t(this, 'isCyclicReference', !1),
-            (this.maxLevelWidth = s),
+class ho {
+    matrixDimension;
+    widthPartitioning = 0;
+    maxLevelWidth;
+    adjacencyMatrix = [];
+    maxPaths = [];
+    levels = [];
+    fixedPaths = {};
+    parentLevelIdxs = {};
+    childrenLevelIdxs = {};
+    isCyclicReference = !1;
+    constructor(e, t) {
+        ((this.maxLevelWidth = t),
             e > 0 ? ((this.matrixDimension = e), this.createEmptyAdjacencyMatrix()) : (this.matrixDimension = 0));
     }
     addFixedPath(e, t) {
@@ -3054,7 +2869,7 @@ class qn {
     addLevelItem(e, t, s, a) {
         if (
             (void 0 === this.levels[e] && (this.levels[e] = []),
-            this.levels[e].push(new Qn(t, this.levels[e].length, s)),
+            this.levels[e].push(new mo(t, this.levels[e].length, s)),
             !a)
         )
             return;
@@ -3192,7 +3007,7 @@ class qn {
                     for (let r = 0; r < n; r++) {
                         const n = i[r];
                         if (null != n && n.index === a) {
-                            const a = t ? eo.makeByNext(e, n) : eo.makeByTop(e, n);
+                            const a = t ? uo.makeByNext(e, n) : uo.makeByTop(e, n);
                             s.push(a);
                             break;
                         }
@@ -3279,7 +3094,7 @@ class qn {
             }
             (null != n && (n.dx = r[d]), (i[d] = o));
         }
-        const n = new Yn(),
+        const n = new co(),
             o = n.compute(n.makeCostMatrix(i, (e) => e)),
             c = new Array(a);
         let l = 0;
@@ -3343,57 +3158,57 @@ class qn {
                 }
             e = Math.max(a + 1, e);
         }
-        return new Jn(this.levels.length, e);
+        return new lo(this.levels.length, e);
     }
 }
-class Qn {
-    constructor(e, s, a) {
-        (t(this, 'index'), t(this, 'dx'), t(this, 'fake'), (this.index = e), (this.dx = s), (this.fake = a));
+class mo {
+    index;
+    dx;
+    fake;
+    constructor(e, t, s) {
+        ((this.index = e), (this.dx = t), (this.fake = s));
     }
 }
-class eo {
-    constructor(e, s, a, r) {
-        (t(this, 'start'),
-            t(this, 'end'),
-            t(this, 'parent'),
-            t(this, 'child'),
-            (this.start = e),
-            (this.end = s),
-            (this.parent = a),
-            (this.child = r));
+class uo {
+    start;
+    end;
+    parent;
+    child;
+    constructor(e, t, s, a) {
+        ((this.start = e), (this.end = t), (this.parent = s), (this.child = a));
     }
     static makeByTop(e, t) {
-        return new eo(t.dx, e.dx, t.index, e.index);
+        return new uo(t.dx, e.dx, t.index, e.index);
     }
     static makeByNext(e, t) {
-        return new eo(e.dx, t.dx, e.index, t.index);
+        return new uo(e.dx, t.dx, e.index, t.index);
     }
 }
-const to = 'ResearchTree_fdaa27ea',
-    so = 'ResearchTree_researchItemVehicle_6fdd15b5',
-    ao = 'ResearchTree_researchItem_ee82a97b',
-    ro = 'ResearchTree_treeLines_7c587e69',
-    io = 0.35,
-    no = {
-        [Pe.extraLarge]: { width: 1137, height: 732 },
-        [Pe.large]: { width: 960, height: 732 },
-        [Pe.medium]: { width: 813, height: 504 },
-        [Pe.small]: { width: 726, height: 504 },
-        [Pe.extraSmall]: { width: 726, height: 504 },
+const _o = 'ResearchTree_fdaa27ea',
+    po = 'ResearchTree_researchItemVehicle_6fdd15b5',
+    vo = 'ResearchTree_researchItem_ee82a97b',
+    bo = 'ResearchTree_treeLines_c7be1fb4',
+    xo = 0.35,
+    go = {
+        [Re.extraLarge]: { width: 1137, height: 732 },
+        [Re.large]: { width: 960, height: 732 },
+        [Re.medium]: { width: 813, height: 504 },
+        [Re.small]: { width: 726, height: 504 },
+        [Re.extraSmall]: { width: 726, height: 504 },
     },
-    oo = { [Pe.extraLarge]: 0.2, [Pe.large]: 0.35, [Pe.medium]: 0.45, [Pe.small]: 0.5, [Pe.extraSmall]: 0.5 },
-    co = a(function () {
-        const e = de(),
-            { model: t } = ji(),
+    fo = { [Re.extraLarge]: 0.2, [Re.large]: 0.35, [Re.medium]: 0.45, [Re.small]: 0.5, [Re.extraSmall]: 0.5 },
+    No = i(function () {
+        const e = ue(),
+            { model: t } = Ri(),
             s = t.currentResearchItems.get(),
             a = t.researchItems,
-            o = no[e.breakpoint.name],
-            c = ((e) => ({ width: e.width / 7, height: e.height / 6 }))(o),
-            l = oo[e.breakpoint.name],
+            r = go[e.breakpoint.name],
+            i = ((e) => ({ width: e.width / 7, height: e.height / 6 }))(r),
+            l = fo[e.breakpoint.name],
             d = (e) =>
-                e ? { top: (e.y + io) * c.height + 'rem', left: (e.x - 0.5) * c.width + 'rem' } : { top: 0, left: 0 },
-            h = r.useMemo(() => {
-                const e = new qn(s.length, 6);
+                e ? { top: (e.y + xo) * i.height + 'rem', left: (e.x - 0.5) * i.width + 'rem' } : { top: 0, left: 0 },
+            h = n.useMemo(() => {
+                const e = new ho(s.length, 6);
                 return (
                     (function (e, t) {
                         const s = e.matrix,
@@ -3424,80 +3239,70 @@ const to = 'ResearchTree_fdaa27ea',
                 return (
                     h.nodesByLevel.forEach((t, a) => {
                         t.forEach((t) => {
-                            var r;
                             if (!t) return;
-                            const i = null == (r = s[t.index]) ? void 0 : r.renderer,
-                                n = ((e, t) => (0 === e ? e + l : 'vehicle' === t ? 7.15 : e + 0.65 + l))(a, i),
-                                o = 0 === a ? h.middleOfTable : t.dx;
-                            e[t.index] = { x: n, y: o };
+                            const r = s[t.index]?.renderer,
+                                i = ((e, t) => (0 === e ? e + l : 'vehicle' === t ? 7.15 : e + 0.65 + l))(a, r),
+                                n = 0 === a ? h.middleOfTable : t.dx;
+                            e[t.index] = { x: i, y: n };
                         });
                     }),
                     e
                 );
             })(),
-            u = r.useMemo(() => {
-                var e;
-                let t = [];
-                const r = h.matrix,
-                    i = (e) => {
-                        var t;
-                        const r = null == (t = null == s ? void 0 : s[e]) ? void 0 : t.id;
-                        if (r) return a.get(r);
+            u = n.useMemo(() => {
+                let e = [];
+                const t = h.matrix,
+                    r = (e) => {
+                        const t = s?.[e]?.id;
+                        if (t) return a.get(t);
                     };
-                function n(e) {
-                    const t = i(e);
-                    if (t)
-                        return (
-                            t.isResearched &&
-                            Ee(t.path, (e) => {
-                                var t;
-                                return (null == (t = a.get(e)) ? void 0 : t.isResearched) ?? !1;
-                            })
-                        );
-                    const s = r[e];
-                    if (!s) return !1;
-                    const o = s.findIndex((e) => -2 === e);
-                    return -1 !== o && n(o);
+                function i(e) {
+                    const s = r(e);
+                    if (s) return s.isResearched && Oe(s.path, (e) => a.get(e)?.isResearched ?? !1);
+                    const n = t[e];
+                    if (!n) return !1;
+                    const o = n.findIndex((e) => -2 === e);
+                    return -1 !== o && i(o);
                 }
-                const o = Boolean(null == (e = i(0)) ? void 0 : e.isResearched);
+                const n = Boolean(r(0)?.isResearched);
                 return (
-                    r.forEach((e, s) => {
-                        e.forEach((e, a) => {
-                            if (e > 0) {
-                                const e = m[a],
-                                    r = m[s];
-                                r &&
-                                    e &&
-                                    t.push({
-                                        isFirstPointReal: Boolean(i(s)),
-                                        isSecondPointReal: Boolean(i(a)),
-                                        x1: r.x - 0.5,
-                                        y1: r.y + io,
-                                        x2: e.x - 0.5,
-                                        y2: e.y + io,
-                                        isResearched: o && n(s),
+                    t.forEach((t, s) => {
+                        t.forEach((t, a) => {
+                            if (t > 0) {
+                                const t = m[a],
+                                    o = m[s];
+                                o &&
+                                    t &&
+                                    e.push({
+                                        isFirstPointReal: Boolean(r(s)),
+                                        isSecondPointReal: Boolean(r(a)),
+                                        x1: o.x - 0.5,
+                                        y1: o.y + xo,
+                                        x2: t.x - 0.5,
+                                        y2: t.y + xo,
+                                        isResearched: n && i(s),
                                     });
                             }
                         });
                     }),
-                    t
+                    e
                 );
             }, [m, h, a, s]);
-        return i.jsxs('div', {
-            className: to,
-            style: { width: `${o.width}rem`, height: `${o.height}rem` },
+        return o.jsxs('div', {
+            className: _o,
+            style: { width: `${r.width}rem`, height: `${r.height}rem` },
             children: [
-                i.jsx(zn, { lines: u, cellSize: c, classNames: { base: ro } }),
+                o.jsx(Qn, { lines: u, cellSize: i, classNames: { base: bo } }),
                 s.map((e, t) => {
                     const s = a.get(e.id),
                         r = m[t];
                     return s
-                        ? i.jsx(
+                        ? o.jsx(
                               'div',
                               {
-                                  className: n(ao, 'vehicle' === e.renderer && so),
+                                  className: c(vo, 'vehicle' === e.renderer && po),
                                   style: d(r),
-                                  children: i.jsx(Vn, { id: e.id }),
+                                  children: o.jsx(qn, { id: e.id }),
                               },
                               e.id,
                           )
@@ -3506,49 +3311,49 @@ const to = 'ResearchTree_fdaa27ea',
             ],
         });
     }),
-    lo = 'Modules_sceneWrapper_db189ae1',
-    ho = 'Modules_bef383eb',
-    mo = 'Modules_content_f69d3c8e',
-    uo = 'Modules_vehicleBox_705d6a29',
-    _o = 'Modules_boxWithCoords_abb32275',
-    po = function () {
-        const { controls: e } = ea();
-        return i.jsxs('div', {
-            className: ho,
+    jo = 'Modules_sceneWrapper_db189ae1',
+    Co = 'Modules_bef383eb',
+    yo = 'Modules_content_f69d3c8e',
+    ko = 'Modules_vehicleBox_705d6a29',
+    wo = 'Modules_boxWithCoords_abb32275',
+    Io = function () {
+        const { controls: e } = ca();
+        return o.jsxs('div', {
+            className: Co,
             children: [
-                i.jsxs('div', {
-                    className: mo,
+                o.jsxs('div', {
+                    className: yo,
                     children: [
-                        i.jsx(xe, {
-                            className: lo,
+                        o.jsx(Ne, {
+                            className: jo,
                             moveSpace: e.sceneWrapper.onMoveSpace,
                             onMouseOver3dScene: e.sceneWrapper.onMouseOver3dScene,
                         }),
-                        i.jsx(Si, { className: uo, classNames: { boxWithCoords: _o } }),
-                        i.jsx(Kn, {}),
-                        i.jsx(co, {}),
+                        o.jsx($i, { className: ko, classNames: { boxWithCoords: wo } }),
+                        o.jsx(no, {}),
+                        o.jsx(No, {}),
                     ],
                 }),
-                i.jsx(yi, {
+                o.jsx(Oi, {
                     options: { context: 'model.modulesModel.fieldModificationModel' },
-                    children: i.jsx(mn, {}),
+                    children: o.jsx(yn, {}),
                 }),
             ],
         });
     };
-function vo() {
-    return i.jsx(Ni, { options: { context: 'model.modulesModel' }, children: i.jsx(po, {}) });
+function So() {
+    return o.jsx(Ai, { options: { context: 'model.modulesModel' }, children: o.jsx(Io, {}) });
 }
-const [bo, xo] = u()(
+const [To, Mo] = p()(
         ({ observableModel: e }) => {
             const t = {
                     ...e.primitives(['historicalReference', 'customDescription']),
                     root: e.object(),
                     mechanics: e.transform(
                         (e) =>
-                            g(e, (e) => ({
+                            j(e, (e) => ({
                                 id: e.name,
-                                weight: fi[e.name] ?? 0,
+                                weight: Ei[e.name] ?? 0,
                                 special: e.priority >= 1,
                                 rank: e.rank,
                                 hasVideo: e.hasVideo,
@@ -3558,61 +3363,64 @@ const [bo, xo] = u()(
                     crew: e.arrayClone('crew'),
                     benefits: e.arrayClone('benefits'),
                 },
-                s = _.structural(() => {
+                s = v.structural(() => {
+                    const e = t.benefits.get();
+                    return [...Le(e, 0, 3)];
+                }),
+                a = v.structural(() => {
                     const e = t.crew.get();
-                    return g(e, (e) => ({
+                    return j(e, (e) => ({
                         plus: e.roles.length > 1,
-                        roleName: re(e.roles, 0),
+                        roleName: oe(e.roles, 0),
                         tankmanId: e.tankmanId,
                         slotId: e.id,
                     }));
                 }),
-                a = _.structural(() =>
-                    Ae(t.mechanics.get(), (e, t) => (e[t.special ? 'special' : 'common'].push(t), e), {
+                r = v.structural(() =>
+                    Be(t.mechanics.get(), (e, t) => (e[t.special ? 'special' : 'common'].push(t), e), {
                         common: [],
                         special: [],
                     }),
                 );
-            return { ...t, computes: { crewRoles: s, mechanics: a } };
+            return { ...t, computes: { crewRoles: a, mechanics: r, slicedBenefits: s } };
         },
         ({ externalModel: e }) => ({ watchMechanicsVideo: e.createCallback((e) => e, 'onWatchMechanicsVideo') }),
     ),
-    go = 'classSecondary',
-    fo = { top: 'top', bottom: 'bottom', both: 'both', none: 'none' };
-function No(e, t) {
-    return e || t ? (e ? (t ? fo.none : fo.bottom) : fo.top) : fo.both;
+    Po = 'top',
+    Eo = 'bottom',
+    Ao = 'both',
+    Ro = 'none';
+function Oo(e, t) {
+    return e || t ? (e ? (t ? Ro : Eo) : Po) : Ao;
 }
-function jo(e) {
-    return e.includes(go);
-}
-var yo = ((e) => (
+var Lo = ((e) => (
     (e.EXPERIENCE = 'experience'),
     (e.CREDITS = 'credits'),
     (e.CREWS_TRAIN = 'crewsTrain'),
     (e.REPAIR_KIT = 'repairKit'),
     (e.BONDS = 'bonds'),
     e
-))(yo || {});
-const Co = 'Collectors_e1bd7e2a',
-    ko = 'Collectors_content_241f1284',
-    wo = 'Collectors_title_1e2c33ce',
-    Io = 'Collectors_description_8a2374cd',
-    So = x.resolve('strings');
-function To({ className: e }) {
-    return i.jsxs('div', {
-        className: n(Co, e),
+))(Lo || {});
+const Bo = 'Collectors_e1bd7e2a',
+    Do = 'Collectors_content_241f1284',
+    Vo = 'Collectors_title_1e2c33ce',
+    $o = 'Collectors_description_8a2374cd',
+    zo = N.resolve('strings');
+function Ho({ className: e }) {
+    return o.jsxs('div', {
+        className: c(Bo, e),
         children: [
-            i.jsxs('div', {
-                className: ko,
+            o.jsxs('div', {
+                className: Do,
                 children: [
-                    i.jsx('div', {
-                        className: wo,
-                        children: So.readOrEmpty('vehicle_hub.overview.benefits.collectorVehicle.name'),
+                    o.jsx('div', {
+                        className: Vo,
+                        children: zo.readOrEmpty('vehicle_hub.overview.benefits.collectorVehicle.name'),
                     }),
-                    i.jsx(C, { path: 'vehicle_preview.infoPanel.collectible.desc', className: Io, split: !0 }),
+                    o.jsx(I, { path: 'vehicle_preview.infoPanel.collectible.desc', className: $o, split: !0 }),
                 ],
             }),
-            i.jsx(E, {
+            o.jsx(O, {
                 path: 'vehicle_hub.benefits.collectors_80x80',
                 width: 80,
                 height: 80,
@@ -3621,42 +3429,42 @@ function To({ className: e }) {
         ],
     });
 }
-const Mo = 'Premium_46145a21',
-    Po = 'Premium_benefit_2adaef1e',
-    Eo = 'Premium_benefit__shortened_aa8afe2a',
-    Ao = 'Premium_content_d6722ba0',
-    Ro = 'Premium_name_f2b278b',
-    Oo = 'Premium_description_2a3350ed',
-    Bo = x.resolve('strings'),
-    Lo = a(function ({ className: e }) {
-        const t = xo().model.benefits.get(),
-            s = [...Re(t, 0, 3)];
-        return i.jsx('div', {
-            className: n(Mo, e),
-            children: g(s, (e) =>
-                i.jsxs(
+const Fo = 'Premium_46145a21',
+    Wo = 'Premium_benefit_2adaef1e',
+    Go = 'Premium_benefit__shortened_aa8afe2a',
+    Uo = 'Premium_content_d6722ba0',
+    Xo = 'Premium_name_f2b278b',
+    Ko = 'Premium_description_2a3350ed',
+    Zo = N.resolve('strings'),
+    Yo = i(function ({ className: e }) {
+        const t = Mo().model.benefits.get(),
+            s = [...Le(t, 0, 3)];
+        return o.jsx('div', {
+            className: c(Fo, e),
+            children: j(s, (e) =>
+                o.jsxs(
                     'div',
                     {
-                        className: n(Po, 4 === s.length && Eo),
+                        className: c(Wo, 4 === s.length && Go),
                         children: [
-                            i.jsx(E, {
-                                path: `vehicle_hub.benefits.${Ko[e]}_gold_40x40`,
+                            o.jsx(O, {
+                                path: `vehicle_hub.benefits.${mc[e]}_gold_40x40`,
                                 width: 40,
                                 height: 40,
                                 adaptive: {
-                                    large: { width: 48, height: 48, path: `vehicle_hub.benefits.${Ko[e]}_gold_48x48` },
+                                    large: { width: 48, height: 48, path: `vehicle_hub.benefits.${mc[e]}_gold_48x48` },
                                 },
                             }),
-                            i.jsxs('div', {
-                                className: Ao,
+                            o.jsxs('div', {
+                                className: Uo,
                                 children: [
-                                    i.jsx('div', {
-                                        className: Ro,
-                                        children: Bo.readOrEmpty(`vehicle_hub.overview.benefits.premium.name.${e}`),
+                                    o.jsx('div', {
+                                        className: Xo,
+                                        children: Zo.readOrEmpty(`vehicle_hub.overview.benefits.premium.name.${e}`),
                                     }),
-                                    i.jsx('div', {
-                                        className: Oo,
-                                        children: Bo.readOrEmpty(
+                                    o.jsx('div', {
+                                        className: Ko,
+                                        children: Zo.readOrEmpty(
                                             `vehicle_hub.overview.benefits.premium.description.${e}`,
                                         ),
                                     }),
@@ -3669,39 +3477,39 @@ const Mo = 'Premium_46145a21',
             ),
         });
     }),
-    Do = 'Special_9ac51d30',
-    Vo = 'Special_border_791bf4fa',
-    $o = 'Special_benefit_735ba88d',
-    zo = 'Special_name_d0fbc6d',
-    Fo = x.resolve('strings'),
-    Ho = a(function ({ className: e }) {
-        const t = xo().model.benefits.get(),
-            s = [...Re(t, 0, 3)];
-        return i.jsxs('div', {
-            className: n(Do, e),
+    qo = 'Special_9ac51d30',
+    Jo = 'Special_border_791bf4fa',
+    Qo = 'Special_benefit_735ba88d',
+    ec = 'Special_name_d0fbc6d',
+    tc = N.resolve('strings'),
+    sc = i(function ({ className: e }) {
+        const t = Mo().model.benefits.get(),
+            s = [...Le(t, 0, 3)];
+        return o.jsxs('div', {
+            className: c(qo, e),
             children: [
-                i.jsx('div', { className: Vo }),
-                g(s, (e) =>
-                    i.jsxs(
+                o.jsx('div', { className: Jo }),
+                j(s, (e) =>
+                    o.jsxs(
                         'div',
                         {
-                            className: $o,
+                            className: Qo,
                             children: [
-                                i.jsx(E, {
-                                    path: `vehicle_hub.benefits.${Ko[e]}_silver_40x40`,
+                                o.jsx(O, {
+                                    path: `vehicle_hub.benefits.${mc[e]}_silver_40x40`,
                                     width: 40,
                                     height: 40,
                                     adaptive: {
                                         large: {
                                             width: 48,
                                             height: 48,
-                                            path: `vehicle_hub.benefits.${Ko[e]}_silver_48x48`,
+                                            path: `vehicle_hub.benefits.${mc[e]}_silver_48x48`,
                                         },
                                     },
                                 }),
-                                i.jsx('div', {
-                                    className: zo,
-                                    children: Fo.readOrEmpty(`vehicle_hub.overview.benefits.special.name.${e}`),
+                                o.jsx('div', {
+                                    className: ec,
+                                    children: tc.readOrEmpty(`vehicle_hub.overview.benefits.special.name.${e}`),
                                 }),
                             ],
                         },
@@ -3711,68 +3519,120 @@ const Mo = 'Premium_46145a21',
             ],
         });
     }),
-    Wo = 'Benefits_1d3e7064',
-    Go = 'Benefits_premium_52b989b9',
-    Uo = 'Benefits_special_52b989b9',
-    Xo = 'Benefits_collectors_ac9481a0',
-    Ko = {
-        [yo.EXPERIENCE]: 'star',
-        [yo.CREDITS]: 'coins',
-        [yo.CREWS_TRAIN]: 'crew',
-        [yo.REPAIR_KIT]: 'unlimited',
-        [yo.BONDS]: 'bonds',
+    ac = 'Wotplus_c632672c',
+    rc = 'Wotplus_benefit_e2288955',
+    ic = 'Wotplus_benefit__shortened_94d63461',
+    nc = 'Wotplus_content_bf057e11',
+    oc = 'Wotplus_name_1dd1c2ac',
+    cc = 'Wotplus_description_f8ab1d3b',
+    lc = N.resolve('strings'),
+    dc = i(function ({ className: e }) {
+        const { model: t } = Mo(),
+            s = t.computes.slicedBenefits();
+        return o.jsx('div', {
+            className: c(ac, e),
+            children: s.map((e) =>
+                o.jsxs(
+                    'div',
+                    {
+                        className: c(rc, 4 === s.length && ic),
+                        children: [
+                            o.jsx(O, {
+                                path: `vehicle_hub.benefits.${mc[e]}_gold_40x40`,
+                                width: 40,
+                                height: 40,
+                                adaptive: {
+                                    large: { width: 48, height: 48, path: `vehicle_hub.benefits.${mc[e]}_gold_48x48` },
+                                },
+                            }),
+                            o.jsxs('div', {
+                                className: nc,
+                                children: [
+                                    o.jsx('div', {
+                                        className: oc,
+                                        children: lc.readOrEmpty(`vehicle_hub.overview.benefits.wotPlus.name.${e}`),
+                                    }),
+                                    o.jsx('div', {
+                                        className: cc,
+                                        children: lc.readOrEmpty(
+                                            `vehicle_hub.overview.benefits.wotPlus.description.${e}`,
+                                        ),
+                                    }),
+                                ],
+                            }),
+                        ],
+                    },
+                    e,
+                ),
+            ),
+        });
+    }),
+    hc = {
+        base: 'Benefits_1d3e7064',
+        premium: 'Benefits_premium_52b989b9',
+        special: 'Benefits_special_52b989b9',
+        collectors: 'Benefits_collectors_ac9481a0',
     },
-    Zo = a(function ({ className: e }) {
-        const t = jt().model.tags.get().split(',');
-        return i.jsxs('div', {
-            className: n(Wo, e),
+    mc = {
+        [Lo.EXPERIENCE]: 'star',
+        [Lo.CREDITS]: 'coins',
+        [Lo.CREWS_TRAIN]: 'crew',
+        [Lo.REPAIR_KIT]: 'unlimited',
+        [Lo.BONDS]: 'bonds',
+    },
+    uc = i(function ({ className: e }) {
+        const t = kt().model.tags.get().split(',');
+        return o.jsxs('div', {
+            className: c(hc.base, e),
             children: [
-                t.includes(Oe.premium)
-                    ? t.includes(Oe.special)
-                        ? i.jsx(Ho, { className: Uo })
-                        : i.jsx(Lo, { className: Go })
+                t.includes(De.premium)
+                    ? t.includes(De.special)
+                        ? o.jsx(sc, { className: hc.special })
+                        : t.includes(De.wotPlus)
+                          ? o.jsx(dc, { className: hc.wotPlus })
+                          : o.jsx(Yo, { className: hc.premium })
                     : null,
-                t.includes(Oe.collectorVehicle) && i.jsx(To, { className: Xo }),
+                t.includes(De.collectorVehicle) && o.jsx(Ho, { className: hc.collectors }),
             ],
         });
     }),
-    Yo = 'Description_48a84f65',
-    Jo = 'Description_header_6bb7a700',
-    qo = 'Description_title_2add40ca',
-    Qo = 'Description_3f21acdc',
-    ec = a(function ({ className: e }) {
-        const { model: t } = xo(),
-            s = x.resolve('strings'),
+    _c = 'Description_48a84f65',
+    pc = 'Description_header_6bb7a700',
+    vc = 'Description_title_2add40ca',
+    bc = 'Description_3f21acdc',
+    xc = i(function ({ className: e }) {
+        const { model: t } = Mo(),
+            s = N.resolve('strings'),
             a = t.historicalReference.get(),
             r = t.customDescription.get(),
-            o = R({ body: a });
-        return i.jsxs('div', {
-            className: n(Yo, e),
+            i = B({ body: a });
+        return o.jsxs('div', {
+            className: c(_c, e),
             children: [
-                i.jsxs('div', {
-                    className: Jo,
+                o.jsxs('div', {
+                    className: pc,
                     children: [
-                        i.jsx('div', {
-                            className: qo,
+                        o.jsx('div', {
+                            className: vc,
                             children: r
                                 ? s.readOrEmpty('vehicle_hub.overview.title.generalDescription')
                                 : s.readOrEmpty('vehicle_hub.overview.title.historicalReference'),
                         }),
                         r &&
                             a &&
-                            i.jsx(E, {
-                                ...o,
+                            o.jsx(O, {
+                                ...i,
                                 width: '32rem',
                                 height: '32rem',
                                 path: 'vehicle_hub.historical_reference',
                             }),
                     ],
                 }),
-                (r || a).split('\n').map((e, t) => i.jsx(Be, { className: Qo, text: e, split: !0 }, t)),
+                (r || a).split('\n').map((e, t) => o.jsx(Ve, { className: bc, text: e, split: !0 }, t)),
             ],
         });
     }),
-    tc = {
+    gc = {
         root: 'Mechanics_root_23828917',
         base: 'Mechanics_779ccfc1',
         mechanic: 'Mechanics_mechanic_100f931d',
@@ -3782,41 +3642,41 @@ const Mo = 'Premium_46145a21',
         name: 'Mechanics_name_b0bc436d',
         description: 'Mechanics_description_234553f2',
     },
-    sc = a(function ({ className: e }) {
-        const t = x.resolve('strings'),
-            { model: s } = xo(),
+    fc = i(function ({ className: e }) {
+        const t = N.resolve('strings'),
+            { model: s } = Mo(),
             a = s.computes.mechanics().special.length > 0,
             r = s.computes.mechanics().common.slice(0, 3),
-            o = 1 === r.length && !1 === a;
-        return i.jsx('div', {
-            className: n(tc.base, o && tc.base__single, e),
-            children: g(r, (e) =>
-                i.jsxs(
+            i = 1 === r.length && !1 === a;
+        return o.jsx('div', {
+            className: c(gc.base, i && gc.base__single, e),
+            children: j(r, (e) =>
+                o.jsxs(
                     'div',
                     {
-                        className: tc.mechanic,
+                        className: gc.mechanic,
                         children: [
-                            o && i.jsx(E, { path: `vehicle_hub.mechanics.x96x96.${e.id}`, width: 96, height: 96 }),
-                            i.jsxs('div', {
-                                className: tc.content,
+                            i && o.jsx(O, { path: `vehicle_hub.mechanics.x96x96.${e.id}`, width: 96, height: 96 }),
+                            o.jsxs('div', {
+                                className: gc.content,
                                 children: [
-                                    i.jsxs('div', {
-                                        className: tc.header,
+                                    o.jsxs('div', {
+                                        className: gc.header,
                                         children: [
-                                            !o &&
-                                                i.jsx(E, {
+                                            !i &&
+                                                o.jsx(O, {
                                                     path: `vehicle_hub.mechanics.x48x48.${e.id}`,
                                                     width: 48,
                                                     height: 48,
                                                 }),
-                                            i.jsx('div', {
-                                                className: tc.name,
+                                            o.jsx('div', {
+                                                className: gc.name,
                                                 children: t.readOrEmpty(`vehicle_hub.abilities.common.name.${e.id}`),
                                             }),
                                         ],
                                     }),
-                                    i.jsx(C, {
-                                        className: tc.description,
+                                    o.jsx(I, {
+                                        className: gc.description,
                                         split: !0,
                                         path: `vehicle_hub.abilities.common.description.${e.id}`,
                                     }),
@@ -3829,191 +3689,176 @@ const Mo = 'Premium_46145a21',
             ),
         });
     }),
-    ac = 'SpecialMechanic_61a5d496',
-    rc = 'SpecialMechanic_content_4adcaa8e',
-    ic = 'SpecialMechanic_iconContainer_b16ec9b9',
-    nc = 'SpecialMechanic_icon_261dc586',
-    oc = 'SpecialMechanic_glow_f14361c3',
-    cc = 'SpecialMechanic_dust_781e0ca5',
-    lc = 'SpecialMechanic_name_8dbc8acc',
-    dc = 'SpecialMechanic_description_185cf2ea',
-    hc = { iconSize: 'x96x96', glowSize: 'small' },
-    mc = { large: { iconSize: 'x128x128', glowSize: 'large' } },
-    uc = a(function ({ className: e }) {
-        const t = x.resolve('images'),
-            s = x.resolve('strings'),
-            { model: a } = xo(),
+    Nc = 'SpecialMechanic_61a5d496',
+    jc = 'SpecialMechanic_content_4adcaa8e',
+    Cc = 'SpecialMechanic_iconContainer_b16ec9b9',
+    yc = 'SpecialMechanic_icon_261dc586',
+    kc = 'SpecialMechanic_glow_f14361c3',
+    wc = 'SpecialMechanic_dust_781e0ca5',
+    Ic = 'SpecialMechanic_name_8dbc8acc',
+    Sc = 'SpecialMechanic_description_185cf2ea',
+    Tc = { iconSize: 'x96x96', glowSize: 'small' },
+    Mc = { large: { iconSize: 'x128x128', glowSize: 'large' } },
+    Pc = i(function ({ className: e }) {
+        const t = N.resolve('images'),
+            s = N.resolve('strings'),
+            { model: a } = Mo(),
             r = a.computes.mechanics().special[0],
-            o = j(hc, mc);
+            i = k(Tc, Mc);
         if (!r) return;
-        const c = r.rank == gi.GOLD,
-            l = c
-                ? `vehicle_hub.mechanics.special.${o.iconSize}.${r.id}`
-                : `vehicle_hub.mechanics.${o.iconSize}.${r.id}`,
+        const n = r.rank == Pi.GOLD,
+            l = n
+                ? `vehicle_hub.mechanics.special.${i.iconSize}.${r.id}`
+                : `vehicle_hub.mechanics.${i.iconSize}.${r.id}`,
             d = s
                 .readOr(`vehicle_hub.abilities.special.description.${r.id}`, () =>
                     s.readOrEmpty(`vehicle_hub.abilities.common.description.${r.id}`),
                 )
                 .split('\n');
-        return i.jsxs('div', {
-            className: n(ac, e),
+        return o.jsxs('div', {
+            className: c(Nc, e),
             children: [
                 t.has(l) &&
-                    i.jsxs('div', {
-                        className: ic,
+                    o.jsxs('div', {
+                        className: Cc,
                         children: [
-                            i.jsx(E, { path: l, className: nc }),
-                            c &&
-                                i.jsxs(i.Fragment, {
+                            o.jsx(O, { path: l, className: yc }),
+                            n &&
+                                o.jsxs(o.Fragment, {
                                     children: [
-                                        i.jsx(E, {
-                                            path: `vehicle_hub.mechanics.special.dust_${o.glowSize}`,
-                                            className: cc,
+                                        o.jsx(O, {
+                                            path: `vehicle_hub.mechanics.special.dust_${i.glowSize}`,
+                                            className: wc,
                                         }),
-                                        i.jsx(E, {
-                                            path: `vehicle_hub.mechanics.special.glow_front_${o.glowSize}`,
-                                            className: oc,
+                                        o.jsx(O, {
+                                            path: `vehicle_hub.mechanics.special.glow_front_${i.glowSize}`,
+                                            className: kc,
                                         }),
                                     ],
                                 }),
                         ],
                     }),
-                i.jsxs('div', {
-                    className: rc,
+                o.jsxs('div', {
+                    className: jc,
                     children: [
-                        i.jsx('div', {
-                            className: lc,
+                        o.jsx('div', {
+                            className: Ic,
                             children: s.readOr(`vehicle_hub.abilities.special.name.${r.id}`, () =>
                                 s.readOrEmpty(`vehicle_hub.abilities.common.name.${r.id}`),
                             ),
                         }),
-                        d.map((e, t) => i.jsx(Be, { text: e, className: dc, split: !0 }, t)),
+                        d.map((e, t) => o.jsx(Ve, { text: e, className: Sc, split: !0 }, t)),
                     ],
                 }),
             ],
         });
     }),
-    _c = {
-        base: 'TtcProgressBar_ec222f42',
-        bar: 'TtcProgressBar_bar_dce0790e',
-        bar__filled: 'TtcProgressBar_bar__filled_89fad18',
-        bar__empty: 'TtcProgressBar_bar__empty_9d98c6c',
-        bar__first: 'TtcProgressBar_bar__first_2e768770',
-        bar__last: 'TtcProgressBar_bar__last_cdbba2',
-        bar__default: 'TtcProgressBar_bar__default_bcb8090d',
-        gap: 'TtcProgressBar_gap_56f87635',
-    },
-    pc = 2;
-function vc({ vehicleAmount: e, currentAmount: t, maxAmount: s, className: a }) {
-    const r = 100 - pc,
-        o = Math.min(Math.ceil((e / s) * 100), r),
-        c = Math.ceil((t / s) * 100);
-    return i.jsxs('div', {
-        className: n(_c.base, a),
+    Ec = 'TtcProgressBar_ec222f42',
+    Ac = 'TtcProgressBar_bar_dce0790e',
+    Rc = 'TtcProgressBar_bar__filled_89fad18',
+    Oc = 'TtcProgressBar_bar__empty_9d98c6c',
+    Lc = 'TtcProgressBar_bar__first_2e768770',
+    Bc = 'TtcProgressBar_bar__last_cdbba2',
+    Dc = 'TtcProgressBar_bar__default_bcb8090d',
+    Vc = 'TtcProgressBar_gap_56f87635';
+function $c({ vehicleAmount: e, currentAmount: t, maxAmount: s, className: a }) {
+    const r = Math.min(Math.ceil((e / s) * 100), 98),
+        i = Math.ceil((t / s) * 100);
+    return o.jsxs('div', {
+        className: c(Ec, a),
         children: [
-            c > 0 &&
-                o > 0 &&
-                i.jsx('div', {
-                    className: n(_c.bar, _c.bar__filled, _c.bar__first),
-                    style: { width: `${Math.min(c, o)}%` },
-                }),
-            c < o &&
-                i.jsxs(i.Fragment, {
+            i > 0 && r > 0 && o.jsx('div', { className: c(Ac, Rc, Lc), style: { width: `${Math.min(i, r)}%` } }),
+            i < r &&
+                o.jsxs(o.Fragment, {
                     children: [
-                        c > 0 && i.jsx('div', { className: _c.gap }),
-                        i.jsx('div', { className: n(_c.bar, _c.bar__empty), style: { width: o - c + '%' } }),
+                        i > 0 && o.jsx('div', { className: Vc }),
+                        o.jsx('div', { className: c(Ac, Oc), style: { width: r - i + '%' } }),
                     ],
                 }),
-            i.jsx('div', { className: _c.bar__default }),
-            c > o &&
-                i.jsxs(i.Fragment, {
+            o.jsx('div', { className: Dc }),
+            i > r &&
+                o.jsxs(o.Fragment, {
                     children: [
-                        i.jsx('div', { className: _c.gap }),
-                        i.jsx('div', {
-                            className: n(_c.bar, _c.bar__filled, c >= r && _c.bar__last),
-                            style: { width: c - o + '%' },
-                        }),
+                        o.jsx('div', { className: Vc }),
+                        o.jsx('div', { className: c(Ac, Rc, i >= 98 && Bc), style: { width: i - r + '%' } }),
                     ],
                 }),
-            c < r &&
-                o < r &&
-                i.jsxs(i.Fragment, {
+            i < 98 &&
+                r < 98 &&
+                o.jsxs(o.Fragment, {
                     children: [
-                        i.jsx('div', { className: _c.gap }),
-                        i.jsx('div', {
-                            className: n(_c.bar, _c.bar__empty, _c.bar__last),
-                            style: { width: r - Math.max(o, c) + '%' },
-                        }),
+                        o.jsx('div', { className: Vc }),
+                        o.jsx('div', { className: c(Ac, Oc, Bc), style: { width: 98 - Math.max(r, i) + '%' } }),
                     ],
                 }),
         ],
     });
 }
-const bc = 'TtcCrew_270e7733',
-    xc = 'TtcCrew_titleColumn_78281294',
-    gc = 'TtcCrew_ttcColumn_9115579c',
-    fc = 'TtcCrew_ttcRow_2a9163ab',
-    Nc = 'TtcCrew_name_a1f1eb7e',
-    jc = 'TtcCrew_nameText_6a61cee0',
-    yc = 'TtcCrew_amount_ed7c76e1',
-    Cc = 'TtcCrew_progressBar_48de0078',
-    kc = 'TtcCrew_crewTitle_a70b6855',
-    wc = 'TtcCrew_crewBrackets_74968740',
-    Ic = 'TtcCrew_crewAmount_7fb6cbca',
-    Sc = 'TtcCrew_crewIcons_54c0985b',
-    Tc = 'TtcCrew_crewIcon_9ffe1104',
-    Mc = 'TtcCrew_crewIcon__plus_71e8955d';
-function Pc({ roleName: e, plus: t, slotIndex: s, tankmanId: a }) {
-    const r = P({
+const zc = 'TtcCrew_270e7733',
+    Hc = 'TtcCrew_titleColumn_78281294',
+    Fc = 'TtcCrew_ttcColumn_9115579c',
+    Wc = 'TtcCrew_ttcRow_2a9163ab',
+    Gc = 'TtcCrew_name_a1f1eb7e',
+    Uc = 'TtcCrew_nameText_6a61cee0',
+    Xc = 'TtcCrew_amount_ed7c76e1',
+    Kc = 'TtcCrew_progressBar_48de0078',
+    Zc = 'TtcCrew_crewTitle_a70b6855',
+    Yc = 'TtcCrew_crewBrackets_74968740',
+    qc = 'TtcCrew_crewAmount_7fb6cbca',
+    Jc = 'TtcCrew_crewIcons_54c0985b',
+    Qc = 'TtcCrew_crewIcon_9ffe1104',
+    el = 'TtcCrew_crewIcon__plus_71e8955d';
+function tl({ roleName: e, plus: t, slotIndex: s, tankmanId: a }) {
+    const r = R({
         args: { tooltipId: 'vehiclePreviewCrewMember', tooltipArgs: JSON.stringify({ slotIdx: s, tankmanID: a }) },
     });
-    return i.jsx(E, { ...r, path: `tankmen.roles.ttc_crew.${e}${t ? '_plus' : ''}`, className: n(Tc, t && Mc) });
+    return o.jsx(O, { ...r, path: `tankmen.roles.ttc_crew.${e}${t ? '_plus' : ''}`, className: c(Qc, t && el) });
 }
-const Ec = a(function () {
-        const e = x.resolve('intl'),
-            { model: t } = xo(),
+const sl = i(function () {
+        const e = N.resolve('intl'),
+            { model: t } = Mo(),
             s = t.crew.get(),
             a = t.computes.crewRoles(),
-            r = kt().model.computes.columns();
-        return i.jsxs('div', {
-            className: bc,
+            r = Mt().model.computes.columns();
+        return o.jsxs('div', {
+            className: zc,
             children: [
-                i.jsxs('div', {
-                    className: xc,
+                o.jsxs('div', {
+                    className: Hc,
                     children: [
-                        g(r, ({ header: e }, t) =>
-                            i.jsx('div', { className: Nc, children: i.jsx(F, { text: e.name, className: jc }) }, t),
+                        j(r, ({ header: e }, t) =>
+                            o.jsx('div', { className: Gc, children: o.jsx(G, { text: e.name, className: Uc }) }, t),
                         ),
-                        i.jsx('div', {
-                            className: kc,
-                            children: i.jsx(C, {
+                        o.jsx('div', {
+                            className: Zc,
+                            children: o.jsx(I, {
                                 path: 'vehicle_hub.overview.crew.name',
                                 params: {
                                     amount: e.formatNumber('integral', s.length),
-                                    classBracket: wc,
-                                    classAmount: Ic,
+                                    classBracket: Yc,
+                                    classAmount: qc,
                                 },
                             }),
                         }),
                     ],
                 }),
-                i.jsxs('div', {
-                    className: gc,
+                o.jsxs('div', {
+                    className: Fc,
                     children: [
-                        g(r, ({ header: t }, s) =>
-                            i.jsxs(
+                        j(r, ({ header: t }, s) =>
+                            o.jsxs(
                                 'div',
                                 {
-                                    className: fc,
+                                    className: Wc,
                                     children: [
-                                        i.jsx(vc, {
+                                        o.jsx($c, {
                                             vehicleAmount: t.vehicleAmount,
                                             currentAmount: t.currentAmount,
                                             maxAmount: t.maxAmount,
-                                            className: Cc,
+                                            className: Kc,
                                         }),
-                                        i.jsx('div', {
-                                            className: yc,
+                                        o.jsx('div', {
+                                            className: Xc,
                                             children: e.formatNumber('integral', t.currentAmount),
                                         }),
                                     ],
@@ -4021,11 +3866,11 @@ const Ec = a(function () {
                                 s,
                             ),
                         ),
-                        i.jsx('div', {
-                            className: Sc,
+                        o.jsx('div', {
+                            className: Jc,
                             children: a.map((e, t) =>
-                                i.jsx(
-                                    Pc,
+                                o.jsx(
+                                    tl,
                                     { roleName: e.roleName, plus: e.plus, tankmanId: e.tankmanId, slotIndex: e.slotId },
                                     t,
                                 ),
@@ -4036,7 +3881,7 @@ const Ec = a(function () {
             ],
         });
     }),
-    Ac = {
+    al = {
         root: 'Overview_root_8249f573',
         sceneWrapper: 'Overview_sceneWrapper_c7ea5401',
         base: 'Overview_3677defd',
@@ -4047,104 +3892,105 @@ const Ec = a(function () {
         scrollContainer: 'Overview_scrollContainer_e783a92b',
         verticalBar: 'Overview_verticalBar_c08d45da',
         scrollWrapper: 'Overview_scrollWrapper_d6c55ae2',
-        scrollContent: 'Overview_scrollContent_7fbc91a1',
+        scrollContent: 'Overview_scrollContent_ddb1d5c',
         scrollContent__top: 'Overview_scrollContent__top_b97d4349',
         scrollContent__bottom: 'Overview_scrollContent__bottom_bcf6b9fb',
         scrollContent__both: 'Overview_scrollContent__both_da3c9da3',
         separator: 'Overview_separator_581cc850',
         specialMechanic: 'Overview_specialMechanic_e751faeb',
         mechanics: 'Overview_mechanics_8249f573',
-        description: 'Overview_description_864327ee',
+        description: 'Overview_description_8249f573',
+        benefits: 'Overview_benefits_864327ee',
         videoButton: 'Overview_videoButton_1ea36886',
         videoButtonIcon: 'Overview_videoButtonIcon_9062084b',
         videoButtonLabel: 'Overview_videoButtonLabel_ddc644f',
         vehicleBox: 'Overview_vehicleBox_9a822404',
         boxWithCoords: 'Overview_boxWithCoords_95133da',
     },
-    Rc = x.resolve('sounds'),
-    Oc = ae('VideoButton', Ac.videoButton);
-function Bc({ children: e }) {
-    const { api: t } = De(),
-        [s, a] = Ve(t);
-    return i.jsxs('div', {
-        className: Ac.scrollContainer,
+    rl = N.resolve('sounds'),
+    il = ne('VideoButton', al.videoButton);
+function nl({ children: e }) {
+    const { api: t } = ze(),
+        [s, a] = He(t);
+    return o.jsxs('div', {
+        className: al.scrollContainer,
         children: [
-            i.jsx($e, {
+            o.jsx(Fe, {
                 classNames: {
-                    wrapper: Ac.scrollWrapper,
-                    content: n(Ac.scrollContent, Ac[`scrollContent__${No(s, a)}`]),
+                    wrapper: al.scrollWrapper,
+                    content: c(al.scrollContent, al[`scrollContent__${Oo(s, a)}`]),
                 },
                 children: e,
             }),
-            i.jsx(ze, { classNames: { base: Ac.verticalBar } }),
+            o.jsx(We, { classNames: { base: al.verticalBar } }),
         ],
     });
 }
-const Lc = function () {
-    const e = x.resolve('intl'),
-        t = x.resolve('strings'),
-        { controls: s } = ea(),
-        { model: a, controls: r } = xo(),
-        o = a.computes.mechanics().special[0],
-        c = jt().model.tags.get().split(','),
-        l = c.includes(Oe.special) || c.includes(Oe.premium) || c.includes(Oe.collectorVehicle),
+const ol = function () {
+    const e = N.resolve('intl'),
+        t = N.resolve('strings'),
+        { controls: s } = ca(),
+        { model: a, controls: r } = Mo(),
+        i = a.computes.mechanics().special[0],
+        n = kt().model.tags.get().split(','),
+        l = n.includes(De.special) || n.includes(De.premium) || n.includes(De.collectorVehicle),
         d = a.computes.mechanics().common.length > 0;
-    return i.jsx('div', {
-        className: Ac.base,
-        children: i.jsxs('div', {
-            className: Ac.mainContent,
+    return o.jsx('div', {
+        className: al.base,
+        children: o.jsxs('div', {
+            className: al.mainContent,
             children: [
-                i.jsx(xe, {
-                    className: Ac.sceneWrapper,
+                o.jsx(Ne, {
+                    className: al.sceneWrapper,
                     moveSpace: s.sceneWrapper.onMoveSpace,
                     onMouseOver3dScene: s.sceneWrapper.onMouseOver3dScene,
                 }),
-                i.jsx(Si, { className: Ac.vehicleBox, classNames: { boxWithCoords: Ac.boxWithCoords } }),
-                i.jsxs('div', {
-                    className: Ac.contentWrapper,
+                o.jsx($i, { className: al.vehicleBox, classNames: { boxWithCoords: al.boxWithCoords } }),
+                o.jsxs('div', {
+                    className: al.contentWrapper,
                     children: [
-                        o &&
-                            i.jsxs(i.Fragment, {
+                        i &&
+                            o.jsxs(o.Fragment, {
                                 children: [
-                                    i.jsx(uc, { className: Ac.specialMechanic }),
-                                    (d || !l) && i.jsx('div', { className: Ac.separator }),
+                                    o.jsx(Pc, { className: al.specialMechanic }),
+                                    (d || !l) && o.jsx('div', { className: al.separator }),
                                 ],
                             }),
-                        i.jsx(Le, {
-                            children: i.jsx(Bc, {
-                                children: i.jsxs('div', {
-                                    className: n(Ac.content, o && Ac.content__offset),
+                        o.jsx($e, {
+                            children: o.jsx(nl, {
+                                children: o.jsxs('div', {
+                                    className: c(al.content, i && al.content__offset),
                                     children: [
                                         d &&
-                                            i.jsxs(i.Fragment, {
+                                            o.jsxs(o.Fragment, {
                                                 children: [
-                                                    i.jsx(sc, { className: Ac.mechanics }),
-                                                    !l && i.jsx('div', { className: Ac.separator }),
+                                                    o.jsx(fc, { className: al.mechanics }),
+                                                    !l && o.jsx('div', { className: al.separator }),
                                                 ],
                                             }),
-                                        l && i.jsx(Zo, {}),
-                                        i.jsx(ec, { className: Ac.description }),
-                                        i.jsx('div', { className: Ac.separator }),
-                                        i.jsx(Ec, {}),
+                                        l && o.jsx(uc, { className: al.benefits }),
+                                        o.jsx(xc, { className: al.description }),
+                                        o.jsx('div', { className: al.separator }),
+                                        o.jsx(sl, {}),
                                     ],
                                 }),
                             }),
                         }),
                     ],
                 }),
-                o &&
-                    o.hasVideo &&
-                    i.jsxs(Oc, {
+                i &&
+                    i.hasVideo &&
+                    o.jsxs(il, {
                         onMouseEnter: () => {
-                            Rc.play('highlight');
+                            rl.play('highlight');
                         },
                         onClick: () => {
-                            (Rc.play('play'), r.watchMechanicsVideo({ mechanicsName: o.id }));
+                            (rl.play('play'), r.watchMechanicsVideo({ mechanicsName: i.id }));
                         },
                         children: [
-                            i.jsx('div', { className: Ac.videoButtonIcon }),
-                            i.jsx('div', {
-                                className: Ac.videoButtonLabel,
+                            o.jsx('div', { className: al.videoButtonIcon }),
+                            o.jsx('div', {
+                                className: al.videoButtonLabel,
                                 children: e.toUpperCase(t.readOrEmpty('vehicle_hub.overview.mechanicsVideo.label')),
                             }),
                         ],
@@ -4153,17 +3999,17 @@ const Lc = function () {
         }),
     });
 };
-function Dc() {
-    return i.jsx(bo, { options: { context: 'model.overviewModel' }, children: i.jsx(Lc, {}) });
+function cl() {
+    return o.jsx(To, { options: { context: 'model.overviewModel' }, children: o.jsx(ol, {}) });
 }
-const [Vc, $c] = u()(({ observableModel: e }) => {
+const [ll, dl] = p()(({ observableModel: e }) => {
         const t = {
                 root: e.object(),
                 specialMechanic: e.object('specialMechanic'),
                 specialMechanicParams: e.arrayClone('specialMechanicParams'),
             },
-            s = x.resolve('strings'),
-            a = _.structural(() => {
+            s = N.resolve('strings'),
+            a = v.structural(() => {
                 const { priority: e, rank: a, name: r } = t.specialMechanic.get();
                 return {
                     name: r
@@ -4176,29 +4022,29 @@ const [Vc, $c] = u()(({ observableModel: e }) => {
                     mechanicRank: a,
                 };
             }),
-            r = _.structural(() => {
+            r = v.structural(() => {
                 const { name: e } = t.specialMechanic.get();
-                return g(t.specialMechanicParams.get(), (t) => {
-                    const a = wt(t),
+                return j(t.specialMechanicParams.get(), (t) => {
+                    const a = Pt(t),
                         r = s.readOrEmpty(`vehicle_hub.specialCharacteristics.${e}.${a.type}`, 'silent');
                     return (r && (a.amount = r.replace('{{value}}', String(a.amount))), a);
                 });
             });
         return { ...t, computes: { specialHeader: a, specialParams: r } };
-    }, b),
-    zc = { [Pe.extraSmall]: 30, [Pe.small]: 30, [Pe.medium]: 15, [Pe.large]: 48, [Pe.extraLarge]: 48 },
-    Fc = { [Pe.extraSmall]: 20, [Pe.small]: 20, [Pe.medium]: 0, [Pe.large]: 0, [Pe.extraLarge]: 15 },
-    Hc = { [Pe.extraSmall]: 15, [Pe.small]: 15, [Pe.medium]: 15, [Pe.large]: 15, [Pe.extraLarge]: 15 },
-    Wc = { [Pe.extraSmall]: 300, [Pe.small]: 300, [Pe.medium]: 300, [Pe.large]: 364, [Pe.extraLarge]: 480 },
-    Gc = { [Pe.extraSmall]: 270, [Pe.small]: 270, [Pe.medium]: 300, [Pe.large]: 414, [Pe.extraLarge]: 390 },
-    Uc = { [Pe.extraSmall]: 280, [Pe.small]: 280, [Pe.medium]: 312, [Pe.large]: 392, [Pe.extraLarge]: 430 },
-    Xc = r.createContext({ specialWidth: 0, commonWidth: 0, commonNarowlWidth: 0, gap: 0, enoughSpace: !1 });
-function Kc(e, t, s, a) {
-    const r = e ? Gc[s] : Wc[s],
-        i = e ? Hc[s] : Fc[s],
+    }, g),
+    hl = { [Re.extraSmall]: 30, [Re.small]: 30, [Re.medium]: 15, [Re.large]: 48, [Re.extraLarge]: 48 },
+    ml = { [Re.extraSmall]: 20, [Re.small]: 20, [Re.medium]: 0, [Re.large]: 0, [Re.extraLarge]: 15 },
+    ul = { [Re.extraSmall]: 15, [Re.small]: 15, [Re.medium]: 15, [Re.large]: 15, [Re.extraLarge]: 15 },
+    _l = { [Re.extraSmall]: 300, [Re.small]: 300, [Re.medium]: 300, [Re.large]: 364, [Re.extraLarge]: 480 },
+    pl = { [Re.extraSmall]: 270, [Re.small]: 270, [Re.medium]: 300, [Re.large]: 414, [Re.extraLarge]: 390 },
+    vl = { [Re.extraSmall]: 280, [Re.small]: 280, [Re.medium]: 312, [Re.large]: 392, [Re.extraLarge]: 430 },
+    bl = n.createContext({ specialWidth: 0, commonWidth: 0, commonNarowlWidth: 0, gap: 0, enoughSpace: !1 });
+function xl(e, t, s, a) {
+    const r = e ? pl[s] : _l[s],
+        i = e ? ul[s] : ml[s],
         n = i * (t - 1) + (e ? i : 0),
-        o = e ? Uc[s] : 0,
-        c = a - 2 * zc[s];
+        o = e ? vl[s] : 0,
+        c = a - 2 * hl[s];
     return {
         specialWidth: o,
         commonWidth: r,
@@ -4207,75 +4053,64 @@ function Kc(e, t, s, a) {
         enoughSpace: r * t + n + o <= c,
     };
 }
-function Zc({ children: e }) {
-    const { breakpoint: t, screenWidthRem: s } = de(),
-        a = $c(),
-        n = kt().model.computes.columns(),
-        o = Boolean(a.model.computes.specialHeader().type),
-        [c, l] = r.useState(() => Kc(o, n.length, t.name, s));
+function gl({ children: e }) {
+    const { breakpoint: t, screenWidthRem: s } = ue(),
+        a = dl(),
+        r = Mt().model.computes.columns(),
+        i = Boolean(a.model.computes.specialHeader().type),
+        [c, l] = n.useState(() => xl(i, r.length, t.name, s));
     return (
-        r.useEffect(() => {
-            l(Kc(o, n.length, t.name, s));
-        }, [s, t.name, o, n.length]),
-        i.jsx(Xc.Provider, { value: c, children: e })
+        n.useEffect(() => {
+            l(xl(i, r.length, t.name, s));
+        }, [s, t.name, i, r.length]),
+        o.jsx(bl.Provider, { value: c, children: e })
     );
 }
-function Yc() {
-    const e = r.useContext(Xc);
+function fl() {
+    const e = n.useContext(bl);
     if (!e) throw new Error('useColumnsSize must be used within a ColumnsSizeProvider');
     return e;
 }
-const Jc = {
-        base: 'TtcRow_fe3d6ce9',
-        amounts: 'TtcRow_amounts_c53cc9e3',
-        amountsSpecial: 'TtcRow_amountsSpecial_36e84de1',
-        amounts__narrow: 'TtcRow_amounts__narrow_c53cc9e3',
-        amount: 'TtcRow_amount_dc4ddd90',
-        narrowContainer: 'TtcRow_narrowContainer_7375c812',
-        slash: 'TtcRow_slash_ddbb818b',
-        slash__amount: 'TtcRow_slash__amount_86b3162b',
-        iconContainer: 'TtcRow_iconContainer_9ccada27',
-        icon: 'TtcRow_icon_4cf3eded',
-        name: 'TtcRow_name_2572ec7e',
-    },
-    qc = (e, t) => {
-        const s = x.resolve('intl'),
-            a = x.resolve('strings').readOr(t, () => '%(value)%s'),
+const Nl = 'TtcRow_fe3d6ce9',
+    jl = 'TtcRow_amounts_c53cc9e3',
+    Cl = 'TtcRow_amountsSpecial_e4bc4d63',
+    yl = 'TtcRow_amounts__narrow_c53cc9e3',
+    kl = 'TtcRow_amount_dc4ddd90',
+    wl = 'TtcRow_narrowContainer_7375c812',
+    Il = 'TtcRow_slash_ddbb818b',
+    Sl = 'TtcRow_slash__amount_86b3162b',
+    Tl = 'TtcRow_iconContainer_fe7d6ff9',
+    Ml = 'TtcRow_icon_4cf3eded',
+    Pl = 'TtcRow_name_91458529',
+    El = (e, t) => {
+        const s = N.resolve('intl'),
+            a = N.resolve('strings').readOr(t, () => '%(value)%s'),
             r = e
                 .replace(/-?\d+(?:\.\d+)?/g, (e) => s.formatReal('woZeroDigits', Number(e)))
                 .replace(/\//g, '{{@ class $classSecondary}}/{{/}}');
         return a.replace('%(value)%s', r);
     };
-function Qc({ value: e, narrow: t, templatePath: s = '', className: a }) {
-    const r = x.resolve('intl');
-    if (Fe(e)) return i.jsx('span', { className: Jc.amount, children: r.formatReal('woZeroDigits', e) });
+function Al({ value: e, narrow: t, templatePath: s = '', className: a }) {
+    const r = N.resolve('intl');
+    if (Ge(e)) return o.jsx('span', { className: kl, children: r.formatReal('woZeroDigits', e) });
     if ('string' == typeof e)
-        return i.jsx(
-            Be,
-            {
-                className: n(Jc.amountsSpecial, a),
-                text: qc(e, s),
-                params: { classSecondary: n(Jc.slash, Jc.slash__amount) },
-            },
-            e,
-        );
+        return o.jsx(Ve, { className: c(Cl, a), text: El(e, s), params: { classSecondary: c(Il, Sl) } }, e);
     if (Array.isArray(e)) {
         const s = e.slice(0, 5),
-            a = x.resolve('strings').readOrEmpty('common.common.slash');
-        return i.jsx('div', {
-            className: n(Jc.amounts, t && Jc.amounts__narrow),
+            a = N.resolve('strings').readOrEmpty('common.common.slash');
+        return o.jsx('div', {
+            className: c(jl, t && yl),
             children: s.map((e, t) =>
-                i.jsxs(
-                    m.Fragment,
+                o.jsxs(
+                    _.Fragment,
                     {
                         children: [
-                            i.jsx('span', {
-                                className: Jc.amount,
+                            o.jsx('span', {
+                                className: kl,
                                 'data-test-id': 'amountValue',
-                                children: Fe(e) ? r.formatReal('woZeroDigits', e) : e,
+                                children: Ge(e) ? r.formatReal('woZeroDigits', e) : e,
                             }),
-                            t < s.length - 1 &&
-                                i.jsx('span', { className: n(Jc.slash, Jc.slash__amount), children: a }),
+                            t < s.length - 1 && o.jsx('span', { className: c(Il, Sl), children: a }),
                         ],
                     },
                     t,
@@ -4285,19 +4120,19 @@ function Qc({ value: e, narrow: t, templatePath: s = '', className: a }) {
     }
     console.error('Incorrect amount type is in TTCRow component');
 }
-function el({ value: e, measure: t = '' }) {
+function Rl({ value: e, measure: t = '' }) {
     const s = '' !== t ? ' ' + t : '';
     return 'string' == typeof e
-        ? e.split('\n').map((e, t) => i.jsx(Be, { text: e + s, split: !0 }, t))
+        ? e.split('\n').map((e, t) => o.jsx(Ve, { text: e + s, split: !0 }, t))
         : Array.isArray(e)
-          ? i.jsx(i.Fragment, {
+          ? o.jsx(o.Fragment, {
                 children: e.map((t, a) =>
-                    i.jsxs(
-                        m.Fragment,
+                    o.jsxs(
+                        _.Fragment,
                         {
                             children: [
-                                i.jsx('span', { children: t + (a === e.length - 1 && s) }),
-                                a < e.length - 1 && i.jsx('span', { className: Jc.slash, children: '/' }),
+                                o.jsx('span', { children: t + (a === e.length - 1 && s) }),
+                                a < e.length - 1 && o.jsx('span', { className: Il, children: '/' }),
                             ],
                         },
                         a,
@@ -4306,102 +4141,90 @@ function el({ value: e, measure: t = '' }) {
             })
           : void console.error('Incorrect name type is in TTCRow component');
 }
-const tl = 'TtcDivider_eb891d7d',
-    sl = 'TtcDivider_base__narrow_92988388';
-const al = {
-        base: 'TtcHeader_9275bbc3',
-        header: 'TtcHeader_header_766d9c80',
-        icon: 'TtcHeader_icon_f5e541ab',
-        name: 'TtcHeader_name_289f6f3',
-    },
-    rl = { x20x20: 'x20x20', x24x24: 'x24x24' };
-function il({
+const Ol = 'TtcDivider_eb891d7d',
+    Ll = 'TtcDivider_base__narrow_92988388';
+const Bl = 'TtcHeader_9275bbc3',
+    Dl = 'TtcHeader_header_766d9c80',
+    Vl = 'TtcHeader_icon_f5e541ab',
+    $l = 'TtcHeader_name_289f6f3',
+    zl = 'x20x20',
+    Hl = 'x24x24';
+function Fl({
     name: e,
     type: t,
     vehicleAmount: s,
     currentAmount: a,
-    maxAmount: o,
-    tooltipId: c,
+    maxAmount: r,
+    tooltipId: i,
     iconsPath: l = 'hangar.ttc.paramsType',
     className: d,
     classNames: h,
 }) {
-    const m = x.resolve('intl'),
-        u = j({ iconSize: rl.x20x20 }, { large: { iconSize: rl.x24x24 } }),
-        _ = x.resolve('aliases'),
-        p = P({
+    const m = N.resolve('intl'),
+        u = k({ iconSize: zl }, { large: { iconSize: Hl } }),
+        _ = N.resolve('aliases'),
+        p = R({
             resId: _.read((e) => e.vehicle_hub.default.VehicleParams('resId')),
-            args: r.useMemo(() => ({ tooltipId: c, paramId: t, extendedTooltip: !0 }), [t, c]),
+            args: n.useMemo(() => ({ tooltipId: i, paramId: t, extendedTooltip: !0 }), [t, i]),
         });
-    return i.jsxs('div', {
-        className: n(al.base, d),
+    return o.jsxs('div', {
+        className: c(Bl, d),
         ...p,
         children: [
-            i.jsxs('div', {
-                className: al.header,
+            o.jsxs('div', {
+                className: Dl,
                 children: [
-                    i.jsx(E, { path: `${l}.${u.iconSize}.${t}`, className: n(al.icon, null == h ? void 0 : h.icon) }),
-                    i.jsx('div', {
-                        className: n(al.name, null == h ? void 0 : h.name),
-                        children: i.jsx(F, { text: e, 'data-test-id': e }),
-                    }),
-                    i.jsx('div', { className: null == h ? void 0 : h.amount, children: m.formatNumber('integral', a) }),
+                    o.jsx(O, { path: `${l}.${u.iconSize}.${t}`, className: c(Vl, h?.icon) }),
+                    o.jsx('div', { className: c($l, h?.name), children: o.jsx(G, { text: e, 'data-test-id': e }) }),
+                    o.jsx('div', { className: h?.amount, children: m.formatNumber('integral', a) }),
                 ],
             }),
-            i.jsx(vc, {
-                className: null == h ? void 0 : h.progressBar,
-                vehicleAmount: s,
-                currentAmount: a,
-                maxAmount: o,
-            }),
+            o.jsx($c, { className: h?.progressBar, vehicleAmount: s, currentAmount: a, maxAmount: r }),
         ],
     });
 }
-const nl = 'TtcList_ff11812f',
-    ol = r.forwardRef(function ({ className: e, ...t }, s) {
-        return i.jsx('div', { ...t, ref: s, className: n(nl, e) });
+const Wl = 'TtcList_ff11812f',
+    Gl = n.forwardRef(function ({ className: e, ...t }, s) {
+        return o.jsx('div', { ...t, ref: s, className: c(Wl, e) });
     });
-((ol.Header = il),
-    (ol.Row = function ({
+((Gl.Header = Fl),
+    (Gl.Row = function ({
         name: e,
         type: t,
         amount: s,
         tooltipId: a,
-        narrow: o = !1,
-        templatePath: c = '',
+        narrow: r = !1,
+        templatePath: i = '',
         measure: l = '',
         iconPath: d = 'vehParams.small',
         className: h,
         classNames: m,
     }) {
-        const u = x.resolve('aliases'),
-            _ = P({
+        const u = N.resolve('aliases'),
+            _ = R({
                 resId: u.read((e) => e.vehicle_hub.default.VehicleParams('resId')),
-                args: r.useMemo(() => ({ tooltipId: a, paramId: t, extendedTooltip: !0 }), [t, a]),
+                args: n.useMemo(() => ({ tooltipId: a, paramId: t, extendedTooltip: !0 }), [t, a]),
             });
-        return i.jsxs('div', {
-            className: n(Jc.base, h),
+        return o.jsxs('div', {
+            className: c(Nl, h),
             'data-test-id': t,
             ..._,
             children: [
-                i.jsxs('div', {
-                    className: Jc.narrowContainer,
+                o.jsxs('div', {
+                    className: wl,
                     children: [
-                        i.jsx(Qc, { value: s, narrow: o, templatePath: c, className: null == m ? void 0 : m.amount }),
-                        i.jsx('div', {
-                            className: Jc.iconContainer,
-                            children: i.jsx(E, { path: `${d}.${t}`, className: Jc.icon }),
-                        }),
+                        o.jsx(Al, { value: s, narrow: r, templatePath: i, className: m?.amount }),
+                        o.jsx('div', { className: Tl, children: o.jsx(O, { path: `${d}.${t}`, className: Ml }) }),
                     ],
                 }),
-                !o && i.jsx('div', { className: Jc.name, children: i.jsx(el, { value: e, measure: l }) }),
+                !r && o.jsx('div', { className: Pl, children: o.jsx(Rl, { value: e, measure: l }) }),
             ],
         });
     }),
-    (ol.Divider = function ({ narrow: e = !1, className: t }) {
-        return i.jsx('div', { className: n(tl, e && sl, t) });
+    (Gl.Divider = function ({ narrow: e = !1, className: t }) {
+        return o.jsx('div', { className: c(Ol, e && Ll, t) });
     }));
-const cl = {
+const Ul = {
     root: 'TtcColumn_root_dbeaff6f',
     base: 'TtcColumn_d19a3707',
     header: 'TtcColumn_header_67a81366',
@@ -4409,8 +4232,8 @@ const cl = {
     base__narrow: 'TtcColumn_base__narrow_dbeaff6f',
     headerName: 'TtcColumn_headerName_1031e73d',
     list: 'TtcColumn_list_ef66cbdf',
-    scrollArea: 'TtcColumn_scrollArea_54c3b739',
-    scrollContent: 'TtcColumn_scrollContent_5e98dc69',
+    scrollArea: 'TtcColumn_scrollArea_eb0ba1b7',
+    scrollContent: 'TtcColumn_scrollContent_eae83bd6',
     scrollContent__top: 'TtcColumn_scrollContent__top_b4e45275',
     scrollContent__bottom: 'TtcColumn_scrollContent__bottom_bec151c',
     scrollContent__both: 'TtcColumn_scrollContent__both_923fca73',
@@ -4422,67 +4245,67 @@ const cl = {
     dividerRow: 'TtcColumn_dividerRow_834e9bb1',
     divider: 'TtcColumn_divider_809fe562',
 };
-function ll({ children: e }) {
-    const { api: t } = De(),
-        [s, a] = Ve(t);
-    return i.jsx($e, {
-        className: cl.scrollArea,
-        classNames: { content: n(cl.scrollContent, cl[`scrollContent__${No(s, a)}`]) },
+function Xl({ children: e }) {
+    const { api: t } = ze(),
+        [s, a] = He(t);
+    return o.jsx(Fe, {
+        className: Ul.scrollArea,
+        classNames: { content: c(Ul.scrollContent, Ul[`scrollContent__${Oo(s, a)}`]) },
         children: e,
     });
 }
-function dl({ narrow: e, header: t, characteristics: s, modifications: a, className: r }) {
-    const { commonWidth: o, commonNarowlWidth: c, enoughSpace: l } = Yc();
-    return i.jsx('div', {
-        className: n(cl.base, l && cl.base__enoughSpace, e && cl.base__narrow, r),
-        style: { '--width': `${o}rem`, '--widthNarrow': `${c}rem` },
-        children: i.jsxs(ol, {
-            className: cl.list,
+function Kl({ narrow: e, header: t, characteristics: s, modifications: a, className: r }) {
+    const { commonWidth: i, commonNarowlWidth: n, enoughSpace: l } = fl();
+    return o.jsx('div', {
+        className: c(Ul.base, l && Ul.base__enoughSpace, e && Ul.base__narrow, r),
+        style: { '--width': `${i}rem`, '--widthNarrow': `${n}rem` },
+        children: o.jsxs(Gl, {
+            className: Ul.list,
             children: [
-                i.jsx(il, { ...t, className: cl.header, classNames: { name: cl.headerName } }),
-                i.jsx('div', {
-                    className: cl.content,
-                    children: i.jsxs(Le, {
+                o.jsx(Fl, { ...t, className: Ul.header, classNames: { name: Ul.headerName } }),
+                o.jsx('div', {
+                    className: Ul.content,
+                    children: o.jsxs($e, {
                         children: [
-                            i.jsx(ll, {
-                                children: i.jsxs('div', {
-                                    className: cl.listContent,
+                            o.jsx(Xl, {
+                                children: o.jsxs('div', {
+                                    className: Ul.listContent,
                                     children: [
                                         s &&
                                             s.map((e, t) =>
-                                                i.jsx(
-                                                    ol.Row,
+                                                o.jsx(
+                                                    Gl.Row,
                                                     {
                                                         name: e.name,
                                                         type: e.type,
                                                         amount: e.amount,
                                                         tooltipId: e.tooltipId,
                                                         narrow: !1,
-                                                        className: cl.listRow,
+                                                        className: Ul.listRow,
                                                     },
                                                     t,
                                                 ),
                                             ),
                                         a &&
-                                            i.jsxs(i.Fragment, {
+                                            o.jsxs(o.Fragment, {
                                                 children: [
-                                                    i.jsx('div', {
-                                                        className: cl.dividerRow,
-                                                        children: i.jsx(ol.Divider, {
+                                                    o.jsx('div', {
+                                                        className: Ul.dividerRow,
+                                                        children: o.jsx(Gl.Divider, {
                                                             narrow: e,
-                                                            className: cl.divider,
+                                                            className: Ul.divider,
                                                         }),
                                                     }),
                                                     a.map((e, t) =>
-                                                        i.jsx(
-                                                            ol.Row,
+                                                        o.jsx(
+                                                            Gl.Row,
                                                             {
                                                                 name: e.name,
                                                                 type: e.type,
                                                                 amount: e.amount,
                                                                 tooltipId: e.tooltipId,
                                                                 narrow: !1,
-                                                                className: cl.listRow,
+                                                                className: Ul.listRow,
                                                             },
                                                             t,
                                                         ),
@@ -4492,7 +4315,7 @@ function dl({ narrow: e, header: t, characteristics: s, modifications: a, classN
                                     ],
                                 }),
                             }),
-                            i.jsx(ze, { classNames: { base: cl.verticalBar } }),
+                            o.jsx(We, { classNames: { base: Ul.verticalBar } }),
                         ],
                     }),
                 }),
@@ -4500,7 +4323,7 @@ function dl({ narrow: e, header: t, characteristics: s, modifications: a, classN
         }),
     });
 }
-const hl = {
+const Zl = {
         root: 'TtcColumnSpecial_root_60f09503',
         base: 'TtcColumnSpecial_cfe40f97',
         header: 'TtcColumnSpecial_header_5fed6267',
@@ -4511,9 +4334,9 @@ const hl = {
         dust: 'TtcColumnSpecial_dust_a8fe4e46',
         icon: 'TtcColumnSpecial_icon_d8177e19',
         title: 'TtcColumnSpecial_title_b28b1f50',
-        list: 'TtcColumnSpecial_list_7950bbfa',
+        list: 'TtcColumnSpecial_list_5252338f',
         scrollArea: 'TtcColumnSpecial_scrollArea_66f85f7e',
-        scrollContent: 'TtcColumnSpecial_scrollContent_b5e7bd2d',
+        scrollContent: 'TtcColumnSpecial_scrollContent_b0fab2ae',
         scrollContent__top: 'TtcColumnSpecial_scrollContent__top_8b7d94d',
         scrollContent__bottom: 'TtcColumnSpecial_scrollContent__bottom_246c8846',
         scrollContent__both: 'TtcColumnSpecial_scrollContent__both_8c6f0949',
@@ -4530,79 +4353,76 @@ const hl = {
         wrapper: 'TtcColumnSpecial_wrapper_ae2ae6d9',
         verticalBar: 'TtcColumnSpecial_verticalBar_5bb30112',
     },
-    ml = 'x68x68',
-    ul = 'x96x96',
-    _l = 'small',
-    pl = 'large';
-function vl({ children: e }) {
-    const { api: t } = De(),
-        [s, a] = Ve(t);
-    return i.jsx($e, {
-        className: hl.scrollArea,
-        classNames: { content: n(hl.scrollContent, hl[`scrollContent__${No(s, a)}`]) },
+    Yl = 'x68x68',
+    ql = 'x96x96',
+    Jl = 'small',
+    Ql = 'large';
+function ed({ children: e }) {
+    const { api: t } = ze(),
+        [s, a] = He(t);
+    return o.jsx(Fe, {
+        className: Zl.scrollArea,
+        classNames: { content: c(Zl.scrollContent, Zl[`scrollContent__${Oo(s, a)}`]) },
         children: e,
     });
 }
-function bl({ name: e, type: t, priority: s, rank: a, characteristics: r, descriptionIcon: o, className: c }) {
-    const { specialWidth: l } = Yc(),
-        d = j({ iconSize: ml, glowSize: _l }, { large: { iconSize: ul, glowSize: pl } }),
-        h = x.resolve('images'),
-        m = s && a === gi.GOLD,
+function td({ name: e, type: t, priority: s, rank: a, characteristics: r, descriptionIcon: i, className: n }) {
+    const { specialWidth: l } = fl(),
+        d = k({ iconSize: Yl, glowSize: Jl }, { large: { iconSize: ql, glowSize: Ql } }),
+        h = N.resolve('images'),
+        m = s && a === Pi.GOLD,
         u = m ? `vehicle_hub.mechanics.special.${d.iconSize}.${t}` : `vehicle_hub.mechanics.${d.iconSize}.${t}`,
-        _ = x
-            .resolve('strings')
-            .readOrEmpty(`vehicle_hub.characteristics.abilities.special.description.${t}`)
-            .split('\n');
-    return i.jsx('div', {
-        className: n(hl.base, c),
+        _ = N.resolve('strings');
+    return o.jsx('div', {
+        className: c(Zl.base, n),
         style: { '--width': `${l}rem` },
-        children: i.jsxs(ol, {
-            className: hl.list,
+        children: o.jsxs(Gl, {
+            className: Zl.list,
             children: [
-                i.jsxs('div', {
-                    className: hl.header,
+                o.jsxs('div', {
+                    className: Zl.header,
                     children: [
                         h.has(u) &&
-                            i.jsxs('div', {
-                                className: hl.iconContainer,
+                            o.jsxs('div', {
+                                className: Zl.iconContainer,
                                 children: [
                                     m &&
-                                        i.jsx(E, {
+                                        o.jsx(O, {
                                             path: `vehicle_hub.mechanics.special.glow_back_${d.glowSize}`,
-                                            className: n(hl.glow, hl.glow__back),
+                                            className: c(Zl.glow, Zl.glow__back),
                                         }),
-                                    i.jsx(E, { path: u, className: hl.icon }),
+                                    o.jsx(O, { path: u, className: Zl.icon }),
                                     m &&
-                                        i.jsxs(i.Fragment, {
+                                        o.jsxs(o.Fragment, {
                                             children: [
-                                                i.jsx(E, {
+                                                o.jsx(O, {
                                                     path: `vehicle_hub.mechanics.special.dust_${d.glowSize}`,
-                                                    className: hl.dust,
+                                                    className: Zl.dust,
                                                 }),
-                                                i.jsx(E, {
+                                                o.jsx(O, {
                                                     path: `vehicle_hub.mechanics.special.glow_front_${d.glowSize}`,
-                                                    className: n(hl.glow, hl.glow__front),
+                                                    className: c(Zl.glow, Zl.glow__front),
                                                 }),
                                             ],
                                         }),
                                 ],
                             }),
-                        i.jsx('div', { className: hl.title, children: e }),
+                        o.jsx('div', { className: Zl.title, children: e }),
                     ],
                 }),
-                i.jsx('div', {
-                    className: hl.content,
-                    children: i.jsxs(Le, {
+                o.jsx('div', {
+                    className: Zl.content,
+                    children: o.jsxs($e, {
                         children: [
-                            i.jsxs(vl, {
+                            o.jsxs(ed, {
                                 children: [
-                                    i.jsx('div', {
-                                        className: hl.listContent,
+                                    o.jsx('div', {
+                                        className: Zl.listContent,
                                         children:
                                             r &&
                                             r.map((e, t) =>
-                                                i.jsx(
-                                                    ol.Row,
+                                                o.jsx(
+                                                    Gl.Row,
                                                     {
                                                         name: e.name,
                                                         type: e.type,
@@ -4610,40 +4430,45 @@ function bl({ name: e, type: t, priority: s, rank: a, characteristics: r, descri
                                                         templatePath: e.templatePath,
                                                         measure: e.measure,
                                                         tooltipId: e.tooltipId,
-                                                        className: hl.listRow,
-                                                        classNames: { amount: hl.amount },
+                                                        className: Zl.listRow,
+                                                        classNames: { amount: Zl.amount },
                                                     },
                                                     t,
                                                 ),
                                             ),
                                     }),
-                                    i.jsxs('div', {
-                                        className: hl.description,
+                                    o.jsxs('div', {
+                                        className: Zl.description,
                                         children: [
-                                            o && i.jsx(E, { path: o, className: hl.descriptionIcon }),
-                                            i.jsx('div', {
-                                                className: hl.descriptionText,
-                                                children: _.map((e, t) =>
-                                                    i.jsx(
-                                                        Be,
-                                                        {
-                                                            split: !0,
-                                                            className: n(
-                                                                hl.descriptionTextLine,
-                                                                jo(e) && hl.descriptionTextLine__secondary,
-                                                            ),
-                                                            text: e,
-                                                            params: { classSecondary: hl.secondaryTextLine },
-                                                        },
-                                                        t,
-                                                    ),
-                                                ),
+                                            i && o.jsx(O, { path: i, className: Zl.descriptionIcon }),
+                                            o.jsxs('div', {
+                                                className: Zl.descriptionText,
+                                                children: [
+                                                    o.jsx(Ve, {
+                                                        className: Zl.descriptionTextLine,
+                                                        text: _.readOrEmpty(
+                                                            `vehicle_hub.characteristics.abilities.special.description.${t}`,
+                                                        ),
+                                                        split: !0,
+                                                    }),
+                                                    o.jsx(Ve, {
+                                                        className: c(
+                                                            Zl.descriptionTextLine,
+                                                            Zl.descriptionTextLine__secondary,
+                                                            Zl.secondaryTextLine,
+                                                        ),
+                                                        text: _.readOrEmpty(
+                                                            'vehicle_hub.characteristics.abilities.special.notes',
+                                                        ),
+                                                        split: !0,
+                                                    }),
+                                                ],
                                             }),
                                         ],
                                     }),
                                 ],
                             }),
-                            i.jsx(ze, { classNames: { base: hl.verticalBar } }),
+                            o.jsx(We, { classNames: { base: Zl.verticalBar } }),
                         ],
                     }),
                 }),
@@ -4651,44 +4476,44 @@ function bl({ name: e, type: t, priority: s, rank: a, characteristics: r, descri
         }),
     });
 }
-const xl = 'Stats_6c5a71f3',
-    gl = 'Stats_base__enoughSpace_d737aebe',
-    fl = 'Stats_column_386905a7',
-    Nl = 'Stats_glow_bc5fc822',
-    jl = 'Stats_glow__narrow_23403efa',
-    yl = x.resolve('sounds'),
-    Cl = a(function () {
-        const { model: e } = $c(),
-            [t, s] = r.useState(0),
-            a = kt().model.computes.columns(),
-            o = e.computes.specialHeader(),
-            c = e.computes.specialParams(),
-            { gap: l, enoughSpace: d } = Yc();
-        return i.jsxs('div', {
-            className: n(xl, d && gl),
+const sd = 'Stats_6c5a71f3',
+    ad = 'Stats_base__enoughSpace_d737aebe',
+    rd = 'Stats_column_386905a7',
+    id = 'Stats_glow_bc5fc822',
+    nd = 'Stats_glow__narrow_23403efa',
+    od = N.resolve('sounds'),
+    cd = i(function () {
+        const { model: e } = dl(),
+            [t, s] = n.useState(0),
+            a = Mt().model.computes.columns(),
+            r = e.computes.specialHeader(),
+            i = e.computes.specialParams(),
+            { gap: l, enoughSpace: d } = fl();
+        return o.jsxs('div', {
+            className: c(sd, d && ad),
             children: [
-                o.type &&
-                    Boolean(o.mechanicPriority) &&
-                    i.jsx(bl, {
-                        name: o.name,
-                        type: o.type,
-                        priority: o.mechanicPriority,
-                        rank: o.mechanicRank,
-                        characteristics: c,
+                r.type &&
+                    Boolean(r.mechanicPriority) &&
+                    o.jsx(td, {
+                        name: r.name,
+                        type: r.type,
+                        priority: r.mechanicPriority,
+                        rank: r.mechanicRank,
+                        characteristics: i,
                     }),
-                g(a, (e, a) => {
+                j(a, (e, a) => {
                     const r = !d && t !== a;
-                    return i.jsxs(
+                    return o.jsxs(
                         'div',
                         {
-                            className: fl,
+                            className: rd,
                             onMouseEnter: () => {
-                                r && (yl.play('gui_characteristics_highlight'), s(a));
+                                r && (od.play('gui_characteristics_highlight'), s(a));
                             },
                             style: { '--gap': `${l}rem` },
                             children: [
-                                i.jsx('div', { className: n(Nl, (d || r) && jl) }),
-                                i.jsx(dl, {
+                                o.jsx('div', { className: c(id, (d || r) && nd) }),
+                                o.jsx(Kl, {
                                     narrow: r,
                                     header: e.header,
                                     characteristics: e.characteristics,
@@ -4702,10 +4527,10 @@ const xl = 'Stats_6c5a71f3',
             ],
         });
     });
-function kl() {
-    return i.jsx(Vc, { options: { context: 'model.statsModel' }, children: i.jsx(Zc, { children: i.jsx(Cl, {}) }) });
+function ld() {
+    return o.jsx(ll, { options: { context: 'model.statsModel' }, children: o.jsx(gl, { children: o.jsx(cd, {}) }) });
 }
-const wl = He({
+const dd = Ue({
         click: {
             researchChainLargePerk: 'gui_perk_research_chain_large',
             researchChainSmallPerk: 'gui_perk_research_chain_small',
@@ -4717,61 +4542,61 @@ const wl = He({
             deselect: 'yes',
         },
     }),
-    Il = { base: 'Prestige_c70f8f74', vanity: 'Prestige_vanity_658350a8' };
-function Sl() {
-    return i.jsxs('div', {
-        className: Il.base,
+    hd = { base: 'Prestige_c70f8f74', vanity: 'Prestige_vanity_658350a8' };
+function md() {
+    return o.jsxs('div', {
+        className: hd.base,
         children: [
-            i.jsx('div', { className: Il.vanity, children: i.jsx(ct, {}) }),
-            i.jsx('div', { className: Il.progression, children: i.jsx(lt, {}) }),
+            o.jsx('div', { className: hd.vanity, children: o.jsx(ht, {}) }),
+            o.jsx('div', { className: hd.progression, children: o.jsx(mt, {}) }),
         ],
     });
 }
-const Tl = 'Progression_2e5f6a7',
-    Ml = 'Progression_entryPointLine_736c2a7d',
-    Pl = 'Progression_tree_cd53c03';
-function El() {
-    return i.jsxs('div', {
-        className: Tl,
+const ud = 'Progression_2e5f6a7',
+    _d = 'Progression_entryPointLine_736c2a7d',
+    pd = 'Progression_tree_cd53c03';
+function vd() {
+    return o.jsxs('div', {
+        className: ud,
         children: [
-            i.jsx('div', { className: Pl, children: i.jsx(dt, {}) }),
-            i.jsx('div', { className: Ml, children: i.jsx(ht, {}) }),
+            o.jsx('div', { className: pd, children: o.jsx(ut, {}) }),
+            o.jsx('div', { className: _d, children: o.jsx(_t, {}) }),
         ],
     });
 }
-const Al = 420,
-    Rl = 570;
-function Ol(e) {
-    return { duration: 'opacity' === e ? Al : Rl };
+const bd = 420,
+    xd = 570;
+function gd(e) {
+    return { duration: 'opacity' === e ? bd : xd };
 }
-const Bl = { config: { easing: We.easeInOutCirc } },
-    Ll = {
+const fd = { config: { easing: Xe.easeInOutCirc } },
+    Nd = {
         tree: {
             tree: {
                 from: { opacity: '0', transform: 'translate(-100%)' },
                 to: { opacity: '1', transform: 'translate(0%)' },
-                config: Ol,
+                config: gd,
             },
             prestige: {
                 from: { opacity: '1', transform: 'translate(0%)' },
                 to: { opacity: '0', transform: 'translate(100%)' },
-                config: Ol,
+                config: gd,
             },
         },
         prestige: {
             tree: {
                 from: { opacity: '1', transform: 'translate(0%)' },
                 to: { opacity: '0', transform: 'translate(-100%)' },
-                config: Ol,
+                config: gd,
             },
             prestige: {
                 from: { opacity: '0', transform: 'translate(100%)' },
                 to: { opacity: '1', transform: 'translate(0%)' },
-                config: Ol,
+                config: gd,
             },
         },
     },
-    Dl = {
+    jd = {
         root: 'VehSkillTree_root_cdb9d6e7',
         base: 'VehSkillTree_d74c4861',
         content: 'VehSkillTree_content_caf211e7',
@@ -4784,61 +4609,61 @@ const Bl = { config: { easing: We.easeInOutCirc } },
         prestigeEntryPoint: 'VehSkillTree_prestigeEntryPoint_6d89a066',
         prestigeEntryPointBg: 'VehSkillTree_prestigeEntryPointBg_5b6c912c',
     },
-    Vl = a(() => {
-        const { model: e } = mt(),
-            t = Ge(),
-            s = oe(),
-            a = Ue();
+    Cd = i(() => {
+        const { model: e } = pt(),
+            t = Ke(),
+            s = de(),
+            a = Ze();
         function r(e) {
-            (t.push(ta.vehSkillTree + `/${e}`),
+            (t.push(la.vehSkillTree + `/${e}`),
                 s.play('click', { target: 'changeScreen' }),
                 s.play('click', { target: 'select' }));
         }
-        const c = e.locationId.get(),
-            [d] = o(() => ({ from: Ll[c].tree.from, to: Ll[c].tree.to, initConfig: Bl, immediate: a }), [c, a]),
-            [h] = o(() => ({ from: Ll[c].prestige.from, to: Ll[c].prestige.to, initConfig: Bl, immediate: a }), [c, a]);
-        return i.jsx('div', {
-            className: n(Dl.base, Dl[`base__${c}`]),
-            children: i.jsxs('div', {
-                className: Dl.content,
+        const i = e.locationId.get(),
+            [n] = l(() => ({ from: Nd[i].tree.from, to: Nd[i].tree.to, initConfig: fd, immediate: a }), [i, a]),
+            [d] = l(() => ({ from: Nd[i].prestige.from, to: Nd[i].prestige.to, initConfig: fd, immediate: a }), [i, a]);
+        return o.jsx('div', {
+            className: c(jd.base, jd[`base__${i}`]),
+            children: o.jsxs('div', {
+                className: jd.content,
                 children: [
-                    i.jsxs(l.div, {
-                        className: Dl.progression,
-                        style: d,
+                    o.jsxs(h.div, {
+                        className: jd.progression,
+                        style: n,
                         children: [
-                            i.jsx(ut, {
-                                options: m.useMemo(() => ({ context: 'model.vehSkillTreeModel.tree' }), []),
-                                children: i.jsxs('div', {
-                                    className: Dl.progressionContent,
+                            o.jsx(vt, {
+                                options: _.useMemo(() => ({ context: 'model.vehSkillTreeModel.tree' }), []),
+                                children: o.jsxs('div', {
+                                    className: jd.progressionContent,
                                     children: [
-                                        i.jsx(El, {}),
-                                        i.jsx('div', {
-                                            className: Dl.progressionEntryPoint,
-                                            children: i.jsx(_t, { onClick: () => r('prestige') }),
+                                        o.jsx(vd, {}),
+                                        o.jsx('div', {
+                                            className: jd.progressionEntryPoint,
+                                            children: o.jsx(bt, { onClick: () => r('prestige') }),
                                         }),
                                     ],
                                 }),
                             }),
-                            i.jsx(pt, {
-                                options: m.useMemo(() => ({ context: 'model.vehSkillTreeModel.tree' }), []),
-                                children: i.jsx(vt, {}),
+                            o.jsx(xt, {
+                                options: _.useMemo(() => ({ context: 'model.vehSkillTreeModel.tree' }), []),
+                                children: o.jsx(gt, {}),
                             }),
                         ],
                     }),
-                    i.jsx(bt, {
-                        options: m.useMemo(() => ({ context: 'model.vehSkillTreeModel.prestige' }), []),
-                        children: i.jsxs(l.div, {
-                            className: Dl.prestigeContent,
-                            style: h,
+                    o.jsx(ft, {
+                        options: _.useMemo(() => ({ context: 'model.vehSkillTreeModel.prestige' }), []),
+                        children: o.jsxs(h.div, {
+                            className: jd.prestigeContent,
+                            style: d,
                             children: [
-                                i.jsxs('div', {
-                                    className: Dl.prestigeEntryPoint,
+                                o.jsxs('div', {
+                                    className: jd.prestigeEntryPoint,
                                     children: [
-                                        i.jsx('div', { className: Dl.prestigeEntryPointBg }),
-                                        i.jsx(_t, { onClick: () => r('tree'), vanity: !0 }),
+                                        o.jsx('div', { className: jd.prestigeEntryPointBg }),
+                                        o.jsx(bt, { onClick: () => r('tree'), vanity: !0 }),
                                     ],
                                 }),
-                                i.jsx(Sl, {}),
+                                o.jsx(md, {}),
                             ],
                         }),
                     }),
@@ -4846,13 +4671,13 @@ const Bl = { config: { easing: We.easeInOutCirc } },
             }),
         });
     });
-function $l() {
-    return i.jsx(xt, {
+function yd() {
+    return o.jsx(Nt, {
         options: { context: 'model.vehSkillTreeModel' },
-        children: i.jsx(ge, { overrides: wl, children: i.jsx(Vl, {}) }),
+        children: o.jsx(je, { overrides: dd, children: o.jsx(Cd, {}) }),
     });
 }
-const zl = {
+const kd = {
         root: 'Page_root_fefb19c8',
         base: 'Page_7668a217',
         base__stats: 'Page_base__stats_822895b4',
@@ -4864,96 +4689,90 @@ const zl = {
         vehicleInfo: 'Page_vehicleInfo_92516112',
         researchPurchaseControl: 'Page_researchPurchaseControl_471abc56',
     },
-    Fl = [Js, 'modules', 'vehSkillTree'],
-    Hl = { context: 'model.comparisonModel' },
-    Wl = { context: 'model.researchPurchaseModel' },
-    Gl = a(function () {
-        var e;
-        const { model: t } = ea(),
-            s = Ge(),
-            a = (null == (e = Xe(s.location, { paths: [`${ta.root}/:tab`] })) ? void 0 : e.params.tab) ?? Js,
-            o = r.useCallback(
-                (e) => {
-                    t.menuItems.get().findIndex((t) => t.id === e) > -1 && s.push(`${ta.root}/${e}`);
+    wd = [ia, 'modules', 'vehSkillTree'],
+    Id = { context: 'model.comparisonModel' },
+    Sd = { context: 'model.researchPurchaseModel' },
+    Td = i(function () {
+        const { model: e } = ca(),
+            t = Ke(),
+            s = Ye(t.location, { paths: [`${la.root}/:tab`] })?.params.tab ?? ia,
+            a = n.useCallback(
+                (s) => {
+                    e.menuItems.get().findIndex((e) => e.id === s) > -1 && t.push(`${la.root}/${s}`);
                 },
-                [t.menuItems, s],
+                [e.menuItems, t],
             ),
-            { tabsAdaptive: c } = j(
-                { tabsAdaptive: Qe.small },
-                { medium: { tabsAdaptive: Qe.medium }, large: { tabsAdaptive: Qe.large } },
+            { tabsAdaptive: r } = k(
+                { tabsAdaptive: st.small },
+                { medium: { tabsAdaptive: st.medium }, large: { tabsAdaptive: st.large } },
             );
         return (
-            Ke(et.ESCAPE, () => {
-                s.goBack();
+            qe(at.ESCAPE, () => {
+                t.goBack();
             }),
-            Ke(et.ARROW_RIGHT, () => {
-                var e;
-                const s = t.menuItems.get().findIndex((e) => e.id === a),
-                    r =
-                        s > -1 &&
-                        s + 1 < t.menuItems.get().length &&
-                        (null == (e = t.menuItems.get()[s + 1]) ? void 0 : e.id);
-                r && o(r);
+            qe(at.ARROW_RIGHT, () => {
+                const t = e.menuItems.get().findIndex((e) => e.id === s),
+                    r = t > -1 && t + 1 < e.menuItems.get().length && e.menuItems.get()[t + 1]?.id;
+                r && a(r);
             }),
-            Ke(et.ARROW_LEFT, () => {
-                var e;
-                const s = t.menuItems.get().findIndex((e) => e.id === a),
-                    r = s > 0 && (null == (e = t.menuItems.get()[s - 1]) ? void 0 : e.id);
-                r && o(r);
+            qe(at.ARROW_LEFT, () => {
+                const t = e.menuItems.get().findIndex((e) => e.id === s),
+                    r = t > 0 && e.menuItems.get()[t - 1]?.id;
+                r && a(r);
             }),
-            r.useLayoutEffect(() => {
-                Ze(!0);
+            n.useLayoutEffect(() => {
+                Je(!0);
             }),
-            i.jsx('div', {
-                className: n(zl.base, zl[`base__${a}`]),
-                children: i.jsxs('div', {
-                    className: zl.content,
+            o.jsx('div', {
+                className: c(kd.base, kd[`base__${s}`]),
+                children: o.jsxs('div', {
+                    className: kd.content,
                     children: [
-                        i.jsxs('div', {
-                            className: zl.screenContent,
+                        o.jsxs('div', {
+                            className: kd.screenContent,
                             children: [
-                                i.jsx(Ss, {
-                                    tabsList: t.menuItems.get(),
-                                    activeTab: a,
-                                    onActiveChange: o,
-                                    theme: Ye.primary,
-                                    size: c,
-                                    className: zl.tabNavigation,
+                                o.jsx(Ls, {
+                                    tabsList: e.menuItems.get(),
+                                    activeTab: s,
+                                    onActiveChange: a,
+                                    theme: Qe.primary,
+                                    size: r,
+                                    className: kd.tabNavigation,
                                 }),
-                                i.jsxs(Je, {
+                                o.jsxs(et, {
                                     children: [
-                                        i.jsx(qe, { path: ta.overview, component: Dc }),
-                                        i.jsx(qe, { path: ta.modules, component: vo }),
-                                        i.jsx(qe, { path: ta.stats, component: kl }),
-                                        i.jsx(qe, { path: ta.armor, component: bi }),
-                                        i.jsx(qe, { path: ta.vehSkillTree, component: $l }),
+                                        o.jsx(tt, { path: la.overview, component: cl }),
+                                        o.jsx(tt, { path: la.modules, component: So }),
+                                        o.jsx(tt, { path: la.stats, component: ld }),
+                                        o.jsx(tt, { path: la.armor, component: Ti }),
+                                        o.jsx(tt, { path: la.vehSkillTree, component: yd }),
                                     ],
                                 }),
                             ],
                         }),
-                        i.jsx(Et, { options: Hl, children: i.jsx(Ys, { className: zl.vehicleInfo }) }),
-                        Fl.includes(a) &&
-                            i.jsx(Mt, { options: Wl, children: i.jsx(fs, { className: zl.researchPurchaseControl }) }),
+                        o.jsx(Bt, { options: Id, children: o.jsx(ra, { className: kd.vehicleInfo }) }),
+                        wd.includes(s) &&
+                            o.jsx(Ot, { options: Sd, children: o.jsx(ks, { className: kd.researchPurchaseControl }) }),
                     ],
                 }),
             })
         );
     }),
-    Ul = 'App_fac56ab6';
-function Xl() {
-    return i.jsx('div', { className: Ul, children: i.jsx(Gl, {}) });
+    Md = 'App_fac56ab6';
+function Pd() {
+    return o.jsx('div', { className: Md, children: o.jsx(Td, {}) });
 }
-const Kl = x.resolve('aliases'),
-    Zl = { 'mouse-enter': rt('highlightx'), click: rt('tabs') };
-it(
-    new tt()
-        .add(st)
-        .addWithProps(at, { context: 'model.router' })
-        .addWithProps(Nt, { options: { context: 'model.vehicleInfoModel' } })
-        .addWithProps(Ct, { options: { rootId: Kl.read((e) => e.vehicle_hub.default.VehicleParams('resId')) } })
-        .addWithProps(gt, { options: { rootId: Kl.read((e) => e.vehicle_hub.default.Wallet('resId')) } })
-        .addWithProps(ge, { overrides: Zl })
-        .add(Qs)
-        .render(i.jsx(Xl, {})),
+const Ed = N.resolve('aliases'),
+    Ad = { 'mouse-enter': ot('highlightx'), click: ot('tabs') };
+ct(
+    new rt()
+        .add(it)
+        .addWithProps(nt, { context: 'model.router' })
+        .addWithProps(yt, { options: { context: 'model.vehicleInfoModel' } })
+        .addWithProps(Tt, { options: { rootId: Ed.read((e) => e.vehicle_hub.default.VehicleParams('resId')) } })
+        .addWithProps(jt, { options: { rootId: Ed.read((e) => e.vehicle_hub.default.Wallet('resId')) } })
+        .addWithProps(je, { overrides: Ad })
+        .add(oa)
+        .render(o.jsx(Pd, {})),
     { fullScreen: !0 },
-).then(() => Ze(!1));
+).then(() => Je(!1));

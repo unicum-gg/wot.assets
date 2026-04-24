@@ -1,20 +1,20 @@
-import { j as e, w as s, x as a, r } from '../../../chunks/vendor.js';
+import { j as e, C as s, D as a, r } from '../../../chunks/vendor.js';
 import {
     M as t,
     B as i,
     i as n,
     F as o,
-    cY as l,
-    cZ as d,
+    d1 as l,
+    d2 as d,
     p as _,
-    bv as c,
-    a6 as u,
-    c_ as m,
-    ba as h,
-    aq as b,
+    b6 as c,
+    a7 as u,
+    d3 as m,
+    aG as h,
+    as as b,
     b as g,
     u as p,
-    c$ as f,
+    d4 as f,
     r as w,
     U as x,
 } from '../../../chunks/lib.js';
@@ -28,8 +28,8 @@ import { g as N } from '../../../chunks/get_roman_levels.js';
     ),
     I = 'CountDownSubheading_3410a94d',
     D = 'CountDownSubheading_highlight_4e42571e',
-    $ = 'CountDownSubheading_timeLeftText_83a0f10d',
-    C = 'CountDownSubheading_countDownContainer_95936a62',
+    C = 'CountDownSubheading_timeLeftText_83a0f10d',
+    $ = 'CountDownSubheading_countDownContainer_95936a62',
     L = 'CountDownSubheading_countDownText_c438ad0f',
     T = 'CountDownSubheading_timer_dfa1cd55',
     M = ({ timeLeft: a, className: r }) =>
@@ -39,7 +39,7 @@ import { g as N } from '../../../chunks/get_roman_levels.js';
                 text: R.strings.comp7_light.countDown.text(),
                 binding: {
                     timeLeft: e.jsxs('div', {
-                        className: C,
+                        className: $,
                         children: [
                             e.jsx('div', { className: D }),
                             e.jsx('div', { className: T }),
@@ -47,7 +47,7 @@ import { g as N } from '../../../chunks/get_roman_levels.js';
                         ],
                     }),
                 },
-                classMix: $,
+                classMix: C,
             }),
         }),
     z = { countDown: 'IntroSubheading_countDown_674b18af' },
@@ -105,11 +105,11 @@ function U({
     onMouseEnter: l,
     ...d
 }) {
-    const c = s(O.layer, null == o ? void 0 : o.layer);
+    const c = s(O.layer, o?.layer);
     return e.jsx('div', {
         className: s(O.base, O[`base__${r}`], O[`base__${a}`], t && O.base__disabled, n),
         onMouseEnter: (e) => {
-            (null == l || l(e), _.sound(i));
+            (l?.(e), _.sound(i));
         },
         ...d,
         children: e.jsx('div', {
@@ -127,30 +127,30 @@ function U({
         }),
     });
 }
-const H = 'Slide_680b9fee',
-    F = 'Slide_title_442d6e94',
-    G = 'Slide_icon_2921c32',
+const G = 'Slide_680b9fee',
+    H = 'Slide_title_442d6e94',
+    F = 'Slide_icon_2921c32',
     Q = 'Slide_description_a6104f8',
     q = R.strings.comp7_light.intro,
-    Y = a(({ id: s }) => {
+    J = a(({ id: s }) => {
         const { model: a } = k(),
             r = `url(${R.images.comp7_light.gui.maps.icons.metaIntro.$dyn(s)})`,
             t = N(a.vehicleLevels.get(), R.strings.comp7_light.listSeparator());
         return e.jsxs('div', {
-            className: H,
+            className: G,
             children: [
-                e.jsx(o, { text: `${q.title.$dyn(s)}`, classMix: F }),
-                e.jsx('div', { className: G, style: { backgroundImage: r } }),
+                e.jsx(o, { text: `${q.title.$dyn(s)}`, classMix: H }),
+                e.jsx('div', { className: F, style: { backgroundImage: r } }),
                 e.jsx(o, { text: `${q.description.$dyn(s)}`, binding: { levels: t }, classMix: Q }),
             ],
         });
     }),
-    Z = 'Slider_caaf79d4',
-    J = 'Slider_trackWrapper_9b67f47e',
-    K = 'Slider_track_e521f890',
-    P = 'Slider_track__withoutTransition_df13aef3',
-    V = 'Slider_slide_727efd4',
-    X = 'Slider_slide__active_b616c59f',
+    K = 'Slider_caaf79d4',
+    P = 'Slider_trackWrapper_9b67f47e',
+    V = 'Slider_track_e521f890',
+    X = 'Slider_track__withoutTransition_df13aef3',
+    Y = 'Slider_slide_727efd4',
+    Z = 'Slider_slide__active_b616c59f',
     ee = 'Slider_arrow_4c311c25',
     se = 'Slider_arrow__left_5cd6617d',
     ae = 'Slider_arrow__right_5676bbb7',
@@ -192,24 +192,24 @@ const H = 'Slide_680b9fee',
             h(b.ARROW_LEFT, _),
             h(b.ARROW_RIGHT, g),
             e.jsxs('div', {
-                className: s(Z, a),
+                className: s(K, a),
                 style: { '--currentSlideIndex': t, '--transitionDuration': '500ms' },
                 children: [
                     e.jsx(U, { size: 'medium', direction: 'left', disabled: l, className: s(ee, se), onClick: _ }),
                     e.jsx(U, { size: 'medium', direction: 'right', disabled: d, className: s(ee, ae), onClick: g }),
                     e.jsxs('div', {
-                        className: J,
+                        className: P,
                         children: [
                             e.jsxs('div', {
                                 className: re,
                                 children: [t + 1, e.jsx('div', { className: te, children: '/' }), ne],
                             }),
                             e.jsx('div', {
-                                className: s(K, n && P),
+                                className: s(V, n && X),
                                 children: ie.map((a, r) =>
                                     e.jsx(
                                         'div',
-                                        { className: s(V, r === t && X), children: e.jsx(Y, { id: a }) },
+                                        { className: s(Y, r === t && Z), children: e.jsx(J, { id: a }) },
                                         `slide-${r}`,
                                     ),
                                 ),

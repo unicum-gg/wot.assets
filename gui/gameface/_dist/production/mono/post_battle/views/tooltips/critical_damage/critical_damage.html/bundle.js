@@ -1,5 +1,5 @@
-import { j as e, e as s, F as t } from '../../../../chunks/vendor.js';
-import { F as a, w as i, i as r, c, x as l, C as o, I as n, aM as d, a as m } from '../../../../chunks/lib.js';
+import { j as e, e as s, J as t } from '../../../../chunks/vendor.js';
+import { F as a, w as i, i as r, c, x as l, C as o, I as n, aN as d, a as m } from '../../../../chunks/lib.js';
 /* empty css                       */ const h = 'Content_6fb69530';
 function u({ className: t }) {
     return e.jsx('div', {
@@ -44,7 +44,7 @@ const [_, v] = r()(({ observableModel: e, cleanup: s }) => {
     N = 'Footer_items_ba6fe6b4',
     D = 'Footer_row_85f76f88',
     k = 'Footer_icon_5fdf9d06';
-function F({ titlePath: s, list: t, iconSuffix: r, localizationTemplate: c }) {
+function w({ titlePath: s, list: t, iconSuffix: r, localizationTemplate: c }) {
     return e.jsxs('div', {
         className: g,
         children: [
@@ -73,28 +73,28 @@ function F({ titlePath: s, list: t, iconSuffix: r, localizationTemplate: c }) {
         ],
     });
 }
-const w = t(function ({ className: t }) {
+const F = t(function ({ className: t }) {
         const { model: a } = v(),
             i = a.computes.groupedDetails();
         return e.jsxs('div', {
             className: s(b, t),
             children: [
                 i.criticalDevices.length > 0 &&
-                    e.jsx(F, {
+                    e.jsx(w, {
                         titlePath: 'critDamage',
                         list: i.criticalDevices,
                         iconSuffix: 'CriticalSmall',
                         localizationTemplate: 'item_types.{value}.name',
                     }),
                 i.destroyedDevices.length > 0 &&
-                    e.jsx(F, {
+                    e.jsx(w, {
                         titlePath: 'critDestruction',
                         list: i.destroyedDevices,
                         iconSuffix: 'DestroyedSmall',
                         localizationTemplate: 'item_types.{value}.name',
                     }),
                 i.destroyedTankmen.length > 0 &&
-                    e.jsx(F, {
+                    e.jsx(w, {
                         titlePath: 'critWound',
                         list: i.destroyedTankmen,
                         iconSuffix: 'DestroyedSmall',
@@ -139,13 +139,13 @@ const A = 'App_48b0ea08',
                     e.jsxs(e.Fragment, {
                         children: [
                             e.jsx(n, { width: '100%', height: '9rem', path: 'library.efficiency.divider' }),
-                            e.jsx(w, { className: H }),
+                            e.jsx(F, { className: H }),
                         ],
                     }),
             ],
         });
     });
-function M() {
+function W() {
     return e.jsx(_, { children: e.jsx(d, { children: e.jsx(d.Decorator, { children: e.jsx($, {}) }) }) });
 }
-m(e.jsx(M, {}));
+m(e.jsx(W, {}));

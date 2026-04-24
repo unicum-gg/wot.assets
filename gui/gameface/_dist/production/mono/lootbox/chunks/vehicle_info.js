@@ -2,18 +2,18 @@ import { j as e, e as s } from './vendor.js';
 import { ad as a, ak as i } from './lib.js';
 const l = 'VehicleInfo_7e31903c',
     c = 'VehicleInfo_type_9875a6cb';
-function o({ vehicleLvl: o, vehicleName: n, vehicleType: r, isElite: m, classNames: t }) {
+function o({ vehicleLvl: o, vehicleName: r, vehicleType: m, isElite: n, classNames: t }) {
     return e.jsxs('div', {
-        className: s(l, null == t ? void 0 : t.base),
+        className: s(l, t?.base),
         children: [
             a(o),
             e.jsx('div', {
-                className: s(c, null == t ? void 0 : t.type),
+                className: s(c, t?.type),
                 style: {
-                    backgroundImage: `url(${R.images.gui.maps.icons.vehicleTypes.large.$dyn(`${i(r)}${m ? '_elite' : ''}`)})`,
+                    backgroundImage: `url(${R.images.gui.maps.icons.vehicleTypes.large.$dyn(`${i(m)}${n ? '_elite' : ''}`)})`,
                 },
             }),
-            n,
+            r,
         ],
     });
 }

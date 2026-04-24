@@ -1,10 +1,10 @@
 import { j as e, f as s } from './vendor.js';
-import { d as i, F as r, ci as t, T as a } from './lib.js';
+import { e as i, F as r, cl as t, T as a } from './lib.js';
 const o = 'Divider_7a72bfaf',
     d = 'Divider_1eaf72bd',
     c = ({ className: i }) => e.jsx('div', { className: s(o, i), children: e.jsx('div', { className: d }) }),
-    n = 'ExtendedTooltipDecorator_312a767e',
-    l = 'ExtendedTooltipDecorator_header_37374fa6',
+    l = 'ExtendedTooltipDecorator_312a767e',
+    n = 'ExtendedTooltipDecorator_header_37374fa6',
     x = 'ExtendedTooltipDecorator_base__invertedColors_d4c2e366',
     m = 'ExtendedTooltipDecorator_description_edb17499',
     _ = 'ExtendedTooltipDecorator_timerBlock_7b7647e1',
@@ -22,9 +22,9 @@ function p({
     return e.jsx(i, {
         children: e.jsx(i.Decorator, {
             children: e.jsxs('div', {
-                className: s(n, f && x, T),
+                className: s(l, f && x, T),
                 children: [
-                    o && e.jsx(r, { text: o, classMix: l }),
+                    o && e.jsx(r, { text: o, classMix: n }),
                     e.jsx(t, { text: d, binding: p, classMix: m }),
                     b,
                     v > 0 &&

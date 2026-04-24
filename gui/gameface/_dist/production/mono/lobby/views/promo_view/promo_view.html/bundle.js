@@ -1,150 +1,135 @@
-import { r as e, p as s, j as a, m as t, q as o, s as r } from '../../../chunks/vendor.js';
+import { r as e, u as s, j as a, E as t, t as o, D as r } from '../../../chunks/vendor.js';
 import {
     i,
-    at as n,
-    _ as c,
-    a3 as d,
-    p as l,
-    a8 as m,
-    u as h,
-    k as p,
-    ah as _,
-    ag as u,
-    Y as f,
-    E as g,
-    aP as b,
-    aQ as v,
-    aR as y,
-    A as j,
-    C,
-    B as x,
-    J as A,
-    af as N,
-    P as E,
+    co as n,
+    p as c,
+    d2 as d,
+    G as l,
+    J as h,
+    O as m,
+    N as p,
+    C as u,
+    E as _,
+    A as f,
+    d9 as g,
+    da as b,
+    db as j,
+    B as v,
+    K as C,
+    r as x,
+    U as y,
 } from '../../../chunks/lib.js';
-import { S as P } from '../../../chunks/spring_wrapper.js';
-import { j as w, k as D } from '../../../chunks/sound.js';
-const [S, T] = i()(
+import { S as A } from '../../../chunks/spring_wrapper.js';
+import { i as N, j as E } from '../../../chunks/sound.js';
+const [D, P] = i()(
         ({ observableModel: e }) => ({ root: e.object() }),
         ({ externalModel: e }) => ({ close: e.createCallbackNoArgs('onClose') }),
     ),
-    k = 1920,
-    W = 1080,
-    B = k / W,
-    H = { width: 300, height: 150 },
-    L = { y: 0, opacity: 1 };
-var U = ((e) => ((e.HEADER = 'header'), (e.SUBHEADER = 'subheader'), (e.BUTTON = 'button'), e))(U || {});
-const $ = 1e3,
-    M = {
-        header: { from: { y: -10, opacity: 0 }, to: L, delay: $, duration: 500 },
-        subheader: { from: { y: -10, opacity: 0 }, to: L, delay: 1150, duration: 500 },
-        button: { from: { y: -10, opacity: 0 }, to: L, delay: 1450, duration: 1e3 },
+    w = 1920,
+    S = 1080,
+    T = w / S,
+    W = { width: 300, height: 150 },
+    B = { y: 0, opacity: 1 };
+var k = ((e) => ((e.HEADER = 'header'), (e.SUBHEADER = 'subheader'), (e.BUTTON = 'button'), e))(k || {});
+const H = 1e3,
+    U = {
+        header: { from: { y: -10, opacity: 0 }, to: B, delay: H, duration: 500 },
+        subheader: { from: { y: -10, opacity: 0 }, to: B, delay: 1150, duration: 500 },
+        button: { from: { y: -10, opacity: 0 }, to: B, delay: 1450, duration: 1e3 },
     },
-    O = 'ContainerAnimation_dc99b0bc',
-    q = 'ContainerAnimation_content_9f9d6eae',
-    z = 'ContainerAnimation_img_89f111a1',
-    J = 'ContainerAnimation_videoLoop_906f1a50',
-    Q = 'ContainerAnimation_frame_d123d03b',
-    Y = 'ContainerAnimation_base__started_448f44b3',
-    F = (e) => (e < 0.5 ? 4 * e * e * e : (e - 1) * (2 * e - 2) * (2 * e - 2) + 1),
-    G = (e, s, a, t) => (a ? t.width / e : t.height / s),
-    I = e.memo(function ({
+    $ = 'ContainerAnimation_dc99b0bc',
+    L = 'ContainerAnimation_content_9f9d6eae',
+    M = 'ContainerAnimation_img_89f111a1',
+    O = 'ContainerAnimation_frame_d123d03b',
+    z = 'ContainerAnimation_base__started_448f44b3',
+    G = (e) => (e < 0.5 ? 4 * e * e * e : (e - 1) * (2 * e - 2) * (2 * e - 2) + 1),
+    J = (e, s, a, t) => (a ? t.width / e : t.height / s),
+    K = e.memo(function ({
         isStarted: r,
         scaleCover: i,
-        screenWidth: d,
-        screenHeight: l,
-        scaleState: m,
-        isCoverWidth: h,
-        className: p,
+        screenWidth: n,
+        screenHeight: c,
+        scaleState: d,
+        isCoverWidth: l,
+        className: h,
     }) {
-        const _ = e.useRef(null),
-            [u, f] = s(() => ({ transform: `scale(${i})`, x: 0, y: 0, opacity: 1 }));
+        const m = e.useRef(null),
+            [p, u] = s(() => ({ transform: `scale(${i})`, x: 0, y: 0, opacity: 1 }));
         return (
             e.useEffect(() => {
                 r &&
-                    f.start({
+                    u.start({
                         to: [
                             {
-                                transform: `scale(${G(d, l, h, { width: l * B * 0.6, height: (d / B) * 0.6 })})`,
+                                transform: `scale(${J(n, c, l, { width: c * T * 0.6, height: (n / T) * 0.6 })})`,
                                 x: 0,
                                 y: 0,
                                 opacity: 1,
                                 config: { duration: 800 },
                             },
                             {
-                                transform: `scale(${G(d, l, h, H)})})`,
-                                x: ((d / 2 - 200) / i) * m,
-                                y: ((-l / 2 + 180) / i) * m,
+                                transform: `scale(${J(n, c, l, W)})})`,
+                                x: ((n / 2 - 200) / i) * d,
+                                y: ((-c / 2 + 180) / i) * d,
                                 opacity: 0,
                                 config: { duration: 1e3 },
                             },
                         ],
-                        config: { easing: F },
+                        config: { easing: G },
                     });
-            }, [f, h, r, m, l, i, d]),
+            }, [u, l, r, d, c, i, n]),
             e.useEffect(() => {
-                const e = _.current;
+                const e = m.current;
                 e && (r ? e.pause() : e.play());
             }, [r]),
             a.jsx('div', {
-                className: t(O, r && Y, p),
+                className: t($, r && z, h),
                 children: a.jsxs(o.div, {
-                    className: q,
-                    style: u,
-                    children: [
-                        n.isLow()
-                            ? a.jsx('div', { className: z })
-                            : a.jsx(c, {
-                                  ref: _,
-                                  src: R.videos.last_stand.promo_loop(),
-                                  className: J,
-                                  loop: !0,
-                                  autoplay: !0,
-                              }),
-                        a.jsx('div', { className: Q }),
-                    ],
+                    className: L,
+                    style: p,
+                    children: [a.jsx('div', { className: M }), a.jsx('div', { className: O })],
                 }),
             })
         );
     }),
-    K = 'PromoApp_6e17783a',
-    V = 'PromoApp_container_c21d069a',
-    X = 'PromoApp_vignetteBg_3b32fdde',
-    Z = 'PromoApp_header_72d498f',
-    ee = 'PromoApp_base__started_a4fe4c39',
-    se = 'PromoApp_subheader_5a122f8',
-    ae = 'PromoApp_gradient_5d52cdb6',
-    te = 'PromoApp_bottomContainer_8e2a2910',
-    oe = 'PromoApp_topContainer_609c5a3b',
-    re = 'PromoApp_btn_12a9cd9',
-    ie = 'PromoApp_closeBtn_501b9d40',
-    ne = R.strings.last_stand_lobby.promoWindow,
-    ce = r(() => {
-        const { model: s, controls: o } = T(),
-            { startDate: r, endDate: i, regularArtefactsLength: n } = s.root.get(),
-            [c, E] = e.useState(!1),
-            S = d(),
-            H = () => {
-                E(!0);
+    q = 'PromoApp_6e17783a',
+    F = 'PromoApp_container_c21d069a',
+    I = 'PromoApp_vignetteBg_3b32fdde',
+    Q = 'PromoApp_header_70c24a9c',
+    V = 'PromoApp_base__started_a4fe4c39',
+    X = 'PromoApp_subheader_e22f84af',
+    Y = 'PromoApp_gradient_5d52cdb6',
+    Z = 'PromoApp_bottomContainer_8e2a2910',
+    ee = 'PromoApp_topContainer_609c5a3b',
+    se = 'PromoApp_btn_aecf72bb',
+    ae = 'PromoApp_closeBtn_dec55232',
+    te = R.strings.last_stand_lobby.promoWindow,
+    oe = r(function () {
+        const { model: s, controls: o } = P(),
+            { startDate: r, endDate: i, regularArtefactsLength: x } = s.root.get(),
+            [y, D] = e.useState(!1),
+            W = n(),
+            B = () => {
+                D(!0);
             };
         (e.useEffect(() => {
-            if (c) {
-                l.sound(w);
+            if (y) {
+                c.sound(N);
                 const e = setTimeout(o.close, 1800);
                 return () => clearTimeout(e);
             }
-        }, [o.close, c]),
-            m(H),
-            h(p.ENTER, H));
-        const [L, $] = e.useState({ width: 0, height: 0, scaleCover: 1, isCoverWidth: !1 }),
-            O = () => {
-                const e = N('rem');
+        }, [o.close, y]),
+            d(B),
+            l(h.ENTER, B));
+        const [H, $] = e.useState({ width: 0, height: 0, scaleCover: 1, isCoverWidth: !1 }),
+            L = () => {
+                const e = C('rem');
                 $(
                     ((e, s) => {
                         let a = 1,
                             t = !1;
                         return (
-                            e >= s * B ? ((a = e / k), (t = !0)) : s >= e / B && ((a = s / W), (t = !1)),
+                            e >= s * T ? ((a = e / w), (t = !0)) : s >= e / T && ((a = s / S), (t = !1)),
                             { width: e, height: s, scaleCover: a, isCoverWidth: t }
                         );
                     })(e.width, e.height),
@@ -152,67 +137,61 @@ const $ = 1e3,
             };
         return (
             e.useEffect(() => {
-                (l.sound(D), O(), _(O), u(O));
+                (c.sound(E), L(), m(L), p(L));
             }, []),
             a.jsxs('div', {
-                className: t(K, c && ee),
+                className: t(q, y && V),
                 children: [
-                    a.jsx(f, {
-                        classNames: { base: ie },
-                        caption: R.strings.last_stand_lobby.common.close(),
-                        type: 'close',
-                        side: 'right',
-                        onClick: H,
-                    }),
+                    a.jsx(u, { className: ae, onClose: B }),
                     a.jsx('div', {
-                        className: V,
-                        style: { width: k * S, height: W * S, transform: `scale(${L.scaleCover})` },
-                        children: a.jsx(I, {
-                            isStarted: c,
-                            scaleCover: L.scaleCover,
-                            screenHeight: L.height,
-                            screenWidth: L.width,
-                            scaleState: S,
-                            isCoverWidth: L.isCoverWidth,
+                        className: F,
+                        style: { width: w * W, height: S * W, transform: `scale(${H.scaleCover})` },
+                        children: a.jsx(K, {
+                            isStarted: y,
+                            scaleCover: H.scaleCover,
+                            screenHeight: H.height,
+                            screenWidth: H.width,
+                            scaleState: W,
+                            isCoverWidth: H.isCoverWidth,
                         }),
                     }),
-                    a.jsx('div', { className: X }),
-                    a.jsx('div', { className: ae }),
-                    a.jsx(P, {
-                        className: oe,
-                        ...M[U.HEADER],
-                        children: a.jsx('div', { className: Z, children: ne.header() }),
+                    a.jsx('div', { className: I }),
+                    a.jsx('div', { className: Y }),
+                    a.jsx(A, {
+                        className: ee,
+                        ...U[k.HEADER],
+                        children: a.jsx('div', { className: Q, children: te.header() }),
                     }),
-                    a.jsx(P, {
-                        className: oe,
-                        ...M[U.SUBHEADER],
-                        children: a.jsx(g, {
-                            classMix: se,
-                            text: ne.subheader(),
+                    a.jsx(A, {
+                        className: ee,
+                        ...U[k.SUBHEADER],
+                        children: a.jsx(_, {
+                            classMix: X,
+                            text: te.subheader(),
                             binding: {
-                                dateRange: a.jsx(b, {
+                                dateRange: a.jsx(g, {
                                     start: r,
                                     end: i,
-                                    rangeType: v.DateShort,
-                                    rangeDividerType: y.DashDivider,
+                                    rangeType: j.DateShort,
+                                    rangeDividerType: b.DashDivider,
                                     isConvertedToLocal: !0,
                                 }),
-                                regularArtefactsLength: n,
+                                regularArtefactsLength: x,
                             },
-                            alignContent: j.Center,
-                            justifyContent: j.Center,
+                            alignContent: f.Center,
+                            justifyContent: f.Center,
                         }),
                     }),
-                    a.jsx(P, {
-                        className: te,
-                        ...M[U.BUTTON],
+                    a.jsx(A, {
+                        className: Z,
+                        ...U[k.BUTTON],
                         children: a.jsx('div', {
-                            className: re,
-                            children: a.jsx(C, {
-                                type: x.primary,
-                                size: A.medium,
-                                onClick: H,
-                                children: R.strings.last_stand_lobby.promoWindow.btn(),
+                            className: se,
+                            children: a.jsx(v, {
+                                theme: v.themes.primary,
+                                size: v.sizes.large,
+                                onClick: B,
+                                children: R.strings.last_stand_lobby.common.yes(),
                             }),
                         }),
                     }),
@@ -220,4 +199,4 @@ const $ = 1e3,
             })
         );
     });
-E(a.jsx(S, { children: a.jsx(ce, {}) }));
+x(a.jsx(y, { children: a.jsx(D, { children: a.jsx(oe, {}) }) }));

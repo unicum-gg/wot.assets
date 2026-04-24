@@ -1,9 +1,9 @@
-import { t as s, j as t } from '../../../../chunks/vendor.js';
-import { i as n, N as e, e as i, b_ as a, J as o, U as c, j as d } from '../../../../chunks/lib.js';
+import { v as s, j as t } from '../../../../chunks/vendor.js';
+import { i as n, N as e, n as i, bY as a, J as o, U as d, d as c } from '../../../../chunks/lib.js';
 const [r, l] = n()(({ observableModel: s }) => ({ ...s.primitives(['count', 'days']) }), e),
     x = 'Content_471ad094',
-    _ = 'Content_separator_5b0d3262',
-    h = 'Content_title_57e98533',
+    h = 'Content_separator_5b0d3262',
+    _ = 'Content_title_57e98533',
     j = 'Content_text_b5cdd4f5',
     g = 'Content_currency_e361fc69',
     p = 'Content_icon_67289c16',
@@ -11,12 +11,12 @@ const [r, l] = n()(({ observableModel: s }) => ({ ...s.primitives(['count', 'day
     b = 'Content_description_1ae2425a',
     u = 'Content_highlight_38dca14b',
     C = R.strings.battle_pass.tooltips.goldMission,
-    N = s(() => {
+    v = s(() => {
         const { model: s } = l();
         return t.jsxs('div', {
             className: x,
             children: [
-                t.jsx('div', { className: h, children: C.title() }),
+                t.jsx('div', { className: _, children: C.title() }),
                 t.jsx(i, {
                     classMix: j,
                     text: C.text(),
@@ -26,7 +26,7 @@ const [r, l] = n()(({ observableModel: s }) => ({ ...s.primitives(['count', 'day
                         duration: t.jsx(i, { classMix: m, text: C.textDuration(), binding: { days: s.days.get() } }),
                     },
                 }),
-                t.jsx('div', { className: _ }),
+                t.jsx('div', { className: h }),
                 t.jsx(i, {
                     classMix: b,
                     text: C.description(),
@@ -35,5 +35,5 @@ const [r, l] = n()(({ observableModel: s }) => ({ ...s.primitives(['count', 'day
             ],
         });
     }),
-    f = () => t.jsx(a, { children: t.jsx(a.Decorator, { children: t.jsx(N, {}) }) });
-d(new o().add(c).addWithProps(r, {}).render(t.jsx(f, {})));
+    N = () => t.jsx(a, { children: t.jsx(a.Decorator, { children: t.jsx(v, {}) }) });
+c(new o().add(d).addWithProps(r, {}).render(t.jsx(N, {})));

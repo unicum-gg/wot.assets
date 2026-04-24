@@ -1,5 +1,5 @@
-import { f as e, j as a, t as r } from '../../../../chunks/vendor.js';
-import { bq as _, bU as s, i as n, N as d, m as c, b_ as t, J as l, U as i, j as o } from '../../../../chunks/lib.js';
+import { f as e, j as a, v as r } from '../../../../chunks/vendor.js';
+import { bo as _, bS as s, i as d, N as n, m as c, bY as t, J as l, U as i, d as o } from '../../../../chunks/lib.js';
 const u = {
         root: 'CurrencyReward_root_798b3220',
         base: 'CurrencyReward_1a2de39e',
@@ -24,22 +24,22 @@ const u = {
         fadeOut: 'CurrencyReward_fadeOut_798b3220',
         fadeIn: 'CurrencyReward_fadeIn_798b3220',
     },
-    b = ({ value: r, type: n }) => {
-        const d = e(u.value, u[`value__${n}`]),
-            c = e(u.icon, u[`icon__${n}`]);
+    b = ({ value: r, type: d }) => {
+        const n = e(u.value, u[`value__${d}`]),
+            c = e(u.icon, u[`icon__${d}`]);
         return a.jsxs('div', {
             className: u.base,
             children: [
                 a.jsx('span', { className: c }),
                 a.jsx('span', {
-                    className: d,
-                    children: a.jsx(_, { value: r, format: n === s.gold ? 'gold' : 'integral' }),
+                    className: n,
+                    children: a.jsx(_, { value: r, format: d === s.gold ? 'gold' : 'integral' }),
                 }),
             ],
         });
     },
-    [y, C] = n()(({ observableModel: e }) => ({ ...{ rewards: e.array('rewards') } }), d),
-    v = 'Content_7bb15980',
+    [y, v] = d()(({ observableModel: e }) => ({ ...{ rewards: e.array('rewards') } }), n),
+    C = 'Content_7bb15980',
     w = 'Content_separator_9582cf97',
     f = 'Content_image_c31329d1',
     x = 'Content_section_3b18e32a',
@@ -52,10 +52,10 @@ const u = {
     k = N.text(),
     I = N.secondaryText(),
     P = r(() => {
-        const { model: e } = C(),
+        const { model: e } = v(),
             { items: r } = e.rewards.get();
         return a.jsxs('div', {
-            className: v,
+            className: C,
             children: [
                 a.jsx('div', { className: f }),
                 a.jsxs('div', {
@@ -75,5 +75,5 @@ const u = {
             ],
         });
     }),
-    U = () => a.jsx(t, { children: a.jsx(t.Decorator, { children: a.jsx(P, {}) }) });
-o(new l().add(i).addWithProps(y, {}).render(a.jsx(U, {})));
+    X = () => a.jsx(t, { children: a.jsx(t.Decorator, { children: a.jsx(P, {}) }) });
+o(new l().add(i).addWithProps(y, {}).render(a.jsx(X, {})));

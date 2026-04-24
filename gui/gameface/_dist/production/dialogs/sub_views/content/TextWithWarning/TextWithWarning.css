@@ -1,111 +1,111 @@
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.FormatTextWithColorTags_blackReal_d5 {
+.FormatTextWithColorTags_blackReal_a7528 {
     color: #000000;
 }
 
-.FormatTextWithColorTags_whiteReal_d8 {
+.FormatTextWithColorTags_whiteReal_c93c4 {
     color: #ffffff;
 }
 
-.FormatTextWithColorTags_white_b9 {
+.FormatTextWithColorTags_white_bff67 {
     color: #f2f2f7;
 }
 
-.FormatTextWithColorTags_whiteOrange_ea {
+.FormatTextWithColorTags_whiteOrange_ba20a {
     color: #fefeec;
 }
 
-.FormatTextWithColorTags_whiteSpanish_54 {
+.FormatTextWithColorTags_whiteSpanish_d6685 {
     color: #e9e2bf;
 }
 
-.FormatTextWithColorTags_par_c1 {
+.FormatTextWithColorTags_par_b2500 {
     color: #8c8c7e;
 }
 
-.FormatTextWithColorTags_parSecondary_4e {
+.FormatTextWithColorTags_parSecondary_b5531 {
     color: #595950;
 }
 
-.FormatTextWithColorTags_parTertiary_14 {
+.FormatTextWithColorTags_parTertiary_f91eb {
     color: #37362e;
 }
 
-.FormatTextWithColorTags_red_d9 {
+.FormatTextWithColorTags_red_ef6d4 {
     color: #ff2717;
 }
 
-.FormatTextWithColorTags_redDark_ea {
+.FormatTextWithColorTags_redDark_fab5f {
     color: #b70000;
 }
 
-.FormatTextWithColorTags_yellow_48 {
+.FormatTextWithColorTags_yellow_b7f3d {
     color: #feab34;
 }
 
-.FormatTextWithColorTags_orange_ad {
+.FormatTextWithColorTags_orange_c4526 {
     color: #ee7000;
 }
 
-.FormatTextWithColorTags_cream_96 {
+.FormatTextWithColorTags_cream_ae09d {
     color: #ffdd99;
 }
 
-.FormatTextWithColorTags_brown_27 {
+.FormatTextWithColorTags_brown_dd780 {
     color: #cbac77;
 }
 
-.FormatTextWithColorTags_greenBright_04 {
+.FormatTextWithColorTags_greenBright_f7a10 {
     color: #80d43a;
 }
 
-.FormatTextWithColorTags_green_58 {
+.FormatTextWithColorTags_green_f840d {
     color: #7ab300;
 }
 
-.FormatTextWithColorTags_greenDark_af {
+.FormatTextWithColorTags_greenDark_d2b50 {
     color: #497212;
 }
 
-.FormatTextWithColorTags_blueBooster_b3 {
+.FormatTextWithColorTags_blueBooster_de02c {
     color: #ccffff;
 }
 
-.FormatTextWithColorTags_blueTeamkiller_ab {
+.FormatTextWithColorTags_blueTeamkiller_ab670 {
     color: #09e2ff;
 }
 
-.FormatTextWithColorTags_cred_d3 {
+.FormatTextWithColorTags_cred_c1b4e {
     color: #ced9d9;
 }
 
-.FormatTextWithColorTags_gold_28 {
+.FormatTextWithColorTags_gold_e35db {
     color: #ffc363;
 }
 
-.FormatTextWithColorTags_bond_74 {
+.FormatTextWithColorTags_bond_bdcc0 {
     color: #c9c9b6;
 }
 
-.FormatTextWithColorTags_prom_58 {
+.FormatTextWithColorTags_prom_e0cfe {
     color: #a29b70;
 }
 
-.App_base_db {
+.App_base_e6884 {
     text-align: center;
 }
 
-.App_warning_d5 {
+.App_warning_bcb5e {
     display: flex;
     flex-direction: row;
     margin-bottom: 11rem;
 }
 
-.App_alertImage_c8 {
+.App_alertImage_d9e7d {
     width: 16rem;
     height: 16rem;
     margin-top: 4rem;
@@ -113,13 +113,13 @@
     background: url('R.images.gui.maps.icons.library.alertIcon') no-repeat 50% / contain;
 }
 
-.App_warningText_d7 {
+.App_warningText_ec044 {
     justify-content: center;
     align-items: flex-start;
     color: #ee7000;
 }
 
-.App_mainText_8b {
+.App_mainText_d633f {
     justify-content: center;
     align-items: flex-start;
 }

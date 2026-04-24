@@ -1,8 +1,8 @@
-import { x as e, j as t, w as s } from '../../../chunks/vendor.js';
-import { i as a, F as r, T as o, r as i, d as n } from '../../../chunks/lib.js';
-import { g as p } from '../../../chunks/get_roman_levels.js';
-import { u as d } from '../../../chunks/use_server_time_polling.js';
-/* empty css                     */ var l = ((e) => (
+import { D as e, j as t, C as a } from '../../../chunks/vendor.js';
+import { i as s, F as r, T as o, d as n, r as i, e as p } from '../../../chunks/lib.js';
+import { g as d } from '../../../chunks/get_roman_levels.js';
+import { u as l } from '../../../chunks/use_server_time_polling.js';
+/* empty css                     */ var c = ((e) => (
     (e[(e.NotStarted = 0)] = 'NotStarted'),
     (e[(e.JustStarted = 1)] = 'JustStarted'),
     (e[(e.Active = 2)] = 'Active'),
@@ -10,8 +10,8 @@ import { u as d } from '../../../chunks/use_server_time_polling.js';
     (e[(e.End = 4)] = 'End'),
     (e[(e.Disabled = 5)] = 'Disabled'),
     e
-))(l || {});
-const [_, c] = a()(
+))(c || {});
+const [_, m] = s()(
         ({ observableModel: e }) => ({
             root: e.object(),
             vehicleLevels: e.array('vehicleLevels'),
@@ -19,20 +19,20 @@ const [_, c] = a()(
         }),
         ({ externalModel: e }) => ({ pollServerTime: e.createCallbackNoArgs('season.pollServerTime') }),
     ),
-    m = e(() => {
-        const { model: e, controls: s } = c(),
-            { timeLeftUntilPrimeTime: a } = e.root.get(),
-            i = e.season.endTimestamp.get(),
-            n = e.season.serverTimestamp.get(),
+    g = e(() => {
+        const { model: e, controls: a } = m(),
+            { timeLeftUntilPrimeTime: s } = e.root.get(),
+            n = e.season.endTimestamp.get(),
+            i = e.season.serverTimestamp.get(),
             p = e.season.state.get();
         return (
-            d(n, i, s.pollServerTime),
-            p === l.Disabled
+            l(i, n, a.pollServerTime),
+            p === c.Disabled
                 ? t.jsx(r, {
                       text: R.strings.comp7_light.entryPointTooltip.status.ceasefire(),
                       binding: {
                           timer: t.jsx(o, {
-                              start: a,
+                              start: s,
                               format: o.format.default,
                               type: o.type.cooldown,
                               size: o.size.x24x24,
@@ -43,7 +43,7 @@ const [_, c] = a()(
                       text: R.strings.comp7_light.entryPointTooltip.status.active(),
                       binding: {
                           timer: t.jsx(o, {
-                              start: i - n,
+                              start: n - i,
                               format: o.format.default,
                               type: o.type.accent,
                               size: o.size.x24x24,
@@ -52,7 +52,7 @@ const [_, c] = a()(
                   })
         );
     }),
-    g = {
+    b = {
         decorator: 'App_decorator_2b788cac',
         decoratorInner: 'App_decoratorInner_c21b80f6',
         base: 'App_db75b9f1',
@@ -83,47 +83,49 @@ const [_, c] = a()(
         blink: 'App_blink_0',
         slideUpIn: 'App_slideUpIn_0',
     },
-    b = 'Tooltips_divider_ca103a1d',
-    v = {
-        [l.Disabled]: 'disabled',
-        [l.JustStarted]: 'justStarted',
-        [l.NotStarted]: 'notStarted',
-        [l.Active]: 'active',
-        [l.EndSoon]: 'endSoon',
-        [l.End]: 'end',
+    v = 'Tooltips_divider_b0c27ec',
+    A = {
+        [c.Disabled]: 'disabled',
+        [c.JustStarted]: 'justStarted',
+        [c.NotStarted]: 'notStarted',
+        [c.Active]: 'active',
+        [c.EndSoon]: 'endSoon',
+        [c.End]: 'end',
     },
-    A = e(() => {
-        const { model: e } = c(),
-            a = e.season.state.get(),
-            o = p(e.vehicleLevels.get(), R.strings.comp7_light.listSeparator());
+    h = e(() => {
+        const { model: e } = m(),
+            s = e.season.state.get(),
+            r = d(e.vehicleLevels.get(), R.strings.comp7_light.listSeparator());
         return t.jsxs('div', {
-            className: s(g.base, g[`base__${v[a]}`]),
+            className: a(b.base, b[`base__${A[s]}`]),
             children: [
-                t.jsx('div', { className: g.topContentBg }),
+                t.jsx('div', { className: b.topContentBg }),
                 t.jsx('div', {
-                    className: g.topContent,
-                    children: t.jsx('div', { className: g.title, children: R.strings.comp7_light.featureName() }),
+                    className: b.topContent,
+                    children: t.jsx('div', { className: b.title, children: R.strings.comp7_light.featureName() }),
                 }),
                 t.jsxs('div', {
-                    className: g.bottomContent,
+                    className: b.bottomContent,
                     children: [
-                        t.jsx(r, {
+                        t.jsx(n, {
                             text: R.strings.comp7_light.entryPointTooltip.description(),
-                            binding: { levels: o },
-                            classMix: g.paragraph,
+                            params: { levels: r },
+                            className: b.paragraph,
+                            upgradeLegacy: !0,
                         }),
-                        t.jsx(r, {
+                        t.jsx(n, {
                             text: R.strings.comp7_light.entryPointTooltip.modeDescription(),
-                            binding: {
+                            params: {
                                 mode: t.jsx('div', {
-                                    className: g.modeBtn,
+                                    className: b.modeBtn,
                                     children: R.strings.comp7_light.entryPointTooltip.modeBtnText(),
                                 }),
                             },
-                            classMix: g.mode,
+                            className: b.mode,
+                            upgradeLegacy: !0,
                         }),
-                        t.jsx('div', { className: s(b, g.divider) }),
-                        t.jsx('div', { className: g.timerContainer, children: t.jsx(m, {}) }),
+                        t.jsx('div', { className: a(v, b.divider) }),
+                        t.jsx('div', { className: b.timerContainer, children: t.jsx(g, {}) }),
                     ],
                 }),
             ],
@@ -131,10 +133,10 @@ const [_, c] = a()(
     });
 i(
     t.jsx(_, {
-        children: t.jsx(n, {
+        children: t.jsx(p, {
             children: t.jsx('div', {
-                className: g.decorator,
-                children: t.jsx('div', { className: g.decoratorInner, children: t.jsx(A, {}) }),
+                className: b.decorator,
+                children: t.jsx('div', { className: b.decoratorInner, children: t.jsx(h, {}) }),
             }),
         }),
     }),

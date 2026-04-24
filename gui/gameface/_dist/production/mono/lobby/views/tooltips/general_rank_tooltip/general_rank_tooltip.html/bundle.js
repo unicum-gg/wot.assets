@@ -1,33 +1,33 @@
-import { y as s, j as i, w as o } from '../../../../chunks/vendor.js';
-import { i as e, aC as a, q as n, n as r, aA as t } from '../../../../chunks/lib.js';
+import { V as s, j as i, a3 as o } from '../../../../chunks/vendor.js';
+import { i as e, n as a, cv as n, cy as r, cw as t, r as c } from '../../../../chunks/lib.js';
 import { T as d } from '../../../../chunks/tooltip_decorator.js';
-import { g as c, a as l } from '../../../../chunks/get_rank_name.js';
-import { t as m } from '../../../../chunks/tooltips.module.js';
+import { g as l, a as m } from '../../../../chunks/get_rank_name.js';
+import { t as j } from '../../../../chunks/tooltips.module.js';
 /* empty css                        */ import '../../../../chunks/enums.js';
-const [j, h] = e()(({ observableModel: s }) => ({ root: s.object() }), a),
+const [h, x] = e()(({ observableModel: s }) => ({ root: s.object() }), a),
     g = s(() => {
-        const { model: s } = h(),
-            { divisions: e, rank: a, from: t, to: d } = s.root.get();
+        const { model: s } = x(),
+            { divisions: e, rank: a, from: c, to: d } = s.root.get();
         return i.jsxs('div', {
-            className: m.base,
+            className: j.base,
             children: [
-                i.jsx('div', { className: m.heading, children: c(a) }),
+                i.jsx('div', { className: j.heading, children: l(a) }),
                 i.jsx('div', {
-                    className: o(m.subHeading, m.subHeading__topIndent),
+                    className: o(j.subHeading, j.subHeading__topIndent),
                     children: i.jsx(n, {
                         text: R.strings.comp7_ext.generalRankTooltip.subheading(),
-                        binding: { divisions: i.jsx('div', { className: m.highlight, children: e }) },
+                        binding: { divisions: i.jsx('div', { className: j.highlight, children: e }) },
                     }),
                 }),
-                i.jsx('div', { className: m.divider }),
+                i.jsx('div', { className: j.divider }),
                 i.jsx('div', {
-                    className: m.description,
+                    className: j.description,
                     children: i.jsx(r, {
-                        text: l(R.strings.comp7_ext.generalRankTooltip.body, a),
-                        binding: { fromScore: t, toScore: d },
+                        text: m(R.strings.comp7_ext.generalRankTooltip.body, a),
+                        binding: { fromScore: i.jsx(t, { value: c }), toScore: i.jsx(t, { value: d }) },
                     }),
                 }),
             ],
         });
     });
-t(i.jsx(j, { children: i.jsx(d, { children: i.jsx(g, {}) }) }));
+c(i.jsx(h, { children: i.jsx(d, { children: i.jsx(g, {}) }) }));

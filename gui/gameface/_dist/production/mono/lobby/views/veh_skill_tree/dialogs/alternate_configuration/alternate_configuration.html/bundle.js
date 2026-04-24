@@ -1,9 +1,9 @@
-import { j as e, f as s, s as a, r as t } from '../../../../../chunks/vendor.js';
+import { j as e, f as s, t as a, r as t } from '../../../../../chunks/vendor.js';
 import {
     r as o,
     b as i,
-    aA as l,
-    b7 as r,
+    aB as l,
+    b8 as r,
     a9 as c,
     ae as n,
     d,
@@ -11,16 +11,16 @@ import {
     B as p,
     t as v,
     o as h,
-    b8 as _,
+    b9 as _,
     i as u,
     m as f,
     J as g,
     h as j,
     k as x,
     Q as N,
-    aC as y,
-    j as C,
-    l as b,
+    aD as y,
+    j as b,
+    l as C,
     U as k,
 } from '../../../../../chunks/lib.js';
 const E = {
@@ -67,20 +67,20 @@ function I({ type: a, iconName: t, pressed: n, onClick: d, nodeID: m }) {
         ],
     });
 }
-const A = 'Footer_info_b48c491b',
-    S = 'Footer_separator_3f705b18',
-    T = 'Footer_button_197c4535',
+const S = 'Footer_info_b48c491b',
+    T = 'Footer_separator_3f705b18',
+    A = 'Footer_button_197c4535',
     O = n('AlternateConfigurationFooter', 'Footer_fb231f23');
-function M({ onClose: s, ...a }) {
+function D({ onClose: s, ...a }) {
     const t = o.resolve('strings'),
         i = d({ size: m.small }, { medium: { size: m.medium } });
     return e.jsxs(O, {
         ...a,
         children: [
-            e.jsx('div', { className: A, children: t.readOrEmpty('veh_skill_tree.dialog.altConfiguration.info') }),
-            e.jsx('div', { className: S }),
+            e.jsx('div', { className: S, children: t.readOrEmpty('veh_skill_tree.dialog.altConfiguration.info') }),
+            e.jsx('div', { className: T }),
             e.jsx(p, {
-                className: T,
+                className: A,
                 theme: v.primary,
                 size: i.size,
                 onClick: s,
@@ -89,32 +89,32 @@ function M({ onClose: s, ...a }) {
         ],
     });
 }
-const z = {
+const M = {
     vehicle: 'Header_vehicle_2fc02200',
     vehicleTier: 'Header_vehicleTier_135eaea3',
     vehicleName: 'Header_vehicleName_135eaea3',
     title: 'Header_title_1c6e5cde',
     description: 'Header_description_edbe210e',
 };
-function D({ level: s, type: a, name: t, premium: i }) {
+function z({ level: s, type: a, name: t, premium: i }) {
     const l = o.resolve('strings');
     return e.jsxs('div', {
-        className: z.base,
+        className: M.base,
         children: [
             e.jsxs(h, {
-                className: z.vehicle,
+                className: M.vehicle,
                 children: [
-                    e.jsx(h.Level, { className: z.vehicleTier, value: s }),
+                    e.jsx(h.Level, { className: M.vehicleTier, value: s }),
                     a && e.jsx(h.Type, { type: a, size: _.x64x64, premium: i }),
-                    e.jsx(h.Name, { children: e.jsx('div', { className: z.vehicleName, children: t }) }),
+                    e.jsx(h.Name, { children: e.jsx('div', { className: M.vehicleName, children: t }) }),
                 ],
             }),
             e.jsx('div', {
-                className: z.title,
+                className: M.title,
                 children: l.readOrEmpty('veh_skill_tree.dialog.altConfiguration.title'),
             }),
             e.jsx('div', {
-                className: z.description,
+                className: M.description,
                 children: l.readOrEmpty('veh_skill_tree.dialog.altConfiguration.description'),
             }),
         ],
@@ -146,7 +146,7 @@ const [F, H] = u()(
     w = 'App_170f5fe6',
     L = 'App_cards_2833612d',
     $ = 'App_footer_d8aec517',
-    J = a(function () {
+    B = a(function () {
         const { model: s, controls: a } = H();
         (j(x.ESCAPE, a.close), j(x.ENTER, () => a.affirmate(c)));
         const o = s.vehicleInfo.get(),
@@ -159,7 +159,7 @@ const [F, H] = u()(
         return e.jsxs('div', {
             className: w,
             children: [
-                e.jsx(D, { ...o, type: d }),
+                e.jsx(z, { ...o, type: d }),
                 e.jsx('div', {
                     className: L,
                     children: i.map(({ type: s, iconName: a }, t) =>
@@ -178,9 +178,9 @@ const [F, H] = u()(
                         ),
                     ),
                 }),
-                e.jsx(M, { className: $, onClose: () => a.affirmate(c) }),
+                e.jsx(D, { className: $, onClose: () => a.affirmate(c) }),
             ],
         });
     }),
-    B = C({ click: { select: 'yes1', deselect: 'yes' } });
-b(e.jsx(k, { soundsOverrides: B, children: e.jsx(F, { children: e.jsx(J, {}) }) }));
+    J = b({ click: { select: 'yes1', deselect: 'yes' } });
+C(e.jsx(k, { soundsOverrides: J, children: e.jsx(F, { children: e.jsx(B, {}) }) }));

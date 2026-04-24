@@ -1,0 +1,114 @@
+{
+  "front_026": {
+    "frameX": 2,
+    "frameY": 2,
+    "sourceName": "parallaxS2-5",
+    "sourceWidth": 2048,
+    "sourceHeight": 1024
+  },
+  "bg_003": {
+    "frameX": 691,
+    "frameY": 2,
+    "sourceName": "parallaxS2-5",
+    "sourceWidth": 2048,
+    "sourceHeight": 1024
+  },
+  "middle_003": {
+    "frameX": 2,
+    "frameY": 249,
+    "sourceName": "parallaxS2-5",
+    "sourceWidth": 2048,
+    "sourceHeight": 1024
+  },
+  "sky_017": {
+    "frameX": 332,
+    "frameY": 249,
+    "sourceName": "parallaxS2-5",
+    "sourceWidth": 2048,
+    "sourceHeight": 1024
+  },
+  "obelisk1_010": {
+    "frameX": 2,
+    "frameY": 496,
+    "sourceName": "parallaxS2-5",
+    "sourceWidth": 2048,
+    "sourceHeight": 1024
+  },
+  "obelisk2_002": {
+    "frameX": 1025,
+    "frameY": 2,
+    "sourceName": "parallaxS2-5",
+    "sourceWidth": 2048,
+    "sourceHeight": 1024
+  },
+  "obelisk1_001": {
+    "frameX": 1308,
+    "frameY": 2,
+    "sourceName": "parallaxS2-5",
+    "sourceWidth": 2048,
+    "sourceHeight": 1024
+  },
+  "bg_004": {
+    "frameX": 1585,
+    "frameY": 2,
+    "sourceName": "parallaxS2-5",
+    "sourceWidth": 2048,
+    "sourceHeight": 1024
+  },
+  "obelisk3_005": {
+    "frameX": 1858,
+    "frameY": 2,
+    "sourceName": "parallaxS2-5",
+    "sourceWidth": 2048,
+    "sourceHeight": 1024
+  },
+  "front_034": {
+    "frameX": 1308,
+    "frameY": 130,
+    "sourceName": "parallaxS2-5",
+    "sourceWidth": 2048,
+    "sourceHeight": 1024
+  },
+  "eff_shine": {
+    "frameX": 1025,
+    "frameY": 402,
+    "sourceName": "parallaxS2-5",
+    "sourceWidth": 2048,
+    "sourceHeight": 1024
+  },
+  "front_015": {
+    "frameX": 1025,
+    "frameY": 146,
+    "sourceName": "parallaxS2-5",
+    "sourceWidth": 2048,
+    "sourceHeight": 1024
+  },
+  "front_009": {
+    "frameX": 642,
+    "frameY": 405,
+    "sourceName": "parallaxS2-5",
+    "sourceWidth": 2048,
+    "sourceHeight": 1024
+  },
+  "wave_12_004": {
+    "frameX": 309,
+    "frameY": 582,
+    "sourceName": "parallaxS2-5",
+    "sourceWidth": 2048,
+    "sourceHeight": 1024
+  },
+  "wave_12_003": {
+    "frameX": 2,
+    "frameY": 638,
+    "sourceName": "parallaxS2-5",
+    "sourceWidth": 2048,
+    "sourceHeight": 1024
+  },
+  "sky_004": {
+    "frameX": 1576,
+    "frameY": 402,
+    "sourceName": "parallaxS2-5",
+    "sourceWidth": 2048,
+    "sourceHeight": 1024
+  }
+}

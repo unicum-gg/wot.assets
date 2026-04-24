@@ -1,4 +1,4 @@
-import { j as e, e as s, p as a, r as i } from '../../../chunks/vendor.js';
+import { j as e, e as s, q as a, r as i } from '../../../chunks/vendor.js';
 import {
     r as n,
     F as r,
@@ -72,8 +72,8 @@ const [k, y] = c()(
     E = 'MapsTrainingQueue_sceneWrapper_eb6e1bef',
     O = 'MapsTrainingQueue_efb55e16',
     P = 'MapsTrainingQueue_box_4e1afcbd',
-    C = 'MapsTrainingQueue_time_5b62c1a7',
-    q = 'MapsTrainingQueue_timeValue_a055e4d3',
+    q = 'MapsTrainingQueue_time_5b62c1a7',
+    C = 'MapsTrainingQueue_timeValue_a055e4d3',
     Q = 'MapsTrainingQueue_button_66a29f22',
     A = 'MapsTrainingQueue_button__focus_9e1e4044',
     B = 'MapsTrainingQueue_title_24c8a587',
@@ -87,7 +87,7 @@ const I = a(function () {
         t = a.time.get(),
         c = i.useMemo(
             function () {
-                return { time: e.jsx('div', { className: q, children: t }) };
+                return { time: e.jsx('div', { className: C, children: t }) };
             },
             [t],
         ),
@@ -119,7 +119,7 @@ const I = a(function () {
                 e.jsxs('div', {
                     className: P,
                     children: [
-                        e.jsx(u, { classMix: C, text: W.readOrEmpty('maps_training.queue.time'), binding: c }),
+                        e.jsx(u, { classMix: q, text: W.readOrEmpty('maps_training.queue.time'), binding: c }),
                         e.jsx(d, {
                             className: s(Q, 0 === _ && A),
                             theme: d.themes.secondary,

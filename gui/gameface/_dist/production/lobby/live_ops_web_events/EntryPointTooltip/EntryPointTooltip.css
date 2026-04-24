@@ -1,14 +1,14 @@
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -16,7 +16,7 @@
     position: relative;
 }
 
-.App_base_f3 {
+.App_base_a0477 {
     display: flex;
     flex-direction: column;
     width: 310rem;
@@ -24,21 +24,21 @@
     position: relative;
 }
 
-.App_icon_51 {
+.App_icon_dd08e {
     width: 38rem;
     height: 38rem;
     margin: -10rem;
     background: url('R.images.gui.maps.icons.liveOps.icons.time_ico') no-repeat center / cover;
 }
 
-.App_title_96 {
+.App_title_cbc2c {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
 }
 
-.App_dateSubtitle_93 {
+.App_dateSubtitle_e046d {
     flex-direction: row;
     align-items: center;
     color: #8c8c7e;
@@ -48,7 +48,7 @@
     margin-top: 9rem;
 }
 
-.App_date_30 {
+.App_date_a90a8 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 700;
@@ -57,14 +57,14 @@
     font-weight: 700;
 }
 
-.App_body_fd {
+.App_body_ecccb {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.App_subTitle_3e {
+.App_subTitle_e783d {
     color: #feab34;
     font-size: 14rem;
     font-weight: 400;

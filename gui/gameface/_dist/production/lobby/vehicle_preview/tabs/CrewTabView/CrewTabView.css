@@ -1,29 +1,29 @@
-.ExtendedText_base_71 {
+.ExtendedText_base_d9fc1 {
     display: flex;
     line-height: 1.2;
     position: relative;
 }
 
-.ExtendedText_base__zeroPadding_25 {
+.ExtendedText_base__zeroPadding_d1a1c {
     padding: 0;
 }
 
-.ExtendedText_base__isTruncationAvailable_5b {
+.ExtendedText_base__isTruncationAvailable_cb880 {
     width: 100%;
 }
 
-.ExtendedText_truncated_97 {
+.ExtendedText_truncated_a4268 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     position: relative;
 }
 
-.ExtendedText_truncated__hide_31 {
+.ExtendedText_truncated__hide_d75b4 {
     opacity: 0;
 }
 
-.ExtendedText_unTruncated_b8 {
+.ExtendedText_unTruncated_ff478 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -40,198 +40,198 @@
     pointer-events: none;
 }
 
-.ExtendedText_tooltip_91 {
+.ExtendedText_tooltip_b5abd {
     display: flex;
 }
 
-.ExtendedText_tooltip__justify-flex-start_00 {
+.ExtendedText_tooltip__justify-flex-start_ade81 {
     justify-content: flex-start;
 }
 
-.ExtendedText_tooltip__justify-center_08 {
+.ExtendedText_tooltip__justify-center_aa541 {
     justify-content: center;
 }
 
-.ExtendedText_tooltip__justify-flex-end_90 {
+.ExtendedText_tooltip__justify-flex-end_af6c3 {
     justify-content: flex-end;
 }
 
-.ExtendedText_tooltip__align-flex-start_40 {
+.ExtendedText_tooltip__align-flex-start_fbfc0 {
     align-content: flex-start;
 }
 
-.ExtendedText_tooltip__align-center_54 {
+.ExtendedText_tooltip__align-center_d5b4a {
     align-content: center;
 }
 
-.ExtendedText_tooltip__align-flex-end_d2 {
+.ExtendedText_tooltip__align-flex-end_fc0e0 {
     align-content: flex-end;
 }
 
-.colors_blackReal_fc {
+.colors_blackReal_a68be {
     color: #000000;
 }
 
-.colors_whiteReal_31 {
+.colors_whiteReal_f79f8 {
     color: #ffffff;
 }
 
-.colors_white_45 {
+.colors_white_b5c87 {
     color: #f2f2f7;
 }
 
-.colors_whiteOrange_81 {
+.colors_whiteOrange_ba58d {
     color: #fefeec;
 }
 
-.colors_whiteSpanish_c3 {
+.colors_whiteSpanish_fd764 {
     color: #e9e2bf;
 }
 
-.colors_par_5b {
+.colors_par_e836f {
     color: #8c8c7e;
 }
 
-.colors_parSecondary_fd {
+.colors_parSecondary_f260a {
     color: #595950;
 }
 
-.colors_parTertiary_97 {
+.colors_parTertiary_d47f7 {
     color: #37362e;
 }
 
-.colors_red_79 {
+.colors_red_c02cb {
     color: #ff2717;
 }
 
-.colors_redDark_73 {
+.colors_redDark_cdd63 {
     color: #b70000;
 }
 
-.colors_yellow_76 {
+.colors_yellow_ec93b {
     color: #feab34;
 }
 
-.colors_orange_cd {
+.colors_orange_bbde2 {
     color: #ee7000;
 }
 
-.colors_cream_0f {
+.colors_cream_e3bb8 {
     color: #ffdd99;
 }
 
-.colors_brown_82 {
+.colors_brown_bcb6a {
     color: #cbac77;
 }
 
-.colors_greenBright_68 {
+.colors_greenBright_e6055 {
     color: #80d43a;
 }
 
-.colors_green_fa {
+.colors_green_b6f21 {
     color: #7ab300;
 }
 
-.colors_greenDark_a9 {
+.colors_greenDark_ce9bf {
     color: #497212;
 }
 
-.colors_blueBooster_26 {
+.colors_blueBooster_b2848 {
     color: #ccffff;
 }
 
-.colors_blueTeamkiller_86 {
+.colors_blueTeamkiller_e7dd8 {
     color: #09e2ff;
 }
 
-.colors_cred_35 {
+.colors_cred_ddb07 {
     color: #ced9d9;
 }
 
-.colors_gold_c3 {
+.colors_gold_c405a {
     color: #ffc363;
 }
 
-.colors_bond_ce {
+.colors_bond_bb139 {
     color: #c9c9b6;
 }
 
-.colors_prom_83 {
+.colors_prom_d1186 {
     color: #a29b70;
 }
 
-.renderers_noBreakWrapper_10 {
+.renderers_noBreakWrapper_d986b {
     display: flex;
     flex-wrap: nowrap;
 }
 
-.renderers_lineBreak_b5 {
+.renderers_lineBreak_f90ed {
     width: 100%;
     height: 0;
 }
 
-.renderers_newLine_bd {
+.renderers_newLine_ee778 {
     flex: 1;
     width: 100%;
 }
 
-.renderers_word_f3 {
+.renderers_word_ac32d {
     white-space: pre;
     overflow-wrap: normal;
 }
 
-.SkillIcon_base_43 {
+.SkillIcon_base_a1c9a {
     display: flex;
     background: no-repeat center / contain;
     position: relative;
 }
 
-.SkillIcon_base__c_22x22_14 {
+.SkillIcon_base__c_22x22_dcf9f {
     width: 22rem;
     height: 22rem;
 }
 
-.SkillIcon_base__medium_d0 {
+.SkillIcon_base__medium_d67ae {
     width: 24rem;
     height: 24rem;
 }
 
-.SkillIcon_base__c_36x36_flat_7e {
+.SkillIcon_base__c_36x36_flat_e0291 {
     width: 36rem;
     height: 36rem;
 }
 
-.SkillIcon_base__big_ae {
+.SkillIcon_base__big_b5b33 {
     width: 52rem;
     height: 52rem;
 }
 
-.SkillIcon_base__c_80x80_79 {
+.SkillIcon_base__c_80x80_ee59c {
     width: 80rem;
     height: 80rem;
 }
 
-.SkillIcon_base__c_120x90_8c {
+.SkillIcon_base__c_120x90_cc537 {
     width: 120rem;
     height: 90rem;
 }
 
-.SkillIcon_base__dialogs_e5 {
+.SkillIcon_base__dialogs_a9262 {
     width: 180rem;
     height: 135rem;
 }
 
-.Header_base_bf {
+.Header_base_eb549 {
     display: none;
     justify-content: center;
     align-items: center;
 }
 
-.mediaMediumHeight .Header_base_bf {
+.mediaMediumHeight .Header_base_eb549 {
     display: flex;
 }
 
-.Header_title_ea {
+.Header_title_e8475 {
     color: #e9e2bf;
     font-size: 15rem;
     font-weight: 700;
@@ -240,11 +240,11 @@
     margin-left: 5rem;
 }
 
-.Header_base__noSkill_66 .Header_title_ea {
+.Header_base__noSkill_e7390 .Header_title_e8475 {
     margin-bottom: 10rem;
 }
 
-.Header_noCrew_96 {
+.Header_noCrew_b6773 {
     color: #e9e2bf;
     font-size: 15rem;
     font-weight: 700;
@@ -252,33 +252,33 @@
     max-width: 244rem;
 }
 
-.Header_base__noSkill_66 .Header_noCrew_96 {
+.Header_base__noSkill_e7390 .Header_noCrew_b6773 {
     margin-bottom: 10rem;
 }
 
-.Header_skill_3f {
+.Header_skill_d001b {
     left: -4rem;
 }
 
-.Dog_base_87 {
+.Dog_base_fe2dc {
     display: flex;
     align-items: flex-end;
     width: 100%;
     height: 100%;
 }
 
-.Dog_dogIcon_15 {
+.Dog_dogIcon_bb1e8 {
     width: 108rem;
     height: 70rem;
     background: url('R.images.gui.maps.icons.tankmen.icons.big.ussr_dog_1') no-repeat center / contain;
     clip-path: inset(10rem 0 0 0);
 }
 
-.mediaLarge .Dog_dogIcon_15 {
+.mediaLarge .Dog_dogIcon_bb1e8 {
     height: 80rem;
 }
 
-.Dog_name_d5 {
+.Dog_name_a9bb5 {
     color: #c9c9b6;
     font-size: 14rem;
     font-weight: 400;
@@ -289,69 +289,69 @@
     margin-left: 4rem;
 }
 
-.RoleIcon_base_51 {
+.RoleIcon_base_dfff1 {
     background: no-repeat center / contain;
 }
 
-.RoleIcon_base__small_68 {
+.RoleIcon_base__small_a4262 {
     width: 13rem;
     height: 13rem;
 }
 
-.RoleIcon_base__c_14x14_8f {
+.RoleIcon_base__c_14x14_f9e09 {
     width: 14rem;
     height: 14rem;
 }
 
-.RoleIcon_base__c_18x18_0b {
+.RoleIcon_base__c_18x18_a626e {
     width: 18rem;
     height: 18rem;
 }
 
-.RoleIcon_base__c_24x24_new_fe,
-.RoleIcon_base__c_24x24_52 {
+.RoleIcon_base__c_24x24_new_bcf57,
+.RoleIcon_base__c_24x24_acd19 {
     width: 24rem;
     height: 24rem;
 }
 
-.RoleIcon_base__c_30x30_red_85,
-.RoleIcon_base__c_30x30_e9 {
+.RoleIcon_base__c_30x30_red_b2d4c,
+.RoleIcon_base__c_30x30_bb8b2 {
     width: 30rem;
     height: 30rem;
 }
 
-.RoleIcon_base__c_40x40_99 {
+.RoleIcon_base__c_40x40_b7c41 {
     width: 40rem;
     height: 40rem;
 }
 
-.RoleIcon_base__medium_5d {
+.RoleIcon_base__medium_c4adb {
     width: 33rem;
     height: 33rem;
 }
 
-.RoleIcon_base__white_2a {
+.RoleIcon_base__white_edcf3 {
     width: 44rem;
     height: 44rem;
 }
 
-.RoleIcon_base__big_b4 {
+.RoleIcon_base__big_eccb9 {
     width: 60rem;
     height: 60rem;
 }
 
-.EmptySlot_base_33 {
+.EmptySlot_base_e915c {
     display: flex;
     align-items: center;
     width: 100%;
     height: 100%;
 }
 
-.EmptySlot_role_00 {
+.EmptySlot_role_aca35 {
     opacity: 0.6;
 }
 
-.EmptySlot_roleName_52 {
+.EmptySlot_roleName_c68da {
     color: #c9c9b6;
     font-size: 14rem;
     font-weight: 400;
@@ -362,7 +362,7 @@
     text-shadow: 0 0 8rem #333;
 }
 
-.EfficiencyIndicator_base_34 {
+.EfficiencyIndicator_base_ce16e {
     display: flex;
     justify-content: center;
     width: 32rem;
@@ -373,23 +373,23 @@
     pointer-events: auto;
 }
 
-.EfficiencyIndicator_base__big_a1 {
+.EfficiencyIndicator_base__big_a8d2d {
     align-items: center;
     height: 26rem;
 }
 
-.EfficiencyIndicator_base__large_dc {
+.EfficiencyIndicator_base__large_ac512 {
     align-items: center;
     width: auto;
     height: 32rem;
     padding: 0 2rem;
 }
 
-.EfficiencyIndicator_base__large_dc.EfficiencyIndicator_base__untrained_cd {
+.EfficiencyIndicator_base__large_ac512.EfficiencyIndicator_base__untrained_f15c6 {
     width: 42rem;
 }
 
-.EfficiencyIndicator_percent_6b {
+.EfficiencyIndicator_percent_a552f {
     margin-top: 2rem;
     text-shadow:
         0 0 12rem rgba(255, 0, 0, 0.7),
@@ -401,7 +401,7 @@
     line-height: 1.15;
 }
 
-.EfficiencyIndicator_percent__full_30 {
+.EfficiencyIndicator_percent__full_d0b31 {
     color: #ffffff;
     text-shadow:
         0 0 15rem rgb(238, 85, 34),
@@ -410,24 +410,24 @@
     letter-spacing: -1rem;
 }
 
-.EfficiencyIndicator_base__big_a1 .EfficiencyIndicator_percent_6b {
+.EfficiencyIndicator_base__big_a8d2d .EfficiencyIndicator_percent_a552f {
     position: relative;
     top: -1rem;
 }
 
-.EfficiencyIndicator_base__large_dc .EfficiencyIndicator_percent_6b {
+.EfficiencyIndicator_base__large_ac512 .EfficiencyIndicator_percent_a552f {
     font-size: 22rem;
     position: relative;
     top: -2rem;
 }
 
-.EfficiencyIndicator_icon_da {
+.EfficiencyIndicator_icon_ec21c {
     width: 100%;
     height: 100%;
     background: url('R.images.gui.maps.icons.crewWidget.slot.untrained') no-repeat center / 44rem 36rem;
 }
 
-.AcceleratedTrainingIcon_base_4f {
+.AcceleratedTrainingIcon_base_bb7ea {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -437,35 +437,35 @@
     pointer-events: auto;
 }
 
-.AcceleratedTrainingIcon_icon_45 {
+.AcceleratedTrainingIcon_icon_dce04 {
     width: 34rem;
     height: 34rem;
     background: url('R.images.gui.maps.icons.crewWidget.slot.speedXpIcon') no-repeat center / contain;
 }
 
-.AnimatedLostSkill_base_55 {
+.AnimatedLostSkill_base_f71f5 {
     display: flex;
     position: relative;
 }
 
-.AnimatedLostSkill_base__c_24x24_d5 {
+.AnimatedLostSkill_base__c_24x24_fe08e {
     width: 24rem;
     height: 24rem;
 }
 
-.AnimatedLostSkill_base__c_44x44_72 {
+.AnimatedLostSkill_base__c_44x44_b4351 {
     width: 44rem;
     height: 44rem;
 }
 
-.AnimatedLostSkill_icon_d4 {
+.AnimatedLostSkill_icon_fcca6 {
     display: flex;
     justify-content: center;
     align-items: center;
     pointer-events: none;
 }
 
-.AnimatedLostSkill_base__c_24x24_d5 .AnimatedLostSkill_icon_d4 {
+.AnimatedLostSkill_base__c_24x24_fe08e .AnimatedLostSkill_icon_fcca6 {
     position: absolute;
     top: -20rem;
     right: -20rem;
@@ -473,7 +473,7 @@
     left: -20rem;
 }
 
-.AnimatedLostSkill_base__c_44x44_72 .AnimatedLostSkill_icon_d4 {
+.AnimatedLostSkill_base__c_44x44_b4351 .AnimatedLostSkill_icon_fcca6 {
     position: absolute;
     top: -26rem;
     right: -26rem;
@@ -481,27 +481,27 @@
     left: -26rem;
 }
 
-.AnimatedNewSkill_base_0f {
+.AnimatedNewSkill_base_e010d {
     width: 24rem;
     height: 24rem;
 }
 
-.Skill_base_1f {
+.Skill_base_c2b05 {
     display: flex;
     position: relative;
 }
 
-.Skill_base__c_24x24_29 {
+.Skill_base__c_24x24_a6dee {
     width: 24rem;
     height: 24rem;
 }
 
-.Skill_base__c_44x44_5a {
+.Skill_base__c_44x44_e4048 {
     width: 44rem;
     height: 44rem;
 }
 
-.Skill_background_02 {
+.Skill_background_fb177 {
     position: absolute;
     top: 0;
     right: 0;
@@ -512,34 +512,34 @@
     background: rgba(0, 0, 0, 0.3);
 }
 
-.Skill_base__borderLightYellow_09 .Skill_background_02 {
+.Skill_base__borderLightYellow_d60ed .Skill_background_fb177 {
     border-color: #ffdd99;
 }
 
-.Skill_base__borderYellow_3e .Skill_background_02 {
+.Skill_base__borderYellow_bf2cc .Skill_background_fb177 {
     border-color: #feab34;
 }
 
-.Skill_base__borderRed_d2 .Skill_background_02 {
+.Skill_base__borderRed_a4df6 .Skill_background_fb177 {
     border-color: #ff2717;
 }
 
-.Skill_base__typeBonus_23 .Skill_background_02 {
+.Skill_base__typeBonus_e228b .Skill_background_fb177 {
     border: none;
     background: no-repeat 0 / cover;
 }
 
-.Skill_base__disabled_85 .Skill_background_02 {
+.Skill_base__disabled_ac718 .Skill_background_fb177 {
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0.6;
 }
 
-.Skill_base__disabled_85.Skill_base__borderYellow_3e .Skill_background_02 {
+.Skill_base__disabled_ac718.Skill_base__borderYellow_bf2cc .Skill_background_fb177 {
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 1;
 }
 
-.Skill_newSkillHighLight_44 {
+.Skill_newSkillHighLight_d6dae {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -549,29 +549,29 @@
     opacity: 0.25;
 }
 
-.Skill_icon_b0 {
+.Skill_icon_a5b2d {
     position: absolute;
 }
 
-.Skill_base__disabled_85 .Skill_icon_b0 {
+.Skill_base__disabled_ac718 .Skill_icon_a5b2d {
     opacity: 0.3;
 }
 
-.Skill_base__c_24x24_29 .Skill_icon_b0 {
+.Skill_base__c_24x24_a6dee .Skill_icon_a5b2d {
     width: 22rem;
     height: 22rem;
     top: 1rem;
     left: 1rem;
 }
 
-.Skill_base__c_44x44_5a .Skill_icon_b0 {
+.Skill_base__c_44x44_e4048 .Skill_icon_a5b2d {
     width: 34rem;
     height: 34rem;
     top: 5rem;
     left: 5rem;
 }
 
-.Skill_disabledOverlay_3b {
+.Skill_disabledOverlay_e2b1e {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -580,14 +580,14 @@
     background: url('R.images.gui.maps.icons.crew.skillsFrame.disabled') center / cover;
 }
 
-.LostLevelAnimation_base_f6 {
+.LostLevelAnimation_base_c6848 {
     display: flex;
     align-items: center;
     width: 0;
     position: relative;
 }
 
-.LostLevelAnimation_level_f0 {
+.LostLevelAnimation_level_e804d {
     color: #feab34;
     font-size: 16rem;
     font-weight: 400;
@@ -596,33 +596,33 @@
     position: absolute;
 }
 
-.LostLevelAnimation_level__skillLost_a2 {
+.LostLevelAnimation_level__skillLost_a1467 {
     color: #ff2717;
 }
 
-.LostLevelAnimation_level__skillBlur_24 {
+.LostLevelAnimation_level__skillBlur_e15fa {
     text-shadow: 0 0 20rem rgba(255, 255, 255, 0.9);
     filter: blur(5rem);
     opacity: 0;
 }
 
-.LostLevelAnimation_base__c_24x24_1c .LostLevelAnimation_level_f0 {
+.LostLevelAnimation_base__c_24x24_da578 .LostLevelAnimation_level_e804d {
     left: 4rem;
 }
 
-.LostLevelAnimation_base__c_44x44_44 .LostLevelAnimation_level_f0 {
+.LostLevelAnimation_base__c_44x44_e9708 .LostLevelAnimation_level_e804d {
     font-size: 24rem;
     left: 6rem;
 }
 
-.SkillLevel_base_d2 {
+.SkillLevel_base_e2248 {
     color: #feab34;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
 }
 
-.SkillLevel_base__highlighted_e3 {
+.SkillLevel_base__highlighted_c4737 {
     color: #fefeec;
     text-shadow:
         0 0 15rem #e52,
@@ -630,172 +630,172 @@
         0 0 4rem rgba(255, 127, 0, 0.25);
 }
 
-.Row_base_bb {
+.Row_base_de020 {
     display: flex;
     align-items: center;
 }
 
-.Row_skill_fb {
+.Row_skill_a8b94 {
     overflow: hidden;
 }
 
-.Row_skill_fb + .Row_skill_fb {
+.Row_skill_a8b94 + .Row_skill_a8b94 {
     margin-left: 2rem;
 }
 
-.Row_base__c_44x44_4f .Row_skill_fb + .Row_skill_fb {
+.Row_base__c_44x44_b19d9 .Row_skill_a8b94 + .Row_skill_a8b94 {
     margin-left: 4rem;
 }
 
-.Row_base__c_24x24_16.Row_base__collapseNoMargins_13 .Row_skill_fb + .Row_skill_fb {
+.Row_base__c_24x24_a1b44.Row_base__collapseNoMargins_c10ff .Row_skill_a8b94 + .Row_skill_a8b94 {
     margin-left: -1rem;
 }
 
-.Row_base__c_24x24_16.Row_base__collapseOverlap_2c .Row_skill_fb + .Row_skill_fb {
+.Row_base__c_24x24_a1b44.Row_base__collapseOverlap_f5514 .Row_skill_a8b94 + .Row_skill_a8b94 {
     margin-left: 0;
 }
 
-.Row_base__c_24x24_16.Row_base__collapseReducedMargins_3b .Row_skill_fb + .Row_skill_fb {
+.Row_base__c_24x24_a1b44.Row_base__collapseReducedMargins_e1948 .Row_skill_a8b94 + .Row_skill_a8b94 {
     margin-left: 1rem;
 }
 
-.Row_base__c_24x24_16.Row_base__collapseOverlap_2c .Row_skill_fb {
+.Row_base__c_24x24_a1b44.Row_base__collapseOverlap_f5514 .Row_skill_a8b94 {
     width: 20rem;
 }
 
-.Row_base__c_24x24_16.Row_base__collapseOverlap_2c .Row_skill__last_0a,
-.Row_base__c_24x24_16.Row_base__collapseOverlap_2c .Row_skill__lastLearnedSkill_6c {
+.Row_base__c_24x24_a1b44.Row_base__collapseOverlap_f5514 .Row_skill__last_cece2,
+.Row_base__c_24x24_a1b44.Row_base__collapseOverlap_f5514 .Row_skill__lastLearnedSkill_c917d {
     width: 24rem;
 }
 
-.Row_base__c_24x24_16.Row_base__collapseOverlap_2c .Row_skill__lastLearnedSkill_6c {
+.Row_base__c_24x24_a1b44.Row_base__collapseOverlap_f5514 .Row_skill__lastLearnedSkill_c917d {
     margin-right: 2rem;
 }
 
-.Row_base__c_24x24_16.Row_base__collapseOnlyLearningOverlap_19 .Row_skill__stateLearning_5d {
+.Row_base__c_24x24_a1b44.Row_base__collapseOnlyLearningOverlap_ac76c .Row_skill__stateLearning_f8148 {
     width: 20rem;
 }
 
-.Row_base__c_24x24_16.Row_base__collapseOnlyLearningOverlap_19
-    .Row_skill__stateLearning_5d
-    + .Row_skill__stateLearning_5d {
+.Row_base__c_24x24_a1b44.Row_base__collapseOnlyLearningOverlap_ac76c
+    .Row_skill__stateLearning_f8148
+    + .Row_skill__stateLearning_f8148 {
     margin-left: 0;
 }
 
-.Row_base__c_24x24_16.Row_base__collapseOnlyLearningOverlap_19 .Row_skill_fb.Row_skill__last_0a {
+.Row_base__c_24x24_a1b44.Row_base__collapseOnlyLearningOverlap_ac76c .Row_skill_a8b94.Row_skill__last_cece2 {
     width: 24rem;
 }
 
-.Row_base__c_24x24_16.Row_base__collapseExtraOverlap_10 .Row_skill_fb {
+.Row_base__c_24x24_a1b44.Row_base__collapseExtraOverlap_cd20f .Row_skill_a8b94 {
     width: 19rem;
 }
 
-.Row_base__c_24x24_16.Row_base__collapseExtraOverlapWithLevel_90 .Row_skill_fb,
-.Row_base__c_24x24_16.Row_base__collapseExtraOverlapWithEfficiency_90 .Row_skill_fb {
+.Row_base__c_24x24_a1b44.Row_base__collapseExtraOverlapWithLevel_b8bc2 .Row_skill_a8b94,
+.Row_base__c_24x24_a1b44.Row_base__collapseExtraOverlapWithEfficiency_f5c0b .Row_skill_a8b94 {
     width: 15rem;
 }
 
-.Row_base__c_24x24_16.Row_base__collapseExtraOverlapWithLevelAndEfficiency_4e .Row_skill_fb {
+.Row_base__c_24x24_a1b44.Row_base__collapseExtraOverlapWithLevelAndEfficiency_eb584 .Row_skill_a8b94 {
     width: 14rem;
 }
 
-.Row_base__c_24x24_16.Row_base__collapseExtraOverlap_10 .Row_skill__last_0a,
-.Row_base__c_24x24_16.Row_base__collapseExtraOverlapWithLevel_90 .Row_skill__last_0a,
-.Row_base__c_24x24_16.Row_base__collapseExtraOverlapWithEfficiency_90 .Row_skill__last_0a,
-.Row_base__c_24x24_16.Row_base__collapseExtraOverlapWithLevelAndEfficiency_4e .Row_skill__last_0a {
+.Row_base__c_24x24_a1b44.Row_base__collapseExtraOverlap_cd20f .Row_skill__last_cece2,
+.Row_base__c_24x24_a1b44.Row_base__collapseExtraOverlapWithLevel_b8bc2 .Row_skill__last_cece2,
+.Row_base__c_24x24_a1b44.Row_base__collapseExtraOverlapWithEfficiency_f5c0b .Row_skill__last_cece2,
+.Row_base__c_24x24_a1b44.Row_base__collapseExtraOverlapWithLevelAndEfficiency_eb584 .Row_skill__last_cece2 {
     width: 24rem;
 }
 
-.Row_base__c_24x24_16 .Row_level_56 {
+.Row_base__c_24x24_a1b44 .Row_level_ddaff {
     margin-left: 4rem;
     position: relative;
     top: -1rem;
 }
 
-.Row_base__c_44x44_4f .Row_level_56 {
+.Row_base__c_44x44_b19d9 .Row_level_ddaff {
     margin-left: 6rem;
     font-size: 24rem;
 }
 
-.Row_acceleratedTrainingIcon_c7 {
+.Row_acceleratedTrainingIcon_cdfb1 {
     margin-left: 9rem;
 }
 
-.Row_lostSkill_32 {
+.Row_lostSkill_d0ede {
     margin-left: 2rem;
 }
 
-.Row_base__c_44x44_4f .Row_lostSkill_32 {
+.Row_base__c_44x44_b19d9 .Row_lostSkill_d0ede {
     margin-left: 4rem;
 }
 
-.Skills_base_ec {
+.Skills_base_abf76 {
     display: flex;
     align-items: center;
 }
 
-.Skills_efficiency_d0 {
+.Skills_efficiency_b3734 {
     margin-right: 4rem;
 }
 
-.Skills_base__c_44x44_c0 .Skills_efficiency_d0 {
+.Skills_base__c_44x44_d4037 .Skills_efficiency_b3734 {
     margin-right: 8rem;
 }
 
-.Skills_rows_e8 {
+.Skills_rows_f44e0 {
     display: flex;
     flex-direction: column;
 }
 
-.Skills_bonusRow_4a {
+.Skills_bonusRow_d65a0 {
     margin-top: 2rem;
 }
 
-.Skills_base__c_44x44_c0 .Skills_bonusRow_4a {
+.Skills_base__c_44x44_d4037 .Skills_bonusRow_d65a0 {
     margin-top: 4rem;
 }
 
-.TankmanIcon_base_f9 {
+.TankmanIcon_base_cfe24 {
     background: no-repeat center / contain;
 }
 
-.TankmanIcon_base__big_98 {
+.TankmanIcon_base__big_e204e {
     width: 158rem;
     height: 118rem;
 }
 
-.TankmanIcon_base__small_b2,
-.TankmanIcon_base__barracks_62 {
+.TankmanIcon_base__small_fcd32,
+.TankmanIcon_base__barracks_f68cc {
     width: 100rem;
     height: 60rem;
 }
 
-.TankmanIcon_base__special_3f {
+.TankmanIcon_base__special_fa28e {
     width: 444rem;
     height: 300rem;
 }
 
-.TankmanIcon_base__c_204x256_97 {
+.TankmanIcon_base__c_204x256_a5ad6 {
     width: 204rem;
     height: 256rem;
 }
 
-.WidgetTankmanIcon_icon_0f {
+.WidgetTankmanIcon_icon_a00b6 {
     width: 108rem;
     height: 80rem;
 }
 
-.WidgetTankmanIcon_icon__small_24 {
+.WidgetTankmanIcon_icon__small_a3cf7 {
     width: 100rem;
     height: 60rem;
 }
 
-.WidgetTankmanIcon_icon__cropped_bd {
+.WidgetTankmanIcon_icon__cropped_dda9c {
     margin-top: -10rem;
     clip-path: inset(10rem 0 0 0);
 }
 
-.Tankman_base_dd {
+.Tankman_base_ed4d3 {
     display: flex;
     align-items: flex-end;
     color: #e9e2bf;
@@ -807,17 +807,17 @@
     position: relative;
 }
 
-.Tankman_hitBox_47 {
+.Tankman_hitBox_b17d6 {
     width: 100%;
     height: 100%;
     position: absolute;
 }
 
-.Tankman_tankmanIcon_f7 {
+.Tankman_tankmanIcon_fa37e {
     pointer-events: none;
 }
 
-.Tankman_block_09 {
+.Tankman_block_d0de0 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -830,22 +830,22 @@
     pointer-events: none;
 }
 
-.Tankman_info_11 {
+.Tankman_info_d0a45 {
     display: flex;
     max-width: 100%;
 }
 
-.Tankman_roles_6c {
+.Tankman_roles_fd0ff {
     display: flex;
     margin-left: 3rem;
 }
 
-.Tankman_role_b4 {
+.Tankman_role_b9ae7 {
     margin-right: 5rem;
     opacity: 0.4;
 }
 
-.Tankman_name_db {
+.Tankman_name_ba190 {
     color: #c9c9b6;
     font-size: 14rem;
     font-weight: 400;
@@ -858,18 +858,18 @@
     overflow: hidden;
 }
 
-.Tankman_skills_7b {
+.Tankman_skills_e67b2 {
     margin-top: 6rem;
     pointer-events: auto;
 }
 
-.Tankmen_base_d3 {
+.Tankmen_base_b69b4 {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
-.Tankmen_slot_1a {
+.Tankmen_slot_d9244 {
     display: flex;
     align-items: flex-end;
     width: 100%;
@@ -885,19 +885,19 @@
     position: relative;
 }
 
-.mediaLarge .Tankmen_slot_1a {
+.mediaLarge .Tankmen_slot_d9244 {
     height: 71rem;
 }
 
-.Tankmen_slot__withBonusSkills_13 {
+.Tankmen_slot__withBonusSkills_f7de8 {
     height: 81rem;
 }
 
-.mediaLarge .Tankmen_slot__withBonusSkills_13 {
+.mediaLarge .Tankmen_slot__withBonusSkills_f7de8 {
     height: 91rem;
 }
 
-.Tankmen_divider_8b {
+.Tankmen_divider_ba877 {
     width: 100%;
     height: 1rem;
     background: linear-gradient(
@@ -913,7 +913,7 @@
     left: 0;
 }
 
-.CrewTabApp_base_af {
+.CrewTabApp_base_a6b02 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -922,11 +922,11 @@
     position: relative;
 }
 
-.mediaMediumHeight .CrewTabApp_list_5a {
+.mediaMediumHeight .CrewTabApp_list_bf99f {
     margin-top: 5rem;
 }
 
-.CrewTabApp_crewLocked_eb {
+.CrewTabApp_crewLocked_a7b4e {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -936,7 +936,7 @@
     margin-top: 2rem;
 }
 
-.CrewTabApp_lockIcon_03 {
+.CrewTabApp_lockIcon_ac2ef {
     width: 24rem;
     height: 24rem;
     background: url('R.images.gui.maps.icons.library.lock_gray') no-repeat center / contain;

@@ -1,86 +1,88 @@
-import { r as e, n as a, l as t, j as o, f as i, m as s, p as n } from '../../../chunks/vendor.js';
+import { r as e, q as a, l as t, j as o, f as i, m as s, s as n, n as r } from '../../../chunks/vendor.js';
 import {
-    c as r,
-    i as c,
-    f as l,
+    c,
+    i as l,
+    f as p,
     g as d,
-    h as p,
-    u as _,
-    e as m,
-    r as g,
-    V as f,
-    j as h,
-    I as u,
-    l as b,
-    m as C,
-    p as S,
-    b as v,
-    F as x,
-    B as O,
-    t as y,
-    a as I,
-    k as N,
-    q as w,
-    v as E,
-    n as j,
-    d as T,
-    U as k,
+    h as _,
+    u as m,
+    e as g,
+    r as f,
+    V as h,
+    j as u,
+    I as b,
+    l as C,
+    m as S,
+    n as v,
+    b as x,
+    F as O,
+    B as y,
+    t as I,
+    a as N,
+    k as w,
+    p as E,
+    q as j,
+    v as T,
+    d as k,
+    U as L,
 } from '../../../chunks/lib.js';
-import { O as L, P as A } from '../../../chunks/enums.js';
-/* empty css                    */ var H = ((e) => (
+import { O as A, P as H } from '../../../chunks/enums.js';
+/* empty css                    */ const W = 'operationId',
+    R = 'campaignsState';
+var $ = ((e) => (
     (e.FIRST_TWO = 'firstTwo'),
     (e.THIRD = 'third'),
     (e.COMPLETED_WITH_HONOR = 'completedWithHonor'),
     (e.LOCKED = 'locked'),
     e
-))(H || {});
-const W = {
-        [L.AVAILABLE]: L.AVAILABLE,
-        [L.ACTIVE]: L.AVAILABLE,
-        [L.COMPLETED]: L.AVAILABLE,
-        [L.COMPLETED_WITH_HONORS]: L.AVAILABLE,
-        [L.UNAVAILABLE]: L.UNAVAILABLE,
-        [L.LOCKED]: L.UNAVAILABLE,
+))($ || {});
+const D = {
+        [A.AVAILABLE]: A.AVAILABLE,
+        [A.ACTIVE]: A.AVAILABLE,
+        [A.COMPLETED]: A.AVAILABLE,
+        [A.COMPLETED_WITH_HONORS]: A.AVAILABLE,
+        [A.UNAVAILABLE]: A.UNAVAILABLE,
+        [A.LOCKED]: A.UNAVAILABLE,
     },
-    R = ['first', 'second', 'third'],
-    $ = { left: 'left', right: 'right' },
-    D = 'light',
-    V = 'dark';
-const M = { lightsOn: r('pm_lobby_lights_on') },
-    [P, B] = c()(
+    V = ['first', 'second', 'third'],
+    M = { left: 'left', right: 'right' },
+    P = 'light',
+    B = 'dark';
+const F = { lightsOn: c('pm_lobby_lights_on') },
+    [K, U] = l()(
         ({ observableModel: e }) => {
             const a = {
                     ...e.primitives(['campaignSelectorViewState', 'blockedByVehicle', 'firstTimeEntrance']),
                     campaigns: e.arrayClone('campaigns'),
                 },
-                t = l.primitive(() => {
+                t = p.primitive(() => {
                     const e = a.campaignSelectorViewState.get(),
                         t = a.firstTimeEntrance.get();
-                    return e === H.FIRST_TWO || (e === H.THIRD && t) ? H.THIRD : H.FIRST_TWO;
+                    return e === $.FIRST_TWO || (e === $.THIRD && t) ? $.THIRD : $.FIRST_TWO;
                 }),
-                o = l.primitive(() => {
+                o = p.primitive(() => {
                     const e = a.firstTimeEntrance.get(),
                         { first: o, second: s } = i();
-                    return e && o.completedWithHonor && s.completedWithHonor ? H.FIRST_TWO : t();
+                    return e && o.completedWithHonor && s.completedWithHonor ? $.FIRST_TWO : t();
                 }),
-                i = l.model(() =>
+                i = p.model(() =>
                     d(
                         a.campaigns.get(),
                         (e, { campaignName: a, completedWithHonor: t }, o) => {
-                            const i = R[o];
+                            const i = V[o];
                             return i ? ((e[`${i}`] = { campaignName: a, completedWithHonor: t }), e) : e;
                         },
                         {},
                     ),
                 ),
-                s = l.model(() => {
-                    const e = p(a.campaigns.get(), 2),
-                        t = null == e ? void 0 : e.operations.find(({ active: e }) => e);
+                s = p.model(() => {
+                    const e = _(a.campaigns.get(), 2),
+                        t = e?.operations.find(({ active: e }) => e);
                     return t ? t.operationId : 0;
                 }),
-                n = l.primitive((e, t, o) => {
+                n = p.primitive((e, t, o) => {
                     const i = a.campaignSelectorViewState.get();
-                    return !(a.firstTimeEntrance.get() || o !== L.AVAILABLE || t < 8 || e !== i) && i === H.THIRD;
+                    return !(a.firstTimeEntrance.get() || o !== A.AVAILABLE || t < 8 || e !== i) && i === $.THIRD;
                 });
             return {
                 ...a,
@@ -96,11 +98,11 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
         ({ externalModel: e }) => ({
             openInfoScreen: e.createCallbackNoArgs('onMoreInfo'),
             close: e.createCallbackNoArgs('onClose'),
-            openOperation: e.createCallback((e) => ({ operationId: e }), 'onOperation'),
-            switchCampaign: e.createCallback((e) => ({ campaignsState: e }), 'switchCampaign'),
+            openOperation: e.createCallback((e) => ({ [W]: e }), 'onOperation'),
+            switchCampaign: e.createCallback((e) => ({ [R]: e }), 'switchCampaign'),
         }),
     ),
-    F = [
+    Y = [
         { opacity: 0.7, config: { duration: 100 } },
         { opacity: 0, config: { duration: 100 } },
         { opacity: 1, config: { duration: 100 } },
@@ -117,7 +119,7 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
         { opacity: 0.9, config: { duration: 100 } },
         { opacity: 1, config: { duration: 100 } },
     ],
-    K = [
+    q = [
         { opacity: 0, config: { duration: 100 } },
         { opacity: 1, config: { duration: 100 } },
         { opacity: 0, config: { duration: 100 } },
@@ -134,15 +136,15 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
         { opacity: 0.1, config: { duration: 100 } },
         { opacity: 0, config: { duration: 100 } },
     ],
-    U = e.createContext(null),
-    Y = a(function ({ children: a }) {
-        const { model: i, controls: s } = B(),
+    G = e.createContext(null),
+    z = a(function ({ children: a }) {
+        const { model: i, controls: s } = U(),
             n = i.computes.disabledCampaign(),
             r = i.campaignSelectorViewState.get(),
             [c, l] = e.useState('idle'),
-            d = _(),
-            p = 'fadeIn' !== c && 'idle' !== c,
-            g = r === H.LOCKED || r === H.COMPLETED_WITH_HONOR;
+            p = m(),
+            d = 'fadeIn' !== c && 'idle' !== c,
+            _ = r === $.LOCKED || r === $.COMPLETED_WITH_HONOR;
         function f(e) {
             l(e);
         }
@@ -151,14 +153,14 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
         }
         const [u, b] = t(() => ({
                 from: { opacity: 0, transform: 'scale(1)' },
-                config: { duration: 300, easing: m.easeInCirc },
+                config: { duration: 300, easing: g.easeInCirc },
             })),
             [C, S] = t(() => ({
                 from: { opacity: 0, transform: 'translateY(0rem)', pointerEvents: 'none' },
-                config: { duration: 300, easing: m.easeInOutCirc },
+                config: { duration: 300, easing: g.easeInOutCirc },
             })),
-            [v, x] = t(() => ({ from: { opacity: g ? 0 : 1 } })),
-            [O, y] = t(() => ({ from: { opacity: g ? 1 : 0 } })),
+            [v, x] = t(() => ({ from: { opacity: _ ? 0 : 1 } })),
+            [O, y] = t(() => ({ from: { opacity: _ ? 1 : 0 } })),
             [I, N] = t(() => ({ from: { opacity: 0 } })),
             [w, E] = t(() => ({ from: { opacity: 0 }, config: { duration: 300 } }));
         return (
@@ -169,9 +171,9 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
                 switch (c) {
                     case 'fadeOut':
                         (S.start({ to: { opacity: 0, transform: 'translateY(20rem)', pointerEvents: 'none' } }),
-                            x.start({ to: { opacity: 1 }, config: { duration: 100, easing: m.easeInOutCirc } }),
-                            y.start({ to: { opacity: 0 }, config: { duration: 100, easing: m.easeInOutCirc } }),
-                            N.start({ to: { opacity: 0 }, config: { duration: 100, easing: m.easeInOutCirc } }),
+                            x.start({ to: { opacity: 1 }, config: { duration: 100, easing: g.easeInOutCirc } }),
+                            y.start({ to: { opacity: 0 }, config: { duration: 100, easing: g.easeInOutCirc } }),
+                            N.start({ to: { opacity: 0 }, config: { duration: 100, easing: g.easeInOutCirc } }),
                             E.start({ to: { opacity: 1 }, onRest: () => f('startLoading') }));
                         break;
                     case 'startLoading':
@@ -181,7 +183,7 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
                         E.start({ to: { opacity: 0 }, onRest: () => f('fadeIn'), config: { duration: 300 } });
                         break;
                     case 'fadeIn':
-                        if (g)
+                        if (_)
                             return void S.start({
                                 from: { opacity: 0, transform: 'translateY(20rem)' },
                                 to: { opacity: 1, transform: 'translateY(0rem)', pointerEvents: 'auto' },
@@ -191,23 +193,23 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
                             from: { opacity: 0, transform: 'translateY(20rem)' },
                             to: { opacity: 1, transform: 'translateY(0rem)', pointerEvents: 'auto' },
                         }),
-                            x.start({ from: { opacity: 1 }, to: K, config: { easing: m.easeInOutCirc } }),
-                            d.play('lightsOn'),
+                            x.start({ from: { opacity: 1 }, to: q, config: { easing: g.easeInOutCirc } }),
+                            p.play('lightsOn'),
                             y.start({
                                 from: { opacity: 0 },
-                                to: F,
-                                config: { easing: m.easeInOutCirc },
+                                to: Y,
+                                config: { easing: g.easeInOutCirc },
                                 onRest() {
                                     (f('idle'),
                                         N.start({
                                             to: { opacity: 1 },
-                                            config: { duration: 2e3, easing: m.easeInCirc },
+                                            config: { duration: 2e3, easing: g.easeInCirc },
                                         }));
                                 },
                             }));
                 }
-            }, [y, x, n, b, S, E, g, N, s, d, c]),
-            o.jsx(U.Provider, {
+            }, [y, x, n, b, S, E, _, N, s, p, c]),
+            o.jsx(G.Provider, {
                 value: {
                     currentStep: c,
                     bugsStyle: I,
@@ -215,7 +217,7 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
                     boardItemStyle: v,
                     contentStyle: u,
                     footerStyle: C,
-                    UIBlocked: p,
+                    UIBlocked: d,
                     getAnimationShade: function (e) {
                         return 'idle' !== c && 'fadeIn' !== c && 'openOperation' !== c ? 'dark' : e;
                     },
@@ -228,7 +230,7 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
                             l('openOperation'),
                             b.start({
                                 to: { transform: 'scale(1.1)', opacity: 0 },
-                                config: { duration: 300, easing: m.easeInOutCirc },
+                                config: { duration: 300, easing: g.easeInOutCirc },
                                 onRest: () => e(),
                             }));
                     },
@@ -237,41 +239,41 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
             })
         );
     }),
-    G = () => {
-        const a = e.useContext(U);
+    Z = () => {
+        const a = e.useContext(G);
         if (!a) throw new Error('useAnimation must be used within an AnimationProvider');
         return a;
     },
-    q = 'Particles_b7c425ba',
-    z = 'Particles_video_dadccd98',
-    Z = 'Particles_video__glow_27caffe2',
-    J = 'Particles_video__sparks_390a3794',
-    Q = 'Particles_video__newCampaignSparks_b536df1c',
-    X = 'Particles_video__newCampaignGlow_6d8cdfa1',
-    ee = 'Particles_wrapper_7a6969a2',
-    ae = 'Particles_wrapper__hidden_efb078a7',
-    te = a(function ({ className: e }) {
-        const a = g.resolve('videos'),
-            { model: t } = B(),
+    J = 'Particles_b7c425ba',
+    Q = 'Particles_video_dadccd98',
+    X = 'Particles_video__glow_27caffe2',
+    ee = 'Particles_video__sparks_390a3794',
+    ae = 'Particles_video__newCampaignSparks_b536df1c',
+    te = 'Particles_video__newCampaignGlow_6d8cdfa1',
+    oe = 'Particles_wrapper_7a6969a2',
+    ie = 'Particles_wrapper__hidden_efb078a7',
+    se = a(function ({ className: e }) {
+        const a = f.resolve('videos'),
+            { model: t } = U(),
             s = t.campaignSelectorViewState.get(),
-            n = s === H.COMPLETED_WITH_HONOR,
-            r = t.firstTimeEntrance.get() && s !== H.LOCKED;
+            n = s === $.COMPLETED_WITH_HONOR,
+            r = t.firstTimeEntrance.get() && s !== $.LOCKED;
         return n || r
             ? o.jsxs('div', {
-                  className: i(q, e),
+                  className: i(J, e),
                   children: [
                       n &&
                           o.jsxs(o.Fragment, {
                               children: [
-                                  o.jsx(f, {
+                                  o.jsx(h, {
                                       src: a.readOrEmpty('personal_missions_30.campaign_selector.new_campaign_glow'),
-                                      className: i(z, Z),
+                                      className: i(Q, X),
                                       loop: !0,
                                       autoplay: !0,
                                   }),
-                                  o.jsx(f, {
+                                  o.jsx(h, {
                                       src: a.readOrEmpty('personal_missions_30.campaign_selector.sparks'),
-                                      className: i(z, J),
+                                      className: i(Q, ee),
                                       loop: !0,
                                       autoplay: !0,
                                   }),
@@ -279,17 +281,17 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
                           }),
                       r &&
                           o.jsxs('div', {
-                              className: i(ee, t.blockedByVehicle.get() && ae),
+                              className: i(oe, t.blockedByVehicle.get() && ie),
                               children: [
-                                  o.jsx(f, {
+                                  o.jsx(h, {
                                       src: a.readOrEmpty('personal_missions_30.campaign_selector.new_campaign_glow'),
-                                      className: i(z, X),
+                                      className: i(Q, te),
                                       loop: !0,
                                       autoplay: !0,
                                   }),
-                                  o.jsx(f, {
+                                  o.jsx(h, {
                                       src: a.readOrEmpty('personal_missions_30.campaign_selector.new_campaign_sparks'),
-                                      className: i(z, Q),
+                                      className: i(Q, ae),
                                       loop: !0,
                                       autoplay: !0,
                                   }),
@@ -299,7 +301,7 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
               })
             : null;
     }),
-    oe = {
+    ne = {
         base: 'Background_81dbcfb6',
         lightLeft: 'Background_lightLeft_cac88ec4',
         lightRight: 'Background_lightRight_5a3c0254',
@@ -307,21 +309,21 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
         base__completedWithHonor: 'Background_base__completedWithHonor_26effab7',
         content: 'Background_content_6c5e4ec3',
     },
-    ie = a(function (e) {
-        const { model: a } = B(),
+    re = a(function (e) {
+        const { model: a } = U(),
             t = a.campaignSelectorViewState.get(),
-            { backgroundStyle: n } = G();
+            { backgroundStyle: n } = Z();
         return o.jsxs('div', {
-            className: i(oe.base, oe[`base__${t}`], e.className),
+            className: i(ne.base, ne[`base__${t}`], e.className),
             children: [
-                o.jsx('div', { className: oe.content, children: e.children }),
-                o.jsx(s.div, { style: t === H.FIRST_TWO ? n : void 0, className: oe.lightLeft }),
-                o.jsx(s.div, { style: t === H.THIRD ? n : void 0, className: oe.lightRight }),
+                o.jsx('div', { className: ne.content, children: e.children }),
+                o.jsx(s.div, { style: t === $.FIRST_TWO ? n : void 0, className: ne.lightLeft }),
+                o.jsx(s.div, { style: t === $.THIRD ? n : void 0, className: ne.lightRight }),
             ],
         });
     }),
-    se = { top: 0, left: 0 },
-    ne = {
+    ce = { top: 0, left: 0 },
+    le = {
         1: {
             extraSmall: { top: -19, left: 216 },
             medium: { top: -26, left: 266 },
@@ -383,7 +385,7 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
             extraLarge: { top: 470, left: 66 },
         },
     },
-    re = {
+    pe = {
         1: {
             extraSmall: { top: 70, left: 189 },
             medium: { top: 83, left: 232 },
@@ -415,44 +417,44 @@ const M = { lightsOn: r('pm_lobby_lights_on') },
             extraLarge: { top: 487, left: 153 },
         },
     },
-    ce = {
+    de = {
         medium: { width: 100, height: 100 },
         large: { width: 120, height: 120 },
         extraLarge: { width: 160, height: 160 },
     },
-    le = 'completed',
-    de = 'default';
-function pe({ completed: e, operationId: a, iconShade: t, className: i }) {
-    const n = e ? le : de,
-        r = re[a],
-        { top: c, left: l } = h((null == r ? void 0 : r.extraSmall) ?? se, r),
-        { boardItemStyle: d, getAnimationShade: p } = G(),
-        _ = p(t);
+    _e = 'completed',
+    me = 'default';
+function ge({ completed: e, operationId: a, iconShade: t, className: i }) {
+    const n = e ? _e : me,
+        r = pe[a],
+        { top: c, left: l } = u(r?.extraSmall ?? ce, r),
+        { boardItemStyle: p, getAnimationShade: d } = Z(),
+        _ = d(t);
     return o.jsxs(o.Fragment, {
         children: [
-            o.jsx(u, {
+            o.jsx(b, {
                 path: `personal_missions_30.campaign_selector.arrow.${n}_${a}_light`,
                 className: i,
                 width: '82rem',
                 height: '82rem',
-                adaptive: ce,
-                style: { top: b(c), left: b(l) },
+                adaptive: de,
+                style: { top: C(c), left: C(l) },
             }),
             o.jsx(s.div, {
-                style: 'light' === _ ? d : void 0,
-                children: o.jsx(u, {
+                style: 'light' === _ ? p : void 0,
+                children: o.jsx(b, {
                     path: `personal_missions_30.campaign_selector.arrow.${n}_${a}_dark`,
                     className: i,
                     width: '82rem',
                     height: '82rem',
-                    adaptive: ce,
-                    style: { top: b(c), left: b(l) },
+                    adaptive: de,
+                    style: { top: C(c), left: C(l) },
                 }),
             }),
         ],
     });
 }
-const _e = {
+const fe = {
         base: 'OperationCard_f80d92be',
         background: 'OperationCard_background_82f0a58d',
         base__third: 'OperationCard_base__third_dcb7ac10',
@@ -474,110 +476,110 @@ const _e = {
         glareAttention: 'OperationCard_glareAttention_49917f45',
         base__dark: 'OperationCard_base__dark_dcb7ac10',
     },
-    me = 'big',
-    ge = 'small',
-    fe = a(function ({
+    he = 'big',
+    ue = 'small',
+    be = a(function ({
         iconShade: a,
-        campaignUnionType: r,
+        campaignUnionType: i,
         lastActiveOperationId: c,
         className: l,
-        operation: { completed: d, operationIcon: p, operationId: _, operationName: m, state: f },
+        operation: { completed: p, operationIcon: d, operationId: _, operationName: m, state: g },
     }) {
-        const h = g.resolve('strings'),
-            b = g.resolve('sounds'),
-            [x, O] = e.useState(0),
-            { model: y, controls: I } = B(),
-            N = y.computes.isAttention(r, _, f),
-            { boardItemStyle: w, currentStep: E, getAnimationShade: j, openOperation: T } = G(),
+        const h = f.resolve('strings'),
+            u = f.resolve('sounds'),
+            [C, O] = e.useState(0),
+            { model: y, controls: I } = U(),
+            N = y.computes.isAttention(i, _, g),
+            { boardItemStyle: w, currentStep: E, getAnimationShade: j, openOperation: T } = Z(),
             k = j(a),
-            H = W[f],
-            R = c === _,
-            $ = R ? me : ge,
-            D = f === L.COMPLETED_WITH_HONORS ? L.COMPLETED_WITH_HONORS : L.COMPLETED,
-            V = f === L.LOCKED,
-            M = C(
+            L = D[g],
+            W = c === _,
+            R = W ? he : ue,
+            $ = g === A.COMPLETED_WITH_HONORS ? A.COMPLETED_WITH_HONORS : A.COMPLETED,
+            V = g === A.LOCKED,
+            M = S(
                 'operation',
                 e.useMemo(() => [_], [_]),
             ),
-            P = S(
-                A.CUSTOM_SIMPLE,
+            P = v(
+                H.CUSTOM_SIMPLE,
                 e.useMemo(
                     () => ({
                         body: h.readOrEmpty('personal_missions_30.campaignSelector.operation.tooltip.locked'),
-                        resId: g
+                        resId: f
                             .resolve('views')
                             .read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
                     }),
                     [h],
                 ),
             ),
-            [F, K] = t(() => ({
+            [B, F] = t(() => ({
                 from: { transform: 'translate(10%, -220%) rotate(30deg)' },
                 config: { duration: 1e3, easing: n.easeOutCirc },
                 loop: !1,
                 onRest: () => O((e) => e + 1),
             }));
         return (
-            v(() => {
-                K.start({ to: { transform: 'translate(-45%, 30%) rotate(30deg)' }, loop: !0, delay: 3e3 });
+            x(() => {
+                F.start({ to: { transform: 'translate(-45%, 30%) rotate(30deg)' }, loop: !0, delay: 3e3 });
             }),
             e.useEffect(() => {
-                if ('fadeOut' === E) K.stop();
-            }, [K, E]),
+                if ('fadeOut' === E) F.stop();
+            }, [F, E]),
             o.jsxs('div', {
-                className: i(_e.base, _e[`base__${r}`], _e[`base__${a}`], R && _e.base__active, l),
+                className: r(fe.base, fe[`base__${i}`], fe[`base__${a}`], W && fe.base__active, l),
                 children: [
                     o.jsx('div', {
-                        className: i(_e.hoverArea, !V && _e.hoverArea__available),
+                        className: r(fe.hoverArea, !V && fe.hoverArea__available),
                         ...(V ? P : M),
                         onClick: function () {
-                            V ? P.onClick() : (b.play('yes1'), M.onClick(), T(() => I.openOperation(_)));
+                            V ? P.onClick() : (u.play('yes1'), M.onClick(), T(() => I.openOperation(_)));
                         },
                         onMouseEnter: function (e) {
-                            (V ? P.onMouseEnter(e) : M.onMouseEnter(e), V || b.play('gui_hangar_hover'));
+                            (V ? P.onMouseEnter(e) : M.onMouseEnter(e), V || u.play('gui_hangar_hover'));
                         },
                     }),
-                    o.jsx('div', { className: _e.glowHover }),
-                    o.jsx(u, {
-                        path: `personal_missions_30.campaign_selector.card.${r}.${R ? 'active' : H}.${p}_light`,
-                        className: _e.background,
+                    o.jsx('div', { className: fe.glowHover }),
+                    o.jsx(b, {
+                        path: `personal_missions_30.campaign_selector.card.${i}.${W ? 'active' : L}.${d}_light`,
+                        className: fe.background,
                     }),
                     o.jsx(s.div, {
                         style: 'light' === k ? w : void 0,
-                        children: o.jsx(u, {
-                            path: `personal_missions_30.campaign_selector.card.${r}.${R ? 'active' : H}.${p}_dark`,
-                            className: i(_e.background, _e.background__dark),
+                        children: o.jsx(b, {
+                            path: `personal_missions_30.campaign_selector.card.${i}.${W ? 'active' : L}.${d}_dark`,
+                            className: r(fe.background, fe.background__dark),
                         }),
                     }),
                     o.jsxs('div', {
-                        className: _e.maskedArea,
+                        className: fe.maskedArea,
                         children: [
-                            o.jsx('div', { className: _e.glareHover }),
-                            x < 5 && N && o.jsx(s.div, { style: F, className: _e.glareAttention }),
+                            o.jsx('div', { className: fe.glareHover }),
+                            C < 5 && N && o.jsx(s.div, { style: B, className: fe.glareAttention }),
                         ],
                     }),
-                    f === L.LOCKED
+                    g === A.LOCKED
                         ? o.jsx('div', {
-                              className: _e.wrapper,
-                              children: o.jsx(u, {
+                              className: fe.wrapper,
+                              children: o.jsx(b, {
                                   path: 'personal_missions_30.common.card.alert',
                                   width: '48rem',
                                   height: '48rem',
-                                  className: _e.alert,
+                                  className: fe.alert,
                               }),
                           })
-                        : d
+                        : p
                           ? o.jsxs(o.Fragment, {
                                 children: [
-                                    o.jsx(u, {
-                                        path: `personal_missions_30.campaign_selector.card.${r}.badge.${D}_light_${$}_${_}`,
-                                        className: _e.badge,
+                                    o.jsx(b, {
+                                        path: `personal_missions_30.campaign_selector.card.${i}.badge.${$}_light_${R}_${_}`,
+                                        className: fe.badge,
                                     }),
                                     o.jsx(s.div, {
-                                        className: i(_e.badge, _e.badge__dark),
+                                        className: r(fe.badge, fe.badge__dark),
                                         style: 'light' === k ? w : void 0,
-                                        children: o.jsx(u, {
-                                            path: `personal_missions_30.campaign_selector.card.${r}.badge.${D}_dark_${$}_${_}`,
+                                        children: o.jsx(b, {
+                                            path: `personal_missions_30.campaign_selector.card.${i}.badge.${$}_dark_${R}_${_}`,
                                             width: '100%',
                                             height: '100%',
                                         }),
@@ -585,94 +587,94 @@ const _e = {
                                 ],
                             })
                           : void 0,
-                    o.jsx('div', { className: _e.name, children: m }),
+                    o.jsx('div', { className: fe.name, children: m }),
                 ],
             })
         );
     }),
-    he = 'Operation_campaignCard_8ac4ca25';
-function ue({ className: e, ...a }) {
-    const t = ne[a.operation.operationId],
-        { top: i, left: s } = h((null == t ? void 0 : t.extraSmall) ?? se, t);
+    Ce = 'Operation_campaignCard_8ac4ca25';
+function Se({ className: e, ...a }) {
+    const t = le[a.operation.operationId],
+        { top: i, left: s } = u(t?.extraSmall ?? ce, t);
     return o.jsx('div', {
         className: e,
-        style: { top: b(i), left: b(s) },
-        children: o.jsx(fe, { ...a, className: he }),
+        style: { top: C(i), left: C(s) },
+        children: o.jsx(be, { ...a, className: Ce }),
     });
 }
-const be = {
+const ve = {
         base: 'Campaign_b9d0bb1c',
         threads: 'Campaign_threads_d288be34',
         arrow: 'Campaign_arrow_7ed28fa8',
         operation: 'Campaign_operation_5f4543bc',
     },
-    Ce = {
+    xe = {
         medium: { width: 496, height: 477 },
         large: { width: 594, height: 571 },
         extraLarge: { width: 780, height: 750 },
     };
-const Se = a(function ({ campaignIndex: a, campaign: { operations: t }, className: n }) {
-        const { model: r } = B(),
+const Oe = a(function ({ campaignIndex: a, campaign: { operations: t }, className: n }) {
+        const { model: r } = U(),
             c = r.campaignSelectorViewState.get(),
             l = r.computes.activeOperationId(),
-            { boardItemStyle: d, getAnimationShade: p } = G(),
+            { boardItemStyle: p, getAnimationShade: d } = Z(),
             _ = (function (e) {
-                return e < 2 ? H.FIRST_TWO : H.THIRD;
+                return e < 2 ? $.FIRST_TWO : $.THIRD;
             })(a),
             m = (function (e, a) {
                 switch (e) {
-                    case H.LOCKED:
-                    case H.COMPLETED_WITH_HONOR:
+                    case $.LOCKED:
+                    case $.COMPLETED_WITH_HONOR:
                     case a:
-                        return D;
+                        return P;
                     default:
-                        return V;
+                        return B;
                 }
             })(c, _),
-            g = p(m),
-            f = R[a],
+            g = d(m),
+            f = V[a],
             h = (function (e, a) {
                 return e.reduce(
-                    (e, t) => (a === H.FIRST_TWO ? (t.active || t.state === L.AVAILABLE ? t : e) : t.active ? t : e),
+                    (e, t) => (a === $.FIRST_TWO ? (t.active || t.state === A.AVAILABLE ? t : e) : t.active ? t : e),
                     void 0,
                 );
             })(t, _);
         if (f)
             return o.jsx('div', {
-                className: i(be.base, be[`base__${g}`], be[`base__${l}`], n),
+                className: i(ve.base, ve[`base__${g}`], ve[`base__${l}`], n),
                 children: t.map((i, n) =>
                     o.jsxs(
                         e.Fragment,
                         {
                             children: [
-                                o.jsx(ue, {
+                                o.jsx(Se, {
                                     iconShade: m,
                                     operation: i,
-                                    lastActiveOperationId: null == h ? void 0 : h.operationId,
+                                    lastActiveOperationId: h?.operationId,
                                     campaignUnionType: _,
-                                    className: be.operation,
+                                    className: ve.operation,
                                 }),
-                                n !== t.length - 1 && 2 !== a && o.jsx(pe, { ...i, iconShade: m, className: be.arrow }),
-                                _ === H.THIRD &&
+                                n !== t.length - 1 && 2 !== a && o.jsx(ge, { ...i, iconShade: m, className: ve.arrow }),
+                                _ === $.THIRD &&
                                     0 !== l &&
                                     l === i.operationId &&
                                     o.jsxs(o.Fragment, {
                                         children: [
-                                            o.jsx(u, {
+                                            o.jsx(b, {
                                                 path: `personal_missions_30.campaign_selector.threads.threads_${l}_light`,
                                                 width: '404rem',
                                                 height: '389rem',
-                                                adaptive: Ce,
-                                                className: be.threads,
+                                                adaptive: xe,
+                                                className: ve.threads,
                                             }),
                                             o.jsx(s.div, {
-                                                style: 'light' === g ? d : void 0,
-                                                className: be.threads,
-                                                children: o.jsx(u, {
+                                                style: 'light' === g ? p : void 0,
+                                                className: ve.threads,
+                                                children: o.jsx(b, {
                                                     path: `personal_missions_30.campaign_selector.threads.threads_${l}_dark`,
                                                     width: '404rem',
                                                     height: '389rem',
-                                                    adaptive: Ce,
+                                                    adaptive: xe,
                                                 }),
                                             }),
                                         ],
@@ -684,7 +686,7 @@ const Se = a(function ({ campaignIndex: a, campaign: { operations: t }, classNam
                 ),
             });
     }),
-    ve = {
+    ye = {
         base: 'Content_d6e1c064',
         videoWrapper: 'Content_videoWrapper_3b55dd2b',
         base__firstTwo: 'Content_base__firstTwo_da09528a',
@@ -697,29 +699,29 @@ const Se = a(function ({ campaignIndex: a, campaign: { operations: t }, classNam
         campaign__second: 'Content_campaign__second_d4ebfd7b',
         campaign__third: 'Content_campaign__third_5147ffb6',
     },
-    xe = a(function () {
-        const e = g.resolve('videos'),
-            { model: a } = B(),
+    Ie = a(function () {
+        const e = f.resolve('videos'),
+            { model: a } = U(),
             t = a.campaigns.get(),
             n = a.campaignSelectorViewState.get(),
-            { bugsStyle: r } = G();
+            { bugsStyle: r } = Z();
         return o.jsxs('div', {
-            className: i(ve.base, ve[`base__${n}`]),
+            className: i(ye.base, ye[`base__${n}`]),
             children: [
                 t.map((e, a) =>
                     o.jsx(
-                        Se,
-                        { campaignIndex: a, campaign: e, className: i(ve.campaign, ve[`campaign__${R[a]}`]) },
+                        Oe,
+                        { campaignIndex: a, campaign: e, className: i(ye.campaign, ye[`campaign__${V[a]}`]) },
                         e.campaignName,
                     ),
                 ),
-                n !== H.FIRST_TWO &&
+                n !== $.FIRST_TWO &&
                     o.jsx(s.div, {
                         style: r,
-                        className: ve.videoWrapper,
-                        children: o.jsx(f, {
+                        className: ye.videoWrapper,
+                        children: o.jsx(h, {
                             src: e.readOrEmpty('personal_missions_30.campaign_selector.bugs'),
-                            className: ve.video,
+                            className: ye.video,
                             loop: !0,
                             autoplay: !0,
                         }),
@@ -727,57 +729,57 @@ const Se = a(function ({ campaignIndex: a, campaign: { operations: t }, classNam
             ],
         });
     }),
-    Oe = 'Completed_3554cb33',
-    ye = 'Completed_icon_b7a72552',
-    Ie = 'Completed_title_b2013ee0',
-    Ne = 'Completed_subtitle_446b5d0f';
-function we({ className: e }) {
+    Ne = 'Completed_3554cb33',
+    we = 'Completed_icon_b7a72552',
+    Ee = 'Completed_title_b2013ee0',
+    je = 'Completed_subtitle_446b5d0f';
+function Te({ className: e }) {
     return o.jsxs('div', {
-        className: i(Oe, e),
+        className: i(Ne, e),
         children: [
-            o.jsx(u, {
+            o.jsx(b, {
                 path: 'personal_missions_30.campaign_selector.done_160',
                 width: '160rem',
                 height: '160rem',
                 adaptive: {
                     large: { width: 220, height: 220, path: 'personal_missions_30.campaign_selector.done_220' },
                 },
-                className: ye,
+                className: we,
             }),
-            o.jsx(x, { className: Ie, path: 'personal_missions_30.campaignSelector.completedAll.title' }),
-            o.jsx(x, { className: Ne, path: 'personal_missions_30.campaignSelector.completedAll.subtitle' }),
+            o.jsx(O, { className: Ee, path: 'personal_missions_30.campaignSelector.completedAll.title' }),
+            o.jsx(O, { className: je, path: 'personal_missions_30.campaignSelector.completedAll.subtitle' }),
         ],
     });
 }
-const Ee = 'Locked_33fcc4e0',
-    je = 'Locked_icon_2a64ac0',
-    Te = 'Locked_subtitle_2b8a289f';
-function ke({ className: e }) {
+const ke = 'Locked_33fcc4e0',
+    Le = 'Locked_icon_2a64ac0',
+    Ae = 'Locked_subtitle_2b8a289f';
+function He({ className: e }) {
     return o.jsxs('div', {
-        className: i(Ee, e),
+        className: i(ke, e),
         children: [
-            o.jsx(u, {
+            o.jsx(b, {
                 path: 'personal_missions_30.campaign_selector.lock_64',
                 width: '64rem',
                 height: '64rem',
-                className: je,
+                className: Le,
             }),
-            o.jsx(x, { className: Te, path: 'personal_missions_30.campaignSelector.locked' }),
+            o.jsx(O, { className: Ae, path: 'personal_missions_30.campaignSelector.locked' }),
         ],
     });
 }
-const Le = 'Congratulations_d8cbc768',
-    Ae = 'Congratulations_status_c5e8d951',
-    He = a(function ({ className: e }) {
-        const { model: a } = B(),
+const We = 'Congratulations_d8cbc768',
+    Re = 'Congratulations_status_c5e8d951',
+    $e = a(function ({ className: e }) {
+        const { model: a } = U(),
             { first: t, second: s, third: n } = a.computes.campaignsInfo(),
             r = a.computes.completedCampaign();
         return o.jsxs('div', {
-            className: i(Le, e),
+            className: i(We, e),
             children: [
-                o.jsx(u, { path: 'personal_missions_30.campaign_selector.done', width: '80rem', height: '80rem' }),
-                o.jsx(x, {
-                    className: Ae,
+                o.jsx(b, { path: 'personal_missions_30.campaign_selector.done', width: '80rem', height: '80rem' }),
+                o.jsx(O, {
+                    className: Re,
                     path: `personal_missions_30.campaignSelector.status.completed.${r}`,
                     params: {
                         firstCampaign: t.campaignName,
@@ -788,56 +790,54 @@ const Le = 'Congratulations_d8cbc768',
             ],
         });
     }),
-    We = 'Control_9644b6b9',
-    Re = 'Control_status_40fde3b8',
-    $e = 'Control_base__firstTimeEntrance_da09528a',
-    De = 'Control_base__blocked_da09528a',
-    Ve = 'Control_wrapper_76264813',
-    Me = 'Control_alert_4069240a',
-    Pe = 'Control_info_a90b2e50',
-    Be = 'Control_glareAttention_8e622eb7';
-const Fe = { content: 'Control_buttonContent_8e527c3' },
-    Ke = { switchCampaign: 'switchCampaign', switchCampaigns: 'switchCampaigns', activate: 'activate' },
-    Ue = a(function () {
-        var a, r;
-        const c = g.resolve('views'),
-            l = g.resolve('strings'),
-            { model: d, controls: p } = B(),
-            _ = d.blockedByVehicle.get(),
-            m = d.firstTimeEntrance.get(),
-            f = d.campaignSelectorViewState.get(),
-            h =
-                (null == (r = null == (a = d.campaigns.get()[2]) ? void 0 : a.operations[0]) ? void 0 : r.state) ===
-                L.LOCKED,
-            { first: b, second: C, third: v } = d.computes.campaignsInfo(),
-            I = d.computes.disabledCampaign(),
-            N = m && !_,
-            w = (function (e, a) {
-                return e ? Ke.activate : a === H.THIRD ? Ke.switchCampaigns : Ke.switchCampaign;
-            })(m, f),
-            { UIBlocked: E, startAnimation: j, openOperation: T } = G();
-        const k = S(
-                A.CUSTOM_SIMPLE,
+    De = 'Control_9644b6b9',
+    Ve = 'Control_status_40fde3b8',
+    Me = 'Control_base__firstTimeEntrance_da09528a',
+    Pe = 'Control_base__blocked_da09528a',
+    Be = 'Control_wrapper_76264813',
+    Fe = 'Control_alert_4069240a',
+    Ke = 'Control_info_a90b2e50',
+    Ue = 'Control_glareAttention_8e622eb7';
+const Ye = { content: 'Control_buttonContent_8e527c3' },
+    qe = { switchCampaign: 'switchCampaign', switchCampaigns: 'switchCampaigns', activate: 'activate' },
+    Ge = a(function () {
+        const a = f.resolve('views'),
+            r = f.resolve('strings'),
+            { model: c, controls: l } = U(),
+            p = c.blockedByVehicle.get(),
+            d = c.firstTimeEntrance.get(),
+            _ = c.campaignSelectorViewState.get(),
+            m = c.campaigns.get(),
+            g = m[2]?.operations[0]?.state === A.LOCKED,
+            { first: h, second: u, third: C } = c.computes.campaignsInfo(),
+            S = c.computes.disabledCampaign(),
+            x = d && !p,
+            N = (function (e, a) {
+                return e ? qe.activate : a === $.THIRD ? qe.switchCampaigns : qe.switchCampaign;
+            })(d, _),
+            { UIBlocked: w, startAnimation: E, openOperation: j } = Z();
+        const T = v(
+                H.CUSTOM_SIMPLE,
                 e.useMemo(
                     () => ({
-                        body: l.readOrEmpty('personal_missions_30.campaignSelector.status.button.tooltip'),
-                        resId: c.read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
+                        body: r.readOrEmpty('personal_missions_30.campaignSelector.status.button.tooltip'),
+                        resId: a.read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
                     }),
-                    [l, c],
+                    [r, a],
                 ),
             ),
-            W = S(
-                A.CUSTOM_SIMPLE,
+            k = v(
+                H.CUSTOM_SIMPLE,
                 e.useMemo(
                     () => ({
-                        header: l.readOrEmpty('personal_missions_30.campaignSelector.status.tooltip.title'),
-                        body: l.readOrEmpty(`personal_missions_30.campaignSelector.status.tooltip.${I}`),
-                        resId: c.read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
+                        header: r.readOrEmpty('personal_missions_30.campaignSelector.status.tooltip.title'),
+                        body: r.readOrEmpty(`personal_missions_30.campaignSelector.status.tooltip.${S}`),
+                        resId: a.read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
                     }),
-                    [I, l, c],
+                    [S, r, a],
                 ),
             ),
-            [R, $] = t(() => ({
+            [L, W] = t(() => ({
                 from: { transform: 'translate(10%, -220%) rotate(30deg)' },
                 to: { transform: 'translate(-60%, 30%) rotate(30deg)' },
                 loop: !0,
@@ -845,52 +845,52 @@ const Fe = { content: 'Control_buttonContent_8e527c3' },
                 config: { duration: 1e3, easing: n.easeOutCirc },
             }));
         return o.jsxs('div', {
-            className: i(We, m && $e, E && De),
+            className: i(De, d && Me, w && Pe),
             children: [
-                o.jsx(x, {
-                    className: Re,
-                    path: `personal_missions_30.campaignSelector.status.text.${w}`,
+                o.jsx(O, {
+                    className: Ve,
+                    path: `personal_missions_30.campaignSelector.status.text.${N}`,
                     params: {
-                        firstCampaign: b.campaignName,
-                        secondCampaign: C.campaignName,
-                        thirdCampaign: v.campaignName,
-                        icon: o.jsx(u, {
-                            className: Pe,
+                        firstCampaign: h.campaignName,
+                        secondCampaign: u.campaignName,
+                        thirdCampaign: C.campaignName,
+                        icon: o.jsx(b, {
+                            className: Ke,
                             path: 'personal_missions_30.campaign_selector.info',
                             width: '24rem',
                             height: '24rem',
                         }),
                     },
-                    ...(!m && W),
+                    ...(!d && k),
                 }),
                 o.jsxs('div', {
-                    className: Ve,
-                    ...(_ && k),
+                    className: Be,
+                    ...(p && T),
                     children: [
-                        o.jsx(O, {
-                            theme: m ? y.primary : y.secondary,
+                        o.jsx(y, {
+                            theme: d ? I.primary : I.secondary,
                             size: 'small',
-                            disabled: _ || (m && h),
-                            classNames: Fe,
+                            disabled: p || (d && g),
+                            classNames: Ye,
                             onClick: function () {
-                                _ || (m ? T(() => p.switchCampaign(I)) : j());
+                                p || (d ? j(() => l.switchCampaign(S)) : E());
                             },
-                            children: l.readOrEmpty(`personal_missions_30.campaignSelector.status.button.${w}`),
+                            children: r.readOrEmpty(`personal_missions_30.campaignSelector.status.button.${N}`),
                         }),
-                        _ &&
-                            o.jsx(u, {
-                                className: Me,
+                        p &&
+                            o.jsx(b, {
+                                className: Fe,
                                 path: 'personal_missions_30.campaign_selector.alert',
                                 width: '24rem',
                                 height: '24rem',
                             }),
-                        N && o.jsx(s.div, { style: R, className: Be }),
+                        x && o.jsx(s.div, { style: L, className: Ue }),
                     ],
                 }),
             ],
         });
     }),
-    Ye = {
+    ze = {
         base: 'Switcher_b045409e',
         content: 'Switcher_content_b19c6c99',
         content__left: 'Switcher_content__left_bd242217',
@@ -900,29 +900,29 @@ const Fe = { content: 'Control_buttonContent_8e527c3' },
         base__third: 'Switcher_base__third_9ba1e4f',
         content__visible: 'Switcher_content__visible_fb2be705',
     };
-const Ge = a(function ({ className: e }) {
-        const { model: a } = B(),
+const Ze = a(function ({ className: e }) {
+        const { model: a } = U(),
             t = a.campaignSelectorViewState.get(),
             s = a.firstTimeEntrance.get(),
             n = (function ({ first: e, second: a, third: t }) {
                 return { left: e.completedWithHonor && a.completedWithHonor, right: t.completedWithHonor };
             })(a.computes.campaignsInfo());
         return o.jsx('div', {
-            className: i(Ye.base, Ye[`base__${t}`], s && Ye.base__firstTimeEntrance, e),
-            children: Object.keys($).map((e) => {
+            className: i(ze.base, ze[`base__${t}`], s && ze.base__firstTimeEntrance, e),
+            children: Object.keys(M).map((e) => {
                 const a = n[e];
                 return o.jsx(
                     'div',
                     {
-                        className: i(Ye.content, Ye[`content__${e}`], a && Ye.content__visible),
-                        children: a ? o.jsx(He, {}) : o.jsx(Ue, {}),
+                        className: i(ze.content, ze[`content__${e}`], a && ze.content__visible),
+                        children: a ? o.jsx($e, {}) : o.jsx(Ge, {}),
                     },
                     e,
                 );
             }),
         });
     }),
-    qe = {
+    Je = {
         base: 'Footer_d2687e3',
         base__firstTwo: 'Footer_base__firstTwo_4308958a',
         base__default: 'Footer_base__default_4308958a',
@@ -930,27 +930,27 @@ const Ge = a(function ({ className: e }) {
         base__locked: 'Footer_base__locked_4308958a',
         base__completedWithHonor: 'Footer_base__completedWithHonor_954c2d1e',
     },
-    ze = a(function ({ className: e }) {
-        const { model: a } = B(),
+    Qe = a(function ({ className: e }) {
+        const { model: a } = U(),
             t = a.campaignSelectorViewState.get(),
-            { footerStyle: n } = G();
+            { footerStyle: n } = Z();
         return o.jsx(s.div, {
             style: n,
-            className: i(qe.base, qe[`base__${t}`], e),
+            className: i(Je.base, Je[`base__${t}`], e),
             children: (() => {
                 switch (t) {
-                    case H.FIRST_TWO:
-                    case H.THIRD:
-                        return o.jsx(Ge, {});
-                    case H.COMPLETED_WITH_HONOR:
-                        return o.jsx(we, {});
-                    case H.LOCKED:
-                        return o.jsx(ke, {});
+                    case $.FIRST_TWO:
+                    case $.THIRD:
+                        return o.jsx(Ze, {});
+                    case $.COMPLETED_WITH_HONOR:
+                        return o.jsx(Te, {});
+                    case $.LOCKED:
+                        return o.jsx(He, {});
                 }
             })(),
         });
     }),
-    Ze = {
+    Xe = {
         particles: 'CampaignSelector_particles_6921a00e',
         base: 'CampaignSelector_c83ac2ea',
         content: 'CampaignSelector_content_7f268683',
@@ -964,42 +964,42 @@ const Ge = a(function ({ className: e }) {
         base__completedWithHonor: 'CampaignSelector_base__completedWithHonor_39b3c306',
         video: 'CampaignSelector_video_8f009bf0',
     },
-    Je = a(function () {
-        const e = g.resolve('videos'),
-            { model: a, controls: t } = B(),
+    ea = a(function () {
+        const e = f.resolve('videos'),
+            { model: a, controls: t } = U(),
             n = a.campaignSelectorViewState.get(),
-            { contentStyle: r, UIBlocked: c } = G();
+            { contentStyle: r, UIBlocked: c } = Z();
         return (
-            I(N.ESCAPE, t.close),
+            N(w.ESCAPE, t.close),
             o.jsx('div', {
-                className: i(Ze.base, Ze[`base__${n}`], c && Ze.base__blocked),
+                className: i(Xe.base, Xe[`base__${n}`], c && Xe.base__blocked),
                 children: o.jsxs(s.div, {
                     style: r,
-                    className: Ze.content,
+                    className: Xe.content,
                     children: [
-                        o.jsx(ie, { className: Ze.background, children: o.jsx(xe, {}) }),
-                        o.jsx(te, { className: Ze.particles }),
-                        o.jsx(f, {
+                        o.jsx(re, { className: Xe.background, children: o.jsx(Ie, {}) }),
+                        o.jsx(se, { className: Xe.particles }),
+                        o.jsx(h, {
                             src: e.readOrEmpty('personal_missions_30.campaign_selector.smoke'),
-                            className: Ze.video,
+                            className: Xe.video,
                             loop: !0,
                             autoplay: !0,
                         }),
-                        o.jsx(ze, { className: Ze.footer }),
+                        o.jsx(Qe, { className: Xe.footer }),
                     ],
                 }),
             })
         );
     }),
-    Qe = {
-        getter: E({
+    aa = {
+        getter: j({
             campaigns: [
                 {
                     campaignName: 'The Long-Awaited Backup',
                     completedWithHonor: !1,
                     operations: [
                         {
-                            state: L.COMPLETED_WITH_HONORS,
+                            state: A.COMPLETED_WITH_HONORS,
                             operationId: 1,
                             operationName: 'StuG IV',
                             completed: !1,
@@ -1007,7 +1007,7 @@ const Ge = a(function ({ className: e }) {
                             operationIcon: 'tile_1_1',
                         },
                         {
-                            state: L.AVAILABLE,
+                            state: A.AVAILABLE,
                             operationId: 2,
                             operationName: 'T28 HTC',
                             completed: !0,
@@ -1015,7 +1015,7 @@ const Ge = a(function ({ className: e }) {
                             operationIcon: 'tile_1_2',
                         },
                         {
-                            state: L.ACTIVE,
+                            state: A.ACTIVE,
                             operationId: 3,
                             operationName: 'T 55A',
                             completed: !1,
@@ -1023,7 +1023,7 @@ const Ge = a(function ({ className: e }) {
                             operationIcon: 'tile_1_3',
                         },
                         {
-                            state: L.LOCKED,
+                            state: A.LOCKED,
                             operationId: 4,
                             operationName: 'Object 260',
                             completed: !1,
@@ -1037,7 +1037,7 @@ const Ge = a(function ({ className: e }) {
                     completedWithHonor: !1,
                     operations: [
                         {
-                            state: L.COMPLETED_WITH_HONORS,
+                            state: A.COMPLETED_WITH_HONORS,
                             operationId: 5,
                             operationName: 'Excalibur',
                             completed: !1,
@@ -1045,7 +1045,7 @@ const Ge = a(function ({ className: e }) {
                             operationIcon: 'tile_5_1',
                         },
                         {
-                            state: L.ACTIVE,
+                            state: A.ACTIVE,
                             operationId: 6,
                             operationName: 'Chimera',
                             completed: !0,
@@ -1053,7 +1053,7 @@ const Ge = a(function ({ className: e }) {
                             operationIcon: 'tile_6_1',
                         },
                         {
-                            state: L.LOCKED,
+                            state: A.LOCKED,
                             operationId: 7,
                             operationName: 'Object 279 (e)',
                             completed: !1,
@@ -1067,7 +1067,7 @@ const Ge = a(function ({ className: e }) {
                     completedWithHonor: !1,
                     operations: [
                         {
-                            state: L.COMPLETED_WITH_HONORS,
+                            state: A.COMPLETED_WITH_HONORS,
                             operationId: 8,
                             operationName: 'Zebra',
                             completed: !1,
@@ -1075,7 +1075,7 @@ const Ge = a(function ({ className: e }) {
                             operationIcon: 'tile_8_1',
                         },
                         {
-                            state: L.ACTIVE,
+                            state: A.ACTIVE,
                             operationId: 9,
                             operationName: 'Tiger',
                             completed: !0,
@@ -1083,7 +1083,7 @@ const Ge = a(function ({ className: e }) {
                             operationIcon: 'tile_9_1',
                         },
                         {
-                            state: L.LOCKED,
+                            state: A.LOCKED,
                             operationId: 10,
                             operationName: 'Crocodile',
                             completed: !1,
@@ -1095,15 +1095,15 @@ const Ge = a(function ({ className: e }) {
             ],
             blockedByVehicle: !1,
             firstTimeEntrance: !1,
-            campaignSelectorViewState: H.THIRD,
+            campaignSelectorViewState: $.THIRD,
         }),
         controls: ({ model: e }) =>
-            w({ switchCampaign: (a) => e.campaignSelectorViewState.set(a), openOperation: j, openInfoScreen: j }),
+            E({ switchCampaign: (a) => e.campaignSelectorViewState.set(a), openOperation: T, openInfoScreen: T }),
     };
-T(
-    o.jsx(k, {
-        soundsOverrides: M,
-        children: o.jsx(P, { mocks: Qe, mode: 'real', children: o.jsx(Y, { children: o.jsx(Je, {}) }) }),
+k(
+    o.jsx(L, {
+        soundsOverrides: F,
+        children: o.jsx(K, { mocks: aa, mode: 'real', children: o.jsx(z, { children: o.jsx(ea, {}) }) }),
     }),
     { fullScreen: !0 },
 );

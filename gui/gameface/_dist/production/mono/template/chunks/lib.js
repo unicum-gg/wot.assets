@@ -1,16 +1,9 @@
-var e = Object.defineProperty,
-    t = (t, n, r) =>
-        ((t, n, r) => (n in t ? e(t, n, { enumerable: !0, configurable: !0, writable: !0, value: r }) : (t[n] = r)))(
-            t,
-            'symbol' != typeof n ? n + '' : n,
-            r,
-        );
-import { c as n, a as r, b as i, d as o, r as s, j as a, e as d, R as u, f as l } from './vendor.js';
-const c = n();
-function h(e, t) {
+import { c as e, a as t, b as n, d as r, r as i, j as o, e as s, R as a, f as d } from './vendor.js';
+const u = e();
+function l(e, t) {
     return e && e.length > 0 ? `${e}.${t}` : t;
 }
-function f(e, t) {
+function c(e, t) {
     switch (t) {
         case 'error':
             console.error(e);
@@ -28,7 +21,7 @@ function f(e, t) {
             console.warn('Unknown severity log type:', t);
     }
 }
-class m {
+class h {
     constructor(e = window.R.images, t) {
         ((this.root = e), (this.prefix = t));
     }
@@ -36,21 +29,21 @@ class m {
         return this.readOr(e, () => {});
     }
     readOr(e, t, n = 'silent') {
-        const r = e.startsWith('R.images') ? e : h(this.prefix, e),
+        const r = e.startsWith('R.images') ? e : l(this.prefix, e),
             i = (function (e, t) {
                 const n = t.split('.');
                 if (window.R && window.R.images) {
                     const t = n[n.length - 1];
                     if (!t) return;
                     const r = n.slice(0, -1).reduce((e, t) => {
-                        if ('object' == typeof (null == e ? void 0 : e[t])) return e[t];
+                        if ('object' == typeof e?.[t]) return e[t];
                     }, e);
                     if (!r) return;
                     return 'function' == typeof r[t] ? r[t]() : void 0;
                 }
                 throw new Error('R class with images field is not defined');
             })(e.startsWith('R.images') ? window : this.root, r);
-        return void 0 === i ? ('silent' !== n && f(`Resource not found: ${r}`, n), t()) : i;
+        return void 0 === i ? ('silent' !== n && c(`Resource not found: ${r}`, n), t()) : i;
     }
     readOrEmpty(e, t = 'warn') {
         return this.readOr(e, () => '', t);
@@ -65,7 +58,7 @@ class m {
     }
 }
 Math.random().toString(36).slice(2);
-var w = ((e) => (
+var f = ((e) => (
     (e.DayMonthNumeric = 'dayMonthNumeric'),
     (e.DayMonthFull = 'dayMonthFull'),
     (e.DayMonthFullTime = 'dayMonthFullTime'),
@@ -78,52 +71,48 @@ var w = ((e) => (
     (e.FullTime = 'fullTime'),
     (e.FullDateTime = 'fullDateTime'),
     e
-))(w || {});
-const p = { integral: 0, gold: 1 },
-    g = { fractional: 0, woZeroDigits: 1 },
-    y = Object.keys(p),
-    v = Object.keys(g);
-const b = { full: w.FullTime, short: w.ShortTime };
-const E = {
+))(f || {});
+const m = { integral: 0, gold: 1 },
+    w = { fractional: 0, woZeroDigits: 1 },
+    p = Object.keys(m),
+    g = Object.keys(w);
+const y = { full: f.FullTime, short: f.ShortTime };
+const v = {
     isNumberFormat: function (e) {
-        return e in p;
+        return e in m;
     },
     formatNumber: function (e, t) {
-        return window.formatters.getNumberFormat(t, p[e]);
+        return window.formatters.getNumberFormat(t, m[e]);
     },
-    numberFormats: y,
+    numberFormats: p,
     isRealFormat: function (e) {
-        return e in g;
+        return e in w;
     },
     formatReal: function (e, t, n = 2) {
-        return window.formatters.getRealFormat(t, g[e], n);
+        return window.formatters.getRealFormat(t, w[e], n);
     },
-    realFormats: v,
+    realFormats: g,
     formatDateTime: function (e, t, n = !0) {
         return window.regionalDateTime.getRegionalDateTime(t, e, n);
     },
-    dateTimeFormats: w,
+    dateTimeFormats: f,
     formatTime: function (e, t, n = !0) {
         return window.regionalDateTime.getRegionalDateTime(t, e, n);
     },
-    timeFormats: Object.keys(b),
+    timeFormats: Object.keys(y),
     toUpperCase: (e) => window.systemLocale.toUpperCase(e),
     toLowerCase: (e) => window.systemLocale.toLowerCase(e),
 };
-function x(e, t, n) {
-    const r = e.split('.');
-    if (window.R && window.R.strings) {
-        const e = r[r.length - 1];
-        if (!e) return;
-        const i = r.slice(0, -1).reduce((e, t) => {
-            if ('object' == typeof (null == e ? void 0 : e[t])) return e[t];
-        }, n);
-        if (!i) return;
-        return 'function' == typeof i[e] ? (t ? i[e](t) : i[e]()) : void 0;
-    }
-    throw new Error('R class with strings field is not defined');
+function b(e, t, n) {
+    const r = e.split('.'),
+        i = r[r.length - 1];
+    if (!i) return;
+    const o = r.slice(0, -1).reduce((e, t) => {
+        if ('object' == typeof e?.[t]) return e[t];
+    }, n);
+    return o && 'function' == typeof o[i] ? (t ? o[i](t) : o[i]()) : void 0;
 }
-class T {
+class E {
     constructor(e = window.R.strings, t) {
         ((this.root = e), (this.prefix = t));
     }
@@ -131,16 +120,16 @@ class T {
         return this.readOr(e, () => {});
     }
     readOr(e, t, n = 'silent') {
-        const r = e.startsWith('R.strings') ? e : h(this.prefix, e),
-            i = x(r, void 0, e.startsWith('R.strings') ? window : this.root);
-        return void 0 === i ? ('silent' !== n && f(`Resource not found: ${r}`, n), t()) : i;
+        const r = e.startsWith('R.strings') ? e : l(this.prefix, e),
+            i = b(r, void 0, e.startsWith('R.strings') ? window : this.root);
+        return void 0 === i ? ('silent' !== n && c(`Resource not found: ${r}`, n), t()) : i;
     }
     readOrEmpty(e, t = 'warn') {
         return this.readOr(e, () => '', t);
     }
     readOrThrow(e) {
-        const t = e.startsWith('R.strings') ? e : h(this.prefix, e),
-            n = x(t, void 0, e.startsWith('R.strings') ? window : this.root);
+        const t = e.startsWith('R.strings') ? e : l(this.prefix, e),
+            n = b(t, void 0, e.startsWith('R.strings') ? window : this.root);
         if (void 0 === n) throw new Error(`Resource not found: ${t}`);
         return n;
     }
@@ -148,15 +137,15 @@ class T {
         return this.pluralOr(e, t, () => {});
     }
     pluralOr(e, t, n, r = 'silent') {
-        const i = e.startsWith('R.strings') ? e : h(this.prefix, e),
-            o = x(i, t, e.startsWith('R.strings') ? window : this.root);
-        return void 0 === o ? ('silent' !== r && f(`Resource not found: ${i}`, r), n()) : o;
+        const i = e.startsWith('R.strings') ? e : l(this.prefix, e),
+            o = b(i, t, e.startsWith('R.strings') ? window : this.root);
+        return void 0 === o ? ('silent' !== r && c(`Resource not found: ${i}`, r), n()) : o;
     }
     pluralOrEmpty(e, t, n = 'warn') {
         return this.pluralOr(e, t, () => '', n);
     }
 }
-class O {
+class x {
     constructor(e = window.R.videos, t) {
         ((this.root = e), (this.prefix = t));
     }
@@ -164,21 +153,21 @@ class O {
         return this.readOr(e, () => {});
     }
     readOr(e, t, n = 'silent') {
-        const r = e.startsWith('R.videos') ? e : h(this.prefix, e),
+        const r = e.startsWith('R.videos') ? e : l(this.prefix, e),
             i = (function (e, t) {
                 const n = t.split('.');
                 if (window.R && window.R.videos) {
                     const t = n[n.length - 1];
                     if (!t) return;
                     const r = n.slice(0, -1).reduce((e, t) => {
-                        if ('object' == typeof (null == e ? void 0 : e[t])) return e[t];
+                        if ('object' == typeof e?.[t]) return e[t];
                     }, e);
                     if (!r) return;
                     return 'function' == typeof r[t] ? r[t]() : void 0;
                 }
                 throw new Error('R class with videos field is not defined');
             })(e.startsWith('R.videos') ? window : this.root, r);
-        return void 0 === i ? ('silent' !== n && f(`Resource not found: ${e}`, n), t()) : i;
+        return void 0 === i ? ('silent' !== n && c(`Resource not found: ${e}`, n), t()) : i;
     }
     readOrEmpty(e, t = 'warn') {
         return this.readOr(e, () => '', t);
@@ -192,7 +181,7 @@ class O {
         return void 0 !== this.read(e);
     }
 }
-function L(e) {
+function T(e) {
     return (t) => (
         engine.on(e, t),
         () => {
@@ -200,51 +189,51 @@ function L(e) {
         }
     );
 }
-function S(e) {
+function O(e) {
     viewEnv.setTrackMouseOnStage(e);
 }
-c.register({
-    strings: o(() => new T()).singleton(),
-    images: o(() => new m(window.R.images.gui.maps.icons)).singleton(),
-    atlases: o(() => new m(window.R.atlases)).singleton(),
-    videos: o(() => new O(window.R.videos)).singleton(),
-    views: i(
+u.register({
+    strings: r(() => new E()).singleton(),
+    images: r(() => new h(window.R.images.gui.maps.icons)).singleton(),
+    atlases: r(() => new h(window.R.atlases)).singleton(),
+    videos: r(() => new x(window.R.videos)).singleton(),
+    views: n(
         class {
             read(e) {
                 return e(window.R.views);
             }
         },
     ).singleton(),
-    aliases: i(
+    aliases: n(
         class {
             read(e) {
                 return e(window.R.aliases);
             }
         },
     ).singleton(),
-    sounds: i(
+    sounds: n(
         class {
             play(e) {
                 const t = window.R.sounds[e];
                 'function' == typeof t
                     ? engine.call('PlaySound', t.apply(window.R.sounds))
-                    : f(`Sound not found: ${e}`, 'warn');
+                    : c(`Sound not found: ${e}`, 'warn');
             }
         },
     ).singleton(),
-    langCode: r(R.strings.settings.LANGUAGE_CODE()),
-    intl: r(E),
+    langCode: t(R.strings.settings.LANGUAGE_CODE()),
+    intl: t(v),
 });
-const D = L('clientResized'),
-    P = L('self.onScaleUpdated'),
-    N = { down: L('mousedown'), up: L('mouseup'), move: L('mousemove') };
+const S = T('clientResized'),
+    L = T('self.onScaleUpdated'),
+    D = { down: T('mousedown'), up: T('mouseup'), move: T('mousemove') };
 !(function () {
     const e = { listeners: 0, enabled: !0, initialized: !1 };
     function t() {
-        e.enabled && S(!1);
+        e.enabled && O(!1);
     }
     function n() {
-        e.enabled && S(!0);
+        e.enabled && O(!0);
     }
     function r() {
         e.enabled
@@ -252,12 +241,12 @@ const D = L('clientResized'),
                 ? ((e.initialized = !1),
                   document.body.removeEventListener('mouseenter', t),
                   document.body.removeEventListener('mouseleave', n),
-                  S(!1))
+                  O(!1))
                 : e.initialized ||
                   ((e.initialized = !0),
                   document.body.addEventListener('mouseenter', t),
                   document.body.addEventListener('mouseleave', n))
-            : S(!1);
+            : O(!1);
     }
     ['down', 'up', 'move'].reduce(
         (t, n) => (
@@ -265,7 +254,7 @@ const D = L('clientResized'),
                 return (n) => {
                     e.listeners += 1;
                     const i = `mouse${t}`,
-                        o = N[t]((e) => n([e, 'outside']));
+                        o = D[t]((e) => n([e, 'outside']));
                     function s(e) {
                         n([e, 'inside']);
                     }
@@ -283,24 +272,24 @@ const D = L('clientResized'),
         {},
     );
 })();
-const M = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
-    C =
-        (Object.keys(M).reduce(
+const P = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
+    N =
+        (Object.keys(P).reduce(
             (e, t) => (
                 (e[t] = () =>
                     (function (e) {
                         engine.call('PlaySound', e);
-                    })(M[t])),
+                    })(P[t])),
                 e
             ),
             {},
         ),
         { notReady: 0, ready: 1, showing: 2, shown: 3, hiding: 4, hidden: 5 }),
-    F = {
-        onTextureFrozen: L('self.onTextureFrozen'),
-        onTextureReady: L('self.onTextureReady'),
-        onDomBuilt: L('self.onDomBuilt'),
-        onLoaded: L('self.onLoaded'),
+    M = {
+        onTextureFrozen: T('self.onTextureFrozen'),
+        onTextureReady: T('self.onTextureReady'),
+        onDomBuilt: T('self.onDomBuilt'),
+        onLoaded: T('self.onLoaded'),
         onHitTest: (() => {
             const e = new Set(),
                 t = (t, n) => {
@@ -318,25 +307,25 @@ const M = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
                 }
             );
         })(),
-        onDisplayChanged: L('self.onShowingStatusChanged'),
-        onFocusUpdated: L('self.onFocusChanged'),
-        onExternalPaddingsUpdated: L('self.onPaddingsUpdated'),
+        onDisplayChanged: T('self.onShowingStatusChanged'),
+        onFocusUpdated: T('self.onFocusChanged'),
+        onExternalPaddingsUpdated: T('self.onPaddingsUpdated'),
         children: {
-            onAdded: L('children.onAdded'),
-            onLoaded: L('children.onLoaded'),
-            onRemoved: L('children.onRemoved'),
-            onAttached: L('children.onAttached'),
-            onTextureReady: L('children.onTextureReady'),
-            onRequestPosition: L('children.requestPosition'),
+            onAdded: T('children.onAdded'),
+            onLoaded: T('children.onLoaded'),
+            onRemoved: T('children.onRemoved'),
+            onAttached: T('children.onAttached'),
+            onTextureReady: T('children.onTextureReady'),
+            onRequestPosition: T('children.requestPosition'),
         },
     };
-function k() {
+function C() {
     return !1;
 }
-function A(e, t) {
+function F(e, t) {
     return e.reduce((e, n) => ({ ...e, [`${t}_${n}`.toUpperCase()]: `${t}${n}` }), {});
 }
-(Object.keys(C).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === C[t]), e), {}),
+(Object.keys(N).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === N[t]), e), {}),
     'symbol' != typeof Symbol.dispose && Object.defineProperty(Symbol, 'dispose', { value: Symbol.for('dispose') }),
     'symbol' != typeof Symbol.asyncDispose &&
         Object.defineProperty(Symbol, 'asyncDispose', { value: Symbol.for('asyncDispose') }),
@@ -591,9 +580,9 @@ function A(e, t) {
                 (this.url = t.url || ''));
         }
     })());
-const j = {
+const k = {
     NONE: 'NONE',
-    ...((U = [
+    ...((A = [
         'Escape',
         'Enter',
         'Space',
@@ -611,8 +600,8 @@ const j = {
         'End',
         'Minus',
     ]),
-    U.reduce((e, t) => ({ ...e, [`${t}`.toUpperCase()]: t }), {})),
-    ...A(
+    A.reduce((e, t) => ({ ...e, [`${t}`.toUpperCase()]: t }), {})),
+    ...F(
         [
             'A',
             'B',
@@ -643,20 +632,19 @@ const j = {
         ],
         'Key',
     ),
-    ...A(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'], 'Digit'),
-    ...A(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'], 'NumPad'),
-    ...A(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'], 'F'),
-    ...A(['Multiply', 'Divide', 'Add', 'Subtract', 'Decimal'], 'Numpad'),
-    ...A(['Left', 'Right', 'Up', 'Down'], 'Arrow'),
-    ...A(['Up', 'Down'], 'Page'),
-    ...A(['Left', 'Right'], 'Bracket'),
+    ...F(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'], 'Digit'),
+    ...F(['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'], 'NumPad'),
+    ...F(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'], 'F'),
+    ...F(['Multiply', 'Divide', 'Add', 'Subtract', 'Decimal'], 'Numpad'),
+    ...F(['Left', 'Right', 'Up', 'Down'], 'Arrow'),
+    ...F(['Up', 'Down'], 'Page'),
+    ...F(['Left', 'Right'], 'Bracket'),
 };
-var U;
-['ko', 'no'].includes(c.resolve('langCode'));
-class $ {
-    constructor() {
-        t(this, 'items', []);
-    }
+var A;
+new Set(Object.values(k));
+['ko', 'no'].includes(u.resolve('langCode'));
+class j {
+    items = [];
     get length() {
         return this.items.length;
     }
@@ -689,53 +677,53 @@ class $ {
         return this.items.slice();
     }
 }
-const _ = s.createContext(void 0);
-const B = 'extraSmall',
-    H = {
-        extraSmall: { weight: 0, name: B, className: 'mediaExtraSmall', width: 1280, height: 768 },
+const U = i.createContext(void 0);
+const $ = 'extraSmall',
+    _ = {
+        extraSmall: { weight: 0, name: $, className: 'mediaExtraSmall', width: 1280, height: 768 },
         small: { weight: 1, name: 'small', className: 'mediaSmall', width: 1366, height: 768 },
         medium: { weight: 2, name: 'medium', className: 'mediaMedium', width: 1600, height: 900 },
         large: { weight: 3, name: 'large', className: 'mediaLarge', width: 1920, height: 1080 },
         extraLarge: { weight: 4, name: 'extraLarge', className: 'mediaExtraLarge', width: 2560, height: 1440 },
     };
-var W,
-    z,
-    I,
+var B,
+    H,
+    W,
+    z =
+        (((B = z || {})[(B.Small = _.small.width)] = 'Small'),
+        (B[(B.Medium = _.medium.width)] = 'Medium'),
+        (B[(B.Large = _.large.width)] = 'Large'),
+        (B[(B.ExtraLarge = _.extraLarge.width)] = 'ExtraLarge'),
+        B),
+    I =
+        (((H = I || {})[(H.Small = _.small.width)] = 'Small'),
+        (H[(H.Medium = _.medium.width)] = 'Medium'),
+        (H[(H.Large = _.large.width)] = 'Large'),
+        (H[(H.ExtraLarge = _.extraLarge.width)] = 'ExtraLarge'),
+        H),
     q =
-        (((W = q || {})[(W.Small = H.small.width)] = 'Small'),
-        (W[(W.Medium = H.medium.width)] = 'Medium'),
-        (W[(W.Large = H.large.width)] = 'Large'),
-        (W[(W.ExtraLarge = H.extraLarge.width)] = 'ExtraLarge'),
-        W),
-    X =
-        (((z = X || {})[(z.Small = H.small.width)] = 'Small'),
-        (z[(z.Medium = H.medium.width)] = 'Medium'),
-        (z[(z.Large = H.large.width)] = 'Large'),
-        (z[(z.ExtraLarge = H.extraLarge.width)] = 'ExtraLarge'),
-        z),
-    G =
-        (((I = G || {})[(I.Small = H.small.height)] = 'Small'),
-        (I[(I.Medium = H.medium.height)] = 'Medium'),
-        (I[(I.Large = H.large.height)] = 'Large'),
-        (I[(I.ExtraLarge = H.extraLarge.height)] = 'ExtraLarge'),
-        I);
-const V = Object.values(H);
-function K(e, t) {
+        (((W = q || {})[(W.Small = _.small.height)] = 'Small'),
+        (W[(W.Medium = _.medium.height)] = 'Medium'),
+        (W[(W.Large = _.large.height)] = 'Large'),
+        (W[(W.ExtraLarge = _.extraLarge.height)] = 'ExtraLarge'),
+        W);
+const X = Object.values(_);
+function G(e, t) {
     const n = t['width' === e ? 'height' : 'width'],
         r = new Set(t[e].classes),
         i = new Set(n.classes.filter((e) => !(!e.endsWith('Width') && !e.endsWith('Height')) || r.has(e)));
     return Array.from(new Set([...r, ...i])).join(' ');
 }
-const Y = () => {
+const V = () => {
         return ((e = 1), viewEnv.remToPx(e));
         var e;
     },
-    J = () => {
+    K = () => {
         const e = (function (e = 'px') {
             return 'rem' === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
         })('rem');
         return (function (e, t, n) {
-            const r = V.reduce(
+            const r = X.reduce(
                     (n, r) => (
                         r.width <= e &&
                             (n.width.classes.push(r.className, `${r.className}Width`),
@@ -751,15 +739,15 @@ const Y = () => {
                 ),
                 i = r.width.weight <= r.height.weight ? 'width' : 'height',
                 o = r[i],
-                s = o.names[o.names.length - 1] ?? B,
-                a = H[s],
+                s = o.names[o.names.length - 1] ?? $,
+                a = _[s],
                 d = r.width.names,
                 u = r.height.names,
-                l = d[d.length - 1] ?? B,
-                c = u[u.length - 1] ?? B,
-                h = { width: H[l].width, height: H[c].height };
+                l = d[d.length - 1] ?? $,
+                c = u[u.length - 1] ?? $,
+                h = { width: _[l].width, height: _[c].height };
             return {
-                mediaClass: K(i, r),
+                mediaClass: G(i, r),
                 breakpoint: a,
                 screenWidthRem: e,
                 screenHeightRem: t,
@@ -770,45 +758,45 @@ const Y = () => {
                 mediaHeight: h.height,
                 upscale: n > 1,
             };
-        })(e.width, e.height, Y());
+        })(e.width, e.height, V());
     };
-function Q({ children: e }) {
-    const [t, n] = s.useState(J);
+function Y({ children: e }) {
+    const [t, n] = i.useState(K);
     return (
-        s.useLayoutEffect(() => {
+        i.useLayoutEffect(() => {
             function e() {
-                n(J);
+                n(K);
             }
             e();
-            const t = D(e),
-                r = P(e);
+            const t = S(e),
+                r = L(e);
             return () => {
                 (t(), r());
             };
         }, []),
-        a.jsx(_.Provider, { value: t, children: e })
+        o.jsx(U.Provider, { value: t, children: e })
     );
 }
-function Z() {
+function J() {
     return (function () {
-        const e = s.useContext(_);
+        const e = i.useContext(U);
         if (!e) throw new Error('useMediaContext must be used within a MediaProvider');
         return e;
     })();
 }
-function ee({ children: e, className: t, ...n }) {
-    const { mediaClass: r, upscale: i } = Z();
-    return a.jsx('div', { className: d(t, 'media-wrapper', r, i && 'media-upscale'), ...n, children: e });
+function Q({ children: e, className: t, ...n }) {
+    const { mediaClass: r, upscale: i } = J();
+    return o.jsx('div', { className: s(t, 'media-wrapper', r, i && 'media-upscale'), ...n, children: e });
 }
-function te({ children: e, ...t }) {
-    return a.jsx(Q, { children: a.jsx(ee, { ...t, children: e }) });
+function Z({ children: e, ...t }) {
+    return o.jsx(Y, { children: o.jsx(Q, { ...t, children: e }) });
 }
-const ne = () => {
+const ee = () => {
         const e = new Map();
         function t(t) {
             const n = e.get(t);
             if (n) return n;
-            const r = new $();
+            const r = new j();
             return (e.set(t, r), r);
         }
         function n(t, n) {
@@ -819,7 +807,7 @@ const ne = () => {
             handlers: e,
             obtain: t,
             register: function (e, r) {
-                if (e === j.NONE) return k;
+                if (e === k.NONE) return C;
                 const i = t(e);
                 return (i.includes(r) || i.push(r), () => n(e, r));
             },
@@ -832,18 +820,16 @@ const ne = () => {
             },
         };
     },
-    re = s.createContext(void 0);
-function ie(e) {
-    const t = s.useMemo(ne, []),
-        n = s.useMemo(ne, []);
-    s.useEffect(() => {
+    te = i.createContext(void 0);
+function ne(e) {
+    const t = i.useMemo(ee, []),
+        n = i.useMemo(ee, []);
+    i.useEffect(() => {
         function e(e) {
-            var n;
-            null == (n = t.takeCurrent(e.code)) || n(e);
+            t.takeCurrent(e.code)?.(e);
         }
         function r(e) {
-            var t;
-            null == (t = n.takeCurrent(e.code)) || t(e);
+            n.takeCurrent(e.code)?.(e);
         }
         return (
             window.addEventListener('keydown', e),
@@ -853,24 +839,22 @@ function ie(e) {
             }
         );
     }, [t, n]);
-    const r = s.useMemo(
+    const r = i.useMemo(
         () => ({
             keydown: { register: t.register, unregister: t.unregister },
             keyup: { register: n.register, unregister: n.unregister },
         }),
         [t, n],
     );
-    return a.jsx(re.Provider, { value: r, children: e.children });
+    return o.jsx(te.Provider, { value: r, children: e.children });
 }
-(s.createContext(null), s.createContext({ mode: 'real' }));
-async function oe(
+(i.createContext(null), i.createContext({ mode: 'real' }));
+async function re(
     e,
     { root: t = document.getElementById('root'), withMedia: n = !0, fullScreen: r = !1, immediateLayout: i = !0 } = {},
 ) {
-    var o;
     !(function () {
         const e = (t = window.model, { depth: n = 16, convertArrays: r = !0 } = {}) => {
-            var i;
             if (n < 0)
                 return (
                     console.warn(
@@ -889,19 +873,19 @@ async function oe(
                 case 'function':
                     return 'function';
                 case 'object': {
-                    const o = { depth: n - 1, convertArrays: r },
-                        s = (null == (i = t.constructor) ? void 0 : i.name) ?? 'UNKNOWN';
+                    const i = { depth: n - 1, convertArrays: r },
+                        o = t.constructor?.name ?? 'UNKNOWN';
                     switch (!0) {
-                        case s.includes('CoherentArrayProxy'):
-                            return [...t.values()].map((t) => e(o.convertArrays ? t.value : t, o));
-                        case 'Dict' === s:
-                            return [...t.entries()].reduce((t, [n, r]) => ((t[n] = e(r, o)), t), { $$type: 'Dict' });
-                        case 'UNKNOWN' === s:
+                        case o.includes('CoherentArrayProxy'):
+                            return [...t.values()].map((t) => e(i.convertArrays ? t.value : t, i));
+                        case 'Dict' === o:
+                            return [...t.entries()].reduce((t, [n, r]) => ((t[n] = e(r, i)), t), { $$type: 'Dict' });
+                        case 'UNKNOWN' === o:
                             return 'UNKNOWN_TYPE';
-                        case s.includes('ViewModel'):
+                        case o.includes('ViewModel'):
                         default: {
                             const n = {};
-                            for (const r in t) Object.prototype.hasOwnProperty.call(t, r) && (n[r] = e(t[r], o));
+                            for (const r in t) Object.prototype.hasOwnProperty.call(t, r) && (n[r] = e(t[r], i));
                             return n;
                         }
                     }
@@ -932,12 +916,12 @@ async function oe(
         };
         window._debugs = t;
     })();
-    const s = n ? te : u.Fragment,
-        d = (null == (o = null == window ? void 0 : window.engine) ? void 0 : o.whenReady) ?? Promise.resolve();
+    const s = n ? Z : a.Fragment,
+        l = window?.engine?.whenReady ?? Promise.resolve();
     (i && engine.enableImmediateLayout(!0),
-        await d,
-        document.documentElement.setAttribute('lang', c.resolve('langCode')),
-        l.createRoot(t).render(a.jsx(s, { children: a.jsx(ie, { children: e }) })),
+        await l,
+        document.documentElement.setAttribute('lang', u.resolve('langCode')),
+        d.createRoot(t).render(o.jsx(s, { children: o.jsx(ne, { children: e }) })),
         r &&
             (!(function (e) {
                 function t() {
@@ -951,18 +935,18 @@ async function oe(
             })(t),
             viewEnv.setFullscreenModeSupported(!0)));
 }
-s.forwardRef(function (e, t) {
-    const n = s.useRef(null);
+i.forwardRef(function (e, t) {
+    const n = i.useRef(null);
     return (
-        s.useEffect(() => {
+        i.useEffect(() => {
             const e = n.current;
             if (null !== e)
-                return F.onHitTest((t) => {
+                return M.onHitTest((t) => {
                     const n = e.getBoundingClientRect();
                     return n.left <= t.x && t.x <= n.right && n.top <= t.y && t.y <= n.bottom;
                 });
         }, []),
-        a.jsx('div', {
+        o.jsx('div', {
             ...e,
             ref:
                 ((r = [t, n]),
@@ -977,4 +961,4 @@ s.forwardRef(function (e, t) {
     );
     var r;
 });
-export { oe as r };
+export { re as r };

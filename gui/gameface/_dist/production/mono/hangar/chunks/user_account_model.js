@@ -1,19 +1,19 @@
-import { o as e, I as s, p as o } from './vendor.js';
+import { o as e, K as s, q as o } from './vendor.js';
 import {
     i as t,
-    d5 as n,
-    ci as a,
-    cj as i,
-    d6 as r,
-    d7 as c,
-    d8 as l,
-    d9 as u,
-    R as p,
-    da as m,
-    db as b,
-    dc as d,
-    dd as P,
-    T as f,
+    da as n,
+    ck as a,
+    cl as i,
+    db as r,
+    dc as c,
+    dd as l,
+    de as u,
+    S as p,
+    df as m,
+    dg as b,
+    dh as d,
+    di as P,
+    W as f,
 } from './lib.js';
 var g = ((e) => ((e.None = 'None'), (e.Core = 'Core'), (e.Pro = 'Pro'), e))(g || {}),
     v = ((e) => ((e.Inactive = 'Inactive'), (e.Active = 'Active'), (e.Cancelled = 'Cancelled'), e))(v || {});
@@ -39,7 +39,7 @@ function A(e) {
 var x = ((e) => ((e.Unlock = 'unlock'), (e.UnlockSteamAndCn = 'unlockSteamAndCn'), (e.UnlockPro = 'unlockPro'), e))(
     x || {},
 );
-const [I, y] = t('UserAccountProvider')(
+const [y, I] = t('UserAccountProvider')(
     ({ observableModel: t, cleanup: n }) => {
         const a = t.object('userInfo'),
             i = t.object('subscriptions.wotPlus'),
@@ -97,4 +97,4 @@ const [I, y] = t('UserAccountProvider')(
         openPremiumSubscriptionPage: e.createCallbackNoArgs('subscriptions.onOpenPremium'),
     }),
 );
-export { x as T, I as U, v as W, g as a, y as u };
+export { x as T, y as U, v as W, g as a, I as u };

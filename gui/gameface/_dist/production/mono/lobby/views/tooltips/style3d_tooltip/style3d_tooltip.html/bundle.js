@@ -1,7 +1,7 @@
-import { y as s, j as e, w as i } from '../../../../chunks/vendor.js';
-import { i as o, aC as t, q as c, aA as l } from '../../../../chunks/lib.js';
-import { T as a } from '../../../../chunks/tooltip_decorator.js';
-import { t as d } from '../../../../chunks/tooltips.module.js';
+import { V as s, j as e, a3 as i } from '../../../../chunks/vendor.js';
+import { i as o, n as t, cv as c, r as l } from '../../../../chunks/lib.js';
+import { T as d } from '../../../../chunks/tooltip_decorator.js';
+import { t as a } from '../../../../chunks/tooltips.module.js';
 /* empty css                        */ const [p, r] = o()(({ observableModel: s }) => ({ root: s.object() }), t),
     n = 'App_5750b50d',
     _ = 'App_image_44f419b9',
@@ -13,9 +13,9 @@ import { t as d } from '../../../../chunks/tooltips.module.js';
     v = 'App_title_83b851ff',
     g = 'App_text_281c93b4',
     u = 'App_subtitle_915d9cd5',
-    A = 'App_howToReceive_5cbf6889',
-    f = 'App_paragraph_5142910c',
-    y = s(() => {
+    f = 'App_howToReceive_5cbf6889',
+    A = 'App_paragraph_5142910c',
+    N = s(() => {
         const { model: s } = r(),
             { styleId: o, vehicles: t } = s.root.get();
         return e.jsxs('div', {
@@ -32,13 +32,13 @@ import { t as d } from '../../../../chunks/tooltips.module.js';
                 e.jsxs('div', {
                     className: m,
                     children: [
-                        e.jsx('div', { className: f, children: R.strings.comp7_ext.style3dTooltip.description() }),
+                        e.jsx('div', { className: A, children: R.strings.comp7_ext.style3dTooltip.description() }),
                         e.jsx('div', {
-                            className: i(u, A),
+                            className: i(u, f),
                             children: R.strings.comp7_ext.style3dTooltip.howToReceive(),
                         }),
                         e.jsx('div', {
-                            className: f,
+                            className: A,
                             children: `${R.strings.comp7_ext.style3dTooltip.secondaryDescription.$num(o)}`,
                         }),
                     ],
@@ -46,7 +46,7 @@ import { t as d } from '../../../../chunks/tooltips.module.js';
                 e.jsxs('div', {
                     className: i(m, x, j),
                     children: [
-                        e.jsx('div', { className: i(d.divider, b, h) }),
+                        e.jsx('div', { className: i(a.divider, b, h) }),
                         e.jsx('div', { className: u, children: R.strings.comp7_ext.style3dTooltip.suitableVehicles() }),
                         e.jsx('div', { className: g, children: t }),
                     ],
@@ -54,4 +54,4 @@ import { t as d } from '../../../../chunks/tooltips.module.js';
             ],
         });
     });
-l(e.jsx(p, { children: e.jsx(a, { children: e.jsx(y, {}) }) }));
+l(e.jsx(p, { children: e.jsx(d, { children: e.jsx(N, {}) }) }));

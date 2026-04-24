@@ -9,18 +9,20 @@
 /// The `engine` module contains all functions for communication between the UI and the game / application.
 (function (factory) {
     if (typeof module === 'object' && module.exports) {
-        if (!global.engine._WindowLoaded) {
-            module.exports = factory(global, global.engine, false);
-        }
+        module.exports = factory(global, global.engine, false);
     } else {
-        if (!window.engine._WindowLoaded) {
-            engine = factory(this, /** @type {any} */ (window).engine, true);
-        }
+        engine = factory(window, /** @type {any} */ (window).engine, true);
     }
 })(function (global, engine, hasOnLoad) {
     'use strict';
 
-    var VERSION = [2, 0, 0, 0];
+    var isAttached = engine !== undefined;
+    engine = engine || {};
+    if (engine._Initialized) {
+        return engine;
+    }
+
+    var VERSION = [2, 0, 3, 0];
 
     /**
      * Event emitter
@@ -137,18 +139,9 @@
         return false;
     };
 
-    var isAttached = engine !== undefined;
-    engine = engine || {};
     /// @var {bool} engine.isAttached
     /// Indicates whether the script is currently running inside Cohtml
     engine.isAttached = isAttached;
-
-    function callAsync(code, context, argument) {
-        var async = function () {
-            code.call(context, argument);
-        };
-        window.setTimeout(async, 1);
-    }
 
     if (!engine.isAttached) {
         Emitter.prototype.on = function (name, callback, context) {
@@ -237,6 +230,18 @@
             engine._OnReady();
         };
 
+        engine.createJSModel = function (name, obj) {
+            global[name] = obj;
+        };
+
+        engine.updateWholeModel = function () {};
+        engine.synchronizeModels = function () {};
+        engine.enableImmediateLayout = function () {};
+        engine.isImmediateLayoutEnabled = function () {
+            return true;
+        };
+        engine.executeImmediateLayoutSync = function () {};
+
         engine._mocks = {};
 
         engine._mockImpl = function (name, mock, isCppCall, isEvent) {
@@ -269,6 +274,10 @@
         /// @param {Function} callback callback function to be executed when the event has been triggered
         /// @param context *this* context for the function, by default the engine object
         engine.on = function (name, callback, context) {
+            if (!callback) {
+                console.error('No handler specified for engine.on');
+                return { clear: function () {} };
+            }
             engine.AddOrRemoveOnHandler(name, callback, context || engine);
             return { clear: this._createClear(this, name, callback, context) };
         };
@@ -309,7 +318,7 @@
     }
 
     engine._BindingsReady = false;
-    engine._WindowLoaded = false;
+    engine._ContentLoaded = false;
     engine._RequestId = 0;
     engine._ActiveRequests = {};
 
@@ -346,13 +355,13 @@
         }
     };
 
-    engine._Reject = function (requestId) {
+    engine._Reject = function (requestId, handlerName) {
         var deferred = engine._ActiveRequests[requestId];
         if (deferred !== undefined) {
             delete engine._ActiveRequests[requestId];
 
             // ChakraCore executes deferred.reject immediately before we can return and have the user attach a rejection callback
-            requestAnimationFrame(() => deferred.reject('No handler registered'));
+            requestAnimationFrame(() => deferred.reject("No handler registered with name '" + handlerName + "'"));
         }
     };
 
@@ -385,13 +394,13 @@
 
     engine._OnReady = function () {
         engine._BindingsReady = true;
-        if (engine._WindowLoaded) {
+        if (engine._ContentLoaded) {
             engine.trigger('Ready');
         }
     };
 
-    engine._OnWindowLoaded = function () {
-        engine._WindowLoaded = true;
+    engine._OnContentLoaded = function () {
+        engine._ContentLoaded = true;
         if (engine._BindingsReady) {
             engine.trigger('Ready');
         }
@@ -399,10 +408,10 @@
 
     if (hasOnLoad) {
         global.addEventListener('load', function () {
-            engine._OnWindowLoaded();
+            engine._OnContentLoaded();
         });
     } else {
-        engine._WindowLoaded = true;
+        engine._ContentLoaded = true;
     }
 
     engine.on('_Result', engine._Result, engine);
@@ -451,6 +460,7 @@
     };
 
     engine.BindingsReady(VERSION[0], VERSION[1], VERSION[2], VERSION[3]);
+    engine._Initialized = true;
 
     return engine;
 });

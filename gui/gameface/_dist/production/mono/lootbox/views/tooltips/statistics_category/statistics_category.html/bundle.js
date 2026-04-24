@@ -1,27 +1,27 @@
-import { k as e, j as s, e as a, m as t, r as c } from '../../../../chunks/vendor.js';
+import { m as e, j as s, e as a, n as t, r as c } from '../../../../chunks/vendor.js';
 import {
-    i as r,
-    c as n,
-    A as o,
-    K as i,
+    i as n,
+    c as r,
+    A as i,
+    K as o,
     L as l,
-    k as m,
+    o as m,
     m as d,
     a as u,
     M as _,
     I as p,
     N as y,
     O as h,
-    t as g,
+    w as g,
     r as b,
-    E as f,
+    E as x,
 } from '../../../../chunks/lib.js';
-import { T as x, L as v, g as j } from '../../../../chunks/statistics.js';
+import { T as f, L as v, g as j } from '../../../../chunks/statistics.js';
 import { a as w, g as N } from '../../../../chunks/resources.js';
-import { T as k } from '../../../../chunks/tank_name.js';
-import { V as C } from '../../../../chunks/vehicle_info.js';
+import { T as C } from '../../../../chunks/tank_name.js';
+import { V as k } from '../../../../chunks/vehicle_info.js';
 import { g as L } from '../../../../chunks/getRewardImage.js';
-const A = {
+/* empty css                       */ const A = {
         texts: {
             multiplier: 'common.rewards.multiplier',
             vehicle: 'statisticsRewards.tooltips.category.vehicle',
@@ -41,31 +41,30 @@ const A = {
             hiddenRewardsCount: 'statisticsRewards.tooltips.category.hiddenRewardsCount',
         },
     },
-    [I, T] = r()(({ observableModel: s }) => {
+    [I, T] = n()(({ observableModel: s }) => {
         const a = {
                 root: s.object(),
                 ...s.primitives(['bonusesCategory', 'eventName', 'compensatedCount']),
                 bonuses: s.arrayClone('bonuses.items'),
             },
-            t = e(() => w(A, a.eventName.get()), { equals: n }),
-            c = e(() => N($, a.eventName.get()), { equals: n }),
-            r = e(() => a.bonuses.get(), { equals: n });
-        return { ...a, computes: { bonuses: r, resources: t, dynamicResources: c } };
-    }, o),
+            t = e(() => w(A, a.eventName.get()), { equals: r }),
+            c = e(() => N($, a.eventName.get()), { equals: r }),
+            n = e(() => a.bonuses.get(), { equals: r });
+        return { ...a, computes: { bonuses: n, resources: t, dynamicResources: c } };
+    }, i),
     S = (e, s) => {
         switch (e) {
-            case x.Style3D:
+            case f.Style3D:
                 return s.style3D;
-            case x.Vehicles:
+            case f.Vehicles:
                 return s.vehicle;
-            case x.Attachment:
+            case f.Attachment:
                 return s.attachment;
             default:
                 return s.name;
         }
     },
     E = {
-        root: 'AttachmentRarity_root_43c6f01c',
         base: 'AttachmentRarity_da893673',
         icoWrapper: 'AttachmentRarity_icoWrapper_f4b68af1',
         ico: 'AttachmentRarity_ico_f4c561ab',
@@ -107,15 +106,15 @@ const q = 'List_3e9032c6',
         const { model: e } = T(),
             { texts: t } = e.computes.resources(),
             { dynamicTexts: c } = e.computes.dynamicResources(),
-            r = e.bonusesCategory.get(),
-            n = e.compensatedCount.get(),
-            o = e.computes.bonuses();
+            n = e.bonusesCategory.get(),
+            r = e.compensatedCount.get(),
+            i = e.computes.bonuses();
         return s.jsxs('div', {
             className: q,
             children: [
-                d(o, (a, c) => {
-                    const { vehicle: r, label: n, count: o } = a,
-                        i = r && { label: r.vehicleName, level: r.vehicleLvl, type: r.vehicleType, isElite: r.isElite };
+                d(i, (a, c) => {
+                    const { vehicle: n, label: r, count: i } = a,
+                        o = n && { label: n.vehicleName, level: n.vehicleLvl, type: n.vehicleType, isElite: n.isElite };
                     return s.jsx(
                         u,
                         {
@@ -127,18 +126,18 @@ const q = 'List_3e9032c6',
                                 name: s.jsx(u, {
                                     text: t.label,
                                     upgradeLegacy: !0,
-                                    params: { label: n },
+                                    params: { label: r },
                                     className: W,
                                 }),
                                 label: a.label,
-                                vehicle: i ? s.jsx(k, { reward: i, style: { nameHeight: '16rem' }, className: W }) : '',
-                                vehicleInfo: r ? s.jsx(C, { ...r, classNames: { base: W, type: O } }) : '',
+                                vehicle: o ? s.jsx(C, { reward: o, style: { nameHeight: '16rem' }, className: W }) : '',
+                                vehicleInfo: n ? s.jsx(k, { ...n, classNames: { base: W, type: O } }) : '',
                                 count:
-                                    o > 1
+                                    i > 1
                                         ? s.jsx(u, {
                                               text: t.nameCount,
                                               upgradeLegacy: !0,
-                                              params: { count: o },
+                                              params: { count: i },
                                               className: V,
                                           })
                                         : '',
@@ -148,17 +147,17 @@ const q = 'List_3e9032c6',
                         c,
                     );
                 }),
-                Boolean(n) &&
+                Boolean(r) &&
                     s.jsx(u, {
-                        className: a(D, o.length && z),
-                        text: r === x.Vehicles ? t.vehicleCompensation : t.styleCompensation,
+                        className: a(D, i.length && z),
+                        text: n === f.Vehicles ? t.vehicleCompensation : t.styleCompensation,
                         upgradeLegacy: !0,
                         params: {
                             count: s.jsx(u, {
                                 className: V,
-                                text: c.compensationCount.plural('count', n),
+                                text: c.compensationCount.plural('count', r),
                                 upgradeLegacy: !0,
-                                params: { count: n },
+                                params: { count: r },
                             }),
                         },
                     }),
@@ -183,7 +182,6 @@ function F({ skills: e = [], className: t = '' }) {
     });
 }
 const J = {
-        root: 'Reward_root_21f091ec',
         base: 'Reward_6c767796',
         icon: 'Reward_icon_bb33f955',
         overlay: 'Reward_overlay_ee910109',
@@ -195,9 +193,9 @@ const J = {
     },
     P = t(function ({ reward: e, className: t }) {
         const { model: c } = T(),
-            r = c.bonusesCategory.get(),
-            { texts: n } = c.computes.resources(),
-            { count: o, label: i, overlayType: l, name: m, icon: u, tankman: h, value: g } = e,
+            n = c.bonusesCategory.get(),
+            { texts: r } = c.computes.resources(),
+            { count: i, label: o, overlayType: l, name: m, icon: u, tankman: h, value: g } = e,
             b = { name: m, icon: u, value: g };
         return s.jsxs('div', {
             className: a(J.base, t),
@@ -206,7 +204,7 @@ const J = {
                     className: J.icon,
                     style: { backgroundImage: `url(${L(b, p.Small)})` },
                     children: [
-                        o > 1 && s.jsx('div', { className: J.count, children: _(n.multiplier, { count: o }) }),
+                        i > 1 && s.jsx('div', { className: J.count, children: _(r.multiplier, { count: i }) }),
                         Boolean(l) &&
                             s.jsx('div', {
                                 className: a(J.overlay, J[`overlay__${p.Small}`]),
@@ -219,8 +217,8 @@ const J = {
                 s.jsxs('div', {
                     className: J.description,
                     children: [
-                        s.jsx('div', { className: J.name, children: y(i) }),
-                        r === x.CrewMember && s.jsx(F, { skills: d(h.skills, (e) => e), className: J.skills }),
+                        s.jsx('div', { className: J.name, children: y(o) }),
+                        n === f.CrewMember && s.jsx(F, { skills: d(h.skills, (e) => e), className: J.skills }),
                     ],
                 }),
             ],
@@ -234,25 +232,25 @@ const J = {
     ee = t(function () {
         const { model: e } = T(),
             { dynamicTexts: t } = e.computes.dynamicResources(),
-            r = e.computes.bonuses(),
-            n = h('rem').height,
-            [o, m] = c.useState(r),
+            n = e.computes.bonuses(),
+            r = h('rem').height,
+            [i, m] = c.useState(n),
             [_, p] = c.useState(0);
         return (
             c.useEffect(() => {
-                const e = Math.floor((n - 100) / 60);
-                if (r.length > e) {
-                    const t = [...i(r, 0, e - 1)],
-                        c = [...((s = r), (a = r.length - e), i(s, Math.max(0, s.length - a), l(s)))],
-                        n = g(c, (e, s) => e + s.count, 0);
-                    (m(t), p(n));
+                const e = Math.floor((r - 100) / 60);
+                if (n.length > e) {
+                    const t = [...o(n, 0, e - 1)],
+                        c = [...((s = n), (a = n.length - e), o(s, Math.max(0, s.length - a), l(s)))],
+                        r = g(c, (e, s) => e + s.count, 0);
+                    (m(t), p(r));
                 }
                 var s, a;
-            }, [r, n]),
+            }, [n, r]),
             s.jsxs('div', {
                 className: Q,
                 children: [
-                    d(o, (e, t) => s.jsx(P, { reward: e, className: a(U, t === o.length - 1 && X) }, t)),
+                    d(i, (e, t) => s.jsx(P, { reward: e, className: a(U, t === i.length - 1 && X) }, t)),
                     _ > 0 &&
                         s.jsx('div', {
                             className: Y,
@@ -274,15 +272,15 @@ const J = {
     }),
     te = 'App_4978ff0e',
     ce = 'App_title_6b3cec5f',
-    re = [x.CrewBook, x.Guide, x.Brochure],
-    ne = t(function () {
+    ne = [f.CrewBook, f.Guide, f.Brochure],
+    re = t(function () {
         const { model: e } = T(),
             { dynamicTexts: a } = e.computes.dynamicResources(),
             t = e.bonusesCategory.get(),
             c = a.category.dyn(
                 ((e) => {
                     const s = j(e);
-                    return re.includes(e) ? `${s}_tooltip` : s;
+                    return ne.includes(e) ? `${s}_tooltip` : s;
                 })(t),
             );
         return s.jsxs('div', {
@@ -290,4 +288,4 @@ const J = {
             children: [s.jsx('div', { className: ce, children: c }), s.jsx(ae, {})],
         });
     });
-b(s.jsx(I, { children: s.jsx(f, { children: s.jsx(ne, {}) }) }));
+b(s.jsx(I, { children: s.jsx(x, { children: s.jsx(re, {}) }) }));

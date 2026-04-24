@@ -1,9 +1,9 @@
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.VehicleInfo_base_4f {
+.VehicleInfo_base_ccf15 {
     display: flex;
     align-items: center;
     background: left center no-repeat;
@@ -12,85 +12,85 @@
     line-height: 1;
 }
 
-.VehicleInfo_base__level1_15 {
+.VehicleInfo_base__level1_ce595 {
     padding-left: 9rem;
     background-image: url('R.images.gui.maps.icons.levels.tank_level_1');
     background-size: 9rem 16rem;
 }
 
-.VehicleInfo_base__level2_28 {
+.VehicleInfo_base__level2_b9ad7 {
     padding-left: 12rem;
     background-image: url('R.images.gui.maps.icons.levels.tank_level_2');
     background-size: 12rem 16rem;
 }
 
-.VehicleInfo_base__level3_17 {
+.VehicleInfo_base__level3_f301a {
     padding-left: 15rem;
     background-image: url('R.images.gui.maps.icons.levels.tank_level_3');
     background-size: 15rem 16rem;
 }
 
-.VehicleInfo_base__level4_02 {
+.VehicleInfo_base__level4_c0677 {
     padding-left: 16rem;
     background-image: url('R.images.gui.maps.icons.levels.tank_level_4');
     background-size: 16rem 16rem;
 }
 
-.VehicleInfo_base__level5_bd {
+.VehicleInfo_base__level5_f359a {
     padding-left: 14rem;
     background-image: url('R.images.gui.maps.icons.levels.tank_level_5');
     background-size: 14rem 16rem;
 }
 
-.VehicleInfo_base__level6_ea {
+.VehicleInfo_base__level6_da786 {
     padding-left: 17rem;
     background-image: url('R.images.gui.maps.icons.levels.tank_level_6');
     background-size: 17rem 16rem;
 }
 
-.VehicleInfo_base__level7_0a {
+.VehicleInfo_base__level7_fb18f {
     padding-left: 20rem;
     background-image: url('R.images.gui.maps.icons.levels.tank_level_7');
     background-size: 20rem 16rem;
 }
 
-.VehicleInfo_base__level8_27 {
+.VehicleInfo_base__level8_bbf99 {
     padding-left: 23rem;
     background-image: url('R.images.gui.maps.icons.levels.tank_level_8');
     background-size: 23rem 16rem;
 }
 
-.VehicleInfo_base__level9_95 {
+.VehicleInfo_base__level9_ec941 {
     padding-left: 17rem;
     background-image: url('R.images.gui.maps.icons.levels.tank_level_9');
     background-size: 17rem 16rem;
 }
 
-.VehicleInfo_base__level10_dc {
+.VehicleInfo_base__level10_f9f6c {
     padding-left: 15rem;
     background-image: url('R.images.gui.maps.icons.levels.tank_level_10');
     background-size: 15rem 16rem;
 }
 
-.VehicleInfo_base__level11_96 {
+.VehicleInfo_base__level11_d171c {
     padding-left: 17rem;
     background-image: url('R.images.gui.maps.icons.levels.tank_level_11');
     background-size: 17rem 16rem;
 }
 
-.VehicleInfo_vehicleType_e2 {
+.VehicleInfo_vehicleType_b95e7 {
     width: 16rem;
     height: 16rem;
     background: no-repeat center / contain;
 }
 
-.VehicleInfo_vehicleType__elite_95 {
+.VehicleInfo_vehicleType__elite_ff2b2 {
     width: 24rem;
     height: 24rem;
     margin: 2rem 0 0 -2rem;
 }
 
-.VehicleInfo_vehicleName_9e {
+.VehicleInfo_vehicleName_af680 {
     color: #c9c9b6;
     font-size: 14rem;
     font-weight: 400;
@@ -99,19 +99,19 @@
     text-shadow: 0 0 5px rgba(201, 201, 182, 0.5);
 }
 
-.VehicleList_base_b7 {
+.VehicleList_base_e61ce {
     line-height: normal;
 }
 /* please use Separator component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Separator)*/
 /* instead of this one*/
-.VehicleList_separator_f9 {
+.VehicleList_separator_a8c05 {
     width: 283rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
 /* please use Rewards component (gameface/src/views/lobby/battle_pass/tooltips/sharedComponents/Rewards)*/
 /* instead of this one*/
-.VehicleList_rewards_98 {
+.VehicleList_rewards_a461a {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -122,11 +122,11 @@
     color: #c9c9b6;
     font-size: 14rem;
 }
-.VehicleList_base_b7 {
+.VehicleList_base_e61ce {
     display: flex;
     flex-direction: column;
 }
-.VehicleList_info_5a {
+.VehicleList_info_f04a5 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -137,7 +137,7 @@
     align-items: center;
     height: 28rem;
 }
-.VehicleList_points_59 {
+.VehicleList_points_d81b9 {
     display: flex;
     align-items: flex-end;
     height: 16rem;
@@ -147,6 +147,6 @@
     position: relative;
     top: 1rem;
 }
-.VehicleList_top_09 {
+.VehicleList_top_fe75c {
     color: #ffdd99;
 }

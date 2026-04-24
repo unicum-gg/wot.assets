@@ -1,5 +1,5 @@
 import { j as o } from './vendor.js';
-import { m as e, ah as t, H as s, K as a, R as r, S as i } from './lib.js';
+import { m as e, ah as t, K as s, L as a, R as r, S as i } from './lib.js';
 function n({ bonuses: n, questId: l, size: p, resId: d, ...v }) {
     const u = e(n, (o) => {
             return {

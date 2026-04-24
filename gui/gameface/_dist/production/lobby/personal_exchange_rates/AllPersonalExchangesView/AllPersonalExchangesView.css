@@ -1,9 +1,9 @@
-.Currency_base_57 {
+.Currency_base_ed02c {
     display: flex;
     align-items: center;
     position: relative;
 }
-.Currency_icon_c5 {
+.Currency_icon_d34e3 {
     width: 16rem;
     height: 16rem;
     background-repeat: no-repeat;
@@ -11,257 +11,257 @@
     position: relative;
     z-index: 1;
 }
-.Currency_base__small_af .Currency_icon_c5,
-.Currency_base__big_bc .Currency_icon_c5,
-.Currency_base__large_65 .Currency_icon_c5,
-.Currency_base__extraLarge_4d .Currency_icon_c5 {
+.Currency_base__small_af876 .Currency_icon_d34e3,
+.Currency_base__big_f6388 .Currency_icon_d34e3,
+.Currency_base__large_fb228 .Currency_icon_d34e3,
+.Currency_base__extraLarge_d0b11 .Currency_icon_d34e3 {
     transform: translateY(3rem);
 }
-.Currency_icon__credits-small_9b {
+.Currency_icon__credits-small_cb645 {
     background-image: url('R.images.gui.maps.icons.library.CreditsIcon_2');
 }
-.Currency_icon__credits-big_96 {
+.Currency_icon__credits-big_bb614 {
     background-image: url('R.images.gui.maps.icons.library.CreditsIcon_1');
 }
-.Currency_icon__credits-large_ac {
+.Currency_icon__credits-large_b65af {
     width: 48rem;
     height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_silver');
 }
-.Currency_base__large_65 .Currency_icon__credits-large_ac {
+.Currency_base__large_fb228 .Currency_icon__credits-large_b65af {
     transform: translateY(4rem);
 }
-.Currency_icon__credits-extraLarge_16 {
+.Currency_icon__credits-extraLarge_a4a53 {
     width: 80rem;
     height: 80rem;
     margin-right: -2rem;
     background-image: url('R.images.gui.maps.icons.library.credits_icon_80x80');
 }
-.Currency_icon__gold-small_86 {
+.Currency_icon__gold-small_eee32 {
     background-image: url('R.images.gui.maps.icons.library.GoldIcon_2');
 }
-.Currency_base__small_af .Currency_icon__gold-small_86 {
+.Currency_base__small_af876 .Currency_icon__gold-small_eee32 {
     transform: translateY(2rem);
 }
-.Currency_icon__gold-big_15 {
+.Currency_icon__gold-big_e419a {
     background-image: url('R.images.gui.maps.icons.library.GoldIcon_1');
 }
-.Currency_base__big_bc .Currency_icon__gold-big_15 {
+.Currency_base__big_f6388 .Currency_icon__gold-big_e419a {
     transform: translateY(4rem);
 }
-.Currency_icon__gold-large_36 {
+.Currency_icon__gold-large_c3a99 {
     width: 48rem;
     height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_gold');
 }
-.Currency_base__large_65 .Currency_icon__gold-large_36 {
+.Currency_base__large_fb228 .Currency_icon__gold-large_c3a99 {
     transform: translateY(4rem);
 }
-.Currency_icon__gold-extraLarge_a0 {
+.Currency_icon__gold-extraLarge_f2852 {
     width: 80rem;
     height: 80rem;
     background-image: url('R.images.gui.maps.icons.library.gold_icon_80x80');
 }
-.Currency_icon__crystal-small_27 {
+.Currency_icon__crystal-small_d8644 {
     background-image: url('R.images.gui.maps.icons.library.CrystalIcon_2');
 }
-.Currency_base__small_af .Currency_icon__crystal-small_27 {
+.Currency_base__small_af876 .Currency_icon__crystal-small_d8644 {
     transform: translateY(2rem);
 }
-.Currency_icon__crystal-big_cd {
+.Currency_icon__crystal-big_f2873 {
     width: 23rem;
     height: 22rem;
     background-image: url('R.images.gui.maps.icons.library.crystal_23x22');
 }
-.Currency_base__big_bc .Currency_icon__crystal-big_cd {
+.Currency_base__big_f6388 .Currency_icon__crystal-big_f2873 {
     transform: translateY(4rem);
 }
-.Currency_icon__crystal-large_d3 {
+.Currency_icon__crystal-large_cf068 {
     width: 48rem;
     height: 48rem;
     margin-left: -1rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_bonds');
 }
-.Currency_icon__crystal-extraLarge_09 {
+.Currency_icon__crystal-extraLarge_a9843 {
     width: 80rem;
     height: 80rem;
     background-image: url('R.images.gui.maps.icons.library.crystal_80x80');
 }
-.Currency_base__extraLarge_4d .Currency_icon__crystal-extraLarge_09 {
+.Currency_base__extraLarge_d0b11 .Currency_icon__crystal-extraLarge_a9843 {
     transform: translateY(7rem);
 }
-.Currency_icon__xp-small_a7 {
+.Currency_icon__xp-small_f3b46 {
     background-image: url('R.images.gui.maps.icons.library.NormalXpIcon');
 }
-.Currency_base__small_af .Currency_icon__xp-small_a7 {
+.Currency_base__small_af876 .Currency_icon__xp-small_f3b46 {
     transform: translateY(1rem);
 }
-.Currency_icon__xp-big_97 {
+.Currency_icon__xp-big_c984a {
     width: 23rem;
     height: 22rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.xpIcon_23x22');
 }
-.Currency_base__big_bc .Currency_icon__xp-big_97 {
+.Currency_base__big_f6388 .Currency_icon__xp-big_c984a {
     transform: translateY(2rem);
 }
-.Currency_icon__xp-large_6b {
+.Currency_icon__xp-large_e9a09 {
     width: 48rem;
     height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.exp');
 }
-.Currency_icon__xp-extraLarge_67 {
+.Currency_icon__xp-extraLarge_f90f7 {
     width: 80rem;
     height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.xp_tank_icon_80x80');
 }
-.Currency_icon__freeXP-small_ca {
+.Currency_icon__freeXP-small_bcda1 {
     background-image: url('R.images.gui.maps.icons.library.freeXPIcon16x16');
 }
-.Currency_base__small_af .Currency_icon__freeXP-small_ca {
+.Currency_base__small_af876 .Currency_icon__freeXP-small_bcda1 {
     transform: translateY(1rem);
 }
-.Currency_icon__freeXP-big_21 {
+.Currency_icon__freeXP-big_eb64e {
     width: 24rem;
     height: 24rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.freeXPIconBig24x24');
 }
-.Currency_icon__freeXP-large_c8 {
+.Currency_icon__freeXP-large_e46b0 {
     width: 48rem;
     height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.freeExp');
 }
-.Currency_icon__freeXP-extraLarge_58 {
+.Currency_icon__freeXP-extraLarge_e41b1 {
     width: 80rem;
     height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.free_xp_icon_80x80');
 }
-.Currency_base__extraLarge_4d .Currency_icon__freeXP-extraLarge_58 {
+.Currency_base__extraLarge_d0b11 .Currency_icon__freeXP-extraLarge_e41b1 {
     transform: translateY(4rem);
 }
-.Currency_icon__eliteXP-small_45 {
+.Currency_icon__eliteXP-small_c4a51 {
     background-image: url('R.images.gui.maps.icons.library.EliteXpIcon-2');
 }
-.Currency_base__small_af .Currency_icon__eliteXP-small_45 {
+.Currency_base__small_af876 .Currency_icon__eliteXP-small_c4a51 {
     transform: translateY(1rem);
 }
-.Currency_icon__eliteXP-big_c0 {
+.Currency_icon__eliteXP-big_eceb0 {
     width: 24rem;
     height: 24rem;
     margin-left: -5rem;
     background-image: url('R.images.gui.maps.icons.library.EliteXpIconBig');
 }
-.Currency_icon__eliteXP-large_1b {
+.Currency_icon__eliteXP-large_e35ab {
     width: 48rem;
     height: 48rem;
     margin: 0 -5rem 0 -6rem;
     background-image: url('R.images.gui.maps.icons.library.elite_exp_48x48');
 }
-.Currency_icon__eliteXP-extraLarge_9b {
+.Currency_icon__eliteXP-extraLarge_a17d5 {
     width: 80rem;
     height: 80rem;
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.icons.library.elite_exp_80x80');
 }
-.Currency_base__extraLarge_4d .Currency_icon__eliteXP-extraLarge_9b {
+.Currency_base__extraLarge_d0b11 .Currency_icon__eliteXP-extraLarge_a17d5 {
     transform: translateY(4rem);
 }
-.Currency_icon__equipCoin-small_32 {
+.Currency_icon__equipCoin-small_d3b9a {
     width: 16rem;
     height: 16rem;
     margin-right: -2rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoin_1');
 }
-.Currency_base__small_af .Currency_icon__equipCoin-small_32 {
+.Currency_base__small_af876 .Currency_icon__equipCoin-small_d3b9a {
     transform: translateX(-1rem) translateY(1rem);
 }
-.Currency_icon__equipCoin-big_79 {
+.Currency_icon__equipCoin-big_c34e1 {
     width: 24rem;
     height: 24rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoinBig');
 }
-.Currency_base__big_bc .Currency_icon__equipCoin-big_79 {
+.Currency_base__big_f6388 .Currency_icon__equipCoin-big_c34e1 {
     transform: translateX(-5rem) translateY(3rem);
 }
-.Currency_icon__equipCoin-large_2c {
+.Currency_icon__equipCoin-large_b1b5e {
     width: 48rem;
     height: 48rem;
     margin-right: 2rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.equipCoin');
 }
-.Currency_icon__equipCoin-extraLarge_8a {
+.Currency_icon__equipCoin-extraLarge_a7b90 {
     width: 80rem;
     height: 80rem;
     margin-right: 8rem;
     background-image: url('R.images.gui.maps.icons.library.equipCoin_icon_80x80');
 }
-.Currency_base__extraLarge_4d .Currency_icon__equipCoin-extraLarge_8a {
+.Currency_base__extraLarge_d0b11 .Currency_icon__equipCoin-extraLarge_a7b90 {
     transform: translateX(2rem) translateY(4rem);
 }
-.Currency_value_e1 {
+.Currency_value_bb176 {
     /* font-size inherit does not work here, so 1em means the size does not change */
     /* stylelint-disable-next-line */
     font-size: 1em;
     position: relative;
     z-index: 2;
 }
-.Currency_base__small_af .Currency_value_e1 {
+.Currency_base__small_af876 .Currency_value_bb176 {
     padding-right: 2rem;
 }
-.Currency_base__big_bc .Currency_value_e1 {
+.Currency_base__big_f6388 .Currency_value_bb176 {
     padding-right: 5rem;
     font-size: 24rem;
     font-weight: 700;
 }
-.Currency_base__big_bc .Currency_value_e1 + .Currency_icon_c5 {
+.Currency_base__big_f6388 .Currency_value_bb176 + .Currency_icon_d34e3 {
     font-size: 24rem;
 }
-.Currency_base__large_65 .Currency_value_e1 {
+.Currency_base__large_fb228 .Currency_value_bb176 {
     font-size: 36rem;
     font-weight: 700;
 }
-.Currency_base__large_65 .Currency_value_e1 + .Currency_icon_c5 {
+.Currency_base__large_fb228 .Currency_value_bb176 + .Currency_icon_d34e3 {
     font-size: 36rem;
 }
-.Currency_base__extraLarge_4d .Currency_value_e1 {
+.Currency_base__extraLarge_d0b11 .Currency_value_bb176 {
     font-size: 56rem;
     font-weight: 700;
 }
-.Currency_value__freeXP_cb {
+.Currency_value__freeXP_db401 {
     color: #f2f2f7;
 }
-.Currency_value__credits_76 {
+.Currency_value__credits_c98c5 {
     color: #ced9d9;
 }
-.Currency_value__gold_dd {
+.Currency_value__gold_b8214 {
     color: #ffc363;
 }
-.Currency_value__xp_b0,
-.Currency_value__crystal_19,
-.Currency_value__equipCoin_d0,
-.Currency_value__eliteXP_62 {
+.Currency_value__xp_eda0a,
+.Currency_value__crystal_cf72e,
+.Currency_value__equipCoin_cb08d,
+.Currency_value__eliteXP_de450 {
     color: #c9c9b6;
 }
-.Currency_base__small_af .Currency_value__notEnough_56 {
+.Currency_base__small_af876 .Currency_value__notEnough_db10a {
     color: #ff2717;
 }
-.Currency_base__big_bc .Currency_value__notEnough_56 {
+.Currency_base__big_f6388 .Currency_value__notEnough_db10a {
     color: #b70000;
 }
-.Currency_base__large_65 .Currency_value__notEnough_56 {
+.Currency_base__large_fb228 .Currency_value__notEnough_db10a {
     color: #b70000;
 }
-.Currency_base__extraLarge_4d .Currency_value__notEnough_56 {
+.Currency_base__extraLarge_d0b11 .Currency_value__notEnough_db10a {
     color: #b70000;
 }
-.Currency_stock_87 {
+.Currency_stock_bffbc {
     height: 13rem;
     color: #ffdd99;
     font-size: 13rem;
@@ -270,25 +270,25 @@
     z-index: 0;
     pointer-events: none;
 }
-.Currency_stock__indent_a1 {
+.Currency_stock__indent_c4c0d {
     margin-left: 2rem;
 }
-.Currency_base__small_af .Currency_stock_87 {
+.Currency_base__small_af876 .Currency_stock_bffbc {
     transform: translateY(0rem);
 }
-.Currency_base__big_bc .Currency_stock_87 {
+.Currency_base__big_f6388 .Currency_stock_bffbc {
     transform: translateY(4rem);
 }
-.Currency_base__large_65 .Currency_stock_87 {
+.Currency_base__large_fb228 .Currency_stock_bffbc {
     transform: translateY(10rem);
 }
-.Currency_base__extraLarge_4d .Currency_stock_87 {
+.Currency_base__extraLarge_d0b11 .Currency_stock_bffbc {
     transform: translateY(18rem);
 }
-.Currency_stock__interactive_93 {
+.Currency_stock__interactive_e78a9 {
     pointer-events: auto;
 }
-.Currency_stockBackground_82 {
+.Currency_stockBackground_c8ab1 {
     width: 80rem;
     height: 45rem;
     background-repeat: no-repeat;
@@ -300,12 +300,12 @@
     transform: translateY(17rem);
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.TextButton_base_b6 {
+.TextButton_base_a231c {
     display: flex;
     align-items: center;
     padding: 0 3rem;
@@ -314,33 +314,33 @@
     cursor: pointer;
 }
 
-.TextButton_base__right_39 {
+.TextButton_base__right_bfac3 {
     flex-direction: row-reverse;
 }
-.TextButton_icon_17 {
+.TextButton_icon_cdfc0 {
     width: 32rem;
     height: 32rem;
     background: no-repeat center / contain;
     position: relative;
 }
-.TextButton_icon__back_43,
-.TextButton_icon__forward_59 {
+.TextButton_icon__back_fc1bb,
+.TextButton_icon__forward_efa2d {
     margin: -1rem -5rem;
     background-image: url('R.images.gui.maps.icons.components.text_button.back');
     transform: translateY(1rem);
 }
-.TextButton_icon__forward_59 {
+.TextButton_icon__forward_efa2d {
     transform: rotate(180deg) translateY(1rem);
 }
-.TextButton_icon__close_53 {
+.TextButton_icon__close_e2f0f {
     margin: -1rem 0;
     background-image: url('R.images.gui.maps.icons.components.text_button.close');
 }
-.TextButton_icon__info_33 {
+.TextButton_icon__info_e32c0 {
     margin: -1rem -5rem;
     background-image: url('R.images.gui.maps.icons.components.text_button.info');
 }
-.TextButton_glow_a4 {
+.TextButton_glow_d6e04 {
     width: 100%;
     height: 100%;
     background: no-repeat center / contain;
@@ -349,31 +349,31 @@
     top: 0;
     transition: opacity 0.16s;
 }
-.TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
+.TextButton_icon__back_fc1bb .TextButton_glow_d6e04,
+.TextButton_icon__forward_efa2d .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
 }
-.TextButton_icon__close_53 .TextButton_glow_a4 {
+.TextButton_icon__close_e2f0f .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
 }
-.TextButton_icon__info_33 .TextButton_glow_a4 {
+.TextButton_icon__info_e32c0 .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
 }
-.TextButton_base_b6:hover .TextButton_glow_a4 {
+.TextButton_base_a231c:hover .TextButton_glow_d6e04 {
     opacity: 1;
 }
-.TextButton_base_b6:active .TextButton_glow_a4 {
+.TextButton_base_a231c:active .TextButton_glow_d6e04 {
     opacity: 0;
 }
-.TextButton_caption_82 {
+.TextButton_caption_f4e8d {
     position: relative;
     transition:
         color 0.16s,
         text-shadow 0.16s;
 }
-.TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
+.TextButton_caption__back_d358d,
+.TextButton_caption__forward_ff93d,
+.TextButton_caption__close_fc554 {
     color: #ffdd99;
     text-shadow:
         0 0 10rem rgba(255, 42, 0, 1),
@@ -384,46 +384,46 @@
         0 0 2rem rgba(255, 42, 0, 0.4),
         0 0 1rem rgba(255, 42, 0, 0.4);
 }
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
+.TextButton_base_a231c:hover .TextButton_caption__back_d358d,
+.TextButton_base_a231c:hover .TextButton_caption__forward_ff93d,
+.TextButton_base_a231c:hover .TextButton_caption__close_fc554 {
     color: #fffa9f;
 }
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
+.TextButton_base_a231c:active .TextButton_caption__back_d358d,
+.TextButton_base_a231c:active .TextButton_caption__forward_ff93d,
+.TextButton_base_a231c:active .TextButton_caption__close_fc554 {
     color: #ffdd99;
 }
-.TextButton_caption__info_23 {
+.TextButton_caption__info_c263a {
     padding: 0 5rem;
     color: #ccffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.8),
         0 0 8rem #00eaff;
 }
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
+.TextButton_base_a231c:hover .TextButton_caption__info_c263a {
     color: #e3ffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.8),
         0 0 12rem rgba(0, 234, 255, 1),
         0 0 8rem #00eaff;
 }
-.TextButton_base_b6:active .TextButton_caption__info_23 {
+.TextButton_base_a231c:active .TextButton_caption__info_c263a {
     color: #ccffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.6),
         0 0 8rem #00eaff;
 }
-.TextButton_goto_e7 {
+.TextButton_goto_d3960 {
     color: #7c7c6c;
 }
-.TextButton_base__left_ff .TextButton_goto_e7 {
+.TextButton_base__left_ec79d .TextButton_goto_d3960 {
     margin-left: 8rem;
 }
-.TextButton_base__right_39 .TextButton_goto_e7 {
+.TextButton_base__right_bfac3 .TextButton_goto_d3960 {
     margin-right: 8rem;
 }
-.TextButton_shine_e2 {
+.TextButton_shine_f8873 {
     width: 90rem;
     height: 40rem;
     background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
@@ -433,21 +433,21 @@
     transition: opacity 0.16s;
     pointer-events: none;
 }
-.TextButton_base__left_ff .TextButton_shine_e2 {
+.TextButton_base__left_ec79d .TextButton_shine_f8873 {
     left: -4rem;
 }
-.TextButton_base__right_39 .TextButton_shine_e2 {
+.TextButton_base__right_bfac3 .TextButton_shine_f8873 {
     right: -4rem;
     transform: rotate(180deg);
 }
-.TextButton_base_b6:hover .TextButton_shine_e2 {
+.TextButton_base_a231c:hover .TextButton_shine_f8873 {
     opacity: 1;
 }
-.TextButton_base_b6:active .TextButton_shine_e2 {
+.TextButton_base_a231c:active .TextButton_shine_f8873 {
     opacity: 0;
 }
 
-.HorizontalBar_base_49 {
+.HorizontalBar_base_fa517 {
     display: flex;
     width: 100%;
     height: 13rem;
@@ -455,18 +455,18 @@
     position: relative;
 }
 
-.HorizontalBar_base__active_5e {
+.HorizontalBar_base__active_ad89b {
     visibility: visible;
 }
 
-.HorizontalBar_base_49 .disable,
-.HorizontalBar_base_49 .disable:hover {
+.HorizontalBar_base_fa517 .disable,
+.HorizontalBar_base_fa517 .disable:hover {
     opacity: 0.3;
     cursor: default;
 }
 
-.HorizontalBar_leftButton_5f,
-.HorizontalBar_rightButton_03 {
+.HorizontalBar_leftButton_eb8c3,
+.HorizontalBar_rightButton_f5116 {
     width: 13rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
@@ -479,27 +479,27 @@
     cursor: pointer;
 }
 
-.HorizontalBar_leftButton_5f:hover,
-.HorizontalBar_rightButton_03:hover {
+.HorizontalBar_leftButton_eb8c3:hover,
+.HorizontalBar_rightButton_f5116:hover {
     opacity: 1;
 }
 
-.HorizontalBar_leftButton_5f {
+.HorizontalBar_leftButton_eb8c3 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
 }
 
-.HorizontalBar_rightButton_03 {
+.HorizontalBar_rightButton_f5116 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
 }
 
-.HorizontalBar_track_0d {
+.HorizontalBar_track_fd3af {
     flex: 1;
     margin: 0 1rem;
     position: relative;
     cursor: pointer;
 }
 
-.HorizontalBar_thumb_fd {
+.HorizontalBar_thumb_bb7e0 {
     display: none;
     flex: 0 0 100%;
     width: 100%;
@@ -516,11 +516,11 @@
     cursor: pointer;
 }
 
-.HorizontalBar_thumb_fd:hover {
+.HorizontalBar_thumb_bb7e0:hover {
     opacity: 1;
 }
 
-.HorizontalBar_rail_32 {
+.HorizontalBar_rail_a3d9e {
     height: 0;
     border-top: 1rem solid #2f2e24;
     position: absolute;
@@ -529,26 +529,26 @@
     left: 5rem;
 }
 
-.HorizontalBar_rail_32:hover {
+.HorizontalBar_rail_a3d9e:hover {
     opacity: 0.7;
 }
 
-.HorizontalScroll_base_29 {
+.HorizontalScroll_base_a33a9 {
     width: 100%;
 }
 
-.HorizontalScroll_wrapper_1e {
+.HorizontalScroll_wrapper_b622e {
     display: flex;
     width: 100%;
     overflow-x: hidden;
 }
 
-.HorizontalScroll_defaultScrollArea_8d {
+.HorizontalScroll_defaultScrollArea_a2315 {
     width: 100%;
     margin-bottom: 7rem;
 }
 
-.VerticalBar_base_f3 {
+.VerticalBar_base_b5610 {
     display: flex;
     flex-direction: column;
     width: 13rem;
@@ -557,18 +557,18 @@
     position: relative;
 }
 
-.VerticalBar_base__active_72 {
+.VerticalBar_base__active_be260 {
     visibility: visible;
 }
 
-.VerticalBar_base_f3 .disable,
-.VerticalBar_base_f3 .disable:hover {
+.VerticalBar_base_b5610 .disable,
+.VerticalBar_base_b5610 .disable:hover {
     opacity: 0.3;
     cursor: default;
 }
 
-.VerticalBar_topButton_d7,
-.VerticalBar_bottomButton_06 {
+.VerticalBar_topButton_c2227,
+.VerticalBar_bottomButton_ef09b {
     width: 13rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
@@ -580,27 +580,27 @@
     cursor: pointer;
 }
 
-.VerticalBar_topButton_d7:hover,
-.VerticalBar_bottomButton_06:hover {
+.VerticalBar_topButton_c2227:hover,
+.VerticalBar_bottomButton_ef09b:hover {
     opacity: 1;
 }
 
-.VerticalBar_topButton_d7 {
+.VerticalBar_topButton_c2227 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
 }
 
-.VerticalBar_bottomButton_06 {
+.VerticalBar_bottomButton_ef09b {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
 }
 
-.VerticalBar_track_df {
+.VerticalBar_track_e3345 {
     flex: 1;
     margin: 1rem 0;
     position: relative;
     cursor: pointer;
 }
 
-.VerticalBar_thumb_32 {
+.VerticalBar_thumb_a34e7 {
     display: none;
     flex: 0 0 13rem;
     width: 13rem;
@@ -616,11 +616,11 @@
     cursor: pointer;
 }
 
-.VerticalBar_thumb_32:hover {
+.VerticalBar_thumb_a34e7:hover {
     opacity: 1;
 }
 
-.VerticalBar_rail_43 {
+.VerticalBar_rail_ff232 {
     width: 0;
     height: 100%;
     border-left: 1rem solid #2f2e24;
@@ -632,35 +632,35 @@
     z-index: 0;
 }
 
-.VerticalBar_rail_43:hover {
+.VerticalBar_rail_ff232:hover {
     opacity: 0.7;
 }
 
-.VerticalScroll_content_cb {
+.VerticalScroll_content_fe263 {
     height: 100%;
     overflow-y: hidden;
 }
 
-.VerticalScroll_defaultScroll_f8 {
+.VerticalScroll_defaultScroll_e27f5 {
     display: flex;
 }
 
-.VerticalScroll_bar_1e {
+.VerticalScroll_bar_b8700 {
     flex: 1;
     margin-left: 7rem;
 }
 
-.VerticalScroll_area_af {
+.VerticalScroll_area_b5a82 {
     flex: 1;
 }
 
-.VirtualGrid_base_52 {
+.VirtualGrid_base_f1a9b {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-.ExchangeRateListItem_base_fb {
+.ExchangeRateListItem_base_ec7d9 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -669,14 +669,14 @@
     height: 90rem;
 }
 
-.ExchangeRateListItem_title_38 {
+.ExchangeRateListItem_title_da7e7 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.ExchangeRateListItem_limit_85 {
+.ExchangeRateListItem_limit_dc905 {
     color: #c9c9b6;
     font-size: 16rem;
     font-weight: 400;
@@ -688,30 +688,30 @@
     position: relative;
 }
 
-.ExchangeRateListItem_limitIcon_6b {
+.ExchangeRateListItem_limitIcon_cda05 {
     width: 18rem;
     height: 18rem;
     margin-right: 6rem;
     background-size: 100%;
 }
 
-.ExchangeRateListItem_limitIcon__credits_7b {
+.ExchangeRateListItem_limitIcon__credits_d503f {
     background-image: url('R.images.gui.maps.icons.library.CreditsIcon_2');
 }
 
-.ExchangeRateListItem_limitIcon__freeXP_e4 {
+.ExchangeRateListItem_limitIcon__freeXP_b2740 {
     background-image: url('R.images.gui.maps.icons.library.freeXPIcon16x16');
 }
 
-.ExchangeRateListItem_limitDivider_47 {
+.ExchangeRateListItem_limitDivider_e7032 {
     margin: 0 2rem;
 }
 
-.ExchangeRateListItem_exceededValue_5b {
+.ExchangeRateListItem_exceededValue_b5157 {
     color: #ee7000;
 }
 
-.ExchangeRateListItem_rates_e8 {
+.ExchangeRateListItem_rates_a087a {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -720,11 +720,11 @@
     margin-top: 5rem;
 }
 
-.ExchangeRateListItem_equal_9d {
+.ExchangeRateListItem_equal_bf13e {
     margin: 0 7rem 0 5rem;
 }
 
-@keyframes App_fadeIn_12 {
+@keyframes App_fadeIn_c01bb {
     0% {
         opacity: 0;
     }
@@ -733,9 +733,9 @@
         opacity: 1;
     }
 }
-.App_base_6f {
+.App_base_c5e36 {
     opacity: 0;
-    animation-name: App_fadeIn_12;
+    animation-name: App_fadeIn_c01bb;
     animation-duration: 0.8s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -747,9 +747,9 @@
     height: 100vh;
     background: #070a0d;
 }
-.App_background_48 {
+.App_background_b1489 {
     opacity: 0;
-    animation-name: App_fadeIn_12;
+    animation-name: App_fadeIn_c01bb;
     animation-duration: 0.8s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -762,14 +762,14 @@
     bottom: 0;
     left: 0;
 }
-.App_close_fc {
+.App_close_be654 {
     position: absolute;
     top: 25rem;
     right: 30rem;
 }
-.App_container_25 {
+.App_container_b361a {
     opacity: 0;
-    animation-name: App_fadeIn_12;
+    animation-name: App_fadeIn_c01bb;
     animation-duration: 0.8s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -780,29 +780,29 @@
     width: 400rem;
     position: relative;
 }
-.App_gridWrapper_1d {
+.App_gridWrapper_f7fa6 {
     height: 400rem;
 }
-.mediaMediumHeight .App_gridWrapper_1d {
+.mediaMediumHeight .App_gridWrapper_f7fa6 {
     height: 500rem;
 }
-.mediaLargeHeight .App_gridWrapper_1d {
+.mediaLargeHeight .App_gridWrapper_f7fa6 {
     height: 700rem;
 }
-.mediaExtraLargeHeight .App_gridWrapper_1d {
+.mediaExtraLargeHeight .App_gridWrapper_f7fa6 {
     height: 1000rem;
 }
-.App_header_bb {
+.App_header_d48fa {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
     margin: 0 20rem 20rem;
 }
-.App_units_13 {
+.App_units_a5e72 {
     color: #e9e2bf;
 }
-.App_notification_5c {
+.App_notification_a9159 {
     color: #ee7000;
     font-size: 14rem;
     font-weight: 400;
@@ -811,30 +811,30 @@
     margin: 0 20rem;
     padding: 18rem 0;
 }
-.App_notificationIcon_93 {
+.App_notificationIcon_e83be {
     width: 14rem;
     height: 14rem;
     margin: 3rem 7rem 0 0;
     background: url('R.images.gui.maps.icons.personalExchangeRates.limit.info_2') no-repeat center / 100%;
 }
-.App_divider_be {
+.App_divider_b9166 {
     height: 1rem;
     background: #ffffff1a;
 }
-.App_footer_e8 {
+.App_footer_d8803 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
     margin: 18rem 20rem 0;
 }
-.App_scroll_fc > div:last-child {
+.App_scroll_a1402 > div:last-child {
     transform: translateX(30rem);
 }
-.App_mr10_91 {
+.App_mr10_bde1c {
     margin-right: 10rem;
 }
-.App_rates_bc {
+.App_rates_d0210 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -842,6 +842,6 @@
     display: flex;
     margin-top: 2rem;
 }
-.App_equal_12 {
+.App_equal_d82f0 {
     margin: 0 7rem 0 5rem;
 }

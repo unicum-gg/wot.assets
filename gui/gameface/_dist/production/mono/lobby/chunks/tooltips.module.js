@@ -3,7 +3,7 @@ const i = {
     heading: 'Tooltips_heading_34f670f8',
     subHeading: 'Tooltips_subHeading_9264106c',
     subHeading__topIndent: 'Tooltips_subHeading__topIndent_17e6ff4e',
-    divider: 'Tooltips_divider_6ec5ff3c',
+    divider: 'Tooltips_divider_777e4c42',
     description: 'Tooltips_description_9264106c',
     description__topIndent: 'Tooltips_description__topIndent_55e3aea5',
 };

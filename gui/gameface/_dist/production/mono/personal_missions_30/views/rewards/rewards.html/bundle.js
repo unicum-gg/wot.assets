@@ -1,41 +1,46 @@
-import { r as e, o as a, e as s, n as r, j as t, l as n, m as i, f as o } from '../../../chunks/vendor.js';
+import { r as e, o as a, e as s, q as r, j as t, l as n, m as i, f as o } from '../../../chunks/vendor.js';
 import {
-    w as l,
-    x as d,
-    y as c,
+    ak as l,
+    al as d,
+    O as c,
     b as _,
-    z as m,
-    A as u,
+    am as m,
+    an as u,
     r as p,
-    C as h,
-    D as b,
+    ao as h,
+    W as b,
     c as g,
     i as w,
-    E as v,
-    f,
-    G as R,
+    af as f,
+    f as v,
+    ap as R,
     u as N,
-    H as x,
-    e as y,
+    K as y,
+    e as x,
     R as O,
-    J as j,
-    F as T,
-    K as I,
+    N as T,
+    F as j,
+    ag as I,
     B as A,
-    L as E,
-    M as P,
-    I as S,
-    N as H,
-    O as C,
-    V,
-    a as k,
-    o as M,
-    k as $,
-    d as B,
-    U as W,
+    A as S,
+    C as P,
+    I as E,
+    aq as H,
+    o as C,
+    ar as V,
+    as as k,
+    at as M,
+    au as $,
+    av as B,
+    aw as W,
+    V as L,
+    a as z,
+    k as D,
+    d as G,
+    U as q,
 } from '../../../chunks/lib.js';
-import { A as L, R as z, s as G } from '../../../chunks/helpers.js';
-/* empty css                    */ const D = (a) => () => {
+import { A as K, R as U, s as F } from '../../../chunks/helpers.js';
+/* empty css                    */ const Y = (a) => () => {
         const { steps: s, autoStart: r = !0 } = a,
             t = e.useRef(null),
             n = e.useRef('idle'),
@@ -100,7 +105,7 @@ import { A as L, R as z, s as G } from '../../../chunks/helpers.js';
             p
         );
     },
-    U = (e) => ({
+    J = (e) => ({
         index: e.index,
         name: e.name,
         image: (a) =>
@@ -123,18 +128,18 @@ import { A as L, R as z, s as G } from '../../../chunks/helpers.js';
         icon: e.icon,
         valueType: u(e.name),
         tooltipArgs: m(
-            { [L]: e.tooltipId },
+            { [K]: e.tooltipId },
             p
                 .resolve('views')
                 .read((e) => e.common.tooltip_window.backport_tooltip_content.BackportTooltipContent('resId')),
         ),
     }),
-    K = 16 / 9,
-    q = (e, a) => {
+    Q = 16 / 9,
+    X = (e, a) => {
         const s = e / a;
-        return { width: `${s > K ? e : a * K}rem`, height: `${s < K ? a : e / K}rem` };
+        return { width: `${s > Q ? e : a * Q}rem`, height: `${s < Q ? a : e / Q}rem` };
     },
-    Y = {
+    Z = {
         gui_random_reward_appear: g('gui_random_reward_appear'),
         gui_hangar_simple_execution_screen: g('gui_hangar_simple_execution_screen'),
         vid_pm_o08_s15: g('vid_pm_o08_s15'),
@@ -144,20 +149,20 @@ import { A as L, R as z, s as G } from '../../../chunks/helpers.js';
         vid_pm_pause: g('vid_pm_pause'),
         stopIntro: g('vid_pm_stop'),
     },
-    [F, J] = w()(
+    [ee, ae] = w()(
         ({ observableModel: e }) => {
             const s = {
                     root: e.object(),
                     vehicle: e.object('vehicle'),
-                    rewards: e.transform((e) => v(e, U), 'rewards'),
+                    rewards: e.transform((e) => f(e, J), 'rewards'),
                 },
                 r = a.box(!1),
-                t = f.model(() => {
+                t = v.model(() => {
                     const e = s.root.get().type;
-                    return e === z.OPERATION || e === z.VEHICLE_PART ? [] : R(s.rewards.get(), (e, a) => a < 4);
+                    return e === U.OPERATION || e === U.VEHICLE_PART ? [] : R(s.rewards.get(), (e, a) => a < 4);
                 }),
-                n = f.model(() =>
-                    s.root.get().type === z.OPERATION ? s.rewards.get() : R(s.rewards.get(), (e, a) => a >= 4),
+                n = v.model(() =>
+                    s.root.get().type === U.OPERATION ? s.rewards.get() : R(s.rewards.get(), (e, a) => a >= 4),
                 );
             return { ...s, introVideoPlaying: r, computes: { mainRegularRewards: t, additionalRewards: n } };
         },
@@ -169,108 +174,108 @@ import { A as L, R as z, s as G } from '../../../chunks/helpers.js';
             setIntroVideoPlaying: s((a) => e.introVideoPlaying.set(a)),
         }),
     ),
-    Q = 'showBack',
-    X = 'showSubtitle',
-    Z = 'showTitle',
-    ee = 'showTankName',
-    ae = 'showRibbon',
-    se = 'showMainRewards',
-    re = 'showMainRewardsLabels',
-    te = 'showAdditionalTitle',
-    ne = 'showNextOperation',
-    ie = 'showAdditionalRewards',
-    oe = 'showButtons',
-    le = [ae, se, re],
-    de = [te, ie],
-    ce = e.createContext(null);
-function _e() {
-    const a = e.useContext(ce);
+    se = 'showBack',
+    re = 'showSubtitle',
+    te = 'showTitle',
+    ne = 'showTankName',
+    ie = 'showRibbon',
+    oe = 'showMainRewards',
+    le = 'showMainRewardsLabels',
+    de = 'showAdditionalTitle',
+    ce = 'showNextOperation',
+    _e = 'showAdditionalRewards',
+    me = 'showButtons',
+    ue = [ie, oe, le],
+    pe = [de, _e],
+    he = e.createContext(null);
+function be() {
+    const a = e.useContext(he);
     if (null === a)
         throw new Error('useAnimationApi was called in component, which is not wrapped in AnimationProvider');
     return a;
 }
-const me = D({
+const ge = Y({
         steps: [
-            { name: Q, delay: 0 },
-            { name: X, delay: 200 },
-            { name: Z, delay: 200 },
-            { name: ae, delay: 200 },
-            { name: se, delay: 200 },
+            { name: se, delay: 0 },
             { name: re, delay: 200 },
-            { name: te, delay: 100 },
-            { name: ie, delay: 200, stopNextSteps: !0 },
-            { name: oe, delay: 0 },
+            { name: te, delay: 200 },
+            { name: ie, delay: 200 },
+            { name: oe, delay: 200 },
+            { name: le, delay: 200 },
+            { name: de, delay: 100 },
+            { name: _e, delay: 200, stopNextSteps: !0 },
+            { name: me, delay: 0 },
         ],
     }),
-    ue = r(function ({ children: e }) {
-        const a = me();
-        return t.jsx(ce.Provider, { value: a, children: e });
+    we = r(function ({ children: e }) {
+        const a = ge();
+        return t.jsx(he.Provider, { value: a, children: e });
     }),
-    pe = D({
+    fe = Y({
         steps: [
-            { name: Q, delay: 0 },
-            { name: X, delay: 200 },
-            { name: Z, delay: 200 },
-            { name: ae, delay: 200 },
-            { name: se, delay: 200 },
+            { name: se, delay: 0 },
             { name: re, delay: 200 },
-            { name: te, delay: 100 },
-            { name: ie, delay: 200, stopNextSteps: !0 },
+            { name: te, delay: 200 },
+            { name: ie, delay: 200 },
+            { name: oe, delay: 200 },
+            { name: le, delay: 200 },
+            { name: de, delay: 100 },
+            { name: _e, delay: 200, stopNextSteps: !0 },
+            { name: ce, delay: 200 },
+            { name: me, delay: 200 },
+        ],
+    }),
+    ve = r(function ({ children: e }) {
+        const a = fe();
+        return t.jsx(he.Provider, { value: a, children: e });
+    }),
+    Re = Y({
+        steps: [
+            { name: te, delay: 200 },
             { name: ne, delay: 200 },
-            { name: oe, delay: 200 },
-        ],
-    }),
-    he = r(function ({ children: e }) {
-        const a = pe();
-        return t.jsx(ce.Provider, { value: a, children: e });
-    }),
-    be = D({
-        steps: [
-            { name: Z, delay: 200 },
-            { name: ee, delay: 200 },
-            { name: te, delay: 100 },
-            { name: ie, delay: 200, stopNextSteps: !0 },
-            { name: oe, delay: 200 },
+            { name: de, delay: 100 },
+            { name: _e, delay: 200, stopNextSteps: !0 },
+            { name: me, delay: 200 },
         ],
         autoStart: !1,
     }),
-    ge = r(function ({ children: e }) {
-        const a = be();
-        return t.jsx(ce.Provider, { value: a, children: e });
+    Ne = r(function ({ children: e }) {
+        const a = Re();
+        return t.jsx(he.Provider, { value: a, children: e });
     }),
-    we = r(function ({ children: e }) {
-        const { model: a } = J(),
+    ye = r(function ({ children: e }) {
+        const { model: a } = ae(),
             { type: s } = a.root.get();
         switch (s) {
-            case z.OPERATION:
-                return t.jsx(ge, { children: e });
-            case z.OPERATION_WITH_HONORS:
-                return t.jsx(he, { children: e });
+            case U.OPERATION:
+                return t.jsx(Ne, { children: e });
+            case U.OPERATION_WITH_HONORS:
+                return t.jsx(ve, { children: e });
             default:
-                return t.jsx(ue, { children: e });
+                return t.jsx(we, { children: e });
         }
     });
-const ve = r(function ({ reward: a, onAnimationStart: s, onAnimationEnd: r, index: o, className: l }) {
-        const { model: d } = J(),
+const xe = r(function ({ reward: a, onAnimationStart: s, onAnimationEnd: r, index: o, className: l }) {
+        const { model: d } = ae(),
             { type: c } = d.root.get(),
             _ = N(),
-            { breakpoint: m } = x(),
+            { breakpoint: m } = y(),
             u = (function (e, a) {
-                return e === z.OPERATION ? b.Big : G(a, j.medium) ? b.Small : b.Big;
+                return e === U.OPERATION ? b.Big : F(a, T.medium) ? b.Small : b.Big;
             })(c, m.weight),
             [p, h] = n(() => ({
                 from: { transform: 'translateY(20rem)', opacity: 0, pointerEvents: 'none' },
-                config: { duration: 400, easing: y.easeOutCirc },
+                config: { duration: 400, easing: x.easeOutCirc },
                 onStart: () => {
-                    (_.play('gui_random_reward_appear', { target: 'Additional reward' }), null == s || s());
+                    (_.play('gui_random_reward_appear', { target: 'Additional reward' }), s?.());
                 },
                 onRest: r,
             })),
-            g = _e();
+            g = be();
         return (
             e.useEffect(() => {
                 const e = (e) => {
-                    e.name === ie &&
+                    e.name === _e &&
                         h.start({ transform: 'translateY(0rem)', opacity: 1, pointerEvents: 'auto', delay: 100 * o });
                 };
                 return (
@@ -283,27 +288,27 @@ const ve = r(function ({ reward: a, onAnimationStart: s, onAnimationEnd: r, inde
             t.jsx(i.div, { className: l, style: p, children: t.jsx(O, { ...a, size: u, image: a.image(u) }, o) })
         );
     }),
-    fe = 'AdditionalRewards_ffae6df',
-    Re = 'AdditionalRewards_title_2d8eb236',
-    Ne = 'AdditionalRewards_list_81a45598',
-    xe = 'AdditionalRewards_reward_ed90708c',
-    ye = r(function (e) {
-        const { model: a } = J(),
-            s = _e();
+    Oe = 'AdditionalRewards_ffae6df',
+    Te = 'AdditionalRewards_title_2d8eb236',
+    je = 'AdditionalRewards_list_81a45598',
+    Ie = 'AdditionalRewards_reward_ed90708c',
+    Ae = r(function (e) {
+        const { model: a } = ae(),
+            s = be();
         return t.jsxs('div', {
-            className: o(fe, e.className),
+            className: o(Oe, e.className),
             children: [
-                t.jsx(T, { path: 'personal_missions_30.rewards.additional', className: Re }),
+                t.jsx(j, { path: 'personal_missions_30.rewards.additional', className: Te }),
                 t.jsx('div', {
-                    className: Ne,
-                    children: v(a.computes.additionalRewards(), (e, a, r) =>
+                    className: je,
+                    children: f(a.computes.additionalRewards(), (e, a, r) =>
                         t.jsx(
-                            ve,
+                            xe,
                             {
                                 index: a,
                                 reward: e,
                                 onAnimationEnd: () => a === r.length - 1 && s.resume(),
-                                className: xe,
+                                className: Ie,
                             },
                             a,
                         ),
@@ -312,69 +317,69 @@ const ve = r(function ({ reward: a, onAnimationStart: s, onAnimationEnd: r, inde
             ],
         });
     }),
-    Oe = { base: 'Buttons_82277d53', button: 'Buttons_button_2eb74e89', text: 'Buttons_text_981ee64f' },
-    je = { base: Oe.button, content: Oe.text },
-    Te = new Set([z.VEHICLE_PART, z.OPERATION_WITH_HONORS, z.OPERATION]),
-    Ie = r(function (e) {
-        const { model: a, controls: s } = J(),
+    Se = { base: 'Buttons_82277d53', button: 'Buttons_button_2eb74e89', text: 'Buttons_text_981ee64f' },
+    Pe = { base: Se.button, content: Se.text },
+    Ee = new Set([U.VEHICLE_PART, U.OPERATION_WITH_HONORS, U.OPERATION]),
+    He = r(function (e) {
+        const { model: a, controls: s } = ae(),
             { type: r } = a.root.get(),
-            { breakpoint: n } = x(),
-            i = G(n.weight, j.medium) ? I.small : I.medium,
+            { breakpoint: n } = y(),
+            i = F(n.weight, T.medium) ? I.small : I.medium,
             l = N(),
             d = p.resolve('strings');
         function c() {
             (l.play('stopIntro', { target: 'CloseButton' }), s.close());
         }
         return t.jsxs('div', {
-            className: o(Oe.base, Oe[`base__${r}`], e.className),
+            className: o(Se.base, Se[`base__${r}`], e.className),
             children: [
                 (() => {
                     switch (r) {
-                        case z.VEHICLE_PART:
-                        case z.OPERATION_WITH_HONORS:
+                        case U.VEHICLE_PART:
+                        case U.OPERATION_WITH_HONORS:
                             return t.jsx(A, {
                                 theme: 'primary',
                                 size: i,
                                 onClick: () => {
                                     (l.play('stopIntro', { target: 'CloseButton' }), s.goToOperation());
                                 },
-                                classNames: je,
+                                classNames: Pe,
                                 children: d.readOrEmpty('personal_missions_30.rewards.buttons.goToOperation'),
                             });
-                        case z.CAMPAIGN_WITH_HONORS:
+                        case U.CAMPAIGN_WITH_HONORS:
                             return t.jsx(A, {
                                 theme: 'primary',
                                 size: i,
                                 onClick: c,
-                                classNames: je,
+                                classNames: Pe,
                                 children: d.readOrEmpty('personal_missions_30.rewards.buttons.confirm'),
                             });
-                        case z.OPERATION:
+                        case U.OPERATION:
                             return t.jsx(A, {
                                 theme: 'primary',
                                 size: i,
                                 onClick: () => {
                                     (l.play('stopIntro', { target: 'CloseButton' }), s.goToVehicle());
                                 },
-                                classNames: je,
+                                classNames: Pe,
                                 children: d.readOrEmpty('personal_missions_30.rewards.buttons.goToVehicle'),
                             });
                         default:
                             console.error(`Unexpected rewards view type ${r}`);
                     }
                 })(),
-                Te.has(r) &&
+                Ee.has(r) &&
                     t.jsx(A, {
                         theme: 'secondary',
                         size: i,
                         onClick: c,
-                        classNames: je,
+                        classNames: Pe,
                         children: d.readOrEmpty('personal_missions_30.rewards.buttons.close'),
                     }),
             ],
         });
     }),
-    Ae = {
+    Ce = {
         base: 'VehicleName_cce06ab3',
         base__24x24: 'VehicleName_base__24x24_e43b4676',
         base__24x24_metal: 'VehicleName_base__24x24_metal_af74305d',
@@ -385,37 +390,37 @@ const ve = r(function ({ reward: a, onAnimationStart: s, onAnimationEnd: r, inde
         base__60x54: 'VehicleName_base__60x54_e43b4676',
         vehicleType: 'VehicleName_vehicleType_5ec4137d',
     },
-    Ee = '64x64',
-    Pe = '80x80',
-    Se = '83x74',
-    He = '180x135',
-    Ce = (e) => {
+    Ve = '64x64',
+    ke = '80x80',
+    Me = '83x74',
+    $e = '180x135',
+    Be = (e) => {
         switch (e) {
-            case Pe:
+            case ke:
                 return 'vehicleTypes.large';
-            case Se:
+            case Me:
                 return 'vehicleTypes.big';
-            case He:
+            case $e:
                 return 'vehicleTypes.huge';
             default:
                 return `vehicleTypes.c_${e}`;
         }
     },
-    Ve = e.memo(function ({ name: e, tier: a, type: s, size: r = Ee, isPremium: n = !1, className: i }) {
-        const l = `${E(s)}${n ? '_elite' : ''}`;
+    We = e.memo(function ({ name: e, tier: a, type: s, size: r = Ve, isPremium: n = !1, className: i }) {
+        const l = `${S(s)}${n ? '_elite' : ''}`;
         return t.jsxs('div', {
-            className: o(Ae.base, Ae[`base__${r}`], i),
+            className: o(Ce.base, Ce[`base__${r}`], i),
             children: [
                 t.jsx('div', { children: P(a) }),
                 t.jsx('div', {
-                    className: Ae.vehicleTypeContainer,
-                    children: t.jsx(S, { path: `${Ce(r)}.${l}`, className: Ae.vehicleType }),
+                    className: Ce.vehicleTypeContainer,
+                    children: t.jsx(E, { path: `${Be(r)}.${l}`, className: Ce.vehicleType }),
                 }),
                 t.jsx('div', { children: e }),
             ],
         });
     }),
-    ke = {
+    Le = {
         base: 'Header_a3ec173b',
         subTitle: 'Header_subTitle_fcc90c2d',
         fadeIn: 'Header_fadeIn_65f475ba',
@@ -426,51 +431,51 @@ const ve = r(function ({ reward: a, onAnimationStart: s, onAnimationEnd: r, inde
         upScale: 'Header_upScale_65f475ba',
         rotate: 'Header_rotate_65f475ba',
     },
-    Me = new Set([z.OPERATION_WITH_HONORS, z.CAMPAIGN_WITH_HONORS]),
-    $e = new Set([z.VEHICLE_PART, z.OPERATION_WITH_HONORS, z.CAMPAIGN_WITH_HONORS]),
-    Be = r(function (a) {
-        const { model: s } = J(),
+    ze = new Set([U.OPERATION_WITH_HONORS, U.CAMPAIGN_WITH_HONORS]),
+    De = new Set([U.VEHICLE_PART, U.OPERATION_WITH_HONORS, U.CAMPAIGN_WITH_HONORS]),
+    Ge = r(function (a) {
+        const { model: s } = ae(),
             { type: r, operationName: n, campaignName: i } = s.root.get(),
             l = s.vehicle.get(),
             d = p.resolve('intl'),
-            c = _e(),
+            c = be(),
             _ = N();
         return (
             e.useEffect(() => {
                 const e = (e) => {
-                    e.name === Z && _.play('gui_hangar_simple_execution_screen', { target: 'Main reward' });
+                    e.name === te && _.play('gui_hangar_simple_execution_screen', { target: 'Main reward' });
                 };
                 return (c.events.on('change', e), () => c.events.off('change', e));
             }, [c.events, _]),
             t.jsxs('div', {
-                className: o(ke.base, ke[`base__${r}`], a.classname),
+                className: o(Le.base, Le[`base__${r}`], a.classname),
                 children: [
-                    Me.has(r) &&
-                        t.jsx(S, { path: 'personal_missions_30.rewards.honors_title_back', className: ke.honorsBack }),
-                    $e.has(r) &&
-                        t.jsx(T, {
+                    ze.has(r) &&
+                        t.jsx(E, { path: 'personal_missions_30.rewards.honors_title_back', className: Le.honorsBack }),
+                    De.has(r) &&
+                        t.jsx(j, {
                             path: `personal_missions_30.rewards.subTitle.${r}`,
-                            params: { name: r === z.CAMPAIGN_WITH_HONORS ? i : n },
-                            className: ke.subTitle,
+                            params: { name: r === U.CAMPAIGN_WITH_HONORS ? i : n },
+                            className: Le.subTitle,
                         }),
-                    t.jsx(T, {
+                    t.jsx(j, {
                         path: `personal_missions_30.rewards.title.${r}`,
                         params: { name: d.toUpperCase(n) },
-                        className: ke.title,
+                        className: Le.title,
                     }),
-                    r === z.OPERATION &&
-                        t.jsx(Ve, {
+                    r === U.OPERATION &&
+                        t.jsx(We, {
                             name: l.vehicleShortName,
                             type: l.vehicleType,
                             tier: l.vehicleLvl,
                             isPremium: l.isElite,
-                            className: ke.vehicleName,
+                            className: Le.vehicleName,
                         }),
                 ],
             })
         );
     }),
-    We = {
+    qe = {
         base: 'RegularMainReward_d1a37b82',
         image: 'RegularMainReward_image_ca63a3d4',
         fadeIn: 'RegularMainReward_fadeIn_54e4f800',
@@ -481,39 +486,39 @@ const ve = r(function ({ reward: a, onAnimationStart: s, onAnimationEnd: r, inde
         up: 'RegularMainReward_up_54e4f800',
         rotate: 'RegularMainReward_rotate_54e4f800',
     };
-const Le = new Set([H.BattleBadge, H.PremiumPlus, H.Customizations, 'attachment']);
-function ze({ reward: e }) {
-    const { breakpoint: a } = x(),
-        s = ((r = a.weight), G(r, j.large) ? b.S296x222 : b.S400x300);
+const Ke = new Set([H.BattleBadge, H.PremiumPlus, H.Customizations, 'attachment']);
+function Ue({ reward: e }) {
+    const { breakpoint: a } = y(),
+        s = ((r = a.weight), F(r, T.large) ? b.S296x222 : b.S400x300);
     var r;
     return t.jsxs('div', {
-        className: o(We.base, We[`base__${e.name}`]),
+        className: o(qe.base, qe[`base__${e.name}`]),
         children: [
-            t.jsx(O, { ...e, size: s, image: e.image(s), classNames: { image: We.image, info: We.info } }),
-            Le.has(e.name) && t.jsx('div', { className: We.label, children: e.label }),
+            t.jsx(O, { ...e, size: s, image: e.image(s), classNames: { image: qe.image, info: qe.info } }),
+            Ke.has(e.name) && t.jsx('div', { className: qe.label, children: e.label }),
         ],
     });
 }
-const Ge = 'VehiclePart_15b78928',
-    De = 'VehiclePart_image_f33361cd',
-    Ue = 'VehiclePart_label_5cfdac0';
-function Ke(e) {
+const Fe = 'VehiclePart_15b78928',
+    Ye = 'VehiclePart_image_f33361cd',
+    Je = 'VehiclePart_label_5cfdac0';
+function Qe(e) {
     const a = p.resolve('strings');
     return t.jsxs('div', {
-        className: Ge,
+        className: Fe,
         children: [
-            t.jsx(S, {
+            t.jsx(E, {
                 path: `personal_missions_30.vehicle_detail.c_1200x450.${e.id}`,
                 width: 720,
                 height: 270,
                 adaptive: { large: { width: 1200, height: 450 } },
-                className: De,
+                className: Ye,
             }),
-            t.jsx('div', { className: Ue, children: a.readOrEmpty(`personal_missions_30.detail.name.${e.id}`) }),
+            t.jsx('div', { className: Je, children: a.readOrEmpty(`personal_missions_30.detail.name.${e.id}`) }),
         ],
     });
 }
-const qe = {
+const Xe = {
         base: 'MainRewards_9aca825a',
         ribbonWrapper: 'MainRewards_ribbonWrapper_30eeaba3',
         ribbon: 'MainRewards_ribbon_7f79f96d',
@@ -526,28 +531,28 @@ const qe = {
         base__campaignWithHonors: 'MainRewards_base__campaignWithHonors_56da68ed',
         upScale: 'MainRewards_upScale_56da68ed',
     },
-    Ye = [z.OPERATION_WITH_HONORS, z.CAMPAIGN_WITH_HONORS],
-    Fe = r(function (a) {
-        const { model: s } = J(),
+    Ze = [U.OPERATION_WITH_HONORS, U.CAMPAIGN_WITH_HONORS],
+    ea = r(function (a) {
+        const { model: s } = ae(),
             { type: r, vehicleDetailName: n } = s.root.get(),
             i = N(),
-            l = _e(),
-            d = Ye.includes(r) ? 'ribbon_gold' : 'ribbon';
+            l = be(),
+            d = Ze.includes(r) ? 'ribbon_gold' : 'ribbon';
         return (
             e.useEffect(() => {
                 const e = (e) => {
-                    e.name === se && i.play('gui_random_reward_appear', { target: 'Main reward' });
+                    e.name === oe && i.play('gui_random_reward_appear', { target: 'Main reward' });
                 };
                 return (l.events.on('change', e), () => l.events.off('change', e));
             }, [l.events, i]),
             t.jsxs('div', {
-                className: o(qe.base, a.className, qe[`base__${r}`]),
+                className: o(Xe.base, a.className, Xe[`base__${r}`]),
                 children: [
                     t.jsx('div', {
-                        className: qe.ribbonWrapper,
+                        className: Xe.ribbonWrapper,
                         children:
-                            r !== z.VEHICLE_PART &&
-                            t.jsx(S, {
+                            r !== U.VEHICLE_PART &&
+                            t.jsx(E, {
                                 path: `personal_missions_30.rewards.${d}_small`,
                                 width: 1366,
                                 height: 356,
@@ -563,68 +568,107 @@ const qe = {
                                         height: 500,
                                     },
                                 },
-                                className: qe.ribbon,
+                                className: Xe.ribbon,
                             }),
                     }),
                     t.jsxs('div', {
-                        className: qe.list,
+                        className: Xe.list,
                         children: [
-                            t.jsx('div', { className: qe.rays }),
+                            t.jsx('div', { className: Xe.rays }),
                             n
-                                ? t.jsx(Ke, { id: n })
-                                : v(s.computes.mainRegularRewards(), (e, a) => t.jsx(ze, { reward: e }, a)),
+                                ? t.jsx(Qe, { id: n })
+                                : f(s.computes.mainRegularRewards(), (e, a) => t.jsx(Ue, { reward: e }, a)),
                         ],
                     }),
                 ],
             })
         );
     }),
-    Je = 'VehicleVideo_210aecbb',
-    Qe = 'VehicleVideo_fading_d689de26',
-    Xe = 'VehicleVideo_video_6832c75d',
-    Ze = { 8: 40, 9: 40, 10: 36 },
-    ea = p.resolve('videos'),
-    aa = r(function () {
-        const { model: a, controls: s } = J(),
+    aa = 'VehicleVideo_210aecbb',
+    sa = 'VehicleVideo_fading_d689de26',
+    ra = 'VehicleVideo_video_6832c75d',
+    ta = { 8: 40, 9: 40, 10: 36 },
+    na = { 8: 12, 9: 13, 10: 12 },
+    ia = p.resolve('videos'),
+    oa = r(function () {
+        const { model: a, controls: s } = ae(),
             { operationId: r } = a.root.get(),
             n = a.introVideoPlaying.get(),
-            i = e.useRef(null),
-            [o, l] = e.useState([]),
-            d = _e(),
-            { screenWidthRem: c, screenHeightRem: _ } = x();
+            i = N(),
+            o = e.useRef(null),
+            [l, c] = e.useState([]),
+            m = be(),
+            { screenWidthRem: u, screenHeightRem: p } = y(),
+            [h, b] = W(() => {
+                const e = o.current?.getCachedKeyframes();
+                return !e?.length || (c(e), !1);
+            });
+        _(() => {
+            s.setIntroVideoPlaying(!0);
+            const e = C((e) => {
+                e ? i.play('vid_pm_pause') : i.play('vid_pm_resume');
+            });
+            return (
+                h(),
+                () => {
+                    (b(), e());
+                }
+            );
+        });
+        const [g, w] = e.useState();
         return (
-            e.useEffect(() => {
-                const e = i.current;
-                if (e)
-                    return C(() => {
-                        l(e.getCachedKeyframes());
-                    });
-            }, []),
-            e.useEffect(() => {
-                s.setIntroVideoPlaying(!0);
-            }, [s]),
+            (({ enabled: a, syncFrame: s, soundStartedTimestamp: r, playerRef: t }) => {
+                const n = e.useRef(0),
+                    i = e.useRef(0),
+                    [o, l] = e.useState(!1),
+                    c = d();
+                e.useEffect(() => {
+                    if (!a || o) return;
+                    if (null === t.current || void 0 === r || void 0 === s) return;
+                    const e = C((e) => {
+                            e ? (n.current = Date.now()) : (i.current = i.current + Date.now() - n.current);
+                        }),
+                        d = t.current.onKeyframes((e) => {
+                            if (e.time >= s) {
+                                const e = V(Date.now() - r - i.current, M, k),
+                                    a = Math.ceil(e);
+                                c.run(
+                                    () => {
+                                        (t.current?.goToAndPlay(a), l(!0));
+                                    },
+                                    V(a - e, B, $),
+                                );
+                            }
+                        });
+                    return () => {
+                        (d(), e(), c.clear());
+                    };
+                }, [a, t, r, s, c, o]);
+            })({ enabled: l.length > 0, playerRef: o, soundStartedTimestamp: g, syncFrame: na[r] }),
             t.jsxs('div', {
-                className: Je,
+                className: aa,
                 children: [
-                    t.jsx('div', { className: Qe }),
-                    t.jsx(V, {
-                        ref: i,
-                        src: ea.readOrEmpty(`personal_missions_30.rewards_screen.operation_${r}`),
+                    t.jsx('div', { className: sa }),
+                    t.jsx(L, {
+                        ref: o,
+                        src: ia.readOrEmpty(`personal_missions_30.rewards_screen.operation_${r}`),
                         autoplay: !0,
-                        isPrebufferKeyframes: Boolean(o.length),
-                        style: q(c, _),
-                        onEnded: () => {
-                            var e;
-                            (n && (d.start(), s.setIntroVideoPlaying(!1), s.disableVideoOverlaySound()),
-                                null == (e = i.current) || e.goToAndPlay(Ze[r] ?? 0));
+                        isPrebufferKeyframes: Boolean(l.length),
+                        style: X(u, p),
+                        onPlay: () => {
+                            void 0 === g && (w(Date.now()), i.play(`vid_pm_o${r.toString().padStart(2, '0')}_s15`));
                         },
-                        className: Xe,
+                        onEnded: () => {
+                            (n && (m.start(), s.setIntroVideoPlaying(!1), s.disableVideoOverlaySound()),
+                                o.current?.goToAndPlay(ta[r] ?? 0));
+                        },
+                        className: ra,
                     }),
                 ],
             })
         );
     }),
-    sa = {
+    la = {
         base: 'Rewards_b4f00ae2',
         base__campaignWithHonors: 'Rewards_base__campaignWithHonors_f96bb2ad',
         base__operation: 'Rewards_base__operation_732634ed',
@@ -644,70 +688,58 @@ const qe = {
         upScale: 'Rewards_upScale_405577a5',
         rotate: 'Rewards_rotate_405577a5',
     },
-    ra = r(function () {
-        const { model: a, controls: s } = J(),
+    da = r(function () {
+        const { model: a, controls: s } = ae(),
             { type: r, vehicleDetailName: n, nextOperationName: i } = a.root.get(),
             l = a.computes.mainRegularRewards().length > 0 || Boolean(n),
             d = a.computes.additionalRewards().length > 0,
-            { operationId: c } = a.root.get(),
-            m = N();
-        k($.ESCAPE, () => {
-            a.introVideoPlaying.get() || (m.play('stopIntro'), s.close());
+            c = N();
+        z(D.ESCAPE, () => {
+            a.introVideoPlaying.get() || (c.play('stopIntro'), s.close());
         });
-        const u = _e();
+        const _ = be();
         e.useEffect(() => {
-            (r === z.OPERATION && m.play(`vid_pm_o${c.toString().padStart(2, '0')}_s15`),
-                l || u.stepsToSkip.current.push(...le),
-                d || u.stepsToSkip.current.push(...de));
-        }, [u.stepsToSkip, d, l, c, m, r]);
-        return (
-            _(() =>
-                M((e) => {
-                    e ? m.play('vid_pm_pause') : m.play('vid_pm_resume');
-                }),
-            ),
-            t.jsxs('div', {
-                ref: u.rootRef,
-                className: o(sa.base, sa[`base__${r}`]),
-                children: [
-                    r === z.OPERATION
-                        ? t.jsx(aa, {})
-                        : t.jsx(S, {
-                              path:
-                                  'personal_missions_30.rewards.backgrounds.' +
-                                  (r === z.VEHICLE_PART ? 'vehiclePart' : 'withHonors'),
-                              fit: 'cover',
-                              className: sa.background,
-                          }),
-                    t.jsx('div', {
-                        className: sa.closeButtonWrapper,
-                        children: t.jsx('div', {
-                            onClick: (e) => {
-                                (m.play('click', { target: 'CloseButton', original: e }),
-                                    m.play('stopIntro'),
-                                    s.close());
-                            },
-                            onMouseEnter: (e) => {
-                                m.play('mouse-enter', { target: 'CloseButton', original: e });
-                            },
-                            className: sa.closeButton,
-                        }),
+            (l || _.stepsToSkip.current.push(...ue), d || _.stepsToSkip.current.push(...pe));
+        }, [_.stepsToSkip, d, l]);
+        return t.jsxs('div', {
+            ref: _.rootRef,
+            className: o(la.base, la[`base__${r}`]),
+            children: [
+                r === U.OPERATION
+                    ? t.jsx(oa, {})
+                    : t.jsx(E, {
+                          path:
+                              'personal_missions_30.rewards.backgrounds.' +
+                              (r === U.VEHICLE_PART ? 'vehiclePart' : 'withHonors'),
+                          fit: 'cover',
+                          className: la.background,
+                      }),
+                t.jsx('div', {
+                    className: la.closeButtonWrapper,
+                    children: t.jsx('div', {
+                        onClick: (e) => {
+                            (c.play('click', { target: 'CloseButton', original: e }), c.play('stopIntro'), s.close());
+                        },
+                        onMouseEnter: (e) => {
+                            c.play('mouse-enter', { target: 'CloseButton', original: e });
+                        },
+                        className: la.closeButton,
                     }),
-                    t.jsx(Be, {}),
-                    t.jsx('div', { className: sa.rewardsContainer, children: l && t.jsx(Fe, { className: sa.main }) }),
-                    d && t.jsx(ye, { className: sa.additional }),
-                    r === z.OPERATION_WITH_HONORS &&
-                        t.jsx(T, {
-                            path: 'personal_missions_30.rewards.operationUnlocked',
-                            params: { name: i },
-                            className: sa.nextOperation,
-                        }),
-                    t.jsx('div', { className: sa.divider }),
-                    t.jsx(Ie, { className: sa.buttons }),
-                ],
-            })
-        );
+                }),
+                t.jsx(Ge, {}),
+                t.jsx('div', { className: la.rewardsContainer, children: l && t.jsx(ea, { className: la.main }) }),
+                d && t.jsx(Ae, { className: la.additional }),
+                r === U.OPERATION_WITH_HONORS &&
+                    t.jsx(j, {
+                        path: 'personal_missions_30.rewards.operationUnlocked',
+                        params: { name: i },
+                        className: la.nextOperation,
+                    }),
+                t.jsx('div', { className: la.divider }),
+                t.jsx(He, { className: la.buttons }),
+            ],
+        });
     });
-B(t.jsx(F, { children: t.jsx(W, { soundsOverrides: Y, children: t.jsx(we, { children: t.jsx(ra, {}) }) }) }), {
+G(t.jsx(ee, { children: t.jsx(q, { soundsOverrides: Z, children: t.jsx(ye, { children: t.jsx(da, {}) }) }) }), {
     fullScreen: !0,
 });

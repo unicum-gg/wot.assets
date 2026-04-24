@@ -1,13 +1,13 @@
-import { j as r, w as o } from './vendor.js';
-import { dZ as e } from './lib.js';
-const n = 'TooltipDecorator_decorator_81525906',
-    s = 'TooltipDecorator_decoratorInner_5b7cf9de';
-function a({ children: a, classNames: c }) {
+import { j as r, a3 as o } from './vendor.js';
+import { es as e } from './lib.js';
+const s = 'TooltipDecorator_decorator_81525906',
+    a = 'TooltipDecorator_decoratorInner_5b7cf9de';
+function c({ children: c, classNames: n }) {
     return r.jsx(e, {
         children: r.jsx('div', {
-            className: o(n, null == c ? void 0 : c.decoratorInner),
-            children: r.jsx('div', { className: o(s, null == c ? void 0 : c.decoratorInner), children: a }),
+            className: o(s, n?.decoratorInner),
+            children: r.jsx('div', { className: o(a, n?.decoratorInner), children: c }),
         }),
     });
 }
-export { a as T };
+export { c as T };

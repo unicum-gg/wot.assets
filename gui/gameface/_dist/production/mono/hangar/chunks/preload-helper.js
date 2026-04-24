@@ -4,42 +4,52 @@ const e = (function () {
     })(),
     t = {},
     n = function (n, r, o) {
-        let l = Promise.resolve();
+        let s = Promise.resolve();
         if (r && r.length > 0) {
-            const n = document.getElementsByTagName('link'),
-                s = document.querySelector('meta[property=csp-nonce]'),
-                c = (null == s ? void 0 : s.nonce) || (null == s ? void 0 : s.getAttribute('nonce'));
-            l = Promise.allSettled(
-                r.map((r) => {
+            let n = function (e) {
+                return Promise.all(
+                    e.map((e) =>
+                        Promise.resolve(e).then(
+                            (e) => ({ status: 'fulfilled', value: e }),
+                            (e) => ({ status: 'rejected', reason: e }),
+                        ),
+                    ),
+                );
+            };
+            const l = document.getElementsByTagName('link'),
+                c = document.querySelector('meta[property=csp-nonce]'),
+                i = c?.nonce || c?.getAttribute('nonce');
+            s = n(
+                r.map((n) => {
                     if (
-                        ((r = (function (e, t) {
+                        ((n = (function (e, t) {
                             return new URL(e, t).href;
-                        })(r, o)),
-                        r in t)
+                        })(n, o)),
+                        n in t)
                     )
                         return;
-                    t[r] = !0;
-                    const l = r.endsWith('.css'),
-                        s = l ? '[rel="stylesheet"]' : '';
-                    if (!!o)
-                        for (let e = n.length - 1; e >= 0; e--) {
-                            const t = n[e];
-                            if (t.href === r && (!l || 'stylesheet' === t.rel)) return;
+                    t[n] = !0;
+                    const r = n.endsWith('.css'),
+                        s = r ? '[rel="stylesheet"]' : '';
+                    if (o)
+                        for (let e = l.length - 1; e >= 0; e--) {
+                            const t = l[e];
+                            if (t.href === n && (!r || 'stylesheet' === t.rel)) return;
                         }
-                    else if (document.querySelector(`link[href="${r}"]${s}`)) return;
-                    const d = document.createElement('link');
+                    else if (document.querySelector(`link[href="${n}"]${s}`)) return;
+                    const c = document.createElement('link');
                     return (
-                        (d.rel = l ? 'stylesheet' : e),
-                        l || (d.as = 'script'),
-                        (d.crossOrigin = ''),
-                        (d.href = r),
-                        c && d.setAttribute('nonce', c),
-                        document.head.appendChild(d),
-                        l
+                        (c.rel = r ? 'stylesheet' : e),
+                        r || (c.as = 'script'),
+                        (c.crossOrigin = ''),
+                        (c.href = n),
+                        i && c.setAttribute('nonce', i),
+                        document.head.appendChild(c),
+                        r
                             ? new Promise((e, t) => {
-                                  (d.addEventListener('load', e),
-                                      d.addEventListener('error', () =>
-                                          t(new Error(`Unable to preload CSS for ${r}`)),
+                                  (c.addEventListener('load', e),
+                                      c.addEventListener('error', () =>
+                                          t(new Error(`Unable to preload CSS for ${n}`)),
                                       ));
                               })
                             : void 0
@@ -47,13 +57,13 @@ const e = (function () {
                 }),
             );
         }
-        function s(e) {
+        function l(e) {
             const t = new Event('vite:preloadError', { cancelable: !0 });
             if (((t.payload = e), window.dispatchEvent(t), !t.defaultPrevented)) throw e;
         }
-        return l.then((e) => {
-            for (const t of e || []) 'rejected' === t.status && s(t.reason);
-            return n().catch(s);
+        return s.then((e) => {
+            for (const t of e || []) 'rejected' === t.status && l(t.reason);
+            return n().catch(l);
         });
     };
 export { n as _ };

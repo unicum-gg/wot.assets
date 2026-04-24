@@ -1,12 +1,12 @@
-import { S as e, j as s, r as l } from '../../../../chunks/vendor.js';
-import { i as a, n as t, d7 as o, a8 as r, E as i, cS as v, cu as p } from '../../../../chunks/lib.js';
+import { L as e, j as s, r as l } from '../../../../chunks/vendor.js';
+import { i as a, n as t, dc as o, F as r, m as i, t as v, b as p } from '../../../../chunks/lib.js';
 import { D as c } from '../../../../chunks/divider.js';
 import { H as n } from '../../../../chunks/head_decorator.js';
-const [d, _] = a()(
+const [d, m] = a()(
         ({ observableModel: e }) => ({ ...e.primitives(['hasOptionalReserves']), levels: e.array('levels') }),
         t,
     ),
-    m = 'LevelReservesTooltip_2862b15f',
+    _ = 'LevelReservesTooltip_2862b15f',
     h = 'LevelReservesTooltip_title_64be79bb',
     j = 'LevelReservesTooltip_description_91eb551b',
     f = 'LevelReservesTooltip_levelTitle_f50b450',
@@ -16,14 +16,14 @@ const [d, _] = a()(
     T = 'LevelReservesTooltip_header_759d67f',
     L = 'LevelReservesTooltip_footer_b684b19c',
     g = e(function () {
-        const { model: e } = _(),
+        const { model: e } = m(),
             a = e.hasOptionalReserves.get(),
             t = e.levels.get(),
             p = a ? t.length + 1 : t.length;
         return s.jsx(o, {
             children: s.jsx(o.Decorator, {
                 children: s.jsxs('div', {
-                    className: m,
+                    className: _,
                     children: [
                         s.jsxs(n, {
                             className: T,

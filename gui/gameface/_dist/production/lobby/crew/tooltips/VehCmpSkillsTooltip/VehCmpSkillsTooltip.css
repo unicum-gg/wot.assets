@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,32 +11,32 @@
     position: relative;
 }
 
-.ExtendedText_base_71 {
+.ExtendedText_base_d9fc1 {
     display: flex;
     line-height: 1.2;
     position: relative;
 }
 
-.ExtendedText_base__zeroPadding_25 {
+.ExtendedText_base__zeroPadding_d1a1c {
     padding: 0;
 }
 
-.ExtendedText_base__isTruncationAvailable_5b {
+.ExtendedText_base__isTruncationAvailable_cb880 {
     width: 100%;
 }
 
-.ExtendedText_truncated_97 {
+.ExtendedText_truncated_a4268 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     position: relative;
 }
 
-.ExtendedText_truncated__hide_31 {
+.ExtendedText_truncated__hide_d75b4 {
     opacity: 0;
 }
 
-.ExtendedText_unTruncated_b8 {
+.ExtendedText_unTruncated_ff478 {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -53,192 +53,192 @@
     pointer-events: none;
 }
 
-.ExtendedText_tooltip_91 {
+.ExtendedText_tooltip_b5abd {
     display: flex;
 }
 
-.ExtendedText_tooltip__justify-flex-start_00 {
+.ExtendedText_tooltip__justify-flex-start_ade81 {
     justify-content: flex-start;
 }
 
-.ExtendedText_tooltip__justify-center_08 {
+.ExtendedText_tooltip__justify-center_aa541 {
     justify-content: center;
 }
 
-.ExtendedText_tooltip__justify-flex-end_90 {
+.ExtendedText_tooltip__justify-flex-end_af6c3 {
     justify-content: flex-end;
 }
 
-.ExtendedText_tooltip__align-flex-start_40 {
+.ExtendedText_tooltip__align-flex-start_fbfc0 {
     align-content: flex-start;
 }
 
-.ExtendedText_tooltip__align-center_54 {
+.ExtendedText_tooltip__align-center_d5b4a {
     align-content: center;
 }
 
-.ExtendedText_tooltip__align-flex-end_d2 {
+.ExtendedText_tooltip__align-flex-end_fc0e0 {
     align-content: flex-end;
 }
 
-.colors_blackReal_fc {
+.colors_blackReal_a68be {
     color: #000000;
 }
 
-.colors_whiteReal_31 {
+.colors_whiteReal_f79f8 {
     color: #ffffff;
 }
 
-.colors_white_45 {
+.colors_white_b5c87 {
     color: #f2f2f7;
 }
 
-.colors_whiteOrange_81 {
+.colors_whiteOrange_ba58d {
     color: #fefeec;
 }
 
-.colors_whiteSpanish_c3 {
+.colors_whiteSpanish_fd764 {
     color: #e9e2bf;
 }
 
-.colors_par_5b {
+.colors_par_e836f {
     color: #8c8c7e;
 }
 
-.colors_parSecondary_fd {
+.colors_parSecondary_f260a {
     color: #595950;
 }
 
-.colors_parTertiary_97 {
+.colors_parTertiary_d47f7 {
     color: #37362e;
 }
 
-.colors_red_79 {
+.colors_red_c02cb {
     color: #ff2717;
 }
 
-.colors_redDark_73 {
+.colors_redDark_cdd63 {
     color: #b70000;
 }
 
-.colors_yellow_76 {
+.colors_yellow_ec93b {
     color: #feab34;
 }
 
-.colors_orange_cd {
+.colors_orange_bbde2 {
     color: #ee7000;
 }
 
-.colors_cream_0f {
+.colors_cream_e3bb8 {
     color: #ffdd99;
 }
 
-.colors_brown_82 {
+.colors_brown_bcb6a {
     color: #cbac77;
 }
 
-.colors_greenBright_68 {
+.colors_greenBright_e6055 {
     color: #80d43a;
 }
 
-.colors_green_fa {
+.colors_green_b6f21 {
     color: #7ab300;
 }
 
-.colors_greenDark_a9 {
+.colors_greenDark_ce9bf {
     color: #497212;
 }
 
-.colors_blueBooster_26 {
+.colors_blueBooster_b2848 {
     color: #ccffff;
 }
 
-.colors_blueTeamkiller_86 {
+.colors_blueTeamkiller_e7dd8 {
     color: #09e2ff;
 }
 
-.colors_cred_35 {
+.colors_cred_ddb07 {
     color: #ced9d9;
 }
 
-.colors_gold_c3 {
+.colors_gold_c405a {
     color: #ffc363;
 }
 
-.colors_bond_ce {
+.colors_bond_bb139 {
     color: #c9c9b6;
 }
 
-.colors_prom_83 {
+.colors_prom_d1186 {
     color: #a29b70;
 }
 
-.renderers_noBreakWrapper_10 {
+.renderers_noBreakWrapper_d986b {
     display: flex;
     flex-wrap: nowrap;
 }
 
-.renderers_lineBreak_b5 {
+.renderers_lineBreak_f90ed {
     width: 100%;
     height: 0;
 }
 
-.renderers_newLine_bd {
+.renderers_newLine_ee778 {
     flex: 1;
     width: 100%;
 }
 
-.renderers_word_f3 {
+.renderers_word_ac32d {
     white-space: pre;
     overflow-wrap: normal;
 }
 
-.SkillIcon_base_43 {
+.SkillIcon_base_a1c9a {
     display: flex;
     background: no-repeat center / contain;
     position: relative;
 }
 
-.SkillIcon_base__c_22x22_14 {
+.SkillIcon_base__c_22x22_dcf9f {
     width: 22rem;
     height: 22rem;
 }
 
-.SkillIcon_base__medium_d0 {
+.SkillIcon_base__medium_d67ae {
     width: 24rem;
     height: 24rem;
 }
 
-.SkillIcon_base__c_36x36_flat_7e {
+.SkillIcon_base__c_36x36_flat_e0291 {
     width: 36rem;
     height: 36rem;
 }
 
-.SkillIcon_base__big_ae {
+.SkillIcon_base__big_b5b33 {
     width: 52rem;
     height: 52rem;
 }
 
-.SkillIcon_base__c_80x80_79 {
+.SkillIcon_base__c_80x80_ee59c {
     width: 80rem;
     height: 80rem;
 }
 
-.SkillIcon_base__c_120x90_8c {
+.SkillIcon_base__c_120x90_cc537 {
     width: 120rem;
     height: 90rem;
 }
 
-.SkillIcon_base__dialogs_e5 {
+.SkillIcon_base__dialogs_a9262 {
     width: 180rem;
     height: 135rem;
 }
 
-.Divided_base_06 {
+.Divided_base_ae250 {
     position: relative;
 }
 
-.Divided_divider_64 {
+.Divided_divider_f79f3 {
     width: 360rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.tooltip.tooltip_perks_divider') no-repeat center / cover;
@@ -247,7 +247,7 @@
     left: 0;
 }
 
-.VehCmpSkillsTooltipApp_base_a2 {
+.VehCmpSkillsTooltipApp_base_fe276 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -256,7 +256,7 @@
     padding: 14rem 19rem 9rem;
 }
 
-.VehCmpSkillsTooltipApp_header_56 {
+.VehCmpSkillsTooltipApp_header_d2824 {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -264,7 +264,7 @@
     margin-bottom: 18rem;
 }
 
-.VehCmpSkillsTooltipApp_info_7b {
+.VehCmpSkillsTooltipApp_info_e2578 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -273,7 +273,7 @@
     position: relative;
 }
 
-.VehCmpSkillsTooltipApp_infoBg_99 {
+.VehCmpSkillsTooltipApp_infoBg_b27dd {
     position: absolute;
     top: 0;
     right: 0;
@@ -292,7 +292,7 @@
     left: -19rem;
 }
 
-.VehCmpSkillsTooltipApp_infoHeader_b0 {
+.VehCmpSkillsTooltipApp_infoHeader_d78d1 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 700;
@@ -300,37 +300,37 @@
     margin: 17rem 0 8rem;
 }
 
-.VehCmpSkillsTooltipApp_bottom_b2 {
+.VehCmpSkillsTooltipApp_bottom_b36b7 {
     display: flex;
     margin-top: 8rem;
 }
 
-.VehCmpSkillsTooltipApp_column_03 {
+.VehCmpSkillsTooltipApp_column_a6992 {
     margin-right: 6rem;
 }
 
-.VehCmpSkillsTooltipApp_column__right_e8 {
+.VehCmpSkillsTooltipApp_column__right_f55a7 {
     margin-left: 3rem;
 }
 
-.VehCmpSkillsTooltipApp_row_1f {
+.VehCmpSkillsTooltipApp_row_ca855 {
     display: flex;
     align-items: center;
     height: 36rem;
 }
 
-.VehCmpSkillsTooltipApp_roleName_58 {
+.VehCmpSkillsTooltipApp_roleName_f27f5 {
     margin-left: 11rem;
 }
 
-.VehCmpSkillsTooltipApp_roleIcon_5d {
+.VehCmpSkillsTooltipApp_roleIcon_bdac3 {
     width: 18rem;
     height: 18rem;
     background: no-repeat 50% / contain;
     opacity: 0.7;
 }
 
-.VehCmpSkillsTooltipApp_skillIcon_82 {
+.VehCmpSkillsTooltipApp_skillIcon_ea244 {
     width: 16rem;
     height: 16rem;
     margin: 0 3rem;

@@ -1,14 +1,14 @@
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -16,21 +16,21 @@
     position: relative;
 }
 
-.AlertTooltipApp_base_a5 {
+.AlertTooltipApp_base_eabb9 {
     display: flex;
     flex-direction: column;
     width: 330rem;
     padding: 16rem 19rem;
 }
 
-.AlertTooltipApp_header_0e {
+.AlertTooltipApp_header_fb36c {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
 }
 
-.AlertTooltipApp_description_2e {
+.AlertTooltipApp_description_b8f97 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -38,14 +38,14 @@
     margin-top: 6rem;
 }
 
-.AlertTooltipApp_alertIcon_2c {
+.AlertTooltipApp_alertIcon_a8925 {
     width: 16rem;
     height: 16rem;
     margin: 2rem 7rem 0 0;
     background: url('R.images.gui.maps.icons.library.alertIcon') no-repeat 50% / contain;
 }
 
-.AlertTooltipApp_alert_af {
+.AlertTooltipApp_alert_d7cd8 {
     color: #ee7000;
     font-size: 14rem;
     font-weight: 400;

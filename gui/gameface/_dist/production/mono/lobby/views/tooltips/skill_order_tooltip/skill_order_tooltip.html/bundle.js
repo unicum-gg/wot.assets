@@ -1,118 +1,114 @@
-import { j as e, R as s } from '../../../../chunks/vendor.js';
+import { j as s, R as e } from '../../../../chunks/vendor.js';
 import {
-    a9 as a,
-    d8 as c,
-    d9 as r,
-    da as i,
-    db as o,
-    dc as t,
-    o as l,
-    d7 as n,
-    a8 as d,
-    cu as p,
+    aj as a,
+    dd as i,
+    de as r,
+    df as c,
+    dg as o,
+    dh as t,
+    r as l,
+    dc as n,
+    F as d,
+    b as p,
 } from '../../../../chunks/lib.js';
 import { D as _ } from '../../../../chunks/divider.js';
-var x = ((e) => ((e.Firesupport = 'firesupport'), (e.Reconnaissance = 'reconnaissance'), (e.Tactics = 'tactics'), e))(
+var x = ((s) => ((s.Firesupport = 'firesupport'), (s.Reconnaissance = 'reconnaissance'), (s.Tactics = 'tactics'), s))(
     x || {},
 );
-const m = {
-    base: 'CategoryIcon_ab8abcc7',
-    categoryIcon: 'CategoryIcon_categoryIcon_1f02424f',
-    arrow: 'CategoryIcon_arrow_a1c14258',
-};
-function h({ category: s, showArrow: a }) {
-    return e.jsxs('div', {
-        className: m.base,
+const m = 'CategoryIcon_ab8abcc7',
+    h = 'CategoryIcon_categoryIcon_1f02424f',
+    j = 'CategoryIcon_arrow_a1c14258';
+function u({ category: e, showArrow: a }) {
+    return s.jsxs('div', {
+        className: m,
         children: [
-            e.jsx('div', {
-                className: m.categoryIcon,
+            s.jsx('div', {
+                className: h,
                 style: {
-                    backgroundImage: `url(${R.images.frontline.gui.maps.icons.loadout.categories.c_24x24.$dyn(s)})`,
+                    backgroundImage: `url(${R.images.frontline.gui.maps.icons.loadout.categories.c_24x24.$dyn(e)})`,
                 },
             }),
-            a && e.jsx('div', { className: m.arrow }),
+            a && s.jsx('div', { className: j }),
         ],
     });
 }
-const j = {
-        base: 'Item_39579287',
-        vehicleIconWrapper: 'Item_vehicleIconWrapper_9cbf60dd',
-        vehicleIcon: 'Item_vehicleIcon_95c02596',
-        categories: 'Item_categories_4b12882e',
-    },
-    v = {
+const v = 'Item_39579287',
+    g = 'Item_vehicleIconWrapper_9cbf60dd',
+    k = 'Item_vehicleIcon_95c02596',
+    T = 'Item_categories_4b12882e',
+    f = {
         [t]: 'light_tank_x48x48',
         [o]: 'medium_tank_x48x48',
-        [i]: 'heavy_tank_x48x48',
+        [c]: 'heavy_tank_x48x48',
         [r]: 'spg_x48x48',
-        [c]: 'tank_destroyer_x48x48',
+        [i]: 'tank_destroyer_x48x48',
     };
-function g({ vehicleType: c, categories: r }) {
-    return e.jsxs('div', {
-        className: j.base,
+function y({ vehicleType: i, categories: r }) {
+    return s.jsxs('div', {
+        className: v,
         children: [
-            e.jsx('div', {
-                className: j.vehicleIconWrapper,
-                children: e.jsx(a, { className: j.vehicleIcon, path: `ui_kit.vehicle_type.x48x48.${v[c]}` }),
+            s.jsx('div', {
+                className: g,
+                children: s.jsx(a, { className: k, path: `ui_kit.vehicle_type.x48x48.${f[i]}` }),
             }),
-            e.jsx('div', {
-                className: j.categories,
-                children: r.map((a, c) =>
-                    e.jsx(s.Fragment, { children: e.jsx(h, { category: a, showArrow: c < r.length - 1 }) }, a),
+            s.jsx('div', {
+                className: T,
+                children: r.map((a, i) =>
+                    s.jsx(e.Fragment, { children: s.jsx(u, { category: a, showArrow: i < r.length - 1 }) }, a),
                 ),
             }),
         ],
     });
 }
-const u = 'SkillOrderTooltip_f3653ea',
-    b = 'SkillOrderTooltip_header_9ae5d7b9',
-    k = 'SkillOrderTooltip_title_d1916d0b',
-    y = 'SkillOrderTooltip_body_852ba1c',
-    T = 'SkillOrderTooltip_container_49c73b81',
-    f = 'SkillOrderTooltip_items_b8016673',
-    I = 'SkillOrderTooltip_infoText_52a8e30b',
-    N = l.resolve('strings'),
-    O = [
+const b = 'SkillOrderTooltip_f3653ea',
+    N = 'SkillOrderTooltip_header_9ae5d7b9',
+    O = 'SkillOrderTooltip_title_d1916d0b',
+    I = 'SkillOrderTooltip_body_852ba1c',
+    F = 'SkillOrderTooltip_container_49c73b81',
+    S = 'SkillOrderTooltip_items_b8016673',
+    w = 'SkillOrderTooltip_infoText_52a8e30b',
+    C = l.resolve('strings'),
+    $ = [
         [t, [x.Reconnaissance, x.Tactics, x.Firesupport]],
         [o, [x.Tactics, x.Firesupport, x.Reconnaissance]],
-        [i, [x.Firesupport, x.Tactics, x.Reconnaissance]],
+        [c, [x.Firesupport, x.Tactics, x.Reconnaissance]],
         [r, [x.Firesupport, x.Reconnaissance, x.Tactics]],
-        [c, [x.Reconnaissance, x.Firesupport, x.Tactics]],
+        [i, [x.Reconnaissance, x.Firesupport, x.Tactics]],
     ];
-function w() {
-    return e.jsx(n, {
-        children: e.jsx(n.Decorator, {
-            children: e.jsxs('div', {
-                className: u,
+function A() {
+    return s.jsx(n, {
+        children: s.jsx(n.Decorator, {
+            children: s.jsxs('div', {
+                className: b,
                 children: [
-                    e.jsxs('div', {
-                        className: b,
+                    s.jsxs('div', {
+                        className: N,
                         children: [
-                            e.jsx('div', {
-                                className: k,
-                                children: N.readOrEmpty('fl_tooltips.skillOrderTooltip.header'),
+                            s.jsx('div', {
+                                className: O,
+                                children: C.readOrEmpty('fl_tooltips.skillOrderTooltip.header'),
                             }),
-                            e.jsx('div', {
-                                className: y,
-                                children: N.readOrEmpty('fl_tooltips.skillOrderTooltip.body'),
+                            s.jsx('div', {
+                                className: I,
+                                children: C.readOrEmpty('fl_tooltips.skillOrderTooltip.body'),
                             }),
                         ],
                     }),
-                    e.jsxs('div', {
-                        className: T,
+                    s.jsxs('div', {
+                        className: F,
                         children: [
-                            e.jsx(_, {}),
-                            e.jsx('div', {
-                                className: f,
-                                children: O.map(([s, a]) => e.jsx(g, { vehicleType: s, categories: a }, s)),
+                            s.jsx(_, {}),
+                            s.jsx('div', {
+                                className: S,
+                                children: $.map(([e, a]) => s.jsx(y, { vehicleType: e, categories: a }, e)),
                             }),
-                            e.jsx(_, {}),
+                            s.jsx(_, {}),
                         ],
                     }),
-                    e.jsx(d, { path: 'fl_tooltips.skillOrderTooltip.info', className: I, split: !0 }),
+                    s.jsx(d, { path: 'fl_tooltips.skillOrderTooltip.info', className: w, split: !0 }),
                 ],
             }),
         }),
     });
 }
-p(e.jsx(w, {}));
+p(s.jsx(A, {}));

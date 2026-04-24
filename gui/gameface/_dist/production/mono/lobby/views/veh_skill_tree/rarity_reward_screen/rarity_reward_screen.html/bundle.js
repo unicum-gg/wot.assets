@@ -1,5 +1,5 @@
-import { s as e, r as a, j as s, f as t } from '../../../../chunks/vendor.js';
-import { i, r as o, h as r, k as n, d as c, V as l, F as p, l as _, U as d } from '../../../../chunks/lib.js';
+import { t as e, r as a, j as s, l as t } from '../../../../chunks/vendor.js';
+import { i, r as o, h as r, k as c, d as n, V as l, F as p, l as _, U as d } from '../../../../chunks/lib.js';
 const [m, u] = i()(
         ({ observableModel: e }) => ({ root: e.object() }),
         ({ externalModel: e }) => ({ close: e.createCallbackNoArgs('onClose') }),
@@ -14,23 +14,23 @@ const [m, u] = i()(
         icon: 'App_icon_f43f6c92',
         itemEffect: 'App_itemEffect_0',
         content: 'App_content_ccd9c029',
-        footer: 'App_footer_e3e9870c',
+        footer: 'App_footer_cc11a117',
         textMask: 'App_textMask_0',
         footer__epic: 'App_footer__epic_b5fc3751',
         title: 'App_title_167b9150',
         subTitle: 'App_subTitle_dc235974',
     },
-    f = e(function () {
+    x = e(function () {
         const { model: e, controls: i } = u(),
             { name: _, title: d, rarity: m } = e.root.get(),
-            [f, x] = a.useState(!0),
+            [x, f] = a.useState(!0),
             h = o.resolve('intl'),
             A = o.resolve('strings'),
             j = o.resolve('videos');
-        r(n.ESCAPE, i.close);
-        const v = c({ size: 's400x300' }, { large: { size: 's600x450' }, extraLarge: { size: 's900x675' } }),
+        r(c.ESCAPE, i.close);
+        const v = n({ size: 's400x300' }, { large: { size: 's600x450' }, extraLarge: { size: 's900x675' } }),
             y = a.useCallback(() => {
-                (x(!1), i.close());
+                (f(!1), i.close());
             }, [i]);
         return s.jsx('div', {
             className: b.base,
@@ -46,7 +46,7 @@ const [m, u] = i()(
                                     backgroundImage: `url('R.images.gui.maps.vehicles.attachments.${v.size}.${_}')`,
                                 },
                             }),
-                            f &&
+                            x &&
                                 s.jsx(l, {
                                     className: b.animation,
                                     src: j.readOrEmpty(`rarity.intro_${m}`),
@@ -54,9 +54,9 @@ const [m, u] = i()(
                                     onEnded: y,
                                 }),
                             s.jsx(l, {
-                                className: t(b.animation, f && b.animation__hidden),
+                                className: t(b.animation, x && b.animation__hidden),
                                 src: j.readOrEmpty(`rarity.cycle_${m}`),
-                                autoplay: !f,
+                                autoplay: !x,
                                 loop: !0,
                             }),
                         ],
@@ -81,4 +81,4 @@ const [m, u] = i()(
             }),
         });
     });
-_(s.jsx(m, { children: s.jsx(d, { children: s.jsx(f, {}) }) }));
+_(s.jsx(m, { children: s.jsx(d, { children: s.jsx(x, {}) }) }));

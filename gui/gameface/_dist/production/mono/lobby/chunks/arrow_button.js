@@ -1,5 +1,5 @@
-import { w as e, j as a } from './vendor.js';
-import { p as r } from './lib.js';
+import { a3 as e, j as a } from './vendor.js';
+import { av as r } from './lib.js';
 const _ = {
         base: 'ArrowButton_6b3aeda7',
         base__disabled: 'ArrowButton_base__disabled_66128a31',
@@ -33,18 +33,18 @@ const _ = {
 function o({
     size: o = 'large',
     direction: s = 'left',
-    disabled: l = !1,
-    mouseEnterSound: d = 'highlight',
+    disabled: d = !1,
+    mouseEnterSound: l = 'highlight',
     className: n,
     classNames: u,
     onMouseEnter: i,
     ...b
 }) {
-    const A = e(_.layer, null == u ? void 0 : u.layer);
+    const A = e(_.layer, u?.layer);
     return a.jsx('div', {
-        className: e(_.base, _[`base__${s}`], _[`base__${o}`], l && _.base__disabled, n),
+        className: e(_.base, _[`base__${s}`], _[`base__${o}`], d && _.base__disabled, n),
         onMouseEnter: (e) => {
-            (null == i || i(e), r.sound(d));
+            (i?.(e), r.sound(l));
         },
         ...b,
         children: a.jsx('div', {

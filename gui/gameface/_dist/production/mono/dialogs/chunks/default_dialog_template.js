@@ -1,67 +1,67 @@
-import { i as s, j as o, e } from './vendor.js';
-import { R as a, u as l, c as t } from './lib.js';
+import { i as s, j as e, e as o } from './vendor.js';
+import { R as a, u as t, c as r } from './lib.js';
 import {
     u as n,
-    s as i,
-    b as r,
-    c,
-    d as u,
-    e as m,
-    f as d,
-    g as p,
-    h as v,
-    a as j,
+    s as c,
+    b as l,
+    c as i,
+    d as m,
+    e as p,
+    f as u,
+    g as d,
+    h as j,
+    a as N,
 } from './mono_dialog_template_button_model.js';
-const N = {
-        Wrapper: m,
-        Overlay: c,
-        CloseButton: u,
-        Footer: r,
+const x = {
+        Wrapper: p,
+        Overlay: i,
+        CloseButton: m,
+        Footer: l,
         IconImage: s(function ({ className: s }) {
-            const { model: l } = n(),
-                t = l.computes.getResource('iconImage', false);
-            return t ? o.jsx(a, { src: t, className: e(i.iconImage, s), fit: 'contain' }) : null;
+            const { model: t } = n(),
+                r = t.computes.getResource('iconImage', false);
+            return r ? e.jsx(a, { src: r, className: o(c.iconImage, s), fit: 'contain' }) : null;
         }),
-        Title: d,
-        Description: p,
-        ButtonGroup: v,
+        Title: u,
+        Description: d,
+        ButtonGroup: j,
     },
-    x = s(function ({ componentMap: s = {}, classNames: a = {}, children: r }) {
+    g = s(function ({ componentMap: s = {}, classNames: a = {}, children: l }) {
         const {
-                Overlay: c = N.Overlay,
-                CloseButton: u = N.CloseButton,
-                Wrapper: m = N.Wrapper,
-                IconImage: d = N.IconImage,
-                Title: p = N.Title,
-                Description: v = N.Description,
-                ButtonGroup: x = N.ButtonGroup,
-                Footer: g = N.Footer,
+                Overlay: i = x.Overlay,
+                CloseButton: m = x.CloseButton,
+                Wrapper: p = x.Wrapper,
+                IconImage: u = x.IconImage,
+                Title: d = x.Title,
+                Description: j = x.Description,
+                ButtonGroup: g = x.ButtonGroup,
+                Footer: f = x.Footer,
             } = s,
-            { model: f, controls: I } = n(),
-            b = f.buttons.get().length > 0;
+            { model: v, controls: I } = n(),
+            b = v.buttons.get().length > 0;
         return (
-            l(t.ESCAPE, () => {
-                I.onAction(j.escape);
+            t(r.ESCAPE, () => {
+                I.onAction(N.escape);
             }),
-            o.jsxs(m, {
-                className: null == a ? void 0 : a.wrapper,
+            e.jsxs(p, {
+                className: a?.wrapper,
                 children: [
-                    o.jsx(c, { className: null == a ? void 0 : a.overlay }),
-                    o.jsxs('div', {
-                        className: e(i.body, null == a ? void 0 : a.body),
+                    e.jsx(i, { className: a?.overlay }),
+                    e.jsxs('div', {
+                        className: o(c.body, a?.body),
                         children: [
-                            o.jsx(d, { className: null == a ? void 0 : a.iconImage }),
-                            o.jsx(p, { className: null == a ? void 0 : a.title }),
-                            o.jsx(v, { className: null == a ? void 0 : a.description }),
-                            b && o.jsx('div', { className: e(i.divider, null == a ? void 0 : a.divider) }),
-                            o.jsx(x, { className: null == a ? void 0 : a.buttonGroup }),
-                            r,
+                            e.jsx(u, { className: a?.iconImage }),
+                            e.jsx(d, { className: a?.title }),
+                            e.jsx(j, { className: a?.description }),
+                            b && e.jsx('div', { className: o(c.divider, a?.divider) }),
+                            e.jsx(g, { className: a?.buttonGroup }),
+                            l,
                         ],
                     }),
-                    o.jsx(g, { className: null == a ? void 0 : a.footer }),
-                    o.jsx(u, { className: null == a ? void 0 : a.closeButton }),
+                    e.jsx(f, { className: a?.footer }),
+                    e.jsx(m, { className: a?.closeButton }),
                 ],
             })
         );
     });
-export { x as D };
+export { g as D };

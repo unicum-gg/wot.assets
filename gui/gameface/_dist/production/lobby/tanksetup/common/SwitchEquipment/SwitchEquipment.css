@@ -1,4 +1,4 @@
-.SwitchButton_base_23 {
+.SwitchButton_base_b1856 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,16 +10,16 @@
     position: relative;
 }
 
-.SwitchButton_base__active_31 {
+.SwitchButton_base__active_ccfbb {
     border-radius: 3rem;
     background: linear-gradient(90deg, #ac802c 0%, #eece63 48.95%, #efd065 48.96%, #ae842e 100%);
 }
 
-.SwitchButton_base__warning_71 {
+.SwitchButton_base__warning_fdf53 {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(149, 27, 0, 0.5) 100%) #4d4c45;
 }
-.SwitchButton_buttonBack_ce,
-.SwitchButton_buttonBackHovered_45 {
+.SwitchButton_buttonBack_be192,
+.SwitchButton_buttonBackHovered_a35d9 {
     border-radius: 3rem;
     position: absolute;
     top: 1rem;
@@ -27,34 +27,34 @@
     bottom: 1rem;
     left: 1rem;
 }
-.SwitchButton_buttonBack_ce {
+.SwitchButton_buttonBack_be192 {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%) #393830;
 }
-.SwitchButton_buttonBackHovered_45 {
+.SwitchButton_buttonBackHovered_a35d9 {
     background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1)),
         linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%) #393830;
     opacity: 0;
     transition: opacity 0.4s;
 }
-.SwitchButton_base__hovered_b4 .SwitchButton_buttonBackHovered_45 {
+.SwitchButton_base__hovered_c8bf8 .SwitchButton_buttonBackHovered_a35d9 {
     opacity: 1;
 }
-.SwitchButton_buttonGlow_4c {
+.SwitchButton_buttonGlow_de770 {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
 }
-.SwitchButton_base__active_31 .SwitchButton_buttonGlow_4c {
+.SwitchButton_base__active_ccfbb .SwitchButton_buttonGlow_de770 {
     background: linear-gradient(180deg, rgba(255, 42, 0, 0.1) 0%, transparent 0.01%, rgba(255, 127, 0, 0.1) 100%);
     filter: drop-shadow(0 0 20rem #ee5003);
 }
-.SwitchButton_base__warning_71 .SwitchButton_buttonGlow_4c {
+.SwitchButton_base__warning_fdf53 .SwitchButton_buttonGlow_de770 {
     background: linear-gradient(180deg, transparent, rgba(255, 0, 0, 0.2) 100%);
 }
-.SwitchButton_buttonIcon_d3 {
+.SwitchButton_buttonIcon_e1919 {
     width: 10rem;
     height: 3rem;
     border: 1rem solid #000;
@@ -63,22 +63,22 @@
     bottom: -1rem;
     left: 8rem;
 }
-.SwitchButton_base__normal_b4 .SwitchButton_buttonIcon_d3 {
+.SwitchButton_base__normal_a9b9c .SwitchButton_buttonIcon_e1919 {
     background: #3a3a3a;
 }
-.SwitchButton_base__active_31 .SwitchButton_buttonIcon_d3 {
+.SwitchButton_base__active_ccfbb .SwitchButton_buttonIcon_e1919 {
     box-shadow:
         0 0 1rem rgba(255, 144, 0, 0.3),
         0 0 1rem rgba(255, 84, 0, 0.4);
     background: #ffe566;
 }
-.SwitchButton_base__warning_71 .SwitchButton_buttonIcon_d3 {
+.SwitchButton_base__warning_fdf53 .SwitchButton_buttonIcon_e1919 {
     box-shadow:
         0 0 1rem rgba(255, 0, 0, 0.3),
         0 0 1rem rgba(255, 84, 0, 0.4);
     background: #ff3205;
 }
-.SwitchButton_buttonWarning_3f {
+.SwitchButton_buttonWarning_c3cd7 {
     position: absolute;
     top: 0;
     right: 0;
@@ -91,10 +91,10 @@
         inset 0 0 10rem rgba(255, 0, 0, 0.25);
     opacity: 0;
 }
-.SwitchButton_base__warning_71 .SwitchButton_buttonWarning_3f {
-    animation: SwitchButton_blinking_ba ease-in-out infinite 2s;
+.SwitchButton_base__warning_fdf53 .SwitchButton_buttonWarning_c3cd7 {
+    animation: SwitchButton_blinking_f1336 ease-in-out infinite 2s;
 }
-.SwitchButton_number_8a {
+.SwitchButton_number_be32e {
     width: 16rem;
     height: 16rem;
     background-size: contain;
@@ -102,18 +102,18 @@
     opacity: 0.2;
     position: relative;
 }
-.SwitchButton_base__active_31 .SwitchButton_number_8a {
+.SwitchButton_base__active_ccfbb .SwitchButton_number_be32e {
     filter: none;
     opacity: 1;
 }
-@keyframes SwitchButton_blinking_ba {
+@keyframes SwitchButton_blinking_f1336 {
     50% {
         background: rgba(255, 39, 23, 0.1);
         opacity: 1;
     }
 }
 
-.SwitchEquipment_base_1a {
+.SwitchEquipment_base_aace0 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -127,11 +127,11 @@
     cursor: pointer;
 }
 
-.SwitchEquipment_base__disabled_73 {
+.SwitchEquipment_base__disabled_d295e {
     cursor: auto;
 }
 
-.SwitchEquipment_cover_b3 {
+.SwitchEquipment_cover_fe8f1 {
     position: absolute;
     top: 0;
     right: 0;

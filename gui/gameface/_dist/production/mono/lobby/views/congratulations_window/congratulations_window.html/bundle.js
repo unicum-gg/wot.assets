@@ -15,7 +15,7 @@ import {
     r as _,
 } from '../../../chunks/lib.js';
 import { L as h, a as j, T as C, F as w, B as y } from '../../../chunks/uilogging_constants.js';
-import { C as x, d as v, S as N, E as A } from '../../../chunks/sound_constants.js';
+import { C as x, d as N, S as A, E as v } from '../../../chunks/sound_constants.js';
 import { g as k } from '../../../chunks/utils.js';
 const [W, f] = n()(
     ({ observableModel: a }) => a.object(),
@@ -85,7 +85,7 @@ const I = 400,
                 c.sound(x);
             }, []),
             oa = s.useCallback(() => {
-                c.sound(v);
+                c.sound(N);
             }, []),
             na = K.customBackgrounds.$dyn(_) || K.background();
         return e.jsxs('div', {
@@ -95,23 +95,23 @@ const I = 400,
                 e.jsx('div', { className: M }),
                 e.jsx('div', { className: U }),
                 e.jsx('div', { className: V, children: e.jsx('div', { className: G }) }),
-                e.jsx(N, {
+                e.jsx(A, {
                     className: F,
                     ...E[S.RIBBON],
-                    easingType: A.EaseOut,
+                    easingType: v.EaseOut,
                     onStart: ea,
                     children: e.jsx('div', { className: J }),
                 }),
-                e.jsx('div', { className: $, children: null == Y ? void 0 : Y.subTitle() }),
-                e.jsx('div', { className: L, children: null == Y ? void 0 : Y.title() }),
+                e.jsx('div', { className: $, children: Y?.subTitle() }),
+                e.jsx('div', { className: L, children: Y?.title() }),
                 e.jsxs('div', {
                     className: O,
                     children: [
                         C &&
-                            e.jsxs(N, {
+                            e.jsxs(A, {
                                 className: D,
                                 ...E[S.MEDAL],
-                                easingType: A.EaseOut,
+                                easingType: v.EaseOut,
                                 onStart: oa,
                                 children: [
                                     e.jsx(m, {
@@ -125,14 +125,13 @@ const I = 400,
                                             style: { backgroundImage: `url(${sa})` },
                                         }),
                                     }),
-                                    (null == Y ? void 0 : Y.badgeName) &&
-                                        e.jsx('div', { className: q, children: null == Y ? void 0 : Y.badgeName() }),
+                                    Y?.badgeName && e.jsx('div', { className: q, children: Y?.badgeName() }),
                                 ],
                             }),
-                        e.jsxs(N, {
+                        e.jsxs(A, {
                             className: D,
                             ...E[S.MEDAL],
-                            easingType: A.EaseOut,
+                            easingType: v.EaseOut,
                             onStart: oa,
                             delay: C ? E[S.MEDAL].delay + I : E[S.MEDAL].delay,
                             children: [
@@ -143,7 +142,7 @@ const I = 400,
                                     ...W,
                                     children: e.jsx('div', { className: P, style: { backgroundImage: `url(${aa})` } }),
                                 }),
-                                e.jsx('div', { className: q, children: null == Y ? void 0 : Y.medalName() }),
+                                e.jsx('div', { className: q, children: Y?.medalName() }),
                             ],
                         }),
                     ],

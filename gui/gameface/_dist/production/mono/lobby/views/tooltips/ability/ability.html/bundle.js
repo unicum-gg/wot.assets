@@ -1,162 +1,77 @@
-import { v as e, j as t, _ as s } from '../../../../chunks/vendor.js';
-import { i as a, O as o, n as r, _ as n, bs as c, aU as i, r as p, U as d } from '../../../../chunks/lib.js';
-import { p as l } from '../../../../chunks/common.js';
-/* empty css                        */ const [m, u] = a()((e) => {
-    const t = e.observableModel.primitives(['params', 'type']);
+import { t as s, j as a, F as e, G as t, H as c } from '../../../../chunks/vendor.js';
+import { i as o, h as r, n, q as i, bv as p, aB as l, bw as d, r as m, U as j } from '../../../../chunks/lib.js';
+import { p as u } from '../../../../chunks/common.js';
+/* empty css                        */ const [x, _] = o()((s) => {
+    const a = s.observableModel.primitives(['params', 'type']);
     return {
-        type: t.type,
+        type: a.type,
         computes: {
-            params: o.primitive(function (e) {
-                return e(t.params.get());
+            params: r.primitive(function (s) {
+                return s(a.params.get());
             }),
         },
     };
-}, r);
+}, n);
 const h = 'App_21e3a147',
-    y = 'App_header_62566856',
-    j = 'App_icon_24de08c2',
-    x = 'App_headerContainer_b23d7c80',
+    v = 'App_header_62566856',
+    b = 'App_icon_24de08c2',
+    g = 'App_headerContainer_b23d7c80',
     f = 'App_title_5ec15df',
-    g = 'App_cooldown_1072bf2a',
-    v = 'App_content_80741629',
-    _ = 'App_container_58b78fd8',
-    b = 'App_description_fecd9a89',
-    A = R.images.gui.maps.icons.battleRoyale.artefact.c_80x80,
-    N =
-        ((P = (() => {
-            let e;
-            const t = (t, a) => {
-                var o, r;
-                return (
-                    !1 ===
-                        ((e) =>
-                            'object' == typeof e &&
-                            null !== e &&
-                            ((e) =>
-                                'string' == typeof e.title &&
-                                'string' == typeof e.iconName &&
-                                'number' == typeof e.cooldownSeconds &&
-                                'string' == typeof e.description)(e))(t) &&
-                        ((e = a),
-                        (r = '$input'),
-                        ((('object' == typeof (o = t) && null !== o) ||
-                            s(
-                                !0,
-                                {
-                                    method: 'typia.json.createAssertParse',
-                                    path: r + '',
-                                    expected: 'AbilityParams',
-                                    value: o,
-                                },
-                                e,
-                            )) &&
-                            ((t, a, o = !0) =>
-                                ('string' == typeof t.title ||
-                                    s(
-                                        o,
-                                        {
-                                            method: 'typia.json.createAssertParse',
-                                            path: a + '.title',
-                                            expected: 'string',
-                                            value: t.title,
-                                        },
-                                        e,
-                                    )) &&
-                                ('string' == typeof t.iconName ||
-                                    s(
-                                        o,
-                                        {
-                                            method: 'typia.json.createAssertParse',
-                                            path: a + '.iconName',
-                                            expected: 'string',
-                                            value: t.iconName,
-                                        },
-                                        e,
-                                    )) &&
-                                ('number' == typeof t.cooldownSeconds ||
-                                    s(
-                                        o,
-                                        {
-                                            method: 'typia.json.createAssertParse',
-                                            path: a + '.cooldownSeconds',
-                                            expected: 'number',
-                                            value: t.cooldownSeconds,
-                                        },
-                                        e,
-                                    )) &&
-                                ('string' == typeof t.description ||
-                                    s(
-                                        o,
-                                        {
-                                            method: 'typia.json.createAssertParse',
-                                            path: a + '.description',
-                                            expected: 'string',
-                                            value: t.description,
-                                        },
-                                        e,
-                                    )))(o, r + '', !0)) ||
-                            s(
-                                !0,
-                                {
-                                    method: 'typia.json.createAssertParse',
-                                    path: r + '',
-                                    expected: 'AbilityParams',
-                                    value: o,
-                                },
-                                e,
-                            )),
-                    t
-                );
-            };
-            return (e, s) => t(JSON.parse(e), s);
-        })()),
+    y = 'App_cooldown_1072bf2a',
+    N = 'App_content_80741629',
+    A = 'App_container_58b78fd8',
+    k = 'App_description_fecd9a89',
+    w = R.images.gui.maps.icons.battleRoyale.artefact.c_80x80,
+    S = e({ title: t(), iconName: t(), cooldownSeconds: c(), description: t() }),
+    L =
+        (($ = d(S)),
         function () {
-            return u().model.computes.params(P);
+            return _().model.computes.params($);
         });
-var P;
-const w = n.resolve('strings'),
-    S = e(function () {
-        const { title: e, iconName: s, cooldownSeconds: a, description: o } = N(),
-            r = l(w.readOrEmpty('tooltips.battle_royale.hangar.tankSetupPanel.ability.cooldownTime')),
-            n = l(o);
-        return t.jsx(c, {
-            children: t.jsx(c.Decorator, {
-                children: t.jsx('div', {
+var $;
+const q = i.resolve('strings'),
+    B = s(function () {
+        const { title: s, iconName: e, cooldownSeconds: t, description: c } = L(),
+            o = u(q.readOrEmpty('tooltips.battle_royale.hangar.tankSetupPanel.ability.cooldownTime')),
+            r = u(c);
+        return a.jsx(p, {
+            children: a.jsx(p.Decorator, {
+                children: a.jsx('div', {
                     className: h,
-                    children: t.jsxs('div', {
-                        className: _,
+                    children: a.jsxs('div', {
+                        className: A,
                         children: [
-                            t.jsxs('div', {
-                                className: y,
+                            a.jsxs('div', {
+                                className: v,
                                 children: [
-                                    t.jsx('div', { className: j, style: { backgroundImage: `url(${A.$dyn(s)})` } }),
-                                    t.jsxs('div', {
-                                        className: x,
+                                    a.jsx('div', { className: b, style: { backgroundImage: `url(${w.$dyn(e)})` } }),
+                                    a.jsxs('div', {
+                                        className: g,
                                         children: [
-                                            t.jsx('div', { className: f, children: e }),
-                                            r.map(({ text: e, params: s }) =>
-                                                t.jsx(
-                                                    i,
+                                            a.jsx('div', { className: f, children: s }),
+                                            o.map(({ text: s, params: e }) =>
+                                                a.jsx(
+                                                    l,
                                                     {
                                                         upgradeLegacy: !0,
-                                                        text: e,
-                                                        params: { ...s, cooldown: a },
-                                                        className: g,
+                                                        text: s,
+                                                        params: { ...e, cooldown: t },
+                                                        className: y,
                                                     },
-                                                    e,
+                                                    s,
                                                 ),
                                             ),
                                         ],
                                     }),
                                 ],
                             }),
-                            t.jsx('div', {
-                                className: v,
-                                children: n.map(({ text: e, params: s }) =>
-                                    t.jsx(
-                                        i,
-                                        { upgradeLegacy: !0, text: e, params: { ...s }, className: b, split: !0 },
-                                        e,
+                            a.jsx('div', {
+                                className: N,
+                                children: r.map(({ text: s, params: e }) =>
+                                    a.jsx(
+                                        l,
+                                        { upgradeLegacy: !0, text: s, params: { ...e }, className: k, split: !0 },
+                                        s,
                                     ),
                                 ),
                             }),
@@ -166,4 +81,4 @@ const w = n.resolve('strings'),
             }),
         });
     });
-p(t.jsxs(d, { children: [t.jsx(m, { children: t.jsx(S, {}) }), ','] }));
+m(a.jsxs(j, { children: [a.jsx(x, { children: a.jsx(B, {}) }), ','] }));

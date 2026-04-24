@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,28 +11,28 @@
     position: relative;
 }
 
-.TankName_base_22 {
+.TankName_base_c083b {
     display: flex;
     align-items: center;
 }
 
-.TankName_typeContainer_a2 {
+.TankName_typeContainer_f3124 {
     width: 64rem;
     height: 100%;
     position: relative;
 }
 
-.TankName_base__small_3e.TankName_base__sizeMiddle_05 .TankName_typeContainer_a2,
-.TankName_base__extraSmall_ac.TankName_base__sizeMiddle_05 .TankName_typeContainer_a2 {
+.TankName_base__small_c77a2.TankName_base__sizeMiddle_ec953 .TankName_typeContainer_f3124,
+.TankName_base__extraSmall_b5936.TankName_base__sizeMiddle_ec953 .TankName_typeContainer_f3124 {
     width: 30rem;
 }
 
-.TankName_base__smallIcon_35 .TankName_typeContainer_a2 {
+.TankName_base__smallIcon_b9e9a .TankName_typeContainer_f3124 {
     width: 26rem;
     height: 24rem;
 }
 
-.TankName_type_ce {
+.TankName_type_cc9e0 {
     width: 81rem;
     height: 73rem;
     background: no-repeat center / contain;
@@ -42,19 +42,19 @@
     transform: translate(-50%, -50%);
 }
 
-.TankName_base__small_3e.TankName_base__sizeMiddle_05 .TankName_type_ce,
-.TankName_base__extraSmall_ac.TankName_base__sizeMiddle_05 .TankName_type_ce {
+.TankName_base__small_c77a2.TankName_base__sizeMiddle_ec953 .TankName_type_cc9e0,
+.TankName_base__extraSmall_b5936.TankName_base__sizeMiddle_ec953 .TankName_type_cc9e0 {
     width: 40rem;
     height: 36rem;
 }
 
-.TankName_base__smallIcon_35 .TankName_type_ce {
+.TankName_base__smallIcon_b9e9a .TankName_type_cc9e0 {
     width: 24rem;
     height: 24rem;
     top: 50%;
 }
 
-.Content_base_98 {
+.Content_base_e310c {
     display: flex;
     flex-direction: column;
     width: 363rem;
@@ -62,7 +62,7 @@
     position: relative;
 }
 
-.Content_title_48 {
+.Content_title_a7c4e {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -70,7 +70,7 @@
     margin-bottom: 7rem;
 }
 
-.Content_description_86 {
+.Content_description_ba54d {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -79,11 +79,11 @@
     margin-bottom: 10rem;
 }
 
-.Content_content_16 {
+.Content_content_f631e {
     padding: 16rem 20rem;
 }
 
-.Content_caption_e2 {
+.Content_caption_f6040 {
     color: #cbac77;
     font-size: 14rem;
     font-weight: 400;
@@ -93,7 +93,7 @@
     position: relative;
 }
 
-.Content_captionIcon_15 {
+.Content_captionIcon_d335b {
     width: 16rem;
     height: 16rem;
     background: url('R.images.gui.maps.icons.library.attentionIcon') no-repeat center / contain;
@@ -102,7 +102,7 @@
     left: 20rem;
 }
 
-.Content_captionBackground_0d {
+.Content_captionBackground_f202e {
     border-top: 2rem dotted #fff;
     background: linear-gradient(
         90deg,
@@ -119,7 +119,7 @@
     left: 0;
 }
 
-.Content_vehicle_bb {
+.Content_vehicle_de899 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
@@ -129,7 +129,7 @@
     margin: 3rem 0 0 30rem;
 }
 
-.Content_vehicleMarker_bf {
+.Content_vehicleMarker_ffdbf {
     width: 3rem;
     height: 3rem;
     margin-right: 8rem;

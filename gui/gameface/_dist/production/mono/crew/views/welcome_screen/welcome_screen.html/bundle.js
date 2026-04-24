@@ -1,5 +1,5 @@
-import { j as e, i as c } from '../../../chunks/vendor.js';
-import { i as s, r as i, I as r, u as o, a as n, k as l, C as a, B as t, b as d, U as m } from '../../../chunks/lib.js';
+import { j as e, k as c } from '../../../chunks/vendor.js';
+import { i as s, r, I as i, u as o, a as n, k as l, C as a, B as t, b as d, U as m } from '../../../chunks/lib.js';
 const [h, _] = s()(
         ({ observableModel: e }) => e.object(),
         ({ externalModel: e }) => ({ close: e.createCallbackNoArgs('onClose') }),
@@ -12,12 +12,12 @@ const [h, _] = s()(
     x = 'WelcomeSlide_10571b6',
     j = 'WelcomeSlide_icon_7a91e778',
     S = 'WelcomeSlide_description_1a6e8bb7',
-    w = i.resolve('strings');
+    w = r.resolve('strings');
 function b({ icon: c, description: s }) {
     return e.jsxs('div', {
         className: x,
         children: [
-            e.jsx(r, {
+            e.jsx(i, {
                 path: `crew.welcomeScreen.c_360x280.${c}`,
                 width: 360,
                 height: 280,
@@ -34,10 +34,10 @@ const v = 'WelcomeScreen_ab241149',
     W = 'WelcomeScreen_header_c3b6d039',
     f = 'WelcomeScreen_title_928b146d',
     g = 'WelcomeScreen_subTitle_51adf2e3',
-    E = 'WelcomeScreen_content_eaa16083',
-    k = 'WelcomeScreen_footer_3a73e6d0',
+    k = 'WelcomeScreen_content_eaa16083',
+    E = 'WelcomeScreen_footer_3a73e6d0',
     y = 'WelcomeScreen_button_9a86d63',
-    C = i.resolve('strings'),
+    C = r.resolve('strings'),
     O = c(function () {
         const { controls: c } = _();
         return (
@@ -61,13 +61,13 @@ const v = 'WelcomeScreen_ab241149',
                                 ],
                             }),
                             e.jsx('div', {
-                                className: E,
+                                className: k,
                                 children: p.map((c, s) =>
                                     e.jsx(b, { icon: c.icon, description: c.description }, `index_${s}`),
                                 ),
                             }),
                             e.jsx('div', {
-                                className: k,
+                                className: E,
                                 children: e.jsx(t, {
                                     theme: t.themes.primary,
                                     size: t.sizes.medium,

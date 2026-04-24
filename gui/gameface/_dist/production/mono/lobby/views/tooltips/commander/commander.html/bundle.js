@@ -1,107 +1,60 @@
-import { v as e, j as a, _ as s } from '../../../../chunks/vendor.js';
-import { i as r, O as t, n, _ as o, bs as m, r as c, U as i } from '../../../../chunks/lib.js';
-/* empty css                        */ const [p, d] = r()((e) => {
-    const a = e.observableModel.primitives(['params', 'type']);
+import { t as a, j as s, F as e, G as r } from '../../../../chunks/vendor.js';
+import { i as n, h as o, n as c, q as t, bv as m, bw as i, r as d, U as p } from '../../../../chunks/lib.js';
+/* empty css                        */ const [l, j] = n()((a) => {
+    const s = a.observableModel.primitives(['params', 'type']);
     return {
-        type: a.type,
+        type: s.type,
         computes: {
-            params: t.primitive(function (e) {
-                return e(a.params.get());
+            params: o.primitive(function (a) {
+                return a(s.params.get());
             }),
         },
     };
-}, n);
-const l = 'App_11090d07',
-    j = 'App_headerContainer_c897879f',
-    u = 'App_icon_961e61e2',
-    f = 'App_specialtyName_1072bf2a',
-    h = 'App_commanderName_d9ad769f',
-    v = 'App_separator_f627df4c',
-    _ = 'App_description_1072bf2a',
-    y = o.resolve('strings'),
-    N =
-        ((x = (() => {
-            let e;
-            const a = (a, r) => {
-                var t, n;
-                return (
-                    !1 ===
-                        ((e) => 'object' == typeof e && null !== e && ((e) => 'string' == typeof e.commanderNation)(e))(
-                            a,
-                        ) &&
-                        ((e = r),
-                        (n = '$input'),
-                        ((('object' == typeof (t = a) && null !== t) ||
-                            s(
-                                !0,
-                                {
-                                    method: 'typia.json.createAssertParse',
-                                    path: n + '',
-                                    expected: 'CommanderParams',
-                                    value: t,
-                                },
-                                e,
-                            )) &&
-                            ((a, r, t = !0) =>
-                                'string' == typeof a.commanderNation ||
-                                s(
-                                    t,
-                                    {
-                                        method: 'typia.json.createAssertParse',
-                                        path: r + '.commanderNation',
-                                        expected: 'string',
-                                        value: a.commanderNation,
-                                    },
-                                    e,
-                                ))(t, n + '', !0)) ||
-                            s(
-                                !0,
-                                {
-                                    method: 'typia.json.createAssertParse',
-                                    path: n + '',
-                                    expected: 'CommanderParams',
-                                    value: t,
-                                },
-                                e,
-                            )),
-                    a
-                );
-            };
-            return (e, s) => a(JSON.parse(e), s);
-        })()),
+}, c);
+const _ = 'App_11090d07',
+    f = 'App_headerContainer_c897879f',
+    h = 'App_icon_961e61e2',
+    v = 'App_specialtyName_1072bf2a',
+    u = 'App_commanderName_d9ad769f',
+    x = 'App_separator_f627df4c',
+    N = 'App_description_1072bf2a',
+    b = t.resolve('strings'),
+    y = e({ commanderNation: r() }),
+    A =
+        ((k = i(y)),
         function () {
-            return d().model.computes.params(x);
+            return j().model.computes.params(k);
         });
-var x;
-const b = e(function () {
-    const { commanderNation: e } = N();
-    return a.jsx(m, {
-        children: a.jsx(m.Decorator, {
-            children: a.jsxs('div', {
-                className: l,
+var k;
+const g = a(function () {
+    const { commanderNation: a } = A();
+    return s.jsx(m, {
+        children: s.jsx(m.Decorator, {
+            children: s.jsxs('div', {
+                className: _,
                 children: [
-                    a.jsxs('div', {
-                        className: j,
+                    s.jsxs('div', {
+                        className: f,
                         children: [
-                            a.jsx('div', { className: u }),
-                            a.jsx('div', {
-                                className: f,
-                                children: y.readOrEmpty('battle_royale.commanderInfo.commonRank'),
+                            s.jsx('div', { className: h }),
+                            s.jsx('div', {
+                                className: v,
+                                children: b.readOrEmpty('battle_royale.commanderInfo.commonRank'),
                             }),
                         ],
                     }),
-                    a.jsx('div', {
-                        className: h,
-                        children: y.readOrEmpty(`battle_royale.commanderInfo.fullName.${e}`),
+                    s.jsx('div', {
+                        className: u,
+                        children: b.readOrEmpty(`battle_royale.commanderInfo.fullName.${a}`),
                     }),
-                    a.jsx('div', { className: v }),
-                    a.jsx('div', {
-                        className: _,
-                        children: y.readOrEmpty(`battle_royale.commanderInfo.description.${e}`),
+                    s.jsx('div', { className: x }),
+                    s.jsx('div', {
+                        className: N,
+                        children: b.readOrEmpty(`battle_royale.commanderInfo.description.${a}`),
                     }),
                 ],
             }),
         }),
     });
 });
-c(a.jsx(i, { children: a.jsx(p, { children: a.jsx(b, {}) }) }));
+d(s.jsx(p, { children: s.jsx(l, { children: s.jsx(g, {}) }) }));

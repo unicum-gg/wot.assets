@@ -1,4 +1,4 @@
-.Blink_base_88 {
+.Blink_base_ba1bb {
     position: absolute;
     top: 0;
     right: 0;
@@ -7,7 +7,7 @@
     overflow: hidden;
 }
 
-.Blink_shadowWrapper_49 {
+.Blink_shadowWrapper_b869f {
     position: absolute;
     top: 0;
     right: 0;
@@ -15,27 +15,29 @@
     left: 0;
     background-color: rgba(255, 185, 50, 0.5);
     overflow: hidden;
-    animation: Blink_shadowAnimation_7c 2.3s ease-out forwards;
+    animation: Blink_shadowAnimation_adad3 2.3s ease-out forwards;
     mask-size: contain;
+    mask-repeat: no-repeat;
     mask-position: top;
 }
 
-.Blink_blinkWrapper_33 {
+.Blink_blinkWrapper_f4612 {
     mask-size: contain;
+    mask-repeat: no-repeat;
     mask-position: top;
 }
 
-.Blink_blinkInner_82 {
-    animation: Blink_blinkAnimation_6a 2.3s ease-out forwards;
+.Blink_blinkInner_d4b4f {
+    animation: Blink_blinkAnimation_f3801 2.3s ease-out forwards;
 }
 
-.Blink_blink_68 {
+.Blink_blink_b1275 {
     height: 160rem;
     background-image: linear-gradient(0deg, transparent, rgba(255, 255, 255, 0.2));
     filter: brightness(200%);
 }
 
-@keyframes Blink_shadowAnimation_7c {
+@keyframes Blink_shadowAnimation_adad3 {
     0% {
         opacity: 0;
     }
@@ -57,7 +59,7 @@
     }
 }
 
-@keyframes Blink_blinkAnimation_6a {
+@keyframes Blink_blinkAnimation_f3801 {
     0% {
         transform: translateY(100%);
     }
@@ -75,7 +77,7 @@
     }
 }
 
-@keyframes Emblem_hideLevel_f2 {
+@keyframes Emblem_hideLevel_bacb4 {
     0% {
         transform: translateY(0);
     }
@@ -84,7 +86,7 @@
         transform: translateY(40rem);
     }
 }
-@keyframes Emblem_showLevel_c5 {
+@keyframes Emblem_showLevel_ae56a {
     0% {
         transform: translateY(-20rem);
     }
@@ -93,7 +95,7 @@
         transform: translateY(0);
     }
 }
-@keyframes Emblem_hideLevelSmall_cc {
+@keyframes Emblem_hideLevelSmall_c96f6 {
     0% {
         transform: translateY(0);
     }
@@ -102,7 +104,7 @@
         transform: translateY(30rem);
     }
 }
-@keyframes Emblem_showLevelSmall_31 {
+@keyframes Emblem_showLevelSmall_dbc03 {
     0% {
         transform: translateY(-10rem);
     }
@@ -111,7 +113,7 @@
         transform: translateY(0);
     }
 }
-@keyframes Emblem_hideLevelMicro_15 {
+@keyframes Emblem_hideLevelMicro_a41c4 {
     0% {
         transform: translateY(0);
     }
@@ -120,7 +122,7 @@
         transform: translateY(30rem);
     }
 }
-@keyframes Emblem_showLevelMicro_bc {
+@keyframes Emblem_showLevelMicro_f303f {
     0% {
         transform: translateY(-10rem);
     }
@@ -129,7 +131,7 @@
         transform: translateY(0);
     }
 }
-@keyframes Emblem_showIcon_c2 {
+@keyframes Emblem_showIcon_b0171 {
     0% {
         opacity: 0;
         transform: translateY(-20rem);
@@ -140,7 +142,7 @@
         transform: translateY(0);
     }
 }
-@keyframes Emblem_showIconSmall_1d {
+@keyframes Emblem_showIconSmall_ee24d {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -151,7 +153,7 @@
         transform: translateY(0);
     }
 }
-@keyframes Emblem_hideProgress_b4 {
+@keyframes Emblem_hideProgress_c1e41 {
     0% {
         opacity: 1;
     }
@@ -160,7 +162,7 @@
         opacity: 0;
     }
 }
-@keyframes Emblem_showIconMicro_f8 {
+@keyframes Emblem_showIconMicro_e0234 {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -171,34 +173,34 @@
         transform: translateY(0);
     }
 }
-.Emblem_base_be {
+.Emblem_base_bef4a {
     display: flex;
     flex-direction: column;
     position: relative;
 }
-.Emblem_progress_37 {
+.Emblem_progress_a49d9 {
     width: 60rem;
     height: 3rem;
     background-color: #030303;
     position: absolute;
     top: 62rem;
 }
-.Emblem_progress__small_42 {
+.Emblem_progress__small_d568c {
     width: 40rem;
     top: 50rem;
 }
-.Emblem_progress__completed_69 {
-    animation-name: Emblem_hideProgress_b4;
+.Emblem_progress__completed_aa5dd {
+    animation-name: Emblem_hideProgress_c1e41;
     animation-duration: 0.1s;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
     animation-delay: 0.6s;
     animation-iteration-count: 1;
 }
-.Emblem_progress__hidden_6d {
+.Emblem_progress__hidden_dc384 {
     display: none;
 }
-.Emblem_image_dc {
+.Emblem_image_f35a8 {
     display: flex;
     justify-content: center;
     width: 130rem;
@@ -208,22 +210,22 @@
     background: left top / cover no-repeat;
     position: relative;
 }
-.Emblem_image__clickable_b7 {
+.Emblem_image__clickable_d35a4 {
     pointer-events: auto;
 }
-.Emblem_image__micro_aa {
+.Emblem_image__micro_f2aa0 {
     width: 60rem;
     height: 60rem;
     padding-top: 0;
     padding-bottom: 0;
 }
-.Emblem_image__small_ce {
+.Emblem_image__small_b0595 {
     width: 100rem;
     height: 100rem;
     padding-top: 12rem;
     padding-bottom: 57rem;
 }
-.Emblem_extra_d4 {
+.Emblem_extra_bfa7b {
     display: flex;
     justify-content: center;
     width: 140rem;
@@ -236,18 +238,18 @@
     z-index: -2;
     transform: translate(-50%, -50%);
 }
-.Emblem_extra__micro_f7 {
+.Emblem_extra__micro_cd7fb {
     width: 60rem;
     height: 60rem;
     top: 24rem;
 }
-.Emblem_extra__small_28 {
+.Emblem_extra__small_ebf1e {
     width: 100rem;
     height: 100rem;
     top: 40rem;
 }
 
-@keyframes Label_hideLevel_61 {
+@keyframes Label_hideLevel_d2be9 {
     0% {
         transform: translateY(0);
     }
@@ -256,7 +258,7 @@
         transform: translateY(40rem);
     }
 }
-@keyframes Label_showLevel_55 {
+@keyframes Label_showLevel_bcc23 {
     0% {
         transform: translateY(-20rem);
     }
@@ -265,7 +267,7 @@
         transform: translateY(0);
     }
 }
-@keyframes Label_hideLevelSmall_9d {
+@keyframes Label_hideLevelSmall_e5cec {
     0% {
         transform: translateY(0);
     }
@@ -274,7 +276,7 @@
         transform: translateY(30rem);
     }
 }
-@keyframes Label_showLevelSmall_96 {
+@keyframes Label_showLevelSmall_a7e84 {
     0% {
         transform: translateY(-10rem);
     }
@@ -283,7 +285,7 @@
         transform: translateY(0);
     }
 }
-@keyframes Label_hideLevelMicro_9e {
+@keyframes Label_hideLevelMicro_ce992 {
     0% {
         transform: translateY(0);
     }
@@ -292,7 +294,7 @@
         transform: translateY(30rem);
     }
 }
-@keyframes Label_showLevelMicro_50 {
+@keyframes Label_showLevelMicro_fe874 {
     0% {
         transform: translateY(-10rem);
     }
@@ -301,7 +303,7 @@
         transform: translateY(0);
     }
 }
-@keyframes Label_showIcon_0f {
+@keyframes Label_showIcon_e22b9 {
     0% {
         opacity: 0;
         transform: translateY(-20rem);
@@ -312,7 +314,7 @@
         transform: translateY(0);
     }
 }
-@keyframes Label_showIconSmall_96 {
+@keyframes Label_showIconSmall_ea275 {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -323,7 +325,7 @@
         transform: translateY(0);
     }
 }
-@keyframes Label_hideProgress_0c {
+@keyframes Label_hideProgress_da721 {
     0% {
         opacity: 1;
     }
@@ -332,7 +334,7 @@
         opacity: 0;
     }
 }
-@keyframes Label_showIconMicro_1e {
+@keyframes Label_showIconMicro_ad3ea {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -343,7 +345,7 @@
         transform: translateY(0);
     }
 }
-@keyframes Label_show_69 {
+@keyframes Label_show_f964a {
     0% {
         opacity: 0;
     }
@@ -352,7 +354,7 @@
         opacity: 1;
     }
 }
-@keyframes Label_hide_33 {
+@keyframes Label_hide_bd6bc {
     0% {
         opacity: 1;
     }
@@ -361,7 +363,7 @@
         opacity: 0;
     }
 }
-@keyframes Label_maskAppearance_26 {
+@keyframes Label_maskAppearance_d0e65 {
     from {
         opacity: 0;
     }
@@ -370,7 +372,7 @@
         opacity: 1;
     }
 }
-@keyframes Label_textAppearance_31 {
+@keyframes Label_textAppearance_d298d {
     from {
         opacity: 0;
         transform: scale(0.8);
@@ -381,42 +383,42 @@
         transform: scale(1);
     }
 }
-.Label_base_85 {
+.Label_base_c8d2c {
     display: flex;
     position: relative;
 }
-.Label_textWithBlend_07 {
+.Label_textWithBlend_d0913 {
     display: flex;
     mix-blend-mode: lighten;
     position: relative;
 }
-.Label_textWithBlend__show_fa {
+.Label_textWithBlend__show_f15c0 {
     opacity: 0;
-    animation-name: Label_show_69;
+    animation-name: Label_show_f964a;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0.3s;
     animation-iteration-count: 1;
 }
-.Label_textWithBlend__new_4a {
+.Label_textWithBlend__new_bb7bf {
     opacity: 0;
-    animation-name: Label_show_69;
+    animation-name: Label_show_f964a;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0.8s;
     animation-iteration-count: 1;
 }
-.Label_textWithBlend__hide_f1 {
-    animation-name: Label_hide_33;
+.Label_textWithBlend__hide_fd92c {
+    animation-name: Label_hide_bd6bc;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.Label_textMask_7f {
+.Label_textMask_e3ad7 {
     width: 100%;
     height: 100%;
     background-image: url('R.images.gui.maps.icons.battlePass.logo.font_texture');
@@ -425,59 +427,59 @@
     mix-blend-mode: multiply;
     position: absolute;
 }
-.Label_textMask__gold_71 {
+.Label_textMask__gold_ed411 {
     background-image: url('R.images.gui.maps.icons.battlePass.logo.font_texture_gold');
 }
-.Label_textMask__goldContrast_05 {
+.Label_textMask__goldContrast_cd248 {
     background-image: url('R.images.gui.maps.icons.battlePass.logo.font_texture_gold_contrast');
 }
-.Label_textMask__animated_38 {
+.Label_textMask__animated_b168b {
     opacity: 0;
-    animation-name: Label_maskAppearance_26;
+    animation-name: Label_maskAppearance_d0e65;
     animation-duration: 0.1s;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
     animation-delay: 1.3s;
     animation-iteration-count: 1;
 }
-.Label_textMask__micro_37 {
+.Label_textMask__micro_e9ea0 {
     height: 19rem;
 }
-.Label_textMask__small_54 {
+.Label_textMask__small_f565f {
     height: 36rem;
 }
-.Label_textMask__medium_eb {
+.Label_textMask__medium_c1c7d {
     height: 47rem;
 }
-.Label_textMask__large_0a {
+.Label_textMask__large_c920a {
     height: 69rem;
 }
-.Label_textMask__extraLarge_4c {
+.Label_textMask__extraLarge_e7931 {
     height: 83rem;
     background-position: 50% 9rem;
 }
-.Label_text_67 {
+.Label_text_e24e5 {
     display: flex;
     font-size: 42rem;
     font-weight: 700;
 }
-.Label_text__micro_a4 {
+.Label_text__micro_f627f {
     font-size: 17rem;
 }
-.Label_text__small_e0 {
+.Label_text__small_cb939 {
     font-size: 32rem;
 }
-.Label_text__large_65 {
+.Label_text__large_d7fb9 {
     font-size: 60rem;
 }
-.Label_text__extraLarge_22 {
+.Label_text__extraLarge_ee710 {
     font-size: 75rem;
 }
-.Label_text__blended_67 {
+.Label_text__blended_ad25e {
     background: #000;
     color: #fff;
 }
-.Label_text__filtered_86 {
+.Label_text__filtered_f7c04 {
     color: #000;
     text-shadow:
         0 1rem 0 #000,
@@ -485,44 +487,44 @@
         0 -1rem 2rem #ff9d7266;
     position: absolute;
 }
-.Label_text__rewardScreen_68 {
+.Label_text__rewardScreen_d5f43 {
     opacity: 0;
     mix-blend-mode: normal;
-    animation-name: Label_textAppearance_31;
+    animation-name: Label_textAppearance_d298d;
     animation-duration: 0.1s;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
     animation-delay: 1.2s;
     animation-iteration-count: 1;
 }
-.Label_text__show_95 {
+.Label_text__show_d2cbf {
     opacity: 0;
-    animation-name: Label_show_69;
+    animation-name: Label_show_f964a;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0.3s;
     animation-iteration-count: 1;
 }
-.Label_text__hide_37 {
-    animation-name: Label_hide_33;
+.Label_text__hide_a1a1a {
+    animation-name: Label_hide_bd6bc;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.Label_text__hideWithDelay_53 {
-    animation-name: Label_hide_33;
+.Label_text__hideWithDelay_b22ea {
+    animation-name: Label_hide_bd6bc;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
     animation-delay: 0.8s;
     animation-iteration-count: 1;
 }
-.Label_text__new_a0 {
+.Label_text__new_bee7c {
     opacity: 0;
-    animation-name: Label_show_69;
+    animation-name: Label_show_f964a;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
@@ -530,7 +532,7 @@
     animation-iteration-count: 1;
 }
 
-@keyframes EmblemLabels_hideLevel_be {
+@keyframes EmblemLabels_hideLevel_ef734 {
     0% {
         transform: translateY(0);
     }
@@ -539,7 +541,7 @@
         transform: translateY(40rem);
     }
 }
-@keyframes EmblemLabels_showLevel_04 {
+@keyframes EmblemLabels_showLevel_b4814 {
     0% {
         transform: translateY(-20rem);
     }
@@ -548,7 +550,7 @@
         transform: translateY(0);
     }
 }
-@keyframes EmblemLabels_hideLevelSmall_c1 {
+@keyframes EmblemLabels_hideLevelSmall_f17bb {
     0% {
         transform: translateY(0);
     }
@@ -557,7 +559,7 @@
         transform: translateY(30rem);
     }
 }
-@keyframes EmblemLabels_showLevelSmall_2f {
+@keyframes EmblemLabels_showLevelSmall_cfcb6 {
     0% {
         transform: translateY(-10rem);
     }
@@ -566,7 +568,7 @@
         transform: translateY(0);
     }
 }
-@keyframes EmblemLabels_hideLevelMicro_65 {
+@keyframes EmblemLabels_hideLevelMicro_d92f5 {
     0% {
         transform: translateY(0);
     }
@@ -575,7 +577,7 @@
         transform: translateY(30rem);
     }
 }
-@keyframes EmblemLabels_showLevelMicro_ab {
+@keyframes EmblemLabels_showLevelMicro_fcd6f {
     0% {
         transform: translateY(-10rem);
     }
@@ -584,7 +586,7 @@
         transform: translateY(0);
     }
 }
-@keyframes EmblemLabels_showIcon_d3 {
+@keyframes EmblemLabels_showIcon_fa87e {
     0% {
         opacity: 0;
         transform: translateY(-20rem);
@@ -595,7 +597,7 @@
         transform: translateY(0);
     }
 }
-@keyframes EmblemLabels_showIconSmall_cb {
+@keyframes EmblemLabels_showIconSmall_ad347 {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -606,7 +608,7 @@
         transform: translateY(0);
     }
 }
-@keyframes EmblemLabels_hideProgress_7f {
+@keyframes EmblemLabels_hideProgress_ddd93 {
     0% {
         opacity: 1;
     }
@@ -615,7 +617,7 @@
         opacity: 0;
     }
 }
-@keyframes EmblemLabels_showIconMicro_5c {
+@keyframes EmblemLabels_showIconMicro_f0aa1 {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -626,137 +628,137 @@
         transform: translateY(0);
     }
 }
-.EmblemLabels_label_14 {
+.EmblemLabels_label_a557e {
     position: absolute;
     top: 18rem;
 }
-.EmblemLabels_label__small_a3 {
+.EmblemLabels_label__small_bda44 {
     top: 12rem;
 }
-.EmblemLabels_label__micro_4b {
+.EmblemLabels_label__micro_e17f7 {
     top: 8rem;
 }
-.EmblemLabels_label__hasProgress_26 {
+.EmblemLabels_label__hasProgress_ba8bc {
     top: 12rem;
 }
-.EmblemLabels_label__hasProgress_26[lang='ja'],
-.EmblemLabels_label__hasProgress_26[lang='zh_sg'],
-.EmblemLabels_label__hasProgress_26[lang='zh_cn'],
-.EmblemLabels_label__hasProgress_26[lang='zh_tw'] {
+.EmblemLabels_label__hasProgress_ba8bc[lang='ja'],
+.EmblemLabels_label__hasProgress_ba8bc[lang='zh_sg'],
+.EmblemLabels_label__hasProgress_ba8bc[lang='zh_cn'],
+.EmblemLabels_label__hasProgress_ba8bc[lang='zh_tw'] {
     top: 15rem;
 }
-.EmblemLabels_label__hasProgress_26[lang='ko'] {
+.EmblemLabels_label__hasProgress_ba8bc[lang='ko'] {
     top: 19rem;
 }
-.EmblemLabels_label__hasProgressProgression_77 {
+.EmblemLabels_label__hasProgressProgression_e8fd3 {
     top: 12rem;
 }
-.EmblemLabels_label__hasProgressProgression_77[lang='ja'],
-.EmblemLabels_label__hasProgressProgression_77[lang='zh_sg'],
-.EmblemLabels_label__hasProgressProgression_77[lang='zh_cn'],
-.EmblemLabels_label__hasProgressProgression_77[lang='zh_tw'] {
+.EmblemLabels_label__hasProgressProgression_e8fd3[lang='ja'],
+.EmblemLabels_label__hasProgressProgression_e8fd3[lang='zh_sg'],
+.EmblemLabels_label__hasProgressProgression_e8fd3[lang='zh_cn'],
+.EmblemLabels_label__hasProgressProgression_e8fd3[lang='zh_tw'] {
     top: 20rem;
 }
-.EmblemLabels_label__hasProgressProgression_77[lang='ko'] {
+.EmblemLabels_label__hasProgressProgression_e8fd3[lang='ko'] {
     top: 20rem;
 }
-.EmblemLabels_label__hasProgressSmall_c1 {
+.EmblemLabels_label__hasProgressSmall_bca0b {
     top: 10rem;
 }
-.EmblemLabels_label__hasProgressSmall_c1[lang='ja'],
-.EmblemLabels_label__hasProgressSmall_c1[lang='zh_tw'],
-.EmblemLabels_label__hasProgressSmall_c1[lang='zh_sg'],
-.EmblemLabels_label__hasProgressSmall_c1[lang='zh_cn'] {
+.EmblemLabels_label__hasProgressSmall_bca0b[lang='ja'],
+.EmblemLabels_label__hasProgressSmall_bca0b[lang='zh_tw'],
+.EmblemLabels_label__hasProgressSmall_bca0b[lang='zh_sg'],
+.EmblemLabels_label__hasProgressSmall_bca0b[lang='zh_cn'] {
     top: 11rem;
 }
-.EmblemLabels_label__hasProgressSmall_c1[lang='ko'] {
+.EmblemLabels_label__hasProgressSmall_bca0b[lang='ko'] {
     top: 15rem;
 }
-.EmblemLabels_label__show_3d {
-    animation-name: EmblemLabels_showLevel_04;
+.EmblemLabels_label__show_d2f81 {
+    animation-name: EmblemLabels_showLevel_b4814;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0.3s;
     animation-iteration-count: 1;
 }
-.EmblemLabels_label__showSmall_7e {
-    animation-name: EmblemLabels_showLevelSmall_2f;
+.EmblemLabels_label__showSmall_f220b {
+    animation-name: EmblemLabels_showLevelSmall_cfcb6;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0.3s;
     animation-iteration-count: 1;
 }
-.EmblemLabels_label__hide_28 {
-    animation-name: EmblemLabels_hideLevel_be;
+.EmblemLabels_label__hide_fabfb {
+    animation-name: EmblemLabels_hideLevel_ef734;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.EmblemLabels_label_hideSmall_65 {
-    animation-name: EmblemLabels_hideLevelSmall_c1;
+.EmblemLabels_label_hideSmall_b5d84 {
+    animation-name: EmblemLabels_hideLevelSmall_f17bb;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.EmblemLabels_label__hideWithDelay_68 {
-    animation-name: EmblemLabels_hideLevel_be;
+.EmblemLabels_label__hideWithDelay_fc72a {
+    animation-name: EmblemLabels_hideLevel_ef734;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
     animation-delay: 0.8s;
     animation-iteration-count: 1;
 }
-.EmblemLabels_label__hideWithDelaySmall_36 {
-    animation-name: EmblemLabels_hideLevelSmall_c1;
+.EmblemLabels_label__hideWithDelaySmall_f152c {
+    animation-name: EmblemLabels_hideLevelSmall_f17bb;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
     animation-delay: 0.8s;
     animation-iteration-count: 1;
 }
-.EmblemLabels_label__new_d7 {
-    animation-name: EmblemLabels_showLevel_04;
+.EmblemLabels_label__new_be3ab {
+    animation-name: EmblemLabels_showLevel_b4814;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0.8s;
     animation-iteration-count: 1;
 }
-.EmblemLabels_label__newSmall_c1 {
-    animation-name: EmblemLabels_showLevelSmall_2f;
+.EmblemLabels_label__newSmall_ede09 {
+    animation-name: EmblemLabels_showLevelSmall_cfcb6;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0.8s;
     animation-iteration-count: 1;
 }
-.EmblemLabels_label__disabled_b6 {
+.EmblemLabels_label__disabled_ae6c2 {
     display: none;
 }
-.EmblemLabels_icon_40 {
+.EmblemLabels_icon_e96f7 {
     width: 70rem;
     height: 70rem;
     margin-top: -7rem;
     background: no-repeat center / contain;
 }
-.EmblemLabels_icon__small_f3 {
+.EmblemLabels_icon__small_c59bb {
     width: 50rem;
     height: 50rem;
     margin-top: -5rem;
 }
-.EmblemLabels_icon__micro_cf {
+.EmblemLabels_icon__micro_ee30d {
     width: 30rem;
     height: 30rem;
     margin-top: 3.5rem;
 }
-.EmblemLabels_icon__animated_09 {
-    animation-name: EmblemLabels_showIcon_d3;
+.EmblemLabels_icon__animated_ad765 {
+    animation-name: EmblemLabels_showIcon_fa87e;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
@@ -764,9 +766,9 @@
     animation-iteration-count: 1;
     opacity: 0;
 }
-.EmblemLabels_icon__animatedSmall_e4,
-.EmblemLabels_icon__animatedMicro_10 {
-    animation-name: EmblemLabels_showIconSmall_cb;
+.EmblemLabels_icon__animatedSmall_c983c,
+.EmblemLabels_icon__animatedMicro_fdd88 {
+    animation-name: EmblemLabels_showIconSmall_ad347;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.6, 0.04, 0.98, 0.34);
@@ -780,15 +782,15 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressBar_base_45 {
+.ProgressBar_base_c37bf {
     width: 100%;
     height: var(--progress-bg-height);
     position: relative;
 }
-.ProgressBar_base__small_df {
+.ProgressBar_base__small_af6d6 {
     height: var(--progress-bg-height-small);
 }
-.ProgressBar_background_51 {
+.ProgressBar_background_a4e18 {
     width: 100%;
     max-width: 8001px;
     height: 100%;
@@ -800,15 +802,15 @@
     top: 0;
     left: 0;
 }
-.ProgressBar_background__small_46 {
+.ProgressBar_background__small_e2b95 {
     height: var(--progress-bg-height-small);
 }
-.ProgressBar_lineWrapper_6a {
+.ProgressBar_lineWrapper_e670c {
     display: flex;
     flex: 1;
 }
 
-.ProgressBarBlink_base_24 {
+.ProgressBarBlink_base_d7125 {
     width: var(--progress-glow-width);
     height: var(--progress-glow-height);
     background-image: var(--progress-glow);
@@ -821,7 +823,7 @@
     pointer-events: none;
 }
 
-.ProgressBarBlink_base__small_0f {
+.ProgressBarBlink_base__small_b92f8 {
     width: var(--progress-glow-small-width);
     height: var(--progress-glow-small-height);
     background-image: var(--progress-glow-small);
@@ -832,7 +834,7 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressLineImpose_base_80 {
+.ProgressLineImpose_base_a3558 {
     max-width: 8001px;
     height: 100%;
     background-color: var(--progress-line-base);
@@ -841,16 +843,16 @@
     transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
     transition-property: width;
 }
-.ProgressLineImpose_base__disabled_cc {
+.ProgressLineImpose_base__disabled_a9e8e {
     background-color: var(--progress-line-disabled);
 }
-.ProgressLineImpose_base__finished_d4 {
+.ProgressLineImpose_base__finished_f889e {
     background-color: var(--progress-line-finished);
 }
-.ProgressLineImpose_base__withoutBounce_56 {
+.ProgressLineImpose_base__withoutBounce_c0ff9 {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
 }
-.ProgressLineImpose_pattern_1c {
+.ProgressLineImpose_pattern_a4023 {
     max-width: 8001px;
     background-image: var(--progress-pattern-base);
     background-repeat: repeat;
@@ -862,18 +864,18 @@
     bottom: var(--progress-pattern-border-size);
     left: var(--progress-pattern-border-size);
 }
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
+.ProgressLineImpose_base__small_da260 .ProgressLineImpose_pattern_a4023 {
     top: 0;
     bottom: 0;
 }
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
+.ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_pattern_a4023 {
     background-image: var(--progress-pattern-disabled);
     left: 0;
 }
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
+.ProgressLineImpose_base__finished_f889e .ProgressLineImpose_pattern_a4023 {
     background-image: var(--progress-pattern-finished);
 }
-.ProgressLineImpose_gradient_35 {
+.ProgressLineImpose_gradient_f73c0 {
     max-width: 8001px;
     background-image: var(--progress-pattern-gradient);
     mix-blend-mode: var(--progress-pattern-gradient-mixBlendMode);
@@ -883,17 +885,17 @@
     bottom: var(--progress-pattern-border-size);
     left: 0;
 }
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
+.ProgressLineImpose_base__small_da260 .ProgressLineImpose_gradient_f73c0 {
     top: 0;
     bottom: 0;
 }
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
+.ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_gradient_f73c0 {
     display: none;
 }
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
+.ProgressLineImpose_base__finished_f889e .ProgressLineImpose_gradient_f73c0 {
     background-image: var(--progress-pattern-gradient-finished);
 }
-.ProgressLineImpose_glow_a5 {
+.ProgressLineImpose_glow_f237a {
     width: var(--progress-glow-width);
     max-width: 8001px;
     height: var(--progress-glow-height);
@@ -906,14 +908,14 @@
     transform: translate(-50%, -50%);
     pointer-events: none;
 }
-.ProgressLineImpose_glow__left_d8 {
+.ProgressLineImpose_glow__left_b7ffa {
     left: var(--progress-pattern-border-size);
 }
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+.ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_glow_f237a,
+.ProgressLineImpose_base__finished_f889e .ProgressLineImpose_glow_f237a {
     display: none;
 }
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
+.ProgressLineImpose_base__small_da260 .ProgressLineImpose_glow_f237a {
     width: var(--progress-glow-small-width);
     height: var(--progress-glow-small-height);
     background-image: var(--progress-glow-small);
@@ -924,7 +926,7 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressBarDeltaGrow_base_7e {
+.ProgressBarDeltaGrow_base_f4d46 {
     width: 0;
     height: 100%;
     position: absolute;
@@ -932,10 +934,10 @@
     transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
     transition-property: width;
 }
-.ProgressBarDeltaGrow_base__withoutBounce_b5 {
+.ProgressBarDeltaGrow_base__withoutBounce_b1398 {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
 }
-.ProgressBarDeltaGrow_glow_68 {
+.ProgressBarDeltaGrow_glow_c912d {
     width: 0;
     max-width: 8001px;
     height: 100%;
@@ -947,7 +949,7 @@
     transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
     transition-property: width;
 }
-.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
+.ProgressBarDeltaGrow_base__withoutBounce_b1398 .ProgressBarDeltaGrow_glow_c912d {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
 }
 
@@ -956,13 +958,13 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
+.ProgressBarDeltaSimple_base_cfcd3 {
     width: 0;
     height: 100%;
     position: absolute;
     top: 0;
 }
-.ProgressBarDeltaSimple_delta_99 {
+.ProgressBarDeltaSimple_delta_dc2b6 {
     width: 0;
     max-width: 8001px;
     height: 100%;
@@ -975,7 +977,7 @@
     transition-property: width, transform;
 }
 
-@keyframes EmblemProgressBar_hideLevel_1e {
+@keyframes EmblemProgressBar_hideLevel_a112a {
     0% {
         transform: translateY(0);
     }
@@ -984,7 +986,7 @@
         transform: translateY(40rem);
     }
 }
-@keyframes EmblemProgressBar_showLevel_5d {
+@keyframes EmblemProgressBar_showLevel_dec07 {
     0% {
         transform: translateY(-20rem);
     }
@@ -993,7 +995,7 @@
         transform: translateY(0);
     }
 }
-@keyframes EmblemProgressBar_hideLevelSmall_ae {
+@keyframes EmblemProgressBar_hideLevelSmall_a7539 {
     0% {
         transform: translateY(0);
     }
@@ -1002,7 +1004,7 @@
         transform: translateY(30rem);
     }
 }
-@keyframes EmblemProgressBar_showLevelSmall_df {
+@keyframes EmblemProgressBar_showLevelSmall_f1abb {
     0% {
         transform: translateY(-10rem);
     }
@@ -1011,7 +1013,7 @@
         transform: translateY(0);
     }
 }
-@keyframes EmblemProgressBar_hideLevelMicro_13 {
+@keyframes EmblemProgressBar_hideLevelMicro_d4f2f {
     0% {
         transform: translateY(0);
     }
@@ -1020,7 +1022,7 @@
         transform: translateY(30rem);
     }
 }
-@keyframes EmblemProgressBar_showLevelMicro_ae {
+@keyframes EmblemProgressBar_showLevelMicro_f1420 {
     0% {
         transform: translateY(-10rem);
     }
@@ -1029,7 +1031,7 @@
         transform: translateY(0);
     }
 }
-@keyframes EmblemProgressBar_showIcon_55 {
+@keyframes EmblemProgressBar_showIcon_de47c {
     0% {
         opacity: 0;
         transform: translateY(-20rem);
@@ -1040,7 +1042,7 @@
         transform: translateY(0);
     }
 }
-@keyframes EmblemProgressBar_showIconSmall_26 {
+@keyframes EmblemProgressBar_showIconSmall_a2a37 {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -1051,7 +1053,7 @@
         transform: translateY(0);
     }
 }
-@keyframes EmblemProgressBar_hideProgress_18 {
+@keyframes EmblemProgressBar_hideProgress_fc810 {
     0% {
         opacity: 1;
     }
@@ -1060,7 +1062,7 @@
         opacity: 0;
     }
 }
-@keyframes EmblemProgressBar_showIconMicro_78 {
+@keyframes EmblemProgressBar_showIconMicro_b4a55 {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -1071,7 +1073,7 @@
         transform: translateY(0);
     }
 }
-.EmblemProgressBar_base_5c {
+.EmblemProgressBar_base_fcc92 {
     width: 60rem;
     height: 3rem;
     background-color: #030303;
@@ -1079,31 +1081,31 @@
     position: absolute;
     top: 63rem;
 }
-.EmblemProgressBar_base__small_6c {
+.EmblemProgressBar_base__small_b1974 {
     width: 40rem;
     top: 49rem;
 }
-.EmblemProgressBar_base__completed_6d {
-    animation-name: EmblemProgressBar_hideProgress_18;
+.EmblemProgressBar_base__completed_fabc2 {
+    animation-name: EmblemProgressBar_hideProgress_fc810;
     animation-duration: 0.1s;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
     animation-delay: 0.6s;
     animation-iteration-count: 1;
 }
-.EmblemProgressBar_base__completePostProgression_20 {
-    animation-name: EmblemProgressBar_hideProgress_18;
+.EmblemProgressBar_base__completePostProgression_dc7cb {
+    animation-name: EmblemProgressBar_hideProgress_fc810;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.EmblemProgressBar_base__hidden_8b {
+.EmblemProgressBar_base__hidden_e2b1c {
     display: none;
 }
 
-@keyframes StateNormal_fadeInWithScale_f8 {
+@keyframes StateNormal_fadeInWithScale_f1493 {
     0% {
         opacity: 0;
         transform: scaleY(0.75);
@@ -1119,7 +1121,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateNormal_slideUp_c7 {
+@keyframes StateNormal_slideUp_fc9cf {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -1135,7 +1137,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateNormal_wrapperHover_fd {
+@keyframes StateNormal_wrapperHover_b7a9a {
     from {
         filter: brightness(1) contrast(1);
     }
@@ -1144,7 +1146,7 @@
         filter: brightness(1.35) contrast(0.75);
     }
 }
-@keyframes StateNormal_wrapperOut_a8 {
+@keyframes StateNormal_wrapperOut_d71a7 {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -1153,7 +1155,7 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateNormal_flagHover_c5 {
+@keyframes StateNormal_flagHover_c16d6 {
     from {
         transform: scaleY(1);
     }
@@ -1162,7 +1164,7 @@
         transform: scaleY(1.05);
     }
 }
-@keyframes StateNormal_emblemHover_38 {
+@keyframes StateNormal_emblemHover_b72e1 {
     from {
         margin-top: 4rem;
     }
@@ -1171,7 +1173,7 @@
         margin-top: 9rem;
     }
 }
-@keyframes StateNormal_logoIconHover_0c {
+@keyframes StateNormal_logoIconHover_bfcab {
     from {
         bottom: 25rem;
     }
@@ -1180,7 +1182,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateNormal_logoIconHoverSmall_cf {
+@keyframes StateNormal_logoIconHoverSmall_c6416 {
     from {
         bottom: 20rem;
     }
@@ -1189,7 +1191,7 @@
         bottom: 15rem;
     }
 }
-@keyframes StateNormal_logoSmallX2IconHover_49 {
+@keyframes StateNormal_logoSmallX2IconHover_a2c5d {
     from {
         bottom: -10rem;
     }
@@ -1198,7 +1200,7 @@
         bottom: -15rem;
     }
 }
-@keyframes StateNormal_freePointsHover_1d {
+@keyframes StateNormal_freePointsHover_c8b52 {
     from {
         bottom: 30rem;
     }
@@ -1207,7 +1209,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateNormal_freePointsSmallX2Hover_f6 {
+@keyframes StateNormal_freePointsSmallX2Hover_b7f41 {
     from {
         bottom: -5rem;
     }
@@ -1216,7 +1218,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateNormal_flagOut_f4 {
+@keyframes StateNormal_flagOut_cbcdf {
     from {
         transform: scaleY(1.05);
     }
@@ -1225,7 +1227,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateNormal_emblemOut_f5 {
+@keyframes StateNormal_emblemOut_bf0cd {
     from {
         margin-top: 9rem;
     }
@@ -1234,7 +1236,7 @@
         margin-top: 4rem;
     }
 }
-@keyframes StateNormal_freePointsOut_d6 {
+@keyframes StateNormal_freePointsOut_cf4e4 {
     from {
         bottom: 25rem;
     }
@@ -1243,7 +1245,7 @@
         bottom: 30rem;
     }
 }
-@keyframes StateNormal_freePointsSmallX2Out_ca {
+@keyframes StateNormal_freePointsSmallX2Out_a9162 {
     from {
         bottom: -10rem;
     }
@@ -1252,7 +1254,7 @@
         bottom: -5rem;
     }
 }
-@keyframes StateNormal_logoIconOut_be {
+@keyframes StateNormal_logoIconOut_ac31f {
     from {
         bottom: 20rem;
     }
@@ -1261,7 +1263,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateNormal_logoIconOutSmall_e5 {
+@keyframes StateNormal_logoIconOutSmall_a594d {
     from {
         bottom: 15rem;
     }
@@ -1270,7 +1272,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateNormal_logoSmallX2IconOut_8f {
+@keyframes StateNormal_logoSmallX2IconOut_a5ceb {
     from {
         bottom: -15rem;
     }
@@ -1279,7 +1281,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateNormal_emblemLevelUp_72 {
+@keyframes StateNormal_emblemLevelUp_cccfb {
     0% {
         filter: brightness(1) contrast(1);
         transform: translateY(0);
@@ -1298,7 +1300,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateNormal_emblemAttention_2e {
+@keyframes StateNormal_emblemAttention_de52a {
     0% {
         filter: brightness(1.5);
     }
@@ -1307,7 +1309,7 @@
         filter: brightness(1);
     }
 }
-@keyframes StateNormal_emblemCopyAttention_43 {
+@keyframes StateNormal_emblemCopyAttention_d661a {
     0% {
         opacity: 1;
         transform: scale(1, 1);
@@ -1318,7 +1320,7 @@
         transform: scale(1.3, 1.3);
     }
 }
-@keyframes StateNormal_flagLevelUp_47 {
+@keyframes StateNormal_flagLevelUp_d4739 {
     0% {
         filter: brightness(1) contrast(1);
         transform: scaleY(1);
@@ -1334,7 +1336,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateNormal_flagLevelUpPosOut_06 {
+@keyframes StateNormal_flagLevelUpPosOut_d6ce8 {
     from {
         transform: scaleY(1.05);
     }
@@ -1343,7 +1345,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateNormal_flagLevelUpLightOut_dd {
+@keyframes StateNormal_flagLevelUpLightOut_aebd2 {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -1352,12 +1354,12 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateNormal_flareLevelUp_e4 {
+@keyframes StateNormal_flareLevelUp_f5cf9 {
     0% {
         opacity: 1;
     }
 }
-@keyframes StateNormal_flagBuyBPIn_d3 {
+@keyframes StateNormal_flagBuyBPIn_a3956 {
     0% {
         transform: scaleY(1);
     }
@@ -1374,7 +1376,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateNormal_flagSwitchChapter_2c {
+@keyframes StateNormal_flagSwitchChapter_f30fd {
     0% {
         opacity: 1;
         transform: scaleY(1);
@@ -1394,7 +1396,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateNormal_emblemBuyBP_b5 {
+@keyframes StateNormal_emblemBuyBP_d9857 {
     0% {
         opacity: 1;
         transform: translateY(0);
@@ -1425,7 +1427,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateNormal_lightBuyBP_04 {
+@keyframes StateNormal_lightBuyBP_ede90 {
     0% {
         opacity: 0;
         transform: scale(0.8);
@@ -1446,7 +1448,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateNormal_lightAttention_ec {
+@keyframes StateNormal_lightAttention_e400d {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -1457,7 +1459,7 @@
         transform: scale(1.35);
     }
 }
-@keyframes StateNormal_lightAttentionSmall_1f {
+@keyframes StateNormal_lightAttentionSmall_d3030 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -1468,7 +1470,7 @@
         transform: scale(1.1);
     }
 }
-@keyframes StateNormal_lightChapterNotChosen_50 {
+@keyframes StateNormal_lightChapterNotChosen_d10b3 {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -1489,7 +1491,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateNormal_lightChapterNotChosenSmall_2d {
+@keyframes StateNormal_lightChapterNotChosenSmall_e4fa0 {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -1510,14 +1512,14 @@
         transform: scale(1);
     }
 }
-.StateNormal_base_0d {
+.StateNormal_base_b01ea {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
     position: relative;
 }
-.StateNormal_flag_f8 {
+.StateNormal_flag_de5d3 {
     width: 100rem;
     height: 120rem;
     background: left top / 100% no-repeat;
@@ -1526,17 +1528,17 @@
     z-index: -1;
     transform-origin: top;
 }
-.StateNormal_base__medium_e3 .StateNormal_flag_f8 {
+.StateNormal_base__medium_def26 .StateNormal_flag_de5d3 {
     width: 142rem;
     height: 160rem;
     top: -6rem;
 }
-.StateNormal_emblem_0f {
+.StateNormal_emblem_eb5e5 {
     display: flex;
     margin-top: 4rem;
     position: relative;
 }
-.StateNormal_counter_cd {
+.StateNormal_counter_b565b {
     display: flex;
     align-items: center;
     min-width: 14rem;
@@ -1557,17 +1559,17 @@
     right: 6rem;
     z-index: 1;
 }
-.StateNormal_counter_cd[lang='ja'] {
+.StateNormal_counter_b565b[lang='ja'] {
     padding-top: 2rem;
 }
-.StateNormal_counter_cd[lang='ko'] {
+.StateNormal_counter_b565b[lang='ko'] {
     padding-top: 4rem;
 }
-.StateNormal_base__medium_e3 .StateNormal_counter_cd {
+.StateNormal_base__medium_def26 .StateNormal_counter_b565b {
     top: 14rem;
     right: 13rem;
 }
-.StateNormal_chapterLogoIcon_26 {
+.StateNormal_chapterLogoIcon_dbf21 {
     width: 40rem;
     height: 40rem;
     background: no-repeat center / contain;
@@ -1575,19 +1577,19 @@
     bottom: 20rem;
     pointer-events: auto;
 }
-.StateNormal_base__medium_e3 .StateNormal_chapterLogoIcon_26 {
+.StateNormal_base__medium_def26 .StateNormal_chapterLogoIcon_dbf21 {
     bottom: 25rem;
 }
-.StateNormal_base__medium_e3 .StateNormal_chapterLogoIcon_26,
-.StateNormal_base__smallX2_07 .StateNormal_chapterLogoIcon_26 {
+.StateNormal_base__medium_def26 .StateNormal_chapterLogoIcon_dbf21,
+.StateNormal_base__smallX2_a70d0 .StateNormal_chapterLogoIcon_dbf21 {
     width: 50rem;
     height: 50rem;
 }
-.StateNormal_base__smallX2_07 .StateNormal_chapterLogoIcon_26 {
+.StateNormal_base__smallX2_a70d0 .StateNormal_chapterLogoIcon_dbf21 {
     bottom: -10rem;
     transform: translateY(-50rem);
 }
-.StateNormal_freePoints_37 {
+.StateNormal_freePoints_d2b7a {
     color: #ffdd99;
     font-size: 30rem;
     font-weight: 700;
@@ -1598,12 +1600,12 @@
     position: absolute;
     bottom: 30rem;
 }
-.StateNormal_base__smallX2_07 .StateNormal_freePoints_37 {
+.StateNormal_base__smallX2_a70d0 .StateNormal_freePoints_d2b7a {
     bottom: -5rem;
     transform: translateY(-50rem);
 }
 
-@keyframes StateAttention_fadeInWithScale_b7 {
+@keyframes StateAttention_fadeInWithScale_e1edf {
     0% {
         opacity: 0;
         transform: scaleY(0.75);
@@ -1619,7 +1621,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateAttention_slideUp_91 {
+@keyframes StateAttention_slideUp_c5c1e {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -1635,7 +1637,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateAttention_wrapperHover_21 {
+@keyframes StateAttention_wrapperHover_f4aac {
     from {
         filter: brightness(1) contrast(1);
     }
@@ -1644,7 +1646,7 @@
         filter: brightness(1.35) contrast(0.75);
     }
 }
-@keyframes StateAttention_wrapperOut_79 {
+@keyframes StateAttention_wrapperOut_d9191 {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -1653,7 +1655,7 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateAttention_flagHover_d7 {
+@keyframes StateAttention_flagHover_c5ca3 {
     from {
         transform: scaleY(1);
     }
@@ -1662,7 +1664,7 @@
         transform: scaleY(1.05);
     }
 }
-@keyframes StateAttention_emblemHover_ff {
+@keyframes StateAttention_emblemHover_d630a {
     from {
         margin-top: 4rem;
     }
@@ -1671,7 +1673,7 @@
         margin-top: 9rem;
     }
 }
-@keyframes StateAttention_logoIconHover_cd {
+@keyframes StateAttention_logoIconHover_ff740 {
     from {
         bottom: 25rem;
     }
@@ -1680,7 +1682,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateAttention_logoIconHoverSmall_b7 {
+@keyframes StateAttention_logoIconHoverSmall_b4572 {
     from {
         bottom: 20rem;
     }
@@ -1689,7 +1691,7 @@
         bottom: 15rem;
     }
 }
-@keyframes StateAttention_logoSmallX2IconHover_02 {
+@keyframes StateAttention_logoSmallX2IconHover_c6578 {
     from {
         bottom: -10rem;
     }
@@ -1698,7 +1700,7 @@
         bottom: -15rem;
     }
 }
-@keyframes StateAttention_freePointsHover_17 {
+@keyframes StateAttention_freePointsHover_dcaff {
     from {
         bottom: 30rem;
     }
@@ -1707,7 +1709,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateAttention_freePointsSmallX2Hover_06 {
+@keyframes StateAttention_freePointsSmallX2Hover_ec775 {
     from {
         bottom: -5rem;
     }
@@ -1716,7 +1718,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateAttention_flagOut_d4 {
+@keyframes StateAttention_flagOut_e2dee {
     from {
         transform: scaleY(1.05);
     }
@@ -1725,7 +1727,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateAttention_emblemOut_24 {
+@keyframes StateAttention_emblemOut_a2857 {
     from {
         margin-top: 9rem;
     }
@@ -1734,7 +1736,7 @@
         margin-top: 4rem;
     }
 }
-@keyframes StateAttention_freePointsOut_c7 {
+@keyframes StateAttention_freePointsOut_baede {
     from {
         bottom: 25rem;
     }
@@ -1743,7 +1745,7 @@
         bottom: 30rem;
     }
 }
-@keyframes StateAttention_freePointsSmallX2Out_44 {
+@keyframes StateAttention_freePointsSmallX2Out_b296c {
     from {
         bottom: -10rem;
     }
@@ -1752,7 +1754,7 @@
         bottom: -5rem;
     }
 }
-@keyframes StateAttention_logoIconOut_61 {
+@keyframes StateAttention_logoIconOut_fa052 {
     from {
         bottom: 20rem;
     }
@@ -1761,7 +1763,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateAttention_logoIconOutSmall_fe {
+@keyframes StateAttention_logoIconOutSmall_c329b {
     from {
         bottom: 15rem;
     }
@@ -1770,7 +1772,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateAttention_logoSmallX2IconOut_48 {
+@keyframes StateAttention_logoSmallX2IconOut_bc1a5 {
     from {
         bottom: -15rem;
     }
@@ -1779,7 +1781,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateAttention_emblemLevelUp_43 {
+@keyframes StateAttention_emblemLevelUp_a18ca {
     0% {
         filter: brightness(1) contrast(1);
         transform: translateY(0);
@@ -1798,7 +1800,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateAttention_emblemAttention_7a {
+@keyframes StateAttention_emblemAttention_b5793 {
     0% {
         filter: brightness(1.5);
     }
@@ -1807,7 +1809,7 @@
         filter: brightness(1);
     }
 }
-@keyframes StateAttention_emblemCopyAttention_ad {
+@keyframes StateAttention_emblemCopyAttention_f56f3 {
     0% {
         opacity: 1;
         transform: scale(1, 1);
@@ -1818,7 +1820,7 @@
         transform: scale(1.3, 1.3);
     }
 }
-@keyframes StateAttention_flagLevelUp_cc {
+@keyframes StateAttention_flagLevelUp_e9f7c {
     0% {
         filter: brightness(1) contrast(1);
         transform: scaleY(1);
@@ -1834,7 +1836,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateAttention_flagLevelUpPosOut_7d {
+@keyframes StateAttention_flagLevelUpPosOut_ea627 {
     from {
         transform: scaleY(1.05);
     }
@@ -1843,7 +1845,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateAttention_flagLevelUpLightOut_14 {
+@keyframes StateAttention_flagLevelUpLightOut_d49e5 {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -1852,12 +1854,12 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateAttention_flareLevelUp_62 {
+@keyframes StateAttention_flareLevelUp_d6630 {
     0% {
         opacity: 1;
     }
 }
-@keyframes StateAttention_flagBuyBPIn_0c {
+@keyframes StateAttention_flagBuyBPIn_b62bf {
     0% {
         transform: scaleY(1);
     }
@@ -1874,7 +1876,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateAttention_flagSwitchChapter_91 {
+@keyframes StateAttention_flagSwitchChapter_dbc0d {
     0% {
         opacity: 1;
         transform: scaleY(1);
@@ -1894,7 +1896,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateAttention_emblemBuyBP_0f {
+@keyframes StateAttention_emblemBuyBP_b425d {
     0% {
         opacity: 1;
         transform: translateY(0);
@@ -1925,7 +1927,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateAttention_lightBuyBP_e7 {
+@keyframes StateAttention_lightBuyBP_c7457 {
     0% {
         opacity: 0;
         transform: scale(0.8);
@@ -1946,7 +1948,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateAttention_lightAttention_29 {
+@keyframes StateAttention_lightAttention_d8f21 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -1957,7 +1959,7 @@
         transform: scale(1.35);
     }
 }
-@keyframes StateAttention_lightAttentionSmall_9e {
+@keyframes StateAttention_lightAttentionSmall_e987e {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -1968,7 +1970,7 @@
         transform: scale(1.1);
     }
 }
-@keyframes StateAttention_lightChapterNotChosen_19 {
+@keyframes StateAttention_lightChapterNotChosen_b21d1 {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -1989,7 +1991,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateAttention_lightChapterNotChosenSmall_4d {
+@keyframes StateAttention_lightChapterNotChosenSmall_ebfb2 {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -2010,7 +2012,7 @@
         transform: scale(1);
     }
 }
-.StateAttention_base_2e {
+.StateAttention_base_b4d5a {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -2018,16 +2020,16 @@
     overflow: hidden;
     position: relative;
 }
-.StateAttention_emblem_1b {
-    animation-name: StateAttention_emblemAttention_7a;
+.StateAttention_emblem_a1773 {
+    animation-name: StateAttention_emblemAttention_b5793;
     animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 1s;
     animation-iteration-count: 1;
 }
-.StateAttention_emblemCopy_17 {
-    animation-name: StateAttention_emblemCopyAttention_ad;
+.StateAttention_emblemCopy_a6579 {
+    animation-name: StateAttention_emblemCopyAttention_f56f3;
     animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
@@ -2040,13 +2042,13 @@
     position: absolute;
     top: 10rem;
 }
-.mediaMedium .StateAttention_emblemCopy_17 {
+.mediaMedium .StateAttention_emblemCopy_a6579 {
     width: 130rem;
     height: 130rem;
     background-image: url('R.images.gui.maps.icons.battlePass.logo.Main_BP');
 }
 
-@keyframes StateBuyBP_fadeInWithScale_b4 {
+@keyframes StateBuyBP_fadeInWithScale_e2fa4 {
     0% {
         opacity: 0;
         transform: scaleY(0.75);
@@ -2062,7 +2064,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateBuyBP_slideUp_19 {
+@keyframes StateBuyBP_slideUp_ec2ac {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -2078,7 +2080,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateBuyBP_wrapperHover_f7 {
+@keyframes StateBuyBP_wrapperHover_a439a {
     from {
         filter: brightness(1) contrast(1);
     }
@@ -2087,7 +2089,7 @@
         filter: brightness(1.35) contrast(0.75);
     }
 }
-@keyframes StateBuyBP_wrapperOut_56 {
+@keyframes StateBuyBP_wrapperOut_a3a18 {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -2096,7 +2098,7 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateBuyBP_flagHover_70 {
+@keyframes StateBuyBP_flagHover_a67a6 {
     from {
         transform: scaleY(1);
     }
@@ -2105,7 +2107,7 @@
         transform: scaleY(1.05);
     }
 }
-@keyframes StateBuyBP_emblemHover_0a {
+@keyframes StateBuyBP_emblemHover_cb5d2 {
     from {
         margin-top: 4rem;
     }
@@ -2114,7 +2116,7 @@
         margin-top: 9rem;
     }
 }
-@keyframes StateBuyBP_logoIconHover_6b {
+@keyframes StateBuyBP_logoIconHover_ddf28 {
     from {
         bottom: 25rem;
     }
@@ -2123,7 +2125,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateBuyBP_logoIconHoverSmall_91 {
+@keyframes StateBuyBP_logoIconHoverSmall_b2abe {
     from {
         bottom: 20rem;
     }
@@ -2132,7 +2134,7 @@
         bottom: 15rem;
     }
 }
-@keyframes StateBuyBP_logoSmallX2IconHover_6c {
+@keyframes StateBuyBP_logoSmallX2IconHover_f025d {
     from {
         bottom: -10rem;
     }
@@ -2141,7 +2143,7 @@
         bottom: -15rem;
     }
 }
-@keyframes StateBuyBP_freePointsHover_12 {
+@keyframes StateBuyBP_freePointsHover_a1d19 {
     from {
         bottom: 30rem;
     }
@@ -2150,7 +2152,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateBuyBP_freePointsSmallX2Hover_c5 {
+@keyframes StateBuyBP_freePointsSmallX2Hover_c3695 {
     from {
         bottom: -5rem;
     }
@@ -2159,7 +2161,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateBuyBP_flagOut_e1 {
+@keyframes StateBuyBP_flagOut_b99b1 {
     from {
         transform: scaleY(1.05);
     }
@@ -2168,7 +2170,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateBuyBP_emblemOut_e6 {
+@keyframes StateBuyBP_emblemOut_ef2db {
     from {
         margin-top: 9rem;
     }
@@ -2177,7 +2179,7 @@
         margin-top: 4rem;
     }
 }
-@keyframes StateBuyBP_freePointsOut_f0 {
+@keyframes StateBuyBP_freePointsOut_f0686 {
     from {
         bottom: 25rem;
     }
@@ -2186,7 +2188,7 @@
         bottom: 30rem;
     }
 }
-@keyframes StateBuyBP_freePointsSmallX2Out_57 {
+@keyframes StateBuyBP_freePointsSmallX2Out_f40f7 {
     from {
         bottom: -10rem;
     }
@@ -2195,7 +2197,7 @@
         bottom: -5rem;
     }
 }
-@keyframes StateBuyBP_logoIconOut_b2 {
+@keyframes StateBuyBP_logoIconOut_c87dc {
     from {
         bottom: 20rem;
     }
@@ -2204,7 +2206,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateBuyBP_logoIconOutSmall_02 {
+@keyframes StateBuyBP_logoIconOutSmall_a8c96 {
     from {
         bottom: 15rem;
     }
@@ -2213,7 +2215,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateBuyBP_logoSmallX2IconOut_91 {
+@keyframes StateBuyBP_logoSmallX2IconOut_ac0ba {
     from {
         bottom: -15rem;
     }
@@ -2222,7 +2224,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateBuyBP_emblemLevelUp_86 {
+@keyframes StateBuyBP_emblemLevelUp_c5dbb {
     0% {
         filter: brightness(1) contrast(1);
         transform: translateY(0);
@@ -2241,7 +2243,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateBuyBP_emblemAttention_ef {
+@keyframes StateBuyBP_emblemAttention_c6a50 {
     0% {
         filter: brightness(1.5);
     }
@@ -2250,7 +2252,7 @@
         filter: brightness(1);
     }
 }
-@keyframes StateBuyBP_emblemCopyAttention_2f {
+@keyframes StateBuyBP_emblemCopyAttention_e6c0a {
     0% {
         opacity: 1;
         transform: scale(1, 1);
@@ -2261,7 +2263,7 @@
         transform: scale(1.3, 1.3);
     }
 }
-@keyframes StateBuyBP_flagLevelUp_ec {
+@keyframes StateBuyBP_flagLevelUp_ab26d {
     0% {
         filter: brightness(1) contrast(1);
         transform: scaleY(1);
@@ -2277,7 +2279,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateBuyBP_flagLevelUpPosOut_ec {
+@keyframes StateBuyBP_flagLevelUpPosOut_ff6c6 {
     from {
         transform: scaleY(1.05);
     }
@@ -2286,7 +2288,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateBuyBP_flagLevelUpLightOut_96 {
+@keyframes StateBuyBP_flagLevelUpLightOut_f6fe8 {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -2295,12 +2297,12 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateBuyBP_flareLevelUp_15 {
+@keyframes StateBuyBP_flareLevelUp_e21c6 {
     0% {
         opacity: 1;
     }
 }
-@keyframes StateBuyBP_flagBuyBPIn_cc {
+@keyframes StateBuyBP_flagBuyBPIn_d787e {
     0% {
         transform: scaleY(1);
     }
@@ -2317,7 +2319,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateBuyBP_flagSwitchChapter_c4 {
+@keyframes StateBuyBP_flagSwitchChapter_d7483 {
     0% {
         opacity: 1;
         transform: scaleY(1);
@@ -2337,7 +2339,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateBuyBP_emblemBuyBP_13 {
+@keyframes StateBuyBP_emblemBuyBP_d9b36 {
     0% {
         opacity: 1;
         transform: translateY(0);
@@ -2368,7 +2370,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateBuyBP_lightBuyBP_18 {
+@keyframes StateBuyBP_lightBuyBP_e34b8 {
     0% {
         opacity: 0;
         transform: scale(0.8);
@@ -2389,7 +2391,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateBuyBP_lightAttention_6f {
+@keyframes StateBuyBP_lightAttention_fc852 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -2400,7 +2402,7 @@
         transform: scale(1.35);
     }
 }
-@keyframes StateBuyBP_lightAttentionSmall_e3 {
+@keyframes StateBuyBP_lightAttentionSmall_deb75 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -2411,7 +2413,7 @@
         transform: scale(1.1);
     }
 }
-@keyframes StateBuyBP_lightChapterNotChosen_a6 {
+@keyframes StateBuyBP_lightChapterNotChosen_b21f8 {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -2432,7 +2434,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateBuyBP_lightChapterNotChosenSmall_13 {
+@keyframes StateBuyBP_lightChapterNotChosenSmall_a5e45 {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -2453,23 +2455,23 @@
         transform: scale(1);
     }
 }
-.StateBuyBP_base_7e {
+.StateBuyBP_base_bf9d7 {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
     position: relative;
 }
-.StateBuyBP_flag_30 {
-    animation-name: StateBuyBP_flagBuyBPIn_cc;
+.StateBuyBP_flag_eb8b8 {
+    animation-name: StateBuyBP_flagBuyBPIn_d787e;
     animation-duration: 1.3s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateBuyBP_emblem_26 {
-    animation-name: StateBuyBP_emblemBuyBP_13;
+.StateBuyBP_emblem_a6765 {
+    animation-name: StateBuyBP_emblemBuyBP_d9b36;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.44, 0.05, 0.55, 0.95);
@@ -2477,7 +2479,7 @@
     animation-iteration-count: 1;
 }
 
-@keyframes StateChapterNotChosen_fadeInWithScale_b1 {
+@keyframes StateChapterNotChosen_fadeInWithScale_be190 {
     0% {
         opacity: 0;
         transform: scaleY(0.75);
@@ -2493,7 +2495,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateChapterNotChosen_slideUp_10 {
+@keyframes StateChapterNotChosen_slideUp_f7ce2 {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -2509,7 +2511,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateChapterNotChosen_wrapperHover_0f {
+@keyframes StateChapterNotChosen_wrapperHover_e276f {
     from {
         filter: brightness(1) contrast(1);
     }
@@ -2518,7 +2520,7 @@
         filter: brightness(1.35) contrast(0.75);
     }
 }
-@keyframes StateChapterNotChosen_wrapperOut_32 {
+@keyframes StateChapterNotChosen_wrapperOut_f8ec1 {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -2527,7 +2529,7 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateChapterNotChosen_flagHover_67 {
+@keyframes StateChapterNotChosen_flagHover_f7948 {
     from {
         transform: scaleY(1);
     }
@@ -2536,7 +2538,7 @@
         transform: scaleY(1.05);
     }
 }
-@keyframes StateChapterNotChosen_emblemHover_41 {
+@keyframes StateChapterNotChosen_emblemHover_ca001 {
     from {
         margin-top: 4rem;
     }
@@ -2545,7 +2547,7 @@
         margin-top: 9rem;
     }
 }
-@keyframes StateChapterNotChosen_logoIconHover_8d {
+@keyframes StateChapterNotChosen_logoIconHover_b9c2f {
     from {
         bottom: 25rem;
     }
@@ -2554,7 +2556,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateChapterNotChosen_logoIconHoverSmall_15 {
+@keyframes StateChapterNotChosen_logoIconHoverSmall_a8920 {
     from {
         bottom: 20rem;
     }
@@ -2563,7 +2565,7 @@
         bottom: 15rem;
     }
 }
-@keyframes StateChapterNotChosen_logoSmallX2IconHover_9e {
+@keyframes StateChapterNotChosen_logoSmallX2IconHover_f56f4 {
     from {
         bottom: -10rem;
     }
@@ -2572,7 +2574,7 @@
         bottom: -15rem;
     }
 }
-@keyframes StateChapterNotChosen_freePointsHover_5a {
+@keyframes StateChapterNotChosen_freePointsHover_ee06d {
     from {
         bottom: 30rem;
     }
@@ -2581,7 +2583,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateChapterNotChosen_freePointsSmallX2Hover_85 {
+@keyframes StateChapterNotChosen_freePointsSmallX2Hover_d3ba2 {
     from {
         bottom: -5rem;
     }
@@ -2590,7 +2592,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateChapterNotChosen_flagOut_05 {
+@keyframes StateChapterNotChosen_flagOut_b17bf {
     from {
         transform: scaleY(1.05);
     }
@@ -2599,7 +2601,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateChapterNotChosen_emblemOut_b2 {
+@keyframes StateChapterNotChosen_emblemOut_f5794 {
     from {
         margin-top: 9rem;
     }
@@ -2608,7 +2610,7 @@
         margin-top: 4rem;
     }
 }
-@keyframes StateChapterNotChosen_freePointsOut_36 {
+@keyframes StateChapterNotChosen_freePointsOut_bece2 {
     from {
         bottom: 25rem;
     }
@@ -2617,7 +2619,7 @@
         bottom: 30rem;
     }
 }
-@keyframes StateChapterNotChosen_freePointsSmallX2Out_b5 {
+@keyframes StateChapterNotChosen_freePointsSmallX2Out_d0bed {
     from {
         bottom: -10rem;
     }
@@ -2626,7 +2628,7 @@
         bottom: -5rem;
     }
 }
-@keyframes StateChapterNotChosen_logoIconOut_4f {
+@keyframes StateChapterNotChosen_logoIconOut_cf569 {
     from {
         bottom: 20rem;
     }
@@ -2635,7 +2637,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateChapterNotChosen_logoIconOutSmall_18 {
+@keyframes StateChapterNotChosen_logoIconOutSmall_b74e0 {
     from {
         bottom: 15rem;
     }
@@ -2644,7 +2646,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateChapterNotChosen_logoSmallX2IconOut_b2 {
+@keyframes StateChapterNotChosen_logoSmallX2IconOut_c32c8 {
     from {
         bottom: -15rem;
     }
@@ -2653,7 +2655,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateChapterNotChosen_emblemLevelUp_08 {
+@keyframes StateChapterNotChosen_emblemLevelUp_d69cd {
     0% {
         filter: brightness(1) contrast(1);
         transform: translateY(0);
@@ -2672,7 +2674,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateChapterNotChosen_emblemAttention_73 {
+@keyframes StateChapterNotChosen_emblemAttention_e7c28 {
     0% {
         filter: brightness(1.5);
     }
@@ -2681,7 +2683,7 @@
         filter: brightness(1);
     }
 }
-@keyframes StateChapterNotChosen_emblemCopyAttention_e1 {
+@keyframes StateChapterNotChosen_emblemCopyAttention_ad279 {
     0% {
         opacity: 1;
         transform: scale(1, 1);
@@ -2692,7 +2694,7 @@
         transform: scale(1.3, 1.3);
     }
 }
-@keyframes StateChapterNotChosen_flagLevelUp_f9 {
+@keyframes StateChapterNotChosen_flagLevelUp_b6420 {
     0% {
         filter: brightness(1) contrast(1);
         transform: scaleY(1);
@@ -2708,7 +2710,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateChapterNotChosen_flagLevelUpPosOut_ff {
+@keyframes StateChapterNotChosen_flagLevelUpPosOut_d11d0 {
     from {
         transform: scaleY(1.05);
     }
@@ -2717,7 +2719,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateChapterNotChosen_flagLevelUpLightOut_05 {
+@keyframes StateChapterNotChosen_flagLevelUpLightOut_d8af1 {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -2726,12 +2728,12 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateChapterNotChosen_flareLevelUp_e1 {
+@keyframes StateChapterNotChosen_flareLevelUp_e96d7 {
     0% {
         opacity: 1;
     }
 }
-@keyframes StateChapterNotChosen_flagBuyBPIn_98 {
+@keyframes StateChapterNotChosen_flagBuyBPIn_de5f0 {
     0% {
         transform: scaleY(1);
     }
@@ -2748,7 +2750,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateChapterNotChosen_flagSwitchChapter_79 {
+@keyframes StateChapterNotChosen_flagSwitchChapter_bffb1 {
     0% {
         opacity: 1;
         transform: scaleY(1);
@@ -2768,7 +2770,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateChapterNotChosen_emblemBuyBP_cc {
+@keyframes StateChapterNotChosen_emblemBuyBP_b8cd4 {
     0% {
         opacity: 1;
         transform: translateY(0);
@@ -2799,7 +2801,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateChapterNotChosen_lightBuyBP_a8 {
+@keyframes StateChapterNotChosen_lightBuyBP_cf52f {
     0% {
         opacity: 0;
         transform: scale(0.8);
@@ -2820,7 +2822,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateChapterNotChosen_lightAttention_d9 {
+@keyframes StateChapterNotChosen_lightAttention_b2256 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -2831,7 +2833,7 @@
         transform: scale(1.35);
     }
 }
-@keyframes StateChapterNotChosen_lightAttentionSmall_23 {
+@keyframes StateChapterNotChosen_lightAttentionSmall_e1322 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -2842,7 +2844,7 @@
         transform: scale(1.1);
     }
 }
-@keyframes StateChapterNotChosen_lightChapterNotChosen_3a {
+@keyframes StateChapterNotChosen_lightChapterNotChosen_f3f35 {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -2863,7 +2865,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateChapterNotChosen_lightChapterNotChosenSmall_3f {
+@keyframes StateChapterNotChosen_lightChapterNotChosenSmall_e6218 {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -2884,18 +2886,18 @@
         transform: scale(1);
     }
 }
-.StateChapterNotChosen_base_ff {
+.StateChapterNotChosen_base_b3549 {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
     position: relative;
 }
-.StateChapterNotChosen_flag_e3 {
+.StateChapterNotChosen_flag_c8c83 {
     display: none;
 }
-.StateChapterNotChosen_emblem_38 {
-    animation-name: StateChapterNotChosen_emblemBuyBP_cc;
+.StateChapterNotChosen_emblem_e5e76 {
+    animation-name: StateChapterNotChosen_emblemBuyBP_b8cd4;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.44, 0.05, 0.55, 0.95);
@@ -2903,7 +2905,7 @@
     animation-iteration-count: 1;
 }
 
-@keyframes StateComplete_fadeInWithScale_31 {
+@keyframes StateComplete_fadeInWithScale_df744 {
     0% {
         opacity: 0;
         transform: scaleY(0.75);
@@ -2919,7 +2921,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateComplete_slideUp_e6 {
+@keyframes StateComplete_slideUp_a378f {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -2935,7 +2937,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateComplete_wrapperHover_67 {
+@keyframes StateComplete_wrapperHover_aff3b {
     from {
         filter: brightness(1) contrast(1);
     }
@@ -2944,7 +2946,7 @@
         filter: brightness(1.35) contrast(0.75);
     }
 }
-@keyframes StateComplete_wrapperOut_4b {
+@keyframes StateComplete_wrapperOut_ee3f9 {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -2953,7 +2955,7 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateComplete_flagHover_c2 {
+@keyframes StateComplete_flagHover_fe560 {
     from {
         transform: scaleY(1);
     }
@@ -2962,7 +2964,7 @@
         transform: scaleY(1.05);
     }
 }
-@keyframes StateComplete_emblemHover_c8 {
+@keyframes StateComplete_emblemHover_af961 {
     from {
         margin-top: 4rem;
     }
@@ -2971,7 +2973,7 @@
         margin-top: 9rem;
     }
 }
-@keyframes StateComplete_logoIconHover_63 {
+@keyframes StateComplete_logoIconHover_c7874 {
     from {
         bottom: 25rem;
     }
@@ -2980,7 +2982,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateComplete_logoIconHoverSmall_a6 {
+@keyframes StateComplete_logoIconHoverSmall_b250b {
     from {
         bottom: 20rem;
     }
@@ -2989,7 +2991,7 @@
         bottom: 15rem;
     }
 }
-@keyframes StateComplete_logoSmallX2IconHover_0d {
+@keyframes StateComplete_logoSmallX2IconHover_d6b6b {
     from {
         bottom: -10rem;
     }
@@ -2998,7 +3000,7 @@
         bottom: -15rem;
     }
 }
-@keyframes StateComplete_freePointsHover_b7 {
+@keyframes StateComplete_freePointsHover_b2186 {
     from {
         bottom: 30rem;
     }
@@ -3007,7 +3009,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateComplete_freePointsSmallX2Hover_52 {
+@keyframes StateComplete_freePointsSmallX2Hover_dbcf4 {
     from {
         bottom: -5rem;
     }
@@ -3016,7 +3018,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateComplete_flagOut_f0 {
+@keyframes StateComplete_flagOut_f66e6 {
     from {
         transform: scaleY(1.05);
     }
@@ -3025,7 +3027,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateComplete_emblemOut_7f {
+@keyframes StateComplete_emblemOut_dcd46 {
     from {
         margin-top: 9rem;
     }
@@ -3034,7 +3036,7 @@
         margin-top: 4rem;
     }
 }
-@keyframes StateComplete_freePointsOut_b5 {
+@keyframes StateComplete_freePointsOut_efc61 {
     from {
         bottom: 25rem;
     }
@@ -3043,7 +3045,7 @@
         bottom: 30rem;
     }
 }
-@keyframes StateComplete_freePointsSmallX2Out_7c {
+@keyframes StateComplete_freePointsSmallX2Out_d0cb2 {
     from {
         bottom: -10rem;
     }
@@ -3052,7 +3054,7 @@
         bottom: -5rem;
     }
 }
-@keyframes StateComplete_logoIconOut_f1 {
+@keyframes StateComplete_logoIconOut_cfac7 {
     from {
         bottom: 20rem;
     }
@@ -3061,7 +3063,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateComplete_logoIconOutSmall_5d {
+@keyframes StateComplete_logoIconOutSmall_e99ab {
     from {
         bottom: 15rem;
     }
@@ -3070,7 +3072,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateComplete_logoSmallX2IconOut_e0 {
+@keyframes StateComplete_logoSmallX2IconOut_bf48a {
     from {
         bottom: -15rem;
     }
@@ -3079,7 +3081,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateComplete_emblemLevelUp_86 {
+@keyframes StateComplete_emblemLevelUp_ad051 {
     0% {
         filter: brightness(1) contrast(1);
         transform: translateY(0);
@@ -3098,7 +3100,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateComplete_emblemAttention_31 {
+@keyframes StateComplete_emblemAttention_caa94 {
     0% {
         filter: brightness(1.5);
     }
@@ -3107,7 +3109,7 @@
         filter: brightness(1);
     }
 }
-@keyframes StateComplete_emblemCopyAttention_7e {
+@keyframes StateComplete_emblemCopyAttention_d75b3 {
     0% {
         opacity: 1;
         transform: scale(1, 1);
@@ -3118,7 +3120,7 @@
         transform: scale(1.3, 1.3);
     }
 }
-@keyframes StateComplete_flagLevelUp_f2 {
+@keyframes StateComplete_flagLevelUp_b23c9 {
     0% {
         filter: brightness(1) contrast(1);
         transform: scaleY(1);
@@ -3134,7 +3136,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateComplete_flagLevelUpPosOut_5b {
+@keyframes StateComplete_flagLevelUpPosOut_bd97c {
     from {
         transform: scaleY(1.05);
     }
@@ -3143,7 +3145,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateComplete_flagLevelUpLightOut_04 {
+@keyframes StateComplete_flagLevelUpLightOut_ec38a {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -3152,12 +3154,12 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateComplete_flareLevelUp_e2 {
+@keyframes StateComplete_flareLevelUp_fa920 {
     0% {
         opacity: 1;
     }
 }
-@keyframes StateComplete_flagBuyBPIn_2e {
+@keyframes StateComplete_flagBuyBPIn_bd3f8 {
     0% {
         transform: scaleY(1);
     }
@@ -3174,7 +3176,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateComplete_flagSwitchChapter_c3 {
+@keyframes StateComplete_flagSwitchChapter_c5421 {
     0% {
         opacity: 1;
         transform: scaleY(1);
@@ -3194,7 +3196,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateComplete_emblemBuyBP_50 {
+@keyframes StateComplete_emblemBuyBP_db507 {
     0% {
         opacity: 1;
         transform: translateY(0);
@@ -3225,7 +3227,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateComplete_lightBuyBP_86 {
+@keyframes StateComplete_lightBuyBP_badad {
     0% {
         opacity: 0;
         transform: scale(0.8);
@@ -3246,7 +3248,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateComplete_lightAttention_8e {
+@keyframes StateComplete_lightAttention_b9477 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -3257,7 +3259,7 @@
         transform: scale(1.35);
     }
 }
-@keyframes StateComplete_lightAttentionSmall_03 {
+@keyframes StateComplete_lightAttentionSmall_edece {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -3268,7 +3270,7 @@
         transform: scale(1.1);
     }
 }
-@keyframes StateComplete_lightChapterNotChosen_49 {
+@keyframes StateComplete_lightChapterNotChosen_cb5e7 {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -3289,7 +3291,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateComplete_lightChapterNotChosenSmall_d6 {
+@keyframes StateComplete_lightChapterNotChosenSmall_e1514 {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -3310,15 +3312,15 @@
         transform: scale(1);
     }
 }
-.StateComplete_base_c7 {
+.StateComplete_base_e1318 {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
     position: relative;
 }
-.StateComplete_flag_4a {
-    animation-name: StateComplete_flagLevelUp_f2;
+.StateComplete_flag_b8e45 {
+    animation-name: StateComplete_flagLevelUp_b23c9;
     animation-duration: 0.9s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
@@ -3326,8 +3328,8 @@
     animation-iteration-count: 1;
     top: -5rem;
 }
-.StateComplete_emblem_0e {
-    animation-name: StateComplete_emblemLevelUp_86;
+.StateComplete_emblem_a9666 {
+    animation-name: StateComplete_emblemLevelUp_ad051;
     animation-duration: 0.9s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
@@ -3335,7 +3337,7 @@
     animation-iteration-count: 1;
 }
 
-@keyframes StateLevelUp_fadeInWithScale_0b {
+@keyframes StateLevelUp_fadeInWithScale_a17aa {
     0% {
         opacity: 0;
         transform: scaleY(0.75);
@@ -3351,7 +3353,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateLevelUp_slideUp_aa {
+@keyframes StateLevelUp_slideUp_cfb65 {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -3367,7 +3369,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateLevelUp_wrapperHover_ca {
+@keyframes StateLevelUp_wrapperHover_ef036 {
     from {
         filter: brightness(1) contrast(1);
     }
@@ -3376,7 +3378,7 @@
         filter: brightness(1.35) contrast(0.75);
     }
 }
-@keyframes StateLevelUp_wrapperOut_03 {
+@keyframes StateLevelUp_wrapperOut_af178 {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -3385,7 +3387,7 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateLevelUp_flagHover_bf {
+@keyframes StateLevelUp_flagHover_a084f {
     from {
         transform: scaleY(1);
     }
@@ -3394,7 +3396,7 @@
         transform: scaleY(1.05);
     }
 }
-@keyframes StateLevelUp_emblemHover_b4 {
+@keyframes StateLevelUp_emblemHover_d4653 {
     from {
         margin-top: 4rem;
     }
@@ -3403,7 +3405,7 @@
         margin-top: 9rem;
     }
 }
-@keyframes StateLevelUp_logoIconHover_07 {
+@keyframes StateLevelUp_logoIconHover_b552e {
     from {
         bottom: 25rem;
     }
@@ -3412,7 +3414,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateLevelUp_logoIconHoverSmall_21 {
+@keyframes StateLevelUp_logoIconHoverSmall_c8d3a {
     from {
         bottom: 20rem;
     }
@@ -3421,7 +3423,7 @@
         bottom: 15rem;
     }
 }
-@keyframes StateLevelUp_logoSmallX2IconHover_55 {
+@keyframes StateLevelUp_logoSmallX2IconHover_d52da {
     from {
         bottom: -10rem;
     }
@@ -3430,7 +3432,7 @@
         bottom: -15rem;
     }
 }
-@keyframes StateLevelUp_freePointsHover_c9 {
+@keyframes StateLevelUp_freePointsHover_c059b {
     from {
         bottom: 30rem;
     }
@@ -3439,7 +3441,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateLevelUp_freePointsSmallX2Hover_de {
+@keyframes StateLevelUp_freePointsSmallX2Hover_e00c6 {
     from {
         bottom: -5rem;
     }
@@ -3448,7 +3450,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateLevelUp_flagOut_5e {
+@keyframes StateLevelUp_flagOut_f814c {
     from {
         transform: scaleY(1.05);
     }
@@ -3457,7 +3459,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateLevelUp_emblemOut_a4 {
+@keyframes StateLevelUp_emblemOut_c1673 {
     from {
         margin-top: 9rem;
     }
@@ -3466,7 +3468,7 @@
         margin-top: 4rem;
     }
 }
-@keyframes StateLevelUp_freePointsOut_70 {
+@keyframes StateLevelUp_freePointsOut_f76fa {
     from {
         bottom: 25rem;
     }
@@ -3475,7 +3477,7 @@
         bottom: 30rem;
     }
 }
-@keyframes StateLevelUp_freePointsSmallX2Out_12 {
+@keyframes StateLevelUp_freePointsSmallX2Out_b49d4 {
     from {
         bottom: -10rem;
     }
@@ -3484,7 +3486,7 @@
         bottom: -5rem;
     }
 }
-@keyframes StateLevelUp_logoIconOut_44 {
+@keyframes StateLevelUp_logoIconOut_a2531 {
     from {
         bottom: 20rem;
     }
@@ -3493,7 +3495,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateLevelUp_logoIconOutSmall_db {
+@keyframes StateLevelUp_logoIconOutSmall_c1e11 {
     from {
         bottom: 15rem;
     }
@@ -3502,7 +3504,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateLevelUp_logoSmallX2IconOut_c9 {
+@keyframes StateLevelUp_logoSmallX2IconOut_b24fd {
     from {
         bottom: -15rem;
     }
@@ -3511,7 +3513,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateLevelUp_emblemLevelUp_f4 {
+@keyframes StateLevelUp_emblemLevelUp_cbbe9 {
     0% {
         filter: brightness(1) contrast(1);
         transform: translateY(0);
@@ -3530,7 +3532,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateLevelUp_emblemAttention_1a {
+@keyframes StateLevelUp_emblemAttention_f4fb2 {
     0% {
         filter: brightness(1.5);
     }
@@ -3539,7 +3541,7 @@
         filter: brightness(1);
     }
 }
-@keyframes StateLevelUp_emblemCopyAttention_0e {
+@keyframes StateLevelUp_emblemCopyAttention_c1388 {
     0% {
         opacity: 1;
         transform: scale(1, 1);
@@ -3550,7 +3552,7 @@
         transform: scale(1.3, 1.3);
     }
 }
-@keyframes StateLevelUp_flagLevelUp_fa {
+@keyframes StateLevelUp_flagLevelUp_a8cfc {
     0% {
         filter: brightness(1) contrast(1);
         transform: scaleY(1);
@@ -3566,7 +3568,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateLevelUp_flagLevelUpPosOut_c8 {
+@keyframes StateLevelUp_flagLevelUpPosOut_a070d {
     from {
         transform: scaleY(1.05);
     }
@@ -3575,7 +3577,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateLevelUp_flagLevelUpLightOut_25 {
+@keyframes StateLevelUp_flagLevelUpLightOut_b8875 {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -3584,12 +3586,12 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateLevelUp_flareLevelUp_87 {
+@keyframes StateLevelUp_flareLevelUp_ed6a1 {
     0% {
         opacity: 1;
     }
 }
-@keyframes StateLevelUp_flagBuyBPIn_3b {
+@keyframes StateLevelUp_flagBuyBPIn_ca4ac {
     0% {
         transform: scaleY(1);
     }
@@ -3606,7 +3608,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateLevelUp_flagSwitchChapter_61 {
+@keyframes StateLevelUp_flagSwitchChapter_cf964 {
     0% {
         opacity: 1;
         transform: scaleY(1);
@@ -3626,7 +3628,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateLevelUp_emblemBuyBP_b4 {
+@keyframes StateLevelUp_emblemBuyBP_f9f8f {
     0% {
         opacity: 1;
         transform: translateY(0);
@@ -3657,7 +3659,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateLevelUp_lightBuyBP_86 {
+@keyframes StateLevelUp_lightBuyBP_d8d3e {
     0% {
         opacity: 0;
         transform: scale(0.8);
@@ -3678,7 +3680,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateLevelUp_lightAttention_64 {
+@keyframes StateLevelUp_lightAttention_ea558 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -3689,7 +3691,7 @@
         transform: scale(1.35);
     }
 }
-@keyframes StateLevelUp_lightAttentionSmall_d2 {
+@keyframes StateLevelUp_lightAttentionSmall_b9866 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -3700,7 +3702,7 @@
         transform: scale(1.1);
     }
 }
-@keyframes StateLevelUp_lightChapterNotChosen_b5 {
+@keyframes StateLevelUp_lightChapterNotChosen_f498a {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -3721,7 +3723,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateLevelUp_lightChapterNotChosenSmall_08 {
+@keyframes StateLevelUp_lightChapterNotChosenSmall_c0e3b {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -3742,23 +3744,23 @@
         transform: scale(1);
     }
 }
-.StateLevelUp_base_c1 {
+.StateLevelUp_base_c5441 {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
     position: relative;
 }
-.StateLevelUp_flag_8f {
-    animation-name: StateLevelUp_flagLevelUp_fa;
+.StateLevelUp_flag_c5899 {
+    animation-name: StateLevelUp_flagLevelUp_a8cfc;
     animation-duration: 0.9s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0.3s;
     animation-iteration-count: 1;
 }
-.StateLevelUp_emblem_fe {
-    animation-name: StateLevelUp_emblemLevelUp_f4;
+.StateLevelUp_emblem_b4771 {
+    animation-name: StateLevelUp_emblemLevelUp_cbbe9;
     animation-duration: 0.9s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
@@ -3766,7 +3768,7 @@
     animation-iteration-count: 1;
 }
 
-@keyframes StateMouseOut_fadeInWithScale_6c {
+@keyframes StateMouseOut_fadeInWithScale_fffa0 {
     0% {
         opacity: 0;
         transform: scaleY(0.75);
@@ -3782,7 +3784,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateMouseOut_slideUp_fd {
+@keyframes StateMouseOut_slideUp_df083 {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -3798,7 +3800,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateMouseOut_wrapperHover_03 {
+@keyframes StateMouseOut_wrapperHover_f2a7a {
     from {
         filter: brightness(1) contrast(1);
     }
@@ -3807,7 +3809,7 @@
         filter: brightness(1.35) contrast(0.75);
     }
 }
-@keyframes StateMouseOut_wrapperOut_90 {
+@keyframes StateMouseOut_wrapperOut_e1575 {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -3816,7 +3818,7 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateMouseOut_flagHover_e2 {
+@keyframes StateMouseOut_flagHover_e6428 {
     from {
         transform: scaleY(1);
     }
@@ -3825,7 +3827,7 @@
         transform: scaleY(1.05);
     }
 }
-@keyframes StateMouseOut_emblemHover_72 {
+@keyframes StateMouseOut_emblemHover_fd426 {
     from {
         margin-top: 4rem;
     }
@@ -3834,7 +3836,7 @@
         margin-top: 9rem;
     }
 }
-@keyframes StateMouseOut_logoIconHover_a6 {
+@keyframes StateMouseOut_logoIconHover_b7a58 {
     from {
         bottom: 25rem;
     }
@@ -3843,7 +3845,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateMouseOut_logoIconHoverSmall_c2 {
+@keyframes StateMouseOut_logoIconHoverSmall_bcfb5 {
     from {
         bottom: 20rem;
     }
@@ -3852,7 +3854,7 @@
         bottom: 15rem;
     }
 }
-@keyframes StateMouseOut_logoSmallX2IconHover_7c {
+@keyframes StateMouseOut_logoSmallX2IconHover_a3f0c {
     from {
         bottom: -10rem;
     }
@@ -3861,7 +3863,7 @@
         bottom: -15rem;
     }
 }
-@keyframes StateMouseOut_freePointsHover_e1 {
+@keyframes StateMouseOut_freePointsHover_fc019 {
     from {
         bottom: 30rem;
     }
@@ -3870,7 +3872,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateMouseOut_freePointsSmallX2Hover_a3 {
+@keyframes StateMouseOut_freePointsSmallX2Hover_eaa17 {
     from {
         bottom: -5rem;
     }
@@ -3879,7 +3881,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateMouseOut_flagOut_f8 {
+@keyframes StateMouseOut_flagOut_f3bc2 {
     from {
         transform: scaleY(1.05);
     }
@@ -3888,7 +3890,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateMouseOut_emblemOut_ce {
+@keyframes StateMouseOut_emblemOut_a112b {
     from {
         margin-top: 9rem;
     }
@@ -3897,7 +3899,7 @@
         margin-top: 4rem;
     }
 }
-@keyframes StateMouseOut_freePointsOut_d0 {
+@keyframes StateMouseOut_freePointsOut_e054e {
     from {
         bottom: 25rem;
     }
@@ -3906,7 +3908,7 @@
         bottom: 30rem;
     }
 }
-@keyframes StateMouseOut_freePointsSmallX2Out_6c {
+@keyframes StateMouseOut_freePointsSmallX2Out_f1c8b {
     from {
         bottom: -10rem;
     }
@@ -3915,7 +3917,7 @@
         bottom: -5rem;
     }
 }
-@keyframes StateMouseOut_logoIconOut_cd {
+@keyframes StateMouseOut_logoIconOut_b7ffa {
     from {
         bottom: 20rem;
     }
@@ -3924,7 +3926,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateMouseOut_logoIconOutSmall_5a {
+@keyframes StateMouseOut_logoIconOutSmall_a9ef4 {
     from {
         bottom: 15rem;
     }
@@ -3933,7 +3935,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateMouseOut_logoSmallX2IconOut_d7 {
+@keyframes StateMouseOut_logoSmallX2IconOut_b2bee {
     from {
         bottom: -15rem;
     }
@@ -3942,7 +3944,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateMouseOut_emblemLevelUp_be {
+@keyframes StateMouseOut_emblemLevelUp_e821c {
     0% {
         filter: brightness(1) contrast(1);
         transform: translateY(0);
@@ -3961,7 +3963,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateMouseOut_emblemAttention_7e {
+@keyframes StateMouseOut_emblemAttention_d8d80 {
     0% {
         filter: brightness(1.5);
     }
@@ -3970,7 +3972,7 @@
         filter: brightness(1);
     }
 }
-@keyframes StateMouseOut_emblemCopyAttention_b4 {
+@keyframes StateMouseOut_emblemCopyAttention_ebe69 {
     0% {
         opacity: 1;
         transform: scale(1, 1);
@@ -3981,7 +3983,7 @@
         transform: scale(1.3, 1.3);
     }
 }
-@keyframes StateMouseOut_flagLevelUp_44 {
+@keyframes StateMouseOut_flagLevelUp_fdb4f {
     0% {
         filter: brightness(1) contrast(1);
         transform: scaleY(1);
@@ -3997,7 +3999,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateMouseOut_flagLevelUpPosOut_a4 {
+@keyframes StateMouseOut_flagLevelUpPosOut_f2c4b {
     from {
         transform: scaleY(1.05);
     }
@@ -4006,7 +4008,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateMouseOut_flagLevelUpLightOut_d1 {
+@keyframes StateMouseOut_flagLevelUpLightOut_f9ff2 {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -4015,12 +4017,12 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateMouseOut_flareLevelUp_79 {
+@keyframes StateMouseOut_flareLevelUp_a7f63 {
     0% {
         opacity: 1;
     }
 }
-@keyframes StateMouseOut_flagBuyBPIn_26 {
+@keyframes StateMouseOut_flagBuyBPIn_c0bb0 {
     0% {
         transform: scaleY(1);
     }
@@ -4037,7 +4039,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateMouseOut_flagSwitchChapter_e0 {
+@keyframes StateMouseOut_flagSwitchChapter_b7783 {
     0% {
         opacity: 1;
         transform: scaleY(1);
@@ -4057,7 +4059,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateMouseOut_emblemBuyBP_71 {
+@keyframes StateMouseOut_emblemBuyBP_d2bfe {
     0% {
         opacity: 1;
         transform: translateY(0);
@@ -4088,7 +4090,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateMouseOut_lightBuyBP_97 {
+@keyframes StateMouseOut_lightBuyBP_add2e {
     0% {
         opacity: 0;
         transform: scale(0.8);
@@ -4109,7 +4111,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateMouseOut_lightAttention_d1 {
+@keyframes StateMouseOut_lightAttention_c1491 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -4120,7 +4122,7 @@
         transform: scale(1.35);
     }
 }
-@keyframes StateMouseOut_lightAttentionSmall_d2 {
+@keyframes StateMouseOut_lightAttentionSmall_e6427 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -4131,7 +4133,7 @@
         transform: scale(1.1);
     }
 }
-@keyframes StateMouseOut_lightChapterNotChosen_b4 {
+@keyframes StateMouseOut_lightChapterNotChosen_d0a99 {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -4152,7 +4154,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateMouseOut_lightChapterNotChosenSmall_a7 {
+@keyframes StateMouseOut_lightChapterNotChosenSmall_cda09 {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -4173,69 +4175,69 @@
         transform: scale(1);
     }
 }
-.StateMouseOut_base_63 {
+.StateMouseOut_base_f2e9a {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
     position: relative;
-    animation-name: StateMouseOut_wrapperOut_90;
+    animation-name: StateMouseOut_wrapperOut_e1575;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateMouseOut_flag_b0 {
-    animation-name: StateMouseOut_flagOut_f8;
+.StateMouseOut_flag_aa571 {
+    animation-name: StateMouseOut_flagOut_f3bc2;
     animation-duration: 0.2s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateMouseOut_emblem_cf {
-    animation-name: StateMouseOut_emblemOut_ce;
+.StateMouseOut_emblem_f461b {
+    animation-name: StateMouseOut_emblemOut_a112b;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateMouseOut_chapterLogoIcon_55 {
-    animation-name: StateMouseOut_logoIconOutSmall_5a;
+.StateMouseOut_chapterLogoIcon_f47b8 {
+    animation-name: StateMouseOut_logoIconOutSmall_a9ef4;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateMouseOut_base__medium_89 .StateMouseOut_chapterLogoIcon_55 {
-    animation-name: StateMouseOut_logoIconOut_cd;
+.StateMouseOut_base__medium_f7f08 .StateMouseOut_chapterLogoIcon_f47b8 {
+    animation-name: StateMouseOut_logoIconOut_b7ffa;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateMouseOut_base__smallX2_e5 .StateMouseOut_chapterLogoIcon_55 {
-    animation-name: StateMouseOut_logoSmallX2IconOut_d7;
+.StateMouseOut_base__smallX2_ae6d6 .StateMouseOut_chapterLogoIcon_f47b8 {
+    animation-name: StateMouseOut_logoSmallX2IconOut_b2bee;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateMouseOut_freePoints_fb {
-    animation-name: StateMouseOut_freePointsOut_d0;
+.StateMouseOut_freePoints_d9567 {
+    animation-name: StateMouseOut_freePointsOut_e054e;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateMouseOut_base__smallX2_e5 .StateMouseOut_freePoints_fb {
-    animation-name: StateMouseOut_freePointsSmallX2Out_6c;
+.StateMouseOut_base__smallX2_ae6d6 .StateMouseOut_freePoints_d9567 {
+    animation-name: StateMouseOut_freePointsSmallX2Out_f1c8b;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
@@ -4243,7 +4245,7 @@
     animation-iteration-count: 1;
 }
 
-@keyframes StateMouseOver_fadeInWithScale_65 {
+@keyframes StateMouseOver_fadeInWithScale_d9bb3 {
     0% {
         opacity: 0;
         transform: scaleY(0.75);
@@ -4259,7 +4261,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateMouseOver_slideUp_b1 {
+@keyframes StateMouseOver_slideUp_b8878 {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -4275,7 +4277,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateMouseOver_wrapperHover_3b {
+@keyframes StateMouseOver_wrapperHover_f72d1 {
     from {
         filter: brightness(1) contrast(1);
     }
@@ -4284,7 +4286,7 @@
         filter: brightness(1.35) contrast(0.75);
     }
 }
-@keyframes StateMouseOver_wrapperOut_ef {
+@keyframes StateMouseOver_wrapperOut_aafaf {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -4293,7 +4295,7 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateMouseOver_flagHover_8e {
+@keyframes StateMouseOver_flagHover_a25db {
     from {
         transform: scaleY(1);
     }
@@ -4302,7 +4304,7 @@
         transform: scaleY(1.05);
     }
 }
-@keyframes StateMouseOver_emblemHover_a7 {
+@keyframes StateMouseOver_emblemHover_aef8b {
     from {
         margin-top: 4rem;
     }
@@ -4311,7 +4313,7 @@
         margin-top: 9rem;
     }
 }
-@keyframes StateMouseOver_logoIconHover_a1 {
+@keyframes StateMouseOver_logoIconHover_d035a {
     from {
         bottom: 25rem;
     }
@@ -4320,7 +4322,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateMouseOver_logoIconHoverSmall_2c {
+@keyframes StateMouseOver_logoIconHoverSmall_cc6d4 {
     from {
         bottom: 20rem;
     }
@@ -4329,7 +4331,7 @@
         bottom: 15rem;
     }
 }
-@keyframes StateMouseOver_logoSmallX2IconHover_f6 {
+@keyframes StateMouseOver_logoSmallX2IconHover_d92dc {
     from {
         bottom: -10rem;
     }
@@ -4338,7 +4340,7 @@
         bottom: -15rem;
     }
 }
-@keyframes StateMouseOver_freePointsHover_64 {
+@keyframes StateMouseOver_freePointsHover_b648f {
     from {
         bottom: 30rem;
     }
@@ -4347,7 +4349,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateMouseOver_freePointsSmallX2Hover_a0 {
+@keyframes StateMouseOver_freePointsSmallX2Hover_d2d96 {
     from {
         bottom: -5rem;
     }
@@ -4356,7 +4358,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateMouseOver_flagOut_2d {
+@keyframes StateMouseOver_flagOut_c34ef {
     from {
         transform: scaleY(1.05);
     }
@@ -4365,7 +4367,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateMouseOver_emblemOut_9d {
+@keyframes StateMouseOver_emblemOut_cb091 {
     from {
         margin-top: 9rem;
     }
@@ -4374,7 +4376,7 @@
         margin-top: 4rem;
     }
 }
-@keyframes StateMouseOver_freePointsOut_f2 {
+@keyframes StateMouseOver_freePointsOut_f5016 {
     from {
         bottom: 25rem;
     }
@@ -4383,7 +4385,7 @@
         bottom: 30rem;
     }
 }
-@keyframes StateMouseOver_freePointsSmallX2Out_60 {
+@keyframes StateMouseOver_freePointsSmallX2Out_f1798 {
     from {
         bottom: -10rem;
     }
@@ -4392,7 +4394,7 @@
         bottom: -5rem;
     }
 }
-@keyframes StateMouseOver_logoIconOut_b3 {
+@keyframes StateMouseOver_logoIconOut_bb352 {
     from {
         bottom: 20rem;
     }
@@ -4401,7 +4403,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateMouseOver_logoIconOutSmall_6a {
+@keyframes StateMouseOver_logoIconOutSmall_fd45d {
     from {
         bottom: 15rem;
     }
@@ -4410,7 +4412,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateMouseOver_logoSmallX2IconOut_f4 {
+@keyframes StateMouseOver_logoSmallX2IconOut_e784f {
     from {
         bottom: -15rem;
     }
@@ -4419,7 +4421,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateMouseOver_emblemLevelUp_cf {
+@keyframes StateMouseOver_emblemLevelUp_b63c1 {
     0% {
         filter: brightness(1) contrast(1);
         transform: translateY(0);
@@ -4438,7 +4440,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateMouseOver_emblemAttention_c6 {
+@keyframes StateMouseOver_emblemAttention_d1555 {
     0% {
         filter: brightness(1.5);
     }
@@ -4447,7 +4449,7 @@
         filter: brightness(1);
     }
 }
-@keyframes StateMouseOver_emblemCopyAttention_07 {
+@keyframes StateMouseOver_emblemCopyAttention_ed2fc {
     0% {
         opacity: 1;
         transform: scale(1, 1);
@@ -4458,7 +4460,7 @@
         transform: scale(1.3, 1.3);
     }
 }
-@keyframes StateMouseOver_flagLevelUp_2a {
+@keyframes StateMouseOver_flagLevelUp_e4111 {
     0% {
         filter: brightness(1) contrast(1);
         transform: scaleY(1);
@@ -4474,7 +4476,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateMouseOver_flagLevelUpPosOut_0d {
+@keyframes StateMouseOver_flagLevelUpPosOut_a5bf9 {
     from {
         transform: scaleY(1.05);
     }
@@ -4483,7 +4485,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateMouseOver_flagLevelUpLightOut_0b {
+@keyframes StateMouseOver_flagLevelUpLightOut_f307b {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -4492,12 +4494,12 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateMouseOver_flareLevelUp_d5 {
+@keyframes StateMouseOver_flareLevelUp_c0944 {
     0% {
         opacity: 1;
     }
 }
-@keyframes StateMouseOver_flagBuyBPIn_63 {
+@keyframes StateMouseOver_flagBuyBPIn_b0a2c {
     0% {
         transform: scaleY(1);
     }
@@ -4514,7 +4516,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateMouseOver_flagSwitchChapter_c9 {
+@keyframes StateMouseOver_flagSwitchChapter_fc70d {
     0% {
         opacity: 1;
         transform: scaleY(1);
@@ -4534,7 +4536,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateMouseOver_emblemBuyBP_de {
+@keyframes StateMouseOver_emblemBuyBP_f6f23 {
     0% {
         opacity: 1;
         transform: translateY(0);
@@ -4565,7 +4567,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateMouseOver_lightBuyBP_42 {
+@keyframes StateMouseOver_lightBuyBP_abff7 {
     0% {
         opacity: 0;
         transform: scale(0.8);
@@ -4586,7 +4588,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateMouseOver_lightAttention_5d {
+@keyframes StateMouseOver_lightAttention_b3413 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -4597,7 +4599,7 @@
         transform: scale(1.35);
     }
 }
-@keyframes StateMouseOver_lightAttentionSmall_8a {
+@keyframes StateMouseOver_lightAttentionSmall_a8e29 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -4608,7 +4610,7 @@
         transform: scale(1.1);
     }
 }
-@keyframes StateMouseOver_lightChapterNotChosen_b7 {
+@keyframes StateMouseOver_lightChapterNotChosen_a848d {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -4629,7 +4631,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateMouseOver_lightChapterNotChosenSmall_4e {
+@keyframes StateMouseOver_lightChapterNotChosenSmall_a82fd {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -4650,69 +4652,69 @@
         transform: scale(1);
     }
 }
-.StateMouseOver_base_95 {
+.StateMouseOver_base_ee1e7 {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
     position: relative;
-    animation-name: StateMouseOver_wrapperHover_3b;
+    animation-name: StateMouseOver_wrapperHover_f72d1;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateMouseOver_flag_34 {
-    animation-name: StateMouseOver_flagHover_8e;
+.StateMouseOver_flag_ec9a3 {
+    animation-name: StateMouseOver_flagHover_a25db;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateMouseOver_emblem_aa {
-    animation-name: StateMouseOver_emblemHover_a7;
+.StateMouseOver_emblem_de73d {
+    animation-name: StateMouseOver_emblemHover_aef8b;
     animation-duration: 0.01s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateMouseOver_chapterLogoIcon_a8 {
-    animation-name: StateMouseOver_logoIconHoverSmall_2c;
+.StateMouseOver_chapterLogoIcon_c6473 {
+    animation-name: StateMouseOver_logoIconHoverSmall_cc6d4;
     animation-duration: 0.2s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateMouseOver_base__medium_d1 .StateMouseOver_chapterLogoIcon_a8 {
-    animation-name: StateMouseOver_logoIconHover_a1;
+.StateMouseOver_base__medium_dd608 .StateMouseOver_chapterLogoIcon_c6473 {
+    animation-name: StateMouseOver_logoIconHover_d035a;
     animation-duration: 0.2s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateMouseOver_base__smallX2_b2 .StateMouseOver_chapterLogoIcon_a8 {
-    animation-name: StateMouseOver_logoSmallX2IconHover_f6;
+.StateMouseOver_base__smallX2_e537f .StateMouseOver_chapterLogoIcon_c6473 {
+    animation-name: StateMouseOver_logoSmallX2IconHover_d92dc;
     animation-duration: 0.2s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateMouseOver_freePoints_ff {
-    animation-name: StateMouseOver_freePointsHover_64;
+.StateMouseOver_freePoints_ec16c {
+    animation-name: StateMouseOver_freePointsHover_b648f;
     animation-duration: 0.2s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateMouseOver_base__smallX2_b2 .StateMouseOver_freePoints_ff {
-    animation-name: StateMouseOver_freePointsSmallX2Hover_a0;
+.StateMouseOver_base__smallX2_e537f .StateMouseOver_freePoints_ec16c {
+    animation-name: StateMouseOver_freePointsSmallX2Hover_d2d96;
     animation-duration: 0.2s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
@@ -4720,7 +4722,7 @@
     animation-iteration-count: 1;
 }
 
-@keyframes StateNotTakenRewards_fadeInWithScale_a3 {
+@keyframes StateNotTakenRewards_fadeInWithScale_c7f71 {
     0% {
         opacity: 0;
         transform: scaleY(0.75);
@@ -4736,7 +4738,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateNotTakenRewards_slideUp_8a {
+@keyframes StateNotTakenRewards_slideUp_eaf6b {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -4752,7 +4754,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateNotTakenRewards_wrapperHover_73 {
+@keyframes StateNotTakenRewards_wrapperHover_a79cb {
     from {
         filter: brightness(1) contrast(1);
     }
@@ -4761,7 +4763,7 @@
         filter: brightness(1.35) contrast(0.75);
     }
 }
-@keyframes StateNotTakenRewards_wrapperOut_6c {
+@keyframes StateNotTakenRewards_wrapperOut_fe7ee {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -4770,7 +4772,7 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateNotTakenRewards_flagHover_c7 {
+@keyframes StateNotTakenRewards_flagHover_e022d {
     from {
         transform: scaleY(1);
     }
@@ -4779,7 +4781,7 @@
         transform: scaleY(1.05);
     }
 }
-@keyframes StateNotTakenRewards_emblemHover_68 {
+@keyframes StateNotTakenRewards_emblemHover_c083a {
     from {
         margin-top: 4rem;
     }
@@ -4788,7 +4790,7 @@
         margin-top: 9rem;
     }
 }
-@keyframes StateNotTakenRewards_logoIconHover_95 {
+@keyframes StateNotTakenRewards_logoIconHover_a0434 {
     from {
         bottom: 25rem;
     }
@@ -4797,7 +4799,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateNotTakenRewards_logoIconHoverSmall_89 {
+@keyframes StateNotTakenRewards_logoIconHoverSmall_ac807 {
     from {
         bottom: 20rem;
     }
@@ -4806,7 +4808,7 @@
         bottom: 15rem;
     }
 }
-@keyframes StateNotTakenRewards_logoSmallX2IconHover_59 {
+@keyframes StateNotTakenRewards_logoSmallX2IconHover_a6108 {
     from {
         bottom: -10rem;
     }
@@ -4815,7 +4817,7 @@
         bottom: -15rem;
     }
 }
-@keyframes StateNotTakenRewards_freePointsHover_11 {
+@keyframes StateNotTakenRewards_freePointsHover_b1f9d {
     from {
         bottom: 30rem;
     }
@@ -4824,7 +4826,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateNotTakenRewards_freePointsSmallX2Hover_d9 {
+@keyframes StateNotTakenRewards_freePointsSmallX2Hover_fa763 {
     from {
         bottom: -5rem;
     }
@@ -4833,7 +4835,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateNotTakenRewards_flagOut_01 {
+@keyframes StateNotTakenRewards_flagOut_af865 {
     from {
         transform: scaleY(1.05);
     }
@@ -4842,7 +4844,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateNotTakenRewards_emblemOut_b0 {
+@keyframes StateNotTakenRewards_emblemOut_d0638 {
     from {
         margin-top: 9rem;
     }
@@ -4851,7 +4853,7 @@
         margin-top: 4rem;
     }
 }
-@keyframes StateNotTakenRewards_freePointsOut_24 {
+@keyframes StateNotTakenRewards_freePointsOut_fe90c {
     from {
         bottom: 25rem;
     }
@@ -4860,7 +4862,7 @@
         bottom: 30rem;
     }
 }
-@keyframes StateNotTakenRewards_freePointsSmallX2Out_f9 {
+@keyframes StateNotTakenRewards_freePointsSmallX2Out_da04f {
     from {
         bottom: -10rem;
     }
@@ -4869,7 +4871,7 @@
         bottom: -5rem;
     }
 }
-@keyframes StateNotTakenRewards_logoIconOut_bc {
+@keyframes StateNotTakenRewards_logoIconOut_d4ddb {
     from {
         bottom: 20rem;
     }
@@ -4878,7 +4880,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateNotTakenRewards_logoIconOutSmall_a9 {
+@keyframes StateNotTakenRewards_logoIconOutSmall_d7547 {
     from {
         bottom: 15rem;
     }
@@ -4887,7 +4889,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateNotTakenRewards_logoSmallX2IconOut_dd {
+@keyframes StateNotTakenRewards_logoSmallX2IconOut_af778 {
     from {
         bottom: -15rem;
     }
@@ -4896,7 +4898,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateNotTakenRewards_emblemLevelUp_d0 {
+@keyframes StateNotTakenRewards_emblemLevelUp_c963b {
     0% {
         filter: brightness(1) contrast(1);
         transform: translateY(0);
@@ -4915,7 +4917,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateNotTakenRewards_emblemAttention_af {
+@keyframes StateNotTakenRewards_emblemAttention_ccd2b {
     0% {
         filter: brightness(1.5);
     }
@@ -4924,7 +4926,7 @@
         filter: brightness(1);
     }
 }
-@keyframes StateNotTakenRewards_emblemCopyAttention_57 {
+@keyframes StateNotTakenRewards_emblemCopyAttention_cbf7e {
     0% {
         opacity: 1;
         transform: scale(1, 1);
@@ -4935,7 +4937,7 @@
         transform: scale(1.3, 1.3);
     }
 }
-@keyframes StateNotTakenRewards_flagLevelUp_24 {
+@keyframes StateNotTakenRewards_flagLevelUp_cffbe {
     0% {
         filter: brightness(1) contrast(1);
         transform: scaleY(1);
@@ -4951,7 +4953,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateNotTakenRewards_flagLevelUpPosOut_eb {
+@keyframes StateNotTakenRewards_flagLevelUpPosOut_ec107 {
     from {
         transform: scaleY(1.05);
     }
@@ -4960,7 +4962,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateNotTakenRewards_flagLevelUpLightOut_16 {
+@keyframes StateNotTakenRewards_flagLevelUpLightOut_f3c6a {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -4969,12 +4971,12 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateNotTakenRewards_flareLevelUp_75 {
+@keyframes StateNotTakenRewards_flareLevelUp_d2de2 {
     0% {
         opacity: 1;
     }
 }
-@keyframes StateNotTakenRewards_flagBuyBPIn_24 {
+@keyframes StateNotTakenRewards_flagBuyBPIn_bc4e0 {
     0% {
         transform: scaleY(1);
     }
@@ -4991,7 +4993,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateNotTakenRewards_flagSwitchChapter_91 {
+@keyframes StateNotTakenRewards_flagSwitchChapter_f0d69 {
     0% {
         opacity: 1;
         transform: scaleY(1);
@@ -5011,7 +5013,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateNotTakenRewards_emblemBuyBP_c7 {
+@keyframes StateNotTakenRewards_emblemBuyBP_b3b04 {
     0% {
         opacity: 1;
         transform: translateY(0);
@@ -5042,7 +5044,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateNotTakenRewards_lightBuyBP_ae {
+@keyframes StateNotTakenRewards_lightBuyBP_b0bcc {
     0% {
         opacity: 0;
         transform: scale(0.8);
@@ -5063,7 +5065,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateNotTakenRewards_lightAttention_4b {
+@keyframes StateNotTakenRewards_lightAttention_b4504 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -5074,7 +5076,7 @@
         transform: scale(1.35);
     }
 }
-@keyframes StateNotTakenRewards_lightAttentionSmall_4c {
+@keyframes StateNotTakenRewards_lightAttentionSmall_b49da {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -5085,7 +5087,7 @@
         transform: scale(1.1);
     }
 }
-@keyframes StateNotTakenRewards_lightChapterNotChosen_11 {
+@keyframes StateNotTakenRewards_lightChapterNotChosen_fe2a3 {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -5106,7 +5108,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateNotTakenRewards_lightChapterNotChosenSmall_f1 {
+@keyframes StateNotTakenRewards_lightChapterNotChosenSmall_fbb68 {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -5127,15 +5129,15 @@
         transform: scale(1);
     }
 }
-.StateNotTakenRewards_base_21 {
+.StateNotTakenRewards_base_e20f2 {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
     position: relative;
 }
-.StateNotTakenRewards_counter_dd {
-    animation-name: StateNotTakenRewards_fadeInWithScale_a3;
+.StateNotTakenRewards_counter_e1e9a {
+    animation-name: StateNotTakenRewards_fadeInWithScale_c7f71;
     animation-duration: 0.6s;
     animation-fill-mode: forwards;
     animation-timing-function: ease;
@@ -5144,7 +5146,7 @@
     opacity: 0;
 }
 
-.StateProgressChange_base_b5 {
+.StateProgressChange_base_f7aaa {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -5152,7 +5154,7 @@
     position: relative;
 }
 
-@keyframes StateShow_fadeInWithScale_ca {
+@keyframes StateShow_fadeInWithScale_b4ba6 {
     0% {
         opacity: 0;
         transform: scaleY(0.75);
@@ -5168,7 +5170,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateShow_slideUp_f3 {
+@keyframes StateShow_slideUp_d5db3 {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -5184,7 +5186,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateShow_wrapperHover_e7 {
+@keyframes StateShow_wrapperHover_d1f70 {
     from {
         filter: brightness(1) contrast(1);
     }
@@ -5193,7 +5195,7 @@
         filter: brightness(1.35) contrast(0.75);
     }
 }
-@keyframes StateShow_wrapperOut_f5 {
+@keyframes StateShow_wrapperOut_ab8ad {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -5202,7 +5204,7 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateShow_flagHover_46 {
+@keyframes StateShow_flagHover_f6110 {
     from {
         transform: scaleY(1);
     }
@@ -5211,7 +5213,7 @@
         transform: scaleY(1.05);
     }
 }
-@keyframes StateShow_emblemHover_d6 {
+@keyframes StateShow_emblemHover_f28b0 {
     from {
         margin-top: 4rem;
     }
@@ -5220,7 +5222,7 @@
         margin-top: 9rem;
     }
 }
-@keyframes StateShow_logoIconHover_a6 {
+@keyframes StateShow_logoIconHover_ae621 {
     from {
         bottom: 25rem;
     }
@@ -5229,7 +5231,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateShow_logoIconHoverSmall_a9 {
+@keyframes StateShow_logoIconHoverSmall_b6d51 {
     from {
         bottom: 20rem;
     }
@@ -5238,7 +5240,7 @@
         bottom: 15rem;
     }
 }
-@keyframes StateShow_logoSmallX2IconHover_6c {
+@keyframes StateShow_logoSmallX2IconHover_c0739 {
     from {
         bottom: -10rem;
     }
@@ -5247,7 +5249,7 @@
         bottom: -15rem;
     }
 }
-@keyframes StateShow_freePointsHover_42 {
+@keyframes StateShow_freePointsHover_a6bd0 {
     from {
         bottom: 30rem;
     }
@@ -5256,7 +5258,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateShow_freePointsSmallX2Hover_5d {
+@keyframes StateShow_freePointsSmallX2Hover_fc1f1 {
     from {
         bottom: -5rem;
     }
@@ -5265,7 +5267,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateShow_flagOut_5b {
+@keyframes StateShow_flagOut_cbb0e {
     from {
         transform: scaleY(1.05);
     }
@@ -5274,7 +5276,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateShow_emblemOut_3e {
+@keyframes StateShow_emblemOut_f2987 {
     from {
         margin-top: 9rem;
     }
@@ -5283,7 +5285,7 @@
         margin-top: 4rem;
     }
 }
-@keyframes StateShow_freePointsOut_1f {
+@keyframes StateShow_freePointsOut_f656c {
     from {
         bottom: 25rem;
     }
@@ -5292,7 +5294,7 @@
         bottom: 30rem;
     }
 }
-@keyframes StateShow_freePointsSmallX2Out_9d {
+@keyframes StateShow_freePointsSmallX2Out_db287 {
     from {
         bottom: -10rem;
     }
@@ -5301,7 +5303,7 @@
         bottom: -5rem;
     }
 }
-@keyframes StateShow_logoIconOut_41 {
+@keyframes StateShow_logoIconOut_aaf70 {
     from {
         bottom: 20rem;
     }
@@ -5310,7 +5312,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateShow_logoIconOutSmall_85 {
+@keyframes StateShow_logoIconOutSmall_c5ecd {
     from {
         bottom: 15rem;
     }
@@ -5319,7 +5321,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateShow_logoSmallX2IconOut_af {
+@keyframes StateShow_logoSmallX2IconOut_c3b4d {
     from {
         bottom: -15rem;
     }
@@ -5328,7 +5330,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateShow_emblemLevelUp_ec {
+@keyframes StateShow_emblemLevelUp_f9ab5 {
     0% {
         filter: brightness(1) contrast(1);
         transform: translateY(0);
@@ -5347,7 +5349,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateShow_emblemAttention_a5 {
+@keyframes StateShow_emblemAttention_ea163 {
     0% {
         filter: brightness(1.5);
     }
@@ -5356,7 +5358,7 @@
         filter: brightness(1);
     }
 }
-@keyframes StateShow_emblemCopyAttention_3f {
+@keyframes StateShow_emblemCopyAttention_fdbff {
     0% {
         opacity: 1;
         transform: scale(1, 1);
@@ -5367,7 +5369,7 @@
         transform: scale(1.3, 1.3);
     }
 }
-@keyframes StateShow_flagLevelUp_9d {
+@keyframes StateShow_flagLevelUp_c7e1b {
     0% {
         filter: brightness(1) contrast(1);
         transform: scaleY(1);
@@ -5383,7 +5385,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateShow_flagLevelUpPosOut_48 {
+@keyframes StateShow_flagLevelUpPosOut_ec234 {
     from {
         transform: scaleY(1.05);
     }
@@ -5392,7 +5394,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateShow_flagLevelUpLightOut_8e {
+@keyframes StateShow_flagLevelUpLightOut_a6b5d {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -5401,12 +5403,12 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateShow_flareLevelUp_3a {
+@keyframes StateShow_flareLevelUp_a4565 {
     0% {
         opacity: 1;
     }
 }
-@keyframes StateShow_flagBuyBPIn_c8 {
+@keyframes StateShow_flagBuyBPIn_b6d38 {
     0% {
         transform: scaleY(1);
     }
@@ -5423,7 +5425,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateShow_flagSwitchChapter_6e {
+@keyframes StateShow_flagSwitchChapter_d03ff {
     0% {
         opacity: 1;
         transform: scaleY(1);
@@ -5443,7 +5445,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateShow_emblemBuyBP_74 {
+@keyframes StateShow_emblemBuyBP_e241a {
     0% {
         opacity: 1;
         transform: translateY(0);
@@ -5474,7 +5476,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateShow_lightBuyBP_de {
+@keyframes StateShow_lightBuyBP_db3ac {
     0% {
         opacity: 0;
         transform: scale(0.8);
@@ -5495,7 +5497,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateShow_lightAttention_ee {
+@keyframes StateShow_lightAttention_e2e51 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -5506,7 +5508,7 @@
         transform: scale(1.35);
     }
 }
-@keyframes StateShow_lightAttentionSmall_2e {
+@keyframes StateShow_lightAttentionSmall_d00e6 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -5517,7 +5519,7 @@
         transform: scale(1.1);
     }
 }
-@keyframes StateShow_lightChapterNotChosen_55 {
+@keyframes StateShow_lightChapterNotChosen_dc58d {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -5538,7 +5540,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateShow_lightChapterNotChosenSmall_f8 {
+@keyframes StateShow_lightChapterNotChosenSmall_c8f00 {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -5559,15 +5561,15 @@
         transform: scale(1);
     }
 }
-.StateShow_base_ef {
+.StateShow_base_be9d9 {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100%;
     position: relative;
 }
-.StateShow_flag_31 {
-    animation-name: StateShow_fadeInWithScale_ca;
+.StateShow_flag_e6bb4 {
+    animation-name: StateShow_fadeInWithScale_b4ba6;
     animation-duration: 0.55s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.44, 0.05, 0.55, 0.95);
@@ -5575,8 +5577,8 @@
     animation-iteration-count: 1;
     opacity: 0;
 }
-.StateShow_emblem_44 {
-    animation-name: StateShow_slideUp_f3;
+.StateShow_emblem_e057c {
+    animation-name: StateShow_slideUp_d5db3;
     animation-duration: 0.45s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.44, 0.05, 0.55, 0.95);
@@ -5584,9 +5586,9 @@
     animation-iteration-count: 1;
     opacity: 0;
 }
-.StateShow_chapterLogoIcon_66,
-.StateShow_freePoints_36 {
-    animation-name: StateShow_slideUp_f3;
+.StateShow_chapterLogoIcon_d1f1b,
+.StateShow_freePoints_f8ae7 {
+    animation-name: StateShow_slideUp_d5db3;
     animation-duration: 0.45s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.44, 0.05, 0.55, 0.95);
@@ -5595,7 +5597,7 @@
     opacity: 0;
 }
 
-@keyframes StateSwitchChapter_fadeInWithScale_2b {
+@keyframes StateSwitchChapter_fadeInWithScale_cbd81 {
     0% {
         opacity: 0;
         transform: scaleY(0.75);
@@ -5611,7 +5613,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateSwitchChapter_slideUp_0d {
+@keyframes StateSwitchChapter_slideUp_f5188 {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -5627,7 +5629,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateSwitchChapter_wrapperHover_2c {
+@keyframes StateSwitchChapter_wrapperHover_c7503 {
     from {
         filter: brightness(1) contrast(1);
     }
@@ -5636,7 +5638,7 @@
         filter: brightness(1.35) contrast(0.75);
     }
 }
-@keyframes StateSwitchChapter_wrapperOut_e6 {
+@keyframes StateSwitchChapter_wrapperOut_c36ba {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -5645,7 +5647,7 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateSwitchChapter_flagHover_69 {
+@keyframes StateSwitchChapter_flagHover_b036d {
     from {
         transform: scaleY(1);
     }
@@ -5654,7 +5656,7 @@
         transform: scaleY(1.05);
     }
 }
-@keyframes StateSwitchChapter_emblemHover_55 {
+@keyframes StateSwitchChapter_emblemHover_e519e {
     from {
         margin-top: 4rem;
     }
@@ -5663,7 +5665,7 @@
         margin-top: 9rem;
     }
 }
-@keyframes StateSwitchChapter_logoIconHover_25 {
+@keyframes StateSwitchChapter_logoIconHover_b357e {
     from {
         bottom: 25rem;
     }
@@ -5672,7 +5674,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateSwitchChapter_logoIconHoverSmall_44 {
+@keyframes StateSwitchChapter_logoIconHoverSmall_cf439 {
     from {
         bottom: 20rem;
     }
@@ -5681,7 +5683,7 @@
         bottom: 15rem;
     }
 }
-@keyframes StateSwitchChapter_logoSmallX2IconHover_b9 {
+@keyframes StateSwitchChapter_logoSmallX2IconHover_b660e {
     from {
         bottom: -10rem;
     }
@@ -5690,7 +5692,7 @@
         bottom: -15rem;
     }
 }
-@keyframes StateSwitchChapter_freePointsHover_6e {
+@keyframes StateSwitchChapter_freePointsHover_b584d {
     from {
         bottom: 30rem;
     }
@@ -5699,7 +5701,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateSwitchChapter_freePointsSmallX2Hover_5f {
+@keyframes StateSwitchChapter_freePointsSmallX2Hover_f4773 {
     from {
         bottom: -5rem;
     }
@@ -5708,7 +5710,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateSwitchChapter_flagOut_13 {
+@keyframes StateSwitchChapter_flagOut_b4e29 {
     from {
         transform: scaleY(1.05);
     }
@@ -5717,7 +5719,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateSwitchChapter_emblemOut_e8 {
+@keyframes StateSwitchChapter_emblemOut_be70b {
     from {
         margin-top: 9rem;
     }
@@ -5726,7 +5728,7 @@
         margin-top: 4rem;
     }
 }
-@keyframes StateSwitchChapter_freePointsOut_dc {
+@keyframes StateSwitchChapter_freePointsOut_fb432 {
     from {
         bottom: 25rem;
     }
@@ -5735,7 +5737,7 @@
         bottom: 30rem;
     }
 }
-@keyframes StateSwitchChapter_freePointsSmallX2Out_56 {
+@keyframes StateSwitchChapter_freePointsSmallX2Out_f685b {
     from {
         bottom: -10rem;
     }
@@ -5744,7 +5746,7 @@
         bottom: -5rem;
     }
 }
-@keyframes StateSwitchChapter_logoIconOut_dc {
+@keyframes StateSwitchChapter_logoIconOut_d1809 {
     from {
         bottom: 20rem;
     }
@@ -5753,7 +5755,7 @@
         bottom: 25rem;
     }
 }
-@keyframes StateSwitchChapter_logoIconOutSmall_c3 {
+@keyframes StateSwitchChapter_logoIconOutSmall_b5ec3 {
     from {
         bottom: 15rem;
     }
@@ -5762,7 +5764,7 @@
         bottom: 20rem;
     }
 }
-@keyframes StateSwitchChapter_logoSmallX2IconOut_1b {
+@keyframes StateSwitchChapter_logoSmallX2IconOut_f9e2e {
     from {
         bottom: -15rem;
     }
@@ -5771,7 +5773,7 @@
         bottom: -10rem;
     }
 }
-@keyframes StateSwitchChapter_emblemLevelUp_c5 {
+@keyframes StateSwitchChapter_emblemLevelUp_aed2b {
     0% {
         filter: brightness(1) contrast(1);
         transform: translateY(0);
@@ -5790,7 +5792,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateSwitchChapter_emblemAttention_9e {
+@keyframes StateSwitchChapter_emblemAttention_c68da {
     0% {
         filter: brightness(1.5);
     }
@@ -5799,7 +5801,7 @@
         filter: brightness(1);
     }
 }
-@keyframes StateSwitchChapter_emblemCopyAttention_4a {
+@keyframes StateSwitchChapter_emblemCopyAttention_f75cf {
     0% {
         opacity: 1;
         transform: scale(1, 1);
@@ -5810,7 +5812,7 @@
         transform: scale(1.3, 1.3);
     }
 }
-@keyframes StateSwitchChapter_flagLevelUp_72 {
+@keyframes StateSwitchChapter_flagLevelUp_c5bcb {
     0% {
         filter: brightness(1) contrast(1);
         transform: scaleY(1);
@@ -5826,7 +5828,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateSwitchChapter_flagLevelUpPosOut_45 {
+@keyframes StateSwitchChapter_flagLevelUpPosOut_bba81 {
     from {
         transform: scaleY(1.05);
     }
@@ -5835,7 +5837,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateSwitchChapter_flagLevelUpLightOut_b6 {
+@keyframes StateSwitchChapter_flagLevelUpLightOut_bfc33 {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -5844,12 +5846,12 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes StateSwitchChapter_flareLevelUp_50 {
+@keyframes StateSwitchChapter_flareLevelUp_d5935 {
     0% {
         opacity: 1;
     }
 }
-@keyframes StateSwitchChapter_flagBuyBPIn_75 {
+@keyframes StateSwitchChapter_flagBuyBPIn_b5933 {
     0% {
         transform: scaleY(1);
     }
@@ -5866,7 +5868,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateSwitchChapter_flagSwitchChapter_8a {
+@keyframes StateSwitchChapter_flagSwitchChapter_b766a {
     0% {
         opacity: 1;
         transform: scaleY(1);
@@ -5886,7 +5888,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes StateSwitchChapter_emblemBuyBP_ba {
+@keyframes StateSwitchChapter_emblemBuyBP_c11c1 {
     0% {
         opacity: 1;
         transform: translateY(0);
@@ -5917,7 +5919,7 @@
         transform: translateY(0);
     }
 }
-@keyframes StateSwitchChapter_lightBuyBP_19 {
+@keyframes StateSwitchChapter_lightBuyBP_a4116 {
     0% {
         opacity: 0;
         transform: scale(0.8);
@@ -5938,7 +5940,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateSwitchChapter_lightAttention_2a {
+@keyframes StateSwitchChapter_lightAttention_b2d8a {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -5949,7 +5951,7 @@
         transform: scale(1.35);
     }
 }
-@keyframes StateSwitchChapter_lightAttentionSmall_24 {
+@keyframes StateSwitchChapter_lightAttentionSmall_f0727 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -5960,7 +5962,7 @@
         transform: scale(1.1);
     }
 }
-@keyframes StateSwitchChapter_lightChapterNotChosen_da {
+@keyframes StateSwitchChapter_lightChapterNotChosen_c3c6a {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -5981,7 +5983,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes StateSwitchChapter_lightChapterNotChosenSmall_c5 {
+@keyframes StateSwitchChapter_lightChapterNotChosenSmall_ea82f {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -6002,7 +6004,7 @@
         transform: scale(1);
     }
 }
-.StateSwitchChapter_base_05 {
+.StateSwitchChapter_base_d9234 {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -6010,16 +6012,16 @@
     overflow: hidden;
     position: relative;
 }
-.StateSwitchChapter_flag_79 {
-    animation-name: StateSwitchChapter_flagSwitchChapter_8a;
+.StateSwitchChapter_flag_c9185 {
+    animation-name: StateSwitchChapter_flagSwitchChapter_b766a;
     animation-duration: 1.3s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.16, 1);
     animation-delay: 0s;
     animation-iteration-count: 1;
 }
-.StateSwitchChapter_emblem_d5 {
-    animation-name: StateSwitchChapter_slideUp_0d;
+.StateSwitchChapter_emblem_eeb06 {
+    animation-name: StateSwitchChapter_slideUp_f5188;
     animation-duration: 0.45s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.44, 0.05, 0.55, 0.95);
@@ -6028,7 +6030,7 @@
     opacity: 0;
 }
 
-@keyframes Content_fadeInWithScale_fc {
+@keyframes Content_fadeInWithScale_ce8a4 {
     0% {
         opacity: 0;
         transform: scaleY(0.75);
@@ -6044,7 +6046,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes Content_slideUp_39 {
+@keyframes Content_slideUp_d1ab6 {
     0% {
         opacity: 0;
         transform: translateY(-10rem);
@@ -6060,7 +6062,7 @@
         transform: translateY(0);
     }
 }
-@keyframes Content_wrapperHover_39 {
+@keyframes Content_wrapperHover_f4cf7 {
     from {
         filter: brightness(1) contrast(1);
     }
@@ -6069,7 +6071,7 @@
         filter: brightness(1.35) contrast(0.75);
     }
 }
-@keyframes Content_wrapperOut_d1 {
+@keyframes Content_wrapperOut_bd952 {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -6078,7 +6080,7 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes Content_flagHover_73 {
+@keyframes Content_flagHover_c04ae {
     from {
         transform: scaleY(1);
     }
@@ -6087,7 +6089,7 @@
         transform: scaleY(1.05);
     }
 }
-@keyframes Content_emblemHover_1a {
+@keyframes Content_emblemHover_cd72d {
     from {
         margin-top: 4rem;
     }
@@ -6096,7 +6098,7 @@
         margin-top: 9rem;
     }
 }
-@keyframes Content_logoIconHover_26 {
+@keyframes Content_logoIconHover_f9950 {
     from {
         bottom: 25rem;
     }
@@ -6105,7 +6107,7 @@
         bottom: 20rem;
     }
 }
-@keyframes Content_logoIconHoverSmall_4e {
+@keyframes Content_logoIconHoverSmall_f07f8 {
     from {
         bottom: 20rem;
     }
@@ -6114,7 +6116,7 @@
         bottom: 15rem;
     }
 }
-@keyframes Content_logoSmallX2IconHover_ef {
+@keyframes Content_logoSmallX2IconHover_c1ae8 {
     from {
         bottom: -10rem;
     }
@@ -6123,7 +6125,7 @@
         bottom: -15rem;
     }
 }
-@keyframes Content_freePointsHover_8d {
+@keyframes Content_freePointsHover_ee338 {
     from {
         bottom: 30rem;
     }
@@ -6132,7 +6134,7 @@
         bottom: 25rem;
     }
 }
-@keyframes Content_freePointsSmallX2Hover_2d {
+@keyframes Content_freePointsSmallX2Hover_c00d2 {
     from {
         bottom: -5rem;
     }
@@ -6141,7 +6143,7 @@
         bottom: -10rem;
     }
 }
-@keyframes Content_flagOut_c3 {
+@keyframes Content_flagOut_e4a9e {
     from {
         transform: scaleY(1.05);
     }
@@ -6150,7 +6152,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes Content_emblemOut_01 {
+@keyframes Content_emblemOut_c553d {
     from {
         margin-top: 9rem;
     }
@@ -6159,7 +6161,7 @@
         margin-top: 4rem;
     }
 }
-@keyframes Content_freePointsOut_31 {
+@keyframes Content_freePointsOut_f2e2b {
     from {
         bottom: 25rem;
     }
@@ -6168,7 +6170,7 @@
         bottom: 30rem;
     }
 }
-@keyframes Content_freePointsSmallX2Out_73 {
+@keyframes Content_freePointsSmallX2Out_dde1d {
     from {
         bottom: -10rem;
     }
@@ -6177,7 +6179,7 @@
         bottom: -5rem;
     }
 }
-@keyframes Content_logoIconOut_f1 {
+@keyframes Content_logoIconOut_eb504 {
     from {
         bottom: 20rem;
     }
@@ -6186,7 +6188,7 @@
         bottom: 25rem;
     }
 }
-@keyframes Content_logoIconOutSmall_1d {
+@keyframes Content_logoIconOutSmall_c1e0e {
     from {
         bottom: 15rem;
     }
@@ -6195,7 +6197,7 @@
         bottom: 20rem;
     }
 }
-@keyframes Content_logoSmallX2IconOut_49 {
+@keyframes Content_logoSmallX2IconOut_c6166 {
     from {
         bottom: -15rem;
     }
@@ -6204,7 +6206,7 @@
         bottom: -10rem;
     }
 }
-@keyframes Content_emblemLevelUp_38 {
+@keyframes Content_emblemLevelUp_b9605 {
     0% {
         filter: brightness(1) contrast(1);
         transform: translateY(0);
@@ -6223,7 +6225,7 @@
         transform: translateY(0);
     }
 }
-@keyframes Content_emblemAttention_40 {
+@keyframes Content_emblemAttention_fa787 {
     0% {
         filter: brightness(1.5);
     }
@@ -6232,7 +6234,7 @@
         filter: brightness(1);
     }
 }
-@keyframes Content_emblemCopyAttention_53 {
+@keyframes Content_emblemCopyAttention_d3251 {
     0% {
         opacity: 1;
         transform: scale(1, 1);
@@ -6243,7 +6245,7 @@
         transform: scale(1.3, 1.3);
     }
 }
-@keyframes Content_flagLevelUp_85 {
+@keyframes Content_flagLevelUp_fb7f4 {
     0% {
         filter: brightness(1) contrast(1);
         transform: scaleY(1);
@@ -6259,7 +6261,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes Content_flagLevelUpPosOut_66 {
+@keyframes Content_flagLevelUpPosOut_e9af5 {
     from {
         transform: scaleY(1.05);
     }
@@ -6268,7 +6270,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes Content_flagLevelUpLightOut_fe {
+@keyframes Content_flagLevelUpLightOut_b6054 {
     from {
         filter: brightness(1.35) contrast(0.75);
     }
@@ -6277,12 +6279,12 @@
         filter: brightness(1) contrast(1);
     }
 }
-@keyframes Content_flareLevelUp_b6 {
+@keyframes Content_flareLevelUp_b0122 {
     0% {
         opacity: 1;
     }
 }
-@keyframes Content_flagBuyBPIn_49 {
+@keyframes Content_flagBuyBPIn_ff9e7 {
     0% {
         transform: scaleY(1);
     }
@@ -6299,7 +6301,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes Content_flagSwitchChapter_7d {
+@keyframes Content_flagSwitchChapter_ee413 {
     0% {
         opacity: 1;
         transform: scaleY(1);
@@ -6319,7 +6321,7 @@
         transform: scaleY(1);
     }
 }
-@keyframes Content_emblemBuyBP_e7 {
+@keyframes Content_emblemBuyBP_c814a {
     0% {
         opacity: 1;
         transform: translateY(0);
@@ -6350,7 +6352,7 @@
         transform: translateY(0);
     }
 }
-@keyframes Content_lightBuyBP_d1 {
+@keyframes Content_lightBuyBP_f31db {
     0% {
         opacity: 0;
         transform: scale(0.8);
@@ -6371,7 +6373,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes Content_lightAttention_aa {
+@keyframes Content_lightAttention_b68ac {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -6382,7 +6384,7 @@
         transform: scale(1.35);
     }
 }
-@keyframes Content_lightAttentionSmall_80 {
+@keyframes Content_lightAttentionSmall_f0277 {
     0% {
         opacity: 0;
         transform: scale(0.1);
@@ -6393,7 +6395,7 @@
         transform: scale(1.1);
     }
 }
-@keyframes Content_lightChapterNotChosen_56 {
+@keyframes Content_lightChapterNotChosen_d2106 {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -6414,7 +6416,7 @@
         transform: scale(0.8);
     }
 }
-@keyframes Content_lightChapterNotChosenSmall_12 {
+@keyframes Content_lightChapterNotChosenSmall_f67fc {
     0% {
         opacity: 0;
         transform: scale(0);
@@ -6443,7 +6445,7 @@ body {
     justify-content: center;
     margin: 1rem;
 }
-.Content_base_81 {
+.Content_base_fb178 {
     display: flex;
     justify-content: center;
     width: 100rem;
@@ -6453,74 +6455,74 @@ body {
     cursor: pointer;
     pointer-events: none;
 }
-.mediaMedium .Content_base_81 {
+.mediaMedium .Content_base_fb178 {
     width: 142rem;
     height: 175rem;
 }
-.Content_base__smallX2_95 {
+.Content_base__smallX2_cf0c9 {
     height: 185rem;
 }
-.Content_base__disabled_76,
-.Content_base__seasonWaiting_7c {
+.Content_base__disabled_adc58,
+.Content_base__seasonWaiting_cfe32 {
     cursor: default;
 }
-.Content_base__disabled_76 {
+.Content_base__disabled_adc58 {
     filter: saturate(0.3) brightness(0.7);
 }
-.Content_base__seasonWaiting_7c {
+.Content_base__seasonWaiting_cfe32 {
     filter: saturate(0.7) brightness(0.7);
 }
-.Content_effects_0d {
+.Content_effects_eae0e {
     display: flex;
     width: 100%;
     height: 100%;
     pointer-events: none;
 }
-.Content_effects__normal_cd {
+.Content_effects__normal_f798e {
     filter: saturate(1) brightness(1);
 }
-.Content_effects__disabled_44 {
+.Content_effects__disabled_d136f {
     filter: saturate(0.7) brightness(0.7);
 }
-.Content_effects__seasonWaiting_4d {
+.Content_effects__seasonWaiting_d30b4 {
     filter: saturate(0.7) brightness(0.7);
 }
-.Content_componentWrapper_15 {
+.Content_componentWrapper_b2c51 {
     display: flex;
     width: 100%;
     height: 100%;
     z-index: 1;
     transition: opacity 0.4s;
 }
-.Content_componentWrapper__hidden_7a {
+.Content_componentWrapper__hidden_ecafd {
     opacity: 0;
 }
 
-.App_base_f0 {
+.App_base_c4687 {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
 }
 
-.App_light_08 {
+.App_light_e1abe {
     position: absolute;
     transform: translateY(-20rem) scale(0.75);
 }
 
-.mediaMedium .App_light_08 {
+.mediaMedium .App_light_e1abe {
     transform: translateY(-20rem) scale(1);
 }
 
-.App_light__chapterNotChosen_ff {
-    animation: App_lightChapterNotChosenSmall_d9 cubic-bezier(0.6, 0.04, 0.98, 0.34) 0.8s;
+.App_light__chapterNotChosen_a7fbc {
+    animation: App_lightChapterNotChosenSmall_a4c3a cubic-bezier(0.6, 0.04, 0.98, 0.34) 0.8s;
 }
 
-.mediaMedium .App_light__chapterNotChosen_ff {
-    animation: App_lightChapterNotChosen_3d cubic-bezier(0.6, 0.04, 0.98, 0.34) 0.8s;
+.mediaMedium .App_light__chapterNotChosen_a7fbc {
+    animation: App_lightChapterNotChosen_e6e1c cubic-bezier(0.6, 0.04, 0.98, 0.34) 0.8s;
 }
 
-@keyframes App_lightChapterNotChosenSmall_d9 {
+@keyframes App_lightChapterNotChosenSmall_a4c3a {
     0% {
         opacity: 0;
         transform: translateY(-20rem) scale(0);
@@ -6542,7 +6544,7 @@ body {
     }
 }
 
-@keyframes App_lightChapterNotChosen_3d {
+@keyframes App_lightChapterNotChosen_e6e1c {
     0% {
         opacity: 0;
         transform: translateY(-20rem) scale(0);

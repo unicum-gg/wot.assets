@@ -1,4 +1,4 @@
-import { p as e, q as s, j as a, r as t } from '../../../chunks/vendor.js';
+import { q as e, s, j as a, r as t } from '../../../chunks/vendor.js';
 import {
     r,
     i as n,
@@ -49,7 +49,7 @@ import { S as I } from '../../../chunks/synergy_rewards.js';
     S = 'Content_image_a5db499f',
     T = 'Content_titleText_29a98447',
     z = 'Content_title_790233a',
-    F = 'Content_scrollArea_158985',
+    F = 'Content_scrollArea_f7323c35',
     H = 'Content_scrollContent_d4a6b4f1',
     V = 'Content_scrollBar_1dba3205',
     q = 'Content_description_86d61b05',

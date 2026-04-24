@@ -1,9 +1,9 @@
 import { j as e, l as n } from '../../../../chunks/vendor.js';
-import { i as s, t, E as a, A as i, J as o, U as d, H as l, r } from '../../../../chunks/lib.js';
+import { i as s, q as t, E as a, A as i, J as o, U as d, H as l, r } from '../../../../chunks/lib.js';
 import { u as c } from '../../../../chunks/useFormattedCountdown.js';
 const [p, m] = s()(({ observableModel: e }) => e.object(), t),
     v = 'Countdown_59d5a1f4',
-    x = 'Countdown_text_2750727c',
+    x = 'Countdown_text_fc7101e5',
     _ = 'Countdown_icon_17addfe',
     j = ({ seconds: n }) => {
         const { timeString: s } = c(Math.max(0, n), !1, !0);
@@ -14,7 +14,7 @@ const [p, m] = s()(({ observableModel: e }) => e.object(), t),
     },
     T = 'EventBannerTooltipApp_8cdfe37e',
     b = 'EventBannerTooltipApp_banner_30944031',
-    h = 'EventBannerTooltipApp_title_dacfcb32',
+    h = 'EventBannerTooltipApp_title_66abf4a2',
     N = 'EventBannerTooltipApp_text_73746157',
     f = 'EventBannerTooltipApp_modeWrapper_5b2bfb6b',
     u = 'EventBannerTooltipApp_mode_65667168',
@@ -22,7 +22,7 @@ const [p, m] = s()(({ observableModel: e }) => e.object(), t),
     B = 'EventBannerTooltipApp_line_1f2c36b4',
     E = 'EventBannerTooltipApp_eventTitle_40807a1f',
     C = 'EventBannerTooltipApp_eventText_472ae868',
-    w = 'EventBannerTooltipApp_timerText_e8bbbfe8',
+    w = 'EventBannerTooltipApp_timerText_c4d39bb',
     g = R.strings.sm_lobby.tooltips.eventBannerTooltip,
     k = n(() => {
         const { model: n } = m(),

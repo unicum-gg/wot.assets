@@ -2,12 +2,8 @@
     'use strict';
     var u,
         F = {
-            5078: (u, F, A) => {
-                (A(6483), A(1281));
-                let E;
-                !(function (u) {
-                    ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
-                })(E || (E = {}));
+            954: (u, F, A) => {
+                (A(9849), A(8354));
                 (() => {
                     const u = new RegExp(
                         [
@@ -22,10 +18,10 @@
                     );
                 })();
                 A(7363);
-                A(6583);
+                A(7687);
             },
-            6583: (u, F, A) => {
-                (A(7363), A(6483));
+            7687: (u, F, A) => {
+                (A(7363), A(9849));
                 R.images.gui.maps.icons.vehicleTypes;
             },
             7363: (u) => {
@@ -96,6 +92,6 @@
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (A.forEach(F.bind(null, 0)), (A.push = F.bind(null, A.push.bind(A))));
         })());
-    var D = E.O(void 0, [1519], () => E(5078));
+    var D = E.O(void 0, [1519], () => E(954));
     D = E.O(D);
 })();

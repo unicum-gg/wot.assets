@@ -1,10 +1,10 @@
-.CurrencyReward_base_48 {
+.CurrencyReward_base_b5a73 {
     display: flex;
     align-items: center;
     position: relative;
 }
 
-.CurrencyReward_icon_9e {
+.CurrencyReward_icon_a9a23 {
     width: 48rem;
     height: 48rem;
     background: no-repeat center / contain;
@@ -12,29 +12,29 @@
     z-index: 1;
 }
 
-.CurrencyReward_icon__credits_f6 {
+.CurrencyReward_icon__credits_a2250 {
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_silver');
 }
 
-.CurrencyReward_icon__gold_1c {
+.CurrencyReward_icon__gold_ac4cb {
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_gold');
 }
 
-.CurrencyReward_icon__crystal_11 {
+.CurrencyReward_icon__crystal_e334c {
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.money_bonds');
 }
 
-.CurrencyReward_icon__xp_d5 {
+.CurrencyReward_icon__xp_d3cd6 {
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.exp');
 }
 
-.CurrencyReward_icon__freeXP_7e {
+.CurrencyReward_icon__freeXP_c5d11 {
     margin: 0 -5rem;
     background-image: url('R.images.gui.maps.shop.rewards.c_48x48.freeExp');
 }
 
-.CurrencyReward_value_ef {
+.CurrencyReward_value_e3e33 {
     color: #f2f2f7;
     font-size: 18rem;
     font-weight: 700;
@@ -44,19 +44,19 @@
     z-index: 2;
 }
 
-.CurrencyReward_value__freeXP_b8 {
+.CurrencyReward_value__freeXP_cf844 {
     color: #f2f2f7;
 }
 
-.CurrencyReward_value__xp_2d,
-.CurrencyReward_value__credits_87 {
+.CurrencyReward_value__xp_bd116,
+.CurrencyReward_value__credits_f1d79 {
     color: #ced9d9;
 }
 
-.CurrencyReward_value__gold_93 {
+.CurrencyReward_value__gold_f07ce {
     color: #ffc363;
 }
 
-.CurrencyReward_value__crystal_51 {
+.CurrencyReward_value__crystal_e617f {
     color: #c9c9b6;
 }

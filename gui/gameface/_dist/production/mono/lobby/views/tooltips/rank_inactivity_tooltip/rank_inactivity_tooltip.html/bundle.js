@@ -1,5 +1,5 @@
-import { y as s, j as t, w as i } from '../../../../chunks/vendor.js';
-import { i as o, aC as n, n as a, aA as e } from '../../../../chunks/lib.js';
+import { V as s, j as t, a3 as i } from '../../../../chunks/vendor.js';
+import { i as o, n, cy as e, r as a } from '../../../../chunks/lib.js';
 import { T as r } from '../../../../chunks/tooltip_decorator.js';
 import { R as c } from '../../../../chunks/consts.js';
 import { t as p } from '../../../../chunks/tooltips.module.js';
@@ -22,12 +22,12 @@ import { t as p } from '../../../../chunks/tooltips.module.js';
                     className: p.heading,
                     children: R.strings.comp7_ext.progressionTableTooltip.rankInactivity.header.active(),
                 }),
-                t.jsx(a, {
+                t.jsx(e, {
                     text: R.strings.comp7_ext.progressionTableTooltip.rankInactivity.description.active(n),
                     binding: { count: n },
                     classMix: i(p.description, p.description__topIndent),
                 }),
-                t.jsx(a, {
+                t.jsx(e, {
                     text: R.strings.comp7_ext.progressionTableTooltip.rankInactivity.daysLeft(),
                     binding: { rankInactivityCount: o },
                     classMix: i(p.description, p.description__topIndent, _),
@@ -35,4 +35,4 @@ import { t as p } from '../../../../chunks/tooltips.module.js';
             ],
         });
     });
-e(t.jsx(d, { children: t.jsx(r, { children: t.jsx(v, {}) }) }));
+a(t.jsx(d, { children: t.jsx(r, { children: t.jsx(v, {}) }) }));

@@ -1,19 +1,19 @@
 import {
     o as e,
-    q as t,
-    e as a,
-    w as s,
-    x as l,
+    s as t,
+    e as s,
+    x as a,
     y as r,
     z as i,
-    A as n,
-    B as o,
-    C as c,
-    D as d,
-    E as u,
+    A as l,
+    B as n,
+    C as o,
+    D as c,
+    E as d,
+    F as u,
     r as m,
-    p,
-    s as h,
+    q as p,
+    t as h,
     j as _,
     f,
 } from '../../../chunks/vendor.js';
@@ -29,12 +29,12 @@ import {
     D as w,
     E,
     G as S,
-    H as I,
-    i as A,
+    H as A,
+    i as I,
     J as k,
     K as P,
-    L as V,
-    M as D,
+    L as D,
+    M as V,
     r as M,
     N as T,
     O as L,
@@ -46,8 +46,8 @@ import {
     Z as R,
     _ as G,
     $ as q,
-    a0 as F,
-    a1 as H,
+    a0 as H,
+    a1 as F,
     a2 as Z,
     a3 as Y,
     a4 as Q,
@@ -57,11 +57,11 @@ import {
     a8 as $,
     a9 as ee,
     aa as te,
-    ab as ae,
-    ac as se,
-    ad as le,
-    b as re,
-    B as ie,
+    ab as se,
+    ac as ae,
+    ad as re,
+    b as ie,
+    B as le,
     ae as ne,
     af as oe,
     ag as ce,
@@ -82,13 +82,13 @@ import {
     av as je,
     aw as we,
     ax as Ee,
-    k as Se,
-    ay as Ie,
-    az as Ae,
-    o as ke,
-    aA as Pe,
-    aB as Ve,
-    aC as De,
+    ay as Se,
+    k as Ae,
+    az as Ie,
+    aA as ke,
+    o as Pe,
+    aB as De,
+    aC as Ve,
     aD as Me,
     aE as Te,
     aF as Le,
@@ -96,12 +96,12 @@ import {
     aH as Ue,
     aI as ze,
     aJ as Oe,
-    h as Xe,
-    C as Re,
-    aK as Ge,
+    aK as Xe,
+    h as Re,
+    C as Ge,
     aL as qe,
-    U as Fe,
-    l as He,
+    U as He,
+    l as Fe,
 } from '../../../chunks/lib.js';
 const Ze = 'role',
     Ye = 'type',
@@ -161,119 +161,117 @@ const Ze = 'role',
     $e = 'isCommonProgression',
     et = [x.assault, x.universal, x.break, x.sniper, x.support, x.wheeled],
     tt = ['bonus', 'favorite', 'premium', 'elite', 'crystals', 'canInstallAttachments', 'own3DStyle', 'rented'],
-    at = [v.lightTank, v.mediumTank, v.heavyTank, v['AT-SPG'], v.SPG],
-    st = g(1, 12, b),
-    lt = {
-        vehicleTypes: 'vehicle_types',
-        nations: 'nations',
-        levels: 'levels',
-        specials: 'specials',
-        battle_pass: 'battle_pass',
-    },
-    rt = { heavy_tank: j, medium_tank: N, light_tank: C, at_spg: y };
-function it(e, t) {
+    st = [v.lightTank, v.mediumTank, v.heavyTank, v['AT-SPG'], v.SPG],
+    at = g(1, 12, b),
+    rt = 'vehicle_types',
+    it = 'nations',
+    lt = 'levels',
+    nt = 'specials',
+    ot = 'battle_pass',
+    ct = { heavy_tank: j, medium_tank: N, light_tank: C, at_spg: y };
+function dt(e, t) {
     return e === $e && t.status !== S.UNSUITABLE_TO_QUEUE && t.bpProgress < t.maxBpScore;
 }
-function nt(e, t, a, s) {
+function ut(e, t, s, a) {
     switch (t) {
         case 'elite':
-            return e.includes('premium') || (s && s.elite && !a.premium);
+            return e.includes('premium') || (a && a.elite && !s.premium);
         case 'premium':
-            return a.premium || (e.includes('elite') && s && s.elite);
+            return s.premium || (e.includes('elite') && a && a.elite);
         case 'bonus':
-            return s && s.bonusMultiplier >= 2;
+            return a && a.bonusMultiplier >= 2;
         case 'favorite':
-            return a.favorite;
+            return s.favorite;
         case 'crystals':
-            return a.crystalEarning;
+            return s.crystalEarning;
         case 'rented':
             return !0;
         case 'canInstallAttachments':
-            return a.canInstallAttachments;
+            return s.canInstallAttachments;
         case 'own3DStyle':
-            return s && s.own3DStyle;
+            return a && a.own3DStyle;
         case 'event':
         case 'funRandom':
-            return a.isSuitableVehicle;
+            return s.isSuitableVehicle;
         default:
             return !1;
     }
 }
-const ot = {
-    [lt.levels]: (e, t) => !e.levels || e.levels.includes(`level_${t.level}`),
-    [lt.nations]: (e, t) => !e.nations || e.nations.includes(E(t.nationId)),
-    [lt.vehicleTypes]: (e, t) => !e.vehicle_types || e.vehicle_types.includes(t.type),
+const mt = {
+    [lt]: (e, t) => !e.levels || e.levels.includes(`level_${t.level}`),
+    [it]: (e, t) => !e.nations || e.nations.includes(E(t.nationId)),
+    [rt]: (e, t) => !e.vehicle_types || e.vehicle_types.includes(t.type),
 };
-function ct(e, t, a) {
-    let s = !1;
-    const l = e.specials ?? [];
-    for (const r of l)
-        if ('rented' !== r) {
-            if (!nt(l, r, t, a)) return !1;
-        } else s = !0;
-    if (!s && w(t)) return !1;
-    if (a && e.battle_pass && e.battle_pass.length > 0) for (const r of e.battle_pass) if (!it(r, a)) return !1;
-    for (const r of Object.keys(e)) if (r in ot && !ot[r](e, t)) return !1;
+function pt(e, t, s) {
+    let a = !1;
+    const r = e.specials ?? [];
+    for (const i of r)
+        if ('rented' !== i) {
+            if (!ut(r, i, t, s)) return !1;
+        } else a = !0;
+    if (!a && w(t) && !s?.fromWotPlus) return !1;
+    if (s && e.battle_pass && e.battle_pass.length > 0) for (const i of e.battle_pass) if (!dt(i, s)) return !1;
+    for (const i of Object.keys(e)) if (i in mt && !mt[i](e, t)) return !1;
     return ((e, t) => {
-        const a = I(t.role);
-        let s = !1;
-        for (const l of Object.keys(rt)) if (l in e && ((s = !0), e[l].some((e) => e.includes(a)))) return !0;
-        return !s;
+        const s = A(t.role);
+        let a = !1;
+        for (const r of Object.keys(ct)) if (r in e && ((a = !0), e[r].some((e) => e.includes(s)))) return !0;
+        return !a;
     })(e, t);
 }
-function dt(e, { shortName: t, fullName: a }) {
-    const s = e.toLowerCase();
-    return !(s.length > 0 && !t.toLowerCase().includes(s) && !a.toLowerCase().includes(s));
+function ht(e, { shortName: t, fullName: s }) {
+    const a = e.toLowerCase();
+    return !(a.length > 0 && !t.toLowerCase().includes(a) && !s.toLowerCase().includes(a));
 }
-function ut(e, t, a) {
-    const s = e[t] ?? [],
-        l = { ...e };
-    return ((l[t] = s.includes(a) ? s.filter((e) => e !== a) : [...s, a]), l[t].length > 0 || delete l[t], l);
+function _t(e, t, s) {
+    const a = e[t] ?? [],
+        r = { ...e };
+    return ((r[t] = a.includes(s) ? a.filter((e) => e !== s) : [...a, s]), r[t].length > 0 || delete r[t], r);
 }
-function mt(e, t) {
+function ft(e, t) {
     return 'regular' === t.type
-        ? ut(e, t.field, t.value)
-        : Object.keys(rt).reduce((e, a) => {
-              const s = rt[a].find((e) => e.includes(t.role));
-              return s
-                  ? ut(e, a, ((r = s), 'at_spg' === (l = a) ? `role_ATSPG_${r}` : `role_${l[0].toUpperCase()}T_${r}`))
+        ? _t(e, t.field, t.value)
+        : Object.keys(ct).reduce((e, s) => {
+              const a = ct[s].find((e) => e.includes(t.role));
+              return a
+                  ? _t(e, s, ((i = a), 'at_spg' === (r = s) ? `role_ATSPG_${i}` : `role_${r[0].toUpperCase()}T_${i}`))
                   : e;
-              var l, r;
+              var r, i;
           }, e);
 }
-function pt(e, t, a, s) {
-    if (a.favorite !== s.favorite) return a.favorite ? -1 : 1;
-    const l = e[E(a.nationId)] ?? 0,
-        r = e[E(s.nationId)] ?? 0;
-    if (l !== r) return l - r;
-    const i = t[a.type] ?? 0,
-        n = t[s.type] ?? 0;
-    return i !== n
-        ? i - n
-        : a.level !== s.level
-          ? a.level - s.level
-          : a.premium !== s.premium
-            ? a.premium
+function vt(e, t, s, a) {
+    if (s.favorite !== a.favorite) return s.favorite ? -1 : 1;
+    const r = e[E(s.nationId)] ?? 0,
+        i = e[E(a.nationId)] ?? 0;
+    if (r !== i) return r - i;
+    const l = t[s.type] ?? 0,
+        n = t[a.type] ?? 0;
+    return l !== n
+        ? l - n
+        : s.level !== a.level
+          ? s.level - a.level
+          : s.premium !== a.premium
+            ? s.premium
                 ? 1
                 : -1
-            : a.shortName.localeCompare(s.shortName);
+            : s.shortName.localeCompare(a.shortName);
 }
-const [ht, _t] = A('FilterVehiclesProvider')(
-        ({ observableModel: t, readByPath: a }) => {
-            function s(e) {
+const [gt, xt] = I('FilterVehiclesProvider')(
+        ({ observableModel: t, readByPath: s }) => {
+            function a(e) {
                 try {
                     return JSON.parse(e);
                 } catch (t) {
                     return (console.error(t), {});
                 }
             }
-            const { text_search: l, ...r } = s(a('filters')),
-                i = { ...t.primitives(['defaultFilters']) },
-                n = k.structural(() => s(i.defaultFilters.get())),
+            const { text_search: r, ...i } = a(s('filters')),
+                l = { ...t.primitives(['defaultFilters']) },
+                n = k.structural(() => a(l.defaultFilters.get())),
                 o = {
                     ...t.primitives(['carouselRowCount']),
-                    filters: e.box(r, { deep: !1 }),
-                    searchName: e.box((null == l ? void 0 : l[0]) ?? ''),
+                    filters: e.box(i, { deep: !1 }),
+                    searchName: e.box(r?.[0] ?? ''),
                     nations: t.arrayClone('nationsOrder'),
                 };
             return {
@@ -281,163 +279,163 @@ const [ht, _t] = A('FilterVehiclesProvider')(
                 computes: {
                     hasFilters: k.primitive(() => !P.structural(n(), o.filters.get()) || o.searchName.get().length > 0),
                     nations: () => o.nations.get(),
-                    nationToIndex: k.shallow(() => o.nations.get().reduce((e, t, a) => ((e[t] = a), e), {})),
+                    nationToIndex: k.shallow(() => o.nations.get().reduce((e, t, s) => ((e[t] = s), e), {})),
                     default: n,
                 },
             };
         },
-        ({ cleanup: e, model: s, externalModel: l }) => {
-            const r = l.createCallback((e) => e, 'onSaveFilter');
+        ({ cleanup: e, model: a, externalModel: r }) => {
+            const i = r.createCallback((e) => e, 'onSaveFilter');
             return (
                 e(
                     t(() => {
                         var e, t;
-                        ((e = s.filters.get()),
-                            (t = s.searchName.get()),
-                            r({ filters: JSON.stringify({ ...e, text_search: t.length > 0 ? [t] : void 0 }) }));
+                        ((e = a.filters.get()),
+                            (t = a.searchName.get()),
+                            i({ filters: JSON.stringify({ ...e, text_search: t.length > 0 ? [t] : void 0 }) }));
                     }),
                 ),
                 {
-                    reset: a(() => {
-                        (s.filters.set(s.computes.default()), s.searchName.set(''));
+                    reset: s(() => {
+                        (a.filters.set(a.computes.default()), a.searchName.set(''));
                     }),
-                    search: a((e) => {
-                        s.searchName.set(e);
+                    search: s((e) => {
+                        a.searchName.set(e);
                     }),
-                    change: a((e) => {
-                        s.filters.set(mt(s.filters.get(), e));
+                    change: s((e) => {
+                        a.filters.set(ft(a.filters.get(), e));
                     }),
-                    carouselTypeChange: l.createCallback((e) => ({ rowCount: e }), 'onCarouselTypeChange'),
+                    carouselTypeChange: r.createCallback((e) => ({ rowCount: e }), 'onCarouselTypeChange'),
                 }
             );
         },
     ),
-    ft = [v.lightTank, v.mediumTank, v.heavyTank, v['AT-SPG'], v.SPG].reduce((e, t, a) => ((e[t] = a), e), {}),
-    [vt, gt] = A('VehicleStatisticsProvider')(({ observableModel: e }) => {
+    bt = [v.lightTank, v.mediumTank, v.heavyTank, v['AT-SPG'], v.SPG].reduce((e, t, s) => ((e[t] = s), e), {}),
+    [yt, Ct] = I('VehicleStatisticsProvider')(({ observableModel: e }) => {
         const t = e.dict('statistics'),
-            a = k.structural((e) => t.get(e));
-        return { ids: k.primitive(() => t.keys), get: a };
+            s = k.structural((e) => t.get(e));
+        return { ids: k.primitive(() => t.keys), get: s };
     }),
-    [xt, bt] = A('VehiclesProvider')(
+    [Nt, jt] = I('VehiclesProvider')(
         ({ observableModel: e }) => {
             const t = { vehicles: e.dictRef('vehicles') };
             return {
                 get: k.structural((e) => {
                     if (-1 === e) return;
-                    const a = t.vehicles.get(e);
-                    if (!a) return void console.error(`Error getting vehicle with id: ${e}`);
-                    const s = (function (e) {
+                    const s = t.vehicles.get(e);
+                    if (!s) return void console.error(`Error getting vehicle with id: ${e}`);
+                    const a = (function (e) {
                         try {
                             const t = JSON.parse(e);
                             return ((t.shortName = t.shortName.replace(/<img.+\/>/, '')), t);
                         } catch (t) {
                             throw (console.error(`Error parsing JSON for element ${e}:`, t), t);
                         }
-                    })(a);
-                    return { ...s, imageKey: V(s.name) };
+                    })(s);
+                    return { ...a, imageKey: D(a.name) };
                 }),
                 has: k.primitive((e) => Boolean(t.vehicles.get(e))),
                 ids: k.shallow(() => [...t.vehicles.keys.values()]),
                 amount: k.primitive(() => t.vehicles.length),
                 list: k.shallow(() => {
                     let e = [];
-                    for (const [s, l] of t.vehicles.entries())
+                    for (const [a, r] of t.vehicles.entries())
                         try {
-                            e.push(JSON.parse(l.get()));
-                        } catch (a) {
-                            console.error(`Error parsing JSON for element ${s}:`, a);
+                            e.push(JSON.parse(r.get()));
+                        } catch (s) {
+                            console.error(`Error parsing JSON for element ${a}:`, s);
                         }
                     return e;
                 }),
             };
         },
-        D,
-        { useRequires: () => ({ statistics: gt() }) },
+        V,
+        { useRequires: () => ({ statistics: Ct() }) },
     ),
-    [yt, Ct] = A('MyVehiclesProvider')(
+    [wt, Et] = I('MyVehiclesProvider')(
         (e) => {
             const t = e.requires.statistic.model.ids,
-                a = k.structural((a) => {
-                    if (t().has(a)) return e.requires.vehicles.model.get(a);
+                s = k.structural((s) => {
+                    if (t().has(s)) return e.requires.vehicles.model.get(s);
                 }),
-                s = k.shallow(() => {
-                    const a = [];
-                    for (const s of t().values()) {
-                        const t = e.requires.vehicles.model.get(s);
-                        t ? a.push(t) : console.warn(`No vehicle with id: ${s}`);
+                a = k.shallow(() => {
+                    const s = [];
+                    for (const a of t().values()) {
+                        const t = e.requires.vehicles.model.get(a);
+                        t ? s.push(t) : console.warn(`No vehicle with id: ${a}`);
                     }
-                    return a;
+                    return s;
                 });
-            return { get: a, getAll: s, amount: k.primitive(() => s().length), ids: t };
+            return { get: s, getAll: a, amount: k.primitive(() => a().length), ids: t };
         },
-        D,
-        { useRequires: () => ({ vehicles: bt(), statistic: gt() }) },
+        V,
+        { useRequires: () => ({ vehicles: jt(), statistic: Ct() }) },
     ),
-    Nt = M.resolve('strings');
-function jt(e, t, a = '...') {
+    St = M.resolve('strings');
+function At(e, t, s = '...') {
     if (
         (B(
-            t - a.length >= 0,
-            `Incorrect tranticate config max(${t}) - rest.length(${a.length}) must be greater than 0`,
+            t - s.length >= 0,
+            `Incorrect tranticate config max(${t}) - rest.length(${s.length}) must be greater than 0`,
         ),
         e.length <= t)
     )
         return [e, !1];
-    return [`${e.slice(0, t - a.length)}${a}`, !0];
+    return [`${e.slice(0, t - s.length)}${s}`, !0];
 }
-const wt = T(U + z),
-    Et = () => `${Date.now().toString(16)}_${wt(3)}`;
-function St(e, t, a = 1) {
-    const s = L(t, { count: a });
-    return e.has(s) ? St(e, t, a + 1) : s;
+const It = T(U + z),
+    kt = () => `${Date.now().toString(16)}_${It(3)}`;
+function Pt(e, t, s = 1) {
+    const a = L(t, { count: s });
+    return e.has(a) ? Pt(e, t, s + 1) : a;
 }
-function It(e = '', t = []) {
+function Dt(e = '', t = []) {
     return {
-        title: '' !== e ? e : Nt.readOrEmpty('playlists.defaultName'),
+        title: '' !== e ? e : St.readOrEmpty('playlists.defaultName'),
         createdAt: Date.now(),
         modifiedAt: Date.now(),
         list: t,
     };
 }
-const At = (e) => ({ type: 'ok', value: e }),
-    kt = (e, t) => ({ type: 'error', error: { tag: e, msg: t } }),
-    Pt = 'delete',
-    Vt = 'import',
-    Dt = s({ title: i(), createdAt: l(c(), o(), n(0)), modifiedAt: l(c(), o(), n(0)), list: r(l(c(), o())) }),
-    Mt = l(
-        i(),
+const Vt = (e) => ({ type: 'ok', value: e }),
+    Mt = (e, t) => ({ type: 'error', error: { tag: e, msg: t } }),
+    Tt = 'delete',
+    Lt = 'import',
+    Bt = a({ title: l(), createdAt: r(c(), o(), n(0)), modifiedAt: r(c(), o(), n(0)), list: i(r(c(), o())) }),
+    Ut = r(
+        l(),
         d((e) => (e.length > 0 ? e : void 0)),
     ),
-    [Tt, Lt, { Context: Bt }] = A('PlaylistsProvider')(
-        ({ requires: t, observableModel: a }) => {
-            const s = a.dict('storage'),
-                l = a.primitives(['selectedID', 'enabled', 'dirtyEdit']),
-                r = t.filters.model.computes.default,
-                i = {
+    [zt, Ot, { Context: Xt }] = I('PlaylistsProvider')(
+        ({ requires: t, observableModel: s }) => {
+            const a = s.dict('storage'),
+                r = s.primitives(['selectedID', 'enabled', 'dirtyEdit']),
+                i = t.filters.model.computes.default,
+                l = {
                     vehicles: t.vehicles.model,
                     myVehicles: t.myVehicles.model,
-                    enabled: l.enabled,
+                    enabled: r.enabled,
                     nationsOrder: t.filters.model.nations,
-                    filters: e.box(r(), { deep: !1 }),
+                    filters: e.box(i(), { deep: !1 }),
                     searchName: e.box('', { deep: !1 }),
-                    edit: { initial: e.box(void 0, { deep: !1 }), dirty: l.dirtyEdit },
+                    edit: { initial: e.box(void 0, { deep: !1 }), dirty: r.dirtyEdit },
                 },
-                n = k.shallow(() => s.keys),
-                o = k.primitive(() => u(Mt, l.selectedID.get())),
+                n = k.shallow(() => a.keys),
+                o = k.primitive(() => u(Ut, r.selectedID.get())),
                 c = k.structural((e) => {
                     try {
-                        const t = s.get(e);
-                        if (!t) return At(void 0);
-                        const a = u(Dt, JSON.parse(t)),
-                            l = new Set();
-                        for (const e of a.list)
+                        const t = a.get(e);
+                        if (!t) return Vt(void 0);
+                        const s = u(Bt, JSON.parse(t)),
+                            r = new Set();
+                        for (const e of s.list)
                             if (O[e]) {
-                                const t = O[e].find((e) => Boolean(i.myVehicles.get(e.toString())));
-                                l.add(t ?? e);
-                            } else l.add(e);
-                        return At({ ...a, list: [...l.values()] });
+                                const t = O[e].find((e) => Boolean(l.myVehicles.get(e.toString())));
+                                r.add(t ?? e);
+                            } else r.add(e);
+                        return Vt({ ...s, list: [...r.values()] });
                     } catch (t) {
-                        return (console.error(`Error getting playlist with ${e} id`, t), kt('PARSE_ERROR', String(t)));
+                        return (console.error(`Error getting playlist with ${e} id`, t), Mt('PARSE_ERROR', String(t)));
                     }
                 }),
                 d = k.shallow(() =>
@@ -470,45 +468,38 @@ const At = (e) => ({ type: 'ok', value: e }),
                 }),
                 f = k.shallow(() => {
                     const e = t.filters.model.computes.nationToIndex();
-                    return R(t.myVehicles.model.getAll(), (t, a) => pt(e, ft, t, a));
+                    return R(t.myVehicles.model.getAll(), (t, s) => vt(e, bt, t, s));
                 }),
                 v = k.primitive((e) => {
-                    var t;
-                    const a = p(e),
+                    const t = p(e),
                         s = x();
-                    if (void 0 === a || 0 === a.list.length) return;
-                    const l = new Set(a.list);
+                    if (void 0 === t || 0 === t.list.length) return;
+                    const a = new Set(t.list);
                     for (let r = 0; r < s.length; r += 1) {
-                        const e = Number(null == (t = s[r]) ? void 0 : t.id);
-                        if (G(e) && l.has(e)) return r;
+                        const e = Number(s[r]?.id);
+                        if (G(e) && a.has(e)) return r;
                     }
                 }),
-                g = k.primitive(() => !1 === P.structural(r(), i.filters.get()) || i.searchName.get().length > 0),
+                g = k.primitive(() => !1 === P.structural(i(), l.filters.get()) || l.searchName.get().length > 0),
                 x = k.shallow(() => {
-                    const e = i.filters.get(),
-                        a = f(),
-                        s = i.searchName.get();
-                    return a.filter((a) => {
-                        if (!dt(s, a)) return !1;
-                        const l = t.statistic.model.get(a.id);
-                        return ct(e, a, l);
+                    const e = l.filters.get(),
+                        s = f(),
+                        a = l.searchName.get();
+                    return s.filter((s) => {
+                        if (!ht(a, s)) return !1;
+                        const r = t.statistic.model.get(s.id);
+                        return pt(e, s, r);
                     });
                 }),
-                b = k.primitive((e) => {
-                    var a;
-                    return Boolean(null == (a = t.statistic.model.get(e)) ? void 0 : a.elite);
-                }),
+                b = k.primitive((e) => Boolean(t.statistic.model.get(e)?.elite)),
                 y = k.shallow((e) => {
-                    const a = t.vehicles.model.get(e);
-                    return null == a ? void 0 : a.imageKey;
+                    const s = t.vehicles.model.get(e);
+                    return s?.imageKey;
                 }),
                 C = k.primitive(() => x().length),
-                N = k.shallow(() => {
-                    var e;
-                    return null == (e = _()) ? void 0 : e.list.map(i.vehicles.get);
-                });
+                N = k.shallow(() => _()?.list.map(l.vehicles.get));
             return {
-                ...i,
+                ...l,
                 current: _,
                 titles: d,
                 currentId: o,
@@ -517,7 +508,7 @@ const At = (e) => ({ type: 'ok', value: e }),
                 byIdFull: p,
                 filtered: x,
                 filteredAmount: C,
-                defaultFilters: r,
+                defaultFilters: i,
                 hasFilters: g,
                 vehicleImage: y,
                 currentVehicles: N,
@@ -528,26 +519,26 @@ const At = (e) => ({ type: 'ok', value: e }),
             };
         },
         ({ model: e, externalModel: t }) => {
-            const s = t.createCallback(
+            const a = t.createCallback(
                 (e) => ({ id: e.id, data: JSON.stringify(e.initial), skipRedirect: e.skipRedirect }),
                 'onCreate',
             );
             return {
                 filters: q({
                     update: (t) => {
-                        e.filters.set(mt(e.filters.get(), t));
+                        e.filters.set(ft(e.filters.get(), t));
                     },
                     reset: () => {
                         (e.filters.set(e.defaultFilters()), e.searchName.set(''));
                     },
                     search: (t) => e.searchName.set(t),
                     change: (t) => {
-                        e.filters.set(mt(e.filters.get(), t));
+                        e.filters.set(ft(e.filters.get(), t));
                     },
                 }),
-                create: a((t) => {
-                    const { id: a = Et(), vehicleIds: l = [], skipRedirect: r = !1 } = t ?? {};
-                    s({ id: a, initial: It(St(e.titles(), 'playlists.defaultName'), l), skipRedirect: r });
+                create: s((t) => {
+                    const { id: s = kt(), vehicleIds: r = [], skipRedirect: i = !1 } = t ?? {};
+                    a({ id: s, initial: Dt(Pt(e.titles(), 'playlists.defaultName'), r), skipRedirect: i });
                 }),
                 edit: {
                     sendModify: t.createCallback((e, t) => ({ id: e, data: JSON.stringify(t) }), 'onModify'),
@@ -558,21 +549,21 @@ const At = (e) => ({ type: 'ok', value: e }),
                 exit: t.createCallback((e) => ({ id: e }), 'onDiscard'),
                 goToAboutVehicle: t.createCallback((e) => ({ intCD: e }), 'onGoToAboutVehicle'),
                 openImport: t.createCallback(
-                    a(() => ({ type: Vt, params: JSON.stringify({ titles: Array.from(e.titles().values()) }) })),
+                    s(() => ({ type: Lt, params: JSON.stringify({ titles: Array.from(e.titles().values()) }) })),
                     'openImportConfirm',
                 ),
                 openDeleteConfirm: t.createCallback(
-                    (e, t) => ({ id: e, type: Pt, params: JSON.stringify({ title: t }) }),
+                    (e, t) => ({ id: e, type: Tt, params: JSON.stringify({ title: t }) }),
                     'openDeleteConfirm',
                 ),
             };
         },
-        { useRequires: () => ({ vehicles: bt(), myVehicles: Ct(), filters: _t(), statistic: gt() }) },
+        { useRequires: () => ({ vehicles: jt(), myVehicles: Et(), filters: xt(), statistic: Ct() }) },
     ),
-    Ut = () => m.useContext(Bt),
-    [zt, Ot] = A('VehiclesInventoryProvider')(
-        (a) => {
-            const s = a.observableModel.primitives([
+    Rt = () => m.useContext(Xt),
+    [Gt, qt] = I('VehiclesInventoryProvider')(
+        (s) => {
+            const a = s.observableModel.primitives([
                     'freeSlotsCount',
                     'defaultSlotPrice',
                     'slotPrice',
@@ -585,76 +576,75 @@ const At = (e) => ({ type: 'ok', value: e }),
                     'bpStatus',
                     'telecomRentStatus',
                 ]),
-                l = e.box([], { deep: !1 }),
-                r = { intCD: s.currentVehicleIntCD, inventoryId: s.currentVehicleInventoryId },
-                i = k.shallow(() => {
-                    const e = r.intCD.get();
-                    return a.requires.vehicles.model.get(e);
+                r = e.box([], { deep: !1 }),
+                i = { intCD: a.currentVehicleIntCD, inventoryId: a.currentVehicleInventoryId },
+                l = k.shallow(() => {
+                    const e = i.intCD.get();
+                    return s.requires.vehicles.model.get(e);
                 }),
                 n = k.shallow((e) => {
                     if (void 0 === e) return;
-                    const t = r.intCD.get();
-                    return -1 === t ? a.requires.vehicles.model.get(e) : a.requires.vehicles.model.get(t);
+                    const t = i.intCD.get();
+                    return -1 === t ? s.requires.vehicles.model.get(e) : s.requires.vehicles.model.get(t);
                 }),
                 o = k.shallow(() => {
-                    const e = r.intCD.get();
-                    return a.requires.statistic.model.get(e);
+                    const e = i.intCD.get();
+                    return s.requires.statistic.model.get(e);
                 }),
-                c = k.primitive(() => -1 !== r.intCD.get()),
-                d = k.shallow((e) => F(e, (e) => u.get(String(e)))),
-                u = a.requires.myVehicles.model,
-                m = k.structural(() => a.requires.vehicles.model.list().filter((e) => e.rent.isRented)),
+                c = k.primitive(() => -1 !== i.intCD.get()),
+                d = k.shallow((e) => H(e, (e) => u.get(String(e)))),
+                u = s.requires.myVehicles.model,
+                m = k.structural(() => s.requires.vehicles.model.list().filter((e) => e.rent.isRented)),
                 h = k.primitive(() =>
-                    a.requires.vehicles.model.list().some((e) => {
-                        const t = a.requires.statistic.model.get(e.vehicleId);
+                    s.requires.vehicles.model.list().some((e) => {
+                        const t = s.requires.statistic.model.get(e.vehicleId);
                         if (t) return 'inPrebattle' === t.status;
                     }),
                 ),
                 _ = k.primitive(() => {
                     const e = [...u.getAll()],
-                        t = a.requires.filters.model.computes.nationToIndex();
-                    return (e.sort((e, a) => pt(t, ft, e, a)), e);
+                        t = s.requires.filters.model.computes.nationToIndex();
+                    return (e.sort((e, s) => vt(t, bt, e, s)), e);
                 });
             return (
-                a.cleanup(
+                s.cleanup(
                     t(() => {
-                        var e;
-                        const t = a.requires.filters.model.filters.get(),
-                            s = a.requires.filters.model.searchName.get(),
-                            r = null == (e = a.requires.playlists) ? void 0 : e.model.current(),
+                        const e = s.requires.filters.model.filters.get(),
+                            t = s.requires.filters.model.searchName.get(),
+                            a = s.requires.playlists?.model.current(),
                             i = u.ids(),
-                            n = (r ? d(r.list) : _()).filter(
-                                (e) =>
-                                    !1 !== i.has(e.id) && !!ct(t, e, a.requires.statistic.model.get(e.id)) && dt(s, e),
+                            l = (a ? d(a.list) : _()).filter(
+                                (a) =>
+                                    !1 !== i.has(a.id) && !!pt(e, a, s.requires.statistic.model.get(a.id)) && ht(t, a),
                             );
-                        p(() => l.set(n));
+                        p(() => r.set(l));
                     }),
                 ),
                 {
-                    vehicles: a.requires.myVehicles.model,
+                    vehicles: s.requires.myVehicles.model,
                     vehicle: n,
-                    selectedVehicle: i,
+                    selectedVehicle: l,
                     isVehicleSelected: c,
                     selectedVehicleStatistics: o,
                     accumulateByIds: d,
                     rentVehiclesList: m,
                     prebattleModeActive: h,
                     current: {
-                        intCD: s.currentVehicleIntCD,
-                        inventoryId: s.currentVehicleInventoryId,
-                        amount: k.primitive(() => l.get().length),
-                        list: () => l.get(),
-                        ids: k.shallow(() => l.get().map((e) => e.id)),
-                        playlist: a.requires.playlists ? a.requires.playlists.model.current : () => {},
+                        intCD: a.currentVehicleIntCD,
+                        inventoryId: a.currentVehicleInventoryId,
+                        amount: k.primitive(() => r.get().length),
+                        list: () => r.get(),
+                        ids: k.shallow(() => r.get().map((e) => e.id)),
+                        playlist: s.requires.playlists ? s.requires.playlists.model.current : () => {},
                     },
                     slots: {
-                        free: s.freeSlotsCount,
-                        price: { defaultValue: s.defaultSlotPrice, value: s.slotPrice, currency: s.slotPriceCurrency },
-                        recover: s.recoverableVehicleCount,
-                        discount: s.hasDiscont,
+                        free: a.freeSlotsCount,
+                        price: { defaultValue: a.defaultSlotPrice, value: a.slotPrice, currency: a.slotPriceCurrency },
+                        recover: a.recoverableVehicleCount,
+                        discount: a.hasDiscont,
                     },
-                    bpState: { active: s.bpEntityValid, status: s.bpStatus },
-                    telecomRentStatus: s.telecomRentStatus,
+                    bpState: { active: a.bpEntityValid, status: a.bpStatus },
+                    telecomRentStatus: a.telecomRentStatus,
                 }
             );
         },
@@ -665,46 +655,44 @@ const At = (e) => ({ type: 'ok', value: e }),
             goRecoverVehicle: e.externalModel.createCallbackNoArgs('onGoRecoverVehicle'),
             selectTelecomRentalVehicle: e.externalModel.createCallbackNoArgs('onSelectTelecomRentalVehicle'),
         }),
-        { useRequires: () => ({ myVehicles: Ct(), vehicles: bt(), statistic: gt(), filters: _t(), playlists: Ut() }) },
+        { useRequires: () => ({ myVehicles: Et(), vehicles: jt(), statistic: Ct(), filters: xt(), playlists: Rt() }) },
     ),
-    [Xt, Rt] = A('SelectVehiclesProvider')(
-        (a) => {
-            const s = a.observableModel.primitives(['title', 'currentVehicleCD', 'isAllVehicles']),
-                l = a.requires.vehicles.model,
-                r = a.requires.statistic.model,
-                i = e.box([], { deep: !1 }),
-                n = k.shallow((e) => F(e, (e) => l.get(String(e)))),
+    [Ht, Ft] = I('SelectVehiclesProvider')(
+        (s) => {
+            const a = s.observableModel.primitives(['title', 'currentVehicleCD', 'isAllVehicles']),
+                r = s.requires.vehicles.model,
+                i = s.requires.statistic.model,
+                l = e.box([], { deep: !1 }),
+                n = k.shallow((e) => H(e, (e) => r.get(String(e)))),
                 o = k.primitive(() => {
-                    let e = l.list();
-                    s.isAllVehicles.get() || (e = e.filter((e) => Boolean(r.get(e.id))));
-                    const t = a.requires.filters.model.computes.nationToIndex();
-                    return (e.sort((e, a) => pt(t, ft, e, a)), e);
+                    let e = r.list();
+                    a.isAllVehicles.get() || (e = e.filter((e) => Boolean(i.get(e.id))));
+                    const t = s.requires.filters.model.computes.nationToIndex();
+                    return (e.sort((e, s) => vt(t, bt, e, s)), e);
                 });
-            a.cleanup(
+            s.cleanup(
                 t(() => {
-                    var e;
-                    const t = null == (e = a.requires.playlists) ? void 0 : e.model.current(),
-                        s = (t ? n(t.list) : o()).filter(
+                    const e = s.requires.playlists?.model.current(),
+                        t = (e ? n(e.list) : o()).filter(
                             (e) =>
-                                !!ct(a.requires.filters.model.filters.get(), e, r.get(e.id)) &&
-                                dt(a.requires.filters.model.searchName.get(), e),
+                                !!pt(s.requires.filters.model.filters.get(), e, i.get(e.id)) &&
+                                ht(s.requires.filters.model.searchName.get(), e),
                         );
-                    p(() => i.set(s));
+                    p(() => l.set(t));
                 }),
             );
-            const c = k.shallow(() => i.get().map((e) => e.id)),
-                d = k.primitive(() => s.currentVehicleCD.get().toString());
+            const c = k.shallow(() => l.get().map((e) => e.id)),
+                d = k.primitive(() => a.currentVehicleCD.get().toString());
             return {
-                title: s.title,
+                title: a.title,
                 currentVehicleCD: d,
                 currentIndex: k.primitive(() => c().indexOf(d())),
-                isAllVehicles: s.isAllVehicles,
+                isAllVehicles: a.isAllVehicles,
                 total: k.primitive(() => {
-                    var e;
-                    const t = null == (e = a.requires.playlists) ? void 0 : e.model.current();
-                    return t ? t.list.length : o().length;
+                    const e = s.requires.playlists?.model.current();
+                    return e ? e.list.length : o().length;
                 }),
-                list: () => i.get(),
+                list: () => l.get(),
                 ids: c,
             };
         },
@@ -712,19 +700,19 @@ const At = (e) => ({ type: 'ok', value: e }),
             setAllVehicles: e.createCallback((e) => ({ value: e }), 'onIsAllVehiclesChange'),
             select: e.createCallback((e = '') => ({ id: e }), 'onSelect'),
         }),
-        { useRequires: () => ({ vehicles: bt(), filters: _t(), statistic: gt(), playlists: Lt() }) },
+        { useRequires: () => ({ vehicles: jt(), filters: xt(), statistic: Ct(), playlists: Ot() }) },
     ),
-    [Gt, qt, Ft] = A()(({ observableModel: e }) => ({
+    [Zt, Yt, Qt] = I()(({ observableModel: e }) => ({
         ...e.primitives(['isCrystalEarnEnabled', 'isDailyMultipliedXpEnabled', 'isInfiniteAmmo']),
     })),
-    Ht = () => m.useContext(Ft.Context),
-    Zt = m.createContext(void 0);
-function Yt() {
-    const e = m.useContext(Zt);
+    Jt = () => m.useContext(Qt.Context),
+    Wt = m.createContext(void 0);
+function Kt() {
+    const e = m.useContext(Wt);
     if (!e) throw new Error("Can't call useFilters outside of FiltersContext Provider. Please wrap it.");
     return e;
 }
-const Qt = {
+const $t = {
         category: 'FilterPopover_category_aa274a28',
         vehicleLevel: 'FilterPopover_vehicleLevel_41885117',
         scroll: 'FilterPopover_scroll_bce24275',
@@ -738,64 +726,63 @@ const Qt = {
         specialsIcons: 'FilterPopover_specialsIcons_5a3d8e7',
         specialsIcons__favorite: 'FilterPopover_specialsIcons__favorite_c7792d3a',
     },
-    Jt = h(function (e) {
-        const t = Yt(),
-            a = t.tooltipHeaderMap ?? We,
-            s = t.tooltipBodyMap ?? Ke,
-            l = M.resolve('strings'),
-            r = e.tooltip.body !== Qe ? l.readOrEmpty(`tank_carousel_filter.tooltip.${s[e.tooltip.body]}.body`) : '',
-            i = H({ header: l.readOrEmpty(`${a[e.tooltip.header]}`), body: r });
-        return _.jsx(Wt, { ...e, tooltip: e.tooltip.body !== Qe && i });
+    es = h(function (e) {
+        const t = Kt(),
+            s = t.tooltipHeaderMap ?? We,
+            a = t.tooltipBodyMap ?? Ke,
+            r = M.resolve('strings'),
+            i = e.tooltip.body !== Qe ? r.readOrEmpty(`tank_carousel_filter.tooltip.${a[e.tooltip.body]}.body`) : '',
+            l = F({ header: r.readOrEmpty(`${s[e.tooltip.header]}`), body: i });
+        return _.jsx(ts, { ...e, tooltip: e.tooltip.body !== Qe && l });
     }),
-    Wt = h(function (e) {
-        const t = Yt(),
-            a = t.filters.get(),
-            s = m.useMemo(() => {
-                var t;
+    ts = h(function (e) {
+        const t = Kt(),
+            s = t.filters.get(),
+            a = m.useMemo(() => {
                 if ('role' === e.event.type) {
                     const t = e.event.role;
-                    return Object.values(a).some((e) => e.some((e) => e.includes(t)));
+                    return Object.values(s).some((e) => e.some((e) => e.includes(t)));
                 }
-                return null == (t = a[e.event.field]) ? void 0 : t.includes(e.event.value);
-            }, [e.event, a]);
+                return s[e.event.field]?.includes(e.event.value);
+            }, [e.event, s]);
         return _.jsx(Z, {
             ...e.tooltip,
             theme: Q.primary,
             size: Y.extraSmall,
-            className: f(Qt.toggle, s && Qt.toggle__activated, e.className),
-            activated: s,
+            className: f($t.toggle, a && $t.toggle__activated, e.className),
+            activated: a,
             onClick: () => {
                 (t.change(e.event), e.tooltip && e.tooltip.onClick());
             },
             children: e.children,
         });
     });
-function Kt(e) {
+function ss(e) {
     return _.jsx('div', {
-        className: f(Qt.toggleContainer, e.className),
+        className: f($t.toggleContainer, e.className),
         children: et.map((e) =>
             _.jsx(
-                Jt,
+                es,
                 {
                     tooltip: { header: e, body: Ze },
                     event: { type: 'role', role: e },
-                    children: _.jsx(ae, { roleKey: e, size: ae.sizes.x24x24, className: Qt.icon }),
+                    children: _.jsx(se, { roleKey: e, size: se.sizes.x24x24, className: $t.icon }),
                 },
                 e,
             ),
         ),
     });
 }
-function $t(e) {
+function as(e) {
     return _.jsx('div', {
-        className: f(Qt.toggleContainer, Qt.toggleContainer__type, e.className),
-        children: at.map((e) =>
+        className: f($t.toggleContainer, $t.toggleContainer__type, e.className),
+        children: st.map((e) =>
             _.jsx(
-                Jt,
+                es,
                 {
                     tooltip: { header: e, body: Ye },
-                    event: { field: lt.vehicleTypes, type: 'regular', value: e },
-                    className: Qt.toggle__type,
+                    event: { field: rt, type: 'regular', value: e },
+                    className: $t.toggle__type,
                     children: _.jsx(te, { type: e, size: te.sizes.x24x24 }),
                 },
                 e,
@@ -803,18 +790,18 @@ function $t(e) {
         ),
     });
 }
-function ea(e) {
+function rs(e) {
     return _.jsx('div', {
-        className: f(Qt.toggleContainer, e.className),
+        className: f($t.toggleContainer, e.className),
         children: e.orderedNations.map((e) =>
             _.jsx(
-                Jt,
+                es,
                 {
                     tooltip: { header: e, body: Je },
-                    event: { field: lt.nations, type: 'regular', value: e },
+                    event: { field: it, type: 'regular', value: e },
                     children: _.jsx('div', {
-                        className: Qt.nationWrapper,
-                        children: _.jsx(ee, { className: Qt.nationIcon, path: `flags.c_60x40.${e}` }),
+                        className: $t.nationWrapper,
+                        children: _.jsx(ee, { className: $t.nationIcon, path: `flags.c_60x40.${e}` }),
                     }),
                 },
                 e,
@@ -822,154 +809,150 @@ function ea(e) {
         ),
     });
 }
-function ta(e) {
+function is(e) {
     return _.jsx('div', {
-        className: f(Qt.toggleContainer, e.className),
-        children: st.map((e) =>
+        className: f($t.toggleContainer, e.className),
+        children: at.map((e) =>
             _.jsx(
-                Jt,
+                es,
                 {
                     tooltip: { header: 'tier', body: Qe },
-                    event: { field: lt.levels, type: 'regular', value: `level_${e}` },
-                    children: _.jsx(se, { className: Qt.vehicleLevel, value: e }),
+                    event: { field: lt, type: 'regular', value: `level_${e}` },
+                    children: _.jsx(ae, { className: $t.vehicleLevel, value: e }),
                 },
                 e,
             ),
         ),
     });
 }
-function aa(e) {
+function ls(e) {
     const t = $(`hangar.filter.special.${e.imagePath}`, `hangar.filter.special.${e.imagePath}_upscale`);
     return _.jsx(
-        Jt,
+        es,
         {
             tooltip: { header: e.special, body: e.special },
-            event: { field: lt.specials, type: 'regular', value: e.special },
+            event: { field: nt, type: 'regular', value: e.special },
             children: _.jsx(ee, {
-                className: f(Qt.specialsIcons, 'favorite' === e.special && Qt.specialsIcons__favorite),
+                className: f($t.specialsIcons, 'favorite' === e.special && $t.specialsIcons__favorite),
                 path: t,
             }),
         },
         e.special,
     );
 }
-function sa() {
+function ns() {
     const e = $('hangar.filter.special.isCommonProgression', 'hangar.filter.special.isCommonProgression_upscale');
-    return _.jsx(Jt, {
+    return _.jsx(es, {
         tooltip: { header: $e, body: $e },
-        event: { field: lt.battle_pass, type: 'regular', value: $e },
-        children: _.jsx(ee, { className: Qt.specialsIcons, path: e }),
+        event: { field: ot, type: 'regular', value: $e },
+        children: _.jsx(ee, { className: $t.specialsIcons, path: e }),
     });
 }
-const la = h(function (e) {
-    var t;
-    const a = Yt(),
-        s = a.specialIds ?? tt,
-        l = Ot(),
-        r = l.model.bpState.active.get(),
-        i = l.model.rentVehiclesList(),
-        n = null == (t = Ht()) ? void 0 : t.model,
-        o = !n || n.isCrystalEarnEnabled.get(),
-        c = !n || n.isDailyMultipliedXpEnabled.get(),
-        d = s.filter((e) => (0 !== i.length || 'rented' !== e) && (c || 'bonus' !== e) && (o || 'crystals' !== e));
+const os = h(function (e) {
+    const t = Kt(),
+        s = t.specialIds ?? tt,
+        a = qt(),
+        r = a.model.bpState.active.get(),
+        i = a.model.rentVehiclesList(),
+        l = Jt()?.model,
+        n = !l || l.isCrystalEarnEnabled.get(),
+        o = !l || l.isDailyMultipliedXpEnabled.get(),
+        c = s.filter((e) => (0 !== i.length || 'rented' !== e) && (o || 'bonus' !== e) && (n || 'crystals' !== e));
     return _.jsxs('div', {
-        className: f(Qt.toggleContainer, e.className),
+        className: f($t.toggleContainer, e.className),
         children: [
-            d.map((e) => {
-                var t;
-                return _.jsx(aa, { imagePath: (null == (t = a.imagesMap) ? void 0 : t[e]) ?? e, special: e }, e);
-            }),
-            r && _.jsx(sa, {}),
+            c.map((e) => _.jsx(ls, { imagePath: t.imagesMap?.[e] ?? e, special: e }, e)),
+            r && _.jsx(ns, {}),
             e.children,
         ],
     });
 });
-function ra() {
-    const e = le(),
-        [t, a] = m.useState(!1);
+function cs() {
+    const e = re(),
+        [t, s] = m.useState(!1);
     return (
         m.useEffect(() => {
-            const s = e.inputRef.current;
-            if (t || !s) return;
-            (e.focus(), a(!0));
-            const l = s.value.length;
-            s.setSelectionRange(l, l);
-            const r = (e) => {
-                s && !s.contains(e.target) && a(!0);
+            const a = e.inputRef.current;
+            if (t || !a) return;
+            (e.focus(), s(!0));
+            const r = a.value.length;
+            a.setSelectionRange(r, r);
+            const i = (e) => {
+                a && !a.contains(e.target) && s(!0);
             };
-            return (document.addEventListener('mousedown', r), () => document.removeEventListener('mousedown', r));
+            return (document.addEventListener('mousedown', i), () => document.removeEventListener('mousedown', i));
         }, [e, t]),
         null
     );
 }
 m.memo(function (e) {
-    return _.jsxs(ia, {
+    return _.jsxs(ds, {
         ...e,
-        className: e.className ?? Qt.scroll,
+        className: e.className ?? $t.scroll,
         children: [
-            _.jsx(J, { className: Qt.category, path: 'tank_carousel_filter.popover.label.specials' }),
-            _.jsx(la, { children: e.children }),
+            _.jsx(J, { className: $t.category, path: 'tank_carousel_filter.popover.label.specials' }),
+            _.jsx(os, { children: e.children }),
         ],
     });
 });
-const ia = m.memo(function (e) {
+const ds = m.memo(function (e) {
         return _.jsx(W, {
             children: _.jsxs(K, {
                 className: e.className,
                 barClassNames: e.barClassNames,
                 scrollClassNames: e.scrollClassNames,
                 children: [
-                    _.jsx(J, { className: Qt.category, path: 'tank_carousel_filter.popover.label.vehicleTypes' }),
-                    _.jsx($t, {}),
-                    _.jsx(J, { className: Qt.category, path: 'tank_carousel_filter.popover.label.vehicleRole' }),
-                    _.jsx(Kt, {}),
-                    _.jsx(J, { className: Qt.category, path: 'tank_carousel_filter.popover.label.nations' }),
-                    _.jsx(ea, { orderedNations: e.orderedNations }),
-                    _.jsx(J, { className: Qt.category, path: 'tank_carousel_filter.popover.label.levels' }),
-                    _.jsx(ta, {}),
+                    _.jsx(J, { className: $t.category, path: 'tank_carousel_filter.popover.label.vehicleTypes' }),
+                    _.jsx(as, {}),
+                    _.jsx(J, { className: $t.category, path: 'tank_carousel_filter.popover.label.vehicleRole' }),
+                    _.jsx(ss, {}),
+                    _.jsx(J, { className: $t.category, path: 'tank_carousel_filter.popover.label.nations' }),
+                    _.jsx(rs, { orderedNations: e.orderedNations }),
+                    _.jsx(J, { className: $t.category, path: 'tank_carousel_filter.popover.label.levels' }),
+                    _.jsx(is, {}),
                     e.children,
                 ],
             }),
         });
     }),
-    na = 'Counter_f01b3b30',
-    oa = 'Counter_current_a4351338',
-    ca = 'Counter_slash_6b744519',
-    da = 'Counter_total_5eb7f52b',
-    ua = 'Counter_reset_1c57af99',
-    ma = 'Counter_resetIcon_5ecd9d54',
-    pa = h(function () {
+    us = 'Counter_f01b3b30',
+    ms = 'Counter_current_a4351338',
+    ps = 'Counter_slash_6b744519',
+    hs = 'Counter_total_5eb7f52b',
+    _s = 'Counter_reset_1c57af99',
+    fs = 'Counter_resetIcon_5ecd9d54',
+    vs = h(function () {
         const e = M.resolve('strings'),
             t = M.resolve('intl'),
-            a = Yt(),
-            s = a.hasFilter();
-        re();
-        const { model: l } = Rt();
+            s = Kt(),
+            a = s.hasFilter();
+        ie();
+        const { model: r } = Ft();
         return _.jsxs('div', {
-            className: na,
+            className: us,
             children: [
                 e.readOrEmpty('dialogs.selectVehicle.counter'),
-                s &&
+                a &&
                     _.jsxs(_.Fragment, {
                         children: [
-                            _.jsx('div', { className: oa, children: t.formatNumber('integral', l.list().length) }),
-                            _.jsx('div', { className: ca, children: e.readOrEmpty('common.common.slash') }),
+                            _.jsx('div', { className: ms, children: t.formatNumber('integral', r.list().length) }),
+                            _.jsx('div', { className: ps, children: e.readOrEmpty('common.common.slash') }),
                         ],
                     }),
-                _.jsx('div', { className: da, children: t.formatNumber('integral', l.total()) }),
-                s &&
-                    _.jsx(ie, {
-                        className: ua,
+                _.jsx('div', { className: hs, children: t.formatNumber('integral', r.total()) }),
+                a &&
+                    _.jsx(le, {
+                        className: _s,
                         autoAlignContent: !1,
-                        theme: ie.themes.secondary,
-                        size: ie.sizes.extraSmall,
-                        onClick: a.reset,
-                        children: _.jsx('div', { className: ma }),
+                        theme: le.themes.secondary,
+                        size: le.sizes.extraSmall,
+                        onClick: s.reset,
+                        children: _.jsx('div', { className: fs }),
                     }),
             ],
         });
     }),
-    ha = {
+    gs = {
         frames: {
             import_hover: {
                 frame: { x: 0, y: 0, w: 46, h: 49 },
@@ -1102,42 +1085,41 @@ const ia = m.memo(function (e) {
         },
         meta: { size: { w: 137, h: 145 }, scale: 1 },
     };
-function _a({ value: e, ...t }) {
-    return _.jsx(oe, { ...t, sprite: ha, path: 'hangar.playlists.icons', icon: e, className: t.className });
+function xs({ value: e, ...t }) {
+    return _.jsx(oe, { ...t, sprite: gs, path: 'hangar.playlists.icons', icon: e, className: t.className });
 }
-const fa = ne('IconContainer', 'Icon_container_83f4dd0e'),
-    va = h(function (e) {
-        const t = Ot(),
-            a = Lt().model.byIdUnsafe(e.id);
-        B(void 0 !== a, `Playlist with ${e.id} is not found`);
-        const s = t.model.accumulateByIds(a.list).length;
-        return a.list.length <= s
+const bs = ne('IconContainer', 'Icon_container_83f4dd0e'),
+    ys = h(function (e) {
+        const t = qt(),
+            s = Ot().model.byIdUnsafe(e.id);
+        B(void 0 !== s, `Playlist with ${e.id} is not found`);
+        const a = t.model.accumulateByIds(s.list).length;
+        return s.list.length <= a
             ? null
-            : _.jsx(ga, {
+            : _.jsx(Cs, {
                   className: e.className,
                   classNames: e.classNames,
-                  displayAmount: s,
+                  displayAmount: a,
                   size: e.size,
-                  realAmountInPlaylist: a.list.length,
+                  realAmountInPlaylist: s.list.length,
               });
     });
-function ga(e) {
-    var t, a;
-    const s = M.resolve('strings'),
-        l = s
+function Cs(e) {
+    const t = M.resolve('strings'),
+        s = t
             .readOrEmpty('playlists.validation.unavailable.title')
             .replace('{{display}}', e.displayAmount.toString())
             .replace('{{total}}', e.realAmountInPlaylist.toString()),
-        r = H({ header: l, body: s.readOrEmpty('playlists.validation.unavailable.body') }),
-        i = 'lg' === e.size ? 'alert_lg' : 'alert',
-        n = 'lg' === e.size ? fa : 'div';
-    return _.jsx(n, {
-        ...r,
-        className: f(null == (t = e.classNames) ? void 0 : t.container, e.className),
-        children: _.jsx(_a, { className: null == (a = e.classNames) ? void 0 : a.icon, value: i }),
+        a = F({ header: s, body: t.readOrEmpty('playlists.validation.unavailable.body') }),
+        r = 'lg' === e.size ? 'alert_lg' : 'alert',
+        i = 'lg' === e.size ? bs : 'div';
+    return _.jsx(i, {
+        ...a,
+        className: f(e.classNames?.container, e.className),
+        children: _.jsx(xs, { className: e.classNames?.icon, value: r }),
     });
 }
-const xa = (e) =>
+const Ns = (e) =>
         m.createElement(
             'svg',
             {
@@ -1238,7 +1220,7 @@ const xa = (e) =>
                 }),
             ),
         ),
-    ba = (e) =>
+    js = (e) =>
         m.createElement(
             'svg',
             {
@@ -1375,7 +1357,7 @@ const xa = (e) =>
                 }),
             ),
         ),
-    ya = {
+    ws = {
         root: 'CopyButton_root_49d34ed8',
         base: 'CopyButton_67fe8760',
         base__enabled: 'CopyButton_base__enabled_49d34ed8',
@@ -1386,42 +1368,42 @@ const xa = (e) =>
         base__copiedStatus: 'CopyButton_base__copiedStatus_49d34ed8',
         icon__exportDone: 'CopyButton_icon__exportDone_8d5db080',
     },
-    Ca = M.resolve('strings'),
-    Na = function (e) {
-        const [t, a] = m.useState('copy'),
-            s = ce(),
-            l = H({
-                header: Ca.readOrEmpty('playlists.share.copy_button.title'),
-                body: Ca.readOrEmpty('playlists.share.copy_button.body'),
+    Es = M.resolve('strings'),
+    Ss = function (e) {
+        const [t, s] = m.useState('copy'),
+            a = ce(),
+            r = F({
+                header: Es.readOrEmpty('playlists.share.copy_button.title'),
+                body: Es.readOrEmpty('playlists.share.copy_button.body'),
             }),
-            r = re();
+            i = ie();
         return _.jsxs('div', {
-            ...l,
+            ...r,
             'data-test-id': 'copyButton',
-            className: f(ya.base, ya[`base__${t}Status`], e.disabled ? ya.base__disabled : ya.base__enabled),
+            className: f(ws.base, ws[`base__${t}Status`], e.disabled ? ws.base__disabled : ws.base__enabled),
             onClick: (t) => {
-                if ((l.onClick(), e.disabled)) return;
-                r.play('click', { target: 'vehicle:playlists:copy_button', original: t });
-                const i = e.onCopy();
-                'string' == typeof i &&
-                    de(i)
+                if ((r.onClick(), e.disabled)) return;
+                i.play('click', { target: 'vehicle:playlists:copy_button', original: t });
+                const l = e.onCopy();
+                'string' == typeof l &&
+                    de(l)
                         .then((e) => {
-                            (e ? a('copied') : console.error('Write to clipboard has been failure'),
-                                s.run(() => a('copy'), 1e3));
+                            (e ? s('copied') : console.error('Write to clipboard has been failure'),
+                                a.run(() => s('copy'), 1e3));
                         })
                         .catch((e) => console.error(e));
             },
             onMouseEnter: (t) => {
-                (l.onMouseEnter(t),
-                    e.disabled || r.play('mouse-enter', { target: 'vehicle:playlists:copy_button', original: t }));
+                (r.onMouseEnter(t),
+                    e.disabled || i.play('mouse-enter', { target: 'vehicle:playlists:copy_button', original: t }));
             },
             children: [
-                _.jsx(xa, { className: f(ya.icon, ya.icon__export) }),
-                _.jsx(ba, { className: f(ya.icon, ya.icon__exportDone) }),
+                _.jsx(Ns, { className: f(ws.icon, ws.icon__export) }),
+                _.jsx(js, { className: f(ws.icon, ws.icon__exportDone) }),
             ],
         });
     },
-    ja = (e) =>
+    As = (e) =>
         m.createElement(
             'svg',
             {
@@ -1592,115 +1574,113 @@ const xa = (e) =>
                 }),
             ),
         ),
-    wa = 'EditButton_e0942ef0',
-    Ea = 'EditButton_icon_a08c89e9',
-    Sa = M.resolve('strings');
-function Ia({ id: e, className: t }) {
-    const a = re(),
-        s = ue(),
-        l = H({
-            header: Sa.readOrEmpty('playlists.edit_button.title'),
-            body: Sa.readOrEmpty('playlists.edit_button.body'),
+    Is = 'EditButton_e0942ef0',
+    ks = 'EditButton_icon_a08c89e9',
+    Ps = M.resolve('strings');
+function Ds({ id: e, className: t }) {
+    const s = ie(),
+        a = ue(),
+        r = F({
+            header: Ps.readOrEmpty('playlists.edit_button.title'),
+            body: Ps.readOrEmpty('playlists.edit_button.body'),
         });
     return _.jsx('div', {
-        ...l,
-        className: f(wa, t),
+        ...r,
+        className: f(Is, t),
         'data-test-id': 'editButton',
         onClick: (t) => {
-            (l.onClick(),
-                a.play('click', { target: 'vehicle:playlists:edit_button', original: t }),
-                s.push('/hangar/editVehiclePlaylists', { id: e }));
+            (r.onClick(),
+                s.play('click', { target: 'vehicle:playlists:edit_button', original: t }),
+                a.push('/hangar/editVehiclePlaylists', { id: e }));
         },
         onMouseEnter: (e) => {
-            (l.onMouseEnter(e), a.play('mouse-enter', { target: 'vehicle:playlists:edit_button', original: e }));
+            (r.onMouseEnter(e), s.play('mouse-enter', { target: 'vehicle:playlists:edit_button', original: e }));
         },
-        children: _.jsx(ja, { className: Ea }),
+        children: _.jsx(As, { className: ks }),
     });
 }
-const Aa = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_',
-    ka = 65535;
-function Pa(e) {
-    if (0 === e.length) return kt('EMPTY_INPUT');
-    const t = (function (e) {
-            let t = e[0] ?? 0;
-            for (let a = 0; a < e.length; a++) t = (t + e[a]) & ka;
-            return t;
-        })(e),
-        a = new Uint8Array(5 + 5 * e.length);
-    ((a[0] = t >>> 8), (a[1] = 255 & t), (a[2] = 1));
-    let s = 5;
-    for (let o = 0; o < e.length; o++) {
-        let t = e[o];
-        for (;;) {
-            const e = 127 & t;
-            if (((t >>>= 7), 0 === t)) {
-                ((a[s] = e), s++);
-                break;
-            }
-            ((a[s] = 128 | e), s++);
-        }
-    }
-    ((a[3] = (s - 5) >>> 8), (a[4] = (s - 5) & 255));
-    let l = '',
-        r = 0n,
-        i = 0;
-    const n = a.slice(0, s);
-    for (const o of n)
-        for (r = (r << 8n) | BigInt(o), i += 8; i >= 6; ) {
-            i -= 6;
-            const e = Number((r >> BigInt(i)) & 0x3fn);
-            ((l += Aa[e]), (r &= (1n << BigInt(i)) - 1n));
-        }
-    if (i > 0) {
-        const e = 63 & Number(r << BigInt(6 - i));
-        l += Aa[e];
-    }
-    return At(l);
-}
-const Va = 'Item_background_321cda1e',
-    Da = 'Item_c5163bf',
-    Ma = 'Item_base__selected_5f6fcc69',
-    Ta = 'Item_button_8b3e738d',
-    La = 'Item_selectedIcon_eb50b3a6',
-    Ba = 'Item_content_db9841ac',
-    Ua = 'Item_title_3edba705',
-    za = 'Item_actions_8ac98f7',
-    Oa = { container: 'Item_alert_31c28fa6', icon: 'Item_alertIcon_f872f769' },
-    Xa = h(function (e) {
+const Vs = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_';
+const Ms = 'Item_background_5cb932c1',
+    Ts = 'Item_c5163bf',
+    Ls = 'Item_base__selected_5f6fcc69',
+    Bs = 'Item_button_8b3e738d',
+    Us = 'Item_selectedIcon_eb50b3a6',
+    zs = 'Item_content_db9841ac',
+    Os = 'Item_title_3edba705',
+    Xs = 'Item_actions_63add2d',
+    Rs = { container: 'Item_alert_31c28fa6', icon: 'Item_alertIcon_f872f769' },
+    Gs = h(function (e) {
         const { playlist: t } = e,
-            a = Lt(),
-            s = me();
+            s = Ot(),
+            a = me();
         return _.jsxs('div', {
-            className: f(Da, a.model.currentId() === e.id && Ma),
+            className: f(Ts, s.model.currentId() === e.id && Ls),
             children: [
-                _.jsx('div', { className: Va }),
+                _.jsx('div', { className: Ms }),
                 _.jsxs(pe, {
-                    className: Ta,
+                    className: Bs,
                     onClick: () => {
-                        (a.controls.select(e.id), s.close());
+                        (s.controls.select(e.id), a.close());
                     },
                     'data-test-id': `playlist-${t.title}`,
                     children: [
                         _.jsxs('span', {
-                            className: Ba,
+                            className: zs,
                             children: [
-                                _.jsx(_a, { value: 'checked', className: La }),
-                                _.jsx(he, { text: t.title, className: Ua }),
-                                _.jsx(va, { id: e.id, classNames: Oa }),
+                                _.jsx(xs, { value: 'checked', className: Us }),
+                                _.jsx(he, { text: t.title, className: Os }),
+                                _.jsx(ys, { id: e.id, classNames: Rs }),
                             ],
                         }),
                         _.jsxs('span', {
-                            className: za,
+                            className: Xs,
                             onClick: (e) => e.stopPropagation(),
                             children: [
-                                _.jsx(Na, {
+                                _.jsx(Ss, {
                                     onCopy: function () {
-                                        const e = Pa(t.list);
+                                        const e = (function (e) {
+                                            if (0 === e.length) return Mt('EMPTY_INPUT');
+                                            const t = (function (e) {
+                                                    let t = e[0] ?? 0;
+                                                    for (let s = 0; s < e.length; s++) t = (t + e[s]) & 65535;
+                                                    return t;
+                                                })(e),
+                                                s = new Uint8Array(5 + 5 * e.length);
+                                            ((s[0] = t >>> 8), (s[1] = 255 & t), (s[2] = 1));
+                                            let a = 5;
+                                            for (let o = 0; o < e.length; o++) {
+                                                let t = e[o];
+                                                for (;;) {
+                                                    const e = 127 & t;
+                                                    if (((t >>>= 7), 0 === t)) {
+                                                        ((s[a] = e), a++);
+                                                        break;
+                                                    }
+                                                    ((s[a] = 128 | e), a++);
+                                                }
+                                            }
+                                            ((s[3] = (a - 5) >>> 8), (s[4] = (a - 5) & 255));
+                                            let r = '',
+                                                i = 0n,
+                                                l = 0;
+                                            const n = s.slice(0, a);
+                                            for (const o of n)
+                                                for (i = (i << 8n) | BigInt(o), l += 8; l >= 6; ) {
+                                                    l -= 6;
+                                                    const e = Number((i >> BigInt(l)) & 0x3fn);
+                                                    ((r += Vs[e]), (i &= (1n << BigInt(l)) - 1n));
+                                                }
+                                            if (l > 0) {
+                                                const e = 63 & Number(i << BigInt(6 - l));
+                                                r += Vs[e];
+                                            }
+                                            return Vt(r);
+                                        })(t.list);
                                         return 'error' === e.type ? console.error(e.error) : e.value;
                                     },
                                     disabled: 0 === t.list.length,
                                 }),
-                                _.jsx(Ia, { id: e.id }),
+                                _.jsx(Ds, { id: e.id }),
                             ],
                         }),
                     ],
@@ -1708,26 +1688,26 @@ const Va = 'Item_background_321cda1e',
             ],
         });
     }),
-    Ra = h(function (e) {
-        const t = Lt().model.byId(e.id);
-        return 'ok' === t.type && void 0 !== t.value ? _.jsx(Xa, { playlist: t.value, id: e.id }) : null;
+    qs = h(function (e) {
+        const t = Ot().model.byId(e.id);
+        return 'ok' === t.type && void 0 !== t.value ? _.jsx(Gs, { playlist: t.value, id: e.id }) : null;
     }),
-    Ga = h(function () {
-        const e = Lt(),
+    Hs = h(function () {
+        const e = Ot(),
             t = me();
         return _.jsxs('div', {
-            className: f(Da, !e.model.currentId() && Ma),
+            className: f(Ts, !e.model.currentId() && Ls),
             children: [
-                _.jsx('div', { className: Va }),
+                _.jsx('div', { className: Ms }),
                 _.jsx(pe, {
-                    className: Ta,
+                    className: Bs,
                     onClick: () => {
                         (e.controls.select(void 0), t.close());
                     },
                     'data-test-id': 'playlist-AllVehicles',
                     children: _.jsxs('span', {
                         children: [
-                            _.jsx(_a, { value: 'checked', className: La }),
+                            _.jsx(xs, { value: 'checked', className: Us }),
                             M.resolve('strings').readOrEmpty('pages.titles.allVehicles'),
                         ],
                     }),
@@ -1735,89 +1715,84 @@ const Va = 'Item_background_321cda1e',
             ],
         });
     }),
-    qa = 'Content_divider_b37223ef',
-    Fa = 'Content_icon_4da9c1eb',
-    Ha = 'Content_trigger_4b0aad5c',
-    Za = 'Content_triggerText_2dc694b6',
-    Ya = h(function () {
-        const e = Lt().model.sortedIds();
-        return _.jsxs('div', { children: [_.jsx(Ga, {}), e.map((e) => _.jsx(Ra, { id: e }, e))] });
+    Fs = 'Content_divider_f0c848b4',
+    Zs = 'Content_icon_4da9c1eb',
+    Ys = 'Content_trigger_4b0aad5c',
+    Qs = 'Content_triggerText_2dc694b6',
+    Js = h(function () {
+        const e = Ot().model.sortedIds();
+        return _.jsxs('div', { children: [_.jsx(Hs, {}), e.map((e) => _.jsx(qs, { id: e }, e))] });
     }),
-    Qa = ne('Divider', qa),
-    Ja = h(function (e) {
-        const t = Lt(),
-            a = M.resolve('strings'),
-            [s, l] = _e('add'),
-            r = e.asChild ? fe : pe;
-        return _.jsxs(r, {
-            className: Ha,
+    Ws = ne('Divider', Fs),
+    Ks = h(function (e) {
+        const t = Ot(),
+            s = M.resolve('strings'),
+            [a, r] = _e('add'),
+            i = e.asChild ? fe : pe;
+        return _.jsxs(i, {
+            className: Ys,
             'data-test-id': 'createPlaylist',
-            onMouseEnter: () => l(!0),
-            onMouseLeave: () => l(!1),
+            onMouseEnter: () => r(!0),
+            onMouseLeave: () => r(!1),
             onClick: () => t.controls.create(),
             children: [
-                _.jsx(fa, { className: Fa, children: _.jsx(_a, { value: s }) }),
-                _.jsx('span', { className: Za, children: a.readOrEmpty('playlists.list.create') }),
+                _.jsx(bs, { className: Zs, children: _.jsx(xs, { value: a }) }),
+                _.jsx('span', { className: Qs, children: s.readOrEmpty('playlists.list.create') }),
             ],
         });
     }),
-    Wa = function (e) {
-        const t = Lt(),
-            a = M.resolve('strings'),
-            [s, l] = _e('import'),
-            r = e.asChild ? fe : pe;
-        return _.jsxs(r, {
-            className: Ha,
+    $s = function (e) {
+        const t = Ot(),
+            s = M.resolve('strings'),
+            [a, r] = _e('import'),
+            i = e.asChild ? fe : pe;
+        return _.jsxs(i, {
+            className: Ys,
             'data-test-id': 'importPlaylist',
             onClick: t.controls.openImport,
-            onMouseEnter: () => l(!0),
-            onMouseLeave: () => l(!1),
+            onMouseEnter: () => r(!0),
+            onMouseLeave: () => r(!1),
             children: [
-                _.jsx(fa, { className: Fa, children: _.jsx(_a, { value: s }) }),
-                _.jsx('span', { className: Za, children: a.readOrEmpty('playlists.imports.trigger') }),
+                _.jsx(bs, { className: Zs, children: _.jsx(xs, { value: a }) }),
+                _.jsx('span', { className: Qs, children: s.readOrEmpty('playlists.imports.trigger') }),
             ],
         });
     },
-    Ka = {
-        popover: 'Dropdown_popover_b5203d93',
-        scrollContent: 'Dropdown_scrollContent_7363dda3',
-        bar: 'Dropdown_bar_2d94e05e',
-        area__begin: 'Dropdown_area__begin_8a87ef04',
-        area__end: 'Dropdown_area__end_ae66235b',
-        list: 'Dropdown_list_41b8eefe',
-        triggers: 'Dropdown_triggers_b8372e20',
-        currentTitle: 'Dropdown_currentTitle_11ba3707',
-        trigger: 'Dropdown_trigger_f754201d',
-        currentTitleText: 'Dropdown_currentTitleText_13099382',
-        alert: 'Dropdown_alert_8195eae1',
-        alertIcon: 'Dropdown_alertIcon_61f05dd3',
-        arrow: 'Dropdown_arrow_5a21c825',
-        arrow__opened: 'Dropdown_arrow__opened_ef9f7c1d',
-    },
-    $a = M.resolve('strings'),
-    es = [25, 25],
-    ts = { container: Ka.alert, icon: Ka.alertIcon },
-    as = h(function () {
+    ea = 'Dropdown_popover_b5203d93',
+    ta = 'Dropdown_scrollContent_7363dda3',
+    sa = 'Dropdown_bar_2d94e05e',
+    aa = 'Dropdown_area_a34c2ecf',
+    ra = 'Dropdown_area__begin_af756086',
+    ia = 'Dropdown_area__end_3b89247a',
+    la = 'Dropdown_list_41b8eefe',
+    na = 'Dropdown_triggers_b8372e20',
+    oa = 'Dropdown_currentTitle_11ba3707',
+    ca = 'Dropdown_trigger_f754201d',
+    da = 'Dropdown_currentTitleText_13099382',
+    ua = 'Dropdown_alert_8195eae1',
+    ma = 'Dropdown_alertIcon_61f05dd3',
+    pa = 'Dropdown_arrow_5a21c825',
+    ha = 'Dropdown_arrow__opened_ef9f7c1d',
+    _a = M.resolve('strings'),
+    fa = [25, 25],
+    va = { container: ua, icon: ma },
+    ga = h(function () {
         const { api: e } = ve(),
-            [t, a] = ge(e, es),
-            { opened: s } = me();
+            [t, s] = ge(e, fa),
+            { opened: a } = me();
         return (
             m.useEffect(() => {
-                if (s) return xe(() => xe(e.recalculateContent));
-            }, [s, e.recalculateContent]),
-            _.jsx(be, {
-                className: f(Ka.area, !t && Ka.area__begin, !a && Ka.area__end),
-                classNames: { content: Ka.scrollContent },
-                children: _.jsx(Ya, {}),
-            })
+                if (a) return xe(() => xe(e.recalculateContent));
+            }, [a, e.recalculateContent]),
+            _.jsx(be, { className: f(aa, !t && ra, !s && ia), classNames: { content: ta }, children: _.jsx(Js, {}) })
         );
     });
-function ss(e) {
+function xa(e) {
     const t = me();
-    return _.jsx(_a, { value: 'arrow_down', className: f(Ka.arrow, t.opened && Ka.arrow__opened, e.className) });
+    return _.jsx(xs, { value: 'arrow_down', className: f(pa, t.opened && ha, e.className) });
 }
 h(function (e) {
-    const t = Ut();
+    const t = Rt();
     return t && t.model.enabled.get()
         ? _.jsx(ye.Portal, {
               position: 'bottom',
@@ -1825,117 +1800,117 @@ h(function (e) {
               children: _.jsx(Ce, {
                   children: _.jsxs(ye.Display, {
                       'data-name': 'playlist-dropdown-content',
-                      className: Ka.popover,
+                      className: ea,
                       children: [
                           _.jsx(ye.Tip, {}),
                           _.jsx('div', {
-                              className: Ka.list,
+                              className: la,
                               children: _.jsxs(W, {
-                                  children: [_.jsx(as, {}), _.jsx(Ne, { classNames: { base: Ka.bar } })],
+                                  children: [_.jsx(ga, {}), _.jsx(Ne, { classNames: { base: sa } })],
                               }),
                           }),
-                          _.jsx(Qa, {}),
-                          _.jsxs('div', { className: Ka.triggers, children: [_.jsx(Ja, {}), _.jsx(Wa, {})] }),
+                          _.jsx(Ws, {}),
+                          _.jsxs('div', { className: na, children: [_.jsx(Ks, {}), _.jsx($s, {})] }),
                       ],
                   }),
               }),
           })
         : null;
 });
-const ls = h(function (e) {
-    const t = e.limit ? jt(e.title, e.limit)[0] : e.title;
+const ba = h(function (e) {
+    const t = e.limit ? At(e.title, e.limit)[0] : e.title;
     return _.jsxs('div', {
-        className: f(Ka.currentTitle, e.className),
+        className: f(oa, e.className),
         children: [
-            _.jsx(he, { text: t, className: Ka.currentTitleText }),
-            e.id && _.jsx(va, { classNames: ts, id: e.id, size: e.alertSize }),
+            _.jsx(he, { text: t, className: da }),
+            e.id && _.jsx(ys, { classNames: va, id: e.id, size: e.alertSize }),
         ],
     });
 });
 h(function (e) {
-    const t = Ut(),
-        a = null == t ? void 0 : t.model.current(),
-        s = re(),
-        l = H({ header: null == a ? void 0 : a.title, body: $a.readOrEmpty('playlists.trigger.explain') });
+    const t = Rt(),
+        s = t?.model.current(),
+        a = ie(),
+        r = F({ header: s?.title, body: _a.readOrEmpty('playlists.trigger.explain') });
     if (!t || !1 === t.model.enabled.get()) return e.fallback;
-    const r = e.asChild ? fe : 'div';
+    const i = e.asChild ? fe : 'div';
     return _.jsx(ye.Trigger, {
         children: (t) =>
             _.jsx(_.Fragment, {
-                children: _.jsxs(r, {
+                children: _.jsxs(i, {
                     ...t,
                     onMouseEnter: (e) => {
-                        (null == l || l.onMouseEnter(e),
-                            s.play('mouse-enter', { target: 'vehicle:playlists:dropdown_trigger', original: e }));
+                        (r?.onMouseEnter(e),
+                            a.play('mouse-enter', { target: 'vehicle:playlists:dropdown_trigger', original: e }));
                     },
                     onClick: (e) => {
-                        (null == l || l.onClick(),
-                            s.play('click', { target: 'vehicle:playlists:dropdown_trigger', original: e }),
+                        (r?.onClick(),
+                            a.play('click', { target: 'vehicle:playlists:dropdown_trigger', original: e }),
                             t.onClick(e));
                     },
-                    onMouseLeave: null == l ? void 0 : l.onMouseLeave,
+                    onMouseLeave: r?.onMouseLeave,
                     'data-name': 'playlist-dropdown-trigger',
                     'data-test-id': 'playlistDropdown',
-                    className: f(Ka.trigger, e.className),
+                    className: f(ca, e.className),
                     children: [
                         _.jsx(je, { children: e.children }),
-                        a
-                            ? _.jsx(ls, { limit: e.limit, id: a.id, title: a.title, alertSize: e.alertSize })
-                            : _.jsx(ls, { title: $a.readOrEmpty('pages.titles.allVehicles') }),
-                        _.jsx(ss, {}),
+                        s
+                            ? _.jsx(ba, { limit: e.limit, id: s.id, title: s.title, alertSize: e.alertSize })
+                            : _.jsx(ba, { title: _a.readOrEmpty('pages.titles.allVehicles') }),
+                        _.jsx(xa, {}),
                     ],
                 }),
             }),
     });
 });
-const rs = 'Item_background_321cda1e',
-    is = 'Item_c5163bf',
-    ns = 'Item_base__selected_5f6fcc69',
-    os = 'Item_button_8b3e738d',
-    cs = 'Item_selectedIcon_eb50b3a6',
-    ds = h(function (e) {
+const ya = 'Item_background_5cb932c1',
+    Ca = 'Item_c5163bf',
+    Na = 'Item_base__selected_5f6fcc69',
+    ja = 'Item_button_8b3e738d',
+    wa = 'Item_selectedIcon_eb50b3a6',
+    Ea = h(function (e) {
         const { playlist: t } = e,
-            a = Lt(),
-            s = me(),
-            l = H({ body: t.title }),
-            [r, i] = jt(t.title, 20);
+            s = Ot(),
+            a = me(),
+            r = F({ body: t.title }),
+            [i, l] = At(t.title, 20);
         return _.jsxs('div', {
-            ...(i && l),
-            className: f(is, a.model.currentId() === e.id && ns),
+            ...(l && r),
+            className: f(Ca, s.model.currentId() === e.id && Na),
             children: [
-                _.jsx('div', { className: rs }),
+                _.jsx('div', { className: ya }),
                 _.jsx(pe, {
-                    className: os,
+                    className: ja,
                     onClick: () => {
-                        (a.controls.select(e.id), s.close());
+                        (s.controls.select(e.id), a.close());
                     },
-                    'data-test-id': `playlist-${r}`,
-                    children: _.jsxs('span', { children: [_.jsx(_a, { value: 'checked', className: cs }), r] }),
+                    'data-test-id': `playlist-${i}`,
+                    children: _.jsxs('span', { children: [_.jsx(xs, { value: 'checked', className: wa }), i] }),
                 }),
             ],
         });
     }),
-    us = h(function (e) {
-        const t = Lt().model.byId(e.id);
-        return 'ok' === t.type && void 0 !== t.value ? _.jsx(ds, { playlist: t.value, id: e.id }) : null;
+    Sa = h(function (e) {
+        const t = Ot().model.byId(e.id);
+        return 'ok' === t.type && void 0 !== t.value ? _.jsx(Ea, { playlist: t.value, id: e.id }) : null;
     }),
-    ms = h(function () {
-        const e = Lt(),
+    Aa = h(function () {
+        const e = Ot(),
             t = me(),
-            { model: a, controls: s } = Rt();
+            { model: s, controls: a } = Ft();
         return _.jsxs('div', {
-            className: f(is, a.isAllVehicles.get() && !e.model.currentId() && ns),
+            className: f(Ca, s.isAllVehicles.get() && !e.model.currentId() && Na),
             children: [
-                _.jsx('div', { className: rs }),
+                _.jsx('div', { className: ya }),
                 _.jsx(pe, {
-                    className: os,
+                    className: ja,
                     onClick: () => {
-                        (e.controls.select(void 0), s.setAllVehicles(!0), t.close());
+                        (e.controls.select(void 0), a.setAllVehicles(!0), t.close());
                     },
                     'data-test-id': 'playlist-AllVehicles',
                     children: _.jsxs('span', {
                         children: [
-                            _.jsx(_a, { value: 'checked', className: cs }),
+                            _.jsx(xs, { value: 'checked', className: wa }),
                             M.resolve('strings').readOrEmpty('pages.titles.allSelectVehicles'),
                         ],
                     }),
@@ -1943,23 +1918,23 @@ const rs = 'Item_background_321cda1e',
             ],
         });
     }),
-    ps = h(function () {
-        const e = Lt(),
+    Ia = h(function () {
+        const e = Ot(),
             t = me(),
-            { model: a, controls: s } = Rt();
+            { model: s, controls: a } = Ft();
         return _.jsxs('div', {
-            className: f(is, !a.isAllVehicles.get() && !e.model.currentId() && ns),
+            className: f(Ca, !s.isAllVehicles.get() && !e.model.currentId() && Na),
             children: [
-                _.jsx('div', { className: rs }),
+                _.jsx('div', { className: ya }),
                 _.jsx(pe, {
-                    className: os,
+                    className: ja,
                     onClick: () => {
-                        (e.controls.select(void 0), s.setAllVehicles(!1), t.close());
+                        (e.controls.select(void 0), a.setAllVehicles(!1), t.close());
                     },
                     'data-test-id': 'playlist-MyVehicles',
                     children: _.jsxs('span', {
                         children: [
-                            _.jsx(_a, { value: 'checked', className: cs }),
+                            _.jsx(xs, { value: 'checked', className: wa }),
                             M.resolve('strings').readOrEmpty('pages.titles.allVehicles'),
                         ],
                     }),
@@ -1967,7 +1942,7 @@ const rs = 'Item_background_321cda1e',
             ],
         });
     }),
-    hs = {
+    ka = {
         playlistTrigger: 'Dropdown_playlistTrigger_eb63ff3b',
         playlistTitle: 'Dropdown_playlistTitle_9fbceba2',
         popover: 'Dropdown_popover_bdce30be',
@@ -1978,33 +1953,33 @@ const rs = 'Item_background_321cda1e',
         list: 'Dropdown_list_41b8eefe',
         trigger: 'Dropdown_trigger_f754201d',
     },
-    _s = [25, 25],
-    fs = h(function () {
-        const e = Lt().model.sortedIds();
-        return _.jsxs('div', { children: [_.jsx(ms, {}), _.jsx(ps, {}), e.map((e) => _.jsx(us, { id: e }, e))] });
+    Pa = [25, 25],
+    Da = h(function () {
+        const e = Ot().model.sortedIds();
+        return _.jsxs('div', { children: [_.jsx(Aa, {}), _.jsx(Ia, {}), e.map((e) => _.jsx(Sa, { id: e }, e))] });
     }),
-    vs = h(function () {
+    Va = h(function () {
         const { api: e } = ve(),
-            [t, a] = ge(e, _s),
-            { opened: s } = me();
+            [t, s] = ge(e, Pa),
+            { opened: a } = me();
         return (
             m.useEffect(() => {
-                if (s) return xe(() => xe(e.recalculateContent));
-            }, [s, e.recalculateContent]),
+                if (a) return xe(() => xe(e.recalculateContent));
+            }, [a, e.recalculateContent]),
             _.jsx(be, {
-                className: f(hs.area, !t && hs.area__begin, !a && hs.area__end),
-                classNames: { content: hs.scrollContent },
-                children: _.jsx(fs, {}),
+                className: f(ka.area, !t && ka.area__begin, !s && ka.area__end),
+                classNames: { content: ka.scrollContent },
+                children: _.jsx(Da, {}),
             })
         );
     }),
-    gs = h(function (e) {
-        const t = Ut(),
-            a = null == t ? void 0 : t.model.current(),
-            s = re(),
-            l = M.resolve('strings'),
-            { model: r } = Rt(),
-            i = H({ header: null == a ? void 0 : a.title, body: l.readOrEmpty('playlists.trigger.explain') });
+    Ma = h(function (e) {
+        const t = Rt(),
+            s = t?.model.current(),
+            a = ie(),
+            r = M.resolve('strings'),
+            { model: i } = Ft(),
+            l = F({ header: s?.title, body: r.readOrEmpty('playlists.trigger.explain') });
         if (!t || !1 === t.model.enabled.get()) return e.fallback;
         const n = e.asChild ? fe : 'div';
         return _.jsx(ye.Trigger, {
@@ -2013,36 +1988,36 @@ const rs = 'Item_background_321cda1e',
                     children: _.jsxs(n, {
                         ...t,
                         onMouseEnter: (e) => {
-                            (null == i || i.onMouseEnter(e),
-                                s.play('mouse-enter', { target: 'vehicle:playlists:dropdown_trigger', original: e }));
+                            (l?.onMouseEnter(e),
+                                a.play('mouse-enter', { target: 'vehicle:playlists:dropdown_trigger', original: e }));
                         },
                         onClick: (e) => {
-                            (null == i || i.onClick(),
-                                s.play('click', { target: 'vehicle:playlists:dropdown_trigger', original: e }),
+                            (l?.onClick(),
+                                a.play('click', { target: 'vehicle:playlists:dropdown_trigger', original: e }),
                                 t.onClick(e));
                         },
-                        onMouseLeave: null == i ? void 0 : i.onMouseLeave,
+                        onMouseLeave: l?.onMouseLeave,
                         'data-name': 'playlist-dropdown-trigger',
                         'data-test-id': 'playlistDropdown',
-                        className: f(hs.trigger, e.className),
+                        className: f(ka.trigger, e.className),
                         children: [
                             _.jsx(je, { children: e.children }),
-                            a
-                                ? _.jsx(ls, { limit: e.limit, id: a.id, title: a.title, alertSize: e.alertSize })
-                                : _.jsx(ls, {
-                                      title: l.readOrEmpty(
-                                          r.isAllVehicles.get()
+                            s
+                                ? _.jsx(ba, { limit: e.limit, id: s.id, title: s.title, alertSize: e.alertSize })
+                                : _.jsx(ba, {
+                                      title: r.readOrEmpty(
+                                          i.isAllVehicles.get()
                                               ? 'pages.titles.allSelectVehicles'
                                               : 'pages.titles.allVehicles',
                                       ),
                                   }),
-                            _.jsx(ss, {}),
+                            _.jsx(xa, {}),
                         ],
                     }),
                 }),
         });
     }),
-    xs = function () {
+    Ta = function () {
         return _.jsxs(ye, {
             children: [
                 _.jsx(ye.Portal, {
@@ -2050,53 +2025,51 @@ const rs = 'Item_background_321cda1e',
                     children: _.jsx(Ce, {
                         children: _.jsxs(ye.Display, {
                             'data-name': 'playlist-dropdown-content',
-                            className: hs.popover,
+                            className: ka.popover,
                             children: [
                                 _.jsx(ye.Tip, { position: 'top', size: '80rem', offset: '120rem' }),
                                 _.jsx('div', {
-                                    className: hs.list,
+                                    className: ka.list,
                                     children: _.jsxs(W, {
-                                        children: [_.jsx(vs, {}), _.jsx(Ne, { classNames: { base: hs.bar } })],
+                                        children: [_.jsx(Va, {}), _.jsx(Ne, { classNames: { base: ka.bar } })],
                                     }),
                                 }),
                             ],
                         }),
                     }),
                 }),
-                _.jsx(gs, {
+                _.jsx(Ma, {
                     asChild: !0,
-                    className: hs.playlistTrigger,
+                    className: ka.playlistTrigger,
                     fallback: null,
                     limit: 15,
-                    children: _.jsx(ie, { theme: 'secondary', classNames: { content: hs.playlistTitle } }),
+                    children: _.jsx(le, { theme: 'secondary', classNames: { content: ka.playlistTitle } }),
                 }),
             ],
         });
     },
-    bs = {
-        toggleContainer: 'Filters_toggleContainer_d9b9fbcd',
-        typeToggle: 'Filters_typeToggle_e818e249',
-        nationWrapper: 'Filters_nationWrapper_752636a8',
-        nationIcon: 'Filters_nationIcon_f766f25f',
-        toggle: 'Filters_toggle_3ee9f5ac',
-        vehicleLevel: 'Filters_vehicleLevel_2598a7f7',
-        specialsIcons: 'Filters_specialsIcons_94a8606c',
-        specialsIcons__favorite: 'Filters_specialsIcons__favorite_8d12da90',
-        search: 'Filters_search_54176870',
-        inputField: 'Filters_inputField_8f369261',
-        inputPlaceholder: 'Filters_inputPlaceholder_b010dc5a',
-    },
-    ys = ['favorite', 'premium', 'elite'];
-function Cs(e) {
+    La = 'Filters_toggleContainer_d9b9fbcd',
+    Ba = 'Filters_typeToggle_e818e249',
+    Ua = 'Filters_nationWrapper_752636a8',
+    za = 'Filters_nationIcon_f766f25f',
+    Oa = 'Filters_toggle_3ee9f5ac',
+    Xa = 'Filters_vehicleLevel_2598a7f7',
+    Ra = 'Filters_specialsIcons_94a8606c',
+    Ga = 'Filters_specialsIcons__favorite_8d12da90',
+    qa = 'Filters_search_54176870',
+    Ha = 'Filters_inputField_8f369261',
+    Fa = 'Filters_inputPlaceholder_b010dc5a',
+    Za = ['favorite', 'premium', 'elite'];
+function Ya(e) {
     return _.jsx('div', {
-        className: f(bs.toggleContainer, e.className),
-        children: at.map((e) =>
+        className: f(La, e.className),
+        children: st.map((e) =>
             _.jsx(
-                Jt,
+                es,
                 {
                     tooltip: { header: e, body: Ye },
-                    event: { field: lt.vehicleTypes, type: 'regular', value: e },
-                    className: bs.typeToggle,
+                    event: { field: rt, type: 'regular', value: e },
+                    className: Ba,
                     children: _.jsx(te, { type: e, size: te.sizes.x24x24 }),
                 },
                 e,
@@ -2104,19 +2077,19 @@ function Cs(e) {
         ),
     });
 }
-function Ns(e) {
+function Qa(e) {
     return _.jsx('div', {
-        className: f(bs.toggleContainer, e.className),
+        className: f(La, e.className),
         children: e.orderedNations.map((e) =>
             _.jsx(
-                Jt,
+                es,
                 {
                     tooltip: { header: e, body: Je },
-                    event: { field: lt.nations, type: 'regular', value: e },
-                    className: bs.toggle,
+                    event: { field: it, type: 'regular', value: e },
+                    className: Oa,
                     children: _.jsx('div', {
-                        className: bs.nationWrapper,
-                        children: _.jsx(ee, { className: bs.nationIcon, path: `flags.c_60x40.${e}` }),
+                        className: Ua,
+                        children: _.jsx(ee, { className: za, path: `flags.c_60x40.${e}` }),
                     }),
                 },
                 e,
@@ -2124,135 +2097,139 @@ function Ns(e) {
         ),
     });
 }
-function js(e) {
+function Ja(e) {
     return _.jsx('div', {
-        className: f(bs.toggleContainer, e.className),
-        children: st.map((e) =>
+        className: f(La, e.className),
+        children: at.map((e) =>
             _.jsx(
-                Jt,
+                es,
                 {
                     tooltip: { header: 'tier', body: Qe },
-                    event: { field: lt.levels, type: 'regular', value: `level_${e}` },
-                    className: bs.toggle,
-                    children: _.jsx(se, { className: bs.vehicleLevel, value: e }),
+                    event: { field: lt, type: 'regular', value: `level_${e}` },
+                    className: Oa,
+                    children: _.jsx(ae, { className: Xa, value: e }),
                 },
                 e,
             ),
         ),
     });
 }
-function ws(e) {
+function Wa(e) {
     const t = $(`hangar.filter.special.${e.imagePath}`, `hangar.filter.special.${e.imagePath}_upscale`);
     return _.jsx(
-        Jt,
+        es,
         {
             tooltip: { header: e.special, body: e.special },
-            event: { field: lt.specials, type: 'regular', value: e.special },
-            className: bs.toggle,
-            children: _.jsx(ee, {
-                className: f(bs.specialsIcons, 'favorite' === e.special && bs.specialsIcons__favorite),
-                path: t,
-            }),
+            event: { field: nt, type: 'regular', value: e.special },
+            className: Oa,
+            children: _.jsx(ee, { className: f(Ra, 'favorite' === e.special && Ga), path: t }),
         },
         e.special,
     );
 }
-function Es(e) {
+function Ka(e) {
     return _.jsx('div', {
-        className: f(bs.toggleContainer, e.className),
-        children: ys.map((e) => _.jsx(ws, { special: e, imagePath: e }, e)),
+        className: f(La, e.className),
+        children: Za.map((e) => _.jsx(Wa, { special: e, imagePath: e }, e)),
     });
 }
-const Ss = h(function (e) {
-        const t = _t(),
-            a = M.resolve('strings'),
-            s = t.model.searchName.get();
-        function l(e) {
-            e.keyCode !== Se.ESCAPE && e.stopPropagation();
+const $a = h(function (e) {
+        const t = xt(),
+            s = M.resolve('strings'),
+            a = t.model.searchName.get();
+        function r(e) {
+            e.keyCode !== Ae.ESCAPE && e.stopPropagation();
         }
         return _.jsxs(we.Provider, {
-            value: s,
+            value: a,
             children: [
-                _.jsx(ra, {}),
+                _.jsx(cs, {}),
                 _.jsxs(we.Decoration, {
-                    className: f(bs.search, e.className),
+                    className: f(qa, e.className),
                     children: [
                         _.jsx(we.Icon, { icon: we.icons.search }),
                         _.jsx(we.Field, {
                             ...e,
-                            className: bs.inputField,
-                            classNames: { placeholder: bs.inputPlaceholder },
+                            className: Ha,
+                            classNames: { placeholder: Fa },
                             maxLength: 50,
                             placeholderVisibility: Ee.value,
-                            onKeyDown: l,
-                            onKeyUp: l,
+                            onKeyDown: r,
+                            onKeyUp: r,
                             onChange: (e) => t.controls.search(e.target.value),
-                            children: a.readOrEmpty('tank_carousel_filter.popover.label.searchNameVehicle'),
+                            children: s.readOrEmpty('tank_carousel_filter.popover.label.searchNameVehicle'),
                         }),
-                        s.length > 0 && _.jsx(we.ClearButton, {}),
+                        a.length > 0 &&
+                            _.jsx(we.ClearButton, {
+                                onClick: () => {
+                                    Se.tooltip.hideAll();
+                                },
+                            }),
                     ],
                 }),
             ],
         });
     }),
-    Is = 'top',
-    As = 'bottom',
-    ks = 'both',
-    Ps = 'none';
-const Vs = {
-    base: 'Content_7ccb81a0',
-    disabledOverlay: 'Content_disabledOverlay_a8908196',
-    base__disabled: 'Content_base__disabled_da09528a',
-    base__selected: 'Content_base__selected_da09528a',
-    base__empty: 'Content_base__empty_da09528a',
-};
-function Ds({ children: e, selected: t, disabled: a, empty: s }) {
+    er = 'top',
+    tr = 'bottom',
+    sr = 'both',
+    ar = 'none';
+const rr = 'Content_7ccb81a0',
+    ir = 'Content_disabledOverlay_a8908196',
+    lr = 'Content_base__disabled_da09528a',
+    nr = 'Content_base__selected_da09528a',
+    or = 'Content_base__empty_da09528a';
+function cr({ children: e, selected: t, disabled: s, empty: a }) {
     return _.jsxs('div', {
         'data-name': 'Content',
-        className: f(Vs.base, s && Vs.base__empty, t && Vs.base__selected, a && Vs.base__disabled),
-        children: [e, a && _.jsx('div', { className: Vs.disabledOverlay })],
+        className: f(rr, a && or, t && nr, s && lr),
+        children: [e, s && _.jsx('div', { className: ir })],
     });
 }
-const Ms = 'Slot_977dd8f1',
-    Ts = 'Slot_base__wrapper_ae3081b5',
-    Ls = 'Slot_base__disabled_334cc10f',
-    Bs = 'Slot_base__empty_d386066c',
-    Us = 'Slot_content_1a27c8cf',
-    zs = 'Slot_base__active_71f19f5c',
-    Os = 'Slot_base__selected_71f19f5c',
-    Xs = 'Slot_selected_6e9f21df',
-    Rs = 'Slot_selected__border_e2a17304';
-function Gs({ children: e, selected: t = !1, disabled: a = !1, active: s, className: l, ...r }) {
-    const i = a || void 0 === r.onClick;
-    return _.jsx('div', {
-        ...r,
-        'data-name': 'Slot',
-        className: f(Ms, s && zs, t && Os, a && Ls, i && Bs, Ts, l),
-        children: _.jsxs('div', {
-            className: Us,
-            children: [
-                _.jsx(Ds, { selected: t, disabled: a, empty: i, children: e }),
-                t && _.jsx('div', { className: f(Xs, Rs) }),
-                _.jsx('div', { className: Xs }),
-            ],
-        }),
-    });
+const dr = 'Slot_977dd8f1',
+    ur = 'Slot_base__wrapper_ae3081b5',
+    mr = 'Slot_base__disabled_334cc10f',
+    pr = 'Slot_base__empty_d386066c',
+    hr = 'Slot_content_1a27c8cf',
+    _r = 'Slot_base__active_71f19f5c',
+    fr = 'Slot_base__selected_71f19f5c',
+    vr = 'Slot_selected_6e9f21df',
+    gr = 'Slot_selected__border_e2a17304',
+    xr = m.memo(function ({ children: e, selected: t = !1, disabled: s = !1, active: a, className: r, ...i }) {
+        const l = s || void 0 === i.onClick;
+        return _.jsx('div', {
+            ...i,
+            'data-name': 'Slot',
+            className: f(dr, a && _r, t && fr, s && mr, l && pr, ur, r),
+            children: _.jsxs('div', {
+                className: hr,
+                children: [
+                    _.jsx(cr, { selected: t, disabled: s, empty: l, children: e }),
+                    t && _.jsx('div', { className: f(vr, gr) }),
+                    _.jsx('div', { className: vr }),
+                ],
+            }),
+        });
+    }),
+    br = '54033',
+    yr = '50705',
+    Cr = '56833',
+    Nr = '51201',
+    jr = { [br]: 'alpha', [yr]: 'alpha', [Nr]: 'super', [Cr]: 'super' },
+    wr = 'unsuitableToQueue';
+function Er(e, t, s) {
+    return !(!e || 'disabled' === t || !s) && s.status !== wr && s.maxBpScore > 0;
 }
-const qs = { ['54033']: 'alpha', ['50705']: 'alpha', ['51201']: 'super', ['56833']: 'super' },
-    Fs = 'unsuitableToQueue';
-function Hs(e, t, a) {
-    return !(!e || 'disabled' === t || !a) && a.status !== Fs && a.maxBpScore > 0;
-}
-const Zs = {
+const Sr = {
         root: 'Information_root_6e8d4f26',
         base: 'Information_dd628d50',
         info: 'Information_info_b2948982',
         details: 'Information_details_e5340a0c',
         base__double: 'Information_base__double_6e8d4f26',
-        text: 'Information_text_2260d128',
+        text: 'Information_text_a2b2c19b',
         text__level: 'Information_text__level_e5a9014e',
         text__premium: 'Information_text__premium_741ebb2f',
-        truncatedName: 'Information_truncatedName_f698f1ce',
+        truncatedText: 'Information_truncatedText_ede7ae03',
         battlePass: 'Information_battlePass_63749625',
         battlePass__bonus: 'Information_battlePass__bonus_6e8d4f26',
         battlePass__active: 'Information_battlePass__active_960b5eed',
@@ -2263,7 +2240,7 @@ const Zs = {
         bpIcon: 'Information_bpIcon_a622154',
         prestige: 'Information_prestige_95cc4ef2',
         prestige__active: 'Information_prestige__active_960b5eed',
-        identifier: 'Information_identifier_342fa79b',
+        identifier: 'Information_identifier_1bcd619a',
         identifier__changeNation: 'Information_identifier__changeNation_665b13a2',
         identifier__alpha: 'Information_identifier__alpha_6e8d4f26',
         identifier__super: 'Information_identifier__super_46b1ed0d',
@@ -2273,119 +2250,119 @@ const Zs = {
         identifierIcon__super: 'Information_identifierIcon__super_34b8f5c2',
         identifierIcon__changeNation: 'Information_identifierIcon__changeNation_dfee83c8',
     },
-    Ys = ne('VehicleName', {
-        element: ke.Name,
-        className: Zs.text,
-        cva: { variants: { premium: { true: Zs.text__premium } } },
+    Ar = ne('VehicleName', {
+        element: Pe.Name,
+        className: Sr.text,
+        cva: { variants: { premium: { true: Sr.text__premium } } },
     });
-function Qs({ statistic: e, vehicle: t, className: a, status: s }) {
-    const l = M.resolve('views'),
-        r = M.resolve('aliases'),
-        i = M.resolve('strings'),
-        n = Pe({
-            resId: r.read((e) => e.hangar.shared.VehiclesStatistics('resId')),
-            contentId: l.read((e) =>
-                'paused' !== s
+function Ir({ statistic: e, vehicle: t, className: s, status: a }) {
+    const r = M.resolve('views'),
+        i = M.resolve('aliases'),
+        l = M.resolve('strings'),
+        n = De({
+            resId: i.read((e) => e.hangar.shared.VehiclesStatistics('resId')),
+            contentId: r.read((e) =>
+                'paused' !== a
                     ? e.lobby.battle_pass.tooltips.VehiclePointsTooltipView('resId')
                     : e.lobby.battle_pass.tooltips.BattlePassOnPauseTooltipView('resId'),
             ),
-            args: { intCD: null == t ? void 0 : t.vehicleId },
+            args: { intCD: t?.vehicleId },
         });
     return _.jsxs('div', {
-        className: f(Zs.battlePass, e.maxBpScore > 0 && Zs.battlePass__active, e.bpSpecial && Zs.battlePass__bonus, a),
+        className: f(Sr.battlePass, e.maxBpScore > 0 && Sr.battlePass__active, e.bpSpecial && Sr.battlePass__bonus, s),
         onMouseEnter: function (e) {
-            null == n || n.onMouseEnter(e);
+            n?.onMouseEnter(e);
         },
         onMouseLeave: function (e) {
-            null == n || n.onMouseLeave();
+            n?.onMouseLeave();
         },
         children: [
             _.jsxs('div', {
-                className: Zs.bpPoints,
+                className: Sr.bpPoints,
                 children: [
-                    _.jsx('div', { className: Zs.points, children: Ve.formatNumber('integral', e.bpProgress) }),
+                    _.jsx('div', { className: Sr.points, children: Ve.formatNumber('integral', e.bpProgress) }),
                     _.jsx('div', {
-                        className: f(Zs.points, Zs.points__slash),
-                        children: i.readOrEmpty('common.common.slash'),
+                        className: f(Sr.points, Sr.points__slash),
+                        children: l.readOrEmpty('common.common.slash'),
                     }),
-                    _.jsx('div', { className: Zs.points, children: Ve.formatNumber('integral', e.maxBpScore) }),
-                    _.jsx('div', { className: Zs.bpShadow }),
+                    _.jsx('div', { className: Sr.points, children: Ve.formatNumber('integral', e.maxBpScore) }),
+                    _.jsx('div', { className: Sr.bpShadow }),
                 ],
             }),
-            _.jsx('div', { className: Zs.bpIcon }),
+            _.jsx('div', { className: Sr.bpIcon }),
         ],
     });
 }
-function Js({ statistic: e, elite: t, vehicle: a, selected: s, classNames: l, className: r }) {
+function kr({ statistic: e, elite: t, vehicle: s, selected: a, classNames: r, className: i }) {
     return _.jsxs('div', {
-        className: f(Zs.details, r),
+        className: f(Sr.details, i),
         children: [
             e &&
-                _.jsx(ke.Prestige, {
+                _.jsx(Pe.Prestige, {
                     level: e.prestigeLevel,
                     grade: e.prestigeGrade,
                     type: e.prestigeType,
-                    direction: Me.left,
-                    className: f(Zs.prestige, s && Zs.prestige__active, null == l ? void 0 : l.prestige),
+                    direction: Te.left,
+                    className: f(Sr.prestige, a && Sr.prestige__active, r?.prestige),
                 }),
-            _.jsx(ke.Level, { className: f(Zs.text, Zs.text__level, null == l ? void 0 : l.level), value: a.level }),
-            De(a.type) &&
-                _.jsx(ke.Type, {
-                    type: a.type,
-                    premium: t || (null == e ? void 0 : e.elite),
-                    size: ke.Type.sizes.x24x24,
-                    className: null == l ? void 0 : l.type,
+            _.jsx(Pe.Level, { className: f(Sr.text, Sr.text__level, r?.level), value: s.level }),
+            Me(s.type) &&
+                _.jsx(Pe.Type, {
+                    type: s.type,
+                    premium: t || e?.elite,
+                    size: Pe.Type.sizes.x24x24,
+                    className: r?.type,
                 }),
         ],
     });
 }
-function Ws({ vehicle: e, className: t, classNames: a }) {
-    const s = qs[e.id],
-        l = e.nationChangeAvailable,
-        r = e.rent.leftTime > 0 || e.rent.leftWins > 0 || e.rent.leftBattles > 0;
+function Pr({ vehicle: e, className: t, classNames: s }) {
+    const a = jr[e.id],
+        r = e.nationChangeAvailable,
+        i = e.rent.leftTime > 0 || e.rent.leftWins > 0 || e.rent.leftBattles > 0;
     return _.jsxs('div', {
         className: f(
-            Zs.identifier,
-            Zs[`identifier__${s}`],
-            l && Zs.identifier__changeNation,
-            r && Zs.identifier__rent,
+            Sr.identifier,
+            Sr[`identifier__${a}`],
+            r && Sr.identifier__changeNation,
+            i && Sr.identifier__rent,
             t,
         ),
         children: [
-            _.jsx(Ys, {
-                className: null == a ? void 0 : a.name,
+            _.jsx(Ar, {
+                className: s?.name,
                 premium: e.premium,
-                children: _.jsx(Te, { className: Zs.truncatedName, text: e.shortName }),
+                children: _.jsx(he, { className: Sr.truncatedText, text: e.shortName }),
             }),
-            (s || l) &&
+            (a || r) &&
                 _.jsx('div', {
                     className: f(
-                        Zs.identifierIcon,
-                        Zs[`identifierIcon__${s}`],
-                        l && Zs.identifierIcon__changeNation,
-                        null == a ? void 0 : a.icon,
+                        Sr.identifierIcon,
+                        Sr[`identifierIcon__${a}`],
+                        r && Sr.identifierIcon__changeNation,
+                        s?.icon,
                     ),
                 }),
         ],
     });
 }
-h(function ({ vehicle: e, statistic: t, selected: a, doubleRow: s, ...l }) {
-    const r = Ot(),
-        i = r.model.bpState.active.get(),
-        n = r.model.bpState.status.get();
+h(function ({ vehicle: e, statistic: t, selected: s, doubleRow: a, ...r }) {
+    const i = qt(),
+        l = i.model.bpState.active.get(),
+        n = i.model.bpState.status.get();
     return _.jsxs('div', {
-        ...l,
-        className: f(Zs.base, s && Zs.base__double, l.className),
+        ...r,
+        className: f(Sr.base, a && Sr.base__double, r.className),
         children: [
-            t && Hs(i, n, t) && _.jsx(Qs, { vehicle: e, statistic: t, status: n }),
-            _.jsxs(ke, {
-                className: Zs.info,
-                children: [_.jsx(Js, { vehicle: e, statistic: t, selected: a }), _.jsx(Ws, { vehicle: e })],
+            t && Er(l, n, t) && _.jsx(Ir, { vehicle: e, statistic: t, status: n }),
+            _.jsxs(Pe, {
+                className: Sr.info,
+                children: [_.jsx(kr, { vehicle: e, statistic: t, selected: s }), _.jsx(Pr, { vehicle: e })],
             }),
         ],
     });
 });
-const Ks = {
+const Dr = {
         base: 'ProBoost_7490b440',
         arrow: 'ProBoost_arrow_346b5e61',
         glow: 'ProBoost_glow_280ac9aa',
@@ -2399,151 +2376,133 @@ const Ks = {
         triangle__3: 'ProBoost_triangle__3_e738f7f2',
         base__deactivating: 'ProBoost_base__deactivating_7b71aa2e',
     },
-    $s = {
-        inactive: Ks.base__inactive,
-        activating: Ks.base__activating,
-        active: Ks.base__active,
-        deactivating: Ks.base__deactivating,
+    Vr = {
+        inactive: Dr.base__inactive,
+        activating: Dr.base__activating,
+        active: Dr.base__active,
+        deactivating: Dr.base__deactivating,
     };
-function el({ className: e, doubleRow: t, state: a = 'inactive', isCornerHidden: s = !1 }) {
-    return 'inactive' === a
+function Mr({ className: e, doubleRow: t, state: s = 'inactive', isCornerHidden: a = !1 }) {
+    return 'inactive' === s
         ? null
         : _.jsxs('div', {
-              className: f(Ks.base, a && $s[a], t && Ks.base__double, e),
+              className: f(Dr.base, s && Vr[s], t && Dr.base__double, e),
               children: [
-                  _.jsx('div', { className: Ks.glow }),
-                  !s && _.jsx('div', { className: Ks.corner }),
-                  _.jsx('div', { className: Ks.arrow }),
-                  [Ks.triangle__1, Ks.triangle__2, Ks.triangle__3].map((e) =>
-                      _.jsx('div', { className: f(Ks.triangle, e) }, e),
+                  _.jsx('div', { className: Dr.glow }),
+                  !a && _.jsx('div', { className: Dr.corner }),
+                  _.jsx('div', { className: Dr.arrow }),
+                  [Dr.triangle__1, Dr.triangle__2, Dr.triangle__3].map((e) =>
+                      _.jsx('div', { className: f(Dr.triangle, e) }, e),
                   ),
               ],
           });
 }
-const tl = {
-        wotPlus: 'Background_wotPlus_3cf6035a',
-        crystal: 'Background_crystal_6112fa42',
-        bpBonus: 'Background_bpBonus_86685469',
-        flag: 'Background_flag_57525fcb',
-        flag__active: 'Background_flag__active_de322c1b',
-        crystal__limit: 'Background_crystal__limit_61072361',
-        favorite: 'Background_favorite_d98f92cc',
-        favorite__active: 'Background_favorite__active_7f14a6c7',
-    },
-    al = ne('Favorite', tl.favorite, { variants: { active: { true: tl.favorite__active } } });
-function sl({ vehicle: e, selected: t, active: a, className: s }) {
+const Tr = 'Background_wotPlus_3cf6035a',
+    Lr = 'Background_crystal_6112fa42',
+    Br = 'Background_bpBonus_86685469',
+    Ur = 'Background_flag_beb58b8',
+    zr = 'Background_flag__active_de322c1b',
+    Or = 'Background_crystal__limit_61072361',
+    Xr = ne('Favorite', 'Background_favorite_d98f92cc', {
+        variants: { active: { true: 'Background_favorite__active_7f14a6c7' } },
+    });
+function Rr({ vehicle: e, selected: t, active: s, className: a }) {
     return _.jsx(ee, {
-        className: f(tl.flag, t || (a && tl.flag__active), s),
+        className: f(Ur, t || (s && zr), a),
         path: `hangar.carousel.cards.flags.x400x300.${E(e.nationId)}`,
         position: 'top left',
     });
 }
-h(function ({ vehicle: e, statistic: t, validBP: a, doubleRow: s, classNames: l }) {
-    var r;
-    const i = (null == (r = Ht()) ? void 0 : r.model.isCrystalEarnEnabled.get()) ?? !0,
-        n =
-            (Le((null == t ? void 0 : t.numberOfCrystalEarned) ?? [], 1) ?? 0) <=
-            (Le((null == t ? void 0 : t.numberOfCrystalEarned) ?? [], 0) ?? 0),
-        o = null == t ? void 0 : t.proBoostActive,
-        c = i && e.crystalEarning,
-        d = Be(o),
-        u = m.useMemo(() => (o ? (!1 === d ? 'activating' : 'active') : d ? 'deactivating' : 'inactive'), [o, d]);
+h(function ({ vehicle: e, statistic: t, validBP: s, doubleRow: a, classNames: r }) {
+    const i = Jt()?.model.isCrystalEarnEnabled.get() ?? !0,
+        l = (Le(t?.numberOfCrystalEarned ?? [], 1) ?? 0) <= (Le(t?.numberOfCrystalEarned ?? [], 0) ?? 0),
+        n = t?.proBoostActive,
+        o = t?.fromWotPlus,
+        c = i && e.crystalEarning && !o,
+        d = Be(n),
+        u = m.useMemo(() => (n ? (!1 === d ? 'activating' : 'active') : d ? 'deactivating' : 'inactive'), [n, d]);
     return _.jsxs(_.Fragment, {
         children: [
-            (null == t ? void 0 : t.fromWotPlus) &&
-                _.jsx('div', { className: f(tl.wotPlus, null == l ? void 0 : l.wotPlus) }),
-            _.jsx(el, { state: u, className: null == l ? void 0 : l.proBoostIcon, doubleRow: s, isCornerHidden: c }),
-            c && _.jsx('div', { className: f(tl.crystal, n && tl.crystal__limit, null == l ? void 0 : l.crystal) }),
-            (null == t ? void 0 : t.bpSpecial) &&
-                a &&
-                _.jsx('div', { className: f(tl.bpBonus, null == l ? void 0 : l.bpBonus) }),
+            o && _.jsx('div', { className: f(Tr, r?.wotPlus) }),
+            _.jsx(Mr, { state: u, className: r?.proBoostIcon, doubleRow: a, isCornerHidden: c }),
+            c && _.jsx('div', { className: f(Lr, l && Or, r?.crystal) }),
+            t?.bpSpecial && s && _.jsx('div', { className: f(Br, r?.bpBonus) }),
         ],
     });
 });
-const ll = { base: 'Background_5a8b768e', vehicle: 'Background_vehicle_2886ef49' };
-function rl({ vehicle: e, ...t }) {
+const Gr = 'Background_5a8b768e',
+    qr = 'Background_vehicle_2886ef49';
+function Hr({ vehicle: e, ...t }) {
     return _.jsxs('div', {
         ...t,
-        className: ll.base,
+        className: Gr,
         children: [
-            _.jsx(sl, { vehicle: e }),
-            _.jsx(Ue, { className: ll.vehicle, name: e.name }),
-            _.jsx(al, { active: e.favorite }),
+            _.jsx(Rr, { vehicle: e }),
+            _.jsx(Ue, { className: qr, name: e.name }),
+            _.jsx(Xr, { active: e.favorite }),
         ],
     });
 }
-const il = {
-        base: 'Card_74e86576',
-        overlay: 'Card_overlay_701a3ab4',
-        content: 'Card_content_a6141b08',
-        checkMark: 'Card_checkMark_ad3837d8',
-        selectText: 'Card_selectText_c740c2a2',
-        border: 'Card_border_e9cb9a85',
-        info: 'Card_info_9b8bfdb4',
-    },
-    nl = il.border,
-    ol = h(function ({ vehicleId: e, selected: t = !1, children: a, ...s }) {
-        const l = bt().model.get(e),
-            r = gt().model.get(e),
-            i = re(),
-            { controls: n } = Rt();
-        if (!l) return _.jsx(Gs, { ...s });
-        return _.jsxs(Gs, {
-            ...s,
-            className: f('vehicle-card', s.className),
+const Fr = 'Card_74e86576',
+    Zr = 'Card_overlay_701a3ab4',
+    Yr = 'Card_checkMark_ad3837d8',
+    Qr = 'Card_selectText_c740c2a2',
+    Jr = 'Card_info_9b8bfdb4',
+    Wr = 'Card_border_e9cb9a85',
+    Kr = h(function ({ vehicleId: e, selected: t = !1, children: s, ...a }) {
+        const r = jt().model.get(e),
+            i = Ct().model.get(e),
+            l = ie(),
+            { controls: n } = Ft();
+        if (!r) return _.jsx(xr, { ...a });
+        return _.jsxs(xr, {
+            ...a,
+            className: f('vehicle-card', a.className),
             selected: t,
             'data-test-id': `vehicleCard-${e}`,
             onMouseEnter: function (e) {
-                var t;
-                (i.play('mouse-enter', { target: 'vehicle-card', original: e }),
-                    null == (t = s.onMouseEnter) || t.call(s, e));
+                (l.play('mouse-enter', { target: 'vehicle-card', original: e }), a.onMouseEnter?.(e));
             },
             onMouseLeave: function (e) {
-                var t;
-                null == (t = s.onMouseLeave) || t.call(s, e);
+                a.onMouseLeave?.(e);
             },
             onClick: function (t) {
-                (i.play('click', { target: 'vehicle-card', original: t }), n.select(e));
+                (l.play('click', { target: 'vehicle-card', original: t }), n.select(e));
             },
-            children: [_.jsx(cl, { vehicle: l }), _.jsx(dl, { statistic: r, vehicle: l, selected: t })],
+            children: [_.jsx($r, { vehicle: r }), _.jsx(ti, { statistic: i, vehicle: r, selected: t })],
         });
     });
-function cl(e) {
-    const [t, a] = m.useState(!0),
-        [, s] = m.useTransition();
+function $r(e) {
+    const [t, s] = m.useState(!0),
+        [, a] = m.useTransition();
     return (
         m.useEffect(() => {
-            t && s(() => a(!1));
+            t && a(() => s(!1));
         }, [t]),
-        t ? null : _.jsx(rl, { ...e })
+        t ? null : _.jsx(Hr, { ...e })
     );
 }
-function dl({ vehicle: e, statistic: t, selected: a }) {
-    const [s, l] = m.useState(!0),
-        r = m.useRef(null),
-        [, i] = m.useTransition(),
-        n = M.resolve('strings');
+const ei = M.resolve('strings');
+function ti({ vehicle: e, statistic: t, selected: s }) {
+    const [a, r] = m.useState(!0),
+        [, i] = m.useTransition();
     return (
         m.useEffect(() => {
-            s && i(() => l(!1));
-        }, [s]),
-        s
+            a && i(() => r(!1));
+        }, [a]),
+        a
             ? null
             : _.jsxs('div', {
-                  ref: r,
-                  className: f(il.base, !1),
+                  className: Fr,
                   children: [
-                      _.jsx('div', {
-                          className: il.content,
-                          children: _.jsx(ul, { vehicle: e, selected: a, statistic: t }),
-                      }),
+                      _.jsx(si, { vehicle: e, selected: s, statistic: t }),
                       _.jsxs('div', {
-                          className: il.overlay,
+                          className: Zr,
                           children: [
-                              _.jsx('div', { className: il.checkMark }),
+                              _.jsx('div', { className: Yr }),
                               _.jsx('div', {
-                                  className: il.selectText,
-                                  children: n.readOrEmpty('dialogs.selectVehicle.selectVehicle'),
+                                  className: Qr,
+                                  children: ei.readOrEmpty('dialogs.selectVehicle.selectVehicle'),
                               }),
                           ],
                       }),
@@ -2551,13 +2510,13 @@ function dl({ vehicle: e, statistic: t, selected: a }) {
               })
     );
 }
-function ul({ vehicle: e, selected: t, statistic: a }) {
-    return _.jsxs(ke, {
-        className: il.info,
-        children: [_.jsx(Js, { vehicle: e, statistic: a, selected: t, elite: e.premium }), _.jsx(Ws, { vehicle: e })],
+function si({ vehicle: e, selected: t, statistic: s }) {
+    return _.jsxs(Pe, {
+        className: Jr,
+        children: [_.jsx(kr, { vehicle: e, statistic: s, selected: t, elite: e.premium }), _.jsx(Pr, { vehicle: e })],
     });
 }
-const ml = {
+const ai = {
     root: 'SelectVehicleList_root_ff751a81',
     content: 'SelectVehicleList_content_e4dca630',
     scroll: 'SelectVehicleList_scroll_1a4bf433',
@@ -2571,180 +2530,184 @@ const ml = {
     scrollbarBar__empty: 'SelectVehicleList_scrollbarBar__empty_d2148af8',
     card: 'SelectVehicleList_card_a6ec1778',
 };
-function pl({ children: e, ...t }) {
-    return _.jsx('div', { ...t, className: ml.content, children: e });
+function ri({ children: e, ...t }) {
+    const { api: s } = ve();
+    return _.jsx(Xe, { ...t, api: s, className: ai.content, children: e });
 }
-const hl = { height: 105, row: 5 },
-    _l = { medium: { height: 136 }, large: { height: 145, row: 6 }, extraLarge: { height: 183, row: 7 } },
-    fl = h(function () {
-        const { model: e } = Rt(),
+const ii = { height: 105, row: 5 },
+    li = { medium: { height: 136 }, large: { height: 145, row: 6 }, extraLarge: { height: 183, row: 7 } },
+    ni = h(function () {
+        const { model: e } = Ft(),
             { api: t } = ve(),
-            a = ze(hl, _l),
-            s = Ae(a.height),
-            [l, r] = ge(t),
-            i = e.ids(),
+            s = ze(ii, li),
+            a = ke(s.height),
+            [r, i] = ge(t),
+            l = e.ids(),
             n = e.list(),
-            o = (function (e, t, a) {
-                const [s, l] = m.useState(0);
+            o = (function (e, t, s) {
+                const [a, r] = m.useState(0);
                 return (
                     m.useLayoutEffect(() => {
-                        function s() {
-                            const s = e.getWrapperSize();
-                            G(s) && l(Math.floor(s / t) * a);
+                        function a() {
+                            const a = e.getWrapperSize();
+                            G(a) && r(Math.floor(a / t) * s);
                         }
-                        const r = e.events.on('resizeHandled', s),
-                            i = e.events.on('recalculateContent', s);
+                        const i = e.events.on('resizeHandled', a),
+                            l = e.events.on('recalculateContent', a);
                         return () => {
-                            (r(), i());
+                            (i(), l());
                         };
-                    }, [e, t, a]),
-                    s
+                    }, [e, t, s]),
+                    a
                 );
-            })(t, s, a.row),
-            c = a.row - (i.length % a.row),
-            d = Math.max(0, o - i.length),
-            u = i.length + (0 === d ? c : d);
-        return (
-            (function (e, t, a, s, l, r) {
-                const i = m.useRef(null);
-                m.useLayoutEffect(() => {
-                    function r() {
-                        const r = e.getWrapperSize(),
-                            n = e.animationScroll.scrollPosition.get();
-                        if (!r) return;
-                        const o = a - Ae(1),
-                            c = n,
-                            d = n + r,
-                            u = o * Math.floor(t / s),
-                            m = u + o,
-                            p = u - (Math.floor(r / o) / 2) * o;
-                        if (u > c && m < d) return (i.current, void (i.current = l));
-                        ((i.current = l), e.applyScroll(p, { immediate: !0 }));
-                    }
-                    return (
-                        r(),
-                        new Ie().add(e.events.on('resizeHandled', r)).add(e.events.on('recalculateContent', r)).dispose
-                    );
-                }, [t, e, a, s, r, l]);
-            })(t, e.currentIndex(), s, a.row),
+            })(t, a, s.row),
+            c = s.row - (l.length % s.row),
+            d = Math.max(0, o - l.length),
+            u = l.length + (0 === d ? c : d);
+        (!(function (e, t, s, a, r, i) {
+            const l = m.useRef(null);
+            m.useLayoutEffect(() => {
+                function i() {
+                    const i = e.getWrapperSize(),
+                        n = e.animationScroll.scrollPosition.get();
+                    if (!i) return;
+                    const o = s - ke(1),
+                        c = n,
+                        d = n + i,
+                        u = o * Math.floor(t / a),
+                        m = u + o,
+                        p = u - (Math.floor(i / o) / 2) * o;
+                    u > c && m < d
+                        ? (l.current && r && 0 !== l.current - r && e.applyScroll(p, { immediate: !0 }),
+                          (l.current = r))
+                        : ((l.current = r), e.applyScroll(p, { immediate: !0 }));
+                }
+                return (
+                    i(),
+                    new Ie().add(e.events.on('resizeHandled', i)).add(e.events.on('recalculateContent', i)).dispose
+                );
+            }, [t, e, s, a, i, r]);
+        })(t, e.currentIndex(), a, s.row, l.length),
             m.useEffect(() => {
-                const e = o >= i.length;
+                const e = o >= l.length;
                 (t.setDisabled(e), e && t.applyScroll(0, { immediate: !0 }));
-            }, [t, o, i.length]),
-            _.jsx(Oe, {
-                api: t,
-                elementHeight: s - Ae(1),
-                direction: 'vertical',
-                totalElements: u,
-                wrappers: { Content: pl },
-                renderScroll: (e) => {
-                    return _.jsxs('div', {
-                        className: f(
-                            ml.scroll,
-                            ml[`scroll__${((a = l), (s = r), a || s ? (a ? (s ? Ps : As) : Is) : ks)}`],
-                        ),
-                        children: [
-                            _.jsx(be, {
-                                ...e,
-                                classNames: {
-                                    wrapper: ml.scrollWrapper,
-                                    content: f(ml.scrollContent, 0 === n.length && ml.scrollContent__empty),
-                                },
-                                children: e.children,
-                            }),
-                            !t.disabled && _.jsx(Ne, { classNames: { base: ml.verticalBar } }),
-                        ],
-                    });
-                    var a, s;
-                },
-                itemsPerRow: a.row,
-                renderElement: (t) =>
-                    i.length <= t
-                        ? _.jsx(Gs, { className: f(nl, ml.card), style: { height: `${s}px` } })
-                        : _.jsx(
-                              ol,
-                              {
-                                  vehicleId: i[t],
-                                  selected: i[t] === e.currentVehicleCD(),
-                                  className: f(nl, ml.card),
-                                  style: { height: `${s}px` },
-                              },
-                              i[t] ?? t,
-                          ),
-            })
-        );
+            }, [t, o, l.length]));
+        const p = m.useMemo(() => ({ height: `${a}px` }), [a]);
+        return _.jsx(Oe, {
+            api: t,
+            elementHeight: a - ke(1),
+            direction: 'vertical',
+            totalElements: u,
+            wrappers: { Content: ri },
+            renderScroll: (e) => {
+                return _.jsxs('div', {
+                    className: f(
+                        ai.scroll,
+                        ai[`scroll__${((s = r), (a = i), s || a ? (s ? (a ? ar : tr) : er) : sr)}`],
+                    ),
+                    children: [
+                        _.jsx(be, {
+                            ...e,
+                            classNames: {
+                                wrapper: ai.scrollWrapper,
+                                content: f(ai.scrollContent, 0 === n.length && ai.scrollContent__empty),
+                            },
+                            children: e.children,
+                        }),
+                        !t.disabled && _.jsx(Ne, { classNames: { base: ai.verticalBar } }),
+                    ],
+                });
+                var s, a;
+            },
+            itemsPerRow: s.row,
+            renderElement: (t) => {
+                const s = l[t];
+                return l.length <= t || void 0 === s
+                    ? _.jsx(xr, { className: f(Wr, ai.card), style: p })
+                    : _.jsx(
+                          Kr,
+                          {
+                              vehicleId: s,
+                              selected: l[t] === e.currentVehicleCD(),
+                              className: f(Wr, ai.card),
+                              style: p,
+                          },
+                          s,
+                      );
+            },
+        });
     }),
-    vl = 'SelectVehicle_empty_c4ad0e6f',
-    gl = 'SelectVehicle_55964cab',
-    xl = 'SelectVehicle_contentLeft_df8318cc',
-    bl = 'SelectVehicle_listWrapper_7143d883',
-    yl = 'SelectVehicle_category_47ad8ddc',
-    Cl = 'SelectVehicle_divider_e3344f3e',
-    Nl = 'SelectVehicle_divider__top_69824bd2',
-    jl = 'SelectVehicle_emptyTitle_f13f5f32',
-    wl = 'SelectVehicle_emptyDescription_3ea65b11',
-    El = h(function () {
-        const { model: e } = Rt(),
+    oi = 'SelectVehicle_empty_c4ad0e6f',
+    ci = 'SelectVehicle_55964cab',
+    di = 'SelectVehicle_contentLeft_df8318cc',
+    ui = 'SelectVehicle_listWrapper_7143d883',
+    mi = 'SelectVehicle_category_47ad8ddc',
+    pi = 'SelectVehicle_divider_e3344f3e',
+    hi = 'SelectVehicle_divider__top_69824bd2',
+    _i = 'SelectVehicle_emptyTitle_f13f5f32',
+    fi = 'SelectVehicle_emptyDescription_3ea65b11',
+    vi = h(function () {
+        const { model: e } = Ft(),
             t = 0 === e.list().length,
-            a = _t(),
-            s = a.model.computes.nations(),
-            l = m.useMemo(
+            s = xt(),
+            a = s.model.computes.nations(),
+            r = m.useMemo(
                 () => ({
-                    filters: a.model.filters,
-                    search: a.model.searchName,
-                    hasFilter: a.model.computes.hasFilters,
-                    defaultFilters: a.model.computes.default,
-                    change: a.controls.change,
-                    reset: a.controls.reset,
+                    filters: s.model.filters,
+                    search: s.model.searchName,
+                    hasFilter: s.model.computes.hasFilters,
+                    defaultFilters: s.model.computes.default,
+                    change: s.controls.change,
+                    reset: s.controls.reset,
                 }),
-                [a],
+                [s],
             ),
-            r = M.resolve('strings'),
-            i = H({
-                header: r.readOrEmpty('tank_carousel_filter.tooltip.searchInput.header'),
-                body: r.readOrEmpty('tank_carousel_filter.tooltip.searchInput.body').replace('%(count)d', String(50)),
+            i = M.resolve('strings'),
+            l = F({
+                header: i.readOrEmpty('tank_carousel_filter.tooltip.searchInput.header'),
+                body: i.readOrEmpty('tank_carousel_filter.tooltip.searchInput.body').replace('%(count)d', String(50)),
             });
         return _.jsxs('div', {
-            className: gl,
+            className: ci,
             children: [
                 _.jsxs('div', {
-                    className: xl,
+                    className: di,
                     children: [
-                        _.jsxs(Zt.Provider, {
-                            value: l,
+                        _.jsxs(Wt.Provider, {
+                            value: r,
                             children: [
-                                _.jsx(xs, {}),
-                                _.jsx(pa, {}),
-                                _.jsx('div', { className: f(Cl, Nl) }),
-                                _.jsx(J, { className: yl, path: 'tank_carousel_filter.popover.label.vehicleTypes' }),
-                                _.jsx(Cs, {}),
-                                _.jsx(J, { className: yl, path: 'tank_carousel_filter.popover.label.nations' }),
-                                _.jsx(Ns, { orderedNations: s }),
-                                _.jsx(J, { className: yl, path: 'tank_carousel_filter.popover.label.levels' }),
-                                _.jsx(js, {}),
-                                _.jsx(J, { className: yl, path: 'tank_carousel_filter.popover.label.specials' }),
-                                _.jsx(Es, {}),
+                                _.jsx(Ta, {}),
+                                _.jsx(vs, {}),
+                                _.jsx('div', { className: f(pi, hi) }),
+                                _.jsx(J, { className: mi, path: 'tank_carousel_filter.popover.label.vehicleTypes' }),
+                                _.jsx(Ya, {}),
+                                _.jsx(J, { className: mi, path: 'tank_carousel_filter.popover.label.nations' }),
+                                _.jsx(Qa, { orderedNations: a }),
+                                _.jsx(J, { className: mi, path: 'tank_carousel_filter.popover.label.levels' }),
+                                _.jsx(Ja, {}),
+                                _.jsx(J, { className: mi, path: 'tank_carousel_filter.popover.label.specials' }),
+                                _.jsx(Ka, {}),
                             ],
                         }),
-                        _.jsx('div', { className: Cl }),
-                        _.jsx('div', { ...i, children: _.jsx(Ss, {}) }),
+                        _.jsx('div', { className: pi }),
+                        _.jsx('div', { ...l, children: _.jsx($a, {}) }),
                     ],
                 }),
                 _.jsxs('div', {
-                    className: bl,
+                    className: ui,
                     children: [
-                        _.jsx(W, { children: _.jsx(fl, {}) }),
+                        _.jsx(W, { children: _.jsx(ni, {}) }),
                         t &&
                             _.jsxs('div', {
-                                className: vl,
+                                className: oi,
                                 children: [
                                     _.jsx('div', {
-                                        className: jl,
-                                        children: r.readOrEmpty('playlists.empty_state.not_found.title'),
+                                        className: _i,
+                                        children: i.readOrEmpty('playlists.empty_state.not_found.title'),
                                     }),
                                     _.jsx('div', {
-                                        className: wl,
-                                        children: r.readOrEmpty('playlists.empty_state.not_found.body'),
+                                        className: fi,
+                                        children: i.readOrEmpty('playlists.empty_state.not_found.body'),
                                     }),
                                 ],
                             }),
@@ -2753,46 +2716,46 @@ const hl = { height: 105, row: 5 },
             ],
         });
     }),
-    Sl = 'SelectVehicle_e71f7277',
-    Il = 'SelectVehicle_title_20f4184a',
-    Al = 'SelectVehicle_close_2b04c3e9',
-    kl = h(function () {
-        const { model: e } = Rt();
+    gi = 'SelectVehicle_e71f7277',
+    xi = 'SelectVehicle_title_20f4184a',
+    bi = 'SelectVehicle_close_2b04c3e9',
+    yi = h(function () {
+        const { model: e } = Ft();
         return (
-            Xe(Se.ESCAPE, Ge.closeView),
+            Re(Ae.ESCAPE, Se.closeView),
             _.jsxs('div', {
-                className: Sl,
+                className: gi,
                 children: [
-                    _.jsx('div', { className: Il, children: e.title.get() }),
-                    _.jsx(Re, { onClose: Ge.closeView, className: Al }),
-                    _.jsx(El, {}),
+                    _.jsx('div', { className: xi, children: e.title.get() }),
+                    _.jsx(Ge, { onClose: Se.closeView, className: bi }),
+                    _.jsx(vi, {}),
                 ],
             })
         );
     }),
-    Pl = M.resolve('aliases');
-He(
+    Ci = M.resolve('aliases');
+Fe(
     new qe()
-        .add(Fe)
-        .addWithProps(vt, {
-            options: { rootId: Pl.read((e) => e.select_vehicle.select_vehicle.VehiclesStatistics('resId')) },
-        })
-        .addWithProps(xt, {
-            options: { rootId: Pl.read((e) => e.select_vehicle.select_vehicle.VehiclesInfo('resId')) },
-        })
+        .add(He)
         .addWithProps(yt, {
-            options: { rootId: Pl.read((e) => e.select_vehicle.select_vehicle.VehiclesInventory('resId')) },
+            options: { rootId: Ci.read((e) => e.select_vehicle.select_vehicle.VehiclesStatistics('resId')) },
         })
-        .addWithProps(ht, {
-            options: { rootId: Pl.read((e) => e.select_vehicle.select_vehicle.VehicleFilters('resId')) },
+        .addWithProps(Nt, {
+            options: { rootId: Ci.read((e) => e.select_vehicle.select_vehicle.VehiclesInfo('resId')) },
         })
-        .addWithProps(Tt, {
-            options: { rootId: Pl.read((e) => e.select_vehicle.select_vehicle.VehiclePlaylists('resId')) },
+        .addWithProps(wt, {
+            options: { rootId: Ci.read((e) => e.select_vehicle.select_vehicle.VehiclesInventory('resId')) },
+        })
+        .addWithProps(gt, {
+            options: { rootId: Ci.read((e) => e.select_vehicle.select_vehicle.VehicleFilters('resId')) },
         })
         .addWithProps(zt, {
-            options: { rootId: Pl.read((e) => e.select_vehicle.select_vehicle.VehiclesInventory('resId')) },
+            options: { rootId: Ci.read((e) => e.select_vehicle.select_vehicle.VehiclePlaylists('resId')) },
         })
-        .add(Xt)
-        .render(_.jsx(kl, {})),
+        .addWithProps(Gt, {
+            options: { rootId: Ci.read((e) => e.select_vehicle.select_vehicle.VehiclesInventory('resId')) },
+        })
+        .add(Ht)
+        .render(_.jsx(yi, {})),
     { fullScreen: !0 },
 );

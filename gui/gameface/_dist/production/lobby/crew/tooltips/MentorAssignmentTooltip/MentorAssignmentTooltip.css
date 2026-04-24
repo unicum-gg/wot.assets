@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,28 +11,28 @@
     position: relative;
 }
 
-.TooltipAdvancedFooter_base_d6 {
+.TooltipAdvancedFooter_base_b214f {
     display: flex;
     padding: 12rem 20rem 20rem;
 }
 
-.TooltipAdvancedFooter_altBtn_e0 {
+.TooltipAdvancedFooter_altBtn_e7239 {
     width: 29rem;
     height: 26rem;
     margin-right: 8rem;
     background: url('R.images.gui.maps.icons.tooltip.tooltip_alt_btn') no-repeat center / cover;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.Divided_base_06 {
+.Divided_base_ae250 {
     position: relative;
 }
 
-.Divided_divider_64 {
+.Divided_divider_f79f3 {
     width: 360rem;
     height: 1rem;
     background: url('R.images.gui.maps.icons.tooltip.tooltip_perks_divider') no-repeat center / cover;
@@ -41,17 +41,17 @@
     left: 0;
 }
 
-.InfoBlock_base_4d {
+.InfoBlock_base_bef28 {
     display: flex;
     justify-content: flex-start;
     padding: 20rem;
 }
 
-.InfoBlock_param_fb {
+.InfoBlock_param_d28ef {
     color: #e9e2bf;
 }
 
-.MentorAssignmentTooltipApp_base_45 {
+.MentorAssignmentTooltipApp_base_eb382 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -64,12 +64,12 @@
     position: relative;
 }
 
-.MentorAssignmentTooltipApp_header_cf {
+.MentorAssignmentTooltipApp_header_dd823 {
     display: flex;
     padding: 0 20rem;
 }
 
-.MentorAssignmentTooltipApp_title_c3 {
+.MentorAssignmentTooltipApp_title_ae672 {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -79,21 +79,21 @@
     margin-bottom: 2rem;
 }
 
-.MentorAssignmentTooltipApp_footer_9f {
+.MentorAssignmentTooltipApp_footer_a058a {
     padding: 15rem 14rem;
 }
 
-.WarningBlock_base_11 {
+.WarningBlock_base_a5a56 {
     display: flex;
     justify-content: flex-start;
     padding: 20rem;
 }
 
-.WarningBlock_base__accent_4e {
+.WarningBlock_base__accent_b0b82 {
     background: url('R.images.gui.maps.icons.tooltip.tooltip_accent_bg') no-repeat center / cover;
 }
 
-.WarningBlock_text_a5 {
+.WarningBlock_text_e0dd4 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -101,25 +101,25 @@
     padding-left: 7rem;
 }
 
-.WarningBlock_base__crewRemove_94 .WarningBlock_text_a5 {
+.WarningBlock_base__crewRemove_f21ea .WarningBlock_text_e0dd4 {
     color: #faac3c;
 }
 
-.WarningBlock_base__freeSkills_9b .WarningBlock_text_a5 {
+.WarningBlock_base__freeSkills_b253b .WarningBlock_text_e0dd4 {
     color: #8c8c7e;
 }
 
-.WarningBlock_icon_d2 {
+.WarningBlock_icon_ab7ac {
     margin-top: 2rem;
 }
 
-.WarningBlock_base__crewRemove_94 .WarningBlock_icon_d2 {
+.WarningBlock_base__crewRemove_f21ea .WarningBlock_icon_ab7ac {
     width: 17rem;
     height: 17rem;
     background: url('R.images.gui.maps.icons.library.attentionIconFilled') no-repeat center / cover;
 }
 
-.WarningBlock_base__freeSkills_9b .WarningBlock_icon_d2 {
+.WarningBlock_base__freeSkills_b253b .WarningBlock_icon_ab7ac {
     width: 14rem;
     height: 14rem;
     background: url('R.images.gui.maps.icons.crew.profile.zero_icon') no-repeat center / cover;

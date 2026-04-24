@@ -1,58 +1,30 @@
-import { j as e, w as l } from './vendor.js';
-const a = {
+import { j as e, a3 as a } from './vendor.js';
+const i = {
         base: 'LaceDivider_56ee691d',
         lace: 'LaceDivider_lace_81e14ab',
         peak: 'LaceDivider_peak_6ffb6c4a',
         peak__right: 'LaceDivider_peak__right_1853dffc',
         line: 'LaceDivider_line_646a66',
     },
-    i = ({ children: i, className: s, classNames: c }) =>
+    s = ({ children: s, className: l, classNames: c }) =>
         e.jsxs('div', {
-            className: l(a.base, s),
+            className: a(i.base, l),
             children: [
                 e.jsxs('div', {
-                    className: l(a.lace, a.lace__left, null == c ? void 0 : c.lace, null == c ? void 0 : c.leftLace),
+                    className: a(i.lace, i.lace__left, c?.lace, c?.leftLace),
                     children: [
-                        e.jsx('div', {
-                            className: l(
-                                a.peak,
-                                a.peak__left,
-                                null == c ? void 0 : c.peak,
-                                null == c ? void 0 : c.leftPeak,
-                            ),
-                        }),
-                        e.jsx('div', {
-                            className: l(
-                                a.line,
-                                a.line__left,
-                                null == c ? void 0 : c.line,
-                                null == c ? void 0 : c.leftLine,
-                            ),
-                        }),
+                        e.jsx('div', { className: a(i.peak, i.peak__left, c?.peak, c?.leftPeak) }),
+                        e.jsx('div', { className: a(i.line, i.line__left, c?.line, c?.leftLine) }),
                     ],
                 }),
-                i,
+                s,
                 e.jsxs('div', {
-                    className: l(a.lace, a.lace__right, null == c ? void 0 : c.lace, null == c ? void 0 : c.rightLace),
+                    className: a(i.lace, i.lace__right, c?.lace, c?.rightLace),
                     children: [
-                        e.jsx('div', {
-                            className: l(
-                                a.line,
-                                a.line__right,
-                                null == c ? void 0 : c.line,
-                                null == c ? void 0 : c.rightLine,
-                            ),
-                        }),
-                        e.jsx('div', {
-                            className: l(
-                                a.peak,
-                                a.peak__right,
-                                null == c ? void 0 : c.peak,
-                                null == c ? void 0 : c.rightPeak,
-                            ),
-                        }),
+                        e.jsx('div', { className: a(i.line, i.line__right, c?.line, c?.rightLine) }),
+                        e.jsx('div', { className: a(i.peak, i.peak__right, c?.peak, c?.rightPeak) }),
                     ],
                 }),
             ],
         });
-export { i as L };
+export { s as L };

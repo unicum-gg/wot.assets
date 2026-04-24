@@ -2,18 +2,14 @@
     'use strict';
     var u,
         F = {
-            280: (u, F, A) => {
-                (A(6483), A(3649), A(7363), A(5287));
+            2616: (u, F, A) => {
+                (A(9849), A(6758), A(7363), A(4880));
             },
-            9690: (u, F, A) => {
+            1308: (u, F, A) => {
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
             },
-            3649: (u, F, A) => {
-                A(1281);
-                let E;
-                !(function (u) {
-                    ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
-                })(E || (E = {}));
+            6758: (u, F, A) => {
+                A(8354);
                 (() => {
                     const u = new RegExp(
                         [
@@ -28,10 +24,10 @@
                     );
                 })();
             },
-            7833: (u, F, A) => {
-                (A(7363), A(9690), A(280));
+            5649: (u, F, A) => {
+                (A(7363), A(1308), A(2616));
             },
-            5287: () => {},
+            4880: () => {},
             7363: (u) => {
                 u.exports = React;
             },
@@ -100,6 +96,6 @@
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (A.forEach(F.bind(null, 0)), (A.push = F.bind(null, A.push.bind(A))));
         })());
-    var D = E.O(void 0, [428], () => E(7833));
+    var D = E.O(void 0, [428], () => E(5649));
     D = E.O(D);
 })();

@@ -1,34 +1,34 @@
-import { t as e, r as s, j as o } from '../../../chunks/vendor.js';
+import { v as e, r as s, j as a } from '../../../chunks/vendor.js';
 import {
-    i as a,
-    k as r,
-    l as n,
+    i as o,
+    u as r,
+    a as n,
     r as t,
-    n as l,
-    o as i,
-    V as c,
+    c as l,
+    b as c,
+    V as i,
     p as d,
     J as u,
     U as p,
-    j as m,
+    d as m,
 } from '../../../chunks/lib.js';
 import { v as f } from '../../../chunks/utils.js';
-const [j, h] = a()(
+const [v, b] = o()(
         ({ observableModel: e }) => ({ ...{ root: e.object() } }),
         ({ externalModel: e }) => ({ close: e.createCallbackNoArgs('onClose') }),
     ),
-    v = 'App_fab90a23',
-    b = 'App_video_826e570a',
+    h = 'App_fab90a23',
+    j = 'App_video_826e570a',
     g = e(() => {
-        const { model: e, controls: a } = h(),
+        const { model: e, controls: o } = b(),
             { videoName: u, audioName: p, isWindowAccessible: m } = e.root.get(),
-            { width: j, height: g } = r(),
-            k = n(),
-            y = s.useRef(null),
-            N = t.resolve('videos').readOrEmpty(u);
+            { width: v, height: g } = r(),
+            y = n(),
+            N = s.useRef(null),
+            k = t.resolve('videos').readOrEmpty(u);
         return (
             s.useEffect(() => {
-                const e = y.current;
+                const e = N.current;
                 if (!e) return;
                 if (!m) return e.pause();
                 return Boolean(e.getCurrentTime())
@@ -36,18 +36,18 @@ const [j, h] = a()(
                     : l(() => {
                           (e.play(), d.sound(p));
                       }, 300);
-            }, [y, m, p]),
+            }, [N, m, p]),
             s.useEffect(() => {
-                const e = y.current;
+                const e = N.current;
                 engine.on('clientMinimized', (s) => {
                     e && (s ? e.pause() : e.play());
                 });
-            }, [y]),
-            i(a.close),
-            o.jsx('div', {
-                className: v,
-                children: o.jsx(c, { className: b, src: N, onEnded: a.close, ref: y, style: f(j, g, k, u) }),
+            }, [N]),
+            c(o.close),
+            a.jsx('div', {
+                className: h,
+                children: a.jsx(i, { className: j, src: k, onEnded: o.close, ref: N, style: f(v, g, y, u) }),
             })
         );
     });
-m(new u().add(p).addWithProps(j, {}).render(o.jsx(g, {})));
+m(new u().add(p).addWithProps(v, {}).render(a.jsx(g, {})));

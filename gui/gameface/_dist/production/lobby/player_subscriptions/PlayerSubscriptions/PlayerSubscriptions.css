@@ -1,4 +1,4 @@
-.VerticalBar_base_f3 {
+.VerticalBar_base_b5610 {
     display: flex;
     flex-direction: column;
     width: 13rem;
@@ -7,18 +7,18 @@
     position: relative;
 }
 
-.VerticalBar_base__active_72 {
+.VerticalBar_base__active_be260 {
     visibility: visible;
 }
 
-.VerticalBar_base_f3 .disable,
-.VerticalBar_base_f3 .disable:hover {
+.VerticalBar_base_b5610 .disable,
+.VerticalBar_base_b5610 .disable:hover {
     opacity: 0.3;
     cursor: default;
 }
 
-.VerticalBar_topButton_d7,
-.VerticalBar_bottomButton_06 {
+.VerticalBar_topButton_c2227,
+.VerticalBar_bottomButton_ef09b {
     width: 13rem;
     height: 13rem;
     border: 1rem solid #7e7b68;
@@ -30,27 +30,27 @@
     cursor: pointer;
 }
 
-.VerticalBar_topButton_d7:hover,
-.VerticalBar_bottomButton_06:hover {
+.VerticalBar_topButton_c2227:hover,
+.VerticalBar_bottomButton_ef09b:hover {
     opacity: 1;
 }
 
-.VerticalBar_topButton_d7 {
+.VerticalBar_topButton_c2227 {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
 }
 
-.VerticalBar_bottomButton_06 {
+.VerticalBar_bottomButton_ef09b {
     background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
 }
 
-.VerticalBar_track_df {
+.VerticalBar_track_e3345 {
     flex: 1;
     margin: 1rem 0;
     position: relative;
     cursor: pointer;
 }
 
-.VerticalBar_thumb_32 {
+.VerticalBar_thumb_a34e7 {
     display: none;
     flex: 0 0 13rem;
     width: 13rem;
@@ -66,11 +66,11 @@
     cursor: pointer;
 }
 
-.VerticalBar_thumb_32:hover {
+.VerticalBar_thumb_a34e7:hover {
     opacity: 1;
 }
 
-.VerticalBar_rail_43 {
+.VerticalBar_rail_ff232 {
     width: 0;
     height: 100%;
     border-left: 1rem solid #2f2e24;
@@ -82,29 +82,29 @@
     z-index: 0;
 }
 
-.VerticalBar_rail_43:hover {
+.VerticalBar_rail_ff232:hover {
     opacity: 0.7;
 }
 
-.VerticalScroll_content_cb {
+.VerticalScroll_content_fe263 {
     height: 100%;
     overflow-y: hidden;
 }
 
-.VerticalScroll_defaultScroll_f8 {
+.VerticalScroll_defaultScroll_e27f5 {
     display: flex;
 }
 
-.VerticalScroll_bar_1e {
+.VerticalScroll_bar_b8700 {
     flex: 1;
     margin-left: 7rem;
 }
 
-.VerticalScroll_area_af {
+.VerticalScroll_area_b5a82 {
     flex: 1;
 }
 
-.TextButton_base_b6 {
+.TextButton_base_a231c {
     display: flex;
     align-items: center;
     padding: 0 3rem;
@@ -113,33 +113,33 @@
     cursor: pointer;
 }
 
-.TextButton_base__right_39 {
+.TextButton_base__right_bfac3 {
     flex-direction: row-reverse;
 }
-.TextButton_icon_17 {
+.TextButton_icon_cdfc0 {
     width: 32rem;
     height: 32rem;
     background: no-repeat center / contain;
     position: relative;
 }
-.TextButton_icon__back_43,
-.TextButton_icon__forward_59 {
+.TextButton_icon__back_fc1bb,
+.TextButton_icon__forward_efa2d {
     margin: -1rem -5rem;
     background-image: url('R.images.gui.maps.icons.components.text_button.back');
     transform: translateY(1rem);
 }
-.TextButton_icon__forward_59 {
+.TextButton_icon__forward_efa2d {
     transform: rotate(180deg) translateY(1rem);
 }
-.TextButton_icon__close_53 {
+.TextButton_icon__close_e2f0f {
     margin: -1rem 0;
     background-image: url('R.images.gui.maps.icons.components.text_button.close');
 }
-.TextButton_icon__info_33 {
+.TextButton_icon__info_e32c0 {
     margin: -1rem -5rem;
     background-image: url('R.images.gui.maps.icons.components.text_button.info');
 }
-.TextButton_glow_a4 {
+.TextButton_glow_d6e04 {
     width: 100%;
     height: 100%;
     background: no-repeat center / contain;
@@ -148,31 +148,31 @@
     top: 0;
     transition: opacity 0.16s;
 }
-.TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
+.TextButton_icon__back_fc1bb .TextButton_glow_d6e04,
+.TextButton_icon__forward_efa2d .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
 }
-.TextButton_icon__close_53 .TextButton_glow_a4 {
+.TextButton_icon__close_e2f0f .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
 }
-.TextButton_icon__info_33 .TextButton_glow_a4 {
+.TextButton_icon__info_e32c0 .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
 }
-.TextButton_base_b6:hover .TextButton_glow_a4 {
+.TextButton_base_a231c:hover .TextButton_glow_d6e04 {
     opacity: 1;
 }
-.TextButton_base_b6:active .TextButton_glow_a4 {
+.TextButton_base_a231c:active .TextButton_glow_d6e04 {
     opacity: 0;
 }
-.TextButton_caption_82 {
+.TextButton_caption_f4e8d {
     position: relative;
     transition:
         color 0.16s,
         text-shadow 0.16s;
 }
-.TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
+.TextButton_caption__back_d358d,
+.TextButton_caption__forward_ff93d,
+.TextButton_caption__close_fc554 {
     color: #ffdd99;
     text-shadow:
         0 0 10rem rgba(255, 42, 0, 1),
@@ -183,46 +183,46 @@
         0 0 2rem rgba(255, 42, 0, 0.4),
         0 0 1rem rgba(255, 42, 0, 0.4);
 }
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
+.TextButton_base_a231c:hover .TextButton_caption__back_d358d,
+.TextButton_base_a231c:hover .TextButton_caption__forward_ff93d,
+.TextButton_base_a231c:hover .TextButton_caption__close_fc554 {
     color: #fffa9f;
 }
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
+.TextButton_base_a231c:active .TextButton_caption__back_d358d,
+.TextButton_base_a231c:active .TextButton_caption__forward_ff93d,
+.TextButton_base_a231c:active .TextButton_caption__close_fc554 {
     color: #ffdd99;
 }
-.TextButton_caption__info_23 {
+.TextButton_caption__info_c263a {
     padding: 0 5rem;
     color: #ccffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.8),
         0 0 8rem #00eaff;
 }
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
+.TextButton_base_a231c:hover .TextButton_caption__info_c263a {
     color: #e3ffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.8),
         0 0 12rem rgba(0, 234, 255, 1),
         0 0 8rem #00eaff;
 }
-.TextButton_base_b6:active .TextButton_caption__info_23 {
+.TextButton_base_a231c:active .TextButton_caption__info_c263a {
     color: #ccffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.6),
         0 0 8rem #00eaff;
 }
-.TextButton_goto_e7 {
+.TextButton_goto_d3960 {
     color: #7c7c6c;
 }
-.TextButton_base__left_ff .TextButton_goto_e7 {
+.TextButton_base__left_ec79d .TextButton_goto_d3960 {
     margin-left: 8rem;
 }
-.TextButton_base__right_39 .TextButton_goto_e7 {
+.TextButton_base__right_bfac3 .TextButton_goto_d3960 {
     margin-right: 8rem;
 }
-.TextButton_shine_e2 {
+.TextButton_shine_f8873 {
     width: 90rem;
     height: 40rem;
     background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
@@ -232,38 +232,38 @@
     transition: opacity 0.16s;
     pointer-events: none;
 }
-.TextButton_base__left_ff .TextButton_shine_e2 {
+.TextButton_base__left_ec79d .TextButton_shine_f8873 {
     left: -4rem;
 }
-.TextButton_base__right_39 .TextButton_shine_e2 {
+.TextButton_base__right_bfac3 .TextButton_shine_f8873 {
     right: -4rem;
     transform: rotate(180deg);
 }
-.TextButton_base_b6:hover .TextButton_shine_e2 {
+.TextButton_base_a231c:hover .TextButton_shine_f8873 {
     opacity: 1;
 }
-.TextButton_base_b6:active .TextButton_shine_e2 {
+.TextButton_base_a231c:active .TextButton_shine_f8873 {
     opacity: 0;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.MultilineOverflow_base_d9 {
+.MultilineOverflow_base_fdbdb {
     position: relative;
 }
 
-.MultilineOverflow_base__truncated_a1 .MultilineOverflow_text_ce {
+.MultilineOverflow_base__truncated_b87b3 .MultilineOverflow_text_d0f75 {
     opacity: 0;
 }
 
-.MultilineOverflow_base__truncated_a1 .MultilineOverflow_truncatedContent_da {
+.MultilineOverflow_base__truncated_b87b3 .MultilineOverflow_truncatedContent_a6589 {
     opacity: 1;
 }
 
-.MultilineOverflow_singleLine_bb {
+.MultilineOverflow_singleLine_c3524 {
     white-space: pre;
     opacity: 0;
     position: absolute;
@@ -271,7 +271,7 @@
     bottom: 0;
 }
 
-.MultilineOverflow_truncatedContent_da {
+.MultilineOverflow_truncatedContent_a6589 {
     opacity: 0;
     position: absolute;
     top: 0;
@@ -280,13 +280,13 @@
     left: 0;
 }
 
-.MultilineOverflow_line_51 {
+.MultilineOverflow_line_d2e93 {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
 
-.CButton_base_40 {
+.CButton_base_bb13f {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -296,35 +296,35 @@
     cursor: pointer;
 }
 
-.CButton_base__main_42,
-.CButton_base__primary_7f,
-.CButton_base__primaryGreen_6f,
-.CButton_base__primaryRed_ec,
-.CButton_base__secondary_50 {
+.CButton_base__main_dd05d,
+.CButton_base__primary_c75a2,
+.CButton_base__primaryGreen_ae65b,
+.CButton_base__primaryRed_b1341,
+.CButton_base__secondary_f2c20 {
     background-size: 100% 100%;
 }
 
-.CButton_base__main_42 {
+.CButton_base__main_dd05d {
     background-image: url('R.images.gui.maps.icons.components.button.back_main');
 }
 
-.CButton_base__primary_7f {
+.CButton_base__primary_c75a2 {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary');
 }
 
-.CButton_base__primaryGreen_6f {
+.CButton_base__primaryGreen_ae65b {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
 }
 
-.CButton_base__primaryRed_ec {
+.CButton_base__primaryRed_b1341 {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
 }
 
-.CButton_base__secondary_50 {
+.CButton_base__secondary_f2c20 {
     background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
 }
 
-.CButton_base__ghost_ed {
+.CButton_base__ghost_f452b {
     border-radius: 3rem;
     box-shadow:
         0 0 0 1rem rgba(0, 0, 0, 0.3),
@@ -332,29 +332,29 @@
     background-color: rgba(0, 0, 0, 0.15);
 }
 
-.CButton_base__extraSmall_27 {
+.CButton_base__extraSmall_e1273 {
     min-height: 17rem;
     padding: 0 16rem;
 }
 
-.CButton_base__small_df,
-.CButton_base__medium_74 {
+.CButton_base__small_c20a3,
+.CButton_base__medium_ef59a {
     padding: 0 20rem;
 }
 
-.CButton_base__small_df {
+.CButton_base__small_c20a3 {
     min-height: 18rem;
 }
 
-.CButton_base__medium_74 {
+.CButton_base__medium_ef59a {
     min-height: 32rem;
 }
 
-.CButton_base__large_5c {
+.CButton_base__large_bafd5 {
     min-height: 48rem;
 }
 
-.CButton_base__disabled_d9 {
+.CButton_base__disabled_eef7a {
     cursor: default;
 }
 /* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
@@ -362,7 +362,7 @@ The bug is that under certain conditions, when using border-image, stripes appea
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113
 */
-.CButton_back_e5 {
+.CButton_back_e957b {
     border-image-slice: 4 fill;
     border-image-width: 4rem;
     position: absolute;
@@ -371,22 +371,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
 }
-.CButton_base__main_42 .CButton_back_e5 {
+.CButton_base__main_dd05d .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
 }
-.CButton_base__primary_7f .CButton_back_e5 {
+.CButton_base__primary_c75a2 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
 }
-.CButton_base__primaryGreen_6f .CButton_back_e5 {
+.CButton_base__primaryGreen_ae65b .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
 }
-.CButton_base__primaryRed_ec .CButton_back_e5 {
+.CButton_base__primaryRed_b1341 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
 }
-.CButton_base__secondary_50 .CButton_back_e5 {
+.CButton_base__secondary_f2c20 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
 }
-.CButton_texture_fe {
+.CButton_texture_ccd7e {
     background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
     background-size: 155rem 31rem;
     mix-blend-mode: soft-light;
@@ -396,7 +396,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
 }
-.CButton_state_11 {
+.CButton_state_f2bb4 {
     position: absolute;
     top: 0;
     right: 0;
@@ -404,20 +404,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
     transition: box-shadow 0.16s ease-in-out;
 }
-.CButton_base__focus_83 .CButton_state_11 {
+.CButton_base__focus_b0875 .CButton_state_f2bb4 {
     border-radius: 2rem;
     box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
 }
-.CButton_stateHighlightHover_ff,
-.CButton_stateHighlightActive_35,
-.CButton_stateDisabled_54 {
+.CButton_stateHighlightHover_bd0cb,
+.CButton_stateHighlightActive_e9a8a,
+.CButton_stateDisabled_ed209 {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
 }
-.CButton_stateHighlightHover_ff {
+.CButton_stateHighlightHover_bd0cb {
     background-image: linear-gradient(
         180deg,
         rgba(252, 248, 235, 0.25) 0%,
@@ -426,37 +426,37 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     );
     opacity: 0;
 }
-.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+.CButton_base_bb13f:hover .CButton_stateHighlightHover_bd0cb {
     opacity: 1;
 }
-.CButton_base_40:active .CButton_stateHighlightHover_ff {
+.CButton_base_bb13f:active .CButton_stateHighlightHover_bd0cb {
     opacity: 0;
 }
-.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+.CButton_base__disabled_eef7a:hover .CButton_stateHighlightHover_bd0cb {
     opacity: 0;
 }
-.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+.CButton_base__ghost_f452b .CButton_stateHighlightHover_bd0cb {
     box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
     background-color: rgba(8, 6, 0, 0.18);
     background-image: none;
 }
-.CButton_stateHighlightActive_35 {
+.CButton_stateHighlightActive_e9a8a {
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
     opacity: 0;
 }
-.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+.CButton_base__highlightActive_db27d .CButton_stateHighlightActive_e9a8a {
     opacity: 1;
 }
-.CButton_stateDisabled_54 {
+.CButton_stateDisabled_ed209 {
     background-color: rgba(0, 0, 0, 0.25);
     background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
     background-size: 15rem 15rem;
     visibility: hidden;
 }
-.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+.CButton_base__disabled_eef7a .CButton_stateDisabled_ed209 {
     visibility: inherit;
 }
-.CButton_content_cc {
+.CButton_content_a99fc {
     display: flex;
     align-items: center;
     color: #f2f2e6;
@@ -466,41 +466,41 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     letter-spacing: 0.03em;
     transform: translateY(-1rem);
 }
-.CButton_content_cc[lang='ja'],
-.CButton_content_cc[lang='ko'],
-.CButton_content_cc[lang='zh_tw'],
-.CButton_content_cc[lang='zh_sg'],
-.CButton_content_cc[lang='zh_cn'],
-.CButton_content_cc[lang='th'] {
+.CButton_content_a99fc[lang='ja'],
+.CButton_content_a99fc[lang='ko'],
+.CButton_content_a99fc[lang='zh_tw'],
+.CButton_content_a99fc[lang='zh_sg'],
+.CButton_content_a99fc[lang='zh_cn'],
+.CButton_content_a99fc[lang='th'] {
     font-weight: 400;
 }
-.CButton_base__main_42 .CButton_content_cc,
-.CButton_base__primaryRed_ec .CButton_content_cc {
+.CButton_base__main_dd05d .CButton_content_a99fc,
+.CButton_base__primaryRed_b1341 .CButton_content_a99fc {
     text-shadow: 0 -1rem 1rem #600;
 }
-.CButton_base__secondary_50 .CButton_content_cc {
+.CButton_base__secondary_f2c20 .CButton_content_a99fc {
     color: rgba(254, 254, 236, 0.75);
 }
-.CButton_base__primaryGreen_6f .CButton_content_cc {
+.CButton_base__primaryGreen_ae65b .CButton_content_a99fc {
     text-shadow: 0 -1rem 1rem #1c2502;
 }
-.CButton_base__extraSmall_27 .CButton_content_cc {
+.CButton_base__extraSmall_e1273 .CButton_content_a99fc {
     font-size: 12rem;
 }
-.CButton_base__small_df .CButton_content_cc {
+.CButton_base__small_c20a3 .CButton_content_a99fc {
     font-size: 14rem;
 }
-.CButton_base__medium_74 .CButton_content_cc {
+.CButton_base__medium_ef59a .CButton_content_a99fc {
     font-size: 15rem;
 }
-.CButton_base__large_5c .CButton_content_cc {
+.CButton_base__large_bafd5 .CButton_content_a99fc {
     font-size: 18rem;
 }
-.CButton_base__disabled_d9 .CButton_content_cc {
+.CButton_base__disabled_eef7a .CButton_content_a99fc {
     opacity: 0.6;
 }
 
-.SubscriptionItem_base_e8 {
+.SubscriptionItem_base_d3ab9 {
     --card-width: var(--base-width);
     --card-height: var(--base-height);
     --footer-margin: 20rem;
@@ -519,11 +519,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     cursor: pointer;
 }
 
-.SubscriptionItem_base_e8:hover .SubscriptionItem_subscriptionImage_4d {
+.SubscriptionItem_base_d3ab9:hover .SubscriptionItem_subscriptionImage_c5fc6 {
     filter: brightness(1.13);
 }
 
-.SubscriptionItem_base__rewardsClaimed_21 .SubscriptionItem_activateButtonLight_ce {
+.SubscriptionItem_base__rewardsClaimed_c0d4d .SubscriptionItem_activateButtonLight_f3e9c {
     width: 233rem;
     height: 115rem;
     background: url('R.images.gui.maps.icons.player_subscriptions.claimed_light') center center / cover;
@@ -532,215 +532,217 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: -5rem;
 }
 
-.SubscriptionItem_base__rewardsClaimed_21.SubscriptionItem_base__oneThird_74 .SubscriptionItem_activateButtonLight_ce {
+.SubscriptionItem_base__rewardsClaimed_c0d4d.SubscriptionItem_base__oneThird_adb43
+    .SubscriptionItem_activateButtonLight_f3e9c {
     width: 192rem;
     height: 103rem;
     top: -63rem;
     right: -40rem;
 }
 
-.SubscriptionItem_base__rewardsClaimed_21.SubscriptionItem_base__twoThirds_16 .SubscriptionItem_activateButtonLight_ce {
+.SubscriptionItem_base__rewardsClaimed_c0d4d.SubscriptionItem_base__twoThirds_c328d
+    .SubscriptionItem_activateButtonLight_f3e9c {
     width: 192rem;
     height: 103rem;
     top: -62rem;
     right: -15rem;
 }
 
-.mediaSmall .SubscriptionItem_base_e8 {
+.mediaSmall .SubscriptionItem_base_d3ab9 {
     --footer-margin: 30rem;
     --subscription-text-left-distance: 30rem;
     --image-width: 24rem;
 }
 
-.mediaSmall .SubscriptionItem_base_e8 .SubscriptionItem_subscriptionText_39 {
+.mediaSmall .SubscriptionItem_base_d3ab9 .SubscriptionItem_subscriptionText_ae386 {
     width: 500rem;
 }
 
-.mediaSmall .SubscriptionItem_base_e8 .SubscriptionItem_refreshTimer_47 {
+.mediaSmall .SubscriptionItem_base_d3ab9 .SubscriptionItem_refreshTimer_de184 {
     top: 22rem;
     left: 30rem;
 }
 
-.mediaLarge .SubscriptionItem_base_e8 {
+.mediaLarge .SubscriptionItem_base_d3ab9 {
     --footer-margin: 50rem;
     --subscription-text-left-distance: 50rem;
     --image-width: 32rem;
 }
 
-.mediaLarge .SubscriptionItem_base_e8 .SubscriptionItem_subscriptionText_39 {
+.mediaLarge .SubscriptionItem_base_d3ab9 .SubscriptionItem_subscriptionText_ae386 {
     width: 500rem;
 }
 
-.mediaLarge .SubscriptionItem_base_e8 .SubscriptionItem_refreshTimer_47 {
+.mediaLarge .SubscriptionItem_base_d3ab9 .SubscriptionItem_refreshTimer_de184 {
     top: 30rem;
     left: 22rem;
 }
 
-.SubscriptionItem_base__oneThird_74 {
+.SubscriptionItem_base__oneThird_adb43 {
     --card-width: 260rem;
     --footer-margin: 20rem;
 }
 
-.SubscriptionItem_base__oneThird_74:hover .SubscriptionItem_footerText_84 {
+.SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_footerText_e071d {
     bottom: 130rem;
 }
 
-.mediaMedium .SubscriptionItem_base__oneThird_74:hover .SubscriptionItem_footerText_84 {
+.mediaMedium .SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_footerText_e071d {
     bottom: 180rem;
 }
 
-.mediaLarge .SubscriptionItem_base__oneThird_74:hover .SubscriptionItem_footerText_84 {
+.mediaLarge .SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_footerText_e071d {
     bottom: 230rem;
 }
 
-.SubscriptionItem_base__oneThird_74:hover .SubscriptionItem_footerTitle_a0 {
+.SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_footerTitle_b3f13 {
     display: block;
     height: auto;
 }
 
-.SubscriptionItem_base__oneThird_74:hover .SubscriptionItem_footerDescription_e3 {
+.SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_footerDescription_a0afb {
     max-height: 100rem;
     opacity: 1;
 }
 
-.SubscriptionItem_base__oneThird_74:hover .SubscriptionItem_subscriptionImage_4d {
+.SubscriptionItem_base__oneThird_adb43:hover .SubscriptionItem_subscriptionImage_c5fc6 {
     filter: none;
     opacity: 0.1;
 }
 
-.SubscriptionItem_base__oneThird_74 .SubscriptionItem_subscriptionImage_4d {
+.SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_subscriptionImage_c5fc6 {
     background-image: var(--imageUriSmall);
 }
 
-.SubscriptionItem_base__oneThird_74 .SubscriptionItem_claimedText_23 {
+.SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_claimedText_ff6d6 {
     margin-right: 20rem;
 }
 
-.SubscriptionItem_base__oneThird_74 .SubscriptionItem_activateButton_3e {
+.SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_activateButton_ffcbd {
     min-width: 108rem;
     height: 20rem;
     padding: 0;
 }
 
-.SubscriptionItem_base__oneThird_74 .SubscriptionItem_activateButtonLight_ce {
+.SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_activateButtonLight_f3e9c {
     width: 411rem;
     height: 317rem;
     top: -150rem;
     right: -156rem;
 }
 
-.SubscriptionItem_base__oneThird_74 .SubscriptionItem_footer_62 {
+.SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_footer_ba717 {
     max-width: 80rem;
 }
 
-.mediaMedium .SubscriptionItem_base__oneThird_74 .SubscriptionItem_footer_62 {
+.mediaMedium .SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_footer_ba717 {
     max-width: 130rem;
 }
 
-.mediaLarge .SubscriptionItem_base__oneThird_74 .SubscriptionItem_footer_62 {
+.mediaLarge .SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_footer_ba717 {
     max-width: 183rem;
 }
 
-.SubscriptionItem_base__oneThird_74 .SubscriptionItem_cardFooter_ff {
+.SubscriptionItem_base__oneThird_adb43 .SubscriptionItem_cardFooter_a0e15 {
     justify-content: space-between;
 }
 
-.mediaSmall .SubscriptionItem_base__oneThird_74 {
+.mediaSmall .SubscriptionItem_base__oneThird_adb43 {
     --card-width: 312rem;
     --footer-margin: 20rem;
     --subscription-text-left-distance: 20rem;
 }
 
-.mediaLarge .SubscriptionItem_base__oneThird_74 {
+.mediaLarge .SubscriptionItem_base__oneThird_adb43 {
     --card-width: 364rem;
     --footer-margin: 20rem;
     --subscription-text-left-distance: 20rem;
 }
 
-.SubscriptionItem_base__twoThirds_16 {
+.SubscriptionItem_base__twoThirds_c328d {
     --card-width: 535rem;
     --footer-margin: 20rem;
     --subscription-text-left-distance: 20rem;
 }
 
-.SubscriptionItem_base__twoThirds_16:hover .SubscriptionItem_footerText_84 {
+.SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_footerText_e071d {
     bottom: 150rem;
 }
 
-.mediaMedium .SubscriptionItem_base__twoThirds_16:hover .SubscriptionItem_footerText_84 {
+.mediaMedium .SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_footerText_e071d {
     bottom: 180rem;
 }
 
-.mediaLarge .SubscriptionItem_base__twoThirds_16:hover .SubscriptionItem_footerText_84 {
+.mediaLarge .SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_footerText_e071d {
     bottom: 250rem;
 }
 
-.SubscriptionItem_base__twoThirds_16:hover .SubscriptionItem_footerDescription_e3 {
+.SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_footerDescription_a0afb {
     opacity: 1;
 }
 
-.SubscriptionItem_base__twoThirds_16:hover .SubscriptionItem_footerTitle_a0 {
+.SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_footerTitle_b3f13 {
     display: block;
     height: auto;
 }
 
-.SubscriptionItem_base__twoThirds_16:hover .SubscriptionItem_subscriptionImage_4d {
+.SubscriptionItem_base__twoThirds_c328d:hover .SubscriptionItem_subscriptionImage_c5fc6 {
     filter: none;
     opacity: 0.1;
 }
 
-.SubscriptionItem_base__twoThirds_16 .SubscriptionItem_cardFooter_ff {
+.SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_cardFooter_a0e15 {
     justify-content: space-between;
 }
 
-.SubscriptionItem_base__twoThirds_16 .SubscriptionItem_subscriptionImage_4d {
+.SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_subscriptionImage_c5fc6 {
     background-image: var(--imageUriMedium);
 }
 
-.SubscriptionItem_base__twoThirds_16 .SubscriptionItem_activateButton_3e {
+.SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_activateButton_ffcbd {
     min-width: 108rem;
     height: 20rem;
     padding: 0;
 }
 
-.SubscriptionItem_base__twoThirds_16 .SubscriptionItem_activateButton_manage_db {
+.SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_activateButton_manage_ee2f9 {
     min-width: 160rem;
     height: 32rem;
     padding: 0 10rem;
 }
 
-.SubscriptionItem_base__twoThirds_16 .SubscriptionItem_activateButton_internal_d4 {
+.SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_activateButton_internal_ec415 {
     padding: 0 10rem;
 }
 
-.SubscriptionItem_base__twoThirds_16 .SubscriptionItem_activateButtonLight_ce {
+.SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_activateButtonLight_f3e9c {
     width: 493rem;
     height: 317rem;
     top: -145rem;
     right: -176rem;
 }
 
-.SubscriptionItem_base__twoThirds_16 .SubscriptionItem_cancelledLight_3d {
+.SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_cancelledLight_ec0cb {
     bottom: -30rem;
 }
 
-.mediaSmall .SubscriptionItem_base__twoThirds_16 {
+.mediaSmall .SubscriptionItem_base__twoThirds_c328d {
     --card-width: 643rem;
     --footer-margin: 20rem;
     --subscription-text-left-distance: 20rem;
 }
 
-.mediaSmall .SubscriptionItem_base__twoThirds_16 .SubscriptionItem_cardFooter_ff {
+.mediaSmall .SubscriptionItem_base__twoThirds_c328d .SubscriptionItem_cardFooter_a0e15 {
     justify-content: space-between;
 }
 
-.mediaLarge .SubscriptionItem_base__twoThirds_16 {
+.mediaLarge .SubscriptionItem_base__twoThirds_c328d {
     --card-width: 750rem;
     --footer-margin: 20rem;
     --subscription-text-left-distance: 20rem;
 }
 
-.SubscriptionItem_cardFooter_ff {
+.SubscriptionItem_cardFooter_a0e15 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -752,20 +754,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
 }
 
-.SubscriptionItem_subscriptionText_39 {
+.SubscriptionItem_subscriptionText_ae386 {
     width: 340rem;
     padding-left: 44rem;
 }
 
-.mediaMedium .SubscriptionItem_subscriptionText_39 {
+.mediaMedium .SubscriptionItem_subscriptionText_ae386 {
     padding-left: 54rem;
 }
 
-.mediaLarge .SubscriptionItem_subscriptionText_39 {
+.mediaLarge .SubscriptionItem_subscriptionText_ae386 {
     padding-left: 86rem;
 }
 
-.SubscriptionItem_subscriptionHeader_1a {
+.SubscriptionItem_subscriptionHeader_b3830 {
     color: #e9e2bf;
     font-size: 28rem;
     font-weight: 700;
@@ -773,15 +775,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 10rem;
 }
 
-.SubscriptionItem_subscriptionDescription_b6,
-.SubscriptionItem_footerDescription_e3 {
+.SubscriptionItem_subscriptionDescription_c8af1,
+.SubscriptionItem_footerDescription_a0afb {
     color: #8c8c7e;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
 }
 
-.SubscriptionItem_subscriptionImage_4d {
+.SubscriptionItem_subscriptionImage_c5fc6 {
     width: 100%;
     height: var(--base-height);
     background-image: var(--imageUriLarge);
@@ -793,35 +795,35 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transition: opacity 0.2s;
 }
 
-.SubscriptionItem_ctaContainer_71 {
+.SubscriptionItem_ctaContainer_b2395 {
     margin-left: 20rem;
     position: relative;
 }
 
-.SubscriptionItem_ctaContainer_row_ba {
+.SubscriptionItem_ctaContainer_row_a98bc {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.SubscriptionItem_activateButton_3e {
+.SubscriptionItem_activateButton_ffcbd {
     justify-content: center;
     min-width: 140rem;
     height: 32rem;
     min-height: auto;
 }
 
-.SubscriptionItem_activateButton_manage_db {
+.SubscriptionItem_activateButton_manage_ee2f9 {
     min-width: 160rem;
 }
 
-.SubscriptionItem_linkIcon_83 {
+.SubscriptionItem_linkIcon_bdb30 {
     width: 11rem;
     height: 11rem;
     margin-left: 4rem;
 }
 
-.SubscriptionItem_activateButtonLight_ce {
+.SubscriptionItem_activateButtonLight_f3e9c {
     width: 613rem;
     height: 393rem;
     background: url('R.images.gui.maps.icons.player_subscriptions.button_light') center center / cover;
@@ -831,7 +833,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: -230rem;
 }
 
-.SubscriptionItem_cancelledLight_3d {
+.SubscriptionItem_cancelledLight_ec0cb {
     width: 246rem;
     height: 118rem;
     background: url('R.images.gui.maps.icons.player_subscriptions.cancelled_light') center center / cover;
@@ -841,13 +843,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: -75rem;
 }
 
-.SubscriptionItem_rewardsClaimed_d3 {
+.SubscriptionItem_rewardsClaimed_b123d {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.SubscriptionItem_claimedText_23 {
+.SubscriptionItem_claimedText_ff6d6 {
     color: #ffffff;
     font-size: 14rem;
     font-weight: 700;
@@ -856,18 +858,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.SubscriptionItem_claimedText_internal_ec {
+.SubscriptionItem_claimedText_internal_db83f {
     margin-right: 20rem;
 }
 
-.SubscriptionItem_claimedText_light_0c {
+.SubscriptionItem_claimedText_light_e30fa {
     color: #ffffff;
     font-size: 12rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.SubscriptionItem_claimedIcon_64 {
+.SubscriptionItem_claimedIcon_b5850 {
     width: 16rem;
     height: 16rem;
     margin-top: 2rem;
@@ -875,11 +877,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background: url('R.images.gui.maps.icons.library.check') center center / cover;
 }
 
-.SubscriptionItem_claimedIcon_internal_a6 {
+.SubscriptionItem_claimedIcon_internal_b9276 {
     margin-top: 0;
 }
 
-.SubscriptionItem_warningIcon_07 {
+.SubscriptionItem_warningIcon_ed543 {
     width: 16rem;
     height: 16rem;
     margin-top: 3rem;
@@ -887,21 +889,21 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background: url('R.images.gui.maps.icons.library.alertIcon') center center / cover;
 }
 
-.SubscriptionItem_spinner_9b {
+.SubscriptionItem_spinner_a3365 {
     display: none;
     width: 14rem;
     height: 14rem;
     margin-top: 2rem;
     margin-right: 5rem;
     background: url('R.images.gui.maps.icons.player_subscriptions.spinner') no-repeat center;
-    animation: SubscriptionItem_pending-spin_4f 1.2s linear infinite;
+    animation: SubscriptionItem_pending-spin_a7a61 1.2s linear infinite;
 }
 
-.SubscriptionItem_spinner__visible_bf {
+.SubscriptionItem_spinner__visible_f18ea {
     display: block;
 }
 
-@keyframes SubscriptionItem_pending-spin_4f {
+@keyframes SubscriptionItem_pending-spin_a7a61 {
     0% {
         transform: rotate(0deg);
     }
@@ -911,7 +913,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-.SubscriptionItem_refreshTimer_47 {
+.SubscriptionItem_refreshTimer_de184 {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
@@ -925,7 +927,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 2;
 }
 
-.SubscriptionItem_footer_62 {
+.SubscriptionItem_footer_ba717 {
     margin-left: var(--footer-margin);
     color: #e9e2bf;
     font-size: 16rem;
@@ -933,7 +935,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 20rem;
 }
 
-.SubscriptionItem_footerText_84 {
+.SubscriptionItem_footerText_e071d {
     display: flex;
     flex-direction: column;
     width: var(--card-width);
@@ -944,12 +946,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transition: bottom 0.2s;
 }
 
-.mediaLarge .SubscriptionItem_footerText_84 {
+.mediaLarge .SubscriptionItem_footerText_e071d {
     padding-left: 56rem;
     padding-right: 56rem;
 }
 
-.SubscriptionItem_footerTitle_a0 {
+.SubscriptionItem_footerTitle_b3f13 {
     display: none;
     height: 0rem;
     margin-bottom: 10rem;
@@ -962,13 +964,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.2;
 }
 
-.SubscriptionItem_footerDescription_e3 {
+.SubscriptionItem_footerDescription_a0afb {
     text-shadow: 0rem 0 1rem #000;
     opacity: 0;
     position: relative;
 }
 
-.SubscriptionItem_wotSubscriptionStatus_glow_c3 {
+.SubscriptionItem_wotSubscriptionStatus_glow_f564d {
     width: 364rem;
     height: 240rem;
     position: absolute;
@@ -976,49 +978,49 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0rem;
 }
 
-.SubscriptionItem_wotSubscriptionStatus_icon_active_75 {
+.SubscriptionItem_wotSubscriptionStatus_icon_active_a9c95 {
     width: 24rem;
     height: 24rem;
     margin-top: -20rem;
     transform: translateX(-5rem);
 }
 
-.mediaLarge .SubscriptionItem_wotSubscriptionStatus_icon_active_75 {
+.mediaLarge .SubscriptionItem_wotSubscriptionStatus_icon_active_a9c95 {
     width: 36rem;
     height: 32rem;
     margin-top: -20rem;
 }
 
-.SubscriptionItem_base__pro_9f .SubscriptionItem_wotSubscriptionStatus_icon_active_75 {
+.SubscriptionItem_base__pro_e5513 .SubscriptionItem_wotSubscriptionStatus_icon_active_a9c95 {
     margin-top: -40rem;
 }
 
-.mediaLarge .SubscriptionItem_base__pro_9f .SubscriptionItem_wotSubscriptionStatus_icon_active_75 {
+.mediaLarge .SubscriptionItem_base__pro_e5513 .SubscriptionItem_wotSubscriptionStatus_icon_active_a9c95 {
     margin-top: -45rem;
 }
 
-.SubscriptionItem_wotSubscriptionStatus_icon_inactive_52 {
+.SubscriptionItem_wotSubscriptionStatus_icon_inactive_d321b {
     width: 24rem;
     height: 24rem;
     margin-top: -18rem;
     transform: translateX(-5rem);
 }
 
-.mediaLarge .SubscriptionItem_wotSubscriptionStatus_icon_inactive_52 {
+.mediaLarge .SubscriptionItem_wotSubscriptionStatus_icon_inactive_d321b {
     width: 36rem;
     height: 34rem;
     margin-top: -22rem;
 }
 
-.SubscriptionItem_base__pro_9f .SubscriptionItem_wotSubscriptionStatus_icon_inactive_52 {
+.SubscriptionItem_base__pro_e5513 .SubscriptionItem_wotSubscriptionStatus_icon_inactive_d321b {
     margin-top: -38rem;
 }
 
-.mediaLarge .SubscriptionItem_base__pro_9f .SubscriptionItem_wotSubscriptionStatus_icon_inactive_52 {
+.mediaLarge .SubscriptionItem_base__pro_e5513 .SubscriptionItem_wotSubscriptionStatus_icon_inactive_d321b {
     margin-top: -41rem;
 }
 
-.SubscriptionItem_wotSubscriptionStatus_text_fe {
+.SubscriptionItem_wotSubscriptionStatus_text_d41db {
     color: #ffffff;
     font-size: 16rem;
     font-weight: 400;
@@ -1030,7 +1032,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: flex-end;
 }
 
-.SubscriptionItem_wotSubscriptionStatus_active_d8 {
+.SubscriptionItem_wotSubscriptionStatus_active_c6bac {
     color: #80d43a;
     font-size: 22rem;
     font-weight: 700;
@@ -1038,7 +1040,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 0;
 }
 
-.mediaLarge .SubscriptionItem_wotSubscriptionStatus_active_d8 {
+.mediaLarge .SubscriptionItem_wotSubscriptionStatus_active_c6bac {
     color: #80d43a;
     font-size: 28rem;
     font-weight: 700;
@@ -1046,7 +1048,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 7rem;
 }
 
-.SubscriptionItem_wotSubscriptionStatus_inactive_0f {
+.SubscriptionItem_wotSubscriptionStatus_inactive_d4abf {
     color: #ee7000;
     font-size: 22rem;
     font-weight: 700;
@@ -1054,7 +1056,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 0;
 }
 
-.mediaLarge .SubscriptionItem_wotSubscriptionStatus_inactive_0f {
+.mediaLarge .SubscriptionItem_wotSubscriptionStatus_inactive_d4abf {
     color: #ee7000;
     font-size: 28rem;
     font-weight: 700;
@@ -1062,7 +1064,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 7rem;
 }
 
-.SubscriptionItem_wotSubscriptionStatusContainer_b8 {
+.SubscriptionItem_wotSubscriptionStatusContainer_e2c87 {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -1072,29 +1074,29 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: var(--subscription-text-left-distance);
 }
 
-.mediaLarge .SubscriptionItem_wotSubscriptionStatusContainer_b8 {
+.mediaLarge .SubscriptionItem_wotSubscriptionStatusContainer_e2c87 {
     top: 28rem;
 }
 
-.Countdown_base_fe {
+.Countdown_base_d0c0c {
     display: flex;
     align-items: center;
 }
 
-.Countdown_icon_8b {
+.Countdown_icon_a453a {
     width: 32rem;
     height: 32rem;
     background: no-repeat center / contain;
 }
 
-.Countdown_description_8d {
+.Countdown_description_ee2e0 {
     color: #ffdd99;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.PlayerSubscriptionsApp_base_8c {
+.PlayerSubscriptionsApp_base_cee13 {
     --base-height: 358rem;
     --base-width: 815rem;
     width: 100vw;
@@ -1102,17 +1104,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     overflow: hidden;
 }
 
-.mediaSmall .PlayerSubscriptionsApp_base_8c {
+.mediaSmall .PlayerSubscriptionsApp_base_cee13 {
     --base-width: 975rem;
     --base-height: 428rem;
 }
 
-.mediaLarge .PlayerSubscriptionsApp_base_8c {
+.mediaLarge .PlayerSubscriptionsApp_base_cee13 {
     --base-width: 1134rem;
     --base-height: 500rem;
 }
 
-.PlayerSubscriptionsApp_backgroundImage_70 {
+.PlayerSubscriptionsApp_backgroundImage_c0f58 {
     width: 100%;
     height: 100%;
     background: #000 url('R.images.gui.maps.icons.account_dashboard.dashboard') center center / cover no-repeat;
@@ -1122,7 +1124,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: -1;
 }
 
-.PlayerSubscriptionsApp_background_a5 {
+.PlayerSubscriptionsApp_background_c6ad2 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1133,7 +1135,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: -1;
 }
 
-.PlayerSubscriptionsApp_back_cf {
+.PlayerSubscriptionsApp_back_f01c2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1144,7 +1146,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     z-index: 99;
 }
 
-.PlayerSubscriptionsApp_main_11 {
+.PlayerSubscriptionsApp_main_d17ba {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -1152,24 +1154,24 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: var(--base-width);
 }
 
-.PlayerSubscriptionsApp_header_d0 {
+.PlayerSubscriptionsApp_header_fb363 {
     margin-top: 58rem;
     padding-bottom: 29rem;
     border-bottom: 1rem solid #d6d6d614;
     text-align: center;
 }
 
-.mediaMedium .PlayerSubscriptionsApp_header_d0 {
+.mediaMedium .PlayerSubscriptionsApp_header_fb363 {
     margin-top: 82rem;
     padding-bottom: 23rem;
 }
 
-.mediaLarge .PlayerSubscriptionsApp_header_d0 {
+.mediaLarge .PlayerSubscriptionsApp_header_fb363 {
     margin-top: 69rem;
     padding-bottom: 41rem;
 }
 
-.PlayerSubscriptionsApp_title_d8 {
+.PlayerSubscriptionsApp_title_e281f {
     color: #f2f2f7;
     font-size: 36rem;
     font-weight: 700;
@@ -1177,11 +1179,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 7rem;
 }
 
-.mediaMedium .PlayerSubscriptionsApp_title_d8 {
+.mediaMedium .PlayerSubscriptionsApp_title_e281f {
     margin-bottom: 14rem;
 }
 
-.mediaLarge .PlayerSubscriptionsApp_title_d8 {
+.mediaLarge .PlayerSubscriptionsApp_title_e281f {
     margin-bottom: 22rem;
     color: #f2f2f7;
     font-size: 73rem;
@@ -1189,7 +1191,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.1;
 }
 
-.PlayerSubscriptionsApp_subtitle_c2 {
+.PlayerSubscriptionsApp_subtitle_a8dc8 {
     color: #fefeec;
     font-size: 16rem;
     font-weight: 400;
@@ -1197,11 +1199,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 0;
 }
 
-.mediaMedium .PlayerSubscriptionsApp_subtitle_c2 {
+.mediaMedium .PlayerSubscriptionsApp_subtitle_a8dc8 {
     margin-bottom: 28rem;
 }
 
-.mediaLarge .PlayerSubscriptionsApp_subtitle_c2 {
+.mediaLarge .PlayerSubscriptionsApp_subtitle_a8dc8 {
     color: #fefeec;
     font-size: 24rem;
     font-weight: 400;
@@ -1209,7 +1211,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 14rem;
 }
 
-.PlayerSubscriptionsApp_scrollArea_39 {
+.PlayerSubscriptionsApp_scrollArea_f30e6 {
     flex: 1 0 0;
 
     /* Offset makes the scroll bar appear at the edge of the screen */
@@ -1219,7 +1221,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-left: calc(var(--horizontal-offset) * -1);
 }
 
-.PlayerSubscriptionsApp_subscriptions_31 {
+.PlayerSubscriptionsApp_subscriptions_b5d2f {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -1231,40 +1233,40 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.mediaMedium .PlayerSubscriptionsApp_subscriptions_31 {
+.mediaMedium .PlayerSubscriptionsApp_subscriptions_b5d2f {
     padding-top: 29rem;
 }
 
-.mediaLarge .PlayerSubscriptionsApp_subscriptions_31 {
+.mediaLarge .PlayerSubscriptionsApp_subscriptions_b5d2f {
     padding-top: 80rem;
 }
 
-.PlayerSubscriptionsApp_subscriptions__empty_76 {
+.PlayerSubscriptionsApp_subscriptions__empty_f14f1 {
     justify-content: center;
     align-items: center;
     height: 100%;
     padding: 0;
 }
 
-.PlayerSubscriptionsApp_subscription_57 {
+.PlayerSubscriptionsApp_subscription_aedb3 {
     margin-bottom: 30rem;
 }
 
-.PlayerSubscriptionsApp_error_41 {
+.PlayerSubscriptionsApp_error_dcaf9 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.PlayerSubscriptionsApp_alertIcon_55 {
+.PlayerSubscriptionsApp_alertIcon_be372 {
     width: 35rem;
     height: 30rem;
     margin-bottom: 10rem;
     background: url('R.images.gui.maps.icons.library.icon_alert_32x32') no-repeat 50% 50% / contain;
 }
 
-.PlayerSubscriptionsApp_errorCaption_14 {
+.PlayerSubscriptionsApp_errorCaption_f0879 {
     margin-bottom: 15rem;
     color: #ee7000;
     font-size: 14rem;

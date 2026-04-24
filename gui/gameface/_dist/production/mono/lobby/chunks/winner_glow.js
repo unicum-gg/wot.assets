@@ -1,41 +1,47 @@
-import { r as e, a0 as a, C as t, x as s, y as n, j as r, f as o, A as i, B as c } from './vendor.js';
+import { r as e, ak as a, o as t, i as s, V as n, j as r, f as o, a6 as i, q as c, u as l } from './vendor.js';
 import {
-    d_ as l,
-    d$ as d,
-    i as m,
-    c as _,
-    at as h,
-    e0 as u,
-    w as p,
-    df as g,
-    e1 as x,
-    bw as f,
-    u as b,
-    B as v,
-    M as N,
-    q as j,
-    bE as S,
-    m as w,
-    o as I,
-    D as T,
-    s as M,
-    ac as O,
-    ak as A,
-    e as F,
-    bz as y,
-    K as L,
-    bc as C,
-    bm as D,
-    t as k,
-    dy as z,
-    bg as B,
-    dA as $,
+    ew as d,
+    ex as m,
+    i as _,
+    d5 as h,
+    bI as u,
+    ey as p,
+    bH as g,
+    cs as x,
+    ez as f,
+    aj as b,
+    aQ as v,
+    ae as N,
+    cz as S,
+    cv as j,
+    ay as w,
+    ag as T,
+    cD as I,
+    dd as y,
+    de as A,
+    aC as O,
+    cA as M,
+    m as C,
+    cI as F,
+    cJ as D,
+    a$ as L,
+    cp as z,
+    en as k,
+    ao as B,
+    aR as $,
+    Q as W,
+    a4 as U,
+    df as P,
+    cW as H,
+    Z as E,
+    cY as Q,
 } from './lib.js';
-import { I as W, P as U } from './consts.js';
-import { D as H } from './divine_glow.js';
-import { A as P } from './animated_background.js';
-var E = ((e) => ((e.OLS = 'ols'), (e.WCI = 'wci'), (e.NONE = ''), e))(E || {});
-const G = e.createContext({
+import { I as G, P as q } from './consts.js';
+import { u as V } from './use_server_time_polling.js';
+import { D as J } from './divine_glow.js';
+import { A as K } from './animated_background.js';
+var Y = ((e) => ((e.OLS = 'ols'), (e.WCI = 'wci'), (e.NONE = ''), e))(Y || {});
+const Z = e.createContext({
         mainBgPath: '',
         blurBgPath: '',
         prizeFrameBgPath: '',
@@ -51,45 +57,43 @@ const G = e.createContext({
         tournamentName: '',
         winnerGlowComponent: null,
     }),
-    Q = () => {
-        const a = e.useContext(G);
+    X = () => {
+        const a = e.useContext(Z);
         return (
             a || console.error('useDependencies hook was called with data from TournamentViewDIContext.Provider'),
             a
         );
     };
-var q = ((e) => (
+var ee = ((e) => (
         (e.Schedule = 'schedule'),
         (e.Live = 'live'),
         (e.FinalResult = 'finalResult'),
         (e.Error = 'error'),
         e
-    ))(q || {}),
-    K = ((e) => ((e.Loading = 'loading'), (e.Content = 'content'), e))(K || {});
-const V = (e) => {
+    ))(ee || {}),
+    ae = ((e) => ((e.Loading = 'loading'), (e.Content = 'content'), e))(ae || {});
+const te = (e) => {
     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
 };
-function J(a) {
-    !(function (a = l.NONE, t = V, s = !1, n = !1) {
-        e.useEffect(() => {
-            if (a !== l.NONE)
-                return (
-                    window.addEventListener('keydown', e, s),
-                    () => {
-                        window.removeEventListener('keydown', e, s);
-                    }
-                );
-            function e(e) {
-                if (e.keyCode === a) {
-                    if (!n && d.view.isEventHandled()) return;
-                    (d.view.setEventHandled(), t(e), s && e.stopPropagation());
+function se(a = d.NONE, t = te, s = !1, n = !1) {
+    e.useEffect(() => {
+        if (a !== d.NONE)
+            return (
+                window.addEventListener('keydown', e, s),
+                () => {
+                    window.removeEventListener('keydown', e, s);
                 }
+            );
+        function e(e) {
+            if (e.keyCode === a) {
+                if (!n && m.view.isEventHandled()) return;
+                (m.view.setEventHandled(), t(e), s && e.stopPropagation());
             }
-        }, [t, a, s, n]);
-    })(l.ESCAPE, a);
+        }
+    }, [t, a, s, n]);
 }
-var X = ((e) => ((e.NotStarted = 'notStarted'), (e.Completed = 'completed'), (e.Live = 'live'), e))(X || {}),
-    Y = ((e) => (
+var ne = ((e) => ((e.NotStarted = 'notStarted'), (e.Completed = 'completed'), (e.Live = 'live'), e))(ne || {}),
+    re = ((e) => (
         (e.RoundRobin = 'roundRobin'),
         (e.UBSemifinals = 'UBSemifinals'),
         (e.UBFinals = 'UBFinals'),
@@ -99,8 +103,8 @@ var X = ((e) => ((e.NotStarted = 'notStarted'), (e.Completed = 'completed'), (e.
         (e.LBFinals = 'LBFinals'),
         (e.GrandFinals = 'grandFinals'),
         e
-    ))(Y || {});
-function Z(e) {
+    ))(re || {});
+function oe(e) {
     const t = {};
     for (const s in e)
         if (Object.prototype.hasOwnProperty.call(e, s)) {
@@ -109,9 +113,9 @@ function Z(e) {
         }
     return t;
 }
-const ee = 'overview',
-    ae = 'schedule',
-    [te, se] = m()(
+const ie = 'overview',
+    ce = 'schedule',
+    [le, de] = _()(
         ({ observableModel: e }) => {
             const a = {
                     ...e.primitives([
@@ -119,55 +123,59 @@ const ee = 'overview',
                         'prizeFund',
                         'isRefreshing',
                         'streamingWithDrops',
+                        'serverTimestamp',
+                        'tokenStoreAvailabilityTimestamp',
                         'streamingWithoutDrops',
                         'pageState',
+                        'lastPrizePoolUpdate',
+                        'isDynamicPrizePool',
                     ]),
                     schedule: e.arrayClone('schedule'),
                     fundDistribution: e.arrayClone('fundDistribution'),
-                    currentTab: t.box(ee),
+                    currentTab: t.box(ie),
                     hasScheduleAnimated: t.box(!1),
                 },
                 n = s(
                     () => {
-                        const e = a.overviewState.get() === q.Live ? 0 : 1,
+                        const e = a.overviewState.get() === ee.Live ? 0 : 1,
                             t = 3 + e;
-                        return h(a.schedule.get(), (e) => e.matchState === X.NotStarted).slice(e, t);
+                        return u(a.schedule.get(), (e) => e.matchState === ne.NotStarted).slice(e, t);
                     },
-                    { equals: _ },
+                    { equals: h },
                 ),
                 r = s(
                     () => {
                         switch (a.overviewState.get()) {
-                            case q.Live:
-                                return p(a.schedule.get(), (e) => e.matchState === X.Live);
-                            case q.Schedule:
-                                return p(a.schedule.get(), (e) => e.matchState === X.NotStarted);
-                            case q.FinalResult:
-                                return u(a.schedule.get());
+                            case ee.Live:
+                                return g(a.schedule.get(), (e) => e.matchState === ne.Live);
+                            case ee.Schedule:
+                                return g(a.schedule.get(), (e) => e.matchState === ne.NotStarted);
+                            case ee.FinalResult:
+                                return p(a.schedule.get());
                             default:
                                 return null;
                         }
                     },
-                    { equals: _ },
+                    { equals: h },
                 ),
                 o = s(
                     () => {
                         const e = new Map();
                         return (
-                            g(a.schedule.get(), (a) => {
+                            x(a.schedule.get(), (a) => {
                                 const t = new Date(1e3 * a.startOfMatchTimestamp);
                                 t.setHours(0, 0, 0, 0);
                                 const s = Math.floor(t.getTime() / 1e3);
-                                (e.has(s) || e.set(s, []), x(e.get(s), a));
+                                (e.has(s) || e.set(s, []), f(e.get(s), a));
                             }),
                             Array.from(e.entries()).map(([e, a]) => ({
                                 dayTimestamp: e,
                                 matches: a,
-                                isCompleted: f(a, ({ matchState: e }) => e === X.Completed),
+                                isCompleted: b(a, ({ matchState: e }) => e === ne.Completed),
                             }))
                         );
                     },
-                    { equals: _ },
+                    { equals: h },
                 );
             return { ...a, computes: { closestMatches: n, scheduleByDate: o, overviewMainMatch: r } };
         },
@@ -177,8 +185,9 @@ const ee = 'overview',
             goToShop: a.createCallbackNoArgs('onGoToShop'),
             refresh: a.createCallbackNoArgs('onRefresh'),
             goToTokenStore: a.createCallbackNoArgs('onGoToTokenStore'),
+            pollServerTime: a.createCallbackNoArgs('pollServerTime'),
             close: a.createCallbackNoArgs('onClose'),
-            ...Z({
+            ...oe({
                 updateCurrentTabId: (a) => {
                     e.currentTab.set(a);
                 },
@@ -188,47 +197,47 @@ const ee = 'overview',
             }),
         }),
     ),
-    ne = 'Error_c5522e93',
-    re = 'Error_gears_15e3b263',
-    oe = 'Error_comeBack_b7a2fb47',
-    ie = 'Error_refreshIcon_7f41dcf9',
-    ce = 'Error_refreshIcon__refreshing_412c83fa',
-    le = n(function () {
-        const { model: e, controls: a } = se(),
+    me = 'Error_c5522e93',
+    _e = 'Error_gears_15e3b263',
+    he = 'Error_comeBack_b7a2fb47',
+    ue = 'Error_refreshIcon_7f41dcf9',
+    pe = 'Error_refreshIcon__refreshing_412c83fa',
+    ge = n(function () {
+        const { model: e, controls: a } = de(),
             t = e.isRefreshing.get(),
-            { mediaSize: s } = b();
+            { mediaSize: s } = v();
         return r.jsxs('div', {
-            className: ne,
+            className: me,
             children: [
-                r.jsx('div', { className: re }),
+                r.jsx('div', { className: _e }),
                 R.strings.comp7_ext.tournament.error(),
-                r.jsx('div', { className: oe, children: R.strings.comp7_ext.tournament.comeBack() }),
-                r.jsxs(v, {
-                    theme: v.themes.secondary,
+                r.jsx('div', { className: he, children: R.strings.comp7_ext.tournament.comeBack() }),
+                r.jsxs(N, {
+                    theme: N.themes.secondary,
                     onClick: a.refresh,
-                    size: s >= N.Large ? v.sizes.medium : v.sizes.small,
+                    size: s >= S.Large ? N.sizes.medium : N.sizes.small,
                     autoAlignContent: !1,
                     disabled: t,
                     children: [
-                        r.jsx('div', { className: o(ie, t && ce) }),
+                        r.jsx('div', { className: o(ue, t && pe) }),
                         t ? R.strings.comp7_ext.tournament.refreshing() : R.strings.comp7_ext.tournament.refresh(),
                     ],
                 }),
             ],
         });
     }),
-    de = 'Frame_centerBorderCommon_d2f72236',
-    me = 'Frame_outerBorderCommon_23b37900',
-    _e = 'Frame_innerBorderCommon_ffa760cd',
-    he = () =>
+    xe = 'Frame_centerBorderCommon_d2f72236',
+    fe = 'Frame_outerBorderCommon_23b37900',
+    be = 'Frame_innerBorderCommon_ffa760cd',
+    ve = () =>
         r.jsxs(r.Fragment, {
             children: [
-                r.jsx('div', { className: de }),
-                r.jsx('div', { className: me }),
-                r.jsx('div', { className: _e }),
+                r.jsx('div', { className: xe }),
+                r.jsx('div', { className: fe }),
+                r.jsx('div', { className: be }),
             ],
         }),
-    ue = {
+    Ne = {
         base: 'TeamLogo_7a8c421c',
         image: 'TeamLogo_image_f5af838f',
         base__x38: 'TeamLogo_base__x38_fa6e10c0',
@@ -257,7 +266,7 @@ const ee = 'overview',
         blink: 'TeamLogo_blink_fa6e10c0',
         slideUpIn: 'TeamLogo_slideUpIn_fa6e10c0',
     };
-var pe = ((e) => (
+var Se = ((e) => (
     (e.x28 = 'x28'),
     (e.x38 = 'x38'),
     (e.x48 = 'x48'),
@@ -269,8 +278,8 @@ var pe = ((e) => (
     (e.x366 = 'x366'),
     (e.x522 = 'x522'),
     e
-))(pe || {});
-const ge = ({
+))(Se || {});
+const je = ({
         teamName: e = '',
         logos: a,
         size: t = 'x38',
@@ -279,7 +288,7 @@ const ge = ({
         className: i,
         classNames: c,
     }) => {
-        const { tournamentName: l } = Q(),
+        const { tournamentName: l } = X(),
             d = ((e, a, t) => {
                 const s = R.images.comp7.gui.maps.icons.tournaments.$dyn(t);
                 switch (a) {
@@ -300,19 +309,19 @@ const ge = ({
                 }
             })(a, t, l);
         return r.jsxs('div', {
-            className: o(ue.base, ue[`base__${t}`], i),
+            className: o(Ne.base, Ne[`base__${t}`], i),
             children: [
-                r.jsx('div', { className: ue.image, style: { backgroundImage: `url(${d})` } }),
+                r.jsx('div', { className: Ne.image, style: { backgroundImage: `url(${d})` } }),
                 n &&
                     r.jsx(j, {
                         text: e || R.strings.comp7_ext.tournament.teamPlaceholder(),
-                        classMix: o(ue.teamName, null == c ? void 0 : c.teamName),
+                        classMix: o(Ne.teamName, c?.teamName),
                     }),
-                s && r.jsx('div', { className: ue.winner, children: R.strings.comp7_ext.tournament.winner() }),
+                s && r.jsx('div', { className: Ne.winner, children: R.strings.comp7_ext.tournament.winner() }),
             ],
         });
     },
-    xe = {
+    we = {
         base: 'FundDistribution_8ba2417b',
         heading: 'FundDistribution_heading_765686bb',
         team: 'FundDistribution_team_d242da75',
@@ -326,7 +335,7 @@ const ge = ({
         logo: 'FundDistribution_logo_5d5f7edd',
         teamName: 'FundDistribution_teamName_9f67286c',
         text: 'FundDistribution_text_de9a6323',
-        gradientText: 'FundDistribution_gradientText_969622e6',
+        gradientText: 'FundDistribution_gradientText_5a984c4d',
         fadeIn: 'FundDistribution_fadeIn_30dbd93f',
         fadeInThreeQuarters: 'FundDistribution_fadeInThreeQuarters_30dbd93f',
         fadeInHalf: 'FundDistribution_fadeInHalf_30dbd93f',
@@ -342,24 +351,24 @@ const ge = ({
         blink: 'FundDistribution_blink_30dbd93f',
         slideUpIn: 'FundDistribution_slideUpIn_30dbd93f',
     },
-    fe = { teamName: xe.teamName },
-    be = n(function () {
-        const { model: e } = se(),
+    Te = { teamName: we.teamName },
+    Ie = n(function () {
+        const { model: e } = de(),
             a = e.overviewState.get(),
             t = e.fundDistribution.get(),
-            { currencyText: s } = Q(),
-            { logoSize: n } = S(
-                { logoSize: pe.x28 },
-                { medium: { logoSize: pe.x28 }, large: { logoSize: pe.x38 }, extraLarge: { logoSize: pe.x48 } },
+            { currencyText: s } = X(),
+            { logoSize: n } = w(
+                { logoSize: Se.x28 },
+                { medium: { logoSize: Se.x28 }, large: { logoSize: Se.x38 }, extraLarge: { logoSize: Se.x48 } },
             );
         return r.jsxs('div', {
-            className: o(xe.base, xe[`base__${a}`]),
+            className: o(we.base, we[`base__${a}`]),
             children: [
-                r.jsx(he, {}),
-                r.jsx(j, { text: R.strings.comp7_ext.tournament.fundDistribution(), classMix: xe.heading }),
+                r.jsx(ve, {}),
+                r.jsx(j, { text: R.strings.comp7_ext.tournament.fundDistribution(), classMix: we.heading }),
                 r.jsx('div', {
-                    className: xe.schedule,
-                    children: w(
+                    className: we.schedule,
+                    children: T(
                         t,
                         ({ teamName: e, logos: a, prize: t, sharedPositionFrom: i, sharedPositionTo: c }, l) => {
                             const d =
@@ -369,24 +378,24 @@ const ge = ({
                             return r.jsxs(
                                 'div',
                                 {
-                                    className: o(xe.team, xe[`team__position${i}`]),
+                                    className: o(we.team, we[`team__position${i}`]),
                                     children: [
-                                        r.jsx('div', { className: xe.border }),
+                                        r.jsx('div', { className: we.border }),
                                         r.jsxs('div', {
-                                            className: xe.place,
+                                            className: we.place,
                                             children: [
-                                                r.jsx('div', { className: xe.text, children: d }),
-                                                r.jsx('div', { className: xe.gradientText, children: d }),
+                                                r.jsx('div', { className: we.text, children: d }),
+                                                r.jsx('div', { className: we.gradientText, children: d }),
                                             ],
                                         }),
-                                        r.jsx(ge, {
+                                        r.jsx(je, {
                                             teamName: e,
                                             logos: a,
                                             size: n,
-                                            className: xe.logo,
-                                            classNames: fe,
+                                            className: we.logo,
+                                            classNames: Te,
                                         }),
-                                        r.jsx(j, { text: s, binding: { amount: t }, classMix: xe.prize }),
+                                        r.jsx(j, { text: s, binding: { amount: t }, classMix: we.prize }),
                                     ],
                                 },
                                 l,
@@ -397,7 +406,7 @@ const ge = ({
             ],
         });
     }),
-    ve = {
+    ye = {
         base: 'LiveMatchFooter_b8275269',
         base__overview: 'LiveMatchFooter_base__overview_cb95aa8',
         streamingIcon: 'LiveMatchFooter_streamingIcon_27192270',
@@ -422,26 +431,26 @@ const ge = ({
         blink: 'LiveMatchFooter_blink_67aa606f',
         slideUpIn: 'LiveMatchFooter_slideUpIn_67aa606f',
     },
-    Ne = n(function ({ buttonSize: e = v.sizes.extraSmall, showSeparator: a = !1 }) {
-        const { model: t, controls: s } = se(),
+    Ae = n(function ({ buttonSize: e = N.sizes.extraSmall, showSeparator: a = !1 }) {
+        const { model: t, controls: s } = de(),
             n = t.streamingWithDrops.get(),
             i = t.streamingWithoutDrops.get(),
             c = t.currentTab.get();
         return r.jsxs('div', {
-            className: o(ve.base, ve[`base__${c}`]),
+            className: o(ye.base, ye[`base__${c}`]),
             children: [
                 r.jsxs('div', {
-                    className: ve.streamingOneContainer,
+                    className: ye.streamingOneContainer,
                     children: [
                         r.jsx('div', {
-                            className: ve.buttonWrapper,
-                            children: r.jsxs(v, {
+                            className: ye.buttonWrapper,
+                            children: r.jsxs(N, {
                                 onClick: s.watchStreamingOne,
                                 size: e,
                                 autoAlignContent: !1,
                                 children: [
                                     r.jsx('div', {
-                                        className: ve.streamingIcon,
+                                        className: ye.streamingIcon,
                                         style: {
                                             backgroundImage: `url(${R.images.comp7.gui.maps.icons.tournaments.$dyn(`${n}`)})`,
                                         },
@@ -451,10 +460,10 @@ const ge = ({
                             }),
                         }),
                         r.jsxs('div', {
-                            className: ve.streamingOne,
+                            className: ye.streamingOne,
                             children: [
                                 r.jsx('div', {
-                                    className: ve.box,
+                                    className: ye.box,
                                     style: {
                                         backgroundImage: `url(${R.images.comp7.gui.maps.icons.tournaments.$dyn(`${n}_box`)})`,
                                     },
@@ -464,16 +473,16 @@ const ge = ({
                         }),
                     ],
                 }),
-                a && r.jsx('div', { className: ve.text, children: R.strings.comp7_ext.tournament.separator() }),
-                r.jsxs(v, {
+                a && r.jsx('div', { className: ye.text, children: R.strings.comp7_ext.tournament.separator() }),
+                r.jsxs(N, {
                     onClick: s.watchStreamingTwo,
-                    theme: v.themes.secondary,
+                    theme: N.themes.secondary,
                     size: e,
                     autoAlignContent: !1,
-                    className: o(!a && ve.button),
+                    className: o(!a && ye.button),
                     children: [
                         r.jsx('div', {
-                            className: ve.streamingIcon,
+                            className: ye.streamingIcon,
                             style: {
                                 backgroundImage: `url(${R.images.comp7.gui.maps.icons.tournaments.$dyn(`${i}`)})`,
                             },
@@ -484,36 +493,36 @@ const ge = ({
             ],
         });
     }),
-    je = 'Footer_drops_9f07e1ee',
-    Se = 'Footer_box_c9efab86',
-    we = 'Footer_finalResult_846f6844',
-    Ie = 'Footer_separator_85aaf997',
-    Te = 'Footer_result_7805495d',
-    Me = 'Footer_counter_f418ad46',
-    Oe = 'Footer_score_e2ed58a4',
-    Ae = 'Footer_score__winner_fce912eb',
-    Fe = 'Footer_teamLogo_4d32a058',
-    ye = 'Footer_teamLogo__loser_df3967bf',
-    Le = n(function ({ team1: e, team2: a, bestOf: t }) {
-        const { model: s } = se(),
+    Oe = 'Footer_drops_9f07e1ee',
+    Me = 'Footer_box_c9efab86',
+    Ce = 'Footer_finalResult_846f6844',
+    Fe = 'Footer_separator_85aaf997',
+    De = 'Footer_result_7805495d',
+    Le = 'Footer_counter_f418ad46',
+    ze = 'Footer_score_e2ed58a4',
+    ke = 'Footer_score__winner_fce912eb',
+    Re = 'Footer_teamLogo_4d32a058',
+    Be = 'Footer_teamLogo__loser_df3967bf',
+    $e = n(function ({ team1: e, team2: a, bestOf: t }) {
+        const { model: s } = de(),
             n = s.overviewState.get(),
             i = s.streamingWithDrops.get(),
             c = e.score > a.score,
-            { size: l } = S(
-                { size: v.sizes.small },
+            { size: l } = w(
+                { size: N.sizes.small },
                 {
-                    medium: { size: v.sizes.small },
-                    large: { size: v.sizes.medium },
-                    extraLarge: { size: v.sizes.large },
+                    medium: { size: N.sizes.small },
+                    large: { size: N.sizes.medium },
+                    extraLarge: { size: N.sizes.large },
                 },
             );
         switch (n) {
-            case q.Schedule:
+            case ee.Schedule:
                 return r.jsxs('div', {
-                    className: je,
+                    className: Oe,
                     children: [
                         r.jsx('div', {
-                            className: Se,
+                            className: Me,
                             style: {
                                 backgroundImage: `url(${R.images.comp7.gui.maps.icons.tournaments.$dyn(`${i}_box`)})`,
                             },
@@ -521,47 +530,47 @@ const ge = ({
                         r.jsx(j, { text: `${R.strings.comp7_ext.tournament.drops.$dyn(i)}` }),
                     ],
                 });
-            case q.Live:
-                return r.jsx(Ne, { buttonSize: l, showSeparator: !0 });
-            case q.FinalResult:
+            case ee.Live:
+                return r.jsx(Ae, { buttonSize: l, showSeparator: !0 });
+            case ee.FinalResult:
                 return r.jsxs('div', {
-                    className: we,
+                    className: Ce,
                     children: [
-                        r.jsx(ge, { logos: e.logos, teamName: e.teamName, size: pe.x68, className: o(Fe, !c && ye) }),
+                        r.jsx(je, { logos: e.logos, teamName: e.teamName, size: Se.x68, className: o(Re, !c && Be) }),
                         r.jsxs('div', {
-                            className: Te,
+                            className: De,
                             children: [
                                 r.jsxs('div', {
-                                    className: Me,
+                                    className: Le,
                                     children: [
-                                        r.jsx('div', { className: o(Oe, c && Ae), children: e.score }),
-                                        r.jsx('div', { className: Ie }),
-                                        r.jsx('div', { className: o(Oe, !c && Ae), children: a.score }),
+                                        r.jsx('div', { className: o(ze, c && ke), children: e.score }),
+                                        r.jsx('div', { className: Fe }),
+                                        r.jsx('div', { className: o(ze, !c && ke), children: a.score }),
                                     ],
                                 }),
                                 r.jsx(j, {
                                     text: R.strings.comp7_ext.tournament.bestOf(),
                                     binding: { number: t },
-                                    classMix: Oe,
+                                    classMix: ze,
                                 }),
                             ],
                         }),
-                        r.jsx(ge, { logos: a.logos, teamName: a.teamName, size: pe.x68, className: o(Fe, c && ye) }),
+                        r.jsx(je, { logos: a.logos, teamName: a.teamName, size: Se.x68, className: o(Re, c && Be) }),
                     ],
                 });
             default:
                 return null;
         }
     }),
-    Ce = ({ phase: e, round: a, matchStage: t, className: s }) => {
-        const { roundRobinText: n } = Q();
+    We = ({ phase: e, round: a, matchStage: t, className: s }) => {
+        const { roundRobinText: n } = X();
         return r.jsx(j, {
-            text: t === Y.RoundRobin ? n : `${R.strings.comp7_ext.tournament.$dyn(t)}`,
+            text: t === re.RoundRobin ? n : `${R.strings.comp7_ext.tournament.$dyn(t)}`,
             binding: { phase: e, round: a },
             classMix: s,
         });
     },
-    De = {
+    Ue = {
         base: 'Header_9d5dc26e',
         base__finalResult: 'Header_base__finalResult_b495a828',
         date: 'Header_date_87641df0',
@@ -569,7 +578,7 @@ const ge = ({
         time: 'Header_time_8262ce62',
         live: 'Header_live_3a671f8e',
     },
-    ke = function ({
+    Pe = function ({
         team1: e,
         team2: a,
         phase: t,
@@ -581,44 +590,44 @@ const ge = ({
     }) {
         const d = e.score > a.score;
         switch (c) {
-            case q.Schedule:
+            case ee.Schedule:
                 return r.jsxs('div', {
-                    className: o(De.base, l),
+                    className: o(Ue.base, l),
                     children: [
-                        r.jsx(Ce, { matchStage: i, phase: t, round: s, className: De.round }),
+                        r.jsx(We, { matchStage: i, phase: t, round: s, className: Ue.round }),
                         r.jsxs('div', {
-                            className: De.date,
+                            className: Ue.date,
                             children: [
-                                r.jsx(T, { datetime: n, format: M.DayMonthAbbreviated }),
+                                r.jsx(y, { datetime: n, format: A.DayMonthAbbreviated }),
                                 r.jsx('div', {
-                                    className: De.time,
-                                    children: r.jsx(T, { datetime: n, format: M.ShortTime }),
+                                    className: Ue.time,
+                                    children: r.jsx(y, { datetime: n, format: A.ShortTime }),
                                 }),
                             ],
                         }),
                     ],
                 });
-            case q.Live:
+            case ee.Live:
                 return r.jsxs('div', {
-                    className: o(De.base, l),
+                    className: o(Ue.base, l),
                     children: [
-                        r.jsx(Ce, { matchStage: i, phase: t, round: s, className: De.round }),
-                        r.jsx('div', { className: De.live }),
+                        r.jsx(We, { matchStage: i, phase: t, round: s, className: Ue.round }),
+                        r.jsx('div', { className: Ue.live }),
                     ],
                 });
-            case q.FinalResult:
+            case ee.FinalResult:
                 return r.jsxs('div', {
-                    className: o(De.base, De.base__finalResult, l),
+                    className: o(Ue.base, Ue.base__finalResult, l),
                     children: [
-                        r.jsx(j, { text: R.strings.comp7_ext.tournament.finalResult(), classMix: De.round }),
-                        r.jsx('div', { className: De.winner, children: d ? e.teamName : a.teamName }),
+                        r.jsx(j, { text: R.strings.comp7_ext.tournament.finalResult(), classMix: Ue.round }),
+                        r.jsx('div', { className: Ue.winner, children: d ? e.teamName : a.teamName }),
                     ],
                 });
             default:
                 return null;
         }
     },
-    ze = {
+    He = {
         base: 'Opponents_d0bb1f11',
         winner: 'Opponents_winner_ed3cb552',
         image: 'Opponents_image_b1ec304f',
@@ -640,53 +649,53 @@ const ge = ({
         blink: 'Opponents_blink_899ffc8c',
         slideUpIn: 'Opponents_slideUpIn_899ffc8c',
     },
-    Re = n(function ({ team1: e, team2: a, bestOf: t }) {
-        const { model: s } = se(),
-            { winnerGlowComponent: n } = Q(),
+    Ee = n(function ({ team1: e, team2: a, bestOf: t }) {
+        const { model: s } = de(),
+            { winnerGlowComponent: n } = X(),
             i = s.overviewState.get(),
-            c = S(
-                { logoSize: [pe.x192, pe.x262] },
+            c = w(
+                { logoSize: [Se.x192, Se.x262] },
                 {
-                    medium: { logoSize: [pe.x192, pe.x366] },
-                    large: { logoSize: [pe.x366, pe.x522] },
-                    extraLarge: { logoSize: [pe.x522, pe.x522] },
+                    medium: { logoSize: [Se.x192, Se.x366] },
+                    large: { logoSize: [Se.x366, Se.x522] },
+                    extraLarge: { logoSize: [Se.x522, Se.x522] },
                 },
             ),
             [l, d] = c.logoSize;
         return r.jsx('div', {
-            className: o(ze.base, ze[`base__${i}`]),
+            className: o(He.base, He[`base__${i}`]),
             children:
-                i === q.FinalResult
+                i === ee.FinalResult
                     ? r.jsxs('div', {
-                          className: ze.winner,
+                          className: He.winner,
                           children: [
                               n,
-                              r.jsx(ge, { logos: e.score > a.score ? e.logos : a.logos, size: d, showTeamName: !1 }),
+                              r.jsx(je, { logos: e.score > a.score ? e.logos : a.logos, size: d, showTeamName: !1 }),
                           ],
                       })
                     : r.jsxs(r.Fragment, {
                           children: [
-                              r.jsx(ge, { logos: e.logos, teamName: e.teamName, size: l }),
+                              r.jsx(je, { logos: e.logos, teamName: e.teamName, size: l }),
                               r.jsx('div', {
-                                  className: ze.textWrapper,
+                                  className: He.textWrapper,
                                   children: r.jsx(j, {
                                       text: R.strings.comp7_ext.tournament.vsBestOf(),
                                       binding: { number: t },
-                                      classMix: ze.bestOf,
+                                      classMix: He.bestOf,
                                   }),
                               }),
-                              r.jsx(ge, { logos: a.logos, teamName: a.teamName, size: l }),
+                              r.jsx(je, { logos: a.logos, teamName: a.teamName, size: l }),
                           ],
                       }),
         });
     }),
-    Be = {
+    Qe = {
         base: 'MatchDetails_9e0f98f8',
         header: 'MatchDetails_header_89346ded',
         base__live: 'MatchDetails_base__live_bf32d099',
         content: 'MatchDetails_content_b78c981e',
-        bg: 'MatchDetails_bg_5ce084cd',
-        bg__ols: 'MatchDetails_bg__ols_bcbcaa0e',
+        bg: 'MatchDetails_bg_cb157b5a',
+        bg__ols: 'MatchDetails_bg__ols_47a304c',
         base__finalResult: 'MatchDetails_base__finalResult_bf32d099',
         fadeIn: 'MatchDetails_fadeIn_bf32d099',
         fadeInThreeQuarters: 'MatchDetails_fadeInThreeQuarters_bf32d099',
@@ -703,39 +712,39 @@ const ge = ({
         blink: 'MatchDetails_blink_bf32d099',
         slideUpIn: 'MatchDetails_slideUpIn_bf32d099',
     },
-    $e = n(function () {
-        const { model: e } = se(),
+    Ge = n(function () {
+        const { model: e } = de(),
             a = e.overviewState.get(),
             t = e.computes.overviewMainMatch(),
-            { tournamentName: s, mainBgPath: n } = Q();
-        if (a === q.Error || !t) return r.jsx(le, {});
+            { tournamentName: s, mainBgPath: n } = X();
+        if (a === ee.Error || !t) return r.jsx(ge, {});
         const { team1: i, team2: c, bestOf: l } = t;
         return r.jsxs('div', {
-            className: o(Be.base, Be[`base__${a}`]),
+            className: o(Qe.base, Qe[`base__${a}`]),
             children: [
-                r.jsx('div', { className: o(Be.bg, Be[`bg__${s}`]), style: { backgroundImage: `url('${n}')` } }),
+                r.jsx('div', { className: o(Qe.bg, Qe[`bg__${s}`]), style: { backgroundImage: `url('${n}')` } }),
                 r.jsxs('div', {
-                    className: Be.content,
+                    className: Qe.content,
                     children: [
-                        r.jsx(ke, { ...t, overviewState: a, className: Be.header }),
-                        r.jsx(Re, { team1: i, team2: c, bestOf: l }),
-                        r.jsx(Le, { team1: i, team2: c, bestOf: l }),
+                        r.jsx(Pe, { ...t, overviewState: a, className: Qe.header }),
+                        r.jsx(Ee, { team1: i, team2: c, bestOf: l }),
+                        r.jsx($e, { team1: i, team2: c, bestOf: l }),
                     ],
                 }),
             ],
         });
     }),
-    We = 'NextMatch_761307a6',
-    Ue = 'NextMatch_date_324e5a0a',
-    He = 'NextMatch_time_73b66f84',
-    Pe = 'NextMatch_teams_d8219813',
-    Ee = 'NextMatch_teamName_df96bd91',
-    Ge = 'NextMatch_textWrapper_6dd0aab3',
-    Qe = 'NextMatch_bestOf_412f98dd',
-    qe = 'NextMatch_matchType_5bb91584',
-    Ke = [Y.GrandFinals, Y.UBFinals, Y.LBFinals],
-    Ve = { teamName: Ee },
-    Je = function ({
+    qe = 'NextMatch_761307a6',
+    Ve = 'NextMatch_date_324e5a0a',
+    Je = 'NextMatch_time_73b66f84',
+    Ke = 'NextMatch_teams_d8219813',
+    Ye = 'NextMatch_teamName_df96bd91',
+    Ze = 'NextMatch_textWrapper_6dd0aab3',
+    Xe = 'NextMatch_bestOf_412f98dd',
+    ea = 'NextMatch_matchType_5bb91584',
+    aa = [re.GrandFinals, re.UBFinals, re.LBFinals],
+    ta = { teamName: Ye },
+    sa = function ({
         startOfMatchTimestamp: e,
         team1: a,
         team2: t,
@@ -745,43 +754,43 @@ const ge = ({
         round: c,
         className: l,
     }) {
-        const { topMatchGlowPath: d } = Q(),
-            { logoSize: m } = S(
-                { logoSize: pe.x48 },
-                { medium: { logoSize: pe.x48 }, large: { logoSize: pe.x68 }, extraLarge: { logoSize: pe.x86 } },
+        const { topMatchGlowPath: d } = X(),
+            { logoSize: m } = w(
+                { logoSize: Se.x48 },
+                { medium: { logoSize: Se.x48 }, large: { logoSize: Se.x68 }, extraLarge: { logoSize: Se.x86 } },
             );
         return r.jsxs('div', {
-            className: o(We, l),
-            style: { backgroundImage: Ke.includes(n) ? `url(${d})` : '' },
+            className: o(qe, l),
+            style: { backgroundImage: aa.includes(n) ? `url(${d})` : '' },
             children: [
                 r.jsxs('div', {
-                    className: Ue,
+                    className: Ve,
                     children: [
-                        r.jsx(T, { datetime: e, format: M.DayMonthAbbreviated }),
-                        r.jsx('div', { className: He, children: r.jsx(T, { datetime: e, format: M.ShortTime }) }),
+                        r.jsx(y, { datetime: e, format: A.DayMonthAbbreviated }),
+                        r.jsx('div', { className: Je, children: r.jsx(y, { datetime: e, format: A.ShortTime }) }),
                     ],
                 }),
                 r.jsxs('div', {
-                    className: Pe,
+                    className: Ke,
                     children: [
-                        r.jsx(ge, { teamName: a.teamName, logos: a.logos, size: m, classNames: Ve }),
+                        r.jsx(je, { teamName: a.teamName, logos: a.logos, size: m, classNames: ta }),
                         r.jsx('div', {
-                            className: Ge,
+                            className: Ze,
                             children: r.jsx(O, {
                                 text: R.strings.comp7_ext.tournament.vsBestOf(),
                                 params: { number: s },
-                                className: Qe,
+                                className: Xe,
                                 upgradeLegacy: !0,
                             }),
                         }),
-                        r.jsx(ge, { teamName: t.teamName, logos: t.logos, size: m, classNames: Ve }),
+                        r.jsx(je, { teamName: t.teamName, logos: t.logos, size: m, classNames: ta }),
                     ],
                 }),
-                r.jsx('div', { children: r.jsx(Ce, { matchStage: n, phase: i, round: c, className: qe }) }),
+                r.jsx('div', { children: r.jsx(We, { matchStage: n, phase: i, round: c, className: ea }) }),
             ],
         });
     },
-    Xe = {
+    na = {
         base: 'Schedule_95e67fc5',
         heading: 'Schedule_heading_a10ef5e3',
         noMatches: 'Schedule_noMatches_369ed951',
@@ -807,24 +816,24 @@ const ge = ({
         blink: 'Schedule_blink_79271803',
         slideUpIn: 'Schedule_slideUpIn_79271803',
     },
-    Ye = n(function ({ className: a }) {
-        const { model: t, controls: s } = se(),
+    ra = n(function ({ className: a }) {
+        const { model: t, controls: s } = de(),
             n = t.overviewState.get(),
             i = t.computes.closestMatches(),
-            { mediaSize: c } = b();
+            { mediaSize: c } = v();
         return r.jsxs('div', {
-            className: o(Xe.base, Xe[`base__${n}`], a),
+            className: o(na.base, na[`base__${n}`], a),
             children: [
-                r.jsx(he, {}),
-                n === q.Error
+                r.jsx(ve, {}),
+                n === ee.Error
                     ? r.jsx('div', {
-                          className: Xe.schedule,
+                          className: na.schedule,
                           children: r.jsxs('div', {
-                              className: Xe.container,
+                              className: na.container,
                               children: [
                                   R.strings.comp7_ext.tournament.error(),
                                   r.jsx('div', {
-                                      className: Xe.comeBack,
+                                      className: na.comeBack,
                                       children: R.strings.comp7_ext.tournament.comeBack(),
                                   }),
                               ],
@@ -833,49 +842,49 @@ const ge = ({
                     : r.jsxs(r.Fragment, {
                           children: [
                               r.jsxs('div', {
-                                  className: Xe.heading,
+                                  className: na.heading,
                                   children: [
                                       r.jsx(j, {
                                           text: R.strings.comp7_ext.tournament.comingSoon(),
-                                          classMix: Xe.comingSoon,
+                                          classMix: na.comingSoon,
                                           binding: {
                                               addition:
                                                   i.length > 0 &&
-                                                  r.jsx(A, {
+                                                  r.jsx(M, {
                                                       content: R.strings.comp7_ext.tournament.comingSoonAddition(),
-                                                      className: Xe.addition,
+                                                      className: na.addition,
                                                   }),
                                           },
                                       }),
-                                      r.jsx(v, {
-                                          theme: v.themes.secondary,
-                                          onClick: () => s.updateCurrentTabId(ae),
-                                          size: c >= N.Large ? v.sizes.medium : v.sizes.small,
+                                      r.jsx(N, {
+                                          theme: N.themes.secondary,
+                                          onClick: () => s.updateCurrentTabId(ce),
+                                          size: c >= S.Large ? N.sizes.medium : N.sizes.small,
                                           autoAlignContent: !1,
                                           children: R.strings.comp7_ext.tournament.viewFull(),
                                       }),
                                   ],
                               }),
                               r.jsx('div', {
-                                  className: Xe.schedule,
+                                  className: na.schedule,
                                   children:
                                       i.length > 0
                                           ? r.jsx('div', {
-                                                className: Xe.matches,
-                                                children: F(3, (a) => {
+                                                className: na.matches,
+                                                children: C(3, (a) => {
                                                     const t = i[a];
                                                     return (
                                                         t &&
-                                                        e.createElement(Je, {
+                                                        e.createElement(sa, {
                                                             ...t,
-                                                            className: o(a < 2 && Xe.match),
+                                                            className: o(a < 2 && na.match),
                                                             key: a,
                                                         })
                                                     );
                                                 }),
                                             })
                                           : r.jsx('div', {
-                                                className: Xe.noMatches,
+                                                className: na.noMatches,
                                                 children: R.strings.comp7_ext.tournament.noMatches(),
                                             }),
                               }),
@@ -884,16 +893,16 @@ const ge = ({
             ],
         });
     }),
-    Ze = 'ShopBlock_8f055a9e',
-    ea = 'ShopBlock_background_27d8781c',
-    aa = 'ShopBlock_content_ec069a9d',
-    ta = 'ShopBlock_description_9d99ec10',
-    sa = 'ShopBlock_buttonWrapper_a5da9ae8',
-    na = n(() => {
-        const { controls: e } = se(),
-            { shopFramePath: a, visitShopHeading: t, visitShopDescription: s } = Q(),
-            { mediaSize: n } = b(),
-            { shopIcon: o } = S(
+    oa = 'ShopBlock_8f055a9e',
+    ia = 'ShopBlock_background_27d8781c',
+    ca = 'ShopBlock_content_ec069a9d',
+    la = 'ShopBlock_description_418e92d1',
+    da = 'ShopBlock_buttonWrapper_a5da9ae8',
+    ma = n(() => {
+        const { controls: e } = de(),
+            { shopFramePath: a, visitShopHeading: t, visitShopDescription: s } = X(),
+            { mediaSize: n } = v(),
+            { shopIcon: o } = w(
                 { shopIcon: a.extraSmall },
                 {
                     small: { shopIcon: a.small },
@@ -903,20 +912,20 @@ const ge = ({
                 },
             );
         return r.jsxs('div', {
-            className: Ze,
+            className: oa,
             children: [
-                r.jsx(he, {}),
-                r.jsx('div', { className: ea, style: { backgroundImage: `url('${o}')` } }),
+                r.jsx(ve, {}),
+                r.jsx('div', { className: ia, style: { backgroundImage: `url('${o}')` } }),
                 r.jsxs('div', {
-                    className: aa,
+                    className: ca,
                     children: [
-                        r.jsxs('div', { children: [t, n >= N.Large && r.jsx(j, { text: s, classMix: ta })] }),
+                        r.jsxs('div', { children: [t, n >= S.Large && r.jsx(j, { text: s, classMix: la })] }),
                         r.jsx('div', {
-                            className: sa,
-                            children: r.jsx(v, {
+                            className: da,
+                            children: r.jsx(N, {
                                 onClick: e.goToShop,
                                 autoAlignContent: !1,
-                                size: n >= N.Large ? v.sizes.medium : v.sizes.small,
+                                size: n >= S.Large ? N.sizes.medium : N.sizes.small,
                                 children: R.strings.comp7_ext.tournament.toShop(),
                             }),
                         }),
@@ -925,49 +934,80 @@ const ge = ({
             ],
         });
     }),
-    ra = 'TokenStore_1ec98ed6',
-    oa = 'TokenStore_background_8bf67484',
-    ia = 'TokenStore_content_3b0a9561',
-    ca = 'TokenStore_buttonWrapper_a751996c',
-    la = n(({ className: e }) => {
-        const { controls: a } = se(),
-            { mediaSize: t } = b();
-        return r.jsxs('div', {
-            className: o(ra, e),
-            children: [
-                r.jsx(he, {}),
-                r.jsx('div', { className: oa }),
-                r.jsxs('div', {
-                    className: ia,
-                    children: [
-                        R.strings.comp7_ext.tournament.tokenStore.ols(),
-                        r.jsx('div', {
-                            className: ca,
-                            children: r.jsx(v, {
-                                onClick: a.goToTokenStore,
-                                autoAlignContent: !1,
-                                theme: v.themes.secondary,
-                                size: t >= N.Large ? v.sizes.medium : v.sizes.small,
-                                children: R.strings.comp7_ext.tournament.tokenStore.button.ols(),
-                            }),
-                        }),
-                    ],
-                }),
-            ],
-        });
+    _a = { easeOutCubic: (e) => --e * e * e + 1 },
+    ha = 'TokenStore_1ec98ed6',
+    ua = 'TokenStore_background_8bf67484',
+    pa = 'TokenStore_content_3b0a9561',
+    ga = 'TokenStore_unavailable_d6a2e56a',
+    xa = 'TokenStore_timerIcon_2d23b75b',
+    fa = 'TokenStore_time_28b74cad',
+    ba = 'TokenStore_buttonWrapper_a751996c',
+    va = n(({ className: e }) => {
+        const { model: a, controls: t } = de(),
+            { mediaSize: s } = v(),
+            n = a.serverTimestamp.get(),
+            l = a.tokenStoreAvailabilityTimestamp.get(),
+            d = l - n,
+            m = i(d > 0, {
+                from: { opacity: 0 },
+                enter: { opacity: 1 },
+                leave: { opacity: 0 },
+                config: { duration: 300, easing: _a.easeOutCubic },
+                exitBeforeEnter: !0,
+            });
+        return (
+            V(n, l, t.pollServerTime),
+            r.jsxs('div', {
+                className: o(ha, e),
+                children: [
+                    r.jsx(ve, {}),
+                    r.jsx('div', { className: ua }),
+                    r.jsxs('div', {
+                        className: pa,
+                        children: [
+                            R.strings.comp7_ext.tournament.tokenStore.ols(),
+                            m((e, a) =>
+                                a
+                                    ? r.jsxs(c.div, {
+                                          className: ga,
+                                          style: e,
+                                          children: [
+                                              R.strings.comp7_ext.tournament.tokenStore.unavailable(),
+                                              r.jsx('div', { className: xa }),
+                                              r.jsx(F, { duration: d, icon: D.None, classNames: { text: fa } }),
+                                          ],
+                                      })
+                                    : r.jsx('div', {
+                                          className: ba,
+                                          children: r.jsx(N, {
+                                              onClick: t.goToTokenStore,
+                                              autoAlignContent: !1,
+                                              theme: N.themes.secondary,
+                                              size: s >= S.Large ? N.sizes.medium : N.sizes.small,
+                                              children: R.strings.comp7_ext.tournament.tokenStore.button.ols(),
+                                          }),
+                                      }),
+                            ),
+                        ],
+                    }),
+                ],
+            })
+        );
     }),
-    da = {
+    Na = {
         base: 'OverviewTabContent_b5815562',
         matchDetails: 'OverviewTabContent_matchDetails_a9aecb25',
         eventDetails: 'OverviewTabContent_eventDetails_5ff26e18',
         prizeFrame: 'OverviewTabContent_prizeFrame_d30a6b33',
         frameBg: 'OverviewTabContent_frameBg_59bad249',
-        text: 'OverviewTabContent_text_1f4aa79e',
-        text__overflow: 'OverviewTabContent_text__overflow_24242dde',
+        text: 'OverviewTabContent_text_fc865fa4',
+        text__overflow: 'OverviewTabContent_text__overflow_bb3a9794',
         addition: 'OverviewTabContent_addition_bb457693',
         schedule: 'OverviewTabContent_schedule_dcf34407',
         container: 'OverviewTabContent_container_6c92dd42',
         tokenStore: 'OverviewTabContent_tokenStore_e4307878',
+        prizeAddition: 'OverviewTabContent_prizeAddition_3059821f',
+        tooltipIcon: 'OverviewTabContent_tooltipIcon_3a3c6d8a',
         fadeIn: 'OverviewTabContent_fadeIn_77492658',
         fadeInThreeQuarters: 'OverviewTabContent_fadeInThreeQuarters_77492658',
         fadeInHalf: 'OverviewTabContent_fadeInHalf_77492658',
@@ -983,109 +1023,124 @@ const ge = ({
         blink: 'OverviewTabContent_blink_77492658',
         slideUpIn: 'OverviewTabContent_slideUpIn_77492658',
     },
-    ma = n(function () {
-        const { model: e } = se(),
+    Sa = n(function () {
+        const { model: e } = de(),
             a = e.overviewState.get(),
-            { prizeFrameBgPath: t, tournamentName: s, currencySign: n } = Q();
+            t = e.isDynamicPrizePool.get(),
+            s = e.lastPrizePoolUpdate.get(),
+            { prizeFrameBgPath: n, tournamentName: i, currencySign: c } = X();
         return r.jsxs('div', {
-            className: o(da.base, da[`base__${a}`]),
+            className: o(Na.base, Na[`base__${a}`]),
             children: [
-                r.jsx('div', { className: da.matchDetails, children: r.jsx($e, {}) }),
+                r.jsx('div', { className: Na.matchDetails, children: r.jsx(Ge, {}) }),
                 r.jsxs('div', {
-                    className: da.eventDetails,
+                    className: Na.eventDetails,
                     children: [
-                        a !== q.FinalResult &&
+                        a !== ee.FinalResult &&
                             r.jsxs('div', {
-                                className: da.prizeFrame,
+                                className: Na.prizeFrame,
                                 children: [
-                                    r.jsx(he, {}),
-                                    r.jsx('div', { className: da.frameBg, style: { backgroundImage: `url('${t}')` } }),
+                                    r.jsx(ve, {}),
+                                    r.jsx('div', { className: Na.frameBg, style: { backgroundImage: `url('${n}')` } }),
                                     r.jsx(j, {
                                         text: R.strings.comp7_ext.tournament.prize(),
                                         binding: {
-                                            addition: r.jsx(A, {
-                                                content: R.strings.comp7_ext.tournament.prizeAddition(),
-                                                className: da.addition,
+                                            addition: r.jsxs('div', {
+                                                className: Na.prizeAddition,
+                                                children: [
+                                                    r.jsx(M, {
+                                                        content: R.strings.comp7_ext.tournament.prizeAddition(),
+                                                        className: Na.addition,
+                                                    }),
+                                                    t &&
+                                                        r.jsx(L, {
+                                                            body: z(
+                                                                R.strings.comp7_ext.tournament.lastPrizePoolUpdate(),
+                                                                { lastPrizePoolUpdate: k(s, A.ShortTime) },
+                                                            ),
+                                                            children: r.jsx('div', { className: Na.tooltipIcon }),
+                                                        }),
+                                                ],
                                             }),
                                         },
-                                        classMix: o(da.text, da.text__overflow),
+                                        classMix: o(Na.text, Na.text__overflow),
                                     }),
-                                    a === q.Error
-                                        ? r.jsx('div', { className: da.text, children: R.strings.comp7_ext.dash() })
+                                    a === ee.Error
+                                        ? r.jsx('div', { className: Na.text, children: R.strings.comp7_ext.dash() })
                                         : r.jsx(j, {
-                                              text: n,
+                                              text: c,
                                               binding: { amount: e.prizeFund.get() },
-                                              classMix: da.text,
+                                              classMix: Na.text,
                                           }),
                                 ],
                             }),
                         r.jsxs('div', {
-                            className: da.container,
-                            children: [r.jsx(na, {}), s === E.OLS && r.jsx(la, { className: da.tokenStore })],
+                            className: Na.container,
+                            children: [r.jsx(ma, {}), i === Y.OLS && r.jsx(va, { className: Na.tokenStore })],
                         }),
-                        a === q.FinalResult ? r.jsx(be, {}) : r.jsx(Ye, { className: da.schedule }),
+                        a === ee.FinalResult ? r.jsx(Ie, {}) : r.jsx(ra, { className: Na.schedule }),
                     ],
                 }),
             ],
         });
     }),
-    _a = 'Counter_a16c7d25',
-    ha = 'Counter_5b6ef903',
-    ua = 'Counter_score_198f54c8',
-    pa = 'Counter_score__winner_fdc5bffa',
-    ga = 'Counter_separator_b7ec0c4a',
-    xa = 'Counter_bestOf_4929e990',
-    fa = n(function ({ isCompleted: e, team1Score: a, team2Score: t, bestOf: s }) {
+    ja = 'Counter_a16c7d25',
+    wa = 'Counter_5b6ef903',
+    Ta = 'Counter_score_198f54c8',
+    Ia = 'Counter_score__winner_fdc5bffa',
+    ya = 'Counter_separator_b7ec0c4a',
+    Aa = 'Counter_bestOf_4929e990',
+    Oa = n(function ({ isCompleted: e, team1Score: a, team2Score: t, bestOf: s }) {
         const n = a > t;
         return r.jsxs('div', {
-            className: _a,
+            className: ja,
             children: [
                 e &&
                     r.jsxs('div', {
-                        className: ha,
+                        className: wa,
                         children: [
-                            r.jsx('div', { className: o(ua, n && pa), children: a }),
-                            r.jsx('div', { className: ga }),
-                            r.jsx('div', { className: o(ua, !n && pa), children: t }),
+                            r.jsx('div', { className: o(Ta, n && Ia), children: a }),
+                            r.jsx('div', { className: ya }),
+                            r.jsx('div', { className: o(Ta, !n && Ia), children: t }),
                         ],
                     }),
                 r.jsx(j, {
                     text: e ? R.strings.comp7_ext.tournament.bestOf() : R.strings.comp7_ext.tournament.vsBestOf(),
                     binding: { number: s },
-                    classMix: xa,
+                    classMix: Aa,
                 }),
             ],
         });
     }),
-    ba = 'MatchByDate_50709007',
-    va = 'MatchByDate_match_967a5c63',
-    Na = 'MatchByDate_match__topFinals_8944c4ce',
-    ja = 'MatchByDate_match__live_33ff8dd0',
-    Sa = 'MatchByDate_border_af9334a2',
-    wa = 'MatchByDate_logoWrapper_e52e6a64',
-    Ia = 'MatchByDate_liveImage_ec9696ea',
-    Ta = 'MatchByDate_completed_6500368b',
-    Ma = 'MatchByDate_matchType_c1acb88b',
-    Oa = 'MatchByDate_teams_6593dcc5',
-    Aa = 'MatchByDate_glow_7e4b4988',
-    Fa = 'MatchByDate_teamName_233c3b64',
-    ya = 'MatchByDate_time_11f525f2',
-    La = 'MatchByDate_loser_90c34627',
-    Ca = [Y.GrandFinals, Y.UBFinals, Y.LBFinals],
-    Da = { teamName: Fa },
-    ka = (e, a) => {
+    Ma = 'MatchByDate_50709007',
+    Ca = 'MatchByDate_match_967a5c63',
+    Fa = 'MatchByDate_match__topFinals_8944c4ce',
+    Da = 'MatchByDate_match__live_33ff8dd0',
+    La = 'MatchByDate_border_af9334a2',
+    za = 'MatchByDate_logoWrapper_e52e6a64',
+    ka = 'MatchByDate_liveImage_ec9696ea',
+    Ra = 'MatchByDate_completed_6500368b',
+    Ba = 'MatchByDate_matchType_c1acb88b',
+    $a = 'MatchByDate_teams_6593dcc5',
+    Wa = 'MatchByDate_glow_7e4b4988',
+    Ua = 'MatchByDate_teamName_233c3b64',
+    Pa = 'MatchByDate_time_11f525f2',
+    Ha = 'MatchByDate_loser_90c34627',
+    Ea = [re.GrandFinals, re.UBFinals, re.LBFinals],
+    Qa = { teamName: Ua },
+    Ga = (e, a) => {
         switch (e) {
-            case X.Completed:
-                return r.jsx('div', { className: Ta, children: R.strings.comp7_ext.tournament.completed() });
-            case X.Live:
-                return r.jsx('div', { className: Ia });
-            case X.NotStarted:
-                return r.jsx('div', { className: ya, children: r.jsx(T, { datetime: a, format: M.ShortTime }) });
+            case ne.Completed:
+                return r.jsx('div', { className: Ra, children: R.strings.comp7_ext.tournament.completed() });
+            case ne.Live:
+                return r.jsx('div', { className: ka });
+            case ne.NotStarted:
+                return r.jsx('div', { className: Pa, children: r.jsx(y, { datetime: a, format: A.ShortTime }) });
             default:
                 return null;
         }
     },
-    za = function ({ match: e }) {
+    qa = function ({ match: e }) {
         const {
                 startOfMatchTimestamp: a,
                 team1: t,
@@ -1096,70 +1151,70 @@ const ge = ({
                 phase: l,
                 round: d,
             } = e,
-            m = i === X.Completed,
+            m = i === ne.Completed,
             _ = t.score > s.score,
-            h = i === X.Live,
-            { liveBgPath: u, winnerGlowPath: p, topMatchGlowPath: g } = Q(),
-            x = i === X.NotStarted && Ca.includes(c),
-            { logoSize: f, liveImage: b } = S(
-                { logoSize: h ? pe.x68 : pe.x48, liveImage: u.small },
+            h = i === ne.Live,
+            { liveBgPath: u, winnerGlowPath: p, topMatchGlowPath: g } = X(),
+            x = i === ne.NotStarted && Ea.includes(c),
+            { logoSize: f, liveImage: b } = w(
+                { logoSize: h ? Se.x68 : Se.x48, liveImage: u.small },
                 {
-                    medium: { logoSize: h ? pe.x68 : pe.x48, liveImage: u.medium },
-                    large: { logoSize: h ? pe.x128 : pe.x68, liveImage: u.large },
-                    extraLarge: { logoSize: h ? pe.x128 : pe.x86, liveImage: u.extraLarge },
+                    medium: { logoSize: h ? Se.x68 : Se.x48, liveImage: u.medium },
+                    large: { logoSize: h ? Se.x128 : Se.x68, liveImage: u.large },
+                    extraLarge: { logoSize: h ? Se.x128 : Se.x86, liveImage: u.extraLarge },
                 },
             );
         return r.jsx('div', {
-            className: ba,
+            className: Ma,
             children: r.jsxs('div', {
-                className: o(va, x && Na, h && ja),
+                className: o(Ca, x && Fa, h && Da),
                 style: { backgroundImage: (x && `url('${g}')`) || (h && `url('${b}')`) || '' },
                 children: [
-                    r.jsx('div', { className: Sa }),
+                    r.jsx('div', { className: La }),
                     r.jsxs('div', {
-                        className: Oa,
+                        className: $a,
                         children: [
-                            ka(i, a),
+                            Ga(i, a),
                             r.jsxs('div', {
-                                className: wa,
+                                className: za,
                                 children: [
-                                    _ && m && r.jsx('div', { className: Aa, style: { backgroundImage: `url(${p})` } }),
-                                    r.jsx(ge, {
+                                    _ && m && r.jsx('div', { className: Wa, style: { backgroundImage: `url(${p})` } }),
+                                    r.jsx(je, {
                                         teamName: t.teamName,
                                         logos: t.logos,
                                         size: f,
                                         showIsWinner: _ && m,
-                                        className: o(!_ && m && La),
-                                        classNames: Da,
+                                        className: o(!_ && m && Ha),
+                                        classNames: Qa,
                                     }),
                                 ],
                             }),
-                            r.jsx(fa, { bestOf: n, isCompleted: m, team1Score: t.score, team2Score: s.score }),
+                            r.jsx(Oa, { bestOf: n, isCompleted: m, team1Score: t.score, team2Score: s.score }),
                             r.jsxs('div', {
-                                className: wa,
+                                className: za,
                                 children: [
-                                    !_ && m && r.jsx('div', { className: Aa, style: { backgroundImage: `url(${p})` } }),
-                                    r.jsx(ge, {
+                                    !_ && m && r.jsx('div', { className: Wa, style: { backgroundImage: `url(${p})` } }),
+                                    r.jsx(je, {
                                         teamName: s.teamName,
                                         logos: s.logos,
                                         size: f,
                                         showIsWinner: !_ && m,
-                                        className: o(_ && m && La),
-                                        classNames: Da,
+                                        className: o(_ && m && Ha),
+                                        classNames: Qa,
                                     }),
                                 ],
                             }),
-                            r.jsx(Ce, { matchStage: c, phase: l, round: d, className: Ma }),
+                            r.jsx(We, { matchStage: c, phase: l, round: d, className: Ba }),
                         ],
                     }),
-                    h && r.jsx(Ne, {}),
+                    h && r.jsx(Ae, {}),
                 ],
             }),
         });
     },
-    Ra = 'DailySchedule_date_a677e43d',
-    Ba = 'DailySchedule_arrow_79f2d923',
-    $a = function ({
+    Va = 'DailySchedule_date_a677e43d',
+    Ja = 'DailySchedule_arrow_79f2d923',
+    Ka = function ({
         isCompleted: a,
         dayTimestamp: t,
         matches: s,
@@ -1169,39 +1224,39 @@ const ge = ({
         immediate: c,
     }) {
         const [l, d] = e.useState(!a);
-        return r.jsxs(y, {
+        return r.jsxs(B, {
             opened: l,
             children: [
-                r.jsxs(y.Summary, {
-                    className: Ra,
+                r.jsxs(B.Summary, {
+                    className: Va,
                     onClick: () => d(!l),
-                    children: [r.jsx(y.Arrow, { className: Ba }), r.jsx(T, { datetime: t, format: M.FullDate })],
+                    children: [r.jsx(B.Arrow, { className: Ja }), r.jsx(y, { datetime: t, format: A.FullDate })],
                 }),
-                r.jsx(y.AnimatedDetails, {
+                r.jsx(B.AnimatedDetails, {
                     animationSettings: { immediate: c, onRest: i },
                     opened: l,
-                    children: w(s, (e, a) => {
+                    children: T(s, (e, a) => {
                         const t = n && a === s.length - 1,
-                            i = e.matchState !== X.Completed || t;
-                        return r.jsx('div', { ref: i ? o : null, children: r.jsx(za, { match: e }) }, a);
+                            i = e.matchState !== ne.Completed || t;
+                        return r.jsx('div', { ref: i ? o : null, children: r.jsx(qa, { match: e }) }, a);
                     }),
                 }),
             ],
         });
     },
-    Wa = 'ScheduleTabContent_6d083e2e',
-    Ua = 'ScheduleTabContent_base__withMask_fbcb0d72',
-    Ha = n(function () {
-        const { model: a, controls: t } = se(),
+    Ya = 'ScheduleTabContent_6d083e2e',
+    Za = 'ScheduleTabContent_base__withMask_fbcb0d72',
+    Xa = n(function () {
+        const { model: a, controls: t } = de(),
             s = a.overviewState.get(),
             n = a.computes.scheduleByDate(),
-            l = a.hasScheduleAnimated.get(),
+            i = a.hasScheduleAnimated.get(),
             d = e.useRef(null),
-            [m, _] = e.useState(s === q.FinalResult),
-            h = i(W),
-            u = L(),
+            [m, _] = e.useState(s === ee.FinalResult),
+            h = l(G),
+            u = $(),
             [p, g] = e.useState(!0),
-            { api: x } = C(),
+            { api: x } = W(),
             f = e.useCallback(() => {
                 const e = x.getWrapperSize(),
                     a = x.contentRef,
@@ -1214,8 +1269,8 @@ const ge = ({
                         : 0) -
                     e / 2 +
                     s.getBoundingClientRect().height / 2;
-                (0 === t && n < 0) || t === n || x.applyScroll(n, { immediate: l });
-            }, [x, l]),
+                (0 === t && n < 0) || t === n || x.applyScroll(n, { immediate: i });
+            }, [x, i]),
             b = e.useCallback((e) => {
                 e && !d.current && (d.current = e);
             }, []),
@@ -1239,13 +1294,13 @@ const ge = ({
                 );
             }, [x]),
             r.jsx(c.div, {
-                className: o(Wa, p && Ua),
+                className: o(Ya, p && Za),
                 style: h,
-                children: r.jsx(D, {
-                    children: w(n, ({ dayTimestamp: e, matches: a, isCompleted: t }, s) => {
+                children: r.jsx(U, {
+                    children: T(n, ({ dayTimestamp: e, matches: a, isCompleted: t }, s) => {
                         const o = s === n.length - 1;
                         return r.jsx(
-                            $a,
+                            Ka,
                             {
                                 isCompleted: t,
                                 dayTimestamp: e,
@@ -1262,7 +1317,7 @@ const ge = ({
             })
         );
     }),
-    Pa = {
+    et = {
         base: 'App_b829de78',
         page: 'App_page_8b428d62',
         slider: 'App_slider_87749c8a',
@@ -1284,62 +1339,64 @@ const ge = ({
         blink: 'App_blink_0',
         slideUpIn: 'App_slideUpIn_0',
     },
-    Ea = n(function () {
-        const { model: e, controls: a } = se(),
+    at = n(function () {
+        const { model: e, controls: a } = de(),
             t = e.currentTab.get(),
             s = e.overviewState.get(),
             n = e.pageState.get(),
-            l = i(U),
-            { blurBgPath: d } = Q(),
-            m = S({ tabSize: $.small }, { large: { tabSize: $.medium } });
+            i = l(q),
+            { blurBgPath: m } = X(),
+            _ = w({ tabSize: Q.small }, { large: { tabSize: Q.medium } });
+        var h;
         return (
-            J(a.close),
+            (h = a.close),
+            se(d.ESCAPE, h),
             r.jsx('div', {
-                className: Pa.base,
-                style: { backgroundImage: `url('${d}')` },
+                className: et.base,
+                style: { backgroundImage: `url('${m}')` },
                 children: r.jsx(c.div, {
-                    className: o(Pa.page, Pa[`base__${s}`]),
-                    style: { ...l },
+                    className: o(et.page, et[`base__${s}`]),
+                    style: { ...i },
                     children:
-                        n === K.Loading
-                            ? r.jsx(k, { message: R.strings.comp7_ext.waitingSpinner.message() })
-                            : r.jsxs(z, {
+                        n === ae.Loading
+                            ? r.jsx(P, { message: R.strings.comp7_ext.waitingSpinner.message() })
+                            : r.jsxs(H, {
                                   active: t,
                                   theme: 'primary',
-                                  size: m.tabSize,
+                                  size: _.tabSize,
                                   onActiveChange: a.updateCurrentTabId,
                                   children: [
-                                      r.jsxs(z.Switcher, {
+                                      r.jsxs(H.Switcher, {
                                           children: [
                                               r.jsx(
-                                                  z.Tab,
+                                                  H.Tab,
                                                   {
-                                                      tabId: ee,
-                                                      className: Pa.tab,
-                                                      children: `${R.strings.comp7_ext.tournament.tab.$dyn(ee)}`,
+                                                      tabId: ie,
+                                                      className: et.tab,
+                                                      children: `${R.strings.comp7_ext.tournament.tab.$dyn(ie)}`,
                                                   },
-                                                  `tab_${ee}`,
+                                                  `tab_${ie}`,
                                               ),
                                               r.jsx(
-                                                  z.Tab,
+                                                  H.Tab,
                                                   {
-                                                      tabId: ae,
-                                                      className: Pa.tab,
-                                                      children: `${R.strings.comp7_ext.tournament.tab.$dyn(ae)}`,
+                                                      tabId: ce,
+                                                      className: et.tab,
+                                                      children: `${R.strings.comp7_ext.tournament.tab.$dyn(ce)}`,
                                                   },
-                                                  `tab_${ae}`,
+                                                  `tab_${ce}`,
                                               ),
                                           ],
                                       }),
-                                      r.jsx(z.Content, {
+                                      r.jsx(H.Content, {
                                           children: (e) => {
                                               switch (e) {
-                                                  case ee:
-                                                      return r.jsx(ma, {});
-                                                  case ae:
-                                                      return s === q.Error
-                                                          ? r.jsx(le, {})
-                                                          : r.jsx(B, { children: r.jsx(Ha, {}) });
+                                                  case ie:
+                                                      return r.jsx(Sa, {});
+                                                  case ce:
+                                                      return s === ee.Error
+                                                          ? r.jsx(ge, {})
+                                                          : r.jsx(E, { children: r.jsx(Xa, {}) });
                                                   default:
                                                       return (console.error('Unreachable branch in tabs'), null);
                                               }
@@ -1351,11 +1408,11 @@ const ge = ({
             })
         );
     }),
-    Ga = 'WinnerGlow_wciWinnerGlow_7c899fb',
-    Qa = 'WinnerGlow_olsWinnerGlow_9d477dc8',
-    qa = () => r.jsx(P, { className: Ga }),
-    Ka = () => {
-        const e = i(W);
-        return r.jsx(c.div, { className: Qa, style: e, children: r.jsx(H, {}) });
+    tt = 'WinnerGlow_wciWinnerGlow_7c899fb',
+    st = 'WinnerGlow_olsWinnerGlow_9d477dc8',
+    nt = () => r.jsx(K, { className: tt }),
+    rt = () => {
+        const e = l(G);
+        return r.jsx(c.div, { className: st, style: e, children: r.jsx(J, {}) });
     };
-export { Ea as A, Ka as O, te as T, qa as W, G as a, E as b };
+export { at as A, rt as O, le as T, nt as W, Z as a, Y as b };

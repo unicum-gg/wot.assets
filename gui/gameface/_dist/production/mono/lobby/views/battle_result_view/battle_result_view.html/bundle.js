@@ -1,4 +1,4 @@
-import { k as e, j as t, l as s, m as a, r as i, n as o, p as r } from '../../../chunks/vendor.js';
+import { k as e, j as t, l as a, m as s, r as i, n as o, p as r } from '../../../chunks/vendor.js';
 import {
     i as l,
     c as n,
@@ -15,8 +15,8 @@ import {
     D as h,
     g as w,
     p as x,
-    d as v,
-    R as N,
+    d as N,
+    R as v,
     e as j,
     k as B,
     C as I,
@@ -32,7 +32,7 @@ import { S as H } from '../../../chunks/battle_result_stat_tooltip_model.js';
 import { g as U, a as X } from '../../../chunks/formatters.js';
 const [z, q] = l()(
         ({ observableModel: t }) => {
-            const s = {
+            const a = {
                     root: t.primitives([
                         'missionId',
                         'isVictory',
@@ -50,16 +50,16 @@ const [z, q] = l()(
                     mainRewards: t.array('mainRewards', []),
                     otherRewards: t.array('otherRewards', []),
                 },
-                a = e(() => s.mainRewards.get(), { equals: n }),
-                i = e(() => s.otherRewards.get(), { equals: n }),
-                o = e(() => a().length > 0 || i().length > 0),
-                r = e(() => c(a(), (e) => 'freeXP' === e.name)),
-                l = e(() => c(a(), (e) => 'credits' === e.name)),
+                s = e(() => a.mainRewards.get(), { equals: n }),
+                i = e(() => a.otherRewards.get(), { equals: n }),
+                o = e(() => s().length > 0 || i().length > 0),
+                r = e(() => c(s(), (e) => 'freeXP' === e.name)),
+                l = e(() => c(s(), (e) => 'credits' === e.name)),
                 d = e(() => i().length > 0);
             return {
-                ...s,
+                ...a,
                 computes: {
-                    getMainRewards: a,
+                    getMainRewards: s,
                     getHasRewards: o,
                     getXPReward: r,
                     getCreditsReward: l,
@@ -153,7 +153,7 @@ const K = 500,
             easingType: P.EaseInOut,
         },
     },
-    se = {
+    ae = {
         shutter: { from: { opacity: 1 }, to: { opacity: 0 }, delay: K, duration: Z, easingType: P.EaseOut },
         flash: { ...J },
         titleGlow: { from: { opacity: 0 }, to: { opacity: 1 }, delay: 1100, duration: 1800, easingType: P.Linear },
@@ -206,7 +206,7 @@ const K = 500,
             easingType: P.EaseInOut,
         },
     },
-    ae = {
+    se = {
         shutter: { delay: K, duration: Y, from: { opacity: 1 }, to: { opacity: 0 }, easingType: P.EaseOut },
         flash: {
             from: { opacity: 0, transform: 'scale(35, 35)' },
@@ -291,21 +291,21 @@ const K = 500,
     };
 var ie = ((e) => ((e.PERSONAL_SCORE = 'personalScore'), (e.MAIN_SCORE = 'mainScore'), e))(ie || {});
 const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 1600, duration: 1900 } },
-    re = { victory: { ...te }, defeat: { ...se }, victoryRewards: { ...ae } },
-    le = (e, t = !1, s = !1) => (t ? (s ? re.victoryRewards[e] : re.victory[e]) : re.defeat[e]),
+    re = { victory: { ...te }, defeat: { ...ae }, victoryRewards: { ...se } },
+    le = (e, t = !1, a = !1) => (t ? (a ? re.victoryRewards[e] : re.victory[e]) : re.defeat[e]),
     ne = 'BattleResultDifficultyInfo_a146fa7e',
     ce = 'BattleResultDifficultyInfo_icon_6393c396',
     de = 'BattleResultDifficultyInfo_text_ad454610',
     me = R.strings.sm_lobby.battleResult.difficultyInfo,
     ue = () => {
         const { breakpoint: e } = d(),
-            s = e.weight < m.small.weight;
+            a = e.weight < m.small.weight;
         return t.jsx('div', {
             className: ne,
             children: t.jsx(u, {
                 classMix: de,
                 justifyContent: y.Center,
-                text: s ? me.extraSmall() : me.smallAndUp(),
+                text: a ? me.extraSmall() : me.smallAndUp(),
                 binding: { icon: t.jsx('div', { className: ce }) },
             }),
         });
@@ -319,13 +319,13 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
     be = 'BattleResultMissionProgress_total_cc1b12a2',
     he = 'BattleResultMissionProgress_name_67da33ea',
     we = R.images.story_mode.gui.maps.icons.battleResult.icons,
-    xe = s(() => {
+    xe = a(() => {
         const { model: e } = q(),
-            { breakpoint: s } = d(),
+            { breakpoint: a } = d(),
             i = e.missionProgress.get(),
             o = e.computes.getHasRewards(),
             r = e.root.missionId.get(),
-            l = s.weight >= m.medium.weight ? we.large.$dyn(i.icon) : we.$dyn(i.icon),
+            l = a.weight >= m.medium.weight ? we.large.$dyn(i.icon) : we.$dyn(i.icon),
             n = p(k.StoryMode, {
                 action: O.Watched,
                 item: E.TaskCompletedTooltip,
@@ -337,7 +337,7 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
             args: { stat: H.MISSIONS },
             ...n,
             children: t.jsxs('div', {
-                className: a(ye, o && pe),
+                className: s(ye, o && pe),
                 children: [
                     t.jsx('div', { className: ge, style: { backgroundImage: `url(${l})` } }),
                     t.jsxs('div', {
@@ -353,13 +353,13 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
             }),
         });
     }),
-    ve = 'NumberAnimation_250a7925',
-    Ne = 'NumberAnimation_base__finalBounce_87358a3',
+    Ne = 'NumberAnimation_250a7925',
+    ve = 'NumberAnimation_base__finalBounce_87358a3',
     je = (e) => e,
     Be = (e) => window.systemLocale.getNumberFormat(Math.floor(e), 0),
     Ie = i.memo(function ({
         prefix: e = '',
-        currentNumber: s,
+        currentNumber: a,
         previousNumber: l = 0,
         delay: n,
         duration: c,
@@ -375,21 +375,21 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
             [b, h] = i.useState(!1),
             w = o({
                 from: { val: l },
-                to: { val: s },
+                to: { val: a },
                 delay: n,
                 config: { duration: c, easing: je },
                 cancel: u,
                 reverse: u,
                 onStart: () => {
-                    ((null == d ? void 0 : d.anim) && f(!0), g && g(), y && y());
+                    (d?.anim && f(!0), g && g(), y && y());
                 },
                 onRest: () => {
-                    ((null == d ? void 0 : d.anim) && f(!1), m && h(!0), _ && _(), p && p());
+                    (d?.anim && f(!1), m && h(!0), _ && _(), p && p());
                 },
             });
         return t.jsxs('div', {
-            className: a(ve, null == d ? void 0 : d.base, R && (null == d ? void 0 : d.anim), b && Ne),
-            children: [e, u ? Be(s) : t.jsx(r.div, { children: w.val.to((e) => Be(e)) })],
+            className: s(Ne, d?.base, R && d?.anim, b && ve),
+            children: [e, u ? Be(a) : t.jsx(r.div, { children: w.val.to((e) => Be(e)) })],
         });
     }),
     Te = 'BattleResultProgress_ec5e085e',
@@ -401,7 +401,7 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
     ke = i.memo(
         ({
             icon: e,
-            index: s,
+            index: a,
             isAnimCanceled: i,
             value: o,
             name: r,
@@ -415,7 +415,7 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
                 h = b.weight >= m.medium.weight ? Oe.large.$dyn(e) : Oe.$dyn(e),
                 w = le(Q.PROGRESS_ITEM, c, _).delay,
                 x = f.root.missionId.get(),
-                v = p(k.StoryMode, {
+                N = p(k.StoryMode, {
                     action: O.Watched,
                     item: E.BattleResultStatTooltip,
                     itemState: x.toString(),
@@ -424,19 +424,19 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
             return t.jsx(g, {
                 contentId: R.views.story_mode.mono.lobby.tooltips.battle_result_stat_tooltip('resId'),
                 args: { stat: l },
-                ...v,
+                ...N,
                 children: t.jsx('div', {
-                    className: a(Te, n && Ae),
+                    className: s(Te, n && Ae),
                     children: t.jsxs(V, {
                         isCanceled: i,
-                        className: a(Te, n && Ae),
-                        ...{ ...le(Q.PROGRESS_ITEM, c, _), delay: w + ee * s },
+                        className: s(Te, n && Ae),
+                        ...{ ...le(Q.PROGRESS_ITEM, c, _), delay: w + ee * a },
                         children: [
                             t.jsx('div', { className: Se, style: { backgroundImage: `url(${h})` } }),
                             t.jsx(Ie, {
                                 classNames: { base: Ce },
                                 currentNumber: o,
-                                ...{ ...oe[ie.PERSONAL_SCORE], delay: w + 150 + ee * s },
+                                ...{ ...oe[ie.PERSONAL_SCORE], delay: w + 150 + ee * a },
                                 isCanceled: i,
                             }),
                             t.jsx(u, { classMix: Ee, text: r, justifyContent: y.Center }),
@@ -446,23 +446,23 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
             });
         },
     ),
-    Me = s(({ isAnimCanceled: e }) => {
-        const { model: s } = q(),
-            i = s.computes.getHasRewards(),
-            o = s.root.isVictory.get();
+    Me = a(({ isAnimCanceled: e }) => {
+        const { model: a } = q(),
+            i = a.computes.getHasRewards(),
+            o = a.root.isVictory.get();
         return t.jsxs(t.Fragment, {
             children: [
                 t.jsx(V, {
                     isCanceled: e,
-                    className: a(Te, i && Ae),
+                    className: s(Te, i && Ae),
                     ...le(Q.PROGRESS_ITEM, o, i),
                     children: t.jsx(xe, {}),
                 }),
-                f(s.progressLevels.get(), (s, a) =>
+                f(a.progressLevels.get(), (a, s) =>
                     t.jsx(
                         ke,
-                        { index: a + 1, isAnimCanceled: e, isWithRewards: i, isVictory: o, hasRewards: i, ...s },
-                        `${s.icon}_${a}`,
+                        { index: s + 1, isAnimCanceled: e, isWithRewards: i, isVictory: o, hasRewards: i, ...a },
+                        `${a.icon}_${s}`,
                     ),
                 ),
             ],
@@ -479,7 +479,7 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
     Ve = { [b.Big]: 80, [b.Small]: 48 },
     We = F ? 22 : 18,
     $e = F ? 42 : 36,
-    De = s(({ icon: e, name: s, index: i, isAnimCanceled: o, iconSize: r, value: l, tooltipArgs: n }) => {
+    De = a(({ icon: e, name: a, index: i, isAnimCanceled: o, iconSize: r, value: l, tooltipArgs: n }) => {
         const { model: c } = q(),
             u = c.root.isVictory.get(),
             y = c.computes.getHasRewards(),
@@ -500,7 +500,7 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
                             className: Pe.value,
                             style: { width: `${String(l).length * _ + _}rem` },
                             children: t.jsx(Ie, {
-                                classNames: { base: a(Pe.value, Pe[`value__${s}`]) },
+                                classNames: { base: s(Pe.value, Pe[`value__${a}`]) },
                                 currentNumber: l,
                                 ...{ ...oe[ie.MAIN_SCORE], delay: p + 150 + ee * i },
                                 isCanceled: o,
@@ -530,38 +530,32 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
         [b.Small]: R.images.gui.maps.icons.library.currency.credits_48x48(),
         [b.Big]: R.images.gui.maps.icons.library.currency.credits_80x80(),
     },
-    Qe = s(({ isAnimCanceled: e }) => {
-        const { model: s } = q(),
-            a = s.root.isVictory.get(),
-            o = s.computes.getHasRewards(),
+    Qe = a(({ isAnimCanceled: e }) => {
+        const { model: a } = q(),
+            s = a.root.isVictory.get(),
+            o = a.computes.getHasRewards(),
             { breakpoint: r } = d(),
             l = r.weight >= m.medium.weight ? b.Big : b.Small,
-            n = s.computes.getXPReward(),
-            c = s.computes.getCreditsReward(),
-            u = le(Q.REWARD_MAIN, a, o).delay,
-            y = le(Q.REWARD_ITEM, a, o).delay,
-            g = s.root.missionId.get(),
+            n = a.computes.getXPReward(),
+            c = a.computes.getCreditsReward(),
+            u = le(Q.REWARD_MAIN, s, o).delay,
+            y = le(Q.REWARD_ITEM, s, o).delay,
+            g = a.root.missionId.get(),
             _ = p(k.StoryMode, {
                 action: O.Watched,
                 item: E.RewardTooltip,
                 itemState: g.toString(),
                 parentScreen: E.PostBattleWindow,
             }),
-            h = {
-                ...w({ tooltipId: null == n ? void 0 : n.tooltipId }, Number(null == n ? void 0 : n.tooltipContentId)),
-                ..._,
-            },
-            j = {
-                ...w({ tooltipId: null == c ? void 0 : c.tooltipId }, Number(null == c ? void 0 : c.tooltipContentId)),
-                ..._,
-            },
+            h = { ...w({ tooltipId: n?.tooltipId }, Number(n?.tooltipContentId)), ..._ },
+            j = { ...w({ tooltipId: c?.tooltipId }, Number(c?.tooltipContentId)), ..._ },
             B = i.useCallback(() => {
                 x.sound(W);
             }, []);
         return t.jsxs('div', {
             className: Le,
             children: [
-                t.jsx(V, { isCanceled: e, ...le(Q.REWARD_RIBBON, a, o), children: t.jsx('div', { className: ze }) }),
+                t.jsx(V, { isCanceled: e, ...le(Q.REWARD_RIBBON, s, o), children: t.jsx('div', { className: ze }) }),
                 t.jsxs('div', {
                     className: Fe,
                     children: [
@@ -571,7 +565,7 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
                                 n &&
                                     t.jsx(V, {
                                         isCanceled: e,
-                                        ...{ ...le(Q.REWARD_MAIN, a, o), delay: u },
+                                        ...{ ...le(Q.REWARD_MAIN, s, o), delay: u },
                                         children: t.jsx(De, {
                                             icon: qe[l],
                                             name: 'freeXP',
@@ -585,7 +579,7 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
                                 c &&
                                     t.jsx(V, {
                                         isCanceled: e,
-                                        ...{ ...le(Q.REWARD_MAIN, a, o), delay: u + ee },
+                                        ...{ ...le(Q.REWARD_MAIN, s, o), delay: u + ee },
                                         children: t.jsx(De, {
                                             icon: Je[l],
                                             name: 'credits',
@@ -598,12 +592,12 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
                                     }),
                             ],
                         }),
-                        s.computes.getHasOtherRewards() &&
+                        a.computes.getHasOtherRewards() &&
                             t.jsxs(t.Fragment, {
                                 children: [
                                     t.jsx(V, {
                                         isCanceled: e,
-                                        ...le(Q.REWARD_TXT, a, o),
+                                        ...le(Q.REWARD_TXT, s, o),
                                         children: t.jsx('div', {
                                             className: Ue,
                                             children: R.strings.sm_lobby.battleResult.rewards.other(),
@@ -611,29 +605,29 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
                                     }),
                                     t.jsx('div', {
                                         className: He,
-                                        children: f(s.computes.getOtherRewards(), (s, i) => {
-                                            const r = v(s.name),
+                                        children: f(a.computes.getOtherRewards(), (a, i) => {
+                                            const r = N(a.name),
                                                 n = {
-                                                    ...w({ tooltipId: s.tooltipId }, Number(s.tooltipContentId)),
+                                                    ...w({ tooltipId: a.tooltipId }, Number(a.tooltipContentId)),
                                                     ..._,
                                                 };
                                             return t.jsx(
                                                 V,
                                                 {
                                                     className: Xe,
-                                                    ...{ ...le(Q.REWARD_ITEM, a, o), delay: y + ee * i },
+                                                    ...{ ...le(Q.REWARD_ITEM, s, o), delay: y + ee * i },
                                                     isCanceled: e,
                                                     onStart: B,
-                                                    children: t.jsx(N, {
-                                                        ...s,
-                                                        value: X(s.value, r),
-                                                        image: s.icon[l],
+                                                    children: t.jsx(v, {
+                                                        ...a,
+                                                        value: X(a.value, r),
+                                                        image: a.icon[l],
                                                         valueType: r,
                                                         size: l,
                                                         tooltipArgs: n,
                                                     }),
                                                 },
-                                                `${s.name}${i}`,
+                                                `${a.name}${i}`,
                                             );
                                         }),
                                     }),
@@ -645,28 +639,28 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
         });
     }),
     Ke = 'BattleResultVehicle_b99ec26b',
-    Ye = 'BattleResultVehicle_back_858b5f46',
+    Ye = 'BattleResultVehicle_back_92a232ac',
     Ze = 'BattleResultVehicle_base__victory_dc524451',
-    et = 'BattleResultVehicle_fore_b4cfcf9c',
+    et = 'BattleResultVehicle_fore_b539c6eb',
     tt = 'BattleResultVehicle_vehicle_d121788b',
-    st = R.images.story_mode.gui.maps.icons.battleResult.vehicle,
-    at = R.images.story_mode.gui.maps.icons.battleResult.vehicle.large,
+    at = R.images.story_mode.gui.maps.icons.battleResult.vehicle,
+    st = R.images.story_mode.gui.maps.icons.battleResult.vehicle.large,
     it = 'vehicle',
     ot = (e, t) => {
-        const s = e.$dyn(`${it}_${t}`);
-        return s || e.$dyn(it);
+        const a = e.$dyn(`${it}_${t}`);
+        return a || e.$dyn(it);
     },
-    rt = s(() => {
+    rt = a(() => {
         const { breakpoint: e } = d(),
-            { model: s } = q(),
-            i = s.root.missionId.get();
+            { model: a } = q(),
+            i = a.root.missionId.get();
         return t.jsxs('div', {
-            className: a(Ke, s.root.isVictory.get() && Ze),
+            className: s(Ke, a.root.isVictory.get() && Ze),
             children: [
                 t.jsx('div', { className: Ye }),
                 t.jsx('div', {
                     className: tt,
-                    style: { backgroundImage: `url(${e.weight < m.large.weight ? ot(st, i) : ot(at, i)})` },
+                    style: { backgroundImage: `url(${e.weight < m.large.weight ? ot(at, i) : ot(st, i)})` },
                 }),
                 t.jsx('div', { className: et }),
             ],
@@ -682,7 +676,7 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
         titleGlow: 'BattleResultViewApp_titleGlow_c8f61e8e',
         flash: 'BattleResultViewApp_flash_d4054592',
         container: 'BattleResultViewApp_container_8c0feb4a',
-        title: 'BattleResultViewApp_title_45de15d5',
+        title: 'BattleResultViewApp_title_61d55f9d',
         subTitle: 'BattleResultViewApp_subTitle_8ddbd136',
         close: 'BattleResultViewApp_close_fe13d451',
         buttonWrapper: 'BattleResultViewApp_buttonWrapper_fc9b9776',
@@ -696,15 +690,15 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
         progress: 'BattleResultViewApp_progress_1ca131d1',
     },
     nt = R.images.story_mode.gui.maps.icons.common,
-    ct = s(() => {
-        const { controls: e, model: s } = q(),
+    ct = a(() => {
+        const { controls: e, model: a } = q(),
             { breakpoint: o } = d(),
             [r, l] = i.useState(!1),
-            n = s.root.isVictory.get(),
-            c = s.root.hasAutoCompleteTasks.get(),
-            m = s.computes.getHasRewards(),
-            u = s.root.isOnboarding.get(),
-            y = s.missionProgress.get().value > 0;
+            n = a.root.isVictory.get(),
+            c = a.root.hasAutoCompleteTasks.get(),
+            m = a.computes.getHasRewards(),
+            u = a.root.isOnboarding.get(),
+            y = a.missionProgress.get().value > 0;
         j(B.ESCAPE, e.exit);
         const p = i.useCallback(() => {
                 n ? x.sound($) : x.sound(D);
@@ -713,13 +707,13 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
                 n || x.sound(L);
             }, [n]);
         return t.jsxs('div', {
-            className: a(lt.base, n && lt.base__victory),
+            className: s(lt.base, n && lt.base__victory),
             onClick: () => l(!0),
             children: [
                 t.jsx(M, {
                     backgroundPath: u
-                        ? nt.backgrounds.$num(s.root.missionId.get())
-                        : nt.backgrounds_result.$dyn(`${n ? 'win' : 'loss'}_${s.root.missionId.get()}`),
+                        ? nt.backgrounds.$num(a.root.missionId.get())
+                        : nt.backgrounds_result.$dyn(`${n ? 'win' : 'loss'}_${a.root.missionId.get()}`),
                     showBlur: u,
                     showVignette: u,
                 }),
@@ -737,20 +731,20 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
                     className: lt.container,
                     ...le(Q.TITLE, n, m),
                     onStart: p,
-                    children: t.jsx('div', { className: lt.title, children: s.root.title.get() }),
+                    children: t.jsx('div', { className: lt.title, children: a.root.title.get() }),
                 }),
                 t.jsx(V, {
                     isCanceled: r,
                     className: lt.container,
                     ...le(Q.SUB_TITLE, n, m),
-                    children: t.jsx('div', { className: lt.subTitle, children: s.root.subTitle.get() }),
+                    children: t.jsx('div', { className: lt.subTitle, children: a.root.subTitle.get() }),
                 }),
                 n && t.jsx(V, { isCanceled: r, className: lt.flash, ...le(Q.FLASH, n, m) }),
                 t.jsxs('div', {
                     className: lt.centerBlock,
                     children: [
                         t.jsx('div', {
-                            className: a(lt.progress, m && lt.progress__withRewards),
+                            className: s(lt.progress, m && lt.progress__withRewards),
                             children: t.jsx(Me, { isAnimCanceled: r }),
                         }),
                         m && t.jsx(Qe, { isAnimCanceled: r }),
@@ -763,8 +757,8 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
                     children: t.jsxs('div', {
                         className: lt.footer,
                         children: [
-                            t.jsx('div', { className: lt.infoName, children: s.root.infoName.get() }),
-                            t.jsx('div', { className: lt.infoDescription, children: s.root.infoDescription.get() }),
+                            t.jsx('div', { className: lt.infoName, children: a.root.infoName.get() }),
+                            t.jsx('div', { className: lt.infoDescription, children: a.root.infoDescription.get() }),
                             t.jsx(V, {
                                 isCanceled: r,
                                 className: lt.footer,
@@ -772,10 +766,10 @@ const oe = { personalScore: { delay: 0, duration: 700 }, mainScore: { delay: 160
                                 onStart: g,
                                 children: t.jsx(rt, {}),
                             }),
-                            t.jsx(_, { className: lt.vehicleName, text: s.root.vehicleName.get() }),
+                            t.jsx(_, { className: lt.vehicleName, text: a.root.vehicleName.get() }),
                             t.jsx(_, {
                                 className: lt.playerStatus,
-                                text: s.root.playerStatus.get(),
+                                text: a.root.playerStatus.get(),
                                 upgradeLegacy: !0,
                             }),
                             c && y && t.jsx(ue, {}),

@@ -1,54 +1,54 @@
-import { s, r as a, j as t, f as i } from '../../../chunks/vendor.js';
+import { D as s, r as a, j as e } from '../../../chunks/vendor.js';
 import {
-    i as e,
-    s as l,
-    a8 as o,
-    u as n,
-    k as r,
-    Y as c,
-    t as d,
+    i,
+    a8 as t,
+    d2 as o,
+    G as r,
+    aR as n,
+    b as l,
+    B as c,
+    I as d,
+    C as f,
     E as u,
-    A as f,
-    C as p,
-    B as m,
-    J as y,
-    P as _,
+    A as m,
+    m as p,
+    k as y,
+    p as g,
+    r as _,
+    U as b,
 } from '../../../chunks/lib.js';
-import { E as j, S as C } from '../../../chunks/spring_wrapper.js';
-import { T as g } from '../../../chunks/text.module.js';
-import { T as x } from '../../../chunks/text_simple.js';
-import { Q as h } from '../../../chunks/index.js';
-import '../../../chunks/key_icon.js';
-import '../../../chunks/utils2.js';
-import '../../../chunks/string-utils.js';
-const [b, A] = e()(
-        ({ observableModel: s }) => ({ root: s.object() }),
+import { E as C, S as j } from '../../../chunks/spring_wrapper.js';
+import { S as x } from '../../../chunks/story_point.js';
+import { c as h } from '../../../chunks/sound.js';
+import { g as A, a as z, b as D, c as E } from '../../../chunks/utils.js';
+const [N, T] = i()(
+        ({ observableModel: s }) => ({ root: s.object(), rewards: s.array('rewards') }),
         ({ externalModel: s }) => ({ close: s.createCallbackNoArgs('onClose') }),
     ),
-    D = { y: -5, opacity: 0 },
-    N = { y: 0, opacity: 1 };
+    v = { y: -5, opacity: 0 },
+    w = { y: 0, opacity: 1 };
 var k = ((s) => (
     (s.ICON = 'icon'),
     (s.TITLE = 'title'),
     (s.HEADER = 'header'),
     (s.DESCRIPTION = 'description'),
-    (s.DAILY = 'daily'),
+    (s.REWARDS = 'rewards'),
     (s.BUTTON = 'button'),
     s
 ))(k || {});
-const v = 500,
-    T = {
+const S = 500,
+    I = {
         icon: {
-            from: { opacity: 0, filter: 'brightness(2) contrast(3) blur(10rem)', transform: 'scale(1.5, 1)' },
-            to: { opacity: 1, filter: 'brightness(1) contrast(1) blur(0rem)', transform: ' scale(1, 1)' },
+            from: { opacity: 0, transform: 'scale(1.2, 1.2)' },
+            to: { opacity: 1, transform: ' scale(1, 1)' },
             duration: 1200,
             delay: 0,
-            easingType: j.EaseInOut,
+            easingType: C.EaseInOut,
         },
-        title: { from: D, to: N, delay: 1e3, duration: v },
-        header: { from: D, to: N, delay: 1200, duration: v },
-        description: { from: D, to: N, delay: 1400, duration: v },
-        daily: { from: D, to: N, delay: 1600, duration: v },
+        title: { from: v, to: w, delay: 1e3, duration: S },
+        header: { from: v, to: w, delay: 1200, duration: S },
+        description: { from: v, to: w, delay: 1400, duration: S },
+        rewards: { from: v, to: w, delay: 2200, duration: S },
         button: {
             from: { y: 10, transform: 'translate(-50%)', opacity: 0 },
             to: { y: 0, transform: 'translate(-50%)', opacity: 1 },
@@ -56,127 +56,151 @@ const v = 500,
             duration: 800,
         },
     },
-    E = 'DifficultyCongratulationApp_70d6f646',
-    I = 'DifficultyCongratulationApp_center_41545684',
-    S = 'DifficultyCongratulationApp_base__daily_7998c441',
-    O = 'DifficultyCongratulationApp_icons_3131370c',
-    $ = 'DifficultyCongratulationApp_decorSmoke_8fefbf79',
-    w = 'DifficultyCongratulationApp_icon_5884141',
-    B = 'DifficultyCongratulationApp_title_41e92987',
-    L = 'DifficultyCongratulationApp_header_d3e13f12',
-    P = 'DifficultyCongratulationApp_descriptionContainer_bd8292b5',
-    F = 'DifficultyCongratulationApp_footer_54207e63',
-    H = 'DifficultyCongratulationApp_plusGlow_2a28e3a5',
-    M = 'DifficultyCongratulationApp_dailyLabel_1c014fd9',
-    Y = 'DifficultyCongratulationApp_quests_413c63fd',
-    q = 'DifficultyCongratulationApp_questsGlow_5908490',
-    G = 'DifficultyCongratulationApp_unlockIcon_7f55a541',
-    U = 'DifficultyCongratulationApp_button_f33a2136',
-    z = 'DifficultyCongratulationApp_closeBtn_e03f3929',
-    J = R.strings.last_stand_lobby.difficultyWindow,
-    Q = s(() => {
-        const { model: s, controls: e } = A(),
-            { level: _, showDaily: j } = s.root.get(),
-            { breakpoint: b } = l();
-        (o(e.close), n(r.ENTER, e.close), n(r.SPACE, e.close));
-        const [D, N] = a.useState(!1);
-        return t.jsxs('div', {
-            className: i(E, j && S),
+    O = 'DifficultyCongratulationApp_70d6f646',
+    W = 'DifficultyCongratulationApp_background_1a04c1bf',
+    B = 'DifficultyCongratulationApp_center_833227ce',
+    L = 'DifficultyCongratulationApp_modifierIcon_1e80aaa9',
+    $ = 'DifficultyCongratulationApp_title_345bbaf0',
+    M = 'DifficultyCongratulationApp_header_c567657c',
+    P = 'DifficultyCongratulationApp_descriptionContainer_b424b140',
+    U = 'DifficultyCongratulationApp_button_a922cf0d',
+    H = 'DifficultyCongratulationApp_rewards_fd607614',
+    G = 'DifficultyCongratulationApp_rewardLabel_f328651f',
+    q = 'DifficultyCongratulationApp_rewardList_80c7934b',
+    F = 'DifficultyCongratulationApp_reward_ccc9cf18',
+    J = 'DifficultyCongratulationApp_closeBtn_ec8e894',
+    K = 600 + I[k.REWARDS].delay,
+    Q = { from: { opacity: 0, y: -5 } };
+function V() {
+    g.sound(h);
+}
+const X = t.resolve('strings'),
+    Y = s(function () {
+        const { model: s, controls: i } = T(),
+            { level: t, modifier: g } = s.root.get(),
+            _ = s.rewards.get();
+        (o(i.close), r(n.ENTER, i.close), r(n.SPACE, i.close));
+        const [b, h] = a.useState(!1),
+            N = l(
+                { size: c.sizes.extraSmall },
+                {
+                    medium: { size: c.sizes.small },
+                    large: { size: c.sizes.medium },
+                    extraLarge: { size: c.sizes.large },
+                },
+            ),
+            v = l({ size: x.sizes.s186x186 }, { large: { size: x.sizes.s256x256 } }),
+            w = l({ size: d.Big }, { medium: { size: d.S180x135 } });
+        return e.jsxs('div', {
+            className: O,
             onClick: () => {
-                N(!0);
+                h(!0);
             },
             children: [
-                t.jsx(c, {
-                    classNames: { base: z },
-                    caption: R.strings.last_stand_lobby.common.close(),
-                    type: 'close',
-                    side: 'right',
-                    onClick: e.close,
+                e.jsx(f, { className: J, onClose: i.close }),
+                e.jsx('div', {
+                    className: W,
+                    style: {
+                        backgroundImage: `url('R.images.last_stand.gui.maps.icons.backgrounds.difficulty_bg.bg_${t}')`,
+                    },
                 }),
-                t.jsxs('div', {
-                    className: I,
+                e.jsxs('div', {
+                    className: B,
                     children: [
-                        t.jsx(C, {
-                            className: O,
-                            ...T[k.ICON],
-                            isCanceled: D,
-                            children: t.jsxs(t.Fragment, {
-                                children: [
-                                    t.jsx('div', { className: $ }),
-                                    t.jsx('div', {
-                                        className: w,
-                                        style: {
-                                            backgroundImage: `url('R.images.last_stand.gui.maps.icons.difficulties.c_256x256.diff_${_}')`,
-                                        },
-                                    }),
-                                ],
+                        e.jsx(j, {
+                            ...I[k.ICON],
+                            isCanceled: b,
+                            children: e.jsx(x, {
+                                classNames: { base: L },
+                                size: v.size,
+                                modifier: g,
+                                withTimesSymbol: !0,
                             }),
                         }),
-                        t.jsx('div', {
-                            className: L,
-                            children: t.jsxs(t.Fragment, {
-                                children: [
-                                    t.jsx(C, { ...T[k.TITLE], className: B, isCanceled: D, children: J.title() }),
-                                    t.jsx(C, {
-                                        className: L,
-                                        ...T[k.HEADER],
-                                        isCanceled: D,
-                                        children: t.jsx(x, {
-                                            type: g.Heading,
-                                            text:
-                                                b.name === d.extraSmall
-                                                    ? J.headerShort.$dyn(`level_${_}`)
-                                                    : J.header.$dyn(`level_${_}`),
-                                            shadow: !0,
-                                        }),
-                                    }),
-                                ],
+                        e.jsx(j, {
+                            ...I[k.TITLE],
+                            className: $,
+                            isCanceled: b,
+                            children: R.strings.last_stand_lobby.difficultyWindow.title(),
+                        }),
+                        e.jsx(j, {
+                            ...I[k.HEADER],
+                            isCanceled: b,
+                            children: e.jsx(u, {
+                                classMix: M,
+                                justifyContent: m.Center,
+                                text: X.readOrEmpty(`R.strings.last_stand_lobby.difficultyWindow.header.level_${t}`),
                             }),
                         }),
-                        t.jsx(C, {
-                            ...T[k.DESCRIPTION],
-                            className: P,
-                            isCanceled: D,
-                            children: t.jsx(u, {
-                                justifyContent: f.Center,
+                        e.jsx(j, {
+                            ...I[k.DESCRIPTION],
+                            isCanceled: b,
+                            children: e.jsx(u, {
+                                classMix: P,
+                                justifyContent: m.Center,
                                 isTruncationAvailable: !0,
                                 isTooltipEnable: !0,
-                                text: J.description.$dyn(`level_${_}`),
+                                binding: { modifier: g },
+                                text: X.readOrEmpty(
+                                    `R.strings.last_stand_lobby.difficultyWindow.description.level_${t}`,
+                                ),
                             }),
                         }),
-                        j &&
-                            t.jsxs(C, {
-                                ...T[k.DAILY],
-                                className: F,
-                                isCanceled: D,
+                        _.length > 0 &&
+                            e.jsxs(j, {
+                                ...I[k.REWARDS],
+                                isCanceled: b,
+                                className: H,
                                 children: [
-                                    t.jsx('div', { className: H }),
-                                    t.jsx(u, { text: R.strings.last_stand_lobby.difficult.daily(), classMix: M }),
-                                    t.jsxs('div', {
-                                        className: Y,
-                                        children: [
-                                            t.jsx('div', { className: q }),
-                                            t.jsx(h, { fullBorder: !0 }),
-                                            t.jsx('div', { className: G }),
-                                        ],
+                                    e.jsx('div', {
+                                        className: G,
+                                        children: R.strings.last_stand_lobby.difficultyWindow.rewards(),
+                                    }),
+                                    e.jsx('div', {
+                                        className: q,
+                                        children: p(_, (s, a) =>
+                                            e.jsx(
+                                                'div',
+                                                {
+                                                    className: F,
+                                                    children: e.jsx(j, {
+                                                        ...Q,
+                                                        duration: 800,
+                                                        delay: K + 120 * a,
+                                                        easingType: C.EaseOutBack,
+                                                        isCanceled: b,
+                                                        onStart: V,
+                                                        children: e.jsx(y, {
+                                                            name: s.name,
+                                                            value: E(s),
+                                                            size: w.size,
+                                                            special: s.overlayType,
+                                                            image: D(s, w.size),
+                                                            valueType: z(s.name),
+                                                            tooltipArgs: A(s),
+                                                        }),
+                                                    }),
+                                                },
+                                                `${s.name}${a}`,
+                                            ),
+                                        ),
                                     }),
                                 ],
                             }),
                     ],
                 }),
-                t.jsx(C, {
-                    ...T[k.BUTTON],
+                e.jsx(j, {
+                    ...I[k.BUTTON],
                     className: U,
-                    isCanceled: D,
-                    children: t.jsx(p, {
-                        type: m.primary,
-                        size: y.medium,
-                        isFocused: !0,
-                        onClick: e.close,
+                    isCanceled: b,
+                    children: e.jsx(c, {
+                        theme: c.themes.primary,
+                        size: N.size,
+                        onClick: i.close,
                         children: R.strings.last_stand_lobby.common.yes(),
                     }),
                 }),
             ],
         });
     });
-_(t.jsx(b, { children: t.jsx(Q, {}) }));
+_(e.jsx(b, { children: e.jsx(N, { children: e.jsx(Y, {}) }) }));

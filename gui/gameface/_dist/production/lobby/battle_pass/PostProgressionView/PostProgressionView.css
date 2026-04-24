@@ -3,15 +3,15 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressBar_base_45 {
+.ProgressBar_base_c37bf {
     width: 100%;
     height: var(--progress-bg-height);
     position: relative;
 }
-.ProgressBar_base__small_df {
+.ProgressBar_base__small_af6d6 {
     height: var(--progress-bg-height-small);
 }
-.ProgressBar_background_51 {
+.ProgressBar_background_a4e18 {
     width: 100%;
     max-width: 8001px;
     height: 100%;
@@ -23,15 +23,15 @@
     top: 0;
     left: 0;
 }
-.ProgressBar_background__small_46 {
+.ProgressBar_background__small_e2b95 {
     height: var(--progress-bg-height-small);
 }
-.ProgressBar_lineWrapper_6a {
+.ProgressBar_lineWrapper_e670c {
     display: flex;
     flex: 1;
 }
 
-.ProgressBarBlink_base_24 {
+.ProgressBarBlink_base_d7125 {
     width: var(--progress-glow-width);
     height: var(--progress-glow-height);
     background-image: var(--progress-glow);
@@ -44,7 +44,7 @@
     pointer-events: none;
 }
 
-.ProgressBarBlink_base__small_0f {
+.ProgressBarBlink_base__small_b92f8 {
     width: var(--progress-glow-small-width);
     height: var(--progress-glow-small-height);
     background-image: var(--progress-glow-small);
@@ -55,7 +55,7 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressLineImpose_base_80 {
+.ProgressLineImpose_base_a3558 {
     max-width: 8001px;
     height: 100%;
     background-color: var(--progress-line-base);
@@ -64,16 +64,16 @@
     transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
     transition-property: width;
 }
-.ProgressLineImpose_base__disabled_cc {
+.ProgressLineImpose_base__disabled_a9e8e {
     background-color: var(--progress-line-disabled);
 }
-.ProgressLineImpose_base__finished_d4 {
+.ProgressLineImpose_base__finished_f889e {
     background-color: var(--progress-line-finished);
 }
-.ProgressLineImpose_base__withoutBounce_56 {
+.ProgressLineImpose_base__withoutBounce_c0ff9 {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
 }
-.ProgressLineImpose_pattern_1c {
+.ProgressLineImpose_pattern_a4023 {
     max-width: 8001px;
     background-image: var(--progress-pattern-base);
     background-repeat: repeat;
@@ -85,18 +85,18 @@
     bottom: var(--progress-pattern-border-size);
     left: var(--progress-pattern-border-size);
 }
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
+.ProgressLineImpose_base__small_da260 .ProgressLineImpose_pattern_a4023 {
     top: 0;
     bottom: 0;
 }
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
+.ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_pattern_a4023 {
     background-image: var(--progress-pattern-disabled);
     left: 0;
 }
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
+.ProgressLineImpose_base__finished_f889e .ProgressLineImpose_pattern_a4023 {
     background-image: var(--progress-pattern-finished);
 }
-.ProgressLineImpose_gradient_35 {
+.ProgressLineImpose_gradient_f73c0 {
     max-width: 8001px;
     background-image: var(--progress-pattern-gradient);
     mix-blend-mode: var(--progress-pattern-gradient-mixBlendMode);
@@ -106,17 +106,17 @@
     bottom: var(--progress-pattern-border-size);
     left: 0;
 }
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
+.ProgressLineImpose_base__small_da260 .ProgressLineImpose_gradient_f73c0 {
     top: 0;
     bottom: 0;
 }
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
+.ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_gradient_f73c0 {
     display: none;
 }
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
+.ProgressLineImpose_base__finished_f889e .ProgressLineImpose_gradient_f73c0 {
     background-image: var(--progress-pattern-gradient-finished);
 }
-.ProgressLineImpose_glow_a5 {
+.ProgressLineImpose_glow_f237a {
     width: var(--progress-glow-width);
     max-width: 8001px;
     height: var(--progress-glow-height);
@@ -129,14 +129,14 @@
     transform: translate(-50%, -50%);
     pointer-events: none;
 }
-.ProgressLineImpose_glow__left_d8 {
+.ProgressLineImpose_glow__left_b7ffa {
     left: var(--progress-pattern-border-size);
 }
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+.ProgressLineImpose_base__disabled_a9e8e .ProgressLineImpose_glow_f237a,
+.ProgressLineImpose_base__finished_f889e .ProgressLineImpose_glow_f237a {
     display: none;
 }
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
+.ProgressLineImpose_base__small_da260 .ProgressLineImpose_glow_f237a {
     width: var(--progress-glow-small-width);
     height: var(--progress-glow-small-height);
     background-image: var(--progress-glow-small);
@@ -147,7 +147,7 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressBarDeltaGrow_base_7e {
+.ProgressBarDeltaGrow_base_f4d46 {
     width: 0;
     height: 100%;
     position: absolute;
@@ -155,10 +155,10 @@
     transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
     transition-property: width;
 }
-.ProgressBarDeltaGrow_base__withoutBounce_b5 {
+.ProgressBarDeltaGrow_base__withoutBounce_b1398 {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
 }
-.ProgressBarDeltaGrow_glow_68 {
+.ProgressBarDeltaGrow_glow_c912d {
     width: 0;
     max-width: 8001px;
     height: 100%;
@@ -170,7 +170,7 @@
     transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
     transition-property: width;
 }
-.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
+.ProgressBarDeltaGrow_base__withoutBounce_b1398 .ProgressBarDeltaGrow_glow_c912d {
     transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
 }
 
@@ -179,13 +179,13 @@
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
+.ProgressBarDeltaSimple_base_cfcd3 {
     width: 0;
     height: 100%;
     position: absolute;
     top: 0;
 }
-.ProgressBarDeltaSimple_delta_99 {
+.ProgressBarDeltaSimple_delta_dc2b6 {
     width: 0;
     max-width: 8001px;
     height: 100%;
@@ -198,7 +198,7 @@
     transition-property: width, transform;
 }
 
-.Background_base_67 {
+.Background_base_f3073 {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -206,9 +206,9 @@
     position: relative;
 }
 
-.Background_bg_e8,
-.Background_bgDisabled_e0,
-.Background_bgHover_b4 {
+.Background_bg_a03fd,
+.Background_bgDisabled_abb43,
+.Background_bgHover_a39f3 {
     width: 76rem;
     height: 91rem;
     background: no-repeat center / contain;
@@ -219,53 +219,53 @@
     transition: opacity 0.3s linear;
 }
 
-.mediaMedium .Background_bg_e8,
-.mediaMedium .Background_bgDisabled_e0,
-.mediaMedium .Background_bgHover_b4 {
+.mediaMedium .Background_bg_a03fd,
+.mediaMedium .Background_bgDisabled_abb43,
+.mediaMedium .Background_bgHover_a39f3 {
     height: 136rem;
 }
 
-.Background_base__big_56 .Background_bg_e8,
-.Background_base__big_56 .Background_bgDisabled_e0,
-.Background_base__big_56 .Background_bgHover_b4 {
+.Background_base__big_a6d00 .Background_bg_a03fd,
+.Background_base__big_a6d00 .Background_bgDisabled_abb43,
+.Background_base__big_a6d00 .Background_bgHover_a39f3 {
     width: 96rem;
     height: 171rem;
     bottom: 2rem;
 }
 
-.mediaMedium .Background_base__big_56 .Background_bg_e8,
-.mediaMedium .Background_base__big_56 .Background_bgDisabled_e0,
-.mediaMedium .Background_base__big_56 .Background_bgHover_b4 {
+.mediaMedium .Background_base__big_a6d00 .Background_bg_a03fd,
+.mediaMedium .Background_base__big_a6d00 .Background_bgDisabled_abb43,
+.mediaMedium .Background_base__big_a6d00 .Background_bgHover_a39f3 {
     width: 152rem;
     height: 272rem;
     bottom: 4rem;
 }
 
-.mediaMedium .Background_bg_e8 {
+.mediaMedium .Background_bg_a03fd {
     height: 131rem;
 }
 
-.Background_base__hovered_32 .Background_bg_e8 {
+.Background_base__hovered_a74f9 .Background_bg_a03fd {
     opacity: 0;
 }
 
-.Background_base__big_56 .Background_bg_e8 {
+.Background_base__big_a6d00 .Background_bg_a03fd {
     height: 166rem;
 }
 
-.mediaMedium .Background_base__big_56 .Background_bg_e8 {
+.mediaMedium .Background_base__big_a6d00 .Background_bg_a03fd {
     height: 262rem;
 }
 
-.Background_bgHover_b4 {
+.Background_bgHover_a39f3 {
     opacity: 0;
 }
 
-.Background_base__hovered_32 .Background_bgHover_b4 {
+.Background_base__hovered_a74f9 .Background_bgHover_a39f3 {
     opacity: 1;
 }
 
-.Border_base_5a {
+.Border_base_a4523 {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -273,8 +273,8 @@
     position: absolute;
 }
 
-.Border_border_bd,
-.Border_borderHover_ab {
+.Border_border_d8967,
+.Border_borderHover_e30d7 {
     width: 100%;
     height: 100%;
     background: no-repeat center bottom / contain;
@@ -284,20 +284,20 @@
     transition: opacity 0.3s linear;
 }
 
-.Border_base__hovered_83 .Border_border_bd,
-.Border_base__hovered_83 .Border_borderHover_ab {
+.Border_base__hovered_d4ec9 .Border_border_d8967,
+.Border_base__hovered_d4ec9 .Border_borderHover_e30d7 {
     opacity: 0;
 }
 
-.Border_borderHover_ab {
+.Border_borderHover_e30d7 {
     opacity: 0;
 }
 
-.Border_base__hovered_83 .Border_borderHover_ab {
+.Border_base__hovered_d4ec9 .Border_borderHover_e30d7 {
     opacity: 1;
 }
 
-.Border_borderDisabled_8b {
+.Border_borderDisabled_eb6d6 {
     width: 80rem;
     height: 95rem;
     background: no-repeat center bottom / contain;
@@ -305,26 +305,26 @@
     z-index: 2;
 }
 
-.mediaMedium .Border_borderDisabled_8b {
+.mediaMedium .Border_borderDisabled_eb6d6 {
     height: 140rem;
 }
 
-.Border_borderDisabled__big_12 {
+.Border_borderDisabled__big_f5398 {
     width: 100rem;
     height: 175rem;
 }
 
-.mediaMedium .Border_borderDisabled__big_12 {
+.mediaMedium .Border_borderDisabled__big_f5398 {
     width: 160rem;
     height: 280rem;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.CountValue_base_fe {
+.CountValue_base_b47f3 {
     width: 33rem;
     height: 29rem;
     background: url('R.images.gui.maps.icons.battlePass.awards_widget.collectionCompleted_small') no-repeat center /
@@ -333,20 +333,20 @@
     z-index: 4;
 }
 
-.CountValue_base__big_ea {
+.CountValue_base__big_b1f00 {
     width: 33rem;
     height: 29rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.collectionCompleted_big');
     top: 6rem;
 }
 
-.mediaMedium .CountValue_base__big_ea {
+.mediaMedium .CountValue_base__big_b1f00 {
     width: 46rem;
     height: 40rem;
     top: 10rem;
 }
 
-.Count_base_a6 {
+.Count_base_d2aba {
     color: #f2f2f7;
     font-size: 24rem;
     font-weight: 700;
@@ -361,10 +361,10 @@
     left: 0;
     z-index: 5;
 }
-.mediaMedium .Count_base_a6 {
+.mediaMedium .Count_base_d2aba {
     top: 47rem;
 }
-.Count_base__big_2c {
+.Count_base__big_fa81f {
     font-size: 30rem;
     font-weight: 700;
     line-height: 36rem;
@@ -373,20 +373,20 @@
         0 0 12rem #9d4b00;
     top: 61rem;
 }
-.mediaMedium .Count_base__big_2c {
+.mediaMedium .Count_base__big_fa81f {
     font-size: 48rem;
     line-height: 58rem;
     top: 98rem;
 }
-.Count_base__locked_e3 {
+.Count_base__locked_cb8f9 {
     text-shadow: none;
 }
-.Count_base__disabled_66 {
+.Count_base__disabled_ac367 {
     text-shadow: none;
     opacity: 0.5;
 }
 
-.Icon_base_05 {
+.Icon_base_be976 {
     width: 52rem;
     height: 52rem;
     background: no-repeat center / contain;
@@ -397,31 +397,31 @@
     transition: filter 0.3s linear;
 }
 
-.Icon_base__big_9e {
+.Icon_base__big_b2756 {
     width: 64rem;
     height: 64rem;
     top: 9rem;
 }
 
-.mediaMedium .Icon_base__big_9e {
+.mediaMedium .Icon_base__big_b2756 {
     width: 100rem;
     height: 100rem;
     top: 14rem;
 }
 
-.Icon_base__darkened_2b {
+.Icon_base__darkened_d968e {
     filter: grayscale(80%);
 }
 
-.Icon_base__hover_03 {
+.Icon_base__hover_e2ee8 {
     filter: grayscale(0%);
 }
 
-.Icon_base__disabled_a1 {
+.Icon_base__disabled_a1f6f {
     filter: grayscale(100%);
 }
 
-.Label_base_05 {
+.Label_base_f2adf {
     color: #e9e2bf;
     font-size: 12rem;
     font-weight: 400;
@@ -442,10 +442,10 @@
     z-index: 5;
     transition: opacity 0.3s linear;
 }
-.mediaMedium .Label_base_05 {
+.mediaMedium .Label_base_f2adf {
     display: flex;
 }
-.Label_base__big_3c {
+.Label_base__big_dbfd8 {
     color: #fefeec;
     font-size: 14rem;
     font-weight: 700;
@@ -457,38 +457,38 @@
     top: 86rem;
     transition: color 0.3s linear;
 }
-.mediaMedium .Label_base__big_3c {
+.mediaMedium .Label_base__big_dbfd8 {
     height: 104rem;
     font-size: 24rem;
     top: 138rem;
     right: 6rem;
     left: 6rem;
 }
-.Label_base__gold_dc {
+.Label_base__gold_bb470 {
     color: #ffc363;
     text-shadow:
         0 0 4rem rgba(255, 127, 0, 0.25),
         0 0 15rem rgba(238, 85, 34, 0.7);
     opacity: 1;
 }
-.Label_base__hover_51 {
+.Label_base__hover_e4ce6 {
     opacity: 1;
 }
-.Label_base__hover_51.Label_base__big_3c {
+.Label_base__hover_e4ce6.Label_base__big_dbfd8 {
     color: #e9e2bf;
 }
-.Label_base__hover_51.Label_base__gold_dc {
+.Label_base__hover_e4ce6.Label_base__gold_bb470 {
     color: #ffc363;
 }
-.Label_base__disabled_df {
+.Label_base__disabled_dad1b {
     color: #8c8c7e;
     text-shadow: none;
 }
-.mediaMedium .Label_base__disabled_df {
+.mediaMedium .Label_base__disabled_dad1b {
     color: #8c8c7e;
 }
 
-.ChoiceAward_base_0d {
+.ChoiceAward_base_ab1a3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -500,97 +500,97 @@
     cursor: pointer;
 }
 
-.mediaMedium .ChoiceAward_base_0d {
+.mediaMedium .ChoiceAward_base_ab1a3 {
     height: 140rem;
 }
 
-.ChoiceAward_base__big_ec {
+.ChoiceAward_base__big_febd0 {
     width: 100rem;
     height: 175rem;
 }
 
-.mediaMedium .ChoiceAward_base__big_ec {
+.mediaMedium .ChoiceAward_base__big_febd0 {
     width: 160rem;
     height: 280rem;
 }
 
-.ChoiceAward_base__disabled_f1 {
+.ChoiceAward_base__disabled_d33bf {
     cursor: default;
 }
 
-.ChoiceAward_base__hasAppearAnimation_a0 {
+.ChoiceAward_base__hasAppearAnimation_cfc1a {
     opacity: 0;
     visibility: hidden;
-    animation: ChoiceAward_baseAppear_89 0.3s ease-in-out 1.2s forwards;
+    animation: ChoiceAward_baseAppear_df31e 0.3s ease-in-out 1.2s forwards;
 }
 
-.ChoiceAward_shine_d5 {
+.ChoiceAward_shine_c0a04 {
     width: 27rem;
     height: 48rem;
     background: url('R.images.gui.maps.icons.battlePass.awards_widget.award_borderShine_small_s') no-repeat center /
         contain;
     position: absolute;
     top: 0;
-    animation: ChoiceAward_shine_small_s_f2 2s linear infinite alternate;
+    animation: ChoiceAward_shine_small_s_b113b 2s linear infinite alternate;
     pointer-events: none;
 }
 
-.mediaMedium .ChoiceAward_shine_d5 {
+.mediaMedium .ChoiceAward_shine_c0a04 {
     width: 31rem;
     height: 72rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.award_borderShine_small_m');
-    animation: ChoiceAward_shine_small_m_de 2s linear infinite alternate;
+    animation: ChoiceAward_shine_small_m_a346a 2s linear infinite alternate;
 }
 
-.ChoiceAward_base__big_ec .ChoiceAward_shine_d5 {
+.ChoiceAward_base__big_febd0 .ChoiceAward_shine_c0a04 {
     width: 45rem;
     height: 85rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.award_borderShine_big_s');
-    animation: ChoiceAward_shine_big_s_02 2s linear infinite alternate;
+    animation: ChoiceAward_shine_big_s_f2580 2s linear infinite alternate;
 }
 
-.mediaMedium .ChoiceAward_base__big_ec .ChoiceAward_shine_d5 {
+.mediaMedium .ChoiceAward_base__big_febd0 .ChoiceAward_shine_c0a04 {
     width: 46rem;
     height: 116rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.award_borderShine_big_m');
-    animation: ChoiceAward_shine_big_m_ed 2s linear infinite alternate;
+    animation: ChoiceAward_shine_big_m_e95e2 2s linear infinite alternate;
 }
 
-.ChoiceAward_shine__left_2e {
+.ChoiceAward_shine__left_c76a8 {
     left: -13rem;
 }
 
-.mediaMedium .ChoiceAward_shine__left_2e {
+.mediaMedium .ChoiceAward_shine__left_c76a8 {
     left: -14rem;
 }
 
-.ChoiceAward_base__big_ec .ChoiceAward_shine__left_2e {
+.ChoiceAward_base__big_febd0 .ChoiceAward_shine__left_c76a8 {
     left: -21rem;
 }
 
-.mediaMedium .ChoiceAward_base__big_ec .ChoiceAward_shine__left_2e {
+.mediaMedium .ChoiceAward_base__big_febd0 .ChoiceAward_shine__left_c76a8 {
     left: -22rem;
 }
 
-.ChoiceAward_shine__right_64 {
+.ChoiceAward_shine__right_d7679 {
     right: -13rem;
 }
 
-.mediaMedium .ChoiceAward_shine__right_64 {
+.mediaMedium .ChoiceAward_shine__right_d7679 {
     right: -14rem;
     animation-direction: alternate-reverse;
 }
 
-.ChoiceAward_base__big_ec .ChoiceAward_shine__right_64 {
+.ChoiceAward_base__big_febd0 .ChoiceAward_shine__right_d7679 {
     right: -21rem;
 }
 
-.mediaMedium .ChoiceAward_base__big_ec .ChoiceAward_shine__right_64 {
+.mediaMedium .ChoiceAward_base__big_febd0 .ChoiceAward_shine__right_d7679 {
     right: -22rem;
     animation-direction: alternate-reverse;
 }
 
-.ChoiceAward_arrow_30 {
+.ChoiceAward_arrow_d0fa6 {
     width: 68rem;
     height: 90rem;
     background: url('R.images.gui.maps.icons.battlePass.awards_widget.award_arrow_small_s') no-repeat center / contain;
@@ -601,18 +601,18 @@
     transition: all 0.3s;
 }
 
-.mediaMedium .ChoiceAward_arrow_30 {
+.mediaMedium .ChoiceAward_arrow_d0fa6 {
     width: 68rem;
     height: 90rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.award_arrow_small_m');
 }
 
-.ChoiceAward_base_0d:hover .ChoiceAward_arrow_30 {
+.ChoiceAward_base_ab1a3:hover .ChoiceAward_arrow_d0fa6 {
     opacity: 1;
     transform: translateY(5rem);
 }
 
-.ChoiceAward_base__big_ec .ChoiceAward_arrow_30 {
+.ChoiceAward_base__big_febd0 .ChoiceAward_arrow_d0fa6 {
     width: 86rem;
     height: 113rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.award_arrow_big_s');
@@ -620,13 +620,13 @@
     transition: all 0.3s;
 }
 
-.mediaMedium .ChoiceAward_base__big_ec .ChoiceAward_arrow_30 {
+.mediaMedium .ChoiceAward_base__big_febd0 .ChoiceAward_arrow_d0fa6 {
     width: 136rem;
     height: 180rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.award_arrow_big_m');
 }
 
-.ChoiceAward_blinkShape_89 {
+.ChoiceAward_blinkShape_a9abc {
     width: 100%;
     height: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
@@ -634,26 +634,27 @@
     top: 0;
     left: 0;
     mask-image: linear-gradient(180deg, transparent 0%, #000000 50%);
+    mask-repeat: no-repeat;
     pointer-events: none;
 }
 
-.mediaMedium .ChoiceAward_blinkShape_89 {
+.mediaMedium .ChoiceAward_blinkShape_a9abc {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
 }
 
-.ChoiceAward_base_0d:hover .ChoiceAward_blinkShape_89 {
+.ChoiceAward_base_ab1a3:hover .ChoiceAward_blinkShape_a9abc {
     mask-image: none;
 }
 
-.ChoiceAward_base__big_ec .ChoiceAward_blinkShape_89 {
+.ChoiceAward_base__big_febd0 .ChoiceAward_blinkShape_a9abc {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
 }
 
-.mediaMedium .ChoiceAward_base__big_ec .ChoiceAward_blinkShape_89 {
+.mediaMedium .ChoiceAward_base__big_febd0 .ChoiceAward_blinkShape_a9abc {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
 }
 
-.ChoiceAward_blink_f0 {
+.ChoiceAward_blink_b918b {
     width: 14rem;
     height: 300rem;
     background: #fff;
@@ -665,14 +666,14 @@
     z-index: 99;
     transform: rotate(45deg) translate(-200rem, 0rem);
     transform-origin: center;
-    animation: ChoiceAward_blinker_0c 5s linear infinite;
+    animation: ChoiceAward_blinker_e8cd4 5s linear infinite;
 }
 
-.ChoiceAward_base__big_ec .ChoiceAward_blink_f0 {
+.ChoiceAward_base__big_febd0 .ChoiceAward_blink_b918b {
     width: 28rem;
 }
 
-@keyframes ChoiceAward_baseAppear_89 {
+@keyframes ChoiceAward_baseAppear_df31e {
     0% {
         opacity: 0;
         visibility: visible;
@@ -686,7 +687,7 @@
     }
 }
 
-@keyframes ChoiceAward_blinker_0c {
+@keyframes ChoiceAward_blinker_e8cd4 {
     0% {
         transform: rotate(45deg) translate(-200rem, 0rem);
     }
@@ -700,7 +701,7 @@
     }
 }
 
-@keyframes ChoiceAward_shine_small_s_f2 {
+@keyframes ChoiceAward_shine_small_s_b113b {
     0% {
         opacity: 0;
         transform: translateY(0);
@@ -720,7 +721,7 @@
     }
 }
 
-@keyframes ChoiceAward_shine_small_m_de {
+@keyframes ChoiceAward_shine_small_m_a346a {
     0% {
         opacity: 0;
         transform: translateY(0);
@@ -740,7 +741,7 @@
     }
 }
 
-@keyframes ChoiceAward_shine_big_s_02 {
+@keyframes ChoiceAward_shine_big_s_f2580 {
     0% {
         opacity: 0;
         transform: translateY(0);
@@ -760,7 +761,7 @@
     }
 }
 
-@keyframes ChoiceAward_shine_big_m_ed {
+@keyframes ChoiceAward_shine_big_m_e95e2 {
     0% {
         opacity: 0;
         transform: translateY(0);
@@ -780,7 +781,7 @@
     }
 }
 
-.CoinAward_base_75 {
+.CoinAward_base_eb565 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -791,50 +792,50 @@
     position: relative;
     cursor: pointer;
 }
-.mediaMedium .CoinAward_base_75 {
+.mediaMedium .CoinAward_base_eb565 {
     height: 140rem;
 }
-.CoinAward_base__big_1f {
+.CoinAward_base__big_ddf7f {
     width: 100rem;
     height: 175rem;
 }
-.mediaMedium .CoinAward_base__big_1f {
+.mediaMedium .CoinAward_base__big_ddf7f {
     width: 160rem;
     height: 280rem;
 }
 
-.Counter_base_9e {
+.Counter_base_b457c {
     display: flex;
     min-width: 14rem;
     height: 14rem;
     position: relative;
     z-index: 0;
-    animation: Counter_show_be ease-in-out forwards;
+    animation: Counter_show_a62c2 ease-in-out forwards;
 }
 
-.Counter_base__big_19 {
+.Counter_base__big_d6a57 {
     min-width: 21rem;
     height: 21rem;
 }
 
-.Counter_base__small_3b {
+.Counter_base__small_ea547 {
     min-width: 13rem;
     height: 13rem;
 }
 
-.Counter_base__empty_98 {
+.Counter_base__empty_c2ad2 {
     min-width: 6rem;
     height: 6rem;
 }
 
-.Counter_base__animated_40 {
+.Counter_base__animated_fb5ef {
     animation-duration: 0.2s;
 }
 
-.Counter_base__hidden_56 {
-    animation-name: Counter_hide_b6;
+.Counter_base__hidden_b1e71 {
+    animation-name: Counter_hide_d1bf0;
 }
-.Counter_bg_74 {
+.Counter_bg_f25ac {
     border: 1rem solid #fe4e0f;
     border-radius: 7rem;
     box-shadow:
@@ -849,13 +850,13 @@
     left: 0;
     z-index: -1;
 }
-.Counter_base__big_19 .Counter_bg_74 {
+.Counter_base__big_d6a57 .Counter_bg_f25ac {
     border-radius: 11rem;
 }
-.Counter_base__small_3b .Counter_bg_74 {
+.Counter_base__small_ea547 .Counter_bg_f25ac {
     border-radius: 7rem;
 }
-.Counter_value_3e {
+.Counter_value_d1de3 {
     display: flex;
     padding: 0 4rem;
     color: #fefeec;
@@ -863,36 +864,36 @@
     line-height: 13rem;
     white-space: nowrap;
 }
-.Counter_base__big_19 .Counter_value_3e {
+.Counter_base__big_d6a57 .Counter_value_d1de3 {
     padding: 0 7rem;
     font-size: 14rem;
     line-height: 20rem;
 }
-.Counter_base__small_3b .Counter_value_3e {
+.Counter_base__small_ea547 .Counter_value_d1de3 {
     font-size: 9rem;
     line-height: 12rem;
 }
-.Counter_value__text_d6 {
+.Counter_value__text_bb007 {
     padding: 0 7rem;
 }
-.Counter_base__big_19 .Counter_value__text_d6 {
+.Counter_base__big_d6a57 .Counter_value__text_bb007 {
     padding: 0 10rem;
 }
-.Counter_base__small_3b .Counter_value__text_d6 {
+.Counter_base__small_ea547 .Counter_value__text_bb007 {
     padding: 0 5rem;
     font-size: 10rem;
 }
-.Counter_base__pattern_71 .Counter_value_3e {
+.Counter_base__pattern_d1fff .Counter_value_d1de3 {
     display: none;
 }
-.Counter_plus_15 {
+.Counter_plus_a405c {
     position: relative;
     top: -1rem;
 }
-.Counter_pattern_83 {
+.Counter_pattern_a4be2 {
     display: none;
 }
-.Counter_base__pattern_71 .Counter_pattern_83 {
+.Counter_base__pattern_d1fff .Counter_pattern_a4be2 {
     display: block;
     border-radius: 50%;
     background-image: url('R.images.gui.maps.icons.components.counter.pattern');
@@ -903,7 +904,7 @@
     bottom: 0;
     left: 0;
 }
-@keyframes Counter_show_be {
+@keyframes Counter_show_a62c2 {
     0% {
         transform: scale(0);
     }
@@ -912,7 +913,7 @@
         transform: scale(1);
     }
 }
-@keyframes Counter_hide_b6 {
+@keyframes Counter_hide_d1bf0 {
     0% {
         transform: scale(1);
     }
@@ -922,7 +923,7 @@
     }
 }
 
-.CollectionAward_base_0c {
+.CollectionAward_base_f6b67 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -933,26 +934,26 @@
     position: relative;
     cursor: pointer;
 }
-.mediaMedium .CollectionAward_base_0c {
+.mediaMedium .CollectionAward_base_f6b67 {
     height: 140rem;
 }
-.CollectionAward_base__big_ca {
+.CollectionAward_base__big_a4e03 {
     width: 100rem;
     height: 175rem;
 }
-.mediaMedium .CollectionAward_base__big_ca {
+.mediaMedium .CollectionAward_base__big_a4e03 {
     width: 160rem;
     height: 280rem;
 }
 
-.CollectionAward_bubble_65 {
+.CollectionAward_bubble_c556b {
     position: absolute;
     top: -5rem;
     right: -5rem;
     z-index: 5;
 }
 
-.CommanderAward_base_11 {
+.CommanderAward_base_ad575 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -963,11 +964,11 @@
     position: relative;
     cursor: pointer;
 }
-.mediaMedium .CommanderAward_base_11 {
+.mediaMedium .CommanderAward_base_ad575 {
     height: 140rem;
 }
 
-.CommanderAward_icon_92 {
+.CommanderAward_icon_e1e10 {
     width: 76rem;
     height: 91rem;
     border-radius: 3rem;
@@ -979,11 +980,11 @@
     transition: filter 0.3s linear;
 }
 
-.CommanderAward_base__hover_fc .CommanderAward_icon_92 {
+.CommanderAward_base__hover_cedd4 .CommanderAward_icon_e1e10 {
     filter: brightness(1.2);
 }
 
-.TalerAward_base_ef {
+.TalerAward_base_bd8d2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -994,19 +995,19 @@
     position: relative;
     cursor: pointer;
 }
-.mediaMedium .TalerAward_base_ef {
+.mediaMedium .TalerAward_base_bd8d2 {
     height: 140rem;
 }
-.TalerAward_base__big_6b {
+.TalerAward_base__big_e13b6 {
     width: 100rem;
     height: 175rem;
 }
-.mediaMedium .TalerAward_base__big_6b {
+.mediaMedium .TalerAward_base__big_e13b6 {
     width: 160rem;
     height: 280rem;
 }
 
-.TicketAward_base_76 {
+.TicketAward_base_f3d98 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1018,80 +1019,80 @@
     cursor: pointer;
 }
 
-.mediaMedium .TicketAward_base_76 {
+.mediaMedium .TicketAward_base_f3d98 {
     height: 140rem;
 }
 
-.TicketAward_base__big_91 {
+.TicketAward_base__big_a6dda {
     width: 100rem;
     height: 175rem;
 }
 
-.mediaMedium .TicketAward_base__big_91 {
+.mediaMedium .TicketAward_base__big_a6dda {
     width: 160rem;
     height: 280rem;
 }
 
-.TicketAward_base__hasAppearAnimation_09 {
+.TicketAward_base__hasAppearAnimation_d3808 {
     opacity: 0;
     visibility: hidden;
-    animation: TicketAward_baseAppear_ef 0.3s ease-in-out 1.2s forwards;
+    animation: TicketAward_baseAppear_cbc10 0.3s ease-in-out 1.2s forwards;
 }
-.TicketAward_shine_46 {
+.TicketAward_shine_d75b9 {
     width: 27rem;
     height: 48rem;
     background: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_borderShine_small_s') no-repeat center /
         contain;
     position: absolute;
     top: 0;
-    animation: TicketAward_shine_small_s_22 2s linear infinite alternate;
+    animation: TicketAward_shine_small_s_b2d1d 2s linear infinite alternate;
     pointer-events: none;
 }
-.mediaMedium .TicketAward_shine_46 {
+.mediaMedium .TicketAward_shine_d75b9 {
     width: 31rem;
     height: 72rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_borderShine_small_m');
-    animation: TicketAward_shine_small_m_5b 2s linear infinite alternate;
+    animation: TicketAward_shine_small_m_aa1d4 2s linear infinite alternate;
 }
-.TicketAward_base__big_91 .TicketAward_shine_46 {
+.TicketAward_base__big_a6dda .TicketAward_shine_d75b9 {
     width: 45rem;
     height: 85rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_borderShine_big_s');
-    animation: TicketAward_shine_big_s_43 2s linear infinite alternate;
+    animation: TicketAward_shine_big_s_ddf65 2s linear infinite alternate;
 }
-.mediaMedium .TicketAward_base__big_91 .TicketAward_shine_46 {
+.mediaMedium .TicketAward_base__big_a6dda .TicketAward_shine_d75b9 {
     width: 46rem;
     height: 116rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_borderShine_big_m');
-    animation: TicketAward_shine_big_m_80 2s linear infinite alternate;
+    animation: TicketAward_shine_big_m_ef804 2s linear infinite alternate;
 }
-.TicketAward_shine__left_15 {
+.TicketAward_shine__left_c8f17 {
     left: -13rem;
 }
-.mediaMedium .TicketAward_shine__left_15 {
+.mediaMedium .TicketAward_shine__left_c8f17 {
     left: -14rem;
 }
-.TicketAward_base__big_91 .TicketAward_shine__left_15 {
+.TicketAward_base__big_a6dda .TicketAward_shine__left_c8f17 {
     left: -21rem;
 }
-.mediaMedium .TicketAward_base__big_91 .TicketAward_shine__left_15 {
+.mediaMedium .TicketAward_base__big_a6dda .TicketAward_shine__left_c8f17 {
     left: -22rem;
 }
-.TicketAward_shine__right_4b {
+.TicketAward_shine__right_c0a9f {
     right: -13rem;
 }
-.mediaMedium .TicketAward_shine__right_4b {
+.mediaMedium .TicketAward_shine__right_c0a9f {
     right: -14rem;
     animation-direction: alternate-reverse;
 }
-.TicketAward_base__big_91 .TicketAward_shine__right_4b {
+.TicketAward_base__big_a6dda .TicketAward_shine__right_c0a9f {
     right: -21rem;
 }
-.mediaMedium .TicketAward_base__big_91 .TicketAward_shine__right_4b {
+.mediaMedium .TicketAward_base__big_a6dda .TicketAward_shine__right_c0a9f {
     right: -22rem;
     animation-direction: alternate-reverse;
 }
-.TicketAward_arrow_d4 {
+.TicketAward_arrow_d5617 {
     width: 68rem;
     height: 90rem;
     background: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_arrow_small_s') no-repeat center / contain;
@@ -1101,28 +1102,28 @@
     z-index: 3;
     transition: all 0.3s;
 }
-.mediaMedium .TicketAward_arrow_d4 {
+.mediaMedium .TicketAward_arrow_d5617 {
     width: 68rem;
     height: 90rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_arrow_small_m');
 }
-.TicketAward_base_76:hover .TicketAward_arrow_d4 {
+.TicketAward_base_f3d98:hover .TicketAward_arrow_d5617 {
     opacity: 1;
     transform: translateY(5rem);
 }
-.TicketAward_base__big_91 .TicketAward_arrow_d4 {
+.TicketAward_base__big_a6dda .TicketAward_arrow_d5617 {
     width: 86rem;
     height: 113rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_arrow_big_s');
     opacity: 0;
     transition: all 0.3s;
 }
-.mediaMedium .TicketAward_base__big_91 .TicketAward_arrow_d4 {
+.mediaMedium .TicketAward_base__big_a6dda .TicketAward_arrow_d5617 {
     width: 136rem;
     height: 180rem;
     background-image: url('R.images.gui.maps.icons.battlePass.awards_widget.ticket_arrow_big_m');
 }
-.TicketAward_blinkShape_17 {
+.TicketAward_blinkShape_c798a {
     width: 100%;
     height: 100%;
     clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%, 0 0);
@@ -1130,21 +1131,22 @@
     top: 0;
     left: 0;
     mask-image: linear-gradient(180deg, transparent 0%, #000000 50%);
+    mask-repeat: no-repeat;
     pointer-events: none;
 }
-.mediaMedium .TicketAward_blinkShape_17 {
+.mediaMedium .TicketAward_blinkShape_c798a {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
 }
-.TicketAward_base_76:hover .TicketAward_blinkShape_17 {
+.TicketAward_base_f3d98:hover .TicketAward_blinkShape_c798a {
     mask-image: none;
 }
-.TicketAward_base__big_91 .TicketAward_blinkShape_17 {
+.TicketAward_base__big_a6dda .TicketAward_blinkShape_c798a {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
 }
-.mediaMedium .TicketAward_base__big_91 .TicketAward_blinkShape_17 {
+.mediaMedium .TicketAward_base__big_a6dda .TicketAward_blinkShape_c798a {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
 }
-.TicketAward_blink_1b {
+.TicketAward_blink_d9f53 {
     width: 14rem;
     height: 300rem;
     background: #fff;
@@ -1156,12 +1158,12 @@
     z-index: 99;
     transform: rotate(45deg) translate(-200rem, 0rem);
     transform-origin: center;
-    animation: TicketAward_blinker_1e 5s linear infinite;
+    animation: TicketAward_blinker_ee314 5s linear infinite;
 }
-.TicketAward_base__big_91 .TicketAward_blink_1b {
+.TicketAward_base__big_a6dda .TicketAward_blink_d9f53 {
     width: 28rem;
 }
-@keyframes TicketAward_baseAppear_ef {
+@keyframes TicketAward_baseAppear_cbc10 {
     0% {
         opacity: 0;
         visibility: visible;
@@ -1174,7 +1176,7 @@
         transform: none;
     }
 }
-@keyframes TicketAward_blinker_1e {
+@keyframes TicketAward_blinker_ee314 {
     0% {
         transform: rotate(45deg) translate(-200rem, 0rem);
     }
@@ -1187,7 +1189,7 @@
         transform: rotate(45deg) translate(200rem, 0rem);
     }
 }
-@keyframes TicketAward_shine_small_s_22 {
+@keyframes TicketAward_shine_small_s_b2d1d {
     0% {
         opacity: 0;
         transform: translateY(0);
@@ -1206,7 +1208,7 @@
         transform: translateY(30%);
     }
 }
-@keyframes TicketAward_shine_small_m_5b {
+@keyframes TicketAward_shine_small_m_aa1d4 {
     0% {
         opacity: 0;
         transform: translateY(0);
@@ -1225,7 +1227,7 @@
         transform: translateY(60%);
     }
 }
-@keyframes TicketAward_shine_big_s_43 {
+@keyframes TicketAward_shine_big_s_ddf65 {
     0% {
         opacity: 0;
         transform: translateY(0);
@@ -1244,7 +1246,7 @@
         transform: translateY(90%);
     }
 }
-@keyframes TicketAward_shine_big_m_80 {
+@keyframes TicketAward_shine_big_m_ef804 {
     0% {
         opacity: 0;
         transform: translateY(0);
@@ -1268,35 +1270,35 @@
 
 /* buttons*/
 
-.AwardsWrapper_base_e5 {
+.AwardsWrapper_base_c2632 {
     display: flex;
 }
 
-.AwardsWrapper_award_49 {
+.AwardsWrapper_award_a5575 {
     margin-left: 3rem;
 }
 
-.mediaSmall .AwardsWrapper_award_49 {
+.mediaSmall .AwardsWrapper_award_a5575 {
     margin-left: 10rem;
 }
 
-.mediaMedium .AwardsWrapper_award_49 {
+.mediaMedium .AwardsWrapper_award_a5575 {
     margin-left: 20rem;
 }
 
-.AwardsWrapper_base__big_6b .AwardsWrapper_award_49 {
+.AwardsWrapper_base__big_c4528 .AwardsWrapper_award_a5575 {
     margin-left: 20rem;
 }
 
-.mediaMedium .AwardsWrapper_base__big_6b .AwardsWrapper_award_49 {
+.mediaMedium .AwardsWrapper_base__big_c4528 .AwardsWrapper_award_a5575 {
     margin-left: 30rem;
 }
 
-.AwardsWrapper_base_e5 .AwardsWrapper_award_49:first-child {
+.AwardsWrapper_base_c2632 .AwardsWrapper_award_a5575:first-child {
     margin-left: 0;
 }
 
-.Card_base_5d {
+.Card_base_c14ca {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -1304,71 +1306,71 @@
     width: var(--small-card-width);
     position: relative;
 }
-.mediaMedium .Card_base_5d {
+.mediaMedium .Card_base_c14ca {
     width: var(--medium-card-width);
 }
-.mediaExtraLarge .Card_base_5d {
+.mediaExtraLarge .Card_base_c14ca {
     width: var(--extra-large-card-width);
 }
-.Card_base__inProgress_e1 {
+.Card_base__inProgress_b4bfd {
     width: var(--small-current-card-width);
 }
-.mediaMedium .Card_base__inProgress_e1 {
+.mediaMedium .Card_base__inProgress_b4bfd {
     width: var(--medium-current-card-width);
 }
-.mediaLarge .Card_base__inProgress_e1 {
+.mediaLarge .Card_base__inProgress_b4bfd {
     height: 325rem;
 }
 
-.Card_stage_92 {
+.Card_stage_cd3ee {
     margin-bottom: 13rem;
 }
 
-.mediaMedium .Card_stage_92 {
+.mediaMedium .Card_stage_cd3ee {
     margin-bottom: 10rem;
 }
 
-.mediaLarge .Card_stage_92 {
+.mediaLarge .Card_stage_cd3ee {
     margin-bottom: 25rem;
 }
 
-.mediaExtraLarge .Card_stage_92 {
+.mediaExtraLarge .Card_stage_cd3ee {
     margin-bottom: 35rem;
 }
 
-.Card_base__inProgress_e1 .Card_stage_92 {
+.Card_base__inProgress_b4bfd .Card_stage_cd3ee {
     margin-bottom: 5rem;
 }
 
-.mediaLarge .Card_base__inProgress_e1 .Card_stage_92 {
+.mediaLarge .Card_base__inProgress_b4bfd .Card_stage_cd3ee {
     margin-bottom: 35rem;
 }
 
-.mediaExtraLarge .Card_base__inProgress_e1 .Card_stage_92 {
+.mediaExtraLarge .Card_base__inProgress_b4bfd .Card_stage_cd3ee {
     margin-bottom: 50rem;
 }
 
-.Card_rewards_f5 {
+.Card_rewards_b8a07 {
     margin-bottom: 2rem;
 }
 
-.mediaMedium .Card_rewards_f5 {
+.mediaMedium .Card_rewards_b8a07 {
     margin-bottom: 5rem;
 }
 
-.mediaLarge .Card_rewards_f5 {
+.mediaLarge .Card_rewards_b8a07 {
     margin-bottom: 15rem;
 }
 
-.mediaExtraLarge .Card_rewards_f5 {
+.mediaExtraLarge .Card_rewards_b8a07 {
     margin-bottom: 20rem;
 }
 
-.Card_status_65 {
+.Card_status_e03aa {
     height: 40rem;
 }
 
-.Card_points_ed {
+.Card_points_c21eb {
     color: rgba(255, 255, 255, 0.4);
     font-size: 12rem;
     line-height: 1;
@@ -1377,11 +1379,11 @@
     bottom: 5rem;
 }
 
-.Card_points__initial_e9 {
+.Card_points__initial_bdedb {
     left: 5rem;
 }
 
-.Card_progressShadow_4c {
+.Card_progressShadow_dfa90 {
     height: 16rem;
     background-color: rgba(0, 0, 0, 0.5);
     position: absolute;
@@ -1391,7 +1393,7 @@
     pointer-events: none;
 }
 
-.Background_base_1d {
+.Background_base_f2908 {
     position: absolute;
     top: 0;
     right: 0;
@@ -1400,7 +1402,7 @@
     pointer-events: none;
 }
 
-.Background_default_66 {
+.Background_default_cb696 {
     position: absolute;
     top: 0;
     right: 0;
@@ -1410,15 +1412,15 @@
     opacity: 0.6;
 }
 
-.Background_base__first_70 .Background_default_66 {
+.Background_base__first_bf974 .Background_default_cb696 {
     background-image: linear-gradient(to right bottom, transparent 65%, #0009);
 }
 
-.Background_base__last_59 .Background_default_66 {
+.Background_base__last_fc8fe .Background_default_cb696 {
     background-image: linear-gradient(to left bottom, transparent 65%, #0009);
 }
 
-.Background_disabled_e9 {
+.Background_disabled_fa267 {
     position: absolute;
     top: 0;
     right: 0;
@@ -1427,17 +1429,18 @@
     background-image: url('R.images.gui.maps.icons.battlePass.progression.pattern_disable');
     opacity: 0.08;
     mask-image: linear-gradient(to bottom, transparent, #000 40%, #000);
+    mask-repeat: no-repeat;
 }
 
-.Background_base__first_70 .Background_disabled_e9 {
+.Background_base__first_bf974 .Background_disabled_fa267 {
     mask-image: linear-gradient(to right bottom, transparent 50%, #000 70%, #000);
 }
 
-.Background_base__last_59 .Background_disabled_e9 {
+.Background_base__last_fc8fe .Background_disabled_fa267 {
     mask-image: linear-gradient(to left bottom, transparent 50%, #000 70%, #000);
 }
 
-.Highlight_base_af {
+.Highlight_base_c24af {
     position: absolute;
     top: 0;
     right: 0;
@@ -1446,7 +1449,7 @@
     background-image: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.3));
 }
 
-.Highlight_inner_67 {
+.Highlight_inner_afe9f {
     position: absolute;
     top: 0;
     right: 0;
@@ -1455,15 +1458,15 @@
     background: url('R.images.gui.maps.icons.battlePass.progression.bg_current_small') no-repeat center bottom / contain;
 }
 
-.mediaMedium .Highlight_inner_67 {
+.mediaMedium .Highlight_inner_afe9f {
     background-image: url('R.images.gui.maps.icons.battlePass.progression.bg_current_medium');
 }
 
-.mediaLarge .Highlight_inner_67 {
+.mediaLarge .Highlight_inner_afe9f {
     background-image: url('R.images.gui.maps.icons.battlePass.progression.bg_current_large');
 }
 
-.Highlight_side_19 {
+.Highlight_side_e0964 {
     width: 62rem;
     background: no-repeat center / 100% 100%;
     position: absolute;
@@ -1471,69 +1474,69 @@
     bottom: 0;
 }
 
-.Highlight_side__left_1c {
+.Highlight_side__left_c482c {
     background-image: url('R.images.gui.maps.icons.battlePass.progression.bg_light_current_left');
     left: 0;
 }
 
-.Highlight_side__right_ed {
+.Highlight_side__right_e117d {
     background-image: url('R.images.gui.maps.icons.battlePass.progression.bg_light_current_right');
     right: 0;
 }
 
-.Reward_base_ea {
+.Reward_base_b1fec {
     display: flex;
     flex-direction: column;
     position: relative;
 }
 
-.Reward_base__s48x48_46,
-.Reward_base__small_c0 {
+.Reward_base__s48x48_ea3ee,
+.Reward_base__small_d4940 {
     width: 48rem;
     height: 48rem;
 }
 
-.Reward_base__s80x80_ce,
-.Reward_base__big_e5 {
+.Reward_base__s80x80_de3ac,
+.Reward_base__big_a4f0e {
     width: 80rem;
     height: 80rem;
 }
 
-.Reward_base__s128x100_c3 {
+.Reward_base__s128x100_c29f0 {
     width: 128rem;
     height: 100rem;
 }
 
-.Reward_base__s180x135_7c {
+.Reward_base__s180x135_cb4c8 {
     width: 180rem;
     height: 135rem;
 }
 
-.Reward_base__s232x174_67 {
+.Reward_base__s232x174_aea24 {
     width: 232rem;
     height: 174rem;
 }
 
-.Reward_base__s296x222_78 {
+.Reward_base__s296x222_cbf7c {
     width: 296rem;
     height: 222rem;
 }
 
-.Reward_base__s400x300_07 {
+.Reward_base__s400x300_bb29d {
     width: 400rem;
     height: 300rem;
 }
 
-.Reward_base__s600x450_f8 {
+.Reward_base__s600x450_c4f07 {
     width: 600rem;
     height: 450rem;
 }
 
-.Reward_tooltipWrapper_b5 {
+.Reward_tooltipWrapper_af665 {
     height: 100%;
 }
 
-.Reward_icon_df {
+.Reward_icon_b619b {
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
@@ -1543,7 +1546,7 @@
     z-index: 1;
 }
 
-.Reward_overlay_68 {
+.Reward_overlay_dac5c {
     background: no-repeat center / 100%;
     position: absolute;
     top: 50%;
@@ -1553,51 +1556,51 @@
     pointer-events: none;
 }
 
-.Reward_base__s48x48_46 .Reward_overlay_68,
-.Reward_base__small_c0 .Reward_overlay_68 {
+.Reward_base__s48x48_ea3ee .Reward_overlay_dac5c,
+.Reward_base__small_d4940 .Reward_overlay_dac5c {
     width: 96rem;
     height: 96rem;
     background-size: 100%;
     overflow: visible;
 }
 
-.Reward_base__s80x80_ce .Reward_overlay_68,
-.Reward_base__big_e5 .Reward_overlay_68 {
+.Reward_base__s80x80_de3ac .Reward_overlay_dac5c,
+.Reward_base__big_a4f0e .Reward_overlay_dac5c {
     width: 128rem;
     height: 128rem;
 }
 
-.Reward_base__s180x135_7c .Reward_overlay_68 {
+.Reward_base__s180x135_cb4c8 .Reward_overlay_dac5c {
     width: 266rem;
     height: 241rem;
 }
 
-.Reward_base__s232x174_67 .Reward_overlay_68 {
+.Reward_base__s232x174_aea24 .Reward_overlay_dac5c {
     width: 344rem;
     height: 312rem;
 }
 
-.Reward_base__s296x222_78 .Reward_overlay_68 {
+.Reward_base__s296x222_cbf7c .Reward_overlay_dac5c {
     width: 450rem;
     height: 408rem;
 }
 
-.Reward_base__s400x300_07 .Reward_overlay_68 {
+.Reward_base__s400x300_bb29d .Reward_overlay_dac5c {
     width: 618rem;
     height: 590rem;
 }
 
-.Reward_base__s600x450_f8 .Reward_overlay_68 {
+.Reward_base__s600x450_c4f07 .Reward_overlay_dac5c {
     width: 670rem;
     height: 575rem;
 }
 
-.Reward_base__normalize_a6 .Reward_overlay_68 {
+.Reward_base__normalize_b8703 .Reward_overlay_dac5c {
     width: 100%;
     height: 100%;
 }
 
-.Reward_highlight_36 {
+.Reward_highlight_df36b {
     width: 100%;
     height: 100%;
     background: no-repeat center / contain;
@@ -1605,11 +1608,11 @@
     z-index: 0;
 }
 
-.Reward_image_89 {
+.Reward_image_e2997 {
     position: relative;
 }
 
-.Reward_info_72 {
+.Reward_info_b27d2 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
@@ -1620,39 +1623,39 @@
     z-index: 1;
 }
 
-.Reward_base__s48x48_46 .Reward_info_72,
-.Reward_base__small_c0 .Reward_info_72 {
+.Reward_base__s48x48_ea3ee .Reward_info_b27d2,
+.Reward_base__small_d4940 .Reward_info_b27d2 {
     margin: -10rem -10rem 0;
 }
 
-.Reward_info__multi_63 {
+.Reward_info__multi_e08a5 {
     margin-right: 2rem;
     text-align: right;
 }
 
-.Reward_base__s48x48_46 .Reward_info__multi_63,
-.Reward_base__small_c0 .Reward_info__multi_63 {
+.Reward_base__s48x48_ea3ee .Reward_info__multi_e08a5,
+.Reward_base__small_d4940 .Reward_info__multi_e08a5 {
     margin-right: 0;
 }
 
-.Reward_info__credits_ef {
+.Reward_info__credits_ccc0d {
     color: #ced9d9;
 }
 
-.Reward_info__gold_36 {
+.Reward_info__gold_af0a5 {
     color: #ffc363;
 }
 
-.Reward_info__bptaler_82,
-.Reward_info__crystal_36 {
+.Reward_info__bptaler_d4229,
+.Reward_info__crystal_b0d9d {
     color: #c9c9b6;
 }
 
-.Reward_info__premiumTank_d3 {
+.Reward_info__premiumTank_f53be {
     color: #ffdd99;
 }
 
-.Reward_title_36 {
+.Reward_title_ab4e2 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
@@ -1667,25 +1670,25 @@
     z-index: 1;
 }
 
-.mediaMedium .Reward_title_36 {
+.mediaMedium .Reward_title_ab4e2 {
     max-width: 100rem;
     margin-left: -10rem;
     margin-right: -10rem;
 }
 
-.Reward_base__s48x48_46 .Reward_title_36,
-.Reward_base__small_c0 .Reward_title_36 {
+.Reward_base__s48x48_ea3ee .Reward_title_ab4e2,
+.Reward_base__small_d4940 .Reward_title_ab4e2 {
     margin: -10rem -10rem 0;
 }
 
-.Reward_timer_d3 {
+.Reward_timer_c097c {
     background: no-repeat center / contain;
     position: absolute;
     z-index: 1;
 }
 
-.Reward_base__s48x48_46 .Reward_timer_d3,
-.Reward_base__small_c0 .Reward_timer_d3 {
+.Reward_base__s48x48_ea3ee .Reward_timer_c097c,
+.Reward_base__small_d4940 .Reward_timer_c097c {
     width: 23rem;
     height: 23rem;
     background-image: url('R.images.gui.maps.icons.quests.bonuses.small.timer');
@@ -1693,8 +1696,8 @@
     right: -6rem;
 }
 
-.Reward_base__s80x80_ce .Reward_timer_d3,
-.Reward_base__big_e5 .Reward_timer_d3 {
+.Reward_base__s80x80_de3ac .Reward_timer_c097c,
+.Reward_base__big_a4f0e .Reward_timer_c097c {
     width: 48rem;
     height: 48rem;
     background-image: url('R.images.gui.maps.icons.quests.bonuses.big.timer');
@@ -1702,19 +1705,19 @@
     right: -14rem;
 }
 
-.CardRewards_base_f2 {
+.CardRewards_base_fb388 {
     width: 100%;
     opacity: 1;
     transition: opacity 0.7s ease-out;
 }
-.mediaExtraLarge .CardRewards_base_f2 {
+.mediaExtraLarge .CardRewards_base_fb388 {
     margin-bottom: 40rem;
 }
-.CardRewards_base__completed_08 {
+.CardRewards_base__completed_a7a41 {
     opacity: 0.5;
 }
 
-.CardRewards_rewards_0a {
+.CardRewards_rewards_c9bdf {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1722,78 +1725,78 @@
     position: relative;
 }
 
-.mediaMedium .CardRewards_rewards_0a {
+.mediaMedium .CardRewards_rewards_c9bdf {
     min-height: 160rem;
 }
 
-.CardRewards_rewards__2_ee {
+.CardRewards_rewards__2_b45ca {
     flex-direction: column;
     justify-content: space-around;
 }
 
-.CardRewards_base__inProgress_7c .CardRewards_rewards__2_ee {
+.CardRewards_base__inProgress_bc9a5 .CardRewards_rewards__2_b45ca {
     flex-direction: row;
     justify-content: center;
 }
 
-.CardRewards_base__inProgress_7c .CardRewards_rewards__3_f9 {
+.CardRewards_base__inProgress_bc9a5 .CardRewards_rewards__3_b1c97 {
     justify-content: space-around;
     transform: translateY(-15rem);
 }
 
-.mediaLarge .CardRewards_base__inProgress_7c .CardRewards_rewards__3_f9 {
+.mediaLarge .CardRewards_base__inProgress_bc9a5 .CardRewards_rewards__3_b1c97 {
     transform: translateY(-30rem);
 }
 
-.CardRewards_reward_0e {
+.CardRewards_reward_c9f7d {
     position: relative;
     width: 48rem;
     height: 48rem;
 }
 
-.mediaMedium .CardRewards_reward_0e {
+.mediaMedium .CardRewards_reward_c9f7d {
     width: 80rem;
     height: 80rem;
 }
 
-.CardRewards_rewards__1_10 .CardRewards_reward_0e {
+.CardRewards_rewards__1_eb5d1 .CardRewards_reward_c9f7d {
     width: 80rem;
     height: 80rem;
 }
 
-.mediaMedium .CardRewards_rewards__1_10 .CardRewards_reward_0e {
+.mediaMedium .CardRewards_rewards__1_eb5d1 .CardRewards_reward_c9f7d {
     width: 180rem;
     height: 135rem;
 }
 
-.CardRewards_base__inProgress_7c .CardRewards_rewards__2_ee .CardRewards_reward_0e {
+.CardRewards_base__inProgress_bc9a5 .CardRewards_rewards__2_b45ca .CardRewards_reward_c9f7d {
     margin: 10rem;
 }
 
-.mediaLarge .CardRewards_base__inProgress_7c .CardRewards_rewards__2_ee .CardRewards_reward_0e {
+.mediaLarge .CardRewards_base__inProgress_bc9a5 .CardRewards_rewards__2_b45ca .CardRewards_reward_c9f7d {
     margin: 15rem;
 }
 
-.CardRewards_rewards__3_f9 .CardRewards_reward_0e {
+.CardRewards_rewards__3_b1c97 .CardRewards_reward_c9f7d {
     display: flex;
     justify-content: center;
     flex-grow: 1;
     align-self: flex-end;
 }
 
-.CardRewards_rewards__3_f9 .CardRewards_reward_0e:nth-child(even) {
+.CardRewards_rewards__3_b1c97 .CardRewards_reward_c9f7d:nth-child(even) {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
 }
 
-.CardRewards_base__inProgress_7c .CardRewards_rewards__3_f9 .CardRewards_reward_0e:nth-child(even) {
+.CardRewards_base__inProgress_bc9a5 .CardRewards_rewards__3_b1c97 .CardRewards_reward_c9f7d:nth-child(even) {
     align-self: center;
     top: initial;
 }
 
-.Divider_base_a2 {
+.Divider_base_f56a0 {
     width: 1rem;
     background-image: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2));
     position: absolute;
@@ -1801,14 +1804,14 @@
     bottom: 0;
 }
 
-.Divider_base__left_a0 {
+.Divider_base__left_dd520 {
     left: 0;
 }
 
-.Divider_base__right_91 {
+.Divider_base__right_e2aad {
     right: 0;
 }
-.Divider_inner_c8 {
+.Divider_inner_d4f00 {
     width: 1rem;
     height: 12rem;
     background-image: linear-gradient(to top, #fff, #fff 1rem, rgba(255, 255, 255, 0.4) 1rem, transparent);
@@ -1817,7 +1820,7 @@
     left: 0;
 }
 
-.Stage_base_4c {
+.Stage_base_e6b9b {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1827,7 +1830,7 @@
     transition: opacity 0.7s ease-out;
 }
 
-.Stage_number_f6 {
+.Stage_number_da650 {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -1836,14 +1839,14 @@
     z-index: 1;
 }
 
-.Stage_animatedNumber_90 {
+.Stage_animatedNumber_a90d1 {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.Stage_numberInProgress_e0 {
+.Stage_numberInProgress_be9c3 {
     color: #f2f2f7;
     font-size: 24rem;
     font-weight: 700;
@@ -1852,11 +1855,11 @@
     z-index: 1;
 }
 
-.mediaMedium .Stage_numberInProgress_e0 {
+.mediaMedium .Stage_numberInProgress_be9c3 {
     font-size: 36rem;
 }
 
-.Stage_title_1e {
+.Stage_title_a871b {
     color: #e9e2bf;
     font-size: 15rem;
     font-weight: 700;
@@ -1867,11 +1870,11 @@
     z-index: 1;
 }
 
-.mediaMedium .Stage_title_1e {
+.mediaMedium .Stage_title_a871b {
     font-size: 18rem;
 }
 
-.Stage_glow_9b {
+.Stage_glow_f19f4 {
     background: no-repeat center / contain;
     mix-blend-mode: additive;
     position: absolute;
@@ -1881,21 +1884,21 @@
     pointer-events: none;
 }
 
-.Stage_base__inProgress_e1 .Stage_glow_9b {
+.Stage_base__inProgress_bdf47 .Stage_glow_f19f4 {
     width: 224rem;
     height: 224rem;
     margin-top: 5rem;
     background-image: url('R.images.gui.maps.icons.battlePass.progression.bg_rare_light_current');
 }
 
-.mediaSmall .Stage_base__inProgress_e1 .Stage_glow_9b {
+.mediaSmall .Stage_base__inProgress_bdf47 .Stage_glow_f19f4 {
     width: 302rem;
     height: 302rem;
     margin-top: 4rem;
     transform: translate(-50%, -50%) scale(0.75);
 }
 
-.Stage_animatedGlow_7f {
+.Stage_animatedGlow_fa1b6 {
     width: 302rem;
     height: 302rem;
     margin-top: 4rem;
@@ -1908,7 +1911,7 @@
     transform: translate(-50%, -50%) scale(0.75);
 }
 
-.mediaLarge .Stage_animatedGlow_7f {
+.mediaLarge .Stage_animatedGlow_fa1b6 {
     margin-top: 14rem;
 }
 
@@ -1916,7 +1919,7 @@
 
 /* buttons*/
 
-@keyframes CompletedStatus_fadeOut_59 {
+@keyframes CompletedStatus_fadeOut_e8344 {
     0% {
         opacity: 1;
     }
@@ -1926,7 +1929,7 @@
     }
 }
 
-@keyframes CompletedStatus_fadeIn_0a {
+@keyframes CompletedStatus_fadeIn_c220c {
     0% {
         opacity: 0;
     }
@@ -1936,7 +1939,7 @@
     }
 }
 
-@keyframes CompletedStatus_fadeInWithScale_51 {
+@keyframes CompletedStatus_fadeInWithScale_c6b98 {
     0% {
         opacity: 0;
         transform: scale(1.2);
@@ -1948,7 +1951,7 @@
     }
 }
 
-@keyframes CompletedStatus_slideUp_60 {
+@keyframes CompletedStatus_slideUp_d6b99 {
     0% {
         opacity: 0;
         transform: translateY(20rem);
@@ -1960,7 +1963,7 @@
     }
 }
 
-@keyframes CompletedStatus_scale_0b {
+@keyframes CompletedStatus_scale_c7f90 {
     0% {
         transform: scale(0);
     }
@@ -1970,7 +1973,7 @@
     }
 }
 
-@keyframes CompletedStatus_rotate_61 {
+@keyframes CompletedStatus_rotate_feccf {
     0% {
         transform: rotate(0deg);
     }
@@ -1980,10 +1983,10 @@
     }
 }
 
-.CompletedStatus_base__showAnimation_4b {
-    animation: CompletedStatus_slideUp_60 0.5s;
+.CompletedStatus_base__showAnimation_e7635 {
+    animation: CompletedStatus_slideUp_d6b99 0.5s;
     opacity: 0;
-    animation-name: CompletedStatus_fadeIn_0a;
+    animation-name: CompletedStatus_fadeIn_c220c;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -1991,10 +1994,10 @@
     animation-iteration-count: 1;
 }
 
-.CompletedStatus_base__hideAnimation_d6 {
-    animation: CompletedStatus_slideDown_db 0.5s;
+.CompletedStatus_base__hideAnimation_cb046 {
+    animation: CompletedStatus_slideDown_c1d5b 0.5s;
     opacity: 1;
-    animation-name: CompletedStatus_fadeOut_59;
+    animation-name: CompletedStatus_fadeOut_e8344;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -2002,7 +2005,7 @@
     animation-iteration-count: 1;
 }
 
-.CompletedStatus_icon_ab {
+.CompletedStatus_icon_aa61a {
     width: 24rem;
     height: 100%;
     background: url('R.images.gui.maps.icons.battlePass.progression.icon_check') no-repeat center / contain;
@@ -2010,9 +2013,9 @@
     z-index: 1;
 }
 
-.CompletedStatus_base__showAnimation_4b .CompletedStatus_icon_ab {
+.CompletedStatus_base__showAnimation_e7635 .CompletedStatus_icon_aa61a {
     opacity: 0;
-    animation-name: CompletedStatus_fadeIn_0a;
+    animation-name: CompletedStatus_fadeIn_c220c;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -2020,9 +2023,9 @@
     animation-iteration-count: 1;
 }
 
-.CompletedStatus_base__hideAnimation_d6 .CompletedStatus_icon_ab {
+.CompletedStatus_base__hideAnimation_cb046 .CompletedStatus_icon_aa61a {
     opacity: 1;
-    animation-name: CompletedStatus_fadeOut_59;
+    animation-name: CompletedStatus_fadeOut_e8344;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -2030,7 +2033,7 @@
     animation-iteration-count: 1;
 }
 
-.CompletedStatus_iconGlow_e9 {
+.CompletedStatus_iconGlow_c295f {
     width: 80rem;
     height: 100%;
     background: url('R.images.gui.maps.icons.battlePass.progression.glow_check_green') no-repeat center / contain;
@@ -2043,7 +2046,7 @@
     pointer-events: none;
 }
 
-@keyframes CompletedStatus_slideUp_60 {
+@keyframes CompletedStatus_slideUp_d6b99 {
     0% {
         transform: translateY(100%);
     }
@@ -2053,7 +2056,7 @@
     }
 }
 
-@keyframes CompletedStatus_slideDown_db {
+@keyframes CompletedStatus_slideDown_c1d5b {
     0% {
         transform: translateY(0);
     }
@@ -2067,7 +2070,7 @@
 
 /* buttons*/
 
-@keyframes CurrentPoints_fadeOut_47 {
+@keyframes CurrentPoints_fadeOut_b38d7 {
     0% {
         opacity: 1;
     }
@@ -2077,7 +2080,7 @@
     }
 }
 
-@keyframes CurrentPoints_fadeIn_13 {
+@keyframes CurrentPoints_fadeIn_a12fa {
     0% {
         opacity: 0;
     }
@@ -2087,7 +2090,7 @@
     }
 }
 
-@keyframes CurrentPoints_fadeInWithScale_ee {
+@keyframes CurrentPoints_fadeInWithScale_efaaf {
     0% {
         opacity: 0;
         transform: scale(1.2);
@@ -2099,7 +2102,7 @@
     }
 }
 
-@keyframes CurrentPoints_slideUp_c4 {
+@keyframes CurrentPoints_slideUp_c586a {
     0% {
         opacity: 0;
         transform: translateY(20rem);
@@ -2111,7 +2114,7 @@
     }
 }
 
-@keyframes CurrentPoints_scale_e9 {
+@keyframes CurrentPoints_scale_a460b {
     0% {
         transform: scale(0);
     }
@@ -2121,7 +2124,7 @@
     }
 }
 
-@keyframes CurrentPoints_rotate_21 {
+@keyframes CurrentPoints_rotate_e652b {
     0% {
         transform: rotate(0deg);
     }
@@ -2131,7 +2134,7 @@
     }
 }
 
-.CurrentPoints_base_62 {
+.CurrentPoints_base_e1613 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2143,9 +2146,9 @@
     position: relative;
 }
 
-.CurrentPoints_base__appear_c2 {
+.CurrentPoints_base__appear_d442e {
     opacity: 0;
-    animation-name: CurrentPoints_fadeIn_13;
+    animation-name: CurrentPoints_fadeIn_a12fa;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -2153,9 +2156,9 @@
     animation-iteration-count: 1;
 }
 
-.CurrentPoints_base__disappear_dd {
+.CurrentPoints_base__disappear_e455e {
     opacity: 1;
-    animation-name: CurrentPoints_fadeOut_47;
+    animation-name: CurrentPoints_fadeOut_b38d7;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -2163,27 +2166,27 @@
     animation-iteration-count: 1;
 }
 
-.CurrentPoints_value__current_02 {
+.CurrentPoints_value__current_c6a95 {
     color: #e9e2bf;
 }
 
-.CurrentPoints_value__total_56 {
+.CurrentPoints_value__total_dd06b {
     color: rgba(233, 226, 191, 0.3);
 }
 
-.CurrentPoints_divider_0b {
+.CurrentPoints_divider_e4492 {
     padding: 0 4rem 0 6rem;
     color: rgba(233, 226, 191, 0.3);
     font-weight: 400;
 }
 
-.CurrentPoints_icon_67 {
+.CurrentPoints_icon_faacd {
     width: 24rem;
     height: 24rem;
     background: url('R.images.gui.maps.icons.battlePass.progression.icon_points_current') no-repeat center / contain;
 }
 
-.Status_base_76 {
+.Status_base_b6695 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2192,39 +2195,39 @@
     position: relative;
 }
 
-.Status_pointsWrapper_26 {
+.Status_pointsWrapper_e5e8b {
     position: absolute;
     bottom: 4rem;
 }
 
-.mediaMedium .Status_pointsWrapper_26 {
+.mediaMedium .Status_pointsWrapper_e5e8b {
     bottom: 6rem;
 }
 
-.mediaLarge .Status_pointsWrapper_26 {
+.mediaLarge .Status_pointsWrapper_e5e8b {
     bottom: 10rem;
 }
 
-.Cards_base_3e {
+.Cards_base_dd91b {
     display: flex;
     align-items: flex-end;
     height: 180rem;
     z-index: 1;
 }
-.mediaMedium .Cards_base_3e {
+.mediaMedium .Cards_base_dd91b {
     height: 274rem;
 }
-.mediaLarge .Cards_base_3e {
+.mediaLarge .Cards_base_dd91b {
     height: 325rem;
 }
 
-.Footer_base_0b {
+.Footer_base_f5d85 {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
-.ExtraChapter_base_37 {
+.ExtraChapter_base_c799b {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2235,23 +2238,23 @@
     bottom: 20rem;
     cursor: pointer;
 }
-.mediaMedium .ExtraChapter_base_37 {
+.mediaMedium .ExtraChapter_base_c799b {
     width: 798rem;
     height: 96rem;
     bottom: 26rem;
 }
-.mediaLarge .ExtraChapter_base_37 {
+.mediaLarge .ExtraChapter_base_c799b {
     width: 948rem;
     height: 112rem;
     bottom: 40rem;
 }
-.mediaExtraLarge .ExtraChapter_base_37 {
+.mediaExtraLarge .ExtraChapter_base_c799b {
     width: 1098rem;
     height: 130rem;
     bottom: 105rem;
 }
 
-.ExtraChapter_wrapper_f7 {
+.ExtraChapter_wrapper_f0306 {
     display: flex;
     align-items: center;
     width: 100%;
@@ -2260,7 +2263,7 @@
     pointer-events: none;
 }
 
-.ExtraChapter_border_a2 {
+.ExtraChapter_border_f74cd {
     width: 720rem;
     height: 114rem;
     background: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.border_small') no-repeat
@@ -2272,29 +2275,29 @@
     pointer-events: none;
 }
 
-.mediaMedium .ExtraChapter_border_a2 {
+.mediaMedium .ExtraChapter_border_f74cd {
     width: 836rem;
     height: 136rem;
     background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.border_medium');
 }
 
-.mediaLarge .ExtraChapter_border_a2 {
+.mediaLarge .ExtraChapter_border_f74cd {
     width: 1008rem;
     height: 172rem;
     background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.border_large');
 }
 
-.mediaExtraLarge .ExtraChapter_border_a2 {
+.mediaExtraLarge .ExtraChapter_border_f74cd {
     width: 1158rem;
     height: 190rem;
     background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.border_extraLarge');
 }
 
-.ExtraChapter_base__hover_bf .ExtraChapter_border_a2 {
+.ExtraChapter_base__hover_f5f75 .ExtraChapter_border_f74cd {
     opacity: 1;
 }
 
-.ExtraChapter_bg_25 {
+.ExtraChapter_bg_a8a2f {
     width: 100%;
     height: 100%;
     background: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.bg') no-repeat center /
@@ -2303,11 +2306,11 @@
     transition: background-size 0.3s ease-in-out;
 }
 
-.ExtraChapter_base__hover_bf .ExtraChapter_bg_25 {
+.ExtraChapter_base__hover_f5f75 .ExtraChapter_bg_a8a2f {
     background-size: 103%;
 }
 
-.ExtraChapter_widget_71 {
+.ExtraChapter_widget_df277 {
     width: 140rem;
     height: 105rem;
     background: url('R.images.gui.maps.icons.battlePass.post_progression.footer.extraChapter.widget') no-repeat center /
@@ -2318,25 +2321,25 @@
     pointer-events: none;
 }
 
-.mediaMedium .ExtraChapter_widget_71 {
+.mediaMedium .ExtraChapter_widget_df277 {
     width: 170rem;
     height: 127rem;
     left: 214rem;
 }
 
-.mediaLarge .ExtraChapter_widget_71 {
+.mediaLarge .ExtraChapter_widget_df277 {
     width: 210rem;
     height: 157rem;
     left: 322rem;
 }
 
-.mediaExtraLarge .ExtraChapter_widget_71 {
+.mediaExtraLarge .ExtraChapter_widget_df277 {
     width: 232rem;
     height: 174rem;
     left: 362rem;
 }
 
-.ExtraChapter_title_1c {
+.ExtraChapter_title_e5aea {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -2344,19 +2347,19 @@
     position: relative;
 }
 
-.mediaMedium .ExtraChapter_title_1c {
+.mediaMedium .ExtraChapter_title_e5aea {
     font-size: 22rem;
 }
 
-.mediaLarge .ExtraChapter_title_1c {
+.mediaLarge .ExtraChapter_title_e5aea {
     font-size: 26rem;
 }
 
-.mediaExtraLarge .ExtraChapter_title_1c {
+.mediaExtraLarge .ExtraChapter_title_e5aea {
     font-size: 28rem;
 }
 
-.ExtraChapter_description_33 {
+.ExtraChapter_description_c2f36 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
@@ -2366,28 +2369,28 @@
     position: relative;
 }
 
-.mediaMedium .ExtraChapter_description_33 {
+.mediaMedium .ExtraChapter_description_c2f36 {
     font-size: 16rem;
 }
 
-.ExtraChapter_content_9d {
+.ExtraChapter_content_c9275 {
     margin-left: 300rem;
     margin-right: 5rem;
 }
 
-.mediaMedium .ExtraChapter_content_9d {
+.mediaMedium .ExtraChapter_content_c9275 {
     margin-left: 366rem;
 }
 
-.mediaLarge .ExtraChapter_content_9d {
+.mediaLarge .ExtraChapter_content_c9275 {
     margin-left: 512rem;
 }
 
-.mediaExtraLarge .ExtraChapter_content_9d {
+.mediaExtraLarge .ExtraChapter_content_c9275 {
     margin-left: 568rem;
 }
 
-.CButton_base_40 {
+.CButton_base_bb13f {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2397,35 +2400,35 @@
     cursor: pointer;
 }
 
-.CButton_base__main_42,
-.CButton_base__primary_7f,
-.CButton_base__primaryGreen_6f,
-.CButton_base__primaryRed_ec,
-.CButton_base__secondary_50 {
+.CButton_base__main_dd05d,
+.CButton_base__primary_c75a2,
+.CButton_base__primaryGreen_ae65b,
+.CButton_base__primaryRed_b1341,
+.CButton_base__secondary_f2c20 {
     background-size: 100% 100%;
 }
 
-.CButton_base__main_42 {
+.CButton_base__main_dd05d {
     background-image: url('R.images.gui.maps.icons.components.button.back_main');
 }
 
-.CButton_base__primary_7f {
+.CButton_base__primary_c75a2 {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary');
 }
 
-.CButton_base__primaryGreen_6f {
+.CButton_base__primaryGreen_ae65b {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
 }
 
-.CButton_base__primaryRed_ec {
+.CButton_base__primaryRed_b1341 {
     background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
 }
 
-.CButton_base__secondary_50 {
+.CButton_base__secondary_f2c20 {
     background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
 }
 
-.CButton_base__ghost_ed {
+.CButton_base__ghost_f452b {
     border-radius: 3rem;
     box-shadow:
         0 0 0 1rem rgba(0, 0, 0, 0.3),
@@ -2433,29 +2436,29 @@
     background-color: rgba(0, 0, 0, 0.15);
 }
 
-.CButton_base__extraSmall_27 {
+.CButton_base__extraSmall_e1273 {
     min-height: 17rem;
     padding: 0 16rem;
 }
 
-.CButton_base__small_df,
-.CButton_base__medium_74 {
+.CButton_base__small_c20a3,
+.CButton_base__medium_ef59a {
     padding: 0 20rem;
 }
 
-.CButton_base__small_df {
+.CButton_base__small_c20a3 {
     min-height: 18rem;
 }
 
-.CButton_base__medium_74 {
+.CButton_base__medium_ef59a {
     min-height: 32rem;
 }
 
-.CButton_base__large_5c {
+.CButton_base__large_bafd5 {
     min-height: 48rem;
 }
 
-.CButton_base__disabled_d9 {
+.CButton_base__disabled_eef7a {
     cursor: default;
 }
 /* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
@@ -2463,7 +2466,7 @@ The bug is that under certain conditions, when using border-image, stripes appea
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113
 */
-.CButton_back_e5 {
+.CButton_back_e957b {
     border-image-slice: 4 fill;
     border-image-width: 4rem;
     position: absolute;
@@ -2472,22 +2475,22 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
 }
-.CButton_base__main_42 .CButton_back_e5 {
+.CButton_base__main_dd05d .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
 }
-.CButton_base__primary_7f .CButton_back_e5 {
+.CButton_base__primary_c75a2 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
 }
-.CButton_base__primaryGreen_6f .CButton_back_e5 {
+.CButton_base__primaryGreen_ae65b .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
 }
-.CButton_base__primaryRed_ec .CButton_back_e5 {
+.CButton_base__primaryRed_b1341 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
 }
-.CButton_base__secondary_50 .CButton_back_e5 {
+.CButton_base__secondary_f2c20 .CButton_back_e957b {
     border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
 }
-.CButton_texture_fe {
+.CButton_texture_ccd7e {
     background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
     background-size: 155rem 31rem;
     mix-blend-mode: soft-light;
@@ -2497,7 +2500,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 0;
     left: 0;
 }
-.CButton_state_11 {
+.CButton_state_f2bb4 {
     position: absolute;
     top: 0;
     right: 0;
@@ -2505,20 +2508,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
     transition: box-shadow 0.16s ease-in-out;
 }
-.CButton_base__focus_83 .CButton_state_11 {
+.CButton_base__focus_b0875 .CButton_state_f2bb4 {
     border-radius: 2rem;
     box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
 }
-.CButton_stateHighlightHover_ff,
-.CButton_stateHighlightActive_35,
-.CButton_stateDisabled_54 {
+.CButton_stateHighlightHover_bd0cb,
+.CButton_stateHighlightActive_e9a8a,
+.CButton_stateDisabled_ed209 {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
 }
-.CButton_stateHighlightHover_ff {
+.CButton_stateHighlightHover_bd0cb {
     background-image: linear-gradient(
         180deg,
         rgba(252, 248, 235, 0.25) 0%,
@@ -2527,37 +2530,37 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     );
     opacity: 0;
 }
-.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+.CButton_base_bb13f:hover .CButton_stateHighlightHover_bd0cb {
     opacity: 1;
 }
-.CButton_base_40:active .CButton_stateHighlightHover_ff {
+.CButton_base_bb13f:active .CButton_stateHighlightHover_bd0cb {
     opacity: 0;
 }
-.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+.CButton_base__disabled_eef7a:hover .CButton_stateHighlightHover_bd0cb {
     opacity: 0;
 }
-.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+.CButton_base__ghost_f452b .CButton_stateHighlightHover_bd0cb {
     box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
     background-color: rgba(8, 6, 0, 0.18);
     background-image: none;
 }
-.CButton_stateHighlightActive_35 {
+.CButton_stateHighlightActive_e9a8a {
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
     opacity: 0;
 }
-.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+.CButton_base__highlightActive_db27d .CButton_stateHighlightActive_e9a8a {
     opacity: 1;
 }
-.CButton_stateDisabled_54 {
+.CButton_stateDisabled_ed209 {
     background-color: rgba(0, 0, 0, 0.25);
     background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
     background-size: 15rem 15rem;
     visibility: hidden;
 }
-.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+.CButton_base__disabled_eef7a .CButton_stateDisabled_ed209 {
     visibility: inherit;
 }
-.CButton_content_cc {
+.CButton_content_a99fc {
     display: flex;
     align-items: center;
     color: #f2f2e6;
@@ -2567,58 +2570,58 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     letter-spacing: 0.03em;
     transform: translateY(-1rem);
 }
-.CButton_content_cc[lang='ja'],
-.CButton_content_cc[lang='ko'],
-.CButton_content_cc[lang='zh_tw'],
-.CButton_content_cc[lang='zh_sg'],
-.CButton_content_cc[lang='zh_cn'],
-.CButton_content_cc[lang='th'] {
+.CButton_content_a99fc[lang='ja'],
+.CButton_content_a99fc[lang='ko'],
+.CButton_content_a99fc[lang='zh_tw'],
+.CButton_content_a99fc[lang='zh_sg'],
+.CButton_content_a99fc[lang='zh_cn'],
+.CButton_content_a99fc[lang='th'] {
     font-weight: 400;
 }
-.CButton_base__main_42 .CButton_content_cc,
-.CButton_base__primaryRed_ec .CButton_content_cc {
+.CButton_base__main_dd05d .CButton_content_a99fc,
+.CButton_base__primaryRed_b1341 .CButton_content_a99fc {
     text-shadow: 0 -1rem 1rem #600;
 }
-.CButton_base__secondary_50 .CButton_content_cc {
+.CButton_base__secondary_f2c20 .CButton_content_a99fc {
     color: rgba(254, 254, 236, 0.75);
 }
-.CButton_base__primaryGreen_6f .CButton_content_cc {
+.CButton_base__primaryGreen_ae65b .CButton_content_a99fc {
     text-shadow: 0 -1rem 1rem #1c2502;
 }
-.CButton_base__extraSmall_27 .CButton_content_cc {
+.CButton_base__extraSmall_e1273 .CButton_content_a99fc {
     font-size: 12rem;
 }
-.CButton_base__small_df .CButton_content_cc {
+.CButton_base__small_c20a3 .CButton_content_a99fc {
     font-size: 14rem;
 }
-.CButton_base__medium_74 .CButton_content_cc {
+.CButton_base__medium_ef59a .CButton_content_a99fc {
     font-size: 15rem;
 }
-.CButton_base__large_5c .CButton_content_cc {
+.CButton_base__large_bafd5 .CButton_content_a99fc {
     font-size: 18rem;
 }
-.CButton_base__disabled_d9 .CButton_content_cc {
+.CButton_base__disabled_eef7a .CButton_content_a99fc {
     opacity: 0.6;
 }
 
-.NotAvailable_base_54 {
+.NotAvailable_base_c3c6f {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     margin-top: 50rem;
     position: relative;
 }
-.mediaMedium .NotAvailable_base_54 {
+.mediaMedium .NotAvailable_base_c3c6f {
     margin-top: 40rem;
 }
-.mediaLarge .NotAvailable_base_54 {
+.mediaLarge .NotAvailable_base_c3c6f {
     margin-top: 70rem;
 }
-.mediaExtraLarge .NotAvailable_base_54 {
+.mediaExtraLarge .NotAvailable_base_c3c6f {
     margin-top: 80rem;
 }
 
-.NotAvailable_background_c6 {
+.NotAvailable_background_d918b {
     align-self: center;
     width: 900rem;
     height: 230rem;
@@ -2627,23 +2630,23 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
 }
 
-.mediaMedium .NotAvailable_background_c6 {
+.mediaMedium .NotAvailable_background_d918b {
     width: 1260rem;
     height: 294rem;
     background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.notAvailable.lockBg_medium');
 }
 
-.mediaLarge .NotAvailable_background_c6 {
+.mediaLarge .NotAvailable_background_d918b {
     height: 332rem;
     background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.notAvailable.lockBg_large');
 }
 
-.mediaExtraLarge .NotAvailable_background_c6 {
+.mediaExtraLarge .NotAvailable_background_d918b {
     height: 352rem;
     background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.notAvailable.lockBg_extraLarge');
 }
 
-.NotAvailable_content_53 {
+.NotAvailable_content_cfb9f {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2652,19 +2655,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     bottom: 20rem;
 }
 
-.mediaMedium .NotAvailable_content_53 {
+.mediaMedium .NotAvailable_content_cfb9f {
     bottom: 17rem;
 }
 
-.mediaLarge .NotAvailable_content_53 {
+.mediaLarge .NotAvailable_content_cfb9f {
     bottom: 30rem;
 }
 
-.mediaExtraLarge .NotAvailable_content_53 {
+.mediaExtraLarge .NotAvailable_content_cfb9f {
     bottom: 70rem;
 }
 
-.NotAvailable_button_7a {
+.NotAvailable_button_cecf6 {
     width: 160rem;
     max-width: 200rem;
     height: 24rem;
@@ -2672,42 +2675,42 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-top: 10rem;
 }
 
-.mediaMedium .NotAvailable_button_7a {
+.mediaMedium .NotAvailable_button_cecf6 {
     height: 32rem;
 }
 
-.mediaLarge .NotAvailable_button_7a {
+.mediaLarge .NotAvailable_button_cecf6 {
     margin-top: 17rem;
 }
 
-.mediaExtraLarge .NotAvailable_button_7a {
+.mediaExtraLarge .NotAvailable_button_cecf6 {
     margin-top: 20rem;
 }
 
-.NotAvailable_description_9b {
+.NotAvailable_description_f72f4 {
     color: #ffdd99;
     font-size: 16rem;
     font-weight: 400;
     line-height: 24rem;
 }
 
-.mediaLarge .NotAvailable_description_9b {
+.mediaLarge .NotAvailable_description_f72f4 {
     font-size: 20rem;
     line-height: 29rem;
 }
 
-.NotAvailable_completedCount_12 {
+.NotAvailable_completedCount_d02b0 {
     font-size: 18rem;
     font-weight: 700;
     line-height: 22rem;
 }
 
-.mediaLarge .NotAvailable_completedCount_12 {
+.mediaLarge .NotAvailable_completedCount_d02b0 {
     font-size: 24rem;
     line-height: 26rem;
 }
 
-@keyframes PurchasingIP_blinkSmall_25 {
+@keyframes PurchasingIP_blinkSmall_d3d60 {
     0% {
         opacity: 0.2;
         transform: translateX(40rem) skewX(-45deg);
@@ -2734,7 +2737,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes PurchasingIP_blinkMedium_6a {
+@keyframes PurchasingIP_blinkMedium_c41f9 {
     0% {
         opacity: 0.2;
         transform: translateX(45rem) skewX(-45deg);
@@ -2761,7 +2764,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes PurchasingIP_blinkLarge_94 {
+@keyframes PurchasingIP_blinkLarge_f6249 {
     0% {
         opacity: 0.2;
         transform: translateX(55rem) skewX(-45deg);
@@ -2788,7 +2791,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes PurchasingIP_blinkExtraLarge_b6 {
+@keyframes PurchasingIP_blinkExtraLarge_bea5a {
     0% {
         opacity: 0.2;
         transform: translateX(70rem) skewX(-45deg);
@@ -2815,7 +2818,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-.PurchasingIP_base_a7 {
+.PurchasingIP_base_cfbcf {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2828,25 +2831,25 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     cursor: pointer;
 }
 
-.mediaMedium .PurchasingIP_base_a7 {
+.mediaMedium .PurchasingIP_base_cfbcf {
     width: 790rem;
     height: 92rem;
     bottom: 25rem;
 }
 
-.mediaLarge .PurchasingIP_base_a7 {
+.mediaLarge .PurchasingIP_base_cfbcf {
     width: 890rem;
     height: 114rem;
     bottom: 43rem;
 }
 
-.mediaExtraLarge .PurchasingIP_base_a7 {
+.mediaExtraLarge .PurchasingIP_base_cfbcf {
     width: 1100rem;
     height: 142rem;
     bottom: 95rem;
 }
 
-.PurchasingIP_wrapper_66 {
+.PurchasingIP_wrapper_e48ff {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2856,7 +2859,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: none;
 }
 
-.PurchasingIP_border_3f {
+.PurchasingIP_border_d07a9 {
     width: 640rem;
     height: 118rem;
     background: url('R.images.gui.maps.icons.battlePass.post_progression.footer.purchaseIP.border_small') no-repeat
@@ -2868,29 +2871,29 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: none;
 }
 
-.mediaMedium .PurchasingIP_border_3f {
+.mediaMedium .PurchasingIP_border_d07a9 {
     width: 830rem;
     height: 132rem;
     background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.purchaseIP.border_medium');
 }
 
-.mediaLarge .PurchasingIP_border_3f {
+.mediaLarge .PurchasingIP_border_d07a9 {
     width: 950rem;
     height: 174rem;
     background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.purchaseIP.border_large');
 }
 
-.mediaExtraLarge .PurchasingIP_border_3f {
+.mediaExtraLarge .PurchasingIP_border_d07a9 {
     width: 1160rem;
     height: 202rem;
     background-image: url('R.images.gui.maps.icons.battlePass.post_progression.footer.purchaseIP.border_extraLarge');
 }
 
-.PurchasingIP_base__hover_da .PurchasingIP_border_3f {
+.PurchasingIP_base__hover_f2c6a .PurchasingIP_border_d07a9 {
     opacity: 1;
 }
 
-.PurchasingIP_bg_fa {
+.PurchasingIP_bg_fb9ec {
     width: 100%;
     height: 100%;
     background: url('R.images.gui.maps.icons.battlePass.post_progression.footer.purchaseIP.bg') no-repeat center / 100%;
@@ -2898,12 +2901,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transition: background-size 0.3s ease-in-out;
 }
 
-.PurchasingIP_base__hover_da .PurchasingIP_bg_fa {
+.PurchasingIP_base__hover_f2c6a .PurchasingIP_bg_fb9ec {
     background-size: 103%;
 }
 
-.PurchasingIP_blink_ce {
-    animation-name: PurchasingIP_blinkSmall_25;
+.PurchasingIP_blink_c2c02 {
+    animation-name: PurchasingIP_blinkSmall_d3d60;
     animation-duration: 15s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -2925,28 +2928,28 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: none;
 }
 
-.mediaMedium .PurchasingIP_blink_ce {
-    animation-name: PurchasingIP_blinkMedium_6a;
+.mediaMedium .PurchasingIP_blink_c2c02 {
+    animation-name: PurchasingIP_blinkMedium_c41f9;
     animation-duration: 15s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 
-.mediaLarge .PurchasingIP_blink_ce {
-    animation-name: PurchasingIP_blinkLarge_94;
+.mediaLarge .PurchasingIP_blink_c2c02 {
+    animation-name: PurchasingIP_blinkLarge_f6249;
     animation-duration: 15s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 
-.mediaExtraLarge .PurchasingIP_blink_ce {
-    animation-name: PurchasingIP_blinkExtraLarge_b6;
+.mediaExtraLarge .PurchasingIP_blink_c2c02 {
+    animation-name: PurchasingIP_blinkExtraLarge_bea5a;
     animation-duration: 15s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 
-.PurchasingIP_text_35 {
+.PurchasingIP_text_b07d5 {
     color: #ffdd99;
     font-size: 18rem;
     font-weight: 700;
@@ -2954,15 +2957,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.mediaMedium .PurchasingIP_text_35 {
+.mediaMedium .PurchasingIP_text_b07d5 {
     font-size: 22rem;
 }
 
-.mediaLarge .PurchasingIP_text_35 {
+.mediaLarge .PurchasingIP_text_b07d5 {
     font-size: 28rem;
 }
 
-.PurchasingIP_button_f8 {
+.PurchasingIP_button_d288d {
     color: #fefeec;
     font-size: 14rem;
     font-weight: 700;
@@ -2974,20 +2977,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-top: 11rem;
 }
 
-.mediaMedium .PurchasingIP_button_f8 {
+.mediaMedium .PurchasingIP_button_d288d {
     height: 32rem;
 }
 
-.mediaLarge .PurchasingIP_button_f8 {
+.mediaLarge .PurchasingIP_button_d288d {
     margin-top: 11rem;
     font-size: 15rem;
 }
 
-.PurchasingIP_content_53 {
+.PurchasingIP_content_ae1a9 {
     transform: translateX(25%);
 }
 
-.Header_base_07 {
+.Header_base_ad6d6 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2997,7 +3000,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: none;
 }
 
-.Header_background_b8 {
+.Header_background_e0cbb {
     width: 900rem;
     height: 180rem;
     background: url('R.images.gui.maps.icons.battlePass.post_progression.header_wings') no-repeat center / contain;
@@ -3007,32 +3010,32 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translate(-50%, -50%);
 }
 
-.mediaMedium .Header_background_b8 {
+.mediaMedium .Header_background_e0cbb {
     width: 1050rem;
     height: 210rem;
 }
 
-.mediaLarge .Header_background_b8 {
+.mediaLarge .Header_background_e0cbb {
     width: 1300rem;
     height: 260rem;
 }
 
-.mediaExtraLarge .Header_background_b8 {
+.mediaExtraLarge .Header_background_e0cbb {
     width: 1600rem;
     height: 320rem;
 }
 
-.Header_headlineContainer_53 {
+.Header_headlineContainer_c8da1 {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
 }
 
-.mediaLarge .Header_headlineContainer_53 {
+.mediaLarge .Header_headlineContainer_c8da1 {
     margin-bottom: 2rem;
 }
 
-.Header_headline_16 {
+.Header_headline_b8147 {
     color: #f2f2f7;
     font-size: 15rem;
     font-weight: 700;
@@ -3040,15 +3043,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.6;
 }
 
-.mediaLarge .Header_headline_16 {
+.mediaLarge .Header_headline_b8147 {
     font-size: 18rem;
 }
 
-.mediaExtraLarge .Header_headline_16 {
+.mediaExtraLarge .Header_headline_b8147 {
     font-size: 22rem;
 }
 
-.Header_divider_87 {
+.Header_divider_b0e6b {
     width: 2rem;
     height: 15rem;
     margin: 0 15rem;
@@ -3056,15 +3059,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.3;
 }
 
-.mediaLarge .Header_divider_87 {
+.mediaLarge .Header_divider_b0e6b {
     margin: 0 25rem;
 }
 
-.mediaExtraLarge .Header_divider_87 {
+.mediaExtraLarge .Header_divider_b0e6b {
     margin: 0 20rem;
 }
 
-.Header_title_14 {
+.Header_title_d68bd {
     color: #f2f2f7;
     font-size: 36rem;
     font-weight: 700;
@@ -3073,30 +3076,30 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     white-space: nowrap;
 }
 
-.mediaLarge .Header_title_14 {
+.mediaLarge .Header_title_d68bd {
     font-size: 56rem;
 }
 
-.mediaExtraLarge .Header_title_14 {
+.mediaExtraLarge .Header_title_d68bd {
     font-size: 73rem;
 }
 
-.Header_descriptionContainer_9b {
+.Header_descriptionContainer_a6e66 {
     display: flex;
     align-items: flex-end;
 }
 
-.Header_descriptionPaused_28,
-.Header_description_c0 {
+.Header_descriptionPaused_acd9b,
+.Header_description_bdbe7 {
     color: #e9e2bf;
 }
 
-.mediaExtraLarge .Header_descriptionPaused_28,
-.mediaExtraLarge .Header_description_c0 {
+.mediaExtraLarge .Header_descriptionPaused_acd9b,
+.mediaExtraLarge .Header_description_bdbe7 {
     font-size: 18rem;
 }
 
-.Header_description_c0 {
+.Header_description_bdbe7 {
     color: #f2f2f7;
     font-size: 16rem;
     font-weight: 400;
@@ -3104,18 +3107,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.6;
 }
 
-.mediaExtraLarge .Header_description_c0 {
+.mediaExtraLarge .Header_description_bdbe7 {
     font-size: 20rem;
 }
 
-.Header_icon_1b {
+.Header_icon_e0e99 {
     width: 90rem;
     height: 90rem;
     margin: -36rem -30rem;
     background: url('R.images.gui.maps.icons.battlePass.post_progression.pause_icon') no-repeat center / contain;
 }
 
-.Header_label_b2 {
+.Header_label_e4d58 {
     color: #feab34;
     font-size: 18rem;
     font-weight: 700;
@@ -3128,20 +3131,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     in JS 8000 reserved like anchor for start optimization
 */
 /* stylelint-disable-line */
-.OptimizedProgressBar_base_1f {
+.OptimizedProgressBar_base_eb321 {
     width: 100%;
     padding: 30rem 0;
     overflow: hidden;
 }
-.OptimizedProgressBar_wrapper_ab {
+.OptimizedProgressBar_wrapper_f28f4 {
     position: relative;
 }
-.OptimizedProgressBar_line_ef {
+.OptimizedProgressBar_line_e7b7f {
     position: relative;
     top: 0;
     left: 0;
 }
-.OptimizedProgressBar_backgroundWrapper_b6 {
+.OptimizedProgressBar_backgroundWrapper_a8cba {
     width: 100%;
     height: 100%;
     overflow: hidden; /* it's obligatory to cut long background, which can have very long transform: translateX */
@@ -3149,7 +3152,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: 0;
     left: 0;
 }
-.OptimizedProgressBar_background_ce {
+.OptimizedProgressBar_background_e6342 {
     display: flex;
     align-items: center;
     width: 100%;
@@ -3164,7 +3167,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 /* buttons*/
 
-@keyframes Counter_fadeOut_4b {
+@keyframes Counter_fadeOut_b6579 {
     0% {
         opacity: 1;
     }
@@ -3174,7 +3177,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes Counter_fadeIn_59 {
+@keyframes Counter_fadeIn_fa5c0 {
     0% {
         opacity: 0;
     }
@@ -3184,7 +3187,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes Counter_fadeInWithScale_bf {
+@keyframes Counter_fadeInWithScale_d3adf {
     0% {
         opacity: 0;
         transform: scale(1.2);
@@ -3196,7 +3199,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes Counter_slideUp_11 {
+@keyframes Counter_slideUp_d7dd1 {
     0% {
         opacity: 0;
         transform: translateY(20rem);
@@ -3208,7 +3211,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes Counter_scale_4a {
+@keyframes Counter_scale_d6994 {
     0% {
         transform: scale(0);
     }
@@ -3218,7 +3221,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes Counter_rotate_61 {
+@keyframes Counter_rotate_c41fd {
     0% {
         transform: rotate(0deg);
     }
@@ -3228,19 +3231,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-.Counter_base_8f {
+.Counter_base_b2da0 {
     display: flex;
     align-items: center;
 }
 
-.Counter_infinityIconContainer_2c {
+.Counter_infinityIconContainer_cb4a3 {
     width: 30rem;
     height: 15rem;
     margin-right: 5rem;
     position: relative;
 }
 
-.Counter_infinityIcon_12 {
+.Counter_infinityIcon_e17a2 {
     width: 40rem;
     height: 40rem;
     background: url('R.images.gui.maps.icons.battlePass.post_progression.infinity') no-repeat center / contain;
@@ -3250,7 +3253,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translate(-50%, -50%);
 }
 
-.Counter_label_db {
+.Counter_label_c54a5 {
     margin-bottom: 4rem;
     opacity: 0.6;
     color: #fefeec;
@@ -3259,25 +3262,25 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.3;
 }
 
-.mediaMedium .Counter_label_db {
+.mediaMedium .Counter_label_c54a5 {
     margin-bottom: 3rem;
     font-size: 16rem;
 }
 
-.Counter_cyclesCompleted_a0 {
+.Counter_cyclesCompleted_b4cd3 {
     display: flex;
     align-items: flex-end;
 }
 
-.Counter_cyclesNumber_5c {
+.Counter_cyclesNumber_b6b89 {
     margin-left: 5rem;
     font-size: 16rem;
     opacity: 1;
 }
 
-.Counter_cyclesNumber__animated_d8 {
+.Counter_cyclesNumber__animated_ca040 {
     opacity: 0;
-    animation-name: Counter_slideUp_11;
+    animation-name: Counter_slideUp_d7dd1;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
     animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1);
@@ -3285,23 +3288,23 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     animation-iteration-count: 1;
 }
 
-.Counter_cyclesNumber__hidden_c1 {
+.Counter_cyclesNumber__hidden_bc8ba {
     opacity: 0;
 }
 
-.Cycle_base_cb {
+.Cycle_base_ec7bd {
     width: 100%;
     height: 100%;
 }
 
-.Cycle_labelContainer_1d {
+.Cycle_labelContainer_a517b {
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.Cycle_contour_6d {
+.Cycle_contour_ffb2c {
     width: 100%;
     height: 100%;
     clip-path: polygon(
@@ -3321,14 +3324,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     overflow: hidden;
 }
 
-.Cycle_border_7e {
+.Cycle_border_f27e6 {
     width: 100%;
     height: 100%;
     border: 1rem solid;
     position: absolute;
 }
 
-.Cycle_border__horizontal_22 {
+.Cycle_border__horizontal_b8864 {
     --dash-slices: 250;
     border-image: repeating-linear-gradient(
         90deg,
@@ -3342,23 +3345,23 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     border-image-repeat: repeat;
 }
 
-.mediaMedium .Cycle_border__horizontal_22 {
+.mediaMedium .Cycle_border__horizontal_b8864 {
     --dash-slices: 450 34%;
 }
 
-.mediaLarge .Cycle_border__horizontal_22 {
+.mediaLarge .Cycle_border__horizontal_b8864 {
     --dash-slices: 470 34%;
 }
 
-.mediaExtraLarge .Cycle_border__horizontal_22 {
+.mediaExtraLarge .Cycle_border__horizontal_b8864 {
     --dash-slices: 500;
 }
 
-.Cycle_contour__2x_5c .Cycle_border__horizontal_22 {
+.Cycle_contour__2x_a7d9c .Cycle_border__horizontal_b8864 {
     --dash-slices: 800;
 }
 
-.Cycle_border__vertical_ee {
+.Cycle_border__vertical_dcb1a {
     border-top-style: none;
     border-bottom-style: none;
     border-image: repeating-linear-gradient(
@@ -3373,23 +3376,23 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     border-image-repeat: repeat;
 }
 
-.mediaMedium .Cycle_border__vertical_ee {
+.mediaMedium .Cycle_border__vertical_dcb1a {
     border-image-slice: 9 2;
 }
 
-.mediaLarge .Cycle_border__vertical_ee {
+.mediaLarge .Cycle_border__vertical_dcb1a {
     border-image-slice: 0 4;
 }
 
-.mediaExtraLarge .Cycle_border__vertical_ee {
+.mediaExtraLarge .Cycle_border__vertical_dcb1a {
     border-image-slice: 0 5;
 }
 
-.Cycle_contour__2x_5c .Cycle_border__vertical_ee {
+.Cycle_contour__2x_a7d9c .Cycle_border__vertical_dcb1a {
     border-image-slice: 4 6;
 }
 
-.Cycle_arrow_2f {
+.Cycle_arrow_b368f {
     display: block;
     width: 7rem;
     height: 7rem;
@@ -3402,7 +3405,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translate(-50%, 50%) rotate(-45deg);
 }
 
-.Cycle_bar_fa {
+.Cycle_bar_bbd00 {
     width: 60rem;
     height: 3rem;
     background: #e9e2bf;
@@ -3410,43 +3413,43 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
 }
 
-.Cycle_bar_fa:nth-child(even) {
+.Cycle_bar_bbd00:nth-child(even) {
     width: 3rem;
     height: 60rem;
 }
 
-.Cycle_bar__state1_a9 {
-    animation: Cycle_state1_0e 0.3s linear;
+.Cycle_bar__state1_d5ccd {
+    animation: Cycle_state1_b8221 0.3s linear;
     top: 0;
     right: 20%;
 }
 
-.Cycle_bar__state2_38 {
-    animation: Cycle_state2_92 0.4s linear 0.2s;
+.Cycle_bar__state2_a3d8c {
+    animation: Cycle_state2_b02a3 0.4s linear 0.2s;
     right: 0;
     bottom: 100%;
 }
 
-.Cycle_bar__state3_9f {
-    animation: Cycle_state3_5d 1.6s linear 0.4s;
+.Cycle_bar__state3_b28e8 {
+    animation: Cycle_state3_f3827 1.6s linear 0.4s;
     width: 200rem;
     bottom: 0;
     left: 100%;
 }
 
-.Cycle_bar__state4_7e {
-    animation: Cycle_state4_2b 0.15s linear 1.9s;
+.Cycle_bar__state4_a0724 {
+    animation: Cycle_state4_bbc59 0.15s linear 1.9s;
     top: 100%;
     left: 0;
 }
 
-.Cycle_bar__state5_b9 {
-    animation: Cycle_state5_28 0.6s linear 2s;
+.Cycle_bar__state5_a2c2d {
+    animation: Cycle_state5_ea895 0.6s linear 2s;
     top: 0;
     right: 100%;
 }
 
-@keyframes Cycle_state1_0e {
+@keyframes Cycle_state1_b8221 {
     0% {
         right: 20%;
     }
@@ -3461,7 +3464,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes Cycle_state2_92 {
+@keyframes Cycle_state2_b02a3 {
     0% {
         bottom: 100%;
     }
@@ -3476,7 +3479,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes Cycle_state3_5d {
+@keyframes Cycle_state3_f3827 {
     0% {
         left: 100%;
     }
@@ -3491,7 +3494,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes Cycle_state4_2b {
+@keyframes Cycle_state4_bbc59 {
     0% {
         top: 100%;
     }
@@ -3506,7 +3509,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-@keyframes Cycle_state5_28 {
+@keyframes Cycle_state5_ea895 {
     0% {
         right: 100%;
     }
@@ -3521,7 +3524,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     }
 }
 
-.ProgressBar_base_11 {
+.ProgressBar_base_f309a {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -3532,25 +3535,25 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
 }
 
-.ProgressBar_progressBackground_20 {
+.ProgressBar_progressBackground_a69e7 {
     width: 100%;
     overflow: hidden;
 }
 
-.ProgressBar_progressBar_b0 {
+.ProgressBar_progressBar_c0bb5 {
     margin: -30rem 0;
     overflow: hidden;
 }
 
-.ProgressBar_progressBar_b0 :first-child {
+.ProgressBar_progressBar_c0bb5 :first-child {
     padding: 0;
 }
 
-.ProgressBar_progressBar__disabled_21 {
+.ProgressBar_progressBar__disabled_ed3df {
     pointer-events: none;
 }
 
-.ProgressBar_cycle_49 {
+.ProgressBar_cycle_e15fd {
     --cycle-side-width: 25rem;
     width: calc(var(--progress-line-width) + var(--cycle-side-width) * 2);
     height: 38rem;
@@ -3560,16 +3563,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translate(-50%, 50%);
 }
 
-.mediaMedium .ProgressBar_cycle_49 {
+.mediaMedium .ProgressBar_cycle_e15fd {
     --cycle-side-width: 36rem;
 }
 
-.mediaExtraLarge .ProgressBar_cycle_49 {
+.mediaExtraLarge .ProgressBar_cycle_e15fd {
     height: 50rem;
     --cycle-side-width: 52rem;
 }
 
-.TextButton_base_b6 {
+.TextButton_base_a231c {
     display: flex;
     align-items: center;
     padding: 0 3rem;
@@ -3578,33 +3581,33 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     cursor: pointer;
 }
 
-.TextButton_base__right_39 {
+.TextButton_base__right_bfac3 {
     flex-direction: row-reverse;
 }
-.TextButton_icon_17 {
+.TextButton_icon_cdfc0 {
     width: 32rem;
     height: 32rem;
     background: no-repeat center / contain;
     position: relative;
 }
-.TextButton_icon__back_43,
-.TextButton_icon__forward_59 {
+.TextButton_icon__back_fc1bb,
+.TextButton_icon__forward_efa2d {
     margin: -1rem -5rem;
     background-image: url('R.images.gui.maps.icons.components.text_button.back');
     transform: translateY(1rem);
 }
-.TextButton_icon__forward_59 {
+.TextButton_icon__forward_efa2d {
     transform: rotate(180deg) translateY(1rem);
 }
-.TextButton_icon__close_53 {
+.TextButton_icon__close_e2f0f {
     margin: -1rem 0;
     background-image: url('R.images.gui.maps.icons.components.text_button.close');
 }
-.TextButton_icon__info_33 {
+.TextButton_icon__info_e32c0 {
     margin: -1rem -5rem;
     background-image: url('R.images.gui.maps.icons.components.text_button.info');
 }
-.TextButton_glow_a4 {
+.TextButton_glow_d6e04 {
     width: 100%;
     height: 100%;
     background: no-repeat center / contain;
@@ -3613,31 +3616,31 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: 0;
     transition: opacity 0.16s;
 }
-.TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
+.TextButton_icon__back_fc1bb .TextButton_glow_d6e04,
+.TextButton_icon__forward_efa2d .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
 }
-.TextButton_icon__close_53 .TextButton_glow_a4 {
+.TextButton_icon__close_e2f0f .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
 }
-.TextButton_icon__info_33 .TextButton_glow_a4 {
+.TextButton_icon__info_e32c0 .TextButton_glow_d6e04 {
     background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
 }
-.TextButton_base_b6:hover .TextButton_glow_a4 {
+.TextButton_base_a231c:hover .TextButton_glow_d6e04 {
     opacity: 1;
 }
-.TextButton_base_b6:active .TextButton_glow_a4 {
+.TextButton_base_a231c:active .TextButton_glow_d6e04 {
     opacity: 0;
 }
-.TextButton_caption_82 {
+.TextButton_caption_f4e8d {
     position: relative;
     transition:
         color 0.16s,
         text-shadow 0.16s;
 }
-.TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
+.TextButton_caption__back_d358d,
+.TextButton_caption__forward_ff93d,
+.TextButton_caption__close_fc554 {
     color: #ffdd99;
     text-shadow:
         0 0 10rem rgba(255, 42, 0, 1),
@@ -3648,46 +3651,46 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         0 0 2rem rgba(255, 42, 0, 0.4),
         0 0 1rem rgba(255, 42, 0, 0.4);
 }
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
+.TextButton_base_a231c:hover .TextButton_caption__back_d358d,
+.TextButton_base_a231c:hover .TextButton_caption__forward_ff93d,
+.TextButton_base_a231c:hover .TextButton_caption__close_fc554 {
     color: #fffa9f;
 }
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
+.TextButton_base_a231c:active .TextButton_caption__back_d358d,
+.TextButton_base_a231c:active .TextButton_caption__forward_ff93d,
+.TextButton_base_a231c:active .TextButton_caption__close_fc554 {
     color: #ffdd99;
 }
-.TextButton_caption__info_23 {
+.TextButton_caption__info_c263a {
     padding: 0 5rem;
     color: #ccffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.8),
         0 0 8rem #00eaff;
 }
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
+.TextButton_base_a231c:hover .TextButton_caption__info_c263a {
     color: #e3ffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.8),
         0 0 12rem rgba(0, 234, 255, 1),
         0 0 8rem #00eaff;
 }
-.TextButton_base_b6:active .TextButton_caption__info_23 {
+.TextButton_base_a231c:active .TextButton_caption__info_c263a {
     color: #ccffff;
     text-shadow:
         0 0 12rem rgba(31, 68, 255, 0.6),
         0 0 8rem #00eaff;
 }
-.TextButton_goto_e7 {
+.TextButton_goto_d3960 {
     color: #7c7c6c;
 }
-.TextButton_base__left_ff .TextButton_goto_e7 {
+.TextButton_base__left_ec79d .TextButton_goto_d3960 {
     margin-left: 8rem;
 }
-.TextButton_base__right_39 .TextButton_goto_e7 {
+.TextButton_base__right_bfac3 .TextButton_goto_d3960 {
     margin-right: 8rem;
 }
-.TextButton_shine_e2 {
+.TextButton_shine_f8873 {
     width: 90rem;
     height: 40rem;
     background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
@@ -3697,29 +3700,29 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transition: opacity 0.16s;
     pointer-events: none;
 }
-.TextButton_base__left_ff .TextButton_shine_e2 {
+.TextButton_base__left_ec79d .TextButton_shine_f8873 {
     left: -4rem;
 }
-.TextButton_base__right_39 .TextButton_shine_e2 {
+.TextButton_base__right_bfac3 .TextButton_shine_f8873 {
     right: -4rem;
     transform: rotate(180deg);
 }
-.TextButton_base_b6:hover .TextButton_shine_e2 {
+.TextButton_base_a231c:hover .TextButton_shine_f8873 {
     opacity: 1;
 }
-.TextButton_base_b6:active .TextButton_shine_e2 {
+.TextButton_base_a231c:active .TextButton_shine_f8873 {
     opacity: 0;
 }
 
-.Toolbar_infoButtons_d0 {
+.Toolbar_infoButtons_e0a06 {
     display: flex;
     flex-direction: column;
 }
-.mediaSmall .Toolbar_infoButtons_d0 {
+.mediaSmall .Toolbar_infoButtons_e0a06 {
     flex-direction: row;
 }
 
-.App_base_21 {
+.App_base_ad0d6 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -3732,47 +3735,47 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
 }
 
-.App_toolbar_de {
+.App_toolbar_b1287 {
     position: absolute;
     top: 64rem;
     left: 25rem;
 }
 
-.mediaLarge .App_toolbar_de {
+.mediaLarge .App_toolbar_b1287 {
     top: 90rem;
     left: 42rem;
 }
 
-.mediaExtraLarge .App_toolbar_de {
+.mediaExtraLarge .App_toolbar_b1287 {
     top: 100rem;
 }
 
-.App_awardsWidget_e1 {
+.App_awardsWidget_f4c66 {
     align-self: center;
     margin-top: 40rem;
 }
 
-.mediaLarge .App_awardsWidget_e1 {
+.mediaLarge .App_awardsWidget_f4c66 {
     margin-top: 60rem;
 }
 
-.mediaExtraLarge .App_awardsWidget_e1 {
+.mediaExtraLarge .App_awardsWidget_f4c66 {
     margin-top: 70rem;
 }
 
-.App_award_6a {
+.App_award_d5cc4 {
     margin-left: 10rem;
 }
 
-.mediaMedium .App_award_6a {
+.mediaMedium .App_award_d5cc4 {
     margin-left: 22rem;
 }
 
-.mediaLarge .App_award_6a {
+.mediaLarge .App_award_d5cc4 {
     margin-left: 24rem;
 }
 
-.App_content_c6 {
+.App_content_d43be {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -3781,41 +3784,41 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-bottom: 50rem;
 }
 
-.mediaMedium .App_content_c6 {
+.mediaMedium .App_content_d43be {
     margin-bottom: 80rem;
 }
 
-.mediaExtraLarge .App_content_c6 {
+.mediaExtraLarge .App_content_d43be {
     margin-bottom: 110rem;
 }
 
-.App_header_a1 {
+.App_header_bd39c {
     margin-top: 10rem;
 }
 
-.mediaLarge .App_header_a1 {
+.mediaLarge .App_header_bd39c {
     margin-top: 30rem;
 }
 
-.mediaExtraLarge .App_header_a1 {
+.mediaExtraLarge .App_header_bd39c {
     margin-top: 100rem;
 }
 
-.App_progression_75 {
+.App_progression_cecc4 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex-grow: 1;
 }
 
-.App_footer_8e {
+.App_footer_ef8d5 {
     margin-bottom: 30rem;
 }
 
-.mediaMedium .App_footer_8e {
+.mediaMedium .App_footer_ef8d5 {
     margin-bottom: 40rem;
 }
 
-.mediaExtraLarge .App_footer_8e {
+.mediaExtraLarge .App_footer_ef8d5 {
     margin-bottom: 50rem;
 }

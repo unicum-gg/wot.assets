@@ -1,111 +1,86 @@
 (() => {
     'use strict';
-    var r,
-        e = {
-            3457: (r, e, t) => {
-                (t(6483), t(1641), t(7727), t(7363), t(6880), t(2106));
+    var e,
+        r = {
+            7109: (e, r, t) => {
+                (t(9849), t(4170), t(4029), t(7363), t(6290), t(2262));
             },
-            2106: (r, e, t) => {
-                let a, n;
-                (!(function (r) {
-                    ((r.main = 'main'),
-                        (r.primary = 'primary'),
-                        (r.primaryGreen = 'primaryGreen'),
-                        (r.primaryRed = 'primaryRed'),
-                        (r.secondary = 'secondary'),
-                        (r.ghost = 'ghost'));
-                })(a || (a = {})),
-                    (function (r) {
-                        ((r.extraSmall = 'extraSmall'),
-                            (r.small = 'small'),
-                            (r.medium = 'medium'),
-                            (r.large = 'large'));
-                    })(n || (n = {})));
-            },
-            1641: (r, e, t) => {
-                let a;
-                !(function (r) {
-                    ((r[(r.LEFT = 0)] = 'LEFT'),
-                        (r[(r.WHEEL = 1)] = 'WHEEL'),
-                        (r[(r.RIGHT = 2)] = 'RIGHT'),
-                        (r[(r.FOURTH = 3)] = 'FOURTH'),
-                        (r[(r.FIFTH = 4)] = 'FIFTH'));
-                })(a || (a = {}));
-            },
-            7727: (r, e, t) => {},
-            9525: (r, e, t) => {
-                (t(6483), t(3457), t(7363));
+            2262: (e, r, t) => {},
+            4170: (e, r, t) => {},
+            4029: (e, r, t) => {},
+            3346: (e, r, t) => {
+                (t(9849), t(7109), t(7363));
                 R.strings.battle_pass.battlePassBuyView;
             },
-            6880: () => {},
-            7363: (r) => {
-                r.exports = React;
+            6290: () => {},
+            7363: (e) => {
+                e.exports = React;
             },
         },
         t = {};
-    function a(r) {
-        var n = t[r];
+    function o(e) {
+        var n = t[e];
         if (void 0 !== n) return n.exports;
-        var o = (t[r] = { exports: {} });
-        return (e[r](o, o.exports, a), o.exports);
+        var a = (t[e] = { exports: {} });
+        return (r[e](a, a.exports, o), a.exports);
     }
-    ((a.m = e),
-        (r = []),
-        (a.O = (e, t, n, o) => {
+    ((o.m = r),
+        (e = []),
+        (o.O = (r, t, n, a) => {
             if (!t) {
                 var i = 1 / 0;
-                for (f = 0; f < r.length; f++) {
-                    for (var [t, n, o] = r[f], l = !0, s = 0; s < t.length; s++)
-                        (!1 & o || i >= o) && Object.keys(a.O).every((r) => a.O[r](t[s]))
-                            ? t.splice(s--, 1)
-                            : ((l = !1), o < i && (i = o));
-                    if (l) {
-                        r.splice(f--, 1);
-                        var u = n();
-                        void 0 !== u && (e = u);
+                for (u = 0; u < e.length; u++) {
+                    for (var [t, n, a] = e[u], s = !0, f = 0; f < t.length; f++)
+                        (!1 & a || i >= a) && Object.keys(o.O).every((e) => o.O[e](t[f]))
+                            ? t.splice(f--, 1)
+                            : ((s = !1), a < i && (i = a));
+                    if (s) {
+                        e.splice(u--, 1);
+                        var l = n();
+                        void 0 !== l && (r = l);
                     }
                 }
-                return e;
+                return r;
             }
-            o = o || 0;
-            for (var f = r.length; f > 0 && r[f - 1][2] > o; f--) r[f] = r[f - 1];
-            r[f] = [t, n, o];
+            a = a || 0;
+            for (var u = e.length; u > 0 && e[u - 1][2] > a; u--) e[u] = e[u - 1];
+            e[u] = [t, n, a];
         }),
-        (a.n = (r) => {
-            var e = r && r.__esModule ? () => r.default : () => r;
-            return (a.d(e, { a: e }), e);
+        (o.n = (e) => {
+            var r = e && e.__esModule ? () => e.default : () => e;
+            return (o.d(r, { a: r }), r);
         }),
-        (a.d = (r, e) => {
-            for (var t in e) a.o(e, t) && !a.o(r, t) && Object.defineProperty(r, t, { enumerable: !0, get: e[t] });
+        (o.d = (e, r) => {
+            for (var t in r) o.o(r, t) && !o.o(e, t) && Object.defineProperty(e, t, { enumerable: !0, get: r[t] });
         }),
-        (a.g = (function () {
+        (o.g = (function () {
             if ('object' == typeof globalThis) return globalThis;
             try {
                 return this || new Function('return this')();
-            } catch (r) {
+            } catch (e) {
                 if ('object' == typeof window) return window;
             }
         })()),
-        (a.o = (r, e) => Object.prototype.hasOwnProperty.call(r, e)),
-        (a.j = 1523),
+        (o.o = (e, r) => Object.prototype.hasOwnProperty.call(e, r)),
+        (o.j = 1523),
         (() => {
-            var r = { 1523: 0 };
-            a.O.j = (e) => 0 === r[e];
-            var e = (e, t) => {
+            var e = { 1523: 0 };
+            o.O.j = (r) => 0 === e[r];
+            var r = (r, t) => {
                     var n,
-                        o,
-                        [i, l, s] = t,
-                        u = 0;
-                    if (i.some((e) => 0 !== r[e])) {
-                        for (n in l) a.o(l, n) && (a.m[n] = l[n]);
-                        if (s) var f = s(a);
+                        a,
+                        [i, s, f] = t,
+                        l = 0;
+                    if (i.some((r) => 0 !== e[r])) {
+                        for (n in s) o.o(s, n) && (o.m[n] = s[n]);
+                        if (f) var u = f(o);
                     }
-                    for (e && e(t); u < i.length; u++) ((o = i[u]), a.o(r, o) && r[o] && r[o][0](), (r[o] = 0));
-                    return a.O(f);
+                    for (r && r(t); l < i.length; l++) ((a = i[l]), o.o(e, a) && e[a] && e[a][0](), (e[a] = 0));
+                    return o.O(u);
                 },
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
-            (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
+            (t.forEach(r.bind(null, 0)), (t.push = r.bind(null, t.push.bind(t))));
         })());
-    var n = a.O(void 0, [1519], () => a(9525));
-    n = a.O(n);
+    var n = o.O(void 0, [1519], () => o(3346));
+    n = o.O(n);
 })();

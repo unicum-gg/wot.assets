@@ -1,23 +1,23 @@
-import { s as o, j as e, m as s } from '../../../../chunks/vendor.js';
-import { i as t, $ as a, E as l, P as r, a$ as i } from '../../../../chunks/lib.js';
-const [p, c] = t()(({ observableModel: o }) => ({ root: o.object() }), a),
-    d = 'SimpleFormatTooltipApp_3c83c09c',
-    m = 'SimpleFormatTooltipApp_header_d26e9c21',
-    n = 'SimpleFormatTooltipApp_header__withBody_53e87d43',
-    x = 'SimpleFormatTooltipApp_body_4ccb59d5',
-    j = 'SimpleFormatTooltipApp_note_c1faf474',
-    _ = o(() => {
-        const { model: o } = c(),
-            { body: t, header: a, note: r } = o.root.get();
+import { D as o, j as e, E as s } from '../../../../chunks/vendor.js';
+import { i as t, a7 as a, E as r, r as l, dk as i } from '../../../../chunks/lib.js';
+const [p, d] = t()(({ observableModel: o }) => ({ root: o.object() }), a),
+    c = 'SimpleFormatTooltipApp_887dc02e',
+    n = 'SimpleFormatTooltipApp_header_23807e55',
+    m = 'SimpleFormatTooltipApp_header__withBody_53e87d43',
+    x = 'SimpleFormatTooltipApp_body_c5f5d9c5',
+    j = 'SimpleFormatTooltipApp_note_36f55246',
+    _ = o(function () {
+        const { model: o } = d(),
+            { body: t, header: a, note: l } = o.root.get();
         return t || a
             ? e.jsxs('div', {
-                  className: d,
+                  className: c,
                   children: [
-                      a && e.jsx(l, { text: a, classMix: s(m, t && n) }),
-                      t && e.jsx(l, { text: t, classMix: x }),
-                      r && e.jsx(l, { text: r, classMix: j }),
+                      a && e.jsx(r, { text: a, classMix: s(n, t && m) }),
+                      t && e.jsx(r, { text: t, classMix: x }),
+                      l && e.jsx(r, { text: l, classMix: j }),
                   ],
               })
             : (console.warn('Incorrect data! Body and header is null or empty'), null);
     });
-r(e.jsx(p, { children: e.jsx(i, { children: e.jsx(_, {}) }) }));
+l(e.jsx(p, { children: e.jsx(i, { children: e.jsx(_, {}) }) }));

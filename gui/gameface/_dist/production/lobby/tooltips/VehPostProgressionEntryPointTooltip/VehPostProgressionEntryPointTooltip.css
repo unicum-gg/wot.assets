@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,31 +11,31 @@
     position: relative;
 }
 
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.Footer_base_ee {
+.Footer_base_ae7ed {
     display: flex;
     flex-direction: column;
 }
 
-.Footer_label_36 {
+.Footer_label_b3aca {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.Footer_explored_ae {
+.Footer_explored_e5c5e {
     color: #ffc363;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.Footer_separatorContainer_57 {
+.Footer_separatorContainer_af5cb {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,7 +43,7 @@
     position: relative;
 }
 
-.Footer_separator_a0 {
+.Footer_separator_ce163 {
     width: 283rem;
     height: 1rem;
     margin-top: 10rem;
@@ -51,20 +51,20 @@
     background: url('R.images.gui.maps.icons.battlePass.tooltips.Devider_points') 50% / contain no-repeat;
 }
 
-.Footer_container_fa {
+.Footer_container_cc17c {
     display: flex;
     flex-direction: row;
     margin-bottom: -5rem;
 }
 
-.Footer_lock_46 {
+.Footer_lock_ec6fa {
     width: 26rem;
     height: 29rem;
     margin: -6rem 0 -8rem -8rem;
     background: url('R.images.gui.maps.icons.library.icon_lock') center / contain no-repeat;
 }
 
-.Content_base_d9 {
+.Content_base_c7c4d {
     display: flex;
     flex-direction: column;
     width: 400rem;
@@ -72,7 +72,7 @@
     line-height: normal;
 }
 
-.Content_title_a6 {
+.Content_title_e01fe {
     color: #e9e2bf;
     font-size: 15rem;
     font-weight: 700;
@@ -80,19 +80,19 @@
     margin-bottom: 10rem;
 }
 
-.Content_content_ec {
+.Content_content_ec918 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.Content_description_8a {
+.Content_description_afc9f {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.Content_status_a5 {
+.Content_status_bb708 {
     color: #e9e2bf;
     font-size: 14rem;
     font-weight: 400;

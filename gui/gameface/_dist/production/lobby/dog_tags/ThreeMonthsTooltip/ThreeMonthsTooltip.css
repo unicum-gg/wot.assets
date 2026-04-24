@@ -1,9 +1,9 @@
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;
@@ -11,7 +11,7 @@
     position: relative;
 }
 
-.commonTooltipStyles_base_1f {
+.commonTooltipStyles_base_d3709 {
     width: 220rem;
     padding-bottom: 20rem;
     background: linear-gradient(
@@ -23,7 +23,7 @@
     );
 }
 
-.commonTooltipStyles_title_de {
+.commonTooltipStyles_title_f924d {
     margin: 20rem 20rem 10rem;
     color: #e9e2bf;
     font-size: 18rem;
@@ -31,13 +31,13 @@
     line-height: 1.1;
 }
 
-.commonTooltipStyles_listHeader_5f {
+.commonTooltipStyles_listHeader_c9798 {
     display: flex;
     padding: 0 20rem;
 }
 
-.commonTooltipStyles_headerLevel_bb,
-.commonTooltipStyles_headerValue_c0 {
+.commonTooltipStyles_headerLevel_e3783,
+.commonTooltipStyles_headerValue_a01e0 {
     width: 50%;
     color: #595950;
     font-size: 14rem;
@@ -45,44 +45,44 @@
     line-height: 24rem;
 }
 
-.commonTooltipStyles_separator_6a {
+.commonTooltipStyles_separator_e52e0 {
     height: 1rem;
     background: url('R.images.gui.maps.icons.dogtags.tooltip_separator') no-repeat;
     background-size: contain;
 }
 
-.commonTooltipStyles_list_84 {
+.commonTooltipStyles_list_ad491 {
     display: flex;
     flex-direction: column;
 }
 
-.commonTooltipStyles_levelRow_50 {
+.commonTooltipStyles_levelRow_e1b84 {
     display: flex;
 }
 
-.commonTooltipStyles_levelRow_50.commonTooltipStyles_current_83 {
+.commonTooltipStyles_levelRow_e1b84.commonTooltipStyles_current_fa3e9 {
     background: url('R.images.gui.maps.icons.dogtags.tooltip_level_highlight') no-repeat;
     background-size: cover;
 }
 
-.commonTooltipStyles_levelRow_50.commonTooltipStyles_current_83 .commonTooltipStyles_level_20,
-.commonTooltipStyles_levelRow_50.commonTooltipStyles_current_83 .commonTooltipStyles_value_4b {
+.commonTooltipStyles_levelRow_e1b84.commonTooltipStyles_current_fa3e9 .commonTooltipStyles_level_fa691,
+.commonTooltipStyles_levelRow_e1b84.commonTooltipStyles_current_fa3e9 .commonTooltipStyles_value_c681b {
     color: #ffc363;
 }
 
-.commonTooltipStyles_levelRow_50.commonTooltipStyles_next_21 .commonTooltipStyles_level_20,
-.commonTooltipStyles_levelRow_50.commonTooltipStyles_next_21 .commonTooltipStyles_value_4b {
+.commonTooltipStyles_levelRow_e1b84.commonTooltipStyles_next_d30f6 .commonTooltipStyles_level_fa691,
+.commonTooltipStyles_levelRow_e1b84.commonTooltipStyles_next_d30f6 .commonTooltipStyles_value_c681b {
     color: #e9e2bf;
 }
 
-.commonTooltipStyles_level_20 {
+.commonTooltipStyles_level_fa691 {
     display: flex;
     align-items: center;
     padding-left: 20rem;
 }
 
-.commonTooltipStyles_level_20,
-.commonTooltipStyles_value_4b {
+.commonTooltipStyles_level_fa691,
+.commonTooltipStyles_value_c681b {
     width: 50%;
     color: #8c8c7e;
     font-size: 14rem;
@@ -90,7 +90,7 @@
     line-height: 24rem;
 }
 
-.Body_base_5a {
+.Body_base_dfab0 {
     width: 280rem;
     padding-bottom: 20rem;
     background: linear-gradient(
@@ -102,31 +102,31 @@
     );
 }
 
-.Body_list_f0 {
+.Body_list_ce4ee {
     display: flex;
     flex-direction: column;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
 }
 
-.Body_levelRow_c8 {
+.Body_levelRow_acca8 {
     display: flex;
     align-items: flex-start;
     padding: 5rem 20rem 5rem 0;
 }
 
-.Body_levelRow_c8.Body_current_5c .Body_level_71,
-.Body_levelRow_c8.Body_current_5c .Body_value_69 {
+.Body_levelRow_acca8.Body_current_c7fc6 .Body_level_e9471,
+.Body_levelRow_acca8.Body_current_c7fc6 .Body_value_dfad8 {
     color: #ffc363;
 }
 
-.Body_level_71 {
+.Body_level_e9471 {
     display: flex;
     align-items: center;
     padding-left: 10rem;
 }
 
-.Body_level_71,
-.Body_value_69 {
+.Body_level_e9471,
+.Body_value_dfad8 {
     width: 50%;
     color: #8c8c7e;
     font-size: 14rem;
@@ -134,7 +134,7 @@
     line-height: 24rem;
 }
 
-.Body_description_b5 {
+.Body_description_e1749 {
     margin: 0 20rem 15rem;
     color: #8c8c7e;
     font-size: 14rem;
@@ -143,7 +143,7 @@
     line-height: 18rem;
 }
 
-.Body_monthIcon_bf {
+.Body_monthIcon_e1864 {
     width: 24rem;
     height: 24rem;
     margin-left: 5rem;
@@ -152,17 +152,17 @@
     background-size: 10rem;
 }
 
-.Body_monthIcon_bf.Body_cup_ef {
+.Body_monthIcon_e1864.Body_cup_d1f00 {
     background-image: url('R.images.gui.maps.icons.dogtags.icons.cup');
     background-size: 24rem;
 }
 
-.Body_monthIcon_bf.Body_hourGlass_33 {
+.Body_monthIcon_e1864.Body_hourGlass_add7d {
     background-image: url('R.images.gui.maps.icons.dogtags.icons.hour_glass');
     background-size: 10rem 16rem;
 }
 
-.Body_lastMonthDesc_20 {
+.Body_lastMonthDesc_fd8b0 {
     width: 50%;
     color: #8c8c7e;
     font-size: 14rem;

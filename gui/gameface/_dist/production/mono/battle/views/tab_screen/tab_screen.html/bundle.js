@@ -1,36 +1,41 @@
 import {
     j as jsxRuntimeExports,
-    h as cx,
-    p as observable,
-    q as computedFn,
-    s as action,
+    q as cx,
+    o as observable,
+    s as computedFn,
+    f as action,
     r as reactExports,
-    m as observer,
+    e as clsx,
+    p as observer,
 } from '../../../chunks/vendor.js';
 import {
     p as play,
     i as initializeModelWithContext,
+    d as constFalse,
     m as map,
-    e as constFalse,
-    f as identity,
-    g as SimpleTooltip,
-    h as normalizeResource,
-    C as CButton,
-    B as ButtonType,
-    j as PlayerNickname,
-    l as getNumberFormat,
+    H as HEAVY_TANK,
+    M as MEDIUM_TANK,
+    L as LIGHT_TANK,
+    S as SPG,
+    A as AT_SPG,
+    e as identity,
+    I as Image,
+    f as SimpleTooltip,
+    g as Tooltip,
+    B as Button,
+    h as PlayerNickname,
+    j as getNumberFormat,
+    k as normalizeResource,
+    V as VehicleType,
+    l as sizes,
     E as ExtendedText,
-    M as MediaWrapper,
+    o as PREMIUM_IGR_TAG,
+    q as MediaWrapper,
     n as noop,
-    o as convertNbsp,
-    r as runView,
+    t as convertNbsp,
+    b as runView,
+    U as UIProvider,
 } from '../../../chunks/lib.js';
-const LIGHT_TANK = 'lightTank',
-    MEDIUM_TANK = 'mediumTank',
-    HEAVY_TANK = 'heavyTank',
-    SPG = 'SPG',
-    AT_SPG = 'AT-SPG',
-    PREMIUM_IGR_TAG = 'premiumIGR';
 var ColumnEnum = ((e) => (
     (e.Kills = 'kills'),
     (e.Damage = 'damage'),
@@ -40,48 +45,55 @@ var ColumnEnum = ((e) => (
     (e.Keys = 'keys'),
     e
 ))(ColumnEnum || {});
-const root$d = 'SortHelper_root_af12aed1',
-    base$d = 'SortHelper_a678300d',
+const root$7 = 'SortHelper_root_af12aed1',
+    base$d = 'SortHelper_9d778842',
     base__active = 'SortHelper_base__active_dbd69244',
-    base__selected = 'SortHelper_base__selected_91fdc22c',
-    arrow = 'SortHelper_arrow_50b86f5d',
+    base__selected = 'SortHelper_base__selected_123b8b20',
+    line$1 = 'SortHelper_line_f7ffaa44',
+    arrow = 'SortHelper_arrow_920be1c0',
     base__desc = 'SortHelper_base__desc_af12aed1',
-    styles$d = {
-        root: root$d,
+    styles$e = {
+        root: root$7,
         base: base$d,
         base__active: base__active,
         base__selected: base__selected,
+        line: line$1,
         arrow: arrow,
         base__desc: base__desc,
     },
     VEHICLE_COLUMN = 'vehicle',
-    DAMAGE_COLUMN = 'damage',
-    SortHelper = ({
-        onClick: e,
-        className: t,
-        isSelected: s,
-        isEnabled: a,
-        sortDirection: o,
-        column: n,
-        children: r,
-    }) =>
-        jsxRuntimeExports.jsxs('div', {
-            className: cx(
-                styles$d.base,
-                a && styles$d.base__active,
-                t,
-                s && styles$d.base__selected,
-                styles$d[`base__${SORT_DIRECTIONS[o]}`],
-            ),
-            onClick: () => {
-                a && (e(n), play.click());
-            },
-            onMouseEnter: () => {
-                a && play.highlight();
-            },
-            children: [r, s && a && jsxRuntimeExports.jsx('div', { className: styles$d.arrow })],
-        }),
-    VEHICLE_ORDER = [HEAVY_TANK, MEDIUM_TANK, LIGHT_TANK, SPG, AT_SPG];
+    DAMAGE_COLUMN = 'damage';
+function SortHelper({
+    onClick: e,
+    className: t,
+    isSelected: s,
+    isEnabled: a,
+    sortDirection: n,
+    column: o,
+    children: r,
+}) {
+    return jsxRuntimeExports.jsxs('div', {
+        className: cx(
+            styles$e.base,
+            a && styles$e.base__active,
+            t,
+            s && styles$e.base__selected,
+            styles$e[`base__${SORT_DIRECTIONS[n]}`],
+        ),
+        onClick: () => {
+            a && (e(o), play.click());
+        },
+        onMouseEnter: () => {
+            a && play.highlight();
+        },
+        children: [
+            r,
+            s && a && jsxRuntimeExports.jsx('div', { className: styles$e.arrow }),
+            s && jsxRuntimeExports.jsx('div', { className: styles$e.line }),
+        ],
+    });
+}
+const VEHICLE_ORDER = [HEAVY_TANK, MEDIUM_TANK, LIGHT_TANK, SPG, AT_SPG];
 var SORT_DIRECTIONS = ((e) => ((e[(e.desc = 1)] = 'desc'), (e[(e.asc = -1)] = 'asc'), e))(SORT_DIRECTIONS || {});
 const [ModelProvider$1, useModel$1] = initializeModelWithContext()(
     ({ observableModel: e }) => {
@@ -92,26 +104,26 @@ const [ModelProvider$1, useModel$1] = initializeModelWithContext()(
                 team: e.array('team', []),
                 visibleColumns: e.array('columnSettings.visibleColumns'),
             },
-            o = computedFn(
+            n = computedFn(
                 () =>
                     map(a.team.get(), identity)
                         .slice()
                         .sort((e, a) => {
-                            const o = String(t) === ColumnEnum.Place ? -1 * Number(s) : Number(s);
+                            const n = String(t) === ColumnEnum.Place ? -1 * Number(s) : Number(s);
                             return String(t) === VEHICLE_COLUMN
                                 ? e.vehicle.vehicleType === a.vehicle.vehicleType
-                                    ? o *
+                                    ? n *
                                       String(e.vehicle.vehicleShortName)
                                           .toLocaleLowerCase()
                                           .localeCompare(String(a.vehicle.vehicleShortName).toLocaleLowerCase())
-                                    : o *
+                                    : n *
                                       (VEHICLE_ORDER.indexOf(e.vehicle.vehicleType) -
                                           VEHICLE_ORDER.indexOf(a.vehicle.vehicleType))
-                                : o * (a.stats[t] - e.stats[t]);
+                                : n * (a.stats[t] - e.stats[t]);
                         }),
                 { equals: constFalse },
             );
-        return { ...a, sortBy: t, sortDirection: s, computes: { getSortedTeam: o } };
+        return { ...a, sortBy: t, sortDirection: s, computes: { getSortedTeam: n } };
     },
     ({ externalModel: e, model: t }) => ({
         setSortBy: action((e) => {
@@ -128,25 +140,23 @@ const [ModelProvider$1, useModel$1] = initializeModelWithContext()(
 );
 var TableType = ((e) => ((e.TabWindow = 'tabWindow'), (e.LeaderBoard = 'leaderBoard'), e))(TableType || {});
 const TeamListTypeContext = reactExports.createContext(TableType.TabWindow),
-    root$c = 'CellDecorator_root_b5c0999b',
+    root$6 = 'CellDecorator_root_b5c0999b',
     base$c = 'CellDecorator_8e41db2a',
-    base__keys = 'CellDecorator_base__keys_63702f2a',
-    base__actions = 'CellDecorator_base__actions_41861a9f',
+    base__keys = 'CellDecorator_base__keys_a3370dfb',
+    base__actions = 'CellDecorator_base__actions_6350e0fb',
     base__tabWindow$1 = 'CellDecorator_base__tabWindow_3990bbbe',
-    base__currentPlayer$3 = 'CellDecorator_base__currentPlayer_eebdddd2',
-    base__player = 'CellDecorator_base__player_36ffb241',
-    base__stats = 'CellDecorator_base__stats_dab61779',
+    base__currentPlayer$3 = 'CellDecorator_base__currentPlayer_4db8f1fd',
+    base__player = 'CellDecorator_base__player_d5652c4a',
+    base__stats = 'CellDecorator_base__stats_a3370dfb',
     base__buffs$1 = 'CellDecorator_base__buffs_3e76b04',
     base__damage = 'CellDecorator_base__damage_c1078d6a',
     base__vehicle = 'CellDecorator_base__vehicle_b5c0999b',
-    base__vehicleIcon = 'CellDecorator_base__vehicleIcon_5adb1a68',
-    base__bordered = 'CellDecorator_base__bordered_b3855552',
-    border$1 = 'CellDecorator_border_a694fc4',
-    children = 'CellDecorator_children_5e23ddc4',
+    base__vehicleIcon = 'CellDecorator_base__vehicleIcon_d2d1ac28',
+    children = 'CellDecorator_children_e848d814',
     base__statsLarge = 'CellDecorator_base__statsLarge_b5c0999b',
     base__kills = 'CellDecorator_base__kills_b5c0999b',
-    styles$c = {
-        root: root$c,
+    styles$d = {
+        root: root$6,
         base: base$c,
         base__keys: base__keys,
         base__actions: base__actions,
@@ -158,8 +168,6 @@ const TeamListTypeContext = reactExports.createContext(TableType.TabWindow),
         base__damage: base__damage,
         base__vehicle: base__vehicle,
         base__vehicleIcon: base__vehicleIcon,
-        base__bordered: base__bordered,
-        border: border$1,
         children: children,
         base__statsLarge: base__statsLarge,
         base__kills: base__kills,
@@ -175,63 +183,75 @@ var CellStyleEnum = ((e) => (
     (e.Kills = 'kills'),
     e
 ))(CellStyleEnum || {});
-const CellDecorator = ({ cellStyle: e, bordered: t = !1, isCurrentPlayer: s, children: a }) => {
-        const o = reactExports.useContext(TeamListTypeContext);
-        return jsxRuntimeExports.jsxs('div', {
-            className: cx(
-                styles$c.base,
-                styles$c[`base__${e}`],
-                styles$c[`base__${o}`],
-                s && styles$c.base__currentPlayer,
-            ),
-            lang: R.strings.settings.LANGUAGE_CODE(),
-            children: [
-                t && jsxRuntimeExports.jsx('div', { className: styles$c.border }),
-                jsxRuntimeExports.jsx('div', { className: styles$c.children, children: a }),
-            ],
+function CellDecorator({ cellStyle: e, bordered: t = !1, isCurrentPlayer: s, children: a }) {
+    const n = reactExports.useContext(TeamListTypeContext);
+    return jsxRuntimeExports.jsx('div', {
+        className: cx(styles$d.base, styles$d[`base__${e}`], styles$d[`base__${n}`], s && styles$d.base__currentPlayer),
+        lang: R.strings.settings.LANGUAGE_CODE(),
+        children: jsxRuntimeExports.jsx('div', { className: styles$d.children, children: a }),
+    });
+}
+const divider$1 = 'Divider_80a19f4b',
+    styles$c = { divider: divider$1 },
+    Divider = reactExports.forwardRef(function ({ classNames: e, className: t, ...s }, a) {
+        return jsxRuntimeExports.jsx('div', {
+            ...s,
+            ref: a,
+            className: clsx(styles$c.divider, e?.base, t),
+            children: jsxRuntimeExports.jsx(Image, {
+                className: e?.image,
+                width: '100%',
+                height: '100%',
+                path: 'post_battle.row_divider',
+                fit: 'cover',
+            }),
         });
-    },
-    root$b = 'RowDecorator_root_aac40ec7',
-    base$b = 'RowDecorator_7f8a82c4',
-    base__currentPlayer$2 = 'RowDecorator_base__currentPlayer_5b1523a3',
-    childrenWrapper = 'RowDecorator_childrenWrapper_f5dbe2f5',
+    }),
+    root$5 = 'RowDecorator_root_aac40ec7',
+    base$b = 'RowDecorator_9c2cbad3',
+    base__header = 'RowDecorator_base__header_abc85b28',
+    base__currentPlayer$2 = 'RowDecorator_base__currentPlayer_c096c296',
+    divider = 'RowDecorator_divider_1658ecef',
+    headerDivider = 'RowDecorator_headerDivider_d597113e',
+    childrenWrapper = 'RowDecorator_childrenWrapper_6deceacc',
     base__defaultText = 'RowDecorator_base__defaultText_aac40ec7',
     base__goldText = 'RowDecorator_base__goldText_aac40ec7',
     base__disable = 'RowDecorator_base__disable_aac40ec7',
-    backgroundHelper = 'RowDecorator_backgroundHelper_54786082',
+    backgroundHelper = 'RowDecorator_backgroundHelper_8061f17f',
     base__goldBg = 'RowDecorator_base__goldBg_aac40ec7',
-    backgroundHelper__header = 'RowDecorator_backgroundHelper__header_781eab89',
     styles$b = {
-        root: root$b,
+        root: root$5,
         base: base$b,
+        base__header: base__header,
         base__currentPlayer: base__currentPlayer$2,
+        divider: divider,
+        headerDivider: headerDivider,
         childrenWrapper: childrenWrapper,
         base__defaultText: base__defaultText,
         base__goldText: base__goldText,
         base__disable: base__disable,
         backgroundHelper: backgroundHelper,
         base__goldBg: base__goldBg,
-        backgroundHelper__header: backgroundHelper__header,
-    },
-    HeaderRowDecorator = ({ children: e }) =>
-        jsxRuntimeExports.jsxs('div', {
-            className: styles$b.base,
-            children: [
-                jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$b.backgroundHelper, styles$b.backgroundHelper__header),
-                }),
-                jsxRuntimeExports.jsx('div', { className: styles$b.childrenWrapper, children: e }),
-            ],
-        }),
-    root$a = 'HeaderIcon_root_1ee11e98',
+    };
+function HeaderRowDecorator({ children: e }) {
+    return jsxRuntimeExports.jsxs('div', {
+        className: cx(styles$b.base, styles$b.base__header),
+        children: [
+            jsxRuntimeExports.jsx('div', { className: cx(styles$b.backgroundHelper) }),
+            jsxRuntimeExports.jsx('div', { className: styles$b.childrenWrapper, children: e }),
+            jsxRuntimeExports.jsx(Divider, { className: styles$b.headerDivider }),
+        ],
+    });
+}
+const root$4 = 'HeaderIcon_root_1ee11e98',
     base$a = 'HeaderIcon_d7f54b6b',
     base__hoverEnabled = 'HeaderIcon_base__hoverEnabled_1ee11e98',
     base__highlighted = 'HeaderIcon_base__highlighted_a21a50f4',
-    base__squad_small = 'HeaderIcon_base__squad_small_1f596beb',
+    base__squad_small = 'HeaderIcon_base__squad_small_63ecb0d8',
     base__buffs = 'HeaderIcon_base__buffs_f96ed88e',
     icon$2 = 'HeaderIcon_icon_35ac5787',
     styles$a = {
-        root: root$a,
+        root: root$4,
         base: base$a,
         base__hoverEnabled: base__hoverEnabled,
         base__highlighted: base__highlighted,
@@ -271,19 +291,19 @@ const HeaderIcon = reactExports.memo(function ({
             }),
         });
     }),
-    root$9 = 'HeaderRow_root_29fa123c',
+    root$3 = 'HeaderRow_root_29fa123c',
     base$9 = 'HeaderRow_9af02515',
-    text = 'HeaderRow_text_9d3eddc1',
+    text = 'HeaderRow_text_f68ca11b',
     text__tabWindow = 'HeaderRow_text__tabWindow_f2f594eb',
     cell = 'HeaderRow_cell_8a6dfec5',
     squad$1 = 'HeaderRow_squad_935f56a9',
-    vehicle = 'HeaderRow_vehicle_50a27f90',
+    vehicle = 'HeaderRow_vehicle_14e4dbf7',
     border = 'HeaderRow_border_871a1365',
-    upperLine = 'HeaderRow_upperLine_5d01e90e',
+    upperLine = 'HeaderRow_upperLine_648f954e',
     iconBorder = 'HeaderRow_iconBorder_37a55ff9',
-    actions = 'HeaderRow_actions_fd40145d',
+    actions = 'HeaderRow_actions_a19b825a',
     styles$9 = {
-        root: root$9,
+        root: root$3,
         base: base$9,
         text: text,
         text__tabWindow: text__tabWindow,
@@ -306,11 +326,15 @@ const HeaderIcon = reactExports.memo(function ({
     },
     tooltipContent = (e, t) => {
         const s = R.strings.last_stand_tooltips.teamList.$dyn(e),
-            a = { header: '', body: '' };
+            a = {
+                contentId: R.views.common.tooltip_window.simple_tooltip_content.SimpleTooltipContent('resId'),
+                decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
+                args: { header: '', body: '' },
+            };
         return (
             t === TableType.LeaderBoard
-                ? ((a.header = s.$dyn('header')), (a.body = s.$dyn('body')))
-                : (a.body = s.$dyn('header')),
+                ? ((a.args.header = s.$dyn('header')), (a.args.body = s.$dyn('body')))
+                : (a.args.body = s.$dyn('header')),
             a
         );
     },
@@ -319,8 +343,8 @@ const HeaderIcon = reactExports.memo(function ({
         sortBy: t = ColumnEnum.Place,
         sortDirection: s,
         onSortChanged: a,
-        tableType: o,
-        sortEnabled: n,
+        tableType: n,
+        sortEnabled: o,
     }) {
         const r = reactExports.useContext(TeamListTypeContext),
             i = reactExports.useCallback(
@@ -331,7 +355,7 @@ const HeaderIcon = reactExports.memo(function ({
             ),
             l = e.map((e) => e);
         l.unshift(VEHICLE_COLUMN);
-        const c = o === TableType.LeaderBoard;
+        const c = n === TableType.LeaderBoard;
         return jsxRuntimeExports.jsxs(HeaderRowDecorator, {
             children: [
                 jsxRuntimeExports.jsx(CellDecorator, {
@@ -348,10 +372,6 @@ const HeaderIcon = reactExports.memo(function ({
                                     }),
                                 }),
                             }),
-                            jsxRuntimeExports.jsx('div', {
-                                className: styles$9.border,
-                                children: jsxRuntimeExports.jsx('div', { className: styles$9.iconBorder }),
-                            }),
                             jsxRuntimeExports.jsx(SimpleTooltip, {
                                 body: R.strings.last_stand_tooltips.teamList.name.header(),
                                 children: jsxRuntimeExports.jsx('span', {
@@ -362,22 +382,16 @@ const HeaderIcon = reactExports.memo(function ({
                         ],
                     }),
                 }),
-                jsxRuntimeExports.jsxs(CellDecorator, {
+                jsxRuntimeExports.jsx(CellDecorator, {
                     cellStyle: CellStyleEnum.Actions,
-                    children: [
-                        jsxRuntimeExports.jsx('div', {
-                            className: styles$9.border,
-                            children: jsxRuntimeExports.jsx('div', { className: styles$9.iconBorder }),
+                    children: jsxRuntimeExports.jsx(SimpleTooltip, {
+                        header: R.strings.last_stand_tooltips.teamList.actions.header(),
+                        body: R.strings.last_stand_tooltips.teamList.actions.body(),
+                        children: jsxRuntimeExports.jsx('div', {
+                            className: styles$9.actions,
+                            children: R.strings.last_stand_battle_results.teamList.actions(),
                         }),
-                        jsxRuntimeExports.jsx(SimpleTooltip, {
-                            header: R.strings.last_stand_tooltips.teamList.actions.header(),
-                            body: R.strings.last_stand_tooltips.teamList.actions.body(),
-                            children: jsxRuntimeExports.jsx('div', {
-                                className: styles$9.actions,
-                                children: R.strings.last_stand_battle_results.teamList.actions(),
-                            }),
-                        }),
-                    ],
+                    }),
                 }),
                 l.map((e) =>
                     jsxRuntimeExports.jsx(
@@ -385,16 +399,16 @@ const HeaderIcon = reactExports.memo(function ({
                         {
                             cellStyle: cellStyle(e),
                             bordered: !0,
-                            children: jsxRuntimeExports.jsx(SimpleTooltip, {
-                                ...tooltipContent(e, o),
+                            children: jsxRuntimeExports.jsx(Tooltip, {
+                                ...tooltipContent(e, n),
                                 children: jsxRuntimeExports.jsx('div', {
-                                    className: cx(styles$9.cell, styles$9[`cell__${o}`]),
+                                    className: cx(styles$9.cell, styles$9[`cell__${n}`]),
                                     children: jsxRuntimeExports.jsx(SortHelper, {
                                         isSelected: c && t === e,
                                         sortDirection: s,
                                         column: e,
                                         onClick: i,
-                                        isEnabled: n,
+                                        isEnabled: o,
                                         children: jsxRuntimeExports.jsx(HeaderIcon, {
                                             icon: e,
                                             isHighlighted: c && t === e,
@@ -411,61 +425,24 @@ const HeaderIcon = reactExports.memo(function ({
                 jsxRuntimeExports.jsx('div', { className: styles$9.upperLine }),
             ],
         });
-    }),
-    root$8 = 'VehicleType_root_4e0d61e4',
-    base$8 = 'VehicleType_7a98563c',
-    base__c_24x24 = 'VehicleType_base__c_24x24_92335fef',
-    base__c_38x38 = 'VehicleType_base__c_38x38_2a1f524c',
-    base__c_48x48 = 'VehicleType_base__c_48x48_e19c5d21',
-    base__c_83x74 = 'VehicleType_base__c_83x74_d3c76480',
-    styles$8 = {
-        root: root$8,
-        base: base$8,
-        base__c_24x24: base__c_24x24,
-        base__c_38x38: base__c_38x38,
-        base__c_48x48: base__c_48x48,
-        base__c_83x74: base__c_83x74,
-    };
-var VehicleTypeSize = ((e) => (
-        (e.C24x24 = 'c_24x24'),
-        (e.C38x38 = 'c_38x38'),
-        (e.C48x48 = 'c_48x48'),
-        (e.C83x74 = 'c_83x74'),
-        e
-    ))(VehicleTypeSize || {}),
-    VehicleTypeColor = ((e) => (
-        (e.Silver = 'silver'),
-        (e.Gray = 'gray'),
-        (e.Elite = 'elite'),
-        (e.WhiteSpanish = 'whitespanish'),
-        (e.WhiteSpanishBright = 'whitespanish_bright'),
-        e
-    ))(VehicleTypeColor || {});
-const VehicleType = reactExports.memo(function ({ type: e, color: t, className: s, size: a = 'c_24x24' }) {
-    return jsxRuntimeExports.jsx('div', {
-        className: cx(styles$8.base, styles$8[`base__${a}`], s),
-        style: {
-            backgroundImage: `url('R.images.last_stand.gui.maps.icons.vehicleTypes.flat.${t}.${a}.${normalizeResource(e)}')`,
-        },
     });
-});
 var __webpack_modules__ = {
         859: (e, t, s) => {
             s.d(t, { O: () => J });
             var a = {};
             (s.r(a), s.d(a, { mouse: () => m, off: () => u, on: () => d, onResize: () => c, onScaleUpdated: () => _ }));
-            var o = {};
-            (s.r(o),
-                s.d(o, {
+            var n = {};
+            (s.r(n),
+                s.d(n, {
                     events: () => a,
-                    getMouseGlobalPosition: () => h,
+                    getMouseGlobalPosition: () => v,
                     getSize: () => y,
-                    graphicsQuality: () => v,
+                    graphicsQuality: () => h,
                     playSound: () => p,
                     setRTPC: () => x,
                 }));
-            var n = {};
-            (s.r(n), s.d(n, { getBgUrl: () => T, getTextureUrl: () => w }));
+            var o = {};
+            (s.r(o), s.d(o, { getBgUrl: () => f, getTextureUrl: () => w }));
             var r = {};
             function i(e) {
                 return (t) => (
@@ -480,30 +457,30 @@ var __webpack_modules__ = {
             }
             (s.r(r),
                 s.d(r, {
-                    addModelObserver: () => D,
+                    addModelObserver: () => k,
                     addPreloadTexture: () => N,
-                    children: () => n,
-                    displayStatus: () => f,
+                    children: () => o,
+                    displayStatus: () => T,
                     displayStatusIs: () => Z,
                     events: () => C,
                     extraSize: () => X,
-                    forceTriggerMouseMove: () => K,
+                    forceTriggerMouseMove: () => z,
                     freezeTextureBeforeResize: () => A,
-                    getBrowserTexturePath: () => I,
-                    getDisplayStatus: () => z,
+                    getBrowserTexturePath: () => D,
+                    getDisplayStatus: () => K,
                     getFontNames: () => Y,
                     getScale: () => H,
                     getSize: () => M,
                     getViewGlobalPosition: () => B,
                     isEventHandled: () => G,
                     isFocused: () => W,
-                    pxToRem: () => V,
-                    remToPx: () => F,
+                    pxToRem: () => F,
+                    remToPx: () => q,
                     resize: () => L,
                     sendEvent: () => $,
-                    setAnimateWindow: () => q,
+                    setAnimateWindow: () => V,
                     setEventHandled: () => U,
-                    setInputPaddingsRem: () => k,
+                    setInputPaddingsRem: () => I,
                     setSidePaddingsRem: () => O,
                     whenTutorialReady: () => Q,
                 }));
@@ -532,27 +509,27 @@ var __webpack_modules__ = {
                                   document.body.addEventListener('mouseleave', s))
                             : l(!1);
                     }
-                    const o = ['down', 'up', 'move'].reduce(
+                    const n = ['down', 'up', 'move'].reduce(
                         (t, s) => (
                             (t[s] = (function (t) {
                                 return (s) => {
                                     e.listeners += 1;
-                                    let o = !0;
-                                    const n = `mouse${t}`,
+                                    let n = !0;
+                                    const o = `mouse${t}`,
                                         r = b[t]((e) => s([e, 'outside']));
                                     function i(e) {
                                         s([e, 'inside']);
                                     }
                                     return (
-                                        window.addEventListener(n, i),
+                                        window.addEventListener(o, i),
                                         a(),
                                         () => {
-                                            o &&
+                                            n &&
                                                 (r(),
-                                                window.removeEventListener(n, i),
+                                                window.removeEventListener(o, i),
                                                 (e.listeners -= 1),
                                                 a(),
-                                                (o = !1));
+                                                (n = !1));
                                         }
                                     );
                                 };
@@ -561,7 +538,7 @@ var __webpack_modules__ = {
                         ),
                         {},
                     );
-                    return Object.assign({}, o, {
+                    return Object.assign({}, n, {
                         disable() {
                             ((e.enabled = !1), a());
                         },
@@ -589,10 +566,10 @@ var __webpack_modules__ = {
             function y(e = 'px') {
                 return 'rem' === e ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
             }
-            function h(e = 'px') {
+            function v(e = 'px') {
                 return 'rem' === e ? viewEnv.getMouseGlobalPositionRem() : viewEnv.getMouseGlobalPositionPx();
             }
-            const v = {
+            const h = {
                     isLow: () => 1 === viewEnv.getGraphicsQuality(),
                     isHigh: () => 0 === viewEnv.getGraphicsQuality(),
                     get: () => viewEnv.getGraphicsQuality(),
@@ -603,10 +580,10 @@ var __webpack_modules__ = {
             function w(e, t, s = 1) {
                 return viewEnv.getChildTexturePath(e, t.width, t.height, s);
             }
-            function T(e, t, s) {
+            function f(e, t, s) {
                 return `url(${w(e, t, s)})`;
             }
-            const f = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+            const T = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                 C = {
                     onTextureFrozen: i('self.onTextureFrozen'),
                     onTextureReady: i('self.onTextureReady'),
@@ -627,8 +604,8 @@ var __webpack_modules__ = {
                 S = (e, t) => {
                     const s = 'GFViewEventProxy';
                     if (void 0 !== t) {
-                        const o = t.args,
-                            n = (function (e, t) {
+                        const n = t.args,
+                            o = (function (e, t) {
                                 if (null == e) return {};
                                 var s = {};
                                 for (var a in e)
@@ -638,11 +615,11 @@ var __webpack_modules__ = {
                                     }
                                 return s;
                             })(t, j);
-                        return void 0 !== o
+                        return void 0 !== n
                             ? viewEnv.handleViewEvent(
-                                  Object.assign({ __Type: s, type: e }, n, {
+                                  Object.assign({ __Type: s, type: e }, o, {
                                       arguments:
-                                          ((a = o),
+                                          ((a = n),
                                           Object.entries(a).map(([e, t]) => {
                                               const s = 'GFValueProxy';
                                               switch (typeof t) {
@@ -656,7 +633,7 @@ var __webpack_modules__ = {
                                           })),
                                   }),
                               )
-                            : viewEnv.handleViewEvent(Object.assign({ __Type: s, type: e }, n));
+                            : viewEnv.handleViewEvent(Object.assign({ __Type: s, type: e }, o));
                     }
                     return viewEnv.handleViewEvent({ __Type: s, type: e });
                     var a;
@@ -676,13 +653,13 @@ var __webpack_modules__ = {
             function N(e) {
                 viewEnv.addPreloadTexture(e);
             }
-            function k(e) {
+            function I(e) {
                 viewEnv.setHitAreaPaddingsRem(e, e, e, e, P);
             }
-            function I(e, t, s, a = 1) {
+            function D(e, t, s, a = 1) {
                 return viewEnv.getWebBrowserTexturePath(e, t, s, a);
             }
-            function D(e, t, s) {
+            function k(e, t, s) {
                 return viewEnv.addDataChangedCallback(e, t, s);
             }
             function O(e) {
@@ -696,7 +673,7 @@ var __webpack_modules__ = {
             }
             function B(e = 'rem') {
                 const t = viewEnv.getViewGlobalPositionRem();
-                return 'rem' === e ? t : { x: F(t.x), y: F(t.y) };
+                return 'rem' === e ? t : { x: q(t.x), y: q(t.y) };
             }
             function A() {
                 viewEnv.freezeTextureBeforeResize();
@@ -704,13 +681,13 @@ var __webpack_modules__ = {
             function H() {
                 return viewEnv.getScale();
             }
-            function V(e) {
+            function F(e) {
                 return viewEnv.pxToRem(e);
             }
-            function F(e) {
+            function q(e) {
                 return viewEnv.remToPx(e);
             }
-            function q(e, t) {
+            function V(e, t) {
                 viewEnv.setAnimateWindow(e, t);
             }
             function W() {
@@ -722,17 +699,17 @@ var __webpack_modules__ = {
             function G() {
                 return viewEnv.isEventHandled();
             }
-            function K() {
+            function z() {
                 viewEnv.forceTriggerMouseMove();
             }
-            function z() {
+            function K() {
                 return viewEnv.getShowingStatus();
             }
             const Y = (() => {
                     let e = [];
                     return () => (0 === e.length && (e = Object.keys(viewEnv.getFontsConfig())), e);
                 })(),
-                Z = Object.keys(f).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === f[t]), e), {}),
+                Z = Object.keys(T).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === T[t]), e), {}),
                 X = {
                     set: (e, t) => {
                         viewEnv.setExtraSizeRem(e, t);
@@ -747,12 +724,12 @@ var __webpack_modules__ = {
                     }),
                     engine.whenReady,
                 ]),
-                J = { view: r, client: o, sound: g };
+                J = { view: r, client: n, sound: g };
         },
         310: (e, t, s) => {
-            s.d(t, { Z: () => n });
+            s.d(t, { Z: () => o });
             var a = s(859);
-            class o {
+            class n {
                 constructor() {
                     ((this._callbacks = void 0),
                         (this._updateHandler = void 0),
@@ -769,22 +746,22 @@ var __webpack_modules__ = {
                         (this._updateHandler = void 0));
                 }
                 static get instance() {
-                    return (window.__dataTracker || (window.__dataTracker = new o()), window.__dataTracker);
+                    return (window.__dataTracker || (window.__dataTracker = new n()), window.__dataTracker);
                 }
                 clear() {
                     (void 0 !== this._updateHandler && (this._updateHandler.clear(), (this._updateHandler = void 0)),
                         (this._callbacks = {}));
                 }
-                addCallback(e, t, s = 0, o = !0) {
+                addCallback(e, t, s = 0, n = !0) {
                     void 0 === this._updateHandler &&
                         (this._updateHandler = engine.on('viewEnv.onDataChanged', this._emmitDataChanged, this));
-                    const n = a.O.view.addModelObserver(e, s, o);
+                    const o = a.O.view.addModelObserver(e, s, n);
                     return (
-                        n > 0
-                            ? ((this._callbacks[n] = t),
-                              s > 0 && (this._views[s] ? this._views[s].push(n) : (this._views[s] = [n])))
+                        o > 0
+                            ? ((this._callbacks[o] = t),
+                              s > 0 && (this._views[s] ? this._views[s].push(o) : (this._views[s] = [o])))
                             : console.error("Can't add callback for model:", e),
-                        n
+                        o
                     );
                 }
                 removeCallback(e, t = 0) {
@@ -804,8 +781,8 @@ var __webpack_modules__ = {
                     });
                 }
             }
-            o.__instance = void 0;
-            const n = o;
+            n.__instance = void 0;
+            const o = n;
         },
         421: (__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
             __webpack_require__.d(__webpack_exports__, { Z: () => __WEBPACK_DEFAULT_EXPORT__ });
@@ -889,8 +866,8 @@ var __webpack_modules__ = {
                 }
             }
             a.__instance = void 0;
-            const o = a;
-            var n = s(310);
+            const n = a;
+            var o = s(310);
             const r = {
                     getNumberFormat: (e, t) => systemLocale.getNumberFormat(e, t),
                     getRealFormat: (e, t) => systemLocale.getRealFormat(e, t),
@@ -965,15 +942,15 @@ var __webpack_modules__ = {
                         (e.SYMBOL_LOCK = 'SymbolLock'));
                 })(p || (p = {})));
             var y = s(859);
-            const h = ['args'];
-            function v(e, t, s, a, o, n, r) {
+            const v = ['args'];
+            function h(e, t, s, a, n, o, r) {
                 try {
-                    var i = e[n](r),
+                    var i = e[o](r),
                         l = i.value;
                 } catch (c) {
                     return void s(c);
                 }
-                i.done ? t(l) : Promise.resolve(l).then(a, o);
+                i.done ? t(l) : Promise.resolve(l).then(a, n);
             }
             const E = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
                 g = (function () {
@@ -990,13 +967,13 @@ var __webpack_modules__ = {
                             function () {
                                 var t = this,
                                     s = arguments;
-                                return new Promise(function (a, o) {
-                                    var n = e.apply(t, s);
+                                return new Promise(function (a, n) {
+                                    var o = e.apply(t, s);
                                     function r(e) {
-                                        v(n, a, o, r, i, 'next', e);
+                                        h(o, a, n, r, i, 'next', e);
                                     }
                                     function i(e) {
-                                        v(n, a, o, r, i, 'throw', e);
+                                        h(o, a, n, r, i, 'throw', e);
                                     }
                                     r(void 0);
                                 });
@@ -1008,8 +985,8 @@ var __webpack_modules__ = {
                 w = (e, t) => {
                     const s = 'GFViewEventProxy';
                     if (void 0 !== t) {
-                        const o = t.args,
-                            n = (function (e, t) {
+                        const n = t.args,
+                            o = (function (e, t) {
                                 if (null == e) return {};
                                 var s = {};
                                 for (var a in e)
@@ -1018,12 +995,12 @@ var __webpack_modules__ = {
                                         s[a] = e[a];
                                     }
                                 return s;
-                            })(t, h);
-                        void 0 !== o
+                            })(t, v);
+                        void 0 !== n
                             ? viewEnv.handleViewEvent(
-                                  Object.assign({ __Type: s, type: e }, n, {
+                                  Object.assign({ __Type: s, type: e }, o, {
                                       arguments:
-                                          ((a = o),
+                                          ((a = n),
                                           Object.entries(a).map(([e, t]) => {
                                               const s = { __Type: 'GFValueProxy', name: e };
                                               switch (typeof t) {
@@ -1040,18 +1017,18 @@ var __webpack_modules__ = {
                                           })),
                                   }),
                               )
-                            : viewEnv.handleViewEvent(Object.assign({ __Type: s, type: e }, n));
+                            : viewEnv.handleViewEvent(Object.assign({ __Type: s, type: e }, o));
                     } else viewEnv.handleViewEvent({ __Type: s, type: e });
                     var a;
                 },
-                T = () => w(l.CLOSE),
-                f = (e, t) => {
+                f = () => w(l.CLOSE),
+                T = (e, t) => {
                     e.keyCode === m.ESCAPE && t();
                 };
             var C = s(421);
-            const j = o.instance,
+            const j = n.instance,
                 S = {
-                    DataTracker: n.Z,
+                    DataTracker: o.Z,
                     ViewModel: C.Z,
                     ViewEventType: l,
                     NumberFormatType: _,
@@ -1060,12 +1037,12 @@ var __webpack_modules__ = {
                     DateFormatType: b,
                     makeGlobalBoundingBox: E,
                     sendMoveEvent: (e) => w(l.MOVE, { isMouseEvent: !0, on: e }),
-                    sendCloseEvent: T,
+                    sendCloseEvent: f,
                     sendClosePopOverEvent: () => w(l.POP_OVER, { on: !1 }),
                     sendShowContextMenuEvent: (e, t, s = 0) => {
                         w(l.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: s, args: t });
                     },
-                    sendShowPopOverEvent: (e, t, s, a, o = R.invalid('resId'), n) => {
+                    sendShowPopOverEvent: (e, t, s, a, n = R.invalid('resId'), o) => {
                         const r = y.O.view.getViewGlobalPosition(),
                             i = s.getBoundingClientRect(),
                             c = i.x,
@@ -1082,19 +1059,19 @@ var __webpack_modules__ = {
                             isMouseEvent: !0,
                             contentID: e,
                             decoratorID: a || R.invalid('resId'),
-                            targetID: o,
+                            targetID: n,
                             direction: t,
                             bbox: E(b),
                             on: !0,
-                            args: n,
+                            args: o,
                         });
                     },
                     addEscapeListener: (e) => {
-                        const t = (t) => f(t, e);
+                        const t = (t) => T(t, e);
                         return (window.addEventListener('keydown', t), () => window.removeEventListener('keydown', t));
                     },
                     closeOnEsc: (e) => {
-                        f(e, T);
+                        T(e, f);
                     },
                     handleViewEvent: w,
                     onBindingsReady: g,
@@ -1114,13 +1091,13 @@ var __webpack_modules__ = {
                         if ('object' != typeof t) return t;
                         for (const a in t)
                             if (Object.prototype.hasOwnProperty.call(t, a)) {
-                                const o = Object.prototype.toString.call(t[a]);
-                                if (o.startsWith('[object CoherentArrayProxy]')) {
-                                    const o = t[a];
+                                const n = Object.prototype.toString.call(t[a]);
+                                if (n.startsWith('[object CoherentArrayProxy]')) {
+                                    const n = t[a];
                                     s[a] = [];
-                                    for (let t = 0; t < o.length; t++) s[a].push({ value: e(o[t].value) });
+                                    for (let t = 0; t < n.length; t++) s[a].push({ value: e(n[t].value) });
                                 } else
-                                    o.startsWith('[object class BW::WULF::ViewModel')
+                                    n.startsWith('[object class BW::WULF::ViewModel')
                                         ? (s[a] = e(t[a]))
                                         : (s[a] = t[a]);
                             }
@@ -1159,44 +1136,43 @@ var __webpack_exports__ = {};
     var e = __webpack_require__(859),
         t = __webpack_require__(461);
     const s =
-            ((o = {
+            ((n = {
                 cloneElement: () => reactExports.cloneElement,
                 memo: () => reactExports.memo,
                 useCallback: () => reactExports.useCallback,
                 useMemo: () => reactExports.useMemo,
                 useRef: () => reactExports.useRef,
             }),
-            (n = {}),
-            __webpack_require__.d(n, o),
-            n),
-        a = (0, s.memo)(({ args: a, children: o, decoratorID: n = 0, isLeftClick: r, isDisabled: i = !1 }) => {
+            (o = {}),
+            __webpack_require__.d(o, n),
+            o),
+        a = (0, s.memo)(({ args: a, children: n, decoratorID: o = 0, isLeftClick: r, isDisabled: i = !1 }) => {
             const l = (0, s.useRef)(null),
                 c = (0, s.useCallback)(() => {
                     ((0, t.c9)(t.B0.CONTEXT_MENU, {
                         contentID: R.views.common.BackportContextMenu('resId'),
-                        decoratorID: n,
+                        decoratorID: o,
                         isMouseEvent: !1,
                         on: !0,
                         args: a,
                     }),
                         e.O.sound.play.yes1());
-                }, [a, n]),
+                }, [a, o]),
                 _ = (0, s.useCallback)(
                     (e) => {
                         ((r && 0 === e.button) || (!r && 2 === e.button)) && !i && c();
                     },
                     [r, i, c],
                 );
-            return (0, s.useMemo)(() => (0, s.cloneElement)(o, { onMouseDown: _, ref: l }), [o, _]);
+            return (0, s.useMemo)(() => (0, s.cloneElement)(n, { onMouseDown: _, ref: l }), [n, _]);
         });
-    var o, n;
+    var n, o;
 })();
 var __webpack_exports__ContextMenu = __webpack_exports__.x;
-const root$7 = 'InteractionControls_root_c9a30f9e',
-    base$7 = 'InteractionControls_146f6573',
-    control = 'InteractionControls_control_e0e0953c',
-    button = 'InteractionControls_button_69089c04',
-    icon$1 = 'InteractionControls_icon_54c40dd8',
+const base$8 = 'InteractionControls_146f6573',
+    control = 'InteractionControls_control_2beca3f5',
+    button = 'InteractionControls_button_5ec72fb9',
+    icon$1 = 'InteractionControls_icon_d91326fc',
     icon__addFriend = 'InteractionControls_icon__addFriend_382e2b7b',
     icon__friendSent = 'InteractionControls_icon__friendSent_41931811',
     icon__friendBlacklist = 'InteractionControls_icon__friendBlacklist_7a788b92',
@@ -1206,9 +1182,9 @@ const root$7 = 'InteractionControls_root_c9a30f9e',
     icon__platoonDone = 'InteractionControls_icon__platoonDone_684bbfd2',
     icon__platoonUnavailable = 'InteractionControls_icon__platoonUnavailable_f10b79f3',
     icon__menu = 'InteractionControls_icon__menu_4472d150',
-    styles$7 = {
-        root: root$7,
-        base: base$7,
+    iconWrapper = 'InteractionControls_iconWrapper_75bdbe8d',
+    styles$8 = {
+        base: base$8,
         control: control,
         button: button,
         icon: icon$1,
@@ -1221,6 +1197,7 @@ const root$7 = 'InteractionControls_root_c9a30f9e',
         icon__platoonDone: icon__platoonDone,
         icon__platoonUnavailable: icon__platoonUnavailable,
         icon__menu: icon__menu,
+        iconWrapper: iconWrapper,
     },
     stopPropagation = (e) => {
         (e.stopPropagation(), e.preventDefault());
@@ -1228,25 +1205,25 @@ const root$7 = 'InteractionControls_root_c9a30f9e',
     pickFriendshipButtonState = (e, t, s) => (e ? 'blacklisted' : t ? 'requestSent' : s ? 'friend' : 'default'),
     FriendshipResources = {
         blacklisted: {
-            icon: styles$7.icon__friendBlacklist,
+            icon: styles$8.icon__friendBlacklist,
             tooltipBody: R.strings.last_stand_tooltips.battleResult.interaction.friend.removeFromBlacklist(),
             isButton: !0,
             isDisabled: !1,
         },
         friend: {
-            icon: styles$7.icon__friend,
+            icon: styles$8.icon__friend,
             tooltipBody: R.strings.last_stand_tooltips.battleResult.interaction.friend.friend(),
             isButton: !0,
             isDisabled: !0,
         },
         requestSent: {
-            icon: styles$7.icon__friendSent,
+            icon: styles$8.icon__friendSent,
             tooltipBody: R.strings.last_stand_tooltips.battleResult.interaction.friend.inviteSent(),
             isButton: !1,
             isDisabled: !1,
         },
         default: {
-            icon: styles$7.icon__addFriend,
+            icon: styles$8.icon__addFriend,
             tooltipBody: R.strings.last_stand_tooltips.battleResult.interaction.friend.sendInvite(),
             isButton: !0,
             isDisabled: !1,
@@ -1256,141 +1233,150 @@ const root$7 = 'InteractionControls_root_c9a30f9e',
         s ? 'platoonSent' : e && !t ? 'platoonCanMade' : t ? 'platoonDone' : 'platoonUnavailable',
     PlatoonResources = {
         platoonSent: {
-            icon: styles$7.icon__platoonSent,
+            icon: styles$8.icon__platoonSent,
             tooltipBody: R.strings.last_stand_tooltips.battleResult.interaction.platoon.platoonSent(),
             isButton: !1,
             isDisabled: !1,
         },
         platoonDone: {
-            icon: styles$7.icon__platoonDone,
+            icon: styles$8.icon__platoonDone,
             tooltipBody: R.strings.last_stand_tooltips.battleResult.interaction.platoon.platoonDone(),
             isButton: !0,
             isDisabled: !0,
         },
         platoonUnavailable: {
-            icon: styles$7.icon__platoonUnavailable,
+            icon: styles$8.icon__platoonUnavailable,
             tooltipBody: R.strings.last_stand_tooltips.battleResult.interaction.platoon.platoonUnavailable(),
             isButton: !1,
             isDisabled: !1,
         },
         platoonCanMade: {
-            icon: styles$7.icon__platoonCanMade,
+            icon: styles$8.icon__platoonCanMade,
             tooltipBody: R.strings.last_stand_tooltips.battleResult.interaction.platoon.platoonCanMade(),
             isButton: !0,
             isDisabled: !1,
         },
     },
-    InteractionControls = observer(
-        ({
-            className: e,
-            isInFriendList: t,
-            playerId: s,
-            userName: a,
-            clanAbbrev: o,
-            vehicleCD: n,
-            clientArenaIdx: r,
-            isBlacklisted: i,
-            isFriendRequestSent: l,
-            isPlatoonRequestCanMade: c,
-            isPlatoonRequestInSquad: _,
-            isPlatoonRequestSent: d,
-        }) => {
-            const {
-                    controls: { sendFriendRequest: u, removeFromBlacklist: b, sendPlatoonInvitation: m },
-                } = useModel$1(),
-                p = pickFriendshipButtonState(i, l, t),
-                x = pickPlatoonButtonState(c, _, d),
-                y = reactExports.useCallback(
-                    (e) => {
-                        (stopPropagation(e), 'blacklisted' === p && b(s, a), 'default' === p && u(s, a, o));
-                    },
-                    [u, b, p, s, a, o],
-                ),
-                h = reactExports.useCallback(
-                    (e) => {
-                        (stopPropagation(e), 'platoonCanMade' === x && m(s, a));
-                    },
-                    [m, x, s, a],
-                ),
-                v = reactExports.useMemo(() => ({ body: PlatoonResources[x].tooltipBody }), [x]),
-                E = reactExports.useMemo(
-                    () => ({ playerId: s, userName: a, clanAbbrev: o, clientArenaIdx: r, vehicleCD: n }),
-                    [s, a, o, r, n],
-                ),
-                g = reactExports.useCallback((e) => {
-                    stopPropagation(e);
-                }, []);
-            return jsxRuntimeExports.jsxs('div', {
-                className: cx(styles$7.base, e),
-                children: [
-                    jsxRuntimeExports.jsx(SimpleTooltip, {
-                        body: FriendshipResources[p].tooltipBody,
-                        children: jsxRuntimeExports.jsx('div', {
-                            className: styles$7.control,
-                            children: FriendshipResources[p].isButton
-                                ? jsxRuntimeExports.jsx(CButton, {
-                                      mixClass: styles$7.button,
-                                      disabled: FriendshipResources[p].isDisabled,
-                                      onClick: y,
-                                      children: jsxRuntimeExports.jsx('div', {
-                                          className: cx(styles$7.icon, FriendshipResources[p].icon),
-                                      }),
-                                  })
-                                : jsxRuntimeExports.jsx('div', {
-                                      className: cx(styles$7.icon, FriendshipResources[p].icon),
+    InteractionControls = observer(function ({
+        className: e,
+        isInFriendList: t,
+        playerId: s,
+        userName: a,
+        clanAbbrev: n,
+        vehicleCD: o,
+        clientArenaIdx: r,
+        isBlacklisted: i,
+        isFriendRequestSent: l,
+        isPlatoonRequestCanMade: c,
+        isPlatoonRequestInSquad: _,
+        isPlatoonRequestSent: d,
+    }) {
+        const {
+                controls: { sendFriendRequest: u, removeFromBlacklist: b, sendPlatoonInvitation: m },
+            } = useModel$1(),
+            p = pickFriendshipButtonState(i, l, t),
+            x = pickPlatoonButtonState(c, _, d),
+            y = reactExports.useCallback(
+                (e) => {
+                    (stopPropagation(e), 'blacklisted' === p && b(s, a), 'default' === p && u(s, a, n));
+                },
+                [u, b, p, s, a, n],
+            ),
+            v = reactExports.useCallback(
+                (e) => {
+                    (stopPropagation(e), 'platoonCanMade' === x && m(s, a));
+                },
+                [m, x, s, a],
+            ),
+            h = reactExports.useMemo(() => ({ body: PlatoonResources[x].tooltipBody }), [x]),
+            E = reactExports.useMemo(
+                () => ({ playerId: s, userName: a, clanAbbrev: n, clientArenaIdx: r, vehicleCD: o }),
+                [s, a, n, r, o],
+            ),
+            g = reactExports.useCallback((e) => {
+                stopPropagation(e);
+            }, []);
+        return jsxRuntimeExports.jsxs('div', {
+            className: cx(styles$8.base, e),
+            children: [
+                jsxRuntimeExports.jsx(SimpleTooltip, {
+                    body: FriendshipResources[p].tooltipBody,
+                    children: jsxRuntimeExports.jsx('div', {
+                        className: styles$8.control,
+                        children: FriendshipResources[p].isButton
+                            ? jsxRuntimeExports.jsx(Button, {
+                                  size: Button.sizes.small,
+                                  theme: Button.themes.secondary,
+                                  className: styles$8.button,
+                                  disabled: FriendshipResources[p].isDisabled,
+                                  onClick: y,
+                                  children: jsxRuntimeExports.jsx('div', {
+                                      className: cx(styles$8.icon, FriendshipResources[p].icon),
                                   }),
-                        }),
-                    }),
-                    jsxRuntimeExports.jsx(SimpleTooltip, {
-                        ...v,
-                        children: jsxRuntimeExports.jsx('div', {
-                            className: styles$7.control,
-                            children: PlatoonResources[x].isButton
-                                ? jsxRuntimeExports.jsx(CButton, {
-                                      mixClass: styles$7.button,
-                                      disabled: PlatoonResources[x].isDisabled,
-                                      onClick: h,
-                                      children: jsxRuntimeExports.jsx('div', {
-                                          className: cx(styles$7.icon, PlatoonResources[x].icon),
-                                      }),
-                                  })
-                                : jsxRuntimeExports.jsx('div', {
-                                      className: cx(styles$7.icon, PlatoonResources[x].icon),
+                              })
+                            : jsxRuntimeExports.jsx('div', {
+                                  className: styles$8.iconWrapper,
+                                  children: jsxRuntimeExports.jsx('div', {
+                                      className: cx(styles$8.icon, FriendshipResources[p].icon),
                                   }),
-                        }),
+                              }),
                     }),
-                    jsxRuntimeExports.jsx(SimpleTooltip, {
-                        body: R.strings.last_stand_tooltips.battleResult.interaction.menu(),
-                        children: jsxRuntimeExports.jsx('div', {
-                            children: jsxRuntimeExports.jsx(__webpack_exports__ContextMenu, {
-                                args: E,
-                                isLeftClick: !0,
-                                children: jsxRuntimeExports.jsx('div', {
-                                    className: styles$7.control,
-                                    children: jsxRuntimeExports.jsx(CButton, {
-                                        mixClass: styles$7.button,
-                                        type: ButtonType.secondary,
-                                        onClick: g,
-                                        children: jsxRuntimeExports.jsx('div', {
-                                            className: cx(styles$7.icon, styles$7.icon__menu),
-                                        }),
+                }),
+                jsxRuntimeExports.jsx(SimpleTooltip, {
+                    ...h,
+                    children: jsxRuntimeExports.jsx('div', {
+                        className: styles$8.control,
+                        children: PlatoonResources[x].isButton
+                            ? jsxRuntimeExports.jsx(Button, {
+                                  size: Button.sizes.small,
+                                  theme: Button.themes.secondary,
+                                  className: styles$8.button,
+                                  disabled: PlatoonResources[x].isDisabled,
+                                  onClick: v,
+                                  children: jsxRuntimeExports.jsx('div', {
+                                      className: cx(styles$8.icon, PlatoonResources[x].icon),
+                                  }),
+                              })
+                            : jsxRuntimeExports.jsx('div', {
+                                  className: styles$8.iconWrapper,
+                                  children: jsxRuntimeExports.jsx('div', {
+                                      className: cx(styles$8.icon, PlatoonResources[x].icon),
+                                  }),
+                              }),
+                    }),
+                }),
+                jsxRuntimeExports.jsx(SimpleTooltip, {
+                    body: R.strings.last_stand_tooltips.battleResult.interaction.menu(),
+                    children: jsxRuntimeExports.jsx('div', {
+                        children: jsxRuntimeExports.jsx(__webpack_exports__ContextMenu, {
+                            args: E,
+                            isLeftClick: !0,
+                            children: jsxRuntimeExports.jsx('div', {
+                                className: styles$8.control,
+                                children: jsxRuntimeExports.jsx(Button, {
+                                    size: Button.sizes.small,
+                                    theme: Button.themes.secondary,
+                                    className: styles$8.button,
+                                    onClick: g,
+                                    children: jsxRuntimeExports.jsx('div', {
+                                        className: cx(styles$8.icon, styles$8.icon__menu),
                                     }),
                                 }),
                             }),
                         }),
                     }),
-                ],
-            });
-        },
-    ),
+                }),
+            ],
+        });
+    }),
     BOT_PLAYER_ID = 0,
     RowDecorator = reactExports.memo(function ({
         bgColor: e,
         textColor: t,
         children: s,
         playerId: a,
-        userName: o,
-        vehicleCD: n,
+        userName: n,
+        vehicleCD: o,
         isCurrentPlayer: r,
         clanAbbrev: i,
         clientArenaIdx: l,
@@ -1398,7 +1384,7 @@ const root$7 = 'InteractionControls_root_c9a30f9e',
         isReady: _,
     }) {
         return jsxRuntimeExports.jsx(__webpack_exports__ContextMenu, {
-            args: { playerId: a, userName: o, clanAbbrev: i, clientArenaIdx: l, vehicleCD: n },
+            args: { playerId: a, userName: n, clanAbbrev: i, clientArenaIdx: l, vehicleCD: o },
             isDisabled: r,
             children: jsxRuntimeExports.jsxs('div', {
                 className: cx(
@@ -1411,6 +1397,7 @@ const root$7 = 'InteractionControls_root_c9a30f9e',
                 children: [
                     jsxRuntimeExports.jsx('div', { className: styles$b.backgroundHelper }),
                     jsxRuntimeExports.jsx('div', { className: styles$b.childrenWrapper, children: s }),
+                    jsxRuntimeExports.jsx(Divider, { className: styles$b.divider }),
                 ],
             }),
         });
@@ -1418,32 +1405,34 @@ const root$7 = 'InteractionControls_root_c9a30f9e',
 var TeamMemberBanType = ((e) => ((e.NotBanned = 'notBanned'), (e.Warned = 'warned'), (e.Banned = 'banned'), e))(
     TeamMemberBanType || {},
 );
-const root$6 = 'PlayerInfo_root_56d02918',
-    base$6 = 'PlayerInfo_c13516d9',
+const root$2 = 'PlayerInfo_root_56d02918',
+    base$7 = 'PlayerInfo_c13516d9',
+    base__withBadge = 'PlayerInfo_base__withBadge_d7f77396',
     nickName = 'PlayerInfo_nickName_7b81bced',
     nickName__withSquad = 'PlayerInfo_nickName__withSquad_7cb67087',
-    userName = 'PlayerInfo_userName_948f5015',
+    userName = 'PlayerInfo_userName_25c3a445',
+    base__tabWindow = 'PlayerInfo_base__tabWindow_56d02918',
     userName__withBadge = 'PlayerInfo_userName__withBadge_a8d4a0ad',
     name = 'PlayerInfo_name_20d67aee',
     base__currentPlayer$1 = 'PlayerInfo_base__currentPlayer_56d02918',
-    base__tabWindow = 'PlayerInfo_base__tabWindow_56d02918',
     clanTag = 'PlayerInfo_clanTag_c2c71134',
-    squad = 'PlayerInfo_squad_e7a2ab25',
-    squad__highContrast = 'PlayerInfo_squad__highContrast_e04ef72b',
+    squad = 'PlayerInfo_squad_26aabba7',
+    squad__highContrast = 'PlayerInfo_squad__highContrast_e3e2d918',
     squad__defaultAlly = 'PlayerInfo_squad__defaultAlly_507bf2dc',
-    banIcon = 'PlayerInfo_banIcon_fa60558c',
+    banIcon = 'PlayerInfo_banIcon_56491f35',
     banIcon__warned = 'PlayerInfo_banIcon__warned_1c18ebaa',
     banIcon__banned = 'PlayerInfo_banIcon__banned_732735b5',
-    styles$6 = {
-        root: root$6,
-        base: base$6,
+    styles$7 = {
+        root: root$2,
+        base: base$7,
+        base__withBadge: base__withBadge,
         nickName: nickName,
         nickName__withSquad: nickName__withSquad,
         userName: userName,
+        base__tabWindow: base__tabWindow,
         userName__withBadge: userName__withBadge,
         name: name,
         base__currentPlayer: base__currentPlayer$1,
-        base__tabWindow: base__tabWindow,
         clanTag: clanTag,
         squad: squad,
         squad__highContrast: squad__highContrast,
@@ -1452,73 +1441,75 @@ const root$6 = 'PlayerInfo_root_56d02918',
         banIcon__warned: banIcon__warned,
         banIcon__banned: banIcon__banned,
     },
-    TABLE_TYPE_BADGE = { [TableType.TabWindow]: 'default', [TableType.LeaderBoard]: 'default' },
-    PlayerInfo = ({ user: e, squadNum: t, isOwnSquad: s = !1, banType: a, isCurrentPlayer: o }) => {
-        const n = reactExports.useContext(TeamListTypeContext),
-            r = TABLE_TYPE_BADGE[n],
-            i = R.images.last_stand.gui.maps.icons.common.teamList.squad.$dyn(r),
-            l = t > 0;
-        return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$6.base, styles$6[`base__${n}`], o && styles$6.base__currentPlayer),
-            children: [
-                l &&
-                    jsxRuntimeExports.jsx('div', {
-                        className: cx(
-                            styles$6.squad,
-                            styles$6[`squad__${r}`],
-                            s && 'default' === r && styles$6.squad__defaultAlly,
-                        ),
-                        style: { backgroundImage: `url('${i.$dyn(s ? 'ally' : 'other')}')` },
-                        children: t,
-                    }),
-                jsxRuntimeExports.jsxs('div', {
-                    className: cx(styles$6.nickName, l && styles$6.nickName__withSquad),
-                    children: [
-                        a !== TeamMemberBanType.NotBanned &&
-                            jsxRuntimeExports.jsx(SimpleTooltip, {
-                                ...() => {
-                                    if (a === TeamMemberBanType.NotBanned) return { body: void 0, header: void 0 };
-                                    const e = R.strings.last_stand_tooltips.teamList.$dyn(a);
-                                    if (o) {
-                                        return { body: e.$dyn('self').$dyn('body'), header: e.$dyn('header') };
-                                    }
-                                    return { body: e.$dyn('body'), header: e.$dyn('header') };
-                                },
-                                children: jsxRuntimeExports.jsx('div', {
-                                    className: cx(styles$6.banIcon, styles$6[`banIcon__${a}`]),
-                                }),
-                            }),
-                        jsxRuntimeExports.jsx('div', {
-                            className: styles$6.name,
-                            children: jsxRuntimeExports.jsx(PlayerNickname, {
-                                ...e,
-                                igrType: e.igrType,
-                                badge: e.badge,
-                                userNameClassName: cx(
-                                    styles$6.userName,
-                                    e.badge.badgeID && styles$6.userName__withBadge,
-                                ),
-                                suffixBadge: e.suffixBadge,
-                                clanTagClassName: styles$6.clanTag,
+    TABLE_TYPE_BADGE = { [TableType.TabWindow]: 'default', [TableType.LeaderBoard]: 'default' };
+function PlayerInfo({ user: e, squadNum: t, isOwnSquad: s = !1, banType: a, isCurrentPlayer: n }) {
+    const o = reactExports.useContext(TeamListTypeContext),
+        r = TABLE_TYPE_BADGE[o],
+        i = R.images.last_stand.gui.maps.icons.common.teamList.squad.$dyn(r),
+        l = t > 0;
+    return jsxRuntimeExports.jsxs('div', {
+        className: cx(
+            styles$7.base,
+            styles$7[`base__${o}`],
+            n && styles$7.base__currentPlayer,
+            e.badge.badgeID && styles$7.base__withBadge,
+        ),
+        children: [
+            l &&
+                jsxRuntimeExports.jsx('div', {
+                    className: cx(
+                        styles$7.squad,
+                        styles$7[`squad__${r}`],
+                        s && 'default' === r && styles$7.squad__defaultAlly,
+                    ),
+                    style: { backgroundImage: `url('${i.$dyn(s ? 'ally' : 'other')}')` },
+                    children: t,
+                }),
+            jsxRuntimeExports.jsxs('div', {
+                className: cx(styles$7.nickName, l && styles$7.nickName__withSquad),
+                children: [
+                    a !== TeamMemberBanType.NotBanned &&
+                        jsxRuntimeExports.jsx(SimpleTooltip, {
+                            ...(() => {
+                                if (a === TeamMemberBanType.NotBanned) return { body: void 0, header: void 0 };
+                                const e = R.strings.last_stand_tooltips.teamList.$dyn(a);
+                                if (n) {
+                                    return { body: e.$dyn('self').$dyn('body'), header: e.$dyn('header') };
+                                }
+                                return { body: e.$dyn('body'), header: e.$dyn('header') };
+                            })(),
+                            children: jsxRuntimeExports.jsx('div', {
+                                className: cx(styles$7.banIcon, styles$7[`banIcon__${a}`]),
                             }),
                         }),
-                    ],
-                }),
-            ],
-        });
-    },
-    root$5 = 'StatValueDecorator_root_5170dfab',
-    base$5 = 'StatValueDecorator_49276f9',
+                    jsxRuntimeExports.jsx('div', {
+                        className: styles$7.name,
+                        children: jsxRuntimeExports.jsx(PlayerNickname, {
+                            ...e,
+                            igrType: e.igrType,
+                            badge: e.badge,
+                            userNameClassName: cx(styles$7.userName, e.badge.badgeID && styles$7.userName__withBadge),
+                            suffixBadge: e.suffixBadge,
+                            clanTagClassName: styles$7.clanTag,
+                        }),
+                    }),
+                ],
+            }),
+        ],
+    });
+}
+const root$1 = 'StatValueDecorator_root_5170dfab',
+    base$6 = 'StatValueDecorator_49276f9',
     base__max = 'StatValueDecorator_base__max_9ad2cb6a',
     crown = 'StatValueDecorator_crown_94f6c06b',
     crown__gold = 'StatValueDecorator_crown__gold_702e5240',
     base__currentPlayer = 'StatValueDecorator_base__currentPlayer_5170dfab',
     crown__silver = 'StatValueDecorator_crown__silver_14f41da8',
     crown__bronze = 'StatValueDecorator_crown__bronze_60a3d8e7',
-    amount = 'StatValueDecorator_amount_e1ea0d5c',
-    styles$5 = {
-        root: root$5,
-        base: base$5,
+    amount = 'StatValueDecorator_amount_5c9f9597',
+    styles$6 = {
+        root: root$1,
+        base: base$6,
         base__max: base__max,
         crown: crown,
         crown__gold: crown__gold,
@@ -1533,38 +1524,60 @@ const root$6 = 'PlayerInfo_root_56d02918',
         isMax: t,
         column: s,
         tableType: a,
-        isCrowned: o,
-        isCurrentPlayer: n,
+        isCrowned: n,
+        isCurrentPlayer: o,
     }) {
         const r = getNumberFormat(e, 1);
         return jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$5.base, n && styles$5.base__currentPlayer, t && styles$5.base__max),
+            className: cx(styles$6.base, o && styles$6.base__currentPlayer, t && styles$6.base__max),
             children: [
-                o &&
+                n &&
                     jsxRuntimeExports.jsx('div', {
                         className: cx(
-                            styles$5.crown,
+                            styles$6.crown,
                             a === TableType.LeaderBoard &&
                                 s === ColumnEnum.Place &&
-                                styles$5[`crown__${CROWN_BY_PLACE[e - 1]}`],
+                                styles$6[`crown__${CROWN_BY_PLACE[e - 1]}`],
                         ),
                     }),
-                jsxRuntimeExports.jsx('span', { className: styles$5.amount, children: r }),
+                jsxRuntimeExports.jsx('span', { className: styles$6.amount, children: r }),
             ],
         });
     }),
-    checkForTag = (e, t) => e.split(',').includes(t),
-    root$4 = 'VehicleInfo_root_9c9aeed',
+    root = 'VehicleType_root_4e0d61e4',
+    base$5 = 'VehicleType_7a98563c',
+    base__c_24x24 = 'VehicleType_base__c_24x24_92335fef',
+    base__c_38x38 = 'VehicleType_base__c_38x38_2a1f524c',
+    base__c_48x48 = 'VehicleType_base__c_48x48_e19c5d21',
+    base__c_83x74 = 'VehicleType_base__c_83x74_d3c76480',
+    styles$5 = {
+        root: root,
+        base: base$5,
+        base__c_24x24: base__c_24x24,
+        base__c_38x38: base__c_38x38,
+        base__c_48x48: base__c_48x48,
+        base__c_83x74: base__c_83x74,
+    };
+reactExports.memo(function ({ type: e, color: t, className: s, size: a = 'c_24x24' }) {
+    return jsxRuntimeExports.jsx('div', {
+        className: cx(styles$5.base, styles$5[`base__${a}`], s),
+        style: {
+            backgroundImage: `url('R.images.last_stand.gui.maps.icons.vehicleTypes.flat.${t}.${a}.${normalizeResource(e)}')`,
+        },
+    });
+});
+const checkForTag = (e, t) => e.split(',').includes(t),
     base$4 = 'VehicleInfo_30590fa0',
-    label$1 = 'VehicleInfo_label_5af110b',
+    label$1 = 'VehicleInfo_label_70315f59',
     premiumIGR = 'VehicleInfo_premiumIGR_aca7dde6',
-    styles$4 = { root: root$4, base: base$4, label: label$1, premiumIGR: premiumIGR },
-    VehicleInfo = observer(({ vehicleShortName: e, vehicleType: t, color: s, tags: a }) =>
-        jsxRuntimeExports.jsxs('div', {
+    vehType = 'VehicleInfo_vehType_af7fa755',
+    styles$4 = { base: base$4, label: label$1, premiumIGR: premiumIGR, vehType: vehType },
+    VehicleInfo = observer(function ({ vehicleShortName: e, vehicleType: t, tags: s }) {
+        return jsxRuntimeExports.jsxs('div', {
             className: styles$4.base,
             children: [
-                jsxRuntimeExports.jsx(VehicleType, { size: VehicleTypeSize.C38x38, color: s, type: t }),
-                checkForTag(a, PREMIUM_IGR_TAG) && jsxRuntimeExports.jsx('div', { className: styles$4.premiumIGR }),
+                jsxRuntimeExports.jsx(VehicleType, { size: sizes.x48x48, type: t, className: styles$4.vehType }),
+                checkForTag(s, PREMIUM_IGR_TAG) && jsxRuntimeExports.jsx('div', { className: styles$4.premiumIGR }),
                 jsxRuntimeExports.jsx(ExtendedText, {
                     text: e,
                     classMix: styles$4.label,
@@ -1572,138 +1585,134 @@ const root$6 = 'PlayerInfo_root_56d02918',
                     isTooltipEnable: !0,
                 }),
             ],
-        }),
-    ),
-    PlayerRow = observer(
-        ({
+        });
+    }),
+    PlayerRow = observer(function ({
+        playerId: e,
+        rowStyle: t,
+        isCurrentPlayer: s,
+        isOwnSquad: a,
+        squadNum: n,
+        user: o,
+        vehicle: r,
+        banType: i,
+        stats: l,
+        columnsMaxValue: c,
+        visibleColumns: _,
+        isReady: d,
+        isPlatoonRequestSent: u,
+        isInFriendList: b,
+        isPlatoonRequestCanMade: m,
+        isPlatoonRequestInSquad: p,
+        isFriendRequestSent: x,
+        isBlacklisted: y,
+        tableType: v,
+        isAlive: h,
+    }) {
+        const { model: E } = useModel$1(),
+            { clientArenaIdx: R, contextMenuPlayerId: g } = E.root.get(),
+            w = (e) => {
+                switch (e) {
+                    case VEHICLE_COLUMN:
+                        return CellStyleEnum.VehicleIcon;
+                    case DAMAGE_COLUMN:
+                        return CellStyleEnum.Damage;
+                }
+                return CellStyleEnum.Stats;
+            },
+            f = e === BOT_PLAYER_ID || !s;
+        return jsxRuntimeExports.jsxs(RowDecorator, {
+            ...t,
             playerId: e,
-            rowStyle: t,
+            userName: o.userName,
+            vehicleCD: r.vehicleCD,
+            clanAbbrev: o.clanAbbrev,
             isCurrentPlayer: s,
-            isOwnSquad: a,
-            squadNum: o,
-            user: n,
-            vehicle: r,
-            banType: i,
-            stats: l,
-            columnsMaxValue: c,
-            visibleColumns: _,
             isReady: d,
-            isPlatoonRequestSent: u,
-            isInFriendList: b,
-            isPlatoonRequestCanMade: m,
-            isPlatoonRequestInSquad: p,
-            isFriendRequestSent: x,
-            isBlacklisted: y,
-            tableType: h,
-            isAlive: v,
-        }) => {
-            const { model: E } = useModel$1(),
-                { clientArenaIdx: R, contextMenuPlayerId: g } = E.root.get(),
-                w = (e) => {
-                    switch (e) {
-                        case VEHICLE_COLUMN:
-                            return CellStyleEnum.VehicleIcon;
-                        case DAMAGE_COLUMN:
-                            return CellStyleEnum.Damage;
-                    }
-                    return CellStyleEnum.Stats;
-                },
-                T = e === BOT_PLAYER_ID || !s,
-                f = s || a ? VehicleTypeColor.WhiteSpanishBright : VehicleTypeColor.Gray;
-            return jsxRuntimeExports.jsxs(RowDecorator, {
-                ...t,
-                playerId: e,
-                userName: n.userName,
-                vehicleCD: r.vehicleCD,
-                clanAbbrev: n.clanAbbrev,
-                isCurrentPlayer: s,
-                isReady: d,
-                clientArenaIdx: R,
-                contextMenuPlayerId: g,
-                isAlive: h !== TableType.TabWindow || v,
-                children: [
-                    jsxRuntimeExports.jsx(CellDecorator, {
-                        cellStyle: CellStyleEnum.Player,
+            clientArenaIdx: R,
+            contextMenuPlayerId: g,
+            isAlive: v !== TableType.TabWindow || h,
+            children: [
+                jsxRuntimeExports.jsx(CellDecorator, {
+                    cellStyle: CellStyleEnum.Player,
+                    isCurrentPlayer: s,
+                    children: jsxRuntimeExports.jsx(PlayerInfo, {
+                        user: o,
+                        squadNum: n,
+                        isOwnSquad: a,
+                        banType: i,
                         isCurrentPlayer: s,
-                        children: jsxRuntimeExports.jsx(PlayerInfo, {
-                            user: n,
-                            squadNum: o,
-                            isOwnSquad: a,
-                            banType: i,
-                            isCurrentPlayer: s,
+                    }),
+                }),
+                jsxRuntimeExports.jsx(CellDecorator, {
+                    cellStyle: CellStyleEnum.Actions,
+                    isCurrentPlayer: s,
+                    children:
+                        f &&
+                        jsxRuntimeExports.jsx(InteractionControls, {
+                            clientArenaIdx: R,
+                            clanAbbrev: o.clanAbbrev,
+                            vehicleCD: r.vehicleCD,
+                            playerId: e,
+                            userName: o.userName,
+                            isBlacklisted: y,
+                            isFriendRequestSent: x,
+                            isInFriendList: b,
+                            isPlatoonRequestCanMade: m,
+                            isPlatoonRequestInSquad: p,
+                            isPlatoonRequestSent: u,
                         }),
-                    }),
-                    jsxRuntimeExports.jsx(CellDecorator, {
-                        cellStyle: CellStyleEnum.Actions,
-                        isCurrentPlayer: s,
-                        children:
-                            T &&
-                            jsxRuntimeExports.jsx(InteractionControls, {
-                                clientArenaIdx: R,
-                                clanAbbrev: n.clanAbbrev,
-                                vehicleCD: r.vehicleCD,
-                                playerId: e,
-                                userName: n.userName,
-                                isBlacklisted: y,
-                                isFriendRequestSent: x,
-                                isInFriendList: b,
-                                isPlatoonRequestCanMade: m,
-                                isPlatoonRequestInSquad: p,
-                                isPlatoonRequestSent: u,
+                }),
+                jsxRuntimeExports.jsx(CellDecorator, {
+                    cellStyle: CellStyleEnum.Vehicle,
+                    children: jsxRuntimeExports.jsx(VehicleInfo, { ...r }),
+                }),
+                _.map((e) => {
+                    const t = e === ColumnEnum.Place ? 1 === l[e] : c[e] === l[e] && l[e] > 0,
+                        a = !l[ColumnEnum.Damage];
+                    return jsxRuntimeExports.jsx(
+                        CellDecorator,
+                        {
+                            cellStyle: w(e),
+                            children: jsxRuntimeExports.jsx(StatValueDecorator, {
+                                tableType: v,
+                                column: e,
+                                current: l[e],
+                                isMax: t,
+                                isCrowned: !a && (e === ColumnEnum.Place ? l[e] < 4 : t),
+                                isCurrentPlayer: s,
                             }),
-                    }),
-                    jsxRuntimeExports.jsx(CellDecorator, {
-                        cellStyle: CellStyleEnum.Vehicle,
-                        children: jsxRuntimeExports.jsx(VehicleInfo, { ...r, color: f }),
-                    }),
-                    _.map((e) => {
-                        const t = e === ColumnEnum.Place ? 1 === l[e] : c[e] === l[e] && l[e] > 0,
-                            a = !l[ColumnEnum.Damage];
-                        return jsxRuntimeExports.jsx(
-                            CellDecorator,
-                            {
-                                cellStyle: w(e),
-                                children: jsxRuntimeExports.jsx(StatValueDecorator, {
-                                    tableType: h,
-                                    column: e,
-                                    current: l[e],
-                                    isMax: t,
-                                    isCrowned: !a && (e === ColumnEnum.Place ? l[e] < 4 : t),
-                                    isCurrentPlayer: s,
-                                }),
-                            },
-                            e,
-                        );
-                    }),
-                ],
-            });
-        },
-    );
+                        },
+                        e,
+                    );
+                }),
+            ],
+        });
+    });
 var RowDecoratorBgColorEnum = ((e) => ((e.Default = 'default'), (e.Red = 'red'), (e.Gold = 'gold'), e))(
         RowDecoratorBgColorEnum || {},
     ),
     RowDecoratorTextColorEnum = ((e) => ((e.Default = 'default'), (e.Gold = 'gold'), e))(
         RowDecoratorTextColorEnum || {},
     );
-const root$3 = 'TeamList_root_68eb33e8',
-    base$3 = 'TeamList_1e6e4250',
-    styles$3 = { root: root$3, base: base$3 },
+const base$3 = 'TeamList_81df03aa',
+    styles$3 = { base: base$3 },
     getRowStyle = (e) => ({
         bgColor: e.isCurrentPlayer ? RowDecoratorBgColorEnum.Gold : RowDecoratorBgColorEnum.Default,
         textColor:
             e.isCurrentPlayer || e.isOwnSquad ? RowDecoratorTextColorEnum.Gold : RowDecoratorTextColorEnum.Default,
     }),
-    TeamList = observer(({ className: e, isSortable: t = !1, tableType: s = TableType.TabWindow }) => {
-        const { model: a, controls: o } = useModel$1(),
-            n = a.sortDirection.get(),
+    TeamList = observer(function ({ className: e, isSortable: t = !1, tableType: s = TableType.TabWindow }) {
+        const { model: a, controls: n } = useModel$1(),
+            o = a.sortDirection.get(),
             r = a.sortBy.get(),
             i = a.computes.getSortedTeam(),
             l = map(a.visibleColumns.get(), identity),
             c = reactExports.useCallback(
                 (e) => {
-                    o.setSortBy(e);
+                    n.setSortBy(e);
                 },
-                [o],
+                [n],
             ),
             _ = {};
         return (
@@ -1721,7 +1730,7 @@ const root$3 = 'TeamList_root_68eb33e8',
                             sortEnabled: t,
                             onSortChanged: c,
                             sortBy: r,
-                            sortDirection: n,
+                            sortDirection: o,
                             tableType: s,
                         }),
                         i.map((e) =>
@@ -1739,9 +1748,11 @@ const root$3 = 'TeamList_root_68eb33e8',
                 }),
             })
         );
-    }),
-    TeamStatsApp = (e) => jsxRuntimeExports.jsx(TeamList, { ...e }),
-    TeamStats = reactExports.memo(function (e) {
+    });
+function TeamStatsApp(e) {
+    return jsxRuntimeExports.jsx(TeamList, { ...e });
+}
+const TeamStats = reactExports.memo(function (e) {
         const { resId: t, ...s } = e,
             a = reactExports.useMemo(() => ({ rootId: t }), [t]);
         return jsxRuntimeExports.jsx(MediaWrapper, {
@@ -1752,12 +1763,11 @@ const root$3 = 'TeamList_root_68eb33e8',
         });
     }),
     [ModelProvider, useModel] = initializeModelWithContext()(({ observableModel: e }) => ({ root: e.object() }), noop),
-    root$2 = 'Caption_root_4db09398',
     base$2 = 'Caption_12fb43ec',
     label = 'Caption_label_c380e02d',
     line = 'Caption_line_ac746f35',
     line__right = 'Caption_line__right_824dbbcc',
-    styles$2 = { root: root$2, base: base$2, label: label, line: line, line__right: line__right };
+    styles$2 = { base: base$2, label: label, line: line, line__right: line__right };
 function Caption({ className: e, text: t }) {
     return jsxRuntimeExports.jsxs('div', {
         className: cx(styles$2.base, e),
@@ -1768,15 +1778,13 @@ function Caption({ className: e, text: t }) {
         ],
     });
 }
-const root$1 = 'Header_root_65f475ba',
-    base$1 = 'Header_ec75a40',
+const base$1 = 'Header_ec75a40',
     container = 'Header_container_b357bdd0',
     container__right = 'Header_container__right_b7afed9a',
     title = 'Header_title_b5162666',
     subtitle = 'Header_subtitle_6cea72b9',
     icon = 'Header_icon_e7539829',
     styles$1 = {
-        root: root$1,
         base: base$1,
         container: container,
         container__right: container__right,
@@ -1816,7 +1824,6 @@ const root$1 = 'Header_root_65f475ba',
             ],
         });
     }),
-    root = 'TabScreenApp_root_51e48dce',
     base = 'TabScreenApp_176a4b5a',
     overlay = 'TabScreenApp_overlay_85c6dabb',
     missionTask = 'TabScreenApp_missionTask_be0c52a3',
@@ -1824,7 +1831,6 @@ const root$1 = 'Header_root_65f475ba',
     tableCaption = 'TabScreenApp_tableCaption_c3a6b840',
     flare = 'TabScreenApp_flare_7a90819c',
     styles = {
-        root: root,
         base: base,
         overlay: overlay,
         missionTask: missionTask,
@@ -1832,7 +1838,7 @@ const root$1 = 'Header_root_65f475ba',
         tableCaption: tableCaption,
         flare: flare,
     },
-    TabScreenApp = observer(() => {
+    TabScreenApp = observer(function () {
         const { model: e } = useModel(),
             { missionTitle: t, missionTask: s, difficultyLevel: a } = e.root.get();
         return jsxRuntimeExports.jsxs('div', {
@@ -1860,4 +1866,8 @@ const root$1 = 'Header_root_65f475ba',
             ],
         });
     });
-runView(jsxRuntimeExports.jsx(ModelProvider, { children: jsxRuntimeExports.jsx(TabScreenApp, {}) }));
+runView(
+    jsxRuntimeExports.jsx(UIProvider, {
+        children: jsxRuntimeExports.jsx(ModelProvider, { children: jsxRuntimeExports.jsx(TabScreenApp, {}) }),
+    }),
+);

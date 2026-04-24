@@ -1,16 +1,16 @@
-.FormatText_base_d0 {
+.FormatText_base_f27a4 {
     display: flex;
     flex-wrap: wrap;
 }
 
-.RoleAction_base_25 {
+.RoleAction_base_ea162 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 140rem;
 }
 
-.RoleAction_image_34 {
+.RoleAction_image_ecc31 {
     width: 128rem;
     height: 128rem;
     background-repeat: no-repeat;
@@ -18,7 +18,7 @@
     background-size: cover;
 }
 
-.RoleAction_description_53 {
+.RoleAction_description_d92f4 {
     color: #f2f2f7;
     font-size: 14rem;
     font-weight: 400;
@@ -28,14 +28,14 @@
     text-align: center;
 }
 
-.Content_base_2d {
+.Content_base_f6e7d {
     display: flex;
     flex-direction: column;
     width: 460rem;
     overflow: hidden;
 }
 
-.Content_title_09 {
+.Content_title_d1241 {
     display: flex;
     width: 100%;
     height: 80rem;
@@ -45,7 +45,7 @@
     position: relative;
 }
 
-.Content_titleRoleIcon_19 {
+.Content_titleRoleIcon_d4935 {
     width: 50rem;
     height: 50rem;
     background-repeat: no-repeat;
@@ -56,7 +56,7 @@
     left: 18rem;
 }
 
-.Content_titleRoleName_4d {
+.Content_titleRoleName_a71c2 {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
@@ -65,30 +65,30 @@
     margin-top: 28rem;
 }
 
-.Content_titleRoleGroupName_aa {
+.Content_titleRoleGroupName_db0f0 {
     color: #feab34;
 }
 
-.Content_separator_e5 {
+.Content_separator_a11f9 {
     width: 100%;
     height: 1rem;
     background: url('R.images.gui.maps.icons.roleExp.actionsTooltip.separator') no-repeat center / contain;
 }
 
-.Content_roleActions_d8 {
+.Content_roleActions_b4c64 {
     width: 100%;
     padding: 13rem 20rem 25rem;
     background: url('R.images.gui.maps.icons.roleExp.actionsTooltip.whiteBg') repeat-y center / contain;
 }
 
-.Content_roleActionsTitle_b6 {
+.Content_roleActionsTitle_b08b6 {
     color: #e9e2bf;
     font-size: 15rem;
     font-weight: 700;
     width: 100%;
 }
 
-.Content_roleActionsContent_f1 {
+.Content_roleActionsContent_c0da6 {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -97,23 +97,23 @@
     margin-bottom: -10rem;
 }
 
-.Content_roleActionsItem_a2 {
+.Content_roleActionsItem_d48e0 {
     margin: 0 5rem;
 }
 
-.Content_roleActionsDisabled_14 {
+.Content_roleActionsDisabled_b8da6 {
     width: 100%;
     padding: 16rem 20rem 22rem;
     color: #feab34;
     font-size: 14rem;
 }
 
-.Content_roleDescription_5f {
+.Content_roleDescription_abac2 {
     width: 100%;
     padding: 16rem 20rem 17rem;
 }
 
-.Content_roleDescriptionTitle_47 {
+.Content_roleDescriptionTitle_bc9bf {
     color: #e9e2bf;
     font-size: 15rem;
     font-weight: 700;
@@ -121,20 +121,20 @@
     margin-bottom: 6rem;
 }
 
-.Content_roleDescriptionText_ef {
+.Content_roleDescriptionText_f6cf0 {
     color: #8c8c7e;
     font-size: 14rem;
     line-height: 18rem;
 }
 
-.Content_footer_38 {
+.Content_footer_acd8a {
     display: flex;
     flex-direction: row;
     width: 100%;
     padding: 14rem 0 22rem 18rem;
 }
 
-.Content_footerImage_63 {
+.Content_footerImage_e3293 {
     width: 32rem;
     height: 32rem;
     margin-top: 3rem;
@@ -144,19 +144,19 @@
     background-size: contain;
 }
 
-.Content_footerText_d2 {
+.Content_footerText_b1ddc {
     color: #8c8c7e;
     font-size: 14rem;
     line-height: 18rem;
     flex: 1;
 }
 
-.TooltipDecorator_base_c9 {
+.TooltipDecorator_base_bf61f {
     display: flex;
     position: absolute;
 }
 
-.TooltipDecorator_base__theme-default_6d .TooltipDecorator_decorator_3d {
+.TooltipDecorator_base__theme-default_bf8f8 .TooltipDecorator_decorator_f4de8 {
     padding: 4rem 6rem 8rem;
     border-image-source: url('R.atlases.components.tooltip_background');
     border-image-slice: 24 fill;

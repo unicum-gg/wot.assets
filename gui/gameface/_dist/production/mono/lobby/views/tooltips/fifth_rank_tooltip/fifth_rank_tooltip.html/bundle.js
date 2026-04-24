@@ -1,25 +1,25 @@
-import { y as s, j as o, w as r } from '../../../../chunks/vendor.js';
-import { i as t, aC as i, n as e, aA as n } from '../../../../chunks/lib.js';
-import { T as a } from '../../../../chunks/tooltip_decorator.js';
-import { g as c } from '../../../../chunks/get_rank_name.js';
-import { R as m } from '../../../../chunks/enums.js';
-import { t as d } from '../../../../chunks/tooltips.module.js';
-/* empty css                        */ const [l, j] = t()(({ observableModel: s }) => ({ root: s.object() }), i),
-    h = s(() => {
-        const { model: s } = j(),
+import { V as s, j as o, a3 as r } from '../../../../chunks/vendor.js';
+import { i as t, n as i, cy as e, cw as n, r as a } from '../../../../chunks/lib.js';
+import { T as c } from '../../../../chunks/tooltip_decorator.js';
+import { g as m } from '../../../../chunks/get_rank_name.js';
+import { R as d } from '../../../../chunks/enums.js';
+import { t as l } from '../../../../chunks/tooltips.module.js';
+/* empty css                        */ const [j, h] = t()(({ observableModel: s }) => ({ root: s.object() }), i),
+    p = s(() => {
+        const { model: s } = h(),
             { from: t } = s.root.get();
         return o.jsxs('div', {
-            className: d.base,
+            className: l.base,
             children: [
-                o.jsx('div', { className: d.heading, children: c(m.Fifth) }),
+                o.jsx('div', { className: l.heading, children: m(d.Fifth) }),
                 o.jsx('div', {
-                    className: r(d.description, d.description__topIndent),
+                    className: r(l.description, l.description__topIndent),
                     children: o.jsx(e, {
                         text: R.strings.comp7_ext.fifthRankTooltip.description(),
-                        binding: { fromScore: t },
+                        binding: { fromScore: o.jsx(n, { value: t }) },
                     }),
                 }),
             ],
         });
     });
-n(o.jsx(l, { children: o.jsx(a, { children: o.jsx(h, {}) }) }));
+a(o.jsx(j, { children: o.jsx(c, { children: o.jsx(p, {}) }) }));

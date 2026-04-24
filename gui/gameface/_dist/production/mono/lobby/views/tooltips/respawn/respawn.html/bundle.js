@@ -1,151 +1,78 @@
-import { v as e, j as s, _ as t } from '../../../../chunks/vendor.js';
-import { i as a, O as r, n as o, _ as n, aU as i, bs as c, r as l, U as p } from '../../../../chunks/lib.js';
-import { p as d } from '../../../../chunks/common.js';
-/* empty css                        */ const [m, u] = a()((e) => {
-    const s = e.observableModel.primitives(['params', 'type']);
+import { t as s, j as e, F as t, H as a } from '../../../../chunks/vendor.js';
+import { i as r, h as o, n, q as i, aB as c, bw as l, bv as d, r as p, U as m } from '../../../../chunks/lib.js';
+import { p as x } from '../../../../chunks/common.js';
+/* empty css                        */ const [j, u] = r()((s) => {
+    const e = s.observableModel.primitives(['params', 'type']);
     return {
-        type: s.type,
+        type: e.type,
         computes: {
-            params: r.primitive(function (e) {
-                return e(s.params.get());
+            params: o.primitive(function (s) {
+                return s(e.params.get());
             }),
         },
     };
-}, o);
-const x = 'Content_2a67c3d5',
-    j = 'Content_2f46cd49',
-    h = 'Content_bg_580b4876',
-    b = 'Content_container_f73799e6',
-    _ = 'Content_title_cc6d6a31',
-    v = 'Content_description_c744435f',
-    f = R.strings.battle_royale.tooltips.respawn,
-    y =
-        ((N = (() => {
-            let e;
-            const s = (s, a) => {
-                var r, o;
-                return (
-                    !1 ===
-                        ((e) =>
-                            'object' == typeof e &&
-                            null !== e &&
-                            ((e) =>
-                                'number' == typeof e.platoonTimeToResurrect &&
-                                'number' == typeof e.platoonRespawnPeriod &&
-                                'number' == typeof e.soloRespawnPeriod)(e))(s) &&
-                        ((e = a),
-                        (o = '$input'),
-                        ((('object' == typeof (r = s) && null !== r) ||
-                            t(
-                                !0,
-                                {
-                                    method: 'typia.json.createAssertParse',
-                                    path: o + '',
-                                    expected: 'RespawnParams',
-                                    value: r,
-                                },
-                                e,
-                            )) &&
-                            ((s, a, r = !0) =>
-                                ('number' == typeof s.platoonTimeToResurrect ||
-                                    t(
-                                        r,
-                                        {
-                                            method: 'typia.json.createAssertParse',
-                                            path: a + '.platoonTimeToResurrect',
-                                            expected: 'number',
-                                            value: s.platoonTimeToResurrect,
-                                        },
-                                        e,
-                                    )) &&
-                                ('number' == typeof s.platoonRespawnPeriod ||
-                                    t(
-                                        r,
-                                        {
-                                            method: 'typia.json.createAssertParse',
-                                            path: a + '.platoonRespawnPeriod',
-                                            expected: 'number',
-                                            value: s.platoonRespawnPeriod,
-                                        },
-                                        e,
-                                    )) &&
-                                ('number' == typeof s.soloRespawnPeriod ||
-                                    t(
-                                        r,
-                                        {
-                                            method: 'typia.json.createAssertParse',
-                                            path: a + '.soloRespawnPeriod',
-                                            expected: 'number',
-                                            value: s.soloRespawnPeriod,
-                                        },
-                                        e,
-                                    )))(r, o + '', !0)) ||
-                            t(
-                                !0,
-                                {
-                                    method: 'typia.json.createAssertParse',
-                                    path: o + '',
-                                    expected: 'RespawnParams',
-                                    value: r,
-                                },
-                                e,
-                            )),
-                    s
-                );
-            };
-            return (e, t) => s(JSON.parse(e), t);
-        })()),
+}, n);
+const _ = 'Content_2a67c3d5',
+    h = 'Content_2f46cd49',
+    v = 'Content_bg_580b4876',
+    N = 'Content_container_f73799e6',
+    b = 'Content_title_cc6d6a31',
+    f = 'Content_description_c744435f',
+    y = R.strings.battle_royale.tooltips.respawn,
+    g = t({ platoonTimeToResurrect: a(), platoonRespawnPeriod: a(), soloRespawnPeriod: a() }),
+    w =
+        ((C = l(g)),
         function () {
-            return u().model.computes.params(N);
+            return u().model.computes.params(C);
         });
-var N;
-const w = n.resolve('strings'),
-    P = e(function () {
-        const { platoonTimeToResurrect: e, soloRespawnPeriod: t, platoonRespawnPeriod: a } = y(),
-            r = d(w.readOrEmpty('battle_royale.tooltips.respawn.solo.description')),
-            o = d(w.readOrEmpty('battle_royale.tooltips.respawn.platoon.description'));
-        return s.jsx('div', {
-            className: x,
-            children: s.jsx('div', {
-                className: h,
-                children: s.jsxs('div', {
-                    className: j,
+var C;
+const H = i.resolve('strings'),
+    T = s(function () {
+        const { platoonTimeToResurrect: s, soloRespawnPeriod: t, platoonRespawnPeriod: a } = w(),
+            r = x(H.readOrEmpty('battle_royale.tooltips.respawn.solo.description')),
+            o = x(H.readOrEmpty('battle_royale.tooltips.respawn.platoon.description'));
+        return e.jsx('div', {
+            className: _,
+            children: e.jsx('div', {
+                className: v,
+                children: e.jsxs('div', {
+                    className: h,
                     children: [
-                        s.jsx('div', {
-                            className: b,
-                            children: s.jsx('div', { className: v, children: f.common.description() }),
+                        e.jsx('div', {
+                            className: N,
+                            children: e.jsx('div', { className: f, children: y.common.description() }),
                         }),
-                        s.jsxs('div', {
-                            className: b,
+                        e.jsxs('div', {
+                            className: N,
                             children: [
-                                s.jsx('div', { className: _, children: f.solo.title() }),
-                                r.map(({ text: e, params: a }) =>
-                                    s.jsx(
-                                        i,
+                                e.jsx('div', { className: b, children: y.solo.title() }),
+                                r.map(({ text: s, params: a }) =>
+                                    e.jsx(
+                                        c,
                                         {
                                             upgradeLegacy: !0,
-                                            text: e,
+                                            text: s,
                                             params: { ...a, duration: t },
-                                            className: v,
+                                            className: f,
                                             split: !0,
                                         },
-                                        e,
+                                        s,
                                     ),
                                 ),
                             ],
                         }),
-                        s.jsxs('div', {
-                            className: b,
+                        e.jsxs('div', {
+                            className: N,
                             children: [
-                                s.jsx('div', { className: _, children: f.platoon.title() }),
+                                e.jsx('div', { className: b, children: y.platoon.title() }),
                                 o.map(({ text: t, params: r }) =>
-                                    s.jsx(
-                                        i,
+                                    e.jsx(
+                                        c,
                                         {
                                             upgradeLegacy: !0,
                                             text: t,
-                                            params: { ...r, timeToResurrect: e, duration: a },
-                                            className: v,
+                                            params: { ...r, timeToResurrect: s, duration: a },
+                                            className: f,
                                             split: !0,
                                         },
                                         t,
@@ -158,45 +85,44 @@ const w = n.resolve('strings'),
             }),
         });
     }),
-    g = { base: 'Footer_82c68168', text: 'Footer_text_c859c809' };
-function T() {
-    return s.jsx('div', {
-        className: g.base,
-        children: s.jsxs('span', {
-            className: g.text,
+    k = 'Footer_82c68168',
+    P = 'Footer_text_c859c809';
+function F() {
+    return e.jsx('div', {
+        className: k,
+        children: e.jsxs('span', {
+            className: P,
             children: [R.strings.battle_royale.tooltips.respawn.footer.text(), ' '],
         }),
     });
 }
-const A = {
-        base: 'Header_9a6b431',
-        icon: 'Header_icon_937d671c',
-        description: 'Header_description_7d3252af',
-        title: 'Header_title_6d0764fe',
-        subtitle: 'Header_subtitle_c9393f08',
-    },
-    C = R.strings.battle_royale.tooltips.respawn;
-function H() {
-    return s.jsxs('div', {
-        className: A.base,
+const E = 'Header_9a6b431',
+    L = 'Header_icon_937d671c',
+    O = 'Header_description_7d3252af',
+    q = 'Header_title_6d0764fe',
+    A = 'Header_subtitle_c9393f08',
+    B = R.strings.battle_royale.tooltips.respawn;
+function D() {
+    return e.jsxs('div', {
+        className: E,
         children: [
-            s.jsx('div', { className: A.icon }),
-            s.jsxs('div', {
-                className: A.description,
+            e.jsx('div', { className: L }),
+            e.jsxs('div', {
+                className: O,
                 children: [
-                    s.jsx('div', { className: A.title, children: C.title() }),
-                    s.jsx('div', { className: A.subtitle, children: C.subtitle() }),
+                    e.jsx('div', { className: q, children: B.title() }),
+                    e.jsx('div', { className: A, children: B.subtitle() }),
                 ],
             }),
         ],
     });
 }
-const k = 'App_2e4efbd5';
-function O() {
-    return s.jsx(c, {
-        children: s.jsx(c.Decorator, {
-            children: s.jsxs('div', { className: k, children: [s.jsx(H, {}), s.jsx(P, {}), s.jsx(T, {})] }),
+const M = 'App_2e4efbd5';
+function U() {
+    return e.jsx(d, {
+        children: e.jsx(d.Decorator, {
+            children: e.jsxs('div', { className: M, children: [e.jsx(D, {}), e.jsx(T, {}), e.jsx(F, {})] }),
         }),
     });
 }
-l(s.jsx(p, { children: s.jsx(m, { children: s.jsx(O, {}) }) }));
+p(e.jsx(m, { children: e.jsx(j, { children: e.jsx(U, {}) }) }));

@@ -1,4 +1,5 @@
-import { j as a, t as s } from './vendor.js';
+import { j as s, f as a } from './vendor.js';
+import './lib.js';
 const n = {
     base: 'DailyBonus_6602def3',
     dailyBonusContainer: 'DailyBonus_dailyBonusContainer_6602def3',
@@ -7,14 +8,14 @@ const n = {
     dailyBonusIcon__stpcoin: 'DailyBonus_dailyBonusIcon__stpcoin_f19cd0df',
 };
 function o({ coinType: o, dailyBonusFactor: i, className: c }) {
-    return a.jsxs('div', {
-        className: s(n.base, c),
+    return s.jsxs('div', {
+        className: a(n.base, c),
         children: [
-            a.jsx('div', {
+            s.jsx('div', {
                 className: n.dailyBonusContainer,
-                children: a.jsx('div', { className: s(n.dailyBonusIcon, n[`dailyBonusIcon__${o}`]) }),
+                children: s.jsx('div', { className: a(n.dailyBonusIcon, n[`dailyBonusIcon__${o}`]) }),
             }),
-            a.jsx('div', { className: n.factor, children: `×${i}` }),
+            s.jsx('div', { className: n.factor, children: `×${i}` }),
         ],
     });
 }
