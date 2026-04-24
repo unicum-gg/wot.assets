@@ -361,6 +361,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1239,7 +1240,7 @@
                     'onShow',
                     'onHide',
                 ];
-                function $(u) {
+                function K(u) {
                     return Object.entries(u || {}).map(([u, e]) => {
                         const t = { __Type: 'GFValueProxy', name: u };
                         switch (typeof e) {
@@ -1257,7 +1258,7 @@
                         return t;
                     });
                 }
-                const K = (u, e, t = {}, r = 0) => {
+                const $ = (u, e, t = {}, r = 0) => {
                         viewEnv.handleViewEvent(
                             Object.assign(
                                 {
@@ -1322,7 +1323,7 @@
                             ),
                             f = (0, r.useCallback)(() => {
                                 (v.current.isVisible && v.current.timeoutId) ||
-                                    (K(t, d, { isMouseEvent: !0, on: !0, arguments: $(n) }, w),
+                                    ($(t, d, { isMouseEvent: !0, on: !0, arguments: K(n) }, w),
                                     h && h(),
                                     (v.current.isVisible = !0));
                             }, [t, d, n, w, h]),
@@ -1330,7 +1331,7 @@
                                 if (v.current.isVisible || v.current.timeoutId) {
                                     const u = v.current.timeoutId;
                                     (u > 0 && (clearTimeout(u), (v.current.timeoutId = 0)),
-                                        K(t, d, { on: !1 }, w),
+                                        $(t, d, { on: !1 }, w),
                                         v.current.isVisible && m && m(),
                                         (v.current.isVisible = !1));
                                 }

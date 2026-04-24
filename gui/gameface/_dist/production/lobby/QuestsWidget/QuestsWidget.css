@@ -1,0 +1,888 @@
+.App_base_62 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBar_base_45 {
+    width: 100%;
+    height: 12rem;
+    position: relative;
+}
+.ProgressBar_base__medium_62 {
+    height: 6rem;
+}
+.ProgressBar_base__small_df {
+    height: 2rem;
+}
+.ProgressBar_background_51 {
+    width: 100%;
+    max-width: 8001px;
+    height: 100%;
+    background-image: var(--progress-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ProgressBar_background__medium_6e {
+    height: 6rem;
+}
+.ProgressBar_background__small_46 {
+    height: 2rem;
+}
+.ProgressBar_lineWrapper_6a {
+    display: flex;
+    flex: 1;
+}
+
+.ProgressBarBlink_base_24 {
+    width: 60rem;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+}
+
+.ProgressBarBlink_base__medium_ec {
+    width: 42rem;
+    height: 70rem;
+}
+
+.ProgressBarBlink_base__small_0f {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressLineImpose_base_80 {
+    max-width: 8001px;
+    height: 100%;
+    background-color: var(--progress-line-base);
+    position: relative;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressLineImpose_base__disabled_cc {
+    background-color: var(--progress-line-disabled);
+}
+.ProgressLineImpose_base__finished_d4 {
+    background-color: var(--progress-line-finished);
+}
+.ProgressLineImpose_base__withoutBounce_56 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressLineImpose_pattern_1c {
+    max-width: 8001px;
+    background-image: var(--progress-pattern-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-disabled);
+    left: 0;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-finished);
+}
+.ProgressLineImpose_gradient_35 {
+    max-width: 8001px;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    bottom: 1rem;
+    left: 0;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
+    display: none;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
+}
+.ProgressLineImpose_glow_a5 {
+    width: 60rem;
+    max-width: 8001px;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.ProgressLineImpose_glow__left_d8 {
+    left: 1rem;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+    display: none;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaGrow_base_7e {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressBarDeltaGrow_glow_68 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+.Quest_base_9a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 64rem;
+    height: 64rem;
+    margin: 0 12rem 2rem 0;
+    padding: 8rem 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.mediaMedium .Quest_base_9a {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.mediaExtraLarge .Quest_base_9a {
+    width: 100%;
+    height: 96rem;
+    margin-bottom: 6rem;
+}
+.Quest_offence_23 {
+    background: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.small') no-repeat
+        left center / contain;
+}
+.mediaMedium .Quest_offence_23 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.medium');
+}
+.mediaExtraLarge .Quest_offence_23 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.large');
+}
+.Quest_defence_96 {
+    background: url('R.images.historical_battles.gui.maps.icons.artefact.quests.defence.backgrounds.small') no-repeat
+        left center / contain;
+}
+.mediaMedium .Quest_defence_96 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.artefact.quests.defence.backgrounds.medium');
+}
+.mediaExtraLarge .Quest_defence_96 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.artefact.quests.defence.backgrounds.large');
+}
+.Quest_offence_hover_87 {
+    background: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.hover.small')
+        no-repeat left center / contain;
+}
+.mediaMedium .Quest_offence_hover_87 {
+    background: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.hover.medium')
+        no-repeat left center / contain;
+}
+.mediaExtraLarge .Quest_offence_hover_87 {
+    background: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.hover.large')
+        no-repeat left center / cover;
+}
+.Quest_offence_final_hover_ba {
+    background: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.finalQuest.hover.small')
+        no-repeat left center / contain;
+}
+.mediaMedium .Quest_offence_final_hover_ba {
+    background-image: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.finalQuest.hover.medium');
+}
+.mediaExtraLarge .Quest_offence_final_hover_ba {
+    background-image: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.finalQuest.hover.large');
+}
+.Quest_offence_final_above_hover_23 {
+    height: 64rem;
+    background: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.finalQuest.hover.small_above')
+        no-repeat left center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    transition: opacity 0.3s ease-in;
+}
+.mediaMedium .Quest_offence_final_above_hover_23 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.finalQuest.hover.medium_above');
+}
+.mediaExtraLarge .Quest_offence_final_above_hover_23 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.finalQuest.hover.large_above');
+}
+.Quest_offence_final_above_hover_23 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.mediaExtraLarge .Quest_offence_final_above_hover_23 {
+    height: 96rem;
+}
+.Quest_offence_23:hover .Quest_finalQuestGlow_8f {
+    opacity: 1;
+}
+.Quest_offence_23:hover .Quest_offence_final_above_hover_23 {
+    opacity: 1;
+}
+.Quest_defence_hover_9b {
+    background: url('R.images.historical_battles.gui.maps.icons.artefact.quests.defence.backgrounds.hover.small')
+        no-repeat left center / cover;
+}
+.mediaMedium .Quest_defence_hover_9b {
+    background-image: url('R.images.historical_battles.gui.maps.icons.artefact.quests.defence.backgrounds.hover.medium');
+}
+.mediaExtraLarge .Quest_defence_hover_9b {
+    background-image: url('R.images.historical_battles.gui.maps.icons.artefact.quests.defence.backgrounds.hover.large');
+}
+.Quest_done_03 {
+    background: url('R.images.historical_battles.gui.maps.icons.artefact.quests.done.backgrounds.hover.small') no-repeat
+        left center / cover;
+}
+.mediaMedium .Quest_done_03 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.artefact.quests.done.backgrounds.hover.medium');
+}
+.mediaExtraLarge .Quest_done_03 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.artefact.quests.done.backgrounds.hover.large');
+}
+.Quest_offence_hover_87,
+.Quest_defence_hover_9b,
+.Quest_offence_final_hover_ba {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 64rem;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    transition: opacity 0.3s ease-in;
+}
+.mediaExtraLarge .Quest_offence_hover_87,
+.mediaExtraLarge .Quest_defence_hover_9b,
+.mediaExtraLarge .Quest_offence_final_hover_ba {
+    height: 96rem;
+}
+.Quest_base_9a:hover .Quest_offence_hover_87,
+.Quest_base_9a:hover .Quest_defence_hover_9b,
+.Quest_base_9a:hover .Quest_offence_final_hover_ba {
+    opacity: 1;
+}
+.Quest_base_9a:hover .Quest_offence_hover_87.Quest_done_03,
+.Quest_base_9a:hover .Quest_defence_hover_9b.Quest_done_03,
+.Quest_base_9a:hover .Quest_offence_final_hover_ba.Quest_done_03 {
+    background: url('R.images.historical_battles.gui.maps.icons.artefact.quests.done.backgrounds.hover.large') no-repeat
+        left center / cover;
+    opacity: 1;
+}
+.mediaMedium .Quest_base_9a:hover .Quest_offence_hover_87.Quest_done_03,
+.mediaMedium .Quest_base_9a:hover .Quest_defence_hover_9b.Quest_done_03,
+.mediaMedium .Quest_base_9a:hover .Quest_offence_final_hover_ba.Quest_done_03 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.artefact.quests.done.backgrounds.hover.medium');
+}
+.mediaLarge .Quest_base_9a:hover .Quest_offence_hover_87.Quest_done_03,
+.mediaLarge .Quest_base_9a:hover .Quest_defence_hover_9b.Quest_done_03,
+.mediaLarge .Quest_base_9a:hover .Quest_offence_final_hover_ba.Quest_done_03 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.artefact.quests.done.backgrounds.hover.large');
+}
+.Quest_base_9a:hover .Quest_finalQuestIcon_af {
+    width: 100%;
+    height: 100%;
+    transform: scale(1.07);
+}
+.mediaExtraLarge .Quest_base_9a:hover .Quest_finalQuestIcon_af {
+    transform: scale(1.06);
+}
+.Quest_base_9a:hover .Quest_finalQuestSequence_83 {
+    transform: scale(1.07);
+}
+.mediaExtraLarge .Quest_base_9a:hover .Quest_finalQuestSequence_83 {
+    transform: scale(1.06);
+}
+.Quest_offence_23 .Quest_finalQuestGlow_8f {
+    width: 274rem;
+    height: 274rem;
+    background: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.finalQuest.glow.small')
+        no-repeat left center / contain;
+    opacity: 0.4;
+    position: absolute;
+    top: -95rem;
+    left: -105rem;
+    z-index: 1;
+    transition: opacity 0.3s ease-in;
+    pointer-events: none;
+}
+.mediaMedium .Quest_offence_23 .Quest_finalQuestGlow_8f {
+    width: 326rem;
+    height: 326rem;
+    background-image: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.finalQuest.glow.large');
+    top: -126rem;
+    left: -89rem;
+}
+.mediaExtraLarge .Quest_offence_23 .Quest_finalQuestGlow_8f {
+    width: 490rem;
+    height: 490rem;
+    top: -193rem;
+    left: -140rem;
+}
+.Quest_finalQuest_47 {
+    margin-top: 40rem;
+    margin-bottom: 0;
+    background: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.finalQuest.small')
+        no-repeat left center / contain;
+    position: relative;
+}
+.mediaMedium .Quest_finalQuest_47 {
+    background: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.finalQuest.medium')
+        no-repeat left center / contain;
+}
+.mediaExtraLarge .Quest_finalQuest_47 {
+    margin-top: 56rem;
+    background: url('R.images.historical_battles.gui.maps.icons.artefact.quests.offence.backgrounds.finalQuest.large')
+        no-repeat left center / cover;
+}
+.Quest_sequenceWrapper_89 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: scale(0.95);
+}
+.mediaMedium .Quest_sequenceWrapper_89 {
+    transform: scale(0.8);
+}
+.Quest_finalQuestSequence_83 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 0.4s ease-in;
+}
+.Quest_doneBg_3a {
+    display: flex;
+    width: 40rem;
+    height: 40rem;
+    background: url('R.images.historical_battles.gui.maps.icons.artefact.quests.icons.done') no-repeat left center /
+        contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.Quest_header_9c {
+    width: 40rem;
+    height: 40rem;
+    margin: 0 12rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
+}
+.mediaMedium .Quest_header_9c {
+    width: 40rem;
+    height: 40rem;
+    margin: 0 10rem;
+}
+.mediaExtraLarge .Quest_header_9c {
+    width: 62rem;
+    height: 62rem;
+    margin: 0 14rem;
+}
+.Quest_header_9c.Quest_finalQuestIcon_af {
+    width: 60rem;
+    height: 60rem;
+    margin: 0 2rem;
+    transition: transform 0.5s ease-out;
+}
+.mediaMedium .Quest_header_9c.Quest_finalQuestIcon_af {
+    width: 162rem;
+    height: 162rem;
+}
+.mediaExtraLarge .Quest_header_9c.Quest_finalQuestIcon_af {
+    width: 172rem;
+    height: 172rem;
+}
+.Quest_division_63 {
+    display: none;
+    width: 2rem;
+    height: 100%;
+    background: url('R.images.historical_battles.gui.maps.icons.artefact.quests.divider') no-repeat center / cover;
+    position: relative;
+    z-index: 2;
+}
+.mediaMedium .Quest_division_63 {
+    display: flex;
+}
+.Quest_content_e6 {
+    display: none;
+    width: 100%;
+    padding: 0 12rem 0 18rem;
+    position: relative;
+    z-index: 3;
+}
+.mediaMedium .Quest_content_e6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    flex: 1 1 auto;
+}
+.mediaMedium .Quest_content_e6 {
+    padding: 0 8rem 0 16rem;
+}
+.mediaExtraLarge .Quest_content_e6 {
+    padding: 0 8rem 0 22rem;
+}
+.Quest_title_ff {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 236rem;
+    margin-bottom: 4rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+.mediaMedium .Quest_title_ff {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+.mediaExtraLarge .Quest_title_ff {
+    width: 384rem;
+    margin-top: 0;
+    margin-bottom: 6rem;
+    font-size: 21rem;
+    line-height: 27rem;
+}
+.Quest_base__done_32 .Quest_title_ff {
+    max-width: 260rem;
+}
+.Quest_progression_8e {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 4rem 0 6rem;
+    letter-spacing: 0.56rem;
+}
+.mediaMedium .Quest_progression_8e {
+    line-height: 19rem;
+}
+.mediaExtraLarge .Quest_progression_8e {
+    margin: 6rem 4rem 0;
+    font-size: 21rem;
+    line-height: 27rem;
+}
+.Quest_progression_current_10 {
+    color: #feab34;
+}
+.Quest_titleTypeWin_73 {
+    margin-bottom: 0;
+}
+.Quest_titleFinalQuest_f6 {
+    max-width: 132rem;
+    font-weight: 700;
+    white-space: pre-wrap;
+}
+.mediaMedium .Quest_titleFinalQuest_f6 {
+    max-width: 88rem;
+    font-size: 15rem;
+}
+.mediaExtraLarge .Quest_titleFinalQuest_f6 {
+    max-width: 132rem;
+    font-size: 22rem;
+}
+.Quest_progressBar_25 {
+    width: 233rem;
+    margin-left: 4rem;
+}
+.mediaExtraLarge .Quest_progressBar_25 {
+    width: 302rem;
+}
+.Quest_progressBar_25.Quest_completed_9f {
+    margin-left: 0;
+}
+.Quest_base__done_32 .Quest_progression_8e,
+.Quest_base__done_32 .Quest_progression_current_10 {
+    color: #59a011;
+}
+
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}

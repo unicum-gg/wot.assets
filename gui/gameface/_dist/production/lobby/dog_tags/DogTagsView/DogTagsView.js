@@ -1843,6 +1843,7 @@
                         (e[(e.DELETE = 46)] = 'DELETE'),
                         (e[(e.TAB = 9)] = 'TAB'),
                         (e[(e.KEY_N = 78)] = 'KEY_N'),
+                        (e[(e.KEY_0 = 48)] = 'KEY_0'),
                         (e[(e.KEY_1 = 49)] = 'KEY_1'),
                         (e[(e.KEY_2 = 50)] = 'KEY_2'),
                         (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -2581,9 +2582,9 @@
                     },
                     z = R.images.gui.maps.icons.dogtags,
                     U = 'R.images.gui.maps.icons.dogtags',
-                    V = R.strings.dogtags.component,
-                    K = 'R.strings.dogtags.component',
-                    q = (e, t, u, n = 0, r = 'big', a = z, o = V) => {
+                    K = R.strings.dogtags.component,
+                    V = 'R.strings.dogtags.component',
+                    q = (e, t, u, n = 0, r = 'big', a = z, o = K) => {
                         a &&
                             !(r in a) &&
                             console.error(
@@ -2607,20 +2608,20 @@
                         o &&
                             !(t in o) &&
                             console.error(
-                                `componentResourcesMap error at id: ${e}. Property "${t}" does not exist in ${K}`,
+                                `componentResourcesMap error at id: ${e}. Property "${t}" does not exist in ${V}`,
                             );
                         const m = t in o ? o[t] : void 0;
                         m &&
                             !(u in m) &&
                             console.error(
-                                `componentResourcesMap error at id: ${e}. Property "${u}" does not exist in ${[K, t].join('.')}`,
+                                `componentResourcesMap error at id: ${e}. Property "${u}" does not exist in ${[V, t].join('.')}`,
                             );
                         const E = m && u in m ? m[u] : void 0,
                             _ = `c_${e}`;
                         E &&
                             !(_ in E) &&
                             console.error(
-                                `componentResourcesMap error at id: ${e}. Property "${_}" does not exist in ${[K, t, u].join('.')}`,
+                                `componentResourcesMap error at id: ${e}. Property "${_}" does not exist in ${[V, t, u].join('.')}`,
                             );
                         return { image: d, strings: E && _ in E ? E[_] : void 0 };
                     },
@@ -3053,7 +3054,7 @@
                         Ue.apply(this, arguments)
                     );
                 }
-                const Ve = (0, o.memo)(
+                const Ke = (0, o.memo)(
                         ({ data: e, onItemSelect: t, onNewComponentHover: u, selectedItems: n, equippedItems: r }) =>
                             i().createElement(
                                 'div',
@@ -3112,7 +3113,7 @@
                                 }),
                             ),
                     ),
-                    Ke = 'Tabs_base_d9',
+                    Ve = 'Tabs_base_d9',
                     qe = 'Tabs_base__vertical_c0',
                     Ze = 'Tabs_list_0a',
                     Qe = 'Tabs_list__centered_dc',
@@ -3249,7 +3250,7 @@
                     }
                     render() {
                         const e = this.state.activeElements,
-                            t = r()(Ke, this.props.isVerticalTabs && qe);
+                            t = r()(Ve, this.props.isVerticalTabs && qe);
                         return i().createElement('div', { className: t }, e);
                     }
                 }
@@ -3543,8 +3544,8 @@
                 const $t = 'ScrollArea_base_47',
                     zt = 'ScrollArea_base__scrollIndent_1d',
                     Ut = 'ScrollArea_base__verticalScrollbarMargin_50',
-                    Vt = 'ScrollArea_base__multiple_44',
-                    Kt = 'ScrollArea_base__hidden_ec',
+                    Kt = 'ScrollArea_base__multiple_44',
+                    Vt = 'ScrollArea_base__hidden_ec',
                     qt = i().forwardRef((e, t) => {
                         const u = e.offsetLeft,
                             n = void 0 === u ? 0 : u,
@@ -3703,8 +3704,8 @@
                                     (p.updateScrollArea = R),
                                     (p.getScrollbar = N));
                             }, [p, M, O, I, P, R, N]));
-                        const V = r()($t, { [zt]: g, [Kt]: !C, [Ut]: A, [Vt]: h }, b);
-                        return i().createElement('div', { className: V, ref: j }, F);
+                        const K = r()($t, { [zt]: g, [Vt]: !C, [Ut]: A, [Kt]: h }, b);
+                        return i().createElement('div', { className: K, ref: j }, F);
                     }),
                     Zt = 'Router_base_17',
                     Qt = 'Router_innerWrapper_d8',
@@ -3818,13 +3819,13 @@
                                 },
                                 [t, c, d],
                             ),
-                            V = (0, o.useCallback)(
+                            K = (0, o.useCallback)(
                                 (e) => {
                                     (b((t) => Object.assign({}, t, { [e.type]: e.id })), e.isLocked || U(e.type, e.id));
                                 },
                                 [U],
                             ),
-                            K = (0, o.useCallback)(
+                            V = (0, o.useCallback)(
                                 (e) => {
                                     b((t) => Object.assign({}, t, { [e]: v[e].id }));
                                 },
@@ -3893,10 +3894,10 @@
                                                       onVerticalScroll: ne,
                                                       verticalScrollbarMargin: !0,
                                                   },
-                                                  i().createElement(Ve, {
+                                                  i().createElement(Ke, {
                                                       data: $,
                                                       count: z,
-                                                      onItemSelect: V,
+                                                      onItemSelect: K,
                                                       onNewComponentHover: u,
                                                       selectedItems: D,
                                                       equippedItems: v,
@@ -3935,7 +3936,7 @@
                                     i().createElement(
                                         'div',
                                         { className: nu },
-                                        i().createElement(oo, { selectedItems: D, equippedItems: v, onItemReset: K }),
+                                        i().createElement(oo, { selectedItems: D, equippedItems: v, onItemReset: V }),
                                     ),
                                 ),
                             ),
@@ -3984,8 +3985,8 @@
                             ? e
                             : null
                         : e;
-                var Vu = u(67);
-                const Ku = {
+                var Ku = u(67);
+                const Vu = {
                     extraLarge: { weight: 4, width: 2560, height: 1440 },
                     large: { weight: 3, width: 1920, height: 1080 },
                     medium: { weight: 2, width: 1600, height: 900 },
@@ -4058,10 +4059,10 @@
                         (e.smallHeight = 'smallHeight'),
                         (e.extraSmallHeight = 'extraSmallHeight'));
                 })(qu || (qu = {}));
-                const Qu = Vu.O.client.getSize('rem'),
+                const Qu = Ku.O.client.getSize('rem'),
                     Ju = Qu.width,
                     en = Qu.height,
-                    tn = Object.assign({ width: Ju, height: en }, Zu(Ju, en, Ku)),
+                    tn = Object.assign({ width: Ju, height: en }, Zu(Ju, en, Vu)),
                     un = (0, o.createContext)(tn),
                     nn = ['children'];
                 const rn = (e) => {
@@ -4140,9 +4141,9 @@
                             n = u[0],
                             r = u[1],
                             a = (0, o.useCallback)((e, t) => {
-                                const u = Vu.O.view.pxToRem(e),
-                                    n = Vu.O.view.pxToRem(t);
-                                r(Object.assign({ width: u, height: n }, Zu(u, n, Ku)));
+                                const u = Ku.O.view.pxToRem(e),
+                                    n = Ku.O.view.pxToRem(t);
+                                r(Object.assign({ width: u, height: n }, Zu(u, n, Vu)));
                             }, []);
                         (f(() => {
                             engine.on('clientResized', a);
@@ -4153,25 +4154,25 @@
                     }));
                 let an, on, sn;
                 (!(function (e) {
-                    ((e[(e.ExtraSmall = Ku.extraSmall.width)] = 'ExtraSmall'),
-                        (e[(e.Small = Ku.small.width)] = 'Small'),
-                        (e[(e.Medium = Ku.medium.width)] = 'Medium'),
-                        (e[(e.Large = Ku.large.width)] = 'Large'),
-                        (e[(e.ExtraLarge = Ku.extraLarge.width)] = 'ExtraLarge'));
+                    ((e[(e.ExtraSmall = Vu.extraSmall.width)] = 'ExtraSmall'),
+                        (e[(e.Small = Vu.small.width)] = 'Small'),
+                        (e[(e.Medium = Vu.medium.width)] = 'Medium'),
+                        (e[(e.Large = Vu.large.width)] = 'Large'),
+                        (e[(e.ExtraLarge = Vu.extraLarge.width)] = 'ExtraLarge'));
                 })(an || (an = {})),
                     (function (e) {
-                        ((e[(e.ExtraSmall = Ku.extraSmall.width)] = 'ExtraSmall'),
-                            (e[(e.Small = Ku.small.width)] = 'Small'),
-                            (e[(e.Medium = Ku.medium.width)] = 'Medium'),
-                            (e[(e.Large = Ku.large.width)] = 'Large'),
-                            (e[(e.ExtraLarge = Ku.extraLarge.width)] = 'ExtraLarge'));
+                        ((e[(e.ExtraSmall = Vu.extraSmall.width)] = 'ExtraSmall'),
+                            (e[(e.Small = Vu.small.width)] = 'Small'),
+                            (e[(e.Medium = Vu.medium.width)] = 'Medium'),
+                            (e[(e.Large = Vu.large.width)] = 'Large'),
+                            (e[(e.ExtraLarge = Vu.extraLarge.width)] = 'ExtraLarge'));
                     })(on || (on = {})),
                     (function (e) {
-                        ((e[(e.ExtraSmall = Ku.extraSmall.height)] = 'ExtraSmall'),
-                            (e[(e.Small = Ku.small.height)] = 'Small'),
-                            (e[(e.Medium = Ku.medium.height)] = 'Medium'),
-                            (e[(e.Large = Ku.large.height)] = 'Large'),
-                            (e[(e.ExtraLarge = Ku.extraLarge.height)] = 'ExtraLarge'));
+                        ((e[(e.ExtraSmall = Vu.extraSmall.height)] = 'ExtraSmall'),
+                            (e[(e.Small = Vu.small.height)] = 'Small'),
+                            (e[(e.Medium = Vu.medium.height)] = 'Medium'),
+                            (e[(e.Large = Vu.large.height)] = 'Large'),
+                            (e[(e.ExtraLarge = Vu.extraLarge.height)] = 'ExtraLarge'));
                     })(sn || (sn = {})));
                 const ln = () => {
                         const e = (0, o.useContext)(un),
@@ -4698,15 +4699,15 @@
                     (function (e) {
                         ((e[(e.Simple = 0)] = 'Simple'), (e[(e.Growing = 1)] = 'Growing'));
                     })(Un || (Un = {})));
-                const Vn = ({ size: e = zn.Default, classMix: t }) =>
+                const Kn = ({ size: e = zn.Default, classMix: t }) =>
                         i().createElement('div', { className: r()($n.background, $n[`background__${e}`], t) }),
-                    Kn = {
+                    Vn = {
                         base: 'ProgressBarBlink_base_24',
                         base__medium: 'ProgressBarBlink_base__medium_ec',
                         base__small: 'ProgressBarBlink_base__small_0f',
                     },
                     qn = ({ size: e }) => {
-                        const t = r()(Kn.base, Kn[`base__${e}`]);
+                        const t = r()(Vn.base, Vn[`base__${e}`]);
                         return i().createElement('div', { className: t });
                     },
                     Zn = {
@@ -5193,7 +5194,7 @@
                             return i().createElement(
                                 'div',
                                 { className: r()($n.base, $n[`base__${u}`]), style: vr(t) },
-                                !s && i().createElement(Vn, { size: u, classMix: l }),
+                                !s && i().createElement(Kn, { size: u, classMix: l }),
                                 i().createElement(Dr, {
                                     size: u,
                                     lineRef: m,
@@ -5637,8 +5638,8 @@
                     $r = 'Dogtags_clan_a3',
                     zr = 'Dogtags_engraving_b0',
                     Ur = 'Dogtags_shadow_8c',
-                    Vr = 'Dogtags_trackerInfoWrapper_fd',
-                    Kr = 'Dogtags_trackerText_a4',
+                    Kr = 'Dogtags_trackerInfoWrapper_fd',
+                    Vr = 'Dogtags_trackerText_a4',
                     qr = 'Dogtags_trackerValue_f5',
                     Zr = 'Dogtags_trackerDigit_c0',
                     Qr = 'Dogtags_spaceDigit_86',
@@ -5753,8 +5754,8 @@
                                     { className: Xr },
                                     i().createElement(
                                         'div',
-                                        { className: Vr },
-                                        i().createElement('div', { className: Kr }, E),
+                                        { className: Kr },
+                                        i().createElement('div', { className: Vr }, E),
                                         i().createElement(
                                             'div',
                                             { className: qr },
@@ -6133,8 +6134,8 @@
                         );
                     },
                     Ua = 'Customization_base_4e',
-                    Va = 'Customization_checkIcon_bf',
-                    Ka = 'Customization_allEquipped_ed',
+                    Ka = 'Customization_checkIcon_bf',
+                    Va = 'Customization_allEquipped_ed',
                     qa = 'Customization_alertMessage_c4',
                     Za = 'Customization_alertIcon_ce',
                     Qa = 'Customization_selectionWrapper_e5',
@@ -6170,8 +6171,8 @@
                                     n &&
                                     i().createElement(
                                         'div',
-                                        { className: Ka },
-                                        i().createElement('div', { className: Va }),
+                                        { className: Va },
+                                        i().createElement('div', { className: Ka }),
                                         to,
                                     ),
                                 m.length > 0 &&
@@ -6550,12 +6551,12 @@
                                 ),
                         );
                     },
-                    Vo = document.createElement('div');
+                    Ko = document.createElement('div');
                 ((window.onload = () => {
-                    (document.body.appendChild(Vo), document.body.setAttribute('style', 'margin: 0;'));
+                    (document.body.appendChild(Ko), document.body.setAttribute('style', 'margin: 0;'));
                 }),
                     engine.whenReady.then(() => {
-                        A().render(i().createElement(_, null, i().createElement(Uo, null)), Vo);
+                        A().render(i().createElement(_, null, i().createElement(Uo, null)), Ko);
                     }));
             },
         },

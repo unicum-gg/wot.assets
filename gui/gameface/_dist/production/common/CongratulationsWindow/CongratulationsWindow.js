@@ -357,6 +357,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1329,7 +1330,7 @@
                         V.apply(this, arguments)
                     );
                 }
-                class $ extends a().PureComponent {
+                class K extends a().PureComponent {
                     constructor(...e) {
                         (super(...e),
                             (this.state = { hover: !1, click: !1 }),
@@ -1403,8 +1404,8 @@
                         );
                     }
                 }
-                $.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
-                var K = n(364);
+                K.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
+                var $ = n(364);
                 const z = [
                     'children',
                     'contentId',
@@ -1444,7 +1445,7 @@
                             Object.assign(
                                 {
                                     __Type: 'GFViewEventProxy',
-                                    type: K.B0.TOOLTIP,
+                                    type: $.B0.TOOLTIP,
                                     contentID: e,
                                     decoratorID: t,
                                     targetID: r,
@@ -2114,7 +2115,7 @@
                             a().createElement(
                                 'div',
                                 { className: 'CongratulationsWindowApp_closeBtn_5e' },
-                                a().createElement($, {
+                                a().createElement(K, {
                                     caption: R.strings.menu.viewHeader.closeBtn.label(),
                                     type: 'close',
                                     side: 'right',

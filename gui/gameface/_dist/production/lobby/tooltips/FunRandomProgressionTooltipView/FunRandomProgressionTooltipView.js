@@ -331,6 +331,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -907,6 +908,7 @@
                             (u.VehicleSelect = 'vehicleSelect'),
                             (u.StyleProgress = 'styleProgress'),
                             (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                            (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (u.LootBoxToken = 'lootBoxToken'),
                             (u.GoldenTicket = 'birthday2025_golden_ticket'),
                             (u.PostStamp = 'giftsystem_4_stamp'),
@@ -947,7 +949,6 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
-                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -1541,7 +1542,7 @@
                                 .match(u);
                     })(),
                     X = ['zh_cn', 'zh_sg', 'zh_tw'],
-                    Q = ({ binding: u, text: e = '', classMix: t, alignment: n = q.left }) =>
+                    K = ({ binding: u, text: e = '', classMix: t, alignment: n = q.left }) =>
                         null === e
                             ? (console.error("FormatText was supplied with 'null'"), null)
                             : o().createElement(
@@ -1578,7 +1579,7 @@
                                       ),
                                   ),
                               ),
-                    K = {
+                    Q = {
                         blackReal: 'FormatTextWithColorTags_blackReal_3c',
                         whiteReal: 'FormatTextWithColorTags_whiteReal_8a',
                         white: 'FormatTextWithColorTags_white_16',
@@ -1621,21 +1622,21 @@
                                 const u = a[0],
                                     s = u + E++ + u;
                                 ((i = i.replace(t, `%(${s})`)),
-                                    (r[s] = K[u]
+                                    (r[s] = Q[u]
                                         ? o().createElement(
                                               'span',
-                                              { className: K[u] },
-                                              o().createElement(Q, { text: A, binding: e }),
+                                              { className: Q[u] },
+                                              o().createElement(K, { text: A, binding: e }),
                                           )
                                         : o().createElement(
                                               'span',
                                               { style: n(u) },
-                                              o().createElement(Q, { text: A, binding: e }),
+                                              o().createElement(K, { text: A, binding: e }),
                                           )));
                             }
                             s = Z.exec(u);
                         }
-                        return o().createElement(Q, { text: i, classMix: t, binding: r });
+                        return o().createElement(K, { text: i, classMix: t, binding: r });
                     }),
                     tu =
                         (R.images.fun_random.gui.maps.icons.feature.asset_packs,
@@ -2442,7 +2443,7 @@
                     );
                 }
                 const Xu = R.views.common.tooltip_window.simple_tooltip_content,
-                    Qu = (u) => {
+                    Ku = (u) => {
                         let e = u.children,
                             t = u.body,
                             n = u.header,
@@ -2479,9 +2480,9 @@
                         );
                         var A;
                     };
-                function Ku() {
+                function Qu() {
                     return (
-                        (Ku =
+                        (Qu =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -2490,18 +2491,18 @@
                                 }
                                 return u;
                             }),
-                        Ku.apply(this, arguments)
+                        Qu.apply(this, arguments)
                     );
                 }
                 const Zu = ({ children: u, tooltipArgs: e, className: t }) => {
                         if (!e) return u;
                         const n = o().createElement('div', { className: t }, u);
-                        if (e.header || e.body) return o().createElement(Qu, e, n);
+                        if (e.header || e.body) return o().createElement(Ku, e, n);
                         const r = e.contentId,
                             s = e.args,
                             a = null == s ? void 0 : s.contentId;
                         return r || a
-                            ? o().createElement(qu, Ku({}, e, { contentId: r || a }), n)
+                            ? o().createElement(qu, Qu({}, e, { contentId: r || a }), n)
                             : o().createElement(Yu, e, n);
                     },
                     Ju = {
@@ -2914,7 +2915,7 @@
                                     ? o().createElement(
                                           'div',
                                           { className: r()(ce, E.text) },
-                                          o().createElement(Q, { text: l, binding: { timerText: D } }),
+                                          o().createElement(K, { text: l, binding: { timerText: D } }),
                                       )
                                     : o().createElement('div', { className: r()(ce, E.text) }, D),
                             );

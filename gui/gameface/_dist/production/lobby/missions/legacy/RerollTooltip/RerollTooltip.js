@@ -26,7 +26,7 @@
                 Date.now();
             },
             67: (u, e, t) => {
-                t.d(e, { O: () => G });
+                t.d(e, { O: () => Y });
                 var A = {};
                 (t.r(A), t.d(A, { mouse: () => a, onResize: () => i }));
                 var F = {};
@@ -57,13 +57,13 @@
                         addPreloadTexture: () => g,
                         children: () => E,
                         displayStatus: () => l,
-                        displayStatusIs: () => K,
+                        displayStatusIs: () => W,
                         events: () => d,
                         extraSize: () => j,
                         forceTriggerMouseMove: () => q,
                         freezeTextureBeforeResize: () => k,
                         getBrowserTexturePath: () => T,
-                        getDisplayStatus: () => W,
+                        getDisplayStatus: () => K,
                         getScale: () => L,
                         getSize: () => R,
                         getViewGlobalPosition: () => S,
@@ -283,10 +283,10 @@
                 function q() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function W() {
+                function K() {
                     return viewEnv.getShowingStatus();
                 }
-                const K = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
+                const W = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
                     j = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -301,7 +301,7 @@
                         }),
                         engine.whenReady,
                     ]),
-                    G = { view: n, client: F };
+                    Y = { view: n, client: F };
             },
             255: (u, e, t) => {
                 t.d(e, { au: () => i });
@@ -370,6 +370,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),

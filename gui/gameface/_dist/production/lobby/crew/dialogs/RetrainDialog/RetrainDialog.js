@@ -1340,6 +1340,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -2264,14 +2265,16 @@
             },
             5298: (u, e, t) => {
                 'use strict';
-                t.d(e, { l: () => r });
+                t.d(e, { lG: () => r });
                 var n = t(776);
                 const r = (u, e) => ({
                     isEnabled: u !== n.f.absent,
                     args: e,
                     contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
                     decoratorId:
-                        u === n.f.normal ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId') : void 0,
+                        u === n.f.unbound
+                            ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
+                            : void 0,
                     ignoreShowDelay: u === n.f.backport,
                     ignoreMouseClick: !0,
                 });
@@ -2527,19 +2530,20 @@
                         }
                         return '';
                     },
-                    V = (u) => {
-                        const e = G(),
-                            t = $(e);
-                        let n,
-                            r = u;
-                        for (; null !== (n = j.exec(u)); ) {
-                            const u = n[0].match(/<script (defer|defer="defer") src="(.*?)">/);
+                    V = (u, e) => {
+                        const t = G(),
+                            n = $(t);
+                        let r,
+                            a = u;
+                        for (; null !== (r = j.exec(u)); ) {
+                            const u = r[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (u) {
-                                const e = t + u[2].replace(W, '');
-                                r = r.replace(u[2], e);
+                                const t = n + u[2].replace(W, '');
+                                ((a = a.replace(u[2], t)),
+                                    (a = a.replace('<div id="root"', `<div data-root-id=${e} id="root"`)));
                             }
                         }
-                        return r;
+                        return a;
                     },
                     q = 'SubView_base_df',
                     z = 'subViews.onChanged',
@@ -2561,7 +2565,7 @@
                         const i = (0, r.useState)(''),
                             s = i[0],
                             l = i[1],
-                            c = (0, r.useMemo)(() => ({ __html: V(s) }), [s]),
+                            c = (0, r.useMemo)(() => ({ __html: V(s, u) }), [s, u]),
                             E = (0, r.useMemo)(() => window.subViews.addChildChangedCallback(u), [u]),
                             _ = (0, r.useState)(!1),
                             d = _[0],
@@ -2891,7 +2895,7 @@
                                     [e, n, c],
                                 );
                             H(N.n.ENTER, E);
-                            const _ = (0, r.useMemo)(() => (0, ou.l)(s.type, { buttonID: t }), [s.type, t]),
+                            const _ = (0, r.useMemo)(() => (0, ou.lG)(s.type, { buttonID: t }), [s.type, t]),
                                 d = o()(lu, s.type !== iu.f.absent && cu);
                             return a().createElement(
                                 au.u,
@@ -3737,7 +3741,7 @@
                 }
                 const Te = (0, gu.Pi)(function ({ tooltipRootId: u }) {
                         const e = ke().model,
-                            t = (0, ou.l)(e.tooltip.get().type, void 0),
+                            t = (0, ou.lG)(e.tooltip.get().type, void 0),
                             n = e.cost.get(),
                             r = o()(ye.currency, ye[`currency__${n.size}`]);
                         return a().createElement(
@@ -3948,7 +3952,7 @@
                     );
                 }
                 const O = ({ cost: u, tooltip: e, index: t, tooltipRootId: n }) => {
-                        const a = (0, T.l)(e.type, { index: t });
+                        const a = (0, T.lG)(e.type, { index: t });
                         return u.value === u.discountValue && 0 === u.value
                             ? r().createElement('div', { className: L }, R.strings.dialogs.priceCard.price.free())
                             : r().createElement(
@@ -4094,7 +4098,10 @@
                 let n;
                 (t.d(e, { f: () => n }),
                     (function (u) {
-                        ((u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent'));
+                        ((u.backport = 'backport'),
+                            (u.unbound = 'unbound'),
+                            (u.normal = 'normal'),
+                            (u.absent = 'absent'));
                     })(n || (n = {})));
             },
             8460: (u, e, t) => {

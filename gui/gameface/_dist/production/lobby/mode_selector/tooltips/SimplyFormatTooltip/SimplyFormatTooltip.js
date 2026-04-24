@@ -335,6 +335,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1091,8 +1092,8 @@
                         }
                         return n().createElement(N, { text: B, classMix: A, binding: E });
                     },
-                    H = 'SimplyFormatTooltipApp_base_08',
-                    K = 'SimplyFormatTooltipApp_header_db',
+                    K = 'SimplyFormatTooltipApp_base_08',
+                    H = 'SimplyFormatTooltipApp_header_db',
                     q = 'SimplyFormatTooltipApp_header__withBody_6a',
                     z = 'SimplyFormatTooltipApp_body_eb',
                     j = () => {
@@ -1102,8 +1103,8 @@
                         return A || e
                             ? n().createElement(
                                   'div',
-                                  { className: H },
-                                  e && n().createElement(V, { text: e, classMix: E()(K, A && q) }),
+                                  { className: K },
+                                  e && n().createElement(V, { text: e, classMix: E()(H, A && q) }),
                                   A && n().createElement(V, { text: A, classMix: z }),
                               )
                             : null;

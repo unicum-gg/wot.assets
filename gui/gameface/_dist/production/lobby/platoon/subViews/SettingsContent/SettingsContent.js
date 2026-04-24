@@ -344,6 +344,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1262,7 +1263,7 @@
                     );
                 }
                 Object.keys(b());
-                const $ = {
+                const Y = {
                         XL: { mt: X.mt__XL, mr: X.mr__XL, mb: X.mb__XL, ml: X.ml__XL },
                         LG: { mt: X.mt__LG, mr: X.mr__LG, mb: X.mb__LG, ml: X.ml__LG },
                         MDp: { mt: X.mt__MDp, mr: X.mr__MDp, mb: X.mb__MDp, ml: X.ml__MDp },
@@ -1271,7 +1272,7 @@
                         SM: { mt: X.mt__SM, mr: X.mr__SM, mb: X.mb__SM, ml: X.ml__SM },
                         XS: { mt: X.mt__XS, mr: X.mr__XS, mb: X.mb__XS, ml: X.ml__XS },
                     },
-                    Y = (Object.keys($), ['mt', 'mr', 'mb', 'ml']),
+                    $ = (Object.keys(Y), ['mt', 'mr', 'mb', 'ml']),
                     q = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
                     Z = V((u) => {
                         let e = u.className,
@@ -1328,12 +1329,12 @@
                         const W = (0, r.useMemo)(() => {
                                 const u = { mt: A, mr: F, mb: D, ml: c },
                                     e = ((u) =>
-                                        Y.reduce((e, t) => {
+                                        $.reduce((e, t) => {
                                             const r = u[t];
-                                            return r && 'number' != typeof r ? e.concat($[!0 === r ? 'MD' : r][t]) : e;
+                                            return r && 'number' != typeof r ? e.concat(Y[!0 === r ? 'MD' : r][t]) : e;
                                         }, []))(u),
                                     r = ((u) =>
-                                        Y.reduce((e, t) => {
+                                        $.reduce((e, t) => {
                                             const r = u[t];
                                             return ('number' == typeof r && (e[q[t]] = r + 'rem'), e);
                                         }, {}))(u);
@@ -2030,19 +2031,20 @@
                         }
                         return '';
                     },
-                    Vu = (u) => {
-                        const e = ju(),
-                            t = Uu(e);
-                        let r,
-                            n = u;
-                        for (; null !== (r = Wu.exec(u)); ) {
-                            const u = r[0].match(/<script (defer|defer="defer") src="(.*?)">/);
+                    Vu = (u, e) => {
+                        const t = ju(),
+                            r = Uu(t);
+                        let n,
+                            a = u;
+                        for (; null !== (n = Wu.exec(u)); ) {
+                            const u = n[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (u) {
-                                const e = t + u[2].replace(Iu, '');
-                                n = n.replace(u[2], e);
+                                const t = r + u[2].replace(Iu, '');
+                                ((a = a.replace(u[2], t)),
+                                    (a = a.replace('<div id="root"', `<div data-root-id=${e} id="root"`)));
                             }
                         }
-                        return n;
+                        return a;
                     },
                     Xu = 'SubView_base_df',
                     Ku = 'subViews.onChanged',
@@ -2064,7 +2066,7 @@
                     const i = (0, r.useState)(''),
                         E = i[0],
                         A = i[1],
-                        s = (0, r.useMemo)(() => ({ __html: Vu(E) }), [E]),
+                        s = (0, r.useMemo)(() => ({ __html: Vu(E, u) }), [E, u]),
                         F = (0, r.useMemo)(() => window.subViews.addChildChangedCallback(u), [u]),
                         D = (0, r.useState)(!1),
                         _ = D[0],
@@ -2171,11 +2173,11 @@
                     }
                     return e ? n().createElement('div', { className: d }, n().createElement(e, null)) : null;
                 });
-                let $u;
+                let Yu;
                 !(function (u) {
                     ((u.left = 'left'), (u.top = 'top'), (u.right = 'right'), (u.bottom = 'bottom'));
-                })($u || ($u = {}));
-                const Yu = 'ToggleButton_base_b9',
+                })(Yu || (Yu = {}));
+                const $u = 'ToggleButton_base_b9',
                     qu = 'ToggleButton_content_85',
                     Zu = 'ToggleButton_overlay_0a',
                     Qu = 'ToggleButton_base__active_68',
@@ -2210,7 +2212,7 @@
                                 for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (n[t] = u[t]));
                                 return n;
                             })(u, ue);
-                        const A = o()(Yu, t, e && Qu);
+                        const A = o()($u, t, e && Qu);
                         return n().createElement(
                             'div',
                             { className: A },

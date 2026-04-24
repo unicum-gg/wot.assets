@@ -58,7 +58,7 @@
                             : (0, E.WU)(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 });
             },
             67: (u, e, A) => {
-                A.d(e, { O: () => j });
+                A.d(e, { O: () => Y });
                 var E = {};
                 (A.r(E), A.d(E, { mouse: () => i, onResize: () => a }));
                 var F = {};
@@ -91,7 +91,7 @@
                         displayStatus: () => l,
                         displayStatusIs: () => G,
                         events: () => d,
-                        extraSize: () => V,
+                        extraSize: () => K,
                         forceTriggerMouseMove: () => z,
                         freezeTextureBeforeResize: () => M,
                         getBrowserTexturePath: () => O,
@@ -109,7 +109,7 @@
                         setEventHandled: () => H,
                         setInputPaddingsRem: () => f,
                         setSidePaddingsRem: () => T,
-                        whenTutorialReady: () => K,
+                        whenTutorialReady: () => V,
                     }));
                 const a = D('clientResized'),
                     o = { down: D('mousedown'), up: D('mouseup'), move: D('mousemove') };
@@ -319,7 +319,7 @@
                     return viewEnv.getShowingStatus();
                 }
                 const G = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
-                    V = {
+                    K = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -327,13 +327,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    K = Promise.all([
+                    V = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : d.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    j = { view: n, client: F };
+                    Y = { view: n, client: F };
             },
             344: (u, e, A) => {
                 A.d(e, { au: () => F });
@@ -423,6 +423,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),

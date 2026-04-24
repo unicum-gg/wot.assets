@@ -396,6 +396,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1302,7 +1303,7 @@
                 const $ = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function q(e = V.n.NONE, u = $, t = !1) {
+                function Y(e = V.n.NONE, u = $, t = !1) {
                     (0, a.useEffect)(() => {
                         if (e !== V.n.NONE)
                             return (
@@ -1319,8 +1320,8 @@
                         }
                     }, [u, e, t]);
                 }
-                function Y(e) {
-                    q(V.n.ESCAPE, e);
+                function q(e) {
+                    Y(V.n.ESCAPE, e);
                 }
                 var K = t(515);
                 const Q = (e) => {
@@ -2282,8 +2283,8 @@
                                   return u;
                               })(e),
                     $e = 'Tab_title_67',
-                    qe = R.strings.winback.winbackSelectableRewardView.category,
-                    Ye = ({ isDiscount: e, isSelected: u, vehicleLevel: t, rewardsSelected: r, onClick: n }) => {
+                    Ye = R.strings.winback.winbackSelectableRewardView.category,
+                    qe = ({ isDiscount: e, isSelected: u, vehicleLevel: t, rewardsSelected: r, onClick: n }) => {
                         const a = r > 0,
                             s = je(t);
                         return o().createElement(
@@ -2300,10 +2301,10 @@
                                 ),
                             },
                             e
-                                ? o().createElement(be, { classMix: $e, text: qe.title() })
+                                ? o().createElement(be, { classMix: $e, text: Ye.title() })
                                 : o().createElement(be, {
                                       classMix: $e,
-                                      text: qe.titleDiscount(),
+                                      text: Ye.titleDiscount(),
                                       binding: { vehicleLevel: s },
                                   }),
                             o().createElement('div', { className: 'Tab_vehicle_54' }),
@@ -2315,7 +2316,7 @@
                                 { className: 'Tab_counterContainer_ff' },
                                 o().createElement(be, {
                                     classMix: 'Tab_counter_e9',
-                                    text: qe.rewardsAvailabilityCounter(),
+                                    text: Ye.rewardsAvailabilityCounter(),
                                     binding: { rewardsSelected: r, rewardsAvailable: 1 },
                                 }),
                                 o().createElement('div', { className: 'Tab_glow_51' }),
@@ -2356,7 +2357,7 @@
                                                 args: { [J]: e.vehicleLevel },
                                             },
                                         },
-                                        o().createElement(Ye, Ke({ onClick: r.handleCategorySelect }, e)),
+                                        o().createElement(qe, Ke({ onClick: r.handleCategorySelect }, e)),
                                     ),
                                     u !== t.length - 1 &&
                                         o().createElement('div', { className: 'Categories_separator_8d' }),
@@ -2720,8 +2721,8 @@
                             ),
                             j = (0, a.useCallback)((e) => v && v(e), [v]),
                             $ = (0, a.useCallback)((e) => f && f(e), [f]),
-                            q = (0, a.useCallback)((e) => b && b(e), [b]),
-                            Y = (0, a.useMemo)(
+                            Y = (0, a.useCallback)((e) => b && b(e), [b]),
+                            q = (0, a.useMemo)(
                                 () =>
                                     O.withTypeIcon
                                         ? (function (e, u) {
@@ -2741,7 +2742,7 @@
                             ue = p()(_u.base, _u[`base__${l}`], _u[`base__${s}`], S);
                         return o().createElement(
                             'div',
-                            { id: u, className: ue, onMouseEnter: X, onMouseDown: $, onMouseUp: j, onMouseLeave: q },
+                            { id: u, className: ue, onMouseEnter: X, onMouseDown: $, onMouseUp: j, onMouseLeave: Y },
                             o().createElement(
                                 Ge,
                                 { tooltipArgs: E },
@@ -2750,7 +2751,7 @@
                                     mu(
                                         {
                                             componentId: u ? `${u}-inputControl` : void 0,
-                                            iconSource: Y,
+                                            iconSource: q,
                                             size: l,
                                             type: r,
                                             variant: Z,
@@ -3359,8 +3360,8 @@
                         return o().createElement('div', Gu({ className: p()(Wu.base, ...G, u), style: U }, H), I);
                     });
                 var $u = t(532),
-                    qu = t.n($u);
-                const Yu = {
+                    Yu = t.n($u);
+                const qu = {
                         'paragraph-P10': 'Text_paragraph-P10_2c',
                         'paragraph-P12': 'Text_paragraph-P12_22',
                         'paragraph-P14': 'Text_paragraph-P14_a7',
@@ -3420,7 +3421,7 @@
                     );
                 }
                 Object.keys(Pu());
-                const Zu = Object.keys(qu()),
+                const Zu = Object.keys(Yu()),
                     Ju = { mt: 'MD', mr: 'SM', mb: 'SM', ml: 'SM' },
                     et = { mt: 'SM', mr: 'XS', mb: 'XS', ml: 'XS' },
                     ut = { mt: 'XS', mr: 'XS', mb: 'XS', ml: 'XS' },
@@ -3459,7 +3460,7 @@
                         (e) =>
                             e
                                 ? ((e) => Zu.includes(e))(e)
-                                    ? { colorClassName: Yu[e] }
+                                    ? { colorClassName: qu[e] }
                                     : { colorStyle: { color: e } }
                                 : {}),
                     nt = Hu((e) => {
@@ -3500,7 +3501,7 @@
                             ju,
                             Qu(
                                 {
-                                    className: p()(Yu.base, t && Yu[t], h, r),
+                                    className: p()(qu.base, t && qu[t], h, r),
                                     style: B,
                                     mt: !0 === l ? tt[t || 'paragraph-P16'].mt : l,
                                     mr: !0 === E ? tt[t || 'paragraph-P16'].mr : E,
@@ -3568,6 +3569,7 @@
                     (Ft.VehicleSelect = 'vehicleSelect'),
                     (Ft.StyleProgress = 'styleProgress'),
                     (Ft.ParagonsUnlocks = 'paragonsUnlocks'),
+                    (Ft.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                     (Ft.LootBoxToken = 'lootBoxToken'),
                     (Ft.GoldenTicket = 'birthday2025_golden_ticket'),
                     (Ft.PostStamp = 'giftsystem_4_stamp'),
@@ -3607,7 +3609,6 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
-                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -4350,8 +4351,8 @@
                     }),
                     jt = 'VerticalBar_base__nonActive_42',
                     $t = 'disable',
-                    qt = () => {},
-                    Yt = { pending: !1, offset: 0 },
+                    Yt = () => {},
+                    qt = { pending: !1, offset: 0 },
                     Kt = (e) => {
                         var u;
                         return 0.9 * (null != (u = e.getWrapperSize()) ? u : 0);
@@ -4360,14 +4361,14 @@
                         e.contentRef.current && u(e.contentRef.current);
                     },
                     Zt = (e, u) => Math.max(20, e.offsetHeight * u),
-                    Jt = (0, a.memo)(({ api: e, classNames: u = {}, getStepByRailClick: t = Kt, onDrag: r = qt }) => {
+                    Jt = (0, a.memo)(({ api: e, classNames: u = {}, getStepByRailClick: t = Kt, onDrag: r = Yt }) => {
                         const n = (0, a.useRef)(null),
                             s = (0, a.useRef)(null),
                             i = (0, a.useRef)(null),
                             l = (0, a.useRef)(null),
                             c = (0, a.useRef)(null),
                             E = e.stepTimeout || 100,
-                            _ = (0, a.useState)(Yt),
+                            _ = (0, a.useState)(qt),
                             d = _[0],
                             m = _[1],
                             A = (0, a.useCallback)(
@@ -4437,7 +4438,7 @@
                                         D();
                                     });
                                 };
-                                let t = qt;
+                                let t = Yt;
                                 const r = () => {
                                     (t(), (t = Q(C)));
                                 };
@@ -4477,7 +4478,7 @@
                                     t = () => {
                                         (window.removeEventListener('mousemove', u),
                                             e.handleIsThumbDragging(!1),
-                                            A(Yt));
+                                            A(qt));
                                     };
                                 return (
                                     window.addEventListener('mousemove', u),
@@ -5057,7 +5058,7 @@
                                     i
                                 );
                             })(r, [n, s.remScreenWidth, s.remScreenHeight]);
-                        Y(t.close);
+                        q(t.close);
                         const l = !1 === Nr.includes(i),
                             c = !1 === kr.includes(i);
                         return o().createElement(
@@ -5100,7 +5101,7 @@
                             c = [
                                 R.images.winback.gui.maps.icons.selectableRewardView.$dyn(`bg_${n}${s ? '_dds' : ''}`),
                             ];
-                        Y(t.close);
+                        q(t.close);
                         const E =
                             ((e) => {
                                 const u = (0, a.useState)(Z.Pending),

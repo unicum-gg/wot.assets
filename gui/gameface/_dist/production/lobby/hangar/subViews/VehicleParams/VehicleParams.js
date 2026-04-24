@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (e, u, t) => {
-                t.d(u, { O: () => K });
+                t.d(u, { O: () => q });
                 var n = {};
                 (t.r(n), t.d(n, { mouse: () => E, onResize: () => l }));
                 var r = {};
@@ -53,7 +53,7 @@
                         setEventHandled: () => z,
                         setInputPaddingsRem: () => y,
                         setSidePaddingsRem: () => T,
-                        whenTutorialReady: () => q,
+                        whenTutorialReady: () => K,
                     }));
                 const l = i('clientResized'),
                     c = { down: i('mousedown'), up: i('mouseup'), move: i('mousemove') };
@@ -271,13 +271,13 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    q = Promise.all([
+                    K = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : m.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    K = { view: a, client: r };
+                    q = { view: a, client: r };
             },
             358: (e, u, t) => {
                 t.d(u, { Z: () => o });
@@ -473,6 +473,7 @@
                         (e[(e.DELETE = 46)] = 'DELETE'),
                         (e[(e.TAB = 9)] = 'TAB'),
                         (e[(e.KEY_N = 78)] = 'KEY_N'),
+                        (e[(e.KEY_0 = 48)] = 'KEY_0'),
                         (e[(e.KEY_1 = 49)] = 'KEY_1'),
                         (e[(e.KEY_2 = 50)] = 'KEY_2'),
                         (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1308,8 +1309,8 @@
                     j = 'VerticalBar_base_f3',
                     H = 'VerticalBar_base__nonActive_42',
                     G = 'VerticalBar_topButton_d7',
-                    q = 'VerticalBar_bottomButton_06',
-                    K = 'VerticalBar_track_df',
+                    K = 'VerticalBar_bottomButton_06',
+                    q = 'VerticalBar_track_df',
                     Y = 'VerticalBar_thumb_32',
                     $ = 'VerticalBar_rail_43',
                     X = 'disable',
@@ -1469,7 +1470,7 @@
                             l().createElement(
                                 'div',
                                 {
-                                    className: a()(K, u.track),
+                                    className: a()(q, u.track),
                                     onMouseDown: (u) => {
                                         const n = _.current;
                                         if (n && 0 === u.button)
@@ -1498,7 +1499,7 @@
                                 l().createElement('div', { className: a()($, u.rail) }),
                             ),
                             l().createElement('div', {
-                                className: a()(q, u.bottomButton),
+                                className: a()(K, u.bottomButton),
                                 onMouseDown: (e) => {
                                     e.target.classList.contains(X) || 0 !== e.button || (F('play'), y(p.Prev));
                                 },
@@ -1999,7 +2000,7 @@
                         for (; r; ) (o !== r.index && t(e.slice(o, r.index)), n(r), (o = u.lastIndex), (r = u.exec(e)));
                         o !== e.length && t(e.slice(o));
                     },
-                    qe = (e) => {
+                    Ke = (e) => {
                         const u = /[\s\u002d]/g;
                         let t = u.exec(e);
                         if (!t) return [e];
@@ -2008,14 +2009,14 @@
                         for (; t; ) (n.push(e.slice(r, u.lastIndex)), (r = u.lastIndex), (t = u.exec(e)));
                         return (r !== e.length && n.push(e.slice(r)), n);
                     },
-                    Ke = (e, u = '') => {
+                    qe = (e, u = '') => {
                         const t = [];
                         return (
                             Ge(
                                 e,
                                 /(\n+|[\xa0\ufeff]+)/g,
                                 (e) => {
-                                    t.push({ blockType: Pe.Word, colorTag: u, childList: qe(e) });
+                                    t.push({ blockType: Pe.Word, colorTag: u, childList: Ke(e) });
                                 },
                                 (e) => {
                                     const n = e[0],
@@ -2052,13 +2053,13 @@
                                 e,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (e) => {
-                                    n.push(...Ke(e, t));
+                                    n.push(...qe(e, t));
                                 },
                                 (e) => {
                                     const r = e[1],
                                         o = void 0 === u[r] ? e[0] : u[r];
                                     'string' == typeof o || 'number' == typeof o
-                                        ? n.push(...Ke(String(o), t))
+                                        ? n.push(...qe(String(o), t))
                                         : n.push({ blockType: Pe.Binding, colorTag: t, childList: [o] });
                                 },
                             ),

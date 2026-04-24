@@ -843,6 +843,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1656,11 +1657,11 @@
                         return { path: u.getChunkPath(Math.trunc(n / t)), x: i, y: r };
                     };
                 })(V);
-                let q;
+                let K;
                 !(function (u) {
                     ((u.Medium = 'medium'), (u.SMedium = 'smedium'), (u.ExtraSmall = 'extraSmall'));
-                })(q || (q = {}));
-                const K = ({ className: u, isAnimated: e, isWidget: t, size: n }) => {
+                })(K || (K = {}));
+                const q = ({ className: u, isAnimated: e, isWidget: t, size: n }) => {
                     const i = a()(u, j.base, { [j.animation]: e, [j.widget]: t, [j[`widget__${n}`]]: t });
                     return r().createElement(
                         'div',
@@ -1683,8 +1684,8 @@
                             : r().createElement('div', { className: j.staticHighlight }),
                     );
                 };
-                var $ = t(6373);
-                const Y = {
+                var Y = t(6373);
+                const $ = {
                     base: 'RankedStatBattles_base_f2',
                     icon: 'RankedStatBattles_icon_c5',
                     icon__medium: 'RankedStatBattles_icon__medium_f7',
@@ -1699,13 +1700,13 @@
                         const n = ((u) => (e ? '---' : l.Z5.getRealFormat(u, l.Gr.WO_ZERO_DIGITS)))(u),
                             i = R.strings.tooltips.rankedBattleView.stats.totalBattles;
                         return r().createElement(
-                            $.i,
+                            Y.i,
                             { header: i.$dyn('header'), body: i.$dyn('body') },
                             r().createElement(
                                 'div',
-                                { className: a()(Y.base, Y[`base__${t}`]) },
-                                r().createElement('div', { className: a()(Y.icon, Y[`icon__${t}`]) }),
-                                r().createElement('div', { className: a()(Y.value, Y[`value__${t}`]) }, n),
+                                { className: a()($.base, $[`base__${t}`]) },
+                                r().createElement('div', { className: a()($.icon, $[`icon__${t}`]) }),
+                                r().createElement('div', { className: a()($.value, $[`value__${t}`]) }, n),
                             ),
                         );
                     }),
@@ -1747,10 +1748,10 @@
                         v = (0, i.useMemo)(
                             () =>
                                 [B.Small, B.ExtraSmall].includes(d)
-                                    ? q.ExtraSmall
+                                    ? K.ExtraSmall
                                     : d === B.SMedium
-                                      ? q.SMedium
-                                      : q.Medium,
+                                      ? K.SMedium
+                                      : K.Medium,
                             [d],
                         ),
                         w = (0, i.useMemo)(() => {
@@ -1780,7 +1781,7 @@
                                 'div',
                                 { className: Q.wrapper },
                                 r().createElement('div', { className: Q.icon, style: w }),
-                                D && r().createElement(K, { isAnimated: !0, isWidget: !0, size: v }),
+                                D && r().createElement(q, { isAnimated: !0, isWidget: !0, size: v }),
                             ),
                         ),
                         m && r().createElement(X, { value: c, isUnavailable: F, size: h }),

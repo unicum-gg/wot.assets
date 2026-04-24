@@ -167,8 +167,8 @@
                         getViewGlobalPosition: () => m,
                         isEventHandled: () => f,
                         isFocused: () => S,
-                        pxToRem: () => w,
-                        remToPx: () => E,
+                        pxToRem: () => E,
+                        remToPx: () => w,
                         resize: () => u,
                         sendEvent: () => _.qP,
                         setAnimateWindow: () => p,
@@ -204,7 +204,7 @@
                 }
                 function m(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? t : { x: E(t.x), y: E(t.y) };
+                    return 'rem' === e ? t : { x: w(t.x), y: w(t.y) };
                 }
                 function v() {
                     viewEnv.freezeTextureBeforeResize();
@@ -212,10 +212,10 @@
                 function h() {
                     return viewEnv.getScale();
                 }
-                function w(e) {
+                function E(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function E(e) {
+                function w(e) {
                     return viewEnv.remToPx(e);
                 }
                 function p(e, t) {
@@ -396,6 +396,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -555,7 +556,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             4179: (e, t, i) => {
-                i.d(t, { Sw: () => a.Z, ry: () => E });
+                i.d(t, { Sw: () => a.Z, ry: () => w });
                 class n {
                     constructor() {
                         ((this.entries = []),
@@ -636,8 +637,8 @@
                     }
                     o.done ? t(r) : Promise.resolve(r).then(n, s);
                 }
-                const w = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
-                    E = (function () {
+                const E = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
+                    w = (function () {
                         var e,
                             t =
                                 ((e = function* () {
@@ -718,7 +719,7 @@
                         RealFormatType: c,
                         TimeFormatType: d,
                         DateFormatType: b,
-                        makeGlobalBoundingBox: w,
+                        makeGlobalBoundingBox: E,
                         sendMoveEvent: (e) => p(r.MOVE, { isMouseEvent: !0, on: e }),
                         sendCloseEvent: S,
                         sendClosePopOverEvent: () => p(r.POP_OVER, { on: !1 }),
@@ -744,7 +745,7 @@
                                 decoratorID: n || R.invalid('resId'),
                                 targetID: s,
                                 direction: t,
-                                bbox: w(u),
+                                bbox: E(u),
                                 on: !0,
                                 args: a,
                             });
@@ -760,7 +761,7 @@
                             g(e, S);
                         },
                         handleViewEvent: p,
-                        onBindingsReady: E,
+                        onBindingsReady: w,
                         onLayoutReady: () =>
                             new Promise((e) => {
                                 requestAnimationFrame(() => {
@@ -810,8 +811,8 @@
                     m = 'BackEffects_wrench_5a',
                     v = { enterActive: 'BackEffects_shine__enterActive_54' },
                     h = { enterActive: 'BackEffects_sparks__enterActive_79' },
-                    w = { enterActive: 'BackEffects_nut__enterActive_b8' },
-                    E = { enterActive: 'BackEffects_wrench__enterActive_ca' },
+                    E = { enterActive: 'BackEffects_nut__enterActive_b8' },
+                    w = { enterActive: 'BackEffects_wrench__enterActive_ca' },
                     p = [n.dZ, n.sH],
                     S = o().memo(({ in: e, actionType: t }) =>
                         o().createElement(
@@ -833,12 +834,12 @@
                                     null,
                                     o().createElement(
                                         l.Z,
-                                        { in: e, timeout: c.wx, classNames: w },
+                                        { in: e, timeout: c.wx, classNames: E },
                                         o().createElement('div', { className: u }),
                                     ),
                                     o().createElement(
                                         l.Z,
-                                        { in: e, timeout: c.Kz, classNames: E },
+                                        { in: e, timeout: c.Kz, classNames: w },
                                         o().createElement('div', { className: m }),
                                     ),
                                 ),
@@ -966,8 +967,8 @@
                     }) => {
                         const v = (0, a.m)('model.lastSlotAction'),
                             h = v.leftID,
-                            w = v.rightID,
-                            E = v.leftIntCD,
+                            E = v.rightID,
+                            w = v.leftIntCD,
                             p = v.rightIntCD,
                             g = v.actionType,
                             f = v.intCD,
@@ -986,16 +987,16 @@
                             B = (0, _.useState)(m),
                             U = B[0],
                             V = B[1],
-                            W = (0, _.useRef)(),
                             K = (0, _.useRef)(),
+                            W = (0, _.useRef)(),
                             G = [n._2, n.dZ, n.sH],
                             H = (f === i || f === N) && U !== m && G.includes(g),
-                            q = -1 === E || -1 === p,
+                            q = -1 === w || -1 === p,
                             $ = d ? `base${d[0].toUpperCase() + d.slice(1)}` : 'base',
                             j = c.Sr[g] || 0;
                         ((0, _.useEffect)(
                             () => () => {
-                                (W.current && clearTimeout(W.current), K.current && clearTimeout(K.current));
+                                (K.current && clearTimeout(K.current), W.current && clearTimeout(W.current));
                             },
                             [],
                         ),
@@ -1008,7 +1009,7 @@
                                     switch (g) {
                                         case n.Xo: {
                                             const e = h === t ? c.mI.RIGHT : c.mI.LEFT,
-                                                n = w - h != 1 ? c.mI.SWAP : '';
+                                                n = E - h != 1 ? c.mI.SWAP : '';
                                             ((i.enterDone = O[`${$}__enter${e}${n}`]),
                                                 (i.exit = O[`${$}__exit${e}${n}`]),
                                                 q &&
@@ -1020,14 +1021,14 @@
                                         case n._2:
                                             ((i.enterDone = O[`${$}__enter${c.mI.DESTROY}`]),
                                                 (i.exit = O[`${$}__exit${c.mI.DESTROY}`]),
-                                                (W.current = setTimeout(() => D(!0), c.YJ)),
+                                                (K.current = setTimeout(() => D(!0), c.YJ)),
                                                 k(!0));
                                             break;
                                         case n.sH:
                                         case n.dZ:
                                             ((i.enter = O[`${$}__enter${c.mI.DEMOUNT}${c.mI.FADE}`]),
                                                 (i.exit = O[`${$}__exit${c.mI.DEMOUNT}`]),
-                                                (W.current = setTimeout(() => D(!0), c.Ij)));
+                                                (K.current = setTimeout(() => D(!0), c.Ij)));
                                             break;
                                         case n.eC:
                                         case n.FR:
@@ -1045,11 +1046,11 @@
                                     }
                                     return o().cloneElement(e, { classNames: i, timeout: j });
                                 },
-                                [g, d, $, j, h, t, w, b, q],
+                                [g, d, $, j, h, t, E, b, q],
                             ),
                             Y = (0, _.useCallback)(
                                 (e) => {
-                                    K.current = setTimeout(() => {
+                                    W.current = setTimeout(() => {
                                         ((e.className = ''), e.classList.add(O.base), I(i), V(m));
                                     }, j);
                                 },

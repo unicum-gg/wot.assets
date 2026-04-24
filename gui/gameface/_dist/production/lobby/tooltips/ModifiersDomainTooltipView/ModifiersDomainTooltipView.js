@@ -468,6 +468,7 @@
                         (u[(u.DELETE = 46)] = 'DELETE'),
                         (u[(u.TAB = 9)] = 'TAB'),
                         (u[(u.KEY_N = 78)] = 'KEY_N'),
+                        (u[(u.KEY_0 = 48)] = 'KEY_0'),
                         (u[(u.KEY_1 = 49)] = 'KEY_1'),
                         (u[(u.KEY_2 = 50)] = 'KEY_2'),
                         (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1232,74 +1233,74 @@
                     (z.radiansPerSecondToDegreesPerSecond = (u) => u * (180 / Math.PI)),
                     (z.probabilityToPercent = (u) => 100 * u),
                     (z.default = (u) => u));
-                class $ {}
-                (($.percent = (u, e, t) => {
-                    const r = $.default(u, e, t);
+                class Y {}
+                ((Y.percent = (u, e, t) => {
+                    const r = Y.default(u, e, t);
                     return b(S(R.strings.modifier_formatter.modifier.format.percentage(), { value: r }));
                 }),
-                    ($.multiplier = (u, e, t) => {
-                        const r = $.default(u, e, t);
+                    (Y.multiplier = (u, e, t) => {
+                        const r = Y.default(u, e, t);
                         return b(S(R.strings.modifier_formatter.modifier.format.multiplier(), { value: r }));
                     }),
-                    ($.pointsPerSecond = (u, e, t) => {
-                        const r = $.default(u, e, t);
+                    (Y.pointsPerSecond = (u, e, t) => {
+                        const r = Y.default(u, e, t);
                         return b(S(R.strings.modifier_formatter.modifier.format.points_per_second(), { value: r }));
                     }),
-                    ($.hitpoints = (u, e, t) => {
-                        const r = $.default(u, e, t);
+                    (Y.hitpoints = (u, e, t) => {
+                        const r = Y.default(u, e, t);
                         return b(S(R.strings.modifier_formatter.modifier.format.hitpoints(), { value: r }));
                     }),
-                    ($.seconds = (u, e, t) => {
-                        const r = $.default(u, e, t);
+                    (Y.seconds = (u, e, t) => {
+                        const r = Y.default(u, e, t);
                         return b(S(R.strings.modifier_formatter.modifier.format.seconds(), { value: r }));
                     }),
-                    ($.minutes = (u, e, t) => {
-                        const r = $.default(u, e, t);
+                    (Y.minutes = (u, e, t) => {
+                        const r = Y.default(u, e, t);
                         return b(S(R.strings.modifier_formatter.modifier.format.minutes(), { value: r }));
                     }),
-                    ($.deviation = (u, e, t) => {
-                        const r = $.default(u, e, t);
+                    (Y.deviation = (u, e, t) => {
+                        const r = Y.default(u, e, t);
                         return b(S(R.strings.modifier_formatter.modifier.format.deviation(), { value: r }));
                     }),
-                    ($.millimeters = (u, e, t) => {
-                        const r = $.default(u, e, t);
+                    (Y.millimeters = (u, e, t) => {
+                        const r = Y.default(u, e, t);
                         return b(S(R.strings.modifier_formatter.modifier.format.millimeters(), { value: r }));
                     }),
-                    ($.degree = (u, e, t) => {
-                        const r = $.default(u, e, t);
+                    (Y.degree = (u, e, t) => {
+                        const r = Y.default(u, e, t);
                         return b(S(R.strings.modifier_formatter.modifier.format.degrees(), { value: r }));
                     }),
-                    ($.meters = (u, e, t) => {
-                        const r = $.default(u, e, t);
+                    (Y.meters = (u, e, t) => {
+                        const r = Y.default(u, e, t);
                         return b(S(R.strings.modifier_formatter.modifier.format.meters(), { value: r }));
                     }),
-                    ($.kmPerHour = (u, e, t) => {
-                        const r = $.default(u, e, t);
+                    (Y.kmPerHour = (u, e, t) => {
+                        const r = Y.default(u, e, t);
                         return b(S(R.strings.modifier_formatter.modifier.format.km_per_hour(), { value: r }));
                     }),
-                    ($.metersPerSecond = (u, e, t) => {
-                        const r = $.default(u, e, t);
+                    (Y.metersPerSecond = (u, e, t) => {
+                        const r = Y.default(u, e, t);
                         return b(S(R.strings.modifier_formatter.modifier.format.meters_per_second(), { value: r }));
                     }),
-                    ($.degreesPerSecond = (u, e, t) => {
-                        const r = $.default(u, e, t);
+                    (Y.degreesPerSecond = (u, e, t) => {
+                        const r = Y.default(u, e, t);
                         return b(S(R.strings.modifier_formatter.modifier.format.degrees_per_second(), { value: r }));
                     }),
-                    ($.meterPerSecondSquared = (u, e, t) => {
-                        const r = $.default(u, e, t);
+                    (Y.meterPerSecondSquared = (u, e, t) => {
+                        const r = Y.default(u, e, t);
                         return b(
                             S(R.strings.modifier_formatter.modifier.format.meter_per_second_squared(), { value: r }),
                         );
                     }),
-                    ($.horsepower = (u, e, t) => {
-                        const r = $.default(u, e, t);
+                    (Y.horsepower = (u, e, t) => {
+                        const r = Y.default(u, e, t);
                         return b(S(R.strings.modifier_formatter.modifier.format.horsepower(), { value: r }));
                     }),
-                    ($.logic = (u) =>
+                    (Y.logic = (u) =>
                         u
                             ? R.strings.modifier_formatter.modifier.format.logic.on()
                             : b(R.strings.modifier_formatter.modifier.format.logic.off())),
-                    ($.time = (u, e, t) => {
+                    (Y.time = (u, e, t) => {
                         const r = u >= 0 ? t : '-',
                             i = ((u, e = !0) =>
                                 u.days > 7 && e
@@ -1326,7 +1327,7 @@
                             );
                         return b(`${r}${i}`);
                     }),
-                    ($.default = (u, e, t) => {
+                    (Y.default = (u, e, t) => {
                         const r = u >= 0 ? t : '',
                             i = ((u, e) => {
                                 const t = Math.pow(10, e);
@@ -1334,35 +1335,35 @@
                             })(u, e);
                         return `${r}${y.Z5.getRealFormat(i, y.Gr.WO_ZERO_DIGITS)}`;
                     }));
-                const Y = {
+                const $ = {
                     generalOverrides: [
                         {
                             condition: j.useType.oneOf(G.MUL),
                             valueConverter: z.multiplierToPercent,
                             numberOfDecimals: 0,
-                            formatter: $.percent,
+                            formatter: Y.percent,
                         },
                         {
                             condition: q(j.useType.oneOf(G.MUL), j.value.isPositiveInteger),
                             valueConverter: z.default,
                             numberOfDecimals: 0,
                             prefixForPositiveValue: '',
-                            formatter: $.multiplier,
+                            formatter: Y.multiplier,
                         },
                         { condition: j.useType.oneOf(G.VAL), prefixForPositiveValue: '' },
                     ],
                     defaultPrefixForPositiveValue: '+',
                     physTypes: {
-                        [W.UNDEFINED]: { overrides: [], defaultNumberOfDecimals: 2, defaultFormatter: $.default },
+                        [W.UNDEFINED]: { overrides: [], defaultNumberOfDecimals: 2, defaultFormatter: Y.default },
                         [W.RADIANS]: {
                             overrides: [
                                 { condition: j.useType.oneOf(G.ADD, G.VAL), valueConverter: z.radiansToDegrees },
                             ],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: $.degree,
+                            defaultFormatter: Y.degree,
                         },
-                        [W.DEGREES]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: $.degree },
-                        [W.HIT_POINTS]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: $.hitpoints },
+                        [W.DEGREES]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: Y.degree },
+                        [W.HIT_POINTS]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: Y.hitpoints },
                         [W.METERS_PER_SECOND]: {
                             overrides: [
                                 {
@@ -1371,18 +1372,18 @@
                                         j.useType.oneOf(G.VAL, G.ADD),
                                     ),
                                     valueConverter: z.metPerSecondToKmPerHour,
-                                    formatter: $.kmPerHour,
+                                    formatter: Y.kmPerHour,
                                 },
                             ],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: $.metersPerSecond,
+                            defaultFormatter: Y.metersPerSecond,
                         },
                         [W.KILOMETERS_PER_HOUR]: {
                             overrides: [],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: $.kmPerHour,
+                            defaultFormatter: Y.kmPerHour,
                         },
-                        [W.MILLIMETERS]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: $.millimeters },
+                        [W.MILLIMETERS]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: Y.millimeters },
                         [W.SECONDS]: {
                             overrides: [
                                 {
@@ -1390,13 +1391,13 @@
                                         j.modificationType.oneOf(V.BATTLE_LENGTH),
                                         j.useType.oneOf(G.VAL, G.ADD),
                                     ),
-                                    formatter: $.time,
+                                    formatter: Y.time,
                                 },
                             ],
                             defaultNumberOfDecimals: 2,
-                            defaultFormatter: $.seconds,
+                            defaultFormatter: Y.seconds,
                         },
-                        [W.MINUTES]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: $.minutes },
+                        [W.MINUTES]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: Y.minutes },
                         [W.METERS]: {
                             overrides: [
                                 {
@@ -1408,39 +1409,39 @@
                                 },
                             ],
                             defaultNumberOfDecimals: 2,
-                            defaultFormatter: $.meters,
+                            defaultFormatter: Y.meters,
                         },
                         [W.RADIANS_PER_SECOND]: {
                             overrides: [
                                 {
                                     condition: j.useType.oneOf(G.VAL, G.ADD),
                                     valueConverter: z.radiansPerSecondToDegreesPerSecond,
-                                    formatter: $.degreesPerSecond,
+                                    formatter: Y.degreesPerSecond,
                                 },
                             ],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: $.degreesPerSecond,
+                            defaultFormatter: Y.degreesPerSecond,
                         },
                         [W.DEGREES_PER_SECOND]: {
                             overrides: [],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: $.degreesPerSecond,
+                            defaultFormatter: Y.degreesPerSecond,
                         },
                         [W.METER_PER_SECOND_SQUARED]: {
                             overrides: [],
                             defaultNumberOfDecimals: 2,
-                            defaultFormatter: $.meterPerSecondSquared,
+                            defaultFormatter: Y.meterPerSecondSquared,
                         },
                         [W.PROBABILITY]: {
                             overrides: [
                                 {
                                     condition: j.useType.oneOf(G.VAL, G.ADD),
                                     valueConverter: z.probabilityToPercent,
-                                    formatter: $.percent,
+                                    formatter: Y.percent,
                                 },
                             ],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: $.percent,
+                            defaultFormatter: Y.percent,
                         },
                         [W.DEVIATION]: {
                             overrides: [
@@ -1449,24 +1450,24 @@
                                     valueConverter: z.probabilityToPercent,
                                     numberOfDecimals: 0,
                                     prefixForPositiveValue: '',
-                                    formatter: $.deviation,
+                                    formatter: Y.deviation,
                                 },
                                 {
                                     condition: j.useType.oneOf(G.ADD),
                                     valueConverter: z.probabilityToPercent,
                                     numberOfDecimals: 0,
-                                    formatter: $.percent,
+                                    formatter: Y.percent,
                                 },
                             ],
                             defaultNumberOfDecimals: 2,
-                            defaultFormatter: $.default,
+                            defaultFormatter: Y.default,
                         },
-                        [W.HORSEPOWER]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: $.horsepower },
-                        [W.LOGIC]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: $.logic },
+                        [W.HORSEPOWER]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: Y.horsepower },
+                        [W.LOGIC]: { overrides: [], defaultNumberOfDecimals: 0, defaultFormatter: Y.logic },
                         [W.POINTS_PER_SECOND]: {
                             overrides: [],
                             defaultNumberOfDecimals: 0,
-                            defaultFormatter: $.pointsPerSecond,
+                            defaultFormatter: Y.pointsPerSecond,
                         },
                     },
                 };
@@ -1513,19 +1514,19 @@
                             return this.formatModifier(t);
                         }),
                             (this.formatModifier = (u) => {
-                                let e = Y.physTypes[u.physicalType];
+                                let e = $.physTypes[u.physicalType];
                                 if (
                                     (void 0 === e &&
                                         (console.warn('Not found formatter for physicalType', u.physicalType),
-                                        (e = Y.physTypes[W.UNDEFINED])),
+                                        (e = $.physTypes[W.UNDEFINED])),
                                     void 0 === e)
                                 )
                                     throw Error(`Not found formatter for physicalType=${u.physicalType.toString()}`);
                                 let t = e.defaultFormatter,
                                     r = z.default,
                                     i = e.defaultNumberOfDecimals,
-                                    a = Y.defaultPrefixForPositiveValue;
-                                for (var n = 0, o = [Y.generalOverrides, e.overrides]; n < o.length; n++)
+                                    a = $.defaultPrefixForPositiveValue;
+                                for (var n = 0, o = [$.generalOverrides, e.overrides]; n < o.length; n++)
                                     for (var E, s = Z(o[n]); !(E = s()).done; ) {
                                         const e = E.value;
                                         var A, F;

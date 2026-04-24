@@ -1239,6 +1239,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -3441,6 +3442,7 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
@@ -3481,7 +3483,6 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
-                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -3923,7 +3924,8 @@
                         ru.premium_plus_universal.title(),
                         ru.premium_plus_universal.subtitle(),
                         ru.equipCoin.title(),
-                        ru.equipCoin.subtitle(),
+                        ru.equipCoin.enabled.subtitle(),
+                        ru.equipCoin.disabled.subtitle(),
                         ru.crystal.title(),
                         ru.crystal.subtitle(),
                         ru.freeExp.title(),
@@ -4626,69 +4628,69 @@
                             R = S.lootBoxesFullStatsSelectLootboxClick,
                             y = b.computes.getSelectedLootboxes(),
                             T = I();
-                        !(function (e, u) {
-                            const t = e.contentRef,
-                                n = e.wrapperRef,
-                                o = e.scrollPosition,
-                                a = e.clampPosition,
-                                s = e.animationScroll,
-                                i = e.events,
-                                l = (0, r.useState)(pu),
-                                c = l[0],
-                                d = l[1];
+                        !(function (e, u, t) {
+                            const n = e.contentRef,
+                                o = e.wrapperRef,
+                                a = e.scrollPosition,
+                                s = e.clampPosition,
+                                i = e.animationScroll,
+                                l = e.events,
+                                c = (0, r.useState)(pu),
+                                d = c[0],
+                                m = c[1];
                             ((0, r.useEffect)(() => {
-                                const e = t.current;
-                                e && (e.style.cursor = 'dragging' === c.type ? 'move' : 'grab');
-                            }, [t, c.type]),
+                                const e = n.current;
+                                e && (e.style.cursor = 'dragging' === d.type ? 'move' : 'grab');
+                            }, [n, d.type]),
                                 (0, r.useEffect)(() => {
-                                    if ('dragging' !== c.type) return;
-                                    const e = E.O.client.events.mouse.move(([e, r]) => {
-                                            const i = t.current,
-                                                l = n.current;
-                                            if (!i || !l) return;
-                                            if ('inside' === r && e.clientX < 0) return;
-                                            const E = 'inside' === r ? e.clientX : e.clientX - l.offsetLeft,
-                                                d = c.positionFrom - E,
-                                                m = c.previousScrollPosition + d;
-                                            o.start(
+                                    if ('dragging' !== d.type) return;
+                                    const e = E.O.client.events.mouse.move(([e, t]) => {
+                                            const r = n.current,
+                                                l = o.current;
+                                            if (!r || !l) return;
+                                            if ('inside' === t && e.clientX < 0) return;
+                                            const c = 'inside' === t ? e.clientX : e.clientX - l.offsetLeft,
+                                                E = d.positionFrom - c,
+                                                m = d.previousScrollPosition + E;
+                                            a.start(
                                                 Object.assign(
                                                     {
-                                                        scrollPosition: a(i, m),
-                                                        from: { scrollPosition: s.scrollPosition.get() },
+                                                        scrollPosition: s(r, m),
+                                                        from: { scrollPosition: i.scrollPosition.get() },
                                                     },
                                                     u,
                                                 ),
                                             );
                                         }),
-                                        r = E.O.client.events.mouse.up(function () {
-                                            d({ type: 'scrollingToEnd' });
+                                        t = E.O.client.events.mouse.up(function () {
+                                            m({ type: 'scrollingToEnd' });
                                         });
                                     return () => {
-                                        (e(), r());
+                                        (e(), t());
                                     };
-                                }, [s.scrollPosition, a, t, c, o, n, u]),
+                                }, [i.scrollPosition, s, n, d, a, o, u]),
                                 (0, r.useEffect)(() => {
-                                    if ('scrollingToEnd' !== c.type) return;
+                                    if ('scrollingToEnd' !== d.type) return;
                                     const e = () => {
-                                        d(pu);
+                                        m(pu);
                                     };
-                                    return (s.scrollPosition.idle && e(), i.on('rest', e), () => i.off('rest', e));
-                                }, [s.scrollPosition, c.type, i]),
+                                    return (i.scrollPosition.idle && e(), l.on('rest', e), () => l.off('rest', e));
+                                }, [i.scrollPosition, d.type, l]),
                                 (0, r.useEffect)(() => {
-                                    const e = t.current;
+                                    const e = n.current;
                                     if (!e) return;
                                     const u = (e) => {
-                                        d({
+                                        m({
                                             type: 'dragging',
                                             positionFrom: e.screenX,
-                                            previousScrollPosition: s.scrollPosition.get(),
+                                            previousScrollPosition: i.scrollPosition.get(),
                                         });
                                     };
                                     return (
                                         e.addEventListener('mousedown', u),
                                         () => e.removeEventListener('mousedown', u)
                                     );
-                                }, [s.scrollPosition, t]));
+                                }, [i.scrollPosition, n, t]));
                         })(T);
                         const L = (0, r.useCallback)((e) => y.includes(e), [y]),
                             M = (u) => {

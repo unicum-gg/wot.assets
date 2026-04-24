@@ -44,13 +44,13 @@
                         getSize: () => L,
                         getViewGlobalPosition: () => N,
                         isEventHandled: () => W,
-                        isFocused: () => V,
+                        isFocused: () => K,
                         pxToRem: () => x,
                         remToPx: () => U,
                         resize: () => D,
                         sendEvent: () => M,
                         setAnimateWindow: () => I,
-                        setEventHandled: () => K,
+                        setEventHandled: () => V,
                         setInputPaddingsRem: () => k,
                         setSidePaddingsRem: () => S,
                         whenTutorialReady: () => j,
@@ -247,10 +247,10 @@
                 function I(e, t) {
                     viewEnv.setAnimateWindow(e, t);
                 }
-                function V() {
+                function K() {
                     return viewEnv.isFocused();
                 }
-                function K() {
+                function V() {
                     return viewEnv.setEventHandled();
                 }
                 function W() {
@@ -304,6 +304,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),

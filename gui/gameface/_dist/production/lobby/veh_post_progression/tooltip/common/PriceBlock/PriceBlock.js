@@ -28,7 +28,7 @@
             5067: (u, e, F) => {
                 F.d(e, { O: () => j });
                 var A = {};
-                (F.r(A), F.d(A, { mouse: () => o, onResize: () => D }));
+                (F.r(A), F.d(A, { mouse: () => o, onResize: () => _ }));
                 var E = {};
                 (F.r(E),
                     F.d(E, {
@@ -79,8 +79,8 @@
                         setSidePaddingsRem: () => T,
                         whenTutorialReady: () => H,
                     }));
-                const D = r('clientResized'),
-                    _ = { down: r('mousedown'), up: r('mouseup'), move: r('mousemove') };
+                const _ = r('clientResized'),
+                    D = { down: r('mousedown'), up: r('mouseup'), move: r('mousemove') };
                 const o = (function () {
                     const u = { listeners: 0, enabled: !0, initialized: !1 };
                     function e() {
@@ -108,7 +108,7 @@
                                     u.listeners += 1;
                                     let E = !0;
                                     const n = `mouse${e}`,
-                                        t = _[e]((u) => F([u, 'outside']));
+                                        t = D[e]((u) => F([u, 'outside']));
                                     function r(u) {
                                         F([u, 'inside']);
                                     }
@@ -328,6 +328,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -509,7 +510,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             4179: (u, e, F) => {
-                F.d(e, { B3: () => D, Z5: () => t, ry: () => d });
+                F.d(e, { B3: () => _, Z5: () => t, ry: () => d });
                 class A {
                     constructor() {
                         ((this.entries = []),
@@ -574,8 +575,8 @@
                         (u[(u.CLOSE = 32)] = 'CLOSE'),
                         (u[(u.MINIMIZE = 64)] = 'MINIMIZE'));
                 })(i || (i = {}));
-                const D = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
-                    _ = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
+                const _ = Object.freeze({ INTEGRAL: 0, GOLD: 1 }),
+                    D = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     o = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     a = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var B = F(5521),
@@ -668,8 +669,8 @@
                         DataTracker: n.Z,
                         ViewModel: h.Z,
                         ViewEventType: i,
-                        NumberFormatType: D,
-                        RealFormatType: _,
+                        NumberFormatType: _,
+                        RealFormatType: D,
                         TimeFormatType: o,
                         DateFormatType: a,
                         makeGlobalBoundingBox: l,
@@ -682,13 +683,13 @@
                         sendShowPopOverEvent: (u, e, F, A, E = R.invalid('resId'), n) => {
                             const t = C.O.view.getViewGlobalPosition(),
                                 r = F.getBoundingClientRect(),
-                                D = r.x,
-                                _ = r.y,
+                                _ = r.x,
+                                D = r.y,
                                 o = r.width,
                                 a = r.height,
                                 B = {
-                                    x: C.O.view.pxToRem(D) + t.x,
-                                    y: C.O.view.pxToRem(_) + t.y,
+                                    x: C.O.view.pxToRem(_) + t.x,
+                                    y: C.O.view.pxToRem(D) + t.y,
                                     width: C.O.view.pxToRem(o),
                                     height: C.O.view.pxToRem(a),
                                 };
@@ -759,7 +760,7 @@
                     t = F.n(n),
                     r = F(329),
                     i = F(4179);
-                class D extends E().PureComponent {
+                class _ extends E().PureComponent {
                     render() {
                         let u;
                         if ('gold' === this.props.format) u = i.B3.GOLD;
@@ -768,8 +769,8 @@
                         return void 0 !== this.props.value && void 0 !== e ? e : null;
                     }
                 }
-                D.defaultProps = { format: 'integral' };
-                const _ = {
+                _.defaultProps = { format: 'integral' };
+                const D = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',
@@ -824,11 +825,11 @@
                         showPlus: a,
                         stockBackgroundName: B = r.we.Red,
                     }) => {
-                        const C = t()(_.value, _[`value__${A}`], !n && _.value__notEnough),
-                            s = t()(_.icon, _[`icon__${A}-${F}`]),
-                            c = t()(_.stock, o && _.stock__indent, e && _.stock__interactive),
+                        const C = t()(D.value, D[`value__${A}`], !n && D.value__notEnough),
+                            s = t()(D.icon, D[`icon__${A}-${F}`]),
+                            c = t()(D.stock, o && D.stock__indent, e && D.stock__interactive),
                             l = a && i > 0 && '+',
-                            d = t()(_.base, _[`base__${F}`]);
+                            d = t()(D.base, D[`base__${F}`]);
                         return E().createElement(
                             'span',
                             { className: d },
@@ -836,7 +837,7 @@
                                 'span',
                                 { className: C },
                                 l,
-                                E().createElement(D, { value: i, format: A === r.V2.gold ? 'gold' : 'integral' }),
+                                E().createElement(_, { value: i, format: A === r.V2.gold ? 'gold' : 'integral' }),
                             ),
                             E().createElement('span', { className: s }),
                             u &&
@@ -844,7 +845,7 @@
                                     'span',
                                     { className: c },
                                     E().createElement('span', {
-                                        className: _.stockBackground,
+                                        className: D.stockBackground,
                                         style: { backgroundImage: `url(R.images.gui.maps.icons.library.${B})` },
                                     }),
                                     Boolean(o) && o,
@@ -924,11 +925,11 @@
                         i = 0;
                     if (n.some((e) => 0 !== u[e])) {
                         for (A in t) __webpack_require__.o(t, A) && (__webpack_require__.m[A] = t[A]);
-                        if (r) var D = r(__webpack_require__);
+                        if (r) var _ = r(__webpack_require__);
                     }
                     for (e && e(F); i < n.length; i++)
                         ((E = n[i]), __webpack_require__.o(u, E) && u[E] && u[E][0](), (u[E] = 0));
-                    return __webpack_require__.O(D);
+                    return __webpack_require__.O(_);
                 },
                 F = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (F.forEach(e.bind(null, 0)), (F.push = e.bind(null, F.push.bind(F))));

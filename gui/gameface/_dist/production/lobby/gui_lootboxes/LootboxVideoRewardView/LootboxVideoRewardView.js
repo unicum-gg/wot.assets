@@ -713,6 +713,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1612,22 +1613,22 @@
                     for (var t = 0, r = new Array(e); t < e; t++) r[t] = u[t];
                     return r;
                 }
-                const $ = (u) => (0 === u ? window : window.subViews.get(u)),
-                    K = (u) => {
+                const K = (u) => (0 === u ? window : window.subViews.get(u)),
+                    $ = (u) => {
                         return null !== u && 'object' == typeof u
                             ? 'CoherentArrayProxy' === u.constructor.name
                                 ? ((e = u),
-                                  (t = (u) => ('object' == typeof u ? K(u) : u)),
+                                  (t = (u) => ('object' == typeof u ? $(u) : u)),
                                   Array.isArray(e) ? e.map(t) : e.map((u, e, r) => t(null == u ? void 0 : u.value)))
                                 : Array.isArray(u)
-                                  ? u.map((u) => ('object' == typeof u ? K(u) : u))
+                                  ? u.map((u) => ('object' == typeof u ? $(u) : u))
                                   : Object.fromEntries(
-                                        Object.entries(u).map(([u, e]) => [u, 'object' == typeof e ? K(e) : e]),
+                                        Object.entries(u).map(([u, e]) => [u, 'object' == typeof e ? $(e) : e]),
                                     )
                             : u;
                         var e, t;
                     },
-                    J = (u) => K(u);
+                    J = (u) => $(u);
                 var Z = t(6517);
                 const Q = ((u, e) => {
                         const t = (0, o.createContext)({});
@@ -1639,7 +1640,7 @@
                                         const a = (function ({
                                                 initializer: u = !0,
                                                 rootId: e = 0,
-                                                getRoot: t = $,
+                                                getRoot: t = K,
                                                 context: r = 'model',
                                             } = {}) {
                                                 const o = new Map();
@@ -2101,6 +2102,7 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
@@ -2141,7 +2143,6 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
-                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -2656,7 +2657,7 @@
                             a().createElement(Gu, { text: u, className: 'GuaranteedRewardLabel_title_c1' }),
                         );
                     }),
-                    $u = (u, e) => {
+                    Ku = (u, e) => {
                         let t;
                         const r = setTimeout(() => {
                             t = u();
@@ -2665,7 +2666,7 @@
                             ('function' == typeof t && t(), clearTimeout(r));
                         };
                     };
-                var Ku = t(3644);
+                var $u = t(3644);
                 const Ju = (0, o.memo)(
                         ({
                             videoResource: u,
@@ -2701,7 +2702,7 @@
                                     if (u !== s)
                                         return (
                                             l(''),
-                                            $u(() => {
+                                            Ku(() => {
                                                 l(u);
                                             }, 10)
                                         );
@@ -2710,7 +2711,7 @@
                                     'div',
                                     { className: 'SingleVideoComponent_base_e8' },
                                     Boolean(s.length) &&
-                                        a().createElement(Ku.n, {
+                                        a().createElement($u.n, {
                                             key: s,
                                             src: s,
                                             className: 'SingleVideoComponent_video_d4',
@@ -2821,7 +2822,7 @@
                                             return (
                                                 p(!0),
                                                 B(!1),
-                                                $u(() => {
+                                                Ku(() => {
                                                     D(!1);
                                                 }, 350)
                                             );
@@ -2841,7 +2842,7 @@
                                         return (
                                             A(t),
                                             D(!0),
-                                            $u(() => {
+                                            Ku(() => {
                                                 p(!1);
                                             }, 350)
                                         );
@@ -2850,7 +2851,7 @@
                                     'div',
                                     { className: 'DoubleVideoComponent_base_06' },
                                     d &&
-                                        a().createElement(Ku.n, {
+                                        a().createElement($u.n, {
                                             key: `firstVideo-${c}`,
                                             src: e,
                                             className: ue,
@@ -2862,7 +2863,7 @@
                                             videoHeight: 1080,
                                         }),
                                     h &&
-                                        a().createElement(Ku.n, {
+                                        a().createElement($u.n, {
                                             key: `secondVideo-${c}`,
                                             src: c,
                                             className: ue,

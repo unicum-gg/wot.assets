@@ -918,41 +918,41 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0;
     mix-blend-mode: lighten;
     position: absolute;
-    top: -58rem;
+    top: -30rem;
     z-index: 4;
     transition: all 450ms;
     pointer-events: none;
 }
 .Bundle_glow__hover_a0 {
     opacity: 1;
-    top: -73rem;
+    top: -45rem;
 }
 .mediaMedium .Bundle_glow_25 {
     width: 420rem;
     height: 420rem;
-    top: -95rem;
+    top: -60rem;
 }
 .mediaMedium .Bundle_glow__hover_a0 {
     opacity: 1;
-    top: -122rem;
+    top: -75rem;
 }
 .mediaLarge .Bundle_glow_25 {
     width: 500rem;
     height: 500rem;
-    top: -117rem;
+    top: -65rem;
 }
 .mediaLarge .Bundle_glow__hover_a0 {
     opacity: 1;
-    top: -137rem;
+    top: -80rem;
 }
 .mediaExtraLarge .Bundle_glow_25 {
     width: 620rem;
     height: 620rem;
-    top: -144rem;
+    top: -90rem;
 }
 .mediaExtraLarge .Bundle_glow__hover_a0 {
     opacity: 1;
-    top: -168rem;
+    top: -105rem;
 }
 .Bundle_card_71 {
     width: 190rem;

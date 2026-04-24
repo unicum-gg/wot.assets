@@ -370,6 +370,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1351,9 +1352,9 @@
                     I = 'VerticalBar_topButton_d7',
                     V = 'VerticalBar_bottomButton_06',
                     G = 'VerticalBar_track_df',
-                    q = 'VerticalBar_thumb_32',
-                    j = 'VerticalBar_rail_43',
-                    K = 'disable',
+                    K = 'VerticalBar_thumb_32',
+                    q = 'VerticalBar_rail_43',
+                    j = 'disable',
                     Y = () => {},
                     X = { pending: !1, offset: 0 },
                     Z = (e) => {
@@ -1391,7 +1392,7 @@
                                 const a = Math.min(1, r / i);
                                 return (
                                     (t.style.height = `${Q(n, a)}px`),
-                                    t.classList.add(q),
+                                    t.classList.add(K),
                                     o.current && (1 === a ? o.current.classList.add(H) : o.current.classList.remove(H)),
                                     a
                                 );
@@ -1410,15 +1411,15 @@
                                     ((e) => {
                                         if (i.current && f.current && m.current && p.current) {
                                             if (0 === e)
-                                                return (i.current.classList.add(K), void f.current.classList.remove(K));
+                                                return (i.current.classList.add(j), void f.current.classList.remove(j));
                                             if (
                                                 ((t = m.current),
                                                 (n = p.current),
                                                 e - (t.offsetHeight - n.offsetHeight) >= -0.5)
                                             )
-                                                return (i.current.classList.remove(K), void f.current.classList.add(K));
+                                                return (i.current.classList.remove(j), void f.current.classList.add(j));
                                             var t, n;
-                                            (i.current.classList.remove(K), f.current.classList.remove(K));
+                                            (i.current.classList.remove(j), f.current.classList.remove(j));
                                         }
                                     })(l));
                             }),
@@ -1494,7 +1495,7 @@
                             [T],
                         );
                         const N = (e) => {
-                            e.target.classList.contains(K) || (0, v.G)('highlight');
+                            e.target.classList.contains(j) || (0, v.G)('highlight');
                         };
                         return l().createElement(
                             'div',
@@ -1502,7 +1503,7 @@
                             l().createElement('div', {
                                 className: a()(I, t.topButton),
                                 onMouseDown: (e) => {
-                                    e.target.classList.contains(K) || 0 !== e.button || ((0, v.G)('play'), R(h.Next));
+                                    e.target.classList.contains(j) || 0 !== e.button || ((0, v.G)('play'), R(h.Next));
                                 },
                                 ref: i,
                                 onMouseEnter: N,
@@ -1536,12 +1537,12 @@
                                     onMouseEnter: N,
                                 },
                                 l().createElement('div', { ref: p, className: t.thumb }),
-                                l().createElement('div', { className: a()(j, t.rail) }),
+                                l().createElement('div', { className: a()(q, t.rail) }),
                             ),
                             l().createElement('div', {
                                 className: a()(V, t.bottomButton),
                                 onMouseDown: (e) => {
-                                    e.target.classList.contains(K) || 0 !== e.button || ((0, v.G)('play'), R(h.Prev));
+                                    e.target.classList.contains(j) || 0 !== e.button || ((0, v.G)('play'), R(h.Prev));
                                 },
                                 onMouseUp: T,
                                 ref: f,

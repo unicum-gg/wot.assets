@@ -65,7 +65,7 @@
 .CButton_base__disabled_d9 {
     cursor: default;
 }
-/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+/* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
 The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113
@@ -483,22 +483,32 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     color: #a29b70;
 }
 
+/* @mixin coinCountColor {
+    &__defence {
+        color: #bdfbff;
+    }
+
+    &__counterattack {
+        color: $CREAM;
+    }
+
+    &__offence {
+        color: $WHITE;
+    }
+} */
+
 .HBCoin_base_d8 {
     display: flex;
     align-items: center;
     position: relative;
 }
 
-.HBCoin_label__defence_a3 {
-    color: #bdfbff;
+.HBCoin_label__default_e9 {
+    color: #ffffff;
 }
 
-.HBCoin_label__counterattack_e6 {
-    color: #ffdd99;
-}
-
-.HBCoin_label__offence_3e {
-    color: #f2f2f7;
+.HBCoin_label__booster_fe {
+    color: #fd9;
 }
 
 .HBCoin_label__counterattackGlow_e3 {
@@ -520,10 +530,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         0 0 4rem rgba(0, 31, 185, 0.25),
         0 0 8rem #0075ff,
         0 0 15rem #00c2ff;
-}
-
-.HBCoin_label_7f {
-    text-shadow: none;
 }
 
 .HBCoin_label__animated_82 {
@@ -560,6 +566,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding-bottom: 4rem;
 }
 
+.HBCoin_label__sizeH20_14 {
+    padding-bottom: 3rem;
+    color: #e9e2bf;
+    font-size: 20rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
 .HBCoin_label__sizeH22_9c {
     color: #ced9d9;
     font-size: 22rem;
@@ -577,7 +591,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .HBCoin_label__sizeH28_6d {
-    color: #f2f2f7;
+    color: #e9e2bf;
     font-size: 28rem;
     font-weight: 700;
     line-height: 1.1;
@@ -601,6 +615,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .HBCoin_label__sizeH56_88 {
     padding-bottom: 7rem;
+    color: #ffffff;
     font-size: 56rem;
     font-weight: 700;
     line-height: 1.1;
@@ -614,8 +629,25 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding-bottom: 16rem;
 }
 
+.HBCoin_label__sizeH144_61 {
+    color: #f2f2f7;
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+    padding-bottom: 16rem;
+}
+
 .HBCoin_label__progression_08 {
+    color: #fefeec;
+}
+
+.HBCoin_label__booster_fe {
     color: #ffdd99;
+}
+
+.HBCoin_maxAmount_eb {
+    margin-right: 3rem;
+    color: #fefeec99;
 }
 
 .HBCoin_icon_27 {
@@ -651,6 +683,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 48rem;
     height: 48rem;
     margin-left: 10rem;
+}
+
+.HBCoin_icon__size80x80_ca {
+    width: 80rem;
+    height: 80rem;
+    margin-left: 10rem;
+    margin-top: 10rem;
 }
 
 .HBCoin_icon__size134x134_4d {

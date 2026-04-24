@@ -159,12 +159,12 @@
                         events: () => a.U,
                         extraSize: () => T,
                         forceTriggerMouseMove: () => O,
-                        freezeTextureBeforeResize: () => E,
+                        freezeTextureBeforeResize: () => w,
                         getBrowserTexturePath: () => _,
                         getDisplayStatus: () => P,
                         getScale: () => m,
                         getSize: () => u,
-                        getViewGlobalPosition: () => w,
+                        getViewGlobalPosition: () => E,
                         isEventHandled: () => y,
                         isFocused: () => f,
                         pxToRem: () => h,
@@ -202,11 +202,11 @@
                 function v(e, t, n = 'px') {
                     return 'rem' === n ? viewEnv.resizeViewRem(e, t) : viewEnv.resizeViewPx(e, t);
                 }
-                function w(e = 'rem') {
+                function E(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === e ? t : { x: p(t.x), y: p(t.y) };
                 }
-                function E() {
+                function w() {
                     viewEnv.freezeTextureBeforeResize();
                 }
                 function m() {
@@ -335,6 +335,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -564,8 +565,8 @@
                     d = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     u = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var v = n(5521),
-                    w = n(3138);
-                const E = ['args'];
+                    E = n(3138);
+                const w = ['args'];
                 function m(e, t, n, r, o, a, i) {
                     try {
                         var s = e[a](i),
@@ -617,7 +618,7 @@
                                         a = Object.keys(e);
                                     for (r = 0; r < a.length; r++) ((n = a[r]), t.indexOf(n) >= 0 || (o[n] = e[n]));
                                     return o;
-                                })(t, E);
+                                })(t, w);
                             void 0 !== o
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: n, type: e }, a, {
@@ -665,17 +666,17 @@
                             b(c.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: n, args: t });
                         },
                         sendShowPopOverEvent: (e, t, n, r, o = R.invalid('resId'), a) => {
-                            const i = w.O.view.getViewGlobalPosition(),
+                            const i = E.O.view.getViewGlobalPosition(),
                                 s = n.getBoundingClientRect(),
                                 _ = s.x,
                                 l = s.y,
                                 d = s.width,
                                 u = s.height,
                                 v = {
-                                    x: w.O.view.pxToRem(_) + i.x,
-                                    y: w.O.view.pxToRem(l) + i.y,
-                                    width: w.O.view.pxToRem(d),
-                                    height: w.O.view.pxToRem(u),
+                                    x: E.O.view.pxToRem(_) + i.x,
+                                    y: E.O.view.pxToRem(l) + i.y,
+                                    width: E.O.view.pxToRem(d),
+                                    height: E.O.view.pxToRem(u),
                                 };
                             b(c.POP_OVER, {
                                 isMouseEvent: !0,
@@ -853,12 +854,12 @@
                         v.apply(this, arguments)
                     );
                 }
-                const w = o().forwardRef(function (e, t) {
+                const E = o().forwardRef(function (e, t) {
                     let n = e.children,
                         a = e.className,
                         i = e.theme,
                         s = void 0 === i ? 'default' : i,
-                        w = (function (e, t) {
+                        E = (function (e, t) {
                             if (null == e) return {};
                             var n,
                                 r,
@@ -867,12 +868,12 @@
                             for (r = 0; r < a.length; r++) ((n = a[r]), t.indexOf(n) >= 0 || (o[n] = e[n]));
                             return o;
                         })(e, u);
-                    const E = l(),
+                    const w = l(),
                         m = o().useRef(null);
                     var h;
                     return (
                         (h = () => {
-                            E.run(() => {
+                            w.run(() => {
                                 const e = m.current;
                                 if (!e) return;
                                 const t = e.scrollWidth,
@@ -890,7 +891,7 @@
                         (0, r.useEffect)(h, []),
                         o().createElement(
                             'div',
-                            v({}, w, {
+                            v({}, E, {
                                 className: c()(d.base, d[`base__theme-${s}`], a),
                                 ref: function (e) {
                                     ((m.current = e), 'function' == typeof t ? t(e) : t && (t.current = e));
@@ -900,7 +901,7 @@
                         )
                     );
                 });
-                var E = n(3403),
+                var w = n(3403),
                     m = n(3679);
                 function h() {}
                 function p() {
@@ -1096,17 +1097,17 @@
                                     },
                                     u = (0, r.useRef)(!1),
                                     v = (0, r.useState)(a),
-                                    w = v[0],
-                                    E = v[1],
+                                    E = v[0],
+                                    w = v[1],
                                     m = (0, r.useState)(() => d(a, i, c)),
                                     h = m[0],
                                     g = m[1];
                                 return (
                                     (0, r.useEffect)(() => {
-                                        u.current ? g(d(w, i, c)) : (u.current = !0);
-                                    }, [c, w, i]),
+                                        u.current ? g(d(E, i, c)) : (u.current = !0);
+                                    }, [c, E, i]),
                                     (0, r.useEffect)(() => {
-                                        E(a);
+                                        w(a);
                                     }, [a]),
                                     (0, r.useEffect)(
                                         () => () => {
@@ -1137,7 +1138,7 @@
                     F = x.title(),
                     U = x.text(),
                     I = x.secondaryText(),
-                    B = (0, E.Pi)(() => {
+                    B = (0, w.Pi)(() => {
                         const e = T().model.rewards.get().items;
                         return o().createElement(
                             'div',
@@ -1164,7 +1165,7 @@
                         );
                         var t, n;
                     }),
-                    V = () => o().createElement(w, null, o().createElement(B, null));
+                    V = () => o().createElement(E, null, o().createElement(B, null));
                 engine.whenReady.then(() => {
                     i().render(o().createElement(P, null, o().createElement(V, null)), document.getElementById('root'));
                 });

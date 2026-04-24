@@ -361,6 +361,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1277,8 +1278,8 @@
                     j = ({ tooltipArgs: e, children: t }) => (e ? i().createElement(G, e, t) : t),
                     $ = 'PaginationRender_base_75',
                     z = 'PaginationRender_base__completed_69',
-                    q = 'PaginationRender_base__inaccessible_55',
-                    K = 'PaginationRender_base__selected_e1',
+                    K = 'PaginationRender_base__inaccessible_55',
+                    q = 'PaginationRender_base__selected_e1',
                     Y = 'PaginationRender_selectedImage_58',
                     X = ({
                         className: e,
@@ -1289,7 +1290,7 @@
                         isInaccessible: s,
                         tooltipArgs: l,
                     }) => {
-                        const c = b()($, a && K, o && z, s && q, e),
+                        const c = b()($, a && q, o && z, s && K, e),
                             d = (0, r.useCallback)(() => {
                                 (n(t), W('yes1'));
                             }, [t, n]),

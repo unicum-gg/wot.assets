@@ -21,8 +21,8 @@
                     showPlus: d,
                     stockBackgroundName: v = o.we.Red,
                 }) => {
-                    const g = i()(c.Z.value, c.Z[`value__${r}`], !_ && c.Z.value__notEnough),
-                        E = i()(c.Z.icon, c.Z[`icon__${r}-${t}`]),
+                    const E = i()(c.Z.value, c.Z[`value__${r}`], !_ && c.Z.value__notEnough),
+                        g = i()(c.Z.icon, c.Z[`icon__${r}-${t}`]),
                         m = i()(c.Z.stock, u && c.Z.stock__indent, n && c.Z.stock__interactive),
                         p = d && l > 0 && '+',
                         b = i()(c.Z.base, c.Z[`base__${t}`]);
@@ -31,11 +31,11 @@
                         { className: b },
                         a().createElement(
                             'span',
-                            { className: g },
+                            { className: E },
                             p,
                             a().createElement(s.A, { value: l, format: r === o.V2.gold ? 'gold' : 'integral' }),
                         ),
-                        a().createElement('span', { className: E }),
+                        a().createElement('span', { className: g }),
                         e &&
                             a().createElement(
                                 'span',
@@ -242,12 +242,12 @@
                         events: () => _.U,
                         extraSize: () => O,
                         forceTriggerMouseMove: () => C,
-                        freezeTextureBeforeResize: () => E,
+                        freezeTextureBeforeResize: () => g,
                         getBrowserTexturePath: () => c,
                         getDisplayStatus: () => P,
                         getScale: () => m,
                         getSize: () => d,
-                        getViewGlobalPosition: () => g,
+                        getViewGlobalPosition: () => E,
                         isEventHandled: () => f,
                         isFocused: () => h,
                         pxToRem: () => p,
@@ -285,11 +285,11 @@
                 function v(e, n, t = 'px') {
                     return 'rem' === t ? viewEnv.resizeViewRem(e, n) : viewEnv.resizeViewPx(e, n);
                 }
-                function g(e = 'rem') {
+                function E(e = 'rem') {
                     const n = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === e ? n : { x: b(n.x), y: b(n.y) };
                 }
-                function E() {
+                function g() {
                     viewEnv.freezeTextureBeforeResize();
                 }
                 function m() {
@@ -414,6 +414,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -641,8 +642,8 @@
                     u = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     d = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     v = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
-                var g = t(5521),
-                    E = t(3138);
+                var E = t(5521),
+                    g = t(3138);
                 const m = ['args'];
                 function p(e, n, t, r, i, _, a) {
                     try {
@@ -723,7 +724,7 @@
                     },
                     y = () => h(s.CLOSE),
                     f = (e, n) => {
-                        e.keyCode === g.n.ESCAPE && n();
+                        e.keyCode === E.n.ESCAPE && n();
                     };
                 var C = t(7572);
                 const P = i.instance,
@@ -743,17 +744,17 @@
                             h(s.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: t, args: n });
                         },
                         sendShowPopOverEvent: (e, n, t, r, i = R.invalid('resId'), _) => {
-                            const a = E.O.view.getViewGlobalPosition(),
+                            const a = g.O.view.getViewGlobalPosition(),
                                 o = t.getBoundingClientRect(),
                                 c = o.x,
                                 l = o.y,
                                 u = o.width,
                                 d = o.height,
                                 v = {
-                                    x: E.O.view.pxToRem(c) + a.x,
-                                    y: E.O.view.pxToRem(l) + a.y,
-                                    width: E.O.view.pxToRem(u),
-                                    height: E.O.view.pxToRem(d),
+                                    x: g.O.view.pxToRem(c) + a.x,
+                                    y: g.O.view.pxToRem(l) + a.y,
+                                    width: g.O.view.pxToRem(u),
+                                    height: g.O.view.pxToRem(d),
                                 };
                             h(s.POP_OVER, {
                                 isMouseEvent: !0,
@@ -832,8 +833,8 @@
                     discountValue: d,
                     showPlus: v,
                 }) => {
-                    const g = a()(l.Z.value, l.Z[`value__${t}`], !_ && l.Z.value__notEnough),
-                        E = a()(l.Z.icon, l.Z[`icon__${t}`]),
+                    const E = a()(l.Z.value, l.Z[`value__${t}`], !_ && l.Z.value__notEnough),
+                        g = a()(l.Z.icon, l.Z[`icon__${t}`]),
                         m = a()(
                             l.Z.stock,
                             d && l.Z.stock__indent,
@@ -858,11 +859,11 @@
                               { className: l.Z.base },
                               i().createElement(
                                   'span',
-                                  { className: g },
+                                  { className: E },
                                   p,
                                   i().createElement(o.A, { value: u, format: 'integral' }),
                               ),
-                              i().createElement('span', { className: E }),
+                              i().createElement('span', { className: g }),
                               e &&
                                   i().createElement(
                                       'span',
@@ -894,7 +895,7 @@
                         typeCurrency: d,
                     }) => {
                         const v = !u && Boolean(n.length),
-                            g = i()(c.Z.price, v && c.Z.price__discount);
+                            E = i()(c.Z.price, v && c.Z.price__discount);
                         return o().createElement(
                             'div',
                             { className: c.Z.base },
@@ -907,7 +908,7 @@
                                         n > 0 && t,
                                         o().createElement(
                                             'div',
-                                            { className: g },
+                                            { className: E },
                                             o().createElement(s.a, {
                                                 key: n,
                                                 isDiscount: v,

@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (u, e, A) => {
-                A.d(e, { O: () => G });
+                A.d(e, { O: () => Y });
                 var E = {};
                 (A.r(E), A.d(E, { mouse: () => i, onResize: () => o }));
                 var F = {};
@@ -36,10 +36,10 @@
                         displayStatusIs: () => W,
                         events: () => _,
                         extraSize: () => j,
-                        forceTriggerMouseMove: () => V,
+                        forceTriggerMouseMove: () => K,
                         freezeTextureBeforeResize: () => R,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => K,
+                        getDisplayStatus: () => V,
                         getScale: () => k,
                         getSize: () => P,
                         getViewGlobalPosition: () => x,
@@ -256,10 +256,10 @@
                 function H() {
                     return viewEnv.isEventHandled();
                 }
-                function V() {
+                function K() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function K() {
+                function V() {
                     return viewEnv.getShowingStatus();
                 }
                 const W = Object.keys(d).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === d[e]), u), {}),
@@ -277,7 +277,7 @@
                         }),
                         engine.whenReady,
                     ]),
-                    G = { view: n, client: F };
+                    Y = { view: n, client: F };
             },
             358: (u, e, A) => {
                 A.d(e, { Z: () => t });
@@ -473,6 +473,7 @@
                         (u[(u.DELETE = 46)] = 'DELETE'),
                         (u[(u.TAB = 9)] = 'TAB'),
                         (u[(u.KEY_N = 78)] = 'KEY_N'),
+                        (u[(u.KEY_0 = 48)] = 'KEY_0'),
                         (u[(u.KEY_1 = 49)] = 'KEY_1'),
                         (u[(u.KEY_2 = 50)] = 'KEY_2'),
                         (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1072,8 +1073,8 @@
                     I = 'Countdown_base_fe',
                     z = 'Countdown_icon_8b',
                     H = 'Countdown_description_8d',
-                    V = 'FormatText_base_d0',
-                    K = ({ binding: u, text: e = '', classMix: A, alignment: t = v.left }) =>
+                    K = 'FormatText_base_d0',
+                    V = ({ binding: u, text: e = '', classMix: A, alignment: t = v.left }) =>
                         null === e
                             ? (console.error("FormatText was supplied with 'null'"), null)
                             : F().createElement(
@@ -1082,7 +1083,7 @@
                                   e.split('\n').map((e, n) =>
                                       F().createElement(
                                           'div',
-                                          { className: d()(V, A), key: `${e}-${n}` },
+                                          { className: d()(K, A), key: `${e}-${n}` },
                                           ((u, e, A) =>
                                               u
                                                   .split(/%\((.*?)\)(?:[sd])?/g)
@@ -1117,7 +1118,7 @@
                         }
                     },
                     q = R.images.gui.maps.icons.components.countdown,
-                    G = (u, e) => {
+                    Y = (u, e) => {
                         const A = 2 === e ? q.big : q;
                         switch (u) {
                             case _.Timer:
@@ -1128,7 +1129,7 @@
                                 return A.lock();
                         }
                     },
-                    Y = (0, E.memo)(
+                    G = (0, E.memo)(
                         ({
                             duration: u,
                             icon: e = _.Timer,
@@ -1178,13 +1179,13 @@
                                 e !== _.None &&
                                     F().createElement('div', {
                                         className: d()(z, D.icon),
-                                        style: { backgroundImage: `url('${G(e, C)}')` },
+                                        style: { backgroundImage: `url('${Y(e, C)}')` },
                                     }),
                                 r
                                     ? F().createElement(
                                           'div',
                                           { className: d()(H, D.text) },
-                                          F().createElement(K, { text: r, binding: { timerText: a } }),
+                                          F().createElement(V, { text: r, binding: { timerText: a } }),
                                       )
                                     : F().createElement('div', { className: d()(H, D.text) }, a),
                             );
@@ -1282,13 +1283,13 @@
                                     'div',
                                     { className: Q.endDate },
                                     w &&
-                                        F().createElement(Y, {
+                                        F().createElement(G, {
                                             duration: n - r,
                                             labelFormat: eu.eventStartFormat(),
                                             classNames: { text: Q.timerText, icon: Q.timerIcon },
                                         }),
                                     b &&
-                                        F().createElement(Y, {
+                                        F().createElement(G, {
                                             duration: D - r,
                                             labelFormat: eu.eventFinishFormat(),
                                             classNames: { text: Q.timerText, icon: Q.timerIcon },

@@ -30,16 +30,16 @@
                 (A.r(t),
                     A.d(t, {
                         addModelObserver: () => x,
-                        addPreloadTexture: () => T,
+                        addPreloadTexture: () => b,
                         children: () => D,
                         displayStatus: () => l,
-                        displayStatusIs: () => K,
+                        displayStatusIs: () => H,
                         events: () => d,
-                        extraSize: () => q,
-                        forceTriggerMouseMove: () => z,
+                        extraSize: () => $,
+                        forceTriggerMouseMove: () => K,
                         freezeTextureBeforeResize: () => R,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => H,
+                        getDisplayStatus: () => z,
                         getScale: () => S,
                         getSize: () => M,
                         getViewGlobalPosition: () => k,
@@ -48,12 +48,12 @@
                         pxToRem: () => L,
                         remToPx: () => N,
                         resize: () => P,
-                        sendEvent: () => b,
+                        sendEvent: () => T,
                         setAnimateWindow: () => U,
                         setEventHandled: () => I,
                         setInputPaddingsRem: () => f,
                         setSidePaddingsRem: () => y,
-                        whenTutorialReady: () => $,
+                        whenTutorialReady: () => q,
                     }));
                 const C = B('clientResized'),
                     r = { down: B('mousedown'), up: B('mouseup'), move: B('mousemove') };
@@ -196,7 +196,7 @@
                         return viewEnv.handleViewEvent({ __Type: A, type: u });
                         var F;
                     },
-                    b = {
+                    T = {
                         close(u) {
                             p('popover' === u ? m : v);
                         },
@@ -207,7 +207,7 @@
                             p(h, { isMouseEvent: !0, on: u });
                         },
                     };
-                function T(u) {
+                function b(u) {
                     viewEnv.addPreloadTexture(u);
                 }
                 function f(u) {
@@ -256,14 +256,14 @@
                 function V() {
                     return viewEnv.isEventHandled();
                 }
-                function z() {
+                function K() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function H() {
+                function z() {
                     return viewEnv.getShowingStatus();
                 }
-                const K = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
-                    q = {
+                const H = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
+                    $ = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -271,7 +271,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    $ = Promise.all([
+                    q = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : d.onDomBuilt(u);
                         }),
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -703,7 +704,7 @@
                     };
                 window.ViewEnvHelper = p;
             },
-            659: (u, e, A) => {
+            48: (u, e, A) => {
                 var F = A(179),
                     E = A.n(F),
                     D = A(493),
@@ -831,11 +832,11 @@
                         return '';
                     },
                     p = _.Sw.instance;
-                let b;
+                let T;
                 !(function (u) {
                     ((u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep'));
-                })(b || (b = {}));
-                const T = (u = 'model', e = b.Deep) => {
+                })(T || (T = {}));
+                const b = (u = 'model', e = T.Deep) => {
                     const A = (0, F.useState)(0),
                         E = (A[0], A[1]),
                         D = (0, F.useMemo)(() => l(), []),
@@ -859,24 +860,24 @@
                         w(() => {
                             if (
                                 ('boolean' == typeof e &&
-                                    ((e = e ? b.Deep : b.None),
+                                    ((e = e ? T.Deep : T.None),
                                     console.warn(
                                         'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                     )),
-                                e !== b.None)
+                                e !== T.None)
                             ) {
                                 const A = (u) => {
                                         ((u) => u && 'CoherentArrayProxy' === u.__proto__.constructor.name)(u) &&
-                                        e === b.Deep
+                                        e === T.Deep
                                             ? (u === r && E((u) => u + 1), o(u))
                                             : o(Object.assign([], u));
                                     },
                                     F = g(u);
-                                i.current = p.addCallback(F, A, B, e === b.Deep);
+                                i.current = p.addCallback(F, A, B, e === T.Deep);
                             }
                         }),
                         (0, F.useEffect)(() => {
-                            if (e !== b.None)
+                            if (e !== T.None)
                                 return () => {
                                     p.removeCallback(i.current, B);
                                 };
@@ -1009,8 +1010,8 @@
                     W = 'App_base_be',
                     I = 'App_warningText_fd',
                     V = 'App_mainText_8b',
-                    z = () => {
-                        const u = T(),
+                    K = () => {
+                        const u = b(),
                             e = u.mainText,
                             A = u.warningText,
                             D = u.warningImageSubstitution,
@@ -1038,7 +1039,7 @@
                         );
                     };
                 engine.whenReady.then(() => {
-                    t().render(E().createElement(z, null), document.getElementById('root'));
+                    t().render(E().createElement(K, null), document.getElementById('root'));
                 });
             },
         },
@@ -1098,7 +1099,6 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
-        (__webpack_require__.j = 760),
         (() => {
             var u = { 760: 0 };
             __webpack_require__.O.j = (e) => 0 === u[e];
@@ -1118,6 +1118,6 @@
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (A.forEach(e.bind(null, 0)), (A.push = e.bind(null, A.push.bind(A))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [881], () => __webpack_require__(659));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [881], () => __webpack_require__(48));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

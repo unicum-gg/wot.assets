@@ -400,6 +400,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1284,7 +1285,7 @@
                     }, [u, e, t]);
                 }
                 var z = t(515);
-                const V = {
+                const Y = {
                     base: 'Character_base_65',
                     bg: 'Character_bg_87',
                     bg__complete: 'Character_bg__complete_28',
@@ -1292,14 +1293,14 @@
                     bg__completeWithHonor: 'Character_bg__completeWithHonor_ab',
                     bg__active: 'Character_bg__active_4c',
                 };
-                let Y, Q;
+                let V, Q;
                 (!(function (e) {
                     ((e[(e.W_1024 = 1024)] = 'W_1024'),
                         (e[(e.W_1280 = 1280)] = 'W_1280'),
                         (e[(e.W_2000 = 2e3)] = 'W_2000'),
                         (e[(e.W_2200 = 2200)] = 'W_2200'),
                         (e[(e.W_2560 = 2560)] = 'W_2560'));
-                })(Y || (Y = {})),
+                })(V || (V = {})),
                     (function (e) {
                         e[(e.H_1200 = 1200)] = 'H_1200';
                     })(Q || (Q = {})));
@@ -1309,12 +1310,12 @@
                                 u = e.remScreenWidth,
                                 t = e.remScreenHeight;
                             return {
-                                isCustomSmall: u > Y.W_1024 && u <= Y.W_1280,
-                                isCustomLarge: u > Y.W_2000 && u <= Y.W_2560 && t > Q.H_1200,
+                                isCustomSmall: u > V.W_1024 && u <= V.W_1280,
+                                isCustomLarge: u > V.W_2000 && u <= V.W_2560 && t > Q.H_1200,
                             };
                         })().isCustomLarge,
-                        a = g()(V.base, t && V.base__custom, e),
-                        n = g()(V.bg, V[`bg__${u}`]);
+                        a = g()(Y.base, t && Y.base__custom, e),
+                        n = g()(Y.bg, Y[`bg__${u}`]);
                     return r().createElement('div', { className: a }, r().createElement('div', { className: n }));
                 });
                 function Z(e) {
@@ -1642,6 +1643,7 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
@@ -1682,7 +1684,6 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
-                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -2473,17 +2474,17 @@
                     };
                 var Xe = t(887),
                     ze = t.n(Xe);
-                const Ve = ['xl', 'lg', 'md', 'sm', 'xs'],
-                    Ye = (e) => e.includes('_') && ((e) => Ve.includes(e))(e.split('_').at(-1)),
+                const Ye = ['xl', 'lg', 'md', 'sm', 'xs'],
+                    Ve = (e) => e.includes('_') && ((e) => Ye.includes(e))(e.split('_').at(-1)),
                     Qe = [b.ExtraLarge, b.Large, b.Medium, b.Small, b.ExtraSmall],
                     Ke = (e, u) =>
                         Object.keys(e).reduce((t, a) => {
                             if (a in t) return t;
-                            if (Ye(a)) {
+                            if (Ve(a)) {
                                 const r = a.split('_').slice(0, -1).join('_');
                                 if (r in t) return t;
                                 const n = Qe.indexOf(u),
-                                    s = (-1 !== n ? Ve.slice(n) : [])
+                                    s = (-1 !== n ? Ye.slice(n) : [])
                                         .map((e) => r + '_' + e)
                                         .find((u) => void 0 !== e[u]),
                                     i = s ? e[s] : void 0;
@@ -2492,7 +2493,7 @@
                             const r = e[a];
                             return (
                                 void 0 === r ||
-                                    ((e, u) => Ve.some((t) => void 0 !== u[`${e}_${t}`]))(a, e) ||
+                                    ((e, u) => Ye.some((t) => void 0 !== u[`${e}_${t}`]))(a, e) ||
                                     (t[a] = r),
                                 t
                             );
@@ -2507,7 +2508,7 @@
                             }
                         )(e, u);
                         return r().memo((u) =>
-                            Object.keys(u).some((e) => Ye(e) && void 0 !== u[e])
+                            Object.keys(u).some((e) => Ve(e) && void 0 !== u[e])
                                 ? r().createElement(t, u)
                                 : r().createElement(e, u),
                         );
@@ -3121,8 +3122,8 @@
                     ju = 'Rewards_base_74',
                     Xu = 'Rewards_rewardWrapper_f0',
                     zu = 'Rewards_rewardWrapper__last_8e',
-                    Vu = 'Rewards_box_a8',
-                    Yu = 'Rewards_label_ce';
+                    Yu = 'Rewards_box_a8',
+                    Vu = 'Rewards_label_ce';
                 function Qu() {
                     return (
                         (Qu =
@@ -3195,7 +3196,7 @@
                                             e.size !== ce.Big &&
                                                 e.size !== ce.Small &&
                                                 r().createElement(Su, {
-                                                    className: g()(Yu),
+                                                    className: g()(Vu),
                                                     text: e.userName || e.label,
                                                 }),
                                             e.isChooseReward &&
@@ -3215,7 +3216,7 @@
                                             size: E,
                                             value: d,
                                             tooltipArgs: D,
-                                            className: Vu,
+                                            className: Yu,
                                         }),
                                     ),
                             );
@@ -3767,8 +3768,8 @@
                     jt = 'VehicleProgression_progressBar_16',
                     Xt = 'VehicleProgression_current_22',
                     zt = 'VehicleProgression_total_f6',
-                    Vt = 'VehicleProgression_divider_c6',
-                    Yt = 'VehicleProgression_description_20',
+                    Yt = 'VehicleProgression_divider_c6',
+                    Vt = 'VehicleProgression_description_20',
                     Qt = R.strings.personal_missions_3.RewardsView.content.questCount,
                     Kt = (0, a.memo)(({ isMain: e = !1, className: u, value: t, maxValue: a, delta: n }) => {
                         const s = g()(It, u, e && Ht);
@@ -3790,8 +3791,8 @@
                                     r().createElement(Su, { text: String(t), className: Xt }),
                                     r().createElement(Su, { text: Qt.divider(), className: zt }),
                                     r().createElement(Su, { text: String(a), className: zt }),
-                                    r().createElement('div', { className: Vt }),
-                                    r().createElement(Su, { className: Yt, text: Qt.text() }),
+                                    r().createElement('div', { className: Yt }),
+                                    r().createElement(Su, { className: Vt, text: Qt.text() }),
                                 ),
                                 r().createElement(
                                     'div',
@@ -4214,7 +4215,7 @@
                     ja = 'App_closeBtn_02',
                     Xa = 'App_character_4f',
                     za = R.strings.personal_missions_3.RewardsView.header,
-                    Va = (0, z.Pi)(() => {
+                    Ya = (0, z.Pi)(() => {
                         const e = oe(),
                             u = e.controls,
                             t = e.model,
@@ -4252,7 +4253,7 @@
                     });
                 engine.whenReady.then(() => {
                     k().render(
-                        r().createElement(ie, null, r().createElement(O, null, r().createElement(Va, null))),
+                        r().createElement(ie, null, r().createElement(O, null, r().createElement(Ya, null))),
                         document.getElementById('root'),
                     );
                 });

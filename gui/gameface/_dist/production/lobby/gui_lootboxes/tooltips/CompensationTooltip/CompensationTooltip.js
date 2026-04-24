@@ -331,6 +331,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -905,6 +906,7 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
@@ -945,7 +947,6 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
-                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -1593,7 +1594,7 @@
                     R.strings.gui_lootboxes.time.minutes(),
                     R.strings.gui_lootboxes.time.seconds());
                 const V = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X'],
-                    z = (u) => {
+                    Y = (u) => {
                         switch (u) {
                             case $.Heavy:
                                 return R.images.gui.maps.icons.vehicleTypes.big.heavyTank_elite();
@@ -1609,7 +1610,7 @@
                                 return '';
                         }
                     },
-                    Y = {
+                    z = {
                         base: 'Content_base_46',
                         baseBackground: 'Content_baseBackground_ae',
                         border: 'Content_border_e3',
@@ -1631,64 +1632,64 @@
                         vehicleNameType: 'Content_vehicleNameType_f8',
                     },
                     X = ({ itemBefore: u, itemAfter: e }) => {
-                        const t = s()(Y.border, Y.border__top),
-                            n = s()(Y.border, Y.border__bot);
+                        const t = s()(z.border, z.border__top),
+                            n = s()(z.border, z.border__bot);
                         return a().createElement(
                             'div',
-                            { className: Y.base },
+                            { className: z.base },
                             u.name === v.Vehicles
                                 ? a().createElement(
                                       'div',
-                                      { className: Y.vehicle },
-                                      a().createElement('div', { className: Y.vehicleTitle }),
+                                      { className: z.vehicle },
+                                      a().createElement('div', { className: z.vehicleTitle }),
                                       a().createElement('div', {
-                                          className: Y.vehicleIcon,
+                                          className: z.vehicleIcon,
                                           style: { background: `url(${u.image(b.S180x135)}) no-repeat center / 100%` },
                                       }),
                                       a().createElement(
                                           'div',
-                                          { className: Y.vehicleName },
+                                          { className: z.vehicleName },
                                           a().createElement(
                                               'div',
-                                              { className: Y.vehicleNameLevel },
+                                              { className: z.vehicleNameLevel },
                                               ((r = u.vehicleLvl), V[r] || ''),
                                           ),
                                           a().createElement('div', {
-                                              className: Y.vehicleNameType,
-                                              style: { backgroundImage: `url(${z(u.type)})` },
+                                              className: z.vehicleNameType,
+                                              style: { backgroundImage: `url(${Y(u.type)})` },
                                           }),
-                                          a().createElement('div', { className: Y.vehicleNameText }, u.label),
+                                          a().createElement('div', { className: z.vehicleNameText }, u.label),
                                       ),
                                   )
                                 : a().createElement(
                                       'div',
-                                      { className: Y.vehicle },
-                                      a().createElement('div', { className: Y.vehicleTitle }),
+                                      { className: z.vehicle },
+                                      a().createElement('div', { className: z.vehicleTitle }),
                                       a().createElement('div', {
-                                          className: Y.vehicleIcon,
+                                          className: z.vehicleIcon,
                                           style: { background: `url(${u.image(b.S180x135)}) no-repeat center / 100%` },
                                       }),
                                       a().createElement(
                                           'div',
-                                          { className: Y.vehicleName },
-                                          a().createElement('div', { className: Y.vehicleNameText }, u.label),
+                                          { className: z.vehicleName },
+                                          a().createElement('div', { className: z.vehicleNameText }, u.label),
                                       ),
                                   ),
                             a().createElement(
                                 'div',
-                                { className: Y.compensation },
+                                { className: z.compensation },
                                 a().createElement('div', {
-                                    className: Y.compensationIcon,
+                                    className: z.compensationIcon,
                                     style: { background: `url(${e.image(b.S180x135)}) no-repeat center / 100%` },
                                 }),
                                 a().createElement(
                                     'div',
-                                    { className: s()(Y.compensationCount, Y[`compensationCount__${e.name}`]) },
+                                    { className: s()(z.compensationCount, z[`compensationCount__${e.name}`]) },
                                     a().createElement(k, { value: Number(e.value) }),
                                 ),
                             ),
-                            a().createElement('div', { className: Y.baseBackground }),
-                            a().createElement('div', { className: Y.compensationArrow }),
+                            a().createElement('div', { className: z.baseBackground }),
+                            a().createElement('div', { className: z.compensationArrow }),
                             a().createElement('div', { className: t }),
                             a().createElement('div', { className: n }),
                         );

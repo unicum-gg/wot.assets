@@ -33,9 +33,9 @@
                         addPreloadTexture: () => h,
                         children: () => a,
                         displayStatus: () => _,
-                        displayStatusIs: () => z,
+                        displayStatusIs: () => K,
                         events: () => C,
-                        extraSize: () => K,
+                        extraSize: () => z,
                         forceTriggerMouseMove: () => H,
                         freezeTextureBeforeResize: () => x,
                         getBrowserTexturePath: () => T,
@@ -262,8 +262,8 @@
                 function j() {
                     return viewEnv.getShowingStatus();
                 }
-                const z = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
-                    K = {
+                const K = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
+                    z = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1249,7 +1250,7 @@
                         suffixBadge: 'PlayerNickname_suffixBadge_bd',
                         anonymizedIcon: 'PlayerNickname_anonymizedIcon_80',
                     },
-                    z = (0, n.memo)(({ tooltipHeaderName: u }) => {
+                    K = (0, n.memo)(({ tooltipHeaderName: u }) => {
                         const e = (0, n.useMemo)(() => {
                                 return (
                                     (e = R.strings.tooltips.anonymizer.teamStats.header()),
@@ -1268,9 +1269,9 @@
                             r().createElement('div', { className: j.anonymizedIcon }),
                         );
                     });
-                function K() {
+                function z() {
                     return (
-                        (K =
+                        (z =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1279,7 +1280,7 @@
                                 }
                                 return u;
                             }),
-                        K.apply(this, arguments)
+                        z.apply(this, arguments)
                     );
                 }
                 const $ = { [T.default]: 'c_64x24', [T.x48]: 'c_68x28' },
@@ -1314,7 +1315,7 @@
                             w = p()(j.clanTag, c),
                             b = u !== i,
                             f = E ? `${i}${C}` : i,
-                            g = Boolean(a.badgeID) && r().createElement(H, K({ size: s }, a, { key: 'badge' })),
+                            g = Boolean(a.badgeID) && r().createElement(H, z({ size: s }, a, { key: 'badge' })),
                             h = Date.now(),
                             y = [
                                 g,
@@ -1334,7 +1335,7 @@
                                         r().createElement('div', { className: j.suffixBadgeStripe, style: l }),
                                         r().createElement('div', { className: j.suffixBadge, style: _ }),
                                     ),
-                                F && b && r().createElement(z, { tooltipHeaderName: f, key: 'anonymizer' }),
+                                F && b && r().createElement(K, { tooltipHeaderName: f, key: 'anonymizer' }),
                             ];
                         return r().createElement('div', { className: m }, o ? y.reverse() : y);
                     },

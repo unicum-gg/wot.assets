@@ -335,6 +335,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -875,21 +876,21 @@
                             V = H[0],
                             W = H[1],
                             j = (0, n.useState)(!1),
-                            z = (j[0], j[1]),
-                            K = (0, n.useCallback)(
+                            K = (j[0], j[1]),
+                            z = (0, n.useCallback)(
                                 (u) => {
                                     a || (M && M(), P && P(u));
                                 },
                                 [a, M, P],
                             ),
-                            q = (0, n.useCallback)(
+                            Y = (0, n.useCallback)(
                                 (u) => {
                                     const e = u.button === A.LEFT;
                                     a || (e && W(!0), e && T && T(u), g && F(g));
                                 },
                                 [a, T, g],
                             ),
-                            Y = (0, n.useCallback)(
+                            q = (0, n.useCallback)(
                                 (u) => {
                                     a || (W(!1), O && O(u));
                                 },
@@ -909,13 +910,13 @@
                             ),
                             X = (0, n.useCallback)(
                                 (u) => {
-                                    a || (z(!0), x && x(u));
+                                    a || (K(!0), x && x(u));
                                 },
                                 [a, x],
                             ),
                             Z = (0, n.useCallback)(
                                 (u) => {
-                                    a || (z(!1), R && R(u));
+                                    a || (K(!1), R && R(u));
                                 },
                                 [a, R],
                             ),
@@ -941,11 +942,11 @@
                                         [c.base__center]: I === d.Center,
                                         [c.base__bottom]: I === d.Bottom,
                                     }),
-                                    onClick: K,
+                                    onClick: z,
                                     onMouseEnter: G,
                                     onMouseLeave: $,
-                                    onMouseDown: q,
-                                    onMouseUp: Y,
+                                    onMouseDown: Y,
+                                    onMouseUp: q,
                                     onFocus: X,
                                     onBlur: Z,
                                 },
@@ -1405,12 +1406,12 @@
                         }
                         return '';
                     },
-                    z = m.Sw.instance;
-                let K;
+                    K = m.Sw.instance;
+                let z;
                 !(function (u) {
                     ((u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep'));
-                })(K || (K = {}));
-                const q = (u = 'model', e = K.Deep) => {
+                })(z || (z = {}));
+                const Y = (u = 'model', e = z.Deep) => {
                     const t = (0, n.useState)(0),
                         o = (t[0], t[1]),
                         r = (0, n.useMemo)(() => v(), []),
@@ -1434,39 +1435,39 @@
                         U(() => {
                             if (
                                 ('boolean' == typeof e &&
-                                    ((e = e ? K.Deep : K.None),
+                                    ((e = e ? z.Deep : z.None),
                                     console.warn(
                                         'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                     )),
-                                e !== K.None)
+                                e !== z.None)
                             ) {
                                 const t = (u) => {
                                         ((u) => u && 'CoherentArrayProxy' === u.__proto__.constructor.name)(u) &&
-                                        e === K.Deep
+                                        e === z.Deep
                                             ? (u === F && o((u) => u + 1), s(u))
                                             : s(Object.assign([], u));
                                     },
                                     n = j(u);
-                                c.current = z.addCallback(n, t, a, e === K.Deep);
+                                c.current = K.addCallback(n, t, a, e === z.Deep);
                             }
                         }),
                         (0, n.useEffect)(() => {
-                            if (e !== K.None)
+                            if (e !== z.None)
                                 return () => {
-                                    z.removeCallback(c.current, a);
+                                    K.removeCallback(c.current, a);
                                 };
                         }, [a, e]),
                         F
                     );
                 };
                 m.Sw.instance;
-                var Y = t(5521);
+                var q = t(5521);
                 const G = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function $(u = Y.n.NONE, e = G, t = !1) {
+                function $(u = q.n.NONE, e = G, t = !1) {
                     (0, n.useEffect)(() => {
-                        if (u !== Y.n.NONE)
+                        if (u !== q.n.NONE)
                             return (
                                 window.addEventListener('keydown', n, t),
                                 () => {
@@ -1482,9 +1483,9 @@
                     }, [e, u, t]);
                 }
                 function X() {
-                    !(function (u = Y.n.ESCAPE) {
+                    !(function (u = q.n.ESCAPE) {
                         $(u, m.Sy, !0);
-                    })(Y.n.ESCAPE);
+                    })(q.n.ESCAPE);
                 }
                 const Z = 'DynamicCheckbox_content_bd',
                     Q = 'DynamicCheckbox_info_50',
@@ -1542,8 +1543,8 @@
                         checkbox: 'RandomBattlePopoverApp_checkbox_dd',
                     },
                     ru = () => {
-                        const u = q('model', K.None).onItemChanged,
-                            e = q('model.settingsList'),
+                        const u = Y('model', z.None).onItemChanged,
+                            e = Y('model.settingsList'),
                             t = (0, n.useCallback)((e) => u({ type: e }), [u]);
                         X();
                         return o().createElement(

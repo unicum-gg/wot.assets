@@ -384,6 +384,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -850,6 +851,7 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
@@ -890,7 +892,6 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
-                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -1710,10 +1711,10 @@
                         (u.smallHeight = 'smallHeight'),
                         (u.extraSmallHeight = 'extraSmallHeight'));
                 })(V || (V = {}));
-                const Q = Y.O.client.getSize('rem'),
-                    K = Q.width,
-                    Z = Q.height,
-                    J = Object.assign({ width: K, height: Z }, z(K, Z, $)),
+                const K = Y.O.client.getSize('rem'),
+                    Q = K.width,
+                    Z = K.height,
+                    J = Object.assign({ width: Q, height: Z }, z(Q, Z, $)),
                     uu = (0, r.createContext)(J),
                     eu = ['children'];
                 const tu = (u) => {
@@ -2439,15 +2440,15 @@
                             (u.DoneH = 'doneHonor'));
                     })(Vu || (Vu = {})));
                 const zu = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
-                    Qu = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
-                const Ku = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
+                    Ku = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
+                const Qu = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
                     Zu = (u) =>
-                        Ku
+                        Qu
                             ? `${u}`
                             : (function (u) {
                                   let e = '';
-                                  for (let t = Qu.length - 1; t >= 0; t--)
-                                      for (; u >= Qu[t]; ) ((e += zu[t]), (u -= Qu[t]));
+                                  for (let t = Ku.length - 1; t >= 0; t--)
+                                      for (; u >= Ku[t]; ) ((e += zu[t]), (u -= Ku[t]));
                                   return e;
                               })(u);
                 var Ju = t(515);

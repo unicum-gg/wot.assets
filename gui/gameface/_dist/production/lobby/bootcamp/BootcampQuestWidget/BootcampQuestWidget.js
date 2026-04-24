@@ -155,8 +155,8 @@
                             onRequestPosition: s('children.requestPosition'),
                         },
                     },
-                    h = ['args'];
-                const E = 2,
+                    E = ['args'];
+                const h = 2,
                     f = 16,
                     y = 32,
                     O = 64,
@@ -172,7 +172,7 @@
                                         i = Object.keys(e);
                                     for (r = 0; r < i.length; r++) ((n = i[r]), t.indexOf(n) >= 0 || (o[n] = e[n]));
                                     return o;
-                                })(t, h);
+                                })(t, E);
                             return void 0 !== o
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: n, type: e }, i, {
@@ -198,7 +198,7 @@
                     },
                     P = {
                         close(e) {
-                            k('popover' === e ? E : y);
+                            k('popover' === e ? h : y);
                         },
                         minimize() {
                             k(O);
@@ -304,6 +304,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -574,7 +575,7 @@
                             return t.apply(this, arguments);
                         };
                     })(),
-                    h = (e, t) => {
+                    E = (e, t) => {
                         const n = 'GFViewEventProxy';
                         if (void 0 !== t) {
                             const o = t.args,
@@ -612,7 +613,7 @@
                         } else viewEnv.handleViewEvent({ __Type: n, type: e });
                         var r;
                     },
-                    E = () => h(l.CLOSE),
+                    h = () => E(l.CLOSE),
                     f = (e, t) => {
                         e.keyCode === m.n.ESCAPE && t();
                     };
@@ -627,11 +628,11 @@
                         TimeFormatType: u,
                         DateFormatType: _,
                         makeGlobalBoundingBox: b,
-                        sendMoveEvent: (e) => h(l.MOVE, { isMouseEvent: !0, on: e }),
-                        sendCloseEvent: E,
-                        sendClosePopOverEvent: () => h(l.POP_OVER, { on: !1 }),
+                        sendMoveEvent: (e) => E(l.MOVE, { isMouseEvent: !0, on: e }),
+                        sendCloseEvent: h,
+                        sendClosePopOverEvent: () => E(l.POP_OVER, { on: !1 }),
                         sendShowContextMenuEvent: (e, t, n = 0) => {
-                            h(l.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: n, args: t });
+                            E(l.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: n, args: t });
                         },
                         sendShowPopOverEvent: (e, t, n, r, o = R.invalid('resId'), i) => {
                             const a = p.O.view.getViewGlobalPosition(),
@@ -646,7 +647,7 @@
                                     width: p.O.view.pxToRem(u),
                                     height: p.O.view.pxToRem(_),
                                 };
-                            h(l.POP_OVER, {
+                            E(l.POP_OVER, {
                                 isMouseEvent: !0,
                                 contentID: e,
                                 decoratorID: r || R.invalid('resId'),
@@ -665,9 +666,9 @@
                             );
                         },
                         closeOnEsc: (e) => {
-                            f(e, E);
+                            f(e, h);
                         },
-                        handleViewEvent: h,
+                        handleViewEvent: E,
                         onBindingsReady: v,
                         onLayoutReady: () =>
                             new Promise((e) => {
@@ -781,8 +782,8 @@
                             })(m(_)),
                         ),
                         v = b[0],
-                        h = b[1],
-                        E = (0, o.useRef)(-1);
+                        E = b[1],
+                        h = (0, o.useRef)(-1);
                     return (
                         d(() => {
                             if (
@@ -796,17 +797,17 @@
                                 const n = (e) => {
                                         ((e) => e && 'CoherentArrayProxy' === e.__proto__.constructor.name)(e) &&
                                         t === w.Deep
-                                            ? (e === v && r((e) => e + 1), h(e))
-                                            : h(Object.assign([], e));
+                                            ? (e === v && r((e) => e + 1), E(e))
+                                            : E(Object.assign([], e));
                                     },
                                     o = p(e);
-                                E.current = g.addCallback(o, n, s, t === w.Deep);
+                                h.current = g.addCallback(o, n, s, t === w.Deep);
                             }
                         }),
                         (0, o.useEffect)(() => {
                             if (t !== w.None)
                                 return () => {
-                                    g.removeCallback(E.current, s);
+                                    g.removeCallback(h.current, s);
                                 };
                         }, [s, t]),
                         v
@@ -815,7 +816,7 @@
                 function v(e) {
                     engine.call('PlaySound', e);
                 }
-                const h = [
+                const E = [
                     'children',
                     'contentId',
                     'args',
@@ -831,7 +832,7 @@
                     'onShow',
                     'onHide',
                 ];
-                function E(e) {
+                function h(e) {
                     return Object.entries(e || {}).map(([e, t]) => {
                         const n = { __Type: 'GFValueProxy', name: e };
                         switch (typeof t) {
@@ -891,12 +892,12 @@
                                     i = Object.keys(e);
                                 for (r = 0; r < i.length; r++) ((n = i[r]), t.indexOf(n) >= 0 || (o[n] = e[n]));
                                 return o;
-                            })(e, h);
+                            })(e, E);
                         const C = (0, o.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
                             M = (0, o.useMemo)(() => y || l().resId, [y]),
                             S = (0, o.useCallback)(() => {
                                 (C.current.isVisible && C.current.timeoutId) ||
-                                    (f(n, g, { isMouseEvent: !0, on: !0, arguments: E(r) }, M),
+                                    (f(n, g, { isMouseEvent: !0, on: !0, arguments: h(r) }, M),
                                     O && O(),
                                     (C.current.isVisible = !0));
                             }, [n, g, r, M, O]),
@@ -1144,7 +1145,7 @@
                                     }),
                                     [d, t, e],
                                 ),
-                                h = (0, o.useMemo)(
+                                E = (0, o.useMemo)(
                                     () => ({
                                         width: '0%',
                                         transitionDuration: `${e}ms`,
@@ -1153,7 +1154,7 @@
                                     }),
                                     [d, t, e],
                                 ),
-                                E = (0, o.useMemo)(
+                                h = (0, o.useMemo)(
                                     () => ({ width: `${Math.abs(r - s)}%`, left: `${d ? s : r}%` }),
                                     [r, d, s],
                                 );
@@ -1161,10 +1162,10 @@
                                 ? null
                                 : i().createElement(
                                       'div',
-                                      { className: V, style: E },
+                                      { className: V, style: h },
                                       i().createElement(
                                           'div',
-                                          { style: w ? v : h, className: $ },
+                                          { style: w ? v : E, className: $ },
                                           i().createElement(L, { size: a }),
                                       ),
                                   );
@@ -1240,29 +1241,29 @@
                                 w = m === U.Idle,
                                 b = m === U.Grow,
                                 v = m === U.Shrink,
-                                h = (0, o.useCallback)(
+                                E = (0, o.useCallback)(
                                     (e) => {
                                         (p(e), c && c(e));
                                     },
                                     [c],
                                 ),
-                                E = (0, o.useCallback)(
+                                h = (0, o.useCallback)(
                                     (e, t) =>
                                         B(() => {
-                                            h(e);
+                                            E(e);
                                         }, t),
-                                    [h],
+                                    [E],
                                 );
                             (0, o.useEffect)(() => {
                                 if (!n)
                                     return w
-                                        ? E(U.Grow, t)
+                                        ? h(U.Grow, t)
                                         : b
-                                          ? E(U.Shrink, e)
+                                          ? h(U.Shrink, e)
                                           : v
-                                            ? E(U.End, e)
+                                            ? h(U.End, e)
                                             : void (g && l && l());
-                            }, [E, n, g, b, w, v, l, t, e]);
+                            }, [h, n, g, b, w, v, l, t, e]);
                             const f = (0, o.useMemo)(() => Object.assign({ width: '100%' }, X(e), q(u)), [u, e]),
                                 y = (0, o.useMemo)(() => Object.assign({ width: '0%' }, X(e), q(u)), [u, e]),
                                 O = (0, o.useMemo)(() => Object.assign({ width: '0%' }, Y(u, r), X(e)), [r, u, e]),

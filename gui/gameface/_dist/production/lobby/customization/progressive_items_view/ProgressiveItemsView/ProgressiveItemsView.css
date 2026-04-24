@@ -9,18 +9,13 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background: url('R.images.gui.maps.icons.customization.progressive_items_view.background') no-repeat center / cover;
     position: relative;
 }
 
 .App_contentWrapper_bf {
     flex: 1;
     width: 100%;
-}
-
-.App_offset_1c {
-    width: 100%;
-    height: 33rem;
 }
 
 .HorizontalBar_base_49 {
@@ -394,31 +389,6 @@ body {
     padding: 0 20rem 8rem;
 }
 
-.Separator_base_44 {
-    display: flex;
-    flex: 1;
-    position: relative;
-}
-
-.Separator_lock_98 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-}
-
-.Separator_lockImage_6c {
-    width: 10rem;
-    height: 15rem;
-    transform: translate(-50%, -60%);
-}
-
-.Separator_arrow_12 {
-    width: 100%;
-    height: 100%;
-    background: url('R.images.gui.maps.icons.customization.progeression_screen.arrowx2') no-repeat right;
-    background-size: 100rem 13rem;
-}
-
 .HoverContent_base_5c {
     display: flex;
     flex-direction: column;
@@ -444,6 +414,171 @@ body {
 .HoverContent_text_e7 {
     margin-top: -35rem;
     background: url('R.images.gui.maps.icons.customization.progeression_screen.shadow') no-repeat 100% 100% / cover;
+}
+
+.Icon_base_d5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+}
+
+.Icon_base__placeholder_9c {
+    width: 20rem;
+    height: 20rem;
+    border: 3rem solid;
+    border-color: #fff #fff #fff transparent;
+    border-radius: 80%;
+    opacity: 0.3;
+    animation: Icon_rotating_90 1.2s linear infinite;
+}
+
+.Icon_imageTemp_1f {
+    display: none;
+}
+
+@keyframes Icon_rotating_90 {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.Item_base_50 {
+    display: flex;
+    width: 20%;
+}
+
+.Item_base__first_a0 {
+    width: 130rem;
+}
+
+.Item_base__firstSmall_e6 {
+    width: 180rem;
+}
+
+.Item_base__firstMedium_f5 {
+    width: 190rem;
+}
+
+.Item_base__firstLarge_53 {
+    width: 230rem;
+}
+.Item_content_bb {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 130rem;
+}
+.Item_content__small_9a {
+    width: 180rem;
+}
+.Item_content__medium_66 {
+    width: 190rem;
+}
+.Item_content__large_a3 {
+    width: 230rem;
+}
+.Item_image_f0 {
+    width: 100rem;
+    height: 100rem;
+    transform: scale(1);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+.Item_image__small_9c {
+    width: 160rem;
+    height: 160rem;
+}
+.Item_image__medium_fe {
+    width: 170rem;
+    height: 170rem;
+}
+.Item_image__large_38 {
+    width: 190rem;
+    height: 190rem;
+}
+.Item_image__locked_0f {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+}
+.Item_image__progress_21 {
+    opacity: 0.6;
+    cursor: default;
+    pointer-events: none;
+}
+.Item_image_f0:hover {
+    transform: scale(1.15);
+}
+.Item_imageContainer_8f {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+.Item_imageContainer__small_6c {
+    width: 180rem;
+    margin-bottom: 3rem;
+}
+.Item_imageContainer__medium_9a {
+    width: 190rem;
+    margin-bottom: 10rem;
+}
+.Item_imageContainer__large_17 {
+    width: 230rem;
+    margin-bottom: 15rem;
+}
+.Item_hoverContent_51 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s;
+    pointer-events: none;
+}
+.Item_imageContainer_8f:hover .Item_hoverContent_51 {
+    opacity: 1;
+}
+.Item_itemProgression_d8 {
+    margin-top: 1rem;
+}
+.Item_itemProgression__small_2e {
+    margin-top: 7rem;
+}
+.Item_itemProgression__large_34 {
+    margin-top: 0;
+}
+.Item_itemProgressionWithBar_f5 {
+    margin-top: 6rem;
+}
+.Item_itemProgressionWithBar__small_20 {
+    margin-top: 11rem;
+}
+.Item_itemProgressionWithBar__large_ab {
+    margin-top: 5rem;
+}
+.Item_itemSeparator_1f {
+    flex: 1;
+    height: 100rem;
+}
+.Item_itemSeparator__small_94 {
+    height: 160rem;
+}
+.Item_itemSeparator__medium_d6 {
+    height: 170rem;
+}
+.Item_itemSeparator__large_ba {
+    height: 190rem;
 }
 
 .ItemBlockDone_base_b5 {
@@ -713,151 +848,29 @@ body {
     margin-top: 5rem;
 }
 
-.Icon_base_d5 {
+.Separator_base_44 {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-}
-
-.Icon_base__placeholder_9c {
-    width: 20rem;
-    height: 20rem;
-    border: 3rem solid;
-    border-color: #fff #fff #fff transparent;
-    border-radius: 80%;
-    opacity: 0.3;
-    animation: Icon_rotating_90 1.2s linear infinite;
-}
-
-.Icon_imageTemp_1f {
-    display: none;
-}
-
-@keyframes Icon_rotating_90 {
-    0% {
-        transform: rotate(0);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.Item_base_50 {
-    display: flex;
-    width: 25%;
-}
-
-.Item_base__first_a0 {
-    width: 130rem;
-}
-
-.Item_base__firstSmall_e6 {
-    width: 200rem;
-}
-
-.Item_base__firstLarge_53 {
-    width: 230rem;
-}
-.Item_content_bb {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 130rem;
-}
-.Item_content__small_9a {
-    width: 200rem;
-}
-.Item_content__large_a3 {
-    width: 230rem;
-}
-.Item_image_f0 {
-    width: 110rem;
-    height: 110rem;
-    transform: scale(1);
-    transition: transform 0.2s;
-    cursor: pointer;
-}
-.Item_image__small_9c {
-    width: 160rem;
-    height: 160rem;
-}
-.Item_image__large_38 {
-    width: 190rem;
-    height: 190rem;
-}
-.Item_image__locked_0f {
-    opacity: 0.35;
-    cursor: default;
-    pointer-events: none;
-}
-.Item_image__progress_21 {
-    opacity: 0.6;
-    cursor: default;
-    pointer-events: none;
-}
-.Item_image_f0:hover {
-    transform: scale(1.15);
-}
-.Item_imageContainer_8f {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 130rem;
-    margin-bottom: 3rem;
+    flex: 1;
     position: relative;
 }
-.Item_imageContainer__small_6c {
-    width: 200rem;
-    margin-bottom: 3rem;
-}
-.Item_imageContainer__large_17 {
-    width: 230rem;
-    margin-bottom: 15rem;
-}
-.Item_hoverContent_51 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
+
+.Separator_lock_98 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.2s;
-    pointer-events: none;
 }
-.Item_imageContainer_8f:hover .Item_hoverContent_51 {
-    opacity: 1;
+
+.Separator_lockImage_6c {
+    width: 10rem;
+    height: 15rem;
+    transform: translate(-50%, -60%);
 }
-.Item_itemProgression_d8 {
-    margin-top: 1rem;
-}
-.Item_itemProgression__small_2e {
-    margin-top: 7rem;
-}
-.Item_itemProgression__large_34 {
-    margin-top: 0;
-}
-.Item_itemProgressionWithBar_f5 {
-    margin-top: 6rem;
-}
-.Item_itemProgressionWithBar__small_20 {
-    margin-top: 11rem;
-}
-.Item_itemProgressionWithBar__large_ab {
-    margin-top: 5rem;
-}
-.Item_itemSeparator_1f {
-    flex: 1;
-    height: 110rem;
-}
-.Item_itemSeparator__small_94 {
-    height: 160rem;
-}
-.Item_itemSeparator__large_ba {
-    height: 190rem;
+
+.Separator_arrow_12 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.gui.maps.icons.customization.progeression_screen.arrowx2') no-repeat right;
+    background-size: 100rem 13rem;
 }
 
 .List_base_37 {
@@ -892,15 +905,19 @@ body {
 .Grid_content_ec {
     display: flex;
     flex-direction: column;
-    width: 810rem;
+    width: 990rem;
 }
 
 .Grid_content__small_a4 {
-    width: 1240rem;
+    width: 1330rem;
+}
+
+.Grid_content__medium_02 {
+    width: 1550rem;
 }
 
 .Grid_content__large_c3 {
-    width: 1550rem;
+    width: 1750rem;
 }
 
 .Header_base_0d {
@@ -965,7 +982,7 @@ body {
 }
 
 .ProgressiveItemsViewContent_header_b1 {
-    margin: 20rem 0;
+    margin: 30rem 0 20rem;
 }
 
 .ProgressiveItemsViewContent_grid_96 {
@@ -984,7 +1001,7 @@ body {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    top: 63rem;
+    top: 73rem;
     z-index: 1;
     transition:
         visibility 0s linear 1s,
@@ -1066,23 +1083,6 @@ body {
 .FormatText_base_d0 {
     display: flex;
     flex-wrap: wrap;
-}
-
-.PlayVideoButton_base_93 {
-    width: 172rem;
-    height: 96rem;
-    background: url('R.images.gui.maps.icons.customization.progression_tutorial.play') no-repeat center / cover;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-}
-
-.PlayVideoButton_base_93:hover {
-    background-image: url('R.images.gui.maps.icons.customization.progression_tutorial.play_hover');
-}
-/* Workaround for fix https://jira-archive.lesta.group/browse/WOTD-158651. Bad solution, but wasn't any other for current GF version*/
-.PlayVideoButton_hoverPreload_b8 {
-    display: none;
-    background-image: url('R.images.gui.maps.icons.customization.progression_tutorial.play_hover');
 }
 
 /* TODO: media break points should be removed and taken from common folder when it's ready.*/
@@ -1275,35 +1275,22 @@ body {
     }
 }
 
-.TutorialContent_videoBlock_66 {
+.TutorialContent_image_97 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 880rem;
-    max-height: 528rem;
+    height: 320rem;
     margin-bottom: 48rem;
+    background: url('R.images.gui.maps.icons.customization.progressive_items_view.tutorial') no-repeat center / contain;
 }
 
 @media (min-width: 1600px) and (min-height: 900px) {
-    .TutorialContent_videoBlock_66 {
+    .TutorialContent_image_97 {
         width: 960rem;
-        max-height: 576rem;
+        height: 320rem;
     }
-}
-
-.TutorialContent_videoContainer_a3 {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background: url('R.images.gui.maps.icons.customization.progression_tutorial.videoPreview') no-repeat center / cover;
-}
-
-.TutorialContent_playBtn_63 {
-    position: relative;
-    top: 50%;
-    left: 50%;
 }
 
 .TutorialContent_elementsBlock_6c {

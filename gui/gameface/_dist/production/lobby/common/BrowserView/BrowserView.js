@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (e, t, n) => {
-                n.d(t, { O: () => K });
+                n.d(t, { O: () => G });
                 var o = {};
                 (n.r(o), n.d(o, { mouse: () => d, onResize: () => l }));
                 var r = {};
@@ -53,7 +53,7 @@
                         setEventHandled: () => H,
                         setInputPaddingsRem: () => L,
                         setSidePaddingsRem: () => P,
-                        whenTutorialReady: () => G,
+                        whenTutorialReady: () => K,
                     }));
                 const l = s('clientResized'),
                     u = { down: s('mousedown'), up: s('mouseup'), move: s('mousemove') };
@@ -271,13 +271,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    G = Promise.all([
+                    K = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : f.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    K = { view: i, client: r };
+                    G = { view: i, client: r };
             },
             521: (e, t, n) => {
                 let o, r;
@@ -304,6 +304,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1211,15 +1212,15 @@
                 W.defaultProps = { type: z.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const V = (0, o.memo)(W),
                     q = 'Error_base_46',
-                    G = 'Error_alertIcon_04',
-                    K = 'Error_errorCaption_f2',
+                    K = 'Error_alertIcon_04',
+                    G = 'Error_errorCaption_f2',
                     Y = 'Error_button_cd',
                     $ = ({ errorBtnLabel: e, errorBtnClickHandler: t, errorMessage: n }) =>
                         r().createElement(
                             'div',
                             { className: q },
-                            r().createElement('div', { className: G }),
-                            r().createElement('div', { className: K }, n),
+                            r().createElement('div', { className: K }),
+                            r().createElement('div', { className: G }, n),
                             r().createElement(V, { size: j.medium, mixClass: Y, onClick: t }, e),
                         );
                 $.defaultProps = { errorBtnLabel: '', errorMessage: '' };

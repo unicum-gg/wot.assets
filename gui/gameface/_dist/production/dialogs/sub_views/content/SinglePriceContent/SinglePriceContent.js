@@ -33,9 +33,9 @@
                         addPreloadTexture: () => f,
                         children: () => t,
                         displayStatus: () => l,
-                        displayStatusIs: () => z,
+                        displayStatusIs: () => K,
                         events: () => d,
-                        extraSize: () => G,
+                        extraSize: () => z,
                         forceTriggerMouseMove: () => q,
                         freezeTextureBeforeResize: () => L,
                         getBrowserTexturePath: () => y,
@@ -53,7 +53,7 @@
                         setEventHandled: () => W,
                         setInputPaddingsRem: () => T,
                         setSidePaddingsRem: () => O,
-                        whenTutorialReady: () => K,
+                        whenTutorialReady: () => G,
                     }));
                 const o = r('clientResized'),
                     i = { down: r('mousedown'), up: r('mouseup'), move: r('mousemove') };
@@ -262,8 +262,8 @@
                 function H() {
                     return viewEnv.getShowingStatus();
                 }
-                const z = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
-                    G = {
+                const K = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
+                    z = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -271,7 +271,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    K = Promise.all([
+                    G = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : d.onDomBuilt(u);
                         }),
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1195,9 +1196,9 @@
                         prom: 'FormatTextWithColorTags_prom_dd',
                     },
                     H = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
-                    z = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
-                    G = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
-                    K = (0, F.memo)(({ text: u, binding: e, classMix: A }) => {
+                    K = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
+                    z = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
+                    G = (0, F.memo)(({ text: u, binding: e, classMix: A }) => {
                         const t = (0, F.useCallback)((u) => ({ color: `#${u}` }), []),
                             n = (0, F.useMemo)(() => e || {}, [e]);
                         let r = H.exec(u),
@@ -1205,8 +1206,8 @@
                             o = 0;
                         for (; r; ) {
                             const A = r[0],
-                                F = z.exec(A),
-                                i = G.exec(A),
+                                F = K.exec(A),
+                                i = z.exec(A),
                                 a = r[1];
                             if (F && i) {
                                 const u = F[0],
@@ -1230,47 +1231,44 @@
                     });
                 let j;
                 !(function (u) {
-                    ((u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent'));
+                    ((u.backport = 'backport'), (u.unbound = 'unbound'), (u.normal = 'normal'), (u.absent = 'absent'));
                 })(j || (j = {}));
-                const Y = {
+                const Y = (u, e) => ({
+                        isEnabled: u !== j.absent,
+                        args: e,
+                        contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
+                        decoratorId:
+                            u === j.unbound
+                                ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
+                                : void 0,
+                        ignoreShowDelay: u === j.backport,
+                        ignoreMouseClick: !0,
+                    }),
+                    $ = {
                         base: 'SinglePriceApp_base_d6',
                         text: 'SinglePriceApp_text_ef',
                         currency: 'SinglePriceApp_currency_bb',
                         currency__big: 'SinglePriceApp_currency__big_a1',
                     },
-                    $ = () => {
+                    X = () => {
                         const u = U().text,
                             e = U('model.cost'),
                             A = U('model.tooltip'),
-                            F =
-                                ((t = A.type),
-                                (n = void 0),
-                                {
-                                    isEnabled: t !== j.absent,
-                                    args: n,
-                                    contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
-                                    decoratorId:
-                                        t === j.normal
-                                            ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
-                                            : void 0,
-                                    ignoreShowDelay: t === j.backport,
-                                    ignoreMouseClick: !0,
-                                });
-                        var t, n;
-                        const r = D()(Y.currency, Y[`currency__${e.size}`]);
+                            F = Y(A.type, void 0),
+                            t = D()($.currency, $[`currency__${e.size}`]);
                         return E().createElement(
                             'div',
-                            { className: Y.base },
-                            E().createElement('div', { className: Y.text }, E().createElement(K, { text: u })),
+                            { className: $.base },
+                            E().createElement('div', { className: $.text }, E().createElement(G, { text: u })),
                             E().createElement(
                                 g,
                                 F,
-                                E().createElement('div', { className: r }, E().createElement(c, e)),
+                                E().createElement('div', { className: t }, E().createElement(c, e)),
                             ),
                         );
                     };
                 engine.whenReady.then(() => {
-                    n().render(E().createElement($, null), document.getElementById('root'));
+                    n().render(E().createElement(X, null), document.getElementById('root'));
                 });
             },
             243: (u, e, A) => {

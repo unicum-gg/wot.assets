@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (e, u, t) => {
-                t.d(u, { O: () => Y });
+                t.d(u, { O: () => q });
                 var a = {};
                 (t.r(a), t.d(a, { mouse: () => c, onResize: () => l }));
                 var n = {};
@@ -53,7 +53,7 @@
                         setEventHandled: () => H,
                         setInputPaddingsRem: () => T,
                         setSidePaddingsRem: () => x,
-                        whenTutorialReady: () => q,
+                        whenTutorialReady: () => Y,
                     }));
                 const l = i('clientResized'),
                     _ = { down: i('mousedown'), up: i('mouseup'), move: i('mousemove') };
@@ -271,13 +271,13 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    q = Promise.all([
+                    Y = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : B.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    Y = { view: s, client: n };
+                    q = { view: s, client: n };
             },
             521: (e, u, t) => {
                 let a, n;
@@ -304,6 +304,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1198,7 +1199,7 @@
                 })(V || (V = {}));
                 Date.now();
                 x.Sw.instance;
-                const q = {
+                const Y = {
                         base: 'Background_base_c0',
                         light: 'Background_light_b9',
                         fadeInThreeQuarters: 'Background_fadeInThreeQuarters_fb',
@@ -1217,15 +1218,15 @@
                         slideUp: 'Background_slideUp_bb',
                         scale: 'Background_scale_85',
                     },
-                    Y = () => {
+                    q = () => {
                         const e = W('model'),
                             u = e.isRibbonGold,
                             t = e.isLightVisible,
                             a = e.mainItemsCount,
-                            r = M(['base'], q),
-                            s = h()(r.base, a && q.base__additional),
-                            i = h()(q.light, u && q.light__gold),
-                            o = h()(q.ribbon, u && q.ribbon__gold);
+                            r = M(['base'], Y),
+                            s = h()(r.base, a && Y.base__additional),
+                            i = h()(Y.light, u && Y.light__gold),
+                            o = h()(Y.ribbon, u && Y.ribbon__gold);
                         return n().createElement(
                             'div',
                             { className: s },
@@ -1234,7 +1235,7 @@
                                     n().Fragment,
                                     null,
                                     n().createElement('div', { className: i }),
-                                    n().createElement('div', { className: q.rays }),
+                                    n().createElement('div', { className: Y.rays }),
                                 ),
                             n().createElement('div', { className: o }),
                         );
@@ -1565,6 +1566,7 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
@@ -1605,7 +1607,6 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
-                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -2336,15 +2337,15 @@
                         return n().createElement('div', { className: o }, s);
                     },
                     Ve = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
-                    qe = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
-                const Ye = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
+                    Ye = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
+                const qe = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
                     je = (e) =>
-                        Ye
+                        qe
                             ? `${e}`
                             : (function (e) {
                                   let u = '';
-                                  for (let t = qe.length - 1; t >= 0; t--)
-                                      for (; e >= qe[t]; ) ((u += Ve[t]), (e -= qe[t]));
+                                  for (let t = Ye.length - 1; t >= 0; t--)
+                                      for (; e >= Ye[t]; ) ((u += Ve[t]), (e -= Ye[t]));
                                   return u;
                               })(e),
                     Xe = {
@@ -2755,7 +2756,7 @@
                         return n().createElement(
                             'div',
                             { className: r.base },
-                            n().createElement(Y, null),
+                            n().createElement(q, null),
                             n().createElement('div', { className: Eu.header }, n().createElement(re, null)),
                             n().createElement(
                                 'div',

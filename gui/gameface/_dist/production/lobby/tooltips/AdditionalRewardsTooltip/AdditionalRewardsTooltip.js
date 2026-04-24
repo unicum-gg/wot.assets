@@ -504,6 +504,7 @@
                         (u[(u.DELETE = 46)] = 'DELETE'),
                         (u[(u.TAB = 9)] = 'TAB'),
                         (u[(u.KEY_N = 78)] = 'KEY_N'),
+                        (u[(u.KEY_0 = 48)] = 'KEY_0'),
                         (u[(u.KEY_1 = 49)] = 'KEY_1'),
                         (u[(u.KEY_2 = 50)] = 'KEY_2'),
                         (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1046,7 +1047,7 @@
                             }
                             return n;
                         });
-                let U, L, G, $, q, Y, V;
+                let U, L, G, $, q, Y, H;
                 (!(function (u) {
                     ((u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -1102,6 +1103,7 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
@@ -1142,7 +1144,6 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
-                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -1201,8 +1202,8 @@
                             (u.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(V || (V = {})));
-                class H extends r().PureComponent {
+                    })(H || (H = {})));
+                class V extends r().PureComponent {
                     render() {
                         let u;
                         if ('gold' === this.props.format) u = h.B3.GOLD;
@@ -1211,7 +1212,7 @@
                         return void 0 !== this.props.value && void 0 !== e ? e : null;
                     }
                 }
-                H.defaultProps = { format: 'integral' };
+                V.defaultProps = { format: 'integral' };
                 const z = [
                         U.Items,
                         U.Equipment,
@@ -1742,31 +1743,31 @@
                                 if (void 0 === u) return null;
                                 switch (u) {
                                     case q.BATTLE_BOOSTER:
-                                        return V.BATTLE_BOOSTER;
+                                        return H.BATTLE_BOOSTER;
                                     case q.BATTLE_BOOSTER_REPLACE:
-                                        return V.BATTLE_BOOSTER_REPLACE;
+                                        return H.BATTLE_BOOSTER_REPLACE;
                                     case q.BUILT_IN_EQUIPMENT:
-                                        return V.BUILT_IN_EQUIPMENT;
+                                        return H.BUILT_IN_EQUIPMENT;
                                     case q.EQUIPMENT_PLUS:
-                                        return V.EQUIPMENT_PLUS;
+                                        return H.EQUIPMENT_PLUS;
                                     case q.EQUIPMENT_TROPHY_BASIC:
-                                        return V.EQUIPMENT_TROPHY_BASIC;
+                                        return H.EQUIPMENT_TROPHY_BASIC;
                                     case q.EQUIPMENT_TROPHY_UPGRADED:
-                                        return V.EQUIPMENT_TROPHY_UPGRADED;
+                                        return H.EQUIPMENT_TROPHY_UPGRADED;
                                     case q.EQUIPMENT_MODERNIZED_UPGRADED_1:
-                                        return V.EQUIPMENT_MODERNIZED_UPGRADED_1;
+                                        return H.EQUIPMENT_MODERNIZED_UPGRADED_1;
                                     case q.EQUIPMENT_MODERNIZED_UPGRADED_2:
-                                        return V.EQUIPMENT_MODERNIZED_UPGRADED_2;
+                                        return H.EQUIPMENT_MODERNIZED_UPGRADED_2;
                                     case q.EQUIPMENT_MODERNIZED_UPGRADED_3:
-                                        return V.EQUIPMENT_MODERNIZED_UPGRADED_3;
+                                        return H.EQUIPMENT_MODERNIZED_UPGRADED_3;
                                     case q.PROGRESSION_STYLE_UPGRADED_1:
-                                        return V.PROGRESSION_STYLE_UPGRADED_1;
+                                        return H.PROGRESSION_STYLE_UPGRADED_1;
                                     case q.PROGRESSION_STYLE_UPGRADED_2:
-                                        return V.PROGRESSION_STYLE_UPGRADED_2;
+                                        return H.PROGRESSION_STYLE_UPGRADED_2;
                                     case q.PROGRESSION_STYLE_UPGRADED_3:
-                                        return V.PROGRESSION_STYLE_UPGRADED_3;
+                                        return H.PROGRESSION_STYLE_UPGRADED_3;
                                     case q.PROGRESSION_STYLE_UPGRADED_4:
-                                        return V.PROGRESSION_STYLE_UPGRADED_4;
+                                        return H.PROGRESSION_STYLE_UPGRADED_4;
                                 }
                             })(E),
                             C = ((u, e) => {
@@ -1778,7 +1779,7 @@
                                     }
                                     case $.CURRENCY:
                                     case $.NUMBER:
-                                        return r().createElement(H, { format: 'integral', value: Number(u) });
+                                        return r().createElement(V, { format: 'integral', value: Number(u) });
                                     case $.PREMIUM_PLUS: {
                                         const e = Number(u);
                                         return isNaN(e) ? u : null;
@@ -2097,7 +2098,7 @@
                                 ),
                         );
                     },
-                    Vu = () => {
+                    Hu = () => {
                         const u = x('model.bonus'),
                             e = (0, n.useRef)(null),
                             t = (0, n.useRef)(null),
@@ -2152,7 +2153,7 @@
                         );
                     };
                 engine.whenReady.then(() => {
-                    s().render(r().createElement(Vu, null), document.getElementById('root'));
+                    s().render(r().createElement(Hu, null), document.getElementById('root'));
                 });
             },
         },

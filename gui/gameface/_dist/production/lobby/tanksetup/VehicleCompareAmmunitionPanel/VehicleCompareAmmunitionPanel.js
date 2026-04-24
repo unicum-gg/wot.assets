@@ -1183,6 +1183,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1959,7 +1960,7 @@
                             (e[(e.Large = j.j.large.height)] = 'Large'),
                             (e[(e.ExtraLarge = j.j.extraLarge.height)] = 'ExtraLarge'));
                     })(X || (X = {})));
-                const V = () => {
+                const K = () => {
                         const e = (0, n.useContext)(F.YN),
                             u = e.width,
                             t = e.height,
@@ -2013,8 +2014,8 @@
                             })(e);
                         return { mediaSize: a, mediaWidth: i, mediaHeight: s, remScreenWidth: u, remScreenHeight: t };
                     },
-                    K = ['xl', 'lg', 'md', 'sm', 'xs'],
-                    q = (e) => e.includes('_') && ((e) => K.includes(e))(e.split('_').at(-1)),
+                    V = ['xl', 'lg', 'md', 'sm', 'xs'],
+                    q = (e) => e.includes('_') && ((e) => V.includes(e))(e.split('_').at(-1)),
                     Y = [z.ExtraLarge, z.Large, z.Medium, z.Small, z.ExtraSmall],
                     Z = (e, u) =>
                         Object.keys(e).reduce((t, n) => {
@@ -2023,7 +2024,7 @@
                                 const a = n.split('_').slice(0, -1).join('_');
                                 if (a in t) return t;
                                 const i = Y.indexOf(u),
-                                    s = (-1 !== i ? K.slice(i) : [])
+                                    s = (-1 !== i ? V.slice(i) : [])
                                         .map((e) => a + '_' + e)
                                         .find((u) => void 0 !== e[u]),
                                     r = s ? e[s] : void 0;
@@ -2032,7 +2033,7 @@
                             const a = e[n];
                             return (
                                 void 0 === a ||
-                                    ((e, u) => K.some((t) => void 0 !== u[`${e}_${t}`]))(n, e) ||
+                                    ((e, u) => V.some((t) => void 0 !== u[`${e}_${t}`]))(n, e) ||
                                     (t[n] = a),
                                 t
                             );
@@ -2041,7 +2042,7 @@
                         const t = (
                             (e, u = Z) =>
                             (t) => {
-                                const i = V().mediaSize,
+                                const i = K().mediaSize,
                                     s = (0, n.useMemo)(() => u(t, i), [t, i]);
                                 return a().createElement(e, s);
                             }
@@ -2621,7 +2622,7 @@
                             )
                         );
                     };
-                let Ve, Ke;
+                let Ke, Ve;
                 (!(function (e) {
                     ((e.Hangar = 'hangar'),
                         (e.Setup = 'setup'),
@@ -2629,14 +2630,14 @@
                         (e.Battle = 'battle'),
                         (e.Respawn = 'respawn'),
                         (e.Prebattle = 'prebattle'));
-                })(Ve || (Ve = {})),
+                })(Ke || (Ke = {})),
                     (function (e) {
                         ((e[(e.One = 1)] = 'One'), (e[(e.Two = 2)] = 'Two'), (e[(e.Three = 3)] = 'Three'));
-                    })(Ke || (Ke = {})));
+                    })(Ve || (Ve = {})));
                 const qe = (e) => e.imageSource === R.images.gui.maps.icons.tanksetup.panel.empty(),
-                    Ye = (e) => e === Ve.Battle || e === Ve.Prebattle,
+                    Ye = (e) => e === Ke.Battle || e === Ke.Prebattle,
                     Ze = (e) => !Ye(e),
-                    Je = (e) => Ye(e) || e === Ve.Respawn;
+                    Je = (e) => Ye(e) || e === Ke.Respawn;
                 var Qe = t(7383),
                     eu = t(9152),
                     uu = t(7727);
@@ -2945,7 +2946,7 @@
                                 );
                         }, [t, d, E]);
                         const m = _()(pu, r.current && gu),
-                            A = _()(Cu, e !== Ve.Setup && Bu, i && Su, s && l ? hu : fu);
+                            A = _()(Cu, e !== Ke.Setup && Bu, i && Su, s && l ? hu : fu);
                         return a().createElement(
                             'div',
                             { className: m },
@@ -3096,7 +3097,7 @@
                             );
                         return [(e) => t(e), (e) => o(e), () => i(), (e) => s(e), (e) => r(e)];
                     },
-                    Vu = a().memo(function ({ className: e, children: u }) {
+                    Ku = a().memo(function ({ className: e, children: u }) {
                         const t = ((e, u, t, a) => {
                                 const i = Xu('epic_battle'),
                                     s = i[0],
@@ -3129,8 +3130,8 @@
                             a().createElement('div', { className: e }, u),
                         );
                     }),
-                    Ku = 'SlotDivider_base_60',
-                    qu = () => a().createElement('div', { className: Ku });
+                    Vu = 'SlotDivider_base_60',
+                    qu = () => a().createElement('div', { className: Vu });
                 var Yu = t(3267),
                     Zu = t(8253),
                     Ju = t(3141);
@@ -3153,7 +3154,7 @@
                             handleAction: E,
                             blockOnGrabIds: m = [],
                         }) => {
-                            const F = V().mediaSize,
+                            const F = K().mediaSize,
                                 D = (0, n.useRef)({
                                     actualX: 0,
                                     clickCenterOffset: 0,
@@ -3565,9 +3566,9 @@
                         categoryImgSource: O,
                         contextMenuDisabled: M,
                     }) => {
-                        const L = h === Ve.Setup,
+                        const L = h === Ke.Setup,
                             N = !Je(h),
-                            P = h === Ve.Compare,
+                            P = h === Ke.Compare,
                             H = L && D && N,
                             G = (0, n.useRef)(!1),
                             $ = (0, n.useRef)(null),
@@ -3610,8 +3611,8 @@
                         const X = (0, n.useCallback)(() => {
                                 null == B || B(e, t);
                             }, [e, B, t]),
-                            V = L && !s,
-                            K = Boolean(w && I === w),
+                            K = L && !s,
+                            V = Boolean(w && I === w),
                             q = w && (H || P),
                             Y = `${t}-slot-${e}`,
                             Z = O && O.length > 0,
@@ -3666,7 +3667,7 @@
                                             isBorderActive: Boolean(S),
                                             panelType: h,
                                             isDisabled: f,
-                                            isPotentialDrop: K,
+                                            isPotentialDrop: V,
                                             onClick: q ? void 0 : z,
                                         },
                                         N &&
@@ -3686,7 +3687,7 @@
                                                     isIncompatible: v,
                                                     overlayType: l,
                                                     level: d,
-                                                    isTemporary: V,
+                                                    isTemporary: K,
                                                     withAttention: b,
                                                 }),
                                             ),
@@ -3746,7 +3747,7 @@
                                 return a;
                             })(e, Gt);
                         const r = P('model.ammunitionPanel', N.None).onSpecializationSelect,
-                            o = s.panelType === Ve.Setup || s.panelType === Ve.Compare,
+                            o = s.panelType === Ke.Setup || s.panelType === Ke.Compare,
                             l = !Je(s.panelType);
                         return a().createElement(
                             'div',
@@ -3864,8 +3865,8 @@
                                 return a().createElement(It, Ut({}, n, u));
                         }
                     },
-                    Vt = 'Slots_base_27',
-                    Kt = ({
+                    Kt = 'Slots_base_27',
+                    Vt = ({
                         slots: e,
                         sectionType: u,
                         panelType: t,
@@ -3925,7 +3926,7 @@
                             };
                         return a().createElement(
                             'div',
-                            { id: S, ref: D, className: _()(Vt, u) },
+                            { id: S, ref: D, className: _()(Kt, u) },
                             H.v(e, (l, c) => {
                                 const _ = u === Qe.YN,
                                     d = !_ && e.length > 1 ? `${S}-${c}` : '';
@@ -3990,7 +3991,7 @@
                             w = S[1],
                             x = (0, n.useMemo)(
                                 () =>
-                                    s === Ve.Setup
+                                    s === Ke.Setup
                                         ? e === Qe.mH
                                             ? 'AmmunitionSetupHangarEquipmentSlots'
                                             : 'AmmunitionSetupOptionalDeviceSlots'
@@ -4064,7 +4065,7 @@
                             M = O.selfId,
                             L = O.blockOnGrabIds;
                         ((0, n.useEffect)(() => {
-                            s === Ve.Hangar && w(l);
+                            s === Ke.Hangar && w(l);
                         }, [s, l]),
                             (0, n.useEffect)(() => {
                                 if (l && !v && D)
@@ -4081,7 +4082,7 @@
                                 u.length > 1 && 'multiSlot',
                                 N && 'existFilledSlots',
                             ),
-                            $ = ((b && b.length > 0) || (p && p.length > 0)) && s !== Ve.Battle && s !== Ve.Respawn,
+                            $ = ((b && b.length > 0) || (p && p.length > 0)) && s !== Ke.Battle && s !== Ke.Respawn,
                             W = (0, n.useMemo)(
                                 () => ({
                                     backgroundImage: p
@@ -4094,7 +4095,7 @@
                                 () => ({ icon: a().createElement('span', { className: Ou, style: W }), vehicle: b }),
                                 [W, b],
                             ),
-                            z = u.length > 0 && s !== Ve.Compare && s !== Ve.Battle && s !== Ve.Respawn && u.length > 0,
+                            z = u.length > 0 && s !== Ke.Compare && s !== Ke.Battle && s !== Ke.Respawn && u.length > 0,
                             U = R.strings.tank_setup.section.$dyn(e);
                         if ('string' != typeof U)
                             throw new Error(`No top label text for section type ${e} or it's not a string`);
@@ -4103,7 +4104,7 @@
                             { id: g ? wu : M, ref: f, className: G },
                             $ &&
                                 a().createElement(
-                                    Vu,
+                                    Ku,
                                     { className: Iu },
                                     a().createElement(re, {
                                         classMix: Ru,
@@ -4117,7 +4118,7 @@
                                     { className: Tu },
                                     a().createElement(vu, { text: U, parentRef: f, show: !I, panelType: s }),
                                 ),
-                            a().createElement(Kt, {
+                            a().createElement(Vt, {
                                 slots: u,
                                 sectionType: e,
                                 panelType: s,
@@ -4220,7 +4221,7 @@
                                             { className: tn },
                                             a().createElement(_t, {
                                                 text: o,
-                                                show: r || l === Ve.Battle || l === Ve.Respawn,
+                                                show: r || l === Ke.Battle || l === Ke.Respawn,
                                                 shellState: C,
                                                 panelType: l,
                                             }),
@@ -4354,7 +4355,7 @@
                                 [],
                             ),
                             (0, n.useEffect)(() => {
-                                if (s && u === Ve.Setup) {
+                                if (s && u === Ke.Setup) {
                                     if (!D.current)
                                         return A(() => {
                                             t();
@@ -4425,7 +4426,7 @@
                         counter: 'ShellsSection_counter_74',
                         disabled: 'ShellsSection_disabled_c2',
                     },
-                    mn = [Ve.Hangar, Ve.Battle, Ve.Prebattle, Ve.Respawn],
+                    mn = [Ke.Hangar, Ke.Battle, Ke.Prebattle, Ke.Respawn],
                     An = ({
                         slots: e,
                         ammoNotFull: u,
@@ -4443,7 +4444,7 @@
                         newItemsCount: F,
                     }) => {
                         const D = (0, n.useRef)(null),
-                            b = s === Ve.Compare,
+                            b = s === Ke.Compare,
                             p = c === t,
                             g = (0, n.useCallback)(() => {
                                 r(D, c, 0);
@@ -4457,8 +4458,8 @@
                                 if (!f) return null;
                                 const e = _()(
                                     En.border,
-                                    S === Ke.Two && En.border__double,
-                                    S === Ke.Three && En.border__triple,
+                                    S === Ve.Two && En.border__double,
+                                    S === Ve.Three && En.border__triple,
                                 );
                                 return a().createElement('div', { className: e });
                             }, [f, S]),
@@ -4472,10 +4473,10 @@
                             ),
                             x = _()(
                                 En.attention,
-                                S === Ke.One && En.attention__once,
-                                S >= Ke.Two && En.attention__double,
+                                S === Ve.One && En.attention__once,
+                                S >= Ve.Two && En.attention__double,
                             ),
-                            y = !b && s !== Ve.Battle && s !== Ve.Respawn;
+                            y = !b && s !== Ke.Battle && s !== Ke.Respawn;
                         return a().createElement(
                             'div',
                             { id: m ? wu : B, className: w, ref: D },
@@ -4716,18 +4717,18 @@
                                 ));
                         var C;
                         ((0, n.useEffect)(() => {
-                            (e.panelType !== Ve.Hangar && e.panelType !== Ve.Setup) || !t || i(!1);
+                            (e.panelType !== Ke.Hangar && e.panelType !== Ke.Setup) || !t || i(!1);
                         }, [t, e.panelType, i]),
                             (0, n.useEffect)(() => {
-                                e.panelType === Ve.Respawn && i(!1);
+                                e.panelType === Ke.Respawn && i(!1);
                             }, [p, e.panelType, i]));
                         const B = (0, n.useCallback)(
                                 (u) => {
-                                    (e.panelType === Ve.Respawn && i(!0), m(u));
+                                    (e.panelType === Ke.Respawn && i(!0), m(u));
                                 },
                                 [m, e.panelType, i],
                             ),
-                            h = (e.panelType !== Ve.Respawn && t) || (e.panelType === Ve.Respawn && u);
+                            h = (e.panelType !== Ke.Respawn && t) || (e.panelType === Ke.Respawn && u);
                         return a().createElement(
                             'div',
                             { className: yn.base },
@@ -4785,7 +4786,7 @@
                                             ),
                                     ),
                                     ((s = t),
-                                    ((o = e.panelType) === Ve.Battle || o === Ve.Respawn) &&
+                                    ((o = e.panelType) === Ke.Battle || o === Ke.Respawn) &&
                                         s.setupSelector.isSwitchEnabled &&
                                         kn(s) &&
                                         a().createElement(
@@ -4898,7 +4899,7 @@
                             O = (0, n.useRef)({ element: null, generation: 0, slotIndex: null, sectionIndex: null }),
                             M = (0, n.useCallback)(
                                 (e, u) => {
-                                    if (B || d || i || t !== Ve.Hangar) return;
+                                    if (B || d || i || t !== Ke.Hangar) return;
                                     const n = u || { width: 0, height: 0, offsetX: 0, offsetY: 0 };
                                     (D(Object.assign({ sectionType: e }, n)), R && (R.freeze(), R.resize()));
                                 },
@@ -4959,9 +4960,9 @@
                             }, [r, o, b, $]),
                             U = w.slotWidth,
                             X = w.slotOffset,
-                            V = _()(Re.base, !u && Re.base__locked, !e && Re.base__hidden, s && Re.base__disabled),
-                            K = _()(Re.border, !T && Re.border__hidden),
-                            q = t === Ve.Setup || t === Ve.Compare,
+                            K = _()(Re.base, !u && Re.base__locked, !e && Re.base__hidden, s && Re.base__disabled),
+                            V = _()(Re.border, !T && Re.border__hidden),
+                            q = t === Ke.Setup || t === Ke.Compare,
                             Y = {
                                 panelType: t,
                                 isDisabled: s,
@@ -4977,7 +4978,7 @@
                         const Z = v(['roleSkillSlot', 'abilitySkillSlot'], Re);
                         return a().createElement(
                             'div',
-                            { ref: I, className: V },
+                            { ref: I, className: K },
                             q &&
                                 a().createElement($n, {
                                     key: O.current.generation,
@@ -5013,7 +5014,7 @@
                             q &&
                                 a().createElement(
                                     'div',
-                                    { className: K },
+                                    { className: V },
                                     a().createElement(Pe, { slotWidth: U, slotOffset: X, onAnimationEnd: N }),
                                 ),
                         );
@@ -5035,7 +5036,7 @@
                                 a().createElement(
                                     'div',
                                     { className: Un },
-                                    a().createElement(Wn, { panelType: Ve.Compare }),
+                                    a().createElement(Wn, { panelType: Ke.Compare }),
                                 ),
                             )
                         );
@@ -5635,7 +5636,7 @@
                                 z = (B === t || B === L) && H !== m && j.includes(C),
                                 U = -1 === b || -1 === p,
                                 X = _ ? `base${_[0].toUpperCase() + _.slice(1)}` : 'base',
-                                V = c.Sr[C] || 0;
+                                K = c.Sr[C] || 0;
                             ((0, s.useEffect)(
                                 () => () => {
                                     ($.current && clearTimeout($.current), W.current && clearTimeout(W.current));
@@ -5645,7 +5646,7 @@
                                 (0, s.useEffect)(() => {
                                     d || O(E);
                                 }, [d, E]));
-                            const K = (0, s.useCallback)(
+                            const V = (0, s.useCallback)(
                                     (e) => {
                                         const t = Object.assign({}, S);
                                         switch (C) {
@@ -5686,17 +5687,17 @@
                                             default:
                                                 return e;
                                         }
-                                        return r().cloneElement(e, { classNames: t, timeout: V });
+                                        return r().cloneElement(e, { classNames: t, timeout: K });
                                     },
-                                    [C, _, X, V, F, u, D, d, U],
+                                    [C, _, X, K, F, u, D, d, U],
                                 ),
                                 q = (0, s.useCallback)(
                                     (e) => {
                                         W.current = setTimeout(() => {
                                             ((e.className = ''), e.classList.add(f.base), N(t), G(m));
-                                        }, V);
+                                        }, K);
                                     },
-                                    [V, t, m],
+                                    [K, t, m],
                                 ),
                                 Y = (0, s.useCallback)(() => {
                                     (x(!1), k(!1));
@@ -5706,12 +5707,12 @@
                                 null,
                                 r().createElement(
                                     o.Z,
-                                    { component: null, childFactory: K },
+                                    { component: null, childFactory: V },
                                     r().createElement(
                                         l.Z,
                                         {
                                             key: t,
-                                            timeout: V,
+                                            timeout: K,
                                             classNames: S,
                                             onEntered: q,
                                             onExiting: Y,

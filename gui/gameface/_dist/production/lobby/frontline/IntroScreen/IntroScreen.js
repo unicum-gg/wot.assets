@@ -33,13 +33,13 @@
                         addPreloadTexture: () => p,
                         children: () => i,
                         displayStatus: () => B,
-                        displayStatusIs: () => K,
+                        displayStatusIs: () => j,
                         events: () => C,
                         extraSize: () => z,
                         forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => L,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => j,
+                        getDisplayStatus: () => K,
                         getScale: () => P,
                         getSize: () => k,
                         getViewGlobalPosition: () => T,
@@ -259,10 +259,10 @@
                 function V() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function j() {
+                function K() {
                     return viewEnv.getShowingStatus();
                 }
-                const K = Object.keys(B).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === B[e]), u), {}),
+                const j = Object.keys(B).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === B[e]), u), {}),
                     z = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1262,8 +1263,8 @@
                     },
                     I = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
                     V = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
-                    j = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
-                    K = (u) =>
+                    K = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
+                    j = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, t) => {
                                 const n = I(`${u}.${t}`, window);
@@ -1275,7 +1276,7 @@
                                     t = e.caller,
                                     n = e.resId,
                                     a = window.__feature && window.__feature !== t && t ? `subViews.${t}` : '';
-                                return { modelPrefix: a, modelPath: j(a, u || ''), resId: n };
+                                return { modelPrefix: a, modelPath: K(a, u || ''), resId: n };
                             })(),
                             t = e.modelPrefix,
                             n = u.split('.');
@@ -1283,7 +1284,7 @@
                             const u = [n[0]];
                             return (
                                 n.reduce((e, n) => {
-                                    const a = I(j(t, `${e}.${n}`), window);
+                                    const a = I(K(t, `${e}.${n}`), window);
                                     return V(a) ? (u.push(a.id), `${e}.${n}.value`) : (u.push(n), `${e}.${n}`);
                                 }),
                                 u.reduce((u, e) => u + '.' + e)
@@ -1311,7 +1312,7 @@
                                     const e = I(u, window);
                                     for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                     return V(e) ? e.value : e;
-                                })(K(s)),
+                                })(j(s)),
                             ),
                             F = A[0],
                             E = A[1],

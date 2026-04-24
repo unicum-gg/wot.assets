@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1053,14 +1054,14 @@
                     );
                 let x;
                 !(function (u) {
-                    ((u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent'));
+                    ((u.backport = 'backport'), (u.unbound = 'unbound'), (u.normal = 'normal'), (u.absent = 'absent'));
                 })(x || (x = {}));
                 const I = (u, e) => ({
                         isEnabled: u !== x.absent,
                         args: e,
                         contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
                         decoratorId:
-                            u === x.normal
+                            u === x.unbound
                                 ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
                                 : void 0,
                         ignoreShowDelay: u === x.backport,

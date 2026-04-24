@@ -1,0 +1,221 @@
+.App_base_fc {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+.App_banner_9c {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    align-self: flex-end;
+    width: 180rem;
+    height: 180rem;
+    position: relative;
+    transition: background-size 0.3s ease-out;
+    cursor: pointer;
+}
+
+.mediaMedium .App_banner_9c {
+    width: 260rem;
+    height: 260rem;
+}
+
+.mediaExtraLarge .App_banner_9c {
+    width: 346rem;
+    height: 346rem;
+}
+
+.App_banner_9c:hover {
+    background-size: 103%;
+}
+
+.App_banner_9c:hover .App_title_1c {
+    margin-bottom: 27rem;
+}
+
+.mediaMedium .App_banner_9c:hover .App_title_1c {
+    margin-bottom: 34rem;
+}
+
+.mediaExtraLarge .App_banner_9c:hover .App_title_1c {
+    margin-bottom: 44rem;
+}
+
+.App_banner_9c:hover .App_background_61 {
+    opacity: 0;
+}
+
+.App_banner_9c:hover .App_background__hover_0a {
+    opacity: 1;
+}
+
+.App_background_61,
+.App_background__hover_0a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease-out;
+}
+
+.App_background_61 {
+    opacity: 1;
+}
+
+.App_background__hover_0a {
+    opacity: 0;
+}
+
+.App_banner__offence_b1 {
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.offence.banner_small') no-repeat
+        center / 100%;
+}
+
+.mediaMedium .App_banner__offence_b1 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.offence.banner_medium');
+}
+
+.mediaExtraLarge .App_banner__offence_b1 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.offence.banner_large');
+}
+
+.App_banner__offence_b1 .App_background_61 {
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.offence.default_background_small')
+        no-repeat center / cover;
+}
+
+.mediaMedium .App_banner__offence_b1 .App_background_61 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.offence.default_background_medium');
+}
+
+.mediaExtraLarge .App_banner__offence_b1 .App_background_61 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.offence.default_background_large');
+}
+
+.App_banner__offence_b1 .App_background__hover_0a {
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.offence.hover_background_small')
+        no-repeat center / cover;
+}
+
+.mediaMedium .App_banner__offence_b1 .App_background__hover_0a {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.offence.hover_background_medium');
+}
+
+.mediaExtraLarge .App_banner__offence_b1 .App_background__hover_0a {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.offence.hover_background_large');
+}
+
+.App_banner__offence_b1 .App_title_1c {
+    color: #fefeec;
+    text-shadow:
+        0 0 10rem rgba(255, 171, 44, 0.4),
+        0 0 20rem #883902,
+        0 0 7rem #000,
+        0 0 2rem rgba(0, 0, 0, 0.25),
+        0 0 10rem rgba(0, 0, 0, 0.5);
+}
+
+.mediaMedium .App_banner__offence_b1 .App_title_1c {
+    color: #fefeec;
+}
+
+.mediaExtraLarge .App_banner__offence_b1 .App_title_1c {
+    color: #fefeec;
+}
+
+.App_banner__defence_78 {
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.defence.banner_small') no-repeat
+        center / 100%;
+}
+
+.mediaMedium .App_banner__defence_78 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.defence.banner_medium');
+}
+
+.mediaExtraLarge .App_banner__defence_78 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.defence.banner_large');
+}
+
+.App_banner__defence_78 .App_background_61 {
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.defence.default_background_small')
+        no-repeat center / cover;
+}
+
+.mediaMedium .App_banner__defence_78 .App_background_61 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.defence.default_background_medium');
+}
+
+.mediaExtraLarge .App_banner__defence_78 .App_background_61 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.defence.default_background_large');
+}
+
+.App_banner__defence_78 .App_background__hover_0a {
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.defence.hover_background_small')
+        no-repeat center / cover;
+}
+
+.mediaMedium .App_banner__defence_78 .App_background__hover_0a {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.defence.hover_background_medium');
+}
+
+.mediaExtraLarge .App_banner__defence_78 .App_background__hover_0a {
+    background-image: url('R.images.historical_battles.gui.maps.icons.hangar.shopWidget.defence.hover_background_large');
+}
+
+.App_banner__defence_78 .App_title_1c {
+    color: #ffffff;
+    text-shadow:
+        0 0 7rem #000,
+        0 0 2rem rgba(0, 0, 0, 0.25),
+        0 0 10rem rgba(0, 0, 0, 0.5),
+        0 0 10rem rgba(40, 203, 255, 0.6),
+        0 0 20rem rgba(40, 61, 255, 0.5);
+}
+
+.mediaMedium .App_banner__defence_78 .App_title_1c {
+    color: #ffffff;
+}
+
+.mediaExtraLarge .App_banner__defence_78 .App_title_1c {
+    color: #ffffff;
+}
+
+.App_title_1c {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    align-self: center;
+    width: 100%;
+    max-width: 140rem;
+    margin-bottom: 14rem;
+    text-align: center;
+    transition: margin-bottom 0.3s ease-out;
+}
+
+.mediaMedium .App_title_1c {
+    color: #ced9d9;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    max-width: 220rem;
+    margin-bottom: 22rem;
+}
+
+.mediaExtraLarge .App_title_1c {
+    color: #f2f2f7;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 26rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -335,6 +335,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1178,7 +1179,7 @@
                         ((u.NBSP = ' '), (u.ZWNBSP = '\ufeff'), (u.NEW_LINE = '\n'));
                     })(H || (H = {})));
                 const q = { [H.NBSP]: W.NoBreakSymbol, [H.ZWNBSP]: W.NoBreakSymbol, [H.NEW_LINE]: W.LineBreak },
-                    z = {
+                    K = {
                         blackReal: 'colors_blackReal_fc',
                         whiteReal: 'colors_whiteReal_31',
                         white: 'colors_white_45',
@@ -1203,17 +1204,17 @@
                         bond: 'colors_bond_ce',
                         prom: 'colors_prom_83',
                     },
-                    K = 'renderers_noBreakWrapper_10',
+                    z = 'renderers_noBreakWrapper_10',
                     G = 'renderers_lineBreak_b5',
                     Y = 'renderers_newLine_bd',
                     $ = (u) => ({ color: `#${u}` }),
                     Z = ({ elementList: u, textBlock: e, key: t }) => {
                         const n = e.colorTag;
                         return n
-                            ? z[n]
+                            ? K[n]
                                 ? s().createElement(
                                       'span',
-                                      { key: t, 'data-block-type': e.blockType, className: z[n] },
+                                      { key: t, 'data-block-type': e.blockType, className: K[n] },
                                       u,
                                   )
                                 : s().createElement('span', { key: t, 'data-block-type': e.blockType, style: $(n) }, u)
@@ -1233,7 +1234,7 @@
                         [W.NewLine]: ({ elementList: u, key: e }) =>
                             s().createElement('span', { key: e, 'data-block-type': W.NewLine, className: Y }, u),
                         [W.NoBreakWrapper]: ({ elementList: u, key: e }) =>
-                            s().createElement('span', { key: e, 'data-block-type': W.NoBreakWrapper, className: K }, u),
+                            s().createElement('span', { key: e, 'data-block-type': W.NoBreakWrapper, className: z }, u),
                     },
                     Q = (u, e, t) => {
                         const n = [];

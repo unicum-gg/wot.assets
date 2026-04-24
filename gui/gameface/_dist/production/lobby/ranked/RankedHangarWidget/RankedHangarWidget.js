@@ -330,6 +330,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1299,8 +1300,8 @@
                         },
                         ({ externalModel: u }) => ({ onClick: u.createCallbackNoArgs('onClick') }),
                     ),
-                    q = V[0],
-                    K = V[1];
+                    K = V[0],
+                    q = V[1];
                 let Y, Z;
                 (!(function (u) {
                     ((u.ExtraLarge = 'extraLarge'),
@@ -1803,8 +1804,8 @@
                         Vu.apply(this, arguments)
                     );
                 }
-                const qu = { tooltipId: Hu },
-                    Ku = (u) => {
+                const Ku = { tooltipId: Hu },
+                    qu = (u) => {
                         const e = u.rankLeft,
                             t = void 0 === e ? void 0 : e,
                             n = u.rankRight,
@@ -1826,7 +1827,7 @@
                             D &&
                                 a().createElement(
                                     nu,
-                                    { args: qu },
+                                    { args: Ku },
                                     a().createElement(ju, { totalCount: E, earnedCount: i }),
                                 ),
                             a().createElement(Ru, Vu({}, n, { size: d, isInactive: c, isLocked: B })),
@@ -2226,7 +2227,7 @@
                         );
                     }),
                     Re = (0, N.Pi)(() => {
-                        const u = K(),
+                        const u = q(),
                             e = u.model,
                             t = u.controls,
                             n = e.root.get(),
@@ -2278,7 +2279,7 @@
                                               onMouseEnter: () => L(!0),
                                               onMouseLeave: () => L(!1),
                                           })
-                                        : a().createElement(Ku, {
+                                        : a().createElement(qu, {
                                               rankLeft: i ? d : void 0,
                                               rankRight: C,
                                               steps: E,
@@ -2301,7 +2302,7 @@
                     });
                 engine.whenReady.then(() => {
                     P().render(
-                        a().createElement(O, null, a().createElement(q, null, a().createElement(Re, null))),
+                        a().createElement(O, null, a().createElement(K, null, a().createElement(Re, null))),
                         document.getElementById('root'),
                     );
                 });

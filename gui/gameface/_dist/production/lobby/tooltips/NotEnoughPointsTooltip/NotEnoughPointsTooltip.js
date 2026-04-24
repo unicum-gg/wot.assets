@@ -331,6 +331,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1318,7 +1319,7 @@
                             n
                         );
                     },
-                    H = (u, e) => {
+                    K = (u, e) => {
                         if (!u) return [e];
                         const t = [],
                             n = Object.assign({}, e, { childList: e.childList.splice(0, 1) });
@@ -1330,7 +1331,7 @@
                         }
                         return (e.childList.length > 0 && t.push(e), t);
                     },
-                    K = (u, e = {}) => {
+                    H = (u, e = {}) => {
                         if (!u) return [];
                         const t = ((u) => {
                             const e = [];
@@ -1338,8 +1339,8 @@
                             return (
                                 u.forEach((u) => {
                                     u.blockType === O.NoBreakSymbol
-                                        ? ((t = !0), e.push(...H(e.pop(), u)))
-                                        : (t ? e.push(...H(e.pop(), u)) : e.push(u), (t = !1));
+                                        ? ((t = !0), e.push(...K(e.pop(), u)))
+                                        : (t ? e.push(...K(e.pop(), u)) : e.push(u), (t = !1));
                                 }),
                                 e
                             );
@@ -1457,7 +1458,7 @@
                                 d = (0, n.useState)({ elementList: [], isTruncated: !1, isTruncateFinished: !1 }),
                                 B = d[0],
                                 C = d[1],
-                                _ = (0, n.useMemo)(() => K(u, o), [o, u]),
+                                _ = (0, n.useMemo)(() => H(u, o), [o, u]),
                                 p = (0, n.useMemo)(() => {
                                     if (i && B.isTruncated)
                                         return {

@@ -1063,6 +1063,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -4963,69 +4964,69 @@
                 }
                 const lu = (0, O.observer)(({ selectedLootboxID: e, isDisabled: t, onChange: u }) => {
                     const o = Rt();
-                    !(function (e, t) {
-                        const u = e.contentRef,
-                            o = e.wrapperRef,
-                            n = e.scrollPosition,
-                            r = e.clampPosition,
-                            i = e.animationScroll,
-                            s = e.events,
-                            l = (0, a.useState)(tu),
-                            c = l[0],
-                            d = l[1];
+                    !(function (e, t, u) {
+                        const o = e.contentRef,
+                            n = e.wrapperRef,
+                            r = e.scrollPosition,
+                            i = e.clampPosition,
+                            s = e.animationScroll,
+                            l = e.events,
+                            c = (0, a.useState)(tu),
+                            d = c[0],
+                            m = c[1];
                         ((0, a.useEffect)(() => {
-                            const e = u.current;
-                            e && (e.style.cursor = 'dragging' === c.type ? 'move' : 'grab');
-                        }, [u, c.type]),
+                            const e = o.current;
+                            e && (e.style.cursor = 'dragging' === d.type ? 'move' : 'grab');
+                        }, [o, d.type]),
                             (0, a.useEffect)(() => {
-                                if ('dragging' !== c.type) return;
-                                const e = y.O.client.events.mouse.move(([e, a]) => {
-                                        const s = u.current,
-                                            l = o.current;
-                                        if (!s || !l) return;
-                                        if ('inside' === a && e.clientX < 0) return;
-                                        const d = 'inside' === a ? e.clientX : e.clientX - l.offsetLeft,
-                                            m = c.positionFrom - d,
-                                            _ = c.previousScrollPosition + m;
-                                        n.start(
+                                if ('dragging' !== d.type) return;
+                                const e = y.O.client.events.mouse.move(([e, u]) => {
+                                        const a = o.current,
+                                            l = n.current;
+                                        if (!a || !l) return;
+                                        if ('inside' === u && e.clientX < 0) return;
+                                        const c = 'inside' === u ? e.clientX : e.clientX - l.offsetLeft,
+                                            m = d.positionFrom - c,
+                                            _ = d.previousScrollPosition + m;
+                                        r.start(
                                             Object.assign(
                                                 {
-                                                    scrollPosition: r(s, _),
-                                                    from: { scrollPosition: i.scrollPosition.get() },
+                                                    scrollPosition: i(a, _),
+                                                    from: { scrollPosition: s.scrollPosition.get() },
                                                 },
                                                 t,
                                             ),
                                         );
                                     }),
-                                    a = y.O.client.events.mouse.up(function () {
-                                        d({ type: 'scrollingToEnd' });
+                                    u = y.O.client.events.mouse.up(function () {
+                                        m({ type: 'scrollingToEnd' });
                                     });
                                 return () => {
-                                    (e(), a());
+                                    (e(), u());
                                 };
-                            }, [i.scrollPosition, r, u, c, n, o, t]),
+                            }, [s.scrollPosition, i, o, d, r, n, t]),
                             (0, a.useEffect)(() => {
-                                if ('scrollingToEnd' !== c.type) return;
+                                if ('scrollingToEnd' !== d.type) return;
                                 const e = () => {
-                                    d(tu);
+                                    m(tu);
                                 };
-                                return (i.scrollPosition.idle && e(), s.on('rest', e), () => s.off('rest', e));
-                            }, [i.scrollPosition, c.type, s]),
+                                return (s.scrollPosition.idle && e(), l.on('rest', e), () => l.off('rest', e));
+                            }, [s.scrollPosition, d.type, l]),
                             (0, a.useEffect)(() => {
-                                const e = u.current;
+                                const e = o.current;
                                 if (!e) return;
                                 const t = (e) => {
-                                    d({
+                                    m({
                                         type: 'dragging',
                                         positionFrom: e.screenX,
-                                        previousScrollPosition: i.scrollPosition.get(),
+                                        previousScrollPosition: s.scrollPosition.get(),
                                     });
                                 };
                                 return (
                                     e.addEventListener('mousedown', t),
                                     () => e.removeEventListener('mousedown', t)
                                 );
-                            }, [i.scrollPosition, u]));
+                            }, [s.scrollPosition, o, u]));
                     })(o);
                     const n = mt().model.computes.getLootboxes(),
                         r = ft((e) => o.applyStepTo(e), o.stepTimeout, [o]),
@@ -6970,6 +6971,7 @@
                     (p.VehicleSelect = 'vehicleSelect'),
                     (p.StyleProgress = 'styleProgress'),
                     (p.ParagonsUnlocks = 'paragonsUnlocks'),
+                    (p.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                     (p.LootBoxToken = 'lootBoxToken'),
                     (p.GoldenTicket = 'birthday2025_golden_ticket'),
                     (p.PostStamp = 'giftsystem_4_stamp'),
@@ -7009,7 +7011,6 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
-                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),

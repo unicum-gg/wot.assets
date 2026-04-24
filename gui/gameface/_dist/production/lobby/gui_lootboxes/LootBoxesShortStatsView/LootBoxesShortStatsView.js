@@ -1239,6 +1239,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -2725,6 +2726,7 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                            (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (e.LootBoxToken = 'lootBoxToken'),
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
@@ -2765,7 +2767,6 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
-                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -4047,7 +4048,11 @@
                             title: Au.premium_plus_universal.title(),
                             subtitle: Au.premium_plus_universal.subtitle(),
                         },
-                        equipCoin: { title: Au.equipCoin.title(), subtitle: Au.equipCoin.subtitle() },
+                        equipCoin: {
+                            title: Au.equipCoin.title(),
+                            subtitle: Au.equipCoin.enabled.subtitle(),
+                            subtitleDisabled: Au.equipCoin.disabled.subtitle(),
+                        },
                         crystal: { title: Au.crystal.title(), subtitle: Au.crystal.subtitle() },
                         freeXP: { title: Au.freeExp.title(), subtitle: Au.freeExp.subtitle() },
                     },
@@ -4148,63 +4153,64 @@
                     wu = ({
                         vehicleRewards: e,
                         currenciesRewards: u,
-                        vehiclesCount: t,
-                        categories: r,
-                        onVehiclePreview: n,
-                        tab: i,
-                        isLoading: s,
-                        onCategorySelect: l,
-                        lootboxLabel: c,
+                        isOptDeviceRestored: t = !0,
+                        vehiclesCount: r,
+                        categories: n,
+                        onVehiclePreview: i,
+                        tab: s,
+                        isLoading: l,
+                        onCategorySelect: c,
+                        lootboxLabel: E,
                     }) => {
-                        const E = (0, Eu.GS)().mediaSize,
-                            d = (0, o.useState)(!1),
-                            m = d[0],
-                            _ = d[1],
-                            A = (0, o.useState)(!1),
-                            F = A[0],
-                            D = A[1],
-                            C = (0, o.useRef)(null),
-                            B = eu.Vertical.useVerticalScrollApi(),
-                            g = (0, J.B)().lootBoxesShortStatsGroupClick,
-                            p = (e) => {
-                                (g(e), l(e));
+                        const d = (0, Eu.GS)().mediaSize,
+                            m = (0, o.useState)(!1),
+                            _ = m[0],
+                            A = m[1],
+                            F = (0, o.useState)(!1),
+                            D = F[0],
+                            C = F[1],
+                            B = (0, o.useRef)(null),
+                            g = eu.Vertical.useVerticalScrollApi(),
+                            p = (0, J.B)().lootBoxesShortStatsGroupClick,
+                            h = (e) => {
+                                (p(e), c(e));
                             },
-                            h = () => {
+                            b = () => {
                                 w.$.playHighlight();
                             },
-                            b = E > Eu.cJ.Small,
-                            v =
+                            v = d > Eu.cJ.Small,
+                            f =
                                 (null == e ? void 0 : e.length) > 0 ||
                                 (null == u ? void 0 : u.length) > 0 ||
-                                (null == r ? void 0 : r.length) > 0;
+                                (null == n ? void 0 : n.length) > 0;
                         return (
                             (0, o.useEffect)(() => {
                                 const e = () => {
-                                    const e = B.animationScroll.scrollPosition.goal,
-                                        u = B.getBounds()[1];
-                                    (D(u !== e), _(0 !== e));
+                                    const e = g.animationScroll.scrollPosition.goal,
+                                        u = g.getBounds()[1];
+                                    (C(u !== e), A(0 !== e));
                                 };
                                 return (
                                     e(),
-                                    B.events.on('change', e),
+                                    g.events.on('change', e),
                                     () => {
-                                        B.events.off('change', e);
+                                        g.events.off('change', e);
                                     }
                                 );
-                            }, [B]),
-                            s
+                            }, [g]),
+                            l
                                 ? a().createElement(gu, null)
-                                : v
+                                : f
                                   ? a().createElement(
                                         'div',
                                         { className: bu.base },
-                                        m && a().createElement('div', { className: S()(bu.lip, bu.lip__top) }),
+                                        _ && a().createElement('div', { className: S()(bu.lip, bu.lip__top) }),
                                         a().createElement(
                                             eu.Vertical.Default,
-                                            { api: B },
+                                            { api: g },
                                             a().createElement(
                                                 'div',
-                                                { className: bu.content, ref: C },
+                                                { className: bu.content, ref: B },
                                                 (null == e ? void 0 : e.length) > 0 &&
                                                     a().createElement(
                                                         su,
@@ -4217,9 +4223,9 @@
                                                             {
                                                                 className: bu.vehicleCommonInfoBg,
                                                                 onClick: () => {
-                                                                    (w.$.playClick(), p('vehicle'));
+                                                                    (w.$.playClick(), h('vehicle'));
                                                                 },
-                                                                onMouseEnter: h,
+                                                                onMouseEnter: b,
                                                             },
                                                             a().createElement(
                                                                 'div',
@@ -4236,7 +4242,7 @@
                                                                         }),
                                                                         a().createElement(H.ZP, {
                                                                             text: vu.vehicleInfo.value(),
-                                                                            format: { binding: { count: t } },
+                                                                            format: { binding: { count: r } },
                                                                             className: bu.vehicleInfoValue,
                                                                         }),
                                                                     ),
@@ -4270,11 +4276,11 @@
                                                                         {
                                                                             className: bu.lastReceivedListItem,
                                                                             onClick: () => {
-                                                                                (w.$.playYes(), n(u.intCD));
+                                                                                (w.$.playYes(), i(u.intCD));
                                                                             },
-                                                                            onMouseEnter: h,
+                                                                            onMouseEnter: b,
                                                                         },
-                                                                        b
+                                                                        v
                                                                             ? a().createElement(_u, {
                                                                                   vehicleName: u.vehicleName,
                                                                                   shortVehicleLabel:
@@ -4302,16 +4308,24 @@
                                                             'div',
                                                             { className: bu.list },
                                                             u.map((e) => {
-                                                                var u, t;
+                                                                var u, r, n, o;
+                                                                const i =
+                                                                    !t &&
+                                                                    (null == (u = Fu[e.name])
+                                                                        ? void 0
+                                                                        : u.subtitleDisabled);
                                                                 return a().createElement(
                                                                     su,
                                                                     {
                                                                         header:
-                                                                            null == (u = Fu[e.name]) ? void 0 : u.title,
-                                                                        body:
-                                                                            null == (t = Fu[e.name])
+                                                                            null == (r = Fu[e.name]) ? void 0 : r.title,
+                                                                        body: i
+                                                                            ? null == (n = Fu[e.name])
                                                                                 ? void 0
-                                                                                : t.subtitle,
+                                                                                : n.subtitleDisabled
+                                                                            : null == (o = Fu[e.name])
+                                                                              ? void 0
+                                                                              : o.subtitle,
                                                                         key: e.name,
                                                                     },
                                                                     a().createElement(
@@ -4320,13 +4334,13 @@
                                                                             className: bu.currency,
                                                                             onClick: () => {
                                                                                 (w.$.playYes(),
-                                                                                    p(
+                                                                                    h(
                                                                                         e.name === du
                                                                                             ? 'premium'
                                                                                             : 'currency',
                                                                                     ));
                                                                             },
-                                                                            onMouseEnter: h,
+                                                                            onMouseEnter: b,
                                                                         },
                                                                         a().createElement('div', {
                                                                             className: bu.currencyIcon,
@@ -4364,7 +4378,7 @@
                                                             }),
                                                         ),
                                                     ),
-                                                (null == r ? void 0 : r.length) > 0 &&
+                                                (null == n ? void 0 : n.length) > 0 &&
                                                     a().createElement(
                                                         a().Fragment,
                                                         null,
@@ -4372,7 +4386,7 @@
                                                         a().createElement(
                                                             'div',
                                                             { className: bu.list },
-                                                            r.map((e) =>
+                                                            n.map((e) =>
                                                                 a().createElement(
                                                                     uu.u,
                                                                     {
@@ -4388,9 +4402,9 @@
                                                                         {
                                                                             className: bu.otherReward,
                                                                             onClick: () => {
-                                                                                (w.$.playYes(), p(e.name));
+                                                                                (w.$.playYes(), h(e.name));
                                                                             },
-                                                                            onMouseEnter: h,
+                                                                            onMouseEnter: b,
                                                                         },
                                                                         a().createElement('div', {
                                                                             className: S()(
@@ -4424,9 +4438,9 @@
                                                     ),
                                             ),
                                         ),
-                                        F && a().createElement('div', { className: S()(bu.lip, bu.lip__bottom) }),
+                                        D && a().createElement('div', { className: S()(bu.lip, bu.lip__bottom) }),
                                     )
-                                  : a().createElement(hu, { tab: i, lootboxLabel: c })
+                                  : a().createElement(hu, { tab: s, lootboxLabel: E })
                         );
                     },
                     xu = 'App_tab_6c',
@@ -4461,18 +4475,19 @@
                         g = D.isShown,
                         h = D.lootBoxName,
                         b = D.hasVisibleLootBoxes,
-                        f = Boolean(
+                        f = D.isOptDeviceRestored,
+                        x = Boolean(
                             (null == c ? void 0 : c.length) ||
                             (null == m ? void 0 : m.length) ||
                             (null == F ? void 0 : F.length),
                         ),
-                        x = Boolean(
+                        R = Boolean(
                             (null == E ? void 0 : E.length) ||
                             (null == _ ? void 0 : _.length) ||
                             (null == A ? void 0 : A.length),
                         ),
-                        R = (0, o.useRef)(null),
-                        T = (function () {
+                        T = (0, o.useRef)(null),
+                        y = (function () {
                             const e = (0, o.useRef)(0);
                             var u;
                             return (
@@ -4499,19 +4514,19 @@
                                 )
                             );
                         })(),
-                        y = (0, o.useCallback)(() => {
+                        L = (0, o.useCallback)(() => {
                             (n(C), (0, w.G)(re), t.closeStat());
                         }, [t, C, n]);
                     ((0, o.useEffect)(() => {
-                        if (T.isRunning) return () => T.clear();
-                    }, [T]),
+                        if (y.isRunning) return () => y.clear();
+                    }, [y]),
                         (function ({
                             key: e = G.n.ESCAPE,
                             callback: u = () => d.O.view.sendEvent.close(),
                             preventPropagation: t = !0,
                         } = {}) {
                             V(e, u, t);
-                        })({ callback: y, preventPropagation: !1 }),
+                        })({ callback: L, preventPropagation: !1 }),
                         ((e, u) => {
                             (0, o.useEffect)(() => {
                                 const t = (t) => {
@@ -4527,29 +4542,29 @@
                                 );
                             }, [e, u]);
                         })(
-                            R,
+                            T,
                             g
                                 ? () => {
                                       (s(C), t.closeStat());
                                   }
                                 : l,
                         ));
-                    const L = (0, o.useCallback)(() => {
-                            (y(),
-                                T.run(() => {
+                    const k = (0, o.useCallback)(() => {
+                            (L(),
+                                y.run(() => {
                                     t.openFullStats('');
                                 }, 300));
-                        }, [t, T, y]),
-                        k = (0, o.useCallback)(
+                        }, [t, y, L]),
+                        P = (0, o.useCallback)(
                             (e) => {
                                 t.openFullStats(e);
                             },
                             [t],
                         ),
-                        P = S()('App_statistic_a9', { App_statistic__open_d6: g }),
-                        N = (0, o.useMemo)(
+                        N = S()('App_statistic_a9', { App_statistic__open_d6: g }),
+                        O = (0, o.useMemo)(
                             () =>
-                                f
+                                x
                                     ? a().createElement(wu, {
                                           vehiclesCount: (null == c ? void 0 : c.length) || 0,
                                           vehicleRewards: c,
@@ -4558,7 +4573,7 @@
                                           onVehiclePreview: t.vehiclePreview,
                                           tab: Mu.Current,
                                           isLoading: B,
-                                          onCategorySelect: k,
+                                          onCategorySelect: P,
                                           lootboxLabel: h,
                                       })
                                     : a().createElement(
@@ -4570,24 +4585,24 @@
                                               classMix: Ru,
                                           }),
                                       ),
-                            [f, c, F, t, B, h, m, k],
+                            [x, c, F, t, B, h, m, P],
                         );
                     return a().createElement(
                         'div',
-                        { className: 'App_base_e8', ref: R },
+                        { className: 'App_base_e8', ref: T },
                         a().createElement(
                             'div',
-                            { className: P },
+                            { className: N },
                             a().createElement(
                                 'div',
                                 { className: 'App_close_a9' },
-                                a().createElement(te.z, { onCloseCallback: y }),
+                                a().createElement(te.z, { onCloseCallback: L }),
                             ),
                             a().createElement(
                                 'div',
                                 { className: 'App_header_b0' },
                                 a().createElement(H.ZP, { text: Tu.title(), className: 'App_title_e2' }),
-                                x &&
+                                R &&
                                     a().createElement(
                                         'div',
                                         { className: 'App_deadlineWrapper_cc' },
@@ -4622,20 +4637,21 @@
                                         className: 'App_tabsWrapper_87',
                                         style: { transform: `translateX(-${100 * C}%)` },
                                     },
-                                    a().createElement('div', { className: xu }, h && N),
+                                    a().createElement('div', { className: xu }, h && O),
                                     a().createElement(
                                         'div',
                                         { className: xu },
-                                        x
+                                        R
                                             ? a().createElement(wu, {
                                                   vehiclesCount: (null == E ? void 0 : E.length) || 0,
                                                   vehicleRewards: E,
                                                   currenciesRewards: _,
+                                                  isOptDeviceRestored: f,
                                                   categories: A,
                                                   onVehiclePreview: t.vehiclePreview,
                                                   tab: Mu.All,
                                                   isLoading: B,
-                                                  onCategorySelect: k,
+                                                  onCategorySelect: P,
                                                   lootboxLabel: h,
                                               })
                                             : a().createElement(
@@ -4646,10 +4662,10 @@
                                     ),
                                 ),
                             ),
-                            x &&
+                            R &&
                                 a().createElement(
                                     M,
-                                    { type: 'ghost', mixClass: 'App_button_14', onClick: L },
+                                    { type: 'ghost', mixClass: 'App_button_14', onClick: k },
                                     Tu.button.fullstat(),
                                 ),
                         ),

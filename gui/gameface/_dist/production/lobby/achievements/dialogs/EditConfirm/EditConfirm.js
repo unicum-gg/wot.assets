@@ -361,6 +361,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1224,10 +1225,10 @@
                 G.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
                 var j = r(5521);
                 r(4179);
-                const $ = (e) => {
+                const K = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function K(e = j.n.NONE, t = $, r = !1) {
+                function $(e = j.n.NONE, t = K, r = !1) {
                     (0, a.useEffect)(() => {
                         if (e !== j.n.NONE)
                             return (
@@ -1774,7 +1775,7 @@
                         return (
                             z({ [j.n.ENTER]: e.accept, [j.n.SPACE]: e.accept }),
                             (t = e.close),
-                            K(j.n.ESCAPE, t),
+                            $(j.n.ESCAPE, t),
                             n().createElement(
                                 'div',
                                 { className: Ee },

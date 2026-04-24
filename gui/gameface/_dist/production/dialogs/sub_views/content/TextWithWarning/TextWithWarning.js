@@ -36,10 +36,10 @@
                         displayStatusIs: () => z,
                         events: () => d,
                         extraSize: () => q,
-                        forceTriggerMouseMove: () => H,
+                        forceTriggerMouseMove: () => K,
                         freezeTextureBeforeResize: () => R,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => K,
+                        getDisplayStatus: () => H,
                         getScale: () => S,
                         getSize: () => M,
                         getViewGlobalPosition: () => k,
@@ -256,10 +256,10 @@
                 function V() {
                     return viewEnv.isEventHandled();
                 }
-                function H() {
+                function K() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function K() {
+                function H() {
                     return viewEnv.getShowingStatus();
                 }
                 const z = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),

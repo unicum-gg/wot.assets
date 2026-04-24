@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (u, e, A) => {
-                A.d(e, { O: () => G });
+                A.d(e, { O: () => Y });
                 var F = {};
                 (A.r(F), A.d(F, { mouse: () => a, onResize: () => o }));
                 var t = {};
@@ -36,14 +36,14 @@
                         displayStatusIs: () => j,
                         events: () => l,
                         extraSize: () => q,
-                        forceTriggerMouseMove: () => K,
+                        forceTriggerMouseMove: () => H,
                         freezeTextureBeforeResize: () => S,
                         getBrowserTexturePath: () => T,
                         getDisplayStatus: () => W,
                         getScale: () => N,
                         getSize: () => M,
                         getViewGlobalPosition: () => k,
-                        isEventHandled: () => H,
+                        isEventHandled: () => K,
                         isFocused: () => I,
                         pxToRem: () => L,
                         remToPx: () => x,
@@ -253,10 +253,10 @@
                 function V() {
                     return viewEnv.setEventHandled();
                 }
-                function H() {
+                function K() {
                     return viewEnv.isEventHandled();
                 }
-                function K() {
+                function H() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function W() {
@@ -277,7 +277,7 @@
                         }),
                         engine.whenReady,
                     ]),
-                    G = { view: n, client: t };
+                    Y = { view: n, client: t };
             },
             521: (u, e, A) => {
                 let F, t;
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),

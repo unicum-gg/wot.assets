@@ -335,6 +335,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1151,7 +1152,7 @@
                         base__highlightActive: 'CButton_base__highlightActive_b2',
                         content: 'CButton_content_cc',
                     };
-                let j, Y;
+                let Y, j;
                 (!(function (u) {
                     ((u.main = 'main'),
                         (u.primary = 'primary'),
@@ -1159,10 +1160,10 @@
                         (u.primaryRed = 'primaryRed'),
                         (u.secondary = 'secondary'),
                         (u.ghost = 'ghost'));
-                })(j || (j = {})),
+                })(Y || (Y = {})),
                     (function (u) {
                         ((u.extraSmall = 'extraSmall'), (u.small = 'small'), (u.medium = 'medium'));
-                    })(Y || (Y = {})));
+                    })(j || (j = {})));
                 const $ = ({
                     children: u,
                     size: e,
@@ -1272,7 +1273,7 @@
                                 onMouseLeave: k,
                                 onClick: y,
                             },
-                            F !== j.ghost &&
+                            F !== Y.ghost &&
                                 E().createElement(
                                     E().Fragment,
                                     null,
@@ -1294,7 +1295,7 @@
                         )
                     );
                 };
-                $.defaultProps = { type: j.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                $.defaultProps = { type: Y.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const Q = (0, A.memo)($);
                 var Z = t(521);
                 const X = (u) => {
@@ -1470,7 +1471,7 @@
                                     }),
                                     E().createElement(
                                         Q,
-                                        { mixClass: cu, type: j.secondary, size: Y.small, onClick: o },
+                                        { mixClass: cu, type: Y.secondary, size: j.small, onClick: o },
                                         R.strings.maps_training.queue.quitButton(),
                                     ),
                                     C && E().createElement('div', { className: _u }, C),

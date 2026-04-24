@@ -439,6 +439,7 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                            (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (e.LootBoxToken = 'lootBoxToken'),
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
@@ -479,7 +480,6 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
-                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -1142,6 +1142,10 @@
                         );
                         var x;
                     };
+            },
+            7515: (e, u, t) => {
+                t.d(u, { u: () => n });
+                const n = (e, u, t) => (t < e ? e : t > u ? u : t);
             },
             122: (e, u, t) => {
                 t.d(u, { F: () => n });
@@ -1879,6 +1883,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -2510,7 +2515,7 @@
                         return [(e) => t(e), (e) => l(e), () => a(), (e) => i(e), (e) => o(e)];
                     };
             },
-            9321: (e, u, t) => {
+            3903: (e, u, t) => {
                 t(4179);
                 var n = t(6179),
                     r = t.n(n),
@@ -2983,9 +2988,9 @@
                         '--progress-glow-small': `url('${e.glowSmall}')`,
                         '--progress-delta-color': e.delta.color,
                         '--progress-delta-shadow': e.delta.shadow,
-                    }),
-                    G = (e, u, t) => (t < e ? e : t > u ? u : t),
-                    W = (e, u, t) => ('number' == typeof t ? (G(0, u, t) / u) * 100 : e),
+                    });
+                var G = t(7515);
+                const W = (e, u, t) => ('number' == typeof t ? ((0, G.u)(0, u, t) / u) * 100 : e),
                     $ = {
                         bgImageBase: 'R.images.gui.maps.icons.components.progress_bar.pattern_grey',
                         line: { bgColorBase: '#f50', bgColorDisabled: 'transparent', bgColorFinished: '#59a011' },
@@ -3026,7 +3031,7 @@
                         }) => {
                             const D = ((e, u, t) =>
                                 (0, n.useMemo)(() => {
-                                    const n = (G(0, u, e) / u) * 100;
+                                    const n = ((0, G.u)(0, u, e) / u) * 100;
                                     return { value: n, deltaFrom: W(n, u, t) };
                                 }, [t, u, e]))(c, e, E);
                             return r().createElement(
@@ -4176,6 +4181,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(u.bind(null, 0)), (t.push = u.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(9321));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(3903));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

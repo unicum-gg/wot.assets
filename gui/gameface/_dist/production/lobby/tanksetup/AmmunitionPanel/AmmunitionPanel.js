@@ -1201,6 +1201,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -2078,8 +2079,8 @@
                         c
                     );
                 };
-                var V = u(5521),
-                    K = u(5262);
+                var K = u(5521),
+                    V = u(5262);
                 let q;
                 function Z(e) {
                     return e[0].toUpperCase() + e.slice(1);
@@ -2139,7 +2140,7 @@
                     };
                 function ne(e, t, u) {
                     const i = (0, a.useContext)(n.YN);
-                    let r = Object.entries(i).filter(([e, t]) => !0 === t && e in K.u);
+                    let r = Object.entries(i).filter(([e, t]) => !0 === t && e in V.u);
                     return (
                         u && (r = r.filter((e) => u.includes(e[0]))),
                         e.reduce((e, u) => {
@@ -2695,7 +2696,7 @@
                             ),
                         );
                     },
-                    Ve = {
+                    Ke = {
                         base: 'AmmunitionPanel_base_f8',
                         base__locked: 'AmmunitionPanel_base__locked_71',
                         base__disabled: 'AmmunitionPanel_base__disabled_41',
@@ -2713,7 +2714,7 @@
                         abilitySkillSlot__extraSmall: 'AmmunitionPanel_abilitySkillSlot__extraSmall_bd',
                         abilitySkillSlot__prebattle: 'AmmunitionPanel_abilitySkillSlot__prebattle_f0',
                     },
-                    Ke = 'Border_base_f9',
+                    Ve = 'Border_base_f9',
                     qe = 'Border_border_83',
                     Ze = 'Border_wrapper_17',
                     Ye = 'Border_active_e8',
@@ -2739,7 +2740,7 @@
                             l = (0, a.useMemo)(() => ({ width: t }), [t]);
                         return i().createElement(
                             'div',
-                            { className: Ke },
+                            { className: Ve },
                             i().createElement(
                                 'div',
                                 { ref: n, className: qe, style: o },
@@ -3148,8 +3149,8 @@
                     Ut = 'Section_label_73',
                     jt = 'Section_counter_8a',
                     Xt = 'Section_configLabel_c9',
-                    Vt = 'Section_configText_eb',
-                    Kt = 'Section_configVehicleIcon_20';
+                    Kt = 'Section_configText_eb',
+                    Vt = 'Section_configVehicleIcon_20';
                 let qt;
                 !(function (e) {
                     ((e[(e.NonSet = 0)] = 'NonSet'),
@@ -3444,7 +3445,7 @@
                                     },
                                     [c],
                                 );
-                            ((0, L.gd)(V.n.ESCAPE, () => f(!1)),
+                            ((0, L.gd)(K.n.ESCAPE, () => f(!1)),
                                 (0, a.useEffect)(() => {
                                     n && o && h(0);
                                 }, [o, n]));
@@ -3800,8 +3801,8 @@
                         const X = (0, a.useCallback)(() => {
                                 null == C || C(e, u);
                             }, [e, C, u]),
-                            V = O && !r,
-                            K = Boolean(v && I === v),
+                            K = O && !r,
+                            V = Boolean(v && I === v),
                             q = v && (P || H),
                             Z = `${u}-slot-${e}`,
                             Y = M && M.length > 0,
@@ -3856,7 +3857,7 @@
                                             isBorderActive: Boolean(f),
                                             panelType: h,
                                             isDisabled: B,
-                                            isPotentialDrop: K,
+                                            isPotentialDrop: V,
                                             onClick: q ? void 0 : U,
                                         },
                                         N &&
@@ -3876,7 +3877,7 @@
                                                     isIncompatible: S,
                                                     overlayType: l,
                                                     level: d,
-                                                    isTemporary: V,
+                                                    isTemporary: K,
                                                     withAttention: D,
                                                 }),
                                             ),
@@ -3894,8 +3895,8 @@
                             ),
                         );
                     },
-                    Vu = 'BattleAbilitySlot_base_74',
-                    Ku = 'BattleAbilitySlot_rank_01',
+                    Ku = 'BattleAbilitySlot_base_74',
+                    Vu = 'BattleAbilitySlot_rank_01',
                     qu = ['rank'];
                 const Zu = (0, a.memo)((e) => {
                     let t = e.rank,
@@ -3909,12 +3910,12 @@
                             return a;
                         })(e, qu);
                     const n = (0, a.useMemo)(() => ({ backgroundImage: `url(${t})` }), [t]),
-                        r = s()(Vu);
+                        r = s()(Ku);
                     return i().createElement(
                         'div',
                         { className: r },
                         i().createElement(Xu, u),
-                        t && i().createElement('div', { className: Ku, style: n }),
+                        t && i().createElement('div', { className: Vu, style: n }),
                     );
                 });
                 var Yu = u(4814);
@@ -4281,7 +4282,7 @@
                                 [D],
                             ),
                             $ = (0, a.useMemo)(
-                                () => ({ icon: i().createElement('span', { className: Kt, style: G }), vehicle: F }),
+                                () => ({ icon: i().createElement('span', { className: Vt, style: G }), vehicle: F }),
                                 [G, F],
                             ),
                             W = t.length > 0 && r !== st.Compare && r !== st.Battle && r !== st.Respawn && t.length > 0,
@@ -4296,7 +4297,7 @@
                                     su,
                                     { className: Xt },
                                     i().createElement(Ce, {
-                                        classMix: Vt,
+                                        classMix: Kt,
                                         text: R.strings.tank_setup.categories.reserves.config(),
                                         binding: $,
                                     }),
@@ -4869,7 +4870,7 @@
                                 return Object.assign({}, e);
                             }),
                         }),
-                    Vn = ({ sectionProps: e, isSetupSwitching: t, isReady: u, setSetupSwitching: n, children: r }) => {
+                    Kn = ({ sectionProps: e, isSetupSwitching: t, isReady: u, setSetupSwitching: n, children: r }) => {
                         const o = ne(['switch'], zn),
                             l = X('model'),
                             c = l.isDisabled,
@@ -4989,7 +4990,7 @@
                             r,
                         );
                     },
-                    Kn = 'RoleSkillSlot_base_c4',
+                    Vn = 'RoleSkillSlot_base_c4',
                     qn = 'RoleSkillSlot_icon_79',
                     Zn = ({
                         roleSkill: e,
@@ -5017,7 +5018,7 @@
                         );
                         return i().createElement(
                             We,
-                            { tooltipArgs: l, className: s()(Kn, o) },
+                            { tooltipArgs: l, className: s()(Vn, o) },
                             i().createElement('div', {
                                 className: qn,
                                 style: {
@@ -5149,10 +5150,10 @@
                             }, [o, l, F, N]),
                             $ = f.slotWidth,
                             W = f.slotOffset,
-                            z = s()(Ve.base, !t && Ve.base__locked, !e && Ve.base__hidden, r && Ve.base__disabled),
-                            U = s()(Ve.border, !w && Ve.border__hidden),
+                            z = s()(Ke.base, !t && Ke.base__locked, !e && Ke.base__hidden, r && Ke.base__disabled),
+                            U = s()(Ke.border, !w && Ke.border__hidden),
                             j = u === st.Setup || u === st.Compare,
-                            V = {
+                            K = {
                                 panelType: u,
                                 isDisabled: r,
                                 onActiveSlotChanged: H,
@@ -5164,7 +5165,7 @@
                         (0, a.useEffect)(() => {
                             !1 === n && (null == l || l());
                         }, [l, D.roleSkill, b.ability, n]);
-                        const K = ne(['roleSkillSlot', 'abilitySkillSlot'], Ve);
+                        const V = ne(['roleSkillSlot', 'abilitySkillSlot'], Ke);
                         return i().createElement(
                             'div',
                             { ref: y, className: z },
@@ -5176,8 +5177,8 @@
                                     isAnimationRunning: w,
                                 }),
                             i().createElement(
-                                Vn,
-                                { isSetupSwitching: d || g, sectionProps: V, isReady: t, setSetupSwitching: C },
+                                Kn,
+                                { isSetupSwitching: d || g, sectionProps: K, isReady: t, setSetupSwitching: C },
                                 D.roleSkill &&
                                     i().createElement(Zn, {
                                         roleSkill: D.roleSkill,
@@ -5185,7 +5186,7 @@
                                         tooltipId: D.tooltipId,
                                         tooltipHeader: D.tooltipHeader,
                                         tooltipBody: D.tooltipBody,
-                                        className: s()(Ve.roleSkillSlot, Ve[`roleSkillSlot__${u}`], K.roleSkillSlot),
+                                        className: s()(Ke.roleSkillSlot, Ke[`roleSkillSlot__${u}`], V.roleSkillSlot),
                                     }),
                                 b.ability &&
                                     i().createElement(Xe, {
@@ -5194,9 +5195,9 @@
                                         tooltipHeader: b.tooltipHeader,
                                         tooltipBody: b.tooltipBody,
                                         className: s()(
-                                            Ve.abilitySkillSlot,
-                                            Ve[`abilitySkillSlot__${u}`],
-                                            K.abilitySkillSlot,
+                                            Ke.abilitySkillSlot,
+                                            Ke[`abilitySkillSlot__${u}`],
+                                            V.abilitySkillSlot,
                                         ),
                                     }),
                             ),
@@ -5217,7 +5218,7 @@
                             n = e.isBootcamp,
                             r = e.onEscKeyDown;
                         (0, L.gd)(
-                            V.n.ESCAPE,
+                            K.n.ESCAPE,
                             (0, a.useCallback)(() => r(), [r]),
                         );
                         const o = (0, a.useState)(!0),
@@ -5868,7 +5869,7 @@
                                 U = (h === u || h === O) && P !== m && z.includes(C),
                                 j = -1 === b || -1 === p,
                                 X = _ ? `base${_[0].toUpperCase() + _.slice(1)}` : 'base',
-                                V = c.Sr[C] || 0;
+                                K = c.Sr[C] || 0;
                             ((0, r.useEffect)(
                                 () => () => {
                                     ($.current && clearTimeout($.current), W.current && clearTimeout(W.current));
@@ -5878,7 +5879,7 @@
                                 (0, r.useEffect)(() => {
                                     d || M(E);
                                 }, [d, E]));
-                            const K = (0, r.useCallback)(
+                            const V = (0, r.useCallback)(
                                     (e) => {
                                         const u = Object.assign({}, S);
                                         switch (C) {
@@ -5919,17 +5920,17 @@
                                             default:
                                                 return e;
                                         }
-                                        return s().cloneElement(e, { classNames: u, timeout: V });
+                                        return s().cloneElement(e, { classNames: u, timeout: K });
                                     },
-                                    [C, _, X, V, F, t, D, d, j],
+                                    [C, _, X, K, F, t, D, d, j],
                                 ),
                                 q = (0, r.useCallback)(
                                     (e) => {
                                         W.current = setTimeout(() => {
                                             ((e.className = ''), e.classList.add(f.base), N(u), G(m));
-                                        }, V);
+                                        }, K);
                                     },
-                                    [V, u, m],
+                                    [K, u, m],
                                 ),
                                 Z = (0, r.useCallback)(() => {
                                     (x(!1), I(!1));
@@ -5939,12 +5940,12 @@
                                 null,
                                 s().createElement(
                                     o.Z,
-                                    { component: null, childFactory: K },
+                                    { component: null, childFactory: V },
                                     s().createElement(
                                         l.Z,
                                         {
                                             key: u,
-                                            timeout: V,
+                                            timeout: K,
                                             classNames: S,
                                             onEntered: q,
                                             onExiting: Z,

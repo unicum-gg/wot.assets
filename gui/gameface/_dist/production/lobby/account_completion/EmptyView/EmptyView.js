@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (u, e, t) => {
-                t.d(e, { O: () => G });
+                t.d(e, { O: () => Y });
                 var n = {};
                 (t.r(n), t.d(n, { mouse: () => s, onResize: () => E }));
                 var i = {};
@@ -33,13 +33,13 @@
                         addPreloadTexture: () => b,
                         children: () => r,
                         displayStatus: () => d,
-                        displayStatusIs: () => K,
+                        displayStatusIs: () => j,
                         events: () => C,
                         extraSize: () => z,
                         forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => L,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => j,
+                        getDisplayStatus: () => K,
                         getScale: () => P,
                         getSize: () => y,
                         getViewGlobalPosition: () => k,
@@ -259,10 +259,10 @@
                 function V() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function j() {
+                function K() {
                     return viewEnv.getShowingStatus();
                 }
-                const K = Object.keys(d).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === d[e]), u), {}),
+                const j = Object.keys(d).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === d[e]), u), {}),
                     z = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -277,7 +277,7 @@
                         }),
                         engine.whenReady,
                     ]),
-                    G = { view: a, client: i };
+                    Y = { view: a, client: i };
             },
             521: (u, e, t) => {
                 let n, i;
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1099,9 +1100,9 @@
                         'soundClick',
                         'soundHover',
                     ];
-                function j() {
+                function K() {
                     return (
-                        (j =
+                        (K =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1110,10 +1111,10 @@
                                 }
                                 return u;
                             }),
-                        j.apply(this, arguments)
+                        K.apply(this, arguments)
                     );
                 }
-                class K extends i().PureComponent {
+                class j extends i().PureComponent {
                     constructor(...u) {
                         (super(...u),
                             (this.state = { hover: !1, click: !1 }),
@@ -1167,7 +1168,7 @@
                             d = W()(I.goto, null == A ? void 0 : A.goto);
                         return i().createElement(
                             'div',
-                            j(
+                            K(
                                 {
                                     className: l,
                                     onMouseEnter: this._onMouseEnter(F),
@@ -1187,7 +1188,7 @@
                         );
                     }
                 }
-                K.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
+                j.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
                 const z = {
                         base: 'CurtainSubViewTemplate_base_a7',
                         base__small: 'CurtainSubViewTemplate_base__small_53',
@@ -1238,7 +1239,7 @@
                                     i().createElement(
                                         'div',
                                         { className: z.closeButton },
-                                        i().createElement(K, {
+                                        i().createElement(j, {
                                             caption: R.strings.menu.viewHeader.closeBtn.label(),
                                             type: 'close',
                                             side: 'right',
@@ -1249,9 +1250,9 @@
                             );
                         },
                     );
-                function G() {
+                function Y() {
                     return (
-                        (G =
+                        (Y =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1260,11 +1261,11 @@
                                 }
                                 return u;
                             }),
-                        G.apply(this, arguments)
+                        Y.apply(this, arguments)
                     );
                 }
-                const Y = () => {
-                    const u = G({}, k());
+                const G = () => {
+                    const u = Y({}, k());
                     return i().createElement(q, u);
                 };
                 var $;
@@ -1273,7 +1274,7 @@
                     engine.whenReady.then(() => {
                         a().render(i().createElement(A, { name: $ }, u), e, t);
                     });
-                })(i().createElement(g, null, i().createElement(Y, null)), document.getElementById('root'));
+                })(i().createElement(g, null, i().createElement(G, null)), document.getElementById('root'));
             },
         },
         __webpack_module_cache__ = {},

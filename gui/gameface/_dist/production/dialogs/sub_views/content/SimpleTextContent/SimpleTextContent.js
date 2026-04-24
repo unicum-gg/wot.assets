@@ -33,13 +33,13 @@
                         addPreloadTexture: () => b,
                         children: () => D,
                         displayStatus: () => l,
-                        displayStatusIs: () => K,
+                        displayStatusIs: () => H,
                         events: () => d,
                         extraSize: () => q,
-                        forceTriggerMouseMove: () => z,
+                        forceTriggerMouseMove: () => K,
                         freezeTextureBeforeResize: () => S,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => H,
+                        getDisplayStatus: () => z,
                         getScale: () => R,
                         getSize: () => M,
                         getViewGlobalPosition: () => k,
@@ -256,13 +256,13 @@
                 function V() {
                     return viewEnv.isEventHandled();
                 }
-                function z() {
+                function K() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function H() {
+                function z() {
                     return viewEnv.getShowingStatus();
                 }
-                const K = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
+                const H = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
                     q = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),

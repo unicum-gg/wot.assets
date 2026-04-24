@@ -357,6 +357,7 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                            (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (e.LootBoxToken = 'lootBoxToken'),
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
@@ -397,7 +398,6 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
-                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -1733,6 +1733,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -2494,28 +2495,28 @@
                 const x = (0, n.memo)(
                         ({
                             claimState: e,
-                            name: t,
-                            icon: r,
-                            rewardSize: n,
-                            value: s,
-                            tooltipId: l,
-                            tooltipContentId: c,
-                            isDisable: u,
-                            isBattlePassRewardDisable: d,
-                            classMix: _,
+                            reward: t,
+                            rewardSize: r,
+                            isDisable: n,
+                            isBattlePassRewardDisable: s,
+                            classMix: l,
                         }) => {
-                            const m = e === P.Claimable;
+                            const c = e === P.Claimable,
+                                u = t.name,
+                                d = t.value,
+                                _ = t.tooltipId,
+                                m = t.tooltipContentId;
                             return a().createElement(
                                 'div',
                                 {
                                     className: o()(
                                         'FrontlineReward_base_e2',
-                                        u && 'FrontlineReward_base__disable_dc',
-                                        !u && d && 'FrontlineReward_base__disableBattlePassReward_5a',
-                                        _,
+                                        n && 'FrontlineReward_base__disable_dc',
+                                        !n && s && 'FrontlineReward_base__disableBattlePassReward_5a',
+                                        l,
                                     ),
                                 },
-                                m &&
+                                c &&
                                     a().createElement(
                                         'div',
                                         { className: 'FrontlineReward_animWrapper_23' },
@@ -2524,14 +2525,14 @@
                                     ),
                                 a().createElement(T.I, {
                                     item: i.ob.RewardTooltip,
-                                    info: t,
+                                    info: u,
                                     parentScreen: i.RM.RewardsView,
-                                    name: t,
-                                    image: (0, S.ry)({ name: t, icon: r }, b.h2.Big),
-                                    size: n,
-                                    value: s.toString(),
-                                    valueType: (0, S.p3)(t),
-                                    tooltipArgs: (0, S.pI)({ tooltipId: l }, Number(c), {
+                                    name: u,
+                                    image: (0, S.ry)(t, b.h2.Big),
+                                    size: r,
+                                    value: d,
+                                    valueType: (0, S.p3)(u),
+                                    tooltipArgs: (0, S.pI)({ tooltipId: _ }, Number(m), {
                                         ignoreShowDelay: !0,
                                         targetId: R.views.frontline.lobby.RewardsView('resId'),
                                     }),
@@ -2549,25 +2550,11 @@
                         levels__disable: 'RewardsCol_levels__disable_d4',
                         reward: 'RewardsCol_reward_40',
                     };
-                function O() {
-                    return (
-                        (O =
-                            Object.assign ||
-                            function (e) {
-                                for (var t = 1; t < arguments.length; t++) {
-                                    var r = arguments[t];
-                                    for (var n in r) Object.prototype.hasOwnProperty.call(r, n) && (e[n] = r[n]);
-                                }
-                                return e;
-                            }),
-                        O.apply(this, arguments)
-                    );
-                }
-                var k;
+                var O;
                 !(function (e) {
                     ((e.None = 'none'), (e.White = 'white'), (e.Gold = 'gold'));
-                })(k || (k = {}));
-                const L = ({ levelsRange: e, frontlineLevel: t, isBattlePassComplete: r, isLastCol: n }) => {
+                })(O || (O = {}));
+                const k = ({ levelsRange: e, frontlineLevel: t, isBattlePassComplete: r, isLastCol: n }) => {
                         const i = (0, f.GS)(),
                             s = i.mediaSize,
                             l = i.remScreenHeight,
@@ -2578,11 +2565,11 @@
                             m = ((e, t, r, n) => {
                                 switch (!0) {
                                     case e <= r && r <= t:
-                                        return k.Gold;
+                                        return O.Gold;
                                     case n:
-                                        return k.White;
+                                        return O.White;
                                     default:
-                                        return k.None;
+                                        return O.None;
                                 }
                             })(u, d, t, n),
                             g = t < u;
@@ -2600,20 +2587,18 @@
                                 a().createElement(
                                     a().Fragment,
                                     { key: t },
-                                    a().createElement(
-                                        x,
-                                        O({}, e, {
-                                            rewardSize: c,
-                                            classMix: y.reward,
-                                            isDisable: g,
-                                            isBattlePassRewardDisable: r && e.name === b.E4.BattlePassPoints,
-                                        }),
-                                    ),
+                                    a().createElement(x, {
+                                        reward: e,
+                                        rewardSize: c,
+                                        classMix: y.reward,
+                                        isDisable: g,
+                                        isBattlePassRewardDisable: r && e.name === b.E4.BattlePassPoints,
+                                    }),
                                 ),
                             ),
                         );
                     },
-                    M = (0, g.Pi)(() => {
+                    L = (0, g.Pi)(() => {
                         const e = p().model,
                             t = e.root.get(),
                             r = t.frontlineLevel,
@@ -2626,7 +2611,7 @@
                                 a().createElement(
                                     a().Fragment,
                                     { key: `${e.lvlStart}-${e.lvlEnd}` },
-                                    a().createElement(L, {
+                                    a().createElement(k, {
                                         levelsRange: e,
                                         frontlineLevel: r,
                                         isBattlePassComplete: n,
@@ -2636,25 +2621,25 @@
                             ),
                         );
                     });
-                var N = r(4959);
-                const C = 'SubTitle_base_8d',
-                    D = R.strings.fl_rewards.subtitle,
-                    I = (0, n.memo)(({ level: e, rewardsCount: t, frontlineState: r }) =>
-                        r !== N.c.Finished
-                            ? a().createElement('div', { className: C }, D.active())
+                var M = r(4959);
+                const N = 'SubTitle_base_8d',
+                    C = R.strings.fl_rewards.subtitle,
+                    D = (0, n.memo)(({ level: e, rewardsCount: t, frontlineState: r }) =>
+                        r !== M.c.Finished
+                            ? a().createElement('div', { className: N }, C.active())
                             : a().createElement(
                                   'div',
-                                  { className: C },
-                                  D.finished.title(),
+                                  { className: N },
+                                  C.finished.title(),
                                   e > 1 &&
                                       (t > 0
-                                          ? D.finished.rewards()
+                                          ? C.finished.rewards()
                                           : a().createElement(
                                                 'div',
                                                 { className: 'SubTitle_noRewards_f1' },
                                                 a().createElement('div', { className: 'SubTitle_icon_0f' }),
                                                 ' ',
-                                                D.finished.noRewards(),
+                                                C.finished.noRewards(),
                                             )),
                               ),
                     );
@@ -2675,9 +2660,9 @@
                         a().createElement(
                             E.V,
                             { text: R.strings.fl_rewards.title(), classMix: 'RewardsViewApp_pageTitle_61' },
-                            a().createElement(I, { level: l, rewardsCount: o, frontlineState: c }),
+                            a().createElement(D, { level: l, rewardsCount: o, frontlineState: c }),
                         ),
-                        a().createElement('div', { className: 'RewardsViewApp_table_32' }, a().createElement(M, null)),
+                        a().createElement('div', { className: 'RewardsViewApp_table_32' }, a().createElement(L, null)),
                         a().createElement(
                             'div',
                             { className: 'RewardsViewApp_claimButton_3d' },

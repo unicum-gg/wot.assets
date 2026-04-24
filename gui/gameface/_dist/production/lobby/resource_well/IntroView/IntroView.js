@@ -361,6 +361,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1342,9 +1343,9 @@
                     }
                 }
                 z.defaultProps = { format: 'integral' };
-                var j = t(3649);
-                const K = 'FormatText_base_d0',
-                    q = ({ binding: u, text: e = '', classMix: t, alignment: a = j.v2.left }) =>
+                var K = t(3649);
+                const j = 'FormatText_base_d0',
+                    q = ({ binding: u, text: e = '', classMix: t, alignment: a = K.v2.left }) =>
                         null === e
                             ? (console.error("FormatText was supplied with 'null'"), null)
                             : A().createElement(
@@ -1353,8 +1354,8 @@
                                   e.split('\n').map((e, F) =>
                                       A().createElement(
                                           'div',
-                                          { className: h()(K, t), key: `${e}-${F}` },
-                                          (0, j.Uw)(e, a, u).map((u, e) =>
+                                          { className: h()(j, t), key: `${e}-${F}` },
+                                          (0, K.Uw)(e, a, u).map((u, e) =>
                                               A().createElement(E.Fragment, { key: `${e}-${u}` }, u),
                                           ),
                                       ),

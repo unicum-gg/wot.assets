@@ -18,7 +18,7 @@
             },
             67: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => K });
+                t.d(e, { O: () => j });
                 var r = {};
                 (t.r(r), t.d(r, { mouse: () => l, onResize: () => F }));
                 var a = {};
@@ -69,7 +69,7 @@
                         setEventHandled: () => I,
                         setInputPaddingsRem: () => L,
                         setSidePaddingsRem: () => M,
-                        whenTutorialReady: () => j,
+                        whenTutorialReady: () => K,
                     }));
                 const F = E('clientResized'),
                     o = { down: E('mousedown'), up: E('mouseup'), move: E('mousemove') };
@@ -287,13 +287,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    j = Promise.all([
+                    K = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : _.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    K = { view: n, client: a };
+                    j = { view: n, client: a };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -321,6 +321,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1130,7 +1131,7 @@
                                 const r = G(`${u}.${t}`, window);
                                 return $(r) ? e(u, t, r) : `${u}.${t}`;
                             }))(u, (u, e) => `${u}.${e}.value`),
-                    j = (u) => {
+                    K = (u) => {
                         const e = ((u) => {
                                 const e = U(),
                                     t = e.caller,
@@ -1152,7 +1153,7 @@
                         }
                         return '';
                     },
-                    K = I.Sw.instance;
+                    j = I.Sw.instance;
                 let q;
                 !(function (u) {
                     ((u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep'));
@@ -1193,14 +1194,14 @@
                                             ? (u === o && a((u) => u + 1), l(u))
                                             : l(Object.assign([], u));
                                     },
-                                    r = j(u);
-                                s.current = K.addCallback(r, t, E, e === q.Deep);
+                                    r = K(u);
+                                s.current = j.addCallback(r, t, E, e === q.Deep);
                             }
                         }),
                         (0, r.useEffect)(() => {
                             if (e !== q.None)
                                 return () => {
-                                    K.removeCallback(s.current, E);
+                                    j.removeCallback(s.current, E);
                                 };
                         }, [E, e]),
                         o

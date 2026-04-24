@@ -162,12 +162,12 @@
                         freezeTextureBeforeResize: () => c,
                         getBrowserTexturePath: () => B,
                         getDisplayStatus: () => f,
-                        getScale: () => l,
+                        getScale: () => _,
                         getSize: () => i,
                         getViewGlobalPosition: () => s,
                         isEventHandled: () => w,
                         isFocused: () => v,
-                        pxToRem: () => _,
+                        pxToRem: () => l,
                         remToPx: () => d,
                         resize: () => a,
                         sendEvent: () => D.qP,
@@ -209,10 +209,10 @@
                 function c() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function l() {
+                function _() {
                     return viewEnv.getScale();
                 }
-                function _(u) {
+                function l(u) {
                     return viewEnv.pxToRem(u);
                 }
                 function d(u) {
@@ -335,6 +335,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -566,7 +567,7 @@
                 var a = A(5521),
                     s = A(3138);
                 const c = ['args'];
-                function l(u, e, A, E, F, t, D) {
+                function _(u, e, A, E, F, t, D) {
                     try {
                         var n = u[t](D),
                             r = n.value;
@@ -575,7 +576,7 @@
                     }
                     n.done ? e(r) : Promise.resolve(r).then(E, F);
                 }
-                const _ = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
+                const l = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
                     d = (function () {
                         var u,
                             e =
@@ -593,10 +594,10 @@
                                     return new Promise(function (E, F) {
                                         var t = u.apply(e, A);
                                         function D(u) {
-                                            l(t, E, F, D, n, 'next', u);
+                                            _(t, E, F, D, n, 'next', u);
                                         }
                                         function n(u) {
-                                            l(t, E, F, D, n, 'throw', u);
+                                            _(t, E, F, D, n, 'throw', u);
                                         }
                                         D(void 0);
                                     });
@@ -657,7 +658,7 @@
                         RealFormatType: C,
                         TimeFormatType: o,
                         DateFormatType: i,
-                        makeGlobalBoundingBox: _,
+                        makeGlobalBoundingBox: l,
                         sendMoveEvent: (u) => m(r.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: v,
                         sendClosePopOverEvent: () => m(r.POP_OVER, { on: !1 }),
@@ -683,7 +684,7 @@
                                 decoratorID: E || R.invalid('resId'),
                                 targetID: F,
                                 direction: e,
-                                bbox: _(a),
+                                bbox: l(a),
                                 on: !0,
                                 args: t,
                             });
@@ -795,7 +796,7 @@
                                   return (i(F, /( )/, e).forEach((u) => (A = A.concat(i(u, E, B.left)))), A);
                               })(u, e);
                     };
-                let l;
+                let _;
                 !(function (u) {
                     ((u.SHORT_DATE = 'short-date'),
                         (u.SHORT_TIME = 'short-time'),
@@ -810,50 +811,50 @@
                         (u.WEEK_DAY_TIME = 'week-day-time'),
                         (u.YEAR = 'year'),
                         (u.DATE_YEAR = 'date-year'));
-                })(l || (l = {}));
-                var _ = A(4179);
+                })(_ || (_ = {}));
+                var l = A(4179);
                 Date.now();
-                const d = (0, E.memo)(({ datetime: u, format: e = l.SHORT_DATE, localize: A = !0 }) =>
+                const d = (0, E.memo)(({ datetime: u, format: e = _.SHORT_DATE, localize: A = !0 }) =>
                         ((u, e, A) => {
                             switch (e) {
-                                case l.SHORT_DATE:
+                                case _.SHORT_DATE:
                                     return A
-                                        ? _.Z5.getDateFormat(u, _.kH.SHORT_FORMAT)
-                                        : _.cy.getTimeFormat('%d.%m.%y', u, !0);
-                                case l.SHORT_TIME:
+                                        ? l.Z5.getDateFormat(u, l.kH.SHORT_FORMAT)
+                                        : l.cy.getTimeFormat('%d.%m.%y', u, !0);
+                                case _.SHORT_TIME:
                                     return A
-                                        ? _.Z5.getTimeFormat(u, _.lf.SHORT_FORMAT)
-                                        : _.cy.getTimeFormat('%I:%M %p', u, !0);
-                                case l.SHORT_DATE_TIME:
+                                        ? l.Z5.getTimeFormat(u, l.lf.SHORT_FORMAT)
+                                        : l.cy.getTimeFormat('%I:%M %p', u, !0);
+                                case _.SHORT_DATE_TIME:
                                     return A
-                                        ? `${_.Z5.getDateFormat(u, _.kH.SHORT_FORMAT)}, ${_.Z5.getTimeFormat(u, _.lf.SHORT_FORMAT)}`
-                                        : _.cy.getTimeFormat('%d.%m.%y, %I:%M %p', u, !0);
-                                case l.FULL_DATE:
+                                        ? `${l.Z5.getDateFormat(u, l.kH.SHORT_FORMAT)}, ${l.Z5.getTimeFormat(u, l.lf.SHORT_FORMAT)}`
+                                        : l.cy.getTimeFormat('%d.%m.%y, %I:%M %p', u, !0);
+                                case _.FULL_DATE:
                                     return A
-                                        ? _.Z5.getDateFormat(u, _.kH.LONG_FORMAT)
-                                        : _.cy.getTimeFormat('%B %d, %Y', u, !0);
-                                case l.FULL_DATE_TIME:
+                                        ? l.Z5.getDateFormat(u, l.kH.LONG_FORMAT)
+                                        : l.cy.getTimeFormat('%B %d, %Y', u, !0);
+                                case _.FULL_DATE_TIME:
                                     return A
-                                        ? `${_.Z5.getDateFormat(u, _.kH.LONG_FORMAT)}, ${_.Z5.getTimeFormat(u, _.lf.SHORT_FORMAT)}`
-                                        : _.cy.getTimeFormat('%B %d, %Y, %I:%M %p', u, !0);
-                                case l.MONTH:
-                                    return _.cy.getTimeFormat('%B', u, !0);
-                                case l.MONTH_DATE:
-                                    return _.cy.getTimeFormat('%B %e', u, !0);
-                                case l.DATE_MONTH:
-                                    return _.cy.getTimeFormat('%e %B', u, !0);
-                                case l.MONTH_YEAR:
-                                    return _.cy.getTimeFormat('%B %Y', u, !0);
-                                case l.WEEK_DAY:
-                                    return _.cy.getTimeFormat('%A', u, !0);
-                                case l.WEEK_DAY_TIME:
+                                        ? `${l.Z5.getDateFormat(u, l.kH.LONG_FORMAT)}, ${l.Z5.getTimeFormat(u, l.lf.SHORT_FORMAT)}`
+                                        : l.cy.getTimeFormat('%B %d, %Y, %I:%M %p', u, !0);
+                                case _.MONTH:
+                                    return l.cy.getTimeFormat('%B', u, !0);
+                                case _.MONTH_DATE:
+                                    return l.cy.getTimeFormat('%B %e', u, !0);
+                                case _.DATE_MONTH:
+                                    return l.cy.getTimeFormat('%e %B', u, !0);
+                                case _.MONTH_YEAR:
+                                    return l.cy.getTimeFormat('%B %Y', u, !0);
+                                case _.WEEK_DAY:
+                                    return l.cy.getTimeFormat('%A', u, !0);
+                                case _.WEEK_DAY_TIME:
                                     return A
-                                        ? `${_.cy.getTimeFormat('%A', u, !0)} ${_.Z5.getTimeFormat(u, _.lf.SHORT_FORMAT)}`
-                                        : _.cy.getTimeFormat('%A, %I:%M %p', u, !0);
-                                case l.YEAR:
-                                    return _.cy.getTimeFormat('%Y', u, !0);
-                                case l.DATE_YEAR:
-                                    return _.cy.getTimeFormat('%d, %Y', u, !0);
+                                        ? `${l.cy.getTimeFormat('%A', u, !0)} ${l.Z5.getTimeFormat(u, l.lf.SHORT_FORMAT)}`
+                                        : l.cy.getTimeFormat('%A, %I:%M %p', u, !0);
+                                case _.YEAR:
+                                    return l.cy.getTimeFormat('%Y', u, !0);
+                                case _.DATE_YEAR:
+                                    return l.cy.getTimeFormat('%d, %Y', u, !0);
                             }
                         })(u, e, A),
                     ),
@@ -1177,22 +1178,22 @@
                                     a = i[0],
                                     s = i[1],
                                     c = (0, E.useState)(() => C(t, D, r)),
-                                    l = c[0],
-                                    _ = c[1];
+                                    _ = c[0],
+                                    l = c[1];
                                 return (
                                     (0, E.useEffect)(() => {
-                                        o.current ? _(C(a, D, r)) : (o.current = !0);
+                                        o.current ? l(C(a, D, r)) : (o.current = !0);
                                     }, [r, a, D]),
                                     (0, E.useEffect)(() => {
                                         s(t);
                                     }, [t]),
                                     (0, E.useEffect)(
                                         () => () => {
-                                            (l.externalModel.dispose(), B.current.forEach((u) => u()));
+                                            (_.externalModel.dispose(), B.current.forEach((u) => u()));
                                         },
-                                        [l],
+                                        [_],
                                     ),
-                                    F().createElement(A.Provider, { value: l }, n)
+                                    F().createElement(A.Provider, { value: _ }, n)
                                 );
                             },
                             () => (0, E.useContext)(A),
@@ -1201,7 +1202,7 @@
                     W = H[0],
                     V = H[1],
                     K = 'App_formattedText_81',
-                    j = (0, T.Pi)(() => {
+                    Y = (0, T.Pi)(() => {
                         const u = V().model.root.get(),
                             e = u.leaderboardUpdateTimestamp,
                             A = u.description;
@@ -1217,7 +1218,7 @@
                                         date: F().createElement(
                                             'span',
                                             { className: x },
-                                            F().createElement(d, { datetime: e, format: l.SHORT_TIME }),
+                                            F().createElement(d, { datetime: e, format: _.SHORT_TIME }),
                                         ),
                                     },
                                     classMix: r()(y, K),
@@ -1228,7 +1229,7 @@
                         );
                     });
                 engine.whenReady.then(() => {
-                    D().render(F().createElement(W, null, F().createElement(j, null)), document.getElementById('root'));
+                    D().render(F().createElement(W, null, F().createElement(Y, null)), document.getElementById('root'));
                 });
             },
         },

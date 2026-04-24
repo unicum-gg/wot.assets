@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (u, e, t) => {
-                t.d(e, { O: () => Y });
+                t.d(e, { O: () => G });
                 var A = {};
                 (t.r(A), t.d(A, { mouse: () => a, onResize: () => i }));
                 var F = {};
@@ -35,11 +35,11 @@
                         displayStatus: () => _,
                         displayStatusIs: () => j,
                         events: () => l,
-                        extraSize: () => q,
-                        forceTriggerMouseMove: () => W,
+                        extraSize: () => Y,
+                        forceTriggerMouseMove: () => K,
                         freezeTextureBeforeResize: () => S,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => K,
+                        getDisplayStatus: () => W,
                         getScale: () => L,
                         getSize: () => P,
                         getViewGlobalPosition: () => R,
@@ -53,7 +53,7 @@
                         setEventHandled: () => V,
                         setInputPaddingsRem: () => T,
                         setSidePaddingsRem: () => k,
-                        whenTutorialReady: () => G,
+                        whenTutorialReady: () => q,
                     }));
                 const i = o('clientResized'),
                     D = { down: o('mousedown'), up: o('mouseup'), move: o('mousemove') };
@@ -256,14 +256,14 @@
                 function H() {
                     return viewEnv.isEventHandled();
                 }
-                function W() {
+                function K() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function K() {
+                function W() {
                     return viewEnv.getShowingStatus();
                 }
                 const j = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
-                    q = {
+                    Y = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -271,13 +271,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    G = Promise.all([
+                    q = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : l.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    Y = { view: E, client: F };
+                    G = { view: E, client: F };
             },
             521: (u, e, t) => {
                 let A, F;
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -879,7 +880,7 @@
                     };
                 let B;
                 !(function (u) {
-                    ((u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent'));
+                    ((u.backport = 'backport'), (u.unbound = 'unbound'), (u.normal = 'normal'), (u.absent = 'absent'));
                 })(B || (B = {}));
                 let C;
                 !(function (u) {
@@ -1008,48 +1009,44 @@
                             a
                         );
                     },
-                    f = (r.Sw.instance, 'BlankPriceApp_base_f0'),
-                    g = 'BlankPriceApp_text_9f',
-                    T = 'BlankPriceApp_blank_e9',
-                    O = 'BlankPriceApp_icon_0c',
-                    M = () => {
+                    f =
+                        (r.Sw.instance,
+                        (u, e) => ({
+                            isEnabled: u !== B.absent,
+                            args: e,
+                            contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
+                            decoratorId:
+                                u === B.unbound
+                                    ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
+                                    : void 0,
+                            ignoreShowDelay: u === B.backport,
+                            ignoreMouseClick: !0,
+                        })),
+                    g = 'BlankPriceApp_base_f0',
+                    T = 'BlankPriceApp_text_9f',
+                    O = 'BlankPriceApp_blank_e9',
+                    M = 'BlankPriceApp_icon_0c',
+                    k = () => {
                         const u = b().count,
-                            e = (0, A.useMemo)(() => {
-                                return (
-                                    (u = B.backport),
-                                    (e = void 0),
-                                    {
-                                        isEnabled: u !== B.absent,
-                                        args: e,
-                                        contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
-                                        decoratorId:
-                                            u === B.normal
-                                                ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
-                                                : void 0,
-                                        ignoreShowDelay: u === B.backport,
-                                        ignoreMouseClick: !0,
-                                    }
-                                );
-                                var u, e;
-                            }, []);
+                            e = (0, A.useMemo)(() => f(B.backport, void 0), []);
                         return F().createElement(
                             'div',
-                            { className: f },
-                            F().createElement('div', { className: g }, R.strings.dialogs.common.cost()),
+                            { className: g },
+                            F().createElement('div', { className: T }, R.strings.dialogs.common.cost()),
                             F().createElement(
                                 s,
                                 e,
                                 F().createElement(
                                     'div',
-                                    { className: T },
+                                    { className: O },
                                     u,
-                                    F().createElement('div', { className: O }),
+                                    F().createElement('div', { className: M }),
                                 ),
                             ),
                         );
                     };
                 engine.whenReady.then(() => {
-                    E().render(F().createElement(M, null), document.getElementById('root'));
+                    E().render(F().createElement(k, null), document.getElementById('root'));
                 });
             },
         },

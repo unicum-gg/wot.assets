@@ -396,6 +396,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1260,6 +1261,7 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
@@ -1300,7 +1302,6 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
-                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -1392,9 +1393,9 @@
                         'soundClick',
                         'soundHover',
                     ];
-                function z() {
+                function Y() {
                     return (
-                        (z =
+                        (Y =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1403,10 +1404,10 @@
                                 }
                                 return u;
                             }),
-                        z.apply(this, arguments)
+                        Y.apply(this, arguments)
                     );
                 }
-                class Y extends n().PureComponent {
+                class z extends n().PureComponent {
                     constructor(...u) {
                         (super(...u),
                             (this.state = { hover: !1, click: !1 }),
@@ -1460,7 +1461,7 @@
                             d = C()(q.goto, null == i ? void 0 : i.goto);
                         return n().createElement(
                             'div',
-                            z(
+                            Y(
                                 {
                                     className: A,
                                     onMouseEnter: this._onMouseEnter(s),
@@ -1480,15 +1481,15 @@
                         );
                     }
                 }
-                Y.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
-                var $ = t(5521),
-                    K = t(4179);
+                z.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
+                var K = t(5521),
+                    $ = t(4179);
                 const Q = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function Z(u = $.n.NONE, e = Q, t = !1) {
+                function Z(u = K.n.NONE, e = Q, t = !1) {
                     (0, r.useEffect)(() => {
-                        if (u !== $.n.NONE)
+                        if (u !== K.n.NONE)
                             return (
                                 window.addEventListener('keydown', r, t),
                                 () => {
@@ -2264,7 +2265,7 @@
                         base__highlightActive: 'CButton_base__highlightActive_b2',
                         content: 'CButton_content_cc',
                     };
-                let Vu, zu;
+                let Vu, Yu;
                 (!(function (u) {
                     ((u.main = 'main'),
                         (u.primary = 'primary'),
@@ -2275,8 +2276,8 @@
                 })(Vu || (Vu = {})),
                     (function (u) {
                         ((u.extraSmall = 'extraSmall'), (u.small = 'small'), (u.medium = 'medium'));
-                    })(zu || (zu = {})));
-                const Yu = ({
+                    })(Yu || (Yu = {})));
+                const zu = ({
                     children: u,
                     size: e,
                     isFocused: t,
@@ -2407,12 +2408,12 @@
                         )
                     );
                 };
-                Yu.defaultProps = { type: Vu.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
-                const $u = (0, r.memo)(Yu);
-                let Ku, Qu, Zu;
+                zu.defaultProps = { type: Vu.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                const Ku = (0, r.memo)(zu);
+                let $u, Qu, Zu;
                 (!(function (u) {
                     ((u.small = 'small'), (u.big = 'big'), (u.large = 'large'), (u.extraLarge = 'extraLarge'));
-                })(Ku || (Ku = {})),
+                })($u || ($u = {})),
                     (function (u) {
                         ((u.credits = 'credits'),
                             (u.gold = 'gold'),
@@ -2427,8 +2428,8 @@
                 class Ju extends n().PureComponent {
                     render() {
                         let u;
-                        u = 'gold' === this.props.format ? K.B3.GOLD : K.B3.INTEGRAL;
-                        const e = K.Z5.getNumberFormat(this.props.value, u);
+                        u = 'gold' === this.props.format ? $.B3.GOLD : $.B3.INTEGRAL;
+                        const e = $.Z5.getNumberFormat(this.props.value, u);
                         return void 0 !== this.props.value && void 0 !== e ? e : null;
                     }
                 }
@@ -2556,7 +2557,7 @@
                             Object.assign(
                                 {
                                     __Type: 'GFViewEventProxy',
-                                    type: K.B0.TOOLTIP,
+                                    type: $.B0.TOOLTIP,
                                     contentID: u,
                                     decoratorID: e,
                                     targetID: r,
@@ -2768,13 +2769,13 @@
                                             const t = u.currentTarget,
                                                 r = t.value.length,
                                                 n = t.selectionStart || 0;
-                                            (_(n === r && u.which !== $.n.DELETE),
-                                                (u.which !== $.n.DELETE && u.which !== $.n.BACKSPACE) ||
+                                            (_(n === r && u.which !== K.n.DELETE),
+                                                (u.which !== K.n.DELETE && u.which !== K.n.BACKSPACE) ||
                                                     1 !== r ||
                                                     setTimeout(() => {
                                                         t.setSelectionRange(r, r);
                                                     }),
-                                                u.which === $.n.ESCAPE && e && o && e.blur(),
+                                                u.which === K.n.ESCAPE && e && o && e.blur(),
                                                 i(u));
                                         },
                                     },
@@ -2834,7 +2835,7 @@
                             m = (0, r.useRef)(null),
                             d = (0, r.useCallback)(
                                 (u) => {
-                                    u.which === $.n.ARROW_UP && _ ? l() : u.which === $.n.ARROW_DOWN && c && E();
+                                    u.which === K.n.ARROW_UP && _ ? l() : u.which === K.n.ARROW_DOWN && c && E();
                                 },
                                 [_, c, E, l],
                             ),
@@ -3051,7 +3052,7 @@
                                                 n().createElement(te, {
                                                     type: f,
                                                     value: v ? D : c,
-                                                    size: Ku.big,
+                                                    size: $u.big,
                                                     isEnough: b,
                                                 }),
                                                 n().createElement(
@@ -3091,7 +3092,7 @@
                                         ),
                                         n().createElement('div', { className: C()(be, 'Footer_arrow__last_11') }),
                                         n().createElement(
-                                            $u,
+                                            Ku,
                                             {
                                                 type: Vu.main,
                                                 mixClass: 'Footer_buyButton_d2',
@@ -3180,7 +3181,7 @@
                         D = (null == (e = A.price.find((u) => u.name === N.Crystal)) ? void 0 : e.value) || 0;
                     return (
                         (function ({
-                            key: u = $.n.ESCAPE,
+                            key: u = K.n.ESCAPE,
                             callback: e = () => o.O.view.sendEvent.close(),
                             preventPropagation: t = !0,
                         } = {}) {
@@ -3189,7 +3190,7 @@
                         n().createElement(
                             'div',
                             { className: 'App_base_4f' },
-                            n().createElement(Y, {
+                            n().createElement(z, {
                                 caption: ye.closeBtn.label(),
                                 type: 'close',
                                 side: 'right',

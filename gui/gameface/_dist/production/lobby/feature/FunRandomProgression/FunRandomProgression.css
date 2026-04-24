@@ -1311,6 +1311,22 @@
     align-items: center;
     width: 100%;
     opacity: 0.8;
+    position: absolute;
+    bottom: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mediaMedium .App_footer_b1 {
+    bottom: 28rem;
+}
+
+.mediaLarge .App_footer_b1 {
+    bottom: 56rem;
+}
+
+.mediaExtraLarge .App_footer_b1 {
+    bottom: 90rem;
 }
 
 .App_footer__hidden_7b {

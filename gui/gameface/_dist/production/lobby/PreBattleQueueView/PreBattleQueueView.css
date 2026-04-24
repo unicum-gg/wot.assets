@@ -83,7 +83,7 @@
 .CButton_base__disabled_d9 {
     cursor: default;
 }
-/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+/* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
 The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113
@@ -231,86 +231,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-wrap: wrap;
 }
 
-.StatusWarning_base_bb {
-    color: #ffdd99;
-    font-size: 14rem;
-    font-weight: 700;
-    line-height: 1.15;
-    white-space: pre;
-}
-
-.StatusWarning_base__regular_cb {
-    text-shadow:
-        0 0 4rem rgba(255, 127, 0, 0.25),
-        0 0 8rem #ff2a00,
-        0 0 15rem #e52;
-    background: linear-gradient(
-        270deg,
-        rgba(52, 1, 1, 0) 0%,
-        rgba(52, 1, 1, 0.6) 30%,
-        rgba(52, 1, 1, 0.65) 50%,
-        rgba(52, 1, 1, 0.6) 67%,
-        rgba(52, 1, 1, 0) 100%
-    );
-}
-
-.StatusWarning_base__banned_05 {
-    background: url('R.images.historical_battles.gui.maps.icons.common.banBg') no-repeat 50% / contain;
-    color: #e9e2bf;
-    text-shadow: 0 0 14rem #ff0000;
-}
-
-.mediaSmall .StatusWarning_base_bb {
-    font-size: 15rem;
-}
-
-.StatusWarning_content_c4 {
-    max-width: 300rem;
-    padding: 6rem 15rem 8rem;
-    text-align: center;
-}
-
-.mediaSmall .StatusWarning_content_c4 {
-    max-width: 430rem;
-    padding: 8rem 15rem 13rem;
-}
-
-.StatusWarning_border_99 {
-    height: 1rem;
-    background: linear-gradient(
-        270deg,
-        rgba(255, 221, 153, 0) 0%,
-        #ffdd99 30%,
-        #ffdd99 50%,
-        #ffdd99 67%,
-        rgba(255, 221, 153, 0) 100%
-    );
-    filter: drop-shadow(0 0 4rem rgba(255, 127, 0, 0.25)) drop-shadow(0 0 8rem #ff2a00) drop-shadow(0 0 15rem #e52);
-    opacity: 0.5;
-}
-
-.StatusWarning_contentWrapper_16 {
-    display: flex;
-    align-items: center;
-}
-
-.StatusWarning_horizontalBorder_5e {
-    width: 78rem;
-    height: 2rem;
-    padding-right: 8rem;
-    background: linear-gradient(90deg, rgba(255, 221, 153, 0.3) 0.64%, rgba(255, 221, 153, 0) 100%);
-}
-
-.StatusWarning_horizontalBorder__left_14 {
-    padding-left: 8rem;
-    padding-right: 0;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
-}
-
-.StatusWarning_base__banned_05 .StatusWarning_horizontalBorder_5e {
-    background: linear-gradient(90deg, rgba(233, 226, 191, 0.3) 0%, rgba(233, 226, 191, 0) 100%);
-}
-
 .BattleTimer_base_19 {
     display: flex;
     flex-direction: column;
@@ -320,23 +240,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .BattleTimer_timer_76 {
     display: flex;
-    padding: 10rem 0 13rem;
+    margin-bottom: 12rem;
 }
 
 .mediaSmall .BattleTimer_timer_76 {
-    padding: 11rem 0 16rem;
-}
-
-.mediaMedium .BattleTimer_timer_76 {
-    padding: 10rem 0 14rem;
-}
-
-.mediaLarge .BattleTimer_timer_76 {
-    padding: 9rem 0 13rem;
+    margin-bottom: 16rem;
 }
 
 .mediaExtraLarge .BattleTimer_timer_76 {
-    padding: 35rem 0 13rem;
+    margin-bottom: 22rem;
+}
+
+.BattleTimer_button__large_9d {
+    min-height: 40rem;
+    padding: 0 20rem;
 }
 
 .BattleTimer_timerLabel_52 {
@@ -353,8 +270,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.25;
 }
 
+.mediaExtraLarge .BattleTimer_timerLabel_52 {
+    color: #fefeec;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
 .BattleTimer_timerTime_f2 {
-    width: 40rem;
     color: #f2f2f7;
     font-size: 15rem;
     font-weight: 700;
@@ -362,53 +285,315 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaSmall .BattleTimer_timerTime_f2 {
-    width: 45rem;
     color: #f2f2f7;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
 }
 
-.BattleTimer_button_eb {
-    margin-bottom: 11rem;
+.mediaExtraLarge .BattleTimer_timerTime_f2 {
+    font-size: 20rem;
+    line-height: '1.2';
 }
 
-.mediaSmall .BattleTimer_button_eb {
-    margin-bottom: 13rem;
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
 }
 
 .Order_base_d2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 5rem 32rem;
-    position: relative;
-}
-
-.mediaMedium .Order_base_d2 {
-    padding: 0 10rem 32rem;
-}
-
-.Order_content_21 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 128rem;
-    height: 64rem;
-    border-radius: 2rem;
+    width: 154rem;
+    height: 92rem;
+    padding: 32rem 0 5rem;
+    border: 2rem solid rgba(255, 255, 255, 0.2);
+    border-radius: 8rem 8rem 0 0;
     background: linear-gradient(0.65deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%);
     position: relative;
 }
 
-.Order_base__active_7b .Order_content_21 {
-    border: 1rem solid #ffb266;
-    box-shadow: inset 0 0 30rem rgba(255, 122, 0, 0.3);
-    background: linear-gradient(0deg, rgba(255, 92, 0, 0.1), rgba(255, 92, 0, 0.1)), rgba(0, 0, 0, 0.6);
+.mediaMedium .Order_base_d2 {
+    width: 222rem;
+    height: 124rem;
+    padding: 45rem 0 5rem;
 }
 
-.mediaMedium .Order_content_21 {
-    width: 224rem;
-    height: 141rem;
+.mediaExtraLarge .Order_base_d2 {
+    width: 289rem;
+    height: 161rem;
+    padding: 62rem 0 5rem;
+}
+
+.Order_base_d2 & .Order_base__active_7b {
+    border: 1rem solid #ffb266;
+    box-shadow: inset 0 0 30rem rgba(255, 122, 0, 0.3);
 }
 
 .Order_count_19 {
@@ -416,32 +601,36 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
-    padding-top: 36rem;
+}
+
+.mediaMedium .Order_count_19 {
+    margin-top: 10rem;
+}
+
+.mediaExtraLarge .Order_count_19 {
+    font-size: 20rem;
+    line-height: 1.2;
 }
 
 .Order_base__active_7b .Order_count_19 {
     color: #e9e2bf;
 }
 
-.mediaMedium .Order_count_19 {
-    padding-top: 58rem;
-    font-size: 18rem;
-}
-
 .Order_icon_2f {
-    width: 80rem;
-    height: 80rem;
     position: absolute;
     left: 50%;
     transform: translate(-50%);
+    width: 80rem;
+    height: 80rem;
+    background: no-repeat 50% / contain;
     filter: brightness(80%);
-    bottom: 14rem;
+    top: -44rem;
 }
 
 .mediaMedium .Order_icon_2f {
     width: 160rem;
     height: 160rem;
-    bottom: 53rem;
+    top: -80rem;
 }
 
 .Order_base__active_7b .Order_icon_2f {
@@ -449,27 +638,27 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Order_icon__x5_3c {
-    background: url('R.images.historical_battles.gui.maps.icons.order.c_80x80.x5') no-repeat 50% / contain;
+    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_80x80.x5');
 }
 
 .mediaMedium .Order_icon__x5_3c {
-    background: url('R.images.historical_battles.gui.maps.icons.order.c_160x160.x5') no-repeat 50% / contain;
+    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_160x160.x5');
 }
 
-.Order_icon__x10_3a {
-    background: url('R.images.historical_battles.gui.maps.icons.order.c_80x80.x10') no-repeat 50% / contain;
+.Order_icon__x3_67 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_80x80.x3');
 }
 
-.mediaMedium .Order_icon__x10_3a {
-    background: url('R.images.historical_battles.gui.maps.icons.order.c_160x160.x10') no-repeat 50% / contain;
+.mediaMedium .Order_icon__x3_67 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_160x160.x3');
 }
 
-.Order_icon__x15_28 {
-    background: url('R.images.historical_battles.gui.maps.icons.order.c_80x80.x15') no-repeat 50% / contain;
+.Order_icon__x2_82 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_80x80.x2');
 }
 
-.mediaMedium .Order_icon__x15_28 {
-    background: url('R.images.historical_battles.gui.maps.icons.order.c_160x160.x15') no-repeat 50% / contain;
+.mediaMedium .Order_icon__x2_82 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_160x160.x2');
 }
 
 .Order_activated_d0 {
@@ -498,108 +687,166 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Order_text_0a {
-    color: #e9e2bf;
-    font-size: 16rem;
+    color: #8c8c7e;
+    font-size: 12rem;
     font-weight: 400;
-    line-height: 1.25;
-    display: none;
+    line-height: 1.3;
+    display: flex;
     align-items: center;
-    min-height: 50rem;
-    margin-top: 1rem;
+    flex: 1;
+    max-width: 140rem;
     text-align: center;
-    white-space: pre;
 }
 
 .mediaMedium .Order_text_0a {
-    display: flex;
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    max-width: 160rem;
 }
 
-.Order_checkIcon_88 {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    width: 48rem;
-    height: 52rem;
-    background: url('R.images.historical_battles.gui.maps.icons.order.check') no-repeat 50% / contain;
-    bottom: -24rem;
-    z-index: 2;
+.mediaLarge .Order_text_0a {
+    max-width: 180rem;
 }
 
-.Order_spark_98 {
-    width: 100%;
-    height: 40rem;
-    background: url('R.images.historical_battles.gui.maps.icons.matchmaking.spark') no-repeat 50% / contain;
-    position: absolute;
-    bottom: 0;
+.mediaExtraLarge .Order_text_0a {
+    color: #8c8c7e;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+    max-width: 220rem;
 }
 
-.mediaMedium .Order_spark_98 {
-    height: 64rem;
+.Order_base__active_7b .Order_text_0a {
+    color: #e9e2bf;
 }
 
 .OrderPanel_base_28 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 .OrderPanel_header_a9 {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 700;
-    line-height: 1.15;
-    padding-bottom: 18rem;
+    margin-bottom: 40rem;
+    color: #fefeec;
+    font-size: 12rem;
+    line-height: 14rem;
 }
 
 .mediaMedium .OrderPanel_header_a9 {
-    color: #e9e2bf;
+    margin-bottom: 52rem;
+    font-size: 18rem;
+    line-height: 20rem;
+}
+
+.mediaExtraLarge .OrderPanel_header_a9 {
+    margin-bottom: 80rem;
     font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
-    padding-bottom: 49rem;
+    line-height: 26rem;
 }
 
 .OrderPanel_orders_3e {
     display: flex;
-    justify-content: center;
+    margin-bottom: 20rem;
 }
 
-.RoleAndVehicleName_base_06 {
+.mediaMedium .OrderPanel_orders_3e {
+    margin-bottom: 22rem;
+}
+
+.mediaExtraLarge .OrderPanel_orders_3e {
+    margin-bottom: 28rem;
+}
+
+.OrderPanel_order_67 {
+    margin: 0 8rem;
+}
+
+.mediaMedium .OrderPanel_order_67 {
+    margin: 0 11rem;
+}
+
+.mediaExtraLarge .OrderPanel_order_67 {
+    margin: 0 14rem;
+}
+
+.DivisionName_base_66 {
+    display: flex;
+    justify-content: center;
     width: 100%;
     position: relative;
-    z-index: 2;
 }
 
-.RoleAndVehicleName_text_96 {
+.DivisionName_base_66 .DivisionName_text_b4::before,
+.DivisionName_base_66 .DivisionName_text_b4::after {
+    width: 200rem;
+    max-height: 1rem;
+    content: ' ';
+}
+
+.mediaSmall .DivisionName_base_66 .DivisionName_text_b4::before,
+.mediaSmall .DivisionName_base_66 .DivisionName_text_b4::after {
+    width: 300rem;
+}
+
+.mediaLarge .DivisionName_base_66 .DivisionName_text_b4::before,
+.mediaLarge .DivisionName_base_66 .DivisionName_text_b4::after {
+    width: 428rem;
+}
+
+.DivisionName_base_66 .DivisionName_text_b4::after {
+    margin-left: 20rem;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.DivisionName_base_66 .DivisionName_text_b4::before {
+    margin-right: 20rem;
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+.DivisionName_text_b4 {
     color: #f2f2f7;
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
     display: flex;
     justify-content: center;
-    opacity: 0.3;
+    align-items: center;
+    text-transform: uppercase;
+    opacity: 0.5;
+    position: relative;
 }
 
-.mediaSmall .RoleAndVehicleName_text_96 {
+.mediaSmall .DivisionName_text_b4 {
     color: #f2f2f7;
     font-size: 56rem;
     font-weight: 700;
     line-height: 1.1;
 }
 
-.mediaLarge .RoleAndVehicleName_text_96 {
+.mediaLarge .DivisionName_text_b4 {
     color: #f2f2f7;
     font-size: 73rem;
     font-weight: 700;
     line-height: 1.1;
 }
 
-.mediaExtraLarge .RoleAndVehicleName_text_96 {
+.mediaExtraLarge .DivisionName_text_b4 {
     color: #f2f2f7;
     font-size: 144rem;
     font-weight: 700;
     line-height: 1;
     line-height: 1.25;
+}
+
+.mediaMedium .DivisionName_text__scaled_b1 {
+    color: #f2f2f7;
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
 }
 
 .PreBattleQueueApp_base_c3 {
@@ -610,40 +857,68 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .PreBattleQueueApp_vignette_f5 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    width: 100%;
+    height: 100%;
     background: url('R.images.historical_battles.gui.maps.icons.backgrounds.vignette') no-repeat 50% / 100%;
 }
 
 .PreBattleQueueApp_header_f4 {
     width: 1920rem;
-    height: 260rem;
-    padding-top: 14rem;
+    padding-top: 30rem;
     background: url('R.images.historical_battles.gui.maps.icons.matchmaking.shadow_top') no-repeat 50% / contain;
     position: absolute;
-    top: 0;
     left: 50%;
+    z-index: 1;
     transform: translateX(-50%);
 }
 
-.mediaSmall .PreBattleQueueApp_header_f4 {
-    padding-top: 5rem;
-}
-
-.mediaMedium .PreBattleQueueApp_header_f4 {
-    padding-top: 25rem;
-}
-
 .mediaLarge .PreBattleQueueApp_header_f4 {
-    padding-top: 8rem;
+    padding-top: 40rem;
 }
 
 .mediaExtraLarge .PreBattleQueueApp_header_f4 {
-    height: 380rem;
-    padding-top: 28rem;
+    padding-top: 70rem;
+}
+
+.PreBattleQueueApp_header_title_e8 {
+    margin-bottom: 12rem;
+}
+
+.mediaSmall .PreBattleQueueApp_header_title_e8 {
+    margin-bottom: 18rem;
+}
+
+.mediaExtraLarge .PreBattleQueueApp_header_title_e8 {
+    margin-bottom: 32rem;
+}
+
+.PreBattleQueueApp_header_shadow_71 {
+    width: 100%;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+}
+
+.PreBattleQueueApp_warning_20 {
+    margin-top: 26rem;
+}
+
+.mediaSmall .PreBattleQueueApp_warning_20 {
+    margin-top: 22rem;
+}
+
+.mediaMedium .PreBattleQueueApp_warning_20 {
+    margin-top: 32rem;
+}
+
+.mediaLarge .PreBattleQueueApp_warning_20 {
+    margin-top: 44rem;
+}
+
+.mediaExtraLarge .PreBattleQueueApp_warning_20 {
+    margin-top: 52rem;
 }
 
 .PreBattleQueueApp_footer_8b {
@@ -652,16 +927,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     justify-content: flex-end;
     align-items: center;
     height: 160rem;
-    padding-bottom: 18rem;
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translateX(-50%);
 }
 
 .mediaMedium .PreBattleQueueApp_footer_8b {
     height: 280rem;
-    padding-bottom: 29rem;
 }
 
 .PreBattleQueueApp_sceneWrapper_21 {
@@ -688,5 +961,78 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaMedium .PreBattleQueueApp_shadow_bb {
     width: 920rem;
     height: 381rem;
-    background: url('R.images.historical_battles.gui.maps.icons.matchmaking.shadow_bottom') no-repeat 50% / contain;
+    background-image: url('R.images.historical_battles.gui.maps.icons.matchmaking.shadow_bottom');
+}
+
+.OrderWarning_base_ac {
+    align-self: center;
+    background: linear-gradient(
+        270deg,
+        rgba(52, 1, 1, 0) 0%,
+        rgba(52, 1, 1, 0.6) 30.59%,
+        rgba(52, 1, 1, 0.65) 49.25%,
+        rgba(52, 1, 1, 0.6) 67.49%,
+        rgba(52, 1, 1, 0) 99.55%
+    );
+    position: relative;
+}
+
+.OrderWarning_base_ac::before,
+.OrderWarning_base_ac::after {
+    flex-shrink: 0;
+    width: 100%;
+    height: 1rem;
+
+    /* Glow_yellow_pattern */
+    box-shadow:
+        0 0 4rem 0 rgba(255, 127, 0, 0.25),
+        0 0 8rem 0 #ff2a00,
+        0 0 15rem 0 #e52;
+    background: linear-gradient(
+        270deg,
+        rgba(255, 221, 153, 0) 0%,
+        #fd9 30.59%,
+        #fd9 49.25%,
+        #fd9 67.49%,
+        rgba(255, 221, 153, 0) 99.55%
+    );
+    content: ' ';
+    position: absolute;
+}
+
+.OrderWarning_base_ac::before {
+    top: 0;
+}
+
+.OrderWarning_base_ac::after {
+    bottom: 0;
+}
+
+.OrderWarning_text_67 {
+    width: 500rem;
+    padding: 8rem 85rem 10rem;
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 16rem;
+    text-align: center;
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
+}
+
+.mediaMedium .OrderWarning_text_67 {
+    width: 698rem;
+    padding: 10rem 40rem 13rem;
+    font-size: 15rem;
+    line-height: 17rem;
+}
+
+.mediaExtraLarge .OrderWarning_text_67 {
+    width: 907rem;
+    padding: 12rem 40rem 17rem;
+    font-size: 20rem;
+    line-height: 22rem;
 }

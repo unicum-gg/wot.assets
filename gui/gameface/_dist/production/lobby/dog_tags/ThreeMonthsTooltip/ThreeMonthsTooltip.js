@@ -33,13 +33,13 @@
                         addPreloadTexture: () => R,
                         children: () => r,
                         displayStatus: () => w,
-                        displayStatusIs: () => z,
+                        displayStatusIs: () => q,
                         events: () => p,
-                        extraSize: () => K,
-                        forceTriggerMouseMove: () => W,
+                        extraSize: () => z,
+                        forceTriggerMouseMove: () => K,
                         freezeTextureBeforeResize: () => C,
                         getBrowserTexturePath: () => M,
-                        getDisplayStatus: () => q,
+                        getDisplayStatus: () => W,
                         getScale: () => F,
                         getSize: () => A,
                         getViewGlobalPosition: () => D,
@@ -256,14 +256,14 @@
                 function G() {
                     return viewEnv.isEventHandled();
                 }
-                function W() {
+                function K() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function q() {
+                function W() {
                     return viewEnv.getShowingStatus();
                 }
-                const z = Object.keys(w).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === w[t]), e), {}),
-                    K = {
+                const q = Object.keys(w).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === w[t]), e), {}),
+                    z = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -473,6 +473,7 @@
                         (e[(e.DELETE = 46)] = 'DELETE'),
                         (e[(e.TAB = 9)] = 'TAB'),
                         (e[(e.KEY_N = 78)] = 'KEY_N'),
+                        (e[(e.KEY_0 = 48)] = 'KEY_0'),
                         (e[(e.KEY_1 = 49)] = 'KEY_1'),
                         (e[(e.KEY_2 = 50)] = 'KEY_2'),
                         (e[(e.KEY_3 = 51)] = 'KEY_3'),

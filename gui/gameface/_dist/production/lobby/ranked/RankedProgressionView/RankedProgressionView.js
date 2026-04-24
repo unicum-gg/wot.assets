@@ -369,6 +369,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -3966,6 +3967,7 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
@@ -4006,7 +4008,6 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
-                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -4788,69 +4789,72 @@
                                 { equals: ue },
                             ),
                             c = Yt();
-                        !(function (e, u) {
-                            const t = e.contentRef,
-                                n = e.wrapperRef,
-                                r = e.scrollPosition,
-                                s = e.clampPosition,
-                                i = e.animationScroll,
-                                l = e.events,
-                                c = (0, a.useState)(xn),
-                                E = c[0],
-                                d = c[1];
+                        !(function (e, u, t) {
+                            const n = e.contentRef,
+                                r = e.wrapperRef,
+                                s = e.scrollPosition,
+                                i = e.clampPosition,
+                                l = e.animationScroll,
+                                c = e.events,
+                                E = (0, a.useState)(xn),
+                                d = E[0],
+                                m = E[1];
                             ((0, a.useEffect)(() => {
-                                const e = t.current;
-                                e && (e.style.cursor = 'dragging' === E.type ? 'move' : 'grab');
-                            }, [t, E.type]),
+                                const e = n.current;
+                                e && (e.style.cursor = 'dragging' === d.type ? 'move' : 'grab');
+                            }, [n, d.type]),
                                 (0, a.useEffect)(() => {
-                                    if ('dragging' !== E.type) return;
-                                    const e = o.O.client.events.mouse.move(([e, a]) => {
-                                            const o = t.current,
-                                                l = n.current;
-                                            if (!o || !l) return;
-                                            if ('inside' === a && e.clientX < 0) return;
-                                            const c = 'inside' === a ? e.clientX : e.clientX - l.offsetLeft,
-                                                d = E.positionFrom - c,
-                                                m = E.previousScrollPosition + d;
-                                            r.start(
+                                    if ('dragging' !== d.type) return;
+                                    const e = o.O.client.events.mouse.move(([e, t]) => {
+                                            const a = n.current,
+                                                o = r.current;
+                                            if (!a || !o) return;
+                                            if ('inside' === t && e.clientX < 0) return;
+                                            const c = 'inside' === t ? e.clientX : e.clientX - o.offsetLeft,
+                                                E = d.positionFrom - c,
+                                                m = d.previousScrollPosition + E;
+                                            s.start(
                                                 Object.assign(
                                                     {
-                                                        scrollPosition: s(o, m),
-                                                        from: { scrollPosition: i.scrollPosition.get() },
+                                                        scrollPosition: i(a, m),
+                                                        from: { scrollPosition: l.scrollPosition.get() },
                                                     },
                                                     u && { config: u },
                                                 ),
                                             );
                                         }),
-                                        a = o.O.client.events.mouse.up(function () {
-                                            d({ type: 'scrollingToEnd' });
+                                        t = o.O.client.events.mouse.up(function () {
+                                            m({ type: 'scrollingToEnd' });
                                         });
                                     return () => {
-                                        (e(), a());
+                                        (e(), t());
                                     };
-                                }, [i.scrollPosition, s, t, E, r, n, u]),
+                                }, [l.scrollPosition, i, n, d, s, r, u]),
                                 (0, a.useEffect)(() => {
-                                    if ('scrollingToEnd' !== E.type) return;
+                                    if ('scrollingToEnd' !== d.type) return;
                                     const e = () => {
-                                        d(xn);
+                                        m(xn);
                                     };
-                                    return (i.scrollPosition.idle && e(), l.on('rest', e), () => l.off('rest', e));
-                                }, [i.scrollPosition, E.type, l]),
+                                    return (l.scrollPosition.idle && e(), c.on('rest', e), () => c.off('rest', e));
+                                }, [l.scrollPosition, d.type, c]),
                                 (0, a.useEffect)(() => {
-                                    const e = t.current;
+                                    const e = n.current;
                                     if (!e) return;
                                     const u = (e) => {
-                                        d({
-                                            type: 'dragging',
-                                            positionFrom: e.screenX,
-                                            previousScrollPosition: i.scrollPosition.get(),
-                                        });
+                                        (t &&
+                                            t.allowedButtons &&
+                                            -1 === t.allowedButtons.findIndex((u) => e.button === u)) ||
+                                            m({
+                                                type: 'dragging',
+                                                positionFrom: e.screenX,
+                                                previousScrollPosition: l.scrollPosition.get(),
+                                            });
                                     };
                                     return (
                                         e.addEventListener('mousedown', u),
                                         () => e.removeEventListener('mousedown', u)
                                     );
-                                }, [i.scrollPosition, t]));
+                                }, [l.scrollPosition, n, t]));
                         })(c);
                         const E = (0, Nu.useSpring)(mu);
                         return s().createElement(

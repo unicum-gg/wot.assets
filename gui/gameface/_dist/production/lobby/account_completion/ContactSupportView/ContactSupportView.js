@@ -33,13 +33,13 @@
                         addPreloadTexture: () => b,
                         children: () => F,
                         displayStatus: () => d,
-                        displayStatusIs: () => z,
+                        displayStatusIs: () => j,
                         events: () => _,
-                        extraSize: () => K,
+                        extraSize: () => z,
                         forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => L,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => j,
+                        getDisplayStatus: () => K,
                         getScale: () => P,
                         getSize: () => S,
                         getViewGlobalPosition: () => k,
@@ -259,11 +259,11 @@
                 function V() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function j() {
+                function K() {
                     return viewEnv.getShowingStatus();
                 }
-                const z = Object.keys(d).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === d[e]), u), {}),
-                    K = {
+                const j = Object.keys(d).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === d[e]), u), {}),
+                    z = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1035,12 +1036,12 @@
                         }
                         return '';
                     },
-                    j = S.Sw.instance;
-                let z;
+                    K = S.Sw.instance;
+                let j;
                 !(function (u) {
                     ((u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep'));
-                })(z || (z = {}));
-                const K = (u = 'model', e = z.Deep) => {
+                })(j || (j = {}));
+                const z = (u = 'model', e = j.Deep) => {
                     const t = (0, A.useState)(0),
                         E = (t[0], t[1]),
                         F = (0, A.useMemo)(() => N(), []),
@@ -1064,26 +1065,26 @@
                         h(() => {
                             if (
                                 ('boolean' == typeof e &&
-                                    ((e = e ? z.Deep : z.None),
+                                    ((e = e ? j.Deep : j.None),
                                     console.warn(
                                         'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                     )),
-                                e !== z.None)
+                                e !== j.None)
                             ) {
                                 const t = (u) => {
                                         ((u) => u && 'CoherentArrayProxy' === u.__proto__.constructor.name)(u) &&
-                                        e === z.Deep
+                                        e === j.Deep
                                             ? (u === a && E((u) => u + 1), o(u))
                                             : o(Object.assign([], u));
                                     },
                                     A = V(u);
-                                s.current = j.addCallback(A, t, i, e === z.Deep);
+                                s.current = K.addCallback(A, t, i, e === j.Deep);
                             }
                         }),
                         (0, A.useEffect)(() => {
-                            if (e !== z.None)
+                            if (e !== j.None)
                                 return () => {
-                                    j.removeCallback(s.current, i);
+                                    K.removeCallback(s.current, i);
                                 };
                         }, [i, e]),
                         a
@@ -1412,7 +1413,7 @@
                     du = 'ContactSupportViewApp_underline_82',
                     _u = ['onContactClicked', 'message'];
                 const mu = () => {
-                    const u = K(),
+                    const u = z(),
                         e = u.onContactClicked,
                         t = u.message,
                         F = (function (u, e) {

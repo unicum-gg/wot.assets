@@ -35,7 +35,7 @@
                         displayStatus: () => C,
                         displayStatusIs: () => q,
                         events: () => _,
-                        extraSize: () => j,
+                        extraSize: () => K,
                         forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => P,
                         getBrowserTexturePath: () => T,
@@ -53,7 +53,7 @@
                         setEventHandled: () => H,
                         setInputPaddingsRem: () => x,
                         setSidePaddingsRem: () => O,
-                        whenTutorialReady: () => K,
+                        whenTutorialReady: () => j,
                     }));
                 const E = A('clientResized'),
                     o = { down: A('mousedown'), up: A('mouseup'), move: A('mousemove') };
@@ -263,7 +263,7 @@
                     return viewEnv.getShowingStatus();
                 }
                 const q = Object.keys(C).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === C[e]), u), {}),
-                    j = {
+                    K = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -271,7 +271,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    K = Promise.all([
+                    j = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : _.onDomBuilt(u);
                         }),
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1209,8 +1210,8 @@
                 }
                 G.defaultProps = { format: 'integral' };
                 const q = 'Waiting_waiting_51',
-                    j = 'Waiting_alertIcon_11',
-                    K = 'Waiting_frame1_76',
+                    K = 'Waiting_alertIcon_11',
+                    j = 'Waiting_frame1_76',
                     z = 'Waiting_frame2_a3',
                     Y = 'Waiting_frame3_1f',
                     $ = (0, r.memo)(() =>
@@ -1220,18 +1221,29 @@
                             n().createElement(
                                 'span',
                                 { className: q },
-                                n().createElement('span', { className: K }, '- '),
+                                n().createElement('span', { className: j }, '- '),
                                 n().createElement('span', { className: z }, '- '),
                                 n().createElement('span', { className: Y }, '- '),
                             ),
-                            n().createElement('span', { className: j }),
+                            n().createElement('span', { className: K }),
                         ),
                     );
                 let X;
                 !(function (u) {
-                    ((u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent'));
+                    ((u.backport = 'backport'), (u.unbound = 'unbound'), (u.normal = 'normal'), (u.absent = 'absent'));
                 })(X || (X = {}));
-                const Z = {
+                const Z = (u, e) => ({
+                        isEnabled: u !== X.absent,
+                        args: e,
+                        contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
+                        decoratorId:
+                            u === X.unbound
+                                ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
+                                : void 0,
+                        ignoreShowDelay: u === X.backport,
+                        ignoreMouseClick: !0,
+                    }),
+                    Q = {
                         base: 'CurrencyItem_base_32',
                         base__credits: 'CurrencyItem_base__credits_39',
                         base__gold: 'CurrencyItem_base__gold_bb',
@@ -1240,36 +1252,22 @@
                         base__freeXP: 'CurrencyItem_base__freeXP_03',
                         base__equipCoin: 'CurrencyItem_base__equipCoin_fd',
                     },
-                    Q = ({ value: u, currencyType: e, isWGMAvailable: t, tooltip: r }) => {
+                    J = ({ value: u, currencyType: e, isWGMAvailable: t, tooltip: r }) => {
                         const i = e === P.gold ? 'gold' : 'integral',
-                            a =
-                                ((A = r.type),
-                                (F = { currency: e }),
-                                {
-                                    isEnabled: A !== X.absent,
-                                    args: F,
-                                    contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
-                                    decoratorId:
-                                        A === X.normal
-                                            ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
-                                            : void 0,
-                                    ignoreShowDelay: A === X.backport,
-                                    ignoreMouseClick: !0,
-                                });
-                        var A, F;
+                            a = Z(r.type, { currency: e });
                         return n().createElement(
                             V,
                             a,
                             n().createElement(
                                 'span',
-                                { className: I()(Z.base, Z[`base__${e}`]) },
-                                n().createElement('div', { className: Z.icon }),
+                                { className: I()(Q.base, Q[`base__${e}`]) },
+                                n().createElement('div', { className: Q.icon }),
                                 t ? n().createElement(G, { value: u, format: i }) : n().createElement($, null),
                             ),
                         );
                     },
-                    J = 'MoneyBalanceApp_base_80',
-                    uu = () => {
+                    uu = 'MoneyBalanceApp_base_80',
+                    eu = () => {
                         const u = L(),
                             e = u.gold,
                             t = u.credits,
@@ -1284,9 +1282,9 @@
                             l = L('model.equipCoinTooltip');
                         return n().createElement(
                             'div',
-                            { className: J },
+                            { className: uu },
                             -1 !== r &&
-                                n().createElement(Q, {
+                                n().createElement(J, {
                                     key: P.crystal,
                                     value: r,
                                     currencyType: P.crystal,
@@ -1294,7 +1292,7 @@
                                     tooltip: F,
                                 }),
                             -1 !== e &&
-                                n().createElement(Q, {
+                                n().createElement(J, {
                                     key: P.gold,
                                     value: e,
                                     currencyType: P.gold,
@@ -1302,7 +1300,7 @@
                                     tooltip: E,
                                 }),
                             -1 !== t &&
-                                n().createElement(Q, {
+                                n().createElement(J, {
                                     key: P.credits,
                                     value: t,
                                     currencyType: P.credits,
@@ -1310,7 +1308,7 @@
                                     tooltip: o,
                                 }),
                             -1 !== i &&
-                                n().createElement(Q, {
+                                n().createElement(J, {
                                     key: P.freeXP,
                                     value: i,
                                     currencyType: P.freeXP,
@@ -1318,7 +1316,7 @@
                                     tooltip: s,
                                 }),
                             -1 !== a &&
-                                n().createElement(Q, {
+                                n().createElement(J, {
                                     key: P.equipCoin,
                                     value: a,
                                     currencyType: P.equipCoin,
@@ -1329,7 +1327,7 @@
                     };
                 engine.whenReady.then(() => {
                     a().render(
-                        n().createElement(h, null, n().createElement(uu, null)),
+                        n().createElement(h, null, n().createElement(eu, null)),
                         document.getElementById('root'),
                     );
                 });

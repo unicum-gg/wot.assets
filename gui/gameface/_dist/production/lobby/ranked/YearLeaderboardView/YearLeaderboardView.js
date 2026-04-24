@@ -311,6 +311,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1133,7 +1134,7 @@
                         G.apply(this, arguments)
                     );
                 }
-                class W extends E().PureComponent {
+                class K extends E().PureComponent {
                     constructor(...u) {
                         (super(...u),
                             (this.state = { hover: !1, click: !1 }),
@@ -1207,8 +1208,8 @@
                         );
                     }
                 }
-                W.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
-                const j = [
+                K.defaultProps = { side: 'left', type: 'back', soundHover: 'highlight', soundClick: 'play' };
+                const W = [
                     'children',
                     'contentId',
                     'args',
@@ -1224,7 +1225,7 @@
                     'onShow',
                     'onHide',
                 ];
-                function z(u) {
+                function j(u) {
                     return Object.entries(u || {}).map(([u, e]) => {
                         const t = { __Type: 'GFValueProxy', name: u };
                         switch (typeof e) {
@@ -1242,7 +1243,7 @@
                         return t;
                     });
                 }
-                const K = (u, e, t = {}, n = 0) => {
+                const z = (u, e, t = {}, n = 0) => {
                         viewEnv.handleViewEvent(
                             Object.assign(
                                 {
@@ -1284,12 +1285,12 @@
                                     A = Object.keys(u);
                                 for (n = 0; n < A.length; n++) ((t = A[n]), e.indexOf(t) >= 0 || (E[t] = u[t]));
                                 return E;
-                            })(u, j);
+                            })(u, W);
                         const p = (0, n.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
                             h = (0, n.useMemo)(() => m || o().resId, [m]),
                             g = (0, n.useCallback)(() => {
                                 (p.current.isVisible && p.current.timeoutId) ||
-                                    (K(t, c, { isMouseEvent: !0, on: !0, arguments: z(E) }, h),
+                                    (z(t, c, { isMouseEvent: !0, on: !0, arguments: j(E) }, h),
                                     v && v(),
                                     (p.current.isVisible = !0));
                             }, [t, c, E, h, v]),
@@ -1297,7 +1298,7 @@
                                 if (p.current.isVisible || p.current.timeoutId) {
                                     const u = p.current.timeoutId;
                                     (u > 0 && (clearTimeout(u), (p.current.timeoutId = 0)),
-                                        K(t, c, { on: !1 }, h),
+                                        z(t, c, { on: !1 }, h),
                                         p.current.isVisible && w && w(),
                                         (p.current.isVisible = !1));
                                 }
@@ -1548,7 +1549,7 @@
                             E().createElement(
                                 'div',
                                 { className: wu },
-                                E().createElement(W, {
+                                E().createElement(K, {
                                     caption: R.strings.menu.viewHeader.closeBtn.label(),
                                     type: 'close',
                                     side: 'right',

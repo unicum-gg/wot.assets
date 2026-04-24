@@ -71,7 +71,7 @@
 .CButton_base__disabled_d9 {
     cursor: default;
 }
-/* Element .back and background-image in element .base need for fix bug in GF https://jira.wargaming.net/browse/WOTD-158525
+/* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
 The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
 between 'border-image-width' and 'fill'.
 This bug is reproduced in Google Chrome 81.0.4044.113
@@ -401,23 +401,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0;
 }
 
-.LayerItem_base_7d {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center / cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.HBParallax_base_23 {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
 .BoosterBuyDialogTemplate_base_c7 {
     display: flex;
     justify-content: center;
@@ -448,12 +431,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .BoosterBuyDialogTemplate_center__shown_18 {
     opacity: 1;
-}
-
-.BoosterBuyDialogTemplate_center__shownAnimate_71 {
-    animation-name: BoosterBuyDialogTemplate_windowIn_87;
-    animation-duration: 0.5s;
-    animation-fill-mode: both;
 }
 
 .BoosterBuyDialogTemplate_center__withIcon_04 {

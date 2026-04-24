@@ -50,14 +50,14 @@
                         getScale: () => L,
                         getSize: () => y,
                         getViewGlobalPosition: () => R,
-                        isEventHandled: () => K,
+                        isEventHandled: () => V,
                         isFocused: () => I,
                         pxToRem: () => x,
                         remToPx: () => N,
                         resize: () => k,
                         sendEvent: () => g,
                         setAnimateWindow: () => U,
-                        setEventHandled: () => V,
+                        setEventHandled: () => K,
                         setInputPaddingsRem: () => f,
                         setSidePaddingsRem: () => M,
                         whenTutorialReady: () => j,
@@ -257,10 +257,10 @@
                 function I() {
                     return viewEnv.isFocused();
                 }
-                function V() {
+                function K() {
                     return viewEnv.setEventHandled();
                 }
-                function K() {
+                function V() {
                     return viewEnv.isEventHandled();
                 }
                 function W() {
@@ -311,6 +311,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),

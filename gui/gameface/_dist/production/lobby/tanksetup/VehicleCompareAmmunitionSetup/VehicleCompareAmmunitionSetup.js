@@ -292,7 +292,7 @@
                             },
                             [p, L],
                         ),
-                        q = i().createElement(
+                        K = i().createElement(
                             'div',
                             { className: l.Z.label },
                             i().createElement(
@@ -332,7 +332,7 @@
                             i().createElement('div', { className: l.Z.highlight }),
                         ),
                         i().createElement('div', { className: l.Z.checkmark }),
-                        ((M || R) && q) || null,
+                        ((M || R) && K) || null,
                     );
                 };
             },
@@ -752,10 +752,10 @@
                             Z = (0, o.useCallback)(() => {
                                 C && C();
                             }, [C]),
-                            q = (0, o.useCallback)(() => {
+                            K = (0, o.useCallback)(() => {
                                 A && A();
                             }, [A]),
-                            K = (0, o.useCallback)(
+                            q = (0, o.useCallback)(
                                 (e) => {
                                     ('function' == typeof t ? t(e) : null !== t && (t.current = e), O(e));
                                 },
@@ -781,7 +781,7 @@
                                     P.addEventListener('ps-scroll-x', U),
                                     P.addEventListener('ps-scroll-y', V),
                                     P.addEventListener('over-scroll-beginning', Z),
-                                    P.addEventListener('over-scroll-ending', q),
+                                    P.addEventListener('over-scroll-ending', K),
                                     L(!0),
                                     () => {
                                         (window.removeEventListener('resize', J),
@@ -790,10 +790,10 @@
                                                 (P.removeEventListener('ps-scroll-x', U),
                                                 P.removeEventListener('ps-scroll-y', V),
                                                 P.removeEventListener('over-scroll-beginning', Z),
-                                                P.removeEventListener('over-scroll-ending', q)));
+                                                P.removeEventListener('over-scroll-ending', K)));
                                     }
                                 );
-                        }, [Q, U, Z, q, J, P, N, V]);
+                        }, [Q, U, Z, K, J, P, N, V]);
                         const ee = (0, o.useRef)(P || null);
                         ee.current = P || null;
                         const te = (0, s.Z)(ee);
@@ -835,7 +835,7 @@
                                     (y.getScrollbar = $));
                             }, [y, X, G, Y, j, z, $]));
                         const ne = r()(_, { [d]: D, [E]: !x, [m]: F, [p]: B }, S);
-                        return i().createElement('div', { className: ne, ref: K }, w);
+                        return i().createElement('div', { className: ne, ref: q }, w);
                     });
             },
             8380: (e) => {
@@ -3223,6 +3223,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -3870,7 +3871,7 @@
                         );
                     };
             },
-            1434: (e, t, n) => {
+            7273: (e, t, n) => {
                 'use strict';
                 var a = {};
                 (n.r(a),
@@ -4125,8 +4126,8 @@
                     ((e.Click = 'click'), (e.KeyDown = 'keydown'));
                 })(V || (V = {}));
                 const Z = ['action', 'timeLimit'];
-                const q = 'metrics',
-                    K = () => Date.now(),
+                const K = 'metrics',
+                    q = () => Date.now(),
                     J = ({ partnerID: e, item: t, parentScreen: n, itemState: a, info: r }) => ({
                         item: t,
                         partnerID: e || null,
@@ -4159,7 +4160,7 @@
                                 (e) => {
                                     if (!e) return;
                                     const t = a.current.get(e);
-                                    (void 0 !== t && t > 0) || a.current.set(e, K());
+                                    (void 0 !== t && t > 0) || a.current.set(e, q());
                                 },
                                 [a],
                             ),
@@ -4171,7 +4172,7 @@
                                     e &&
                                         void 0 !== a.current.get(e) &&
                                         void 0 === r.current.get(e) &&
-                                        r.current.set(e, K());
+                                        r.current.set(e, q());
                                 },
                                 [a, r],
                             ),
@@ -4183,7 +4184,7 @@
                                     const n = r.current.get(e);
                                     if (void 0 === n) return;
                                     r.current.delete(e);
-                                    const u = K() - n;
+                                    const u = q() - n;
                                     a.current.set(e, t + u);
                                 },
                                 [a, r],
@@ -4193,7 +4194,7 @@
                                     const o = a.current.get(e);
                                     if (void 0 === o) return;
                                     (void 0 !== r.current.get(e) && l(e), a.current.delete(e));
-                                    const i = (K() - o) / 1e3;
+                                    const i = (q() - o) / 1e3;
                                     i <= t ||
                                         ((s = ((e, t) => (void 0 === e && (e = {}), (e.timeSpent = t), e))(s, i)),
                                         n(e, u, s));
@@ -4203,7 +4204,7 @@
                         return [(e) => u(e), (e, t, n, a) => c(e, t, n, a), () => o(), (e) => i(e), (e) => l(e)];
                     },
                     te = (e) => {
-                        const t = ee(e, q),
+                        const t = ee(e, K),
                             n = t[0],
                             a = t[1],
                             r = t[2],
@@ -5049,8 +5050,8 @@
                         },
                         getDirection: (e) => (e.deltaY > 1 ? ke.Next : ke.Prev),
                     }),
-                    qe = 'VerticalBar_base_f3',
-                    Ke = 'VerticalBar_base__nonActive_42',
+                    Ke = 'VerticalBar_base_f3',
+                    qe = 'VerticalBar_base__nonActive_42',
                     Je = 'VerticalBar_topButton_d7',
                     Qe = 'VerticalBar_bottomButton_06',
                     et = 'VerticalBar_track_df',
@@ -5096,7 +5097,7 @@
                                     (t.style.height = `${it(n, s)}px`),
                                     t.classList.add(tt),
                                     r.current &&
-                                        (1 === s ? r.current.classList.add(Ke) : r.current.classList.remove(Ke)),
+                                        (1 === s ? r.current.classList.add(qe) : r.current.classList.remove(qe)),
                                     s
                                 );
                             }),
@@ -5210,7 +5211,7 @@
                         };
                         return o().createElement(
                             'div',
-                            { className: l()(qe, t.base), ref: r, onWheel: e.handleMouseWheel },
+                            { className: l()(Ke, t.base), ref: r, onWheel: e.handleMouseWheel },
                             o().createElement('div', {
                                 className: l()(Je, t.topButton),
                                 onMouseDown: (e) => {
@@ -5465,7 +5466,7 @@
                     const u = t + 1,
                         i = (0, s.useMemo)(() => gt(u), [u]),
                         c = ((e) => {
-                            const t = Q(e, q),
+                            const t = Q(e, K),
                                 n = (0, s.useCallback)(
                                     (e) => {
                                         t(e.action, e.logLevel, J(e));
@@ -5498,8 +5499,8 @@
                 const Ut = 'ExtendedText_base_71',
                     Vt = 'ExtendedText_base__zeroPadding_25',
                     Zt = 'ExtendedText_base__isTruncationAvailable_5b',
-                    qt = 'ExtendedText_truncated_97',
-                    Kt = 'ExtendedText_truncated__hide_31',
+                    Kt = 'ExtendedText_truncated_97',
+                    qt = 'ExtendedText_truncated__hide_31',
                     Jt = 'ExtendedText_unTruncated_b8';
                 let Qt, en, tn;
                 (!(function (e) {
@@ -5878,7 +5879,7 @@
                                         { tooltipArgs: f },
                                         o().createElement(
                                             'div',
-                                            { className: l()(qt, !b.isTruncateFinished && u && Kt), style: C },
+                                            { className: l()(Kt, !b.isTruncateFinished && u && qt), style: C },
                                             b.isTruncateFinished && u ? b.elementList : g,
                                         ),
                                     ),
@@ -6160,8 +6161,8 @@
                 var Un = n(2344);
                 const Vn = 'select',
                     Zn = 'undo',
-                    qn = 'cancel',
-                    Kn = 'swap',
+                    Kn = 'cancel',
+                    qn = 'swap',
                     Jn = 'demount',
                     Qn = 'demount_from_setup',
                     ea = 'demount_from_setups',
@@ -6594,14 +6595,14 @@
                                 t === x.cJ.Large || t === x.cJ.Huge
                                     ? R.images.gui.maps.shop.artefacts.c_180x135
                                     : R.images.gui.maps.icons.quests.bonuses.small,
-                            q = (0, s.useMemo)(() => {
+                            K = (0, s.useMemo)(() => {
                                 let e;
                                 return (
                                     i && (e = _ ? Z.$dyn(`${i}_${d}_overlay`) : Z.$dyn(`${i}_overlay`)),
                                     e && { backgroundImage: `url(${e})` }
                                 );
                             }, [Z, i, _, d]),
-                            K = (0, s.useMemo)(() => {
+                            q = (0, s.useMemo)(() => {
                                 let e;
                                 return (c && (e = Z.$dyn(`${c}_highlight`)), e && { backgroundImage: `url(${e})` });
                             }, [Z, c]),
@@ -6623,20 +6624,20 @@
                                 o().createElement(
                                     'div',
                                     { id: e, className: Y, onMouseLeave: H },
-                                    K &&
-                                        o().createElement(
-                                            'div',
-                                            { className: fa.types },
-                                            o().createElement('div', { className: ee, style: K }),
-                                        ),
-                                    o().createElement('div', { className: fa.image, style: V }, A),
-                                    m && o().createElement('div', { className: fa.disabled }),
-                                    te && o().createElement('span', { className: ne, style: te }),
                                     q &&
                                         o().createElement(
                                             'div',
                                             { className: fa.types },
-                                            o().createElement('div', { className: Q, style: q }),
+                                            o().createElement('div', { className: ee, style: q }),
+                                        ),
+                                    o().createElement('div', { className: fa.image, style: V }, A),
+                                    m && o().createElement('div', { className: fa.disabled }),
+                                    te && o().createElement('span', { className: ne, style: te }),
+                                    K &&
+                                        o().createElement(
+                                            'div',
+                                            { className: fa.types },
+                                            o().createElement('div', { className: Q, style: K }),
                                         ),
                                     C && o().createElement('div', { className: fa.specialization }, C),
                                     U,
@@ -6898,11 +6899,11 @@
                             o().createElement(ie.u5, { size: a, mixClass: Ua, onClick: r }, Va.toReserves()),
                         );
                     },
-                    qa = 'Content_base_d8',
-                    Ka = o().memo(function ({ isLocked: e, selectedSlot: t }) {
+                    Ka = 'Content_base_d8',
+                    qa = o().memo(function ({ isLocked: e, selectedSlot: t }) {
                         return o().createElement(
                             'div',
-                            { className: qa },
+                            { className: Ka },
                             e
                                 ? o().createElement(
                                       jn,
@@ -7035,7 +7036,7 @@
                             { value: n },
                             o().createElement(x.Ar, {
                                 header: o().createElement(cr, null),
-                                content: o().createElement(Ka, { isLocked: t, selectedSlot: a }),
+                                content: o().createElement(qa, { isLocked: t, selectedSlot: a }),
                                 aside: o().createElement(Hn, { className: Wn }),
                                 footer: o().createElement(ge, null),
                             }),
@@ -7499,74 +7500,83 @@
                         'icon__currency-deluxe': 'Introduction_icon__currency-deluxe_e0',
                         'icon__currency-modernized': 'Introduction_icon__currency-modernized_07',
                     },
-                    qr = ({ introType: e }) => {
-                        const t = l()(Zr.icon, Zr[`icon__currency-${e}`]),
-                            n = (0, s.useMemo)(
+                    Kr = (0, s.memo)(({ isOptDeviceRestored: e, introType: t }) => {
+                        const n = l()(Zr.icon, Zr[`icon__currency-${t}`]),
+                            a = 'modernized' === t,
+                            r = (0, s.useMemo)(
                                 () => ({
                                     currencyName: o().createElement(
                                         'span',
                                         { className: Zr.currency },
-                                        R.strings.tank_setup.introduction.currency.$dyn(e),
+                                        R.strings.tank_setup.introduction.currency.$dyn(t),
                                     ),
-                                    currencyIcon: o().createElement('span', { className: t }),
+                                    currencyIcon: o().createElement('span', { className: n }),
                                 }),
-                                [t, e],
+                                [n, t],
                             ),
-                            a = R.strings.tank_setup.introduction.message.$dyn(e);
-                        return a ? o().createElement(I, { binding: n, text: a, classMix: Zr.message }) : null;
-                    },
-                    Kr = ({ slotsType: e, haveSuitableEquipments: t = !0, buttonLabel: n, onIntroPassed: a }) => {
-                        const r = (0, x.GS)(),
-                            u = r === x.cJ.Large || r === x.cJ.Huge,
-                            i = (0, s.useState)(!0),
-                            c = i[0],
-                            _ = i[1],
-                            d = (0, s.useCallback)(() => {
-                                _(!1);
-                            }, []),
-                            m = (0, s.useCallback)(() => {
-                                (a(), _(!0));
-                            }, [a]),
-                            p = l()(Zr.base, r && Zr[`base__${r}`]),
-                            E = (0, s.useMemo)(
-                                () => ({
-                                    enter: Zr.base__enter,
-                                    enterActive: Zr.base__enterActive,
-                                    exit: Zr.base__exit,
-                                    exitActive: Zr.base__exitActive,
-                                }),
-                                [],
-                            ),
-                            b = l()(Zr.image, u ? Zr[`image__${e}Large`] : Zr[`image__${e}`]),
-                            h = t
-                                ? R.strings.tank_setup.introduction.title.withEquipments.$dyn(e)
-                                : R.strings.tank_setup.introduction.title.withoutEquipments.$dyn(e);
-                        return o().createElement(
-                            Vr.Z,
-                            { in: c, classNames: E, timeout: 300, onExited: m },
-                            o().createElement(
-                                'div',
-                                { className: p, id: 'introduction' },
+                            u = R.strings.tank_setup.introduction.message.$dyn(a ? `${t}${e ? 'Restorable' : ''}` : t);
+                        return u ? o().createElement(I, { binding: r, text: u, classMix: Zr.message }) : null;
+                    }),
+                    qr = (0, s.memo)(
+                        ({
+                            slotsType: e,
+                            isOptDeviceRestored: t = !1,
+                            haveSuitableEquipments: n = !0,
+                            buttonLabel: a,
+                            onIntroPassed: r,
+                        }) => {
+                            const u = (0, x.GS)(),
+                                i = u === x.cJ.Large || u === x.cJ.Huge,
+                                c = (0, s.useState)(!0),
+                                _ = c[0],
+                                d = c[1],
+                                m = (0, s.useCallback)(() => {
+                                    d(!1);
+                                }, []),
+                                p = (0, s.useCallback)(() => {
+                                    (r(), d(!0));
+                                }, [r]),
+                                E = l()(Zr.base, u && Zr[`base__${u}`]),
+                                b = (0, s.useMemo)(
+                                    () => ({
+                                        enter: Zr.base__enter,
+                                        enterActive: Zr.base__enterActive,
+                                        exit: Zr.base__exit,
+                                        exitActive: Zr.base__exitActive,
+                                    }),
+                                    [],
+                                ),
+                                h = l()(Zr.image, i ? Zr[`image__${e}Large`] : Zr[`image__${e}`]),
+                                g = n
+                                    ? R.strings.tank_setup.introduction.title.withEquipments.$dyn(e)
+                                    : R.strings.tank_setup.introduction.title.withoutEquipments.$dyn(e);
+                            return o().createElement(
+                                Vr.Z,
+                                { in: _, classNames: b, timeout: 300, onExited: p },
                                 o().createElement(
                                     'div',
-                                    { className: Zr.introduction },
-                                    o().createElement('div', { className: b }),
+                                    { className: E, id: 'introduction' },
                                     o().createElement(
                                         'div',
-                                        { className: Zr.description },
-                                        o().createElement('div', { className: Zr.title }, h),
-                                        o().createElement(qr, { introType: e }),
-                                    ),
-                                    t &&
+                                        { className: Zr.introduction },
+                                        o().createElement('div', { className: h }),
                                         o().createElement(
-                                            ie.u5,
-                                            { type: ie.L$.secondary, size: ie.qE.medium, onClick: d },
-                                            o().createElement(Ur, { text: n }),
+                                            'div',
+                                            { className: Zr.description },
+                                            o().createElement('div', { className: Zr.title }, g),
+                                            o().createElement(Kr, { introType: e, isOptDeviceRestored: t }),
                                         ),
+                                        n &&
+                                            o().createElement(
+                                                ie.u5,
+                                                { type: ie.L$.secondary, size: ie.qE.medium, onClick: m },
+                                                o().createElement(Ur, { text: a }),
+                                            ),
+                                    ),
                                 ),
-                            ),
-                        );
-                    },
+                            );
+                        },
+                    ),
                     Jr = 'Tabs_base_d9',
                     Qr = 'Tabs_base__vertical_c0',
                     eu = 'Tabs_list_0a',
@@ -8075,9 +8085,9 @@
                             }),
                             o().createElement(ju.a, {
                                 parentId: `${e}-cancel`,
-                                actionType: qn,
+                                actionType: Kn,
                                 onClick: n,
-                                show: t.includes(qn),
+                                show: t.includes(Kn),
                             }),
                             o().createElement(ju.a, {
                                 parentId: `${e}-undo`,
@@ -8122,7 +8132,7 @@
                                     return (
                                         !m &&
                                             w &&
-                                            (!A && f && e.push(aa), (!Boolean(i) && !b) || h ? e.push(Zn) : e.push(qn)),
+                                            (!A && f && e.push(aa), (!Boolean(i) && !b) || h ? e.push(Zn) : e.push(Kn)),
                                         e
                                     );
                                 }, [m, w, A, f, i, b, h]),
@@ -8132,7 +8142,7 @@
                                 ),
                                 M = Xu(L),
                                 N = (0, s.useCallback)(() => {
-                                    T.includes(Zn) ? M(Zn) : T.includes(qn) ? M(qn) : M(Vn);
+                                    T.includes(Zn) ? M(Zn) : T.includes(Kn) ? M(Kn) : M(Vn);
                                 }, [T, M]),
                                 I = (0, s.useMemo)(() => {
                                     const e = { intCD: d, slotType: k.G$, fieldType: 0 };
@@ -8202,7 +8212,7 @@
                             });
                         },
                     ),
-                    qu = {
+                    Ku = {
                         base: 'Cards_base_0a',
                         base__large: 'Cards_base__large_47',
                         base__huge: 'Cards_base__huge_d2',
@@ -8211,9 +8221,9 @@
                         card__large: 'Cards_card__large_b2',
                         card__huge: 'Cards_card__huge_78',
                     };
-                function Ku() {
+                function qu() {
                     return (
-                        (Ku =
+                        (qu =
                             Object.assign ||
                             function (e) {
                                 for (var t = 1; t < arguments.length; t++) {
@@ -8222,7 +8232,7 @@
                                 }
                                 return e;
                             }),
-                        Ku.apply(this, arguments)
+                        qu.apply(this, arguments)
                     );
                 }
                 const Ju = ({ currentCardRef: e, selectedSlot: t, isDisabled: n = !1, modelPath: a, compare: r }) => {
@@ -8235,11 +8245,11 @@
                             const a = t === n.installedSlotId;
                             return o().createElement(
                                 'div',
-                                { key: n.intCD, ref: a ? e : null, className: l()(qu.card, u && qu[`card__${u}`]) },
-                                o().createElement(Zu, Ku({}, n, { isCurrent: a, onSlotAction: i, compare: r })),
+                                { key: n.intCD, ref: a ? e : null, className: l()(Ku.card, u && Ku[`card__${u}`]) },
+                                o().createElement(Zu, qu({}, n, { isCurrent: a, onSlotAction: i, compare: r })),
                             );
                         }),
-                        m = l()(qu.base, u && qu[`base__${u}`], n && qu.base__disabled);
+                        m = l()(Ku.base, u && Ku[`base__${u}`], n && Ku.base__disabled);
                     return o().createElement('div', { className: m }, d);
                 };
                 function Qu() {
@@ -8285,7 +8295,7 @@
                                                   modelPath: es,
                                                   isDisabled: p,
                                               }),
-                                              o().createElement(Kr, {
+                                              o().createElement(qr, {
                                                   slotsType: E,
                                                   haveSuitableEquipments: m.length > 0,
                                                   buttonLabel: ts,
@@ -8366,9 +8376,9 @@
                             }),
                             o().createElement(ju.a, {
                                 parentId: `${e}-cancel`,
-                                actionType: qn,
+                                actionType: Kn,
                                 onClick: n,
-                                show: t.includes(qn),
+                                show: t.includes(Kn),
                             }),
                             o().createElement(ju.a, {
                                 parentId: `${e}-undo`,
@@ -8413,10 +8423,10 @@
                                     return (
                                         !p &&
                                             S &&
-                                            (!_ && e.push(Kn),
+                                            (!_ && e.push(qn),
                                             f ||
                                                 A ||
-                                                (!D && e.push(aa), (!Boolean(i) && !h) || g ? e.push(Zn) : e.push(qn))),
+                                                (!D && e.push(aa), (!Boolean(i) && !h) || g ? e.push(Zn) : e.push(Kn))),
                                         e
                                     );
                                 }, [p, A, S, _, f, D, i, h, g]),
@@ -8426,7 +8436,7 @@
                                 ),
                                 N = Xu(M),
                                 I = (0, s.useCallback)(() => {
-                                    L.includes(Kn) ? N(Kn) : L.includes(Zn) ? N(Zn) : L.includes(qn) ? N(qn) : N(Vn);
+                                    L.includes(qn) ? N(qn) : L.includes(Zn) ? N(Zn) : L.includes(Kn) ? N(Kn) : N(Vn);
                                 }, [L, N]),
                                 P = (0, s.useMemo)(() => {
                                     const e = { intCD: m, slotType: k.mH, fieldType: 0 };
@@ -8847,13 +8857,13 @@
                         Zs.apply(this, arguments)
                     );
                 }
-                const qs = (e, t) => e && o().createElement(Vs, { disabled: t }),
-                    Ks = (e) =>
+                const Ks = (e, t) => e && o().createElement(Vs, { disabled: t }),
+                    qs = (e) =>
                         !e.isComparisonHeader &&
                         ((e) => {
                             const t = e.haveSuitableEquipments,
                                 n = e.hasUnfitItems;
-                            return e.isIntroduction ? qs(!t, !n) : qs(t, !t);
+                            return e.isIntroduction ? Ks(!t, !n) : Ks(t, !t);
                         })(e),
                     Js = ({
                         tabs: e,
@@ -8879,7 +8889,7 @@
                                                 }),
                                             );
                                         case k.pi:
-                                            return Ks(u);
+                                            return qs(u);
                                         default:
                                             return null;
                                     }
@@ -9056,9 +9066,9 @@
                                 { className: m },
                                 o().createElement(ju.a, {
                                     parentId: `${e}-cancel`,
-                                    actionType: qn,
+                                    actionType: Kn,
                                     onClick: n,
-                                    show: t.includes(qn),
+                                    show: t.includes(Kn),
                                 }),
                                 o().createElement(ju.a, {
                                     parentId: `${e}-undo`,
@@ -9172,14 +9182,14 @@
                                     return (
                                         I &&
                                             !p &&
-                                            (F || e.push(Kn),
+                                            (F || e.push(qn),
                                             L ||
                                                 (d && !B
                                                     ? ((t = !F),
                                                       e.push(...((e) => (e ? [Qn, ea] : [Jn]))(r)),
                                                       e.push(ta))
                                                     : e.push(
-                                                          ((e, t, n) => ((!Boolean(e) && !t) || n ? Zn : qn))(i, d, m),
+                                                          ((e, t, n) => ((!Boolean(e) && !t) || n ? Zn : Kn))(i, d, m),
                                                       ))),
                                         !v || B || p || L || e.push(na),
                                         { availableActions: e, isDeviceClickable: t }
@@ -9212,8 +9222,8 @@
                                               }),
                                     ];
                                 }, [_, t, n, a, r, d, p, L]),
-                                q = Z[0],
-                                K = Z[1],
+                                K = Z[0],
+                                q = Z[1],
                                 J = (0, s.useMemo)(
                                     () =>
                                         N
@@ -9238,8 +9248,8 @@
                                 parentId: P,
                                 mediaSize: M,
                                 name: e,
-                                tooltipArgs: q,
-                                contextMenuArgs: K,
+                                tooltipArgs: K,
+                                contextMenuArgs: q,
                                 imageSource: J,
                                 isCurrent: F,
                                 isActive: I,
@@ -9356,19 +9366,20 @@
                             C = b.onFilterChanged,
                             A = b.onFilterReset,
                             D = b.hasUnfitItems,
-                            F = (0, w.m)(`${ko}.filter`),
-                            B = (0, w.m)(`${ko}.tabs`),
-                            y = (0, w.m)(ko, !1).onIntroPassed,
-                            S =
+                            F = b.isOptDeviceRestored,
+                            B = (0, w.m)(`${ko}.filter`),
+                            y = (0, w.m)(`${ko}.tabs`),
+                            S = (0, w.m)(ko, !1).onIntroPassed,
+                            k =
                                 c &&
                                 (null == (t = c[0]) ||
                                 null == (n = t.value.sections[0]) ||
                                 null == (a = n.value.slots[l])
                                     ? void 0
                                     : a.value),
-                            k = B.selectedTabName,
-                            T = (0, w.m)(`${ko}.slots`).length,
-                            L = (0, s.useMemo)(
+                            T = y.selectedTabName,
+                            L = (0, w.m)(`${ko}.slots`).length,
+                            M = (0, s.useMemo)(
                                 () =>
                                     !e &&
                                     p &&
@@ -9376,18 +9387,19 @@
                                         'div',
                                         { className: So },
                                         o().createElement(wo, { selectedSlot: l, modelPath: ko, isDisabled: p }),
-                                        o().createElement(Kr, {
+                                        o().createElement(qr, {
+                                            isOptDeviceRestored: F,
                                             slotsType: E,
                                             haveSuitableEquipments: m.length > 0,
                                             buttonLabel: To,
-                                            onIntroPassed: y,
+                                            onIntroPassed: S,
                                         }),
                                     ),
-                                [e, p, E, m.length, l, y],
+                                [e, p, l, F, E, m.length, S],
                             ),
-                            M = {
-                                tabs: B,
-                                filter: F,
+                            N = {
+                                tabs: y,
+                                filter: B,
                                 onFilterChanged: C,
                                 onFilterReset: A,
                                 onTabChanged: f,
@@ -9398,18 +9410,18 @@
                                     hasUnfitItems: D,
                                 },
                                 selectedSlotSpecialization:
-                                    null == S || null == (r = S.specializations.specializations[0])
+                                    null == k || null == (r = k.specializations.specializations[0])
                                         ? void 0
                                         : r.value.name,
                             };
                         return o().createElement(x.Ar, {
                             compare: e,
-                            header: o().createElement(Js, M),
+                            header: o().createElement(Js, N),
                             content:
-                                L ||
+                                M ||
                                 o().createElement(
                                     jn,
-                                    { selectedSlotId: l, scrollAreaKey: k, updateKey: `${F.selectedFilterCount}:${T}` },
+                                    { selectedSlotId: l, scrollAreaKey: T, updateKey: `${B.selectedFilterCount}:${L}` },
                                     o().createElement(wo, {
                                         compare: e,
                                         selectedSlot: l,
@@ -9482,7 +9494,7 @@
                         }) => {
                             const _ = (0, s.useMemo)(() => n === x.cJ.Tiny, [n]),
                                 d = (0, s.useMemo)(() => a === t, [a, t]),
-                                m = (0, s.useMemo)(() => u === Kn || 'drag_drop' === u, [u]),
+                                m = (0, s.useMemo)(() => u === qn || 'drag_drop' === u, [u]),
                                 p = (0, s.useMemo)(
                                     () => (m ? (_ ? (d ? 'Bottom' : 'Top') : d ? 'Right' : 'Left') : ''),
                                     [d, _, m],
@@ -9823,7 +9835,7 @@
                         specifications: 'Shell_specifications_33',
                     },
                     Zo = R.strings.item_types.shell.kinds,
-                    qo = ({
+                    Ko = ({
                         type: e,
                         intCD: t,
                         imageName: n,
@@ -9933,7 +9945,7 @@
                             ),
                         );
                     },
-                    Ko = { base: 'Swap_base_91', base__tiny: 'Swap_base__tiny_4f' },
+                    qo = { base: 'Swap_base_91', base__tiny: 'Swap_base__tiny_4f' },
                     Jo = o().memo(
                         ({ id: e, onSwap: t, mediaSize: n, hoverSound: a = 'highlight', clickSound: r = 'play' }) => {
                             const u = (0, s.useCallback)(() => {
@@ -9942,7 +9954,7 @@
                                 i = (0, s.useCallback)(() => {
                                     a && (0, De.G)(a);
                                 }, [a]),
-                                c = l()(Ko.base, Ko[`base__${n}`]);
+                                c = l()(qo.base, qo[`base__${n}`]);
                             return o().createElement('div', {
                                 id: `swap-${e}`,
                                 onClick: u,
@@ -9993,7 +10005,7 @@
                         g = n - t,
                         f = (0, s.useCallback)(
                             (e) => {
-                                (E || u({ actionType: Kn, leftID: e, rightID: e + 1 }), b(!0));
+                                (E || u({ actionType: qn, leftID: e, rightID: e + 1 }), b(!0));
                             },
                             [u, E],
                         ),
@@ -10025,7 +10037,7 @@
                                             'div',
                                             { className: Qo.shell },
                                             o().createElement(
-                                                qo,
+                                                Ko,
                                                 ei({}, e, {
                                                     clipCount: a,
                                                     maxCount: n,
@@ -10815,8 +10827,8 @@
                                 U = j[0],
                                 V = j[1],
                                 Z = (0, i.useState)(window.innerHeight),
-                                q = Z[0],
-                                K = Z[1],
+                                K = Z[0],
+                                q = Z[1],
                                 J = ((e, t) => {
                                     const n = Array.isArray(e) ? e : [e];
                                     return !t && n.length > 1 ? n.slice(0, 1) : n;
@@ -10826,7 +10838,7 @@
                                 te = Boolean(ee ? G : D);
                             var ne, ae;
                             ((ne = () => {
-                                K(window.innerHeight);
+                                q(window.innerHeight);
                             }),
                                 (ae = []),
                                 (0, i.useEffect)(
@@ -10859,13 +10871,13 @@
                             const se = (0, i.useCallback)(() => {
                                 if (!W.current || !$.current) return;
                                 const e = t && t.current,
-                                    n = e ? e.getBoundingClientRect().bottom : q,
+                                    n = e ? e.getBoundingClientRect().bottom : K,
                                     a =
                                         W.current.getBoundingClientRect().bottom +
                                             $.current.getBoundingClientRect().height >
                                         n;
                                 a !== z.current.listAbove && ((z.current.listAbove = a), V(a));
-                            }, [t, q]);
+                            }, [t, K]);
                             (0, i.useEffect)(() => (0, s.v)(se), [se, E, n.length]);
                             const oe = (0, i.useCallback)(
                                     (e) => {
@@ -12513,6 +12525,6 @@
                 n = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (n.forEach(t.bind(null, 0)), (n.push = t.bind(null, n.push.bind(n))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [727], () => __webpack_require__(1434));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [727], () => __webpack_require__(7273));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

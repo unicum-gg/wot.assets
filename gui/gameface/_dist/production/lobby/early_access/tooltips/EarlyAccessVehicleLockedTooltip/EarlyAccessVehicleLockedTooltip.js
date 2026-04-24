@@ -335,6 +335,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1273,33 +1274,33 @@
                     }, k),
                     H = I[0],
                     V = I[1],
-                    j = {
+                    K = {
                         base: 'App_base_25',
                         header: 'App_header_54',
                         info: 'App_info_f9',
                         info__icon: 'App_info__icon_eb',
                         separator: 'App_separator_a2',
                     },
-                    K = R.strings.tooltips.techTreePage.earlyAccessVehicleLockedTooltip,
-                    Y = (0, c.Pi)(() => {
+                    Y = R.strings.tooltips.techTreePage.earlyAccessVehicleLockedTooltip,
+                    j = (0, c.Pi)(() => {
                         const u = V().model.root.get().willAvailableTimestamp;
                         return r().createElement(
                             'div',
-                            { className: j.base },
-                            r().createElement('div', { className: j.header }, K.header()),
-                            r().createElement('div', { className: j.body }, K.body()),
-                            r().createElement('div', { className: j.separator }),
+                            { className: K.base },
+                            r().createElement('div', { className: K.header }, Y.header()),
+                            r().createElement('div', { className: K.body }, Y.body()),
+                            r().createElement('div', { className: K.separator }),
                             r().createElement(
                                 'div',
-                                { className: j.info },
-                                r().createElement('div', { className: j.info__icon }),
-                                r().createElement(y, { text: K.willAvailable(), binding: Object.assign({}, P(u)) }),
+                                { className: K.info },
+                                r().createElement('div', { className: K.info__icon }),
+                                r().createElement(y, { text: Y.willAvailable(), binding: Object.assign({}, P(u)) }),
                             ),
                         );
                     });
                 engine.whenReady.then(() => {
                     s().render(
-                        r().createElement(H, null, r().createElement(C, null, r().createElement(Y, null))),
+                        r().createElement(H, null, r().createElement(C, null, r().createElement(j, null))),
                         document.getElementById('root'),
                     );
                 });

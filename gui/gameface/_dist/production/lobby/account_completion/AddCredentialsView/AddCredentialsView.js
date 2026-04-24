@@ -305,6 +305,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1308,9 +1309,9 @@
                         var x;
                     },
                     j = ['children'];
-                function X() {
+                function K() {
                     return (
-                        (X =
+                        (K =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1319,10 +1320,10 @@
                                 }
                                 return u;
                             }),
-                        X.apply(this, arguments)
+                        K.apply(this, arguments)
                     );
                 }
-                const K = (u) => {
+                const X = (u) => {
                         let e = u.children,
                             t = (function (u, e) {
                                 if (null == u) return {};
@@ -1335,7 +1336,7 @@
                             })(u, j);
                         return a().createElement(
                             z,
-                            X(
+                            K(
                                 {
                                     contentId:
                                         R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent(
@@ -1424,7 +1425,7 @@
                             o = null == r ? void 0 : r.contentId;
                         return s || o
                             ? a().createElement(z, eu({}, e, { contentId: s || o }), n)
-                            : a().createElement(K, e, n);
+                            : a().createElement(X, e, n);
                     },
                     nu = 'default',
                     au = 'search',
@@ -1799,8 +1800,8 @@
                             ),
                             z = (0, n.useCallback)((u) => w && w(u), [w]),
                             j = (0, n.useCallback)((u) => v && v(u), [v]),
-                            X = (0, n.useCallback)((u) => b && b(u), [b]),
-                            K = (0, n.useMemo)(
+                            K = (0, n.useCallback)((u) => b && b(u), [b]),
+                            X = (0, n.useMemo)(
                                 () =>
                                     L.withTypeIcon
                                         ? (function (u, e) {
@@ -1820,7 +1821,7 @@
                             su = O()(hu.base, hu[`base__${l}`], hu[`base__${o}`], T);
                         return a().createElement(
                             'div',
-                            { id: e, className: su, onMouseEnter: q, onMouseDown: j, onMouseUp: z, onMouseLeave: X },
+                            { id: e, className: su, onMouseEnter: q, onMouseDown: j, onMouseUp: z, onMouseLeave: K },
                             a().createElement(
                                 tu,
                                 { tooltipArgs: E },
@@ -1829,7 +1830,7 @@
                                     wu(
                                         {
                                             componentId: e ? `${e}-inputControl` : void 0,
-                                            iconSource: K,
+                                            iconSource: X,
                                             size: l,
                                             type: s,
                                             variant: J,
@@ -2075,7 +2076,7 @@
                         return void 0 !== this.props.value && void 0 !== e ? e : null;
                     }
                 }
-                let ju, Xu, Ku, Qu, Zu, Ju, ue;
+                let ju, Ku, Xu, Qu, Zu, Ju, ue;
                 ((zu.defaultProps = { format: 'integral' }),
                     (function (u) {
                         ((u.Items = 'items'),
@@ -2132,6 +2133,7 @@
                             (u.VehicleSelect = 'vehicleSelect'),
                             (u.StyleProgress = 'styleProgress'),
                             (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                            (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (u.LootBoxToken = 'lootBoxToken'),
                             (u.GoldenTicket = 'birthday2025_golden_ticket'),
                             (u.PostStamp = 'giftsystem_4_stamp'),
@@ -2172,13 +2174,12 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
-                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
                             (u.BattleBadge = 'dossier_badge'),
                             (u.BattleAchievement = 'dossier_achievement'));
-                    })(Xu || (Xu = {})),
+                    })(Ku || (Ku = {})),
                     (function (u) {
                         ((u.Big = 'big'),
                             (u.Small = 'small'),
@@ -2191,7 +2192,7 @@
                             (u.S128x100 = 's128x100'),
                             (u.S80x80 = 's80x80'),
                             (u.S48x48 = 's48x48'));
-                    })(Ku || (Ku = {})),
+                    })(Xu || (Xu = {})),
                     (function (u) {
                         ((u.MULTI = 'multi'),
                             (u.CURRENCY = 'currency'),
@@ -2290,7 +2291,7 @@
                 })(se || (se = {}));
                 const re = ['engravings', 'backgrounds'],
                     oe = ['engraving', 'background'],
-                    ie = (u, e = Ku.Small) => {
+                    ie = (u, e = Xu.Small) => {
                         const t = u.name,
                             n = u.type,
                             a = u.value,
@@ -2299,17 +2300,17 @@
                             o = u.dogTagType,
                             i = ((u) => {
                                 switch (u) {
-                                    case Ku.S600x450:
+                                    case Xu.S600x450:
                                         return 'c_600x450';
-                                    case Ku.S400x300:
+                                    case Xu.S400x300:
                                         return 'c_400x300';
-                                    case Ku.S296x222:
+                                    case Xu.S296x222:
                                         return 'c_296x222';
-                                    case Ku.S232x174:
+                                    case Xu.S232x174:
                                         return 'c_232x174';
-                                    case Ku.Big:
+                                    case Xu.Big:
                                         return 'c_80x80';
-                                    case Ku.Small:
+                                    case Xu.Small:
                                         return 'c_48x48';
                                     default:
                                         return u;
@@ -2333,9 +2334,9 @@
                             case 'battleToken':
                                 return ((u, e) => {
                                     switch (e) {
-                                        case Ku.Big:
+                                        case Xu.Big:
                                             return u.iconBig.replace('..', 'img://gui');
-                                        case Ku.Small:
+                                        case Xu.Small:
                                             return u.iconSmall.replace('..', 'img://gui');
                                         default:
                                             return `R.images.gui.maps.icons.quests.bonuses.${e}.${u.icon}`;
@@ -2363,21 +2364,21 @@
                             case 'dossier_achievement':
                                 return `R.images.gui.maps.icons.achievement.${((u) => {
                                     switch (u) {
-                                        case Ku.S600x450:
+                                        case Xu.S600x450:
                                             return 'c_600x450';
-                                        case Ku.S400x300:
+                                        case Xu.S400x300:
                                             return 'c_400x300';
-                                        case Ku.S296x222:
+                                        case Xu.S296x222:
                                             return 'c_296x222';
-                                        case Ku.S232x174:
+                                        case Xu.S232x174:
                                             return 'c_232x174';
-                                        case Ku.S180x135:
+                                        case Xu.S180x135:
                                             return 'big';
-                                        case Ku.Big:
-                                        case Ku.S80x80:
+                                        case Xu.Big:
+                                        case Xu.S80x80:
                                             return 'c_80x80';
-                                        case Ku.Small:
-                                        case Ku.S48x48:
+                                        case Xu.Small:
+                                        case Xu.S48x48:
                                             return 'c_48x48';
                                         default:
                                             return u;
@@ -2414,23 +2415,23 @@
                             case 'armory_coin':
                                 return `R.images.armory_yard.gui.maps.icons.token.sf${((u) => {
                                     switch (u) {
-                                        case Ku.Mini:
+                                        case Xu.Mini:
                                             return se.s32;
-                                        case Ku.Small:
-                                        case Ku.S48x48:
+                                        case Xu.Small:
+                                        case Xu.S48x48:
                                             return se.s48;
-                                        case Ku.S80x80:
-                                        case Ku.Big:
+                                        case Xu.S80x80:
+                                        case Xu.Big:
                                             return se.s80;
-                                        case Ku.S128x100:
+                                        case Xu.S128x100:
                                             return se.s116;
-                                        case Ku.S180x135:
-                                        case Ku.S232x174:
-                                        case Ku.S296x222:
+                                        case Xu.S180x135:
+                                        case Xu.S232x174:
+                                        case Xu.S296x222:
                                             return se.s296;
-                                        case Ku.S400x300:
+                                        case Xu.S400x300:
                                             return se.s400;
-                                        case Ku.S600x450:
+                                        case Xu.S600x450:
                                             return se.s600;
                                     }
                                 })(e)}`;
@@ -2480,7 +2481,7 @@
                         name: u,
                         image: e,
                         isPeriodic: t = !1,
-                        size: n = Ku.Big,
+                        size: n = Xu.Big,
                         special: s,
                         value: r,
                         valueType: o,
@@ -2630,7 +2631,7 @@
                                 return u.map(({ value: u }) => {
                                     return {
                                         name: u.name,
-                                        image: ie(u, Ku.Big),
+                                        image: ie(u, Xu.Big),
                                         special: u.overlayType,
                                         value: u.value,
                                         valueType:
@@ -3347,9 +3348,9 @@
                         'isConfirmEnabled',
                         'onConfirmClicked',
                     ];
-                function Xe() {
+                function Ke() {
                     return (
-                        (Xe =
+                        (Ke =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -3358,10 +3359,10 @@
                                 }
                                 return u;
                             }),
-                        Xe.apply(this, arguments)
+                        Ke.apply(this, arguments)
                     );
                 }
-                const Ke = () => {
+                const Xe = () => {
                     const u = y(),
                         e = u.bonuses,
                         t = u.questID,
@@ -3378,8 +3379,8 @@
                             for (n = 0; n < s.length; n++) ((t = s[n]), e.indexOf(t) >= 0 || (a[t] = u[t]));
                             return a;
                         })(u, je),
-                        c = Xe({}, y('model.email')),
-                        E = Xe({}, y('model.password')),
+                        c = Ke({}, y('model.email')),
+                        E = Ke({}, y('model.password')),
                         _ = l.warningText,
                         A = r ? 3 : 2,
                         F = ((u = 2) => {
@@ -3449,7 +3450,7 @@
                         }, [F, c.errorMessage, E.errorMessage, r]),
                         a().createElement(
                             Ye,
-                            Xe({}, l, F[d], {
+                            Ke({}, l, F[d], {
                                 isConfirmEnabled: o,
                                 onConfirmClicked: m,
                                 escapeHandler: C,
@@ -3461,8 +3462,8 @@
                                     title: s,
                                 }),
                             }),
-                            a().createElement(Yu, Xe({}, c, F[0], { classMix: ze.field, isErrorVisible: !B })),
-                            r && a().createElement(be, Xe({}, E, F[1], { classMix: g.password, isErrorVisible: !B })),
+                            a().createElement(Yu, Ke({}, c, F[0], { classMix: ze.field, isErrorVisible: !B })),
+                            r && a().createElement(be, Ke({}, E, F[1], { classMix: g.password, isErrorVisible: !B })),
                         )
                     );
                 };
@@ -3472,7 +3473,7 @@
                     engine.whenReady.then(() => {
                         r().render(a().createElement(o, { name: Qe }, u), e, t);
                     });
-                })(a().createElement(p, null, a().createElement(Ke, null)), document.getElementById('root'));
+                })(a().createElement(p, null, a().createElement(Xe, null)), document.getElementById('root'));
             },
         },
         __webpack_module_cache__ = {},

@@ -33,13 +33,13 @@
                         addPreloadTexture: () => T,
                         children: () => a,
                         displayStatus: () => p,
-                        displayStatusIs: () => z,
+                        displayStatusIs: () => W,
                         events: () => h,
-                        extraSize: () => K,
+                        extraSize: () => z,
                         forceTriggerMouseMove: () => j,
                         freezeTextureBeforeResize: () => D,
                         getBrowserTexturePath: () => P,
-                        getDisplayStatus: () => W,
+                        getDisplayStatus: () => K,
                         getScale: () => I,
                         getSize: () => R,
                         getViewGlobalPosition: () => A,
@@ -259,11 +259,11 @@
                 function j() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function W() {
+                function K() {
                     return viewEnv.getShowingStatus();
                 }
-                const z = Object.keys(p).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === p[t]), e), {}),
-                    K = {
+                const W = Object.keys(p).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === p[t]), e), {}),
+                    z = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -304,6 +304,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1241,7 +1242,7 @@
                     H = n.n(V);
                 const U = (e) => ({ backgroundImage: `url('${e}')` }),
                     j = 'BonusInfoIcon_bonusInfoIcon_3d',
-                    W = () => {
+                    K = () => {
                         const e = (0, s.useMemo)(() => U(R.images.gui.maps.icons.platoon.common.info()), []);
                         return c().createElement(
                             _,
@@ -1254,7 +1255,7 @@
                             c().createElement('div', { className: j, style: e }),
                         );
                     },
-                    z = {
+                    W = {
                         base: 'CButton_base_40',
                         base__main: 'CButton_base__main_42',
                         base__primary: 'CButton_base__primary_7f',
@@ -1277,7 +1278,7 @@
                         base__highlightActive: 'CButton_base__highlightActive_b2',
                         content: 'CButton_content_cc',
                     };
-                let K, q;
+                let z, q;
                 (!(function (e) {
                     ((e.main = 'main'),
                         (e.primary = 'primary'),
@@ -1285,7 +1286,7 @@
                         (e.primaryRed = 'primaryRed'),
                         (e.secondary = 'secondary'),
                         (e.ghost = 'ghost'));
-                })(K || (K = {})),
+                })(z || (z = {})),
                     (function (e) {
                         ((e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'));
                     })(q || (q = {})));
@@ -1361,18 +1362,18 @@
                             [a, w],
                         ),
                         x = r()(
-                            z.base,
-                            z[`base__${o}`],
+                            W.base,
+                            W[`base__${o}`],
                             {
-                                [z.base__disabled]: a,
-                                [z[`base__${t}`]]: t,
-                                [z.base__focus]: f,
-                                [z.base__highlightActive]: O,
-                                [z.base__firstHover]: T,
+                                [W.base__disabled]: a,
+                                [W[`base__${t}`]]: t,
+                                [W.base__focus]: f,
+                                [W.base__highlightActive]: O,
+                                [W.base__firstHover]: T,
                             },
                             i,
                         ),
-                        F = r()(z.state, z.state__default);
+                        F = r()(W.state, W.state__default);
                     return (
                         (0, s.useEffect)(
                             () => (
@@ -1398,29 +1399,29 @@
                                 onMouseLeave: B,
                                 onClick: N,
                             },
-                            o !== K.ghost &&
+                            o !== z.ghost &&
                                 c().createElement(
                                     c().Fragment,
                                     null,
-                                    c().createElement('div', { className: z.back }),
-                                    c().createElement('span', { className: z.texture }),
+                                    c().createElement('div', { className: W.back }),
+                                    c().createElement('span', { className: W.texture }),
                                 ),
                             c().createElement(
                                 'span',
                                 { className: F },
-                                c().createElement('span', { className: z.stateDisabled }),
-                                c().createElement('span', { className: z.stateHighlightHover }),
-                                c().createElement('span', { className: z.stateHighlightActive }),
+                                c().createElement('span', { className: W.stateDisabled }),
+                                c().createElement('span', { className: W.stateHighlightHover }),
+                                c().createElement('span', { className: W.stateHighlightActive }),
                             ),
                             c().createElement(
                                 'span',
-                                { className: z.content, lang: R.strings.settings.LANGUAGE_CODE() },
+                                { className: W.content, lang: R.strings.settings.LANGUAGE_CODE() },
                                 e,
                             ),
                         )
                     );
                 };
-                G.defaultProps = { type: K.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                G.defaultProps = { type: z.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const $ = (0, s.memo)(G);
                 function Y() {
                     return (
@@ -1455,7 +1456,7 @@
                                     { className: i },
                                     c().createElement(
                                         $,
-                                        Y({ type: K.primary, size: q.small, onClick: l, disabled: !t }, r),
+                                        Y({ type: z.primary, size: q.small, onClick: l, disabled: !t }, r),
                                         o || e,
                                     ),
                                 ),
@@ -1481,19 +1482,20 @@
                         }
                         return '';
                     },
-                    oe = (e) => {
-                        const t = ne(),
-                            n = te(t);
-                        let o,
-                            r = e;
-                        for (; null !== (o = J.exec(e)); ) {
-                            const e = o[0].match(/<script (defer|defer="defer") src="(.*?)">/);
+                    oe = (e, t) => {
+                        const n = ne(),
+                            o = te(n);
+                        let r,
+                            a = e;
+                        for (; null !== (r = J.exec(e)); ) {
+                            const e = r[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
-                                const t = n + e[2].replace(Q, '');
-                                r = r.replace(e[2], t);
+                                const n = o + e[2].replace(Q, '');
+                                ((a = a.replace(e[2], n)),
+                                    (a = a.replace('<div id="root"', `<div data-root-id=${t} id="root"`)));
                             }
                         }
-                        return r;
+                        return a;
                     },
                     re = 'SubView_base_df',
                     ae = 'subViews.onChanged',
@@ -1515,7 +1517,7 @@
                         const a = (0, s.useState)(''),
                             l = a[0],
                             d = a[1],
-                            u = (0, s.useMemo)(() => ({ __html: oe(l) }), [l]),
+                            u = (0, s.useMemo)(() => ({ __html: oe(l, e) }), [l, e]),
                             _ = (0, s.useMemo)(() => window.subViews.addChildChangedCallback(e), [e]),
                             m = (0, s.useState)(!1),
                             v = m[0],
@@ -1654,7 +1656,7 @@
                                         c().createElement('div', { className: ve }),
                                         c().createElement('div', { className: we }),
                                     ),
-                                    c().createElement(W, null),
+                                    c().createElement(K, null),
                                 ),
                             ),
                             c().createElement(se, { id: R.views.lobby.platoon.subViews.TiersLimit('resId') }),
@@ -1756,7 +1758,7 @@
                             r = (0, s.useCallback)(() => {
                                 (o.onClick(), E(R.sounds.gui_platoon_2_cancel_search()));
                             }, [o]),
-                            a = (0, s.useMemo)(() => ({ type: K.secondary, size: q.small }), []);
+                            a = (0, s.useMemo)(() => ({ type: z.secondary, size: q.small }), []);
                         return c().createElement(
                             'div',
                             { className: Ne },
@@ -1788,7 +1790,7 @@
                     },
                     Ue = 'SearchingDropdown_base_41',
                     je = (e) => (e >= 10 ? e.toString() : `0${e}`),
-                    We = (e) => {
+                    Ke = (e) => {
                         if (!e) return ' ';
                         const t = ((e) => Math.floor(new Date().getTime() / 1e3) - e)(e);
                         return ((e) => {
@@ -1800,13 +1802,13 @@
                 window.onload = () => {
                     document.body.style.margin = '0';
                 };
-                const ze = () => {
+                const We = () => {
                     const e = x(),
                         t = e.searchStartTime,
                         n = e.backgroundImage,
                         o = e.onOutsideClick;
                     window.decorator = { directionType: y.Bottom, isCloseBtnVisible: !1 };
-                    const r = (0, s.useState)(We(t)),
+                    const r = (0, s.useState)(Ke(t)),
                         a = r[0],
                         i = r[1];
                     (0, s.useEffect)(() =>
@@ -1818,7 +1820,7 @@
                             return () => {
                                 ('function' == typeof n && n(), clearTimeout(o));
                             };
-                        })(() => i(We(t)), 1e3),
+                        })(() => i(Ke(t)), 1e3),
                     );
                     const l = (0, s.useCallback)(() => {
                         (o(), (0, F.Vg)());
@@ -1840,7 +1842,7 @@
                     );
                 };
                 engine.whenReady.then(() => {
-                    H().render(c().createElement(ze, null), document.getElementById('root'));
+                    H().render(c().createElement(We, null), document.getElementById('root'));
                 });
             },
         },

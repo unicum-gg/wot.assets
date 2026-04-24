@@ -26,57 +26,357 @@
     z-index: 1;
 }
 
+.mediaExtraLarge .Caption_label_b8 {
+    color: #f2f2f7;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
 .Caption_line_63 {
-    flex: 0 0 345rem;
-    width: 345rem;
-    height: 2rem;
-    background: url('R.images.historical_battles.gui.maps.icons.battle.eventStats.bg.line_left') no-repeat 50% / contain;
+    width: 298rem;
+    height: 1rem;
+    background-image: linear-gradient(90deg, rgba(254, 254, 236, 0.6) -80%, rgba(0, 0, 0, 0) 100%);
+    transform: rotate(180deg);
 }
 
 .Caption_line__right_c4 {
-    transform: rotate(180deg);
+    transform: none;
+}
+
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
 }
 
 .Header_base_27 {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    width: 1920rem;
-    height: 157rem;
-    background: url('R.images.historical_battles.gui.maps.icons.battle.eventStats.bg.header') no-repeat 50% / contain;
     color: #e9e2bf;
+}
+.Header_bg_3f {
+    width: 100%;
+    height: 156rem;
+    background: #000;
+    opacity: 0.5;
+}
+.mediaExtraLarge .Header_bg_3f {
+    height: 208rem;
+}
+.Header_content_cd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 50%;
-    z-index: 3;
-    transform: translateX(-50%);
-}
-.Header_mapInfo_ae {
-    width: 350rem;
-    text-align: right;
-}
-.mediaMedium .Header_mapInfo_ae {
-    width: 500rem;
+    z-index: 1;
+    transform: translate(-50%, -50%);
 }
 .Header_mapName_ea {
     color: #e9e2bf;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
+    width: 50%;
+    margin-right: 8rem;
+    text-align: right;
+}
+.mediaExtraLarge .Header_mapName_ea {
+    color: #f2f2f7;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
 }
 .Header_icon_c2 {
     width: 136rem;
     height: 136rem;
     background: no-repeat center / cover;
 }
+.mediaExtraLarge .Header_icon_c2 {
+    width: 181rem;
+    height: 181rem;
+}
 .Header_battleInfo_ca {
     display: flex;
     flex-direction: column;
-    width: 350rem;
+    width: 50%;
+    margin-right: 5rem;
 }
-.mediaMedium .Header_battleInfo_ca {
-    width: 500rem;
+.mediaSmall .Header_battleInfo_ca {
+    margin-right: 15rem;
 }
 .Header_battleMode_5f {
     color: #e9e2bf;
@@ -85,42 +385,33 @@
     line-height: 1.1;
     margin-bottom: 3rem;
 }
+.mediaExtraLarge .Header_battleMode_5f {
+    color: #f2f2f7;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
 .Header_battleTask_0b {
     color: #8c8c7e;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+    width: 180rem;
 }
-
-.SortHelper_base_5a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+.mediaSmall .Header_battleTask_0b {
+    width: 360rem;
 }
-
-.SortHelper_base__active_ae {
-    cursor: pointer;
+.mediaMedium .Header_battleTask_0b {
+    width: 390rem;
 }
-
-.SortHelper_arrow_5f {
-    width: 118rem;
-    height: 6rem;
-    background: url('R.images.historical_battles.gui.maps.icons.common.teamList.bg.filterArrow') no-repeat 0 / 122rem
-        6rem;
-    position: absolute;
-    bottom: -1rem;
-    left: 50%;
-    transform: translateX(-50%) rotate(-180deg);
+.mediaLarge .Header_battleTask_0b {
+    width: 500rem;
 }
-
-.SortHelper_base__sortAsc_7b .SortHelper_arrow_5f {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
-    bottom: -6rem;
+.mediaExtraLarge .Header_battleTask_0b {
+    color: #8c8c7e;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
 }
 
 .CellDecorator_base_50 {
@@ -130,19 +421,35 @@
 }
 
 .CellDecorator_base__small_4f.CellDecorator_base__player_58 {
-    width: 294rem;
+    width: 263rem;
+}
+
+.mediaExtraLarge .CellDecorator_base__small_4f.CellDecorator_base__player_58 {
+    width: 400rem;
 }
 
 .CellDecorator_base__small_4f.CellDecorator_base__stats_a6 {
-    width: 70rem;
+    width: 80rem;
+}
+
+.mediaExtraLarge .CellDecorator_base__small_4f.CellDecorator_base__stats_a6 {
+    width: 120rem;
 }
 
 .CellDecorator_base__medium_94.CellDecorator_base__player_58 {
     width: 266rem;
 }
 
+.mediaExtraLarge .CellDecorator_base__medium_94.CellDecorator_base__player_58 {
+    width: 400rem;
+}
+
 .CellDecorator_base__medium_94.CellDecorator_base__stats_a6 {
     width: 80rem;
+}
+
+.mediaExtraLarge .CellDecorator_base__medium_94.CellDecorator_base__stats_a6 {
+    width: 120rem;
 }
 
 .CellDecorator_base__big_28.CellDecorator_base__player_58 {
@@ -153,11 +460,20 @@
     width: 90rem;
 }
 
-.CellDecorator_base_50.CellDecorator_base__vehicle_21,
-.CellDecorator_base_50.CellDecorator_base__vehicleIcon_bc,
-.CellDecorator_base_50.CellDecorator_base__role_c2,
-.CellDecorator_base_50.CellDecorator_base__roleIcon_21 {
-    width: 120rem;
+.CellDecorator_base_50.CellDecorator_base__vehicle_21 {
+    width: 140rem;
+}
+
+.mediaExtraLarge .CellDecorator_base_50.CellDecorator_base__vehicle_21 {
+    width: 210rem;
+}
+
+.CellDecorator_base_50.CellDecorator_base__vehicleIcon_bc {
+    width: 140rem;
+}
+
+.mediaExtraLarge .CellDecorator_base_50.CellDecorator_base__vehicleIcon_bc {
+    width: 210rem;
 }
 
 .CellDecorator_base__bordered_bd {
@@ -183,7 +499,6 @@
     position: absolute;
     top: 50%;
     left: 0;
-    z-index: 1;
 }
 
 .CellDecorator_children_2b {
@@ -194,7 +509,6 @@
     left: 0;
     display: flex;
     align-items: center;
-    z-index: 2;
 }
 
 .CellDecorator_base__stats_a6 .CellDecorator_children_2b,
@@ -202,25 +516,17 @@
     justify-content: center;
 }
 
-.CellDecorator_base__vehicleIcon_bc .CellDecorator_children_2b {
-    padding-left: 18rem;
-}
-
-.CellDecorator_base__roleIcon_21 .CellDecorator_children_2b {
-    padding-left: 10rem;
-}
-
 .CellDecorator_base__player_58 .CellDecorator_children_2b {
     padding-left: 23rem;
 }
 
-.CellDecorator_base__vehicle_21 .CellDecorator_children_2b,
-.CellDecorator_base__role_c2 .CellDecorator_children_2b {
-    padding-left: 16rem;
+.CellDecorator_base__vehicle_21 .CellDecorator_children_2b {
+    margin-left: -5rem;
+    padding-left: 0;
 }
 
 .RowDecorator_base_c9 {
-    height: 43rem;
+    height: 44rem;
     border-bottom-width: 1rem;
     border-bottom-style: solid;
     border-image-source: linear-gradient(
@@ -235,10 +541,13 @@
     position: relative;
 }
 
-.RowDecorator_base__hovered_7f {
+.RowDecorator_base__hoverEnabled_01 {
     cursor: pointer;
 }
 
+.mediaExtraLarge .RowDecorator_base_c9 {
+    height: 60rem;
+}
 .RowDecorator_childrenWrapper_9e {
     display: flex;
     flex-direction: row;
@@ -248,23 +557,18 @@
     position: relative;
     z-index: 3;
 }
-
 .RowDecorator_base__redBg_17 .RowDecorator_childrenWrapper_9e {
     opacity: 0.5;
 }
-
 .RowDecorator_base__defaultText_a2 .RowDecorator_childrenWrapper_9e {
     color: #f2f2f7;
 }
-
 .RowDecorator_base__goldText_62 .RowDecorator_childrenWrapper_9e {
     color: #feab34;
 }
-
 .RowDecorator_base__disable_95 .RowDecorator_childrenWrapper_9e {
     opacity: 0.5;
 }
-
 .RowDecorator_hoverBg_0f {
     position: absolute;
     top: 0;
@@ -281,14 +585,12 @@
     opacity: 0;
     z-index: 2;
 }
-
-.RowDecorator_base__hovered_7f .RowDecorator_hoverBg_0f {
+.RowDecorator_base__hoverEnabled_01:hover .RowDecorator_hoverBg_0f {
     opacity: 1;
     top: -1rem;
     bottom: -1rem;
     transition: opacity ease-in-out 0.1s;
 }
-
 .RowDecorator_backgroundHelper_16 {
     position: absolute;
     top: 0;
@@ -297,7 +599,6 @@
     left: 0;
     z-index: 1;
 }
-
 .RowDecorator_base__goldBg_d0 .RowDecorator_backgroundHelper_16 {
     background: linear-gradient(
         90deg,
@@ -309,7 +610,6 @@
     top: -1rem;
     bottom: -1rem;
 }
-
 .RowDecorator_base__redBg_17 .RowDecorator_backgroundHelper_16 {
     background: linear-gradient(
         90deg,
@@ -344,9 +644,46 @@
     background: no-repeat 50% / contain;
 }
 
+.mediaExtraLarge .HeaderIcon_icon_56 {
+    width: 48rem;
+    height: 48rem;
+}
+
+.SortHelper_base_5a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.SortHelper_base__active_ae {
+    cursor: pointer;
+}
+
+.SortHelper_arrow_5f {
+    width: 118rem;
+    height: 6rem;
+    background: url('R.images.historical_battles.gui.maps.icons.common.teamList.bg.filterArrow') no-repeat 0 / 122rem
+        6rem;
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%) rotate(-180deg);
+}
+
+.SortHelper_base__sortAsc_7b .SortHelper_arrow_5f {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: -6rem;
+}
+
 .HeaderRow_base_a5 {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .HeaderRow_text_ff {
@@ -354,10 +691,18 @@
 }
 
 .HeaderRow_text__tabWindow_a5 {
-    color: #e9e2bf;
-    font-size: 15rem;
+    color: #f2f2f7;
+    font-size: 14rem;
     font-weight: 700;
     line-height: 1.15;
+    opacity: 0.5;
+}
+
+.mediaExtraLarge .HeaderRow_text__tabWindow_a5 {
+    color: #f2f2f7;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 .HeaderRow_text__leaderBoard_f5 {
@@ -366,6 +711,10 @@
     font-weight: 700;
     line-height: 1.15;
     opacity: 0.5;
+}
+
+.mediaExtraLarge .HeaderRow_text_ff {
+    margin-left: 20rem;
 }
 
 .HeaderRow_cell_42 {
@@ -377,11 +726,6 @@
     justify-content: flex-start;
     width: 28rem;
     height: 20rem;
-}
-
-.HeaderRow_icon__vehicle_3f,
-.HeaderRow_icon__role_a8 {
-    justify-content: flex-start;
 }
 
 .TextOverflow_base_3b {
@@ -559,6 +903,13 @@
     color: #feab34;
 }
 
+.mediaExtraLarge .PlayerInfo_squad_21 {
+    width: 30rem;
+    height: 36rem;
+    padding-top: 7rem;
+    font-size: 18rem;
+}
+
 .PlayerInfo_banIcon_00 {
     width: 16rem;
     height: 16rem;
@@ -569,17 +920,11 @@
     transform: translateY(-50%);
 }
 
-.RoleInfo_base_5a {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.RoleInfo_icon_9a {
-    width: 16rem;
-    height: 16rem;
-    margin-right: 5rem;
-    background: no-repeat 50% / contain;
+.mediaExtraLarge .PlayerInfo_banIcon_00 {
+    width: 24rem;
+    height: 24rem;
+    top: 31rem;
+    left: -22rem;
 }
 
 .StatValueDecorator_base_92 {
@@ -594,6 +939,10 @@
     line-height: 1.15;
 }
 
+.mediaExtraLarge .StatValueDecorator_base__max_13 {
+    font-size: 24rem;
+}
+
 .StatValueDecorator_crown_0a {
     position: absolute;
     top: 50%;
@@ -605,9 +954,91 @@
     z-index: 2;
 }
 
+.mediaExtraLarge .StatValueDecorator_crown_0a {
+    width: 66rem;
+    height: 66rem;
+}
+
 .StatValueDecorator_amount_5a {
     position: relative;
     z-index: 3;
+}
+
+.Level_base_e5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25rem;
+    height: 25rem;
+    position: relative;
+}
+
+.mediaExtraLarge .Level_base_e5 {
+    width: 40rem;
+    height: 40rem;
+}
+.Level_border_0b {
+    width: 17rem;
+    height: 17rem;
+    border-radius: 2rem;
+    background: #feb44a;
+    position: absolute;
+    top: auto;
+    left: auto;
+    transform: rotate(45deg);
+}
+.mediaExtraLarge .Level_border_0b {
+    width: 28rem;
+    height: 28rem;
+}
+.Level_base__white_80 .Level_border_0b {
+    background: #fff;
+}
+.Level_innerGlow_4c {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 2rem;
+    box-shadow:
+        0 5rem 10rem #68000040 inset,
+        0 -5rem 10rem #68000040 inset;
+    background: rgb(17, 17, 17);
+    position: absolute;
+    top: auto;
+    left: auto;
+    transform: rotate(45deg);
+}
+.mediaExtraLarge .Level_innerGlow_4c {
+    width: 26rem;
+    height: 26rem;
+    box-shadow:
+        0 -6rem 12rem rgba(104, 0, 0, 0.25) inset,
+        0 6rem 12rem rgba(104, 0, 0, 0.25) inset;
+}
+.Level_text_ff {
+    margin-top: -1rem;
+    z-index: 1;
+    color: #feb44a;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.mediaExtraLarge .Level_text_ff {
+    color: #feb44a;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Level_base__white_80 .Level_text_ff {
+    color: #fff;
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.mediaExtraLarge .Level_base__white_80 .Level_text_ff {
+    color: #fff;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
 }
 
 .VehicleInfo_base_8e {
@@ -619,12 +1050,30 @@
 .VehicleInfo_icon_50 {
     width: 16rem;
     height: 16rem;
+    margin-left: 7rem;
     margin-right: 7rem;
     background: no-repeat 50% / contain;
 }
 
+.mediaExtraLarge .VehicleInfo_icon_50 {
+    width: 24rem;
+    height: 24rem;
+}
+
 .VehicleInfo_label_e9 {
     max-width: 80rem;
+}
+
+.VehicleInfo_base__white_ed .VehicleInfo_label_e9 {
+    color: #f2f2f7;
+}
+
+.mediaExtraLarge .VehicleInfo_label_e9 {
+    max-width: 140rem;
+}
+
+.VehicleInfo_level_2b {
+    margin-left: 20rem;
 }
 
 .PlayerRow_cell_81 {
@@ -640,22 +1089,19 @@
     flex-direction: column;
     align-items: center;
 }
+.mediaExtraLarge .TeamList_base_b7 {
+    color: #ced9d9;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    font-weight: 400;
+}
 
 .EventStatsApp_base_85 {
     width: 100%;
     height: 100%;
     overflow-y: hidden;
     position: relative;
-}
-
-.EventStatsApp_darkener_cf {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0.85;
-    z-index: 1;
 }
 
 .EventStatsApp_overlay_cd {
@@ -665,7 +1111,7 @@
     bottom: 0;
     left: 0;
     background: #141519;
-    z-index: 1;
+    opacity: 0.85;
 }
 
 .EventStatsApp_table_58 {
@@ -675,11 +1121,22 @@
     align-items: center;
     width: 100%;
     height: 100%;
-    margin-top: -92rem;
+    margin-top: 50rem;
     position: absolute;
-    z-index: 2;
+}
+
+.mediaMedium .EventStatsApp_table_58 {
+    margin-top: 85rem;
+}
+
+.mediaLarge .EventStatsApp_table_58 {
+    margin-top: -5rem;
+}
+
+.mediaExtraLarge .EventStatsApp_table_58 {
+    margin-top: -12rem;
 }
 
 .EventStatsApp_tableCaption_1d {
-    margin-bottom: 40rem;
+    margin-bottom: 38rem;
 }

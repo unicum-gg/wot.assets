@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (u, e, t) => {
-                t.d(e, { O: () => K });
+                t.d(e, { O: () => G });
                 var n = {};
                 (t.r(n), t.d(n, { mouse: () => s, onResize: () => A }));
                 var o = {};
@@ -33,9 +33,9 @@
                         addPreloadTexture: () => f,
                         children: () => r,
                         displayStatus: () => _,
-                        displayStatusIs: () => q,
+                        displayStatusIs: () => K,
                         events: () => C,
-                        extraSize: () => z,
+                        extraSize: () => q,
                         forceTriggerMouseMove: () => j,
                         freezeTextureBeforeResize: () => S,
                         getBrowserTexturePath: () => O,
@@ -53,7 +53,7 @@
                         setEventHandled: () => V,
                         setInputPaddingsRem: () => y,
                         setSidePaddingsRem: () => k,
-                        whenTutorialReady: () => G,
+                        whenTutorialReady: () => z,
                     }));
                 const A = a('clientResized'),
                     F = { down: a('mousedown'), up: a('mouseup'), move: a('mousemove') };
@@ -262,8 +262,8 @@
                 function W() {
                     return viewEnv.getShowingStatus();
                 }
-                const q = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
-                    z = {
+                const K = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
+                    q = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -271,13 +271,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    G = Promise.all([
+                    z = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : C.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    K = { view: i, client: o };
+                    G = { view: i, client: o };
             },
             521: (u, e, t) => {
                 let n, o;
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1388,10 +1389,10 @@
                             toggleNation: u.createCallback((u) => ({ nation: u }), 'onToggleFilter'),
                         }),
                     ),
-                    q = W[0],
-                    z = W[1],
-                    G = 'App_base_51',
-                    K = 'App_header_32',
+                    K = W[0],
+                    q = W[1],
+                    z = 'App_base_51',
+                    G = 'App_header_32',
                     Y = 'App_title_09',
                     X = 'App_divider_b5',
                     $ = 'App_body_31',
@@ -1544,7 +1545,7 @@
                     Du = (u) => R.images.gui.maps.icons.vehicleTypes.$dyn(M(u)),
                     du = (u) => R.images.gui.maps.icons.filters.nations.$dyn(M(u)),
                     Bu = (0, S.Pi)(() => {
-                        const u = z(),
+                        const u = q(),
                             e = u.model,
                             t = u.controls,
                             r = (0, n.useState)(0),
@@ -1592,10 +1593,10 @@
                                     { customStyles: s },
                                     o().createElement(
                                         'div',
-                                        { ref: E, className: G },
+                                        { ref: E, className: z },
                                         o().createElement(
                                             'div',
-                                            { className: K },
+                                            { className: G },
                                             o().createElement('div', { className: Y }, lu.title()),
                                         ),
                                         o().createElement('div', { className: X }),
@@ -1623,7 +1624,7 @@
                     });
                 engine.whenReady.then(() => {
                     i().render(
-                        o().createElement(q, null, o().createElement(Bu, null)),
+                        o().createElement(K, null, o().createElement(Bu, null)),
                         document.getElementById('root'),
                     );
                 });

@@ -504,6 +504,7 @@
                         (e[(e.DELETE = 46)] = 'DELETE'),
                         (e[(e.TAB = 9)] = 'TAB'),
                         (e[(e.KEY_N = 78)] = 'KEY_N'),
+                        (e[(e.KEY_0 = 48)] = 'KEY_0'),
                         (e[(e.KEY_1 = 49)] = 'KEY_1'),
                         (e[(e.KEY_2 = 50)] = 'KEY_2'),
                         (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -939,9 +940,9 @@
                     B = 'SwitcherBullet_base__disabled_b9',
                     U = 'SwitcherBullet_disabled_b5',
                     V = 'SwitcherBullet_number_b4',
-                    q = 'SwitcherBullet_currentText_f9',
-                    j = 'SwitcherBullet_text_37',
-                    K = 'SwitcherBullet_texture_1e',
+                    K = 'SwitcherBullet_currentText_f9',
+                    q = 'SwitcherBullet_text_37',
+                    j = 'SwitcherBullet_texture_1e',
                     z = ({
                         numberToDisplay: e,
                         index: t,
@@ -1019,7 +1020,7 @@
                                     onMouseLeave: b,
                                 }),
                             ),
-                            l && t === o && r().createElement('div', { className: q }, l),
+                            l && t === o && r().createElement('div', { className: K }, l),
                         );
                     },
                     G = ({
@@ -1068,10 +1069,10 @@
                             r().createElement(
                                 'div',
                                 { className: P, style: p },
-                                u && r().createElement('div', { className: K }),
+                                u && r().createElement('div', { className: j }),
                                 !u && r().createElement('div', { className: H }),
                                 r().createElement('div', { className: W, style: p }),
-                                r().createElement('div', { className: j }, E),
+                                r().createElement('div', { className: q }, E),
                                 r().createElement('div', {
                                     className: I,
                                     style: p,

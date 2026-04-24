@@ -81,8 +81,8 @@
                         l = n.extraSmall,
                         D = n.extraLargeWidth,
                         B = n.largeWidth,
-                        C = n.mediumWidth,
-                        d = n.smallWidth,
+                        d = n.mediumWidth,
+                        C = n.smallWidth,
                         c = n.extraSmallWidth,
                         _ = n.extraLargeHeight,
                         m = n.largeHeight,
@@ -99,8 +99,8 @@
                     } else {
                         if (t.extraLargeWidth && D) return (0, r.H)(e, t, p);
                         if (t.largeWidth && B) return (0, r.H)(e, t, p);
-                        if (t.mediumWidth && C) return (0, r.H)(e, t, p);
-                        if (t.smallWidth && d) return (0, r.H)(e, t, p);
+                        if (t.mediumWidth && d) return (0, r.H)(e, t, p);
+                        if (t.smallWidth && C) return (0, r.H)(e, t, p);
                         if (t.extraSmallWidth && c) return (0, r.H)(e, t, p);
                         if (
                             !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
@@ -289,6 +289,7 @@
                             (u.VehicleSelect = 'vehicleSelect'),
                             (u.StyleProgress = 'styleProgress'),
                             (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                            (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (u.LootBoxToken = 'lootBoxToken'),
                             (u.GoldenTicket = 'birthday2025_golden_ticket'),
                             (u.PostStamp = 'giftsystem_4_stamp'),
@@ -329,7 +330,6 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
-                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -623,10 +623,10 @@
                         events: () => E.U,
                         extraSize: () => S,
                         forceTriggerMouseMove: () => p,
-                        freezeTextureBeforeResize: () => C,
+                        freezeTextureBeforeResize: () => d,
                         getBrowserTexturePath: () => F,
                         getDisplayStatus: () => v,
-                        getScale: () => d,
+                        getScale: () => C,
                         getSize: () => l,
                         getViewGlobalPosition: () => B,
                         isEventHandled: () => w,
@@ -670,10 +670,10 @@
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: _(e.x), y: _(e.y) };
                 }
-                function C() {
+                function d() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function d() {
+                function C() {
                     return viewEnv.getScale();
                 }
                 function c(u) {
@@ -833,6 +833,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1085,8 +1086,8 @@
                     l = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var D = t(5521),
                     B = t(3138);
-                const C = ['args'];
-                function d(u, e, t, i, r, E, a) {
+                const d = ['args'];
+                function C(u, e, t, i, r, E, a) {
                     try {
                         var n = u[E](a),
                             A = n.value;
@@ -1113,10 +1114,10 @@
                                     return new Promise(function (i, r) {
                                         var E = u.apply(e, t);
                                         function a(u) {
-                                            d(E, i, r, a, n, 'next', u);
+                                            C(E, i, r, a, n, 'next', u);
                                         }
                                         function n(u) {
-                                            d(E, i, r, a, n, 'throw', u);
+                                            C(E, i, r, a, n, 'throw', u);
                                         }
                                         a(void 0);
                                     });
@@ -1137,7 +1138,7 @@
                                         E = Object.keys(u);
                                     for (i = 0; i < E.length; i++) ((t = E[i]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                     return r;
-                                })(e, C);
+                                })(e, d);
                             void 0 !== r
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: t, type: u }, E, {
