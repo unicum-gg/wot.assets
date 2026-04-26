@@ -775,7 +775,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .Slide_icon_79 {
     width: 906rem;
     height: 606rem;
-    margin: -100rem 0 -150rem;
+    margin: -100rem 0 -115rem;
     background: no-repeat center center / contain;
 }
 
@@ -789,7 +789,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-weight: 400;
     line-height: 1.25;
     display: inline;
-    width: 620rem;
+    width: 650rem;
     height: 50rem;
     text-align: center;
 }
@@ -799,7 +799,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     justify-content: center;
     width: 100%;
     position: absolute;
-    top: 500rem;
+    top: 535rem;
     left: 0;
     pointer-events: auto;
 }

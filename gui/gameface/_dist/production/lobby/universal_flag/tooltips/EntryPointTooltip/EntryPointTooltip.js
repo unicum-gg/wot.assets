@@ -33,13 +33,13 @@
                         addPreloadTexture: () => b,
                         children: () => t,
                         displayStatus: () => d,
-                        displayStatusIs: () => K,
+                        displayStatusIs: () => j,
                         events: () => _,
                         extraSize: () => W,
                         forceTriggerMouseMove: () => z,
                         freezeTextureBeforeResize: () => k,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => j,
+                        getDisplayStatus: () => K,
                         getScale: () => S,
                         getSize: () => P,
                         getViewGlobalPosition: () => R,
@@ -259,10 +259,10 @@
                 function z() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function j() {
+                function K() {
                     return viewEnv.getShowingStatus();
                 }
-                const K = Object.keys(d).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === d[e]), u), {}),
+                const j = Object.keys(d).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === d[e]), u), {}),
                     W = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -473,6 +473,7 @@
                         (u[(u.DELETE = 46)] = 'DELETE'),
                         (u[(u.TAB = 9)] = 'TAB'),
                         (u[(u.KEY_N = 78)] = 'KEY_N'),
+                        (u[(u.KEY_0 = 48)] = 'KEY_0'),
                         (u[(u.KEY_1 = 49)] = 'KEY_1'),
                         (u[(u.KEY_2 = 50)] = 'KEY_2'),
                         (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1116,8 +1117,8 @@
                     V = 3600,
                     z = 86400;
                 Date.now();
-                const j = () => {},
-                    K = (u = 0, e, A = 0, F = j) => {
+                const K = () => {},
+                    j = (u = 0, e, A = 0, F = K) => {
                         const t = (0, E.useState)(u),
                             n = t[0],
                             D = t[1];
@@ -1148,7 +1149,7 @@
                     ((u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep'));
                 })(W || (W = {}));
                 I.Sw.instance;
-                const q = K,
+                const q = j,
                     G = 'Countdown_base_fe',
                     Y = 'Countdown_icon_8b',
                     $ = 'Countdown_description_8d',

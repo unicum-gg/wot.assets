@@ -466,6 +466,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -3779,19 +3780,23 @@
                     In = R.strings.tank_setup.deconstructionDeviceView,
                     zn = () => {
                         const e = le().model,
-                            u = e.computes.hasEnoughMoney(),
-                            t = u ? 'enoughMoney' : 'notEnoughMoney',
-                            n = { equipment: e.root.get().deviceForUpgradeName },
-                            r = (0, a.useMemo)(() => ({ icon: o().createElement('div', { className: Wn }) }), []);
+                            u = e.root.get(),
+                            t = u.deviceForUpgradeName,
+                            n = u.isOptDeviceRestored,
+                            r = e.computes.hasEnoughMoney(),
+                            i = r ? 'enoughMoney' : 'notEnoughMoney',
+                            s = { equipment: t },
+                            l = r ? 'enoughMoney' + (n ? 'Restorable' : '') : 'notEnoughMoney',
+                            c = (0, a.useMemo)(() => ({ icon: o().createElement('div', { className: Wn }) }), []);
                         return o().createElement(
                             'div',
-                            { className: f()(Nn, !u && Rn) },
+                            { className: f()(Nn, !r && Rn) },
                             o().createElement(
                                 'div',
                                 { className: On },
-                                o().createElement(dn, { text: In.title.$dyn(`${t}`), binding: n, classMix: Pn }),
+                                o().createElement(dn, { text: In.title.$dyn(`${i}`), binding: s, classMix: Pn }),
                             ),
-                            o().createElement(dn, { text: In.subTitle.$dyn(`${t}`), binding: r, classMix: Hn }),
+                            o().createElement(dn, { text: In.subTitle.$dyn(`${l}`), binding: c, classMix: Hn }),
                         );
                     },
                     Un = () => {

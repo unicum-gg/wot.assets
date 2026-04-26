@@ -331,6 +331,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1258,13 +1259,13 @@
                             n
                         );
                     },
-                    H = (u, e, t, n) => {
+                    K = (u, e, t, n) => {
                         let r = e.exec(u),
                             o = 0;
                         for (; r; ) (o !== r.index && t(u.slice(o, r.index)), n(r), (o = e.lastIndex), (r = e.exec(u)));
                         o !== u.length && t(u.slice(o));
                     },
-                    K = (u) => {
+                    H = (u) => {
                         const e = /[\s\u002d]/g;
                         let t = e.exec(u);
                         if (!t) return [u];
@@ -1276,11 +1277,11 @@
                     z = (u, e = '') => {
                         const t = [];
                         return (
-                            H(
+                            K(
                                 u,
                                 /(\n+|[\xa0\ufeff]+)/g,
                                 (u) => {
-                                    t.push({ blockType: P.Word, colorTag: e, childList: K(u) });
+                                    t.push({ blockType: P.Word, colorTag: e, childList: H(u) });
                                 },
                                 (u) => {
                                     const n = u[0],
@@ -1313,7 +1314,7 @@
                     G = (u, e, t = '') => {
                         const n = [];
                         return (
-                            H(
+                            K(
                                 u,
                                 /(?:%\(|{)(.*?)[)}][sd]?/g,
                                 (u) => {
@@ -1359,7 +1360,7 @@
                             ((u, e) => {
                                 const t = [];
                                 return (
-                                    H(
+                                    K(
                                         u,
                                         /(?:%\(|{)(\w*)(?:_[Oo]pen|_Start)(?:\)s|})([\s\S]*?)(?:%\(|{)\w*(?:_[Cc]lose|_End)(?:\)s|})/g,
                                         (u) => {

@@ -191,8 +191,8 @@
                         getViewGlobalPosition: () => c,
                         isEventHandled: () => w,
                         isFocused: () => h,
-                        pxToRem: () => C,
-                        remToPx: () => _,
+                        pxToRem: () => _,
+                        remToPx: () => C,
                         resize: () => D,
                         sendEvent: () => i.qP,
                         setAnimateWindow: () => m,
@@ -228,7 +228,7 @@
                 }
                 function c(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: _(e.x), y: _(e.y) };
+                    return 'rem' === u ? e : { x: C(e.x), y: C(e.y) };
                 }
                 function d() {
                     viewEnv.freezeTextureBeforeResize();
@@ -236,10 +236,10 @@
                 function B() {
                     return viewEnv.getScale();
                 }
-                function C(u) {
+                function _(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function _(u) {
+                function C(u) {
                     return viewEnv.remToPx(u);
                 }
                 function m(u, e) {
@@ -357,6 +357,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -590,7 +591,7 @@
                 var c = t(5521),
                     d = t(3138);
                 const B = ['args'];
-                function C(u, e, t, a, r, n, i) {
+                function _(u, e, t, a, r, n, i) {
                     try {
                         var A = u[n](i),
                             E = A.value;
@@ -599,7 +600,7 @@
                     }
                     A.done ? e(E) : Promise.resolve(E).then(a, r);
                 }
-                const _ = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
+                const C = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
                     m = (function () {
                         var u,
                             e =
@@ -617,10 +618,10 @@
                                     return new Promise(function (a, r) {
                                         var n = u.apply(e, t);
                                         function i(u) {
-                                            C(n, a, r, i, A, 'next', u);
+                                            _(n, a, r, i, A, 'next', u);
                                         }
                                         function A(u) {
-                                            C(n, a, r, i, A, 'throw', u);
+                                            _(n, a, r, i, A, 'throw', u);
                                         }
                                         i(void 0);
                                     });
@@ -681,7 +682,7 @@
                         RealFormatType: o,
                         TimeFormatType: l,
                         DateFormatType: D,
-                        makeGlobalBoundingBox: _,
+                        makeGlobalBoundingBox: C,
                         sendMoveEvent: (u) => h(E.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: g,
                         sendClosePopOverEvent: () => h(E.POP_OVER, { on: !1 }),
@@ -707,7 +708,7 @@
                                 decoratorID: a || R.invalid('resId'),
                                 targetID: r,
                                 direction: e,
-                                bbox: _(D),
+                                bbox: C(D),
                                 on: !0,
                                 args: n,
                             });
@@ -873,13 +874,13 @@
                             l = r.largeWidth,
                             D = r.mediumWidth,
                             B = r.smallWidth,
-                            C = r.extraSmallWidth,
-                            _ = r.extraLargeHeight,
+                            _ = r.extraSmallWidth,
+                            C = r.extraLargeHeight,
                             m = r.largeHeight,
                             h = r.mediumHeight,
                             g = r.smallHeight,
                             w = r.extraSmallHeight,
-                            v = { extraLarge: _, large: m, medium: h, small: g, extraSmall: w };
+                            v = { extraLarge: C, large: m, medium: h, small: g, extraSmall: w };
                         if (t.extraLarge || t.large || t.medium || t.small || t.extraSmall) {
                             if (t.extraLarge && i) return e;
                             if (t.large && A) return e;
@@ -891,7 +892,7 @@
                             if (t.largeWidth && l) return n(e, t, v);
                             if (t.mediumWidth && D) return n(e, t, v);
                             if (t.smallWidth && B) return n(e, t, v);
-                            if (t.extraSmallWidth && C) return n(e, t, v);
+                            if (t.extraSmallWidth && _) return n(e, t, v);
                             if (
                                 !(
                                     t.extraLargeWidth ||
@@ -901,7 +902,7 @@
                                     t.extraSmallWidth
                                 )
                             ) {
-                                if (t.extraLargeHeight && _) return e;
+                                if (t.extraLargeHeight && C) return e;
                                 if (t.largeHeight && m) return e;
                                 if (t.mediumHeight && h) return e;
                                 if (t.smallHeight && g) return e;
@@ -928,11 +929,11 @@
                     extraSmallHeight: !1,
                 }),
                     (0, a.memo)(B));
-                const C = (u) => {
+                const _ = (u) => {
                         const e = (0, a.useRef)(!1);
                         e.current || (u(), (e.current = !0));
                     },
-                    _ = (0, a.memo)(({ children: u }) => {
+                    C = (0, a.memo)(({ children: u }) => {
                         const e = (0, a.useContext)(c),
                             t = (0, a.useState)(e),
                             n = t[0],
@@ -942,7 +943,7 @@
                                     a = i.O.view.pxToRem(e);
                                 E(Object.assign({ width: t, height: a }, F(t, a, A)));
                             }, []);
-                        (C(() => {
+                        (_(() => {
                             engine.on('clientResized', s);
                         }),
                             (0, a.useEffect)(() => () => engine.off('clientResized', s), [s]));
@@ -1109,7 +1110,7 @@
                                 for (a = 0; a < n.length; a++) ((t = n[a]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                 return r;
                             })(u, O);
-                        return r().createElement(_, null, r().createElement(T, t, e));
+                        return r().createElement(C, null, r().createElement(T, t, e));
                     };
                 var H = t(493),
                     P = t.n(H);
@@ -1162,8 +1163,8 @@
                             c = u.loop,
                             d = void 0 === c || c,
                             B = u.state,
-                            C = void 0 === B ? I : B,
-                            _ = u.onAnimationDone,
+                            _ = void 0 === B ? I : B,
+                            C = u.onAnimationDone,
                             m = u.onAnimationComplete,
                             h = u.poster,
                             g = (function (u, e) {
@@ -1184,7 +1185,7 @@
                                     t = (t) => {
                                         (e.clearRect(0, 0, u.width, u.height), e.drawImage(t.img, -t.x, -t.y));
                                     };
-                                switch (C) {
+                                switch (_) {
                                     case 'play':
                                         return (function () {
                                             const u = j(o, D, n),
@@ -1197,7 +1198,7 @@
                                                           t(n),
                                                           r === D &&
                                                               (null == m || m(),
-                                                              d || (null == _ || _(), window.clearInterval(a))))
+                                                              d || (null == C || C(), window.clearInterval(a))))
                                                         : console.error(
                                                               'frameImage was not provided in frameImages Map',
                                                           );
@@ -1218,7 +1219,7 @@
                                     default:
                                         return console.error('[CanvasSequence] Unreachable state!');
                                 }
-                            }, [F, n, o, D, d, A, m, _, h, C]),
+                            }, [F, n, o, D, d, A, m, C, h, _]),
                             r().createElement('canvas', W({}, g, { width: e, height: t, ref: w }))
                         );
                     }),
@@ -1253,8 +1254,8 @@
                         }
                         return a;
                     };
-                let V, q;
-                function K(u, e) {
+                let V, K;
+                function q(u, e) {
                     return u.replace(/(\{|%\()\w+(\}|\)s)/g, (u) => {
                         const t = 0 === u.indexOf('%') ? 2 : 1;
                         return String(e[u.slice(t, -t)]);
@@ -1278,7 +1279,7 @@
                                 .source,
                         'gum',
                     ),
-                    ((z = q || (q = {})).SHORT_DATE = 'short-date'),
+                    ((z = K || (K = {})).SHORT_DATE = 'short-date'),
                     (z.SHORT_TIME = 'short-time'),
                     (z.SHORT_DATE_TIME = 'short-date-time'),
                     (z.FULL_DATE = 'full-date'),
@@ -1343,7 +1344,7 @@
                         o = F[1],
                         l = (0, a.useRef)(-1);
                     return (
-                        C(() => {
+                        _(() => {
                             if (
                                 ('boolean' == typeof e &&
                                     ((e = e ? eu.Deep : eu.None),
@@ -1484,8 +1485,8 @@
                                     c = D[0],
                                     d = D[1],
                                     B = (0, a.useState)(null == (i = u.loop) || i),
-                                    C = B[0],
-                                    _ = B[1],
+                                    _ = B[0],
+                                    C = B[1],
                                     m = (0, a.useRef)(o),
                                     h = (0, a.useCallback)((u) => {
                                         (l(u), F('play'));
@@ -1505,7 +1506,7 @@
                                         state: E,
                                         initialFrameIndex: o,
                                         frameTime: c,
-                                        loop: C,
+                                        loop: _,
                                         onAnimate: (0, a.useCallback)((e, t) => {
                                             ((m.current = e), null == u.onAnimate || u.onAnimate(e, t));
                                         }, e),
@@ -1513,8 +1514,8 @@
                                             w();
                                         }, e),
                                     },
-                                    enableLoop: (0, a.useCallback)(() => _(!0), []),
-                                    disableLoop: (0, a.useCallback)(() => _(!1), []),
+                                    enableLoop: (0, a.useCallback)(() => C(!0), []),
+                                    disableLoop: (0, a.useCallback)(() => C(!1), []),
                                     setState: F,
                                     setInitialFrameIndex: l,
                                     setFrameTime: d,
@@ -1616,7 +1617,7 @@
                                                             })(e),
                                                             a = t.day,
                                                             r = t.month;
-                                                        return K(u, {
+                                                        return q(u, {
                                                             day: a,
                                                             month: R.strings.menu.dateTime.months.$num(r + 1),
                                                         });
@@ -1625,12 +1626,12 @@
                                                 case k.Announce:
                                                     return (({ days: u, hours: e, minutes: t }) =>
                                                         u >= 1
-                                                            ? K(iu.timeLeft.day(), { day: u })
+                                                            ? q(iu.timeLeft.day(), { day: u })
                                                             : e >= 1
                                                               ? 0 === t
-                                                                  ? K(iu.timeLeft.hour(), { hour: e })
-                                                                  : K(iu.timeLeft.hours(), { hours: e, minutes: t })
-                                                              : K(iu.timeLeft.minutes(), {
+                                                                  ? q(iu.timeLeft.hour(), { hour: e })
+                                                                  : q(iu.timeLeft.hours(), { hours: e, minutes: t })
+                                                              : q(iu.timeLeft.minutes(), {
                                                                     minutes: t || iu.timer.lessOneMin(),
                                                                 }))(
                                                         (function (u = 0) {

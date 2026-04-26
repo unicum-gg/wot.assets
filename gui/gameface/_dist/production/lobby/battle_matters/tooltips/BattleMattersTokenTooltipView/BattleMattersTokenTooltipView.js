@@ -41,7 +41,7 @@
             },
             67: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => Y });
+                t.d(e, { O: () => V });
                 var r = {};
                 (t.r(r), t.d(r, { mouse: () => o, onResize: () => i }));
                 var E = {};
@@ -92,7 +92,7 @@
                         setEventHandled: () => I,
                         setInputPaddingsRem: () => f,
                         setSidePaddingsRem: () => M,
-                        whenTutorialReady: () => V,
+                        whenTutorialReady: () => Y,
                     }));
                 const i = F('clientResized'),
                     D = { down: F('mousedown'), up: F('mouseup'), move: F('mousemove') };
@@ -310,13 +310,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    V = Promise.all([
+                    Y = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : c.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    Y = { view: A, client: E };
+                    V = { view: A, client: E };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -344,6 +344,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1066,8 +1067,8 @@
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
                 var K = t(887),
-                    V = t.n(K);
-                const Y = (u, e, t) =>
+                    Y = t.n(K);
+                const V = (u, e, t) =>
                         e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
                             ? (e.extraLargeHeight && t.extraLarge) ||
                               (e.largeHeight && t.large) ||
@@ -1191,11 +1192,11 @@
                         if (t.small && n) return e;
                         if (t.extraSmall && i) return e;
                     } else {
-                        if (t.extraLargeWidth && D) return Y(e, t, h);
-                        if (t.largeWidth && o) return Y(e, t, h);
-                        if (t.mediumWidth && l) return Y(e, t, h);
-                        if (t.smallWidth && s) return Y(e, t, h);
-                        if (t.extraSmallWidth && B) return Y(e, t, h);
+                        if (t.extraLargeWidth && D) return V(e, t, h);
+                        if (t.largeWidth && o) return V(e, t, h);
+                        if (t.mediumWidth && l) return V(e, t, h);
+                        if (t.smallWidth && s) return V(e, t, h);
+                        if (t.extraSmallWidth && B) return V(e, t, h);
                         if (
                             !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
                         ) {
@@ -1430,7 +1431,7 @@
                         _u.apply(this, arguments)
                     );
                 }
-                Object.keys(V());
+                Object.keys(Y());
                 const Cu = {
                         XL: { mt: su.mt__XL, mr: su.mr__XL, mb: su.mb__XL, ml: su.ml__XL },
                         LG: { mt: su.mt__LG, mr: su.mr__LG, mb: su.mb__LG, ml: su.ml__LG },
@@ -1606,7 +1607,7 @@
                         Tu.apply(this, arguments)
                     );
                 }
-                Object.keys(V());
+                Object.keys(Y());
                 const fu = Object.keys(wu()),
                     bu = { mt: 'MD', mr: 'SM', mb: 'SM', ml: 'SM' },
                     Su = { mt: 'SM', mr: 'XS', mb: 'XS', ml: 'XS' },
@@ -1856,8 +1857,8 @@
                     ju = 'App_divider_92',
                     Xu = 'App_gradient_ef',
                     Ku = 'App_base_09',
-                    Vu = 'App_image_5f',
-                    Yu = 'App_title_41',
+                    Yu = 'App_image_5f',
+                    Vu = 'App_title_41',
                     zu = 'App_description_55',
                     $u = 'App_condition_2d',
                     qu = 'App_condition__withTimer_f8',
@@ -1876,13 +1877,13 @@
                             E().createElement(
                                 'div',
                                 { className: Ku },
-                                E().createElement('div', { className: Vu, style: { backgroundImage: a } }),
+                                E().createElement('div', { className: Yu, style: { backgroundImage: a } }),
                                 E().createElement(
                                     'div',
                                     { className: Xu },
                                     E().createElement('div', { className: ju }),
                                     E().createElement(yu, {
-                                        className: Yu,
+                                        className: Vu,
                                         format: { binding: { level: A } },
                                         text: Qu.title(),
                                     }),

@@ -335,6 +335,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1297,12 +1298,12 @@
                         }
                         return '';
                     },
-                    j = P.Sw.instance;
-                let K;
+                    K = P.Sw.instance;
+                let j;
                 !(function (u) {
                     ((u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep'));
-                })(K || (K = {}));
-                const z = (u = 'model', e = K.Deep) => {
+                })(j || (j = {}));
+                const z = (u = 'model', e = j.Deep) => {
                     const t = (0, n.useState)(0),
                         a = (t[0], t[1]),
                         i = (0, n.useMemo)(() => N(), []),
@@ -1326,26 +1327,26 @@
                         d(() => {
                             if (
                                 ('boolean' == typeof e &&
-                                    ((e = e ? K.Deep : K.None),
+                                    ((e = e ? j.Deep : j.None),
                                     console.warn(
                                         'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                     )),
-                                e !== K.None)
+                                e !== j.None)
                             ) {
                                 const t = (u) => {
                                         ((u) => u && 'CoherentArrayProxy' === u.__proto__.constructor.name)(u) &&
-                                        e === K.Deep
+                                        e === j.Deep
                                             ? (u === A && a((u) => u + 1), F(u))
                                             : F(Object.assign([], u));
                                     },
                                     n = V(u);
-                                l.current = j.addCallback(n, t, o, e === K.Deep);
+                                l.current = K.addCallback(n, t, o, e === j.Deep);
                             }
                         }),
                         (0, n.useEffect)(() => {
-                            if (e !== K.None)
+                            if (e !== j.None)
                                 return () => {
-                                    j.removeCallback(l.current, o);
+                                    K.removeCallback(l.current, o);
                                 };
                         }, [o, e]),
                         A

@@ -720,6 +720,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1322,7 +1323,7 @@
                         useHorizontalScrollApi: () => Fe,
                     }));
                 var n = {};
-                (t.r(n), t.d(n, { Area: () => Ke, Bar: () => je, Default: () => Ye, useVerticalScrollApi: () => Ae }));
+                (t.r(n), t.d(n, { Area: () => Ke, Bar: () => je, Default: () => qe, useVerticalScrollApi: () => Ae }));
                 var a = t(6179),
                     s = t.n(a);
                 const i = (e, u, t) =>
@@ -1784,11 +1785,11 @@
                     })($ || ($ = {})));
                 var X = t(2344),
                     j = t(5521),
-                    q = t(4179);
-                const Y = (e) => {
+                    Y = t(4179);
+                const q = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function K(e = j.n.NONE, u = Y, t = !1) {
+                function K(e = j.n.NONE, u = q, t = !1) {
                     (0, a.useEffect)(() => {
                         if (e !== j.n.NONE)
                             return (
@@ -2605,13 +2606,13 @@
                             }),
                         );
                     }),
-                    qe = {
+                    Ye = {
                         content: 'VerticalScroll_content_cb',
                         defaultScroll: 'VerticalScroll_defaultScroll_f8',
                         bar: 'VerticalScroll_bar_1e',
                         area: 'VerticalScroll_area_af',
                     },
-                    Ye = ({
+                    qe = ({
                         children: e,
                         api: u,
                         className: t,
@@ -2624,15 +2625,15 @@
                     }) => {
                         const _ = (0, a.useMemo)(() => {
                                 const e = r || {};
-                                return Object.assign({}, e, { base: B()(qe.base, e.base) });
+                                return Object.assign({}, e, { base: B()(Ye.base, e.base) });
                             }, [r]),
                             m = (0, a.useMemo)(() => Object.assign({}, u, { handleMouseWheel: () => {} }), [u]);
                         return s().createElement(
                             'div',
-                            { className: B()(qe.defaultScroll, t), onWheel: u.handleMouseWheel },
+                            { className: B()(Ye.defaultScroll, t), onWheel: u.handleMouseWheel },
                             s().createElement(
                                 'div',
-                                { className: B()(qe.area, n) },
+                                { className: B()(Ye.area, n) },
                                 s().createElement(Ke, { className: i, classNames: o, api: m }, e),
                             ),
                             s().createElement(je, { getStepByRailClick: l, api: u, onDrag: c, classNames: _ }),
@@ -2642,15 +2643,15 @@
                         (0, a.useEffect)(() => ae(r.recalculateContent)),
                         s().createElement(
                             'div',
-                            { className: B()(qe.base, e), ref: r.wrapperRef, onWheel: r.handleMouseWheel },
+                            { className: B()(Ye.base, e), ref: r.wrapperRef, onWheel: r.handleMouseWheel },
                             s().createElement(
                                 'div',
-                                { className: B()(qe.content, null == u ? void 0 : u.content), ref: r.contentRef },
+                                { className: B()(Ye.content, null == u ? void 0 : u.content), ref: r.contentRef },
                                 t,
                             ),
                         )
                     );
-                Ke.Default = Ye;
+                Ke.Default = qe;
                 const Ze = { Vertical: n, Horizontal: r },
                     Qe = (0, a.createContext)({}),
                     Je = ({ children: e }) => {
@@ -2706,9 +2707,9 @@
                 class eu extends s().PureComponent {
                     render() {
                         let e;
-                        if ('gold' === this.props.format) e = q.B3.GOLD;
-                        else e = q.B3.INTEGRAL;
-                        const u = q.Z5.getNumberFormat(this.props.value, e);
+                        if ('gold' === this.props.format) e = Y.B3.GOLD;
+                        else e = Y.B3.INTEGRAL;
+                        const u = Y.Z5.getNumberFormat(this.props.value, e);
                         return void 0 !== this.props.value && void 0 !== u ? u : null;
                     }
                 }
@@ -2771,6 +2772,7 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
@@ -2811,7 +2813,6 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
-                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -3274,7 +3275,7 @@
                             Object.assign(
                                 {
                                     __Type: 'GFViewEventProxy',
-                                    type: q.B0.TOOLTIP,
+                                    type: Y.B0.TOOLTIP,
                                     contentID: e,
                                     decoratorID: u,
                                     targetID: r,
@@ -3444,8 +3445,8 @@
                     };
                 var Xu = t(5167);
                 const ju = 'intelligence',
-                    qu = ['gold', 'crystal', 'credits', 'freeXP'],
-                    Yu = (e) => ({
+                    Yu = ['gold', 'crystal', 'credits', 'freeXP'],
+                    qu = (e) => ({
                         backgroundImage: `url(${R.images.gui.maps.icons.blueprints.fragment.special.$dyn(e) || R.images.gui.maps.icons.resourceWell.resourcesLoading.icons.$dyn(e)})`,
                     });
                 t(3368);
@@ -3581,7 +3582,7 @@
                                     document.removeEventListener('click', this.handleClickOutside),
                                     document.removeEventListener('mouseup', this.handleMouseUp));
                             }),
-                            (this.formatValue = (e) => q.Z5.getNumberFormat(e, q.B3.GOLD)),
+                            (this.formatValue = (e) => Y.Z5.getNumberFormat(e, Y.B3.GOLD)),
                             (this.getValidValue = (e) => {
                                 const u = Math.min(this.props.maximum, Math.max(this.props.minimum, e)),
                                     t = this.props.stepSize;
@@ -3612,7 +3613,7 @@
                                     u && 1 === n && 1 === s.length && (s = '0'));
                                 const l = Number(s.trim().replace(/\D/g, '')),
                                     c = Number.isSafeInteger(l) ? l : Number.MAX_SAFE_INTEGER,
-                                    _ = q.Z5.getNumberFormat(c, q.B3.GOLD);
+                                    _ = Y.Z5.getNumberFormat(c, Y.B3.GOLD);
                                 r.value = _;
                                 const m = new RegExp(/\d/g);
                                 let d = 0;
@@ -3833,7 +3834,7 @@
                                     : this.blurInput()));
                     }
                     get formattedValue() {
-                        return q.Z5.getNumberFormat(this.state.value, q.B3.GOLD);
+                        return Y.Z5.getNumberFormat(this.state.value, Y.B3.GOLD);
                     }
                     get buttonIncrementIsDisabled() {
                         return this.state.value >= this.props.maximum || this.props.isDisabled;
@@ -4076,10 +4077,10 @@
                                 icon: s().createElement('span', {
                                     className: B()(
                                         ut.rateIcon,
-                                        qu.includes(n) && ut.rateIcon__currency,
+                                        Yu.includes(n) && ut.rateIcon__currency,
                                         n === ju && ut.rateIcon__intelligence,
                                     ),
-                                    style: Yu(n),
+                                    style: qu(n),
                                 }),
                                 minValue: s().createElement(uu.z, {
                                     classMix: B()(ut.rateText, ut.rateText__min),
@@ -4736,8 +4737,8 @@
                     $t = 'ProgressBarDeltaGrow_glow_68',
                     Xt = (e) => (e ? { left: 0 } : { right: 0 }),
                     jt = (e, u) => (e ? { right: 100 - u + '%' } : { left: `${u}%` }),
-                    qt = (e) => ({ transitionDuration: `${e}ms` }),
-                    Yt = (0, a.memo)(
+                    Yt = (e) => ({ transitionDuration: `${e}ms` }),
+                    qt = (0, a.memo)(
                         ({
                             transitionDuration: e,
                             transitionDelay: u,
@@ -4780,11 +4781,11 @@
                                             ? C(Ot.End, e)
                                             : void (A && o && o());
                             }, [C, t, A, F, D, p, o, u, e]);
-                            const h = (0, a.useMemo)(() => Object.assign({ width: '100%' }, qt(e), Xt(_)), [_, e]),
-                                b = (0, a.useMemo)(() => Object.assign({ width: '0%' }, qt(e), Xt(_)), [_, e]),
-                                f = (0, a.useMemo)(() => Object.assign({ width: '0%' }, jt(_, r), qt(e)), [r, _, e]),
+                            const h = (0, a.useMemo)(() => Object.assign({ width: '100%' }, Yt(e), Xt(_)), [_, e]),
+                                b = (0, a.useMemo)(() => Object.assign({ width: '0%' }, Yt(e), Xt(_)), [_, e]),
+                                f = (0, a.useMemo)(() => Object.assign({ width: '0%' }, jt(_, r), Yt(e)), [r, _, e]),
                                 v = (0, a.useMemo)(
-                                    () => Object.assign({ width: `${Math.abs(i - r)}%` }, jt(_, r), qt(e)),
+                                    () => Object.assign({ width: `${Math.abs(i - r)}%` }, jt(_, r), Yt(e)),
                                     [r, _, i, e],
                                 );
                             if (A) return null;
@@ -4839,7 +4840,7 @@
                                     baseStyles: d ? F : D,
                                 }),
                                 t >= 0 &&
-                                    s().createElement(Yt, {
+                                    s().createElement(qt, {
                                         transitionDuration: o.delta.duration,
                                         transitionDelay: o.delta.delay,
                                         onChangeAnimationState: A,
@@ -5305,7 +5306,7 @@
                             g = c.setIsCardAnimationEnabled;
                         (m(r), (0, a.useEffect)(() => d(r), []));
                         const C = R.strings.menu.viewHeader.closeBtn.label(),
-                            h = (0, a.useCallback)(() => (0, q.Sy)(), []);
+                            h = (0, a.useCallback)(() => (0, Y.Sy)(), []);
                         var B;
                         ((B = h), K(j.n.ESCAPE, B));
                         const b = (0, a.useCallback)(() => {

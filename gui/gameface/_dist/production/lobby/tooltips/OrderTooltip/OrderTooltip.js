@@ -380,6 +380,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -781,7 +782,7 @@
                     };
                 window.ViewEnvHelper = v;
             },
-            4483: (u, e, t) => {
+            7682: (u, e, t) => {
                 'use strict';
                 var r = t(6179),
                     E = t.n(r),
@@ -1791,8 +1792,8 @@
                         orderIcon: 'OrderTooltipApp_orderIcon_ab',
                         order: 'OrderTooltipApp_order_2e',
                         order__x5: 'OrderTooltipApp_order__x5_5c',
-                        order__x10: 'OrderTooltipApp_order__x10_8b',
-                        order__x15: 'OrderTooltipApp_order__x15_ab',
+                        order__x3: 'OrderTooltipApp_order__x3_1a',
+                        order__x2: 'OrderTooltipApp_order__x2_4b',
                         text: 'OrderTooltipApp_text_4c',
                         bg: 'OrderTooltipApp_bg_01',
                         amount: 'OrderTooltipApp_amount_97',
@@ -1816,37 +1817,35 @@
                     ((u.Green = 'green'), (u.Red = 'red'));
                 })(vu || (vu = {}));
                 const bu = () => {
-                    const u = O('model', S.None),
-                        e = u.order,
-                        t = e.type,
-                        A = e.count,
-                        a = u.showStatus,
-                        F = (0, r.useMemo)(() => ({ orderType: t }), [t]),
-                        n = (0, r.useMemo)(
+                    const u = O('model', S.None).order,
+                        e = u.type,
+                        t = u.count,
+                        A = (0, r.useMemo)(() => ({ orderType: e }), [e]),
+                        a = (0, r.useMemo)(
                             () => ({
-                                backgroundImage: `url(${R.images.historical_battles.gui.maps.icons.order.c_24x24.$dyn(t)})`,
+                                backgroundImage: `url(${R.images.historical_battles.gui.maps.icons.order.c_24x24.$dyn(e)})`,
                             }),
-                            [t],
+                            [e],
                         ),
+                        F = (0, r.useMemo)(
+                            () => ({ amount: t, icon: E().createElement('div', { className: wu.icon, style: a }) }),
+                            [t, a],
+                        ),
+                        n = { orderIcon: E().createElement('div', { className: wu.orderIcon }) },
                         o = (0, r.useMemo)(
-                            () => ({ amount: A, icon: E().createElement('div', { className: wu.icon, style: n }) }),
-                            [A, n],
-                        ),
-                        D = { orderIcon: E().createElement('div', { className: wu.orderIcon }) },
-                        l = (0, r.useMemo)(
                             () =>
-                                A > 0
+                                t > 0
                                     ? [R.strings.hb_lobby.orderTooltip.available(), vu.Green]
                                     : [R.strings.hb_lobby.orderTooltip.notAvailable(), vu.Red],
-                            [A],
+                            [t],
                         ),
-                        s = l[0],
-                        B = l[1],
-                        C = i()(wu.order, wu[`order__${t}`]),
-                        d = i()(wu.divider, wu.dividerAmount, wu.dividerAmount__top),
-                        m = i()(wu.divider, wu.dividerAmount, wu.dividerAmount__bottom),
-                        c = i()(wu.status, wu[`status__${B}`]),
-                        h = { icon: E().createElement('div', { className: wu.coin_icon }) };
+                        D = o[0],
+                        l = o[1],
+                        s = i()(wu.order, wu[`order__${e}`]),
+                        B = i()(wu.divider, wu.dividerAmount, wu.dividerAmount__top),
+                        C = i()(wu.divider, wu.dividerAmount, wu.dividerAmount__bottom),
+                        d = i()(wu.status, wu[`status__${l}`]),
+                        m = { icon: E().createElement('div', { className: wu.coin_icon }) };
                     return E().createElement(
                         _,
                         null,
@@ -1859,25 +1858,25 @@
                                 E().createElement(mu, {
                                     className: wu.header,
                                     text: R.strings.hb_lobby.orderTooltip.header(),
-                                    format: { binding: F },
+                                    format: { binding: A },
                                 }),
-                                E().createElement('div', { className: C }),
+                                E().createElement('div', { className: s }),
                                 E().createElement(xu, {
                                     text: R.strings.hb_lobby.orderTooltip.content(),
-                                    binding: h,
+                                    binding: m,
                                     classMix: wu.text,
                                 }),
                                 E().createElement(
                                     'div',
                                     { className: wu.amount },
-                                    E().createElement('div', { className: d }),
+                                    E().createElement('div', { className: B }),
                                     E().createElement('div', { className: wu.bg }),
                                     E().createElement(xu, {
                                         classMix: wu.text,
                                         text: R.strings.hb_lobby.orderTooltip.count(),
-                                        binding: o,
+                                        binding: F,
                                     }),
-                                    E().createElement('div', { className: m }),
+                                    E().createElement('div', { className: C }),
                                 ),
                                 E().createElement(mu, {
                                     text: R.strings.hb_lobby.orderTooltip.subheader(),
@@ -1885,8 +1884,8 @@
                                 }),
                                 E().createElement(xu, {
                                     classMix: wu.text,
-                                    text: R.strings.hb_lobby.orderTooltip.description.$dyn(t),
-                                    binding: D,
+                                    text: R.strings.hb_lobby.orderTooltip.description.$dyn(e),
+                                    binding: n,
                                 }),
                                 E().createElement(
                                     'div',
@@ -1903,7 +1902,7 @@
                                     ),
                                     E().createElement('div', { className: wu.divider }),
                                 ),
-                                a && E().createElement('div', { className: c }, s),
+                                E().createElement('div', { className: d }, D),
                             ),
                         ),
                     );
@@ -1988,6 +1987,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(4483));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(7682));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

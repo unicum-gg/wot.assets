@@ -35,7 +35,7 @@
                         displayStatus: () => d,
                         displayStatusIs: () => j,
                         events: () => C,
-                        extraSize: () => G,
+                        extraSize: () => K,
                         forceTriggerMouseMove: () => z,
                         freezeTextureBeforeResize: () => R,
                         getBrowserTexturePath: () => O,
@@ -53,7 +53,7 @@
                         setEventHandled: () => U,
                         setInputPaddingsRem: () => y,
                         setSidePaddingsRem: () => k,
-                        whenTutorialReady: () => K,
+                        whenTutorialReady: () => G,
                     }));
                 const E = a('clientResized'),
                     F = { down: a('mousedown'), up: a('mouseup'), move: a('mousemove') };
@@ -263,7 +263,7 @@
                     return viewEnv.getShowingStatus();
                 }
                 const j = Object.keys(d).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === d[e]), u), {}),
-                    G = {
+                    K = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -271,7 +271,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    K = Promise.all([
+                    G = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : C.onDomBuilt(u);
                         }),
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1248,8 +1249,8 @@
                         j.apply(this, arguments)
                     );
                 }
-                const G = R.views.common.tooltip_window.simple_tooltip_content,
-                    K = (u) => {
+                const K = R.views.common.tooltip_window.simple_tooltip_content,
+                    G = (u) => {
                         let e = u.children,
                             t = u.body,
                             o = u.header,
@@ -1276,7 +1277,7 @@
                                 {
                                     contentId:
                                         ((A = null == s ? void 0 : s.hasHtmlContent),
-                                        A ? G.SimpleTooltipHtmlContent('resId') : G.SimpleTooltipContent('resId')),
+                                        A ? K.SimpleTooltipHtmlContent('resId') : K.SimpleTooltipContent('resId')),
                                     decoratorId: R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId'),
                                     args: F,
                                 },
@@ -1289,7 +1290,7 @@
                     $ = 'Info_base_7b',
                     q = ({ tooltipHeader: u, tooltipBody: e }) =>
                         r().createElement(
-                            K,
+                            G,
                             { isEnabled: !0, header: u, body: e },
                             r().createElement('div', { className: $ }),
                         ),

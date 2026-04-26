@@ -395,7 +395,7 @@
                             null == p ? void 0 : p.base,
                         ),
                         Y = r()(s.Z.icon, s.Z[`icon__${g}`], null == p ? void 0 : p.icon),
-                        Z = r()(s.Z.label, null == p ? void 0 : p.label);
+                        K = r()(s.Z.label, null == p ? void 0 : p.label);
                     return i().createElement(
                         'div',
                         c(
@@ -413,7 +413,7 @@
                             x,
                         ),
                         i().createElement('div', { className: Y }),
-                        i().createElement('div', { className: Z }, u),
+                        i().createElement('div', { className: K }, u),
                     );
                 });
             },
@@ -562,6 +562,7 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                            (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (e.LootBoxToken = 'lootBoxToken'),
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
@@ -602,7 +603,6 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
-                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -1729,6 +1729,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -3080,8 +3081,8 @@
                         infoBoxes: 'ProbabilitiesHeader_infoBoxes_4a',
                     },
                     Y = R.strings.gui_lootboxes,
-                    Z = R.strings.lootboxes,
-                    K = (0, h.observer)(({ isBoxWithRotation: e = !1 }) => {
+                    K = R.strings.lootboxes,
+                    Z = (0, h.observer)(({ isBoxWithRotation: e = !1 }) => {
                         var u;
                         const t = z().model.root.get(),
                             o = t.lootboxName,
@@ -3095,7 +3096,7 @@
                             }),
                             !e &&
                                 a().createElement(q, {
-                                    text: null == (u = Z.userName.$dyn(o)) ? void 0 : u.replace('\n', ' '),
+                                    text: null == (u = K.userName.$dyn(o)) ? void 0 : u.replace('\n', ' '),
                                     classMix: X.probabilityBoxName,
                                 }),
                             e
@@ -4225,7 +4226,7 @@
                             a().createElement(
                                 'div',
                                 { className: 'ProbabilitiesSimple_headerWrapper_10' },
-                                a().createElement(K, null),
+                                a().createElement(Z, null),
                             ),
                             a().createElement(
                                 'div',
@@ -4249,7 +4250,7 @@
                         );
                     });
                 var Ye = t(2056);
-                const Ze = {
+                const Ke = {
                         blackReal: 'FormatTextWithColorTags_blackReal_3c',
                         whiteReal: 'FormatTextWithColorTags_whiteReal_8a',
                         white: 'FormatTextWithColorTags_white_16',
@@ -4274,13 +4275,13 @@
                         bond: 'FormatTextWithColorTags_bond_71',
                         prom: 'FormatTextWithColorTags_prom_dd',
                     },
-                    Ke = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
+                    Ze = /(?:%\(|{)\w*(?:_[Oo]pen|Start)(?:\)s|})?(.*?)(?:%\(|{)\w*(?:_[Cc]lose|End)(?:\)s|})?/g,
                     Je = /(?<=(?:%\(|{))(.*?)(?=(?:_[Oo]pen|Start))/,
                     Qe = /(?<=(?:_[Oo]pen|Start)(?:\)s?|}))(.*?)(?=(?:%\(|{))/,
                     eu = (0, n.memo)(({ text: e, binding: u, classMix: t }) => {
                         const o = (0, n.useCallback)((e) => ({ color: `#${e}` }), []),
                             r = (0, n.useMemo)(() => u || {}, [u]);
-                        let i = Ke.exec(e),
+                        let i = Ze.exec(e),
                             s = e,
                             l = 0;
                         for (; i; ) {
@@ -4292,10 +4293,10 @@
                                 const e = n[0],
                                     i = e + l++ + e;
                                 ((s = s.replace(t, `%(${i})`)),
-                                    (r[i] = Ze[e]
+                                    (r[i] = Ke[e]
                                         ? a().createElement(
                                               'span',
-                                              { className: Ze[e] },
+                                              { className: Ke[e] },
                                               a().createElement(q, { text: E, binding: u }),
                                           )
                                         : a().createElement(
@@ -4304,7 +4305,7 @@
                                               a().createElement(q, { text: E, binding: u }),
                                           )));
                             }
-                            i = Ke.exec(e);
+                            i = Ze.exec(e);
                         }
                         return a().createElement(q, { text: s, classMix: t, binding: r });
                     }),
@@ -4616,7 +4617,7 @@
                             a().createElement(
                                 'div',
                                 { className: 'ProbabilitiesWithRotation_headerWrapper_5c' },
-                                a().createElement(K, null),
+                                a().createElement(Z, null),
                             ),
                             a().createElement(
                                 'div',

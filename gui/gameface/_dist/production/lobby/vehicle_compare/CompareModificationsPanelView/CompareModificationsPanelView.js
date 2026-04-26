@@ -50,7 +50,7 @@
                         children: () => n,
                         displayStatus: () => C,
                         displayStatusIs: () => $,
-                        events: () => m,
+                        events: () => _,
                         extraSize: () => j,
                         forceTriggerMouseMove: () => G,
                         freezeTextureBeforeResize: () => P,
@@ -155,7 +155,7 @@
                     return `url(${c(u, e, t)})`;
                 }
                 const C = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    m = {
+                    _ = {
                         onTextureFrozen: E('self.onTextureFrozen'),
                         onTextureReady: E('self.onTextureReady'),
                         onDomBuilt: E('self.onDomBuilt'),
@@ -171,7 +171,7 @@
                             onRequestPosition: E('children.requestPosition'),
                         },
                     },
-                    _ = ['args'];
+                    m = ['args'];
                 const h = 2,
                     g = 16,
                     w = 32,
@@ -188,7 +188,7 @@
                                         n = Object.keys(u);
                                     for (r = 0; r < n.length; r++) ((t = n[r]), e.indexOf(t) >= 0 || (i[t] = u[t]));
                                     return i;
-                                })(e, _);
+                                })(e, m);
                             return void 0 !== i
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: t, type: u }, n, {
@@ -289,7 +289,7 @@
                     },
                     K = Promise.all([
                         new Promise((u) => {
-                            window.isDomBuilt ? u() : m.onDomBuilt(u);
+                            window.isDomBuilt ? u() : _.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
@@ -321,6 +321,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -483,7 +484,7 @@
             },
             364: (u, e, t) => {
                 'use strict';
-                t.d(e, { Sw: () => n.Z, B0: () => o, ry: () => m });
+                t.d(e, { Sw: () => n.Z, B0: () => o, ry: () => _ });
                 class r {
                     constructor() {
                         ((this.entries = []),
@@ -565,7 +566,7 @@
                     E.done ? e(o) : Promise.resolve(o).then(r, i);
                 }
                 const C = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
-                    m = (function () {
+                    _ = (function () {
                         var u,
                             e =
                                 ((u = function* () {
@@ -594,7 +595,7 @@
                             return e.apply(this, arguments);
                         };
                     })(),
-                    _ = (u, e) => {
+                    m = (u, e) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== e) {
                             const i = e.args,
@@ -632,7 +633,7 @@
                         } else viewEnv.handleViewEvent({ __Type: t, type: u });
                         var r;
                     },
-                    h = () => _(o.CLOSE),
+                    h = () => m(o.CLOSE),
                     g = (u, e) => {
                         u.keyCode === D.n.ESCAPE && e();
                     };
@@ -647,11 +648,11 @@
                         TimeFormatType: l,
                         DateFormatType: s,
                         makeGlobalBoundingBox: C,
-                        sendMoveEvent: (u) => _(o.MOVE, { isMouseEvent: !0, on: u }),
+                        sendMoveEvent: (u) => m(o.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: h,
-                        sendClosePopOverEvent: () => _(o.POP_OVER, { on: !1 }),
+                        sendClosePopOverEvent: () => m(o.POP_OVER, { on: !1 }),
                         sendShowContextMenuEvent: (u, e, t = 0) => {
-                            _(o.CONTEXT_MENU, { isMouseEvent: !0, contentID: u, on: !0, decoratorID: t, args: e });
+                            m(o.CONTEXT_MENU, { isMouseEvent: !0, contentID: u, on: !0, decoratorID: t, args: e });
                         },
                         sendShowPopOverEvent: (u, e, t, r, i = R.invalid('resId'), n) => {
                             const a = d.O.view.getViewGlobalPosition(),
@@ -666,7 +667,7 @@
                                     width: d.O.view.pxToRem(l),
                                     height: d.O.view.pxToRem(s),
                                 };
-                            _(o.POP_OVER, {
+                            m(o.POP_OVER, {
                                 isMouseEvent: !0,
                                 contentID: u,
                                 decoratorID: r || R.invalid('resId'),
@@ -687,8 +688,8 @@
                         closeOnEsc: (u) => {
                             g(u, h);
                         },
-                        handleViewEvent: _,
-                        onBindingsReady: m,
+                        handleViewEvent: m,
+                        onBindingsReady: _,
                         onLayoutReady: () =>
                             new Promise((u) => {
                                 requestAnimationFrame(() => {
@@ -839,12 +840,12 @@
                         D = i.mediumWidth,
                         B = i.smallWidth,
                         C = i.extraSmallWidth,
-                        m = i.extraLargeHeight,
-                        _ = i.largeHeight,
+                        _ = i.extraLargeHeight,
+                        m = i.largeHeight,
                         h = i.mediumHeight,
                         g = i.smallHeight,
                         w = i.extraSmallHeight,
-                        v = { extraLarge: m, large: _, medium: h, small: g, extraSmall: w };
+                        v = { extraLarge: _, large: m, medium: h, small: g, extraSmall: w };
                     if (t.extraLarge || t.large || t.medium || t.small || t.extraSmall) {
                         if (t.extraLarge && a) return e;
                         if (t.large && E) return e;
@@ -860,8 +861,8 @@
                         if (
                             !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
                         ) {
-                            if (t.extraLargeHeight && m) return e;
-                            if (t.largeHeight && _) return e;
+                            if (t.extraLargeHeight && _) return e;
+                            if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
                             if (t.smallHeight && g) return e;
                             if (t.extraSmallHeight && w) return e;
@@ -891,7 +892,7 @@
                         const e = (0, r.useRef)(!1);
                         e.current || (u(), (e.current = !0));
                     },
-                    m = (0, r.memo)(({ children: u }) => {
+                    _ = (0, r.memo)(({ children: u }) => {
                         const e = (0, r.useContext)(d),
                             t = (0, r.useState)(e),
                             n = t[0],
@@ -908,8 +909,8 @@
                         const l = (0, r.useMemo)(() => Object.assign({}, n), [n]);
                         return i().createElement(d.Provider, { value: l }, u);
                     });
-                var _ = t(483),
-                    h = t.n(_),
+                var m = t(483),
+                    h = t.n(m),
                     g = t(926),
                     w = t.n(g);
                 let v, p, f;
@@ -1054,7 +1055,7 @@
                             for (r = 0; r < n.length; r++) ((t = n[r]), e.indexOf(t) >= 0 || (i[t] = u[t]));
                             return i;
                         })(u, y);
-                    return i().createElement(m, null, i().createElement(O, t, e));
+                    return i().createElement(_, null, i().createElement(O, t, e));
                 };
                 var k = t(493),
                     H = t.n(k);
@@ -1302,8 +1303,8 @@
                             c = u.isEnabled,
                             B = void 0 === c || c,
                             C = u.targetId,
-                            m = void 0 === C ? 0 : C,
-                            _ = u.onShow,
+                            _ = void 0 === C ? 0 : C,
+                            m = u.onShow,
                             h = u.onHide,
                             g = (function (u, e) {
                                 if (null == u) return {};
@@ -1315,13 +1316,13 @@
                                 return i;
                             })(u, tu);
                         const w = (0, r.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
-                            v = (0, r.useMemo)(() => m || U().resId, [m]),
+                            v = (0, r.useMemo)(() => _ || U().resId, [_]),
                             p = (0, r.useCallback)(() => {
                                 (w.current.isVisible && w.current.timeoutId) ||
                                     (iu(t, d, { isMouseEvent: !0, on: !0, arguments: ru(i) }, v),
-                                    _ && _(),
+                                    m && m(),
                                     (w.current.isVisible = !0));
-                            }, [t, d, i, v, _]),
+                            }, [t, d, i, v, m]),
                             f = (0, r.useCallback)(() => {
                                 if (w.current.isVisible || w.current.timeoutId) {
                                     const u = w.current.timeoutId;
@@ -1467,16 +1468,16 @@
                                 ),
                             ),
                         ),
-                    mu = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
-                    _u = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
+                    _u = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
+                    mu = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 const hu = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
                     gu = (u) =>
                         hu
                             ? `${u}`
                             : (function (u) {
                                   let e = '';
-                                  for (let t = _u.length - 1; t >= 0; t--)
-                                      for (; u >= _u[t]; ) ((e += mu[t]), (u -= _u[t]));
+                                  for (let t = mu.length - 1; t >= 0; t--)
+                                      for (; u >= mu[t]; ) ((e += _u[t]), (u -= mu[t]));
                                   return e;
                               })(u),
                     wu = 'PanelItem_base_55',

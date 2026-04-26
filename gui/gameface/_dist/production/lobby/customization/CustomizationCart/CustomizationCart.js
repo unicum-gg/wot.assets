@@ -321,6 +321,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -3262,7 +3263,7 @@
                     Mt = ({ typeId: e, progressionLevel: u, classMix: t }) => {
                         const n = `level_${u}`,
                             r =
-                                30 === e
+                                32 === e
                                     ? R.images.gui.maps.icons.customization.progression_styles.icons
                                     : R.images.gui.maps.icons.customization.progression_icons,
                             a = r.$dyn(n),
@@ -3338,7 +3339,7 @@
                                 [y, r],
                             ),
                             k = (0, o.useCallback)(() => {
-                                b && !t && b({ id: e, isFromStorage: a, selected: !i });
+                                b && !t && e && b({ id: e, isFromStorage: a, selected: !i });
                             }, [e, a, t, b, i]),
                             N = p()(kt, D, F && Nt, S && Tt, f && Rt, S && i && Wt, S && !i && Ot),
                             T = p()(Ht, i && It),

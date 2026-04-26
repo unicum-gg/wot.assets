@@ -400,6 +400,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1309,9 +1310,9 @@
                 U.defaultProps = { type: I.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const j = (0, r.memo)(U);
                 var X = t(9887),
-                    $ = t.n(X);
-                const K = ['xl', 'lg', 'md', 'sm', 'xs'],
-                    z = (u) => u.includes('_') && ((u) => K.includes(u))(u.split('_').at(-1)),
+                    K = t.n(X);
+                const $ = ['xl', 'lg', 'md', 'sm', 'xs'],
+                    z = (u) => u.includes('_') && ((u) => $.includes(u))(u.split('_').at(-1)),
                     V = [b.ExtraLarge, b.Large, b.Medium, b.Small, b.ExtraSmall],
                     q = (u, e) =>
                         Object.keys(u).reduce((t, r) => {
@@ -1320,7 +1321,7 @@
                                 const a = r.split('_').slice(0, -1).join('_');
                                 if (a in t) return t;
                                 const n = V.indexOf(e),
-                                    E = (-1 !== n ? K.slice(n) : [])
+                                    E = (-1 !== n ? $.slice(n) : [])
                                         .map((u) => a + '_' + u)
                                         .find((e) => void 0 !== u[e]),
                                     i = E ? u[E] : void 0;
@@ -1329,7 +1330,7 @@
                             const a = u[r];
                             return (
                                 void 0 === a ||
-                                    ((u, e) => K.some((t) => void 0 !== e[`${u}_${t}`]))(r, u) ||
+                                    ((u, e) => $.some((t) => void 0 !== e[`${u}_${t}`]))(r, u) ||
                                     (t[r] = a),
                                 t
                             );
@@ -1421,7 +1422,7 @@
                         J.apply(this, arguments)
                     );
                 }
-                Object.keys($());
+                Object.keys(K());
                 const uu = {
                         XL: { mt: Z.mt__XL, mr: Z.mr__XL, mb: Z.mb__XL, ml: Z.ml__XL },
                         LG: { mt: Z.mt__LG, mr: Z.mr__LG, mb: Z.mb__LG, ml: Z.ml__LG },
@@ -1651,7 +1652,7 @@
                         Cu.apply(this, arguments)
                     );
                 }
-                Object.keys($());
+                Object.keys(K());
                 const mu = Object.keys(_u()),
                     du = { mt: 'MD', mr: 'SM', mb: 'SM', ml: 'SM' },
                     hu = { mt: 'SM', mr: 'XS', mb: 'XS', ml: 'XS' },
@@ -2180,8 +2181,8 @@
                             onReroll: u.createCallbackNoArgs('onReroll'),
                         }),
                     ),
-                    $u = Xu[0],
-                    Ku = Xu[1],
+                    Ku = Xu[0],
+                    $u = Xu[1],
                     zu = 'App_base_4b',
                     Vu = 'App_background_40',
                     qu = 'App_closeButton_a0',
@@ -2195,7 +2196,7 @@
                     re = 'App_btn_width_f5',
                     ae = R.strings.quests.dailyReroll,
                     ne = (0, Ru.Pi)(() => {
-                        const u = Ku(),
+                        const u = $u(),
                             e = u.controls,
                             t = u.model.root.get(),
                             n = t.isAlert,
@@ -2272,7 +2273,7 @@
                     });
                 engine.whenReady.then(() => {
                     P().render(
-                        a().createElement($u, null, a().createElement(H, null, a().createElement(ne, null))),
+                        a().createElement(Ku, null, a().createElement(H, null, a().createElement(ne, null))),
                         document.getElementById('root'),
                     );
                 });

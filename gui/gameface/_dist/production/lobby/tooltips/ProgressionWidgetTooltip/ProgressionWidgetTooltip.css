@@ -1160,7 +1160,8 @@
     width: 22rem;
     height: 22rem;
     margin-top: 2rem;
-    background: url('R.images.historical_battles.gui.maps.icons.hangar.mainRewardWidget.check') no-repeat center / cover;
+    background: url('R.images.historical_battles.gui.maps.icons.hangar.progressionWidgetTooltip.check') no-repeat
+        center / cover;
 }
 
 .ProgressionWidgetTooltipApp_completed_title_e0 {
@@ -1240,4 +1241,8 @@
 
 .ProgressionWidgetTooltipApp_reward_12 + .ProgressionWidgetTooltipApp_reward_12 {
     margin-left: 20rem;
+}
+
+.ProgressionWidgetTooltipApp_silver_47 {
+    color: #ced9d9;
 }

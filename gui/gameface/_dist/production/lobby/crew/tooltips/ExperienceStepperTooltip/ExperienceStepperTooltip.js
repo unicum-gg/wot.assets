@@ -335,6 +335,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1174,7 +1175,7 @@
                         ((u.NBSP = ' '), (u.ZWNBSP = '\ufeff'), (u.NEW_LINE = '\n'));
                     })(V || (V = {})));
                 const j = { [V.NBSP]: U.NoBreakSymbol, [V.ZWNBSP]: U.NoBreakSymbol, [V.NEW_LINE]: U.LineBreak },
-                    H = {
+                    K = {
                         blackReal: 'colors_blackReal_fc',
                         whiteReal: 'colors_whiteReal_31',
                         white: 'colors_white_45',
@@ -1199,17 +1200,17 @@
                         bond: 'colors_bond_ce',
                         prom: 'colors_prom_83',
                     },
-                    q = 'renderers_noBreakWrapper_10',
-                    K = 'renderers_lineBreak_b5',
+                    H = 'renderers_noBreakWrapper_10',
+                    q = 'renderers_lineBreak_b5',
                     z = 'renderers_newLine_bd',
                     G = (u) => ({ color: `#${u}` }),
                     Y = ({ elementList: u, textBlock: e, key: t }) => {
                         const n = e.colorTag;
                         return n
-                            ? H[n]
+                            ? K[n]
                                 ? E().createElement(
                                       'span',
-                                      { key: t, 'data-block-type': e.blockType, className: H[n] },
+                                      { key: t, 'data-block-type': e.blockType, className: K[n] },
                                       u,
                                   )
                                 : E().createElement('span', { key: t, 'data-block-type': e.blockType, style: G(n) }, u)
@@ -1225,11 +1226,11 @@
                                 u.map((u) => E().createElement(E().Fragment, { key: t }, u)),
                             ),
                         [U.LineBreak]: ({ key: u }) =>
-                            E().createElement('span', { key: u, 'data-block-type': U.LineBreak, className: K }),
+                            E().createElement('span', { key: u, 'data-block-type': U.LineBreak, className: q }),
                         [U.NewLine]: ({ elementList: u, key: e }) =>
                             E().createElement('span', { key: e, 'data-block-type': U.NewLine, className: z }, u),
                         [U.NoBreakWrapper]: ({ elementList: u, key: e }) =>
-                            E().createElement('span', { key: e, 'data-block-type': U.NoBreakWrapper, className: q }, u),
+                            E().createElement('span', { key: e, 'data-block-type': U.NoBreakWrapper, className: H }, u),
                     },
                     X = (u, e, t) => {
                         const n = [];

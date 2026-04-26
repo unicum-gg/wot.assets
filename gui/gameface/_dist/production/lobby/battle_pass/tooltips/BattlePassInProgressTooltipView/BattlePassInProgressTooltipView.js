@@ -335,6 +335,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1061,8 +1062,8 @@
                     for (var t = 0, n = new Array(e); t < e; t++) n[t] = u[t];
                     return n;
                 }
-                const V = (u) => (0 === u ? window : window.subViews.get(u));
-                var H = t(3946);
+                const H = (u) => (0 === u ? window : window.subViews.get(u));
+                var V = t(3946);
                 const X = ((u, e) => {
                         const t = (0, n.createContext)({});
                         return [
@@ -1073,7 +1074,7 @@
                                         const s = (function ({
                                                 initializer: u = !0,
                                                 rootId: e = 0,
-                                                getRoot: t = V,
+                                                getRoot: t = H,
                                                 context: n = 'model',
                                             } = {}) {
                                                 const r = new Map();
@@ -1251,7 +1252,7 @@
                                 rewardsCommon: u.array('rewardsCommon'),
                                 rewardsElite: u.array('rewardsElite'),
                             },
-                            t = (0, H.Om)((u) => e.root.get().chapterType === u);
+                            t = (0, V.Om)((u) => e.root.get().chapterType === u);
                         return Object.assign({}, e, { computes: { isTypedChapter: t } });
                     }, z),
                     K = X[0],
@@ -1649,7 +1650,7 @@
                             );
                         },
                     ),
-                    Vu = (0, n.memo)(
+                    Hu = (0, n.memo)(
                         ({
                             to: u,
                             size: e,
@@ -1702,7 +1703,7 @@
                             );
                         },
                     ),
-                    Hu = ['onComplete', 'onEndAnimation'];
+                    Vu = ['onComplete', 'onEndAnimation'];
                 function Xu() {
                     return (
                         (Xu =
@@ -1728,7 +1729,7 @@
                                     a = Object.keys(u);
                                 for (n = 0; n < a.length; n++) ((t = a[n]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                 return r;
-                            })(u, Hu);
+                            })(u, Vu);
                         const s = (0, n.useState)(!1),
                             o = s[0],
                             i = s[1],
@@ -1740,7 +1741,7 @@
                             case fu.Simple:
                                 return r().createElement(Uu, Xu({}, a, { onEndAnimation: E, isComplete: o }));
                             case fu.Growing:
-                                return r().createElement(Vu, Xu({}, a, { onEndAnimation: E, isComplete: o }));
+                                return r().createElement(Hu, Xu({}, a, { onEndAnimation: E, isComplete: o }));
                             default:
                                 return null;
                         }
@@ -2024,6 +2025,7 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
@@ -2064,7 +2066,6 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
-                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -2606,9 +2607,9 @@
                         );
                         var c;
                     };
-                function Ve() {
+                function He() {
                     return (
-                        (Ve =
+                        (He =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -2617,10 +2618,10 @@
                                 }
                                 return u;
                             }),
-                        Ve.apply(this, arguments)
+                        He.apply(this, arguments)
                     );
                 }
-                const He = ({ children: u, tooltipArgs: e, className: t }) => {
+                const Ve = ({ children: u, tooltipArgs: e, className: t }) => {
                         if (!e) return u;
                         const n = r().createElement('div', { className: t }, u);
                         if (e.header || e.body) return r().createElement(je, e, n);
@@ -2628,7 +2629,7 @@
                             s = e.args,
                             o = null == s ? void 0 : s.contentId;
                         return a || o
-                            ? r().createElement(Ue, Ve({}, e, { contentId: a || o }), n)
+                            ? r().createElement(Ue, He({}, e, { contentId: a || o }), n)
                             : r().createElement(ze, e, n);
                     },
                     Xe = {
@@ -2731,7 +2732,7 @@
                             'div',
                             { className: i()(Xe.base, Xe[`base__${n}`], l), style: E },
                             r().createElement(
-                                He,
+                                Ve,
                                 { tooltipArgs: A, className: Xe.tooltipWrapper },
                                 r().createElement(
                                     r().Fragment,
@@ -2776,7 +2777,7 @@
                             ),
                             t &&
                                 r().createElement(
-                                    He,
+                                    Ve,
                                     { tooltipArgs: F },
                                     r().createElement('div', {
                                         className: i()(Xe.timer, null == c ? void 0 : c.periodicIcon),

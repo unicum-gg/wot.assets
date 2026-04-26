@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (u, e, t) => {
-                t.d(e, { O: () => q });
+                t.d(e, { O: () => Y });
                 var n = {};
                 (t.r(n), t.d(n, { mouse: () => s, onResize: () => r }));
                 var E = {};
@@ -33,9 +33,9 @@
                         addPreloadTexture: () => f,
                         children: () => A,
                         displayStatus: () => _,
-                        displayStatusIs: () => z,
+                        displayStatusIs: () => K,
                         events: () => d,
-                        extraSize: () => K,
+                        extraSize: () => z,
                         forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => L,
                         getBrowserTexturePath: () => T,
@@ -262,8 +262,8 @@
                 function j() {
                     return viewEnv.getShowingStatus();
                 }
-                const z = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
-                    K = {
+                const K = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
+                    z = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -277,7 +277,7 @@
                         }),
                         engine.whenReady,
                     ]),
-                    q = { view: i, client: E };
+                    Y = { view: i, client: E };
             },
             521: (u, e, t) => {
                 let n, E;
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1098,7 +1099,7 @@
                         }, {})
                     );
                 }
-                let z, K;
+                let K, z;
                 (!(function (u) {
                     ((u.main = 'main'),
                         (u.primary = 'primary'),
@@ -1106,12 +1107,12 @@
                         (u.primaryRed = 'primaryRed'),
                         (u.secondary = 'secondary'),
                         (u.ghost = 'ghost'));
-                })(z || (z = {})),
+                })(K || (K = {})),
                     (function (u) {
                         ((u.extraSmall = 'extraSmall'), (u.small = 'small'), (u.medium = 'medium'));
-                    })(K || (K = {})));
+                    })(z || (z = {})));
                 const G = 'FormatText_base_d0',
-                    q = ({ binding: u, text: e = '', classMix: t, alignment: A = p.left }) =>
+                    Y = ({ binding: u, text: e = '', classMix: t, alignment: A = p.left }) =>
                         null === e
                             ? (console.error("FormatText was supplied with 'null'"), null)
                             : E().createElement(
@@ -1130,7 +1131,7 @@
                                       ),
                                   ),
                               ),
-                    Y = [
+                    q = [
                         'children',
                         'contentId',
                         'args',
@@ -1206,7 +1207,7 @@
                                     A = Object.keys(u);
                                 for (n = 0; n < A.length; n++) ((t = A[n]), e.indexOf(t) >= 0 || (E[t] = u[t]));
                                 return E;
-                            })(u, Y);
+                            })(u, q);
                         const w = (0, n.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
                             v = (0, n.useMemo)(() => d || S().resId, [d]),
                             p = (0, n.useCallback)(() => {
@@ -1328,7 +1329,7 @@
                             { className: i.base },
                             E().createElement('div', { className: eu.icon }, t),
                             E().createElement('div', { className: eu.title }, u),
-                            Boolean(e) && E().createElement(q, { classMix: eu.subTitle, text: e || '', binding: A }),
+                            Boolean(e) && E().createElement(Y, { classMix: eu.subTitle, text: e || '', binding: A }),
                         );
                     });
                 var nu = t(521);
@@ -1474,7 +1475,7 @@
                                 onMouseLeave: y,
                                 onClick: f,
                             },
-                            A !== z.ghost &&
+                            A !== K.ghost &&
                                 E().createElement(
                                     E().Fragment,
                                     null,
@@ -1496,7 +1497,7 @@
                         )
                     );
                 };
-                au.defaultProps = { type: z.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                au.defaultProps = { type: K.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const ru = (0, n.memo)(au),
                     ou = {
                         base: 'TextButton_base_b6',
@@ -1736,7 +1737,7 @@
                             E().createElement('div', { className: cu.divider }),
                             E().createElement(
                                 ru,
-                                { mixClass: cu.button, onClick: a, size: K.medium, type: z.main },
+                                { mixClass: cu.button, onClick: a, size: z.medium, type: K.main },
                                 R.strings.dialogs.accountCompletion.demoComplete.button(),
                             ),
                         ),

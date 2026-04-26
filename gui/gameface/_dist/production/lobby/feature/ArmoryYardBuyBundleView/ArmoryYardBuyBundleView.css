@@ -1167,24 +1167,23 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 1;
     mix-blend-mode: lighten; /* additive;*/
     position: absolute;
-    top: -70rem;
+    top: -35rem;
     pointer-events: none;
 }
 .mediaMedium .App_glow_39 {
     width: 400rem;
     height: 400rem;
     mix-blend-mode: lighten;
-    top: -100rem;
+    top: -55rem;
 }
 .mediaLarge .App_glow_39 {
     width: 570rem;
     height: 570rem;
-    top: -145rem;
 }
 .mediaExtraLarge .App_glow_39 {
     width: 810rem;
     height: 810rem;
-    top: -170rem;
+    top: -70rem;
 }
 .App_icon_02 {
     width: 260rem;

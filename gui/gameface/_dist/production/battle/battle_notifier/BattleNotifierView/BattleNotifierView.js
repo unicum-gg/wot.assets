@@ -335,6 +335,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -914,8 +915,8 @@
                     V = 'App_experience_44',
                     G = 'App_crystals_47',
                     W = 'App_upperGlow_f9',
-                    H = 'App_upperGlowFadeOut_81',
-                    K = 'App_vehicleIcon_c5';
+                    K = 'App_upperGlowFadeOut_81',
+                    H = 'App_vehicleIcon_c5';
                 function q(u) {
                     engine.call('PlaySound', u);
                 }
@@ -943,12 +944,12 @@
                         },
                         SPG: { [g.Victory]: j.SPG_victory(), [g.Draw]: j.SPG_draw(), [g.Defeat]: j.SPG_defeat() },
                     },
-                    $ = {
+                    Y = {
                         [g.Victory]: j.upper_glow_victory(),
                         [g.Draw]: j.upper_glow_draw(),
                         [g.Defeat]: j.upper_glow_defeat(),
                     },
-                    Y = {
+                    $ = {
                         [g.Victory]: j.line_glow_victory(),
                         [g.Draw]: j.line_glow_draw(),
                         [g.Defeat]: j.line_glow_defeat(),
@@ -966,8 +967,8 @@
                         [g.Defeat]: R.strings.ingame_gui.battle_notifier.lose(),
                     },
                     uu = (u = 'SPG', e = g.Draw) => z[u][e],
-                    eu = (u = g.Draw) => ({ backgroundImage: `url(${$[u]})` }),
-                    tu = (u = g.Draw) => ({ backgroundImage: `url(${Y[u]})` }),
+                    eu = (u = g.Draw) => ({ backgroundImage: `url(${Y[u]})` }),
+                    tu = (u = g.Draw) => ({ backgroundImage: `url(${$[u]})` }),
                     Au = (u) => ({ backgroundImage: `url(${Z[u]})` }),
                     Fu = { backgroundImage: `url(${X})` },
                     Eu = () => {
@@ -1018,7 +1019,7 @@
                                       { key: t, className: i()(T, { [P]: d, [k]: v }) },
                                       F().createElement('div', { className: y, style: Fu, onAnimationEnd: l, ref: c }),
                                       F().createElement('div', { className: W, style: eu(e) }),
-                                      F().createElement('div', { className: H, style: eu(e) }),
+                                      F().createElement('div', { className: K, style: eu(e) }),
                                       F().createElement('div', { className: O, style: tu(e) }),
                                       F().createElement('div', { className: M, style: tu(e) }),
                                       F().createElement('div', { className: S }, w),
@@ -1027,7 +1028,7 @@
                                           'div',
                                           { className: i()(N, U) },
                                           F().createElement('div', null, C(r)),
-                                          F().createElement('img', { className: K, src: uu(D, e) }),
+                                          F().createElement('img', { className: H, src: uu(D, e) }),
                                           F().createElement('div', null, n),
                                       ),
                                       F().createElement('div', { className: i()(L, I), style: Au('credits') }, f),

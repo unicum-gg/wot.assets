@@ -384,6 +384,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1173,6 +1174,7 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
@@ -1213,7 +1215,6 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
-                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -1500,7 +1501,7 @@
                                 return `R.images.gui.maps.icons.quests.bonuses.${e}.${t}`;
                         }
                     },
-                    q = (u, e, t) => {
+                    Y = (u, e, t) => {
                         const r = e && { contentId: e };
                         return Object.assign(
                             {
@@ -1513,7 +1514,7 @@
                             t,
                         );
                     },
-                    Y = (u, e, t) =>
+                    q = (u, e, t) =>
                         e.extraLargeHeight || e.largeHeight || e.mediumHeight || e.smallHeight || e.extraSmallHeight
                             ? (e.extraLargeHeight && t.extraLarge) ||
                               (e.largeHeight && t.large) ||
@@ -1637,11 +1638,11 @@
                         if (t.small && o) return e;
                         if (t.extraSmall && E) return e;
                     } else {
-                        if (t.extraLargeWidth && A) return Y(e, t, g);
-                        if (t.largeWidth && l) return Y(e, t, g);
-                        if (t.mediumWidth && F) return Y(e, t, g);
-                        if (t.smallWidth && D) return Y(e, t, g);
-                        if (t.extraSmallWidth && c) return Y(e, t, g);
+                        if (t.extraLargeWidth && A) return q(e, t, g);
+                        if (t.largeWidth && l) return q(e, t, g);
+                        if (t.mediumWidth && F) return q(e, t, g);
+                        if (t.smallWidth && D) return q(e, t, g);
+                        if (t.extraSmallWidth && c) return q(e, t, g);
                         if (
                             !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
                         ) {
@@ -1798,7 +1799,7 @@
                                         image: j(e, r),
                                         size: r,
                                         valueType: G(e.name),
-                                        tooltipArgs: q({
+                                        tooltipArgs: Y({
                                             tooltipId: e.tooltipId,
                                             tooltipContentId: e.tooltipContentId,
                                         }),
@@ -2503,10 +2504,10 @@
                                 .replace(/ /g, ' ')
                                 .match(u);
                     })(),
-                    qu = ['zh_cn', 'zh_sg', 'zh_tw'],
-                    Yu = (u, e = Hu.left) => {
+                    Yu = ['zh_cn', 'zh_sg', 'zh_tw'],
+                    qu = (u, e = Hu.left) => {
                         const t = R.strings.settings.LANGUAGE_CODE().toLowerCase();
-                        return qu.includes(t)
+                        return Yu.includes(t)
                             ? ju(u)
                             : ((u, e = Hu.left) => {
                                   let t = [];
@@ -2530,7 +2531,7 @@
                                           ((u, e, t) =>
                                               u
                                                   .split(/%\((.*?)\)(?:[sd])?/g)
-                                                  .map((u) => (t && u in t ? t[u] : Yu(u, e))))(e, r, u).map((u, e) =>
+                                                  .map((u) => (t && u in t ? t[u] : qu(u, e))))(e, r, u).map((u, e) =>
                                               s().createElement(i.Fragment, { key: `${e}-${u}` }, u),
                                           ),
                                       ),

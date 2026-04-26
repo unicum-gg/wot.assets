@@ -33,13 +33,13 @@
                         addPreloadTexture: () => b,
                         children: () => D,
                         displayStatus: () => l,
-                        displayStatusIs: () => K,
+                        displayStatusIs: () => H,
                         events: () => d,
                         extraSize: () => $,
-                        forceTriggerMouseMove: () => z,
+                        forceTriggerMouseMove: () => K,
                         freezeTextureBeforeResize: () => R,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => H,
+                        getDisplayStatus: () => z,
                         getScale: () => S,
                         getSize: () => M,
                         getViewGlobalPosition: () => k,
@@ -256,13 +256,13 @@
                 function V() {
                     return viewEnv.isEventHandled();
                 }
-                function z() {
+                function K() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function H() {
+                function z() {
                     return viewEnv.getShowingStatus();
                 }
-                const K = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
+                const H = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
                     $ = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -703,7 +704,7 @@
                     };
                 window.ViewEnvHelper = p;
             },
-            659: (u, e, A) => {
+            48: (u, e, A) => {
                 var F = A(179),
                     E = A.n(F),
                     D = A(493),
@@ -1009,7 +1010,7 @@
                     W = 'App_base_be',
                     I = 'App_warningText_fd',
                     V = 'App_mainText_8b',
-                    z = () => {
+                    K = () => {
                         const u = b(),
                             e = u.mainText,
                             A = u.warningText,
@@ -1038,7 +1039,7 @@
                         );
                     };
                 engine.whenReady.then(() => {
-                    t().render(E().createElement(z, null), document.getElementById('root'));
+                    t().render(E().createElement(K, null), document.getElementById('root'));
                 });
             },
         },
@@ -1117,6 +1118,6 @@
                 A = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (A.forEach(e.bind(null, 0)), (A.push = e.bind(null, A.push.bind(A))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [881], () => __webpack_require__(659));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [881], () => __webpack_require__(48));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

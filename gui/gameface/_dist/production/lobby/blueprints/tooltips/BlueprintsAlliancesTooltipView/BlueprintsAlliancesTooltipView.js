@@ -36,14 +36,14 @@
                         displayStatusIs: () => z,
                         events: () => d,
                         extraSize: () => q,
-                        forceTriggerMouseMove: () => K,
+                        forceTriggerMouseMove: () => H,
                         freezeTextureBeforeResize: () => P,
                         getBrowserTexturePath: () => O,
                         getDisplayStatus: () => W,
                         getScale: () => k,
                         getSize: () => M,
                         getViewGlobalPosition: () => R,
-                        isEventHandled: () => H,
+                        isEventHandled: () => K,
                         isFocused: () => I,
                         pxToRem: () => S,
                         remToPx: () => L,
@@ -253,10 +253,10 @@
                 function V() {
                     return viewEnv.setEventHandled();
                 }
-                function H() {
+                function K() {
                     return viewEnv.isEventHandled();
                 }
-                function K() {
+                function H() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function W() {
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1019,7 +1020,7 @@
                         );
                         return F().createElement(S, { classMix: L, text: u, binding: t });
                     },
-                    H = {
+                    K = {
                         base: 'Content_base_d3',
                         box: 'Content_box_bf',
                         icon: 'Content_icon_2a',
@@ -1041,7 +1042,7 @@
                         highlightText: 'Content_highlightText_a3',
                         infoIcon: 'Content_infoIcon_47',
                     },
-                    K = () => {
+                    H = () => {
                         const u = P('model'),
                             e = u.allianceName,
                             A = u.vehicleNationName,
@@ -1060,12 +1061,12 @@
                                 () => ({
                                     allianceIcon: F().createElement(
                                         'div',
-                                        { className: H.icon },
-                                        F().createElement('span', { className: H.iconUrl, style: o }),
+                                        { className: K.icon },
+                                        F().createElement('span', { className: K.iconUrl, style: o }),
                                     ),
                                     allianceName: F().createElement(
                                         'span',
-                                        { className: H.text },
+                                        { className: K.text },
                                         R.strings.tooltips.blueprints.conversionView.alliance.title.name.$dyn(n),
                                     ),
                                 }),
@@ -1075,7 +1076,7 @@
                                 () => ({
                                     allianceNations: F().createElement(
                                         'span',
-                                        { className: H.highlightText },
+                                        { className: K.highlightText },
                                         R.strings.tooltips.blueprints.conversionView.alliance.nations.$dyn(n),
                                     ),
                                 }),
@@ -1085,7 +1086,7 @@
                                 () => ({
                                     allianceName: F().createElement(
                                         'span',
-                                        { className: H.highlightText },
+                                        { className: K.highlightText },
                                         R.strings.tooltips.blueprints.conversionView.alliance.desc.name.$dyn(n),
                                     ),
                                 }),
@@ -1095,70 +1096,70 @@
                                 () => ({
                                     allianceName: F().createElement(
                                         'span',
-                                        { className: H.highlightText },
+                                        { className: K.highlightText },
                                         R.strings.tooltips.blueprints.conversionView.alliance.content.name.$dyn(n),
                                     ),
                                 }),
                                 [n],
                             ),
-                            l = i()(H.separator, H.separator__bottom);
+                            l = i()(K.separator, K.separator__bottom);
                         return F().createElement(
                             'div',
-                            { className: H.base },
+                            { className: K.base },
                             F().createElement(
                                 'div',
-                                { className: H.title },
+                                { className: K.title },
                                 F().createElement(S, {
-                                    classMix: H.highTitle,
+                                    classMix: K.highTitle,
                                     text: R.strings.tooltips.blueprints.conversionView.title(),
                                     binding: a,
                                 }),
                             ),
                             F().createElement(
                                 'div',
-                                { className: H.subTitle },
+                                { className: K.subTitle },
                                 F().createElement(S, {
-                                    classMix: H.mainText,
+                                    classMix: K.mainText,
                                     text: R.strings.tooltips.blueprints.conversionView.subTitle(),
                                     binding: C,
                                 }),
                             ),
                             F().createElement(
                                 'div',
-                                { className: H.desc },
+                                { className: K.desc },
                                 F().createElement(S, {
-                                    classMix: H.mainText,
+                                    classMix: K.mainText,
                                     text: R.strings.tooltips.blueprints.conversionView.desc(),
                                     binding: s,
                                 }),
                             ),
                             F().createElement(
                                 'div',
-                                { className: H.contentTitle },
+                                { className: K.contentTitle },
                                 F().createElement(
                                     'span',
-                                    { className: H.highTitleCustom },
+                                    { className: K.highTitleCustom },
                                     R.strings.tooltips.blueprints.conversionView.content.title(),
                                 ),
                             ),
                             F().createElement(
                                 'div',
-                                { className: H.content },
-                                F().createElement('div', { className: H.separator }),
+                                { className: K.content },
+                                F().createElement('div', { className: K.separator }),
                                 F().createElement(
                                     'div',
-                                    { className: H.contentFirst },
+                                    { className: K.contentFirst },
                                     F().createElement(
                                         'div',
                                         null,
                                         F().createElement(
                                             'span',
-                                            { className: H.mainText },
+                                            { className: K.mainText },
                                             R.strings.tooltips.blueprints.conversionView.content.first.body(),
                                         ),
                                         F().createElement(
                                             'div',
-                                            { className: H.nationsBlock },
+                                            { className: K.nationsBlock },
                                             F().createElement(V, {
                                                 strResId:
                                                     R.strings.tooltips.blueprints.conversionView.content.first.title(),
@@ -1170,18 +1171,18 @@
                                 ),
                                 F().createElement(
                                     'div',
-                                    { className: H.contentSecond },
+                                    { className: K.contentSecond },
                                     F().createElement(
                                         'div',
                                         null,
                                         F().createElement(S, {
-                                            classMix: H.mainText,
+                                            classMix: K.mainText,
                                             text: R.strings.tooltips.blueprints.conversionView.content.second(),
                                             binding: c,
                                         }),
                                         F().createElement(
                                             'div',
-                                            { className: H.nationsBlock },
+                                            { className: K.nationsBlock },
                                             D.map((u, e) =>
                                                 F().createElement(V, {
                                                     key: e,
@@ -1198,17 +1199,17 @@
                             F().createElement('div', { className: l }),
                             F().createElement(
                                 'div',
-                                { className: H.footer },
-                                F().createElement('span', { className: H.infoIcon }),
+                                { className: K.footer },
+                                F().createElement('span', { className: K.infoIcon }),
                                 F().createElement(
                                     'span',
-                                    { className: H.mainText },
+                                    { className: K.mainText },
                                     R.strings.tooltips.blueprints.conversionView.info(),
                                 ),
                             ),
                         );
                     },
-                    W = () => F().createElement(s, null, F().createElement(K, null)),
+                    W = () => F().createElement(s, null, F().createElement(H, null)),
                     z = document.createElement('div');
                 ((window.onload = () => document.body.appendChild(z)), n().render(F().createElement(W, null), z));
             },

@@ -18,7 +18,7 @@
             },
             67: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => K });
+                t.d(e, { O: () => j });
                 var E = {};
                 (t.r(E), t.d(E, { mouse: () => B, onResize: () => i }));
                 var A = {};
@@ -69,7 +69,7 @@
                         setEventHandled: () => W,
                         setInputPaddingsRem: () => L,
                         setSidePaddingsRem: () => M,
-                        whenTutorialReady: () => j,
+                        whenTutorialReady: () => K,
                     }));
                 const i = a('clientResized'),
                     D = { down: a('mousedown'), up: a('mouseup'), move: a('mousemove') };
@@ -287,13 +287,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    j = Promise.all([
+                    K = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : d.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    K = { view: r, client: A };
+                    j = { view: r, client: A };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -321,6 +321,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1108,7 +1109,7 @@
                                 .match(u);
                     })(),
                     V = ['zh_cn', 'zh_sg', 'zh_tw'],
-                    j = (u, e = W.left) => {
+                    K = (u, e = W.left) => {
                         const t = R.strings.settings.LANGUAGE_CODE().toLowerCase();
                         return V.includes(t)
                             ? z(u)
@@ -1120,7 +1121,7 @@
                                   return ($(A, /( )/, e).forEach((u) => (t = t.concat($(u, E, W.left)))), t);
                               })(u, e);
                     };
-                let K;
+                let j;
                 !(function (u) {
                     ((u.SHORT_DATE = 'short-date'),
                         (u.SHORT_TIME = 'short-time'),
@@ -1135,7 +1136,7 @@
                         (u.WEEK_DAY_TIME = 'week-day-time'),
                         (u.YEAR = 'year'),
                         (u.DATE_YEAR = 'date-year'));
-                })(K || (K = {}));
+                })(j || (j = {}));
                 var q = t(364);
                 const Y = 60,
                     X = 3600,
@@ -1322,7 +1323,7 @@
                                           ((u, e, t) =>
                                               u
                                                   .split(/%\((.*?)\)(?:[sd])?/g)
-                                                  .map((u) => (t && u in t ? t[u] : j(u, e))))(e, F, u).map((u, e) =>
+                                                  .map((u) => (t && u in t ? t[u] : K(u, e))))(e, F, u).map((u, e) =>
                                               A().createElement(E.Fragment, { key: `${e}-${u}` }, u),
                                           ),
                                       ),

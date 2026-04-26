@@ -33,13 +33,13 @@
                         addPreloadTexture: () => P,
                         children: () => i,
                         displayStatus: () => E,
-                        displayStatusIs: () => K,
+                        displayStatusIs: () => W,
                         events: () => b,
                         extraSize: () => q,
                         forceTriggerMouseMove: () => j,
                         freezeTextureBeforeResize: () => N,
                         getBrowserTexturePath: () => S,
-                        getDisplayStatus: () => W,
+                        getDisplayStatus: () => K,
                         getScale: () => F,
                         getSize: () => L,
                         getViewGlobalPosition: () => D,
@@ -259,10 +259,10 @@
                 function j() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function W() {
+                function K() {
                     return viewEnv.getShowingStatus();
                 }
-                const K = Object.keys(E).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === E[t]), e), {}),
+                const W = Object.keys(E).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === E[t]), e), {}),
                     q = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
@@ -304,6 +304,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1173,19 +1174,20 @@
                         }
                         return '';
                     },
-                    F = (e) => {
-                        const t = N(),
-                            n = D(t);
-                        let o,
-                            r = e;
-                        for (; null !== (o = L.exec(e)); ) {
-                            const e = o[0].match(/<script (defer|defer="defer") src="(.*?)">/);
+                    F = (e, t) => {
+                        const n = N(),
+                            o = D(n);
+                        let r,
+                            i = e;
+                        for (; null !== (r = L.exec(e)); ) {
+                            const e = r[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
-                                const t = n + e[2].replace(C, '');
-                                r = r.replace(e[2], t);
+                                const n = o + e[2].replace(C, '');
+                                ((i = i.replace(e[2], n)),
+                                    (i = i.replace('<div id="root"', `<div data-root-id=${t} id="root"`)));
                             }
                         }
-                        return r;
+                        return i;
                     },
                     x = 'SubView_base_df',
                     I = 'subViews.onChanged',
@@ -1207,7 +1209,7 @@
                         const c = (0, a.useState)(''),
                             d = c[0],
                             l = c[1],
-                            u = (0, a.useMemo)(() => ({ __html: F(d) }), [d]),
+                            u = (0, a.useMemo)(() => ({ __html: F(d, e) }), [d, e]),
                             _ = (0, a.useMemo)(() => window.subViews.addChildChangedCallback(e), [e]),
                             w = (0, a.useState)(!1),
                             v = w[0],
@@ -1319,7 +1321,7 @@
                 var B = n(493),
                     H = n.n(B);
                 const j = 'SettingsPopover_base_e3',
-                    W = () => {
+                    K = () => {
                         const e = (0, a.useRef)(null),
                             t = (0, a.useCallback)(() => {
                                 if (e.current) {
@@ -1346,7 +1348,7 @@
                         );
                     };
                 engine.whenReady.then(() => {
-                    H().render(s().createElement(W, null), document.getElementById('root'));
+                    H().render(s().createElement(K, null), document.getElementById('root'));
                 });
             },
         },

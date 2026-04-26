@@ -380,6 +380,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -843,6 +844,7 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
@@ -883,7 +885,6 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
-                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -1619,8 +1620,8 @@
                             ? u
                             : null
                         : u;
-                var q = t(3138);
-                const Y = {
+                var Y = t(3138);
+                const q = {
                     extraLarge: { weight: 4, width: 2560, height: 1440 },
                     large: { weight: 3, width: 1920, height: 1080 },
                     medium: { weight: 2, width: 1600, height: 900 },
@@ -1693,10 +1694,10 @@
                         (u.smallHeight = 'smallHeight'),
                         (u.extraSmallHeight = 'extraSmallHeight'));
                 })($ || ($ = {}));
-                const z = q.O.client.getSize('rem'),
+                const z = Y.O.client.getSize('rem'),
                     K = z.width,
                     Q = z.height,
-                    Z = Object.assign({ width: K, height: Q }, V(K, Q, Y)),
+                    Z = Object.assign({ width: K, height: Q }, V(K, Q, q)),
                     J = (0, r.createContext)(Z),
                     uu = ['children'],
                     eu = (u) => {
@@ -1782,9 +1783,9 @@
                         a = t[0],
                         i = t[1],
                         s = (0, r.useCallback)((u, e) => {
-                            const t = q.O.view.pxToRem(u),
-                                r = q.O.view.pxToRem(e);
-                            i(Object.assign({ width: t, height: r }, V(t, r, Y)));
+                            const t = Y.O.view.pxToRem(u),
+                                r = Y.O.view.pxToRem(e);
+                            i(Object.assign({ width: t, height: r }, V(t, r, q)));
                         }, []);
                     (((u) => {
                         const e = (0, r.useRef)(!1);
@@ -1797,25 +1798,25 @@
                     return n().createElement(J.Provider, { value: o }, u);
                 }),
                     (function (u) {
-                        ((u[(u.ExtraSmall = Y.extraSmall.width)] = 'ExtraSmall'),
-                            (u[(u.Small = Y.small.width)] = 'Small'),
-                            (u[(u.Medium = Y.medium.width)] = 'Medium'),
-                            (u[(u.Large = Y.large.width)] = 'Large'),
-                            (u[(u.ExtraLarge = Y.extraLarge.width)] = 'ExtraLarge'));
+                        ((u[(u.ExtraSmall = q.extraSmall.width)] = 'ExtraSmall'),
+                            (u[(u.Small = q.small.width)] = 'Small'),
+                            (u[(u.Medium = q.medium.width)] = 'Medium'),
+                            (u[(u.Large = q.large.width)] = 'Large'),
+                            (u[(u.ExtraLarge = q.extraLarge.width)] = 'ExtraLarge'));
                     })(tu || (tu = {})),
                     (function (u) {
-                        ((u[(u.ExtraSmall = Y.extraSmall.width)] = 'ExtraSmall'),
-                            (u[(u.Small = Y.small.width)] = 'Small'),
-                            (u[(u.Medium = Y.medium.width)] = 'Medium'),
-                            (u[(u.Large = Y.large.width)] = 'Large'),
-                            (u[(u.ExtraLarge = Y.extraLarge.width)] = 'ExtraLarge'));
+                        ((u[(u.ExtraSmall = q.extraSmall.width)] = 'ExtraSmall'),
+                            (u[(u.Small = q.small.width)] = 'Small'),
+                            (u[(u.Medium = q.medium.width)] = 'Medium'),
+                            (u[(u.Large = q.large.width)] = 'Large'),
+                            (u[(u.ExtraLarge = q.extraLarge.width)] = 'ExtraLarge'));
                     })(ru || (ru = {})),
                     (function (u) {
-                        ((u[(u.ExtraSmall = Y.extraSmall.height)] = 'ExtraSmall'),
-                            (u[(u.Small = Y.small.height)] = 'Small'),
-                            (u[(u.Medium = Y.medium.height)] = 'Medium'),
-                            (u[(u.Large = Y.large.height)] = 'Large'),
-                            (u[(u.ExtraLarge = Y.extraLarge.height)] = 'ExtraLarge'));
+                        ((u[(u.ExtraSmall = q.extraSmall.height)] = 'ExtraSmall'),
+                            (u[(u.Small = q.small.height)] = 'Small'),
+                            (u[(u.Medium = q.medium.height)] = 'Medium'),
+                            (u[(u.Large = q.large.height)] = 'Large'),
+                            (u[(u.ExtraLarge = q.extraLarge.height)] = 'ExtraLarge'));
                     })(nu || (nu = {})));
                 const au = ['xl', 'lg', 'md', 'sm', 'xs'],
                     iu = (u) => u.includes('_') && ((u) => au.includes(u))(u.split('_').at(-1)),
@@ -2348,10 +2349,10 @@
                     return r;
                 }
                 const ju = (u) => (0 === u ? window : window.subViews.get(u));
-                function qu(u, e) {
+                function Yu(u, e) {
                     return Array.isArray(u) ? u.map(e) : u.map((u, t, r) => e(null == u ? void 0 : u.value, t, r));
                 }
-                var Yu = t(6517);
+                var qu = t(6517);
                 const $u = ((u, e) => {
                         const t = (0, r.createContext)({});
                         return [
@@ -2392,7 +2393,7 @@
                                                 return {
                                                     subscribe: (t, a) => {
                                                         const s = 'string' == typeof a ? `${r}.${a}` : r,
-                                                            o = q.O.view.addModelObserver(s, e, !0);
+                                                            o = Y.O.view.addModelObserver(s, e, !0);
                                                         return (n.set(o, t), u && t(i(a)), o);
                                                     },
                                                     readByPath: i,
@@ -2480,17 +2481,17 @@
                                                         slots: u.array('slots', []),
                                                         specialSlot: u.object('vehicleSpecialSlot'),
                                                     },
-                                                    t = (0, Yu.computedFn)(() =>
-                                                        qu(e.slots.get(), (u) =>
+                                                    t = (0, qu.computedFn)(() =>
+                                                        Yu(e.slots.get(), (u) =>
                                                             Object.assign({}, u, {
-                                                                bonuses: qu(u.bonuses, (u) => Object.assign({}, u)),
+                                                                bonuses: Yu(u.bonuses, (u) => Object.assign({}, u)),
                                                             }),
                                                         ),
                                                     ),
-                                                    r = (0, Yu.computedFn)(() => {
+                                                    r = (0, qu.computedFn)(() => {
                                                         const u = e.specialSlot.get();
                                                         return Object.assign({}, u, {
-                                                            vehicleNames: qu(u.vehicleNames, (u) => u),
+                                                            vehicleNames: Yu(u.vehicleNames, (u) => u),
                                                         });
                                                     });
                                                 return Object.assign({}, e, {
@@ -2830,9 +2831,9 @@
                                 if (!u) return;
                                 const e = u.scrollWidth,
                                     t = u.scrollHeight;
-                                q.O.view.resize(e, t);
+                                Y.O.view.resize(e, t);
                                 const r = window.getComputedStyle(u);
-                                q.O.view.setSidePaddingsRem({
+                                Y.O.view.setSidePaddingsRem({
                                     left: parseInt(r.getPropertyValue('padding-left'), 10),
                                     top: parseInt(r.getPropertyValue('padding-top'), 10),
                                     right: parseInt(r.getPropertyValue('padding-right'), 10),

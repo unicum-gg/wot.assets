@@ -33,17 +33,17 @@
                         addPreloadTexture: () => k,
                         children: () => o,
                         displayStatus: () => p,
-                        displayStatusIs: () => K,
+                        displayStatusIs: () => G,
                         events: () => h,
                         extraSize: () => z,
-                        forceTriggerMouseMove: () => q,
+                        forceTriggerMouseMove: () => W,
                         freezeTextureBeforeResize: () => C,
                         getBrowserTexturePath: () => S,
-                        getDisplayStatus: () => G,
+                        getDisplayStatus: () => q,
                         getScale: () => F,
                         getSize: () => N,
                         getViewGlobalPosition: () => D,
-                        isEventHandled: () => W,
+                        isEventHandled: () => K,
                         isFocused: () => V,
                         pxToRem: () => x,
                         remToPx: () => U,
@@ -253,16 +253,16 @@
                 function B() {
                     return viewEnv.setEventHandled();
                 }
-                function W() {
+                function K() {
                     return viewEnv.isEventHandled();
                 }
-                function q() {
+                function W() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function G() {
+                function q() {
                     return viewEnv.getShowingStatus();
                 }
-                const K = Object.keys(p).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === p[t]), e), {}),
+                const G = Object.keys(p).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === p[t]), e), {}),
                     z = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
@@ -473,6 +473,7 @@
                         (e[(e.DELETE = 46)] = 'DELETE'),
                         (e[(e.TAB = 9)] = 'TAB'),
                         (e[(e.KEY_N = 78)] = 'KEY_N'),
+                        (e[(e.KEY_0 = 48)] = 'KEY_0'),
                         (e[(e.KEY_1 = 49)] = 'KEY_1'),
                         (e[(e.KEY_2 = 50)] = 'KEY_2'),
                         (e[(e.KEY_3 = 51)] = 'KEY_3'),

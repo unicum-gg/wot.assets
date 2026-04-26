@@ -18,7 +18,7 @@
             },
             67: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => K });
+                t.d(e, { O: () => Y });
                 var r = {};
                 (t.r(r), t.d(r, { mouse: () => o, onResize: () => i }));
                 var a = {};
@@ -69,7 +69,7 @@
                         setEventHandled: () => W,
                         setInputPaddingsRem: () => b,
                         setSidePaddingsRem: () => S,
-                        whenTutorialReady: () => V,
+                        whenTutorialReady: () => K,
                     }));
                 const i = n('clientResized'),
                     D = { down: n('mousedown'), up: n('mouseup'), move: n('mousemove') };
@@ -287,13 +287,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    V = Promise.all([
+                    K = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : m.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    K = { view: A, client: a };
+                    Y = { view: A, client: a };
             },
             358: (u, e, t) => {
                 'use strict';
@@ -492,6 +492,7 @@
                         (u[(u.DELETE = 46)] = 'DELETE'),
                         (u[(u.TAB = 9)] = 'TAB'),
                         (u[(u.KEY_N = 78)] = 'KEY_N'),
+                        (u[(u.KEY_0 = 48)] = 'KEY_0'),
                         (u[(u.KEY_1 = 49)] = 'KEY_1'),
                         (u[(u.KEY_2 = 50)] = 'KEY_2'),
                         (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1108,7 +1109,7 @@
                               })(u, e);
                     },
                     z = 'FormatText_base_d0',
-                    V = ({ binding: u, text: e = '', classMix: t, alignment: E = I.left }) =>
+                    K = ({ binding: u, text: e = '', classMix: t, alignment: E = I.left }) =>
                         null === e
                             ? (console.error("FormatText was supplied with 'null'"), null)
                             : a().createElement(
@@ -1127,8 +1128,8 @@
                                       ),
                                   ),
                               );
-                let K;
-                function Y(u) {
+                let Y;
+                function V(u) {
                     engine.call('PlaySound', u);
                 }
                 !(function (u) {
@@ -1140,16 +1141,16 @@
                         (u[(u.Started = 5)] = 'Started'),
                         (u[(u.Ended = 6)] = 'Ended'),
                         (u[(u.DataError = 7)] = 'DataError'));
-                })(K || (K = {}));
+                })(Y || (Y = {}));
                 const q = {
                     playHighlight() {
-                        Y('highlight');
+                        V('highlight');
                     },
                     playClick() {
-                        Y('play');
+                        V('play');
                     },
                     playYes() {
-                        Y('yes1');
+                        V('yes1');
                     },
                 };
                 var Z = t(515);
@@ -1409,14 +1410,14 @@
                     Au = R.strings.clans.banner,
                     nu = ({ state: u }) => {
                         switch (u) {
-                            case K.PrimeTimeNow:
-                                return a().createElement(V, { text: Au.info.battlesNow() });
-                            case K.PrimeTimeToday:
-                                return a().createElement(V, { text: Au.info.battlesToday() });
-                            case K.PrimeTimeTomorrow:
-                                return a().createElement(V, { text: Au.info.battlesTomorrow() });
-                            case K.Ended:
-                                return a().createElement(V, { text: Au.info.battlesEnd() });
+                            case Y.PrimeTimeNow:
+                                return a().createElement(K, { text: Au.info.battlesNow() });
+                            case Y.PrimeTimeToday:
+                                return a().createElement(K, { text: Au.info.battlesToday() });
+                            case Y.PrimeTimeTomorrow:
+                                return a().createElement(K, { text: Au.info.battlesTomorrow() });
+                            case Y.Ended:
+                                return a().createElement(K, { text: Au.info.battlesEnd() });
                             default:
                                 return (
                                     console.error(`Unreachable code for state '${u}' in StrongholdEntryPointView.`),
@@ -1436,7 +1437,7 @@
                             })(e),
                             r = t.day,
                             E = t.month;
-                        return a().createElement(V, {
+                        return a().createElement(K, {
                             text: u,
                             binding: { day: r, month: R.strings.menu.dateTime.months.$num(E + 1) },
                         });
@@ -1507,18 +1508,18 @@
                     su = R.strings.clans.banner,
                     lu = ({ state: u, sprintType: e, startTimestamp: t, endTimestamp: r }) => {
                         if (e === Tu) return a().createElement(Fu, { text: su.seasonDate.seasonLasts(), timestamp: r });
-                        if (u === K.Ended) return null;
+                        if (u === Y.Ended) return null;
                         switch (u) {
-                            case K.NotStarted:
+                            case Y.NotStarted:
                                 return a().createElement(Fu, { text: su.seasonDate.seasonNotStarted(), timestamp: t });
-                            case K.Started:
+                            case Y.Started:
                                 return a().createElement(Fu, { text: su.seasonDate.seasonLasts(), timestamp: r });
-                            case K.PrimeTimeNotChosen:
-                                return a().createElement(V, { text: su.chooseTime() });
-                            case K.PrimeTimeNow:
-                            case K.PrimeTimeToday:
-                            case K.PrimeTimeTomorrow:
-                                return a().createElement(V, {
+                            case Y.PrimeTimeNotChosen:
+                                return a().createElement(K, { text: su.chooseTime() });
+                            case Y.PrimeTimeNow:
+                            case Y.PrimeTimeToday:
+                            case Y.PrimeTimeTomorrow:
+                                return a().createElement(K, {
                                     text: su.primeTime(),
                                     binding: { start: ou(t, iu.SHORT_TIME, !0), end: ou(r, iu.SHORT_TIME, !0) },
                                 });
@@ -1686,11 +1687,11 @@
                     Tu = 'GM',
                     bu = 'initial',
                     xu = {
-                        highlighted: [K.PrimeTimeNow, K.PrimeTimeNotChosen],
-                        withInfo: [K.Ended, K.PrimeTimeToday, K.PrimeTimeTomorrow, K.PrimeTimeNow],
-                        withoutDate: [K.DataError],
-                        withClock: [K.PrimeTimeNotChosen, K.PrimeTimeTomorrow, K.PrimeTimeNow, K.PrimeTimeToday],
-                        disabled: [K.Ended, K.PrimeTimeToday, K.PrimeTimeTomorrow],
+                        highlighted: [Y.PrimeTimeNow, Y.PrimeTimeNotChosen],
+                        withInfo: [Y.Ended, Y.PrimeTimeToday, Y.PrimeTimeTomorrow, Y.PrimeTimeNow],
+                        withoutDate: [Y.DataError],
+                        withClock: [Y.PrimeTimeNotChosen, Y.PrimeTimeTomorrow, Y.PrimeTimeNow, Y.PrimeTimeToday],
+                        disabled: [Y.Ended, Y.PrimeTimeToday, Y.PrimeTimeTomorrow],
                     },
                     Lu = {
                         width: 280,
@@ -1775,7 +1776,7 @@
                                     pause: v,
                                 };
                             })(),
-                            C = i !== bu && E !== K.DataError,
+                            C = i !== bu && E !== Y.DataError,
                             c = (0, r.useMemo)(() => {
                                 return i === bu
                                     ? ''
@@ -1796,7 +1797,7 @@
                                 Eu.seasonDateText,
                                 (xu.highlighted.includes(E) || xu.withInfo.includes(E)) &&
                                     Eu.seasonDateText__highlighted,
-                                E === K.Ended && Eu.seasonDateText__disabled,
+                                E === Y.Ended && Eu.seasonDateText__disabled,
                             ),
                             g = h()(Eu.bg, C && Eu[`bg__${D}`]);
                         return a().createElement(
@@ -1804,7 +1805,7 @@
                             {
                                 className: d,
                                 onClick: () => {
-                                    (Y(R.sounds.yes()), e.open());
+                                    (V(R.sounds.yes()), e.open());
                                 },
                                 onMouseEnter: () => {
                                     (q.playHighlight(), l(!0), B.play());
@@ -1846,7 +1847,7 @@
                                         a().createElement(
                                             'div',
                                             { className: Eu.info },
-                                            a().createElement(V, { text: c }),
+                                            a().createElement(K, { text: c }),
                                         ),
                                         !xu.withoutDate.includes(E) &&
                                             a().createElement(

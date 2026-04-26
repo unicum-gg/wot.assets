@@ -74,6 +74,7 @@
                             (u.VehicleSelect = 'vehicleSelect'),
                             (u.StyleProgress = 'styleProgress'),
                             (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                            (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (u.LootBoxToken = 'lootBoxToken'),
                             (u.GoldenTicket = 'birthday2025_golden_ticket'),
                             (u.PostStamp = 'giftsystem_4_stamp'),
@@ -114,7 +115,6 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
-                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -394,14 +394,14 @@
                         displayStatusIs: () => T,
                         events: () => F.U,
                         extraSize: () => b,
-                        forceTriggerMouseMove: () => h,
+                        forceTriggerMouseMove: () => w,
                         freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => r,
                         getDisplayStatus: () => P,
                         getScale: () => l,
                         getSize: () => a,
                         getViewGlobalPosition: () => C,
-                        isEventHandled: () => w,
+                        isEventHandled: () => h,
                         isFocused: () => p,
                         pxToRem: () => c,
                         remToPx: () => d,
@@ -463,10 +463,10 @@
                 function v() {
                     return viewEnv.setEventHandled();
                 }
-                function w() {
+                function h() {
                     return viewEnv.isEventHandled();
                 }
-                function h() {
+                function w() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function P() {
@@ -571,6 +571,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -905,11 +906,11 @@
                     v = (u, e) => {
                         u.keyCode === B.n.ESCAPE && e();
                     };
-                var w = t(7572);
-                const h = A.instance,
+                var h = t(7572);
+                const w = A.instance,
                     P = {
                         DataTracker: F.Z,
-                        ViewModel: w.Z,
+                        ViewModel: h.Z,
                         ViewEventType: i,
                         NumberFormatType: r,
                         RealFormatType: s,
@@ -986,7 +987,7 @@
                                 }
                             return t;
                         },
-                        ClickOutsideManager: h,
+                        ClickOutsideManager: w,
                         SystemLocale: n,
                         UserLocale: o,
                     };

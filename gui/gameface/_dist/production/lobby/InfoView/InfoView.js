@@ -396,6 +396,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -4692,7 +4693,10 @@
                                 Dt,
                                 null,
                                 s().createElement(xu, { className: Je, text: cn.titel() }),
-                                s().createElement(xu, { text: cn.description.main() }),
+                                s().createElement(xu, {
+                                    className: 'SupplyObjectsSection_mainTextWrapper_1c',
+                                    text: cn.description.main(),
+                                }),
                                 s().createElement(xu, {
                                     className: 'SupplyObjectsSection_subtitleText_e8',
                                     text: cn.description.secondary(),

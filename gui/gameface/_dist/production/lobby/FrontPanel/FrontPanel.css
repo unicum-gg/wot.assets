@@ -703,15 +703,15 @@
 }
 
 .mediaSmall .App_buttonClose_04 {
-    right: 35rem;
+    right: 30rem;
 }
 
 .mediaLarge .App_buttonClose_04 {
-    right: 40rem;
+    right: 35rem;
 }
 
 .mediaExtraLarge .App_buttonClose_04 {
-    right: 57rem;
+    right: 52rem;
 }
 
 .App_buttonInfo_ac {
@@ -740,4 +740,71 @@
 
 .mediaExtraLarge .App_frontButton_77 {
     margin: 0 -32rem;
+}
+
+.CloseButton_base_b7 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.CloseButton_text_c4 {
+    color: #ffdd99;
+    font-size: 12rem;
+    text-shadow:
+        0 0 10rem rgba(255, 42, 0, 1),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4);
+    transition:
+        color 0.16s,
+        text-shadow 0.16s;
+}
+
+.CloseButton_base_b7:hover .CloseButton_text_c4 {
+    color: #fffa9f;
+}
+
+.CloseButton_base_b7:active .CloseButton_text_c4 {
+    color: #ffdd99;
+}
+
+.CloseButton_icon_35 {
+    width: 43rem;
+    height: 43rem;
+    margin-left: -4rem;
+    position: relative;
+    top: 1rem;
+    cursor: pointer;
+}
+
+.CloseButton_icon_default_c8,
+.CloseButton_icon_highlight_5a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: opacity 0.16s;
+}
+
+.CloseButton_icon_default_c8 {
+    background: url('R.images.historical_battles.gui.maps.icons.common.button_close') no-repeat center / cover;
+}
+
+.CloseButton_icon_highlight_5a {
+    background: url('R.images.historical_battles.gui.maps.icons.common.button_close_hover') no-repeat center / cover;
+    opacity: 0;
+}
+
+.CloseButton_base_b7:hover .CloseButton_icon_highlight_5a {
+    opacity: 1;
+}
+
+.CloseButton_base_b7:active .CloseButton_icon_highlight_5a {
+    opacity: 0;
 }

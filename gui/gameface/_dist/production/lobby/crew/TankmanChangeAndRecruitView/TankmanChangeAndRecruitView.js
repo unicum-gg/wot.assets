@@ -1714,6 +1714,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -2628,19 +2629,20 @@
                         }
                         return '';
                     },
-                    ee = (e) => {
-                        const u = J(),
-                            t = Z(u);
-                        let n,
-                            r = e;
-                        for (; null !== (n = K.exec(e)); ) {
-                            const e = n[0].match(/<script (defer|defer="defer") src="(.*?)">/);
+                    ee = (e, u) => {
+                        const t = J(),
+                            n = Z(t);
+                        let r,
+                            a = e;
+                        for (; null !== (r = K.exec(e)); ) {
+                            const e = r[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
-                                const u = t + e[2].replace(q, '');
-                                r = r.replace(e[2], u);
+                                const t = n + e[2].replace(q, '');
+                                ((a = a.replace(e[2], t)),
+                                    (a = a.replace('<div id="root"', `<div data-root-id=${u} id="root"`)));
                             }
                         }
-                        return r;
+                        return a;
                     },
                     ue = 'SubView_base_df',
                     te = 'subViews.onChanged',
@@ -2662,7 +2664,7 @@
                         const o = (0, n.useState)(''),
                             i = o[0],
                             l = o[1],
-                            s = (0, n.useMemo)(() => ({ __html: ee(i) }), [i]),
+                            s = (0, n.useMemo)(() => ({ __html: ee(i, e) }), [i, e]),
                             c = (0, n.useMemo)(() => window.subViews.addChildChangedCallback(e), [e]),
                             d = (0, n.useState)(!1),
                             m = d[0],

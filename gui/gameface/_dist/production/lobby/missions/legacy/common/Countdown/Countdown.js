@@ -23,7 +23,7 @@
                 Date.now();
             },
             67: (u, e, A) => {
-                A.d(e, { O: () => G });
+                A.d(e, { O: () => j });
                 var F = {};
                 (A.r(F), A.d(F, { mouse: () => o, onResize: () => i }));
                 var E = {};
@@ -64,17 +64,17 @@
                         getScale: () => L,
                         getSize: () => y,
                         getViewGlobalPosition: () => k,
-                        isEventHandled: () => K,
+                        isEventHandled: () => H,
                         isFocused: () => I,
                         pxToRem: () => x,
                         remToPx: () => N,
                         resize: () => R,
                         sendEvent: () => O,
                         setAnimateWindow: () => U,
-                        setEventHandled: () => H,
+                        setEventHandled: () => K,
                         setInputPaddingsRem: () => f,
                         setSidePaddingsRem: () => M,
-                        whenTutorialReady: () => j,
+                        whenTutorialReady: () => Y,
                     }));
                 const i = n('clientResized'),
                     r = { down: n('mousedown'), up: n('mouseup'), move: n('mousemove') };
@@ -271,10 +271,10 @@
                 function I() {
                     return viewEnv.isFocused();
                 }
-                function H() {
+                function K() {
                     return viewEnv.setEventHandled();
                 }
-                function K() {
+                function H() {
                     return viewEnv.isEventHandled();
                 }
                 function V() {
@@ -292,13 +292,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    j = Promise.all([
+                    Y = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : l.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    G = { view: D, client: E };
+                    j = { view: D, client: E };
             },
             255: (u, e, A) => {
                 A(179);
@@ -341,6 +341,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),

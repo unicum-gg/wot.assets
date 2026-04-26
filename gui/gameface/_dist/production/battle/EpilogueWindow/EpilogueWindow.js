@@ -357,6 +357,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1288,7 +1289,7 @@
                 const j = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function V(e = G.n.NONE, t = j, r = !1) {
+                function K(e = G.n.NONE, t = j, r = !1) {
                     (0, a.useEffect)(() => {
                         if (e !== G.n.NONE)
                             return (
@@ -1305,8 +1306,8 @@
                         }
                     }, [t, e, r]);
                 }
-                var z = r(403);
-                const K = (0, a.memo)(
+                var V = r(403);
+                const z = (0, a.memo)(
                         ({ className: e, backgroundPath: t, onLoaded: r, showVignette: a = !0, showBlur: i = !1 }) => {
                             const o = b()('Background_base_94', i && 'Background_base__blur_69', e);
                             return n().createElement(
@@ -1599,7 +1600,7 @@
                     })),
                     ee = J[0],
                     te = J[1],
-                    re = (0, z.Pi)(() => {
+                    re = (0, V.Pi)(() => {
                         const e = te().controls,
                             t = (0, a.useCallback)(() => {
                                 e.close();
@@ -1611,7 +1612,7 @@
                                 },
                                 [e],
                             );
-                            V(G.n.ENTER, t, !0);
+                            K(G.n.ENTER, t, !0);
                         })(t);
                         const r = (0, a.useCallback)(() => t(), [t]),
                             i = R.images.story_mode.gui.maps.icons.epilogue,
@@ -1619,7 +1620,7 @@
                         return n().createElement(
                             'div',
                             { className: 'EpilogueWindowApp_base_0c' },
-                            n().createElement(K, {
+                            n().createElement(z, {
                                 backgroundPath: R.images.story_mode.gui.maps.icons.epilogue.background(),
                                 onLoaded: e.loaded,
                             }),

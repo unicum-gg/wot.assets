@@ -357,6 +357,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1375,8 +1376,8 @@
                         V('yes1');
                     },
                 };
-                var $ = t(4179);
-                const q = [
+                var K = t(4179);
+                const $ = [
                     'children',
                     'contentId',
                     'args',
@@ -1392,7 +1393,7 @@
                     'onShow',
                     'onHide',
                 ];
-                function K(u) {
+                function q(u) {
                     return Object.entries(u || {}).map(([u, e]) => {
                         const t = { __Type: 'GFValueProxy', name: u };
                         switch (typeof e) {
@@ -1415,7 +1416,7 @@
                             Object.assign(
                                 {
                                     __Type: 'GFViewEventProxy',
-                                    type: $.B0.TOOLTIP,
+                                    type: K.B0.TOOLTIP,
                                     contentID: u,
                                     decoratorID: e,
                                     targetID: E,
@@ -1452,7 +1453,7 @@
                                     A = Object.keys(u);
                                 for (E = 0; E < A.length; E++) ((t = A[E]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                 return r;
-                            })(u, q);
+                            })(u, $);
                         const v = (0, E.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
                             w = (0, E.useMemo)(
                                 () =>
@@ -1475,7 +1476,7 @@
                             ),
                             b = (0, E.useCallback)(() => {
                                 (v.current.isVisible && v.current.timeoutId) ||
-                                    (Y(t, s, { isMouseEvent: !0, on: !0, arguments: K(r) }, w),
+                                    (Y(t, s, { isMouseEvent: !0, on: !0, arguments: q(r) }, w),
                                     m && m(),
                                     (v.current.isVisible = !0));
                             }, [t, s, r, w, m]),
@@ -1605,7 +1606,7 @@
                     };
                 let eu, tu, Eu;
                 (!(function (u) {
-                    ((u.Small = 'x5'), (u.Medium = 'x10'), (u.Big = 'x15'));
+                    ((u.Small = 'x2'), (u.Medium = 'x3'), (u.Big = 'x5'));
                 })(eu || (eu = {})),
                     (function (u) {
                         ((u.Defence = 'defence'), (u.Offence = 'offence'));

@@ -380,6 +380,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -4609,7 +4610,10 @@
                                 nt,
                                 null,
                                 l().createElement(Eu, { className: ve, text: Yt.titel() }),
-                                l().createElement(Eu, { text: Yt.description.main() }),
+                                l().createElement(Eu, {
+                                    className: 'SupplyObjectsSection_mainTextWrapper_1c',
+                                    text: Yt.description.main(),
+                                }),
                                 l().createElement(Eu, {
                                     className: 'SupplyObjectsSection_subtitleText_e8',
                                     text: Yt.description.secondary(),

@@ -483,148 +483,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     color: #a29b70;
 }
 
-.TextButton_base_b6 {
-    display: flex;
-    align-items: center;
-    padding: 0 3rem;
-    font-size: 12rem;
-    position: relative;
-    cursor: pointer;
-}
-
-.TextButton_base__right_39 {
-    flex-direction: row-reverse;
-}
-.TextButton_icon_17 {
-    width: 32rem;
-    height: 32rem;
-    background: no-repeat center / contain;
-    position: relative;
-}
-.TextButton_icon__back_43,
-.TextButton_icon__forward_59 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.back');
-    transform: translateY(1rem);
-}
-.TextButton_icon__forward_59 {
-    transform: rotate(180deg) translateY(1rem);
-}
-.TextButton_icon__close_53 {
-    margin: -1rem 0;
-    background-image: url('R.images.gui.maps.icons.components.text_button.close');
-}
-.TextButton_icon__info_33 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.info');
-}
-.TextButton_glow_a4 {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    transition: opacity 0.16s;
-}
-.TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
-}
-.TextButton_icon__close_53 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
-}
-.TextButton_icon__info_33 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
-}
-.TextButton_base_b6:hover .TextButton_glow_a4 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_glow_a4 {
-    opacity: 0;
-}
-.TextButton_caption_82 {
-    position: relative;
-    transition:
-        color 0.16s,
-        text-shadow 0.16s;
-}
-.TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
-    color: #ffdd99;
-    text-shadow:
-        0 0 10rem rgba(255, 42, 0, 1),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4);
-}
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
-    color: #fffa9f;
-}
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
-    color: #ffdd99;
-}
-.TextButton_caption__info_23 {
-    padding: 0 5rem;
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
-    color: #e3ffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 12rem rgba(0, 234, 255, 1),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:active .TextButton_caption__info_23 {
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.6),
-        0 0 8rem #00eaff;
-}
-.TextButton_goto_e7 {
-    color: #7c7c6c;
-}
-.TextButton_base__left_ff .TextButton_goto_e7 {
-    margin-left: 8rem;
-}
-.TextButton_base__right_39 .TextButton_goto_e7 {
-    margin-right: 8rem;
-}
-.TextButton_shine_e2 {
-    width: 90rem;
-    height: 40rem;
-    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: -4rem;
-    transition: opacity 0.16s;
-    pointer-events: none;
-}
-.TextButton_base__left_ff .TextButton_shine_e2 {
-    left: -4rem;
-}
-.TextButton_base__right_39 .TextButton_shine_e2 {
-    right: -4rem;
-    transform: rotate(180deg);
-}
-.TextButton_base_b6:hover .TextButton_shine_e2 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_shine_e2 {
-    opacity: 0;
-}
-
 .Level_base_12 {
     display: flex;
     justify-content: center;
@@ -768,54 +626,36 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 17rem;
     height: 17rem;
     border-radius: 2rem;
-    box-shadow:
-        0 -2rem 5rem 0 rgba(104, 0, 0, 0.25) inset,
-        0 2rem 5rem 0 rgba(104, 0, 0, 0.25) inset;
 }
 
 .Level_base__extraSmall_05 .Level_innerGlow_47 {
     width: 22rem;
     height: 22rem;
     border-radius: 3rem;
-    box-shadow:
-        0 -3rem 6rem 0 rgba(104, 0, 0, 0.25) inset,
-        0 3rem 6rem 0 rgba(104, 0, 0, 0.25) inset;
 }
 
 .Level_base__small_98 .Level_innerGlow_47 {
     width: 29rem;
     height: 29rem;
     border-radius: 3rem;
-    box-shadow:
-        0 -4rem 8rem 0 rgba(104, 0, 0, 0.25) inset,
-        0 4rem 8rem 0 rgba(104, 0, 0, 0.25) inset;
 }
 
 .Level_base__medium_f0 .Level_innerGlow_47 {
     width: 37rem;
     height: 37rem;
     border-radius: 4rem;
-    box-shadow:
-        0 5rem 10rem #68000040 inset,
-        0 -5rem 10rem #68000040 inset;
 }
 
 .Level_base__large_c3 .Level_innerGlow_47 {
     width: 47rem;
     height: 47rem;
     border-radius: 5rem;
-    box-shadow:
-        0 -6rem 12rem rgba(104, 0, 0, 0.25) inset,
-        0 6rem 12rem rgba(104, 0, 0, 0.25) inset;
 }
 
 .Level_base__extraLarge_dc .Level_innerGlow_47 {
     width: 52rem;
     height: 52rem;
     border-radius: 5rem;
-    box-shadow:
-        0 7rem 13rem #68000040 inset,
-        0 -7rem 13rem #68000040 inset;
 }
 
 .Level_lock_0b {
@@ -1184,7 +1024,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaExtraLarge .App_ribbon_d8 {
-    width: 100%;
+    width: 2560rem;
     height: 700rem;
     margin-top: -405rem;
 }
@@ -1282,32 +1122,29 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .App_glowContainer_5a {
-    width: 100%;
-    height: 100%;
     position: absolute;
-    top: -5%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    top: -4%;
     pointer-events: none;
-}
-
-.mediaMedium .App_glowContainer_5a {
-    top: -2%;
-}
-
-.mediaLarge .App_glowContainer_5a {
-    top: 4%;
-}
-
-.mediaExtraLarge .App_glowContainer_5a {
-    top: 9%;
 }
 
 .App_glow_8b {
     width: 620rem;
+    height: 620rem;
+    margin-top: -400rem;
     padding-bottom: 100%;
     background: url('swf://gui/flash/animations/historicalBattles/rays.swf') no-repeat center / contain;
     opacity: 0;
     mix-blend-mode: additive;
     position: absolute;
+    top: 50%;
     left: 50%;
     z-index: 1;
     transform: translateX(-50%);
@@ -1316,14 +1153,18 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .mediaMedium .App_glow_8b {
     width: 712rem;
+    height: 712rem;
+    margin-top: -445rem;
 }
 
 .mediaLarge .App_glow_8b {
     width: 840rem;
+    height: 840rem;
+    margin-top: -525rem;
 }
 
-.mediaMedium .App_glow__scaled_cd {
-    top: -30rem;
+.mediaExtraLarge .App_glow_8b {
+    margin-top: -541.93548rem;
 }
 
 .App_glow2_66 {
@@ -1557,4 +1398,71 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-weight: 700;
     line-height: 1.2;
     margin-top: 15rem;
+}
+
+.CloseButton_base_b7 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.CloseButton_text_c4 {
+    color: #ffdd99;
+    font-size: 12rem;
+    text-shadow:
+        0 0 10rem rgba(255, 42, 0, 1),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4);
+    transition:
+        color 0.16s,
+        text-shadow 0.16s;
+}
+
+.CloseButton_base_b7:hover .CloseButton_text_c4 {
+    color: #fffa9f;
+}
+
+.CloseButton_base_b7:active .CloseButton_text_c4 {
+    color: #ffdd99;
+}
+
+.CloseButton_icon_35 {
+    width: 43rem;
+    height: 43rem;
+    margin-left: -4rem;
+    position: relative;
+    top: 1rem;
+    cursor: pointer;
+}
+
+.CloseButton_icon_default_c8,
+.CloseButton_icon_highlight_5a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: opacity 0.16s;
+}
+
+.CloseButton_icon_default_c8 {
+    background: url('R.images.historical_battles.gui.maps.icons.common.button_close') no-repeat center / cover;
+}
+
+.CloseButton_icon_highlight_5a {
+    background: url('R.images.historical_battles.gui.maps.icons.common.button_close_hover') no-repeat center / cover;
+    opacity: 0;
+}
+
+.CloseButton_base_b7:hover .CloseButton_icon_highlight_5a {
+    opacity: 1;
+}
+
+.CloseButton_base_b7:active .CloseButton_icon_highlight_5a {
+    opacity: 0;
 }

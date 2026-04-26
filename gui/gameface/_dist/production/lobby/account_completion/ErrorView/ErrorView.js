@@ -33,13 +33,13 @@
                         addPreloadTexture: () => f,
                         children: () => A,
                         displayStatus: () => _,
-                        displayStatusIs: () => K,
+                        displayStatusIs: () => z,
                         events: () => d,
                         extraSize: () => j,
                         forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => L,
                         getBrowserTexturePath: () => y,
-                        getDisplayStatus: () => z,
+                        getDisplayStatus: () => K,
                         getScale: () => R,
                         getSize: () => T,
                         getViewGlobalPosition: () => S,
@@ -259,10 +259,10 @@
                 function V() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function z() {
+                function K() {
                     return viewEnv.getShowingStatus();
                 }
-                const K = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
+                const z = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
                     j = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1023,7 +1024,7 @@
                     const E = Math.trunc(e / W);
                     return ((e -= E * W), { days: t, hours: n, minutes: E, seconds: e });
                 }
-                const z = (u = 1) => {
+                const K = (u = 1) => {
                         const e = new Error().stack;
                         let t,
                             n = R.invalid('resId');
@@ -1037,18 +1038,18 @@
                             { caller: t, stack: e, resId: n }
                         );
                     },
-                    K = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
+                    z = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
                     j = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
                     $ = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
                     G = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, t) => {
-                                const n = K(`${u}.${t}`, window);
+                                const n = z(`${u}.${t}`, window);
                                 return j(n) ? e(u, t, n) : `${u}.${t}`;
                             }))(u, (u, e) => `${u}.${e}.value`),
                     q = (u) => {
                         const e = ((u) => {
-                                const e = z(),
+                                const e = K(),
                                     t = e.caller,
                                     n = e.resId,
                                     E = window.__feature && window.__feature !== t && t ? `subViews.${t}` : '';
@@ -1060,7 +1061,7 @@
                             const u = [n[0]];
                             return (
                                 n.reduce((e, n) => {
-                                    const E = K($(t, `${e}.${n}`), window);
+                                    const E = z($(t, `${e}.${n}`), window);
                                     return j(E) ? (u.push(E.id), `${e}.${n}.value`) : (u.push(n), `${e}.${n}`);
                                 }),
                                 u.reduce((u, e) => u + '.' + e)
@@ -1076,7 +1077,7 @@
                 const X = (u = 'model', e = Z.Deep) => {
                         const t = (0, n.useState)(0),
                             E = (t[0], t[1]),
-                            A = (0, n.useMemo)(() => z(), []),
+                            A = (0, n.useMemo)(() => K(), []),
                             F = A.caller,
                             a = A.resId,
                             r = (0, n.useMemo)(
@@ -1085,7 +1086,7 @@
                             ),
                             i = (0, n.useState)(() =>
                                 ((u) => {
-                                    const e = K(u, window);
+                                    const e = z(u, window);
                                     for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                     return j(e) ? e.value : e;
                                 })(G(r)),

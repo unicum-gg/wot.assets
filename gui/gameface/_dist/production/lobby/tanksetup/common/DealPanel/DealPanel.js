@@ -278,19 +278,19 @@
                             },
                             [h, w],
                         ),
-                        G = (0, l.useCallback)(
+                        K = (0, l.useCallback)(
                             (e) => {
                                 h || (I(!0), x && x(e));
                             },
                             [h, x],
                         ),
-                        V = (0, l.useCallback)(
+                        G = (0, l.useCallback)(
                             (e) => {
                                 h || (I(!1), M && M(e));
                             },
                             [h, M],
                         ),
-                        K = a().createElement(
+                        V = a().createElement(
                             'div',
                             { className: s.Z.label },
                             a().createElement(
@@ -317,8 +317,8 @@
                                 onMouseLeave: q,
                                 onMouseDown: j,
                                 onMouseUp: Z,
-                                onFocus: G,
-                                onBlur: V,
+                                onFocus: K,
+                                onBlur: G,
                             },
                             H,
                         ),
@@ -330,7 +330,7 @@
                             a().createElement('div', { className: s.Z.highlight }),
                         ),
                         a().createElement('div', { className: s.Z.checkmark }),
-                        ((R || O) && K) || null,
+                        ((R || O) && V) || null,
                     );
                 };
             },
@@ -724,16 +724,16 @@
                                     v(e);
                                 }
                             }, [v, H, T]),
-                            G = (0, l.useCallback)(() => {
+                            K = (0, l.useCallback)(() => {
                                 if (H && C && T) {
                                     const e = { scrollPosition: H.scrollTop, reach: T.reach.y };
                                     C(e);
                                 }
                             }, [C, H, T]),
-                            V = (0, l.useCallback)(() => {
+                            G = (0, l.useCallback)(() => {
                                 g && g();
                             }, [g]),
-                            K = (0, l.useCallback)(() => {
+                            V = (0, l.useCallback)(() => {
                                 D && D();
                             }, [D]),
                             $ = (0, l.useCallback)(
@@ -760,21 +760,21 @@
                                     document.addEventListener('mousemove', J),
                                     window.addEventListener('resize', Q),
                                     H.addEventListener('ps-scroll-x', q),
-                                    H.addEventListener('ps-scroll-y', G),
-                                    H.addEventListener('over-scroll-beginning', V),
-                                    H.addEventListener('over-scroll-ending', K),
+                                    H.addEventListener('ps-scroll-y', K),
+                                    H.addEventListener('over-scroll-beginning', G),
+                                    H.addEventListener('over-scroll-ending', V),
                                     M(!0),
                                     () => {
                                         (window.removeEventListener('resize', Q),
                                             document.removeEventListener('mousemove', J),
                                             H &&
                                                 (H.removeEventListener('ps-scroll-x', q),
-                                                H.removeEventListener('ps-scroll-y', G),
-                                                H.removeEventListener('over-scroll-beginning', V),
-                                                H.removeEventListener('over-scroll-ending', K)));
+                                                H.removeEventListener('ps-scroll-y', K),
+                                                H.removeEventListener('over-scroll-beginning', G),
+                                                H.removeEventListener('over-scroll-ending', V)));
                                     }
                                 );
-                        }, [J, q, V, K, Q, H, T, G]);
+                        }, [J, q, G, V, Q, H, T, K]);
                         const ee = (0, l.useRef)(H || null);
                         ee.current = H || null;
                         const ue = (0, i.Z)(ee);
@@ -2953,6 +2953,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -3851,10 +3852,10 @@
                                 Z = U[1],
                                 z = (0, a.useState)(!1),
                                 q = z[0],
-                                G = z[1],
-                                V = (0, a.useState)(window.innerHeight),
-                                K = V[0],
-                                $ = V[1],
+                                K = z[1],
+                                G = (0, a.useState)(window.innerHeight),
+                                V = G[0],
+                                $ = G[1],
                                 Q = ((e, u) => {
                                     const t = Array.isArray(e) ? e : [e];
                                     return !u && t.length > 1 ? t.slice(0, 1) : t;
@@ -3897,13 +3898,13 @@
                             const ie = (0, a.useCallback)(() => {
                                 if (!N.current || !X.current) return;
                                 const e = u && u.current,
-                                    t = e ? e.getBoundingClientRect().bottom : K,
+                                    t = e ? e.getBoundingClientRect().bottom : V,
                                     n =
                                         N.current.getBoundingClientRect().bottom +
                                             X.current.getBoundingClientRect().height >
                                         t;
-                                n !== I.current.listAbove && ((I.current.listAbove = n), G(n));
-                            }, [u, K]);
+                                n !== I.current.listAbove && ((I.current.listAbove = n), K(n));
+                            }, [u, V]);
                             (0, a.useEffect)(() => (0, i.v)(ie), [ie, m, t.length]);
                             const le = (0, a.useCallback)(
                                     (e) => {

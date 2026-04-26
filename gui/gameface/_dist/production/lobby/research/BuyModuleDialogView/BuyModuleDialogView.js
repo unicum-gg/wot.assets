@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (u, e, t) => {
-                t.d(e, { O: () => $ });
+                t.d(e, { O: () => K });
                 var n = {};
                 (t.r(n), t.d(n, { mouse: () => F, onResize: () => s }));
                 var o = {};
@@ -277,7 +277,7 @@
                         }),
                         engine.whenReady,
                     ]),
-                    $ = { view: a, client: o };
+                    K = { view: a, client: o };
             },
             521: (u, e, t) => {
                 let n, o;
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1212,13 +1213,13 @@
                             },
                             [E, p, B],
                         ),
-                        $ = (0, n.useCallback)(
+                        K = (0, n.useCallback)(
                             (u) => {
                                 E || (L(!1), v && v(u));
                             },
                             [E, v],
                         ),
-                        K = (0, n.useCallback)(
+                        $ = (0, n.useCallback)(
                             (u) => {
                                 E || (d && d(u), l && O(l));
                             },
@@ -1265,10 +1266,10 @@
                                     [H.base__bottom]: x === q.Bottom,
                                 }),
                                 onClick: I,
-                                onMouseEnter: K,
+                                onMouseEnter: $,
                                 onMouseLeave: Y,
                                 onMouseDown: W,
-                                onMouseUp: $,
+                                onMouseUp: K,
                                 onFocus: X,
                                 onBlur: Z,
                             },
@@ -1285,10 +1286,10 @@
                         ((f || k) && Q) || null,
                     );
                 };
-                let $, K, Y;
+                let K, $, Y;
                 (!(function (u) {
                     ((u.small = 'small'), (u.big = 'big'), (u.large = 'large'), (u.extraLarge = 'extraLarge'));
-                })($ || ($ = {})),
+                })(K || (K = {})),
                     (function (u) {
                         ((u.credits = 'credits'),
                             (u.gold = 'gold'),
@@ -1296,7 +1297,7 @@
                             (u.xp = 'xp'),
                             (u.freeXP = 'freeXP'),
                             (u.equipCoin = 'equipCoin'));
-                    })(K || (K = {})),
+                    })($ || ($ = {})),
                     (function (u) {
                         ((u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG'));
                     })(Y || (Y = {})));
@@ -1377,7 +1378,7 @@
                                 'span',
                                 { className: i },
                                 D,
-                                o().createElement(X, { value: a, format: n === K.gold ? 'gold' : 'integral' }),
+                                o().createElement(X, { value: a, format: n === $.gold ? 'gold' : 'integral' }),
                             ),
                             o().createElement('span', { className: F }),
                             u &&

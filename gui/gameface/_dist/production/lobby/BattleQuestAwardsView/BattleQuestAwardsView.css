@@ -208,148 +208,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.6;
 }
 
-.TextButton_base_b6 {
-    display: flex;
-    align-items: center;
-    padding: 0 3rem;
-    font-size: 12rem;
-    position: relative;
-    cursor: pointer;
-}
-
-.TextButton_base__right_39 {
-    flex-direction: row-reverse;
-}
-.TextButton_icon_17 {
-    width: 32rem;
-    height: 32rem;
-    background: no-repeat center / contain;
-    position: relative;
-}
-.TextButton_icon__back_43,
-.TextButton_icon__forward_59 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.back');
-    transform: translateY(1rem);
-}
-.TextButton_icon__forward_59 {
-    transform: rotate(180deg) translateY(1rem);
-}
-.TextButton_icon__close_53 {
-    margin: -1rem 0;
-    background-image: url('R.images.gui.maps.icons.components.text_button.close');
-}
-.TextButton_icon__info_33 {
-    margin: -1rem -5rem;
-    background-image: url('R.images.gui.maps.icons.components.text_button.info');
-}
-.TextButton_glow_a4 {
-    width: 100%;
-    height: 100%;
-    background: no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    transition: opacity 0.16s;
-}
-.TextButton_icon__back_43 .TextButton_glow_a4,
-.TextButton_icon__forward_59 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
-}
-.TextButton_icon__close_53 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
-}
-.TextButton_icon__info_33 .TextButton_glow_a4 {
-    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
-}
-.TextButton_base_b6:hover .TextButton_glow_a4 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_glow_a4 {
-    opacity: 0;
-}
-.TextButton_caption_82 {
-    position: relative;
-    transition:
-        color 0.16s,
-        text-shadow 0.16s;
-}
-.TextButton_caption__back_b9,
-.TextButton_caption__forward_4e,
-.TextButton_caption__close_36 {
-    color: #ffdd99;
-    text-shadow:
-        0 0 10rem rgba(255, 42, 0, 1),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 10rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4),
-        0 0 2rem rgba(255, 42, 0, 0.4),
-        0 0 1rem rgba(255, 42, 0, 0.4);
-}
-.TextButton_base_b6:hover .TextButton_caption__back_b9,
-.TextButton_base_b6:hover .TextButton_caption__forward_4e,
-.TextButton_base_b6:hover .TextButton_caption__close_36 {
-    color: #fffa9f;
-}
-.TextButton_base_b6:active .TextButton_caption__back_b9,
-.TextButton_base_b6:active .TextButton_caption__forward_4e,
-.TextButton_base_b6:active .TextButton_caption__close_36 {
-    color: #ffdd99;
-}
-.TextButton_caption__info_23 {
-    padding: 0 5rem;
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:hover .TextButton_caption__info_23 {
-    color: #e3ffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.8),
-        0 0 12rem rgba(0, 234, 255, 1),
-        0 0 8rem #00eaff;
-}
-.TextButton_base_b6:active .TextButton_caption__info_23 {
-    color: #ccffff;
-    text-shadow:
-        0 0 12rem rgba(31, 68, 255, 0.6),
-        0 0 8rem #00eaff;
-}
-.TextButton_goto_e7 {
-    color: #7c7c6c;
-}
-.TextButton_base__left_ff .TextButton_goto_e7 {
-    margin-left: 8rem;
-}
-.TextButton_base__right_39 .TextButton_goto_e7 {
-    margin-right: 8rem;
-}
-.TextButton_shine_e2 {
-    width: 90rem;
-    height: 40rem;
-    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
-    opacity: 0;
-    position: absolute;
-    top: -4rem;
-    transition: opacity 0.16s;
-    pointer-events: none;
-}
-.TextButton_base__left_ff .TextButton_shine_e2 {
-    left: -4rem;
-}
-.TextButton_base__right_39 .TextButton_shine_e2 {
-    right: -4rem;
-    transform: rotate(180deg);
-}
-.TextButton_base_b6:hover .TextButton_shine_e2 {
-    opacity: 1;
-}
-.TextButton_base_b6:active .TextButton_shine_e2 {
-    opacity: 0;
-}
-
 .Reward_base_ea {
     display: flex;
     flex-direction: column;
@@ -537,565 +395,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: -14rem;
 }
 
-.Vehicle_base_00 {
-    display: flex;
-}
-
-.Vehicle_type_4c {
-    width: 42rem;
-    height: 38rem;
-    background: no-repeat center / contain;
-    position: relative;
-}
-
-.Vehicle_base__small_59 .Vehicle_type_4c {
-    top: -7rem;
-}
-
-.Vehicle_type__bigIcon_e1 {
-    width: 83rem;
-    height: 73rem;
-    margin: 0 -10rem;
-    top: -20rem;
-}
-
-.Vehicle_nation_4b {
-    width: 25rem;
-    height: 17rem;
-    margin-top: 8rem;
-    margin-right: 10rem;
-    background: no-repeat center / contain;
-}
-
-.Vehicle_level_d7 {
-    color: #e9e2bf;
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.Vehicle_base__small_59 .Vehicle_level_d7 {
-    color: #ffdd99;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.Vehicle_name_1b {
-    color: #e9e2bf;
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.Vehicle_base__small_59 .Vehicle_name_1b {
-    color: #ffc363;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.MainReward_base_a6 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.MainReward_mainRewards_de {
-    display: flex;
-    align-items: center;
-}
-
-.MainReward_mainReward_06 {
-    margin-top: -40rem;
-}
-
-.mediaSmall .MainReward_mainReward_06 {
-    margin-top: -130rem;
-}
-
-.mediaMedium .MainReward_mainReward_06 {
-    margin-top: -30rem;
-}
-
-.mediaLarge .MainReward_mainReward_06 {
-    margin-top: 0;
-}
-
-.mediaExtraLarge .MainReward_mainReward_06 {
-    margin-top: -280rem;
-}
-
-.MainReward_mainRewardFinal_97 {
-    margin-top: 30rem;
-}
-
-.mediaSmall .MainReward_mainRewardFinal_97 {
-    margin-top: -40rem;
-}
-
-.mediaMedium .MainReward_mainRewardFinal_97 {
-    margin-top: 48rem;
-}
-
-.mediaLarge .MainReward_mainRewardFinal_97 {
-    margin-top: -22rem;
-}
-
-.mediaExtraLarge .MainReward_mainRewardFinal_97 {
-    margin-top: -170rem;
-}
-
-.MainReward_mainRewardLabel_14 {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30rem;
-    color: #e9e2bf;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.mediaMedium .MainReward_mainRewardLabel_14 {
-    color: #e9e2bf;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 50rem;
-}
-
-.MainReward_rewards_fc {
-    display: flex;
-    justify-content: space-around;
-    width: 140rem;
-}
-
-.mediaMedium .MainReward_rewards_fc {
-    width: 240rem;
-}
-
-.MainReward_rewards__final_53 {
-    margin-bottom: 40rem;
-}
-
-.MainReward_reward_b8 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-}
-
-.mediaSmall .MainReward_reward_b8 {
-    margin-top: -40rem;
-}
-
-.mediaExtraLarge .MainReward_reward_b8 {
-    margin-top: 30rem;
-}
-
-.mediaSmall .MainReward_reward__final_ff {
-    margin-top: 0;
-}
-
-.mediaLarge .MainReward_reward__final_ff {
-    top: 40rem;
-}
-
-.mediaExtraLarge .MainReward_reward__final_ff {
-    top: 80rem;
-}
-
-.MainReward_value_4a {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.FormatText_base_d0 {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-@keyframes AwardsList_raysAppearance_5d {
-    0% {
-        transform: translateY(20rem);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes AwardsList_rotate_85 {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.AwardsList_base_80 {
-    position: relative;
-}
-
-.AwardsList_container_97 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 146rem;
-}
-
-.mediaSmall .AwardsList_container_97 {
-    margin-bottom: 206rem;
-}
-
-.mediaMedium .AwardsList_container_97 {
-    margin-bottom: 112rem;
-}
-
-.mediaLarge .AwardsList_container_97 {
-    margin-bottom: 120rem;
-}
-
-.mediaExtraLarge .AwardsList_container_97 {
-    margin-bottom: 180rem;
-}
-
-.AwardsList_type_70 {
-    width: 53rem;
-    height: 70rem;
-    margin: 0 -10rem;
-    background: no-repeat center / cover;
-    position: relative;
-    top: -20rem;
-}
-
-.AwardsList_value_91 {
-    color: #e9e2bf;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-top: -22rem;
-}
-
-.mediaLarge .AwardsList_value_91 {
-    margin-top: -64rem;
-    font-size: 36rem;
-}
-
-.mediaExtraLarge .AwardsList_value_91 {
-    margin-top: -66rem;
-}
-
-.AwardsList_value__credits_54 {
-    color: #ced9d9;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-top: -23rem;
-}
-
-.mediaMedium .AwardsList_value__credits_54 {
-    margin-top: -32rem;
-}
-
-.mediaLarge .AwardsList_value__credits_54 {
-    margin-top: -38rem;
-    font-size: 36rem;
-}
-
-.AwardsList_value__crystal_12 {
-    color: #ffdd99;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-top: -23rem;
-}
-
-.mediaMedium .AwardsList_value__crystal_12 {
-    margin-top: -32rem;
-}
-
-.mediaLarge .AwardsList_value__crystal_12 {
-    margin-top: -38rem;
-    font-size: 36rem;
-}
-
-.AwardsList_label_b1 {
-    color: #e9e2bf;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-top: 6rem;
-}
-
-.AwardsList_label__mainReaward_9b {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.mediaMedium .AwardsList_label_b1 {
-    margin-top: 5rem;
-}
-
-.mediaLarge .AwardsList_label_b1 {
-    color: #e9e2bf;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-top: 10rem;
-}
-
-.AwardsList_reward_80 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.AwardsList_reward_80 + .AwardsList_reward_80 {
-    margin-left: 10rem;
-}
-
-.mediaSmall .AwardsList_reward_80 + .AwardsList_reward_80 {
-    margin-left: 10rem;
-}
-
-.mediaMedium .AwardsList_reward_80 + .AwardsList_reward_80 {
-    margin-left: 22rem;
-}
-
-.mediaLarge .AwardsList_reward_80 + .AwardsList_reward_80 {
-    margin-left: -10rem;
-}
-
-.mediaExtraLarge .AwardsList_reward_80 + .AwardsList_reward_80 {
-    margin-left: 20rem;
-}
-
-.mediaExtraLarge .AwardsList_reward_80 {
-    margin-top: -220rem;
-}
-
-@keyframes BackGround_raysAppearance_31 {
-    0% {
-        transform: translateY(20rem);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-@keyframes BackGround_rotate_dc {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.BackGround_base_91 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.BackGround_bgContainer_a9 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.BackGround_bg_e7 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: no-repeat center / cover;
-}
-
-.BackGround_awardsContainer_18 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.BackGround_ribbon_2c {
-    width: 1366rem;
-    height: 100%;
-    background: no-repeat center / contain;
-    position: absolute;
-    top: 6%;
-}
-
-.BackGround_base__inProgress_cb .BackGround_ribbon_2c {
-    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.red_ribbon_1366');
-}
-
-.mediaMedium .BackGround_base__inProgress_cb .BackGround_ribbon_2c {
-    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.red_ribbon_1600');
-}
-
-.mediaLarge .BackGround_base__inProgress_cb .BackGround_ribbon_2c {
-    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.red_ribbon_1920');
-}
-
-.BackGround_base__withVehicle_bf .BackGround_ribbon_2c,
-.BackGround_base__completed_4c .BackGround_ribbon_2c {
-    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.gold_ribbon_1366');
-}
-
-.mediaMedium .BackGround_base__withVehicle_bf .BackGround_ribbon_2c,
-.mediaMedium .BackGround_base__completed_4c .BackGround_ribbon_2c {
-    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.gold_ribbon_1600');
-}
-
-.mediaLarge .BackGround_base__withVehicle_bf .BackGround_ribbon_2c,
-.mediaLarge .BackGround_base__completed_4c .BackGround_ribbon_2c {
-    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.gold_ribbon_1920');
-}
-
-.mediaMedium .BackGround_ribbon_2c {
-    width: 1600rem;
-}
-
-.mediaLarge .BackGround_ribbon_2c {
-    width: 1920rem;
-    top: 11%;
-}
-
-.mediaExtraLarge .BackGround_ribbon_2c {
-    top: 6%;
-}
-
-.BackGround_glowContainer_da {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    top: -8%;
-}
-
-.mediaExtraLarge .BackGround_glowContainer_da {
-    top: -6%;
-}
-
-.BackGround_base__withVehicle_bf .BackGround_glowContainer_da,
-.BackGround_base__completed_4c .BackGround_glowContainer_da {
-    top: -9%;
-}
-
-.mediaSmall .BackGround_base__withVehicle_bf .BackGround_glowContainer_da,
-.mediaSmall .BackGround_base__completed_4c .BackGround_glowContainer_da {
-    top: -8%;
-}
-
-.mediaMedium .BackGround_base__withVehicle_bf .BackGround_glowContainer_da,
-.mediaMedium .BackGround_base__completed_4c .BackGround_glowContainer_da {
-    top: -6%;
-}
-
-.mediaLarge .BackGround_base__withVehicle_bf .BackGround_glowContainer_da,
-.mediaLarge .BackGround_base__completed_4c .BackGround_glowContainer_da {
-    top: -5%;
-}
-
-.mediaExtraLarge .BackGround_base__withVehicle_bf .BackGround_glowContainer_da,
-.mediaExtraLarge .BackGround_base__completed_4c .BackGround_glowContainer_da {
-    top: -4%;
-}
-
-.BackGround_gradientLine_b0 {
-    width: 900rem;
-    height: 900rem;
-    background: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.radial_lines') no-repeat top / cover;
-    mix-blend-mode: screen;
-    position: absolute;
-}
-
-.mediaExtraLarge .BackGround_gradientLine_b0 {
-    width: 1386rem;
-    height: 1386rem;
-}
-
-.BackGround_gradientLine__animated_28 {
-    animation-name: BackGround_raysAppearance_31, BackGround_rotate_dc;
-    animation-duration: 1.5s, 120s;
-    animation-fill-mode: forwards, forwards;
-    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1), linear;
-    animation-delay: 0.8s, 1.2s;
-    animation-iteration-count: 1, infinite;
-}
-
-.BackGround_glow_3c {
-    width: 900rem;
-    height: 900rem;
-    background: no-repeat top / cover;
-    position: absolute;
-}
-
-.BackGround_base__inProgress_cb .BackGround_glow_3c {
-    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.glow_in_progress');
-}
-
-.BackGround_base__withVehicle_bf .BackGround_glow_3c,
-.BackGround_base__completed_4c .BackGround_glow_3c {
-    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.glow_done');
-}
-
-.mediaExtraLarge .BackGround_glow_3c {
-    width: 1470rem;
-    height: 1470rem;
-}
-
-.BackGround_splash_44 {
-    width: 500rem;
-    height: 500rem;
-    background: no-repeat top / cover;
-    mix-blend-mode: screen;
-    position: absolute;
-}
-
-.BackGround_base__withVehicle_bf .BackGround_splash_44,
-.BackGround_base__completed_4c .BackGround_splash_44 {
-    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.splash');
-}
-
-.mediaLarge .BackGround_splash_44 {
-    width: 900rem;
-    height: 900rem;
-}
-
-.mediaExtraLarge .BackGround_splash_44 {
-    width: 1080rem;
-    height: 1080rem;
-}
-
 .Box_mt__XS_0c {
     margin-top: 4rem;
 }
@@ -1200,6 +499,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
 .Box_ml__XL_4a {
     margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* eslint-disable-next-line expectedscss*/
@@ -1366,6 +670,650 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     color: #a29b70;
 }
 
+.Vehicle_base_00 {
+    display: flex;
+}
+
+.Vehicle_type_4c {
+    width: 83rem;
+    height: 73rem;
+    margin: 0 -10rem;
+    background: no-repeat center / contain;
+    position: relative;
+    top: -25rem;
+}
+
+.mediaExtraLarge .Vehicle_type_4c {
+    top: -20rem;
+}
+
+.Vehicle_text_9b {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaMedium .Vehicle_text_9b {
+    color: #e9e2bf;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.mediaLarge .Vehicle_text_9b {
+    color: #e9e2bf;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.MainReward_base_a6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.MainReward_mainRewards_de {
+    display: flex;
+    align-items: center;
+}
+
+.MainReward_mainReward_06 {
+    margin-top: -40rem;
+}
+
+.mediaSmall .MainReward_mainReward_06 {
+    margin-top: -130rem;
+}
+
+.mediaMedium .MainReward_mainReward_06 {
+    margin-top: -30rem;
+}
+
+.mediaLarge .MainReward_mainReward_06 {
+    margin-top: 0;
+}
+
+.mediaExtraLarge .MainReward_mainReward_06 {
+    margin-top: -280rem;
+}
+
+.MainReward_mainRewardFinal_97 {
+    margin-top: 20rem;
+}
+
+.mediaSmall .MainReward_mainRewardFinal_97 {
+    margin-top: -30rem;
+}
+
+.mediaMedium .MainReward_mainRewardFinal_97 {
+    margin-top: 55rem;
+}
+
+.mediaLarge .MainReward_mainRewardFinal_97 {
+    margin-top: 25rem;
+}
+
+.mediaExtraLarge .MainReward_mainRewardFinal_97 {
+    margin-top: 70rem;
+}
+
+.MainReward_mainRewardLabel_14 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35rem;
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaMedium .MainReward_mainRewardLabel_14 {
+    color: #e9e2bf;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 15rem;
+    margin-bottom: 0;
+}
+
+.mediaLarge .MainReward_mainRewardLabel_14 {
+    margin-top: 0;
+}
+
+.MainReward_rewards_fc {
+    display: flex;
+    justify-content: space-around;
+    width: 140rem;
+}
+
+.mediaMedium .MainReward_rewards_fc {
+    width: 240rem;
+}
+
+.MainReward_rewards__final_53 {
+    margin-bottom: 40rem;
+}
+
+.mediaExtraLarge .MainReward_rewards__final_53 {
+    margin-top: -25rem;
+    margin-bottom: 380rem;
+}
+
+.MainReward_reward_b8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.mediaSmall .MainReward_reward_b8 {
+    margin-top: -40rem;
+}
+
+.mediaExtraLarge .MainReward_reward_b8 {
+    margin-top: 30rem;
+}
+
+.mediaSmall .MainReward_reward__final_ff {
+    margin-top: 0;
+}
+
+.mediaLarge .MainReward_reward__final_ff {
+    top: 40rem;
+}
+
+.mediaExtraLarge .MainReward_reward__final_ff {
+    top: 80rem;
+}
+
+.MainReward_value_4a {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+@keyframes AwardsList_raysAppearance_5d {
+    0% {
+        transform: translateY(20rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes AwardsList_rotate_85 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.AwardsList_base_80 {
+    position: relative;
+}
+
+.AwardsList_container_97 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 146rem;
+}
+
+.mediaSmall .AwardsList_container_97 {
+    margin-bottom: 206rem;
+}
+
+.mediaMedium .AwardsList_container_97 {
+    margin-bottom: 112rem;
+}
+
+.mediaLarge .AwardsList_container_97 {
+    margin-bottom: 120rem;
+}
+
+.mediaExtraLarge .AwardsList_container_97 {
+    margin-bottom: 180rem;
+}
+
+.AwardsList_type_70 {
+    width: 53rem;
+    height: 70rem;
+    margin: 0 -10rem;
+    background: no-repeat center / cover;
+    position: relative;
+    top: -25rem;
+}
+
+.mediaLarge .AwardsList_type_70 {
+    top: -20rem;
+}
+
+.AwardsList_type__elite_54 {
+    margin: 0;
+}
+
+.AwardsList_value_91 {
+    color:;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: -22rem;
+    color: #e9e2bf;
+}
+
+.mediaMedium .AwardsList_value_91 {
+    color:;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaLarge .AwardsList_value_91 {
+    margin-top: -64rem;
+}
+
+.mediaExtraLarge .AwardsList_value_91 {
+    color:;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: -66rem;
+}
+
+.mediaMedium .AwardsList_value_string_36 {
+    color: #e9e2bf;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.mediaLarge .AwardsList_value_string_36 {
+    margin-top: 0;
+    color: #e9e2bf;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaMedium .AwardsList_value_middle_59 {
+    color: #e9e2bf;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.AwardsList_value__gold_ea {
+    color: #ffc363;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: -23rem;
+}
+
+.mediaMedium .AwardsList_value__gold_ea {
+    margin-top: -32rem;
+}
+
+.mediaLarge .AwardsList_value__gold_ea {
+    color: #ffc363;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: -38rem;
+}
+
+.AwardsList_value__credits_54 {
+    color: #ced9d9;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: -23rem;
+}
+
+.mediaMedium .AwardsList_value__credits_54 {
+    margin-top: -32rem;
+    color: #ced9d9;
+}
+
+.mediaExtraLarge .AwardsList_value__credits_54 {
+    color: #ced9d9;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: -38rem;
+}
+
+.AwardsList_value__crystal_12 {
+    color: #c9c9b6;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: -23rem;
+}
+
+.mediaMedium .AwardsList_value__crystal_12 {
+    margin-top: -32rem;
+}
+
+.mediaLarge .AwardsList_value__crystal_12 {
+    margin-top: -38rem;
+    font-size: 36rem;
+}
+
+.AwardsList_label_b1 {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-top: 6rem;
+}
+
+.AwardsList_label__mainReaward_9b {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.mediaMedium .AwardsList_label_b1 {
+    margin-top: 5rem;
+}
+
+.mediaLarge .AwardsList_label_b1 {
+    color: #e9e2bf;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 10rem;
+}
+
+.mediaMedium .AwardsList_label_b1.AwardsList_middleReward_9c {
+    color: #e9e2bf;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.mediaLarge .AwardsList_label_b1.AwardsList_middleReward_9c {
+    color: #e9e2bf;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.AwardsList_label__compensation_5d {
+    color: #ffc363;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 0;
+    line-height: 22rem;
+}
+
+.mediaMedium .AwardsList_label__compensation_5d {
+    color: #ffc363;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-top: 0;
+    line-height: 36rem;
+}
+
+.AwardsList_compensationContainer_9a {
+    display: flex;
+    align-items: flex-start;
+}
+
+.AwardsList_icon_4d {
+    width: 24rem;
+    height: 24rem;
+    margin-right: 8rem;
+    background: url('R.images.gui.maps.icons.library.changeTank') no-repeat center / cover;
+}
+
+.mediaMedium .AwardsList_icon_4d {
+    width: 48rem;
+    height: 48rem;
+    margin-right: 16rem;
+    background-image: url('R.images.gui.maps.icons.promo_code_reward_screen.rewards.compensationVehicles');
+}
+
+.AwardsList_reward_80 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.AwardsList_reward_80 + .AwardsList_reward_80 {
+    margin-left: 10rem;
+}
+
+.mediaSmall .AwardsList_reward_80 + .AwardsList_reward_80 {
+    margin-left: 10rem;
+}
+
+.mediaMedium .AwardsList_reward_80 + .AwardsList_reward_80 {
+    margin-left: 22rem;
+}
+
+.mediaLarge .AwardsList_reward_80 + .AwardsList_reward_80 {
+    margin-left: -10rem;
+}
+
+.mediaExtraLarge .AwardsList_reward_80 + .AwardsList_reward_80 {
+    margin-left: 20rem;
+}
+
+.mediaExtraLarge .AwardsList_reward_80 {
+    margin-top: -220rem;
+}
+
+.AwardsList_gold_c0 {
+    color: #ffc363;
+}
+
+@keyframes BackGround_raysAppearance_31 {
+    0% {
+        transform: translateY(20rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes BackGround_rotate_dc {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.BackGround_base_91 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.BackGround_bgContainer_a9 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.BackGround_bg_e7 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: no-repeat center / cover;
+}
+
+.BackGround_awardsContainer_18 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.BackGround_ribbon_2c {
+    width: 1366rem;
+    height: 100%;
+    background: no-repeat center / contain;
+    position: absolute;
+    top: 6%;
+}
+
+.BackGround_base__inProgress_cb .BackGround_ribbon_2c {
+    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.red_ribbon_1366');
+}
+
+.mediaMedium .BackGround_base__inProgress_cb .BackGround_ribbon_2c {
+    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.red_ribbon_1600');
+}
+
+.mediaLarge .BackGround_base__inProgress_cb .BackGround_ribbon_2c {
+    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.red_ribbon_1920');
+}
+
+.BackGround_base__withVehicle_bf .BackGround_ribbon_2c,
+.BackGround_base__completed_4c .BackGround_ribbon_2c {
+    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.gold_ribbon_1366');
+}
+
+.mediaMedium .BackGround_base__withVehicle_bf .BackGround_ribbon_2c,
+.mediaMedium .BackGround_base__completed_4c .BackGround_ribbon_2c {
+    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.gold_ribbon_1600');
+}
+
+.mediaLarge .BackGround_base__withVehicle_bf .BackGround_ribbon_2c,
+.mediaLarge .BackGround_base__completed_4c .BackGround_ribbon_2c {
+    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.gold_ribbon_1920');
+}
+
+.mediaMedium .BackGround_ribbon_2c {
+    width: 1600rem;
+}
+
+.mediaLarge .BackGround_ribbon_2c {
+    width: 1920rem;
+    top: 11%;
+}
+
+.mediaExtraLarge .BackGround_ribbon_2c {
+    top: 6%;
+}
+
+.BackGround_glowContainer_da {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    top: -4%;
+}
+
+.mediaExtraLarge .BackGround_glowContainer_da {
+    top: -4%;
+}
+
+.mediaLarge .BackGround_base__withVehicle_bf .BackGround_glowContainer_da,
+.mediaLarge .BackGround_base__completed_4c .BackGround_glowContainer_da {
+    top: 0;
+}
+
+.BackGround_gradientLine_b0 {
+    width: 900rem;
+    height: 900rem;
+    background: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.radial_lines') no-repeat top / cover;
+    mix-blend-mode: screen;
+    position: absolute;
+}
+
+.mediaExtraLarge .BackGround_gradientLine_b0 {
+    width: 1386rem;
+    height: 1386rem;
+}
+
+.BackGround_gradientLine__animated_28 {
+    animation-name: BackGround_raysAppearance_31, BackGround_rotate_dc;
+    animation-duration: 1.5s, 120s;
+    animation-fill-mode: forwards, forwards;
+    animation-timing-function: cubic-bezier(0.07, 0.82, 0.17, 1), linear;
+    animation-delay: 0.8s, 1.2s;
+    animation-iteration-count: 1, infinite;
+}
+
+.BackGround_glow_3c {
+    width: 900rem;
+    height: 900rem;
+    background: no-repeat top / cover;
+    position: absolute;
+}
+
+.BackGround_base__inProgress_cb .BackGround_glow_3c {
+    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.glow_in_progress');
+}
+
+.BackGround_base__withVehicle_bf .BackGround_glow_3c,
+.BackGround_base__completed_4c .BackGround_glow_3c {
+    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.glow_done');
+}
+
+.mediaExtraLarge .BackGround_glow_3c {
+    width: 1470rem;
+    height: 1470rem;
+}
+
+.BackGround_splash_44 {
+    width: 500rem;
+    height: 500rem;
+    background: no-repeat top / cover;
+    mix-blend-mode: screen;
+    position: absolute;
+}
+
+.BackGround_base__withVehicle_bf .BackGround_splash_44,
+.BackGround_base__completed_4c .BackGround_splash_44 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.awards.battleQuest.splash');
+}
+
+.mediaLarge .BackGround_splash_44 {
+    width: 900rem;
+    height: 900rem;
+}
+
+.mediaExtraLarge .BackGround_splash_44 {
+    width: 1080rem;
+    height: 1080rem;
+}
+
 .Header_base_e5 {
     display: flex;
     flex-direction: column;
@@ -1416,6 +1364,73 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 56rem;
     font-weight: 700;
     line-height: 1.1;
+}
+
+.CloseButton_base_b7 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.CloseButton_text_c4 {
+    color: #ffdd99;
+    font-size: 12rem;
+    text-shadow:
+        0 0 10rem rgba(255, 42, 0, 1),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4);
+    transition:
+        color 0.16s,
+        text-shadow 0.16s;
+}
+
+.CloseButton_base_b7:hover .CloseButton_text_c4 {
+    color: #fffa9f;
+}
+
+.CloseButton_base_b7:active .CloseButton_text_c4 {
+    color: #ffdd99;
+}
+
+.CloseButton_icon_35 {
+    width: 43rem;
+    height: 43rem;
+    margin-left: -4rem;
+    position: relative;
+    top: 1rem;
+    cursor: pointer;
+}
+
+.CloseButton_icon_default_c8,
+.CloseButton_icon_highlight_5a {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: opacity 0.16s;
+}
+
+.CloseButton_icon_default_c8 {
+    background: url('R.images.historical_battles.gui.maps.icons.common.button_close') no-repeat center / cover;
+}
+
+.CloseButton_icon_highlight_5a {
+    background: url('R.images.historical_battles.gui.maps.icons.common.button_close_hover') no-repeat center / cover;
+    opacity: 0;
+}
+
+.CloseButton_base_b7:hover .CloseButton_icon_highlight_5a {
+    opacity: 1;
+}
+
+.CloseButton_base_b7:active .CloseButton_icon_highlight_5a {
+    opacity: 0;
 }
 
 @keyframes App_raysAppearance_b5 {
@@ -1494,8 +1509,13 @@ body {
 
 .App_buttonClose_21 {
     position: absolute;
-    top: 30rem;
-    right: 30rem;
+    top: 23rem;
+    right: 24rem;
+}
+
+.mediaLarge .App_buttonClose_21 {
+    top: 33rem;
+    right: 34rem;
 }
 
 .App_awards_ea {
@@ -1577,9 +1597,9 @@ body {
 }
 
 .App_button_6f {
-    width: 190rem;
+    width: 164rem;
 }
 
 .App_button_6f + .App_button_6f {
-    margin-left: 12rem;
+    margin-left: 24rem;
 }

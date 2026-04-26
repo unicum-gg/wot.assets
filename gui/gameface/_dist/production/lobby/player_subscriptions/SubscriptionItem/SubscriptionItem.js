@@ -337,7 +337,7 @@
             },
             67: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => K });
+                t.d(e, { O: () => X });
                 var r = {};
                 (t.r(r), t.d(r, { mouse: () => F, onResize: () => E }));
                 var i = {};
@@ -370,7 +370,7 @@
                         displayStatus: () => B,
                         displayStatusIs: () => Y,
                         events: () => C,
-                        extraSize: () => $,
+                        extraSize: () => K,
                         forceTriggerMouseMove: () => G,
                         freezeTextureBeforeResize: () => O,
                         getBrowserTexturePath: () => f,
@@ -388,7 +388,7 @@
                         setEventHandled: () => U,
                         setInputPaddingsRem: () => x,
                         setSidePaddingsRem: () => R,
-                        whenTutorialReady: () => X,
+                        whenTutorialReady: () => $,
                     }));
                 const E = s('clientResized'),
                     A = { down: s('mousedown'), up: s('mouseup'), move: s('mousemove') };
@@ -598,7 +598,7 @@
                     return viewEnv.getShowingStatus();
                 }
                 const Y = Object.keys(B).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === B[e]), u), {}),
-                    $ = {
+                    K = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -606,13 +606,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    X = Promise.all([
+                    $ = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : C.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    K = { view: n, client: i };
+                    X = { view: n, client: i };
             },
             902: (u, e, t) => {
                 'use strict';
@@ -875,6 +875,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1880,7 +1881,7 @@
                         ml__LG: 'Box_ml__LG_39',
                         ml__XL: 'Box_ml__XL_4a',
                     },
-                    $ = [
+                    K = [
                         'className',
                         'width',
                         'height',
@@ -1908,9 +1909,9 @@
                         'style',
                         'children',
                     ];
-                function X() {
+                function $() {
                     return (
-                        (X =
+                        ($ =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1919,11 +1920,11 @@
                                 }
                                 return u;
                             }),
-                        X.apply(this, arguments)
+                        $.apply(this, arguments)
                     );
                 }
                 Object.keys(k());
-                const K = {
+                const X = {
                         XL: { mt: Y.mt__XL, mr: Y.mr__XL, mb: Y.mb__XL, ml: Y.ml__XL },
                         LG: { mt: Y.mt__LG, mr: Y.mr__LG, mb: Y.mb__LG, ml: Y.ml__LG },
                         MDp: { mt: Y.mt__MDp, mr: Y.mr__MDp, mb: Y.mb__MDp, ml: Y.ml__MDp },
@@ -1932,7 +1933,7 @@
                         SM: { mt: Y.mt__SM, mr: Y.mr__SM, mb: Y.mb__SM, ml: Y.ml__SM },
                         XS: { mt: Y.mt__XS, mr: Y.mr__XS, mb: Y.mb__XS, ml: Y.ml__XS },
                     },
-                    z = (Object.keys(K), ['mt', 'mr', 'mb', 'ml']),
+                    z = (Object.keys(X), ['mt', 'mr', 'mb', 'ml']),
                     V = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
                     q = j((u) => {
                         let e = u.className,
@@ -1985,13 +1986,13 @@
                                     a = Object.keys(u);
                                 for (r = 0; r < a.length; r++) ((t = a[r]), e.indexOf(t) >= 0 || (i[t] = u[t]));
                                 return i;
-                            })(u, $);
+                            })(u, K);
                         const U = (0, a.useMemo)(() => {
                                 const u = { mt: E, mr: F, mb: l, ml: _ },
                                     e = ((u) =>
                                         z.reduce((e, t) => {
                                             const r = u[t];
-                                            return r && 'number' != typeof r ? e.concat(K[!0 === r ? 'MD' : r][t]) : e;
+                                            return r && 'number' != typeof r ? e.concat(X[!0 === r ? 'MD' : r][t]) : e;
                                         }, []))(u),
                                     i = ((u) =>
                                         z.reduce((e, t) => {
@@ -2015,7 +2016,7 @@
                             }, [t, r, E, F, l, _, k, H, T, d, y, S, f]),
                             W = U.computedStyle,
                             G = U.computedClassNames;
-                        return n().createElement('div', X({ className: i()(Y.base, ...G, e), style: W }, I), P);
+                        return n().createElement('div', $({ className: i()(Y.base, ...G, e), style: W }, I), P);
                     });
                 var Z = t(532),
                     Q = t.n(Z);

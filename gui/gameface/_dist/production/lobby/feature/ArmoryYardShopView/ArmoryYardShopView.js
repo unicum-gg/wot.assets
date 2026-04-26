@@ -396,6 +396,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -3883,6 +3884,7 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
@@ -3923,7 +3925,6 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
-                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -4467,8 +4468,9 @@
                         );
                     }),
                     Ot = 'CardBundle_title_07',
-                    It = R.strings.armory_shop.shopView.card,
-                    Ht = (0, a.memo)(({ product: e, tokenPrice: u, buyProduct: t }) => {
+                    It = 'CardBundle_altText_aa',
+                    Ht = R.strings.armory_shop.shopView.card,
+                    Ut = (0, a.memo)(({ product: e, tokenPrice: u, buyProduct: t }) => {
                         const r = e.itemID,
                             n = e.nationFlagIcon,
                             i = e.title,
@@ -4481,10 +4483,12 @@
                             d = E[1],
                             A = bt(),
                             F = u.price.find((e) => e.name === ct.Gold),
-                            D = null != F && F.value ? Math.round(l * F.value) : 0,
-                            C = (0, wu.useTransition)(m, Object.assign({ key: m }, St)),
-                            g = h()('CardBundle_textWrapper_65', m && 'CardBundle_textWrapper__hover_a2'),
-                            B = 1 === s.length ? 4 : 1;
+                            D = u.price.find((e) => e.name === ct.Crystal),
+                            C = null != F && F.value ? Math.round(l * F.value) : 0,
+                            g = null != D && D.value ? Math.round(l * D.value) : 0,
+                            B = (0, wu.useTransition)(m, Object.assign({ key: m }, St)),
+                            p = h()('CardBundle_textWrapper_65', m && 'CardBundle_textWrapper__hover_a2'),
+                            v = 1 === s.length ? 4 : 1;
                         return o().createElement(
                             'div',
                             {
@@ -4509,7 +4513,7 @@
                                 { className: 'CardBundle_content_61' },
                                 o().createElement(
                                     'div',
-                                    { className: g },
+                                    { className: p },
                                     !m && o().createElement(cu, { text: i, className: Ot }),
                                     m &&
                                         o().createElement(cu, {
@@ -4517,7 +4521,7 @@
                                             className: h()(Ot, 'CardBundle_title__hover_96'),
                                         }),
                                     o().createElement(cu, {
-                                        text: It.bundleDescription(),
+                                        text: Ht.bundleDescription(),
                                         className: h()(
                                             'CardBundle_description_8a',
                                             m && 'CardBundle_description__hover_d1',
@@ -4538,7 +4542,7 @@
                                                     { key: `${e}__${u}`, className: 'CardBundle_extraParams__text_5a' },
                                                     o().createElement(vt, {
                                                         mediaSize: A,
-                                                        linesCount: B,
+                                                        linesCount: v,
                                                         blocks: Tt(e),
                                                     }),
                                                 ),
@@ -4563,15 +4567,28 @@
                                         o().createElement(
                                             o().Fragment,
                                             null,
-                                            o().createElement(cu, {
-                                                text: It.altText(),
-                                                className: 'CardBundle_altText_aa',
-                                            }),
-                                            o().createElement(lt, { type: nt.gold, value: D, size: rt.small }),
+                                            Boolean(C) &&
+                                                o().createElement(
+                                                    o().Fragment,
+                                                    null,
+                                                    o().createElement(cu, { text: Ht.altText(), className: It }),
+                                                    o().createElement(lt, { type: nt.gold, value: C, size: rt.small }),
+                                                ),
+                                            Boolean(g) &&
+                                                o().createElement(
+                                                    o().Fragment,
+                                                    null,
+                                                    o().createElement(cu, { text: Ht.altText(), className: It }),
+                                                    o().createElement(lt, {
+                                                        type: nt.crystal,
+                                                        value: g,
+                                                        size: rt.small,
+                                                    }),
+                                                ),
                                         ),
                                 ),
                             ),
-                            C(
+                            B(
                                 (e, u) =>
                                     u &&
                                     o().createElement(wu.animated.div, {
@@ -4581,7 +4598,7 @@
                             ),
                         );
                     }),
-                    Ut = ({ section: e, tokenPrice: u, showTitle: t, className: r, buyProduct: n }) =>
+                    Wt = ({ section: e, tokenPrice: u, showTitle: t, className: r, buyProduct: n }) =>
                         o().createElement(
                             'div',
                             { className: h()('Section_base_b0', r) },
@@ -4602,14 +4619,14 @@
                                             ),
                                         },
                                         e.template === Q.Bundle
-                                            ? o().createElement(Ht, { product: e, tokenPrice: u, buyProduct: n })
+                                            ? o().createElement(Ut, { product: e, tokenPrice: u, buyProduct: n })
                                             : o().createElement(kt, { product: e, tokenPrice: u, buyProduct: n }),
                                     );
                                     var r, a;
                                 }),
                             ),
                         ),
-                    Wt = ({ sections: e, tokenPrice: u, buyProduct: t, showSectionTitle: r, className: n }) => {
+                    Gt = ({ sections: e, tokenPrice: u, buyProduct: t, showSectionTitle: r, className: n }) => {
                         const i = (0, a.useState)(!0),
                             s = i[0],
                             l = i[1],
@@ -4640,7 +4657,7 @@
                                             'div',
                                             { className: 'CardsList_cards_92' },
                                             e.map((e, n) =>
-                                                o().createElement(Ut, {
+                                                o().createElement(Wt, {
                                                     key: n,
                                                     section: e,
                                                     tokenPrice: u,
@@ -4658,7 +4675,7 @@
                             )
                         );
                     };
-                let Gt, zt, Xt, $t, jt, Vt, Yt;
+                let zt, Xt, $t, jt, Vt, Yt, qt;
                 (!(function (e) {
                     ((e.BeforeProgression = 'beforeProgression'),
                         (e.Active = 'active'),
@@ -4666,44 +4683,44 @@
                         (e.Completed = 'completed'),
                         (e.Disabled = 'disabled'),
                         (e.Intro = 'intro'));
-                })(Gt || (Gt = {})),
+                })(zt || (zt = {})),
                     (function (e) {
                         ((e[(e.Disabled = 0)] = 'Disabled'), (e[(e.Active = 1)] = 'Active'));
-                    })(zt || (zt = {})),
+                    })(Xt || (Xt = {})),
                     (function (e) {
                         ((e[(e.EmptyRewards = 0)] = 'EmptyRewards'),
                             (e[(e.ReadyRewards = 1)] = 'ReadyRewards'),
                             (e[(e.AnimatedRewards = 2)] = 'AnimatedRewards'));
-                    })(Xt || (Xt = {})),
+                    })($t || ($t = {})),
                     (function (e) {
                         ((e[(e.Progress = 0)] = 'Progress'),
                             (e[(e.Quests = 1)] = 'Quests'),
                             (e[(e.Shop = 2)] = 'Shop'));
-                    })($t || ($t = {})),
+                    })(jt || (jt = {})),
                     (function (e) {
                         ((e[(e.Keyboard = 0)] = 'Keyboard'), (e[(e.Mouse = 1)] = 'Mouse'));
-                    })(jt || (jt = {})),
+                    })(Vt || (Vt = {})),
                     (function (e) {
                         ((e[(e.Tab = 0)] = 'Tab'),
                             (e[(e.Chapter = 1)] = 'Chapter'),
                             (e[(e.ShopInfo = 2)] = 'ShopInfo'),
                             (e[(e.Step = 3)] = 'Step'));
-                    })(Vt || (Vt = {})),
+                    })(Yt || (Yt = {})),
                     (function (e) {
                         ((e[(e.Hidden = 0)] = 'Hidden'), (e[(e.Tokens = 1)] = 'Tokens'), (e[(e.Coins = 2)] = 'Coins'));
-                    })(Yt || (Yt = {})));
-                const qt = R.strings.armory_shop.shopView.shop,
-                    Kt = (0, a.memo)(({ onInfo: e, classNames: u }) =>
+                    })(qt || (qt = {})));
+                const Kt = R.strings.armory_shop.shopView.shop,
+                    Qt = (0, a.memo)(({ onInfo: e, classNames: u }) =>
                         o().createElement(
                             'div',
                             { className: h()('Header_base_f7', u) },
-                            o().createElement(cu, { className: 'Header_text_91', text: qt.header() }),
+                            o().createElement(cu, { className: 'Header_text_91', text: Kt.header() }),
                             o().createElement(
                                 de,
                                 {
                                     contentId:
                                         R.views.armory_yard.lobby.feature.tooltips.ArmoryYardSimpleTooltipView('resId'),
-                                    args: { state: Vt.ShopInfo },
+                                    args: { state: Yt.ShopInfo },
                                     ignoreShowDelay: !0,
                                 },
                                 o().createElement('div', {
@@ -4718,12 +4735,12 @@
                             ),
                         ),
                     ),
-                    Qt = R.strings.armory_shop.shopView.shop,
-                    Zt = ({ value: e, classNames: u }) =>
+                    Zt = R.strings.armory_shop.shopView.shop,
+                    Jt = ({ value: e, classNames: u }) =>
                         o().createElement(
                             'div',
                             { className: h()('TokensInInventory_base_bd', null == u ? void 0 : u.base) },
-                            o().createElement(cu, { text: Qt.tokensCount(), className: 'TokensInInventory_label_2c' }),
+                            o().createElement(cu, { text: Zt.tokensCount(), className: 'TokensInInventory_label_2c' }),
                             o().createElement(
                                 'div',
                                 { className: 'TokensInInventory_tokens_cf' },
@@ -4731,10 +4748,10 @@
                                 o().createElement('div', { className: 'TokensInInventory_icon_0a' }),
                             ),
                         ),
-                    Jt = 'Shop_navigation_cb',
-                    er = 'Shop_navigation__left_71',
-                    ur = R.strings.armory_shop.shopView.shop,
-                    tr = (0, z.observer)(() => {
+                    er = 'Shop_navigation_cb',
+                    ur = 'Shop_navigation__left_71',
+                    tr = R.strings.armory_shop.shopView.shop,
+                    rr = (0, z.observer)(() => {
                         const e = le(),
                             u = e.controls,
                             t = e.model,
@@ -4754,7 +4771,7 @@
                             o().createElement(
                                 'div',
                                 { className: 'Shop_content_48' },
-                                o().createElement(Kt, { onInfo: u.showIntro, classNames: 'Shop_header_8f' }),
+                                o().createElement(Qt, { onInfo: u.showIntro, classNames: 'Shop_header_8f' }),
                                 r.getTabs().length > 0 &&
                                     o().createElement(pu, {
                                         tabs: r.getTabs(),
@@ -4775,13 +4792,13 @@
                                     o().createElement(
                                         'div',
                                         { className: 'Shop_currency_39' },
-                                        o().createElement(Zt, { value: i }),
+                                        o().createElement(Jt, { value: i }),
                                     ),
                                 ),
                                 o().createElement(
                                     'div',
                                     { className: 'Shop_cardsList_c3' },
-                                    o().createElement(Wt, {
+                                    o().createElement(Gt, {
                                         sections: d,
                                         tokenPrice: r.getTokenPrice(),
                                         buyProduct: u.buyProduct,
@@ -4792,10 +4809,10 @@
                             s === Fu.Ingameshop &&
                                 o().createElement(
                                     'div',
-                                    { className: h()(Jt, er) },
+                                    { className: h()(er, ur) },
                                     o().createElement(Se, {
-                                        caption: ur.navigation.backCaption(),
-                                        goto: ur.navigation.back(),
+                                        caption: tr.navigation.backCaption(),
+                                        goto: tr.navigation.back(),
                                         type: 'back',
                                         side: 'left',
                                         onClick: u.back,
@@ -4804,10 +4821,10 @@
                             s === Fu.Armory &&
                                 o().createElement(
                                     'div',
-                                    { className: h()(Jt, er) },
+                                    { className: h()(er, ur) },
                                     o().createElement(Se, {
-                                        caption: ur.navigation.backCaption(),
-                                        goto: ur.navigation.close(),
+                                        caption: tr.navigation.backCaption(),
+                                        goto: tr.navigation.close(),
                                         type: 'back',
                                         side: 'left',
                                         onClick: u.close,
@@ -4815,9 +4832,9 @@
                                 ),
                         );
                     }),
-                    rr = 'App_offset_15';
+                    nr = 'App_offset_15';
                 viewEnv.clearInternalCacheAfterFinalize();
-                const nr = (0, z.observer)(() => {
+                const ar = (0, z.observer)(() => {
                         const e = le(),
                             u = e.controls,
                             t = e.model.root.get().isIntroVisible;
@@ -4832,7 +4849,7 @@
                             o().createElement(
                                 'div',
                                 { className: 'App_base_86' },
-                                o().createElement('div', { className: rr }),
+                                o().createElement('div', { className: nr }),
                                 o().createElement(
                                     'div',
                                     { className: 'App_content_51' },
@@ -4840,14 +4857,14 @@
                                     o().createElement(
                                         'div',
                                         { className: h()(t && 'App_hidden_1d') },
-                                        o().createElement(tr, null),
+                                        o().createElement(rr, null),
                                     ),
                                 ),
-                                o().createElement('div', { className: rr }),
+                                o().createElement('div', { className: nr }),
                             )
                         );
                     }),
-                    ar = {
+                    or = {
                         isIntroVisible: !1,
                         tokenPrice: {
                             priceID: '',
@@ -4897,8 +4914,8 @@
                             },
                         ],
                     },
-                    or = {
-                        getter: ((ir = ar), (e) => (e ? e.split('.').reduce((e, u) => e[u], ir) : ir)),
+                    ir = {
+                        getter: ((sr = or), (e) => (e ? e.split('.').reduce((e, u) => e[u], sr) : sr)),
                         controls: () =>
                             (function (e) {
                                 const u = {};
@@ -4926,13 +4943,13 @@
                                 },
                             }),
                     };
-                var ir;
+                var sr;
                 engine.whenReady.then(() => {
                     I().render(
                         o().createElement(
                             se,
-                            { mode: 'real', mocks: or },
-                            o().createElement(k, null, o().createElement(nr, null)),
+                            { mode: 'real', mocks: ir },
+                            o().createElement(k, null, o().createElement(ar, null)),
                         ),
                         document.getElementById('root'),
                     );

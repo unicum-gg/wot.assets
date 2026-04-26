@@ -331,6 +331,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -729,7 +730,7 @@
                     };
                 window.ViewEnvHelper = g;
             },
-            783: (u, e, t) => {
+            4373: (u, e, t) => {
                 var n = t(6179),
                     o = t.n(n),
                     E = t(493),
@@ -966,34 +967,20 @@
                 }
                 Date.now();
                 const p = () => {};
-                function g(u) {
-                    engine.call('PlaySound', u);
-                }
-                const f = {
-                    playHighlight() {
-                        g('highlight');
-                    },
-                    playClick() {
-                        g('play');
-                    },
-                    playYes() {
-                        g('yes1');
-                    },
-                };
-                var y = t(3138);
-                const T = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
-                    O = (u) => {
+                var g = t(3138);
+                const f = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
+                    y = (u) => {
                         const e = (0, n.useRef)(!1);
                         e.current || (u(), (e.current = !0));
                     },
-                    P = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
-                    k = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
-                    M = a.Sw.instance;
-                let S;
+                    T = (u) => u && 'ArrayItem' === u.__proto__.constructor.name,
+                    O = (u, e) => (u.length > 0 ? `${u}.${e}` : e),
+                    P = a.Sw.instance;
+                let k;
                 !(function (u) {
                     ((u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep'));
-                })(S || (S = {}));
-                const x = (u = 'model', e = S.Deep) => {
+                })(k || (k = {}));
+                const M = (u = 'model', e = k.Deep) => {
                         const t = (0, n.useState)(0),
                             o = (t[0], t[1]),
                             E = (0, n.useMemo)(() => F(), []),
@@ -1005,15 +992,15 @@
                             ),
                             a = (0, n.useState)(() =>
                                 ((u) => {
-                                    const e = T(u, window);
+                                    const e = f(u, window);
                                     for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
-                                    return P(e) ? e.value : e;
+                                    return T(e) ? e.value : e;
                                 })(
                                     ((u) =>
                                         ((u, e) =>
                                             u.split('.').reduce((u, e) => {
-                                                const t = T(`${u}.${e}`, window);
-                                                return P(t) ? ((u, e) => `${u}.${e}.value`)(u, e) : `${u}.${e}`;
+                                                const t = f(`${u}.${e}`, window);
+                                                return T(t) ? ((u, e) => `${u}.${e}.value`)(u, e) : `${u}.${e}`;
                                             }))(u))(r),
                                 ),
                             ),
@@ -1021,18 +1008,18 @@
                             D = a[1],
                             c = (0, n.useRef)(-1);
                         return (
-                            O(() => {
+                            y(() => {
                                 if (
                                     ('boolean' == typeof e &&
-                                        ((e = e ? S.Deep : S.None),
+                                        ((e = e ? k.Deep : k.None),
                                         console.warn(
                                             'Boolean key for useModel "tracking" param is deprecated. Use ModelTracking enum values instead!',
                                         )),
-                                    e !== S.None)
+                                    e !== k.None)
                                 ) {
                                     const t = (u) => {
                                             ((u) => u && 'CoherentArrayProxy' === u.__proto__.constructor.name)(u) &&
-                                            e === S.Deep
+                                            e === k.Deep
                                                 ? (u === s && o((u) => u + 1), D(u))
                                                 : D(Object.assign([], u));
                                         },
@@ -1045,7 +1032,7 @@
                                                             window.__feature && window.__feature !== t && t
                                                                 ? `subViews.${t}`
                                                                 : '';
-                                                    return { modelPrefix: o, modelPath: k(o, ''), resId: n };
+                                                    return { modelPrefix: o, modelPath: O(o, ''), resId: n };
                                                 })(),
                                                 t = e.modelPrefix,
                                                 n = u.split('.');
@@ -1053,8 +1040,8 @@
                                                 const u = [n[0]];
                                                 return (
                                                     n.reduce((e, n) => {
-                                                        const o = T(k(t, `${e}.${n}`), window);
-                                                        return P(o)
+                                                        const o = f(O(t, `${e}.${n}`), window);
+                                                        return T(o)
                                                             ? (u.push(o.id), `${e}.${n}.value`)
                                                             : (u.push(n), `${e}.${n}`);
                                                     }),
@@ -1063,19 +1050,19 @@
                                             }
                                             return '';
                                         })(u);
-                                    c.current = M.addCallback(n, t, i, e === S.Deep);
+                                    c.current = P.addCallback(n, t, i, e === k.Deep);
                                 }
                             }),
                             (0, n.useEffect)(() => {
-                                if (e !== S.None)
+                                if (e !== k.None)
                                     return () => {
-                                        M.removeCallback(c.current, i);
+                                        P.removeCallback(c.current, i);
                                     };
                             }, [i, e]),
                             s
                         );
                     },
-                    L =
+                    S =
                         (a.Sw.instance,
                         (u = 0, e, t = 0, o = p) => {
                             const E = (0, n.useState)(u),
@@ -1097,28 +1084,26 @@
                                             clearInterval(E);
                                         };
                                     }
+                                    i(0);
                                 }, [u, e, t, o]),
                                 A
                             );
-                        }),
-                    N = (u = R.sounds.highlight()) => {
-                        const e = (0, n.useState)(!1),
-                            t = e[0],
-                            o = e[1],
-                            E = (0, n.useMemo)(
-                                () => [
-                                    () => {
-                                        (g(u), o(!0));
-                                    },
-                                    () => {
-                                        o(!1);
-                                    },
-                                ],
-                                [u],
-                            );
-                        return [t, E[0], E[1]];
+                        });
+                function x(u) {
+                    engine.call('PlaySound', u);
+                }
+                const L = {
+                        playHighlight() {
+                            x('highlight');
+                        },
+                        playClick() {
+                            x('play');
+                        },
+                        playYes() {
+                            x('yes1');
+                        },
                     },
-                    I = {
+                    N = {
                         base: 'EventCountdown_base_90',
                         base__ban: 'EventCountdown_base__ban_dd',
                         base__extraSmall: 'EventCountdown_base__extraSmall_06',
@@ -1128,19 +1113,19 @@
                         icon: 'EventCountdown_icon_c5',
                         countdown: 'EventCountdown_countdown_58',
                     },
-                    U = (0, n.memo)(({ eventState: u, hideText: e = !1, size: t, timeLeft: E }) => {
+                    I = (0, n.memo)(({ eventState: u, hideText: e = !1, size: t, timeLeft: E }) => {
                         const A = Math.max(Math.floor(E - Date.now() / h), 0),
                             i = b(A).days < 1,
                             F = u === _.Banned,
-                            s = L(A, 1),
-                            D = t === H.ExtraSmall,
+                            s = S(A, 1),
+                            D = t === V.ExtraSmall,
                             c = (0, n.useMemo)(() => {
                                 if (u === _.Banned) {
                                     const u = (function (u, e = ' ', t = 'SHORT_FORMAT', n = 'SHORT_FORMAT') {
                                         return `${a.Z5.getDateFormat(u, a.kH[t])}${e}${a.Z5.getTimeFormat(u, a.lf[n])}`;
                                     })(E, ', ');
                                     return v(
-                                        R.strings.hb_lobby.banner.$dyn('banText' + (D || t === H.Small ? 'Small' : '')),
+                                        R.strings.hb_lobby.banner.$dyn('banText' + (D || t === V.Small ? 'Small' : '')),
                                         { date: u },
                                     );
                                 }
@@ -1154,16 +1139,16 @@
                                     });
                                 }
                             }, [i, u, e, E, t, D]),
-                            B = r()(I.base, I[`base__${t}`], F && I.base__ban);
+                            B = r()(N.base, N[`base__${t}`], F && N.base__ban);
                         return o().createElement(
                             'div',
                             { className: B },
-                            o().createElement('div', { className: I.icon }),
-                            o().createElement('span', { className: I.text }, c),
+                            o().createElement('div', { className: N.icon }),
+                            o().createElement('span', { className: N.text }, c),
                             (u === _.Announce || (u === _.Active && i)) &&
                                 o().createElement(
                                     'div',
-                                    { className: I.countdown },
+                                    { className: N.countdown },
                                     ((u, e = !0) =>
                                         u.days > 7 && e
                                             ? m(R.strings.common.duration.days(), { days: u.days })
@@ -1181,7 +1166,7 @@
                                 ),
                         );
                     }),
-                    V = {
+                    U = {
                         base: 'EntryPointApp_base_a4',
                         base__extraSmall: 'EntryPointApp_base__extraSmall_c9',
                         base__small: 'EntryPointApp_base__small_95',
@@ -1191,7 +1176,6 @@
                         container__announce: 'EntryPointApp_container__announce_cd',
                         background: 'EntryPointApp_background_7e',
                         title: 'EntryPointApp_title_ca',
-                        shadow: 'EntryPointApp_shadow_8a',
                         countdown: 'EntryPointApp_countdown_81',
                         hover: 'EntryPointApp_hover_f0',
                         base__hover: 'EntryPointApp_base__hover_22',
@@ -1206,127 +1190,142 @@
                         icon__mediumRisk: 'EntryPointApp_icon__mediumRisk_51',
                         icon__highRisk: 'EntryPointApp_icon__highRisk_d0',
                     };
-                let H;
+                let V;
                 !(function (u) {
                     ((u.Big = 'big'), (u.Medium = 'medium'), (u.Small = 'small'), (u.ExtraSmall = 'extraSmall'));
-                })(H || (H = {}));
-                const W = 'bgMask',
-                    K = 'bgColor',
-                    z = {
+                })(V || (V = {}));
+                const H = 'bgMask',
+                    W = 'bgColor',
+                    K = {
                         maskImage:
                             "url('swf://gui/flash/animations/historicalBattles/entryPoint_mask.swf?name=bgMask')",
                     },
-                    j = {
+                    z = {
                         background:
                             "url('swf://gui/flash/animations/historicalBattles/entryPoint_colour.swf?name=bgColor') no-repeat 50% / cover",
                     },
-                    q = () => {
-                        const u = x('model'),
+                    Y = () => {
+                        const u = M('model'),
                             e = u.eventState,
                             t = u.timeLeft,
                             E = u.isAnimated,
                             A = u.performanceRisk,
-                            i = x('model', S.None),
+                            i = M('model', k.None),
                             F = i.onClick,
                             a = i.onShowingAnimationFinish,
-                            s = (0, n.useState)(H.Big),
+                            s = (0, n.useState)(V.Big),
                             D = s[0],
                             c = s[1],
-                            l = N(),
+                            l = ((u = R.sounds.highlight()) => {
+                                const e = (0, n.useState)(!1),
+                                    t = e[0],
+                                    o = e[1],
+                                    E = (0, n.useMemo)(
+                                        () => [
+                                            () => {
+                                                (x(u), o(!0));
+                                            },
+                                            () => {
+                                                o(!1);
+                                            },
+                                        ],
+                                        [u],
+                                    );
+                                return [t, E[0], E[1]];
+                            })(),
                             C = l[0],
                             m = l[1],
                             v = l[2],
-                            w = D === H.ExtraSmall,
-                            h = D === H.Small || w,
+                            w = D === V.ExtraSmall,
+                            h = D === V.Small || w,
                             b = e === _.Announce,
                             p = (0, n.useCallback)(() => {
-                                (f.playClick(), F());
+                                (L.playClick(), F());
                             }, [F]),
-                            g = (0, n.useCallback)(
+                            f = (0, n.useCallback)(
                                 (u) => {
                                     u &&
                                         c(
                                             ((u) => {
                                                 const e = u.width;
                                                 return u.height < 152 && 302 === e
-                                                    ? H.Medium
+                                                    ? V.Medium
                                                     : 222 === e
-                                                      ? H.Small
+                                                      ? V.Small
                                                       : e < 222
-                                                        ? H.ExtraSmall
-                                                        : H.Big;
+                                                        ? V.ExtraSmall
+                                                        : V.Big;
                                             })(u),
                                         );
                                 },
                                 [c],
                             );
-                        O(() => {
-                            (engine.on('screenResized', g), g(y.O.view.getSize('rem')));
+                        y(() => {
+                            (engine.on('screenResized', f), f(g.O.view.getSize('rem')));
                         });
                         const T = (0, n.useCallback)(() => {
                             a();
                         }, [a]);
                         ((0, n.useEffect)(
                             () => () => {
-                                engine.off('screenResized', g);
+                                engine.off('screenResized', f);
                             },
-                            [g],
+                            [f],
                         ),
                             (0, n.useEffect)(() => {
                                 const u = window.swfPlayer;
                                 let e;
                                 return (
                                     E
-                                        ? (u.gotoAndPlay(W, 2), u.gotoAndPlay(K, 2), (e = window.setTimeout(T, 2e3)))
-                                        : (u.gotoAndStop(W, 1), u.gotoAndStop(K, 1)),
+                                        ? (u.gotoAndPlay(H, 2), u.gotoAndPlay(W, 2), (e = window.setTimeout(T, 2e3)))
+                                        : (u.gotoAndStop(H, 1), u.gotoAndStop(W, 1)),
                                     () => window.clearTimeout(e)
                                 );
                             }, [T, E]));
-                        const P = r()(V.base, C && !b && V.base__hover, V[`base__${D}`]),
-                            k = r()(V.border, E && V.border__animation),
-                            M = r()(V.container, b && V.container__announce),
-                            L = r()(V.icon, V[`icon__${A}`]);
+                        const O = r()(U.base, C && !b && U.base__hover, U[`base__${D}`]),
+                            P = r()(U.border, E && U.border__animation),
+                            S = r()(U.container, b && U.container__announce),
+                            N = r()(U.icon, U[`icon__${A}`]);
                         return o().createElement(
                             'div',
-                            { className: P },
+                            { className: O },
                             o().createElement(
                                 'div',
-                                { className: V.mask, style: z },
+                                { className: U.mask, style: K },
                                 o().createElement(
                                     B,
                                     { contentId: R.views.historical_battles.lobby.tooltips.EntryPointTooltip('resId') },
                                     o().createElement(
                                         'div',
-                                        { className: M, onClick: p, onMouseOver: m, onMouseLeave: v },
-                                        o().createElement('div', { className: V.border }),
-                                        o().createElement('div', { className: k }),
-                                        o().createElement('div', { className: V.background }),
+                                        { className: S, onClick: p, onMouseOver: m, onMouseLeave: v },
+                                        o().createElement('div', { className: U.border }),
+                                        o().createElement('div', { className: P }),
+                                        o().createElement('div', { className: U.background }),
                                         o().createElement(
                                             'div',
-                                            { className: V.title },
+                                            { className: U.title },
                                             R.strings.hb_lobby.banner.desc(),
                                         ),
-                                        o().createElement('div', { className: V.shadow }),
                                         A !== d.LowRisk &&
                                             o().createElement(
                                                 'div',
-                                                { className: V.performanceRisk },
-                                                o().createElement('div', { className: L }),
+                                                { className: U.performanceRisk },
+                                                o().createElement('div', { className: N }),
                                             ),
                                         o().createElement(
                                             'div',
-                                            { className: V.countdown },
-                                            o().createElement(U, { timeLeft: t, eventState: e, hideText: h, size: D }),
+                                            { className: U.countdown },
+                                            o().createElement(I, { timeLeft: t, eventState: e, hideText: h, size: D }),
                                         ),
-                                        o().createElement('div', { className: V.hover }),
-                                        o().createElement('div', { className: V.animation, style: j }),
+                                        o().createElement('div', { className: U.hover }),
+                                        o().createElement('div', { className: U.animation, style: z }),
                                     ),
                                 ),
                             ),
                         );
                     };
                 engine.whenReady.then(() => {
-                    A().render(o().createElement(q, null), document.getElementById('root'));
+                    A().render(o().createElement(Y, null), document.getElementById('root'));
                 });
             },
         },
@@ -1405,6 +1404,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(783));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(4373));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

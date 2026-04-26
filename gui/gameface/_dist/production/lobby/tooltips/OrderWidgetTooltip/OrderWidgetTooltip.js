@@ -380,6 +380,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -781,7 +782,7 @@
                     };
                 window.ViewEnvHelper = b;
             },
-            4695: (u, e, t) => {
+            5931: (u, e, t) => {
                 'use strict';
                 var r = t(6179),
                     n = t.n(r),
@@ -2574,6 +2575,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(4695));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(5931));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

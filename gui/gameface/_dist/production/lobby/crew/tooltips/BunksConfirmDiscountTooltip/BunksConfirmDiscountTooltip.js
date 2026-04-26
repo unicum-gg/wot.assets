@@ -335,6 +335,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1250,7 +1251,7 @@
                 !(function (u) {
                     ((u[(u.left = 0)] = 'left'), (u[(u.right = 1)] = 'right'));
                 })(z || (z = {}));
-                const H = (u) => u.replace(/&nbsp;/g, ' ');
+                const K = (u) => u.replace(/&nbsp;/g, ' ');
                 (() => {
                     const u = new RegExp(
                         /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
@@ -1267,7 +1268,7 @@
                         'gum',
                     );
                 })();
-                let K, G, Y;
+                let H, G, Y;
                 (!(function (u) {
                     ((u[(u.Word = 0)] = 'Word'),
                         (u[(u.LineBreak = 1)] = 'LineBreak'),
@@ -1275,14 +1276,14 @@
                         (u[(u.NoBreakSymbol = 3)] = 'NoBreakSymbol'),
                         (u[(u.NoBreakWrapper = 4)] = 'NoBreakWrapper'),
                         (u[(u.Binding = 5)] = 'Binding'));
-                })(K || (K = {})),
+                })(H || (H = {})),
                     (function (u) {
                         ((u.FlexStart = 'flex-start'), (u.Center = 'center'), (u.FlexEnd = 'flex-end'));
                     })(G || (G = {})),
                     (function (u) {
                         ((u.NBSP = ' '), (u.ZWNBSP = '\ufeff'), (u.NEW_LINE = '\n'));
                     })(Y || (Y = {})));
-                const X = { [Y.NBSP]: K.NoBreakSymbol, [Y.ZWNBSP]: K.NoBreakSymbol, [Y.NEW_LINE]: K.LineBreak },
+                const X = { [Y.NBSP]: H.NoBreakSymbol, [Y.ZWNBSP]: H.NoBreakSymbol, [Y.NEW_LINE]: H.LineBreak },
                     Z = {
                         blackReal: 'colors_blackReal_fc',
                         whiteReal: 'colors_whiteReal_31',
@@ -1325,20 +1326,20 @@
                             : a().createElement('span', { key: t, 'data-block-type': e.blockType }, u);
                     },
                     tu = {
-                        [K.Word]: eu,
-                        [K.NoBreakSymbol]: eu,
-                        [K.Binding]: ({ elementList: u, textBlock: e, key: t }) =>
+                        [H.Word]: eu,
+                        [H.NoBreakSymbol]: eu,
+                        [H.Binding]: ({ elementList: u, textBlock: e, key: t }) =>
                             a().createElement(
                                 'span',
                                 { key: t, 'data-block-type': e.blockType },
                                 u.map((u) => a().createElement(a().Fragment, { key: t }, u)),
                             ),
-                        [K.LineBreak]: ({ key: u }) =>
-                            a().createElement('span', { key: u, 'data-block-type': K.LineBreak, className: Q }),
-                        [K.NewLine]: ({ elementList: u, key: e }) =>
-                            a().createElement('span', { key: e, 'data-block-type': K.NewLine, className: J }, u),
-                        [K.NoBreakWrapper]: ({ elementList: u, key: e }) =>
-                            a().createElement('span', { key: e, 'data-block-type': K.NoBreakWrapper, className: $ }, u),
+                        [H.LineBreak]: ({ key: u }) =>
+                            a().createElement('span', { key: u, 'data-block-type': H.LineBreak, className: Q }),
+                        [H.NewLine]: ({ elementList: u, key: e }) =>
+                            a().createElement('span', { key: e, 'data-block-type': H.NewLine, className: J }, u),
+                        [H.NoBreakWrapper]: ({ elementList: u, key: e }) =>
+                            a().createElement('span', { key: e, 'data-block-type': H.NoBreakWrapper, className: $ }, u),
                     },
                     nu = (u, e, t) => {
                         const n = [];
@@ -1366,7 +1367,7 @@
                                             r = tu[n],
                                             o = nu(u, r, e);
                                         return (
-                                            n === K.NoBreakWrapper
+                                            n === H.NoBreakWrapper
                                                 ? t.push(r({ elementList: o, textBlock: u, key: `${e}` }))
                                                 : t.push(...o),
                                             t
@@ -1399,24 +1400,24 @@
                                 u,
                                 /(\n+|[\xa0\ufeff]+)/g,
                                 (u) => {
-                                    t.push({ blockType: K.Word, colorTag: e, childList: iu(u) });
+                                    t.push({ blockType: H.Word, colorTag: e, childList: iu(u) });
                                 },
                                 (u) => {
                                     const n = u[0],
                                         r = X[n.charAt(0)];
-                                    r === K.LineBreak
+                                    r === H.LineBreak
                                         ? t.push(
                                               ...((u) => {
                                                   const e = [
                                                       {
-                                                          blockType: K.LineBreak,
+                                                          blockType: H.LineBreak,
                                                           colorTag: '',
                                                           childList: [u.charAt(0)],
                                                       },
                                                   ];
                                                   for (let t = 0; t < u.length - 1; t++)
                                                       e.push({
-                                                          blockType: K.NewLine,
+                                                          blockType: H.NewLine,
                                                           colorTag: '',
                                                           childList: [u.charAt(0)],
                                                       });
@@ -1443,7 +1444,7 @@
                                         o = void 0 === e[r] ? u[0] : e[r];
                                     'string' == typeof o || 'number' == typeof o
                                         ? n.push(...au(String(o), t))
-                                        : n.push({ blockType: K.Binding, colorTag: t, childList: [o] });
+                                        : n.push({ blockType: H.Binding, colorTag: t, childList: [o] });
                                 },
                             ),
                             n
@@ -1453,11 +1454,11 @@
                         if (!u) return [e];
                         const t = [],
                             n = Object.assign({}, e, { childList: e.childList.splice(0, 1) });
-                        if (u.blockType === K.NoBreakWrapper) (u.childList.push(n), t.push(u));
+                        if (u.blockType === H.NoBreakWrapper) (u.childList.push(n), t.push(u));
                         else {
                             const e = Object.assign({}, u, { childList: u.childList.splice(-1) });
                             (u.childList.length > 0 && t.push(u),
-                                t.push({ blockType: K.NoBreakWrapper, colorTag: '', childList: [e, n] }));
+                                t.push({ blockType: H.NoBreakWrapper, colorTag: '', childList: [e, n] }));
                         }
                         return (e.childList.length > 0 && t.push(e), t);
                     },
@@ -1468,7 +1469,7 @@
                             let t = !1;
                             return (
                                 u.forEach((u) => {
-                                    u.blockType === K.NoBreakSymbol
+                                    u.blockType === H.NoBreakSymbol
                                         ? ((t = !0), e.push(...cu(e.pop(), u)))
                                         : (t ? e.push(...cu(e.pop(), u)) : e.push(u), (t = !1));
                                 }),
@@ -1490,7 +1491,7 @@
                                     ),
                                     t
                                 );
-                            })(H(u).replace(/&zwnbsp;/g, '\ufeff'), e),
+                            })(K(u).replace(/&zwnbsp;/g, '\ufeff'), e),
                         );
                         return ru(t);
                     },
@@ -1516,7 +1517,7 @@
                         for (let c = t; c >= 0; c--) {
                             const t = u[c],
                                 E = Number(u[c].getAttribute('data-block-type'));
-                            if (E === K.LineBreak || E === K.NewLine || E === K.Binding) continue;
+                            if (E === H.LineBreak || E === H.NewLine || E === H.Binding) continue;
                             const A = t.textContent || '';
                             if (!(t.childElementCount > 1)) {
                                 const u = lu(t, n, r),

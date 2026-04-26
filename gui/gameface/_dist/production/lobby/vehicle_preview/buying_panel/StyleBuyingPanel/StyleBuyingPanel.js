@@ -532,6 +532,7 @@
                         (e[(e.DELETE = 46)] = 'DELETE'),
                         (e[(e.TAB = 9)] = 'TAB'),
                         (e[(e.KEY_N = 78)] = 'KEY_N'),
+                        (e[(e.KEY_0 = 48)] = 'KEY_0'),
                         (e[(e.KEY_1 = 49)] = 'KEY_1'),
                         (e[(e.KEY_2 = 50)] = 'KEY_2'),
                         (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1284,14 +1285,14 @@
                             { caller: a, stack: t, resId: r }
                         );
                     },
-                    z = (e, t) => e.split('.').reduce((e, t) => e && e[t], t);
-                var K = a(596);
+                    K = (e, t) => e.split('.').reduce((e, t) => e && e[t], t);
+                var z = a(596);
                 const q = (e) => e && 'ArrayItem' === e.__proto__.constructor.name,
                     Y = (e, t) => (e.length > 0 ? `${e}.${t}` : t),
                     X = (e) =>
                         ((e, t) =>
                             e.split('.').reduce((e, a) => {
-                                const r = z(`${e}.${a}`, window);
+                                const r = K(`${e}.${a}`, window);
                                 return q(r) ? t(e, a, r) : `${e}.${a}`;
                             }))(e, (e, t) => `${e}.${t}.value`),
                     Z = (e) => {
@@ -1308,7 +1309,7 @@
                             const e = [r[0]];
                             return (
                                 r.reduce((t, r) => {
-                                    const n = z(Y(a, `${t}.${r}`), window);
+                                    const n = K(Y(a, `${t}.${r}`), window);
                                     return q(n) ? (e.push(n.id), `${t}.${r}.value`) : (e.push(r), `${t}.${r}`);
                                 }),
                                 e.reduce((e, t) => e + '.' + t)
@@ -1316,7 +1317,7 @@
                         }
                         return '';
                     },
-                    Q = K.Sw.instance;
+                    Q = z.Sw.instance;
                 let J;
                 !(function (e) {
                     ((e.None = 'None'), (e.Shallow = 'Shallow'), (e.Deep = 'Deep'));
@@ -1333,7 +1334,7 @@
                             ),
                             c = (0, r.useState)(() =>
                                 ((e) => {
-                                    const t = z(e, window);
+                                    const t = K(e, window);
                                     for (const e in t) 'function' == typeof t[e] && (t[e] = t[e].bind(t));
                                     return q(t) ? t.value : t;
                                 })(X(l)),

@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (u, e, t) => {
-                t.d(e, { O: () => K });
+                t.d(e, { O: () => G });
                 var n = {};
                 (t.r(n), t.d(n, { mouse: () => c, onResize: () => s }));
                 var a = {};
@@ -53,7 +53,7 @@
                         setEventHandled: () => U,
                         setInputPaddingsRem: () => x,
                         setSidePaddingsRem: () => k,
-                        whenTutorialReady: () => G,
+                        whenTutorialReady: () => K,
                     }));
                 const s = o('clientResized'),
                     E = { down: o('mousedown'), up: o('mouseup'), move: o('mousemove') };
@@ -271,13 +271,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    G = Promise.all([
+                    K = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : B.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    K = { view: i, client: a };
+                    G = { view: i, client: a };
             },
             521: (u, e, t) => {
                 let n, a;
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1089,19 +1090,19 @@
                     })(W.n.ESCAPE);
                 }
                 var z = t(483),
-                    G = t.n(z);
-                function K(u) {
+                    K = t.n(z);
+                function G(u) {
                     engine.call('PlaySound', u);
                 }
                 const Y = {
                         playHighlight() {
-                            K('highlight');
+                            G('highlight');
                         },
                         playClick() {
-                            K('play');
+                            G('play');
                         },
                         playYes() {
-                            K('yes1');
+                            G('yes1');
                         },
                     },
                     q = {
@@ -1157,7 +1158,7 @@
                             (this._onMouseEnter = (u) => (e) => {
                                 (u && u(e),
                                     this.setState({ hover: !0 }),
-                                    this.props.soundHover && K(this.props.soundHover));
+                                    this.props.soundHover && G(this.props.soundHover));
                             }),
                             (this._onMouseLeave = (u) => (e) => {
                                 (u && u(e), this.setState({ hover: !1, click: !1 }));
@@ -1165,7 +1166,7 @@
                             (this._onMouseDown = (u) => (e) => {
                                 (u && u(e),
                                     this.setState({ click: !0 }),
-                                    this.props.soundClick && K(this.props.soundClick));
+                                    this.props.soundClick && G(this.props.soundClick));
                             }),
                             (this._onMouseUp = (u) => (e) => {
                                 (u && u(e), this.setState({ click: !1 }));
@@ -1197,11 +1198,11 @@
                                     for (n = 0; n < r.length; n++) ((t = r[n]), e.indexOf(t) >= 0 || (a[t] = u[t]));
                                     return a;
                                 })(u, X)),
-                            F = G()(q.base, q[`base__${i}`], q[`base__${r}`], null == o ? void 0 : o.base),
-                            D = G()(q.icon, q[`icon__${i}`], q[`icon__${r}`], null == o ? void 0 : o.icon),
-                            d = G()(q.glow, null == o ? void 0 : o.glow),
-                            _ = G()(q.caption, q[`caption__${i}`], null == o ? void 0 : o.caption),
-                            m = G()(q.goto, null == o ? void 0 : o.goto);
+                            F = K()(q.base, q[`base__${i}`], q[`base__${r}`], null == o ? void 0 : o.base),
+                            D = K()(q.icon, q[`icon__${i}`], q[`icon__${r}`], null == o ? void 0 : o.icon),
+                            d = K()(q.glow, null == o ? void 0 : o.glow),
+                            _ = K()(q.caption, q[`caption__${i}`], null == o ? void 0 : o.caption),
+                            m = K()(q.goto, null == o ? void 0 : o.goto);
                         return a().createElement(
                             'div',
                             Z(
@@ -1510,7 +1511,7 @@
                         ),
                         y = (0, n.useCallback)(
                             (u) => {
-                                i || (null !== l && K(l), E && E(u), w(!0));
+                                i || (null !== l && G(l), E && E(u), w(!0));
                             },
                             [i, l, E],
                         ),
@@ -1528,7 +1529,7 @@
                         ),
                         O = (0, n.useCallback)(
                             (u) => {
-                                i || (null !== s && K(s), A && A(u), t && f(), p(!0));
+                                i || (null !== s && G(s), A && A(u), t && f(), p(!0));
                             },
                             [i, s, A, f, t],
                         ),
@@ -1538,7 +1539,7 @@
                             },
                             [i, D],
                         ),
-                        N = G()(
+                        N = K()(
                             ou.base,
                             ou[`base__${r}`],
                             {
@@ -1550,7 +1551,7 @@
                             },
                             o,
                         ),
-                        P = G()(ou.state, ou.state__default);
+                        P = K()(ou.state, ou.state__default);
                     return (
                         (0, n.useEffect)(
                             () => (
@@ -1673,14 +1674,14 @@
                             ),
                             a().createElement(
                                 'div',
-                                { className: G()(_u, mu) },
+                                { className: K()(_u, mu) },
                                 a().createElement('h1', { className: Bu }, p(this.title)),
                                 a().createElement('div', { className: Cu }, this.props.children),
                                 a().createElement('div', { className: gu }),
                                 e && a().createElement('footer', { className: hu }, e),
                                 a().createElement(
                                     'div',
-                                    { className: G()(pu, !e && bu) },
+                                    { className: K()(pu, !e && bu) },
                                     a().createElement(
                                         iu,
                                         {
@@ -1773,7 +1774,7 @@
                                   e.split('\n').map((e, i) =>
                                       a().createElement(
                                           'div',
-                                          { className: G()(ku, t), key: `${e}-${i}` },
+                                          { className: K()(ku, t), key: `${e}-${i}` },
                                           ((u, e, t) =>
                                               u
                                                   .split(/%\((.*?)\)(?:[sd])?/g)
@@ -1836,7 +1837,7 @@
                                 [i, o],
                             ),
                             s = (0, n.useMemo)(() => ({ tooltipId: 'TOOLTIP_BLUEPRINT', itemCD: r }), [r]),
-                            E = G()(Lu.label, Lu.intelligenceBlockLabel);
+                            E = K()(Lu.label, Lu.intelligenceBlockLabel);
                         return a().createElement(
                             a().Fragment,
                             null,
@@ -1908,7 +1909,7 @@
                                 a().createElement(
                                     'span',
                                     null,
-                                    a().createElement('span', { className: G()(Hu, t && Uu) }, e),
+                                    a().createElement('span', { className: K()(Hu, t && Uu) }, e),
                                     a().createElement('div', { className: Wu, style: o }),
                                 ),
                             ),
@@ -1916,8 +1917,8 @@
                     }),
                     $u = 'TotalPrice_base_46',
                     zu = 'TotalPrice_label_17',
-                    Gu = 'TotalPrice_price_92',
-                    Ku = 'TotalPrice_icon_ae';
+                    Ku = 'TotalPrice_price_92',
+                    Gu = 'TotalPrice_icon_ae';
                 function Yu() {
                     return (
                         (Yu =
@@ -1962,8 +1963,8 @@
                                           a().createElement(
                                               'span',
                                               null,
-                                              a().createElement('span', { className: Gu }, r.value),
-                                              a().createElement('div', { className: Ku, style: l }),
+                                              a().createElement('span', { className: Ku }, r.value),
+                                              a().createElement('div', { className: Gu, style: l }),
                                           ),
                                       ),
                                       t.map(
@@ -2050,8 +2051,8 @@
                                 !s && Y.playHighlight();
                             }, [s]),
                             A = (0, n.useMemo)(() => ({ backgroundImage: `url(${o})` }), [o]),
-                            F = G()(re, s && ie),
-                            D = G()(Ae, r && Fe);
+                            F = K()(re, s && ie),
+                            D = K()(Ae, r && Fe);
                         return a().createElement(
                             'div',
                             { className: F, onClick: E, onMouseEnter: c },
@@ -2111,7 +2112,7 @@
                         );
                     },
                     ge = (u, e, t, n) => {
-                        e > t || e < n || (e > u ? K('cons_ammo_roll_plus') : e < u && K('cons_ammo_roll_minus'));
+                        e > t || e < n || (e > u ? G('cons_ammo_roll_plus') : e < u && G('cons_ammo_roll_minus'));
                     };
                 let he, pe;
                 (!(function (u) {
@@ -2152,11 +2153,11 @@
                         allowSlide: o,
                         theme: l = be,
                     }) => {
-                        const s = G()(ve.progressBar, ve.base, ve[`base__${u}`]),
+                        const s = K()(ve.progressBar, ve.base, ve[`base__${u}`]),
                             E = (0, n.useMemo)(() => ({ width: (e / r) * 100 + '%' }), [e, r]),
                             c = (0, n.useMemo)(() => ({ width: (t / r) * 100 + '%' }), [t, r]),
-                            A = G()(ve.glow, ve.glow__right),
-                            F = G()(ve.picker, 0 === t),
+                            A = K()(ve.glow, ve.glow__right),
+                            F = K()(ve.picker, 0 === t),
                             D = {
                                 '--progress-base': l.bgImageBase,
                                 '--progress-line-base': l.line.bgColorBase,
@@ -2192,7 +2193,7 @@
                     Se = 'SlideControl_image__hover_05',
                     ye = 'SlideControl_image__active_b2',
                     ke = ({ parentId: u, isActive: e, isHovered: t, isDisabled: n }) => {
-                        const r = G()(xe, t && !n && Se, e && ye);
+                        const r = K()(xe, t && !n && Se, e && ye);
                         return a().createElement(
                             'div',
                             { id: `${u}-slide-control`, className: fe },
@@ -2215,7 +2216,7 @@
                         base__plusOn: 'StepEditor_base__plusOn_35',
                     },
                     He = ({ parentId: u, type: e, isEnabled: t, onClick: n }) => {
-                        const r = G()(Re.base, t && Re.base__enabled, Re[`base__${e}${t ? 'On' : 'Off'}`]);
+                        const r = K()(Re.base, t && Re.base__enabled, Re[`base__${e}${t ? 'On' : 'Off'}`]);
                         return a().createElement('div', { id: `${u}-step-editor-${e}`, className: r, onClick: n });
                     },
                     Ue = ({
@@ -2355,7 +2356,7 @@
                                 [v, o, w],
                             ),
                             N = (0, n.useCallback)(() => {
-                                ((A.current.over = !0), C(!0), K('highlight'));
+                                ((A.current.over = !0), C(!0), G('highlight'));
                             }, []),
                             P = (0, n.useCallback)(() => {
                                 ((A.current.over = !1), C(!1));
@@ -2373,19 +2374,19 @@
                             );
                         return a().createElement(
                             'div',
-                            { ref: c, onMouseEnter: N, onMouseLeave: P, onWheel: L, className: G()(Me, o && Oe) },
+                            { ref: c, onMouseEnter: N, onMouseLeave: P, onWheel: L, className: K()(Me, o && Oe) },
                             s &&
                                 a().createElement(
                                     a().Fragment,
                                     null,
                                     a().createElement(
                                         'div',
-                                        { className: G()(Ne, Le, B && Pe) },
+                                        { className: K()(Ne, Le, B && Pe) },
                                         a().createElement(He, { parentId: u, type: 'minus', isEnabled: x, onClick: y }),
                                     ),
                                     a().createElement(
                                         'div',
-                                        { className: G()(Ne, Ie, B && Pe) },
+                                        { className: K()(Ne, Ie, B && Pe) },
                                         a().createElement(He, { parentId: u, type: 'plus', isEnabled: f, onClick: S }),
                                     ),
                                 ),
@@ -2412,8 +2413,8 @@
                     je = 'MultipleSelectorItem_countText_c1',
                     $e = 'MultipleSelectorItem_countText__notEnough_5a',
                     ze = 'MultipleSelectorItem_countText__disabled_57',
-                    Ge = 'MultipleSelectorItem_icon_a2',
-                    Ke = 'MultipleSelectorItem_icon__disabled_58',
+                    Ke = 'MultipleSelectorItem_icon_a2',
+                    Ge = 'MultipleSelectorItem_icon__disabled_58',
                     Ye = 'MultipleSelectorItem_slider_39';
                 function qe() {
                     return (
@@ -2450,8 +2451,8 @@
                                     t = Number(r.value);
                                 return { currentValue: e, maximum: t * u, stepCount: t };
                             }, [i.value, r.value, u]),
-                            A = G()(je, i.notEnough && $e, l && ze),
-                            F = G()(Ge, l && Ke);
+                            A = K()(je, i.notEnough && $e, l && ze),
+                            F = K()(Ke, l && Ge);
                         return a().createElement(
                             iu,
                             {
@@ -2522,7 +2523,7 @@
                             e = u.count,
                             t = u.totalCount,
                             n = u.usedAdditionalPrice.some((u) => u.value.notEnough),
-                            r = G()(ut.countText, (n || e < 1) && ut.countText__disabled);
+                            r = K()(ut.countText, (n || e < 1) && ut.countText__disabled);
                         return a().createElement(
                             'div',
                             { className: ut.base },
@@ -2557,7 +2558,7 @@
                                     t && (r = r.filter((u) => t.includes(u[0]))),
                                     u.reduce((u, t) => {
                                         const n = r.map((u) =>
-                                            G()(
+                                            K()(
                                                 e[((u, e) => u + '__' + e)(t, u[0])],
                                                 e[
                                                     ((u, e) => {
@@ -2567,12 +2568,12 @@
                                                 ],
                                             ),
                                         );
-                                        return ((u[t] = G()(e[t], ...n)), u);
+                                        return ((u[t] = K()(e[t], ...n)), u);
                                     }, {})
                                 );
                             })(['intelligenceAmount'], tt),
                             t = u > 1,
-                            r = G()(tt.base, t && tt.base__multiple);
+                            r = K()(tt.base, t && tt.base__multiple);
                         return a().createElement(
                             'div',
                             { className: r },

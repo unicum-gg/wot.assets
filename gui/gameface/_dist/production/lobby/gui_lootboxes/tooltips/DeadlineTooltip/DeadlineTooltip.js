@@ -380,6 +380,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1444,7 +1445,7 @@
                     );
                 }
                 Object.keys(h());
-                const X = {
+                const K = {
                         XL: { mt: U.mt__XL, mr: U.mr__XL, mb: U.mb__XL, ml: U.ml__XL },
                         LG: { mt: U.mt__LG, mr: U.mr__LG, mb: U.mb__LG, ml: U.ml__LG },
                         MDp: { mt: U.mt__MDp, mr: U.mr__MDp, mb: U.mb__MDp, ml: U.ml__MDp },
@@ -1453,7 +1454,7 @@
                         SM: { mt: U.mt__SM, mr: U.mr__SM, mb: U.mb__SM, ml: U.ml__SM },
                         XS: { mt: U.mt__XS, mr: U.mr__XS, mb: U.mb__XS, ml: U.ml__XS },
                     },
-                    K = (Object.keys(X), ['mt', 'mr', 'mb', 'ml']),
+                    X = (Object.keys(K), ['mt', 'mr', 'mb', 'ml']),
                     Y = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
                     V = I((u) => {
                         let e = u.className,
@@ -1510,12 +1511,12 @@
                         const I = (0, r.useMemo)(() => {
                                 const u = { mt: n, mr: D, mb: B, ml: s },
                                     e = ((u) =>
-                                        K.reduce((e, t) => {
+                                        X.reduce((e, t) => {
                                             const r = u[t];
-                                            return r && 'number' != typeof r ? e.concat(X[!0 === r ? 'MD' : r][t]) : e;
+                                            return r && 'number' != typeof r ? e.concat(K[!0 === r ? 'MD' : r][t]) : e;
                                         }, []))(u),
                                     r = ((u) =>
-                                        K.reduce((e, t) => {
+                                        X.reduce((e, t) => {
                                             const r = u[t];
                                             return ('number' == typeof r && (e[Y[t]] = r + 'rem'), e);
                                         }, {}))(u);

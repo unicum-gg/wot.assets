@@ -321,6 +321,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1272,8 +1273,8 @@
                     z(G.n.ESCAPE, e);
                 }
                 var K = t(403),
-                    Q = t(30);
-                function Y(e) {
+                    Y = t(30);
+                function Q(e) {
                     return e;
                 }
                 function X() {
@@ -1638,17 +1639,17 @@
                                     mapState: Z.LO.box(Se),
                                     mapPoints: Z.LO.box([]),
                                 },
-                                t = (0, oe.Om)(() => ae(u.questionTitleParams.get(), Y)),
-                                n = (0, oe.Om)(() => ae(u.answerVariants.get(), Y)),
-                                a = (0, oe.Om)(() => ae(u.answerSelectedVariants.get(), Y)),
+                                t = (0, oe.Om)(() => ae(u.questionTitleParams.get(), Q)),
+                                n = (0, oe.Om)(() => ae(u.answerVariants.get(), Q)),
+                                a = (0, oe.Om)(() => ae(u.answerSelectedVariants.get(), Q)),
                                 r = (0, oe.Om)(() => u.answers.get().isMultipleChoice),
                                 o = (0, oe.Om)(
                                     () =>
                                         ae(u.options.get(), (e) => ({
                                             optionId: e.optionId,
                                             isMultipleChoice: e.answers.isMultipleChoice,
-                                            variants: ae(e.answers.variants, Y),
-                                            selectedVariants: ae(e.answers.selectedVariants, Y),
+                                            variants: ae(e.answers.variants, Q),
+                                            selectedVariants: ae(e.answers.selectedVariants, Q),
                                         })),
                                     { equals: X },
                                 );
@@ -1981,14 +1982,14 @@
                             ('function' == typeof t && t(), clearTimeout(n));
                         };
                     };
-                let Ke, Qe;
+                let Ke, Ye;
                 (!(function (e) {
                     ((e.Idle = 'Idle'), (e.Grow = 'Grow'), (e.Shrink = 'Shrink'), (e.End = 'End'));
                 })(Ke || (Ke = {})),
                     (function (e) {
                         ((e.Idle = 'Idle'), (e.In = 'In'), (e.End = 'End'));
-                    })(Qe || (Qe = {})));
-                const Ye = 'ProgressBarDeltaSimple_base_6c',
+                    })(Ye || (Ye = {})));
+                const Qe = 'ProgressBarDeltaSimple_base_6c',
                     Xe = 'ProgressBarDeltaSimple_delta_99',
                     Ze = (0, n.memo)(
                         ({
@@ -2002,12 +2003,12 @@
                             onChangeAnimationState: l,
                         }) => {
                             const c = i < r,
-                                E = (0, n.useState)(Qe.Idle),
+                                E = (0, n.useState)(Ye.Idle),
                                 d = E[0],
                                 A = E[1],
-                                m = d === Qe.In,
-                                _ = d === Qe.End,
-                                F = d === Qe.Idle,
+                                m = d === Ye.In,
+                                _ = d === Ye.End,
+                                F = d === Ye.Idle,
                                 D = (0, n.useCallback)(
                                     (e) => {
                                         (A(e), l && l(e));
@@ -2017,14 +2018,14 @@
                             ((0, n.useEffect)(() => {
                                 if (F && !t) {
                                     return je(() => {
-                                        D(Qe.In);
+                                        D(Ye.In);
                                     }, u);
                                 }
                             }, [D, t, F, u]),
                                 (0, n.useEffect)(() => {
                                     if (m) {
                                         return je(() => {
-                                            (s && s(), D(Qe.End));
+                                            (s && s(), D(Ye.End));
                                         }, e + u);
                                     }
                                 }, [D, m, s, u, e]));
@@ -2054,7 +2055,7 @@
                                 ? null
                                 : a().createElement(
                                       'div',
-                                      { className: Ye, style: g },
+                                      { className: Qe, style: g },
                                       a().createElement(
                                           'div',
                                           { style: F ? C : B, className: Xe },
@@ -2804,8 +2805,8 @@
                     zu = 'Header_base_40',
                     ju = 'Header_title_49',
                     Ku = 'Header_subTitle_8d',
-                    Qu = 'FormatText_base_d0',
-                    Yu = ({ binding: e, text: u = '', classMix: t, alignment: r = Nu.left }) =>
+                    Yu = 'FormatText_base_d0',
+                    Qu = ({ binding: e, text: u = '', classMix: t, alignment: r = Nu.left }) =>
                         null === u
                             ? (console.error("FormatText was supplied with 'null'"), null)
                             : a().createElement(
@@ -2814,7 +2815,7 @@
                                   u.split('\n').map((u, o) =>
                                       a().createElement(
                                           'div',
-                                          { className: g()(Qu, t), key: `${u}-${o}` },
+                                          { className: g()(Yu, t), key: `${u}-${o}` },
                                           ((e, u, t) =>
                                               e
                                                   .split(/%\((.*?)\)(?:[sd])?/g)
@@ -2835,7 +2836,7 @@
                         return a().createElement(
                             'div',
                             { className: zu },
-                            t && a().createElement('div', { className: ju }, a().createElement(Yu, o)),
+                            t && a().createElement('div', { className: ju }, a().createElement(Qu, o)),
                             n && a().createElement('div', { className: Ku }, Xu.subTitle()),
                         );
                     }),
@@ -3223,8 +3224,8 @@
                     zt = 'TextArea_textArea__disabled_50',
                     jt = 'TextArea_textArea__hint_e1',
                     Kt = '',
-                    Qt = [G.n.PAGE_UP, G.n.PAGE_DOWN, G.n.ENTER],
-                    Yt = [$t.NUMPAD_2, $t.NUMPAD_4, $t.NUMPAD_6, $t.NUMPAD_8, $t.NUMPAD_9, $t.NUMPAD_3],
+                    Yt = [G.n.PAGE_UP, G.n.PAGE_DOWN, G.n.ENTER],
+                    Qt = [$t.NUMPAD_2, $t.NUMPAD_4, $t.NUMPAD_6, $t.NUMPAD_8, $t.NUMPAD_9, $t.NUMPAD_3],
                     Xt = /[\r]/gm,
                     Zt = (e) => e.replaceAll(Xt, '').replaceAll(/[\n\t]/gm, ' '),
                     Jt = ({
@@ -3292,7 +3293,7 @@
                                             if (!m.current) return;
                                             f();
                                             const n = e.getModifierState(G.s.NUM_LOCK);
-                                            if (Qt.includes(e.keyCode) || (!n && Yt.includes(e.keyCode)))
+                                            if (Yt.includes(e.keyCode) || (!n && Qt.includes(e.keyCode)))
                                                 if (e.keyCode === G.n.ENTER) (e.stopPropagation(), e.preventDefault());
                                                 else if (e.keyCode === $t.NUMPAD_2 || e.keyCode === $t.NUMPAD_8) {
                                                     const n = Math.ceil(t / u),
@@ -3411,7 +3412,7 @@
                             E = (u) => {
                                 s === u && e(u);
                             },
-                            d = (0, Q.useTransition)(
+                            d = (0, Y.useTransition)(
                                 l.map((e, u) => Object.assign({}, e, { x: 0, y: 146 * u + 'rem' })),
                                 {
                                     key: (e) => e.pointId,
@@ -3437,7 +3438,7 @@
                                 { className: an },
                                 d((e, t) =>
                                     a().createElement(
-                                        Q.animated.div,
+                                        Y.animated.div,
                                         { className: rn, style: Object.assign({}, e) },
                                         a().createElement(tn, {
                                             answerId: t.pointId,
@@ -3593,7 +3594,7 @@
                             y = (e, u) => {
                                 0 !== s && v(e, u);
                             },
-                            S = (0, Q.useTransition)(C, {
+                            S = (0, Y.useTransition)(C, {
                                 key: (e) => e.pointId,
                                 from: { opacity: 1, y: 0 },
                                 enter: [{ opacity: 1, y: 0 }, { y: o.O.view.remToPx(-3) }, { y: 0 }],
@@ -3652,7 +3653,7 @@
                             ),
                             S((e, u) =>
                                 a().createElement(
-                                    Q.animated.div,
+                                    Y.animated.div,
                                     {
                                         className: Sn,
                                         style: Object.assign({}, e, {
@@ -3725,7 +3726,7 @@
                         z(G.n.ESCAPE, () => {
                             _(E);
                         });
-                        const D = (0, Q.useTransition)(A, {
+                        const D = (0, Y.useTransition)(A, {
                             from: { opacity: 0 },
                             enter: { opacity: 1 },
                             leave: { opacity: 0 },
@@ -3759,7 +3760,7 @@
                                 D(
                                     (e, u) =>
                                         u &&
-                                        a().createElement(Q.animated.div, { style: e }, a().createElement(Dn, null)),
+                                        a().createElement(Y.animated.div, { style: e }, a().createElement(Dn, null)),
                                 ),
                                 !A &&
                                     a().createElement(
@@ -4006,8 +4007,8 @@
                         },
                     ),
                     Kn = 'App_base_dd',
-                    Qn = 'App_container_d1',
-                    Yn = 'App_bg_a7',
+                    Yn = 'App_container_d1',
+                    Qn = 'App_bg_a7',
                     Xn = 'App_blackout_f2',
                     Zn = 'App_blackout__emptyMap_d1',
                     Jn = 'App_close_00',
@@ -4060,7 +4061,7 @@
                                 variants: _,
                                 selectedVariants: F,
                             },
-                            w = (0, Q.useTransition)(f, {
+                            w = (0, Y.useTransition)(f, {
                                 keys: (e) => `${e.questionId}`,
                                 from: { opacity: 0, translateX: o.O.view.remToPx(-25) * D },
                                 enter: { opacity: 1, translateX: 0 },
@@ -4074,8 +4075,8 @@
                             { className: Kn },
                             a().createElement(
                                 'div',
-                                { className: Qn },
-                                a().createElement('div', { className: Yn, style: { backgroundImage: `url(${b})` } }),
+                                { className: Yn },
+                                a().createElement('div', { className: Qn, style: { backgroundImage: `url(${b})` } }),
                                 a().createElement('div', { className: g()(Xn, !i && Zn) }),
                                 a().createElement('div', { className: ea }, a().createElement(Zu, null)),
                                 a().createElement(
@@ -4090,7 +4091,7 @@
                                 ),
                                 w((e, u) =>
                                     a().createElement(
-                                        Q.animated.div,
+                                        Y.animated.div,
                                         { style: e, className: ua },
                                         a().createElement('div', { className: ta }, a().createElement(jn, u)),
                                     ),

@@ -396,6 +396,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1958,27 +1959,12 @@
                 Date.now();
                 const Qe = R.strings.armory_yard,
                     ze = R.strings.menu.dateTime.months,
-                    qe = (e) => {
-                        switch (e) {
-                            case H.PurchaseStage:
-                                return Qe.mainView.state.purchaseStage();
-                            case H.Intro:
-                                return Qe.rerollView.state.intro();
-                            default:
-                                return Qe.mainView.state.progression();
-                        }
-                    },
+                    qe = (e) =>
+                        e === H.PurchaseStage ? Qe.mainView.state.purchaseStage() : Qe.mainView.state.progression(),
                     Ve = (0, n.memo)(
-                        ({
-                            fromTimestamp: e,
-                            toTimestamp: t,
-                            title: u,
-                            subtitle: a = '',
-                            state: r,
-                            displayFeatureName: n = !0,
-                        }) => {
-                            const o = Ge.Z5.getTimeFormat(t, Ge.lf.SHORT_FORMAT),
-                                i = ((e, t) => {
+                        ({ fromTimestamp: e, toTimestamp: t, title: u, subtitle: a = '', state: r = H.Active }) => {
+                            const n = Ge.Z5.getTimeFormat(t, Ge.lf.SHORT_FORMAT),
+                                o = ((e, t) => {
                                     const u = new Date(e * We),
                                         a = new Date(t * We),
                                         r = String(ze.$num(u.getMonth() + 1)).toUpperCase(),
@@ -1991,10 +1977,7 @@
                                 s().createElement(
                                     'div',
                                     { className: 'Header_subtitle_b0' },
-                                    s().createElement(He, {
-                                        className: 'Header_featureName_c8',
-                                        text: n ? Qe.featureName() : qe(r),
-                                    }),
+                                    s().createElement(He, { className: 'Header_featureName_c8', text: qe(r) }),
                                     s().createElement('div', { className: 'Header_separator_0b' }),
                                     s().createElement(
                                         'div',
@@ -2003,7 +1986,7 @@
                                             ? s().createElement(He, { text: a })
                                             : s().createElement(He, {
                                                   text: Qe.mainView.dateFormat(),
-                                                  format: { binding: Object.assign({}, i, { toTime: o }) },
+                                                  format: { binding: Object.assign({}, o, { toTime: n }) },
                                               }),
                                     ),
                                 ),
@@ -2261,6 +2244,7 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
@@ -2301,7 +2285,6 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
-                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -3822,10 +3805,16 @@
                                                         () => {
                                                             const e = o().findIndex(
                                                                 (e) =>
+                                                                    !0 === (null == e ? void 0 : e.isPostProgression) &&
+                                                                    (null == e ? void 0 : e.state) === Ye.Active,
+                                                            );
+                                                            if (-1 !== e) return e;
+                                                            const t = o().findIndex(
+                                                                (e) =>
                                                                     (null == e ? void 0 : e.state) !== Ye.Completed ||
                                                                     0,
                                                             );
-                                                            return e >= 0 ? e : 0;
+                                                            return t >= 0 ? t : 0;
                                                         },
                                                         { equals: Cu },
                                                     ),
@@ -7546,69 +7535,69 @@
                             onShowStylePreview: g,
                         }) => {
                             const A = kr();
-                            !(function (e, t) {
-                                const u = e.contentRef,
-                                    a = e.wrapperRef,
-                                    r = e.scrollPosition,
-                                    s = e.clampPosition,
-                                    o = e.animationScroll,
-                                    l = e.events,
-                                    c = (0, n.useState)(qn),
-                                    m = c[0],
-                                    d = c[1];
+                            !(function (e, t, u) {
+                                const a = e.contentRef,
+                                    r = e.wrapperRef,
+                                    s = e.scrollPosition,
+                                    o = e.clampPosition,
+                                    l = e.animationScroll,
+                                    c = e.events,
+                                    m = (0, n.useState)(qn),
+                                    d = m[0],
+                                    _ = m[1];
                                 ((0, n.useEffect)(() => {
-                                    const e = u.current;
-                                    e && (e.style.cursor = 'dragging' === m.type ? 'move' : 'grab');
-                                }, [u, m.type]),
+                                    const e = a.current;
+                                    e && (e.style.cursor = 'dragging' === d.type ? 'move' : 'grab');
+                                }, [a, d.type]),
                                     (0, n.useEffect)(() => {
-                                        if ('dragging' !== m.type) return;
-                                        const e = i.O.client.events.mouse.move(([e, n]) => {
-                                                const i = u.current,
-                                                    l = a.current;
-                                                if (!i || !l) return;
-                                                if ('inside' === n && e.clientX < 0) return;
-                                                const c = 'inside' === n ? e.clientX : e.clientX - l.offsetLeft,
-                                                    d = m.positionFrom - c,
-                                                    _ = m.previousScrollPosition + d;
-                                                r.start(
+                                        if ('dragging' !== d.type) return;
+                                        const e = i.O.client.events.mouse.move(([e, u]) => {
+                                                const n = a.current,
+                                                    i = r.current;
+                                                if (!n || !i) return;
+                                                if ('inside' === u && e.clientX < 0) return;
+                                                const c = 'inside' === u ? e.clientX : e.clientX - i.offsetLeft,
+                                                    m = d.positionFrom - c,
+                                                    _ = d.previousScrollPosition + m;
+                                                s.start(
                                                     Object.assign(
                                                         {
-                                                            scrollPosition: s(i, _),
-                                                            from: { scrollPosition: o.scrollPosition.get() },
+                                                            scrollPosition: o(n, _),
+                                                            from: { scrollPosition: l.scrollPosition.get() },
                                                         },
                                                         t,
                                                     ),
                                                 );
                                             }),
-                                            n = i.O.client.events.mouse.up(function () {
-                                                d({ type: 'scrollingToEnd' });
+                                            u = i.O.client.events.mouse.up(function () {
+                                                _({ type: 'scrollingToEnd' });
                                             });
                                         return () => {
-                                            (e(), n());
+                                            (e(), u());
                                         };
-                                    }, [o.scrollPosition, s, u, m, r, a, t]),
+                                    }, [l.scrollPosition, o, a, d, s, r, t]),
                                     (0, n.useEffect)(() => {
-                                        if ('scrollingToEnd' !== m.type) return;
+                                        if ('scrollingToEnd' !== d.type) return;
                                         const e = () => {
-                                            d(qn);
+                                            _(qn);
                                         };
-                                        return (o.scrollPosition.idle && e(), l.on('rest', e), () => l.off('rest', e));
-                                    }, [o.scrollPosition, m.type, l]),
+                                        return (l.scrollPosition.idle && e(), c.on('rest', e), () => c.off('rest', e));
+                                    }, [l.scrollPosition, d.type, c]),
                                     (0, n.useEffect)(() => {
-                                        const e = u.current;
+                                        const e = a.current;
                                         if (!e) return;
                                         const t = (e) => {
-                                            d({
+                                            _({
                                                 type: 'dragging',
                                                 positionFrom: e.screenX,
-                                                previousScrollPosition: o.scrollPosition.get(),
+                                                previousScrollPosition: l.scrollPosition.get(),
                                             });
                                         };
                                         return (
                                             e.addEventListener('mousedown', t),
                                             () => e.removeEventListener('mousedown', t)
                                         );
-                                    }, [o.scrollPosition, u]));
+                                    }, [l.scrollPosition, a, u]));
                             })(A);
                             const F = S(),
                                 D = Zr(),
@@ -7875,7 +7864,6 @@
                             'div',
                             { className: 'Vignette_base_22' },
                             s().createElement('div', { className: 'Vignette_layer1_3c' }),
-                            s().createElement('div', { className: 'Vignette_layer2_7a' }),
                         ),
                     );
                 function Zn() {
@@ -8032,7 +8020,6 @@
                                     Zn({ className: 'App_close_79' }, W),
                                     s().createElement(On, null),
                                 ),
-                                s().createElement('div', { className: 'App_headerBackground_b2' }),
                                 s().createElement(
                                     'div',
                                     { className: 'App_header_b2' },

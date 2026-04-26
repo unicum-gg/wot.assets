@@ -117,7 +117,7 @@
                                 for (E = 0; E < r.length; E++) ((t = r[E]), e.indexOf(t) >= 0 || (A[t] = u[t]));
                                 return A;
                             })(u, B);
-                        const V = (0, a.useMemo)(() => {
+                        const K = (0, a.useMemo)(() => {
                                 const u = { mt: i, mr: m, mb: c, ml: g },
                                     e = ((u) =>
                                         l.reduce((e, t) => {
@@ -144,9 +144,9 @@
                                     computedClassNames: e,
                                 };
                             }, [t, E, i, m, c, g, j, U, y, x, k, O, P]),
-                            K = V.computedStyle,
-                            z = V.computedClassNames;
-                        return n().createElement('div', o({ className: A()(D.Z.base, ...z, e), style: K }, X), Z);
+                            V = K.computedStyle,
+                            Y = K.computedClassNames;
+                        return n().createElement('div', o({ className: A()(D.Z.base, ...Y, e), style: V }, X), Z);
                     });
             },
             280: (u, e, t) => {
@@ -1219,6 +1219,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),

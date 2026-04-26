@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (e, t, n) => {
-                n.d(t, { O: () => K });
+                n.d(t, { O: () => G });
                 var i = {};
                 (n.r(i), n.d(i, { mouse: () => _, onResize: () => c }));
                 var a = {};
@@ -35,7 +35,7 @@
                         displayStatus: () => v,
                         displayStatusIs: () => z,
                         events: () => p,
-                        extraSize: () => q,
+                        extraSize: () => K,
                         forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => A,
                         getBrowserTexturePath: () => M,
@@ -53,7 +53,7 @@
                         setEventHandled: () => I,
                         setInputPaddingsRem: () => O,
                         setSidePaddingsRem: () => L,
-                        whenTutorialReady: () => G,
+                        whenTutorialReady: () => q,
                     }));
                 const c = s('clientResized'),
                     d = { down: s('mousedown'), up: s('mouseup'), move: s('mousemove') };
@@ -263,7 +263,7 @@
                     return viewEnv.getShowingStatus();
                 }
                 const z = Object.keys(v).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === v[t]), e), {}),
-                    q = {
+                    K = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -271,13 +271,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    G = Promise.all([
+                    q = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : p.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    K = { view: o, client: a };
+                    G = { view: o, client: a };
             },
             521: (e, t, n) => {
                 let i, a;
@@ -304,6 +304,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1171,7 +1172,7 @@
                     (function (e) {
                         ((e.extraSmall = 'extraSmall'), (e.small = 'small'), (e.medium = 'medium'));
                     })(z || (z = {})));
-                const q = ({
+                const K = ({
                     children: e,
                     size: t,
                     isFocused: n,
@@ -1302,9 +1303,9 @@
                         )
                     );
                 };
-                q.defaultProps = { type: j.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
-                const G = (0, i.memo)(q),
-                    K = [
+                K.defaultProps = { type: j.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                const q = (0, i.memo)(K),
+                    G = [
                         'children',
                         'contentId',
                         'args',
@@ -1320,7 +1321,7 @@
                         'onShow',
                         'onHide',
                     ];
-                function $(e) {
+                function Y(e) {
                     return Object.entries(e || {}).map(([e, t]) => {
                         const n = { __Type: 'GFValueProxy', name: e };
                         switch (typeof t) {
@@ -1338,7 +1339,7 @@
                         return n;
                     });
                 }
-                const Y = (e, t, n = {}, i = 0) => {
+                const $ = (e, t, n = {}, i = 0) => {
                         viewEnv.handleViewEvent(
                             Object.assign(
                                 {
@@ -1380,12 +1381,12 @@
                                     r = Object.keys(e);
                                 for (i = 0; i < r.length; i++) ((n = r[i]), t.indexOf(n) >= 0 || (a[n] = e[n]));
                                 return a;
-                            })(e, K);
+                            })(e, G);
                         const y = (0, i.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
                             k = (0, i.useMemo)(() => p || O().resId, [p]),
                             C = (0, i.useCallback)(() => {
                                 (y.current.isVisible && y.current.timeoutId) ||
-                                    (Y(n, h, { isMouseEvent: !0, on: !0, arguments: $(a) }, k),
+                                    ($(n, h, { isMouseEvent: !0, on: !0, arguments: Y(a) }, k),
                                     b && b(),
                                     (y.current.isVisible = !0));
                             }, [n, h, a, k, b]),
@@ -1393,7 +1394,7 @@
                                 if (y.current.isVisible || y.current.timeoutId) {
                                     const e = y.current.timeoutId;
                                     (e > 0 && (clearTimeout(e), (y.current.timeoutId = 0)),
-                                        Y(n, h, { on: !1 }, k),
+                                        $(n, h, { on: !1 }, k),
                                         y.current.isVisible && E && E(),
                                         (y.current.isVisible = !1));
                                 }
@@ -1672,7 +1673,7 @@
                                     'div',
                                     { className: Me },
                                     a().createElement(
-                                        G,
+                                        q,
                                         { type: j.primary, mixClass: we, onClick: E },
                                         R.strings.vehicle_customization.progression.requiredStyleUnlocked.okBtnLabel(),
                                     ),
@@ -1686,7 +1687,7 @@
                                                 'div',
                                                 null,
                                                 a().createElement(
-                                                    G,
+                                                    q,
                                                     { type: j.secondary, mixClass: we, disabled: !g, onClick: f },
                                                     R.strings.vehicle_customization.progression.requiredStyleUnlocked.secondaryBtnLabel(),
                                                 ),

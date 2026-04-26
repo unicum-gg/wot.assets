@@ -33,9 +33,9 @@
                         addPreloadTexture: () => T,
                         children: () => i,
                         displayStatus: () => h,
-                        displayStatusIs: () => G,
+                        displayStatusIs: () => K,
                         events: () => b,
-                        extraSize: () => z,
+                        extraSize: () => G,
                         forceTriggerMouseMove: () => j,
                         freezeTextureBeforeResize: () => D,
                         getBrowserTexturePath: () => M,
@@ -53,7 +53,7 @@
                         setEventHandled: () => V,
                         setInputPaddingsRem: () => P,
                         setSidePaddingsRem: () => R,
-                        whenTutorialReady: () => K,
+                        whenTutorialReady: () => z,
                     }));
                 const l = s('clientResized'),
                     u = { down: s('mousedown'), up: s('mouseup'), move: s('mousemove') };
@@ -262,8 +262,8 @@
                 function W() {
                     return viewEnv.getShowingStatus();
                 }
-                const G = Object.keys(h).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === h[t]), e), {}),
-                    z = {
+                const K = Object.keys(h).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === h[t]), e), {}),
+                    G = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -271,7 +271,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    K = Promise.all([
+                    z = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : b.onDomBuilt(e);
                         }),
@@ -304,6 +304,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1301,22 +1302,23 @@
                         }
                         return '';
                     },
-                    G = (e) => {
-                        const t = W(),
-                            n = j(t);
-                        let o,
-                            r = e;
-                        for (; null !== (o = V.exec(e)); ) {
-                            const e = o[0].match(/<script (defer|defer="defer") src="(.*?)">/);
+                    K = (e, t) => {
+                        const n = W(),
+                            o = j(n);
+                        let r,
+                            i = e;
+                        for (; null !== (r = V.exec(e)); ) {
+                            const e = r[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
-                                const t = n + e[2].replace(U, '');
-                                r = r.replace(e[2], t);
+                                const n = o + e[2].replace(U, '');
+                                ((i = i.replace(e[2], n)),
+                                    (i = i.replace('<div id="root"', `<div data-root-id=${t} id="root"`)));
                             }
                         }
-                        return r;
+                        return i;
                     },
-                    z = 'SubView_base_df',
-                    K = 'subViews.onChanged',
+                    G = 'SubView_base_df',
+                    z = 'subViews.onChanged',
                     q = (() => {
                         const e = [];
                         let t = !1;
@@ -1335,7 +1337,7 @@
                     const a = (0, o.useState)(''),
                         s = a[0],
                         l = a[1],
-                        u = (0, o.useMemo)(() => ({ __html: G(s) }), [s]),
+                        u = (0, o.useMemo)(() => ({ __html: K(s, e) }), [s, e]),
                         d = (0, o.useMemo)(() => window.subViews.addChildChangedCallback(e), [e]),
                         m = (0, o.useState)(!1),
                         v = m[0],
@@ -1343,7 +1345,7 @@
                         p = (0, o.useCallback)(
                             (e) => {
                                 e.includes(d) &&
-                                    (w(!0), engine.off(K, p), window.subViews.removeChildChangedCallback(d));
+                                    (w(!0), engine.off(z, p), window.subViews.removeChildChangedCallback(d));
                             },
                             [d],
                         ),
@@ -1398,7 +1400,7 @@
                                     }
                                 );
                             console.error("subView: can't get View component name");
-                        } else engine.on(K, p);
+                        } else engine.on(z, p);
                     }, [p, h, e, v]),
                         (0, o.useEffect)(
                             () => () => {
@@ -1418,7 +1420,7 @@
                             },
                             [s],
                         ));
-                    const b = c()(z, i);
+                    const b = c()(G, i);
                     if (s) {
                         let t;
                         return (

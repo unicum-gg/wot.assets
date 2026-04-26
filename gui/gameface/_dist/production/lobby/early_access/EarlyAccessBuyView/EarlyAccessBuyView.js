@@ -400,6 +400,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -3959,69 +3960,72 @@
                             F = A[0],
                             D = A[1],
                             C = { left: d[0], right: d[1] };
-                        !(function (e, u) {
-                            const t = e.contentRef,
-                                r = e.wrapperRef,
-                                n = e.scrollPosition,
-                                o = e.clampPosition,
-                                i = e.animationScroll,
-                                l = e.events,
-                                c = (0, a.useState)(Vt),
-                                E = c[0],
-                                _ = c[1];
+                        !(function (e, u, t) {
+                            const r = e.contentRef,
+                                n = e.wrapperRef,
+                                o = e.scrollPosition,
+                                i = e.clampPosition,
+                                l = e.animationScroll,
+                                c = e.events,
+                                E = (0, a.useState)(Vt),
+                                _ = E[0],
+                                d = E[1];
                             ((0, a.useEffect)(() => {
-                                const e = t.current;
-                                e && (e.style.cursor = 'dragging' === E.type ? 'move' : 'grab');
-                            }, [t, E.type]),
+                                const e = r.current;
+                                e && (e.style.cursor = 'dragging' === _.type ? 'move' : 'grab');
+                            }, [r, _.type]),
                                 (0, a.useEffect)(() => {
-                                    if ('dragging' !== E.type) return;
-                                    const e = s.O.client.events.mouse.move(([e, a]) => {
-                                            const s = t.current,
-                                                l = r.current;
-                                            if (!s || !l) return;
-                                            if ('inside' === a && e.clientX < 0) return;
-                                            const c = 'inside' === a ? e.clientX : e.clientX - l.offsetLeft,
-                                                _ = E.positionFrom - c,
-                                                d = E.previousScrollPosition + _;
-                                            n.start(
+                                    if ('dragging' !== _.type) return;
+                                    const e = s.O.client.events.mouse.move(([e, t]) => {
+                                            const a = r.current,
+                                                s = n.current;
+                                            if (!a || !s) return;
+                                            if ('inside' === t && e.clientX < 0) return;
+                                            const c = 'inside' === t ? e.clientX : e.clientX - s.offsetLeft,
+                                                E = _.positionFrom - c,
+                                                d = _.previousScrollPosition + E;
+                                            o.start(
                                                 Object.assign(
                                                     {
-                                                        scrollPosition: o(s, d),
-                                                        from: { scrollPosition: i.scrollPosition.get() },
+                                                        scrollPosition: i(a, d),
+                                                        from: { scrollPosition: l.scrollPosition.get() },
                                                     },
                                                     u && { config: u },
                                                 ),
                                             );
                                         }),
-                                        a = s.O.client.events.mouse.up(function () {
-                                            _({ type: 'scrollingToEnd' });
+                                        t = s.O.client.events.mouse.up(function () {
+                                            d({ type: 'scrollingToEnd' });
                                         });
                                     return () => {
-                                        (e(), a());
+                                        (e(), t());
                                     };
-                                }, [i.scrollPosition, o, t, E, n, r, u]),
+                                }, [l.scrollPosition, i, r, _, o, n, u]),
                                 (0, a.useEffect)(() => {
-                                    if ('scrollingToEnd' !== E.type) return;
+                                    if ('scrollingToEnd' !== _.type) return;
                                     const e = () => {
-                                        _(Vt);
+                                        d(Vt);
                                     };
-                                    return (i.scrollPosition.idle && e(), l.on('rest', e), () => l.off('rest', e));
-                                }, [i.scrollPosition, E.type, l]),
+                                    return (l.scrollPosition.idle && e(), c.on('rest', e), () => c.off('rest', e));
+                                }, [l.scrollPosition, _.type, c]),
                                 (0, a.useEffect)(() => {
-                                    const e = t.current;
+                                    const e = r.current;
                                     if (!e) return;
                                     const u = (e) => {
-                                        _({
-                                            type: 'dragging',
-                                            positionFrom: e.screenX,
-                                            previousScrollPosition: i.scrollPosition.get(),
-                                        });
+                                        (t &&
+                                            t.allowedButtons &&
+                                            -1 === t.allowedButtons.findIndex((u) => e.button === u)) ||
+                                            d({
+                                                type: 'dragging',
+                                                positionFrom: e.screenX,
+                                                previousScrollPosition: l.scrollPosition.get(),
+                                            });
                                     };
                                     return (
                                         e.addEventListener('mousedown', u),
                                         () => e.removeEventListener('mousedown', u)
                                     );
-                                }, [i.scrollPosition, t]));
+                                }, [l.scrollPosition, r, t]));
                         })(i);
                         const B = x().mediaSize >= b.Medium;
                         (0, a.useEffect)(() => {

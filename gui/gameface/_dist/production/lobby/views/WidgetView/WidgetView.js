@@ -357,6 +357,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1283,12 +1284,12 @@
                 }
                 console.log;
                 var z = r(9174);
-                function q(e, t) {
+                function K(e, t) {
                     (null == t || t > e.length) && (t = e.length);
                     for (var r = 0, i = new Array(t); r < t; r++) i[r] = e[r];
                     return i;
                 }
-                const K = (e) => (0 === e ? window : window.subViews.get(e)),
+                const q = (e) => (0 === e ? window : window.subViews.get(e)),
                     $ = ((e, t) => {
                         const r = (0, i.createContext)({});
                         return [
@@ -1299,7 +1300,7 @@
                                         const a = (function ({
                                                 initializer: e = !0,
                                                 rootId: t = 0,
-                                                getRoot: r = K,
+                                                getRoot: r = q,
                                                 context: i = 'model',
                                             } = {}) {
                                                 const n = new Map();
@@ -1359,7 +1360,7 @@
                                                                         (r = (function (e, t) {
                                                                             if (e) {
                                                                                 if ('string' == typeof e)
-                                                                                    return q(e, t);
+                                                                                    return K(e, t);
                                                                                 var r = Object.prototype.toString
                                                                                     .call(e)
                                                                                     .slice(8, -1);
@@ -1373,7 +1374,7 @@
                                                                                             /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(
                                                                                                 r,
                                                                                             )
-                                                                                          ? q(e, t)
+                                                                                          ? K(e, t)
                                                                                           : void 0
                                                                                 );
                                                                             }

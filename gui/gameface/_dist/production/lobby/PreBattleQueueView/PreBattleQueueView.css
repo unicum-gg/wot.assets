@@ -603,9 +603,13 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.15;
 }
 
+.mediaMedium .Order_count_19 {
+    margin-top: 10rem;
+}
+
 .mediaExtraLarge .Order_count_19 {
     font-size: 20rem;
-    line-height: '1.2';
+    line-height: 1.2;
 }
 
 .Order_base__active_7b .Order_count_19 {
@@ -641,20 +645,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     background-image: url('R.images.historical_battles.gui.maps.icons.order.c_160x160.x5');
 }
 
-.Order_icon__x10_3a {
-    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_80x80.x10');
+.Order_icon__x3_67 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_80x80.x3');
 }
 
-.mediaMedium .Order_icon__x10_3a {
-    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_160x160.x10');
+.mediaMedium .Order_icon__x3_67 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_160x160.x3');
 }
 
-.Order_icon__x15_28 {
-    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_80x80.x15');
+.Order_icon__x2_82 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_80x80.x2');
 }
 
-.mediaMedium .Order_icon__x15_28 {
-    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_160x160.x15');
+.mediaMedium .Order_icon__x2_82 {
+    background-image: url('R.images.historical_battles.gui.maps.icons.order.c_160x160.x2');
 }
 
 .Order_activated_d0 {

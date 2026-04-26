@@ -331,6 +331,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1412,7 +1413,7 @@
                     $ = (e) => (e ? { left: 0 } : { right: 0 }),
                     G = (e, t) => (e ? { right: 100 - t + '%' } : { left: `${t}%` }),
                     H = (e) => ({ transitionDuration: `${e}ms` }),
-                    q = (0, a.memo)(
+                    K = (0, a.memo)(
                         ({
                             transitionDuration: e,
                             transitionDelay: t,
@@ -1479,7 +1480,7 @@
                             );
                         },
                     ),
-                    K = (0, a.memo)(
+                    q = (0, a.memo)(
                         ({
                             to: e,
                             size: t,
@@ -1518,7 +1519,7 @@
                                     baseStyles: m ? v : b,
                                 }),
                                 n >= 0 &&
-                                    i().createElement(q, {
+                                    i().createElement(K, {
                                         transitionDuration: l.delta.duration,
                                         transitionDelay: l.delta.delay,
                                         onChangeAnimationState: p,
@@ -1570,7 +1571,7 @@
                             case T.Simple:
                                 return i().createElement(j, X({}, s, { onEndAnimation: c, isComplete: r }));
                             case T.Growing:
-                                return i().createElement(K, X({}, s, { onEndAnimation: c, isComplete: r }));
+                                return i().createElement(q, X({}, s, { onEndAnimation: c, isComplete: r }));
                             default:
                                 return null;
                         }

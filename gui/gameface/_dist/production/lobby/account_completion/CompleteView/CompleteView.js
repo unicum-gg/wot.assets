@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (u, e, t) => {
-                t.d(e, { O: () => q });
+                t.d(e, { O: () => Y });
                 var n = {};
                 (t.r(n), t.d(n, { mouse: () => D, onResize: () => r }));
                 var E = {};
@@ -33,9 +33,9 @@
                         addPreloadTexture: () => f,
                         children: () => A,
                         displayStatus: () => _,
-                        displayStatusIs: () => z,
+                        displayStatusIs: () => K,
                         events: () => d,
-                        extraSize: () => K,
+                        extraSize: () => z,
                         forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => L,
                         getBrowserTexturePath: () => T,
@@ -262,8 +262,8 @@
                 function j() {
                     return viewEnv.getShowingStatus();
                 }
-                const z = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
-                    K = {
+                const K = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
+                    z = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -277,7 +277,7 @@
                         }),
                         engine.whenReady,
                     ]),
-                    q = { view: i, client: E };
+                    Y = { view: i, client: E };
             },
             521: (u, e, t) => {
                 let n, E;
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1084,7 +1085,7 @@
                     );
                 };
                 M.Sw.instance;
-                let j, z;
+                let j, K;
                 (!(function (u) {
                     ((u.main = 'main'),
                         (u.primary = 'primary'),
@@ -1095,8 +1096,8 @@
                 })(j || (j = {})),
                     (function (u) {
                         ((u.extraSmall = 'extraSmall'), (u.small = 'small'), (u.medium = 'medium'));
-                    })(z || (z = {})));
-                const K = 'FormatText_base_d0',
+                    })(K || (K = {})));
+                const z = 'FormatText_base_d0',
                     G = ({ binding: u, text: e = '', classMix: t, alignment: A = v.left }) =>
                         null === e
                             ? (console.error("FormatText was supplied with 'null'"), null)
@@ -1106,7 +1107,7 @@
                                   e.split('\n').map((e, i) =>
                                       E().createElement(
                                           'div',
-                                          { className: w()(K, t), key: `${e}-${i}` },
+                                          { className: w()(z, t), key: `${e}-${i}` },
                                           ((u, e, t) =>
                                               u
                                                   .split(/%\((.*?)\)(?:[sd])?/g)
@@ -1116,7 +1117,7 @@
                                       ),
                                   ),
                               ),
-                    q = [
+                    Y = [
                         'children',
                         'contentId',
                         'args',
@@ -1132,7 +1133,7 @@
                         'onShow',
                         'onHide',
                     ];
-                function Y(u) {
+                function q(u) {
                     return Object.entries(u || {}).map(([u, e]) => {
                         const t = { __Type: 'GFValueProxy', name: u };
                         switch (typeof e) {
@@ -1192,12 +1193,12 @@
                                     A = Object.keys(u);
                                 for (n = 0; n < A.length; n++) ((t = A[n]), e.indexOf(t) >= 0 || (E[t] = u[t]));
                                 return E;
-                            })(u, q);
+                            })(u, Y);
                         const w = (0, n.useRef)({ timeoutId: 0, isVisible: !1, prevTarget: null, hideTimerId: null }),
                             v = (0, n.useMemo)(() => d || S().resId, [d]),
                             p = (0, n.useCallback)(() => {
                                 (w.current.isVisible && w.current.timeoutId) ||
-                                    ($(t, B, { isMouseEvent: !0, on: !0, arguments: Y(E) }, v),
+                                    ($(t, B, { isMouseEvent: !0, on: !0, arguments: q(E) }, v),
                                     m && m(),
                                     (w.current.isVisible = !0));
                             }, [t, B, E, v, m]),
@@ -1715,7 +1716,7 @@
                             E().createElement('div', { className: Cu.divider }),
                             E().createElement(
                                 Au,
-                                { mixClass: Cu.button, onClick: F, size: z.medium, type: j.secondary },
+                                { mixClass: Cu.button, onClick: F, size: K.medium, type: j.secondary },
                                 R.strings.dialogs.accountCompletion.demoComplete.button(),
                             ),
                         ),

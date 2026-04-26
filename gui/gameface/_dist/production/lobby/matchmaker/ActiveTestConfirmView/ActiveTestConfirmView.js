@@ -33,17 +33,17 @@
                         addPreloadTexture: () => f,
                         children: () => F,
                         displayStatus: () => l,
-                        displayStatusIs: () => z,
+                        displayStatusIs: () => W,
                         events: () => d,
-                        extraSize: () => G,
-                        forceTriggerMouseMove: () => K,
+                        extraSize: () => z,
+                        forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => x,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => W,
+                        getDisplayStatus: () => Y,
                         getScale: () => P,
                         getSize: () => M,
                         getViewGlobalPosition: () => R,
-                        isEventHandled: () => V,
+                        isEventHandled: () => K,
                         isFocused: () => U,
                         pxToRem: () => S,
                         remToPx: () => L,
@@ -53,7 +53,7 @@
                         setEventHandled: () => I,
                         setInputPaddingsRem: () => T,
                         setSidePaddingsRem: () => k,
-                        whenTutorialReady: () => Y,
+                        whenTutorialReady: () => G,
                     }));
                 const o = D('clientResized'),
                     r = { down: D('mousedown'), up: D('mouseup'), move: D('mousemove') };
@@ -253,17 +253,17 @@
                 function I() {
                     return viewEnv.setEventHandled();
                 }
-                function V() {
+                function K() {
                     return viewEnv.isEventHandled();
                 }
-                function K() {
+                function V() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function W() {
+                function Y() {
                     return viewEnv.getShowingStatus();
                 }
-                const z = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
-                    G = {
+                const W = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
+                    z = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -271,7 +271,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    Y = Promise.all([
+                    G = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : d.onDomBuilt(u);
                         }),
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1085,7 +1086,7 @@
                     },
                     U = R.strings.matchmaker.testConfirmation,
                     I = (u) => ({ clusterName: E().createElement('div', { className: H.highlighted }, u) }),
-                    V = (u, e) => ({
+                    K = (u, e) => ({
                         timerange: E().createElement(
                             'div',
                             { className: H.highlighted },
@@ -1095,8 +1096,8 @@
                             }),
                         ),
                     }),
-                    K = R.strings.matchmaker.testConfirmation,
-                    W = () => {
+                    V = R.strings.matchmaker.testConfirmation,
+                    Y = () => {
                         const u = l('model'),
                             e = u.clusterName,
                             t = u.timeRangeStart,
@@ -1110,7 +1111,7 @@
                                 'div',
                                 { className: H.paragraph },
                                 E().createElement(P, {
-                                    text: K.levelRestrictions(),
+                                    text: V.levelRestrictions(),
                                     binding: {
                                         playersNumber: E().createElement(
                                             'div',
@@ -1128,14 +1129,14 @@
                             E().createElement(
                                 'div',
                                 { className: H.paragraph },
-                                E().createElement(P, { text: K.cluster(), binding: I(e) }),
-                                E().createElement(P, { text: K.testPeriod(), binding: V(t, F) }),
+                                E().createElement(P, { text: V.cluster(), binding: I(e) }),
+                                E().createElement(P, { text: V.testPeriod(), binding: K(t, F) }),
                             ),
                             E().createElement(
                                 'div',
                                 { className: H.paragraph },
                                 E().createElement(P, {
-                                    text: K.moreInfoLink(),
+                                    text: V.moreInfoLink(),
                                     binding:
                                         ((a = D),
                                         {
@@ -1151,14 +1152,14 @@
                         );
                         var a;
                     };
-                var z = t(67),
-                    G = t(521);
-                const Y = (u) => {
+                var W = t(67),
+                    z = t(521);
+                const G = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function $(u = G.n.NONE, e = Y, t = !1) {
+                function $(u = z.n.NONE, e = G, t = !1) {
                     (0, A.useEffect)(() => {
-                        if (u !== G.n.NONE)
+                        if (u !== z.n.NONE)
                             return (
                                 window.addEventListener('keydown', A, t),
                                 () => {
@@ -1167,8 +1168,8 @@
                             );
                         function A(A) {
                             if (A.keyCode === u) {
-                                if (z.O.view.isEventHandled()) return;
-                                (z.O.view.setEventHandled(), e(A), t && A.stopPropagation());
+                                if (W.O.view.isEventHandled()) return;
+                                (W.O.view.setEventHandled(), e(A), t && A.stopPropagation());
                             }
                         }
                     }, [e, u, t]);
@@ -1357,7 +1358,7 @@
                         var D;
                         return (
                             (D = n),
-                            $(G.n.ESCAPE, D),
+                            $(z.n.ESCAPE, D),
                             E().createElement(
                                 'div',
                                 { className: J },
@@ -1409,7 +1410,7 @@
                                 E().createElement('div', { className: iu }),
                                 E().createElement('div', { className: Bu }, _u.title()),
                             ),
-                            E().createElement('div', { className: su }, E().createElement(W, null)),
+                            E().createElement('div', { className: su }, E().createElement(Y, null)),
                             E().createElement('div', { className: Cu }, E().createElement(nu, null)),
                         );
                     };

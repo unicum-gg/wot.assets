@@ -1132,6 +1132,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -2028,17 +2029,17 @@
                     });
                 var q = t(9953),
                     Y = t(8475);
-                let z;
+                let K;
                 !(function (e) {
                     ((e.Firepower = 'firepower'),
                         (e.Survivability = 'survivability'),
                         (e.Mobility = 'mobility'),
                         (e.Stealth = 'stealth'),
                         (e.None = 'none'));
-                })(z || (z = {}));
-                const K = 'RoleCategoryIcon_base_1c',
+                })(K || (K = {}));
+                const z = 'RoleCategoryIcon_base_1c',
                     X = (0, r.memo)(({ roleCategory: e }) => {
-                        const u = e !== z.None,
+                        const u = e !== K.None,
                             t = (0, r.useMemo)(
                                 () => ({
                                     backgroundImage: u
@@ -2047,7 +2048,7 @@
                                 }),
                                 [u, e],
                             );
-                        return n().createElement('div', { className: K, style: t });
+                        return n().createElement('div', { className: z, style: t });
                     }),
                     Q = {
                         base: 'FeatureRoleCategoryIcon_base_4e',
@@ -2062,7 +2063,7 @@
                         animation__exitActive: 'FeatureRoleCategoryIcon_animation__exitActive_43',
                     },
                     J = { enterActive: Q.animation__enterActive, exitActive: Q.animation__exitActive },
-                    ee = (0, r.memo)(({ stepState: e, actionState: u, roleCategory: t = z.None, isDisabled: a }) => {
+                    ee = (0, r.memo)(({ stepState: e, actionState: u, roleCategory: t = K.None, isDisabled: a }) => {
                         const i = (0, r.useContext)(o.m).progressionAvailability,
                             s = d()(
                                 Q.base,
@@ -2621,7 +2622,7 @@
                     ((e.Left = 'Left'), (e.Right = 'Right'));
                 })(qe || (qe = {}));
                 const Ye = [28, -8, -43],
-                    ze = (e, u) => {
+                    Ke = (e, u) => {
                         const t = Ye[u];
                         return e === qe.Left ? -t : t;
                     };
@@ -2634,7 +2635,7 @@
                             je[`base__direction${e}`],
                             je[`base__position${u + 1}`],
                         ),
-                        o = (0, r.useMemo)(() => ({ transform: `rotate(${ze(e, u)}deg)` }), [e, u]);
+                        o = (0, r.useMemo)(() => ({ transform: `rotate(${Ke(e, u)}deg)` }), [e, u]);
                     return n().createElement(
                         'div',
                         { className: i },
@@ -2642,10 +2643,10 @@
                         n().createElement('div', { style: o, className: je.line }),
                     );
                 });
-                let Ke;
+                let ze;
                 !(function (e) {
                     ((e.Left = 'left'), (e.Right = 'right'));
-                })(Ke || (Ke = {}));
+                })(ze || (ze = {}));
                 let Xe, Qe, Je;
                 (!(function (e) {
                     ((e.Normal = 'normal'), (e.Selected = 'selected'), (e.LastSelected = 'lastSelected'));

@@ -33,9 +33,9 @@
                         addPreloadTexture: () => f,
                         children: () => i,
                         displayStatus: () => B,
-                        displayStatusIs: () => G,
+                        displayStatusIs: () => K,
                         events: () => C,
-                        extraSize: () => K,
+                        extraSize: () => G,
                         forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => L,
                         getBrowserTexturePath: () => y,
@@ -262,8 +262,8 @@
                 function j() {
                     return viewEnv.getShowingStatus();
                 }
-                const G = Object.keys(B).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === B[e]), u), {}),
-                    K = {
+                const K = Object.keys(B).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === B[e]), u), {}),
+                    G = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1179,7 +1180,7 @@
                     base__highlightActive: 'CButton_base__highlightActive_b2',
                     content: 'CButton_content_cc',
                 };
-                let G, K;
+                let K, G;
                 (!(function (u) {
                     ((u.main = 'main'),
                         (u.primary = 'primary'),
@@ -1187,10 +1188,10 @@
                         (u.primaryRed = 'primaryRed'),
                         (u.secondary = 'secondary'),
                         (u.ghost = 'ghost'));
-                })(G || (G = {})),
+                })(K || (K = {})),
                     (function (u) {
                         ((u.extraSmall = 'extraSmall'), (u.small = 'small'), (u.medium = 'medium'));
-                    })(K || (K = {})));
+                    })(G || (G = {})));
                 const z = ({
                     children: u,
                     size: e,
@@ -1300,7 +1301,7 @@
                                 onMouseLeave: P,
                                 onClick: M,
                             },
-                            i !== G.ghost &&
+                            i !== K.ghost &&
                                 a().createElement(
                                     a().Fragment,
                                     null,
@@ -1322,7 +1323,7 @@
                         )
                     );
                 };
-                z.defaultProps = { type: G.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                z.defaultProps = { type: K.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const q = (0, n.memo)(z),
                     $ = 'Footer_base_43',
                     Y = 'Footer_content_4d',
@@ -1344,7 +1345,7 @@
                                     { className: Z },
                                     a().createElement(
                                         q,
-                                        { type: G.primary, size: t ? K.medium : K.small, onClick: u },
+                                        { type: K.primary, size: t ? G.medium : G.small, onClick: u },
                                         R.strings.menu.awardWindow.okButton(),
                                     ),
                                 ),

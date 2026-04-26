@@ -18,7 +18,7 @@
             },
             67: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => q });
+                t.d(e, { O: () => K });
                 var a = {};
                 (t.r(a), t.d(a, { mouse: () => l, onResize: () => F }));
                 var r = {};
@@ -293,7 +293,7 @@
                         }),
                         engine.whenReady,
                     ]),
-                    q = { view: i, client: r };
+                    K = { view: i, client: r };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -321,6 +321,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1131,7 +1132,7 @@
                                 switch (C) {
                                     case 'play':
                                         return (function () {
-                                            const u = q(l, D, n),
+                                            const u = K(l, D, n),
                                                 e = z(l, D),
                                                 a = window.setInterval(() => {
                                                     const r = e(),
@@ -1174,7 +1175,7 @@
                         };
                     },
                     V = (u, e) => Object.assign({}, u, { img: e }),
-                    q = (u, e, t) => {
+                    K = (u, e, t) => {
                         const a = new Map(),
                             r = {};
                         for (let n = u; n <= e; n++) {
@@ -1197,7 +1198,7 @@
                         }
                         return a;
                     };
-                const K = (u = 1) => {
+                const q = (u = 1) => {
                         const e = new Error().stack;
                         let t,
                             a = R.invalid('resId');
@@ -1223,7 +1224,7 @@
                             }))(u, (u, e) => `${u}.${e}.value`),
                     uu = (u) => {
                         const e = ((u) => {
-                                const e = K(),
+                                const e = q(),
                                     t = e.caller,
                                     a = e.resId,
                                     r = window.__feature && window.__feature !== t && t ? `subViews.${t}` : '';
@@ -1251,7 +1252,7 @@
                 const au = (u = 'model', e = tu.Deep) => {
                     const t = (0, a.useState)(0),
                         r = (t[0], t[1]),
-                        n = (0, a.useMemo)(() => K(), []),
+                        n = (0, a.useMemo)(() => q(), []),
                         i = n.caller,
                         E = n.resId,
                         A = (0, a.useMemo)(

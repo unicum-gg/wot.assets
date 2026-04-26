@@ -331,6 +331,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -729,7 +730,7 @@
                     };
                 window.ViewEnvHelper = b;
             },
-            4832: (u, e, t) => {
+            6711: (u, e, t) => {
                 var n = t(6179),
                     r = t.n(n),
                     o = t(493),
@@ -1256,7 +1257,7 @@
                 };
                 var W = t(9050),
                     H = t.n(W);
-                let V, j, q;
+                let V, j, K;
                 (!(function (u) {
                     ((u[(u.Word = 0)] = 'Word'),
                         (u[(u.LineBreak = 1)] = 'LineBreak'),
@@ -1270,8 +1271,8 @@
                     })(j || (j = {})),
                     (function (u) {
                         ((u.NBSP = ' '), (u.ZWNBSP = '\ufeff'), (u.NEW_LINE = '\n'));
-                    })(q || (q = {})));
-                const K = { [q.NBSP]: V.NoBreakSymbol, [q.ZWNBSP]: V.NoBreakSymbol, [q.NEW_LINE]: V.LineBreak },
+                    })(K || (K = {})));
+                const q = { [K.NBSP]: V.NoBreakSymbol, [K.ZWNBSP]: V.NoBreakSymbol, [K.NEW_LINE]: V.LineBreak },
                     z = {
                         blackReal: 'colors_blackReal_fc',
                         whiteReal: 'colors_whiteReal_31',
@@ -1383,7 +1384,7 @@
                                 },
                                 (u) => {
                                     const n = u[0],
-                                        r = K[n.charAt(0)];
+                                        r = q[n.charAt(0)];
                                     r === V.LineBreak
                                         ? t.push(
                                               ...((u) => {
@@ -1844,6 +1845,6 @@
                 t = (self.webpackChunkgameface = self.webpackChunkgameface || []);
             (t.forEach(e.bind(null, 0)), (t.push = e.bind(null, t.push.bind(t))));
         })());
-    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(4832));
+    var __webpack_exports__ = __webpack_require__.O(void 0, [503], () => __webpack_require__(6711));
     __webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 })();

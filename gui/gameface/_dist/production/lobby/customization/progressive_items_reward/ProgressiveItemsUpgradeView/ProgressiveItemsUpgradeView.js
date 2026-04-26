@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1320,7 +1321,7 @@
                         'onShow',
                         'onHide',
                     ];
-                function q(u) {
+                function Y(u) {
                     return Object.entries(u || {}).map(([u, e]) => {
                         const t = { __Type: 'GFValueProxy', name: u };
                         switch (typeof e) {
@@ -1338,7 +1339,7 @@
                         return t;
                     });
                 }
-                const Y = (u, e, t = {}, n = 0) => {
+                const q = (u, e, t = {}, n = 0) => {
                         viewEnv.handleViewEvent(
                             Object.assign(
                                 {
@@ -1385,7 +1386,7 @@
                             w = (0, n.useMemo)(() => B || x().resId, [B]),
                             p = (0, n.useCallback)(() => {
                                 (v.current.isVisible && v.current.timeoutId) ||
-                                    (Y(t, _, { isMouseEvent: !0, on: !0, arguments: q(r) }, w),
+                                    (q(t, _, { isMouseEvent: !0, on: !0, arguments: Y(r) }, w),
                                     C && C(),
                                     (v.current.isVisible = !0));
                             }, [t, _, r, w, C]),
@@ -1393,7 +1394,7 @@
                                 if (v.current.isVisible || v.current.timeoutId) {
                                     const u = v.current.timeoutId;
                                     (u > 0 && (clearTimeout(u), (v.current.timeoutId = 0)),
-                                        Y(t, _, { on: !1 }, w),
+                                        q(t, _, { on: !1 }, w),
                                         v.current.isVisible && g && g(),
                                         (v.current.isVisible = !1));
                                 }

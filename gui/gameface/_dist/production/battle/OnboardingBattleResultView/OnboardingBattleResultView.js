@@ -357,6 +357,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1305,8 +1306,8 @@
                         }
                     }, [t, e, r]);
                 }
-                var z = r(403);
-                const K = (0, a.memo)(
+                var K = r(403);
+                const z = (0, a.memo)(
                     ({ className: e, backgroundPath: t, onLoaded: r, showVignette: a = !0, showBlur: i = !1 }) => {
                         const s = b()('Background_base_94', i && 'Background_base__blur_69', e);
                         return n().createElement(
@@ -1569,7 +1570,7 @@
                     })),
                     Q = Z[0],
                     J = Z[1],
-                    ee = (0, z.Pi)(() => {
+                    ee = (0, K.Pi)(() => {
                         const e = J(),
                             t = e.controls,
                             r = e.model;
@@ -1586,7 +1587,7 @@
                             n().createElement(
                                 'div',
                                 { className: 'OnboardingBattleResultViewApp_base_83' },
-                                n().createElement(K, {
+                                n().createElement(z, {
                                     backgroundPath:
                                         R.images.story_mode.gui.maps.icons.common.backgrounds_onboarding.$num(
                                             r.missionId.get(),

@@ -335,6 +335,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1038,7 +1039,7 @@
                     I = 'AlertTooltipApp_description_2e',
                     V = 'AlertTooltipApp_alertIcon_2c',
                     W = 'AlertTooltipApp_alert_af',
-                    H = () => {
+                    K = () => {
                         const u = N(),
                             e = u.header,
                             A = u.body,
@@ -1062,7 +1063,7 @@
                         );
                     };
                 engine.whenReady.then(() => {
-                    t().render(F().createElement(H, null), document.getElementById('root'));
+                    t().render(F().createElement(K, null), document.getElementById('root'));
                 });
             },
         },

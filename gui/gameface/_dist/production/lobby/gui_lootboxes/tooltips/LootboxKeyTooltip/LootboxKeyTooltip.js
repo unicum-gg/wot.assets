@@ -167,8 +167,8 @@
                         getViewGlobalPosition: () => C,
                         isEventHandled: () => h,
                         isFocused: () => p,
-                        pxToRem: () => d,
-                        remToPx: () => _,
+                        pxToRem: () => _,
+                        remToPx: () => d,
                         resize: () => B,
                         sendEvent: () => r.qP,
                         setAnimateWindow: () => m,
@@ -204,7 +204,7 @@
                 }
                 function C(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: _(e.x), y: _(e.y) };
+                    return 'rem' === u ? e : { x: d(e.x), y: d(e.y) };
                 }
                 function l() {
                     viewEnv.freezeTextureBeforeResize();
@@ -212,10 +212,10 @@
                 function c() {
                     return viewEnv.getScale();
                 }
-                function d(u) {
+                function _(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function _(u) {
+                function d(u) {
                     return viewEnv.remToPx(u);
                 }
                 function m(u, e) {
@@ -331,6 +331,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -561,7 +562,7 @@
                 var C = t(5521),
                     l = t(3138);
                 const c = ['args'];
-                function d(u, e, t, E, A, F, r) {
+                function _(u, e, t, E, A, F, r) {
                     try {
                         var n = u[F](r),
                             o = n.value;
@@ -570,7 +571,7 @@
                     }
                     n.done ? e(o) : Promise.resolve(o).then(E, A);
                 }
-                const _ = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
+                const d = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
                     m = (function () {
                         var u,
                             e =
@@ -588,10 +589,10 @@
                                     return new Promise(function (E, A) {
                                         var F = u.apply(e, t);
                                         function r(u) {
-                                            d(F, E, A, r, n, 'next', u);
+                                            _(F, E, A, r, n, 'next', u);
                                         }
                                         function n(u) {
-                                            d(F, E, A, r, n, 'throw', u);
+                                            _(F, E, A, r, n, 'throw', u);
                                         }
                                         r(void 0);
                                     });
@@ -652,7 +653,7 @@
                         RealFormatType: i,
                         TimeFormatType: s,
                         DateFormatType: B,
-                        makeGlobalBoundingBox: _,
+                        makeGlobalBoundingBox: d,
                         sendMoveEvent: (u) => p(o.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: v,
                         sendClosePopOverEvent: () => p(o.POP_OVER, { on: !1 }),
@@ -678,7 +679,7 @@
                                 decoratorID: E || R.invalid('resId'),
                                 targetID: A,
                                 direction: e,
-                                bbox: _(B),
+                                bbox: d(B),
                                 on: !0,
                                 args: F,
                             });
@@ -789,6 +790,7 @@
                     (c.VehicleSelect = 'vehicleSelect'),
                     (c.StyleProgress = 'styleProgress'),
                     (c.ParagonsUnlocks = 'paragonsUnlocks'),
+                    (c.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                     (c.LootBoxToken = 'lootBoxToken'),
                     (c.GoldenTicket = 'birthday2025_golden_ticket'),
                     (c.PostStamp = 'giftsystem_4_stamp'),
@@ -828,7 +830,6 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
-                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -878,18 +879,18 @@
                     (s.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                     (s.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                     (s.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                var d = t(4179);
-                class _ extends A().PureComponent {
+                var _ = t(4179);
+                class d extends A().PureComponent {
                     render() {
                         let u;
-                        u = 'gold' === this.props.format ? d.B3.GOLD : d.B3.INTEGRAL;
-                        const e = d.Z5.getNumberFormat(this.props.value, u);
+                        u = 'gold' === this.props.format ? _.B3.GOLD : _.B3.INTEGRAL;
+                        const e = _.Z5.getNumberFormat(this.props.value, u);
                         return void 0 !== this.props.value && void 0 !== e ? e : null;
                     }
                 }
                 let m, p, v, h, g, b, w, T, f;
                 var P, y, O;
-                ((_.defaultProps = { format: 'integral' }),
+                ((d.defaultProps = { format: 'integral' }),
                     F.Items,
                     F.Equipment,
                     F.Xp,
@@ -1110,8 +1111,8 @@
                     return !1;
                 }
                 console.log;
-                var d = t(3915);
-                function _(u, e) {
+                var _ = t(3915);
+                function d(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, E = new Array(e); t < e; t++) E[t] = u[t];
                     return E;
@@ -1188,7 +1189,7 @@
                                                                         (t = (function (u, e) {
                                                                             if (u) {
                                                                                 if ('string' == typeof u)
-                                                                                    return _(u, e);
+                                                                                    return d(u, e);
                                                                                 var t = Object.prototype.toString
                                                                                     .call(u)
                                                                                     .slice(8, -1);
@@ -1202,7 +1203,7 @@
                                                                                             /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(
                                                                                                 t,
                                                                                             )
-                                                                                          ? _(u, e)
+                                                                                          ? d(u, e)
                                                                                           : void 0
                                                                                 );
                                                                             }
@@ -1272,11 +1273,11 @@
                                                 observableModel: {
                                                     array: (e, t) => {
                                                         const E = null != t ? t : o(e),
-                                                            A = d.observable.box(E, { equals: c });
+                                                            A = _.observable.box(E, { equals: c });
                                                         return (
                                                             'real' === u &&
                                                                 n.subscribe(
-                                                                    (0, d.action)((u) => A.set(u)),
+                                                                    (0, _.action)((u) => A.set(u)),
                                                                     e,
                                                                 ),
                                                             A
@@ -1284,11 +1285,11 @@
                                                     },
                                                     object: (e, t) => {
                                                         const E = null != t ? t : o(e),
-                                                            A = d.observable.box(E, { equals: c });
+                                                            A = _.observable.box(E, { equals: c });
                                                         return (
                                                             'real' === u &&
                                                                 n.subscribe(
-                                                                    (0, d.action)((u) => A.set(u)),
+                                                                    (0, _.action)((u) => A.set(u)),
                                                                     e,
                                                                 ),
                                                             A
@@ -1298,13 +1299,13 @@
                                                         const E = o(t);
                                                         if (Array.isArray(e)) {
                                                             const A = e.reduce(
-                                                                (u, e) => ((u[e] = d.observable.box(E[e], {})), u),
+                                                                (u, e) => ((u[e] = _.observable.box(E[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === u &&
                                                                     n.subscribe(
-                                                                        (0, d.action)((u) => {
+                                                                        (0, _.action)((u) => {
                                                                             e.forEach((e) => {
                                                                                 A[e].set(u[e]);
                                                                             });
@@ -1319,7 +1320,7 @@
                                                                 F = Object.entries(A),
                                                                 r = F.reduce(
                                                                     (u, [e, t]) => (
-                                                                        (u[t] = d.observable.box(E[e], {})),
+                                                                        (u[t] = _.observable.box(E[e], {})),
                                                                         u
                                                                     ),
                                                                     {},
@@ -1327,7 +1328,7 @@
                                                             return (
                                                                 'real' === u &&
                                                                     n.subscribe(
-                                                                        (0, d.action)((u) => {
+                                                                        (0, _.action)((u) => {
                                                                             F.forEach(([e, t]) => {
                                                                                 r[t].set(u[e]);
                                                                             });

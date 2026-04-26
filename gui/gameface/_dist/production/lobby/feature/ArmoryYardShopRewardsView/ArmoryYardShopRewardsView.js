@@ -396,6 +396,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1151,7 +1152,7 @@
                             I('yes1');
                         },
                     },
-                    U = {
+                    H = {
                         base: 'CButton_base_40',
                         base__main: 'CButton_base__main_42',
                         base__primary: 'CButton_base__primary_7f',
@@ -1174,7 +1175,7 @@
                         base__highlightActive: 'CButton_base__highlightActive_b2',
                         content: 'CButton_content_cc',
                     };
-                let H, G;
+                let U, G;
                 (!(function (u) {
                     ((u.main = 'main'),
                         (u.primary = 'primary'),
@@ -1182,7 +1183,7 @@
                         (u.primaryRed = 'primaryRed'),
                         (u.secondary = 'secondary'),
                         (u.ghost = 'ghost'));
-                })(H || (H = {})),
+                })(U || (U = {})),
                     (function (u) {
                         ((u.extraSmall = 'extraSmall'), (u.small = 'small'), (u.medium = 'medium'));
                     })(G || (G = {})));
@@ -1258,18 +1259,18 @@
                             [s, F],
                         ),
                         N = C()(
-                            U.base,
-                            U[`base__${n}`],
+                            H.base,
+                            H[`base__${n}`],
                             {
-                                [U.base__disabled]: s,
-                                [U[`base__${e}`]]: e,
-                                [U.base__focus]: B,
-                                [U.base__highlightActive]: h,
-                                [U.base__firstHover]: w,
+                                [H.base__disabled]: s,
+                                [H[`base__${e}`]]: e,
+                                [H.base__focus]: B,
+                                [H.base__highlightActive]: h,
+                                [H.base__firstHover]: w,
                             },
                             i,
                         ),
-                        k = C()(U.state, U.state__default);
+                        k = C()(H.state, H.state__default);
                     return (
                         (0, r.useEffect)(
                             () => (
@@ -1295,29 +1296,29 @@
                                 onMouseLeave: O,
                                 onClick: T,
                             },
-                            n !== H.ghost &&
+                            n !== U.ghost &&
                                 a().createElement(
                                     a().Fragment,
                                     null,
-                                    a().createElement('div', { className: U.back }),
-                                    a().createElement('span', { className: U.texture }),
+                                    a().createElement('div', { className: H.back }),
+                                    a().createElement('span', { className: H.texture }),
                                 ),
                             a().createElement(
                                 'span',
                                 { className: k },
-                                a().createElement('span', { className: U.stateDisabled }),
-                                a().createElement('span', { className: U.stateHighlightHover }),
-                                a().createElement('span', { className: U.stateHighlightActive }),
+                                a().createElement('span', { className: H.stateDisabled }),
+                                a().createElement('span', { className: H.stateHighlightHover }),
+                                a().createElement('span', { className: H.stateHighlightActive }),
                             ),
                             a().createElement(
                                 'span',
-                                { className: U.content, lang: R.strings.settings.LANGUAGE_CODE() },
+                                { className: H.content, lang: R.strings.settings.LANGUAGE_CODE() },
                                 u,
                             ),
                         )
                     );
                 };
-                W.defaultProps = { type: H.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                W.defaultProps = { type: U.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const X = (0, r.memo)(W);
                 var j = t(9887),
                     Y = t.n(j);
@@ -1487,7 +1488,7 @@
                             N = void 0 === O ? (L || y ? `${L ? 1 : 0} ${y ? 1 : 0} auto` : void 0) : O,
                             I = u.style,
                             k = u.children,
-                            U = (function (u, e) {
+                            H = (function (u, e) {
                                 if (null == u) return {};
                                 var t,
                                     r,
@@ -1496,7 +1497,7 @@
                                 for (r = 0; r < n.length; r++) ((t = n[r]), e.indexOf(t) >= 0 || (a[t] = u[t]));
                                 return a;
                             })(u, Z);
-                        const H = (0, r.useMemo)(() => {
+                        const U = (0, r.useMemo)(() => {
                                 const u = { mt: o, mr: E, mb: c, ml: F },
                                     e = ((u) =>
                                         eu.reduce((e, t) => {
@@ -1523,9 +1524,9 @@
                                     computedClassNames: e,
                                 };
                             }, [t, n, o, E, c, F, I, N, P, B, x, f, R]),
-                            G = H.computedStyle,
-                            W = H.computedClassNames;
-                        return a().createElement('div', J({ className: C()(Q.base, ...W, e), style: G }, U), k);
+                            G = U.computedStyle,
+                            W = U.computedClassNames;
+                        return a().createElement('div', J({ className: C()(Q.base, ...W, e), style: G }, H), k);
                     });
                 let au;
                 !(function (u) {
@@ -2020,13 +2021,13 @@
                             },
                             [i, B, y, _],
                         ),
-                        U = (0, r.useCallback)(
+                        H = (0, r.useCallback)(
                             (u) => {
                                 (f(!1), p && p(u));
                             },
                             [p],
                         ),
-                        H = (0, r.useCallback)(
+                        U = (0, r.useCallback)(
                             (u) => {
                                 (D && D(u), l && I(l), P(!0));
                             },
@@ -2067,10 +2068,10 @@
                                 ref: L,
                                 className: j,
                                 onClick: N,
-                                onMouseEnter: H,
+                                onMouseEnter: U,
                                 onMouseLeave: G,
                                 onMouseDown: k,
-                                onMouseUp: U,
+                                onMouseUp: H,
                                 onFocus: W,
                                 onBlur: X,
                             },
@@ -2080,7 +2081,7 @@
                         a().createElement('div', { className: $ }, e),
                     );
                 });
-                let Iu, ku, Uu, Hu, Gu, Wu, Xu, ju;
+                let Iu, ku, Hu, Uu, Gu, Wu, Xu, ju;
                 (!(function (u) {
                     ((u.MainView = 'mainView'), (u.VehiclePreview = 'vehiclePreview'));
                 })(Iu || (Iu = {})),
@@ -2094,12 +2095,12 @@
                     })(ku || (ku = {})),
                     (function (u) {
                         ((u[(u.Disabled = 0)] = 'Disabled'), (u[(u.Active = 1)] = 'Active'));
-                    })(Uu || (Uu = {})),
+                    })(Hu || (Hu = {})),
                     (function (u) {
                         ((u[(u.EmptyRewards = 0)] = 'EmptyRewards'),
                             (u[(u.ReadyRewards = 1)] = 'ReadyRewards'),
                             (u[(u.AnimatedRewards = 2)] = 'AnimatedRewards'));
-                    })(Hu || (Hu = {})),
+                    })(Uu || (Uu = {})),
                     (function (u) {
                         ((u[(u.Progress = 0)] = 'Progress'),
                             (u[(u.Quests = 1)] = 'Quests'),
@@ -2348,6 +2349,7 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
@@ -2388,7 +2390,6 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
-                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -2644,7 +2645,7 @@
                         : a().createElement(le, e, r);
                 };
                 var De = t(8552);
-                (Hu.EmptyRewards, Hu.ReadyRewards, Hu.AnimatedRewards);
+                (Uu.EmptyRewards, Uu.ReadyRewards, Uu.AnimatedRewards);
                 const de = (u) => (u < 0.5 ? 4 * u * u * u : (u - 1) * (2 * u - 2) * (2 * u - 2) + 1),
                     Be = {
                         from: { opacity: 0 },
@@ -2830,13 +2831,13 @@
                                 },
                                 [B],
                             ),
-                            U = (0, r.useCallback)(
+                            H = (0, r.useCallback)(
                                 (u) => {
                                     (m && m(u), l && I(l), R(!0));
                                 },
                                 [m, l],
                             ),
-                            H = (0, r.useCallback)(
+                            U = (0, r.useCallback)(
                                 (u) => {
                                     (w(!1), R(!1), D && D(u));
                                 },
@@ -2869,8 +2870,8 @@
                                     ref: x,
                                     className: X,
                                     onClick: O,
-                                    onMouseEnter: U,
-                                    onMouseLeave: H,
+                                    onMouseEnter: H,
+                                    onMouseLeave: U,
                                     onMouseDown: N,
                                     onMouseUp: k,
                                     onFocus: G,
@@ -3055,8 +3056,8 @@
                         ),
                     ),
                     ke = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M'],
-                    Ue = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3],
-                    He = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
+                    He = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3],
+                    Ue = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
                     Ge = (0, r.memo)(({ isElite: u, vehicleName: e, type: t, level: r }) => {
                         return a().createElement(
                             'div',
@@ -3064,12 +3065,12 @@
                             a().createElement(hu, {
                                 text:
                                     ((n = r),
-                                    He
+                                    Ue
                                         ? `${n}`
                                         : (function (u) {
                                               let e = '';
-                                              for (let t = Ue.length - 1; t >= 0; t--)
-                                                  for (; u >= Ue[t]; ) ((e += ke[t]), (u -= Ue[t]));
+                                              for (let t = He.length - 1; t >= 0; t--)
+                                                  for (; u >= He[t]; ) ((e += ke[t]), (u -= He[t]));
                                               return e;
                                           })(n)),
                             }),
@@ -3950,7 +3951,7 @@
                                 { className: 'App_button_db' },
                                 a().createElement(
                                     X,
-                                    { type: H.primary, size: G.medium, onClick: e.close },
+                                    { type: U.primary, size: G.medium, onClick: e.close },
                                     a().createElement(hu, { text: mt.button() }),
                                 ),
                             ),

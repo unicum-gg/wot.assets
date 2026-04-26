@@ -124,6 +124,10 @@
     z-index: 2;
 }
 
+.LetteringImage_base_bc {
+    background: no-repeat center / cover;
+}
+
 .LogoSlide_base_66 {
     width: 100vw;
     height: 100vh;
@@ -223,6 +227,43 @@
         right: 108rem;
         left: 108rem;
     }
+}
+
+.Content_letteringImage__tl_68 {
+    position: absolute;
+    top: 60rem;
+    left: 60rem;
+}
+
+@media (min-width: 1366px) and (min-height: 768px) {
+    .Content_letteringImage__tl_68 {
+        top: 80rem;
+        left: 108rem;
+    }
+}
+
+.Content_letteringImage__tr_1b {
+    position: absolute;
+    top: 60rem;
+    right: 60rem;
+}
+
+@media (min-width: 1366px) and (min-height: 768px) {
+    .Content_letteringImage__tr_1b {
+        top: 80rem;
+        right: 108rem;
+    }
+}
+
+.Content_letteringImage__cc_f0 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Content_letteringImage__br_7b {
+    align-self: flex-end;
 }
 
 .Content_fairPlayMessage_23 {

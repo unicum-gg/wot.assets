@@ -2,11 +2,9 @@
   <narratives>
     <narrative>	offence_detail_1	  <progressionFrontType>	offence	</progressionFrontType>
       <progressionUnlockLevel>	0	</progressionUnlockLevel>
-      <videoSrc>	progression_offence_1	</videoSrc>
     </narrative>
     <narrative>	offence_detail_2	  <progressionFrontType>	offence	</progressionFrontType>
       <progressionUnlockLevel>	2	</progressionUnlockLevel>
-      <videoSrc>	progression_offence_2	</videoSrc>
     </narrative>
     <narrative>	offence_detail_3	  <progressionFrontType>	offence	</progressionFrontType>
       <progressionUnlockLevel>	4	</progressionUnlockLevel>
@@ -19,14 +17,15 @@
     </narrative>
     <narrative>	offence_detail_6	  <progressionFrontType>	offence	</progressionFrontType>
       <progressionUnlockLevel>	10	</progressionUnlockLevel>
-      <videoSrc>	progression_offence_3	</videoSrc>
+      <videoSrc>	progression_offence_1	</videoSrc>
     </narrative>
     <narrative>	defence_detail_1	  <progressionFrontType>	defence	</progressionFrontType>
       <progressionUnlockLevel>	0	</progressionUnlockLevel>
+      <videoSrc>	progression_defence_1	</videoSrc>
+      <isIntro>	True	</isIntro>
     </narrative>
     <narrative>	defence_detail_2	  <progressionFrontType>	defence	</progressionFrontType>
       <progressionUnlockLevel>	2	</progressionUnlockLevel>
-      <videoSrc>	progression_defence_1	</videoSrc>
     </narrative>
     <narrative>	defence_detail_3	  <progressionFrontType>	defence	</progressionFrontType>
       <progressionUnlockLevel>	4	</progressionUnlockLevel>
@@ -36,11 +35,10 @@
     </narrative>
     <narrative>	defence_detail_5	  <progressionFrontType>	defence	</progressionFrontType>
       <progressionUnlockLevel>	8	</progressionUnlockLevel>
-      <videoSrc>	progression_defence_2	</videoSrc>
     </narrative>
     <narrative>	defence_detail_6	  <progressionFrontType>	defence	</progressionFrontType>
       <progressionUnlockLevel>	10	</progressionUnlockLevel>
-      <videoSrc>	progression_defence_3	</videoSrc>
+      <videoSrc>	progression_defence_2	</videoSrc>
     </narrative>
   </narratives>
 </historical_battles_progression_narratives.xml>

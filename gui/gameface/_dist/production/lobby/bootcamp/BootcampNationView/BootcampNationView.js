@@ -321,6 +321,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1841,71 +1842,74 @@
                             o = u.nationsList,
                             s = u.promoteNationsList,
                             l = Cu(),
-                            E = (function (u, e) {
-                                const t = u.contentRef,
-                                    n = u.wrapperRef,
-                                    a = u.scrollPosition,
-                                    o = u.clampPosition,
-                                    s = u.animationScroll,
-                                    l = u.events,
-                                    E = (0, r.useState)(gu),
-                                    c = E[0],
-                                    A = E[1];
+                            E = (function (u, e, t) {
+                                const n = u.contentRef,
+                                    a = u.wrapperRef,
+                                    o = u.scrollPosition,
+                                    s = u.clampPosition,
+                                    l = u.animationScroll,
+                                    E = u.events,
+                                    c = (0, r.useState)(gu),
+                                    A = c[0],
+                                    F = c[1];
                                 return (
                                     (0, r.useEffect)(() => {
-                                        const u = t.current;
-                                        u && (u.style.cursor = 'dragging' === c.type ? 'move' : 'grab');
-                                    }, [t, c.type]),
+                                        const u = n.current;
+                                        u && (u.style.cursor = 'dragging' === A.type ? 'move' : 'grab');
+                                    }, [n, A.type]),
                                     (0, r.useEffect)(() => {
-                                        if ('dragging' !== c.type) return;
-                                        const u = i.O.client.events.mouse.move(([u, r]) => {
-                                                const i = t.current,
-                                                    l = n.current;
-                                                if (!i || !l) return;
-                                                if ('inside' === r && u.clientX < 0) return;
-                                                const E = 'inside' === r ? u.clientX : u.clientX - l.offsetLeft,
-                                                    A = c.positionFrom - E,
-                                                    F = c.previousScrollPosition + A;
-                                                a.start(
+                                        if ('dragging' !== A.type) return;
+                                        const u = i.O.client.events.mouse.move(([u, t]) => {
+                                                const r = n.current,
+                                                    i = a.current;
+                                                if (!r || !i) return;
+                                                if ('inside' === t && u.clientX < 0) return;
+                                                const E = 'inside' === t ? u.clientX : u.clientX - i.offsetLeft,
+                                                    c = A.positionFrom - E,
+                                                    F = A.previousScrollPosition + c;
+                                                o.start(
                                                     Object.assign(
                                                         {
-                                                            scrollPosition: o(i, F),
-                                                            from: { scrollPosition: s.scrollPosition.get() },
+                                                            scrollPosition: s(r, F),
+                                                            from: { scrollPosition: l.scrollPosition.get() },
                                                         },
                                                         e && { config: e },
                                                     ),
                                                 );
                                             }),
-                                            r = i.O.client.events.mouse.up(function () {
-                                                A({ type: 'scrollingToEnd' });
+                                            t = i.O.client.events.mouse.up(function () {
+                                                F({ type: 'scrollingToEnd' });
                                             });
                                         return () => {
-                                            (u(), r());
+                                            (u(), t());
                                         };
-                                    }, [s.scrollPosition, o, t, c, a, n, e]),
+                                    }, [l.scrollPosition, s, n, A, o, a, e]),
                                     (0, r.useEffect)(() => {
-                                        if ('scrollingToEnd' !== c.type) return;
+                                        if ('scrollingToEnd' !== A.type) return;
                                         const u = () => {
-                                            A(gu);
+                                            F(gu);
                                         };
-                                        return (s.scrollPosition.idle && u(), l.on('rest', u), () => l.off('rest', u));
-                                    }, [s.scrollPosition, c.type, l]),
+                                        return (l.scrollPosition.idle && u(), E.on('rest', u), () => E.off('rest', u));
+                                    }, [l.scrollPosition, A.type, E]),
                                     (0, r.useEffect)(() => {
-                                        const u = t.current;
+                                        const u = n.current;
                                         if (!u) return;
                                         const e = (u) => {
-                                            A({
-                                                type: 'dragging',
-                                                positionFrom: u.screenX,
-                                                previousScrollPosition: s.scrollPosition.get(),
-                                            });
+                                            (t &&
+                                                t.allowedButtons &&
+                                                -1 === t.allowedButtons.findIndex((e) => u.button === e)) ||
+                                                F({
+                                                    type: 'dragging',
+                                                    positionFrom: u.screenX,
+                                                    previousScrollPosition: l.scrollPosition.get(),
+                                                });
                                         };
                                         return (
                                             u.addEventListener('mousedown', e),
                                             () => u.removeEventListener('mousedown', e)
                                         );
-                                    }, [s.scrollPosition, t]),
-                                    c
+                                    }, [l.scrollPosition, n, t]),
+                                    A
                                 );
                             })(l),
                             c = (0, r.useRef)(E.type),

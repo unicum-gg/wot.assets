@@ -396,6 +396,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1310,17 +1311,17 @@
                 const U = (0, r.memo)(G);
                 var j = t(887),
                     X = t.n(j);
-                const $ = ['xl', 'lg', 'md', 'sm', 'xs'],
-                    K = (u) => u.includes('_') && ((u) => $.includes(u))(u.split('_').at(-1)),
+                const K = ['xl', 'lg', 'md', 'sm', 'xs'],
+                    $ = (u) => u.includes('_') && ((u) => K.includes(u))(u.split('_').at(-1)),
                     z = [p.ExtraLarge, p.Large, p.Medium, p.Small, p.ExtraSmall],
                     q = (u, e) =>
                         Object.keys(u).reduce((t, r) => {
                             if (r in t) return t;
-                            if (K(r)) {
+                            if ($(r)) {
                                 const a = r.split('_').slice(0, -1).join('_');
                                 if (a in t) return t;
                                 const n = z.indexOf(e),
-                                    E = (-1 !== n ? $.slice(n) : [])
+                                    E = (-1 !== n ? K.slice(n) : [])
                                         .map((u) => a + '_' + u)
                                         .find((e) => void 0 !== u[e]),
                                     A = E ? u[E] : void 0;
@@ -1329,7 +1330,7 @@
                             const a = u[r];
                             return (
                                 void 0 === a ||
-                                    ((u, e) => $.some((t) => void 0 !== e[`${u}_${t}`]))(r, u) ||
+                                    ((u, e) => K.some((t) => void 0 !== e[`${u}_${t}`]))(r, u) ||
                                     (t[r] = a),
                                 t
                             );
@@ -1344,7 +1345,7 @@
                             }
                         )(u, e);
                         return a().memo((e) =>
-                            Object.keys(e).some((u) => K(u) && void 0 !== e[u])
+                            Object.keys(e).some((u) => $(u) && void 0 !== e[u])
                                 ? a().createElement(t, e)
                                 : a().createElement(u, e),
                         );

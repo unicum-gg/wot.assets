@@ -521,54 +521,36 @@
     width: 17rem;
     height: 17rem;
     border-radius: 2rem;
-    box-shadow:
-        0 -2rem 5rem 0 rgba(104, 0, 0, 0.25) inset,
-        0 2rem 5rem 0 rgba(104, 0, 0, 0.25) inset;
 }
 
 .Level_base__extraSmall_05 .Level_innerGlow_47 {
     width: 22rem;
     height: 22rem;
     border-radius: 3rem;
-    box-shadow:
-        0 -3rem 6rem 0 rgba(104, 0, 0, 0.25) inset,
-        0 3rem 6rem 0 rgba(104, 0, 0, 0.25) inset;
 }
 
 .Level_base__small_98 .Level_innerGlow_47 {
     width: 29rem;
     height: 29rem;
     border-radius: 3rem;
-    box-shadow:
-        0 -4rem 8rem 0 rgba(104, 0, 0, 0.25) inset,
-        0 4rem 8rem 0 rgba(104, 0, 0, 0.25) inset;
 }
 
 .Level_base__medium_f0 .Level_innerGlow_47 {
     width: 37rem;
     height: 37rem;
     border-radius: 4rem;
-    box-shadow:
-        0 5rem 10rem #68000040 inset,
-        0 -5rem 10rem #68000040 inset;
 }
 
 .Level_base__large_c3 .Level_innerGlow_47 {
     width: 47rem;
     height: 47rem;
     border-radius: 5rem;
-    box-shadow:
-        0 -6rem 12rem rgba(104, 0, 0, 0.25) inset,
-        0 6rem 12rem rgba(104, 0, 0, 0.25) inset;
 }
 
 .Level_base__extraLarge_dc .Level_innerGlow_47 {
     width: 52rem;
     height: 52rem;
     border-radius: 5rem;
-    box-shadow:
-        0 7rem 13rem #68000040 inset,
-        0 -7rem 13rem #68000040 inset;
 }
 
 .Level_lock_0b {

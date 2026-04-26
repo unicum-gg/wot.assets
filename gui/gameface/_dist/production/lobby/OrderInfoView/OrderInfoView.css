@@ -552,15 +552,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Order_flare_97 {
     position: absolute;
-    top: -40rem;
-    left: -48rem;
+    top: -30rem;
+    left: -43rem;
 }
 .mediaMedium .Order_flare_97 {
-    top: -50rem;
-    left: -132rem;
+    top: -30rem;
+    left: -128rem;
 }
 .mediaExtraLarge .Order_flare_97 {
-    top: -82rem;
+    top: -62rem;
     left: -160rem;
 }
 .Order_label_43 {
@@ -568,7 +568,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 22rem;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 11rem;
+    margin-bottom: 12rem;
 }
 .mediaMedium .Order_label_43 {
     margin-bottom: 20rem;
@@ -578,7 +578,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 33rem;
+    margin-bottom: 32rem;
 }
 .Order_description_07 {
     color: #fefeec;
@@ -598,19 +598,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .OrderInfoViewApp_base_24 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
     position: relative;
 }
-
 .OrderInfoViewApp_closeButton_82 {
     position: absolute;
     top: 32rem;
     right: 34rem;
 }
-
 .OrderInfoViewApp_bg_e8 {
     background: no-repeat center / cover;
     position: absolute;
@@ -618,17 +615,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: -1;
+    z-index: -2;
 }
-
 .OrderInfoViewApp_vignette_df {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
 }
-
 .OrderInfoViewApp_vignette_df::before,
 .OrderInfoViewApp_vignette_df::after {
     height: 172rem;
@@ -638,126 +634,109 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     right: 0;
     left: 0;
 }
-
 .mediaMedium .OrderInfoViewApp_vignette_df::before,
 .mediaMedium .OrderInfoViewApp_vignette_df::after {
     height: 202rem;
 }
-
 .OrderInfoViewApp_vignette_df::before {
     background: linear-gradient(180deg, #000 0%, transparent 100%);
     top: 0;
 }
-
 .mediaLarge .OrderInfoViewApp_vignette_df::before {
     height: 253rem;
 }
-
 .mediaExtraLarge .OrderInfoViewApp_vignette_df::before {
     height: 338rem;
 }
-
 .OrderInfoViewApp_vignette_df::after {
     background: linear-gradient(0deg, #000 0%, transparent 100%);
     bottom: 0;
 }
-
 .mediaLarge .OrderInfoViewApp_vignette_df::after {
     height: 323rem;
 }
-
 .mediaExtraLarge .OrderInfoViewApp_vignette_df::after {
     height: 432rem;
 }
-
 .OrderInfoViewApp_title_8f {
     color: #f2f2f7;
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 12rem;
+    margin-top: 30rem;
 }
-
 .mediaMedium .OrderInfoViewApp_title_8f {
     color: #f2f2f7;
     font-size: 56rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 27rem;
+    margin-top: 40rem;
 }
-
+.mediaLarge .OrderInfoViewApp_title_8f {
+    margin-top: 56rem;
+}
 .mediaExtraLarge .OrderInfoViewApp_title_8f {
     color: #f2f2f7;
     font-size: 73rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 33rem;
+    margin-top: 76rem;
 }
-
 .OrderInfoViewApp_subtitle_77 {
-    color: #fefeec;
+    color: #f2f2f7;
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
+    margin-top: 8rem;
     margin-bottom: 45rem;
 }
-
 .mediaSmall .OrderInfoViewApp_subtitle_77 {
     margin-bottom: 63rem;
 }
-
 .mediaMedium .OrderInfoViewApp_subtitle_77 {
-    color: #fefeec;
-    font-size: 24rem;
+    color: #f2f2f7;
+    font-size: 20rem;
     font-weight: 400;
-    line-height: 32rem;
+    line-height: 1.2;
+    margin-top: 12rem;
     margin-bottom: 37rem;
 }
-
 .mediaLarge .OrderInfoViewApp_subtitle_77 {
     margin-bottom: 82rem;
 }
-
 .mediaExtraLarge .OrderInfoViewApp_subtitle_77 {
-    color: #fefeec;
+    color: #f2f2f7;
     font-size: 28rem;
     font-weight: 700;
     line-height: 1.1;
+    margin-top: 24rem;
     margin-bottom: 113rem;
     font-weight: 400;
 }
-
 .OrderInfoViewApp_orders_9c {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 62rem;
 }
-
 .mediaMedium .OrderInfoViewApp_orders_9c {
     margin-bottom: 63rem;
 }
-
 .mediaLarge .OrderInfoViewApp_orders_9c {
     margin-bottom: 86rem;
 }
-
 .mediaExtraLarge .OrderInfoViewApp_orders_9c {
     margin-bottom: 130rem;
 }
-
 .OrderInfoViewApp_order_56 {
     margin: 0 22rem;
 }
-
 .mediaMedium .OrderInfoViewApp_order_56 {
     margin: 0 31rem;
 }
-
 .mediaExtraLarge .OrderInfoViewApp_order_56 {
     margin: 0 19rem;
 }
-
 .OrderInfoViewApp_line_97 {
     width: 692rem;
     height: 1rem;
@@ -770,24 +749,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     );
     opacity: 0.6;
 }
-
 .mediaSmall .OrderInfoViewApp_line_97 {
     margin-bottom: 30rem;
 }
-
 .mediaMedium .OrderInfoViewApp_line_97 {
     margin-bottom: 36rem;
 }
-
 .mediaLarge .OrderInfoViewApp_line_97 {
     margin-bottom: 56rem;
 }
-
 .mediaExtraLarge .OrderInfoViewApp_line_97 {
     width: 968rem;
     margin-bottom: 90rem;
 }
-
 .OrderInfoViewApp_description_97 {
     color: #8c8c7e;
     font-size: 16rem;
@@ -796,48 +770,39 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 860rem;
     margin-bottom: 40rem;
 }
-
 .mediaMedium .OrderInfoViewApp_description_97 {
     width: 860rem;
     margin-bottom: 34rem;
 }
-
 .mediaLarge .OrderInfoViewApp_description_97 {
     margin-bottom: 38rem;
 }
-
 .mediaExtraLarge .OrderInfoViewApp_description_97 {
     width: 1460rem;
     margin-bottom: 61rem;
     font-size: 24rem;
 }
-
 .OrderInfoViewApp_description_icon_36 {
     width: 16rem;
     height: 16rem;
     margin: 4rem 4rem 0 0;
     background: url('R.images.historical_battles.gui.maps.icons.hbCoin.c_24x24.offence') no-repeat center / cover;
 }
-
 .mediaExtraLarge .OrderInfoViewApp_description_icon_36 {
     width: 24rem;
     height: 24rem;
     margin: 6rem 4rem 0 0;
 }
-
 .OrderInfoViewApp_okButton_69 {
     min-width: 160rem;
     margin-bottom: 34rem;
 }
-
 .mediaSmall .OrderInfoViewApp_okButton_69 {
     margin-bottom: 44rem;
 }
-
 .mediaMedium .OrderInfoViewApp_okButton_69 {
     margin-bottom: 24rem;
 }
-
 .mediaLarge .OrderInfoViewApp_okButton_69 {
     margin-bottom: 28rem;
 }

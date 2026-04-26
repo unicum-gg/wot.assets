@@ -400,6 +400,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1270,13 +1271,13 @@
                                 },
                                 [B],
                             ),
-                            q = (0, r.useCallback)(
+                            Y = (0, r.useCallback)(
                                 (u) => {
                                     (m && m(u), l && I(l), T(!0));
                                 },
                                 [m, l],
                             ),
-                            Y = (0, r.useCallback)(
+                            q = (0, r.useCallback)(
                                 (u) => {
                                     (x(!1), T(!1), F && F(u));
                                 },
@@ -1309,8 +1310,8 @@
                                     ref: P,
                                     className: Q,
                                     onClick: N,
-                                    onMouseEnter: q,
-                                    onMouseLeave: Y,
+                                    onMouseEnter: Y,
+                                    onMouseLeave: q,
                                     onMouseDown: $,
                                     onMouseUp: j,
                                     onFocus: z,
@@ -1323,9 +1324,9 @@
                         );
                     });
                 var j = t(887),
-                    q = t.n(j);
-                const Y = ['xl', 'lg', 'md', 'sm', 'xs'],
-                    z = (u) => u.includes('_') && ((u) => Y.includes(u))(u.split('_').at(-1)),
+                    Y = t.n(j);
+                const q = ['xl', 'lg', 'md', 'sm', 'xs'],
+                    z = (u) => u.includes('_') && ((u) => q.includes(u))(u.split('_').at(-1)),
                     K = [b.ExtraLarge, b.Large, b.Medium, b.Small, b.ExtraSmall],
                     Q = (u, e) =>
                         Object.keys(u).reduce((t, r) => {
@@ -1334,7 +1335,7 @@
                                 const n = r.split('_').slice(0, -1).join('_');
                                 if (n in t) return t;
                                 const a = K.indexOf(e),
-                                    i = (-1 !== a ? Y.slice(a) : [])
+                                    i = (-1 !== a ? q.slice(a) : [])
                                         .map((u) => n + '_' + u)
                                         .find((e) => void 0 !== u[e]),
                                     o = i ? u[i] : void 0;
@@ -1343,7 +1344,7 @@
                             const n = u[r];
                             return (
                                 void 0 === n ||
-                                    ((u, e) => Y.some((t) => void 0 !== e[`${u}_${t}`]))(r, u) ||
+                                    ((u, e) => q.some((t) => void 0 !== e[`${u}_${t}`]))(r, u) ||
                                     (t[r] = n),
                                 t
                             );
@@ -1435,7 +1436,7 @@
                         eu.apply(this, arguments)
                     );
                 }
-                Object.keys(q());
+                Object.keys(Y());
                 const tu = {
                         XL: { mt: J.mt__XL, mr: J.mr__XL, mb: J.mb__XL, ml: J.ml__XL },
                         LG: { mt: J.mt__LG, mr: J.mr__LG, mb: J.mb__LG, ml: J.ml__LG },
@@ -1675,7 +1676,7 @@
                         pu.apply(this, arguments)
                     );
                 }
-                Object.keys(q());
+                Object.keys(Y());
                 const bu = Object.keys(Cu()),
                     vu = { mt: 'MD', mr: 'SM', mb: 'SM', ml: 'SM' },
                     fu = { mt: 'SM', mr: 'XS', mb: 'XS', ml: 'XS' },
@@ -1986,8 +1987,8 @@
                     for (var t = 0, r = new Array(e); t < e; t++) r[t] = u[t];
                     return r;
                 }
-                const qu = (u) => (0 === u ? window : window.subViews.get(u));
-                const Yu = ((u, e) => {
+                const Yu = (u) => (0 === u ? window : window.subViews.get(u));
+                const qu = ((u, e) => {
                         const t = (0, r.createContext)({});
                         return [
                             function ({ mode: a = 'real', options: o, children: s, mocks: l }) {
@@ -1997,7 +1998,7 @@
                                         const o = (function ({
                                                 initializer: u = !0,
                                                 rootId: e = 0,
-                                                getRoot: t = qu,
+                                                getRoot: t = Yu,
                                                 context: r = 'model',
                                             } = {}) {
                                                 const n = new Map();
@@ -2188,8 +2189,8 @@
                             restoreVehicle: u.createCallbackNoArgs('onRestoreVehicle'),
                         }),
                     ),
-                    zu = Yu[0],
-                    Ku = Yu[1],
+                    zu = qu[0],
+                    Ku = qu[1],
                     Qu = 'App_base_a3',
                     Zu = 'App_backButton_5d',
                     Ju = 'App_header_79',
@@ -2840,7 +2841,7 @@
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
-                let Ve, Xe, $e, je, qe, Ye, ze;
+                let Ve, Xe, $e, je, Ye, qe, ze;
                 (!(function (u) {
                     ((u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -2896,6 +2897,7 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
+                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
@@ -2936,7 +2938,6 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
-                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -2977,10 +2978,10 @@
                             (u.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(qe || (qe = {})),
+                    })(Ye || (Ye = {})),
                     (function (u) {
                         u.BATTLE_BOOSTER = 'battleBooster';
-                    })(Ye || (Ye = {})),
+                    })(qe || (qe = {})),
                     (function (u) {
                         ((u.BATTLE_BOOSTER = 'battleBooster'),
                             (u.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
@@ -3377,39 +3378,39 @@
                         const A = ((u) => {
                                 if (void 0 === u) return null;
                                 switch (u) {
-                                    case qe.BATTLE_BOOSTER:
-                                    case qe.BATTLE_BOOSTER_REPLACE:
-                                        return Ye.BATTLE_BOOSTER;
+                                    case Ye.BATTLE_BOOSTER:
+                                    case Ye.BATTLE_BOOSTER_REPLACE:
+                                        return qe.BATTLE_BOOSTER;
                                 }
                             })(a),
                             d = ((u) => {
                                 if (void 0 === u) return null;
                                 switch (u) {
-                                    case qe.BATTLE_BOOSTER:
+                                    case Ye.BATTLE_BOOSTER:
                                         return ze.BATTLE_BOOSTER;
-                                    case qe.BATTLE_BOOSTER_REPLACE:
+                                    case Ye.BATTLE_BOOSTER_REPLACE:
                                         return ze.BATTLE_BOOSTER_REPLACE;
-                                    case qe.BUILT_IN_EQUIPMENT:
+                                    case Ye.BUILT_IN_EQUIPMENT:
                                         return ze.BUILT_IN_EQUIPMENT;
-                                    case qe.EQUIPMENT_PLUS:
+                                    case Ye.EQUIPMENT_PLUS:
                                         return ze.EQUIPMENT_PLUS;
-                                    case qe.EQUIPMENT_TROPHY_BASIC:
+                                    case Ye.EQUIPMENT_TROPHY_BASIC:
                                         return ze.EQUIPMENT_TROPHY_BASIC;
-                                    case qe.EQUIPMENT_TROPHY_UPGRADED:
+                                    case Ye.EQUIPMENT_TROPHY_UPGRADED:
                                         return ze.EQUIPMENT_TROPHY_UPGRADED;
-                                    case qe.EQUIPMENT_MODERNIZED_UPGRADED_1:
+                                    case Ye.EQUIPMENT_MODERNIZED_UPGRADED_1:
                                         return ze.EQUIPMENT_MODERNIZED_UPGRADED_1;
-                                    case qe.EQUIPMENT_MODERNIZED_UPGRADED_2:
+                                    case Ye.EQUIPMENT_MODERNIZED_UPGRADED_2:
                                         return ze.EQUIPMENT_MODERNIZED_UPGRADED_2;
-                                    case qe.EQUIPMENT_MODERNIZED_UPGRADED_3:
+                                    case Ye.EQUIPMENT_MODERNIZED_UPGRADED_3:
                                         return ze.EQUIPMENT_MODERNIZED_UPGRADED_3;
-                                    case qe.PROGRESSION_STYLE_UPGRADED_1:
+                                    case Ye.PROGRESSION_STYLE_UPGRADED_1:
                                         return ze.PROGRESSION_STYLE_UPGRADED_1;
-                                    case qe.PROGRESSION_STYLE_UPGRADED_2:
+                                    case Ye.PROGRESSION_STYLE_UPGRADED_2:
                                         return ze.PROGRESSION_STYLE_UPGRADED_2;
-                                    case qe.PROGRESSION_STYLE_UPGRADED_3:
+                                    case Ye.PROGRESSION_STYLE_UPGRADED_3:
                                         return ze.PROGRESSION_STYLE_UPGRADED_3;
-                                    case qe.PROGRESSION_STYLE_UPGRADED_4:
+                                    case Ye.PROGRESSION_STYLE_UPGRADED_4:
                                         return ze.PROGRESSION_STYLE_UPGRADED_4;
                                 }
                             })(a),
@@ -3608,8 +3609,8 @@
                     },
                     $t = 'VehicleInfo_base_7e',
                     jt = 'VehicleInfo_mainInfo_e6',
-                    qt = 'VehicleInfo_mainInfoText_98',
-                    Yt = 'VehicleInfo_infoIcon_15',
+                    Yt = 'VehicleInfo_mainInfoText_98',
+                    qt = 'VehicleInfo_infoIcon_15',
                     zt = 'VehicleInfo_vehicleType_df',
                     Kt = 'VehicleInfo_vehicleType__elite_f4',
                     Qt = 'VehicleInfo_descriptionText_24',
@@ -3695,10 +3696,10 @@
                                 n().createElement(
                                     'div',
                                     ir({ className: jt }, t),
-                                    n().createElement(Tu, { className: qt, text: d }),
+                                    n().createElement(Tu, { className: Yt, text: d }),
                                     n().createElement('div', { style: A, className: g()(zt, c.isPremium && Kt) }),
-                                    n().createElement(Tu, { className: qt, text: c.name }),
-                                    n().createElement('div', { className: Yt }),
+                                    n().createElement(Tu, { className: Yt, text: c.name }),
+                                    n().createElement('div', { className: qt }),
                                 ),
                             ),
                             'NotDefined' !== c.roleKey &&

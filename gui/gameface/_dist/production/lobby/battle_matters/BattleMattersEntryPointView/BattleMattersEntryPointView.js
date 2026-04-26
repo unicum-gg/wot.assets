@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (e, t, n) => {
-                n.d(t, { O: () => q });
+                n.d(t, { O: () => $ });
                 var r = {};
                 (n.r(r), n.d(r, { mouse: () => u, onResize: () => c }));
                 var o = {};
@@ -35,7 +35,7 @@
                         displayStatus: () => g,
                         displayStatusIs: () => H,
                         events: () => E,
-                        extraSize: () => W,
+                        extraSize: () => K,
                         forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => L,
                         getBrowserTexturePath: () => C,
@@ -53,7 +53,7 @@
                         setEventHandled: () => z,
                         setInputPaddingsRem: () => A,
                         setSidePaddingsRem: () => T,
-                        whenTutorialReady: () => $,
+                        whenTutorialReady: () => W,
                     }));
                 const c = s('clientResized'),
                     d = { down: s('mousedown'), up: s('mouseup'), move: s('mousemove') };
@@ -263,7 +263,7 @@
                     return viewEnv.getShowingStatus();
                 }
                 const H = Object.keys(g).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === g[t]), e), {}),
-                    W = {
+                    K = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -271,13 +271,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    $ = Promise.all([
+                    W = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : E.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    q = { view: a, client: o };
+                    $ = { view: a, client: o };
             },
             521: (e, t, n) => {
                 let r, o;
@@ -304,6 +304,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1275,10 +1276,10 @@
                             );
                         },
                     ),
-                    W = ['onComplete', 'onEndAnimation'];
-                function $() {
+                    K = ['onComplete', 'onEndAnimation'];
+                function W() {
                     return (
-                        ($ =
+                        (W =
                             Object.assign ||
                             function (e) {
                                 for (var t = 1; t < arguments.length; t++) {
@@ -1287,10 +1288,10 @@
                                 }
                                 return e;
                             }),
-                        $.apply(this, arguments)
+                        W.apply(this, arguments)
                     );
                 }
-                const q = (0, r.memo)((e) => {
+                const $ = (0, r.memo)((e) => {
                         let t = e.onComplete,
                             n = e.onEndAnimation,
                             i = (function (e, t) {
@@ -1301,7 +1302,7 @@
                                     i = Object.keys(e);
                                 for (r = 0; r < i.length; r++) ((n = i[r]), t.indexOf(n) >= 0 || (o[n] = e[n]));
                                 return o;
-                            })(e, W);
+                            })(e, K);
                         const a = (0, r.useState)(!1),
                             s = a[0],
                             l = a[1],
@@ -1311,14 +1312,14 @@
                             }, [s, t, n, i.to]);
                         switch (i.animationSettings.type) {
                             case y.Simple:
-                                return o().createElement(x, $({}, i, { onEndAnimation: c, isComplete: s }));
+                                return o().createElement(x, W({}, i, { onEndAnimation: c, isComplete: s }));
                             case y.Growing:
-                                return o().createElement(H, $({}, i, { onEndAnimation: c, isComplete: s }));
+                                return o().createElement(H, W({}, i, { onEndAnimation: c, isComplete: s }));
                             default:
                                 return null;
                         }
                     }),
-                    K = ['onEndAnimation'];
+                    q = ['onEndAnimation'];
                 function Y() {
                     return (
                         (Y =
@@ -1343,7 +1344,7 @@
                                 i = Object.keys(e);
                             for (r = 0; r < i.length; r++) ((n = i[r]), t.indexOf(n) >= 0 || (o[n] = e[n]));
                             return o;
-                        })(e, K);
+                        })(e, q);
                     const i = (0, r.useRef)({}),
                         a = (0, r.useCallback)(() => {
                             ((i.current.from = void 0), t && t());
@@ -1351,7 +1352,7 @@
                         s = 'number' == typeof i.current.from ? i.current.from : n.from;
                     return (
                         (i.current.from = s),
-                        o().createElement(q, Y({}, n, { onEndAnimation: a, key: `${s}-${n.to}`, from: s }))
+                        o().createElement($, Y({}, n, { onEndAnimation: a, key: `${s}-${n.to}`, from: s }))
                     );
                 });
                 function Z() {
@@ -1402,7 +1403,7 @@
                             };
                             return a.withStack
                                 ? o().createElement(X, d)
-                                : o().createElement(q, Z({ key: `${i}-${t}` }, d));
+                                : o().createElement($, Z({ key: `${i}-${t}` }, d));
                         },
                     ),
                     J = (e) => ({

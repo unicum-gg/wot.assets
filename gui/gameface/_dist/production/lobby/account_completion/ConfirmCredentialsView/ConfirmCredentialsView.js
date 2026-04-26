@@ -35,7 +35,7 @@
                         displayStatus: () => B,
                         displayStatusIs: () => $,
                         events: () => d,
-                        extraSize: () => j,
+                        extraSize: () => K,
                         forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => L,
                         getBrowserTexturePath: () => T,
@@ -53,7 +53,7 @@
                         setEventHandled: () => W,
                         setInputPaddingsRem: () => x,
                         setSidePaddingsRem: () => k,
-                        whenTutorialReady: () => K,
+                        whenTutorialReady: () => j,
                     }));
                 const E = i('clientResized'),
                     F = { down: i('mousedown'), up: i('mouseup'), move: i('mousemove') };
@@ -263,7 +263,7 @@
                     return viewEnv.getShowingStatus();
                 }
                 const $ = Object.keys(B).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === B[e]), u), {}),
-                    j = {
+                    K = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -271,7 +271,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    K = Promise.all([
+                    j = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : d.onDomBuilt(u);
                         }),
@@ -304,6 +304,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1084,17 +1085,17 @@
                     );
                 }
                 var $ = t(521);
-                const j = 'default',
-                    K = 'search',
+                const K = 'default',
+                    j = 'search',
                     z = 'email',
-                    q = 'password',
-                    Y = 'normal',
+                    Y = 'password',
+                    q = 'normal',
                     Z = 'disabled',
                     X = 'error',
                     Q = 'medium',
                     J = 'monoSmall',
                     uu = 'monoLarge',
-                    eu = { [j]: 'text', [z]: 'text', [K]: 'text', [q]: 'password' };
+                    eu = { [K]: 'text', [z]: 'text', [j]: 'text', [Y]: 'password' };
                 R.images.gui.maps.icons.components.input;
                 const tu = {
                         base: 'InputControl_base_38',
@@ -1124,9 +1125,9 @@
                         ({
                             componentId: u,
                             value: e = '',
-                            type: t = j,
+                            type: t = K,
                             size: o = Q,
-                            variant: r = Y,
+                            variant: r = q,
                             placeholder: i = '',
                             highlighted: s,
                             withClear: E,
@@ -1231,9 +1232,9 @@
                                     G && tu.base__withIcon,
                                     D,
                                 ),
-                                K = (0, n.useMemo)(() => (l ? { backgroundImage: `url(${l})` } : null), [l]),
+                                j = (0, n.useMemo)(() => (l ? { backgroundImage: `url(${l})` } : null), [l]),
                                 z = S()(tu.input, tu[`input__${t}`], c),
-                                q = S()(tu.icon, tu[`icon__${t}`]),
+                                Y = S()(tu.icon, tu[`icon__${t}`]),
                                 X = S()(tu.placeholder, tu[`placeholder__${t}`]);
                             return a().createElement(
                                 'div',
@@ -1247,7 +1248,7 @@
                                     onClick: V,
                                 },
                                 !O && a().createElement('div', { className: tu.disabled }),
-                                K && a().createElement('div', { style: K, className: q }),
+                                j && a().createElement('div', { style: j, className: Y }),
                                 a().createElement('input', {
                                     ref: M,
                                     className: z,
@@ -1313,7 +1314,7 @@
                                     value: e,
                                     isFocused: o,
                                     highlighted: !0,
-                                    variant: t ? X : Y,
+                                    variant: t ? X : q,
                                     onChange: c,
                                     onKeyUp: d,
                                     onFocus: C,
@@ -1872,7 +1873,7 @@
                     return ((e -= a * Wu), { days: t, hours: n, minutes: a, seconds: e });
                 }
                 let $u;
-                const ju = (u, e) => {
+                const Ku = (u, e) => {
                         const t = (0, n.useState)(u),
                             a = t[0],
                             o = t[1],
@@ -1899,7 +1900,7 @@
                             a
                         );
                     },
-                    Ku = {
+                    ju = {
                         base: 'WarningMessage_base_b9',
                         fadeIn: 'WarningMessage_fadeIn_76',
                         icon: 'WarningMessage_icon_3e',
@@ -1912,14 +1913,14 @@
                     },
                     zu = (0, n.memo)(
                         ({ isLarge: u, text: e, classMix: t, countDown: o = 0, onCountDownComplete: r }) => {
-                            const i = ju(o, 1),
+                            const i = Ku(o, 1),
                                 s = (0, n.useMemo)(() => {
                                     return {
-                                        icon: a().createElement('div', { className: Ku.icon }),
-                                        br: a().createElement('div', { className: Ku.br }),
+                                        icon: a().createElement('div', { className: ju.icon }),
+                                        br: a().createElement('div', { className: ju.br }),
                                         time: a().createElement(
                                             'div',
-                                            { className: Ku.inner },
+                                            { className: ju.inner },
                                             ((u = Gu(i)),
                                             u.days > 7
                                                 ? N(R.strings.common.duration.days(), { days: u.days })
@@ -1947,7 +1948,7 @@
                             (0, n.useEffect)(() => {
                                 o > 0 && 0 === i && r && r();
                             }, [o, i, r]);
-                            const E = S()(Ku.base, u && Ku.base__large);
+                            const E = S()(ju.base, u && ju.base__large);
                             return a().createElement(
                                 'div',
                                 { className: t },
@@ -1955,7 +1956,7 @@
                             );
                         },
                     ),
-                    qu = {
+                    Yu = {
                         base: 'CButton_base_40',
                         base__main: 'CButton_base__main_42',
                         base__primary: 'CButton_base__primary_7f',
@@ -1978,7 +1979,7 @@
                         base__highlightActive: 'CButton_base__highlightActive_b2',
                         content: 'CButton_content_cc',
                     },
-                    Yu = ({
+                    qu = ({
                         children: u,
                         size: e,
                         isFocused: t,
@@ -2041,18 +2042,18 @@
                                 [r, D],
                             ),
                             k = S()(
-                                qu.base,
-                                qu[`base__${o}`],
+                                Yu.base,
+                                Yu[`base__${o}`],
                                 {
-                                    [qu.base__disabled]: r,
-                                    [qu[`base__${e}`]]: e,
-                                    [qu.base__focus]: t,
-                                    [qu.base__highlightActive]: d,
-                                    [qu.base__firstHover]: g,
+                                    [Yu.base__disabled]: r,
+                                    [Yu[`base__${e}`]]: e,
+                                    [Yu.base__focus]: t,
+                                    [Yu.base__highlightActive]: d,
+                                    [Yu.base__firstHover]: g,
                                 },
                                 i,
                             ),
-                            O = S()(qu.state, qu.state__default);
+                            O = S()(Yu.state, Yu.state__default);
                         return (
                             (0, n.useEffect)(
                                 () => (
@@ -2078,26 +2079,26 @@
                                     a().createElement(
                                         a().Fragment,
                                         null,
-                                        a().createElement('div', { className: qu.back }),
-                                        a().createElement('span', { className: qu.texture }),
+                                        a().createElement('div', { className: Yu.back }),
+                                        a().createElement('span', { className: Yu.texture }),
                                     ),
                                 a().createElement(
                                     'span',
                                     { className: O },
-                                    a().createElement('span', { className: qu.stateDisabled }),
-                                    a().createElement('span', { className: qu.stateHighlightHover }),
-                                    a().createElement('span', { className: qu.stateHighlightActive }),
+                                    a().createElement('span', { className: Yu.stateDisabled }),
+                                    a().createElement('span', { className: Yu.stateHighlightHover }),
+                                    a().createElement('span', { className: Yu.stateHighlightActive }),
                                 ),
                                 a().createElement(
                                     'span',
-                                    { className: qu.content, lang: R.strings.settings.LANGUAGE_CODE() },
+                                    { className: Yu.content, lang: R.strings.settings.LANGUAGE_CODE() },
                                     u,
                                 ),
                             )
                         );
                     };
-                Yu.defaultProps = { type: gu.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
-                const Zu = (0, n.memo)(Yu),
+                qu.defaultProps = { type: gu.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                const Zu = (0, n.memo)(qu),
                     Xu = {
                         base: 'WGNPCurtainTemplate_base_33',
                         base__small: 'WGNPCurtainTemplate_base__small_35',
@@ -2229,7 +2230,7 @@
                             onFocusChange: r,
                             buttonLabel: i,
                         }) => {
-                            const s = ju(u),
+                            const s = Ku(u),
                                 E = s > 0,
                                 F = (0, n.useMemo)(
                                     () => ({ timer: a().createElement('div', { className: te }, Math.floor(s)) }),

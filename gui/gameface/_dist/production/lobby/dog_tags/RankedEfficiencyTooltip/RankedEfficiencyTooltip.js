@@ -33,17 +33,17 @@
                         addPreloadTexture: () => b,
                         children: () => E,
                         displayStatus: () => d,
-                        displayStatusIs: () => K,
+                        displayStatusIs: () => G,
                         events: () => l,
                         extraSize: () => H,
-                        forceTriggerMouseMove: () => q,
+                        forceTriggerMouseMove: () => W,
                         freezeTextureBeforeResize: () => S,
                         getBrowserTexturePath: () => y,
-                        getDisplayStatus: () => G,
+                        getDisplayStatus: () => q,
                         getScale: () => N,
                         getSize: () => R,
                         getViewGlobalPosition: () => M,
-                        isEventHandled: () => W,
+                        isEventHandled: () => K,
                         isFocused: () => I,
                         pxToRem: () => L,
                         remToPx: () => x,
@@ -253,16 +253,16 @@
                 function V() {
                     return viewEnv.setEventHandled();
                 }
-                function W() {
+                function K() {
                     return viewEnv.isEventHandled();
                 }
-                function q() {
+                function W() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function G() {
+                function q() {
                     return viewEnv.getShowingStatus();
                 }
-                const K = Object.keys(d).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === d[e]), u), {}),
+                const G = Object.keys(d).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === d[e]), u), {}),
                     H = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -473,6 +473,7 @@
                         (u[(u.DELETE = 46)] = 'DELETE'),
                         (u[(u.TAB = 9)] = 'TAB'),
                         (u[(u.KEY_N = 78)] = 'KEY_N'),
+                        (u[(u.KEY_0 = 48)] = 'KEY_0'),
                         (u[(u.KEY_1 = 49)] = 'KEY_1'),
                         (u[(u.KEY_2 = 50)] = 'KEY_2'),
                         (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -949,9 +950,9 @@
                             ),
                         );
                     },
-                    W = () => t().createElement(C, null, t().createElement(V, null));
+                    K = () => t().createElement(C, null, t().createElement(V, null));
                 engine.whenReady.then(() => {
-                    n().render(t().createElement(W, null), document.getElementById('root'));
+                    n().render(t().createElement(K, null), document.getElementById('root'));
                 });
             },
         },

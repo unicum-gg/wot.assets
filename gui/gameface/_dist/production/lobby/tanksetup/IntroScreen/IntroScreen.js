@@ -335,6 +335,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1243,7 +1244,7 @@
                         }
                     },
                     j = (u, e, t = I.left) => u.split(e).reduce(t === I.left ? z : V, []),
-                    G = (() => {
+                    K = (() => {
                         const u = new RegExp(
                             /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu
                                 .source +
@@ -1264,11 +1265,11 @@
                                 .replace(/ /g, ' ')
                                 .match(u);
                     })(),
-                    K = ['zh_cn', 'zh_sg', 'zh_tw'],
+                    G = ['zh_cn', 'zh_sg', 'zh_tw'],
                     q = (u, e = I.left) => {
                         const t = R.strings.settings.LANGUAGE_CODE().toLowerCase();
-                        return K.includes(t)
-                            ? G(u)
+                        return G.includes(t)
+                            ? K(u)
                             : ((u, e = I.left) => {
                                   let t = [];
                                   const i =
@@ -1277,8 +1278,8 @@
                                   return (j(n, /( )/, e).forEach((u) => (t = t.concat(j(u, i, I.left)))), t);
                               })(u, e);
                     },
-                    $ = 'FormatText_base_d0',
-                    Y = ({ binding: u, text: e = '', classMix: t, alignment: E = I.left }) =>
+                    Y = 'FormatText_base_d0',
+                    $ = ({ binding: u, text: e = '', classMix: t, alignment: E = I.left }) =>
                         null === e
                             ? (console.error("FormatText was supplied with 'null'"), null)
                             : n().createElement(
@@ -1287,7 +1288,7 @@
                                   e.split('\n').map((e, a) =>
                                       n().createElement(
                                           'div',
-                                          { className: k()($, t), key: `${e}-${a}` },
+                                          { className: k()(Y, t), key: `${e}-${a}` },
                                           ((u, e, t) =>
                                               u
                                                   .split(/%\((.*?)\)(?:[sd])?/g)
@@ -1405,7 +1406,7 @@
                             { title: u },
                             n().createElement(J, {
                                 image: n().createElement('div', { className: iu }),
-                                description: n().createElement(Y, { classMix: tu, text: e, binding: t }),
+                                description: n().createElement($, { classMix: tu, text: e, binding: t }),
                             }),
                         );
                     },

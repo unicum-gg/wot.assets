@@ -357,6 +357,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -2392,7 +2393,7 @@
                     );
                 let Gu, ju;
                 (!(function (u) {
-                    ((u.Small = 'x5'), (u.Medium = 'x10'), (u.Big = 'x15'));
+                    ((u.Small = 'x2'), (u.Medium = 'x3'), (u.Big = 'x5'));
                 })(Gu || (Gu = {})),
                     (function (u) {
                         ((u.Defence = 'defence'), (u.Offence = 'offence'));

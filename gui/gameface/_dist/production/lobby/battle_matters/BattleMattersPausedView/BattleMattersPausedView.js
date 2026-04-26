@@ -49,9 +49,9 @@
                         addPreloadTexture: () => O,
                         children: () => i,
                         displayStatus: () => v,
-                        displayStatusIs: () => V,
+                        displayStatusIs: () => K,
                         events: () => w,
-                        extraSize: () => z,
+                        extraSize: () => V,
                         forceTriggerMouseMove: () => B,
                         freezeTextureBeforeResize: () => P,
                         getBrowserTexturePath: () => A,
@@ -69,7 +69,7 @@
                         setEventHandled: () => F,
                         setInputPaddingsRem: () => y,
                         setSidePaddingsRem: () => H,
-                        whenTutorialReady: () => K,
+                        whenTutorialReady: () => z,
                     }));
                 const d = s('clientResized'),
                     c = { down: s('mousedown'), up: s('mouseup'), move: s('mousemove') };
@@ -278,8 +278,8 @@
                 function j() {
                     return viewEnv.getShowingStatus();
                 }
-                const V = Object.keys(v).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === v[t]), e), {}),
-                    z = {
+                const K = Object.keys(v).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === v[t]), e), {}),
+                    V = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -287,7 +287,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    K = Promise.all([
+                    z = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : w.onDomBuilt(e);
                         }),
@@ -321,6 +321,7 @@
                             (e[(e.DELETE = 46)] = 'DELETE'),
                             (e[(e.TAB = 9)] = 'TAB'),
                             (e[(e.KEY_N = 78)] = 'KEY_N'),
+                            (e[(e.KEY_0 = 48)] = 'KEY_0'),
                             (e[(e.KEY_1 = 49)] = 'KEY_1'),
                             (e[(e.KEY_2 = 50)] = 'KEY_2'),
                             (e[(e.KEY_3 = 51)] = 'KEY_3'),
@@ -1229,14 +1230,14 @@
                 };
                 B.defaultProps = { type: F.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const j = (0, a.memo)(B);
-                var V = r(521);
+                var K = r(521);
                 r(364);
-                const z = (e) => {
+                const V = (e) => {
                     console.error(e.type + ': useKeydownListener hook :: Callback is not defined');
                 };
-                function K(e = V.n.NONE, t = z, r = !1) {
+                function z(e = K.n.NONE, t = V, r = !1) {
                     (0, a.useEffect)(() => {
-                        if (e !== V.n.NONE)
+                        if (e !== K.n.NONE)
                             return (
                                 window.addEventListener('keydown', a, r),
                                 () => {
@@ -1525,7 +1526,7 @@
                         var a;
                         return (
                             (a = t.gotoHangar),
-                            K(V.n.ESCAPE, a),
+                            z(K.n.ESCAPE, a),
                             n().createElement(
                                 'div',
                                 { className: f()(ie, r.isLoaded.get() && oe) },

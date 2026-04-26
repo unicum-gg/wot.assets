@@ -396,6 +396,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1253,7 +1254,7 @@
                             })(o, l, r),
                         );
                     };
-                class $ extends E().PureComponent {
+                class Y extends E().PureComponent {
                     render() {
                         let u;
                         u = 'gold' === this.props.format ? X.B3.GOLD : X.B3.INTEGRAL;
@@ -1261,19 +1262,19 @@
                         return void 0 !== this.props.value && void 0 !== e ? e : null;
                     }
                 }
-                function q(u) {
+                function $(u) {
                     engine.call('PlaySound', u);
                 }
-                $.defaultProps = { format: 'integral' };
-                const Y = {
+                Y.defaultProps = { format: 'integral' };
+                const q = {
                     playHighlight() {
-                        q('highlight');
+                        $('highlight');
                     },
                     playClick() {
-                        q('play');
+                        $('play');
                     },
                     playYes() {
-                        q('yes1');
+                        $('yes1');
                     },
                 };
                 var Q = t(3282),
@@ -1968,7 +1969,7 @@
                             i = a.oldRoverQueue,
                             F = a.newRoverQueue,
                             D = (0, r.useCallback)(() => {
-                                (Y.playYes(), t.onLeave());
+                                (q.playYes(), t.onLeave());
                             }, [t]);
                         var l;
                         return (
@@ -2013,7 +2014,7 @@
                                             { className: 'QueueViewApp_playersInQueue_ec' },
                                             Vu.playersInQueue(),
                                         ),
-                                        E().createElement('div', { className: Pu }, E().createElement($, { value: A })),
+                                        E().createElement('div', { className: Pu }, E().createElement(Y, { value: A })),
                                     ),
                                     E().createElement(
                                         'div',
@@ -2027,7 +2028,7 @@
                                             }),
                                             E().createElement(wu, { text: Vu.newRoverName(), className: Wu }),
                                         ),
-                                        E().createElement('div', { className: Pu }, E().createElement($, { value: F })),
+                                        E().createElement('div', { className: Pu }, E().createElement(Y, { value: F })),
                                     ),
                                     E().createElement('div', { className: 'QueueViewApp_divider_79' }),
                                     E().createElement(
@@ -2042,7 +2043,7 @@
                                             }),
                                             E().createElement(wu, { text: Vu.oldRoverName(), className: Wu }),
                                         ),
-                                        E().createElement('div', { className: Pu }, E().createElement($, { value: i })),
+                                        E().createElement('div', { className: Pu }, E().createElement(Y, { value: i })),
                                     ),
                                     E().createElement(
                                         'div',
@@ -2086,7 +2087,7 @@
                                                         {
                                                             className: 'QueueViewApp_leaveButton_ae',
                                                             onMouseEnter: () => {
-                                                                Y.playHighlight();
+                                                                q.playHighlight();
                                                             },
                                                             onClick: D,
                                                         },

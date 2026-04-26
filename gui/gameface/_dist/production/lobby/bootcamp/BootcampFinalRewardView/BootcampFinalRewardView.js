@@ -51,7 +51,7 @@
                         displayStatus: () => B,
                         displayStatusIs: () => $,
                         events: () => C,
-                        extraSize: () => j,
+                        extraSize: () => K,
                         forceTriggerMouseMove: () => G,
                         freezeTextureBeforeResize: () => R,
                         getBrowserTexturePath: () => L,
@@ -69,7 +69,7 @@
                         setEventHandled: () => I,
                         setInputPaddingsRem: () => x,
                         setSidePaddingsRem: () => M,
-                        whenTutorialReady: () => K,
+                        whenTutorialReady: () => j,
                     }));
                 const F = E('clientResized'),
                     s = { down: E('mousedown'), up: E('mouseup'), move: E('mousemove') };
@@ -279,7 +279,7 @@
                     return viewEnv.getShowingStatus();
                 }
                 const $ = Object.keys(B).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === B[e]), u), {}),
-                    j = {
+                    K = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -287,7 +287,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    K = Promise.all([
+                    j = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : C.onDomBuilt(u);
                         }),
@@ -321,6 +321,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1249,7 +1250,7 @@
                         'gum',
                     );
                 })();
-                let j;
+                let K;
                 !(function (u) {
                     ((u.SHORT_DATE = 'short-date'),
                         (u.SHORT_TIME = 'short-time'),
@@ -1264,8 +1265,8 @@
                         (u.WEEK_DAY_TIME = 'week-day-time'),
                         (u.YEAR = 'year'),
                         (u.DATE_YEAR = 'date-year'));
-                })(j || (j = {}));
-                var K = t(364);
+                })(K || (K = {}));
+                var j = t(364);
                 Date.now();
                 const z = (u = 1) => {
                         const e = new Error().stack;
@@ -1312,7 +1313,7 @@
                         }
                         return '';
                     },
-                    J = K.Sw.instance;
+                    J = j.Sw.instance;
                 let uu;
                 !(function (u) {
                     ((u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep'));
@@ -1366,7 +1367,7 @@
                         s
                     );
                 };
-                K.Sw.instance;
+                j.Sw.instance;
                 var tu = t(521);
                 const au = (u) => {
                     console.error(u.type + ': useKeydownListener hook :: Callback is not defined');

@@ -81,9 +81,9 @@
                         addPreloadTexture: () => f,
                         children: () => n,
                         displayStatus: () => l,
-                        displayStatusIs: () => H,
+                        displayStatusIs: () => K,
                         events: () => d,
-                        extraSize: () => K,
+                        extraSize: () => H,
                         forceTriggerMouseMove: () => $,
                         freezeTextureBeforeResize: () => x,
                         getBrowserTexturePath: () => k,
@@ -310,8 +310,8 @@
                 function z() {
                     return viewEnv.getShowingStatus();
                 }
-                const H = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
-                    K = {
+                const K = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
+                    H = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -352,6 +352,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1041,8 +1042,8 @@
                     q = 'Modification_base__selected_09',
                     $ = 'Modification_icon_13',
                     z = 'Modification_checkMarkWrapper_8b',
-                    H = 'Modification_checkmark_ed',
-                    K = 'Modification_bottomHighlight_6a',
+                    K = 'Modification_checkmark_ed',
+                    H = 'Modification_bottomHighlight_6a',
                     W = R.images.gui.maps.icons.vehPostProgression.actionItems.pairModifications.c_120x120,
                     G = ({ isReceived: u, isSelected: e, model: t }) => {
                         const n = U()(I, e && q),
@@ -1063,8 +1064,8 @@
                                     A().createElement(
                                         'div',
                                         { className: z },
-                                        A().createElement('div', { className: K }),
                                         A().createElement('div', { className: H }),
+                                        A().createElement('div', { className: K }),
                                     ),
                             ),
                         );

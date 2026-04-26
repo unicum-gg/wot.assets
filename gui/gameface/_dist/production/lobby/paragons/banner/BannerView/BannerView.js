@@ -400,6 +400,7 @@
                             (u[(u.DELETE = 46)] = 'DELETE'),
                             (u[(u.TAB = 9)] = 'TAB'),
                             (u[(u.KEY_N = 78)] = 'KEY_N'),
+                            (u[(u.KEY_0 = 48)] = 'KEY_0'),
                             (u[(u.KEY_1 = 49)] = 'KEY_1'),
                             (u[(u.KEY_2 = 50)] = 'KEY_2'),
                             (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1178,7 +1179,7 @@
                                 : a().createElement(u, e),
                         );
                     },
-                    $ = {
+                    K = {
                         mt__XS: 'Box_mt__XS_0c',
                         mt__SM: 'Box_mt__SM_eb',
                         mt__SMp: 'Box_mt__SMp_cf',
@@ -1208,7 +1209,7 @@
                         ml__LG: 'Box_ml__LG_39',
                         ml__XL: 'Box_ml__XL_4a',
                     },
-                    K = [
+                    $ = [
                         'className',
                         'width',
                         'height',
@@ -1252,13 +1253,13 @@
                 }
                 Object.keys(I());
                 const q = {
-                        XL: { mt: $.mt__XL, mr: $.mr__XL, mb: $.mb__XL, ml: $.ml__XL },
-                        LG: { mt: $.mt__LG, mr: $.mr__LG, mb: $.mb__LG, ml: $.ml__LG },
-                        MDp: { mt: $.mt__MDp, mr: $.mr__MDp, mb: $.mb__MDp, ml: $.ml__MDp },
-                        MD: { mt: $.mt__MD, mr: $.mr__MD, mb: $.mb__MD, ml: $.ml__MD },
-                        SMp: { mt: $.mt__SMp, mr: $.mr__SMp, mb: $.mb__SMp, ml: $.ml__SMp },
-                        SM: { mt: $.mt__SM, mr: $.mr__SM, mb: $.mb__SM, ml: $.ml__SM },
-                        XS: { mt: $.mt__XS, mr: $.mr__XS, mb: $.mb__XS, ml: $.ml__XS },
+                        XL: { mt: K.mt__XL, mr: K.mr__XL, mb: K.mb__XL, ml: K.ml__XL },
+                        LG: { mt: K.mt__LG, mr: K.mr__LG, mb: K.mb__LG, ml: K.ml__LG },
+                        MDp: { mt: K.mt__MDp, mr: K.mr__MDp, mb: K.mb__MDp, ml: K.ml__MDp },
+                        MD: { mt: K.mt__MD, mr: K.mr__MD, mb: K.mb__MD, ml: K.ml__MD },
+                        SMp: { mt: K.mt__SMp, mr: K.mr__SMp, mb: K.mb__SMp, ml: K.ml__SMp },
+                        SM: { mt: K.mt__SM, mr: K.mr__SM, mb: K.mb__SM, ml: K.ml__SM },
+                        XS: { mt: K.mt__XS, mr: K.mr__XS, mb: K.mb__XS, ml: K.ml__XS },
                     },
                     V = (Object.keys(q), ['mt', 'mr', 'mb', 'ml']),
                     Y = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
@@ -1313,7 +1314,7 @@
                                     E = Object.keys(u);
                                 for (r = 0; r < E.length; r++) ((t = E[r]), e.indexOf(t) >= 0 || (a[t] = u[t]));
                                 return a;
-                            })(u, K);
+                            })(u, $);
                         const W = (0, r.useMemo)(() => {
                                 const u = { mt: i, mr: D, mb: l, ml: B },
                                     e = ((u) =>
@@ -1343,7 +1344,7 @@
                             }, [t, E, i, D, l, B, k, P, L, m, O, f, S]),
                             G = W.computedStyle,
                             U = W.computedClassNames;
-                        return a().createElement('div', z({ className: h()($.base, ...U, e), style: G }, I), N);
+                        return a().createElement('div', z({ className: h()(K.base, ...U, e), style: G }, I), N);
                     });
                 let Q;
                 !(function (u) {
@@ -1950,7 +1951,7 @@
                                 switch (c) {
                                     case 'play':
                                         return (function () {
-                                            const u = Ku(o, s, E),
+                                            const u = $u(o, s, E),
                                                 e = Xu(o, s),
                                                 r = window.setInterval(() => {
                                                     const a = e(),
@@ -1972,7 +1973,7 @@
                                             const u = 0 === o && h ? { path: h, x: 0, y: 0 } : E(o),
                                                 e = new Image();
                                             e.src = u.path;
-                                            const r = () => t($u(u, e));
+                                            const r = () => t(Ku(u, e));
                                             return (
                                                 e.addEventListener('load', r),
                                                 () => e.removeEventListener('load', r)
@@ -1992,14 +1993,14 @@
                             return ((t += 1), t > e && (t = u), r);
                         };
                     },
-                    $u = (u, e) => Object.assign({}, u, { img: e }),
-                    Ku = (u, e, t) => {
+                    Ku = (u, e) => Object.assign({}, u, { img: e }),
+                    $u = (u, e, t) => {
                         const r = new Map(),
                             a = {};
                         for (let E = u; E <= e; E++) {
                             const u = t(E),
                                 e = a[u.path];
-                            if (e) r.set(E, $u(u, e));
+                            if (e) r.set(E, Ku(u, e));
                             else {
                                 const e = new Image();
                                 ((a[u.path] = e),
@@ -2011,7 +2012,7 @@
                                             `(${u.x},${u.y})`,
                                         );
                                     }),
-                                    r.set(E, $u(u, e)));
+                                    r.set(E, Ku(u, e)));
                             }
                         }
                         return r;

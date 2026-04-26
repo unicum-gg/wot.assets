@@ -532,6 +532,7 @@
                         (u[(u.DELETE = 46)] = 'DELETE'),
                         (u[(u.TAB = 9)] = 'TAB'),
                         (u[(u.KEY_N = 78)] = 'KEY_N'),
+                        (u[(u.KEY_0 = 48)] = 'KEY_0'),
                         (u[(u.KEY_1 = 49)] = 'KEY_1'),
                         (u[(u.KEY_2 = 50)] = 'KEY_2'),
                         (u[(u.KEY_3 = 51)] = 'KEY_3'),
@@ -1163,9 +1164,9 @@
                         (u.YEAR = 'year'),
                         (u.DATE_YEAR = 'date-year'));
                 })(V || (V = {}));
-                var j = t(596);
+                var K = t(596);
                 Date.now();
-                const K = (u = 1) => {
+                const j = (u = 1) => {
                         const e = new Error().stack;
                         let t,
                             E = R.invalid('resId');
@@ -1190,7 +1191,7 @@
                             }))(u, (u, e) => `${u}.${e}.value`),
                     Q = (u) => {
                         const e = ((u) => {
-                                const e = K(),
+                                const e = j(),
                                     t = e.caller,
                                     E = e.resId,
                                     A = window.__feature && window.__feature !== t && t ? `subViews.${t}` : '';
@@ -1210,7 +1211,7 @@
                         }
                         return '';
                     },
-                    J = j.Sw.instance;
+                    J = K.Sw.instance;
                 let uu;
                 !(function (u) {
                     ((u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep'));
@@ -1218,7 +1219,7 @@
                 const eu = (u = 'model', e = uu.Deep) => {
                     const t = (0, E.useState)(0),
                         A = (t[0], t[1]),
-                        F = (0, E.useMemo)(() => K(), []),
+                        F = (0, E.useMemo)(() => j(), []),
                         r = F.caller,
                         a = F.resId,
                         D = (0, E.useMemo)(
@@ -1264,13 +1265,13 @@
                         n
                     );
                 };
-                j.Sw.instance;
+                K.Sw.instance;
                 class tu extends A().PureComponent {
                     render() {
                         let u;
-                        if ('gold' === this.props.format) u = j.B3.GOLD;
-                        else u = j.B3.INTEGRAL;
-                        const e = j.Z5.getNumberFormat(this.props.value, u);
+                        if ('gold' === this.props.format) u = K.B3.GOLD;
+                        else u = K.B3.INTEGRAL;
+                        const e = K.Z5.getNumberFormat(this.props.value, u);
                         return void 0 !== this.props.value && void 0 !== e ? e : null;
                     }
                 }
