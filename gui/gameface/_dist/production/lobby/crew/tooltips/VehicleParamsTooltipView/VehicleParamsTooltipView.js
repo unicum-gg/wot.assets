@@ -953,7 +953,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = g(r.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = g(r.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -1635,7 +1635,7 @@
                     hu = (u, e, t, n) => {
                         let r = e.exec(u),
                             o = 0;
-                        for (; r; ) (o !== r.index && t(u.slice(o, r.index)), n(r), (o = e.lastIndex), (r = e.exec(u)));
+                        for (; r;) (o !== r.index && t(u.slice(o, r.index)), n(r), (o = e.lastIndex), (r = e.exec(u)));
                         o !== u.length && t(u.slice(o));
                     },
                     vu = (u) => {
@@ -1644,7 +1644,7 @@
                         if (!t) return [u];
                         const n = [];
                         let r = 0;
-                        for (; t; ) (n.push(u.slice(r, e.lastIndex)), (r = e.lastIndex), (t = e.exec(u)));
+                        for (; t;) (n.push(u.slice(r, e.lastIndex)), (r = e.lastIndex), (t = e.exec(u)));
                         return (r !== u.length && n.push(u.slice(r)), n);
                     },
                     gu = (u, e = '') => {
@@ -1815,7 +1815,7 @@
                             l = ((u, e) => {
                                 let t = 0,
                                     n = u.length - 1;
-                                for (; n - t >= 0; ) {
+                                for (; n - t >= 0;) {
                                     const r = t + Math.ceil(0.5 * (n - t));
                                     yu(u[r], e) ? (n = r - 1) : (t = r + 1);
                                 }

@@ -477,7 +477,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, F = ru(E.keys()); !(u = F()).done; ) D(u.value, e);
+                                                        for (var u, F = ru(E.keys()); !(u = F()).done;) D(u.value, e);
                                                     },
                                                     unsubscribe: D,
                                                 };
@@ -717,7 +717,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let F = Iu.length - 1; F >= 0; F--)
-                                      for (; u >= Iu[F]; ) ((e += Nu[F]), (u -= Iu[F]));
+                                      for (; u >= Iu[F];) ((e += Nu[F]), (u -= Iu[F]));
                                   return e;
                               })(u),
                     Vu = {
@@ -754,7 +754,7 @@
                         let D = Gu.exec(u),
                             t = u,
                             B = 0;
-                        for (; D; ) {
+                        for (; D;) {
                             const F = D[0],
                                 C = Hu.exec(F),
                                 n = $u.exec(F),

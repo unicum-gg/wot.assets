@@ -17,7 +17,7 @@
                 n.defaultProps = { format: 'integral' };
             },
             2862: (u, e, t) => {
-                let E, A, F, n, o, i, r;
+                let E, A, F, n, o, i, r, s;
                 (t.d(e, { E4: () => E }),
                     (function (u) {
                         ((u.Items = 'items'),
@@ -74,7 +74,6 @@
                             (u.VehicleSelect = 'vehicleSelect'),
                             (u.StyleProgress = 'styleProgress'),
                             (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (u.LootBoxToken = 'lootBoxToken'),
                             (u.GoldenTicket = 'birthday2025_golden_ticket'),
                             (u.PostStamp = 'giftsystem_4_stamp'),
@@ -115,6 +114,7 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
+                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -173,7 +173,10 @@
                             (u.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(r || (r = {})));
+                    })(r || (r = {})),
+                    (function (u) {
+                        ((u.Small = '400x300'), (u.Big = '600x450'));
+                    })(s || (s = {})));
             },
             729: (u, e, t) => {
                 (t(2372), t(6179));
@@ -394,14 +397,14 @@
                         displayStatusIs: () => T,
                         events: () => F.U,
                         extraSize: () => b,
-                        forceTriggerMouseMove: () => w,
+                        forceTriggerMouseMove: () => h,
                         freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => r,
                         getDisplayStatus: () => P,
                         getScale: () => l,
                         getSize: () => a,
                         getViewGlobalPosition: () => C,
-                        isEventHandled: () => h,
+                        isEventHandled: () => w,
                         isFocused: () => p,
                         pxToRem: () => c,
                         remToPx: () => d,
@@ -463,10 +466,10 @@
                 function v() {
                     return viewEnv.setEventHandled();
                 }
-                function h() {
+                function w() {
                     return viewEnv.isEventHandled();
                 }
-                function w() {
+                function h() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function P() {
@@ -906,11 +909,11 @@
                     v = (u, e) => {
                         u.keyCode === B.n.ESCAPE && e();
                     };
-                var h = t(7572);
-                const w = A.instance,
+                var w = t(7572);
+                const h = A.instance,
                     P = {
                         DataTracker: F.Z,
-                        ViewModel: h.Z,
+                        ViewModel: w.Z,
                         ViewEventType: i,
                         NumberFormatType: r,
                         RealFormatType: s,
@@ -987,7 +990,7 @@
                                 }
                             return t;
                         },
-                        ClickOutsideManager: w,
+                        ClickOutsideManager: h,
                         SystemLocale: n,
                         UserLocale: o,
                     };

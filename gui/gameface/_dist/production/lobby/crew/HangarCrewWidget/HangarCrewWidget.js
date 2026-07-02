@@ -489,9 +489,13 @@
                         if (t.mediumWidth && A) return (0, a.H)(u, t, h);
                         if (t.smallWidth && F) return (0, a.H)(u, t, h);
                         if (t.extraSmallWidth && D) return (0, a.H)(u, t, h);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && g) return u;
                             if (t.largeHeight && C) return u;
                             if (t.mediumHeight && B) return u;
@@ -1352,7 +1356,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, t = a(s.keys()); !(e = t()).done; ) {
+                            for (var e, t = a(s.keys()); !(e = t()).done;) {
                                 o(e.value, u);
                             }
                         },
@@ -4347,7 +4351,7 @@
                         (this._observers.set(e, e),
                             1 === this._observers.size &&
                                 (this._intervalID = window.setInterval(() => {
-                                    for (var e, u = Ju(this._observers.values()); !(e = u()).done; ) {
+                                    for (var e, u = Ju(this._observers.values()); !(e = u()).done;) {
                                         (0, e.value)();
                                     }
                                 }, 5e3)));
@@ -4554,7 +4558,7 @@
                                         r = a > 1 ? 16 : 24;
                                     let i = 2,
                                         s = r;
-                                    for (; (t - (r + i)) / (s + i) < Math.floor((e - 1) / a); ) i > 0 ? i-- : s--;
+                                    for (; (t - (r + i)) / (s + i) < Math.floor((e - 1) / a);) i > 0 ? i-- : s--;
                                     return (
                                         (n = Math.min(n, 1 + Math.floor((t - r) / (s + i)))),
                                         s !== r && (i = s - r),

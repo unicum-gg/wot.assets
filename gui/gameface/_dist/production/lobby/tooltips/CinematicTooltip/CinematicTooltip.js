@@ -797,15 +797,13 @@
                             if (t.mediumWidth && C) return iu(e, t, _);
                             if (t.smallWidth && l) return iu(e, t, _);
                             if (t.extraSmallWidth && o) return iu(e, t, _);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && m) return e;
                                 if (t.largeHeight && s) return e;
                                 if (t.mediumHeight && d) return e;

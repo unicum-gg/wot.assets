@@ -262,15 +262,13 @@
                             if (u.mediumWidth && A) return (0, n.H)(t, u, h);
                             if (u.smallWidth && p) return (0, n.H)(t, u, h);
                             if (u.extraSmallWidth && B) return (0, n.H)(t, u, h);
-                            if (
-                                !(
-                                    u.extraLargeWidth ||
-                                    u.largeWidth ||
-                                    u.mediumWidth ||
-                                    u.smallWidth ||
-                                    u.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                u.extraLargeWidth ||
+                                u.largeWidth ||
+                                u.mediumWidth ||
+                                u.smallWidth ||
+                                u.extraSmallWidth
+                            )) {
                                 if (u.extraLargeHeight && g) return t;
                                 if (u.largeHeight && F) return t;
                                 if (u.mediumHeight && D) return t;
@@ -5243,7 +5241,7 @@
                         let r = Au.exec(e),
                             s = e,
                             l = 0;
-                        for (; r; ) {
+                        for (; r;) {
                             const u = r[0],
                                 a = pu.exec(u),
                                 c = Bu.exec(u),
@@ -6912,73 +6910,72 @@
             },
             6620: (e, t, u) => {
                 'use strict';
-                u.d(t, { s: () => R });
+                u.d(t, { s: () => k });
                 var o = u(6179),
                     n = u.n(o);
-                let r, a, i, s, l, c, d;
-                var m, _, E, A, p;
-                (((p = r || (r = {})).Items = 'items'),
-                    (p.Equipment = 'equipment'),
-                    (p.Xp = 'xp'),
-                    (p.XpFactor = 'xpFactor'),
-                    (p.Blueprints = 'blueprints'),
-                    (p.BlueprintsAny = 'blueprintsAny'),
-                    (p.Goodies = 'goodies'),
-                    (p.Berths = 'berths'),
-                    (p.Slots = 'slots'),
-                    (p.Tokens = 'tokens'),
-                    (p.CrewSkins = 'crewSkins'),
-                    (p.CrewBooks = 'crewBooks'),
-                    (p.Customizations = 'customizations'),
-                    (p.CreditsFactor = 'creditsFactor'),
-                    (p.Currency = 'currency'),
-                    (p.TankmenXp = 'tankmenXP'),
-                    (p.TankmenXpFactor = 'tankmenXPFactor'),
-                    (p.FreeXpFactor = 'freeXPFactor'),
-                    (p.BattleToken = 'battleToken'),
-                    (p.PremiumUniversal = 'premium_universal'),
-                    (p.Gold = 'gold'),
-                    (p.Credits = 'credits'),
-                    (p.Crystal = 'crystal'),
-                    (p.FreeXp = 'freeXP'),
-                    (p.Premium = 'premium'),
-                    (p.PremiumPlus = 'premium_plus'),
-                    (p.BattlePassPoints = 'battlePassPoints'),
-                    (p.BattlePassSelectToken = 'battlePassSelectToken'),
-                    (p.SelectableBonus = 'selectableBonus'),
-                    (p.StyleProgressToken = 'styleProgressToken'),
-                    (p.TmanToken = 'tmanToken'),
-                    (p.NaturalCover = 'naturalCover'),
-                    (p.BpCoin = 'bpcoin'),
-                    (p.BattlaPassFinalAchievement = 'dossier_achievement'),
-                    (p.BattleBadge = 'dossier_badge'),
-                    (p.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
-                    (p.NewYearFillers = 'ny22Fillers'),
-                    (p.NewYearInvoice = 'newYearInvoice'),
-                    (p.NewYearToyFragments = 'ny22ToyFragments'),
-                    (p.NewYearSlot = 'newYearSlot'),
-                    (p.BonusX5 = 'battle_bonus_x5'),
-                    (p.CrewBonusX3 = 'crew_bonus_x3'),
-                    (p.Vehicles = 'vehicles'),
-                    (p.EpicSelectToken = 'epicSelectToken'),
-                    (p.CollectionItem = 'collectionItem'),
-                    (p.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
-                    (p.Comp7TokenCouponReward = 'comp7TokenCouponReward'),
-                    (p.BattleBoosterGift = 'battleBooster_gift'),
-                    (p.CosmicLootboxSilver = 'lootBoxToken'),
-                    (p.CosmicLootboxCommon = 'cosmic_2024_2'),
-                    (p.Branch = 'branch'),
-                    (p.VehicleSelect = 'vehicleSelect'),
-                    (p.StyleProgress = 'styleProgress'),
-                    (p.ParagonsUnlocks = 'paragonsUnlocks'),
-                    (p.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
-                    (p.LootBoxToken = 'lootBoxToken'),
-                    (p.GoldenTicket = 'birthday2025_golden_ticket'),
-                    (p.PostStamp = 'giftsystem_4_stamp'),
-                    (p.Quests = 'quests'),
-                    (p.ArmoryCoin = 'armory_coin'),
-                    (p.PremiumPlusUniversal = 'premium_plus_universal'),
-                    (p.DogTagType = 'dogTagComponents'),
+                let r, a, i, s, l, c, d, m;
+                var _, E, A, p, B;
+                (((B = r || (r = {})).Items = 'items'),
+                    (B.Equipment = 'equipment'),
+                    (B.Xp = 'xp'),
+                    (B.XpFactor = 'xpFactor'),
+                    (B.Blueprints = 'blueprints'),
+                    (B.BlueprintsAny = 'blueprintsAny'),
+                    (B.Goodies = 'goodies'),
+                    (B.Berths = 'berths'),
+                    (B.Slots = 'slots'),
+                    (B.Tokens = 'tokens'),
+                    (B.CrewSkins = 'crewSkins'),
+                    (B.CrewBooks = 'crewBooks'),
+                    (B.Customizations = 'customizations'),
+                    (B.CreditsFactor = 'creditsFactor'),
+                    (B.Currency = 'currency'),
+                    (B.TankmenXp = 'tankmenXP'),
+                    (B.TankmenXpFactor = 'tankmenXPFactor'),
+                    (B.FreeXpFactor = 'freeXPFactor'),
+                    (B.BattleToken = 'battleToken'),
+                    (B.PremiumUniversal = 'premium_universal'),
+                    (B.Gold = 'gold'),
+                    (B.Credits = 'credits'),
+                    (B.Crystal = 'crystal'),
+                    (B.FreeXp = 'freeXP'),
+                    (B.Premium = 'premium'),
+                    (B.PremiumPlus = 'premium_plus'),
+                    (B.BattlePassPoints = 'battlePassPoints'),
+                    (B.BattlePassSelectToken = 'battlePassSelectToken'),
+                    (B.SelectableBonus = 'selectableBonus'),
+                    (B.StyleProgressToken = 'styleProgressToken'),
+                    (B.TmanToken = 'tmanToken'),
+                    (B.NaturalCover = 'naturalCover'),
+                    (B.BpCoin = 'bpcoin'),
+                    (B.BattlaPassFinalAchievement = 'dossier_achievement'),
+                    (B.BattleBadge = 'dossier_badge'),
+                    (B.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
+                    (B.NewYearFillers = 'ny22Fillers'),
+                    (B.NewYearInvoice = 'newYearInvoice'),
+                    (B.NewYearToyFragments = 'ny22ToyFragments'),
+                    (B.NewYearSlot = 'newYearSlot'),
+                    (B.BonusX5 = 'battle_bonus_x5'),
+                    (B.CrewBonusX3 = 'crew_bonus_x3'),
+                    (B.Vehicles = 'vehicles'),
+                    (B.EpicSelectToken = 'epicSelectToken'),
+                    (B.CollectionItem = 'collectionItem'),
+                    (B.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
+                    (B.Comp7TokenCouponReward = 'comp7TokenCouponReward'),
+                    (B.BattleBoosterGift = 'battleBooster_gift'),
+                    (B.CosmicLootboxSilver = 'lootBoxToken'),
+                    (B.CosmicLootboxCommon = 'cosmic_2024_2'),
+                    (B.Branch = 'branch'),
+                    (B.VehicleSelect = 'vehicleSelect'),
+                    (B.StyleProgress = 'styleProgress'),
+                    (B.ParagonsUnlocks = 'paragonsUnlocks'),
+                    (B.LootBoxToken = 'lootBoxToken'),
+                    (B.GoldenTicket = 'birthday2025_golden_ticket'),
+                    (B.PostStamp = 'giftsystem_4_stamp'),
+                    (B.Quests = 'quests'),
+                    (B.ArmoryCoin = 'armory_coin'),
+                    (B.PremiumPlusUniversal = 'premium_plus_universal'),
+                    (B.DogTagType = 'dogTagComponents'),
                     (function (e) {
                         ((e.Gold = 'gold'),
                             (e.Credits = 'credits'),
@@ -7011,29 +7008,44 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
+                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
                             (e.BattleBadge = 'dossier_badge'),
                             (e.BattleAchievement = 'dossier_achievement'));
                     })(a || (a = {})),
-                    ((A = i || (i = {})).Big = 'big'),
-                    (A.Small = 'small'),
-                    (A.Mini = 'mini'),
-                    (A.S600x450 = 's600x450'),
-                    (A.S400x300 = 's400x300'),
-                    (A.S296x222 = 's296x222'),
-                    (A.S232x174 = 's232x174'),
-                    (A.S180x135 = 's180x135'),
-                    (A.S128x100 = 's128x100'),
-                    (A.S80x80 = 's80x80'),
-                    (A.S48x48 = 's48x48'),
-                    ((E = s || (s = {})).MULTI = 'multi'),
-                    (E.CURRENCY = 'currency'),
-                    (E.PREMIUM_PLUS = 'premium_plus'),
-                    (E.NUMBER = 'number'),
-                    (E.STRING = 'string'),
-                    ((_ = l || (l = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    ((p = i || (i = {})).Big = 'big'),
+                    (p.Small = 'small'),
+                    (p.Mini = 'mini'),
+                    (p.S600x450 = 's600x450'),
+                    (p.S400x300 = 's400x300'),
+                    (p.S296x222 = 's296x222'),
+                    (p.S232x174 = 's232x174'),
+                    (p.S180x135 = 's180x135'),
+                    (p.S128x100 = 's128x100'),
+                    (p.S80x80 = 's80x80'),
+                    (p.S48x48 = 's48x48'),
+                    ((A = s || (s = {})).MULTI = 'multi'),
+                    (A.CURRENCY = 'currency'),
+                    (A.PREMIUM_PLUS = 'premium_plus'),
+                    (A.NUMBER = 'number'),
+                    (A.STRING = 'string'),
+                    ((E = l || (l = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    (E.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
+                    (E.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
+                    (E.EQUIPMENT_PLUS = 'equipmentPlus'),
+                    (E.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
+                    (E.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
+                    (E.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
+                    (E.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
+                    (E.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
+                    (E.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
+                    (E.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
+                    (E.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
+                    (E.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
+                    ((c || (c = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    ((_ = d || (d = {})).BATTLE_BOOSTER = 'battleBooster'),
                     (_.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                     (_.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                     (_.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -7046,32 +7058,21 @@
                     (_.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                     (_.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                     (_.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
-                    ((c || (c = {})).BATTLE_BOOSTER = 'battleBooster'),
-                    ((m = d || (d = {})).BATTLE_BOOSTER = 'battleBooster'),
-                    (m.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
-                    (m.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
-                    (m.EQUIPMENT_PLUS = 'equipmentPlus'),
-                    (m.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
-                    (m.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
-                    (m.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
-                    (m.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
-                    (m.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
-                    (m.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
-                    (m.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
-                    (m.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
-                    (m.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                var B = u(4179);
-                class g extends n().PureComponent {
+                    (function (e) {
+                        ((e.Small = '400x300'), (e.Big = '600x450'));
+                    })(m || (m = {})));
+                var g = u(4179);
+                class F extends n().PureComponent {
                     render() {
                         let e;
-                        e = 'gold' === this.props.format ? B.B3.GOLD : B.B3.INTEGRAL;
-                        const t = B.Z5.getNumberFormat(this.props.value, e);
+                        e = 'gold' === this.props.format ? g.B3.GOLD : g.B3.INTEGRAL;
+                        const t = g.Z5.getNumberFormat(this.props.value, e);
                         return void 0 !== this.props.value && void 0 !== t ? t : null;
                     }
                 }
-                let F, D, b, C, h, v, f, x, w;
-                var S, y, T;
-                ((g.defaultProps = { format: 'integral' }),
+                let D, b, C, h, v, f, x, w, S;
+                var y, T, R;
+                ((F.defaultProps = { format: 'integral' }),
                     r.Items,
                     r.Equipment,
                     r.Xp,
@@ -7128,45 +7129,45 @@
                             (e.s360 = '360'),
                             (e.s400 = '400'),
                             (e.s600 = '600'));
-                    })(F || (F = {})),
-                    ((T = D || (D = {})).Active = 'active'),
-                    (T.Paused = 'paused'),
-                    (T.Completed = 'completed'),
-                    (T.NotStarted = 'notStarted'),
-                    (T.Disabled = 'disabled'),
+                    })(D || (D = {})),
+                    ((R = b || (b = {})).Active = 'active'),
+                    (R.Paused = 'paused'),
+                    (R.Completed = 'completed'),
+                    (R.NotStarted = 'notStarted'),
+                    (R.Disabled = 'disabled'),
                     (function (e) {
                         ((e.Default = 'default'), (e.Marathon = 'marathon'), (e.Resource = 'resource'));
-                    })(b || (b = {})),
-                    (function (e) {
-                        ((e.Micro = 'micro'), (e.Small = 'small'), (e.Medium = 'medium'));
                     })(C || (C = {})),
                     (function (e) {
-                        ((e.ACTIVE = 'active'), (e.COMPLETED = 'completed'), (e.NOT_CHOSEN = 'notChosen'));
+                        ((e.Micro = 'micro'), (e.Small = 'small'), (e.Medium = 'medium'));
                     })(h || (h = {})),
-                    ((y = v || (v = {})).AwaitSeason = 'awaitSeason'),
-                    (y.Bought = 'bought'),
-                    (y.Free = 'free'),
-                    (y.Completed = 'completed'),
-                    (y.CompletedRightNow = 'completedRightNow'),
-                    (y.SwitchedChapterRightNow = 'switchedChapterRightNow'),
-                    (y.NoVehiclesBase = 'noVehiclesBase'),
-                    (y.ChapterNotChosen = 'chapterNotChosen'),
+                    (function (e) {
+                        ((e.ACTIVE = 'active'), (e.COMPLETED = 'completed'), (e.NOT_CHOSEN = 'notChosen'));
+                    })(v || (v = {})),
+                    ((T = f || (f = {})).AwaitSeason = 'awaitSeason'),
+                    (T.Bought = 'bought'),
+                    (T.Free = 'free'),
+                    (T.Completed = 'completed'),
+                    (T.CompletedRightNow = 'completedRightNow'),
+                    (T.SwitchedChapterRightNow = 'switchedChapterRightNow'),
+                    (T.NoVehiclesBase = 'noVehiclesBase'),
+                    (T.ChapterNotChosen = 'chapterNotChosen'),
                     (function (e) {
                         ((e.None = ''),
                             (e.ShowLevel = 'show'),
                             (e.HideLevel = 'hide'),
                             (e.HideLevelWithDelay = 'hideWithDelay'));
-                    })(f || (f = {})),
-                    ((S = x || (x = {})).style = 'style'),
-                    (S.tankman = 'tankman'),
-                    (S.vehicle = 'vehicle'),
-                    (S.mixed = 'mixed'),
+                    })(x || (x = {})),
+                    ((y = w || (w = {})).style = 'style'),
+                    (y.tankman = 'tankman'),
+                    (y.vehicle = 'vehicle'),
+                    (y.mixed = 'mixed'),
                     (function (e) {
                         ((e.Default = 'default'), (e.Marathon = 'marathon'), (e.Resource = 'resource'));
-                    })(w || (w = {})),
-                    x.style,
-                    x.tankman);
-                const R = ({ icon: e, count: t }) =>
+                    })(S || (S = {})),
+                    w.style,
+                    w.tankman);
+                const k = ({ icon: e, count: t }) =>
                     n().createElement(
                         'div',
                         { className: 'CurrencyKey_base_53' },

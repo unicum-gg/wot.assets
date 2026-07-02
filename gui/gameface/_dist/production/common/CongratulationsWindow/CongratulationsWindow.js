@@ -893,15 +893,13 @@
                             if (n.mediumWidth && m) return i(t, n, M);
                             if (n.smallWidth && v) return i(t, n, M);
                             if (n.extraSmallWidth && E) return i(t, n, M);
-                            if (
-                                !(
-                                    n.extraLargeWidth ||
-                                    n.largeWidth ||
-                                    n.mediumWidth ||
-                                    n.smallWidth ||
-                                    n.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                n.extraLargeWidth ||
+                                n.largeWidth ||
+                                n.mediumWidth ||
+                                n.smallWidth ||
+                                n.extraSmallWidth
+                            )) {
                                 if (n.extraLargeHeight && w) return t;
                                 if (n.largeHeight && b) return t;
                                 if (n.mediumHeight && p) return t;

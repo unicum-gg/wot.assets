@@ -1010,18 +1010,9 @@
                 a.Sw.instance;
                 let y;
                 !(function (u) {
-                    ((u.backport = 'backport'), (u.unbound = 'unbound'), (u.normal = 'normal'), (u.absent = 'absent'));
+                    ((u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent'));
                 })(y || (y = {}));
-                const f = (u, e) => ({
-                    isEnabled: u !== y.absent,
-                    args: e,
-                    contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
-                    decoratorId:
-                        u === y.unbound ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId') : void 0,
-                    ignoreShowDelay: u === y.backport,
-                    ignoreMouseClick: !0,
-                });
-                class k extends r().PureComponent {
+                class f extends r().PureComponent {
                     render() {
                         let u;
                         if ('gold' === this.props.format) u = a.B3.GOLD;
@@ -1030,11 +1021,11 @@
                         return void 0 !== this.props.value && void 0 !== e ? e : null;
                     }
                 }
-                let O, T, P;
-                ((k.defaultProps = { format: 'integral' }),
+                let k, O, T;
+                ((f.defaultProps = { format: 'integral' }),
                     (function (u) {
                         ((u.small = 'small'), (u.big = 'big'), (u.large = 'large'), (u.extraLarge = 'extraLarge'));
-                    })(O || (O = {})),
+                    })(k || (k = {})),
                     (function (u) {
                         ((u.credits = 'credits'),
                             (u.gold = 'gold'),
@@ -1042,11 +1033,11 @@
                             (u.xp = 'xp'),
                             (u.freeXP = 'freeXP'),
                             (u.equipCoin = 'equipCoin'));
-                    })(T || (T = {})),
+                    })(O || (O = {})),
                     (function (u) {
                         ((u.Red = 'RedActionBG'), (u.Blue = 'BlueActionBG'));
-                    })(P || (P = {})));
-                const M = {
+                    })(T || (T = {})));
+                const P = {
                         base: 'Currency_base_57',
                         icon: 'Currency_icon_c5',
                         base__small: 'Currency_base__small_af',
@@ -1090,7 +1081,7 @@
                         stock__interactive: 'Currency_stock__interactive_93',
                         stockBackground: 'Currency_stockBackground_82',
                     },
-                    x = ({
+                    M = ({
                         isDiscount: u,
                         isInteractiveDiscount: e,
                         size: n,
@@ -1099,13 +1090,13 @@
                         value: i,
                         discountValue: A,
                         showPlus: F,
-                        stockBackgroundName: a = P.Red,
+                        stockBackgroundName: a = T.Red,
                     }) => {
-                        const _ = E()(M.value, M[`value__${t}`], !o && M.value__notEnough),
-                            s = E()(M.icon, M[`icon__${t}-${n}`]),
-                            c = E()(M.stock, A && M.stock__indent, e && M.stock__interactive),
+                        const _ = E()(P.value, P[`value__${t}`], !o && P.value__notEnough),
+                            s = E()(P.icon, P[`icon__${t}-${n}`]),
+                            c = E()(P.stock, A && P.stock__indent, e && P.stock__interactive),
                             D = F && i > 0 && '+',
-                            l = E()(M.base, M[`base__${n}`]);
+                            l = E()(P.base, P[`base__${n}`]);
                         return r().createElement(
                             'span',
                             { className: l },
@@ -1113,7 +1104,7 @@
                                 'span',
                                 { className: _ },
                                 D,
-                                r().createElement(k, { value: i, format: t === T.gold ? 'gold' : 'integral' }),
+                                r().createElement(f, { value: i, format: t === O.gold ? 'gold' : 'integral' }),
                             ),
                             r().createElement('span', { className: s }),
                             u &&
@@ -1121,16 +1112,16 @@
                                     'span',
                                     { className: c },
                                     r().createElement('span', {
-                                        className: M.stockBackground,
+                                        className: P.stockBackground,
                                         style: { backgroundImage: `url(R.images.gui.maps.icons.library.${a})` },
                                     }),
                                     Boolean(A) && A,
                                 ),
                         );
                     };
-                x.defaultProps = { isEnough: !0 };
-                const L = r().memo(x),
-                    S = {
+                M.defaultProps = { isEnough: !0 };
+                const x = r().memo(M),
+                    L = {
                         base: 'CurrencyResolver_base_11',
                         base__insufficient: 'CurrencyResolver_base__insufficient_91',
                         icon: 'CurrencyResolver_icon_12',
@@ -1151,7 +1142,7 @@
                         stockBackground: 'CurrencyResolver_stockBackground_b3',
                         stock__interactive: 'CurrencyResolver_stock__interactive_2c',
                     },
-                    N = ({
+                    S = ({
                         isDiscount: u,
                         isInteractiveDiscount: e,
                         size: n,
@@ -1161,18 +1152,18 @@
                         discountValue: A,
                         showPlus: F,
                     }) => {
-                        const a = E()(S.value, S[`value__${n}`], !o && S.value__notEnough),
-                            _ = E()(S.icon, S[`icon__${n}`]),
+                        const a = E()(L.value, L[`value__${n}`], !o && L.value__notEnough),
+                            _ = E()(L.icon, L[`icon__${n}`]),
                             s = E()(
-                                S.stock,
-                                A && S.stock__indent,
-                                n === O.big && S.stock__sizeBig,
-                                n === O.large && S.stock__sizeLarge,
-                                e && S.stock__interactive,
+                                L.stock,
+                                A && L.stock__indent,
+                                n === k.big && L.stock__sizeBig,
+                                n === k.large && L.stock__sizeLarge,
+                                e && L.stock__interactive,
                             ),
                             c = F && i > 0 && '+';
-                        return t in T
-                            ? r().createElement(L, {
+                        return t in O
+                            ? r().createElement(x, {
                                   size: n,
                                   type: t,
                                   value: i,
@@ -1184,34 +1175,34 @@
                               })
                             : r().createElement(
                                   'span',
-                                  { className: S.base },
+                                  { className: L.base },
                                   r().createElement(
                                       'span',
                                       { className: a },
                                       c,
-                                      r().createElement(k, { value: i, format: 'integral' }),
+                                      r().createElement(f, { value: i, format: 'integral' }),
                                   ),
                                   r().createElement('span', { className: _ }),
                                   u &&
                                       r().createElement(
                                           'span',
                                           { className: s },
-                                          r().createElement('span', { className: S.stockBackground }),
+                                          r().createElement('span', { className: L.stockBackground }),
                                           Boolean(A) && A,
                                       ),
                               );
                     };
-                N.defaultProps = { isEnough: !0 };
-                const I = r().memo(N),
-                    U = {
+                S.defaultProps = { isEnough: !0 };
+                const N = r().memo(S),
+                    I = {
                         base: 'App_base_df',
                         text: 'App_text_70',
                         currency: 'App_currency_70',
                         currency__big: 'App_currency__big_b5',
                     };
-                function V() {
+                function U() {
                     return (
-                        (V =
+                        (U =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -1220,32 +1211,49 @@
                                 }
                                 return u;
                             }),
-                        V.apply(this, arguments)
+                        U.apply(this, arguments)
                     );
                 }
-                const q = () => {
+                const V = () => {
                     const u = h().text,
                         e = h('model.cost'),
                         n = h('model.tooltip'),
-                        o = (0, t.useMemo)(() => f(n.type, void 0), [n.type]),
-                        i = E()(U.currency, U[`currency__${e.size}`]);
+                        o = (0, t.useMemo)(() => {
+                            return (
+                                (u = n.type),
+                                (e = void 0),
+                                {
+                                    isEnabled: u !== y.absent,
+                                    args: e,
+                                    contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
+                                    decoratorId:
+                                        u === y.normal
+                                            ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
+                                            : void 0,
+                                    ignoreShowDelay: u === y.backport,
+                                    ignoreMouseClick: !0,
+                                }
+                            );
+                            var u, e;
+                        }, [n.type]),
+                        i = E()(I.currency, I[`currency__${e.size}`]);
                     return r().createElement(
                         'div',
-                        { className: U.base },
-                        r().createElement('div', { className: U.text }, u),
+                        { className: I.base },
+                        r().createElement('div', { className: I.text }, u),
                         r().createElement(
                             D,
                             o,
                             r().createElement(
                                 'div',
                                 { className: i },
-                                r().createElement(I, V({ typeCurrency: e.type }, e)),
+                                r().createElement(N, U({ typeCurrency: e.type }, e)),
                             ),
                         ),
                     );
                 };
                 engine.whenReady.then(() => {
-                    i().render(r().createElement(q, null), document.getElementById('root'));
+                    i().render(r().createElement(V, null), document.getElementById('root'));
                 });
             },
         },

@@ -840,9 +840,13 @@
                         if (t.mediumWidth && D) return A(e, t, v);
                         if (t.smallWidth && d) return A(e, t, v);
                         if (t.extraSmallWidth && c) return A(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && h) return e;
                             if (t.mediumHeight && m) return e;
@@ -1131,7 +1135,7 @@
                             n = X(t);
                         let i,
                             r = u;
-                        for (; null !== (i = $.exec(u)); ) {
+                        for (; null !== (i = $.exec(u));) {
                             const u = i[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (u) {
                                 const t = n + u[2].replace(G, '');
@@ -1234,7 +1238,7 @@
                                         ((u) => {
                                             const e = X(Q());
                                             let t;
-                                            for (; null !== (t = Y.exec(u)); ) {
+                                            for (; null !== (t = Y.exec(u));) {
                                                 const u = t[0].match(/href="(.*?)"/);
                                                 if (u) {
                                                     const t = e + u[1].replace(G, ''),
@@ -1255,7 +1259,7 @@
                                     let e;
                                     const t = Q(),
                                         n = X(t);
-                                    for (; null !== (e = Y.exec(u)); ) {
+                                    for (; null !== (e = Y.exec(u));) {
                                         const u = e[0].match(/href="(.*?)"/);
                                         if (u && !u[1].includes(Z) && n) {
                                             const e = n + u[1].replace(G, ''),

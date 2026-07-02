@@ -767,7 +767,7 @@
                         let D = bu.exec(u),
                             t = u,
                             B = 0;
-                        for (; D; ) {
+                        for (; D;) {
                             const F = D[0],
                                 C = hu.exec(F),
                                 n = xu.exec(F),
@@ -817,7 +817,7 @@
                                 : (function (u) {
                                       let e = '';
                                       for (let F = fu.length - 1; F >= 0; F--)
-                                          for (; u >= fu[F]; ) ((e += gu[F]), (u -= fu[F]));
+                                          for (; u >= fu[F];) ((e += gu[F]), (u -= fu[F]));
                                       return e;
                                   })(n));
                         var n;

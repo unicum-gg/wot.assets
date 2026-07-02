@@ -1182,7 +1182,7 @@
                             t(e).delete(n);
                         },
                         a = (e, ...n) => {
-                            for (var r, s = o(t(e).values()); !(r = s()).done; ) {
+                            for (var r, s = o(t(e).values()); !(r = s()).done;) {
                                 (0, r.value)(...n);
                             }
                         };

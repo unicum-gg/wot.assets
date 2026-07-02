@@ -490,9 +490,13 @@
                         if (a.mediumWidth && g) return (0, r.H)(t, a, D);
                         if (a.smallWidth && b) return (0, r.H)(t, a, D);
                         if (a.extraSmallWidth && p) return (0, r.H)(t, a, D);
-                        if (
-                            !(a.extraLargeWidth || a.largeWidth || a.mediumWidth || a.smallWidth || a.extraSmallWidth)
-                        ) {
+                        if (!(
+                            a.extraLargeWidth ||
+                            a.largeWidth ||
+                            a.mediumWidth ||
+                            a.smallWidth ||
+                            a.extraSmallWidth
+                        )) {
                             if (a.extraLargeHeight && v) return t;
                             if (a.largeHeight && h) return t;
                             if (a.mediumHeight && A) return t;
@@ -2209,7 +2213,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, a = r(i.keys()); !(e = a()).done; ) {
+                            for (var e, a = r(i.keys()); !(e = a()).done;) {
                                 l(e.value, t);
                             }
                         },
@@ -2819,7 +2823,7 @@
                             t(e).delete(a);
                         },
                         s = (e, ...a) => {
-                            for (var n, u = r(t(e).values()); !(n = u()).done; ) {
+                            for (var n, u = r(t(e).values()); !(n = u()).done;) {
                                 (0, n.value)(...a);
                             }
                         };
@@ -3213,8 +3217,7 @@
                             ? `${e}`
                             : (function (e) {
                                   let t = '';
-                                  for (let a = r.length - 1; a >= 0; a--)
-                                      for (; e >= r[a]; ) ((t += n[a]), (e -= r[a]));
+                                  for (let a = r.length - 1; a >= 0; a--) for (; e >= r[a];) ((t += n[a]), (e -= r[a]));
                                   return t;
                               })(e);
             },
@@ -3797,7 +3800,7 @@
                         if (!a) return [e];
                         const n = [];
                         let r = 0;
-                        for (; a; ) (n.push(e.slice(r, t.lastIndex)), (r = t.lastIndex), (a = t.exec(e)));
+                        for (; a;) (n.push(e.slice(r, t.lastIndex)), (r = t.lastIndex), (a = t.exec(e)));
                         return (r !== e.length && n.push(e.slice(r)), n);
                     },
                     l = (e, t = '') => {
@@ -3953,7 +3956,7 @@
                 const n = (e, t, a, n) => {
                     let r = t.exec(e),
                         u = 0;
-                    for (; r; ) (u !== r.index && a(e.slice(u, r.index)), n(r), (u = t.lastIndex), (r = t.exec(e)));
+                    for (; r;) (u !== r.index && a(e.slice(u, r.index)), n(r), (u = t.lastIndex), (r = t.exec(e)));
                     u !== e.length && a(e.slice(u));
                 };
             },
@@ -4029,7 +4032,7 @@
                             E = ((e, t) => {
                                 let a = 0,
                                     n = e.length - 1;
-                                for (; n - a >= 0; ) {
+                                for (; n - a >= 0;) {
                                     const r = a + Math.ceil(0.5 * (n - a));
                                     s(e[r], t) ? (n = r - 1) : (a = r + 1);
                                 }
@@ -8639,7 +8642,7 @@
                         (this._observers.set(e, e),
                             1 === this._observers.size &&
                                 (this._intervalID = window.setInterval(() => {
-                                    for (var e, t = Jt(this._observers.values()); !(e = t()).done; ) {
+                                    for (var e, t = Jt(this._observers.values()); !(e = t()).done;) {
                                         (0, e.value)();
                                     }
                                 }, 5e3)));
@@ -8846,7 +8849,7 @@
                                         u = r > 1 ? 16 : 24;
                                     let s = 2,
                                         i = u;
-                                    for (; (a - (u + s)) / (i + s) < Math.floor((e - 1) / r); ) s > 0 ? s-- : i--;
+                                    for (; (a - (u + s)) / (i + s) < Math.floor((e - 1) / r);) s > 0 ? s-- : i--;
                                     return (
                                         (n = Math.min(n, 1 + Math.floor((a - u) / (i + s)))),
                                         i !== u && (s = i - u),

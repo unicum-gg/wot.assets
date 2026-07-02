@@ -708,13 +708,14 @@
 
 .WarningState_base_a9 {
     display: flex;
-    margin: 8rem 0 25rem;
+    padding: 8rem 16rem 25rem 0;
     position: relative;
 }
 
 .WarningState_alertIcon_41 {
     width: 18rem;
-    height: 18rem;
+    height: 20rem; /* aligns icon with text's baseline better */
+    margin-right: 2rem; /* add a little margin to better separate icon from text */
     background: url('R.images.gui.maps.icons.resourceWell.tooltips.entryPoint.alertIcon') no-repeat center / contain;
 }
 

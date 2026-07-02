@@ -853,9 +853,13 @@
                         if (t.mediumWidth && D) return s(e, t, w);
                         if (t.smallWidth && c) return s(e, t, w);
                         if (t.extraSmallWidth && C) return s(e, t, w);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -2367,7 +2371,7 @@
                                 r = (0, n.useCallback)(
                                     (e) => {
                                         let n = hu(t, e, u);
-                                        for (; n !== t; ) {
+                                        for (; n !== t;) {
                                             if (o[n].value) {
                                                 a(n);
                                                 break;

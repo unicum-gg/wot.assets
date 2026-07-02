@@ -943,15 +943,13 @@
                             if (t.mediumWidth && d) return o(u, t, b);
                             if (t.smallWidth && m) return o(u, t, b);
                             if (t.extraSmallWidth && A) return o(u, t, b);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && B) return u;
                                 if (t.largeHeight && g) return u;
                                 if (t.mediumHeight && C) return u;
@@ -3879,7 +3877,7 @@
                                 O = (function (e) {
                                     let u = '';
                                     for (let t = lt.length - 1; t >= 0; t--)
-                                        for (; e >= lt[t]; ) ((u += st[t]), (e -= lt[t]));
+                                        for (; e >= lt[t];) ((u += st[t]), (e -= lt[t]));
                                     return u;
                                 })(F),
                                 I = p()(ct.squadIndex, Boolean(u) && ct.squadIndex__visible);

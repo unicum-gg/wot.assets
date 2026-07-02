@@ -937,9 +937,13 @@
                         if (t.mediumWidth && d) return n(e, t, b);
                         if (t.smallWidth && _) return n(e, t, b);
                         if (t.extraSmallWidth && D) return n(e, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && B) return e;
                             if (t.mediumHeight && g) return e;
@@ -1433,7 +1437,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = mu(a.keys()); !(u = t()).done; ) n(u.value, e);
+                                                        for (var u, t = mu(a.keys()); !(u = t()).done;) n(u.value, e);
                                                     },
                                                     unsubscribe: n,
                                                 };

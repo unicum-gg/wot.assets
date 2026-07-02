@@ -356,15 +356,13 @@
                             if (u.mediumWidth && A) return (0, r.H)(t, u, f);
                             if (u.smallWidth && g) return (0, r.H)(t, u, f);
                             if (u.extraSmallWidth && p) return (0, r.H)(t, u, f);
-                            if (
-                                !(
-                                    u.extraLargeWidth ||
-                                    u.largeWidth ||
-                                    u.mediumWidth ||
-                                    u.smallWidth ||
-                                    u.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                u.extraLargeWidth ||
+                                u.largeWidth ||
+                                u.mediumWidth ||
+                                u.smallWidth ||
+                                u.extraSmallWidth
+                            )) {
                                 if (u.extraLargeHeight && F) return t;
                                 if (u.largeHeight && B) return t;
                                 if (u.mediumHeight && D) return t;
@@ -496,7 +494,7 @@
             },
             2862: (e, t, u) => {
                 'use strict';
-                let n, r, a, s, o, i, l;
+                let n, r, a, s, o, i, l, c;
                 (u.d(t, { $h: () => s, A2: () => i, E4: () => n, h2: () => a, kK: () => o, sh: () => l }),
                     (function (e) {
                         ((e.Items = 'items'),
@@ -553,7 +551,6 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (e.LootBoxToken = 'lootBoxToken'),
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
@@ -594,6 +591,7 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
+                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -652,7 +650,10 @@
                             (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(l || (l = {})));
+                    })(l || (l = {})),
+                    (function (e) {
+                        ((e.Small = '400x300'), (e.Big = '600x450'));
+                    })(c || (c = {})));
             },
             1558: (e, t, u) => {
                 'use strict';
@@ -4601,7 +4602,7 @@
                     Re = (e, t, u, n) => {
                         let r = t.exec(e),
                             a = 0;
-                        for (; r; ) (a !== r.index && u(e.slice(a, r.index)), n(r), (a = t.lastIndex), (r = t.exec(e)));
+                        for (; r;) (a !== r.index && u(e.slice(a, r.index)), n(r), (a = t.lastIndex), (r = t.exec(e)));
                         a !== e.length && u(e.slice(a));
                     },
                     ke = (e) => {
@@ -4610,7 +4611,7 @@
                         if (!u) return [e];
                         const n = [];
                         let r = 0;
-                        for (; u; ) (n.push(e.slice(r, t.lastIndex)), (r = t.lastIndex), (u = t.exec(e)));
+                        for (; u;) (n.push(e.slice(r, t.lastIndex)), (r = t.lastIndex), (u = t.exec(e)));
                         return (r !== e.length && n.push(e.slice(r)), n);
                     },
                     Me = (e, t = '') => {
@@ -4833,7 +4834,7 @@
                                                     c = ((e, t) => {
                                                         let u = 0,
                                                             n = e.length - 1;
-                                                        for (; n - u >= 0; ) {
+                                                        for (; n - u >= 0;) {
                                                             const r = u + Math.ceil(0.5 * (n - u));
                                                             Oe(e[r], t) ? (n = r - 1) : (u = r + 1);
                                                         }

@@ -888,7 +888,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = D(n.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = D(n.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -1302,9 +1302,13 @@
                         if (t.mediumWidth && s) return y(e, t, h);
                         if (t.smallWidth && l) return y(e, t, h);
                         if (t.extraSmallWidth && B) return y(e, t, h);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && c) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && _) return e;
@@ -1878,7 +1882,7 @@
                     yu = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function Tu(u) {
                     let e = '';
-                    for (let t = yu.length - 1; t >= 0; t--) for (; u >= yu[t]; ) ((e += Ou[t]), (u -= yu[t]));
+                    for (let t = yu.length - 1; t >= 0; t--) for (; u >= yu[t];) ((e += Ou[t]), (u -= yu[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

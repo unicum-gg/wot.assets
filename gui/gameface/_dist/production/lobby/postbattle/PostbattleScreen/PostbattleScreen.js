@@ -665,7 +665,7 @@
                                             : e.ownerDocument.activeElement;
                                     if (s) {
                                         if ('IFRAME' === s.tagName) s = s.contentDocument.activeElement;
-                                        else for (; s.shadowRoot; ) s = s.shadowRoot.activeElement;
+                                        else for (; s.shadowRoot;) s = s.shadowRoot.activeElement;
                                         if (
                                             u((r = s), 'input,[contenteditable]') ||
                                             u(r, 'select,[contenteditable]') ||
@@ -756,7 +756,7 @@
                                     !(function (e, a, r) {
                                         if (!w.isWebKit && n.querySelector('select')) return !0;
                                         if (!n.contains(e)) return !1;
-                                        for (var u = e; u && u !== n; ) {
+                                        for (var u = e; u && u !== n;) {
                                             if (u.classList.contains(d)) return !0;
                                             var s = t(u);
                                             if (
@@ -864,7 +864,7 @@
                                     if (
                                         (function (e, a, r) {
                                             if (!n.contains(e)) return !1;
-                                            for (var u = e; u && u !== n; ) {
+                                            for (var u = e; u && u !== n;) {
                                                 if (u.classList.contains(d)) return !0;
                                                 var s = t(u);
                                                 if (
@@ -2505,15 +2505,13 @@
                             if (a.mediumWidth && m) return k(t, a, A);
                             if (a.smallWidth && d) return k(t, a, A);
                             if (a.extraSmallWidth && E) return k(t, a, A);
-                            if (
-                                !(
-                                    a.extraLargeWidth ||
-                                    a.largeWidth ||
-                                    a.mediumWidth ||
-                                    a.smallWidth ||
-                                    a.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                a.extraLargeWidth ||
+                                a.largeWidth ||
+                                a.mediumWidth ||
+                                a.smallWidth ||
+                                a.extraSmallWidth
+                            )) {
                                 if (a.extraLargeHeight && p) return t;
                                 if (a.largeHeight && b) return t;
                                 if (a.mediumHeight && h) return t;
@@ -3859,7 +3857,7 @@
                                 let a = [],
                                     n = t,
                                     u = e;
-                                for (; n > 0; ) {
+                                for (; n > 0;) {
                                     let e = St.slice(1, St.length - u);
                                     (e.length > n ? ((e = e.slice(e.length - n)), (n = 0)) : ((n -= e.length), (u = 0)),
                                         (a = e.concat(a)));
@@ -4111,7 +4109,7 @@
                         });
                         let u = e.length,
                             s = 0;
-                        for (; u--; ) {
+                        for (; u--;) {
                             const t = e[u];
                             if (!t.valuesCount) continue;
                             const a = Number(t.startDelay);

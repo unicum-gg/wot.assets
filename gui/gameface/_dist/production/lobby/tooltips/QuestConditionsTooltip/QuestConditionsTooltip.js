@@ -433,7 +433,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = eu(F.keys()); !(u = t()).done; ) r(u.value, e);
+                                                        for (var u, t = eu(F.keys()); !(u = t()).done;) r(u.value, e);
                                                     },
                                                     unsubscribe: r,
                                                 };
@@ -797,9 +797,13 @@
                         if (t.mediumWidth && o) return gu(e, t, _);
                         if (t.smallWidth && l) return gu(e, t, _);
                         if (t.extraSmallWidth && C) return gu(e, t, _);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && m) return e;
                             if (t.largeHeight && s) return e;
                             if (t.mediumHeight && c) return e;
@@ -1428,7 +1432,7 @@
                         let r = fe.exec(u),
                             E = u,
                             n = 0;
-                        for (; r; ) {
+                        for (; r;) {
                             const t = r[0],
                                 D = ve.exec(t),
                                 B = be.exec(t),

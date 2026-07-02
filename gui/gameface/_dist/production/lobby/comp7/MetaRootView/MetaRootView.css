@@ -735,25 +735,43 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .CurrentPositionPanel_base__active_8c:hover {
     background-color: rgba(255, 161, 0, 0.15);
 }
+.CurrentPositionPanel_base__highlight_f1 {
+    background:
+        url('R.images.comp7.gui.maps.icons.comp7.icons.elite_personal_background_start') no-repeat 0 0 / contain,
+        url('R.images.comp7.gui.maps.icons.comp7.icons.elite_personal_background_end') no-repeat 100% 100% / contain,
+        rgba(255, 161, 0, 0.1);
+}
+.CurrentPositionPanel_marker_0b {
+    width: 16rem;
+    height: 100%;
+    background: url('R.images.comp7.gui.maps.icons.comp7.icons.elite_personal') no-repeat center / contain;
+}
 .CurrentPositionPanel_cell_be {
     display: flex;
-    text-align: center;
+}
+.CurrentPositionPanel_cell__highlightMarker_9f {
+    justify-content: flex-end;
+    align-items: center;
+    width: 52rem;
+    height: 100%;
 }
 .CurrentPositionPanel_cell__order_be {
     justify-content: center;
-    width: 94rem;
+    width: 80rem;
 }
 .CurrentPositionPanel_cell__currentPosition_c5 {
     flex: 1;
     padding-left: 35rem;
 }
 .CurrentPositionPanel_cell__battles_8f {
-    justify-content: center;
-    width: 166rem;
+    justify-content: flex-end;
+    width: 172rem;
+    padding-right: 28rem;
 }
 .CurrentPositionPanel_cell__score_d2 {
-    justify-content: center;
-    width: 166rem;
+    justify-content: flex-end;
+    width: 228rem;
+    padding-right: 28rem;
 }
 .CurrentPositionPanel_screwIcon_8f {
     --screwOffset: 15rem;
@@ -765,7 +783,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transform: translateY(-50%);
 }
 .mediaLarge .CurrentPositionPanel_screwIcon_8f {
-    --screwOffset: 20rem;
+    --screwOffset: 12rem;
 }
 .CurrentPositionPanel_screwIcon__left_cb {
     left: var(--screwOffset);
@@ -890,20 +908,20 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     justify-content: center;
     align-items: center;
     width: 100%;
+    border-bottom: 1rem solid rgba(255, 255, 255, 0.07);
     background: url('R.images.comp7.gui.maps.icons.comp7.icons.rowsDivider') no-repeat bottom center / 840rem 70rem;
 }
-
 .RowsDivider_rankText_96 {
     color: #f2f2f7;
-    font-size: 18rem;
+    font-size: 15rem;
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.15;
     margin-left: 14rem;
     line-height: 1.3;
 }
 
 .Header_base_83 {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -921,7 +939,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Header_cell__order_7d {
     justify-content: center;
-    width: 94rem;
+    width: 132rem;
     padding-left: 1rem;
 }
 .Header_cell__player_c5 {
@@ -929,12 +947,14 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding-left: 35rem;
 }
 .Header_cell__battles_0d {
-    justify-content: center;
-    width: 166rem;
+    justify-content: flex-end;
+    width: 172rem;
+    padding-right: 28rem;
 }
 .Header_cell__score_3e {
-    justify-content: center;
-    width: 166rem;
+    justify-content: flex-end;
+    width: 228rem;
+    padding-right: 28rem;
 }
 
 .TextOverflow_base_3b {
@@ -1054,27 +1074,64 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .Row_base_fc {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(201, 201, 182, 0.8);
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
     display: flex;
+    margin-bottom: 1rem;
     padding-left: 1rem;
     border-bottom: 1rem solid rgba(255, 255, 255, 0.07);
+}
+
+.Row_base__highlight_35 {
+    color: #c9c9b6;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    border: 1rem solid rgba(151, 87, 240, 0.2);
+    background:
+        url('R.images.comp7.gui.maps.icons.comp7.icons.elite_background_start') no-repeat 0 0 / contain,
+        url('R.images.comp7.gui.maps.icons.comp7.icons.elite_background_end') no-repeat 100% 100% / contain,
+        rgba(151, 87, 240, 0.07);
+}
+
+.Row_base__highlight_35.Row_base__personal_1c {
+    background:
+        url('R.images.comp7.gui.maps.icons.comp7.icons.elite_personal_background_start') no-repeat 0 0 / contain,
+        url('R.images.comp7.gui.maps.icons.comp7.icons.elite_personal_background_end') no-repeat 100% 100% / contain,
+        rgba(255, 161, 0, 0.1);
+}
+
+.Row_base__highlight_35.Row_base__personal_1c .Row_marker_b0 {
+    background: url('R.images.comp7.gui.maps.icons.comp7.icons.elite_personal') no-repeat center / contain;
 }
 
 .Row_base__personal_1c {
     padding-left: 0;
     border: 1rem solid rgba(255, 161, 0, 0.2);
-    background-color: rgba(255, 161, 0, 0.1);
+    background: rgba(255, 161, 0, 0.1);
     color: #cbac77;
     position: relative;
+}
+.Row_highlightMarker_eb {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 52rem;
+    height: 100%;
+    padding-right: 8rem;
+}
+.Row_marker_b0 {
+    width: 16rem;
+    height: 100%;
+    background: url('R.images.comp7.gui.maps.icons.comp7.icons.elite') no-repeat center / contain;
 }
 .Row_order_30 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 94rem;
+    width: 80rem;
     background: no-repeat center / contain;
     color: rgba(255, 255, 255, 0.4);
 }
@@ -1104,15 +1161,17 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .Row_battles_61 {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    width: 166rem;
+    width: 172rem;
+    padding-right: 28rem;
 }
 .Row_score_55 {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    width: 166rem;
+    width: 228rem;
+    padding-right: 28rem;
 }
 
 .Leaderboard_base_ec {
@@ -1244,7 +1303,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .HasRecordsState_base_bb {
-    --offset: 15rem;
+    --offset: 12rem;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -1252,7 +1311,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 
 .mediaMedium .HasRecordsState_base_bb {
-    --offset: 20rem;
+    --offset: 24rem;
 }
 
 .HasRecordsState_base__withoutPagination_ad {
@@ -1886,7 +1945,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .LeaderboardPage_animationContainer_94,
 .LeaderboardPage_subHeading_ae {
-    width: 840rem;
+    width: 800rem;
 }
 .mediaSmall .LeaderboardPage_animationContainer_94,
 .mediaSmall .LeaderboardPage_subHeading_ae {
@@ -1910,10 +1969,10 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     pointer-events: none;
 }
 .LeaderboardPage_hasRecords_9f {
-    padding-top: 25rem;
+    padding-top: 16rem;
 }
 .mediaLarge .LeaderboardPage_hasRecords_9f {
-    padding-top: 30rem;
+    padding-top: 40rem;
 }
 .LeaderboardPage_error_7d,
 .LeaderboardPage_noRecords_6b {

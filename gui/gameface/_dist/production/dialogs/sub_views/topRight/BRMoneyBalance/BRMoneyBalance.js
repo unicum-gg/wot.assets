@@ -1054,14 +1054,14 @@
                     );
                 let x;
                 !(function (u) {
-                    ((u.backport = 'backport'), (u.unbound = 'unbound'), (u.normal = 'normal'), (u.absent = 'absent'));
+                    ((u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent'));
                 })(x || (x = {}));
                 const I = (u, e) => ({
                         isEnabled: u !== x.absent,
                         args: e,
                         contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
                         decoratorId:
-                            u === x.unbound
+                            u === x.normal
                                 ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
                                 : void 0,
                         ignoreShowDelay: u === x.backport,

@@ -3,6 +3,12 @@ const webpack = require('webpack');
 const { getWebpackConfig } = require('../../config/webpack.config');
 const { features } = workerData;
 
+if (!features || features.length === 0) {
+    // eslint-disable-next-line no-console
+    console.log('No features to build in this worker');
+    return;
+}
+
 const countOfFeatures = features.length;
 
 function Build(featureIndex = 0) {

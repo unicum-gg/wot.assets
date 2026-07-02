@@ -665,7 +665,7 @@
                                             : e.ownerDocument.activeElement;
                                     if (l) {
                                         if ('IFRAME' === l.tagName) l = l.contentDocument.activeElement;
-                                        else for (; l.shadowRoot; ) l = l.shadowRoot.activeElement;
+                                        else for (; l.shadowRoot;) l = l.shadowRoot.activeElement;
                                         if (
                                             i((o = l), 'input,[contenteditable]') ||
                                             i(o, 'select,[contenteditable]') ||
@@ -756,7 +756,7 @@
                                     !(function (e, n, o) {
                                         if (!M.isWebKit && r.querySelector('select')) return !0;
                                         if (!r.contains(e)) return !1;
-                                        for (var i = e; i && i !== r; ) {
+                                        for (var i = e; i && i !== r;) {
                                             if (i.classList.contains(m)) return !0;
                                             var l = t(i);
                                             if (
@@ -864,7 +864,7 @@
                                     if (
                                         (function (e, n, o) {
                                             if (!r.contains(e)) return !1;
-                                            for (var i = e; i && i !== r; ) {
+                                            for (var i = e; i && i !== r;) {
                                                 if (i.classList.contains(m)) return !0;
                                                 var l = t(i);
                                                 if (
@@ -2946,10 +2946,10 @@
                                 () =>
                                     ((e) => {
                                         let t = [{ type: F.text, content: e }];
-                                        for (var n, r = B(U); !(n = r()).done; ) {
+                                        for (var n, r = B(U); !(n = r()).done;) {
                                             const e = n.value,
                                                 r = [];
-                                            for (var o, i = B(t); !(o = i()).done; ) {
+                                            for (var o, i = B(t); !(o = i()).done;) {
                                                 const t = o.value;
                                                 t.type === F.text ? r.push(V(t.content, e)) : r.push(t);
                                             }

@@ -1039,7 +1039,7 @@
                         let D = I.exec(u),
                             r = u,
                             o = 0;
-                        for (; D; ) {
+                        for (; D;) {
                             const t = D[0],
                                 E = G.exec(t),
                                 a = W.exec(t),
@@ -1064,7 +1064,7 @@
                         }
                         return A().createElement(L, { text: r, classMix: t, binding: n });
                     });
-                let Y, V, z, H, K, $, j;
+                let Y, V, z, H, K, $, j, X;
                 (!(function (u) {
                     ((u.Items = 'items'),
                         (u.Equipment = 'equipment'),
@@ -1120,7 +1120,6 @@
                         (u.VehicleSelect = 'vehicleSelect'),
                         (u.StyleProgress = 'styleProgress'),
                         (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (u.LootBoxToken = 'lootBoxToken'),
                         (u.GoldenTicket = 'birthday2025_golden_ticket'),
                         (u.PostStamp = 'giftsystem_4_stamp'),
@@ -1161,6 +1160,7 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
+                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -1219,17 +1219,20 @@
                             (u.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(j || (j = {})));
-                const X = (u, e = z.Small) => `R.images.gui.maps.icons.quests.bonuses.${e}.${u}_gift`,
-                    Q = 'Category_base_e5',
-                    Z = 'Category_image_e5',
-                    J = 'Category_content_4f',
-                    uu = 'Category_title_0e',
-                    eu = 'Category_rewards_10',
-                    tu = 'Category_counter_79',
-                    Eu = R.strings.selectable_reward.tooltips.selectedRewards.reward,
-                    Au = ({ type: u, rewards: e }) => {
-                        const t = (0, E.useMemo)(() => ({ backgroundImage: `url(${X(u)})` }), [u]),
+                    })(j || (j = {})),
+                    (function (u) {
+                        ((u.Small = '400x300'), (u.Big = '600x450'));
+                    })(X || (X = {})));
+                const Q = (u, e = z.Small) => `R.images.gui.maps.icons.quests.bonuses.${e}.${u}_gift`,
+                    Z = 'Category_base_e5',
+                    J = 'Category_image_e5',
+                    uu = 'Category_content_4f',
+                    eu = 'Category_title_0e',
+                    tu = 'Category_rewards_10',
+                    Eu = 'Category_counter_79',
+                    Au = R.strings.selectable_reward.tooltips.selectedRewards.reward,
+                    Fu = ({ type: u, rewards: e }) => {
+                        const t = (0, E.useMemo)(() => ({ backgroundImage: `url(${Q(u)})` }), [u]),
                             F = (0, E.useMemo)(() => {
                                 const u = {},
                                     t = e
@@ -1250,7 +1253,7 @@
                                             if (1 === e.count) return E;
                                             const F = `counter${t}`,
                                                 n =
-                                                    ((D = Eu.counter()),
+                                                    ((D = Au.counter()),
                                                     (o = { count: e.count }),
                                                     D.replace(/(\{|%\()\w+(\}|\)s)/g, (u) => {
                                                         const e = 0 === u.indexOf('%') ? 2 : 1;
@@ -1258,36 +1261,36 @@
                                                     }));
                                             var D, o;
                                             return (
-                                                (u[F] = A().createElement(L, { text: n, classMix: tu })),
+                                                (u[F] = A().createElement(L, { text: n, classMix: Eu })),
                                                 `${E}%(${F})s`
                                             );
                                         })
-                                        .join(Eu.separator());
+                                        .join(Au.separator());
                                 return { text: t, binding: u };
                             }, [e]);
                         return A().createElement(
                             'div',
-                            { className: Q },
-                            A().createElement('div', { className: Z, style: t }),
+                            { className: Z },
+                            A().createElement('div', { className: J, style: t }),
                             A().createElement(
                                 'div',
-                                { className: J },
+                                { className: uu },
                                 A().createElement(
                                     'div',
-                                    { className: uu },
+                                    { className: eu },
                                     ((u) => R.strings.selectable_reward.tabs.items.$dyn(u))(u),
                                 ),
-                                A().createElement('div', { className: eu }, A().createElement(L, F)),
+                                A().createElement('div', { className: tu }, A().createElement(L, F)),
                             ),
                         );
                     },
-                    Fu = 'App_base_ba',
-                    nu = 'App_title_43',
-                    Du = 'App_description_43',
-                    ru = 'App_divider_36',
-                    ou = 'App_category_c3',
-                    au = R.strings.selectable_reward.tooltips.selectedRewards,
-                    iu = () => {
+                    nu = 'App_base_ba',
+                    Du = 'App_title_43',
+                    ru = 'App_description_43',
+                    ou = 'App_divider_36',
+                    au = 'App_category_c3',
+                    iu = R.strings.selectable_reward.tooltips.selectedRewards,
+                    Bu = () => {
                         const u = f(),
                             e = u.totalSelected,
                             t = u.categories,
@@ -1297,22 +1300,22 @@
                             null,
                             A().createElement(
                                 'div',
-                                { className: Fu },
+                                { className: nu },
                                 A().createElement(
                                     'div',
-                                    { className: nu },
-                                    A().createElement(q, { text: au.title(), binding: F }),
+                                    { className: Du },
+                                    A().createElement(q, { text: iu.title(), binding: F }),
                                 ),
-                                A().createElement('div', { className: Du }, au.description()),
-                                A().createElement('div', { className: ru }),
+                                A().createElement('div', { className: ru }, iu.description()),
+                                A().createElement('div', { className: ou }),
                                 t.map(({ value: u }, e) =>
-                                    A().createElement('div', { key: e, className: ou }, A().createElement(Au, u)),
+                                    A().createElement('div', { key: e, className: au }, A().createElement(Fu, u)),
                                 ),
                             ),
                         );
                     };
                 engine.whenReady.then(() => {
-                    n().render(A().createElement(iu, null), document.getElementById('root'));
+                    n().render(A().createElement(Bu, null), document.getElementById('root'));
                 });
             },
         },

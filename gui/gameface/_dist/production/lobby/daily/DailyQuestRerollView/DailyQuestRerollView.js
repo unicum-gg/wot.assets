@@ -937,9 +937,13 @@
                         if (t.mediumWidth && D) return n(e, t, b);
                         if (t.smallWidth && c) return n(e, t, b);
                         if (t.extraSmallWidth && C) return n(e, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && m) return e;
                             if (t.largeHeight && d) return e;
                             if (t.mediumHeight && h) return e;
@@ -1924,7 +1928,7 @@
                         let i = Hu.exec(u),
                             A = u,
                             o = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 r = ku.exec(t),
                                 F = Pu.exec(t),
@@ -2043,7 +2047,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Gu(a.keys()); !(u = t()).done; ) n(u.value, e);
+                                                        for (var u, t = Gu(a.keys()); !(u = t()).done;) n(u.value, e);
                                                     },
                                                     unsubscribe: n,
                                                 };

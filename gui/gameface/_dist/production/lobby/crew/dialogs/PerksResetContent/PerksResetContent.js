@@ -174,9 +174,13 @@
                         if (t.mediumWidth && F) return (0, n.H)(e, t, b);
                         if (t.smallWidth && m) return (0, n.H)(e, t, b);
                         if (t.extraSmallWidth && D) return (0, n.H)(e, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && g) return e;
@@ -745,7 +749,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var u, t = n(l.keys()); !(u = t()).done; ) {
+                            for (var u, t = n(l.keys()); !(u = t()).done;) {
                                 s(u.value, e);
                             }
                         },
@@ -1977,7 +1981,7 @@
                         if (!t) return [u];
                         const r = [];
                         let n = 0;
-                        for (; t; ) (r.push(u.slice(n, e.lastIndex)), (n = e.lastIndex), (t = e.exec(u)));
+                        for (; t;) (r.push(u.slice(n, e.lastIndex)), (n = e.lastIndex), (t = e.exec(u)));
                         return (n !== u.length && r.push(u.slice(n)), r);
                     },
                     s = (u, e = '') => {
@@ -2133,7 +2137,7 @@
                 const r = (u, e, t, r) => {
                     let n = e.exec(u),
                         a = 0;
-                    for (; n; ) (a !== n.index && t(u.slice(a, n.index)), r(n), (a = e.lastIndex), (n = e.exec(u)));
+                    for (; n;) (a !== n.index && t(u.slice(a, n.index)), r(n), (a = e.lastIndex), (n = e.exec(u)));
                     a !== u.length && t(u.slice(a));
                 };
             },
@@ -2209,7 +2213,7 @@
                             d = ((u, e) => {
                                 let t = 0,
                                     r = u.length - 1;
-                                for (; r - t >= 0; ) {
+                                for (; r - t >= 0;) {
                                     const n = t + Math.ceil(0.5 * (r - t));
                                     i(u[n], e) ? (r = n - 1) : (t = n + 1);
                                 }
@@ -2297,16 +2301,14 @@
             },
             5298: (u, e, t) => {
                 'use strict';
-                t.d(e, { lG: () => n });
+                t.d(e, { l: () => n });
                 var r = t(776);
                 const n = (u, e) => ({
                     isEnabled: u !== r.f.absent,
                     args: e,
                     contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
                     decoratorId:
-                        u === r.f.unbound
-                            ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
-                            : void 0,
+                        u === r.f.normal ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId') : void 0,
                     ignoreShowDelay: u === r.f.backport,
                     ignoreMouseClick: !0,
                 });
@@ -3256,7 +3258,7 @@
                         (this._observers.set(u, u),
                             1 === this._observers.size &&
                                 (this._intervalID = window.setInterval(() => {
-                                    for (var u, e = Mu(this._observers.values()); !(u = e()).done; ) {
+                                    for (var u, e = Mu(this._observers.values()); !(u = e()).done;) {
                                         (0, u.value)();
                                     }
                                 }, 5e3)));
@@ -3462,7 +3464,7 @@
                                         a = n > 1 ? 16 : 24;
                                     let i = 2,
                                         l = a;
-                                    for (; (t - (a + i)) / (l + i) < Math.floor((u - 1) / n); ) i > 0 ? i-- : l--;
+                                    for (; (t - (a + i)) / (l + i) < Math.floor((u - 1) / n);) i > 0 ? i-- : l--;
                                     return (
                                         (r = Math.min(r, 1 + Math.floor((t - a) / (l + i)))),
                                         l !== a && (i = l - a),
@@ -3837,7 +3839,7 @@
                     );
                 }
                 const O = ({ cost: u, tooltip: e, index: t, tooltipRootId: r }) => {
-                        const a = (0, x.lG)(e.type, { index: t });
+                        const a = (0, x.l)(e.type, { index: t });
                         return u.value === u.discountValue && 0 === u.value
                             ? n().createElement('div', { className: L }, R.strings.dialogs.priceCard.price.free())
                             : n().createElement(
@@ -3983,10 +3985,7 @@
                 let r;
                 (t.d(e, { f: () => r }),
                     (function (u) {
-                        ((u.backport = 'backport'),
-                            (u.unbound = 'unbound'),
-                            (u.normal = 'normal'),
-                            (u.absent = 'absent'));
+                        ((u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent'));
                     })(r || (r = {})));
             },
             8460: (u, e, t) => {

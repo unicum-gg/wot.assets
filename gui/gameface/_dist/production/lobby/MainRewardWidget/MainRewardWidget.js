@@ -933,15 +933,13 @@
                             if (t.mediumWidth && D) return o(e, t, b);
                             if (t.smallWidth && _) return o(e, t, b);
                             if (t.extraSmallWidth && m) return o(e, t, b);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && B) return e;
                                 if (t.largeHeight && C) return e;
                                 if (t.mediumHeight && g) return e;
@@ -2424,7 +2422,7 @@
                         let o = Ee.exec(u),
                             s = u,
                             E = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const t = o[0],
                                 r = Ae.exec(t),
                                 A = le.exec(t),

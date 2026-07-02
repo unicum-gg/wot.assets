@@ -87,9 +87,13 @@
                         if (t.mediumWidth && m) return (0, n.H)(e, t, b);
                         if (t.smallWidth && D) return (0, n.H)(e, t, b);
                         if (t.extraSmallWidth && d) return (0, n.H)(e, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && g) return e;
@@ -1641,7 +1645,7 @@
                                             e(u).delete(t);
                                         },
                                         i = (u, ...t) => {
-                                            for (var r, n = v(e(u).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = v(e(u).values()); !(r = n()).done;) (0, r.value)(...t);
                                         };
                                     return (0, n.useMemo)(() => ({ on: t, off: r, trigger: i }), []);
                                 })(),

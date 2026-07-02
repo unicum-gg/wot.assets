@@ -1012,7 +1012,7 @@
                         let n = w.exec(u),
                             s = u,
                             A = 0;
-                        for (; n; ) {
+                        for (; n;) {
                             const t = n[0],
                                 i = T.exec(t),
                                 o = S.exec(t),
@@ -1149,7 +1149,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = y(a.keys()); !(u = t()).done; ) i(u.value, e);
+                                                        for (var u, t = y(a.keys()); !(u = t()).done;) i(u.value, e);
                                                     },
                                                     unsubscribe: i,
                                                 };
@@ -1449,9 +1449,13 @@
                         if (t.mediumWidth && F) return z(e, t, h);
                         if (t.smallWidth && D) return z(e, t, h);
                         if (t.extraSmallWidth && c) return z(e, t, h);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && B) return e;

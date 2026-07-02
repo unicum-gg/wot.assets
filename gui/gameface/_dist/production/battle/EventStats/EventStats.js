@@ -932,15 +932,13 @@
                             if (t.mediumWidth && D) return n(e, t, v);
                             if (t.smallWidth && d) return n(e, t, v);
                             if (t.extraSmallWidth && m) return n(e, t, v);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && B) return e;
                                 if (t.largeHeight && C) return e;
                                 if (t.mediumHeight && g) return e;
@@ -2468,7 +2466,7 @@
                                         : (function (u) {
                                               let e = '';
                                               for (let t = pe.length - 1; t >= 0; t--)
-                                                  for (; u >= pe[t]; ) ((e += ve[t]), (u -= pe[t]));
+                                                  for (; u >= pe[t];) ((e += ve[t]), (u -= pe[t]));
                                               return e;
                                           })(n)),
                                 className: we.text,

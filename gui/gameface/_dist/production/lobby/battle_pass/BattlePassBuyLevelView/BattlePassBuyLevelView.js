@@ -290,9 +290,13 @@
                         if (t.mediumWidth && A) return (0, r.H)(u, t, f);
                         if (t.smallWidth && F) return (0, r.H)(u, t, f);
                         if (t.extraSmallWidth && D) return (0, r.H)(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && g) return u;
                             if (t.largeHeight && B) return u;
                             if (t.mediumHeight && C) return u;
@@ -511,7 +515,7 @@
             },
             2862: (e, u, t) => {
                 'use strict';
-                let n, r, a, s, o, i, l;
+                let n, r, a, s, o, i, l, c;
                 (t.d(u, { $h: () => s, A2: () => i, E4: () => n, h2: () => a, kK: () => o, sh: () => l }),
                     (function (e) {
                         ((e.Items = 'items'),
@@ -568,7 +572,6 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (e.LootBoxToken = 'lootBoxToken'),
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
@@ -609,6 +612,7 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
+                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -667,7 +671,10 @@
                             (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(l || (l = {})));
+                    })(l || (l = {})),
+                    (function (e) {
+                        ((e.Small = '400x300'), (e.Big = '600x450'));
+                    })(c || (c = {})));
             },
             729: (e, u, t) => {
                 'use strict';
@@ -2437,7 +2444,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = y(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = y(r.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -4386,7 +4393,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = A(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = A(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, i.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),

@@ -1179,7 +1179,7 @@
                             o = D(n);
                         let r,
                             i = e;
-                        for (; null !== (r = L.exec(e)); ) {
+                        for (; null !== (r = L.exec(e));) {
                             const e = r[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
                                 const n = o + e[2].replace(C, '');
@@ -1282,7 +1282,7 @@
                                         ((e) => {
                                             const t = D(N());
                                             let n;
-                                            for (; null !== (n = S.exec(e)); ) {
+                                            for (; null !== (n = S.exec(e));) {
                                                 const e = n[0].match(/href="(.*?)"/);
                                                 if (e) {
                                                     const n = t + e[1].replace(C, ''),
@@ -1303,7 +1303,7 @@
                                     let t;
                                     const n = N(),
                                         o = D(n);
-                                    for (; null !== (t = S.exec(e)); ) {
+                                    for (; null !== (t = S.exec(e));) {
                                         const e = t[0].match(/href="(.*?)"/);
                                         if (e && !e[1].includes(A) && o) {
                                             const t = o + e[1].replace(C, ''),

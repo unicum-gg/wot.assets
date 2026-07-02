@@ -550,9 +550,13 @@
                         if (t.mediumWidth && B) return Du(e, t, g);
                         if (t.smallWidth && o) return Du(e, t, g);
                         if (t.extraSmallWidth && l) return Du(e, t, g);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && s) return e;
@@ -1147,7 +1151,7 @@
                         let F = Ee.exec(u),
                             E = u,
                             a = 0;
-                        for (; F; ) {
+                        for (; F;) {
                             const t = F[0],
                                 D = ae.exec(t),
                                 n = De.exec(t),
@@ -1267,7 +1271,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = le(r.keys()); !(u = t()).done; ) F(u.value, e);
+                                                        for (var u, t = le(r.keys()); !(u = t()).done;) F(u.value, e);
                                                     },
                                                     unsubscribe: F,
                                                 };

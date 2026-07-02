@@ -87,9 +87,13 @@
                         if (t.mediumWidth && c) return (0, a.H)(e, t, b);
                         if (t.smallWidth && m) return (0, a.H)(e, t, b);
                         if (t.extraSmallWidth && d) return (0, a.H)(e, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && g) return e;
@@ -2045,7 +2049,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Cu(a.keys()); !(u = t()).done; ) n(u.value, e);
+                                                        for (var u, t = Cu(a.keys()); !(u = t()).done;) n(u.value, e);
                                                     },
                                                     unsubscribe: n,
                                                 };
@@ -2738,7 +2742,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = oe.length - 1; t >= 0; t--)
-                                      for (; u >= oe[t]; ) ((e += ie[t]), (u -= oe[t]));
+                                      for (; u >= oe[t];) ((e += ie[t]), (u -= oe[t]));
                                   return e;
                               })(u),
                     le = 'Footer_base_86',

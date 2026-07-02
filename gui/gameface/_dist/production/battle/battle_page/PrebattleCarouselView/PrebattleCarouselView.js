@@ -953,9 +953,13 @@
                         if (t.mediumWidth && _) return i(e, t, v);
                         if (t.smallWidth && F) return i(e, t, v);
                         if (t.extraSmallWidth && m) return i(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && g) return e;
@@ -1256,7 +1260,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = j(n.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = j(n.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -2921,7 +2925,7 @@
                                             e(u).delete(t);
                                         },
                                         n = (u, ...t) => {
-                                            for (var r, n = Ie(e(u).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = Ie(e(u).values()); !(r = n()).done;) (0, r.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: r, trigger: n }), []);
                                 })(),

@@ -1034,9 +1034,13 @@
                         if (t.mediumWidth && l) return d(e, t, g);
                         if (t.smallWidth && s) return d(e, t, g);
                         if (t.extraSmallWidth && B) return d(e, t, g);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && c) return e;
@@ -1605,7 +1609,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = cu.length - 1; t >= 0; t--)
-                                      for (; u >= cu[t]; ) ((e += Cu[t]), (u -= cu[t]));
+                                      for (; u >= cu[t];) ((e += Cu[t]), (u -= cu[t]));
                                   return e;
                               })(u);
                 var hu = t(3403);
@@ -1643,7 +1647,7 @@
                         let E = pu.exec(u),
                             F = u,
                             i = 0;
-                        for (; E; ) {
+                        for (; E;) {
                             const t = E[0],
                                 n = xu.exec(t),
                                 D = vu.exec(t),
@@ -1763,7 +1767,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Tu(a.keys()); !(u = t()).done; ) n(u.value, e);
+                                                        for (var u, t = Tu(a.keys()); !(u = t()).done;) n(u.value, e);
                                                     },
                                                     unsubscribe: n,
                                                 };

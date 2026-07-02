@@ -898,9 +898,13 @@
                         if (t.mediumWidth && D) return a(e, t, v);
                         if (t.smallWidth && B) return a(e, t, v);
                         if (t.extraSmallWidth && C) return a(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && m) return e;
                             if (t.largeHeight && _) return e;
                             if (t.mediumHeight && g) return e;
@@ -1549,7 +1553,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = gu(r.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = gu(r.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -2316,7 +2320,7 @@
                         let o = pe.exec(u),
                             E = u,
                             s = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const t = o[0],
                                 n = ve.exec(t),
                                 l = be.exec(t),

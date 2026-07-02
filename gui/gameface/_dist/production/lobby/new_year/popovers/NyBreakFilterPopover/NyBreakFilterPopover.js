@@ -1399,7 +1399,7 @@
                                                 : (function (u) {
                                                       let e = '';
                                                       for (let t = q.length - 1; t >= 0; t--)
-                                                          for (; u >= q[t]; ) ((e += Y[t]), (u -= q[t]));
+                                                          for (; u >= q[t];) ((e += Y[t]), (u -= q[t]));
                                                       return e;
                                                   })(A)),
                                         isMini: !0,

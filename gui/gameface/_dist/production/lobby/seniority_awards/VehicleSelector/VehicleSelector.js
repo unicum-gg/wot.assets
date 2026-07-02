@@ -964,9 +964,13 @@
                         if (t.mediumWidth && _) return s(u, t, f);
                         if (t.smallWidth && d) return s(u, t, f);
                         if (t.extraSmallWidth && A) return s(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && B) return u;
                             if (t.mediumHeight && h) return u;
@@ -1436,7 +1440,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = J(n.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = J(n.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -2620,7 +2624,7 @@
                         let s = Ru.exec(e),
                             i = e,
                             l = 0;
-                        for (; s; ) {
+                        for (; s;) {
                             const t = s[0],
                                 a = Lu.exec(t),
                                 c = Ou.exec(t),
@@ -3738,7 +3742,7 @@
                                             u(e).delete(t);
                                         },
                                         n = (e, ...t) => {
-                                            for (var r, n = ir(u(e).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = ir(u(e).values()); !(r = n()).done;) (0, r.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: r, trigger: n }), []);
                                 })(),
@@ -4736,7 +4740,7 @@
                             : (function (e) {
                                   let u = '';
                                   for (let t = Cn.length - 1; t >= 0; t--)
-                                      for (; e >= Cn[t]; ) ((u += Dn[t]), (e -= Cn[t]));
+                                      for (; e >= Cn[t];) ((u += Dn[t]), (e -= Cn[t]));
                                   return u;
                               })(e),
                     gn = 'Card_base_55',

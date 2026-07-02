@@ -527,7 +527,7 @@
                         let E = Bu.exec(u),
                             D = u,
                             r = 0;
-                        for (; E; ) {
+                        for (; E;) {
                             const A = E[0],
                                 a = iu.exec(A),
                                 B = nu.exec(A),
@@ -683,15 +683,13 @@
                             if (A.mediumWidth && n) return mu(e, A, _);
                             if (A.smallWidth && C) return mu(e, A, _);
                             if (A.extraSmallWidth && l) return mu(e, A, _);
-                            if (
-                                !(
-                                    A.extraLargeWidth ||
-                                    A.largeWidth ||
-                                    A.mediumWidth ||
-                                    A.smallWidth ||
-                                    A.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                A.extraLargeWidth ||
+                                A.largeWidth ||
+                                A.mediumWidth ||
+                                A.smallWidth ||
+                                A.extraSmallWidth
+                            )) {
                                 if (A.extraLargeHeight && o) return e;
                                 if (A.largeHeight && m) return e;
                                 if (A.mediumHeight && s) return e;

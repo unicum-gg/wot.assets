@@ -545,15 +545,13 @@
                             if (t.mediumWidth && l) return ru(e, t, _);
                             if (t.smallWidth && B) return ru(e, t, _);
                             if (t.extraSmallWidth && o) return ru(e, t, _);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && s) return e;
                                 if (t.largeHeight && C) return e;
                                 if (t.mediumHeight && m) return e;
@@ -1134,7 +1132,7 @@
                     Yu = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function qu(u) {
                     let e = '';
-                    for (let t = Yu.length - 1; t >= 0; t--) for (; u >= Yu[t]; ) ((e += Uu[t]), (u -= Yu[t]));
+                    for (let t = Yu.length - 1; t >= 0; t--) for (; u >= Yu[t];) ((e += Uu[t]), (u -= Yu[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1447,7 +1445,7 @@
                         let a = Be.exec(u),
                             E = u,
                             F = 0;
-                        for (; a; ) {
+                        for (; a;) {
                             const t = a[0],
                                 n = oe.exec(t),
                                 D = se.exec(t),

@@ -81,8 +81,8 @@
                         l = n.extraSmall,
                         D = n.extraLargeWidth,
                         B = n.largeWidth,
-                        d = n.mediumWidth,
-                        C = n.smallWidth,
+                        C = n.mediumWidth,
+                        d = n.smallWidth,
                         c = n.extraSmallWidth,
                         _ = n.extraLargeHeight,
                         m = n.largeHeight,
@@ -99,12 +99,16 @@
                     } else {
                         if (t.extraLargeWidth && D) return (0, r.H)(e, t, p);
                         if (t.largeWidth && B) return (0, r.H)(e, t, p);
-                        if (t.mediumWidth && d) return (0, r.H)(e, t, p);
-                        if (t.smallWidth && C) return (0, r.H)(e, t, p);
+                        if (t.mediumWidth && C) return (0, r.H)(e, t, p);
+                        if (t.smallWidth && d) return (0, r.H)(e, t, p);
                         if (t.extraSmallWidth && c) return (0, r.H)(e, t, p);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -232,7 +236,7 @@
                 (t(6483), t(6179), t(3415), t(2862), t(729), t(1609));
             },
             2862: (u, e, t) => {
-                let i, r, E, a, n, A, F;
+                let i, r, E, a, n, A, F, o;
                 (t.d(e, { E4: () => i }),
                     (function (u) {
                         ((u.Items = 'items'),
@@ -289,7 +293,6 @@
                             (u.VehicleSelect = 'vehicleSelect'),
                             (u.StyleProgress = 'styleProgress'),
                             (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (u.LootBoxToken = 'lootBoxToken'),
                             (u.GoldenTicket = 'birthday2025_golden_ticket'),
                             (u.PostStamp = 'giftsystem_4_stamp'),
@@ -330,6 +333,7 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
+                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -388,7 +392,10 @@
                             (u.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(F || (F = {})));
+                    })(F || (F = {})),
+                    (function (u) {
+                        ((u.Small = '400x300'), (u.Big = '600x450'));
+                    })(o || (o = {})));
             },
             729: (u, e, t) => {
                 (t(2372), t(6179));
@@ -623,10 +630,10 @@
                         events: () => E.U,
                         extraSize: () => S,
                         forceTriggerMouseMove: () => p,
-                        freezeTextureBeforeResize: () => d,
+                        freezeTextureBeforeResize: () => C,
                         getBrowserTexturePath: () => F,
                         getDisplayStatus: () => v,
-                        getScale: () => C,
+                        getScale: () => d,
                         getSize: () => l,
                         getViewGlobalPosition: () => B,
                         isEventHandled: () => w,
@@ -670,10 +677,10 @@
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: _(e.x), y: _(e.y) };
                 }
-                function d() {
+                function C() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function C() {
+                function d() {
                     return viewEnv.getScale();
                 }
                 function c(u) {
@@ -1086,8 +1093,8 @@
                     l = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var D = t(5521),
                     B = t(3138);
-                const d = ['args'];
-                function C(u, e, t, i, r, E, a) {
+                const C = ['args'];
+                function d(u, e, t, i, r, E, a) {
                     try {
                         var n = u[E](a),
                             A = n.value;
@@ -1114,10 +1121,10 @@
                                     return new Promise(function (i, r) {
                                         var E = u.apply(e, t);
                                         function a(u) {
-                                            C(E, i, r, a, n, 'next', u);
+                                            d(E, i, r, a, n, 'next', u);
                                         }
                                         function n(u) {
-                                            C(E, i, r, a, n, 'throw', u);
+                                            d(E, i, r, a, n, 'throw', u);
                                         }
                                         a(void 0);
                                     });
@@ -1138,7 +1145,7 @@
                                         E = Object.keys(u);
                                     for (i = 0; i < E.length; i++) ((t = E[i]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                     return r;
-                                })(e, d);
+                                })(e, C);
                             void 0 !== r
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: t, type: u }, E, {

@@ -248,15 +248,13 @@
                             if (t.mediumWidth && A) return (0, r.H)(u, t, b);
                             if (t.smallWidth && F) return (0, r.H)(u, t, b);
                             if (t.extraSmallWidth && g) return (0, r.H)(u, t, b);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && B) return u;
                                 if (t.largeHeight && D) return u;
                                 if (t.mediumHeight && h) return u;
@@ -382,7 +380,7 @@
                     })(n || (n = {})));
             },
             2862: (e, u, t) => {
-                let n, r, a, s, i, o, l;
+                let n, r, a, s, i, o, l, c;
                 (t.d(u, { $h: () => s, A2: () => o, E4: () => n, h2: () => a, kK: () => i, sh: () => l }),
                     (function (e) {
                         ((e.Items = 'items'),
@@ -439,7 +437,6 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (e.LootBoxToken = 'lootBoxToken'),
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
@@ -480,6 +477,7 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
+                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -538,7 +536,10 @@
                             (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(l || (l = {})));
+                    })(l || (l = {})),
+                    (function (e) {
+                        ((e.Small = '400x300'), (e.Big = '600x450'));
+                    })(c || (c = {})));
             },
             1558: (e, u, t) => {
                 t.d(u, { m9: () => h, L_: () => B, i2: () => D, ry: () => F, pI: () => g, p3: () => m });
@@ -3457,7 +3458,7 @@
                     ke = (e, u, t, n) => {
                         let r = u.exec(e),
                             a = 0;
-                        for (; r; ) (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
+                        for (; r;) (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
                         a !== e.length && t(e.slice(a));
                     },
                     xe = (e) => {
@@ -3466,7 +3467,7 @@
                         if (!t) return [e];
                         const n = [];
                         let r = 0;
-                        for (; t; ) (n.push(e.slice(r, u.lastIndex)), (r = u.lastIndex), (t = u.exec(e)));
+                        for (; t;) (n.push(e.slice(r, u.lastIndex)), (r = u.lastIndex), (t = u.exec(e)));
                         return (r !== e.length && n.push(e.slice(r)), n);
                     },
                     Re = (e, u = '') => {
@@ -3689,7 +3690,7 @@
                                                     c = ((e, u) => {
                                                         let t = 0,
                                                             n = e.length - 1;
-                                                        for (; n - t >= 0; ) {
+                                                        for (; n - t >= 0;) {
                                                             const r = t + Math.ceil(0.5 * (n - t));
                                                             Le(e[r], u) ? (n = r - 1) : (t = r + 1);
                                                         }

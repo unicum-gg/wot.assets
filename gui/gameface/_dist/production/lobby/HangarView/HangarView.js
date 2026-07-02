@@ -891,15 +891,13 @@
                             if (t.mediumWidth && d) return r(u, t, p);
                             if (t.smallWidth && F) return r(u, t, p);
                             if (t.extraSmallWidth && D) return r(u, t, p);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && B) return u;
                                 if (t.largeHeight && C) return u;
                                 if (t.mediumHeight && h) return u;
@@ -3819,7 +3817,7 @@
                     wt = (e, u, t, n) => {
                         let a = u.exec(e),
                             r = 0;
-                        for (; a; ) (r !== a.index && t(e.slice(r, a.index)), n(a), (r = u.lastIndex), (a = u.exec(e)));
+                        for (; a;) (r !== a.index && t(e.slice(r, a.index)), n(a), (r = u.lastIndex), (a = u.exec(e)));
                         r !== e.length && t(e.slice(r));
                     },
                     xt = (e) => {
@@ -3828,7 +3826,7 @@
                         if (!t) return [e];
                         const n = [];
                         let a = 0;
-                        for (; t; ) (n.push(e.slice(a, u.lastIndex)), (a = u.lastIndex), (t = u.exec(e)));
+                        for (; t;) (n.push(e.slice(a, u.lastIndex)), (a = u.lastIndex), (t = u.exec(e)));
                         return (a !== e.length && n.push(e.slice(a)), n);
                     },
                     yt = (e, u = '') => {
@@ -4051,7 +4049,7 @@
                                                     c = ((e, u) => {
                                                         let t = 0,
                                                             n = e.length - 1;
-                                                        for (; n - t >= 0; ) {
+                                                        for (; n - t >= 0;) {
                                                             const a = t + Math.ceil(0.5 * (n - t));
                                                             Lt(e[a], u) ? (n = a - 1) : (t = a + 1);
                                                         }

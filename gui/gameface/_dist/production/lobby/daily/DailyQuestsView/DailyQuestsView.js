@@ -439,9 +439,13 @@
                         if (a.mediumWidth && g) return (0, n.H)(t, a, B);
                         if (a.smallWidth && E) return (0, n.H)(t, a, B);
                         if (a.extraSmallWidth && C) return (0, n.H)(t, a, B);
-                        if (
-                            !(a.extraLargeWidth || a.largeWidth || a.mediumWidth || a.smallWidth || a.extraSmallWidth)
-                        ) {
+                        if (!(
+                            a.extraLargeWidth ||
+                            a.largeWidth ||
+                            a.mediumWidth ||
+                            a.smallWidth ||
+                            a.extraSmallWidth
+                        )) {
                             if (a.extraLargeHeight && b) return t;
                             if (a.largeHeight && v) return t;
                             if (a.mediumHeight && y) return t;
@@ -1286,7 +1290,7 @@
             },
             2862: (e, t, a) => {
                 'use strict';
-                let o, n, i, s, r, u, l;
+                let o, n, i, s, r, u, l, d;
                 (a.d(t, { $h: () => s, A2: () => u, E4: () => o, Rl: () => n, h2: () => i, kK: () => r, sh: () => l }),
                     (function (e) {
                         ((e.Items = 'items'),
@@ -1343,7 +1347,6 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (e.LootBoxToken = 'lootBoxToken'),
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
@@ -1384,6 +1387,7 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
+                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -1442,7 +1446,10 @@
                             (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(l || (l = {})));
+                    })(l || (l = {})),
+                    (function (e) {
+                        ((e.Small = '400x300'), (e.Big = '600x450'));
+                    })(d || (d = {})));
             },
             729: (e, t, a) => {
                 'use strict';
@@ -2189,7 +2196,7 @@
                                             t(e).delete(a);
                                         },
                                         n = (e, ...a) => {
-                                            for (var o, n = r(t(e).values()); !(o = n()).done; ) (0, o.value)(...a);
+                                            for (var o, n = r(t(e).values()); !(o = n()).done;) (0, o.value)(...a);
                                         };
                                     return (0, s.useMemo)(() => ({ on: a, off: o, trigger: n }), []);
                                 })(),
@@ -3197,7 +3204,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, a = n(r.keys()); !(e = a()).done; ) {
+                            for (var e, a = n(r.keys()); !(e = a()).done;) {
                                 u(e.value, t);
                             }
                         },
@@ -15045,7 +15052,7 @@
                     St = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function Pt(e) {
                     let t = '';
-                    for (let a = St.length - 1; a >= 0; a--) for (; e >= St[a]; ) ((t += xt[a]), (e -= St[a]));
+                    for (let a = St.length - 1; a >= 0; a--) for (; e >= St[a];) ((t += xt[a]), (e -= St[a]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

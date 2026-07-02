@@ -410,9 +410,13 @@
                         if (F.mediumWidth && l) return C(e, F, v);
                         if (F.smallWidth && g) return C(e, F, v);
                         if (F.extraSmallWidth && o) return C(e, F, v);
-                        if (
-                            !(F.extraLargeWidth || F.largeWidth || F.mediumWidth || F.smallWidth || F.extraSmallWidth)
-                        ) {
+                        if (!(
+                            F.extraLargeWidth ||
+                            F.largeWidth ||
+                            F.mediumWidth ||
+                            F.smallWidth ||
+                            F.extraSmallWidth
+                        )) {
                             if (F.extraLargeHeight && d) return e;
                             if (F.largeHeight && m) return e;
                             if (F.mediumHeight && s) return e;

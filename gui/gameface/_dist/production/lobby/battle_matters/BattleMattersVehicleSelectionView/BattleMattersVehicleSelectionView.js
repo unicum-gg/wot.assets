@@ -925,9 +925,13 @@
                         if (t.mediumWidth && _) return i(u, t, f);
                         if (t.smallWidth && d) return i(u, t, f);
                         if (t.extraSmallWidth && A) return i(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && B) return u;
                             if (t.mediumHeight && h) return u;
@@ -1409,7 +1413,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = re(n.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = re(n.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -1740,7 +1744,7 @@
                                             u(e).delete(t);
                                         },
                                         n = (e, ...t) => {
-                                            for (var r, n = Be(u(e).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = Be(u(e).values()); !(r = n()).done;) (0, r.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: r, trigger: n }), []);
                                 })(),
@@ -2875,7 +2879,7 @@
                     $u = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function Xu(e) {
                     let u = '';
-                    for (let t = $u.length - 1; t >= 0; t--) for (; e >= $u[t]; ) ((u += ju[t]), (e -= $u[t]));
+                    for (let t = $u.length - 1; t >= 0; t--) for (; e >= $u[t];) ((u += ju[t]), (e -= $u[t]));
                     return u;
                 }
                 const Yu = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -3138,7 +3142,7 @@
                         let i = nt.exec(e),
                             s = e,
                             l = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 a = at.exec(t),
                                 c = ot.exec(t),

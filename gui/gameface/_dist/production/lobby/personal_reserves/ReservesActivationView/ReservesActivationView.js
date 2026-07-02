@@ -2315,9 +2315,13 @@
                         if (t.mediumWidth && d) return s(e, t, p);
                         if (t.smallWidth && F) return s(e, t, p);
                         if (t.extraSmallWidth && _) return s(e, t, p);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && B) return e;
                             if (t.mediumHeight && g) return e;
@@ -2662,7 +2666,7 @@
                                             e(u).delete(t);
                                         },
                                         n = (u, ...t) => {
-                                            for (var r, n = j(e(u).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = j(e(u).values()); !(r = n()).done;) (0, r.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: r, trigger: n }), []);
                                 })(),
@@ -3533,7 +3537,7 @@
                         let s = ju.exec(u),
                             o = u,
                             l = 0;
-                        for (; s; ) {
+                        for (; s;) {
                             const t = s[0],
                                 a = qu.exec(t),
                                 c = Xu.exec(t),

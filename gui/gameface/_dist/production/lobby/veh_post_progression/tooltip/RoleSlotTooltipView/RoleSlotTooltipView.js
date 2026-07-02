@@ -420,8 +420,7 @@
                             ? `${u}`
                             : (function (u) {
                                   let e = '';
-                                  for (let t = A.length - 1; t >= 0; t--)
-                                      for (; u >= A[t]; ) ((e += E[t]), (u -= A[t]));
+                                  for (let t = A.length - 1; t >= 0; t--) for (; u >= A[t];) ((e += E[t]), (u -= A[t]));
                                   return e;
                               })(u);
             },

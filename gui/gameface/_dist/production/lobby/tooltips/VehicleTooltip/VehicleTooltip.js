@@ -545,15 +545,13 @@
                             if (t.mediumWidth && i) return Au(e, t, g);
                             if (t.smallWidth && l) return Au(e, t, g);
                             if (t.extraSmallWidth && C) return Au(e, t, g);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && o) return e;
                                 if (t.largeHeight && m) return e;
                                 if (t.mediumHeight && s) return e;

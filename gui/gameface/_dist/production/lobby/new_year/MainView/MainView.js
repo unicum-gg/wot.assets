@@ -87,15 +87,13 @@
                             if (n.mediumWidth && E) return (0, o.H)(t, n, f);
                             if (n.smallWidth && g) return (0, o.H)(t, n, f);
                             if (n.extraSmallWidth && v) return (0, o.H)(t, n, f);
-                            if (
-                                !(
-                                    n.extraLargeWidth ||
-                                    n.largeWidth ||
-                                    n.mediumWidth ||
-                                    n.smallWidth ||
-                                    n.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                n.extraLargeWidth ||
+                                n.largeWidth ||
+                                n.mediumWidth ||
+                                n.smallWidth ||
+                                n.extraSmallWidth
+                            )) {
                                 if (n.extraLargeHeight && b) return t;
                                 if (n.largeHeight && y) return t;
                                 if (n.mediumHeight && h) return t;
@@ -2849,7 +2847,7 @@
                     gt = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function vt(e) {
                     let t = '';
-                    for (let n = gt.length - 1; n >= 0; n--) for (; e >= gt[n]; ) ((t += Et[n]), (e -= gt[n]));
+                    for (let n = gt.length - 1; n >= 0; n--) for (; e >= gt[n];) ((t += Et[n]), (e -= gt[n]));
                     return t;
                 }
                 const bt = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),

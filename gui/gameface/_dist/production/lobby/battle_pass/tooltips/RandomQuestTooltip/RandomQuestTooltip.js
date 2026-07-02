@@ -474,7 +474,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, e = Cu(E.keys()); !(u = e()).done; ) D(u.value, F);
+                                                        for (var u, e = Cu(E.keys()); !(u = e()).done;) D(u.value, F);
                                                     },
                                                     unsubscribe: D,
                                                 };
@@ -711,7 +711,7 @@
                         let D = wu.exec(u),
                             B = u,
                             n = 0;
-                        for (; D; ) {
+                        for (; D;) {
                             const e = D[0],
                                 t = bu.exec(e),
                                 r = _u.exec(e),

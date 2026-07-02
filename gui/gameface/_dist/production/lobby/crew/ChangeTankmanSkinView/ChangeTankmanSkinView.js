@@ -490,9 +490,13 @@
                         if (t.mediumWidth && A) return (0, r.H)(u, t, f);
                         if (t.smallWidth && F) return (0, r.H)(u, t, f);
                         if (t.extraSmallWidth && D) return (0, r.H)(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && g) return u;
                             if (t.mediumHeight && p) return u;
@@ -1404,7 +1408,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, t = r(s.keys()); !(e = t()).done; ) {
+                            for (var e, t = r(s.keys()); !(e = t()).done;) {
                                 i(e.value, u);
                             }
                         },
@@ -2202,8 +2206,7 @@
                             ? `${e}`
                             : (function (e) {
                                   let u = '';
-                                  for (let t = r.length - 1; t >= 0; t--)
-                                      for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                                  for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                                   return u;
                               })(e);
             },
@@ -3045,7 +3048,7 @@
                             u(e).delete(t);
                         },
                         r = (e, ...t) => {
-                            for (var n, r = me(u(e).values()); !(n = r()).done; ) {
+                            for (var n, r = me(u(e).values()); !(n = r()).done;) {
                                 (0, n.value)(...t);
                             }
                         };

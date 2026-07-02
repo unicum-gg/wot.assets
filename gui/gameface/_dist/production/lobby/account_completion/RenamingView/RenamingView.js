@@ -922,9 +922,13 @@
                         if (t.mediumWidth && c) return i(e, t, p);
                         if (t.smallWidth && D) return i(e, t, p);
                         if (t.extraSmallWidth && _) return i(e, t, p);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && d) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -2714,7 +2718,7 @@
                                 r = (0, n.useCallback)(
                                     (e) => {
                                         let n = ge(t, e, u);
-                                        for (; n !== t; ) {
+                                        for (; n !== t;) {
                                             if (o[n].value) {
                                                 a(n);
                                                 break;

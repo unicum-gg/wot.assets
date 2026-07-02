@@ -1689,7 +1689,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = nu.length - 1; t >= 0; t--)
-                                      for (; u >= nu[t]; ) ((e += tu[t]), (u -= nu[t]));
+                                      for (; u >= nu[t];) ((e += tu[t]), (u -= nu[t]));
                                   return e;
                               })(u);
                 var ou = t(515);

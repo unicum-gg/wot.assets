@@ -800,7 +800,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = D(A.keys()); !(u = t()).done; ) E(u.value, e);
+                                                        for (var u, t = D(A.keys()); !(u = t()).done;) E(u.value, e);
                                                     },
                                                     unsubscribe: E,
                                                 };
@@ -936,7 +936,7 @@
                     p = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function b(u) {
                     let e = '';
-                    for (let t = p.length - 1; t >= 0; t--) for (; u >= p[t]; ) ((e += g[t]), (u -= p[t]));
+                    for (let t = p.length - 1; t >= 0; t--) for (; u >= p[t];) ((e += g[t]), (u -= p[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

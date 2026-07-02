@@ -880,7 +880,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = B(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = B(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, s.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),
@@ -1997,7 +1997,7 @@
                     Ge = (e, u, t, n) => {
                         let r = u.exec(e),
                             o = 0;
-                        for (; r; ) (o !== r.index && t(e.slice(o, r.index)), n(r), (o = u.lastIndex), (r = u.exec(e)));
+                        for (; r;) (o !== r.index && t(e.slice(o, r.index)), n(r), (o = u.lastIndex), (r = u.exec(e)));
                         o !== e.length && t(e.slice(o));
                     },
                     Ke = (e) => {
@@ -2006,7 +2006,7 @@
                         if (!t) return [e];
                         const n = [];
                         let r = 0;
-                        for (; t; ) (n.push(e.slice(r, u.lastIndex)), (r = u.lastIndex), (t = u.exec(e)));
+                        for (; t;) (n.push(e.slice(r, u.lastIndex)), (r = u.lastIndex), (t = u.exec(e)));
                         return (r !== e.length && n.push(e.slice(r)), n);
                     },
                     qe = (e, u = '') => {
@@ -2177,7 +2177,7 @@
                             c = ((e, u) => {
                                 let t = 0,
                                     n = e.length - 1;
-                                for (; n - t >= 0; ) {
+                                for (; n - t >= 0;) {
                                     const r = t + Math.ceil(0.5 * (n - t));
                                     Ze(e[r], u) ? (n = r - 1) : (t = r + 1);
                                 }
@@ -2688,7 +2688,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = s(r.keys()); !(e = t()).done; ) o(e.value, u);
+                                                        for (var e, t = s(r.keys()); !(e = t()).done;) o(e.value, u);
                                                     },
                                                     unsubscribe: o,
                                                 };

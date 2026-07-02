@@ -1010,8 +1010,7 @@
                             ? `${u}`
                             : (function (u) {
                                   let e = '';
-                                  for (let t = y.length - 1; t >= 0; t--)
-                                      for (; u >= y[t]; ) ((e += f[t]), (u -= y[t]));
+                                  for (let t = y.length - 1; t >= 0; t--) for (; u >= y[t];) ((e += f[t]), (u -= y[t]));
                                   return e;
                               })(u);
                 var O = t(5626);

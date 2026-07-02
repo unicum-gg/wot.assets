@@ -854,15 +854,13 @@
                             if (t.mediumWidth && F) return o(e, t, f);
                             if (t.smallWidth && d) return o(e, t, f);
                             if (t.extraSmallWidth && _) return o(e, t, f);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && B) return e;
                                 if (t.largeHeight && h) return e;
                                 if (t.mediumHeight && C) return e;
@@ -1908,7 +1906,7 @@
                     Tu = (u, e, t, r) => {
                         let n = e.exec(u),
                             a = 0;
-                        for (; n; ) (a !== n.index && t(u.slice(a, n.index)), r(n), (a = e.lastIndex), (n = e.exec(u)));
+                        for (; n;) (a !== n.index && t(u.slice(a, n.index)), r(n), (a = e.lastIndex), (n = e.exec(u)));
                         a !== u.length && t(u.slice(a));
                     },
                     Su = (u) => {
@@ -1917,7 +1915,7 @@
                         if (!t) return [u];
                         const r = [];
                         let n = 0;
-                        for (; t; ) (r.push(u.slice(n, e.lastIndex)), (n = e.lastIndex), (t = e.exec(u)));
+                        for (; t;) (r.push(u.slice(n, e.lastIndex)), (n = e.lastIndex), (t = e.exec(u)));
                         return (n !== u.length && r.push(u.slice(n)), r);
                     },
                     Mu = (u, e = '') => {
@@ -2141,7 +2139,7 @@
                                                     c = ((u, e) => {
                                                         let t = 0,
                                                             r = u.length - 1;
-                                                        for (; r - t >= 0; ) {
+                                                        for (; r - t >= 0;) {
                                                             const n = t + Math.ceil(0.5 * (r - t));
                                                             Hu(u[n], e) ? (r = n - 1) : (t = n + 1);
                                                         }

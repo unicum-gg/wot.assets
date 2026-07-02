@@ -1302,15 +1302,13 @@
                             if (t.mediumWidth && c) return S(e, t, g);
                             if (t.smallWidth && F) return S(e, t, g);
                             if (t.extraSmallWidth && _) return S(e, t, g);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && D) return e;
                                 if (t.largeHeight && d) return e;
                                 if (t.mediumHeight && m) return e;
@@ -1930,7 +1928,7 @@
                         let a = xu.exec(u),
                             s = u,
                             l = 0;
-                        for (; a; ) {
+                        for (; a;) {
                             const t = a[0],
                                 o = Su.exec(t),
                                 E = Tu.exec(t),
@@ -3166,7 +3164,7 @@
                                 : (function (u) {
                                       let e = '';
                                       for (let t = vu.length - 1; t >= 0; t--)
-                                          for (; u >= vu[t]; ) ((e += bu[t]), (u -= vu[t]));
+                                          for (; u >= vu[t];) ((e += bu[t]), (u -= vu[t]));
                                       return e;
                                   })(o));
                         var o;

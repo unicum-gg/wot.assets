@@ -945,15 +945,13 @@
                             if (t.mediumWidth && _) return o(u, t, h);
                             if (t.smallWidth && d) return o(u, t, h);
                             if (t.extraSmallWidth && A) return o(u, t, h);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && g) return u;
                                 if (t.largeHeight && p) return u;
                                 if (t.mediumHeight && B) return u;
@@ -2984,7 +2982,7 @@
                             : (function (e) {
                                   let u = '';
                                   for (let t = ku.length - 1; t >= 0; t--)
-                                      for (; e >= ku[t]; ) ((u += Nu[t]), (e -= ku[t]));
+                                      for (; e >= ku[t];) ((u += Nu[t]), (e -= ku[t]));
                                   return u;
                               })(e),
                     Iu = [
@@ -3385,7 +3383,7 @@
                     st = (e, u, t, n) => {
                         let r = u.exec(e),
                             a = 0;
-                        for (; r; ) (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
+                        for (; r;) (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
                         a !== e.length && t(e.slice(a));
                     },
                     ot = (e) => {
@@ -3394,7 +3392,7 @@
                         if (!t) return [e];
                         const n = [];
                         let r = 0;
-                        for (; t; ) (n.push(e.slice(r, u.lastIndex)), (r = u.lastIndex), (t = u.exec(e)));
+                        for (; t;) (n.push(e.slice(r, u.lastIndex)), (r = u.lastIndex), (t = u.exec(e)));
                         return (r !== e.length && n.push(e.slice(r)), n);
                     },
                     lt = (e, u = '') => {
@@ -3617,7 +3615,7 @@
                                                     c = ((e, u) => {
                                                         let t = 0,
                                                             n = e.length - 1;
-                                                        for (; n - t >= 0; ) {
+                                                        for (; n - t >= 0;) {
                                                             const r = t + Math.ceil(0.5 * (n - t));
                                                             _t(e[r], u) ? (n = r - 1) : (t = r + 1);
                                                         }

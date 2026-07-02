@@ -1062,7 +1062,7 @@
                     j = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function X(u) {
                     let e = '';
-                    for (let t = j.length - 1; t >= 0; t--) for (; u >= j[t]; ) ((e += U[t]), (u -= j[t]));
+                    for (let t = j.length - 1; t >= 0; t--) for (; u >= j[t];) ((e += U[t]), (u -= j[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1197,9 +1197,13 @@
                         if (t.mediumWidth && l) return V(e, t, h);
                         if (t.smallWidth && s) return V(e, t, h);
                         if (t.extraSmallWidth && B) return V(e, t, h);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && m) return e;
@@ -1735,7 +1739,7 @@
                         let F = Nu.exec(u),
                             n = u,
                             i = 0;
-                        for (; F; ) {
+                        for (; F;) {
                             const t = F[0],
                                 r = Hu.exec(t),
                                 D = ku.exec(t),

@@ -490,9 +490,13 @@
                         if (u.mediumWidth && g) return (0, a.H)(t, u, D);
                         if (u.smallWidth && p) return (0, a.H)(t, u, D);
                         if (u.extraSmallWidth && b) return (0, a.H)(t, u, D);
-                        if (
-                            !(u.extraLargeWidth || u.largeWidth || u.mediumWidth || u.smallWidth || u.extraSmallWidth)
-                        ) {
+                        if (!(
+                            u.extraLargeWidth ||
+                            u.largeWidth ||
+                            u.mediumWidth ||
+                            u.smallWidth ||
+                            u.extraSmallWidth
+                        )) {
                             if (u.extraLargeHeight && h) return t;
                             if (u.largeHeight && A) return t;
                             if (u.mediumHeight && v) return t;
@@ -1404,7 +1408,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, u = a(o.keys()); !(e = u()).done; ) {
+                            for (var e, u = a(o.keys()); !(e = u()).done;) {
                                 i(e.value, t);
                             }
                         },
@@ -2232,8 +2236,7 @@
                             ? `${e}`
                             : (function (e) {
                                   let t = '';
-                                  for (let u = a.length - 1; u >= 0; u--)
-                                      for (; e >= a[u]; ) ((t += n[u]), (e -= a[u]));
+                                  for (let u = a.length - 1; u >= 0; u--) for (; e >= a[u];) ((t += n[u]), (e -= a[u]));
                                   return t;
                               })(e);
             },
@@ -3165,7 +3168,7 @@
                             t(e).delete(u);
                         },
                         a = (e, ...u) => {
-                            for (var n, a = V(t(e).values()); !(n = a()).done; ) {
+                            for (var n, a = V(t(e).values()); !(n = a()).done;) {
                                 (0, n.value)(...u);
                             }
                         };
@@ -4015,7 +4018,7 @@
                     rt = (e, t, u, n) => {
                         let a = t.exec(e),
                             r = 0;
-                        for (; a; ) (r !== a.index && u(e.slice(r, a.index)), n(a), (r = t.lastIndex), (a = t.exec(e)));
+                        for (; a;) (r !== a.index && u(e.slice(r, a.index)), n(a), (r = t.lastIndex), (a = t.exec(e)));
                         r !== e.length && u(e.slice(r));
                     },
                     st = (e) => {
@@ -4024,7 +4027,7 @@
                         if (!u) return [e];
                         const n = [];
                         let a = 0;
-                        for (; u; ) (n.push(e.slice(a, t.lastIndex)), (a = t.lastIndex), (u = t.exec(e)));
+                        for (; u;) (n.push(e.slice(a, t.lastIndex)), (a = t.lastIndex), (u = t.exec(e)));
                         return (a !== e.length && n.push(e.slice(a)), n);
                     },
                     ot = (e, t = '') => {
@@ -4195,7 +4198,7 @@
                             c = ((e, t) => {
                                 let u = 0,
                                     n = e.length - 1;
-                                for (; n - u >= 0; ) {
+                                for (; n - u >= 0;) {
                                     const a = u + Math.ceil(0.5 * (n - u));
                                     mt(e[a], t) ? (n = a - 1) : (u = a + 1);
                                 }
@@ -7633,7 +7636,7 @@
                         (this._observers.set(e, e),
                             1 === this._observers.size &&
                                 (this._intervalID = window.setInterval(() => {
-                                    for (var e, t = Jt(this._observers.values()); !(e = t()).done; ) {
+                                    for (var e, t = Jt(this._observers.values()); !(e = t()).done;) {
                                         (0, e.value)();
                                     }
                                 }, 5e3)));
@@ -7840,7 +7843,7 @@
                                         r = a > 1 ? 16 : 24;
                                     let s = 2,
                                         o = r;
-                                    for (; (u - (r + s)) / (o + s) < Math.floor((e - 1) / a); ) s > 0 ? s-- : o--;
+                                    for (; (u - (r + s)) / (o + s) < Math.floor((e - 1) / a);) s > 0 ? s-- : o--;
                                     return (
                                         (n = Math.min(n, 1 + Math.floor((u - r) / (o + s)))),
                                         o !== r && (s = o - r),

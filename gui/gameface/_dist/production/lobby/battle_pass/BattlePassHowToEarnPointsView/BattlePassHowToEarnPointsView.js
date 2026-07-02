@@ -262,9 +262,13 @@
                         if (t.mediumWidth && D) return (0, n.H)(e, t, p);
                         if (t.smallWidth && d) return (0, n.H)(e, t, p);
                         if (t.extraSmallWidth && m) return (0, n.H)(e, t, p);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && h) return e;
@@ -2224,7 +2228,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = su(n.keys()); !(u = t()).done; ) r(u.value, e);
+                                                        for (var u, t = su(n.keys()); !(u = t()).done;) r(u.value, e);
                                                     },
                                                     unsubscribe: r,
                                                 };
@@ -2376,7 +2380,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = du.length - 1; t >= 0; t--)
-                                      for (; u >= du[t]; ) ((e += Du[t]), (u -= du[t]));
+                                      for (; u >= du[t];) ((e += Du[t]), (u -= du[t]));
                                   return e;
                               })(u);
                 var Cu = t(3649);

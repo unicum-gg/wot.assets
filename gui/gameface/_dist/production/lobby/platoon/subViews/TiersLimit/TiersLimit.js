@@ -1307,7 +1307,7 @@
                             o = j(n);
                         let r,
                             i = e;
-                        for (; null !== (r = V.exec(e)); ) {
+                        for (; null !== (r = V.exec(e));) {
                             const e = r[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
                                 const n = o + e[2].replace(U, '');
@@ -1408,7 +1408,7 @@
                                     ((e) => {
                                         const t = j(W());
                                         let n;
-                                        for (; null !== (n = F.exec(e)); ) {
+                                        for (; null !== (n = F.exec(e));) {
                                             const e = n[0].match(/href="(.*?)"/);
                                             if (e) {
                                                 const n = t + e[1].replace(U, ''),
@@ -1429,7 +1429,7 @@
                                 let t;
                                 const n = W(),
                                     o = j(n);
-                                for (; null !== (t = F.exec(e)); ) {
+                                for (; null !== (t = F.exec(e));) {
                                     const e = t[0].match(/href="(.*?)"/);
                                     if (e && !e[1].includes(H) && o) {
                                         const t = o + e[1].replace(U, ''),

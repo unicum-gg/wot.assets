@@ -949,15 +949,13 @@
                             if (t.mediumWidth && d) return m(u, t, p);
                             if (t.smallWidth && _) return m(u, t, p);
                             if (t.extraSmallWidth && A) return m(u, t, p);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && F) return u;
                                 if (t.largeHeight && D) return u;
                                 if (t.mediumHeight && g) return u;
@@ -2191,7 +2189,7 @@
                     Je = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function eu(e) {
                     let u = '';
-                    for (let t = Je.length - 1; t >= 0; t--) for (; e >= Je[t]; ) ((u += Qe[t]), (e -= Je[t]));
+                    for (let t = Je.length - 1; t >= 0; t--) for (; e >= Je[t];) ((u += Qe[t]), (e -= Je[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -4694,15 +4692,15 @@
                         return (
                             (0, a.useEffect)(() => {
                                 const e = new Set();
-                                for (var u, t = Lt(l); !(u = t()).done; )
-                                    for (var r, n = Lt(u.value.stageNodes); !(r = n()).done; ) {
+                                for (var u, t = Lt(l); !(u = t()).done;)
+                                    for (var r, n = Lt(u.value.stageNodes); !(r = n()).done;) {
                                         const u = r.value;
                                         u.nodeStatus === Ne.LEARNED && e.add(u.id);
                                     }
                                 V((u) => {
                                     const t = new Set(u);
                                     let r = !1;
-                                    for (var n, a = Lt(u); !(n = a()).done; ) {
+                                    for (var n, a = Lt(u); !(n = a()).done;) {
                                         const u = n.value;
                                         e.has(u) && (t.delete(u), (r = !0));
                                     }

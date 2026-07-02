@@ -1540,7 +1540,7 @@
                 function Bu(u) {
                     const e = [Au(u)];
                     let t = 0;
-                    for (; t < e.length; ) {
+                    for (; t < e.length;) {
                         const u = e[t];
                         if ('string' == typeof u) {
                             const n = cu(/\{(.*)Open\}(.*?)\{\1Close\}/, { tag: 1 }).exec(u);
@@ -1559,7 +1559,7 @@
                                             )
                                         ),
                                     );
-                                for (; i < o.length; ) (o.splice(i, 0, ...a), (i += a.length + 1));
+                                for (; i < o.length;) (o.splice(i, 0, ...a), (i += a.length + 1));
                                 ('' === o[0] && o.splice(0, 1), e.splice(t, 1, ...o));
                             } else if (u.substr(0, u.length - 1).includes(' ')) {
                                 const n = u.split(' ').map((u, e, t) => (t.length - 1 === e ? u : u + ' '));

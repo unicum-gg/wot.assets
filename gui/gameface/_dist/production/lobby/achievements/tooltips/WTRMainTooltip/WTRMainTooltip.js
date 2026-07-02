@@ -935,7 +935,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = m(E.keys()); !(u = t()).done; ) F(u.value, e);
+                                                        for (var u, t = m(E.keys()); !(u = t()).done;) F(u.value, e);
                                                     },
                                                     unsubscribe: F,
                                                 };
@@ -1165,8 +1165,7 @@
                             ? `${u}`
                             : (function (u) {
                                   let e = '';
-                                  for (let t = W.length - 1; t >= 0; t--)
-                                      for (; u >= W[t]; ) ((e += L[t]), (u -= W[t]));
+                                  for (let t = W.length - 1; t >= 0; t--) for (; u >= W[t];) ((e += L[t]), (u -= W[t]));
                                   return e;
                               })(u),
                     V = {
@@ -1203,7 +1202,7 @@
                         let n = q.exec(u),
                             D = u,
                             a = 0;
-                        for (; n; ) {
+                        for (; n;) {
                             const t = n[0],
                                 A = j.exec(t),
                                 o = z.exec(t),

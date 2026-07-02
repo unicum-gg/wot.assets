@@ -1,0 +1,12 @@
+<fun_sub_mode_equalize.xml>
+  <common>
+    <regularDevices>	True	</regularDevices>
+    <regularBoosters>	True	</regularBoosters>
+    <regularShells>	True	</regularShells>
+    <regularConsumables>	True	</regularConsumables>
+  </common>
+  <subMode>
+    <hasBattleQueueWarning>	True	</hasBattleQueueWarning>
+    <showInfoPageOnFirstVisit>	True	</showInfoPageOnFirstVisit>
+  </subMode>
+</fun_sub_mode_equalize.xml>

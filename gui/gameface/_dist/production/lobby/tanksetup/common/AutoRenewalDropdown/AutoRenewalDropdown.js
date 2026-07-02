@@ -841,7 +841,7 @@
                                             : e.ownerDocument.activeElement;
                                     if (i) {
                                         if ('IFRAME' === i.tagName) i = i.contentDocument.activeElement;
-                                        else for (; i.shadowRoot; ) i = i.shadowRoot.activeElement;
+                                        else for (; i.shadowRoot;) i = i.shadowRoot.activeElement;
                                         if (
                                             r((o = i), 'input,[contenteditable]') ||
                                             r(o, 'select,[contenteditable]') ||
@@ -932,7 +932,7 @@
                                     !(function (e, t, o) {
                                         if (!_.isWebKit && n.querySelector('select')) return !0;
                                         if (!n.contains(e)) return !1;
-                                        for (var r = e; r && r !== n; ) {
+                                        for (var r = e; r && r !== n;) {
                                             if (r.classList.contains(a.consuming)) return !0;
                                             var i = u(r);
                                             if (
@@ -1042,7 +1042,7 @@
                                     if (
                                         (function (e, t, o) {
                                             if (!n.contains(e)) return !1;
-                                            for (var r = e; r && r !== n; ) {
+                                            for (var r = e; r && r !== n;) {
                                                 if (r.classList.contains(a.consuming)) return !0;
                                                 var i = u(r);
                                                 if (

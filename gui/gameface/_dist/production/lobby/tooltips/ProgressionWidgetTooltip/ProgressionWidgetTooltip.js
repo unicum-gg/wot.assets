@@ -1000,7 +1000,7 @@
                         let o = b.exec(u),
                             s = u,
                             l = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const t = o[0],
                                 r = f.exec(t),
                                 E = w.exec(t),
@@ -1538,15 +1538,13 @@
                             if (t.mediumWidth && c) return Y(e, t, C);
                             if (t.smallWidth && A) return Y(e, t, C);
                             if (t.extraSmallWidth && m) return Y(e, t, C);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && F) return e;
                                 if (t.largeHeight && d) return e;
                                 if (t.mediumHeight && D) return e;

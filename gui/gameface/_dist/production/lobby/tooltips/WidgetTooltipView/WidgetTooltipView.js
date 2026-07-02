@@ -1263,15 +1263,13 @@
                             if (t.mediumWidth && D) return w(e, t, h);
                             if (t.smallWidth && l) return w(e, t, h);
                             if (t.extraSmallWidth && B) return w(e, t, h);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && _) return e;
                                 if (t.largeHeight && c) return e;
                                 if (t.mediumHeight && m) return e;
@@ -1851,73 +1849,72 @@
                             void 0 !== C ? n().createElement(nu, ou({}, C, { text: e })) : e,
                         );
                     });
-                let mu, Cu, du, hu, gu, pu, vu, wu;
-                var bu, xu, Su, fu, Tu;
+                let mu, Cu, du, hu, gu, pu, vu, wu, bu;
+                var xu, Su, fu, Tu, Ru;
                 (!(function (u) {
                     ((u.IN_PROGRESS = 'inProgress'), (u.COMPLETE = 'complete'), (u.DISABLE = 'disable'));
                 })(mu || (mu = {})),
-                    ((Tu = Cu || (Cu = {})).Items = 'items'),
-                    (Tu.Equipment = 'equipment'),
-                    (Tu.Xp = 'xp'),
-                    (Tu.XpFactor = 'xpFactor'),
-                    (Tu.Blueprints = 'blueprints'),
-                    (Tu.BlueprintsAny = 'blueprintsAny'),
-                    (Tu.Goodies = 'goodies'),
-                    (Tu.Berths = 'berths'),
-                    (Tu.Slots = 'slots'),
-                    (Tu.Tokens = 'tokens'),
-                    (Tu.CrewSkins = 'crewSkins'),
-                    (Tu.CrewBooks = 'crewBooks'),
-                    (Tu.Customizations = 'customizations'),
-                    (Tu.CreditsFactor = 'creditsFactor'),
-                    (Tu.Currency = 'currency'),
-                    (Tu.TankmenXp = 'tankmenXP'),
-                    (Tu.TankmenXpFactor = 'tankmenXPFactor'),
-                    (Tu.FreeXpFactor = 'freeXPFactor'),
-                    (Tu.BattleToken = 'battleToken'),
-                    (Tu.PremiumUniversal = 'premium_universal'),
-                    (Tu.Gold = 'gold'),
-                    (Tu.Credits = 'credits'),
-                    (Tu.Crystal = 'crystal'),
-                    (Tu.FreeXp = 'freeXP'),
-                    (Tu.Premium = 'premium'),
-                    (Tu.PremiumPlus = 'premium_plus'),
-                    (Tu.BattlePassPoints = 'battlePassPoints'),
-                    (Tu.BattlePassSelectToken = 'battlePassSelectToken'),
-                    (Tu.SelectableBonus = 'selectableBonus'),
-                    (Tu.StyleProgressToken = 'styleProgressToken'),
-                    (Tu.TmanToken = 'tmanToken'),
-                    (Tu.NaturalCover = 'naturalCover'),
-                    (Tu.BpCoin = 'bpcoin'),
-                    (Tu.BattlaPassFinalAchievement = 'dossier_achievement'),
-                    (Tu.BattleBadge = 'dossier_badge'),
-                    (Tu.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
-                    (Tu.NewYearFillers = 'ny22Fillers'),
-                    (Tu.NewYearInvoice = 'newYearInvoice'),
-                    (Tu.NewYearToyFragments = 'ny22ToyFragments'),
-                    (Tu.NewYearSlot = 'newYearSlot'),
-                    (Tu.BonusX5 = 'battle_bonus_x5'),
-                    (Tu.CrewBonusX3 = 'crew_bonus_x3'),
-                    (Tu.Vehicles = 'vehicles'),
-                    (Tu.EpicSelectToken = 'epicSelectToken'),
-                    (Tu.CollectionItem = 'collectionItem'),
-                    (Tu.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
-                    (Tu.Comp7TokenCouponReward = 'comp7TokenCouponReward'),
-                    (Tu.BattleBoosterGift = 'battleBooster_gift'),
-                    (Tu.CosmicLootboxSilver = 'lootBoxToken'),
-                    (Tu.CosmicLootboxCommon = 'cosmic_2024_2'),
-                    (Tu.Branch = 'branch'),
-                    (Tu.VehicleSelect = 'vehicleSelect'),
-                    (Tu.StyleProgress = 'styleProgress'),
-                    (Tu.ParagonsUnlocks = 'paragonsUnlocks'),
-                    (Tu.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
-                    (Tu.LootBoxToken = 'lootBoxToken'),
-                    (Tu.GoldenTicket = 'birthday2025_golden_ticket'),
-                    (Tu.PostStamp = 'giftsystem_4_stamp'),
-                    (Tu.Quests = 'quests'),
-                    (Tu.ArmoryCoin = 'armory_coin'),
-                    (Tu.PremiumPlusUniversal = 'premium_plus_universal'),
-                    (Tu.DogTagType = 'dogTagComponents'),
+                    ((Ru = Cu || (Cu = {})).Items = 'items'),
+                    (Ru.Equipment = 'equipment'),
+                    (Ru.Xp = 'xp'),
+                    (Ru.XpFactor = 'xpFactor'),
+                    (Ru.Blueprints = 'blueprints'),
+                    (Ru.BlueprintsAny = 'blueprintsAny'),
+                    (Ru.Goodies = 'goodies'),
+                    (Ru.Berths = 'berths'),
+                    (Ru.Slots = 'slots'),
+                    (Ru.Tokens = 'tokens'),
+                    (Ru.CrewSkins = 'crewSkins'),
+                    (Ru.CrewBooks = 'crewBooks'),
+                    (Ru.Customizations = 'customizations'),
+                    (Ru.CreditsFactor = 'creditsFactor'),
+                    (Ru.Currency = 'currency'),
+                    (Ru.TankmenXp = 'tankmenXP'),
+                    (Ru.TankmenXpFactor = 'tankmenXPFactor'),
+                    (Ru.FreeXpFactor = 'freeXPFactor'),
+                    (Ru.BattleToken = 'battleToken'),
+                    (Ru.PremiumUniversal = 'premium_universal'),
+                    (Ru.Gold = 'gold'),
+                    (Ru.Credits = 'credits'),
+                    (Ru.Crystal = 'crystal'),
+                    (Ru.FreeXp = 'freeXP'),
+                    (Ru.Premium = 'premium'),
+                    (Ru.PremiumPlus = 'premium_plus'),
+                    (Ru.BattlePassPoints = 'battlePassPoints'),
+                    (Ru.BattlePassSelectToken = 'battlePassSelectToken'),
+                    (Ru.SelectableBonus = 'selectableBonus'),
+                    (Ru.StyleProgressToken = 'styleProgressToken'),
+                    (Ru.TmanToken = 'tmanToken'),
+                    (Ru.NaturalCover = 'naturalCover'),
+                    (Ru.BpCoin = 'bpcoin'),
+                    (Ru.BattlaPassFinalAchievement = 'dossier_achievement'),
+                    (Ru.BattleBadge = 'dossier_badge'),
+                    (Ru.NewYearAlbumsAccess = 'newYearAlbumsAccess'),
+                    (Ru.NewYearFillers = 'ny22Fillers'),
+                    (Ru.NewYearInvoice = 'newYearInvoice'),
+                    (Ru.NewYearToyFragments = 'ny22ToyFragments'),
+                    (Ru.NewYearSlot = 'newYearSlot'),
+                    (Ru.BonusX5 = 'battle_bonus_x5'),
+                    (Ru.CrewBonusX3 = 'crew_bonus_x3'),
+                    (Ru.Vehicles = 'vehicles'),
+                    (Ru.EpicSelectToken = 'epicSelectToken'),
+                    (Ru.CollectionItem = 'collectionItem'),
+                    (Ru.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
+                    (Ru.Comp7TokenCouponReward = 'comp7TokenCouponReward'),
+                    (Ru.BattleBoosterGift = 'battleBooster_gift'),
+                    (Ru.CosmicLootboxSilver = 'lootBoxToken'),
+                    (Ru.CosmicLootboxCommon = 'cosmic_2024_2'),
+                    (Ru.Branch = 'branch'),
+                    (Ru.VehicleSelect = 'vehicleSelect'),
+                    (Ru.StyleProgress = 'styleProgress'),
+                    (Ru.ParagonsUnlocks = 'paragonsUnlocks'),
+                    (Ru.LootBoxToken = 'lootBoxToken'),
+                    (Ru.GoldenTicket = 'birthday2025_golden_ticket'),
+                    (Ru.PostStamp = 'giftsystem_4_stamp'),
+                    (Ru.Quests = 'quests'),
+                    (Ru.ArmoryCoin = 'armory_coin'),
+                    (Ru.PremiumPlusUniversal = 'premium_plus_universal'),
+                    (Ru.DogTagType = 'dogTagComponents'),
                     (function (u) {
                         ((u.Gold = 'gold'),
                             (u.Credits = 'credits'),
@@ -1950,29 +1947,44 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
+                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
                             (u.BattleBadge = 'dossier_badge'),
                             (u.BattleAchievement = 'dossier_achievement'));
                     })(du || (du = {})),
-                    ((fu = hu || (hu = {})).Big = 'big'),
-                    (fu.Small = 'small'),
-                    (fu.Mini = 'mini'),
-                    (fu.S600x450 = 's600x450'),
-                    (fu.S400x300 = 's400x300'),
-                    (fu.S296x222 = 's296x222'),
-                    (fu.S232x174 = 's232x174'),
-                    (fu.S180x135 = 's180x135'),
-                    (fu.S128x100 = 's128x100'),
-                    (fu.S80x80 = 's80x80'),
-                    (fu.S48x48 = 's48x48'),
-                    ((Su = gu || (gu = {})).MULTI = 'multi'),
-                    (Su.CURRENCY = 'currency'),
-                    (Su.PREMIUM_PLUS = 'premium_plus'),
-                    (Su.NUMBER = 'number'),
-                    (Su.STRING = 'string'),
-                    ((xu = pu || (pu = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    ((Tu = hu || (hu = {})).Big = 'big'),
+                    (Tu.Small = 'small'),
+                    (Tu.Mini = 'mini'),
+                    (Tu.S600x450 = 's600x450'),
+                    (Tu.S400x300 = 's400x300'),
+                    (Tu.S296x222 = 's296x222'),
+                    (Tu.S232x174 = 's232x174'),
+                    (Tu.S180x135 = 's180x135'),
+                    (Tu.S128x100 = 's128x100'),
+                    (Tu.S80x80 = 's80x80'),
+                    (Tu.S48x48 = 's48x48'),
+                    ((fu = gu || (gu = {})).MULTI = 'multi'),
+                    (fu.CURRENCY = 'currency'),
+                    (fu.PREMIUM_PLUS = 'premium_plus'),
+                    (fu.NUMBER = 'number'),
+                    (fu.STRING = 'string'),
+                    ((Su = pu || (pu = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    (Su.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
+                    (Su.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
+                    (Su.EQUIPMENT_PLUS = 'equipmentPlus'),
+                    (Su.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
+                    (Su.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
+                    (Su.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
+                    (Su.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
+                    (Su.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
+                    (Su.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
+                    (Su.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
+                    (Su.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
+                    (Su.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
+                    ((vu || (vu = {})).BATTLE_BOOSTER = 'battleBooster'),
+                    ((xu = wu || (wu = {})).BATTLE_BOOSTER = 'battleBooster'),
                     (xu.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
                     (xu.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
                     (xu.EQUIPMENT_PLUS = 'equipmentPlus'),
@@ -1985,31 +1997,20 @@
                     (xu.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                     (xu.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                     (xu.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
-                    ((vu || (vu = {})).BATTLE_BOOSTER = 'battleBooster'),
-                    ((bu = wu || (wu = {})).BATTLE_BOOSTER = 'battleBooster'),
-                    (bu.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
-                    (bu.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
-                    (bu.EQUIPMENT_PLUS = 'equipmentPlus'),
-                    (bu.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
-                    (bu.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
-                    (bu.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
-                    (bu.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
-                    (bu.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
-                    (bu.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
-                    (bu.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
-                    (bu.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
-                    (bu.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                var Ru = t(364);
-                class Pu extends n().PureComponent {
+                    (function (u) {
+                        ((u.Small = '400x300'), (u.Big = '600x450'));
+                    })(bu || (bu = {})));
+                var Pu = t(364);
+                class Lu extends n().PureComponent {
                     render() {
                         let u;
-                        u = 'gold' === this.props.format ? Ru.B3.GOLD : Ru.B3.INTEGRAL;
-                        const e = Ru.Z5.getNumberFormat(this.props.value, u);
+                        u = 'gold' === this.props.format ? Pu.B3.GOLD : Pu.B3.INTEGRAL;
+                        const e = Pu.Z5.getNumberFormat(this.props.value, u);
                         return void 0 !== this.props.value && void 0 !== e ? e : null;
                     }
                 }
-                let Lu;
-                ((Pu.defaultProps = { format: 'integral' }),
+                let Ou;
+                ((Lu.defaultProps = { format: 'integral' }),
                     Cu.Items,
                     Cu.Equipment,
                     Cu.Xp,
@@ -2066,52 +2067,52 @@
                             (u.s360 = '360'),
                             (u.s400 = '400'),
                             (u.s600 = '600'));
-                    })(Lu || (Lu = {})));
-                const Ou = (u, e, t) => {
+                    })(Ou || (Ou = {})));
+                const Mu = (u, e, t) => {
                     var r;
                     const n = u.$dyn(e);
                     return null != (r = null == n ? void 0 : n.$dyn(t)) ? r : null;
                 };
-                let Mu, yu, Nu, ku;
-                var Hu;
+                let yu, Nu, ku, Hu;
+                var Iu;
                 (!(function (u) {
                     ((u.SELECTABLE_VEHICLE_FOR_GIFT = 'selectableVehicleForGift'),
                         (u.SELECTABLE_VEHICLE_DISCOUNT = 'selectableVehicleDiscount'));
-                })(Mu || (Mu = {})),
+                })(yu || (yu = {})),
                     (function (u) {
                         ((u.Timer = 'timer'),
                             (u.Countdown = 'countdown'),
                             (u.Cooldown = 'cooldown'),
                             (u.None = 'none'));
-                    })(yu || (yu = {})),
+                    })(Nu || (Nu = {})),
                     (function (u) {
                         ((u.Description = 'description'),
                             (u.Short = 'short'),
                             (u.Long = 'long'),
                             (u.Extended = 'extended'));
-                    })(Nu || (Nu = {})),
-                    ((Hu = ku || (ku = {})).SHORT_DATE = 'short-date'),
-                    (Hu.SHORT_TIME = 'short-time'),
-                    (Hu.SHORT_DATE_TIME = 'short-date-time'),
-                    (Hu.FULL_DATE = 'full-date'),
-                    (Hu.FULL_DATE_TIME = 'full-date-time'),
-                    (Hu.MONTH = 'month'),
-                    (Hu.MONTH_DATE = 'month-date'),
-                    (Hu.DATE_MONTH = 'date-month'),
-                    (Hu.MONTH_YEAR = 'month-year'),
-                    (Hu.WEEK_DAY = 'week-day'),
-                    (Hu.WEEK_DAY_TIME = 'week-day-time'),
-                    (Hu.YEAR = 'year'),
-                    (Hu.DATE_YEAR = 'date-year'));
+                    })(ku || (ku = {})),
+                    ((Iu = Hu || (Hu = {})).SHORT_DATE = 'short-date'),
+                    (Iu.SHORT_TIME = 'short-time'),
+                    (Iu.SHORT_DATE_TIME = 'short-date-time'),
+                    (Iu.FULL_DATE = 'full-date'),
+                    (Iu.FULL_DATE_TIME = 'full-date-time'),
+                    (Iu.MONTH = 'month'),
+                    (Iu.MONTH_DATE = 'month-date'),
+                    (Iu.DATE_MONTH = 'date-month'),
+                    (Iu.MONTH_YEAR = 'month-year'),
+                    (Iu.WEEK_DAY = 'week-day'),
+                    (Iu.WEEK_DAY_TIME = 'week-day-time'),
+                    (Iu.YEAR = 'year'),
+                    (Iu.DATE_YEAR = 'date-year'));
                 Date.now();
-                const Iu = () => {};
-                let Uu;
-                (Ru.Sw.instance,
+                const Uu = () => {};
+                let Gu;
+                (Pu.Sw.instance,
                     (function (u) {
                         ((u.None = 'None'), (u.Shallow = 'Shallow'), (u.Deep = 'Deep'));
-                    })(Uu || (Uu = {})),
-                    Ru.Sw.instance);
-                const Gu = (u = 0, e, t = 0, n = Iu) => {
+                    })(Gu || (Gu = {})),
+                    Pu.Sw.instance);
+                const Wu = (u = 0, e, t = 0, n = Uu) => {
                         const a = (0, r.useState)(u),
                             E = a[0],
                             i = a[1];
@@ -2136,32 +2137,32 @@
                             E
                         );
                     },
-                    Wu = 'Countdown_description_8d',
-                    Xu = (u) => u.toString().padStart(2, '0'),
-                    ju = R.images.gui.maps.icons.components.countdown,
-                    Yu = (u, e) => {
-                        const t = 2 === e ? ju.big : ju;
+                    Xu = 'Countdown_description_8d',
+                    ju = (u) => u.toString().padStart(2, '0'),
+                    Yu = R.images.gui.maps.icons.components.countdown,
+                    qu = (u, e) => {
+                        const t = 2 === e ? Yu.big : Yu;
                         switch (u) {
-                            case yu.Timer:
+                            case Nu.Timer:
                                 return t.clock();
-                            case yu.Countdown:
+                            case Nu.Countdown:
                                 return t.hourglass();
-                            case yu.Cooldown:
+                            case Nu.Cooldown:
                                 return t.lock();
                         }
                     },
-                    qu = (0, r.memo)(
+                    zu = (0, r.memo)(
                         ({
                             duration: u,
-                            icon: e = yu.Timer,
-                            style: t = Nu.Description,
+                            icon: e = Nu.Timer,
+                            style: t = ku.Description,
                             onTimeReached: a,
                             className: E = '',
                             classNames: i = {},
                             labelFormat: F = '',
                         }) => {
-                            const s = t !== Nu.Description ? 1 : void 0,
-                                D = Gu(u, s),
+                            const s = t !== ku.Description ? 1 : void 0,
+                                D = Wu(u, s),
                                 l = (() => {
                                     const u = (0, r.useState)(o.O.view.getScale()),
                                         e = u[0],
@@ -2184,7 +2185,7 @@
                             a && a[D] && a[D]();
                             const B = ((u, e) => {
                                 switch (e) {
-                                    case Nu.Description:
+                                    case ku.Description:
                                         return ((u, e = !0) =>
                                             u.days > 7 && e
                                                 ? Q(R.strings.common.duration.days(), { days: u.days })
@@ -2199,12 +2200,12 @@
                                                     : Q(R.strings.common.duration.minutes(), {
                                                           minutes: u.minutes || 1,
                                                       }))(u);
-                                    case Nu.Short:
-                                        return `${Xu(u.minutes)}:${Xu(u.seconds)}`;
-                                    case Nu.Long:
-                                        return `${Xu(u.hours)}:${Xu(u.minutes)}:${Xu(u.seconds)}`;
-                                    case Nu.Extended:
-                                        return `${Q(R.strings.common.duration.days(), { days: u.days })} | ${Xu(u.hours)}:${Xu(u.minutes)}:${Xu(u.seconds)}`;
+                                    case ku.Short:
+                                        return `${ju(u.minutes)}:${ju(u.seconds)}`;
+                                    case ku.Long:
+                                        return `${ju(u.hours)}:${ju(u.minutes)}:${ju(u.seconds)}`;
+                                    case ku.Extended:
+                                        return `${Q(R.strings.common.duration.days(), { days: u.days })} | ${ju(u.hours)}:${ju(u.minutes)}:${ju(u.seconds)}`;
                                 }
                             })(
                                 (function (u = 0) {
@@ -2221,24 +2222,24 @@
                             return n().createElement(
                                 'div',
                                 { className: A()('Countdown_base_fe', E) },
-                                e !== yu.None &&
+                                e !== Nu.None &&
                                     n().createElement('div', {
                                         className: A()('Countdown_icon_8b', i.icon),
-                                        style: { backgroundImage: `url('${Yu(e, l)}')` },
+                                        style: { backgroundImage: `url('${qu(e, l)}')` },
                                     }),
                                 F
                                     ? n().createElement(
                                           'div',
-                                          { className: A()(Wu, i.text) },
+                                          { className: A()(Xu, i.text) },
                                           n().createElement(nu, { text: F, binding: { timerText: B } }),
                                       )
-                                    : n().createElement('div', { className: A()(Wu, i.text) }, B),
+                                    : n().createElement('div', { className: A()(Xu, i.text) }, B),
                             );
                         },
                     ),
-                    zu = 'App_divider_8c',
-                    Ku = R.strings.winback.widget.tooltip,
-                    Vu = (0, B.Pi)(() => {
+                    Ku = 'App_divider_8c',
+                    Vu = R.strings.winback.widget.tooltip,
+                    $u = (0, B.Pi)(() => {
                         const u = g().model.root.get(),
                             e = u.state,
                             t = u.currentTimerDate,
@@ -2260,11 +2261,11 @@
                                           { className: 'App_disableWrapper_6a' },
                                           n().createElement(cu, {
                                               className: 'App_disableTitle_c4',
-                                              text: Ou(Ku.disable, a, 'title'),
+                                              text: Mu(Vu.disable, a, 'title'),
                                           }),
                                           n().createElement(cu, {
                                               className: 'App_disableSubtitle_64',
-                                              text: Ou(Ku.disable, a, 'subtitle'),
+                                              text: Mu(Vu.disable, a, 'subtitle'),
                                           }),
                                       )
                                     : n().createElement(
@@ -2275,37 +2276,37 @@
                                               { className: 'App_header_5c', style: { backgroundImage: F } },
                                               n().createElement(cu, {
                                                   className: 'App_title_e3',
-                                                  text: Ou(Ku.title, a, e),
+                                                  text: Mu(Vu.title, a, e),
                                               }),
                                               n().createElement(
                                                   'div',
                                                   { className: 'App_subtitleWrapper_83' },
                                                   n().createElement(cu, {
                                                       className: 'App_titleDescription_c6',
-                                                      text: Ou(Ku.title.description, a, e),
+                                                      text: Mu(Vu.title.description, a, e),
                                                   }),
                                               ),
                                           ),
-                                          n().createElement('div', { className: zu }),
+                                          n().createElement('div', { className: Ku }),
                                           n().createElement(cu, {
                                               className: A()(
                                                   'App_description_81',
                                                   o && 'App_description__inProgress_39',
                                               ),
-                                              text: Ou(Ku.description, a, e),
+                                              text: Mu(Vu.description, a, e),
                                           }),
                                           i &&
                                               n().createElement(
                                                   n().Fragment,
                                                   null,
-                                                  n().createElement('div', { className: zu }),
+                                                  n().createElement('div', { className: Ku }),
                                                   n().createElement(
                                                       'div',
                                                       { className: A()('App_complete_23') },
                                                       n().createElement('div', { className: 'App_iconDone_51' }),
                                                       n().createElement(cu, {
                                                           className: 'App_completeText_dc',
-                                                          text: Ou(Ku.progression, a, 'complete'),
+                                                          text: Mu(Vu.progression, a, 'complete'),
                                                       }),
                                                   ),
                                               ),
@@ -2314,18 +2315,18 @@
                                               n().createElement(
                                                   n().Fragment,
                                                   null,
-                                                  n().createElement('div', { className: zu }),
+                                                  n().createElement('div', { className: Ku }),
                                                   n().createElement(
                                                       'div',
                                                       { className: 'App_timerBlock_26' },
                                                       n().createElement(cu, {
                                                           className: 'App_timerText_f8',
-                                                          text: Ou(Ku, a, 'timer'),
+                                                          text: Mu(Vu, a, 'timer'),
                                                       }),
                                                       n().createElement(
                                                           'div',
                                                           { className: 'App_time_ea' },
-                                                          n().createElement(qu, { duration: t, style: Nu.Long }),
+                                                          n().createElement(zu, { duration: t, style: ku.Long }),
                                                       ),
                                                   ),
                                               ),
@@ -2335,7 +2336,7 @@
                     });
                 engine.whenReady.then(() => {
                     E().render(
-                        n().createElement(h, null, n().createElement(Vu, null)),
+                        n().createElement(h, null, n().createElement($u, null)),
                         document.getElementById('root'),
                     );
                 });

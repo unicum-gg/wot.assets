@@ -1318,15 +1318,13 @@
                             if (t.mediumWidth && F) return T(e, t, g);
                             if (t.smallWidth && c) return T(e, t, g);
                             if (t.extraSmallWidth && D) return T(e, t, g);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && m) return e;
                                 if (t.largeHeight && _) return e;
                                 if (t.mediumHeight && B) return e;
@@ -1978,7 +1976,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = Ou.length - 1; t >= 0; t--)
-                                      for (; u >= Ou[t]; ) ((e += yu[t]), (u -= Ou[t]));
+                                      for (; u >= Ou[t];) ((e += yu[t]), (u -= Ou[t]));
                                   return e;
                               })(u),
                     ku = 'LevelProgress_level_a1',

@@ -98,15 +98,13 @@
                             if (i.mediumWidth && g) return (0, a.H)(t, i, T);
                             if (i.smallWidth && E) return (0, a.H)(t, i, T);
                             if (i.extraSmallWidth && w) return (0, a.H)(t, i, T);
-                            if (
-                                !(
-                                    i.extraLargeWidth ||
-                                    i.largeWidth ||
-                                    i.mediumWidth ||
-                                    i.smallWidth ||
-                                    i.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                i.extraLargeWidth ||
+                                i.largeWidth ||
+                                i.mediumWidth ||
+                                i.smallWidth ||
+                                i.extraSmallWidth
+                            )) {
                                 if (i.extraLargeHeight && p) return t;
                                 if (i.largeHeight && v) return t;
                                 if (i.mediumHeight && b) return t;
@@ -234,7 +232,7 @@
                 (i(6483), i(6179), i(3415), i(2862), i(729), i(1609));
             },
             2862: (e, t, i) => {
-                let r, a, n, o, s, l, d;
+                let r, a, n, o, s, l, d, _;
                 (i.d(t, { E4: () => r }),
                     (function (e) {
                         ((e.Items = 'items'),
@@ -291,7 +289,6 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (e.LootBoxToken = 'lootBoxToken'),
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
@@ -332,6 +329,7 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
+                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -390,7 +388,10 @@
                             (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(d || (d = {})));
+                    })(d || (d = {})),
+                    (function (e) {
+                        ((e.Small = '400x300'), (e.Big = '600x450'));
+                    })(_ || (_ = {})));
             },
             729: (e, t, i) => {
                 (i(2372), i(6179));
@@ -620,13 +621,13 @@
                         addPreloadTexture: () => s,
                         children: () => r,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => x,
+                        displayStatusIs: () => f,
                         events: () => n.U,
                         extraSize: () => O,
                         forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => g,
                         getBrowserTexturePath: () => d,
-                        getDisplayStatus: () => f,
+                        getDisplayStatus: () => x,
                         getScale: () => E,
                         getSize: () => c,
                         getViewGlobalPosition: () => h,
@@ -698,10 +699,10 @@
                 function T() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function f() {
+                function x() {
                     return viewEnv.getShowingStatus();
                 }
-                const x = Object.keys(a.W).reduce(
+                const f = Object.keys(a.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
@@ -1143,8 +1144,8 @@
                         e.keyCode === h.n.ESCAPE && t();
                     };
                 var T = i(7572);
-                const f = a.instance,
-                    x = {
+                const x = a.instance,
+                    f = {
                         DataTracker: n.Z,
                         ViewModel: T.Z,
                         ViewEventType: l,
@@ -1223,11 +1224,11 @@
                                 }
                             return i;
                         },
-                        ClickOutsideManager: f,
+                        ClickOutsideManager: x,
                         SystemLocale: o,
                         UserLocale: s,
                     };
-                window.ViewEnvHelper = x;
+                window.ViewEnvHelper = f;
             },
             3458: (e, t, i) => {
                 let r, a;

@@ -910,9 +910,13 @@
                         if (t.mediumWidth && m) return o(u, t, f);
                         if (t.smallWidth && _) return o(u, t, f);
                         if (t.extraSmallWidth && A) return o(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && h) return u;
                             if (t.largeHeight && D) return u;
                             if (t.mediumHeight && C) return u;
@@ -1247,7 +1251,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = U(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = U(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),
@@ -1639,7 +1643,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = ce(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = ce(r.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -2789,7 +2793,7 @@
                             : (function (e) {
                                   let u = '';
                                   for (let t = Su.length - 1; t >= 0; t--)
-                                      for (; e >= Su[t]; ) ((u += wu[t]), (e -= Su[t]));
+                                      for (; e >= Su[t];) ((u += wu[t]), (e -= Su[t]));
                                   return u;
                               })(e),
                     Lu = {

@@ -1524,7 +1524,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = d(a.keys()); !(u = t()).done; ) i(u.value, e);
+                                                        for (var u, t = d(a.keys()); !(u = t()).done;) i(u.value, e);
                                                     },
                                                     unsubscribe: i,
                                                 };
@@ -1801,9 +1801,13 @@
                         if (t.mediumWidth && l) return ru(e, t, g);
                         if (t.smallWidth && D) return ru(e, t, g);
                         if (t.extraSmallWidth && c) return ru(e, t, g);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && m) return e;
                             if (t.largeHeight && B) return e;
                             if (t.mediumHeight && _) return e;
@@ -2318,7 +2322,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = ju.length - 1; t >= 0; t--)
-                                      for (; u >= ju[t]; ) ((e += Yu[t]), (u -= ju[t]));
+                                      for (; u >= ju[t];) ((e += Yu[t]), (u -= ju[t]));
                                   return e;
                               })(u),
                     Ku = 'CompensationReward_base_4c',

@@ -495,15 +495,13 @@
                             if (A.mediumWidth && l) return n(e, A, p);
                             if (A.smallWidth && m) return n(e, A, p);
                             if (A.extraSmallWidth && o) return n(e, A, p);
-                            if (
-                                !(
-                                    A.extraLargeWidth ||
-                                    A.largeWidth ||
-                                    A.mediumWidth ||
-                                    A.smallWidth ||
-                                    A.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                A.extraLargeWidth ||
+                                A.largeWidth ||
+                                A.mediumWidth ||
+                                A.smallWidth ||
+                                A.extraSmallWidth
+                            )) {
                                 if (A.extraLargeHeight && s) return e;
                                 if (A.largeHeight && d) return e;
                                 if (A.mediumHeight && g) return e;

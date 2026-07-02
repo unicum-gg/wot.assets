@@ -932,15 +932,13 @@
                             if (t.mediumWidth && s) return E(e, t, w);
                             if (t.smallWidth && C) return E(e, t, w);
                             if (t.extraSmallWidth && m) return E(e, t, w);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && c) return e;
                                 if (t.largeHeight && d) return e;
                                 if (t.mediumHeight && h) return e;

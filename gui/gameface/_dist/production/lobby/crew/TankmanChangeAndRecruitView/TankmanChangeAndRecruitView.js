@@ -664,7 +664,7 @@
                                             : e.ownerDocument.activeElement;
                                     if (o) {
                                         if ('IFRAME' === o.tagName) o = o.contentDocument.activeElement;
-                                        else for (; o.shadowRoot; ) o = o.shadowRoot.activeElement;
+                                        else for (; o.shadowRoot;) o = o.shadowRoot.activeElement;
                                         if (
                                             a((r = o), 'input,[contenteditable]') ||
                                             a(r, 'select,[contenteditable]') ||
@@ -755,7 +755,7 @@
                                     !(function (e, t, r) {
                                         if (!F.isWebKit && n.querySelector('select')) return !0;
                                         if (!n.contains(e)) return !1;
-                                        for (var a = e; a && a !== n; ) {
+                                        for (var a = e; a && a !== n;) {
                                             if (a.classList.contains(s.consuming)) return !0;
                                             var o = u(a);
                                             if (
@@ -865,7 +865,7 @@
                                     if (
                                         (function (e, t, r) {
                                             if (!n.contains(e)) return !1;
-                                            for (var a = e; a && a !== n; ) {
+                                            for (var a = e; a && a !== n;) {
                                                 if (a.classList.contains(s.consuming)) return !0;
                                                 var o = u(a);
                                                 if (
@@ -2252,9 +2252,13 @@
                         if (t.mediumWidth && _) return a(u, t, B);
                         if (t.smallWidth && A) return a(u, t, B);
                         if (t.extraSmallWidth && D) return a(u, t, B);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && g) return u;
                             if (t.largeHeight && F) return u;
                             if (t.mediumHeight && C) return u;
@@ -2634,7 +2638,7 @@
                             n = Z(t);
                         let r,
                             a = e;
-                        for (; null !== (r = K.exec(e)); ) {
+                        for (; null !== (r = K.exec(e));) {
                             const e = r[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
                                 const t = n + e[2].replace(q, '');
@@ -2737,7 +2741,7 @@
                                         ((e) => {
                                             const u = Z(J());
                                             let t;
-                                            for (; null !== (t = z.exec(e)); ) {
+                                            for (; null !== (t = z.exec(e));) {
                                                 const e = t[0].match(/href="(.*?)"/);
                                                 if (e) {
                                                     const t = u + e[1].replace(q, ''),
@@ -2758,7 +2762,7 @@
                                     let u;
                                     const t = J(),
                                         n = Z(t);
-                                    for (; null !== (u = z.exec(e)); ) {
+                                    for (; null !== (u = z.exec(e));) {
                                         const e = u[0].match(/href="(.*?)"/);
                                         if (e && !e[1].includes(Q) && n) {
                                             const u = n + e[1].replace(q, ''),
@@ -2889,7 +2893,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = Ee(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = Ee(r.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -3707,7 +3711,7 @@
                             : (function (e) {
                                   let u = '';
                                   for (let t = du.length - 1; t >= 0; t--)
-                                      for (; e >= du[t]; ) ((u += cu[t]), (e -= du[t]));
+                                      for (; e >= du[t];) ((u += cu[t]), (e -= du[t]));
                                   return u;
                               })(e);
                 R.strings.common.percentValue();

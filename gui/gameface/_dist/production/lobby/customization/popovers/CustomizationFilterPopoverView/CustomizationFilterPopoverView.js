@@ -664,7 +664,7 @@
                                             : e.ownerDocument.activeElement;
                                     if (a) {
                                         if ('IFRAME' === a.tagName) a = a.contentDocument.activeElement;
-                                        else for (; a.shadowRoot; ) a = a.shadowRoot.activeElement;
+                                        else for (; a.shadowRoot;) a = a.shadowRoot.activeElement;
                                         if (
                                             r((n = a), 'input,[contenteditable]') ||
                                             r(n, 'select,[contenteditable]') ||
@@ -755,7 +755,7 @@
                                     !(function (e, u, n) {
                                         if (!C.isWebKit && o.querySelector('select')) return !0;
                                         if (!o.contains(e)) return !1;
-                                        for (var r = e; r && r !== o; ) {
+                                        for (var r = e; r && r !== o;) {
                                             if (r.classList.contains(s.consuming)) return !0;
                                             var a = t(r);
                                             if (
@@ -865,7 +865,7 @@
                                     if (
                                         (function (e, u, n) {
                                             if (!o.contains(e)) return !1;
-                                            for (var r = e; r && r !== o; ) {
+                                            for (var r = e; r && r !== o;) {
                                                 if (r.classList.contains(s.consuming)) return !0;
                                                 var a = t(r);
                                                 if (
@@ -3052,9 +3052,13 @@
                         if (u.mediumWidth && m) return K(t, u, D);
                         if (u.smallWidth && _) return K(t, u, D);
                         if (u.extraSmallWidth && E) return K(t, u, D);
-                        if (
-                            !(u.extraLargeWidth || u.largeWidth || u.mediumWidth || u.smallWidth || u.extraSmallWidth)
-                        ) {
+                        if (!(
+                            u.extraLargeWidth ||
+                            u.largeWidth ||
+                            u.mediumWidth ||
+                            u.smallWidth ||
+                            u.extraSmallWidth
+                        )) {
                             if (u.extraLargeHeight && A) return t;
                             if (u.largeHeight && h) return t;
                             if (u.mediumHeight && b) return t;
@@ -5153,7 +5157,7 @@
                             : (function (e) {
                                   let t = '';
                                   for (let u = fu.length - 1; u >= 0; u--)
-                                      for (; e >= fu[u]; ) ((t += pu[u]), (e -= fu[u]));
+                                      for (; e >= fu[u];) ((t += pu[u]), (e -= fu[u]));
                                   return t;
                               })(e),
                     wu = 'VehicleTier_base_99',
@@ -5542,7 +5546,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, u = Vu(n.keys()); !(e = u()).done; ) r(e.value, t);
+                                                        for (var e, u = Vu(n.keys()); !(e = u()).done;) r(e.value, t);
                                                     },
                                                     unsubscribe: r,
                                                 };

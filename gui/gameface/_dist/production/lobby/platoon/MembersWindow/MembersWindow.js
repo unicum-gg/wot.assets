@@ -1500,7 +1500,7 @@
                             n = Au(t);
                         let a,
                             o = u;
-                        for (; null !== (a = Eu.exec(u)); ) {
+                        for (; null !== (a = Eu.exec(u));) {
                             const u = a[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (u) {
                                 const t = n + u[2].replace(lu, '');
@@ -1603,7 +1603,7 @@
                                         ((u) => {
                                             const e = Au(Fu());
                                             let t;
-                                            for (; null !== (t = iu.exec(u)); ) {
+                                            for (; null !== (t = iu.exec(u));) {
                                                 const u = t[0].match(/href="(.*?)"/);
                                                 if (u) {
                                                     const t = e + u[1].replace(lu, ''),
@@ -1624,7 +1624,7 @@
                                     let e;
                                     const t = Fu(),
                                         n = Au(t);
-                                    for (; null !== (e = iu.exec(u)); ) {
+                                    for (; null !== (e = iu.exec(u));) {
                                         const u = e[0].match(/href="(.*?)"/);
                                         if (u && !u[1].includes(cu) && n) {
                                             const e = n + u[1].replace(lu, ''),
@@ -2442,7 +2442,7 @@
                     Et = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function ct(u) {
                     let e = '';
-                    for (let t = Et.length - 1; t >= 0; t--) for (; u >= Et[t]; ) ((e += lt[t]), (u -= Et[t]));
+                    for (let t = Et.length - 1; t >= 0; t--) for (; u >= Et[t];) ((e += lt[t]), (u -= Et[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

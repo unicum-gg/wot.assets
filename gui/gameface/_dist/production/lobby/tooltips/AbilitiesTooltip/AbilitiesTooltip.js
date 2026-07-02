@@ -545,15 +545,13 @@
                             if (t.mediumWidth && B) return ru(e, t, g);
                             if (t.smallWidth && l) return ru(e, t, g);
                             if (t.extraSmallWidth && o) return ru(e, t, g);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && C) return e;
                                 if (t.largeHeight && m) return e;
                                 if (t.mediumHeight && s) return e;
@@ -1134,7 +1132,7 @@
                     Yu = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function qu(u) {
                     let e = '';
-                    for (let t = Yu.length - 1; t >= 0; t--) for (; u >= Yu[t]; ) ((e += Uu[t]), (u -= Yu[t]));
+                    for (let t = Yu.length - 1; t >= 0; t--) for (; u >= Yu[t];) ((e += Uu[t]), (u -= Yu[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

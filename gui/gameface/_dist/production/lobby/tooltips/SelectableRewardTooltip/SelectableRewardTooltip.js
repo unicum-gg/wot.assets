@@ -491,7 +491,7 @@
                         let D = au.exec(u),
                             B = u,
                             t = 0;
-                        for (; D; ) {
+                        for (; D;) {
                             const A = D[0],
                                 C = su.exec(A),
                                 n = lu.exec(A),
@@ -775,7 +775,7 @@
                                     : (function (u) {
                                           let F = '';
                                           for (let A = nu.length - 1; A >= 0; A--)
-                                              for (; u >= nu[A]; ) ((F += Cu[A]), (u -= nu[A]));
+                                              for (; u >= nu[A];) ((F += Cu[A]), (u -= nu[A]));
                                           return F;
                                       })(B));
                         var B;

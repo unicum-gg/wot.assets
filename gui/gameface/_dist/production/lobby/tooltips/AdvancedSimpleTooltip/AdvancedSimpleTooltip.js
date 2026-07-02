@@ -172,7 +172,7 @@
                         let l = D.exec(u),
                             C = u,
                             o = 0;
-                        for (; l; ) {
+                        for (; l;) {
                             const t = l[0],
                                 E = a.exec(t),
                                 m = n.exec(t),
@@ -711,15 +711,13 @@
                             if (t.mediumWidth && B) return tu(e, t, g);
                             if (t.smallWidth && l) return tu(e, t, g);
                             if (t.extraSmallWidth && C) return tu(e, t, g);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && o) return e;
                                 if (t.largeHeight && m) return e;
                                 if (t.mediumHeight && s) return e;

@@ -933,15 +933,13 @@
                             if (t.mediumWidth && _) return o(e, t, v);
                             if (t.smallWidth && c) return o(e, t, v);
                             if (t.extraSmallWidth && D) return o(e, t, v);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && B) return e;
                                 if (t.largeHeight && C) return e;
                                 if (t.mediumHeight && h) return e;
@@ -1845,7 +1843,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = Nu.length - 1; t >= 0; t--)
-                                      for (; u >= Nu[t]; ) ((e += ku[t]), (u -= Nu[t]));
+                                      for (; u >= Nu[t];) ((e += ku[t]), (u -= Nu[t]));
                                   return e;
                               })(u),
                     Wu = ({ binding: u, text: e = '', classMix: t, alignment: n = U.left }) =>
@@ -2281,7 +2279,7 @@
                         let o = _e.exec(u),
                             E = u,
                             s = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const t = o[0],
                                 r = ce.exec(t),
                                 l = De.exec(t),

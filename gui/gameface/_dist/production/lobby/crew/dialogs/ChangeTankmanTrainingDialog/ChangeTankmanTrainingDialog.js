@@ -174,9 +174,13 @@
                         if (t.mediumWidth && F) return (0, n.H)(e, t, b);
                         if (t.smallWidth && D) return (0, n.H)(e, t, b);
                         if (t.extraSmallWidth && m) return (0, n.H)(e, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && B) return e;
                             if (t.mediumHeight && g) return e;
@@ -745,7 +749,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var u, t = n(o.keys()); !(u = t()).done; ) {
+                            for (var u, t = n(o.keys()); !(u = t()).done;) {
                                 s(u.value, e);
                             }
                         },
@@ -1976,7 +1980,7 @@
                         if (!t) return [u];
                         const r = [];
                         let n = 0;
-                        for (; t; ) (r.push(u.slice(n, e.lastIndex)), (n = e.lastIndex), (t = e.exec(u)));
+                        for (; t;) (r.push(u.slice(n, e.lastIndex)), (n = e.lastIndex), (t = e.exec(u)));
                         return (n !== u.length && r.push(u.slice(n)), r);
                     },
                     s = (u, e = '') => {
@@ -2132,7 +2136,7 @@
                 const r = (u, e, t, r) => {
                     let n = e.exec(u),
                         a = 0;
-                    for (; n; ) (a !== n.index && t(u.slice(a, n.index)), r(n), (a = e.lastIndex), (n = e.exec(u)));
+                    for (; n;) (a !== n.index && t(u.slice(a, n.index)), r(n), (a = e.lastIndex), (n = e.exec(u)));
                     a !== u.length && t(u.slice(a));
                 };
             },
@@ -2208,7 +2212,7 @@
                             A = ((u, e) => {
                                 let t = 0,
                                     r = u.length - 1;
-                                for (; r - t >= 0; ) {
+                                for (; r - t >= 0;) {
                                     const n = t + Math.ceil(0.5 * (r - t));
                                     i(u[n], e) ? (r = n - 1) : (t = n + 1);
                                 }
@@ -2296,16 +2300,14 @@
             },
             5298: (u, e, t) => {
                 'use strict';
-                t.d(e, { lG: () => n });
+                t.d(e, { l: () => n });
                 var r = t(776);
                 const n = (u, e) => ({
                     isEnabled: u !== r.f.absent,
                     args: e,
                     contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
                     decoratorId:
-                        u === r.f.unbound
-                            ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
-                            : void 0,
+                        u === r.f.normal ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId') : void 0,
                     ignoreShowDelay: u === r.f.backport,
                     ignoreMouseClick: !0,
                 });
@@ -2544,8 +2546,8 @@
                 }
                 const I = /<link.*?>/g,
                     W = /\.\.\//g,
-                    G = /<script.*?>/g,
-                    j = 'default.css',
+                    j = /<script.*?>/g,
+                    G = 'default.css',
                     U = (u) => {
                         const e = u.match(W);
                         return e && e.join('');
@@ -2557,7 +2559,7 @@
                             u++
                         ) {
                             const t = e[u];
-                            if (!t.href.includes(j)) return t.href;
+                            if (!t.href.includes(G)) return t.href;
                         }
                         return '';
                     },
@@ -2566,7 +2568,7 @@
                             r = U(t);
                         let n,
                             a = u;
-                        for (; null !== (n = G.exec(u)); ) {
+                        for (; null !== (n = j.exec(u));) {
                             const u = n[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (u) {
                                 const t = r + u[2].replace(W, '');
@@ -2669,7 +2671,7 @@
                                         ((u) => {
                                             const e = U($());
                                             let t;
-                                            for (; null !== (t = I.exec(u)); ) {
+                                            for (; null !== (t = I.exec(u));) {
                                                 const u = t[0].match(/href="(.*?)"/);
                                                 if (u) {
                                                     const t = e + u[1].replace(W, ''),
@@ -2690,9 +2692,9 @@
                                     let e;
                                     const t = $(),
                                         r = U(t);
-                                    for (; null !== (e = I.exec(u)); ) {
+                                    for (; null !== (e = I.exec(u));) {
                                         const u = e[0].match(/href="(.*?)"/);
-                                        if (u && !u[1].includes(j) && r) {
+                                        if (u && !u[1].includes(G) && r) {
                                             const e = r + u[1].replace(W, ''),
                                                 t = document.createElement('link');
                                             ((t.href = e), (t.rel = 'stylesheet'), document.head.appendChild(t));
@@ -2926,7 +2928,7 @@
                                     [e, r, c],
                                 );
                             P(N.n.ENTER, E);
-                            const _ = (0, n.useMemo)(() => (0, ou.lG)(s.type, { buttonID: t }), [s.type, t]),
+                            const _ = (0, n.useMemo)(() => (0, ou.l)(s.type, { buttonID: t }), [s.type, t]),
                                 d = o()(lu, s.type !== iu.f.absent && cu);
                             return a().createElement(
                                 au.u,
@@ -3271,9 +3273,9 @@
                                     computedClassNames: e,
                                 };
                             }, [t, r, l, E, d, F, H, N, T, B, k, w, y]),
-                            G = W.computedStyle,
-                            j = W.computedClassNames;
-                        return a().createElement('div', Tu({ className: o()(xu.base, ...j, e), style: G }, I), P);
+                            j = W.computedStyle,
+                            G = W.computedClassNames;
+                        return a().createElement('div', Tu({ className: o()(xu.base, ...G, e), style: j }, I), P);
                     }),
                     Ou = 'FormatText_base_d0',
                     Ru = ({ binding: u, text: e = '', classMix: t, alignment: r = h.v2.left }) =>
@@ -3354,8 +3356,8 @@
                     );
                 }
                 Object.keys(hu());
-                const Gu = Object.keys(Hu()),
-                    ju = { mt: 'MD', mr: 'SM', mb: 'SM', ml: 'SM' },
+                const ju = Object.keys(Hu()),
+                    Gu = { mt: 'MD', mr: 'SM', mb: 'SM', ml: 'SM' },
                     Uu = { mt: 'SM', mr: 'XS', mb: 'XS', ml: 'XS' },
                     $u = { mt: 'XS', mr: 'XS', mb: 'XS', ml: 'XS' },
                     Vu = {
@@ -3372,8 +3374,8 @@
                         {
                             'heading-H144': { mt: 'XL', mr: 'LG', mb: 'LG', ml: 'LG' },
                             'heading-H73': { mt: 'LG', mr: 'MD', mb: 'MD', ml: 'MD' },
-                            'heading-H56': ju,
-                            'heading-H36': ju,
+                            'heading-H56': Gu,
+                            'heading-H36': Gu,
                             'heading-H28': Uu,
                             'heading-H24': Uu,
                             'heading-H24R': Uu,
@@ -3393,7 +3395,7 @@
                         (Object.keys(Xu),
                         (u) =>
                             u
-                                ? ((u) => Gu.includes(u))(u)
+                                ? ((u) => ju.includes(u))(u)
                                     ? { colorClassName: Pu[u] }
                                     : { colorStyle: { color: u } }
                                 : {}),
@@ -3850,7 +3852,7 @@
                     );
                 }
                 const O = ({ cost: u, tooltip: e, index: t, tooltipRootId: r }) => {
-                        const a = (0, L.lG)(e.type, { index: t });
+                        const a = (0, L.l)(e.type, { index: t });
                         return u.value === u.discountValue && 0 === u.value
                             ? n().createElement('div', { className: S }, R.strings.dialogs.priceCard.price.free())
                             : n().createElement(
@@ -3896,7 +3898,7 @@
                 !(function (u) {
                     ((u.Big = 'big'), (u.Small = 'small'));
                 })(W || (W = {}));
-                const G = ({
+                const j = ({
                         onClick: u,
                         tooltipRootId: e,
                         tooltip: t,
@@ -3941,7 +3943,7 @@
                             n().createElement(p, { cardType: c, kwargs: f }),
                         );
                     },
-                    j = 'PriceListApp_base_7d',
+                    G = 'PriceListApp_base_7d',
                     U = 'PriceListApp_card_6a';
                 function $() {
                     return (
@@ -3964,10 +3966,10 @@
                             i = (0, A.GS)().mediaWidth;
                         return n().createElement(
                             'div',
-                            { className: d()(j, e) },
+                            { className: d()(G, e) },
                             (0, o.UI)(r.computes.cards(), (e, t) =>
                                 n().createElement(
-                                    G,
+                                    j,
                                     $({}, e, {
                                         key: `${t}-${e.cardState}`,
                                         onClick: a.onCardClick,
@@ -3996,10 +3998,7 @@
                 let r;
                 (t.d(e, { f: () => r }),
                     (function (u) {
-                        ((u.backport = 'backport'),
-                            (u.unbound = 'unbound'),
-                            (u.normal = 'normal'),
-                            (u.absent = 'absent'));
+                        ((u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent'));
                     })(r || (r = {})));
             },
             8460: (u, e, t) => {

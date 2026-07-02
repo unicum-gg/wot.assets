@@ -1597,7 +1597,7 @@
                             A = e || {};
                         let s = i.exec(u),
                             c = u;
-                        for (; s; ) {
+                        for (; s;) {
                             const t = s[0],
                                 n = o.exec(t),
                                 _ = D.exec(t),

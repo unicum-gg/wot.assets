@@ -858,9 +858,13 @@
                         if (t.mediumWidth && l) return n(e, t, w);
                         if (t.smallWidth && C) return n(e, t, w);
                         if (t.extraSmallWidth && d) return n(e, t, w);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -1325,7 +1329,7 @@
                         let A = au.exec(u),
                             i = u,
                             F = 0;
-                        for (; A; ) {
+                        for (; A;) {
                             const t = A[0],
                                 r = nu.exec(t),
                                 o = Eu.exec(t),
@@ -1477,7 +1481,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = cu(a.keys()); !(u = t()).done; ) n(u.value, e);
+                                                        for (var u, t = cu(a.keys()); !(u = t()).done;) n(u.value, e);
                                                     },
                                                     unsubscribe: n,
                                                 };
@@ -1829,7 +1833,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = Tu.length - 1; t >= 0; t--)
-                                      for (; u >= Tu[t]; ) ((e += Lu[t]), (u -= Tu[t]));
+                                      for (; u >= Tu[t];) ((e += Lu[t]), (u -= Tu[t]));
                                   return e;
                               })(u),
                     ku = 'TankName_base_eb',

@@ -489,9 +489,13 @@
                         if (t.mediumWidth && A) return (0, r.H)(u, t, f);
                         if (t.smallWidth && F) return (0, r.H)(u, t, f);
                         if (t.extraSmallWidth && D) return (0, r.H)(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && g) return u;
                             if (t.mediumHeight && B) return u;
@@ -2191,7 +2195,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, t = r(s.keys()); !(e = t()).done; ) {
+                            for (var e, t = r(s.keys()); !(e = t()).done;) {
                                 i(e.value, u);
                             }
                         },
@@ -2797,7 +2801,7 @@
                             u(e).delete(t);
                         },
                         o = (e, ...t) => {
-                            for (var n, a = r(u(e).values()); !(n = a()).done; ) {
+                            for (var n, a = r(u(e).values()); !(n = a()).done;) {
                                 (0, n.value)(...t);
                             }
                         };
@@ -3146,8 +3150,7 @@
                             ? `${e}`
                             : (function (e) {
                                   let u = '';
-                                  for (let t = r.length - 1; t >= 0; t--)
-                                      for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                                  for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                                   return u;
                               })(e);
             },

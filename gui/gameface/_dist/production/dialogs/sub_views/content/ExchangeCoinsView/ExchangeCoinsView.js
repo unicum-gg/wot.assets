@@ -665,7 +665,7 @@
                                             : e.ownerDocument.activeElement;
                                     if (o) {
                                         if ('IFRAME' === o.tagName) o = o.contentDocument.activeElement;
-                                        else for (; o.shadowRoot; ) o = o.shadowRoot.activeElement;
+                                        else for (; o.shadowRoot;) o = o.shadowRoot.activeElement;
                                         if (
                                             i((r = o), 'input,[contenteditable]') ||
                                             i(r, 'select,[contenteditable]') ||
@@ -756,7 +756,7 @@
                                     !(function (e, t, r) {
                                         if (!w.isWebKit && n.querySelector('select')) return !0;
                                         if (!n.contains(e)) return !1;
-                                        for (var i = e; i && i !== n; ) {
+                                        for (var i = e; i && i !== n;) {
                                             if (i.classList.contains(m)) return !0;
                                             var o = u(i);
                                             if (
@@ -864,7 +864,7 @@
                                     if (
                                         (function (e, t, r) {
                                             if (!n.contains(e)) return !1;
-                                            for (var i = e; i && i !== n; ) {
+                                            for (var i = e; i && i !== n;) {
                                                 if (i.classList.contains(m)) return !0;
                                                 var o = u(i);
                                                 if (
@@ -2256,15 +2256,13 @@
                             if (t.mediumWidth && m) return s(u, t, g);
                             if (t.smallWidth && A) return s(u, t, g);
                             if (t.extraSmallWidth && _) return s(u, t, g);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && F) return u;
                                 if (t.largeHeight && p) return u;
                                 if (t.mediumHeight && C) return u;
@@ -2778,7 +2776,7 @@
                                     const u = o[e] || '',
                                         t = d[m] || '';
                                     if (u.match(E) || u === t) {
-                                        for (; u !== d[m] && m < d.length; ) m++;
+                                        for (; u !== d[m] && m < d.length;) m++;
                                         m++;
                                     }
                                 }
@@ -2807,8 +2805,8 @@
                                 if (s) return;
                                 let c = a;
                                 const d = l.test(o[a]);
-                                if (t && d) for (; l.test(o[c]) && c < o.length; ) c++;
-                                if (u && d) for (; l.test(o[c]) && c > 0; ) c--;
+                                if (t && d) for (; l.test(o[c]) && c < o.length;) c++;
+                                if (u && d) for (; l.test(o[c]) && c > 0;) c--;
                                 if (c !== a || (u && d))
                                     return (e.preventDefault(), (c = c < 0 ? 0 : c), void this.setCursorPosition(c, c));
                                 ((u && 1 === r && 1 === o.length) || t) &&

@@ -931,15 +931,13 @@
                             if (t.mediumWidth && D) return n(e, t, b);
                             if (t.smallWidth && c) return n(e, t, b);
                             if (t.extraSmallWidth && C) return n(e, t, b);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && m) return e;
                                 if (t.largeHeight && d) return e;
                                 if (t.mediumHeight && h) return e;
@@ -2057,7 +2055,7 @@
                         let i = Hu.exec(u),
                             A = u,
                             F = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 r = Pu.exec(t),
                                 o = ku.exec(t),

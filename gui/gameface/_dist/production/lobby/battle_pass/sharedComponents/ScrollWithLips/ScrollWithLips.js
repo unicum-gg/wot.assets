@@ -921,7 +921,7 @@
                                             t(e).delete(n);
                                         },
                                         o = (e, ...n) => {
-                                            for (var r, o = m(t(e).values()); !(r = o()).done; ) (0, r.value)(...n);
+                                            for (var r, o = m(t(e).values()); !(r = o()).done;) (0, r.value)(...n);
                                         };
                                     return (0, c.useMemo)(() => ({ on: n, off: r, trigger: o }), []);
                                 })(),

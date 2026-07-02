@@ -858,9 +858,13 @@
                         if (t.mediumWidth && A) return r(e, t, v);
                         if (t.smallWidth && D) return r(e, t, v);
                         if (t.extraSmallWidth && _) return r(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && p) return e;
@@ -1195,7 +1199,7 @@
                                             e(u).delete(t);
                                         },
                                         r = (u, ...t) => {
-                                            for (var a, n = W(e(u).values()); !(a = n()).done; ) (0, a.value)(...t);
+                                            for (var a, n = W(e(u).values()); !(a = n()).done;) (0, a.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),
@@ -2021,7 +2025,7 @@
                                                     };
                                                 },
                                                 dispose: function () {
-                                                    for (var u, t = yu(n.keys()); !(u = t()).done; ) r(u.value, e);
+                                                    for (var u, t = yu(n.keys()); !(u = t()).done;) r(u.value, e);
                                                 },
                                                 unsubscribe: r,
                                             };

@@ -550,9 +550,13 @@
                         if (A.mediumWidth && i) return nu(e, A, _);
                         if (A.smallWidth && C) return nu(e, A, _);
                         if (A.extraSmallWidth && l) return nu(e, A, _);
-                        if (
-                            !(A.extraLargeWidth || A.largeWidth || A.mediumWidth || A.smallWidth || A.extraSmallWidth)
-                        ) {
+                        if (!(
+                            A.extraLargeWidth ||
+                            A.largeWidth ||
+                            A.mediumWidth ||
+                            A.smallWidth ||
+                            A.extraSmallWidth
+                        )) {
                             if (A.extraLargeHeight && m) return e;
                             if (A.largeHeight && o) return e;
                             if (A.mediumHeight && s) return e;

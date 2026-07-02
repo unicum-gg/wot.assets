@@ -516,9 +516,13 @@
                         if (t.mediumWidth && m) return (0, r.H)(u, t, f);
                         if (t.smallWidth && A) return (0, r.H)(u, t, f);
                         if (t.extraSmallWidth && b) return (0, r.H)(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && F) return u;
                             if (t.largeHeight && v) return u;
                             if (t.mediumHeight && C) return u;
@@ -1482,7 +1486,7 @@
                                             : e.ownerDocument.activeElement;
                                     if (i) {
                                         if ('IFRAME' === i.tagName) i = i.contentDocument.activeElement;
-                                        else for (; i.shadowRoot; ) i = i.shadowRoot.activeElement;
+                                        else for (; i.shadowRoot;) i = i.shadowRoot.activeElement;
                                         if (
                                             o((r = i), 'input,[contenteditable]') ||
                                             o(r, 'select,[contenteditable]') ||
@@ -1573,7 +1577,7 @@
                                     !(function (e, t, r) {
                                         if (!v.isWebKit && n.querySelector('select')) return !0;
                                         if (!n.contains(e)) return !1;
-                                        for (var o = e; o && o !== n; ) {
+                                        for (var o = e; o && o !== n;) {
                                             if (o.classList.contains(s.consuming)) return !0;
                                             var i = u(o);
                                             if (
@@ -1683,7 +1687,7 @@
                                     if (
                                         (function (e, t, r) {
                                             if (!n.contains(e)) return !1;
-                                            for (var o = e; o && o !== n; ) {
+                                            for (var o = e; o && o !== n;) {
                                                 if (o.classList.contains(s.consuming)) return !0;
                                                 var i = u(o);
                                                 if (

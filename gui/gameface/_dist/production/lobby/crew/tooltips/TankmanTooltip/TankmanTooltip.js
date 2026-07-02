@@ -1056,7 +1056,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = K(r.keys()); !(u = t()).done; ) o(u.value, e);
+                                                        for (var u, t = K(r.keys()); !(u = t()).done;) o(u.value, e);
                                                     },
                                                     unsubscribe: o,
                                                 };
@@ -1845,7 +1845,7 @@
                     se = (u, e, t, n) => {
                         let r = e.exec(u),
                             a = 0;
-                        for (; r; ) (a !== r.index && t(u.slice(a, r.index)), n(r), (a = e.lastIndex), (r = e.exec(u)));
+                        for (; r;) (a !== r.index && t(u.slice(a, r.index)), n(r), (a = e.lastIndex), (r = e.exec(u)));
                         a !== u.length && t(u.slice(a));
                     },
                     ce = (u) => {
@@ -1854,7 +1854,7 @@
                         if (!t) return [u];
                         const n = [];
                         let r = 0;
-                        for (; t; ) (n.push(u.slice(r, e.lastIndex)), (r = e.lastIndex), (t = e.exec(u)));
+                        for (; t;) (n.push(u.slice(r, e.lastIndex)), (r = e.lastIndex), (t = e.exec(u)));
                         return (r !== u.length && n.push(u.slice(r)), n);
                     },
                     le = (u, e = '') => {
@@ -2025,7 +2025,7 @@
                             l = ((u, e) => {
                                 let t = 0,
                                     n = u.length - 1;
-                                for (; n - t >= 0; ) {
+                                for (; n - t >= 0;) {
                                     const r = t + Math.ceil(0.5 * (n - t));
                                     Fe(u[r], e) ? (n = r - 1) : (t = r + 1);
                                 }
@@ -2152,7 +2152,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = ge.length - 1; t >= 0; t--)
-                                      for (; u >= ge[t]; ) ((e += ve[t]), (u -= ge[t]));
+                                      for (; u >= ge[t];) ((e += ve[t]), (u -= ge[t]));
                                   return e;
                               })(u),
                     ye = {

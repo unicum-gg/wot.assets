@@ -948,7 +948,7 @@
                         let t = b.exec(u),
                             n = u,
                             o = 0;
-                        for (; t; ) {
+                        for (; t;) {
                             const A = t[0],
                                 D = f.exec(A),
                                 B = O.exec(A),
@@ -1145,7 +1145,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, A = N(E.keys()); !(u = A()).done; ) D(u.value, e);
+                                                        for (var u, A = N(E.keys()); !(u = A()).done;) D(u.value, e);
                                                     },
                                                     unsubscribe: D,
                                                 };

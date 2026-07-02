@@ -451,15 +451,13 @@
                             if (t.mediumWidth && A) return (0, n.H)(u, t, b);
                             if (t.smallWidth && F) return (0, n.H)(u, t, b);
                             if (t.extraSmallWidth && D) return (0, n.H)(u, t, b);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && g) return u;
                                 if (t.largeHeight && B) return u;
                                 if (t.mediumHeight && C) return u;
@@ -2436,8 +2434,7 @@
                             ? `${e}`
                             : (function (e) {
                                   let u = '';
-                                  for (let t = n.length - 1; t >= 0; t--)
-                                      for (; e >= n[t]; ) ((u += r[t]), (e -= n[t]));
+                                  for (let t = n.length - 1; t >= 0; t--) for (; e >= n[t];) ((u += r[t]), (e -= n[t]));
                                   return u;
                               })(e);
             },
@@ -3329,7 +3326,7 @@
                         let i = Y.exec(e),
                             o = e,
                             l = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 r = V.exec(t),
                                 c = K.exec(t),
@@ -4780,7 +4777,7 @@
                         let m = i.exec(e),
                             _ = e,
                             d = 0;
-                        for (; m; ) {
+                        for (; m;) {
                             const t = m[0],
                                 n = o.exec(t),
                                 A = l.exec(t),

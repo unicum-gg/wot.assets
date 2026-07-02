@@ -942,7 +942,7 @@
                         let B = P.exec(u),
                             n = u,
                             C = 0;
-                        for (; B; ) {
+                        for (; B;) {
                             const A = B[0],
                                 F = k.exec(A),
                                 r = S.exec(A),

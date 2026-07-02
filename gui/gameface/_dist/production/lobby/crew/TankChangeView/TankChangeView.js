@@ -490,9 +490,13 @@
                         if (u.mediumWidth && g) return (0, a.H)(t, u, D);
                         if (u.smallWidth && A) return (0, a.H)(t, u, D);
                         if (u.extraSmallWidth && p) return (0, a.H)(t, u, D);
-                        if (
-                            !(u.extraLargeWidth || u.largeWidth || u.mediumWidth || u.smallWidth || u.extraSmallWidth)
-                        ) {
+                        if (!(
+                            u.extraLargeWidth ||
+                            u.largeWidth ||
+                            u.mediumWidth ||
+                            u.smallWidth ||
+                            u.extraSmallWidth
+                        )) {
                             if (u.extraLargeHeight && C) return t;
                             if (u.largeHeight && F) return t;
                             if (u.mediumHeight && h) return t;
@@ -1404,7 +1408,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, u = a(s.keys()); !(e = u()).done; ) {
+                            for (var e, u = a(s.keys()); !(e = u()).done;) {
                                 i(e.value, t);
                             }
                         },
@@ -2232,8 +2236,7 @@
                             ? `${e}`
                             : (function (e) {
                                   let t = '';
-                                  for (let u = a.length - 1; u >= 0; u--)
-                                      for (; e >= a[u]; ) ((t += n[u]), (e -= a[u]));
+                                  for (let u = a.length - 1; u >= 0; u--) for (; e >= a[u];) ((t += n[u]), (e -= a[u]));
                                   return t;
                               })(e);
             },
@@ -3384,7 +3387,7 @@
                             t(e).delete(u);
                         },
                         a = (e, ...u) => {
-                            for (var n, a = Fe(t(e).values()); !(n = a()).done; ) {
+                            for (var n, a = Fe(t(e).values()); !(n = a()).done;) {
                                 (0, n.value)(...u);
                             }
                         };
@@ -6219,7 +6222,7 @@
                         (this._observers.set(e, e),
                             1 === this._observers.size &&
                                 (this._intervalID = window.setInterval(() => {
-                                    for (var e, t = Jt(this._observers.values()); !(e = t()).done; ) {
+                                    for (var e, t = Jt(this._observers.values()); !(e = t()).done;) {
                                         (0, e.value)();
                                     }
                                 }, 5e3)));
@@ -6426,7 +6429,7 @@
                                         r = a > 1 ? 16 : 24;
                                     let o = 2,
                                         s = r;
-                                    for (; (u - (r + o)) / (s + o) < Math.floor((e - 1) / a); ) o > 0 ? o-- : s--;
+                                    for (; (u - (r + o)) / (s + o) < Math.floor((e - 1) / a);) o > 0 ? o-- : s--;
                                     return (
                                         (n = Math.min(n, 1 + Math.floor((u - r) / (s + o)))),
                                         s !== r && (o = s - r),

@@ -949,9 +949,13 @@
                         if (t.mediumWidth && m) return i(u, t, f);
                         if (t.smallWidth && d) return i(u, t, f);
                         if (t.extraSmallWidth && A) return i(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && g) return u;
                             if (t.mediumHeight && h) return u;
@@ -2251,7 +2255,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = Bu(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = Bu(r.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -3371,7 +3375,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = nn(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = nn(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),
@@ -4067,7 +4071,7 @@
                     qn = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function Kn(e) {
                     let u = '';
-                    for (let t = qn.length - 1; t >= 0; t--) for (; e >= qn[t]; ) ((u += Yn[t]), (e -= qn[t]));
+                    for (let t = qn.length - 1; t >= 0; t--) for (; e >= qn[t];) ((u += Yn[t]), (e -= qn[t]));
                     return u;
                 }
                 const Zn = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),

@@ -427,9 +427,13 @@
                         if (A.mediumWidth && l) return i(e, A, x);
                         if (A.smallWidth && o) return i(e, A, x);
                         if (A.extraSmallWidth && s) return i(e, A, x);
-                        if (
-                            !(A.extraLargeWidth || A.largeWidth || A.mediumWidth || A.smallWidth || A.extraSmallWidth)
-                        ) {
+                        if (!(
+                            A.extraLargeWidth ||
+                            A.largeWidth ||
+                            A.mediumWidth ||
+                            A.smallWidth ||
+                            A.extraSmallWidth
+                        )) {
                             if (A.extraLargeHeight && d) return e;
                             if (A.largeHeight && m) return e;
                             if (A.mediumHeight && g) return e;
@@ -720,7 +724,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, A = Tu(F.keys()); !(u = A()).done; ) E(u.value, e);
+                                                        for (var u, A = Tu(F.keys()); !(u = A()).done;) E(u.value, e);
                                                     },
                                                     unsubscribe: E,
                                                 };
@@ -986,7 +990,7 @@
                         let E = qu.exec(u),
                             D = u,
                             B = 0;
-                        for (; E; ) {
+                        for (; E;) {
                             const A = E[0],
                                 r = Qu.exec(A),
                                 n = Ku.exec(A),

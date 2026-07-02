@@ -861,9 +861,13 @@
                         if (t.mediumWidth && D) return E(e, t, p);
                         if (t.smallWidth && _) return E(e, t, p);
                         if (t.extraSmallWidth && c) return E(e, t, p);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && d) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -1994,7 +1998,7 @@
                         let E = ju.exec(u),
                             A = u,
                             s = 0;
-                        for (; E; ) {
+                        for (; E;) {
                             const t = E[0],
                                 r = Ku.exec(t),
                                 o = qu.exec(t),

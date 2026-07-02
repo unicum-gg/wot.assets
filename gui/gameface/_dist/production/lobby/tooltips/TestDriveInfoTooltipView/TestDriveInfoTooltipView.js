@@ -1519,7 +1519,7 @@
                             A = e || {};
                         let s = o.exec(u),
                             c = u;
-                        for (; s; ) {
+                        for (; s;) {
                             const t = s[0],
                                 n = i.exec(t),
                                 C = D.exec(t),

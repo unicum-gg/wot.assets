@@ -828,15 +828,13 @@
                             if (t.mediumWidth && d) return a(e, t, v);
                             if (t.smallWidth && c) return a(e, t, v);
                             if (t.extraSmallWidth && _) return a(e, t, v);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && B) return e;
                                 if (t.largeHeight && C) return e;
                                 if (t.mediumHeight && f) return e;
@@ -1527,7 +1525,7 @@
                                     i = e.defaultNumberOfDecimals,
                                     a = $.defaultPrefixForPositiveValue;
                                 for (var n = 0, o = [$.generalOverrides, e.overrides]; n < o.length; n++)
-                                    for (var E, s = Z(o[n]); !(E = s()).done; ) {
+                                    for (var E, s = Z(o[n]); !(E = s()).done;) {
                                         const e = E.value;
                                         var A, F;
                                         e.condition(u) &&

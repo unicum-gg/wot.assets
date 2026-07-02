@@ -1054,20 +1054,9 @@
                     );
                 let I;
                 !(function (u) {
-                    ((u.backport = 'backport'), (u.unbound = 'unbound'), (u.normal = 'normal'), (u.absent = 'absent'));
+                    ((u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent'));
                 })(I || (I = {}));
-                const U = (u, e) => ({
-                        isEnabled: u !== I.absent,
-                        args: e,
-                        contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
-                        decoratorId:
-                            u === I.unbound
-                                ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
-                                : void 0,
-                        ignoreShowDelay: u === I.backport,
-                        ignoreMouseClick: !0,
-                    }),
-                    V = {
+                const U = {
                         base: 'CurrencyItem_base_bf',
                         base__credits: 'CurrencyItem_base__credits_3f',
                         base__gold: 'CurrencyItem_base__gold_cf',
@@ -1076,22 +1065,36 @@
                         base__freeXP: 'CurrencyItem_base__freeXP_b4',
                         base__equipCoin: 'CurrencyItem_base__equipCoin_8a',
                     },
-                    W = ({ value: u, currencyType: e, isWGMAvailable: t, tooltip: n }) => {
+                    V = ({ value: u, currencyType: e, isWGMAvailable: t, tooltip: n }) => {
                         const o = e === F.gold ? 'gold' : 'integral',
-                            A = U(n.type, { currency: e });
+                            A =
+                                ((E = n.type),
+                                (i = { currency: e }),
+                                {
+                                    isEnabled: E !== I.absent,
+                                    args: i,
+                                    contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
+                                    decoratorId:
+                                        E === I.normal
+                                            ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
+                                            : void 0,
+                                    ignoreShowDelay: E === I.backport,
+                                    ignoreMouseClick: !0,
+                                });
+                        var E, i;
                         return r().createElement(
                             O,
                             A,
                             r().createElement(
                                 'span',
-                                { className: f()(V.base, V[`base__${e}`]) },
-                                r().createElement('div', { className: V.icon }),
+                                { className: f()(U.base, U[`base__${e}`]) },
+                                r().createElement('div', { className: U.icon }),
                                 t ? r().createElement(M, { value: u, format: o }) : r().createElement(N, null),
                             ),
                         );
                     },
-                    j = 'MoneyBalanceApp_base_3c',
-                    q = () => {
+                    W = 'MoneyBalanceApp_base_3c',
+                    j = () => {
                         const u = b(),
                             e = u.gold,
                             t = u.credits,
@@ -1106,9 +1109,9 @@
                             c = b('model.equipCoinTooltip');
                         return r().createElement(
                             'div',
-                            { className: j },
+                            { className: W },
                             -1 !== n &&
-                                r().createElement(W, {
+                                r().createElement(V, {
                                     key: F.crystal,
                                     value: n,
                                     currencyType: F.crystal,
@@ -1116,7 +1119,7 @@
                                     tooltip: i,
                                 }),
                             -1 !== e &&
-                                r().createElement(W, {
+                                r().createElement(V, {
                                     key: F.gold,
                                     value: e,
                                     currencyType: F.gold,
@@ -1124,7 +1127,7 @@
                                     tooltip: a,
                                 }),
                             -1 !== t &&
-                                r().createElement(W, {
+                                r().createElement(V, {
                                     key: F.credits,
                                     value: t,
                                     currencyType: F.credits,
@@ -1132,7 +1135,7 @@
                                     tooltip: s,
                                 }),
                             -1 !== o &&
-                                r().createElement(W, {
+                                r().createElement(V, {
                                     key: F.freeXP,
                                     value: o,
                                     currencyType: F.freeXP,
@@ -1140,7 +1143,7 @@
                                     tooltip: D,
                                 }),
                             -1 !== A &&
-                                r().createElement(W, {
+                                r().createElement(V, {
                                     key: F.equipCoin,
                                     value: A,
                                     currencyType: F.equipCoin,
@@ -1149,23 +1152,23 @@
                                 }),
                         );
                     };
-                function G() {
+                function q() {
                     return !1;
                 }
                 console.log;
-                var H = t(174);
-                function K(u, e) {
+                var G = t(174);
+                function H(u, e) {
                     var t = ('undefined' != typeof Symbol && u[Symbol.iterator]) || u['@@iterator'];
                     if (t) return (t = t.call(u)).next.bind(t);
                     if (
                         Array.isArray(u) ||
                         (t = (function (u, e) {
                             if (!u) return;
-                            if ('string' == typeof u) return Y(u, e);
+                            if ('string' == typeof u) return K(u, e);
                             var t = Object.prototype.toString.call(u).slice(8, -1);
                             'Object' === t && u.constructor && (t = u.constructor.name);
                             if ('Map' === t || 'Set' === t) return Array.from(u);
-                            if ('Arguments' === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)) return Y(u, e);
+                            if ('Arguments' === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)) return K(u, e);
                         })(u)) ||
                         (e && u && 'number' == typeof u.length)
                     ) {
@@ -1179,13 +1182,13 @@
                         'Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.',
                     );
                 }
-                function Y(u, e) {
+                function K(u, e) {
                     (null == e || e > u.length) && (e = u.length);
                     for (var t = 0, n = new Array(e); t < e; t++) n[t] = u[t];
                     return n;
                 }
-                const z = (u) => (0 === u ? window : window.subViews.get(u));
-                const $ = ((u, e) => {
+                const Y = (u) => (0 === u ? window : window.subViews.get(u));
+                const z = ((u, e) => {
                         const t = (0, n.createContext)({});
                         return [
                             function ({ mode: o = 'real', options: A, children: E, mocks: F }) {
@@ -1195,7 +1198,7 @@
                                         const A = (function ({
                                                 initializer: u = !0,
                                                 rootId: e = 0,
-                                                getRoot: t = z,
+                                                getRoot: t = Y,
                                                 context: n = 'model',
                                             } = {}) {
                                                 const r = new Map();
@@ -1242,7 +1245,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = K(r.keys()); !(u = t()).done; ) o(u.value, e);
+                                                        for (var u, t = H(r.keys()); !(u = t()).done;) o(u.value, e);
                                                     },
                                                     unsubscribe: o,
                                                 };
@@ -1266,11 +1269,11 @@
                                                 observableModel: {
                                                     array: (u, e) => {
                                                         const n = null != e ? e : F(u),
-                                                            r = H.LO.box(n, { equals: G });
+                                                            r = G.LO.box(n, { equals: q });
                                                         return (
                                                             'real' === t &&
                                                                 E.subscribe(
-                                                                    (0, H.aD)((u) => r.set(u)),
+                                                                    (0, G.aD)((u) => r.set(u)),
                                                                     u,
                                                                 ),
                                                             r
@@ -1278,11 +1281,11 @@
                                                     },
                                                     object: (u, e) => {
                                                         const n = null != e ? e : F(u),
-                                                            r = H.LO.box(n, { equals: G });
+                                                            r = G.LO.box(n, { equals: q });
                                                         return (
                                                             'real' === t &&
                                                                 E.subscribe(
-                                                                    (0, H.aD)((u) => r.set(u)),
+                                                                    (0, G.aD)((u) => r.set(u)),
                                                                     u,
                                                                 ),
                                                             r
@@ -1292,13 +1295,13 @@
                                                         const n = F(e);
                                                         if (Array.isArray(u)) {
                                                             const r = u.reduce(
-                                                                (u, e) => ((u[e] = H.LO.box(n[e], {})), u),
+                                                                (u, e) => ((u[e] = G.LO.box(n[e], {})), u),
                                                                 {},
                                                             );
                                                             return (
                                                                 'real' === t &&
                                                                     E.subscribe(
-                                                                        (0, H.aD)((e) => {
+                                                                        (0, G.aD)((e) => {
                                                                             u.forEach((u) => {
                                                                                 r[u].set(e[u]);
                                                                             });
@@ -1312,13 +1315,13 @@
                                                             const r = u,
                                                                 o = Object.entries(r),
                                                                 A = o.reduce(
-                                                                    (u, [e, t]) => ((u[t] = H.LO.box(n[e], {})), u),
+                                                                    (u, [e, t]) => ((u[t] = G.LO.box(n[e], {})), u),
                                                                     {},
                                                                 );
                                                             return (
                                                                 'real' === t &&
                                                                     E.subscribe(
-                                                                        (0, H.aD)((u) => {
+                                                                        (0, G.aD)((u) => {
                                                                             o.forEach(([e, t]) => {
                                                                                 A[t].set(u[e]);
                                                                             });
@@ -1372,10 +1375,10 @@
                         },
                         ({ externalModel: u }) => ({}),
                     ),
-                    X = $[0];
-                $[1];
+                    $ = z[0];
+                z[1];
                 engine.whenReady.then(() => {
-                    A().render(r().createElement(X, null, r().createElement(q, null)), document.getElementById('root'));
+                    A().render(r().createElement($, null, r().createElement(j, null)), document.getElementById('root'));
                 });
             },
         },

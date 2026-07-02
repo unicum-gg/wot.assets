@@ -530,7 +530,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = iu(A.keys()); !(u = t()).done; ) F(u.value, e);
+                                                        for (var u, t = iu(A.keys()); !(u = t()).done;) F(u.value, e);
                                                     },
                                                     unsubscribe: F,
                                                 };
@@ -799,9 +799,13 @@
                         if (t.mediumWidth && B) return hu(e, t, g);
                         if (t.smallWidth && l) return hu(e, t, g);
                         if (t.extraSmallWidth && o) return hu(e, t, g);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && s) return e;
@@ -1390,7 +1394,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = pe.length - 1; t >= 0; t--)
-                                      for (; u >= pe[t]; ) ((e += fe[t]), (u -= pe[t]));
+                                      for (; u >= pe[t];) ((e += fe[t]), (u -= pe[t]));
                                   return e;
                               })(u),
                     we = {
@@ -1427,7 +1431,7 @@
                         let F = Se.exec(u),
                             E = u,
                             a = 0;
-                        for (; F; ) {
+                        for (; F;) {
                             const t = F[0],
                                 D = Te.exec(t),
                                 n = Le.exec(t),

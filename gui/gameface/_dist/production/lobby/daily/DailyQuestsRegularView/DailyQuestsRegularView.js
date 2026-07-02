@@ -438,9 +438,13 @@
                         if (t.mediumWidth && A) return (0, n.H)(u, t, f);
                         if (t.smallWidth && D) return (0, n.H)(u, t, f);
                         if (t.extraSmallWidth && F) return (0, n.H)(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && g) return u;
                             if (t.largeHeight && B) return u;
                             if (t.mediumHeight && C) return u;
@@ -1284,7 +1288,7 @@
             },
             2862: (e, u, t) => {
                 'use strict';
-                let r, n, s, a, i, o, l;
+                let r, n, s, a, i, o, l, c;
                 (t.d(u, { $h: () => a, A2: () => o, E4: () => r, h2: () => s, kK: () => i, sh: () => l }),
                     (function (e) {
                         ((e.Items = 'items'),
@@ -1341,7 +1345,6 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (e.LootBoxToken = 'lootBoxToken'),
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
@@ -1382,6 +1385,7 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
+                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -1440,7 +1444,10 @@
                             (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(l || (l = {})));
+                    })(l || (l = {})),
+                    (function (e) {
+                        ((e.Small = '400x300'), (e.Big = '600x450'));
+                    })(c || (c = {})));
             },
             729: (e, u, t) => {
                 'use strict';
@@ -2180,7 +2187,7 @@
                                             u(e).delete(t);
                                         },
                                         n = (e, ...t) => {
-                                            for (var r, n = i(u(e).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = i(u(e).values()); !(r = n()).done;) (0, r.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: r, trigger: n }), []);
                                 })(),
@@ -3172,7 +3179,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, t = n(i.keys()); !(e = t()).done; ) {
+                            for (var e, t = n(i.keys()); !(e = t()).done;) {
                                 o(e.value, u);
                             }
                         },

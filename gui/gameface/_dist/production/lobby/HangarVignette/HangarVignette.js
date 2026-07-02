@@ -423,15 +423,13 @@
                             if (r.mediumWidth && c) return m(t, r, b);
                             if (r.smallWidth && h) return m(t, r, b);
                             if (r.extraSmallWidth && v) return m(t, r, b);
-                            if (
-                                !(
-                                    r.extraLargeWidth ||
-                                    r.largeWidth ||
-                                    r.mediumWidth ||
-                                    r.smallWidth ||
-                                    r.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                r.extraLargeWidth ||
+                                r.largeWidth ||
+                                r.mediumWidth ||
+                                r.smallWidth ||
+                                r.extraSmallWidth
+                            )) {
                                 if (r.extraLargeHeight && f) return t;
                                 if (r.largeHeight && x) return t;
                                 if (r.mediumHeight && w) return t;

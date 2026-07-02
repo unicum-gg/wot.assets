@@ -920,8 +920,7 @@
                             ? `${u}`
                             : (function (u) {
                                   let e = '';
-                                  for (let t = x.length - 1; t >= 0; t--)
-                                      for (; u >= x[t]; ) ((e += b[t]), (u -= x[t]));
+                                  for (let t = x.length - 1; t >= 0; t--) for (; u >= x[t];) ((e += b[t]), (u -= x[t]));
                                   return e;
                               })(u),
                     T = (u, e, t) =>
@@ -1053,9 +1052,13 @@
                         if (t.mediumWidth && D) return T(e, t, h);
                         if (t.smallWidth && l) return T(e, t, h);
                         if (t.extraSmallWidth && B) return T(e, t, h);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && c) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && d) return e;

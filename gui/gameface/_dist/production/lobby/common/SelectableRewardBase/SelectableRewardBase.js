@@ -664,7 +664,7 @@
                                             : e.ownerDocument.activeElement;
                                     if (o) {
                                         if ('IFRAME' === o.tagName) o = o.contentDocument.activeElement;
-                                        else for (; o.shadowRoot; ) o = o.shadowRoot.activeElement;
+                                        else for (; o.shadowRoot;) o = o.shadowRoot.activeElement;
                                         if (
                                             i((r = o), 'input,[contenteditable]') ||
                                             i(r, 'select,[contenteditable]') ||
@@ -755,7 +755,7 @@
                                     !(function (e, t, r) {
                                         if (!g.isWebKit && n.querySelector('select')) return !0;
                                         if (!n.contains(e)) return !1;
-                                        for (var i = e; i && i !== n; ) {
+                                        for (var i = e; i && i !== n;) {
                                             if (i.classList.contains(s.consuming)) return !0;
                                             var o = u(i);
                                             if (
@@ -865,7 +865,7 @@
                                     if (
                                         (function (e, t, r) {
                                             if (!n.contains(e)) return !1;
-                                            for (var i = e; i && i !== n; ) {
+                                            for (var i = e; i && i !== n;) {
                                                 if (i.classList.contains(s.consuming)) return !0;
                                                 var o = u(i);
                                                 if (
@@ -2224,9 +2224,13 @@
                         if (t.mediumWidth && E) return m(u, t, v);
                         if (t.smallWidth && A) return m(u, t, v);
                         if (t.extraSmallWidth && h) return m(u, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && F) return u;
                             if (t.largeHeight && D) return u;
                             if (t.mediumHeight && B) return u;
@@ -2721,7 +2725,7 @@
                     return s().createElement('div', { className: te, ref: Z }, g);
                 });
                 R.views.common.tooltip_window.simple_tooltip_content;
-                let z, q, K, j, V, Q, Z;
+                let z, q, K, j, V, Q, Z, $;
                 (!(function (e) {
                     ((e.Items = 'items'),
                         (e.Equipment = 'equipment'),
@@ -2777,7 +2781,6 @@
                         (e.VehicleSelect = 'vehicleSelect'),
                         (e.StyleProgress = 'styleProgress'),
                         (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                        (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                         (e.LootBoxToken = 'lootBoxToken'),
                         (e.GoldenTicket = 'birthday2025_golden_ticket'),
                         (e.PostStamp = 'giftsystem_4_stamp'),
@@ -2818,6 +2821,7 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
+                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -2876,26 +2880,29 @@
                             (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(Z || (Z = {})));
-                let $;
+                    })(Z || (Z = {})),
+                    (function (e) {
+                        ((e.Small = '400x300'), (e.Big = '600x450'));
+                    })($ || ($ = {})));
+                let J;
                 !(function (e) {
                     ((e.Plus = 'plus'), (e.Minus = 'minus'));
-                })($ || ($ = {}));
-                var J;
+                })(J || (J = {}));
+                var ee;
                 !(function (e) {
                     ((e.None = ''), (e.Trophy = 'trophy'), (e.Deluxe = 'delux'), (e.Modernized = 'modernized'));
-                })(J || (J = {}));
+                })(ee || (ee = {}));
                 R.strings.selectable_reward.reward;
                 R.strings.selectable_reward.tabs;
-                let ee;
-                !(function (e) {
-                    ((e[(e.None = 0)] = 'None'), (e[(e.Accepting = 1)] = 'Accepting'));
-                })(ee || (ee = {}));
-                ((0, a.createContext)(ee.None), R.strings.selectable_reward.error);
                 let ue;
                 !(function (e) {
-                    ((e.Normal = 'normal'), (e.Error = 'error'));
+                    ((e[(e.None = 0)] = 'None'), (e[(e.Accepting = 1)] = 'Accepting'));
                 })(ue || (ue = {}));
+                ((0, a.createContext)(ue.None), R.strings.selectable_reward.error);
+                let te;
+                !(function (e) {
+                    ((e.Normal = 'normal'), (e.Error = 'error'));
+                })(te || (te = {}));
             },
         },
         __webpack_module_cache__ = {},

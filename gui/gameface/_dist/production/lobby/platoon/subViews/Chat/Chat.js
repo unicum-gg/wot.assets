@@ -1457,7 +1457,7 @@
                                             t(e).delete(u);
                                         },
                                         r = (e, ...u) => {
-                                            for (var n, r = V(t(e).values()); !(n = r()).done; ) (0, n.value)(...u);
+                                            for (var n, r = V(t(e).values()); !(n = r()).done;) (0, n.value)(...u);
                                         };
                                     return (0, o.useMemo)(() => ({ on: u, off: n, trigger: r }), []);
                                 })(),
@@ -2273,10 +2273,10 @@
                             () =>
                                 ((e) => {
                                     let t = [{ type: Le.text, content: e }];
-                                    for (var u, n = Re(xe); !(u = n()).done; ) {
+                                    for (var u, n = Re(xe); !(u = n()).done;) {
                                         const e = u.value,
                                             n = [];
-                                        for (var r, o = Re(t); !(r = o()).done; ) {
+                                        for (var r, o = Re(t); !(r = o()).done;) {
                                             const t = r.value;
                                             t.type === Le.text ? n.push(He(t.content, e)) : n.push(t);
                                         }

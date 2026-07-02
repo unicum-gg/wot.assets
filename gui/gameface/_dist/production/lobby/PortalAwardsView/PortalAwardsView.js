@@ -933,15 +933,13 @@
                             if (t.mediumWidth && m) return o(u, t, v);
                             if (t.smallWidth && d) return o(u, t, v);
                             if (t.extraSmallWidth && A) return o(u, t, v);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && C) return u;
                                 if (t.largeHeight && B) return u;
                                 if (t.mediumHeight && h) return u;
@@ -3356,7 +3354,7 @@
                                 : (function (e) {
                                       let u = '';
                                       for (let t = Ft.length - 1; t >= 0; t--)
-                                          for (; e >= Ft[t]; ) ((u += At[t]), (e -= Ft[t]));
+                                          for (; e >= Ft[t];) ((u += At[t]), (e -= Ft[t]));
                                       return u;
                                   })(m)),
                         ),

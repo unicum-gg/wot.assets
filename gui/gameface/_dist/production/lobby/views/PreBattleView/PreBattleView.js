@@ -665,7 +665,7 @@
                                             : e.ownerDocument.activeElement;
                                     if (i) {
                                         if ('IFRAME' === i.tagName) i = i.contentDocument.activeElement;
-                                        else for (; i.shadowRoot; ) i = i.shadowRoot.activeElement;
+                                        else for (; i.shadowRoot;) i = i.shadowRoot.activeElement;
                                         if (
                                             o((r = i), 'input,[contenteditable]') ||
                                             o(r, 'select,[contenteditable]') ||
@@ -756,7 +756,7 @@
                                     !(function (e, u, r) {
                                         if (!w.isWebKit && n.querySelector('select')) return !0;
                                         if (!n.contains(e)) return !1;
-                                        for (var o = e; o && o !== n; ) {
+                                        for (var o = e; o && o !== n;) {
                                             if (o.classList.contains(E)) return !0;
                                             var i = t(o);
                                             if (
@@ -864,7 +864,7 @@
                                     if (
                                         (function (e, u, r) {
                                             if (!n.contains(e)) return !1;
-                                            for (var o = e; o && o !== n; ) {
+                                            for (var o = e; o && o !== n;) {
                                                 if (o.classList.contains(E)) return !0;
                                                 var i = t(o);
                                                 if (
@@ -2177,15 +2177,13 @@
                             if (u.mediumWidth && E) return l(t, u, g);
                             if (u.smallWidth && h) return l(t, u, g);
                             if (u.extraSmallWidth && _) return l(t, u, g);
-                            if (
-                                !(
-                                    u.extraLargeWidth ||
-                                    u.largeWidth ||
-                                    u.mediumWidth ||
-                                    u.smallWidth ||
-                                    u.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                u.extraLargeWidth ||
+                                u.largeWidth ||
+                                u.mediumWidth ||
+                                u.smallWidth ||
+                                u.extraSmallWidth
+                            )) {
                                 if (u.extraLargeHeight && b) return t;
                                 if (u.largeHeight && D) return t;
                                 if (u.mediumHeight && v) return t;

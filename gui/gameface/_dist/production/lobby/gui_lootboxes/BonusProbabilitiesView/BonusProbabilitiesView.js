@@ -103,15 +103,13 @@
                             if (t.mediumWidth && _) return (0, r.H)(u, t, h);
                             if (t.smallWidth && F) return (0, r.H)(u, t, h);
                             if (t.extraSmallWidth && D) return (0, r.H)(u, t, h);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && B) return u;
                                 if (t.largeHeight && g) return u;
                                 if (t.mediumHeight && p) return u;
@@ -505,7 +503,7 @@
             },
             2862: (e, u, t) => {
                 'use strict';
-                let o, r, n, a, i, s, l;
+                let o, r, n, a, i, s, l, c;
                 (t.d(u, { $h: () => a, A2: () => s, E4: () => o, h2: () => n, kK: () => i, sh: () => l }),
                     (function (e) {
                         ((e.Items = 'items'),
@@ -562,7 +560,6 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (e.LootBoxToken = 'lootBoxToken'),
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
@@ -603,6 +600,7 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
+                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -661,7 +659,10 @@
                             (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(l || (l = {})));
+                    })(l || (l = {})),
+                    (function (e) {
+                        ((e.Small = '400x300'), (e.Big = '600x450'));
+                    })(c || (c = {})));
             },
             729: (e, u, t) => {
                 'use strict';
@@ -4284,7 +4285,7 @@
                         let i = Ze.exec(e),
                             s = e,
                             l = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 n = Je.exec(t),
                                 c = Qe.exec(t),

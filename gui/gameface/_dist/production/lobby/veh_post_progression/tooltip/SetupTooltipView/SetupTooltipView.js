@@ -397,8 +397,7 @@
                             ? `${u}`
                             : (function (u) {
                                   let e = '';
-                                  for (let A = E.length - 1; A >= 0; A--)
-                                      for (; u >= E[A]; ) ((e += F[A]), (u -= E[A]));
+                                  for (let A = E.length - 1; A >= 0; A--) for (; u >= E[A];) ((e += F[A]), (u -= E[A]));
                                   return e;
                               })(u);
             },
@@ -1070,7 +1069,7 @@
                         let n = y.exec(u),
                             r = u,
                             B = 0;
-                        for (; n; ) {
+                        for (; n;) {
                             const A = n[0],
                                 F = k.exec(A),
                                 o = M.exec(A),

@@ -909,9 +909,13 @@
                         if (t.mediumWidth && A) return o(e, t, b);
                         if (t.smallWidth && m) return o(e, t, b);
                         if (t.extraSmallWidth && F) return o(e, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && B) return e;
                             if (t.mediumHeight && g) return e;
@@ -1273,7 +1277,7 @@
                                             e(u).delete(t);
                                         },
                                         n = (u, ...t) => {
-                                            for (var r, n = q(e(u).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = q(e(u).values()); !(r = n()).done;) (0, r.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: r, trigger: n }), []);
                                 })(),
@@ -3508,7 +3512,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Lt(n.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = Lt(n.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -3693,7 +3697,7 @@
                                             t = /%\(insertion_open\)s([\s\S]*?)%\(insertion_close\)s/g,
                                             r = [];
                                         let n;
-                                        for (; null !== (n = t.exec(e)); ) r.push(n[1]);
+                                        for (; null !== (n = t.exec(e));) r.push(n[1]);
                                         const a = r.join('\n\n');
                                         return { cleaned: e.replace(t, '%(text)s'), extracted: a };
                                     })(o),

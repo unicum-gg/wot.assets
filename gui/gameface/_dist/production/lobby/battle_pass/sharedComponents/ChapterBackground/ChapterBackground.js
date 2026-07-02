@@ -85,9 +85,13 @@
                         if (i.mediumWidth && v) return (0, a.H)(t, i, b);
                         if (i.smallWidth && w) return (0, a.H)(t, i, b);
                         if (i.extraSmallWidth && x) return (0, a.H)(t, i, b);
-                        if (
-                            !(i.extraLargeWidth || i.largeWidth || i.mediumWidth || i.smallWidth || i.extraSmallWidth)
-                        ) {
+                        if (!(
+                            i.extraLargeWidth ||
+                            i.largeWidth ||
+                            i.mediumWidth ||
+                            i.smallWidth ||
+                            i.extraSmallWidth
+                        )) {
                             if (i.extraLargeHeight && f) return t;
                             if (i.largeHeight && E) return t;
                             if (i.mediumHeight && S) return t;

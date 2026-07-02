@@ -1017,15 +1017,13 @@
                             if (t.mediumWidth && F) return _(e, t, h);
                             if (t.smallWidth && D) return _(e, t, h);
                             if (t.extraSmallWidth && m) return _(e, t, h);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && c) return e;
                                 if (t.largeHeight && d) return e;
                                 if (t.mediumHeight && B) return e;
@@ -2540,7 +2538,7 @@
                                                     : (function (u) {
                                                           let e = '';
                                                           for (let t = te.length - 1; t >= 0; t--)
-                                                              for (; u >= te[t]; ) ((e += ee[t]), (u -= te[t]));
+                                                              for (; u >= te[t];) ((e += ee[t]), (u -= te[t]));
                                                           return e;
                                                       })(i)),
                                             text: s().createElement(su, {

@@ -1013,9 +1013,13 @@
                         if (t.mediumWidth && d) return i(u, t, v);
                         if (t.smallWidth && m) return i(u, t, v);
                         if (t.extraSmallWidth && A) return i(u, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && B) return u;
                             if (t.mediumHeight && g) return u;
@@ -1338,7 +1342,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = q(n.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = q(n.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -2949,7 +2953,7 @@
                                             u(e).delete(t);
                                         },
                                         n = (e, ...t) => {
-                                            for (var r, n = Qu(u(e).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = Qu(u(e).values()); !(r = n()).done;) (0, r.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: r, trigger: n }), []);
                                 })(),
@@ -3775,7 +3779,7 @@
                             : (function (e) {
                                   let u = '';
                                   for (let t = Br.length - 1; t >= 0; t--)
-                                      for (; e >= Br[t]; ) ((u += Cr[t]), (e -= Br[t]));
+                                      for (; e >= Br[t];) ((u += Cr[t]), (e -= Br[t]));
                                   return u;
                               })(e),
                     pr = {

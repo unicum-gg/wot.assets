@@ -941,7 +941,7 @@
                             t = e || {};
                         let B = M.exec(u),
                             C = u;
-                        for (; B; ) {
+                        for (; B;) {
                             const A = B[0],
                                 F = P.exec(A),
                                 n = k.exec(A),

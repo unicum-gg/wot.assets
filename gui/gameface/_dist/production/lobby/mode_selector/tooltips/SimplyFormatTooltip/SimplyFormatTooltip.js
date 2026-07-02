@@ -1067,7 +1067,7 @@
                             E = e || {};
                         let D = U.exec(u),
                             B = u;
-                        for (; D; ) {
+                        for (; D;) {
                             const A = D[0],
                                 t = W.exec(A),
                                 r = I.exec(A),

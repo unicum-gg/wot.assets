@@ -3019,6 +3019,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     margin-top: 20rem;
 }
 
+.ConfirmBuyViewContent_rewardsContainer_0b {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 20rem;
+    border-bottom: 1px solid rgba(242, 242, 247, 0.2);
+}
+
 .ConfirmBuyViewContent_priorityRewards_0c {
     display: flex;
     justify-content: center;

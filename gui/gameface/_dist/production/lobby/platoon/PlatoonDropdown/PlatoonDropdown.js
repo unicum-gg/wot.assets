@@ -1488,7 +1488,7 @@
                             o = te(n);
                         let r,
                             a = e;
-                        for (; null !== (r = J.exec(e)); ) {
+                        for (; null !== (r = J.exec(e));) {
                             const e = r[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
                                 const n = o + e[2].replace(Q, '');
@@ -1591,7 +1591,7 @@
                                         ((e) => {
                                             const t = te(ne());
                                             let n;
-                                            for (; null !== (n = Z.exec(e)); ) {
+                                            for (; null !== (n = Z.exec(e));) {
                                                 const e = n[0].match(/href="(.*?)"/);
                                                 if (e) {
                                                     const n = t + e[1].replace(Q, ''),
@@ -1612,7 +1612,7 @@
                                     let t;
                                     const n = ne(),
                                         o = te(n);
-                                    for (; null !== (t = Z.exec(e)); ) {
+                                    for (; null !== (t = Z.exec(e));) {
                                         const e = t[0].match(/href="(.*?)"/);
                                         if (e && !e[1].includes(ee) && o) {
                                             const t = o + e[1].replace(Q, ''),

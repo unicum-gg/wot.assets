@@ -897,9 +897,13 @@
                         if (t.mediumWidth && _) return n(e, t, p);
                         if (t.smallWidth && D) return n(e, t, p);
                         if (t.extraSmallWidth && m) return n(e, t, p);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && B) return e;
                             if (t.mediumHeight && g) return e;
@@ -1372,7 +1376,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = uu(a.keys()); !(u = t()).done; ) n(u.value, e);
+                                                        for (var u, t = uu(a.keys()); !(u = t()).done;) n(u.value, e);
                                                     },
                                                     unsubscribe: n,
                                                 };
@@ -2729,7 +2733,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = xe.length - 1; t >= 0; t--)
-                                      for (; u >= xe[t]; ) ((e += Se[t]), (u -= xe[t]));
+                                      for (; u >= xe[t];) ((e += Se[t]), (u -= xe[t]));
                                   return e;
                               })(u),
                     ye = {
@@ -2766,7 +2770,7 @@
                         let i = Pe.exec(u),
                             o = u,
                             l = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 r = Me.exec(t),
                                 E = Ie.exec(t),

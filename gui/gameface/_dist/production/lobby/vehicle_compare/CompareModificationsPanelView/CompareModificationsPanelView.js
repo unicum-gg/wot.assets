@@ -858,9 +858,13 @@
                         if (t.mediumWidth && D) return n(e, t, v);
                         if (t.smallWidth && B) return n(e, t, v);
                         if (t.extraSmallWidth && C) return n(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -1477,7 +1481,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = mu.length - 1; t >= 0; t--)
-                                      for (; u >= mu[t]; ) ((e += _u[t]), (u -= mu[t]));
+                                      for (; u >= mu[t];) ((e += _u[t]), (u -= mu[t]));
                                   return e;
                               })(u),
                     wu = 'PanelItem_base_55',
@@ -1491,11 +1495,7 @@
                             n = (0, r.useMemo)(
                                 () => ({ stepId: u.modification.parentStepId, modificationId: u.modification.id }),
                                 [u.modification.id, u.modification.parentStepId],
-                            ),
-                            a = (0, r.useMemo)(() => {
-                                return ((e = u.modification.imageResName), { backgroundImage: `url(${bu.$dyn(e)})` });
-                                var e;
-                            }, [u.modification.imageResName]);
+                            );
                         return i().createElement(
                             'div',
                             { className: wu },
@@ -1520,9 +1520,15 @@
                                             ),
                                         args: n,
                                     },
-                                    i().createElement('div', { style: a, className: fu }),
+                                    i().createElement('div', {
+                                        style:
+                                            ((a = u.modification.imageResName),
+                                            { backgroundImage: `url(${bu.$dyn(a)})` }),
+                                        className: fu,
+                                    }),
                                 ),
                         );
+                        var a;
                     },
                     xu = {
                         base: 'Panel_base_7c',

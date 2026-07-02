@@ -1178,7 +1178,7 @@
                 if ((P.exec(''), (o = P.exec(l)) && ((l = o[3]), o[2] || !l)))
                     for (n = 0; n < c; n++)
                         if ((s = (a = e[n]).selector(o[1]))) {
-                            for (i = u.length, r = !1; i--; )
+                            for (i = u.length, r = !1; i--;)
                                 if (u[i].index === a && u[i].key === s) {
                                     r = !0;
                                     break;
@@ -1239,10 +1239,10 @@
                         v = {},
                         f = 1 === arguments.length;
                     for (n = C(this.indexes, e), o = 0; o < n.length; o++)
-                        for (i = n[o], r = u.length; r--; )
+                        for (i = n[o], r = u.length; r--;)
                             if (((a = u[r]), i.index.isPrototypeOf(a))) {
                                 if ((c = a.map.get(i.key)))
-                                    for (s = c.length; s--; )
+                                    for (s = c.length; s--;)
                                         (l = c[s]).selector !== e ||
                                             (!f && l.data !== t) ||
                                             (c.splice(s, 1), (v[l.id] = !0));

@@ -710,7 +710,7 @@
 
                     const defaults = {};
 
-                    for (var _iterator = _createForOfIteratorHelperLoose(keys), _step; !(_step = _iterator()).done; ) {
+                    for (var _iterator = _createForOfIteratorHelperLoose(keys), _step; !(_step = _iterator()).done;) {
                         const key = _step.value;
                         const value = transform(props[key], key);
 
@@ -6077,7 +6077,7 @@
                                 inst = getParent(inst);
                             }
                             var i = void 0;
-                            for (i = path.length; i-- > 0; ) {
+                            for (i = path.length; i-- > 0;) {
                                 fn(path[i], 'captured', arg);
                             }
                             for (i = 0; i < path.length; i++) {
@@ -6125,7 +6125,7 @@
                             for (var i = 0; i < pathFrom.length; i++) {
                                 fn(pathFrom[i], 'bubbled', argFrom);
                             }
-                            for (var _i = pathTo.length; _i-- > 0; ) {
+                            for (var _i = pathTo.length; _i-- > 0;) {
                                 fn(pathTo[_i], 'captured', argTo);
                             }
                         }
@@ -29106,7 +29106,7 @@
                                 } else {
                                     !(
                                         // Do not warn for 0 arguments because it could be due to usage of the 'arguments' object
-                                        (render.length === 0 || render.length === 2)
+                                        render.length === 0 || render.length === 2
                                     )
                                         ? warningWithoutStack$1(
                                               false,

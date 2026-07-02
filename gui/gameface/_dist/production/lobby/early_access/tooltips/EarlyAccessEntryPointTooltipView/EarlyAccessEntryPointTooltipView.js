@@ -1023,9 +1023,13 @@
                         if (t.mediumWidth && F) return d(e, t, h);
                         if (t.smallWidth && D) return d(e, t, h);
                         if (t.extraSmallWidth && m) return d(e, t, h);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && c) return e;
                             if (t.largeHeight && _) return e;
                             if (t.mediumHeight && B) return e;
@@ -1710,7 +1714,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = gu(a.keys()); !(u = t()).done; ) i(u.value, e);
+                                                        for (var u, t = gu(a.keys()); !(u = t()).done;) i(u.value, e);
                                                     },
                                                     unsubscribe: i,
                                                 };
@@ -2430,7 +2434,7 @@
                     he = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function pe(u) {
                     let e = '';
-                    for (let t = he.length - 1; t >= 0; t--) for (; u >= he[t]; ) ((e += ge[t]), (u -= he[t]));
+                    for (let t = he.length - 1; t >= 0; t--) for (; u >= he[t];) ((e += ge[t]), (u -= he[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

@@ -14,7 +14,7 @@
                         graphicsQuality: () => C,
                     }));
                 var n = {};
-                (t.r(n), t.d(n, { getBgUrl: () => d, getTextureUrl: () => c }));
+                (t.r(n), t.d(n, { getBgUrl: () => _, getTextureUrl: () => c }));
                 var E = {};
                 function o(u) {
                     return (e) => (
@@ -32,7 +32,7 @@
                         addModelObserver: () => M,
                         addPreloadTexture: () => g,
                         children: () => n,
-                        displayStatus: () => _,
+                        displayStatus: () => d,
                         displayStatusIs: () => j,
                         events: () => l,
                         extraSize: () => Y,
@@ -135,10 +135,10 @@
                 function c(u, e, t = 1) {
                     return viewEnv.getChildTexturePath(u, e.width, e.height, t);
                 }
-                function d(u, e, t) {
+                function _(u, e, t) {
                     return `url(${c(u, e, t)})`;
                 }
-                const _ = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                const d = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                     l = {
                         onTextureFrozen: o('self.onTextureFrozen'),
                         onTextureReady: o('self.onTextureReady'),
@@ -262,7 +262,7 @@
                 function W() {
                     return viewEnv.getShowingStatus();
                 }
-                const j = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
+                const j = Object.keys(d).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === d[e]), u), {}),
                     Y = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
@@ -536,7 +536,7 @@
                 var B = t(521),
                     C = t(67);
                 const c = ['args'];
-                function d(u, e, t, A, F, n, E) {
+                function _(u, e, t, A, F, n, E) {
                     try {
                         var o = u[n](E),
                             r = o.value;
@@ -545,7 +545,7 @@
                     }
                     o.done ? e(r) : Promise.resolve(r).then(A, F);
                 }
-                const _ = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
+                const d = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
                     l = (function () {
                         var u,
                             e =
@@ -563,10 +563,10 @@
                                     return new Promise(function (A, F) {
                                         var n = u.apply(e, t);
                                         function E(u) {
-                                            d(n, A, F, E, o, 'next', u);
+                                            _(n, A, F, E, o, 'next', u);
                                         }
                                         function o(u) {
-                                            d(n, A, F, E, o, 'throw', u);
+                                            _(n, A, F, E, o, 'throw', u);
                                         }
                                         E(void 0);
                                     });
@@ -627,7 +627,7 @@
                         RealFormatType: D,
                         TimeFormatType: a,
                         DateFormatType: s,
-                        makeGlobalBoundingBox: _,
+                        makeGlobalBoundingBox: d,
                         sendMoveEvent: (u) => v(r.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: w,
                         sendClosePopOverEvent: () => v(r.POP_OVER, { on: !1 }),
@@ -653,7 +653,7 @@
                                 decoratorID: A || R.invalid('resId'),
                                 targetID: F,
                                 direction: e,
-                                bbox: _(B),
+                                bbox: d(B),
                                 on: !0,
                                 args: n,
                             });
@@ -783,9 +783,9 @@
                             B = u.ignoreShowDelay,
                             C = void 0 !== B && B,
                             c = u.ignoreMouseClick,
-                            d = void 0 !== c && c,
-                            _ = u.decoratorId,
-                            l = void 0 === _ ? 0 : _,
+                            _ = void 0 !== c && c,
+                            d = u.decoratorId,
+                            l = void 0 === d ? 0 : d,
                             v = u.isEnabled,
                             w = void 0 === v || v,
                             m = u.targetId,
@@ -866,10 +866,10 @@
                                               (M(), null == E || E(e), null == u || u(e));
                                           })(e.props.onMouseLeave),
                                           onClick: ((u) => (e) => {
-                                              (!1 === d && M(), null == s || s(e), null == u || u(e));
+                                              (!1 === _ && M(), null == s || s(e), null == u || u(e));
                                           })(e.props.onClick),
                                           onMouseDown: ((u) => (e) => {
-                                              (!1 === d && M(), null == r || r(e), null == u || u(e));
+                                              (!1 === _ && M(), null == r || r(e), null == u || u(e));
                                           })(e.props.onMouseDown),
                                       },
                                       f,
@@ -880,7 +880,7 @@
                     };
                 let B;
                 !(function (u) {
-                    ((u.backport = 'backport'), (u.unbound = 'unbound'), (u.normal = 'normal'), (u.absent = 'absent'));
+                    ((u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent'));
                 })(B || (B = {}));
                 let C;
                 !(function (u) {
@@ -920,8 +920,8 @@
                 })(c || (c = {}));
                 Date.now();
                 t(67);
-                const d = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
-                    _ = (u) => {
+                const _ = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
+                    d = (u) => {
                         const e = (0, A.useRef)(!1);
                         e.current || (u(), (e.current = !0));
                     },
@@ -930,7 +930,7 @@
                     w = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, t) => {
-                                const A = d(`${u}.${t}`, window);
+                                const A = _(`${u}.${t}`, window);
                                 return l(A) ? e(u, t, A) : `${u}.${t}`;
                             }))(u, (u, e) => `${u}.${e}.value`),
                     m = (u) => {
@@ -947,7 +947,7 @@
                             const u = [A[0]];
                             return (
                                 A.reduce((e, A) => {
-                                    const F = d(v(t, `${e}.${A}`), window);
+                                    const F = _(v(t, `${e}.${A}`), window);
                                     return l(F) ? (u.push(F.id), `${e}.${A}.value`) : (u.push(A), `${e}.${A}`);
                                 }),
                                 u.reduce((u, e) => u + '.' + e)
@@ -972,7 +972,7 @@
                             ),
                             D = (0, A.useState)(() =>
                                 ((u) => {
-                                    const e = d(u, window);
+                                    const e = _(u, window);
                                     for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                     return l(e) ? e.value : e;
                                 })(w(i)),
@@ -981,7 +981,7 @@
                             s = D[1],
                             B = (0, A.useRef)(-1);
                         return (
-                            _(() => {
+                            d(() => {
                                 if (
                                     ('boolean' == typeof e &&
                                         ((e = e ? p.Deep : p.None),
@@ -1009,44 +1009,48 @@
                             a
                         );
                     },
-                    f =
-                        (r.Sw.instance,
-                        (u, e) => ({
-                            isEnabled: u !== B.absent,
-                            args: e,
-                            contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
-                            decoratorId:
-                                u === B.unbound
-                                    ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
-                                    : void 0,
-                            ignoreShowDelay: u === B.backport,
-                            ignoreMouseClick: !0,
-                        })),
-                    g = 'BlankPriceApp_base_f0',
-                    T = 'BlankPriceApp_text_9f',
-                    O = 'BlankPriceApp_blank_e9',
-                    M = 'BlankPriceApp_icon_0c',
-                    k = () => {
+                    f = (r.Sw.instance, 'BlankPriceApp_base_f0'),
+                    g = 'BlankPriceApp_text_9f',
+                    T = 'BlankPriceApp_blank_e9',
+                    O = 'BlankPriceApp_icon_0c',
+                    M = () => {
                         const u = b().count,
-                            e = (0, A.useMemo)(() => f(B.backport, void 0), []);
+                            e = (0, A.useMemo)(() => {
+                                return (
+                                    (u = B.backport),
+                                    (e = void 0),
+                                    {
+                                        isEnabled: u !== B.absent,
+                                        args: e,
+                                        contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
+                                        decoratorId:
+                                            u === B.normal
+                                                ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
+                                                : void 0,
+                                        ignoreShowDelay: u === B.backport,
+                                        ignoreMouseClick: !0,
+                                    }
+                                );
+                                var u, e;
+                            }, []);
                         return F().createElement(
                             'div',
-                            { className: g },
-                            F().createElement('div', { className: T }, R.strings.dialogs.common.cost()),
+                            { className: f },
+                            F().createElement('div', { className: g }, R.strings.dialogs.common.cost()),
                             F().createElement(
                                 s,
                                 e,
                                 F().createElement(
                                     'div',
-                                    { className: O },
+                                    { className: T },
                                     u,
-                                    F().createElement('div', { className: M }),
+                                    F().createElement('div', { className: O }),
                                 ),
                             ),
                         );
                     };
                 engine.whenReady.then(() => {
-                    E().render(F().createElement(k, null), document.getElementById('root'));
+                    E().render(F().createElement(M, null), document.getElementById('root'));
                 });
             },
         },

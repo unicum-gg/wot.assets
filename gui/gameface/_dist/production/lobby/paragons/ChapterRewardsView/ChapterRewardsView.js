@@ -262,9 +262,13 @@
                         if (t.mediumWidth && d) return (0, n.H)(u, t, v);
                         if (t.smallWidth && F) return (0, n.H)(u, t, v);
                         if (t.extraSmallWidth && D) return (0, n.H)(u, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return u;
                             if (t.largeHeight && C) return u;
                             if (t.mediumHeight && g) return u;
@@ -1924,7 +1928,7 @@
                                             u(e).delete(t);
                                         },
                                         n = (e, ...t) => {
-                                            for (var r, n = W(u(e).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = W(u(e).values()); !(r = n()).done;) (0, r.value)(...t);
                                         };
                                     return (0, s.useMemo)(() => ({ on: t, off: r, trigger: n }), []);
                                 })(),
@@ -4164,7 +4168,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = nt(n.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = nt(n.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -4436,8 +4440,7 @@
                             ? `${e}`
                             : (function (e) {
                                   let u = '';
-                                  for (let t = i.length - 1; t >= 0; t--)
-                                      for (; e >= i[t]; ) ((u += s[t]), (e -= i[t]));
+                                  for (let t = i.length - 1; t >= 0; t--) for (; e >= i[t];) ((u += s[t]), (e -= i[t]));
                                   return u;
                               })(e);
                 var c = t(3649),

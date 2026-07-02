@@ -545,15 +545,13 @@
                             if (A.mediumWidth && i) return Fu(e, A, g);
                             if (A.smallWidth && C) return Fu(e, A, g);
                             if (A.extraSmallWidth && l) return Fu(e, A, g);
-                            if (
-                                !(
-                                    A.extraLargeWidth ||
-                                    A.largeWidth ||
-                                    A.mediumWidth ||
-                                    A.smallWidth ||
-                                    A.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                A.extraLargeWidth ||
+                                A.largeWidth ||
+                                A.mediumWidth ||
+                                A.smallWidth ||
+                                A.extraSmallWidth
+                            )) {
                                 if (A.extraLargeHeight && m) return e;
                                 if (A.largeHeight && o) return e;
                                 if (A.mediumHeight && s) return e;

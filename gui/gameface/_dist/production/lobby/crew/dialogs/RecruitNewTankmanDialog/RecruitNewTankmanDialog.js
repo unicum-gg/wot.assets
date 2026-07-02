@@ -174,9 +174,13 @@
                         if (t.mediumWidth && m) return (0, r.H)(u, t, b);
                         if (t.smallWidth && F) return (0, r.H)(u, t, b);
                         if (t.extraSmallWidth && g) return (0, r.H)(u, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && D) return u;
                             if (t.largeHeight && h) return u;
                             if (t.mediumHeight && C) return u;
@@ -706,7 +710,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, t = r(o.keys()); !(e = t()).done; ) {
+                            for (var e, t = r(o.keys()); !(e = t()).done;) {
                                 s(e.value, u);
                             }
                         },
@@ -1906,7 +1910,7 @@
                         if (!t) return [e];
                         const n = [];
                         let r = 0;
-                        for (; t; ) (n.push(e.slice(r, u.lastIndex)), (r = u.lastIndex), (t = u.exec(e)));
+                        for (; t;) (n.push(e.slice(r, u.lastIndex)), (r = u.lastIndex), (t = u.exec(e)));
                         return (r !== e.length && n.push(e.slice(r)), n);
                     },
                     s = (e, u = '') => {
@@ -2062,7 +2066,7 @@
                 const n = (e, u, t, n) => {
                     let r = u.exec(e),
                         a = 0;
-                    for (; r; ) (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
+                    for (; r;) (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
                     a !== e.length && t(e.slice(a));
                 };
             },
@@ -2138,7 +2142,7 @@
                             A = ((e, u) => {
                                 let t = 0,
                                     n = e.length - 1;
-                                for (; n - t >= 0; ) {
+                                for (; n - t >= 0;) {
                                     const r = t + Math.ceil(0.5 * (n - t));
                                     i(e[r], u) ? (n = r - 1) : (t = r + 1);
                                 }
@@ -2226,16 +2230,14 @@
             },
             5298: (e, u, t) => {
                 'use strict';
-                t.d(u, { lG: () => r });
+                t.d(u, { l: () => r });
                 var n = t(776);
                 const r = (e, u) => ({
                     isEnabled: e !== n.f.absent,
                     args: u,
                     contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
                     decoratorId:
-                        e === n.f.unbound
-                            ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
-                            : void 0,
+                        e === n.f.normal ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId') : void 0,
                     ignoreShowDelay: e === n.f.backport,
                     ignoreMouseClick: !0,
                 });
@@ -2500,7 +2502,7 @@
                             n = $(t);
                         let r,
                             a = e;
-                        for (; null !== (r = j.exec(e)); ) {
+                        for (; null !== (r = j.exec(e));) {
                             const e = r[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
                                 const t = n + e[2].replace(W, '');
@@ -2603,7 +2605,7 @@
                                         ((e) => {
                                             const u = $(G());
                                             let t;
-                                            for (; null !== (t = I.exec(e)); ) {
+                                            for (; null !== (t = I.exec(e));) {
                                                 const e = t[0].match(/href="(.*?)"/);
                                                 if (e) {
                                                     const t = u + e[1].replace(W, ''),
@@ -2624,7 +2626,7 @@
                                     let u;
                                     const t = G(),
                                         n = $(t);
-                                    for (; null !== (u = I.exec(e)); ) {
+                                    for (; null !== (u = I.exec(e));) {
                                         const e = u[0].match(/href="(.*?)"/);
                                         if (e && !e[1].includes(U) && n) {
                                             const u = n + e[1].replace(W, ''),
@@ -2860,7 +2862,7 @@
                                     [u, n, c],
                                 );
                             H(N.n.ENTER, d);
-                            const _ = (0, r.useMemo)(() => (0, oe.lG)(s.type, { buttonID: t }), [s.type, t]),
+                            const _ = (0, r.useMemo)(() => (0, oe.l)(s.type, { buttonID: t }), [s.type, t]),
                                 E = o()(le, s.type !== ie.f.absent && ce);
                             return a().createElement(
                                 ae.u,
@@ -3503,7 +3505,7 @@
                     );
                 }
                 const O = ({ cost: e, tooltip: u, index: t, tooltipRootId: n }) => {
-                        const a = (0, T.lG)(u.type, { index: t });
+                        const a = (0, T.l)(u.type, { index: t });
                         return e.value === e.discountValue && 0 === e.value
                             ? r().createElement('div', { className: L }, R.strings.dialogs.priceCard.price.free())
                             : r().createElement(
@@ -3649,10 +3651,7 @@
                 let n;
                 (t.d(u, { f: () => n }),
                     (function (e) {
-                        ((e.backport = 'backport'),
-                            (e.unbound = 'unbound'),
-                            (e.normal = 'normal'),
-                            (e.absent = 'absent'));
+                        ((e.backport = 'backport'), (e.normal = 'normal'), (e.absent = 'absent'));
                     })(n || (n = {})));
             },
             8460: (e, u, t) => {

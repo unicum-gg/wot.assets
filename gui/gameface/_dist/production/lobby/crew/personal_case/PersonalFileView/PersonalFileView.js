@@ -421,9 +421,13 @@
                         if (t.mediumWidth && A) return (0, n.H)(u, t, v);
                         if (t.smallWidth && F) return (0, n.H)(u, t, v);
                         if (t.extraSmallWidth && D) return (0, n.H)(u, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return u;
                             if (t.largeHeight && g) return u;
                             if (t.mediumHeight && C) return u;
@@ -1923,7 +1927,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, t = n(i.keys()); !(e = t()).done; ) {
+                            for (var e, t = n(i.keys()); !(e = t()).done;) {
                                 l(e.value, u);
                             }
                         },
@@ -2529,7 +2533,7 @@
                             u(e).delete(t);
                         },
                         s = (e, ...t) => {
-                            for (var r, a = n(u(e).values()); !(r = a()).done; ) {
+                            for (var r, a = n(u(e).values()); !(r = a()).done;) {
                                 (0, r.value)(...t);
                             }
                         };
@@ -2811,8 +2815,7 @@
                             ? `${e}`
                             : (function (e) {
                                   let u = '';
-                                  for (let t = n.length - 1; t >= 0; t--)
-                                      for (; e >= n[t]; ) ((u += r[t]), (e -= n[t]));
+                                  for (let t = n.length - 1; t >= 0; t--) for (; e >= n[t];) ((u += r[t]), (e -= n[t]));
                                   return u;
                               })(e);
             },
@@ -3388,7 +3391,7 @@
                         if (!t) return [e];
                         const r = [];
                         let n = 0;
-                        for (; t; ) (r.push(e.slice(n, u.lastIndex)), (n = u.lastIndex), (t = u.exec(e)));
+                        for (; t;) (r.push(e.slice(n, u.lastIndex)), (n = u.lastIndex), (t = u.exec(e)));
                         return (n !== e.length && r.push(e.slice(n)), r);
                     },
                     l = (e, u = '') => {
@@ -3544,7 +3547,7 @@
                 const r = (e, u, t, r) => {
                     let n = u.exec(e),
                         a = 0;
-                    for (; n; ) (a !== n.index && t(e.slice(a, n.index)), r(n), (a = u.lastIndex), (n = u.exec(e)));
+                    for (; n;) (a !== n.index && t(e.slice(a, n.index)), r(n), (a = u.lastIndex), (n = u.exec(e)));
                     a !== e.length && t(e.slice(a));
                 };
             },
@@ -3620,7 +3623,7 @@
                             _ = ((e, u) => {
                                 let t = 0,
                                     r = e.length - 1;
-                                for (; r - t >= 0; ) {
+                                for (; r - t >= 0;) {
                                     const n = t + Math.ceil(0.5 * (r - t));
                                     s(e[n], u) ? (r = n - 1) : (t = n + 1);
                                 }

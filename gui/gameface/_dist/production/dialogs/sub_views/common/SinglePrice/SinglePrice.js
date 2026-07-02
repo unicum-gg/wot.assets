@@ -1204,7 +1204,7 @@
                         let r = H.exec(u),
                             D = u,
                             o = 0;
-                        for (; r; ) {
+                        for (; r;) {
                             const A = r[0],
                                 F = K.exec(A),
                                 i = z.exec(A),
@@ -1231,44 +1231,47 @@
                     });
                 let j;
                 !(function (u) {
-                    ((u.backport = 'backport'), (u.unbound = 'unbound'), (u.normal = 'normal'), (u.absent = 'absent'));
+                    ((u.backport = 'backport'), (u.normal = 'normal'), (u.absent = 'absent'));
                 })(j || (j = {}));
-                const Y = (u, e) => ({
-                        isEnabled: u !== j.absent,
-                        args: e,
-                        contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
-                        decoratorId:
-                            u === j.unbound
-                                ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
-                                : void 0,
-                        ignoreShowDelay: u === j.backport,
-                        ignoreMouseClick: !0,
-                    }),
-                    $ = {
+                const Y = {
                         base: 'SinglePriceApp_base_d6',
                         text: 'SinglePriceApp_text_ef',
                         currency: 'SinglePriceApp_currency_bb',
                         currency__big: 'SinglePriceApp_currency__big_a1',
                     },
-                    X = () => {
+                    $ = () => {
                         const u = U().text,
                             e = U('model.cost'),
                             A = U('model.tooltip'),
-                            F = Y(A.type, void 0),
-                            t = D()($.currency, $[`currency__${e.size}`]);
+                            F =
+                                ((t = A.type),
+                                (n = void 0),
+                                {
+                                    isEnabled: t !== j.absent,
+                                    args: n,
+                                    contentId: R.views.dialogs.common.DialogTemplateGenericTooltip('resId'),
+                                    decoratorId:
+                                        t === j.normal
+                                            ? R.views.common.tooltip_window.tooltip_window.TooltipWindow('resId')
+                                            : void 0,
+                                    ignoreShowDelay: t === j.backport,
+                                    ignoreMouseClick: !0,
+                                });
+                        var t, n;
+                        const r = D()(Y.currency, Y[`currency__${e.size}`]);
                         return E().createElement(
                             'div',
-                            { className: $.base },
-                            E().createElement('div', { className: $.text }, E().createElement(G, { text: u })),
+                            { className: Y.base },
+                            E().createElement('div', { className: Y.text }, E().createElement(G, { text: u })),
                             E().createElement(
                                 g,
                                 F,
-                                E().createElement('div', { className: t }, E().createElement(c, e)),
+                                E().createElement('div', { className: r }, E().createElement(c, e)),
                             ),
                         );
                     };
                 engine.whenReady.then(() => {
-                    n().render(E().createElement(X, null), document.getElementById('root'));
+                    n().render(E().createElement($, null), document.getElementById('root'));
                 });
             },
         },

@@ -1017,15 +1017,13 @@
                             if (t.mediumWidth && s) return B(e, t, g);
                             if (t.smallWidth && D) return B(e, t, g);
                             if (t.extraSmallWidth && c) return B(e, t, g);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && d) return e;
                                 if (t.largeHeight && _) return e;
                                 if (t.mediumHeight && m) return e;
@@ -2108,7 +2106,7 @@
                     Vu = (u, e, t, r) => {
                         let n = e.exec(u),
                             i = 0;
-                        for (; n; ) (i !== n.index && t(u.slice(i, n.index)), r(n), (i = e.lastIndex), (n = e.exec(u)));
+                        for (; n;) (i !== n.index && t(u.slice(i, n.index)), r(n), (i = e.lastIndex), (n = e.exec(u)));
                         i !== u.length && t(u.slice(i));
                     },
                     Xu = (u) => {
@@ -2117,7 +2115,7 @@
                         if (!t) return [u];
                         const r = [];
                         let n = 0;
-                        for (; t; ) (r.push(u.slice(n, e.lastIndex)), (n = e.lastIndex), (t = e.exec(u)));
+                        for (; t;) (r.push(u.slice(n, e.lastIndex)), (n = e.lastIndex), (t = e.exec(u)));
                         return (n !== u.length && r.push(u.slice(n)), r);
                     },
                     Ku = (u, e = '') => {
@@ -2340,7 +2338,7 @@
                                                     F = ((u, e) => {
                                                         let t = 0,
                                                             r = u.length - 1;
-                                                        for (; r - t >= 0; ) {
+                                                        for (; r - t >= 0;) {
                                                             const n = t + Math.ceil(0.5 * (r - t));
                                                             $u(u[n], e) ? (r = n - 1) : (t = n + 1);
                                                         }

@@ -936,7 +936,7 @@
                             t = e || {};
                         let B = P.exec(u),
                             n = u;
-                        for (; B; ) {
+                        for (; B;) {
                             const A = B[0],
                                 F = k.exec(A),
                                 C = S.exec(A),

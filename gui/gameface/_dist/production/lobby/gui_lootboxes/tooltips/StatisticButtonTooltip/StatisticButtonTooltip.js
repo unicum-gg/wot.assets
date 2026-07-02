@@ -450,15 +450,13 @@
                             if (A.mediumWidth && C) return o(e, A, h);
                             if (A.smallWidth && l) return o(e, A, h);
                             if (A.extraSmallWidth && m) return o(e, A, h);
-                            if (
-                                !(
-                                    A.extraLargeWidth ||
-                                    A.largeWidth ||
-                                    A.mediumWidth ||
-                                    A.smallWidth ||
-                                    A.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                A.extraLargeWidth ||
+                                A.largeWidth ||
+                                A.mediumWidth ||
+                                A.smallWidth ||
+                                A.extraSmallWidth
+                            )) {
                                 if (A.extraLargeHeight && s) return e;
                                 if (A.largeHeight && d) return e;
                                 if (A.mediumHeight && g) return e;

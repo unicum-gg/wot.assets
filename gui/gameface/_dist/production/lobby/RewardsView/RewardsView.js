@@ -166,15 +166,13 @@
                             if (r.mediumWidth && h) return (0, a.H)(t, r, R);
                             if (r.smallWidth && E) return (0, a.H)(t, r, R);
                             if (r.extraSmallWidth && w) return (0, a.H)(t, r, R);
-                            if (
-                                !(
-                                    r.extraLargeWidth ||
-                                    r.largeWidth ||
-                                    r.mediumWidth ||
-                                    r.smallWidth ||
-                                    r.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                r.extraLargeWidth ||
+                                r.largeWidth ||
+                                r.mediumWidth ||
+                                r.smallWidth ||
+                                r.extraSmallWidth
+                            )) {
                                 if (r.extraLargeHeight && p) return t;
                                 if (r.largeHeight && v) return t;
                                 if (r.mediumHeight && b) return t;
@@ -300,7 +298,7 @@
                     })(n || (n = {})));
             },
             2862: (e, t, r) => {
-                let n, a, i, s, o, l, c;
+                let n, a, i, s, o, l, c, u;
                 (r.d(t, { $h: () => s, A2: () => l, E4: () => n, h2: () => i, kK: () => o, sh: () => c }),
                     (function (e) {
                         ((e.Items = 'items'),
@@ -357,7 +355,6 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (e.LootBoxToken = 'lootBoxToken'),
                             (e.GoldenTicket = 'birthday2025_golden_ticket'),
                             (e.PostStamp = 'giftsystem_4_stamp'),
@@ -398,6 +395,7 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
+                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -456,7 +454,10 @@
                             (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(c || (c = {})));
+                    })(c || (c = {})),
+                    (function (e) {
+                        ((e.Small = '400x300'), (e.Big = '600x450'));
+                    })(u || (u = {})));
             },
             1558: (e, t, r) => {
                 r.d(t, { m9: () => b, L_: () => p, i2: () => v, ry: () => E, pI: () => w, p3: () => m });
