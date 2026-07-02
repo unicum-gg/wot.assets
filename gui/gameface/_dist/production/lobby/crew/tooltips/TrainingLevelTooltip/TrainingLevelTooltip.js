@@ -155,27 +155,28 @@
                         addPreloadTexture: () => a,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => g,
+                        displayStatusIs: () => w,
                         events: () => i.U,
-                        extraSize: () => w,
-                        forceTriggerMouseMove: () => f,
+                        extraSize: () => y,
+                        forceTriggerMouseMove: () => b,
                         freezeTextureBeforeResize: () => B,
                         getBrowserTexturePath: () => A,
-                        getDisplayStatus: () => b,
+                        getDisplayStatus: () => g,
                         getScale: () => C,
                         getSize: () => l,
                         getViewGlobalPosition: () => D,
-                        isEventHandled: () => v,
+                        isClientAccessible: () => h,
+                        isEventHandled: () => f,
                         isFocused: () => p,
                         pxToRem: () => d,
                         remToPx: () => _,
                         resize: () => c,
                         sendEvent: () => o.qP,
                         setAnimateWindow: () => m,
-                        setEventHandled: () => h,
+                        setEventHandled: () => v,
                         setInputPaddingsRem: () => E,
                         setSidePaddingsRem: () => F,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => k,
                     }));
                 var n = t(3722),
                     r = t(6112),
@@ -225,22 +226,25 @@
                     return viewEnv.isFocused();
                 }
                 function h() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function v() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function f() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function b() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function g() {
                     return viewEnv.getShowingStatus();
                 }
-                const g = Object.keys(r.W).reduce(
+                const w = Object.keys(r.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === r.W[e]), u),
                         {},
                     ),
-                    w = {
+                    y = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -248,7 +252,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    y = Promise.all([
+                    k = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : i.U.onDomBuilt(u);
                         }),
@@ -1104,7 +1108,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Z(r.keys()); !(u = t()).done; ) o(u.value, e);
+                                                        for (var u, t = Z(r.keys()); !(u = t()).done;) o(u.value, e);
                                                     },
                                                     unsubscribe: o,
                                                 };
@@ -1751,7 +1755,7 @@
                     Hu = (u, e, t, n) => {
                         let r = e.exec(u),
                             i = 0;
-                        for (; r; ) (i !== r.index && t(u.slice(i, r.index)), n(r), (i = e.lastIndex), (r = e.exec(u)));
+                        for (; r;) (i !== r.index && t(u.slice(i, r.index)), n(r), (i = e.lastIndex), (r = e.exec(u)));
                         i !== u.length && t(u.slice(i));
                     },
                     Ku = (u) => {
@@ -1760,7 +1764,7 @@
                         if (!t) return [u];
                         const n = [];
                         let r = 0;
-                        for (; t; ) (n.push(u.slice(r, e.lastIndex)), (r = e.lastIndex), (t = e.exec(u)));
+                        for (; t;) (n.push(u.slice(r, e.lastIndex)), (r = e.lastIndex), (t = e.exec(u)));
                         return (r !== u.length && n.push(u.slice(r)), n);
                     },
                     $u = (u, e = '') => {
@@ -1931,7 +1935,7 @@
                             s = ((u, e) => {
                                 let t = 0,
                                     n = u.length - 1;
-                                for (; n - t >= 0; ) {
+                                for (; n - t >= 0;) {
                                     const r = t + Math.ceil(0.5 * (n - t));
                                     Qu(u[r], e) ? (n = r - 1) : (t = r + 1);
                                 }
@@ -2087,7 +2091,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = Be.length - 1; t >= 0; t--)
-                                      for (; u >= Be[t]; ) ((e += De[t]), (u -= Be[t]));
+                                      for (; u >= Be[t];) ((e += De[t]), (u -= Be[t]));
                                   return e;
                               })(u),
                     _e = {

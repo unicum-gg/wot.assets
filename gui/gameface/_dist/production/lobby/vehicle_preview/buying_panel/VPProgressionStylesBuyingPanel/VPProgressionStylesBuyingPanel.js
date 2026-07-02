@@ -155,27 +155,28 @@
                         addPreloadTexture: () => o,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => O,
+                        displayStatusIs: () => T,
                         events: () => a.U,
-                        extraSize: () => T,
-                        forceTriggerMouseMove: () => x,
+                        extraSize: () => L,
+                        forceTriggerMouseMove: () => y,
                         freezeTextureBeforeResize: () => g,
                         getBrowserTexturePath: () => c,
-                        getDisplayStatus: () => y,
+                        getDisplayStatus: () => O,
                         getScale: () => w,
                         getSize: () => u,
                         getViewGlobalPosition: () => m,
-                        isEventHandled: () => S,
+                        isClientAccessible: () => p,
+                        isEventHandled: () => x,
                         isFocused: () => f,
                         pxToRem: () => v,
                         remToPx: () => b,
                         resize: () => h,
                         sendEvent: () => s.qP,
                         setAnimateWindow: () => E,
-                        setEventHandled: () => p,
+                        setEventHandled: () => S,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => L,
+                        whenTutorialReady: () => M,
                     }));
                 var n = i(722),
                     r = i(112),
@@ -225,22 +226,25 @@
                     return viewEnv.isFocused();
                 }
                 function p() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function S() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function x() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function y() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function O() {
                     return viewEnv.getShowingStatus();
                 }
-                const O = Object.keys(r.W).reduce(
+                const T = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    T = {
+                    L = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -248,7 +252,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    L = Promise.all([
+                    M = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -866,9 +870,13 @@
                         if (i.mediumWidth && h) return o(t, i, x);
                         if (i.smallWidth && m) return o(t, i, x);
                         if (i.extraSmallWidth && g) return o(t, i, x);
-                        if (
-                            !(i.extraLargeWidth || i.largeWidth || i.mediumWidth || i.smallWidth || i.extraSmallWidth)
-                        ) {
+                        if (!(
+                            i.extraLargeWidth ||
+                            i.largeWidth ||
+                            i.mediumWidth ||
+                            i.smallWidth ||
+                            i.extraSmallWidth
+                        )) {
                             if (i.extraLargeHeight && b) return t;
                             if (i.largeHeight && E) return t;
                             if (i.mediumHeight && f) return t;

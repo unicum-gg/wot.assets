@@ -1526,15 +1526,13 @@
                             if (t.mediumWidth && m) return Q(e, t, C);
                             if (t.smallWidth && A) return Q(e, t, C);
                             if (t.extraSmallWidth && F) return Q(e, t, C);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && _) return e;
                                 if (t.largeHeight && d) return e;
                                 if (t.mediumHeight && D) return e;
@@ -3274,7 +3272,7 @@
                         let s = ze.exec(u),
                             o = u,
                             l = 0;
-                        for (; s; ) {
+                        for (; s;) {
                             const t = s[0],
                                 r = qe.exec(t),
                                 E = Qe.exec(t),

@@ -1080,15 +1080,13 @@
                             if (t.mediumWidth && m) return N(u, t, D);
                             if (t.smallWidth && c) return N(u, t, D);
                             if (t.extraSmallWidth && d) return N(u, t, D);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && E) return u;
                                 if (t.largeHeight && A) return u;
                                 if (t.mediumHeight && b) return u;
@@ -1240,7 +1238,7 @@
                             r = u || {};
                         let _ = G.exec(e),
                             n = e;
-                        for (; _; ) {
+                        for (; _;) {
                             const t = _[0],
                                 i = U.exec(t),
                                 o = V.exec(t),
@@ -1985,7 +1983,7 @@
                     We = (e, u, t, a) => {
                         let r = u.exec(e),
                             _ = 0;
-                        for (; r; ) (_ !== r.index && t(e.slice(_, r.index)), a(r), (_ = u.lastIndex), (r = u.exec(e)));
+                        for (; r;) (_ !== r.index && t(e.slice(_, r.index)), a(r), (_ = u.lastIndex), (r = u.exec(e)));
                         _ !== e.length && t(e.slice(_));
                     },
                     $e = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -2032,7 +2030,7 @@
                               if (!a) return [e];
                               const r = [];
                               let _ = 0;
-                              for (; a; ) {
+                              for (; a;) {
                                   const n = u.justifyContent === ke.FlexEnd ? a.index : t.lastIndex;
                                   (r.push(e.slice(_, n)), (_ = n), (a = t.exec(e)));
                               }
@@ -2265,7 +2263,7 @@
                                                     l = ((e, u) => {
                                                         let t = 0,
                                                             a = e.length - 1;
-                                                        for (; a - t >= 0; ) {
+                                                        for (; a - t >= 0;) {
                                                             const r = t + Math.ceil(0.5 * (a - t));
                                                             Ve(e[r], u) ? (a = r - 1) : (t = r + 1);
                                                         }
@@ -3889,7 +3887,7 @@
                         let _ = kt.exec(e),
                             n = e,
                             i = 0;
-                        for (; _; ) {
+                        for (; _;) {
                             const t = _[0],
                                 o = Tt.exec(t),
                                 s = Lt.exec(t),

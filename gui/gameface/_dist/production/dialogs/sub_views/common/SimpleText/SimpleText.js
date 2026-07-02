@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (u, e, A) => {
-                A.d(e, { O: () => j });
+                A.d(e, { O: () => G });
                 var F = {};
                 (A.r(F), A.d(F, { mouse: () => o, onResize: () => C }));
                 var E = {};
@@ -33,27 +33,28 @@
                         addPreloadTexture: () => b,
                         children: () => D,
                         displayStatus: () => l,
-                        displayStatusIs: () => H,
+                        displayStatusIs: () => q,
                         events: () => d,
-                        extraSize: () => q,
-                        forceTriggerMouseMove: () => K,
+                        extraSize: () => $,
+                        forceTriggerMouseMove: () => z,
                         freezeTextureBeforeResize: () => S,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => z,
+                        getDisplayStatus: () => H,
                         getScale: () => R,
                         getSize: () => M,
                         getViewGlobalPosition: () => k,
-                        isEventHandled: () => V,
+                        isClientAccessible: () => I,
+                        isEventHandled: () => K,
                         isFocused: () => W,
                         pxToRem: () => L,
                         remToPx: () => N,
                         resize: () => P,
                         sendEvent: () => T,
                         setAnimateWindow: () => U,
-                        setEventHandled: () => I,
+                        setEventHandled: () => V,
                         setInputPaddingsRem: () => f,
                         setSidePaddingsRem: () => y,
-                        whenTutorialReady: () => $,
+                        whenTutorialReady: () => j,
                     }));
                 const C = B('clientResized'),
                     r = { down: B('mousedown'), up: B('mouseup'), move: B('mousemove') };
@@ -251,19 +252,22 @@
                     return viewEnv.isFocused();
                 }
                 function I() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function V() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function K() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function z() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function H() {
                     return viewEnv.getShowingStatus();
                 }
-                const H = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
-                    q = {
+                const q = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
+                    $ = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -271,13 +275,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    $ = Promise.all([
+                    j = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : d.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    j = { view: t, client: E };
+                    G = { view: t, client: E };
             },
             521: (u, e, A) => {
                 let F, E;
@@ -942,7 +946,7 @@
                         let B = P.exec(u),
                             n = u,
                             C = 0;
-                        for (; B; ) {
+                        for (; B;) {
                             const A = B[0],
                                 F = k.exec(A),
                                 r = S.exec(A),

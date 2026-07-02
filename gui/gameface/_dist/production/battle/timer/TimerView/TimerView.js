@@ -10,7 +10,7 @@
                 a = '',
                 n = 1,
                 r = t.length + 1;
-            for (; n < r; ) ((i = l[n - 1]), (s = t[n - 1] || ''), (a += i + s), n++);
+            for (; n < r;) ((i = l[n - 1]), (s = t[n - 1] || ''), (a += i + s), n++);
             return ((a += l[l.length - 1]), { result: a, isWGFE: !0 });
         };
     class l extends HTMLElement {
@@ -128,7 +128,7 @@
     };
     const v = (e, t) => {
             let i = String(e);
-            for (; i.length < t.toString().length; ) i = '0' + i;
+            for (; i.length < t.toString().length;) i = '0' + i;
             return i;
         },
         p = (e, t) => {

@@ -489,9 +489,13 @@
                         if (t.mediumWidth && A) return (0, a.H)(u, t, h);
                         if (t.smallWidth && F) return (0, a.H)(u, t, h);
                         if (t.extraSmallWidth && D) return (0, a.H)(u, t, h);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && g) return u;
                             if (t.mediumHeight && B) return u;
@@ -1352,7 +1356,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, t = a(s.keys()); !(e = t()).done; ) {
+                            for (var e, t = a(s.keys()); !(e = t()).done;) {
                                 o(e.value, u);
                             }
                         },
@@ -1657,27 +1661,28 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => w,
+                        displayStatusIs: () => f,
                         events: () => r.U,
-                        extraSize: () => f,
-                        forceTriggerMouseMove: () => h,
+                        extraSize: () => y,
+                        forceTriggerMouseMove: () => p,
                         freezeTextureBeforeResize: () => A,
                         getBrowserTexturePath: () => l,
-                        getDisplayStatus: () => p,
+                        getDisplayStatus: () => w,
                         getScale: () => F,
                         getSize: () => d,
                         getViewGlobalPosition: () => _,
-                        isEventHandled: () => v,
+                        isClientAccessible: () => b,
+                        isEventHandled: () => h,
                         isFocused: () => B,
                         pxToRem: () => D,
                         remToPx: () => C,
                         resize: () => E,
                         sendEvent: () => i.qP,
                         setAnimateWindow: () => g,
-                        setEventHandled: () => b,
+                        setEventHandled: () => v,
                         setInputPaddingsRem: () => o,
                         setSidePaddingsRem: () => m,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => k,
                     }));
                 var n = t(3722),
                     a = t(6112),
@@ -1727,22 +1732,25 @@
                     return viewEnv.isFocused();
                 }
                 function b() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function v() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function h() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function p() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function w() {
                     return viewEnv.getShowingStatus();
                 }
-                const w = Object.keys(a.W).reduce(
+                const f = Object.keys(a.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === a.W[u]), e),
                         {},
                     ),
-                    f = {
+                    y = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -1750,7 +1758,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    y = Promise.all([
+                    k = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : r.U.onDomBuilt(e);
                         }),
@@ -4262,7 +4270,7 @@
                         (this._observers.set(e, e),
                             1 === this._observers.size &&
                                 (this._intervalID = window.setInterval(() => {
-                                    for (var e, u = Ju(this._observers.values()); !(e = u()).done; ) {
+                                    for (var e, u = Ju(this._observers.values()); !(e = u()).done;) {
                                         (0, e.value)();
                                     }
                                 }, 5e3)));
@@ -4469,7 +4477,7 @@
                                         r = a > 1 ? 16 : 24;
                                     let i = 2,
                                         s = r;
-                                    for (; (t - (r + i)) / (s + i) < Math.floor((e - 1) / a); ) i > 0 ? i-- : s--;
+                                    for (; (t - (r + i)) / (s + i) < Math.floor((e - 1) / a);) i > 0 ? i-- : s--;
                                     return (
                                         (n = Math.min(n, 1 + Math.floor((t - r) / (s + i)))),
                                         s !== r && (i = s - r),

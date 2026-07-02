@@ -1185,15 +1185,13 @@
                             if (t.mediumWidth && l) return y(e, t, h);
                             if (t.smallWidth && _) return y(e, t, h);
                             if (t.extraSmallWidth && s) return y(e, t, h);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && B) return e;
                                 if (t.largeHeight && C) return e;
                                 if (t.mediumHeight && d) return e;
@@ -1759,7 +1757,7 @@
                         let F = hu.exec(u),
                             i = u,
                             n = 0;
-                        for (; F; ) {
+                        for (; F;) {
                             const t = F[0],
                                 r = gu.exec(t),
                                 o = pu.exec(t),

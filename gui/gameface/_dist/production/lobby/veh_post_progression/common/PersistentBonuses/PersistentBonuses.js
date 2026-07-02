@@ -114,9 +114,13 @@
                         if (t.mediumWidth && l) return (0, E.H)(e, t, v);
                         if (t.smallWidth && c) return (0, E.H)(e, t, v);
                         if (t.extraSmallWidth && d) return (0, E.H)(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -472,7 +476,7 @@
                 Date.now();
             },
             5067: (u, e, t) => {
-                t.d(e, { O: () => G });
+                t.d(e, { O: () => $ });
                 var A = {};
                 (t.r(A), t.d(A, { mouse: () => o, onResize: () => D }));
                 var E = {};
@@ -503,27 +507,28 @@
                         addPreloadTexture: () => f,
                         children: () => F,
                         displayStatus: () => d,
-                        displayStatusIs: () => z,
+                        displayStatusIs: () => K,
                         events: () => _,
-                        extraSize: () => K,
-                        forceTriggerMouseMove: () => V,
+                        extraSize: () => Y,
+                        forceTriggerMouseMove: () => j,
                         freezeTextureBeforeResize: () => k,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => j,
+                        getDisplayStatus: () => z,
                         getScale: () => L,
                         getSize: () => S,
                         getViewGlobalPosition: () => P,
-                        isEventHandled: () => U,
+                        isClientAccessible: () => W,
+                        isEventHandled: () => V,
                         isFocused: () => I,
                         pxToRem: () => R,
                         remToPx: () => N,
                         resize: () => M,
                         sendEvent: () => b,
                         setAnimateWindow: () => H,
-                        setEventHandled: () => W,
+                        setEventHandled: () => U,
                         setInputPaddingsRem: () => x,
                         setSidePaddingsRem: () => y,
-                        whenTutorialReady: () => Y,
+                        whenTutorialReady: () => G,
                     }));
                 const D = r('clientResized'),
                     a = { down: r('mousedown'), up: r('mouseup'), move: r('mousemove') };
@@ -721,19 +726,22 @@
                     return viewEnv.isFocused();
                 }
                 function W() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function U() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function V() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function j() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function z() {
                     return viewEnv.getShowingStatus();
                 }
-                const z = Object.keys(d).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === d[e]), u), {}),
-                    K = {
+                const K = Object.keys(d).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === d[e]), u), {}),
+                    Y = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -741,13 +749,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    Y = Promise.all([
+                    G = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : _.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    G = { view: n, client: E };
+                    $ = { view: n, client: E };
             },
             7902: (u, e, t) => {
                 t.d(e, { F: () => A });

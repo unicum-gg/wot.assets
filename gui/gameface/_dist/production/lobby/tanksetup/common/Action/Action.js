@@ -32,9 +32,9 @@
                         P = (0, r.useState)(!1),
                         M = P[0],
                         T = P[1],
-                        k = (0, r.useState)(!1),
-                        C = k[0],
-                        A = k[1],
+                        C = (0, r.useState)(!1),
+                        k = C[0],
+                        A = C[1],
                         S = (0, r.useCallback)(() => {
                             d || (g.current && (g.current.focus(), y(!0)));
                         }, [d]),
@@ -88,7 +88,7 @@
                                 [_.Z[`base__${t}`]]: t,
                                 [_.Z.base__focus]: O,
                                 [_.Z.base__highlightActive]: M,
-                                [_.Z.base__firstHover]: C,
+                                [_.Z.base__firstHover]: k,
                             },
                             l,
                         ),
@@ -319,24 +319,25 @@
                         addPreloadTexture: () => s,
                         children: () => i,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => M,
+                        displayStatusIs: () => T,
                         events: () => o.U,
-                        extraSize: () => T,
-                        forceTriggerMouseMove: () => y,
+                        extraSize: () => C,
+                        forceTriggerMouseMove: () => P,
                         freezeTextureBeforeResize: () => h,
                         getBrowserTexturePath: () => c,
-                        getDisplayStatus: () => P,
+                        getDisplayStatus: () => M,
                         getScale: () => b,
                         getSize: () => u,
                         getViewGlobalPosition: () => E,
-                        isEventHandled: () => O,
+                        isClientAccessible: () => f,
+                        isEventHandled: () => y,
                         isFocused: () => g,
                         pxToRem: () => m,
                         remToPx: () => w,
                         resize: () => v,
                         sendEvent: () => r.qP,
                         setAnimateWindow: () => p,
-                        setEventHandled: () => f,
+                        setEventHandled: () => O,
                         setInputPaddingsRem: () => _,
                         setSidePaddingsRem: () => l,
                         whenTutorialReady: () => k,
@@ -389,22 +390,25 @@
                     return viewEnv.isFocused();
                 }
                 function f() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function O() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function y() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function P() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function M() {
                     return viewEnv.getShowingStatus();
                 }
-                const M = Object.keys(a.W).reduce(
+                const T = Object.keys(a.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
-                    T = {
+                    C = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },

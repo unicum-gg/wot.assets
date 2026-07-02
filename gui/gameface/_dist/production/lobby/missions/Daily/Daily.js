@@ -1723,9 +1723,13 @@
                         if (t.mediumWidth && E) return i(u, t, f);
                         if (t.smallWidth && _) return i(u, t, f);
                         if (t.extraSmallWidth && A) return i(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && D) return u;
                             if (t.largeHeight && C) return u;
                             if (t.mediumHeight && p) return u;
@@ -2611,7 +2615,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = Ie(a.keys()); !(e = t()).done; ) r(e.value, u);
+                                                        for (var e, t = Ie(a.keys()); !(e = t()).done;) r(e.value, u);
                                                     },
                                                     unsubscribe: r,
                                                 };
@@ -3398,7 +3402,7 @@
                                             u(e).delete(t);
                                         },
                                         a = (e, ...t) => {
-                                            for (var n, a = mu(u(e).values()); !(n = a()).done; ) (0, n.value)(...t);
+                                            for (var n, a = mu(u(e).values()); !(n = a()).done;) (0, n.value)(...t);
                                         };
                                     return (0, r.useMemo)(() => ({ on: t, off: n, trigger: a }), []);
                                 })(),
@@ -5993,7 +5997,7 @@
                         let i = or.exec(e),
                             o = e,
                             l = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 r = lr.exec(t),
                                 c = cr.exec(t),

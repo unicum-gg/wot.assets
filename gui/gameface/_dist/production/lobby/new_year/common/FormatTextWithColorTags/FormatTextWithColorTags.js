@@ -95,7 +95,7 @@
                                 C = F ? Object.assign({}, F) : {};
                             let e = u,
                                 t = A.exec(u);
-                            for (; t; ) {
+                            for (; t;) {
                                 const n = t[0],
                                     a = E.exec(n),
                                     o = B.exec(n),

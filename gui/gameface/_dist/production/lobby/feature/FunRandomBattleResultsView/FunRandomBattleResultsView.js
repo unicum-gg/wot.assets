@@ -880,15 +880,13 @@
                             if (t.mediumWidth && _) return i(u, t, h);
                             if (t.smallWidth && E) return i(u, t, h);
                             if (t.extraSmallWidth && g) return i(u, t, h);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && D) return u;
                                 if (t.largeHeight && p) return u;
                                 if (t.mediumHeight && f) return u;
@@ -3528,7 +3526,7 @@
                         let i = Lt.exec(e),
                             o = e,
                             l = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 r = Ut.exec(t),
                                 c = Ht.exec(t),
@@ -5554,7 +5552,7 @@
                                         : (function (e) {
                                               let u = '';
                                               for (let t = On.length - 1; t >= 0; t--)
-                                                  for (; e >= On[t]; ) ((u += In[t]), (e -= On[t]));
+                                                  for (; e >= On[t];) ((u += In[t]), (e -= On[t]));
                                               return u;
                                           })(_));
                             var _;

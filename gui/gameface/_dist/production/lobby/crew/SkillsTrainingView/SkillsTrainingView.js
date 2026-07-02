@@ -465,9 +465,13 @@
                         if (n.mediumWidth && E) return (0, r.H)(t, n, C);
                         if (n.smallWidth && b) return (0, r.H)(t, n, C);
                         if (n.extraSmallWidth && f) return (0, r.H)(t, n, C);
-                        if (
-                            !(n.extraLargeWidth || n.largeWidth || n.mediumWidth || n.smallWidth || n.extraSmallWidth)
-                        ) {
+                        if (!(
+                            n.extraLargeWidth ||
+                            n.largeWidth ||
+                            n.mediumWidth ||
+                            n.smallWidth ||
+                            n.extraSmallWidth
+                        )) {
                             if (n.extraLargeHeight && h) return t;
                             if (n.largeHeight && p) return t;
                             if (n.mediumHeight && v) return t;
@@ -1203,7 +1207,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, n = r(u.keys()); !(e = n()).done; ) {
+                            for (var e, n = r(u.keys()); !(e = n()).done;) {
                                 l(e.value, t);
                             }
                         },
@@ -3292,7 +3296,7 @@
                                             t(e).delete(n);
                                         },
                                         r = (e, ...n) => {
-                                            for (var a, r = P(t(e).values()); !(a = r()).done; ) (0, a.value)(...n);
+                                            for (var a, r = P(t(e).values()); !(a = r()).done;) (0, a.value)(...n);
                                         };
                                     return (0, s.useMemo)(() => ({ on: n, off: a, trigger: r }), []);
                                 })(),
@@ -4089,7 +4093,7 @@
                     Ve = (e, t, n, a) => {
                         let r = t.exec(e),
                             i = 0;
-                        for (; r; ) (i !== r.index && n(e.slice(i, r.index)), a(r), (i = t.lastIndex), (r = t.exec(e)));
+                        for (; r;) (i !== r.index && n(e.slice(i, r.index)), a(r), (i = t.lastIndex), (r = t.exec(e)));
                         i !== e.length && n(e.slice(i));
                     },
                     qe = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
@@ -4135,7 +4139,7 @@
                               if (!a) return [e];
                               const r = [];
                               let i = 0;
-                              for (; a; ) {
+                              for (; a;) {
                                   const s = t.justifyContent === Te.FlexEnd ? a.index : n.lastIndex;
                                   (r.push(e.slice(i, s)), (i = s), (a = n.exec(e)));
                               }
@@ -4309,7 +4313,7 @@
                             c = ((e, t) => {
                                 let n = 0,
                                     a = e.length - 1;
-                                for (; a - n >= 0; ) {
+                                for (; a - n >= 0;) {
                                     const r = n + Math.ceil(0.5 * (a - n));
                                     tt(e[r], t) ? (a = r - 1) : (n = r + 1);
                                 }
@@ -4779,7 +4783,7 @@
                             : (function (e) {
                                   let t = '';
                                   for (let n = Xt.length - 1; n >= 0; n--)
-                                      for (; e >= Xt[n]; ) ((t += Qt[n]), (e -= Xt[n]));
+                                      for (; e >= Xt[n];) ((t += Qt[n]), (e -= Xt[n]));
                                   return t;
                               })(e),
                     tn = (e, t) => e.split(',').includes(t),
@@ -5949,7 +5953,7 @@
                         i.size
                             ? s ||
                               (s = window.setInterval(() => {
-                                  for (var e, t = a(i.values()); !(e = t()).done; ) {
+                                  for (var e, t = a(i.values()); !(e = t()).done;) {
                                       (0, e.value)();
                                   }
                               }, 5e3))

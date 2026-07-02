@@ -916,15 +916,13 @@
                             if (a.mediumWidth && _) return s(t, a, D);
                             if (a.smallWidth && p) return s(t, a, D);
                             if (a.extraSmallWidth && v) return s(t, a, D);
-                            if (
-                                !(
-                                    a.extraLargeWidth ||
-                                    a.largeWidth ||
-                                    a.mediumWidth ||
-                                    a.smallWidth ||
-                                    a.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                a.extraLargeWidth ||
+                                a.largeWidth ||
+                                a.mediumWidth ||
+                                a.smallWidth ||
+                                a.extraSmallWidth
+                            )) {
                                 if (a.extraLargeHeight && h) return t;
                                 if (a.largeHeight && b) return t;
                                 if (a.mediumHeight && f) return t;
@@ -4272,7 +4270,7 @@
                         let o = Sn.exec(e),
                             u = e,
                             l = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const a = o[0],
                                 n = yn.exec(a),
                                 c = Nn.exec(a),
@@ -8087,7 +8085,7 @@
                             : (function (e) {
                                   let t = '';
                                   for (let a = bo.length - 1; a >= 0; a--)
-                                      for (; e >= bo[a]; ) ((t += ho[a]), (e -= bo[a]));
+                                      for (; e >= bo[a];) ((t += ho[a]), (e -= bo[a]));
                                   return t;
                               })(e),
                     Ao = (0, De.Pi)(

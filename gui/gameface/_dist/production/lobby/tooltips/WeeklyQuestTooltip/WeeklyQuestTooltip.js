@@ -2510,7 +2510,7 @@
                         let s = Xu.exec(u),
                             i = u,
                             E = 0;
-                        for (; s; ) {
+                        for (; s;) {
                             const t = s[0],
                                 n = Hu.exec(t),
                                 l = Ku.exec(t),

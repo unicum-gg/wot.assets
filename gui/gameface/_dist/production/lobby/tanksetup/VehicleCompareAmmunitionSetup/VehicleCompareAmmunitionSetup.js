@@ -527,9 +527,13 @@
                         if (n.mediumWidth && E) return (0, r.H)(t, n, D);
                         if (n.smallWidth && b) return (0, r.H)(t, n, D);
                         if (n.extraSmallWidth && h) return (0, r.H)(t, n, D);
-                        if (
-                            !(n.extraLargeWidth || n.largeWidth || n.mediumWidth || n.smallWidth || n.extraSmallWidth)
-                        ) {
+                        if (!(
+                            n.extraLargeWidth ||
+                            n.largeWidth ||
+                            n.mediumWidth ||
+                            n.smallWidth ||
+                            n.extraSmallWidth
+                        )) {
                             if (n.extraLargeHeight && g) return t;
                             if (n.largeHeight && f) return t;
                             if (n.mediumHeight && v) return t;
@@ -1502,7 +1506,7 @@
                                             : e.ownerDocument.activeElement;
                                     if (s) {
                                         if ('IFRAME' === s.tagName) s = s.contentDocument.activeElement;
-                                        else for (; s.shadowRoot; ) s = s.shadowRoot.activeElement;
+                                        else for (; s.shadowRoot;) s = s.shadowRoot.activeElement;
                                         if (
                                             u((r = s), 'input,[contenteditable]') ||
                                             u(r, 'select,[contenteditable]') ||
@@ -1593,7 +1597,7 @@
                                     !(function (e, n, r) {
                                         if (!f.isWebKit && a.querySelector('select')) return !0;
                                         if (!a.contains(e)) return !1;
-                                        for (var u = e; u && u !== a; ) {
+                                        for (var u = e; u && u !== a;) {
                                             if (u.classList.contains(l.consuming)) return !0;
                                             var s = t(u);
                                             if (
@@ -1703,7 +1707,7 @@
                                     if (
                                         (function (e, n, r) {
                                             if (!a.contains(e)) return !1;
-                                            for (var u = e; u && u !== a; ) {
+                                            for (var u = e; u && u !== a;) {
                                                 if (u.classList.contains(l.consuming)) return !0;
                                                 var s = t(u);
                                                 if (
@@ -2809,27 +2813,28 @@
                         addPreloadTexture: () => o,
                         children: () => a,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => B,
+                        displayStatusIs: () => y,
                         events: () => u.U,
-                        extraSize: () => y,
-                        forceTriggerMouseMove: () => D,
+                        extraSize: () => w,
+                        forceTriggerMouseMove: () => F,
                         freezeTextureBeforeResize: () => E,
                         getBrowserTexturePath: () => l,
-                        getDisplayStatus: () => F,
+                        getDisplayStatus: () => B,
                         getScale: () => b,
                         getSize: () => d,
                         getViewGlobalPosition: () => p,
-                        isEventHandled: () => A,
+                        isClientAccessible: () => C,
+                        isEventHandled: () => D,
                         isFocused: () => v,
                         pxToRem: () => h,
                         remToPx: () => g,
                         resize: () => m,
                         sendEvent: () => s.qP,
                         setAnimateWindow: () => f,
-                        setEventHandled: () => C,
+                        setEventHandled: () => A,
                         setInputPaddingsRem: () => i,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => w,
+                        whenTutorialReady: () => S,
                     }));
                 var a = n(3722),
                     r = n(6112),
@@ -2879,22 +2884,25 @@
                     return viewEnv.isFocused();
                 }
                 function C() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function A() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function D() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function F() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function B() {
                     return viewEnv.getShowingStatus();
                 }
-                const B = Object.keys(r.W).reduce(
+                const y = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    y = {
+                    w = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -2902,7 +2910,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    w = Promise.all([
+                    S = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : u.U.onDomBuilt(e);
                         }),
@@ -4614,7 +4622,7 @@
                                             t(e).delete(n);
                                         },
                                         r = (e, ...n) => {
-                                            for (var a, r = Be(t(e).values()); !(a = r()).done; ) (0, a.value)(...n);
+                                            for (var a, r = Be(t(e).values()); !(a = r()).done;) (0, a.value)(...n);
                                         };
                                     return (0, s.useMemo)(() => ({ on: n, off: a, trigger: r }), []);
                                 })(),
@@ -5323,7 +5331,7 @@
                             : (function (e) {
                                   let t = '';
                                   for (let n = bt.length - 1; n >= 0; n--)
-                                      for (; e >= bt[n]; ) ((t += Et[n]), (e -= bt[n]));
+                                      for (; e >= bt[n];) ((t += Et[n]), (e -= bt[n]));
                                   return t;
                               })(e),
                     ft = {
@@ -5619,7 +5627,7 @@
                     mn = (e, t, n, a) => {
                         let r = t.exec(e),
                             u = 0;
-                        for (; r; ) (u !== r.index && n(e.slice(u, r.index)), a(r), (u = t.lastIndex), (r = t.exec(e)));
+                        for (; r;) (u !== r.index && n(e.slice(u, r.index)), a(r), (u = t.lastIndex), (r = t.exec(e)));
                         u !== e.length && n(e.slice(u));
                     },
                     pn = (e) => {
@@ -5628,7 +5636,7 @@
                         if (!n) return [e];
                         const a = [];
                         let r = 0;
-                        for (; n; ) (a.push(e.slice(r, t.lastIndex)), (r = t.lastIndex), (n = t.exec(e)));
+                        for (; n;) (a.push(e.slice(r, t.lastIndex)), (r = t.lastIndex), (n = t.exec(e)));
                         return (r !== e.length && a.push(e.slice(r)), a);
                     },
                     En = (e, t = '') => {
@@ -5799,7 +5807,7 @@
                             c = ((e, t) => {
                                 let n = 0,
                                     a = e.length - 1;
-                                for (; a - n >= 0; ) {
+                                for (; a - n >= 0;) {
                                     const r = n + Math.ceil(0.5 * (a - n));
                                     fn(e[r], t) ? (a = r - 1) : (n = r + 1);
                                 }
@@ -11745,7 +11753,7 @@
                                     let a = 0,
                                         u = n - 1,
                                         s = !1;
-                                    for (; u - a > 1; ) {
+                                    for (; u - a > 1;) {
                                         const n = a + Math.floor(0.5 * (u - a + 1));
                                         ((s = r(e[n], t)), s ? (u = n) : (a = n));
                                     }

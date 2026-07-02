@@ -696,15 +696,13 @@
                             if (t.mediumWidth && l) return Du(e, t, _);
                             if (t.smallWidth && C) return Du(e, t, _);
                             if (t.extraSmallWidth && o) return Du(e, t, _);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && m) return e;
                                 if (t.largeHeight && s) return e;
                                 if (t.mediumHeight && d) return e;
@@ -1315,7 +1313,7 @@
                         let E = Ju.exec(u),
                             r = u,
                             n = 0;
-                        for (; E; ) {
+                        for (; E;) {
                             const t = E[0],
                                 D = ue.exec(t),
                                 B = ee.exec(t),

@@ -743,7 +743,7 @@
                                             : (function (e) {
                                                   let t = '';
                                                   for (let n = me.length - 1; n >= 0; n--)
-                                                      for (; e >= me[n]; ) ((t += de[n]), (e -= me[n]));
+                                                      for (; e >= me[n];) ((t += de[n]), (e -= me[n]));
                                                   return t;
                                               })(s)),
                                     ),

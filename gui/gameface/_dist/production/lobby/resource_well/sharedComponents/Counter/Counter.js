@@ -177,27 +177,28 @@
                         addPreloadTexture: () => s,
                         children: () => i,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => M,
+                        displayStatusIs: () => y,
                         events: () => o.U,
-                        extraSize: () => y,
-                        forceTriggerMouseMove: () => P,
+                        extraSize: () => R,
+                        forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => w,
                         getBrowserTexturePath: () => d,
-                        getDisplayStatus: () => T,
+                        getDisplayStatus: () => M,
                         getScale: () => h,
                         getSize: () => u,
                         getViewGlobalPosition: () => E,
-                        isEventHandled: () => f,
+                        isClientAccessible: () => f,
+                        isEventHandled: () => P,
                         isFocused: () => O,
                         pxToRem: () => p,
-                        remToPx: () => m,
+                        remToPx: () => b,
                         resize: () => v,
                         sendEvent: () => a.qP,
-                        setAnimateWindow: () => b,
+                        setAnimateWindow: () => m,
                         setEventHandled: () => g,
                         setInputPaddingsRem: () => _,
                         setSidePaddingsRem: () => l,
-                        whenTutorialReady: () => R,
+                        whenTutorialReady: () => k,
                     }));
                 var i = n(3722),
                     r = n(6112),
@@ -226,7 +227,7 @@
                 }
                 function E(e = 'rem') {
                     const t = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === e ? t : { x: m(t.x), y: m(t.y) };
+                    return 'rem' === e ? t : { x: b(t.x), y: b(t.y) };
                 }
                 function w() {
                     viewEnv.freezeTextureBeforeResize();
@@ -237,32 +238,35 @@
                 function p(e) {
                     return viewEnv.pxToRem(e);
                 }
-                function m(e) {
+                function b(e) {
                     return viewEnv.remToPx(e);
                 }
-                function b(e, t) {
+                function m(e, t) {
                     viewEnv.setAnimateWindow(e, t);
                 }
                 function O() {
                     return viewEnv.isFocused();
                 }
+                function f() {
+                    return viewEnv.isClientAccessible();
+                }
                 function g() {
                     return viewEnv.setEventHandled();
                 }
-                function f() {
+                function P() {
                     return viewEnv.isEventHandled();
                 }
-                function P() {
+                function T() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function T() {
+                function M() {
                     return viewEnv.getShowingStatus();
                 }
-                const M = Object.keys(r.W).reduce(
+                const y = Object.keys(r.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === r.W[t]), e),
                         {},
                     ),
-                    y = {
+                    R = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -270,7 +274,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    R = Promise.all([
+                    k = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : o.U.onDomBuilt(e);
                         }),
@@ -517,7 +521,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             4179: (e, t, n) => {
-                n.d(t, { B3: () => d, Z5: () => a, ry: () => m });
+                n.d(t, { B3: () => d, Z5: () => a, ry: () => b });
                 class i {
                     constructor() {
                         ((this.entries = []),
@@ -599,7 +603,7 @@
                     s.done ? t(_) : Promise.resolve(_).then(i, r);
                 }
                 const p = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
-                    m = (function () {
+                    b = (function () {
                         var e,
                             t =
                                 ((e = function* () {
@@ -628,7 +632,7 @@
                             return t.apply(this, arguments);
                         };
                     })(),
-                    b = (e, t) => {
+                    m = (e, t) => {
                         const n = 'GFViewEventProxy';
                         if (void 0 !== t) {
                             const r = t.args,
@@ -666,26 +670,26 @@
                         } else viewEnv.handleViewEvent({ __Type: n, type: e });
                         var i;
                     },
-                    O = () => b(_.CLOSE),
-                    g = (e, t) => {
+                    O = () => m(_.CLOSE),
+                    f = (e, t) => {
                         e.keyCode === v.n.ESCAPE && t();
                     };
-                var f = n(7572);
+                var g = n(7572);
                 const P = r.instance,
                     T = {
                         DataTracker: o.Z,
-                        ViewModel: f.Z,
+                        ViewModel: g.Z,
                         ViewEventType: _,
                         NumberFormatType: d,
                         RealFormatType: c,
                         TimeFormatType: l,
                         DateFormatType: u,
                         makeGlobalBoundingBox: p,
-                        sendMoveEvent: (e) => b(_.MOVE, { isMouseEvent: !0, on: e }),
+                        sendMoveEvent: (e) => m(_.MOVE, { isMouseEvent: !0, on: e }),
                         sendCloseEvent: O,
-                        sendClosePopOverEvent: () => b(_.POP_OVER, { on: !1 }),
+                        sendClosePopOverEvent: () => m(_.POP_OVER, { on: !1 }),
                         sendShowContextMenuEvent: (e, t, n = 0) => {
-                            b(_.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: n, args: t });
+                            m(_.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: n, args: t });
                         },
                         sendShowPopOverEvent: (e, t, n, i, r = R.invalid('resId'), o) => {
                             const a = E.O.view.getViewGlobalPosition(),
@@ -700,7 +704,7 @@
                                     width: E.O.view.pxToRem(l),
                                     height: E.O.view.pxToRem(u),
                                 };
-                            b(_.POP_OVER, {
+                            m(_.POP_OVER, {
                                 isMouseEvent: !0,
                                 contentID: e,
                                 decoratorID: i || R.invalid('resId'),
@@ -712,17 +716,17 @@
                             });
                         },
                         addEscapeListener: (e) => {
-                            const t = (t) => g(t, e);
+                            const t = (t) => f(t, e);
                             return (
                                 window.addEventListener('keydown', t),
                                 () => window.removeEventListener('keydown', t)
                             );
                         },
                         closeOnEsc: (e) => {
-                            g(e, O);
+                            f(e, O);
                         },
-                        handleViewEvent: b,
-                        onBindingsReady: m,
+                        handleViewEvent: m,
+                        onBindingsReady: b,
                         onLayoutReady: () =>
                             new Promise((e) => {
                                 requestAnimationFrame(() => {

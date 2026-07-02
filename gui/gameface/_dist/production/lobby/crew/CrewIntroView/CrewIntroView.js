@@ -179,27 +179,28 @@
                         addPreloadTexture: () => l,
                         children: () => r,
                         displayStatus: () => i.W,
-                        displayStatusIs: () => M,
+                        displayStatusIs: () => O,
                         events: () => n.U,
-                        extraSize: () => O,
-                        forceTriggerMouseMove: () => S,
+                        extraSize: () => T,
+                        forceTriggerMouseMove: () => x,
                         freezeTextureBeforeResize: () => g,
                         getBrowserTexturePath: () => c,
-                        getDisplayStatus: () => x,
+                        getDisplayStatus: () => M,
                         getScale: () => E,
                         getSize: () => u,
                         getViewGlobalPosition: () => h,
-                        isEventHandled: () => L,
+                        isClientAccessible: () => p,
+                        isEventHandled: () => S,
                         isFocused: () => f,
                         pxToRem: () => w,
                         remToPx: () => v,
                         resize: () => m,
                         sendEvent: () => s.qP,
                         setAnimateWindow: () => b,
-                        setEventHandled: () => p,
+                        setEventHandled: () => L,
                         setInputPaddingsRem: () => o,
                         setSidePaddingsRem: () => _,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => k,
                     }));
                 var r = a(3722),
                     i = a(6112),
@@ -249,22 +250,25 @@
                     return viewEnv.isFocused();
                 }
                 function p() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function L() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function S() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function x() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function M() {
                     return viewEnv.getShowingStatus();
                 }
-                const M = Object.keys(i.W).reduce(
+                const O = Object.keys(i.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === i.W[t]), e),
                         {},
                     ),
-                    O = {
+                    T = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -272,7 +276,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    T = Promise.all([
+                    k = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : n.U.onDomBuilt(e);
                         }),
@@ -898,9 +902,13 @@
                         if (a.mediumWidth && m) return n(t, a, S);
                         if (a.smallWidth && E) return n(t, a, S);
                         if (a.extraSmallWidth && w) return n(t, a, S);
-                        if (
-                            !(a.extraLargeWidth || a.largeWidth || a.mediumWidth || a.smallWidth || a.extraSmallWidth)
-                        ) {
+                        if (!(
+                            a.extraLargeWidth ||
+                            a.largeWidth ||
+                            a.mediumWidth ||
+                            a.smallWidth ||
+                            a.extraSmallWidth
+                        )) {
                             if (a.extraLargeHeight && v) return t;
                             if (a.largeHeight && b) return t;
                             if (a.mediumHeight && f) return t;
@@ -1058,14 +1066,14 @@
                         [M.Large]: `${L().SMALL_HEIGHT} ${L().MEDIUM_HEIGHT} ${L().LARGE_HEIGHT}`,
                         [M.ExtraLarge]: `${L().SMALL_HEIGHT} ${L().MEDIUM_HEIGHT} ${L().LARGE_HEIGHT} ${L().EXTRA_LARGE_HEIGHT}`,
                     },
-                    H = {
+                    C = {
                         [S.ExtraSmall]: '',
                         [S.Small]: L().SMALL,
                         [S.Medium]: `${L().SMALL} ${L().MEDIUM}`,
                         [S.Large]: `${L().SMALL} ${L().MEDIUM} ${L().LARGE}`,
                         [S.ExtraLarge]: `${L().SMALL} ${L().MEDIUM} ${L().LARGE} ${L().EXTRA_LARGE}`,
                     },
-                    C = (e) => {
+                    H = (e) => {
                         let t = e.children,
                             a = e.className,
                             r = (function (e, t) {
@@ -1081,7 +1089,7 @@
                             s = n.mediaWidth,
                             l = n.mediaHeight,
                             o = n.mediaSize;
-                        return i().createElement('div', k({ className: f()(a, y[s], A[l], H[o]) }, r), t);
+                        return i().createElement('div', k({ className: f()(a, y[s], A[l], C[o]) }, r), t);
                     },
                     P = ['children'];
                 const D = (e) => {
@@ -1095,7 +1103,7 @@
                             for (r = 0; r < n.length; r++) ((a = n[r]), t.indexOf(a) >= 0 || (i[a] = e[a]));
                             return i;
                         })(e, P);
-                    return i().createElement(v, null, i().createElement(C, a, t));
+                    return i().createElement(v, null, i().createElement(H, a, t));
                 };
                 var N = a(493),
                     W = a.n(N),
@@ -1305,13 +1313,13 @@
                             },
                             [s, o, d],
                         ),
-                        H = (0, r.useCallback)(
+                        C = (0, r.useCallback)(
                             (e) => {
                                 _ && _(e);
                             },
                             [_],
                         ),
-                        C = (0, r.useCallback)(
+                        H = (0, r.useCallback)(
                             (e) => {
                                 s || (m && m(e), S(!1));
                             },
@@ -1361,8 +1369,8 @@
                                 ref: E,
                                 className: N,
                                 onMouseEnter: A,
-                                onMouseMove: H,
-                                onMouseUp: C,
+                                onMouseMove: C,
+                                onMouseUp: H,
                                 onMouseDown: P,
                                 onMouseLeave: D,
                                 onClick: y,

@@ -155,27 +155,28 @@
                         addPreloadTexture: () => s,
                         children: () => r,
                         displayStatus: () => o.W,
-                        displayStatusIs: () => P,
+                        displayStatusIs: () => M,
                         events: () => i.U,
-                        extraSize: () => M,
-                        forceTriggerMouseMove: () => y,
+                        extraSize: () => k,
+                        forceTriggerMouseMove: () => T,
                         freezeTextureBeforeResize: () => E,
                         getBrowserTexturePath: () => l,
-                        getDisplayStatus: () => T,
+                        getDisplayStatus: () => P,
                         getScale: () => b,
                         getSize: () => _,
                         getViewGlobalPosition: () => w,
-                        isEventHandled: () => O,
+                        isClientAccessible: () => g,
+                        isEventHandled: () => y,
                         isFocused: () => f,
                         pxToRem: () => m,
                         remToPx: () => h,
                         resize: () => v,
                         sendEvent: () => a.qP,
                         setAnimateWindow: () => p,
-                        setEventHandled: () => g,
+                        setEventHandled: () => O,
                         setInputPaddingsRem: () => c,
                         setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => k,
+                        whenTutorialReady: () => A,
                     }));
                 var r = n(3722),
                     o = n(6112),
@@ -225,22 +226,25 @@
                     return viewEnv.isFocused();
                 }
                 function g() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function O() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function y() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function T() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function P() {
                     return viewEnv.getShowingStatus();
                 }
-                const P = Object.keys(o.W).reduce(
+                const M = Object.keys(o.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === o.W[t]), e),
                         {},
                     ),
-                    M = {
+                    k = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -248,7 +252,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    k = Promise.all([
+                    A = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : i.U.onDomBuilt(e);
                         }),
@@ -894,13 +898,13 @@
                                       Object.assign(
                                           {
                                               onMouseEnter:
-                                                  ((L = t.props.onMouseEnter),
+                                                  ((C = t.props.onMouseEnter),
                                                   (e) => {
                                                       (e.clientX === window.innerWidth &&
                                                           e.clientY === window.innerHeight) ||
                                                           ((P.current.timeoutId = window.setTimeout(k, v ? 100 : 400)),
                                                           i && i(e),
-                                                          L && L(e));
+                                                          C && C(e));
                                                   }),
                                               onMouseLeave: ((e) => (t) => {
                                                   (A(), null == a || a(t), null == e || e(t));
@@ -917,7 +921,7 @@
                                   )
                                 : t
                         );
-                        var L;
+                        var C;
                     };
                 var v = n(3403);
                 function w() {

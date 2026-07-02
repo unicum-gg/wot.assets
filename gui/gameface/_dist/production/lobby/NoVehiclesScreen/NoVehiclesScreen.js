@@ -908,15 +908,13 @@
                             if (t.mediumWidth && D) return a(e, t, w);
                             if (t.smallWidth && C) return a(e, t, w);
                             if (t.extraSmallWidth && d) return a(e, t, w);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && m) return e;
                                 if (t.largeHeight && _) return e;
                                 if (t.mediumHeight && h) return e;
@@ -1464,7 +1462,7 @@
                         let o = iu.exec(u),
                             E = u,
                             A = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const t = o[0],
                                 r = ou.exec(t),
                                 F = Eu.exec(t),
@@ -2162,7 +2160,7 @@
                                         (function (u) {
                                             let e = '';
                                             for (let t = Nu.length - 1; t >= 0; t--)
-                                                for (; u >= Nu[t]; ) ((e += Wu[t]), (u -= Nu[t]));
+                                                for (; u >= Nu[t];) ((e += Wu[t]), (u -= Nu[t]));
                                             return e;
                                         })(u.value),
                                     )

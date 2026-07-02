@@ -357,9 +357,13 @@
                         if (t.mediumWidth && A) return (0, r.H)(u, t, B);
                         if (t.smallWidth && F) return (0, r.H)(u, t, B);
                         if (t.extraSmallWidth && b) return (0, r.H)(u, t, B);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && p) return u;
                             if (t.largeHeight && D) return u;
                             if (t.mediumHeight && g) return u;
@@ -716,7 +720,7 @@
                 Date.now();
             },
             5067: (e, u, t) => {
-                t.d(u, { O: () => q });
+                t.d(u, { O: () => z });
                 var a = {};
                 (t.r(a), t.d(a, { mouse: () => _, onResize: () => l }));
                 var r = {};
@@ -747,27 +751,28 @@
                         addPreloadTexture: () => S,
                         children: () => i,
                         displayStatus: () => b,
-                        displayStatusIs: () => V,
+                        displayStatusIs: () => Z,
                         events: () => p,
-                        extraSize: () => Z,
-                        forceTriggerMouseMove: () => U,
+                        extraSize: () => j,
+                        forceTriggerMouseMove: () => G,
                         freezeTextureBeforeResize: () => M,
                         getBrowserTexturePath: () => w,
-                        getDisplayStatus: () => G,
+                        getDisplayStatus: () => V,
                         getScale: () => R,
                         getSize: () => P,
                         getViewGlobalPosition: () => x,
-                        isEventHandled: () => $,
+                        isClientAccessible: () => H,
+                        isEventHandled: () => U,
                         isFocused: () => W,
                         pxToRem: () => T,
                         remToPx: () => I,
                         resize: () => N,
                         sendEvent: () => f,
                         setAnimateWindow: () => O,
-                        setEventHandled: () => H,
+                        setEventHandled: () => $,
                         setInputPaddingsRem: () => y,
                         setSidePaddingsRem: () => L,
-                        whenTutorialReady: () => j,
+                        whenTutorialReady: () => q,
                     }));
                 const l = s('clientResized'),
                     c = { down: s('mousedown'), up: s('mouseup'), move: s('mousemove') };
@@ -965,19 +970,22 @@
                     return viewEnv.isFocused();
                 }
                 function H() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function $() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function U() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function G() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function V() {
                     return viewEnv.getShowingStatus();
                 }
-                const V = Object.keys(b).reduce((e, u) => ((e[u] = () => viewEnv.getShowingStatus() === b[u]), e), {}),
-                    Z = {
+                const Z = Object.keys(b).reduce((e, u) => ((e[u] = () => viewEnv.getShowingStatus() === b[u]), e), {}),
+                    j = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -985,13 +993,13 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    j = Promise.all([
+                    q = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : p.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    q = { view: n, client: r };
+                    z = { view: n, client: r };
             },
             7902: (e, u, t) => {
                 t.d(u, { F: () => a });
@@ -1229,7 +1237,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function i(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += a[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += a[t]), (e -= r[t]));
                     return u;
                 }
                 const n = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),

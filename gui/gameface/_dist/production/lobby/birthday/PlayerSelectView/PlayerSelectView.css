@@ -578,7 +578,6 @@
         opacity: 1;
     }
 }
-
 @keyframes App_fadeOut_4b {
     from {
         opacity: 1;
@@ -588,7 +587,6 @@
         opacity: 0;
     }
 }
-
 .App_base_6e {
     display: flex;
     flex-direction: column;
@@ -599,51 +597,42 @@
     overflow: hidden;
     animation: App_fadeIn_69 0.6s forwards;
 }
-
 .App_base__error_f3 {
     justify-content: center;
 }
-
 .App_header_ab {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 28rem;
 }
-
 .mediaMedium .App_header_ab {
     padding-top: 36rem;
 }
-
 .mediaLarge .App_header_ab {
     padding-top: 40rem;
 }
-
 .mediaExtraLarge .App_header_ab {
     padding-top: 80rem;
 }
-
 .App_headerTitle_d7 {
     color: #fefeec;
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
 }
-
 .mediaMedium .App_headerTitle_d7 {
     color: #fefeec;
     font-size: 56rem;
     font-weight: 700;
     line-height: 1.1;
 }
-
 .mediaExtraLarge .App_headerTitle_d7 {
     color: #fefeec;
     font-size: 73rem;
     font-weight: 700;
     line-height: 1.1;
 }
-
 .App_headerDescription_c6 {
     color: #fefeec;
     font-size: 16rem;
@@ -651,69 +640,56 @@
     line-height: 1.25;
     margin-top: 4rem;
 }
-
 .mediaMedium .App_headerDescription_c6 {
     color: #fefeec;
     font-size: 20rem;
     font-weight: 400;
     line-height: 1.2;
 }
-
 .mediaLarge .App_headerDescription_c6 {
     margin-top: 8rem;
 }
-
 .mediaExtraLarge .App_headerDescription_c6 {
     color: #fefeec;
     font-size: 24rem;
     font-weight: 400;
     line-height: 1.2;
 }
-
 .App_closeBtn_2f {
     position: absolute;
     top: 46rem;
     right: 8rem;
     z-index: 1;
 }
-
 .mediaMedium .App_closeBtn_2f {
     top: 68rem;
     right: 20rem;
 }
-
 .mediaLarge .App_closeBtn_2f {
     top: 74rem;
     right: 30rem;
 }
-
 .mediaExtraLarge .App_closeBtn_2f {
     right: 37rem;
 }
-
 .App_tabsWrapper_f2 {
     display: flex;
     margin-top: 24rem;
 }
-
 .mediaMedium .App_tabsWrapper_f2 {
     margin-top: 32rem;
 }
-
 .mediaLarge .App_tabsWrapper_f2 {
     margin-top: 40rem;
 }
-
 .mediaExtraLarge .App_tabsWrapper_f2 {
     margin-top: 56rem;
 }
-
 .App_tab_c7 {
     justify-content: center;
     width: 150rem;
     height: 32rem;
 }
-
 .App_tabTitle_3f {
     color: #e9e2bf;
     font-size: 14rem;
@@ -723,37 +699,29 @@
     opacity: 0.6;
     transition: opacity 0.16s ease-in-out;
 }
-
 .App_tab_c7:hover .App_tabTitle_3f {
     opacity: 1;
 }
-
 .App_activeTab_89 .App_tabTitle_3f {
     color: #fd9;
     opacity: 1;
 }
-
 .App_playerSelect_d1 {
     display: flex;
     margin-top: 24rem;
 }
-
 .mediaMedium .App_playerSelect_d1 {
     margin-top: 32rem;
 }
-
 .mediaLarge .App_playerSelect_d1 {
     margin-top: 40rem;
 }
-
 .mediaExtraLarge .App_playerSelect_d1 {
     margin-top: 56rem;
 }
-
 .App_selectedCount_58 {
     display: flex;
 }
-
 .App_selectedText_ce {
     color: #fefeec;
     font-size: 14rem;
@@ -761,19 +729,15 @@
     line-height: 1.3;
     margin: 12rem 0;
 }
-
 .App_footer_4c {
     margin-top: 20rem;
 }
-
 .mediaMedium .App_footer_4c {
     margin-top: 28rem;
 }
-
 .mediaLarge .App_footer_4c {
     margin-top: 44rem;
 }
-
 .mediaExtraLarge .App_footer_4c {
     margin-top: 60rem;
 }
@@ -1737,15 +1701,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: 16rem 0 0 16rem;
+    padding: 16rem 0 0 16rem;
 }
 
 .mediaLarge .EmptyListContent_wrapper_2f {
-    margin: 20rem 0 0 20rem;
+    padding: 20rem 0 0 20rem;
 }
 
 .mediaExtraLarge .EmptyListContent_wrapper_2f {
-    margin: 24rem 0 0 24rem;
+    padding: 24rem 0 0 24rem;
 }
 
 .EmptyListContent_content_df {
@@ -1774,7 +1738,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 4rem;
+    width: 100%;
+    margin-bottom: 16rem;
+    text-align: center;
 }
 
 .mediaMedium .EmptyListContent_header_3d {
@@ -1782,6 +1748,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 24rem;
     font-weight: 700;
     line-height: 1.2;
+    margin-bottom: 24rem;
 }
 
 .mediaLarge .EmptyListContent_header_3d {
@@ -1796,22 +1763,19 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 36rem;
     font-weight: 700;
     line-height: 1.1;
+    margin-bottom: 32rem;
 }
 
 .EmptyListContent_header__withSubtitle_59 {
     margin-bottom: 12rem;
 }
 
-.mediaSmall .EmptyListContent_header__withSubtitle_59 {
-    margin-bottom: 18rem;
-}
-
 .mediaMedium .EmptyListContent_header__withSubtitle_59 {
-    margin-bottom: 26rem;
+    margin-bottom: 16rem;
 }
 
 .mediaLarge .EmptyListContent_header__withSubtitle_59 {
-    margin-bottom: 28rem;
+    margin-bottom: 20rem;
 }
 
 .mediaExtraLarge .EmptyListContent_header__withSubtitle_59 {
@@ -1823,11 +1787,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    margin: 0 0 2rem 20rem;
+    margin-bottom: 12rem;
 }
 
 .mediaMedium .EmptyListContent_subheader_86 {
-    margin-bottom: 4rem;
+    margin-bottom: 16rem;
 }
 
 .mediaLarge .EmptyListContent_subheader_86 {
@@ -1835,22 +1799,35 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.25;
-    margin-bottom: 8rem;
+    margin-bottom: 20rem;
 }
 
 .mediaExtraLarge .EmptyListContent_subheader_86 {
     color: #cbac77;
-    font-size: 18rem;
+    font-size: 20rem;
     font-weight: 400;
-    line-height: 1.25;
-    margin-bottom: 12rem;
+    line-height: 1.2;
+    margin-bottom: 24rem;
 }
 
 .EmptyListContent_icon_17 {
-    width: 55rem;
-    height: 45rem;
+    width: 24rem;
+    height: 24rem;
+    margin-right: 16rem;
     background: no-repeat center / cover;
     position: relative;
+}
+
+.mediaLarge .EmptyListContent_icon_17 {
+    width: 32rem;
+    height: 32rem;
+    margin-right: 20rem;
+}
+
+.mediaExtraLarge .EmptyListContent_icon_17 {
+    width: 40rem;
+    height: 40rem;
+    margin-right: 24rem;
 }
 
 .EmptyListContent_tipsWrapper_f9 {
@@ -1861,6 +1838,27 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .EmptyListContent_tip_66 {
     display: flex;
     align-items: center;
+    margin-bottom: 12rem;
+}
+
+.mediaMedium .EmptyListContent_tip_66 {
+    margin-bottom: 16rem;
+}
+
+.mediaMedium .EmptyListContent_tip__last_9b {
+    margin-bottom: 0;
+}
+
+.mediaExtraLarge .EmptyListContent_tip_66 {
+    margin-bottom: 20rem;
+}
+
+.mediaExtraLarge .EmptyListContent_tip__last_9b {
+    margin-bottom: 0;
+}
+
+.EmptyListContent_tip__last_9b {
+    margin-bottom: 0;
 }
 
 .EmptyListContent_tipText_3e {
@@ -1887,122 +1885,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 18rem;
     font-weight: 400;
     line-height: 1.25;
-}
-
-.TextOverflow_base_3b {
-    flex: 0 1 auto;
-    width: auto;
-    line-height: 1.3;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-.Badge_base_ac {
-    display: flex;
-    justify-content: center;
-    background: no-repeat center / contain;
-}
-
-.Badge_base__default_c9 {
-    width: 24rem;
-    height: 24rem;
-}
-
-.Badge_base__x48_e4 {
-    width: 48rem;
-    height: 48rem;
-}
-
-.PlayerNickname_base_32 {
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 0;
-}
-
-.PlayerNickname_userName_cc {
-    flex: 0 1 auto; /* the only value for correct work */
-}
-
-.PlayerNickname_igrIcon_34 {
-    background: url('R.images.gui.maps.icons.library.premium_igr_big.png') no-repeat center / contain;
-}
-
-.PlayerNickname_base__default_8d .PlayerNickname_igrIcon_34 {
-    width: 32rem;
-    height: 14rem;
-}
-
-.PlayerNickname_base__x48_84 .PlayerNickname_igrIcon_34 {
-    width: 64rem;
-    height: 28rem;
-}
-
-.PlayerNickname_suffixBadgeWrapper_cc {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.PlayerNickname_suffixBadgeStripe_8a {
-    background: no-repeat center / contain;
-    position: absolute;
-    z-index: -1;
-}
-
-.PlayerNickname_base__default_8d .PlayerNickname_suffixBadgeStripe_8a {
-    width: 64rem;
-    height: 24rem;
-    right: 12rem;
-}
-
-.PlayerNickname_base__default_8d.PlayerNickname_base__inverted_34 .PlayerNickname_suffixBadgeStripe_8a {
-    right: auto;
-    left: 12rem;
-    transform: rotateY(180deg);
-}
-
-.PlayerNickname_base__x48_84 .PlayerNickname_suffixBadgeStripe_8a {
-    width: 68rem;
-    height: 28rem;
-    right: 16rem;
-}
-
-.PlayerNickname_base__x48_84.PlayerNickname_base__inverted_34 .PlayerNickname_suffixBadgeStripe_8a {
-    right: auto;
-    left: 16rem;
-    transform: rotateY(180deg);
-}
-
-.PlayerNickname_suffixBadge_bd {
-    background: no-repeat center / contain;
-}
-
-.PlayerNickname_base__default_8d .PlayerNickname_suffixBadge_bd {
-    width: 24rem;
-    height: 24rem;
-}
-
-.PlayerNickname_base__x48_84 .PlayerNickname_suffixBadge_bd {
-    width: 32rem;
-    height: 32rem;
-}
-
-.PlayerNickname_anonymizedIcon_80 {
-    background: no-repeat center / contain;
-}
-
-.PlayerNickname_base__default_8d .PlayerNickname_anonymizedIcon_80 {
-    width: 24rem;
-    height: 24rem;
-    background-image: url('R.images.gui.maps.icons.library.eye.png');
-}
-
-.PlayerNickname_base__x48_84 .PlayerNickname_anonymizedIcon_80 {
-    width: 48rem;
-    height: 48rem;
-    background-image: url('R.images.gui.maps.icons.library.eye_48x48.png');
 }
 
 .Spinner_base_aa {
@@ -2035,51 +1917,50 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     align-items: center;
     width: 280rem;
     height: 56rem;
-    padding: 0 64rem 0 24rem;
-    border: 1rem solid transparent;
+    padding: 0 64rem 0 32rem;
+    border: 1rem solid rgba(255, 255, 255, 0.1);
     border-radius: 2rem;
-    background-color: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     position: relative;
     transition: all 0.3s;
     cursor: pointer;
 }
 
 .PlayerCard_base__loading_d2 {
+    justify-content: center;
     padding: 0;
 }
 
 .PlayerCard_base__hover_a7 {
-    border: 1rem solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0rem 0rem 25rem 0rem rgba(255, 255, 255, 0.1) inset;
-    background-color: rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .PlayerCard_base__selected_f0 {
     border: 1rem solid rgba(255, 178, 102, 1);
-    box-shadow:
-        0rem 0rem 28rem rgba(255, 122, 0, 0.28) inset,
-        0rem 0rem 5rem rgba(255, 122, 0, 0.5);
-    background:
-        linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        linear-gradient(0deg, rgba(255, 107, 0, 0.1), rgba(255, 107, 0, 0.1));
+    box-shadow: 0 0 5rem 0 rgba(255, 122, 0, 0.5);
+    background: rgba(255, 107, 0, 0.22);
 }
 
 .PlayerCard_base__selected_f0.PlayerCard_base__hover_a7 {
-    background:
-        linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-        linear-gradient(0deg, rgba(255, 107, 0, 0.15), rgba(255, 107, 0, 0.15));
+    background: rgba(255, 107, 0, 0.16);
 }
 
 .PlayerCard_base__disabled_a2 {
+    border: none;
+    box-shadow: none;
     background: rgba(0, 0, 0, 0.1) url('R.images.mt_birthday.gui.maps.icons.playerSelect.background_disabled') 4rem;
     cursor: default;
 }
 
+.PlayerCard_base__disabled_a2.PlayerCard_base__hover_a7 {
+    background: rgba(0, 0, 0, 0.1) url('R.images.mt_birthday.gui.maps.icons.playerSelect.background_disabled') 4rem;
+}
+
 .PlayerCard_playerContainer_9b {
     color: #e9e2bf;
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.15;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
     width: 190rem;
 }
 
@@ -2087,14 +1968,93 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.5;
 }
 
-.PlayerCard_lock_9d {
-    width: 32rem;
-    height: 32rem;
-    background: url('R.images.gui.maps.icons.universalFlag.lock') no-repeat center / contain;
+.PlayerCard_playerNickname_6e {
+    display: flex;
+    width: 100%;
+    padding-right: 10rem;
+}
+
+.PlayerCard_playerNameText_22 {
+    flex: 0 1 auto;
+    font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.PlayerCard_playerClanText_40 {
+    font-weight: 400;
+}
+
+.PlayerCard_online_f0,
+.PlayerCard_offline_9f,
+.PlayerCard_inBattle_fe {
+    width: 24rem;
+    height: 24rem;
+    margin-top: 1rem;
+    background: no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 8rem;
+    transform: translateY(-50%);
+}
+
+.PlayerCard_base__disabled_a2 .PlayerCard_online_f0,
+.PlayerCard_base__disabled_a2 .PlayerCard_offline_9f,
+.PlayerCard_base__disabled_a2 .PlayerCard_inBattle_fe {
+    opacity: 0.3;
+}
+
+.PlayerCard_online_f0 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.playerSelect.online');
+}
+
+.PlayerCard_offline_9f {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.playerSelect.offline');
+}
+
+.PlayerCard_inBattle_fe {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.playerSelect.in_battle');
+}
+
+.PlayerCard_clock_a2 {
+    width: 16rem;
+    height: 16rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.playerSelect.clock') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    right: 20rem;
+    transform: translateY(-50%);
+}
+
+.PlayerCard_base__disabled_a2 .PlayerCard_clock_a2 {
+    opacity: 0.3;
+}
+
+.PlayerCard_sentResponseIcon_6c {
+    width: 40rem;
+    height: 40rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.playerSelect.in_reply') no-repeat center / contain;
     position: absolute;
     top: 50%;
     right: 8rem;
     transform: translateY(-50%);
+}
+
+.PlayerCard_base__disabled_a2 .PlayerCard_sentResponseIcon_6c {
+    opacity: 0.3;
+}
+
+.PlayerCard_sentResponseBg_12 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.mt_birthday.gui.maps.icons.playerSelect.slot_glow') no-repeat right / contain;
+    position: absolute;
+    right: 0;
+}
+
+.PlayerCard_base__disabled_a2 .PlayerCard_sentResponseBg_12 {
+    opacity: 0.3;
 }
 
 .Progress_base_af {
@@ -2213,14 +2173,24 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaLarge .PlayerSelect_list_93 {
     margin-top: 20rem;
 }
+.mediaLarge .PlayerSelect_list__empty_fb {
+    margin-top: 0;
+    padding-top: 20rem;
+}
 .mediaExtraLarge .PlayerSelect_list_93 {
     margin-top: 24rem;
+}
+.mediaExtraLarge .PlayerSelect_list__empty_fb {
+    margin-top: 0;
+    padding-top: 24rem;
 }
 .PlayerSelect_list__selected_96 {
     justify-content: center;
 }
 .PlayerSelect_list__empty_fb {
     height: 100%;
+    margin-top: 0;
+    padding-top: 16rem;
 }
 .PlayerSelect_playerCard_01 {
     margin: 0 0 16rem 16rem;
@@ -2231,10 +2201,11 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaExtraLarge .PlayerSelect_playerCard_01 {
     margin: 0 0 24rem 24rem;
 }
-.PlayerSelect_playerCard__selected_f0 {
+.PlayerSelect_list__selected_96 .PlayerSelect_playerCard_01 {
     margin-left: 0;
 }
 .PlayerSelect_scrollWrapper_32 {
+    display: flex;
     height: 440rem;
     position: relative;
 }
@@ -2246,6 +2217,9 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .mediaExtraLarge .PlayerSelect_scrollWrapper_32 {
     height: 848rem;
+}
+.PlayerSelect_scrollWrapper__column_59 {
+    flex-direction: column;
 }
 .PlayerSelect_scrollBar_33 {
     position: absolute;
@@ -2326,7 +2300,23 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 232rem;
+    width: 100%;
+}
+.PlayerSelect_freeContainer_a4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+}
+.PlayerSelect_freeSelectedPlayers_51 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 .PlayerSelect_emptySelectedPlayers_91 {
     color: #8c8c7e;
@@ -2335,4 +2325,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.3;
     display: flex;
     justify-content: center;
+    text-align: center;
+}
+.PlayerSelect_emptySelectedPlayers_91:first-child {
+    margin-bottom: 18rem;
 }

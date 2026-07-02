@@ -11,6 +11,8 @@
         (event onFilterReset)
         (event onInitialized)
         (event onFilterClick)
+        (event onBuyPremiumClick)
+        (event onGetSubscriptionClick)
 
         (var cooldownTime:number = 0)
         (var mapsSelected:number = 0)

@@ -904,15 +904,13 @@
                             if (t.mediumWidth && m) return r(u, t, f);
                             if (t.smallWidth && F) return r(u, t, f);
                             if (t.extraSmallWidth && D) return r(u, t, f);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && B) return u;
                                 if (t.largeHeight && g) return u;
                                 if (t.mediumHeight && h) return u;
@@ -1266,7 +1264,7 @@
                         let s = K.exec(e),
                             o = e,
                             l = 0;
-                        for (; s; ) {
+                        for (; s;) {
                             const t = s[0],
                                 a = Z.exec(t),
                                 c = J.exec(t),
@@ -4993,7 +4991,7 @@
                                         : (function (e) {
                                               let u = '';
                                               for (let t = en.length - 1; t >= 0; t--)
-                                                  for (; e >= en[t]; ) ((u += Ja[t]), (e -= en[t]));
+                                                  for (; e >= en[t];) ((u += Ja[t]), (e -= en[t]));
                                               return u;
                                           })(d)),
                                 ),

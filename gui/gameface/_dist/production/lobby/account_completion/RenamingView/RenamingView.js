@@ -2,7 +2,7 @@
     var __webpack_modules__ = {
             67: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => K });
+                t.d(e, { O: () => Y });
                 var n = {};
                 (t.r(n), t.d(n, { mouse: () => F, onResize: () => l }));
                 var a = {};
@@ -33,27 +33,28 @@
                         addPreloadTexture: () => f,
                         children: () => o,
                         displayStatus: () => C,
-                        displayStatusIs: () => $,
+                        displayStatusIs: () => z,
                         events: () => B,
-                        extraSize: () => z,
-                        forceTriggerMouseMove: () => V,
+                        extraSize: () => G,
+                        forceTriggerMouseMove: () => j,
                         freezeTextureBeforeResize: () => N,
                         getBrowserTexturePath: () => M,
-                        getDisplayStatus: () => j,
+                        getDisplayStatus: () => $,
                         getScale: () => L,
                         getSize: () => O,
                         getViewGlobalPosition: () => S,
-                        isEventHandled: () => U,
+                        isClientAccessible: () => W,
+                        isEventHandled: () => V,
                         isFocused: () => H,
                         pxToRem: () => I,
                         remToPx: () => P,
                         resize: () => k,
                         sendEvent: () => w,
                         setAnimateWindow: () => R,
-                        setEventHandled: () => W,
+                        setEventHandled: () => U,
                         setInputPaddingsRem: () => x,
                         setSidePaddingsRem: () => y,
-                        whenTutorialReady: () => G,
+                        whenTutorialReady: () => K,
                     }));
                 const l = s('clientResized'),
                     E = { down: s('mousedown'), up: s('mouseup'), move: s('mousemove') };
@@ -251,19 +252,22 @@
                     return viewEnv.isFocused();
                 }
                 function W() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function U() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function V() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function j() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function $() {
                     return viewEnv.getShowingStatus();
                 }
-                const $ = Object.keys(C).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === C[e]), u), {}),
-                    z = {
+                const z = Object.keys(C).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === C[e]), u), {}),
+                    G = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -271,13 +275,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    G = Promise.all([
+                    K = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : B.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    K = { view: r, client: a };
+                    Y = { view: r, client: a };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -922,9 +926,13 @@
                         if (t.mediumWidth && c) return i(e, t, p);
                         if (t.smallWidth && D) return i(e, t, p);
                         if (t.extraSmallWidth && _) return i(e, t, p);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && d) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -2714,7 +2722,7 @@
                                 r = (0, n.useCallback)(
                                     (e) => {
                                         let n = ge(t, e, u);
-                                        for (; n !== t; ) {
+                                        for (; n !== t;) {
                                             if (o[n].value) {
                                                 a(n);
                                                 break;

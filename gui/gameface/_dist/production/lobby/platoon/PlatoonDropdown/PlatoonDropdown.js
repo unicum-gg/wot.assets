@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (e, t, n) => {
-                n.d(t, { O: () => G });
+                n.d(t, { O: () => $ });
                 var o = {};
                 (n.r(o), n.d(o, { mouse: () => u, onResize: () => c }));
                 var r = {};
@@ -33,27 +33,28 @@
                         addPreloadTexture: () => P,
                         children: () => a,
                         displayStatus: () => b,
-                        displayStatusIs: () => W,
+                        displayStatusIs: () => K,
                         events: () => h,
-                        extraSize: () => K,
-                        forceTriggerMouseMove: () => j,
+                        extraSize: () => q,
+                        forceTriggerMouseMove: () => z,
                         freezeTextureBeforeResize: () => D,
                         getBrowserTexturePath: () => M,
-                        getDisplayStatus: () => z,
+                        getDisplayStatus: () => W,
                         getScale: () => I,
                         getSize: () => N,
                         getViewGlobalPosition: () => L,
-                        isEventHandled: () => U,
+                        isClientAccessible: () => H,
+                        isEventHandled: () => j,
                         isFocused: () => V,
                         pxToRem: () => F,
                         remToPx: () => B,
                         resize: () => A,
                         sendEvent: () => C,
                         setAnimateWindow: () => x,
-                        setEventHandled: () => H,
+                        setEventHandled: () => U,
                         setInputPaddingsRem: () => T,
                         setSidePaddingsRem: () => R,
-                        whenTutorialReady: () => q,
+                        whenTutorialReady: () => G,
                     }));
                 const c = s('clientResized'),
                     d = { down: s('mousedown'), up: s('mouseup'), move: s('mousemove') };
@@ -251,19 +252,22 @@
                     return viewEnv.isFocused();
                 }
                 function H() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function U() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function j() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function z() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function W() {
                     return viewEnv.getShowingStatus();
                 }
-                const W = Object.keys(b).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === b[t]), e), {}),
-                    K = {
+                const K = Object.keys(b).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === b[t]), e), {}),
+                    q = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -271,13 +275,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    q = Promise.all([
+                    G = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : h.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    G = { view: i, client: r };
+                    $ = { view: i, client: r };
             },
             521: (e, t, n) => {
                 let o, r;
@@ -1488,7 +1492,7 @@
                             o = te(n);
                         let r,
                             a = e;
-                        for (; null !== (r = J.exec(e)); ) {
+                        for (; null !== (r = J.exec(e));) {
                             const e = r[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
                                 const n = o + e[2].replace(Q, '');
@@ -1591,7 +1595,7 @@
                                         ((e) => {
                                             const t = te(ne());
                                             let n;
-                                            for (; null !== (n = Z.exec(e)); ) {
+                                            for (; null !== (n = Z.exec(e));) {
                                                 const e = n[0].match(/href="(.*?)"/);
                                                 if (e) {
                                                     const n = t + e[1].replace(Q, ''),
@@ -1612,7 +1616,7 @@
                                     let t;
                                     const n = ne(),
                                         o = te(n);
-                                    for (; null !== (t = Z.exec(e)); ) {
+                                    for (; null !== (t = Z.exec(e));) {
                                         const e = t[0].match(/href="(.*?)"/);
                                         if (e && !e[1].includes(ee) && o) {
                                             const t = o + e[1].replace(Q, ''),

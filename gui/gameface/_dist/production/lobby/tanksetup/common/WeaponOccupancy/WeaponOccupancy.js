@@ -67,11 +67,11 @@
                         w = s.smallWidth,
                         v = s.extraSmallWidth,
                         E = s.extraLargeHeight,
-                        f = s.largeHeight,
-                        b = s.mediumHeight,
+                        b = s.largeHeight,
+                        f = s.mediumHeight,
                         p = s.smallHeight,
                         O = s.extraSmallHeight,
-                        x = { extraLarge: E, large: f, medium: b, small: p, extraSmall: O };
+                        x = { extraLarge: E, large: b, medium: f, small: p, extraSmall: O };
                     if (i.extraLarge || i.large || i.medium || i.small || i.extraSmall) {
                         if (i.extraLarge && l) return t;
                         if (i.large && d) return t;
@@ -84,12 +84,16 @@
                         if (i.mediumWidth && g) return (0, n.H)(t, i, x);
                         if (i.smallWidth && w) return (0, n.H)(t, i, x);
                         if (i.extraSmallWidth && v) return (0, n.H)(t, i, x);
-                        if (
-                            !(i.extraLargeWidth || i.largeWidth || i.mediumWidth || i.smallWidth || i.extraSmallWidth)
-                        ) {
+                        if (!(
+                            i.extraLargeWidth ||
+                            i.largeWidth ||
+                            i.mediumWidth ||
+                            i.smallWidth ||
+                            i.extraSmallWidth
+                        )) {
                             if (i.extraLargeHeight && E) return t;
-                            if (i.largeHeight && f) return t;
-                            if (i.mediumHeight && b) return t;
+                            if (i.largeHeight && b) return t;
+                            if (i.mediumHeight && f) return t;
                             if (i.smallHeight && p) return t;
                             if (i.extraSmallHeight && O) return t;
                         }
@@ -364,27 +368,28 @@
                         addPreloadTexture: () => s,
                         children: () => r,
                         displayStatus: () => n.W,
-                        displayStatusIs: () => T,
+                        displayStatusIs: () => L,
                         events: () => a.U,
-                        extraSize: () => L,
-                        forceTriggerMouseMove: () => x,
+                        extraSize: () => P,
+                        forceTriggerMouseMove: () => S,
                         freezeTextureBeforeResize: () => g,
                         getBrowserTexturePath: () => d,
-                        getDisplayStatus: () => S,
+                        getDisplayStatus: () => T,
                         getScale: () => w,
                         getSize: () => u,
                         getViewGlobalPosition: () => m,
-                        isEventHandled: () => O,
-                        isFocused: () => b,
+                        isClientAccessible: () => p,
+                        isEventHandled: () => x,
+                        isFocused: () => f,
                         pxToRem: () => v,
                         remToPx: () => E,
                         resize: () => h,
                         sendEvent: () => o.qP,
-                        setAnimateWindow: () => f,
-                        setEventHandled: () => p,
+                        setAnimateWindow: () => b,
+                        setEventHandled: () => O,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => c,
-                        whenTutorialReady: () => P,
+                        whenTutorialReady: () => M,
                     }));
                 var r = i(3722),
                     n = i(6112),
@@ -427,29 +432,32 @@
                 function E(e) {
                     return viewEnv.remToPx(e);
                 }
-                function f(e, t) {
+                function b(e, t) {
                     viewEnv.setAnimateWindow(e, t);
                 }
-                function b() {
+                function f() {
                     return viewEnv.isFocused();
                 }
                 function p() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function O() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function x() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function S() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function T() {
                     return viewEnv.getShowingStatus();
                 }
-                const T = Object.keys(n.W).reduce(
+                const L = Object.keys(n.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === n.W[t]), e),
                         {},
                     ),
-                    L = {
+                    P = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -457,7 +465,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    P = Promise.all([
+                    M = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -828,7 +836,7 @@
                             return t.apply(this, arguments);
                         };
                     })(),
-                    f = (e, t) => {
+                    b = (e, t) => {
                         const i = 'GFViewEventProxy';
                         if (void 0 !== t) {
                             const n = t.args,
@@ -866,7 +874,7 @@
                         } else viewEnv.handleViewEvent({ __Type: i, type: e });
                         var r;
                     },
-                    b = () => f(l.CLOSE),
+                    f = () => b(l.CLOSE),
                     p = (e, t) => {
                         e.keyCode === h.n.ESCAPE && t();
                     };
@@ -881,11 +889,11 @@
                         TimeFormatType: c,
                         DateFormatType: u,
                         makeGlobalBoundingBox: v,
-                        sendMoveEvent: (e) => f(l.MOVE, { isMouseEvent: !0, on: e }),
-                        sendCloseEvent: b,
-                        sendClosePopOverEvent: () => f(l.POP_OVER, { on: !1 }),
+                        sendMoveEvent: (e) => b(l.MOVE, { isMouseEvent: !0, on: e }),
+                        sendCloseEvent: f,
+                        sendClosePopOverEvent: () => b(l.POP_OVER, { on: !1 }),
                         sendShowContextMenuEvent: (e, t, i = 0) => {
-                            f(l.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: i, args: t });
+                            b(l.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: i, args: t });
                         },
                         sendShowPopOverEvent: (e, t, i, r, n = R.invalid('resId'), a) => {
                             const o = m.O.view.getViewGlobalPosition(),
@@ -900,7 +908,7 @@
                                     width: m.O.view.pxToRem(c),
                                     height: m.O.view.pxToRem(u),
                                 };
-                            f(l.POP_OVER, {
+                            b(l.POP_OVER, {
                                 isMouseEvent: !0,
                                 contentID: e,
                                 decoratorID: r || R.invalid('resId'),
@@ -919,9 +927,9 @@
                             );
                         },
                         closeOnEsc: (e) => {
-                            p(e, b);
+                            p(e, f);
                         },
-                        handleViewEvent: f,
+                        handleViewEvent: b,
                         onBindingsReady: E,
                         onLayoutReady: () =>
                             new Promise((e) => {

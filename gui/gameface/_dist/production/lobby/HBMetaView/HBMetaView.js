@@ -1011,15 +1011,13 @@
                             if (n.mediumWidth && d) return l(t, n, D);
                             if (n.smallWidth && E) return l(t, n, D);
                             if (n.extraSmallWidth && p) return l(t, n, D);
-                            if (
-                                !(
-                                    n.extraLargeWidth ||
-                                    n.largeWidth ||
-                                    n.mediumWidth ||
-                                    n.smallWidth ||
-                                    n.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                n.extraLargeWidth ||
+                                n.largeWidth ||
+                                n.mediumWidth ||
+                                n.smallWidth ||
+                                n.extraSmallWidth
+                            )) {
                                 if (n.extraLargeHeight && g) return t;
                                 if (n.largeHeight && b) return t;
                                 if (n.mediumHeight && v) return t;
@@ -5884,22 +5882,20 @@
                             return s().createElement(
                                 'div',
                                 { className: 'LevelCards_base_31', ref: e },
-                                t.computes
-                                    .levels()
-                                    .map((e, t) =>
-                                        s().createElement(
-                                            ha,
-                                            fa(
-                                                {
-                                                    key: e.level,
-                                                    cardNumber: e.level,
-                                                    pointsMin: n[t],
-                                                    pointsForLast: n.slice(-1),
-                                                },
-                                                e,
-                                            ),
+                                t.computes.levels().map((e, t) =>
+                                    s().createElement(
+                                        ha,
+                                        fa(
+                                            {
+                                                key: e.level,
+                                                cardNumber: e.level,
+                                                pointsMin: n[t],
+                                                pointsForLast: n.slice(-1),
+                                            },
+                                            e,
                                         ),
                                     ),
+                                ),
                             );
                         },
                         { forwardRef: !0 },
@@ -7178,7 +7174,7 @@
                         let i = Au.exec(e),
                             o = e,
                             l = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const n = i[0],
                                 u = Cu.exec(n),
                                 c = Du.exec(n),
@@ -7250,7 +7246,7 @@
                             : (function (e) {
                                   let t = '';
                                   for (let n = xu.length - 1; n >= 0; n--)
-                                      for (; e >= xu[n]; ) ((t += Nu[n]), (e -= xu[n]));
+                                      for (; e >= xu[n];) ((t += Nu[n]), (e -= xu[n]));
                                   return t;
                               })(e),
                     Mu = {
@@ -8395,7 +8391,7 @@
                     Vs = (e, t, n, r) => {
                         let a = t.exec(e),
                             u = 0;
-                        for (; a; ) (u !== a.index && n(e.slice(u, a.index)), r(a), (u = t.lastIndex), (a = t.exec(e)));
+                        for (; a;) (u !== a.index && n(e.slice(u, a.index)), r(a), (u = t.lastIndex), (a = t.exec(e)));
                         u !== e.length && n(e.slice(u));
                     },
                     js = (e) => {
@@ -8404,7 +8400,7 @@
                         if (!n) return [e];
                         const r = [];
                         let a = 0;
-                        for (; n; ) (r.push(e.slice(a, t.lastIndex)), (a = t.lastIndex), (n = t.exec(e)));
+                        for (; n;) (r.push(e.slice(a, t.lastIndex)), (a = t.lastIndex), (n = t.exec(e)));
                         return (a !== e.length && r.push(e.slice(a)), r);
                     },
                     Xs = (e, t = '') => {
@@ -8627,7 +8623,7 @@
                                                     c = ((e, t) => {
                                                         let n = 0,
                                                             r = e.length - 1;
-                                                        for (; r - n >= 0; ) {
+                                                        for (; r - n >= 0;) {
                                                             const a = n + Math.ceil(0.5 * (r - n));
                                                             Ks(e[a], t) ? (r = a - 1) : (n = a + 1);
                                                         }
@@ -9289,7 +9285,7 @@
                                     const t = s[e] || '',
                                         n = _[E] || '';
                                     if (t.match(d) || t === n) {
-                                        for (; t !== _[E] && E < _.length; ) E++;
+                                        for (; t !== _[E] && E < _.length;) E++;
                                         E++;
                                     }
                                 }
@@ -9318,8 +9314,8 @@
                                 if (i) return;
                                 let c = l;
                                 const _ = o.test(s[l]);
-                                if (n && _) for (; o.test(s[c]) && c < s.length; ) c++;
-                                if (t && _) for (; o.test(s[c]) && c > 0; ) c--;
+                                if (n && _) for (; o.test(s[c]) && c < s.length;) c++;
+                                if (t && _) for (; o.test(s[c]) && c > 0;) c--;
                                 if (c !== l || (t && _))
                                     return (e.preventDefault(), (c = c < 0 ? 0 : c), void this.setCursorPosition(c, c));
                                 ((t && 1 === a && 1 === s.length) || n) &&

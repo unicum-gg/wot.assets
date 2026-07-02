@@ -283,6 +283,7 @@ body {
     position: absolute;
     top: auto;
     left: auto;
+    pointer-events: none;
 }
 .mediaLarge .Content_rays_bd {
     width: 1120rem;
@@ -1858,6 +1859,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: 47rem;
     left: auto;
+    z-index: 2;
 }
 .mediaMedium .App_header_4f {
     top: 49rem;
@@ -1880,6 +1882,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: absolute;
     top: 30rem;
     right: 29rem;
+    z-index: 3;
 }
 .App_footer_46 {
     position: absolute;

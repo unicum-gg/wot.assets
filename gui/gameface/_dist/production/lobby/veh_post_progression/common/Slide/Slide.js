@@ -63,8 +63,8 @@
                         r = t.small,
                         a = t.extraSmall,
                         l = t.extraLargeWidth,
-                        o = t.largeWidth,
-                        s = t.mediumWidth,
+                        s = t.largeWidth,
+                        o = t.mediumWidth,
                         d = t.smallWidth,
                         m = t.extraSmallWidth,
                         g = t.extraLargeHeight,
@@ -81,13 +81,17 @@
                         if (F.extraSmall && a) return A;
                     } else {
                         if (F.extraLargeWidth && l) return (0, E.H)(A, F, w);
-                        if (F.largeWidth && o) return (0, E.H)(A, F, w);
-                        if (F.mediumWidth && s) return (0, E.H)(A, F, w);
+                        if (F.largeWidth && s) return (0, E.H)(A, F, w);
+                        if (F.mediumWidth && o) return (0, E.H)(A, F, w);
                         if (F.smallWidth && d) return (0, E.H)(A, F, w);
                         if (F.extraSmallWidth && m) return (0, E.H)(A, F, w);
-                        if (
-                            !(F.extraLargeWidth || F.largeWidth || F.mediumWidth || F.smallWidth || F.extraSmallWidth)
-                        ) {
+                        if (!(
+                            F.extraLargeWidth ||
+                            F.largeWidth ||
+                            F.mediumWidth ||
+                            F.smallWidth ||
+                            F.extraSmallWidth
+                        )) {
                             if (F.extraLargeHeight && g) return A;
                             if (F.largeHeight && c) return A;
                             if (F.mediumHeight && h) return A;
@@ -214,7 +218,7 @@
                     })(e || (e = {})));
             },
             5067: (u, A, F) => {
-                F.d(A, { O: () => U });
+                F.d(A, { O: () => Y });
                 var e = {};
                 (F.r(e), F.d(e, { mouse: () => r, onResize: () => n }));
                 var E = {};
@@ -223,10 +227,10 @@
                         events: () => e,
                         getMouseGlobalPosition: () => l,
                         getSize: () => a,
-                        graphicsQuality: () => o,
+                        graphicsQuality: () => s,
                     }));
                 var D = {};
-                (F.r(D), F.d(D, { getBgUrl: () => d, getTextureUrl: () => s }));
+                (F.r(D), F.d(D, { getBgUrl: () => d, getTextureUrl: () => o }));
                 var B = {};
                 function t(u) {
                     return (A) => (
@@ -245,27 +249,28 @@
                         addPreloadTexture: () => p,
                         children: () => D,
                         displayStatus: () => m,
-                        displayStatusIs: () => $,
+                        displayStatusIs: () => I,
                         events: () => g,
-                        extraSize: () => I,
-                        forceTriggerMouseMove: () => N,
+                        extraSize: () => Z,
+                        forceTriggerMouseMove: () => V,
                         freezeTextureBeforeResize: () => z,
                         getBrowserTexturePath: () => b,
-                        getDisplayStatus: () => V,
+                        getDisplayStatus: () => $,
                         getScale: () => O,
                         getSize: () => H,
                         getViewGlobalPosition: () => W,
-                        isEventHandled: () => G,
+                        isClientAccessible: () => k,
+                        isEventHandled: () => N,
                         isFocused: () => M,
                         pxToRem: () => R,
                         remToPx: () => P,
                         resize: () => T,
                         sendEvent: () => f,
                         setAnimateWindow: () => j,
-                        setEventHandled: () => k,
+                        setEventHandled: () => G,
                         setInputPaddingsRem: () => S,
                         setSidePaddingsRem: () => L,
-                        whenTutorialReady: () => Z,
+                        whenTutorialReady: () => U,
                     }));
                 const n = t('clientResized'),
                     i = { down: t('mousedown'), up: t('mouseup'), move: t('mousemove') };
@@ -339,16 +344,16 @@
                 function l(u = 'px') {
                     return 'rem' === u ? viewEnv.getMouseGlobalPositionRem() : viewEnv.getMouseGlobalPositionPx();
                 }
-                const o = {
+                const s = {
                     isLow: () => 1 === viewEnv.getGraphicsQuality(),
                     isHigh: () => 0 === viewEnv.getGraphicsQuality(),
                     get: () => viewEnv.getGraphicsQuality(),
                 };
-                function s(u, A, F = 1) {
+                function o(u, A, F = 1) {
                     return viewEnv.getChildTexturePath(u, A.width, A.height, F);
                 }
                 function d(u, A, F) {
-                    return `url(${s(u, A, F)})`;
+                    return `url(${o(u, A, F)})`;
                 }
                 const m = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                     g = {
@@ -463,19 +468,22 @@
                     return viewEnv.isFocused();
                 }
                 function k() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function G() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function N() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function V() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function $() {
                     return viewEnv.getShowingStatus();
                 }
-                const $ = Object.keys(m).reduce((u, A) => ((u[A] = () => viewEnv.getShowingStatus() === m[A]), u), {}),
-                    I = {
+                const I = Object.keys(m).reduce((u, A) => ((u[A] = () => viewEnv.getShowingStatus() === m[A]), u), {}),
+                    Z = {
                         set: (u, A) => {
                             viewEnv.setExtraSizeRem(u, A);
                         },
@@ -483,13 +491,13 @@
                             viewEnv.getExtraSizeRem(u, A);
                         },
                     },
-                    Z = Promise.all([
+                    U = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : g.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    U = { view: B, client: E };
+                    Y = { view: B, client: E };
             },
             6536: (u, A, F) => {
                 F.d(A, { Z: () => E });
@@ -582,7 +590,7 @@
                     r = (u, A, F) => u.split(/%\((.*?)\)(?:[sd])?/g).map((u) => (F && u in F ? F[u] : i(u, A)));
             },
             6565: (u, A, F) => {
-                F.d(A, { d: () => s });
+                F.d(A, { d: () => o });
                 var e = F(6179),
                     E = F.n(e),
                     D = F(6483),
@@ -609,8 +617,8 @@
                 const r = 'Description_base_a1',
                     a = /%\((\w+?)\).*?%\(\/\1\)/g,
                     l = /%\((\w+?)\)/,
-                    o = /%\((\w+?)\)(.*?)%\(\/\1\)/,
-                    s = ({ text: u, tagClasses: A = {} }) => {
+                    s = /%\((\w+?)\)(.*?)%\(\/\1\)/,
+                    o = ({ text: u, tagClasses: A = {} }) => {
                         const F = (0, e.useMemo)(() => u.match(a) || [], [u]),
                             D = F.reduce((u, A, F) => u.replace(A, `%(dummyTagBinding${F})`), u),
                             B = (0, e.useMemo)(
@@ -621,7 +629,7 @@
                                                 return A ? A[1] : null;
                                             })(F),
                                             B = ((u) => {
-                                                const A = u.match(o);
+                                                const A = u.match(s);
                                                 return A ? A[2] : null;
                                             })(F),
                                             t = `dummyTagBinding${e}`,

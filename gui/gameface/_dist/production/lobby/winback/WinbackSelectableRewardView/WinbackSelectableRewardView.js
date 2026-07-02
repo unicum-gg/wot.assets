@@ -922,9 +922,13 @@
                         if (t.mediumWidth && _) return s(u, t, v);
                         if (t.smallWidth && A) return s(u, t, v);
                         if (t.extraSmallWidth && m) return s(u, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && B) return u;
                             if (t.mediumHeight && g) return u;
@@ -1410,7 +1414,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = ne(n.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = ne(n.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -2221,7 +2225,7 @@
                             : (function (e) {
                                   let u = '';
                                   for (let t = _u.length - 1; t >= 0; t--)
-                                      for (; e >= _u[t]; ) ((u += du[t]), (e -= _u[t]));
+                                      for (; e >= _u[t];) ((u += du[t]), (e -= _u[t]));
                                   return u;
                               })(e),
                     Fu = 'Tab_base_bc',
@@ -2976,7 +2980,7 @@
                         let s = mt.exec(e),
                             i = e,
                             l = 0;
-                        for (; s; ) {
+                        for (; s;) {
                             const t = s[0],
                                 a = Ft.exec(t),
                                 c = Dt.exec(t),
@@ -3261,7 +3265,7 @@
                                             u(e).delete(t);
                                         },
                                         n = (e, ...t) => {
-                                            for (var r, n = jt(u(e).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = jt(u(e).values()); !(r = n()).done;) (0, r.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: r, trigger: n }), []);
                                 })(),

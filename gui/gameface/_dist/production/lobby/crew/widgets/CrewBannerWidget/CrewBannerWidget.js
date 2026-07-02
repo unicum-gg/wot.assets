@@ -510,7 +510,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var u, t = o(s.keys()); !(u = t()).done; ) {
+                            for (var u, t = o(s.keys()); !(u = t()).done;) {
                                 a(u.value, e);
                             }
                         },
@@ -1837,7 +1837,7 @@
                     V = (u, e, t, n) => {
                         let o = e.exec(u),
                             r = 0;
-                        for (; o; ) (r !== o.index && t(u.slice(r, o.index)), n(o), (r = e.lastIndex), (o = e.exec(u)));
+                        for (; o;) (r !== o.index && t(u.slice(r, o.index)), n(o), (r = e.lastIndex), (o = e.exec(u)));
                         r !== u.length && t(u.slice(r));
                     },
                     G = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
@@ -1883,7 +1883,7 @@
                               if (!n) return [u];
                               const o = [];
                               let r = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const i = e.justifyContent === y.FlexEnd ? n.index : t.lastIndex;
                                   (o.push(u.slice(r, i)), (r = i), (n = t.exec(u)));
                               }
@@ -2057,7 +2057,7 @@
                             l = ((u, e) => {
                                 let t = 0,
                                     n = u.length - 1;
-                                for (; n - t >= 0; ) {
+                                for (; n - t >= 0;) {
                                     const o = t + Math.ceil(0.5 * (n - t));
                                     Y(u[o], e) ? (n = o - 1) : (t = o + 1);
                                 }

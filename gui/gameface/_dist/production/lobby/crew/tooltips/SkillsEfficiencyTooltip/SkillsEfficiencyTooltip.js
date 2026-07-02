@@ -1005,7 +1005,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = k(r.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = k(r.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -1787,7 +1787,7 @@
                         let o = Mu.exec(u),
                             i = u,
                             A = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const t = o[0],
                                 n = Nu.exec(t),
                                 F = Lu.exec(t),

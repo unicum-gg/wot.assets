@@ -1,0 +1,2614 @@
+.TextButton_base_b6 {
+    display: flex;
+    align-items: center;
+    padding: 0 3rem;
+    font-size: 12rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.TextButton_base__right_39 {
+    flex-direction: row-reverse;
+}
+.TextButton_icon_17 {
+    width: 32rem;
+    height: 32rem;
+    background: no-repeat center / contain;
+    position: relative;
+}
+.TextButton_icon__back_43,
+.TextButton_icon__forward_59 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.back');
+    transform: translateY(1rem);
+}
+.TextButton_icon__forward_59 {
+    transform: rotate(180deg) translateY(1rem);
+}
+.TextButton_icon__close_53 {
+    margin: -1rem 0;
+    background-image: url('R.images.gui.maps.icons.components.text_button.close');
+}
+.TextButton_icon__info_33 {
+    margin: -1rem -5rem;
+    background-image: url('R.images.gui.maps.icons.components.text_button.info');
+}
+.TextButton_glow_a4 {
+    width: 100%;
+    height: 100%;
+    background: no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.16s;
+}
+.TextButton_icon__back_43 .TextButton_glow_a4,
+.TextButton_icon__forward_59 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.back_hover');
+}
+.TextButton_icon__close_53 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.close_hover');
+}
+.TextButton_icon__info_33 .TextButton_glow_a4 {
+    background-image: url('R.images.gui.maps.icons.components.text_button.info_hover');
+}
+.TextButton_base_b6:hover .TextButton_glow_a4 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_glow_a4 {
+    opacity: 0;
+}
+.TextButton_caption_82 {
+    position: relative;
+    transition:
+        color 0.16s,
+        text-shadow 0.16s;
+}
+.TextButton_caption__back_b9,
+.TextButton_caption__forward_4e,
+.TextButton_caption__close_36 {
+    color: #ffdd99;
+    text-shadow:
+        0 0 10rem rgba(255, 42, 0, 1),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 10rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4),
+        0 0 2rem rgba(255, 42, 0, 0.4),
+        0 0 1rem rgba(255, 42, 0, 0.4);
+}
+.TextButton_base_b6:hover .TextButton_caption__back_b9,
+.TextButton_base_b6:hover .TextButton_caption__forward_4e,
+.TextButton_base_b6:hover .TextButton_caption__close_36 {
+    color: #fffa9f;
+}
+.TextButton_base_b6:active .TextButton_caption__back_b9,
+.TextButton_base_b6:active .TextButton_caption__forward_4e,
+.TextButton_base_b6:active .TextButton_caption__close_36 {
+    color: #ffdd99;
+}
+.TextButton_caption__info_23 {
+    padding: 0 5rem;
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:hover .TextButton_caption__info_23 {
+    color: #e3ffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.8),
+        0 0 12rem rgba(0, 234, 255, 1),
+        0 0 8rem #00eaff;
+}
+.TextButton_base_b6:active .TextButton_caption__info_23 {
+    color: #ccffff;
+    text-shadow:
+        0 0 12rem rgba(31, 68, 255, 0.6),
+        0 0 8rem #00eaff;
+}
+.TextButton_goto_e7 {
+    color: #7c7c6c;
+}
+.TextButton_base__left_ff .TextButton_goto_e7 {
+    margin-left: 8rem;
+}
+.TextButton_base__right_39 .TextButton_goto_e7 {
+    margin-right: 8rem;
+}
+.TextButton_shine_e2 {
+    width: 90rem;
+    height: 40rem;
+    background: url('R.images.gui.maps.icons.components.text_button.shine') no-repeat center / contain;
+    opacity: 0;
+    position: absolute;
+    top: -4rem;
+    transition: opacity 0.16s;
+    pointer-events: none;
+}
+.TextButton_base__left_ff .TextButton_shine_e2 {
+    left: -4rem;
+}
+.TextButton_base__right_39 .TextButton_shine_e2 {
+    right: -4rem;
+    transform: rotate(180deg);
+}
+.TextButton_base_b6:hover .TextButton_shine_e2 {
+    opacity: 1;
+}
+.TextButton_base_b6:active .TextButton_shine_e2 {
+    opacity: 0;
+}
+
+.HorizontalBar_base_49 {
+    display: flex;
+    width: 100%;
+    height: 13rem;
+    position: relative;
+}
+
+.HorizontalBar_base__nonActive_82 {
+    visibility: hidden;
+}
+
+.HorizontalBar_base_49 .disable,
+.HorizontalBar_base_49 .disable:hover {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.HorizontalBar_leftButton_5f,
+.HorizontalBar_rightButton_03 {
+    width: 13rem;
+    height: 13rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: no-repeat center / 7rem 5rem;
+    opacity: 0.5;
+    z-index: 1;
+    transform: rotate(-90deg);
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.HorizontalBar_leftButton_5f:hover,
+.HorizontalBar_rightButton_03:hover {
+    opacity: 1;
+}
+
+.HorizontalBar_leftButton_5f {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
+}
+
+.HorizontalBar_rightButton_03 {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
+}
+
+.HorizontalBar_track_0d {
+    flex: 1;
+    margin: 0 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.HorizontalBar_thumb_fd {
+    display: none;
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 20rem;
+    height: 13rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb_horizontal') no-repeat center / 8rem
+        7rem;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 1;
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.HorizontalBar_thumb_fd:hover {
+    opacity: 1;
+}
+
+.HorizontalBar_rail_32 {
+    height: 0;
+    border-top: 1rem solid #2f2e24;
+    position: absolute;
+    top: 6rem;
+    right: 5rem;
+    left: 5rem;
+}
+
+.HorizontalBar_rail_32:hover {
+    opacity: 0.7;
+}
+
+.HorizontalScroll_base_29 {
+    width: 100%;
+}
+
+.HorizontalScroll_wrapper_1e {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.HorizontalScroll_defaultScrollArea_8d {
+    width: 100%;
+    margin-bottom: 7rem;
+}
+
+.VerticalBar_base_f3 {
+    display: flex;
+    flex-direction: column;
+    width: 13rem;
+    height: 100%;
+    position: relative;
+}
+
+.VerticalBar_base__nonActive_42 {
+    visibility: hidden;
+}
+
+.VerticalBar_base_f3 .disable,
+.VerticalBar_base_f3 .disable:hover {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.VerticalBar_topButton_d7,
+.VerticalBar_bottomButton_06 {
+    width: 13rem;
+    height: 13rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: no-repeat center / 7rem 5rem;
+    opacity: 0.5;
+    z-index: 1;
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.VerticalBar_topButton_d7:hover,
+.VerticalBar_bottomButton_06:hover {
+    opacity: 1;
+}
+
+.VerticalBar_topButton_d7 {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_top');
+}
+
+.VerticalBar_bottomButton_06 {
+    background-image: url('R.images.gui.maps.icons.components.scroll_area.arrow_down');
+}
+
+.VerticalBar_track_df {
+    flex: 1;
+    margin: 1rem 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.VerticalBar_thumb_32 {
+    display: flex;
+    flex: 0 0 13rem;
+    width: 13rem;
+    height: 100%;
+    min-height: 20rem;
+    border: 1rem solid #7e7b68;
+    box-shadow: inset 0 0 1rem rgba(255, 255, 190, 0.3);
+    background: #26241b url('R.images.gui.maps.icons.components.scroll_area.thumb') no-repeat center / 7rem 8rem;
+    opacity: 0.5;
+    position: absolute;
+    z-index: 1;
+    transition: opacity 130ms linear;
+    cursor: pointer;
+}
+
+.VerticalBar_thumb_32:hover {
+    opacity: 1;
+}
+
+.VerticalBar_rail_43 {
+    width: 0;
+    height: 100%;
+    border-left: 1rem solid #2f2e24;
+    border-top: 5rem solid transparent;
+    border-bottom: 5rem solid transparent;
+    position: absolute;
+    top: 0;
+    left: 6rem;
+    z-index: 0;
+}
+
+.VerticalBar_rail_43:hover {
+    opacity: 0.7;
+}
+
+.VerticalScroll_content_cb {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.VerticalScroll_defaultScroll_f8 {
+    display: flex;
+}
+
+.VerticalScroll_bar_1e {
+    flex: 1;
+    margin-left: 7rem;
+}
+
+.VerticalScroll_area_af {
+    flex: 1;
+}
+
+.Box_mt__XS_0c {
+    margin-top: 4rem;
+}
+.Box_mt__SM_eb {
+    margin-top: 8rem;
+}
+.Box_mt__SMp_cf {
+    margin-top: 10rem;
+}
+.Box_mt__MD_25 {
+    margin-top: 16rem;
+}
+.Box_mt__MDp_49 {
+    margin-top: 20rem;
+}
+.Box_mt__LG_e8 {
+    margin-top: 32rem;
+}
+.Box_mt__XL_83 {
+    margin-top: 64rem;
+}
+
+.Box_mr__XS_7c {
+    margin-right: 4rem;
+}
+
+.Box_mr__SM_08 {
+    margin-right: 8rem;
+}
+
+.Box_mr__SMp_06 {
+    margin-right: 10rem;
+}
+
+.Box_mr__MD_4a {
+    margin-right: 16rem;
+}
+
+.Box_mr__MDp_b6 {
+    margin-right: 20rem;
+}
+
+.Box_mr__LG_d0 {
+    margin-right: 32rem;
+}
+
+.Box_mr__XL_db {
+    margin-right: 64rem;
+}
+
+.Box_mb__XS_bb {
+    margin-bottom: 4rem;
+}
+
+.Box_mb__SM_83 {
+    margin-bottom: 8rem;
+}
+
+.Box_mb__SMp_04 {
+    margin-bottom: 10rem;
+}
+
+.Box_mb__MD_ed {
+    margin-bottom: 16rem;
+}
+
+.Box_mb__MDp_65 {
+    margin-bottom: 20rem;
+}
+
+.Box_mb__LG_c8 {
+    margin-bottom: 32rem;
+}
+
+.Box_mb__XL_f8 {
+    margin-bottom: 64rem;
+}
+
+.Box_ml__XS_8a {
+    margin-left: 4rem;
+}
+
+.Box_ml__SM_e6 {
+    margin-left: 8rem;
+}
+
+.Box_ml__SMp_fb {
+    margin-left: 10rem;
+}
+
+.Box_ml__MD_2b {
+    margin-left: 16rem;
+}
+
+.Box_ml__MDp_c7 {
+    margin-left: 20rem;
+}
+
+.Box_ml__LG_39 {
+    margin-left: 32rem;
+}
+
+.Box_ml__XL_4a {
+    margin-left: 64rem;
+}
+
+.FormatText_base_d0 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* eslint-disable-next-line expectedscss*/
+.Text_paragraph-P10_2c {
+    font-size: 10rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_paragraph-P12_22 {
+    font-size: 12rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P14_a7 {
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Text_paragraph-P16_90 {
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P18_50 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Text_paragraph-P24_33 {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+}
+.Text_heading-H14_8b {
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H15_9e {
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.Text_heading-H18_b7 {
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H20R_f6 {
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H22_27 {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H24R_be {
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.Text_heading-H24_0c {
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.Text_heading-H28_78 {
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H36_32 {
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H56_c3 {
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H73_8f {
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.Text_heading-H144_a9 {
+    font-size: 144rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.Text_BLACK_REAL_30 {
+    color: #000000;
+}
+.Text_WHITE_REAL_bc {
+    color: #ffffff;
+}
+.Text_WHITE_62 {
+    color: #f2f2f7;
+}
+.Text_WHITE_ORANGE_54 {
+    color: #fefeec;
+}
+.Text_WHITE_SPANISH_df {
+    color: #e9e2bf;
+}
+.Text_PAR_15 {
+    color: #8c8c7e;
+}
+.Text_PAR_SECONDARY_5d {
+    color: #595950;
+}
+.Text_PAR_TERTIARY_c9 {
+    color: #37362e;
+}
+.Text_INFO_RED_30 {
+    color: #ff0000;
+}
+.Text_RED_66 {
+    color: #ff2717;
+}
+.Text_RED_DARK_d8 {
+    color: #b70000;
+}
+.Text_YELLOW_ed {
+    color: #feab34;
+}
+.Text_ORANGE_be {
+    color: #ee7000;
+}
+.Text_CREAM_57 {
+    color: #ffdd99;
+}
+.Text_BROWN_18 {
+    color: #cbac77;
+}
+.Text_GREEN_BRIGHT_3f {
+    color: #80d43a;
+}
+.Text_GREEN_e3 {
+    color: #7ab300;
+}
+.Text_GREEN_DARK_f1 {
+    color: #497212;
+}
+.Text_BLUE_BOOSTER_21 {
+    color: #ccffff;
+}
+.Text_BLUE_TEAMKILLER_ab {
+    color: #09e2ff;
+}
+.Text_CRED_f7 {
+    color: #ced9d9;
+}
+.Text_GOLD_28 {
+    color: #ffc363;
+}
+.Text_BOND_be {
+    color: #c9c9b6;
+}
+.Text_PROM_65 {
+    color: #a29b70;
+}
+
+.App_tabSwitchContent_12 {
+    opacity: 1;
+    transition: opacity 0.4s cubic-bezier(0.97, 0.95, 0.05, 0.98);
+}
+
+.App_tabSwitchContent__hidden_db {
+    opacity: 0;
+    transition: none;
+}
+.App_base_19 {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    overflow: hidden;
+    position: relative;
+    transition: opacity 2s ease-out;
+}
+.App_base__visible_c7 {
+    opacity: 1;
+}
+.App_content_6c {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    min-height: 0;
+    padding-top: 20rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.bg') no-repeat center / cover;
+    overflow: hidden;
+}
+.mediaMedium .App_content_6c {
+    padding-top: 40rem;
+}
+.App_header_83 {
+    color: #fefeec;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    flex-shrink: 0;
+}
+.mediaMedium .App_header_83 {
+    color: #fefeec;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.App_backButton_4d {
+    position: absolute;
+    top: 20rem;
+    left: 8rem;
+}
+.mediaMedium .App_backButton_4d {
+    top: 35rem;
+    left: 28rem;
+}
+.App_main_3e {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 0;
+    width: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+.App_container_68 {
+    width: 812rem;
+    margin-top: 25rem;
+}
+.mediaSmall .App_container_68 {
+    width: 974rem;
+}
+.mediaMedium .App_container_68 {
+    width: 1056rem;
+}
+.App_fixedTop_49 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: 2;
+}
+.App_tabsInfo_d5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    width: 100%;
+    min-width: 0;
+}
+.App_noFilteredVehicles_cd {
+    margin-top: 68rem;
+}
+.App_cards_ed {
+    flex: 1 1 0;
+    width: 100%;
+    min-height: 0;
+    margin-bottom: 1rem;
+    position: relative;
+}
+.App_scrollSensitiveArea_30 {
+    width: 100%;
+    height: 100%;
+}
+.App_scrollBarColumn_ee {
+    position: absolute;
+    top: 0;
+    right: 8rem;
+    bottom: 1rem;
+}
+.App_scrollableArea_41 {
+    padding-top: 20rem;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.Tabs_base_10 {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+    width: 100%;
+    position: relative;
+}
+.Tabs_areaWrapper_97 {
+    display: flex;
+    justify-content: flex-start;
+    min-width: 0;
+}
+.Tabs_areaWrapper__centered_6c {
+    justify-content: center;
+}
+.Tabs_areaWrapper__dragging_49 {
+    cursor: all-scroll;
+}
+.Tabs_panel_8a {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    min-width: 0;
+    max-width: 812rem;
+}
+.mediaSmall .Tabs_panel_8a {
+    max-width: 974rem;
+}
+.mediaMedium .Tabs_panel_8a {
+    max-width: 1056rem;
+}
+.Tabs_tabsBar_37 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    position: relative;
+}
+.Tabs_tabs_39 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    width: max-content;
+}
+.Tabs_tabs__dragging_68,
+.Tabs_tabs__dragging_68 * {
+    cursor: all-scroll;
+}
+.Tabs_tabsStaticArea_4d {
+    display: flex;
+    justify-content: center;
+    flex: 1 1 0;
+    align-self: stretch;
+    min-width: 0;
+}
+.Tabs_tabsScrollArea_9f {
+    flex: 1 1 0;
+    align-self: stretch;
+    width: 100%;
+    min-width: 0;
+    position: relative;
+    z-index: 1;
+}
+.Tabs_tabsScrollArea__dragging_fa {
+    cursor: all-scroll;
+}
+.Tabs_line_08 {
+    width: 100%;
+    height: 2rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.tabs.line') no-repeat center / cover;
+}
+.Tabs_line__small_24 {
+    opacity: 1;
+}
+
+.TabsScrollEdgeArrow_base_d3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 24rem;
+    height: 48rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.TabsScrollEdgeArrow_base__big_40 {
+    height: 100rem;
+}
+
+.TabsScrollEdgeArrow_base__right_5c {
+    right: 0;
+}
+
+.TabsScrollEdgeArrow_base__disabled_41 {
+    visibility: hidden;
+    cursor: default;
+    pointer-events: none;
+}
+.TabsScrollEdgeArrow_border_65 {
+    width: 24rem;
+    height: 48rem;
+    border: 1rem solid rgba(247, 211, 145, 0.2);
+    position: absolute;
+    z-index: 1;
+}
+.TabsScrollEdgeArrow_border__big_2e {
+    height: 100rem;
+}
+.TabsScrollEdgeArrow_glow_82 {
+    width: 62rem;
+    height: 48rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.tabs.arrowGlow_small') no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    transition: opacity 0.4s cubic-bezier(0.97, 0.95, 0.05, 0.98);
+    pointer-events: none;
+}
+.TabsScrollEdgeArrow_glow__visible_cf {
+    opacity: 1;
+}
+.TabsScrollEdgeArrow_glow__big_35 {
+    width: 80rem;
+    height: 100rem;
+    background-image: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.tabs.arrowGlow');
+}
+.TabsScrollEdgeArrow_glow__right_f6 {
+    left: -58rem;
+    transform: scaleX(-1);
+}
+.TabsScrollEdgeArrow_glowNew_23 {
+    width: 200rem;
+    height: 62rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.tabs.arrowGlowNew_small') no-repeat center /
+        cover;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    transition: opacity 0.4s cubic-bezier(0.97, 0.95, 0.05, 0.98);
+    pointer-events: none;
+}
+.TabsScrollEdgeArrow_glowNew__visible_c1 {
+    opacity: 1;
+}
+.TabsScrollEdgeArrow_glowNew__big_60 {
+    width: 200rem;
+    height: 124rem;
+    background-image: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.tabs.arrowGlowNew');
+}
+.TabsScrollEdgeArrow_glowNew__right_bf {
+    left: -175rem;
+    transform: scaleX(-1);
+}
+.TabsScrollEdgeArrow_arrow_10 {
+    flex-shrink: 0;
+    width: 48rem;
+    height: 48rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.tabs.arrow') no-repeat center / contain;
+    z-index: 2;
+    pointer-events: none;
+}
+.TabsScrollEdgeArrow_arrow__left_16 {
+    margin-right: 4rem;
+}
+.TabsScrollEdgeArrow_arrow__right_0d {
+    margin-left: 4rem;
+    transform: scaleX(-1);
+}
+
+.TabItem_base_a8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 98rem;
+    height: 32rem;
+    margin-top: 20rem;
+    position: relative;
+    transition: height 0.4s cubic-bezier(0.97, 0.95, 0.05, 0.98);
+    cursor: pointer;
+}
+
+.mediaMedium .TabItem_base_a8 {
+    width: 128rem;
+    height: 40rem;
+}
+
+.TabItem_base__big_e8 {
+    height: 98rem;
+}
+
+.mediaMedium .TabItem_base__big_e8 {
+    height: 121rem;
+}
+
+.TabItem_base__dragging_8c,
+.TabItem_base__dragging_8c * {
+    user-select: none;
+    cursor: all-scroll;
+}
+
+.TabItem_base__compact_2e:hover .TabItem_label_a6 {
+    color: rgba(255, 221, 153, 0.7);
+}
+
+.TabItem_base__big_e8:hover .TabItem_label_a6 {
+    color: #ffdd99;
+    opacity: 0.7;
+}
+
+.TabItem_base__big_e8:hover .TabItem_tabIcon__big_d6 {
+    filter: brightness(1) saturate(1);
+}
+.TabItem_label_a6 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-top: 9rem;
+    opacity: 1;
+    z-index: 1;
+    transition: color 0.15s ease-out;
+    pointer-events: none;
+}
+.mediaMedium .TabItem_label_a6 {
+    color: #8c8c7e;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.TabItem_label__big_61 {
+    opacity: 0;
+    transition:
+        opacity 0.15s cubic-bezier(0.97, 0.95, 0.05, 0.98),
+        color 0.15s ease-out;
+}
+.TabItem_label_a6.TabItem_labelSelected_73 {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    opacity: 1;
+}
+.mediaMedium .TabItem_label_a6.TabItem_labelSelected_73 {
+    color: #ffdd99;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+.TabItem_base__compact_2e:hover .TabItem_label_a6.TabItem_labelSelected_73 {
+    color: #ffdd99;
+}
+.TabItem_base__big_e8:hover .TabItem_label_a6.TabItem_labelSelected_73 {
+    color: #ffdd99;
+    opacity: 1;
+}
+.TabItem_labelContainer_e3 {
+    position: relative;
+}
+.TabItem_labelContainer__premium_08 {
+    margin-right: 6rem;
+}
+.TabItem_premLabelIcon_40 {
+    width: 25rem;
+    height: 24rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.tabs.premLevelBg') no-repeat center / cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+}
+.TabItem_divider_36 {
+    width: 1rem;
+    height: 40rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.tabs.divider_small') no-repeat center / 100%
+        100%;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    transition: height 0.4s cubic-bezier(0.97, 0.95, 0.05, 0.98);
+}
+.TabItem_divider__big_8a {
+    height: 80rem;
+    background-image: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.tabs.divider');
+}
+.TabItem_glowSelected_5b {
+    width: 200rem;
+    height: 74rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.tabs.glow_selected_small') no-repeat center /
+        cover;
+    opacity: 0;
+    mix-blend-mode: screen;
+    position: absolute;
+    top: -40rem;
+    left: 50%;
+    z-index: -2;
+    transform: translateX(-50%);
+    transition:
+        width 0.4s cubic-bezier(0.97, 0.95, 0.05, 0.98),
+        height 0.4s cubic-bezier(0.97, 0.95, 0.05, 0.98),
+        top 0.4s cubic-bezier(0.97, 0.95, 0.05, 0.98),
+        left 0.4s cubic-bezier(0.97, 0.95, 0.05, 0.98);
+    animation: TabItem_selected-glow-fade-in_e5 0.15s ease-out forwards;
+    pointer-events: none;
+}
+.mediaMedium .TabItem_glowSelected_5b {
+    top: -33rem;
+}
+.TabItem_glowSelected__big_68 {
+    width: 340rem;
+    height: 126rem;
+    background-image: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.tabs.glow_selected');
+    top: -27rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.mediaMedium .TabItem_glowSelected__big_68 {
+    top: -4rem;
+}
+.TabItem_glowSelected__compactInBig_72 {
+    top: 24rem;
+}
+.mediaMedium .TabItem_glowSelected__compactInBig_72 {
+    top: 46rem;
+}
+.TabItem_tabIcon_f0 {
+    width: 48rem;
+    height: 48rem;
+    background: no-repeat center / cover;
+    filter: brightness(0.9) saturate(1);
+    opacity: 0;
+    transform: scale(0);
+    transition:
+        filter 0.15s ease-out,
+        opacity 0.4s cubic-bezier(0.97, 0.95, 0.05, 0.98),
+        transform 0.4s cubic-bezier(0.97, 0.95, 0.05, 0.98);
+}
+.mediaMedium .TabItem_tabIcon_f0 {
+    width: 80rem;
+    height: 80rem;
+}
+.TabItem_tabIcon__big_d6 {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: none;
+}
+.TabItem_tabIcon__big__done_f4 {
+    opacity: 0.3;
+}
+.TabItem_isNew_4a {
+    width: 72rem;
+    height: 72rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.tabs.glow_new') no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 15rem;
+    z-index: -1;
+    transform: translateY(-50%);
+    transform-origin: center center;
+    transition: none;
+    animation: TabItem_is-new-glow-rotate_24 20s linear infinite;
+    pointer-events: none;
+    backface-visibility: hidden;
+}
+.mediaMedium .TabItem_isNew_4a {
+    width: 144rem;
+    height: 144rem;
+    left: 0;
+}
+.TabItem_isNew__big_d5 {
+    opacity: 1;
+    transition: opacity 0.2s cubic-bezier(0.97, 0.95, 0.05, 0.98);
+    transition-delay: 0.3s;
+}
+.TabItem_isNew__big__selected_f7 {
+    opacity: 0;
+    transition: none;
+}
+.TabItem_isNewCounter_37 {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.tabs.counter_small') no-repeat center / cover;
+    opacity: 1;
+    position: absolute;
+    top: -2rem;
+    right: 2rem;
+    transition: opacity 0.4s cubic-bezier(0.97, 0.95, 0.05, 0.98);
+    pointer-events: none;
+}
+.mediaMedium .TabItem_isNewCounter_37 {
+    right: 6rem;
+}
+.TabItem_isNewCounter__big_d9 {
+    opacity: 0;
+}
+.TabItem_doneIcon_83 {
+    width: 64rem;
+    height: 28rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.tabs.check') no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: none;
+    pointer-events: none;
+}
+.TabItem_doneIcon__big_3b {
+    opacity: 1;
+    transition: opacity 0.2s cubic-bezier(0.97, 0.95, 0.05, 0.98);
+    transition-delay: 0.3s;
+}
+.TabItem_tokensCount_54 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 700;
+    line-height: 1.15;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s cubic-bezier(0.97, 0.95, 0.05, 0.98);
+}
+.mediaMedium .TabItem_tokensCount_54 {
+    color: #8c8c7e;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-top: -12rem;
+}
+.TabItem_tokensCount__selected_01 {
+    color: #ffc363;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 15rem rgba(238, 85, 34, 0.7);
+}
+.mediaMedium .TabItem_tokensCount__selected_01 {
+    color: #ffc363;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+.TabItem_tokensCount__big_e5 {
+    opacity: 1;
+    visibility: visible;
+}
+.TabItem_tokensCount__big__invisible_58 {
+    opacity: 0;
+}
+@keyframes TabItem_selected-glow-fade-in_e5 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes TabItem_is-new-glow-rotate_24 {
+    from {
+        transform: translateY(-50%) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+.VehiclesReceivedWidget_base_3d {
+    display: flex;
+}
+
+.VehiclesReceivedWidget_content_47 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1198rem;
+    height: 100%;
+    margin-top: 60rem;
+    position: relative;
+}
+
+.VehiclesReceivedWidget_doneIcon_38 {
+    width: 118rem;
+    height: 118rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.check_big') no-repeat center / cover;
+    z-index: 99;
+}
+
+.mediaMedium .VehiclesReceivedWidget_doneIcon_38 {
+    width: 200rem;
+    height: 200rem;
+}
+
+.VehiclesReceivedWidget_text_95 {
+    color: #e9e2bf;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+    position: absolute;
+    top: 100rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.mediaMedium .VehiclesReceivedWidget_text_95 {
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.VehiclesReceivedWidget_innerText_99 {
+    color: #ffc363;
+    font-size: 15rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.VehiclesReceivedWidget_tasksWrapper_ee {
+    position: absolute;
+    top: 140rem;
+    left: 49%;
+    transform: translateX(-50%);
+}
+
+.mediaMedium .VehiclesReceivedWidget_tasksWrapper_ee {
+    top: 200rem;
+}
+
+.VehiclesReceivedWidget_smoke_36 {
+    width: 1012rem;
+    height: 461rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.smoke') no-repeat center / cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.Tasks_base_ad {
+    display: flex;
+}
+
+.Tasks_taskContainer_95 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 48rem;
+    height: 28rem;
+    margin-left: 10rem;
+    border-radius: 2rem;
+    box-shadow: 0 0 16rem 0 rgba(255, 255, 255, 0.07) inset;
+    background: rgba(255, 255, 255, 0.03);
+    opacity: 0.75;
+}
+
+.Tasks_taskContainer__done_e3 {
+    box-shadow: 0 0 16rem 0 rgba(0, 255, 81, 0.07) inset;
+    background: rgba(122, 179, 0, 0.03);
+    opacity: 1;
+}
+
+.Tasks_taskIcon_8a {
+    width: 24rem;
+    height: 24rem;
+    margin-left: -5rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.check') no-repeat center / cover;
+}
+
+.Tasks_taskText_6e {
+    color: #ffffff;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    opacity: 0.8;
+}
+
+.Tasks_taskText__done_3a {
+    color: #7ab300;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    opacity: 1;
+}
+
+.InfoWidget_base_0a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.InfoWidget_content_0f {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25rem;
+}
+
+.InfoWidget_noTokenContent_d1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.InfoWidget_noTokenText_11 {
+    color: #ced9d9;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.mediaMedium .InfoWidget_noTokenText_11 {
+    color: #ced9d9;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.InfoWidget_noTokenTextHighlight_84 {
+    color: #cbac77;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.mediaMedium .InfoWidget_noTokenTextHighlight_84 {
+    color: #cbac77;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.InfoWidget_noTokenTextHighlight__isPremium_61 {
+    color: #ced9d9;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.mediaMedium .InfoWidget_noTokenTextHighlight__isPremium_61 {
+    color: #ced9d9;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.InfoWidget_noTokenPremiumText_ab {
+    color: #ffc363;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.mediaMedium .InfoWidget_noTokenPremiumText_ab {
+    color: #ffc363;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.InfoWidget_hasTokenContent_45 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.InfoWidget_hasTokenText_06 {
+    color: #ffc363;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    text-shadow:
+        0 0 4rem rgba(255, 127, 0, 0.25),
+        0 0 8rem #ff2a00,
+        0 0 15rem #e52;
+    z-index: 1;
+}
+
+.mediaMedium .InfoWidget_hasTokenText_06 {
+    color: #ffc363;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.InfoWidget_hasTokenText__isPremium_96 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaMedium .InfoWidget_hasTokenText__isPremium_96 {
+    color: #e9e2bf;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.InfoWidget_hasTokenTextBg_eb {
+    width: 765rem;
+    height: 100rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.hasTokenTextShadow') no-repeat center / cover;
+    position: absolute;
+    top: -30rem;
+}
+
+.InfoWidget_noTokenTextBg_8c {
+    width: 1056rem;
+    height: 78rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.noTokenTextShadow') no-repeat center / cover;
+    position: absolute;
+    top: -26rem;
+}
+
+.CButton_base_40 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.6);
+    position: relative;
+    cursor: pointer;
+}
+
+.CButton_base__main_42,
+.CButton_base__primary_7f,
+.CButton_base__primaryGreen_6f,
+.CButton_base__primaryRed_ec,
+.CButton_base__secondary_50 {
+    background-size: 100% 100%;
+}
+
+.CButton_base__main_42 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_main');
+}
+
+.CButton_base__primary_7f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+
+.CButton_base__primaryGreen_6f {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+
+.CButton_base__primaryRed_ec {
+    background-image: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+
+.CButton_base__secondary_50 {
+    background-image: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+
+.CButton_base__ghost_ed {
+    border-radius: 3rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 0 1rem rgba(255, 255, 255, 0.15) inset;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.CButton_base__extraSmall_27 {
+    min-height: 17rem;
+    padding: 0 16rem;
+}
+
+.CButton_base__small_df,
+.CButton_base__medium_74 {
+    padding: 0 20rem;
+}
+
+.CButton_base__small_df {
+    min-height: 18rem;
+}
+
+.CButton_base__medium_74 {
+    min-height: 32rem;
+}
+
+.CButton_base__disabled_d9 {
+    cursor: default;
+}
+/* Element .back and background-image in element .base need for fix bug in GF https://jira-archive.lesta.group/browse/WOTD-158525
+The bug is that under certain conditions, when using border-image, stripes appear. Strip is a single-pixel gap
+between 'border-image-width' and 'fill'.
+This bug is reproduced in Google Chrome 81.0.4044.113
+*/
+.CButton_back_e5 {
+    border-image-slice: 4 fill;
+    border-image-width: 4rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_base__main_42 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_main');
+}
+.CButton_base__primary_7f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary');
+}
+.CButton_base__primaryGreen_6f .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_green');
+}
+.CButton_base__primaryRed_ec .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_primary_red');
+}
+.CButton_base__secondary_50 .CButton_back_e5 {
+    border-image-source: url('R.images.gui.maps.icons.components.button.back_secondary');
+}
+.CButton_texture_fe {
+    background: url('R.images.gui.maps.icons.components.button.standard_texture_file');
+    background-size: 155rem 31rem;
+    mix-blend-mode: soft-light;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_state_11 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: box-shadow 0.16s ease-in-out;
+}
+.CButton_base__focus_83 .CButton_state_11 {
+    border-radius: 2rem;
+    box-shadow: inset 0 0 2rem 1rem rgba(255, 85, 0, 0.2);
+}
+.CButton_stateHighlightHover_ff,
+.CButton_stateHighlightActive_35,
+.CButton_stateDisabled_54 {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.CButton_base__firstHover_d5 .CButton_stateHighlightHover_ff,
+.CButton_base__firstHover_d5 .CButton_stateHighlightActive_35,
+.CButton_base__firstHover_d5 .CButton_stateDisabled_54 {
+    transition: opacity 0.16s ease-in-out;
+}
+.CButton_stateHighlightHover_ff {
+    background-image: linear-gradient(
+        180deg,
+        rgba(252, 248, 235, 0.25) 0%,
+        rgba(252, 248, 235, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+.CButton_base_40:hover .CButton_stateHighlightHover_ff {
+    opacity: 1;
+}
+.CButton_base_40:active .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__disabled_d9:hover .CButton_stateHighlightHover_ff {
+    opacity: 0;
+}
+.CButton_base__ghost_ed .CButton_stateHighlightHover_ff {
+    box-shadow: 0 15rem 12rem 0 rgba(242, 242, 230, 0.11) inset;
+    background-color: rgba(8, 6, 0, 0.18);
+    background-image: none;
+}
+.CButton_stateHighlightActive_35 {
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.15) 100%);
+}
+.CButton_base__highlightActive_b2 .CButton_stateHighlightActive_35 {
+    opacity: 1;
+}
+.CButton_stateDisabled_54 {
+    background-color: rgba(0, 0, 0, 0.25);
+    background-image: url('R.images.gui.maps.icons.components.button.texture_disable');
+    background-size: 15rem;
+}
+.CButton_base__disabled_d9 .CButton_stateDisabled_54 {
+    opacity: 1;
+}
+.CButton_content_cc {
+    display: flex;
+    align-items: center;
+    color: #f2f2e6;
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 -1rem 1rem #000;
+    letter-spacing: 0.03em;
+    transform: translateY(-1rem);
+}
+.CButton_content_cc[lang='ja'],
+.CButton_content_cc[lang='ko'],
+.CButton_content_cc[lang='zh_tw'],
+.CButton_content_cc[lang='zh_sg'],
+.CButton_content_cc[lang='zh_cn'],
+.CButton_content_cc[lang='th'] {
+    font-weight: 400;
+}
+.CButton_base__main_42 .CButton_content_cc,
+.CButton_base__primaryRed_ec .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #600;
+}
+.CButton_base__secondary_50 .CButton_content_cc {
+    color: rgba(254, 254, 236, 0.75);
+}
+.CButton_base__primaryGreen_6f .CButton_content_cc {
+    text-shadow: 0 -1rem 1rem #1c2502;
+}
+.CButton_base__extraSmall_27 .CButton_content_cc {
+    font-size: 12rem;
+}
+.CButton_base__small_df .CButton_content_cc {
+    font-size: 14rem;
+}
+.CButton_base__medium_74 .CButton_content_cc {
+    font-size: 15rem;
+}
+.CButton_base__disabled_d9 .CButton_content_cc {
+    opacity: 0.6;
+}
+
+.InputControl_base_68 {
+    display: flex;
+    align-items: center;
+    min-width: 100%;
+    height: 100%;
+    border: 1rem solid #464538;
+    border-radius: 2rem;
+    box-shadow:
+        inset 0 0 1rem #000,
+        inset 0 0 8rem #000;
+    position: relative;
+    transition: border 0.3s ease-in-out;
+    cursor: text;
+}
+
+.InputControl_base__focused_aa {
+    border-color: #626156;
+}
+
+.InputControl_base__alert_22 {
+    border-color: #ee7000;
+    box-shadow:
+        inset 0 0 1rem #000,
+        inset 0 0 8rem #000,
+        inset 0 0 6rem #8d0d03;
+}
+
+.InputControl_base__error_ff {
+    border-color: #ff2717;
+    box-shadow:
+        inset 0 0 1rem #000,
+        inset 0 0 8rem #000,
+        inset 0 0 6rem #8d0d03;
+}
+
+.InputControl_base__done_a7 {
+    border-color: #7ab300;
+}
+
+.InputControl_base__disabled_f8 {
+    cursor: default;
+}
+
+.InputControl_input_93 {
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    color: #8c8c7e;
+    position: relative;
+    z-index: 1;
+}
+
+.InputControl_base__small_85 .InputControl_input_93 {
+    font-size: 12rem;
+    padding: 1rem 4rem 2rem 8rem;
+}
+
+.InputControl_base__medium_a2 .InputControl_input_93 {
+    font-size: 14rem;
+    padding: 1rem 4rem 2rem 8rem;
+}
+
+.InputControl_base__large_32 .InputControl_input_93 {
+    font-size: 16rem;
+    padding: 4rem 6rem 5rem 12rem;
+}
+
+.InputControl_base__withIcon_9e.InputControl_base__small_85 .InputControl_input__search_85 {
+    padding-left: 20rem;
+}
+
+.InputControl_base__withIcon_9e.InputControl_base__medium_a2 .InputControl_input__search_85 {
+    padding-left: 24rem;
+}
+
+.InputControl_base__withIcon_9e.InputControl_base__large_32 .InputControl_input__search_85 {
+    padding-left: 36rem;
+}
+
+.InputControl_base__disabled_f8 .InputControl_input_93 {
+    color: #37362e;
+    pointer-events: none;
+}
+
+.InputControl_input_93::selection {
+    background-color: #8c8c7e;
+    color: #37362e;
+}
+
+.InputControl_disabled_78 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.gui.maps.icons.library.disabled_pattern') center / 9rem;
+    opacity: 0.8;
+    position: absolute;
+}
+
+.InputControl_placeholder_e3 {
+    color: #595950;
+    position: absolute;
+    left: 8rem;
+    pointer-events: none;
+}
+
+.InputControl_base__small_85 .InputControl_placeholder_e3 {
+    font-size: 12rem;
+}
+
+.InputControl_base__medium_a2 .InputControl_placeholder_e3 {
+    font-size: 14rem;
+}
+
+.InputControl_base__large_32 .InputControl_placeholder_e3 {
+    font-size: 16rem;
+    left: 12rem;
+}
+
+.InputControl_base__withIcon_9e.InputControl_base__small_85 .InputControl_placeholder__search_d5 {
+    left: 20rem;
+}
+
+.InputControl_base__withIcon_9e.InputControl_base__medium_a2 .InputControl_placeholder__search_d5 {
+    left: 24rem;
+}
+
+.InputControl_base__withIcon_9e.InputControl_base__large_32 .InputControl_placeholder__search_d5 {
+    left: 36rem;
+}
+
+.InputControl_base__disabled_f8 .InputControl_placeholder_e3 {
+    color: #37362e;
+}
+
+.InputControl_icon_13 {
+    background: no-repeat center / contain;
+    position: absolute;
+    left: 8rem;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.InputControl_base__small_85 .InputControl_icon__search_57 {
+    width: 8rem;
+    height: 8rem;
+}
+
+.InputControl_base__medium_a2 .InputControl_icon__search_57 {
+    width: 10rem;
+    height: 10rem;
+}
+
+.InputControl_base__large_32 .InputControl_icon__search_57 {
+    width: 16rem;
+    height: 16rem;
+    left: 12rem;
+}
+
+.InputControl_base__disabled_f8 .InputControl_icon_13 {
+    opacity: 0.5;
+}
+
+.InputControl_clear_bb {
+    opacity: 0.6;
+    position: absolute;
+    right: 4rem;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.InputControl_clear_bb:hover {
+    opacity: 1;
+}
+
+.InputControl_base__small_85 .InputControl_clear_bb {
+    width: 12rem;
+    height: 12rem;
+    background: url('R.images.gui.maps.icons.components.input.close_small') no-repeat center / 8rem;
+}
+
+.InputControl_base__medium_a2 .InputControl_clear_bb {
+    width: 14rem;
+    height: 14rem;
+    background: url('R.images.gui.maps.icons.components.input.close_medium') no-repeat center / 10rem;
+}
+
+.InputControl_base__large_32 .InputControl_clear_bb {
+    width: 20rem;
+    height: 20rem;
+    background: url('R.images.gui.maps.icons.components.input.close_large') no-repeat center / 16rem;
+    right: 6rem;
+}
+
+.HelperMessage_base_1e {
+    display: flex;
+    width: 100%;
+    opacity: 0;
+    transition: opacity ease 0.2s;
+    pointer-events: none;
+}
+
+.HelperMessage_base__shown_ab {
+    opacity: 1;
+}
+
+.HelperMessage_icon_10 {
+    width: 16rem;
+    height: 16rem;
+    margin-right: 5rem;
+    background: no-repeat center / contain;
+}
+
+.HelperMessage_message_f4 {
+    flex: 1;
+}
+
+.HelperMessage_message__alert_b5 {
+    color: #ee7000;
+}
+
+.HelperMessage_message__error_45 {
+    color: #ff2717;
+}
+
+.HelperMessage_message__done_2b {
+    color: #7ab300;
+}
+
+.Input_base_cd {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.6);
+    background-color: rgba(23, 23, 15, 0.8);
+    position: relative;
+}
+
+.Input_base__small_c7 {
+    height: 18rem;
+}
+
+.Input_base__medium_1f {
+    height: 24rem;
+}
+
+.Input_base__large_11 {
+    height: 32rem;
+}
+
+.Input_helper_ea {
+    height: 100%;
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    transform: translateY(100%);
+}
+
+.PopoverDecorator_base_ed {
+    display: flex;
+    position: absolute;
+}
+
+.PopoverDecorator_decorator_d3 {
+    padding: 58rem;
+    border-image-source: url('R.images.gui.maps.icons.popovers.popover_bg');
+    border-image-slice: 90 fill;
+    border-image-width: 90rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+}
+
+.PopoverDecorator_arrow_8a {
+    background: no-repeat 0 0 / contain;
+    position: absolute;
+}
+
+.PopoverDecorator_arrow__bottom_c3,
+.PopoverDecorator_arrow__top_6e {
+    width: 301rem;
+    height: 90rem;
+    margin: 0 58rem;
+    background-image: url('R.images.gui.maps.icons.popovers.popover_arrow_top');
+    left: 50%;
+}
+
+.PopoverDecorator_arrow__left_7a,
+.PopoverDecorator_arrow__right_b6 {
+    width: 84rem;
+    height: 181rem;
+    margin: 58rem 0;
+    background-image: url('R.images.gui.maps.icons.popovers.popover_arrow_left');
+    top: 50%;
+}
+
+.PopoverDecorator_arrow__left_7a {
+    right: 10rem;
+    transform: scaleX(-1) translateY(-90rem);
+}
+
+.PopoverDecorator_arrow__right_b6 {
+    left: 10rem;
+    transform: translateY(-90rem);
+}
+
+.PopoverDecorator_arrow__top_6e {
+    bottom: 8rem;
+    transform: scaleY(-1) translateX(-150rem);
+}
+
+.PopoverDecorator_arrow__bottom_c3 {
+    top: 8rem;
+    transform: translateX(-150rem);
+}
+
+.PopoverDecorator_closeBtn_32 {
+    width: 18rem;
+    height: 18rem;
+    background: url('R.images.gui.maps.icons.popovers.close_button_slim_up') no-repeat 0 0 / contain;
+    position: absolute;
+    top: 6rem;
+    right: 6rem;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.PopoverDecorator_closeBtn_32:hover {
+    filter: brightness(160%);
+}
+
+.PopoverDecorator_closeBtn_32:active {
+    background-image: url('R.images.gui.maps.icons.popovers.close_button_slim_press');
+    filter: brightness(100%);
+}
+
+.PopoverDecorator_content_f0 {
+    position: relative;
+    z-index: 2;
+}
+
+.SearchPanel_base_77 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 11rem;
+    position: relative;
+}
+
+.SearchPanel_controls_b0 {
+    display: flex;
+    align-items: center;
+}
+
+.SearchPanel_searchField_db {
+    width: 194rem;
+    margin-right: 8rem;
+}
+
+.SearchPanel_input_22 {
+    height: 22rem;
+}
+
+.SearchPanel_control_4a {
+    padding-right: 20rem;
+}
+
+.SearchPanel_filterButton_8b {
+    height: 20rem;
+    padding-left: 13rem;
+    padding-right: 9rem;
+    overflow: hidden;
+}
+
+.SearchPanel_filterButtonIcon_60 {
+    width: 34rem;
+    height: 24rem;
+    background: url('R.images.gui.maps.icons.battleMatters.vehicleSelection.tank_filter') no-repeat center / contain;
+}
+
+.SearchPanel_divider_e2 {
+    height: 1rem;
+    box-shadow: 0 1rem 3rem 1rem rgba(0, 0, 0, 0.25);
+    background-color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.FormatTextWithColorTags_blackReal_3c {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_8a {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_16 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_18 {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_10 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_ca {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_8d {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_a3 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_60 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_03 {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_ad {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_e4 {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_cd {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_c8 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_f0 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_c5 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_ac {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_6f {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_4e {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_90 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_71 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_dd {
+    color: #a29b70;
+}
+
+.SearchResult_base_76 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    display: flex;
+}
+
+.SearchResult_text_f5 {
+    margin-right: 8rem;
+    color: #c9c9b6;
+}
+
+.SearchResult_filterApplied_0f {
+    position: relative;
+}
+
+.SearchResult_filterAppliedIcon_0d {
+    width: 81rem;
+    height: 86rem;
+    background: url('R.images.gui.maps.icons.battleMatters.vehicleSelection.filtered_count') no-repeat center / contain;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -21rem);
+}
+
+.SearchResult_showedCount_ef {
+    color: #e9e2bf;
+}
+
+.SearchResult_filterApplied__empty_94 .SearchResult_showedCount_ef {
+    color: #ff2717;
+}
+
+.SearchResult_searchResults_70 {
+    position: relative;
+}
+
+.SearchResult_filterApplied__empty_94 .SearchResult_searchResults_70 {
+    animation: SearchResult_blink_9c 1.5s infinite ease-in-out;
+}
+
+.SearchResult_resetHoverArea_20 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    height: 20rem;
+    margin-left: 5rem;
+    border: 1rem solid rgba(190, 190, 190, 0.1);
+    border-radius: 2rem;
+    position: relative;
+    transition: border-color 0.1s linear;
+    cursor: pointer;
+}
+
+.SearchResult_resetHoverArea_20:hover {
+    border-color: rgba(190, 190, 190, 0.2);
+}
+
+.SearchResult_resetIconBg_b4 {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(#46453e, #211f19);
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.1s linear;
+}
+
+.SearchResult_resetHoverArea_20:hover .SearchResult_resetIconBg_b4 {
+    opacity: 0.8;
+}
+
+.SearchResult_resetIcon_26 {
+    width: 9rem;
+    height: 9rem;
+    background: url('R.images.gui.maps.icons.battleMatters.vehicleSelection.close') no-repeat center / contain;
+    position: relative;
+    bottom: 1rem;
+}
+
+@keyframes SearchResult_blink_9c {
+    0% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.NoFilteredVehicles_base_b8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.NoFilteredVehicles_header_d8 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15rem;
+}
+
+.NoFilteredVehicles_alertIcon_65 {
+    width: 18rem;
+    height: 18rem;
+    margin-right: 4rem;
+    background: url('R.images.gui.maps.icons.battleMatters.vehicleSelection.alert') no-repeat center / contain;
+}
+
+.NoFilteredVehicles_text_d3 {
+    color: #c9c9b6;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.Card_base_7d {
+    width: 260rem;
+    height: 171rem;
+    position: relative;
+    cursor: pointer;
+}
+.mediaSmall .Card_base_7d {
+    width: 312rem;
+    height: 205rem;
+}
+.mediaMedium .Card_base_7d {
+    width: 338rem;
+    height: 222rem;
+}
+.Card_wrapper_15 {
+    width: 100%;
+    height: 100%;
+    border: 1rem solid rgba(255, 255, 255, 0.2);
+    border-radius: 2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+}
+.Card_nationImage_49 {
+    width: 213rem;
+    height: 177rem;
+    background: no-repeat center / contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.Card_vehicleImage_32 {
+    width: 180rem;
+    height: 134rem;
+    background: no-repeat center / contain;
+    position: absolute;
+    top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.Card_branchContinuationIcon_88 {
+    width: 64rem;
+    height: 64rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.continueGray') no-repeat center / contain;
+    position: absolute;
+    top: 5rem;
+    left: 100%;
+    transform: translateX(-100%);
+}
+.Card_vehicleTypeIcon_22 {
+    width: 24rem;
+    height: 24rem;
+    margin: -2rem -5rem 0;
+    background: no-repeat center / cover;
+}
+.Card_overlay_d2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    background-color: rgba(38, 37, 33, 0.8);
+    opacity: 0;
+    position: relative;
+    transition: opacity 0.2s linear;
+}
+.Card_base__hovered_26 .Card_overlay_d2 {
+    opacity: 1;
+}
+.Card_text_aa {
+    padding: 0 12rem;
+    position: absolute;
+    top: 111rem;
+    transform: translateY(0%);
+    transition:
+        top 0.2s cubic-bezier(0.64, 0.04, 0.35, 1),
+        transform 0.2s cubic-bezier(0.64, 0.04, 0.35, 1);
+}
+.mediaSmall .Card_text_aa {
+    top: 145rem;
+}
+.mediaMedium .Card_text_aa {
+    padding: 0 18rem;
+    top: 157rem;
+}
+.Card_text__withContinuationBlock_8a {
+    padding: 0 12rem;
+    top: 61rem;
+}
+.mediaSmall .Card_text__withContinuationBlock_8a {
+    top: 90rem;
+}
+.mediaMedium .Card_text__withContinuationBlock_8a {
+    padding: 0 18rem;
+    top: 102rem;
+}
+.Card_base__hovered_26 .Card_text_aa {
+    top: 85.5rem;
+    transform: translateY(-50%);
+}
+.mediaSmall .Card_base__hovered_26 .Card_text_aa {
+    top: 102.5rem;
+}
+.mediaMedium .Card_base__hovered_26 .Card_text_aa {
+    top: 111rem;
+}
+.Card_vehicleName_2d {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.mediaMedium .Card_vehicleName_2d {
+    color: #fefeec;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Card_vehicleName__hidden_33 {
+    opacity: 0;
+}
+.Card_vehicleRoleContainer_cb {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: -5rem;
+}
+.Card_vehicleRole_dd {
+    color: #feab34;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.mediaMedium .Card_vehicleRole_dd {
+    color: #feab34;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Card_vehicleRole__withMargin_ea {
+    margin-top: 12rem;
+}
+.Card_vehicleRole__noRole_43 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.mediaMedium .Card_vehicleRole__noRole_43 {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Card_vehicleType_30 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.mediaMedium .Card_vehicleType_30 {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Card_additionalTextContainer_ef {
+    display: flex;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.Card_vehicleRoleIcon_88 {
+    width: 24rem;
+    height: 24rem;
+    background: no-repeat center / cover;
+}
+.Card_additionsText_0e {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+}
+.Card_base__hovered_26 .Card_additionsText_0e {
+    opacity: 1;
+}
+.Card_additionalContinuationBlock_36 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 210rem;
+    opacity: 0;
+}
+.Card_base__hovered_26 .Card_additionalContinuationBlock_36 {
+    opacity: 1;
+}
+.Card_additionalContinuationContainer_45 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.Card_additionalContinuationIcon_6c {
+    width: 40rem;
+    height: 40rem;
+    margin-left: -10rem;
+    margin-right: 5rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.continueWhite') no-repeat center / contain;
+}
+.Card_additionalContinuationDivider_88 {
+    width: 304rem;
+    height: 2rem;
+    margin-top: 12rem;
+    background: url('R.images.tank_academy.gui.maps.icons.vehiclesSelect.dividerContinuation') no-repeat center /
+        contain;
+}
+.Card_additionalContinuationText_3c {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.Card_crewIcon_1c {
+    width: 24rem;
+    height: 24rem;
+    margin-top: -2rem;
+    background: url('R.images.gui.maps.icons.battleMatters.vehicleSelection.prize_crew') no-repeat center / contain;
+}
+.Card_hangarIcon_1c {
+    width: 24rem;
+    height: 24rem;
+    margin-top: -2rem;
+    background: url('R.images.gui.maps.icons.battleMatters.vehicleSelection.prize_hangarslot') no-repeat center /
+        contain;
+}
+.Card_compareButton_15 {
+    display: none;
+    width: 48rem;
+    height: 36rem;
+    background: url('R.images.gui.maps.icons.battleMatters.vehicleSelection.compare_btn') no-repeat center / cover;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+.Card_base__hovered_26 .Card_compareButton_15 {
+    display: block;
+}
+
+.Cards_base_44 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.Cards_card_b1 {
+    margin-right: 16rem;
+    margin-bottom: 16rem;
+}
+
+.mediaSmall .Cards_card_b1 {
+    margin-right: 19rem;
+    margin-bottom: 19rem;
+}
+
+.mediaMedium .Cards_card_b1 {
+    margin-right: 21rem;
+    margin-bottom: 21rem;
+}
+
+.Cards_card__lastInRow_d9 {
+    margin-right: 0;
+}
+
+.mediaSmall .Cards_card__lastInRow_d9 {
+    margin-right: 0;
+}
+
+.NoVehicles_base_ff {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 103rem;
+}
+.mediaMedium .NoVehicles_base_ff {
+    padding-top: 123rem;
+}
+.mediaLarge .NoVehicles_base_ff {
+    padding-top: 193rem;
+}
+
+.NoVehicles_title_71 {
+    color: #fefeec;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10rem;
+}
+
+.mediaMedium .NoVehicles_title_71 {
+    color: #fefeec;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 12rem;
+}
+
+.NoVehicles_subtitle_92 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.mediaMedium .NoVehicles_subtitle_92 {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}

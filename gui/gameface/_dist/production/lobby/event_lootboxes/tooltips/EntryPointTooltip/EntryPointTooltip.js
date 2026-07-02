@@ -100,7 +100,7 @@
                             var E = A[F];
                             if ('number' == typeof E) e[F] = u[E];
                             else {
-                                for (var t = 0; void 0 === u[E[t]] && t + 1 < E.length; ) t++;
+                                for (var t = 0; void 0 === u[E[t]] && t + 1 < E.length;) t++;
                                 e[F] = u[E[t]];
                             }
                             return e;
@@ -175,7 +175,7 @@
                                 (function (u) {
                                     const e = [s(u)];
                                     let F = 0;
-                                    for (; F < e.length; ) {
+                                    for (; F < e.length;) {
                                         const u = e[F];
                                         if ('string' == typeof u) {
                                             const A = c(/\{(.*)Open\}(.*?)\{\1Close\}/, { tag: 1 }).exec(u);
@@ -194,7 +194,7 @@
                                                             )
                                                         ),
                                                     );
-                                                for (; t < E.length; ) (E.splice(t, 0, ...n), (t += n.length + 1));
+                                                for (; t < E.length;) (E.splice(t, 0, ...n), (t += n.length + 1));
                                                 ('' === E[0] && E.splice(0, 1), e.splice(F, 1, ...E));
                                             } else if (u.substr(0, u.length - 1).includes(' ')) {
                                                 const A = u

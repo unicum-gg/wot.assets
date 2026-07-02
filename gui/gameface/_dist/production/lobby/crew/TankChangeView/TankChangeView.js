@@ -490,9 +490,13 @@
                         if (u.mediumWidth && g) return (0, a.H)(t, u, D);
                         if (u.smallWidth && A) return (0, a.H)(t, u, D);
                         if (u.extraSmallWidth && p) return (0, a.H)(t, u, D);
-                        if (
-                            !(u.extraLargeWidth || u.largeWidth || u.mediumWidth || u.smallWidth || u.extraSmallWidth)
-                        ) {
+                        if (!(
+                            u.extraLargeWidth ||
+                            u.largeWidth ||
+                            u.mediumWidth ||
+                            u.smallWidth ||
+                            u.extraSmallWidth
+                        )) {
                             if (u.extraLargeHeight && C) return t;
                             if (u.largeHeight && F) return t;
                             if (u.mediumHeight && h) return t;
@@ -1404,7 +1408,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, u = a(s.keys()); !(e = u()).done; ) {
+                            for (var e, u = a(s.keys()); !(e = u()).done;) {
                                 i(e.value, t);
                             }
                         },
@@ -1709,27 +1713,28 @@
                         addPreloadTexture: () => s,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => f,
+                        displayStatusIs: () => w,
                         events: () => r.U,
-                        extraSize: () => w,
-                        forceTriggerMouseMove: () => D,
+                        extraSize: () => y,
+                        forceTriggerMouseMove: () => B,
                         freezeTextureBeforeResize: () => g,
                         getBrowserTexturePath: () => l,
-                        getDisplayStatus: () => B,
+                        getDisplayStatus: () => f,
                         getScale: () => A,
                         getSize: () => d,
                         getViewGlobalPosition: () => E,
-                        isEventHandled: () => v,
+                        isClientAccessible: () => b,
+                        isEventHandled: () => D,
                         isFocused: () => h,
                         pxToRem: () => p,
                         remToPx: () => C,
                         resize: () => _,
                         sendEvent: () => o.qP,
                         setAnimateWindow: () => F,
-                        setEventHandled: () => b,
+                        setEventHandled: () => v,
                         setInputPaddingsRem: () => i,
                         setSidePaddingsRem: () => m,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => k,
                     }));
                 var n = u(3722),
                     a = u(6112),
@@ -1779,22 +1784,25 @@
                     return viewEnv.isFocused();
                 }
                 function b() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function v() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function D() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function B() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const f = Object.keys(a.W).reduce(
+                const w = Object.keys(a.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
-                    w = {
+                    y = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -1802,7 +1810,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    y = Promise.all([
+                    k = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : r.U.onDomBuilt(e);
                         }),
@@ -2232,8 +2240,7 @@
                             ? `${e}`
                             : (function (e) {
                                   let t = '';
-                                  for (let u = a.length - 1; u >= 0; u--)
-                                      for (; e >= a[u]; ) ((t += n[u]), (e -= a[u]));
+                                  for (let u = a.length - 1; u >= 0; u--) for (; e >= a[u];) ((t += n[u]), (e -= a[u]));
                                   return t;
                               })(e);
             },
@@ -3384,7 +3391,7 @@
                             t(e).delete(u);
                         },
                         a = (e, ...u) => {
-                            for (var n, a = Fe(t(e).values()); !(n = a()).done; ) {
+                            for (var n, a = Fe(t(e).values()); !(n = a()).done;) {
                                 (0, n.value)(...u);
                             }
                         };
@@ -6219,7 +6226,7 @@
                         (this._observers.set(e, e),
                             1 === this._observers.size &&
                                 (this._intervalID = window.setInterval(() => {
-                                    for (var e, t = Jt(this._observers.values()); !(e = t()).done; ) {
+                                    for (var e, t = Jt(this._observers.values()); !(e = t()).done;) {
                                         (0, e.value)();
                                     }
                                 }, 5e3)));
@@ -6426,7 +6433,7 @@
                                         r = a > 1 ? 16 : 24;
                                     let o = 2,
                                         s = r;
-                                    for (; (u - (r + o)) / (s + o) < Math.floor((e - 1) / a); ) o > 0 ? o-- : s--;
+                                    for (; (u - (r + o)) / (s + o) < Math.floor((e - 1) / a);) o > 0 ? o-- : s--;
                                     return (
                                         (n = Math.min(n, 1 + Math.floor((u - r) / (s + o)))),
                                         s !== r && (o = s - r),

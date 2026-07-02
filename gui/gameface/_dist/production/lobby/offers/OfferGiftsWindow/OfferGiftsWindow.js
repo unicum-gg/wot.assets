@@ -664,7 +664,7 @@
                                             : u.ownerDocument.activeElement;
                                     if (o) {
                                         if ('IFRAME' === o.tagName) o = o.contentDocument.activeElement;
-                                        else for (; o.shadowRoot; ) o = o.shadowRoot.activeElement;
+                                        else for (; o.shadowRoot;) o = o.shadowRoot.activeElement;
                                         if (
                                             i((r = o), 'input,[contenteditable]') ||
                                             i(r, 'select,[contenteditable]') ||
@@ -755,7 +755,7 @@
                                     !(function (u, t, r) {
                                         if (!C.isWebKit && n.querySelector('select')) return !0;
                                         if (!n.contains(u)) return !1;
-                                        for (var i = u; i && i !== n; ) {
+                                        for (var i = u; i && i !== n;) {
                                             if (i.classList.contains(s.consuming)) return !0;
                                             var o = e(i);
                                             if (
@@ -865,7 +865,7 @@
                                     if (
                                         (function (u, t, r) {
                                             if (!n.contains(u)) return !1;
-                                            for (var i = u; i && i !== n; ) {
+                                            for (var i = u; i && i !== n;) {
                                                 if (i.classList.contains(s.consuming)) return !0;
                                                 var o = e(i);
                                                 if (
@@ -1332,7 +1332,7 @@
             },
             67: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => j });
+                t.d(e, { O: () => K });
                 var n = {};
                 (t.r(n), t.d(n, { mouse: () => E, onResize: () => s }));
                 var r = {};
@@ -1363,27 +1363,28 @@
                         addPreloadTexture: () => w,
                         children: () => i,
                         displayStatus: () => m,
-                        displayStatusIs: () => U,
+                        displayStatusIs: () => $,
                         events: () => B,
-                        extraSize: () => $,
-                        forceTriggerMouseMove: () => X,
+                        extraSize: () => z,
+                        forceTriggerMouseMove: () => G,
                         freezeTextureBeforeResize: () => H,
                         getBrowserTexturePath: () => x,
-                        getDisplayStatus: () => G,
+                        getDisplayStatus: () => U,
                         getScale: () => R,
                         getSize: () => T,
                         getViewGlobalPosition: () => k,
-                        isEventHandled: () => I,
+                        isClientAccessible: () => Y,
+                        isEventHandled: () => X,
                         isFocused: () => N,
                         pxToRem: () => W,
                         remToPx: () => P,
                         resize: () => M,
                         sendEvent: () => p,
                         setAnimateWindow: () => O,
-                        setEventHandled: () => Y,
+                        setEventHandled: () => I,
                         setInputPaddingsRem: () => L,
                         setSidePaddingsRem: () => S,
-                        whenTutorialReady: () => z,
+                        whenTutorialReady: () => j,
                     }));
                 const s = a('clientResized'),
                     c = { down: a('mousedown'), up: a('mouseup'), move: a('mousemove') };
@@ -1581,19 +1582,22 @@
                     return viewEnv.isFocused();
                 }
                 function Y() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function I() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function X() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function G() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function U() {
                     return viewEnv.getShowingStatus();
                 }
-                const U = Object.keys(m).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === m[e]), u), {}),
-                    $ = {
+                const $ = Object.keys(m).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === m[e]), u), {}),
+                    z = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -1601,13 +1605,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    z = Promise.all([
+                    j = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : B.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    j = { view: o, client: r };
+                    K = { view: o, client: r };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -2173,9 +2177,13 @@
                         if (t.mediumWidth && A) return o(e, t, v);
                         if (t.smallWidth && D) return o(e, t, v);
                         if (t.extraSmallWidth && m) return o(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && g) return e;
@@ -2976,7 +2984,7 @@
                                     let n = 0,
                                         r = t - 1,
                                         i = !1;
-                                    for (; r - n > 1; ) {
+                                    for (; r - n > 1;) {
                                         const t = n + Math.floor(0.5 * (r - n + 1));
                                         ((i = pu(u[t], e)), i ? (r = t) : (n = t));
                                     }
@@ -3113,7 +3121,7 @@
                 function Hu(u) {
                     const e = [hu(u)];
                     let t = 0;
-                    for (; t < e.length; ) {
+                    for (; t < e.length;) {
                         const u = e[t];
                         if ('string' == typeof u) {
                             const n = Tu(/\{(.*)Open\}(.*?)\{\1Close\}/, { tag: 1 }).exec(u);
@@ -3132,7 +3140,7 @@
                                             )
                                         ),
                                     );
-                                for (; o < r.length; ) (r.splice(o, 0, ...a), (o += a.length + 1));
+                                for (; o < r.length;) (r.splice(o, 0, ...a), (o += a.length + 1));
                                 ('' === r[0] && r.splice(0, 1), e.splice(t, 1, ...r));
                             } else if (u.substr(0, u.length - 1).includes(' ')) {
                                 const n = u.split(' ').map((u, e, t) => (t.length - 1 === e ? u : u + ' '));

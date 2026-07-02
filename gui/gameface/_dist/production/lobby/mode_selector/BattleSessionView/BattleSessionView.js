@@ -155,27 +155,28 @@
                         addPreloadTexture: () => o,
                         children: () => n,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => b,
+                        displayStatusIs: () => f,
                         events: () => i.U,
-                        extraSize: () => f,
-                        forceTriggerMouseMove: () => v,
+                        extraSize: () => x,
+                        forceTriggerMouseMove: () => b,
                         freezeTextureBeforeResize: () => D,
                         getBrowserTexturePath: () => E,
                         getDisplayStatus: () => p,
                         getScale: () => B,
                         getSize: () => l,
                         getViewGlobalPosition: () => c,
-                        isEventHandled: () => w,
+                        isClientAccessible: () => g,
+                        isEventHandled: () => v,
                         isFocused: () => h,
                         pxToRem: () => d,
                         remToPx: () => C,
                         resize: () => _,
                         sendEvent: () => r.qP,
                         setAnimateWindow: () => m,
-                        setEventHandled: () => g,
+                        setEventHandled: () => w,
                         setInputPaddingsRem: () => s,
                         setSidePaddingsRem: () => F,
-                        whenTutorialReady: () => x,
+                        whenTutorialReady: () => T,
                     }));
                 var n = t(3722),
                     a = t(6112),
@@ -225,22 +226,25 @@
                     return viewEnv.isFocused();
                 }
                 function g() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function w() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function v() {
+                    return viewEnv.isEventHandled();
+                }
+                function b() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function p() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = Object.keys(a.W).reduce(
+                const f = Object.keys(a.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === a.W[e]), u),
                         {},
                     ),
-                    f = {
+                    x = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -248,7 +252,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    x = Promise.all([
+                    T = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : i.U.onDomBuilt(u);
                         }),
@@ -650,7 +654,7 @@
                     };
                 var w = t(7572);
                 const v = a.instance,
-                    p = {
+                    b = {
                         DataTracker: i.Z,
                         ViewModel: w.Z,
                         ViewEventType: s,
@@ -733,7 +737,7 @@
                         SystemLocale: r,
                         UserLocale: o,
                     };
-                window.ViewEnvHelper = p;
+                window.ViewEnvHelper = b;
             },
             3374: (u, e, t) => {
                 var n = t(6179),
@@ -868,9 +872,13 @@
                         if (t.mediumWidth && _) return i(e, t, v);
                         if (t.smallWidth && B) return i(e, t, v);
                         if (t.extraSmallWidth && d) return i(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -926,7 +934,7 @@
                 function v(u) {
                     engine.call('PlaySound', u);
                 }
-                const p = {
+                const b = {
                     base: 'CButton_base_40',
                     base__main: 'CButton_base__main_42',
                     base__primary: 'CButton_base__primary_7f',
@@ -949,7 +957,7 @@
                     base__highlightActive: 'CButton_base__highlightActive_b2',
                     content: 'CButton_content_cc',
                 };
-                let b, f;
+                let p, f;
                 (!(function (u) {
                     ((u.main = 'main'),
                         (u.primary = 'primary'),
@@ -957,7 +965,7 @@
                         (u.primaryRed = 'primaryRed'),
                         (u.secondary = 'secondary'),
                         (u.ghost = 'ghost'));
-                })(b || (b = {})),
+                })(p || (p = {})),
                     (function (u) {
                         ((u.extraSmall = 'extraSmall'), (u.small = 'small'), (u.medium = 'medium'));
                     })(f || (f = {})));
@@ -1033,18 +1041,18 @@
                             [r, c],
                         ),
                         W = w()(
-                            p.base,
-                            p[`base__${i}`],
+                            b.base,
+                            b[`base__${i}`],
                             {
-                                [p.base__disabled]: r,
-                                [p[`base__${e}`]]: e,
-                                [p.base__focus]: C,
-                                [p.base__highlightActive]: g,
-                                [p.base__firstHover]: T,
+                                [b.base__disabled]: r,
+                                [b[`base__${e}`]]: e,
+                                [b.base__focus]: C,
+                                [b.base__highlightActive]: g,
+                                [b.base__firstHover]: T,
                             },
                             o,
                         ),
-                        U = w()(p.state, p.state__default);
+                        U = w()(b.state, b.state__default);
                     return (
                         (0, n.useEffect)(
                             () => (
@@ -1070,29 +1078,29 @@
                                 onMouseLeave: H,
                                 onClick: y,
                             },
-                            i !== b.ghost &&
+                            i !== p.ghost &&
                                 a().createElement(
                                     a().Fragment,
                                     null,
-                                    a().createElement('div', { className: p.back }),
-                                    a().createElement('span', { className: p.texture }),
+                                    a().createElement('div', { className: b.back }),
+                                    a().createElement('span', { className: b.texture }),
                                 ),
                             a().createElement(
                                 'span',
                                 { className: U },
-                                a().createElement('span', { className: p.stateDisabled }),
-                                a().createElement('span', { className: p.stateHighlightHover }),
-                                a().createElement('span', { className: p.stateHighlightActive }),
+                                a().createElement('span', { className: b.stateDisabled }),
+                                a().createElement('span', { className: b.stateHighlightHover }),
+                                a().createElement('span', { className: b.stateHighlightActive }),
                             ),
                             a().createElement(
                                 'span',
-                                { className: p.content, lang: R.strings.settings.LANGUAGE_CODE() },
+                                { className: b.content, lang: R.strings.settings.LANGUAGE_CODE() },
                                 u,
                             ),
                         )
                     );
                 };
-                x.defaultProps = { type: b.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
+                x.defaultProps = { type: p.primary, isFocused: !1, soundHover: 'highlight', soundClick: 'play' };
                 const T = (0, n.memo)(x),
                     S = {
                         base: 'TextButton_base_b6',

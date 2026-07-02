@@ -1420,7 +1420,7 @@
                     Au = (u, e, t, n) => {
                         let E = e.exec(u),
                             A = 0;
-                        for (; E; ) (A !== E.index && t(u.slice(A, E.index)), n(E), (A = e.lastIndex), (E = e.exec(u)));
+                        for (; E;) (A !== E.index && t(u.slice(A, E.index)), n(E), (A = e.lastIndex), (E = e.exec(u)));
                         A !== u.length && t(u.slice(A));
                     },
                     Fu = (u) => {
@@ -1429,7 +1429,7 @@
                         if (!t) return [u];
                         const n = [];
                         let E = 0;
-                        for (; t; ) (n.push(u.slice(E, e.lastIndex)), (E = e.lastIndex), (t = e.exec(u)));
+                        for (; t;) (n.push(u.slice(E, e.lastIndex)), (E = e.lastIndex), (t = e.exec(u)));
                         return (E !== u.length && n.push(u.slice(E)), n);
                     },
                     ru = (u, e = '') => {
@@ -1652,7 +1652,7 @@
                                                     D = ((u, e) => {
                                                         let t = 0,
                                                             n = u.length - 1;
-                                                        for (; n - t >= 0; ) {
+                                                        for (; n - t >= 0;) {
                                                             const E = t + Math.ceil(0.5 * (n - t));
                                                             au(u[E], e) ? (n = E - 1) : (t = E + 1);
                                                         }

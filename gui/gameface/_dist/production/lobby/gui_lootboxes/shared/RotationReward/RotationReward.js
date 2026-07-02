@@ -98,15 +98,13 @@
                             if (i.mediumWidth && g) return (0, a.H)(t, i, T);
                             if (i.smallWidth && E) return (0, a.H)(t, i, T);
                             if (i.extraSmallWidth && w) return (0, a.H)(t, i, T);
-                            if (
-                                !(
-                                    i.extraLargeWidth ||
-                                    i.largeWidth ||
-                                    i.mediumWidth ||
-                                    i.smallWidth ||
-                                    i.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                i.extraLargeWidth ||
+                                i.largeWidth ||
+                                i.mediumWidth ||
+                                i.smallWidth ||
+                                i.extraSmallWidth
+                            )) {
                                 if (i.extraLargeHeight && p) return t;
                                 if (i.largeHeight && v) return t;
                                 if (i.mediumHeight && b) return t;
@@ -234,7 +232,7 @@
                 (i(6483), i(6179), i(3415), i(2862), i(729), i(1609));
             },
             2862: (e, t, i) => {
-                let r, a, n, o, s, l, d;
+                let r, a, n, o, s, l, d, _, u;
                 (i.d(t, { E4: () => r }),
                     (function (e) {
                         ((e.Items = 'items'),
@@ -291,14 +289,15 @@
                             (e.VehicleSelect = 'vehicleSelect'),
                             (e.StyleProgress = 'styleProgress'),
                             (e.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (e.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (e.LootBoxToken = 'lootBoxToken'),
-                            (e.GoldenTicket = 'birthday2025_golden_ticket'),
-                            (e.PostStamp = 'giftsystem_4_stamp'),
+                            (e.PostStamp = 'giftsystem_5_stamp'),
                             (e.Quests = 'quests'),
                             (e.ArmoryCoin = 'armory_coin'),
                             (e.PremiumPlusUniversal = 'premium_plus_universal'),
-                            (e.DogTagType = 'dogTagComponents'));
+                            (e.DogTagType = 'dogTagComponents'),
+                            (e.GoldenTicket = 'goldenticket'),
+                            (e.LbStyleProgress = 'lbStyleProgress'),
+                            (e.RewardsSlots = 'rewardsSlots'));
                     })(r || (r = {})),
                     (function (e) {
                         ((e.Gold = 'gold'),
@@ -332,6 +331,7 @@
                             (e.OneOf = 'oneof'),
                             (e.PremiumUniversal = 'premium_universal'),
                             (e.BadgesGroup = 'badgesGroup'),
+                            (e.Entitlements = 'entitlements'),
                             (e.RankedDailyBattles = 'rankedDailyBattles'),
                             (e.RankedBonusBattles = 'rankedBonusBattles'),
                             (e.BattlePassPoints = 'battlePassPoints'),
@@ -390,7 +390,13 @@
                             (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(d || (d = {})));
+                    })(d || (d = {})),
+                    (function (e) {
+                        ((e.Small = '400x300'), (e.Big = '600x450'));
+                    })(_ || (_ = {})),
+                    (function (e) {
+                        e.ProgressionStyle = 'progressionStyle';
+                    })(u || (u = {})));
             },
             729: (e, t, i) => {
                 (i(2372), i(6179));
@@ -431,9 +437,10 @@
                     r.E4.CosmicLootboxCommon,
                     r.E4.CosmicLootboxSilver,
                     r.E4.SelectableBonus,
-                    r.E4.GoldenTicket,
                     r.E4.PostStamp,
                     r.E4.PremiumPlusUniversal,
+                    r.E4.GoldenTicket,
+                    r.E4.RewardsSlots,
                     r.E4.Gold,
                     r.E4.Credits,
                     r.E4.Crystal,
@@ -620,27 +627,28 @@
                         addPreloadTexture: () => s,
                         children: () => r,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => x,
+                        displayStatusIs: () => O,
                         events: () => n.U,
-                        extraSize: () => O,
-                        forceTriggerMouseMove: () => T,
+                        extraSize: () => R,
+                        forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => g,
                         getBrowserTexturePath: () => d,
-                        getDisplayStatus: () => f,
+                        getDisplayStatus: () => x,
                         getScale: () => E,
                         getSize: () => c,
                         getViewGlobalPosition: () => h,
-                        isEventHandled: () => P,
+                        isClientAccessible: () => S,
+                        isEventHandled: () => T,
                         isFocused: () => b,
                         pxToRem: () => w,
                         remToPx: () => p,
                         resize: () => m,
                         sendEvent: () => o.qP,
                         setAnimateWindow: () => v,
-                        setEventHandled: () => S,
+                        setEventHandled: () => P,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => R,
+                        whenTutorialReady: () => L,
                     }));
                 var r = i(3722),
                     a = i(6112),
@@ -690,22 +698,25 @@
                     return viewEnv.isFocused();
                 }
                 function S() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function P() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function T() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function f() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function x() {
                     return viewEnv.getShowingStatus();
                 }
-                const x = Object.keys(a.W).reduce(
+                const O = Object.keys(a.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
-                    O = {
+                    R = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -713,7 +724,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    R = Promise.all([
+                    L = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : n.U.onDomBuilt(e);
                         }),
@@ -1374,6 +1385,7 @@
                 Object.defineProperty(e, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(e, '__esModule', { value: !0 }));
         }),
+        (__webpack_require__.j = 98),
         (() => {
             var e = { 98: 0 };
             __webpack_require__.O.j = (t) => 0 === e[t];

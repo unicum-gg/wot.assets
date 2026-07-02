@@ -58,7 +58,7 @@
                             : (0, E.WU)(R.strings.common.duration.minutes(), { minutes: u.minutes || 1 });
             },
             67: (u, e, A) => {
-                A.d(e, { O: () => Y });
+                A.d(e, { O: () => j });
                 var E = {};
                 (A.r(E), A.d(E, { mouse: () => i, onResize: () => a }));
                 var F = {};
@@ -89,27 +89,28 @@
                         addPreloadTexture: () => f,
                         children: () => t,
                         displayStatus: () => l,
-                        displayStatusIs: () => G,
+                        displayStatusIs: () => K,
                         events: () => d,
-                        extraSize: () => K,
-                        forceTriggerMouseMove: () => z,
+                        extraSize: () => V,
+                        forceTriggerMouseMove: () => q,
                         freezeTextureBeforeResize: () => M,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => q,
+                        getDisplayStatus: () => G,
                         getScale: () => L,
                         getSize: () => P,
                         getViewGlobalPosition: () => R,
-                        isEventHandled: () => W,
+                        isClientAccessible: () => H,
+                        isEventHandled: () => z,
                         isFocused: () => I,
                         pxToRem: () => S,
                         remToPx: () => N,
                         resize: () => k,
                         sendEvent: () => w,
                         setAnimateWindow: () => U,
-                        setEventHandled: () => H,
+                        setEventHandled: () => W,
                         setInputPaddingsRem: () => y,
                         setSidePaddingsRem: () => x,
-                        whenTutorialReady: () => V,
+                        whenTutorialReady: () => Y,
                     }));
                 const a = D('clientResized'),
                     o = { down: D('mousedown'), up: D('mouseup'), move: D('mousemove') };
@@ -307,19 +308,22 @@
                     return viewEnv.isFocused();
                 }
                 function H() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function W() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function z() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function q() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function G() {
                     return viewEnv.getShowingStatus();
                 }
-                const G = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
-                    K = {
+                const K = Object.keys(l).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === l[e]), u), {}),
+                    V = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -327,13 +331,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    V = Promise.all([
+                    Y = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : d.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    Y = { view: n, client: F };
+                    j = { view: n, client: F };
             },
             344: (u, e, A) => {
                 A.d(e, { au: () => F });

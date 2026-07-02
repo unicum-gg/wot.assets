@@ -123,7 +123,7 @@
             },
             153: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => N });
+                t.d(e, { O: () => W });
                 var r = {};
                 (t.r(r), t.d(r, { getBgUrl: () => E, getTextureUrl: () => i }));
                 var a = {};
@@ -133,27 +133,28 @@
                         addPreloadTexture: () => m,
                         children: () => r,
                         displayStatus: () => o,
-                        displayStatusIs: () => I,
+                        displayStatusIs: () => P,
                         events: () => F,
-                        extraSize: () => P,
-                        forceTriggerMouseMove: () => O,
+                        extraSize: () => H,
+                        forceTriggerMouseMove: () => R,
                         freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => g,
-                        getDisplayStatus: () => R,
+                        getDisplayStatus: () => I,
                         getScale: () => x,
                         getSize: () => w,
                         getViewGlobalPosition: () => b,
-                        isEventHandled: () => y,
+                        isClientAccessible: () => k,
+                        isEventHandled: () => O,
                         isFocused: () => M,
                         pxToRem: () => L,
                         remToPx: () => T,
                         resize: () => f,
                         sendEvent: () => C,
                         setAnimateWindow: () => S,
-                        setEventHandled: () => k,
+                        setEventHandled: () => y,
                         setInputPaddingsRem: () => _,
                         setSidePaddingsRem: () => v,
-                        whenTutorialReady: () => H,
+                        whenTutorialReady: () => N,
                     }));
                 var n = t(596);
                 function i(u, e, t = 1) {
@@ -276,19 +277,22 @@
                     return viewEnv.isFocused();
                 }
                 function k() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function y() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function O() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function R() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function I() {
                     return viewEnv.getShowingStatus();
                 }
-                const I = Object.keys(o).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === o[e]), u), {}),
-                    P = {
+                const P = Object.keys(o).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === o[e]), u), {}),
+                    H = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -296,13 +300,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    H = Promise.all([
+                    N = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : F.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    N = { view: a, client: n };
+                    W = { view: a, client: n };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -867,9 +871,13 @@
                         if (t.mediumWidth && D) return n(e, t, w);
                         if (t.smallWidth && d) return n(e, t, w);
                         if (t.extraSmallWidth && C) return n(e, t, w);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && m) return e;
                             if (t.largeHeight && _) return e;
                             if (t.mediumHeight && g) return e;
@@ -1166,7 +1174,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = $(a.keys()); !(u = t()).done; ) n(u.value, e);
+                                                        for (var u, t = $(a.keys()); !(u = t()).done;) n(u.value, e);
                                                     },
                                                     unsubscribe: n,
                                                 };
@@ -1647,7 +1655,7 @@
                         let E = du.exec(u),
                             o = u,
                             A = 0;
-                        for (; E; ) {
+                        for (; E;) {
                             const t = E[0],
                                 r = Cu.exec(t),
                                 F = mu.exec(t),

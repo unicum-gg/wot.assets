@@ -438,9 +438,13 @@
                         if (o.mediumWidth && g) return (0, n.H)(t, o, F);
                         if (o.smallWidth && C) return (0, n.H)(t, o, F);
                         if (o.extraSmallWidth && E) return (0, n.H)(t, o, F);
-                        if (
-                            !(o.extraLargeWidth || o.largeWidth || o.mediumWidth || o.smallWidth || o.extraSmallWidth)
-                        ) {
+                        if (!(
+                            o.extraLargeWidth ||
+                            o.largeWidth ||
+                            o.mediumWidth ||
+                            o.smallWidth ||
+                            o.extraSmallWidth
+                        )) {
                             if (o.extraLargeHeight && v) return t;
                             if (o.largeHeight && b) return t;
                             if (o.mediumHeight && A) return t;
@@ -2187,7 +2191,7 @@
                                             t(e).delete(o);
                                         },
                                         n = (e, ...o) => {
-                                            for (var a, n = s(t(e).values()); !(a = n()).done; ) (0, a.value)(...o);
+                                            for (var a, n = s(t(e).values()); !(a = n()).done;) (0, a.value)(...o);
                                         };
                                     return (0, u.useMemo)(() => ({ on: o, off: a, trigger: n }), []);
                                 })(),
@@ -3179,7 +3183,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, o = n(s.keys()); !(e = o()).done; ) {
+                            for (var e, o = n(s.keys()); !(e = o()).done;) {
                                 r(e.value, t);
                             }
                         },
@@ -12276,7 +12280,7 @@
                     St = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function Rt(e) {
                     let t = '';
-                    for (let o = St.length - 1; o >= 0; o--) for (; e >= St[o]; ) ((t += xt[o]), (e -= St[o]));
+                    for (let o = St.length - 1; o >= 0; o--) for (; e >= St[o];) ((t += xt[o]), (e -= St[o]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

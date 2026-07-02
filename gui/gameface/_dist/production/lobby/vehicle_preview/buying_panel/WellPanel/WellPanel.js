@@ -181,25 +181,26 @@
                         displayStatus: () => A.W,
                         displayStatusIs: () => f,
                         events: () => F.U,
-                        extraSize: () => b,
-                        forceTriggerMouseMove: () => v,
+                        extraSize: () => x,
+                        forceTriggerMouseMove: () => p,
                         freezeTextureBeforeResize: () => o,
                         getBrowserTexturePath: () => i,
-                        getDisplayStatus: () => p,
+                        getDisplayStatus: () => b,
                         getScale: () => d,
                         getSize: () => s,
                         getViewGlobalPosition: () => l,
-                        isEventHandled: () => w,
+                        isClientAccessible: () => g,
+                        isEventHandled: () => v,
                         isFocused: () => h,
                         pxToRem: () => c,
                         remToPx: () => _,
                         resize: () => C,
                         sendEvent: () => r.qP,
                         setAnimateWindow: () => m,
-                        setEventHandled: () => g,
+                        setEventHandled: () => w,
                         setInputPaddingsRem: () => D,
                         setSidePaddingsRem: () => B,
-                        whenTutorialReady: () => x,
+                        whenTutorialReady: () => L,
                     }));
                 var E = t(722),
                     A = t(112),
@@ -249,22 +250,25 @@
                     return viewEnv.isFocused();
                 }
                 function g() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function w() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function v() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function p() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function b() {
                     return viewEnv.getShowingStatus();
                 }
                 const f = Object.keys(A.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === A.W[e]), u),
                         {},
                     ),
-                    b = {
+                    x = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -272,7 +276,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    x = Promise.all([
+                    L = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : F.U.onDomBuilt(u);
                         }),
@@ -674,7 +678,7 @@
                     };
                 var v = t(572);
                 const p = A.instance,
-                    f = {
+                    b = {
                         DataTracker: F.Z,
                         ViewModel: v.Z,
                         ViewEventType: D,
@@ -757,7 +761,7 @@
                         SystemLocale: r,
                         UserLocale: a,
                     };
-                window.ViewEnvHelper = f;
+                window.ViewEnvHelper = b;
             },
             478: (u, e, t) => {
                 'use strict';
@@ -893,9 +897,13 @@
                         if (t.mediumWidth && C) return F(e, t, v);
                         if (t.smallWidth && d) return F(e, t, v);
                         if (t.extraSmallWidth && c) return F(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -948,7 +956,7 @@
                     h = t.n(m),
                     g = t(926),
                     w = t.n(g);
-                let v, p, f;
+                let v, p, b;
                 (!(function (u) {
                     ((u[(u.ExtraSmall = a.extraSmall.width)] = 'ExtraSmall'),
                         (u[(u.Small = a.small.width)] = 'Small'),
@@ -969,8 +977,8 @@
                             (u[(u.Medium = a.medium.height)] = 'Medium'),
                             (u[(u.Large = a.large.height)] = 'Large'),
                             (u[(u.ExtraLarge = a.extraLarge.height)] = 'ExtraLarge'));
-                    })(f || (f = {})));
-                const b = () => {
+                    })(b || (b = {})));
+                const f = () => {
                         const u = (0, E.useContext)(l),
                             e = u.width,
                             t = u.height,
@@ -1009,17 +1017,17 @@
                             r = ((u) => {
                                 switch (!0) {
                                     case u.extraLargeHeight:
-                                        return f.ExtraLarge;
+                                        return b.ExtraLarge;
                                     case u.largeHeight:
-                                        return f.Large;
+                                        return b.Large;
                                     case u.mediumHeight:
-                                        return f.Medium;
+                                        return b.Medium;
                                     case u.smallHeight:
-                                        return f.Small;
+                                        return b.Small;
                                     case u.extraSmallHeight:
-                                        return f.ExtraSmall;
+                                        return b.ExtraSmall;
                                     default:
-                                        return (console.error('Unreachable media context resolution'), f.ExtraSmall);
+                                        return (console.error('Unreachable media context resolution'), b.ExtraSmall);
                                 }
                             })(u);
                         return { mediaSize: A, mediaWidth: F, mediaHeight: r, remScreenWidth: e, remScreenHeight: t };
@@ -1047,11 +1055,11 @@
                         [p.ExtraLarge]: `${w().SMALL_WIDTH} ${w().MEDIUM_WIDTH} ${w().LARGE_WIDTH} ${w().EXTRA_LARGE_WIDTH}`,
                     },
                     M = {
-                        [f.ExtraSmall]: '',
-                        [f.Small]: w().SMALL_HEIGHT,
-                        [f.Medium]: `${w().SMALL_HEIGHT} ${w().MEDIUM_HEIGHT}`,
-                        [f.Large]: `${w().SMALL_HEIGHT} ${w().MEDIUM_HEIGHT} ${w().LARGE_HEIGHT}`,
-                        [f.ExtraLarge]: `${w().SMALL_HEIGHT} ${w().MEDIUM_HEIGHT} ${w().LARGE_HEIGHT} ${w().EXTRA_LARGE_HEIGHT}`,
+                        [b.ExtraSmall]: '',
+                        [b.Small]: w().SMALL_HEIGHT,
+                        [b.Medium]: `${w().SMALL_HEIGHT} ${w().MEDIUM_HEIGHT}`,
+                        [b.Large]: `${w().SMALL_HEIGHT} ${w().MEDIUM_HEIGHT} ${w().LARGE_HEIGHT}`,
+                        [b.ExtraLarge]: `${w().SMALL_HEIGHT} ${w().MEDIUM_HEIGHT} ${w().LARGE_HEIGHT} ${w().EXTRA_LARGE_HEIGHT}`,
                     },
                     T = {
                         [v.ExtraSmall]: '',
@@ -1072,7 +1080,7 @@
                                 for (E = 0; E < F.length; E++) ((t = F[E]), e.indexOf(t) >= 0 || (A[t] = u[t]));
                                 return A;
                             })(u, x);
-                        const F = b(),
+                        const F = f(),
                             r = F.mediaWidth,
                             a = F.mediaHeight,
                             D = F.mediaSize;
@@ -1358,8 +1366,8 @@
                         w = g[0],
                         v = g[1],
                         p = (0, E.useState)(!1),
-                        f = p[0],
-                        b = p[1],
+                        b = p[0],
+                        f = p[1],
                         x = (0, E.useCallback)(() => {
                             r || (d.current && (d.current.focus(), m(!0)));
                         }, [r]),
@@ -1377,7 +1385,7 @@
                         ),
                         M = (0, E.useCallback)(
                             (u) => {
-                                r || (null !== D && Fu(D), n && n(u), b(!0));
+                                r || (null !== D && Fu(D), n && n(u), f(!0));
                             },
                             [r, D, n],
                         ),
@@ -1413,7 +1421,7 @@
                                 [ru[`base__${e}`]]: e,
                                 [ru.base__focus]: _,
                                 [ru.base__highlightActive]: w,
-                                [ru.base__firstHover]: f,
+                                [ru.base__firstHover]: b,
                             },
                             a,
                         ),

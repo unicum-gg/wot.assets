@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (u, e, t) => {
-                t.d(e, { O: () => G });
+                t.d(e, { O: () => Y });
                 var n = {};
                 (t.r(n), t.d(n, { mouse: () => s, onResize: () => A }));
                 var o = {};
@@ -33,27 +33,28 @@
                         addPreloadTexture: () => f,
                         children: () => r,
                         displayStatus: () => _,
-                        displayStatusIs: () => K,
+                        displayStatusIs: () => q,
                         events: () => C,
-                        extraSize: () => q,
-                        forceTriggerMouseMove: () => j,
+                        extraSize: () => z,
+                        forceTriggerMouseMove: () => W,
                         freezeTextureBeforeResize: () => S,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => W,
+                        getDisplayStatus: () => K,
                         getScale: () => N,
                         getSize: () => P,
                         getViewGlobalPosition: () => R,
-                        isEventHandled: () => H,
+                        isClientAccessible: () => V,
+                        isEventHandled: () => j,
                         isFocused: () => U,
                         pxToRem: () => x,
                         remToPx: () => L,
                         resize: () => M,
                         sendEvent: () => h,
                         setAnimateWindow: () => I,
-                        setEventHandled: () => V,
+                        setEventHandled: () => H,
                         setInputPaddingsRem: () => y,
                         setSidePaddingsRem: () => k,
-                        whenTutorialReady: () => z,
+                        whenTutorialReady: () => G,
                     }));
                 const A = a('clientResized'),
                     F = { down: a('mousedown'), up: a('mouseup'), move: a('mousemove') };
@@ -251,19 +252,22 @@
                     return viewEnv.isFocused();
                 }
                 function V() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function H() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function j() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function W() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function K() {
                     return viewEnv.getShowingStatus();
                 }
-                const K = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
-                    q = {
+                const q = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
+                    z = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -271,13 +275,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    z = Promise.all([
+                    G = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : C.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    G = { view: i, client: o };
+                    Y = { view: i, client: o };
             },
             521: (u, e, t) => {
                 let n, o;
@@ -1251,7 +1255,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = I(o.keys()); !(u = t()).done; ) r(u.value, e);
+                                                        for (var u, t = I(o.keys()); !(u = t()).done;) r(u.value, e);
                                                     },
                                                     unsubscribe: r,
                                                 };

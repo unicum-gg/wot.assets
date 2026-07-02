@@ -20,7 +20,7 @@
                     })(_ || (_ = {})));
             },
             67: (e, n, t) => {
-                t.d(n, { O: () => j });
+                t.d(n, { O: () => Y });
                 var r = {};
                 (t.r(r), t.d(r, { mouse: () => u, onResize: () => c }));
                 var i = {};
@@ -50,28 +50,29 @@
                         addModelObserver: () => L,
                         addPreloadTexture: () => P,
                         children: () => _,
-                        displayStatus: () => p,
-                        displayStatusIs: () => W,
-                        events: () => w,
-                        extraSize: () => G,
-                        forceTriggerMouseMove: () => z,
+                        displayStatus: () => b,
+                        displayStatusIs: () => G,
+                        events: () => p,
+                        extraSize: () => H,
+                        forceTriggerMouseMove: () => K,
                         freezeTextureBeforeResize: () => S,
                         getBrowserTexturePath: () => T,
-                        getDisplayStatus: () => K,
+                        getDisplayStatus: () => W,
                         getScale: () => D,
                         getSize: () => A,
                         getViewGlobalPosition: () => N,
-                        isEventHandled: () => V,
+                        isClientAccessible: () => q,
+                        isEventHandled: () => z,
                         isFocused: () => I,
                         pxToRem: () => F,
                         remToPx: () => U,
                         resize: () => x,
                         sendEvent: () => O,
                         setAnimateWindow: () => B,
-                        setEventHandled: () => q,
+                        setEventHandled: () => V,
                         setInputPaddingsRem: () => R,
                         setSidePaddingsRem: () => M,
-                        whenTutorialReady: () => H,
+                        whenTutorialReady: () => j,
                     }));
                 const c = o('clientResized'),
                     l = { down: o('mousedown'), up: o('mouseup'), move: o('mousemove') };
@@ -156,8 +157,8 @@
                 function m(e, n, t) {
                     return `url(${E(e, n, t)})`;
                 }
-                const p = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
-                    w = {
+                const b = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
+                    p = {
                         onTextureFrozen: o('self.onTextureFrozen'),
                         onTextureReady: o('self.onTextureReady'),
                         onDomBuilt: o('self.onDomBuilt'),
@@ -173,7 +174,7 @@
                             onRequestPosition: o('children.requestPosition'),
                         },
                     },
-                    b = ['args'];
+                    w = ['args'];
                 const h = 2,
                     y = 16,
                     f = 32,
@@ -190,7 +191,7 @@
                                         _ = Object.keys(e);
                                     for (r = 0; r < _.length; r++) ((t = _[r]), n.indexOf(t) >= 0 || (i[t] = e[t]));
                                     return i;
-                                })(n, b);
+                                })(n, w);
                             return void 0 !== i
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: t, type: e }, _, {
@@ -269,19 +270,22 @@
                     return viewEnv.isFocused();
                 }
                 function q() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function V() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function z() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function K() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function W() {
                     return viewEnv.getShowingStatus();
                 }
-                const W = Object.keys(p).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === p[n]), e), {}),
-                    G = {
+                const G = Object.keys(b).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === b[n]), e), {}),
+                    H = {
                         set: (e, n) => {
                             viewEnv.setExtraSizeRem(e, n);
                         },
@@ -289,13 +293,13 @@
                             viewEnv.getExtraSizeRem(e, n);
                         },
                     },
-                    H = Promise.all([
+                    j = Promise.all([
                         new Promise((e) => {
-                            window.isDomBuilt ? e() : w.onDomBuilt(e);
+                            window.isDomBuilt ? e() : p.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    j = { view: a, client: i };
+                    Y = { view: a, client: i };
             },
             521: (e, n, t) => {
                 let r, i;
@@ -482,7 +486,7 @@
                 const __WEBPACK_DEFAULT_EXPORT__ = ViewModel;
             },
             364: (e, n, t) => {
-                t.d(n, { B3: () => c, Z5: () => a, ry: () => w });
+                t.d(n, { B3: () => c, Z5: () => a, ry: () => p });
                 class r {
                     constructor() {
                         ((this.entries = []),
@@ -563,8 +567,8 @@
                     }
                     o.done ? n(s) : Promise.resolve(s).then(r, i);
                 }
-                const p = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
-                    w = (function () {
+                const b = (e) => ({ __Type: 'GFBoundingBox', x: e.x, y: e.y, width: e.width, height: e.height }),
+                    p = (function () {
                         var e,
                             n =
                                 ((e = function* () {
@@ -593,7 +597,7 @@
                             return n.apply(this, arguments);
                         };
                     })(),
-                    b = (e, n) => {
+                    w = (e, n) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== n) {
                             const i = n.args,
@@ -631,7 +635,7 @@
                         } else viewEnv.handleViewEvent({ __Type: t, type: e });
                         var r;
                     },
-                    h = () => b(s.CLOSE),
+                    h = () => w(s.CLOSE),
                     y = (e, n) => {
                         e.keyCode === v.n.ESCAPE && n();
                     };
@@ -645,12 +649,12 @@
                         RealFormatType: l,
                         TimeFormatType: u,
                         DateFormatType: d,
-                        makeGlobalBoundingBox: p,
-                        sendMoveEvent: (e) => b(s.MOVE, { isMouseEvent: !0, on: e }),
+                        makeGlobalBoundingBox: b,
+                        sendMoveEvent: (e) => w(s.MOVE, { isMouseEvent: !0, on: e }),
                         sendCloseEvent: h,
-                        sendClosePopOverEvent: () => b(s.POP_OVER, { on: !1 }),
+                        sendClosePopOverEvent: () => w(s.POP_OVER, { on: !1 }),
                         sendShowContextMenuEvent: (e, n, t = 0) => {
-                            b(s.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: t, args: n });
+                            w(s.CONTEXT_MENU, { isMouseEvent: !0, contentID: e, on: !0, decoratorID: t, args: n });
                         },
                         sendShowPopOverEvent: (e, n, t, r, i = R.invalid('resId'), _) => {
                             const a = g.O.view.getViewGlobalPosition(),
@@ -665,13 +669,13 @@
                                     width: g.O.view.pxToRem(u),
                                     height: g.O.view.pxToRem(d),
                                 };
-                            b(s.POP_OVER, {
+                            w(s.POP_OVER, {
                                 isMouseEvent: !0,
                                 contentID: e,
                                 decoratorID: r || R.invalid('resId'),
                                 targetID: i,
                                 direction: n,
-                                bbox: p(v),
+                                bbox: b(v),
                                 on: !0,
                                 args: _,
                             });
@@ -686,8 +690,8 @@
                         closeOnEsc: (e) => {
                             y(e, h);
                         },
-                        handleViewEvent: b,
-                        onBindingsReady: w,
+                        handleViewEvent: w,
+                        onBindingsReady: p,
                         onLayoutReady: () =>
                             new Promise((e) => {
                                 requestAnimationFrame(() => {
@@ -798,15 +802,15 @@
                         const g = a()(l.value, l[`value__${r}`], !_ && l.value__notEnough),
                             E = a()(l.icon, l[`icon__${r}-${t}`]),
                             m = a()(l.stock, u && l.stock__indent, n && l.stock__interactive),
-                            p = d && o > 0 && '+',
-                            w = a()(l.base, l[`base__${t}`]);
+                            b = d && o > 0 && '+',
+                            p = a()(l.base, l[`base__${t}`]);
                         return i().createElement(
                             'span',
-                            { className: w },
+                            { className: p },
                             i().createElement(
                                 'span',
                                 { className: g },
-                                p,
+                                b,
                                 i().createElement(s, { value: o, format: r === c.V2.gold ? 'gold' : 'integral' }),
                             ),
                             i().createElement('span', { className: E }),
@@ -864,7 +868,7 @@
                                 t === c.et.large && v.stock__sizeLarge,
                                 n && v.stock__interactive,
                             ),
-                            p = u && o > 0 && '+';
+                            b = u && o > 0 && '+';
                         return r in c.V2
                             ? i().createElement(d, {
                                   size: t,
@@ -882,7 +886,7 @@
                                   i().createElement(
                                       'span',
                                       { className: g },
-                                      p,
+                                      b,
                                       i().createElement(s, { value: o, format: 'integral' }),
                                   ),
                                   i().createElement('span', { className: E }),

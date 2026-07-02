@@ -284,27 +284,28 @@
                         addPreloadTexture: () => i,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => b,
+                        displayStatusIs: () => w,
                         events: () => a.U,
-                        extraSize: () => w,
-                        forceTriggerMouseMove: () => v,
+                        extraSize: () => y,
+                        forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => F,
                         getBrowserTexturePath: () => l,
-                        getDisplayStatus: () => f,
+                        getDisplayStatus: () => b,
                         getScale: () => m,
                         getSize: () => _,
                         getViewGlobalPosition: () => d,
-                        isEventHandled: () => p,
+                        isClientAccessible: () => h,
+                        isEventHandled: () => v,
                         isFocused: () => g,
                         pxToRem: () => D,
                         remToPx: () => C,
                         resize: () => A,
                         sendEvent: () => o.qP,
                         setAnimateWindow: () => B,
-                        setEventHandled: () => h,
+                        setEventHandled: () => p,
                         setInputPaddingsRem: () => s,
                         setSidePaddingsRem: () => E,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => x,
                     }));
                 var n = t(3722),
                     r = t(6112),
@@ -354,22 +355,25 @@
                     return viewEnv.isFocused();
                 }
                 function h() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function p() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function v() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function f() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function b() {
                     return viewEnv.getShowingStatus();
                 }
-                const b = Object.keys(r.W).reduce(
+                const w = Object.keys(r.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === r.W[u]), e),
                         {},
                     ),
-                    w = {
+                    y = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -377,7 +381,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    y = Promise.all([
+                    x = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -1018,9 +1022,13 @@
                         if (t.mediumWidth && A) return l(u, t, v);
                         if (t.smallWidth && d) return l(u, t, v);
                         if (t.extraSmallWidth && F) return l(u, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && m) return u;
                             if (t.largeHeight && D) return u;
                             if (t.mediumHeight && g) return u;
@@ -1478,7 +1486,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = Z(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = Z(r.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -1786,7 +1794,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = Ce(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = Ce(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),
@@ -2701,7 +2709,7 @@
                             : (function (e) {
                                   let u = '';
                                   for (let t = Du.length - 1; t >= 0; t--)
-                                      for (; e >= Du[t]; ) ((u += mu[t]), (e -= Du[t]));
+                                      for (; e >= Du[t];) ((u += mu[t]), (e -= Du[t]));
                                   return u;
                               })(e);
                 let gu;
@@ -3215,7 +3223,7 @@
                         let i = Lt.exec(e),
                             s = e,
                             l = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 a = kt.exec(t),
                                 c = Nt.exec(t),
@@ -3594,7 +3602,7 @@
                             r = u || {};
                         let i = En.exec(e),
                             s = e;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 a = _n.exec(t),
                                 l = An.exec(t),
@@ -3960,7 +3968,7 @@
                                     let n = 0,
                                         a = t - 1,
                                         o = !1;
-                                    for (; a - n > 1; ) {
+                                    for (; a - n > 1;) {
                                         const t = n + Math.floor(0.5 * (a - n + 1));
                                         ((o = r(e[t], u)), o ? (a = t) : (n = t));
                                     }

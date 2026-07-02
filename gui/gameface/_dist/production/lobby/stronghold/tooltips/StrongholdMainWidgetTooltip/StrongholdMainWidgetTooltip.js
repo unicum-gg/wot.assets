@@ -41,16 +41,16 @@
             },
             67: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => V });
+                t.d(e, { O: () => z });
                 var r = {};
                 (t.r(r), t.d(r, { mouse: () => o, onResize: () => i }));
                 var E = {};
                 (t.r(E),
                     t.d(E, {
                         events: () => r,
-                        getMouseGlobalPosition: () => B,
+                        getMouseGlobalPosition: () => s,
                         getSize: () => l,
-                        graphicsQuality: () => s,
+                        graphicsQuality: () => B,
                     }));
                 var A = {};
                 (t.r(A), t.d(A, { getBgUrl: () => C, getTextureUrl: () => _ }));
@@ -72,27 +72,28 @@
                         addPreloadTexture: () => w,
                         children: () => A,
                         displayStatus: () => m,
-                        displayStatusIs: () => K,
+                        displayStatusIs: () => X,
                         events: () => c,
-                        extraSize: () => X,
-                        forceTriggerMouseMove: () => G,
+                        extraSize: () => Y,
+                        forceTriggerMouseMove: () => j,
                         freezeTextureBeforeResize: () => y,
                         getBrowserTexturePath: () => S,
-                        getDisplayStatus: () => j,
+                        getDisplayStatus: () => K,
                         getScale: () => P,
                         getSize: () => O,
                         getViewGlobalPosition: () => R,
-                        isEventHandled: () => U,
+                        isClientAccessible: () => I,
+                        isEventHandled: () => G,
                         isFocused: () => W,
                         pxToRem: () => H,
                         remToPx: () => N,
                         resize: () => L,
                         sendEvent: () => x,
                         setAnimateWindow: () => k,
-                        setEventHandled: () => I,
+                        setEventHandled: () => U,
                         setInputPaddingsRem: () => b,
                         setSidePaddingsRem: () => M,
-                        whenTutorialReady: () => Y,
+                        whenTutorialReady: () => V,
                     }));
                 const i = F('clientResized'),
                     D = { down: F('mousedown'), up: F('mouseup'), move: F('mousemove') };
@@ -163,10 +164,10 @@
                 function l(u = 'px') {
                     return 'rem' === u ? viewEnv.getClientSizeRem() : viewEnv.getClientSizePx();
                 }
-                function B(u = 'px') {
+                function s(u = 'px') {
                     return 'rem' === u ? viewEnv.getMouseGlobalPositionRem() : viewEnv.getMouseGlobalPositionPx();
                 }
-                const s = {
+                const B = {
                     isLow: () => 1 === viewEnv.getGraphicsQuality(),
                     isHigh: () => 0 === viewEnv.getGraphicsQuality(),
                     get: () => viewEnv.getGraphicsQuality(),
@@ -290,19 +291,22 @@
                     return viewEnv.isFocused();
                 }
                 function I() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function U() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function G() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function j() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function K() {
                     return viewEnv.getShowingStatus();
                 }
-                const K = Object.keys(m).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === m[e]), u), {}),
-                    X = {
+                const X = Object.keys(m).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === m[e]), u), {}),
+                    Y = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -310,13 +314,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    Y = Promise.all([
+                    V = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : c.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    V = { view: a, client: E };
+                    z = { view: a, client: E };
             },
             358: (u, e, t) => {
                 'use strict';
@@ -492,7 +496,7 @@
                     D = Object.freeze({ FRACTIONAL: 0, WO_ZERO_DIGITS: 1 }),
                     o = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     l = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
-                let B, s;
+                let s, B;
                 (!(function (u) {
                     ((u[(u.NONE = -1)] = 'NONE'),
                         (u[(u.ALT = 165)] = 'ALT'),
@@ -557,7 +561,7 @@
                         (u[(u.COMMA = 188)] = 'COMMA'),
                         (u[(u.DASH = 189)] = 'DASH'),
                         (u[(u.PERIOD = 190)] = 'PERIOD'));
-                })(B || (B = {})),
+                })(s || (s = {})),
                     (function (u) {
                         ((u.ALT = 'Alt'),
                             (u.ALT_GRAPH = 'AltGraph'),
@@ -571,7 +575,7 @@
                             (u.SHIFT = 'Shift'),
                             (u.SYMBOL = 'Symbol'),
                             (u.SYMBOL_LOCK = 'SymbolLock'));
-                    })(s || (s = {})));
+                    })(B || (B = {})));
                 var _ = t(67);
                 const C = ['args'];
                 function m(u, e, t, r, E, A, a) {
@@ -653,7 +657,7 @@
                     },
                     h = () => g(n.CLOSE),
                     p = (u, e) => {
-                        u.keyCode === B.ESCAPE && e();
+                        u.keyCode === s.ESCAPE && e();
                     };
                 var v = t(572);
                 const f = E.instance,
@@ -679,7 +683,7 @@
                                 D = F.y,
                                 o = F.width,
                                 l = F.height,
-                                B = {
+                                s = {
                                     x: _.O.view.pxToRem(i) + a.x,
                                     y: _.O.view.pxToRem(D) + a.y,
                                     width: _.O.view.pxToRem(o),
@@ -691,7 +695,7 @@
                                 decoratorID: r || R.invalid('resId'),
                                 targetID: E,
                                 direction: e,
-                                bbox: c(B),
+                                bbox: c(s),
                                 on: !0,
                                 args: A,
                             });
@@ -763,14 +767,14 @@
                             : null
                         : u;
                 var l = t(67);
-                const B = {
+                const s = {
                     extraLarge: { weight: 4, width: 2560, height: 1440 },
                     large: { weight: 3, width: 1920, height: 1080 },
                     medium: { weight: 2, width: 1600, height: 900 },
                     small: { weight: 1, width: 1366, height: 768 },
                     extraSmall: { weight: 0, width: 1024, height: 768 },
                 };
-                var s;
+                var B;
                 function _(u, e, t) {
                     const r = (function (u, e) {
                             switch (!0) {
@@ -835,11 +839,11 @@
                         (u.mediumHeight = 'mediumHeight'),
                         (u.smallHeight = 'smallHeight'),
                         (u.extraSmallHeight = 'extraSmallHeight'));
-                })(s || (s = {}));
+                })(B || (B = {}));
                 const C = l.O.client.getSize('rem'),
                     m = C.width,
                     c = C.height,
-                    d = Object.assign({ width: m, height: c }, _(m, c, B)),
+                    d = Object.assign({ width: m, height: c }, _(m, c, s)),
                     g = (0, r.createContext)(d),
                     h = ['children'];
                 const p = (u) => {
@@ -861,8 +865,8 @@
                         i = E.extraSmall,
                         D = E.extraLargeWidth,
                         l = E.largeWidth,
-                        B = E.mediumWidth,
-                        s = E.smallWidth,
+                        s = E.mediumWidth,
+                        B = E.smallWidth,
                         _ = E.extraSmallWidth,
                         C = E.extraLargeHeight,
                         m = E.largeHeight,
@@ -879,12 +883,16 @@
                     } else {
                         if (t.extraLargeWidth && D) return o(e, t, v);
                         if (t.largeWidth && l) return o(e, t, v);
-                        if (t.mediumWidth && B) return o(e, t, v);
-                        if (t.smallWidth && s) return o(e, t, v);
+                        if (t.mediumWidth && s) return o(e, t, v);
+                        if (t.smallWidth && B) return o(e, t, v);
                         if (t.extraSmallWidth && _) return o(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && c) return e;
@@ -924,7 +932,7 @@
                         F = (0, r.useCallback)((u, e) => {
                             const t = l.O.view.pxToRem(u),
                                 r = l.O.view.pxToRem(e);
-                            a(Object.assign({ width: t, height: r }, _(t, r, B)));
+                            a(Object.assign({ width: t, height: r }, _(t, r, s)));
                         }, []);
                     (v(() => {
                         engine.on('clientResized', F);
@@ -935,25 +943,25 @@
                 });
                 let f, x, w;
                 (!(function (u) {
-                    ((u[(u.ExtraSmall = B.extraSmall.width)] = 'ExtraSmall'),
-                        (u[(u.Small = B.small.width)] = 'Small'),
-                        (u[(u.Medium = B.medium.width)] = 'Medium'),
-                        (u[(u.Large = B.large.width)] = 'Large'),
-                        (u[(u.ExtraLarge = B.extraLarge.width)] = 'ExtraLarge'));
+                    ((u[(u.ExtraSmall = s.extraSmall.width)] = 'ExtraSmall'),
+                        (u[(u.Small = s.small.width)] = 'Small'),
+                        (u[(u.Medium = s.medium.width)] = 'Medium'),
+                        (u[(u.Large = s.large.width)] = 'Large'),
+                        (u[(u.ExtraLarge = s.extraLarge.width)] = 'ExtraLarge'));
                 })(f || (f = {})),
                     (function (u) {
-                        ((u[(u.ExtraSmall = B.extraSmall.width)] = 'ExtraSmall'),
-                            (u[(u.Small = B.small.width)] = 'Small'),
-                            (u[(u.Medium = B.medium.width)] = 'Medium'),
-                            (u[(u.Large = B.large.width)] = 'Large'),
-                            (u[(u.ExtraLarge = B.extraLarge.width)] = 'ExtraLarge'));
+                        ((u[(u.ExtraSmall = s.extraSmall.width)] = 'ExtraSmall'),
+                            (u[(u.Small = s.small.width)] = 'Small'),
+                            (u[(u.Medium = s.medium.width)] = 'Medium'),
+                            (u[(u.Large = s.large.width)] = 'Large'),
+                            (u[(u.ExtraLarge = s.extraLarge.width)] = 'ExtraLarge'));
                     })(x || (x = {})),
                     (function (u) {
-                        ((u[(u.ExtraSmall = B.extraSmall.height)] = 'ExtraSmall'),
-                            (u[(u.Small = B.small.height)] = 'Small'),
-                            (u[(u.Medium = B.medium.height)] = 'Medium'),
-                            (u[(u.Large = B.large.height)] = 'Large'),
-                            (u[(u.ExtraLarge = B.extraLarge.height)] = 'ExtraLarge'));
+                        ((u[(u.ExtraSmall = s.extraSmall.height)] = 'ExtraSmall'),
+                            (u[(u.Small = s.small.height)] = 'Small'),
+                            (u[(u.Medium = s.medium.height)] = 'Medium'),
+                            (u[(u.Large = s.large.height)] = 'Large'),
+                            (u[(u.ExtraLarge = s.extraLarge.height)] = 'ExtraLarge'));
                     })(w || (w = {})));
                 const b = () => {
                         const u = (0, r.useContext)(g),
@@ -1142,9 +1150,9 @@
                             D = u.mr,
                             o = void 0 === D ? a : D,
                             l = u.mb,
-                            B = void 0 === l ? a : l,
-                            s = u.ml,
-                            _ = void 0 === s ? a : s,
+                            s = void 0 === l ? a : l,
+                            B = u.ml,
+                            _ = void 0 === B ? a : B,
                             C = u.column,
                             m = u.row,
                             c = u.flexDirection,
@@ -1185,7 +1193,7 @@
                                 return E;
                             })(u, P);
                         const Y = (0, r.useMemo)(() => {
-                                const u = { mt: i, mr: o, mb: B, ml: _ },
+                                const u = { mt: i, mr: o, mb: s, ml: _ },
                                     e = ((u) =>
                                         k.reduce((e, t) => {
                                             const r = u[t];
@@ -1210,7 +1218,7 @@
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [t, A, i, o, B, _, j, G, T, d, L, w, S]),
+                            }, [t, A, i, o, s, _, j, G, T, d, L, w, S]),
                             V = Y.computedStyle,
                             z = Y.computedClassNames;
                         return E().createElement('div', H({ className: n()(y.base, ...z, e), style: V }, X), K);
@@ -1404,8 +1412,8 @@
                             D = void 0 === i ? F : i,
                             o = u.mr,
                             l = void 0 === o ? F : o,
-                            B = u.mb,
-                            s = void 0 === B ? F : B,
+                            s = u.mb,
+                            B = void 0 === s ? F : s,
                             _ = u.ml,
                             C = void 0 === _ ? F : _,
                             m = u.style,
@@ -1436,7 +1444,7 @@
                                     style: h,
                                     mt: !0 === D ? au[t || 'paragraph-P16'].mt : D,
                                     mr: !0 === l ? au[t || 'paragraph-P16'].mr : l,
-                                    mb: !0 === s ? au[t || 'paragraph-P16'].mb : s,
+                                    mb: !0 === B ? au[t || 'paragraph-P16'].mb : B,
                                     ml: !0 === C ? au[t || 'paragraph-P16'].ml : C,
                                 },
                                 d,
@@ -1493,7 +1501,7 @@
                         lu.apply(this, arguments)
                     );
                 }
-                const Bu = E().forwardRef(function (u, e) {
+                const su = E().forwardRef(function (u, e) {
                     let t = u.children,
                         A = u.className,
                         a = u.theme,
@@ -1509,9 +1517,9 @@
                         })(u, ou);
                     const D = iu(),
                         o = E().useRef(null);
-                    var B;
+                    var s;
                     return (
-                        (B = () => {
+                        (s = () => {
                             D.run(() => {
                                 const u = o.current;
                                 if (!u) return;
@@ -1527,7 +1535,7 @@
                                 });
                             });
                         }),
-                        (0, r.useEffect)(B, []),
+                        (0, r.useEffect)(s, []),
                         E().createElement(
                             'div',
                             lu({}, i, {
@@ -1540,7 +1548,7 @@
                         )
                     );
                 });
-                let su;
+                let Bu;
                 !(function (u) {
                     ((u.SHORT_DATE = 'short-date'),
                         (u.SHORT_TIME = 'short-time'),
@@ -1555,51 +1563,51 @@
                         (u.WEEK_DAY_TIME = 'week-day-time'),
                         (u.YEAR = 'year'),
                         (u.DATE_YEAR = 'date-year'));
-                })(su || (su = {}));
+                })(Bu || (Bu = {}));
                 var _u = t(596);
                 Date.now();
                 const Cu = (u, e, t) => {
                     switch (e) {
-                        case su.SHORT_DATE:
+                        case Bu.SHORT_DATE:
                             return t
                                 ? _u.Z5.getDateFormat(u, _u.kH.SHORT_FORMAT)
                                 : _u.cy.getTimeFormat('%d.%m.%y', u, !0);
-                        case su.SHORT_TIME:
+                        case Bu.SHORT_TIME:
                             return t
                                 ? _u.Z5.getTimeFormat(u, _u.lf.SHORT_FORMAT)
                                 : _u.cy.getTimeFormat('%I:%M %p', u, !0);
-                        case su.SHORT_DATE_TIME:
+                        case Bu.SHORT_DATE_TIME:
                             if (t) {
                                 return `${_u.Z5.getDateFormat(u, _u.kH.SHORT_FORMAT)}, ${_u.Z5.getTimeFormat(u, _u.lf.SHORT_FORMAT)}`;
                             }
                             return _u.cy.getTimeFormat('%d.%m.%y, %I:%M %p', u, !0);
-                        case su.FULL_DATE:
+                        case Bu.FULL_DATE:
                             return t
                                 ? _u.Z5.getDateFormat(u, _u.kH.LONG_FORMAT)
                                 : _u.cy.getTimeFormat('%B %d, %Y', u, !0);
-                        case su.FULL_DATE_TIME:
+                        case Bu.FULL_DATE_TIME:
                             if (t) {
                                 return `${_u.Z5.getDateFormat(u, _u.kH.LONG_FORMAT)}, ${_u.Z5.getTimeFormat(u, _u.lf.SHORT_FORMAT)}`;
                             }
                             return _u.cy.getTimeFormat('%B %d, %Y, %I:%M %p', u, !0);
-                        case su.MONTH:
+                        case Bu.MONTH:
                             return _u.cy.getTimeFormat('%B', u, !0);
-                        case su.MONTH_DATE:
+                        case Bu.MONTH_DATE:
                             return _u.cy.getTimeFormat('%B %e', u, !0);
-                        case su.DATE_MONTH:
+                        case Bu.DATE_MONTH:
                             return _u.cy.getTimeFormat('%e %B', u, !0);
-                        case su.MONTH_YEAR:
+                        case Bu.MONTH_YEAR:
                             return _u.cy.getTimeFormat('%B %Y', u, !0);
-                        case su.WEEK_DAY:
+                        case Bu.WEEK_DAY:
                             return _u.cy.getTimeFormat('%A', u, !0);
-                        case su.WEEK_DAY_TIME:
+                        case Bu.WEEK_DAY_TIME:
                             if (t) {
                                 return `${_u.cy.getTimeFormat('%A', u, !0)} ${_u.Z5.getTimeFormat(u, _u.lf.SHORT_FORMAT)}`;
                             }
                             return _u.cy.getTimeFormat('%A, %I:%M %p', u, !0);
-                        case su.YEAR:
+                        case Bu.YEAR:
                             return _u.cy.getTimeFormat('%Y', u, !0);
-                        case su.DATE_YEAR:
+                        case Bu.DATE_YEAR:
                             return _u.cy.getTimeFormat('%d, %Y', u, !0);
                     }
                 };
@@ -1698,7 +1706,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = gu(E.keys()); !(u = t()).done; ) A(u.value, e);
+                                                        for (var u, t = gu(E.keys()); !(u = t()).done;) A(u.value, e);
                                                     },
                                                     unsubscribe: A,
                                                 };
@@ -1788,25 +1796,25 @@
                                                 },
                                                 cleanup: D,
                                             }),
-                                            B = { mode: t, model: o, externalModel: F, cleanup: D };
+                                            s = { mode: t, model: o, externalModel: F, cleanup: D };
                                         return {
                                             model: o,
-                                            controls: 'mocks' === t && E ? E.controls(B) : e(B),
+                                            controls: 'mocks' === t && E ? E.controls(s) : e(s),
                                             externalModel: F,
                                             mode: t,
                                         };
                                     },
                                     o = (0, r.useRef)(!1),
-                                    B = (0, r.useState)(A),
-                                    s = B[0],
-                                    _ = B[1],
+                                    s = (0, r.useState)(A),
+                                    B = s[0],
+                                    _ = s[1],
                                     C = (0, r.useState)(() => D(A, a, n)),
                                     m = C[0],
                                     c = C[1];
                                 return (
                                     (0, r.useEffect)(() => {
-                                        o.current ? c(D(s, a, n)) : (o.current = !0);
-                                    }, [n, s, a]),
+                                        o.current ? c(D(B, a, n)) : (o.current = !0);
+                                    }, [n, B, a]),
                                     (0, r.useEffect)(() => {
                                         _(A);
                                     }, [A]),
@@ -1854,20 +1862,20 @@
                             D = u.progressionLevel,
                             o = u.isInClan,
                             l = (0, r.useMemo)(
-                                () => `${Cu(Number(t), su.SHORT_DATE, !0)} – ${Cu(Number(A), su.SHORT_DATE, !0)}`,
+                                () => `${Cu(Number(t), Bu.SHORT_DATE, !0)} – ${Cu(Number(A), Bu.SHORT_DATE, !0)}`,
                                 [t, A],
                             ),
-                            B = n()(wu.base, { [wu.inactive]: !a }),
-                            s = (0, r.useMemo)(() => {
+                            s = n()(wu.base, { [wu.inactive]: !a }),
+                            B = (0, r.useMemo)(() => {
                                 const u = bu.season.$dyn(`stage_${F}`) || '';
                                 return `${'MANEUVERS' === i ? bu.season.stage.sprint() : bu.season.stage.gm()} ${u}`;
                             }, [F, i]);
                         return E().createElement(
-                            Bu,
+                            su,
                             null,
                             E().createElement(
                                 'div',
-                                { className: B },
+                                { className: s },
                                 e
                                     ? E().createElement(
                                           'div',
@@ -1883,7 +1891,7 @@
                                                         null,
                                                         E().createElement(nu, {
                                                             className: wu.description,
-                                                            text: bu.season.stage.text() + s,
+                                                            text: bu.season.stage.text() + B,
                                                             format: { binding: { stage: F } },
                                                         }),
                                                         E().createElement('span', { className: wu.date }, l),

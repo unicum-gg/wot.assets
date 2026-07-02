@@ -105,7 +105,7 @@
                 t.d(e, { E: () => n });
             },
             153: (u, e, t) => {
-                t.d(e, { O: () => I });
+                t.d(e, { O: () => z });
                 var n = {};
                 (t.r(n), t.d(n, { getBgUrl: () => r, getTextureUrl: () => F }));
                 var E = {};
@@ -115,27 +115,28 @@
                         addPreloadTexture: () => d,
                         children: () => n,
                         displayStatus: () => i,
-                        displayStatusIs: () => N,
+                        displayStatusIs: () => L,
                         events: () => a,
-                        extraSize: () => L,
-                        forceTriggerMouseMove: () => R,
+                        extraSize: () => U,
+                        forceTriggerMouseMove: () => x,
                         freezeTextureBeforeResize: () => p,
                         getBrowserTexturePath: () => h,
-                        getDisplayStatus: () => x,
+                        getDisplayStatus: () => N,
                         getScale: () => y,
                         getSize: () => b,
                         getViewGlobalPosition: () => g,
-                        isEventHandled: () => M,
+                        isClientAccessible: () => k,
+                        isEventHandled: () => R,
                         isFocused: () => S,
                         pxToRem: () => O,
                         remToPx: () => P,
                         resize: () => f,
                         sendEvent: () => _,
                         setAnimateWindow: () => T,
-                        setEventHandled: () => k,
+                        setEventHandled: () => M,
                         setInputPaddingsRem: () => v,
                         setSidePaddingsRem: () => w,
-                        whenTutorialReady: () => U,
+                        whenTutorialReady: () => I,
                     }));
                 var A = t(596);
                 function F(u, e, t = 1) {
@@ -258,19 +259,22 @@
                     return viewEnv.isFocused();
                 }
                 function k() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function M() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function R() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function x() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function N() {
                     return viewEnv.getShowingStatus();
                 }
-                const N = Object.keys(i).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === i[e]), u), {}),
-                    L = {
+                const L = Object.keys(i).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === i[e]), u), {}),
+                    U = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -278,13 +282,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    U = Promise.all([
+                    I = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : a.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    I = { view: E, client: A };
+                    z = { view: E, client: A };
             },
             521: (u, e, t) => {
                 let n, E;
@@ -934,7 +938,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = g(E.keys()); !(u = t()).done; ) A(u.value, e);
+                                                        for (var u, t = g(E.keys()); !(u = t()).done;) A(u.value, e);
                                                     },
                                                     unsubscribe: A,
                                                 };

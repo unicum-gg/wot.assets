@@ -179,27 +179,28 @@
                         addPreloadTexture: () => A,
                         children: () => a,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => f,
+                        displayStatusIs: () => b,
                         events: () => n.U,
-                        extraSize: () => b,
-                        forceTriggerMouseMove: () => v,
+                        extraSize: () => x,
+                        forceTriggerMouseMove: () => p,
                         freezeTextureBeforeResize: () => d,
                         getBrowserTexturePath: () => F,
-                        getDisplayStatus: () => p,
+                        getDisplayStatus: () => f,
                         getScale: () => B,
                         getSize: () => l,
                         getViewGlobalPosition: () => c,
-                        isEventHandled: () => w,
+                        isClientAccessible: () => g,
+                        isEventHandled: () => v,
                         isFocused: () => h,
-                        pxToRem: () => _,
-                        remToPx: () => C,
+                        pxToRem: () => C,
+                        remToPx: () => _,
                         resize: () => D,
                         sendEvent: () => i.qP,
                         setAnimateWindow: () => m,
-                        setEventHandled: () => g,
+                        setEventHandled: () => w,
                         setInputPaddingsRem: () => E,
                         setSidePaddingsRem: () => o,
-                        whenTutorialReady: () => x,
+                        whenTutorialReady: () => L,
                     }));
                 var a = t(3722),
                     r = t(6112),
@@ -228,7 +229,7 @@
                 }
                 function c(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: C(e.x), y: C(e.y) };
+                    return 'rem' === u ? e : { x: _(e.x), y: _(e.y) };
                 }
                 function d() {
                     viewEnv.freezeTextureBeforeResize();
@@ -236,10 +237,10 @@
                 function B() {
                     return viewEnv.getScale();
                 }
-                function _(u) {
+                function C(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function C(u) {
+                function _(u) {
                     return viewEnv.remToPx(u);
                 }
                 function m(u, e) {
@@ -249,22 +250,25 @@
                     return viewEnv.isFocused();
                 }
                 function g() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function w() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function v() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function p() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const f = Object.keys(r.W).reduce(
+                const b = Object.keys(r.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === r.W[e]), u),
                         {},
                     ),
-                    b = {
+                    x = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -272,7 +276,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    x = Promise.all([
+                    L = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : n.U.onDomBuilt(u);
                         }),
@@ -591,7 +595,7 @@
                 var c = t(5521),
                     d = t(3138);
                 const B = ['args'];
-                function _(u, e, t, a, r, n, i) {
+                function C(u, e, t, a, r, n, i) {
                     try {
                         var A = u[n](i),
                             E = A.value;
@@ -600,7 +604,7 @@
                     }
                     A.done ? e(E) : Promise.resolve(E).then(a, r);
                 }
-                const C = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
+                const _ = (u) => ({ __Type: 'GFBoundingBox', x: u.x, y: u.y, width: u.width, height: u.height }),
                     m = (function () {
                         var u,
                             e =
@@ -618,10 +622,10 @@
                                     return new Promise(function (a, r) {
                                         var n = u.apply(e, t);
                                         function i(u) {
-                                            _(n, a, r, i, A, 'next', u);
+                                            C(n, a, r, i, A, 'next', u);
                                         }
                                         function A(u) {
-                                            _(n, a, r, i, A, 'throw', u);
+                                            C(n, a, r, i, A, 'throw', u);
                                         }
                                         i(void 0);
                                     });
@@ -682,7 +686,7 @@
                         RealFormatType: o,
                         TimeFormatType: l,
                         DateFormatType: D,
-                        makeGlobalBoundingBox: C,
+                        makeGlobalBoundingBox: _,
                         sendMoveEvent: (u) => h(E.MOVE, { isMouseEvent: !0, on: u }),
                         sendCloseEvent: g,
                         sendClosePopOverEvent: () => h(E.POP_OVER, { on: !1 }),
@@ -708,7 +712,7 @@
                                 decoratorID: a || R.invalid('resId'),
                                 targetID: r,
                                 direction: e,
-                                bbox: C(D),
+                                bbox: _(D),
                                 on: !0,
                                 args: n,
                             });
@@ -874,13 +878,13 @@
                             l = r.largeWidth,
                             D = r.mediumWidth,
                             B = r.smallWidth,
-                            _ = r.extraSmallWidth,
-                            C = r.extraLargeHeight,
+                            C = r.extraSmallWidth,
+                            _ = r.extraLargeHeight,
                             m = r.largeHeight,
                             h = r.mediumHeight,
                             g = r.smallHeight,
                             w = r.extraSmallHeight,
-                            v = { extraLarge: C, large: m, medium: h, small: g, extraSmall: w };
+                            v = { extraLarge: _, large: m, medium: h, small: g, extraSmall: w };
                         if (t.extraLarge || t.large || t.medium || t.small || t.extraSmall) {
                             if (t.extraLarge && i) return e;
                             if (t.large && A) return e;
@@ -892,17 +896,15 @@
                             if (t.largeWidth && l) return n(e, t, v);
                             if (t.mediumWidth && D) return n(e, t, v);
                             if (t.smallWidth && B) return n(e, t, v);
-                            if (t.extraSmallWidth && _) return n(e, t, v);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
-                                if (t.extraLargeHeight && C) return e;
+                            if (t.extraSmallWidth && C) return n(e, t, v);
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
+                                if (t.extraLargeHeight && _) return e;
                                 if (t.largeHeight && m) return e;
                                 if (t.mediumHeight && h) return e;
                                 if (t.smallHeight && g) return e;
@@ -929,11 +931,11 @@
                     extraSmallHeight: !1,
                 }),
                     (0, a.memo)(B));
-                const _ = (u) => {
+                const C = (u) => {
                         const e = (0, a.useRef)(!1);
                         e.current || (u(), (e.current = !0));
                     },
-                    C = (0, a.memo)(({ children: u }) => {
+                    _ = (0, a.memo)(({ children: u }) => {
                         const e = (0, a.useContext)(c),
                             t = (0, a.useState)(e),
                             n = t[0],
@@ -943,7 +945,7 @@
                                     a = i.O.view.pxToRem(e);
                                 E(Object.assign({ width: t, height: a }, F(t, a, A)));
                             }, []);
-                        (_(() => {
+                        (C(() => {
                             engine.on('clientResized', s);
                         }),
                             (0, a.useEffect)(() => () => engine.off('clientResized', s), [s]));
@@ -1110,7 +1112,7 @@
                                 for (a = 0; a < n.length; a++) ((t = n[a]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                 return r;
                             })(u, O);
-                        return r().createElement(C, null, r().createElement(T, t, e));
+                        return r().createElement(_, null, r().createElement(T, t, e));
                     };
                 var H = t(493),
                     P = t.n(H);
@@ -1163,8 +1165,8 @@
                             c = u.loop,
                             d = void 0 === c || c,
                             B = u.state,
-                            _ = void 0 === B ? I : B,
-                            C = u.onAnimationDone,
+                            C = void 0 === B ? I : B,
+                            _ = u.onAnimationDone,
                             m = u.onAnimationComplete,
                             h = u.poster,
                             g = (function (u, e) {
@@ -1185,7 +1187,7 @@
                                     t = (t) => {
                                         (e.clearRect(0, 0, u.width, u.height), e.drawImage(t.img, -t.x, -t.y));
                                     };
-                                switch (_) {
+                                switch (C) {
                                     case 'play':
                                         return (function () {
                                             const u = j(o, D, n),
@@ -1198,7 +1200,7 @@
                                                           t(n),
                                                           r === D &&
                                                               (null == m || m(),
-                                                              d || (null == C || C(), window.clearInterval(a))))
+                                                              d || (null == _ || _(), window.clearInterval(a))))
                                                         : console.error(
                                                               'frameImage was not provided in frameImages Map',
                                                           );
@@ -1219,7 +1221,7 @@
                                     default:
                                         return console.error('[CanvasSequence] Unreachable state!');
                                 }
-                            }, [F, n, o, D, d, A, m, C, h, _]),
+                            }, [F, n, o, D, d, A, m, _, h, C]),
                             r().createElement('canvas', W({}, g, { width: e, height: t, ref: w }))
                         );
                     }),
@@ -1344,7 +1346,7 @@
                         o = F[1],
                         l = (0, a.useRef)(-1);
                     return (
-                        _(() => {
+                        C(() => {
                             if (
                                 ('boolean' == typeof e &&
                                     ((e = e ? eu.Deep : eu.None),
@@ -1485,8 +1487,8 @@
                                     c = D[0],
                                     d = D[1],
                                     B = (0, a.useState)(null == (i = u.loop) || i),
-                                    _ = B[0],
-                                    C = B[1],
+                                    C = B[0],
+                                    _ = B[1],
                                     m = (0, a.useRef)(o),
                                     h = (0, a.useCallback)((u) => {
                                         (l(u), F('play'));
@@ -1506,7 +1508,7 @@
                                         state: E,
                                         initialFrameIndex: o,
                                         frameTime: c,
-                                        loop: _,
+                                        loop: C,
                                         onAnimate: (0, a.useCallback)((e, t) => {
                                             ((m.current = e), null == u.onAnimate || u.onAnimate(e, t));
                                         }, e),
@@ -1514,8 +1516,8 @@
                                             w();
                                         }, e),
                                     },
-                                    enableLoop: (0, a.useCallback)(() => C(!0), []),
-                                    disableLoop: (0, a.useCallback)(() => C(!1), []),
+                                    enableLoop: (0, a.useCallback)(() => _(!0), []),
+                                    disableLoop: (0, a.useCallback)(() => _(!1), []),
                                     setState: F,
                                     setInitialFrameIndex: l,
                                     setFrameTime: d,

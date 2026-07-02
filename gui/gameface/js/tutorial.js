@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             774: (e, t, n) => {
-                n.d(t, { O: () => j });
+                n.d(t, { O: () => q });
                 var i = {};
                 (n.r(i), n.d(i, { mouse: () => d, onResize: () => l }));
                 var o = {};
@@ -33,27 +33,28 @@
                         addPreloadTexture: () => y,
                         children: () => r,
                         displayStatus: () => m,
-                        displayStatusIs: () => V,
+                        displayStatusIs: () => B,
                         events: () => w,
-                        extraSize: () => B,
-                        forceTriggerMouseMove: () => U,
+                        extraSize: () => W,
+                        forceTriggerMouseMove: () => z,
                         freezeTextureBeforeResize: () => R,
                         getBrowserTexturePath: () => M,
-                        getDisplayStatus: () => z,
+                        getDisplayStatus: () => V,
                         getScale: () => L,
                         getSize: () => S,
                         getViewGlobalPosition: () => C,
-                        isEventHandled: () => I,
+                        isClientAccessible: () => F,
+                        isEventHandled: () => U,
                         isFocused: () => N,
                         pxToRem: () => x,
                         remToPx: () => D,
                         resize: () => P,
                         sendEvent: () => E,
                         setAnimateWindow: () => k,
-                        setEventHandled: () => F,
+                        setEventHandled: () => I,
                         setInputPaddingsRem: () => O,
                         setSidePaddingsRem: () => A,
-                        whenTutorialReady: () => W,
+                        whenTutorialReady: () => j,
                     }));
                 const l = a('clientResized'),
                     u = { down: a('mousedown'), up: a('mouseup'), move: a('mousemove') },
@@ -247,19 +248,22 @@
                     return viewEnv.isFocused();
                 }
                 function F() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function I() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function U() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function z() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function V() {
                     return viewEnv.getShowingStatus();
                 }
-                const V = Object.keys(m).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === m[t]), e), {}),
-                    B = {
+                const B = Object.keys(m).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === m[t]), e), {}),
+                    W = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -267,13 +271,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    W = Promise.all([
+                    j = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : w.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    j = { view: s, client: o };
+                    q = { view: s, client: o };
             },
             310: (e, t, n) => {
                 n.d(t, { Z: () => r });
@@ -1178,7 +1182,7 @@
                 if ((P.exec(''), (o = P.exec(l)) && ((l = o[3]), o[2] || !l)))
                     for (n = 0; n < c; n++)
                         if ((s = (a = e[n]).selector(o[1]))) {
-                            for (i = u.length, r = !1; i--; )
+                            for (i = u.length, r = !1; i--;)
                                 if (u[i].index === a && u[i].key === s) {
                                     r = !0;
                                     break;
@@ -1239,10 +1243,10 @@
                         v = {},
                         f = 1 === arguments.length;
                     for (n = C(this.indexes, e), o = 0; o < n.length; o++)
-                        for (i = n[o], r = u.length; r--; )
+                        for (i = n[o], r = u.length; r--;)
                             if (((a = u[r]), i.index.isPrototypeOf(a))) {
                                 if ((c = a.map.get(i.key)))
-                                    for (s = c.length; s--; )
+                                    for (s = c.length; s--;)
                                         (l = c[s]).selector !== e ||
                                             (!f && l.data !== t) ||
                                             (c.splice(s, 1), (v[l.id] = !0));

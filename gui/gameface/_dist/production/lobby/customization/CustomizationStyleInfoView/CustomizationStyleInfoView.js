@@ -57,7 +57,7 @@
             },
             67: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => $ });
+                t.d(e, { O: () => q });
                 var r = {};
                 (t.r(r), t.d(r, { mouse: () => E, onResize: () => l }));
                 var n = {};
@@ -88,27 +88,28 @@
                         addPreloadTexture: () => x,
                         children: () => a,
                         displayStatus: () => D,
-                        displayStatusIs: () => j,
+                        displayStatusIs: () => X,
                         events: () => C,
-                        extraSize: () => X,
-                        forceTriggerMouseMove: () => z,
+                        extraSize: () => V,
+                        forceTriggerMouseMove: () => U,
                         freezeTextureBeforeResize: () => k,
                         getBrowserTexturePath: () => y,
-                        getDisplayStatus: () => U,
+                        getDisplayStatus: () => j,
                         getScale: () => P,
                         getSize: () => M,
                         getViewGlobalPosition: () => T,
-                        isEventHandled: () => G,
+                        isClientAccessible: () => W,
+                        isEventHandled: () => z,
                         isFocused: () => I,
                         pxToRem: () => O,
                         remToPx: () => N,
                         resize: () => R,
                         sendEvent: () => f,
                         setAnimateWindow: () => H,
-                        setEventHandled: () => W,
+                        setEventHandled: () => G,
                         setInputPaddingsRem: () => w,
                         setSidePaddingsRem: () => L,
-                        whenTutorialReady: () => V,
+                        whenTutorialReady: () => $,
                     }));
                 const l = o('clientResized'),
                     c = { down: o('mousedown'), up: o('mouseup'), move: o('mousemove') };
@@ -306,19 +307,22 @@
                     return viewEnv.isFocused();
                 }
                 function W() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function G() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function z() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function U() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function j() {
                     return viewEnv.getShowingStatus();
                 }
-                const j = Object.keys(D).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === D[e]), u), {}),
-                    X = {
+                const X = Object.keys(D).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === D[e]), u), {}),
+                    V = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -326,13 +330,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    V = Promise.all([
+                    $ = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : C.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    $ = { view: i, client: n };
+                    q = { view: i, client: n };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -909,9 +913,13 @@
                         if (t.mediumWidth && A) return o(e, t, b);
                         if (t.smallWidth && m) return o(e, t, b);
                         if (t.extraSmallWidth && F) return o(e, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && B) return e;
                             if (t.mediumHeight && g) return e;
@@ -1273,7 +1281,7 @@
                                             e(u).delete(t);
                                         },
                                         n = (u, ...t) => {
-                                            for (var r, n = q(e(u).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = q(e(u).values()); !(r = n()).done;) (0, r.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: r, trigger: n }), []);
                                 })(),
@@ -3508,7 +3516,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Lt(n.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = Lt(n.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -3693,7 +3701,7 @@
                                             t = /%\(insertion_open\)s([\s\S]*?)%\(insertion_close\)s/g,
                                             r = [];
                                         let n;
-                                        for (; null !== (n = t.exec(e)); ) r.push(n[1]);
+                                        for (; null !== (n = t.exec(e));) r.push(n[1]);
                                         const a = r.join('\n\n');
                                         return { cleaned: e.replace(t, '%(text)s'), extracted: a };
                                     })(o),

@@ -664,7 +664,7 @@
                                             : e.ownerDocument.activeElement;
                                     if (o) {
                                         if ('IFRAME' === o.tagName) o = o.contentDocument.activeElement;
-                                        else for (; o.shadowRoot; ) o = o.shadowRoot.activeElement;
+                                        else for (; o.shadowRoot;) o = o.shadowRoot.activeElement;
                                         if (
                                             a((r = o), 'input,[contenteditable]') ||
                                             a(r, 'select,[contenteditable]') ||
@@ -755,7 +755,7 @@
                                     !(function (e, t, r) {
                                         if (!F.isWebKit && n.querySelector('select')) return !0;
                                         if (!n.contains(e)) return !1;
-                                        for (var a = e; a && a !== n; ) {
+                                        for (var a = e; a && a !== n;) {
                                             if (a.classList.contains(s.consuming)) return !0;
                                             var o = u(a);
                                             if (
@@ -865,7 +865,7 @@
                                     if (
                                         (function (e, t, r) {
                                             if (!n.contains(e)) return !1;
-                                            for (var a = e; a && a !== n; ) {
+                                            for (var a = e; a && a !== n;) {
                                                 if (a.classList.contains(s.consuming)) return !0;
                                                 var o = u(a);
                                                 if (
@@ -1532,27 +1532,28 @@
                         addPreloadTexture: () => i,
                         children: () => n,
                         displayStatus: () => r.W,
-                        displayStatusIs: () => f,
+                        displayStatusIs: () => w,
                         events: () => a.U,
-                        extraSize: () => w,
-                        forceTriggerMouseMove: () => B,
+                        extraSize: () => y,
+                        forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => h,
                         getBrowserTexturePath: () => s,
-                        getDisplayStatus: () => v,
+                        getDisplayStatus: () => f,
                         getScale: () => A,
                         getSize: () => m,
                         getViewGlobalPosition: () => E,
-                        isEventHandled: () => p,
+                        isClientAccessible: () => b,
+                        isEventHandled: () => B,
                         isFocused: () => C,
                         pxToRem: () => D,
                         remToPx: () => g,
                         resize: () => _,
                         sendEvent: () => o.qP,
                         setAnimateWindow: () => F,
-                        setEventHandled: () => b,
+                        setEventHandled: () => p,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => d,
-                        whenTutorialReady: () => y,
+                        whenTutorialReady: () => x,
                     }));
                 var n = t(3722),
                     r = t(6112),
@@ -1602,22 +1603,25 @@
                     return viewEnv.isFocused();
                 }
                 function b() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function p() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function B() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function v() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const f = Object.keys(r.W).reduce(
+                const w = Object.keys(r.W).reduce(
                         (e, u) => ((e[u] = () => viewEnv.getShowingStatus() === r.W[u]), e),
                         {},
                     ),
-                    w = {
+                    y = {
                         set: (e, u) => {
                             viewEnv.setExtraSizeRem(e, u);
                         },
@@ -1625,7 +1629,7 @@
                             viewEnv.getExtraSizeRem(e, u);
                         },
                     },
-                    y = Promise.all([
+                    x = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -2252,9 +2256,13 @@
                         if (t.mediumWidth && _) return a(u, t, B);
                         if (t.smallWidth && A) return a(u, t, B);
                         if (t.extraSmallWidth && D) return a(u, t, B);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && g) return u;
                             if (t.largeHeight && F) return u;
                             if (t.mediumHeight && C) return u;
@@ -2634,7 +2642,7 @@
                             n = Z(t);
                         let r,
                             a = e;
-                        for (; null !== (r = K.exec(e)); ) {
+                        for (; null !== (r = K.exec(e));) {
                             const e = r[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
                                 const t = n + e[2].replace(q, '');
@@ -2737,7 +2745,7 @@
                                         ((e) => {
                                             const u = Z(J());
                                             let t;
-                                            for (; null !== (t = z.exec(e)); ) {
+                                            for (; null !== (t = z.exec(e));) {
                                                 const e = t[0].match(/href="(.*?)"/);
                                                 if (e) {
                                                     const t = u + e[1].replace(q, ''),
@@ -2758,7 +2766,7 @@
                                     let u;
                                     const t = J(),
                                         n = Z(t);
-                                    for (; null !== (u = z.exec(e)); ) {
+                                    for (; null !== (u = z.exec(e));) {
                                         const e = u[0].match(/href="(.*?)"/);
                                         if (e && !e[1].includes(Q) && n) {
                                             const u = n + e[1].replace(q, ''),
@@ -2889,7 +2897,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = Ee(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = Ee(r.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -3707,7 +3715,7 @@
                             : (function (e) {
                                   let u = '';
                                   for (let t = du.length - 1; t >= 0; t--)
-                                      for (; e >= du[t]; ) ((u += cu[t]), (e -= du[t]));
+                                      for (; e >= du[t];) ((u += cu[t]), (e -= du[t]));
                                   return u;
                               })(e);
                 R.strings.common.percentValue();

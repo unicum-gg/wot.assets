@@ -909,9 +909,13 @@
                         if (u.mediumWidth && m) return i(t, u, D);
                         if (u.smallWidth && g) return i(t, u, D);
                         if (u.extraSmallWidth && f) return i(t, u, D);
-                        if (
-                            !(u.extraLargeWidth || u.largeWidth || u.mediumWidth || u.smallWidth || u.extraSmallWidth)
-                        ) {
+                        if (!(
+                            u.extraLargeWidth ||
+                            u.largeWidth ||
+                            u.mediumWidth ||
+                            u.smallWidth ||
+                            u.extraSmallWidth
+                        )) {
                             if (u.extraLargeHeight && h) return t;
                             if (u.largeHeight && F) return t;
                             if (u.mediumHeight && p) return t;
@@ -1313,7 +1317,7 @@
                             u = se(t);
                         let n,
                             a = e;
-                        for (; null !== (n = re.exec(e)); ) {
+                        for (; null !== (n = re.exec(e));) {
                             const e = n[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
                                 const t = u + e[2].replace(ie, '');
@@ -1416,7 +1420,7 @@
                                         ((e) => {
                                             const t = se(oe());
                                             let u;
-                                            for (; null !== (u = ae.exec(e)); ) {
+                                            for (; null !== (u = ae.exec(e));) {
                                                 const e = u[0].match(/href="(.*?)"/);
                                                 if (e) {
                                                     const u = t + e[1].replace(ie, ''),
@@ -1437,7 +1441,7 @@
                                     let t;
                                     const u = oe(),
                                         n = se(u);
-                                    for (; null !== (t = ae.exec(e)); ) {
+                                    for (; null !== (t = ae.exec(e));) {
                                         const e = t[0].match(/href="(.*?)"/);
                                         if (e && !e[1].includes(le) && n) {
                                             const t = n + e[1].replace(ie, ''),
@@ -2249,7 +2253,7 @@
                     gt = (e, t, u, n) => {
                         let a = t.exec(e),
                             i = 0;
-                        for (; a; ) (i !== a.index && u(e.slice(i, a.index)), n(a), (i = t.lastIndex), (a = t.exec(e)));
+                        for (; a;) (i !== a.index && u(e.slice(i, a.index)), n(a), (i = t.lastIndex), (a = t.exec(e)));
                         i !== e.length && u(e.slice(i));
                     },
                     ft = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
@@ -2295,7 +2299,7 @@
                               if (!n) return [e];
                               const a = [];
                               let i = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const r = t.justifyContent === ut.FlexEnd ? n.index : u.lastIndex;
                                   (a.push(e.slice(i, r)), (i = r), (n = u.exec(e)));
                               }
@@ -2469,7 +2473,7 @@
                             c = ((e, t) => {
                                 let u = 0,
                                     n = e.length - 1;
-                                for (; n - u >= 0; ) {
+                                for (; n - u >= 0;) {
                                     const a = u + Math.ceil(0.5 * (n - u));
                                     Bt(e[a], t) ? (n = a - 1) : (u = a + 1);
                                 }
@@ -2972,7 +2976,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, u = Xt(a.keys()); !(e = u()).done; ) i(e.value, t);
+                                                        for (var e, u = Xt(a.keys()); !(e = u()).done;) i(e.value, t);
                                                     },
                                                     unsubscribe: i,
                                                 };
@@ -3781,7 +3785,7 @@
                         mn.size
                             ? En ||
                               (En = window.setInterval(() => {
-                                  for (var e, t = dn(mn.values()); !(e = t()).done; ) {
+                                  for (var e, t = dn(mn.values()); !(e = t()).done;) {
                                       (0, e.value)();
                                   }
                               }, 5e3))

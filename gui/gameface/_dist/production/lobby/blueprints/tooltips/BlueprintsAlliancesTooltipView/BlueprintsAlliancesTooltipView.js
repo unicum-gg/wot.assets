@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (u, e, A) => {
-                A.d(e, { O: () => $ });
+                A.d(e, { O: () => G });
                 var E = {};
                 (A.r(E), A.d(E, { mouse: () => o, onResize: () => r }));
                 var F = {};
@@ -33,27 +33,28 @@
                         addPreloadTexture: () => f,
                         children: () => t,
                         displayStatus: () => _,
-                        displayStatusIs: () => z,
+                        displayStatusIs: () => q,
                         events: () => d,
-                        extraSize: () => q,
-                        forceTriggerMouseMove: () => H,
+                        extraSize: () => j,
+                        forceTriggerMouseMove: () => W,
                         freezeTextureBeforeResize: () => P,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => W,
+                        getDisplayStatus: () => z,
                         getScale: () => k,
                         getSize: () => M,
                         getViewGlobalPosition: () => R,
-                        isEventHandled: () => K,
+                        isClientAccessible: () => V,
+                        isEventHandled: () => H,
                         isFocused: () => I,
                         pxToRem: () => S,
                         remToPx: () => L,
                         resize: () => x,
-                        sendEvent: () => b,
+                        sendEvent: () => g,
                         setAnimateWindow: () => U,
-                        setEventHandled: () => V,
+                        setEventHandled: () => K,
                         setInputPaddingsRem: () => T,
                         setSidePaddingsRem: () => N,
-                        whenTutorialReady: () => j,
+                        whenTutorialReady: () => $,
                     }));
                 const r = D('clientResized'),
                     B = { down: D('mousedown'), up: D('mouseup'), move: D('mousemove') };
@@ -160,7 +161,7 @@
                     w = 16,
                     p = 32,
                     h = 64,
-                    g = (u, e) => {
+                    b = (u, e) => {
                         const A = 'GFViewEventProxy';
                         if (void 0 !== e) {
                             const F = e.args,
@@ -196,15 +197,15 @@
                         return viewEnv.handleViewEvent({ __Type: A, type: u });
                         var E;
                     },
-                    b = {
+                    g = {
                         close(u) {
-                            g('popover' === u ? v : p);
+                            b('popover' === u ? v : p);
                         },
                         minimize() {
-                            g(h);
+                            b(h);
                         },
                         move(u) {
-                            g(w, { isMouseEvent: !0, on: u });
+                            b(w, { isMouseEvent: !0, on: u });
                         },
                     };
                 function f(u) {
@@ -251,19 +252,22 @@
                     return viewEnv.isFocused();
                 }
                 function V() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function K() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function H() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function W() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function z() {
                     return viewEnv.getShowingStatus();
                 }
-                const z = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
-                    q = {
+                const q = Object.keys(_).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === _[e]), u), {}),
+                    j = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -271,13 +275,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    j = Promise.all([
+                    $ = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : d.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    $ = { view: n, client: F };
+                    G = { view: n, client: F };
             },
             521: (u, e, A) => {
                 let E, F;
@@ -619,7 +623,7 @@
                     };
                 var p = A(572);
                 const h = F.instance,
-                    g = {
+                    b = {
                         DataTracker: t.Z,
                         ViewModel: p.Z,
                         ViewEventType: i,
@@ -702,7 +706,7 @@
                         SystemLocale: n,
                         UserLocale: D,
                     };
-                window.ViewEnvHelper = g;
+                window.ViewEnvHelper = b;
             },
             951: (u, e, A) => {
                 var E = A(179),
@@ -880,7 +884,7 @@
                 })(p || (p = {}));
                 var h = A(364);
                 Date.now();
-                const g = (u = 1) => {
+                const b = (u = 1) => {
                         const e = new Error().stack;
                         let A,
                             E = R.invalid('resId');
@@ -894,7 +898,7 @@
                             { caller: A, stack: e, resId: E }
                         );
                     },
-                    b = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
+                    g = (u, e) => u.split('.').reduce((u, e) => u && u[e], e),
                     f = (u) => {
                         const e = (0, E.useRef)(!1);
                         e.current || (u(), (e.current = !0));
@@ -904,12 +908,12 @@
                     y = (u) =>
                         ((u, e) =>
                             u.split('.').reduce((u, A) => {
-                                const E = b(`${u}.${A}`, window);
+                                const E = g(`${u}.${A}`, window);
                                 return T(E) ? e(u, A, E) : `${u}.${A}`;
                             }))(u, (u, e) => `${u}.${e}.value`),
                     N = (u) => {
                         const e = ((u) => {
-                                const e = g(),
+                                const e = b(),
                                     A = e.caller,
                                     E = e.resId,
                                     F = window.__feature && window.__feature !== A && A ? `subViews.${A}` : '';
@@ -921,7 +925,7 @@
                             const u = [E[0]];
                             return (
                                 E.reduce((e, E) => {
-                                    const F = b(O(A, `${e}.${E}`), window);
+                                    const F = g(O(A, `${e}.${E}`), window);
                                     return T(F) ? (u.push(F.id), `${e}.${E}.value`) : (u.push(E), `${e}.${E}`);
                                 }),
                                 u.reduce((u, e) => u + '.' + e)
@@ -937,7 +941,7 @@
                 const P = (u = 'model', e = x.Deep) => {
                         const A = (0, E.useState)(0),
                             F = (A[0], A[1]),
-                            t = (0, E.useMemo)(() => g(), []),
+                            t = (0, E.useMemo)(() => b(), []),
                             n = t.caller,
                             D = t.resId,
                             i = (0, E.useMemo)(
@@ -946,7 +950,7 @@
                             ),
                             r = (0, E.useState)(() =>
                                 ((u) => {
-                                    const e = b(u, window);
+                                    const e = g(u, window);
                                     for (const u in e) 'function' == typeof e[u] && (e[u] = e[u].bind(e));
                                     return T(e) ? e.value : e;
                                 })(y(i)),

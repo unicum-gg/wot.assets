@@ -84,9 +84,13 @@
                         if (i.mediumWidth && g) return (0, a.H)(t, i, O);
                         if (i.smallWidth && w) return (0, a.H)(t, i, O);
                         if (i.extraSmallWidth && v) return (0, a.H)(t, i, O);
-                        if (
-                            !(i.extraLargeWidth || i.largeWidth || i.mediumWidth || i.smallWidth || i.extraSmallWidth)
-                        ) {
+                        if (!(
+                            i.extraLargeWidth ||
+                            i.largeWidth ||
+                            i.mediumWidth ||
+                            i.smallWidth ||
+                            i.extraSmallWidth
+                        )) {
                             if (i.extraLargeHeight && E) return t;
                             if (i.largeHeight && b) return t;
                             if (i.mediumHeight && f) return t;
@@ -367,27 +371,28 @@
                         addPreloadTexture: () => s,
                         children: () => r,
                         displayStatus: () => a.W,
-                        displayStatusIs: () => S,
+                        displayStatusIs: () => T,
                         events: () => n.U,
-                        extraSize: () => T,
-                        forceTriggerMouseMove: () => O,
+                        extraSize: () => P,
+                        forceTriggerMouseMove: () => L,
                         freezeTextureBeforeResize: () => g,
                         getBrowserTexturePath: () => d,
-                        getDisplayStatus: () => L,
+                        getDisplayStatus: () => S,
                         getScale: () => w,
                         getSize: () => c,
                         getViewGlobalPosition: () => m,
-                        isEventHandled: () => x,
+                        isClientAccessible: () => p,
+                        isEventHandled: () => O,
                         isFocused: () => f,
                         pxToRem: () => v,
                         remToPx: () => E,
                         resize: () => h,
                         sendEvent: () => o.qP,
                         setAnimateWindow: () => b,
-                        setEventHandled: () => p,
+                        setEventHandled: () => x,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => P,
+                        whenTutorialReady: () => M,
                     }));
                 var r = i(3722),
                     a = i(6112),
@@ -437,22 +442,25 @@
                     return viewEnv.isFocused();
                 }
                 function p() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function x() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function O() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function L() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function S() {
                     return viewEnv.getShowingStatus();
                 }
-                const S = Object.keys(a.W).reduce(
+                const T = Object.keys(a.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === a.W[t]), e),
                         {},
                     ),
-                    T = {
+                    P = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -460,7 +468,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    P = Promise.all([
+                    M = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : n.U.onDomBuilt(e);
                         }),

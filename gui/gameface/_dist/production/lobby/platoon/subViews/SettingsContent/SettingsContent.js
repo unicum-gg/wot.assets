@@ -41,7 +41,7 @@
             },
             67: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => z });
+                t.d(e, { O: () => Y });
                 var r = {};
                 (t.r(r), t.d(r, { mouse: () => F, onResize: () => A }));
                 var n = {};
@@ -72,27 +72,28 @@
                         addPreloadTexture: () => f,
                         children: () => a,
                         displayStatus: () => C,
-                        displayStatusIs: () => V,
+                        displayStatusIs: () => X,
                         events: () => d,
-                        extraSize: () => X,
-                        forceTriggerMouseMove: () => U,
+                        extraSize: () => K,
+                        forceTriggerMouseMove: () => j,
                         freezeTextureBeforeResize: () => k,
                         getBrowserTexturePath: () => S,
-                        getDisplayStatus: () => j,
+                        getDisplayStatus: () => V,
                         getScale: () => R,
                         getSize: () => T,
                         getViewGlobalPosition: () => O,
-                        isEventHandled: () => G,
+                        isClientAccessible: () => W,
+                        isEventHandled: () => U,
                         isFocused: () => I,
                         pxToRem: () => P,
                         remToPx: () => H,
                         resize: () => y,
                         sendEvent: () => w,
                         setAnimateWindow: () => N,
-                        setEventHandled: () => W,
+                        setEventHandled: () => G,
                         setInputPaddingsRem: () => x,
                         setSidePaddingsRem: () => L,
-                        whenTutorialReady: () => K,
+                        whenTutorialReady: () => z,
                     }));
                 const A = E('clientResized'),
                     s = { down: E('mousedown'), up: E('mouseup'), move: E('mousemove') };
@@ -290,19 +291,22 @@
                     return viewEnv.isFocused();
                 }
                 function W() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function G() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function U() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function j() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function V() {
                     return viewEnv.getShowingStatus();
                 }
-                const V = Object.keys(C).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === C[e]), u), {}),
-                    X = {
+                const X = Object.keys(C).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === C[e]), u), {}),
+                    K = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -310,13 +314,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    K = Promise.all([
+                    z = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : d.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    z = { view: i, client: n };
+                    Y = { view: i, client: n };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -1028,9 +1032,13 @@
                         if (t.mediumWidth && l) return p(e, t, h);
                         if (t.smallWidth && D) return p(e, t, h);
                         if (t.extraSmallWidth && _) return p(e, t, h);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && c) return e;
                             if (t.largeHeight && B) return e;
                             if (t.mediumHeight && C) return e;
@@ -1590,7 +1598,7 @@
                     gu = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function bu(u) {
                     let e = '';
-                    for (let t = gu.length - 1; t >= 0; t--) for (; u >= gu[t]; ) ((e += hu[t]), (u -= gu[t]));
+                    for (let t = gu.length - 1; t >= 0; t--) for (; u >= gu[t];) ((e += hu[t]), (u -= gu[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -2036,7 +2044,7 @@
                             r = Uu(t);
                         let n,
                             a = u;
-                        for (; null !== (n = Wu.exec(u)); ) {
+                        for (; null !== (n = Wu.exec(u));) {
                             const u = n[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (u) {
                                 const t = r + u[2].replace(Iu, '');
@@ -2137,7 +2145,7 @@
                                     ((u) => {
                                         const e = Uu(ju());
                                         let t;
-                                        for (; null !== (t = Nu.exec(u)); ) {
+                                        for (; null !== (t = Nu.exec(u));) {
                                             const u = t[0].match(/href="(.*?)"/);
                                             if (u) {
                                                 const t = e + u[1].replace(Iu, ''),
@@ -2158,7 +2166,7 @@
                                 let e;
                                 const t = ju(),
                                     r = Uu(t);
-                                for (; null !== (e = Nu.exec(u)); ) {
+                                for (; null !== (e = Nu.exec(u));) {
                                     const u = e[0].match(/href="(.*?)"/);
                                     if (u && !u[1].includes(Gu) && r) {
                                         const e = r + u[1].replace(Iu, ''),
@@ -2263,7 +2271,7 @@
                     const u = m('model.tiersSettings').onSwitchTier,
                         e = ((u, e) => {
                             const t = [];
-                            for (; u.length; ) {
+                            for (; u.length;) {
                                 const r = u.slice(0, e);
                                 (t.push(r), (u = u.slice(e)));
                             }

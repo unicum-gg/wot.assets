@@ -904,9 +904,13 @@
                         if (t.mediumWidth && d) return a(e, t, v);
                         if (t.smallWidth && m) return a(e, t, v);
                         if (t.extraSmallWidth && D) return a(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && B) return e;
                             if (t.mediumHeight && g) return e;
@@ -1533,7 +1537,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Eu(n.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = Eu(n.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -3106,7 +3110,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = Je.length - 1; t >= 0; t--)
-                                      for (; u >= Je[t]; ) ((e += Ze[t]), (u -= Je[t]));
+                                      for (; u >= Je[t];) ((e += Ze[t]), (u -= Je[t]));
                                   return e;
                               })(u),
                     tt = {
@@ -3544,7 +3548,7 @@
                         let o = Wt.exec(u),
                             s = u,
                             l = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const t = o[0],
                                 r = $t.exec(t),
                                 c = qt.exec(t),

@@ -2,7 +2,7 @@
     'use strict';
     var __webpack_modules__ = {
             67: (u, e, t) => {
-                t.d(e, { O: () => Y });
+                t.d(e, { O: () => G });
                 var n = {};
                 (t.r(n), t.d(n, { mouse: () => s, onResize: () => F }));
                 var i = {};
@@ -33,27 +33,28 @@
                         addPreloadTexture: () => b,
                         children: () => r,
                         displayStatus: () => C,
-                        displayStatusIs: () => K,
+                        displayStatusIs: () => q,
                         events: () => _,
-                        extraSize: () => q,
-                        forceTriggerMouseMove: () => U,
+                        extraSize: () => z,
+                        forceTriggerMouseMove: () => j,
                         freezeTextureBeforeResize: () => k,
                         getBrowserTexturePath: () => O,
-                        getDisplayStatus: () => j,
+                        getDisplayStatus: () => K,
                         getScale: () => P,
                         getSize: () => y,
                         getViewGlobalPosition: () => L,
-                        isEventHandled: () => I,
+                        isClientAccessible: () => W,
+                        isEventHandled: () => U,
                         isFocused: () => V,
                         pxToRem: () => R,
                         remToPx: () => N,
                         resize: () => M,
                         sendEvent: () => f,
                         setAnimateWindow: () => H,
-                        setEventHandled: () => W,
+                        setEventHandled: () => I,
                         setInputPaddingsRem: () => x,
                         setSidePaddingsRem: () => T,
-                        whenTutorialReady: () => z,
+                        whenTutorialReady: () => Y,
                     }));
                 const F = A('clientResized'),
                     o = { down: A('mousedown'), up: A('mouseup'), move: A('mousemove') };
@@ -251,19 +252,22 @@
                     return viewEnv.isFocused();
                 }
                 function W() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function I() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function U() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function j() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function K() {
                     return viewEnv.getShowingStatus();
                 }
-                const K = Object.keys(C).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === C[e]), u), {}),
-                    q = {
+                const q = Object.keys(C).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === C[e]), u), {}),
+                    z = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -271,13 +275,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    z = Promise.all([
+                    Y = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : _.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    Y = { view: a, client: i };
+                    G = { view: a, client: i };
             },
             521: (u, e, t) => {
                 let n, i;
@@ -840,9 +844,13 @@
                         if (t.mediumWidth && D) return A(e, t, v);
                         if (t.smallWidth && d) return A(e, t, v);
                         if (t.extraSmallWidth && c) return A(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && h) return e;
                             if (t.mediumHeight && m) return e;
@@ -1131,7 +1139,7 @@
                             n = X(t);
                         let i,
                             r = u;
-                        for (; null !== (i = $.exec(u)); ) {
+                        for (; null !== (i = $.exec(u));) {
                             const u = i[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (u) {
                                 const t = n + u[2].replace(G, '');
@@ -1234,7 +1242,7 @@
                                         ((u) => {
                                             const e = X(Q());
                                             let t;
-                                            for (; null !== (t = Y.exec(u)); ) {
+                                            for (; null !== (t = Y.exec(u));) {
                                                 const u = t[0].match(/href="(.*?)"/);
                                                 if (u) {
                                                     const t = e + u[1].replace(G, ''),
@@ -1255,7 +1263,7 @@
                                     let e;
                                     const t = Q(),
                                         n = X(t);
-                                    for (; null !== (e = Y.exec(u)); ) {
+                                    for (; null !== (e = Y.exec(u));) {
                                         const u = e[0].match(/href="(.*?)"/);
                                         if (u && !u[1].includes(Z) && n) {
                                             const e = n + u[1].replace(G, ''),

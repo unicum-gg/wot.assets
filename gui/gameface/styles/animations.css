@@ -1,4 +1,24 @@
 $tab-content-fadein-duration: 0.6s;
+$tip-transition-opacity-set: opacity 0.3s ease-out;
+
+$rewards-width-small: 200rem;
+$rewards-width-medium: 208rem;
+$rewards-width-large: 304rem;
+$rewards-width-extraLarge: 328rem;
+
+$quest-wrapper-width: 1500rem;
+
+$quest-card-width-extraSmall: 556rem;
+$quest-card-width-small: 688rem;
+$quest-card-width-medium: 800rem;
+$quest-card-width-large: 944rem;
+$quest-card-width-extraLarge: 1200rem;
+
+$quest-indent-extraSmall: calc(($quest-wrapper-width - $quest-card-width-extraSmall) / 2);
+$quest-indent-small: calc(($quest-wrapper-width - $quest-card-width-small) / 2);
+$quest-indent-medium: calc(($quest-wrapper-width - $quest-card-width-medium) / 2);
+$quest-indent-large: calc(($quest-wrapper-width - $quest-card-width-large) / 2);
+$quest-indent-extraLarge: calc(($quest-wrapper-width - $quest-card-width-extraLarge) / 2);
 
 @keyframes fadeIn {
     from {

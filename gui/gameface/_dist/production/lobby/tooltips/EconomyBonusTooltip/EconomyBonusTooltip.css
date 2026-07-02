@@ -286,11 +286,107 @@
     color: #a29b70;
 }
 
+.SplittedTextWithColorTags_blackReal_79 {
+    color: #000000;
+}
+
+.SplittedTextWithColorTags_whiteReal_d8 {
+    color: #ffffff;
+}
+
+.SplittedTextWithColorTags_white_6a {
+    color: #f2f2f7;
+}
+
+.SplittedTextWithColorTags_whiteOrange_64 {
+    color: #fefeec;
+}
+
+.SplittedTextWithColorTags_whiteSpanish_b7 {
+    color: #e9e2bf;
+}
+
+.SplittedTextWithColorTags_par_20 {
+    color: #8c8c7e;
+}
+
+.SplittedTextWithColorTags_parSecondary_4d {
+    color: #595950;
+}
+
+.SplittedTextWithColorTags_parTertiary_4a {
+    color: #37362e;
+}
+
+.SplittedTextWithColorTags_red_66 {
+    color: #ff2717;
+}
+
+.SplittedTextWithColorTags_redDark_21 {
+    color: #b70000;
+}
+
+.SplittedTextWithColorTags_yellow_97 {
+    color: #feab34;
+}
+
+.SplittedTextWithColorTags_orange_e2 {
+    color: #ee7000;
+}
+
+.SplittedTextWithColorTags_cream_cf {
+    color: #ffdd99;
+}
+
+.SplittedTextWithColorTags_brown_d5 {
+    color: #cbac77;
+}
+
+.SplittedTextWithColorTags_greenBright_e1 {
+    color: #80d43a;
+}
+
+.SplittedTextWithColorTags_green_1a {
+    color: #7ab300;
+}
+
+.SplittedTextWithColorTags_greenDark_5d {
+    color: #497212;
+}
+
+.SplittedTextWithColorTags_blueBooster_0c {
+    color: #ccffff;
+}
+
+.SplittedTextWithColorTags_blueTeamkiller_3a {
+    color: #09e2ff;
+}
+
+.SplittedTextWithColorTags_cred_4d {
+    color: #ced9d9;
+}
+
+.SplittedTextWithColorTags_gold_0e {
+    color: #ffc363;
+}
+
+.SplittedTextWithColorTags_bond_5a {
+    color: #c9c9b6;
+}
+
+.SplittedTextWithColorTags_prom_9e {
+    color: #a29b70;
+}
+
 .App_base_4f {
     display: flex;
     flex-direction: column;
-    width: 340rem;
-    padding: 20rem;
+    width: 400rem;
+}
+
+.App_headerContainer_53 {
+    width: 100%;
+    background: url('R.images.mt_birthday.gui.maps.icons.tooltips.economyBonusHeader') no-repeat center / contain;
 }
 
 .App_header_9f {
@@ -298,7 +394,7 @@
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 16rem;
+    margin: 26rem 24rem;
 }
 
 .App_description_b1 {
@@ -306,11 +402,11 @@
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    margin-bottom: 16rem;
+    margin: 16rem 24rem 0;
 }
 
 .App_bonus_20 {
-    color: #e9e2bf;
+    color: #cbac77;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
@@ -319,7 +415,7 @@
 .App_resourcesList_13 {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    margin: 12rem 24rem 16rem;
 }
 
 .App_resource_22 {
@@ -327,12 +423,10 @@
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    width: 132rem;
-    height: 32rem;
-    margin-right: 12rem;
-    padding-left: 36rem;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    width: 175rem;
+    height: 24rem;
+    padding-left: 30rem;
+    padding-top: 1rem;
     background: no-repeat left / contain;
 }
 
@@ -352,18 +446,42 @@
     background-image: url('R.images.gui.maps.icons.library.free_xp_icon_80x80');
 }
 
+.App_modeListContainer_24 {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 16rem 24rem;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(201, 201, 182, 0.07) 38.22%,
+        rgba(201, 201, 182, 0.07) 64.56%,
+        transparent 100%
+    );
+}
+
 .App_subHeader_89 {
     color: #e9e2bf;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
-    margin-bottom: 16rem;
+    margin-bottom: 10rem;
 }
 
 .App_modesList_97 {
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    flex-wrap: wrap;
+}
+
+.App_gameModeContainer_93 {
+    display: flex;
+    width: 174rem;
+    margin-top: 4rem;
+}
+
+.App_gameModeIcon_84 {
+    width: 24rem;
+    height: 24rem;
+    background: no-repeat left / contain;
 }
 
 .App_mode_2c {
@@ -371,23 +489,17 @@
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
-    width: 100%;
-    height: 32rem;
-    margin-top: 4rem;
-    margin-right: 12rem;
-    padding-left: 36rem;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-    background: no-repeat left / contain;
+    width: 165rem;
+    padding-left: 4rem;
+    transform: translateY(1rem);
 }
 
 .App_divider_4c {
     display: flex;
     align-self: center;
-    width: 302rem;
-    height: 9rem;
-    margin: 16rem auto;
-    background: url('R.images.mt_birthday.gui.maps.icons.divider') no-repeat center / contain;
+    width: 100%;
+    height: 1rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.divider') no-repeat center / cover;
 }
 
 .App_addition_64 {
@@ -395,4 +507,5 @@
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
+    margin: 16rem 24rem;
 }

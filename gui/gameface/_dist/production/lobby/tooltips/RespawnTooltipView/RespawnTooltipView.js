@@ -525,7 +525,7 @@
                         let D = pu.exec(u),
                             t = u,
                             C = 0;
-                        for (; D; ) {
+                        for (; D;) {
                             const F = D[0],
                                 B = hu.exec(F),
                                 r = bu.exec(F),

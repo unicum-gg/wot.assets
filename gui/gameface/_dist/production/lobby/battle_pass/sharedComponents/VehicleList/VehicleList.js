@@ -81,8 +81,8 @@
                             h = void 0 === c ? D : c,
                             x = u.column,
                             p = u.row,
-                            f = u.flexDirection,
-                            v = void 0 === f ? (x ? 'column' : p && 'row') || void 0 : f,
+                            v = u.flexDirection,
+                            f = void 0 === v ? (x ? 'column' : p && 'row') || void 0 : v,
                             S = u.flexStart,
                             w = u.center,
                             b = u.flexEnd,
@@ -136,15 +136,15 @@
                                         height: void 0 !== F && 'number' == typeof F ? F + 'rem' : F,
                                         flex: Z,
                                         alignSelf: O,
-                                        display: v || y ? 'flex' : void 0,
-                                        flexDirection: v,
+                                        display: f || y ? 'flex' : void 0,
+                                        flexDirection: f,
                                         flexWrap: G,
                                         justifyContent: H,
                                         alignItems: y,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [A, F, B, d, _, h, z, Z, O, v, G, H, y]),
+                            }, [A, F, B, d, _, h, z, Z, O, f, G, H, y]),
                             Y = U.computedStyle,
                             K = U.computedClassNames;
                         return C().createElement('div', n({ className: E()(a.Z.base, ...K, e), style: Y }, k), I);
@@ -262,9 +262,13 @@
                         if (A.mediumWidth && s) return (0, E.H)(e, A, p);
                         if (A.smallWidth && o) return (0, E.H)(e, A, p);
                         if (A.extraSmallWidth && d) return (0, E.H)(e, A, p);
-                        if (
-                            !(A.extraLargeWidth || A.largeWidth || A.mediumWidth || A.smallWidth || A.extraSmallWidth)
-                        ) {
+                        if (!(
+                            A.extraLargeWidth ||
+                            A.largeWidth ||
+                            A.mediumWidth ||
+                            A.smallWidth ||
+                            A.extraSmallWidth
+                        )) {
                             if (A.extraLargeHeight && g) return e;
                             if (A.largeHeight && _) return e;
                             if (A.mediumHeight && c) return e;
@@ -481,8 +485,8 @@
                         _ = void 0 === g ? r : g,
                         c = u.ml,
                         h = void 0 === c ? r : c,
-                        f = u.style,
-                        v = u.format,
+                        v = u.style,
+                        f = u.format,
                         S = (function (u, e) {
                             if (null == u) return {};
                             var A,
@@ -497,8 +501,8 @@
                                 e = u.colorClassName,
                                 A = u.colorStyle,
                                 F = void 0 === A ? {} : A;
-                            return { computedStyle: Object.assign({}, f, F), colorClassName: e };
-                        }, [f, B]),
+                            return { computedStyle: Object.assign({}, v, F), colorClassName: e };
+                        }, [v, B]),
                         b = w.computedStyle,
                         L = w.colorClassName;
                     return l().createElement(
@@ -514,7 +518,7 @@
                             },
                             S,
                         ),
-                        void 0 !== v ? l().createElement(t.z, o({}, v, { text: e })) : e,
+                        void 0 !== f ? l().createElement(t.z, o({}, f, { text: e })) : e,
                     );
                 });
             },
@@ -720,27 +724,28 @@
                         addPreloadTexture: () => B,
                         children: () => F,
                         displayStatus: () => E.W,
-                        displayStatusIs: () => v,
+                        displayStatusIs: () => S,
                         events: () => D.U,
-                        extraSize: () => S,
-                        forceTriggerMouseMove: () => p,
+                        extraSize: () => w,
+                        forceTriggerMouseMove: () => v,
                         freezeTextureBeforeResize: () => s,
                         getBrowserTexturePath: () => C,
                         getDisplayStatus: () => f,
                         getScale: () => o,
                         getSize: () => n,
                         getViewGlobalPosition: () => m,
-                        isEventHandled: () => x,
+                        isClientAccessible: () => h,
+                        isEventHandled: () => p,
                         isFocused: () => c,
                         pxToRem: () => d,
                         remToPx: () => g,
                         resize: () => l,
                         sendEvent: () => t.qP,
                         setAnimateWindow: () => _,
-                        setEventHandled: () => h,
+                        setEventHandled: () => x,
                         setInputPaddingsRem: () => r,
                         setSidePaddingsRem: () => i,
-                        whenTutorialReady: () => w,
+                        whenTutorialReady: () => b,
                     }));
                 var F = A(3722),
                     E = A(6112),
@@ -790,22 +795,25 @@
                     return viewEnv.isFocused();
                 }
                 function h() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function x() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function p() {
+                    return viewEnv.isEventHandled();
+                }
+                function v() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function f() {
                     return viewEnv.getShowingStatus();
                 }
-                const v = Object.keys(E.W).reduce(
+                const S = Object.keys(E.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === E.W[e]), u),
                         {},
                     ),
-                    S = {
+                    w = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -813,7 +821,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    w = Promise.all([
+                    b = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : D.U.onDomBuilt(u);
                         }),

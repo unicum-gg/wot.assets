@@ -2579,15 +2579,13 @@
                             if (t.mediumWidth && A) return Gu(e, t, g);
                             if (t.smallWidth && F) return Gu(e, t, g);
                             if (t.extraSmallWidth && D) return Gu(e, t, g);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && m) return e;
                                 if (t.largeHeight && d) return e;
                                 if (t.mediumHeight && B) return e;
@@ -3015,7 +3013,7 @@
                         let a = Ce.exec(u),
                             o = u,
                             l = 0;
-                        for (; a; ) {
+                        for (; a;) {
                             const t = a[0],
                                 i = ge.exec(t),
                                 E = pe.exec(t),

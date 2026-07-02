@@ -918,15 +918,13 @@
                             if (t.mediumWidth && d) return s(e, t, b);
                             if (t.smallWidth && A) return s(e, t, b);
                             if (t.extraSmallWidth && F) return s(e, t, b);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && h) return e;
                                 if (t.largeHeight && p) return e;
                                 if (t.mediumHeight && B) return e;
@@ -1863,7 +1861,7 @@
                     Ou = (u, e, t, n) => {
                         let r = e.exec(u),
                             i = 0;
-                        for (; r; ) (i !== r.index && t(u.slice(i, r.index)), n(r), (i = e.lastIndex), (r = e.exec(u)));
+                        for (; r;) (i !== r.index && t(u.slice(i, r.index)), n(r), (i = e.lastIndex), (r = e.exec(u)));
                         i !== u.length && t(u.slice(i));
                     },
                     Iu = (u) => {
@@ -1872,7 +1870,7 @@
                         if (!t) return [u];
                         const n = [];
                         let r = 0;
-                        for (; t; ) (n.push(u.slice(r, e.lastIndex)), (r = e.lastIndex), (t = e.exec(u)));
+                        for (; t;) (n.push(u.slice(r, e.lastIndex)), (r = e.lastIndex), (t = e.exec(u)));
                         return (r !== u.length && n.push(u.slice(r)), n);
                     },
                     Pu = (u, e = '') => {
@@ -2095,7 +2093,7 @@
                                                     l = ((u, e) => {
                                                         let t = 0,
                                                             n = u.length - 1;
-                                                        for (; n - t >= 0; ) {
+                                                        for (; n - t >= 0;) {
                                                             const r = t + Math.ceil(0.5 * (n - t));
                                                             Wu(u[r], e) ? (n = r - 1) : (t = r + 1);
                                                         }
@@ -2655,7 +2653,7 @@
                                     const e = a[u] || '',
                                         t = _[A] || '';
                                     if (e.match(d) || e === t) {
-                                        for (; e !== _[A] && A < _.length; ) A++;
+                                        for (; e !== _[A] && A < _.length;) A++;
                                         A++;
                                     }
                                 }
@@ -2684,8 +2682,8 @@
                                 if (s) return;
                                 let l = c;
                                 const _ = o.test(a[c]);
-                                if (t && _) for (; o.test(a[l]) && l < a.length; ) l++;
-                                if (e && _) for (; o.test(a[l]) && l > 0; ) l--;
+                                if (t && _) for (; o.test(a[l]) && l < a.length;) l++;
+                                if (e && _) for (; o.test(a[l]) && l > 0;) l--;
                                 if (l !== c || (e && _))
                                     return (u.preventDefault(), (l = l < 0 ? 0 : l), void this.setCursorPosition(l, l));
                                 ((e && 1 === r && 1 === a.length) || t) &&

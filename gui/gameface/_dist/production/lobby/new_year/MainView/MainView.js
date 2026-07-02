@@ -1073,15 +1073,13 @@
                             if (n.mediumWidth && d) return i(t, n, D);
                             if (n.smallWidth && E) return i(t, n, D);
                             if (n.extraSmallWidth && p) return i(t, n, D);
-                            if (
-                                !(
-                                    n.extraLargeWidth ||
-                                    n.largeWidth ||
-                                    n.mediumWidth ||
-                                    n.smallWidth ||
-                                    n.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                n.extraLargeWidth ||
+                                n.largeWidth ||
+                                n.mediumWidth ||
+                                n.smallWidth ||
+                                n.extraSmallWidth
+                            )) {
                                 if (n.extraLargeHeight && h) return t;
                                 if (n.largeHeight && b) return t;
                                 if (n.mediumHeight && A) return t;
@@ -2082,7 +2080,7 @@
                             : (function (e) {
                                   let t = '';
                                   for (let n = Ye.length - 1; n >= 0; n--)
-                                      for (; e >= Ye[n]; ) ((t += qe[n]), (e -= Ye[n]));
+                                      for (; e >= Ye[n];) ((t += qe[n]), (e -= Ye[n]));
                                   return t;
                               })(e);
                 let Ze, Ke, Je, et, tt, nt, at;
@@ -4816,7 +4814,7 @@
                         let u = Ma.exec(e),
                             i = e,
                             l = 0;
-                        for (; u; ) {
+                        for (; u;) {
                             const n = u[0],
                                 s = xa.exec(n),
                                 c = Ta.exec(n),
@@ -7460,7 +7458,7 @@
                                     const t = s[e] || '',
                                         n = m[E] || '';
                                     if (t.match(d) || t === n) {
-                                        for (; t !== m[E] && E < m.length; ) E++;
+                                        for (; t !== m[E] && E < m.length;) E++;
                                         E++;
                                     }
                                 }
@@ -7489,8 +7487,8 @@
                                 if (o) return;
                                 let c = l;
                                 const m = i.test(s[l]);
-                                if (n && m) for (; i.test(s[c]) && c < s.length; ) c++;
-                                if (t && m) for (; i.test(s[c]) && c > 0; ) c--;
+                                if (n && m) for (; i.test(s[c]) && c < s.length;) c++;
+                                if (t && m) for (; i.test(s[c]) && c > 0;) c--;
                                 if (c !== l || (t && m))
                                     return (e.preventDefault(), (c = c < 0 ? 0 : c), void this.setCursorPosition(c, c));
                                 ((t && 1 === r && 1 === s.length) || n) &&

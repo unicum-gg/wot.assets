@@ -18,7 +18,7 @@
             },
             67: (e, t, r) => {
                 'use strict';
-                r.d(t, { O: () => z });
+                r.d(t, { O: () => q });
                 var n = {};
                 (r.r(n), r.d(n, { mouse: () => u, onResize: () => d }));
                 var i = {};
@@ -49,27 +49,28 @@
                         addPreloadTexture: () => O,
                         children: () => a,
                         displayStatus: () => w,
-                        displayStatusIs: () => B,
+                        displayStatusIs: () => $,
                         events: () => v,
-                        extraSize: () => $,
-                        forceTriggerMouseMove: () => V,
+                        extraSize: () => K,
+                        forceTriggerMouseMove: () => j,
                         freezeTextureBeforeResize: () => D,
                         getBrowserTexturePath: () => y,
-                        getDisplayStatus: () => j,
+                        getDisplayStatus: () => B,
                         getScale: () => I,
                         getSize: () => k,
                         getViewGlobalPosition: () => H,
-                        isEventHandled: () => G,
+                        isClientAccessible: () => U,
+                        isEventHandled: () => V,
                         isFocused: () => F,
                         pxToRem: () => C,
                         remToPx: () => W,
                         resize: () => R,
                         sendEvent: () => M,
                         setAnimateWindow: () => N,
-                        setEventHandled: () => U,
+                        setEventHandled: () => G,
                         setInputPaddingsRem: () => T,
                         setSidePaddingsRem: () => P,
-                        whenTutorialReady: () => K,
+                        whenTutorialReady: () => z,
                     }));
                 const d = l('clientResized'),
                     c = { down: l('mousedown'), up: l('mouseup'), move: l('mousemove') };
@@ -267,19 +268,22 @@
                     return viewEnv.isFocused();
                 }
                 function U() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function G() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function V() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function j() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function B() {
                     return viewEnv.getShowingStatus();
                 }
-                const B = Object.keys(w).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === w[t]), e), {}),
-                    $ = {
+                const $ = Object.keys(w).reduce((e, t) => ((e[t] = () => viewEnv.getShowingStatus() === w[t]), e), {}),
+                    K = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -287,13 +291,13 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    K = Promise.all([
+                    z = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : v.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    z = { view: o, client: i };
+                    q = { view: o, client: i };
             },
             358: (e, t, r) => {
                 'use strict';
@@ -853,9 +857,13 @@
                         if (r.mediumWidth && _) return a(t, r, x);
                         if (r.smallWidth && E) return a(t, r, x);
                         if (r.extraSmallWidth && w) return a(t, r, x);
-                        if (
-                            !(r.extraLargeWidth || r.largeWidth || r.mediumWidth || r.smallWidth || r.extraSmallWidth)
-                        ) {
+                        if (!(
+                            r.extraLargeWidth ||
+                            r.largeWidth ||
+                            r.mediumWidth ||
+                            r.smallWidth ||
+                            r.extraSmallWidth
+                        )) {
                             if (r.extraLargeHeight && v) return t;
                             if (r.largeHeight && b) return t;
                             if (r.mediumHeight && f) return t;
@@ -1336,7 +1344,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, r = Y(i.keys()); !(e = r()).done; ) a(e.value, t);
+                                                        for (var e, r = Y(i.keys()); !(e = r()).done;) a(e.value, t);
                                                     },
                                                     unsubscribe: a,
                                                 };

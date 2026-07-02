@@ -415,210 +415,204 @@
     color: #a29b70;
 }
 
-.Header_base_f9 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.Header_headerTitle_c9 {
-    color: #fefeec;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.mediaMedium .Header_headerTitle_c9 {
-    color: #fefeec;
-    font-size: 56rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.mediaExtraLarge .Header_headerTitle_c9 {
-    color: #fefeec;
-    font-size: 73rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.Header_headerDescription_c5 {
-    color: #fefeec;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin-top: 8rem;
-}
-
-.mediaMedium .Header_headerDescription_c5 {
-    color: #fefeec;
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-
-.mediaLarge .Header_headerDescription_c5 {
-    color: #fefeec;
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2;
-}
-
-.ErrorPostScreen_base_e9 {
+.AnimationControls_base_87 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-content: center;
+    width: 100rem;
+    height: 76rem;
 }
-
-.ErrorPostScreen_icon_e4 {
-    width: 180rem;
-    height: 135rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.error_small') no-repeat center / contain;
+.AnimationControls_hoverContainer_fa {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 65rem;
+    height: 60rem;
+    color: #fd9;
+    cursor: pointer;
 }
-
-.mediaMedium .ErrorPostScreen_icon_e4 {
-    width: 296rem;
-    height: 222rem;
-    background-image: url('R.images.mt_birthday.gui.maps.icons.tankMail.error_medium');
+.AnimationControls_icon_12 {
+    width: 35rem;
+    height: 32rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.common.animationControls.icon_hide_video') no-repeat center /
+        100%;
 }
-
-.mediaLarge .ErrorPostScreen_icon_e4 {
-    width: 360rem;
-    height: 270rem;
-    background-image: url('R.images.mt_birthday.gui.maps.icons.tankMail.error_large');
+.AnimationControls_base__disabledAnimadion_e5 .AnimationControls_icon_12 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.common.animationControls.icon_show_video');
 }
-
-.mediaExtraLarge .ErrorPostScreen_icon_e4 {
-    width: 400rem;
-    height: 300rem;
-}
-
-.ErrorPostScreen_title_d3 {
-    color: #fefeec;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.mediaMedium .ErrorPostScreen_title_d3 {
-    color: #fefeec;
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.mediaLarge .ErrorPostScreen_title_d3 {
-    color: #fefeec;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.mediaExtraLarge .ErrorPostScreen_title_d3 {
-    color: #fefeec;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.ErrorPostScreen_subTitle_89 {
-    color: #fefeec;
-    font-size: 14rem;
+.AnimationControls_text_ff {
+    color: #fd9;
+    font-size: 12rem;
     font-weight: 400;
     line-height: 1.3;
-    margin-top: 8rem;
+    margin: 0 5rem;
+    text-align: center;
+    text-shadow:
+        0 0 15rem rgba(238, 85, 34, 1),
+        0 0 8rem rgba(255, 42, 0, 1),
+        0 0 4rem rgba(255, 127, 0, 0.25);
+    transition: all 0.2s;
+}
+.AnimationControls_hoverContainer_fa:hover .AnimationControls_text_ff {
+    color: #fffa9f;
 }
 
-.mediaLarge .ErrorPostScreen_subTitle_89 {
-    color: #fefeec;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-
-.mediaExtraLarge .ErrorPostScreen_subTitle_89 {
-    color: #fefeec;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin-top: 16rem;
-}
-
-@keyframes App_fadeIn_cd {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes App_fadeOut_3c {
-    from {
-        opacity: 1;
-    }
-
-    to {
-        opacity: 0;
-    }
-}
-
-.App_base_3d {
+.HorizontalTabs_base_92 {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-    background: url('R.images.mt_birthday.gui.maps.icons.allRewards.background') no-repeat center / cover;
+}
+.HorizontalTabs_tab_ca {
+    display: flex;
+    align-items: center;
+    height: 32rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #e9e2bf;
+    font-size: 14rem;
     position: relative;
-    animation: App_fadeIn_cd 0.6s forwards;
+    z-index: 0;
+    transition: color 0.16s ease-in-out;
+    cursor: pointer;
 }
-
-.App_vignette_9c {
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(
-        108.07% 92.22% at 51.17% 7.78%,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.3) 68.27%,
-        rgba(0, 0, 0, 0.3) 100%
-    );
-    position: absolute;
+.HorizontalTabs_tab_ca:hover {
+    color: #fd9;
 }
-
-.App_header_bf {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 45rem;
+.HorizontalTabs_tab__medium_88 {
+    height: 46rem;
+    padding-bottom: 2rem;
+    font-size: 16rem;
 }
-
-.mediaLarge .App_header_bf {
-    margin-top: 58rem;
+.HorizontalTabs_tab__active_3e {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fd9;
 }
-
-.mediaExtraLarge .App_header_bf {
-    margin-top: 74rem;
+.HorizontalTabs_tab__nonInteractive_ce {
+    cursor: default;
 }
-
-.App_levelsWrapper_f8 {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-}
-
-.App_errorScreen_76 {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+.HorizontalTabs_state_3d {
+    opacity: 0;
     position: absolute;
     top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
+    z-index: -1;
+    transition: background-color 0.16s ease-in-out;
+    pointer-events: none;
+}
+.HorizontalTabs_tab_ca:hover .HorizontalTabs_state_3d,
+.HorizontalTabs_tab__active_3e .HorizontalTabs_state_3d {
+    background-color: rgba(255, 85, 0, 0.06);
+    opacity: 1;
+}
+.HorizontalTabs_tab__active_3e .HorizontalTabs_state_3d {
+    border: 1rem solid rgba(255, 85, 0, 0.2);
+}
+.HorizontalTabs_highlight_9e {
+    width: 338rem;
+    height: 168rem;
+    background: url('R.images.gui.maps.icons.components.tabs.tab.highlight') no-repeat center/ contain;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.16s ease-in-out;
+    pointer-events: none;
+}
+.HorizontalTabs_tab__active_3e .HorizontalTabs_highlight_9e {
+    opacity: 1;
+}
+.HorizontalTabs_border_08 {
+    width: 1rem;
+    background: url('R.images.gui.maps.icons.components.tabs.tab.border') 0 50% no-repeat;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transition: opacity 0.16s ease-in-out;
+}
+.HorizontalTabs_tab__active_3e .HorizontalTabs_border_08 {
+    opacity: 1;
+}
+.HorizontalTabs_border__left_64 {
+    left: -1rem;
+}
+.HorizontalTabs_border__right_45 {
+    right: -1rem;
+}
+.HorizontalTabs_divider_6f {
+    width: 1rem;
+    height: 100%;
+    background: url('R.images.gui.maps.icons.components.tabs.tab.separator') no-repeat 50% 50%;
+    position: absolute;
+    top: 0;
+    right: -1rem;
+    pointer-events: none;
+}
+.HorizontalTabs_title_10 {
+    padding: 0 32rem 1rem;
+    z-index: 5;
+}
+.HorizontalTabs_notification_89 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 14rem;
+    height: 14rem;
+    padding: 0rem 3rem 2rem;
+    border: 1rem solid #fe4e0f;
+    border-radius: 999rem;
+    box-shadow:
+        0 0 0 1rem rgba(0, 0, 0, 0.3),
+        0 0 6rem rgba(254, 103, 0, 0.2),
+        0 0 12rem 4rem rgba(249, 0, 0, 0.3);
+    background-image: url('R.images.gui.maps.icons.components.counter.pattern');
+    color: #fff;
+    font-size: 12rem;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 10rem;
+    z-index: 6;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.HorizontalTabs_notification__symbol_8b {
+    width: 14rem;
+}
+.HorizontalTabs_notification__small_7c {
+    min-width: 13rem;
+    height: 13rem;
+    padding: 0rem 3rem 2rem;
+    font-size: 10rem;
+}
+.HorizontalTabs_notification__small_7c.HorizontalTabs_notification__symbol_8b {
+    width: 13rem;
+}
+.HorizontalTabs_notification__large_a2 {
+    min-width: 18rem;
+    height: 18rem;
+    padding: 0rem 5rem 2rem;
+    font-size: 14rem;
+}
+.HorizontalTabs_notification__large_a2.HorizontalTabs_notification__symbol_8b {
+    width: 18rem;
+}
+.HorizontalTabs_notification__dot_d7 {
+    min-width: 0;
+    padding: 0;
+}
+.HorizontalTabs_notification__dot_d7.HorizontalTabs_notification__medium_19,
+.HorizontalTabs_notification__dot_d7.HorizontalTabs_notification__large_a2 {
+    width: 8rem;
+    height: 8rem;
+}
+.HorizontalTabs_notification__dot_d7.HorizontalTabs_notification__small_7c {
+    width: 6rem;
+    height: 6rem;
 }
 
 .HorizontalBar_base_49 {
@@ -826,344 +820,780 @@
     flex: 1;
 }
 
-.LevelsRewards_base_e6 {
+.FormatTextWithColorTags_blackReal_3c {
+    color: #000000;
+}
+
+.FormatTextWithColorTags_whiteReal_8a {
+    color: #ffffff;
+}
+
+.FormatTextWithColorTags_white_16 {
+    color: #f2f2f7;
+}
+
+.FormatTextWithColorTags_whiteOrange_18 {
+    color: #fefeec;
+}
+
+.FormatTextWithColorTags_whiteSpanish_10 {
+    color: #e9e2bf;
+}
+
+.FormatTextWithColorTags_par_ca {
+    color: #8c8c7e;
+}
+
+.FormatTextWithColorTags_parSecondary_8d {
+    color: #595950;
+}
+
+.FormatTextWithColorTags_parTertiary_a3 {
+    color: #37362e;
+}
+
+.FormatTextWithColorTags_red_60 {
+    color: #ff2717;
+}
+
+.FormatTextWithColorTags_redDark_03 {
+    color: #b70000;
+}
+
+.FormatTextWithColorTags_yellow_ad {
+    color: #feab34;
+}
+
+.FormatTextWithColorTags_orange_e4 {
+    color: #ee7000;
+}
+
+.FormatTextWithColorTags_cream_cd {
+    color: #ffdd99;
+}
+
+.FormatTextWithColorTags_brown_c8 {
+    color: #cbac77;
+}
+
+.FormatTextWithColorTags_greenBright_f0 {
+    color: #80d43a;
+}
+
+.FormatTextWithColorTags_green_c5 {
+    color: #7ab300;
+}
+
+.FormatTextWithColorTags_greenDark_af {
+    color: #497212;
+}
+
+.FormatTextWithColorTags_blueBooster_ac {
+    color: #ccffff;
+}
+
+.FormatTextWithColorTags_blueTeamkiller_6f {
+    color: #09e2ff;
+}
+
+.FormatTextWithColorTags_cred_4e {
+    color: #ced9d9;
+}
+
+.FormatTextWithColorTags_gold_90 {
+    color: #ffc363;
+}
+
+.FormatTextWithColorTags_bond_71 {
+    color: #c9c9b6;
+}
+
+.FormatTextWithColorTags_prom_dd {
+    color: #a29b70;
+}
+
+@keyframes App_fadeIn_c1 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes App_fadeOut_7a {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+.App_base_2c {
     display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-.LevelsRewards_column_b2 {
-    margin-bottom: 6rem;
-    position: relative;
-}
-
-.LevelsRewards_column__infinity_ff {
-    margin-right: 104rem;
-}
-
-.LevelsRewards_column_b2:first-child {
-    margin-left: 139rem;
-}
-
-.mediaMedium .LevelsRewards_column_b2:first-child {
-    margin-left: 168rem;
-}
-
-.mediaExtraLarge .LevelsRewards_column_b2:first-child {
-    margin-left: 236rem;
-}
-
-.LevelsRewards_tooltipWrapper_49 {
     width: 100%;
     height: 100%;
+    position: relative;
+    animation: App_fadeIn_c1 0.6s forwards;
+}
+.App_button_6c {
+    position: absolute;
+    top: 100rem;
+    left: 100rem;
+}
+.App_contentWrapper_e9 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: opacity 0.3s ease-out;
+}
+.App_base__general_1_34 .App_contentWrapper_e9 {
+    opacity: 0.1;
+}
+.App_background_d7 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.mt_birthday.gui.maps.icons.questsGiver.background') no-repeat center / cover;
+    position: absolute;
+    z-index: -1;
+}
+.App_header_2a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 51rem;
+}
+.mediaLarge .App_header_2a {
+    margin-top: 59rem;
+}
+.mediaExtraLarge .App_header_2a {
+    margin-top: 75rem;
+}
+.App_tabsWrapper_f4 {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 130rem;
+}
+.mediaMedium .App_tabsWrapper_f4 {
+    top: 175rem;
+}
+.mediaLarge .App_tabsWrapper_f4 {
+    top: 195rem;
+}
+.mediaExtraLarge .App_tabsWrapper_f4 {
+    top: 240rem;
+}
+.App_tab_ff {
+    justify-content: center;
+    width: 150rem;
+    height: 32rem;
+}
+.App_tabTitle_7f {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    padding: 0;
+    opacity: 0.6;
+    transition: opacity 0.16s ease-in-out;
+}
+.App_tab_ff:hover .App_tabTitle_7f {
+    opacity: 1;
+}
+.App_activeTab_fe .App_tabTitle_7f {
+    color: #ffdd99;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    opacity: 1;
+}
+.App_content_84 {
+    width: 985rem;
+    height: 504rem;
+    position: absolute;
+    bottom: 0;
+}
+.mediaSmall .App_content_84 {
+    width: 1150rem;
+    height: 504rem;
+    left: auto;
+}
+.mediaMedium .App_content_84 {
+    width: 1350rem;
+    height: 576rem;
+}
+.mediaLarge .App_content_84 {
+    width: 1700rem;
+    height: 725rem;
+}
+.mediaExtraLarge .App_content_84 {
+    width: 2180rem;
+    height: 910rem;
+}
+.App_person_50 {
+    display: flex;
+    justify-content: center;
+    width: 380rem;
+    height: 530rem;
+    background: no-repeat center / cover;
+    position: absolute;
+    bottom: -35rem;
+}
+.mediaSmall .App_person_50 {
+    width: 380rem;
+    height: 530rem;
+}
+.mediaMedium .App_person_50 {
+    width: 435rem;
+    height: 606rem;
+}
+.mediaLarge .App_person_50 {
+    width: 547rem;
+    height: 762rem;
+}
+.mediaExtraLarge .App_person_50 {
+    width: 678rem;
+    height: 946rem;
+}
+.App_person__assignments_11 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.questsGiver.person_assignments');
+}
+.mediaExtraLarge .App_person__assignments_11 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.questsGiver.person_assignments_large');
+}
+.App_person__challenge_43 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.questsGiver.person_challenge');
+}
+.mediaExtraLarge .App_person__challenge_43 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.questsGiver.person_challenge_large');
+}
+.App_voice_83 {
+    margin-top: 277rem;
+}
+.mediaMedium .App_voice_83 {
+    margin-top: 326rem;
+}
+.mediaLarge .App_voice_83 {
+    margin-top: 436rem;
+}
+.mediaExtraLarge .App_voice_83 {
+    margin-top: 568rem;
+}
+.App_personMessage_09 {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 298rem;
+    height: 76rem;
+    padding: 20rem 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.75) 40%,
+        rgba(0, 0, 0, 0.75) 50.48%,
+        rgba(0, 0, 0, 0.75) 60%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    text-align: center;
+    position: absolute;
+    bottom: 77rem;
+}
+.mediaMedium .App_personMessage_09 {
+    color: #ffdd99;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    width: 334rem;
+    height: 80rem;
+    bottom: 100rem;
+}
+.mediaLarge .App_personMessage_09 {
+    color: #ffdd99;
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 32rem;
+    width: 500rem;
+    height: 106rem;
+    padding: 24rem 0;
+    bottom: 120rem;
+}
+.mediaExtraLarge .App_personMessage_09 {
+    width: 521rem;
+    height: 122rem;
+    padding: 32rem 0;
+    bottom: 155rem;
+}
+.App_bulletinBoard_e6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 654rem;
+    height: 530rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.questsGiver.bulletin_board_small') no-repeat center / contain;
     position: absolute;
     top: 0;
-    left: 0;
-    z-index: 1;
+    right: 0;
 }
-
-.LevelsRewards_rewards_5a {
+.mediaSmall .App_bulletinBoard_e6 {
+    width: 794rem;
+    height: 530rem;
+    background-image: url('R.images.mt_birthday.gui.maps.icons.questsGiver.bulletin_board');
+}
+.mediaMedium .App_bulletinBoard_e6 {
+    width: 908rem;
+    height: 606rem;
+}
+.mediaLarge .App_bulletinBoard_e6 {
+    width: 1142rem;
+    height: 762rem;
+    background-image: url('R.images.mt_birthday.gui.maps.icons.questsGiver.bulletin_board_large');
+}
+.mediaExtraLarge .App_bulletinBoard_e6 {
+    width: 1420rem;
+    height: 948rem;
+}
+.App_errorWrapper_99 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+.App_info_28 {
     display: flex;
     justify-content: flex-start;
-    flex: 1;
+    width: 100%;
+    margin-top: 60rem;
+}
+.mediaLarge .App_info_28 {
+    margin-top: 75rem;
+}
+.mediaExtraLarge .App_info_28 {
+    margin-top: 100rem;
+}
+.App_wrapperTimeLeft_35 {
+    display: flex;
+    align-items: center;
+    height: 32rem;
+    opacity: 1;
+    position: absolute;
+    right: 0;
+}
+.mediaExtraLarge .App_wrapperTimeLeft_35 {
+    height: 40rem;
+}
+.App_wrapperTimeLeft__hide_ae {
+    animation: App_slideAndFadeTime_1d 0.5s forwards;
+}
+.App_wrapperTimeLeft__show_6a {
+    animation: App_slideAndShowTime_6f 0.5s forwards;
+}
+.App_wrapperCountQuests_66 {
+    display: flex;
+    align-items: center;
+    height: 32rem;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+}
+.mediaExtraLarge .App_wrapperCountQuests_66 {
+    height: 40rem;
+}
+.App_wrapperCountQuests__hide_9a {
+    animation: App_slideAndFade_5d 0.5s forwards;
+}
+.App_wrapperCountQuests__show_3f {
+    animation: App_slideAndShow_db 0.5s forwards;
+}
+.App_timer_2f,
+.App_counterQuests_bd {
+    color: #f2f2f7;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    line-height: 32rem;
+    opacity: 0.7;
+}
+.mediaMedium .App_timer_2f,
+.mediaMedium .App_counterQuests_bd {
+    color: #f2f2f7;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.mediaExtraLarge .App_timer_2f,
+.mediaExtraLarge .App_counterQuests_bd {
+    color: #f2f2f7;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.App_countdown_11 {
+    margin-left: 25rem;
+}
+.mediaExtraLarge .App_countdown_11 {
+    margin-left: 35rem;
+}
+.App_scrollWrapper_5a,
+.App_info_28 {
+    width: 556rem;
+    position: relative;
+}
+.mediaSmall .App_scrollWrapper_5a,
+.mediaSmall .App_info_28 {
+    width: 688rem;
+}
+.mediaMedium .App_scrollWrapper_5a,
+.mediaMedium .App_info_28 {
+    width: 800rem;
+}
+.mediaLarge .App_scrollWrapper_5a,
+.mediaLarge .App_info_28 {
+    width: 944rem;
+}
+.mediaExtraLarge .App_scrollWrapper_5a,
+.mediaExtraLarge .App_info_28 {
+    width: 1200rem;
+}
+.App_scrollWrapper_5a {
+    height: 403rem;
+    margin-top: 8rem;
+    opacity: 1;
+}
+.mediaMedium .App_scrollWrapper_5a {
+    height: 470rem;
+    margin-top: 12rem;
+}
+.mediaLarge .App_scrollWrapper_5a {
+    height: 595rem;
+    margin-top: 20rem;
+}
+.mediaExtraLarge .App_scrollWrapper_5a {
+    height: 745rem;
+    margin-top: 25rem;
+}
+.App_scrollWrapper__hide_18 {
+    animation: App_hideQuests_d6 0.5s backwards;
+}
+.App_topLip_dd {
+    display: none;
+    height: 24rem;
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+.mediaMedium .App_topLip_dd {
+    height: 34rem;
+}
+.App_topLip_dd {
+    background: linear-gradient(0deg, transparent 50%, rgba(0, 0, 0, 0.4) 100%);
+    top: 0;
+}
+.App_base__hasTopLip_d0 .App_topLip_dd {
+    display: block;
+}
+.App_bar_66 {
+    display: flex;
+    position: absolute;
+    right: -25rem;
+}
+.mediaExtraLarge .App_bar_66 {
+    right: -30rem;
+}
+.App_bar__hide_1e {
+    display: none;
+}
+.App_bottomButton_06 {
+    margin-bottom: 8rem;
+}
+.mediaMedium .App_bottomButton_06 {
+    margin-bottom: 10rem;
+}
+.mediaLarge .App_bottomButton_06 {
+    margin-bottom: 16rem;
+}
+.mediaExtraLarge .App_bottomButton_06 {
+    margin-bottom: 20rem;
+}
+.App_questsList_97 {
+    width: 100%;
+    position: relative;
+}
+.App_quest_df {
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    animation: App_showQuest_25 0.2s forwards;
+}
+.App_questOffAnimation_80 {
+    width: 100%;
+    opacity: 1;
+    position: absolute;
+    animation: none;
+}
+@keyframes App_hideQuests_d6 {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes App_showQuest_25 {
+    0% {
+        opacity: 0;
+        transform: translateY(20rem);
+    }
+
+    40% {
+        opacity: 0.6;
+        transform: translateY(20rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0rem);
+    }
+}
+@keyframes App_slideAndFadeTime_1d {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(50rem);
+    }
+}
+@keyframes App_slideAndShowTime_6f {
+    0% {
+        opacity: 0;
+        transform: translateX(50rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes App_slideAndFade_5d {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-50rem);
+    }
+}
+@keyframes App_slideAndShow_db {
+    0% {
+        opacity: 0;
+        transform: translateX(-50rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-.mediaExtraLargeWidth .LevelsRewards_rewards_5a {
-    justify-content: center;
+.DescriptionRules_base_20 {
+    display: flex;
+    align-items: center;
+}
+.DescriptionRules_modes_a6,
+.DescriptionRules_ellipsis_83,
+.DescriptionRules_vehicleLevel_db {
+    color: #f2f2f7;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    opacity: 0.7;
+}
+.mediaMedium .DescriptionRules_modes_a6,
+.mediaMedium .DescriptionRules_ellipsis_83,
+.mediaMedium .DescriptionRules_vehicleLevel_db {
+    color: #f2f2f7;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.mediaExtraLarge .DescriptionRules_modes_a6,
+.mediaExtraLarge .DescriptionRules_ellipsis_83,
+.mediaExtraLarge .DescriptionRules_vehicleLevel_db {
+    color: #f2f2f7;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.DescriptionRules_battleType_38 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+.DescriptionRules_ellipsis_83 {
+    margin: 0 6rem;
+}
+.mediaSmall .DescriptionRules_ellipsis_83 {
+    margin: 0;
+}
+.DescriptionRules_conditionSeparator_e9 {
+    display: none;
+    width: 1rem;
+    background: #f2f2f7;
+    opacity: 0.6;
+}
+.mediaSmall .DescriptionRules_conditionSeparator_e9 {
+    display: block;
+    height: 18rem;
+    margin: 0 14rem;
+}
+.mediaMedium .DescriptionRules_conditionSeparator_e9 {
+    height: 20rem;
+}
+.mediaExtraLarge .DescriptionRules_conditionSeparator_e9 {
+    height: 24rem;
+    margin: 0 16rem;
+}
+.DescriptionRules_battleTypeIcon_8d {
+    width: 32rem;
+    height: 32rem;
+    margin-right: -2rem;
+    background: no-repeat center / contain;
+}
+.mediaLarge .DescriptionRules_battleTypeIcon_8d {
+    margin-right: -3rem;
+}
+.DescriptionRules_battleTypeIcon__last_4f {
+    margin-right: 0;
+}
+.mediaLarge .DescriptionRules_battleTypeIcon__last_4f {
+    margin-right: 0;
+}
+.mediaExtraLarge .DescriptionRules_battleTypeIcon_8d {
+    width: 40rem;
+    height: 40rem;
 }
 
-.LevelsRewards_base__centered_48 .LevelsRewards_rewards_5a {
-    justify-content: center;
+.GiverCountdown_base_89 {
+    position: relative;
 }
 
-.LevelsRewards_description_49 {
-    color: #fefeec;
+.GiverCountdown_icon_7c,
+.GiverCountdown_iconCounter_70 {
+    width: 32rem;
+    height: 32rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.questsGiver.time_icon') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: -26rem;
+    transform: translateY(-16rem) translateX(-3rem);
+}
+
+.mediaLarge .GiverCountdown_icon_7c,
+.mediaLarge .GiverCountdown_iconCounter_70 {
+    width: 48rem;
+    height: 48rem;
+    left: -40rem;
+    transform: translateY(-23rem) translateX(-3rem);
+}
+
+.mediaExtraLarge .GiverCountdown_icon_7c,
+.mediaExtraLarge .GiverCountdown_iconCounter_70 {
+    width: 64rem;
+    height: 64rem;
+    transform: translateY(-23rem) translateX(-15rem);
+}
+
+.GiverCountdown_iconCounter_70 {
+    width: 32rem;
+    height: 32rem;
+    transform: translateY(-15rem) translateX(-3rem);
+}
+
+.mediaLarge .GiverCountdown_iconCounter_70 {
+    width: 32rem;
+    height: 32rem;
+    left: -26rem;
+    transform: translateY(-15rem) translateX(-3rem);
+}
+
+.mediaExtraLarge .GiverCountdown_iconCounter_70 {
+    width: 48rem;
+    height: 48rem;
+    transform: translateY(-23rem) translateX(-15rem);
+}
+
+.GiverCountdown_countdownText_54 {
+    color: #ffdd99;
+    text-shadow:
+        0 0 15rem rgba(238, 85, 34, 1),
+        0 0 8rem rgba(255, 42, 0, 1),
+        0 0 4rem rgba(255, 127, 0, 0.25);
+    transform: translateY(0);
+}
+
+.mediaLarge .GiverCountdown_countdownText_54 {
+    transform: translateY(1rem);
+}
+
+.GiverCountdown_textFont_1a {
+    color: #ffdd99;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.LevelsRewards_backlight_93 {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, transparent 0%, rgba(254, 171, 52, 0.17) 16.86%, transparent 100%);
-    position: absolute;
-    top: 0;
-    left: 0;
+.mediaMedium .GiverCountdown_textFont_1a {
+    color: #ffdd99;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
 }
 
-.LevelsRewards_divider_5d {
-    width: 1rem;
-    height: 227rem;
-    background: linear-gradient(180deg, rgba(162, 39, 0, 0.15) 0%, #ff9e67 22.32%, rgba(162, 39, 0, 0.15) 93.15%);
-    position: absolute;
-    top: 50%;
-    left: -1rem;
-    transform: translateY(-50%);
+.mediaLarge .GiverCountdown_textFont_1a {
+    color: #ffdd99;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+    font-weight: 400;
 }
 
-.LevelsRewards_divider__right_10 {
-    right: 0;
-    left: auto;
+.mediaExtraLarge .GiverCountdown_textFont_1a {
+    color: #ffdd99;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    font-weight: 400;
 }
 
-.LevelsRewards_scrollAreaWrapper_7e {
-    display: flex;
-    margin-top: 50rem;
+.GiverCountdown_textFontCounter_72 {
+    color: #ffdd99;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
 }
 
-.mediaMedium .LevelsRewards_scrollAreaWrapper_7e {
-    margin-top: 41rem;
-}
-
-.mediaLarge .LevelsRewards_scrollAreaWrapper_7e {
-    margin-top: 50rem;
-}
-
-.mediaExtraLarge .LevelsRewards_scrollAreaWrapper_7e {
-    margin-top: 68rem;
-}
-
-.LevelsRewards_scrollAreaWrapper__shadowLeft_bf {
-    mask-image: linear-gradient(270deg, #d9d9d9 83.83%, rgba(217, 217, 217, 0) 91.99%);
-}
-
-.mediaSmall .LevelsRewards_scrollAreaWrapper__shadowLeft_bf {
-    mask-image: linear-gradient(270deg, #d9d9d9 88.02%, rgba(217, 217, 217, 0) 92.67%);
-}
-
-.mediaMedium .LevelsRewards_scrollAreaWrapper__shadowLeft_bf {
-    mask-image: linear-gradient(270deg, #d9d9d9 85.35%, rgba(217, 217, 217, 0) 91.72%);
-}
-
-.mediaLarge .LevelsRewards_scrollAreaWrapper__shadowLeft_bf {
-    mask-image: linear-gradient(270deg, #d9d9d9 89.71%, rgba(217, 217, 217, 0) 91.7%);
-}
-
-.mediaExtraLarge .LevelsRewards_scrollAreaWrapper__shadowLeft_bf {
-    mask-image: linear-gradient(270deg, #d9d9d9 90.92%, rgba(217, 217, 217, 0) 94.86%);
-}
-
-.LevelsRewards_scrollAreaWrapper__shadowRight_87 {
-    mask-image: linear-gradient(270deg, rgba(217, 217, 217, 0) 0%, #d9d9d9 12.17%);
-}
-
-.mediaSmall .LevelsRewards_scrollAreaWrapper__shadowRight_87 {
-    mask-image: linear-gradient(270deg, rgba(217, 217, 217, 0) 0%, #d9d9d9 9.9%);
-}
-
-.mediaMedium .LevelsRewards_scrollAreaWrapper__shadowRight_87 {
-    mask-image: linear-gradient(270deg, rgba(217, 217, 217, 0) 2.34%, #d9d9d9 9.9%);
-}
-
-.mediaLarge .LevelsRewards_scrollAreaWrapper__shadowRight_87 {
-    mask-image: linear-gradient(270.01deg, rgba(217, 217, 217, 0) 2.12%, #d9d9d9 7.45%);
-}
-
-.mediaExtraLarge .LevelsRewards_scrollAreaWrapper__shadowRight_87 {
-    mask-image: linear-gradient(270deg, rgba(217, 217, 217, 0) 0%, #d9d9d9 7.92%);
-}
-
-.LevelsRewards_scrollAreaWrapper__bothShadow_49 {
-    mask-image: linear-gradient(
-        270deg,
-        rgba(217, 217, 217, 0) 0%,
-        #d9d9d9 12.17%,
-        #d9d9d9 83.83%,
-        rgba(217, 217, 217, 0) 91.99%
-    );
-}
-
-.mediaSmall .LevelsRewards_scrollAreaWrapper__bothShadow_49 {
-    mask-image: linear-gradient(
-        270deg,
-        rgba(217, 217, 217, 0) 0%,
-        #d9d9d9 9.9%,
-        #d9d9d9 48.96%,
-        #d9d9d9 88.02%,
-        rgba(217, 217, 217, 0) 92.67%
-    );
-}
-
-.mediaMedium .LevelsRewards_scrollAreaWrapper__bothShadow_49 {
-    mask-image: linear-gradient(
-        270deg,
-        rgba(217, 217, 217, 0) 2.34%,
-        #d9d9d9 9.9%,
-        #d9d9d9 48.96%,
-        #d9d9d9 85.35%,
-        rgba(217, 217, 217, 0) 91.72%
-    );
-}
-
-.mediaLarge .LevelsRewards_scrollAreaWrapper__bothShadow_49 {
-    mask-image: linear-gradient(
-        270.01deg,
-        rgba(217, 217, 217, 0) 2.12%,
-        #d9d9d9 7.45%,
-        #d9d9d9 48.96%,
-        #d9d9d9 89.71%,
-        rgba(217, 217, 217, 0) 91.7%
-    );
-}
-
-.mediaExtraLarge .LevelsRewards_scrollAreaWrapper__bothShadow_49 {
-    mask-image: linear-gradient(
-        270deg,
-        rgba(217, 217, 217, 0) 0%,
-        #d9d9d9 7.92%,
-        #d9d9d9 90.92%,
-        rgba(217, 217, 217, 0) 94.86%
-    );
-}
-
-.LevelsRewards_scrollWrapper_a1 {
-    display: flex;
-    overflow-x: visible;
-}
-
-.LevelsRewards_scrollArea_7d {
-    margin: 0;
-}
-
-.LevelsRewards_rewardsWrapper_67 {
-    display: flex;
-    width: 100%;
-    height: 100%;
-}
-
-.LevelsRewards_scrollContent_1d {
-    display: flex;
-    min-width: 100%;
-    overflow: hidden;
-}
-
-.LevelsRewards_scrollBar_d4 {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.LevelsRewards_dots_69 {
-    width: 152rem;
-    height: 376rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.allRewards.dots_small') no-repeat center / cover;
-    position: absolute;
-    top: -13rem;
-    left: 0;
-}
-
-.mediaMedium .LevelsRewards_dots_69 {
-    width: 240rem;
-    height: 630rem;
-    background-image: url('R.images.mt_birthday.gui.maps.icons.allRewards.dots');
-    top: -9rem;
-}
-
-.mediaLarge .LevelsRewards_dots_69 {
-    width: 340rem;
-    height: 630rem;
-    background-image: url('R.images.mt_birthday.gui.maps.icons.allRewards.dots_large');
-    top: -12rem;
-}
-
-.LevelsRewards_particlesLine_0a {
-    width: 1rem;
-    height: 100%;
-    background-image: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.3) 50%, transparent 100%);
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.LevelsRewards_particlesLine__right_62 {
-    right: 0;
-    left: auto;
-}
-
-.LevelsRewards_gradient_d3 {
-    width: 53rem;
-    height: 213rem;
-    background: radial-gradient(
-        95.41% 37.94% at 100% 50%,
-        rgba(255, 255, 255, 0.36) 0%,
-        rgba(255, 255, 255, 0.12) 48.68%,
-        transparent 100%
-    );
-    opacity: 0.4;
-    position: absolute;
-    top: 28rem;
-    left: 0;
-    transform: rotate(-180deg);
-}
-
-.mediaMedium .LevelsRewards_gradient_d3 {
-    width: 80rem;
-    height: 320rem;
-    top: 0;
-}
-
-.mediaLarge .LevelsRewards_gradient_d3 {
-    width: 128rem;
-    height: 479rem;
-}
-
-.LevelsRewards_gradient__right_57 {
-    right: 0;
-    left: auto;
-    transform: rotate(0);
-}
-
-.LevelsRewards_gradient__current_75 {
-    background: radial-gradient(
-        95.41% 37.94% at 100% 50%,
-        rgba(254, 171, 52, 0.29) 0%,
-        rgba(254, 171, 52, 0.1) 48.68%,
-        transparent 100%
-    );
-    opacity: 0.8;
-}
-
-.RewardsColumn_base_04 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1 1 auto;
-    width: 109rem;
-    position: relative;
-}
-
-.mediaMedium .RewardsColumn_base_04 {
-    width: 141rem;
-}
-
-.mediaLarge .RewardsColumn_base_04 {
-    width: 209rem;
-}
-
-.RewardsColumn_base__infinity_17 {
-    width: 153rem;
-}
-
-.mediaMedium .RewardsColumn_base__infinity_17 {
-    width: 241rem;
-}
-
-.mediaLarge .RewardsColumn_base__infinity_17 {
-    width: 341rem;
-}
-
-.RewardsColumn_rewards_f8 {
-    display: flex;
-    flex-direction: column;
-    margin: 52rem 0 56rem;
-}
-
-.RewardsColumn_rewardItem_92 {
-    margin-top: 24rem;
-}
-
-.RewardsColumn_rewardItem_92:first-child {
-    margin-top: 0;
+.mediaExtraLarge .GiverCountdown_textFontCounter_72 {
+    color: #ffdd99;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+    font-weight: 400;
 }
 
 .Reward_base_ea {
@@ -1353,170 +1783,1155 @@
     right: -14rem;
 }
 
-.RewardsList_base_62 {
+.RewardsList_base_ab {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 }
 
-.RewardsList_reward_95 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.RewardsList_reward_9f {
+    margin: 0 4rem;
+}
+
+.RewardsList_info_8d {
+    color: #ced9d9;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+@keyframes Quest_fadeIn_d2 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes Quest_fadeOut_c0 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+.Quest_base_7c {
+    width: 100%;
+    height: 120rem;
+    overflow: hidden;
     position: relative;
-    z-index: 1;
 }
-
-.RewardsList_reward__disabled_4f {
-    opacity: 0.4;
+.mediaMedium .Quest_base_7c {
+    height: 140rem;
 }
-
-.RewardsHeader_base_ae {
+.mediaLarge .Quest_base_7c {
+    height: 160rem;
+}
+.mediaExtraLarge .Quest_base_7c {
+    height: 200rem;
+}
+.Quest_questCardWrapper_d0 {
+    width: 100%;
+    height: 120rem;
+    overflow: hidden;
+    position: absolute;
+}
+.mediaMedium .Quest_questCardWrapper_d0 {
+    height: 140rem;
+}
+.mediaLarge .Quest_questCardWrapper_d0 {
+    height: 160rem;
+}
+.mediaExtraLarge .Quest_questCardWrapper_d0 {
+    height: 200rem;
+}
+.Quest_questCardWrapper__left_65 {
+    width: 1500rem;
+    left: -472rem;
+    transform: skewX(-30deg);
+    animation: Quest_increaseWidth_bf 0.5s cubic-bezier(1, 0.14, 1, 0.99) forwards;
+}
+.mediaSmall .Quest_questCardWrapper__left_65 {
+    left: -406rem;
+}
+.mediaMedium .Quest_questCardWrapper__left_65 {
+    left: -350rem;
+}
+.mediaLarge .Quest_questCardWrapper__left_65 {
+    left: -278rem;
+}
+.mediaExtraLarge .Quest_questCardWrapper__left_65 {
+    left: -150rem;
+}
+.Quest_questCardWrapper__left_65 .Quest_gradientBg_2b {
+    width: 556rem;
+    height: 100%;
+    background: linear-gradient(
+        94deg,
+        rgba(255, 255, 255, 0) 43.75%,
+        rgba(255, 255, 255, 0) 60.77%,
+        rgba(255, 255, 255, 0.1) 93.53%
+    );
+    position: absolute;
+    right: 0;
+    z-index: 2;
+}
+.mediaSmall .Quest_questCardWrapper__left_65 .Quest_gradientBg_2b {
+    width: 688rem;
+}
+.mediaMedium .Quest_questCardWrapper__left_65 .Quest_gradientBg_2b {
+    width: 800rem;
+}
+.mediaLarge .Quest_questCardWrapper__left_65 .Quest_gradientBg_2b {
+    width: 944rem;
+}
+.mediaExtraLarge .Quest_questCardWrapper__left_65 .Quest_gradientBg_2b {
+    width: 1200rem;
+}
+.Quest_questCardWrapper__right_68 {
+    width: 1500rem;
+    right: -472rem;
+    transform: skewX(-30deg);
+    animation: Quest_decreaseWidth_1f 0.5s cubic-bezier(1, 0.14, 1, 0.99) forwards;
+}
+.mediaSmall .Quest_questCardWrapper__right_68 {
+    right: -406rem;
+}
+.mediaMedium .Quest_questCardWrapper__right_68 {
+    right: -350rem;
+}
+.mediaLarge .Quest_questCardWrapper__right_68 {
+    right: -278rem;
+}
+.mediaExtraLarge .Quest_questCardWrapper__right_68 {
+    right: -150rem;
+}
+.Quest_questCard_dd {
+    display: flex;
+    flex-direction: row;
+    width: 556rem;
+    height: 120rem;
+    border: 1rem solid rgba(242, 242, 247, 0.15);
+    border-radius: 4rem;
+    background: rgba(155, 155, 155, 0.16);
+    position: absolute;
+    left: 0;
+}
+.mediaSmall .Quest_questCard_dd {
+    width: 688rem;
+}
+.mediaMedium .Quest_questCard_dd {
+    width: 800rem;
+    height: 140rem;
+}
+.mediaLarge .Quest_questCard_dd {
+    width: 944rem;
+    height: 160rem;
+}
+.mediaExtraLarge .Quest_questCard_dd {
+    width: 1200rem;
+    height: 200rem;
+}
+.Quest_questCard__done_8b {
+    border: 1rem solid rgba(140, 255, 70, 0.3);
+    background: rgba(122, 179, 0, 0.04);
+}
+.Quest_questCard__done_8b .Quest_doneBg_8d {
+    width: 100%;
+    height: 100%;
+    background: rgba(155, 155, 155, 0.16);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.Quest_questCardWrapper__left_65 .Quest_questCard_dd {
+    left: 472rem;
+    transform: skewX(30deg);
+}
+.mediaSmall .Quest_questCardWrapper__left_65 .Quest_questCard_dd {
+    left: 406rem;
+}
+.mediaMedium .Quest_questCardWrapper__left_65 .Quest_questCard_dd {
+    left: 350rem;
+}
+.mediaLarge .Quest_questCardWrapper__left_65 .Quest_questCard_dd {
+    left: 278rem;
+}
+.mediaExtraLarge .Quest_questCardWrapper__left_65 .Quest_questCard_dd {
+    left: 150rem;
+}
+.Quest_disabledBg_8c {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.mt_birthday.gui.maps.icons.questsGiver.disabled_bg') repeat center / contain;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.Quest_counterBlock_aa {
+    display: flex;
+    align-items: center;
+    height: 34rem;
+    padding: 0 16rem;
+    background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.mediaMedium .Quest_counterBlock_aa {
+    height: 42rem;
+}
+.mediaLarge .Quest_counterBlock_aa {
+    padding: 0 24rem;
+}
+.mediaExtraLarge .Quest_counterBlock_aa {
+    height: 52rem;
+}
+.Quest_counterComplete_9d {
+    color: #f2f2f7;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    opacity: 0.7;
+}
+.mediaExtraLarge .Quest_counterComplete_9d {
+    color: #f2f2f7;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.Quest_content_f0 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    margin: 20rem;
+    position: relative;
+    transition: opacity 0.5s ease-out;
+}
+.mediaSmall .Quest_content_f0 {
+    margin: 20rem 24rem;
+}
+.mediaMedium .Quest_content_f0 {
+    margin: 19rem 24rem;
+}
+.mediaLarge .Quest_content_f0 {
+    margin: 22rem 30rem;
+}
+.mediaExtraLarge .Quest_content_f0 {
+    margin: 33rem 40rem;
+}
+.Quest_questCard__done_8b .Quest_content_f0 {
+    opacity: 0.5;
+}
+.Quest_questCard__disableAllQuests_60 .Quest_content_f0,
+.Quest_questCard__hideAllContent_49 .Quest_content_f0 {
+    opacity: 1;
+}
+.Quest_quests_93 {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.Quest_rewards_f6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 184rem;
+    position: relative;
+}
+.Quest_questCard__done_8b .Quest_rewards_f6 {
+    opacity: 0.5;
+}
+.mediaSmall .Quest_rewards_f6 {
+    width: 200rem;
+}
+.mediaMedium .Quest_rewards_f6 {
+    width: 208rem;
+}
+.mediaLarge .Quest_rewards_f6 {
+    width: 304rem;
+}
+.mediaExtraLarge .Quest_rewards_f6 {
+    width: 328rem;
+}
+.Quest_separator_ea {
+    width: 1rem;
+    box-shadow: 1rem 0 0 #000;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, #fff 49.5%, rgba(255, 255, 255, 0.3) 100%);
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+.Quest_lockedBlock_77,
+.Quest_disabledBlock_70 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
+    width: 556rem;
+    height: 120rem;
+    border: 1rem solid rgba(242, 242, 247, 0.15);
+    border-radius: 4rem;
+    background: rgba(155, 155, 155, 0.16);
+    position: absolute;
+    right: 0;
+    z-index: 2;
 }
-
-.RewardsHeader_level_e0 {
-    color: #ffffff;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
+.mediaSmall .Quest_lockedBlock_77,
+.mediaSmall .Quest_disabledBlock_70 {
+    width: 688rem;
+}
+.mediaMedium .Quest_lockedBlock_77,
+.mediaMedium .Quest_disabledBlock_70 {
+    width: 800rem;
+    height: 140rem;
+}
+.mediaLarge .Quest_lockedBlock_77,
+.mediaLarge .Quest_disabledBlock_70 {
+    width: 944rem;
+    height: 160rem;
+}
+.mediaExtraLarge .Quest_lockedBlock_77,
+.mediaExtraLarge .Quest_disabledBlock_70 {
+    width: 1200rem;
+    height: 200rem;
+}
+.Quest_questCardWrapper__left_65 .Quest_lockedBlock_77,
+.Quest_questCardWrapper__left_65 .Quest_disabledBlock_70 {
+    left: 472rem;
+    transform: skewX(30deg);
+}
+.mediaSmall .Quest_questCardWrapper__left_65 .Quest_lockedBlock_77,
+.mediaSmall .Quest_questCardWrapper__left_65 .Quest_disabledBlock_70 {
+    left: 406rem;
+}
+.mediaMedium .Quest_questCardWrapper__left_65 .Quest_lockedBlock_77,
+.mediaMedium .Quest_questCardWrapper__left_65 .Quest_disabledBlock_70 {
+    left: 350rem;
+}
+.mediaLarge .Quest_questCardWrapper__left_65 .Quest_lockedBlock_77,
+.mediaLarge .Quest_questCardWrapper__left_65 .Quest_disabledBlock_70 {
+    left: 278rem;
+}
+.mediaExtraLarge .Quest_questCardWrapper__left_65 .Quest_lockedBlock_77,
+.mediaExtraLarge .Quest_questCardWrapper__left_65 .Quest_disabledBlock_70 {
+    left: 150rem;
+}
+.Quest_questCardWrapper__right_68 .Quest_lockedBlock_77,
+.Quest_questCardWrapper__right_68 .Quest_disabledBlock_70 {
+    right: 472rem;
+    transform: skewX(30deg);
+}
+.mediaSmall .Quest_questCardWrapper__right_68 .Quest_lockedBlock_77,
+.mediaSmall .Quest_questCardWrapper__right_68 .Quest_disabledBlock_70 {
+    right: 406rem;
+}
+.mediaMedium .Quest_questCardWrapper__right_68 .Quest_lockedBlock_77,
+.mediaMedium .Quest_questCardWrapper__right_68 .Quest_disabledBlock_70 {
+    right: 350rem;
+}
+.mediaLarge .Quest_questCardWrapper__right_68 .Quest_lockedBlock_77,
+.mediaLarge .Quest_questCardWrapper__right_68 .Quest_disabledBlock_70 {
+    right: 278rem;
+}
+.mediaExtraLarge .Quest_questCardWrapper__right_68 .Quest_lockedBlock_77,
+.mediaExtraLarge .Quest_questCardWrapper__right_68 .Quest_disabledBlock_70 {
+    right: 150rem;
+}
+.Quest_lockedContent_65 {
     display: flex;
-    width: 32rem;
-    padding-top: 32rem;
-    position: relative;
-}
-
-.mediaMedium .RewardsHeader_level_e0 {
-    width: 52rem;
-    color: #ffffff;
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.mediaExtraLarge .RewardsHeader_level_e0 {
-    width: 62rem;
-}
-
-.RewardsHeader_level__achieved_e0 {
-    color: #80d43a;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.mediaMedium .RewardsHeader_level__achieved_e0 {
-    color: #80d43a;
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.RewardsHeader_level__current_bd {
-    color: #feab34;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.mediaMedium .RewardsHeader_level__current_bd {
-    color: #feab34;
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.RewardsHeader_level__infinity_35 {
-    width: 18rem;
-    height: 49rem;
-}
-
-.mediaMedium .RewardsHeader_level__infinity_35 {
-    width: 22rem;
-    height: 53rem;
-}
-
-.RewardsHeader_numeral_90 {
-    display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.RewardsHeader_achieved_72 {
-    width: 64rem;
-    height: 28rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.allRewards.completed') no-repeat center / contain;
-    position: absolute;
-    bottom: -24rem;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.RewardsHeader_infinityContainer_af {
-    width: 72rem;
-    height: 72rem;
+    height: 38rem;
     position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
-
-.mediaMedium .RewardsHeader_infinityContainer_af {
-    width: 80rem;
-    height: 80rem;
+.mediaMedium .Quest_lockedContent_65 {
+    height: 44rem;
 }
-
-.RewardsHeader_infinity_45 {
-    width: 100%;
-    height: 100%;
-    background: url('R.images.mt_birthday.gui.maps.icons.allRewards.inf_white_small') no-repeat center / contain;
-    z-index: 1;
+.mediaLarge .Quest_lockedContent_65 {
+    height: 54rem;
 }
-
-.mediaMedium .RewardsHeader_infinity_45 {
-    background-image: url('R.images.mt_birthday.gui.maps.icons.allRewards.inf_white_big');
+.mediaExtraLarge .Quest_lockedContent_65 {
+    height: 66rem;
 }
-
-.RewardsHeader_infinity__current_d3 {
-    background-image: url('R.images.mt_birthday.gui.maps.icons.allRewards.inf_yellow_small');
+.Quest_disabledContent_af {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 76rem;
 }
-
-.mediaMedium .RewardsHeader_infinity__current_d3 {
-    background-image: url('R.images.mt_birthday.gui.maps.icons.allRewards.inf_yellow_big');
+.mediaMedium .Quest_disabledContent_af {
+    height: 94rem;
 }
-
-.RewardsHeader_light_7b {
-    width: 116rem;
-    height: 116rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.allRewards.light') no-repeat center / contain;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.mediaLarge .Quest_disabledContent_af {
+    height: 104rem;
 }
-
-.RewardsHeader_light__current_33 {
-    background-image: url('R.images.mt_birthday.gui.maps.icons.allRewards.light_current');
+.mediaExtraLarge .Quest_disabledContent_af {
+    height: 130rem;
 }
-
-.RewardsHeader_particles_e4 {
+.Quest_iconDisabled_9a {
+    width: 38rem;
+    height: 38rem;
+    margin-top: -7rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.questsGiver.disabled') no-repeat center / cover;
+}
+.mediaMedium .Quest_iconDisabled_9a {
     width: 51rem;
-    height: 136rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.allRewards.col_glow') no-repeat center / contain;
-    position: absolute;
-    top: -21rem;
-    left: -2rem;
+    height: 51rem;
+    margin-top: -10rem;
+}
+.mediaExtraLarge .Quest_iconDisabled_9a {
+    width: 64rem;
+    height: 64rem;
+    margin-top: -12rem;
+}
+.Quest_lockedText_5c,
+.Quest_disabledText_e7 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.mediaMedium .Quest_lockedText_5c,
+.mediaMedium .Quest_disabledText_e7 {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+.mediaLarge .Quest_lockedText_5c,
+.mediaLarge .Quest_disabledText_e7 {
+    color: #e9e2bf;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.mediaExtraLarge .Quest_lockedText_5c,
+.mediaExtraLarge .Quest_disabledText_e7 {
+    color: #e9e2bf;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    font-weight: 400;
+}
+.Quest_disabledText_e7 {
+    margin-top: -10rem;
+}
+.mediaMedium .Quest_disabledText_e7 {
+    margin-top: -17rem;
+}
+.Quest_disabledDescription_c7 {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+}
+.mediaLarge .Quest_disabledDescription_c7 {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+@keyframes Quest_increaseWidth_bf {
+    0% {
+        width: 0rem;
+    }
+
+    100% {
+        width: 1500rem;
+    }
+}
+@keyframes Quest_decreaseWidth_1f {
+    0% {
+        width: 1500rem;
+    }
+
+    100% {
+        width: 0rem;
+    }
 }
 
-.RewardsHeader_particles__right_5b {
-    right: -1rem;
-    left: auto;
-    transform: rotateZ(180deg);
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBar_base_45 {
+    width: 100%;
+    height: 12rem;
+    position: relative;
+}
+.ProgressBar_base__medium_62 {
+    height: 6rem;
+}
+.ProgressBar_base__small_df {
+    height: 2rem;
+}
+.ProgressBar_background_51 {
+    width: 100%;
+    max-width: 8001px;
+    height: 100%;
+    background-image: var(--progress-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ProgressBar_background__medium_6e {
+    height: 6rem;
+}
+.ProgressBar_background__small_46 {
+    height: 2rem;
+}
+.ProgressBar_lineWrapper_6a {
+    display: flex;
+    flex: 1;
+}
+
+.ProgressBarBlink_base_24 {
+    width: 60rem;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+}
+
+.ProgressBarBlink_base__medium_ec {
+    width: 42rem;
+    height: 70rem;
+}
+
+.ProgressBarBlink_base__small_0f {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressLineImpose_base_80 {
+    max-width: 8001px;
+    height: 100%;
+    background-color: var(--progress-line-base);
+    position: relative;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressLineImpose_base__disabled_cc {
+    background-color: var(--progress-line-disabled);
+}
+.ProgressLineImpose_base__finished_d4 {
+    background-color: var(--progress-line-finished);
+}
+.ProgressLineImpose_base__withoutBounce_56 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressLineImpose_pattern_1c {
+    max-width: 8001px;
+    background-image: var(--progress-pattern-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-disabled);
+    left: 0;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-finished);
+}
+.ProgressLineImpose_gradient_35 {
+    max-width: 8001px;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    bottom: 1rem;
+    left: 0;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
+    display: none;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
+}
+.ProgressLineImpose_glow_a5 {
+    width: 60rem;
+    max-width: 8001px;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.ProgressLineImpose_glow__left_d8 {
+    left: 1rem;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+    display: none;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaGrow_base_7e {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressBarDeltaGrow_glow_68 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
+.QuestProgress_base_d5 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.QuestProgress_conditionSeparator_98 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.QuestProgress_condition_70 {
+    color: #feab34;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    display: flex;
+    align-items: center;
+    transform: translateY(2rem);
+}
+
+.mediaMedium .QuestProgress_condition_70 {
+    color: #feab34;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+    transform: translateY(-11rem);
+}
+
+.mediaLarge .QuestProgress_condition_70 {
+    color: #feab34;
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+    transform: translateY(-11rem);
+}
+
+.QuestProgress_base__done_14 .QuestProgress_condition_70 {
+    color: #7ab300;
+}
+
+.QuestProgress_conditionText_fb {
+    transform: translate(-20rem, -2rem);
+}
+
+.mediaMedium .QuestProgress_conditionText_fb {
+    transform: translate(-42rem, -2rem);
+}
+
+.mediaLarge .QuestProgress_conditionText_fb {
+    transform: translate(-42rem, -3rem);
+}
+
+.QuestProgress_progressTotal_78 {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.mediaMedium .QuestProgress_progressTotal_78 {
+    color: #e9e2bf;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.mediaLarge .QuestProgress_progressTotal_78 {
+    color: #e9e2bf;
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.QuestProgress_base__done_14 .QuestProgress_progressTotal_78 {
+    color: #7ab300;
+}
+
+.QuestProgress_conditionIcon_a7 {
+    width: 48rem;
+    height: 48rem;
+    background: no-repeat center / cover;
+    transform: translateX(-12rem);
+}
+
+.mediaMedium .QuestProgress_conditionIcon_a7 {
+    width: 90rem;
+    height: 90rem;
+    transform: translateX(-22rem);
+}
+
+.mediaLarge .QuestProgress_conditionIcon_a7 {
+    transform: translateX(-24rem);
+}
+
+.QuestProgress_progressBar_5d {
+    height: 2rem;
+    position: relative;
+    transform: translateY(-5rem);
+}
+
+.mediaMedium .QuestProgress_progressBar_5d {
+    transform: translateY(-30rem);
+}
+
+.mediaExtraLarge .QuestProgress_progressBar_5d {
+    transform: translateY(-32rem);
+}
+
+.QuestProgress_progressBg_d1 {
+    width: 100%;
+    height: 10rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.questsGiver.progress_bar.pattern_disabled') repeat-x center /
+        contain;
+    opacity: 0.2;
+    position: absolute;
+    top: -4rem;
+    z-index: -1;
+}
+
+.QuestCondition_base_90 {
+    display: flex;
+}
+
+.QuestCondition_quest_0e {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative;
+}
+
+.QuestCondition_description_9b {
+    color: #e9e2bf;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 100%;
+}
+
+.mediaMedium .QuestCondition_description_9b {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.mediaLarge .QuestCondition_description_9b {
+    color: #e9e2bf;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.mediaExtraLarge .QuestCondition_description_9b {
+    color: #e9e2bf;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+.QuestCondition_progressContainer_f0 {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.QuestCondition_questProgress_68 {
+    transform: translateY(6rem);
+}
+
+.mediaMedium .QuestCondition_questProgress_68 {
+    transform: translateY(31rem);
+}
+
+.mediaLarge .QuestCondition_questProgress_68 {
+    transform: translateY(27rem);
+}
+
+.ErrorScreen_base_31 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ErrorScreen_icon_d1 {
+    width: 180rem;
+    height: 135rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.questsGiver.error_small') no-repeat center / contain;
+}
+
+.mediaMedium .ErrorScreen_icon_d1 {
+    width: 296rem;
+    height: 222rem;
+    background-image: url('R.images.mt_birthday.gui.maps.icons.questsGiver.error_medium');
+}
+
+.mediaLarge .ErrorScreen_icon_d1 {
+    width: 360rem;
+    height: 270rem;
+    background-image: url('R.images.mt_birthday.gui.maps.icons.questsGiver.error_large');
+}
+
+.mediaExtraLarge .ErrorScreen_icon_d1 {
+    width: 400rem;
+    height: 300rem;
+}
+
+.ErrorScreen_title_a3 {
+    color: #fefeec;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaMedium .ErrorScreen_title_a3 {
+    color: #fefeec;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.mediaLarge .ErrorScreen_title_a3 {
+    color: #fefeec;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaExtraLarge .ErrorScreen_title_a3 {
+    color: #fefeec;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.ErrorScreen_subTitle_6d {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 8rem;
+}
+
+.mediaLarge .ErrorScreen_subTitle_6d {
+    color: #fefeec;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.mediaExtraLarge .ErrorScreen_subTitle_6d {
+    color: #fefeec;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-top: 16rem;
+}
+
+.Header_base_f9 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Header_headerTitle_c9 {
+    color: #fefeec;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaMedium .Header_headerTitle_c9 {
+    color: #fefeec;
+    font-size: 56rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.mediaExtraLarge .Header_headerTitle_c9 {
+    color: #fefeec;
+    font-size: 73rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.Header_headerDescription_c5 {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 4rem;
+}
+
+.mediaMedium .Header_headerDescription_c5 {
+    color: #fefeec;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 8rem;
+}
+
+.mediaLarge .Header_headerDescription_c5 {
+    color: #fefeec;
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.Sonar_base_91 {
+    width: 340rem;
+    height: 340rem;
+    overflow: hidden;
+    position: relative;
+    pointer-events: none;
+}
+.Sonar_back_8e {
+    width: 240rem;
+    height: 160rem;
+    background: radial-gradient(37.13% 52.24% at 50% 50%, #d54c1b 0%, rgba(213, 76, 27, 0) 100%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -2;
+    transform: translate(-50%, -50%);
+    animation: Sonar_fadeIn_d9 3s linear;
+}
+.Sonar_emitter_c6 {
+    width: 24rem;
+    height: 24rem;
+    border-radius: 9999rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.Sonar_wave_51 {
+    width: 100%;
+    height: 100%;
+    border: 3rem solid #d54c1b;
+    border-radius: 9999rem;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.Sonar_wave__0_c9 {
+    animation: Sonar_sonarWave_60 3s 0s linear infinite;
+}
+.Sonar_wave__1_92 {
+    animation: Sonar_sonarWave_60 3s 0.3s linear infinite;
+}
+.Sonar_wave__2_c0 {
+    animation: Sonar_sonarWave_60 3s 0.6s linear infinite;
+}
+.Sonar_wave__3_ab {
+    animation: Sonar_sonarWave_60 3s 0.9s linear infinite;
+}
+.Sonar_wave__4_bb {
+    animation: Sonar_sonarWave_60 3s 1.2s linear infinite;
+}
+.Sonar_wave__5_dc {
+    animation: Sonar_sonarWave_60 3s 1.5s linear infinite;
+}
+.Sonar_wave__6_94 {
+    animation: Sonar_sonarWave_60 3s 1.8s linear infinite;
+}
+.Sonar_wave__7_6e {
+    animation: Sonar_sonarWave_60 3s 2.1s linear infinite;
+}
+.Sonar_wave__8_73 {
+    animation: Sonar_sonarWave_60 3s 2.4s linear infinite;
+}
+.Sonar_wave__9_b0 {
+    animation: Sonar_sonarWave_60 3s 2.7s linear infinite;
+}
+.Sonar_wave__10_d2 {
+    animation: Sonar_sonarWave_60 3s 3s linear infinite;
+}
+@keyframes Sonar_sonarWave_60 {
+    0% {
+        opacity: 0.4;
+    }
+
+    100% {
+        width: 1000%;
+        height: 1000%;
+        opacity: 0;
+    }
+}
+@keyframes Sonar_fadeIn_d9 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.SoundBtn_base_75 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100rem;
+    height: 100rem;
+    background: radial-gradient(50% 50% at 50% 50%, #000 0%, rgba(0, 0, 0, 0) 100%);
+    position: relative;
+    z-index: 0;
+    transition: opacity 0.25s ease-out;
+    cursor: pointer;
+}
+
+.SoundBtn_base__hovered_3f {
+    opacity: 1;
+}
+.SoundBtn_content_60 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.25s ease-out;
+}
+.SoundBtn_icoContainer_a8 {
+    width: 35rem;
+    height: 35rem;
+    opacity: 0.7;
+    position: relative;
+    transition: opacity 0.25s ease-out;
+}
+.SoundBtn_base__active_34 .SoundBtn_icoContainer_a8 {
+    opacity: 1;
+}
+.SoundBtn_ico_d8 {
+    width: 100rem;
+    height: 100rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.questsGiver.voice') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.SoundBtn_sonar_55 {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out;
+}
+.SoundBtn_sonar__show_ad {
+    opacity: 1;
 }
 
 .AnimatedLootbox_base_2c {
@@ -1552,7 +2967,6 @@
         opacity: 1;
     }
 }
-
 @keyframes App_fadeOut_92 {
     from {
         opacity: 1;
@@ -1562,345 +2976,747 @@
         opacity: 0;
     }
 }
-
 .App_base_4a {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
     position: relative;
     animation: App_fadeIn_d8 0.6s forwards;
 }
-
 .App_content_ea {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 1366rem;
-    height: 678rem;
-    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    position: relative;
+    transition: opacity 0.3s ease-out;
 }
-
-.mediaSmall .App_content_ea {
-    width: 1366rem;
-    height: 678rem;
+.App_base__general_1_f1 .App_content_ea {
+    opacity: 0.1;
+    pointer-events: none;
 }
-
-.mediaMedium .App_content_ea {
-    width: 1600rem;
-    height: 810rem;
-}
-
-.mediaLarge .App_content_ea {
-    width: 1920rem;
-    height: 990rem;
-}
-
-.mediaExtraLarge .App_content_ea {
-    width: 2560rem;
-    height: 1350rem;
-}
-
 .App_background_a5 {
     width: 100%;
     height: 100%;
     background: #000000 url('R.images.mt_birthday.gui.maps.icons.tankMail.background') no-repeat center / cover;
-    opacity: 1;
     position: absolute;
     z-index: -1;
 }
-
-.App_background__leave_46 {
-    animation: App_fadeOut_92 0.4s forwards;
-}
-
-.App_emptyBackground_d8 {
-    width: 100%;
-    height: 100%;
-    background: #000000 url('R.images.mt_birthday.gui.maps.icons.tankMail.backgroundEmpty') no-repeat center / cover;
-    opacity: 0;
-    position: absolute;
-    z-index: -1;
-}
-
-.App_emptyBackground__visible_58 {
-    animation: App_fadeIn_d8 0.4s forwards;
-}
-
 .App_header_6a {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 45rem;
+    margin-top: 51rem;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
 }
-
-.mediaMedium .App_header_6a {
-    margin-top: 45rem;
-}
-
 .mediaLarge .App_header_6a {
-    margin-top: 58rem;
+    margin-top: 59rem;
 }
-
 .mediaExtraLarge .App_header_6a {
-    margin-top: 74rem;
+    margin-top: 75rem;
 }
-
-.App_giftContainer_b8 {
+.App_currencyContainer_a6 {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    width: 730rem;
-    height: 100%;
+    height: 44rem;
+    margin-top: 132rem;
+    padding: 0 48rem;
+    border: 1rem solid;
+    border-image: linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0) 100%
+        )
+        1;
+    background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.4) 49.75%, transparent 100%);
+    opacity: 1;
     position: absolute;
-    top: 50%;
-    left: auto;
-    transform: translateY(-50%);
-    animation: App_fadeIn_d8 0.4s forwards;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease-out;
 }
-
-.mediaSmall .App_giftContainer_b8 {
-    width: 950rem;
+.mediaMedium .App_currencyContainer_a6 {
+    height: 53rem;
+    margin-top: 169rem;
+    padding: 0 56rem;
 }
-
-.mediaMedium .App_giftContainer_b8 {
-    width: 1100rem;
+.mediaLarge .App_currencyContainer_a6 {
+    height: 61rem;
+    margin-top: 185rem;
+    padding: 0 72rem;
 }
-
-.mediaLarge .App_giftContainer_b8 {
-    width: 1260rem;
+.mediaExtraLarge .App_currencyContainer_a6 {
+    height: 71rem;
+    margin-top: 256rem;
+    padding: 0 88rem;
 }
-
-.mediaExtraLarge .App_giftContainer_b8 {
-    width: 1440rem;
+.App_base__mail_1_a0 .App_currencyContainer_a6,
+.App_base__mail_2_d3 .App_currencyContainer_a6 {
+    opacity: 0.1;
+    pointer-events: none;
 }
-
-.App_giftContainer__center_53 {
-    justify-content: center;
+.App_currencyText_7b,
+.App_buttonText_17 {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    font-weight: 400;
+    line-height: 23rem;
 }
-
-.App_giftContainer__leave_85 {
-    animation: App_fadeOut_92 0.4s forwards;
+.mediaMedium .App_currencyText_7b,
+.mediaMedium .App_buttonText_17 {
+    color: #fefeec;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    font-weight: 400;
+    line-height: 30rem;
 }
-
-.App_phraseContainer_fa {
-    display: flex;
-    margin: 12rem 0;
+.mediaLarge .App_currencyText_7b,
+.mediaLarge .App_buttonText_17 {
+    color: #fefeec;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+    font-weight: 400;
+    line-height: 30rem;
 }
-
-.mediaMedium .App_phraseContainer_fa {
-    margin: 16rem 0;
+.mediaExtraLarge .App_currencyText_7b,
+.mediaExtraLarge .App_buttonText_17 {
+    color: #fefeec;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    font-weight: 400;
+    line-height: 30rem;
 }
-
-.mediaLarge .App_phraseContainer_fa {
-    margin: 25rem 0;
+.App_buttonText_17 {
+    margin-left: 6rem;
+    color: #ffdd99;
 }
-
-.App_lootboxContainer_c1 {
-    width: 640rem;
-    height: 400rem;
-    position: absolute;
-    top: 120rem;
-    right: 150rem;
-    transform: scale(0.53);
+.mediaMedium .App_buttonText_17 {
+    margin-left: 8rem;
 }
-
-.mediaSmall .App_lootboxContainer_c1 {
-    top: 123rem;
-    right: 135rem;
+.App_buttonTextIcon_b7 {
+    display: none;
 }
-
-.mediaMedium .App_lootboxContainer_c1 {
-    top: 185rem;
-    right: 235rem;
-    transform: scale(0.62);
+.App_currencyCountText_5a {
+    color: #ffdd99;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    height: 25rem;
 }
-
-.mediaLarge .App_lootboxContainer_c1 {
-    top: 275rem;
-    right: 335rem;
-    transform: scale(0.74);
+.mediaMedium .App_currencyCountText_5a {
+    color: #ffdd99;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    height: 33rem;
 }
-
-.mediaExtraLarge .App_lootboxContainer_c1 {
-    top: 445rem;
-    right: 550rem;
-    transform: scale(1);
+.mediaExtraLarge .App_currencyCountText_5a {
+    color: #ffdd99;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    height: 34rem;
 }
-
-.App_lootboxContainer__leave_6a {
-    animation: App_fadeOut_92 0.4s forwards;
-}
-
-.App_progressionBlock_91 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-}
-
-.App_reward_ba {
-    display: flex;
-    width: 48rem;
-    height: 50rem;
-    margin-right: 26rem;
-    position: relative;
-    animation: App_fadeInRewards_41 0.5s linear;
-}
-
-.App_reward__last_f9 {
-    margin-right: 0;
-}
-
-.mediaMedium .App_reward_ba {
-    width: 80rem;
-    height: 80rem;
-    margin-right: 56rem;
-}
-
-.mediaMedium .App_reward__last_f9 {
-    margin-right: 0;
-}
-
-.mediaLarge .App_reward_ba {
-    margin-right: 40rem;
-}
-
-.mediaLarge .App_reward__last_f9 {
-    margin-right: 0;
-}
-
-.App_rewardsContainer_5b {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50rem;
-    position: relative;
-}
-
-.mediaMedium .App_rewardsContainer_5b {
-    height: 80rem;
-}
-
-.App_progressionContainer_79 {
-    margin: 8rem 0 16rem;
-}
-
-.mediaMedium .App_progressionContainer_79 {
-    margin-top: 16rem;
-}
-
-.mediaLarge .App_progressionContainer_79 {
-    margin-bottom: 26rem;
-}
-
-.mediaExtraLarge .App_progressionContainer_79 {
-    margin-bottom: 40rem;
-}
-
-.App_giftSender_9e {
-    width: 310rem;
-    height: 340rem;
-    position: relative;
-}
-
-.mediaMedium .App_giftSender_9e {
-    width: 350rem;
-    height: 414rem;
-}
-
-.mediaLarge .App_giftSender_9e {
-    width: 400rem;
-    height: 481rem;
-}
-
-.mediaExtraLarge .App_giftSender_9e {
-    width: 400rem;
-    height: 505rem;
-}
-
-.App_conditionListContainer_80 {
-    margin-bottom: 16rem;
-}
-
 .App_currencyPostStampIcon_2e {
     width: 16rem;
     height: 16rem;
     margin-left: 8rem;
     background: url('R.images.mt_birthday.gui.maps.icons.common.postStamp.c_24x24.postStamp') no-repeat center / contain;
-    transform: translateY(-1rem);
 }
-
 .mediaMedium .App_currencyPostStampIcon_2e {
     width: 24rem;
     height: 24rem;
-    margin-left: 8rem;
-    transform: translateY(-4rem);
 }
-
-.App_currencyContainer_a6 {
+.App_giftContainer_b8 {
+    width: 100%;
+    margin-top: 14rem;
+    padding-left: 90rem;
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+}
+.mediaSmall .App_giftContainer_b8 {
+    padding-left: 0;
+}
+.mediaMedium .App_giftContainer_b8 {
+    margin-top: 52rem;
+}
+.mediaLarge .App_giftContainer_b8 {
+    margin-top: 0;
+}
+.mediaExtraLarge .App_giftContainer_b8 {
+    margin-top: -52rem;
+}
+.App_giftContainer__center_53 {
+    padding-left: 0;
+}
+.App_base__mail_2_d3 .App_giftContainer_b8 {
+    opacity: 0.1;
+    pointer-events: none;
+}
+.App_phraseContainer_fa {
     display: flex;
+    margin: 12rem 0;
+}
+.mediaMedium .App_phraseContainer_fa {
+    margin: 16rem 0;
+}
+.mediaLarge .App_phraseContainer_fa {
+    margin: 25rem 0;
+}
+.App_progressionContainer_79 {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 10rem;
+    padding: 0 24rem;
+    opacity: 1;
+    position: absolute;
+    bottom: 18rem;
+    transition: opacity 0.3s ease-out;
+}
+.mediaMedium .App_progressionContainer_79 {
+    padding: 0 32rem;
+}
+.mediaLarge .App_progressionContainer_79 {
+    bottom: 30rem;
+}
+.mediaExtraLarge .App_progressionContainer_79 {
+    padding: 0 64rem;
+    bottom: 50rem;
+}
+.App_base__mail_1_a0 .App_progressionContainer_79 {
+    opacity: 0.1;
+    pointer-events: none;
+}
+.App_giftSender_9e {
+    width: 310rem;
+    height: 340rem;
+    position: relative;
+}
+.mediaMedium .App_giftSender_9e {
+    width: 350rem;
+    height: 414rem;
+}
+.mediaLarge .App_giftSender_9e {
+    width: 400rem;
+    height: 481rem;
+}
+.mediaExtraLarge .App_giftSender_9e {
+    width: 400rem;
+    height: 505rem;
+}
+.App_conditionListContainer_80 {
+    margin-bottom: 16rem;
 }
 
-.mediaMedium .App_currencyContainer_a6 {
-    margin-top: 15rem;
+.ErrorPostScreen_base_e9 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.App_currencyText_7b {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
+.ErrorPostScreen_icon_e4 {
+    width: 180rem;
+    height: 135rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.error_small') no-repeat center / contain;
 }
 
-.mediaMedium .App_currencyText_7b {
-    color: #e9e2bf;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
+.mediaMedium .ErrorPostScreen_icon_e4 {
+    width: 296rem;
+    height: 222rem;
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tankMail.error_medium');
 }
 
-.App_currencyCountText_5a {
+.mediaLarge .ErrorPostScreen_icon_e4 {
+    width: 360rem;
+    height: 270rem;
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tankMail.error_large');
+}
+
+.mediaExtraLarge .ErrorPostScreen_icon_e4 {
+    width: 400rem;
+    height: 300rem;
+}
+
+.ErrorPostScreen_title_d3 {
     color: #fefeec;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
-    transform: translateY(-2rem);
 }
 
-.mediaMedium .App_currencyCountText_5a {
+.mediaMedium .ErrorPostScreen_title_d3 {
     color: #fefeec;
     font-size: 24rem;
     font-weight: 700;
     line-height: 1.2;
-    transform: translateY(-5rem);
 }
 
-@keyframes App_fadeInRewards_41 {
-    0% {
-        opacity: 0;
-    }
+.mediaLarge .ErrorPostScreen_title_d3 {
+    color: #fefeec;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
 
-    50% {
-        opacity: 0;
+.mediaExtraLarge .ErrorPostScreen_title_d3 {
+    color: #fefeec;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.ErrorPostScreen_subTitle_89 {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-top: 8rem;
+}
+
+.mediaLarge .ErrorPostScreen_subTitle_89 {
+    color: #fefeec;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.mediaExtraLarge .ErrorPostScreen_subTitle_89 {
+    color: #fefeec;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-top: 16rem;
+}
+
+.ConditionList_base_a8 {
+    display: flex;
+    flex-direction: column;
+}
+
+.ConditionList_condition_5c {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 88rem;
+    margin-bottom: 8rem;
+    padding: 14rem 5rem;
+    border-radius: 6rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.mediaMedium .ConditionList_condition_5c {
+    height: 104rem;
+    margin-bottom: 10rem;
+    padding: 20rem 0;
+    border-radius: 8rem;
+}
+
+.mediaLarge .ConditionList_condition_5c {
+    height: 120rem;
+    margin-bottom: 12rem;
+    padding: 24rem 0;
+}
+
+.mediaExtraLarge .ConditionList_condition_5c {
+    height: 142rem;
+    margin-bottom: 14rem;
+    padding: 28rem 0;
+    border-radius: 10rem;
+}
+
+.ConditionList_condition_5c:last-child {
+    margin-bottom: 0;
+}
+
+.ConditionList_dayLimit_0c,
+.ConditionList_rewards_8a,
+.ConditionList_bonusChance_7c {
+    width: 16rem;
+    height: 16rem;
+    margin-bottom: 6rem;
+}
+
+.mediaMedium .ConditionList_dayLimit_0c,
+.mediaMedium .ConditionList_rewards_8a,
+.mediaMedium .ConditionList_bonusChance_7c {
+    width: 20rem;
+    height: 20rem;
+}
+
+.mediaLarge .ConditionList_dayLimit_0c,
+.mediaLarge .ConditionList_rewards_8a,
+.mediaLarge .ConditionList_bonusChance_7c {
+    width: 24rem;
+    height: 24rem;
+    margin-bottom: 8rem;
+}
+
+.mediaExtraLarge .ConditionList_dayLimit_0c,
+.mediaExtraLarge .ConditionList_rewards_8a,
+.mediaExtraLarge .ConditionList_bonusChance_7c {
+    width: 28rem;
+    height: 28rem;
+    margin-bottom: 10rem;
+}
+
+.ConditionList_dayLimit_0c {
+    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.day_limit') no-repeat center / cover;
+}
+
+.ConditionList_rewards_8a {
+    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.rewards') no-repeat center / cover;
+}
+
+.ConditionList_bonusChance_7c {
+    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.bonus_chance') no-repeat center / cover;
+}
+
+.ConditionList_textCondition_3c {
+    color: #fefeec;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.mediaMedium .ConditionList_textCondition_3c {
+    max-height: auto;
+}
+
+.mediaLarge .ConditionList_textCondition_3c {
+    color: #fefeec;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.mediaExtraLarge .ConditionList_textCondition_3c {
+    color: #fefeec;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.ConditionList_textCondition_3c div {
+    justify-content: center;
+}
+
+.GiftSentForm_base_5e {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.GiftSentForm_stepContainer_47 {
+    width: 284rem;
+    margin-right: 16rem;
+    position: relative;
+}
+
+.mediaSmall .GiftSentForm_stepContainer_47 {
+    width: 316rem;
+}
+
+.mediaMedium .GiftSentForm_stepContainer_47 {
+    width: 368rem;
+    margin-right: 32rem;
+}
+
+.mediaLarge .GiftSentForm_stepContainer_47 {
+    width: 436rem;
+    margin-right: 40rem;
+}
+
+.mediaExtraLarge .GiftSentForm_stepContainer_47 {
+    width: 524rem;
+    margin-right: 48rem;
+}
+
+.GiftSentForm_stepContainer_47:last-child {
+    margin-right: 0;
+}
+
+.GiftSentForm_title_f7 {
+    color: #fefeec;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 13rem;
+}
+
+.mediaMedium .GiftSentForm_title_f7 {
+    color: #fefeec;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 18rem;
+}
+
+.mediaLarge .GiftSentForm_title_f7 {
+    color: #fefeec;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 26rem;
+}
+
+.mediaExtraLarge .GiftSentForm_title_f7 {
+    color: #fefeec;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 32rem;
+}
+
+.Phrase_base_85,
+.Phrase_contentContainer_41 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+.Phrase_base_85 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+.Phrase_base__disabled_17 {
+    pointer-events: none;
+}
+.Phrase_base_85:hover {
+    cursor: pointer;
+}
+.Phrase_phraseContainer_f6,
+.Phrase_prevPhraseContainer_28 {
+    display: flex;
+    width: 100%;
+    height: 236rem;
+    margin-bottom: 12rem;
+    border-radius: 6rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.poster') no-repeat center / 100% 100%;
+    filter: brightness(1);
+    position: relative;
+    transition: filter 0.5s ease-in-out;
+}
+.mediaSmall .Phrase_phraseContainer_f6,
+.mediaSmall .Phrase_prevPhraseContainer_28 {
+    height: 236rem;
+}
+.mediaMedium .Phrase_phraseContainer_f6,
+.mediaMedium .Phrase_prevPhraseContainer_28 {
+    height: 268rem;
+    margin-bottom: 16rem;
+    border-radius: 7rem;
+}
+.mediaLarge .Phrase_phraseContainer_f6,
+.mediaLarge .Phrase_prevPhraseContainer_28 {
+    height: 312rem;
+    margin-bottom: 24rem;
+    border-radius: 8rem;
+}
+.mediaExtraLarge .Phrase_phraseContainer_f6,
+.mediaExtraLarge .Phrase_prevPhraseContainer_28 {
+    height: 378rem;
+    margin-bottom: 28rem;
+    border-radius: 10rem;
+}
+.Phrase_base__disabled_17 .Phrase_phraseContainer_f6,
+.Phrase_base__disabled_17 .Phrase_prevPhraseContainer_28 {
+    opacity: 0.5;
+}
+.Phrase_phraseContainer_f6:hover {
+    filter: brightness(1.1);
+}
+.Phrase_phraseContainer__show_9a {
+    animation: Phrase_slideAndShow_41 0.5s forwards;
+}
+.Phrase_prevPhraseContainer_28 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: Phrase_slideAndFade_77 0.5s forwards;
+}
+.Phrase_disabledBg_ad {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.disabledPattern');
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.Phrase_contentContainer_41 {
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.Phrase_particles_05 {
+    width: 288rem;
+    height: 127rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.particles') no-repeat center / cover;
+    position: absolute;
+}
+.Phrase_phraseText_d5 {
+    color: #000000;
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.25;
+    width: 252rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: none;
+    transition: text-shadow 0.5s ease-in-out;
+}
+.mediaSmall .Phrase_phraseText_d5 {
+    width: 284rem;
+}
+.mediaMedium .Phrase_phraseText_d5 {
+    color: #000000;
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.2;
+    width: 328rem;
+}
+.mediaLarge .Phrase_phraseText_d5 {
+    color: #000000;
+    font-size: 24rem;
+    font-weight: 700;
+    line-height: 1.2;
+    width: 388rem;
+}
+.mediaExtraLarge .Phrase_phraseText_d5 {
+    color: #000000;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    width: 468rem;
+}
+.Phrase_contentContainer_41:hover .Phrase_phraseText_d5 {
+    text-shadow:
+        0 0 48rem rgba(255, 255, 255, 0.8),
+        0 0 48rem rgba(255, 255, 255, 0.8),
+        0 0 8rem rgba(255, 255, 255, 0.8);
+}
+.mediaLarge .Phrase_contentContainer_41:hover .Phrase_phraseText_d5 {
+    text-shadow:
+        0 0 64rem rgba(255, 255, 255, 0.8),
+        0 0 64rem rgba(255, 255, 255, 0.8),
+        0 0 8rem rgba(255, 255, 255, 0.8);
+}
+.Phrase_refreshContainer_8d {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 16rem;
+}
+.mediaMedium .Phrase_refreshContainer_8d {
+    bottom: 20rem;
+}
+.mediaLarge .Phrase_refreshContainer_8d {
+    bottom: 24rem;
+}
+.mediaExtraLarge .Phrase_refreshContainer_8d {
+    bottom: 28rem;
+}
+.Phrase_refreshIcon_1f {
+    width: 24rem;
+    height: 24rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.refresh') no-repeat center / contain;
+    position: relative;
+}
+.mediaMedium .Phrase_refreshIcon_1f {
+    width: 28rem;
+    height: 28rem;
+}
+.mediaLarge .Phrase_refreshIcon_1f {
+    width: 32rem;
+    height: 32rem;
+}
+.mediaExtraLarge .Phrase_refreshIcon_1f {
+    width: 40rem;
+    height: 40rem;
+}
+.Phrase_refreshText_26 {
+    color: #000000;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    font-weight: 700;
+}
+.mediaLarge .Phrase_refreshText_26 {
+    color: #000000;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    font-weight: 700;
+    transform: translateY(-2rem);
+}
+.mediaExtraLarge .Phrase_refreshText_26 {
+    color: #000000;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+    font-weight: 700;
+}
+.Phrase_buttonBlink_79 {
+    width: 100%;
+    height: 135rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.buttonBlink') no-repeat center / cover;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.Phrase_base__active_0e .Phrase_buttonBlink_79 {
+    transition: opacity 0.3s ease-in-out;
+}
+.Phrase_base_85:hover .Phrase_buttonBlink_79 {
+    opacity: 1;
+}
+.mediaMedium .Phrase_buttonBlink_79 {
+    height: 170rem;
+}
+@keyframes Phrase_slideAndShow_41 {
+    0% {
+        opacity: 0.5;
     }
 
     100% {
         opacity: 1;
+    }
+}
+@keyframes Phrase_slideAndFade_77 {
+    0% {
+        opacity: 1;
+        transform: translate(0rem, 0rem) rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(65rem, -150rem) rotate(11deg);
     }
 }
 
@@ -2114,719 +3930,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     opacity: 0.6;
 }
 
-.EmptyPostScreen_base_fe {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.EmptyPostScreen_icon_b3 {
-    width: 80rem;
-    height: 80rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.common.postStamp.c_80x80.postStamp') no-repeat center / contain;
-    mask-image: linear-gradient(180deg, #fff 0%, transparent 89.63%);
-    position: relative;
-}
-
-.mediaMedium .EmptyPostScreen_icon_b3 {
-    width: 120rem;
-    height: 120rem;
-    background-image: url('R.images.mt_birthday.gui.maps.icons.common.postStamp.c_132x132.postStamp');
-}
-
-.EmptyPostScreen_title_37 {
-    color: #fefeec;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.mediaMedium .EmptyPostScreen_title_37 {
-    color: #fefeec;
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.mediaLarge .EmptyPostScreen_title_37 {
-    color: #fefeec;
-    font-size: 28rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.mediaExtraLarge .EmptyPostScreen_title_37 {
-    color: #fefeec;
-    font-size: 36rem;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.EmptyPostScreen_subTitle_a4 {
-    color: #fefeec;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin-top: 8rem;
-}
-
-.mediaLarge .EmptyPostScreen_subTitle_a4 {
-    color: #fefeec;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-
-.mediaExtraLarge .EmptyPostScreen_subTitle_a4 {
-    color: #fefeec;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin-top: 16rem;
-}
-
-.EmptyPostScreen_button_c0 {
-    width: 120rem;
-    height: 24rem;
-    margin-top: 16rem;
-}
-
-.mediaMedium .EmptyPostScreen_button_c0 {
-    width: 160rem;
-    height: 32rem;
-    margin-top: 24rem;
-}
-
-.SplittedTextWithColorTags_blackReal_79 {
-    color: #000000;
-}
-
-.SplittedTextWithColorTags_whiteReal_d8 {
-    color: #ffffff;
-}
-
-.SplittedTextWithColorTags_white_6a {
-    color: #f2f2f7;
-}
-
-.SplittedTextWithColorTags_whiteOrange_64 {
-    color: #fefeec;
-}
-
-.SplittedTextWithColorTags_whiteSpanish_b7 {
-    color: #e9e2bf;
-}
-
-.SplittedTextWithColorTags_par_20 {
-    color: #8c8c7e;
-}
-
-.SplittedTextWithColorTags_parSecondary_4d {
-    color: #595950;
-}
-
-.SplittedTextWithColorTags_parTertiary_4a {
-    color: #37362e;
-}
-
-.SplittedTextWithColorTags_red_66 {
-    color: #ff2717;
-}
-
-.SplittedTextWithColorTags_redDark_21 {
-    color: #b70000;
-}
-
-.SplittedTextWithColorTags_yellow_97 {
-    color: #feab34;
-}
-
-.SplittedTextWithColorTags_orange_e2 {
-    color: #ee7000;
-}
-
-.SplittedTextWithColorTags_cream_cf {
-    color: #ffdd99;
-}
-
-.SplittedTextWithColorTags_brown_d5 {
-    color: #cbac77;
-}
-
-.SplittedTextWithColorTags_greenBright_e1 {
-    color: #80d43a;
-}
-
-.SplittedTextWithColorTags_green_1a {
-    color: #7ab300;
-}
-
-.SplittedTextWithColorTags_greenDark_5d {
-    color: #497212;
-}
-
-.SplittedTextWithColorTags_blueBooster_0c {
-    color: #ccffff;
-}
-
-.SplittedTextWithColorTags_blueTeamkiller_3a {
-    color: #09e2ff;
-}
-
-.SplittedTextWithColorTags_cred_4d {
-    color: #ced9d9;
-}
-
-.SplittedTextWithColorTags_gold_0e {
-    color: #ffc363;
-}
-
-.SplittedTextWithColorTags_bond_5a {
-    color: #c9c9b6;
-}
-
-.SplittedTextWithColorTags_prom_9e {
-    color: #a29b70;
-}
-
-.ConditionList_base_a8 {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.ConditionList_condition_5c {
-    color: #fefeec;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    display: flex;
-    margin-bottom: 4rem;
-}
-
-.mediaMedium .ConditionList_condition_5c {
-    margin-bottom: 8rem;
-}
-
-.mediaLarge .ConditionList_condition_5c {
-    color: #fefeec;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin-bottom: 16rem;
-}
-
-.ConditionList_conditionPoint_91 {
-    margin-right: 8rem;
-}
-
-.ConditionList_coloredText_d2 {
-    color: #cbac77;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    display: flex;
-}
-
-.mediaLarge .ConditionList_coloredText_d2 {
-    color: #cbac77;
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-
-.GiftSentForm_base_5e {
-    width: 308rem;
-    height: 340rem;
-    position: relative;
-    z-index: 1;
-}
-
-.mediaMedium .GiftSentForm_base_5e {
-    width: 346rem;
-    height: 414rem;
-}
-
-.mediaLarge .GiftSentForm_base_5e {
-    width: 396rem;
-    height: 481rem;
-}
-
-.mediaExtraLarge .GiftSentForm_base_5e {
-    height: 505rem;
-}
-
-.GiftSentForm_conditionListContainer_f0 {
-    margin-bottom: 11rem;
-}
-
-.mediaLarge .GiftSentForm_conditionListContainer_f0 {
-    margin-bottom: 15rem;
-}
-
-.GiftSentForm_phraseContainer_9e {
-    display: flex;
-    margin: 12rem 0;
-}
-
-.mediaMedium .GiftSentForm_phraseContainer_9e {
-    margin: 16rem 0;
-}
-
-.mediaLarge .GiftSentForm_phraseContainer_9e {
-    margin: 25rem 0;
-}
-
-.GiftSentForm_currencyContainer_89 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 10rem;
-}
-
-.mediaMedium .GiftSentForm_currencyContainer_89 {
-    margin-top: 15rem;
-}
-
-.GiftSentForm_currencyText_03 {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.mediaMedium .GiftSentForm_currencyText_03 {
-    color: #e9e2bf;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
-}
-
-.GiftSentForm_currencyCountText_94 {
-    color: #fefeec;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    transform: translateY(-3rem);
-}
-
-.mediaMedium .GiftSentForm_currencyCountText_94 {
-    color: #fefeec;
-    font-size: 24rem;
-    font-weight: 700;
-    line-height: 1.2;
-    transform: translateY(-6rem);
-}
-
-.GiftSentForm_currencyPostStampIcon_c9 {
-    width: 16rem;
-    height: 16rem;
-    margin-left: 8rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.common.postStamp.c_24x24.postStamp') no-repeat center / contain;
-    transform: translateY(-1rem);
-}
-
-.mediaMedium .GiftSentForm_currencyPostStampIcon_c9 {
-    width: 24rem;
-    height: 24rem;
-    margin-left: 8rem;
-    transform: translateY(-4rem);
-}
-
-.Phrase_base_85,
-.Phrase_contentContainer_41 {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-}
-.Phrase_base_85 {
-    width: 100%;
-    height: 112rem;
-    border: 1rem solid rgba(255, 178, 102, 0.4);
-    border-radius: 2rem;
-    box-shadow: 0 0 25rem 0 rgba(178, 21, 0, 0.2) inset;
-    background: linear-gradient(0deg, rgba(255, 92, 0, 0.1) 0%, rgba(255, 92, 0, 0.1) 100%), rgba(0, 0, 0, 0.6);
-}
-.Phrase_base__disabled_17 {
-    pointer-events: none;
-}
-.Phrase_base_85:hover {
-    cursor: pointer;
-}
-.mediaMedium .Phrase_base_85 {
-    height: 132rem;
-}
-.Phrase_disabledBg_ad,
-.Phrase_poster_5c {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.Phrase_disabledBg_ad {
-    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.disabledPattern');
-}
-.Phrase_poster_5c {
-    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.poster') no-repeat center / cover;
-}
-.Phrase_contentContainer_41 {
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-}
-.Phrase_topBorderBlink_50,
-.Phrase_phraseShine_88 {
-    display: flex;
-    background: no-repeat center / contain;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.Phrase_blink_b6 {
-    width: 16rem;
-    height: 16rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.blink') no-repeat center / contain;
-    position: absolute;
-}
-.Phrase_blink__left_bf {
-    top: 0;
-    left: 0;
-    transform: translateY(-50%) translateX(-50%);
-}
-.Phrase_blink__right_62 {
-    right: 0;
-    bottom: 0;
-    transform: translateY(50%) translateX(50%);
-}
-.Phrase_topBorderBlink_50 {
-    width: 100rem;
-    height: 1rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.topBorderBlink') no-repeat center / contain;
-    opacity: 0;
-    left: 50%;
-    transform: translateY(-1rem) translateX(-50%);
-}
-.Phrase_base__active_0e .Phrase_topBorderBlink_50 {
-    transition: opacity 0.3s ease-in-out;
-}
-.Phrase_base_85:hover .Phrase_topBorderBlink_50 {
-    opacity: 1;
-}
-.Phrase_particles_05 {
-    width: 288rem;
-    height: 127rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.particles') no-repeat center / cover;
-    position: absolute;
-}
-.Phrase_particles__left_8b {
-    top: 0;
-    left: 0;
-    transform: rotate(180deg);
-}
-.Phrase_particles__right_a7 {
-    right: 0;
-    bottom: 0;
-}
-.Phrase_phraseContainer_f6 {
-    color: #e9e2bf;
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.1;
-    padding: 0 10rem;
-    text-shadow:
-        0 0 4rem rgba(255, 255, 255, 0.25),
-        0 0 8rem rgba(245, 198, 188, 0.5),
-        0 0 15rem rgba(238, 85, 34, 0.5);
-    position: relative;
-}
-.Phrase_phraseContainer__animate_bf {
-    animation: Phrase_showHideAnimation_1e 0.5s ease-in-out;
-}
-.Phrase_base__disabled_17 .Phrase_phraseContainer_f6 {
-    opacity: 0.5;
-}
-.Phrase_phrase_e2 {
-    justify-content: center;
-    position: relative;
-    transform: translateY(-7rem);
-}
-.Phrase_phraseShine_88 {
-    width: 100%;
-    height: 70rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.phraseLight') no-repeat center / cover;
-    position: absolute;
-    top: 15rem;
-    left: 0;
-}
-.Phrase_phraseShine__animate_1b {
-    animation: Phrase_showHideAnimation_1e 0.5s ease-in-out;
-}
-.Phrase_refreshContainer_8d {
-    color: #ffdd99;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    display: flex;
-    position: absolute;
-    bottom: 7rem;
-}
-.Phrase_base__disabled_17 .Phrase_refreshContainer_8d {
-    opacity: 0.5;
-}
-.Phrase_refreshIcon_1f {
-    width: 24rem;
-    height: 24rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.refresh') no-repeat center / contain;
-    position: relative;
-    transform: translateY(-2rem);
-}
-.Phrase_buttonBlink_79 {
-    width: 100%;
-    height: 135rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.buttonBlink') no-repeat center / cover;
-    opacity: 0;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.Phrase_base__active_0e .Phrase_buttonBlink_79 {
-    transition: opacity 0.3s ease-in-out;
-}
-.Phrase_base_85:hover .Phrase_buttonBlink_79 {
-    opacity: 1;
-}
-.mediaMedium .Phrase_buttonBlink_79 {
-    height: 170rem;
-}
-@keyframes Phrase_showHideAnimation_1e {
-    0% {
-        opacity: 1;
-    }
-
-    45% {
-        opacity: 0;
-    }
-
-    55% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.FormatTextWithColorTags_blackReal_3c {
-    color: #000000;
-}
-
-.FormatTextWithColorTags_whiteReal_8a {
-    color: #ffffff;
-}
-
-.FormatTextWithColorTags_white_16 {
-    color: #f2f2f7;
-}
-
-.FormatTextWithColorTags_whiteOrange_18 {
-    color: #fefeec;
-}
-
-.FormatTextWithColorTags_whiteSpanish_10 {
-    color: #e9e2bf;
-}
-
-.FormatTextWithColorTags_par_ca {
-    color: #8c8c7e;
-}
-
-.FormatTextWithColorTags_parSecondary_8d {
-    color: #595950;
-}
-
-.FormatTextWithColorTags_parTertiary_a3 {
-    color: #37362e;
-}
-
-.FormatTextWithColorTags_red_60 {
-    color: #ff2717;
-}
-
-.FormatTextWithColorTags_redDark_03 {
-    color: #b70000;
-}
-
-.FormatTextWithColorTags_yellow_ad {
-    color: #feab34;
-}
-
-.FormatTextWithColorTags_orange_e4 {
-    color: #ee7000;
-}
-
-.FormatTextWithColorTags_cream_cd {
-    color: #ffdd99;
-}
-
-.FormatTextWithColorTags_brown_c8 {
-    color: #cbac77;
-}
-
-.FormatTextWithColorTags_greenBright_f0 {
-    color: #80d43a;
-}
-
-.FormatTextWithColorTags_green_c5 {
-    color: #7ab300;
-}
-
-.FormatTextWithColorTags_greenDark_af {
-    color: #497212;
-}
-
-.FormatTextWithColorTags_blueBooster_ac {
-    color: #ccffff;
-}
-
-.FormatTextWithColorTags_blueTeamkiller_6f {
-    color: #09e2ff;
-}
-
-.FormatTextWithColorTags_cred_4e {
-    color: #ced9d9;
-}
-
-.FormatTextWithColorTags_gold_90 {
-    color: #ffc363;
-}
-
-.FormatTextWithColorTags_bond_71 {
-    color: #c9c9b6;
-}
-
-.FormatTextWithColorTags_prom_dd {
-    color: #a29b70;
-}
-
-.SelectPlayers_base_13 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    border: 1rem solid rgba(255, 255, 255, 0.15);
-    border-radius: 2rem;
-    box-shadow: 0 4rem 28rem 0 rgba(255, 255, 255, 0.1) inset;
-    background: rgba(255, 255, 255, 0.01);
-    position: relative;
-}
-
-.SelectPlayers_base__disabled_31 {
-    pointer-events: none;
-}
-
-.SelectPlayers_base_13:hover {
-    cursor: pointer;
-}
-
-.SelectPlayers_activeBg_63,
-.SelectPlayers_disabledBg_95 {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.SelectPlayers_activeBg_63 {
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.04) 100%), rgba(0, 0, 0, 0.1);
-    opacity: 0;
-}
-
-.SelectPlayers_base__active_cb .SelectPlayers_activeBg_63 {
-    transition: opacity 0.3s ease-in-out;
-}
-
-.SelectPlayers_base_13:hover .SelectPlayers_activeBg_63 {
-    opacity: 1;
-}
-
-.SelectPlayers_disabledBg_95 {
-    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.disabledPattern');
-}
-
-.SelectPlayers_playerIcon_58 {
-    display: flex;
-    width: 24rem;
-    height: 24rem;
-    margin-right: 4rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.player') no-repeat center / cover;
-    transform: translateY(1rem);
-}
-
-.SelectPlayers_base__disabled_31 .SelectPlayers_playerIcon_58 {
-    opacity: 0.5;
-}
-
-.mediaMedium .SelectPlayers_playerIcon_58 {
-    transform: translateY(2rem);
-}
-
-.SelectPlayers_playerText_99 {
-    color: #fefeec;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    margin: 6rem 0;
-    position: relative;
-}
-
-.SelectPlayers_base__disabled_31 .SelectPlayers_playerText_99 {
-    opacity: 0.5;
-}
-
-.mediaMedium .SelectPlayers_playerText_99 {
-    color: #fefeec;
-    font-size: 18rem;
-    font-weight: 400;
-    line-height: 1.25;
-    margin: 12rem 0rem 12rem 0;
-}
-
-.SelectPlayers_buttonBorder_98 {
-    width: 100%;
-    height: 1rem;
-    background: linear-gradient(45deg, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
-    position: absolute;
-}
-
-.SelectPlayers_buttonBorder__top_14 {
-    top: -1rem;
-    left: 0;
-}
-
-.SelectPlayers_buttonBorder__bottom_31 {
-    bottom: -1rem;
-    left: 0;
-}
-
-.SentButton_base_37 {
+.SentButton_base_7c {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    position: relative;
 }
 
-.SentButton_sentButton_a5 {
+.SentButton_sentButton_b0 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2834,71 +3946,77 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 32rem;
 }
 
-.mediaMedium .SentButton_sentButton_a5 {
+.mediaMedium .SentButton_sentButton_b0 {
     height: 48rem;
 }
 
-.SentButton_sentButtonText_b9 {
+.SentButton_sentButtonText_03 {
     color: #fefeec;
     font-size: 15rem;
     font-weight: 700;
     line-height: 1.15;
+    height: 16rem;
+    line-height: 16rem;
 }
 
-.mediaMedium .SentButton_sentButtonText_b9 {
+.mediaMedium .SentButton_sentButtonText_03 {
     color: #fefeec;
     font-size: 18rem;
     font-weight: 700;
     line-height: 1.1;
+    height: 24rem;
+    line-height: 22rem;
 }
 
-.SentButton_postStampIcon_5d {
+.SentButton_postStampIcon_6c {
     width: 16rem;
     height: 16rem;
     margin-left: 8rem;
     background: url('R.images.mt_birthday.gui.maps.icons.common.postStamp.c_24x24.postStamp') no-repeat center / contain;
+    transform: translateY(1rem);
 }
 
-.mediaMedium .SentButton_postStampIcon_5d {
+.mediaMedium .SentButton_postStampIcon_6c {
     width: 24rem;
     height: 24rem;
     margin-left: 8rem;
 }
 
-.SentButton_sentError_13 {
+.SentButton_sentError_33 {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 10rem;
+    position: absolute;
+    top: 45rem;
 }
 
-.mediaMedium .SentButton_sentError_13 {
-    margin-top: 15rem;
+.mediaMedium .SentButton_sentError_33 {
+    top: 65rem;
 }
 
-.SentButton_sentErrorText_a6 {
+.SentButton_sentErrorText_e7 {
     color: #ee7000;
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.3;
 }
 
-.SentButton_errorIcon_40 {
+.SentButton_errorIcon_ce {
     width: 24rem;
     height: 24rem;
     margin-right: 4rem;
     background: url('R.images.gui.maps.icons.library.AlertIcon_1') no-repeat center / contain;
 }
 
-.SentButton_loader_3e {
+.SentButton_loader_73 {
     width: 24rem;
     height: 24rem;
     background: url('R.images.mt_birthday.gui.maps.icons.tankMail.loader') no-repeat center / contain;
-    animation: SentButton_rotate_5c 0.8s linear infinite forwards;
+    animation: SentButton_rotate_7e 0.8s linear infinite forwards;
 }
 
-@keyframes SentButton_rotate_5c {
+@keyframes SentButton_rotate_7e {
     from {
         transform: rotate(0deg);
     }
@@ -2906,6 +4024,307 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     to {
         transform: rotate(360deg);
     }
+}
+
+.PlayerCard_base_8b {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 43rem;
+    margin-bottom: 8rem;
+    padding: 0 64rem 0 32rem;
+    border: 1rem solid rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    position: relative;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.mediaMedium .PlayerCard_base_8b {
+    height: 49rem;
+    margin-bottom: 12rem;
+}
+
+.mediaLarge .PlayerCard_base_8b {
+    height: 54rem;
+    margin-bottom: 16rem;
+}
+
+.mediaExtraLarge .PlayerCard_base_8b {
+    height: 59rem;
+    margin-bottom: 24rem;
+}
+
+.PlayerCard_playerContainer_82 {
+    width: 160rem;
+}
+
+.mediaSmall .PlayerCard_playerContainer_82 {
+    width: 190rem;
+}
+
+.PlayerCard_playerNickname_34 {
+    display: flex;
+    width: 100%;
+    padding-right: 10rem;
+}
+
+.PlayerCard_playerNameText_36 {
+    flex: 0 1 auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.PlayerCard_playerNameText_36,
+.PlayerCard_playerClanText_2b {
+    color: #e9e2bf;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    font-weight: 400;
+    line-height: 20rem;
+}
+
+.PlayerCard_online_9a,
+.PlayerCard_offline_6b,
+.PlayerCard_inBattle_d4 {
+    width: 24rem;
+    height: 24rem;
+    margin-top: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 8rem;
+    transform: translateY(-50%);
+}
+
+.PlayerCard_base__disabled_db .PlayerCard_online_9a,
+.PlayerCard_base__disabled_db .PlayerCard_offline_6b,
+.PlayerCard_base__disabled_db .PlayerCard_inBattle_d4 {
+    opacity: 0.3;
+}
+
+.PlayerCard_online_9a {
+    background: url('R.images.mt_birthday.gui.maps.icons.playerSelect.online') no-repeat center / contain;
+}
+
+.PlayerCard_offline_6b {
+    background: url('R.images.mt_birthday.gui.maps.icons.playerSelect.offline') no-repeat center / contain;
+}
+
+.PlayerCard_inBattle_d4 {
+    background: url('R.images.mt_birthday.gui.maps.icons.playerSelect.in_battle') no-repeat center / contain;
+}
+
+.PlayerCard_sentResponseIcon_87 {
+    width: 40rem;
+    height: 40rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.playerSelect.in_reply') no-repeat center / contain;
+    position: absolute;
+    top: 50%;
+    right: 8rem;
+    transform: translateY(-50%);
+}
+
+.PlayerCard_base__disabled_db .PlayerCard_sentResponseIcon_87 {
+    opacity: 0.3;
+}
+
+.PlayerCard_sentResponseBg_79 {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.mt_birthday.gui.maps.icons.playerSelect.slot_glow') no-repeat right / contain;
+    position: absolute;
+    right: 0;
+}
+
+.PlayerCard_base__disabled_db .PlayerCard_sentResponseBg_79 {
+    opacity: 0.3;
+}
+
+.SelectPlayers_base_13 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 280rem;
+    padding: 16rem 0 8rem;
+    border: 1rem solid rgba(242, 242, 247, 0.2);
+    border-radius: 6rem;
+    box-shadow: 0 4rem 24rem 0 rgba(255, 255, 255, 0.1) inset;
+    background: rgba(242, 242, 247, 0.04);
+    position: relative;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.mediaMedium .SelectPlayers_base_13 {
+    height: 332rem;
+    padding: 20rem 0 12rem;
+    border-radius: 8rem;
+}
+
+.mediaLarge .SelectPlayers_base_13 {
+    height: 384rem;
+    padding: 24rem 0 16rem;
+}
+
+.mediaExtraLarge .SelectPlayers_base_13 {
+    height: 454rem;
+    padding: 32rem 0 24rem;
+    border-radius: 10rem;
+}
+
+.SelectPlayers_base__active_cb {
+    cursor: pointer;
+}
+
+.SelectPlayers_base__disabled_31 {
+    pointer-events: none;
+}
+
+.SelectPlayers_base__allSpace_2a {
+    justify-content: flex-start;
+}
+
+.SelectPlayers_base_13:hover {
+    background: rgba(242, 242, 247, 0.07);
+    cursor: pointer;
+}
+
+.SelectPlayers_emptyBg_ba,
+.SelectPlayers_disabledBg_95 {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.SelectPlayers_disabledBg_95 {
+    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.disabledPattern');
+}
+
+.SelectPlayers_list_ce {
+    display: flex;
+    flex-wrap: wrap;
+    width: 252rem;
+}
+
+.mediaSmall .SelectPlayers_list_ce {
+    width: 284rem;
+}
+
+.mediaMedium .SelectPlayers_list_ce {
+    width: 328rem;
+}
+
+.mediaLarge .SelectPlayers_list_ce {
+    width: 388rem;
+}
+
+.mediaExtraLarge .SelectPlayers_list_ce {
+    width: 444rem;
+}
+
+.SelectPlayers_freeContainer_4a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+}
+
+.SelectPlayers_clickText_e9 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.SelectPlayers_base__disabled_31 .SelectPlayers_clickText_e9 {
+    opacity: 0.5;
+}
+
+.SelectPlayers_playerIcon_58 {
+    display: flex;
+    width: 32rem;
+    height: 32rem;
+    margin-bottom: 8rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.player') no-repeat center / cover;
+    opacity: 0.7;
+}
+
+.mediaMedium .SelectPlayers_playerIcon_58 {
+    width: 40rem;
+    height: 40rem;
+    margin-bottom: 10rem;
+}
+
+.mediaLarge .SelectPlayers_playerIcon_58 {
+    width: 48rem;
+    height: 48rem;
+    margin-bottom: 12rem;
+}
+
+.mediaExtraLarge .SelectPlayers_playerIcon_58 {
+    width: 56rem;
+    height: 56rem;
+    margin-bottom: 14rem;
+}
+
+.SelectPlayers_subTitle_f9 {
+    color: #f2f2f7;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 24rem;
+    opacity: 0.7;
+}
+
+.mediaMedium .SelectPlayers_subTitle_f9 {
+    color: #f2f2f7;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 32rem;
+}
+
+.mediaLarge .SelectPlayers_subTitle_f9 {
+    color: #f2f2f7;
+    font-size: 24rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 40rem;
+}
+
+.mediaExtraLarge .SelectPlayers_subTitle_f9 {
+    margin-bottom: 48rem;
+}
+
+.SelectPlayers_description_29 {
+    color: #f2f2f7;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: center;
+    opacity: 0.7;
+}
+
+.mediaLarge .SelectPlayers_description_29 {
+    color: #f2f2f7;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.mediaExtraLarge .SelectPlayers_description_29 {
+    color: #f2f2f7;
+    font-size: 20rem;
+    font-weight: 400;
+    line-height: 1.2;
 }
 
 /*
@@ -3147,27 +4566,314 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 0;
 }
 
-.Progression_base_99 {
+.InfinityLevel_base_a1 {
+    display: flex;
+    justify-content: center;
+    height: 98rem;
+    position: relative;
+}
+
+.mediaMedium .InfinityLevel_base_a1 {
+    height: 136rem;
+}
+
+.mediaLarge .InfinityLevel_base_a1 {
+    height: 156rem;
+}
+
+.mediaExtraLarge .InfinityLevel_base_a1 {
+    height: 176rem;
+}
+.InfinityLevel_progressBarContainer_c0 {
+    transform: translateY(-2rem);
+}
+.mediaMedium .InfinityLevel_progressBarContainer_c0 {
+    transform: translateY(4rem);
+}
+.mediaLarge .InfinityLevel_progressBarContainer_c0 {
+    transform: translateY(12rem);
+}
+.mediaExtraLarge .InfinityLevel_progressBarContainer_c0 {
+    transform: translateY(20rem);
+}
+.InfinityLevel_point_80 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.InfinityLevel_label_bb {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 76rem;
+    width: 100%;
+    height: 26rem;
+}
+.mediaMedium .InfinityLevel_label_bb {
+    height: 32rem;
+}
+.mediaLarge .InfinityLevel_label_bb {
+    height: 40rem;
+}
+.mediaExtraLarge .InfinityLevel_label_bb {
+    height: 48rem;
+}
+.InfinityLevel_point__active_c0 .InfinityLevel_label_bb {
+    background: linear-gradient(360deg, rgba(254, 171, 52, 0.2) 0%, transparent 100%);
+    color: #feab34;
+}
+.InfinityLevel_line_a7 {
+    width: 1rem;
+    height: 4rem;
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+    position: absolute;
+    left: 0;
+}
+.InfinityLevel_point__active_c0 .InfinityLevel_line_a7 {
+    background: linear-gradient(
+        360deg,
+        transparent 0%,
+        rgba(162, 39, 0, 0.15) 5.98%,
+        #ff9e67 26.66%,
+        rgba(162, 39, 0, 0.15) 92.3%,
+        transparent 100%
+    );
+}
+.InfinityLevel_line__top_f8 {
+    height: 4rem;
+    top: -20rem;
+}
+.mediaMedium .InfinityLevel_line__top_f8 {
+    height: 6rem;
+    top: -22rem;
+}
+.mediaLarge .InfinityLevel_line__top_f8 {
+    height: 8rem;
+    top: -24rem;
+}
+.mediaExtraLarge .InfinityLevel_line__top_f8 {
+    height: 10rem;
+    top: -26rem;
+}
+.InfinityLevel_line__bottom_96 {
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+}
+.mediaMedium .InfinityLevel_line__bottom_96 {
+    height: 100%;
+}
+.InfinityLevel_point__active_c0 .InfinityLevel_line__bottom_96 {
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(162, 39, 0, 0.15) 5.98%,
+        #ff9e67 26.66%,
+        rgba(162, 39, 0, 0.15) 92.3%,
+        transparent 100%
+    );
+}
+.InfinityLevel_line__topRight_50 {
+    height: 4rem;
+    top: -20rem;
+    right: -1rem;
+    left: auto;
+}
+.mediaMedium .InfinityLevel_line__topRight_50 {
+    height: 6rem;
+    top: -22rem;
+}
+.mediaLarge .InfinityLevel_line__topRight_50 {
+    height: 8rem;
+    top: -24rem;
+}
+.mediaExtraLarge .InfinityLevel_line__topRight_50 {
+    height: 10rem;
+    top: -26rem;
+}
+.InfinityLevel_line__bottomRight_1e {
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+    right: -1rem;
+    left: auto;
+}
+.mediaMedium .InfinityLevel_line__bottomRight_1e {
+    height: 100%;
+}
+.InfinityLevel_point__active_c0 .InfinityLevel_line__bottomRight_1e {
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(162, 39, 0, 0.15) 5.98%,
+        #ff9e67 26.66%,
+        rgba(162, 39, 0, 0.15) 92.3%,
+        transparent 100%
+    );
+}
+.InfinityLevel_secondaryPointsCount_1a {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 20rem;
+    text-align: center;
+    opacity: 0.5;
+    position: absolute;
+    top: 5rem;
+    right: -10rem;
+}
+.mediaMedium .InfinityLevel_secondaryPointsCount_1a {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    top: 5rem;
+}
+.mediaLarge .InfinityLevel_secondaryPointsCount_1a {
+    top: 13rem;
+}
+.mediaExtraLarge .InfinityLevel_secondaryPointsCount_1a {
+    top: 19rem;
+}
+.InfinityLevel_secondaryPointsCount__isZero_d0 {
+    left: -10rem;
+}
+.InfinityLevel_infinityContainer_0b {
+    width: 400rem;
+    height: 100%;
+    margin-left: 24rem;
     position: relative;
 }
+.mediaMedium .InfinityLevel_infinityContainer_0b {
+    margin-left: 32rem;
+}
+.mediaLarge .InfinityLevel_infinityContainer_0b {
+    margin-left: 40rem;
+}
+.mediaExtraLarge .InfinityLevel_infinityContainer_0b {
+    margin-left: 64rem;
+}
+.InfinityLevel_disabledProgressContainer_e9 {
+    position: relative;
+    transition: transform 0.5s 0.2s cubic-bezier(0.34, -0.02, 0.33, 1.01);
+}
+.InfinityLevel_activeInfinityContainer_f7 {
+    width: 100rem;
+    height: 100%;
+    position: absolute;
+}
+.InfinityLevel_activeInfinityProgressContainer_48 {
+    width: 100%;
+    transform: translateY(4rem);
+}
+.InfinityLevel_infinityIcon_df {
+    display: flex;
+    width: 26rem;
+    height: 26rem;
+    margin-top: 2rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.infinity_default') no-repeat center / contain;
+}
+.mediaMedium .InfinityLevel_infinityIcon_df {
+    width: 32rem;
+    height: 32rem;
+    margin-top: 3rem;
+}
+.mediaLarge .InfinityLevel_infinityIcon_df {
+    width: 40rem;
+    height: 40rem;
+}
+.mediaExtraLarge .InfinityLevel_infinityIcon_df {
+    width: 54rem;
+    height: 54rem;
+}
+.InfinityLevel_point__active_c0 .InfinityLevel_infinityIcon_df {
+    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.infinity_active') no-repeat center / contain;
+}
+.InfinityLevel_reward_f2 {
+    display: flex;
+    width: 48rem;
+    height: 50rem;
+    margin-right: 8rem;
+    position: relative;
+}
+.InfinityLevel_reward__last_20 {
+    margin-right: 0;
+}
+.mediaMedium .InfinityLevel_reward_f2 {
+    width: 80rem;
+    height: 80rem;
+}
+.InfinityLevel_rewardsContainer_d7 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56rem;
+    margin-top: 16rem;
+    position: relative;
+}
+.mediaMedium .InfinityLevel_rewardsContainer_d7 {
+    height: 88rem;
+}
+.mediaLarge .InfinityLevel_rewardsContainer_d7 {
+    height: 96rem;
+}
+.mediaLarge .InfinityLevel_rewardsContainer_d7 {
+    height: 112rem;
+}
+.InfinityLevel_point__complete_b7 .InfinityLevel_rewardsContainer_d7 {
+    background: linear-gradient(180deg, rgba(122, 179, 0, 0.2) 0%, transparent 100%);
+}
+.InfinityLevel_point__active_c0 .InfinityLevel_rewardsContainer_d7 {
+    background: linear-gradient(180deg, rgba(254, 171, 52, 0.2) 0%, transparent 100%);
+}
+.InfinityLevel_rewardsBlock_b5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.InfinityLevel_point__complete_b7 .InfinityLevel_rewardsBlock_b5 {
+    opacity: 0.3;
+}
+
+.Progression_base_99 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 98rem;
+    position: relative;
+}
+
+.mediaMedium .Progression_base_99 {
+    height: 136rem;
+}
+
+.mediaLarge .Progression_base_99 {
+    height: 156rem;
+}
+
+.mediaExtraLarge .Progression_base_99 {
+    height: 176rem;
+}
 .Progression_container_4b {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.Progression_scrollWrapper_25 {
+    overflow-x: visible;
+}
+.Progression_scrollContent_28 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 100%;
-    mask-image: linear-gradient(270deg, transparent 0%, #d9d9d9 10.09%, #d9d9d9 89.89%, transparent 100%);
-    overflow-x: hidden;
+    margin-left: 5rem;
     position: relative;
 }
-.Progression_container__first_40 {
-    mask-image: linear-gradient(270deg, transparent 0%, #d9d9d9 10.09%, #d9d9d9 100%);
-}
-.Progression_container__last_78 {
-    mask-image: linear-gradient(270deg, #d9d9d9 0%, #d9d9d9 89.89%, transparent 100%);
+.Progression_scrollBar_ac {
+    display: none;
 }
 .Progression_progressLineContainer_c4 {
     width: 100%;
@@ -3178,7 +4884,16 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transition: none;
 }
 .Progression_progressBarContainer_44 {
+    transform: translateY(-2rem);
+}
+.mediaMedium .Progression_progressBarContainer_44 {
     transform: translateY(4rem);
+}
+.mediaLarge .Progression_progressBarContainer_44 {
+    transform: translateY(12rem);
+}
+.mediaExtraLarge .Progression_progressBarContainer_44 {
+    transform: translateY(20rem);
 }
 .Progression_progressBar_cf {
     max-width: 80000rem;
@@ -3191,84 +4906,168 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     left: 20rem;
 }
 .Progression_point_e1 {
-    color: #f2f2f7;
-    font-size: 22rem;
-    font-weight: 700;
-    line-height: 1.2;
-    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    animation: Progression_fadeIn_60 0.2s linear;
-}
-.Progression_point__last_4a {
-    right: 0;
-    transform: translateX(18rem);
-    animation: Progression_fadeInStep_aa 0.6s linear;
+    z-index: 1;
 }
 .Progression_label_9e {
+    color: #f2f2f7;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30rem;
-    transform: translateX(-50%);
+    width: 100%;
+    line-height: 26rem;
 }
-.Progression_point__last_4a .Progression_label_9e {
-    opacity: 0.5;
-}
-.Progression_line_57,
-.Progression_secondaryLine_44,
-.Progression_secondaryPointsCount_56 {
-    width: 2rem;
-    height: 22rem;
-    background: linear-gradient(180deg, #d9d9d9 0%, transparent 100%);
-    opacity: 0.6;
-    position: absolute;
-    transform: translateY(53rem);
-}
-.Progression_secondaryLine_44 {
-    width: 1rem;
-    opacity: 0.5;
-    animation: Progression_fadeInSecondary_36 0.5s linear;
-}
-.Progression_secondaryPointsCount_56 {
-    color: #f2f2f7;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    width: auto;
-    background: none;
-    transform: translateX(10rem) translateY(49rem);
-    animation: Progression_fadeInSecondary_36 0.5s linear;
-}
-.Progression_infinityContainer_29 {
+.mediaMedium .Progression_label_9e {
     color: #f2f2f7;
     font-size: 22rem;
     font-weight: 700;
     line-height: 1.2;
-    height: 100%;
-    position: relative;
-    transform: translateX(38rem);
+    line-height: 32rem;
 }
-.Progression_infinityContainer__animated_15 {
-    animation: Progression_fadeInProgress_80 0.6s linear;
+.mediaLarge .Progression_label_9e {
+    color: #f2f2f7;
+    font-size: 28rem;
+    font-weight: 700;
+    line-height: 1.1;
+    line-height: 40rem;
 }
-.mediaMedium .Progression_infinityContainer_29 {
-    transform: translateX(44rem);
+.mediaExtraLarge .Progression_label_9e {
+    color: #f2f2f7;
+    font-size: 36rem;
+    font-weight: 700;
+    line-height: 1.1;
+    line-height: 48rem;
 }
-.Progression_infinityIcon_6c {
-    width: 20rem;
-    height: 32rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.infinity') no-repeat center / contain;
+.Progression_point__complete_a1 .Progression_label_9e {
+    background: linear-gradient(360deg, rgba(122, 179, 0, 0.2) 0%, transparent 100%);
+    color: #7ab300;
+}
+.Progression_point__active_0f .Progression_label_9e {
+    background: linear-gradient(360deg, rgba(254, 171, 52, 0.2) 0%, transparent 100%);
+    color: #feab34;
+}
+.Progression_line_57 {
+    width: 1rem;
+    height: 4rem;
+    background: linear-gradient(360deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
     position: absolute;
-    transform: translateX(-50%);
+    left: 0;
 }
-.Progression_infinityLine_65 {
+.Progression_point__active_0f .Progression_line_57 {
+    background: linear-gradient(
+        360deg,
+        transparent 0%,
+        rgba(162, 39, 0, 0.15) 5.98%,
+        #ff9e67 26.66%,
+        rgba(162, 39, 0, 0.15) 92.3%,
+        transparent 100%
+    );
+}
+.Progression_line__top_f9 {
+    height: 4rem;
+    top: -20rem;
+}
+.mediaMedium .Progression_line__top_f9 {
+    height: 6rem;
+    top: -22rem;
+}
+.mediaLarge .Progression_line__top_f9 {
+    height: 8rem;
+    top: -24rem;
+}
+.mediaExtraLarge .Progression_line__top_f9 {
+    height: 10rem;
+    top: -26rem;
+}
+.Progression_line__bottom_fc {
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+}
+.mediaMedium .Progression_line__bottom_fc {
+    height: 100%;
+}
+.Progression_point__active_0f .Progression_line__bottom_fc {
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(162, 39, 0, 0.15) 5.98%,
+        #ff9e67 26.66%,
+        rgba(162, 39, 0, 0.15) 92.3%,
+        transparent 100%
+    );
+}
+.Progression_line__topRight_26 {
+    height: 4rem;
+    top: -20rem;
+    right: -1rem;
+    left: auto;
+}
+.mediaMedium .Progression_line__topRight_26 {
+    height: 6rem;
+    top: -22rem;
+}
+.mediaLarge .Progression_line__topRight_26 {
+    height: 8rem;
+    top: -24rem;
+}
+.mediaExtraLarge .Progression_line__topRight_26 {
+    height: 10rem;
+    top: -26rem;
+}
+.Progression_line__bottomRight_79 {
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+    right: -1rem;
+    left: auto;
+}
+.mediaMedium .Progression_line__bottomRight_79 {
+    height: 100%;
+}
+.Progression_point__active_0f .Progression_line__bottomRight_79 {
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(162, 39, 0, 0.15) 5.98%,
+        #ff9e67 26.66%,
+        rgba(162, 39, 0, 0.15) 92.3%,
+        transparent 100%
+    );
+}
+.Progression_secondaryPointsCount_56 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    width: 20rem;
+    text-align: center;
     opacity: 0.5;
+    position: absolute;
+    top: 5rem;
+    right: -10rem;
 }
-.Progression_infinityProgressContainer_ca {
-    width: 30rem;
-    mask-image: linear-gradient(270deg, transparent 0%, #d9d9d9 30%, #d9d9d9 30%, transparent 100%);
-    position: relative;
-    transform: translateX(-50%) translateY(4rem);
+.mediaMedium .Progression_secondaryPointsCount_56 {
+    color: #8c8c7e;
+    font-size: 16rem;
+    font-weight: 400;
+    line-height: 1.25;
+    top: 5rem;
+}
+.mediaLarge .Progression_secondaryPointsCount_56 {
+    top: 13rem;
+}
+.mediaExtraLarge .Progression_secondaryPointsCount_56 {
+    top: 19rem;
+}
+.Progression_secondaryPointsCount__isZero_03 {
+    left: -10rem;
 }
 .Progression_disabledProgressContainer_3c {
     position: relative;
@@ -3279,79 +5078,646 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 100%;
     position: absolute;
 }
-.Progression_activeInfinityContainer__animated_45 {
-    animation: Progression_fadeInProgress_80 0.6s linear;
-}
 .Progression_activeInfinityProgressContainer_3d {
     width: 100%;
     transform: translateY(4rem);
 }
-.Progression_infinityVectorContainer_bd {
+.Progression_reward_10 {
+    display: flex;
+    width: 48rem;
+    height: 50rem;
+    margin-right: 8rem;
+    position: relative;
+}
+.Progression_reward__last_0c {
+    margin-right: 0;
+}
+.mediaMedium .Progression_reward_10 {
+    width: 80rem;
+    height: 80rem;
+}
+.Progression_rewardsContainer_b7 {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 13rem;
-    position: absolute;
-    top: 13rem;
-    left: 0;
-}
-.Progression_infinitySymbol_e6 {
-    display: flex;
-    width: 43rem;
-    height: 100%;
-    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.infinity_large') no-repeat center / contain;
+    height: 56rem;
+    margin-top: 16rem;
     position: relative;
-    transform: translateY(-5rem);
 }
-.Progression_vector_77 {
+.mediaMedium .Progression_rewardsContainer_b7 {
+    height: 88rem;
+}
+.mediaLarge .Progression_rewardsContainer_b7 {
+    height: 96rem;
+}
+.mediaLarge .Progression_rewardsContainer_b7 {
+    height: 112rem;
+}
+.Progression_point__complete_a1 .Progression_rewardsContainer_b7 {
+    background: linear-gradient(180deg, rgba(122, 179, 0, 0.2) 0%, transparent 100%);
+}
+.Progression_point__active_0f .Progression_rewardsContainer_b7 {
+    background: linear-gradient(180deg, rgba(254, 171, 52, 0.2) 0%, transparent 100%);
+}
+.Progression_rewardsBlock_4d {
     display: flex;
-    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+.Progression_point__complete_a1 .Progression_rewardsBlock_4d {
+    opacity: 0.3;
+}
+
+.SplittedTextWithColorTags_blackReal_79 {
+    color: #000000;
+}
+
+.SplittedTextWithColorTags_whiteReal_d8 {
+    color: #ffffff;
+}
+
+.SplittedTextWithColorTags_white_6a {
+    color: #f2f2f7;
+}
+
+.SplittedTextWithColorTags_whiteOrange_64 {
+    color: #fefeec;
+}
+
+.SplittedTextWithColorTags_whiteSpanish_b7 {
+    color: #e9e2bf;
+}
+
+.SplittedTextWithColorTags_par_20 {
+    color: #8c8c7e;
+}
+
+.SplittedTextWithColorTags_parSecondary_4d {
+    color: #595950;
+}
+
+.SplittedTextWithColorTags_parTertiary_4a {
+    color: #37362e;
+}
+
+.SplittedTextWithColorTags_red_66 {
+    color: #ff2717;
+}
+
+.SplittedTextWithColorTags_redDark_21 {
+    color: #b70000;
+}
+
+.SplittedTextWithColorTags_yellow_97 {
+    color: #feab34;
+}
+
+.SplittedTextWithColorTags_orange_e2 {
+    color: #ee7000;
+}
+
+.SplittedTextWithColorTags_cream_cf {
+    color: #ffdd99;
+}
+
+.SplittedTextWithColorTags_brown_d5 {
+    color: #cbac77;
+}
+
+.SplittedTextWithColorTags_greenBright_e1 {
+    color: #80d43a;
+}
+
+.SplittedTextWithColorTags_green_1a {
+    color: #7ab300;
+}
+
+.SplittedTextWithColorTags_greenDark_5d {
+    color: #497212;
+}
+
+.SplittedTextWithColorTags_blueBooster_0c {
+    color: #ccffff;
+}
+
+.SplittedTextWithColorTags_blueTeamkiller_3a {
+    color: #09e2ff;
+}
+
+.SplittedTextWithColorTags_cred_4d {
+    color: #ced9d9;
+}
+
+.SplittedTextWithColorTags_gold_0e {
+    color: #ffc363;
+}
+
+.SplittedTextWithColorTags_bond_5a {
+    color: #c9c9b6;
+}
+
+.SplittedTextWithColorTags_prom_9e {
+    color: #a29b70;
+}
+
+.Tip_base_71 {
+    width: 100%;
     height: 100%;
-    background: no-repeat bottom / contain;
+    position: absolute;
+    z-index: 2;
 }
-@keyframes Progression_fadeIn_60 {
-    0% {
+
+.Tip_base__exit_30 {
+    pointer-events: none;
+}
+
+.Tip_base__general_1_4d {
+    animation: Tip_fadeInLeft_f7 0.3s ease-out forwards;
+}
+
+.Tip_base__general_1_4d.Tip_base__exit_30 {
+    animation: Tip_fadeOutLeft_62 0.3s ease-out forwards;
+}
+
+.Tip_base__mail_1_77 {
+    animation: Tip_fadeInLeft_f7 0.3s ease-out forwards;
+}
+
+.Tip_base__mail_1_77.Tip_base__exit_30 {
+    animation: Tip_fadeOutLeft_62 0.3s ease-out forwards;
+}
+
+.Tip_base__mail_2_e0 {
+    animation: Tip_fadeInRight_aa 0.3s ease-out forwards;
+}
+
+.Tip_base__mail_2_e0.Tip_base__exit_30 {
+    animation: Tip_fadeOutRight_f4 0.3s ease-out forwards;
+}
+
+.Tip_base__quests_1_38 {
+    animation: Tip_fadeInLeft_f7 0.3s ease-out forwards;
+}
+
+.Tip_base__quests_1_38.Tip_base__exit_30 {
+    animation: Tip_fadeOutLeft_62 0.3s ease-out forwards;
+}
+
+.Tip_base__quests_2_10 {
+    animation: Tip_fadeInLeft_f7 0.3s ease-out forwards;
+}
+
+.Tip_base__quests_2_10.Tip_base__exit_30 {
+    animation: Tip_fadeOutLeft_62 0.3s ease-out forwards;
+}
+
+.Tip_base__gold_wagon_1_70 {
+    animation: Tip_fadeInLeft_f7 0.3s ease-out forwards;
+}
+
+.Tip_base__gold_wagon_1_70.Tip_base__exit_30 {
+    animation: Tip_fadeOutLeft_62 0.3s ease-out forwards;
+}
+
+.Tip_base__gold_wagon_2_d6 {
+    animation: Tip_fadeInLeft_f7 0.3s ease-out forwards;
+}
+
+.Tip_base__gold_wagon_2_d6.Tip_base__exit_30 {
+    animation: Tip_fadeOutLeft_62 0.3s ease-out forwards;
+}
+
+.Tip_base__ticket_exchange_1_fa {
+    animation: Tip_fadeInLeft_f7 0.3s ease-out forwards;
+}
+
+.Tip_base__ticket_exchange_1_fa.Tip_base__exit_30 {
+    animation: Tip_fadeOutLeft_62 0.3s ease-out forwards;
+}
+
+.Tip_base__ticket_exchange_2_66 {
+    animation: Tip_fadeInLeft_f7 0.3s ease-out forwards;
+}
+
+.Tip_base__ticket_exchange_2_66.Tip_base__exit_30 {
+    animation: Tip_fadeOutLeft_62 0.3s ease-out forwards;
+}
+
+.Tip_background_36 {
+    width: 320rem;
+    height: 424rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.tooltips.right_tip_background_small') no-repeat center / cover;
+    position: absolute;
+    right: 21rem;
+    bottom: -34rem;
+}
+
+.mediaMedium .Tip_background_36 {
+    width: 368rem;
+    height: 488rem;
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.right_tip_background');
+    right: 225rem;
+}
+
+.mediaLarge .Tip_background_36 {
+    width: 440rem;
+    height: 583rem;
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.right_tip_background_large');
+    right: 320rem;
+}
+
+.mediaExtraLarge .Tip_background_36 {
+    width: 586rem;
+    height: 777rem;
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.right_tip_background_extra_large');
+    right: 473rem;
+}
+
+.Tip_base__mail_1_77 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.left_tip_background_small');
+    left: 16rem;
+}
+
+.mediaMedium .Tip_base__mail_1_77 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.left_tip_background');
+    left: 77rem;
+}
+
+.mediaLarge .Tip_base__mail_1_77 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.left_tip_background_large');
+    left: 51rem;
+}
+
+.mediaExtraLarge .Tip_base__mail_1_77 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.left_tip_background_extra_large');
+    left: 132rem;
+}
+
+.Tip_base__mail_2_e0 .Tip_background_36 {
+    right: 16rem;
+}
+
+.mediaMedium .Tip_base__mail_2_e0 .Tip_background_36 {
+    right: 190rem;
+}
+
+.mediaLarge .Tip_base__mail_2_e0 .Tip_background_36 {
+    right: 320rem;
+}
+
+.mediaExtraLarge .Tip_base__mail_2_e0 .Tip_background_36 {
+    right: 442rem;
+}
+
+.Tip_base__quests_1_38 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.left_tip_background_small');
+    left: 16rem;
+}
+
+.mediaMedium .Tip_base__quests_1_38 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.left_tip_background');
+}
+
+.mediaLarge .Tip_base__quests_1_38 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.left_tip_background_large');
+    left: 124rem;
+}
+
+.mediaExtraLarge .Tip_base__quests_1_38 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.left_tip_background_extra_large');
+    left: 132rem;
+}
+
+.Tip_base__quests_2_10 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.right_tip_background_small');
+    left: 16rem;
+    transform: scaleX(-1);
+}
+
+.mediaMedium .Tip_base__quests_2_10 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.right_tip_background');
+}
+
+.mediaLarge .Tip_base__quests_2_10 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.right_tip_background_large');
+    left: 124rem;
+}
+
+.mediaExtraLarge .Tip_base__quests_2_10 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.right_tip_background_extra_large');
+    left: 132rem;
+}
+
+.Tip_base__gold_wagon_1_70 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.left_tip_background_small');
+    left: 16rem;
+}
+
+.mediaMedium .Tip_base__gold_wagon_1_70 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.left_tip_background');
+}
+
+.mediaLarge .Tip_base__gold_wagon_1_70 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.left_tip_background_large');
+    left: 124rem;
+}
+
+.mediaExtraLarge .Tip_base__gold_wagon_1_70 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.left_tip_background_extra_large');
+    left: 132rem;
+}
+
+.Tip_base__gold_wagon_2_d6 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.right_tip_background_small');
+    left: 16rem;
+    transform: scaleX(-1);
+}
+
+.mediaMedium .Tip_base__gold_wagon_2_d6 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.right_tip_background');
+}
+
+.mediaLarge .Tip_base__gold_wagon_2_d6 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.right_tip_background_large');
+    left: 124rem;
+}
+
+.mediaExtraLarge .Tip_base__gold_wagon_2_d6 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.right_tip_background_extra_large');
+    left: 132rem;
+}
+
+.Tip_base__ticket_exchange_1_fa .Tip_background_36,
+.Tip_base__ticket_exchange_2_66 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.right_tip_background_small');
+    right: 16rem;
+}
+
+.mediaMedium .Tip_base__ticket_exchange_1_fa .Tip_background_36,
+.mediaMedium .Tip_base__ticket_exchange_2_66 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.right_tip_background');
+}
+
+.mediaLarge .Tip_base__ticket_exchange_1_fa .Tip_background_36,
+.mediaLarge .Tip_base__ticket_exchange_2_66 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.right_tip_background_large');
+}
+
+.mediaExtraLarge .Tip_base__ticket_exchange_1_fa .Tip_background_36,
+.mediaExtraLarge .Tip_base__ticket_exchange_2_66 .Tip_background_36 {
+    background-image: url('R.images.mt_birthday.gui.maps.icons.tooltips.right_tip_background_extra_large');
+}
+
+.Tip_tip_33 {
+    display: flex;
+    flex-direction: column;
+    width: 400rem;
+    border: 1rem solid #3d3b31e0;
+    box-shadow:
+        0rem 0rem 60rem 0rem #000000,
+        0rem 2rem 8rem 0rem #0000007a,
+        0rem 0rem 24rem 0rem #f2f2e614 inset,
+        0rem 0rem 0rem 1rem #00000047;
+    background:
+        linear-gradient(0deg, #12110b, #12110b),
+        linear-gradient(
+            180deg,
+            rgba(51, 51, 41, 0.3) 0%,
+            rgba(51, 51, 41, 0) 16%,
+            rgba(51, 51, 41, 0) 85.99%,
+            rgba(51, 51, 41, 0.16) 100%
+        );
+    position: absolute;
+}
+
+.Tip_base__general_1_4d .Tip_tip_33 {
+    margin-top: 7rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Tip_base__mail_1_77 .Tip_tip_33 {
+    bottom: 24rem;
+    left: 360rem;
+}
+
+.mediaMedium .Tip_base__mail_1_77 .Tip_tip_33 {
+    bottom: 42rem;
+    left: 480rem;
+}
+
+.mediaLarge .Tip_base__mail_1_77 .Tip_tip_33 {
+    bottom: 93rem;
+    left: 523rem;
+}
+
+.mediaExtraLarge .Tip_base__mail_1_77 .Tip_tip_33 {
+    bottom: 237rem;
+    left: 764rem;
+}
+
+.Tip_base__mail_2_e0 .Tip_tip_33 {
+    right: 360rem;
+    bottom: 144rem;
+}
+
+.mediaMedium .Tip_base__mail_2_e0 .Tip_tip_33 {
+    right: 597rem;
+    bottom: 189rem;
+}
+
+.mediaLarge .Tip_base__mail_2_e0 .Tip_tip_33 {
+    right: 792rem;
+    bottom: 220rem;
+}
+
+.mediaExtraLarge .Tip_base__mail_2_e0 .Tip_tip_33 {
+    right: 1078rem;
+    bottom: 274rem;
+}
+
+.Tip_base__quests_1_38 .Tip_tip_33 {
+    bottom: 22rem;
+    left: 360rem;
+}
+
+.mediaLarge .Tip_base__quests_1_38 .Tip_tip_33 {
+    bottom: 34rem;
+    left: 606rem;
+}
+
+.mediaExtraLarge .Tip_base__quests_1_38 .Tip_tip_33 {
+    bottom: 93rem;
+    left: 764rem;
+}
+
+.Tip_base__quests_2_10 .Tip_tip_33 {
+    bottom: 22rem;
+    left: 360rem;
+}
+
+.mediaLarge .Tip_base__quests_2_10 .Tip_tip_33 {
+    bottom: 76rem;
+    left: 606rem;
+}
+
+.mediaExtraLarge .Tip_base__quests_2_10 .Tip_tip_33 {
+    bottom: 118rem;
+    left: 791rem;
+}
+
+.Tip_base__gold_wagon_1_70 .Tip_tip_33,
+.Tip_base__gold_wagon_2_d6 .Tip_tip_33 {
+    bottom: 250rem;
+    left: 310rem;
+}
+
+.mediaMedium .Tip_base__gold_wagon_1_70 .Tip_tip_33,
+.mediaMedium .Tip_base__gold_wagon_2_d6 .Tip_tip_33 {
+    bottom: 315rem;
+    left: 360rem;
+}
+
+.mediaLarge .Tip_base__gold_wagon_1_70 .Tip_tip_33,
+.mediaLarge .Tip_base__gold_wagon_2_d6 .Tip_tip_33 {
+    bottom: 315rem;
+    left: 540rem;
+}
+
+.mediaExtraLarge .Tip_base__gold_wagon_1_70 .Tip_tip_33,
+.mediaExtraLarge .Tip_base__gold_wagon_2_d6 .Tip_tip_33 {
+    bottom: 290rem;
+    left: 791rem;
+}
+
+.Tip_base__ticket_exchange_1_fa .Tip_tip_33,
+.Tip_base__ticket_exchange_2_66 .Tip_tip_33 {
+    right: 360rem;
+    bottom: 144rem;
+}
+
+.mediaMedium .Tip_base__ticket_exchange_1_fa .Tip_tip_33,
+.mediaMedium .Tip_base__ticket_exchange_2_66 .Tip_tip_33 {
+    right: 400rem;
+    bottom: 220rem;
+}
+
+.mediaLarge .Tip_base__ticket_exchange_1_fa .Tip_tip_33,
+.mediaLarge .Tip_base__ticket_exchange_2_66 .Tip_tip_33 {
+    right: 592rem;
+    bottom: 220rem;
+}
+
+.mediaExtraLarge .Tip_base__ticket_exchange_1_fa .Tip_tip_33,
+.mediaExtraLarge .Tip_base__ticket_exchange_2_66 .Tip_tip_33 {
+    right: 1078rem;
+    bottom: 274rem;
+}
+
+.Tip_header_31 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+    line-height: 1.1;
+    padding: 26rem 24rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.tooltips.universalHeader') no-repeat center / contain;
+}
+
+.Tip_description_08 {
+    color: #8c8c7e;
+    font-size: 14rem;
+    font-weight: 400;
+    line-height: 1.3;
+    padding: 16rem 24rem;
+}
+
+.Tip_divider_23 {
+    display: flex;
+    align-self: center;
+    width: 390rem;
+    height: 1rem;
+    background: url('R.images.mt_birthday.gui.maps.icons.tooltips.divider') no-repeat center / cover;
+}
+
+.Tip_footer_30 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16rem 24rem;
+    border-top: 1rem dashed #8c8c7e;
+}
+
+.Tip_countWrapper_c8 {
+    display: flex;
+}
+
+.Tip_count_4d {
+    width: 6rem;
+    height: 12rem;
+    border-radius: 1rem;
+    background-color: #8c8c7e;
+    opacity: 0.3;
+}
+
+.Tip_count__active_31 {
+    opacity: 1;
+}
+
+.Tip_count_4d + .Tip_count_4d {
+    margin-left: 4rem;
+}
+
+.Tip_button_33 {
+    min-width: 120rem;
+    min-height: 32rem;
+}
+
+@keyframes Tip_fadeInLeft_f7 {
+    from {
         opacity: 0;
+        transform: translateX(40rem);
     }
 
-    100% {
+    to {
         opacity: 1;
+        transform: translateX(0rem);
     }
 }
-@keyframes Progression_fadeInSecondary_36 {
-    0% {
-        opacity: 0;
-    }
 
-    100% {
-        opacity: 0.3;
-    }
-}
-@keyframes Progression_fadeInStep_aa {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0.5;
-    }
-}
-@keyframes Progression_fadeInProgress_80 {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
+@keyframes Tip_fadeOutLeft_62 {
+    from {
         opacity: 1;
+        transform: translateX(0rem);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-40rem);
+    }
+}
+
+@keyframes Tip_fadeInRight_aa {
+    from {
+        opacity: 0;
+        transform: translateX(-40rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
+
+@keyframes Tip_fadeOutRight_f4 {
+    from {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(40rem);
     }
 }
 
@@ -3510,7 +5876,6 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         opacity: 1;
     }
 }
-
 @keyframes AboutPage_fadeOut_94 {
     from {
         opacity: 1;
@@ -3520,68 +5885,83 @@ This bug is reproduced in Google Chrome 81.0.4044.113
         opacity: 0;
     }
 }
-
 .AboutPage_base_9f {
     width: 100%;
     height: 100%;
     background: url('R.images.mt_birthday.gui.maps.icons.navigation.about_background') no-repeat center / cover;
     animation: AboutPage_fadeIn_3f 0.6s forwards;
 }
-
 .AboutPage_header_e3 {
     display: flex;
     justify-content: center;
     width: 100%;
     position: absolute;
-    top: 45rem;
+    top: 51rem;
     left: 50%;
     transform: translateX(-50%);
 }
-
-.mediaMedium .AboutPage_header_e3 {
-    top: 45rem;
-}
-
 .mediaLarge .AboutPage_header_e3 {
-    top: 58rem;
+    top: 59rem;
 }
-
 .mediaExtraLarge .AboutPage_header_e3 {
-    top: 74rem;
+    top: 75rem;
 }
-
 .AboutPage_infoContainer_83 {
     width: 100%;
     margin-top: 155rem;
-    padding: 0 0 10rem 80rem;
+    padding: 0 0 0 92rem;
 }
-
 .mediaSmall .AboutPage_infoContainer_83 {
     padding-left: 0;
 }
-
 .mediaMedium .AboutPage_infoContainer_83 {
     margin-top: 186rem;
 }
-
 .mediaLarge .AboutPage_infoContainer_83 {
     margin-top: 205rem;
 }
-
 .mediaExtraLarge .AboutPage_infoContainer_83 {
     margin-top: 240rem;
 }
 
+@keyframes App_fadeIn_c4 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes App_fadeOut_2f {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
 .App_base_e6 {
     width: 100%;
     height: 100%;
     background: #000000;
     overflow: hidden;
 }
+.App_tipBackground_41 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
 .App_button_b1 {
     position: absolute;
     top: 47rem;
     z-index: 2;
+    transition: opacity 0.3s ease-out;
 }
 .App_button__close_c4 {
     right: 25rem;
@@ -3590,23 +5970,31 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: 70rem;
     right: 40rem;
 }
-.App_button__info_1d {
-    left: 30rem;
+.App_button__animationControls_72 {
+    top: 49rem;
+    left: 24rem;
 }
-.mediaMedium .App_button__info_1d {
-    top: 70rem;
+.mediaMedium .App_button__animationControls_72 {
+    top: 65rem;
+    left: 32rem;
+}
+.mediaLarge .App_button__animationControls_72 {
     left: 40rem;
+}
+.App_base__tips_45 .App_button_b1 {
+    opacity: 0.1;
 }
 .App_navigationContainer_57 {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 67rem;
-    height: 100%;
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 24rem;
     z-index: 1;
+    transform: translateY(-50%);
+    transition: opacity 0.3s ease-out;
 }
 .mediaMedium .App_navigationContainer_57 {
     width: 100rem;
@@ -3615,34 +6003,8 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 .mediaExtraLarge .App_navigationContainer_57 {
     left: 64rem;
 }
-.App_goldWagonEntryPoint_36 {
-    position: absolute;
-    bottom: 20rem;
-    left: 32rem;
-    z-index: 2;
-}
-.mediaSmall .App_goldWagonEntryPoint_36 {
-    bottom: 16rem;
-}
-.mediaMedium .App_goldWagonEntryPoint_36 {
-    bottom: 28rem;
-}
-.App_lootBoxEntryPoint_74 {
-    width: 80rem;
-    height: 80rem;
-    position: absolute;
-    right: 26rem;
-    bottom: 14rem;
-}
-.mediaSmall .App_lootBoxEntryPoint_74 {
-    right: 36rem;
-    bottom: 16rem;
-}
-.mediaMedium .App_lootBoxEntryPoint_74 {
-    width: 160rem;
-    height: 160rem;
-    right: 40rem;
-    bottom: 28rem;
+.App_base__tips_45 .App_navigationContainer_57 {
+    opacity: 0.1;
 }
 .App_navigation_dc {
     display: flex;
@@ -3659,6 +6021,41 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     width: 100%;
     height: 100%;
 }
+.App_sentGiftVideo_2b {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+.App_sentAnimationActive_10 {
+    opacity: 0.3;
+}
+.App_startAnimationActive_15 {
+    animation: App_opacityFadeOut_0f 0.3s linear;
+}
+.App_finishAnimationActive_82 {
+    animation: App_opacityFadeIn_43 0.3s linear;
+}
+.App_video_51 {
+    width: 523rem;
+    height: 323rem;
+    animation: App_fadeIn_c4 0.2s forwards;
+    pointer-events: none;
+}
+.mediaMedium .App_video_51 {
+    width: 613rem;
+    height: 378rem;
+}
+.mediaLarge .App_video_51 {
+    width: 736rem;
+    height: 454rem;
+}
 @keyframes App_fadeIn_c4 {
     from {
         opacity: 0;
@@ -3666,6 +6063,24 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 
     to {
         opacity: 1;
+    }
+}
+@keyframes App_opacityFadeIn_43 {
+    from {
+        opacity: 0.3;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes App_opacityFadeOut_0f {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.3;
     }
 }
 
@@ -3877,211 +6292,29 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     line-height: 1.25;
 }
 
-.GoldWagon_base_54 {
-    width: 80rem;
-    height: 80rem;
-    cursor: pointer;
-}
-
-.mediaMedium .GoldWagon_base_54 {
-    width: 160rem;
-    height: 160rem;
-    bottom: 28rem;
-}
-
-.GoldWagon_iconWrapper_ee {
-    width: 100%;
-    height: 100%;
-    isolation: isolate;
-    position: relative;
-}
-
-.GoldWagon_icon_82 {
-    width: 100%;
-    height: 100%;
-    background: url('R.images.mt_birthday.gui.maps.icons.tankMail.gold_cart_entry') no-repeat center / contain;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.mediaMedium .GoldWagon_icon_82 {
-    background-image: url('R.images.mt_birthday.gui.maps.icons.tankMail.gold_cart_entry_medium');
-}
-
-.GoldWagon_icon__hovered_92 {
-    filter: brightness(1.3);
-}
-
-.GoldWagon_flareMaskWrapper_03 {
-    width: 100%;
-    height: 100%;
-    mix-blend-mode: overlay;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    mask-image: url('R.images.mt_birthday.gui.maps.icons.tankMail.gold_cart_entry_mask.png');
-    mask-size: 100%;
-    mask-repeat: no-repeat;
-    mask-position: center;
-}
-
-.mediaMedium .GoldWagon_flareMaskWrapper_03 {
-    mask-image: url('R.images.mt_birthday.gui.maps.icons.tankMail.gold_cart_entry_medium_mask');
-}
-
-.GoldWagon_flare_be {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        41deg,
-        rgba(255, 255, 255, 0) 30%,
-        rgba(255, 255, 255, 1) 70%,
-        rgba(255, 255, 255, 0) 70%
-    );
-    opacity: 0.5;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-100%, 100%);
-    animation: GoldWagon_flareMove_81 7s ease-in-out infinite;
-}
-
-@keyframes GoldWagon_flareMove_81 {
-    0% {
-        opacity: 0;
-        transform: translate(-100%, 100%);
-    }
-
-    12.5% {
-        opacity: 0.5;
-    }
-
-    50% {
-        opacity: 0.5;
-        transform: translate(100%, -100%);
-    }
-
-    51% {
+@keyframes GoldWagonPage_fadeIn_f8 {
+    from {
         opacity: 0;
     }
 
-    100% {
-        opacity: 0;
-        transform: translate(100%, -100%);
+    to {
+        opacity: 1;
     }
 }
+@keyframes GoldWagonPage_fadeOut_93 {
+    from {
+        opacity: 1;
+    }
 
-.Lootbox_base_66 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    to {
+        opacity: 0;
+    }
+}
+.GoldWagonPage_base_96 {
     width: 100%;
     height: 100%;
-    position: relative;
-}
-.Lootbox_shine_9b {
-    align-self: center;
-    width: 150rem;
-    height: 150rem;
-    background: url('swf://gui/flash/animations/eventLootBoxes/lootboxShine.swf') no-repeat center / contain;
-    mix-blend-mode: screen;
-    position: absolute;
-    z-index: 1;
-    pointer-events: none;
-}
-.Lootbox_base__large_0d .Lootbox_shine_9b {
-    width: 275rem;
-    height: 275rem;
-}
-.Lootbox_wrapper_d5 {
-    width: 114rem;
-    height: 114rem;
-    position: relative;
-    z-index: 2;
-    cursor: pointer;
-    pointer-events: auto;
-}
-.Lootbox_base__large_0d .Lootbox_wrapper_d5 {
-    width: 222rem;
-    height: 214rem;
-}
-.Lootbox_wrapper_d5 .Lootbox_base__disabled_97 {
-    opacity: 0.4;
-    cursor: default;
-}
-.Lootbox_icon_87 {
-    width: 80rem;
-    height: 80rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.lootboxEntryPoint.entry') no-repeat center / cover;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.Lootbox_base__large_0d .Lootbox_icon_87 {
-    width: 160rem;
-    height: 160rem;
-    background-image: url('R.images.mt_birthday.gui.maps.icons.lootboxEntryPoint.entryMedium');
-}
-.Lootbox_base__disabled_97 .Lootbox_icon_87 {
-    opacity: 0.4;
-}
-.Lootbox_icon__hovered_5b {
-    filter: brightness(1.3);
-}
-.Lootbox_count_c2 {
-    display: flex;
-    flex-direction: column;
-    color: #f2f2f7;
-    text-shadow: 0 0 14rem #f00;
-    position: absolute;
-    right: 4rem;
-    bottom: 24rem;
-}
-.Lootbox_base__large_0d .Lootbox_count_c2 {
-    right: 16rem;
-    bottom: 54rem;
-}
-.Lootbox_base__disabled_97 .Lootbox_count_c2 {
-    color: #595950;
-}
-.Lootbox_disabledAlert_74 {
-    width: 100rem;
-    height: 30rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.lootboxEntryPoint.disabled') no-repeat center / cover;
-    position: absolute;
-    bottom: 20rem;
-    left: 50%;
-    z-index: 99;
-    transform: translateX(-50%);
-}
-.Lootbox_base__large_0d .Lootbox_disabledAlert_74 {
-    bottom: 50rem;
-}
-
-.LootboxCount_base_fc {
-    display: flex;
-}
-
-.LootboxCount_infin_2d {
-    width: 44rem;
-    height: 40rem;
-    margin: -6rem -13rem;
-    background: url('R.images.mt_birthday.gui.maps.icons.lootboxEntryPoint.infin') no-repeat center / contain;
-}
-
-.LootboxCount_base__large_24 .LootboxCount_infin_2d {
-    width: 48rem;
-    height: 42rem;
-    margin: -3rem -13rem;
-}
-
-.LootboxCount_base__disabled_5b .LootboxCount_infin_2d {
-    opacity: 0.3;
+    background: url('R.images.mt_birthday.gui.maps.icons.navigation.gold_wagon_background') no-repeat center / cover;
+    animation: GoldWagonPage_fadeIn_f8 0.6s forwards;
 }
 
 .NavItem_base_1c {
@@ -4093,6 +6326,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     height: 60rem;
     position: relative;
     z-index: 2;
+    transition: background 0.3s ease-in-out;
     cursor: pointer;
 }
 
@@ -4242,4 +6476,30 @@ This bug is reproduced in Google Chrome 81.0.4044.113
 }
 .mediaMedium .NavItem_bubble_6d {
     right: 14rem;
+}
+
+@keyframes TicketExchangePage_fadeIn_b7 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+@keyframes TicketExchangePage_fadeOut_01 {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+.TicketExchangePage_base_4a {
+    width: 100%;
+    height: 100%;
+    background: url('R.images.mt_birthday.gui.maps.icons.navigation.ticket_exchange_background') no-repeat center /
+        cover;
+    animation: TicketExchangePage_fadeIn_b7 0.6s forwards;
 }

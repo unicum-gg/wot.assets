@@ -66,13 +66,13 @@
                         g = D.largeWidth,
                         d = D.mediumWidth,
                         o = D.smallWidth,
-                        m = D.extraSmallWidth,
-                        s = D.extraLargeHeight,
+                        s = D.extraSmallWidth,
+                        m = D.extraLargeHeight,
                         h = D.largeHeight,
                         c = D.mediumHeight,
                         v = D.smallHeight,
                         x = D.extraSmallHeight,
-                        w = { extraLarge: s, large: h, medium: c, small: v, extraSmall: x };
+                        w = { extraLarge: m, large: h, medium: c, small: v, extraSmall: x };
                     if (F.extraLarge || F.large || F.medium || F.small || F.extraSmall) {
                         if (F.extraLarge && i) return e;
                         if (F.large && C) return e;
@@ -84,11 +84,15 @@
                         if (F.largeWidth && g) return (0, E.H)(e, F, w);
                         if (F.mediumWidth && d) return (0, E.H)(e, F, w);
                         if (F.smallWidth && o) return (0, E.H)(e, F, w);
-                        if (F.extraSmallWidth && m) return (0, E.H)(e, F, w);
-                        if (
-                            !(F.extraLargeWidth || F.largeWidth || F.mediumWidth || F.smallWidth || F.extraSmallWidth)
-                        ) {
-                            if (F.extraLargeHeight && s) return e;
+                        if (F.extraSmallWidth && s) return (0, E.H)(e, F, w);
+                        if (!(
+                            F.extraLargeWidth ||
+                            F.largeWidth ||
+                            F.mediumWidth ||
+                            F.smallWidth ||
+                            F.extraSmallWidth
+                        )) {
+                            if (F.extraLargeHeight && m) return e;
                             if (F.largeHeight && h) return e;
                             if (F.mediumHeight && c) return e;
                             if (F.smallHeight && v) return e;
@@ -365,27 +369,28 @@
                         addPreloadTexture: () => D,
                         children: () => A,
                         displayStatus: () => E.W,
-                        displayStatusIs: () => S,
+                        displayStatusIs: () => b,
                         events: () => B.U,
-                        extraSize: () => b,
-                        forceTriggerMouseMove: () => w,
+                        extraSize: () => H,
+                        forceTriggerMouseMove: () => f,
                         freezeTextureBeforeResize: () => d,
                         getBrowserTexturePath: () => C,
-                        getDisplayStatus: () => f,
+                        getDisplayStatus: () => S,
                         getScale: () => o,
                         getSize: () => a,
                         getViewGlobalPosition: () => g,
-                        isEventHandled: () => x,
+                        isClientAccessible: () => v,
+                        isEventHandled: () => w,
                         isFocused: () => c,
-                        pxToRem: () => m,
-                        remToPx: () => s,
+                        pxToRem: () => s,
+                        remToPx: () => m,
                         resize: () => l,
                         sendEvent: () => t.qP,
                         setAnimateWindow: () => h,
-                        setEventHandled: () => v,
+                        setEventHandled: () => x,
                         setInputPaddingsRem: () => i,
                         setSidePaddingsRem: () => n,
-                        whenTutorialReady: () => H,
+                        whenTutorialReady: () => p,
                     }));
                 var A = F(3722),
                     E = F(6112),
@@ -414,7 +419,7 @@
                 }
                 function g(u = 'rem') {
                     const e = viewEnv.getViewGlobalPositionRem();
-                    return 'rem' === u ? e : { x: s(e.x), y: s(e.y) };
+                    return 'rem' === u ? e : { x: m(e.x), y: m(e.y) };
                 }
                 function d() {
                     viewEnv.freezeTextureBeforeResize();
@@ -422,10 +427,10 @@
                 function o() {
                     return viewEnv.getScale();
                 }
-                function m(u) {
+                function s(u) {
                     return viewEnv.pxToRem(u);
                 }
-                function s(u) {
+                function m(u) {
                     return viewEnv.remToPx(u);
                 }
                 function h(u, e) {
@@ -435,22 +440,25 @@
                     return viewEnv.isFocused();
                 }
                 function v() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function x() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function w() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function f() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function S() {
                     return viewEnv.getShowingStatus();
                 }
-                const S = Object.keys(E.W).reduce(
+                const b = Object.keys(E.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === E.W[e]), u),
                         {},
                     ),
-                    b = {
+                    H = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -458,7 +466,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    H = Promise.all([
+                    p = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : B.U.onDomBuilt(u);
                         }),
@@ -639,7 +647,7 @@
                 (F(6483), F(9924), F(6179));
                 var A = F(8668);
                 (F(9930), F(3486));
-                (A.Jh.Huge, A.Jh.Big, A.Jh.Medium, A.Jh.Small, R.images.gui.maps.icons.battleRoyale.widget);
+                (A.Jh.Huge, A.Jh.Big, A.Jh.Medium, A.Jh.Small);
             },
         },
         F = {};

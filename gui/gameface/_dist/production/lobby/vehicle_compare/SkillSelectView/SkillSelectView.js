@@ -865,9 +865,13 @@
                         if (t.mediumWidth && m) return o(u, t, C);
                         if (t.smallWidth && E) return o(u, t, C);
                         if (t.extraSmallWidth && A) return o(u, t, C);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && F) return u;
                             if (t.largeHeight && p) return u;
                             if (t.mediumHeight && f) return u;
@@ -1389,7 +1393,7 @@
                             : (function (e) {
                                   let u = '';
                                   for (let t = re.length - 1; t >= 0; t--)
-                                      for (; e >= re[t]; ) ((u += ne[t]), (e -= re[t]));
+                                      for (; e >= re[t];) ((u += ne[t]), (e -= re[t]));
                                   return u;
                               })(e);
                 t(281);
@@ -1636,7 +1640,7 @@
                                                     };
                                                 },
                                                 dispose: function () {
-                                                    for (var e, t = xe(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                    for (var e, t = xe(r.keys()); !(e = t()).done;) a(e.value, u);
                                                 },
                                                 unsubscribe: a,
                                             };
@@ -1949,7 +1953,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = Ge(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = Ge(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),
@@ -3041,7 +3045,7 @@
                     lt = (e, u, t, n) => {
                         let r = u.exec(e),
                             a = 0;
-                        for (; r; ) (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
+                        for (; r;) (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
                         a !== e.length && t(e.slice(a));
                     },
                     ct = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
@@ -3087,7 +3091,7 @@
                               if (!n) return [e];
                               const r = [];
                               let a = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const i = u.justifyContent === Yu.FlexEnd ? n.index : t.lastIndex;
                                   (r.push(e.slice(a, i)), (a = i), (n = t.exec(e)));
                               }
@@ -3261,7 +3265,7 @@
                             c = ((e, u) => {
                                 let t = 0,
                                     n = e.length - 1;
-                                for (; n - t >= 0; ) {
+                                for (; n - t >= 0;) {
                                     const r = t + Math.ceil(0.5 * (n - t));
                                     ht(e[r], u) ? (n = r - 1) : (t = r + 1);
                                 }

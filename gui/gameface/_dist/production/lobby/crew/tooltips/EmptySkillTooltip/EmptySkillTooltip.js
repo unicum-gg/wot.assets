@@ -969,7 +969,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = p(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = p(r.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -2230,7 +2230,7 @@
                     Ye = (e, u, t, n) => {
                         let r = u.exec(e),
                             o = 0;
-                        for (; r; ) (o !== r.index && t(e.slice(o, r.index)), n(r), (o = u.lastIndex), (r = u.exec(e)));
+                        for (; r;) (o !== r.index && t(e.slice(o, r.index)), n(r), (o = u.lastIndex), (r = u.exec(e)));
                         o !== e.length && t(e.slice(o));
                     },
                     Qe = new RegExp('[฀-๿][ัำ-ฺ็-๎]*', 'gu'),
@@ -2276,7 +2276,7 @@
                               if (!n) return [e];
                               const r = [];
                               let o = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const a = u.justifyContent === Me.FlexEnd ? n.index : t.lastIndex;
                                   (r.push(e.slice(o, a)), (o = a), (n = t.exec(e)));
                               }
@@ -2450,7 +2450,7 @@
                             c = ((e, u) => {
                                 let t = 0,
                                     n = e.length - 1;
-                                for (; n - t >= 0; ) {
+                                for (; n - t >= 0;) {
                                     const r = t + Math.ceil(0.5 * (n - t));
                                     ou(e[r], u) ? (n = r - 1) : (t = r + 1);
                                 }

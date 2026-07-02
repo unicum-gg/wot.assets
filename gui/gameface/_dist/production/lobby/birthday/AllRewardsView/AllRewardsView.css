@@ -302,10 +302,10 @@
 
 .Header_headerDescription_c5 {
     color: #fefeec;
-    font-size: 16rem;
+    font-size: 14rem;
     font-weight: 400;
-    line-height: 1.25;
-    margin-top: 8rem;
+    line-height: 1.3;
+    margin-top: 4rem;
 }
 
 .mediaMedium .Header_headerDescription_c5 {
@@ -313,6 +313,7 @@
     font-size: 20rem;
     font-weight: 400;
     line-height: 1.2;
+    margin-top: 8rem;
 }
 
 .mediaLarge .Header_headerDescription_c5 {
@@ -412,7 +413,6 @@
         opacity: 1;
     }
 }
-
 @keyframes App_fadeOut_3c {
     from {
         opacity: 1;
@@ -422,7 +422,6 @@
         opacity: 0;
     }
 }
-
 .App_base_3d {
     display: flex;
     flex-direction: column;
@@ -432,7 +431,6 @@
     position: relative;
     animation: App_fadeIn_cd 0.6s forwards;
 }
-
 .App_vignette_9c {
     width: 100%;
     height: 100%;
@@ -444,22 +442,18 @@
     );
     position: absolute;
 }
-
 .App_header_bf {
     display: flex;
     justify-content: center;
     width: 100%;
     margin-top: 45rem;
 }
-
 .mediaLarge .App_header_bf {
     margin-top: 58rem;
 }
-
 .mediaExtraLarge .App_header_bf {
     margin-top: 74rem;
 }
-
 .App_levelsWrapper_f8 {
     display: flex;
     justify-content: center;
@@ -468,7 +462,6 @@
     left: 0;
     transform: translateY(-50%);
 }
-
 .App_errorScreen_76 {
     display: flex;
     justify-content: center;

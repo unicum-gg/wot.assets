@@ -904,15 +904,13 @@
                             if (t.mediumWidth && d) return a(e, t, v);
                             if (t.smallWidth && m) return a(e, t, v);
                             if (t.extraSmallWidth && D) return a(e, t, v);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && C) return e;
                                 if (t.largeHeight && B) return e;
                                 if (t.mediumHeight && g) return e;
@@ -3249,7 +3247,7 @@
                                         : (function (u) {
                                               let e = '';
                                               for (let t = xe.length - 1; t >= 0; t--)
-                                                  for (; u >= xe[t]; ) ((e += ye[t]), (u -= xe[t]));
+                                                  for (; u >= xe[t];) ((e += ye[t]), (u -= xe[t]));
                                               return e;
                                           })(E)),
                                 ),
@@ -3633,7 +3631,7 @@
                         let o = Je.exec(u),
                             s = u,
                             l = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const t = o[0],
                                 r = ut.exec(t),
                                 c = et.exec(t),

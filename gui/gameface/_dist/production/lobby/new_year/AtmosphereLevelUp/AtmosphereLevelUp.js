@@ -945,15 +945,13 @@
                             if (t.mediumWidth && m) return a(u, t, v);
                             if (t.smallWidth && F) return a(u, t, v);
                             if (t.extraSmallWidth && D) return a(u, t, v);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && B) return u;
                                 if (t.largeHeight && C) return u;
                                 if (t.mediumHeight && g) return u;
@@ -1967,7 +1965,7 @@
                     Ue = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function Ge(e) {
                     let u = '';
-                    for (let t = Ue.length - 1; t >= 0; t--) for (; e >= Ue[t]; ) ((u += He[t]), (e -= Ue[t]));
+                    for (let t = Ue.length - 1; t >= 0; t--) for (; e >= Ue[t];) ((u += He[t]), (e -= Ue[t]));
                     return u;
                 }
                 const We = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

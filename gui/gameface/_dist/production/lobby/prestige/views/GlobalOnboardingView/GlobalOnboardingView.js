@@ -1198,9 +1198,13 @@
                         if (t.mediumWidth && c) return a(e, t, b);
                         if (t.smallWidth && B) return a(e, t, b);
                         if (t.extraSmallWidth && _) return a(e, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && g) return e;
@@ -1662,7 +1666,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Y(n.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = Y(n.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -2098,7 +2102,7 @@
                             : (function (u) {
                                   let e = '';
                                   for (let t = Mu.length - 1; t >= 0; t--)
-                                      for (; u >= Mu[t]; ) ((e += yu[t]), (u -= Mu[t]));
+                                      for (; u >= Mu[t];) ((e += yu[t]), (u -= Mu[t]));
                                   return e;
                               })(u);
                 var Pu = t(370),

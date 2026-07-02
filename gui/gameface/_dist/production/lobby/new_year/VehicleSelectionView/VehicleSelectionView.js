@@ -956,15 +956,13 @@
                             if (t.mediumWidth && d) return s(u, t, v);
                             if (t.smallWidth && m) return s(u, t, v);
                             if (t.extraSmallWidth && A) return s(u, t, v);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && C) return u;
                                 if (t.largeHeight && B) return u;
                                 if (t.mediumHeight && g) return u;
@@ -4990,7 +4988,7 @@
                         let s = gr.exec(e),
                             i = e,
                             l = 0;
-                        for (; s; ) {
+                        for (; s;) {
                             const t = s[0],
                                 a = pr.exec(t),
                                 c = hr.exec(t),
@@ -5033,7 +5031,7 @@
                                                 : (function (e) {
                                                       let u = '';
                                                       for (let t = Dr.length - 1; t >= 0; t--)
-                                                          for (; e >= Dr[t]; ) ((u += Fr[t]), (e -= Dr[t]));
+                                                          for (; e >= Dr[t];) ((u += Fr[t]), (e -= Dr[t]));
                                                       return u;
                                                   })(r)),
                                         name: e.userName,

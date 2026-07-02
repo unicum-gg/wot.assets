@@ -948,9 +948,13 @@
                         if (t.mediumWidth && d) return o(u, t, f);
                         if (t.smallWidth && _) return o(u, t, f);
                         if (t.extraSmallWidth && A) return o(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && g) return u;
                             if (t.largeHeight && p) return u;
                             if (t.mediumHeight && B) return u;
@@ -2383,7 +2387,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = Tu(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = Tu(r.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -2754,7 +2758,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = nt(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = nt(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),
@@ -3619,7 +3623,7 @@
                             : (function (e) {
                                   let u = '';
                                   for (let t = Zt.length - 1; t >= 0; t--)
-                                      for (; e >= Zt[t]; ) ((u += Kt[t]), (e -= Zt[t]));
+                                      for (; e >= Zt[t];) ((u += Kt[t]), (e -= Zt[t]));
                                   return u;
                               })(e),
                     un = {

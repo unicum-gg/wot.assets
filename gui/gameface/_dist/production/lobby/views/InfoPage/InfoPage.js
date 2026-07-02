@@ -2350,7 +2350,7 @@
                         let r = Oe.exec(e),
                             o = e,
                             l = 0;
-                        for (; r; ) {
+                        for (; r;) {
                             const t = r[0],
                                 n = Me.exec(t),
                                 c = Le.exec(t),

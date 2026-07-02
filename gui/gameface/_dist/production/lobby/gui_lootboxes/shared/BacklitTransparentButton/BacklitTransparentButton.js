@@ -3,7 +3,7 @@
         e = {
             3779: (u, e, A) => {
                 'use strict';
-                A.d(e, { ZP: () => s });
+                A.d(e, { ZP: () => o });
                 var F = A(6483),
                     E = A.n(F),
                     D = A(9887),
@@ -65,24 +65,24 @@
                         XS: { mt: a.Z.mt__XS, mr: a.Z.mr__XS, mb: a.Z.mb__XS, ml: a.Z.ml__XS },
                     },
                     m = (Object.keys(l), ['mt', 'mr', 'mb', 'ml']),
-                    o = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
-                    s = (0, B.ZP)((u) => {
+                    s = { mt: 'marginTop', mr: 'marginRight', mb: 'marginBottom', ml: 'marginLeft' },
+                    o = (0, B.ZP)((u) => {
                         let e = u.className,
                             A = u.width,
                             F = u.height,
                             D = u.m,
                             t = u.mt,
                             B = void 0 === t ? D : t,
-                            s = u.mr,
-                            d = void 0 === s ? D : s,
+                            o = u.mr,
+                            d = void 0 === o ? D : o,
                             g = u.mb,
                             _ = void 0 === g ? D : g,
                             c = u.ml,
                             h = void 0 === c ? D : c,
                             x = u.column,
                             f = u.row,
-                            p = u.flexDirection,
-                            v = void 0 === p ? (x ? 'column' : f && 'row') || void 0 : p,
+                            v = u.flexDirection,
+                            p = void 0 === v ? (x ? 'column' : f && 'row') || void 0 : v,
                             S = u.flexStart,
                             w = u.center,
                             b = u.flexEnd,
@@ -128,7 +128,7 @@
                                     E = ((u) =>
                                         m.reduce((e, A) => {
                                             const F = u[A];
-                                            return ('number' == typeof F && (e[o[A]] = F + 'rem'), e);
+                                            return ('number' == typeof F && (e[s[A]] = F + 'rem'), e);
                                         }, {}))(u);
                                 return {
                                     computedStyle: Object.assign({}, z, E, {
@@ -136,15 +136,15 @@
                                         height: void 0 !== F && 'number' == typeof F ? F + 'rem' : F,
                                         flex: Z,
                                         alignSelf: y,
-                                        display: v || O ? 'flex' : void 0,
-                                        flexDirection: v,
+                                        display: p || O ? 'flex' : void 0,
+                                        flexDirection: p,
                                         flexWrap: G,
                                         justifyContent: H,
                                         alignItems: O,
                                     }),
                                     computedClassNames: e,
                                 };
-                            }, [A, F, B, d, _, h, z, Z, y, v, G, H, O]),
+                            }, [A, F, B, d, _, h, z, Z, y, p, G, H, O]),
                             Y = U.computedStyle,
                             K = U.computedClassNames;
                         return C().createElement('div', n({ className: E()(a.Z.base, ...K, e), style: Y }, k), I);
@@ -241,8 +241,8 @@
                             n = B.extraSmall,
                             l = B.extraLargeWidth,
                             m = B.largeWidth,
-                            o = B.mediumWidth,
-                            s = B.smallWidth,
+                            s = B.mediumWidth,
+                            o = B.smallWidth,
                             d = B.extraSmallWidth,
                             g = B.extraLargeHeight,
                             _ = B.largeHeight,
@@ -259,18 +259,16 @@
                         } else {
                             if (A.extraLargeWidth && l) return (0, E.H)(e, A, f);
                             if (A.largeWidth && m) return (0, E.H)(e, A, f);
-                            if (A.mediumWidth && o) return (0, E.H)(e, A, f);
-                            if (A.smallWidth && s) return (0, E.H)(e, A, f);
+                            if (A.mediumWidth && s) return (0, E.H)(e, A, f);
+                            if (A.smallWidth && o) return (0, E.H)(e, A, f);
                             if (A.extraSmallWidth && d) return (0, E.H)(e, A, f);
-                            if (
-                                !(
-                                    A.extraLargeWidth ||
-                                    A.largeWidth ||
-                                    A.mediumWidth ||
-                                    A.smallWidth ||
-                                    A.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                A.extraLargeWidth ||
+                                A.largeWidth ||
+                                A.mediumWidth ||
+                                A.smallWidth ||
+                                A.extraSmallWidth
+                            )) {
                                 if (A.extraLargeHeight && g) return e;
                                 if (A.largeHeight && _) return e;
                                 if (A.mediumHeight && c) return e;
@@ -413,10 +411,10 @@
                     n = A(6179),
                     l = A.n(n),
                     m = A(3393);
-                const o = ['text', 'variant', 'className', 'color', 'm', 'mt', 'mr', 'mb', 'ml', 'style', 'format'];
-                function s() {
+                const s = ['text', 'variant', 'className', 'color', 'm', 'mt', 'mr', 'mb', 'ml', 'style', 'format'];
+                function o() {
                     return (
-                        (s =
+                        (o =
                             Object.assign ||
                             function (u) {
                                 for (var e = 1; e < arguments.length; e++) {
@@ -425,7 +423,7 @@
                                 }
                                 return u;
                             }),
-                        s.apply(this, arguments)
+                        o.apply(this, arguments)
                     );
                 }
                 Object.keys(a());
@@ -485,8 +483,8 @@
                         _ = void 0 === g ? r : g,
                         c = u.ml,
                         f = void 0 === c ? r : c,
-                        p = u.style,
-                        v = u.format,
+                        v = u.style,
+                        p = u.format,
                         S = (function (u, e) {
                             if (null == u) return {};
                             var A,
@@ -495,19 +493,19 @@
                                 D = Object.keys(u);
                             for (F = 0; F < D.length; F++) ((A = D[F]), e.indexOf(A) >= 0 || (E[A] = u[A]));
                             return E;
-                        })(u, o);
+                        })(u, s);
                     const w = (0, n.useMemo)(() => {
                             const u = x(B),
                                 e = u.colorClassName,
                                 A = u.colorStyle,
                                 F = void 0 === A ? {} : A;
-                            return { computedStyle: Object.assign({}, p, F), colorClassName: e };
-                        }, [p, B]),
+                            return { computedStyle: Object.assign({}, v, F), colorClassName: e };
+                        }, [v, B]),
                         b = w.computedStyle,
                         L = w.colorClassName;
                     return l().createElement(
                         D.ZP,
-                        s(
+                        o(
                             {
                                 className: E()(m.Z.base, A && m.Z[A], L, F),
                                 style: b,
@@ -518,7 +516,7 @@
                             },
                             S,
                         ),
-                        void 0 !== v ? l().createElement(t.z, s({}, v, { text: e })) : e,
+                        void 0 !== p ? l().createElement(t.z, o({}, p, { text: e })) : e,
                     );
                 });
             },
@@ -724,27 +722,28 @@
                         addPreloadTexture: () => B,
                         children: () => F,
                         displayStatus: () => E.W,
-                        displayStatusIs: () => v,
+                        displayStatusIs: () => S,
                         events: () => D.U,
-                        extraSize: () => S,
-                        forceTriggerMouseMove: () => f,
-                        freezeTextureBeforeResize: () => o,
+                        extraSize: () => w,
+                        forceTriggerMouseMove: () => v,
+                        freezeTextureBeforeResize: () => s,
                         getBrowserTexturePath: () => C,
                         getDisplayStatus: () => p,
-                        getScale: () => s,
+                        getScale: () => o,
                         getSize: () => n,
                         getViewGlobalPosition: () => m,
-                        isEventHandled: () => x,
+                        isClientAccessible: () => h,
+                        isEventHandled: () => f,
                         isFocused: () => c,
                         pxToRem: () => d,
                         remToPx: () => g,
                         resize: () => l,
                         sendEvent: () => t.qP,
                         setAnimateWindow: () => _,
-                        setEventHandled: () => h,
+                        setEventHandled: () => x,
                         setInputPaddingsRem: () => r,
                         setSidePaddingsRem: () => i,
-                        whenTutorialReady: () => w,
+                        whenTutorialReady: () => b,
                     }));
                 var F = A(3722),
                     E = A(6112),
@@ -775,10 +774,10 @@
                     const e = viewEnv.getViewGlobalPositionRem();
                     return 'rem' === u ? e : { x: g(e.x), y: g(e.y) };
                 }
-                function o() {
+                function s() {
                     viewEnv.freezeTextureBeforeResize();
                 }
-                function s() {
+                function o() {
                     return viewEnv.getScale();
                 }
                 function d(u) {
@@ -794,22 +793,25 @@
                     return viewEnv.isFocused();
                 }
                 function h() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function x() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function f() {
+                    return viewEnv.isEventHandled();
+                }
+                function v() {
                     viewEnv.forceTriggerMouseMove();
                 }
                 function p() {
                     return viewEnv.getShowingStatus();
                 }
-                const v = Object.keys(E.W).reduce(
+                const S = Object.keys(E.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === E.W[e]), u),
                         {},
                     ),
-                    S = {
+                    w = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -817,7 +819,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    w = Promise.all([
+                    b = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : D.U.onDomBuilt(u);
                         }),
@@ -1231,6 +1233,7 @@
                 Object.defineProperty(u, Symbol.toStringTag, { value: 'Module' }),
                 Object.defineProperty(u, '__esModule', { value: !0 }));
         }),
+        (F.j = 578),
         (() => {
             var u = { 578: 0 };
             F.O.j = (e) => 0 === u[e];

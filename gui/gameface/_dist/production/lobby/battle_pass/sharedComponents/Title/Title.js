@@ -17,7 +17,7 @@
                 n.defaultProps = { format: 'integral' };
             },
             2862: (u, e, t) => {
-                let E, A, F, n, o, i, r;
+                let E, A, F, n, o, i, r, s, D;
                 (t.d(e, { E4: () => E }),
                     (function (u) {
                         ((u.Items = 'items'),
@@ -74,14 +74,15 @@
                             (u.VehicleSelect = 'vehicleSelect'),
                             (u.StyleProgress = 'styleProgress'),
                             (u.ParagonsUnlocks = 'paragonsUnlocks'),
-                            (u.HistoricalBattleDiscount25 = 'historical_battles_main_discount'),
                             (u.LootBoxToken = 'lootBoxToken'),
-                            (u.GoldenTicket = 'birthday2025_golden_ticket'),
-                            (u.PostStamp = 'giftsystem_4_stamp'),
+                            (u.PostStamp = 'giftsystem_5_stamp'),
                             (u.Quests = 'quests'),
                             (u.ArmoryCoin = 'armory_coin'),
                             (u.PremiumPlusUniversal = 'premium_plus_universal'),
-                            (u.DogTagType = 'dogTagComponents'));
+                            (u.DogTagType = 'dogTagComponents'),
+                            (u.GoldenTicket = 'goldenticket'),
+                            (u.LbStyleProgress = 'lbStyleProgress'),
+                            (u.RewardsSlots = 'rewardsSlots'));
                     })(E || (E = {})),
                     (function (u) {
                         ((u.Gold = 'gold'),
@@ -115,6 +116,7 @@
                             (u.OneOf = 'oneof'),
                             (u.PremiumUniversal = 'premium_universal'),
                             (u.BadgesGroup = 'badgesGroup'),
+                            (u.Entitlements = 'entitlements'),
                             (u.RankedDailyBattles = 'rankedDailyBattles'),
                             (u.RankedBonusBattles = 'rankedBonusBattles'),
                             (u.BattlePassPoints = 'battlePassPoints'),
@@ -173,7 +175,13 @@
                             (u.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
                             (u.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
                             (u.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'));
-                    })(r || (r = {})));
+                    })(r || (r = {})),
+                    (function (u) {
+                        ((u.Small = '400x300'), (u.Big = '600x450'));
+                    })(s || (s = {})),
+                    (function (u) {
+                        u.ProgressionStyle = 'progressionStyle';
+                    })(D || (D = {})));
             },
             729: (u, e, t) => {
                 (t(2372), t(6179));
@@ -213,9 +221,10 @@
                     E.E4.CosmicLootboxCommon,
                     E.E4.CosmicLootboxSilver,
                     E.E4.SelectableBonus,
-                    E.E4.GoldenTicket,
                     E.E4.PostStamp,
                     E.E4.PremiumPlusUniversal,
+                    E.E4.GoldenTicket,
+                    E.E4.RewardsSlots,
                     E.E4.Gold,
                     E.E4.Credits,
                     E.E4.Crystal,
@@ -391,16 +400,17 @@
                         addPreloadTexture: () => o,
                         children: () => E,
                         displayStatus: () => A.W,
-                        displayStatusIs: () => T,
+                        displayStatusIs: () => b,
                         events: () => F.U,
-                        extraSize: () => b,
-                        forceTriggerMouseMove: () => w,
+                        extraSize: () => g,
+                        forceTriggerMouseMove: () => P,
                         freezeTextureBeforeResize: () => _,
                         getBrowserTexturePath: () => r,
-                        getDisplayStatus: () => P,
+                        getDisplayStatus: () => T,
                         getScale: () => l,
                         getSize: () => a,
                         getViewGlobalPosition: () => C,
+                        isClientAccessible: () => v,
                         isEventHandled: () => h,
                         isFocused: () => p,
                         pxToRem: () => c,
@@ -408,10 +418,10 @@
                         resize: () => B,
                         sendEvent: () => n.qP,
                         setAnimateWindow: () => m,
-                        setEventHandled: () => v,
+                        setEventHandled: () => w,
                         setInputPaddingsRem: () => i,
                         setSidePaddingsRem: () => D,
-                        whenTutorialReady: () => g,
+                        whenTutorialReady: () => S,
                     }));
                 var E = t(3722),
                     A = t(6112),
@@ -461,22 +471,25 @@
                     return viewEnv.isFocused();
                 }
                 function v() {
+                    return viewEnv.isClientAccessible();
+                }
+                function w() {
                     return viewEnv.setEventHandled();
                 }
                 function h() {
                     return viewEnv.isEventHandled();
                 }
-                function w() {
+                function P() {
                     viewEnv.forceTriggerMouseMove();
                 }
-                function P() {
+                function T() {
                     return viewEnv.getShowingStatus();
                 }
-                const T = Object.keys(A.W).reduce(
+                const b = Object.keys(A.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === A.W[e]), u),
                         {},
                     ),
-                    b = {
+                    g = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -484,7 +497,7 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    g = Promise.all([
+                    S = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : F.U.onDomBuilt(u);
                         }),
@@ -906,11 +919,11 @@
                     v = (u, e) => {
                         u.keyCode === B.n.ESCAPE && e();
                     };
-                var h = t(7572);
-                const w = A.instance,
+                var w = t(7572);
+                const h = A.instance,
                     P = {
                         DataTracker: F.Z,
-                        ViewModel: h.Z,
+                        ViewModel: w.Z,
                         ViewEventType: i,
                         NumberFormatType: r,
                         RealFormatType: s,
@@ -987,7 +1000,7 @@
                                 }
                             return t;
                         },
-                        ClickOutsideManager: w,
+                        ClickOutsideManager: h,
                         SystemLocale: n,
                         UserLocale: o,
                     };

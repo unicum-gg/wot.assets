@@ -1553,7 +1553,7 @@
                             n = Q(t);
                         let a,
                             r = u;
-                        for (; null !== (a = q.exec(u)); ) {
+                        for (; null !== (a = q.exec(u));) {
                             const u = a[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (u) {
                                 const t = n + u[2].replace(Y, '');
@@ -1655,7 +1655,7 @@
                                         ((u) => {
                                             const e = Q(J());
                                             let t;
-                                            for (; null !== (t = K.exec(u)); ) {
+                                            for (; null !== (t = K.exec(u));) {
                                                 const u = t[0].match(/href="(.*?)"/);
                                                 if (u) {
                                                     const t = e + u[1].replace(Y, ''),
@@ -1676,7 +1676,7 @@
                                     let e;
                                     const t = J(),
                                         n = Q(t);
-                                    for (; null !== (e = K.exec(u)); ) {
+                                    for (; null !== (e = K.exec(u));) {
                                         const u = e[0].match(/href="(.*?)"/);
                                         if (u && !u[1].includes(Z) && n) {
                                             const e = n + u[1].replace(Y, ''),
@@ -2502,15 +2502,13 @@
                             if (t.mediumWidth && A) return Qu(e, t, g);
                             if (t.smallWidth && m) return Qu(e, t, g);
                             if (t.extraSmallWidth && d) return Qu(e, t, g);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && F) return e;
                                 if (t.largeHeight && _) return e;
                                 if (t.mediumHeight && D) return e;
@@ -3082,7 +3080,7 @@
                                         : (function (u) {
                                               let e = '';
                                               for (let t = We.length - 1; t >= 0; t--)
-                                                  for (; u >= We[t]; ) ((e += Ie[t]), (u -= We[t]));
+                                                  for (; u >= We[t];) ((e += Ie[t]), (u -= We[t]));
                                               return e;
                                           })(o)),
                                 className: Ue.text,

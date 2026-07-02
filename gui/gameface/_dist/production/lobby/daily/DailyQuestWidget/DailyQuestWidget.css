@@ -1,3 +1,213 @@
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBar_base_45 {
+    width: 100%;
+    height: 12rem;
+    position: relative;
+}
+.ProgressBar_base__medium_62 {
+    height: 6rem;
+}
+.ProgressBar_base__small_df {
+    height: 2rem;
+}
+.ProgressBar_background_51 {
+    width: 100%;
+    max-width: 8001px;
+    height: 100%;
+    background-image: var(--progress-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ProgressBar_background__medium_6e {
+    height: 6rem;
+}
+.ProgressBar_background__small_46 {
+    height: 2rem;
+}
+.ProgressBar_lineWrapper_6a {
+    display: flex;
+    flex: 1;
+}
+
+.ProgressBarBlink_base_24 {
+    width: 60rem;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+}
+
+.ProgressBarBlink_base__medium_ec {
+    width: 42rem;
+    height: 70rem;
+}
+
+.ProgressBarBlink_base__small_0f {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressLineImpose_base_80 {
+    max-width: 8001px;
+    height: 100%;
+    background-color: var(--progress-line-base);
+    position: relative;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressLineImpose_base__disabled_cc {
+    background-color: var(--progress-line-disabled);
+}
+.ProgressLineImpose_base__finished_d4 {
+    background-color: var(--progress-line-finished);
+}
+.ProgressLineImpose_base__withoutBounce_56 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressLineImpose_pattern_1c {
+    max-width: 8001px;
+    background-image: var(--progress-pattern-base);
+    background-repeat: repeat;
+    background-position: 0 50%;
+    background-size: 3rem 10rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-disabled);
+    left: 0;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
+    background-image: var(--progress-pattern-finished);
+}
+.ProgressLineImpose_gradient_35 {
+    max-width: 8001px;
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
+    mix-blend-mode: overlay;
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    bottom: 1rem;
+    left: 0;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
+    top: 0;
+    bottom: 0;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
+    display: none;
+}
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
+}
+.ProgressLineImpose_glow_a5 {
+    width: 60rem;
+    max-width: 8001px;
+    height: 100rem;
+    background-image: var(--progress-glow);
+    background-size: contain;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.ProgressLineImpose_glow__left_d8 {
+    left: 1rem;
+}
+.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
+.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
+    display: none;
+}
+.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
+    width: 44rem;
+    height: 43rem;
+    background-image: var(--progress-glow-small);
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaSimple_base_6c {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.ProgressBarDeltaSimple_delta_99 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
+    transition-property: width, transform;
+}
+
+/*
+    Gameface can't calculate gradient biggest than 8128px
+    in JS 8000 reserved like anchor for start optimization
+*/
+/* stylelint-disable-line */
+.ProgressBarDeltaGrow_base_7e {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+.ProgressBarDeltaGrow_glow_68 {
+    width: 0;
+    max-width: 8001px;
+    height: 100%;
+    box-shadow: var(--progress-delta-shadow);
+    background-color: var(--progress-delta-color);
+    position: absolute;
+    bottom: 0;
+    transform-origin: right center;
+    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
+    transition-property: width;
+}
+.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
+    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
+}
+
 .Box_mt__XS_0c {
     margin-top: 4rem;
 }
@@ -302,543 +512,6 @@
     margin-left: 2rem;
 }
 
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBar_base_45 {
-    width: 100%;
-    height: 12rem;
-    position: relative;
-}
-.ProgressBar_base__medium_62 {
-    height: 6rem;
-}
-.ProgressBar_base__small_df {
-    height: 2rem;
-}
-.ProgressBar_background_51 {
-    width: 100%;
-    max-width: 8001px;
-    height: 100%;
-    background-image: var(--progress-base);
-    background-repeat: repeat;
-    background-position: 0 50%;
-    background-size: 3rem 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-.ProgressBar_background__medium_6e {
-    height: 6rem;
-}
-.ProgressBar_background__small_46 {
-    height: 2rem;
-}
-.ProgressBar_lineWrapper_6a {
-    display: flex;
-    flex: 1;
-}
-
-.ProgressBarBlink_base_24 {
-    width: 60rem;
-    height: 100rem;
-    background-image: var(--progress-glow);
-    background-size: contain;
-    mix-blend-mode: lighten;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(50%, -50%);
-    pointer-events: none;
-}
-
-.ProgressBarBlink_base__medium_ec {
-    width: 42rem;
-    height: 70rem;
-}
-
-.ProgressBarBlink_base__small_0f {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressLineImpose_base_80 {
-    max-width: 8001px;
-    height: 100%;
-    background-color: var(--progress-line-base);
-    position: relative;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
-    transition-property: width;
-}
-.ProgressLineImpose_base__disabled_cc {
-    background-color: var(--progress-line-disabled);
-}
-.ProgressLineImpose_base__finished_d4 {
-    background-color: var(--progress-line-finished);
-}
-.ProgressLineImpose_base__withoutBounce_56 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
-.ProgressLineImpose_pattern_1c {
-    max-width: 8001px;
-    background-image: var(--progress-pattern-base);
-    background-repeat: repeat;
-    background-position: 0 50%;
-    background-size: 3rem 10rem;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
-}
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_pattern_1c {
-    top: 0;
-    bottom: 0;
-}
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-disabled);
-    left: 0;
-}
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_pattern_1c {
-    background-image: var(--progress-pattern-finished);
-}
-.ProgressLineImpose_gradient_35 {
-    max-width: 8001px;
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75));
-    mix-blend-mode: overlay;
-    position: absolute;
-    top: 1rem;
-    right: 0;
-    bottom: 1rem;
-    left: 0;
-}
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_gradient_35 {
-    top: 0;
-    bottom: 0;
-}
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_gradient_35 {
-    display: none;
-}
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_gradient_35 {
-    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0.5));
-}
-.ProgressLineImpose_glow_a5 {
-    width: 60rem;
-    max-width: 8001px;
-    height: 100rem;
-    background-image: var(--progress-glow);
-    background-size: contain;
-    mix-blend-mode: lighten;
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-}
-.ProgressLineImpose_glow__left_d8 {
-    left: 1rem;
-}
-.ProgressLineImpose_base__disabled_cc .ProgressLineImpose_glow_a5,
-.ProgressLineImpose_base__finished_d4 .ProgressLineImpose_glow_a5 {
-    display: none;
-}
-.ProgressLineImpose_base__small_55 .ProgressLineImpose_glow_a5 {
-    width: 44rem;
-    height: 43rem;
-    background-image: var(--progress-glow-small);
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaSimple_base_6c {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-}
-.ProgressBarDeltaSimple_delta_99 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1), cubic-bezier(0.21, 0.61, 0.35, 1);
-    transition-property: width, transform;
-}
-
-/*
-    Gameface can't calculate gradient biggest than 8128px
-    in JS 8000 reserved like anchor for start optimization
-*/
-/* stylelint-disable-line */
-.ProgressBarDeltaGrow_base_7e {
-    width: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
-    transition-property: width;
-}
-.ProgressBarDeltaGrow_base__withoutBounce_b5 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
-.ProgressBarDeltaGrow_glow_68 {
-    width: 0;
-    max-width: 8001px;
-    height: 100%;
-    box-shadow: var(--progress-delta-shadow);
-    background-color: var(--progress-delta-color);
-    position: absolute;
-    bottom: 0;
-    transform-origin: right center;
-    transition-timing-function: cubic-bezier(1, 0, 0.92, 1);
-    transition-property: width;
-}
-.ProgressBarDeltaGrow_base__withoutBounce_b5 .ProgressBarDeltaGrow_glow_68 {
-    transition-timing-function: cubic-bezier(1, 0, 0.75, 0.75);
-}
-
-.PlayStreakCard_base_c4 {
-    display: flex;
-    align-items: center;
-    width: 320rem;
-    height: 60rem;
-    margin: 0.5rem 0;
-    background: url('R.images.gui.maps.icons.daily.widget.big_bg') no-repeat center / cover;
-    opacity: 0;
-    position: relative;
-    transform: translateX(-50rem);
-    cursor: pointer;
-}
-
-.PlayStreakCard_base__mini_b1,
-.PlayStreakCard_base__micro_a1 {
-    margin: 0 0.5rem;
-    padding: 0;
-}
-
-.PlayStreakCard_base__mini_b1 {
-    width: 60rem;
-    height: 60rem;
-    background-image: url('R.images.gui.maps.icons.daily.widget.mini_bg');
-}
-
-.PlayStreakCard_base__micro_a1 {
-    width: 48rem;
-    height: 48rem;
-    background-image: url('R.images.gui.maps.icons.daily.widget.micro_bg');
-}
-
-.PlayStreakCard_base__complete_3d {
-    background-image: url('R.images.gui.maps.icons.daily.widget.big_bg_complete');
-}
-
-.PlayStreakCard_base__complete_3d.PlayStreakCard_base__mini_b1 {
-    background-image: url('R.images.gui.maps.icons.daily.widget.mini_bg_complete');
-}
-
-.PlayStreakCard_base__complete_3d.PlayStreakCard_base__micro_a1 {
-    background-image: url('R.images.gui.maps.icons.daily.widget.micro_bg_complete');
-}
-
-.PlayStreakCard_base__appearEnd_cf {
-    opacity: 1;
-    transform: translate(0, 0);
-    transition:
-        transform,
-        opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
-}
-
-.PlayStreakCard_base__disappearEnd_0d {
-    opacity: 0;
-    transform: translate(0, 0); /* y is required by disappear transition*/
-    transition:
-        transform,
-        opacity 1s linear;
-}
-.PlayStreakCard_border_01 {
-    width: 100%;
-    height: 100%;
-    clip-path: polygon(0 0, 320rem 0, 320rem 1rem, 1rem 1rem, 1rem 59rem, 320rem 59rem, 320rem 60rem, 0 60rem, 0 0);
-    position: absolute;
-}
-.PlayStreakCard_base__mini_b1 .PlayStreakCard_border_01 {
-    clip-path: polygon(
-        0 0,
-        60rem 0,
-        60rem 60rem,
-        0 60rem,
-        0 0,
-        1rem 1rem,
-        1rem 59rem,
-        59rem 59rem,
-        59rem 1rem,
-        1rem 1rem
-    );
-}
-.PlayStreakCard_base__micro_a1 .PlayStreakCard_border_01 {
-    clip-path: polygon(
-        0 0,
-        48rem 0,
-        48rem 48rem,
-        0 48rem,
-        0 0,
-        1rem 1rem,
-        1rem 47rem,
-        47rem 47rem,
-        47rem 1rem,
-        1rem 1rem
-    );
-}
-.PlayStreakCard_background_25 {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -3;
-}
-.PlayStreakCard_showAnim_26 .PlayStreakCard_background__blinkComplete_25 {
-    animation: PlayStreakCard_backgroundBlinkComplete_9d 0.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.6s 2;
-}
-.PlayStreakCard_showAnim_26 .PlayStreakCard_background__blinkReady_83 {
-    animation: PlayStreakCard_backgroundBlinkReady_c5 0.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) 0.6s 2;
-}
-.PlayStreakCard_hoverBg_99 {
-    width: 100%;
-    height: 100%;
-    background: url('R.images.gui.maps.icons.daily.widget.big_bg_onhover') no-repeat center / cover;
-    opacity: 0;
-    position: absolute;
-    z-index: -2;
-    transition: opacity 0.1s ease-in-out;
-}
-.PlayStreakCard_base_c4:hover .PlayStreakCard_hoverBg_99 {
-    opacity: 0.4;
-}
-.PlayStreakCard_base__mini_b1 .PlayStreakCard_hoverBg_99 {
-    background-image: url('R.images.gui.maps.icons.daily.widget.mini_bg_onhover');
-}
-.PlayStreakCard_base__micro_a1 .PlayStreakCard_hoverBg_99 {
-    background-image: url('R.images.gui.maps.icons.daily.widget.micro_bg_onhover');
-}
-.PlayStreakCard_contentWrapper_4a {
-    display: flex;
-    align-items: center;
-    padding: 0 26rem 0 12rem;
-}
-.PlayStreakCard_content_0f {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    width: 246rem;
-    position: relative;
-    transition: opacity 0.6s linear;
-}
-.PlayStreakCard_showAnim_26.PlayStreakCard_base__progress_6e .PlayStreakCard_content_0f {
-    opacity: 0;
-}
-.PlayStreakCard_showAnim_26.PlayStreakCard_base__progress_6e.PlayStreakCard_base__complete_3d
-    .PlayStreakCard_content_0f {
-    opacity: 1;
-}
-.PlayStreakCard_iconWrapper_e3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 60rem;
-    height: 60rem;
-    position: relative;
-}
-.PlayStreakCard_base__micro_a1 .PlayStreakCard_iconWrapper_e3 {
-    width: 48rem;
-    height: 48rem;
-    padding: 2rem 0;
-}
-.PlayStreakCard_iconWrapper__center_43 {
-    justify-content: center;
-}
-.PlayStreakCard_showAnim_26 .PlayStreakCard_iconWrapper__toggleIcon_b4 .PlayStreakCard_icon__default_4d {
-    animation: PlayStreakCard_hideIcon_f5 0.6s linear forwards;
-}
-.PlayStreakCard_showAnim_26 .PlayStreakCard_iconWrapper__toggleIcon_b4 .PlayStreakCard_missionProgress_b0 {
-    animation: PlayStreakCard_hideIcon_f5 0.6s linear forwards;
-}
-.PlayStreakCard_showAnim_26 .PlayStreakCard_iconWrapper__toggleIcon_b4 .PlayStreakCard_icon__complete_05 {
-    animation: PlayStreakCard_showIcon_10 0.6s linear 1s forwards;
-}
-.PlayStreakCard_showAnim_26 .PlayStreakCard_iconWrapper__completeEnd_cb .PlayStreakCard_icon__default_4d {
-    animation: PlayStreakCard_showIconOpacity_16 1s linear forwards;
-}
-.PlayStreakCard_showAnim_26 .PlayStreakCard_iconWrapper__completeEnd_cb .PlayStreakCard_missionProgress_b0 {
-    animation: PlayStreakCard_showIconOpacity_16 1s linear forwards;
-}
-.PlayStreakCard_showAnim_26 .PlayStreakCard_iconWrapper__completeEnd_cb .PlayStreakCard_icon__complete_05 {
-    animation: PlayStreakCard_hideCompleteIcon_a1 1s linear forwards;
-}
-.PlayStreakCard_icon_d1 {
-    width: 32rem;
-    height: 32rem;
-    background: no-repeat center / contain;
-    opacity: 1;
-    position: relative;
-    transition:
-        transform 1s easy-out,
-        opacity 1s easy-out;
-}
-.PlayStreakCard_icon__complete_05 {
-    background-image: url('R.images.gui.maps.icons.missions.icons.check_green');
-    opacity: 0;
-    position: absolute;
-}
-.PlayStreakCard_icon_d1 .PlayStreakCard_total_ee {
-    width: 25rem;
-    height: 19rem;
-    color: #000;
-    font-size: 12rem;
-    font-weight: 700;
-    line-height: 16rem;
-    text-align: center;
-    position: absolute;
-    top: 9rem;
-    left: 1rem;
-}
-.PlayStreakCard_divider_77 {
-    width: 1rem;
-    height: 44rem;
-    background-color: rgba(255, 255, 255, 0.15);
-}
-.PlayStreakCard_description_16 {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(0, -50%);
-    transition:
-        color 1s easy-out,
-        opacity 1s linear;
-}
-.PlayStreakCard_base__disabled_85 .PlayStreakCard_description_16 {
-    color: #8c8c7e;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-.PlayStreakCard_base__complete_3d .PlayStreakCard_description_16 {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 400;
-    line-height: 1.3;
-}
-.PlayStreakCard_missionProgress_b0 {
-    color: #e9e2bf;
-    font-size: 14rem;
-    font-weight: 700;
-    line-height: 1.15;
-    margin-top: -3rem;
-}
-@keyframes PlayStreakCard_toggleText_c0 {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes PlayStreakCard_backgroundBlinkComplete_9d {
-    0% {
-        background-color: rgba(76, 111, 29, 0);
-    }
-
-    50% {
-        background-color: rgba(76, 111, 29, 0.4);
-    }
-
-    100% {
-        background-color: rgba(76, 111, 29, 0);
-    }
-}
-@keyframes PlayStreakCard_backgroundBlinkReady_c5 {
-    0% {
-        background-color: rgba(254, 171, 52, 0);
-    }
-
-    50% {
-        background-color: rgba(254, 171, 52, 0.5);
-    }
-
-    100% {
-        background-color: rgba(254, 171, 52, 0);
-    }
-}
-@keyframes PlayStreakCard_hideIcon_f5 {
-    0% {
-        opacity: 1;
-    }
-
-    20% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-@keyframes PlayStreakCard_hideCompleteIcon_a1 {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-@keyframes PlayStreakCard_showIcon_10 {
-    0% {
-        opacity: 0;
-        transform: scale(1.4);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-@keyframes PlayStreakCard_showIconOpacity_16 {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
 .QuestCard_base_73 {
     display: flex;
     align-items: center;
@@ -1137,12 +810,4 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-end;
-}
-
-.App_playStreakWrapper_f1 {
-    margin-bottom: 10rem;
-}
-
-.App_base__horizontal_b2 .App_playStreakWrapper_f1 {
-    margin-bottom: 0;
 }

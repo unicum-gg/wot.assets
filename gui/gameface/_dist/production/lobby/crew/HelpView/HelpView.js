@@ -179,27 +179,28 @@
                         addPreloadTexture: () => s,
                         children: () => r,
                         displayStatus: () => i.W,
-                        displayStatusIs: () => M,
+                        displayStatusIs: () => O,
                         events: () => a.U,
-                        extraSize: () => O,
-                        forceTriggerMouseMove: () => x,
+                        extraSize: () => T,
+                        forceTriggerMouseMove: () => S,
                         freezeTextureBeforeResize: () => g,
                         getBrowserTexturePath: () => c,
-                        getDisplayStatus: () => S,
+                        getDisplayStatus: () => M,
                         getScale: () => E,
                         getSize: () => _,
                         getViewGlobalPosition: () => h,
-                        isEventHandled: () => L,
+                        isClientAccessible: () => f,
+                        isEventHandled: () => x,
                         isFocused: () => b,
                         pxToRem: () => v,
                         remToPx: () => w,
                         resize: () => m,
                         sendEvent: () => o.qP,
                         setAnimateWindow: () => p,
-                        setEventHandled: () => f,
+                        setEventHandled: () => L,
                         setInputPaddingsRem: () => l,
                         setSidePaddingsRem: () => u,
-                        whenTutorialReady: () => T,
+                        whenTutorialReady: () => k,
                     }));
                 var r = n(3722),
                     i = n(6112),
@@ -249,22 +250,25 @@
                     return viewEnv.isFocused();
                 }
                 function f() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function L() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function x() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function S() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function M() {
                     return viewEnv.getShowingStatus();
                 }
-                const M = Object.keys(i.W).reduce(
+                const O = Object.keys(i.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === i.W[t]), e),
                         {},
                     ),
-                    O = {
+                    T = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -272,7 +276,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    T = Promise.all([
+                    k = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -898,9 +902,13 @@
                         if (n.mediumWidth && m) return a(t, n, x);
                         if (n.smallWidth && E) return a(t, n, x);
                         if (n.extraSmallWidth && v) return a(t, n, x);
-                        if (
-                            !(n.extraLargeWidth || n.largeWidth || n.mediumWidth || n.smallWidth || n.extraSmallWidth)
-                        ) {
+                        if (!(
+                            n.extraLargeWidth ||
+                            n.largeWidth ||
+                            n.mediumWidth ||
+                            n.smallWidth ||
+                            n.extraSmallWidth
+                        )) {
                             if (n.extraLargeHeight && w) return t;
                             if (n.largeHeight && p) return t;
                             if (n.mediumHeight && b) return t;
@@ -1693,7 +1701,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, n = be(i.keys()); !(e = n()).done; ) a(e.value, t);
+                                                        for (var e, n = be(i.keys()); !(e = n()).done;) a(e.value, t);
                                                     },
                                                     unsubscribe: a,
                                                 };

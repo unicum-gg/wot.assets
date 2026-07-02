@@ -1317,7 +1317,7 @@
                         let i = nu.exec(u),
                             E = u,
                             A = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 n = au.exec(t),
                                 F = ru.exec(t),

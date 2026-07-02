@@ -262,15 +262,13 @@
                             if (F.mediumWidth && o) return (0, E.H)(e, F, p);
                             if (F.smallWidth && s) return (0, E.H)(e, F, p);
                             if (F.extraSmallWidth && d) return (0, E.H)(e, F, p);
-                            if (
-                                !(
-                                    F.extraLargeWidth ||
-                                    F.largeWidth ||
-                                    F.mediumWidth ||
-                                    F.smallWidth ||
-                                    F.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                F.extraLargeWidth ||
+                                F.largeWidth ||
+                                F.mediumWidth ||
+                                F.smallWidth ||
+                                F.extraSmallWidth
+                            )) {
                                 if (F.extraLargeHeight && g) return e;
                                 if (F.largeHeight && _) return e;
                                 if (F.mediumHeight && c) return e;
@@ -1119,7 +1117,7 @@
                     let n = r.exec(u),
                         l = u,
                         m = 0;
-                    for (; n; ) {
+                    for (; n;) {
                         const F = n[0],
                             A = B.exec(F),
                             o = a.exec(F),

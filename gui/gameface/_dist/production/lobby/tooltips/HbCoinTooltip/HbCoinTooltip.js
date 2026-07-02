@@ -1186,15 +1186,13 @@
                             if (t.mediumWidth && F) return O(e, t, h);
                             if (t.smallWidth && _) return O(e, t, h);
                             if (t.extraSmallWidth && D) return O(e, t, h);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && c) return e;
                                 if (t.largeHeight && B) return e;
                                 if (t.mediumHeight && d) return e;
@@ -1760,7 +1758,7 @@
                         let o = gu.exec(u),
                             E = u,
                             l = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const t = o[0],
                                 r = pu.exec(t),
                                 A = bu.exec(t),
@@ -2166,7 +2164,7 @@
                     Yu = (u, e, t, r) => {
                         let n = e.exec(u),
                             i = 0;
-                        for (; n; ) (i !== n.index && t(u.slice(i, n.index)), r(n), (i = e.lastIndex), (n = e.exec(u)));
+                        for (; n;) (i !== n.index && t(u.slice(i, n.index)), r(n), (i = e.lastIndex), (n = e.exec(u)));
                         i !== u.length && t(u.slice(i));
                     },
                     qu = (u) => {
@@ -2175,7 +2173,7 @@
                         if (!t) return [u];
                         const r = [];
                         let n = 0;
-                        for (; t; ) (r.push(u.slice(n, e.lastIndex)), (n = e.lastIndex), (t = e.exec(u)));
+                        for (; t;) (r.push(u.slice(n, e.lastIndex)), (n = e.lastIndex), (t = e.exec(u)));
                         return (n !== u.length && r.push(u.slice(n)), r);
                     },
                     Zu = (u, e = '') => {
@@ -2398,7 +2396,7 @@
                                                     A = ((u, e) => {
                                                         let t = 0,
                                                             r = u.length - 1;
-                                                        for (; r - t >= 0; ) {
+                                                        for (; r - t >= 0;) {
                                                             const n = t + Math.ceil(0.5 * (r - t));
                                                             ee(u[n], e) ? (r = n - 1) : (t = n + 1);
                                                         }

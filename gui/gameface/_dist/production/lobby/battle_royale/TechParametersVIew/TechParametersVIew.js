@@ -18,7 +18,7 @@
             },
             67: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => j });
+                t.d(e, { O: () => q });
                 var r = {};
                 (t.r(r), t.d(r, { mouse: () => l, onResize: () => F }));
                 var a = {};
@@ -49,27 +49,28 @@
                         addPreloadTexture: () => x,
                         children: () => i,
                         displayStatus: () => C,
-                        displayStatusIs: () => z,
+                        displayStatusIs: () => V,
                         events: () => _,
-                        extraSize: () => V,
-                        forceTriggerMouseMove: () => G,
+                        extraSize: () => K,
+                        forceTriggerMouseMove: () => $,
                         freezeTextureBeforeResize: () => R,
                         getBrowserTexturePath: () => S,
-                        getDisplayStatus: () => $,
+                        getDisplayStatus: () => z,
                         getScale: () => H,
                         getSize: () => T,
                         getViewGlobalPosition: () => y,
-                        isEventHandled: () => U,
+                        isClientAccessible: () => I,
+                        isEventHandled: () => G,
                         isFocused: () => W,
                         pxToRem: () => P,
                         remToPx: () => k,
                         resize: () => O,
                         sendEvent: () => p,
                         setAnimateWindow: () => N,
-                        setEventHandled: () => I,
+                        setEventHandled: () => U,
                         setInputPaddingsRem: () => L,
                         setSidePaddingsRem: () => M,
-                        whenTutorialReady: () => K,
+                        whenTutorialReady: () => j,
                     }));
                 const F = E('clientResized'),
                     o = { down: E('mousedown'), up: E('mouseup'), move: E('mousemove') };
@@ -267,19 +268,22 @@
                     return viewEnv.isFocused();
                 }
                 function I() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function U() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function G() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function $() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function z() {
                     return viewEnv.getShowingStatus();
                 }
-                const z = Object.keys(C).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === C[e]), u), {}),
-                    V = {
+                const V = Object.keys(C).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === C[e]), u), {}),
+                    K = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -287,13 +291,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    K = Promise.all([
+                    j = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : _.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    j = { view: n, client: a };
+                    q = { view: n, client: a };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -859,9 +863,13 @@
                         if (t.mediumWidth && D) return i(e, t, v);
                         if (t.smallWidth && c) return i(e, t, v);
                         if (t.extraSmallWidth && C) return i(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;

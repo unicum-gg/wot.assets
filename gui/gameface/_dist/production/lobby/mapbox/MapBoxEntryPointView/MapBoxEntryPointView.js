@@ -18,7 +18,7 @@
             },
             67: (u, e, t) => {
                 'use strict';
-                t.d(e, { O: () => K });
+                t.d(e, { O: () => q });
                 var a = {};
                 (t.r(a), t.d(a, { mouse: () => l, onResize: () => F }));
                 var r = {};
@@ -27,10 +27,10 @@
                         events: () => a,
                         getMouseGlobalPosition: () => D,
                         getSize: () => s,
-                        graphicsQuality: () => d,
+                        graphicsQuality: () => c,
                     }));
                 var n = {};
-                (t.r(n), t.d(n, { getBgUrl: () => B, getTextureUrl: () => c }));
+                (t.r(n), t.d(n, { getBgUrl: () => B, getTextureUrl: () => d }));
                 var i = {};
                 function E(u) {
                     return (e) => (
@@ -49,27 +49,28 @@
                         addPreloadTexture: () => b,
                         children: () => n,
                         displayStatus: () => C,
-                        displayStatusIs: () => j,
+                        displayStatusIs: () => z,
                         events: () => _,
-                        extraSize: () => z,
-                        forceTriggerMouseMove: () => G,
+                        extraSize: () => V,
+                        forceTriggerMouseMove: () => $,
                         freezeTextureBeforeResize: () => R,
                         getBrowserTexturePath: () => S,
-                        getDisplayStatus: () => $,
+                        getDisplayStatus: () => j,
                         getScale: () => P,
                         getSize: () => T,
                         getViewGlobalPosition: () => y,
-                        isEventHandled: () => U,
+                        isClientAccessible: () => W,
+                        isEventHandled: () => G,
                         isFocused: () => N,
                         pxToRem: () => k,
                         remToPx: () => H,
                         resize: () => O,
                         sendEvent: () => f,
                         setAnimateWindow: () => I,
-                        setEventHandled: () => W,
+                        setEventHandled: () => U,
                         setInputPaddingsRem: () => x,
                         setSidePaddingsRem: () => M,
-                        whenTutorialReady: () => V,
+                        whenTutorialReady: () => K,
                     }));
                 const F = E('clientResized'),
                     o = { down: E('mousedown'), up: E('mouseup'), move: E('mousemove') };
@@ -143,16 +144,16 @@
                 function D(u = 'px') {
                     return 'rem' === u ? viewEnv.getMouseGlobalPositionRem() : viewEnv.getMouseGlobalPositionPx();
                 }
-                const d = {
+                const c = {
                     isLow: () => 1 === viewEnv.getGraphicsQuality(),
                     isHigh: () => 0 === viewEnv.getGraphicsQuality(),
                     get: () => viewEnv.getGraphicsQuality(),
                 };
-                function c(u, e, t = 1) {
+                function d(u, e, t = 1) {
                     return viewEnv.getChildTexturePath(u, e.width, e.height, t);
                 }
                 function B(u, e, t) {
-                    return `url(${c(u, e, t)})`;
+                    return `url(${d(u, e, t)})`;
                 }
                 const C = { showing: 0, shown: 1, hiding: 2, hidden: 3 },
                     _ = {
@@ -267,19 +268,22 @@
                     return viewEnv.isFocused();
                 }
                 function W() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function U() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function G() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function $() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function j() {
                     return viewEnv.getShowingStatus();
                 }
-                const j = Object.keys(C).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === C[e]), u), {}),
-                    z = {
+                const z = Object.keys(C).reduce((u, e) => ((u[e] = () => viewEnv.getShowingStatus() === C[e]), u), {}),
+                    V = {
                         set: (u, e) => {
                             viewEnv.setExtraSizeRem(u, e);
                         },
@@ -287,13 +291,13 @@
                             viewEnv.getExtraSizeRem(u, e);
                         },
                     },
-                    V = Promise.all([
+                    K = Promise.all([
                         new Promise((u) => {
                             window.isDomBuilt ? u() : _.onDomBuilt(u);
                         }),
                         engine.whenReady,
                     ]),
-                    K = { view: i, client: r };
+                    q = { view: i, client: r };
             },
             521: (u, e, t) => {
                 'use strict';
@@ -554,8 +558,8 @@
                     l = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1 }),
                     s = Object.freeze({ SHORT_FORMAT: 0, LONG_FORMAT: 1, YEAR_MONTH: 2 });
                 var D = t(521),
-                    d = t(67);
-                const c = ['args'];
+                    c = t(67);
+                const d = ['args'];
                 function B(u, e, t, a, r, n, i) {
                     try {
                         var E = u[n](i),
@@ -607,7 +611,7 @@
                                         n = Object.keys(u);
                                     for (a = 0; a < n.length; a++) ((t = n[a]), e.indexOf(t) >= 0 || (r[t] = u[t]));
                                     return r;
-                                })(e, c);
+                                })(e, d);
                             void 0 !== r
                                 ? viewEnv.handleViewEvent(
                                       Object.assign({ __Type: t, type: u }, n, {
@@ -655,17 +659,17 @@
                             m(A.CONTEXT_MENU, { isMouseEvent: !0, contentID: u, on: !0, decoratorID: t, args: e });
                         },
                         sendShowPopOverEvent: (u, e, t, a, r = R.invalid('resId'), n) => {
-                            const i = d.O.view.getViewGlobalPosition(),
+                            const i = c.O.view.getViewGlobalPosition(),
                                 E = t.getBoundingClientRect(),
                                 F = E.x,
                                 o = E.y,
                                 l = E.width,
                                 s = E.height,
                                 D = {
-                                    x: d.O.view.pxToRem(F) + i.x,
-                                    y: d.O.view.pxToRem(o) + i.y,
-                                    width: d.O.view.pxToRem(l),
-                                    height: d.O.view.pxToRem(s),
+                                    x: c.O.view.pxToRem(F) + i.x,
+                                    y: c.O.view.pxToRem(o) + i.y,
+                                    width: c.O.view.pxToRem(l),
+                                    height: c.O.view.pxToRem(s),
                                 };
                             m(A.POP_OVER, {
                                 isMouseEvent: !0,
@@ -816,9 +820,9 @@
                 })(o || (o = {}));
                 const s = A.O.client.getSize('rem'),
                     D = s.width,
-                    d = s.height,
-                    c = Object.assign({ width: D, height: d }, l(D, d, F)),
-                    B = (0, a.createContext)(c),
+                    c = s.height,
+                    d = Object.assign({ width: D, height: c }, l(D, c, F)),
+                    B = (0, a.createContext)(d),
                     C = ['children'];
                 const _ = (u) => {
                     let e = u.children,
@@ -840,8 +844,8 @@
                         l = r.extraLargeWidth,
                         s = r.largeWidth,
                         D = r.mediumWidth,
-                        d = r.smallWidth,
-                        c = r.extraSmallWidth,
+                        c = r.smallWidth,
+                        d = r.extraSmallWidth,
                         _ = r.extraLargeHeight,
                         m = r.largeHeight,
                         h = r.mediumHeight,
@@ -858,11 +862,15 @@
                         if (t.extraLargeWidth && l) return E(e, t, v);
                         if (t.largeWidth && s) return E(e, t, v);
                         if (t.mediumWidth && D) return E(e, t, v);
-                        if (t.smallWidth && d) return E(e, t, v);
-                        if (t.extraSmallWidth && c) return E(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (t.smallWidth && c) return E(e, t, v);
+                        if (t.extraSmallWidth && d) return E(e, t, v);
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -1104,8 +1112,8 @@
                             l = void 0 === o ? N : o,
                             s = u.lastFrameIndex,
                             D = void 0 === s ? i - 1 : s,
-                            d = u.loop,
-                            c = void 0 === d ? W : d,
+                            c = u.loop,
+                            d = void 0 === c ? W : c,
                             B = u.state,
                             C = void 0 === B ? U : B,
                             _ = u.onAnimationDone,
@@ -1142,7 +1150,7 @@
                                                           t(n),
                                                           r === D &&
                                                               (null == m || m(),
-                                                              c || (null == _ || _(), window.clearInterval(a))))
+                                                              d || (null == _ || _(), window.clearInterval(a))))
                                                         : console.error(
                                                               'frameImage was not provided in frameImages Map',
                                                           );
@@ -1163,7 +1171,7 @@
                                     default:
                                         return console.error('[CanvasSequence] Unreachable state!');
                                 }
-                            }, [F, n, l, D, c, E, m, _, h, C]),
+                            }, [F, n, l, D, d, E, m, _, h, C]),
                             r().createElement('canvas', $({}, g, { width: e, height: t, ref: w }))
                         );
                     }),
@@ -1411,7 +1419,7 @@
                             return { path: u.getChunkPath(Math.trunc(a / t)), x: n, y: i };
                         };
                     })(su),
-                    du = () => {
+                    cu = () => {
                         const u = au(),
                             e = u.endDate,
                             t = u.onActionClick,
@@ -1424,8 +1432,8 @@
                                     l = o[0],
                                     s = o[1],
                                     D = (0, a.useState)(null != (n = u.frameTime) ? n : I),
-                                    d = D[0],
-                                    c = D[1],
+                                    c = D[0],
+                                    d = D[1],
                                     B = (0, a.useState)(null != (i = u.loop) ? i : W),
                                     C = B[0],
                                     _ = B[1],
@@ -1447,7 +1455,7 @@
                                     props: {
                                         state: A,
                                         initialFrameIndex: l,
-                                        frameTime: d,
+                                        frameTime: c,
                                         loop: C,
                                         onAnimate: (0, a.useCallback)((e, t) => {
                                             ((m.current = e), null == u.onAnimate || u.onAnimate(e, t));
@@ -1460,7 +1468,7 @@
                                     disableLoop: (0, a.useCallback)(() => _(!1), []),
                                     setState: F,
                                     setInitialFrameIndex: s,
-                                    setFrameTime: c,
+                                    setFrameTime: d,
                                     goAndPlay: h,
                                     goAndStop: g,
                                     stop: w,
@@ -1534,7 +1542,7 @@
                     };
                 engine.whenReady.then(() => {
                     i().render(
-                        r().createElement(H, null, r().createElement(du, null)),
+                        r().createElement(H, null, r().createElement(cu, null)),
                         document.getElementById('root'),
                     );
                 });

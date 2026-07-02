@@ -19,30 +19,31 @@
                 (t.r(a),
                     t.d(a, {
                         addModelObserver: () => L,
-                        addPreloadTexture: () => M,
+                        addPreloadTexture: () => F,
                         children: () => o,
                         displayStatus: () => _,
-                        displayStatusIs: () => X,
+                        displayStatusIs: () => Y,
                         events: () => x,
-                        extraSize: () => Y,
-                        forceTriggerMouseMove: () => J,
+                        extraSize: () => Z,
+                        forceTriggerMouseMove: () => K,
                         freezeTextureBeforeResize: () => N,
                         getBrowserTexturePath: () => C,
-                        getDisplayStatus: () => K,
+                        getDisplayStatus: () => X,
                         getScale: () => H,
                         getSize: () => B,
                         getViewGlobalPosition: () => G,
-                        isEventHandled: () => $,
+                        isClientAccessible: () => U,
+                        isEventHandled: () => J,
                         isFocused: () => W,
                         pxToRem: () => I,
                         remToPx: () => q,
                         resize: () => D,
-                        sendEvent: () => F,
+                        sendEvent: () => V,
                         setAnimateWindow: () => Q,
-                        setEventHandled: () => U,
-                        setInputPaddingsRem: () => A,
+                        setEventHandled: () => $,
+                        setInputPaddingsRem: () => M,
                         setSidePaddingsRem: () => k,
-                        whenTutorialReady: () => Z,
+                        whenTutorialReady: () => ee,
                     }));
                 var s = t(179),
                     u = t.n(s),
@@ -166,7 +167,7 @@
                     O = 16,
                     z = 32,
                     j = 64,
-                    V = (e, n) => {
+                    A = (e, n) => {
                         const t = 'GFViewEventProxy';
                         if (void 0 !== n) {
                             const i = n.args,
@@ -202,21 +203,21 @@
                         return viewEnv.handleViewEvent({ __Type: t, type: e });
                         var r;
                     },
-                    F = {
+                    V = {
                         close(e) {
-                            V('popover' === e ? S : z);
+                            A('popover' === e ? S : z);
                         },
                         minimize() {
-                            V(j);
+                            A(j);
                         },
                         move(e) {
-                            V(O, { isMouseEvent: !0, on: e });
+                            A(O, { isMouseEvent: !0, on: e });
                         },
                     };
-                function M(e) {
+                function F(e) {
                     viewEnv.addPreloadTexture(e);
                 }
-                function A(e) {
+                function M(e) {
                     viewEnv.setHitAreaPaddingsRem(e, e, e, e, 15);
                 }
                 function C(e, n, t, r = 1) {
@@ -257,19 +258,22 @@
                     return viewEnv.isFocused();
                 }
                 function U() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function $() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function J() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function K() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function X() {
                     return viewEnv.getShowingStatus();
                 }
-                const X = Object.keys(_).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === _[n]), e), {}),
-                    Y = {
+                const Y = Object.keys(_).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === _[n]), e), {}),
+                    Z = {
                         set: (e, n) => {
                             viewEnv.setExtraSizeRem(e, n);
                         },
@@ -277,14 +281,14 @@
                             viewEnv.getExtraSizeRem(e, n);
                         },
                     },
-                    Z = Promise.all([
+                    ee = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : x.onDomBuilt(e);
                         }),
                         engine.whenReady,
                     ]),
-                    ee = { view: a, client: i };
-                function ne() {
+                    ne = { view: a, client: i };
+                function te() {
                     const e = (0, s.useRef)(0);
                     var n;
                     return (
@@ -313,15 +317,15 @@
                         )
                     );
                 }
-                const te = {
+                const re = {
                         base: 'TooltipDecorator_base_c9',
                         'base__theme-default': 'TooltipDecorator_base__theme-default_6d',
                         decorator: 'TooltipDecorator_decorator_3d',
                     },
-                    re = ['children', 'className', 'theme'];
-                function ie() {
+                    ie = ['children', 'className', 'theme'];
+                function oe() {
                     return (
-                        (ie =
+                        (oe =
                             Object.assign ||
                             function (e) {
                                 for (var n = 1; n < arguments.length; n++) {
@@ -330,10 +334,10 @@
                                 }
                                 return e;
                             }),
-                        ie.apply(this, arguments)
+                        oe.apply(this, arguments)
                     );
                 }
-                const oe = u().forwardRef(function (e, n) {
+                const ae = u().forwardRef(function (e, n) {
                         let t = e.children,
                             r = e.className,
                             i = e.theme,
@@ -346,8 +350,8 @@
                                     o = Object.keys(e);
                                 for (r = 0; r < o.length; r++) ((t = o[r]), n.indexOf(t) >= 0 || (i[t] = e[t]));
                                 return i;
-                            })(e, re);
-                        const d = ne(),
+                            })(e, ie);
+                        const d = te(),
                             l = u().useRef(null);
                         var c;
                         return (
@@ -357,9 +361,9 @@
                                     if (!e) return;
                                     const n = e.scrollWidth,
                                         t = e.scrollHeight;
-                                    ee.view.resize(n, t);
+                                    ne.view.resize(n, t);
                                     const r = window.getComputedStyle(e);
-                                    ee.view.setSidePaddingsRem({
+                                    ne.view.setSidePaddingsRem({
                                         left: parseInt(r.getPropertyValue('padding-left'), 10),
                                         top: parseInt(r.getPropertyValue('padding-top'), 10),
                                         right: parseInt(r.getPropertyValue('padding-right'), 10),
@@ -370,49 +374,49 @@
                             (0, s.useEffect)(c, []),
                             u().createElement(
                                 'div',
-                                ie({}, a, {
-                                    className: v()(te.base, te[`base__theme-${o}`], r),
+                                oe({}, a, {
+                                    className: v()(re.base, re[`base__theme-${o}`], r),
                                     ref: function (e) {
                                         ((l.current = e), 'function' == typeof n ? n(e) : n && (n.current = e));
                                     },
                                 }),
-                                u().createElement('div', { className: te.decorator }, t),
+                                u().createElement('div', { className: re.decorator }, t),
                             )
                         );
                     }),
-                    ae = 'Tooltip_base_23',
-                    se = 'Tooltip_text_3a',
-                    ue = 'Tooltip_seperator_cd',
-                    de = 'Tooltip_infoSection_94',
-                    le = 'Tooltip_infoSection_icon_92',
-                    ce = 'Tooltip_infoSection_text_dd',
-                    ve = () =>
+                    se = 'Tooltip_base_23',
+                    ue = 'Tooltip_text_3a',
+                    de = 'Tooltip_seperator_cd',
+                    le = 'Tooltip_infoSection_94',
+                    ce = 'Tooltip_infoSection_icon_92',
+                    ve = 'Tooltip_infoSection_text_dd',
+                    fe = () =>
                         u().createElement(
-                            oe,
+                            ae,
                             null,
                             u().createElement(
                                 'div',
-                                { className: ae },
+                                { className: se },
                                 u().createElement(
                                     'div',
-                                    { className: se },
+                                    { className: ue },
                                     R.strings.personal_reserves.noReserveTooltip.text(),
                                 ),
-                                u().createElement('div', { className: ue }),
+                                u().createElement('div', { className: de }),
                                 u().createElement(
                                     'div',
-                                    { className: de },
-                                    u().createElement('div', { className: le }),
+                                    { className: le },
+                                    u().createElement('div', { className: ce }),
                                     u().createElement(
                                         'div',
-                                        { className: ce },
+                                        { className: ve },
                                         R.strings.personal_reserves.noReserveTooltip.infoText(),
                                     ),
                                 ),
                             ),
                         );
                 engine.whenReady.then(() => {
-                    l().render(u().createElement(ve, null), document.getElementById('root'));
+                    l().render(u().createElement(fe, null), document.getElementById('root'));
                 });
             },
         },

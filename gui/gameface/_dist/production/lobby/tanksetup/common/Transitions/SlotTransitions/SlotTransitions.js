@@ -155,27 +155,28 @@
                         addPreloadTexture: () => o,
                         children: () => n,
                         displayStatus: () => s.W,
-                        displayStatusIs: () => R,
+                        displayStatusIs: () => F,
                         events: () => a.U,
-                        extraSize: () => F,
-                        forceTriggerMouseMove: () => T,
+                        extraSize: () => x,
+                        forceTriggerMouseMove: () => O,
                         freezeTextureBeforeResize: () => v,
                         getBrowserTexturePath: () => l,
-                        getDisplayStatus: () => O,
+                        getDisplayStatus: () => R,
                         getScale: () => h,
                         getSize: () => b,
                         getViewGlobalPosition: () => m,
-                        isEventHandled: () => f,
+                        isClientAccessible: () => g,
+                        isEventHandled: () => T,
                         isFocused: () => S,
                         pxToRem: () => E,
                         remToPx: () => w,
                         resize: () => u,
                         sendEvent: () => _.qP,
                         setAnimateWindow: () => p,
-                        setEventHandled: () => g,
+                        setEventHandled: () => f,
                         setInputPaddingsRem: () => r,
                         setSidePaddingsRem: () => d,
-                        whenTutorialReady: () => x,
+                        whenTutorialReady: () => A,
                     }));
                 var n = i(3722),
                     s = i(6112),
@@ -225,22 +226,25 @@
                     return viewEnv.isFocused();
                 }
                 function g() {
-                    return viewEnv.setEventHandled();
+                    return viewEnv.isClientAccessible();
                 }
                 function f() {
-                    return viewEnv.isEventHandled();
+                    return viewEnv.setEventHandled();
                 }
                 function T() {
-                    viewEnv.forceTriggerMouseMove();
+                    return viewEnv.isEventHandled();
                 }
                 function O() {
+                    viewEnv.forceTriggerMouseMove();
+                }
+                function R() {
                     return viewEnv.getShowingStatus();
                 }
-                const R = Object.keys(s.W).reduce(
+                const F = Object.keys(s.W).reduce(
                         (e, t) => ((e[t] = () => viewEnv.getShowingStatus() === s.W[t]), e),
                         {},
                     ),
-                    F = {
+                    x = {
                         set: (e, t) => {
                             viewEnv.setExtraSizeRem(e, t);
                         },
@@ -248,7 +252,7 @@
                             viewEnv.getExtraSizeRem(e, t);
                         },
                     },
-                    x = Promise.all([
+                    A = Promise.all([
                         new Promise((e) => {
                             window.isDomBuilt ? e() : a.U.onDomBuilt(e);
                         }),
@@ -974,13 +978,13 @@
                             f = v.intCD,
                             F = (0, _.useState)(!0),
                             x = F[0],
-                            D = F[1],
-                            A = (0, _.useState)(!0),
-                            L = A[0],
-                            k = A[1],
-                            y = (0, _.useState)(u),
-                            C = y[0],
-                            M = y[1],
+                            A = F[1],
+                            D = (0, _.useState)(!0),
+                            L = D[0],
+                            k = D[1],
+                            C = (0, _.useState)(u),
+                            y = C[0],
+                            M = C[1],
                             P = (0, _.useState)(i),
                             N = P[0],
                             I = P[1],
@@ -1021,14 +1025,14 @@
                                         case n._2:
                                             ((i.enterDone = O[`${$}__enter${c.mI.DESTROY}`]),
                                                 (i.exit = O[`${$}__exit${c.mI.DESTROY}`]),
-                                                (K.current = setTimeout(() => D(!0), c.YJ)),
+                                                (K.current = setTimeout(() => A(!0), c.YJ)),
                                                 k(!0));
                                             break;
                                         case n.sH:
                                         case n.dZ:
                                             ((i.enter = O[`${$}__enter${c.mI.DEMOUNT}${c.mI.FADE}`]),
                                                 (i.exit = O[`${$}__exit${c.mI.DEMOUNT}`]),
-                                                (K.current = setTimeout(() => D(!0), c.Ij)));
+                                                (K.current = setTimeout(() => A(!0), c.Ij)));
                                             break;
                                         case n.eC:
                                         case n.FR:
@@ -1057,7 +1061,7 @@
                                 [j, i, m],
                             ),
                             Z = (0, _.useCallback)(() => {
-                                (D(!1), k(!1));
+                                (A(!1), k(!1));
                             }, []);
                         return o().createElement(
                             o().Fragment,
@@ -1083,7 +1087,7 @@
                                     o().Fragment,
                                     null,
                                     o().createElement(S, { in: x, actionType: g }),
-                                    o().createElement(T, { in: L, maskImage: C }),
+                                    o().createElement(T, { in: L, maskImage: y }),
                                 ),
                         );
                     },

@@ -1099,6 +1099,15 @@
         <bank>	BP18_5/Stalcraft/voiceover.bnk	</bank>
       </wwbanks>
     </mode>
+    <mode>
+      <name>	DR26_ru_RU_Timurka	</name>
+      <wwise_language>	DR26_Timurka	</wwise_language>
+      <description></description>
+      <invisible>	True	</invisible>
+      <wwbanks>
+        <bank>	DR26_Timurka/voiceover.bnk	</bank>
+      </wwbanks>
+    </mode>
   </modes>
   <nationalPresets>
     <preset>

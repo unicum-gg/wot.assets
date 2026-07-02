@@ -1418,15 +1418,13 @@
                             if (t.mediumWidth && E) return W(e, t, h);
                             if (t.smallWidth && A) return W(e, t, h);
                             if (t.extraSmallWidth && F) return W(e, t, h);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && D) return e;
                                 if (t.largeHeight && m) return e;
                                 if (t.mediumHeight && d) return e;
@@ -2409,7 +2407,7 @@
                                     const e = a[u] || '',
                                         t = c[A] || '';
                                     if (e.match(E) || e === t) {
-                                        for (; e !== c[A] && A < c.length; ) A++;
+                                        for (; e !== c[A] && A < c.length;) A++;
                                         A++;
                                     }
                                 }
@@ -2438,8 +2436,8 @@
                                 if (s) return;
                                 let l = o;
                                 const c = _.test(a[o]);
-                                if (t && c) for (; _.test(a[l]) && l < a.length; ) l++;
-                                if (e && c) for (; _.test(a[l]) && l > 0; ) l--;
+                                if (t && c) for (; _.test(a[l]) && l < a.length;) l++;
+                                if (e && c) for (; _.test(a[l]) && l > 0;) l--;
                                 if (l !== o || (e && c))
                                     return (u.preventDefault(), (l = l < 0 ? 0 : l), void this.setCursorPosition(l, l));
                                 ((e && 1 === i && 1 === a.length) || t) &&
