@@ -405,7 +405,7 @@
                     n = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(u) {
                     let e = '';
-                    for (let t = n.length - 1; t >= 0; t--) for (; u >= n[t]; ) ((e += r[t]), (u -= n[t]));
+                    for (let t = n.length - 1; t >= 0; t--) for (; u >= n[t];) ((e += r[t]), (u -= n[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -884,9 +884,13 @@
                         if (t.mediumWidth && c) return a(e, t, f);
                         if (t.smallWidth && C) return a(e, t, f);
                         if (t.extraSmallWidth && d) return a(e, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -1502,7 +1506,7 @@
                         let i = au.exec(u),
                             A = u,
                             F = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 r = Eu.exec(t),
                                 o = iu.exec(t),
@@ -1626,7 +1630,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Du(n.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = Du(n.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };

@@ -427,7 +427,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function s(e) {
                     let t = '';
-                    for (let a = r.length - 1; a >= 0; a--) for (; e >= r[a]; ) ((t += n[a]), (e -= r[a]));
+                    for (let a = r.length - 1; a >= 0; a--) for (; e >= r[a];) ((t += n[a]), (e -= r[a]));
                     return t;
                 }
                 const o = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -928,15 +928,13 @@
                             if (a.mediumWidth && _) return s(t, a, D);
                             if (a.smallWidth && p) return s(t, a, D);
                             if (a.extraSmallWidth && v) return s(t, a, D);
-                            if (
-                                !(
-                                    a.extraLargeWidth ||
-                                    a.largeWidth ||
-                                    a.mediumWidth ||
-                                    a.smallWidth ||
-                                    a.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                a.extraLargeWidth ||
+                                a.largeWidth ||
+                                a.mediumWidth ||
+                                a.smallWidth ||
+                                a.extraSmallWidth
+                            )) {
                                 if (a.extraLargeHeight && h) return t;
                                 if (a.largeHeight && b) return t;
                                 if (a.mediumHeight && f) return t;
@@ -4278,7 +4276,7 @@
                         let i = Sn.exec(e),
                             u = e,
                             l = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const a = i[0],
                                 n = yn.exec(a),
                                 c = Nn.exec(a),

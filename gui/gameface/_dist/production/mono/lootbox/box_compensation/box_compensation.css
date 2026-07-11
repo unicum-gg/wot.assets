@@ -1,77 +1,3 @@
-@keyframes Arrow_fadeIn_4d7c987d {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.Arrow_6d88c43b {
-    width: 120rem;
-    height: 73rem;
-    background: no-repeat center/contain;
-}
-@keyframes Divider_fadeIn_76b1f722 {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.Divider_a108a991 {
-    width: 408rem;
-    height: 9rem;
-    background: no-repeat center/contain;
-}
-@keyframes GlowBlock_fadeIn_3b12d961 {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.GlowBlock_480232de {
-    width: 410rem;
-    height: 24rem;
-    position: relative;
-}
-
-.GlowBlock_glow_e73efd9c {
-    width: 350rem;
-    height: 180rem;
-    background-repeat: no-repeat;
-    background-position: -100rem 60rem;
-    background-size: cover;
-    opacity: 0.6;
-    mix-blend-mode: screen;
-    position: absolute;
-    bottom: -18rem;
-    left: -18rem;
-    z-index: 0;
-}
-
-.GlowBlock_text_7ba8322b {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.3em;
-    color: #e9e2bf;
-}
-
-.GlowBlock_count_7d740 {
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.3em;
-    color: #f2f2f7;
-    text-shadow: 0 0 12px rgb(255, 168, 0);
-}
 @keyframes Icon_fadeIn_55a8ab20 {
     from {
         opacity: 0;
@@ -82,12 +8,12 @@
 }
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Icon_8243dc1d {
-    width: 180rem;
-    height: 135rem;
+.Icon_6c79e3e6 {
+    width: 36rem;
+    height: 36rem;
     background: no-repeat center/contain;
 }
-@keyframes TextIcon_fadeIn_e765c01d {
+@keyframes Description_fadeIn_49efcb55 {
     from {
         opacity: 0;
     }
@@ -97,27 +23,58 @@
 }
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.TextIcon_cc0a0891 {
+.Description_9414e750 {
+    font-size: 18rem;
+    font-weight: 400;
+    line-height: 1.3em;
+    color: var(--color-general-tertiary);
+    line-height: 1.1;
+}
+@keyframes Heading_fadeIn_da06193d {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Heading_f7efc3ba {
+    font-size: 22rem;
+    font-weight: 700;
+    line-height: 1.3em;
+    color: rgba(var(--color-general-primary-rgb), 0.9);
+    font-weight: 400;
+}
+@keyframes Info_fadeIn_3f9bb731 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Info_bc45ff6f {
     display: flex;
     align-items: center;
-    width: 100%;
-    height: 20rem;
 }
 
-.TextIcon_icon_d1b62560 {
-    width: 16rem;
-    height: 16rem;
-    margin-right: 4rem;
-    background: no-repeat center/contain;
+.Info_image_becb520f {
+    width: 44rem;
 }
 
-.TextIcon_notification_f69487e6 {
-    font-size: 14rem;
+.Info_text_49672a8d {
+    font-size: 18rem;
     font-weight: 400;
-    line-height: 1.2em;
-    color: #8c8c7e;
+    line-height: 1.3em;
+    flex-shrink: 1;
+    color: var(--color-general-tertiary);
+    line-height: 1.1;
 }
-@keyframes Title_fadeIn_2e63cf3 {
+@keyframes Tooltip_fadeIn_648bdb8d {
     from {
         opacity: 0;
     }
@@ -127,17 +84,31 @@
 }
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Title_bc528df2 {
-    font-size: 18rem;
-    font-weight: 700;
-    line-height: 1.3em;
-    color: #e9e2bf;
+.Tooltip_description_94cd0a81 {
+    margin-top: 4rem;
 }
-.Title_base__small_919c2807 {
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.3em;
-    color: #e9e2bf;
+
+.Tooltip_divider_e05cf029 {
+    margin: 10rem 0;
+}
+@keyframes Box_fadeIn_0 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
+.Box_mainArt_ffe0e197 {
+    width: 296rem;
+    height: 222rem;
+    background: no-repeat center/contain;
+}
+
+.Box_shield_6c5351b6 {
+    transform: translateX(-3rem);
 }
 @keyframes App_fadeIn_0 {
     from {
@@ -149,76 +120,12 @@
 }
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.App_cab7a561 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 450rem;
+.App_76b0d555 {
+    width: 340rem;
     padding: 18rem 20rem;
     background-color: #0d0d0c;
 }
 
-.App_info_3f0f2d4 {
-    position: absolute;
-    top: 12rem;
-    left: 20rem;
-}
-
-.App_content_21db64d3 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 400rem;
-    height: 170rem;
-    position: relative;
-}
-
-.App_arrow_5f9090c6 {
-    position: absolute;
-    top: 50rem;
-    left: 130rem;
-}
-
-.App_textBlock_b6e75841,
-.App_highlight_86866f89 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.App_textBlock_b6e75841 {
+.App_content_459d87fe {
     width: 100%;
-    margin: 12rem 0 3rem;
-}
-
-.App_highlight_86866f89 {
-    width: 410rem;
-    padding: 12rem 0 16rem;
-    background: linear-gradient(
-        90deg,
-        rgba(201, 201, 182, 0) 0%,
-        rgba(201, 201, 182, 0.08) 33.33%,
-        rgba(201, 201, 182, 0.08) 66.67%,
-        rgba(201, 201, 182, 0) 100%
-    );
-}
-
-.App_description_a897f85c {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.3em;
-    margin-top: 8rem;
-    color: #8c8c7e;
-}
-
-.App_topDivider_fa28fc4b {
-    transform: translateY(5rem);
-}
-
-.App_bottomDivider_d6e091c2 {
-    transform: translateY(-5rem);
-}
-
-.App_glow_4704b493 {
-    margin-top: 12rem;
 }

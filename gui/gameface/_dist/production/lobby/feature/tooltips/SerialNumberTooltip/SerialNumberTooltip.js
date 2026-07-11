@@ -336,7 +336,7 @@
                     })(),
                     le = function (e) {
                         let t = '';
-                        for (let n = L.length - 1; n >= 0; n--) for (; e >= L[n]; ) ((t += F[n]), (e -= L[n]));
+                        for (let n = L.length - 1; n >= 0; n--) for (; e >= L[n];) ((t += F[n]), (e -= L[n]));
                         return t;
                     };
                 function de() {

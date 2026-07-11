@@ -7,11 +7,11 @@ import {
     w as o,
     x as l,
     S as p,
-    O as u,
+    W as u,
     B as d,
-    N as m,
-    M as _,
-    P as T,
+    O as m,
+    N as _,
+    X as T,
 } from '../../../chunks/lib.js';
 const x = 'Tips_79909a0',
     v = 'Tips_textBlock_182bfa9e',
@@ -22,15 +22,15 @@ const x = 'Tips_79909a0',
     b = 'Tips_arrow__prev_bf61631b',
     j = 'Tips_arrow__next_ffedf751',
     S = 'Tips_arrow__focused_1d6c0538',
-    M = n.resolve('strings');
-function w({ descr: a, onShowPrevTip: i, onShowNextTip: n, focusedIndex: c }) {
+    w = n.resolve('strings');
+function M({ descr: a, onShowPrevTip: i, onShowNextTip: n, focusedIndex: c }) {
     return e.jsxs('div', {
         className: x,
         children: [
             e.jsxs('div', {
                 className: v,
                 children: [
-                    e.jsx('div', { className: h, children: M.readOrEmpty('maps_training.queue.titleTips') }),
+                    e.jsx('div', { className: h, children: w.readOrEmpty('maps_training.queue.titleTips') }),
                     e.jsx(r, { split: !0, upgradeLegacy: !0, className: g, text: a }),
                 ],
             }),
@@ -71,9 +71,9 @@ const [k, y] = c()(
     ),
     E = 'MapsTrainingQueue_sceneWrapper_eb6e1bef',
     O = 'MapsTrainingQueue_efb55e16',
-    P = 'MapsTrainingQueue_box_4e1afcbd',
-    q = 'MapsTrainingQueue_time_5b62c1a7',
-    C = 'MapsTrainingQueue_timeValue_a055e4d3',
+    q = 'MapsTrainingQueue_box_4e1afcbd',
+    C = 'MapsTrainingQueue_time_5b62c1a7',
+    P = 'MapsTrainingQueue_timeValue_a055e4d3',
     Q = 'MapsTrainingQueue_button_66a29f22',
     A = 'MapsTrainingQueue_button__focus_9e1e4044',
     B = 'MapsTrainingQueue_title_24c8a587',
@@ -87,7 +87,7 @@ const I = a(function () {
         t = a.time.get(),
         c = i.useMemo(
             function () {
-                return { time: e.jsx('div', { className: C, children: t }) };
+                return { time: e.jsx('div', { className: P, children: t }) };
             },
             [t],
         ),
@@ -117,9 +117,9 @@ const I = a(function () {
                     }),
                 }),
                 e.jsxs('div', {
-                    className: P,
+                    className: q,
                     children: [
-                        e.jsx(u, { classMix: q, text: W.readOrEmpty('maps_training.queue.time'), binding: c }),
+                        e.jsx(u, { classMix: C, text: W.readOrEmpty('maps_training.queue.time'), binding: c }),
                         e.jsx(d, {
                             className: s(Q, 0 === _ && A),
                             theme: d.themes.secondary,
@@ -130,7 +130,7 @@ const I = a(function () {
                         m && e.jsx('div', { className: B, children: m }),
                     ],
                 }),
-                e.jsx(w, {
+                e.jsx(M, {
                     descr: a.descrTip.get(),
                     onShowPrevTip: n.showPrevTip,
                     onShowNextTip: n.showNextTip,

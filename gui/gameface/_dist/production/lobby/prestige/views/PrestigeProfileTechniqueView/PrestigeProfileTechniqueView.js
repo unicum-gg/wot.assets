@@ -648,7 +648,7 @@
                     n = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(u) {
                     let e = '';
-                    for (let t = n.length - 1; t >= 0; t--) for (; u >= n[t]; ) ((e += r[t]), (u -= n[t]));
+                    for (let t = n.length - 1; t >= 0; t--) for (; u >= n[t];) ((e += r[t]), (u -= n[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1235,9 +1235,13 @@
                         if (t.mediumWidth && c) return a(e, t, p);
                         if (t.smallWidth && m) return a(e, t, p);
                         if (t.extraSmallWidth && B) return a(e, t, p);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && g) return e;
                             if (t.largeHeight && C) return e;
                             if (t.mediumHeight && _) return e;
@@ -1536,7 +1540,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = O(n.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = O(n.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -1800,7 +1804,7 @@
                         let s = nu.exec(u),
                             o = u,
                             l = 0;
-                        for (; s; ) {
+                        for (; s;) {
                             const t = s[0],
                                 r = au.exec(t),
                                 E = iu.exec(t),

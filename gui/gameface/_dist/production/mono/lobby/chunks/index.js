@@ -1,21 +1,21 @@
-import { r as e, j as a, E as t, i as r, D as s, t as o, f as l, u as n, R as i } from './vendor.js';
-import { d5 as c, d6 as d, b7 as m, i as u, k as p, m as x, l as h, d7 as g, am as f } from './lib.js';
-const b = (a, t) => {
-        const r = a.width / a.height,
+import { r as e, j as a, E as r, i as t, D as s, t as o, f as i, u as l, R as n } from './vendor.js';
+import { d9 as c, da as d, ba as u, i as m, o as p, m as g, q as h, db as x, ap as f } from './lib.js';
+const S = (a, r) => {
+        const t = a.width / a.height,
             { width: s, height: o } = c();
         return e.useMemo(
-            () => (s >= o * r ? s / a.width : o >= s / r ? o / a.height : t),
-            [a.height, a.width, t, o, r, s],
+            () => (s >= o * t ? s / a.width : o >= s / t ? o / a.height : r),
+            [a.height, a.width, r, o, t, s],
         );
     },
     y = 'VideoBackground_videoBackground_1a24cf5e',
-    j = 'VideoBackground_video_102f3645',
-    k = { width: 1920, height: 1080 };
-function N({ className: r, src: s, paused: o, rotated: l = !1, onPlay: n }) {
-    const i = b(k, 1),
+    b = 'VideoBackground_video_102f3645',
+    $ = { width: 1920, height: 1080 };
+function j({ className: t, src: s, paused: o, rotated: i = !1, onPlay: l }) {
+    const n = S($, 1),
         c = e.useRef(null),
-        u = () => {
-            n && n();
+        m = () => {
+            l && l();
         };
     return (
         e.useEffect(() => {
@@ -25,178 +25,192 @@ function N({ className: r, src: s, paused: o, rotated: l = !1, onPlay: n }) {
         d.isLow()
             ? null
             : a.jsx('div', {
-                  className: t(y, r),
-                  style: { transform: `scale(${i}) ${l ? 'rotate(180deg)' : ''}` },
-                  children: a.jsx(m, {
+                  className: r(y, t),
+                  style: { transform: `scale(${n}) ${i ? 'rotate(180deg)' : ''}` },
+                  children: a.jsx(u, {
                       ref: c,
-                      onPlay: u,
-                      onTimeUpdate: u,
+                      onPlay: m,
+                      onTimeUpdate: m,
                       src: s,
-                      className: j,
+                      className: b,
                       loop: !0,
                       autoplay: !0,
                   }),
               })
     );
 }
-const [_, $] = u()(
+const [N, _] = m()(
         ({ observableModel: e }) => {
             const a = { root: e.object(), parallax: e.array('parallax') },
-                t = r(
+                r = t(
                     () =>
-                        a.root.get().isParallaxEnabled ? x(JSON.parse(a.parallax.get().parallaxStructure), h) : void 0,
+                        a.root.get().isParallaxEnabled ? g(JSON.parse(a.parallax.get().parallaxStructure), h) : void 0,
                     { equals: p },
                 ),
-                s = r(() => JSON.parse(a.parallax.get().atlas), { equals: p });
-            return { ...a, computes: { parallaxStructureObj: t, atlasObj: s } };
+                s = t(() => JSON.parse(a.parallax.get().atlas), { equals: p });
+            return { ...a, computes: { parallaxStructureObj: r, atlasObj: s } };
         },
         ({ externalModel: e }) => ({ onSlide: e.createCallback((e) => ({ slideIndex: e }), 'onSlide') }),
     ),
-    v = { width: 2560, height: 1440 },
-    P = 'AssetItem_7cff1111',
-    S = 'AssetItem_sprite_c476eaa9',
-    w = 'AssetItem_imgLoader_6b833910',
-    O = (e, a, t, r) => {
-        const s = a[e.spriteName].frameX,
-            o = a[e.spriteName].frameY,
-            l = a[e.spriteName].sourceName,
+    k = { width: 2560, height: 1440 },
+    v = 'AssetItem_7cff1111',
+    P = 'AssetItem_sprite_c476eaa9',
+    O = 'AssetItem_imgLoader_6b833910',
+    z = (e, a, r, t) => {
+        const s = a[e.spriteName].sourceName,
+            o = a[e.spriteName].rotated,
+            i = a[e.spriteName].frameX,
+            l = a[e.spriteName].frameY,
             n = a[e.spriteName].sourceWidth,
-            i = a[e.spriteName].sourceHeight;
+            c = a[e.spriteName].sourceHeight,
+            d = ((e, a, r) => {
+                const t = e ? r[a].spriteSourceSizeH : r[a].spriteSourceSizeW,
+                    s = e ? r[a].spriteSourceSizeW : r[a].spriteSourceSizeH,
+                    o = r[a].sourceSizeW,
+                    i = r[a].sourceSizeH,
+                    l = i - (r[a].spriteSourceSizeY + r[a].spriteSourceSizeH);
+                return {
+                    spriteSourceSizeW: t,
+                    spriteSourceSizeH: s,
+                    transformOriginCorrectX: (e ? i : o) / 2 - (e ? l : r[a].spriteSourceSizeX),
+                    transformOriginCorrectY: (e ? o : i) / 2 - (e ? r[a].spriteSourceSizeX : r[a].spriteSourceSizeY),
+                };
+            })(o, e.spriteName, a);
         return {
             style: {
-                width: e.width,
-                height: e.height,
+                width: `${d.spriteSourceSizeW}rem`,
+                height: `${d.spriteSourceSizeH}rem`,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: `${-i}rem ${-l}rem`,
+                backgroundSize: `${n}rem ${c}rem`,
+                backgroundImage: `url('${t}${s}${r}')`,
                 opacity: e.opacity,
-                transform: e.transform,
-                transformOrigin: e.transformOrigin,
-                background: 'no-repeat 50% / 100% 100%',
-                backgroundImage: `url('${r}${l}${t}')`,
-                backgroundAttachment: 'fixed',
-                backgroundPosition: `-${s}rem -${o}rem`,
-                backgroundSize: `${n}rem ${i}rem`,
                 mixBlendMode: e.mixBlendMode,
+                transform: `translate(${-d.transformOriginCorrectX}rem, ${-d.transformOriginCorrectY}rem) rotate(${o ? '-90deg' : '0deg'})`,
+                transformOrigin: `${d.transformOriginCorrectX}rem ${d.transformOriginCorrectY}rem`,
             },
-            source: { backgroundSource: `${r}${l}${t}` },
+            source: { backgroundSource: `${t}${s}${r}` },
         };
     },
-    L = s(function ({ loadChecker: e, item: t }) {
-        const { model: r } = $(),
-            { chunkFileExt: s, chunksAssetsPath: o } = r.parallax.get();
+    C = s(function ({ loadChecker: e, item: r }) {
+        const { model: t } = _(),
+            { chunkFileExt: s, chunksAssetsPath: o } = t.parallax.get();
         return a.jsxs('div', {
-            className: P,
+            className: v,
+            style: { width: `${r.width}`, height: `${r.height}`, transform: `${r.transform}` },
             children: [
-                a.jsx('div', { className: S, style: { ...O(t, r.computes.atlasObj(), s, o).style } }),
+                a.jsx('div', { className: P, style: z(r, t.computes.atlasObj(), s, o).style }),
                 a.jsx('img', {
-                    className: w,
-                    alt: t.keyName,
-                    src: O(t, r.computes.atlasObj(), s, o).source.backgroundSource,
+                    className: O,
+                    alt: r.keyName,
+                    src: z(r, t.computes.atlasObj(), s, o).source.backgroundSource,
                     onLoad: e,
                 }),
             ],
         });
     }),
-    A = 'Assets_c481c379',
-    I = s(function ({ dioramaLoaded: t }) {
-        const { model: r } = $(),
-            s = r.computes.parallaxStructureObj(),
+    w = 'Assets_c481c379',
+    L = s(function ({ dioramaLoaded: r }) {
+        const { model: t } = _(),
+            s = t.computes.parallaxStructureObj(),
             o = s ? s.length : 0,
-            l = e.useRef(0),
-            n = e.useCallback(() => {
-                (l.current++, l.current >= o && (t && t(), (l.current = 0)));
-            }, [t, o]);
+            i = e.useRef(0),
+            l = e.useCallback(() => {
+                (i.current++, i.current >= o && (r && r(), (i.current = 0)));
+            }, [r, o]);
         return a.jsx('div', {
-            className: A,
-            children: s && s.map((e, t) => a.jsx(L, { item: e, loadChecker: n }, `${e.slideId}_${e.keyName}_${t}`)),
+            className: w,
+            children: s && s.map((e, r) => a.jsx(C, { item: e, loadChecker: l }, `${e.slideId}_${e.keyName}_${r}`)),
         });
     }),
-    T = s(function ({ children: e }) {
-        const { model: t } = $(),
+    I = s(function ({ children: e }) {
+        const { model: r } = _(),
             {
-                perspective: r,
+                perspective: t,
                 overallScale: s,
                 perspectiveOriginX: o,
-                perspectiveOriginY: l,
-                wrapperHeight: n,
-                wrapperWidth: i,
-            } = t.parallax.get();
+                perspectiveOriginY: i,
+                wrapperHeight: l,
+                wrapperWidth: n,
+            } = r.parallax.get();
         return a.jsx('div', {
             style: {
                 position: 'absolute',
                 top: '50%',
                 left: '50%',
                 transform: `translate(-50%, -50%) scale(${s})`,
-                perspective: `${r}rem`,
-                perspectiveOrigin: `${o}% ${l}%`,
-                width: `${i}rem`,
-                height: `${n}rem`,
+                perspective: `${t}rem`,
+                perspectiveOrigin: `${o}% ${i}%`,
+                width: `${n}rem`,
+                height: `${l}rem`,
             },
             children: e,
         });
     }),
-    C = 'ParallaxContent_b21e1eda',
-    B = 'ParallaxContent_asset_b21e1eda',
-    E = s(function ({ refParent: e, dioramaLoaded: t }) {
-        const { model: r } = $(),
-            { xTilt: s, xTiltRange: l, yTilt: n, yTiltRange: i, xSlide: c, ySlide: d } = r.parallax.get(),
-            [m] = g({ xTilt: s, xTiltRange: l, yTilt: n, yTiltRange: i }, e);
-        return a.jsx(T, {
+    A = 'ParallaxContent_b21e1eda',
+    T = 'ParallaxContent_asset_b21e1eda',
+    H = s(function ({ refParent: e, dioramaLoaded: r }) {
+        const { model: t } = _(),
+            { xTilt: s, xTiltRange: i, yTilt: l, yTiltRange: n, xSlide: c, ySlide: d } = t.parallax.get(),
+            [u] = x({ xTilt: s, xTiltRange: i, yTilt: l, yTiltRange: n }, e);
+        return a.jsx(I, {
             children: a.jsx(o.div, {
-                style: { x: m.x.to((e) => e * c), y: m.y.to((e) => e * d), rotateX: m.xR, rotateY: m.yR },
-                className: C,
-                children: a.jsx('div', { className: B, children: a.jsx(I, { dioramaLoaded: t }) }),
+                style: { x: u.x.to((e) => e * c), y: u.y.to((e) => e * d), rotateX: u.xR, rotateY: u.yR },
+                className: A,
+                children: a.jsx('div', { className: T, children: a.jsx(L, { dioramaLoaded: r }) }),
             }),
         });
     }),
-    M = 'StaticBackground_22188923',
-    V = 'StaticBackground_preloader_ebcf28a3';
-function X({ className: e, backgroundPath: t, onLoaded: r }) {
+    X = 'StaticBackground_22188923',
+    Y = 'StaticBackground_preloader_ebcf28a3';
+function B({ className: e, backgroundPath: r, onLoaded: t }) {
     return a.jsx('div', {
-        className: l(M, e),
-        style: { backgroundImage: `url(${t})` },
-        children: r && a.jsx('img', { className: V, onLoad: r, onError: r, src: t, alt: t }),
+        className: i(X, e),
+        style: { backgroundImage: `url(${r})` },
+        children: t && a.jsx('img', { className: Y, onLoad: t, onError: t, src: r, alt: r }),
     });
 }
-const Y = 'ParallaxApp_a1dd5662',
-    q = 'ParallaxApp_blackScreen_29b0a65d',
-    H = 'ParallaxApp_contentScale_a9de6486',
-    J = 'ParallaxApp_content_f4307e0d',
-    W = s(function ({ refParent: t, backgroundPath: r, slideIndex: s, onLoadCompleted: l }) {
-        const { model: i, controls: c } = $(),
-            d = b(v, 1),
-            [m, u] = n(() => ({ from: { opacity: 1 } })),
+const E = 'ParallaxApp_a1dd5662',
+    W = 'ParallaxApp_blackScreen_29b0a65d',
+    M = 'ParallaxApp_contentScale_a9de6486',
+    q = 'ParallaxApp_content_f4307e0d',
+    V = s(function ({ refParent: r, backgroundPath: t, slideIndex: s, onLoadCompleted: i }) {
+        const { model: n, controls: c } = _(),
+            d = S(k, 1),
+            [u, m] = l(() => ({ from: { opacity: 1 } })),
             p = e.useCallback(() => {
-                u.start({ from: { opacity: 1 }, to: { opacity: 0 }, config: { duration: 100 }, onStart: l });
-            }, [u, l]);
+                m.start({ from: { opacity: 1 }, to: { opacity: 0 }, config: { duration: 100 }, onStart: i });
+            }, [m, i]);
         return (
             e.useEffect(() => {
                 (c.onSlide(s),
-                    u.set({ opacity: 1 }),
-                    u.start({
+                    m.set({ opacity: 1 }),
+                    m.start({
                         from: { opacity: 1 },
                         to: { opacity: 0 },
                         delay: 1e3,
                         config: { duration: 100 },
-                        onRest: l,
+                        onRest: i,
                     }));
-            }, [u, c, l, s]),
+            }, [m, c, i, s]),
             a.jsxs('div', {
-                className: Y,
+                className: E,
                 children: [
                     a.jsx('div', {
-                        className: H,
+                        className: M,
                         style: { transform: `translate(-50%, -50%) scale(${d})` },
-                        children: i.root.get().isParallaxEnabled
-                            ? a.jsx(E, { dioramaLoaded: p, refParent: t })
-                            : a.jsx(X, { className: J, backgroundPath: r, onLoaded: p }),
+                        children: n.root.get().isParallaxEnabled
+                            ? a.jsx(H, { dioramaLoaded: p, refParent: r })
+                            : a.jsx(B, { className: q, backgroundPath: t, onLoaded: p }),
                     }),
-                    a.jsx(o.div, { className: q, style: m }),
+                    a.jsx(o.div, { className: W, style: u }),
                 ],
             })
         );
     }),
-    z = i.memo(function (t) {
-        const r = R.aliases.last_stand.shared.Parallax('resId'),
-            s = e.useMemo(() => ({ rootId: r }), [r]);
-        return a.jsx(f, { id: r, children: a.jsx(_, { options: s, children: a.jsx(W, { ...t }) }) });
+    J = n.memo(function (r) {
+        const t = R.aliases.last_stand.shared.Parallax('resId'),
+            s = e.useMemo(() => ({ rootId: t }), [t]);
+        return a.jsx(f, { id: t, children: a.jsx(N, { options: s, children: a.jsx(V, { ...r }) }) });
     });
-export { z as P, N as V };
+export { J as P, j as V };

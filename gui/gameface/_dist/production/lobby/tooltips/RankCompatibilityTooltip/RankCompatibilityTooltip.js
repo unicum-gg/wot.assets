@@ -290,7 +290,7 @@
                     })(),
                     uu = function (u) {
                         let A = '';
-                        for (let F = x.length - 1; F >= 0; F--) for (; u >= x[F]; ) ((A += y[F]), (u -= x[F]));
+                        for (let F = x.length - 1; F >= 0; F--) for (; u >= x[F];) ((A += y[F]), (u -= x[F]));
                         return A;
                     },
                     Au = Object.keys(T).reduce((u, A) => ((u[A] = () => viewEnv.getShowingStatus() === T[A]), u), {}),

@@ -188,7 +188,7 @@
                     w = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function x(u) {
                     let e = '';
-                    for (let t = w.length - 1; t >= 0; t--) for (; u >= w[t]; ) ((e += b[t]), (u -= w[t]));
+                    for (let t = w.length - 1; t >= 0; t--) for (; u >= w[t];) ((e += b[t]), (u -= w[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -896,9 +896,13 @@
                         if (t.mediumWidth && d) return s(e, t, p);
                         if (t.smallWidth && m) return s(e, t, p);
                         if (t.extraSmallWidth && B) return s(e, t, p);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && _) return e;
                             if (t.mediumHeight && g) return e;
@@ -1387,7 +1391,7 @@
                                             e(u).delete(t);
                                         },
                                         r = (u, ...t) => {
-                                            for (var n, r = eu(e(u).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = eu(e(u).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, i.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),
@@ -2322,7 +2326,7 @@
                                     let n = 0,
                                         r = t - 1,
                                         a = !1;
-                                    for (; r - n > 1; ) {
+                                    for (; r - n > 1;) {
                                         const t = n + Math.floor(0.5 * (r - n + 1));
                                         ((a = Ee(u[t], e)), a ? (r = t) : (n = t));
                                     }
@@ -2374,7 +2378,7 @@
                             let a = me.exec(u),
                                 s = u,
                                 l = 0;
-                            for (; a; ) {
+                            for (; a;) {
                                 const t = a[0],
                                     i = Be.exec(t),
                                     c = Ce.exec(t),
@@ -2474,7 +2478,7 @@
                             var r = n[t];
                             if ('number' == typeof r) e[t] = u[r];
                             else {
-                                for (var a = 0; void 0 === u[r[a]] && a + 1 < r.length; ) a++;
+                                for (var a = 0; void 0 === u[r[a]] && a + 1 < r.length;) a++;
                                 e[t] = u[r[a]];
                             }
                             return e;
@@ -2544,7 +2548,7 @@
                 function pe(u) {
                     const e = [Qu(u)];
                     let t = 0;
-                    for (; t < e.length; ) {
+                    for (; t < e.length;) {
                         const u = e[t];
                         if ('string' == typeof u) {
                             const n = fe(/\{(.*)Open\}(.*?)\{\1Close\}/, { tag: 1 }).exec(u);
@@ -2563,7 +2567,7 @@
                                             )
                                         ),
                                     );
-                                for (; a < r.length; ) (r.splice(a, 0, ...i), (a += i.length + 1));
+                                for (; a < r.length;) (r.splice(a, 0, ...i), (a += i.length + 1));
                                 ('' === r[0] && r.splice(0, 1), e.splice(t, 1, ...r));
                             } else if (u.substr(0, u.length - 1).includes(' ')) {
                                 const n = u.split(' ').map((u, e, t) => (t.length - 1 === e ? u : u + ' '));

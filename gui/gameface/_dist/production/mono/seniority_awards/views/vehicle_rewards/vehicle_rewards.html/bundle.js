@@ -87,7 +87,7 @@ const ue = (e) => (e === be.SELECTION ? se : ie),
                 vehicles: s.array('vehicles'),
                 previousVehicleIndex: e.box(0),
                 selectedVehicleIndex: e.box(0),
-                selectedVehicleId: e.box(s.array('vehicles').get()[0].value.vehicleId),
+                selectedVehicleId: e.box(s.array('vehicles').get()[0]?.value.vehicleId),
             };
             return { ...i, computes: { vehiclesLength: a(() => i.vehicles.get().length) } };
         },
@@ -341,13 +341,15 @@ const Se = (e) => {
             i = s.vehicles.get(),
             c = s.computes.vehiclesLength(),
             n = s.selectedVehicleIndex.get() > c - 1 ? 0 : s.selectedVehicleIndex.get(),
-            r = i[s.previousVehicleIndex.get() > c - 1 ? 0 : s.previousVehicleIndex.get()].value.techName,
-            [d, h] = l.useState('active');
+            r = s.previousVehicleIndex.get() > c - 1 ? 0 : s.previousVehicleIndex.get();
+        if (!i[r] || !i[n]) return;
+        const d = i[r].value.techName,
+            [h, _] = l.useState('active');
         l.useEffect(() => {
-            'end' === d && e?.();
-        }, [e, d]);
+            'end' === h && e?.();
+        }, [e, h]);
         return t.jsx('div', {
-            className: o(Le.base, 'selectionSubmitted' === d && Le.base__submitted),
+            className: o(Le.base, 'selectionSubmitted' === h && Le.base__submitted),
             children: t.jsx('div', {
                 className: Le.container,
                 children: t.jsx('div', {
@@ -356,14 +358,14 @@ const Se = (e) => {
                         ...i[n].value,
                         index: 0,
                         onRestAnimation: () => {
-                            h('end');
+                            _('end');
                         },
                         size: 'big',
-                        isEnabledSound: 'active' === d,
+                        isEnabledSound: 'active' === h,
                         state: xe.Selection,
-                        previousTechName: r,
+                        previousTechName: d,
                         onSubmitBtnClick: () => {
-                            (h('selectionSubmitted'), a && a());
+                            (_('selectionSubmitted'), a && a());
                         },
                     }),
                 }),
@@ -447,16 +449,19 @@ const Se = (e) => {
                     else if (f) {
                         const a = d.current[e],
                             s = d.current[e + 1];
+                        if (!s || !a) return;
                         g(Math.round(s.getBoundingClientRect().right), a.offsetWidth);
                     }
                 },
                 [f, g, r.length],
             );
-        return (
-            l.useEffect(() => {
+        if (
+            (l.useEffect(() => {
                 b && s?.();
             }, [s, b]),
-            t.jsx('div', {
+            r[0])
+        )
+            return t.jsx('div', {
                 className: o(De.base, c && De.base__afterSelection),
                 children: t.jsx('div', {
                     className: De.container,
@@ -482,7 +487,9 @@ const Se = (e) => {
                                               return t.jsx(
                                                   'div',
                                                   {
-                                                      ref: (e) => (d.current[a] = e),
+                                                      ref: (e) => {
+                                                          d.current[a] = e;
+                                                      },
                                                       className: o(De.item, De.item__offset, De[`item__${s}`]),
                                                       children: t.jsx(ke, {
                                                           ...e,
@@ -504,8 +511,7 @@ const Se = (e) => {
                               ],
                           }),
                 }),
-            })
-        );
+            });
     }),
     Be = ({ isStoppedScrolling: e, onScrollChange: a, onAnimationEnd: s }) =>
         t.jsx(L, { children: t.jsx(Oe, { isStoppedScrolling: e, onScrollChange: a, onAnimationEnd: s }) }),
@@ -777,7 +783,7 @@ const Se = (e) => {
                                 K(() => {
                                     const s = e.computes.vehiclesLength() - 1,
                                         i = e.selectedVehicleIndex.get() > s ? s : e.selectedVehicleIndex.get();
-                                    a.selectVehicleReward(d[i].value.vehicleId);
+                                    d[i] && a.selectVehicleReward(d[i].value.vehicleId);
                                 }, 500));
                         },
                     }),

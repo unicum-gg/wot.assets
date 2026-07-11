@@ -188,7 +188,7 @@
                     w = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function x(u) {
                     let e = '';
-                    for (let t = w.length - 1; t >= 0; t--) for (; u >= w[t]; ) ((e += p[t]), (u -= w[t]));
+                    for (let t = w.length - 1; t >= 0; t--) for (; u >= w[t];) ((e += p[t]), (u -= w[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -983,9 +983,13 @@
                         if (t.mediumWidth && F) return s(e, t, f);
                         if (t.smallWidth && C) return s(e, t, f);
                         if (t.extraSmallWidth && B) return s(e, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && g) return e;
@@ -2072,7 +2076,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = Ou(a.keys()); !(u = t()).done; ) r(u.value, e);
+                                                        for (var u, t = Ou(a.keys()); !(u = t()).done;) r(u.value, e);
                                                     },
                                                     unsubscribe: r,
                                                 };
@@ -2581,7 +2585,7 @@
                         let i = Ee.exec(u),
                             s = u,
                             l = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 n = ce.exec(t),
                                 E = Ae.exec(t),
@@ -2716,7 +2720,7 @@
                                 o = (0, n.useCallback)(
                                     (e) => {
                                         let n = Su(t, e, u);
-                                        for (; n !== t; ) {
+                                        for (; n !== t;) {
                                             if (r[n].value) {
                                                 a(n);
                                                 break;

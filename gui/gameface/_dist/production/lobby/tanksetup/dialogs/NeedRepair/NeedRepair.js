@@ -497,9 +497,13 @@
                         if (t.mediumWidth && p) return (0, a.H)(u, t, B);
                         if (t.smallWidth && A) return (0, a.H)(u, t, B);
                         if (t.extraSmallWidth && g) return (0, a.H)(u, t, B);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && F) return u;
                             if (t.largeHeight && D) return u;
                             if (t.mediumHeight && h) return u;
@@ -950,7 +954,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, t = a(s.keys()); !(e = t()).done; ) {
+                            for (var e, t = a(s.keys()); !(e = t()).done;) {
                                 o(e.value, u);
                             }
                         },
@@ -1674,7 +1678,7 @@
                     a = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function r(e) {
                     let u = '';
-                    for (let t = a.length - 1; t >= 0; t--) for (; e >= a[t]; ) ((u += n[t]), (e -= a[t]));
+                    for (let t = a.length - 1; t >= 0; t--) for (; e >= a[t];) ((u += n[t]), (e -= a[t]));
                     return u;
                 }
                 const i = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -4444,7 +4448,7 @@
                                     const u = i[e] || '',
                                         t = m[A] || '';
                                     if (u.match(p) || u === t) {
-                                        for (; u !== m[A] && A < m.length; ) A++;
+                                        for (; u !== m[A] && A < m.length;) A++;
                                         A++;
                                     }
                                 }
@@ -4473,8 +4477,8 @@
                                 if (s) return;
                                 let d = c;
                                 const _ = o.test(i[c]);
-                                if (t && _) for (; o.test(i[d]) && d < i.length; ) d++;
-                                if (u && _) for (; o.test(i[d]) && d > 0; ) d--;
+                                if (t && _) for (; o.test(i[d]) && d < i.length;) d++;
+                                if (u && _) for (; o.test(i[d]) && d > 0;) d--;
                                 if (d !== c || (u && _))
                                     return (e.preventDefault(), (d = d < 0 ? 0 : d), void this.setCursorPosition(d, d));
                                 ((u && 1 === a && 1 === i.length) || t) &&

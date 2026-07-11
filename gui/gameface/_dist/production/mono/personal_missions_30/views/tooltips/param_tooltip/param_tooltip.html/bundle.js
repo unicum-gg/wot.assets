@@ -1,16 +1,16 @@
 import { D as s, j as e, f as n, E as o, F as t, G as i, q as l } from '../../../../chunks/vendor.js';
 import {
     i as r,
-    f as a,
-    v as c,
+    a,
+    p as c,
     ay as p,
     y as d,
     az as _,
-    r as m,
+    b as m,
     F as x,
     I as j,
     aA as u,
-    d as b,
+    q as b,
 } from '../../../../chunks/lib.js';
 import { G as h } from '../../../../chunks/gradient_decorator.js';
 /* empty css                       */ const [f, I] = r()((s) => {
@@ -25,8 +25,8 @@ import { G as h } from '../../../../chunks/gradient_decorator.js';
     };
 }, c);
 const N = 'Index_80365d11',
-    v = 'Index_base__withHeader_7d114cd0',
-    k = 'Index_title_79c25340',
+    k = 'Index_base__withHeader_7d114cd0',
+    v = 'Index_title_79c25340',
     B = 'Index_body_b1cb19fb',
     g = s({ body: t(), header: o(t()), split: o(i()) }),
     y =
@@ -45,9 +45,9 @@ const O = Object.freeze(
                         o = Boolean(s.header);
                     return e.jsx(p.Decorator, {
                         children: e.jsxs('div', {
-                            className: n(N, o && v),
+                            className: n(N, o && k),
                             children: [
-                                o && e.jsx('div', { className: k, children: s.header }),
+                                o && e.jsx('div', { className: v, children: s.header }),
                                 e.jsx(d, { split: void 0 === s.split || s.split, text: s.body, className: B }),
                             ],
                         }),
@@ -76,7 +76,7 @@ const O = Object.freeze(
     A = 'InnerBlock_description_20b6cccd',
     E = 'InnerBlock_subTitle_b0d5cb4f',
     L = 'InnerBlock_bullets_813d7b5';
-function C() {
+function q() {
     return e.jsxs('div', {
         className: D,
         children: [
@@ -104,9 +104,9 @@ function C() {
         ],
     });
 }
-const F = 'Index_3644a37a',
-    G = 'Index_icon_d52a6788',
-    q = 'Index_footer_b90ef2bf';
+const C = 'Index_3644a37a',
+    F = 'Index_icon_d52a6788',
+    G = 'Index_footer_b90ef2bf';
 const H = Object.freeze(
         Object.defineProperty(
             {
@@ -114,14 +114,14 @@ const H = Object.freeze(
                 default: function () {
                     return e.jsx(p.Decorator, {
                         children: e.jsxs('div', {
-                            className: F,
+                            className: C,
                             children: [
-                                e.jsx(j, { path: 'personal_missions_30.points.c_296x222', className: G }),
-                                e.jsx(h, { children: e.jsx(C, {}) }),
+                                e.jsx(j, { path: 'personal_missions_30.points.c_296x222', className: F }),
+                                e.jsx(h, { children: e.jsx(q, {}) }),
                                 e.jsx(x, {
                                     split: !0,
                                     path: 'personal_missions_30.tooltip.personalMissionsPoints.footer',
-                                    className: q,
+                                    className: G,
                                 }),
                             ],
                         }),

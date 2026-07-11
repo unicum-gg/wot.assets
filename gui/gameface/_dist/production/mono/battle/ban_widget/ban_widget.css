@@ -133,9 +133,12 @@
     font-size: 16rem;
 }
 
-.Candidates_description_7d32bb4d {
+.Candidates_description_88b130d5 {
     display: flex;
     align-items: center;
+    margin: 0 5rem 0 8rem;
+}
+.mediaMedium .Candidates_description_88b130d5 {
     margin: 0 8rem 0 11rem;
 }
 
@@ -628,9 +631,6 @@
     background: url('R.images.comp7.gui.maps.icons.ban.candidate_background') no-repeat center/cover;
     position: relative;
 }
-.Icons_banItem_51077df:first-child {
-    margin-left: 0rem;
-}
 .Icons_banItem__empty_53736c42 {
     width: 24rem;
     height: 24rem;
@@ -782,12 +782,12 @@
     }
 }
 /* should be percentage of screen width */
-.App_668adc51 {
+.App_c03b594d {
     display: flex;
     justify-content: center;
     align-items: center;
     align-self: center;
-    width: 698rem;
+    min-width: 800rem;
     height: 42rem;
     position: relative;
     pointer-events: auto;
@@ -804,12 +804,16 @@
     position: relative;
 }
 
-.App_arrow_8d16489d {
+.App_arrow_358619e4 {
     width: 9rem;
     height: 3rem;
     background: url('R.images.comp7.gui.maps.icons.ban.arrow') no-repeat center/contain;
     opacity: 0.5;
     position: absolute;
-    top: 0rem;
+    top: 0;
     left: -9rem;
+}
+
+.App_button_f521aafc {
+    margin-right: 2rem;
 }

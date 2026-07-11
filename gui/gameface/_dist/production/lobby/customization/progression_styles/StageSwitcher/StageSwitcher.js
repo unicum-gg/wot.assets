@@ -172,7 +172,7 @@
                     x = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function k(e) {
                     let t = '';
-                    for (let n = x.length - 1; n >= 0; n--) for (; e >= x[n]; ) ((t += T[n]), (e -= x[n]));
+                    for (let n = x.length - 1; n >= 0; n--) for (; e >= x[n];) ((t += T[n]), (e -= x[n]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

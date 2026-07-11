@@ -461,7 +461,7 @@
                     a = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function r(e) {
                     let t = '';
-                    for (let u = a.length - 1; u >= 0; u--) for (; e >= a[u]; ) ((t += n[u]), (e -= a[u]));
+                    for (let u = a.length - 1; u >= 0; u--) for (; e >= a[u];) ((t += n[u]), (e -= a[u]));
                     return t;
                 }
                 const i = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -966,9 +966,13 @@
                         if (u.mediumWidth && g) return r(t, u, D);
                         if (u.smallWidth && A) return r(t, u, D);
                         if (u.extraSmallWidth && f) return r(t, u, D);
-                        if (
-                            !(u.extraLargeWidth || u.largeWidth || u.mediumWidth || u.smallWidth || u.extraSmallWidth)
-                        ) {
+                        if (!(
+                            u.extraLargeWidth ||
+                            u.largeWidth ||
+                            u.mediumWidth ||
+                            u.smallWidth ||
+                            u.extraSmallWidth
+                        )) {
                             if (u.extraLargeHeight && b) return t;
                             if (u.largeHeight && p) return t;
                             if (u.mediumHeight && h) return t;
@@ -1395,7 +1399,7 @@
                             u = _e(t);
                         let n,
                             a = e;
-                        for (; null !== (n = oe.exec(e)); ) {
+                        for (; null !== (n = oe.exec(e));) {
                             const e = n[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
                                 const t = u + e[2].replace(/\.\.\//g, '');
@@ -1502,7 +1506,7 @@
                                             let t;
                                             const u = me(),
                                                 n = _e(u);
-                                            for (; null !== (t = se.exec(e)); ) {
+                                            for (; null !== (t = se.exec(e));) {
                                                 const e = t[0].match(/href="(.*?)"/);
                                                 if (e && !e[1].includes(ce) && n) {
                                                     const t = n + e[1].replace(/\.\.\//g, ''),
@@ -1517,7 +1521,7 @@
                                             ((e) => {
                                                 const t = _e(me());
                                                 let u;
-                                                for (; null !== (u = se.exec(e)); ) {
+                                                for (; null !== (u = se.exec(e));) {
                                                     const e = u[0].match(/href="(.*?)"/);
                                                     if (e) {
                                                         const u = t + e[1].replace(/\.\.\//g, ''),
@@ -2449,7 +2453,7 @@
                     yt = (e, t, u, n) => {
                         let a = t.exec(e),
                             r = 0;
-                        for (; a; ) (r !== a.index && u(e.slice(r, a.index)), n(a), (r = t.lastIndex), (a = t.exec(e)));
+                        for (; a;) (r !== a.index && u(e.slice(r, a.index)), n(a), (r = t.lastIndex), (a = t.exec(e)));
                         r !== e.length && u(e.slice(r));
                     },
                     kt = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -2495,7 +2499,7 @@
                               if (!n) return [e];
                               const a = [];
                               let r = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const i = t.justifyContent === mt.FlexEnd ? n.index : u.lastIndex;
                                   (a.push(e.slice(r, i)), (r = i), (n = u.exec(e)));
                               }
@@ -2540,7 +2544,9 @@
                     },
                     Lt = (e, t, u = '', n) => {
                         const a = [],
-                            r = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            r = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             yt(
                                 r,
@@ -2670,7 +2676,7 @@
                             c = ((e, t) => {
                                 let u = 0,
                                     n = e.length - 1;
-                                for (; n - u >= 0; ) {
+                                for (; n - u >= 0;) {
                                     const a = u + Math.ceil(0.5 * (n - u));
                                     It(e[a], t) ? (n = a - 1) : (u = a + 1);
                                 }
@@ -3139,7 +3145,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, u = Qt(a.keys()); !(e = u()).done; ) r(e.value, t);
+                                                        for (var e, u = Qt(a.keys()); !(e = u()).done;) r(e.value, t);
                                                     },
                                                     unsubscribe: r,
                                                 };
@@ -3974,7 +3980,7 @@
                         mn.size
                             ? En ||
                               (En = window.setInterval(() => {
-                                  for (var e, t = dn(mn.values()); !(e = t()).done; ) {
+                                  for (var e, t = dn(mn.values()); !(e = t()).done;) {
                                       (0, e.value)();
                                   }
                               }, 5e3))

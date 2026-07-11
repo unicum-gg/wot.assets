@@ -1,5 +1,5 @@
-import { V as s, j as t, a3 as a } from '../../../../chunks/vendor.js';
-import { i as o, n as e, cv as i, cw as l, r as n, cE as c } from '../../../../chunks/lib.js';
+import { V as s, j as t, W as a } from '../../../../chunks/vendor.js';
+import { i as o, n as e, F as i, cD as l, r as n, U as c } from '../../../../chunks/lib.js';
 import { T as d } from '../../../../chunks/tooltip_decorator.js';
 import { F as r } from '../../../../chunks/formatted_statistic_value.js';
 import { S as p } from '../../../../chunks/enums.js';
@@ -8,8 +8,8 @@ import { S as p } from '../../../../chunks/enums.js';
     j = 'App_heading_ade6eef',
     u = 'App_count_d181c83a',
     h = 'App_listHeading_4659093e',
-    v = 'App_list_689fd49d',
-    b = 'App_listItem_73c5e518',
+    b = 'App_list_689fd49d',
+    v = 'App_listItem_73c5e518',
     g = 'App_value_a9335078',
     A = 'App_icon_914cb923',
     N = 'App_icon__solo_1bb3c1ec',
@@ -30,10 +30,10 @@ import { S as p } from '../../../../chunks/enums.js';
                 }),
                 t.jsx('div', { className: h, children: R.strings.comp7_ext.battlesIndicatorTooltip.listHeading() }),
                 t.jsxs('div', {
-                    className: v,
+                    className: b,
                     children: [
                         t.jsxs('div', {
-                            className: b,
+                            className: v,
                             children: [
                                 t.jsx('div', { className: a(A, N) }),
                                 t.jsx(i, {
@@ -48,7 +48,7 @@ import { S as p } from '../../../../chunks/enums.js';
                             ],
                         }),
                         t.jsxs('div', {
-                            className: b,
+                            className: v,
                             children: [
                                 t.jsx('div', { className: a(A, f) }),
                                 t.jsx(i, {

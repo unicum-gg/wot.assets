@@ -81,6 +81,188 @@
     z-index: 2;
 }
 
+.ExtendedText_base_d9fc1 {
+    display: flex;
+    line-height: 1.2;
+    position: relative;
+}
+
+.ExtendedText_base__zeroPadding_d1a1c {
+    padding: 0;
+}
+
+.ExtendedText_base__isTruncationAvailable_cb880 {
+    width: 100%;
+}
+
+.ExtendedText_truncated_a4268 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.ExtendedText_truncated__hide_d75b4 {
+    opacity: 0;
+}
+
+.ExtendedText_unTruncated_ff478 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    align-content: flex-start;
+    color: #ff2717;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+}
+
+.ExtendedText_tooltip_b5abd {
+    display: flex;
+}
+
+.ExtendedText_tooltip__justify-flex-start_ade81 {
+    justify-content: flex-start;
+}
+
+.ExtendedText_tooltip__justify-center_aa541 {
+    justify-content: center;
+}
+
+.ExtendedText_tooltip__justify-flex-end_af6c3 {
+    justify-content: flex-end;
+}
+
+.ExtendedText_tooltip__align-flex-start_fbfc0 {
+    align-content: flex-start;
+}
+
+.ExtendedText_tooltip__align-center_d5b4a {
+    align-content: center;
+}
+
+.ExtendedText_tooltip__align-flex-end_fc0e0 {
+    align-content: flex-end;
+}
+
+.colors_blackReal_a68be {
+    color: #000000;
+}
+
+.colors_whiteReal_f79f8 {
+    color: #ffffff;
+}
+
+.colors_white_b5c87 {
+    color: #f2f2f7;
+}
+
+.colors_whiteOrange_ba58d {
+    color: #fefeec;
+}
+
+.colors_whiteSpanish_fd764 {
+    color: #e9e2bf;
+}
+
+.colors_par_e836f {
+    color: #8c8c7e;
+}
+
+.colors_parSecondary_f260a {
+    color: #595950;
+}
+
+.colors_parTertiary_d47f7 {
+    color: #37362e;
+}
+
+.colors_red_c02cb {
+    color: #ff2717;
+}
+
+.colors_redDark_cdd63 {
+    color: #b70000;
+}
+
+.colors_yellow_ec93b {
+    color: #feab34;
+}
+
+.colors_orange_bbde2 {
+    color: #ee7000;
+}
+
+.colors_cream_e3bb8 {
+    color: #ffdd99;
+}
+
+.colors_brown_bcb6a {
+    color: #cbac77;
+}
+
+.colors_greenBright_e6055 {
+    color: #80d43a;
+}
+
+.colors_green_b6f21 {
+    color: #7ab300;
+}
+
+.colors_greenDark_ce9bf {
+    color: #497212;
+}
+
+.colors_blueBooster_b2848 {
+    color: #ccffff;
+}
+
+.colors_blueTeamkiller_e7dd8 {
+    color: #09e2ff;
+}
+
+.colors_cred_ddb07 {
+    color: #ced9d9;
+}
+
+.colors_gold_c405a {
+    color: #ffc363;
+}
+
+.colors_bond_bb139 {
+    color: #c9c9b6;
+}
+
+.colors_prom_d1186 {
+    color: #a29b70;
+}
+
+.renderers_noBreakWrapper_d986b {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.renderers_lineBreak_f90ed {
+    width: 100%;
+    height: 0;
+}
+
+.renderers_newLine_ee778 {
+    flex: 1;
+    width: 100%;
+}
+
+.renderers_word_ac32d {
+    white-space: pre;
+    overflow-wrap: normal;
+}
+
 .BonusInfoIcon_bonusInfoIcon_fee06 {
     width: 16rem;
     height: 16rem;
@@ -456,11 +638,99 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     padding: 0 17rem;
 }
 
-/*////////////*/
+.Header_base_be39a {
+    height: 118rem;
+    padding: 14rem 21rem;
+    background: no-repeat center / contain;
+    z-index: 1;
+}
 
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
+.Header_bgOverlay_c99f9 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(265.11deg, rgba(0, 0, 0, 0.3) -78.9%, rgba(0, 0, 0, 0.3) 38.36%, #000000 96.06%);
+}
 
-.FlatButton_base_fb90a {
+.Header_header_ffe88 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 19rem;
+    position: relative;
+    z-index: 2;
+}
+
+.Header_label_da482 {
+    color: #e9e2bf;
+    font-size: 18rem;
+    font-weight: 700;
+}
+
+.Header_description_fbae5 {
+    height: 18rem;
+    margin: 1rem 0 3rem;
+    color: #8c8c7e;
+    font-size: 14rem;
+}
+
+.Header_bonusInfo_fcefd {
+    display: flex;
+    flex-direction: row;
+}
+
+.Header_bonusesIcon_a7496 {
+    margin-top: -7rem;
+    position: relative;
+}
+
+.Header_xp_ca73d {
+    width: 48rem;
+    height: 48rem;
+    background: url('R.images.gui.maps.icons.platoon.common.exp') center / contain no-repeat;
+    position: absolute;
+    right: -10rem;
+}
+
+.Header_credits_b1039 {
+    width: 48rem;
+    height: 48rem;
+    background: url('R.images.gui.maps.icons.platoon.common.silver') center / contain no-repeat;
+    position: absolute;
+    right: -10rem;
+}
+
+.Header_base__fullBonuses_f729e .Header_credits_b1039 {
+    right: 8rem;
+}
+
+.Header_selectedDifficulty_e119e {
+    position: absolute;
+    top: 70rem;
+    left: 0;
+}
+
+.Header_difficultyIcon_dacce {
+    width: 12rem;
+    height: 12rem;
+    margin-top: 2rem;
+    background: center / contain no-repeat;
+}
+
+.Header_info_c8313 {
+    width: 16rem;
+    height: 16rem;
+    padding: 4rem;
+    background: url('R.images.last_stand.gui.maps.icons.platoon.platoon_dropdown.info') center / contain no-repeat;
+    position: absolute;
+    top: -8rem;
+    right: -12rem;
+    z-index: 2;
+}
+
+.FlatButton_base_db3c1 {
     display: flex;
     flex-direction: row;
     width: 292rem;
@@ -468,8 +738,7 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     position: relative;
     cursor: pointer;
 }
-
-.FlatButton_background_d544e {
+.FlatButton_background_f61f6 {
     width: 100%;
     height: 86rem;
     border-image-source: url('R.images.gui.maps.icons.platoon.platoon_dropdown.flat_buttons.background_over');
@@ -480,28 +749,23 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     transition: border-image linear 0.16s;
     pointer-events: none;
 }
-
-.FlatButton_base_fb90a:hover .FlatButton_background_d544e {
+.FlatButton_base_db3c1:hover .FlatButton_background_f61f6 {
     border-image-source: url('R.images.gui.maps.icons.platoon.platoon_dropdown.flat_buttons.background_hover');
 }
-
-.FlatButton_base__disabled_e61af .FlatButton_background_d544e,
-.FlatButton_base__disabled_e61af:hover .FlatButton_background_d544e {
+.FlatButton_base__disabled_c67a8 .FlatButton_background_f61f6,
+.FlatButton_base__disabled_c67a8:hover .FlatButton_background_f61f6 {
     border-image-source: url('R.images.gui.maps.icons.platoon.platoon_dropdown.flat_buttons.background_disabled');
 }
-
-.FlatButton_image_b068d {
+.FlatButton_image_ebf83 {
     width: 70rem;
     height: 70rem;
     margin: 0 13rem 0 5rem;
     background: center / contain no-repeat;
 }
-
-.FlatButton_base__disabled_e61af .FlatButton_image_b068d {
+.FlatButton_base__disabled_c67a8 .FlatButton_image_ebf83 {
     opacity: 0.3;
 }
-
-.FlatButton_text_dfa36 {
+.FlatButton_text_cede3 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -512,44 +776,15 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     font-size: 16rem;
     font-weight: 700;
 }
-
-.FlatButton_base__disabled_e61af .FlatButton_text_dfa36 {
+.FlatButton_base__disabled_c67a8 .FlatButton_text_cede3 {
     opacity: 0.3;
 }
-
-.FlatButton_description_efb33 {
+.FlatButton_description_cbabd {
     color: #8c8c7e;
     font-weight: 400;
 }
 
-/*////////////*/
-
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
-
-.SettingsContainer_base_dffac {
-    position: relative;
-}
-
-.SettingsContainer_base_dffac .SettingsContainer_settingsContainer_e5222 {
-    height: inherit;
-}
-
-.SettingsContainer_settingsHighlight_edfb1 {
-    width: 81rem;
-    height: 86rem;
-    background-size: contain;
-    position: absolute;
-    top: -51rem;
-    left: 1rem;
-    z-index: -1;
-    pointer-events: none;
-}
-
-/*////////////*/
-
-/* Colors: https://confluence.wargaming.net/pages/viewpage.action?pageId=1111407054*/
-
-.App_base_d27ee {
+.App_base_bc33c {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -557,19 +792,12 @@ This bug is reproduced in Google Chrome 81.0.4044.113
     top: 0;
     pointer-events: none;
 }
-
-.App_popoverDecorator_cd5ac {
+.App_popoverDecorator_c9c36 {
     pointer-events: auto;
 }
-
-.App_content_c0265 {
+.App_content_f84b0 {
     width: 292rem;
     padding-bottom: 9rem;
     color: #8c8c7e;
     font-size: 14rem;
-}
-
-.App_settings__hidden_ec5f4 {
-    height: 0;
-    opacity: 0;
 }

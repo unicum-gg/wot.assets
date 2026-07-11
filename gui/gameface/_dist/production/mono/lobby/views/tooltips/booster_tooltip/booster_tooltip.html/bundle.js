@@ -1,5 +1,5 @@
 import { D as s, j as o } from '../../../../chunks/vendor.js';
-import { i as t, a9 as e, O as a, de as r, E as l, r as i } from '../../../../chunks/lib.js';
+import { i as t, ac as e, d as a, dj as r, E as l, r as i } from '../../../../chunks/lib.js';
 const [d, p] = t()(({ observableModel: s }) => ({ root: s.object() }), e),
     c = 'BoosterTooltipApp_8070f331',
     n = 'BoosterTooltipApp_header_a8137851',
@@ -8,7 +8,7 @@ const [d, p] = t()(({ observableModel: s }) => ({ root: s.object() }), e),
     m = 'BoosterTooltipApp_label_3c623b78',
     j = 'BoosterTooltipApp_body_3753f8a5',
     x = 'BoosterTooltipApp_dot_996efa80',
-    h = 'BoosterTooltipApp_bonus_9af03539',
+    h = 'BoosterTooltipApp_bonus_2a8f9b41',
     v = 'BoosterTooltipApp_dots_52fb613c',
     B = 'BoosterTooltipApp_footer_628da975',
     T = a.resolve('strings'),

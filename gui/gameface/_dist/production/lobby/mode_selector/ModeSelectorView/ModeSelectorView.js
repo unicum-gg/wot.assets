@@ -220,9 +220,13 @@
                         if (u.mediumWidth && g) return (0, _.H)(t, u, D);
                         if (u.smallWidth && E) return (0, _.H)(t, u, D);
                         if (u.extraSmallWidth && A) return (0, _.H)(t, u, D);
-                        if (
-                            !(u.extraLargeWidth || u.largeWidth || u.mediumWidth || u.smallWidth || u.extraSmallWidth)
-                        ) {
+                        if (!(
+                            u.extraLargeWidth ||
+                            u.largeWidth ||
+                            u.mediumWidth ||
+                            u.smallWidth ||
+                            u.extraSmallWidth
+                        )) {
                             if (u.extraLargeHeight && C) return t;
                             if (u.largeHeight && F) return t;
                             if (u.mediumHeight && p) return t;
@@ -798,7 +802,7 @@
                     w = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function x(e) {
                     let t = '';
-                    for (let u = w.length - 1; u >= 0; u--) for (; e >= w[u]; ) ((t += v[u]), (e -= w[u]));
+                    for (let u = w.length - 1; u >= 0; u--) for (; e >= w[u];) ((t += v[u]), (e -= w[u]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -2493,7 +2497,7 @@
                     ot = (e, t, u, a) => {
                         let _ = t.exec(e),
                             r = 0;
-                        for (; _; ) (r !== _.index && u(e.slice(r, _.index)), a(_), (r = t.lastIndex), (_ = t.exec(e)));
+                        for (; _;) (r !== _.index && u(e.slice(r, _.index)), a(_), (r = t.lastIndex), (_ = t.exec(e)));
                         r !== e.length && u(e.slice(r));
                     },
                     lt = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -2539,7 +2543,7 @@
                               if (!a) return [e];
                               const _ = [];
                               let r = 0;
-                              for (; a; ) {
+                              for (; a;) {
                                   const n = t.justifyContent === Ye.FlexEnd ? a.index : u.lastIndex;
                                   (_.push(e.slice(r, n)), (r = n), (a = u.exec(e)));
                               }
@@ -2584,7 +2588,9 @@
                     },
                     bt = (e, t, u = '', a) => {
                         const _ = [],
-                            r = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            r = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             ot(
                                 r,
@@ -2714,7 +2720,7 @@
                             l = ((e, t) => {
                                 let u = 0,
                                     a = e.length - 1;
-                                for (; a - u >= 0; ) {
+                                for (; a - u >= 0;) {
                                     const _ = u + Math.ceil(0.5 * (a - u));
                                     At(e[_], t) ? (a = _ - 1) : (u = _ + 1);
                                 }
@@ -4348,7 +4354,7 @@
                         let i = Zu.exec(e),
                             s = e,
                             o = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const u = i[0],
                                 r = Yu.exec(u),
                                 l = Ku.exec(u),
@@ -5584,7 +5590,7 @@
                             c = t || {};
                         let d = i.exec(e),
                             m = e;
-                        for (; d; ) {
+                        for (; d;) {
                             const u = d[0],
                                 _ = s.exec(u),
                                 b = o.exec(u),

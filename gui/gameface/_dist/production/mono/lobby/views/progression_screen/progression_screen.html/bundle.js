@@ -2,30 +2,30 @@ import { j as e, f as s, r as a, W as r, R as t } from '../../../chunks/vendor.j
 import {
     i as o,
     o as n,
-    c2 as c,
-    am as i,
+    c3 as c,
+    an as i,
     a4 as l,
     B as d,
-    d1 as m,
-    d2 as _,
-    c6 as u,
-    b_ as b,
-    b4 as f,
+    d2 as m,
+    d3 as _,
+    c7 as u,
+    b$ as b,
+    b5 as f,
     m as v,
-    ax as g,
-    aS as p,
-    bU as x,
-    c3 as j,
-    d3 as N,
+    ay as g,
+    aT as p,
+    bV as x,
+    c4 as j,
+    d4 as N,
     E as S,
-    cE as h,
-    cz as w,
-    c7 as k,
+    cF as h,
+    cA as w,
+    c8 as k,
 } from '../../../chunks/lib.js';
 import { L as B, l as C, s as P } from '../../../chunks/level_badge.js';
 import { F as L, A as R } from '../../../chunks/event_banner_state.js';
-import { C as z } from '../../../chunks/custom_reward.js';
-const [T, y] = o()(
+import { C as T } from '../../../chunks/custom_reward.js';
+const [y, z] = o()(
         ({ observableModel: e }) => ({
             ...e.primitives([
                 'frontlineState',
@@ -50,55 +50,55 @@ const [T, y] = o()(
     A = 'Glow_sparksBg_80ab367d',
     O = 'Glow_video_8a929657',
     $ = 'Glow_base__visible_a44066b8',
-    G = n.resolve('videos');
-function F({ isAppearing: a, className: r }) {
+    F = n.resolve('videos');
+function G({ isAppearing: a, className: r }) {
     return e.jsxs('div', {
         className: s(I, a ? M : $, r),
         children: [
             e.jsx('div', { className: E }),
             e.jsx('div', { className: A }),
-            e.jsx(c, { className: O, src: G.readOrEmpty('flProgressionScreen.sparks_orange'), loop: !0, autoplay: !0 }),
+            e.jsx(c, { className: O, src: F.readOrEmpty('flProgressionScreen.sparks_orange'), loop: !0, autoplay: !0 }),
         ],
     });
 }
-const W = 'ClaimRewardButton_6a9b8fa0',
-    J = 'ClaimRewardButton_glow_433d746e',
-    V = 'ClaimRewardButton_container_741d3600',
-    U = 'ClaimRewardButton_base__appearing_a2ccee13',
-    q = 'ClaimRewardButton_base__visible_a2ccee13',
-    D = 'ClaimRewardButton_button_7e382552',
-    H = 'ClaimRewardButton_bubble_66a9d9b0',
-    K = 'ClaimRewardButton_valueContainer_937dcb63',
-    Q = n.resolve('strings');
+const V = 'ClaimRewardButton_6a9b8fa0',
+    W = 'ClaimRewardButton_glow_433d746e',
+    J = 'ClaimRewardButton_container_741d3600',
+    q = 'ClaimRewardButton_base__appearing_a2ccee13',
+    D = 'ClaimRewardButton_base__visible_a2ccee13',
+    H = 'ClaimRewardButton_button_7e382552',
+    K = 'ClaimRewardButton_bubble_66a9d9b0',
+    Q = 'ClaimRewardButton_valueContainer_937dcb63',
+    U = n.resolve('strings');
 function X({ amount: r, isAppearing: t, size: o, onClick: n }) {
-    const c = i({ body: Q.readOrEmpty('fl_progression_screen.claimRewardsTooltip') }),
+    const c = i({ body: U.readOrEmpty('fl_progression_screen.claimRewardsTooltip') }),
         u = l();
     return (
         a.useEffect(() => {
             t && u.play('progression_rewards_appearing');
         }, [t, u]),
         e.jsxs('div', {
-            className: s(W, t ? U : q),
+            className: s(V, t ? q : D),
             children: [
-                e.jsx(F, { isAppearing: t, className: J }),
+                e.jsx(G, { isAppearing: t, className: W }),
                 e.jsxs('div', {
-                    className: V,
+                    className: J,
                     children: [
                         e.jsx(d, {
                             ...c,
                             theme: d.themes.primary,
                             size: o,
-                            className: D,
+                            className: H,
                             onClick: n,
-                            children: Q.readOrEmpty('fl_progression_screen.claimRewards'),
+                            children: U.readOrEmpty('fl_progression_screen.claimRewards'),
                         }),
                         e.jsx('div', {
-                            className: H,
+                            className: K,
                             children: e.jsx(m.Root, {
                                 children: e.jsx(m.Value, {
                                     value: r,
                                     size: _.medium,
-                                    classNames: { valueContainer: K },
+                                    classNames: { valueContainer: Q },
                                 }),
                             }),
                         }),
@@ -145,7 +145,7 @@ function _e({
                   ? e.jsxs('div', {
                         className: te,
                         children: [
-                            e.jsx(F, { className: Z }),
+                            e.jsx(G, { className: Z }),
                             e.jsx('div', {
                                 className: oe,
                                 children: de.readOrEmpty('fl_progression_screen.maxTierReachedMessage'),
@@ -179,7 +179,7 @@ function _e({
 const ue = 'LevelBlock_4febf6d6',
     be = 'LevelBlock_level_d685b90a',
     fe = r(function ({ className: a }) {
-        const { model: r, controls: t } = y(),
+        const { model: r, controls: t } = z(),
             o = r.frontlineState.get(),
             n = r.amountRewardsToClaim.get(),
             c = f(
@@ -216,7 +216,7 @@ const ue = 'LevelBlock_4febf6d6',
     je = 'CustomProgressBar_completeProgressCover_35fea46d',
     Ne = 'CustomProgressBar_pointer_21613146',
     Se = r(function ({ className: r }) {
-        const { model: t } = y(),
+        const { model: t } = z(),
             o = t.level.get(),
             n = t.tiersSections.get(),
             c = t.currentPoints.get(),
@@ -285,7 +285,7 @@ function we({ state: a, className: r }) {
     return e.jsxs('div', {
         className: s(he.base, he[`base__${a}`], r),
         children: [
-            a === Ue.Completed &&
+            a === qe.Completed &&
                 e.jsxs('div', {
                     className: he.layer,
                     children: [
@@ -314,9 +314,9 @@ function Pe({ className: a }) {
 }
 const Le = 'TiersSeparators_be26eda0',
     Re = 'TiersSeparators_container_879f1c8',
-    ze = 'TiersSeparators_top_dd3750ab',
-    Te = 'TiersSeparators_bottom_9f4aa714';
-function ye({ amount: r, className: t }) {
+    Te = 'TiersSeparators_top_dd3750ab',
+    ye = 'TiersSeparators_bottom_9f4aa714';
+function ze({ amount: r, className: t }) {
     const [o, n] = a.useState(0),
         c = a.useRef(null),
         { breakpoint: i } = g();
@@ -336,7 +336,7 @@ function ye({ amount: r, className: t }) {
                     {
                         className: Re,
                         style: { marginLeft: `${o}rem` },
-                        children: [e.jsx('div', { className: ze }), e.jsx('div', { className: Te })],
+                        children: [e.jsx('div', { className: Te }), e.jsx('div', { className: ye })],
                     },
                     `separator_${s}`,
                 ),
@@ -350,13 +350,13 @@ const Ie = 'TiersSection_b122bb9f',
     Ae = 'TiersSection_glow_9a0c5716',
     Oe = 'TiersSection_tiers_ea289110',
     $e = 'TiersSection_tiers__locked_9c1ac494',
-    Ge = 'TiersSection_tiersSeparators_42b277a8',
-    Fe = 'TiersSection_content_32433d0c',
-    We = 'TiersSection_rewardsContainer_efc03b65',
-    Je = 'TiersSection_reward_5fc7980a',
-    Ve = 'TiersSection_sectionSeparator_ddc4d980';
-var Ue = ((e) => ((e.Locked = 'locked'), (e.InProgress = 'inProgress'), (e.Completed = 'completed'), e))(Ue || {});
-function qe({ start: r, end: o, rewards: n, currentLevel: c, withSeparator: i = !1, frontlineState: l }) {
+    Fe = 'TiersSection_tiersSeparators_42b277a8',
+    Ge = 'TiersSection_content_32433d0c',
+    Ve = 'TiersSection_rewardsContainer_efc03b65',
+    We = 'TiersSection_reward_5fc7980a',
+    Je = 'TiersSection_sectionSeparator_ddc4d980';
+var qe = ((e) => ((e.Locked = 'locked'), (e.InProgress = 'inProgress'), (e.Completed = 'completed'), e))(qe || {});
+function De({ start: r, end: o, rewards: n, currentLevel: c, withSeparator: i = !1, frontlineState: l }) {
     const d = r !== o,
         m = d ? `${r}-${o}` : r,
         _ = a.useMemo(() => (c < r - 1 ? 'locked' : c >= o ? 'completed' : 'inProgress'), [c, r, o]),
@@ -368,44 +368,44 @@ function qe({ start: r, end: o, rewards: n, currentLevel: c, withSeparator: i = 
         children: [
             !u && !b && e.jsx(we, { className: Ee, state: _ }),
             e.jsxs('div', {
-                className: Fe,
+                className: Ge,
                 children: [
                     'completed' === _ && e.jsx('div', { className: Me }),
                     e.jsxs('div', {
                         className: s(Oe, (u || b) && $e),
                         children: ['inProgress' === _ && !b && e.jsx('div', { className: Ae }), m],
                     }),
-                    d && e.jsx(ye, { amount: o - r, className: Ge }),
+                    d && e.jsx(ze, { amount: o - r, className: Fe }),
                     e.jsx('div', {
-                        className: We,
+                        className: Ve,
                         children: S(n, (s, a) =>
                             e.jsx(
                                 t.Fragment,
-                                { children: e.jsx(z, { ...s, rewardSize: v.rewardSize, className: Je }) },
+                                { children: e.jsx(T, { ...s, rewardSize: v.rewardSize, className: We }) },
                                 a,
                             ),
                         ),
                     }),
                 ],
             }),
-            i && e.jsx(Pe, { className: Ve }),
+            i && e.jsx(Pe, { className: Je }),
         ],
     });
 }
-const De = 'ProgressBlock_22f7d395',
-    He = 'ProgressBlock_progressBar_7da7bc49',
-    Ke = r(function ({ className: a }) {
-        const { model: r } = y(),
+const He = 'ProgressBlock_22f7d395',
+    Ke = 'ProgressBlock_progressBar_7da7bc49',
+    Qe = r(function ({ className: a }) {
+        const { model: r } = z(),
             o = r.level.get(),
             n = r.tiersSections.get();
         return e.jsxs('div', {
-            className: s(De, a),
+            className: s(He, a),
             children: [
                 S(n, (s, a) =>
                     e.jsx(
                         t.Fragment,
                         {
-                            children: e.jsx(qe, {
+                            children: e.jsx(De, {
                                 ...s,
                                 currentLevel: o,
                                 withSeparator: a > 0,
@@ -415,25 +415,25 @@ const De = 'ProgressBlock_22f7d395',
                         `tier_section_${a}`,
                     ),
                 ),
-                e.jsx(Se, { className: He }),
+                e.jsx(Se, { className: Ke }),
             ],
         });
     }),
-    Qe = 'ProgressionScreen_64dc73b7',
+    Ue = 'ProgressionScreen_64dc73b7',
     Xe = 'ProgressionScreen_content_8178663f',
     Ye = 'ProgressionScreen_levelBlock_5336bf8c',
     Ze = 'ProgressionScreen_progressBlock_241efddb',
     es = r(() => {
-        const { controls: s } = y();
+        const { controls: s } = z();
         return (
             h(s.close),
             e.jsx('div', {
-                className: Qe,
+                className: Ue,
                 children: e.jsxs('div', {
                     className: Xe,
-                    children: [e.jsx(fe, { className: Ye }), e.jsx(Ke, { className: Ze })],
+                    children: [e.jsx(fe, { className: Ye }), e.jsx(Qe, { className: Ze })],
                 }),
             })
         );
     });
-w(e.jsx(k, { soundsOverrides: P, children: e.jsx(T, { children: e.jsx(es, {}) }) }), { fullScreen: !0 });
+w(e.jsx(k, { soundsOverrides: P, children: e.jsx(y, { children: e.jsx(es, {}) }) }), { fullScreen: !0 });

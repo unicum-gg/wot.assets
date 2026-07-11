@@ -1,12 +1,12 @@
-import { V as s, j as i, a3 as o } from '../../../../chunks/vendor.js';
-import { i as e, n, cD as r, cv as t, cy as a, r as c } from '../../../../chunks/lib.js';
+import { V as s, j as i, W as o } from '../../../../chunks/vendor.js';
+import { i as e, n, cK as r, F as t, cF as a, r as c } from '../../../../chunks/lib.js';
 import { T as d } from '../../../../chunks/tooltip_decorator.js';
 import { g as m } from '../../../../chunks/get_division_name.js';
 import { g as l } from '../../../../chunks/get_rank_name.js';
 import { t as j } from '../../../../chunks/tooltips.module.js';
 /* empty css                        */ import '../../../../chunks/enums.js';
 const [p, h] = e()(({ observableModel: s }) => ({ root: s.object() }), n),
-    v = s(() => {
+    x = s(() => {
         const { model: s } = h(),
             { division: e, rank: n, from: c, to: d } = s.root.get();
         return i.jsxs('div', {
@@ -31,4 +31,4 @@ const [p, h] = e()(({ observableModel: s }) => ({ root: s.object() }), n),
             ],
         });
     });
-c(i.jsx(p, { children: i.jsx(d, { children: i.jsx(v, {}) }) }));
+c(i.jsx(p, { children: i.jsx(d, { children: i.jsx(x, {}) }) }));

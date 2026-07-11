@@ -412,14 +412,14 @@ const Re = 'ChatCarousel_545467f0',
                     -1 !== e && (d(e), u(!0));
                 }
             }, [i, l, n]));
-        const f = t.useRef();
+        const f = t.useRef(0);
         (g(() => {
             if (-1 !== c && _.current && n.wrapperRef.current && m) {
                 const e = n.animationScroll.scrollPosition.get(),
                     t = _.current.getBoundingClientRect(),
                     o = n.wrapperRef.current.getBoundingClientRect();
                 ((t.left >= o.left && t.right <= o.right) ||
-                    (f.current = setTimeout(() => n.applyScroll(be(o, t, e)), 100)),
+                    (f.current = window.setTimeout(() => n.applyScroll(be(o, t, e)), 100)),
                     u(!1));
             }
         }, [c, n, m]),

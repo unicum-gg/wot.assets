@@ -1,20 +1,20 @@
-import { j as e, h as a } from './vendor.js';
-import { Y as s, ad as i, ae as l } from './lib.js';
-const t = { base: 'TankName_aa0700b7', type: 'TankName_type_652adbed' },
+import { j as e, i as a } from './vendor.js';
+import { $ as s, ac as i, ad as l } from './lib.js';
+const t = { base: 'TankName_c5565248', type: 'TankName_type_652adbed' },
     r = (e, a, s) => ({
         backgroundImage: `url(${`R.images.gui.maps.icons.vehicleTypes.${s ? 'c_48x48' : 'c_24x24'}.${`${e.replace('-', '_')}${a ? '_elite' : ''}`}`})`,
     });
-function d({ reward: d, style: o, className: c = '', hasShortName: m }) {
+function c({ reward: c, style: m = { nameHeight: '18rem' }, className: d = '', hasShortName: o }) {
     const { breakpoint: n } = s(),
-        { label: v, level: h, type: p, isElite: b, vehicleShortName: y } = d;
+        { label: v, level: h, type: p, isElite: y, vehicleShortName: N } = c;
     return e.jsxs('div', {
-        className: a(t.base, c),
-        style: { fontSize: o.nameHeight },
+        className: a(t.base, d),
+        style: { fontSize: m.nameHeight },
         children: [
             void 0 !== h && e.jsx('div', { className: t.level, children: i(h) }),
-            void 0 !== p && void 0 !== b && e.jsx('div', { className: t.type, style: r(p, b, n.width >= l.Medium) }),
-            e.jsx('div', { children: m ? y : v }),
+            void 0 !== p && void 0 !== y && e.jsx('div', { className: t.type, style: r(p, y, n.width >= l.Medium) }),
+            e.jsx('div', { children: o ? N : v }),
         ],
     });
 }
-export { d as T };
+export { c as T };

@@ -461,7 +461,7 @@
                     n = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function r(e) {
                     let u = '';
-                    for (let t = n.length - 1; t >= 0; t--) for (; e >= n[t]; ) ((u += a[t]), (e -= n[t]));
+                    for (let t = n.length - 1; t >= 0; t--) for (; e >= n[t];) ((u += a[t]), (e -= n[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -956,9 +956,13 @@
                         if (t.mediumWidth && A) return s(u, t, p);
                         if (t.smallWidth && F) return s(u, t, p);
                         if (t.extraSmallWidth && g) return s(u, t, p);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && D) return u;
                             if (t.largeHeight && C) return u;
                             if (t.mediumHeight && v) return u;
@@ -1268,7 +1272,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = H(n.keys()); !(e = t()).done; ) r(e.value, u);
+                                                        for (var e, t = H(n.keys()); !(e = t()).done;) r(e.value, u);
                                                     },
                                                     unsubscribe: r,
                                                 };
@@ -1598,7 +1602,7 @@
                                             u(e).delete(t);
                                         },
                                         n = (e, ...t) => {
-                                            for (var a, n = ee(u(e).values()); !(a = n()).done; ) (0, a.value)(...t);
+                                            for (var a, n = ee(u(e).values()); !(a = n()).done;) (0, a.value)(...t);
                                         };
                                     return (0, r.useMemo)(() => ({ on: t, off: a, trigger: n }), []);
                                 })(),
@@ -2277,22 +2281,22 @@
                 const ze = { Vertical: n, Horizontal: a };
                 let Ue = (function (e) {
                         return (
-                            (e.Unavailable = 'unavailable'),
-                            (e.CommendFirst = 'commendFirst'),
-                            (e.CommendBack = 'commendBack'),
-                            (e.OutgoingCommendation = 'outgoingCommendation'),
-                            (e.MutualCommendation = 'mutualCommendation'),
-                            e
-                        );
-                    })({}),
-                    Ve = (function (e) {
-                        return (
                             (e.AtSpg = 'atSpg'),
                             (e.HeavyTank = 'heavyTank'),
                             (e.LightTank = 'lightTank'),
                             (e.MediumTank = 'mediumTank'),
                             (e.Spg = 'spg'),
                             (e.Undefined = 'undefined'),
+                            e
+                        );
+                    })({}),
+                    Ve = (function (e) {
+                        return (
+                            (e.Unavailable = 'unavailable'),
+                            (e.CommendFirst = 'commendFirst'),
+                            (e.CommendBack = 'commendBack'),
+                            (e.OutgoingCommendation = 'outgoingCommendation'),
+                            (e.MutualCommendation = 'mutualCommendation'),
                             e
                         );
                     })({}),
@@ -2398,7 +2402,7 @@
                                     className: F()(tu.commendation, tu.commendation__first),
                                     header: R.strings.tooltips.commendations.comms_likes_sct_txt_h_02(),
                                     content: R.strings.tooltips.commendations.comms_likes_sct_txt_t_02(),
-                                    'data-bind-if': `{{${e}.commendationStateModel.commendationState}} === '${Ue.CommendFirst}' && !{{${e}.isCurrentPlayer}}`,
+                                    'data-bind-if': `{{${e}.commendationStateModel.commendationState}} === '${Ve.CommendFirst}' && !{{${e}.isCurrentPlayer}}`,
                                     'data-bind-click': `model.playerList.onPlayerCommend({ vehicleId: {{${e}.vehicleId}} })`,
                                 },
                                 i().createElement('div', { className: tu.tooltip_trigger }),
@@ -2410,7 +2414,7 @@
                                     className: F()(tu.commendation, tu.commendation__back),
                                     header: R.strings.tooltips.commendations.comms_likes_sct_txt_h_03(),
                                     content: R.strings.tooltips.commendations.comms_likes_sct_txt_t_03(),
-                                    'data-bind-if': `{{${e}.commendationStateModel.commendationState}} === '${Ue.CommendBack}' && !{{${e}.isCurrentPlayer}}`,
+                                    'data-bind-if': `{{${e}.commendationStateModel.commendationState}} === '${Ve.CommendBack}' && !{{${e}.isCurrentPlayer}}`,
                                     'data-bind-click': `model.playerList.onPlayerCommend({ vehicleId: {{${e}.vehicleId}} })`,
                                 },
                                 i().createElement('div', { className: tu.tooltip_trigger }),
@@ -2421,7 +2425,7 @@
                                     className: F()(tu.commendation, tu.commendation__unavailable),
                                     header: R.strings.tooltips.commendations.comms_likes_sct_txt_h_01(),
                                     content: R.strings.tooltips.commendations.comms_likes_sct_txt_t_01(),
-                                    'data-bind-if': `{{${e}.commendationStateModel.commendationState}} === '${Ue.Unavailable}' && !{{${e}.isCurrentPlayer}}`,
+                                    'data-bind-if': `{{${e}.commendationStateModel.commendationState}} === '${Ve.Unavailable}' && !{{${e}.isCurrentPlayer}}`,
                                 },
                                 i().createElement('div', { className: tu.tooltip_trigger }),
                             ),
@@ -2431,7 +2435,7 @@
                                     className: F()(tu.commendation, tu.commendation__mutual),
                                     header: R.strings.tooltips.commendations.comms_likes_sct_txt_h_05(),
                                     content: R.strings.tooltips.commendations.comms_likes_sct_txt_t_05(),
-                                    'data-bind-if': `{{${e}.commendationStateModel.commendationState}} === '${Ue.MutualCommendation}' && !{{${e}.isCurrentPlayer}}`,
+                                    'data-bind-if': `{{${e}.commendationStateModel.commendationState}} === '${Ve.MutualCommendation}' && !{{${e}.isCurrentPlayer}}`,
                                     'data-bind-click': `model.playerList.onPlayerCommend({ vehicleId: {{${e}.vehicleId}} })`,
                                 },
                                 i().createElement(
@@ -2453,7 +2457,7 @@
                                     className: F()(tu.commendation, tu.commendation__outgoing_commend),
                                     header: R.strings.tooltips.commendations.comms_likes_sct_txt_h_04(),
                                     content: R.strings.tooltips.commendations.comms_likes_sct_txt_t_04(),
-                                    'data-bind-if': `{{${e}.commendationStateModel.commendationState}} === '${Ue.OutgoingCommendation}' && !{{${e}.isCurrentPlayer}}`,
+                                    'data-bind-if': `{{${e}.commendationStateModel.commendationState}} === '${Ve.OutgoingCommendation}' && !{{${e}.isCurrentPlayer}}`,
                                 },
                                 i().createElement('div', { className: tu.tooltip_trigger }),
                             ),
@@ -2777,22 +2781,22 @@
                         ].join(';'),
                     $t = (e) =>
                         [
-                            `${dt}:{{${e}.vehicleType}} === '${Ve.AtSpg}'`,
-                            `${At}:{{${e}.vehicleType}} === '${Ve.Spg}'`,
-                            `${mt}:{{${e}.vehicleType}} === '${Ve.HeavyTank}'`,
-                            `${_t}:{{${e}.vehicleType}} === '${Ve.LightTank}'`,
-                            `${Et}:{{${e}.vehicleType}} === '${Ve.MediumTank}'`,
+                            `${dt}:{{${e}.vehicleType}} === '${Ue.AtSpg}'`,
+                            `${At}:{{${e}.vehicleType}} === '${Ue.Spg}'`,
+                            `${mt}:{{${e}.vehicleType}} === '${Ue.HeavyTank}'`,
+                            `${_t}:{{${e}.vehicleType}} === '${Ue.LightTank}'`,
+                            `${Et}:{{${e}.vehicleType}} === '${Ue.MediumTank}'`,
                         ].join(';'),
                     Mt = (e) =>
                         [
                             `${Hu}:!!{{${e}.commendationStateModel.commendationState}} === true`,
-                            `${Yu}:{{${e}.commendationStateModel.commendationState}} === '${Ue.CommendBack}' || {{${e}.commendationStateModel.commendationState}} === '${Ue.MutualCommendation}' || {{${e}.commendationStateModel.commendationState}} === '${Ue.OutgoingCommendation}'`,
+                            `${Yu}:{{${e}.commendationStateModel.commendationState}} === '${Ve.CommendBack}' || {{${e}.commendationStateModel.commendationState}} === '${Ve.MutualCommendation}' || {{${e}.commendationStateModel.commendationState}} === '${Ve.OutgoingCommendation}'`,
                         ].join(';'),
                     kt = (e) =>
                         [
-                            `${zu}:{{${e}.commendationStateModel.commendationState}} === '${Ue.CommendBack}' && {{${e}.commendationStateModel.isNewState}} && {{model.showCommendationAnimations}}`,
-                            `${Uu}:{{${e}.commendationStateModel.commendationState}} === '${Ue.OutgoingCommendation}' && {{${e}.commendationStateModel.isNewState}} && {{model.showCommendationAnimations}}`,
-                            `${Vu}:{{${e}.commendationStateModel.commendationState}} === '${Ue.MutualCommendation}' && {{${e}.commendationStateModel.isNewState}} && {{model.showCommendationAnimations}}`,
+                            `${zu}:{{${e}.commendationStateModel.commendationState}} === '${Ve.CommendBack}' && {{${e}.commendationStateModel.isNewState}} && {{model.showCommendationAnimations}}`,
+                            `${Uu}:{{${e}.commendationStateModel.commendationState}} === '${Ve.OutgoingCommendation}' && {{${e}.commendationStateModel.isNewState}} && {{model.showCommendationAnimations}}`,
+                            `${Vu}:{{${e}.commendationStateModel.commendationState}} === '${Ve.MutualCommendation}' && {{${e}.commendationStateModel.isNewState}} && {{model.showCommendationAnimations}}`,
                         ].join(';'),
                     It = (e) => {
                         let u = e.path,
@@ -2847,7 +2851,7 @@
                                         }),
                                     ),
                                     i().createElement('div', {
-                                        'data-bind-if': `{{${u}.isInviteReceived}}`,
+                                        'data-bind-if': `{{${u}.isInviteReceived}} && {{${u}.platoon}} && !{{${u}.isCurrentPlayer}}`,
                                         className: it,
                                         'data-bind-click': `model.playerList.onPlatoonInvite({avatarSessionID: {{${u}.avatarSessionID}}})`,
                                     }),
@@ -2860,7 +2864,7 @@
                                                 {
                                                     className: nt,
                                                     content: R.strings.ingame_gui.dynamicSquad.ally.disabled(),
-                                                    'data-bind-if': `{{${u}.isPlatoonInvitationDisabled}} && {{${u}.platoon}} === 0`,
+                                                    'data-bind-if': `{{${u}.isPlatoonInvitationDisabled}} && {{${u}.platoon}} === 0 && !{{${u}.isInviteReceived}}`,
                                                 },
                                                 i().createElement('img', {
                                                     className: tt,
@@ -2973,15 +2977,15 @@
                                 'left' === n
                                     ? i().createElement('div', {
                                           className: ct,
-                                          'data-bind-style-background-image-url': `{{${u}.vehicleType}} !== '${Ve.Undefined}' && (R.images.gui.maps.icons.vehicleTypes.green[({{${u}.vehicleType}} === 'atSpg' ? 'at_spg' : {{${u}.vehicleType}})]())`,
+                                          'data-bind-style-background-image-url': `{{${u}.vehicleType}} !== '${Ue.Undefined}' && (R.images.gui.maps.icons.vehicleTypes.green[({{${u}.vehicleType}} === 'atSpg' ? 'at_spg' : {{${u}.vehicleType}})]())`,
                                       })
                                     : i().createElement(
                                           i().Fragment,
                                           null,
                                           i().createElement('div', {
                                               className: ct,
-                                              'data-bind-if': `!{{model.playerList.isColorblind}} && {{${u}.vehicleType}} !== '${Ve.Undefined}'`,
-                                              'data-bind-style-background-image-url': `{{${u}.vehicleType}} !== '${Ve.Undefined}' && (R.images.gui.maps.icons.vehicleTypes.red[({{${u}.vehicleType}} === 'atSpg' ? 'at_spg' : {{${u}.vehicleType}})]())`,
+                                              'data-bind-if': `!{{model.playerList.isColorblind}} && {{${u}.vehicleType}} !== '${Ue.Undefined}'`,
+                                              'data-bind-style-background-image-url': `{{${u}.vehicleType}} !== '${Ue.Undefined}' && (R.images.gui.maps.icons.vehicleTypes.red[({{${u}.vehicleType}} === 'atSpg' ? 'at_spg' : {{${u}.vehicleType}})]())`,
                                           }),
                                           i().createElement('div', {
                                               className: ct,

@@ -340,7 +340,7 @@
                     let n = g;
                     t.default && !0 !== t.default && ((t = t.default), (n = Object.keys(t)));
                     const i = {};
-                    for (var o, s = u(n); !(o = s()).done; ) {
+                    for (var o, s = u(n); !(o = s()).done;) {
                         const n = o.value,
                             s = e(t[n], n);
                         r.is.und(s) || (i[n] = s);
@@ -557,7 +557,7 @@
                               let e;
                               ((e = r.is.arr(t)
                                   ? ((w = a(function* (t) {
-                                        for (var e, n = u(t); !(e = n()).done; ) {
+                                        for (var e, n = u(t); !(e = n()).done;) {
                                             const t = e.value;
                                             yield b(t);
                                         }
@@ -3665,7 +3665,7 @@
                             void 0 !== e.threshold && (this.threshold = e.threshold)));
                 }
                 applyToElement(t) {
-                    for (var e, n = s(this.getBlocks(t)); !(e = n()).done; ) {
+                    for (var e, n = s(this.getBlocks(t)); !(e = n()).done;) {
                         const t = e.value;
                         (u(t.hasText()), this.applyToParagraph(t));
                     }
@@ -3694,11 +3694,11 @@
                     const r = !e || n === f,
                         i = r ? new g(t) : e;
                     u(i);
-                    for (var o, a = s(t.childNodes); !(o = a()).done; ) {
+                    for (var o, a = s(t.childNodes); !(o = a()).done;) {
                         const t = o.value;
                         switch (t.nodeType) {
                             case c:
-                                for (var m, b = s(this.getBlocks(t, i)); !(m = b()).done; ) {
+                                for (var m, b = s(this.getBlocks(t, i)); !(m = b()).done;) {
                                     const t = m.value;
                                     yield t;
                                 }
@@ -3718,7 +3718,7 @@
                     if ((u(r.length > 0), u(r.reduce((t, e) => t + e.length, 0) === n.length), r.length <= 1)) return;
                     const i = [];
                     let o = 0;
-                    for (var a, c = s(r); !(a = c()).done; ) {
+                    for (var a, c = s(r); !(a = c()).done;) {
                         const t = a.value;
                         (u(t.length > 0), (o += t.length), i.push(o));
                     }
@@ -3737,7 +3737,7 @@
                         i = e[0];
                     u(i > 0);
                     let o = 0;
-                    for (var a, c = s(t); !(a = c()).done; ) {
+                    for (var a, c = s(t); !(a = c()).done;) {
                         const t = a.value,
                             n = t.nodeValue;
                         if (!n) continue;
@@ -3748,7 +3748,7 @@
                         }
                         const c = [];
                         let l = 0;
-                        for (; i < s; ) {
+                        for (; i < s;) {
                             const t = i - o;
                             (u(t >= l), c.push(n.substring(l, t)), (l = t), ++r, u(e[r] > i), (i = e[r]));
                         }
@@ -3762,7 +3762,7 @@
                     if ('string' == typeof n) return void (t.nodeValue = e.join(n));
                     const r = t.ownerDocument;
                     let i = [];
-                    for (var o, a = s(e); !(o = a()).done; ) {
+                    for (var o, a = s(e); !(o = a()).done;) {
                         const t = o.value;
                         (t && i.push(r.createTextNode(t)), i.push(null));
                     }
@@ -3878,7 +3878,7 @@
                         .map(([t, e]) => `${t}:${e}`);
                 }
                 static hasChildTextNode(t) {
-                    for (var e, n = _(t.childNodes); !(e = n()).done; ) {
+                    for (var e, n = _(t.childNodes); !(e = n()).done;) {
                         if (e.value.nodeType === S) return !0;
                     }
                     return !1;
@@ -4086,7 +4086,7 @@
                         o = n.call(t),
                         s = [];
                     try {
-                        for (; (void 0 === e || e-- > 0) && !(r = o.next()).done; ) s.push(r.value);
+                        for (; (void 0 === e || e-- > 0) && !(r = o.next()).done;) s.push(r.value);
                     } catch (t) {
                         i = { error: t };
                     } finally {
@@ -5882,11 +5882,11 @@
                                 a.dependenciesState_ > r && (r = a.dependenciesState_));
                         }
                         ((n.length = i), (t.newObserving_ = null), (o = e.length));
-                        for (; o--; ) {
+                        for (; o--;) {
                             var u = e[o];
                             (0 === u.diffValue_ && le(u, t), (u.diffValue_ = 0));
                         }
-                        for (; i--; ) {
+                        for (; i--;) {
                             var c = n[i];
                             1 === c.diffValue_ && ((c.diffValue_ = 0), ce(c, t));
                         }
@@ -5899,7 +5899,7 @@
             function Zt(t) {
                 var e = t.observing_;
                 t.observing_ = [];
-                for (var n = e.length; n--; ) le(e[n], t);
+                for (var n = e.length; n--;) le(e[n], t);
                 t.dependenciesState_ = Ht.NOT_TRACKING_;
             }
             function Yt(t) {
@@ -5927,7 +5927,7 @@
             function ie(t) {
                 if (t.dependenciesState_ !== Ht.UP_TO_DATE_) {
                     t.dependenciesState_ = Ht.UP_TO_DATE_;
-                    for (var e = t.observing_, n = e.length; n--; ) e[n].lowestObserverState_ = Ht.UP_TO_DATE_;
+                    for (var e = t.observing_, n = e.length; n--;) e[n].lowestObserverState_ = Ht.UP_TO_DATE_;
                 }
             }
             var oe = function () {
@@ -6134,7 +6134,7 @@
             }
             function be() {
                 ue.isRunningReactions = !0;
-                for (var t = ue.pendingReactions, e = 0; t.length > 0; ) {
+                for (var t = ue.pendingReactions, e = 0; t.length > 0;) {
                     100 == ++e && (console.error('[mobx] cycle in reaction: ' + t[0]), t.splice(0));
                     for (var n = t.splice(0), r = 0, i = n.length; r < i; r++) n[r].runReaction_();
                 }
@@ -7076,7 +7076,7 @@
                             return this.entries();
                         }),
                         (e.forEach = function (t, e) {
-                            for (var n, r = V(this); !(n = r()).done; ) {
+                            for (var n, r = V(this); !(n = r()).done;) {
                                 var i = n.value,
                                     o = i[0],
                                     s = i[1];
@@ -7124,7 +7124,7 @@
                             var t = this;
                             an(function () {
                                 Yt(function () {
-                                    for (var e, n = V(t.keys()); !(e = n()).done; ) {
+                                    for (var e, n = V(t.keys()); !(e = n()).done;) {
                                         var r = e.value;
                                         t.delete(r);
                                     }
@@ -7160,7 +7160,7 @@
                                                 o.set(u, c);
                                             }
                                     }
-                                    for (var l, h = V(i.entries()); !(l = h()).done; ) {
+                                    for (var l, h = V(i.entries()); !(l = h()).done;) {
                                         var f = l.value,
                                             d = f[0],
                                             p = f[1],
@@ -7249,7 +7249,7 @@
                             var t = this;
                             an(function () {
                                 Yt(function () {
-                                    for (var e, n = V(t.data_.values()); !(e = n()).done; ) {
+                                    for (var e, n = V(t.data_.values()); !(e = n()).done;) {
                                         var r = e.value;
                                         t.delete(r);
                                     }
@@ -7257,7 +7257,7 @@
                             });
                         }),
                         (e.forEach = function (t, e) {
-                            for (var n, r = V(this); !(n = r()).done; ) {
+                            for (var n, r = V(this); !(n = r()).done;) {
                                 var i = n.value;
                                 t.call(e, i, i, this);
                             }
@@ -7482,7 +7482,7 @@
                                     if (null == (n = this.target_[D]) ? void 0 : n[t]) return;
                                     r(1, e.annotationType_, this.name_ + '.' + t.toString());
                                 }
-                                for (var i = this.target_; i && i !== c; ) {
+                                for (var i = this.target_; i && i !== c;) {
                                     var o = a(i, t);
                                     if (o) {
                                         var s = e.make_(this, t, o, i);
@@ -7883,15 +7883,15 @@
                 }
                 if (0 === n) return !1;
                 (n < 0 && (n = -1), (i = i || []));
-                for (var l = (r = r || []).length; l--; ) if (r[l] === t) return i[l] === e;
+                for (var l = (r = r || []).length; l--;) if (r[l] === t) return i[l] === e;
                 if ((r.push(t), i.push(e), a)) {
                     if ((l = t.length) !== e.length) return !1;
-                    for (; l--; ) if (!cr(t[l], e[l], n - 1, r, i)) return !1;
+                    for (; l--;) if (!cr(t[l], e[l], n - 1, r, i)) return !1;
                 } else {
                     var h,
                         f = Object.keys(t);
                     if (((l = f.length), Object.keys(e).length !== l)) return !1;
-                    for (; l--; ) if (!B(e, (h = f[l])) || !cr(t[h], e[h], n - 1, r, i)) return !1;
+                    for (; l--;) if (!B(e, (h = f[l])) || !cr(t[h], e[h], n - 1, r, i)) return !1;
                 }
                 return (r.pop(), i.pop(), !0);
             }
@@ -8823,12 +8823,12 @@
                                   }),
                                   (t.prototype.nodesFromChild = function (t) {
                                       if (t.escapes(this)) return [];
-                                      for (var e = [], n = t; n && n !== this; ) (e.push(n), (n = n.parent));
+                                      for (var e = [], n = t; n && n !== this;) (e.push(n), (n = n.parent));
                                       return (e.push(this), e);
                                   }),
                                   (t.prototype.escapes = function (t) {
                                       if (this === t) return !1;
-                                      for (var e = this.parent; e; ) {
+                                      for (var e = this.parent; e;) {
                                           if (e === t) return !1;
                                           e = e.parent;
                                       }
@@ -9139,7 +9139,7 @@
                                           try {
                                               return this.getStateNodeById(t.slice(1));
                                           } catch (t) {}
-                                      for (var e = (0, s.Q9)(t, this.delimiter).slice(), n = this; e.length; ) {
+                                      for (var e = (0, s.Q9)(t, this.delimiter).slice(), n = this; e.length;) {
                                           var r = e.shift();
                                           if (!r.length) break;
                                           n = n.getStateNode(r);
@@ -9668,7 +9668,7 @@
                     o = n.call(t),
                     s = [];
                 try {
-                    for (; (void 0 === e || e-- > 0) && !(r = o.next()).done; ) s.push(r.value);
+                    for (; (void 0 === e || e-- > 0) && !(r = o.next()).done;) s.push(r.value);
                 } catch (t) {
                     i = { error: t };
                 } finally {
@@ -9972,7 +9972,7 @@
                             (s.push(e),
                                 (function () {
                                     if (!a) {
-                                        for (a = !0; s.length > 0; ) {
+                                        for (a = !0; s.length > 0;) {
                                             var e = s.shift();
                                             ((n = t.transition(n, e, c)),
                                                 o.forEach(function (t) {
@@ -11093,7 +11093,7 @@
                                       this.queue = [];
                                   }),
                                   (t.prototype.flushEvents = function () {
-                                      for (var t = this.queue.shift(); t; ) (this.process(t), (t = this.queue.shift()));
+                                      for (var t = this.queue.shift(); t;) (this.process(t), (t = this.queue.shift()));
                                   }),
                                   (t.prototype.process = function (t) {
                                       this.processingEvent = !0;
@@ -11164,7 +11164,7 @@
                     p = new Set(e);
                 try {
                     for (var v = (0, r.XA)(p), y = v.next(); !y.done; y = v.next())
-                        for (var g = (j = y.value).parent; g && !p.has(g); ) (p.add(g), (g = g.parent));
+                        for (var g = (j = y.value).parent; g && !p.has(g);) (p.add(g), (g = g.parent));
                 } catch (t) {
                     n = { error: t };
                 } finally {
@@ -11223,7 +11223,7 @@
                 try {
                     for (var x = (0, r.XA)(p), U = x.next(); !U.done; U = x.next()) {
                         var j;
-                        for (g = (j = U.value).parent; g && !p.has(g); ) (p.add(g), (g = g.parent));
+                        for (g = (j = U.value).parent; g && !p.has(g);) (p.add(g), (g = g.parent));
                     }
                 } catch (t) {
                     h = { error: t };

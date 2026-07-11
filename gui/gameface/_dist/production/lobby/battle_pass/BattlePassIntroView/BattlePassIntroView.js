@@ -194,9 +194,13 @@
                         if (t.mediumWidth && _) return (0, n.H)(e, t, b);
                         if (t.smallWidth && D) return (0, n.H)(e, t, b);
                         if (t.extraSmallWidth && B) return (0, n.H)(e, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && h) return e;
@@ -400,7 +404,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var u, t = n(s.keys()); !(u = t()).done; ) {
+                            for (var u, t = n(s.keys()); !(u = t()).done;) {
                                 o(u.value, e);
                             }
                         },
@@ -1139,7 +1143,7 @@
                     n = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(u) {
                     let e = '';
-                    for (let t = n.length - 1; t >= 0; t--) for (; u >= n[t]; ) ((e += r[t]), (u -= n[t]));
+                    for (let t = n.length - 1; t >= 0; t--) for (; u >= n[t];) ((e += r[t]), (u -= n[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

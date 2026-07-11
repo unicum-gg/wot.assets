@@ -172,7 +172,7 @@
                     h = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function y(u) {
                     let e = '';
-                    for (let t = h.length - 1; t >= 0; t--) for (; u >= h[t]; ) ((e += g[t]), (u -= h[t]));
+                    for (let t = h.length - 1; t >= 0; t--) for (; u >= h[t];) ((e += g[t]), (u -= h[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

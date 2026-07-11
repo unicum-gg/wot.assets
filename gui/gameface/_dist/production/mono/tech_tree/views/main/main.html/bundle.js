@@ -13,9 +13,9 @@ import {
     B as f,
     s as v,
     m as N,
-    F as x,
-    f as y,
-    h as T,
+    F as T,
+    f as x,
+    h as y,
     j as w,
     k as j,
     l as S,
@@ -602,6 +602,8 @@ const me = () => ({
         isVerticalBarVisible: !1,
         horizontalScrollPosition: 0,
         verticalScrollPosition: 0,
+        isHorizontalThumbDragging: !1,
+        isVerticalThumbDragging: !1,
         isAnyDragging: !1,
         initialScrollRight: !1,
         initialVerticalCenter: !1,
@@ -647,12 +649,12 @@ const me = () => ({
     fe = 'Nations_nation_c0adf454',
     ve = 'Nations_nation__selected_e9b0b5e7',
     Ne = 'Nations_nation_flag_8a32ffab',
-    xe = 'Nations_nation_glow_3d65e334',
-    ye = h.resolve('strings'),
-    Te = h.resolve('images'),
+    Te = 'Nations_nation_glow_3d65e334',
+    xe = h.resolve('strings'),
+    ye = h.resolve('images'),
     we = ({ nation: e, onSelect: i, isSelected: r }) => {
         const a = _().play,
-            n = m({ body: ye.readOrEmpty(`tech_tree.nationTooltip.${e}`) });
+            n = m({ body: xe.readOrEmpty(`tech_tree.nationTooltip.${e}`) });
         return t.jsxs('div', {
             className: o(fe, r && ve),
             'data-test-id': 'nation-' + e,
@@ -664,8 +666,8 @@ const me = () => ({
                 (a('nation-click', { target: we.name, original: r }), i(e), n.onClick());
             },
             children: [
-                t.jsx('img', { className: Ne, src: Te.readOrEmpty(`tech_tree.nations.${e}`) }),
-                t.jsx('div', { className: xe }),
+                t.jsx('img', { className: Ne, src: ye.readOrEmpty(`tech_tree.nations.${e}`) }),
+                t.jsx('div', { className: Te }),
             ],
         });
     };
@@ -890,9 +892,9 @@ const He = 'TopTierReleaseHighlight_6eda7632',
                 requiredXp: h,
                 hasEnoughCurrency: v,
                 isDiscountedPrice: N,
-                priceCurrency: x,
-                priceAmount: y,
-                earnedXp: T,
+                priceCurrency: T,
+                priceAmount: x,
+                earnedXp: y,
                 isPremium: w,
                 isElite: j,
                 isSelected: S,
@@ -917,7 +919,7 @@ const He = 'TopTierReleaseHighlight_6eda7632',
             $ = !w && l === C.Unresearched,
             G = l === C.Researched || l === C.ReadyForPurchase || l === C.ReadyForTradeIn || l === C.Rented,
             Y = !w && l === C.Researched,
-            K = T > 0 && !j,
+            K = y > 0 && !j,
             q = (l === C.ReadyForResearch && !c) || (l === C.ReadyForPurchase && !v),
             J = g(
                 'researchVehicle',
@@ -984,7 +986,7 @@ const He = 'TopTierReleaseHighlight_6eda7632',
                             },
                             onMouseDown: Z,
                             children: [
-                                K && t.jsx(Le, { amount: T, className: Qe.combatXp, type: 'combatXp' }),
+                                K && t.jsx(Le, { amount: y, className: Qe.combatXp, type: 'combatXp' }),
                                 t.jsxs('div', {
                                     className: Qe.rightBlockBelowLine,
                                     children: [
@@ -1011,8 +1013,8 @@ const He = 'TopTierReleaseHighlight_6eda7632',
                                             }),
                                         G &&
                                             t.jsx(Le, {
-                                                type: x,
-                                                amount: y,
+                                                type: T,
+                                                amount: x,
                                                 className: Qe.price,
                                                 isDiscountedXp: d,
                                                 isDiscountedPrice: N,
@@ -1070,8 +1072,8 @@ const He = 'TopTierReleaseHighlight_6eda7632',
     fi = 'ScrollBar_thumb_background_f48a5061',
     vi = 'ScrollBar_thumb_icon_a83ea3f3',
     Ni = 'ScrollBar_thumb_innerBorder_106d8a38',
-    xi = 'ScrollBar_thumb_border_183c86c5';
-function yi({ className: e, orientation: i = 'vertical', arrowClickStep: r = 50, ...n }) {
+    Ti = 'ScrollBar_thumb_border_183c86c5';
+function xi({ className: e, orientation: i = 'vertical', arrowClickStep: r = 50, ...n }) {
     const {
             containerWidth: s,
             containerHeight: l,
@@ -1085,15 +1087,15 @@ function yi({ className: e, orientation: i = 'vertical', arrowClickStep: r = 50,
             moveScrollPosition: p,
         } = ge(),
         f = _().play,
-        v = () => f('scroll-hover', { target: yi.name }),
-        N = () => f('scroll-click', { target: yi.name }),
-        x = 'vertical' === i,
-        y = x ? b : g,
-        T = u === i,
+        v = () => f('scroll-hover', { target: xi.name }),
+        N = () => f('scroll-click', { target: xi.name }),
+        T = 'vertical' === i,
+        x = T ? b : g,
+        y = u === i,
         w = a.useRef({ x: 0, y: 0 }),
-        j = x ? (l / d) * 100 : (s / c) * 100,
-        S = x ? (m / (d - l)) * (100 - j) : (h / (c - s)) * (100 - j),
-        P = x ? d > l : c > s,
+        j = T ? (l / d) * 100 : (s / c) * 100,
+        S = T ? (m / (d - l)) * (100 - j) : (h / (c - s)) * (100 - j),
+        P = T ? d > l : c > s,
         M = `${Math.floor(Math.max(j, 5))}%`,
         V = `${Math.ceil(Math.max(S, 0))}%`,
         R = !0;
@@ -1102,29 +1104,29 @@ function yi({ className: e, orientation: i = 'vertical', arrowClickStep: r = 50,
             const e = (e) => {
                     const i = e.screenX - w.current.x,
                         r = e.screenY - w.current.y;
-                    ((w.current = { x: w.current.x + i, y: w.current.y + r }), p(x ? 0 : i, x ? r : 0));
+                    ((w.current = { x: w.current.x + i, y: w.current.y + r }), p(T ? 0 : i, T ? r : 0));
                 },
                 i = () => {
-                    y(!1);
+                    x(!1);
                 };
             return (
-                T && (window.addEventListener('mousemove', e), window.addEventListener('mouseup', i)),
+                y && (window.addEventListener('mousemove', e), window.addEventListener('mouseup', i)),
                 () => {
                     (window.removeEventListener('mousemove', e), window.removeEventListener('mouseup', i));
                 }
             );
-        }, [T, p, y, x]),
+        }, [y, p, x, T]),
         l && s && d && c
             ? t.jsxs('div', {
                   ...n,
-                  className: o(ni, e, x ? si : li, !P && ti),
+                  className: o(ni, e, T ? si : li, !P && ti),
                   style: { '--thumbSize': M, '--thumbPosition': V },
                   children: [
                       t.jsx('div', {
                           className: o(ci, hi),
                           onMouseEnter: v,
                           onClick: (e) => {
-                              (N(), e.preventDefault(), e.stopPropagation(), p(x ? 0 : -r, x ? -r : 0, R));
+                              (N(), e.preventDefault(), e.stopPropagation(), p(T ? 0 : -r, T ? -r : 0, R));
                           },
                       }),
                       t.jsxs('div', {
@@ -1136,7 +1138,7 @@ function yi({ className: e, orientation: i = 'vertical', arrowClickStep: r = 50,
                                       className: bi,
                                       onMouseEnter: v,
                                       onClick: (e) => {
-                                          (N(), e.preventDefault(), e.stopPropagation(), p(x ? 0 : -r, x ? -r : 0, R));
+                                          (N(), e.preventDefault(), e.stopPropagation(), p(T ? 0 : -r, T ? -r : 0, R));
                                       },
                                   }),
                               }),
@@ -1146,13 +1148,13 @@ function yi({ className: e, orientation: i = 'vertical', arrowClickStep: r = 50,
                                       (e.preventDefault(),
                                           e.stopPropagation(),
                                           N(),
-                                          y(!0),
+                                          x(!0),
                                           (w.current = { x: e.screenX, y: e.screenY }));
                                   },
                                   onMouseEnter: v,
                                   children: [
                                       t.jsx('div', { className: fi }),
-                                      t.jsx('div', { className: xi }),
+                                      t.jsx('div', { className: Ti }),
                                       t.jsx('div', { className: Ni }),
                                       t.jsx('div', { className: vi }),
                                   ],
@@ -1163,7 +1165,7 @@ function yi({ className: e, orientation: i = 'vertical', arrowClickStep: r = 50,
                                       className: bi,
                                       onMouseEnter: v,
                                       onClick: (e) => {
-                                          (N(), e.preventDefault(), e.stopPropagation(), p(x ? 0 : r, x ? r : 0, R));
+                                          (N(), e.preventDefault(), e.stopPropagation(), p(T ? 0 : r, T ? r : 0, R));
                                       },
                                   }),
                               }),
@@ -1173,7 +1175,7 @@ function yi({ className: e, orientation: i = 'vertical', arrowClickStep: r = 50,
                           className: o(ci, di),
                           onMouseEnter: v,
                           onClick: (e) => {
-                              (N(), e.preventDefault(), e.stopPropagation(), p(x ? 0 : r, x ? r : 0, R));
+                              (N(), e.preventDefault(), e.stopPropagation(), p(T ? 0 : r, T ? r : 0, R));
                           },
                       }),
                   ],
@@ -1181,14 +1183,14 @@ function yi({ className: e, orientation: i = 'vertical', arrowClickStep: r = 50,
             : null
     );
 }
-const Ti = ({
+const yi = ({
         children: e,
         scrollBarOffsetTop: i = 0,
         scrollBarOffsetLeft: r = 0,
         scrollBarOffsetRight: n = 0,
         scrollBarOffsetBottom: s = 0,
-        HorizontalScrollBar: l = yi,
-        VerticalScrollBar: c = yi,
+        HorizontalScrollBar: l = xi,
+        VerticalScrollBar: c = xi,
         mouseWheelOrientation: d,
         classNames: h,
         dragLimit: _ = 5,
@@ -1201,9 +1203,9 @@ const Ti = ({
                 isDragging: p,
                 thumbDragging: f,
                 horizontalScrollPosition: N,
-                verticalScrollPosition: x,
-                containerHeight: y,
-                containerWidth: T,
+                verticalScrollPosition: T,
+                containerHeight: x,
+                containerWidth: y,
                 draggableClassName: w,
                 isHorizontalBarVisible: j,
                 isVerticalBarVisible: S,
@@ -1267,7 +1269,7 @@ const Ti = ({
             }, [M]),
             a.useEffect(() => {
                 (v.tooltip.hide(0, 0), v.contextMenu.hide(0, 0));
-            }, [x, N]));
+            }, [T, N]));
         return t.jsxs('div', {
             ...m,
             ref: u,
@@ -1283,9 +1285,9 @@ const Ti = ({
             style: {
                 ...m.style,
                 '--ScrollArea-offsetX': `${N}px`,
-                '--ScrollArea-offsetY': `${x}px`,
-                '--ScrollArea-containerHeight': `${y}px`,
-                '--ScrollArea-containerWidth': `${T}px`,
+                '--ScrollArea-offsetY': `${T}px`,
+                '--ScrollArea-containerHeight': `${x}px`,
+                '--ScrollArea-containerWidth': `${y}px`,
                 '--ScrollArea-scrollBarOffsetTop': `${i}rem`,
                 '--ScrollArea-scrollBarOffsetLeft': `${r}rem`,
                 '--ScrollArea-scrollBarOffsetRight': `${n}rem`,
@@ -1297,7 +1299,7 @@ const Ti = ({
                     children: t.jsx('div', {
                         ref: g,
                         className: o(ne, (p || C) && te, h?.content),
-                        style: { top: -x, left: -N },
+                        style: { top: -T, left: -N },
                         children: e,
                     }),
                 }),
@@ -1339,9 +1341,9 @@ const Ti = ({
                 setIsMouseDown: g,
             } = ge(),
             [b, p] = a.useState(!1),
-            [v, y] = a.useState(!1),
-            T = r.premiumNodesByTier.get(),
-            w = T ? Object.values(T).reduce((e, i) => Math.max(e, i.length), 0) : 0,
+            [v, x] = a.useState(!1),
+            y = r.premiumNodesByTier.get(),
+            w = y ? Object.values(y).reduce((e, i) => Math.max(e, i.length), 0) : 0,
             j = r.maxCombinedTier.get(),
             S = _().play,
             P = !l && !(d || c),
@@ -1354,7 +1356,7 @@ const Ti = ({
             }, [u]),
             a.useEffect(() => {
                 const e = () => {
-                        viewEnv.isWindowShownByViewEvent(4) || y(!1);
+                        viewEnv.isWindowShownByViewEvent(4) || x(!1);
                     },
                     i = document.getElementById('techTreeNormalView');
                 return (
@@ -1363,12 +1365,12 @@ const Ti = ({
                         i && i.removeEventListener('mouseup', e);
                     }
                 );
-            }, [y]),
+            }, [x]),
             t.jsxs('div', {
                 'data-test-id': 'premium-vehicles',
                 className: o(wi, 0 === w && ji, P && Si, m && h, V && Pi, M && Mi),
                 onMouseDown: (e) => {
-                    if (2 === e.button) return void y(!0);
+                    if (2 === e.button) return void x(!0);
                     const i = 0 === e.button,
                         r = 1 === e.button;
                     (i || r) && m && (g(!0), p(!0), (R.current = e.screenX));
@@ -1393,7 +1395,7 @@ const Ti = ({
                             className: Di,
                             style: { transform: `translateX(-${s}px)`, visibility: i ? 'visible' : 'hidden' },
                             children: N(j, (e) => {
-                                const i = T[e + 1] ?? [],
+                                const i = y[e + 1] ?? [],
                                     r = i.length > 4 ? i.length - 4 + 1 : 0,
                                     o = r ? i.slice(0, i.length - r) : i;
                                 return t.jsxs(
@@ -1423,7 +1425,7 @@ const Ti = ({
                                                         onClick: () => n.onOpenPremiumShop(e + 1),
                                                         children: t.jsx('span', {
                                                             className: Oi,
-                                                            children: t.jsx(x, {
+                                                            children: t.jsx(T, {
                                                                 text: Fi.readOrEmpty('tech_tree.premiumVehicles.more'),
                                                                 params: {
                                                                     amount: t.jsx('span', {
@@ -1489,7 +1491,7 @@ const Gi = 'DoubleScrollWrapper_hidden_81d74f4d';
 function Yi({ isContentVisible: e = !0, ...i }) {
     return t.jsxs(t.Fragment, {
         children: [
-            t.jsx(Ti, {
+            t.jsx(yi, {
                 ...i,
                 mouseWheelOrientation: 'vertical',
                 HorizontalScrollBar: $i,
@@ -1529,7 +1531,7 @@ const Ki = {
     Qi = { args: { tooltipId: 'vehicleCollectorInfo' } },
     Zi = s(function e() {
         const { model: i, controls: r } = z(),
-            s = y(),
+            s = x(),
             l = _().play,
             c = i.selectedNation.get(),
             d = i.showWelcomeAnimation.get(),
@@ -1538,10 +1540,10 @@ const Ki = {
             b = i.computes.getAvailableNations(),
             f = i.techTreeNodes.get(),
             v = i.firstHighlightedLevel.get(),
-            x = i.maxCombinedTier.get(),
+            T = i.maxCombinedTier.get(),
             S = i.premiumNodesByTier.get(),
             P = Object.keys(S).length > 0,
-            M = d ? Math.max(x - v + 1, 0) : 0,
+            M = d ? Math.max(T - v + 1, 0) : 0,
             V = N(M, (e) => v - 1 + e),
             R =
                 d ||
@@ -1560,7 +1562,7 @@ const Ki = {
         a.useEffect(() => {
             const i = [];
             return (
-                Array.from({ length: x }, (r, o) => {
+                Array.from({ length: T }, (r, o) => {
                     const a = I(o);
                     if (o >= v - 1 && d) {
                         const r = 'vehicle-highlighted-tier-appear',
@@ -1574,29 +1576,29 @@ const Ki = {
                     i.forEach((e) => clearTimeout(e));
                 }
             );
-        }, [c, x, l, d, v, I]);
+        }, [c, T, l, d, v, I]);
         const D = (e) => {
             s.push(s.location, { nation: e });
         };
-        T(j.ESCAPE, () => {
+        y(j.ESCAPE, () => {
             s.goBack();
         });
         const k = b.indexOf(c);
-        (T(j.ARROW_UP, (i) => {
+        (y(j.ARROW_UP, (i) => {
             const r = b[k - 1];
             r && (l('increaseAmount', { target: e.name, original: i }), D(r));
         }),
-            T(j.ARROW_DOWN, (i) => {
+            y(j.ARROW_DOWN, (i) => {
                 const r = b[k + 1];
                 r && (l('decreaseAmount', { target: e.name, original: i }), D(r));
             }));
         const { mainLineRowIndexes: B, rows: A } = re(f),
-            O = 100 / x,
+            O = 100 / T,
             E = u(Qi),
             L = n.useRef(null),
             H = n.useRef(null),
             F = L.current,
-            W = [x, A.length, P ? 'premium' : '_', R ? 'right' : 'left'].join('-');
+            W = [T, A.length, P ? 'premium' : '_', R ? 'right' : 'left'].join('-');
         return (
             F !== W &&
                 ((L.current = W),
@@ -1608,7 +1610,7 @@ const Ki = {
             t.jsxs('div', {
                 id: 'techTreeNormalView',
                 className: o(Ki.base, d && Ki.base__welcomeAnimation),
-                style: { '--nodeWidth': Math.floor(100 * O) / 100 + '%', '--columnCount': x },
+                style: { '--nodeWidth': Math.floor(100 * O) / 100 + '%', '--columnCount': T },
                 children: [
                     t.jsx('div', { className: Ki.background }),
                     t.jsxs('div', {
@@ -1659,7 +1661,7 @@ const Ki = {
                                                 'div',
                                                 {
                                                     className: Ki.table_header,
-                                                    children: Array.from({ length: x }, (e, i) => {
+                                                    children: Array.from({ length: T }, (e, i) => {
                                                         const r = i + 1,
                                                             a = r >= v,
                                                             n = `${I(i)}ms`;
@@ -1798,8 +1800,8 @@ const Ki = {
     }),
     er = 'App_e7ddee44';
 function ir() {
-    const e = y();
-    return (T(j.ESCAPE, e.goBack), t.jsx('div', { className: er, children: t.jsx(Zi, {}) }));
+    const e = x();
+    return (y(j.ESCAPE, e.goBack), t.jsx('div', { className: er, children: t.jsx(Zi, {}) }));
 }
 S(
     t.jsx(P, {

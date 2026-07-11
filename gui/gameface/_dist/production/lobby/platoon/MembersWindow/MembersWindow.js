@@ -387,7 +387,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1609,7 +1609,7 @@
                             t = ke(u);
                         let n,
                             r = e;
-                        for (; null !== (n = ye.exec(e)); ) {
+                        for (; null !== (n = ye.exec(e));) {
                             const e = n[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
                                 const u = t + e[2].replace(/\.\.\//g, '');
@@ -1716,7 +1716,7 @@
                                             let u;
                                             const t = Se(),
                                                 n = ke(t);
-                                            for (; null !== (u = he.exec(e)); ) {
+                                            for (; null !== (u = he.exec(e));) {
                                                 const e = u[0].match(/href="(.*?)"/);
                                                 if (e && !e[1].includes(Ne) && n) {
                                                     const u = n + e[1].replace(/\.\.\//g, ''),
@@ -1731,7 +1731,7 @@
                                             ((e) => {
                                                 const u = ke(Se());
                                                 let t;
-                                                for (; null !== (t = he.exec(e)); ) {
+                                                for (; null !== (t = he.exec(e));) {
                                                     const e = t[0].match(/href="(.*?)"/);
                                                     if (e) {
                                                         const t = u + e[1].replace(/\.\.\//g, ''),
@@ -1963,16 +1963,7 @@
                         );
                     },
                     ou = ((0, s.memo)(au), (0, s.createContext)(null)),
-                    su = () => {
-                        const e = (0, s.useContext)(ou);
-                        return (
-                            null !== e &&
-                                console.info(
-                                    'useDependencies hook was called with data from MembersWindowDIContext.Provider',
-                                ),
-                            e
-                        );
-                    },
+                    su = () => (0, s.useContext)(ou),
                     iu = { contentId: R.views.lobby.platoon.AlertTooltip('resId'), isEnabled: !0 },
                     lu = (e, u, t, n = !0) =>
                         e && n
@@ -2540,7 +2531,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = Zu(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = Zu(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, s.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),
@@ -3514,6 +3505,9 @@
                                         }
                                     );
                             }, [j, G]),
+                                (0, s.useEffect)(() => {
+                                    !$ && j && G();
+                                }, [$, j, G]),
                                 (0, s.useEffect)(() => {
                                     void 0 !== F && (M.current.open = F);
                                 }, [F]));

@@ -765,7 +765,7 @@
                         ? `${u}`
                         : (function (u) {
                               let F = '';
-                              for (let A = D.length - 1; A >= 0; A--) for (; u >= D[A]; ) ((F += E[A]), (u -= D[A]));
+                              for (let A = D.length - 1; A >= 0; A--) for (; u >= D[A];) ((F += E[A]), (u -= D[A]));
                               return F;
                           })(u);
         },

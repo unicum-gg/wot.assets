@@ -357,7 +357,7 @@
                     w = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function y(e) {
                     let u = '';
-                    for (let t = w.length - 1; t >= 0; t--) for (; e >= w[t]; ) ((u += b[t]), (e -= w[t]));
+                    for (let t = w.length - 1; t >= 0; t--) for (; e >= w[t];) ((u += b[t]), (e -= w[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -2223,9 +2223,13 @@
                         if (t.mediumWidth && _) return o(u, t, f);
                         if (t.smallWidth && D) return o(u, t, f);
                         if (t.extraSmallWidth && m) return o(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && B) return u;
                             if (t.mediumHeight && g) return u;
@@ -2584,7 +2588,7 @@
                                             u(e).delete(t);
                                         },
                                         n = (e, ...t) => {
-                                            for (var r, n = U(u(e).values()); !(r = n()).done; ) (0, r.value)(...t);
+                                            for (var r, n = U(u(e).values()); !(r = n()).done;) (0, r.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: r, trigger: n }), []);
                                 })(),
@@ -3323,7 +3327,7 @@
                         let o = ze.exec(e),
                             s = e,
                             l = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const t = o[0],
                                 a = Ge.exec(t),
                                 c = Ue.exec(t),
@@ -3448,7 +3452,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = Xe(n.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = Xe(n.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };

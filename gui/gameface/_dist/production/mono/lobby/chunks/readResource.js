@@ -32,4 +32,4 @@ function i(t, o) {
     const r = o ? 'sub_modes' : 'modes';
     return n.$dyn(r).$dyn(t) ? `${s}.asset_packs.${r}.${t}` : `${s}.asset_packs.${r}.${e}`;
 }
-export { i as a, o as b, r as c, a as g };
+export { e as D, i as a, o as b, r as c, a as g };

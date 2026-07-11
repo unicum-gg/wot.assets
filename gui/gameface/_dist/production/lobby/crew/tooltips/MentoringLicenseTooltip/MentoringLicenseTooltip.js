@@ -431,7 +431,7 @@
                     E = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function r(u) {
                     let e = '';
-                    for (let t = E.length - 1; t >= 0; t--) for (; u >= E[t]; ) ((e += n[t]), (u -= E[t]));
+                    for (let t = E.length - 1; t >= 0; t--) for (; u >= E[t];) ((e += n[t]), (u -= E[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1264,7 +1264,7 @@
                         let F = N.exec(u),
                             o = u,
                             a = 0;
-                        for (; F; ) {
+                        for (; F;) {
                             const t = F[0],
                                 n = W.exec(t),
                                 D = I.exec(t),
@@ -1394,7 +1394,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = q(E.keys()); !(u = t()).done; ) r(u.value, e);
+                                                        for (var u, t = q(E.keys()); !(u = t()).done;) r(u.value, e);
                                                     },
                                                     unsubscribe: r,
                                                 };

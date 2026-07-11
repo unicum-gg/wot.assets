@@ -69,7 +69,7 @@ const exports = {};
                           },
                 a = (e) => (t = s ? new n(e, t, 'An error was suppressed during disposal') : ((s = !0), e)),
                 r = (n) => {
-                    for (; (n = e.pop()); )
+                    for (; (n = e.pop());)
                         try {
                             var i = n[1] && n[1].call(n[2]);
                             if (n[0]) return Promise.resolve(i).then(r, (e) => (a(e), r()));
@@ -4093,7 +4093,9 @@ const exports = {};
                 let o = null;
                 function l() {
                     n ||
-                        ((i.current.status = statuses$1.await),
+                        ('display' === i.current.status &&
+                            (sendEvent$2.tooltip.hide(e, t, s), (i.current.status = statuses$1.idle)),
+                        (i.current.status = statuses$1.await),
                         window.clearTimeout(i.current.timeoutId),
                         (i.current.timeoutId = window.setTimeout(c, r)));
                 }
@@ -4111,7 +4113,7 @@ const exports = {};
                     ) {
                         displayedTooltips.delete(o);
                         let e = o.parentElement;
-                        for (; e && !displayedTooltips.has(e); ) e = e.parentElement;
+                        for (; e && !displayedTooltips.has(e);) e = e.parentElement;
                         if (e) {
                             displayedTooltips.get(e).show();
                         }
@@ -4894,7 +4896,7 @@ const exports = {};
         for (let s = 0; s < e.length; s++) {
             if ('$' === e[s]) {
                 let n = s + 1;
-                for (; n < e.length && !isEnd(e[n]); ) n++;
+                for (; n < e.length && !isEnd(e[n]);) n++;
                 const a = e.slice(s + 1, n),
                     r = t[a];
                 if (r) return resolveAttrParams(e.replace(`$${a}`, String(r)), t);
@@ -5231,11 +5233,18 @@ const exports = {};
             (!React.isValidElement(e) && !!Array.isArray(e) && e.every(isSerializableReactNode))
         );
     }
-    const base$b = 'MultilineOverflow_8834bd8e',
+    const base$b = 'MultilineOverflow_ec9f8e47',
         content$1 = 'MultilineOverflow_content_b539970d',
         styles$f = { base: base$b, content: content$1 };
     function isSerializableParams(e) {
         return !e || Object.values(e).every(isSerializableReactNode);
+    }
+    function cloneNode(e) {
+        return e instanceof HTMLElement
+            ? e.cloneNode(!0)
+            : e.nodeType === Node.TEXT_NODE
+              ? document.createTextNode(e.nodeValue ?? '')
+              : void 0;
     }
     const MultilineOverflow = React.forwardRef(function (
         {
@@ -5254,120 +5263,116 @@ const exports = {};
             classNames: m,
             style: p,
             styleBase: g,
-            ...f
+            styleText: f,
+            ...h
         },
-        h,
+        _,
     ) {
-        const _ = React.useRef(null),
-            [y, b] = React.useState(!1);
+        const y = React.useRef(null),
+            b = React.useRef(null),
+            [v, R] = React.useState(!1);
         React.useEffect(() => {
             if (0 === e.length) return;
-            const t = _.current;
-            if (!t) return;
-            const s = document.createElement('div');
-            let n = noop$1;
+            const t = y.current,
+                s = b.current;
+            if (!t || !s) return;
+            const n = document.createElement('div');
             function a() {
-                if (!t) return;
-                (n(),
-                    (s.style.visibility = 'hidden'),
-                    (s.className = clsx(styles$f.content, t.children[0].className)),
-                    (s.innerHTML = ''),
-                    t.appendChild(s));
+                if (!t || !s) return;
                 const e = t.children[0];
                 if (!e) return console.warn("MultilineOverflow can't get first child to handle it", t);
-                const a = relativeOffset(t.getBoundingClientRect(), e.getBoundingClientRect());
-                (e instanceof HTMLElement && (s.style.cssText = e.style.cssText),
-                    (s.style.left = `${a.x}px`),
-                    (s.style.top = `${a.y}px`));
-                for (let t of e.childNodes.values()) {
-                    if (t instanceof HTMLElement) {
-                        const e = t.cloneNode(!0);
-                        s.appendChild(e);
-                    }
-                    if (t.nodeType === Node.TEXT_NODE) {
-                        const e = document.createTextNode(t.nodeValue ?? '');
-                        s.appendChild(e);
-                    }
+                (n.remove(),
+                    (n.className = clsx(styles$f.content, t.children[0].className)),
+                    (n.innerHTML = ''),
+                    e instanceof HTMLElement && (n.style.cssText = e.style.cssText));
+                const a = e.childNodes.length - 1;
+                let r = a;
+                for (; r >= 0; r--) {
+                    const s = e.childNodes[r];
+                    if (s instanceof HTMLElement && !(s.offsetTop + s.offsetHeight > t.clientHeight)) break;
                 }
-                const r = document.createElement('div');
-                ((r.innerHTML = '...'),
-                    s.appendChild(r),
-                    (n = createLayoutReadyInEffect(() => {
-                        const e = [];
-                        for (let n = s.childNodes.length - 2; 0 !== n; n--) {
-                            const a = s.childNodes[n];
-                            if (a instanceof HTMLElement) {
-                                if (a.offsetTop + a.offsetHeight <= t.offsetHeight) break;
-                                e.push(a);
-                            }
-                        }
-                        if (0 === e.length) (b(!1), r.remove());
-                        else {
-                            (b(!0), e.forEach((e) => e.remove()));
-                            let s = 0;
-                            for (; s++ < 1e3 && r.previousSibling && r.offsetTop + r.offsetHeight > t.offsetHeight; )
-                                r.previousSibling?.remove();
-                        }
-                        s.style.visibility = '';
-                    })));
+                if (r === a) R(!1);
+                else {
+                    R(!0);
+                    const a = relativeOffset(t.getBoundingClientRect(), e.getBoundingClientRect());
+                    for (n.style.visibility = '', n.style.left = `${a.x}px`, n.style.top = `${a.y}px`; r >= 0; r--) {
+                        const t = e.childNodes[r];
+                        if (t instanceof HTMLElement && !(t.offsetLeft + t.offsetWidth + s.offsetWidth > e.clientWidth))
+                            break;
+                    }
+                    for (let t = 0; t <= r; t++) {
+                        const s = e.childNodes[t];
+                        if (!(s instanceof HTMLElement)) continue;
+                        const a = cloneNode(s);
+                        a ? n.appendChild(a) : console.warn('Unexpected type of target node', s);
+                    }
+                    const i = s.cloneNode(!0);
+                    (i.removeAttribute('style'), n.appendChild(i), t.appendChild(n));
+                }
             }
             const r = new ResizeObserver(a);
             return (
                 r.observe(t),
                 new DisposeBuilder()
-                    .add(() => n())
                     .add(addEventListener(window, 'resize', a))
                     .add(r.disconnect.bind(r))
-                    .add(s.remove.bind(s)).dispose
+                    .add(n.remove.bind(n)).dispose
             );
-        }, [h, e]);
-        const v = isSerializableParams(s),
-            R = useParamTooltip(
+        }, [_, e]);
+        const w = isSerializableParams(s),
+            x = useParamTooltip(
                 'format_text',
                 React.useMemo(
                     () => ({
                         text: e,
-                        params: v ? s : void 0,
+                        params: w ? s : void 0,
                         split: r,
                         upgradeLegacy: a,
                         brackets: t,
                         resId: resources.resolve('views').read((e) => e.mono.tooltips.tooltips('resId')),
                     }),
-                    [e, t, r, a, s, v],
+                    [e, t, r, a, s, w],
                 ),
             ),
-            w = d ?? R;
+            E = d ?? x;
         if (
             (React.useEffect(() => {
-                c || y || w.onMouseLeave();
-            }, [y, w, d, c, v]),
+                c || v || E.onMouseLeave();
+            }, [v, E, d, c, w]),
             0 === e.length)
         )
             return null;
-        return jsxRuntime.jsx('div', {
-            ...f,
+        return jsxRuntime.jsxs('div', {
+            ...h,
             onMouseEnter: function (e) {
-                (i?.(e), y && !c && w.onMouseEnter(e));
+                (i?.(e), v && !c && E.onMouseEnter(e));
             },
             onClick: function (e) {
-                (l?.(e), c || w.onClick());
+                (l?.(e), c || E.onClick());
             },
             onMouseLeave: function (e) {
-                (o?.(e), c || w.onMouseLeave());
+                (o?.(e), c || E.onMouseLeave());
             },
-            ref: assignRefs([h, _]),
+            ref: assignRefs([_, y]),
             className: clsx(styles$f.base, u, m?.base),
-            style: g,
-            children: jsxRuntime.jsx(FormatText, {
-                text: e,
-                brackets: t,
-                params: s,
-                upgradeLegacy: a,
-                split: r,
-                formatters: n,
-                className: m?.text,
-                style: { ...p, visibility: 'hidden' },
-            }),
+            style: { ...p, ...g },
+            children: [
+                jsxRuntime.jsx(FormatText, {
+                    text: e,
+                    brackets: t,
+                    params: s,
+                    upgradeLegacy: a,
+                    split: r,
+                    formatters: n,
+                    className: m?.text,
+                    style: { ...f, visibility: v ? 'hidden' : void 0 },
+                }),
+                jsxRuntime.jsx('div', {
+                    ref: b,
+                    style: { visibility: 'hidden', position: 'absolute' },
+                    children: '...',
+                }),
+            ],
         });
     });
     function getBaseAnimationConfig({
@@ -5824,10 +5829,7 @@ const exports = {};
                                         className: t?.filledPattern,
                                         animationConfig: n,
                                     }),
-                                    jsxRuntime.jsx(Done, {
-                                        classNames: { done: t?.done, doneComplete: t?.doneComplete },
-                                        animationConfig: n,
-                                    }),
+                                    jsxRuntime.jsx(Done, { classNames: t, animationConfig: n }),
                                 ],
                             }),
                         jsxRuntime.jsx(animated.div, {
@@ -6647,6 +6649,7 @@ const exports = {};
             RewardType.DeluxeGift,
             RewardType.BattleBoosterGift,
             RewardType.OptionalDevice,
+            RewardType.TmanToken,
         ],
         currencyValueTypes = [RewardType.Gold, RewardType.Credits, RewardType.Crystal, RewardType.FreeXp],
         numberValueTypes = [RewardType.BattlePassPoints, RewardType.EquipCoin],
@@ -7234,10 +7237,10 @@ const exports = {};
             );
         }),
         views = resources.resolve('views');
-    function getBoxRewardTooltipArgs({ limit: e, rewardsTooltipResId: t, ...s }) {
+    function getBoxRewardTooltipArgs({ limit: e, rewardsTooltipResId: t, boxRewardTooltipContentId: s, ...n }) {
         return {
-            contentId: views.read((e) => e.lobby.tooltips.AdditionalBattlePassRewardsTooltip('resId')),
-            args: { showFromIndex: e - 1, ...s },
+            contentId: s ?? views.read((e) => e.lobby.tooltips.AdditionalRewardsTooltip('resId')),
+            args: { showFromIndex: e - 1, ...n },
             resId: t,
         };
     }
@@ -7247,39 +7250,41 @@ const exports = {};
         bonuses: s,
         maxRewardsCount: n,
         rewardsTooltipResId: a,
-        immediateAnimation: r,
-        questId: i,
-        level: o,
-        chapter: l,
-        rewardType: c,
-        className: d,
-        rewardItemClassName: u,
+        boxRewardTooltipContentId: r,
+        immediateAnimation: i,
+        questId: o,
+        level: l,
+        chapter: c,
+        rewardType: d,
+        className: u,
+        rewardItemClassName: m,
     }) {
-        const m = {
+        const p = {
             bonuses: s,
-            questId: i,
+            questId: o,
             maxRewardsCount: n,
             size: ImageSize.Small,
             resId: a,
             boxRewardTooltipArgs: getBoxRewardTooltipArgs({
                 limit: n,
                 rewardsTooltipResId: a,
-                rewardType: c,
-                level: o ? o - 1 : void 0,
-                chapter: l,
-                questId: i,
+                boxRewardTooltipContentId: r,
+                rewardType: d,
+                level: l ? l - 1 : void 0,
+                chapter: c,
+                questId: o,
             }),
-            rewardItemClassMix: u,
+            rewardItemClassMix: m,
         };
         return e
             ? jsxRuntime.jsx(AnimatedRewards, {
-                  ...m,
+                  ...p,
                   animationRef: t,
-                  immediateAnimation: r,
-                  className: d,
-                  classNames: { glowContainer: d },
+                  immediateAnimation: i,
+                  className: u,
+                  classNames: { glowContainer: u },
               })
-            : jsxRuntime.jsx(Rewards, { ...m, classMix: d });
+            : jsxRuntime.jsx(Rewards, { ...p, classMix: u });
     }
     const base$1 = 'CompletedMark_fc4eee08',
         glow = 'CompletedMark_glow_33775180',
@@ -7548,7 +7553,11 @@ const exports = {};
                                   classNames: { icon: styles$6.completedMarkIcon },
                                   springProps: { immediate: a, delay: CHECK_MARK_ANIMATION_DELAY },
                               })
-                            : jsxRuntime.jsx(Icon, { value: o.path, questType: e.questType }),
+                            : jsxRuntime.jsx(Icon, {
+                                  value: o.path,
+                                  questType: e.questType,
+                                  className: e.iconClassName,
+                              }),
                     }),
                     jsxRuntime.jsx('div', {
                         className: styles$6.questsWithRewards,
@@ -7638,7 +7647,7 @@ const exports = {};
                     if (r) (t.push(e.substring(s, i + 1)), (r = !1));
                     else {
                         let n = s;
-                        for (; '\n' === e[n] || ' ' === e[n]; ) n++;
+                        for (; '\n' === e[n] || ' ' === e[n];) n++;
                         t.push(e.substring(n, i + 1));
                     }
                     s = i + 1;
@@ -7863,7 +7872,7 @@ const exports = {};
         ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
     function arabic2roman$1(e) {
         let t = '';
-        for (let s = ARABIC.length - 1; s >= 0; s--) for (; e >= ARABIC[s]; ) ((t += ROMAN[s]), (e -= ARABIC[s]));
+        for (let s = ARABIC.length - 1; s >= 0; s--) for (; e >= ARABIC[s];) ((t += ROMAN[s]), (e -= ARABIC[s]));
         return t;
     }
     const ROMAN_FORBIDDEN_LANGUAGE_CODES = ['ko', 'no'];

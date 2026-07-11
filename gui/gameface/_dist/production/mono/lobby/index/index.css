@@ -52,7 +52,6 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
 .VideoBackground_videoBackground_1a24cf5e {
     position: absolute;
     top: 0;
@@ -61,6 +60,7 @@ html[lang='th'] input {
     left: 0;
 }
 
+/* stylelint-disable scss/dollar-variable-pattern */
 .VideoBackground_video_102f3645 {
     width: 1920rem;
     height: 1080rem;

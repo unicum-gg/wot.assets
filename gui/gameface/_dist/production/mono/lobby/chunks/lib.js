@@ -1047,21 +1047,6 @@ function find(e, t) {
         if (t(n, u, e)) return n;
     }
 }
-new Set(Object.values(keyStringCodes));
-const createLayoutReadyInEffect$1 = (e) => {
-    let t,
-        u = null;
-    return (
-        (u = requestAnimationFrame(() => {
-            u = requestAnimationFrame(() => {
-                ((u = null), (t = e()));
-            });
-        })),
-        () => {
-            ('function' == typeof t && t(), null !== u && cancelAnimationFrame(u));
-        }
-    );
-};
 function assert(e, t) {
     e || console.error(t || 'Assertion failed');
 }
@@ -1075,9 +1060,10 @@ function _mapRange(e, t, u) {
     for (let s = e; s < t; s++) n[s] = u(s);
     return n;
 }
-assert.log = function (e, t) {
-    e || console.error(t || 'Assertion failed');
-};
+(new Set(Object.values(keyStringCodes)),
+    (assert.log = function (e, t) {
+        e || console.error(t || 'Assertion failed');
+    }));
 const ROMAN_FORBIDDEN_LANGUAGE_CODES$1 = ['ko', 'no'];
 ROMAN_FORBIDDEN_LANGUAGE_CODES$1.includes(resources.resolve('langCode'));
 class Stack {
@@ -1422,7 +1408,9 @@ function useTooltip({
             let i = null;
             function a() {
                 n ||
-                    ((o.current.status = statuses.await),
+                    ('display' === o.current.status &&
+                        (sendEvent$1.tooltip.hide(e, t, u), (o.current.status = statuses.idle)),
+                    (o.current.status = statuses.await),
                     window.clearTimeout(o.current.timeoutId),
                     (o.current.timeoutId = window.setTimeout(l, r)));
             }
@@ -1440,7 +1428,7 @@ function useTooltip({
                 ) {
                     displayedTooltips.delete(i);
                     let e = i.parentElement;
-                    for (; e && !displayedTooltips.has(e); ) e = e.parentElement;
+                    for (; e && !displayedTooltips.has(e);) e = e.parentElement;
                     if (e) {
                         displayedTooltips.get(e).show();
                     }
@@ -2273,7 +2261,7 @@ function resolveAttrParams(e, t) {
     for (let u = 0; u < e.length; u++) {
         if ('$' === e[u]) {
             let n = u + 1;
-            for (; n < e.length && !isEnd(e[n]); ) n++;
+            for (; n < e.length && !isEnd(e[n]);) n++;
             const s = e.slice(u + 1, n),
                 r = t[s];
             if (r) return resolveAttrParams(e.replace(`$${s}`, String(r)), t);
@@ -2421,11 +2409,18 @@ function isSerializableReactNode(e) {
     );
 }
 SPLIT_BY_SYMBOL_LANGUAGE_CODES.includes(R.strings.settings.LANGUAGE_CODE().toLowerCase());
-const base$2 = 'MultilineOverflow_8834bd8e',
+const base$2 = 'MultilineOverflow_ec9f8e47',
     content = 'MultilineOverflow_content_b539970d',
     styles$2 = { base: base$2, content: content };
 function isSerializableParams(e) {
     return !e || Object.values(e).every(isSerializableReactNode);
+}
+function cloneNode(e) {
+    return e instanceof HTMLElement
+        ? e.cloneNode(!0)
+        : e.nodeType === Node.TEXT_NODE
+          ? document.createTextNode(e.nodeValue ?? '')
+          : void 0;
 }
 const MultilineOverflow = reactExports.forwardRef(function (
     {
@@ -2444,120 +2439,116 @@ const MultilineOverflow = reactExports.forwardRef(function (
         classNames: E,
         style: p,
         styleBase: m,
-        ...A
+        styleText: A,
+        ...F
     },
-    F,
+    h,
 ) {
-    const h = reactExports.useRef(null),
-        [f, g] = reactExports.useState(!1);
+    const f = reactExports.useRef(null),
+        g = reactExports.useRef(null),
+        [_, D] = reactExports.useState(!1);
     reactExports.useEffect(() => {
         if (0 === e.length) return;
-        const t = h.current;
-        if (!t) return;
-        const u = document.createElement('div');
-        let n = noop$1;
+        const t = f.current,
+            u = g.current;
+        if (!t || !u) return;
+        const n = document.createElement('div');
         function s() {
-            if (!t) return;
-            (n(),
-                (u.style.visibility = 'hidden'),
-                (u.className = clsx(styles$2.content, t.children[0].className)),
-                (u.innerHTML = ''),
-                t.appendChild(u));
+            if (!t || !u) return;
             const e = t.children[0];
             if (!e) return console.warn("MultilineOverflow can't get first child to handle it", t);
-            const s = relativeOffset(t.getBoundingClientRect(), e.getBoundingClientRect());
-            (e instanceof HTMLElement && (u.style.cssText = e.style.cssText),
-                (u.style.left = `${s.x}px`),
-                (u.style.top = `${s.y}px`));
-            for (let t of e.childNodes.values()) {
-                if (t instanceof HTMLElement) {
-                    const e = t.cloneNode(!0);
-                    u.appendChild(e);
-                }
-                if (t.nodeType === Node.TEXT_NODE) {
-                    const e = document.createTextNode(t.nodeValue ?? '');
-                    u.appendChild(e);
-                }
+            (n.remove(),
+                (n.className = clsx(styles$2.content, t.children[0].className)),
+                (n.innerHTML = ''),
+                e instanceof HTMLElement && (n.style.cssText = e.style.cssText));
+            const s = e.childNodes.length - 1;
+            let r = s;
+            for (; r >= 0; r--) {
+                const u = e.childNodes[r];
+                if (u instanceof HTMLElement && !(u.offsetTop + u.offsetHeight > t.clientHeight)) break;
             }
-            const r = document.createElement('div');
-            ((r.innerHTML = '...'),
-                u.appendChild(r),
-                (n = createLayoutReadyInEffect$1(() => {
-                    const e = [];
-                    for (let n = u.childNodes.length - 2; 0 !== n; n--) {
-                        const s = u.childNodes[n];
-                        if (s instanceof HTMLElement) {
-                            if (s.offsetTop + s.offsetHeight <= t.offsetHeight) break;
-                            e.push(s);
-                        }
-                    }
-                    if (0 === e.length) (g(!1), r.remove());
-                    else {
-                        (g(!0), e.forEach((e) => e.remove()));
-                        let u = 0;
-                        for (; u++ < 1e3 && r.previousSibling && r.offsetTop + r.offsetHeight > t.offsetHeight; )
-                            r.previousSibling?.remove();
-                    }
-                    u.style.visibility = '';
-                })));
+            if (r === s) D(!1);
+            else {
+                D(!0);
+                const s = relativeOffset(t.getBoundingClientRect(), e.getBoundingClientRect());
+                for (n.style.visibility = '', n.style.left = `${s.x}px`, n.style.top = `${s.y}px`; r >= 0; r--) {
+                    const t = e.childNodes[r];
+                    if (t instanceof HTMLElement && !(t.offsetLeft + t.offsetWidth + u.offsetWidth > e.clientWidth))
+                        break;
+                }
+                for (let t = 0; t <= r; t++) {
+                    const u = e.childNodes[t];
+                    if (!(u instanceof HTMLElement)) continue;
+                    const s = cloneNode(u);
+                    s ? n.appendChild(s) : console.warn('Unexpected type of target node', u);
+                }
+                const o = u.cloneNode(!0);
+                (o.removeAttribute('style'), n.appendChild(o), t.appendChild(n));
+            }
         }
         const r = new ResizeObserver(s);
         return (
             r.observe(t),
             new DisposeBuilder()
-                .add(() => n())
                 .add(addEventListener(window, 'resize', s))
                 .add(r.disconnect.bind(r))
-                .add(u.remove.bind(u)).dispose
+                .add(n.remove.bind(n)).dispose
         );
-    }, [F, e]);
-    const _ = isSerializableParams(u),
-        D = useParamTooltip(
+    }, [h, e]);
+    const y = isSerializableParams(u),
+        v = useParamTooltip(
             'format_text',
             reactExports.useMemo(
                 () => ({
                     text: e,
-                    params: _ ? u : void 0,
+                    params: y ? u : void 0,
                     split: r,
                     upgradeLegacy: s,
                     brackets: t,
                     resId: resources.resolve('views').read((e) => e.mono.tooltips.tooltips('resId')),
                 }),
-                [e, t, r, s, u, _],
+                [e, t, r, s, u, y],
             ),
         ),
-        y = c ?? D;
+        C = c ?? v;
     if (
         (reactExports.useEffect(() => {
-            l || f || y.onMouseLeave();
-        }, [f, y, c, l, _]),
+            l || _ || C.onMouseLeave();
+        }, [_, C, c, l, y]),
         0 === e.length)
     )
         return null;
-    return jsxRuntimeExports.jsx('div', {
-        ...A,
+    return jsxRuntimeExports.jsxs('div', {
+        ...F,
         onMouseEnter: function (e) {
-            (o?.(e), f && !l && y.onMouseEnter(e));
+            (o?.(e), _ && !l && C.onMouseEnter(e));
         },
         onClick: function (e) {
-            (a?.(e), l || y.onClick());
+            (a?.(e), l || C.onClick());
         },
         onMouseLeave: function (e) {
-            (i?.(e), l || y.onMouseLeave());
+            (i?.(e), l || C.onMouseLeave());
         },
-        ref: assignRefs([F, h]),
+        ref: assignRefs([h, f]),
         className: clsx(styles$2.base, d, E?.base),
-        style: m,
-        children: jsxRuntimeExports.jsx(FormatText, {
-            text: e,
-            brackets: t,
-            params: u,
-            upgradeLegacy: s,
-            split: r,
-            formatters: n,
-            className: E?.text,
-            style: { ...p, visibility: 'hidden' },
-        }),
+        style: { ...p, ...m },
+        children: [
+            jsxRuntimeExports.jsx(FormatText, {
+                text: e,
+                brackets: t,
+                params: u,
+                upgradeLegacy: s,
+                split: r,
+                formatters: n,
+                className: E?.text,
+                style: { ...A, visibility: _ ? 'hidden' : void 0 },
+            }),
+            jsxRuntimeExports.jsx('div', {
+                ref: g,
+                style: { visibility: 'hidden', position: 'absolute' },
+                children: '...',
+            }),
+        ],
     });
 });
 function FormatTextSplited({ className: e, ...t }) {
@@ -2765,7 +2756,7 @@ const graphicsQuality = {
     ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
 function arabic2roman$1(e) {
     let t = '';
-    for (let u = ARABIC.length - 1; u >= 0; u--) for (; e >= ARABIC[u]; ) ((t += ROMAN[u]), (e -= ARABIC[u]));
+    for (let u = ARABIC.length - 1; u >= 0; u--) for (; e >= ARABIC[u];) ((t += ROMAN[u]), (e -= ARABIC[u]));
     return t;
 }
 const ROMAN_FORBIDDEN_LANGUAGE_CODES = ['ko', 'no'];
@@ -3672,6 +3663,7 @@ const FormatNumber = ({ value: e, format: t = 'integral' }) => {
         RewardType.BattleBoosterGift,
         RewardType.OptionalDevice,
         RewardType.Attachment,
+        RewardType.TmanToken,
     ],
     currencyValueTypes = [RewardType.Gold, RewardType.Credits, RewardType.Crystal, RewardType.FreeXp],
     numberValueTypes = [RewardType.BattlePassPoints, RewardType.EquipCoin],
@@ -4166,7 +4158,7 @@ export {
     DynamicTooltipWrapper as D,
     ExtendedText as E,
     FormatText as F,
-    ValueTypes as G,
+    mapRange as G,
     TooltipDecorator as H,
     ImageSize as I,
     JSXBuilder as J,
@@ -4190,19 +4182,19 @@ export {
     initializeModelWithContext as i,
     DateTimeFormatsEnum as j,
     keyCodes as k,
-    mapRange as l,
+    resources as l,
     map as m,
-    noop$1 as n,
-    resources as o,
+    useSounds as n,
+    useSimpleTooltip as o,
     play as p,
-    useSounds as q,
+    useSpecialTooltip as q,
     runView as r,
-    useSimpleTooltip as s,
-    useSpecialTooltip as t,
+    identity as s,
+    noop$1 as t,
     useMedia as u,
-    identity as v,
-    graphicsQuality$1 as w,
-    get as x,
-    getSize$2 as y,
-    useMount$1 as z,
+    graphicsQuality$1 as v,
+    get as w,
+    getSize$2 as x,
+    useMount$1 as y,
+    ValueTypes as z,
 };

@@ -174,7 +174,7 @@
                     x = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function P(u) {
                     let e = '';
-                    for (let F = x.length - 1; F >= 0; F--) for (; u >= x[F]; ) ((e += _[F]), (u -= x[F]));
+                    for (let F = x.length - 1; F >= 0; F--) for (; u >= x[F];) ((e += _[F]), (u -= x[F]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -528,7 +528,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, F = Pu(t.keys()); !(u = F()).done; ) n(u.value, e);
+                                                        for (var u, F = Pu(t.keys()); !(u = F()).done;) n(u.value, e);
                                                     },
                                                     unsubscribe: n,
                                                 };

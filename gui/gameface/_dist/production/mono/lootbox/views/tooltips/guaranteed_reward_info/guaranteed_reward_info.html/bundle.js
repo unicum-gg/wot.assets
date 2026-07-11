@@ -1,66 +1,60 @@
-import { m as e, n as t, j as s } from '../../../../chunks/vendor.js';
-import { i as n, c as i, A as o, F as r, r as a, E as l } from '../../../../chunks/lib.js';
-import { a as c, g as u } from '../../../../chunks/resources.js';
+import { n as t, p as e, j as o } from '../../../../chunks/vendor.js';
+import { i as n, c as s, q as r, y as i, r as c, T as a } from '../../../../chunks/lib.js';
+import { a as u } from '../../../../chunks/resources.js';
 /* empty css                       */ import '../../../../chunks/getRewardImage.js';
-const d = { dynamicTexts: { remainingCount: 'singleRewardView.tooltip.remainingCount' } },
-    m = {
+const d = {
         texts: {
-            title: 'singleRewardView.tooltip.title',
-            subtitle: 'singleRewardView.tooltip.subtitle',
-            label: 'singleRewardView.tooltip.label',
-            description: 'singleRewardView.tooltip.description',
-            firstCount: 'singleRewardView.tooltip.count.first',
-            secondCount: 'singleRewardView.tooltip.count.second',
-            thirdCount: 'singleRewardView.tooltip.count.third',
-            otherCount: 'singleRewardView.tooltip.count.other',
+            firstCount: 'guaranteed.tooltip.count.first',
+            secondCount: 'guaranteed.tooltip.count.second',
+            thirdCount: 'guaranteed.tooltip.count.third',
+            otherCount: 'guaranteed.tooltip.count.other',
+            description0: 'guaranteed.tooltip.description0',
+            description1: 'guaranteed.tooltip.description1',
+            item: 'guaranteed.tooltip.description.item',
+            count: 'guaranteed.tooltip.description.count',
         },
     },
-    [p, g] = n()(({ observableModel: t }) => {
-        const s = { root: t.object() },
-            n = e(() => c(m, s.root.get().eventName), { equals: i }),
-            o = e(() => u(d, s.root.get().eventName), { equals: i });
-        return { ...s, computes: { resources: n, dynamicResources: o } };
-    }, o),
-    b = 'App_ba71ae1b',
-    w = 'App_title_e78d7565',
-    h = 'App_text_b5591bdf',
-    x = 'App_label_db244be6';
-const j = t(function () {
-    const { model: e } = g(),
-        { texts: t } = e.computes.resources(),
-        { dynamicTexts: n } = e.computes.dynamicResources(),
-        i = e.root.get().guaranteedFrequency,
-        o = (() => {
-            if (i > 10 && i < 14) return t.otherCount;
-            switch (i % 10) {
+    [p, l] = n()(({ observableModel: e }) => {
+        const o = { root: e.object() },
+            n = t(() => u(d, o.root.get().eventName), { equals: s });
+        return { ...o, computes: { resources: n } };
+    }, r),
+    h = 'App_f074c91d',
+    m = 'App_highlight_a9335078',
+    g = 'App_text_2f55a205';
+const j = e(function () {
+    const { model: t } = l(),
+        { texts: e } = t.computes.resources(),
+        n = t.root.get().guaranteedFrequency,
+        s = (() => {
+            if (n > 10 && n < 14) return e.otherCount;
+            switch (n % 10) {
                 case 1:
-                    return t.firstCount;
+                    return e.firstCount;
                 case 2:
-                    return t.secondCount;
+                    return e.secondCount;
                 case 3:
-                    return t.thirdCount;
+                    return e.thirdCount;
                 default:
-                    return t.otherCount;
+                    return e.otherCount;
             }
         })();
-    return s.jsxs('div', {
-        className: b,
+    return o.jsxs('div', {
+        className: h,
         children: [
-            s.jsx('div', { className: w, children: t.title }),
-            s.jsx(r, {
-                text: t.subtitle,
-                classMix: h,
+            o.jsx(i, {
+                text: e.description0,
                 binding: {
-                    count: s.jsx(r, { text: o, binding: { count: i } }),
-                    remainingCount: s.jsx(r, {
-                        text: n.remainingCount.plural('remainingCount', e.root.get().guaranteedFrequency - 1),
-                        binding: { remainingCount: i - 1 },
+                    count: o.jsx(i, {
+                        classMix: m,
+                        text: e.count,
+                        binding: { count: o.jsx(i, { text: s, binding: { count: n } }) },
                     }),
+                    item: o.jsx('div', { className: m, children: e.item }),
                 },
             }),
-            s.jsx('div', { className: x, children: t.label }),
-            s.jsx('div', { className: h, children: t.description }),
+            o.jsx('div', { className: g, children: e.description1 }),
         ],
     });
 });
-a(s.jsx(p, { children: s.jsx(l, { children: s.jsx(j, {}) }) }));
+c(o.jsx(p, { children: o.jsx(a, { children: o.jsx(a.Decorator, { children: o.jsx(j, {}) }) }) }));

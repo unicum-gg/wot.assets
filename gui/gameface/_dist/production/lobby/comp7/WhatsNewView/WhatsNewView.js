@@ -925,9 +925,13 @@
                         if (t.mediumWidth && d) return s(u, t, v);
                         if (t.smallWidth && A) return s(u, t, v);
                         if (t.extraSmallWidth && _) return s(u, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && h) return u;
                             if (t.mediumHeight && B) return u;
@@ -1237,7 +1241,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = $(n.keys()); !(e = t()).done; ) r(e.value, u);
+                                                        for (var e, t = $(n.keys()); !(e = t()).done;) r(e.value, u);
                                                     },
                                                     unsubscribe: r,
                                                 };
@@ -1885,7 +1889,7 @@
                                             u(e).delete(t);
                                         },
                                         n = (e, ...t) => {
-                                            for (var a, n = Re(u(e).values()); !(a = n()).done; ) (0, a.value)(...t);
+                                            for (var a, n = Re(u(e).values()); !(a = n()).done;) (0, a.value)(...t);
                                         };
                                     return (0, r.useMemo)(() => ({ on: t, off: a, trigger: n }), []);
                                 })(),
@@ -2675,7 +2679,7 @@
                         let s = Vu.exec(e),
                             o = e,
                             l = 0;
-                        for (; s; ) {
+                        for (; s;) {
                             const t = s[0],
                                 r = $u.exec(t),
                                 c = Uu.exec(t),
@@ -3601,7 +3605,7 @@
                             : (function (e) {
                                   let u = '';
                                   for (let t = Ka.length - 1; t >= 0; t--)
-                                      for (; e >= Ka[t]; ) ((u += ja[t]), (e -= Ka[t]));
+                                      for (; e >= Ka[t];) ((u += ja[t]), (e -= Ka[t]));
                                   return u;
                               })(e),
                     Xa = {

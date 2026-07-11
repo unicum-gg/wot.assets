@@ -1,53 +1,3 @@
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-:root {
-    --hangar-highlight-shadow:
-        0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
-}
-/* stylelint-disable selector-max-id */
-/* stylelint-disable selector-no-qualifying-type */
-#Styles_root_8a923a08,
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    color: var(--color-general-primary);
-    font-size: 14rem;
-}
-body,
-button,
-input {
-    font-family: PFDINMax;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-}
-html[lang='ja'] body,
-html[lang='ko'] body,
-html[lang='zh_tw'] body,
-html[lang='zh_sg'] body,
-html[lang='zh_cn'] body,
-html[lang='vi'] body,
-html[lang='th'] body,
-html[lang='ja'] button,
-html[lang='ko'] button,
-html[lang='zh_tw'] button,
-html[lang='zh_sg'] button,
-html[lang='zh_cn'] button,
-html[lang='vi'] button,
-html[lang='th'] button,
-html[lang='ja'] input,
-html[lang='ko'] input,
-html[lang='zh_tw'] input,
-html[lang='zh_sg'] input,
-html[lang='zh_cn'] input,
-html[lang='vi'] input,
-html[lang='th'] input {
-    font-family: Warhelios;
-    letter-spacing: 0;
-}
 @keyframes Styles_fadeInWithScale_8a923a08 {
     0% {
         opacity: 0;
@@ -121,6 +71,8 @@ html[lang='th'] input {
         opacity: 1;
     }
 }
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
 .Styles_f631575c {
     line-height: normal;
 }
@@ -192,59 +144,7 @@ html[lang='th'] input {
 }
 .Styles_labelColumn_bf6ee8a4 {
     flex: 1 1 auto;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-:root {
-    --hangar-highlight-shadow:
-        0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
 }
-
-/* stylelint-disable selector-max-id */
-/* stylelint-disable selector-no-qualifying-type */
-#Point_root_d8b7e333,
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    color: var(--color-general-primary);
-    font-size: 14rem;
-}
-
-body,
-button,
-input {
-    font-family: PFDINMax;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-}
-html[lang='ja'] body,
-html[lang='ko'] body,
-html[lang='zh_tw'] body,
-html[lang='zh_sg'] body,
-html[lang='zh_cn'] body,
-html[lang='vi'] body,
-html[lang='th'] body,
-html[lang='ja'] button,
-html[lang='ko'] button,
-html[lang='zh_tw'] button,
-html[lang='zh_sg'] button,
-html[lang='zh_cn'] button,
-html[lang='vi'] button,
-html[lang='th'] button,
-html[lang='ja'] input,
-html[lang='ko'] input,
-html[lang='zh_tw'] input,
-html[lang='zh_sg'] input,
-html[lang='zh_cn'] input,
-html[lang='vi'] input,
-html[lang='th'] input {
-    font-family: Warhelios;
-    letter-spacing: 0;
-}
-
 @keyframes Point_fadeInWithScale_d8b7e333 {
     0% {
         opacity: 0;
@@ -318,6 +218,8 @@ html[lang='th'] input {
         opacity: 1;
     }
 }
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
 .Point_2663b7cb {
     display: flex;
     flex-direction: row;
@@ -385,59 +287,7 @@ html[lang='th'] input {
     margin-left: 6rem;
     margin-top: 4rem;
     background: url('R.images.gui.maps.icons.battlePass.tooltips.points_24') center/contain no-repeat;
-} /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-:root {
-    --hangar-highlight-shadow:
-        0rem 0rem 15rem rgba(23, 23, 23, 0.4), 0rem 0rem 5rem rgba(23, 23, 23, 0.4), 0rem 2rem rgba(0, 0, 0, 0.3);
 }
-
-/* stylelint-disable selector-max-id */
-/* stylelint-disable selector-no-qualifying-type */
-#PointsTable_root_adbccef6,
-html,
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    color: var(--color-general-primary);
-    font-size: 14rem;
-}
-
-body,
-button,
-input {
-    font-family: PFDINMax;
-    font-weight: 400;
-    letter-spacing: 0.02em;
-}
-html[lang='ja'] body,
-html[lang='ko'] body,
-html[lang='zh_tw'] body,
-html[lang='zh_sg'] body,
-html[lang='zh_cn'] body,
-html[lang='vi'] body,
-html[lang='th'] body,
-html[lang='ja'] button,
-html[lang='ko'] button,
-html[lang='zh_tw'] button,
-html[lang='zh_sg'] button,
-html[lang='zh_cn'] button,
-html[lang='vi'] button,
-html[lang='th'] button,
-html[lang='ja'] input,
-html[lang='ko'] input,
-html[lang='zh_tw'] input,
-html[lang='zh_sg'] input,
-html[lang='zh_cn'] input,
-html[lang='vi'] input,
-html[lang='th'] input {
-    font-family: Warhelios;
-    letter-spacing: 0;
-}
-
 @keyframes PointsTable_fadeInWithScale_adbccef6 {
     0% {
         opacity: 0;
@@ -511,6 +361,8 @@ html[lang='th'] input {
         opacity: 1;
     }
 }
+/* stylelint-disable selector-no-qualifying-type */
+/* stylelint-disable selector-no-qualifying-type */
 .PointsTable_pointIcon_363eb4a4 {
     width: 24rem;
     height: 24rem;

@@ -9,10 +9,10 @@ import {
     j as _,
     w as m,
     x as u,
-    Q as g,
+    V as g,
     B as p,
-    N as b,
-    M as f,
+    O as b,
+    N as f,
 } from '../../../chunks/lib.js';
 var w = ((e) => (
         (e[(e.Undone = 0)] = 'Undone'),
@@ -233,8 +233,8 @@ function O({ value: e, label: a, icon: n, index: i, animState: r, all: o }) {
         ],
     });
 }
-const G = 'Tank_64c86de0',
-    V = 'Tank_wrap_51cfa705',
+const V = 'Tank_64c86de0',
+    G = 'Tank_wrap_51cfa705',
     $ = 'Tank_image_20e440df',
     P = 'Tank_bg_73a7932a',
     B = 'Tank_bg__back_9e9e3ca6',
@@ -243,11 +243,11 @@ const G = 'Tank_64c86de0',
     W = 'Tank_back_29d05476';
 function z({ vehicleImage: e, isAnyNotDone: a }) {
     return s.jsxs('div', {
-        className: t(G, a && U),
+        className: t(V, a && U),
         children: [
             s.jsx('div', { className: t(P, B) }),
             s.jsx('div', {
-                className: V,
+                className: G,
                 children: s.jsx('div', { className: $, style: { backgroundImage: `url(${e})` } }),
             }),
             s.jsx('div', { className: t(P, F) }),
@@ -263,7 +263,7 @@ const L = {
         separator__failed: 'ResultStats_separator__failed_989f1494',
     },
     q = r.resolve('strings');
-function Q({ animState: e, hasReward: a }) {
+function H({ animState: e, hasReward: a }) {
     const n = j().model,
         i = n.kills.get(),
         r = n.time.get(),
@@ -285,7 +285,7 @@ function Q({ animState: e, hasReward: a }) {
         ],
     });
 }
-const H = {
+const J = {
         base: 'MapsTrainingResult_15b08403',
         bg: 'MapsTrainingResult_bg_cc8b01b4',
         bgFogging: 'MapsTrainingResult_bgFogging_e9f701a4',
@@ -299,11 +299,11 @@ const H = {
         close: 'MapsTrainingResult_close_4c7f7d48',
         button: 'MapsTrainingResult_button_5ef0f480',
     },
-    J = r.resolve('strings'),
-    K = {
-        [w.Undone]: J.readOrEmpty('maps_training.result.title.lose'),
-        [w.PartialDone]: J.readOrEmpty('maps_training.result.title.partial'),
-        [w.Done]: J.readOrEmpty('maps_training.result.title.win'),
+    K = r.resolve('strings'),
+    Q = {
+        [w.Undone]: K.readOrEmpty('maps_training.result.title.lose'),
+        [w.PartialDone]: K.readOrEmpty('maps_training.result.title.partial'),
+        [w.Done]: K.readOrEmpty('maps_training.result.title.win'),
     },
     X = n(function () {
         const { model: e, controls: t } = j(),
@@ -342,42 +342,42 @@ const H = {
                 },
                 [c],
             ),
-            y = _(J.readOrEmpty('maps_training.result.mapName'), {
+            y = _(K.readOrEmpty('maps_training.result.mapName'), {
                 map: b,
                 scenario: e.selectedScenario.get(),
                 type: e.selectedVehicleType.get(),
             }),
-            I = x(H.base, H, n);
+            I = x(J.base, J, n);
         return s.jsxs('div', {
             className: I,
             children: [
-                s.jsx('div', { className: H.close, children: s.jsx(g, { onClose: t.close }) }),
+                s.jsx('div', { className: J.close, children: s.jsx(g, { onClose: t.close }) }),
                 s.jsxs('div', {
-                    className: H.bg,
+                    className: J.bg,
                     style: N,
-                    children: [s.jsx('div', { className: H.bgFogging }), f && s.jsx('div', { className: H.bgShape })],
+                    children: [s.jsx('div', { className: J.bgFogging }), f && s.jsx('div', { className: J.bgShape })],
                 }),
                 s.jsxs('div', {
-                    className: H.box,
+                    className: J.box,
                     children: [
-                        s.jsx('div', { className: H.mapTitle, children: y }),
+                        s.jsx('div', { className: J.mapTitle, children: y }),
                         s.jsxs('div', {
-                            className: H.titleWrapper,
+                            className: J.titleWrapper,
                             children: [
-                                f && s.jsx('div', { className: H.titleBG }),
-                                s.jsx('div', { className: H.title, children: K[r] }),
+                                f && s.jsx('div', { className: J.titleBG }),
+                                s.jsx('div', { className: J.title, children: Q[r] }),
                             ],
                         }),
-                        s.jsx(Q, { hasReward: T, animState: n }),
+                        s.jsx(H, { hasReward: T, animState: n }),
                         s.jsx(A, { animState: n, doneValue: r, wasDone: d, onAnimationCompete: h }),
                     ],
                 }),
                 s.jsx(p, {
-                    className: H.button,
+                    className: J.button,
                     theme: p.themes.primary,
                     size: p.sizes.small,
                     onClick: t.close,
-                    children: J.readOrEmpty('maps_training.result.submit'),
+                    children: K.readOrEmpty('maps_training.result.submit'),
                 }),
             ],
         });

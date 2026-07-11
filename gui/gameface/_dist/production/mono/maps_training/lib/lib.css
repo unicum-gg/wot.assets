@@ -2289,7 +2289,7 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-max-id */
 /* stylelint-disable selector-no-qualifying-type */
-#Formattext_root_5d59be47,
+#Tooltip_root_648bdb8d,
 html,
 body {
     width: 100%;
@@ -2334,9 +2334,17 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Formattext_bb80854d {
+.Tooltip_6d997cee {
     display: flex;
-    flex-wrap: wrap;
+    position: absolute;
+}
+
+.Tooltip_decorator_b3486d4e {
+    padding: 4rem 6rem 8rem;
+    border-image-source: url(R.atlases.components.tooltip_background) repeat center/contain;
+    border-image-slice: 24 fill;
+    border-image-width: 24rem;
+    position: relative;
 } /* stylelint-disable selector-no-qualifying-type */
 :root {
     --hangar-highlight-shadow:
@@ -2460,7 +2468,7 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-max-id */
 /* stylelint-disable selector-no-qualifying-type */
-#Tooltip_root_648bdb8d,
+#Formattext_root_5d59be47,
 html,
 body {
     width: 100%;
@@ -2505,15 +2513,7 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Tooltip_6d997cee {
+.Formattext_bb80854d {
     display: flex;
-    position: absolute;
-}
-
-.Tooltip_decorator_b3486d4e {
-    padding: 4rem 6rem 8rem;
-    border-image-source: url(R.atlases.components.tooltip_background) repeat center/contain;
-    border-image-slice: 24 fill;
-    border-image-width: 24rem;
-    position: relative;
+    flex-wrap: wrap;
 }

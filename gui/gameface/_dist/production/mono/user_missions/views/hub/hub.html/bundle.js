@@ -1,9 +1,15 @@
 const __vite__mapDeps = (
     i,
     m = __vite__mapDeps,
-    d = m.f || (m.f = ['../../../lib/lib.css', '../../../index/index.css', '../../../global/global.css']),
+    d = m.f ||
+        (m.f = [
+            '../../../lib/lib.css',
+            '../../../index/index.css',
+            '../../../global/global.css',
+            '../../../index/index2.css',
+        ]),
 ) => i.map((i) => d[i]);
-import { R as e, q as t, r as n, j as s } from '../../../chunks/vendor.js';
+import { R as e, s as t, r as n, j as s } from '../../../chunks/vendor.js';
 import {
     c as r,
     i as u,
@@ -102,20 +108,24 @@ import {
         });
     },
     k = 'basic',
-    [C, y] = u()(
+    E = 'challenges',
+    [y, C] = u()(
         ({ observableModel: e }) => ({ ...e.primitives(['currentTabId']), tabsList: e.arrayClone('tabsList') }),
         ({ externalModel: e }) => ({
             onTabChange: e.createCallback((e) => ({ tabId: e }), 'onTabChange'),
             onContentLayoutChanged: e.createCallback((e, t) => ({ y: e, height: t }), 'onContentLayoutChanged'),
         }),
     ),
-    E = 'Hub_a7d012e0',
-    j = 'Hub_tabsContainer_e39aa10a',
-    q = 'Hub_tab_5c9743bd',
-    w = 'Hub_content_39db32f3',
-    L = { [k]: e.lazy(() => v(() => import('../../../chunks/index.js'), __vite__mapDeps([0, 1, 2]), import.meta.url)) },
-    x = t(() => {
-        const { controls: t, model: r } = y(),
+    j = 'Hub_a7d012e0',
+    q = 'Hub_tabsContainer_e39aa10a',
+    w = 'Hub_tab_5c9743bd',
+    L = 'Hub_content_f95705c3',
+    x = {
+        [k]: e.lazy(() => v(() => import('../../../chunks/index.js'), __vite__mapDeps([0, 1, 2]), import.meta.url)),
+        [E]: e.lazy(() => v(() => import('../../../chunks/index2.js'), __vite__mapDeps([0, 3]), import.meta.url)),
+    },
+    z = t(() => {
+        const { controls: t, model: r } = C(),
             u = r.currentTabId.get(),
             _ = n.useRef(null),
             h = n.useCallback(() => {
@@ -144,7 +154,7 @@ import {
             }, [_, h]));
         const m = a({ tabSize: c.small }, { large: { tabSize: c.medium } });
         return s.jsxs('div', {
-            className: E,
+            className: j,
             children: [
                 s.jsx(l, {
                     active: u,
@@ -152,20 +162,20 @@ import {
                     size: m.tabSize,
                     onActiveChange: t.onTabChange,
                     children: s.jsx(l.Switcher, {
-                        classNames: { base: j },
+                        classNames: { base: q },
                         children: i(r.tabsList.get(), (e) =>
-                            s.jsx(l.Tab, { tabId: e.id, className: q, children: e.title }, `tab_${e.id}`),
+                            s.jsx(l.Tab, { tabId: e.id, className: w, children: e.title }, `tab_${e.id}`),
                         ),
                     }),
                 }),
                 s.jsx('div', {
-                    className: w,
+                    className: L,
                     ref: _,
                     children:
-                        L[u] && s.jsx(n.Suspense, { fallback: s.jsx('div', {}), children: e.createElement(L[u]) }),
+                        x[u] && s.jsx(n.Suspense, { fallback: s.jsx('div', {}), children: e.createElement(x[u]) }),
                 }),
             ],
         });
     });
-m(new _().addWithProps(h, { soundsOverrides: g }).add(C).render(s.jsx(x, {}))).then(d);
+m(new _().addWithProps(h, { soundsOverrides: g }).add(y).render(s.jsx(z, {}))).then(d);
 export { b as s };

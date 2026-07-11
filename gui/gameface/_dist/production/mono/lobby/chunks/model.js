@@ -1,4 +1,4 @@
-import { i as e, h as r, bC as s, o as a } from './lib.js';
+import { i as e, O as r, bC as s, bn as a } from './lib.js';
 import { J as o, F as t, G as n } from './vendor.js';
 var l = ((e) => (
     (e.None = 'none'),
@@ -12,7 +12,7 @@ const i = o(t({ goal: n(), periods: o(o(n())) }));
 function c(e) {
     return e.map(([e, r]) => [s(e, a.ShortTime), s(r, a.ShortTime)]);
 }
-const [d, h] = e()(
+const [d, m] = e()(
     ({ observableModel: e }) => {
         const s = { ...e.primitives(['alertType']) },
             a = e.dict('battleSchedule');
@@ -34,4 +34,4 @@ const [d, h] = e()(
     },
     ({ externalModel: e }) => ({ changeServer: e.createCallbackNoArgs('onChangeServer') }),
 );
-export { l as A, i as B, d as a, h as u };
+export { l as A, i as B, d as a, m as u };

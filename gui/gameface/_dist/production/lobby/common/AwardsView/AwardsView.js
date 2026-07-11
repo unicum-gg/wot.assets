@@ -462,7 +462,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -941,9 +941,13 @@
                         if (t.mediumWidth && m) return a(u, t, w);
                         if (t.smallWidth && F) return a(u, t, w);
                         if (t.extraSmallWidth && D) return a(u, t, w);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return u;
                             if (t.largeHeight && g) return u;
                             if (t.mediumHeight && C) return u;
@@ -1559,7 +1563,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = K(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = K(r.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -2091,6 +2095,7 @@
                         he.BattleBoosterGift,
                         he.OptionalDevice,
                         he.Attachment,
+                        he.TmanToken,
                     ],
                     ye = [he.Gold, he.Credits, he.Crystal, he.FreeXp],
                     xe = [he.BattlePassPoints, he.EquipCoin],

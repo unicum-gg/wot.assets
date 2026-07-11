@@ -1,15 +1,15 @@
 import { j as s, R as e } from '../../../../chunks/vendor.js';
 import {
     aa as a,
-    dd as i,
-    de as r,
-    df as c,
-    dg as o,
-    dh as t,
+    de as i,
+    df as r,
+    dg as c,
+    dh as o,
+    di as t,
     o as l,
-    dc as n,
+    dd as n,
     a9 as d,
-    cz as p,
+    cA as p,
 } from '../../../../chunks/lib.js';
 import { D as _ } from '../../../../chunks/divider.js';
 var x = ((s) => ((s.Firesupport = 'firesupport'), (s.Reconnaissance = 'reconnaissance'), (s.Tactics = 'tactics'), s))(
@@ -67,15 +67,15 @@ const b = 'SkillOrderTooltip_f3653ea',
     F = 'SkillOrderTooltip_container_49c73b81',
     S = 'SkillOrderTooltip_items_b8016673',
     w = 'SkillOrderTooltip_infoText_52a8e30b',
-    C = l.resolve('strings'),
-    $ = [
+    A = l.resolve('strings'),
+    C = [
         [t, [x.Reconnaissance, x.Tactics, x.Firesupport]],
         [o, [x.Tactics, x.Firesupport, x.Reconnaissance]],
         [c, [x.Firesupport, x.Tactics, x.Reconnaissance]],
         [r, [x.Firesupport, x.Reconnaissance, x.Tactics]],
         [i, [x.Reconnaissance, x.Firesupport, x.Tactics]],
     ];
-function A() {
+function $() {
     return s.jsx(n, {
         children: s.jsx(n.Decorator, {
             children: s.jsxs('div', {
@@ -86,11 +86,11 @@ function A() {
                         children: [
                             s.jsx('div', {
                                 className: O,
-                                children: C.readOrEmpty('fl_tooltips.skillOrderTooltip.header'),
+                                children: A.readOrEmpty('fl_tooltips.skillOrderTooltip.header'),
                             }),
                             s.jsx('div', {
                                 className: I,
-                                children: C.readOrEmpty('fl_tooltips.skillOrderTooltip.body'),
+                                children: A.readOrEmpty('fl_tooltips.skillOrderTooltip.body'),
                             }),
                         ],
                     }),
@@ -100,7 +100,7 @@ function A() {
                             s.jsx(_, {}),
                             s.jsx('div', {
                                 className: S,
-                                children: $.map(([e, a]) => s.jsx(y, { vehicleType: e, categories: a }, e)),
+                                children: C.map(([e, a]) => s.jsx(y, { vehicleType: e, categories: a }, e)),
                             }),
                             s.jsx(_, {}),
                         ],
@@ -111,4 +111,4 @@ function A() {
         }),
     });
 }
-p(s.jsx(A, {}));
+p(s.jsx($, {}));

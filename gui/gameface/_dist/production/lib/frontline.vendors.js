@@ -349,7 +349,7 @@
                     let n = y;
                     t.default && !0 !== t.default && ((t = t.default), (n = Object.keys(t)));
                     const i = {};
-                    for (var r, o = u(n); !(r = o()).done; ) {
+                    for (var r, o = u(n); !(r = o()).done;) {
                         const n = r.value,
                             o = e(t[n], n);
                         s.is.und(o) || (i[n] = o);
@@ -557,7 +557,7 @@
                               let e;
                               ((e = s.is.arr(t)
                                   ? ((w = a(function* (t) {
-                                        for (var e, n = u(t); !(e = n()).done; ) {
+                                        for (var e, n = u(t); !(e = n()).done;) {
                                             const t = e.value;
                                             yield b(t);
                                         }

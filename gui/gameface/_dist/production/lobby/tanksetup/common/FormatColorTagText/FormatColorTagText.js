@@ -463,7 +463,7 @@
                     A = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function D(u) {
                     let e = '';
-                    for (let F = A.length - 1; F >= 0; F--) for (; u >= A[F]; ) ((e += E[F]), (u -= A[F]));
+                    for (let F = A.length - 1; F >= 0; F--) for (; u >= A[F];) ((e += E[F]), (u -= A[F]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -894,7 +894,7 @@
                     let i = B.exec(u),
                         a = u,
                         s = 0;
-                    for (; i; ) {
+                    for (; i;) {
                         const F = i[0],
                             E = n.exec(F),
                             _ = C.exec(F),

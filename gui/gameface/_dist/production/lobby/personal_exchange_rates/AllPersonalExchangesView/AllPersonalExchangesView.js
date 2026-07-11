@@ -188,7 +188,7 @@
                     w = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function x(u) {
                     let e = '';
-                    for (let t = w.length - 1; t >= 0; t--) for (; u >= w[t]; ) ((e += b[t]), (u -= w[t]));
+                    for (let t = w.length - 1; t >= 0; t--) for (; u >= w[t];) ((e += b[t]), (u -= w[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -891,9 +891,13 @@
                         if (t.mediumWidth && d) return o(e, t, v);
                         if (t.smallWidth && B) return o(e, t, v);
                         if (t.extraSmallWidth && C) return o(e, t, v);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && _) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && g) return e;
@@ -1532,7 +1536,7 @@
                             e(u).delete(t);
                         },
                         r = (u, ...t) => {
-                            for (var n, r = Au(e(u).values()); !(n = r()).done; ) {
+                            for (var n, r = Au(e(u).values()); !(n = r()).done;) {
                                 (0, n.value)(...t);
                             }
                         };
@@ -2564,7 +2568,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = ge(r.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = ge(r.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };

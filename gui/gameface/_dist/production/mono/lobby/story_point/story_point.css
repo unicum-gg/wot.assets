@@ -113,10 +113,16 @@ html[lang='th'] input {
     right: -40rem;
     bottom: 40rem;
 }
+.StoryPoint_base__size186x186_a7429a40 .StoryPoint_label_13768815[lang='th'] {
+    right: -95rem;
+}
 .StoryPoint_base__size256x256_c0526b14 .StoryPoint_label_13768815 {
     color: #fff7eb;
     font-size: 120rem;
     font-weight: 600;
     right: -62rem;
     bottom: 48rem;
+}
+.StoryPoint_base__size256x256_c0526b14 .StoryPoint_label_13768815[lang='th'] {
+    right: -80rem;
 }

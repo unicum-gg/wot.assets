@@ -174,7 +174,7 @@
                     y = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function T(u) {
                     let e = '';
-                    for (let F = y.length - 1; F >= 0; F--) for (; u >= y[F]; ) ((e += _[F]), (u -= y[F]));
+                    for (let F = y.length - 1; F >= 0; F--) for (; u >= y[F];) ((e += _[F]), (u -= y[F]));
                     return e;
                 }
                 const P = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -542,7 +542,7 @@
                         let D = Lu.exec(u),
                             t = u,
                             B = 0;
-                        for (; D; ) {
+                        for (; D;) {
                             const F = D[0],
                                 n = Nu.exec(F),
                                 C = $u.exec(F),
@@ -667,7 +667,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, F = Hu(E.keys()); !(u = F()).done; ) D(u.value, e);
+                                                        for (var u, F = Hu(E.keys()); !(u = F()).done;) D(u.value, e);
                                                     },
                                                     unsubscribe: D,
                                                 };

@@ -1,8 +1,8 @@
 import { j as e, E as s } from '../../../../chunks/vendor.js';
-import { i as a, a9 as i, E as t, A as n, b2 as o, r, de as l } from '../../../../chunks/lib.js';
-var p = ((e) => ((e.LowRisk = 'lowRisk'), (e.MediumRisk = 'mediumRisk'), (e.HighRisk = 'highRisk'), e))(p || {});
-const [c, d] = a()(({ observableModel: e }) => ({ root: e.object() }), i),
-    _ = {
+import { i as a, ac as i, e as t, E as n, A as o, b5 as r, r as l, dj as p } from '../../../../chunks/lib.js';
+var c = ((e) => ((e.LowRisk = 'lowRisk'), (e.MediumRisk = 'mediumRisk'), (e.HighRisk = 'highRisk'), e))(c || {});
+const [d, _] = a()(({ observableModel: e }) => ({ root: e.object() }), i),
+    m = {
         root: 'BannerTooltipApp_root_c818429a',
         base: 'BannerTooltipApp_31617020',
         img: 'BannerTooltipApp_img_7d0169ba',
@@ -19,45 +19,45 @@ const [c, d] = a()(({ observableModel: e }) => ({ root: e.object() }), i),
         dots: 'BannerTooltipApp_dots_e63377b7',
         timerStatus: 'BannerTooltipApp_timerStatus_aa6d036f',
     },
-    m = R.strings.last_stand_tooltips.bannerTooltip,
-    b = () => {
-        const { model: a } = d(),
-            { performanceRisk: i, endDate: r, date: l } = a.root.get();
+    b = R.strings.last_stand_tooltips.bannerTooltip,
+    x = () => {
+        const { model: a } = _(),
+            { performanceRisk: i, endDate: l, date: p } = a.root.get();
         return e.jsxs('div', {
-            className: s(_.base, _[`base__${i}`]),
+            className: s(m.base, m[`base__${i}`]),
             children: [
-                e.jsx('div', { className: _.img }),
-                e.jsx('div', { className: _.header, children: m.header() }),
-                e.jsx('div', { className: _.description, children: m.description() }),
-                e.jsx(t, {
-                    classMix: _.callToAction,
+                e.jsx('div', { className: m.img }),
+                e.jsx('div', { className: m.header, children: b.header() }),
+                e.jsx(t, { className: m.description, split: !0, text: b.description() }),
+                e.jsx(n, {
+                    classMix: m.callToAction,
                     text: R.strings.last_stand_tooltips.bannerTooltip.callToAction(),
-                    alignContent: n.Center,
+                    alignContent: o.Center,
                     binding: {
                         mode: e.jsx('div', {
-                            className: _.modeLabel,
+                            className: m.modeLabel,
                             children: R.strings.hangar_event_banners.modeLabel(),
                         }),
                     },
                 }),
-                i !== p.LowRisk &&
+                i !== c.LowRisk &&
                     e.jsxs('div', {
-                        className: _.performance,
+                        className: m.performance,
                         children: [
-                            e.jsx('div', { className: _.icon }),
-                            e.jsx('div', { className: _.title, children: m.performanceRisk.title.$dyn(i) }),
-                            e.jsx('div', { className: _.text, children: m.performanceRisk.text.$dyn(i) }),
+                            e.jsx('div', { className: m.icon }),
+                            e.jsx('div', { className: m.title, children: b.performanceRisk.title.$dyn(i) }),
+                            e.jsx('div', { className: m.text, children: b.performanceRisk.text.$dyn(i) }),
                         ],
                     }),
-                e.jsx('div', { className: _.dots }),
-                e.jsx(t, {
+                e.jsx('div', { className: m.dots }),
+                e.jsx(n, {
                     text: R.strings.last_stand_tooltips.bannerTooltip.available(),
-                    classMix: _.timerStatus,
-                    alignContent: n.Center,
-                    justifyContent: n.Center,
-                    binding: { timer: e.jsx(o, { size: 'x24x24', type: 'accent', start: r - l }) },
+                    classMix: m.timerStatus,
+                    alignContent: o.Center,
+                    justifyContent: o.Center,
+                    binding: { timer: e.jsx(r, { size: 'x24x24', type: 'accent', start: l - p }) },
                 }),
             ],
         });
     };
-r(e.jsx(c, { children: e.jsx(l, { children: e.jsx(l.Decorator, { children: e.jsx(b, {}) }) }) }));
+l(e.jsx(d, { children: e.jsx(p, { children: e.jsx(p.Decorator, { children: e.jsx(x, {}) }) }) }));

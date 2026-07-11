@@ -1,6 +1,6 @@
 import { s, j as e } from '../../../../chunks/vendor.js';
-import { i as r, t as a, r as i, af as o, ag as t, k as c } from '../../../../chunks/lib.js';
-/* empty css                       */ const [l, d] = r()(({ observableModel: s }) => ({ root: s.object() }), a),
+import { i as r, q as a, r as i, af as o, ag as c, k as l } from '../../../../chunks/lib.js';
+/* empty css                       */ const [t, d] = r()(({ observableModel: s }) => ({ root: s.object() }), a),
     n = 'App_28e29989',
     p = 'App_header_5ad7c3ec',
     m = 'App_icon_45384927',
@@ -28,7 +28,7 @@ import { i as r, t as a, r as i, af as o, ag as t, k as c } from '../../../../ch
                                             className: h,
                                             children: x.readOrEmpty('pet_system.synergyTooltip.title'),
                                         }),
-                                        e.jsx(t, { value: r, size: 'small', maxValue: 100 }),
+                                        e.jsx(c, { value: r, size: 'small', maxValue: 100 }),
                                     ],
                                 }),
                             ],
@@ -44,4 +44,4 @@ import { i as r, t as a, r as i, af as o, ag as t, k as c } from '../../../../ch
             }),
         });
     });
-c(e.jsx(l, { children: e.jsx(v, {}) }), { withMedia: !1 });
+l(e.jsx(t, { children: e.jsx(v, {}) }), { withMedia: !1 });

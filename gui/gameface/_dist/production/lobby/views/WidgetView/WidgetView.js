@@ -427,7 +427,7 @@
                     n = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let t = '';
-                    for (let r = n.length - 1; r >= 0; r--) for (; e >= n[r]; ) ((t += i[r]), (e -= n[r]));
+                    for (let r = n.length - 1; r >= 0; r--) for (; e >= n[r];) ((t += i[r]), (e -= n[r]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -915,15 +915,13 @@
                             if (r.mediumWidth && _) return a(t, r, x);
                             if (r.smallWidth && v) return a(t, r, x);
                             if (r.extraSmallWidth && E) return a(t, r, x);
-                            if (
-                                !(
-                                    r.extraLargeWidth ||
-                                    r.largeWidth ||
-                                    r.mediumWidth ||
-                                    r.smallWidth ||
-                                    r.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                r.extraLargeWidth ||
+                                r.largeWidth ||
+                                r.mediumWidth ||
+                                r.smallWidth ||
+                                r.extraSmallWidth
+                            )) {
                                 if (r.extraLargeHeight && w) return t;
                                 if (r.largeHeight && b) return t;
                                 if (r.mediumHeight && f) return t;

@@ -1,5 +1,5 @@
 import { D as o, j as e, E as s } from '../../../../chunks/vendor.js';
-import { i as t, a9 as a, E as l, r, dl as i } from '../../../../chunks/lib.js';
+import { i as t, ac as a, E as r, r as l, dr as i } from '../../../../chunks/lib.js';
 const [p, d] = t()(({ observableModel: o }) => ({ root: o.object() }), a),
     c = 'SimpleFormatTooltipApp_887dc02e',
     n = 'SimpleFormatTooltipApp_header_23807e55',
@@ -8,16 +8,16 @@ const [p, d] = t()(({ observableModel: o }) => ({ root: o.object() }), a),
     j = 'SimpleFormatTooltipApp_note_36f55246',
     _ = o(function () {
         const { model: o } = d(),
-            { body: t, header: a, note: r } = o.root.get();
+            { body: t, header: a, note: l } = o.root.get();
         return t || a
             ? e.jsxs('div', {
                   className: c,
                   children: [
-                      a && e.jsx(l, { text: a, classMix: s(n, t && m) }),
-                      t && e.jsx(l, { text: t, classMix: x }),
-                      r && e.jsx(l, { text: r, classMix: j }),
+                      a && e.jsx(r, { text: a, classMix: s(n, t && m) }),
+                      t && e.jsx(r, { text: t, classMix: x }),
+                      l && e.jsx(r, { text: l, classMix: j }),
                   ],
               })
             : (console.warn('Incorrect data! Body and header is null or empty'), null);
     });
-r(e.jsx(p, { children: e.jsx(i, { children: e.jsx(_, {}) }) }));
+l(e.jsx(p, { children: e.jsx(i, { children: e.jsx(_, {}) }) }));

@@ -297,7 +297,7 @@
                     })(),
                     ne = function (e) {
                         let n = '';
-                        for (let t = O.length - 1; t >= 0; t--) for (; e >= O[t]; ) ((n += S[t]), (e -= O[t]));
+                        for (let t = O.length - 1; t >= 0; t--) for (; e >= O[t];) ((n += S[t]), (e -= O[t]));
                         return n;
                     };
                 function te() {

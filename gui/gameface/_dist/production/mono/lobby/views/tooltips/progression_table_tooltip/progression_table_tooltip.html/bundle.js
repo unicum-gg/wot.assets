@@ -1,17 +1,17 @@
-import { i as e, k as s, V as a, j as i, a3 as n } from '../../../../chunks/vendor.js';
+import { i as e, k as s, V as a, j as i, W as n } from '../../../../chunks/vendor.js';
 import {
     i as t,
-    aJ as r,
-    d8 as o,
-    ag as c,
-    al as l,
+    aT as r,
+    d9 as o,
+    as as c,
+    ax as l,
     n as d,
-    cy as m,
-    cD as _,
-    aI as p,
+    cF as m,
+    cK as _,
+    aS as p,
     m as x,
-    cv as v,
-    cw as b,
+    F as v,
+    cD as b,
     r as h,
 } from '../../../../chunks/lib.js';
 import { T as g } from '../../../../chunks/tooltip_decorator.js';
@@ -21,7 +21,7 @@ import { b as N, g as T } from '../../../../chunks/get_rank_name.js';
 import { R as I } from '../../../../chunks/consts.js';
 import { S as y, g as w } from '../../../../chunks/get_division_points_step.js';
 import { R as A } from '../../../../chunks/enums.js';
-/* empty css                        */ const [D, E] = t('ProgressionTableTooltipModel')(({ observableModel: a }) => {
+/* empty css                        */ const [F, D] = t('ProgressionTableTooltipModel')(({ observableModel: a }) => {
         const i = { root: a.object(), items: a.array('items') },
             n = e(
                 (e) => {
@@ -51,41 +51,41 @@ import { R as A } from '../../../../chunks/enums.js';
             );
         return { ...i, computes: { item: n, divisions: t, currentDivision: d } };
     }, d),
-    M = {
+    E = {
         base: 'RankInactivityBlock_d683def8',
         heading: 'RankInactivityBlock_heading_82d158ec',
         description: 'RankInactivityBlock_description_6907b70d',
         daysLeft: 'RankInactivityBlock_daysLeft_5f9e9940',
     },
-    C = a(({ className: e }) => {
-        const { model: s } = E(),
+    M = a(({ className: e }) => {
+        const { model: s } = D(),
             { rankInactivityCount: a, rankInactivityPointsCount: t, currentItemIndex: r } = s.root.get(),
             o = s.computes.item(r).hasRankInactivity;
         return i.jsx('div', {
-            className: n(M.base, o && M.base__active, e),
+            className: n(E.base, o && E.base__active, e),
             children: o
                 ? i.jsxs(i.Fragment, {
                       children: [
                           i.jsx('div', {
-                              className: M.heading,
+                              className: E.heading,
                               children: R.strings.comp7_ext.progressionTableTooltip.rankInactivity.header.active(),
                           }),
                           i.jsx(m, {
                               text: R.strings.comp7_ext.progressionTableTooltip.rankInactivity.description.active(t),
                               binding: { count: t },
-                              classMix: M.description,
+                              classMix: E.description,
                           }),
                           i.jsx(m, {
                               text: R.strings.comp7_ext.progressionTableTooltip.rankInactivity.daysLeft(),
                               binding: { rankInactivityCount: a },
-                              classMix: M.daysLeft,
+                              classMix: E.daysLeft,
                           }),
                       ],
                   })
                 : i.jsxs(i.Fragment, {
                       children: [
                           i.jsx('div', {
-                              className: M.heading,
+                              className: E.heading,
                               children: R.strings.comp7_ext.progressionTableTooltip.rankInactivity.header.notActive(),
                           }),
                           i.jsx(m, {
@@ -99,34 +99,34 @@ import { R as A } from '../../../../chunks/enums.js';
                                       ).join(R.strings.comp7_ext.listSeparator()),
                                   },
                               ),
-                              classMix: M.description,
+                              classMix: E.description,
                           }),
                       ],
                   }),
         });
     }),
-    F = 'TableHeader_35da86a5',
+    C = 'TableHeader_35da86a5',
     L = 'TableHeader_container_fb71aa54',
-    $ = 'TableHeader_cell_56183287',
-    B = 'TableHeader_cell__rank_fb9e8504',
-    H = a(({ className: e }) => {
-        const { model: s } = E(),
+    S = 'TableHeader_cell_56183287',
+    $ = 'TableHeader_cell__rank_fb9e8504',
+    B = a(({ className: e }) => {
+        const { model: s } = D(),
             a = s.computes.divisions(0);
         return i.jsx('div', {
-            className: n(F, e),
+            className: n(C, e),
             children: i.jsxs('div', {
                 className: L,
                 children: [
                     i.jsx('div', {
-                        className: n($, B),
+                        className: n(S, $),
                         children: R.strings.comp7_ext.progressionTableTooltip.table.heading.rank(),
                     }),
-                    x(a.length, (e) => i.jsx('div', { className: $, children: a[e] ? f(a[e].name) : '' }, e)),
+                    x(a.length, (e) => i.jsx('div', { className: S, children: a[e] ? f(a[e].name) : '' }, e)),
                 ],
             }),
         });
     }),
-    P = {
+    H = {
         base: 'TableRow_42854519',
         base__active: 'TableRow_base__active_48eb2f3',
         container: 'TableRow_container_72f3acca',
@@ -139,8 +139,8 @@ import { R as A } from '../../../../chunks/enums.js';
         text__active: 'TableRow_text__active_511f27e1',
         divider: 'TableRow_divider_fc41e995',
     },
-    S = a(({ itemIndex: e }) => {
-        const { model: s } = E(),
+    P = a(({ itemIndex: e }) => {
+        const { model: s } = D(),
             { topPercentage: a } = s.root.get(),
             { rank: t, from: r, to: o } = s.computes.item(e),
             c = s.computes.divisions(e),
@@ -148,7 +148,7 @@ import { R as A } from '../../../../chunks/enums.js';
         switch (t) {
             case A.Sixth:
                 return i.jsx('div', {
-                    className: n(P.cell, P.cell__united),
+                    className: n(H.cell, H.cell__united),
                     children: i.jsx(v, {
                         text: R.strings.comp7_ext.progressionTableTooltip.topRank(),
                         binding: { topPercentage: a },
@@ -156,7 +156,7 @@ import { R as A } from '../../../../chunks/enums.js';
                 });
             case A.Fifth:
                 return i.jsx('div', {
-                    className: n(P.cell, P.cell__united),
+                    className: n(H.cell, H.cell__united),
                     children: i.jsx(v, {
                         text: R.strings.comp7_ext.progressionTableTooltip.pointsFrom(),
                         binding: { from: i.jsx(b, { value: r }) },
@@ -170,11 +170,11 @@ import { R as A } from '../../../../chunks/enums.js';
                         return i.jsx(
                             'div',
                             {
-                                className: n(P.cell, P.cell__range),
+                                className: n(H.cell, H.cell__range),
                                 children: i.jsx(v, {
                                     text: R.strings.comp7_ext.progressionTableTooltip.pointsRange(),
                                     binding: { from: i.jsx(b, { value: a }), to: i.jsx(b, { value: a + s - 1 }) },
-                                    classMix: n(P.text, e === l.index && P.text__active),
+                                    classMix: n(H.text, e === l.index && H.text__active),
                                 }),
                             },
                             `${e}_${a}`,
@@ -184,45 +184,45 @@ import { R as A } from '../../../../chunks/enums.js';
         }
     }),
     q = a(({ itemIndex: e, className: s, hasDivider: a = !0 }) => {
-        const { model: t } = E(),
+        const { model: t } = D(),
             { seasonName: r, currentItemIndex: o } = t.root.get(),
             { rank: c } = t.computes.item(e);
         return i.jsxs('div', {
-            className: n(P.base, o === e && P.base__active, s),
+            className: n(H.base, o === e && H.base__active, s),
             children: [
                 i.jsxs('div', {
-                    className: P.container,
+                    className: H.container,
                     children: [
                         i.jsxs('div', {
-                            className: n(P.cell, P.cell__rank),
+                            className: n(H.cell, H.cell__rank),
                             children: [
-                                i.jsx(j, { rank: c, size: u.x22, seasonName: r, className: P.rankEmblem }),
-                                i.jsx('div', { className: P.rankName, children: N(c) }),
+                                i.jsx(j, { rank: c, size: u.x22, seasonName: r, className: H.rankEmblem }),
+                                i.jsx('div', { className: H.rankName, children: N(c) }),
                             ],
                         }),
-                        i.jsx(S, { itemIndex: e }),
+                        i.jsx(P, { itemIndex: e }),
                     ],
                 }),
-                a && i.jsx('div', { className: P.divider }),
+                a && i.jsx('div', { className: H.divider }),
             ],
         });
     }),
     z = 'Table_24abbb5a',
-    J = a(({ className: e }) => {
-        const { model: s } = E(),
+    K = a(({ className: e }) => {
+        const { model: s } = D(),
             a = s.items.get().length - 1;
         return i.jsxs('div', {
             className: n(z, e),
-            children: [i.jsx(H, {}), x(s.items.get().length, (e) => i.jsx(q, { itemIndex: e, hasDivider: e < a }, e))],
+            children: [i.jsx(B, {}), x(s.items.get().length, (e) => i.jsx(q, { itemIndex: e, hasDivider: e < a }, e))],
         });
     }),
     V = 'App_98200e88',
-    G = 'App_timer_c376641d',
-    K = 'App_timer__active_d318a2be',
-    O = 'App_container_ec045390',
-    Q = 'App_left_65fdd847',
-    U = 'App_right_9365ab5f',
-    W = 'App_divider_38d98f1f',
+    W = 'App_timer_c376641d',
+    G = 'App_timer__active_d318a2be',
+    J = 'App_container_ec045390',
+    O = 'App_left_65fdd847',
+    Q = 'App_right_9365ab5f',
+    U = 'App_divider_38d98f1f',
     X = 'App_rankEmblem_748380a',
     Y = 'App_rankInfo_11560edd',
     Z = 'App_score_45b617db',
@@ -230,7 +230,7 @@ import { R as A } from '../../../../chunks/enums.js';
     se = 'App_division_aae1175d',
     ae = 'App_table_a2ca34a1',
     ie = a(() => {
-        const { model: e } = E(),
+        const { model: e } = D(),
             { seasonName: s, currentItemIndex: a, currentScore: t, rankInactivityCount: r } = e.root.get(),
             o = e.computes.item(a),
             c = e.computes.currentDivision(),
@@ -239,12 +239,12 @@ import { R as A } from '../../../../chunks/enums.js';
         return i.jsxs('div', {
             className: V,
             children: [
-                i.jsx('div', { className: n(G, o.hasRankInactivity && r <= I && K) }),
+                i.jsx('div', { className: n(W, o.hasRankInactivity && r <= I && G) }),
                 i.jsxs('div', {
-                    className: O,
+                    className: J,
                     children: [
                         i.jsxs('div', {
-                            className: Q,
+                            className: O,
                             children: [
                                 i.jsx(j, { rank: o.rank, size: u.x150, seasonName: s, division: c.name, className: X }),
                                 i.jsxs('div', {
@@ -262,12 +262,12 @@ import { R as A } from '../../../../chunks/enums.js';
                                 }),
                             ],
                         }),
-                        i.jsx('div', { className: W }),
-                        i.jsx('div', { className: U, children: i.jsx(C, {}) }),
+                        i.jsx('div', { className: U }),
+                        i.jsx('div', { className: Q, children: i.jsx(M, {}) }),
                     ],
                 }),
-                i.jsx(J, { className: ae }),
+                i.jsx(K, { className: ae }),
             ],
         });
     });
-h(i.jsx(D, { children: i.jsx(g, { children: i.jsx(ie, {}) }) }));
+h(i.jsx(F, { children: i.jsx(g, { children: i.jsx(ie, {}) }) }));

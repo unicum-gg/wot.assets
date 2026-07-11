@@ -1,4 +1,4 @@
-import { j as s, a3 as a } from './vendor.js';
+import { j as s, W as a } from './vendor.js';
 import { g as e } from './get_division_name.js';
 import { R as i } from './get_rank_name.js';
 import { R as n } from './enums.js';

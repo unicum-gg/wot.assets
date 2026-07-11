@@ -1,5 +1,5 @@
 import { h as e, t as s, j as t } from '../../../../chunks/vendor.js';
-import { i as a, j as r, F as o, r as l, U as d, bv as n } from '../../../../chunks/lib.js';
+import { i as a, h as r, F as o, r as l, U as d, bv as n } from '../../../../chunks/lib.js';
 import { T as b } from '../../../../chunks/table.js';
 /* empty css                        */ const [i, c] = a()(({ observableModel: s }) => {
         const t = { battleTypes: s.array('battleTypes'), battleModes: s.array('battleModes') },
@@ -11,14 +11,14 @@ import { T as b } from '../../../../chunks/table.js';
         return { ...t, computes: { battleType: a } };
     }),
     p = 'App_a8947a23',
-    j = 'App_header_fb4df94',
-    h = s(() => {
+    h = 'App_header_fb4df94',
+    j = s(() => {
         const { model: e } = c();
         return t.jsxs('div', {
             className: p,
             children: [
                 t.jsx('div', {
-                    className: j,
+                    className: h,
                     children: t.jsx(o, {
                         text: R.strings.battle_royale.tooltip.progression.leaderboardReward.header(),
                     }),
@@ -29,6 +29,6 @@ import { T as b } from '../../../../chunks/table.js';
     });
 l(
     t.jsx(d, {
-        children: t.jsx(i, { children: t.jsx(n, { children: t.jsx(n.Decorator, { children: t.jsx(h, {}) }) }) }),
+        children: t.jsx(i, { children: t.jsx(n, { children: t.jsx(n.Decorator, { children: t.jsx(j, {}) }) }) }),
     }),
 );

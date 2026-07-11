@@ -174,7 +174,7 @@
                     z = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function C(e) {
                     let n = '';
-                    for (let t = z.length - 1; t >= 0; t--) for (; e >= z[t]; ) ((n += _[t]), (e -= z[t]));
+                    for (let t = z.length - 1; t >= 0; t--) for (; e >= z[t];) ((n += _[t]), (e -= z[t]));
                     return n;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

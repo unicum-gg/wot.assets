@@ -1,88 +1,150 @@
-import { r as s, j as e, q as a, k as t, l } from '../../../chunks/vendor.js';
-import { F as i, u as c, T as n, s as d, c as o, b as p } from '../../../chunks/lib.js';
-const r = 'HintSlide_e291e2ca',
-    _ = 'HintSlide_hintIcon_3212061',
-    m = 'HintSlide_text_b7b9001a',
-    h = 'HintSlide_title_669cf402',
-    x = 'HintSlide_description_2ee3501c',
-    j = s.memo(function ({ sourceCount: s, className: t, bgPath: l, localePath: c }) {
+import { j as e, q as a, r as s, k as t, l as n } from '../../../chunks/vendor.js';
+import { H as i, m as c, p as l, F as o, u as d, C as r, s as _, c as u, b as g, S as p } from '../../../chunks/lib.js';
+const x = 'PageButton_bgTexture_3def5334',
+    m = 'PageButton_bgColor_a8383c6',
+    b = 'PageButton_selectedBg_6e395bfc',
+    h = 'PageButton_f54e0361',
+    j = 'PageButton_base__selected_c5a12366',
+    N = 'PageButton_bgTexture__selected_335fa90c',
+    f = 'PageButton_content_1c7257d8',
+    P = 'PageButton_content__selected_19b2d705';
+function k({ index: s, isSelected: t, onClick: n }) {
+    return e.jsxs(i, {
+        className: a(h, t && j),
+        onClick: () => n(s),
+        children: [
+            e.jsx('div', { className: a(x, t && N) }),
+            e.jsx('div', { className: m }),
+            t && e.jsx('div', { className: b }),
+            e.jsx('div', { className: a(f, t && P), children: s + 1 }),
+        ],
+    });
+}
+function v({ totalPages: a, currentSelected: s, onClick: t }) {
+    return 0 === a
+        ? null
+        : c(a, (a) => e.jsx(k, { index: a, onClick: t, isSelected: a === s }, `pagination_button_${a}`));
+}
+const B = {
+    root: 'PaginationArrowButton_root_bc43a199',
+    base: 'PaginationArrowButton_93040e6b',
+    icon: 'PaginationArrowButton_icon_e38163e4',
+    icon__back: 'PaginationArrowButton_icon__back_a1a6babf',
+    icon__forward: 'PaginationArrowButton_icon__forward_172735b1',
+    base__locked: 'PaginationArrowButton_base__locked_bc43a199',
+};
+var A = ((e) => ((e.Back = 'back'), (e.Forward = 'forward'), e))(A || {});
+function H({ onClick: s, direction: t, isDisabled: n, className: i }) {
+    return e.jsx('div', {
+        className: a(B.base, n && B.base__locked, i),
+        children: e.jsx('div', {
+            className: a(B.icon, B[`icon__${t}`]),
+            onClick: () => {
+                n || (s(), l.click());
+            },
+            onMouseEnter: () => {
+                n || l.highlight();
+            },
+        }),
+    });
+}
+const C = 'Pagination_d31f1b4d',
+    w = 'Pagination_content_7ee97a52',
+    S = 'Pagination_pages_7ee97a52';
+function y({ className: t, selectedIndex: n, children: i }) {
+    const [c, l] = s.useState(n || 0),
+        o = (function (e) {
+            return null == e || !1 === e ? [] : Array.isArray(e) ? e : [e];
+        })(i);
+    return e.jsxs('div', {
+        className: a(C, t),
+        children: [
+            e.jsxs('div', {
+                className: w,
+                children: [
+                    e.jsx(H, { onClick: () => l(c - 1), direction: A.Back, isDisabled: 0 === c }),
+                    e.jsx('div', { children: o[c] }),
+                    e.jsx(H, { onClick: () => l(c + 1), direction: A.Forward, isDisabled: c === o.length - 1 }),
+                ],
+            }),
+            e.jsx('div', {
+                className: S,
+                children: e.jsx(v, { totalPages: o.length, currentSelected: c, onClick: (e) => l(e) }),
+            }),
+        ],
+    });
+}
+const $ = 'HintSlide_e291e2ca',
+    F = 'HintSlide_hintIcon_3212061',
+    D = 'HintSlide_text_18405b82',
+    I = 'HintSlide_title_8f035c0d',
+    M = 'HintSlide_description_29ae5c05',
+    z = s.memo(function ({ sourceCount: s, className: t, bgPath: n, localePath: i }) {
         return e.jsxs('div', {
-            className: a(r, t),
+            className: a($, t),
             children: [
-                e.jsx('div', { className: _, style: { backgroundImage: `url(${l}${s})` } }),
+                e.jsx('div', { className: F, style: { backgroundImage: `url(${n}${s})` } }),
                 e.jsxs('div', {
-                    className: m,
+                    className: D,
                     children: [
-                        e.jsx(i, { classMix: h, text: c.$dyn(`title_${s}`) }),
-                        e.jsx(i, { classMix: x, text: c.$dyn(`description_${s}`) }),
+                        e.jsx(o, { classMix: I, text: i.$dyn(`title_${s}`) }),
+                        e.jsx(o, { classMix: M, text: i.$dyn(`description_${s}`) }),
                     ],
                 }),
             ],
         });
     }),
-    u = 'HelpApp_a4ec8984',
-    g = 'HelpApp_header_51c3d04b',
-    b = 'HelpApp_title_3461492e',
-    H = 'HelpApp_close_6aeb8f26',
-    N = 'HelpApp_content_d73325a4',
-    f = 'HelpApp_pagination_b9109639',
-    v = 'HelpApp_slide_10c12dfe',
-    A = 'HelpApp_sizer_1fa63daa',
-    y = 'HelpApp_bottomBg_7e66c3a1',
-    $ = R.strings.last_stand_battle.help,
-    P = R.strings.last_stand_battle.help.title();
-function k({
+    T = 'HelpApp_a4ec8984',
+    q = 'HelpApp_header_51c3d04b',
+    E = 'HelpApp_title_d3c67fc8',
+    L = 'HelpApp_close_291dac86',
+    G = 'HelpApp_content_d73325a4',
+    J = 'HelpApp_pagination_b9109639',
+    K = 'HelpApp_slide_10c12dfe',
+    O = 'HelpApp_sizer_1fa63daa',
+    Q = 'HelpApp_bottomBg_7e66c3a1',
+    U = R.strings.last_stand_battle.help,
+    V = R.strings.last_stand_battle.help.title();
+function W({
     hintsNum: a = 4,
     bgPath: i = 'R.images.last_stand.gui.maps.icons.battle.eventLoading.tips.c_1024x600.tipBg_',
-    localePath: p = $,
-    title: r = P,
+    localePath: c = U,
+    title: l = V,
 }) {
-    c(() => d.close());
-    const _ = new Array(a).fill(0),
-        m = t({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { duration: 200 } });
-    return e.jsx(l.div, {
-        className: u,
-        style: m,
+    d(() => _.close());
+    const o = new Array(a).fill(0),
+        g = t({ from: { opacity: 0 }, to: { opacity: 1 }, delay: 300, config: { duration: 200 } });
+    return e.jsx(n.div, {
+        className: T,
+        style: g,
         children: e.jsxs('div', {
-            className: N,
+            className: G,
             children: [
                 e.jsxs('div', {
-                    className: g,
+                    className: q,
                     children: [
-                        e.jsx('span', { className: b, children: r }),
-                        e.jsx('div', {
-                            className: H,
-                            children: e.jsx(n, {
-                                caption: R.strings.last_stand_battle.common.close(),
-                                type: 'close',
-                                side: 'right',
-                                onClick: () => d.close(),
-                            }),
-                        }),
+                        e.jsx('span', { className: E, children: l }),
+                        e.jsx(r, { size: u.small, className: L, onClose: () => _.close() }),
                     ],
                 }),
-                e.jsx(o, {
-                    hasArrow: !0,
-                    selectedIndex: 0,
-                    className: f,
-                    children: _.map((a, t) => ({
-                        render: function () {
-                            return e.jsxs(
-                                s.Fragment,
-                                {
-                                    children: [
-                                        e.jsx(j, { sourceCount: t, className: v, bgPath: i, localePath: p }),
-                                        e.jsx('div', { className: A }),
-                                    ],
-                                },
-                                `hint_${t}`,
-                            );
-                        },
-                    })),
+                e.jsx(y, {
+                    className: J,
+                    children: o.map((a, t) =>
+                        e.jsxs(
+                            s.Fragment,
+                            {
+                                children: [
+                                    e.jsx(z, { sourceCount: t, className: K, bgPath: i, localePath: c }),
+                                    e.jsx('div', { className: O }),
+                                ],
+                            },
+                            `hint_${t}`,
+                        ),
+                    ),
                 }),
-                e.jsx('div', { className: y }),
+                e.jsx('div', { className: Q }),
             ],
         }),
     });
 }
-p(e.jsx(k, {}));
+g(e.jsx(p, { children: e.jsx(W, {}) }));

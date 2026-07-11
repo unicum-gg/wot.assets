@@ -174,7 +174,7 @@
                     y = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function T(u) {
                     let e = '';
-                    for (let A = y.length - 1; A >= 0; A--) for (; u >= y[A]; ) ((e += x[A]), (u -= y[A]));
+                    for (let A = y.length - 1; A >= 0; A--) for (; u >= y[A];) ((e += x[A]), (u -= y[A]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -542,7 +542,7 @@
                         let D = Mu.exec(u),
                             t = u,
                             B = 0;
-                        for (; D; ) {
+                        for (; D;) {
                             const A = D[0],
                                 n = ju.exec(A),
                                 r = Lu.exec(A),
@@ -666,7 +666,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, A = Uu(E.keys()); !(u = A()).done; ) D(u.value, e);
+                                                        for (var u, A = Uu(E.keys()); !(u = A()).done;) D(u.value, e);
                                                     },
                                                     unsubscribe: D,
                                                 };

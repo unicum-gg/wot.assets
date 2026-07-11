@@ -346,7 +346,7 @@
                     let n = g;
                     e.default && !0 !== e.default && ((e = e.default), (n = Object.keys(e)));
                     const i = {};
-                    for (var o, s = u(n); !(o = s()).done; ) {
+                    for (var o, s = u(n); !(o = s()).done;) {
                         const n = o.value,
                             s = t(e[n], n);
                         r.is.und(s) || (i[n] = s);
@@ -563,7 +563,7 @@
                               let t;
                               ((t = r.is.arr(e)
                                   ? ((w = a(function* (e) {
-                                        for (var t, n = u(e); !(t = n()).done; ) {
+                                        for (var t, n = u(e); !(t = n()).done;) {
                                             const e = t.value;
                                             yield y(e);
                                         }
@@ -3228,7 +3228,7 @@
                             void 0 !== t.threshold && (this.threshold = t.threshold)));
                 }
                 applyToElement(e) {
-                    for (var t, n = o(this.getBlocks(e)); !(t = n()).done; ) {
+                    for (var t, n = o(this.getBlocks(e)); !(t = n()).done;) {
                         const e = t.value;
                         (a(e.hasText()), this.applyToParagraph(e));
                     }
@@ -3257,11 +3257,11 @@
                     const r = !t || n === h,
                         i = r ? new _(e) : t;
                     a(i);
-                    for (var s, g = o(e.childNodes); !(s = g()).done; ) {
+                    for (var s, g = o(e.childNodes); !(s = g()).done;) {
                         const e = s.value;
                         switch (e.nodeType) {
                             case u:
-                                for (var b, y = o(this.getBlocks(e, i)); !(b = y()).done; ) {
+                                for (var b, y = o(this.getBlocks(e, i)); !(b = y()).done;) {
                                     const e = b.value;
                                     yield e;
                                 }
@@ -3281,7 +3281,7 @@
                     if ((a(r.length > 0), a(r.reduce((e, t) => e + t.length, 0) === n.length), r.length <= 1)) return;
                     const i = [];
                     let s = 0;
-                    for (var u, l = o(r); !(u = l()).done; ) {
+                    for (var u, l = o(r); !(u = l()).done;) {
                         const e = u.value;
                         (a(e.length > 0), (s += e.length), i.push(s));
                     }
@@ -3300,7 +3300,7 @@
                         i = t[0];
                     a(i > 0);
                     let s = 0;
-                    for (var u, l = o(e); !(u = l()).done; ) {
+                    for (var u, l = o(e); !(u = l()).done;) {
                         const e = u.value,
                             n = e.nodeValue;
                         if (!n) continue;
@@ -3311,7 +3311,7 @@
                         }
                         const l = [];
                         let c = 0;
-                        for (; i < o; ) {
+                        for (; i < o;) {
                             const e = i - s;
                             (a(e >= c), l.push(n.substring(c, e)), (c = e), ++r, a(t[r] > i), (i = t[r]));
                         }
@@ -3325,7 +3325,7 @@
                     if ('string' == typeof n) return void (e.nodeValue = t.join(n));
                     const r = e.ownerDocument;
                     let i = [];
-                    for (var s, u = o(t); !(s = u()).done; ) {
+                    for (var s, u = o(t); !(s = u()).done;) {
                         const e = s.value;
                         (e && i.push(r.createTextNode(e)), i.push(null));
                     }
@@ -3459,7 +3459,7 @@
                         .map(([e, t]) => `${e}:${t}`);
                 }
                 static hasChildTextNode(e) {
-                    for (var t, n = m(e.childNodes); !(t = n()).done; ) {
+                    for (var t, n = m(e.childNodes); !(t = n()).done;) {
                         if (t.value.nodeType === U) return !0;
                     }
                     return !1;
@@ -3657,7 +3657,7 @@
                     o = n.call(e),
                     s = [];
                 try {
-                    for (; (void 0 === t || t-- > 0) && !(r = o.next()).done; ) s.push(r.value);
+                    for (; (void 0 === t || t-- > 0) && !(r = o.next()).done;) s.push(r.value);
                 } catch (e) {
                     i = { error: e };
                 } finally {
@@ -5429,11 +5429,11 @@
                                 a.dependenciesState_ > r && (r = a.dependenciesState_));
                         }
                         ((n.length = i), (e.newObserving_ = null), (o = t.length));
-                        for (; o--; ) {
+                        for (; o--;) {
                             var u = t[o];
                             (0 === u.diffValue_ && ht(u, e), (u.diffValue_ = 0));
                         }
-                        for (; i--; ) {
+                        for (; i--;) {
                             var l = n[i];
                             1 === l.diffValue_ && ((l.diffValue_ = 0), ct(l, e));
                         }
@@ -5446,7 +5446,7 @@
             function Ze(e) {
                 var t = e.observing_;
                 e.observing_ = [];
-                for (var n = t.length; n--; ) ht(t[n], e);
+                for (var n = t.length; n--;) ht(t[n], e);
                 e.dependenciesState_ = Qe.NOT_TRACKING_;
             }
             function et(e) {
@@ -5474,7 +5474,7 @@
             function ot(e) {
                 if (e.dependenciesState_ !== Qe.UP_TO_DATE_) {
                     e.dependenciesState_ = Qe.UP_TO_DATE_;
-                    for (var t = e.observing_, n = t.length; n--; ) t[n].lowestObserverState_ = Qe.UP_TO_DATE_;
+                    for (var t = e.observing_, n = t.length; n--;) t[n].lowestObserverState_ = Qe.UP_TO_DATE_;
                 }
             }
             var st = function () {
@@ -5691,7 +5691,7 @@
             }
             function wt() {
                 lt.isRunningReactions = !0;
-                for (var e = lt.pendingReactions, t = 0; e.length > 0; ) {
+                for (var e = lt.pendingReactions, t = 0; e.length > 0;) {
                     ++t === bt && (console.error('[mobx] cycle in reaction: ' + e[0]), e.splice(0));
                     for (var n = e.splice(0), r = 0, i = n.length; r < i; r++) n[r].runReaction_();
                 }
@@ -6625,7 +6625,7 @@
                             return this.entries();
                         }),
                         (t.forEach = function (e, t) {
-                            for (var n, r = N(this); !(n = r()).done; ) {
+                            for (var n, r = N(this); !(n = r()).done;) {
                                 var i = n.value,
                                     o = i[0],
                                     s = i[1];
@@ -6673,7 +6673,7 @@
                             var e = this;
                             hn(function () {
                                 et(function () {
-                                    for (var t, n = N(e.keys()); !(t = n()).done; ) {
+                                    for (var t, n = N(e.keys()); !(t = n()).done;) {
                                         var r = t.value;
                                         e.delete(r);
                                     }
@@ -6709,7 +6709,7 @@
                                                 o.set(u, l);
                                             }
                                     }
-                                    for (var c, h = N(i.entries()); !(c = h()).done; ) {
+                                    for (var c, h = N(i.entries()); !(c = h()).done;) {
                                         var d = c.value,
                                             f = d[0],
                                             p = d[1],
@@ -6798,7 +6798,7 @@
                             var e = this;
                             hn(function () {
                                 et(function () {
-                                    for (var t, n = N(e.data_.values()); !(t = n()).done; ) {
+                                    for (var t, n = N(e.data_.values()); !(t = n()).done;) {
                                         var r = t.value;
                                         e.delete(r);
                                     }
@@ -6806,7 +6806,7 @@
                             });
                         }),
                         (t.forEach = function (e, t) {
-                            for (var n, r = N(this); !(n = r()).done; ) {
+                            for (var n, r = N(this); !(n = r()).done;) {
                                 var i = n.value;
                                 e.call(t, i, i, this);
                             }
@@ -7031,7 +7031,7 @@
                                     if (null == (n = this.target_[D]) ? void 0 : n[e]) return;
                                     r(1, t.annotationType_, this.name_ + '.' + e.toString());
                                 }
-                                for (var i = this.target_; i && i !== l; ) {
+                                for (var i = this.target_; i && i !== l;) {
                                     var o = a(i, e);
                                     if (o) {
                                         var s = t.make_(this, e, o, i);
@@ -7432,15 +7432,15 @@
                 }
                 if (0 === n) return !1;
                 (n < 0 && (n = -1), (i = i || []));
-                for (var c = (r = r || []).length; c--; ) if (r[c] === e) return i[c] === t;
+                for (var c = (r = r || []).length; c--;) if (r[c] === e) return i[c] === t;
                 if ((r.push(e), i.push(t), a)) {
                     if ((c = e.length) !== t.length) return !1;
-                    for (; c--; ) if (!fr(e[c], t[c], n - 1, r, i)) return !1;
+                    for (; c--;) if (!fr(e[c], t[c], n - 1, r, i)) return !1;
                 } else {
                     var h,
                         d = Object.keys(e);
                     if (((c = d.length), Object.keys(t).length !== c)) return !1;
-                    for (; c--; ) if (!P(t, (h = d[c])) || !fr(e[h], t[h], n - 1, r, i)) return !1;
+                    for (; c--;) if (!P(t, (h = d[c])) || !fr(e[h], t[h], n - 1, r, i)) return !1;
                 }
                 return (r.pop(), i.pop(), !0);
             }

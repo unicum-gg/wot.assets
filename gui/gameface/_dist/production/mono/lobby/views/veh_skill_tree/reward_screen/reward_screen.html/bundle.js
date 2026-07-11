@@ -6,67 +6,67 @@ import {
     R as r,
     o as n,
     e as o,
-    H as i,
+    F as i,
     h as c,
     l,
     s as d,
     m as _,
     n as m,
-    G as u,
-    I as h,
-    J as b,
+    E as u,
+    G as h,
+    H as b,
 } from '../../../../chunks/vendor.js';
 import {
     i as f,
     m as p,
     J as g,
-    aM as v,
-    aN as y,
-    aO as x,
+    aN as v,
+    aO as y,
+    aP as x,
     r as N,
     F as j,
     a1 as w,
     b as k,
     d as P,
-    aP as E,
+    aQ as E,
     a9 as B,
-    aQ as I,
-    ae as S,
-    aR as C,
-    aS as $,
-    aT as D,
-    aq as A,
-    aU as M,
-    aV as T,
-    aW as z,
-    aX as F,
+    aR as I,
+    ae as C,
+    aS as S,
+    aT as $,
+    aU as A,
+    ar as D,
+    aV as M,
+    aW as T,
+    aX as z,
+    aY as F,
     P as L,
-    aY as O,
+    aZ as O,
     Q as H,
-    aZ as G,
-    a_ as V,
-    a$ as W,
+    a_ as G,
+    a$ as V,
+    b0 as W,
     V as q,
-    b0 as Q,
+    b1 as Q,
     e as U,
-    aB as X,
-    b1 as Z,
-    aG as Y,
-    b2 as J,
+    aC as X,
+    b2 as Z,
+    aH as Y,
+    b3 as J,
     ag as K,
-    az as ee,
+    aA as ee,
     a as te,
-    b3 as ae,
-    b4 as se,
+    b4 as ae,
+    b5 as se,
     a5 as re,
-    b5 as ne,
+    b6 as ne,
     s as oe,
-    b6 as ie,
+    b7 as ie,
     B as ce,
     t as le,
     M as de,
-    b7 as _e,
-    aD as me,
+    b8 as _e,
+    aE as me,
     o as ue,
     h as he,
     k as be,
@@ -186,7 +186,7 @@ const Pe = {
         achieved__show: 'Award_achieved__show_f4eff0f6',
         check: 'Award_check_13a829f3',
     },
-    Ie = a(function ({ name: a, icon: s, level: r, title: n, subtitle: o, state: i, hasPreview: c, rarity: l }) {
+    Re = a(function ({ name: a, icon: s, level: r, title: n, subtitle: o, state: i, hasPreview: c, rarity: l }) {
         const { controls: d } = Ne(),
             _ = k(),
             m = P(
@@ -251,7 +251,7 @@ const Pe = {
             ],
         });
     }),
-    Re = {
+    Ie = {
         root: 'Progression_root_61efd8f5',
         wrapper: 'Progression_wrapper_a3b670b1',
         element: 'Progression_element_1dcdd841',
@@ -263,20 +263,20 @@ const Pe = {
         content__horizontal: 'Progression_content__horizontal_4ee67b69',
         horizontalBar: 'Progression_horizontalBar_c07ecaf4',
     },
-    Se = S('Wrapper', Re.wrapper),
-    Ce = S('Element', Re.element),
+    Ce = C('Wrapper', Ie.wrapper),
+    Se = C('Element', Ie.element),
     $e = 'both',
-    De = 'left',
-    Ae = 'right',
+    Ae = 'left',
+    De = 'right',
     Me = 'none';
 function Te({ elements: a }) {
     const { api: n } = $(),
         { animationScroll: o, applyScroll: i } = n,
-        c = D(n, F.horizontal),
+        c = A(n, F.horizontal),
         [l, d] = s.useState();
     s.useEffect(
         () =>
-            A(() => {
+            D(() => {
                 'idle' === c.type && o.scrollPosition.idle && i(o.scrollPosition.get());
             }),
         [o.scrollPosition, c, i],
@@ -286,12 +286,12 @@ function Te({ elements: a }) {
             a = n.getContainerSize() ?? 0,
             s = n.getWrapperSize() ?? 0,
             r = n.getBounds()[1];
-        d(s >= a ? Me : t <= 30 ? Ae : t >= r - 30 ? De : $e);
+        d(s >= a ? Me : t <= 30 ? De : t >= r - 30 ? Ae : $e);
     });
     return (
         r.useLayoutEffect(() => {
             function e() {
-                A(() => {
+                D(() => {
                     _();
                 });
             }
@@ -312,16 +312,16 @@ function Te({ elements: a }) {
             ),
             [n, _],
         ),
-        e.jsxs(Se, {
+        e.jsxs(Ce, {
             children: [
                 e.jsx(T, {
                     classNames: {
-                        wrapper: t(Re.scrollWrapper, Re[`scrollWrapper__${l}`]),
-                        content: t(Re.content, Re.content__horizontal),
+                        wrapper: t(Ie.scrollWrapper, Ie[`scrollWrapper__${l}`]),
+                        content: t(Ie.content, Ie.content__horizontal),
                     },
-                    children: p(a, (t, a) => e.jsx(Ce, { children: t }, a)),
+                    children: p(a, (t, a) => e.jsx(Se, { children: t }, a)),
                 }),
-                e.jsx(z, { classNames: { base: Re.horizontalBar } }),
+                e.jsx(z, { classNames: { base: Ie.horizontalBar } }),
             ],
         })
     );
@@ -329,7 +329,7 @@ function Te({ elements: a }) {
 a(function () {
     const { model: t } = Ne(),
         a = t.rewards.get();
-    return e.jsx(C, { children: e.jsx(Te, { elements: a.map((t) => e.jsx(Ie, { ...t }, t.level)) }) });
+    return e.jsx(S, { children: e.jsx(Te, { elements: a.map((t) => e.jsx(Re, { ...t }, t.level)) }) });
 });
 var ze = ((e) => ((e.Available = 'available'), (e.Completed = 'completed'), (e.Disabled = 'disabled'), e))(ze || {});
 const Fe = {
@@ -941,16 +941,16 @@ function Pt({
 }
 const Et = 'Glare_95e181ec',
     Bt = 'Glare_1be1be9',
-    It = { x: '-55rem', y: '-55rem', rotateZ: '-45deg', opacity: 0 },
-    Rt = [
-        { ...It, opacity: 1 },
+    Rt = { x: '-55rem', y: '-55rem', rotateZ: '-45deg', opacity: 0 },
+    It = [
+        { ...Rt, opacity: 1 },
         { opacity: 1, x: '45rem', y: '45rem', rotateZ: '-45deg' },
     ];
-const St = 'Points_ebbc956c',
-    Ct = 'Points_arrowContainer_2bd78abc',
+const Ct = 'Points_ebbc956c',
+    St = 'Points_arrowContainer_2bd78abc',
     $t = 'Points_arrow_cd1850ae',
-    Dt = 'Points_arrow__top_2e330546',
-    At = 'Points_arrow__right_fa74c47',
+    At = 'Points_arrow__top_2e330546',
+    Dt = 'Points_arrow__right_fa74c47',
     Mt = 'Points_arrow__bottom_1b669f6e',
     Tt = 'Points_arrow__left_1453abe0',
     zt = 'Points_outsideGlow_8ec52358',
@@ -958,15 +958,15 @@ const St = 'Points_ebbc956c',
     Lt = 'Wrapper_3f1ea42a',
     Ot = m(({ style: a }) =>
         e.jsxs(m.div, {
-            className: St,
+            className: Ct,
             style: a,
             children: [
                 e.jsx('div', { className: zt }),
                 e.jsxs('div', {
-                    className: Ct,
+                    className: St,
                     children: [
-                        e.jsx('div', { className: t($t, Dt) }),
                         e.jsx('div', { className: t($t, At) }),
+                        e.jsx('div', { className: t($t, Dt) }),
                         e.jsx('div', { className: t($t, Mt) }),
                         e.jsx('div', { className: t($t, Tt) }),
                     ],
@@ -983,8 +983,8 @@ const St = 'Points_ebbc956c',
             children: e.jsx(Pt, {
                 maskPath: `skillTree.tree.perks.special.skills.${a.value}.mask`,
                 classNames: Bt,
-                pointAnimation: Rt,
-                startAnimation: It,
+                pointAnimation: It,
+                startAnimation: Rt,
             }),
         });
     });
@@ -1565,7 +1565,7 @@ const fa = 'Container_2a42bba9',
             r.useLayoutEffect(() => {
                 const e = new ee(),
                     t = () => {
-                        A(() => {
+                        D(() => {
                             l();
                         });
                     };
@@ -1762,16 +1762,16 @@ a(function () {
         ],
     });
 });
-const [Ba, Ia] = f()(({ observableModel: e }) => ({ tree: e.object('tree'), ...e.primitives(['locationId']) }), de),
-    Ra = 'EntryPoint_28a00af8',
-    Sa = 'EntryPoint_bg_1daedee',
-    Ca = 'EntryPoint_base__vanity_25e6c411',
+const [Ba, Ra] = f()(({ observableModel: e }) => ({ tree: e.object('tree'), ...e.primitives(['locationId']) }), de),
+    Ia = 'EntryPoint_28a00af8',
+    Ca = 'EntryPoint_bg_1daedee',
+    Sa = 'EntryPoint_base__vanity_25e6c411',
     $a = 'EntryPoint_hover_4ee0996f',
-    Da = 'EntryPoint_glare_c5ebb1f5',
-    Aa = N.resolve('views');
+    Aa = 'EntryPoint_glare_c5ebb1f5',
+    Da = N.resolve('views');
 a(function (t) {
     const a = P({ value: 'small' }, { large: { value: 'big' } }),
-        { model: s } = Ia(),
+        { model: s } = Ra(),
         { isProgressionCompleted: n, isPrestigeGlareShown: o } = s.tree.get(),
         i = k(),
         c = _e(
@@ -1779,7 +1779,7 @@ a(function (t) {
             r.useMemo(
                 () => ({
                     isUnlocked: n,
-                    resId: Aa.read((e) => e.mono.vehicle_hub.tooltips.vanity_entry_point_tooltip('resId')),
+                    resId: Da.read((e) => e.mono.vehicle_hub.tooltips.vanity_entry_point_tooltip('resId')),
                 }),
                 [n],
             ),
@@ -1788,7 +1788,7 @@ a(function (t) {
             'back_to_main_progression',
             r.useMemo(
                 () => ({
-                    resId: Aa.read((e) => e.mono.vehicle_hub.tooltips.back_to_main_progression_tooltip('resId')),
+                    resId: Da.read((e) => e.mono.vehicle_hub.tooltips.back_to_main_progression_tooltip('resId')),
                 }),
                 [],
             ),
@@ -1796,7 +1796,7 @@ a(function (t) {
         _ = t.vanity ? d : c;
     return e.jsx('div', {
         ..._,
-        className: l(Ra, t.vanity && Ca),
+        className: l(Ia, t.vanity && Sa),
         onClick: function () {
             (_.onClick(), t.onClick());
         },
@@ -1804,14 +1804,14 @@ a(function (t) {
             (_.onMouseEnter(e), i.play('mouse-enter', { target: 'EntryPoint' }));
         },
         children: e.jsxs('div', {
-            className: Sa,
+            className: Ca,
             children: [
                 !t.vanity &&
                     n &&
                     !o &&
                     e.jsx(Pt, {
                         maskPath: `skillTree.entryPoint.progression.${a.value}.vanityProgressionMask`,
-                        classNames: Da,
+                        classNames: Aa,
                     }),
                 e.jsx('div', { className: $a }),
             ],

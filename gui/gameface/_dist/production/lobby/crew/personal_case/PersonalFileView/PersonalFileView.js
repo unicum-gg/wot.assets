@@ -407,9 +407,13 @@
                         if (t.mediumWidth && g) return (0, r.H)(u, t, C);
                         if (t.smallWidth && A) return (0, r.H)(u, t, C);
                         if (t.extraSmallWidth && F) return (0, r.H)(u, t, C);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && f) return u;
                             if (t.largeHeight && p) return u;
                             if (t.mediumHeight && D) return u;
@@ -1726,7 +1730,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, t = r(s.keys()); !(e = t()).done; ) {
+                            for (var e, t = r(s.keys()); !(e = t()).done;) {
                                 o(e.value, u);
                             }
                         },
@@ -2454,7 +2458,7 @@
                             u(e).delete(t);
                         },
                         i = (e, ...t) => {
-                            for (var n, a = r(u(e).values()); !(n = a()).done; ) {
+                            for (var n, a = r(u(e).values()); !(n = a()).done;) {
                                 (0, n.value)(...t);
                             }
                         };
@@ -2759,7 +2763,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                     return u;
                 }
                 const i = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -3482,7 +3486,7 @@
                               if (!n) return [e];
                               const r = [];
                               let a = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const s = u.justifyContent === i.v2.FlexEnd ? n.index : t.lastIndex;
                                   (r.push(e.slice(a, s)), (a = s), (n = t.exec(e)));
                               }
@@ -3527,7 +3531,9 @@
                     },
                     d = (e, u, t = '', n) => {
                         const r = [],
-                            s = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            s = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             (0, a.Z)(
                                 s,
@@ -3642,7 +3648,7 @@
                 const n = (e, u, t, n) => {
                     let r = u.exec(e),
                         a = 0;
-                    for (; r; ) (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
+                    for (; r;) (a !== r.index && t(e.slice(a, r.index)), n(r), (a = u.lastIndex), (r = u.exec(e)));
                     a !== e.length && t(e.slice(a));
                 };
             },
@@ -3718,7 +3724,7 @@
                             _ = ((e, u) => {
                                 let t = 0,
                                     n = e.length - 1;
-                                for (; n - t >= 0; ) {
+                                for (; n - t >= 0;) {
                                     const r = t + Math.ceil(0.5 * (n - t));
                                     i(e[r], u) ? (n = r - 1) : (t = r + 1);
                                 }
@@ -4862,7 +4868,7 @@
                         let s = _e.exec(e),
                             o = e,
                             l = 0;
-                        for (; s; ) {
+                        for (; s;) {
                             const t = s[0],
                                 n = ge.exec(t),
                                 c = Ae.exec(t),
@@ -5629,7 +5635,7 @@
                                     if (u === fu.Finished) return;
                                     let n = u + 1,
                                         r = hu(e, n, t);
-                                    for (; n < fu.Finished && void 0 === r; ) (n++, (r = hu(e, n, t)));
+                                    for (; n < fu.Finished && void 0 === r;) (n++, (r = hu(e, n, t)));
                                     return void 0 !== r ? { nextStage: n, delay: r } : void 0;
                                 })(b, k, D);
                                 if (e) {

@@ -207,7 +207,7 @@
                     M = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function L(e) {
                     let n = '';
-                    for (let t = M.length - 1; t >= 0; t--) for (; e >= M[t]; ) ((n += A[t]), (e -= M[t]));
+                    for (let t = M.length - 1; t >= 0; t--) for (; e >= M[t];) ((n += A[t]), (e -= M[t]));
                     return n;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -994,7 +994,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = Je(a.keys()); !(e = t()).done; ) o(e.value, n);
+                                                        for (var e, t = Je(a.keys()); !(e = t()).done;) o(e.value, n);
                                                     },
                                                     unsubscribe: o,
                                                 };

@@ -1,50 +1,51 @@
-import { j as e, C as s, D as a, r as t, o as r, h as o, R as n, q as i, t as d } from '../../../chunks/vendor.js';
+import { j as e, T as s, U as a, r as t, o as r, h as o, R as n, q as i, t as d } from '../../../chunks/vendor.js';
 import {
-    d7 as l,
-    aY as _,
-    d8 as c,
-    d9 as p,
-    cI as f,
+    dF as l,
+    b0 as _,
+    dG as c,
+    dH as p,
+    cL as f,
     F as m,
     I as g,
     b as u,
     M as h,
     m as b,
-    da as v,
+    dI as v,
     i as k,
-    b8 as T,
-    db as C,
-    aB as x,
-    $ as I,
-    cz as B,
-    dc as j,
-    dd as w,
-    cA as P,
-    ch as L,
-    de as A,
+    bc as T,
+    dJ as C,
+    aF as x,
+    a4 as I,
+    cC as B,
+    dK as j,
+    dL as w,
+    cD as P,
+    cl as L,
+    dM as A,
     p as N,
-    h as S,
+    s as S,
     R as y,
-    df as V,
-    dg as U,
-    cH as W,
-    k as Q,
-    dh as E,
-    di as H,
-    n as O,
-    by as F,
-    b3 as z,
-    dj as $,
-    f as M,
-    bu as G,
-    dk as D,
-    j as q,
-    l as K,
-    bP as Y,
-    r as J,
-    U as X,
+    dN as V,
+    dO as U,
+    cK as W,
+    t as Q,
+    dP as E,
+    dQ as H,
+    n as F,
+    bC as O,
+    b7 as z,
+    dR as $,
+    q as M,
+    by as G,
+    dS as D,
+    v as q,
+    w as K,
+    bU as J,
+    r as X,
+    U as Y,
 } from '../../../chunks/lib.js';
-import { S as Z, a as ee } from '../../../chunks/schedule_subheading.js';
+import { S as Z } from '../../../chunks/schedule_model.js';
+import { S as ee } from '../../../chunks/schedule_subheading.js';
 import { P as se, a as ae } from '../../../chunks/consts.js';
 import { u as te } from '../../../chunks/useParseRewards.js';
 /* empty css                     */ import '../../../chunks/use_server_time_polling.js';
@@ -624,8 +625,8 @@ const ke = 'done',
             ],
         });
     }),
-    Oe = 'LevelLabel_2aeb988e',
-    Fe = 'LevelLabel_activeGlow_cb07395c',
+    Fe = 'LevelLabel_2aeb988e',
+    Oe = 'LevelLabel_activeGlow_cb07395c',
     ze = 'LevelLabel_activeGlow__completed_14902b18',
     $e = 'LevelLabel_level_8a756009',
     Me = 'LevelLabel_level__completed_14902b18',
@@ -635,15 +636,15 @@ const ke = 'done',
     Ke = ({ level: a, isActive: t, isCompleted: r }) => {
         const o = s($e, r && Me, t && Ge);
         return e.jsxs('div', {
-            className: Oe,
+            className: Fe,
             children: [
-                e.jsx('div', { className: s(Fe, t && ze) }),
+                e.jsx('div', { className: s(Oe, t && ze) }),
                 e.jsx('div', { className: s(De, t && qe), children: a }),
                 e.jsx('div', { className: o, children: a }),
             ],
         });
     },
-    Ye = {
+    Je = {
         base: 'LevelCard_354cf12a',
         bgCompleted: 'LevelCard_bgCompleted_9a5501b3',
         bgCompleted__completed: 'LevelCard_bgCompleted__completed_90cf5cef',
@@ -670,17 +671,17 @@ const ke = 'done',
         blink: 'LevelCard_blink_3d180533',
         slideUpIn: 'LevelCard_slideUpIn_3d180533',
     },
-    Je = 'prevLevel',
-    Xe = 'completed',
+    Xe = 'prevLevel',
+    Ye = 'completed',
     Ze = 'inProgress',
-    es = (e, s, a) => (e ? Xe : s ? Ze : a),
+    es = (e, s, a) => (e ? Ye : s ? Ze : a),
     ss = a(function ({ level: a, isActive: r, isCompleted: o, isLast: n }) {
         const [i, d] = t.useState(),
             { model: l } = Ce(),
             _ = t.useRef(null),
             { wasProgressionVisited: c, isRecentlyCompletedLevel: p, isPrevLevel: f } = l.computes.levelStatus(a);
         t.useEffect(() => {
-            o && !c && p && d(Je);
+            o && !c && p && d(Xe);
         }, [o, c, p]);
         const m = t.useCallback(() => {
             N.sound('pr_progress_tick');
@@ -699,19 +700,19 @@ const ke = 'done',
                 });
             }, [_, m]),
             e.jsxs('div', {
-                className: Ye.base,
+                className: Je.base,
                 children: [
-                    e.jsx('div', { className: s(Ye.bgCompleted, o && Ye.bgCompleted__completed), ref: _ }),
+                    e.jsx('div', { className: s(Je.bgCompleted, o && Je.bgCompleted__completed), ref: _ }),
                     e.jsxs('div', {
-                        className: s(Ye.completedIconContainer, Ye[`completedIconContainer__${es(f, !o, i)}`]),
+                        className: s(Je.completedIconContainer, Je[`completedIconContainer__${es(f, !o, i)}`]),
                         children: [
-                            e.jsx('div', { className: Ye.completedIconGlow }),
-                            e.jsx('div', { className: Ye.completedIcon }),
+                            e.jsx('div', { className: Je.completedIconGlow }),
+                            e.jsx('div', { className: Je.completedIcon }),
                         ],
                     }),
                     e.jsx(Ke, { level: a, isCompleted: o, isActive: r }),
-                    e.jsx('div', { className: Ye.border }),
-                    n && e.jsx('div', { className: s(Ye.border, Ye.border__right) }),
+                    e.jsx('div', { className: Je.border }),
+                    n && e.jsx('div', { className: s(Je.border, Je.border__right) }),
                 ],
             })
         );
@@ -901,12 +902,12 @@ const ke = 'done',
     As = { base: 'Content_horizontalBar_e925daa8' },
     Ns = a(function () {
         const { model: a } = Ce(),
-            { api: r } = F(),
+            { api: r } = O(),
             [o, n] = t.useState(!1),
             i = a.progressAnimationState.get(),
             d = a.curProgressPoints.get(),
             { computes: l } = a,
-            _ = t.useRef({ moveProgressBars: O }),
+            _ = t.useRef({ moveProgressBars: F }),
             c = t.useRef(null),
             p = t.useRef(null),
             f = z(),
@@ -998,7 +999,7 @@ const ke = 'done',
             [l, _] = t.useState(!0),
             c = r.computes.isProgressionCompleted(),
             p = r.computes.wasProgressionCompletedBeforeStart(),
-            { api: f } = F();
+            { api: f } = O();
         return (
             t.useEffect(() => {
                 const e = (e) => {
@@ -1053,8 +1054,8 @@ const ke = 'done',
     Qs = 'App_bottomShadow_5ac9bad8',
     Es = 'App_content_70e4a93b',
     Hs = 'App_schedule_e2d8d9fb',
-    Os = 'App_calendarIcon_f2f7cb5f',
-    Fs = 'App_progression_23dc5ff6',
+    Fs = 'App_calendarIcon_f2f7cb5f',
+    Os = 'App_progression_23dc5ff6',
     zs = a(function () {
         const { controls: s } = Ce(),
             a = i(ae);
@@ -1071,25 +1072,25 @@ const ke = 'done',
                             e.jsx('div', { className: Qs }),
                         ],
                     }),
-                    e.jsx(Z, {
+                    e.jsx(ee, {
                         hasSeasonName: !1,
                         className: Hs,
-                        classNames: { scheduleClassNames: { calendarIcon: Os } },
+                        classNames: { scheduleClassNames: { calendarIcon: Fs } },
                     }),
                     e.jsxs(d.div, {
                         className: Es,
                         style: a,
-                        children: [e.jsx(He, {}), e.jsx(Y, { children: e.jsx(ys, { className: Fs }) })],
+                        children: [e.jsx(He, {}), e.jsx(J, { children: e.jsx(ys, { className: Os }) })],
                     }),
                 ],
             })
         );
     });
-J(
-    e.jsx(X, {
+X(
+    e.jsx(Y, {
         children: e.jsx(Te, {
             options: { context: 'model.progressionModel' },
-            children: e.jsx(ee, {
+            children: e.jsx(Z, {
                 options: { context: 'model.progressionModel.scheduleInfo' },
                 children: e.jsx(zs, {}),
             }),

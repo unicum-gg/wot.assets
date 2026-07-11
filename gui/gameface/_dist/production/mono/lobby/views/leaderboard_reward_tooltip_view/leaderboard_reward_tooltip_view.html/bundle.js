@@ -1,5 +1,5 @@
-import { j as e, C as s, D as a } from '../../../chunks/vendor.js';
-import { i as d, n as i, F as t, s as l, d as p, e as c, r } from '../../../chunks/lib.js';
+import { j as e, T as s, U as a } from '../../../chunks/vendor.js';
+import { i as d, n as i, F as t, e as l, l as p, o as c, r } from '../../../chunks/lib.js';
 /* empty css                     */ var n = ((e) => (
     (e.InProgress = 'inProgress'),
     (e.Completed = 'completed'),
@@ -101,7 +101,7 @@ const [o, _] = d()(({ observableModel: e }) => ({ root: e.object() }), i),
         slideUpIn: 'App_slideUpIn_0',
     },
     k = R.strings.comp7_light.leaderboardRewardTooltip,
-    C = a(() => {
+    M = a(() => {
         const { model: a } = _(),
             { state: d, seasonEndTimestamp: i } = a.root.get(),
             r = d === n.Simplified;
@@ -151,4 +151,4 @@ const [o, _] = d()(({ observableModel: e }) => ({ root: e.object() }), i),
             }),
         });
     });
-r(e.jsx(o, { children: e.jsx(C, {}) }));
+r(e.jsx(o, { children: e.jsx(M, {}) }));

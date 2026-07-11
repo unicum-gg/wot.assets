@@ -1,4 +1,4 @@
-import { j as s, a3 as a } from './vendor.js';
+import { j as s, W as a } from './vendor.js';
 import { b as i, s as e } from './rank_emblem.js';
 const m = ({ size: m, seasonName: o, className: r, isSimplified: c }) => {
     const n = i(m, c)

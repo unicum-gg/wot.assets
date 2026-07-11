@@ -1491,7 +1491,9 @@ function useTooltip({
             let o = null;
             function i() {
                 s ||
-                    ((a.current.status = statuses.await),
+                    ('display' === a.current.status &&
+                        (sendEvent$1.tooltip.hide(e, u, t), (a.current.status = statuses.idle)),
+                    (a.current.status = statuses.await),
                     window.clearTimeout(a.current.timeoutId),
                     (a.current.timeoutId = window.setTimeout(l, r)));
             }
@@ -1509,7 +1511,7 @@ function useTooltip({
                 ) {
                     displayedTooltips.delete(o);
                     let e = o.parentElement;
-                    for (; e && !displayedTooltips.has(e); ) e = e.parentElement;
+                    for (; e && !displayedTooltips.has(e);) e = e.parentElement;
                     if (e) {
                         displayedTooltips.get(e).show();
                     }
@@ -2267,7 +2269,7 @@ function resolveAttrParams(e, u) {
     for (let t = 0; t < e.length; t++) {
         if ('$' === e[t]) {
             let s = t + 1;
-            for (; s < e.length && !isEnd(e[s]); ) s++;
+            for (; s < e.length && !isEnd(e[s]);) s++;
             const n = e.slice(t + 1, s),
                 r = u[n];
             if (r) return resolveAttrParams(e.replace(`$${n}`, String(r)), u);
@@ -2514,6 +2516,7 @@ const multiValueTypes = [
         RewardType.DeluxeGift,
         RewardType.BattleBoosterGift,
         RewardType.OptionalDevice,
+        RewardType.TmanToken,
     ],
     currencyValueTypes = [RewardType.Gold, RewardType.Credits, RewardType.Crystal, RewardType.FreeXp],
     numberValueTypes = [RewardType.BattlePassPoints, RewardType.EquipCoin],
@@ -3077,7 +3080,7 @@ const sounds = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
     ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
 function arabic2roman$1(e) {
     let u = '';
-    for (let t = ARABIC.length - 1; t >= 0; t--) for (; e >= ARABIC[t]; ) ((u += ROMAN[t]), (e -= ARABIC[t]));
+    for (let t = ARABIC.length - 1; t >= 0; t--) for (; e >= ARABIC[t];) ((u += ROMAN[t]), (e -= ARABIC[t]));
     return u;
 }
 const ROMAN_FORBIDDEN_LANGUAGE_CODES = ['ko', 'no'];
@@ -5072,6 +5075,74 @@ const toggleThemes = { primary: 'primary', custom: 'custom' },
         });
     });
 ((Toggle.themes = toggleThemes), (Toggle.sizes = toggleSizes));
+const base$2 = 'Tooltip_6d997cee',
+    decorator = 'Tooltip_decorator_b3486d4e',
+    styles$2 = { base: base$2, decorator: decorator },
+    Base = defineStyledComponent('Base', styles$2.base),
+    Decorator = defineStyledComponent('Decorator', styles$2.decorator),
+    Tooltip = reactExports.forwardRef(function ({ children: e, ...u }, t) {
+        const s = reactExports.useRef(null);
+        return (
+            useRefResizeObserver(s, (e) => {
+                const u = e.target;
+                if (!(u instanceof HTMLElement)) return;
+                resize$1(u.scrollWidth, u.scrollHeight);
+                const t = window.getComputedStyle(u);
+                setSidePaddingsRem$1({
+                    top: parseInt(t.getPropertyValue('padding-top'), 10),
+                    left: parseInt(t.getPropertyValue('padding-left'), 10),
+                    right: parseInt(t.getPropertyValue('padding-right'), 10),
+                    bottom: parseInt(t.getPropertyValue('padding-bottom'), 10),
+                });
+            }),
+            jsxRuntimeExports.jsx(Base, {
+                ...u,
+                ref: function (e) {
+                    ((s.current = e), 'function' == typeof t ? t(e) : t && (t.current = e));
+                },
+                children: e,
+            })
+        );
+    });
+Tooltip.Decorator = Decorator;
+const root = 'CloseButton_root_987cb365',
+    base$1 = 'CloseButton_7488a1b8',
+    base__medium = 'CloseButton_base__medium_97d04067',
+    base__small = 'CloseButton_base__small_c1b29bae',
+    base__extraSmall = 'CloseButton_base__extraSmall_f52764c1',
+    base__x96x96 = 'CloseButton_base__x96x96_8157b84d',
+    base__x32x32 = 'CloseButton_base__x32x32_6466ea31',
+    styles$1 = {
+        root: root,
+        base: base$1,
+        base__medium: base__medium,
+        base__small: base__small,
+        base__extraSmall: base__extraSmall,
+        base__x96x96: base__x96x96,
+        base__x32x32: base__x32x32,
+    },
+    sizes = { medium: 'medium', small: 'small', extraSmall: 'extraSmall' },
+    upscaleImageSizes = { [sizes.medium]: 'x96x96', [sizes.small]: sizes.medium, [sizes.extraSmall]: 'x32x32' };
+function CloseButton({
+    size: e = sizes.medium,
+    hoverSound: u = sounds$1.highlight,
+    clickSound: t = sounds$1.click,
+    className: s,
+    onHover: n,
+    onClose: r,
+}) {
+    const a = useUpscale(styles$1[`base__${e}`], styles$1[`base__${upscaleImageSizes[e]}`]);
+    return jsxRuntimeExports.jsx('div', {
+        className: cx(styles$1.base, a, s),
+        onMouseEnter: () => {
+            (play.sound(u), n?.());
+        },
+        onClick: () => {
+            (play.sound(t), r());
+        },
+    });
+}
+CloseButton.size = sizes;
 var Alignment = ((e) => ((e[(e.left = 0)] = 'left'), (e[(e.right = 1)] = 'right'), e))(Alignment || {});
 function format(e, u) {
     return e.replace(/\{\w+\}/g, (e) => String(u[e.slice(1, -1)]));
@@ -5132,8 +5203,8 @@ const convertNbsp = (e) => e.replace(/&nbsp;/g, ' '),
         return splitEuropean(e, u);
     },
     formatString = (e, u, t) => e.split(/%\((.*?)\)(?:[sd])?/g).map((e) => (t && e in t ? t[e] : splitWords(e, u))),
-    base$2 = 'Formattext_bb80854d',
-    styles$2 = { base: base$2 },
+    base = 'Formattext_bb80854d',
+    styles = { base: base },
     FormatText = ({ binding: e, text: u = '', classMix: t, alignment: s = Alignment.left, formatWithBrackets: n }) => {
         if (null === u) return (console.error("FormatText was supplied with 'null'"), null);
         const r = n && e ? format(u, e) : u;
@@ -5144,7 +5215,7 @@ const convertNbsp = (e) => e.replace(/&nbsp;/g, ' '),
                     jsxRuntimeExports.jsx(
                         'div',
                         {
-                            className: cx(styles$2.base, t),
+                            className: cx(styles.base, t),
                             children: formatString(u, s, e).map((e, u) =>
                                 jsxRuntimeExports.jsx(reactExports.Fragment, { children: e }, `${u}-${e}`),
                             ),
@@ -5153,99 +5224,32 @@ const convertNbsp = (e) => e.replace(/&nbsp;/g, ' '),
                     ),
                 ),
         });
-    },
-    root = 'CloseButton_root_987cb365',
-    base$1 = 'CloseButton_7488a1b8',
-    base__medium = 'CloseButton_base__medium_97d04067',
-    base__small = 'CloseButton_base__small_c1b29bae',
-    base__extraSmall = 'CloseButton_base__extraSmall_f52764c1',
-    base__x96x96 = 'CloseButton_base__x96x96_8157b84d',
-    base__x32x32 = 'CloseButton_base__x32x32_6466ea31',
-    styles$1 = {
-        root: root,
-        base: base$1,
-        base__medium: base__medium,
-        base__small: base__small,
-        base__extraSmall: base__extraSmall,
-        base__x96x96: base__x96x96,
-        base__x32x32: base__x32x32,
-    },
-    sizes = { medium: 'medium', small: 'small', extraSmall: 'extraSmall' },
-    upscaleImageSizes = { [sizes.medium]: 'x96x96', [sizes.small]: sizes.medium, [sizes.extraSmall]: 'x32x32' };
-function CloseButton({
-    size: e = sizes.medium,
-    hoverSound: u = sounds$1.highlight,
-    clickSound: t = sounds$1.click,
-    className: s,
-    onHover: n,
-    onClose: r,
-}) {
-    const a = useUpscale(styles$1[`base__${e}`], styles$1[`base__${upscaleImageSizes[e]}`]);
-    return jsxRuntimeExports.jsx('div', {
-        className: cx(styles$1.base, a, s),
-        onMouseEnter: () => {
-            (play.sound(u), n?.());
-        },
-        onClick: () => {
-            (play.sound(t), r());
-        },
-    });
-}
-CloseButton.size = sizes;
-const base = 'Tooltip_6d997cee',
-    decorator = 'Tooltip_decorator_b3486d4e',
-    styles = { base: base, decorator: decorator },
-    Base = defineStyledComponent('Base', styles.base),
-    Decorator = defineStyledComponent('Decorator', styles.decorator),
-    Tooltip = reactExports.forwardRef(function ({ children: e, ...u }, t) {
-        const s = reactExports.useRef(null);
-        return (
-            useRefResizeObserver(s, (e) => {
-                const u = e.target;
-                if (!(u instanceof HTMLElement)) return;
-                resize$1(u.scrollWidth, u.scrollHeight);
-                const t = window.getComputedStyle(u);
-                setSidePaddingsRem$1({
-                    top: parseInt(t.getPropertyValue('padding-top'), 10),
-                    left: parseInt(t.getPropertyValue('padding-left'), 10),
-                    right: parseInt(t.getPropertyValue('padding-right'), 10),
-                    bottom: parseInt(t.getPropertyValue('padding-bottom'), 10),
-                });
-            }),
-            jsxRuntimeExports.jsx(Base, {
-                ...u,
-                ref: function (e) {
-                    ((s.current = e), 'function' == typeof t ? t(e) : t && (t.current = e));
-                },
-                children: e,
-            })
-        );
-    });
-Tooltip.Decorator = Decorator;
+    };
 export {
-    useVerticalScroll as A,
+    Image as A,
     Button as B,
-    useScrollBounding as C,
-    Area as D,
-    Toggle as E,
+    useVerticalScroll as C,
+    useScrollBounding as D,
+    Area as E,
     FormatText$1 as F,
-    toggleSizes as G,
-    Input as H,
+    Toggle as G,
+    toggleSizes as H,
     ImageSize as I,
-    Base$2 as J,
-    Bar as K,
-    JSXBuilder as L,
-    UIProvider as M,
-    runView as N,
-    FormatText as O,
-    initExternalPaddings$1 as P,
-    CloseButton as Q,
+    Input as J,
+    Base$2 as K,
+    Bar as L,
+    JSXBuilder as M,
+    UIProvider as N,
+    runView as O,
+    noop as P,
+    Tooltip as Q,
     Rewards as R,
     SceneWrapper as S,
     Tooltip$1 as T,
     UPSCALE as U,
-    noop as V,
-    Tooltip as W,
+    CloseButton as V,
+    FormatText as W,
+    initExternalPaddings$1 as X,
     useSimpleTooltip as a,
     onRescale as b,
     computeds as c,
@@ -5270,6 +5274,6 @@ export {
     useEvent as v,
     useKeydownListener as w,
     keyCodes as x,
-    useUpscale as y,
-    Image as z,
+    remToPx$1 as y,
+    useUpscale as z,
 };

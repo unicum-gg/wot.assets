@@ -1,22 +1,22 @@
 import { q as e, r as s, j as t, e as a } from '../../../chunks/vendor.js';
 import {
     i as r,
-    N as i,
-    O as n,
+    h as i,
+    j as n,
     u as l,
-    P as c,
+    l as c,
     B as d,
-    Q as o,
-    R as _,
-    S as u,
-    W as m,
-    X as h,
+    m as o,
+    n as _,
+    D as u,
+    o as m,
+    q as h,
     F as v,
-    j as A,
+    v as A,
     V as E,
     T as x,
-    J as f,
-    Y as I,
+    w as I,
+    I as f,
     c as b,
     b as w,
     r as N,
@@ -55,7 +55,7 @@ const [T, D] = r()(
         }),
     ),
     V = 'Footer_affirmative_416d3b79',
-    O = e(function () {
+    y = e(function () {
         const { model: e, controls: a } = D(),
             { progression: r, progressionState: i, eventMode: n } = e.root.get(),
             o = e.computes.selectedReward(),
@@ -86,7 +86,7 @@ const [T, D] = r()(
                   progressValue: r,
               });
     }),
-    y = {
+    O = {
         content: 'Timer_content_23e8ba68',
         text: 'Timer_text_6ee5dd6c',
         time: 'Timer_time_7dd62be4',
@@ -94,23 +94,23 @@ const [T, D] = r()(
         timer: 'Timer_2dc5a913',
     },
     k = R.strings.resource_well,
-    P = _,
-    U = ({ endDate: e = 0, isEventEndingSoon: s = !1, timeLeft: r = 0 }) => {
+    U = _,
+    P = ({ endDate: e = 0, isEventEndingSoon: s = !1, timeLeft: r = 0 }) => {
         const i = l({ iconSize: 'x24x24' }, { large: { iconSize: 'x32x32' } });
         return t.jsx('div', {
-            className: a(y.content, s ? y.content__endingSoon : y.content__daysLeft),
+            className: a(O.content, s ? O.content__endingSoon : O.content__daysLeft),
             children: s
                 ? t.jsxs(t.Fragment, {
                       children: [
-                          t.jsx('div', { className: y.text, children: k.mainView.timer.leftTime() }),
-                          t.jsx(o, { className: y.timer, start: r, size: i.iconSize }),
+                          t.jsx('div', { className: O.text, children: k.mainView.timer.leftTime() }),
+                          t.jsx(o, { className: O.timer, start: r, size: i.iconSize }),
                       ],
                   })
                 : t.jsxs(t.Fragment, {
                       children: [
-                          t.jsx('div', { className: y.text, children: k.mainView.timer.lastUntil() }),
-                          t.jsx('span', { className: y.text, children: ' ' }),
-                          t.jsx('div', { className: y.time, children: P(e, u.DayMonthFullTime) }),
+                          t.jsx('div', { className: O.text, children: k.mainView.timer.lastUntil() }),
+                          t.jsx('span', { className: O.text, children: ' ' }),
+                          t.jsx('div', { className: O.time, children: U(e, u.DayMonthFullTime) }),
                       ],
                   }),
         });
@@ -120,8 +120,8 @@ const [T, D] = r()(
     B = 'Header_title_c278441',
     M = 'Header_subTitle__empty_65f475ba',
     z = 'Header_description_d01fbd5',
-    W = 'Header_br_b2b829d8',
-    F = R.strings.resource_well,
+    F = 'Header_br_b2b829d8',
+    W = R.strings.resource_well,
     H = e(function ({ className: e }) {
         const { model: s } = D(),
             { eventMode: r, progressionState: i, endDate: n, timeLeft: l, isEventEndingSoon: d } = s.root.get(),
@@ -146,8 +146,8 @@ const [T, D] = r()(
             E = () =>
                 c(o, (e) => e.state === p.ALREADY_RECEIVED)
                     ? {
-                          title: F.eventInfo.header.title.allVehiclesReceived(),
-                          subTitle: F.eventInfo.header.subTitle.eventOver(),
+                          title: W.eventInfo.header.title.allVehiclesReceived(),
+                          subTitle: W.eventInfo.header.subTitle.eventOver(),
                       }
                     : h(
                             o,
@@ -161,34 +161,34 @@ const [T, D] = r()(
                                 ),
                         )
                       ? {
-                            title: F.eventInfo.header.title.vehicleReceived(),
-                            subTitle: F.eventInfo.header.subTitle.eventOver(),
+                            title: W.eventInfo.header.title.vehicleReceived(),
+                            subTitle: W.eventInfo.header.subTitle.eventOver(),
                         }
-                      : { title: F.commonTexts.eventTitle(), subTitle: '' };
+                      : { title: W.commonTexts.eventTitle(), subTitle: '' };
         return t.jsxs('div', {
             className: a(G, e),
             children: [
                 u
-                    ? t.jsx(U, { endDate: n, isEventEndingSoon: d, timeLeft: l })
+                    ? t.jsx(P, { endDate: n, isEventEndingSoon: d, timeLeft: l })
                     : t.jsx('div', { className: a(Y, !E().subTitle && M), children: E().subTitle }),
                 t.jsx('div', { className: B, children: E().title }),
                 r === L.SEQUENTIAL_PRODUCT &&
                     t.jsx(v, {
                         className: z,
-                        text: F.eventInfo.description.sequentialEventMode(),
+                        text: W.eventInfo.description.sequentialEventMode(),
                         params: {
                             styleTanksCount: A.formatNumber('integral', _.withStyleCount),
                             withoutStyleTanksCount: A.formatNumber('integral', _.withoutStyleCount),
-                            br: W,
+                            br: F,
                         },
                         upgradeLegacy: !0,
                     }),
                 r === L.TWO_PARALLEL_PRODUCTS &&
                     i !== S.Forbidden &&
                     h(o, (e) => e.state === p.ACTIVE && Boolean(e.vehiclesLeftCount)) &&
-                    t.jsx('div', { className: z, children: F.eventInfo.description.inParallelEventMode() }),
+                    t.jsx('div', { className: z, children: W.eventInfo.description.inParallelEventMode() }),
                 r === L.ONE_SERIAL_PRODUCT &&
-                    t.jsx('div', { className: z, children: F.eventInfo.description.oneSerialEventMode() }),
+                    t.jsx('div', { className: z, children: W.eventInfo.description.oneSerialEventMode() }),
             ],
         });
     }),
@@ -202,22 +202,22 @@ const [T, D] = r()(
         }[e];
         return t.jsx('div', { className: a(Q, s), children: t.jsx('div', { className: $, children: r }) });
     },
-    X = 'Counter_counterBackground_8ac9070',
-    K = 'Counter_202f6dcc',
+    K = 'Counter_counterBackground_8ac9070',
+    X = 'Counter_202f6dcc',
     Z = 'Counter_8743d17f',
     ee = 'Counter_counter__glow_5214be6e',
     se = 'Counter_counter__over_76b00b88',
     te = 'Counter_counterNumber_202f6dcc',
     ae = ({ vehiclesLeftCount: e, showCounterGlow: s }) =>
         t.jsx('div', {
-            className: K,
+            className: X,
             children: e
                 ? t.jsx(C, {
                       body: R.strings.resource_well.tooltips.counter.warning.text(),
                       children: t.jsxs('div', {
                           className: a(Z, s && ee),
                           children: [
-                              t.jsx('div', { className: X }),
+                              t.jsx('div', { className: K }),
                               t.jsx('div', { className: te, children: A.formatNumber('integral', e) }),
                           ],
                       }),
@@ -225,7 +225,7 @@ const [T, D] = r()(
                 : t.jsxs('div', {
                       className: a(Z, se),
                       children: [
-                          t.jsx('div', { className: X }),
+                          t.jsx('div', { className: K }),
                           t.jsx('div', { className: te, children: R.strings.resource_well.eventInfo.tanksOver() }),
                       ],
                   }),
@@ -245,7 +245,7 @@ const [T, D] = r()(
             E = l({ buttonSize: 'small' }, { large: { buttonSize: 'medium' } }),
             R = c === L.TWO_PARALLEL_PRODUCTS && h === p.ACTIVE && _ !== u && o !== S.Forbidden && Boolean(m),
             x = ([L.ONE_SERIAL_PRODUCT, L.SEQUENTIAL_PRODUCT].includes(c) && v) || m <= 1e4,
-            f =
+            I =
                 c === L.TWO_PARALLEL_PRODUCTS
                     ? de.eventInfo.inParallelEventMode.tanksLeftText()
                     : v
@@ -257,7 +257,7 @@ const [T, D] = r()(
                     className: a(re, r && ie, s),
                     children: [
                         t.jsx(ae, { vehiclesLeftCount: m, showCounterGlow: x }),
-                        Boolean(m) && t.jsx('div', { className: a(ne, x && le), children: f }),
+                        Boolean(m) && t.jsx('div', { className: a(ne, x && le), children: I }),
                     ],
                 }),
                 R &&
@@ -296,8 +296,8 @@ const [T, D] = r()(
     Ee = 'CounterStates_activeState_9bffc64d',
     Re = 'CounterStates_activeState__wide_9c62b467',
     xe = 'CounterStates_errorState_3d3df3cb',
-    fe = 'CounterStates_disabledState_7a829f15',
-    Ie = 'CounterStates_vehicleReceivedState_b586d061',
+    Ie = 'CounterStates_disabledState_7a829f15',
+    fe = 'CounterStates_vehicleReceivedState_b586d061',
     be = ({ reward: e, eventMode: s, disabled: r }) => {
         const { vehiclesLeftCount: i, state: n } = e;
         return t.jsx(t.Fragment, {
@@ -306,9 +306,9 @@ const [T, D] = r()(
                     case n === p.COUNT_NOT_AVAILABLE:
                         return t.jsx(Ae, { className: xe });
                     case n === p.ALREADY_RECEIVED || n === p.ALREADY_IN_GARAGE:
-                        return t.jsx(J, { state: n, className: Ie });
+                        return t.jsx(J, { state: n, className: fe });
                     case n === p.NOT_AVAILABLE:
-                        return t.jsx(me, { className: fe, vehiclesLeftCount: i });
+                        return t.jsx(me, { className: Ie, vehiclesLeftCount: i });
                     default: {
                         const i = [L.SEQUENTIAL_PRODUCT, L.ONE_SERIAL_PRODUCT].includes(s);
                         return t.jsx(oe, { className: a(Ee, i && Re), reward: e, disabled: r });
@@ -360,24 +360,24 @@ const [T, D] = r()(
                 t.jsx('div', { className: a(Te, n && De), style: { backgroundImage: `url(${i})` } }),
             ],
         }),
-    Oe = 'VehicleInfo_infoIcon_b4d1c36e',
-    ye = 'VehicleInfo_727cd5bd',
+    ye = 'VehicleInfo_infoIcon_b4d1c36e',
+    Oe = 'VehicleInfo_727cd5bd',
     ke = 'VehicleInfo_base__disabled_4d7dc501',
-    Pe = 'VehicleInfo_text_23c6f228',
-    Ue = 'VehicleInfo_type_1b1dad2c',
+    Ue = 'VehicleInfo_text_23c6f228',
+    Pe = 'VehicleInfo_type_1b1dad2c',
     Ge = 'VehicleInfo_info_8032de6d',
     Ye = 'VehicleInfo_infoWrapper_a3632c61',
     Be = 'VehicleInfo_infoText_d365fb3c',
     Me = ({ vehicleInfo: e, className: s, hasStyle: r, disabled: i, eventMode: n }) => {
         const c = l({ typeSize: 'x48x48' }, { large: { typeSize: 'x64x64' } });
         return t.jsxs('div', {
-            className: a(s, ye, i && ke),
+            className: a(s, Oe, i && ke),
             children: [
                 t.jsxs(E, {
                     children: [
-                        t.jsx(E.Level, { className: Pe, value: e.vehicleLvl }),
-                        t.jsx(E.Type, { className: Ue, type: e.vehicleType, premium: e.isElite, size: c.typeSize }),
-                        t.jsx(E.Name, { className: Pe, children: e.vehicleName }),
+                        t.jsx(E.Level, { className: Ue, value: e.vehicleLvl }),
+                        t.jsx(E.Type, { className: Pe, type: e.vehicleType, premium: e.isElite, size: c.typeSize }),
+                        t.jsx(E.Name, { className: Ue, children: e.vehicleName }),
                     ],
                 }),
                 [L.SEQUENTIAL_PRODUCT, L.ONE_SERIAL_PRODUCT].includes(n) &&
@@ -393,7 +393,7 @@ const [T, D] = r()(
                                               className: Be,
                                               children: R.strings.resource_well.eventInfo.top.styleText(),
                                           }),
-                                          t.jsx('div', { className: Oe }),
+                                          t.jsx('div', { className: ye }),
                                       ],
                                   }),
                               })
@@ -415,8 +415,8 @@ const [T, D] = r()(
         preview: 'Rewards_preview_fc0a7b9f',
         previewLabel: 'Rewards_previewLabel_ac2fb8e8',
     },
-    We = R.images.resource_well.gui.maps.icons,
-    Fe = R.strings.resource_well,
+    Fe = R.images.resource_well.gui.maps.icons,
+    We = R.strings.resource_well,
     He = e(function () {
         const { model: e, controls: r } = D(),
             { eventMode: i } = e.root.get(),
@@ -424,7 +424,7 @@ const [T, D] = r()(
             l = e.computes.selectedReward()?.rewardId;
         return t.jsx('div', {
             className: ze.base,
-            children: f(n, (e, n) => {
+            children: I(n, (e, n) => {
                 const { vehiclesLeftCount: c, rewardId: d, state: o } = e,
                     _ = [p.ALREADY_RECEIVED, p.ALREADY_IN_GARAGE].includes(o),
                     u = Boolean(c) && o === p.ACTIVE && l === d,
@@ -443,9 +443,9 @@ const [T, D] = r()(
                             t.jsx(Ve, {
                                 isVehicleActive: m,
                                 isLightsActive: u,
-                                activeVehicleImageSrc: We.tanksBg.$dyn(`tank_${n}_active`),
-                                defaultVehicleImageSrc: We.tanksBg.$dyn(`tank_${n}_default`),
-                                lightsImageSrc: We.tanksBg.$dyn(`tank_${n}_shine`),
+                                activeVehicleImageSrc: Fe.tanksBg.$dyn(`tank_${n}_active`),
+                                defaultVehicleImageSrc: Fe.tanksBg.$dyn(`tank_${n}_default`),
+                                lightsImageSrc: Fe.tanksBg.$dyn(`tank_${n}_shine`),
                             }),
                             t.jsx(Le, {
                                 visible: u,
@@ -455,13 +455,13 @@ const [T, D] = r()(
                                 className: a(ze[`index--${n}`], ze.vehicleInfoWrapper),
                                 children: [
                                     !_ &&
-                                        t.jsx(I, {
+                                        t.jsx(f, {
                                             className: ze.preview,
                                             type: 'preview',
                                             onClick: () => r.preview(e.rewardId),
                                             children: t.jsx('div', {
                                                 className: ze.previewLabel,
-                                                children: Fe.mainView.preview.label(),
+                                                children: We.mainView.preview.label(),
                                             }),
                                         }),
                                     t.jsx(Me, {
@@ -484,8 +484,8 @@ const [T, D] = r()(
     Qe = 'App_base__blur_683be9ab',
     qe = 'App_background_6e019d9d',
     Je = 'App_header_2af7bd70',
-    Xe = 'App_solidBackground_ecec25af',
-    Ke = e(function () {
+    Ke = 'App_solidBackground_ecec25af',
+    Xe = e(function () {
         const { model: e } = D(),
             { showBlur: r } = e.root.get();
         return (
@@ -495,18 +495,18 @@ const [T, D] = r()(
             }),
             t.jsxs(t.Fragment, {
                 children: [
-                    t.jsx('div', { className: Xe }),
+                    t.jsx('div', { className: Ke }),
                     t.jsxs('div', {
                         className: a($e, r && Qe),
                         children: [
                             t.jsx('div', { className: qe }),
                             t.jsx(H, { className: Je }),
                             t.jsx(He, {}),
-                            t.jsx(O, {}),
+                            t.jsx(y, {}),
                         ],
                     }),
                 ],
             })
         );
     });
-N(t.jsx(g, { children: t.jsx(T, { children: t.jsx(Ke, {}) }) }), { fullScreen: !0 }).then(() => w(!1));
+N(t.jsx(g, { children: t.jsx(T, { children: t.jsx(Xe, {}) }) }), { fullScreen: !0 }).then(() => w(!1));

@@ -13,7 +13,7 @@ import {
     aE as _,
     bm as p,
     a6 as j,
-    cI as w,
+    cQ as w,
     a5 as h,
     a7 as v,
 } from '../../../chunks/lib.js';
@@ -35,7 +35,7 @@ const [N, y] = l()(
         label: 'RewardRow_label_49f63c71',
         percent: 'RewardRow_percent_86c62b10',
     },
-    I = e(({ rewards: e, iconKey: o, label: l, showRewardsNames: x }) => {
+    A = e(({ rewards: e, iconKey: o, label: l, showRewardsNames: x }) => {
         const { model: _ } = y(),
             { assetsPointer: p } = _.root.get(),
             j = _.lootBoxes.get().length > 2 ? d.Big : d.S232x174,
@@ -88,13 +88,13 @@ const [N, y] = l()(
             ],
         });
     }),
-    A = 'RewardList_3134028b',
+    I = 'RewardList_3134028b',
     k = e(() => {
         const { model: e } = y(),
             a = e.lootBoxes.get();
         return s.jsx('div', {
-            className: A,
-            children: a.length > 0 && r(a, (e, s) => o.createElement(I, { ...e, key: s })),
+            className: I,
+            children: a.length > 0 && r(a, (e, s) => o.createElement(A, { ...e, key: s })),
         });
     }),
     B = 'App_41da450e',

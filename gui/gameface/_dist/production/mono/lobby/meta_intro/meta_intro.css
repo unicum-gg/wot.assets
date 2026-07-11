@@ -232,6 +232,14 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
+.MetaIntroApp_background_ed2a9e7 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 /* stylelint-disable scss/dollar-variable-pattern */
 .MetaIntroApp_f24aa649 {
     display: flex;
@@ -242,12 +250,7 @@ html[lang='th'] input {
     background-color: rgba(0, 0, 0, 0.75);
 }
 
-.MetaIntroApp_background_47115184 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.MetaIntroApp_background_ed2a9e7 {
     background: url('R.images.last_stand.gui.maps.icons.backgrounds.intro_bg') no-repeat 50%/100% 100%;
     pointer-events: none;
 }

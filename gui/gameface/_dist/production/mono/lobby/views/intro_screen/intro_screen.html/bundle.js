@@ -1,24 +1,25 @@
-import { j as e, C as s, D as a, r } from '../../../chunks/vendor.js';
+import { j as e, T as s, U as a, r } from '../../../chunks/vendor.js';
 import {
     M as t,
     B as i,
     i as n,
     F as o,
-    d as l,
-    e as d,
+    l,
+    o as d,
     p as _,
-    f as c,
-    h as u,
-    j as m,
-    k as h,
-    l as b,
-    b as g,
-    u as p,
-    o as f,
+    q as c,
+    s as u,
+    t as m,
+    v as h,
+    w as b,
+    b as p,
+    u as g,
+    x as f,
     r as w,
     U as x,
 } from '../../../chunks/lib.js';
-import { u as v, S as j, a as A } from '../../../chunks/schedule_subheading.js';
+import { u as v, S as j } from '../../../chunks/schedule_model.js';
+import { S as A } from '../../../chunks/schedule_subheading.js';
 import { u as S } from '../../../chunks/use_server_time_polling.js';
 import { g as N } from '../../../chunks/get_roman_levels.js';
 /* empty css                     */ const B = (e) => (e >= t.Large ? i.sizes.medium : i.sizes.small),
@@ -29,9 +30,9 @@ import { g as N } from '../../../chunks/get_roman_levels.js';
     I = 'CountDownSubheading_3410a94d',
     D = 'CountDownSubheading_highlight_4e42571e',
     C = 'CountDownSubheading_timeLeftText_83a0f10d',
-    $ = 'CountDownSubheading_countDownContainer_95936a62',
-    L = 'CountDownSubheading_countDownText_c438ad0f',
-    T = 'CountDownSubheading_timer_dfa1cd55',
+    T = 'CountDownSubheading_countDownContainer_95936a62',
+    $ = 'CountDownSubheading_countDownText_c438ad0f',
+    L = 'CountDownSubheading_timer_dfa1cd55',
     M = ({ timeLeft: a, className: r }) =>
         e.jsx('div', {
             className: s(I, r),
@@ -39,11 +40,11 @@ import { g as N } from '../../../chunks/get_roman_levels.js';
                 text: R.strings.comp7_light.countDown.text(),
                 binding: {
                     timeLeft: e.jsxs('div', {
-                        className: $,
+                        className: T,
                         children: [
                             e.jsx('div', { className: D }),
-                            e.jsx('div', { className: T }),
-                            e.jsx(l, { duration: a, icon: d.None, classNames: { text: L } }),
+                            e.jsx('div', { className: L }),
+                            e.jsx(l, { duration: a, icon: d.None, classNames: { text: $ } }),
                         ],
                     }),
                 },
@@ -61,7 +62,7 @@ import { g as N } from '../../../chunks/get_roman_levels.js';
             e.jsx('div', {
                 className: z.base,
                 children:
-                    i < r ? e.jsx(M, { timeLeft: r - i, className: z.countDown }) : e.jsx(j, { hasSeasonName: !1 }),
+                    i < r ? e.jsx(M, { timeLeft: r - i, className: z.countDown }) : e.jsx(A, { hasSeasonName: !1 }),
             })
         );
     }),
@@ -94,8 +95,8 @@ import { g as N } from '../../../chunks/get_roman_levels.js';
         blink: 'ArrowButton_blink_5327085d',
         slideUpIn: 'ArrowButton_slideUpIn_5327085d',
     },
-    W = ['default', 'hover', 'active', 'disabled'];
-function U({
+    U = ['default', 'hover', 'active', 'disabled'];
+function W({
     size: a = 'large',
     direction: r = 'left',
     disabled: t = !1,
@@ -114,7 +115,7 @@ function U({
         ...d,
         children: e.jsx('div', {
             className: O.layers,
-            children: W.map((r) =>
+            children: U.map((r) =>
                 e.jsx(
                     'div',
                     {
@@ -180,23 +181,23 @@ const H = 'Slide_680b9fee',
             r.useEffect(
                 () =>
                     u(() =>
-                        h(() => {
+                        m(() => {
                             n && o(!1);
                         }, 500),
                     ),
                 [n],
             ));
         const _ = oe(l, () => i(t - 1)),
-            g = oe(d, () => i(t + 1));
+            p = oe(d, () => i(t + 1));
         return (
-            m(b.ARROW_LEFT, _),
-            m(b.ARROW_RIGHT, g),
+            h(b.ARROW_LEFT, _),
+            h(b.ARROW_RIGHT, p),
             e.jsxs('div', {
                 className: s(K, a),
                 style: { '--currentSlideIndex': t, '--transitionDuration': '500ms' },
                 children: [
-                    e.jsx(U, { size: 'medium', direction: 'left', disabled: l, className: s(ee, se), onClick: _ }),
-                    e.jsx(U, { size: 'medium', direction: 'right', disabled: d, className: s(ee, ae), onClick: g }),
+                    e.jsx(W, { size: 'medium', direction: 'left', disabled: l, className: s(ee, se), onClick: _ }),
+                    e.jsx(W, { size: 'medium', direction: 'right', disabled: d, className: s(ee, ae), onClick: p }),
                     e.jsxs('div', {
                         className: P,
                         children: [
@@ -227,9 +228,9 @@ const H = 'Slide_680b9fee',
     me = 'App_button_b6edc495',
     he = a(function () {
         const { controls: s } = k(),
-            { mediaSize: a } = g();
+            { mediaSize: a } = p();
         return (
-            p(s.close),
+            g(s.close),
             e.jsxs('div', {
                 className: de,
                 children: [
@@ -253,7 +254,7 @@ f('comp7_light/gui/maps/icons/backgrounds/intro_bg.dds');
 w(
     e.jsx(x, {
         children: e.jsx(y, {
-            children: e.jsx(A, { options: { context: 'model.scheduleInfo' }, children: e.jsx(he, {}) }),
+            children: e.jsx(j, { options: { context: 'model.scheduleInfo' }, children: e.jsx(he, {}) }),
         }),
     }),
     { fullScreen: !0 },

@@ -188,7 +188,7 @@
                     y = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function x(e) {
                     let t = '';
-                    for (let n = y.length - 1; n >= 0; n--) for (; e >= y[n]; ) ((t += O[n]), (e -= y[n]));
+                    for (let n = y.length - 1; n >= 0; n--) for (; e >= y[n];) ((t += O[n]), (e -= y[n]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -879,9 +879,13 @@
                         if (n.mediumWidth && g) return i(t, n, R);
                         if (n.smallWidth && h) return i(t, n, R);
                         if (n.extraSmallWidth && p) return i(t, n, R);
-                        if (
-                            !(n.extraLargeWidth || n.largeWidth || n.mediumWidth || n.smallWidth || n.extraSmallWidth)
-                        ) {
+                        if (!(
+                            n.extraLargeWidth ||
+                            n.largeWidth ||
+                            n.mediumWidth ||
+                            n.smallWidth ||
+                            n.extraSmallWidth
+                        )) {
                             if (n.extraLargeHeight && v) return t;
                             if (n.largeHeight && b) return t;
                             if (n.mediumHeight && f) return t;
@@ -1565,6 +1569,7 @@
                         V.BattleBoosterGift,
                         V.OptionalDevice,
                         V.Attachment,
+                        V.TmanToken,
                     ],
                     ne = [V.Gold, V.Credits, V.Crystal, V.FreeXp],
                     re = [V.BattlePassPoints, V.EquipCoin],
@@ -1782,7 +1787,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, n = _e(a.keys()); !(e = n()).done; ) i(e.value, t);
+                                                        for (var e, n = _e(a.keys()); !(e = n()).done;) i(e.value, t);
                                                     },
                                                     unsubscribe: i,
                                                 };

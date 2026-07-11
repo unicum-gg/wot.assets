@@ -147,30 +147,25 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Link_6b3c3cc0 {
+.Link_f4d8f841 {
     display: flex;
     align-items: center;
     color: #fcf6eb;
-    text-decoration: underline;
     text-shadow:
         0 0 16rem rgba(255, 154, 82, 0.5),
         0 0 8rem rgba(255, 196, 108, 0.24),
         0 0 4rem rgba(252, 246, 235, 0.16);
-    transition:
-        color 0.3s ease-out,
-        text-decoration-color 0.3s ease-out;
+    transition: color 0.3s ease-out;
     cursor: pointer;
-    text-decoration-color: #fcf6eb;
 }
-.Link_6b3c3cc0:hover {
+.Link_f4d8f841:hover {
     color: #ffe4c0;
-    text-decoration-color: #ffe4c0;
-    transition:
-        color 0.3s ease-out,
-        text-decoration-color 0.3s ease-out;
+    transition: color 0.3s ease-out;
 }
 
-.Link_linkText_49aa663f {
+.Link_linkText_e5373f66 {
+    display: flex;
+    justify-content: center;
     font-size: 18rem;
     font-weight: 400;
     line-height: 1.3em;

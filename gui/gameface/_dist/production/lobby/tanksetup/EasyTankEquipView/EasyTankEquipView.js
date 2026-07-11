@@ -512,9 +512,13 @@
                         if (u.mediumWidth && p) return (0, a.H)(t, u, f);
                         if (u.smallWidth && g) return (0, a.H)(t, u, f);
                         if (u.extraSmallWidth && A) return (0, a.H)(t, u, f);
-                        if (
-                            !(u.extraLargeWidth || u.largeWidth || u.mediumWidth || u.smallWidth || u.extraSmallWidth)
-                        ) {
+                        if (!(
+                            u.extraLargeWidth ||
+                            u.largeWidth ||
+                            u.mediumWidth ||
+                            u.smallWidth ||
+                            u.extraSmallWidth
+                        )) {
                             if (u.extraLargeHeight && b) return t;
                             if (u.largeHeight && F) return t;
                             if (u.mediumHeight && C) return t;
@@ -993,7 +997,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, u = a(i.keys()); !(e = u()).done; ) {
+                            for (var e, u = a(i.keys()); !(e = u()).done;) {
                                 o(e.value, t);
                             }
                         },
@@ -1706,7 +1710,7 @@
                     a = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function r(e) {
                     let t = '';
-                    for (let u = a.length - 1; u >= 0; u--) for (; e >= a[u]; ) ((t += n[u]), (e -= a[u]));
+                    for (let u = a.length - 1; u >= 0; u--) for (; e >= a[u];) ((t += n[u]), (e -= a[u]));
                     return t;
                 }
                 const s = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -2386,7 +2390,7 @@
                             t(e).delete(u);
                         },
                         a = (e, ...u) => {
-                            for (var n, a = q(t(e).values()); !(n = a()).done; ) {
+                            for (var n, a = q(t(e).values()); !(n = a()).done;) {
                                 (0, n.value)(...u);
                             }
                         };
@@ -5576,7 +5580,7 @@
                     ns = (e, t, u, n) => {
                         let a = t.exec(e),
                             r = 0;
-                        for (; a; ) (r !== a.index && u(e.slice(r, a.index)), n(a), (r = t.lastIndex), (a = t.exec(e)));
+                        for (; a;) (r !== a.index && u(e.slice(r, a.index)), n(a), (r = t.lastIndex), (a = t.exec(e)));
                         r !== e.length && u(e.slice(r));
                     },
                     as = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -5622,7 +5626,7 @@
                               if (!n) return [e];
                               const a = [];
                               let r = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const s = t.justifyContent === jr.FlexEnd ? n.index : u.lastIndex;
                                   (a.push(e.slice(r, s)), (r = s), (n = u.exec(e)));
                               }
@@ -5797,7 +5801,7 @@
                             c = ((e, t) => {
                                 let u = 0,
                                     n = e.length - 1;
-                                for (; n - u >= 0; ) {
+                                for (; n - u >= 0;) {
                                     const a = u + Math.ceil(0.5 * (n - u));
                                     _s(e[a], t) ? (n = a - 1) : (u = a + 1);
                                 }

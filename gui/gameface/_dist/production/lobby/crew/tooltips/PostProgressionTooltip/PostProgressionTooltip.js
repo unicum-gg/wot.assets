@@ -431,7 +431,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function o(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -965,7 +965,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = B(r.keys()); !(e = t()).done; ) i(e.value, u);
+                                                        for (var e, t = B(r.keys()); !(e = t()).done;) i(e.value, u);
                                                     },
                                                     unsubscribe: i,
                                                 };
@@ -1404,14 +1404,14 @@
                         I.apply(null, arguments)
                     );
                 }
-                const z = ({ children: e, tooltipArgs: u, className: t }) => {
+                const j = ({ children: e, tooltipArgs: u, className: t }) => {
                     if (!u) return e;
                     const n = a().createElement('div', { className: t }, e);
                     if (u.header || u.body) return a().createElement(M, u, n);
                     const r = u.contentId;
                     return r ? a().createElement(x, I({}, u, { contentId: r }), n) : a().createElement(P, u, n);
                 };
-                var j = t(1311);
+                var z = t(1311);
                 const V = {
                     base: 'ExtendedText_base_d9fc1',
                     base__zeroPadding: 'ExtendedText_base__zeroPadding_d1a1c',
@@ -1565,7 +1565,7 @@
                     re = (e, u, t, n) => {
                         let r = u.exec(e),
                             o = 0;
-                        for (; r; ) (o !== r.index && t(e.slice(o, r.index)), n(r), (o = u.lastIndex), (r = u.exec(e)));
+                        for (; r;) (o !== r.index && t(e.slice(o, r.index)), n(r), (o = u.lastIndex), (r = u.exec(e)));
                         o !== e.length && t(e.slice(o));
                     },
                     oe = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -1611,7 +1611,7 @@
                               if (!n) return [e];
                               const r = [];
                               let o = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const i = u.justifyContent === G.FlexEnd ? n.index : t.lastIndex;
                                   (r.push(e.slice(o, i)), (o = i), (n = t.exec(e)));
                               }
@@ -1656,7 +1656,9 @@
                     },
                     le = (e, u, t = '', n) => {
                         const r = [],
-                            o = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            o = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             re(
                                 o,
@@ -1786,7 +1788,7 @@
                             c = ((e, u) => {
                                 let t = 0,
                                     n = e.length - 1;
-                                for (; n - t >= 0; ) {
+                                for (; n - t >= 0;) {
                                     const r = t + Math.ceil(0.5 * (n - t));
                                     Ee(e[r], u) ? (n = r - 1) : (t = r + 1);
                                 }
@@ -1855,7 +1857,7 @@
                                     );
                                     (0, i.useEffect)(() => {
                                         if (!e.current || !t) return;
-                                        const u = new j.Z((e) => n(e));
+                                        const u = new z.Z((e) => n(e));
                                         return (
                                             u.observe(e.current),
                                             () => {
@@ -1877,7 +1879,7 @@
                                     },
                                     a().createElement('div', { className: V.unTruncated, ref: F }, p),
                                     a().createElement(
-                                        z,
+                                        j,
                                         {
                                             tooltipArgs: g,
                                             className: r()(
@@ -2026,10 +2028,10 @@
                 let Ie = (function (e) {
                         return ((e.Idle = 'Idle'), (e.Grow = 'Grow'), (e.Shrink = 'Shrink'), (e.End = 'End'), e);
                     })({}),
-                    ze = (function (e) {
+                    je = (function (e) {
                         return ((e.Idle = 'Idle'), (e.In = 'In'), (e.End = 'End'), e);
                     })({});
-                const je = 'ProgressBarDeltaGrow_base_f4d46',
+                const ze = 'ProgressBarDeltaGrow_base_f4d46',
                     Ve = 'ProgressBarDeltaGrow_base__withoutBounce_b1398',
                     We = 'ProgressBarDeltaGrow_glow_c912d',
                     $e = (e) => (e ? { left: 0 } : { right: 0 }),
@@ -2086,7 +2088,7 @@
                                     [n, E, s, e],
                                 );
                             if (m) return null;
-                            const w = r()(je, d, E && 0 === s && Ve);
+                            const w = r()(ze, d, E && 0 === s && Ve);
                             return a().createElement(
                                 'div',
                                 { style: D ? h : v, className: w },
@@ -2165,12 +2167,12 @@
                             onChangeAnimationState: l,
                         }) => {
                             const c = o < n,
-                                d = (0, i.useState)(ze.Idle),
+                                d = (0, i.useState)(je.Idle),
                                 E = d[0],
                                 A = d[1],
-                                F = E === ze.In,
-                                _ = E === ze.End,
-                                m = E === ze.Idle,
+                                F = E === je.In,
+                                _ = E === je.End,
+                                m = E === je.Idle,
                                 D = (0, i.useCallback)(
                                     (e) => {
                                         (A(e), l && l(e));
@@ -2180,14 +2182,14 @@
                             ((0, i.useEffect)(() => {
                                 if (m && !t) {
                                     return Me(() => {
-                                        D(ze.In);
+                                        D(je.In);
                                     }, u);
                                 }
                             }, [D, t, m, u]),
                                 (0, i.useEffect)(() => {
                                     if (F) {
                                         return Me(() => {
-                                            (s && s(), D(ze.End));
+                                            (s && s(), D(je.End));
                                         }, e + u);
                                     }
                                 }, [D, F, s, u, e]));

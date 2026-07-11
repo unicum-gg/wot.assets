@@ -2218,10 +2218,7 @@ html[lang='th'] .Button_base__size-large_83da852e .Button_content__fontAligned_6
     }
 }
 /* should be percentage of screen width */
-.MultilineOverflow_8834bd8e {
-    display: flex;
-    flex-wrap: wrap;
-    white-space: pre-wrap;
+.MultilineOverflow_ec9f8e47 {
     position: relative;
 }
 

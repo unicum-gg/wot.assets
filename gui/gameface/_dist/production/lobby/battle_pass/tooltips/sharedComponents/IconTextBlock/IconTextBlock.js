@@ -137,7 +137,7 @@
                         let n = r.exec(u),
                             l = u,
                             s = 0;
-                        for (; n; ) {
+                        for (; n;) {
                             const A = n[0],
                                 B = a.exec(A),
                                 i = o.exec(A),

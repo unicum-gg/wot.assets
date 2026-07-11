@@ -1,5 +1,5 @@
 import { l as i, j as s, m as l } from '../../../../chunks/vendor.js';
-import { i as e, n as t, F as c, J as d, U as o, H as a, r as f } from '../../../../chunks/lib.js';
+import { i as e, t, F as c, J as d, U as o, H as a, r as f } from '../../../../chunks/lib.js';
 const [p, n] = e()(({ observableModel: i }) => i.object(), t),
     _ = 'DifficultyTooltipApp_62236aea',
     m = 'DifficultyTooltipApp_title_9bd463f2',

@@ -305,7 +305,7 @@
                     })(),
                     ue = function (e) {
                         let u = '';
-                        for (let t = w.length - 1; t >= 0; t--) for (; e >= w[t]; ) ((u += v[t]), (e -= w[t]));
+                        for (let t = w.length - 1; t >= 0; t--) for (; e >= w[t];) ((u += v[t]), (e -= w[t]));
                         return u;
                     };
                 function te() {
@@ -888,9 +888,13 @@
                         if (t.mediumWidth && F) return s(u, t, b);
                         if (t.smallWidth && A) return s(u, t, b);
                         if (t.extraSmallWidth && D) return s(u, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && B) return u;
                             if (t.mediumHeight && f) return u;
@@ -2853,6 +2857,9 @@
                                     );
                             }, [j, G]),
                                 (0, a.useEffect)(() => {
+                                    !z && j && G();
+                                }, [z, j, G]),
+                                (0, a.useEffect)(() => {
                                     void 0 !== F && (R.current.open = F);
                                 }, [F]));
                             const q = (0, a.useCallback)(() => {
@@ -3015,50 +3022,52 @@
                         );
                     }),
                     ou = 'UserFooterItem_base_dca18',
-                    su = R.strings.battle_royale.preBattle,
-                    iu = (0, a.memo)(
-                        ({ name: e, isReady: u, vehicleType: t, isCurrentUser: n, vehicleName: r, isSingle: s }) => {
-                            const i = !e,
-                                l = (0, a.useMemo)(
-                                    () => ({
-                                        backgroundImage: `url(${R.images.gui.maps.icons.battleRoyale.vehicleTypes.$dyn(t)})`,
-                                    }),
-                                    [t],
-                                ),
-                                c = B()(ou, i && 'UserFooterItem_base__empty_cdb52'),
-                                d = B()('UserFooterItem_text_b8b8c', n && 'UserFooterItem_text__current_d56f0');
-                            return i
+                    su = (0, a.memo)(
+                        ({ name: e, isReady: u, vehicleType: t, isCurrentUser: n, vehicleName: r, isSingle: a }) => {
+                            const s = !e;
+                            return s
                                 ? o().createElement(
                                       'div',
-                                      { className: c },
+                                      { className: B()(ou, s && 'UserFooterItem_base__empty_cdb52') },
                                       o().createElement('div', { className: 'UserFooterItem_emptySign_da248' }),
                                   )
                                 : o().createElement(
                                       'div',
                                       { className: ou },
-                                      !s &&
+                                      !a &&
                                           o().createElement(se, { content: e, classMix: 'UserFooterItem_name_cb56e' }),
                                       u
                                           ? o().createElement(
                                                 'div',
                                                 { className: 'UserFooterItem_vehicleName_be091' },
                                                 o().createElement('div', {
-                                                    style: l,
                                                     className: 'UserFooterItem_icon_c5f9a',
+                                                    style: {
+                                                        backgroundImage: `url(${R.images.gui.maps.icons.battleRoyale.vehicleTypes.$dyn(t)})`,
+                                                    },
                                                 }),
-                                                o().createElement('div', { className: d }, r),
+                                                o().createElement(
+                                                    'div',
+                                                    {
+                                                        className: B()(
+                                                            'UserFooterItem_text_b8b8c',
+                                                            n && 'UserFooterItem_text__current_d56f0',
+                                                        ),
+                                                    },
+                                                    r,
+                                                ),
                                             )
                                           : o().createElement(
                                                 'div',
                                                 { className: 'UserFooterItem_status_e5b94' },
-                                                su.userNotReady(),
+                                                R.strings.battle_royale.preBattle.userNotReady(),
                                             ),
                                   );
                         },
                     );
-                function lu() {
+                function iu() {
                     return (
-                        (lu = Object.assign
+                        (iu = Object.assign
                             ? Object.assign.bind()
                             : function (e) {
                                   for (var u = 1; u < arguments.length; u++) {
@@ -3067,27 +3076,33 @@
                                   }
                                   return e;
                               }),
-                        lu.apply(null, arguments)
+                        iu.apply(null, arguments)
                     );
                 }
-                const cu = R.strings.battle_royale.preBattle,
-                    du = (0, a.memo)(({ classMix: e }) => {
-                        const u = S('model.currentTeam'),
-                            t = B()('TeamFooter_base_c61a6', e);
+                const lu = (0, a.memo)(({ classMix: e }) => {
+                        const u = S('model.currentTeam');
                         return o().createElement(
                             'div',
-                            { className: t },
-                            o().createElement(au, { text: u.length > 1 ? cu.teamFooterTitle() : cu.userFooterTitle() }),
+                            { className: B()('TeamFooter_base_c61a6', e) },
+                            o().createElement(au, {
+                                text:
+                                    u.length > 1
+                                        ? R.strings.battle_royale.preBattle.teamFooterTitle()
+                                        : R.strings.battle_royale.preBattle.userFooterTitle(),
+                            }),
                             o().createElement(
                                 'div',
                                 { className: 'TeamFooter_team_bce27' },
-                                u.map(({ value: e }, t) =>
-                                    o().createElement(iu, lu({ key: e.name + t, isSingle: u.length <= 1 }, e)),
+                                u.map(({ value: e }) =>
+                                    o().createElement(
+                                        su,
+                                        iu({ key: e.name + e.vehicleName, isSingle: u.length <= 1 }, e),
+                                    ),
                                 ),
                             ),
                         );
                     }),
-                    _u = {
+                    cu = {
                         base: 'UserListItem_base_bb90e',
                         base__empty: 'UserListItem_base__empty_a6926',
                         emptySign: 'UserListItem_emptySign_b9d1c',
@@ -3097,29 +3112,29 @@
                         status: 'UserListItem_status_eae16',
                         status__notReady: 'UserListItem_status__notReady_e90b5',
                     },
-                    mu = R.strings.battle_royale.preBattle,
-                    Eu = (0, a.memo)(({ name: e, isReady: u, isCurrentUser: t, classMix: n }) => {
+                    du = R.strings.battle_royale.preBattle,
+                    _u = (0, a.memo)(({ name: e, isReady: u, isCurrentUser: t, classMix: n }) => {
                         const r = !e,
-                            a = M(['name'], _u),
-                            s = B()(_u.base, n),
-                            i = B()(a.name, t && _u.name__current),
-                            l = B()(_u.status, !u && _u.status__notReady);
+                            a = M(['name'], cu),
+                            s = B()(cu.base, n),
+                            i = B()(a.name, t && cu.name__current),
+                            l = B()(cu.status, !u && cu.status__notReady);
                         if (r) {
-                            const e = B()(_u.base, r && _u.base__empty, n);
+                            const e = B()(cu.base, r && cu.base__empty, n);
                             return o().createElement(
                                 'div',
                                 { className: e },
-                                o().createElement('div', { className: _u.emptySign }),
+                                o().createElement('div', { className: cu.emptySign }),
                             );
                         }
                         return o().createElement(
                             'div',
                             { className: s },
                             o().createElement(se, { content: e || '', classMix: i }),
-                            o().createElement('span', { className: l }, u ? mu.userReady() : mu.userNotReady()),
+                            o().createElement('span', { className: l }, u ? du.userReady() : du.userNotReady()),
                         );
                     }),
-                    Fu = {
+                    mu = {
                         base: 'TeamListItem_base_af973',
                         base__last: 'TeamListItem_base__last_c02ff',
                         teamNumber: 'TeamListItem_teamNumber_b4fcf',
@@ -3131,9 +3146,9 @@
                         userItem: 'TeamListItem_userItem_c4e6e',
                         userItem__smallHeight: 'TeamListItem_userItem__smallHeight_a46d5',
                     };
-                function Au() {
+                function Eu() {
                     return (
-                        (Au = Object.assign
+                        (Eu = Object.assign
                             ? Object.assign.bind()
                             : function (e) {
                                   for (var u = 1; u < arguments.length; u++) {
@@ -3142,16 +3157,16 @@
                                   }
                                   return e;
                               }),
-                        Au.apply(null, arguments)
+                        Eu.apply(null, arguments)
                     );
                 }
-                const Du = ({ users: e, isLast: u, teamNumber: t }) => {
+                const Fu = ({ users: e, isLast: u, teamNumber: t }) => {
                         const n = e.length > 1,
                             r = (0, a.useMemo)(() => e.some(({ value: e }) => e.isCurrentUser), [e]),
-                            s = M(['userItem', 'users'], Fu),
-                            i = B()(Fu.base, u && Fu.base__last),
-                            l = B()(Fu.teamNumber, !n && Fu.teamNumber__solo, r && !n && Fu.teamNumber__current),
-                            c = B()(s.users, n && Fu.users__team);
+                            s = M(['userItem', 'users'], mu),
+                            i = B()(mu.base, u && mu.base__last),
+                            l = B()(mu.teamNumber, !n && mu.teamNumber__solo, r && !n && mu.teamNumber__current),
+                            c = B()(s.users, n && mu.users__team);
                         return o().createElement(
                             'div',
                             { className: i },
@@ -3161,15 +3176,15 @@
                                 { className: c },
                                 e.map(({ value: u }, t) =>
                                     o().createElement(
-                                        Eu,
-                                        Au({ key: t + u.name, classMix: n && t !== e.length - 1 ? s.userItem : '' }, u),
+                                        _u,
+                                        Eu({ key: t + u.name, classMix: n && t !== e.length - 1 ? s.userItem : '' }, u),
                                     ),
                                 ),
                             ),
                         );
                     },
-                    Cu = 'TeamList_column_e1b54',
-                    Bu = (0, a.memo)(() => {
+                    Au = 'TeamList_column_e1b54',
+                    Du = (0, a.memo)(() => {
                         const e = S('model.teams'),
                             u = (0, a.useMemo)(
                                 () =>
@@ -3186,9 +3201,9 @@
                             { className: 'TeamList_base_c6347' },
                             o().createElement(
                                 'div',
-                                { className: Cu },
+                                { className: Au },
                                 t.map(({ value: { id: e, users: u } }, n) =>
-                                    o().createElement(Du, {
+                                    o().createElement(Fu, {
                                         key: e,
                                         users: u,
                                         teamNumber: n + 1,
@@ -3198,9 +3213,9 @@
                             ),
                             o().createElement(
                                 'div',
-                                { className: Cu },
+                                { className: Au },
                                 n.map(({ value: { id: e, users: u } }, r) =>
-                                    o().createElement(Du, {
+                                    o().createElement(Fu, {
                                         key: e,
                                         users: u,
                                         teamNumber: t.length + r + 1,
@@ -3210,7 +3225,7 @@
                             ),
                         );
                     }),
-                    fu = {
+                    Cu = {
                         base: 'PreBattleViewApp_base_d55fa',
                         base__spectator: 'PreBattleViewApp_base__spectator_a352b',
                         title: 'PreBattleViewApp_title_cc2a0',
@@ -3231,25 +3246,25 @@
                         teamFooter__smallHeight: 'PreBattleViewApp_teamFooter__smallHeight_b9756',
                         teamFooter__mediumHeight: 'PreBattleViewApp_teamFooter__mediumHeight_d0116',
                     },
-                    gu = R.strings.battle_royale.preBattle,
-                    pu = ['title', 'listTitle', 'spectatorFooter', 'teamFooter', 'content'],
-                    bu = () => {
+                    Bu = R.strings.battle_royale.preBattle,
+                    fu = ['title', 'listTitle', 'spectatorFooter', 'teamFooter', 'content'],
+                    gu = () => {
                         const e = S('model'),
                             u = e.isSpectator,
                             t = e.title,
-                            n = M(pu, fu),
-                            r = B()(fu.base, u && fu.base__spectator);
+                            n = M(fu, Cu),
+                            r = B()(Cu.base, u && Cu.base__spectator);
                         return o().createElement(
                             'div',
                             { className: r },
-                            o().createElement('div', { className: fu.bg }),
+                            o().createElement('div', { className: Cu.bg }),
                             o().createElement('div', { className: n.title }, t),
                             o().createElement(
                                 'div',
                                 { className: n.content },
-                                o().createElement(au, { text: gu.listTitle(), classMix: n.listTitle }),
-                                o().createElement(Bu, null),
-                                !u && o().createElement(du, { classMix: n.teamFooter }),
+                                o().createElement(au, { text: Bu.listTitle(), classMix: n.listTitle }),
+                                o().createElement(Du, null),
+                                !u && o().createElement(lu, { classMix: n.teamFooter }),
                             ),
                             u && o().createElement(nu, { classMix: n.spectatorFooter }),
                         );
@@ -3257,7 +3272,7 @@
                 engine.whenReady
                     .then(() => {
                         D().render(
-                            o().createElement(F, null, o().createElement(bu, null)),
+                            o().createElement(F, null, o().createElement(gu, null)),
                             document.getElementById('root'),
                         );
                     })

@@ -1,167 +1,213 @@
-import { o as e, m as s, f as a, p as t, j as o, e as r, r as i, n } from '../../../chunks/vendor.js';
+import { j as e, e as s, r as a, n as t, p as i } from '../../../chunks/vendor.js';
 import {
-    i as c,
-    m as l,
-    k as d,
-    l as m,
-    p as u,
-    c as _,
-    n as h,
-    o as b,
-    R as p,
-    F as x,
-    q as f,
-    I as g,
-    t as v,
-    v as N,
-    s as j,
-    w as k,
-    a as w,
-    D as y,
-    x as C,
-    y as T,
-    e as L,
-    z as S,
-    T as B,
-    r as P,
+    k as n,
+    l as r,
+    n as o,
+    j as c,
+    A as l,
+    o as d,
+    p as m,
+    q as u,
+    t as b,
+    v as _,
+    w as p,
+    x as h,
+    y as f,
+    F as g,
+    I as x,
+    d as N,
+    i as y,
+    c as v,
+    m as j,
+    z as k,
+    D as w,
+    R as C,
+    u as S,
+    h as I,
+    E as T,
+    G as B,
+    H as z,
+    J as L,
+    e as P,
+    r as $,
+    U as A,
 } from '../../../chunks/lib.js';
-import { C as R, c as I, a as D, g as A } from '../../../chunks/resources.js';
-import { g as M } from '../../../chunks/getConfig.js';
-import { S as $ } from '../../../chunks/sounds.js';
-import { g as H, o as V, l as E } from '../../../chunks/getRewardImage.js';
-import { f as F, i as O } from '../../../chunks/utils.js';
-import { L as q } from '../../../chunks/loupe_button.js';
-import { T as G } from '../../../chunks/tank_name.js';
-import { B as X } from '../../../chunks/big_button.js';
-/* empty css                    */ const z = {
-        images: {
-            background: 'infopage.background',
-            mask: 'infopage.mask',
-            checkmark: 'infopage.checkmark',
-            previewIcon: 'common.previewIcon',
-            externalLinkSmall: 'common.externalLinkSmall',
-            shadowLeft: 'infopage.shadowLeft',
-            shadowMiddle: 'infopage.shadowMiddle',
-            shadowRight: 'infopage.shadowRight',
-            tabShine: 'infopage.tabShine',
-        },
-        texts: {
-            backButton: 'common.backButton',
-            titleGuaranteed: 'infoPage.footer.title.guaranteed',
-            descriptionGuaranteed: 'infoPage.footer.description.guaranteed',
-            titleCompensation: 'infoPage.footer.title.compensation',
-            descriptionCompensation: 'infoPage.footer.description.compensation',
-            titleAutoOpen: 'infoPage.footer.title.autoOpen',
-            descriptionAutoOpen: 'infoPage.footer.description.autoOpen',
-            headerTitle: 'eventName.upperCase',
-            headerSubtitle: 'infoPage.header.subtitle',
-            headerDescription: 'infoPage.header.description',
-            lootListLink: 'infoPage.header.lootListLink',
-            headerShopButton: 'common.getButton.lowerCase',
-            headerVideoButtonText: 'infoPage.header.videoButtonText',
-            rewardsMultiplier: 'common.rewards.multiplier',
-            rewardsDivider: 'infoPage.rewards.divider',
-            rewardsPercent: 'infoPage.rewards.percent',
-        },
-        sounds: {
-            purchaseClick: $.purchaseClick,
-            purchaseHover: $.purchaseHover,
-            infoPageTabClick: $.infoPageTabClick,
-            infoPageTabHover: $.infoPageTabHover,
-        },
+import { S as E, P as H } from '../../../chunks/sounds.js';
+import { B as D, b as R, I as O, T as F, a as G } from '../../../chunks/stats_button.js';
+import { f as W, i as q, T as V } from '../../../chunks/utils.js';
+import { b as M, a as U, g as X } from '../../../chunks/resources.js';
+import { o as J, r as K, g as Q } from '../../../chunks/getRewardImage.js';
+import { L as Y } from '../../../chunks/loupe_button.js';
+import { T as Z } from '../../../chunks/tank_name.js';
+/* empty css                    */ import '../../../chunks/shield.js';
+const ee = 'ExternalLink_3e4af53',
+    se = 'ExternalLink_text_169bb4e3',
+    ae = 'ExternalLink_icon_887a2bf3';
+function te({ text: a, icon: t, onClick: i, className: n = '' }) {
+    return e.jsxs('div', {
+        className: s(ee, n),
+        onClick: i,
+        children: [
+            e.jsx('div', { className: se, children: a }),
+            e.jsx('div', { className: ae, style: { backgroundImage: `url(${t})` } }),
+        ],
+    });
+}
+const ie = 'ScrollContent_9c34c904',
+    ne = 'ScrollContent_mask_fcd9d0de',
+    re = 'ScrollContent_mask__top_95d8f716',
+    oe = 'ScrollContent_scrollBar_67bff939',
+    ce = 'ScrollContent_space_5cb50dff',
+    le = ({ children: t }) => {
+        const { api: i } = r(),
+            { animationScroll: n, applyScroll: u } = i,
+            b = o(i, m.vertical);
+        return (
+            a.useEffect(
+                () =>
+                    c(() => {
+                        'idle' === b.type && n.scrollPosition.idle && u(n.scrollPosition.get());
+                    }),
+                [n.scrollPosition, b, u],
+            ),
+            e.jsxs('div', {
+                className: ie,
+                children: [
+                    e.jsx('div', {
+                        className: ne,
+                        children: e.jsx('div', {
+                            className: s(ne, re),
+                            children: e.jsx(l, {
+                                children: e.jsxs(e.Fragment, {
+                                    children: [e.jsx('div', { className: ce }), t, e.jsx('div', { className: ce })],
+                                }),
+                            }),
+                        }),
+                    }),
+                    e.jsx(d, { classNames: { base: oe } }),
+                ],
+            })
+        );
     },
-    W = { dynamicTexts: { boxNames: 'common.boxCategory.lowerCase', rewardsPremiumDay: 'common.rewards.premiumDay' } },
-    [J, K] = c()(
-        ({ observableModel: a }) => {
-            const t = a.object().get().eventName,
-                o = {
-                    root: a.object(),
-                    boxes: a.arrayClone('boxes'),
-                    hasDescription: e.box(M(t, R.InfoPage).hasDescription),
-                    sticky: e.box(!1),
-                    activeCategory: e.box(''),
-                    eventName: t,
-                },
-                r = s((e) => {
-                    const s = [];
+    de = ({ children: s }) => e.jsx(n, { children: e.jsx(le, { children: s }) }),
+    me = 'Body_f2d5199c';
+const ue = a.createContext({
+        registerCell: u,
+        unregisterCell: u,
+        getColumnConfig: () => {},
+        getColumnWidth: () => 'auto',
+    }),
+    be = 'Cell_55d516a4';
+const _e = 'Row_3584476';
+const pe = 'Table_85be883a',
+    he = { limited: 'limited', fluid: 'fluid' },
+    fe = 'measure',
+    ge = 'apply';
+function xe({ children: t, columns: i, className: n = '' }) {
+    const r = a.useRef(null),
+        o = a.useRef(new Map()),
+        c = a.useCallback(() => {
+            const e = {};
+            return (
+                i.forEach(({ id: s, behavior: a }) => {
+                    a === he.limited && (e[s] = 'auto');
+                }),
+                e
+            );
+        }, [i]),
+        [l, d] = a.useState(fe),
+        [m, u] = a.useState(c),
+        h = a.useCallback((e) => m[e] ?? 'auto', [m]),
+        f = b((e, s) => {
+            (o.current.has(e) || o.current.set(e, new Set()), o.current.get(e).add(s));
+        }),
+        g = b((e, s) => {
+            o.current.get(e)?.delete(s);
+        }),
+        x = a.useCallback((e) => i.find((s) => s.id === e), [i]);
+    return (
+        a.useLayoutEffect(() => {
+            (u(c), d(fe));
+        }, [t, c]),
+        a.useLayoutEffect(() => {
+            l === fe &&
+                r.current &&
+                (u((e) => {
+                    const s = { ...e };
                     return (
-                        l(e, (e) => {
-                            if (I.includes(e.name)) {
-                                const a = d(s, (s) => s.name === e.name);
-                                if (void 0 !== a)
-                                    return void m(s, a, { ...s[a], value: `${s[a].value} %(divider) ${e.value}` });
+                        i.forEach((e) => {
+                            const { id: a, minWidth: t, maxWidth: i, behavior: n } = e;
+                            if (n !== he.limited) return;
+                            const r = o.current.get(a);
+                            if (!r || 0 === r.size) return void console.warn(`Can't find cells for column ${a}`);
+                            let c = 0;
+                            if (
+                                (r.forEach((e) => {
+                                    c = Math.max(c, e.scrollWidth);
+                                }),
+                                c > 0)
+                            ) {
+                                const e = _(t || 0, i || 1 / 0, p(c));
+                                s[a] = `${e}rem`;
                             }
-                            u(s, e);
                         }),
                         s
                     );
                 }),
-                i = s(
-                    (e) => {
-                        const s = h(o.boxes.get(), (s) => s.category === e);
-                        if (!s) throw new Error(`Box with category ${e} is not found`);
-                        return s;
-                    },
-                    { equals: _ },
-                ),
-                n = s(
-                    (e) => {
-                        const s = i(e).slots;
-                        return s ? l(s, (e) => ({ probability: e.probability, bonuses: r(e.bonuses.items) })) : [];
-                    },
-                    { equals: _ },
-                ),
-                c = s((e) => i(e).guaranteedLimit, { equals: _ }),
-                b = s(() => D(z, t)),
-                p = s(() => A(W, t)),
-                x = s(() => o.boxes.get().length > 1);
-            return {
-                ...o,
-                computes: { getSlots: n, getGuaranteed: c, resources: b, dynamicResources: p, displayTabs: x },
-            };
-        },
-        ({ externalModel: e, model: s, cleanup: o }) => {
-            const r = a((e) => {
-                s.activeCategory.get() !== e && s.activeCategory.set(e);
-            });
-            return (
-                o(
-                    t(() => {
-                        const { chosenCategory: e } = s.root.get();
-                        r(e);
-                    }),
-                ),
-                {
-                    showShop: e.createCallbackNoArgs('onShowShop'),
-                    showVideo: e.createCallbackNoArgs('onShowVideo'),
-                    showLootList: e.createCallbackNoArgs('onShowLootList'),
-                    close: e.createCallbackNoArgs('onClose'),
-                    showPreview: e.createCallback((e) => e, 'onPreview'),
-                    saveCategory: e.createCallback((e) => ({ chosenCategory: e }), 'onChosenCategory'),
-                    setSticky: a((e) => s.sticky.set(e)),
-                }
-            );
-        },
-    ),
-    Q = 'Divider_d6e02c14',
-    U = 'Divider_base__first_d2793de3';
-function Y({ isFirst: e = !1 }) {
-    return o.jsx('div', { className: r(Q, e && U) });
+                d(ge));
+        }, [l, i]),
+        e.jsx(ue.Provider, {
+            value: { registerCell: f, unregisterCell: g, getColumnConfig: x, getColumnWidth: h },
+            children: e.jsx('div', { ref: r, className: s(pe, n), children: t }),
+        })
+    );
 }
-const Z = 'Content_8eaaf71a';
-const ee = 'ComplexNumber_base__fraction_1b24306e',
-    se = 'ComplexNumber_unitsName_1b24306e',
-    ae = 'ComplexNumber_fraction_c9ed5457',
-    te = 'ComplexNumber_b295d3a2',
-    oe = 'ComplexNumber_integer_61932fde';
-function re({ probability: e, unitsName: s }) {
+((xe.Body = function ({ children: a, className: t = '' }) {
+    return e.jsx('div', { className: s(me, t), children: a });
+}),
+    (xe.Row = function ({ children: a, className: t = '' }) {
+        return e.jsx('div', { className: s(_e, t), children: a });
+    }),
+    (xe.Cell = function ({ columnId: t, children: i, className: n = '' }) {
+        const { registerCell: r, unregisterCell: o, getColumnConfig: c, getColumnWidth: l } = a.useContext(ue),
+            d = c(t),
+            m = a.useRef(null);
+        return (
+            a.useLayoutEffect(() => {
+                const e = m.current;
+                if (e && d.behavior === he.limited) return (r(t, e), () => o(t, e));
+            }, [t, d, r, o]),
+            e.jsx('div', {
+                ref: m,
+                style: (function () {
+                    switch (d.behavior) {
+                        case he.fluid:
+                            return { flexGrow: 1, flexShrink: 1 };
+                        case he.limited:
+                            return { width: l(t) };
+                        default:
+                            return {};
+                    }
+                })(),
+                className: s(be, n),
+                children: i,
+            })
+        );
+    }));
+const Ne = {
+    unitsName: 'ComplexNumber_unitsName_1b24306e',
+    fraction: 'ComplexNumber_fraction_7c23c928',
+    base: 'ComplexNumber_610185ed',
+    integer: 'ComplexNumber_integer_61932fde',
+};
+function ye({ probability: a, unitsName: t }) {
     const {
-            integer: a,
-            separator: t,
-            fraction: i,
+            integer: i,
+            separator: n,
+            fraction: r,
         } = ((e) => {
             if (Number.isInteger(e)) return { integer: String(e), separator: '', fraction: '' };
-            const s = b.resolve('intl').formatReal('fractional', e),
+            const s = h.resolve('intl').formatReal('fractional', e),
                 a = s.match(/[^0-9]/);
             if (a) {
                 const e = a[0],
@@ -172,546 +218,654 @@ function re({ probability: e, unitsName: s }) {
                 console.warn(`number isn't an integer or contains an unsupported separator ${e}`),
                 { integer: String(e), separator: '', fraction: '' }
             );
-        })(e),
-        n = e % 1 > 0;
-    return o.jsxs('div', {
-        className: r(te, n && ee),
+        })(a),
+        o = a % 1 > 0;
+    return e.jsxs('div', {
+        className: s(Ne.base, o && Ne.base__fraction),
         children: [
-            o.jsxs('div', { className: oe, children: [a, t] }),
-            Boolean(i) && o.jsx('span', { className: ae, children: i }),
-            o.jsx('div', { className: se, children: s }),
+            e.jsxs('div', { className: Ne.integer, children: [i, n] }),
+            Boolean(r) && e.jsx('span', { className: Ne.fraction, children: r }),
+            e.jsx('div', { className: Ne.unitsName, children: t }),
         ],
     });
 }
-const ie = 'Probability_b2962f58';
-const ne = {
-    base: 'Title_953a4d89',
-    title: 'Title_4a8f0758',
-    name: 'Title_name_db913f2d',
-    name__aligned: 'Title_name__aligned_fe2cac3',
-    base__credits: 'Title_base__credits_2e63cf3',
-    base__equipCoin: 'Title_base__equipCoin_2e63cf3',
-    base__freeXP: 'Title_base__freeXP_2e63cf3',
-    base__bptaler: 'Title_base__bptaler_2e63cf3',
-    base__crystal: 'Title_base__crystal_2e63cf3',
-    base__gold: 'Title_base__gold_2e63cf3',
-    base__premium_plus: 'Title_base__premium_plus_2e63cf3',
-    pluralText: 'Title_pluralText_5286007c',
-    label: 'Title_label_ad626d6',
-    fadeIn: 'Title_fadeIn_2e63cf3',
+const ve = 'Count_6053cdeb';
+const je = { base: 'Overlay_4754cdca', base__big: 'Overlay_base__big_354ebcfe', fadeIn: 'Overlay_fadeIn_3c7155a' };
+const ke = 'Badge_5baf6f33';
+function we({ children: a, className: t = '' }) {
+    return e.jsx('div', { className: s(ke, t), children: a });
+}
+((we.Count = function ({ count: a, text: t, className: i = '', style: n = {} }) {
+    return e.jsx('div', {
+        className: s(ve, i),
+        style: n,
+        children: e.jsx(f, { text: t, binding: { count: a }, formatWithBrackets: !0 }),
+    });
+}),
+    (we.Overlay = function ({ reward: a, size: t, className: i = '' }) {
+        const { name: n, overlayType: r } = a;
+        return e.jsx('div', {
+            className: s(je.base, !M.includes(n) && je[`base__${t}`], i),
+            style: { backgroundImage: `url(${J(t, n, r)})` },
+        });
+    }));
+const Ce = 'Icon_2beee90a';
+function Se({ icon: a, sizes: t, className: i = '' }) {
+    return e.jsx('div', {
+        className: s(Ce, i),
+        style: { backgroundImage: `url(${a})`, width: t.width, height: t.height },
+    });
+}
+const Ie = 'PreviewButton_fdc3bedf';
+const Te = 'Description_e25f8a92';
+const Be = {
+    base: 'Label_fde44430',
+    base__credits: 'Label_base__credits_c318c9f1',
+    base__gold: 'Label_base__gold_e3f8b3ce',
+    base__premium_plus: 'Label_base__premium_plus_5d5126e1',
+    base__freeXP: 'Label_base__freeXP_e3f8b3ce',
+    base__bptaler: 'Label_base__bptaler_e3f8b3ce',
+    base__crystal: 'Label_base__crystal_34a7d691',
+    fadeIn: 'Label_fadeIn_e3f8b3ce',
 };
-function ce({ reward: e, texts: s, className: a }) {
-    const { name: t, value: i, label: n } = e,
-        c = t === p.PremiumPlus,
-        l = t === p.TmanToken,
-        d = i
-            .split(' %(divider) ')
-            .sort((e, s) => Number(e) - Number(s))
-            .join(' %(divider) ');
-    return o.jsxs('div', {
-        className: r(ne.base, ne[`base__${t}`], a),
+const ze = {
+    base: 'Plural_dfe09152',
+    base__premium_plus: 'Plural_base__premium_plus_3f7ab6cc',
+    fadeIn: 'Plural_fadeIn_e8c3c4d2',
+};
+const Le = 'Title_60f02b6b';
+function Pe({ children: a, className: t }) {
+    return e.jsx('div', { className: s(Le, t), children: a });
+}
+function $e({ children: s, className: a, ...t }) {
+    return e.jsx('div', { className: a, ...t, children: s });
+}
+((Pe.Description = function ({ children: a, style: t, className: i }) {
+    return e.jsx('div', { className: s(Te, i), style: t, children: a });
+}),
+    (Pe.Label = function ({ children: a, rewardType: t, style: i, className: n }) {
+        return e.jsx('div', { className: s(Be.base, Be[`base__${t}`], n), style: i, children: a });
+    }),
+    (Pe.Plural = function ({ text: a, rewardType: t, style: i, className: n }) {
+        return e.jsx('span', { className: s(ze.base, ze[`base__${t}`], n), style: i, children: a });
+    }),
+    ($e.PreviewButton = function ({ image: a, onClick: t, className: i = '', classNames: n = {} }) {
+        const { icon: r, loupe: o } = n;
+        return e.jsx('div', {
+            className: s(Ie, i),
+            children: e.jsx(Y, { icon: { img: a, className: r }, className: o, onClick: t }),
+        });
+    }),
+    ($e.Title = Pe),
+    ($e.Icon = Se),
+    ($e.InHangar = Se),
+    ($e.Badge = we));
+const Ae = h.resolve('strings');
+function Ee(e, s) {
+    const { texts: a, dynamicTexts: t } = s,
+        { name: i, value: n, label: r, description: o, overlayType: c } = e;
+    let l,
+        d,
+        m = o,
+        u = r;
+    if (
+        (n && i === K.tmanToken
+            ? (m = a.uniqueTankmanText)
+            : n
+              ? (m = r)
+              : i === K.attachment &&
+                ((m = Ae.readOrEmpty('item_types.customization.attachment.rarity')),
+                (d = Ae.readOrEmpty(`vehicle_customization.customization.rarity.${c}`))),
+        n && i !== K.tmanToken && (u = W(n)),
+        i === K.premiumPlus)
+    ) {
+        const e = Number(n.split(' ').at(-1));
+        l = t.rewardsPremiumDay.plural('premiumDay', e);
+    }
+    return { description: m, label: u, plural: l, rarity: d, divider: a.rewardsDivider };
+}
+const He = 'Description_text_4fa9ae25';
+function De({ text: s, fontSize: a, params: t, className: i = '' }) {
+    return e.jsx($e.Title.Description, {
+        className: i,
+        style: { fontSize: a },
+        children: e.jsx(g, { className: He, upgradeLegacy: !0, split: !0, text: s, params: t }),
+    });
+}
+const Re = 'Label_e3f8b3ce',
+    Oe = 'Label_text_441a6ebb';
+function Fe({ text: a, rewardType: t, fontSize: i, params: n = {}, pluralText: r = '', className: o = '' }) {
+    return e.jsxs($e.Title.Label, {
+        className: s(Re, o),
+        rewardType: t,
+        style: { fontSize: i },
         children: [
-            i &&
-                !l &&
-                o.jsxs('div', {
-                    className: ne.title,
-                    children: [
-                        o.jsx(x, {
-                            text: F(d),
-                            binding: { divider: o.jsx('span', { className: ne.label, children: s.divider }) },
-                            classMix: r(ne.name, c && ne.name__aligned),
+            e.jsx(g, { className: Oe, upgradeLegacy: !0, split: !0, text: a, params: n }),
+            r && e.jsx($e.Title.Plural, { rewardType: t, text: r, style: { fontSize: i } }),
+        ],
+    });
+}
+function Ge({ reward: s, style: a, texts: t, classNames: i = {} }) {
+    const { label: n, description: r, plural: o, rarity: c, divider: l } = t,
+        { base: d, description: m, label: u } = i;
+    return e.jsxs($e.Title, {
+        className: d,
+        children: [
+            Boolean(r) && e.jsx(De, { className: m, text: r, fontSize: a.descriptionFontSize, params: { rarity: c } }),
+            Boolean(n) &&
+                e.jsx(Fe, {
+                    className: u,
+                    rewardType: s.name,
+                    text: n,
+                    pluralText: o,
+                    params: { divider: l || '' },
+                    fontSize: a.labelFontSize,
+                }),
+        ],
+    });
+}
+function We(e, s) {
+    if (s === x.Big)
+        switch (e) {
+            case K.tokens:
+            case K.tmanToken:
+                return { right: '-7%', bottom: '-12%' };
+            default:
+                return { right: '0', bottom: '-5rem' };
+        }
+    return { right: '13%', bottom: '1%' };
+}
+function qe(e, s) {
+    const { name: a, isRent: t } = e;
+    return a === K.vehicles && s === x.Big
+        ? 'R.images.gui.maps.icons.quests.bonuses.big.vehicles' + (t ? '_rent' : '')
+        : a === K.vehicles && s === x.S232x174
+          ? Q(e, x.S600x450)
+          : a === K.customizations && s === x.Big
+            ? Q({ ...e, id: 0 }, s)
+            : Q(e, s);
+}
+const Ve = 'small',
+    Me = 'medium',
+    Ue = 'large';
+const Xe = {
+        images: {
+            iconEmpty: 'entry_point.lootboxEmpty',
+            previewIcon: 'common.previewIcon',
+            externalLinkSmall: 'common.externalLinkSmall',
+            background: 'infopage.background',
+            checkmark: 'infopage.checkmark',
+            checkmarkLarge: 'infopage.checkmarkLarge',
+        },
+        texts: {
+            headerSubtitle: 'homeView.subtitle',
+            uniqueTankmanText: 'singleRewardView.uniqueTankman',
+            purchaseButtonText: 'common.getButton.lowerCase',
+            multiplier: 'common.rewards.multiplier',
+            titleGuaranteed: 'infoPage.footer.title.guaranteed',
+            descriptionGuaranteed: 'infoPage.footer.description.guaranteed',
+            titleCompensation: 'infoPage.footer.title.compensation',
+            descriptionCompensation: 'infoPage.footer.description.compensation',
+            titleAutoOpen: 'infoPage.footer.title.autoOpen',
+            descriptionAutoOpen: 'infoPage.footer.description.autoOpen',
+            lootListLink: 'infoPage.header.lootListLink',
+            probabilityTitle: 'infoPage.header.probability.title',
+            probabilityDescription: 'infoPage.header.probability.description',
+            rewardsTitle: 'infoPage.header.rewards.title',
+            rewardsDescription: 'infoPage.header.rewards.description',
+            rewardsDivider: 'infoPage.rewards.divider',
+            rewardsPercent: 'infoPage.rewards.percent',
+        },
+        sounds: {
+            purchaseClick: E.purchaseClick,
+            purchaseHover: E.purchaseHover,
+            infoPageTabClick: E.infoPageTabClick,
+            infoPageTabHover: E.infoPageTabHover,
+            switch: E.switch,
+            entryHover: E.entryHover,
+        },
+    },
+    Je = {
+        dynamicTexts: { boxNames: 'common.boxCategory.upperCase', rewardsPremiumDay: 'common.rewards.premiumDay' },
+        dynamicImages: { backButton: 'common.back_arrow' },
+    },
+    [Ke, Qe] = y()(
+        ({ observableModel: e }) => {
+            const { eventName: s } = e.object().get(),
+                a = { root: e.object(), boxes: e.arrayClone('boxes'), eventName: s },
+                i = t(
+                    () =>
+                        j(a.boxes.get(), (e) => ({
+                            boxCategory: e.category,
+                            boxesCountToGuaranteed: e.countToGuaranteed,
+                            boxesCount: e.count,
+                        })),
+                    { equals: v },
+                ),
+                n = t(
+                    (e) => {
+                        const s = k(a.boxes.get(), (s) => s.category === e);
+                        if (!s) throw new Error(`Box with category ${e} is not found`);
+                        return s;
+                    },
+                    { equals: v },
+                ),
+                r = t(
+                    (e) => {
+                        const s = n(e).slots;
+                        return s
+                            ? w(
+                                  j(s, (e) => ({ probability: e.probability, bonuses: e.bonuses.items })),
+                                  (e, s) => e.probability - s.probability,
+                              )
+                            : [];
+                    },
+                    { equals: v },
+                ),
+                o = t((e) => n(e).guaranteedLimit, { equals: v }),
+                c = t(() => U(Xe, s)),
+                l = t(() => X(Je, s));
+            return { ...a, computes: { getSlots: r, getGuaranteed: o, tabs: i, resources: c, dynamicResources: l } };
+        },
+        ({ externalModel: e }) => ({
+            showShop: e.createCallbackNoArgs('onShowShop'),
+            showVideo: e.createCallbackNoArgs('onShowVideo'),
+            showLootList: e.createCallbackNoArgs('onShowLootList'),
+            close: e.createCallbackNoArgs('onClose'),
+            showPreview: e.createCallback((e) => e, 'onPreview'),
+            saveCategory: e.createCallback((e) => ({ chosenCategory: e }), 'onChosenCategory'),
+        }),
+    ),
+    Ye = {
+        base: 'Card_e28e6c94',
+        checkmark: 'Card_checkmark_14d3baec',
+        base__s180x135: 'Card_base__s180x135_f4c22d1c',
+        base__s232x174: 'Card_base__s232x174_f4c22d1c',
+        preview: 'Card_preview_58bcc92f',
+        previewIcon: 'Card_previewIcon_70556322',
+        base__big: 'Card_base__big_f4c22d1c',
+        receivedIcon: 'Card_receivedIcon_ca251584',
+        tankName: 'Card_tankName_f42a7c50',
+        count: 'Card_count_46864467',
+        label: 'Card_label_f75f0cef',
+        fadeIn: 'Card_fadeIn_f4c22d1c',
+    },
+    Ze = { width: '16rem', height: '16rem' },
+    es = { width: '36rem', height: '32rem' },
+    ss = i(function ({ reward: a, size: t = Ve, className: i = '' }) {
+        const { model: n, controls: r } = Qe(),
+            { saveCategory: o, showPreview: c } = r,
+            { eventName: l, chosenCategory: d } = n.root.get(),
+            { images: m, texts: u } = n.computes.resources(),
+            { dynamicTexts: b } = n.computes.dynamicResources(),
+            _ = a.name === C.Vehicles,
+            {
+                imageSize: p,
+                width: h,
+                height: f,
+                fontSize: g,
+            } = (function (e) {
+                return N(
+                    {
+                        small: { imageSize: x.Big, width: 80, height: 80, fontSize: '14rem' },
+                        medium: { imageSize: x.Big, width: 80, height: 80, fontSize: '14rem' },
+                        large: { imageSize: x.S180x135, width: 180, height: 135, fontSize: '18rem' },
+                    },
+                    {
+                        large: {
+                            small: { imageSize: x.Big, width: 80, height: 80, fontSize: '14rem' },
+                            medium: { imageSize: x.S180x135, width: 180, height: 135, fontSize: '18rem' },
+                            large: { imageSize: x.S232x174, width: 232, height: 174, fontSize: '18rem' },
+                        },
+                    },
+                )[e];
+            })(t),
+            y = p === x.Big ? m.checkmark : m.checkmarkLarge,
+            v = p === x.Big ? Ze : es,
+            {
+                tooltipId: j,
+                tooltipContentId: k,
+                overlayType: w,
+                isInHangar: I,
+                name: T,
+                count: B,
+                id: z,
+                styleID: L,
+            } = a,
+            P = S({ contentId: Number(k), args: { tooltipId: j, boxCategory: a.icon, eventName: l } });
+        return e.jsx($e, {
+            ...P,
+            style: { maxWidth: `${h}rem` },
+            className: s(Ye.base, Ye[`base__${p}`], i),
+            children: e.jsxs(e.Fragment, {
+                children: [
+                    e.jsx($e.Badge, {
+                        children: e.jsxs(e.Fragment, {
+                            children: [
+                                e.jsx($e.Icon, {
+                                    className: s(I && Ye.receivedIcon),
+                                    icon: qe(a, p),
+                                    sizes: { width: `${h}rem`, height: `${f}rem` },
+                                }),
+                                B > 1 &&
+                                    e.jsx($e.Badge.Count, {
+                                        count: a.count,
+                                        text: u.multiplier,
+                                        className: Ye.count,
+                                        style: { fontSize: g, ...We(T, p) },
+                                    }),
+                                w && e.jsx($e.Badge.Overlay, { reward: a, size: p }),
+                            ],
                         }),
-                        c &&
-                            o.jsx('span', {
-                                className: ne.pluralText,
-                                children: s.premiumDay(Number(i.split(' ').at(-1))),
-                            }),
+                    }),
+                    e.jsx(e.Fragment, {
+                        children: _
+                            ? e.jsx(Z, { reward: a, className: Ye.tankName, style: { nameHeight: g } })
+                            : e.jsx(Ge, {
+                                  reward: a,
+                                  texts: { ...Ee(a, { texts: u, dynamicTexts: b }), description: '' },
+                                  style: { descriptionFontSize: g, labelFontSize: g },
+                                  classNames: { label: Ye.label },
+                              }),
+                    }),
+                    I && e.jsx($e.InHangar, { className: Ye.checkmark, icon: y, sizes: v }),
+                    q(a) &&
+                        e.jsx($e.PreviewButton, {
+                            image: m.previewIcon,
+                            onClick: () => {
+                                (o(d), c({ bonusType: T, bonusId: z || '', styleID: L }));
+                            },
+                            className: Ye.preview,
+                            classNames: { icon: Ye.previewIcon },
+                        }),
+                ],
+            }),
+        });
+    }),
+    as = 'Header_75115423',
+    ts = 'Header_title_eb04108e',
+    is = 'Header_description_1b4c29cf';
+function ns({ title: s, description: a }) {
+    return e.jsxs('div', {
+        className: as,
+        children: [e.jsx('div', { className: ts, children: s }), e.jsx('div', { className: is, children: a })],
+    });
+}
+const rs = 'SlotsInfoTable_9f059c18',
+    os = 'SlotsInfoTable_withoutBorder_ea29b6f4',
+    cs = 'SlotsInfoTable_cards_a26ab691',
+    ls = 'SlotsInfoTable_rewardsCell_6e02ea4c';
+function ds(e) {
+    switch (e) {
+        case 0:
+            return Ue;
+        case 1:
+            return Me;
+        default:
+            return Ve;
+    }
+}
+const ms = i(function () {
+        const { model: s } = Qe(),
+            { texts: t } = s.computes.resources(),
+            { chosenCategory: i } = s.root.get(),
+            n = s.computes.getSlots(i),
+            r = N(
+                { probability: { min: 148, max: 300 } },
+                { medium: { probability: { min: 148, max: 300 } }, large: { probability: { min: 160, max: 300 } } },
+            ),
+            o = a.useMemo(
+                () => [
+                    {
+                        id: 'probability',
+                        behavior: he.limited,
+                        minWidth: r.probability.min,
+                        maxWidth: r.probability.max,
+                    },
+                    { id: 'bonuses', behavior: he.fluid },
+                ],
+                [r],
+            );
+        return e.jsxs(xe, {
+            className: rs,
+            columns: o,
+            children: [
+                e.jsxs(xe.Row, {
+                    children: [
+                        e.jsx(xe.Cell, {
+                            className: os,
+                            columnId: o[0].id,
+                            children: e.jsx(ns, { title: t.probabilityTitle, description: t.probabilityDescription }),
+                        }),
+                        e.jsx(xe.Cell, {
+                            columnId: o[1].id,
+                            children: e.jsx(ns, { title: t.rewardsTitle, description: t.rewardsDescription }),
+                        }),
                     ],
                 }),
-            o.jsx(x, { text: n, classMix: ne.label }),
-        ],
-    });
-}
-const le = 'Reward_2801b9c',
-    de = 'Reward_rewardImage_16a3dbae',
-    me = 'Reward_icon_fb678067',
-    ue = 'Reward_icon__semiTransparent_54390a49',
-    _e = 'Reward_icon__hovered_ec5f1ec2',
-    he = 'Reward_overlay_a7650b10',
-    be = 'Reward_count_1f55fab4',
-    pe = 'Reward_checkmark_5d7fcdff',
-    xe = 'Reward_loupeButton_20f8acb7',
-    fe = 'Reward_loupeIcon_966a3d73',
-    ge = 'Reward_tankName_c3434962';
-const ve = 'Rewards_b3634f8b';
-const Ne = 'RewardBlock_5c12840f';
-function je({ children: e, classNames: s }) {
-    return o.jsxs('div', { className: r(Ne, s), children: [e, o.jsx(Y, {})] });
-}
-((je.Content = function ({ children: e, classNames: s }) {
-    return o.jsx('div', { className: r(Z, s), children: e });
-}),
-    (je.Probability = function ({ probability: e, unitsName: s, classNames: a }) {
-        return o.jsx('div', { className: r(ie, a), children: o.jsx(re, { probability: e, unitsName: s }) });
-    }),
-    (je.Rewards = function ({ children: e, classNames: s }) {
-        return o.jsx('div', { className: r(ve, s), children: e });
-    }),
-    (je.Reward = function ({
-        reward: e,
-        resources: s,
-        eventName: a,
-        activeCategory: t,
-        showPreview: n,
-        saveCategory: c,
-    }) {
-        const { images: l, texts: d } = s,
-            {
-                name: m,
-                id: u,
-                tooltipId: _,
-                tooltipContentId: h,
-                count: b,
-                overlayType: v,
-                styleID: N,
-                isInHangar: j,
-                icon: k,
-            } = e,
-            [w, y] = i.useState(!1),
-            C = m === p.Vehicles;
-        return o.jsxs('div', {
-            className: le,
-            children: [
-                o.jsx(f, {
-                    ignoreShowDelay: !0,
-                    contentId: Number(h),
-                    args: { tooltipId: _, boxCategory: k, eventName: a },
-                    children: o.jsxs('div', {
-                        className: de,
-                        onMouseEnter: () => {
-                            O(e) && y(!0);
-                        },
-                        onMouseLeave: () => y(!1),
-                        children: [
-                            o.jsx('div', {
-                                className: r(me, j && ue, w && _e),
-                                style: { backgroundImage: `url(${H(e)})` },
-                            }),
-                            v &&
-                                o.jsx('div', {
-                                    className: he,
-                                    style: { backgroundImage: `url(${V(g.S180x135, m, v)})` },
-                                }),
-                            j && o.jsx('div', { className: pe, style: { backgroundImage: `url(${l.checkmark})` } }),
-                            b > 1 &&
-                                o.jsx('div', {
-                                    className: be,
-                                    children: o.jsx(x, {
-                                        text: d.rewardsMultiplier,
-                                        binding: { count: b },
-                                        formatWithBrackets: !0,
-                                    }),
-                                }),
-                            O(e) &&
-                                o.jsx(q, {
-                                    className: xe,
-                                    icon: { img: l.previewIcon, className: fe },
-                                    onClick: () => {
-                                        (c(t), n({ bonusType: m, bonusId: u || '', styleID: N }));
-                                    },
-                                }),
-                        ],
-                    }),
-                }),
-                C
-                    ? o.jsx(G, { reward: e, style: { nameHeight: '14rem' }, className: ge, hasShortName: !0 })
-                    : o.jsx(ce, { reward: e, texts: { divider: d.divider, premiumDay: d.premiumDay } }),
-            ],
-        });
-    }));
-const ke = 'Shadow_bf167c05',
-    we = 'Shadow_shadowSlice_72a105f9',
-    ye = 'Shadow_shadowSlice__middle_57439790';
-const Ce = 'Tab_80082bae',
-    Te = 'Tab_image_8d117dd4',
-    Le = 'Tab_box_86eb6858',
-    Se = 'Tab_base__hover_0',
-    Be = 'Tab_base__active_0',
-    Pe = 'Tab_title_a5c917ce',
-    Re = 'Tab_shine_b3052800';
-const Ie = 'TabList_87138e48';
-const De = 'Tabs_1545335a';
-function Ae({ className: e, forwardRef: s, children: a }) {
-    return o.jsx('div', { className: r(De, e), ref: s, children: a });
-}
-((Ae.Tab = function ({ category: e, resources: s, sticky: a, activeCategory: t, saveCategory: n }) {
-    const [c, l] = i.useState(!1),
-        { images: d, sounds: m, texts: u } = s,
-        _ = t === e,
-        h = () => {
-            _ || (v.sound(m.click), n(e));
-        },
-        b = () => {
-            (_ || v.sound(m.hover), l(!0));
-        };
-    return o.jsxs('div', {
-        className: r(Ce, c && Se, _ && Be),
-        children: [
-            o.jsx('div', {
-                className: Te,
-                children: o.jsx('div', {
-                    className: Le,
-                    style: { backgroundImage: `url(${E('s600x450', e)})` },
-                    onMouseEnter: b,
-                    onMouseLeave: () => l(!1),
-                    onClick: h,
-                }),
-            }),
-            o.jsx('div', { className: Re, style: { backgroundImage: `url(${d.shine})` } }),
-            !a &&
-                o.jsx('div', {
-                    className: Pe,
-                    onMouseEnter: b,
-                    onMouseLeave: () => l(!1),
-                    onClick: h,
-                    children: u.title(e),
-                }),
-        ],
-    });
-}),
-    (Ae.TabList = function ({ children: e, classNames: s }) {
-        return o.jsx('div', { className: r(Ie, s), children: e });
-    }),
-    (Ae.Shadow = function ({ images: e }) {
-        return o.jsxs('div', {
-            className: ke,
-            children: [
-                o.jsx('img', { className: we, src: e.shadowLeft }),
-                o.jsx('img', { className: r(ye, we), src: e.shadowMiddle }),
-                o.jsx('img', { className: we, src: e.shadowRight }),
-            ],
-        });
-    }));
-const Me = b.resolve('views').read((e) => e.mono.lootbox.tooltips.box_tooltip('resId'));
-const $e = n(function ({ className: e, forwardRef: s }) {
-        const { model: a, controls: t } = K(),
-            { images: r, sounds: i } = a.computes.resources(),
-            { dynamicTexts: n } = a.computes.dynamicResources(),
-            c = a.boxes.get(),
-            d = a.sticky.get(),
-            m = a.activeCategory.get(),
-            u = a.eventName,
-            _ = { shadowLeft: r.shadowLeft, shadowMiddle: r.shadowMiddle, shadowRight: r.shadowRight },
-            h = {
-                images: { shine: r.tabShine },
-                sounds: { hover: i.infoPageTabHover, click: i.infoPageTabClick },
-                texts: { title: (e) => n.boxNames.dynOpt(e) },
-            };
-        return o.jsxs(Ae, {
-            className: e,
-            forwardRef: s,
-            children: [
-                o.jsx(Ae.TabList, {
-                    children: l(c, (e) =>
-                        o.jsx(
-                            N,
+                e.jsx(xe.Body, {
+                    children: j(n, ({ probability: s, bonuses: a }, n) =>
+                        e.jsxs(
+                            xe.Row,
                             {
-                                params: { contentId: Me, args: { boxCategory: e.category, eventName: u } },
-                                children: o.jsx(
-                                    Ae.Tab,
-                                    {
-                                        category: e.category,
-                                        resources: h,
-                                        saveCategory: t.saveCategory,
-                                        activeCategory: m,
-                                        sticky: d,
-                                    },
-                                    e.category,
-                                ),
+                                children: [
+                                    e.jsx(xe.Cell, {
+                                        className: os,
+                                        columnId: o[0].id,
+                                        children: e.jsx(ye, { probability: s, unitsName: t.rewardsPercent }),
+                                    }),
+                                    e.jsx(xe.Cell, {
+                                        className: cs,
+                                        columnId: o[1].id,
+                                        children: j(a, (s, a) =>
+                                            e.jsx(
+                                                ss,
+                                                { reward: s, size: ds(n), className: ls },
+                                                `bonus-${n}-${a}-${s.label}`,
+                                            ),
+                                        ),
+                                    }),
+                                ],
                             },
-                            e.category,
+                            `slot-${n}-${i}`,
                         ),
                     ),
                 }),
-                o.jsx(Ae.Shadow, { images: _ }),
             ],
         });
     }),
-    He = {
-        base: 'Content_d65784d',
-        tabs__hide: 'Content_tabs__hide_eb9be4e6',
-        rewardBlock: 'Content_rewardBlock_513f629c',
-    };
-const Ve = n(function ({ scrollApi: e }) {
-        const { model: s, controls: a } = K(),
-            { texts: t, images: n } = s.computes.resources(),
-            { dynamicTexts: c } = s.computes.dynamicResources(),
-            d = s.activeCategory.get(),
-            m = s.eventName,
-            u = s.sticky.get(),
-            _ = s.computes.getSlots(d),
-            h = s.computes.displayTabs(),
-            b = i.useRef(null),
-            p = {
-                images: { checkmark: n.checkmark, previewIcon: n.previewIcon },
-                texts: {
-                    rewardsMultiplier: t.rewardsMultiplier,
-                    divider: t.rewardsDivider,
-                    premiumDay: (e) => c.rewardsPremiumDay.plural('premiumDay', e),
-                },
-            };
-        return (
-            i.useEffect(() => {
-                const s = (e) => {
-                    a.setSticky(Boolean(b.current && e.value.scrollPosition >= b.current.offsetTop));
-                };
-                return (
-                    e.events.on('change', s),
-                    () => {
-                        e.events.off('change', s);
-                    }
-                );
-            }, [a, e.events]),
-            o.jsxs('div', {
-                className: He.base,
-                children: [
-                    h
-                        ? o.jsx($e, { className: r(He.tabs, u && He.tabs__hide), forwardRef: b })
-                        : o.jsx(Y, { isFirst: !0 }),
-                    o.jsx('div', {
-                        children: l(_, ({ probability: e, bonuses: s }, r) =>
-                            o.jsx(
-                                je,
-                                {
-                                    classNames: He.rewardBlock,
-                                    children: o.jsxs(je.Content, {
-                                        children: [
-                                            o.jsx(je.Probability, { probability: e, unitsName: t.rewardsPercent }),
-                                            o.jsx(je.Rewards, {
-                                                children: l(s, (e, s) =>
-                                                    o.jsx(
-                                                        je.Reward,
-                                                        {
-                                                            reward: e,
-                                                            activeCategory: d,
-                                                            eventName: m,
-                                                            saveCategory: a.saveCategory,
-                                                            showPreview: a.showPreview,
-                                                            resources: p,
-                                                        },
-                                                        s,
-                                                    ),
-                                                ),
-                                            }),
-                                        ],
-                                    }),
-                                },
-                                r,
-                            ),
-                        ),
-                    }),
-                ],
-            })
-        );
-    }),
-    Ee = 'TextBlock_a2d952f',
-    Fe = 'TextBlock_title_d152d79f',
-    Oe = 'TextBlock_description_5db34e07';
-function qe({ title: e, description: s, className: a }) {
-    return o.jsxs('div', {
-        className: r(Ee, a),
-        children: [o.jsx('div', { className: Fe, children: e }), o.jsx('div', { className: Oe, children: s })],
+    us = 'TextBlock_a2d952f',
+    bs = 'TextBlock_title_d9d29c3d',
+    _s = 'TextBlock_description_edef8256';
+function ps({ title: a, description: t, className: i }) {
+    return e.jsxs('div', {
+        className: s(us, i),
+        children: [e.jsx('div', { className: bs, children: a }), e.jsx('div', { className: _s, children: t })],
     });
 }
-const Ge = 'Footer_4604fd6b',
-    Xe = 'Footer_text_384f7588',
-    ze = 'Footer_textBlock_e36860cc';
-function We(e, s) {
-    return j(e, (e) => s(e.category) > 0);
+const hs = 'Footer_18dc5f5c',
+    fs = 'Footer_column_6197da5d',
+    gs = 'Footer_textBlock_58f43570';
+function xs(e, s) {
+    return I(e, (e) => s(e.category) > 0);
 }
-function Je(e, s, a) {
-    const t = k(e, (e, a, t) => ((e[`guaranteed${t}`] = s(a.category)), e), {});
-    return o.jsx(w, { text: a, params: t, upgradeLegacy: !0 });
+function Ns(s, a, t) {
+    const i = T(s, (e, s, t) => ((e[`guaranteed${t}`] = a(s.category)), e), {});
+    return e.jsx(g, { text: t, params: i, upgradeLegacy: !0 });
 }
-const Ke = n(function () {
-        const { model: e } = K(),
-            { texts: s } = e.computes.resources(),
-            a = e.boxes.get(),
-            t = e.computes.getGuaranteed;
-        return o.jsx('div', {
-            className: Ge,
-            children: o.jsxs('div', {
-                className: Xe,
-                children: [
-                    We(a, t) &&
-                        o.jsx(qe, {
-                            title: s.titleGuaranteed,
-                            description: Je(a, t, s.descriptionGuaranteed),
-                            className: ze,
-                        }),
-                    o.jsx(qe, { title: s.titleCompensation, description: s.descriptionCompensation, className: ze }),
-                    o.jsx(qe, { title: s.titleAutoOpen, description: s.descriptionAutoOpen, className: ze }),
-                ],
-            }),
-        });
-    }),
-    Qe = 'ExternalLink_3e4af53',
-    Ue = 'ExternalLink_text_c8545bfe',
-    Ye = 'ExternalLink_icon_887a2bf3';
-function Ze({ text: e, icon: s, onClick: a, classNames: t }) {
-    return o.jsxs('div', {
-        className: r(Qe, t),
-        onClick: a,
-        children: [
-            o.jsx('div', { className: Ue, children: e }),
-            o.jsx('div', { className: Ye, style: { backgroundImage: `url(${s})` } }),
-        ],
-    });
-}
-const es = 'Button_a211aeba';
-const ss = 'Content_a26f6580';
-const as = 'Description_d9500488';
-const ts = 'LootLink_951fc13b';
-const os = 'Subtitle_816e5b9e';
-const rs = 'Title_852f27cf';
-const is = 'VideoButton_26790f4';
-const ns = 'Header_bc33b80e';
-function cs({ children: e, classNames: s }) {
-    return o.jsx('div', { className: r(ns, s), children: e });
-}
-((cs.Button = function ({ children: e, classNames: s }) {
-    return o.jsx('div', { className: r(es, s), children: e });
-}),
-    (cs.VideoButton = function ({ children: e, classNames: s }) {
-        return o.jsx('div', { className: r(is, s), children: e });
-    }),
-    (cs.Content = function ({ children: e, classNames: s }) {
-        return o.jsx('div', { className: r(ss, s), children: e });
-    }),
-    (cs.Description = function ({ children: e, classNames: s }) {
-        return o.jsx('div', { className: r(as, s), children: e });
-    }),
-    (cs.Subtitle = function ({ children: e, classNames: s }) {
-        return o.jsx('div', { className: r(os, s), children: e });
-    }),
-    (cs.Title = function ({ children: e, classNames: s }) {
-        return o.jsx('div', { className: r(rs, s), children: e });
-    }),
-    (cs.LootLink = function ({ children: e, classNames: s }) {
-        return o.jsx('div', { className: r(ts, s), children: e });
-    }));
-const ls = 'VideoButton_48d93b73',
-    ds = 'VideoButton_videoIcon_bc784850',
-    ms = 'VideoButton_videoText_a951280b';
-function us({ onClick: e, text: s }) {
-    return o.jsxs('div', {
-        className: ls,
-        onMouseEnter: v.highlight,
-        onClick: function () {
-            (v.click(), e());
-        },
-        children: [o.jsx('div', { className: ds }), o.jsx('div', { className: ms, children: s })],
-    });
-}
-const _s = 'Header_lootLink_526646ae',
-    hs = 'Header_description_3cd4f9ef',
-    bs = 'Header_subtitle_4a9a6a75',
-    ps = 'Header_button_dc4dfa71';
-const xs = n(function () {
-        const { model: e, controls: s } = K(),
-            { texts: a, images: t, sounds: r } = e.computes.resources(),
-            { hasVideoButton: i, hasShopButton: n, startDate: c, endDate: l, hasLootListLink: d } = e.root.get(),
-            m = e.hasDescription.get();
-        return o.jsxs(cs, {
+const ys = i(function ({ className: a = '' }) {
+        const { model: t } = Qe(),
+            { texts: i } = t.computes.resources(),
+            n = t.boxes.get(),
+            r = t.computes.getGuaranteed;
+        return e.jsxs('div', {
+            className: s(hs, a),
             children: [
-                o.jsxs(cs.Content, {
-                    children: [
-                        o.jsx(cs.Title, { children: a.headerTitle }),
-                        o.jsx(cs.Subtitle, {
-                            classNames: bs,
-                            children: o.jsx(x, {
-                                text: a.headerSubtitle,
-                                binding: {
-                                    from: o.jsx(y, { datetime: c, format: C.FullDate }),
-                                    to: o.jsx(y, { datetime: l, format: C.FullDate }),
-                                },
-                            }),
+                xs(n, r) &&
+                    e.jsx('div', {
+                        className: fs,
+                        children: e.jsx(ps, {
+                            title: i.titleGuaranteed,
+                            description: Ns(n, r, i.descriptionGuaranteed),
+                            className: gs,
                         }),
-                        m &&
-                            o.jsx(cs.Description, {
-                                classNames: hs,
-                                children: o.jsx(x, { text: a.headerDescription }),
-                            }),
-                        d &&
-                            o.jsx(cs.LootLink, {
-                                classNames: _s,
-                                children: o.jsx(Ze, {
-                                    text: a.lootListLink,
-                                    icon: t.externalLinkSmall,
-                                    onClick: s.showLootList,
-                                }),
-                            }),
-                        n &&
-                            o.jsx(cs.Button, {
-                                classNames: ps,
-                                children: o.jsx(X, {
-                                    text: a.headerShopButton,
-                                    onClick: s.showShop,
-                                    soundHover: r.purchaseHover,
-                                }),
-                            }),
-                    ],
-                }),
-                i &&
-                    o.jsx(cs.VideoButton, {
-                        children: o.jsx(us, { onClick: s.showVideo, text: a.headerVideoButtonText }),
                     }),
+                e.jsx('div', {
+                    className: fs,
+                    children: e.jsx(ps, {
+                        title: i.titleCompensation,
+                        description: i.descriptionCompensation,
+                        className: gs,
+                    }),
+                }),
+                e.jsx('div', {
+                    className: fs,
+                    children: e.jsx(ps, { title: i.titleAutoOpen, description: i.descriptionAutoOpen, className: gs }),
+                }),
             ],
         });
     }),
-    fs = 'App_64fd6dfc',
-    gs = 'App_shadow_eac0adb7',
-    vs = 'App_scroll_54c70e4',
-    Ns = 'App_scrollBar_2ae0a958',
-    js = 'App_scrollArea_59a9c25',
-    ks = 'App_content_9af800a',
-    ws = 'App_stickyTabs_66711e9',
-    ys = 'App_stickyTabs__show_4c7ff591',
-    Cs = 'App_backButton_26dc4949';
-const Ts = n(function () {
-    const e = K(),
-        { model: s, controls: a } = e,
+    vs = {
+        base: 'Icon_8bc757d8',
+        image: 'Icon_image_1f38c789',
+        image__default: 'Icon_image__default_4c1d83d1',
+        button: 'Icon_button_55a8ab20',
+        image__hover: 'Icon_image__hover_4c1d83d1',
+        image__active: 'Icon_image__active_3d7dd998',
+        fadeIn: 'Icon_fadeIn_55a8ab20',
+    };
+function js({ icons: a, className: t = '' }) {
+    return e.jsx('div', {
+        className: s(vs.base, t),
+        children: Object.keys(a).map((t) =>
+            e.jsx('div', { className: s(vs.image, vs[`image__${t}`]), style: { backgroundImage: `url(${a[t]})` } }, t),
+        ),
+    });
+}
+const ks = 'BackButton_c4d05386',
+    ws = 'BackButton_label_f633f3f',
+    Cs = 'BackButton_icon_762a8801',
+    Ss = h.resolve('strings'),
+    Is = B.toUpperCase(Ss.readOrEmpty('menu.headerButtons.navigation.back')),
+    Ts = 'default',
+    Bs = 'hover',
+    zs = 'active';
+function Ls({ icons: a, onClick: t, label: i = Is, className: n = '' }) {
+    return e.jsxs('div', {
+        className: s(ks, n),
+        onClick: t,
+        children: [e.jsx(js, { icons: a, className: Cs }), Boolean(i) && e.jsx('div', { className: ws, children: i })],
+    });
+}
+const Ps = { dynamicImages: { video: 'common.icons.video' } },
+    $s = 'VideoButton_border_b049bda3',
+    As = 'VideoButton_d8f69544';
+function Es({ size: a = D.sizes.medium, eventName: t, classNames: i = {}, ...n }) {
+    const { dynamicImages: r } = X(Ps, t),
+        o = r.video.dyn(R[a]);
+    return e.jsxs(D, {
+        ...n,
+        size: a,
+        theme: D.themes.secondary,
+        className: s(As, n.className),
+        children: [e.jsx('div', { className: $s }), e.jsx(D.Icon, { src: o })],
+    });
+}
+Es.sizes = D.sizes;
+const Hs = 'Header_a98c2191',
+    Ds = 'Header_divider_11e1a7c4',
+    Rs = i(function ({ className: t }) {
+        const { model: i, controls: n } = Qe(),
+            { dynamicImages: r } = i.computes.dynamicResources(),
+            o = a.useCallback(
+                (e) => ({
+                    [Ts]: r.backButton.dyn(`${e}_${Ts}`),
+                    [Bs]: r.backButton.dyn(`${e}_${Bs}`),
+                    [zs]: r.backButton.dyn(`${e}_${zs}`),
+                }),
+                [r],
+            ),
+            c = N(
+                { infoSize: O.sizes.small, backButtonImages: o('small') },
+                {
+                    medium: { infoSize: O.sizes.small, backButtonImages: o('medium') },
+                    large: { infoSize: O.sizes.medium, backButtonImages: o('large') },
+                },
+            ),
+            l = z(c.backButtonImages, o('upscale'));
+        return e.jsxs('div', {
+            className: s(Hs, t),
+            children: [
+                e.jsx(Ls, { icons: l, onClick: n.close }),
+                e.jsx(L, { path: 'ui.noise', className: Ds, fit: 'cover' }),
+                e.jsx(Es, { eventName: i.eventName, onClick: n.showVideo, size: c.infoSize }),
+            ],
+        });
+    }),
+    Os = 'App_1d76dfc',
+    Fs = 'App_wrapper_51b0ac32',
+    Gs = 'App_content_22e7247',
+    Ws = 'App_header_174a3623',
+    qs = 'App_subtitle_536b32fc',
+    Vs = 'App_title_d972c021',
+    Ms = 'App_link_2b7594e2',
+    Us = 'App_footer_d81815e6',
+    Xs = 'App_boxSwitch_944c7aab',
+    Js = 'App_purchaseButton_fb8867b';
+const Ks = i(function () {
+    const { model: s, controls: a } = Qe(),
         { images: t, texts: i, sounds: n } = s.computes.resources(),
-        c = s.sticky.get(),
-        l = s.computes.displayTabs(),
-        d = T();
+        { dynamicTexts: r } = s.computes.dynamicResources(),
+        o = s.computes.tabs(),
+        { hasLootListLink: c, hasShopButton: l, chosenCategory: d } = s.root.get(),
+        { eventExpireTime: m } = s.root.get();
     return (
-        L(a.close),
-        o.jsxs('div', {
-            className: fs,
+        P(a.close),
+        e.jsxs('div', {
+            className: Os,
             style: { backgroundImage: `url(${t.background})` },
             children: [
-                o.jsx('div', {
-                    className: gs,
-                    style: { maskImage: `url(${t.mask})` },
-                    children: o.jsx(S.Vertical.Default, {
-                        api: d,
-                        className: vs,
-                        barClassNames: { base: Ns },
-                        scrollClassNames: { content: js },
-                        children: o.jsxs('div', {
-                            className: ks,
-                            children: [o.jsx(xs, {}), o.jsx(Ve, { scrollApi: d }), o.jsx(Ke, {})],
+                e.jsx(Rs, { className: Ws }),
+                e.jsx('div', {
+                    className: Fs,
+                    children: e.jsx(de, {
+                        children: e.jsxs('div', {
+                            className: Gs,
+                            children: [
+                                e.jsx(F, { text: i.headerSubtitle, expireTime: m, className: qs }),
+                                e.jsx(V, { text: r.boxNames.dyn(d), className: Vs }),
+                                e.jsx(ms, {}),
+                                c &&
+                                    e.jsx(te, {
+                                        text: i.lootListLink,
+                                        icon: t.externalLinkSmall,
+                                        onClick: a.showLootList,
+                                        className: Ms,
+                                    }),
+                                e.jsx(ys, { className: Us }),
+                            ],
                         }),
                     }),
                 }),
-                l && o.jsx('div', { className: r(ws, c && ys), children: o.jsx($e, {}) }),
-                o.jsx('div', {
-                    className: Cs,
-                    children: o.jsx(B, { caption: i.backButton, type: 'back', side: 'left', onClick: a.close }),
-                }),
+                o.length > 1 &&
+                    e.jsx(G, {
+                        tabs: o,
+                        changeTab: a.saveCategory,
+                        active: d,
+                        sounds: { switch: n.switch, entryHover: n.entryHover },
+                        eventName: s.eventName,
+                        className: Xs,
+                    }),
+                l &&
+                    e.jsx(H, {
+                        text: i.purchaseButtonText,
+                        image: t.iconEmpty,
+                        sounds: n,
+                        onClick: a.showShop,
+                        className: Js,
+                    }),
             ],
         })
     );
 });
-P(o.jsx(J, { children: o.jsx(Ts, {}) }));
+$(e.jsx(A, { children: e.jsx(Ke, { children: e.jsx(Ks, {}) }) }));

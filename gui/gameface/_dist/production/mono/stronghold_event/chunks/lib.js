@@ -1789,7 +1789,7 @@ function kt(e, t) {
     for (let n = 0; n < e.length; n++) {
         if ('$' === e[n]) {
             let r = n + 1;
-            for (; r < e.length && !Rt(e[r]); ) r++;
+            for (; r < e.length && !Rt(e[r]);) r++;
             const o = e.slice(n + 1, r),
                 s = t[o];
             if (s) return kt(e.replace(`$${o}`, String(s)), t);

@@ -1021,15 +1021,15 @@ const exports = {};
         if (0 === n) return !1;
         (n < 0 && (n = -1), (s = s || []));
         let u = (r = r || []).length;
-        for (; u--; ) if (r[u] === i) return s[u] === l;
+        for (; u--;) if (r[u] === i) return s[u] === l;
         if ((r.push(e), s.push(t), c)) {
             if (((u = i.length), u !== l.length)) return !1;
-            for (; u--; ) if (!de(i[u], l[u], n - 1, r, s)) return !1;
+            for (; u--;) if (!de(i[u], l[u], n - 1, r, s)) return !1;
         } else {
             const e = Object.keys(i);
             let t;
             if (((u = e.length), Object.keys(l).length !== u)) return !1;
-            for (; u--; ) {
+            for (; u--;) {
                 if (((t = e[u]), void 0 === t))
                     return (console.error('Error: met undefined in object during deepEqual comparison'), !1);
                 if (!Object.prototype.hasOwnProperty.call(l, t) || !de(i[t], l[t], n - 1, r, s)) return !1;
@@ -3725,7 +3725,8 @@ const exports = {};
                     let r = null;
                     function l() {
                         s ||
-                            ((i.current.status = ds),
+                            ('display' === i.current.status && (H.tooltip.hide(e, t, n), (i.current.status = hs)),
+                            (i.current.status = ds),
                             window.clearTimeout(i.current.timeoutId),
                             (i.current.timeoutId = window.setTimeout(c, a)));
                     }
@@ -3741,7 +3742,7 @@ const exports = {};
                         ) {
                             us.delete(r);
                             let e = r.parentElement;
-                            for (; e && !us.has(e); ) e = e.parentElement;
+                            for (; e && !us.has(e);) e = e.parentElement;
                             (e && us.get(e).show(), (r = null));
                         }
                     }
@@ -4418,7 +4419,7 @@ const exports = {};
         for (let n = 0; n < e.length; n++) {
             if ('$' === e[n]) {
                 let r = n + 1;
-                for (; r < e.length && !yo(e[r]); ) r++;
+                for (; r < e.length && !yo(e[r]);) r++;
                 const s = e.slice(n + 1, r),
                     o = t[s];
                 if (o) return vo(e.replace(`$${s}`, String(o)), t);
@@ -4889,7 +4890,7 @@ const exports = {};
                                                   if (o) (t.push(e.substring(n, a + 1)), (o = !1));
                                                   else {
                                                       let r = n;
-                                                      for (; '\n' === e[r] || ' ' === e[r]; ) r++;
+                                                      for (; '\n' === e[r] || ' ' === e[r];) r++;
                                                       t.push(e.substring(r, a + 1));
                                                   }
                                                   n = a + 1;
@@ -6012,10 +6013,7 @@ const exports = {};
                             e.jsxs(e.Fragment, {
                                 children: [
                                     e.jsx(Ai, { filledPattern: t, className: n?.filledPattern, animationConfig: o }),
-                                    e.jsx(Si, {
-                                        classNames: { done: n?.done, doneComplete: n?.doneComplete },
-                                        animationConfig: o,
-                                    }),
+                                    e.jsx(Si, { classNames: n, animationConfig: o }),
                                 ],
                             }),
                         e.jsx(is.div, {
@@ -6215,8 +6213,8 @@ const exports = {};
                     ],
                 }),
             });
-        }),
-        Ki = N.cubicBezier(0.33, 0, 0.25, 1),
+        });
+    const Ki = N.cubicBezier(0.33, 0, 0.25, 1),
         Ji = i.observer(function () {
             const {
                     state: t,
@@ -6444,7 +6442,7 @@ const exports = {};
                             (i = (e) =>
                                 (s = o ? new a(e, s, 'An error was suppressed during disposal') : ((o = !0), e))),
                             (l = (e) => {
-                                for (; (e = r.pop()); )
+                                for (; (e = r.pop());)
                                     try {
                                         var t = e[1] && e[1].call(e[2]);
                                         if (e[0]) return Promise.resolve(t).then(l, (e) => (i(e), l()));

@@ -921,9 +921,13 @@
                         if (a.mediumWidth && _) return s(t, a, F);
                         if (a.smallWidth && p) return s(t, a, F);
                         if (a.extraSmallWidth && v) return s(t, a, F);
-                        if (
-                            !(a.extraLargeWidth || a.largeWidth || a.mediumWidth || a.smallWidth || a.extraSmallWidth)
-                        ) {
+                        if (!(
+                            a.extraLargeWidth ||
+                            a.largeWidth ||
+                            a.mediumWidth ||
+                            a.smallWidth ||
+                            a.extraSmallWidth
+                        )) {
                             if (a.extraLargeHeight && h) return t;
                             if (a.largeHeight && f) return t;
                             if (a.mediumHeight && b) return t;
@@ -1234,7 +1238,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, a = H(r.keys()); !(e = a()).done; ) s(e.value, t);
+                                                        for (var e, a = H(r.keys()); !(e = a()).done;) s(e.value, t);
                                                     },
                                                     unsubscribe: s,
                                                 };
@@ -2582,7 +2586,7 @@
                                 t(e).delete(a);
                             },
                             s = (e, ...a) => {
-                                for (var n, r = kt(t(e).values()); !(n = r()).done; ) {
+                                for (var n, r = kt(t(e).values()); !(n = r()).done;) {
                                     (0, n.value)(...a);
                                 }
                             };
@@ -4135,7 +4139,7 @@
                         let i = lr.exec(e),
                             u = e,
                             l = 0;
-                        for (; i; ) {
+                        for (; i;) {
                             const a = i[0],
                                 n = cr.exec(a),
                                 c = dr.exec(a),
@@ -7945,7 +7949,7 @@
                             : (function (e) {
                                   let t = '';
                                   for (let a = nc.length - 1; a >= 0; a--)
-                                      for (; e >= nc[a]; ) ((t += ac[a]), (e -= nc[a]));
+                                      for (; e >= nc[a];) ((t += ac[a]), (e -= nc[a]));
                                   return t;
                               })(e),
                     oc = 'MainReward_base_32',

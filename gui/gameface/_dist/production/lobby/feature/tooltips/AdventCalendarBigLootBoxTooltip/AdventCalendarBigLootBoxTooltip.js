@@ -1234,7 +1234,7 @@
                         let n = W.exec(u),
                             a = u,
                             o = 0;
-                        for (; n; ) {
+                        for (; n;) {
                             const t = n[0],
                                 E = I.exec(t),
                                 D = V.exec(t),

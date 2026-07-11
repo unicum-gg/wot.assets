@@ -395,7 +395,7 @@
                     })(),
                     su = function (u) {
                         let e = '';
-                        for (let A = I.length - 1; A >= 0; A--) for (; u >= I[A]; ) ((e += V[A]), (u -= I[A]));
+                        for (let A = I.length - 1; A >= 0; A--) for (; u >= I[A];) ((e += V[A]), (u -= I[A]));
                         return e;
                     };
                 function lu() {

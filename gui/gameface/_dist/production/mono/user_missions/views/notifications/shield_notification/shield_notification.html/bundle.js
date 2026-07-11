@@ -1,0 +1,67 @@
+import { s, j as e, e as a } from '../../../../chunks/vendor.js';
+import {
+    i as l,
+    N as i,
+    F as n,
+    k as o,
+    t as c,
+    l as p,
+    C as t,
+    n as r,
+    p as m,
+    r as d,
+    U as _,
+} from '../../../../chunks/lib.js';
+const [h, x] = l()(
+        ({ observableModel: s }) => ({ root: s.object() }),
+        ({ externalModel: s }) => ({ openChallenge: s.createCallbackNoArgs('onClick') }),
+    ),
+    b = 'App_image_95a6abe1',
+    g = 'App_82fdeee3',
+    j = 'App_base__popup_a2438b5f',
+    u = 'App_wrapper_ffdbb6e9',
+    A = 'App_description_879346b9',
+    N = 'App_title_3185c7d',
+    f = 'App_attempts_271a108',
+    k = 'App_icon_dff333e0',
+    C = 'App_text_533ed64b',
+    v = 'App_button_7e081ec7',
+    y = 'App_close_654073f5',
+    M = R.strings.user_missions.hub.challenge_missions.notification.shield,
+    z = s(function () {
+        const { model: s, controls: l } = x(),
+            { attempts: d, missionID: _, isPopUp: h } = s.root.get();
+        return e.jsxs(i, {
+            className: a(g, h && j),
+            children: [
+                e.jsxs('div', {
+                    className: u,
+                    children: [
+                        e.jsx('div', {
+                            className: b,
+                            style: {
+                                backgroundImage: `url(${R.images.gui.maps.icons.userMissions.hub.challenge.shield_challenge()})`,
+                            },
+                        }),
+                        e.jsxs('div', {
+                            className: A,
+                            children: [
+                                e.jsxs('div', { className: f, children: [d, e.jsx('span', { className: k })] }),
+                                e.jsx(n, { text: M.title(), className: N, upgradeLegacy: !0 }),
+                                e.jsx(n, { params: { mission: _ }, text: M.text(), className: C, upgradeLegacy: !0 }),
+                            ],
+                        }),
+                        e.jsx(o, {
+                            className: v,
+                            size: p.small,
+                            onClick: l.openChallenge,
+                            theme: c.secondary,
+                            children: M.button(),
+                        }),
+                    ],
+                }),
+                h && e.jsx(t, { size: m.small, onClose: r, className: y }),
+            ],
+        });
+    });
+d(e.jsx(h, { children: e.jsx(_, { children: e.jsx(z, {}) }) }));

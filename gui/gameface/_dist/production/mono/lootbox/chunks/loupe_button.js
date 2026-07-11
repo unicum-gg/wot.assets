@@ -1,5 +1,5 @@
-import { j as s, h as o } from './vendor.js';
-import { t as a } from './lib.js';
+import { j as s, i as o } from './vendor.js';
+import { X as a } from './lib.js';
 const e = 'LoupeButton_1d80b6b5',
     i = 'LoupeButton_icon_38bae2ae',
     c = ({ onClick: c, icon: l, className: n = '' }) =>

@@ -398,7 +398,7 @@
                     F = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function t(u) {
                     let e = '';
-                    for (let A = F.length - 1; A >= 0; A--) for (; u >= F[A]; ) ((e += E[A]), (u -= F[A]));
+                    for (let A = F.length - 1; A >= 0; A--) for (; u >= F[A];) ((e += E[A]), (u -= F[A]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());

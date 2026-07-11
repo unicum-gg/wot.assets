@@ -523,7 +523,7 @@
                         let D = fu.exec(u),
                             B = u,
                             n = 0;
-                        for (; D; ) {
+                        for (; D;) {
                             const A = D[0],
                                 t = pu.exec(A),
                                 r = hu.exec(A),

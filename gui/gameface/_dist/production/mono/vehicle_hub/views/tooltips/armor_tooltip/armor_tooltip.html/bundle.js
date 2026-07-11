@@ -1,9 +1,9 @@
 import { r as e, j as a, t as s, H as r, g as c, A as t } from '../../../../chunks/vendor.js';
-import { r as o, ao as l, i, n as m, aM as p, aL as d } from '../../../../chunks/lib.js';
-import { a as n, D as _ } from '../../../../chunks/armor_model.js';
+import { r as o, ao as l, i, n as m, aM as n, aL as p } from '../../../../chunks/lib.js';
+import { a as d, D as _ } from '../../../../chunks/armor_model.js';
 const u = 'ArmorLayer_94179689',
     v = 'ArmorLayer_layer_5ad9db4',
-    N = 'ArmorLayer_armor_d9ec88fc',
+    N = 'ArmorLayer_armor_9a7e5b0',
     x = o.resolve('strings'),
     A = e.memo(function ({
         layerName: e,
@@ -14,8 +14,8 @@ const u = 'ArmorLayer_94179689',
         selectedMode: i,
         classNames: m,
     }) {
-        const p = x.readOrEmpty(`armor_inspector.tooltip.armor.part.${e}`),
-            d =
+        const n = x.readOrEmpty(`armor_inspector.tooltip.armor.part.${e}`),
+            p =
                 o > 1
                     ? a.jsx(l, { text: x.readOrEmpty('armor_inspector.tooltip.armor.reduction'), params: { value: o } })
                     : '',
@@ -23,7 +23,7 @@ const u = 'ArmorLayer_94179689',
                 t > 1
                     ? x.readOrEmpty('armor_inspector.tooltip.armor.layer.multiple')
                     : x.readOrEmpty('armor_inspector.tooltip.armor.layer.single'),
-            A = i === n.NOMINAL ? { color: c } : { filter: 'none' };
+            A = i === d.NOMINAL ? { color: c } : { filter: 'none' };
         return a.jsx('div', {
             className: s(u, m?.base),
             style: A,
@@ -36,10 +36,10 @@ const u = 'ArmorLayer_94179689',
                         text: x.readOrEmpty('armor_inspector.tooltip.reductionAndArmor.value'),
                         params: {
                             value: a.jsx('span', { className: m?.value, children: r }),
-                            reduction: a.jsx('span', { className: m?.value, children: d }),
+                            reduction: a.jsx('span', { className: m?.value, children: p }),
                         },
                     }),
-                    part: a.jsx('div', { children: p }),
+                    part: a.jsx('div', { children: n }),
                     count: t,
                 },
             }),
@@ -102,30 +102,32 @@ const X = t(function () {
             [s],
         );
         e.useEffect(() => {
-            if (!a.current) return;
-            const e = new r((e) => {
-                c(a.current.getBoundingClientRect());
+            const e = a.current;
+            if (!e) return;
+            const s = new r((a) => {
+                c(e.getBoundingClientRect());
             });
             return (
-                e.observe(a.current),
+                s.observe(e),
                 () => {
-                    e.disconnect();
+                    s.disconnect();
                 }
             );
         }, [c, a]);
-    })(t, p);
+    })(t, n);
     const o = c.armorLayers.get(),
         i = o.length,
         m = c.computes.impactAngle(),
-        d = c.computes.totalNominalArmor(),
+        p = c.computes.totalNominalArmor(),
         u = c.computes.totalEffectiveArmor(),
-        v = u - d,
+        v = u - p,
         N = i > 1,
-        x = o[0],
-        j = c.dccValue.get(),
+        x = o[0];
+    if (!x) return;
+    const j = c.dccValue.get(),
         X = c.dccType.get(),
         Y = c.selectedMode.get(),
-        Z = Y === n.PENETRATION ? { color: c.dccColor.get(), opacity: 1 } : { filter: 'none' };
+        Z = Y === d.PENETRATION ? { color: c.dccColor.get(), opacity: 1 } : { filter: 'none' };
     return a.jsx('div', {
         className: h,
         ref: t,
@@ -143,7 +145,7 @@ const X = t(function () {
                                       a.jsx(l, {
                                           className: F,
                                           text: U.readOrEmpty('armor_inspector.tooltip.armor.value'),
-                                          params: { value: a.jsx('span', { className: B, children: d }) },
+                                          params: { value: a.jsx('span', { className: B, children: p }) },
                                       }),
                                       a.jsxs('div', {
                                           className: J,
@@ -210,7 +212,7 @@ const X = t(function () {
                                 a.jsx(l, {
                                     className: G,
                                     text: U.readOrEmpty('armor_inspector.tooltip.armor.value'),
-                                    params: { value: `(${d} + ${v})` },
+                                    params: { value: `(${p} + ${v})` },
                                 }),
                             ],
                         }),
@@ -242,4 +244,4 @@ const X = t(function () {
         }),
     });
 });
-d(a.jsx(j, { children: a.jsx(X, {}) }));
+p(a.jsx(j, { children: a.jsx(X, {}) }));

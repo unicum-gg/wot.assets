@@ -497,9 +497,13 @@
                         if (t.mediumWidth && g) return (0, a.H)(u, t, B);
                         if (t.smallWidth && p) return (0, a.H)(u, t, B);
                         if (t.extraSmallWidth && A) return (0, a.H)(u, t, B);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && F) return u;
                             if (t.largeHeight && D) return u;
                             if (t.mediumHeight && h) return u;
@@ -950,7 +954,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, t = a(o.keys()); !(e = t()).done; ) {
+                            for (var e, t = a(o.keys()); !(e = t()).done;) {
                                 s(e.value, u);
                             }
                         },
@@ -1674,7 +1678,7 @@
                     a = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function r(e) {
                     let u = '';
-                    for (let t = a.length - 1; t >= 0; t--) for (; e >= a[t]; ) ((u += n[t]), (e -= a[t]));
+                    for (let t = a.length - 1; t >= 0; t--) for (; e >= a[t];) ((u += n[t]), (e -= a[t]));
                     return u;
                 }
                 const i = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -3334,7 +3338,7 @@
                         let o = $e.exec(e),
                             s = e,
                             l = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const t = o[0],
                                 n = Ve.exec(t),
                                 c = Ue.exec(t),
@@ -4700,7 +4704,7 @@
                                     const u = i[e] || '',
                                         t = m[g] || '';
                                     if (u.match(E) || u === t) {
-                                        for (; u !== m[g] && g < m.length; ) g++;
+                                        for (; u !== m[g] && g < m.length;) g++;
                                         g++;
                                     }
                                 }
@@ -4729,8 +4733,8 @@
                                 if (o) return;
                                 let c = l;
                                 const m = s.test(i[l]);
-                                if (t && m) for (; s.test(i[c]) && c < i.length; ) c++;
-                                if (u && m) for (; s.test(i[c]) && c > 0; ) c--;
+                                if (t && m) for (; s.test(i[c]) && c < i.length;) c++;
+                                if (u && m) for (; s.test(i[c]) && c > 0;) c--;
                                 if (c !== l || (u && m))
                                     return (e.preventDefault(), (c = c < 0 ? 0 : c), void this.setCursorPosition(c, c));
                                 ((u && 1 === a && 1 === i.length) || t) &&

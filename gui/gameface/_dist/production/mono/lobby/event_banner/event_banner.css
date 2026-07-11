@@ -104,11 +104,13 @@ html[lang='th'] input {
     transform: translateX(-50%);
 }
 
-.App_timerInfo_7dfe4aee {
+.App_timerInfo_9d97cea5 {
     font-size: 18rem;
     font-weight: 400;
     line-height: 1.3em;
+    justify-content: center;
     align-self: center;
     padding: 20rem;
     color: rgba(238, 237, 233, 0.45);
+    text-align: center;
 }

@@ -1,13 +1,13 @@
 import {
     j as e,
-    a3 as a,
+    W as a,
     r as s,
     i as t,
     V as r,
     k as i,
     R as n,
     u as o,
-    q as c,
+    t as c,
     o as d,
     g as l,
     aa as _,
@@ -17,100 +17,100 @@ import {
     a6 as g,
 } from '../../../chunks/vendor.js';
 import {
-    a$ as p,
-    cw as x,
-    av as b,
-    d6 as f,
-    aQ as v,
-    cz as S,
-    d7 as j,
+    b7 as p,
+    cD as x,
+    p as b,
+    d7 as f,
+    h as v,
+    cG as S,
+    d8 as j,
     i as w,
-    d8 as N,
-    ag as C,
-    d9 as k,
-    aJ as P,
-    ae as I,
-    da as y,
-    db as A,
-    W as B,
+    d9 as N,
+    as as C,
+    da as k,
+    aT as P,
+    B as I,
+    db as y,
+    dc as A,
+    a8 as B,
     m as T,
-    _ as D,
-    dc as L,
-    dd as E,
-    U as z,
-    bf as M,
-    de as W,
-    df as V,
-    cy as H,
-    cD as U,
-    cv as Q,
-    dg as $,
-    dh as q,
-    di as O,
-    al as F,
-    bH as Y,
-    x as G,
-    ap as X,
-    dj as K,
-    dk as J,
-    b4 as Z,
-    dl as ee,
-    dm as ae,
-    bh as se,
-    dn as te,
-    aR as re,
-    au as ie,
-    af as ne,
-    aw as oe,
-    aZ as ce,
-    d3 as de,
-    dp as le,
-    dq as _e,
-    cu as me,
-    dr as ue,
-    ds as he,
-    dt as ge,
-    cx as pe,
-    aL as xe,
-    du as be,
-    c7 as fe,
-    dv as ve,
-    bl as Se,
-    dw as je,
-    dx as we,
-    dy as Ne,
-    dz as Ce,
-    dA as ke,
-    dB as Pe,
-    dC as Re,
-    aC as Ie,
-    dD as ye,
-    dE as Ae,
-    dF as Be,
-    dG as Te,
-    dH as De,
-    bP as Le,
-    dI as Ee,
-    cA as ze,
-    aE as Me,
-    dJ as We,
-    dK as Ve,
-    dL as He,
-    dM as Ue,
-    cI as Qe,
-    cJ as $e,
-    dN as qe,
-    dO as Oe,
-    dP as Fe,
-    bI as Ye,
-    aT as Ge,
-    aW as Xe,
-    ak as Ke,
-    ax as Je,
-    aV as Ze,
-    d4 as ea,
+    ac as D,
+    dd as L,
+    de as E,
+    e as z,
+    bn as M,
+    df as W,
+    dg as V,
+    cF as H,
+    cK as Q,
+    F as U,
+    dh as $,
+    di as q,
+    dj as O,
+    ax as F,
+    bP as Y,
+    L as G,
+    aB as X,
+    dk as K,
+    dl as J,
+    bc as Z,
+    dm as ee,
+    dn as ae,
+    bp as se,
+    dp as te,
+    a_ as re,
+    g as ie,
+    k as ne,
+    aG as oe,
+    b as ce,
+    f as de,
+    dq as le,
+    dr as _e,
+    cC as me,
+    ds as ue,
+    dt as he,
+    du as ge,
+    cE as pe,
+    aV as xe,
+    dv as be,
+    cf as fe,
+    dw as ve,
+    bt as Se,
+    dx as je,
+    dy as we,
+    dz as Ne,
+    dA as Ce,
+    dB as ke,
+    dC as Pe,
+    dD as Re,
+    aM as Ie,
+    dE as ye,
+    dF as Ae,
+    dG as Be,
+    dH as Te,
+    dI as De,
+    bX as Le,
+    dJ as Ee,
+    cH as ze,
+    aO as Me,
+    dK as We,
+    dL as Ve,
+    dM as He,
+    dN as Qe,
+    C as Ue,
+    a as $e,
+    dO as qe,
+    dP as Oe,
+    dQ as Fe,
+    bQ as Ye,
+    b0 as Ge,
+    b3 as Xe,
+    aw as Ke,
+    aH as Je,
+    b2 as Ze,
+    j as ea,
     r as aa,
-    cE as sa,
+    U as sa,
 } from '../../../chunks/lib.js';
 import { u as ta, S as ra } from '../../../chunks/schedule_model.js';
 import { M as ia, R as na, S as oa, a as ca, b as da } from '../../../chunks/enums.js';
@@ -131,8 +131,8 @@ import { g as Ba, N as Ta, f as Da } from '../../../chunks/get_statistic_value.j
 import { V as La, a as Ea } from '../../../chunks/vehicle_name.js';
 import { Q as za } from '../../../chunks/qualification_battle_item.js';
 import { g as Ma, m as Wa } from '../../../chunks/get_comp7_reward.js';
-import { P as Va, a as Ha, Q as Ua } from '../../../chunks/quoted_locale.js';
-import { Q as Qa, C as $a } from '../../../chunks/weekly_quests_model.js';
+import { P as Va, a as Ha, Q as Qa } from '../../../chunks/quoted_locale.js';
+import { Q as Ua, C as $a } from '../../../chunks/weekly_quests_model.js';
 import { c as qa } from '../../../chunks/animation_api_factory.js';
 import { S as Oa, a as Fa } from '../../../chunks/season_point.js';
 import { S as Ya } from '../../../chunks/season_model.js';
@@ -548,8 +548,8 @@ const Bs = { None: 'none', Active: 'active' },
     Ws = 'Header_cell_ae11a84e',
     Vs = 'Header_cell__order_8c3c2448',
     Hs = 'Header_cell__player_4feb9cb9',
-    Us = 'Header_cell__score_d05be4b3',
-    Qs = () =>
+    Qs = 'Header_cell__score_d05be4b3',
+    Us = () =>
         e.jsxs('div', {
             className: zs,
             children: [
@@ -575,7 +575,7 @@ const Bs = { None: 'none', Active: 'active' },
                     header: R.strings.comp7_ext.leaderboard.table.tooltip.battlesCount.header(),
                     body: R.strings.comp7_ext.leaderboard.table.tooltip.battlesCount.body(),
                     children: e.jsx('div', {
-                        className: a(Ws, Us),
+                        className: a(Ws, Qs),
                         children: R.strings.comp7_ext.leaderboard.table.header.battlesCount(),
                     }),
                 }),
@@ -584,7 +584,7 @@ const Bs = { None: 'none', Active: 'active' },
                     header: R.strings.comp7_ext.leaderboard.table.tooltip.score.header(),
                     body: R.strings.comp7_ext.leaderboard.table.tooltip.score.body(),
                     children: e.jsx('div', {
-                        className: a(Ws, Us),
+                        className: a(Ws, Qs),
                         children: R.strings.comp7_ext.leaderboard.table.header.score(),
                     }),
                 }),
@@ -691,7 +691,7 @@ const Bs = { None: 'none', Active: 'active' },
             className: Ys,
             style: { '--rowHeight': t ? `${t}rem` : 'auto', '--rowsDividerHeight': `${r}rem` },
             children: [
-                e.jsx(Qs, {}),
+                e.jsx(Us, {}),
                 e.jsxs('div', {
                     className: Gs,
                     children: [
@@ -1104,7 +1104,7 @@ const bt = {
             ],
         });
     }),
-    Pt = U(R.strings.comp7_ext.lastUpdateNote.lastBestUserPoints.description(), { count: 5 }),
+    Pt = Q(R.strings.comp7_ext.lastUpdateNote.lastBestUserPoints.description(), { count: 5 }),
     Rt = 'LastUpdateNote_6d3d7bea',
     It = 'LastUpdateNote_infoIcon_e0adf03b',
     yt = ({
@@ -1119,7 +1119,7 @@ const bt = {
         e.jsxs('div', {
             className: a(Rt, t),
             children: [
-                e.jsx(Q, {
+                e.jsx(U, {
                     text: `${R.strings.comp7_ext.lastUpdateNote.info()}`,
                     binding: { date: e.jsx($, { datetime: s, format: i }) },
                 }),
@@ -1139,7 +1139,7 @@ const bt = {
         const { model: t } = Cs(),
             { leaderboardUpdateTimestamp: r } = t.root.get(),
             i = t.computes.hasUpdateInfo(),
-            n = U(R.strings.comp7_ext.lastUpdateNote.ratingPositions.description(), { count: 5 });
+            n = Q(R.strings.comp7_ext.lastUpdateNote.ratingPositions.description(), { count: 5 });
         return e.jsxs('div', {
             className: a(At, s),
             children: [
@@ -1219,7 +1219,7 @@ const bt = {
 var Vt = ((e) => ((e[(e.Initial = 0)] = 'Initial'), (e[(e.Success = 1)] = 'Success'), (e[(e.Error = 2)] = 'Error'), e))(
     Vt || {},
 );
-const [Ht, Ut] = w()(
+const [Ht, Qt] = w()(
         ({ observableModel: e }) => {
             const a = {
                     root: e.object(),
@@ -1354,7 +1354,7 @@ const [Ht, Ut] = w()(
             };
         },
     ),
-    Qt = [
+    Ut = [
         { path: R.images.comp7.gui.maps.icons.qualificationParallax.c_5(), speedX: -0.053, speedY: -0.01 },
         { path: R.images.comp7.gui.maps.icons.qualificationParallax.c_4(), speedX: -0.037, speedY: -0.0055 },
         { path: R.images.comp7.gui.maps.icons.qualificationParallax.c_3(), speedX: -0.025, speedY: -0.0016 },
@@ -1371,12 +1371,12 @@ const [Ht, Ut] = w()(
         R.images.comp7.gui.maps.icons.qualificationParallax.c_1_1(),
         R.images.comp7.gui.maps.icons.qualificationParallax.c_0_1(),
     ],
-    Yt = Qt.reduce((e, a) => {
+    Yt = Ut.reduce((e, a) => {
         const s = Math.abs(a.speedX);
         return s > e ? s : e;
     }, 0),
     Gt = r(({ className: t }) => {
-        const { model: r } = Ut(),
+        const { model: r } = Qt(),
             { screenWidthRem: i } = v(),
             n = s.createRef(),
             d = Yt * i,
@@ -1385,7 +1385,7 @@ const [Ht, Ut] = w()(
         return e.jsx('div', {
             ref: n,
             className: a($t, t),
-            children: Qt.map((a, s) =>
+            children: Ut.map((a, s) =>
                 e.jsx(
                     c.div,
                     {
@@ -1406,9 +1406,9 @@ const [Ht, Ut] = w()(
         });
     }),
     Xt = 'ParallaxContainer_ea8010a4',
-    Kt = Qt.map((e) => e.path),
+    Kt = Ut.map((e) => e.path),
     Jt = r(({ className: t }) => {
-        const { model: r, controls: i } = Ut(),
+        const { model: r, controls: i } = Qt(),
             n = r.isParallaxPreloaded.get(),
             d = o({ to: { opacity: n ? 1 : 0 }, config: { duration: 300 } }),
             l = J(Kt);
@@ -1492,7 +1492,7 @@ const er = ({
               : a(d, Zt.base__noRank, c);
     },
     ar = r(function ({ index: s, heightRem: t, isSelected: r }) {
-        const { model: i } = Ut(),
+        const { model: i } = Qt(),
             { hasBattles: n } = i.computes.dayStatistics(s),
             d = _(),
             l = _(),
@@ -1534,7 +1534,7 @@ const er = ({
         );
     }),
     sr = r(function ({ index: a }) {
-        const { model: s } = Ut(),
+        const { model: s } = Qt(),
             { hasBattles: t } = s.computes.dayStatistics(a);
         return e.jsxs(e.Fragment, {
             children: [
@@ -1546,7 +1546,7 @@ const er = ({
         });
     }),
     tr = r(function ({ index: a, heightRem: s, isInitialAnimation: t }) {
-        const { model: r } = Ut(),
+        const { model: r } = Qt(),
             { isQualification: i } = r.computes.dayStatistics(a),
             n = _(),
             d = _(),
@@ -1583,7 +1583,7 @@ const er = ({
                 },
                 d,
             ) => {
-                const { model: l } = Ut(),
+                const { model: l } = Qt(),
                     { selectedDayIndex: _, currentDayIndex: m } = l.root.get(),
                     {
                         isQualification: u,
@@ -1686,7 +1686,7 @@ const lr = 'Chart_8bf3ed9a',
     ur = { wrapper: 'Chart_areaWrapper_1478348e', content: 'Chart_areaContent_2fe4c7ee' },
     hr = { base: 'Chart_bar_df3ebe0c' },
     gr = r(({ width: t, className: r }) => {
-        const { model: i, controls: n } = Ut(),
+        const { model: i, controls: n } = Qt(),
             { selectedDayIndex: o } = i.root.get(),
             { mediaSize: c } = v(),
             d = s.useRef(null),
@@ -1826,14 +1826,14 @@ const jr = 'LoadingSpinner_13d3cf96',
     Wr = 'ChartHeader_spinner_5688475e',
     Vr = 'ChartHeader_button_53d907eb',
     Hr = r(function () {
-        const { model: a, controls: s } = Ut(),
+        const { model: a, controls: s } = Qt(),
             { statisticsUpdateTimestamp: t, isStatisticsLoading: r } = a.root.get(),
             { mediaSize: i } = v(),
             [n, o] = Sr(s.refresh);
         return e.jsxs('div', {
             className: Dr,
             children: [
-                e.jsx(Q, {
+                e.jsx(U, {
                     text: R.strings.comp7_ext.progressionPage.chartHeader.update(),
                     binding: {
                         time: e.jsx($, { datetime: t, format: q.ShortTime }),
@@ -1856,8 +1856,8 @@ const jr = 'LoadingSpinner_13d3cf96',
             ],
         });
     }),
-    Ur = r(function ({ className: s }) {
-        const { model: t, controls: r } = Ut(),
+    Qr = r(function ({ className: s }) {
+        const { model: t, controls: r } = Qt(),
             { selectedDayIndex: i, currentDayIndex: n } = t.root.get(),
             o = i === n,
             c = i !== Wt;
@@ -1888,10 +1888,10 @@ const jr = 'LoadingSpinner_13d3cf96',
                             children: [
                                 e.jsx('div', { className: Ar }),
                                 o
-                                    ? e.jsx(Q, {
+                                    ? e.jsx(U, {
                                           text: R.strings.comp7_ext.progressionPage.chartHeader.todayStatistic(),
                                       })
-                                    : e.jsx(Q, {
+                                    : e.jsx(U, {
                                           text: R.strings.comp7_ext.progressionPage.chartHeader.statisticDay(),
                                           binding: { day: i + 1 },
                                       }),
@@ -1910,13 +1910,13 @@ const jr = 'LoadingSpinner_13d3cf96',
             ],
         });
     }),
-    Qr = 'LastUpdate_ea4456f',
+    Ur = 'LastUpdate_ea4456f',
     $r = 'LastUpdate_dataUpdate_4273867c',
     qr = ({ timestamp: s, className: t, isLastBestUserPointsValueLoading: r = !1 }) =>
         e.jsx('div', {
-            className: a(Qr, t),
+            className: a(Ur, t),
             children: r
-                ? e.jsx(Q, { text: R.strings.comp7_ext.lastUpdateNote.lastBestUserPoints.update(), classMix: $r })
+                ? e.jsx(U, { text: R.strings.comp7_ext.lastUpdateNote.lastBestUserPoints.update(), classMix: $r })
                 : e.jsx(yt, { timestamp: s }),
         }),
     Or = (e, a) => e > 0 || a,
@@ -1955,7 +1955,7 @@ const jr = 'LoadingSpinner_13d3cf96',
     di = 'RankProgressDivisions_divisionName_bce75f3f',
     li = 'RankProgressDivisions_note_5ffe2513',
     _i = r(({ itemIndex: s, rank: t, from: r, step: i }) => {
-        const { model: n } = Ut(),
+        const { model: n } = Qt(),
             o = n.computes.divisions(s);
         return e.jsx('div', {
             className: Jr,
@@ -2058,7 +2058,7 @@ const hi = (e, a) => {
         line: { duration: 0, delay: 0 },
     },
     vi = r(({ rank: s, itemIndex: t, from: r, to: i, className: n }) => {
-        const { model: o } = Ut(),
+        const { model: o } = Qt(),
             { currentScore: c } = o.root.get(),
             d = o.computes.divisionsConfig(t),
             l = i - r,
@@ -2121,11 +2121,11 @@ const hi = (e, a) => {
     Wi = 'CurrentProgressionItem_rankInfo_48615e94',
     Vi = 'CurrentProgressionItem_rankProgress_1e9f9625',
     Hi = 'CurrentProgressionItem_status_d3c6050e',
-    Ui = 'CurrentProgressionItem_centered_88354ddf',
-    Qi = 'CurrentProgressionItem_lastUpdate_ef85f29f',
+    Qi = 'CurrentProgressionItem_centered_88354ddf',
+    Ui = 'CurrentProgressionItem_lastUpdate_ef85f29f',
     $i = { glow: 'CurrentProgressionItem_glow_4cf800c7' },
     qi = r(() => {
-        const { model: s } = Ut(),
+        const { model: s } = Qt(),
             { model: t } = ta(),
             { mediaSize: r } = v(),
             {
@@ -2191,7 +2191,7 @@ const hi = (e, a) => {
                 h &&
                     e.jsx('div', {
                         className: Wi,
-                        children: e.jsx(Xr, { rank: m.rank, from: m.from, topPercentage: n, classNames: { text: Ui } }),
+                        children: e.jsx(Xr, { rank: m.rank, from: m.from, topPercentage: n, classNames: { text: Qi } }),
                     }),
                 g
                     ? e.jsx(vi, { rank: m.rank, itemIndex: i, from: m.from, to: m.to, className: Vi })
@@ -2203,9 +2203,9 @@ const hi = (e, a) => {
                                       ? ba(R.strings.comp7_ext.rankItemStatus.current.extendedDescription, m.rank)
                                       : ba(R.strings.comp7_ext.rankItemStatus.current.description, m.rank),
                                   binding: { topPercentage: n, pointsCount: d },
-                                  className: Ui,
+                                  className: Qi,
                               }),
-                              e.jsx(qr, { timestamp: _, isLastBestUserPointsValueLoading: l, className: Qi }),
+                              e.jsx(qr, { timestamp: _, isLastBestUserPointsValueLoading: l, className: Ui }),
                           ],
                       }),
             ],
@@ -2234,7 +2234,7 @@ function sn(e) {
     };
 }
 const tn = r(function ({ index: a, style: t }) {
-        const { model: r, controls: i } = Ut(),
+        const { model: r, controls: i } = Qt(),
             {
                 iconKey: n,
                 description: o,
@@ -2269,7 +2269,7 @@ const tn = r(function ({ index: a, style: t }) {
                     e.jsxs('div', {
                         className: Xi,
                         children: [
-                            e.jsx(Q, {
+                            e.jsx(U, {
                                 text: R.strings.comp7_ext.progressionPage.customization.counter(),
                                 binding: {
                                     currentProgress: e.jsx('span', { className: Ji, children: d }),
@@ -2300,7 +2300,7 @@ const tn = r(function ({ index: a, style: t }) {
         e || (a(), b.sound('arrow'));
     },
     _n = r(function ({ className: s }) {
-        const { model: t, controls: r } = Ut(),
+        const { model: t, controls: r } = Qt(),
             i = t.previousSlideIndex.get(),
             n = t.currentSlideIndex.get(),
             o = t.customizationTasks.get(),
@@ -2342,7 +2342,7 @@ const tn = r(function ({ index: a, style: t }) {
     xn = 'Customization_noTasks_3d376941',
     bn = 'Customization_doneText_5ffca92b',
     fn = r(function ({ className: a }) {
-        const { model: s, controls: t } = Ut(),
+        const { model: s, controls: t } = Qt(),
             { mediaSize: r } = v(),
             i = s.customizationTasks.get(),
             n = P(i, s.currentSlideIndex.get()),
@@ -2359,7 +2359,7 @@ const tn = r(function ({ index: a, style: t }) {
                                 body: R.strings.comp7_ext.progressionPage.customization.headingTooltip(),
                                 isEnabled: o,
                                 children: e.jsx('div', {
-                                    children: e.jsx(Q, {
+                                    children: e.jsx(U, {
                                         text: o
                                             ? R.strings.comp7_ext.progressionPage.customization.tasks(i.length)
                                             : R.strings.comp7_ext.progressionPage.customization.tasksDone(),
@@ -2388,7 +2388,7 @@ const tn = r(function ({ index: a, style: t }) {
                                   className: bn,
                                   children: R.strings.comp7_ext.progressionPage.customization.completed(),
                               }),
-                              e.jsx(Q, {
+                              e.jsx(U, {
                                   text: R.strings.comp7_ext.progressionPage.customization.completedDescription(),
                               }),
                           ],
@@ -2398,7 +2398,7 @@ const tn = r(function ({ index: a, style: t }) {
     }),
     vn = r(function ({ classNames: a }) {
         const { mediaSize: s } = v(),
-            { model: t, controls: r } = Ut(),
+            { model: t, controls: r } = Qt(),
             { isStatisticsLoading: i } = t.root.get(),
             [n, o] = Sr(r.refresh);
         return e.jsx(ws, {
@@ -2428,7 +2428,7 @@ const tn = r(function ({ index: a, style: t }) {
         const { mediaSize: t } = v(),
             { model: r } = ta(),
             i = ((e) => (e >= S.Medium ? ua.x64 : ua.x40))(t),
-            { model: n } = Ut(),
+            { model: n } = Qt(),
             { statisticsMode: o, selectedDayIndex: c } = n.root.get(),
             d = r.season.name.get(),
             l = s.useMemo(
@@ -2455,8 +2455,8 @@ const tn = r(function ({ index: a, style: t }) {
     Wn = 'StatisticsIndicators_subIndicator__victory_c1b1351b',
     Vn = 'StatisticsIndicators_subIndicatorValue_1431d50a',
     Hn = 'StatisticsIndicators_subIndicator__defeat_c1b1351b',
-    Un = 'StatisticsIndicators_subIndicator__draw_c1b1351b',
-    Qn = 'StatisticsIndicators_icon_cbe85555',
+    Qn = 'StatisticsIndicators_subIndicator__draw_c1b1351b',
+    Un = 'StatisticsIndicators_icon_cbe85555',
     $n = 'StatisticsIndicators_subIndicator__solo_c1b1351b',
     qn = 'StatisticsIndicators_subIndicator__platoon_c1b1351b',
     On = 'StatisticsIndicators_indicatorIcon_b82fc36a',
@@ -2488,7 +2488,7 @@ function Xn({ value: s, iconSlot: t = e.jsx('div', { className: On }), tooltipAr
 function Kn({ value: s, className: t }) {
     return e.jsxs('div', {
         className: a(Mn, t),
-        children: [e.jsx('div', { className: Qn }), e.jsx('div', { className: Vn, children: e.jsx(ya, { value: s }) })],
+        children: [e.jsx('div', { className: Un }), e.jsx('div', { className: Vn, children: e.jsx(ya, { value: s }) })],
     });
 }
 function Jn() {
@@ -2563,7 +2563,7 @@ function ao({ value: a, winsCount: t, lossCount: r, drawCount: i }) {
         children: [
             e.jsx(Kn, { value: t, className: Wn }),
             e.jsx(Kn, { value: r, className: Hn }),
-            e.jsx(Kn, { value: i, className: Un }),
+            e.jsx(Kn, { value: i, className: Qn }),
         ],
     });
 }
@@ -2586,7 +2586,7 @@ function so({ value: a, recordDamageDealt: t, recordDamageDealtVehicleName: r })
         className: yn,
         value: a,
         tooltipArgs: n,
-        children: e.jsx(Q, { text: R.strings.comp7_ext.progressionPage.statistic.averageDamage() }),
+        children: e.jsx(U, { text: R.strings.comp7_ext.progressionPage.statistic.averageDamage() }),
     });
 }
 function to({ value: a, recordPrestige: t, recordPrestigeVehicleName: r }) {
@@ -2603,11 +2603,11 @@ function to({ value: a, recordPrestige: t, recordPrestigeVehicleName: r }) {
         className: Fn,
         value: a,
         tooltipArgs: n,
-        children: e.jsx(Q, { text: R.strings.comp7_ext.progressionPage.statistic.averagePrestigePoints() }),
+        children: e.jsx(U, { text: R.strings.comp7_ext.progressionPage.statistic.averagePrestigePoints() }),
     });
 }
 const ro = r(({ index: a }) => {
-        const { model: s } = Ut(),
+        const { model: s } = Qt(),
             {
                 isQualification: t,
                 ratingPoints: r,
@@ -2636,7 +2636,7 @@ const ro = r(({ index: a }) => {
                           rank: n,
                           value: r,
                           tooltipArgs: { maxAchievedRatingPoints: i, division: o, rank: n, diff: c, ratingPoints: r },
-                          children: e.jsx(Q, {
+                          children: e.jsx(U, {
                               text: R.strings.comp7_ext.progressionPage.statistic.dayRecordDescription(),
                               binding: { diff: e.jsx(Ia, { value: c }) },
                               classMix: zn,
@@ -2650,7 +2650,7 @@ const ro = r(({ index: a }) => {
         });
     }),
     io = r(() => {
-        const { model: a, controls: s } = Ut(),
+        const { model: a, controls: s } = Qt(),
             {
                 maxAchievedRatingPoints: t,
                 maxAchievedRank: r,
@@ -2679,13 +2679,13 @@ const ro = r(({ index: a }) => {
                         division: a.computes.dayStatistics(u).division,
                         dayOfMaxRatingIndex: u,
                     },
-                    children: e.jsx(Q, {
+                    children: e.jsx(U, {
                         text: R.strings.comp7_ext.progressionPage.statistic.seasonRecordDescription(),
                         binding: {
                             seasonRecordDescriptionDay: e.jsx('div', {
                                 className: Yn,
                                 onClick: () => s.selectDay(u),
-                                children: e.jsx(Q, {
+                                children: e.jsx(U, {
                                     text: R.strings.comp7_ext.progressionPage.statistic.seasonRecordDescriptionDay(),
                                     binding: { day: u + 1 },
                                     classMix: Gn,
@@ -2702,7 +2702,7 @@ const ro = r(({ index: a }) => {
         });
     }),
     no = ({ className: s }) => {
-        const { model: t } = Ut(),
+        const { model: t } = Qt(),
             { statisticsMode: r, selectedDayIndex: i } = t.root.get();
         return e.jsx('div', {
             className: a(Nn, s),
@@ -2796,7 +2796,7 @@ const ro = r(({ index: a }) => {
         return Da(s, 'winSeries' === e, 2);
     },
     xo = r(function () {
-        const { model: a } = Ut(),
+        const { model: a } = Qt(),
             s = a.topVehiclesStatistics.get();
         return e.jsx('div', {
             className: co.tableContent,
@@ -2823,7 +2823,7 @@ const ro = r(({ index: a }) => {
         });
     }),
     bo = r(function () {
-        const { model: t, controls: r } = Ut(),
+        const { model: t, controls: r } = Qt(),
             { statisticsMode: i, currentDayIndex: n, selectedDayIndex: o } = t.root.get(),
             { mediaSize: c } = v(),
             d = i !== oa.Season && n !== o,
@@ -2867,7 +2867,7 @@ const fo = 'ProgressionLayout_b39a022a',
     ko = 'ProgressionLayout_initialSpinner_9430136',
     Po = { button: 'ProgressionLayout_button_1eb45096', spinner: 'ProgressionLayout_spinner_97f4b1d9' },
     Ro = r(() => {
-        const { model: a, controls: s } = Ut(),
+        const { model: a, controls: s } = Qt(),
             { pageState: t, isStatisticsLoading: r } = a.root.get(),
             { mediaSize: i } = v(),
             n = o(la),
@@ -2894,7 +2894,7 @@ const fo = 'ProgressionLayout_b39a022a',
                                         e.jsxs('div', {
                                             className: wo,
                                             children: [
-                                                e.jsx(Ur, {}),
+                                                e.jsx(Qr, {}),
                                                 e.jsx(gr, { width: d }),
                                                 e.jsx(wn, { children: e.jsx(no, { className: No }) }),
                                             ],
@@ -2916,7 +2916,7 @@ const fo = 'ProgressionLayout_b39a022a',
     yo = ({ maxBattlesCount: a, children: s }) =>
         e.jsx(p, {
             header: R.strings.comp7_ext.qualification.conditionTooltip.header(),
-            body: U(R.strings.comp7_ext.qualification.conditionTooltip.body(a), { maxBattlesCount: a }),
+            body: Q(R.strings.comp7_ext.qualification.conditionTooltip.body(a), { maxBattlesCount: a }),
             args: Io,
             children: e.jsx('div', { children: s }),
         }),
@@ -2924,7 +2924,7 @@ const fo = 'ProgressionLayout_b39a022a',
     Bo = 'BattlesCounter_battlesCount_73d2731e',
     To = 'BattlesCounter_battlesDivider_7dbb3a33',
     Do = ({ battlesCount: s, maxBattlesCount: t, className: r }) =>
-        e.jsx(Q, {
+        e.jsx(U, {
             text: R.strings.comp7_ext.qualification.counter(),
             binding: {
                 battlesCount: e.jsx('div', { className: Bo, children: s }),
@@ -2934,7 +2934,7 @@ const fo = 'ProgressionLayout_b39a022a',
             classMix: a(Ao, r),
         }),
     Lo = r(({ index: a, className: s }) => {
-        const { model: t } = Ut(),
+        const { model: t } = Qt(),
             { mediaSize: r } = v(),
             i = t.computes.qualificationBattle(a);
         return e.jsx(za, { state: i.state, className: s, size: r >= S.ExtraLarge ? 'x234' : 'x173' }, a);
@@ -2942,7 +2942,7 @@ const fo = 'ProgressionLayout_b39a022a',
     Eo = 'BattlesProgression_c0296cbd',
     zo = 'BattlesProgression_item_e40a305e',
     Mo = r(({ className: s }) => {
-        const { model: t } = Ut();
+        const { model: t } = Qt();
         return e.jsx('div', {
             className: a(Eo, s),
             children: T(t.qualificationBattles.get().length, (a) => e.jsx(Lo, { index: a, className: zo }, a)),
@@ -2962,8 +2962,8 @@ const fo = 'ProgressionLayout_b39a022a',
     },
     Vo = 'Qualification_8f910914',
     Ho = 'Qualification_content_8a6d7d92',
-    Uo = 'Qualification_footer_143b827d',
-    Qo = 'Qualification_qualificationEmblemContainer_dbf79dc7',
+    Qo = 'Qualification_footer_143b827d',
+    Uo = 'Qualification_qualificationEmblemContainer_dbf79dc7',
     $o = 'Qualification_glowContainer_3a05eb3',
     qo = 'Qualification_glow_8e19a98c',
     Oo = 'Qualification_qualificationEmblem_a7436cbb',
@@ -2982,7 +2982,7 @@ function rc(e) {
     return e >= S.Large ? I.sizes.small : I.sizes.extraSmall;
 }
 const ic = r(({ className: s }) => {
-        const { model: t, controls: r } = Ut(),
+        const { model: t, controls: r } = Qt(),
             { model: i } = ta(),
             { mediaSize: n } = v(),
             d = t.qualificationModel.battlesCount.get(),
@@ -3005,7 +3005,7 @@ const ic = r(({ className: s }) => {
                           className: Ho,
                           children: [
                               e.jsxs('div', {
-                                  className: Qo,
+                                  className: Uo,
                                   children: [
                                       e.jsx(ka, { className: $o, classNames: { glow: qo } }),
                                       e.jsx(Aa, { size: Wo(n), seasonName: i.season.name.get(), className: Oo }),
@@ -3016,7 +3016,7 @@ const ic = r(({ className: s }) => {
                                   ? e.jsx(p, {
                                         body: R.strings.comp7_ext.qualification.ratingCalculationTooltip(),
                                         children: e.jsx('div', {
-                                            children: e.jsx(Q, {
+                                            children: e.jsx(U, {
                                                 text: R.strings.comp7_ext.qualification.ratingCalculationDescription(),
                                                 binding: { timerIcon: e.jsx('div', { className: Xo }) },
                                                 classMix: Go,
@@ -3031,7 +3031,7 @@ const ic = r(({ className: s }) => {
                           ],
                       }),
                       e.jsxs('div', {
-                          className: Uo,
+                          className: Qo,
                           children: [
                               e.jsxs('div', {
                                   className: Ko,
@@ -3044,7 +3044,7 @@ const ic = r(({ className: s }) => {
                                       e.jsx(yo, { maxBattlesCount: l, children: e.jsx('div', { className: ec }) }),
                                   ],
                               }),
-                              e.jsx(Q, { text: R.strings.comp7_ext.qualification.rewardsDescription(), classMix: Zo }),
+                              e.jsx(U, { text: R.strings.comp7_ext.qualification.rewardsDescription(), classMix: Zo }),
                               e.jsx(I, {
                                   classNames: { base: ac, content: sc },
                                   theme: I.themes.secondary,
@@ -3069,7 +3069,7 @@ const ic = r(({ className: s }) => {
     lc = 'ProgressionPage_contentInner_78229ad9',
     _c = 'ProgressionPage_content_f7a37594',
     mc = r(() => {
-        const { model: a } = Ut(),
+        const { model: a } = Qt(),
             [t, r] = s.useState(0),
             i = s.useRef(null),
             n = a.qualificationModel.isActive.get(),
@@ -3402,8 +3402,8 @@ const Rc = {
         });
     }),
     Hc = 'RankRewardsItem_97feb95e',
-    Uc = 'RankRewardsItem_mainRewardContainer_85d98e1d',
-    Qc = 'RankRewardsItem_rewardsContainer_aa9fb54',
+    Qc = 'RankRewardsItem_mainRewardContainer_85d98e1d',
+    Uc = 'RankRewardsItem_rewardsContainer_aa9fb54',
     $c = 'RankRewardsItem_statusContainer_32c29dc9',
     qc = 'RankRewardsItem_statusContainer__hidden_1627e91e',
     Oc = 'RankRewardsItem_icon_c6768aea',
@@ -3424,9 +3424,9 @@ const Rc = {
                 style: { '--itemWidth': `${t}rem` },
                 children: [
                     e.jsx(yc, { index: s, rankEmblemSize: o }),
-                    e.jsx(Vc, { index: s, rank: l, size: r, hasHighlight: i, onPreviewClick: c, className: Uc }),
+                    e.jsx(Vc, { index: s, rank: l, size: r, hasHighlight: i, onPreviewClick: c, className: Qc }),
                     e.jsx('div', {
-                        className: Qc,
+                        className: Uc,
                         children: e.jsx(kc, { itemIndex: s, visibleRewardsCount: n, rank: l }),
                     }),
                     e.jsxs('div', {
@@ -3817,14 +3817,14 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
             }
             case Ha.Style3d: {
                 const { name: s, vehicleInfo: r } = i,
-                    o = U(R.strings.comp7_ext.products.style3d(), {
-                        name: U(R.strings.comp7_ext.quotesWrapper(), { name: s }),
+                    o = Q(R.strings.comp7_ext.products.style3d(), {
+                        name: Q(R.strings.comp7_ext.quotesWrapper(), { name: s }),
                     });
                 return e.jsxs('div', {
                     className: a(gd, bd, t),
                     children: [
                         e.jsx(ze, { classMix: fd, content: o }, n),
-                        e.jsx(Q, {
+                        e.jsx(U, {
                             text: R.strings.comp7_ext.forVehicle(),
                             binding: { vehicleName: r.name },
                             classMix: vd,
@@ -3833,7 +3833,7 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
                 });
             }
             case Ha.Reward:
-                return e.jsx(Q, { text: i.reward.label, classMix: a(gd, t) });
+                return e.jsx(U, { text: i.reward.label, classMix: a(gd, t) });
             default:
                 return (console.error(`Provide ProductCardName for ProductType:${i.type}`), null);
         }
@@ -3902,7 +3902,7 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
     yd = ({ className: s }) =>
         e.jsx('div', {
             className: a(Id, s),
-            children: e.jsx(Q, { text: R.strings.comp7_ext.products.readyToRestore() }),
+            children: e.jsx(U, { text: R.strings.comp7_ext.products.readyToRestore() }),
         }),
     Ad = {
         base: 'ProductCard_eb37a243',
@@ -4014,8 +4014,8 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
     Wd = 'RankSection_rankDescription_fb9e5f48',
     Vd = 'RankSection_rankImage_8c4cf71f',
     Hd = 'RankSection_rankString_514c111b',
-    Ud = 'RankSection_horizontalDivider_95048bb6',
-    Qd = 'RankSection_peak_9d148568',
+    Qd = 'RankSection_horizontalDivider_95048bb6',
+    Ud = 'RankSection_peak_9d148568',
     $d = 'RankSection_peak__right_551e2893',
     qd = 'RankSection_line_2a5d3241',
     Od = ({ rank: s, seasonName: t, className: r }) =>
@@ -4027,11 +4027,11 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
                     children: [
                         e.jsx('div', { className: zd }),
                         e.jsxs('div', {
-                            className: Ud,
+                            className: Qd,
                             children: [
-                                e.jsx('div', { className: Qd }),
+                                e.jsx('div', { className: Ud }),
                                 e.jsx('div', { className: qd }),
-                                e.jsx('div', { className: a(Qd, $d) }),
+                                e.jsx('div', { className: a(Ud, $d) }),
                             ],
                         }),
                     ],
@@ -4040,13 +4040,13 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
                     className: Md,
                     children: [
                         e.jsx(ma, { rank: s, size: ua.x40, seasonName: t, className: Vd }),
-                        e.jsx(Q, {
+                        e.jsx(U, {
                             classMix: Wd,
                             text: R.strings.comp7_ext.products.rankAccess(),
                             binding: {
                                 rank: e.jsx('div', {
                                     className: Hd,
-                                    children: U(R.strings.comp7_ext.quotesWrapper(), { name: fa(s) }),
+                                    children: Q(R.strings.comp7_ext.quotesWrapper(), { name: fa(s) }),
                                 }),
                             },
                         }),
@@ -4057,11 +4057,11 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
                     children: [
                         e.jsx('div', { className: zd }),
                         e.jsxs('div', {
-                            className: Ud,
+                            className: Qd,
                             children: [
-                                e.jsx('div', { className: Qd }),
+                                e.jsx('div', { className: Ud }),
                                 e.jsx('div', { className: qd }),
-                                e.jsx('div', { className: a(Qd, $d) }),
+                                e.jsx('div', { className: a(Ud, $d) }),
                             ],
                         }),
                     ],
@@ -4252,14 +4252,14 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
         return i.rank === n.rank
             ? e.jsx('div', {
                   className: a(jl),
-                  children: e.jsx(Q, { text: R.strings.comp7_ext.products.productAccess() }),
+                  children: e.jsx(U, { text: R.strings.comp7_ext.products.productAccess() }),
               })
             : i.value > 0
               ? e.jsxs('div', {
                     className: Nl,
                     children: [
                         o && e.jsx('div', { className: Cl }),
-                        e.jsx(Q, {
+                        e.jsx(U, {
                             text: R.strings.comp7_ext.products.discount(),
                             binding: { discountPercentage: i.value },
                         }),
@@ -4351,14 +4351,14 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
             ],
         }),
     Hl = 'NationFlag_42e58a02',
-    Ul = 'NationFlag_nationFlag_2f0a2e52',
-    Ql = R.images.gui.maps.icons.eventBoards.flagsOverlay,
+    Ql = 'NationFlag_nationFlag_2f0a2e52',
+    Ul = R.images.gui.maps.icons.eventBoards.flagsOverlay,
     $l = ({ nation: s, className: t }) =>
         e.jsxs('div', {
             className: a(Hl, t),
             children: [
-                e.jsx('div', { className: Ul, style: { backgroundImage: `url(${Ql.$dyn(s)})` } }),
-                e.jsx('div', { className: Ul, style: { backgroundImage: `url(${Ql.$dyn(s)})` } }),
+                e.jsx('div', { className: Ql, style: { backgroundImage: `url(${Ul.$dyn(s)})` } }),
+                e.jsx('div', { className: Ql, style: { backgroundImage: `url(${Ul.$dyn(s)})` } }),
             ],
         }),
     ql = 'NameSection_be509601',
@@ -4392,7 +4392,7 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
                             vehicleCD: u,
                             className: Fl,
                         }),
-                        t.computes.hasVehicleDescription() && e.jsx(Q, { text: i.description, classMix: Xl }),
+                        t.computes.hasVehicleDescription() && e.jsx(U, { text: i.description, classMix: Xl }),
                     ],
                 });
             }
@@ -4404,14 +4404,14 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
                         e.jsx(he, {
                             args: n,
                             children: e.jsx('div', {
-                                children: e.jsx(Q, {
+                                children: e.jsx(U, {
                                     text: R.strings.comp7_ext.products.style3d(),
-                                    binding: { name: e.jsx(Ua, { name: i.name }) },
+                                    binding: { name: e.jsx(Qa, { name: i.name }) },
                                     classMix: Fl,
                                 }),
                             }),
                         }),
-                        e.jsx(Q, {
+                        e.jsx(U, {
                             text: R.strings.comp7_ext.forVehicle(),
                             binding: {
                                 vehicleName: e.jsx(La, {
@@ -4507,7 +4507,7 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
                                     className: e_.accessBlock,
                                     children: [
                                         e.jsx('div', { className: e_.lock }),
-                                        e.jsx(Q, {
+                                        e.jsx(U, {
                                             text: R.strings.comp7_ext.products.message.rankAccess(),
                                             binding: {
                                                 rank: e.jsx('span', { className: e_.rankString, children: pa(i.rank) }),
@@ -4587,7 +4587,7 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
                                 t.computes.hasLimitedQuantity() &&
                                     e.jsx('div', {
                                         className: e_.limitString,
-                                        children: e.jsx(Q, {
+                                        children: e.jsx(U, {
                                             text: R.strings.comp7_ext.products.limitedQuantitySeason(),
                                             binding: {
                                                 count: e.jsx('span', {
@@ -4687,7 +4687,7 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
                                 r.type === Ha.Reward &&
                                     e.jsx('div', {
                                         className: d_,
-                                        children: U(R.strings.comp7_ext.products.limitedQuantitySeason(), {
+                                        children: Q(R.strings.comp7_ext.products.limitedQuantitySeason(), {
                                             count: r.limitedQuantity,
                                         }),
                                     }),
@@ -4717,7 +4717,7 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
                     children: [
                         e.jsx('div', {
                             className: b_,
-                            children: e.jsx(Q, { text: R.strings.comp7_ext.products.readyToRestoreDescription() }),
+                            children: e.jsx(U, { text: R.strings.comp7_ext.products.readyToRestoreDescription() }),
                         }),
                         e.jsx('div', {
                             className: f_,
@@ -4782,7 +4782,7 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
     W_ = 'ShopPage_details_189bbbd4',
     V_ = 'ShopPage_carousel_1cf76ba5',
     H_ = (e) => (e >= S.Large ? Ne.S600x450 : e >= S.Small ? Ne.S400x300 : Ne.S296x222),
-    U_ = r(() => {
+    Q_ = r(() => {
         const { model: a } = dd(),
             { mediaSize: t } = v(),
             r = o(la),
@@ -4821,8 +4821,8 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
             })
         );
     }),
-    Q_ = { activeSeasonState: B_ },
-    $_ = { [id.Initial]: () => e.jsx('div', {}), [id.Success]: U_, [id.Error]: ws },
+    U_ = { activeSeasonState: B_ },
+    $_ = { [id.Initial]: () => e.jsx('div', {}), [id.Success]: Q_, [id.Error]: ws },
     q_ = r(() => {
         const a = o(la),
             { model: s, controls: t } = dd(),
@@ -4837,10 +4837,10 @@ const nd = [Va.Locked, Va.ReadyToPurchase],
                       i &&
                           e.jsx('div', {
                               className: I_,
-                              children: e.jsx(Ue, { moveSpace: t.moveSpace, onMouseOver3dScene: t.mouseOver3dScene }),
+                              children: e.jsx(Qe, { moveSpace: t.moveSpace, onMouseOver3dScene: t.mouseOver3dScene }),
                           }),
                       r !== id.Error && e.jsx('div', { className: y_ }),
-                      e.jsx('div', { className: A_, children: e.jsx(va, { classNames: Q_ }) }),
+                      e.jsx('div', { className: A_, children: e.jsx(va, { classNames: U_ }) }),
                       e.jsx(c.div, { className: T_, style: a, children: e.jsx(n, {}) }),
                   ],
               })
@@ -4864,10 +4864,10 @@ const F_ = [O_.LOCKED_BY_NO_X_VEHICLES, O_.LOCKED_BY_INACTIVE_SEASON, O_.LOCKED_
                 },
                 s = t(
                     (e) => {
-                        const s = e * Qa,
-                            t = [...ve(a.questCards.get(), s, s + Qa - 1)];
-                        if (t.length !== Qa)
-                            throw new Error(`Unexpected weekly list length: ${t.length} expected: ${Qa}`);
+                        const s = e * Ua,
+                            t = [...ve(a.questCards.get(), s, s + Ua - 1)];
+                        if (t.length !== Ua)
+                            throw new Error(`Unexpected weekly list length: ${t.length} expected: ${Ua}`);
                         return t;
                     },
                     { equals: N },
@@ -4921,15 +4921,15 @@ const F_ = [O_.LOCKED_BY_NO_X_VEHICLES, O_.LOCKED_BY_INACTIVE_SEASON, O_.LOCKED_
                               className: Z_,
                               children: R.strings.comp7_ext.weeklyQuests.CountdownStatus.done(),
                           })
-                        : e.jsx(Q, {
-                              text: R.strings.comp7_ext.weeklyQuests.CountdownStatus.active(Qa),
+                        : e.jsx(U, {
+                              text: R.strings.comp7_ext.weeklyQuests.CountdownStatus.active(Ua),
                               binding: {
-                                  value: Qa,
+                                  value: Ua,
                                   countdown: e.jsxs('div', {
                                       className: em,
                                       children: [
                                           e.jsx('div', { className: am }),
-                                          e.jsx(Qe, { icon: $e.None, duration: r, classNames: { text: sm } }),
+                                          e.jsx(Ue, { icon: $e.None, duration: r, classNames: { text: sm } }),
                                       ],
                                   }),
                               },
@@ -4947,7 +4947,7 @@ const F_ = [O_.LOCKED_BY_NO_X_VEHICLES, O_.LOCKED_BY_INACTIVE_SEASON, O_.LOCKED_
         e.jsxs('div', {
             className: a(rm, i),
             children: [
-                e.jsx(Q, {
+                e.jsx(U, {
                     classMix: im,
                     text: R.strings.comp7_ext.weeklyQuests.card.progress.counter(),
                     binding: {
@@ -5125,7 +5125,7 @@ const pm = ({ type: s }) =>
             className: a(xm, r),
             children: [
                 e.jsx(pm, { type: gm.SideLeft }),
-                T(Qa, (a) =>
+                T(Ua, (a) =>
                     e.jsxs(
                         s.Fragment,
                         {
@@ -5150,7 +5150,7 @@ const pm = ({ type: s }) =>
     Cm = r(({ className: t }) => {
         const [r, i] = s.useState(!1),
             { model: n } = G_(),
-            o = Math.floor(n.questCards.get().length / Qa),
+            o = Math.floor(n.questCards.get().length / Ua),
             c = o > 1,
             { api: d } = Se();
         return (
@@ -5251,8 +5251,8 @@ const pm = ({ type: s }) =>
     Wm = 'FinalRewards_9a8bf88c',
     Vm = 'FinalRewards_wrapper_170e19ff',
     Hm = 'FinalRewards_reward_21094ad5',
-    Um = 'FinalRewards_reward__achieved_4f37d4ba',
-    Qm = 'FinalRewards_check_e0f8cdc4',
+    Qm = 'FinalRewards_reward__achieved_4f37d4ba',
+    Um = 'FinalRewards_check_e0f8cdc4',
     $m = r(({ rewards: s, className: t }) => {
         const { model: r, controls: i } = G_(),
             { choiceRewardState: n } = r.root.get(),
@@ -5274,12 +5274,12 @@ const pm = ({ type: s }) =>
                                           isDisabled: c,
                                           className: Hm,
                                       })
-                                    : e.jsx(Pe, { ...s, className: a(Hm, n === $a.Claimed && Um) }),
+                                    : e.jsx(Pe, { ...s, className: a(Hm, n === $a.Claimed && Qm) }),
                         },
                         t,
                     ),
                 ),
-                n === $a.Claimed && e.jsx('div', { className: Qm }),
+                n === $a.Claimed && e.jsx('div', { className: Um }),
             ],
         });
     }),
@@ -5338,9 +5338,9 @@ const pm = ({ type: s }) =>
                     binding: { passed: o, total: l },
                     classMix: su,
                 }),
-                e.jsx(Q, {
-                    text: R.strings.comp7_ext.weeklyQuests.TokenProgress.subheader(Qa),
-                    binding: { value: Qa },
+                e.jsx(U, {
+                    text: R.strings.comp7_ext.weeklyQuests.TokenProgress.subheader(Ua),
+                    binding: { value: Ua },
                     classMix: tu,
                 }),
                 e.jsxs('div', {
@@ -5757,11 +5757,11 @@ const [Eu, zu] = w()(
     }),
     Vu = { from: { opacity: 0 }, to: { opacity: 1 }, delay: 600, config: { duration: 300 } },
     Hu = la.delay + la.config.duration + 500,
-    Uu = 'ActiveCardHighlight_dcbae8f8',
-    Qu = 'ActiveCardHighlight_glow_bab58c6d',
+    Qu = 'ActiveCardHighlight_dcbae8f8',
+    Uu = 'ActiveCardHighlight_glow_bab58c6d',
     $u = ({ isAnimated: s, visible: t, hasDelay: r, className: i }) => {
         const n = o({ from: { opacity: 0 }, to: { opacity: t ? 1 : 0 }, delay: r ? Hu : 0, config: { duration: 300 } });
-        return e.jsx(c.div, { className: a(Uu, i), style: n, children: e.jsx(ka, { className: Qu, animated: s }) });
+        return e.jsx(c.div, { className: a(Qu, i), style: n, children: e.jsx(ka, { className: Uu, animated: s }) });
     },
     qu = 'AdditionalRewards_rewardItem_ee31ff1d',
     Ou = 'AdditionalRewards_reward_3c5d7930',
@@ -5987,7 +5987,7 @@ const [Eu, zu] = w()(
                     children: [
                         t === Cu.NotAvailable && e.jsx('div', { className: uh.shadow }),
                         e.jsx('div', { className: uh.statusIcon }),
-                        U(`${R.strings.comp7_ext.yearlyRewards.rewardsState.$dyn(t)}`, { count: s }),
+                        Q(`${R.strings.comp7_ext.yearlyRewards.rewardsState.$dyn(t)}`, { count: s }),
                     ],
                 }),
             }),
@@ -6342,12 +6342,12 @@ const [Eu, zu] = w()(
                         !o &&
                             e.jsxs(e.Fragment, {
                                 children: [
-                                    e.jsx(Q, {
+                                    e.jsx(U, {
                                         text: m.rank,
                                         binding: {
                                             rank: e.jsx('div', {
                                                 className: wh.rank,
-                                                children: U(R.strings.comp7_ext.quotesWrapper(), { name: fa(n) }),
+                                                children: Q(R.strings.comp7_ext.quotesWrapper(), { name: fa(n) }),
                                             }),
                                         },
                                         classMix: wh.secondaryText,
@@ -6355,7 +6355,7 @@ const [Eu, zu] = w()(
                                     e.jsx('div', { className: wh.verticalSeparator }),
                                 ],
                             }),
-                        e.jsx(Q, {
+                        e.jsx(U, {
                             text: m.description,
                             binding: {
                                 seasonPointIcon: e.jsx(V, {
@@ -6488,7 +6488,7 @@ const [Eu, zu] = w()(
                 e.jsx('div', { className: Lh }),
                 e.jsx('div', {
                     className: Eh,
-                    children: e.jsx(Q, {
+                    children: e.jsx(U, {
                         text: R.strings.comp7_ext.yearlyRewards.mainYearlyRewardTitle(),
                         binding: {
                             vehicle: e.jsx(La, {
@@ -6507,8 +6507,8 @@ const [Eu, zu] = w()(
     }),
     Vh = 'YearlyRewardsPage_b4fabdfc',
     Hh = 'YearlyRewardsPage_bgContainer_badeda9c',
-    Uh = 'YearlyRewardsPage_error_481edb10',
-    Qh = 'YearlyRewardsPage_contentWrapper_b226b3ee',
+    Qh = 'YearlyRewardsPage_error_481edb10',
+    Uh = 'YearlyRewardsPage_contentWrapper_b226b3ee',
     $h = 'YearlyRewardsPage_vehicle_7cb1ad5e',
     qh = 'YearlyRewardsPage_columns_432bf53e',
     Oh = 'YearlyRewardsPage_schedule_8841c048',
@@ -6576,9 +6576,9 @@ const [Eu, zu] = w()(
                         e.jsxs(e.Fragment, { children: [e.jsx(Th, { className: $h }), e.jsx(Sh, { className: qh })] }),
                     e.jsx(c.div, {
                         style: d,
-                        className: a(Qh, n && Gh),
+                        className: a(Uh, n && Gh),
                         children: i
-                            ? e.jsx(ws, { className: Uh })
+                            ? e.jsx(ws, { className: Qh })
                             : e.jsxs(e.Fragment, {
                                   children: [
                                       e.jsx('div', { className: Fh, children: e.jsx(Ph, {}) }),
@@ -6649,13 +6649,13 @@ const [Eu, zu] = w()(
             children: n
                 ? e.jsx('div', {
                       onClick: () => i.goToSeasonStatistics(o),
-                      children: e.jsx(Q, {
+                      children: e.jsx(U, {
                           text: R.strings.comp7_ext.yearlyStatistics.goToSeasonStatistics(),
                           classMix: ng,
                           binding: { icon: e.jsx('div', { className: cg }) },
                       }),
                   })
-                : e.jsx(Q, { text: R.strings.comp7_ext.yearlyStatistics.generationOfStatistics(), classMix: og }),
+                : e.jsx(U, { text: R.strings.comp7_ext.yearlyStatistics.generationOfStatistics(), classMix: og }),
         });
     }),
     lg = 'RankStatus_481bd341',
@@ -6669,12 +6669,12 @@ const [Eu, zu] = w()(
             children: t
                 ? e.jsxs(e.Fragment, {
                       children: [
-                          e.jsx(Q, {
+                          e.jsx(U, {
                               classMix: _g,
                               text: R.strings.comp7_ext.yearlyStatistics.rankStatus.received(),
                               binding: { rank: fa(r) },
                           }),
-                          ha(r) && e.jsx(Q, { classMix: mg, text: wa(i) }),
+                          ha(r) && e.jsx(U, { classMix: mg, text: wa(i) }),
                       ],
                   })
                 : e.jsx('div', {
@@ -6695,7 +6695,7 @@ const [Eu, zu] = w()(
                         return e.jsx('div', {
                             children: o
                                 ? String(R.strings.comp7_ext.yearlyStatistics.seasonDate.$num(s))
-                                : e.jsx(Q, { text: R.strings.comp7_ext.season.range(), binding: Sa(i, r) }),
+                                : e.jsx(U, { text: R.strings.comp7_ext.season.range(), binding: Sa(i, r) }),
                         });
                     case Ya.JustStarted:
                     case Ya.EndSoon:
@@ -6886,7 +6886,7 @@ const [Eu, zu] = w()(
         const s = Vg[a];
         return s ? e.jsx(s, {}) : (console.error('Unreachable code: ViewResolver'), null);
     },
-    Ug = {
+    Qg = {
         base: 'App_94d2f69c',
         base__qualification: 'App_base__qualification_48f8ca46',
         base__progression: 'App_base__progression_3ad5bf0f',
@@ -6916,7 +6916,7 @@ const [Eu, zu] = w()(
         blink: 'App_blink_0',
         slideUpIn: 'App_slideUpIn_0',
     },
-    Qg = r(() => {
+    Ug = r(() => {
         const { model: s, controls: t } = cs(),
             { model: r } = ta(),
             i = rs(),
@@ -6927,20 +6927,20 @@ const [Eu, zu] = w()(
         const l = s.computes.isProgressionInQualification();
         return e.jsxs('div', {
             className: a(
-                Ug.base,
-                l && !ts() && Ug.base__qualification,
-                !l && Ug[`base__${is[n]}`],
-                Ug[`season__${r.season.name.get()}`],
+                Qg.base,
+                l && !ts() && Qg.base__qualification,
+                !l && Qg[`base__${is[n]}`],
+                Qg[`season__${r.season.name.get()}`],
             ),
             children: [
-                e.jsx('div', { className: Ug.viewContainer, children: e.jsx(Hg, { pageView: n }) }),
+                e.jsx('div', { className: Qg.viewContainer, children: e.jsx(Hg, { pageView: n }) }),
                 e.jsx(_s, {
                     options: ns.TABS,
-                    children: e.jsx(xs, { pageView: n, className: a(Ug.sidebar, i.isMedium && Ug.sidebar__medium) }),
+                    children: e.jsx(xs, { pageView: n, className: a(Qg.sidebar, i.isMedium && Qg.sidebar__medium) }),
                 }),
                 c > 0 &&
                     e.jsx('div', {
-                        className: Ug.choiceAward,
+                        className: Qg.choiceAward,
                         children: e.jsx(ss, {
                             size: d >= S.Large ? as.Big : as.Small,
                             count: c,
@@ -6951,6 +6951,6 @@ const [Eu, zu] = w()(
             ],
         });
     });
-aa(e.jsx(sa, { children: e.jsx(os, { children: e.jsx(ra, { options: ns.SCHEDULE, children: e.jsx(Qg, {}) }) }) }), {
+aa(e.jsx(sa, { children: e.jsx(os, { children: e.jsx(ra, { options: ns.SCHEDULE, children: e.jsx(Ug, {}) }) }) }), {
     fullScreen: !0,
 });

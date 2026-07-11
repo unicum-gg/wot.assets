@@ -12,50 +12,6 @@
     display: flex;
     justify-content: center;
 }
-@keyframes SubTitle_fadeIn_c315a83c {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.SubTitle_a83825c5 {
-    font-size: 16rem;
-    font-weight: 400;
-    line-height: 1.3em;
-    margin-bottom: 8rem;
-    color: #f2f2f7;
-}
-.mediaMedium .SubTitle_a83825c5 {
-    font-size: 20rem;
-    font-weight: 400;
-    line-height: 1.2em;
-    margin-bottom: 12rem;
-}
-.mediaExtraLarge .SubTitle_a83825c5 {
-    font-size: 24rem;
-    font-weight: 400;
-    line-height: 1.2em;
-    margin-bottom: 16rem;
-}
-@keyframes Header_fadeIn_65f475ba {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-/* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable selector-no-qualifying-type */
-.Header_ee5a2d07 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 @keyframes Content_fadeIn_da09528a {
     from {
         opacity: 0;
@@ -66,12 +22,11 @@
 }
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Content_2f5bdb28 {
+.Content_3cc327d5 {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     flex: 1;
-    margin-bottom: 24rem;
 }
 @keyframes Header_fadeIn_65f475ba {
     from {
@@ -83,33 +38,24 @@
 }
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Header_7ffd36d {
+.Header_bb6ea0e2 {
     display: flex;
-    padding-bottom: 8rem;
-    border-bottom: 1rem solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1rem solid rgba(237, 230, 217, 0.1);
 }
 
-.Header_label_d1d657ae {
+.Header_label_301e7bba {
     font-size: 16rem;
     font-weight: 400;
     line-height: 1.3em;
-    color: #f2f2f7;
+    color: var(--color-general-secondary);
+    line-height: 1.1;
+    text-shadow:
+        0 2rem 0 rgba(0, 0, 0, 0.3),
+        0 2rem 30rem rgba(23, 23, 23, 0.4);
 }
-
-.Header_count_98f5c325 {
-    font-size: 15rem;
-    font-weight: 700;
-    line-height: 1.3em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 24rem;
-    height: 24rem;
-    margin-left: 6rem;
-    padding: 0 8rem;
-    border-radius: 4rem;
-    background-color: rgba(242, 242, 247, 0.1);
-    color: #f2f2f7;
+.mediaLarge .Header_label_301e7bba {
+    font-size: 22rem;
+    line-height: 1.15;
 }
 @keyframes Item_fadeIn_5f6fcc69 {
     from {
@@ -121,8 +67,7 @@
 }
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Item_35ab220c {
-    margin: 0 28rem 12rem 0;
+.Item_c5163bf {
     position: relative;
 }
 @keyframes RewardRow_fadeIn_eeac5b76 {
@@ -166,11 +111,11 @@
 }
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Count_b8c644a4 {
+.Count_36ff5cb1 {
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.2em;
-    color: #e9e2bf;
+    color: var(--color-general-primary);
     position: absolute;
     top: 100%;
     right: 2rem;
@@ -225,39 +170,37 @@
 }
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Label_4119cdba {
+.Label_25cbbcaf {
     font-size: 14rem;
     font-weight: 400;
     line-height: 1.2em;
     display: flex;
     justify-content: center;
     width: 92rem;
-    color: #ced9d9;
+    color: var(--color-currency-credits);
     text-align: center;
     transform: translateY(-7rem);
 }
-.Label_label__credits_de46e2c4 {
-    color: #ced9d9;
+.Label_label__credits_c318c9f1 {
+    color: var(--color-currency-credits);
 }
 .Label_label__vehicles_e3f8b3ce,
 .Label_label__gold_e3f8b3ce,
-.Label_label__premium_177d9045 {
-    color: #ffc363;
+.Label_label__premium_e3f8b3ce,
+.Label_label__premiumTank_5d5126e1 {
+    color: var(--color-currency-gold);
 }
 .Label_label__crystal_e3f8b3ce,
 .Label_label__bptaler_e3f8b3ce,
-.Label_label__freeXP_7048c917 {
-    color: #c9c9b6;
+.Label_label__freeXP_34a7d691 {
+    color: var(--color-currency-bond);
 }
-.Label_label__premiumTank_6ce89a8b {
-    color: #ffdd99;
-}
-.Label_label__customizations_46f7314f {
-    color: #e9e2bf;
+.Label_label__customizations_b90b17f2 {
+    color: var(--color-general-secondary);
 }
 
-.Label_accentGold_177d9045 {
-    color: #ffc363;
+.Label_accentGold_5d5126e1 {
+    color: var(--color-currency-gold);
 }
 @keyframes Reward_fadeIn_21f091ec {
     from {
@@ -269,8 +212,9 @@
 }
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.Reward_76393f28 {
+.Reward_e23f2c77 {
     width: 80rem;
+    height: 80rem;
 }
 
 .Reward_wrapper_b54b4dc5 {
@@ -288,8 +232,30 @@
 }
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.RewardRow_header_101fdc8c {
-    margin-bottom: 8rem;
+.RewardRow_f98d6058 {
+    display: flex;
+    flex-direction: column;
+}
+
+.RewardRow_header_e3184570 {
+    padding-bottom: 10rem;
+}
+.mediaLarge .RewardRow_header_e3184570 {
+    margin-bottom: 6rem;
+}
+
+.RewardRow_content_9bd36497 {
+    margin: 0 -8rem 36rem;
+}
+.mediaLarge .RewardRow_content_9bd36497 {
+    margin-bottom: 50rem;
+}
+.RewardRow_base__small_eeac5b76 .RewardRow_content_9bd36497 {
+    margin-bottom: 0;
+}
+
+.RewardRow_item_a2938aed {
+    padding: 8rem;
 }
 @keyframes Content_fadeIn_da09528a {
     from {
@@ -308,12 +274,24 @@
     height: 100%;
 }
 
-.Content_63e92260 {
+.Content_a7c73ed5 .Content_scroll_9fcfd0ba {
+    width: 752rem;
+    height: 100%;
+}
+
+.Content_a7c73ed5 .Content_scrollBar_32fb5c63 {
+    right: -40rem;
+}
+.mediaLarge .Content_a7c73ed5 .Content_scrollBar_32fb5c63 {
+    right: -50rem;
+}
+
+.Content_c61849db {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 864rem;
+    width: 752rem;
     min-height: 100%;
     margin: 0 30rem;
 }
@@ -327,68 +305,65 @@
 }
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-.App_6a538000 {
+.App_b494b37e {
     width: 100%;
     height: 100%;
     background: no-repeat center/cover;
     position: relative;
+    z-index: 0;
 }
 
-.App_closeButton_d9ee7ae6 {
+.App_b494b37e .App_closeButton_24dcdb0b {
     position: absolute;
-    top: 16rem;
-    right: 10rem;
-}
-.mediaMedium .App_closeButton_d9ee7ae6 {
     top: 30rem;
     right: 30rem;
-}
-.App_closeButton_d9ee7ae6 {
     z-index: 1;
 }
 
-.App_header_d674f46d {
-    padding-top: 40rem;
+.App_header_fcbfe4a9 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 32rem;
     position: absolute;
     top: 0;
     right: 0;
     left: 0;
 }
-.mediaLarge .App_header_d674f46d {
-    padding-top: 60rem;
+.mediaMedium .App_header_fcbfe4a9 {
+    padding-top: 42rem;
 }
-.App_base__top_0 .App_header_d674f46d {
-    padding-top: 20rem;
-}
-.mediaMedium .App_base__top_0 .App_header_d674f46d {
-    padding-top: 28rem;
-}
-.mediaExtraLarge .App_base__top_0 .App_header_d674f46d {
-    padding-top: 22rem;
+.mediaLarge .App_header_fcbfe4a9 {
+    padding-top: 50rem;
 }
 
-.App_scrollArea_1edf1cbf {
-    padding: 120rem 20rem 90rem;
-}
-.mediaMedium .App_scrollArea_1edf1cbf {
-    padding-top: 150rem;
-    padding-bottom: 100rem;
-}
-.mediaLarge .App_scrollArea_1edf1cbf {
-    padding-top: 170rem;
-    padding-bottom: 125rem;
-}
-.mediaExtraLarge .App_scrollArea_1edf1cbf {
-    padding-top: 200rem;
+.App_b494b37e .App_title_903814c5 {
+    line-height: 1;
 }
 
-.App_footer_77faf485 {
+.App_scrollArea_4a3767fe {
+    padding: 120rem 20rem;
+}
+.mediaMedium .App_scrollArea_4a3767fe {
+    padding: 130rem 20rem;
+}
+.mediaLarge .App_scrollArea_4a3767fe {
+    padding: 150rem 20rem;
+}
+.mediaExtraLarge .App_scrollArea_4a3767fe {
+    padding: 270rem 20rem;
+}
+
+.App_footer_36d816be {
     padding-bottom: 40rem;
     position: absolute;
     right: 0;
     bottom: 0;
     left: 0;
 }
-.mediaLarge .App_footer_77faf485 {
+.mediaMedium .App_footer_36d816be {
+    padding-bottom: 48rem;
+}
+.mediaLarge .App_footer_36d816be {
     padding-bottom: 60rem;
 }

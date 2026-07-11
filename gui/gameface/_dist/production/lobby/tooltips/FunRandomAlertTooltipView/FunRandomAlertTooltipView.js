@@ -290,7 +290,7 @@
                     })(),
                     ee = function (e) {
                         let n = '';
-                        for (let t = S.length - 1; t >= 0; t--) for (; e >= S[t]; ) ((n += P[t]), (e -= S[t]));
+                        for (let t = S.length - 1; t >= 0; t--) for (; e >= S[t];) ((n += P[t]), (e -= S[t]));
                         return n;
                     },
                     ne = Object.keys(A).reduce((e, n) => ((e[n] = () => viewEnv.getShowingStatus() === A[n]), e), {}),

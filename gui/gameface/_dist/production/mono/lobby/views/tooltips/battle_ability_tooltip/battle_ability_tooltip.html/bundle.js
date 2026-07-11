@@ -1,5 +1,5 @@
 import { W as e, j as a } from '../../../../chunks/vendor.js';
-import { i as s, f as l, n as t, a9 as i, c6 as c, cB as r, dc as o, cz as n } from '../../../../chunks/lib.js';
+import { i as s, f as l, n as t, a9 as i, c7 as c, cC as r, dd as o, cA as n } from '../../../../chunks/lib.js';
 import { D as d } from '../../../../chunks/divider.js';
 import { H as p } from '../../../../chunks/head_decorator.js';
 const [m, _] = s()(({ observableModel: e }) => {
@@ -78,7 +78,7 @@ const [m, _] = s()(({ observableModel: e }) => {
     T = 'Header_icon_35d94e17',
     A = 'Header_categoryIcon_d7b554e4',
     I = 'Header_category_8594ee8',
-    B = 'Header_warningWrapper_998aa05c',
+    C = 'Header_warningWrapper_998aa05c',
     H = 'Header_warningIcon_e020543a',
     L = e(function () {
         const { model: e } = _(),
@@ -89,7 +89,7 @@ const [m, _] = s()(({ observableModel: e }) => {
                 children: [
                     !e.isPurchased.get() &&
                         a.jsxs('div', {
-                            className: B,
+                            className: C,
                             children: [
                                 a.jsx('div', { className: H }),
                                 a.jsx(i, { path: 'fl_tooltips.battleAbilityTooltip.notPurchased' }),
@@ -124,7 +124,7 @@ const [m, _] = s()(({ observableModel: e }) => {
             }),
         });
     }),
-    C = 'LevelsInfo_label_d846a2d6',
+    B = 'LevelsInfo_label_d846a2d6',
     D = 'LevelsInfo_headCell_2e36cfd9',
     W = 'LevelsInfo_cell_4befb142',
     k = 'LevelsInfo_row_e46e492b',
@@ -163,10 +163,18 @@ const [m, _] = s()(({ observableModel: e }) => {
                             children: [
                                 e
                                     .levelsLabels()
-                                    .labelsData[
-                                        s
-                                    ]?.map((e, s) => a.jsx(c, { text: e.valueTemplate, params: { value: e.value, sign: e.sign }, className: W }, s)),
-                                a.jsx('div', { className: C, children: l }),
+                                    .labelsData[s]?.map((e, s) =>
+                                        a.jsx(
+                                            c,
+                                            {
+                                                text: e.valueTemplate,
+                                                params: { value: e.value, sign: e.sign },
+                                                className: W,
+                                            },
+                                            s,
+                                        ),
+                                    ),
+                                a.jsx('div', { className: B, children: l }),
                             ],
                         },
                         s,
@@ -175,40 +183,40 @@ const [m, _] = s()(({ observableModel: e }) => {
             ],
         });
     }),
-    z = 'BattleAbilityTooltip_b3525077',
-    E = 'BattleAbilityTooltip_title_f3f1f3b2',
-    F = 'BattleAbilityTooltip_activationDepends_1375a1fa',
-    M = 'BattleAbilityTooltip_additionalInfo_fe550d87',
-    O = 'BattleAbilityTooltip_description_ae30df8d',
-    q = 'BattleAbilityTooltip_contentWrapper_dd6c2adb',
+    E = 'BattleAbilityTooltip_b3525077',
+    F = 'BattleAbilityTooltip_title_f3f1f3b2',
+    M = 'BattleAbilityTooltip_activationDepends_1375a1fa',
+    O = 'BattleAbilityTooltip_additionalInfo_fe550d87',
+    q = 'BattleAbilityTooltip_description_ae30df8d',
+    z = 'BattleAbilityTooltip_contentWrapper_dd6c2adb',
     G = 'BattleAbilityTooltip_footerWrapper_ca778cb1',
     J = 'BattleAbilityTooltip_altBtn_aa9e5a',
     K = function () {
         return a.jsx(o, {
             children: a.jsx(o.Decorator, {
                 children: a.jsxs('div', {
-                    className: z,
+                    className: E,
                     children: [
                         a.jsx(L, {}),
                         a.jsx(f, {}),
                         a.jsx(d, {}),
                         a.jsxs('div', {
-                            className: q,
+                            className: z,
                             children: [
-                                a.jsx(i, { className: E, path: 'fl_tooltips.battleAbilityTooltip.levelsTitle' }),
+                                a.jsx(i, { className: F, path: 'fl_tooltips.battleAbilityTooltip.levelsTitle' }),
                                 a.jsx(P, {}),
                             ],
                         }),
                         a.jsx(d, {}),
-                        a.jsx(i, { className: F, path: 'fl_tooltips.battleAbilityTooltip.activation_depends' }),
+                        a.jsx(i, { className: M, path: 'fl_tooltips.battleAbilityTooltip.activation_depends' }),
                         a.jsx(d, {}),
-                        a.jsx(i, { className: O, split: !0, path: 'fl_tooltips.battleAbilityTooltip.description' }),
+                        a.jsx(i, { className: q, split: !0, path: 'fl_tooltips.battleAbilityTooltip.description' }),
                         a.jsx(d, {}),
                         a.jsxs('div', {
                             className: G,
                             children: [
                                 a.jsx('div', { className: J }),
-                                a.jsx(i, { className: M, path: 'fl_tooltips.battleAbilityTooltip.addInfo' }),
+                                a.jsx(i, { className: O, path: 'fl_tooltips.battleAbilityTooltip.addInfo' }),
                             ],
                         }),
                     ],

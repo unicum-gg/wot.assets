@@ -172,7 +172,7 @@
                     y = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function w(e) {
                     let u = '';
-                    for (let t = y.length - 1; t >= 0; t--) for (; e >= y[t]; ) ((u += h[t]), (e -= y[t]));
+                    for (let t = y.length - 1; t >= 0; t--) for (; e >= y[t];) ((u += h[t]), (e -= y[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -899,7 +899,7 @@
                                             u(e).delete(t);
                                         },
                                         o = (e, ...t) => {
-                                            for (var n, o = m(u(e).values()); !(n = o()).done; ) (0, n.value)(...t);
+                                            for (var n, o = m(u(e).values()); !(n = o()).done;) (0, n.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: n, trigger: o }), []);
                                 })(),

@@ -188,7 +188,7 @@
                     w = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function T(u) {
                     let e = '';
-                    for (let t = w.length - 1; t >= 0; t--) for (; u >= w[t]; ) ((e += v[t]), (u -= w[t]));
+                    for (let t = w.length - 1; t >= 0; t--) for (; u >= w[t];) ((e += v[t]), (u -= w[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -983,9 +983,13 @@
                         if (t.mediumWidth && d) return i(e, t, b);
                         if (t.smallWidth && D) return i(e, t, b);
                         if (t.extraSmallWidth && m) return i(e, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return e;
                             if (t.largeHeight && B) return e;
                             if (t.mediumHeight && g) return e;
@@ -2394,7 +2398,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = re(a.keys()); !(u = t()).done; ) r(u.value, e);
+                                                        for (var u, t = re(a.keys()); !(u = t()).done;) r(u.value, e);
                                                     },
                                                     unsubscribe: r,
                                                 };
@@ -2878,6 +2882,7 @@
                         we.BattleBoosterGift,
                         we.OptionalDevice,
                         we.Attachment,
+                        we.TmanToken,
                     ],
                     Ie = [we.Gold, we.Credits, we.Crystal, we.FreeXp],
                     Le = [we.BattlePassPoints, we.EquipCoin],
@@ -3568,7 +3573,7 @@
                                     s = (0, n.useCallback)(
                                         (e) => {
                                             let n = ve(t, e, u);
-                                            for (; n !== t; ) {
+                                            for (; n !== t;) {
                                                 if (r[n].value) {
                                                     a(n);
                                                     break;

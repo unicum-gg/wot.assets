@@ -52,6 +52,16 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
+.BattleLoadingApp_vignette_d2733c95,
+.BattleLoadingApp_bgImage_412d6da0,
+.BattleLoadingApp_container_49dd90d1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 /* stylelint-disable scss/dollar-variable-pattern */
 .BattleLoadingApp_b9007f71 {
     width: 100%;
@@ -61,12 +71,7 @@ html[lang='th'] input {
     position: relative;
 }
 
-.BattleLoadingApp_vignette_8978ecaa {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.BattleLoadingApp_vignette_d2733c95 {
     background: url('R.images.last_stand.gui.maps.icons.battle.eventLoading.loadingPicVignette') no-repeat 50%/100% 100%;
 }
 
@@ -91,12 +96,7 @@ html[lang='th'] input {
     bottom: 28rem;
 }
 
-.BattleLoadingApp_bgImage_b59d6fa2 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.BattleLoadingApp_bgImage_412d6da0 {
     background: no-repeat 50% / cover;
 }
 
@@ -172,14 +172,9 @@ html[lang='th'] input {
     width: 100%;
 }
 
-.BattleLoadingApp_container_a0ad6b27 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.BattleLoadingApp_container_49dd90d1 {
     transform: translateY(-14rem);
 }
-.mediaMedium .BattleLoadingApp_container_a0ad6b27 {
+.mediaMedium .BattleLoadingApp_container_49dd90d1 {
     transform: translateY(0);
 }

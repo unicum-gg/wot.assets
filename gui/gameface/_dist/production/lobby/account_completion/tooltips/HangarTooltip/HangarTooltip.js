@@ -172,7 +172,7 @@
                     f = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function T(u) {
                     let e = '';
-                    for (let t = f.length - 1; t >= 0; t--) for (; u >= f[t]; ) ((e += b[t]), (u -= f[t]));
+                    for (let t = f.length - 1; t >= 0; t--) for (; u >= f[t];) ((e += b[t]), (u -= f[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -931,7 +931,7 @@
                         let a = T.exec(u),
                             o = u,
                             s = 0;
-                        for (; a; ) {
+                        for (; a;) {
                             const t = a[0],
                                 i = x.exec(t),
                                 A = P.exec(t),
@@ -1136,6 +1136,7 @@
                         S.BattleBoosterGift,
                         S.OptionalDevice,
                         S.Attachment,
+                        S.TmanToken,
                     ],
                     H = [S.Gold, S.Credits, S.Crystal, S.FreeXp],
                     q = [S.BattlePassPoints, S.EquipCoin],
@@ -1855,9 +1856,13 @@
                         if (t.mediumWidth && l) return Fu(e, t, g);
                         if (t.smallWidth && D) return Fu(e, t, g);
                         if (t.extraSmallWidth && c) return Fu(e, t, g);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return e;
                             if (t.largeHeight && d) return e;
                             if (t.mediumHeight && C) return e;
@@ -2067,7 +2072,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = pu(n.keys()); !(u = t()).done; ) i(u.value, e);
+                                                        for (var u, t = pu(n.keys()); !(u = t()).done;) i(u.value, e);
                                                     },
                                                     unsubscribe: i,
                                                 };

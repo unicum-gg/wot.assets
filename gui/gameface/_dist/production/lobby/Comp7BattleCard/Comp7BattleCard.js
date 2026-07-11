@@ -401,7 +401,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function _(e) {
                     let u = '';
-                    for (let a = r.length - 1; a >= 0; a--) for (; e >= r[a]; ) ((u += t[a]), (e -= r[a]));
+                    for (let a = r.length - 1; a >= 0; a--) for (; e >= r[a];) ((u += t[a]), (e -= r[a]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1070,9 +1070,13 @@
                         if (a.mediumWidth && d) return w(u, a, D);
                         if (a.smallWidth && c) return w(u, a, D);
                         if (a.extraSmallWidth && m) return w(u, a, D);
-                        if (
-                            !(a.extraLargeWidth || a.largeWidth || a.mediumWidth || a.smallWidth || a.extraSmallWidth)
-                        ) {
+                        if (!(
+                            a.extraLargeWidth ||
+                            a.largeWidth ||
+                            a.mediumWidth ||
+                            a.smallWidth ||
+                            a.extraSmallWidth
+                        )) {
                             if (a.extraLargeHeight && E) return u;
                             if (a.largeHeight && b) return u;
                             if (a.mediumHeight && g) return u;
@@ -1208,7 +1212,7 @@
                             r = u || {};
                         let _ = W.exec(e),
                             n = e;
-                        for (; _; ) {
+                        for (; _;) {
                             const a = _[0],
                                 i = $.exec(a),
                                 o = H.exec(a),
@@ -1955,7 +1959,7 @@
                     Se = (e, u, a, t) => {
                         let r = u.exec(e),
                             _ = 0;
-                        for (; r; ) (_ !== r.index && a(e.slice(_, r.index)), t(r), (_ = u.lastIndex), (r = u.exec(e)));
+                        for (; r;) (_ !== r.index && a(e.slice(_, r.index)), t(r), (_ = u.lastIndex), (r = u.exec(e)));
                         _ !== e.length && a(e.slice(_));
                     },
                     Re = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -2002,7 +2006,7 @@
                               if (!t) return [e];
                               const r = [];
                               let _ = 0;
-                              for (; t; ) {
+                              for (; t;) {
                                   const n = u.justifyContent === pe.FlexEnd ? t.index : a.lastIndex;
                                   (r.push(e.slice(_, n)), (_ = n), (t = a.exec(e)));
                               }
@@ -2047,7 +2051,9 @@
                     },
                     Me = (e, u, a = '', t) => {
                         const r = [],
-                            _ = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            _ = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             Se(
                                 _,
@@ -2236,7 +2242,7 @@
                                                     l = ((e, u) => {
                                                         let a = 0,
                                                             t = e.length - 1;
-                                                        for (; t - a >= 0; ) {
+                                                        for (; t - a >= 0;) {
                                                             const r = a + Math.ceil(0.5 * (t - a));
                                                             $e(e[r], u) ? (t = r - 1) : (a = r + 1);
                                                         }
@@ -3950,7 +3956,7 @@
                         let _ = pa.exec(e),
                             n = e,
                             i = 0;
-                        for (; _; ) {
+                        for (; _;) {
                             const a = _[0],
                                 o = ha.exec(a),
                                 s = va.exec(a),

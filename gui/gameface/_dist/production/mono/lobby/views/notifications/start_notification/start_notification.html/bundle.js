@@ -1,10 +1,10 @@
 import { m as e, j as s, e as a } from '../../../../chunks/vendor.js';
 import {
     i as n,
-    a6 as o,
-    F as t,
+    a6 as t,
+    F as o,
     h as l,
-    Y as r,
+    t as r,
     f as p,
     C as i,
     n as c,
@@ -28,7 +28,7 @@ const [j, _] = n()(
         const { model: e, controls: n } = _(),
             { bundleType: m, isPopUp: b, isButtonDisabled: j } = e.root.get(),
             { getExtImage: y, getText: v } = u(m);
-        return s.jsxs(o, {
+        return s.jsxs(t, {
             className: a(h, b && g),
             children: [
                 s.jsxs('div', {
@@ -38,7 +38,7 @@ const [j, _] = n()(
                             className: x,
                             style: { backgroundImage: `url(${y('entryPoint.notification')})` },
                         }),
-                        s.jsx(t, {
+                        s.jsx(o, {
                             text: v('entryPoint.title'),
                             className: A,
                             params: { eventName: v('bundle.name') },

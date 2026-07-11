@@ -7,18 +7,18 @@ import {
     F as r,
     V as o,
     f as n,
-    j as p,
+    v as p,
     B as m,
     t as d,
     r as u,
     U as h,
 } from '../../../chunks/lib.js';
 import { E as v } from '../../../chunks/enums.js';
-/* empty css                     */ const [_, j] = i()(
+/* empty css                     */ const [_, b] = i()(
         ({ observableModel: e }) => ({ root: e.object(), vehicleInfo: e.object('vehicleInfo') }),
         ({ externalModel: e }) => ({ selectResources: e.createCallbackNoArgs('onAction') }),
     ),
-    b = 'App_a7ca6d5b',
+    j = 'App_a7ca6d5b',
     x = 'App_base__visible_0',
     N = 'App_content_98101af6',
     A = 'App_title_0',
@@ -34,7 +34,7 @@ import { E as v } from '../../../chunks/enums.js';
         [v.TWO_PARALLEL_PRODUCTS]: S.description.twoParallelProducts(),
     },
     T = e(function () {
-        const { model: e, controls: i } = j(),
+        const { model: e, controls: i } = b(),
             { isVisible: u, regularRewardsCount: h, topRewardsCount: v, eventMode: _ } = e.root.get(),
             R = e.vehicleInfo.get(),
             T = l(
@@ -42,7 +42,7 @@ import { E as v } from '../../../chunks/enums.js';
                 { large: { buttonSize: t.medium, vehicleIconSize: c.x48x48 } },
             );
         return s.jsx('div', {
-            className: a(b, u && x),
+            className: a(j, u && x),
             children: s.jsx('div', {
                 className: N,
                 children:

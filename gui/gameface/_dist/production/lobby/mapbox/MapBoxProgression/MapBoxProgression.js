@@ -172,7 +172,7 @@
                     w = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function S(e) {
                     let u = '';
-                    for (let t = w.length - 1; t >= 0; t--) for (; e >= w[t]; ) ((u += v[t]), (e -= w[t]));
+                    for (let t = w.length - 1; t >= 0; t--) for (; e >= w[t];) ((u += v[t]), (e -= w[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -881,9 +881,13 @@
                         if (t.mediumWidth && A) return a(u, t, f);
                         if (t.smallWidth && F) return a(u, t, f);
                         if (t.extraSmallWidth && D) return a(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && g) return u;
                             if (t.largeHeight && B) return u;
                             if (t.mediumHeight && C) return u;
@@ -1594,7 +1598,7 @@
                                             u(e).delete(t);
                                         },
                                         a = (e, ...t) => {
-                                            for (var n, r = oe(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = oe(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, n.useMemo)(() => ({ on: t, off: r, trigger: a }), []);
                                 })(),
@@ -3479,6 +3483,7 @@
                         Yu.BattleBoosterGift,
                         Yu.OptionalDevice,
                         Yu.Attachment,
+                        Yu.TmanToken,
                     ],
                     it = [Yu.Gold, Yu.Credits, Yu.Crystal, Yu.FreeXp],
                     ot = [Yu.BattlePassPoints, Yu.EquipCoin],

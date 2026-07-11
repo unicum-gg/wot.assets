@@ -1,7 +1,6 @@
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable scss/dollar-variable-pattern */
-/* should be percentage of screen width */
 @keyframes App_fadeIn_0 {
     0% {
         opacity: 0;
@@ -125,7 +124,6 @@
         transform: translateY(0);
     }
 }
-/* should be percentage of screen width */
 /* Sizes of the flag have to be in pixels. This view is rendered 
 on a texture and its positioning and sizes should be managed by the texture and camera  */
 /* stylelint-disable declaration-property-unit-disallowed-list */

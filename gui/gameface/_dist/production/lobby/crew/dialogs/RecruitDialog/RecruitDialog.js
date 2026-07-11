@@ -461,7 +461,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let t = '';
-                    for (let u = r.length - 1; u >= 0; u--) for (; e >= r[u]; ) ((t += n[u]), (e -= r[u]));
+                    for (let u = r.length - 1; u >= 0; u--) for (; e >= r[u];) ((t += n[u]), (e -= r[u]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -977,9 +977,13 @@
                         if (u.mediumWidth && f) return i(t, u, C);
                         if (u.smallWidth && g) return i(t, u, C);
                         if (u.extraSmallWidth && p) return i(t, u, C);
-                        if (
-                            !(u.extraLargeWidth || u.largeWidth || u.mediumWidth || u.smallWidth || u.extraSmallWidth)
-                        ) {
+                        if (!(
+                            u.extraLargeWidth ||
+                            u.largeWidth ||
+                            u.mediumWidth ||
+                            u.smallWidth ||
+                            u.extraSmallWidth
+                        )) {
                             if (u.extraLargeHeight && A) return t;
                             if (u.largeHeight && h) return t;
                             if (u.mediumHeight && b) return t;
@@ -1366,7 +1370,7 @@
                             u = re(t);
                         let n,
                             r = e;
-                        for (; null !== (n = te.exec(e)); ) {
+                        for (; null !== (n = te.exec(e));) {
                             const e = n[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
                                 const t = u + e[2].replace(/\.\.\//g, '');
@@ -1473,7 +1477,7 @@
                                             let t;
                                             const u = ae(),
                                                 n = re(u);
-                                            for (; null !== (t = ee.exec(e)); ) {
+                                            for (; null !== (t = ee.exec(e));) {
                                                 const e = t[0].match(/href="(.*?)"/);
                                                 if (e && !e[1].includes(ue) && n) {
                                                     const t = n + e[1].replace(/\.\.\//g, ''),
@@ -1488,7 +1492,7 @@
                                             ((e) => {
                                                 const t = re(ae());
                                                 let u;
-                                                for (; null !== (u = ee.exec(e)); ) {
+                                                for (; null !== (u = ee.exec(e));) {
                                                     const e = u[0].match(/href="(.*?)"/);
                                                     if (e) {
                                                         const u = t + e[1].replace(/\.\.\//g, ''),
@@ -2420,7 +2424,7 @@
                     ht = (e, t, u, n) => {
                         let r = t.exec(e),
                             a = 0;
-                        for (; r; ) (a !== r.index && u(e.slice(a, r.index)), n(r), (a = t.lastIndex), (r = t.exec(e)));
+                        for (; r;) (a !== r.index && u(e.slice(a, r.index)), n(r), (a = t.lastIndex), (r = t.exec(e)));
                         a !== e.length && u(e.slice(a));
                     },
                     bt = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -2466,7 +2470,7 @@
                               if (!n) return [e];
                               const r = [];
                               let a = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const o = t.justifyContent === at.FlexEnd ? n.index : u.lastIndex;
                                   (r.push(e.slice(a, o)), (a = o), (n = u.exec(e)));
                               }
@@ -2511,7 +2515,9 @@
                     },
                     vt = (e, t, u = '', n) => {
                         const r = [],
-                            a = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            a = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             ht(
                                 a,
@@ -2641,7 +2647,7 @@
                             c = ((e, t) => {
                                 let u = 0,
                                     n = e.length - 1;
-                                for (; n - u >= 0; ) {
+                                for (; n - u >= 0;) {
                                     const r = u + Math.ceil(0.5 * (n - u));
                                     yt(e[r], t) ? (n = r - 1) : (u = r + 1);
                                 }
@@ -3130,7 +3136,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, u = $t(r.keys()); !(e = u()).done; ) a(e.value, t);
+                                                        for (var e, u = $t(r.keys()); !(e = u()).done;) a(e.value, t);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -3611,7 +3617,7 @@
                                             t(e).delete(u);
                                         },
                                         r = (e, ...u) => {
-                                            for (var n, r = Au(t(e).values()); !(n = r()).done; ) (0, n.value)(...u);
+                                            for (var n, r = Au(t(e).values()); !(n = r()).done;) (0, n.value)(...u);
                                         };
                                     return (0, a.useMemo)(() => ({ on: u, off: n, trigger: r }), []);
                                 })(),
@@ -4588,6 +4594,9 @@
                                         }
                                     );
                             }, [j, G]),
+                                (0, a.useEffect)(() => {
+                                    !$ && j && G();
+                                }, [$, j, G]),
                                 (0, a.useEffect)(() => {
                                     void 0 !== f && (L.current.open = f);
                                 }, [f]));

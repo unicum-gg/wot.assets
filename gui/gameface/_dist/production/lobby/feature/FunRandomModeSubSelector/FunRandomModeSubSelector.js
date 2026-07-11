@@ -321,7 +321,7 @@
                     })(),
                     ue = function (e) {
                         let u = '';
-                        for (let t = w.length - 1; t >= 0; t--) for (; e >= w[t]; ) ((u += v[t]), (e -= w[t]));
+                        for (let t = w.length - 1; t >= 0; t--) for (; e >= w[t];) ((u += v[t]), (e -= w[t]));
                         return u;
                     };
                 function te() {
@@ -898,9 +898,13 @@
                         if (t.mediumWidth && F) return r(u, t, b);
                         if (t.smallWidth && _) return r(u, t, b);
                         if (t.extraSmallWidth && g) return r(u, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && D) return u;
                             if (t.largeHeight && C) return u;
                             if (t.mediumHeight && B) return u;
@@ -1268,6 +1272,7 @@
                         z.BattleBoosterGift,
                         z.OptionalDevice,
                         z.Attachment,
+                        z.TmanToken,
                     ],
                     q = [z.Gold, z.Credits, z.Crystal, z.FreeXp],
                     X = [z.BattlePassPoints, z.EquipCoin],
@@ -2505,7 +2510,7 @@
                         let s = fu.exec(e),
                             o = e,
                             l = 0;
-                        for (; s; ) {
+                        for (; s;) {
                             const t = s[0],
                                 n = vu.exec(t),
                                 c = wu.exec(t),
@@ -3934,7 +3939,7 @@
                     zt = (e, u, t, n) => {
                         let a = u.exec(e),
                             r = 0;
-                        for (; a; ) (r !== a.index && t(e.slice(r, a.index)), n(a), (r = u.lastIndex), (a = u.exec(e)));
+                        for (; a;) (r !== a.index && t(e.slice(r, a.index)), n(a), (r = u.lastIndex), (a = u.exec(e)));
                         r !== e.length && t(e.slice(r));
                     },
                     jt = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -3981,7 +3986,7 @@
                               if (!n) return [e];
                               const a = [];
                               let r = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const i = u.justifyContent === Lt.FlexEnd ? n.index : t.lastIndex;
                                   (a.push(e.slice(r, i)), (r = i), (n = t.exec(e)));
                               }
@@ -4026,7 +4031,9 @@
                     },
                     qt = (e, u, t = '', n) => {
                         const a = [],
-                            r = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            r = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             zt(
                                 r,
@@ -4215,7 +4222,7 @@
                                                     c = ((e, u) => {
                                                         let t = 0,
                                                             n = e.length - 1;
-                                                        for (; n - t >= 0; ) {
+                                                        for (; n - t >= 0;) {
                                                             const a = t + Math.ceil(0.5 * (n - t));
                                                             Yt(e[a], u) ? (n = a - 1) : (t = a + 1);
                                                         }

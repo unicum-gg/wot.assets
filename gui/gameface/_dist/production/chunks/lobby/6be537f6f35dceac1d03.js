@@ -157,7 +157,7 @@
                                         t(e).delete(a);
                                     },
                                     r = (e, ...a) => {
-                                        for (var n, r = f(t(e).values()); !(n = r()).done; ) (0, n.value)(...a);
+                                        for (var n, r = f(t(e).values()); !(n = r()).done;) (0, n.value)(...a);
                                     };
                                 return (0, s.useMemo)(() => ({ on: a, off: n, trigger: r }), []);
                             })(),
@@ -912,8 +912,7 @@
                         ? `${e}`
                         : (function (e) {
                               let t = '';
-                              for (let a = Ie.length - 1; a >= 0; a--)
-                                  for (; e >= Ie[a]; ) ((t += Re[a]), (e -= Ie[a]));
+                              for (let a = Ie.length - 1; a >= 0; a--) for (; e >= Ie[a];) ((t += Re[a]), (e -= Ie[a]));
                               return t;
                           })(e),
                 Le = {

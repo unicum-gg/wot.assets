@@ -1,14 +1,14 @@
 import { r as e } from './vendor.js';
-import { aU as r, F as t, aR as n, aZ as s } from './lib.js';
-const a = (a) => () => {
-    const { steps: o, autoStart: u = !0 } = a,
+import { b1 as r, Z as t, a_ as n, b as s } from './lib.js';
+const o = (o) => () => {
+    const { steps: a, autoStart: u = !0 } = o,
         l = e.useRef(null),
         i = e.useRef('idle'),
         d = r(),
         c = t(),
         f = n(),
         p = e.useMemo(() => {
-            const e = o[Symbol.iterator](),
+            const e = a[Symbol.iterator](),
                 r = () => {
                     const t = e.next();
                     if (t.done) return ((i.current = 'end'), void d.trigger('end'));
@@ -28,10 +28,10 @@ const a = (a) => () => {
             return {
                 rootRef: l,
                 stateRef: i,
-                steps: o,
+                steps: a,
                 delayUntilStep: (e) => {
                     let r = 0;
-                    for (let t = 0; t < o.length; t++) if (((r += o[t].delay), o[t] === e)) return r;
+                    for (let t = 0; t < a.length; t++) if (((r += a[t].delay), a[t] === e)) return r;
                     throw new Error(`delayUntilStep didn't find step: ${e.name}`);
                 },
                 events: { on: d.on, off: d.off },
@@ -48,7 +48,7 @@ const a = (a) => () => {
                 skipAll: () => {
                     (c.clear(),
                         f.run(() => {
-                            (o.forEach((e) => {
+                            (a.forEach((e) => {
                                 l.current
                                     ? l.current.classList.add(e.name)
                                     : console.error(`${e} tried to be set, but rootRef was not received in api`);
@@ -58,7 +58,7 @@ const a = (a) => () => {
                         }));
                 },
             };
-        }, [c, d, f, o]);
+        }, [c, d, f, a]);
     return (
         s(() => {
             u && p.start();
@@ -66,4 +66,4 @@ const a = (a) => () => {
         p
     );
 };
-export { a as c };
+export { o as c };

@@ -1,7 +1,7 @@
-import { br as t, u as e, m as o, M as a, I as i, bs as n, bt as s, bu as r } from './lib.js';
+import { bo as t, u as e, m as o, M as a, I as i, bp as n, bq as s, br as r } from './lib.js';
 import './vendor.js';
 const m = new t(window),
-    l = (t, e) => {
+    p = (t, e) => {
         const { name: o } = t,
             a = r(t, e);
         if (!m.has(a))
@@ -13,14 +13,14 @@ const m = new t(window),
             }
         return a;
     },
-    p = (t) => ('overlayType' in t ? t.overlayType : void 0);
+    l = (t) => ('overlayType' in t ? t.overlayType : void 0);
 function c(t, r) {
     const m = ((t, e) => e || (t >= a.Medium ? i.Big : i.Small))(e().mediaSize, r);
     return {
         parsedRewards: o(t, ({ ...t }) => ({
             ...t,
-            special: p(t),
-            image: l(t, m),
+            special: l(t),
+            image: p(t, m),
             size: m,
             valueType: s(t.name),
             tooltipArgs: n(

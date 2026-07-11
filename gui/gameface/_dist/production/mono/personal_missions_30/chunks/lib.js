@@ -1043,7 +1043,7 @@ function We(e) {
     let t = '';
     for (let n = Ve.length - 1; n >= 0; n--) {
         let r = Ve[n];
-        for (; void 0 !== r && e >= r; ) ((t += Ue[n]), (e -= r));
+        for (; void 0 !== r && e >= r;) ((t += Ue[n]), (e -= r));
     }
     return t;
 }
@@ -1515,7 +1515,8 @@ function $t({ resId: e = 0, contentId: t, decoratorId: n, disabled: r, args: s, 
             let a = null;
             function c() {
                 r ||
-                    ((i.current.status = Ft),
+                    ('display' === i.current.status && (he.tooltip.hide(e, t, n), (i.current.status = It)),
+                    (i.current.status = Ft),
                     window.clearTimeout(i.current.timeoutId),
                     (i.current.timeoutId = window.setTimeout(l, o)));
             }
@@ -1531,7 +1532,7 @@ function $t({ resId: e = 0, contentId: t, decoratorId: n, disabled: r, args: s, 
                 ) {
                     At.delete(a);
                     let e = a.parentElement;
-                    for (; e && !At.has(e); ) e = e.parentElement;
+                    for (; e && !At.has(e);) e = e.parentElement;
                     if (e) {
                         At.get(e).show();
                     }
@@ -2495,7 +2496,7 @@ function Fn(e, t) {
     for (let n = 0; n < e.length; n++) {
         if ('$' === e[n]) {
             let r = n + 1;
-            for (; r < e.length && !An(e[r]); ) r++;
+            for (; r < e.length && !An(e[r]);) r++;
             const s = e.slice(n + 1, r),
                 a = t[s];
             if (a) return Fn(e.replace(`$${s}`, String(a)), t);
@@ -3692,6 +3693,7 @@ const cs = [
         ns.DeluxeGift,
         ns.BattleBoosterGift,
         ns.OptionalDevice,
+        ns.TmanToken,
     ],
     ls = [ns.Gold, ns.Credits, ns.Crystal, ns.FreeXp],
     us = [ns.BattlePassPoints, ns.EquipCoin],
@@ -4137,7 +4139,7 @@ function ya(e, t) {
             o = n,
             i = -3,
             c = -3;
-        for (e.splice(0, 1); e.length > 0; ) {
+        for (e.splice(0, 1); e.length > 0;) {
             const t = e.findIndex((e) => e[0].x === s.x && e[0].y === s.y);
             if (-1 === t) break;
             const n = e[t],
@@ -4777,7 +4779,7 @@ const ho = 'prestige',
         base__enamel: 'VehiclePrestigeLevel_base__enamel_4426b46c',
     };
 function xo({ level: e, grade: t, type: n, direction: r, classNames: s, ...a }) {
-    return e < 1
+    return e < 1 || 'undefined' === n
         ? null
         : o.jsxs('div', {
               ...a,
@@ -5353,7 +5355,7 @@ export {
     dn as Y,
     Ba as Z,
     Ct as _,
-    Lt as a,
+    un as a,
     Fe as a0,
     sr as a1,
     Fr as a2,
@@ -5391,27 +5393,27 @@ export {
     ut as ax,
     Io as ay,
     Oo as az,
-    Et as b,
+    v as b,
     Wt as c,
-    mn as d,
+    pt as d,
     A as e,
-    un as f,
-    Ie as g,
-    Be as h,
+    ge as f,
+    Be as g,
+    zt as h,
     ln as i,
-    pt as j,
-    Te as k,
-    ge as l,
-    zt as m,
-    Ut as n,
-    q as o,
-    Oe as p,
-    an as q,
-    v as r,
+    Ut as j,
+    Et as k,
+    Lt as l,
+    Te as m,
+    Oe as n,
+    an as o,
+    Re as p,
+    mn as q,
+    Ie as r,
     he as s,
     Wn as t,
     Yt as u,
-    Re as v,
+    q as v,
     tr as w,
     vt as x,
     Vn as y,

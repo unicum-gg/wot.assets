@@ -1,5 +1,6 @@
-import { a as e, l as t } from './getRewardImage.js';
-var o = ((e) => (
+import { x as e } from './lib.js';
+import { l as t, a as o } from './getRewardImage.js';
+var r = ((e) => (
     (e.LootBox = 'lootBox'),
     (e.Vehicles = 'vehicles'),
     (e.Style = 'style'),
@@ -30,109 +31,143 @@ var o = ((e) => (
     (e.Consumables = 'consumables'),
     (e.Rations = 'rations'),
     e
-))(o || {});
+))(r || {});
 const s = {
-        [o.Vehicles]: 'vehicles',
-        [o.Style]: 'style',
-        [o.Style3D]: 'style_3d',
-        [o.CrewMember]: 'tankman',
-        [o.PremiumPlus]: 'premium_plus_universal',
-        [o.Gold]: 'gold',
-        [o.Crystal]: 'crystal',
-        [o.Credits]: 'credits',
-        [o.FreeXP]: 'freeXP',
-        [o.Customizations]: 'customizations',
-        [o.ExperimentalEquipment]: 'expequipments_gift',
-        [o.Components]: 'equipCoin',
-        [o.ImprovedEquipment]: 'deluxe_gift',
-        [o.BountyEquipment]: 'trophy_gift',
-        [o.StandardEquipment]: 'new_device_mi_gift',
-        [o.Directives]: 'battle_booster_gift',
-        [o.MentoringLicense]: 'mentoringLicense',
-        [o.CrewBook]: 'crewBook',
-        [o.Guide]: 'guide',
-        [o.Brochure]: 'brochure',
-        [o.RecertificationForm]: 'recertificationForm',
-        [o.Blueprints]: 'blueprint_tube',
-        [o.BattleBonusX5]: 'battle_bonus_x5',
-        [o.CrewBonusX3]: 'crew_bonus_x3',
-        [o.PersonalReserves]: 'personal_reserves',
-        [o.Consumables]: 'consumables',
-        [o.Rations]: 'rations',
+        [r.Vehicles]: 'vehicles',
+        [r.Style]: 'style',
+        [r.Style3D]: 'style_3d',
+        [r.CrewMember]: 'tankman',
+        [r.PremiumPlus]: 'premium_plus_universal',
+        [r.Gold]: 'gold',
+        [r.Crystal]: 'crystal',
+        [r.Credits]: 'credits',
+        [r.FreeXP]: 'freeXP',
+        [r.Customizations]: 'customizations',
+        [r.ExperimentalEquipment]: 'expequipments_gift',
+        [r.Components]: 'equipCoin',
+        [r.ImprovedEquipment]: 'deluxe_gift',
+        [r.BountyEquipment]: 'trophy_gift',
+        [r.StandardEquipment]: 'new_device_mi_gift',
+        [r.Directives]: 'battle_booster_gift',
+        [r.MentoringLicense]: 'mentoringLicense',
+        [r.CrewBook]: 'crewBook',
+        [r.Guide]: 'guide',
+        [r.Brochure]: 'brochure',
+        [r.RecertificationForm]: 'recertificationForm',
+        [r.Blueprints]: 'blueprint_tube',
+        [r.BattleBonusX5]: 'battle_bonus_x5',
+        [r.CrewBonusX3]: 'crew_bonus_x3',
+        [r.PersonalReserves]: 'personal_reserves',
+        [r.Consumables]: 'consumables',
+        [r.Rations]: 'rations',
     },
-    r = [o.RecertificationForm],
-    n = [o.Vehicles, o.Style, o.Style3D, o.Attachment],
-    i = [
-        o.CrewMember,
-        o.Customizations,
-        o.ExperimentalEquipment,
-        o.ImprovedEquipment,
-        o.BountyEquipment,
-        o.StandardEquipment,
-        o.Directives,
-        o.CrewBook,
-        o.Guide,
-        o.Brochure,
-        o.Blueprints,
-        o.PersonalReserves,
-        o.Consumables,
-        o.Rations,
+    n = [r.RecertificationForm],
+    i = [r.Vehicles, r.Style, r.Style3D, r.Attachment],
+    a = [
+        r.CrewMember,
+        r.Customizations,
+        r.ExperimentalEquipment,
+        r.ImprovedEquipment,
+        r.BountyEquipment,
+        r.StandardEquipment,
+        r.Directives,
+        r.CrewBook,
+        r.Guide,
+        r.Brochure,
+        r.Blueprints,
+        r.PersonalReserves,
+        r.Consumables,
+        r.Rations,
     ],
-    a = (e) => e.split('_')[0] === o.LootBox,
-    u = (e) => e.replace(`${o.LootBox}_`, ''),
+    d = (e) => e.split('_')[0] === r.LootBox,
+    m = (e) => e.replace(`${r.LootBox}_`, ''),
     l = (e) => s[e] || e;
-function d(o, s) {
-    const r = l(o);
-    return a(o) ? t(s, u(o)) : e(R.images, `gui.maps.icons.quests.bonuses.${s}.${r}`);
+function u(e, r) {
+    const s = l(e);
+    return d(e) ? t(r, m(e)) : o(R.images, `gui.maps.icons.quests.bonuses.${r}.${s}`);
 }
-const m = R.strings.tooltips.awardItem;
-function c(t, s) {
-    if (t.startsWith(o.LootBox)) {
-        const e = t.slice(`${o.LootBox}_`.length);
-        return {
-            contentId: R.views.mono.lootbox.tooltips.box_tooltip('resId'),
-            args: { boxCategory: e, eventName: s },
-        };
-    }
-    if (n.includes(t) || i.includes(t))
-        return {
-            contentId: R.views.mono.lootbox.tooltips.statistics_category('resId'),
-            args: { bonusesCategory: t, eventName: s },
-        };
-    if (t === o.MentoringLicense)
-        return {
-            contentId: R.views.lobby.crew.tooltips.MentoringLicenseTooltip('resId'),
-            args: { bonusesCategory: t, eventName: s },
-        };
-    if (r.includes(t)) return { args: { bonusesCategory: t, eventName: s } };
+function p(t) {
+    const s = e.resolve('strings');
     switch (t) {
-        case o.PremiumPlus:
-            return { header: m.premium_plus.header(), body: m.premium_plus.body() };
-        case o.Credits:
-            return { header: m.credits.header(), body: m.credits.body() };
-        case o.Gold:
-            return { header: m.gold.header(), body: m.gold.body() };
-        case o.Crystal:
-            return { header: m.crystal.header(), body: m.crystal.body() };
-        case o.FreeXP:
-            return { header: m.freeXP.header(), body: m.freeXP.body() };
-        case o.Components:
-            return { header: m.equipCoin.header(), body: m.equipCoin.body() };
-        case o.BattleBonusX5:
+        case r.PremiumPlus:
             return {
-                header: R.strings.tooltips.quests.bonuses.token.battle_bonus_x5.header(),
-                body: R.strings.tooltips.quests.bonuses.token.battle_bonus_x5.body(),
+                header: s.readOrEmpty('tooltips.awardItem.premium_plus.header'),
+                body: s.readOrEmpty('tooltips.awardItem.premium_plus.body'),
             };
-        case o.CrewBonusX3:
+        case r.Credits:
             return {
-                header: R.strings.tooltips.quests.bonuses.token.crew_bonus_x3.header(),
-                body: R.strings.tooltips.quests.bonuses.token.crew_bonus_x3.body(),
+                header: s.readOrEmpty('tooltips.awardItem.credits.header'),
+                body: s.readOrEmpty('tooltips.awardItem.credits.body'),
+            };
+        case r.Gold:
+            return {
+                header: s.readOrEmpty('tooltips.awardItem.gold.header'),
+                body: s.readOrEmpty('tooltips.awardItem.gold.body'),
+            };
+        case r.Crystal:
+            return {
+                header: s.readOrEmpty('tooltips.awardItem.crystal.header'),
+                body: s.readOrEmpty('tooltips.awardItem.crystal.body'),
+            };
+        case r.FreeXP:
+            return {
+                header: s.readOrEmpty('tooltips.awardItem.freeXP.header'),
+                body: s.readOrEmpty('tooltips.awardItem.freeXP.body'),
+            };
+        case r.Components:
+            return {
+                header: s.readOrEmpty('tooltips.awardItem.equipCoin.header'),
+                body: s.readOrEmpty('tooltips.awardItem.equipCoin.body'),
+            };
+        case r.BattleBonusX5:
+            return {
+                header: s.readOrEmpty('tooltips.quests.bonuses.token.battle_bonus_x5.header'),
+                body: s.readOrEmpty('tooltips.quests.bonuses.token.battle_bonus_x5.body'),
+            };
+        case r.CrewBonusX3:
+            return {
+                header: s.readOrEmpty('tooltips.quests.bonuses.token.crew_bonus_x3.header'),
+                body: s.readOrEmpty('tooltips.quests.bonuses.token.crew_bonus_x3.body'),
             };
         default:
             return {
-                header: e(R.strings, `tooltips.awardItem.${t}.header`),
-                body: e(R.strings, `tooltips.awardItem.${t}.body`),
+                header: o(R.strings, `tooltips.awardItem.${t}.header`),
+                body: o(R.strings, `tooltips.awardItem.${t}.body`),
             };
     }
 }
-export { n as L, o as T, c as a, u as b, d as c, l as g, a as i };
+function c(t, o) {
+    const s = e.resolve('views');
+    if (t.startsWith(r.LootBox)) {
+        const e = t.slice(`${r.LootBox}_`.length);
+        return {
+            contentId: s.read((e) => e.mono.lootbox.tooltips.box_tooltip('resId')),
+            args: { boxCategory: e, eventName: o },
+        };
+    }
+    return i.includes(t) || a.includes(t)
+        ? {
+              contentId: s.read((e) => e.mono.lootbox.tooltips.statistics_category('resId')),
+              args: { bonusesCategory: t, eventName: o },
+          }
+        : t === r.MentoringLicense
+          ? {
+                contentId: s.read((e) => e.lobby.crew.tooltips.MentoringLicenseTooltip('resId')),
+                args: { bonusesCategory: t, eventName: o },
+            }
+          : n.includes(t)
+            ? {
+                  contentId: s.read((e) =>
+                      e.common.tooltip_window.backport_tooltip_content.BackportTooltipContent('resId'),
+                  ),
+                  args: { bonusesCategory: t, eventName: o },
+              }
+            : {
+                  contentId: s.read((e) =>
+                      e.common.tooltip_window.simple_tooltip_content.SimpleTooltipContent('resId'),
+                  ),
+                  decoratorId: s.read((e) => e.common.tooltip_window.tooltip_window.TooltipWindow('resId')),
+                  args: p(t),
+              };
+}
+export { i as L, r as T, c as a, m as b, u as c, l as g, d as i };

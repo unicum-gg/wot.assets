@@ -1,47 +1,47 @@
-import { r as e, ak as a, o as t, i as s, V as n, j as r, f as o, a6 as i, q as c, u as l } from './vendor.js';
+import { r as e, ak as a, o as t, i as s, V as n, j as r, f as o, a6 as i, t as c, u as l } from './vendor.js';
 import {
-    ew as d,
-    ex as m,
+    eo as d,
+    ep as m,
     i as _,
-    d8 as h,
-    bI as u,
-    ey as p,
-    bH as g,
-    cs as x,
-    ez as f,
-    aj as b,
-    aQ as v,
-    ae as N,
-    cz as S,
-    cv as j,
-    ay as w,
-    ag as T,
-    cD as I,
-    dg as y,
-    dh as A,
-    aC as O,
-    cA as M,
-    m as C,
-    cI as F,
-    cJ as D,
-    a$ as L,
-    cp as z,
-    en as k,
-    ao as B,
-    aR as $,
-    Q as W,
-    a4 as U,
-    di as P,
-    cW as H,
-    Z as E,
-    cY as Q,
+    d9 as h,
+    bQ as u,
+    eq as p,
+    bP as g,
+    cA as x,
+    er as f,
+    av as b,
+    h as v,
+    B as N,
+    cG as S,
+    F as j,
+    aI as w,
+    as as T,
+    cK as I,
+    dh as y,
+    di as A,
+    aM as M,
+    cH as O,
+    m as F,
+    C,
+    a as D,
+    b7 as L,
+    cx as z,
+    es as k,
+    aA as B,
+    a_ as $,
+    a6 as W,
+    ai as U,
+    dj as P,
+    c_ as H,
+    ab as E,
+    d0 as G,
 } from './lib.js';
-import { I as G, P as q } from './consts.js';
-import { u as V } from './use_server_time_polling.js';
-import { D as J } from './divine_glow.js';
-import { A as K } from './animated_background.js';
-var Y = ((e) => ((e.OLS = 'ols'), (e.WCI = 'wci'), (e.NONE = ''), e))(Y || {});
-const Z = e.createContext({
+import { I as Q, P as q } from './consts.js';
+import { u as K } from './use_server_time_polling.js';
+import { D as V } from './divine_glow.js';
+import { A as J } from './animated_background.js';
+var X = ((e) => ((e.OLS = 'ols'), (e.WCI = 'wci'), (e.NONE = ''), e))(X || {});
+const Y = e.createContext({
         mainBgPath: '',
         blurBgPath: '',
         prizeFrameBgPath: '',
@@ -57,8 +57,8 @@ const Z = e.createContext({
         tournamentName: '',
         winnerGlowComponent: null,
     }),
-    X = () => {
-        const a = e.useContext(Z);
+    Z = () => {
+        const a = e.useContext(Y);
         return (
             a || console.error('useDependencies hook was called with data from TournamentViewDIContext.Provider'),
             a
@@ -288,7 +288,7 @@ const je = ({
         className: i,
         classNames: c,
     }) => {
-        const { tournamentName: l } = X(),
+        const { tournamentName: l } = Z(),
             d = ((e, a, t) => {
                 const s = R.images.comp7.gui.maps.icons.tournaments.$dyn(t);
                 switch (a) {
@@ -356,7 +356,7 @@ const je = ({
         const { model: e } = de(),
             a = e.overviewState.get(),
             t = e.fundDistribution.get(),
-            { currencyText: s } = X(),
+            { currencyText: s } = Z(),
             { logoSize: n } = w(
                 { logoSize: Se.x28 },
                 { medium: { logoSize: Se.x28 }, large: { logoSize: Se.x38 }, extraLarge: { logoSize: Se.x48 } },
@@ -493,10 +493,10 @@ const je = ({
             ],
         });
     }),
-    Oe = 'Footer_drops_9f07e1ee',
-    Me = 'Footer_box_c9efab86',
-    Ce = 'Footer_finalResult_846f6844',
-    Fe = 'Footer_separator_85aaf997',
+    Me = 'Footer_drops_9f07e1ee',
+    Oe = 'Footer_box_c9efab86',
+    Fe = 'Footer_finalResult_846f6844',
+    Ce = 'Footer_separator_85aaf997',
     De = 'Footer_result_7805495d',
     Le = 'Footer_counter_f418ad46',
     ze = 'Footer_score_e2ed58a4',
@@ -519,10 +519,10 @@ const je = ({
         switch (n) {
             case ee.Schedule:
                 return r.jsxs('div', {
-                    className: Oe,
+                    className: Me,
                     children: [
                         r.jsx('div', {
-                            className: Me,
+                            className: Oe,
                             style: {
                                 backgroundImage: `url(${R.images.comp7.gui.maps.icons.tournaments.$dyn(`${i}_box`)})`,
                             },
@@ -534,7 +534,7 @@ const je = ({
                 return r.jsx(Ae, { buttonSize: l, showSeparator: !0 });
             case ee.FinalResult:
                 return r.jsxs('div', {
-                    className: Ce,
+                    className: Fe,
                     children: [
                         r.jsx(je, { logos: e.logos, teamName: e.teamName, size: Se.x68, className: o(Re, !c && Be) }),
                         r.jsxs('div', {
@@ -544,7 +544,7 @@ const je = ({
                                     className: Le,
                                     children: [
                                         r.jsx('div', { className: o(ze, c && ke), children: e.score }),
-                                        r.jsx('div', { className: Fe }),
+                                        r.jsx('div', { className: Ce }),
                                         r.jsx('div', { className: o(ze, !c && ke), children: a.score }),
                                     ],
                                 }),
@@ -563,7 +563,7 @@ const je = ({
         }
     }),
     We = ({ phase: e, round: a, matchStage: t, className: s }) => {
-        const { roundRobinText: n } = X();
+        const { roundRobinText: n } = Z();
         return r.jsx(j, {
             text: t === re.RoundRobin ? n : `${R.strings.comp7_ext.tournament.$dyn(t)}`,
             binding: { phase: e, round: a },
@@ -651,7 +651,7 @@ const je = ({
     },
     Ee = n(function ({ team1: e, team2: a, bestOf: t }) {
         const { model: s } = de(),
-            { winnerGlowComponent: n } = X(),
+            { winnerGlowComponent: n } = Z(),
             i = s.overviewState.get(),
             c = w(
                 { logoSize: [Se.x192, Se.x262] },
@@ -689,7 +689,7 @@ const je = ({
                       }),
         });
     }),
-    Qe = {
+    Ge = {
         base: 'MatchDetails_9e0f98f8',
         header: 'MatchDetails_header_89346ded',
         base__live: 'MatchDetails_base__live_bf32d099',
@@ -712,21 +712,21 @@ const je = ({
         blink: 'MatchDetails_blink_bf32d099',
         slideUpIn: 'MatchDetails_slideUpIn_bf32d099',
     },
-    Ge = n(function () {
+    Qe = n(function () {
         const { model: e } = de(),
             a = e.overviewState.get(),
             t = e.computes.overviewMainMatch(),
-            { tournamentName: s, mainBgPath: n } = X();
+            { tournamentName: s, mainBgPath: n } = Z();
         if (a === ee.Error || !t) return r.jsx(ge, {});
         const { team1: i, team2: c, bestOf: l } = t;
         return r.jsxs('div', {
-            className: o(Qe.base, Qe[`base__${a}`]),
+            className: o(Ge.base, Ge[`base__${a}`]),
             children: [
-                r.jsx('div', { className: o(Qe.bg, Qe[`bg__${s}`]), style: { backgroundImage: `url('${n}')` } }),
+                r.jsx('div', { className: o(Ge.bg, Ge[`bg__${s}`]), style: { backgroundImage: `url('${n}')` } }),
                 r.jsxs('div', {
-                    className: Qe.content,
+                    className: Ge.content,
                     children: [
-                        r.jsx(Pe, { ...t, overviewState: a, className: Qe.header }),
+                        r.jsx(Pe, { ...t, overviewState: a, className: Ge.header }),
                         r.jsx(Ee, { team1: i, team2: c, bestOf: l }),
                         r.jsx($e, { team1: i, team2: c, bestOf: l }),
                     ],
@@ -735,15 +735,15 @@ const je = ({
         });
     }),
     qe = 'NextMatch_761307a6',
-    Ve = 'NextMatch_date_324e5a0a',
-    Je = 'NextMatch_time_73b66f84',
-    Ke = 'NextMatch_teams_d8219813',
-    Ye = 'NextMatch_teamName_df96bd91',
-    Ze = 'NextMatch_textWrapper_6dd0aab3',
-    Xe = 'NextMatch_bestOf_412f98dd',
+    Ke = 'NextMatch_date_324e5a0a',
+    Ve = 'NextMatch_time_73b66f84',
+    Je = 'NextMatch_teams_d8219813',
+    Xe = 'NextMatch_teamName_df96bd91',
+    Ye = 'NextMatch_textWrapper_6dd0aab3',
+    Ze = 'NextMatch_bestOf_412f98dd',
     ea = 'NextMatch_matchType_5bb91584',
     aa = [re.GrandFinals, re.UBFinals, re.LBFinals],
-    ta = { teamName: Ye },
+    ta = { teamName: Xe },
     sa = function ({
         startOfMatchTimestamp: e,
         team1: a,
@@ -754,7 +754,7 @@ const je = ({
         round: c,
         className: l,
     }) {
-        const { topMatchGlowPath: d } = X(),
+        const { topMatchGlowPath: d } = Z(),
             { logoSize: m } = w(
                 { logoSize: Se.x48 },
                 { medium: { logoSize: Se.x48 }, large: { logoSize: Se.x68 }, extraLarge: { logoSize: Se.x86 } },
@@ -764,22 +764,22 @@ const je = ({
             style: { backgroundImage: aa.includes(n) ? `url(${d})` : '' },
             children: [
                 r.jsxs('div', {
-                    className: Ve,
+                    className: Ke,
                     children: [
                         r.jsx(y, { datetime: e, format: A.DayMonthAbbreviated }),
-                        r.jsx('div', { className: Je, children: r.jsx(y, { datetime: e, format: A.ShortTime }) }),
+                        r.jsx('div', { className: Ve, children: r.jsx(y, { datetime: e, format: A.ShortTime }) }),
                     ],
                 }),
                 r.jsxs('div', {
-                    className: Ke,
+                    className: Je,
                     children: [
                         r.jsx(je, { teamName: a.teamName, logos: a.logos, size: m, classNames: ta }),
                         r.jsx('div', {
-                            className: Ze,
-                            children: r.jsx(O, {
+                            className: Ye,
+                            children: r.jsx(M, {
                                 text: R.strings.comp7_ext.tournament.vsBestOf(),
                                 params: { number: s },
-                                className: Xe,
+                                className: Ze,
                                 upgradeLegacy: !0,
                             }),
                         }),
@@ -850,7 +850,7 @@ const je = ({
                                           binding: {
                                               addition:
                                                   i.length > 0 &&
-                                                  r.jsx(M, {
+                                                  r.jsx(O, {
                                                       content: R.strings.comp7_ext.tournament.comingSoonAddition(),
                                                       className: na.addition,
                                                   }),
@@ -871,7 +871,7 @@ const je = ({
                                       i.length > 0
                                           ? r.jsx('div', {
                                                 className: na.matches,
-                                                children: C(3, (a) => {
+                                                children: F(3, (a) => {
                                                     const t = i[a];
                                                     return (
                                                         t &&
@@ -900,7 +900,7 @@ const je = ({
     da = 'ShopBlock_buttonWrapper_a5da9ae8',
     ma = n(() => {
         const { controls: e } = de(),
-            { shopFramePath: a, visitShopHeading: t, visitShopDescription: s } = X(),
+            { shopFramePath: a, visitShopHeading: t, visitShopDescription: s } = Z(),
             { mediaSize: n } = v(),
             { shopIcon: o } = w(
                 { shopIcon: a.extraSmall },
@@ -956,7 +956,7 @@ const je = ({
                 exitBeforeEnter: !0,
             });
         return (
-            V(n, l, t.pollServerTime),
+            K(n, l, t.pollServerTime),
             r.jsxs('div', {
                 className: o(ha, e),
                 children: [
@@ -974,7 +974,7 @@ const je = ({
                                           children: [
                                               R.strings.comp7_ext.tournament.tokenStore.unavailable(),
                                               r.jsx('div', { className: xa }),
-                                              r.jsx(F, { duration: d, icon: D.None, classNames: { text: fa } }),
+                                              r.jsx(C, { duration: d, icon: D.None, classNames: { text: fa } }),
                                           ],
                                       })
                                     : r.jsx('div', {
@@ -1028,11 +1028,11 @@ const je = ({
             a = e.overviewState.get(),
             t = e.isDynamicPrizePool.get(),
             s = e.lastPrizePoolUpdate.get(),
-            { prizeFrameBgPath: n, tournamentName: i, currencySign: c } = X();
+            { prizeFrameBgPath: n, tournamentName: i, currencySign: c } = Z();
         return r.jsxs('div', {
             className: o(Na.base, Na[`base__${a}`]),
             children: [
-                r.jsx('div', { className: Na.matchDetails, children: r.jsx(Ge, {}) }),
+                r.jsx('div', { className: Na.matchDetails, children: r.jsx(Qe, {}) }),
                 r.jsxs('div', {
                     className: Na.eventDetails,
                     children: [
@@ -1048,7 +1048,7 @@ const je = ({
                                             addition: r.jsxs('div', {
                                                 className: Na.prizeAddition,
                                                 children: [
-                                                    r.jsx(M, {
+                                                    r.jsx(O, {
                                                         content: R.strings.comp7_ext.tournament.prizeAddition(),
                                                         className: Na.addition,
                                                     }),
@@ -1076,7 +1076,7 @@ const je = ({
                             }),
                         r.jsxs('div', {
                             className: Na.container,
-                            children: [r.jsx(ma, {}), i === Y.OLS && r.jsx(va, { className: Na.tokenStore })],
+                            children: [r.jsx(ma, {}), i === X.OLS && r.jsx(va, { className: Na.tokenStore })],
                         }),
                         a === ee.FinalResult ? r.jsx(Ie, {}) : r.jsx(ra, { className: Na.schedule }),
                     ],
@@ -1090,7 +1090,7 @@ const je = ({
     Ia = 'Counter_score__winner_fdc5bffa',
     ya = 'Counter_separator_b7ec0c4a',
     Aa = 'Counter_bestOf_4929e990',
-    Oa = n(function ({ isCompleted: e, team1Score: a, team2Score: t, bestOf: s }) {
+    Ma = n(function ({ isCompleted: e, team1Score: a, team2Score: t, bestOf: s }) {
         const n = a > t;
         return r.jsxs('div', {
             className: ja,
@@ -1112,9 +1112,9 @@ const je = ({
             ],
         });
     }),
-    Ma = 'MatchByDate_50709007',
-    Ca = 'MatchByDate_match_967a5c63',
-    Fa = 'MatchByDate_match__topFinals_8944c4ce',
+    Oa = 'MatchByDate_50709007',
+    Fa = 'MatchByDate_match_967a5c63',
+    Ca = 'MatchByDate_match__topFinals_8944c4ce',
     Da = 'MatchByDate_match__live_33ff8dd0',
     La = 'MatchByDate_border_af9334a2',
     za = 'MatchByDate_logoWrapper_e52e6a64',
@@ -1127,8 +1127,8 @@ const je = ({
     Pa = 'MatchByDate_time_11f525f2',
     Ha = 'MatchByDate_loser_90c34627',
     Ea = [re.GrandFinals, re.UBFinals, re.LBFinals],
-    Qa = { teamName: Ua },
-    Ga = (e, a) => {
+    Ga = { teamName: Ua },
+    Qa = (e, a) => {
         switch (e) {
             case ne.Completed:
                 return r.jsx('div', { className: Ra, children: R.strings.comp7_ext.tournament.completed() });
@@ -1154,7 +1154,7 @@ const je = ({
             m = i === ne.Completed,
             _ = t.score > s.score,
             h = i === ne.Live,
-            { liveBgPath: u, winnerGlowPath: p, topMatchGlowPath: g } = X(),
+            { liveBgPath: u, winnerGlowPath: p, topMatchGlowPath: g } = Z(),
             x = i === ne.NotStarted && Ea.includes(c),
             { logoSize: f, liveImage: b } = w(
                 { logoSize: h ? Se.x68 : Se.x48, liveImage: u.small },
@@ -1165,16 +1165,16 @@ const je = ({
                 },
             );
         return r.jsx('div', {
-            className: Ma,
+            className: Oa,
             children: r.jsxs('div', {
-                className: o(Ca, x && Fa, h && Da),
+                className: o(Fa, x && Ca, h && Da),
                 style: { backgroundImage: (x && `url('${g}')`) || (h && `url('${b}')`) || '' },
                 children: [
                     r.jsx('div', { className: La }),
                     r.jsxs('div', {
                         className: $a,
                         children: [
-                            Ga(i, a),
+                            Qa(i, a),
                             r.jsxs('div', {
                                 className: za,
                                 children: [
@@ -1185,11 +1185,11 @@ const je = ({
                                         size: f,
                                         showIsWinner: _ && m,
                                         className: o(!_ && m && Ha),
-                                        classNames: Qa,
+                                        classNames: Ga,
                                     }),
                                 ],
                             }),
-                            r.jsx(Oa, { bestOf: n, isCompleted: m, team1Score: t.score, team2Score: s.score }),
+                            r.jsx(Ma, { bestOf: n, isCompleted: m, team1Score: t.score, team2Score: s.score }),
                             r.jsxs('div', {
                                 className: za,
                                 children: [
@@ -1200,7 +1200,7 @@ const je = ({
                                         size: f,
                                         showIsWinner: !_ && m,
                                         className: o(_ && m && Ha),
-                                        classNames: Qa,
+                                        classNames: Ga,
                                     }),
                                 ],
                             }),
@@ -1212,9 +1212,9 @@ const je = ({
             }),
         });
     },
-    Va = 'DailySchedule_date_a677e43d',
-    Ja = 'DailySchedule_arrow_79f2d923',
-    Ka = function ({
+    Ka = 'DailySchedule_date_a677e43d',
+    Va = 'DailySchedule_arrow_79f2d923',
+    Ja = function ({
         isCompleted: a,
         dayTimestamp: t,
         matches: s,
@@ -1228,9 +1228,9 @@ const je = ({
             opened: l,
             children: [
                 r.jsxs(B.Summary, {
-                    className: Va,
+                    className: Ka,
                     onClick: () => d(!l),
-                    children: [r.jsx(B.Arrow, { className: Ja }), r.jsx(y, { datetime: t, format: A.FullDate })],
+                    children: [r.jsx(B.Arrow, { className: Va }), r.jsx(y, { datetime: t, format: A.FullDate })],
                 }),
                 r.jsx(B.AnimatedDetails, {
                     animationSettings: { immediate: c, onRest: i },
@@ -1244,16 +1244,16 @@ const je = ({
             ],
         });
     },
-    Ya = 'ScheduleTabContent_6d083e2e',
-    Za = 'ScheduleTabContent_base__withMask_fbcb0d72',
-    Xa = n(function () {
+    Xa = 'ScheduleTabContent_6d083e2e',
+    Ya = 'ScheduleTabContent_base__withMask_fbcb0d72',
+    Za = n(function () {
         const { model: a, controls: t } = de(),
             s = a.overviewState.get(),
             n = a.computes.scheduleByDate(),
             i = a.hasScheduleAnimated.get(),
             d = e.useRef(null),
             [m, _] = e.useState(s === ee.FinalResult),
-            h = l(G),
+            h = l(Q),
             u = $(),
             [p, g] = e.useState(!0),
             { api: x } = W(),
@@ -1294,13 +1294,13 @@ const je = ({
                 );
             }, [x]),
             r.jsx(c.div, {
-                className: o(Ya, p && Za),
+                className: o(Xa, p && Ya),
                 style: h,
                 children: r.jsx(U, {
                     children: T(n, ({ dayTimestamp: e, matches: a, isCompleted: t }, s) => {
                         const o = s === n.length - 1;
                         return r.jsx(
-                            Ka,
+                            Ja,
                             {
                                 isCompleted: t,
                                 dayTimestamp: e,
@@ -1345,8 +1345,8 @@ const je = ({
             s = e.overviewState.get(),
             n = e.pageState.get(),
             i = l(q),
-            { blurBgPath: m } = X(),
-            _ = w({ tabSize: Q.small }, { large: { tabSize: Q.medium } });
+            { blurBgPath: m } = Z(),
+            _ = w({ tabSize: G.small }, { large: { tabSize: G.medium } });
         var h;
         return (
             (h = a.close),
@@ -1396,7 +1396,7 @@ const je = ({
                                                   case ce:
                                                       return s === ee.Error
                                                           ? r.jsx(ge, {})
-                                                          : r.jsx(E, { children: r.jsx(Xa, {}) });
+                                                          : r.jsx(E, { children: r.jsx(Za, {}) });
                                                   default:
                                                       return (console.error('Unreachable branch in tabs'), null);
                                               }
@@ -1410,9 +1410,9 @@ const je = ({
     }),
     tt = 'WinnerGlow_wciWinnerGlow_7c899fb',
     st = 'WinnerGlow_olsWinnerGlow_9d477dc8',
-    nt = () => r.jsx(K, { className: tt }),
+    nt = () => r.jsx(J, { className: tt }),
     rt = () => {
-        const e = l(G);
-        return r.jsx(c.div, { className: st, style: e, children: r.jsx(J, {}) });
+        const e = l(Q);
+        return r.jsx(c.div, { className: st, style: e, children: r.jsx(V, {}) });
     };
-export { at as A, rt as O, le as T, nt as W, Z as a, Y as b };
+export { at as A, rt as O, le as T, nt as W, Y as a, X as b };

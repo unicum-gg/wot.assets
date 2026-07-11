@@ -4,9 +4,9 @@ import {
     i as r,
     h as c,
     f as i,
-    T as n,
-    W as l,
-    X as o,
+    a0 as n,
+    a1 as l,
+    a2 as o,
     C as d,
     j as m,
     U as _,
@@ -15,29 +15,34 @@ import {
 import { B as p } from '../../../chunks/background.js';
 import { g as j } from '../../../chunks/resources.js';
 import { A as u, a as N } from '../../../chunks/arrow.js';
-const b = 'IntroCard_3fb7822b',
-    g = 'IntroCard_image_90f7189',
+const g = 'IntroCard_3fb7822b',
+    b = 'IntroCard_image_90f7189',
     k = 'IntroCard_cardTitle_8314c32d',
     f = 'IntroCard_description_311a8e9a';
 function h({ children: a, description: r, image: c, title: i, bundleName: n = '', className: l = '', classNames: o }) {
     return e.jsxs('div', {
-        className: s(b, l),
+        className: s(g, l),
         children: [
-            e.jsx('div', { className: s(g, o?.image), style: { backgroundImage: c } }),
+            e.jsx('div', { className: s(b, o?.image), style: { backgroundImage: c } }),
             e.jsx('div', { className: s(k, o?.title), children: i }),
             e.jsx(t, { className: s(f, o?.description), text: r, params: { eventName: n } }),
             a,
         ],
     });
 }
-const C = 'Link_6b3c3cc0',
-    v = 'Link_linkText_49aa663f',
-    A = 'Link_linkAsset_375c69fe';
+const C = 'Link_f4d8f841',
+    A = 'Link_linkText_e5373f66',
+    v = 'Link_linkAsset_375c69fe';
 function I({ text: a, image: r, linkClick: c, className: i = '' }) {
-    return e.jsxs('div', {
+    return e.jsx('div', {
         className: s(C, i),
         onClick: c,
-        children: [e.jsx(t, { className: v, text: a }), e.jsx('div', { className: A, style: { backgroundImage: r } })],
+        children: e.jsx(t, {
+            className: A,
+            text: a,
+            params: { icon: e.jsx('span', { className: v, style: { backgroundImage: r } }) },
+            split: !0,
+        }),
     });
 }
 const [T, y] = r()(
@@ -83,59 +88,59 @@ const [T, y] = r()(
             ],
         });
     }),
-    W = 'App_c2a1a7d4',
-    P = 'App_background_55f1a395',
-    S = 'App_header_f27f8500',
-    U = 'App_footer_bd96d566',
-    X = 'App_cardsWrapper_cb654453',
-    q = 'App_card_be821af5',
-    D = 'App_link_f0b59ee5',
-    G = 'App_closeButton_f5179698',
-    J = a(function () {
+    P = 'App_c2a1a7d4',
+    S = 'App_background_55f1a395',
+    U = 'App_header_f27f8500',
+    W = 'App_footer_bd96d566',
+    q = 'App_cardsWrapper_cb654453',
+    D = 'App_card_be821af5',
+    G = 'App_link_f0b59ee5',
+    J = 'App_closeButton_f5179698',
+    K = a(function () {
         const { model: s, controls: a } = y(),
             { bundleType: t } = s.root.get(),
             { getExtImage: r, getText: c } = j(t);
         return (
             o(a.close),
             e.jsxs('div', {
-                className: W,
+                className: P,
                 children: [
-                    e.jsx(p, { image: r('intro.background'), className: P }),
-                    e.jsx(M, { className: S }),
+                    e.jsx(p, { image: r('intro.background'), className: S }),
+                    e.jsx(M, { className: U }),
                     e.jsxs('div', {
-                        className: X,
+                        className: q,
                         children: [
                             e.jsx(h, {
                                 description: c('intro.cards.description.c_1'),
                                 image: `url(${r('intro.c_1')})`,
                                 title: c('intro.cards.title.c_1'),
                                 bundleName: c('bundle.name'),
-                                className: q,
+                                className: D,
                             }),
                             e.jsx(h, {
                                 description: c('intro.cards.description.c_2'),
                                 image: `url(${r('intro.c_2')})`,
                                 title: c('intro.cards.title.c_2'),
-                                className: q,
+                                className: D,
                             }),
                             e.jsx(h, {
                                 description: c('intro.cards.description.c_3'),
                                 image: `url(${r('intro.c_3')})`,
                                 title: c('intro.cards.title.c_3'),
-                                className: q,
+                                className: D,
                                 children: e.jsx(I, {
                                     linkClick: a.linkClick,
                                     text: c('intro.cards.link'),
                                     image: `url(${r('intro.link')})`,
-                                    className: D,
+                                    className: G,
                                 }),
                             }),
                         ],
                     }),
-                    e.jsx(H, { className: U }),
-                    e.jsx(d, { className: G, onClose: a.close }),
+                    e.jsx(H, { className: W }),
+                    e.jsx(d, { className: J, onClose: a.close }),
                 ],
             })
         );
     });
-m(e.jsx(T, { children: e.jsx(_, { children: e.jsx(J, {}) }) }), { fullScreen: !0 }).then(x);
+m(e.jsx(T, { children: e.jsx(_, { children: e.jsx(K, {}) }) }), { fullScreen: !0 }).then(x);

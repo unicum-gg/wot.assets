@@ -1194,7 +1194,7 @@
                     n = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function r(e) {
                     let t = '';
-                    for (let u = n.length - 1; u >= 0; u--) for (; e >= n[u]; ) ((t += a[u]), (e -= n[u]));
+                    for (let u = n.length - 1; u >= 0; u--) for (; e >= n[u];) ((t += a[u]), (e -= n[u]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1679,9 +1679,13 @@
                         if (u.mediumWidth && g) return o(t, u, B);
                         if (u.smallWidth && h) return o(t, u, B);
                         if (u.extraSmallWidth && A) return o(t, u, B);
-                        if (
-                            !(u.extraLargeWidth || u.largeWidth || u.mediumWidth || u.smallWidth || u.extraSmallWidth)
-                        ) {
+                        if (!(
+                            u.extraLargeWidth ||
+                            u.largeWidth ||
+                            u.mediumWidth ||
+                            u.smallWidth ||
+                            u.extraSmallWidth
+                        )) {
                             if (u.extraLargeHeight && b) return t;
                             if (u.largeHeight && p) return t;
                             if (u.mediumHeight && C) return t;
@@ -2168,7 +2172,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, u = K(n.keys()); !(e = u()).done; ) r(e.value, t);
+                                                        for (var e, u = K(n.keys()); !(e = u()).done;) r(e.value, t);
                                                     },
                                                     unsubscribe: r,
                                                 };
@@ -3504,13 +3508,11 @@
                             })(q, 3200, Be, ve),
                             De = Se.setIsAnimationPending;
                         ((0, a.useEffect)(() => {
-                            if (
-                                !(
-                                    (N === Tt(I, G, l, o, O, P) && N !== Pt.SHOW) ||
-                                    N === Pt.MOUSE_OVER ||
-                                    (N === Pt.MOUSE_OUT && G === j.NORMAL)
-                                )
-                            )
+                            if (!(
+                                (N === Tt(I, G, l, o, O, P) && N !== Pt.SHOW) ||
+                                N === Pt.MOUSE_OVER ||
+                                (N === Pt.MOUSE_OUT && G === j.NORMAL)
+                            ))
                                 switch (G) {
                                     case j.BUY_BATTLE_PASS:
                                         ge(Pt.BUY_BP);

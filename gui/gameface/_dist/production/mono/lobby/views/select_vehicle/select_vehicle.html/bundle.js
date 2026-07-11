@@ -2,15 +2,15 @@ import {
     o as e,
     s as t,
     e as s,
-    x as a,
-    y as r,
-    z as i,
-    A as l,
-    B as n,
-    C as o,
-    D as c,
-    E as d,
-    F as u,
+    v as a,
+    w as r,
+    x as i,
+    y as l,
+    z as n,
+    A as o,
+    B as c,
+    C as d,
+    D as u,
     r as m,
     q as p,
     t as h,
@@ -83,11 +83,11 @@ import {
     aw as we,
     ax as Ee,
     ay as Se,
-    k as Ae,
-    az as Ie,
+    az as Ae,
+    k as Ie,
     aA as ke,
-    o as Pe,
-    aB as De,
+    aB as Pe,
+    o as De,
     aC as Ve,
     aD as Me,
     aE as Te,
@@ -97,17 +97,18 @@ import {
     aI as ze,
     aJ as Oe,
     aK as Xe,
-    h as Re,
-    C as Ge,
-    aL as qe,
-    U as He,
-    l as Fe,
+    aL as Re,
+    h as Ge,
+    C as qe,
+    aM as He,
+    U as Fe,
+    l as Ze,
 } from '../../../chunks/lib.js';
-const Ze = 'role',
-    Ye = 'type',
-    Qe = 'tier',
-    Je = 'nations',
-    We = {
+const Ye = 'role',
+    Qe = 'type',
+    Je = 'tier',
+    We = 'nations',
+    Ke = {
         lightTank: 'menu.carousel_tank_filter.lightTank',
         mediumTank: 'menu.carousel_tank_filter.mediumTank',
         heavyTank: 'menu.carousel_tank_filter.heavyTank',
@@ -142,7 +143,7 @@ const Ze = 'role',
         clanRented: 'tank_carousel_filter.tooltip.clanRented.header',
         isCommonProgression: 'tank_carousel_filter.tooltip.isCommonProgression.header',
     },
-    Ke = {
+    $e = {
         type: 'vehicleTypes',
         role: 'role',
         tier: 'tier',
@@ -158,21 +159,21 @@ const Ze = 'role',
         clanRented: 'clanRented',
         isCommonProgression: 'isCommonProgression',
     },
-    $e = 'isCommonProgression',
-    et = [x.assault, x.universal, x.break, x.sniper, x.support, x.wheeled],
-    tt = ['bonus', 'favorite', 'premium', 'elite', 'crystals', 'canInstallAttachments', 'own3DStyle', 'rented'],
-    st = [v.lightTank, v.mediumTank, v.heavyTank, v['AT-SPG'], v.SPG],
-    at = g(1, 12, b),
-    rt = 'vehicle_types',
-    it = 'nations',
-    lt = 'levels',
-    nt = 'specials',
-    ot = 'battle_pass',
-    ct = { heavy_tank: j, medium_tank: N, light_tank: C, at_spg: y };
-function dt(e, t) {
-    return e === $e && t.status !== S.UNSUITABLE_TO_QUEUE && t.bpProgress < t.maxBpScore;
+    et = 'isCommonProgression',
+    tt = [x.assault, x.universal, x.break, x.sniper, x.support, x.wheeled],
+    st = ['bonus', 'favorite', 'premium', 'elite', 'crystals', 'canInstallAttachments', 'own3DStyle', 'rented'],
+    at = [v.lightTank, v.mediumTank, v.heavyTank, v['AT-SPG'], v.SPG],
+    rt = g(1, 12, b),
+    it = 'vehicle_types',
+    lt = 'nations',
+    nt = 'levels',
+    ot = 'specials',
+    ct = 'battle_pass',
+    dt = { heavy_tank: j, medium_tank: N, light_tank: C, at_spg: y };
+function ut(e, t) {
+    return e === et && t.status !== S.UNSUITABLE_TO_QUEUE && t.bpProgress < t.maxBpScore;
 }
-function ut(e, t, s, a) {
+function mt(e, t, s, a) {
     switch (t) {
         case 'elite':
             return e.includes('premium') || (a && a.elite && !s.premium);
@@ -197,49 +198,49 @@ function ut(e, t, s, a) {
             return !1;
     }
 }
-const mt = {
-    [lt]: (e, t) => !e.levels || e.levels.includes(`level_${t.level}`),
-    [it]: (e, t) => !e.nations || e.nations.includes(E(t.nationId)),
-    [rt]: (e, t) => !e.vehicle_types || e.vehicle_types.includes(t.type),
+const pt = {
+    [nt]: (e, t) => !e.levels || e.levels.includes(`level_${t.level}`),
+    [lt]: (e, t) => !e.nations || e.nations.includes(E(t.nationId)),
+    [it]: (e, t) => !e.vehicle_types || e.vehicle_types.includes(t.type),
 };
-function pt(e, t, s) {
+function ht(e, t, s) {
     let a = !1;
     const r = e.specials ?? [];
     for (const i of r)
         if ('rented' !== i) {
-            if (!ut(r, i, t, s)) return !1;
+            if (!mt(r, i, t, s)) return !1;
         } else a = !0;
     if (!a && w(t) && !s?.fromWotPlus) return !1;
-    if (s && e.battle_pass && e.battle_pass.length > 0) for (const i of e.battle_pass) if (!dt(i, s)) return !1;
-    for (const i of Object.keys(e)) if (i in mt && !mt[i](e, t)) return !1;
+    if (s && e.battle_pass && e.battle_pass.length > 0) for (const i of e.battle_pass) if (!ut(i, s)) return !1;
+    for (const i of Object.keys(e)) if (i in pt && !pt[i](e, t)) return !1;
     return ((e, t) => {
         const s = A(t.role);
         let a = !1;
-        for (const r of Object.keys(ct)) if (r in e && ((a = !0), e[r].some((e) => e.includes(s)))) return !0;
+        for (const r of Object.keys(dt)) if (r in e && ((a = !0), e[r].some((e) => e.includes(s)))) return !0;
         return !a;
     })(e, t);
 }
-function ht(e, { shortName: t, fullName: s }) {
+function _t(e, { shortName: t, fullName: s }) {
     const a = e.toLowerCase();
     return !(a.length > 0 && !t.toLowerCase().includes(a) && !s.toLowerCase().includes(a));
 }
-function _t(e, t, s) {
+function ft(e, t, s) {
     const a = e[t] ?? [],
         r = { ...e };
     return ((r[t] = a.includes(s) ? a.filter((e) => e !== s) : [...a, s]), r[t].length > 0 || delete r[t], r);
 }
-function ft(e, t) {
+function vt(e, t) {
     return 'regular' === t.type
-        ? _t(e, t.field, t.value)
-        : Object.keys(ct).reduce((e, s) => {
-              const a = ct[s].find((e) => e.includes(t.role));
+        ? ft(e, t.field, t.value)
+        : Object.keys(dt).reduce((e, s) => {
+              const a = dt[s].find((e) => e.includes(t.role));
               return a
-                  ? _t(e, s, ((i = a), 'at_spg' === (r = s) ? `role_ATSPG_${i}` : `role_${r[0].toUpperCase()}T_${i}`))
+                  ? ft(e, s, ((i = a), 'at_spg' === (r = s) ? `role_ATSPG_${i}` : `role_${r[0].toUpperCase()}T_${i}`))
                   : e;
               var r, i;
           }, e);
 }
-function vt(e, t, s, a) {
+function gt(e, t, s, a) {
     if (s.favorite !== a.favorite) return s.favorite ? -1 : 1;
     const r = e[E(s.nationId)] ?? 0,
         i = e[E(a.nationId)] ?? 0;
@@ -256,7 +257,7 @@ function vt(e, t, s, a) {
                 : -1
             : s.shortName.localeCompare(a.shortName);
 }
-const [gt, xt] = I('FilterVehiclesProvider')(
+const [xt, bt] = I('FilterVehiclesProvider')(
         ({ observableModel: t, readByPath: s }) => {
             function a(e) {
                 try {
@@ -303,20 +304,20 @@ const [gt, xt] = I('FilterVehiclesProvider')(
                         a.searchName.set(e);
                     }),
                     change: s((e) => {
-                        a.filters.set(ft(a.filters.get(), e));
+                        a.filters.set(vt(a.filters.get(), e));
                     }),
                     carouselTypeChange: r.createCallback((e) => ({ rowCount: e }), 'onCarouselTypeChange'),
                 }
             );
         },
     ),
-    bt = [v.lightTank, v.mediumTank, v.heavyTank, v['AT-SPG'], v.SPG].reduce((e, t, s) => ((e[t] = s), e), {}),
-    [yt, Ct] = I('VehicleStatisticsProvider')(({ observableModel: e }) => {
+    yt = [v.lightTank, v.mediumTank, v.heavyTank, v['AT-SPG'], v.SPG].reduce((e, t, s) => ((e[t] = s), e), {}),
+    [Ct, Nt] = I('VehicleStatisticsProvider')(({ observableModel: e }) => {
         const t = e.dict('statistics'),
             s = k.structural((e) => t.get(e));
         return { ids: k.primitive(() => t.keys), get: s };
     }),
-    [Nt, jt] = I('VehiclesProvider')(
+    [jt, wt] = I('VehiclesProvider')(
         ({ observableModel: e }) => {
             const t = { vehicles: e.dictRef('vehicles') };
             return {
@@ -350,9 +351,9 @@ const [gt, xt] = I('FilterVehiclesProvider')(
             };
         },
         V,
-        { useRequires: () => ({ statistics: Ct() }) },
+        { useRequires: () => ({ statistics: Nt() }) },
     ),
-    [wt, Et] = I('MyVehiclesProvider')(
+    [Et, St] = I('MyVehiclesProvider')(
         (e) => {
             const t = e.requires.statistic.model.ids,
                 s = k.structural((s) => {
@@ -369,10 +370,10 @@ const [gt, xt] = I('FilterVehiclesProvider')(
             return { get: s, getAll: a, amount: k.primitive(() => a().length), ids: t };
         },
         V,
-        { useRequires: () => ({ vehicles: jt(), statistic: Ct() }) },
+        { useRequires: () => ({ vehicles: wt(), statistic: Nt() }) },
     ),
-    St = M.resolve('strings');
-function At(e, t, s = '...') {
+    At = M.resolve('strings');
+function It(e, t, s = '...') {
     if (
         (B(
             t - s.length >= 0,
@@ -383,30 +384,30 @@ function At(e, t, s = '...') {
         return [e, !1];
     return [`${e.slice(0, t - s.length)}${s}`, !0];
 }
-const It = T(U + z),
-    kt = () => `${Date.now().toString(16)}_${It(3)}`;
-function Pt(e, t, s = 1) {
+const kt = T(U + z),
+    Pt = () => `${Date.now().toString(16)}_${kt(3)}`;
+function Dt(e, t, s = 1) {
     const a = L(t, { count: s });
-    return e.has(a) ? Pt(e, t, s + 1) : a;
+    return e.has(a) ? Dt(e, t, s + 1) : a;
 }
-function Dt(e = '', t = []) {
+function Vt(e = '', t = []) {
     return {
-        title: '' !== e ? e : St.readOrEmpty('playlists.defaultName'),
+        title: '' !== e ? e : At.readOrEmpty('playlists.defaultName'),
         createdAt: Date.now(),
         modifiedAt: Date.now(),
         list: t,
     };
 }
-const Vt = (e) => ({ type: 'ok', value: e }),
-    Mt = (e, t) => ({ type: 'error', error: { tag: e, msg: t } }),
-    Tt = 'delete',
-    Lt = 'import',
-    Bt = a({ title: l(), createdAt: r(c(), o(), n(0)), modifiedAt: r(c(), o(), n(0)), list: i(r(c(), o())) }),
-    Ut = r(
+const Mt = (e) => ({ type: 'ok', value: e }),
+    Tt = (e, t) => ({ type: 'error', error: { tag: e, msg: t } }),
+    Lt = 'delete',
+    Bt = 'import',
+    Ut = a({ title: l(), createdAt: r(c(), o(), n(0)), modifiedAt: r(c(), o(), n(0)), list: i(r(c(), o())) }),
+    zt = r(
         l(),
         d((e) => (e.length > 0 ? e : void 0)),
     ),
-    [zt, Ot, { Context: Xt }] = I('PlaylistsProvider')(
+    [Ot, Xt, { Context: Rt }] = I('PlaylistsProvider')(
         ({ requires: t, observableModel: s }) => {
             const a = s.dict('storage'),
                 r = s.primitives(['selectedID', 'enabled', 'dirtyEdit']),
@@ -421,21 +422,21 @@ const Vt = (e) => ({ type: 'ok', value: e }),
                     edit: { initial: e.box(void 0, { deep: !1 }), dirty: r.dirtyEdit },
                 },
                 n = k.shallow(() => a.keys),
-                o = k.primitive(() => u(Ut, r.selectedID.get())),
+                o = k.primitive(() => u(zt, r.selectedID.get())),
                 c = k.structural((e) => {
                     try {
                         const t = a.get(e);
-                        if (!t) return Vt(void 0);
-                        const s = u(Bt, JSON.parse(t)),
+                        if (!t) return Mt(void 0);
+                        const s = u(Ut, JSON.parse(t)),
                             r = new Set();
                         for (const e of s.list)
                             if (O[e]) {
                                 const t = O[e].find((e) => Boolean(l.myVehicles.get(e.toString())));
                                 r.add(t ?? e);
                             } else r.add(e);
-                        return Vt({ ...s, list: [...r.values()] });
+                        return Mt({ ...s, list: [...r.values()] });
                     } catch (t) {
-                        return (console.error(`Error getting playlist with ${e} id`, t), Mt('PARSE_ERROR', String(t)));
+                        return (console.error(`Error getting playlist with ${e} id`, t), Tt('PARSE_ERROR', String(t)));
                     }
                 }),
                 d = k.shallow(() =>
@@ -468,7 +469,7 @@ const Vt = (e) => ({ type: 'ok', value: e }),
                 }),
                 f = k.shallow(() => {
                     const e = t.filters.model.computes.nationToIndex();
-                    return R(t.myVehicles.model.getAll(), (t, s) => vt(e, bt, t, s));
+                    return R(t.myVehicles.model.getAll(), (t, s) => gt(e, yt, t, s));
                 }),
                 v = k.primitive((e) => {
                     const t = p(e),
@@ -486,9 +487,9 @@ const Vt = (e) => ({ type: 'ok', value: e }),
                         s = f(),
                         a = l.searchName.get();
                     return s.filter((s) => {
-                        if (!ht(a, s)) return !1;
+                        if (!_t(a, s)) return !1;
                         const r = t.statistic.model.get(s.id);
-                        return pt(e, s, r);
+                        return ht(e, s, r);
                     });
                 }),
                 b = k.primitive((e) => Boolean(t.statistic.model.get(e)?.elite)),
@@ -526,19 +527,19 @@ const Vt = (e) => ({ type: 'ok', value: e }),
             return {
                 filters: q({
                     update: (t) => {
-                        e.filters.set(ft(e.filters.get(), t));
+                        e.filters.set(vt(e.filters.get(), t));
                     },
                     reset: () => {
                         (e.filters.set(e.defaultFilters()), e.searchName.set(''));
                     },
                     search: (t) => e.searchName.set(t),
                     change: (t) => {
-                        e.filters.set(ft(e.filters.get(), t));
+                        e.filters.set(vt(e.filters.get(), t));
                     },
                 }),
                 create: s((t) => {
-                    const { id: s = kt(), vehicleIds: r = [], skipRedirect: i = !1 } = t ?? {};
-                    a({ id: s, initial: Dt(Pt(e.titles(), 'playlists.defaultName'), r), skipRedirect: i });
+                    const { id: s = Pt(), vehicleIds: r = [], skipRedirect: i = !1 } = t ?? {};
+                    a({ id: s, initial: Vt(Dt(e.titles(), 'playlists.defaultName'), r), skipRedirect: i });
                 }),
                 edit: {
                     sendModify: t.createCallback((e, t) => ({ id: e, data: JSON.stringify(t) }), 'onModify'),
@@ -549,19 +550,19 @@ const Vt = (e) => ({ type: 'ok', value: e }),
                 exit: t.createCallback((e) => ({ id: e }), 'onDiscard'),
                 goToAboutVehicle: t.createCallback((e) => ({ intCD: e }), 'onGoToAboutVehicle'),
                 openImport: t.createCallback(
-                    s(() => ({ type: Lt, params: JSON.stringify({ titles: Array.from(e.titles().values()) }) })),
+                    s(() => ({ type: Bt, params: JSON.stringify({ titles: Array.from(e.titles().values()) }) })),
                     'openImportConfirm',
                 ),
                 openDeleteConfirm: t.createCallback(
-                    (e, t) => ({ id: e, type: Tt, params: JSON.stringify({ title: t }) }),
+                    (e, t) => ({ id: e, type: Lt, params: JSON.stringify({ title: t }) }),
                     'openDeleteConfirm',
                 ),
             };
         },
-        { useRequires: () => ({ vehicles: jt(), myVehicles: Et(), filters: xt(), statistic: Ct() }) },
+        { useRequires: () => ({ vehicles: wt(), myVehicles: St(), filters: bt(), statistic: Nt() }) },
     ),
-    Rt = () => m.useContext(Xt),
-    [Gt, qt] = I('VehiclesInventoryProvider')(
+    Gt = () => m.useContext(Rt),
+    [qt, Ht] = I('VehiclesInventoryProvider')(
         (s) => {
             const a = s.observableModel.primitives([
                     'freeSlotsCount',
@@ -604,7 +605,7 @@ const Vt = (e) => ({ type: 'ok', value: e }),
                 _ = k.primitive(() => {
                     const e = [...u.getAll()],
                         t = s.requires.filters.model.computes.nationToIndex();
-                    return (e.sort((e, s) => vt(t, bt, e, s)), e);
+                    return (e.sort((e, s) => gt(t, yt, e, s)), e);
                 });
             return (
                 s.cleanup(
@@ -615,7 +616,7 @@ const Vt = (e) => ({ type: 'ok', value: e }),
                             i = u.ids(),
                             l = (a ? d(a.list) : _()).filter(
                                 (a) =>
-                                    !1 !== i.has(a.id) && !!pt(e, a, s.requires.statistic.model.get(a.id)) && ht(t, a),
+                                    !1 !== i.has(a.id) && !!ht(e, a, s.requires.statistic.model.get(a.id)) && _t(t, a),
                             );
                         p(() => r.set(l));
                     }),
@@ -655,9 +656,9 @@ const Vt = (e) => ({ type: 'ok', value: e }),
             goRecoverVehicle: e.externalModel.createCallbackNoArgs('onGoRecoverVehicle'),
             selectTelecomRentalVehicle: e.externalModel.createCallbackNoArgs('onSelectTelecomRentalVehicle'),
         }),
-        { useRequires: () => ({ myVehicles: Et(), vehicles: jt(), statistic: Ct(), filters: xt(), playlists: Rt() }) },
+        { useRequires: () => ({ myVehicles: St(), vehicles: wt(), statistic: Nt(), filters: bt(), playlists: Gt() }) },
     ),
-    [Ht, Ft] = I('SelectVehiclesProvider')(
+    [Ft, Zt] = I('SelectVehiclesProvider')(
         (s) => {
             const a = s.observableModel.primitives(['title', 'currentVehicleCD', 'isAllVehicles']),
                 r = s.requires.vehicles.model,
@@ -668,15 +669,15 @@ const Vt = (e) => ({ type: 'ok', value: e }),
                     let e = r.list();
                     a.isAllVehicles.get() || (e = e.filter((e) => Boolean(i.get(e.id))));
                     const t = s.requires.filters.model.computes.nationToIndex();
-                    return (e.sort((e, s) => vt(t, bt, e, s)), e);
+                    return (e.sort((e, s) => gt(t, yt, e, s)), e);
                 });
             s.cleanup(
                 t(() => {
                     const e = s.requires.playlists?.model.current(),
                         t = (e ? n(e.list) : o()).filter(
                             (e) =>
-                                !!pt(s.requires.filters.model.filters.get(), e, i.get(e.id)) &&
-                                ht(s.requires.filters.model.searchName.get(), e),
+                                !!ht(s.requires.filters.model.filters.get(), e, i.get(e.id)) &&
+                                _t(s.requires.filters.model.searchName.get(), e),
                         );
                     p(() => l.set(t));
                 }),
@@ -700,19 +701,19 @@ const Vt = (e) => ({ type: 'ok', value: e }),
             setAllVehicles: e.createCallback((e) => ({ value: e }), 'onIsAllVehiclesChange'),
             select: e.createCallback((e = '') => ({ id: e }), 'onSelect'),
         }),
-        { useRequires: () => ({ vehicles: jt(), filters: xt(), statistic: Ct(), playlists: Ot() }) },
+        { useRequires: () => ({ vehicles: wt(), filters: bt(), statistic: Nt(), playlists: Xt() }) },
     ),
-    [Zt, Yt, Qt] = I()(({ observableModel: e }) => ({
+    [Yt, Qt, Jt] = I()(({ observableModel: e }) => ({
         ...e.primitives(['isCrystalEarnEnabled', 'isDailyMultipliedXpEnabled', 'isInfiniteAmmo']),
     })),
-    Jt = () => m.useContext(Qt.Context),
-    Wt = m.createContext(void 0);
-function Kt() {
-    const e = m.useContext(Wt);
+    Wt = () => m.useContext(Jt.Context),
+    Kt = m.createContext(void 0);
+function $t() {
+    const e = m.useContext(Kt);
     if (!e) throw new Error("Can't call useFilters outside of FiltersContext Provider. Please wrap it.");
     return e;
 }
-const $t = {
+const es = {
         category: 'FilterPopover_category_aa274a28',
         vehicleLevel: 'FilterPopover_vehicleLevel_41885117',
         scroll: 'FilterPopover_scroll_bce24275',
@@ -726,17 +727,17 @@ const $t = {
         specialsIcons: 'FilterPopover_specialsIcons_5a3d8e7',
         specialsIcons__favorite: 'FilterPopover_specialsIcons__favorite_c7792d3a',
     },
-    es = h(function (e) {
-        const t = Kt(),
-            s = t.tooltipHeaderMap ?? We,
-            a = t.tooltipBodyMap ?? Ke,
-            r = M.resolve('strings'),
-            i = e.tooltip.body !== Qe ? r.readOrEmpty(`tank_carousel_filter.tooltip.${a[e.tooltip.body]}.body`) : '',
-            l = F({ header: r.readOrEmpty(`${s[e.tooltip.header]}`), body: i });
-        return _.jsx(ts, { ...e, tooltip: e.tooltip.body !== Qe && l });
-    }),
     ts = h(function (e) {
-        const t = Kt(),
+        const t = $t(),
+            s = t.tooltipHeaderMap ?? Ke,
+            a = t.tooltipBodyMap ?? $e,
+            r = M.resolve('strings'),
+            i = e.tooltip.body !== Je ? r.readOrEmpty(`tank_carousel_filter.tooltip.${a[e.tooltip.body]}.body`) : '',
+            l = F({ header: r.readOrEmpty(`${s[e.tooltip.header]}`), body: i });
+        return _.jsx(ss, { ...e, tooltip: e.tooltip.body !== Je && l });
+    }),
+    ss = h(function (e) {
+        const t = $t(),
             s = t.filters.get(),
             a = m.useMemo(() => {
                 if ('role' === e.event.type) {
@@ -749,7 +750,7 @@ const $t = {
             ...e.tooltip,
             theme: Q.primary,
             size: Y.extraSmall,
-            className: f($t.toggle, a && $t.toggle__activated, e.className),
+            className: f(es.toggle, a && es.toggle__activated, e.className),
             activated: a,
             onClick: () => {
                 (t.change(e.event), e.tooltip && e.tooltip.onClick());
@@ -757,33 +758,16 @@ const $t = {
             children: e.children,
         });
     });
-function ss(e) {
-    return _.jsx('div', {
-        className: f($t.toggleContainer, e.className),
-        children: et.map((e) =>
-            _.jsx(
-                es,
-                {
-                    tooltip: { header: e, body: Ze },
-                    event: { type: 'role', role: e },
-                    children: _.jsx(se, { roleKey: e, size: se.sizes.x24x24, className: $t.icon }),
-                },
-                e,
-            ),
-        ),
-    });
-}
 function as(e) {
     return _.jsx('div', {
-        className: f($t.toggleContainer, $t.toggleContainer__type, e.className),
-        children: st.map((e) =>
+        className: f(es.toggleContainer, e.className),
+        children: tt.map((e) =>
             _.jsx(
-                es,
+                ts,
                 {
                     tooltip: { header: e, body: Ye },
-                    event: { field: rt, type: 'regular', value: e },
-                    className: $t.toggle__type,
-                    children: _.jsx(te, { type: e, size: te.sizes.x24x24 }),
+                    event: { type: 'role', role: e },
+                    children: _.jsx(se, { roleKey: e, size: se.sizes.x24x24, className: es.icon }),
                 },
                 e,
             ),
@@ -792,17 +776,15 @@ function as(e) {
 }
 function rs(e) {
     return _.jsx('div', {
-        className: f($t.toggleContainer, e.className),
-        children: e.orderedNations.map((e) =>
+        className: f(es.toggleContainer, es.toggleContainer__type, e.className),
+        children: at.map((e) =>
             _.jsx(
-                es,
+                ts,
                 {
-                    tooltip: { header: e, body: Je },
+                    tooltip: { header: e, body: Qe },
                     event: { field: it, type: 'regular', value: e },
-                    children: _.jsx('div', {
-                        className: $t.nationWrapper,
-                        children: _.jsx(ee, { className: $t.nationIcon, path: `flags.c_60x40.${e}` }),
-                    }),
+                    className: es.toggle__type,
+                    children: _.jsx(te, { type: e, size: te.sizes.x24x24 }),
                 },
                 e,
             ),
@@ -811,14 +793,17 @@ function rs(e) {
 }
 function is(e) {
     return _.jsx('div', {
-        className: f($t.toggleContainer, e.className),
-        children: at.map((e) =>
+        className: f(es.toggleContainer, e.className),
+        children: e.orderedNations.map((e) =>
             _.jsx(
-                es,
+                ts,
                 {
-                    tooltip: { header: 'tier', body: Qe },
-                    event: { field: lt, type: 'regular', value: `level_${e}` },
-                    children: _.jsx(ae, { className: $t.vehicleLevel, value: e }),
+                    tooltip: { header: e, body: We },
+                    event: { field: lt, type: 'regular', value: e },
+                    children: _.jsx('div', {
+                        className: es.nationWrapper,
+                        children: _.jsx(ee, { className: es.nationIcon, path: `flags.c_60x40.${e}` }),
+                    }),
                 },
                 e,
             ),
@@ -826,48 +811,64 @@ function is(e) {
     });
 }
 function ls(e) {
+    return _.jsx('div', {
+        className: f(es.toggleContainer, e.className),
+        children: rt.map((e) =>
+            _.jsx(
+                ts,
+                {
+                    tooltip: { header: 'tier', body: Je },
+                    event: { field: nt, type: 'regular', value: `level_${e}` },
+                    children: _.jsx(ae, { className: es.vehicleLevel, value: e }),
+                },
+                e,
+            ),
+        ),
+    });
+}
+function ns(e) {
     const t = $(`hangar.filter.special.${e.imagePath}`, `hangar.filter.special.${e.imagePath}_upscale`);
     return _.jsx(
-        es,
+        ts,
         {
             tooltip: { header: e.special, body: e.special },
-            event: { field: nt, type: 'regular', value: e.special },
+            event: { field: ot, type: 'regular', value: e.special },
             children: _.jsx(ee, {
-                className: f($t.specialsIcons, 'favorite' === e.special && $t.specialsIcons__favorite),
+                className: f(es.specialsIcons, 'favorite' === e.special && es.specialsIcons__favorite),
                 path: t,
             }),
         },
         e.special,
     );
 }
-function ns() {
+function os() {
     const e = $('hangar.filter.special.isCommonProgression', 'hangar.filter.special.isCommonProgression_upscale');
-    return _.jsx(es, {
-        tooltip: { header: $e, body: $e },
-        event: { field: ot, type: 'regular', value: $e },
-        children: _.jsx(ee, { className: $t.specialsIcons, path: e }),
+    return _.jsx(ts, {
+        tooltip: { header: et, body: et },
+        event: { field: ct, type: 'regular', value: et },
+        children: _.jsx(ee, { className: es.specialsIcons, path: e }),
     });
 }
-const os = h(function (e) {
-    const t = Kt(),
-        s = t.specialIds ?? tt,
-        a = qt(),
+const cs = h(function (e) {
+    const t = $t(),
+        s = t.specialIds ?? st,
+        a = Ht(),
         r = a.model.bpState.active.get(),
         i = a.model.rentVehiclesList(),
-        l = Jt()?.model,
+        l = Wt()?.model,
         n = !l || l.isCrystalEarnEnabled.get(),
         o = !l || l.isDailyMultipliedXpEnabled.get(),
         c = s.filter((e) => (0 !== i.length || 'rented' !== e) && (o || 'bonus' !== e) && (n || 'crystals' !== e));
     return _.jsxs('div', {
-        className: f($t.toggleContainer, e.className),
+        className: f(es.toggleContainer, e.className),
         children: [
-            c.map((e) => _.jsx(ls, { imagePath: t.imagesMap?.[e] ?? e, special: e }, e)),
-            r && _.jsx(ns, {}),
+            c.map((e) => _.jsx(ns, { imagePath: t.imagesMap?.[e] ?? e, special: e }, e)),
+            r && _.jsx(os, {}),
             e.children,
         ],
     });
 });
-function cs() {
+function ds() {
     const e = re(),
         [t, s] = m.useState(!1);
     return (
@@ -886,73 +887,73 @@ function cs() {
     );
 }
 m.memo(function (e) {
-    return _.jsxs(ds, {
+    return _.jsxs(us, {
         ...e,
-        className: e.className ?? $t.scroll,
+        className: e.className ?? es.scroll,
         children: [
-            _.jsx(J, { className: $t.category, path: 'tank_carousel_filter.popover.label.specials' }),
-            _.jsx(os, { children: e.children }),
+            _.jsx(J, { className: es.category, path: 'tank_carousel_filter.popover.label.specials' }),
+            _.jsx(cs, { children: e.children }),
         ],
     });
 });
-const ds = m.memo(function (e) {
+const us = m.memo(function (e) {
         return _.jsx(W, {
             children: _.jsxs(K, {
                 className: e.className,
                 barClassNames: e.barClassNames,
                 scrollClassNames: e.scrollClassNames,
                 children: [
-                    _.jsx(J, { className: $t.category, path: 'tank_carousel_filter.popover.label.vehicleTypes' }),
+                    _.jsx(J, { className: es.category, path: 'tank_carousel_filter.popover.label.vehicleTypes' }),
+                    _.jsx(rs, {}),
+                    _.jsx(J, { className: es.category, path: 'tank_carousel_filter.popover.label.vehicleRole' }),
                     _.jsx(as, {}),
-                    _.jsx(J, { className: $t.category, path: 'tank_carousel_filter.popover.label.vehicleRole' }),
-                    _.jsx(ss, {}),
-                    _.jsx(J, { className: $t.category, path: 'tank_carousel_filter.popover.label.nations' }),
-                    _.jsx(rs, { orderedNations: e.orderedNations }),
-                    _.jsx(J, { className: $t.category, path: 'tank_carousel_filter.popover.label.levels' }),
-                    _.jsx(is, {}),
+                    _.jsx(J, { className: es.category, path: 'tank_carousel_filter.popover.label.nations' }),
+                    _.jsx(is, { orderedNations: e.orderedNations }),
+                    _.jsx(J, { className: es.category, path: 'tank_carousel_filter.popover.label.levels' }),
+                    _.jsx(ls, {}),
                     e.children,
                 ],
             }),
         });
     }),
-    us = 'Counter_f01b3b30',
-    ms = 'Counter_current_a4351338',
-    ps = 'Counter_slash_6b744519',
-    hs = 'Counter_total_5eb7f52b',
-    _s = 'Counter_reset_1c57af99',
-    fs = 'Counter_resetIcon_5ecd9d54',
-    vs = h(function () {
+    ms = 'Counter_f01b3b30',
+    ps = 'Counter_current_a4351338',
+    hs = 'Counter_slash_6b744519',
+    _s = 'Counter_total_5eb7f52b',
+    fs = 'Counter_reset_1c57af99',
+    vs = 'Counter_resetIcon_5ecd9d54',
+    gs = h(function () {
         const e = M.resolve('strings'),
             t = M.resolve('intl'),
-            s = Kt(),
+            s = $t(),
             a = s.hasFilter();
         ie();
-        const { model: r } = Ft();
+        const { model: r } = Zt();
         return _.jsxs('div', {
-            className: us,
+            className: ms,
             children: [
                 e.readOrEmpty('dialogs.selectVehicle.counter'),
                 a &&
                     _.jsxs(_.Fragment, {
                         children: [
-                            _.jsx('div', { className: ms, children: t.formatNumber('integral', r.list().length) }),
-                            _.jsx('div', { className: ps, children: e.readOrEmpty('common.common.slash') }),
+                            _.jsx('div', { className: ps, children: t.formatNumber('integral', r.list().length) }),
+                            _.jsx('div', { className: hs, children: e.readOrEmpty('common.common.slash') }),
                         ],
                     }),
-                _.jsx('div', { className: hs, children: t.formatNumber('integral', r.total()) }),
+                _.jsx('div', { className: _s, children: t.formatNumber('integral', r.total()) }),
                 a &&
                     _.jsx(le, {
-                        className: _s,
+                        className: fs,
                         autoAlignContent: !1,
                         theme: le.themes.secondary,
                         size: le.sizes.extraSmall,
                         onClick: s.reset,
-                        children: _.jsx('div', { className: fs }),
+                        children: _.jsx('div', { className: vs }),
                     }),
             ],
         });
     }),
-    gs = {
+    xs = {
         frames: {
             import_hover: {
                 frame: { x: 0, y: 0, w: 46, h: 49 },
@@ -1085,18 +1086,18 @@ const ds = m.memo(function (e) {
         },
         meta: { size: { w: 137, h: 145 }, scale: 1 },
     };
-function xs({ value: e, ...t }) {
-    return _.jsx(oe, { ...t, sprite: gs, path: 'hangar.playlists.icons', icon: e, className: t.className });
+function bs({ value: e, ...t }) {
+    return _.jsx(oe, { ...t, sprite: xs, path: 'hangar.playlists.icons', icon: e, className: t.className });
 }
-const bs = ne('IconContainer', 'Icon_container_83f4dd0e'),
-    ys = h(function (e) {
-        const t = qt(),
-            s = Ot().model.byIdUnsafe(e.id);
+const ys = ne('IconContainer', 'Icon_container_83f4dd0e'),
+    Cs = h(function (e) {
+        const t = Ht(),
+            s = Xt().model.byIdUnsafe(e.id);
         B(void 0 !== s, `Playlist with ${e.id} is not found`);
         const a = t.model.accumulateByIds(s.list).length;
         return s.list.length <= a
             ? null
-            : _.jsx(Cs, {
+            : _.jsx(Ns, {
                   className: e.className,
                   classNames: e.classNames,
                   displayAmount: a,
@@ -1104,7 +1105,7 @@ const bs = ne('IconContainer', 'Icon_container_83f4dd0e'),
                   realAmountInPlaylist: s.list.length,
               });
     });
-function Cs(e) {
+function Ns(e) {
     const t = M.resolve('strings'),
         s = t
             .readOrEmpty('playlists.validation.unavailable.title')
@@ -1112,14 +1113,14 @@ function Cs(e) {
             .replace('{{total}}', e.realAmountInPlaylist.toString()),
         a = F({ header: s, body: t.readOrEmpty('playlists.validation.unavailable.body') }),
         r = 'lg' === e.size ? 'alert_lg' : 'alert',
-        i = 'lg' === e.size ? bs : 'div';
+        i = 'lg' === e.size ? ys : 'div';
     return _.jsx(i, {
         ...a,
         className: f(e.classNames?.container, e.className),
-        children: _.jsx(xs, { className: e.classNames?.icon, value: r }),
+        children: _.jsx(bs, { className: e.classNames?.icon, value: r }),
     });
 }
-const Ns = (e) =>
+const js = (e) =>
         m.createElement(
             'svg',
             {
@@ -1220,7 +1221,7 @@ const Ns = (e) =>
                 }),
             ),
         ),
-    js = (e) =>
+    ws = (e) =>
         m.createElement(
             'svg',
             {
@@ -1357,7 +1358,7 @@ const Ns = (e) =>
                 }),
             ),
         ),
-    ws = {
+    Es = {
         root: 'CopyButton_root_49d34ed8',
         base: 'CopyButton_67fe8760',
         base__enabled: 'CopyButton_base__enabled_49d34ed8',
@@ -1368,19 +1369,19 @@ const Ns = (e) =>
         base__copiedStatus: 'CopyButton_base__copiedStatus_49d34ed8',
         icon__exportDone: 'CopyButton_icon__exportDone_8d5db080',
     },
-    Es = M.resolve('strings'),
-    Ss = function (e) {
+    Ss = M.resolve('strings'),
+    As = function (e) {
         const [t, s] = m.useState('copy'),
             a = ce(),
             r = F({
-                header: Es.readOrEmpty('playlists.share.copy_button.title'),
-                body: Es.readOrEmpty('playlists.share.copy_button.body'),
+                header: Ss.readOrEmpty('playlists.share.copy_button.title'),
+                body: Ss.readOrEmpty('playlists.share.copy_button.body'),
             }),
             i = ie();
         return _.jsxs('div', {
             ...r,
             'data-test-id': 'copyButton',
-            className: f(ws.base, ws[`base__${t}Status`], e.disabled ? ws.base__disabled : ws.base__enabled),
+            className: f(Es.base, Es[`base__${t}Status`], e.disabled ? Es.base__disabled : Es.base__enabled),
             onClick: (t) => {
                 if ((r.onClick(), e.disabled)) return;
                 i.play('click', { target: 'vehicle:playlists:copy_button', original: t });
@@ -1398,12 +1399,12 @@ const Ns = (e) =>
                     e.disabled || i.play('mouse-enter', { target: 'vehicle:playlists:copy_button', original: t }));
             },
             children: [
-                _.jsx(Ns, { className: f(ws.icon, ws.icon__export) }),
-                _.jsx(js, { className: f(ws.icon, ws.icon__exportDone) }),
+                _.jsx(js, { className: f(Es.icon, Es.icon__export) }),
+                _.jsx(ws, { className: f(Es.icon, Es.icon__exportDone) }),
             ],
         });
     },
-    As = (e) =>
+    Is = (e) =>
         m.createElement(
             'svg',
             {
@@ -1574,19 +1575,19 @@ const Ns = (e) =>
                 }),
             ),
         ),
-    Is = 'EditButton_e0942ef0',
-    ks = 'EditButton_icon_a08c89e9',
-    Ps = M.resolve('strings');
-function Ds({ id: e, className: t }) {
+    ks = 'EditButton_e0942ef0',
+    Ps = 'EditButton_icon_a08c89e9',
+    Ds = M.resolve('strings');
+function Vs({ id: e, className: t }) {
     const s = ie(),
         a = ue(),
         r = F({
-            header: Ps.readOrEmpty('playlists.edit_button.title'),
-            body: Ps.readOrEmpty('playlists.edit_button.body'),
+            header: Ds.readOrEmpty('playlists.edit_button.title'),
+            body: Ds.readOrEmpty('playlists.edit_button.body'),
         });
     return _.jsx('div', {
         ...r,
-        className: f(Is, t),
+        className: f(ks, t),
         'data-test-id': 'editButton',
         onClick: (t) => {
             (r.onClick(),
@@ -1596,50 +1597,50 @@ function Ds({ id: e, className: t }) {
         onMouseEnter: (e) => {
             (r.onMouseEnter(e), s.play('mouse-enter', { target: 'vehicle:playlists:edit_button', original: e }));
         },
-        children: _.jsx(As, { className: ks }),
+        children: _.jsx(Is, { className: Ps }),
     });
 }
-const Vs = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_';
-const Ms = 'Item_background_5cb932c1',
-    Ts = 'Item_c5163bf',
-    Ls = 'Item_base__selected_5f6fcc69',
-    Bs = 'Item_button_8b3e738d',
-    Us = 'Item_selectedIcon_eb50b3a6',
-    zs = 'Item_content_db9841ac',
-    Os = 'Item_title_3edba705',
-    Xs = 'Item_actions_63add2d',
-    Rs = { container: 'Item_alert_31c28fa6', icon: 'Item_alertIcon_f872f769' },
-    Gs = h(function (e) {
+const Ms = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_';
+const Ts = 'Item_background_5cb932c1',
+    Ls = 'Item_c5163bf',
+    Bs = 'Item_base__selected_5f6fcc69',
+    Us = 'Item_button_8b3e738d',
+    zs = 'Item_selectedIcon_eb50b3a6',
+    Os = 'Item_content_db9841ac',
+    Xs = 'Item_title_3edba705',
+    Rs = 'Item_actions_63add2d',
+    Gs = _e({ container: 'Item_alert_31c28fa6', icon: 'Item_alertIcon_f872f769' }),
+    qs = h(function (e) {
         const { playlist: t } = e,
-            s = Ot(),
+            s = Xt(),
             a = me();
         return _.jsxs('div', {
-            className: f(Ts, s.model.currentId() === e.id && Ls),
+            className: f(Ls, s.model.currentId() === e.id && Bs),
             children: [
-                _.jsx('div', { className: Ms }),
+                _.jsx('div', { className: Ts }),
                 _.jsxs(pe, {
-                    className: Bs,
+                    className: Us,
                     onClick: () => {
                         (s.controls.select(e.id), a.close());
                     },
                     'data-test-id': `playlist-${t.title}`,
                     children: [
                         _.jsxs('span', {
-                            className: zs,
+                            className: Os,
                             children: [
-                                _.jsx(xs, { value: 'checked', className: Us }),
-                                _.jsx(he, { text: t.title, className: Os }),
-                                _.jsx(ys, { id: e.id, classNames: Rs }),
+                                _.jsx(bs, { value: 'checked', className: zs }),
+                                _.jsx(he, { text: t.title, className: Xs }),
+                                _.jsx(Cs, { id: e.id, classNames: Gs }),
                             ],
                         }),
                         _.jsxs('span', {
-                            className: Xs,
+                            className: Rs,
                             onClick: (e) => e.stopPropagation(),
                             children: [
-                                _.jsx(Ss, {
+                                _.jsx(As, {
                                     onCopy: function () {
                                         const e = (function (e) {
-                                            if (0 === e.length) return Mt('EMPTY_INPUT');
+                                            if (0 === e.length) return Tt('EMPTY_INPUT');
                                             const t = (function (e) {
                                                     let t = e[0] ?? 0;
                                                     for (let s = 0; s < e.length; s++) t = (t + e[s]) & 65535;
@@ -1665,22 +1666,22 @@ const Ms = 'Item_background_5cb932c1',
                                                 l = 0;
                                             const n = s.slice(0, a);
                                             for (const o of n)
-                                                for (i = (i << 8n) | BigInt(o), l += 8; l >= 6; ) {
+                                                for (i = (i << 8n) | BigInt(o), l += 8; l >= 6;) {
                                                     l -= 6;
                                                     const e = Number((i >> BigInt(l)) & 0x3fn);
-                                                    ((r += Vs[e]), (i &= (1n << BigInt(l)) - 1n));
+                                                    ((r += Ms[e]), (i &= (1n << BigInt(l)) - 1n));
                                                 }
                                             if (l > 0) {
                                                 const e = 63 & Number(i << BigInt(6 - l));
-                                                r += Vs[e];
+                                                r += Ms[e];
                                             }
-                                            return Vt(r);
+                                            return Mt(r);
                                         })(t.list);
                                         return 'error' === e.type ? console.error(e.error) : e.value;
                                     },
                                     disabled: 0 === t.list.length,
                                 }),
-                                _.jsx(Ds, { id: e.id }),
+                                _.jsx(Vs, { id: e.id }),
                             ],
                         }),
                     ],
@@ -1688,26 +1689,26 @@ const Ms = 'Item_background_5cb932c1',
             ],
         });
     }),
-    qs = h(function (e) {
-        const t = Ot().model.byId(e.id);
-        return 'ok' === t.type && void 0 !== t.value ? _.jsx(Gs, { playlist: t.value, id: e.id }) : null;
+    Hs = h(function (e) {
+        const t = Xt().model.byId(e.id);
+        return 'ok' === t.type && void 0 !== t.value ? _.jsx(qs, { playlist: t.value, id: e.id }) : null;
     }),
-    Hs = h(function () {
-        const e = Ot(),
+    Fs = h(function () {
+        const e = Xt(),
             t = me();
         return _.jsxs('div', {
-            className: f(Ts, !e.model.currentId() && Ls),
+            className: f(Ls, !e.model.currentId() && Bs),
             children: [
-                _.jsx('div', { className: Ms }),
+                _.jsx('div', { className: Ts }),
                 _.jsx(pe, {
-                    className: Bs,
+                    className: Us,
                     onClick: () => {
                         (e.controls.select(void 0), t.close());
                     },
                     'data-test-id': 'playlist-AllVehicles',
                     children: _.jsxs('span', {
                         children: [
-                            _.jsx(xs, { value: 'checked', className: Us }),
+                            _.jsx(bs, { value: 'checked', className: zs }),
                             M.resolve('strings').readOrEmpty('pages.titles.allVehicles'),
                         ],
                     }),
@@ -1715,126 +1716,126 @@ const Ms = 'Item_background_5cb932c1',
             ],
         });
     }),
-    Fs = 'Content_divider_f0c848b4',
-    Zs = 'Content_icon_4da9c1eb',
-    Ys = 'Content_trigger_4b0aad5c',
-    Qs = 'Content_triggerText_2dc694b6',
-    Js = h(function () {
-        const e = Ot().model.sortedIds();
-        return _.jsxs('div', { children: [_.jsx(Hs, {}), e.map((e) => _.jsx(qs, { id: e }, e))] });
+    Zs = 'Content_divider_f0c848b4',
+    Ys = 'Content_icon_4da9c1eb',
+    Qs = 'Content_trigger_4b0aad5c',
+    Js = 'Content_triggerText_2dc694b6',
+    Ws = h(function () {
+        const e = Xt().model.sortedIds();
+        return _.jsxs('div', { children: [_.jsx(Fs, {}), e.map((e) => _.jsx(Hs, { id: e }, e))] });
     }),
-    Ws = ne('Divider', Fs),
-    Ks = h(function (e) {
-        const t = Ot(),
+    Ks = ne('Divider', Zs),
+    $s = h(function (e) {
+        const t = Xt(),
             s = M.resolve('strings'),
-            [a, r] = _e('add'),
-            i = e.asChild ? fe : pe;
+            [a, r] = fe('add'),
+            i = e.asChild ? ve : pe;
         return _.jsxs(i, {
-            className: Ys,
+            className: Qs,
             'data-test-id': 'createPlaylist',
             onMouseEnter: () => r(!0),
             onMouseLeave: () => r(!1),
             onClick: () => t.controls.create(),
             children: [
-                _.jsx(bs, { className: Zs, children: _.jsx(xs, { value: a }) }),
-                _.jsx('span', { className: Qs, children: s.readOrEmpty('playlists.list.create') }),
+                _.jsx(ys, { className: Ys, children: _.jsx(bs, { value: a }) }),
+                _.jsx('span', { className: Js, children: s.readOrEmpty('playlists.list.create') }),
             ],
         });
     }),
-    $s = function (e) {
-        const t = Ot(),
+    ea = function (e) {
+        const t = Xt(),
             s = M.resolve('strings'),
-            [a, r] = _e('import'),
-            i = e.asChild ? fe : pe;
+            [a, r] = fe('import'),
+            i = e.asChild ? ve : pe;
         return _.jsxs(i, {
-            className: Ys,
+            className: Qs,
             'data-test-id': 'importPlaylist',
             onClick: t.controls.openImport,
             onMouseEnter: () => r(!0),
             onMouseLeave: () => r(!1),
             children: [
-                _.jsx(bs, { className: Zs, children: _.jsx(xs, { value: a }) }),
-                _.jsx('span', { className: Qs, children: s.readOrEmpty('playlists.imports.trigger') }),
+                _.jsx(ys, { className: Ys, children: _.jsx(bs, { value: a }) }),
+                _.jsx('span', { className: Js, children: s.readOrEmpty('playlists.imports.trigger') }),
             ],
         });
     },
-    ea = 'Dropdown_popover_b5203d93',
-    ta = 'Dropdown_scrollContent_7363dda3',
-    sa = 'Dropdown_bar_2d94e05e',
-    aa = 'Dropdown_area_a34c2ecf',
-    ra = 'Dropdown_area__begin_af756086',
-    ia = 'Dropdown_area__end_3b89247a',
-    la = 'Dropdown_list_41b8eefe',
-    na = 'Dropdown_triggers_b8372e20',
-    oa = 'Dropdown_currentTitle_11ba3707',
-    ca = 'Dropdown_trigger_f754201d',
-    da = 'Dropdown_currentTitleText_13099382',
-    ua = 'Dropdown_alert_8195eae1',
-    ma = 'Dropdown_alertIcon_61f05dd3',
-    pa = 'Dropdown_arrow_5a21c825',
-    ha = 'Dropdown_arrow__opened_ef9f7c1d',
-    _a = M.resolve('strings'),
-    fa = [25, 25],
-    va = { container: ua, icon: ma },
-    ga = h(function () {
-        const { api: e } = ve(),
-            [t, s] = ge(e, fa),
+    ta = 'Dropdown_popover_b5203d93',
+    sa = 'Dropdown_scrollContent_7363dda3',
+    aa = 'Dropdown_bar_2d94e05e',
+    ra = 'Dropdown_area_a34c2ecf',
+    ia = 'Dropdown_area__begin_af756086',
+    la = 'Dropdown_area__end_3b89247a',
+    na = 'Dropdown_list_41b8eefe',
+    oa = 'Dropdown_triggers_b8372e20',
+    ca = 'Dropdown_currentTitle_11ba3707',
+    da = 'Dropdown_trigger_f754201d',
+    ua = 'Dropdown_currentTitleText_13099382',
+    ma = 'Dropdown_alert_8195eae1',
+    pa = 'Dropdown_alertIcon_61f05dd3',
+    ha = 'Dropdown_arrow_5a21c825',
+    _a = 'Dropdown_arrow__opened_ef9f7c1d',
+    fa = M.resolve('strings'),
+    va = [25, 25],
+    ga = _e({ container: ma, icon: pa }),
+    xa = h(function () {
+        const { api: e } = ge(),
+            [t, s] = xe(e, va),
             { opened: a } = me();
         return (
             m.useEffect(() => {
-                if (a) return xe(() => xe(e.recalculateContent));
+                if (a) return be(() => be(e.recalculateContent));
             }, [a, e.recalculateContent]),
-            _.jsx(be, { className: f(aa, !t && ra, !s && ia), classNames: { content: ta }, children: _.jsx(Js, {}) })
+            _.jsx(ye, { className: f(ra, !t && ia, !s && la), classNames: { content: sa }, children: _.jsx(Ws, {}) })
         );
     });
-function xa(e) {
+function ba(e) {
     const t = me();
-    return _.jsx(xs, { value: 'arrow_down', className: f(pa, t.opened && ha, e.className) });
+    return _.jsx(bs, { value: 'arrow_down', className: f(ha, t.opened && _a, e.className) });
 }
 h(function (e) {
-    const t = Rt();
+    const t = Gt();
     return t && t.model.enabled.get()
-        ? _.jsx(ye.Portal, {
+        ? _.jsx(Ce.Portal, {
               position: 'bottom',
               ...e,
-              children: _.jsx(Ce, {
-                  children: _.jsxs(ye.Display, {
+              children: _.jsx(Ne, {
+                  children: _.jsxs(Ce.Display, {
                       'data-name': 'playlist-dropdown-content',
-                      className: ea,
+                      className: ta,
                       children: [
-                          _.jsx(ye.Tip, {}),
+                          _.jsx(Ce.Tip, {}),
                           _.jsx('div', {
-                              className: la,
+                              className: na,
                               children: _.jsxs(W, {
-                                  children: [_.jsx(ga, {}), _.jsx(Ne, { classNames: { base: sa } })],
+                                  children: [_.jsx(xa, {}), _.jsx(je, { classNames: { base: aa } })],
                               }),
                           }),
-                          _.jsx(Ws, {}),
-                          _.jsxs('div', { className: na, children: [_.jsx(Ks, {}), _.jsx($s, {})] }),
+                          _.jsx(Ks, {}),
+                          _.jsxs('div', { className: oa, children: [_.jsx($s, {}), _.jsx(ea, {})] }),
                       ],
                   }),
               }),
           })
         : null;
 });
-const ba = h(function (e) {
-    const t = e.limit ? At(e.title, e.limit)[0] : e.title;
+const ya = h(function (e) {
+    const t = e.limit ? It(e.title, e.limit)[0] : e.title;
     return _.jsxs('div', {
-        className: f(oa, e.className),
+        className: f(ca, e.className),
         children: [
-            _.jsx(he, { text: t, className: da }),
-            e.id && _.jsx(ys, { classNames: va, id: e.id, size: e.alertSize }),
+            _.jsx(he, { text: t, className: ua }),
+            e.id && _.jsx(Cs, { classNames: ga, id: e.id, size: e.alertSize }),
         ],
     });
 });
 h(function (e) {
-    const t = Rt(),
+    const t = Gt(),
         s = t?.model.current(),
         a = ie(),
-        r = F({ header: s?.title, body: _a.readOrEmpty('playlists.trigger.explain') });
+        r = F({ header: s?.title, body: fa.readOrEmpty('playlists.trigger.explain') });
     if (!t || !1 === t.model.enabled.get()) return e.fallback;
-    const i = e.asChild ? fe : 'div';
-    return _.jsx(ye.Trigger, {
+    const i = e.asChild ? ve : 'div';
+    return _.jsx(Ce.Trigger, {
         children: (t) =>
             _.jsx(_.Fragment, {
                 children: _.jsxs(i, {
@@ -1851,66 +1852,66 @@ h(function (e) {
                     onMouseLeave: r?.onMouseLeave,
                     'data-name': 'playlist-dropdown-trigger',
                     'data-test-id': 'playlistDropdown',
-                    className: f(ca, e.className),
+                    className: f(da, e.className),
                     children: [
-                        _.jsx(je, { children: e.children }),
+                        _.jsx(we, { children: e.children }),
                         s
-                            ? _.jsx(ba, { limit: e.limit, id: s.id, title: s.title, alertSize: e.alertSize })
-                            : _.jsx(ba, { title: _a.readOrEmpty('pages.titles.allVehicles') }),
-                        _.jsx(xa, {}),
+                            ? _.jsx(ya, { limit: e.limit, id: s.id, title: s.title, alertSize: e.alertSize })
+                            : _.jsx(ya, { title: fa.readOrEmpty('pages.titles.allVehicles') }),
+                        _.jsx(ba, {}),
                     ],
                 }),
             }),
     });
 });
-const ya = 'Item_background_5cb932c1',
-    Ca = 'Item_c5163bf',
-    Na = 'Item_base__selected_5f6fcc69',
-    ja = 'Item_button_8b3e738d',
-    wa = 'Item_selectedIcon_eb50b3a6',
-    Ea = h(function (e) {
+const Ca = 'Item_background_5cb932c1',
+    Na = 'Item_c5163bf',
+    ja = 'Item_base__selected_5f6fcc69',
+    wa = 'Item_button_8b3e738d',
+    Ea = 'Item_selectedIcon_eb50b3a6',
+    Sa = h(function (e) {
         const { playlist: t } = e,
-            s = Ot(),
+            s = Xt(),
             a = me(),
             r = F({ body: t.title }),
-            [i, l] = At(t.title, 20);
+            [i, l] = It(t.title, 20);
         return _.jsxs('div', {
             ...(l && r),
-            className: f(Ca, s.model.currentId() === e.id && Na),
+            className: f(Na, s.model.currentId() === e.id && ja),
             children: [
-                _.jsx('div', { className: ya }),
+                _.jsx('div', { className: Ca }),
                 _.jsx(pe, {
-                    className: ja,
+                    className: wa,
                     onClick: () => {
                         (s.controls.select(e.id), a.close());
                     },
                     'data-test-id': `playlist-${i}`,
-                    children: _.jsxs('span', { children: [_.jsx(xs, { value: 'checked', className: wa }), i] }),
+                    children: _.jsxs('span', { children: [_.jsx(bs, { value: 'checked', className: Ea }), i] }),
                 }),
             ],
         });
     }),
-    Sa = h(function (e) {
-        const t = Ot().model.byId(e.id);
-        return 'ok' === t.type && void 0 !== t.value ? _.jsx(Ea, { playlist: t.value, id: e.id }) : null;
+    Aa = h(function (e) {
+        const t = Xt().model.byId(e.id);
+        return 'ok' === t.type && void 0 !== t.value ? _.jsx(Sa, { playlist: t.value, id: e.id }) : null;
     }),
-    Aa = h(function () {
-        const e = Ot(),
+    Ia = h(function () {
+        const e = Xt(),
             t = me(),
-            { model: s, controls: a } = Ft();
+            { model: s, controls: a } = Zt();
         return _.jsxs('div', {
-            className: f(Ca, s.isAllVehicles.get() && !e.model.currentId() && Na),
+            className: f(Na, s.isAllVehicles.get() && !e.model.currentId() && ja),
             children: [
-                _.jsx('div', { className: ya }),
+                _.jsx('div', { className: Ca }),
                 _.jsx(pe, {
-                    className: ja,
+                    className: wa,
                     onClick: () => {
                         (e.controls.select(void 0), a.setAllVehicles(!0), t.close());
                     },
                     'data-test-id': 'playlist-AllVehicles',
                     children: _.jsxs('span', {
                         children: [
-                            _.jsx(xs, { value: 'checked', className: wa }),
+                            _.jsx(bs, { value: 'checked', className: Ea }),
                             M.resolve('strings').readOrEmpty('pages.titles.allSelectVehicles'),
                         ],
                     }),
@@ -1918,23 +1919,23 @@ const ya = 'Item_background_5cb932c1',
             ],
         });
     }),
-    Ia = h(function () {
-        const e = Ot(),
+    ka = h(function () {
+        const e = Xt(),
             t = me(),
-            { model: s, controls: a } = Ft();
+            { model: s, controls: a } = Zt();
         return _.jsxs('div', {
-            className: f(Ca, !s.isAllVehicles.get() && !e.model.currentId() && Na),
+            className: f(Na, !s.isAllVehicles.get() && !e.model.currentId() && ja),
             children: [
-                _.jsx('div', { className: ya }),
+                _.jsx('div', { className: Ca }),
                 _.jsx(pe, {
-                    className: ja,
+                    className: wa,
                     onClick: () => {
                         (e.controls.select(void 0), a.setAllVehicles(!1), t.close());
                     },
                     'data-test-id': 'playlist-MyVehicles',
                     children: _.jsxs('span', {
                         children: [
-                            _.jsx(xs, { value: 'checked', className: wa }),
+                            _.jsx(bs, { value: 'checked', className: Ea }),
                             M.resolve('strings').readOrEmpty('pages.titles.allVehicles'),
                         ],
                     }),
@@ -1942,7 +1943,7 @@ const ya = 'Item_background_5cb932c1',
             ],
         });
     }),
-    ka = {
+    Pa = {
         playlistTrigger: 'Dropdown_playlistTrigger_eb63ff3b',
         playlistTitle: 'Dropdown_playlistTitle_9fbceba2',
         popover: 'Dropdown_popover_bdce30be',
@@ -1953,36 +1954,36 @@ const ya = 'Item_background_5cb932c1',
         list: 'Dropdown_list_41b8eefe',
         trigger: 'Dropdown_trigger_f754201d',
     },
-    Pa = [25, 25],
-    Da = h(function () {
-        const e = Ot().model.sortedIds();
-        return _.jsxs('div', { children: [_.jsx(Aa, {}), _.jsx(Ia, {}), e.map((e) => _.jsx(Sa, { id: e }, e))] });
-    }),
+    Da = [25, 25],
     Va = h(function () {
-        const { api: e } = ve(),
-            [t, s] = ge(e, Pa),
+        const e = Xt().model.sortedIds();
+        return _.jsxs('div', { children: [_.jsx(Ia, {}), _.jsx(ka, {}), e.map((e) => _.jsx(Aa, { id: e }, e))] });
+    }),
+    Ma = h(function () {
+        const { api: e } = ge(),
+            [t, s] = xe(e, Da),
             { opened: a } = me();
         return (
             m.useEffect(() => {
-                if (a) return xe(() => xe(e.recalculateContent));
+                if (a) return be(() => be(e.recalculateContent));
             }, [a, e.recalculateContent]),
-            _.jsx(be, {
-                className: f(ka.area, !t && ka.area__begin, !s && ka.area__end),
-                classNames: { content: ka.scrollContent },
-                children: _.jsx(Da, {}),
+            _.jsx(ye, {
+                className: f(Pa.area, !t && Pa.area__begin, !s && Pa.area__end),
+                classNames: { content: Pa.scrollContent },
+                children: _.jsx(Va, {}),
             })
         );
     }),
-    Ma = h(function (e) {
-        const t = Rt(),
+    Ta = h(function (e) {
+        const t = Gt(),
             s = t?.model.current(),
             a = ie(),
             r = M.resolve('strings'),
-            { model: i } = Ft(),
+            { model: i } = Zt(),
             l = F({ header: s?.title, body: r.readOrEmpty('playlists.trigger.explain') });
         if (!t || !1 === t.model.enabled.get()) return e.fallback;
-        const n = e.asChild ? fe : 'div';
-        return _.jsx(ye.Trigger, {
+        const n = e.asChild ? ve : 'div';
+        return _.jsx(Ce.Trigger, {
             children: (t) =>
                 _.jsx(_.Fragment, {
                     children: _.jsxs(n, {
@@ -1999,98 +2000,78 @@ const ya = 'Item_background_5cb932c1',
                         onMouseLeave: l?.onMouseLeave,
                         'data-name': 'playlist-dropdown-trigger',
                         'data-test-id': 'playlistDropdown',
-                        className: f(ka.trigger, e.className),
+                        className: f(Pa.trigger, e.className),
                         children: [
-                            _.jsx(je, { children: e.children }),
+                            _.jsx(we, { children: e.children }),
                             s
-                                ? _.jsx(ba, { limit: e.limit, id: s.id, title: s.title, alertSize: e.alertSize })
-                                : _.jsx(ba, {
+                                ? _.jsx(ya, { limit: e.limit, id: s.id, title: s.title, alertSize: e.alertSize })
+                                : _.jsx(ya, {
                                       title: r.readOrEmpty(
                                           i.isAllVehicles.get()
                                               ? 'pages.titles.allSelectVehicles'
                                               : 'pages.titles.allVehicles',
                                       ),
                                   }),
-                            _.jsx(xa, {}),
+                            _.jsx(ba, {}),
                         ],
                     }),
                 }),
         });
     }),
-    Ta = function () {
-        return _.jsxs(ye, {
+    La = function () {
+        return _.jsxs(Ce, {
             children: [
-                _.jsx(ye.Portal, {
+                _.jsx(Ce.Portal, {
                     position: 'bottom',
-                    children: _.jsx(Ce, {
-                        children: _.jsxs(ye.Display, {
+                    children: _.jsx(Ne, {
+                        children: _.jsxs(Ce.Display, {
                             'data-name': 'playlist-dropdown-content',
-                            className: ka.popover,
+                            className: Pa.popover,
                             children: [
-                                _.jsx(ye.Tip, { position: 'top', size: '80rem', offset: '120rem' }),
+                                _.jsx(Ce.Tip, { position: 'top', size: '80rem', offset: '120rem' }),
                                 _.jsx('div', {
-                                    className: ka.list,
+                                    className: Pa.list,
                                     children: _.jsxs(W, {
-                                        children: [_.jsx(Va, {}), _.jsx(Ne, { classNames: { base: ka.bar } })],
+                                        children: [_.jsx(Ma, {}), _.jsx(je, { classNames: { base: Pa.bar } })],
                                     }),
                                 }),
                             ],
                         }),
                     }),
                 }),
-                _.jsx(Ma, {
+                _.jsx(Ta, {
                     asChild: !0,
-                    className: ka.playlistTrigger,
+                    className: Pa.playlistTrigger,
                     fallback: null,
                     limit: 15,
-                    children: _.jsx(le, { theme: 'secondary', classNames: { content: ka.playlistTitle } }),
+                    children: _.jsx(le, { theme: 'secondary', classNames: { content: Pa.playlistTitle } }),
                 }),
             ],
         });
     },
-    La = 'Filters_toggleContainer_d9b9fbcd',
-    Ba = 'Filters_typeToggle_e818e249',
-    Ua = 'Filters_nationWrapper_752636a8',
-    za = 'Filters_nationIcon_f766f25f',
-    Oa = 'Filters_toggle_3ee9f5ac',
-    Xa = 'Filters_vehicleLevel_2598a7f7',
-    Ra = 'Filters_specialsIcons_94a8606c',
-    Ga = 'Filters_specialsIcons__favorite_8d12da90',
-    qa = 'Filters_search_54176870',
-    Ha = 'Filters_inputField_8f369261',
-    Fa = 'Filters_inputPlaceholder_b010dc5a',
-    Za = ['favorite', 'premium', 'elite'];
-function Ya(e) {
-    return _.jsx('div', {
-        className: f(La, e.className),
-        children: st.map((e) =>
-            _.jsx(
-                es,
-                {
-                    tooltip: { header: e, body: Ye },
-                    event: { field: rt, type: 'regular', value: e },
-                    className: Ba,
-                    children: _.jsx(te, { type: e, size: te.sizes.x24x24 }),
-                },
-                e,
-            ),
-        ),
-    });
-}
+    Ba = 'Filters_toggleContainer_d9b9fbcd',
+    Ua = 'Filters_typeToggle_e818e249',
+    za = 'Filters_nationWrapper_752636a8',
+    Oa = 'Filters_nationIcon_f766f25f',
+    Xa = 'Filters_toggle_3ee9f5ac',
+    Ra = 'Filters_vehicleLevel_2598a7f7',
+    Ga = 'Filters_specialsIcons_94a8606c',
+    qa = 'Filters_specialsIcons__favorite_8d12da90',
+    Ha = 'Filters_search_54176870',
+    Fa = 'Filters_inputField_8f369261',
+    Za = 'Filters_inputPlaceholder_b010dc5a',
+    Ya = ['favorite', 'premium', 'elite'];
 function Qa(e) {
     return _.jsx('div', {
-        className: f(La, e.className),
-        children: e.orderedNations.map((e) =>
+        className: f(Ba, e.className),
+        children: at.map((e) =>
             _.jsx(
-                es,
+                ts,
                 {
-                    tooltip: { header: e, body: Je },
+                    tooltip: { header: e, body: Qe },
                     event: { field: it, type: 'regular', value: e },
-                    className: Oa,
-                    children: _.jsx('div', {
-                        className: Ua,
-                        children: _.jsx(ee, { className: za, path: `flags.c_60x40.${e}` }),
-                    }),
+                    className: Ua,
+                    children: _.jsx(te, { type: e, size: te.sizes.x24x24 }),
                 },
                 e,
             ),
@@ -2099,15 +2080,18 @@ function Qa(e) {
 }
 function Ja(e) {
     return _.jsx('div', {
-        className: f(La, e.className),
-        children: at.map((e) =>
+        className: f(Ba, e.className),
+        children: e.orderedNations.map((e) =>
             _.jsx(
-                es,
+                ts,
                 {
-                    tooltip: { header: 'tier', body: Qe },
-                    event: { field: lt, type: 'regular', value: `level_${e}` },
-                    className: Oa,
-                    children: _.jsx(ae, { className: Xa, value: e }),
+                    tooltip: { header: e, body: We },
+                    event: { field: lt, type: 'regular', value: e },
+                    className: Xa,
+                    children: _.jsx('div', {
+                        className: za,
+                        children: _.jsx(ee, { className: Oa, path: `flags.c_60x40.${e}` }),
+                    }),
                 },
                 e,
             ),
@@ -2115,54 +2099,71 @@ function Ja(e) {
     });
 }
 function Wa(e) {
+    return _.jsx('div', {
+        className: f(Ba, e.className),
+        children: rt.map((e) =>
+            _.jsx(
+                ts,
+                {
+                    tooltip: { header: 'tier', body: Je },
+                    event: { field: nt, type: 'regular', value: `level_${e}` },
+                    className: Xa,
+                    children: _.jsx(ae, { className: Ra, value: e }),
+                },
+                e,
+            ),
+        ),
+    });
+}
+function Ka(e) {
     const t = $(`hangar.filter.special.${e.imagePath}`, `hangar.filter.special.${e.imagePath}_upscale`);
     return _.jsx(
-        es,
+        ts,
         {
             tooltip: { header: e.special, body: e.special },
-            event: { field: nt, type: 'regular', value: e.special },
-            className: Oa,
-            children: _.jsx(ee, { className: f(Ra, 'favorite' === e.special && Ga), path: t }),
+            event: { field: ot, type: 'regular', value: e.special },
+            className: Xa,
+            children: _.jsx(ee, { className: f(Ga, 'favorite' === e.special && qa), path: t }),
         },
         e.special,
     );
 }
-function Ka(e) {
+function $a(e) {
     return _.jsx('div', {
-        className: f(La, e.className),
-        children: Za.map((e) => _.jsx(Wa, { special: e, imagePath: e }, e)),
+        className: f(Ba, e.className),
+        children: Ya.map((e) => _.jsx(Ka, { special: e, imagePath: e }, e)),
     });
 }
-const $a = h(function (e) {
-        const t = xt(),
+const er = h(function (e) {
+        const t = bt(),
             s = M.resolve('strings'),
             a = t.model.searchName.get();
         function r(e) {
-            e.keyCode !== Ae.ESCAPE && e.stopPropagation();
+            e.keyCode !== Ie.ESCAPE && e.stopPropagation();
         }
-        return _.jsxs(we.Provider, {
+        return _.jsxs(Ee.Provider, {
             value: a,
             children: [
-                _.jsx(cs, {}),
-                _.jsxs(we.Decoration, {
-                    className: f(qa, e.className),
+                _.jsx(ds, {}),
+                _.jsxs(Ee.Decoration, {
+                    className: f(Ha, e.className),
                     children: [
-                        _.jsx(we.Icon, { icon: we.icons.search }),
-                        _.jsx(we.Field, {
+                        _.jsx(Ee.Icon, { icon: Ee.icons.search }),
+                        _.jsx(Ee.Field, {
                             ...e,
-                            className: Ha,
-                            classNames: { placeholder: Fa },
+                            className: Fa,
+                            classNames: { placeholder: Za },
                             maxLength: 50,
-                            placeholderVisibility: Ee.value,
+                            placeholderVisibility: Se.value,
                             onKeyDown: r,
                             onKeyUp: r,
                             onChange: (e) => t.controls.search(e.target.value),
                             children: s.readOrEmpty('tank_carousel_filter.popover.label.searchNameVehicle'),
                         }),
                         a.length > 0 &&
-                            _.jsx(we.ClearButton, {
+                            _.jsx(Ee.ClearButton, {
                                 onClick: () => {
-                                    Se.tooltip.hideAll();
+                                    Ae.tooltip.hideAll();
                                 },
                             }),
                     ],
@@ -2170,57 +2171,57 @@ const $a = h(function (e) {
             ],
         });
     }),
-    er = 'top',
-    tr = 'bottom',
-    sr = 'both',
-    ar = 'none';
-const rr = 'Content_7ccb81a0',
-    ir = 'Content_disabledOverlay_a8908196',
-    lr = 'Content_base__disabled_da09528a',
-    nr = 'Content_base__selected_da09528a',
-    or = 'Content_base__empty_da09528a';
-function cr({ children: e, selected: t, disabled: s, empty: a }) {
+    tr = 'top',
+    sr = 'bottom',
+    ar = 'both',
+    rr = 'none';
+const ir = 'Content_7ccb81a0',
+    lr = 'Content_disabledOverlay_a8908196',
+    nr = 'Content_base__disabled_da09528a',
+    or = 'Content_base__selected_da09528a',
+    cr = 'Content_base__empty_da09528a';
+function dr({ children: e, selected: t, disabled: s, empty: a }) {
     return _.jsxs('div', {
         'data-name': 'Content',
-        className: f(rr, a && or, t && nr, s && lr),
-        children: [e, s && _.jsx('div', { className: ir })],
+        className: f(ir, a && cr, t && or, s && nr),
+        children: [e, s && _.jsx('div', { className: lr })],
     });
 }
-const dr = 'Slot_977dd8f1',
-    ur = 'Slot_base__wrapper_ae3081b5',
-    mr = 'Slot_base__disabled_334cc10f',
-    pr = 'Slot_base__empty_d386066c',
-    hr = 'Slot_content_1a27c8cf',
-    _r = 'Slot_base__active_71f19f5c',
-    fr = 'Slot_base__selected_71f19f5c',
-    vr = 'Slot_selected_6e9f21df',
-    gr = 'Slot_selected__border_e2a17304',
-    xr = m.memo(function ({ children: e, selected: t = !1, disabled: s = !1, active: a, className: r, ...i }) {
+const ur = 'Slot_977dd8f1',
+    mr = 'Slot_base__wrapper_ae3081b5',
+    pr = 'Slot_base__disabled_334cc10f',
+    hr = 'Slot_base__empty_d386066c',
+    _r = 'Slot_content_1a27c8cf',
+    fr = 'Slot_base__active_71f19f5c',
+    vr = 'Slot_base__selected_71f19f5c',
+    gr = 'Slot_selected_6e9f21df',
+    xr = 'Slot_selected__border_e2a17304',
+    br = m.memo(function ({ children: e, selected: t = !1, disabled: s = !1, active: a, className: r, ...i }) {
         const l = s || void 0 === i.onClick;
         return _.jsx('div', {
             ...i,
             'data-name': 'Slot',
-            className: f(dr, a && _r, t && fr, s && mr, l && pr, ur, r),
+            className: f(ur, a && fr, t && vr, s && pr, l && hr, mr, r),
             children: _.jsxs('div', {
-                className: hr,
+                className: _r,
                 children: [
-                    _.jsx(cr, { selected: t, disabled: s, empty: l, children: e }),
-                    t && _.jsx('div', { className: f(vr, gr) }),
-                    _.jsx('div', { className: vr }),
+                    _.jsx(dr, { selected: t, disabled: s, empty: l, children: e }),
+                    t && _.jsx('div', { className: f(gr, xr) }),
+                    _.jsx('div', { className: gr }),
                 ],
             }),
         });
     }),
-    br = '54033',
-    yr = '50705',
-    Cr = '56833',
-    Nr = '51201',
-    jr = { [br]: 'alpha', [yr]: 'alpha', [Nr]: 'super', [Cr]: 'super' },
-    wr = 'unsuitableToQueue';
-function Er(e, t, s) {
-    return !(!e || 'disabled' === t || !s) && s.status !== wr && s.maxBpScore > 0;
+    yr = '54033',
+    Cr = '50705',
+    Nr = '56833',
+    jr = '51201',
+    wr = { [yr]: 'alpha', [Cr]: 'alpha', [jr]: 'super', [Nr]: 'super' },
+    Er = 'unsuitableToQueue';
+function Sr(e, t, s) {
+    return !(!e || 'disabled' === t || !s) && s.status !== Er && s.maxBpScore > 0;
 }
-const Sr = {
+const Ar = {
         root: 'Information_root_6e8d4f26',
         base: 'Information_dd628d50',
         info: 'Information_info_b2948982',
@@ -2250,26 +2251,26 @@ const Sr = {
         identifierIcon__super: 'Information_identifierIcon__super_34b8f5c2',
         identifierIcon__changeNation: 'Information_identifierIcon__changeNation_dfee83c8',
     },
-    Ar = ne('VehicleName', {
-        element: Pe.Name,
-        className: Sr.text,
-        cva: { variants: { premium: { true: Sr.text__premium } } },
+    Ir = ne('VehicleName', {
+        element: (e) => _.jsx(De.Name, { ...e }),
+        className: Ar.text,
+        cva: { variants: { premium: { true: Ar.text__premium } } },
     });
-function Ir({ statistic: e, vehicle: t, className: s, status: a }) {
+function kr({ statistic: e, vehicle: t, className: s, status: a }) {
     const r = M.resolve('views'),
         i = M.resolve('aliases'),
         l = M.resolve('strings'),
-        n = De({
+        n = Ve({
             resId: i.read((e) => e.hangar.shared.VehiclesStatistics('resId')),
             contentId: r.read((e) =>
                 'paused' !== a
-                    ? e.lobby.battle_pass.tooltips.VehiclePointsTooltipView('resId')
-                    : e.lobby.battle_pass.tooltips.BattlePassOnPauseTooltipView('resId'),
+                    ? e.mono.battle_pass.tooltips.vehicle_bp_points('resId')
+                    : e.mono.battle_pass.tooltips.on_pause('resId'),
             ),
             args: { intCD: t?.vehicleId },
         });
     return _.jsxs('div', {
-        className: f(Sr.battlePass, e.maxBpScore > 0 && Sr.battlePass__active, e.bpSpecial && Sr.battlePass__bonus, s),
+        className: f(Ar.battlePass, e.maxBpScore > 0 && Ar.battlePass__active, e.bpSpecial && Ar.battlePass__bonus, s),
         onMouseEnter: function (e) {
             n?.onMouseEnter(e);
         },
@@ -2278,68 +2279,68 @@ function Ir({ statistic: e, vehicle: t, className: s, status: a }) {
         },
         children: [
             _.jsxs('div', {
-                className: Sr.bpPoints,
+                className: Ar.bpPoints,
                 children: [
-                    _.jsx('div', { className: Sr.points, children: Ve.formatNumber('integral', e.bpProgress) }),
+                    _.jsx('div', { className: Ar.points, children: Me.formatNumber('integral', e.bpProgress) }),
                     _.jsx('div', {
-                        className: f(Sr.points, Sr.points__slash),
+                        className: f(Ar.points, Ar.points__slash),
                         children: l.readOrEmpty('common.common.slash'),
                     }),
-                    _.jsx('div', { className: Sr.points, children: Ve.formatNumber('integral', e.maxBpScore) }),
-                    _.jsx('div', { className: Sr.bpShadow }),
+                    _.jsx('div', { className: Ar.points, children: Me.formatNumber('integral', e.maxBpScore) }),
+                    _.jsx('div', { className: Ar.bpShadow }),
                 ],
             }),
-            _.jsx('div', { className: Sr.bpIcon }),
+            _.jsx('div', { className: Ar.bpIcon }),
         ],
     });
 }
-function kr({ statistic: e, elite: t, vehicle: s, selected: a, classNames: r, className: i }) {
+function Pr({ statistic: e, elite: t, vehicle: s, selected: a, classNames: r, className: i }) {
     return _.jsxs('div', {
-        className: f(Sr.details, i),
+        className: f(Ar.details, i),
         children: [
             e &&
-                _.jsx(Pe.Prestige, {
+                _.jsx(De.Prestige, {
                     level: e.prestigeLevel,
                     grade: e.prestigeGrade,
                     type: e.prestigeType,
-                    direction: Te.left,
-                    className: f(Sr.prestige, a && Sr.prestige__active, r?.prestige),
+                    direction: Le.left,
+                    className: f(Ar.prestige, a && Ar.prestige__active, r?.prestige),
                 }),
-            _.jsx(Pe.Level, { className: f(Sr.text, Sr.text__level, r?.level), value: s.level }),
-            Me(s.type) &&
-                _.jsx(Pe.Type, {
+            _.jsx(De.Level, { className: f(Ar.text, Ar.text__level, r?.level), value: s.level }),
+            Te(s.type) &&
+                _.jsx(De.Type, {
                     type: s.type,
                     premium: t || e?.elite,
-                    size: Pe.Type.sizes.x24x24,
+                    size: De.Type.sizes.x24x24,
                     className: r?.type,
                 }),
         ],
     });
 }
-function Pr({ vehicle: e, className: t, classNames: s }) {
-    const a = jr[e.id],
+function Dr({ vehicle: e, className: t, classNames: s }) {
+    const a = wr[e.id],
         r = e.nationChangeAvailable,
         i = e.rent.leftTime > 0 || e.rent.leftWins > 0 || e.rent.leftBattles > 0;
     return _.jsxs('div', {
         className: f(
-            Sr.identifier,
-            Sr[`identifier__${a}`],
-            r && Sr.identifier__changeNation,
-            i && Sr.identifier__rent,
+            Ar.identifier,
+            Ar[`identifier__${a}`],
+            r && Ar.identifier__changeNation,
+            i && Ar.identifier__rent,
             t,
         ),
         children: [
-            _.jsx(Ar, {
+            _.jsx(Ir, {
                 className: s?.name,
                 premium: e.premium,
-                children: _.jsx(he, { className: Sr.truncatedText, text: e.shortName }),
+                children: _.jsx(he, { className: Ar.truncatedText, text: e.shortName }),
             }),
             (a || r) &&
                 _.jsx('div', {
                     className: f(
-                        Sr.identifierIcon,
-                        Sr[`identifierIcon__${a}`],
-                        r && Sr.identifierIcon__changeNation,
+                        Ar.identifierIcon,
+                        Ar[`identifierIcon__${a}`],
+                        r && Ar.identifierIcon__changeNation,
                         s?.icon,
                     ),
                 }),
@@ -2347,22 +2348,22 @@ function Pr({ vehicle: e, className: t, classNames: s }) {
     });
 }
 h(function ({ vehicle: e, statistic: t, selected: s, doubleRow: a, ...r }) {
-    const i = qt(),
+    const i = Ht(),
         l = i.model.bpState.active.get(),
         n = i.model.bpState.status.get();
     return _.jsxs('div', {
         ...r,
-        className: f(Sr.base, a && Sr.base__double, r.className),
+        className: f(Ar.base, a && Ar.base__double, r.className),
         children: [
-            t && Er(l, n, t) && _.jsx(Ir, { vehicle: e, statistic: t, status: n }),
-            _.jsxs(Pe, {
-                className: Sr.info,
-                children: [_.jsx(kr, { vehicle: e, statistic: t, selected: s }), _.jsx(Pr, { vehicle: e })],
+            t && Sr(l, n, t) && _.jsx(kr, { vehicle: e, statistic: t, status: n }),
+            _.jsxs(De, {
+                className: Ar.info,
+                children: [_.jsx(Pr, { vehicle: e, statistic: t, selected: s }), _.jsx(Dr, { vehicle: e })],
             }),
         ],
     });
 });
-const Dr = {
+const Vr = {
         base: 'ProBoost_7490b440',
         arrow: 'ProBoost_arrow_346b5e61',
         glow: 'ProBoost_glow_280ac9aa',
@@ -2376,86 +2377,86 @@ const Dr = {
         triangle__3: 'ProBoost_triangle__3_e738f7f2',
         base__deactivating: 'ProBoost_base__deactivating_7b71aa2e',
     },
-    Vr = {
-        inactive: Dr.base__inactive,
-        activating: Dr.base__activating,
-        active: Dr.base__active,
-        deactivating: Dr.base__deactivating,
+    Mr = {
+        inactive: Vr.base__inactive,
+        activating: Vr.base__activating,
+        active: Vr.base__active,
+        deactivating: Vr.base__deactivating,
     };
-function Mr({ className: e, doubleRow: t, state: s = 'inactive', isCornerHidden: a = !1 }) {
+function Tr({ className: e, doubleRow: t, state: s = 'inactive', isCornerHidden: a = !1 }) {
     return 'inactive' === s
         ? null
         : _.jsxs('div', {
-              className: f(Dr.base, s && Vr[s], t && Dr.base__double, e),
+              className: f(Vr.base, s && Mr[s], t && Vr.base__double, e),
               children: [
-                  _.jsx('div', { className: Dr.glow }),
-                  !a && _.jsx('div', { className: Dr.corner }),
-                  _.jsx('div', { className: Dr.arrow }),
-                  [Dr.triangle__1, Dr.triangle__2, Dr.triangle__3].map((e) =>
-                      _.jsx('div', { className: f(Dr.triangle, e) }, e),
+                  _.jsx('div', { className: Vr.glow }),
+                  !a && _.jsx('div', { className: Vr.corner }),
+                  _.jsx('div', { className: Vr.arrow }),
+                  [Vr.triangle__1, Vr.triangle__2, Vr.triangle__3].map((e) =>
+                      _.jsx('div', { className: f(Vr.triangle, e) }, e),
                   ),
               ],
           });
 }
-const Tr = 'Background_wotPlus_3cf6035a',
-    Lr = 'Background_crystal_6112fa42',
-    Br = 'Background_bpBonus_86685469',
-    Ur = 'Background_flag_beb58b8',
-    zr = 'Background_flag__active_de322c1b',
-    Or = 'Background_crystal__limit_61072361',
-    Xr = ne('Favorite', 'Background_favorite_d98f92cc', {
+const Lr = 'Background_wotPlus_3cf6035a',
+    Br = 'Background_crystal_6112fa42',
+    Ur = 'Background_bpBonus_86685469',
+    zr = 'Background_flag_beb58b8',
+    Or = 'Background_flag__active_de322c1b',
+    Xr = 'Background_crystal__limit_61072361',
+    Rr = ne('Favorite', 'Background_favorite_d98f92cc', {
         variants: { active: { true: 'Background_favorite__active_7f14a6c7' } },
     });
-function Rr({ vehicle: e, selected: t, active: s, className: a }) {
+function Gr({ nationId: e, selected: t, active: s, className: a }) {
     return _.jsx(ee, {
-        className: f(Ur, t || (s && zr), a),
-        path: `hangar.carousel.cards.flags.x400x300.${E(e.nationId)}`,
+        className: f(zr, t || (s && Or), a),
+        path: `hangar.carousel.cards.flags.x400x300.${E(e)}`,
         position: 'top left',
     });
 }
 h(function ({ vehicle: e, statistic: t, validBP: s, doubleRow: a, classNames: r }) {
-    const i = Jt()?.model.isCrystalEarnEnabled.get() ?? !0,
-        l = (Le(t?.numberOfCrystalEarned ?? [], 1) ?? 0) <= (Le(t?.numberOfCrystalEarned ?? [], 0) ?? 0),
+    const i = Wt()?.model.isCrystalEarnEnabled.get() ?? !0,
+        l = (Be(t?.numberOfCrystalEarned ?? [], 1) ?? 0) <= (Be(t?.numberOfCrystalEarned ?? [], 0) ?? 0),
         n = t?.proBoostActive,
         o = t?.fromWotPlus,
         c = i && e.crystalEarning && !o,
-        d = Be(n),
+        d = Ue(n),
         u = m.useMemo(() => (n ? (!1 === d ? 'activating' : 'active') : d ? 'deactivating' : 'inactive'), [n, d]);
     return _.jsxs(_.Fragment, {
         children: [
-            o && _.jsx('div', { className: f(Tr, r?.wotPlus) }),
-            _.jsx(Mr, { state: u, className: r?.proBoostIcon, doubleRow: a, isCornerHidden: c }),
-            c && _.jsx('div', { className: f(Lr, l && Or, r?.crystal) }),
-            t?.bpSpecial && s && _.jsx('div', { className: f(Br, r?.bpBonus) }),
+            o && _.jsx('div', { className: f(Lr, r?.wotPlus) }),
+            _.jsx(Tr, { state: u, className: r?.proBoostIcon, doubleRow: a, isCornerHidden: c }),
+            c && _.jsx('div', { className: f(Br, l && Xr, r?.crystal) }),
+            t?.bpSpecial && s && _.jsx('div', { className: f(Ur, r?.bpBonus) }),
         ],
     });
 });
-const Gr = 'Background_5a8b768e',
-    qr = 'Background_vehicle_2886ef49';
-function Hr({ vehicle: e, ...t }) {
+const qr = 'Background_5a8b768e',
+    Hr = 'Background_vehicle_2886ef49';
+function Fr({ vehicle: e, ...t }) {
     return _.jsxs('div', {
         ...t,
-        className: Gr,
+        className: qr,
         children: [
-            _.jsx(Rr, { vehicle: e }),
-            _.jsx(Ue, { className: qr, name: e.name }),
-            _.jsx(Xr, { active: e.favorite }),
+            _.jsx(Gr, { nationId: e.nationId }),
+            _.jsx(ze, { className: Hr, name: e.name }),
+            _.jsx(Rr, { active: e.favorite }),
         ],
     });
 }
-const Fr = 'Card_74e86576',
-    Zr = 'Card_overlay_701a3ab4',
-    Yr = 'Card_checkMark_ad3837d8',
-    Qr = 'Card_selectText_c740c2a2',
-    Jr = 'Card_info_9b8bfdb4',
-    Wr = 'Card_border_e9cb9a85',
-    Kr = h(function ({ vehicleId: e, selected: t = !1, children: s, ...a }) {
-        const r = jt().model.get(e),
-            i = Ct().model.get(e),
+const Zr = 'Card_74e86576',
+    Yr = 'Card_overlay_701a3ab4',
+    Qr = 'Card_checkMark_ad3837d8',
+    Jr = 'Card_selectText_c740c2a2',
+    Wr = 'Card_info_9b8bfdb4',
+    Kr = 'Card_border_e9cb9a85',
+    $r = h(function ({ vehicleId: e, selected: t = !1, children: s, ...a }) {
+        const r = wt().model.get(e),
+            i = Nt().model.get(e),
             l = ie(),
-            { controls: n } = Ft();
-        if (!r) return _.jsx(xr, { ...a });
-        return _.jsxs(xr, {
+            { controls: n } = Zt();
+        if (!r) return _.jsx(br, { ...a });
+        return _.jsxs(br, {
             ...a,
             className: f('vehicle-card', a.className),
             selected: t,
@@ -2469,21 +2470,21 @@ const Fr = 'Card_74e86576',
             onClick: function (t) {
                 (l.play('click', { target: 'vehicle-card', original: t }), n.select(e));
             },
-            children: [_.jsx($r, { vehicle: r }), _.jsx(ti, { statistic: i, vehicle: r, selected: t })],
+            children: [_.jsx(ei, { vehicle: r }), _.jsx(si, { statistic: i, vehicle: r, selected: t })],
         });
     });
-function $r(e) {
+function ei(e) {
     const [t, s] = m.useState(!0),
         [, a] = m.useTransition();
     return (
         m.useEffect(() => {
             t && a(() => s(!1));
         }, [t]),
-        t ? null : _.jsx(Hr, { ...e })
+        t ? null : _.jsx(Fr, { ...e })
     );
 }
-const ei = M.resolve('strings');
-function ti({ vehicle: e, statistic: t, selected: s }) {
+const ti = M.resolve('strings');
+function si({ vehicle: e, statistic: t, selected: s }) {
     const [a, r] = m.useState(!0),
         [, i] = m.useTransition();
     return (
@@ -2493,16 +2494,16 @@ function ti({ vehicle: e, statistic: t, selected: s }) {
         a
             ? null
             : _.jsxs('div', {
-                  className: Fr,
+                  className: Zr,
                   children: [
-                      _.jsx(si, { vehicle: e, selected: s, statistic: t }),
+                      _.jsx(ai, { vehicle: e, selected: s, statistic: t }),
                       _.jsxs('div', {
-                          className: Zr,
+                          className: Yr,
                           children: [
-                              _.jsx('div', { className: Yr }),
+                              _.jsx('div', { className: Qr }),
                               _.jsx('div', {
-                                  className: Qr,
-                                  children: ei.readOrEmpty('dialogs.selectVehicle.selectVehicle'),
+                                  className: Jr,
+                                  children: ti.readOrEmpty('dialogs.selectVehicle.selectVehicle'),
                               }),
                           ],
                       }),
@@ -2510,13 +2511,13 @@ function ti({ vehicle: e, statistic: t, selected: s }) {
               })
     );
 }
-function si({ vehicle: e, selected: t, statistic: s }) {
-    return _.jsxs(Pe, {
-        className: Jr,
-        children: [_.jsx(kr, { vehicle: e, statistic: s, selected: t, elite: e.premium }), _.jsx(Pr, { vehicle: e })],
+function ai({ vehicle: e, selected: t, statistic: s }) {
+    return _.jsxs(De, {
+        className: Wr,
+        children: [_.jsx(Pr, { vehicle: e, statistic: s, selected: t, elite: e.premium }), _.jsx(Dr, { vehicle: e })],
     });
 }
-const ai = {
+const ri = {
     root: 'SelectVehicleList_root_ff751a81',
     content: 'SelectVehicleList_content_e4dca630',
     scroll: 'SelectVehicleList_scroll_1a4bf433',
@@ -2530,18 +2531,18 @@ const ai = {
     scrollbarBar__empty: 'SelectVehicleList_scrollbarBar__empty_d2148af8',
     card: 'SelectVehicleList_card_a6ec1778',
 };
-function ri({ children: e, ...t }) {
-    const { api: s } = ve();
-    return _.jsx(Xe, { ...t, api: s, className: ai.content, children: e });
+function ii({ children: e, ...t }) {
+    const { api: s } = ge();
+    return _.jsx(Re, { ...t, api: s, className: ri.content, children: e });
 }
-const ii = { height: 105, row: 5 },
-    li = { medium: { height: 136 }, large: { height: 145, row: 6 }, extraLarge: { height: 183, row: 7 } },
-    ni = h(function () {
-        const { model: e } = Ft(),
-            { api: t } = ve(),
-            s = ze(ii, li),
-            a = ke(s.height),
-            [r, i] = ge(t),
+const li = { height: 105, row: 5 },
+    ni = { medium: { height: 136 }, large: { height: 145, row: 6 }, extraLarge: { height: 183, row: 7 } },
+    oi = h(function () {
+        const { model: e } = Zt(),
+            { api: t } = ge(),
+            s = Oe(li, ni),
+            a = Pe(s.height),
+            [r, i] = xe(t),
             l = e.ids(),
             n = e.list(),
             o = (function (e, t, s) {
@@ -2571,7 +2572,7 @@ const ii = { height: 105, row: 5 },
                     const i = e.getWrapperSize(),
                         n = e.animationScroll.scrollPosition.get();
                     if (!i) return;
-                    const o = s - ke(1),
+                    const o = s - Pe(1),
                         c = n,
                         d = n + i,
                         u = o * Math.floor(t / a),
@@ -2584,7 +2585,7 @@ const ii = { height: 105, row: 5 },
                 }
                 return (
                     i(),
-                    new Ie().add(e.events.on('resizeHandled', i)).add(e.events.on('recalculateContent', i)).dispose
+                    new ke().add(e.events.on('resizeHandled', i)).add(e.events.on('recalculateContent', i)).dispose
                 );
             }, [t, e, s, a, i, r]);
         })(t, e.currentIndex(), a, s.row, l.length),
@@ -2593,28 +2594,28 @@ const ii = { height: 105, row: 5 },
                 (t.setDisabled(e), e && t.applyScroll(0, { immediate: !0 }));
             }, [t, o, l.length]));
         const p = m.useMemo(() => ({ height: `${a}px` }), [a]);
-        return _.jsx(Oe, {
+        return _.jsx(Xe, {
             api: t,
-            elementHeight: a - ke(1),
+            elementHeight: a - Pe(1),
             direction: 'vertical',
             totalElements: u,
-            wrappers: { Content: ri },
+            wrappers: { Content: ii },
             renderScroll: (e) => {
                 return _.jsxs('div', {
                     className: f(
-                        ai.scroll,
-                        ai[`scroll__${((s = r), (a = i), s || a ? (s ? (a ? ar : tr) : er) : sr)}`],
+                        ri.scroll,
+                        ri[`scroll__${((s = r), (a = i), s || a ? (s ? (a ? rr : sr) : tr) : ar)}`],
                     ),
                     children: [
-                        _.jsx(be, {
+                        _.jsx(ye, {
                             ...e,
                             classNames: {
-                                wrapper: ai.scrollWrapper,
-                                content: f(ai.scrollContent, 0 === n.length && ai.scrollContent__empty),
+                                wrapper: ri.scrollWrapper,
+                                content: f(ri.scrollContent, 0 === n.length && ri.scrollContent__empty),
                             },
                             children: e.children,
                         }),
-                        !t.disabled && _.jsx(Ne, { classNames: { base: ai.verticalBar } }),
+                        !t.disabled && _.jsx(je, { classNames: { base: ri.verticalBar } }),
                     ],
                 });
                 var s, a;
@@ -2623,13 +2624,13 @@ const ii = { height: 105, row: 5 },
             renderElement: (t) => {
                 const s = l[t];
                 return l.length <= t || void 0 === s
-                    ? _.jsx(xr, { className: f(Wr, ai.card), style: p })
+                    ? _.jsx(br, { className: f(Kr, ri.card), style: p })
                     : _.jsx(
-                          Kr,
+                          $r,
                           {
                               vehicleId: s,
                               selected: l[t] === e.currentVehicleCD(),
-                              className: f(Wr, ai.card),
+                              className: f(Kr, ri.card),
                               style: p,
                           },
                           s,
@@ -2637,19 +2638,19 @@ const ii = { height: 105, row: 5 },
             },
         });
     }),
-    oi = 'SelectVehicle_empty_c4ad0e6f',
-    ci = 'SelectVehicle_55964cab',
-    di = 'SelectVehicle_contentLeft_df8318cc',
-    ui = 'SelectVehicle_listWrapper_7143d883',
-    mi = 'SelectVehicle_category_47ad8ddc',
-    pi = 'SelectVehicle_divider_e3344f3e',
-    hi = 'SelectVehicle_divider__top_69824bd2',
-    _i = 'SelectVehicle_emptyTitle_f13f5f32',
-    fi = 'SelectVehicle_emptyDescription_3ea65b11',
-    vi = h(function () {
-        const { model: e } = Ft(),
+    ci = 'SelectVehicle_empty_c4ad0e6f',
+    di = 'SelectVehicle_55964cab',
+    ui = 'SelectVehicle_contentLeft_df8318cc',
+    mi = 'SelectVehicle_listWrapper_7143d883',
+    pi = 'SelectVehicle_category_47ad8ddc',
+    hi = 'SelectVehicle_divider_e3344f3e',
+    _i = 'SelectVehicle_divider__top_69824bd2',
+    fi = 'SelectVehicle_emptyTitle_f13f5f32',
+    vi = 'SelectVehicle_emptyDescription_3ea65b11',
+    gi = h(function () {
+        const { model: e } = Zt(),
             t = 0 === e.list().length,
-            s = xt(),
+            s = bt(),
             a = s.model.computes.nations(),
             r = m.useMemo(
                 () => ({
@@ -2668,45 +2669,45 @@ const ii = { height: 105, row: 5 },
                 body: i.readOrEmpty('tank_carousel_filter.tooltip.searchInput.body').replace('%(count)d', String(50)),
             });
         return _.jsxs('div', {
-            className: ci,
+            className: di,
             children: [
-                _.jsxs('div', {
-                    className: di,
-                    children: [
-                        _.jsxs(Wt.Provider, {
-                            value: r,
-                            children: [
-                                _.jsx(Ta, {}),
-                                _.jsx(vs, {}),
-                                _.jsx('div', { className: f(pi, hi) }),
-                                _.jsx(J, { className: mi, path: 'tank_carousel_filter.popover.label.vehicleTypes' }),
-                                _.jsx(Ya, {}),
-                                _.jsx(J, { className: mi, path: 'tank_carousel_filter.popover.label.nations' }),
-                                _.jsx(Qa, { orderedNations: a }),
-                                _.jsx(J, { className: mi, path: 'tank_carousel_filter.popover.label.levels' }),
-                                _.jsx(Ja, {}),
-                                _.jsx(J, { className: mi, path: 'tank_carousel_filter.popover.label.specials' }),
-                                _.jsx(Ka, {}),
-                            ],
-                        }),
-                        _.jsx('div', { className: pi }),
-                        _.jsx('div', { ...l, children: _.jsx($a, {}) }),
-                    ],
-                }),
                 _.jsxs('div', {
                     className: ui,
                     children: [
-                        _.jsx(W, { children: _.jsx(ni, {}) }),
+                        _.jsxs(Kt.Provider, {
+                            value: r,
+                            children: [
+                                _.jsx(La, {}),
+                                _.jsx(gs, {}),
+                                _.jsx('div', { className: f(hi, _i) }),
+                                _.jsx(J, { className: pi, path: 'tank_carousel_filter.popover.label.vehicleTypes' }),
+                                _.jsx(Qa, {}),
+                                _.jsx(J, { className: pi, path: 'tank_carousel_filter.popover.label.nations' }),
+                                _.jsx(Ja, { orderedNations: a }),
+                                _.jsx(J, { className: pi, path: 'tank_carousel_filter.popover.label.levels' }),
+                                _.jsx(Wa, {}),
+                                _.jsx(J, { className: pi, path: 'tank_carousel_filter.popover.label.specials' }),
+                                _.jsx($a, {}),
+                            ],
+                        }),
+                        _.jsx('div', { className: hi }),
+                        _.jsx('div', { ...l, children: _.jsx(er, {}) }),
+                    ],
+                }),
+                _.jsxs('div', {
+                    className: mi,
+                    children: [
+                        _.jsx(W, { children: _.jsx(oi, {}) }),
                         t &&
                             _.jsxs('div', {
-                                className: oi,
+                                className: ci,
                                 children: [
                                     _.jsx('div', {
-                                        className: _i,
+                                        className: fi,
                                         children: i.readOrEmpty('playlists.empty_state.not_found.title'),
                                     }),
                                     _.jsx('div', {
-                                        className: fi,
+                                        className: vi,
                                         children: i.readOrEmpty('playlists.empty_state.not_found.body'),
                                     }),
                                 ],
@@ -2716,46 +2717,46 @@ const ii = { height: 105, row: 5 },
             ],
         });
     }),
-    gi = 'SelectVehicle_e71f7277',
-    xi = 'SelectVehicle_title_20f4184a',
-    bi = 'SelectVehicle_close_2b04c3e9',
-    yi = h(function () {
-        const { model: e } = Ft();
+    xi = 'SelectVehicle_e71f7277',
+    bi = 'SelectVehicle_title_20f4184a',
+    yi = 'SelectVehicle_close_2b04c3e9',
+    Ci = h(function () {
+        const { model: e } = Zt();
         return (
-            Re(Ae.ESCAPE, Se.closeView),
+            Ge(Ie.ESCAPE, Ae.closeView),
             _.jsxs('div', {
-                className: gi,
+                className: xi,
                 children: [
-                    _.jsx('div', { className: xi, children: e.title.get() }),
-                    _.jsx(Ge, { onClose: Se.closeView, className: bi }),
-                    _.jsx(vi, {}),
+                    _.jsx('div', { className: bi, children: e.title.get() }),
+                    _.jsx(qe, { onClose: Ae.closeView, className: yi }),
+                    _.jsx(gi, {}),
                 ],
             })
         );
     }),
-    Ci = M.resolve('aliases');
-Fe(
-    new qe()
-        .add(He)
-        .addWithProps(yt, {
-            options: { rootId: Ci.read((e) => e.select_vehicle.select_vehicle.VehiclesStatistics('resId')) },
+    Ni = M.resolve('aliases');
+Ze(
+    new He()
+        .add(Fe)
+        .addWithProps(Ct, {
+            options: { rootId: Ni.read((e) => e.select_vehicle.select_vehicle.VehiclesStatistics('resId')) },
         })
-        .addWithProps(Nt, {
-            options: { rootId: Ci.read((e) => e.select_vehicle.select_vehicle.VehiclesInfo('resId')) },
+        .addWithProps(jt, {
+            options: { rootId: Ni.read((e) => e.select_vehicle.select_vehicle.VehiclesInfo('resId')) },
         })
-        .addWithProps(wt, {
-            options: { rootId: Ci.read((e) => e.select_vehicle.select_vehicle.VehiclesInventory('resId')) },
+        .addWithProps(Et, {
+            options: { rootId: Ni.read((e) => e.select_vehicle.select_vehicle.VehiclesInventory('resId')) },
         })
-        .addWithProps(gt, {
-            options: { rootId: Ci.read((e) => e.select_vehicle.select_vehicle.VehicleFilters('resId')) },
+        .addWithProps(xt, {
+            options: { rootId: Ni.read((e) => e.select_vehicle.select_vehicle.VehicleFilters('resId')) },
         })
-        .addWithProps(zt, {
-            options: { rootId: Ci.read((e) => e.select_vehicle.select_vehicle.VehiclePlaylists('resId')) },
+        .addWithProps(Ot, {
+            options: { rootId: Ni.read((e) => e.select_vehicle.select_vehicle.VehiclePlaylists('resId')) },
         })
-        .addWithProps(Gt, {
-            options: { rootId: Ci.read((e) => e.select_vehicle.select_vehicle.VehiclesInventory('resId')) },
+        .addWithProps(qt, {
+            options: { rootId: Ni.read((e) => e.select_vehicle.select_vehicle.VehiclesInventory('resId')) },
         })
-        .add(Ht)
-        .render(_.jsx(yi, {})),
+        .add(Ft)
+        .render(_.jsx(Ci, {})),
     { fullScreen: !0 },
 );

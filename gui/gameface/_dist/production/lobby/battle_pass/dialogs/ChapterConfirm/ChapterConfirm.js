@@ -200,7 +200,7 @@
                     y = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function H(u) {
                     let e = '';
-                    for (let A = y.length - 1; A >= 0; A--) for (; u >= y[A]; ) ((e += L[A]), (u -= y[A]));
+                    for (let A = y.length - 1; A >= 0; A--) for (; u >= y[A];) ((e += L[A]), (u -= y[A]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -483,9 +483,13 @@
                         if (A.mediumWidth && l) return B(e, A, f);
                         if (A.smallWidth && o) return B(e, A, f);
                         if (A.extraSmallWidth && s) return B(e, A, f);
-                        if (
-                            !(A.extraLargeWidth || A.largeWidth || A.mediumWidth || A.smallWidth || A.extraSmallWidth)
-                        ) {
+                        if (!(
+                            A.extraLargeWidth ||
+                            A.largeWidth ||
+                            A.mediumWidth ||
+                            A.smallWidth ||
+                            A.extraSmallWidth
+                        )) {
                             if (A.extraLargeHeight && c) return e;
                             if (A.largeHeight && d) return e;
                             if (A.mediumHeight && m) return e;
@@ -850,7 +854,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, A = Ae(E.keys()); !(u = A()).done; ) t(u.value, e);
+                                                        for (var u, A = Ae(E.keys()); !(u = A()).done;) t(u.value, e);
                                                     },
                                                     unsubscribe: t,
                                                 };

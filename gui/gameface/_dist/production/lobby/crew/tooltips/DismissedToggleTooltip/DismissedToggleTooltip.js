@@ -197,10 +197,10 @@
                     t.d(e, {
                         addModelObserver: () => A,
                         addPreloadTexture: () => c,
-                        arabic2roman: () => x,
+                        arabic2roman: () => T,
                         children: () => r,
                         displayStatus: () => o.W,
-                        displayStatusIs: () => T,
+                        displayStatusIs: () => k,
                         enableFullScreenModeSupported: () => L,
                         events: () => i.U,
                         extraSize: () => O,
@@ -208,7 +208,7 @@
                         freezeTextureBeforeResize: () => B,
                         getBrowserTexturePath: () => E,
                         getDisplayStatus: () => w,
-                        getExternalPaddingsRem: () => k,
+                        getExternalPaddingsRem: () => x,
                         getFontNames: () => y,
                         getScale: () => C,
                         getSize: () => d,
@@ -291,11 +291,11 @@
                         let u = [];
                         return () => (0 === u.length && (u = Object.keys(viewEnv.getFontsConfig())), u);
                     })(),
-                    x = n.cg;
-                function k() {
+                    T = n.cg;
+                function x() {
                     return viewEnv.getExternalPaddingsRem();
                 }
-                const T = Object.keys(o.W).reduce(
+                const k = Object.keys(o.W).reduce(
                         (u, e) => ((u[e] = () => viewEnv.getShowingStatus() === o.W[e]), u),
                         {},
                     ),
@@ -431,7 +431,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function o(u) {
                     let e = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; u >= r[t]; ) ((e += n[t]), (u -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; u >= r[t];) ((e += n[t]), (u -= r[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1107,7 +1107,7 @@
                                     p && p(),
                                     (h.current.isVisible = !0));
                             }, [t, d, n, w, p]),
-                            x = (0, i.useCallback)(() => {
+                            T = (0, i.useCallback)(() => {
                                 if (h.current.isVisible || h.current.timeoutId) {
                                     const u = h.current.timeoutId;
                                     (u > 0 && (clearTimeout(u), (h.current.timeoutId = 0)),
@@ -1116,35 +1116,35 @@
                                         (h.current.isVisible = !1));
                                 }
                             }, [t, d, w, g]),
-                            k = (0, i.useCallback)((u) => {
+                            x = (0, i.useCallback)((u) => {
                                 h.current.isVisible &&
                                     ((h.current.prevTarget = document.elementFromPoint(u.clientX, u.clientY)),
                                     (h.current.hideTimerId = window.setTimeout(() => {
                                         const e = document.elementFromPoint(u.clientX, u.clientY);
-                                        e && !e.isSameNode(h.current.prevTarget) && x();
+                                        e && !e.isSameNode(h.current.prevTarget) && T();
                                     }, 200)));
                             }, []);
                         ((0, i.useEffect)(() => {
                             const u = h.current.hideTimerId;
                             return (
-                                document.addEventListener('wheel', k, { capture: !0 }),
+                                document.addEventListener('wheel', x, { capture: !0 }),
                                 () => {
-                                    (document.removeEventListener('wheel', k, { capture: !0 }),
+                                    (document.removeEventListener('wheel', x, { capture: !0 }),
                                         u && window.clearTimeout(u));
                                 }
                             );
                         }, []),
                             (0, i.useEffect)(() => {
-                                !1 === D && x();
-                            }, [D, x]),
+                                !1 === D && T();
+                            }, [D, T]),
                             (0, i.useEffect)(
                                 () => (
-                                    window.addEventListener('mouseleave', x),
+                                    window.addEventListener('mouseleave', T),
                                     () => {
-                                        (window.removeEventListener('mouseleave', x), x());
+                                        (window.removeEventListener('mouseleave', T), T());
                                     }
                                 ),
-                                [x],
+                                [T],
                             ));
                         return D
                             ? (0, i.cloneElement)(
@@ -1152,30 +1152,30 @@
                                   Object.assign(
                                       {
                                           onMouseEnter:
-                                              ((T = e.props.onMouseEnter),
+                                              ((k = e.props.onMouseEnter),
                                               (u) => {
                                                   (u.clientX === window.innerWidth &&
                                                       u.clientY === window.innerHeight) ||
                                                       (clearTimeout(h.current.timeoutId),
                                                       (h.current.timeoutId = window.setTimeout(y, l ? 100 : 400)),
                                                       r && r(u),
-                                                      T && T(u));
+                                                      k && k(u));
                                               }),
                                           onMouseLeave: ((u) => (e) => {
-                                              (x(), null == o || o(e), null == u || u(e));
+                                              (T(), null == o || o(e), null == u || u(e));
                                           })(e.props.onMouseLeave),
                                           onClick: ((u) => (e) => {
-                                              (!1 === A && x(), null == s || s(e), null == u || u(e));
+                                              (!1 === A && T(), null == s || s(e), null == u || u(e));
                                           })(e.props.onClick),
                                           onMouseDown: ((u) => (e) => {
-                                              (!1 === A && x(), null == a || a(e), null == u || u(e));
+                                              (!1 === A && T(), null == a || a(e), null == u || u(e));
                                           })(e.props.onMouseDown),
                                       },
                                       b,
                                   ),
                               )
                             : e;
-                        var T;
+                        var k;
                     },
                     w = ['children'];
                 function y() {
@@ -1192,7 +1192,7 @@
                         y.apply(null, arguments)
                     );
                 }
-                const x = (u) => {
+                const T = (u) => {
                         let e = u.children,
                             t = (function (u, e) {
                                 if (null == u) return {};
@@ -1219,10 +1219,10 @@
                             e,
                         );
                     },
-                    k = ['children', 'body', 'header', 'note', 'alert', 'args'];
-                function T() {
+                    x = ['children', 'body', 'header', 'note', 'alert', 'args'];
+                function k() {
                     return (
-                        (T = Object.assign
+                        (k = Object.assign
                             ? Object.assign.bind()
                             : function (u) {
                                   for (var e = 1; e < arguments.length; e++) {
@@ -1231,7 +1231,7 @@
                                   }
                                   return u;
                               }),
-                        T.apply(null, arguments)
+                        k.apply(null, arguments)
                     );
                 }
                 const O = R.views.common.tooltip_window.simple_tooltip_content,
@@ -1251,7 +1251,7 @@
                                         t[n] = u[n];
                                     }
                                 return t;
-                            })(u, k);
+                            })(u, x);
                         const l = (0, i.useMemo)(() => {
                             const u = Object.assign({}, s, { body: t, header: n, note: r, alert: o });
                             for (const e in u) void 0 === u[e] && delete u[e];
@@ -1259,7 +1259,7 @@
                         }, [o, t, n, r, s]);
                         return a().createElement(
                             h,
-                            T(
+                            k(
                                 {
                                     contentId:
                                         ((E = null == s ? void 0 : s.hasHtmlContent),
@@ -1292,7 +1292,7 @@
                     const n = a().createElement('div', { className: t }, u);
                     if (e.header || e.body) return a().createElement(P, e, n);
                     const r = e.contentId;
-                    return r ? a().createElement(h, L({}, e, { contentId: r }), n) : a().createElement(x, e, n);
+                    return r ? a().createElement(h, L({}, e, { contentId: r }), n) : a().createElement(T, e, n);
                 };
                 var S = t(1311);
                 const M = {
@@ -1448,7 +1448,7 @@
                     uu = (u, e, t, n) => {
                         let r = e.exec(u),
                             o = 0;
-                        for (; r; ) (o !== r.index && t(u.slice(o, r.index)), n(r), (o = e.lastIndex), (r = e.exec(u)));
+                        for (; r;) (o !== r.index && t(u.slice(o, r.index)), n(r), (o = e.lastIndex), (r = e.exec(u)));
                         o !== u.length && t(u.slice(o));
                     },
                     eu = new RegExp('[฀-๿][ัำ-ฺ็-๎]*|[^฀-๿]', 'gu'),
@@ -1494,7 +1494,7 @@
                               if (!n) return [u];
                               const r = [];
                               let o = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const i = e.justifyContent === V.FlexEnd ? n.index : t.lastIndex;
                                   (r.push(u.slice(o, i)), (o = i), (n = t.exec(u)));
                               }
@@ -1539,7 +1539,9 @@
                     },
                     ou = (u, e, t = '', n) => {
                         const r = [],
-                            o = u.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            o = u
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (u) => u.split('').join('\ufeff'));
                         return (
                             uu(
                                 o,
@@ -1669,7 +1671,7 @@
                             l = ((u, e) => {
                                 let t = 0,
                                     n = u.length - 1;
-                                for (; n - t >= 0; ) {
+                                for (; n - t >= 0;) {
                                     const r = t + Math.ceil(0.5 * (n - t));
                                     su(u[r], e) ? (n = r - 1) : (t = r + 1);
                                 }
@@ -1901,7 +1903,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = bu(r.keys()); !(u = t()).done; ) i(u.value, e);
+                                                        for (var u, t = bu(r.keys()); !(u = t()).done;) i(u.value, e);
                                                     },
                                                     unsubscribe: i,
                                                 };
@@ -2047,20 +2049,21 @@
                     hu = vu[0],
                     wu = vu[1],
                     yu = 'DismissedToggleTooltipApp_base_eb88d',
-                    xu = 'DismissedToggleTooltipApp_title_ef4b2',
-                    ku = 'DismissedToggleTooltipApp_supTitle_c980b',
-                    Tu = 'DismissedToggleTooltipApp_description_c6243',
+                    Tu = 'DismissedToggleTooltipApp_title_ef4b2',
+                    xu = 'DismissedToggleTooltipApp_supTitle_c980b',
+                    ku = 'DismissedToggleTooltipApp_description_c6243',
                     Ou = 'DismissedToggleTooltipApp_decorator_a9587',
                     Pu = 'DismissedToggleTooltipApp_freePeriod_cf598',
-                    Lu = (0, b.Pi)(() => {
+                    Lu = 'DismissedToggleTooltipApp_currency_cc39d',
+                    Ru = (0, b.Pi)(() => {
                         const u = wu().model,
                             e = u.freePeriod.get() + u.paidPeriod.get();
                         return a().createElement(
                             'div',
                             { className: yu },
-                            a().createElement('div', { className: xu }, R.strings.tooltips.dismissedToggle.header()),
-                            a().createElement('div', { className: ku }, R.strings.tooltips.dismissedToggle.subHeader()),
-                            a().createElement('div', { className: Tu }, R.strings.tooltips.dismissedToggle.body()),
+                            a().createElement('div', { className: Tu }, R.strings.tooltips.dismissedToggle.header()),
+                            a().createElement('div', { className: xu }, R.strings.tooltips.dismissedToggle.subHeader()),
+                            a().createElement('div', { className: ku }, R.strings.tooltips.dismissedToggle.body()),
                             a().createElement(Fu, {
                                 text: R.strings.tooltips.dismissedToggle.recover.total(),
                                 binding: { days: e.toString() },
@@ -2080,6 +2083,7 @@
                                             value: u.recoverPrice.get(),
                                             type: C.credits,
                                             size: B.small,
+                                            classNames: { icon: Lu },
                                         }),
                                         days: u.paidPeriod.get(),
                                     },
@@ -2089,13 +2093,13 @@
                             a().createElement(Fu, {
                                 text: R.strings.tooltips.dismissedToggle.footer.body(),
                                 binding: { quantity: u.membersBuffer.get() },
-                                classMix: ku,
+                                classMix: xu,
                             }),
                         );
                     });
                 engine.whenReady.then(() => {
                     F().render(
-                        a().createElement(hu, null, a().createElement(E, null, a().createElement(Lu, null))),
+                        a().createElement(hu, null, a().createElement(E, null, a().createElement(Ru, null))),
                         document.getElementById('root'),
                     );
                 });

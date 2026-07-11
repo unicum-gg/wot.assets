@@ -882,7 +882,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let u = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t]; ) ((u += n[t]), (e -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; e >= r[t];) ((u += n[t]), (e -= r[t]));
                     return u;
                 }
                 const o = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -1328,7 +1328,7 @@
                         let d = i.exec(e),
                             _ = e,
                             A = 0;
-                        for (; d; ) {
+                        for (; d;) {
                             const t = d[0],
                                 n = s.exec(t),
                                 F = l.exec(t),
@@ -1489,9 +1489,13 @@
                         if (t.mediumWidth && _) return l(u, t, p);
                         if (t.smallWidth && m) return l(u, t, p);
                         if (t.extraSmallWidth && D) return l(u, t, p);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && B) return u;
                             if (t.mediumHeight && g) return u;
@@ -1948,7 +1952,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = G(r.keys()); !(e = t()).done; ) a(e.value, u);
+                                                        for (var e, t = G(r.keys()); !(e = t()).done;) a(e.value, u);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -2330,7 +2334,7 @@
                                             u(e).delete(t);
                                         },
                                         r = (e, ...t) => {
-                                            for (var n, r = Ee(u(e).values()); !(n = r()).done; ) (0, n.value)(...t);
+                                            for (var n, r = Ee(u(e).values()); !(n = r()).done;) (0, n.value)(...t);
                                         };
                                     return (0, a.useMemo)(() => ({ on: t, off: n, trigger: r }), []);
                                 })(),
@@ -3733,7 +3737,7 @@
                             r = u || {};
                         let i = Ot.exec(e),
                             s = e;
-                        for (; i; ) {
+                        for (; i;) {
                             const t = i[0],
                                 a = Rt.exec(t),
                                 l = Pt.exec(t),
@@ -4148,7 +4152,7 @@
                                     let n = 0,
                                         a = t - 1,
                                         o = !1;
-                                    for (; a - n > 1; ) {
+                                    for (; a - n > 1;) {
                                         const t = n + Math.floor(0.5 * (a - n + 1));
                                         ((o = r(e[t], u)), o ? (a = t) : (n = t));
                                     }

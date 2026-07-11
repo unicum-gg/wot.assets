@@ -226,9 +226,13 @@
                         if (u.mediumWidth && f) return (0, r.H)(t, u, C);
                         if (u.smallWidth && A) return (0, r.H)(t, u, C);
                         if (u.extraSmallWidth && p) return (0, r.H)(t, u, C);
-                        if (
-                            !(u.extraLargeWidth || u.largeWidth || u.mediumWidth || u.smallWidth || u.extraSmallWidth)
-                        ) {
+                        if (!(
+                            u.extraLargeWidth ||
+                            u.largeWidth ||
+                            u.mediumWidth ||
+                            u.smallWidth ||
+                            u.extraSmallWidth
+                        )) {
                             if (u.extraLargeHeight && g) return t;
                             if (u.largeHeight && D) return t;
                             if (u.mediumHeight && b) return t;
@@ -824,7 +828,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, u = r(s.keys()); !(e = u()).done; ) {
+                            for (var e, u = r(s.keys()); !(e = u()).done;) {
                                 o(e.value, t);
                             }
                         },
@@ -1810,7 +1814,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(e) {
                     let t = '';
-                    for (let u = r.length - 1; u >= 0; u--) for (; e >= r[u]; ) ((t += n[u]), (e -= r[u]));
+                    for (let u = r.length - 1; u >= 0; u--) for (; e >= r[u];) ((t += n[u]), (e -= r[u]));
                     return t;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -2454,7 +2458,7 @@
                               if (!n) return [e];
                               const r = [];
                               let a = 0;
-                              for (; n; ) {
+                              for (; n;) {
                                   const s = t.justifyContent === i.v2.FlexEnd ? n.index : u.lastIndex;
                                   (r.push(e.slice(a, s)), (a = s), (n = u.exec(e)));
                               }
@@ -2499,7 +2503,9 @@
                     },
                     d = (e, t, u = '', n) => {
                         const r = [],
-                            s = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            s = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             (0, a.Z)(
                                 s,
@@ -2614,7 +2620,7 @@
                 const n = (e, t, u, n) => {
                     let r = t.exec(e),
                         a = 0;
-                    for (; r; ) (a !== r.index && u(e.slice(a, r.index)), n(r), (a = t.lastIndex), (r = t.exec(e)));
+                    for (; r;) (a !== r.index && u(e.slice(a, r.index)), n(r), (a = t.lastIndex), (r = t.exec(e)));
                     a !== e.length && u(e.slice(a));
                 };
             },
@@ -2690,7 +2696,7 @@
                             E = ((e, t) => {
                                 let u = 0,
                                     n = e.length - 1;
-                                for (; n - u >= 0; ) {
+                                for (; n - u >= 0;) {
                                     const r = u + Math.ceil(0.5 * (n - u));
                                     i(e[r], t) ? (n = r - 1) : (u = r + 1);
                                 }
@@ -2968,7 +2974,7 @@
                             u = k(t);
                         let n,
                             r = e;
-                        for (; null !== (n = B.exec(e)); ) {
+                        for (; null !== (n = B.exec(e));) {
                             const e = n[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
                                 const t = u + e[2].replace(/\.\.\//g, '');
@@ -3075,7 +3081,7 @@
                                             let t;
                                             const u = x(),
                                                 n = k(u);
-                                            for (; null !== (t = h.exec(e)); ) {
+                                            for (; null !== (t = h.exec(e));) {
                                                 const e = t[0].match(/href="(.*?)"/);
                                                 if (e && !e[1].includes(w) && n) {
                                                     const t = n + e[1].replace(/\.\.\//g, ''),
@@ -3090,7 +3096,7 @@
                                             ((e) => {
                                                 const t = k(x());
                                                 let u;
-                                                for (; null !== (u = h.exec(e)); ) {
+                                                for (; null !== (u = h.exec(e));) {
                                                     const e = u[0].match(/href="(.*?)"/);
                                                     if (e) {
                                                         const u = t + e[1].replace(/\.\.\//g, ''),
@@ -4609,7 +4615,7 @@
                         iu.size
                             ? su ||
                               (su = window.setInterval(() => {
-                                  for (var e, t = ru(iu.values()); !(e = t()).done; ) {
+                                  for (var e, t = ru(iu.values()); !(e = t()).done;) {
                                       (0, e.value)();
                                   }
                               }, 5e3))
@@ -6265,7 +6271,7 @@
                                             t(e).delete(u);
                                         },
                                         r = (e, ...u) => {
-                                            for (var n, r = ie(t(e).values()); !(n = r()).done; ) (0, n.value)(...u);
+                                            for (var n, r = ie(t(e).values()); !(n = r()).done;) (0, n.value)(...u);
                                         };
                                     return (0, a.useMemo)(() => ({ on: u, off: n, trigger: r }), []);
                                 })(),
@@ -7247,6 +7253,9 @@
                                         }
                                     );
                             }, [V, ee]),
+                                (0, a.useEffect)(() => {
+                                    !$ && V && ee();
+                                }, [$, V, ee]),
                                 (0, a.useEffect)(() => {
                                     void 0 !== A && (T.current.open = A);
                                 }, [A]));

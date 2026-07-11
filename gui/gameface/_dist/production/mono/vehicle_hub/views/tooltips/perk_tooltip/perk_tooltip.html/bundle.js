@@ -389,7 +389,7 @@ function de({ text: a, tagColors: l, binding: s, className: i }) {
             r = a,
             o = 0;
         const n = {};
-        for (; t; ) {
+        for (; t;) {
             const c = t[0],
                 m = t[1] ?? '',
                 d = t[2] ?? '',

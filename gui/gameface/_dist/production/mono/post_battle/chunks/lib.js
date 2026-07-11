@@ -1159,15 +1159,15 @@ function ht(e, t, n, r, s) {
     if (0 === n) return !1;
     (n < 0 && (n = -1), (s = s || []));
     let l = (r = r || []).length;
-    for (; l--; ) if (r[l] === i) return s[l] === c;
+    for (; l--;) if (r[l] === i) return s[l] === c;
     if ((r.push(e), s.push(t), u)) {
         if (((l = i.length), l !== c.length)) return !1;
-        for (; l--; ) if (!ht(i[l], c[l], n - 1, r, s)) return !1;
+        for (; l--;) if (!ht(i[l], c[l], n - 1, r, s)) return !1;
     } else {
         const e = Object.keys(i);
         let t;
         if (((l = e.length), Object.keys(c).length !== l)) return !1;
-        for (; l--; ) {
+        for (; l--;) {
             if (((t = e[l]), void 0 === t))
                 return (console.error('Error: met undefined in object during deepEqual comparison'), !1);
             if (!Object.prototype.hasOwnProperty.call(c, t) || !ht(i[t], c[t], n - 1, r, s)) return !1;
@@ -1667,7 +1667,8 @@ function dn({ resId: e = 0, contentId: t, decoratorId: n, disabled: r, args: s, 
             let i = null;
             function c() {
                 r ||
-                    ((a.current.status = cn),
+                    ('display' === a.current.status && (Ne.tooltip.hide(e, t, n), (a.current.status = un)),
+                    (a.current.status = cn),
                     window.clearTimeout(a.current.timeoutId),
                     (a.current.timeoutId = window.setTimeout(u, o)));
             }
@@ -1683,7 +1684,7 @@ function dn({ resId: e = 0, contentId: t, decoratorId: n, disabled: r, args: s, 
                 ) {
                     an.delete(i);
                     let e = i.parentElement;
-                    for (; e && !an.has(e); ) e = e.parentElement;
+                    for (; e && !an.has(e);) e = e.parentElement;
                     if (e) {
                         an.get(e).show();
                     }
@@ -2585,7 +2586,7 @@ async function tr(e) {
                       }),
             (a = (e) => (r = s ? new o(e, r, 'An error was suppressed during disposal') : ((s = !0), e))),
             (i = (e) => {
-                for (; (e = t.pop()); )
+                for (; (e = t.pop());)
                     try {
                         var n = e[1] && e[1].call(e[2]);
                         if (e[0]) return Promise.resolve(n).then(i, (e) => (a(e), i()));
@@ -2764,7 +2765,7 @@ function yr(e, t) {
     for (let n = 0; n < e.length; n++) {
         if ('$' === e[n]) {
             let r = n + 1;
-            for (; r < e.length && !_r(e[r]); ) r++;
+            for (; r < e.length && !_r(e[r]);) r++;
             const s = e.slice(n + 1, r),
                 o = t[s];
             if (o) return yr(e.replace(`$${s}`, String(o)), t);
@@ -2945,7 +2946,7 @@ const Pr = i.forwardRef(function ({ value: e, numberType: t, ...n }, r) {
                       let t = '';
                       for (let n = ut.length - 1; n >= 0; n--) {
                           let r = ut[n];
-                          for (; void 0 !== r && e >= r; ) ((t += ct[n]), (e -= r));
+                          for (; void 0 !== r && e >= r;) ((t += ct[n]), (e -= r));
                       }
                       return t;
                   })(e)
@@ -4122,15 +4123,25 @@ const Do = { primary: 'primary', secondary: 'secondary', custom: 'custom' },
         });
     });
 function Ho(e) {
+    return e;
+}
+function Uo(e) {
     return (
         !(null != e && !['string', 'number', 'boolean'].includes(typeof e)) ||
-        (!i.isValidElement(e) && !!Array.isArray(e) && e.every(Ho))
+        (!i.isValidElement(e) && !!Array.isArray(e) && e.every(Uo))
     );
 }
 (($o.themes = Do), ($o.sizes = Oo));
-const Uo = 'MultilineOverflow_8834bd8e',
-    Wo = 'MultilineOverflow_content_b539970d';
-const Ko = i.forwardRef(function (
+const Wo = 'MultilineOverflow_ec9f8e47',
+    Ko = 'MultilineOverflow_content_b539970d';
+function Vo(e) {
+    return e instanceof HTMLElement
+        ? e.cloneNode(!0)
+        : e.nodeType === Node.TEXT_NODE
+          ? document.createTextNode(e.nodeValue ?? '')
+          : void 0;
+}
+const Go = i.forwardRef(function (
         {
             text: e,
             brackets: t,
@@ -4147,79 +4158,68 @@ const Ko = i.forwardRef(function (
             classNames: p,
             style: g,
             styleBase: b,
-            ..._
+            styleText: _,
+            ...y
         },
-        y,
+        w,
     ) {
-        const w = i.useRef(null),
-            [x, v] = i.useState(!1);
+        const x = i.useRef(null),
+            v = i.useRef(null),
+            [E, S] = i.useState(!1);
         i.useEffect(() => {
             if (0 === e.length) return;
-            const t = w.current;
-            if (!t) return;
-            const n = document.createElement('div');
-            let r = je;
+            const t = x.current,
+                n = v.current;
+            if (!t || !n) return;
+            const r = document.createElement('div');
             function s() {
-                if (!t) return;
-                (r(),
-                    (n.style.visibility = 'hidden'),
-                    (n.className = u(Wo, t.children[0].className)),
-                    (n.innerHTML = ''),
-                    t.appendChild(n));
+                if (!t || !n) return;
                 const e = t.children[0];
                 if (!e) return console.warn("MultilineOverflow can't get first child to handle it", t);
-                const s =
-                    ((o = t.getBoundingClientRect()), { x: (a = e.getBoundingClientRect()).x - o.x, y: a.y - o.y });
-                var o, a;
-                (e instanceof HTMLElement && (n.style.cssText = e.style.cssText),
-                    (n.style.left = `${s.x}px`),
-                    (n.style.top = `${s.y}px`));
-                for (let t of e.childNodes.values()) {
-                    if (t instanceof HTMLElement) {
-                        const e = t.cloneNode(!0);
-                        n.appendChild(e);
-                    }
-                    if (t.nodeType === Node.TEXT_NODE) {
-                        const e = document.createTextNode(t.nodeValue ?? '');
-                        n.appendChild(e);
-                    }
+                (r.remove(),
+                    (r.className = u(Ko, t.children[0].className)),
+                    (r.innerHTML = ''),
+                    e instanceof HTMLElement && (r.style.cssText = e.style.cssText));
+                const s = e.childNodes.length - 1;
+                let o = s;
+                for (; o >= 0; o--) {
+                    const n = e.childNodes[o];
+                    if (n instanceof HTMLElement && !(n.offsetTop + n.offsetHeight > t.clientHeight)) break;
                 }
-                const i = document.createElement('div');
-                ((i.innerHTML = '...'),
-                    n.appendChild(i),
-                    (r = nt(() => {
-                        const e = [];
-                        for (let r = n.childNodes.length - 2; 0 !== r; r--) {
-                            const s = n.childNodes[r];
-                            if (s instanceof HTMLElement) {
-                                if (s.offsetTop + s.offsetHeight <= t.offsetHeight) break;
-                                e.push(s);
-                            }
-                        }
-                        if (0 === e.length) (v(!1), i.remove());
-                        else {
-                            (v(!0), e.forEach((e) => e.remove()));
-                            let n = 0;
-                            for (; n++ < 1e3 && i.previousSibling && i.offsetTop + i.offsetHeight > t.offsetHeight; )
-                                i.previousSibling?.remove();
-                        }
-                        n.style.visibility = '';
-                    })));
+                if (o === s) S(!1);
+                else {
+                    S(!0);
+                    const s =
+                        ((a = t.getBoundingClientRect()), { x: (i = e.getBoundingClientRect()).x - a.x, y: i.y - a.y });
+                    for (r.style.visibility = '', r.style.left = `${s.x}px`, r.style.top = `${s.y}px`; o >= 0; o--) {
+                        const t = e.childNodes[o];
+                        if (t instanceof HTMLElement && !(t.offsetLeft + t.offsetWidth + n.offsetWidth > e.clientWidth))
+                            break;
+                    }
+                    for (let t = 0; t <= o; t++) {
+                        const n = e.childNodes[t];
+                        if (!(n instanceof HTMLElement)) continue;
+                        const s = Vo(n);
+                        s ? r.appendChild(s) : console.warn('Unexpected type of target node', n);
+                    }
+                    const c = n.cloneNode(!0);
+                    (c.removeAttribute('style'), r.appendChild(c), t.appendChild(r));
+                }
+                var a, i;
             }
             const o = new ResizeObserver(s);
             return (
                 o.observe(t),
                 new Fe()
-                    .add(() => r())
                     .add($e(window, 'resize', s))
                     .add(o.disconnect.bind(o))
-                    .add(n.remove.bind(n)).dispose
+                    .add(r.remove.bind(r)).dispose
             );
-        }, [y, e]);
-        const E = (function (e) {
-                return !e || Object.values(e).every(Ho);
+        }, [w, e]);
+        const N = (function (e) {
+                return !e || Object.values(e).every(Uo);
             })(n),
-            S = (function (e, t, n) {
+            T = (function (e, t, n) {
                 return dn({
                     ...n,
                     disabled: n?.disabled,
@@ -4231,66 +4231,69 @@ const Ko = i.forwardRef(function (
                 i.useMemo(
                     () => ({
                         text: e,
-                        params: E ? n : void 0,
+                        params: N ? n : void 0,
                         split: o,
                         upgradeLegacy: s,
                         brackets: t,
                         resId: $.resolve('views').read((e) => e.mono.tooltips.tooltips('resId')),
                     }),
-                    [e, t, o, s, n, E],
+                    [e, t, o, s, n, N],
                 ),
             ),
-            N = m ?? S;
+            R = m ?? T;
         if (
             (i.useEffect(() => {
-                f || x || N.onMouseLeave();
-            }, [x, N, m, f, E]),
+                f || E || R.onMouseLeave();
+            }, [E, R, m, f, N]),
             0 === e.length)
         )
             return null;
-        return c.jsx('div', {
-            ..._,
+        return c.jsxs('div', {
+            ...y,
             onMouseEnter: function (e) {
-                (a?.(e), x && !f && N.onMouseEnter(e));
+                (a?.(e), E && !f && R.onMouseEnter(e));
             },
             onClick: function (e) {
-                (d?.(e), f || N.onClick());
+                (d?.(e), f || R.onClick());
             },
             onMouseLeave: function (e) {
-                (l?.(e), f || N.onMouseLeave());
+                (l?.(e), f || R.onMouseLeave());
             },
-            ref: Ln([y, w]),
-            className: u(Uo, h, p?.base),
-            style: b,
-            children: c.jsx(Rr, {
-                text: e,
-                brackets: t,
-                params: n,
-                upgradeLegacy: s,
-                split: o,
-                formatters: r,
-                className: p?.text,
-                style: { ...g, visibility: 'hidden' },
-            }),
-        });
-    }),
-    Vo = 'GradientText_textOverlay_2d67fbb8',
-    Go = 'GradientText_5009d812',
-    Yo = i.forwardRef(function ({ classNames: e, children: t }, n) {
-        return c.jsxs('div', {
-            ref: n,
-            className: u(Go, e?.base),
+            ref: Ln([w, x]),
+            className: u(Wo, h, p?.base),
+            style: { ...g, ...b },
             children: [
-                c.jsx('div', { className: e?.text, children: t }),
-                c.jsx('div', { className: u(Vo, e?.textOverlay), children: t }),
+                c.jsx(Rr, {
+                    text: e,
+                    brackets: t,
+                    params: n,
+                    upgradeLegacy: s,
+                    split: o,
+                    formatters: r,
+                    className: p?.text,
+                    style: { ..._, visibility: E ? 'hidden' : void 0 },
+                }),
+                c.jsx('div', { ref: v, style: { visibility: 'hidden', position: 'absolute' }, children: '...' }),
             ],
         });
     }),
-    qo = { noneRef: 'none-ref', measured: 'measured' },
-    Xo = { type: 'measuring' };
-function Zo() {
+    Yo = 'GradientText_textOverlay_2d67fbb8',
+    qo = 'GradientText_5009d812',
+    Xo = i.forwardRef(function ({ classNames: e, children: t }, n) {
+        return c.jsxs('div', {
+            ref: n,
+            className: u(qo, e?.base),
+            children: [
+                c.jsx('div', { className: e?.text, children: t }),
+                c.jsx('div', { className: u(Yo, e?.textOverlay), children: t }),
+            ],
+        });
+    }),
+    Zo = { noneRef: 'none-ref', measured: 'measured' },
+    Qo = { type: 'measuring' };
+function Jo() {
     const e = i.useRef(null),
-        [t, n] = i.useState(Xo),
+        [t, n] = i.useState(Qo),
         r = ((e, t = []) => {
             const n = i.useRef(void 0),
                 r = i.useCallback((...t) => {
@@ -4307,14 +4310,14 @@ function Zo() {
             );
         })(
             () => (
-                n(Xo),
+                n(Qo),
                 nt(() => {
                     e.current
                         ? n({
-                              type: qo.measured,
+                              type: Zo.measured,
                               size: { width: e.current.offsetWidth, height: e.current.offsetHeight },
                           })
-                        : n({ type: qo.noneRef });
+                        : n({ type: Zo.noneRef });
                 })
             ),
             [],
@@ -4333,115 +4336,115 @@ function Zo() {
         [e, t, r]
     );
 }
-const Qo = $.resolve('strings'),
-    Jo = $.resolve('intl'),
-    ea = (e) => Jo.toUpperCase(Qo.readOr(`readable_key_names.KEY_${e}`, () => ta)),
-    ta = Jo.toUpperCase(Qo.readOrEmpty('readable_key_names.KEY_NONE_ALT')),
-    na = {
-        [We.NONE]: ea('NONE_ALT'),
-        [We.ESCAPE]: ea('ESCAPE'),
-        [We.ENTER]: ea('ENTER'),
-        [We.SPACE]: ea('SPACE'),
-        [We.DELETE]: ea('DELETE'),
-        [We.BACKSPACE]: ea('BACKSPACE'),
-        [We.TAB]: ea('TAB'),
-        [We.HOME]: ea('HOME'),
-        [We.END]: ea('END'),
-        [We.MINUS]: ea('MINUS'),
-        [We.SLASH]: ea('SLASH'),
-        [We.BACKSLASH]: ea('BACKSLASH'),
-        [We.PERIOD]: ea('PERIOD'),
-        [We.COMMA]: ea('COMMA'),
-        [We.QUOTE]: ea('APOSTROPHE'),
-        [We.SEMICOLON]: ea('SEMICOLON'),
-        [We.INSERT]: ea('INSERT'),
-        [We.KEY_A]: ea('A'),
-        [We.KEY_B]: ea('B'),
-        [We.KEY_C]: ea('C'),
-        [We.KEY_D]: ea('D'),
-        [We.KEY_E]: ea('E'),
-        [We.KEY_F]: ea('F'),
-        [We.KEY_G]: ea('G'),
-        [We.KEY_H]: ea('H'),
-        [We.KEY_I]: ea('I'),
-        [We.KEY_J]: ea('J'),
-        [We.KEY_K]: ea('K'),
-        [We.KEY_L]: ea('L'),
-        [We.KEY_M]: ea('M'),
-        [We.KEY_N]: ea('N'),
-        [We.KEY_O]: ea('O'),
-        [We.KEY_P]: ea('P'),
-        [We.KEY_Q]: ea('Q'),
-        [We.KEY_R]: ea('R'),
-        [We.KEY_S]: ea('S'),
-        [We.KEY_T]: ea('T'),
-        [We.KEY_U]: ea('U'),
-        [We.KEY_V]: ea('V'),
-        [We.KEY_W]: ea('W'),
-        [We.KEY_X]: ea('X'),
-        [We.KEY_Y]: ea('Y'),
-        [We.KEY_Z]: ea('Z'),
-        [We.DIGIT_0]: ea('0'),
-        [We.DIGIT_1]: ea('1'),
-        [We.DIGIT_2]: ea('2'),
-        [We.DIGIT_3]: ea('3'),
-        [We.DIGIT_4]: ea('4'),
-        [We.DIGIT_5]: ea('5'),
-        [We.DIGIT_6]: ea('6'),
-        [We.DIGIT_7]: ea('7'),
-        [We.DIGIT_8]: ea('8'),
-        [We.DIGIT_9]: ea('9'),
-        [We.NUMPAD_0]: ea('NUMPAD0'),
-        [We.NUMPAD_1]: ea('NUMPAD1'),
-        [We.NUMPAD_2]: ea('NUMPAD2'),
-        [We.NUMPAD_3]: ea('NUMPAD3'),
-        [We.NUMPAD_4]: ea('NUMPAD4'),
-        [We.NUMPAD_5]: ea('NUMPAD5'),
-        [We.NUMPAD_6]: ea('NUMPAD6'),
-        [We.NUMPAD_7]: ea('NUMPAD7'),
-        [We.NUMPAD_8]: ea('NUMPAD8'),
-        [We.NUMPAD_9]: ea('NUMPAD9'),
-        [We.F_1]: ea('F1'),
-        [We.F_2]: ea('F2'),
-        [We.F_3]: ea('F3'),
-        [We.F_4]: ea('F4'),
-        [We.F_5]: ea('F5'),
-        [We.F_6]: ea('F6'),
-        [We.F_7]: ea('F7'),
-        [We.F_8]: ea('F8'),
-        [We.F_9]: ea('F9'),
-        [We.F_10]: ea('F10'),
-        [We.F_11]: ea('F11'),
-        [We.F_12]: ea('F12'),
-        [We.NUMPAD_MULTIPLY]: ea('NUMPADSTAR'),
-        [We.NUMPAD_DIVIDE]: ea('NUMPADSLASH'),
-        [We.NUMPAD_ADD]: ea('ADD'),
-        [We.NUMPAD_SUBTRACT]: ea('NUMPADMINUS'),
-        [We.NUMPAD_DECIMAL]: ea('NUMPADPERIOD'),
-        [We.ARROW_LEFT]: ea('LEFTARROW'),
-        [We.ARROW_RIGHT]: ea('RIGHTARROW'),
-        [We.ARROW_UP]: ea('UPARROW'),
-        [We.ARROW_DOWN]: ea('DOWNARROW'),
-        [We.PAGE_UP]: ea('PGUP'),
-        [We.PAGE_DOWN]: ea('PGDN'),
-        [We.BRACKET_LEFT]: ea('LBRACKET'),
-        [We.BRACKET_RIGHT]: ea('RBRACKET'),
+const ea = $.resolve('strings'),
+    ta = $.resolve('intl'),
+    na = (e) => ta.toUpperCase(ea.readOr(`readable_key_names.KEY_${e}`, () => ra)),
+    ra = ta.toUpperCase(ea.readOrEmpty('readable_key_names.KEY_NONE_ALT')),
+    sa = {
+        [We.NONE]: na('NONE_ALT'),
+        [We.ESCAPE]: na('ESCAPE'),
+        [We.ENTER]: na('ENTER'),
+        [We.SPACE]: na('SPACE'),
+        [We.DELETE]: na('DELETE'),
+        [We.BACKSPACE]: na('BACKSPACE'),
+        [We.TAB]: na('TAB'),
+        [We.HOME]: na('HOME'),
+        [We.END]: na('END'),
+        [We.MINUS]: na('MINUS'),
+        [We.SLASH]: na('SLASH'),
+        [We.BACKSLASH]: na('BACKSLASH'),
+        [We.PERIOD]: na('PERIOD'),
+        [We.COMMA]: na('COMMA'),
+        [We.QUOTE]: na('APOSTROPHE'),
+        [We.SEMICOLON]: na('SEMICOLON'),
+        [We.INSERT]: na('INSERT'),
+        [We.KEY_A]: na('A'),
+        [We.KEY_B]: na('B'),
+        [We.KEY_C]: na('C'),
+        [We.KEY_D]: na('D'),
+        [We.KEY_E]: na('E'),
+        [We.KEY_F]: na('F'),
+        [We.KEY_G]: na('G'),
+        [We.KEY_H]: na('H'),
+        [We.KEY_I]: na('I'),
+        [We.KEY_J]: na('J'),
+        [We.KEY_K]: na('K'),
+        [We.KEY_L]: na('L'),
+        [We.KEY_M]: na('M'),
+        [We.KEY_N]: na('N'),
+        [We.KEY_O]: na('O'),
+        [We.KEY_P]: na('P'),
+        [We.KEY_Q]: na('Q'),
+        [We.KEY_R]: na('R'),
+        [We.KEY_S]: na('S'),
+        [We.KEY_T]: na('T'),
+        [We.KEY_U]: na('U'),
+        [We.KEY_V]: na('V'),
+        [We.KEY_W]: na('W'),
+        [We.KEY_X]: na('X'),
+        [We.KEY_Y]: na('Y'),
+        [We.KEY_Z]: na('Z'),
+        [We.DIGIT_0]: na('0'),
+        [We.DIGIT_1]: na('1'),
+        [We.DIGIT_2]: na('2'),
+        [We.DIGIT_3]: na('3'),
+        [We.DIGIT_4]: na('4'),
+        [We.DIGIT_5]: na('5'),
+        [We.DIGIT_6]: na('6'),
+        [We.DIGIT_7]: na('7'),
+        [We.DIGIT_8]: na('8'),
+        [We.DIGIT_9]: na('9'),
+        [We.NUMPAD_0]: na('NUMPAD0'),
+        [We.NUMPAD_1]: na('NUMPAD1'),
+        [We.NUMPAD_2]: na('NUMPAD2'),
+        [We.NUMPAD_3]: na('NUMPAD3'),
+        [We.NUMPAD_4]: na('NUMPAD4'),
+        [We.NUMPAD_5]: na('NUMPAD5'),
+        [We.NUMPAD_6]: na('NUMPAD6'),
+        [We.NUMPAD_7]: na('NUMPAD7'),
+        [We.NUMPAD_8]: na('NUMPAD8'),
+        [We.NUMPAD_9]: na('NUMPAD9'),
+        [We.F_1]: na('F1'),
+        [We.F_2]: na('F2'),
+        [We.F_3]: na('F3'),
+        [We.F_4]: na('F4'),
+        [We.F_5]: na('F5'),
+        [We.F_6]: na('F6'),
+        [We.F_7]: na('F7'),
+        [We.F_8]: na('F8'),
+        [We.F_9]: na('F9'),
+        [We.F_10]: na('F10'),
+        [We.F_11]: na('F11'),
+        [We.F_12]: na('F12'),
+        [We.NUMPAD_MULTIPLY]: na('NUMPADSTAR'),
+        [We.NUMPAD_DIVIDE]: na('NUMPADSLASH'),
+        [We.NUMPAD_ADD]: na('ADD'),
+        [We.NUMPAD_SUBTRACT]: na('NUMPADMINUS'),
+        [We.NUMPAD_DECIMAL]: na('NUMPADPERIOD'),
+        [We.ARROW_LEFT]: na('LEFTARROW'),
+        [We.ARROW_RIGHT]: na('RIGHTARROW'),
+        [We.ARROW_UP]: na('UPARROW'),
+        [We.ARROW_DOWN]: na('DOWNARROW'),
+        [We.PAGE_UP]: na('PGUP'),
+        [We.PAGE_DOWN]: na('PGDN'),
+        [We.BRACKET_LEFT]: na('LBRACKET'),
+        [We.BRACKET_RIGHT]: na('RBRACKET'),
     },
-    ra = i.createContext(void 0);
-function sa() {
-    const e = i.useContext(ra);
+    oa = i.createContext(void 0);
+function aa() {
+    const e = i.useContext(oa);
     if (!e) throw new Error('useKeyButtonContext must be used within KeyButtonContext');
     return e;
 }
-const oa = 'KeyButton_background_8a852f95',
-    aa = 'KeyButton_border_b1c50f01',
-    ia = 'KeyButton_8fd343f8',
-    ca = 'KeyButton_content_3ab1d990',
-    ua = qn('KeyButton', ia);
-function la({ children: e, onClick: t, onMouseEnter: n, ...r }) {
+const ia = 'KeyButton_background_8a852f95',
+    ca = 'KeyButton_border_b1c50f01',
+    ua = 'KeyButton_8fd343f8',
+    la = 'KeyButton_content_3ab1d990',
+    da = qn('KeyButton', ua);
+function fa({ children: e, onClick: t, onMouseEnter: n, ...r }) {
     const s = vn(),
-        { soundTarget: o, silent: a } = sa();
-    return c.jsx(ua, {
+        { soundTarget: o, silent: a } = aa();
+    return c.jsx(da, {
         ...r,
         onMouseEnter: function (e) {
             (a || s.play('mouse-enter', { target: o, original: e }), n?.(e));
@@ -4452,14 +4455,14 @@ function la({ children: e, onClick: t, onMouseEnter: n, ...r }) {
         children: e,
     });
 }
-function da({ keyCode: e, onActive: t, silent: n, soundTarget: r, idle: s, children: o }) {
+function ma({ keyCode: e, onActive: t, silent: n, soundTarget: r, idle: s, children: o }) {
     !(function (e, t, n = !1) {
         Qt(Ve(e), 'keyup', t, n);
     })(s ? We.NONE : Ve(e), t);
     const a = i.useMemo(() => ({ keyCode: e, onActive: t, silent: n, soundTarget: r, idle: s }), [e, t, r, n, s]);
-    return c.jsx(ra.Provider, { value: a, children: o });
+    return c.jsx(oa.Provider, { value: a, children: o });
 }
-const fa = function ({
+const ha = function ({
     keyCode: e,
     onActive: t = je,
     silent: n = !1,
@@ -4470,51 +4473,51 @@ const fa = function ({
     children: i,
     ...l
 }) {
-    return c.jsx(da, {
+    return c.jsx(ma, {
         keyCode: e,
         onActive: t,
         silent: n,
         idle: r,
         soundTarget: s,
-        children: c.jsxs(la, {
+        children: c.jsxs(fa, {
             ...l,
-            className: u(ia, a, o?.base),
+            className: u(ua, a, o?.base),
             children: [
-                c.jsx('div', { className: u(oa, o?.background) }),
-                c.jsx('div', { className: u(aa, o?.border) }),
-                c.jsx('div', { className: u(ca, o?.content), children: i }),
+                c.jsx('div', { className: u(ia, o?.background) }),
+                c.jsx('div', { className: u(ca, o?.border) }),
+                c.jsx('div', { className: u(la, o?.content), children: i }),
             ],
         }),
     });
 };
-fa.Code = function () {
-    const { keyCode: e } = sa(),
+ha.Code = function () {
+    const { keyCode: e } = aa(),
         t = Ve(e);
-    if (t === We.NONE) return ta;
+    if (t === We.NONE) return ra;
     const n = ((r = t), window.systemInput.getQWERTYScanCode(r));
     var r;
     const s = ((o = n), window.systemInput.getCurrentLayoutKeyName(o));
     var o;
-    return s in na
-        ? na[s]
+    return s in sa
+        ? sa[s]
         : (console.error(
               e === s
                   ? `KeyButton: key code "${e}" is not supported.`
                   : `KeyButton: virtual key code "${s}" for "${e}" is not supported.`,
           ),
-          ta);
+          ra);
 };
-const ma = { static: 'static', screenResponsive: 'screenResponsive', contentResponsive: 'contentResponsive' };
-Object.values(ma);
-const ha = { header: 'header', body: 'body', footer: 'footer' },
-    pa = Object.values(ha),
-    ga = i.createContext(null);
-function ba() {
-    const e = i.useContext(ga);
+const pa = { static: 'static', screenResponsive: 'screenResponsive', contentResponsive: 'contentResponsive' };
+Object.values(pa);
+const ga = { header: 'header', body: 'body', footer: 'footer' },
+    ba = Object.values(ga),
+    _a = i.createContext(null);
+function ya() {
+    const e = i.useContext(_a);
     if (null === e) throw new Error('You can use the table hooks only with the table component');
     return e;
 }
-function _a({ children: e, columns: t, data: n, sorting: r, pagination: s, rowSelection: o, initialState: a, ...u }) {
+function wa({ children: e, columns: t, data: n, sorting: r, pagination: s, rowSelection: o, initialState: a, ...u }) {
     const f = i.useRef({ header: [], body: [], footer: [] }),
         m = i.useRef(new Map()),
         h = i.useRef(null),
@@ -4590,18 +4593,18 @@ function _a({ children: e, columns: t, data: n, sorting: r, pagination: s, rowSe
             () => ({ table: y, cellRefs: f, columnSizes: p, handleCellRefsSet: _, scheduleColumnSizeUpdate: b }),
             [y, f, p, _, b],
         );
-    return c.jsx(ga.Provider, { value: w, children: e });
+    return c.jsx(_a.Provider, { value: w, children: e });
 }
-const ya = 'Table_85be883a',
-    wa = 'Table_row_881b7550',
-    xa = 'Table_header_ef69bf65',
-    va = 'Table_footer_ef69bf65',
-    Ea = 'Table_body_df2c1607',
-    Sa = 'Table_cell_7df9641e',
-    Na = 'Table_sortable_f63b3b4f',
-    Ta = 'Table_contentResponsiveCellWrapper_ddee221c',
-    Ra = qn('ContentResponsiveTableCell', Sa),
-    Ca = F(function (e) {
+const xa = 'Table_85be883a',
+    va = 'Table_row_881b7550',
+    Ea = 'Table_header_ef69bf65',
+    Sa = 'Table_footer_ef69bf65',
+    Na = 'Table_body_df2c1607',
+    Ta = 'Table_cell_7df9641e',
+    Ra = 'Table_sortable_f63b3b4f',
+    Ca = 'Table_contentResponsiveCellWrapper_ddee221c',
+    ka = qn('ContentResponsiveTableCell', Ta),
+    Aa = F(function (e) {
         (rt(
             e.cell.minSize.endsWith('rem'),
             `minSize unit of the content_responsive_cell should be in rem for ${e.cell.column.id} column`,
@@ -4613,7 +4616,7 @@ const ya = 'Table_85be883a',
         const { className: t, style: n, cell: r, ...s } = e,
             o = i.useRef(null),
             a = r.column.getCanSort(),
-            { cellRefs: l, columnSizes: d, handleCellRefsSet: f, scheduleColumnSizeUpdate: m } = ba(),
+            { cellRefs: l, columnSizes: d, handleCellRefsSet: f, scheduleColumnSizeUpdate: m } = ya(),
             h = d.getAt(r.index);
         return (
             i.useLayoutEffect(() => {
@@ -4624,7 +4627,7 @@ const ya = 'Table_85be883a',
                     );
                 o.current = new ResizeObserver(function () {
                     let e = 0;
-                    for (const t of pa)
+                    for (const t of ba)
                         for (const n of l.current[t]) {
                             const t = n[r.index]?.scrollWidth ?? 0;
                             e = Math.max(e, t);
@@ -4639,9 +4642,9 @@ const ya = 'Table_85be883a',
                 );
             }, [r.index, r.rowIndex, r.tablePart, m]),
             c.jsx(
-                Ra,
+                ka,
                 {
-                    className: u(r.column.columnDef.meta?.className, a && ha.header === r.tablePart && Na, t),
+                    className: u(r.column.columnDef.meta?.className, a && ga.header === r.tablePart && Ra, t),
                     style: {
                         ...n,
                         maxWidth: r.maxSize,
@@ -4651,7 +4654,7 @@ const ya = 'Table_85be883a',
                     },
                     ...s,
                     children: c.jsx('div', {
-                        className: Ta,
+                        className: Ca,
                         ref: i.useCallback(
                             (e) => f(r.tablePart, e, r.rowIndex, r.index),
                             [r.tablePart, r.rowIndex, r.index, f],
@@ -4663,8 +4666,8 @@ const ya = 'Table_85be883a',
             )
         );
     }),
-    ka = qn('ScreenResponsiveTableCell', Sa);
-function Aa(e) {
+    Pa = qn('ScreenResponsiveTableCell', Ta);
+function Ma(e) {
     (rt(
         e.cell.size.endsWith('%'),
         `Size unit of the screen_responsive_cell should be in percents for ${e.cell.column.id} column`,
@@ -4680,7 +4683,7 @@ function Aa(e) {
     const { className: t, style: n, cell: r, ...s } = e,
         [o, a] = i.useState(!1),
         l = e.cell.column.getCanSort(),
-        { handleCellRefsSet: d } = ba();
+        { handleCellRefsSet: d } = ya();
     return (
         i.useEffect(
             () =>
@@ -4690,13 +4693,13 @@ function Aa(e) {
             [],
         ),
         c.jsx(
-            ka,
+            Pa,
             {
                 ref: i.useCallback(
                     (e) => d(r.tablePart, e, r.rowIndex, r.index),
                     [r.tablePart, r.rowIndex, r.index, d],
                 ),
-                className: u(r.column.columnDef.meta?.className, l && ha.header === r.tablePart && Na, t),
+                className: u(r.column.columnDef.meta?.className, l && ga.header === r.tablePart && Ra, t),
                 style: { ...n, width: r.size, minWidth: r.minSize, maxWidth: r.maxSize, opacity: o ? 1 : 0 },
                 ...s,
                 children: e.children,
@@ -4705,13 +4708,13 @@ function Aa(e) {
         )
     );
 }
-const Pa = qn('StaticTableCell', Sa);
-function Ma(e) {
+const Ia = qn('StaticTableCell', Ta);
+function za(e) {
     rt(e.cell.size.endsWith('rem'), `Size unit is not correct for the ${e.cell.column.id} column`);
     const { className: t, style: n, cell: r, ...s } = e,
         [o, a] = i.useState(!1),
         l = r.column.getCanSort(),
-        { handleCellRefsSet: d } = ba();
+        { handleCellRefsSet: d } = ya();
     return (
         i.useEffect(
             () =>
@@ -4720,38 +4723,38 @@ function Ma(e) {
                 }),
             [],
         ),
-        c.jsx(Pa, {
+        c.jsx(Ia, {
             ref: i.useCallback((e) => d(r.tablePart, e, r.rowIndex, r.index), [r.tablePart, r.rowIndex, r.index, d]),
-            className: u(r.column.columnDef.meta?.className, l && ha.header === r.tablePart && Na, t),
+            className: u(r.column.columnDef.meta?.className, l && ga.header === r.tablePart && Ra, t),
             style: { ...n, width: r.size, opacity: o ? 1 : 0 },
             ...s,
             children: e.children,
         })
     );
 }
-const Ia = qn('Table', ya),
-    za = qn('TableHeader', xa),
-    ja = qn('TableBody', Ea),
-    Da = qn('TableFooter', va),
-    Oa = qn('TableRow', wa),
-    Ba = i.forwardRef(function (e, t) {
-        return c.jsx(Ia, { ref: t, ...e, children: e.children });
+const ja = qn('Table', xa),
+    Da = qn('TableHeader', Ea),
+    Oa = qn('TableBody', Na),
+    Ba = qn('TableFooter', Sa),
+    La = qn('TableRow', va),
+    Fa = i.forwardRef(function (e, t) {
+        return c.jsx(ja, { ref: t, ...e, children: e.children });
     });
-((Ba.Header = za),
-    (Ba.Body = ja),
-    (Ba.Footer = Da),
-    (Ba.Row = Oa),
-    (Ba.Cell = function (e) {
+((Fa.Header = Da),
+    (Fa.Body = Oa),
+    (Fa.Footer = Ba),
+    (Fa.Row = La),
+    (Fa.Cell = function (e) {
         const t = e.cell.column.columnDef.meta;
         rt(void 0 !== t, `meta data is not provided in the table columns config for ${e.cell.column.id}`);
         const { cell: n, ...r } = e;
         switch (t.column.behaviour) {
-            case ma.static:
-                return c.jsx(Ma, { ...r, cell: { ...n, size: t.column.size } });
-            case ma.contentResponsive:
-                return c.jsx(Ca, { ...r, cell: { ...n, minSize: t.column.minSize, maxSize: t.column.maxSize } });
-            case ma.screenResponsive:
-                return c.jsx(Aa, {
+            case pa.static:
+                return c.jsx(za, { ...r, cell: { ...n, size: t.column.size } });
+            case pa.contentResponsive:
+                return c.jsx(Aa, { ...r, cell: { ...n, minSize: t.column.minSize, maxSize: t.column.maxSize } });
+            case pa.screenResponsive:
+                return c.jsx(Ma, {
                     ...r,
                     cell: { ...n, size: t.column.size, minSize: t.column.minSize, maxSize: t.column.maxSize },
                 });
@@ -4759,9 +4762,9 @@ const Ia = qn('Table', ya),
                 return (console.error(`Column behaviour for ${e.cell.column.id} is not provided`), null);
         }
     }),
-    (Ba.behaviours = ma));
-const La = 'TruncateText_dcb41d92',
-    Fa = i.forwardRef(function ({ text: e, tooltipParams: t, className: n, ...r }, s) {
+    (Fa.behaviours = pa));
+const $a = 'TruncateText_dcb41d92',
+    Ha = i.forwardRef(function ({ text: e, tooltipParams: t, className: n, ...r }, s) {
         const o = fn({ header: t?.header, body: t?.body || e }),
             a = i.useRef(null),
             [l, d] = i.useState(!1),
@@ -4775,29 +4778,29 @@ const La = 'TruncateText_dcb41d92',
             tn(f, [f]),
             nn(f, [f]),
             Vt(a, f),
-            c.jsx('div', { ...r, ref: Ln([s, a]), className: u(La, n), ...(l ? o : {}), children: e })
+            c.jsx('div', { ...r, ref: Ln([s, a]), className: u($a, n), ...(l ? o : {}), children: e })
         );
     }),
-    $a = { x24x24: '24x24', x32x32: '32x32', x48x48: '48x48' },
-    Ha = {
-        [$a.x24x24]: 'library.gray_eye_24x24',
-        [$a.x32x32]: 'library.gray_eye_32x32',
-        [$a.x48x48]: 'library.gray_eye_48x48',
+    Ua = { x24x24: '24x24', x32x32: '32x32', x48x48: '48x48' },
+    Wa = {
+        [Ua.x24x24]: 'library.gray_eye_24x24',
+        [Ua.x32x32]: 'library.gray_eye_32x32',
+        [Ua.x48x48]: 'library.gray_eye_48x48',
     },
-    Ua = {
-        [$a.x24x24]: { width: '24rem', height: '24rem' },
-        [$a.x32x32]: { width: '32rem', height: '32rem' },
-        [$a.x48x48]: { width: '48rem', height: '48rem' },
+    Ka = {
+        [Ua.x24x24]: { width: '24rem', height: '24rem' },
+        [Ua.x32x32]: { width: '32rem', height: '32rem' },
+        [Ua.x48x48]: { width: '48rem', height: '48rem' },
     },
-    Wa = qn('PlayerInfoAnonymizer', { element: Lr }),
-    Ka = i.forwardRef(function (
-        { size: e, path: t = Ha[e], width: n = Ua[e].width, height: r = Ua[e].height, className: s, ...o },
+    Va = qn('PlayerInfoAnonymizer', { element: Lr }),
+    Ga = i.forwardRef(function (
+        { size: e, path: t = Wa[e], width: n = Ka[e].width, height: r = Ka[e].height, className: s, ...o },
         a,
     ) {
-        return c.jsx(Wa, { ...o, ref: a, path: t, width: n, height: r, className: s });
+        return c.jsx(Va, { ...o, ref: a, path: t, width: n, height: r, className: s });
     });
-Ka.sizes = $a;
-const Va = {
+Ga.sizes = Ua;
+const Ya = {
         base: 'PlayerInfo_89eea88b',
         badge: 'PlayerInfo_badge_9f134a01',
         name: 'PlayerInfo_name_120449f9',
@@ -4811,74 +4814,74 @@ const Va = {
         stripe__big: 'PlayerInfo_stripe__big_ccbc3007',
         stripeBadge: 'PlayerInfo_stripeBadge_605bfd0a',
     },
-    Ga = { x24x24: '24x24', x48x48: '48x48', x80x80: '80x80' },
-    Ya = {
-        [Ga.x24x24]: { width: '24rem', height: '24rem' },
-        [Ga.x48x48]: { width: '48rem', height: '48rem' },
-        [Ga.x80x80]: { width: '80rem', height: '80rem' },
+    qa = { x24x24: '24x24', x48x48: '48x48', x80x80: '80x80' },
+    Xa = {
+        [qa.x24x24]: { width: '24rem', height: '24rem' },
+        [qa.x48x48]: { width: '48rem', height: '48rem' },
+        [qa.x80x80]: { width: '80rem', height: '80rem' },
     },
-    qa = qn('PlayerInfoBadge', { element: Lr }),
-    Xa = i.forwardRef(function (
+    Za = qn('PlayerInfoBadge', { element: Lr }),
+    Qa = i.forwardRef(function (
         {
             size: e,
             badgeId: t,
             path: n = `library.badges.c_${e}.badge_${t}`,
-            width: r = Ya[e].width,
-            height: s = Ya[e].height,
+            width: r = Xa[e].width,
+            height: s = Xa[e].height,
             className: o,
             ...a
         },
         i,
     ) {
-        return c.jsx(qa, { ...a, ref: i, path: n, width: r, height: s, className: u(Va.badge, o) });
+        return c.jsx(Za, { ...a, ref: i, path: n, width: r, height: s, className: u(Ya.badge, o) });
     });
-Xa.sizes = Ga;
-const Za = { x64x28: '64x28', x34x16: '34x16', x26x16: '26x16', x10x10: '10x10' },
-    Qa = {
-        [Za.x10x10]: 'library.premium_igr_ico',
-        [Za.x26x16]: 'library.premium_igr_small',
-        [Za.x34x16]: 'library.premium_small',
-        [Za.x64x28]: 'library.premium_igr_big',
+Qa.sizes = qa;
+const Ja = { x64x28: '64x28', x34x16: '34x16', x26x16: '26x16', x10x10: '10x10' },
+    ei = {
+        [Ja.x10x10]: 'library.premium_igr_ico',
+        [Ja.x26x16]: 'library.premium_igr_small',
+        [Ja.x34x16]: 'library.premium_small',
+        [Ja.x64x28]: 'library.premium_igr_big',
     },
-    Ja = {
-        [Za.x10x10]: { width: '10rem', height: '10rem' },
-        [Za.x26x16]: { width: '26rem', height: '16rem' },
-        [Za.x34x16]: { width: '34rem', height: '16rem' },
-        [Za.x64x28]: { width: '64rem', height: '28rem' },
+    ti = {
+        [Ja.x10x10]: { width: '10rem', height: '10rem' },
+        [Ja.x26x16]: { width: '26rem', height: '16rem' },
+        [Ja.x34x16]: { width: '34rem', height: '16rem' },
+        [Ja.x64x28]: { width: '64rem', height: '28rem' },
     },
-    ei = qn('PlayerInfoIgr', { element: Lr }),
-    ti = i.forwardRef(function (
-        { size: e, path: t = Qa[e], width: n = Ja[e].width, height: r = Ja[e].height, className: s, ...o },
+    ni = qn('PlayerInfoIgr', { element: Lr }),
+    ri = i.forwardRef(function (
+        { size: e, path: t = ei[e], width: n = ti[e].width, height: r = ti[e].height, className: s, ...o },
         a,
     ) {
-        return c.jsx(ei, { ...o, ref: a, path: t, width: n, height: r, className: s });
+        return c.jsx(ni, { ...o, ref: a, path: t, width: n, height: r, className: s });
     });
-ti.sizes = Za;
-const ni = { default: 'default', regular: 'regular', medium: 'medium', big: 'big' },
-    ri = { [ni.default]: 'c_64x24', [ni.regular]: 'c_68x28', [ni.medium]: 'c_68x28', [ni.big]: 'c_100x40' },
-    si = { [ni.default]: 'c_24x24', [ni.regular]: 'c_32x32', [ni.medium]: 'c_48x48', [ni.big]: 'c_80x80' },
-    oi = {
-        [ni.default]: { width: '24rem', height: '24rem', marginLeft: '-15rem' },
-        [ni.regular]: { width: '32rem', height: '32rem', marginLeft: '-19rem' },
-        [ni.medium]: { width: '48rem', height: '48rem', marginLeft: '-32rem' },
-        [ni.big]: { width: '80rem', height: '80rem', marginLeft: '-25rem' },
+ri.sizes = Ja;
+const si = { default: 'default', regular: 'regular', medium: 'medium', big: 'big' },
+    oi = { [si.default]: 'c_64x24', [si.regular]: 'c_68x28', [si.medium]: 'c_68x28', [si.big]: 'c_100x40' },
+    ai = { [si.default]: 'c_24x24', [si.regular]: 'c_32x32', [si.medium]: 'c_48x48', [si.big]: 'c_80x80' },
+    ii = {
+        [si.default]: { width: '24rem', height: '24rem', marginLeft: '-15rem' },
+        [si.regular]: { width: '32rem', height: '32rem', marginLeft: '-19rem' },
+        [si.medium]: { width: '48rem', height: '48rem', marginLeft: '-32rem' },
+        [si.big]: { width: '80rem', height: '80rem', marginLeft: '-25rem' },
     },
-    ai = qn('StripeBadgeIcon', { element: Lr }),
-    ii = i.forwardRef(function (
+    ci = qn('StripeBadgeIcon', { element: Lr }),
+    ui = i.forwardRef(function (
         {
-            size: e = ni.default,
+            size: e = si.default,
             badgeId: t,
             stripeExists: n,
-            path: r = `library.badges.${si[e]}.badge_${t}`,
-            width: s = oi[e].width,
-            height: o = oi[e].height,
-            marginLeft: a = oi[e].marginLeft,
+            path: r = `library.badges.${ai[e]}.badge_${t}`,
+            width: s = ii[e].width,
+            height: o = ii[e].height,
+            marginLeft: a = ii[e].marginLeft,
             className: i,
             ...u
         },
         l,
     ) {
-        return c.jsx(ai, {
+        return c.jsx(ci, {
             ...u,
             ref: l,
             path: r,
@@ -4888,43 +4891,43 @@ const ni = { default: 'default', regular: 'regular', medium: 'medium', big: 'big
             className: i,
         });
     }),
-    ci = {
-        [ni.default]: { width: '64rem', height: '24rem' },
-        [ni.regular]: { width: '68rem', height: '24rem' },
-        [ni.medium]: { width: '68rem', height: '28rem' },
-        [ni.big]: { width: '100rem', height: '40rem' },
+    li = {
+        [si.default]: { width: '64rem', height: '24rem' },
+        [si.regular]: { width: '68rem', height: '24rem' },
+        [si.medium]: { width: '68rem', height: '28rem' },
+        [si.big]: { width: '100rem', height: '40rem' },
     },
-    ui = qn('StripeIcon', { element: Lr }),
-    li = i.forwardRef(function (
+    di = qn('StripeIcon', { element: Lr }),
+    fi = i.forwardRef(function (
         {
-            size: e = ni.default,
+            size: e = si.default,
             badgeId: t,
             stripeExists: n,
-            path: r = `library.badges.strips.${ri[e]}.strip_${t}`,
-            width: s = ci[e].width,
-            height: o = ci[e].height,
+            path: r = `library.badges.strips.${oi[e]}.strip_${t}`,
+            width: s = li[e].width,
+            height: o = li[e].height,
             className: a,
             ...i
         },
         l,
     ) {
-        return n ? c.jsx(ui, { ...i, ref: l, path: r, width: s, height: o, className: u(Va.stripeBadge, a) }) : null;
+        return n ? c.jsx(di, { ...i, ref: l, path: r, width: s, height: o, className: u(Ya.stripeBadge, a) }) : null;
     }),
-    di = { badge: oi, stripe: ci },
-    fi = qn('PlayerInfoStripe', Va.stripe),
-    mi = i.forwardRef(function (
-        { size: e = ni.default, badgeId: t, classNames: n, className: r, stripeIcon: s, stipeBadgeIcon: o, ...a },
+    mi = { badge: ii, stripe: li },
+    hi = qn('PlayerInfoStripe', Ya.stripe),
+    pi = i.forwardRef(function (
+        { size: e = si.default, badgeId: t, classNames: n, className: r, stripeIcon: s, stipeBadgeIcon: o, ...a },
         i,
     ) {
         const l = $.resolve('images'),
-            d = ri[e],
+            d = oi[e],
             f = l.has(`library.badges.strips.${d}.strip_${t}`);
-        return c.jsxs(fi, {
+        return c.jsxs(hi, {
             ...a,
             ref: i,
-            className: u(f && Va[`stripe__${e}`], r),
+            className: u(f && Ya[`stripe__${e}`], r),
             children: [
-                c.jsx(li, {
+                c.jsx(fi, {
                     size: e,
                     badgeId: t,
                     stripeExists: f,
@@ -4932,7 +4935,7 @@ const ni = { default: 'default', regular: 'regular', medium: 'medium', big: 'big
                     width: s?.width,
                     height: s?.height,
                 }),
-                c.jsx(ii, {
+                c.jsx(ui, {
                     size: e,
                     badgeId: t,
                     stripeExists: f,
@@ -4944,59 +4947,59 @@ const ni = { default: 'default', regular: 'regular', medium: 'medium', big: 'big
             ],
         });
     });
-((mi.sizes = ni), (mi.icons = di));
-const hi = qn('AccountInfo', Va.base),
-    pi = qn('AccountInfoWrapper', Va.base),
-    gi = i.forwardRef((e, t) => c.jsx(hi, { ref: t, ...e }));
-((gi.Name = function ({ size: e, className: t, children: n }) {
-    return c.jsx('div', { className: u(Va.name, e && Va[`name__${e}`], t), children: n });
+((pi.sizes = si), (pi.icons = mi));
+const gi = qn('AccountInfo', Ya.base),
+    bi = qn('AccountInfoWrapper', Ya.base),
+    _i = i.forwardRef((e, t) => c.jsx(gi, { ref: t, ...e }));
+((_i.Name = function ({ size: e, className: t, children: n }) {
+    return c.jsx('div', { className: u(Ya.name, e && Ya[`name__${e}`], t), children: n });
 }),
-    (gi.ClanTag = function ({ size: e, className: t, children: n, ...r }) {
-        return c.jsx('div', { ...r, className: u(Va.clanTag, e && Va[`clanTag__${e}`], t), children: n });
+    (_i.ClanTag = function ({ size: e, className: t, children: n, ...r }) {
+        return c.jsx('div', { ...r, className: u(Ya.clanTag, e && Ya[`clanTag__${e}`], t), children: n });
     }),
-    (gi.Badge = Xa),
-    (gi.IgrIcon = ti),
-    (gi.AnonymizerIcon = Ka),
-    (gi.Stripe = mi),
-    (gi.Wrapper = pi));
-const bi = {
+    (_i.Badge = Qa),
+    (_i.IgrIcon = ri),
+    (_i.AnonymizerIcon = Ga),
+    (_i.Stripe = pi),
+    (_i.Wrapper = bi));
+const yi = {
         base__x120x96: 'VehicleImage_base__x120x96_32ca06f1',
         base__x190x152: 'VehicleImage_base__x190x152_41379c70',
         base__x380x304: 'VehicleImage_base__x380x304_274f87fe',
     },
-    _i = { x120x96: 'x120x96', x190x152: 'x190x152', x380x304: 'x380x304' },
-    yi = qn('VehicleImage', {
+    wi = { x120x96: 'x120x96', x190x152: 'x190x152', x380x304: 'x380x304' },
+    xi = qn('VehicleImage', {
         element: Lr,
-        className: bi.base,
+        className: yi.base,
         cva: {
             variants: {
                 size: {
-                    [_i.x120x96]: bi.base__x120x96,
-                    [_i.x190x152]: bi.base__x190x152,
-                    [_i.x380x304]: bi.base__x380x304,
+                    [wi.x120x96]: yi.base__x120x96,
+                    [wi.x190x152]: yi.base__x190x152,
+                    [wi.x380x304]: yi.base__x380x304,
                 },
             },
         },
     });
-function wi({ size: e = _i.x380x304, ...t }) {
-    return c.jsx(yi, { ...t, size: e, path: `vehicle.${e}.tank_empty` });
+function vi({ size: e = wi.x380x304, ...t }) {
+    return c.jsx(xi, { ...t, size: e, path: `vehicle.${e}.tank_empty` });
 }
-const xi = i.forwardRef(function ({ size: e = _i.x380x304, name: t, width: n, height: r, className: s, ...o }, a) {
+const Ei = i.forwardRef(function ({ size: e = wi.x380x304, name: t, width: n, height: r, className: s, ...o }, a) {
     const i = $.resolve('images'),
         u = `vehicle.${e}.${zr(t)}`;
     return i.has(u)
-        ? c.jsx(yi, { ...o, ref: a, size: e, className: s, path: u, width: n, height: r })
+        ? c.jsx(xi, { ...o, ref: a, size: e, className: s, path: u, width: n, height: r })
         : (console.warn(`Fail to retrieve icon maps/icons/vehicle/${e}/${zr(t)}`),
-          c.jsx(wi, { size: e, className: s, width: n, height: r }));
+          c.jsx(vi, { size: e, className: s, width: n, height: r }));
 });
-function vi(e) {
+function Si(e) {
     return 'string' == typeof e && e in Et;
 }
-((xi.UnknownVehicleImage = wi), (xi.size = _i));
-const Ei = 'Tooltip_decorator_b3486d4e',
-    Si = qn('Base', 'Tooltip_6d997cee'),
-    Ni = qn('Decorator', Ei),
-    Ti = i.forwardRef(function ({ children: e, ...t }, n) {
+((Ei.UnknownVehicleImage = vi), (Ei.size = wi));
+const Ni = 'Tooltip_decorator_b3486d4e',
+    Ti = qn('Base', 'Tooltip_6d997cee'),
+    Ri = qn('Decorator', Ni),
+    Ci = i.forwardRef(function ({ children: e, ...t }, n) {
         const r = i.useRef(null);
         return (
             Vt(r, (e) => {
@@ -5015,7 +5018,7 @@ const Ei = 'Tooltip_decorator_b3486d4e',
                 }),
                     viewEnv.setHitAreaPaddingsRem(r.top, r.right, r.bottom, r.left, 15));
             }),
-            c.jsx(Si, {
+            c.jsx(Ti, {
                 ...t,
                 ref: function (e) {
                     ((r.current = e), 'function' == typeof n ? n(e) : n && (n.current = e));
@@ -5024,7 +5027,7 @@ const Ei = 'Tooltip_decorator_b3486d4e',
             })
         );
     });
-Ti.Decorator = Ni;
+Ci.Decorator = Ri;
 export {
     tn as $,
     bo as A,
@@ -5056,55 +5059,56 @@ export {
     mn as _,
     $n as a,
     Re as a0,
-    Yt as a1,
-    Ko as a2,
-    jt as a3,
-    St as a4,
-    Fr as a5,
-    Yo as a6,
-    Zo as a7,
-    qo as a8,
-    st as a9,
-    nt as aA,
-    $e as aB,
-    Mr as aC,
-    vi as aD,
-    Nn as aE,
-    Ne as aF,
-    Es as aG,
-    Xr as aH,
-    yn as aI,
-    sr as aJ,
-    nr as aK,
-    ke as aL,
-    Ce as aM,
-    Ti as aN,
-    wo as aa,
-    Ut as ab,
-    it as ac,
-    de as ad,
-    fe as ae,
-    sn as af,
-    fa as ag,
-    He as ah,
-    En as ai,
-    Ba as aj,
-    ha as ak,
-    ba as al,
-    rn as am,
-    Jt as an,
-    Ns as ao,
-    _a as ap,
-    ma as aq,
-    Et as ar,
-    gi as as,
-    Fa as at,
-    dn as au,
-    dt as av,
-    xi as aw,
-    Te as ax,
-    pn as ay,
-    nn as az,
+    Ho as a1,
+    Yt as a2,
+    Go as a3,
+    jt as a4,
+    St as a5,
+    Fr as a6,
+    Xo as a7,
+    Jo as a8,
+    Zo as a9,
+    nn as aA,
+    nt as aB,
+    $e as aC,
+    Mr as aD,
+    Si as aE,
+    Nn as aF,
+    Ne as aG,
+    Es as aH,
+    Xr as aI,
+    yn as aJ,
+    sr as aK,
+    nr as aL,
+    ke as aM,
+    Ce as aN,
+    Ci as aO,
+    st as aa,
+    wo as ab,
+    Ut as ac,
+    it as ad,
+    de as ae,
+    fe as af,
+    sn as ag,
+    ha as ah,
+    He as ai,
+    En as aj,
+    Fa as ak,
+    ga as al,
+    ya as am,
+    rn as an,
+    Jt as ao,
+    Ns as ap,
+    wa as aq,
+    pa as ar,
+    Et as as,
+    _i as at,
+    Ha as au,
+    dn as av,
+    dt as aw,
+    Ei as ax,
+    Te as ay,
+    pn as az,
     fn as b,
     Bn as c,
     qn as d,

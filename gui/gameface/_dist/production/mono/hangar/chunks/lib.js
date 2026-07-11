@@ -1762,7 +1762,7 @@ function arabicToRoman(e) {
     let t = '';
     for (let s = ARABIC$1.length - 1; s >= 0; s--) {
         let r = ARABIC$1[s];
-        for (; void 0 !== r && e >= r; ) ((t += ROMAN$1[s]), (e -= r));
+        for (; void 0 !== r && e >= r;) ((t += ROMAN$1[s]), (e -= r));
     }
     return t;
 }
@@ -1893,15 +1893,15 @@ function eq(e, t, s, r, n) {
     if (0 === s) return !1;
     (s < 0 && (s = -1), (n = n || []));
     let c = (r = r || []).length;
-    for (; c--; ) if (r[c] === i) return n[c] === u;
+    for (; c--;) if (r[c] === i) return n[c] === u;
     if ((r.push(e), n.push(t), l)) {
         if (((c = i.length), c !== u.length)) return !1;
-        for (; c--; ) if (!eq(i[c], u[c], s - 1, r, n)) return !1;
+        for (; c--;) if (!eq(i[c], u[c], s - 1, r, n)) return !1;
     } else {
         const e = Object.keys(i);
         let t;
         if (((c = e.length), Object.keys(u).length !== c)) return !1;
-        for (; c--; ) {
+        for (; c--;) {
             if (((t = e[c]), void 0 === t))
                 return (console.error('Error: met undefined in object during deepEqual comparison'), !1);
             if (!Object.prototype.hasOwnProperty.call(u, t) || !eq(i[t], u[t], s - 1, r, n)) return !1;
@@ -2702,7 +2702,9 @@ function useTooltip({
             let i = null;
             function u() {
                 r ||
-                    ((o.current.status = statuses.await),
+                    ('display' === o.current.status &&
+                        (sendEvent$1.tooltip.hide(e, t, s), (o.current.status = statuses.idle)),
+                    (o.current.status = statuses.await),
                     window.clearTimeout(o.current.timeoutId),
                     (o.current.timeoutId = window.setTimeout(l, a)));
             }
@@ -2720,7 +2722,7 @@ function useTooltip({
                 ) {
                     displayedTooltips.delete(i);
                     let e = i.parentElement;
-                    for (; e && !displayedTooltips.has(e); ) e = e.parentElement;
+                    for (; e && !displayedTooltips.has(e);) e = e.parentElement;
                     if (e) {
                         displayedTooltips.get(e).show();
                     }
@@ -3714,7 +3716,7 @@ function resolveAttrParams(e, t) {
     for (let s = 0; s < e.length; s++) {
         if ('$' === e[s]) {
             let r = s + 1;
-            for (; r < e.length && !isEnd(e[r]); ) r++;
+            for (; r < e.length && !isEnd(e[r]);) r++;
             const n = e.slice(s + 1, r),
                 a = t[n];
             if (a) return resolveAttrParams(e.replace(`$${n}`, String(a)), t);
@@ -6309,7 +6311,7 @@ const sounds = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
     ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
 function arabic2roman$1(e) {
     let t = '';
-    for (let s = ARABIC.length - 1; s >= 0; s--) for (; e >= ARABIC[s]; ) ((t += ROMAN[s]), (e -= ARABIC[s]));
+    for (let s = ARABIC.length - 1; s >= 0; s--) for (; e >= ARABIC[s];) ((t += ROMAN[s]), (e -= ARABIC[s]));
     return t;
 }
 const ROMAN_FORBIDDEN_LANGUAGE_CODES = ['ko', 'no'];
@@ -7058,7 +7060,7 @@ const Checkbox = reactExports.forwardRef(function (
         base__enamel: base__enamel,
     };
 function PrestigeLevel({ level: e, grade: t, type: s, direction: r, classNames: n, ...a }) {
-    return e < MIN_LEVEL
+    return e < MIN_LEVEL || 'undefined' === s
         ? null
         : jsxRuntimeExports.jsxs('div', {
               ...a,
@@ -7521,6 +7523,9 @@ const arrow = 'Arrow_f1570a91',
             }),
         });
     });
+function asMemoized(e) {
+    return e;
+}
 ((Accordion.Summary = Summary),
     (Accordion.Details = Details),
     (Accordion.AnimatedDetails = AnimatedDetails),
@@ -7900,7 +7905,7 @@ function buildContourPath(e) {
         o = s,
         i = -PADDING,
         u = -PADDING;
-    for (e.splice(0, 1); e.length > 0; ) {
+    for (e.splice(0, 1); e.length > 0;) {
         const t = e.findIndex((e) => e[0].x === n.x && e[0].y === n.y);
         if (-1 === t) break;
         const s = e[t],
@@ -9331,777 +9336,144 @@ function Background({ className: e, classNames: t }) {
         ],
     });
 }
-var MOUSE_BUTTON_CODES = ((e) => (
-    (e[(e.LEFT = 0)] = 'LEFT'),
-    (e[(e.WHEEL = 1)] = 'WHEEL'),
-    (e[(e.RIGHT = 2)] = 'RIGHT'),
-    (e[(e.FOURTH = 3)] = 'FOURTH'),
-    (e[(e.FIFTH = 4)] = 'FIFTH'),
-    e
-))(MOUSE_BUTTON_CODES || {});
-function playSound(e) {
-    engine.call('PlaySound', e).catch((t) => {
-        console.error('[lib/sounds.js] playSound(', e, '): ', t);
-    });
-}
-var ButtonType = ((e) => (
-        (e.main = 'main'),
-        (e.primary = 'primary'),
-        (e.primaryGreen = 'primaryGreen'),
-        (e.primaryRed = 'primaryRed'),
-        (e.secondary = 'secondary'),
-        (e.ghost = 'ghost'),
+var RewardType = ((e) => (
+        (e.Items = 'items'),
+        (e.Equipment = 'equipment'),
+        (e.Xp = 'xp'),
+        (e.XpFactor = 'xpFactor'),
+        (e.Blueprints = 'blueprints'),
+        (e.BlueprintsAny = 'blueprintsAny'),
+        (e.Goodies = 'goodies'),
+        (e.Berths = 'berths'),
+        (e.Slots = 'slots'),
+        (e.Tokens = 'tokens'),
+        (e.CrewSkins = 'crewSkins'),
+        (e.CrewBooks = 'crewBooks'),
+        (e.Customizations = 'customizations'),
+        (e.CreditsFactor = 'creditsFactor'),
+        (e.Tankman = 'tankman'),
+        (e.Tankwoman = 'tankwoman'),
+        (e.TankmenXp = 'tankmenXP'),
+        (e.TankmenXpFactor = 'tankmenXPFactor'),
+        (e.FreeXpFactor = 'freeXPFactor'),
+        (e.BattleToken = 'battleToken'),
+        (e.PremiumUniversal = 'premium_universal'),
+        (e.Gold = 'gold'),
+        (e.Credits = 'credits'),
+        (e.Crystal = 'crystal'),
+        (e.FreeXp = 'freeXP'),
+        (e.Premium = 'premium'),
+        (e.PremiumPlus = 'premium_plus'),
+        (e.BattlePassPoints = 'battlePassPoints'),
+        (e.BattlePassSelectToken = 'battlePassSelectToken'),
+        (e.StyleProgressToken = 'styleProgressToken'),
+        (e.TmanToken = 'tmanToken'),
+        (e.NaturalCover = 'naturalCover'),
+        (e.BpCoin = 'bpcoin'),
+        (e.BattlaPassFinalAchievement = 'dossier_achievement'),
+        (e.BattleBadge = 'dossier_badge'),
+        (e.BonusX5 = 'battle_bonus_x5'),
+        (e.CrewBonusX3 = 'crew_bonus_x3'),
+        (e.Vehicles = 'vehicles'),
+        (e.EpicSelectToken = 'epicSelectToken'),
+        (e.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
+        (e.DeluxeGift = 'deluxe_gift'),
+        (e.BattleBoosterGift = 'battleBooster_gift'),
+        (e.OptionalDevice = 'optionalDevice'),
+        (e.EquipCoin = 'equipCoin'),
+        (e.LootBox = 'lootBox'),
+        (e.BrCoin = 'brcoin'),
         e
-    ))(ButtonType || {}),
-    ButtonSize = ((e) => (
-        (e.extraSmall = 'extraSmall'),
-        (e.small = 'small'),
-        (e.medium = 'medium'),
-        (e.large = 'large'),
+    ))(RewardType || {}),
+    ImageSize = ((e) => (
+        (e.Big = 'big'),
+        (e.Small = 'small'),
+        (e.Mini = 'mini'),
+        (e.S600x450 = 's600x450'),
+        (e.S400x300 = 's400x300'),
+        (e.S296x222 = 's296x222'),
+        (e.S232x174 = 's232x174'),
+        (e.S180x135 = 's180x135'),
+        (e.S128x100 = 's128x100'),
+        (e.S80x80 = 's80x80'),
+        (e.S64x64 = 's64x64'),
+        (e.S48x48 = 's48x48'),
+        (e.S24x24 = 's24x24'),
         e
-    ))(ButtonSize || {});
-const base$m = 'Cbutton_24fc9a0c',
-    base__main = 'Cbutton_base__main_2f199578',
-    base__primary = 'Cbutton_base__primary_9da8a692',
-    base__primaryGreen = 'Cbutton_base__primaryGreen_74301f4e',
-    base__primaryRed = 'Cbutton_base__primaryRed_d184ac',
-    base__secondary = 'Cbutton_base__secondary_22ff48c2',
-    base__ghost = 'Cbutton_base__ghost_fd3acf91',
-    base__extraSmall = 'Cbutton_base__extraSmall_f64ebb9e',
-    base__small$6 = 'Cbutton_base__small_a71bc2a9',
-    base__medium$4 = 'Cbutton_base__medium_d82a1b14',
-    base__large = 'Cbutton_base__large_f02aee17',
-    base__disabled$3 = 'Cbutton_base__disabled_96f239bb',
-    back = 'Cbutton_back_ffaa618f',
-    texture = 'Cbutton_texture_f462b307',
-    state = 'Cbutton_state_bf8d0bab',
-    base__focus = 'Cbutton_base__focus_180a9717',
-    stateHighlightHover = 'Cbutton_stateHighlightHover_7e2b860e',
-    stateHighlightActive = 'Cbutton_stateHighlightActive_f3d8fd6a',
-    stateDisabled = 'Cbutton_stateDisabled_7b91392f',
-    base__highlightActive = 'Cbutton_base__highlightActive_180a9717',
-    content$6 = 'Cbutton_content_faaa9067',
-    styles$p = {
-        base: base$m,
-        base__main: base__main,
-        base__primary: base__primary,
-        base__primaryGreen: base__primaryGreen,
-        base__primaryRed: base__primaryRed,
-        base__secondary: base__secondary,
-        base__ghost: base__ghost,
-        base__extraSmall: base__extraSmall,
-        base__small: base__small$6,
-        base__medium: base__medium$4,
-        base__large: base__large,
-        base__disabled: base__disabled$3,
-        back: back,
-        texture: texture,
-        state: state,
-        base__focus: base__focus,
-        stateHighlightHover: stateHighlightHover,
-        stateHighlightActive: stateHighlightActive,
-        stateDisabled: stateDisabled,
-        base__highlightActive: base__highlightActive,
-        content: content$6,
-    },
-    Button = ({
-        children: e,
-        size: t,
-        disabled: s,
-        mixClass: r,
-        onMouseEnter: n,
-        onMouseMove: a,
-        onMouseDown: o,
-        onMouseUp: i,
-        onMouseLeave: u,
-        onClick: l,
-        isFocused: c = !1,
-        type: d = ButtonType.primary,
-        soundHover: m = 'highlight',
-        soundClick: _ = 'play',
-    }) => {
-        const p = reactExports.useRef(null),
-            [x, f] = reactExports.useState(c),
-            [E, b] = reactExports.useState(!1);
-        return (
-            reactExports.useEffect(() => {
-                function e(e) {
-                    x && null !== p.current && !p.current.contains(e.target) && f(!1);
-                }
-                return (
-                    document.addEventListener('mousedown', e),
-                    () => {
-                        document.removeEventListener('mousedown', e);
-                    }
-                );
-            }, [x]),
-            reactExports.useEffect(() => {
-                f(c);
-            }, [c]),
-            jsxRuntimeExports.jsxs('div', {
-                ref: p,
-                className: cx(
-                    styles$p.base,
-                    styles$p[`base__${d}`],
-                    s && styles$p.base__disabled,
-                    t && styles$p[`base__${t}`],
-                    x && styles$p.base__focus,
-                    E && styles$p.base__highlightActive,
-                    r,
-                ),
-                onMouseEnter: function (e) {
-                    s || (null !== m && playSound(m), n && n(e));
-                },
-                onMouseMove: function (e) {
-                    a && a(e);
-                },
-                onMouseUp: function (e) {
-                    s || (i && i(e), b(!1));
-                },
-                onMouseDown: function (e) {
-                    if (s) return;
-                    const t = e.button === MOUSE_BUTTON_CODES.LEFT;
-                    (null !== _ && t && playSound(_),
-                        o && o(e),
-                        c && (s || (p.current && (p.current.focus(), f(!0)))),
-                        t && b(!0));
-                },
-                onMouseLeave: function (e) {
-                    s || (u && u(e), b(!1));
-                },
-                onClick: function (e) {
-                    s || (l && l(e));
-                },
-                children: [
-                    d !== ButtonType.ghost &&
-                        jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
-                            children: [
-                                jsxRuntimeExports.jsx('div', { className: styles$p.back }),
-                                jsxRuntimeExports.jsx('span', { className: styles$p.texture }),
-                            ],
-                        }),
-                    jsxRuntimeExports.jsxs('span', {
-                        className: cx(styles$p.state, styles$p.state__default),
-                        children: [
-                            jsxRuntimeExports.jsx('span', { className: styles$p.stateDisabled }),
-                            jsxRuntimeExports.jsx('span', { className: styles$p.stateHighlightHover }),
-                            jsxRuntimeExports.jsx('span', { className: styles$p.stateHighlightActive }),
-                        ],
-                    }),
-                    jsxRuntimeExports.jsx('span', {
-                        className: styles$p.content,
-                        lang: R.strings.settings.LANGUAGE_CODE(),
-                        children: e,
-                    }),
-                ],
-            })
-        );
-    },
-    CButton = Button,
-    base$l = 'Error_741eaf3c',
-    alertIcon = 'Error_alertIcon_e771a05c',
-    errorCaption = 'Error_errorCaption_89c19a4f',
-    button$1 = 'Error_button_2d8a41b6',
-    styles$o = { base: base$l, alertIcon: alertIcon, errorCaption: errorCaption, button: button$1 },
-    Error$1 = ({ errorBtnClickHandler: e, errorBtnLabel: t, errorMessage: s }) =>
-        jsxRuntimeExports.jsxs('div', {
-            className: styles$o.base,
-            children: [
-                jsxRuntimeExports.jsx('div', { className: styles$o.alertIcon }),
-                jsxRuntimeExports.jsx('div', { className: styles$o.errorCaption, children: s }),
-                jsxRuntimeExports.jsx(CButton, {
-                    size: ButtonSize.medium,
-                    mixClass: styles$o.button,
-                    onClick: e,
-                    children: t,
-                }),
-            ],
-        }),
-    base$k = 'Spinner_9ec19f90',
-    caption$1 = 'Spinner_caption_a44b585',
-    gear = 'Spinner_gear_13ca7433',
-    logo = 'Spinner_logo_22e624b',
-    styles$n = { base: base$k, caption: caption$1, gear: gear, logo: logo },
-    Spinner = ({ message: e, className: t, classNames: s }) =>
-        jsxRuntimeExports.jsxs('div', {
-            className: cx(styles$n.base, t),
-            children: [
-                e && jsxRuntimeExports.jsx('div', { className: cx(styles$n.caption, s?.caption), children: e }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$n.gear, s?.gear) }),
-                jsxRuntimeExports.jsx('div', { className: cx(styles$n.logo, s?.logo) }),
-            ],
-        }),
-    base$j = 'Waiting_f97f6e4b',
-    blackOverlay = 'Waiting_blackOverlay_e659a6de',
-    styles$m = { base: base$j, blackOverlay: blackOverlay },
-    Waiting = ({
-        errorBtnClickHandler: e,
-        message: t = '',
-        isError: s = !1,
-        errorMessage: r = '',
-        errorBtnLabel: n = R.strings.dialogs.disconnected.cancel(),
-        overlayAlpha: a = '0.8',
-    }) => {
-        const o = reactExports.createRef();
-        return (
-            reactExports.useEffect(() => {
-                const e = o.current;
-                e && a && (e.style.opacity = a);
-            }, [o, a]),
-            jsxRuntimeExports.jsxs('div', {
-                className: styles$m.base,
-                children: [
-                    jsxRuntimeExports.jsx('div', { className: styles$m.blackOverlay, ref: o }),
-                    s
-                        ? jsxRuntimeExports.jsx(Error$1, { errorBtnLabel: n, errorMessage: r, errorBtnClickHandler: e })
-                        : jsxRuntimeExports.jsx(Spinner, { message: t }),
-                ],
-            })
-        );
-    },
-    SwitcherContext = reactExports.createContext(void 0);
-function useSwitcherContext() {
-    const e = reactExports.useContext(SwitcherContext);
-    if (!e) throw new Error('useSwitcherChecked must be used within SwitcherCheckedContext');
-    return e;
+    ))(ImageSize || {}),
+    ValueTypes = ((e) => (
+        (e.MULTI = 'multi'),
+        (e.CURRENCY = 'currency'),
+        (e.PREMIUM_PLUS = 'premium_plus'),
+        (e.NUMBER = 'number'),
+        (e.STRING = 'string'),
+        e
+    ))(ValueTypes || {}),
+    Specials = ((e) => (
+        (e.ATTACHMENT_RARE = 'rare'),
+        (e.ATTACHMENT_EPIC = 'epic'),
+        (e.ATTACHMENT_LEGENDARY = 'legendary'),
+        (e.BATTLE_BOOSTER = 'battleBooster'),
+        (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
+        (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
+        (e.EQUIPMENT_PLUS = 'equipmentPlus'),
+        (e.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
+        (e.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
+        (e.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
+        (e.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
+        (e.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
+        (e.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
+        (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
+        (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
+        (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
+        (e.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
+        (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'),
+        e
+    ))(Specials || {}),
+    HighlightClasses = ((e) => ((e.BATTLE_BOOSTER = 'battleBooster'), e))(HighlightClasses || {}),
+    OverlayClasses = ((e) => (
+        (e.ATTACHMENT_RARE = 'rare'),
+        (e.ATTACHMENT_EPIC = 'epic'),
+        (e.ATTACHMENT_LEGENDARY = 'legendary'),
+        (e.BATTLE_BOOSTER = 'battleBooster'),
+        (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
+        (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
+        (e.EQUIPMENT_PLUS = 'equipmentPlus'),
+        (e.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
+        (e.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
+        (e.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
+        (e.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
+        (e.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
+        (e.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
+        (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
+        (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
+        (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
+        (e.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
+        (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'),
+        e
+    ))(OverlayClasses || {});
+function format(e, t) {
+    return e.replace(/\{\w+\}/g, (e) => String(t[e.slice(1, -1)]));
 }
-const background$2 = 'Switcher_background_a88161d0',
-    border$2 = 'Switcher_border_a19f907',
-    overlay$1 = 'Switcher_overlay_de650936',
-    selectedOverlay$1 = 'Switcher_selectedOverlay_959b7a8f',
-    selectedItemBackground = 'Switcher_selectedItemBackground_f3f7ed7e',
-    selectedItemBorder = 'Switcher_selectedItemBorder_7a1a3dd5',
-    base$i = 'Switcher_825add0a',
-    base__disabled$2 = 'Switcher_base__disabled_863a5f47',
-    content$5 = 'Switcher_content_c83e02e5',
-    content__fontAligned = 'Switcher_content__fontAligned_9342bb29',
-    item = 'Switcher_item_ecea23cf',
-    selectedOverlay__moved = 'Switcher_selectedOverlay__moved_beb6c80b',
-    selectedItem = 'Switcher_selectedItem_c6995287',
-    selectedItem__moved = 'Switcher_selectedItem__moved_5f74b720',
-    selectedItemContent = 'Switcher_selectedItemContent_34994102',
-    styles$l = {
-        background: background$2,
-        border: border$2,
-        overlay: overlay$1,
-        selectedOverlay: selectedOverlay$1,
-        selectedItemBackground: selectedItemBackground,
-        selectedItemBorder: selectedItemBorder,
-        base: base$i,
-        base__disabled: base__disabled$2,
-        'base__size-small': 'Switcher_base__size-small_df4dee40',
-        'base__size-medium': 'Switcher_base__size-medium_d287fe48',
-        content: content$5,
-        content__fontAligned: content__fontAligned,
-        'base__type-horizontal': 'Switcher_base__type-horizontal_9ba1e4f',
-        item: item,
-        'base__type-vertical': 'Switcher_base__type-vertical_9ba1e4f',
-        selectedOverlay__moved: selectedOverlay__moved,
-        selectedItem: selectedItem,
-        selectedItem__moved: selectedItem__moved,
-        selectedItemContent: selectedItemContent,
-    };
-function SelectedItem({ children: e, classNames: t }) {
-    const { checked: s } = useSwitcherContext();
-    return jsxRuntimeExports.jsx('div', {
-        className: clsx(styles$l.selectedOverlay, s && styles$l.selectedOverlay__moved, t?.base),
-        children: jsxRuntimeExports.jsxs('div', {
-            className: clsx(styles$l.selectedItem, s && styles$l.selectedItem__moved, t?.item),
-            children: [
-                jsxRuntimeExports.jsx('div', { className: clsx(styles$l.selectedItemBackground, t?.background) }),
-                jsxRuntimeExports.jsx('div', { className: clsx(styles$l.selectedItemBorder, t?.border) }),
-                jsxRuntimeExports.jsx('div', {
-                    className: clsx(styles$l.selectedItemContent, t?.content),
-                    children: e,
-                }),
-            ],
-        }),
-    });
+function snakeToCamel(e) {
+    return e.replace(/_\w/g, (e) => e[1].toUpperCase());
 }
-const sizes$6 = { small: 'small', medium: 'medium' },
-    types$1 = { vertical: 'vertical', horizontal: 'horizontal' },
-    Base$9 = defineStyledComponent('Button', styles$l.base, {
-        variants: {
-            type: {
-                [types$1.horizontal]: styles$l['base__type-horizontal'],
-                [types$1.vertical]: styles$l['base__type-vertical'],
-            },
-            size: { [sizes$6.small]: styles$l['base__size-small'], [sizes$6.medium]: styles$l['base__size-medium'] },
-            state: { disabled: styles$l.base__disabled },
-        },
-        defaultVariants: { type: types$1.vertical, size: sizes$6.small },
-    }),
-    Item = defineStyledComponent('ButtonItem', styles$l.item),
-    Switcher$1 = reactExports.forwardRef(function (
-        {
-            type: e = types$1.vertical,
-            checked: t,
-            onMouseEnter: s,
-            onSwitch: r,
-            onClick: n,
-            size: a = sizes$6.small,
-            disabled: o = !1,
-            autoAlignContent: i = !1,
-            classNames: u,
-            className: l,
-            children: c,
-            ...d
-        },
-        m,
-    ) {
-        const [_, p, x] = c,
-            f = useSounds();
-        const E = reactExports.useMemo(() => ({ checked: t }), [t]);
-        return jsxRuntimeExports.jsx(SwitcherContext.Provider, {
-            value: E,
-            children: jsxRuntimeExports.jsxs(Base$9, {
-                ...d,
-                ref: m,
-                type: e,
-                size: a,
-                state: o ? 'disabled' : void 0,
-                className: clsx(l, u?.base),
-                onMouseEnter: function (e) {
-                    (f.play('mouse-enter', { target: Base$9.displayName, original: e }), s?.(e));
-                },
-                onClick: function (e) {
-                    (f.play('click', { target: Base$9.displayName, original: e }), r(!t), n?.(e));
-                },
-                children: [
-                    jsxRuntimeExports.jsx('div', { className: clsx(styles$l.background, u?.background) }),
-                    jsxRuntimeExports.jsx('div', { className: clsx(styles$l.border, u?.border) }),
-                    jsxRuntimeExports.jsx('div', { className: clsx(styles$l.overlay, u?.overlay) }),
-                    jsxRuntimeExports.jsxs('div', {
-                        className: clsx(styles$l.content, i && styles$l.content__fontAligned, u?.content),
-                        children: [_, p, x],
-                    }),
-                ],
-            }),
-        });
-    });
-((Switcher$1.Item = Item),
-    (Switcher$1.SelectedItem = SelectedItem),
-    (Switcher$1.types = types$1),
-    (Switcher$1.sizes = sizes$6));
-const sizes$5 = {
-        s24x24: 's24x24',
-        s48x48: 's48x48',
-        s64x64: 's64x64',
-        s80x80: 's80x80',
-        s180x135: 's180x135',
-        s232x174: 's232x174',
-        s296x222: 's296x222',
-        s360x270: 's360x270',
-        s400x300: 's400x300',
-        s600x450: 's600x450',
-    },
-    overlayTypes = {
-        builtInEquipment: 'built_in_equipment',
-        trophy: 'trophy',
-        experimental: 'experimental',
-        improved: 'improved',
-        directiveBooster: 'directive_booster',
-        directiveSubstitute: 'directive_substitute',
-        custom: 'custom',
-        none: 'none',
-    },
-    overlayTypesWithoutLevel = [
-        overlayTypes.improved,
-        overlayTypes.directiveBooster,
-        overlayTypes.directiveSubstitute,
-        overlayTypes.builtInEquipment,
-    ],
-    imageSizes = {
-        [sizes$5.s24x24]: { width: 24, height: 24 },
-        [sizes$5.s48x48]: { width: 48, height: 48 },
-        [sizes$5.s64x64]: { width: 64, height: 64 },
-        [sizes$5.s80x80]: { width: 80, height: 80 },
-        [sizes$5.s180x135]: { width: 180, height: 135 },
-        [sizes$5.s232x174]: { width: 232, height: 174 },
-        [sizes$5.s296x222]: { width: 296, height: 222 },
-        [sizes$5.s360x270]: { width: 360, height: 270 },
-        [sizes$5.s400x300]: { width: 400, height: 300 },
-        [sizes$5.s600x450]: { width: 600, height: 450 },
-    },
-    Base$8 = defineStyledComponent('LoadoutItem', { element: Image$1 });
-function getItemSizeFolderName(e) {
-    switch (e) {
-        case sizes$5.s80x80:
-        case sizes$5.s64x64:
-            return 'big';
-        case sizes$5.s48x48:
-            return 'small';
-        default:
-            return e;
-    }
-}
-const LoadoutItem = reactExports.forwardRef(function (
-    {
-        name: e,
-        path: t,
-        overlayPath: s,
-        size: r,
-        overlayType: n = overlayTypes.none,
-        level: a,
-        classNames: o,
-        className: i,
-        width: u,
-        height: l,
-        ...c
-    },
-    d,
-) {
-    const m =
-            t ||
-            (r === sizes$5.s24x24
-                ? `vehParams.tooltips.bonuses.${e}`
-                : `quests.bonuses.${getItemSizeFolderName(r)}.${e}`),
-        _ = (() => {
-            if (s) return s;
-            if (n === overlayTypes.custom) return void console.error('custom overlay passed without image source path');
-            if (n === overlayTypes.none) return;
-            const e = r === sizes$5.s64x64 ? sizes$5.s80x80 : r;
-            return overlayTypesWithoutLevel.includes(n)
-                ? `components.loadout_item.overlays.${e}.${n}`
-                : a
-                  ? `components.loadout_item.overlays.${e}.${n}_${a}_level`
-                  : void console.error('Item level is not provided, but required!');
-        })(),
-        p = imageSizes[r];
-    return jsxRuntimeExports.jsx(Base$8, {
-        ...c,
-        ref: d,
-        path: m,
-        width: u ?? p.width,
-        height: l ?? p.height,
-        className: clsx(i, o?.item),
-        children:
-            n !== overlayTypes.none && _ && jsxRuntimeExports.jsx(Image$1, { path: _, width: '100%', height: '100%' }),
-    });
-});
-((LoadoutItem.sizes = sizes$5), (LoadoutItem.overlayTypes = overlayTypes));
-const selectedOverlay = 'Slot_selectedOverlay_5b63484a',
-    disabledOverlay = 'Slot_disabledOverlay_4d0ab64b',
-    content$4 = 'Slot_content_dbf98123',
-    slot = 'Slot_e5fcbf90',
-    slot__hovered = 'Slot_slot__hovered_f72e51c4',
-    slot__disabled = 'Slot_slot__disabled_ba2d5d0e',
-    slot__small = 'Slot_slot__small_2d3a3a74',
-    slot__medium = 'Slot_slot__medium_42bbdb11',
-    slot__extraLarge = 'Slot_slot__extraLarge_d8070c25',
-    content__disabled = 'Slot_content__disabled_1d609e12',
-    emptyContent = 'Slot_emptyContent_ba97d4d8',
-    styles$k = {
-        selectedOverlay: selectedOverlay,
-        disabledOverlay: disabledOverlay,
-        content: content$4,
-        slot: slot,
-        slot__hovered: slot__hovered,
-        slot__disabled: slot__disabled,
-        slot__small: slot__small,
-        slot__medium: slot__medium,
-        slot__extraLarge: slot__extraLarge,
-        content__disabled: content__disabled,
-        emptyContent: emptyContent,
-    },
-    sizes$4 = { small: 'small', medium: 'medium', large: 'large', extraLarge: 'extraLarge' },
-    Content$1 = defineStyledComponent('SlotContent'),
-    Base$7 = defineStyledComponent('Slot', styles$k.slot, {
-        variants: {
-            size: {
-                [sizes$4.small]: styles$k.slot__small,
-                [sizes$4.medium]: styles$k.slot__medium,
-                [sizes$4.large]: styles$k.slot__large,
-                [sizes$4.extraLarge]: styles$k.slot__extraLarge,
-            },
-            hovered: { true: styles$k.slot__hovered },
-            selected: { true: styles$k.slot__selected },
-            disabled: { true: styles$k.slot__disabled },
-        },
-    }),
-    EmptySlot = defineStyledComponent('EmptySlot', styles$k.emptyContent),
-    Slot = reactExports.forwardRef(function (
-        {
-            children: e,
-            size: t,
-            disabled: s = !1,
-            hovered: r = !1,
-            selected: n = !1,
-            classNames: a,
-            className: o,
-            dataDropItem: i,
-            ...u
-        },
-        l,
-    ) {
-        return jsxRuntimeExports.jsxs(Base$7, {
-            ...u,
-            ref: l,
-            size: t,
-            selected: n,
-            disabled: s,
-            hovered: r && !s,
-            className: clsx(a?.slot, o),
-            children: [
-                n && jsxRuntimeExports.jsx('div', { className: clsx(styles$k.selectedOverlay, a?.selectedOverlay) }),
-                s && jsxRuntimeExports.jsx('div', { className: clsx(styles$k.disabledOverlay, a?.disabledOverlay) }),
-                jsxRuntimeExports.jsx(Content$1, {
-                    className: clsx(styles$k.content, s && styles$k.content__disabled, a?.content),
-                    'data-drop-item': i,
-                    children: e || jsxRuntimeExports.jsx(EmptySlot, { className: a?.emptyContent }),
-                }),
-            ],
-        });
-    });
-((Slot.sizes = sizes$4), (Slot.Empty = EmptySlot));
-const base$h = 'SceneWrapper_52fcfc1e',
-    base__down = 'SceneWrapper_base__down_4ece5089',
-    base__moveSpaceDisabled = 'SceneWrapper_base__moveSpaceDisabled_1b1cd939',
-    styles$j = { base: base$h, base__down: base__down, base__moveSpaceDisabled: base__moveSpaceDisabled },
-    MOUSE_BUTTONS_LEFT$1 = 1,
-    DELTA_Z = 600;
-function SceneWrapper({
-    children: e,
-    moveSpace: t,
-    onMouseOver3dScene: s,
-    onDragStateChange: r,
-    moveSpaceEnabled: n = !0,
-    className: a,
-    ...o
-}) {
-    const [i, u] = reactExports.useState(!1),
-        [l, c] = reactExports.useState(!1),
-        [d, m] = reactExports.useState({ x: 0, y: 0 }),
-        _ = reactExports.useRef(null);
-    (reactExports.useEffect(() => {
-        function e() {
-            (u(!1), c(!1));
-        }
-        return (window.addEventListener('mouseup', e), () => window.removeEventListener('mouseup', e));
-    }, []),
-        reactExports.useEffect(
-            () => () => {
-                s({ isOver3dScene: !1 });
-            },
-            [s],
-        ));
-    const p = useEvent((e) => r?.(e));
-    function x(e) {
-        if (!_.current) return;
-        const { left: t, right: s, top: r, bottom: n } = _.current.getBoundingClientRect();
-        return !(e.clientX < t || e.clientY < r || e.clientX > s || e.clientY > n);
-    }
-    function f(e) {
-        return e.buttons === MOUSE_BUTTONS_LEFT$1 && x(e) && n;
-    }
-    return (
-        reactExports.useEffect(() => {
-            p(i && l);
-        }, [i, p, l]),
-        jsxRuntimeExports.jsx('div', {
-            ...o,
-            ref: _,
-            className: clsx(styles$j.base, i && styles$j.base__down, !n && styles$j.base__moveSpaceDisabled, a),
-            onMouseDown: function (e) {
-                (e.preventDefault(), f(e) && (u(!0), c(!0), m({ x: e.clientX, y: e.clientY })));
-            },
-            onMouseMove: function (e) {
-                if ((e.preventDefault(), i && l)) {
-                    if (!x(e)) return;
-                    const s = e.clientX !== d.x ? e.clientX - d.x : 0,
-                        r = e.clientY !== d.y ? e.clientY - d.y : 0;
-                    (m({ x: e.clientX, y: e.clientY }), t({ dx: s, dy: r, dz: 0 }));
-                }
-            },
-            onMouseUp: function () {
-                u(!1);
-            },
-            onWheel: function (e) {
-                if ((e.preventDefault(), !n || !x(e))) return;
-                const s = e.deltaY < 0;
-                t({ dx: 0, dy: 0, dz: s ? -DELTA_Z : DELTA_Z });
-            },
-            onMouseOver: function (e) {
-                (s({ isOver3dScene: !0 }), f(e) && (u(!0), m({ x: e.clientX, y: e.clientY })));
-            },
-            onMouseOut: function () {
-                (s({ isOver3dScene: !1 }), u(!1));
-            },
-            children: e,
-        })
+(() => {
+    const e = new RegExp(
+        [
+            /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
+            /[\(\xAB\u201C\u275D][\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?|[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[\)\xBB\u201D\u275E][\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
+            /[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[ \):;\u2022\u3001\u3002\u300A-\u300D\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]|[\(,1A-Za-\{\}\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
+            /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
+        ]
+            .map((e) => e.source)
+            .join('|'),
+        'gum',
     );
-}
-function isEmptyObject(e) {
-    for (const t in e) return !1;
-    return !0;
-}
-function isSerializableReactNode(e) {
-    return (
-        !(null != e && !['string', 'number', 'boolean'].includes(typeof e)) ||
-        (!reactExports.isValidElement(e) && !!Array.isArray(e) && e.every(isSerializableReactNode))
-    );
-}
-const base$g = 'MultilineOverflow_8834bd8e',
-    content$3 = 'MultilineOverflow_content_b539970d',
-    styles$i = { base: base$g, content: content$3 };
-function isSerializableParams(e) {
-    return !e || Object.values(e).every(isSerializableReactNode);
-}
-const MultilineOverflow = reactExports.forwardRef(function (
-    {
-        text: e,
-        brackets: t,
-        params: s,
-        formatters: r,
-        upgradeLegacy: n,
-        split: a = !0,
-        onMouseEnter: o,
-        onMouseLeave: i,
-        onClick: u,
-        tooltipDisabled: l = !1,
-        tooltip: c,
-        className: d,
-        classNames: m,
-        style: _,
-        styleBase: p,
-        ...x
-    },
-    f,
-) {
-    const E = reactExports.useRef(null),
-        [b, h] = reactExports.useState(!1);
-    reactExports.useEffect(() => {
-        if (0 === e.length) return;
-        const t = E.current;
-        if (!t) return;
-        const s = document.createElement('div');
-        let r = noop;
-        function n() {
-            if (!t) return;
-            (r(),
-                (s.style.visibility = 'hidden'),
-                (s.className = clsx(styles$i.content, t.children[0].className)),
-                (s.innerHTML = ''),
-                t.appendChild(s));
-            const e = t.children[0];
-            if (!e) return console.warn("MultilineOverflow can't get first child to handle it", t);
-            const n = relativeOffset(t.getBoundingClientRect(), e.getBoundingClientRect());
-            (e instanceof HTMLElement && (s.style.cssText = e.style.cssText),
-                (s.style.left = `${n.x}px`),
-                (s.style.top = `${n.y}px`));
-            for (let t of e.childNodes.values()) {
-                if (t instanceof HTMLElement) {
-                    const e = t.cloneNode(!0);
-                    s.appendChild(e);
-                }
-                if (t.nodeType === Node.TEXT_NODE) {
-                    const e = document.createTextNode(t.nodeValue ?? '');
-                    s.appendChild(e);
-                }
-            }
-            const a = document.createElement('div');
-            ((a.innerHTML = '...'),
-                s.appendChild(a),
-                (r = createLayoutReadyInEffect(() => {
-                    const e = [];
-                    for (let r = s.childNodes.length - 2; 0 !== r; r--) {
-                        const n = s.childNodes[r];
-                        if (n instanceof HTMLElement) {
-                            if (n.offsetTop + n.offsetHeight <= t.offsetHeight) break;
-                            e.push(n);
-                        }
-                    }
-                    if (0 === e.length) (h(!1), a.remove());
-                    else {
-                        (h(!0), e.forEach((e) => e.remove()));
-                        let s = 0;
-                        for (; s++ < 1e3 && a.previousSibling && a.offsetTop + a.offsetHeight > t.offsetHeight; )
-                            a.previousSibling?.remove();
-                    }
-                    s.style.visibility = '';
-                })));
-        }
-        const a = new ResizeObserver(n);
-        return (
-            a.observe(t),
-            new DisposeBuilder()
-                .add(() => r())
-                .add(addEventListener(window, 'resize', n))
-                .add(a.disconnect.bind(a))
-                .add(s.remove.bind(s)).dispose
-        );
-    }, [f, e]);
-    const g = isSerializableParams(s),
-        y = useParamTooltip(
-            'format_text',
-            reactExports.useMemo(
-                () => ({
-                    text: e,
-                    params: g ? s : void 0,
-                    split: a,
-                    upgradeLegacy: n,
-                    brackets: t,
-                    resId: resources.resolve('views').read((e) => e.mono.tooltips.tooltips('resId')),
-                }),
-                [e, t, a, n, s, g],
-            ),
-        ),
-        v = c ?? y;
-    if (
-        (reactExports.useEffect(() => {
-            l || b || v.onMouseLeave();
-        }, [b, v, c, l, g]),
-        0 === e.length)
-    )
-        return null;
-    return jsxRuntimeExports.jsx('div', {
-        ...x,
-        onMouseEnter: function (e) {
-            (o?.(e), b && !l && v.onMouseEnter(e));
-        },
-        onClick: function (e) {
-            (u?.(e), l || v.onClick());
-        },
-        onMouseLeave: function (e) {
-            (i?.(e), l || v.onMouseLeave());
-        },
-        ref: assignRefs([f, E]),
-        className: clsx(styles$i.base, d, m?.base),
-        style: p,
-        children: jsxRuntimeExports.jsx(FormatText, {
-            text: e,
-            brackets: t,
-            params: s,
-            upgradeLegacy: n,
-            split: a,
-            formatters: r,
-            className: m?.text,
-            style: { ..._, visibility: 'hidden' },
-        }),
-    });
-});
-function FormatTextSplited({ className: e, ...t }) {
-    return jsxRuntimeExports.jsx('div', {
-        className: e,
-        children: t.text.split('\n').map((e) => jsxRuntimeExports.jsx(FormatText, { ...t, text: e }, e)),
-    });
-}
-function ExtendedText(e) {
-    (void 0 !== e.onSizeChanged && console.warn('[ExtendedText Adapter] Property "onSizeChanged" doesn\'t support'),
-        void 0 !== e.targetId && console.warn('[ExtendedText Adapter] Property "targetId" doesn\'t support'));
-    const t = e.isTruncationAvailable || e.truncateIdentify ? MultilineOverflow : FormatTextSplited;
-    return jsxRuntimeExports.jsx(t, {
-        split: e.split ?? !0,
-        text: e.text,
-        params: e.binding,
-        style: { alignContent: e.alignContent, justifyContent: e.justifyContent },
-        upgradeLegacy: !0,
-        className: clsx(e.className, e.classMix),
-    });
-}
+})();
 const formats = { superCompact: 'superCompact', compact: 'compact', default: 'default', detailed: 'detailed' },
-    sizes$3 = { x16x16: 'x16x16', x24x24: 'x24x24', x32x32: 'x32x32', x48x48: 'x48x48', x80x80: 'x80x80' },
-    types = { accent: 'accent', cooldown: 'cooldown' },
+    sizes$6 = { x16x16: 'x16x16', x24x24: 'x24x24', x32x32: 'x32x32', x48x48: 'x48x48', x80x80: 'x80x80' },
+    types$1 = { accent: 'accent', cooldown: 'cooldown' },
     item__x16x16 = 'FormattedValue_item__x16x16_9eb36ff5',
     item__x24x24 = 'FormattedValue_item__x24x24_9eb36ff5',
     item__x32x32 = 'FormattedValue_item__x32x32_bd66be3c',
@@ -10118,7 +9490,7 @@ const formats = { superCompact: 'superCompact', compact: 'compact', default: 'de
     detailedSeparator__x32x32 = 'FormattedValue_detailedSeparator__x32x32_bc7822fa',
     detailedSeparator__x48x48 = 'FormattedValue_detailedSeparator__x48x48_4cb1e66b',
     detailedSeparator__x80x80 = 'FormattedValue_detailedSeparator__x80x80_2c1c84ee',
-    styles$h = {
+    styles$p = {
         item__x16x16: item__x16x16,
         item__x24x24: item__x24x24,
         item__x32x32: item__x32x32,
@@ -10144,7 +9516,7 @@ function FormattedValue({ size: e, preFormatted: t }) {
             s.push(
                 jsxRuntimeExports.jsx(
                     'span',
-                    { className: cx(styles$h.detailedSeparator, styles$h[`detailedSeparator__${e}`]) },
+                    { className: cx(styles$p.detailedSeparator, styles$p[`detailedSeparator__${e}`]) },
                     'separator',
                 ),
             ),
@@ -10152,13 +9524,13 @@ function FormattedValue({ size: e, preFormatted: t }) {
                 jsxRuntimeExports.jsx(
                     'span',
                     {
-                        className: cx(styles$h.item, styles$h[`item__${e}`]),
+                        className: cx(styles$p.item, styles$p[`item__${e}`]),
                         children: t.items[r]
                             ?.split(' ')
                             .map((t, s) =>
                                 jsxRuntimeExports.jsx(
                                     'span',
-                                    { className: cx(styles$h.part, styles$h[`part__${e}`]), children: t },
+                                    { className: cx(styles$p.part, styles$p[`part__${e}`]), children: t },
                                     `part_${s}`,
                                 ),
                             ),
@@ -10227,7 +9599,7 @@ function compactFormatter(e, t) {
     return ((n.items = [LOCALE_FORMATTERS[MINUTES_FORMAT]?.(DEFAULT_MIN_VALUE)]), n);
 }
 const formatValue = (e, t) => FORMATTER[t]?.(format$2(e, FORMAT_PARTS[t]), t),
-    base$f = 'Timer_dac0a0aa',
+    base$m = 'Timer_dac0a0aa',
     icon$5 = 'Timer_icon_a61415df',
     icon__x16x16 = 'Timer_icon__x16x16_5bab55e2',
     icon__accent = 'Timer_icon__accent_2cf70c3b',
@@ -10244,8 +9616,8 @@ const formatValue = (e, t) => FORMATTER[t]?.(format$2(e, FORMAT_PARTS[t]), t),
     label__x80x80 = 'Timer_label__x80x80_10a84ee6',
     label__accent = 'Timer_label__accent_ac7d4f7b',
     label__cooldown = 'Timer_label__cooldown_c2349ab9',
-    styles$g = {
-        base: base$f,
+    styles$o = {
+        base: base$m,
         icon: icon$5,
         icon__x16x16: icon__x16x16,
         icon__accent: icon__accent,
@@ -10267,8 +9639,8 @@ function Timer({
     start: e,
     limit: t = 0,
     tick: s = 1,
-    size: r = sizes$3.x24x24,
-    type: n = types.accent,
+    size: r = sizes$6.x24x24,
+    type: n = types$1.accent,
     format: a = formats.default,
     autostart: o = !0,
     className: i,
@@ -10287,20 +9659,791 @@ function Timer({
         ),
     );
     return jsxRuntimeExports.jsxs('div', {
-        className: cx(styles$g.base, i),
+        className: cx(styles$o.base, i),
         children: [
             jsxRuntimeExports.jsx('div', {
-                className: cx(styles$g.icon, styles$g[`icon__${r}`], styles$g[`icon__${n}`], u?.icon),
+                className: cx(styles$o.icon, styles$o[`icon__${r}`], styles$o[`icon__${n}`], u?.icon),
             }),
             a !== formats.superCompact &&
                 jsxRuntimeExports.jsx('div', {
-                    className: cx(styles$g.label, styles$g[`label__${r}`], styles$g[`label__${n}`], u?.label),
+                    className: cx(styles$o.label, styles$o[`label__${r}`], styles$o[`label__${n}`], u?.label),
                     children: jsxRuntimeExports.jsx(FormattedValue, { size: r, preFormatted: formatValue(l, a) }),
                 }),
         ],
     });
 }
-((Timer.format = formats), (Timer.size = sizes$3), (Timer.type = types));
+((Timer.format = formats), (Timer.size = sizes$6), (Timer.type = types$1));
+var MOUSE_BUTTON_CODES = ((e) => (
+    (e[(e.LEFT = 0)] = 'LEFT'),
+    (e[(e.WHEEL = 1)] = 'WHEEL'),
+    (e[(e.RIGHT = 2)] = 'RIGHT'),
+    (e[(e.FOURTH = 3)] = 'FOURTH'),
+    (e[(e.FIFTH = 4)] = 'FIFTH'),
+    e
+))(MOUSE_BUTTON_CODES || {});
+function playSound(e) {
+    engine.call('PlaySound', e).catch((t) => {
+        console.error('[lib/sounds.js] playSound(', e, '): ', t);
+    });
+}
+var ButtonType = ((e) => (
+        (e.main = 'main'),
+        (e.primary = 'primary'),
+        (e.primaryGreen = 'primaryGreen'),
+        (e.primaryRed = 'primaryRed'),
+        (e.secondary = 'secondary'),
+        (e.ghost = 'ghost'),
+        e
+    ))(ButtonType || {}),
+    ButtonSize = ((e) => (
+        (e.extraSmall = 'extraSmall'),
+        (e.small = 'small'),
+        (e.medium = 'medium'),
+        (e.large = 'large'),
+        e
+    ))(ButtonSize || {});
+const base$l = 'Cbutton_24fc9a0c',
+    base__main = 'Cbutton_base__main_2f199578',
+    base__primary = 'Cbutton_base__primary_9da8a692',
+    base__primaryGreen = 'Cbutton_base__primaryGreen_74301f4e',
+    base__primaryRed = 'Cbutton_base__primaryRed_d184ac',
+    base__secondary = 'Cbutton_base__secondary_22ff48c2',
+    base__ghost = 'Cbutton_base__ghost_fd3acf91',
+    base__extraSmall = 'Cbutton_base__extraSmall_f64ebb9e',
+    base__small$6 = 'Cbutton_base__small_a71bc2a9',
+    base__medium$4 = 'Cbutton_base__medium_d82a1b14',
+    base__large = 'Cbutton_base__large_f02aee17',
+    base__disabled$3 = 'Cbutton_base__disabled_96f239bb',
+    back = 'Cbutton_back_ffaa618f',
+    texture = 'Cbutton_texture_f462b307',
+    state = 'Cbutton_state_bf8d0bab',
+    base__focus = 'Cbutton_base__focus_180a9717',
+    stateHighlightHover = 'Cbutton_stateHighlightHover_7e2b860e',
+    stateHighlightActive = 'Cbutton_stateHighlightActive_f3d8fd6a',
+    stateDisabled = 'Cbutton_stateDisabled_7b91392f',
+    base__highlightActive = 'Cbutton_base__highlightActive_180a9717',
+    content$6 = 'Cbutton_content_faaa9067',
+    styles$n = {
+        base: base$l,
+        base__main: base__main,
+        base__primary: base__primary,
+        base__primaryGreen: base__primaryGreen,
+        base__primaryRed: base__primaryRed,
+        base__secondary: base__secondary,
+        base__ghost: base__ghost,
+        base__extraSmall: base__extraSmall,
+        base__small: base__small$6,
+        base__medium: base__medium$4,
+        base__large: base__large,
+        base__disabled: base__disabled$3,
+        back: back,
+        texture: texture,
+        state: state,
+        base__focus: base__focus,
+        stateHighlightHover: stateHighlightHover,
+        stateHighlightActive: stateHighlightActive,
+        stateDisabled: stateDisabled,
+        base__highlightActive: base__highlightActive,
+        content: content$6,
+    },
+    Button = ({
+        children: e,
+        size: t,
+        disabled: s,
+        mixClass: r,
+        onMouseEnter: n,
+        onMouseMove: a,
+        onMouseDown: o,
+        onMouseUp: i,
+        onMouseLeave: u,
+        onClick: l,
+        isFocused: c = !1,
+        type: d = ButtonType.primary,
+        soundHover: m = 'highlight',
+        soundClick: _ = 'play',
+    }) => {
+        const p = reactExports.useRef(null),
+            [x, f] = reactExports.useState(c),
+            [E, b] = reactExports.useState(!1);
+        return (
+            reactExports.useEffect(() => {
+                function e(e) {
+                    x && null !== p.current && !p.current.contains(e.target) && f(!1);
+                }
+                return (
+                    document.addEventListener('mousedown', e),
+                    () => {
+                        document.removeEventListener('mousedown', e);
+                    }
+                );
+            }, [x]),
+            reactExports.useEffect(() => {
+                f(c);
+            }, [c]),
+            jsxRuntimeExports.jsxs('div', {
+                ref: p,
+                className: cx(
+                    styles$n.base,
+                    styles$n[`base__${d}`],
+                    s && styles$n.base__disabled,
+                    t && styles$n[`base__${t}`],
+                    x && styles$n.base__focus,
+                    E && styles$n.base__highlightActive,
+                    r,
+                ),
+                onMouseEnter: function (e) {
+                    s || (null !== m && playSound(m), n && n(e));
+                },
+                onMouseMove: function (e) {
+                    a && a(e);
+                },
+                onMouseUp: function (e) {
+                    s || (i && i(e), b(!1));
+                },
+                onMouseDown: function (e) {
+                    if (s) return;
+                    const t = e.button === MOUSE_BUTTON_CODES.LEFT;
+                    (null !== _ && t && playSound(_),
+                        o && o(e),
+                        c && (s || (p.current && (p.current.focus(), f(!0)))),
+                        t && b(!0));
+                },
+                onMouseLeave: function (e) {
+                    s || (u && u(e), b(!1));
+                },
+                onClick: function (e) {
+                    s || (l && l(e));
+                },
+                children: [
+                    d !== ButtonType.ghost &&
+                        jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+                            children: [
+                                jsxRuntimeExports.jsx('div', { className: styles$n.back }),
+                                jsxRuntimeExports.jsx('span', { className: styles$n.texture }),
+                            ],
+                        }),
+                    jsxRuntimeExports.jsxs('span', {
+                        className: cx(styles$n.state, styles$n.state__default),
+                        children: [
+                            jsxRuntimeExports.jsx('span', { className: styles$n.stateDisabled }),
+                            jsxRuntimeExports.jsx('span', { className: styles$n.stateHighlightHover }),
+                            jsxRuntimeExports.jsx('span', { className: styles$n.stateHighlightActive }),
+                        ],
+                    }),
+                    jsxRuntimeExports.jsx('span', {
+                        className: styles$n.content,
+                        lang: R.strings.settings.LANGUAGE_CODE(),
+                        children: e,
+                    }),
+                ],
+            })
+        );
+    },
+    CButton = Button,
+    base$k = 'Error_741eaf3c',
+    alertIcon = 'Error_alertIcon_e771a05c',
+    errorCaption = 'Error_errorCaption_89c19a4f',
+    button$1 = 'Error_button_2d8a41b6',
+    styles$m = { base: base$k, alertIcon: alertIcon, errorCaption: errorCaption, button: button$1 },
+    Error$1 = ({ errorBtnClickHandler: e, errorBtnLabel: t, errorMessage: s }) =>
+        jsxRuntimeExports.jsxs('div', {
+            className: styles$m.base,
+            children: [
+                jsxRuntimeExports.jsx('div', { className: styles$m.alertIcon }),
+                jsxRuntimeExports.jsx('div', { className: styles$m.errorCaption, children: s }),
+                jsxRuntimeExports.jsx(CButton, {
+                    size: ButtonSize.medium,
+                    mixClass: styles$m.button,
+                    onClick: e,
+                    children: t,
+                }),
+            ],
+        }),
+    base$j = 'Spinner_9ec19f90',
+    caption$1 = 'Spinner_caption_a44b585',
+    gear = 'Spinner_gear_13ca7433',
+    logo = 'Spinner_logo_22e624b',
+    styles$l = { base: base$j, caption: caption$1, gear: gear, logo: logo },
+    Spinner = ({ message: e, className: t, classNames: s }) =>
+        jsxRuntimeExports.jsxs('div', {
+            className: cx(styles$l.base, t),
+            children: [
+                e && jsxRuntimeExports.jsx('div', { className: cx(styles$l.caption, s?.caption), children: e }),
+                jsxRuntimeExports.jsx('div', { className: cx(styles$l.gear, s?.gear) }),
+                jsxRuntimeExports.jsx('div', { className: cx(styles$l.logo, s?.logo) }),
+            ],
+        }),
+    base$i = 'Waiting_f97f6e4b',
+    blackOverlay = 'Waiting_blackOverlay_e659a6de',
+    styles$k = { base: base$i, blackOverlay: blackOverlay },
+    Waiting = ({
+        errorBtnClickHandler: e,
+        message: t = '',
+        isError: s = !1,
+        errorMessage: r = '',
+        errorBtnLabel: n = R.strings.dialogs.disconnected.cancel(),
+        overlayAlpha: a = '0.8',
+    }) => {
+        const o = reactExports.createRef();
+        return (
+            reactExports.useEffect(() => {
+                const e = o.current;
+                e && a && (e.style.opacity = a);
+            }, [o, a]),
+            jsxRuntimeExports.jsxs('div', {
+                className: styles$k.base,
+                children: [
+                    jsxRuntimeExports.jsx('div', { className: styles$k.blackOverlay, ref: o }),
+                    s
+                        ? jsxRuntimeExports.jsx(Error$1, { errorBtnLabel: n, errorMessage: r, errorBtnClickHandler: e })
+                        : jsxRuntimeExports.jsx(Spinner, { message: t }),
+                ],
+            })
+        );
+    },
+    SwitcherContext = reactExports.createContext(void 0);
+function useSwitcherContext() {
+    const e = reactExports.useContext(SwitcherContext);
+    if (!e) throw new Error('useSwitcherChecked must be used within SwitcherCheckedContext');
+    return e;
+}
+const background$2 = 'Switcher_background_a88161d0',
+    border$2 = 'Switcher_border_a19f907',
+    overlay$1 = 'Switcher_overlay_de650936',
+    selectedOverlay$1 = 'Switcher_selectedOverlay_959b7a8f',
+    selectedItemBackground = 'Switcher_selectedItemBackground_f3f7ed7e',
+    selectedItemBorder = 'Switcher_selectedItemBorder_7a1a3dd5',
+    base$h = 'Switcher_825add0a',
+    base__disabled$2 = 'Switcher_base__disabled_863a5f47',
+    content$5 = 'Switcher_content_c83e02e5',
+    content__fontAligned = 'Switcher_content__fontAligned_9342bb29',
+    item = 'Switcher_item_ecea23cf',
+    selectedOverlay__moved = 'Switcher_selectedOverlay__moved_beb6c80b',
+    selectedItem = 'Switcher_selectedItem_c6995287',
+    selectedItem__moved = 'Switcher_selectedItem__moved_5f74b720',
+    selectedItemContent = 'Switcher_selectedItemContent_34994102',
+    styles$j = {
+        background: background$2,
+        border: border$2,
+        overlay: overlay$1,
+        selectedOverlay: selectedOverlay$1,
+        selectedItemBackground: selectedItemBackground,
+        selectedItemBorder: selectedItemBorder,
+        base: base$h,
+        base__disabled: base__disabled$2,
+        'base__size-small': 'Switcher_base__size-small_df4dee40',
+        'base__size-medium': 'Switcher_base__size-medium_d287fe48',
+        content: content$5,
+        content__fontAligned: content__fontAligned,
+        'base__type-horizontal': 'Switcher_base__type-horizontal_9ba1e4f',
+        item: item,
+        'base__type-vertical': 'Switcher_base__type-vertical_9ba1e4f',
+        selectedOverlay__moved: selectedOverlay__moved,
+        selectedItem: selectedItem,
+        selectedItem__moved: selectedItem__moved,
+        selectedItemContent: selectedItemContent,
+    };
+function SelectedItem({ children: e, classNames: t }) {
+    const { checked: s } = useSwitcherContext();
+    return jsxRuntimeExports.jsx('div', {
+        className: clsx(styles$j.selectedOverlay, s && styles$j.selectedOverlay__moved, t?.base),
+        children: jsxRuntimeExports.jsxs('div', {
+            className: clsx(styles$j.selectedItem, s && styles$j.selectedItem__moved, t?.item),
+            children: [
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$j.selectedItemBackground, t?.background) }),
+                jsxRuntimeExports.jsx('div', { className: clsx(styles$j.selectedItemBorder, t?.border) }),
+                jsxRuntimeExports.jsx('div', {
+                    className: clsx(styles$j.selectedItemContent, t?.content),
+                    children: e,
+                }),
+            ],
+        }),
+    });
+}
+const sizes$5 = { small: 'small', medium: 'medium' },
+    types = { vertical: 'vertical', horizontal: 'horizontal' },
+    Base$9 = defineStyledComponent('Button', styles$j.base, {
+        variants: {
+            type: {
+                [types.horizontal]: styles$j['base__type-horizontal'],
+                [types.vertical]: styles$j['base__type-vertical'],
+            },
+            size: { [sizes$5.small]: styles$j['base__size-small'], [sizes$5.medium]: styles$j['base__size-medium'] },
+            state: { disabled: styles$j.base__disabled },
+        },
+        defaultVariants: { type: types.vertical, size: sizes$5.small },
+    }),
+    Item = defineStyledComponent('ButtonItem', styles$j.item),
+    Switcher$1 = reactExports.forwardRef(function (
+        {
+            type: e = types.vertical,
+            checked: t,
+            onMouseEnter: s,
+            onSwitch: r,
+            onClick: n,
+            size: a = sizes$5.small,
+            disabled: o = !1,
+            autoAlignContent: i = !1,
+            classNames: u,
+            className: l,
+            children: c,
+            ...d
+        },
+        m,
+    ) {
+        const [_, p, x] = c,
+            f = useSounds();
+        const E = reactExports.useMemo(() => ({ checked: t }), [t]);
+        return jsxRuntimeExports.jsx(SwitcherContext.Provider, {
+            value: E,
+            children: jsxRuntimeExports.jsxs(Base$9, {
+                ...d,
+                ref: m,
+                type: e,
+                size: a,
+                state: o ? 'disabled' : void 0,
+                className: clsx(l, u?.base),
+                onMouseEnter: function (e) {
+                    (f.play('mouse-enter', { target: Base$9.displayName, original: e }), s?.(e));
+                },
+                onClick: function (e) {
+                    (f.play('click', { target: Base$9.displayName, original: e }), r(!t), n?.(e));
+                },
+                children: [
+                    jsxRuntimeExports.jsx('div', { className: clsx(styles$j.background, u?.background) }),
+                    jsxRuntimeExports.jsx('div', { className: clsx(styles$j.border, u?.border) }),
+                    jsxRuntimeExports.jsx('div', { className: clsx(styles$j.overlay, u?.overlay) }),
+                    jsxRuntimeExports.jsxs('div', {
+                        className: clsx(styles$j.content, i && styles$j.content__fontAligned, u?.content),
+                        children: [_, p, x],
+                    }),
+                ],
+            }),
+        });
+    });
+((Switcher$1.Item = Item),
+    (Switcher$1.SelectedItem = SelectedItem),
+    (Switcher$1.types = types),
+    (Switcher$1.sizes = sizes$5));
+const sizes$4 = {
+        s24x24: 's24x24',
+        s48x48: 's48x48',
+        s64x64: 's64x64',
+        s80x80: 's80x80',
+        s180x135: 's180x135',
+        s232x174: 's232x174',
+        s296x222: 's296x222',
+        s360x270: 's360x270',
+        s400x300: 's400x300',
+        s600x450: 's600x450',
+    },
+    overlayTypes = {
+        builtInEquipment: 'built_in_equipment',
+        trophy: 'trophy',
+        experimental: 'experimental',
+        improved: 'improved',
+        directiveBooster: 'directive_booster',
+        directiveSubstitute: 'directive_substitute',
+        custom: 'custom',
+        none: 'none',
+    },
+    overlayTypesWithoutLevel = [
+        overlayTypes.improved,
+        overlayTypes.directiveBooster,
+        overlayTypes.directiveSubstitute,
+        overlayTypes.builtInEquipment,
+    ],
+    imageSizes = {
+        [sizes$4.s24x24]: { width: 24, height: 24 },
+        [sizes$4.s48x48]: { width: 48, height: 48 },
+        [sizes$4.s64x64]: { width: 64, height: 64 },
+        [sizes$4.s80x80]: { width: 80, height: 80 },
+        [sizes$4.s180x135]: { width: 180, height: 135 },
+        [sizes$4.s232x174]: { width: 232, height: 174 },
+        [sizes$4.s296x222]: { width: 296, height: 222 },
+        [sizes$4.s360x270]: { width: 360, height: 270 },
+        [sizes$4.s400x300]: { width: 400, height: 300 },
+        [sizes$4.s600x450]: { width: 600, height: 450 },
+    },
+    Base$8 = defineStyledComponent('LoadoutItem', { element: Image$1 });
+function getItemSizeFolderName(e) {
+    switch (e) {
+        case sizes$4.s80x80:
+        case sizes$4.s64x64:
+            return 'big';
+        case sizes$4.s48x48:
+            return 'small';
+        default:
+            return e;
+    }
+}
+const LoadoutItem = reactExports.forwardRef(function (
+    {
+        name: e,
+        path: t,
+        overlayPath: s,
+        size: r,
+        overlayType: n = overlayTypes.none,
+        level: a,
+        classNames: o,
+        className: i,
+        width: u,
+        height: l,
+        ...c
+    },
+    d,
+) {
+    const m =
+            t ||
+            (r === sizes$4.s24x24
+                ? `vehParams.tooltips.bonuses.${e}`
+                : `quests.bonuses.${getItemSizeFolderName(r)}.${e}`),
+        _ = (() => {
+            if (s) return s;
+            if (n === overlayTypes.custom) return void console.error('custom overlay passed without image source path');
+            if (n === overlayTypes.none) return;
+            const e = r === sizes$4.s64x64 ? sizes$4.s80x80 : r;
+            return overlayTypesWithoutLevel.includes(n)
+                ? `components.loadout_item.overlays.${e}.${n}`
+                : a
+                  ? `components.loadout_item.overlays.${e}.${n}_${a}_level`
+                  : void console.error('Item level is not provided, but required!');
+        })(),
+        p = imageSizes[r];
+    return jsxRuntimeExports.jsx(Base$8, {
+        ...c,
+        ref: d,
+        path: m,
+        width: u ?? p.width,
+        height: l ?? p.height,
+        className: clsx(i, o?.item),
+        children:
+            n !== overlayTypes.none && _ && jsxRuntimeExports.jsx(Image$1, { path: _, width: '100%', height: '100%' }),
+    });
+});
+((LoadoutItem.sizes = sizes$4), (LoadoutItem.overlayTypes = overlayTypes));
+const selectedOverlay = 'Slot_selectedOverlay_5b63484a',
+    disabledOverlay = 'Slot_disabledOverlay_4d0ab64b',
+    content$4 = 'Slot_content_dbf98123',
+    slot = 'Slot_e5fcbf90',
+    slot__hovered = 'Slot_slot__hovered_f72e51c4',
+    slot__disabled = 'Slot_slot__disabled_ba2d5d0e',
+    slot__small = 'Slot_slot__small_2d3a3a74',
+    slot__medium = 'Slot_slot__medium_42bbdb11',
+    slot__extraLarge = 'Slot_slot__extraLarge_d8070c25',
+    content__disabled = 'Slot_content__disabled_1d609e12',
+    emptyContent = 'Slot_emptyContent_ba97d4d8',
+    styles$i = {
+        selectedOverlay: selectedOverlay,
+        disabledOverlay: disabledOverlay,
+        content: content$4,
+        slot: slot,
+        slot__hovered: slot__hovered,
+        slot__disabled: slot__disabled,
+        slot__small: slot__small,
+        slot__medium: slot__medium,
+        slot__extraLarge: slot__extraLarge,
+        content__disabled: content__disabled,
+        emptyContent: emptyContent,
+    },
+    sizes$3 = { small: 'small', medium: 'medium', large: 'large', extraLarge: 'extraLarge' },
+    Content$1 = defineStyledComponent('SlotContent'),
+    Base$7 = defineStyledComponent('Slot', styles$i.slot, {
+        variants: {
+            size: {
+                [sizes$3.small]: styles$i.slot__small,
+                [sizes$3.medium]: styles$i.slot__medium,
+                [sizes$3.large]: styles$i.slot__large,
+                [sizes$3.extraLarge]: styles$i.slot__extraLarge,
+            },
+            hovered: { true: styles$i.slot__hovered },
+            selected: { true: styles$i.slot__selected },
+            disabled: { true: styles$i.slot__disabled },
+        },
+    }),
+    EmptySlot = defineStyledComponent('EmptySlot', styles$i.emptyContent),
+    Slot = reactExports.forwardRef(function (
+        {
+            children: e,
+            size: t,
+            disabled: s = !1,
+            hovered: r = !1,
+            selected: n = !1,
+            classNames: a,
+            className: o,
+            dataDropItem: i,
+            ...u
+        },
+        l,
+    ) {
+        return jsxRuntimeExports.jsxs(Base$7, {
+            ...u,
+            ref: l,
+            size: t,
+            selected: n,
+            disabled: s,
+            hovered: r && !s,
+            className: clsx(a?.slot, o),
+            children: [
+                n && jsxRuntimeExports.jsx('div', { className: clsx(styles$i.selectedOverlay, a?.selectedOverlay) }),
+                s && jsxRuntimeExports.jsx('div', { className: clsx(styles$i.disabledOverlay, a?.disabledOverlay) }),
+                jsxRuntimeExports.jsx(Content$1, {
+                    className: clsx(styles$i.content, s && styles$i.content__disabled, a?.content),
+                    'data-drop-item': i,
+                    children: e || jsxRuntimeExports.jsx(EmptySlot, { className: a?.emptyContent }),
+                }),
+            ],
+        });
+    });
+((Slot.sizes = sizes$3), (Slot.Empty = EmptySlot));
+const base$g = 'SceneWrapper_52fcfc1e',
+    base__down = 'SceneWrapper_base__down_4ece5089',
+    base__moveSpaceDisabled = 'SceneWrapper_base__moveSpaceDisabled_1b1cd939',
+    styles$h = { base: base$g, base__down: base__down, base__moveSpaceDisabled: base__moveSpaceDisabled },
+    MOUSE_BUTTONS_LEFT$1 = 1,
+    DELTA_Z = 600;
+function SceneWrapper({
+    children: e,
+    moveSpace: t,
+    onMouseOver3dScene: s,
+    onDragStateChange: r,
+    moveSpaceEnabled: n = !0,
+    className: a,
+    ...o
+}) {
+    const [i, u] = reactExports.useState(!1),
+        [l, c] = reactExports.useState(!1),
+        [d, m] = reactExports.useState({ x: 0, y: 0 }),
+        _ = reactExports.useRef(null);
+    (reactExports.useEffect(() => {
+        function e() {
+            (u(!1), c(!1));
+        }
+        return (window.addEventListener('mouseup', e), () => window.removeEventListener('mouseup', e));
+    }, []),
+        reactExports.useEffect(
+            () => () => {
+                s({ isOver3dScene: !1 });
+            },
+            [s],
+        ));
+    const p = useEvent((e) => r?.(e));
+    function x(e) {
+        if (!_.current) return;
+        const { left: t, right: s, top: r, bottom: n } = _.current.getBoundingClientRect();
+        return !(e.clientX < t || e.clientY < r || e.clientX > s || e.clientY > n);
+    }
+    function f(e) {
+        return e.buttons === MOUSE_BUTTONS_LEFT$1 && x(e) && n;
+    }
+    return (
+        reactExports.useEffect(() => {
+            p(i && l);
+        }, [i, p, l]),
+        jsxRuntimeExports.jsx('div', {
+            ...o,
+            ref: _,
+            className: clsx(styles$h.base, i && styles$h.base__down, !n && styles$h.base__moveSpaceDisabled, a),
+            onMouseDown: function (e) {
+                (e.preventDefault(), f(e) && (u(!0), c(!0), m({ x: e.clientX, y: e.clientY })));
+            },
+            onMouseMove: function (e) {
+                if ((e.preventDefault(), i && l)) {
+                    if (!x(e)) return;
+                    const s = e.clientX !== d.x ? e.clientX - d.x : 0,
+                        r = e.clientY !== d.y ? e.clientY - d.y : 0;
+                    (m({ x: e.clientX, y: e.clientY }), t({ dx: s, dy: r, dz: 0 }));
+                }
+            },
+            onMouseUp: function () {
+                u(!1);
+            },
+            onWheel: function (e) {
+                if ((e.preventDefault(), !n || !x(e))) return;
+                const s = e.deltaY < 0;
+                t({ dx: 0, dy: 0, dz: s ? -DELTA_Z : DELTA_Z });
+            },
+            onMouseOver: function (e) {
+                (s({ isOver3dScene: !0 }), f(e) && (u(!0), m({ x: e.clientX, y: e.clientY })));
+            },
+            onMouseOut: function () {
+                (s({ isOver3dScene: !1 }), u(!1));
+            },
+            children: e,
+        })
+    );
+}
+function isEmptyObject(e) {
+    for (const t in e) return !1;
+    return !0;
+}
+function isSerializableReactNode(e) {
+    return (
+        !(null != e && !['string', 'number', 'boolean'].includes(typeof e)) ||
+        (!reactExports.isValidElement(e) && !!Array.isArray(e) && e.every(isSerializableReactNode))
+    );
+}
+const base$f = 'MultilineOverflow_ec9f8e47',
+    content$3 = 'MultilineOverflow_content_b539970d',
+    styles$g = { base: base$f, content: content$3 };
+function isSerializableParams(e) {
+    return !e || Object.values(e).every(isSerializableReactNode);
+}
+function cloneNode(e) {
+    return e instanceof HTMLElement
+        ? e.cloneNode(!0)
+        : e.nodeType === Node.TEXT_NODE
+          ? document.createTextNode(e.nodeValue ?? '')
+          : void 0;
+}
+const MultilineOverflow = reactExports.forwardRef(function (
+    {
+        text: e,
+        brackets: t,
+        params: s,
+        formatters: r,
+        upgradeLegacy: n,
+        split: a = !0,
+        onMouseEnter: o,
+        onMouseLeave: i,
+        onClick: u,
+        tooltipDisabled: l = !1,
+        tooltip: c,
+        className: d,
+        classNames: m,
+        style: _,
+        styleBase: p,
+        styleText: x,
+        ...f
+    },
+    E,
+) {
+    const b = reactExports.useRef(null),
+        h = reactExports.useRef(null),
+        [g, y] = reactExports.useState(!1);
+    reactExports.useEffect(() => {
+        if (0 === e.length) return;
+        const t = b.current,
+            s = h.current;
+        if (!t || !s) return;
+        const r = document.createElement('div');
+        function n() {
+            if (!t || !s) return;
+            const e = t.children[0];
+            if (!e) return console.warn("MultilineOverflow can't get first child to handle it", t);
+            (r.remove(),
+                (r.className = clsx(styles$g.content, t.children[0].className)),
+                (r.innerHTML = ''),
+                e instanceof HTMLElement && (r.style.cssText = e.style.cssText));
+            const n = e.childNodes.length - 1;
+            let a = n;
+            for (; a >= 0; a--) {
+                const s = e.childNodes[a];
+                if (s instanceof HTMLElement && !(s.offsetTop + s.offsetHeight > t.clientHeight)) break;
+            }
+            if (a === n) y(!1);
+            else {
+                y(!0);
+                const n = relativeOffset(t.getBoundingClientRect(), e.getBoundingClientRect());
+                for (r.style.visibility = '', r.style.left = `${n.x}px`, r.style.top = `${n.y}px`; a >= 0; a--) {
+                    const t = e.childNodes[a];
+                    if (t instanceof HTMLElement && !(t.offsetLeft + t.offsetWidth + s.offsetWidth > e.clientWidth))
+                        break;
+                }
+                for (let t = 0; t <= a; t++) {
+                    const s = e.childNodes[t];
+                    if (!(s instanceof HTMLElement)) continue;
+                    const n = cloneNode(s);
+                    n ? r.appendChild(n) : console.warn('Unexpected type of target node', s);
+                }
+                const o = s.cloneNode(!0);
+                (o.removeAttribute('style'), r.appendChild(o), t.appendChild(r));
+            }
+        }
+        const a = new ResizeObserver(n);
+        return (
+            a.observe(t),
+            new DisposeBuilder()
+                .add(addEventListener(window, 'resize', n))
+                .add(a.disconnect.bind(a))
+                .add(r.remove.bind(r)).dispose
+        );
+    }, [E, e]);
+    const v = isSerializableParams(s),
+        C = useParamTooltip(
+            'format_text',
+            reactExports.useMemo(
+                () => ({
+                    text: e,
+                    params: v ? s : void 0,
+                    split: a,
+                    upgradeLegacy: n,
+                    brackets: t,
+                    resId: resources.resolve('views').read((e) => e.mono.tooltips.tooltips('resId')),
+                }),
+                [e, t, a, n, s, v],
+            ),
+        ),
+        S = c ?? C;
+    if (
+        (reactExports.useEffect(() => {
+            l || g || S.onMouseLeave();
+        }, [g, S, c, l, v]),
+        0 === e.length)
+    )
+        return null;
+    return jsxRuntimeExports.jsxs('div', {
+        ...f,
+        onMouseEnter: function (e) {
+            (o?.(e), g && !l && S.onMouseEnter(e));
+        },
+        onClick: function (e) {
+            (u?.(e), l || S.onClick());
+        },
+        onMouseLeave: function (e) {
+            (i?.(e), l || S.onMouseLeave());
+        },
+        ref: assignRefs([E, b]),
+        className: clsx(styles$g.base, d, m?.base),
+        style: { ..._, ...p },
+        children: [
+            jsxRuntimeExports.jsx(FormatText, {
+                text: e,
+                brackets: t,
+                params: s,
+                upgradeLegacy: n,
+                split: a,
+                formatters: r,
+                className: m?.text,
+                style: { ...x, visibility: g ? 'hidden' : void 0 },
+            }),
+            jsxRuntimeExports.jsx('div', {
+                ref: h,
+                style: { visibility: 'hidden', position: 'absolute' },
+                children: '...',
+            }),
+        ],
+    });
+});
+function FormatTextSplited({ className: e, ...t }) {
+    return jsxRuntimeExports.jsx('div', {
+        className: e,
+        children: t.text.split('\n').map((e) => jsxRuntimeExports.jsx(FormatText, { ...t, text: e }, e)),
+    });
+}
+function ExtendedText(e) {
+    (void 0 !== e.onSizeChanged && console.warn('[ExtendedText Adapter] Property "onSizeChanged" doesn\'t support'),
+        void 0 !== e.targetId && console.warn('[ExtendedText Adapter] Property "targetId" doesn\'t support'));
+    const t = e.isTruncationAvailable || e.truncateIdentify ? MultilineOverflow : FormatTextSplited;
+    return jsxRuntimeExports.jsx(t, {
+        split: e.split ?? !0,
+        text: e.text,
+        params: e.binding,
+        style: { alignContent: e.alignContent, justifyContent: e.justifyContent },
+        upgradeLegacy: !0,
+        className: clsx(e.className, e.classMix),
+    });
+}
 const Context$1 = reactExports.createContext(void 0);
 function useProgressBar() {
     const e = reactExports.useContext(Context$1);
@@ -10421,122 +10564,6 @@ function ProgressBar({
         }),
     });
 }
-var RewardType = ((e) => (
-        (e.Items = 'items'),
-        (e.Equipment = 'equipment'),
-        (e.Xp = 'xp'),
-        (e.XpFactor = 'xpFactor'),
-        (e.Blueprints = 'blueprints'),
-        (e.BlueprintsAny = 'blueprintsAny'),
-        (e.Goodies = 'goodies'),
-        (e.Berths = 'berths'),
-        (e.Slots = 'slots'),
-        (e.Tokens = 'tokens'),
-        (e.CrewSkins = 'crewSkins'),
-        (e.CrewBooks = 'crewBooks'),
-        (e.Customizations = 'customizations'),
-        (e.CreditsFactor = 'creditsFactor'),
-        (e.Tankman = 'tankman'),
-        (e.Tankwoman = 'tankwoman'),
-        (e.TankmenXp = 'tankmenXP'),
-        (e.TankmenXpFactor = 'tankmenXPFactor'),
-        (e.FreeXpFactor = 'freeXPFactor'),
-        (e.BattleToken = 'battleToken'),
-        (e.PremiumUniversal = 'premium_universal'),
-        (e.Gold = 'gold'),
-        (e.Credits = 'credits'),
-        (e.Crystal = 'crystal'),
-        (e.FreeXp = 'freeXP'),
-        (e.Premium = 'premium'),
-        (e.PremiumPlus = 'premium_plus'),
-        (e.BattlePassPoints = 'battlePassPoints'),
-        (e.BattlePassSelectToken = 'battlePassSelectToken'),
-        (e.StyleProgressToken = 'styleProgressToken'),
-        (e.TmanToken = 'tmanToken'),
-        (e.NaturalCover = 'naturalCover'),
-        (e.BpCoin = 'bpcoin'),
-        (e.BattlaPassFinalAchievement = 'dossier_achievement'),
-        (e.BattleBadge = 'dossier_badge'),
-        (e.BonusX5 = 'battle_bonus_x5'),
-        (e.CrewBonusX3 = 'crew_bonus_x3'),
-        (e.Vehicles = 'vehicles'),
-        (e.EpicSelectToken = 'epicSelectToken'),
-        (e.Comp7TokenWeeklyReward = 'comp7TokenWeeklyReward'),
-        (e.DeluxeGift = 'deluxe_gift'),
-        (e.BattleBoosterGift = 'battleBooster_gift'),
-        (e.OptionalDevice = 'optionalDevice'),
-        (e.EquipCoin = 'equipCoin'),
-        (e.LootBox = 'lootBox'),
-        (e.BrCoin = 'brcoin'),
-        e
-    ))(RewardType || {}),
-    ImageSize = ((e) => (
-        (e.Big = 'big'),
-        (e.Small = 'small'),
-        (e.Mini = 'mini'),
-        (e.S600x450 = 's600x450'),
-        (e.S400x300 = 's400x300'),
-        (e.S296x222 = 's296x222'),
-        (e.S232x174 = 's232x174'),
-        (e.S180x135 = 's180x135'),
-        (e.S128x100 = 's128x100'),
-        (e.S80x80 = 's80x80'),
-        (e.S64x64 = 's64x64'),
-        (e.S48x48 = 's48x48'),
-        (e.S24x24 = 's24x24'),
-        e
-    ))(ImageSize || {}),
-    ValueTypes = ((e) => (
-        (e.MULTI = 'multi'),
-        (e.CURRENCY = 'currency'),
-        (e.PREMIUM_PLUS = 'premium_plus'),
-        (e.NUMBER = 'number'),
-        (e.STRING = 'string'),
-        e
-    ))(ValueTypes || {}),
-    Specials = ((e) => (
-        (e.ATTACHMENT_RARE = 'rare'),
-        (e.ATTACHMENT_EPIC = 'epic'),
-        (e.ATTACHMENT_LEGENDARY = 'legendary'),
-        (e.BATTLE_BOOSTER = 'battleBooster'),
-        (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
-        (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
-        (e.EQUIPMENT_PLUS = 'equipmentPlus'),
-        (e.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
-        (e.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
-        (e.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
-        (e.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
-        (e.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
-        (e.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
-        (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
-        (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
-        (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
-        (e.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-        (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'),
-        e
-    ))(Specials || {}),
-    HighlightClasses = ((e) => ((e.BATTLE_BOOSTER = 'battleBooster'), e))(HighlightClasses || {}),
-    OverlayClasses = ((e) => (
-        (e.ATTACHMENT_RARE = 'rare'),
-        (e.ATTACHMENT_EPIC = 'epic'),
-        (e.ATTACHMENT_LEGENDARY = 'legendary'),
-        (e.BATTLE_BOOSTER = 'battleBooster'),
-        (e.BATTLE_BOOSTER_REPLACE = 'battleBoosterReplace'),
-        (e.BUILT_IN_EQUIPMENT = 'builtInEquipment'),
-        (e.EQUIPMENT_PLUS = 'equipmentPlus'),
-        (e.EQUIPMENT_TROPHY_BASIC = 'equipmentTrophyBasic'),
-        (e.EQUIPMENT_TROPHY_UPGRADED = 'equipmentTrophyUpgraded'),
-        (e.EQUIPMENT_MODERNIZED_UPGRADED_1 = 'equipmentModernized_1'),
-        (e.EQUIPMENT_MODERNIZED_UPGRADED_2 = 'equipmentModernized_2'),
-        (e.EQUIPMENT_MODERNIZED_UPGRADED_3 = 'equipmentModernized_3'),
-        (e.PROGRESSION_STYLE_UPGRADED_1 = 'progressionStyleUpgraded_1'),
-        (e.PROGRESSION_STYLE_UPGRADED_2 = 'progressionStyleUpgraded_2'),
-        (e.PROGRESSION_STYLE_UPGRADED_3 = 'progressionStyleUpgraded_3'),
-        (e.PROGRESSION_STYLE_UPGRADED_4 = 'progressionStyleUpgraded_4'),
-        (e.PROGRESSION_STYLE_UPGRADED_5 = 'progressionStyleUpgraded_5'),
-        (e.PROGRESSION_STYLE_UPGRADED_6 = 'progressionStyleUpgraded_6'),
-        e
-    ))(OverlayClasses || {});
 const multiValueTypes = [
         RewardType.Items,
         RewardType.Equipment,
@@ -10570,6 +10597,7 @@ const multiValueTypes = [
         RewardType.DeluxeGift,
         RewardType.BattleBoosterGift,
         RewardType.OptionalDevice,
+        RewardType.TmanToken,
     ],
     currencyValueTypes = [RewardType.Gold, RewardType.Credits, RewardType.Crystal, RewardType.FreeXp],
     numberValueTypes = [RewardType.BattlePassPoints, RewardType.EquipCoin],
@@ -11487,26 +11515,7 @@ const base$4 = 'Tooltip_6d997cee',
             })
         );
     });
-function format(e, t) {
-    return e.replace(/\{\w+\}/g, (e) => String(t[e.slice(1, -1)]));
-}
-function snakeToCamel(e) {
-    return e.replace(/_\w/g, (e) => e[1].toUpperCase());
-}
-((Tooltip.Decorator = Decorator),
-    (() => {
-        const e = new RegExp(
-            [
-                /[\(\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[ %\+\x2D-9A-Za-\{\}\xA0\xC0-\u0237\u2013\u2014\u2026]+[\)\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3002\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\uFF01\uFF0C\uFF1A\uFF1B\uFF1F\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
-                /[\(\xAB\u201C\u275D][\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?|[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}][\0-\u2E7F\u2E9A\u2EF4-\u2EFF\u2FD6-\u3004\u3006\u3008-\u3020\u302A-\u3037\u303C-\u33FF\u4DC0-\u4DFF\uA000-\uF8FF\uFA6E\uFA6F\uFADA-\u{16FE1}\u{16FE4}-\u{16FEF}\u{16FF2}-\u{1FFFF}\u{2A6E0}-\u{2A6FF}\u{2B739}-\u{2B73F}\u{2B81E}\u{2B81F}\u{2CEA2}-\u{2CEAF}\u{2EBE1}-\u{2F7FF}\u{2FA1E}-\u{2FFFF}\u{3134B}-\u{10FFFF}]?[\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?[\)\xBB\u201D\u275E][\u3002\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]?/gmu,
-                /[A-Za-z\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]?[ \):;\u2022\u3001\u3002\u300A-\u300D\uFF01\uFF0C\uFF1A\uFF1B\uFF1F]|[\(,1A-Za-\{\}\xAA\xB5\xBA\xC0-\xD6\xD8-\xF6\xF8-\u02C1\u02C6-\u02D1\u02E0-\u02E4\u02EC\u02EE\u0370-\u0374\u0376\u0377\u037A-\u037D\u037F\u0386\u0388-\u038A\u038C\u038E-\u03A1\u03A3-\u03F5\u03F7-\u0481\u048A-\u052F\u0531-\u0556\u0559\u0560-\u0588\u05D0-\u05EA\u05EF-\u05F2\u0620-\u064A\u066E\u066F\u0671-\u06D3\u06D5\u06E5\u06E6\u06EE\u06EF\u06FA-\u06FC\u06FF\u0710\u0712-\u072F\u074D-\u07A5\u07B1\u07CA-\u07EA\u07F4\u07F5\u07FA\u0800-\u0815\u081A\u0824\u0828\u0840-\u0858\u0860-\u086A\u0870-\u0887\u0889-\u088E\u08A0-\u08C9\u0904-\u0939\u093D\u0950\u0958-\u0961\u0971-\u0980\u0985-\u098C\u098F\u0990\u0993-\u09A8\u09AA-\u09B0\u09B2\u09B6-\u09B9\u09BD\u09CE\u09DC\u09DD\u09DF-\u09E1\u09F0\u09F1\u09FC\u0A05-\u0A0A\u0A0F\u0A10\u0A13-\u0A28\u0A2A-\u0A30\u0A32\u0A33\u0A35\u0A36\u0A38\u0A39\u0A59-\u0A5C\u0A5E\u0A72-\u0A74\u0A85-\u0A8D\u0A8F-\u0A91\u0A93-\u0AA8\u0AAA-\u0AB0\u0AB2\u0AB3\u0AB5-\u0AB9\u0ABD\u0AD0\u0AE0\u0AE1\u0AF9\u0B05-\u0B0C\u0B0F\u0B10\u0B13-\u0B28\u0B2A-\u0B30\u0B32\u0B33\u0B35-\u0B39\u0B3D\u0B5C\u0B5D\u0B5F-\u0B61\u0B71\u0B83\u0B85-\u0B8A\u0B8E-\u0B90\u0B92-\u0B95\u0B99\u0B9A\u0B9C\u0B9E\u0B9F\u0BA3\u0BA4\u0BA8-\u0BAA\u0BAE-\u0BB9\u0BD0\u0C05-\u0C0C\u0C0E-\u0C10\u0C12-\u0C28\u0C2A-\u0C39\u0C3D\u0C58-\u0C5A\u0C5D\u0C60\u0C61\u0C80\u0C85-\u0C8C\u0C8E-\u0C90\u0C92-\u0CA8\u0CAA-\u0CB3\u0CB5-\u0CB9\u0CBD\u0CDD\u0CDE\u0CE0\u0CE1\u0CF1\u0CF2\u0D04-\u0D0C\u0D0E-\u0D10\u0D12-\u0D3A\u0D3D\u0D4E\u0D54-\u0D56\u0D5F-\u0D61\u0D7A-\u0D7F\u0D85-\u0D96\u0D9A-\u0DB1\u0DB3-\u0DBB\u0DBD\u0DC0-\u0DC6\u0E01-\u0E30\u0E32\u0E33\u0E40-\u0E46\u0E81\u0E82\u0E84\u0E86-\u0E8A\u0E8C-\u0EA3\u0EA5\u0EA7-\u0EB0\u0EB2\u0EB3\u0EBD\u0EC0-\u0EC4\u0EC6\u0EDC-\u0EDF\u0F00\u0F40-\u0F47\u0F49-\u0F6C\u0F88-\u0F8C\u1000-\u102A\u103F\u1050-\u1055\u105A-\u105D\u1061\u1065\u1066\u106E-\u1070\u1075-\u1081\u108E\u10A0-\u10C5\u10C7\u10CD\u10D0-\u10FA\u10FC-\u1248\u124A-\u124D\u1250-\u1256\u1258\u125A-\u125D\u1260-\u1288\u128A-\u128D\u1290-\u12B0\u12B2-\u12B5\u12B8-\u12BE\u12C0\u12C2-\u12C5\u12C8-\u12D6\u12D8-\u1310\u1312-\u1315\u1318-\u135A\u1380-\u138F\u13A0-\u13F5\u13F8-\u13FD\u1401-\u166C\u166F-\u167F\u1681-\u169A\u16A0-\u16EA\u16F1-\u16F8\u1700-\u1711\u171F-\u1731\u1740-\u1751\u1760-\u176C\u176E-\u1770\u1780-\u17B3\u17D7\u17DC\u1820-\u1878\u1880-\u1884\u1887-\u18A8\u18AA\u18B0-\u18F5\u1900-\u191E\u1950-\u196D\u1970-\u1974\u1980-\u19AB\u19B0-\u19C9\u1A00-\u1A16\u1A20-\u1A54\u1AA7\u1B05-\u1B33\u1B45-\u1B4C\u1B83-\u1BA0\u1BAE\u1BAF\u1BBA-\u1BE5\u1C00-\u1C23\u1C4D-\u1C4F\u1C5A-\u1C7D\u1C80-\u1C88\u1C90-\u1CBA\u1CBD-\u1CBF\u1CE9-\u1CEC\u1CEE-\u1CF3\u1CF5\u1CF6\u1CFA\u1D00-\u1DBF\u1E00-\u1F15\u1F18-\u1F1D\u1F20-\u1F45\u1F48-\u1F4D\u1F50-\u1F57\u1F59\u1F5B\u1F5D\u1F5F-\u1F7D\u1F80-\u1FB4\u1FB6-\u1FBC\u1FBE\u1FC2-\u1FC4\u1FC6-\u1FCC\u1FD0-\u1FD3\u1FD6-\u1FDB\u1FE0-\u1FEC\u1FF2-\u1FF4\u1FF6-\u1FFC\u2071\u207F\u2090-\u209C\u2102\u2107\u210A-\u2113\u2115\u2119-\u211D\u2124\u2126\u2128\u212A-\u212D\u212F-\u2139\u213C-\u213F\u2145-\u2149\u214E\u2183\u2184\u2C00-\u2CE4\u2CEB-\u2CEE\u2CF2\u2CF3\u2D00-\u2D25\u2D27\u2D2D\u2D30-\u2D67\u2D6F\u2D80-\u2D96\u2DA0-\u2DA6\u2DA8-\u2DAE\u2DB0-\u2DB6\u2DB8-\u2DBE\u2DC0-\u2DC6\u2DC8-\u2DCE\u2DD0-\u2DD6\u2DD8-\u2DDE\u2E2F\u3005\u3006\u3031-\u3035\u303B\u303C\u3041-\u3096\u309D-\u309F\u30A1-\u30FA\u30FC-\u30FF\u3105-\u312F\u3131-\u318E\u31A0-\u31BF\u31F0-\u31FF\u3400-\u4DBF\u4E00-\uA48C\uA4D0-\uA4FD\uA500-\uA60C\uA610-\uA61F\uA62A\uA62B\uA640-\uA66E\uA67F-\uA69D\uA6A0-\uA6E5\uA717-\uA71F\uA722-\uA788\uA78B-\uA7CA\uA7D0\uA7D1\uA7D3\uA7D5-\uA7D9\uA7F2-\uA801\uA803-\uA805\uA807-\uA80A\uA80C-\uA822\uA840-\uA873\uA882-\uA8B3\uA8F2-\uA8F7\uA8FB\uA8FD\uA8FE\uA90A-\uA925\uA930-\uA946\uA960-\uA97C\uA984-\uA9B2\uA9CF\uA9E0-\uA9E4\uA9E6-\uA9EF\uA9FA-\uA9FE\uAA00-\uAA28\uAA40-\uAA42\uAA44-\uAA4B\uAA60-\uAA76\uAA7A\uAA7E-\uAAAF\uAAB1\uAAB5\uAAB6\uAAB9-\uAABD\uAAC0\uAAC2\uAADB-\uAADD\uAAE0-\uAAEA\uAAF2-\uAAF4\uAB01-\uAB06\uAB09-\uAB0E\uAB11-\uAB16\uAB20-\uAB26\uAB28-\uAB2E\uAB30-\uAB5A\uAB5C-\uAB69\uAB70-\uABE2\uAC00-\uD7A3\uD7B0-\uD7C6\uD7CB-\uD7FB\uF900-\uFA6D\uFA70-\uFAD9\uFB00-\uFB06\uFB13-\uFB17\uFB1D\uFB1F-\uFB28\uFB2A-\uFB36\uFB38-\uFB3C\uFB3E\uFB40\uFB41\uFB43\uFB44\uFB46-\uFBB1\uFBD3-\uFD3D\uFD50-\uFD8F\uFD92-\uFDC7\uFDF0-\uFDFB\uFE70-\uFE74\uFE76-\uFEFC\uFF21-\uFF3A\uFF41-\uFF5A\uFF66-\uFFBE\uFFC2-\uFFC7\uFFCA-\uFFCF\uFFD2-\uFFD7\uFFDA-\uFFDC\u{10000}-\u{1000B}\u{1000D}-\u{10026}\u{10028}-\u{1003A}\u{1003C}\u{1003D}\u{1003F}-\u{1004D}\u{10050}-\u{1005D}\u{10080}-\u{100FA}\u{10280}-\u{1029C}\u{102A0}-\u{102D0}\u{10300}-\u{1031F}\u{1032D}-\u{10340}\u{10342}-\u{10349}\u{10350}-\u{10375}\u{10380}-\u{1039D}\u{103A0}-\u{103C3}\u{103C8}-\u{103CF}\u{10400}-\u{1049D}\u{104B0}-\u{104D3}\u{104D8}-\u{104FB}\u{10500}-\u{10527}\u{10530}-\u{10563}\u{10570}-\u{1057A}\u{1057C}-\u{1058A}\u{1058C}-\u{10592}\u{10594}\u{10595}\u{10597}-\u{105A1}\u{105A3}-\u{105B1}\u{105B3}-\u{105B9}\u{105BB}\u{105BC}\u{10600}-\u{10736}\u{10740}-\u{10755}\u{10760}-\u{10767}\u{10780}-\u{10785}\u{10787}-\u{107B0}\u{107B2}-\u{107BA}\u{10800}-\u{10805}\u{10808}\u{1080A}-\u{10835}\u{10837}\u{10838}\u{1083C}\u{1083F}-\u{10855}\u{10860}-\u{10876}\u{10880}-\u{1089E}\u{108E0}-\u{108F2}\u{108F4}\u{108F5}\u{10900}-\u{10915}\u{10920}-\u{10939}\u{10980}-\u{109B7}\u{109BE}\u{109BF}\u{10A00}\u{10A10}-\u{10A13}\u{10A15}-\u{10A17}\u{10A19}-\u{10A35}\u{10A60}-\u{10A7C}\u{10A80}-\u{10A9C}\u{10AC0}-\u{10AC7}\u{10AC9}-\u{10AE4}\u{10B00}-\u{10B35}\u{10B40}-\u{10B55}\u{10B60}-\u{10B72}\u{10B80}-\u{10B91}\u{10C00}-\u{10C48}\u{10C80}-\u{10CB2}\u{10CC0}-\u{10CF2}\u{10D00}-\u{10D23}\u{10E80}-\u{10EA9}\u{10EB0}\u{10EB1}\u{10F00}-\u{10F1C}\u{10F27}\u{10F30}-\u{10F45}\u{10F70}-\u{10F81}\u{10FB0}-\u{10FC4}\u{10FE0}-\u{10FF6}\u{11003}-\u{11037}\u{11071}\u{11072}\u{11075}\u{11083}-\u{110AF}\u{110D0}-\u{110E8}\u{11103}-\u{11126}\u{11144}\u{11147}\u{11150}-\u{11172}\u{11176}\u{11183}-\u{111B2}\u{111C1}-\u{111C4}\u{111DA}\u{111DC}\u{11200}-\u{11211}\u{11213}-\u{1122B}\u{11280}-\u{11286}\u{11288}\u{1128A}-\u{1128D}\u{1128F}-\u{1129D}\u{1129F}-\u{112A8}\u{112B0}-\u{112DE}\u{11305}-\u{1130C}\u{1130F}\u{11310}\u{11313}-\u{11328}\u{1132A}-\u{11330}\u{11332}\u{11333}\u{11335}-\u{11339}\u{1133D}\u{11350}\u{1135D}-\u{11361}\u{11400}-\u{11434}\u{11447}-\u{1144A}\u{1145F}-\u{11461}\u{11480}-\u{114AF}\u{114C4}\u{114C5}\u{114C7}\u{11580}-\u{115AE}\u{115D8}-\u{115DB}\u{11600}-\u{1162F}\u{11644}\u{11680}-\u{116AA}\u{116B8}\u{11700}-\u{1171A}\u{11740}-\u{11746}\u{11800}-\u{1182B}\u{118A0}-\u{118DF}\u{118FF}-\u{11906}\u{11909}\u{1190C}-\u{11913}\u{11915}\u{11916}\u{11918}-\u{1192F}\u{1193F}\u{11941}\u{119A0}-\u{119A7}\u{119AA}-\u{119D0}\u{119E1}\u{119E3}\u{11A00}\u{11A0B}-\u{11A32}\u{11A3A}\u{11A50}\u{11A5C}-\u{11A89}\u{11A9D}\u{11AB0}-\u{11AF8}\u{11C00}-\u{11C08}\u{11C0A}-\u{11C2E}\u{11C40}\u{11C72}-\u{11C8F}\u{11D00}-\u{11D06}\u{11D08}\u{11D09}\u{11D0B}-\u{11D30}\u{11D46}\u{11D60}-\u{11D65}\u{11D67}\u{11D68}\u{11D6A}-\u{11D89}\u{11D98}\u{11EE0}-\u{11EF2}\u{11FB0}\u{12000}-\u{12399}\u{12480}-\u{12543}\u{12F90}-\u{12FF0}\u{13000}-\u{1342E}\u{14400}-\u{14646}\u{16800}-\u{16A38}\u{16A40}-\u{16A5E}\u{16A70}-\u{16ABE}\u{16AD0}-\u{16AED}\u{16B00}-\u{16B2F}\u{16B40}-\u{16B43}\u{16B63}-\u{16B77}\u{16B7D}-\u{16B8F}\u{16E40}-\u{16E7F}\u{16F00}-\u{16F4A}\u{16F50}\u{16F93}-\u{16F9F}\u{16FE0}\u{16FE1}\u{16FE3}\u{17000}-\u{187F7}\u{18800}-\u{18CD5}\u{18D00}-\u{18D08}\u{1AFF0}-\u{1AFF3}\u{1AFF5}-\u{1AFFB}\u{1AFFD}\u{1AFFE}\u{1B000}-\u{1B122}\u{1B150}-\u{1B152}\u{1B164}-\u{1B167}\u{1B170}-\u{1B2FB}\u{1BC00}-\u{1BC6A}\u{1BC70}-\u{1BC7C}\u{1BC80}-\u{1BC88}\u{1BC90}-\u{1BC99}\u{1D400}-\u{1D454}\u{1D456}-\u{1D49C}\u{1D49E}\u{1D49F}\u{1D4A2}\u{1D4A5}\u{1D4A6}\u{1D4A9}-\u{1D4AC}\u{1D4AE}-\u{1D4B9}\u{1D4BB}\u{1D4BD}-\u{1D4C3}\u{1D4C5}-\u{1D505}\u{1D507}-\u{1D50A}\u{1D50D}-\u{1D514}\u{1D516}-\u{1D51C}\u{1D51E}-\u{1D539}\u{1D53B}-\u{1D53E}\u{1D540}-\u{1D544}\u{1D546}\u{1D54A}-\u{1D550}\u{1D552}-\u{1D6A5}\u{1D6A8}-\u{1D6C0}\u{1D6C2}-\u{1D6DA}\u{1D6DC}-\u{1D6FA}\u{1D6FC}-\u{1D714}\u{1D716}-\u{1D734}\u{1D736}-\u{1D74E}\u{1D750}-\u{1D76E}\u{1D770}-\u{1D788}\u{1D78A}-\u{1D7A8}\u{1D7AA}-\u{1D7C2}\u{1D7C4}-\u{1D7CB}\u{1DF00}-\u{1DF1E}\u{1E100}-\u{1E12C}\u{1E137}-\u{1E13D}\u{1E14E}\u{1E290}-\u{1E2AD}\u{1E2C0}-\u{1E2EB}\u{1E7E0}-\u{1E7E6}\u{1E7E8}-\u{1E7EB}\u{1E7ED}\u{1E7EE}\u{1E7F0}-\u{1E7FE}\u{1E800}-\u{1E8C4}\u{1E900}-\u{1E943}\u{1E94B}\u{1EE00}-\u{1EE03}\u{1EE05}-\u{1EE1F}\u{1EE21}\u{1EE22}\u{1EE24}\u{1EE27}\u{1EE29}-\u{1EE32}\u{1EE34}-\u{1EE37}\u{1EE39}\u{1EE3B}\u{1EE42}\u{1EE47}\u{1EE49}\u{1EE4B}\u{1EE4D}-\u{1EE4F}\u{1EE51}\u{1EE52}\u{1EE54}\u{1EE57}\u{1EE59}\u{1EE5B}\u{1EE5D}\u{1EE5F}\u{1EE61}\u{1EE62}\u{1EE64}\u{1EE67}-\u{1EE6A}\u{1EE6C}-\u{1EE72}\u{1EE74}-\u{1EE77}\u{1EE79}-\u{1EE7C}\u{1EE7E}\u{1EE80}-\u{1EE89}\u{1EE8B}-\u{1EE9B}\u{1EEA1}-\u{1EEA3}\u{1EEA5}-\u{1EEA9}\u{1EEAB}-\u{1EEBB}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
-                /[\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u3005\u3007\u3021-\u3029\u3038-\u303B\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFA6D\uFA70-\uFAD9\u{16FE2}\u{16FE3}\u{16FF0}\u{16FF1}\u{20000}-\u{2A6DF}\u{2A700}-\u{2B738}\u{2B740}-\u{2B81D}\u{2B820}-\u{2CEA1}\u{2CEB0}-\u{2EBE0}\u{2F800}-\u{2FA1D}\u{30000}-\u{3134A}]/gmu,
-            ]
-                .map((e) => e.source)
-                .join('|'),
-            'gum',
-        );
-    })());
+Tooltip.Decorator = Decorator;
 const DAYS_IN_WEEK = 7,
     HOURS_IN_DAY = 24,
     MS_IN_SECOND = 1e3,
@@ -11920,7 +11929,7 @@ export {
     FormatString as Z,
     filterMap as _,
     useSpecialContextMenu as a,
-    SimpleTooltip as a$,
+    useAdaptive as a$,
     types$3 as a0,
     sizes$h as a1,
     Currency as a2,
@@ -11954,10 +11963,10 @@ export {
     Accordion as aU,
     Area as aV,
     reduce as aW,
-    useKeydownListener as aX,
-    play$1 as aY,
-    keyCodes as aZ,
-    useAdaptive as a_,
+    asMemoized as aX,
+    useKeydownListener as aY,
+    play$1 as aZ,
+    keyCodes as a_,
     useParamTooltip as aa,
     VehicleType as ab,
     VehicleLevel as ac,
@@ -11985,181 +11994,182 @@ export {
     SimpleTooltip$1 as ay,
     Checkbox as az,
     useScrollBounding as b,
-    Waiting as b$,
-    FormatText as b0,
-    BackportTooltip as b1,
-    WithDiscount as b2,
-    get as b3,
-    breakpointsByType as b4,
-    CardSingle as b5,
-    Discount as b6,
-    normalizeResource as b7,
-    sizes$c as b8,
-    addEventListener as b9,
-    HeadlessButton as bA,
-    useHoverState as bB,
-    Slot$1 as bC,
-    MediaWrapperElement as bD,
-    Slottable as bE,
-    Toggle as bF,
-    toggleSizes as bG,
-    toggleThemes as bH,
-    VehicleRole as bI,
-    Input as bJ,
-    placeholderVisibility as bK,
-    sendEvent$1 as bL,
-    useInput as bM,
-    createOptionalDLProvider as bN,
-    useHandleKeyup as bO,
-    useScrollByDragElements as bP,
-    dragDirections as bQ,
-    throttle as bR,
-    insertBefore as bS,
-    UnknownVehicleImage as bT,
-    forceTriggerMouseMove$1 as bU,
-    useDragAndDrop as bV,
-    parseValid as bW,
-    mouseButtons as bX,
-    DragAndDrop as bY,
-    useDebounce as bZ,
-    KeyButton as b_,
-    unsafeGet as ba,
-    useEmitter as bb,
-    mouse as bc,
-    clamp as bd,
-    BackdropTooltip as be,
-    DefaultScroll as bf,
-    useMount as bg,
-    remToPx$1 as bh,
-    discountTypes as bi,
-    VehicleImage as bj,
-    RentalCounter as bk,
-    directions$1 as bl,
-    ErrorHandler as bm,
-    useHandleKeydown as bn,
-    List as bo,
-    ScrollVelocityGuardContent as bp,
-    groupMapBy as bq,
-    mapExists as br,
-    toArray as bs,
-    fromModel as bt,
-    assert as bu,
-    roles as bv,
-    Tooltip$1 as bw,
-    normilizeVehicleType as bx,
-    Sprite as by,
-    writeClipboard as bz,
+    KeyButton as b$,
+    SimpleTooltip as b0,
+    FormatText as b1,
+    BackportTooltip as b2,
+    WithDiscount as b3,
+    get as b4,
+    breakpointsByType as b5,
+    CardSingle as b6,
+    Discount as b7,
+    normalizeResource as b8,
+    sizes$c as b9,
+    writeClipboard as bA,
+    HeadlessButton as bB,
+    useHoverState as bC,
+    Slot$1 as bD,
+    MediaWrapperElement as bE,
+    Slottable as bF,
+    Toggle as bG,
+    toggleSizes as bH,
+    toggleThemes as bI,
+    VehicleRole as bJ,
+    Input as bK,
+    placeholderVisibility as bL,
+    sendEvent$1 as bM,
+    useInput as bN,
+    createOptionalDLProvider as bO,
+    useHandleKeyup as bP,
+    useScrollByDragElements as bQ,
+    dragDirections as bR,
+    throttle as bS,
+    insertBefore as bT,
+    UnknownVehicleImage as bU,
+    forceTriggerMouseMove$1 as bV,
+    useDragAndDrop as bW,
+    parseValid as bX,
+    mouseButtons as bY,
+    DragAndDrop as bZ,
+    useDebounce as b_,
+    addEventListener as ba,
+    unsafeGet as bb,
+    useEmitter as bc,
+    mouse as bd,
+    clamp as be,
+    BackdropTooltip as bf,
+    DefaultScroll as bg,
+    useMount as bh,
+    remToPx$1 as bi,
+    discountTypes as bj,
+    VehicleImage as bk,
+    RentalCounter as bl,
+    directions$1 as bm,
+    ErrorHandler as bn,
+    useHandleKeydown as bo,
+    List as bp,
+    ScrollVelocityGuardContent as bq,
+    groupMapBy as br,
+    mapExists as bs,
+    toArray as bt,
+    fromModel as bu,
+    assert as bv,
+    roles as bw,
+    Tooltip$1 as bx,
+    normilizeVehicleType as by,
+    Sprite as bz,
     computeds as c,
-    Background as c$,
-    Switcher$1 as c0,
-    find as c1,
-    filter$1 as c2,
-    breakpoints as c3,
-    overlayTypes as c4,
-    sizes$5 as c5,
-    useScaleState$1 as c6,
-    useResize as c7,
-    isNonNullable as c8,
-    Slot as c9,
-    mapFilter as cA,
-    ImageSize as cB,
-    capitalize as cC,
-    sizes$3 as cD,
-    formats as cE,
-    Reward as cF,
-    getRewardValueType as cG,
-    getRewardImage as cH,
-    formatPrintf as cI,
-    forEach as cJ,
-    chunks as cK,
-    imageSizes$1 as cL,
-    currencyTypes as cM,
-    sizes$1 as cN,
-    Slider as cO,
-    MultilineOverflow as cP,
-    getRealFormat as cQ,
-    useCardContext as cR,
-    readKey as cS,
-    Card as cT,
-    statusTypes as cU,
-    useCardsWrapperContext as cV,
-    CardsWrapper as cW,
-    Tabs as cX,
-    themes as cY,
-    sizes$2 as cZ,
-    setContentReady as c_,
-    LoadoutItem as ca,
-    get$1 as cb,
-    debounce as cc,
-    useThrottle as cd,
-    useInsideEvent as ce,
-    createSoundPlay as cf,
-    SoundsProvider as cg,
-    getKeyNameFromScanCode as ch,
-    renderString as ci,
-    format$2 as cj,
-    subtract as ck,
-    now as cl,
-    useClickOutside as cm,
-    assignRefs as cn,
-    SceneWrapper as co,
-    isEmptyObject as cp,
-    useSoundsOptional as cq,
-    onRescale as cr,
-    Timer as cs,
-    ExtendedText as ct,
-    calcPercent as cu,
-    delay as cv,
-    ProgressBar as cw,
-    MAX_i32 as cx,
-    DateTimeFormatsEnum as cy,
-    getRegionalDateTime$1 as cz,
+    useCardsWrapperContext as c$,
+    SoundsRClassProvider as c0,
+    concatWithPath as c1,
+    logBySeverity$1 as c2,
+    ImagesRClassProvider as c3,
+    snakeToCamel as c4,
+    Timer as c5,
+    Waiting as c6,
+    Switcher$1 as c7,
+    find as c8,
+    filter$1 as c9,
+    calcPercent as cA,
+    delay as cB,
+    ProgressBar as cC,
+    MAX_i32 as cD,
+    DateTimeFormatsEnum as cE,
+    getRegionalDateTime$1 as cF,
+    mapFilter as cG,
+    ImageSize as cH,
+    capitalize as cI,
+    sizes$6 as cJ,
+    formats as cK,
+    Reward as cL,
+    getRewardValueType as cM,
+    getRewardImage as cN,
+    formatPrintf as cO,
+    forEach as cP,
+    chunks as cQ,
+    imageSizes$1 as cR,
+    currencyTypes as cS,
+    sizes$1 as cT,
+    Slider as cU,
+    MultilineOverflow as cV,
+    getRealFormat as cW,
+    useCardContext as cX,
+    readKey as cY,
+    Card as cZ,
+    statusTypes as c_,
+    breakpoints as ca,
+    overlayTypes as cb,
+    sizes$4 as cc,
+    useScaleState$1 as cd,
+    useResize as ce,
+    isNonNullable as cf,
+    Slot as cg,
+    LoadoutItem as ch,
+    get$1 as ci,
+    debounce as cj,
+    useThrottle as ck,
+    useInsideEvent as cl,
+    createSoundPlay as cm,
+    SoundsProvider as cn,
+    getKeyNameFromScanCode as co,
+    renderString as cp,
+    format$2 as cq,
+    subtract as cr,
+    now as cs,
+    useClickOutside as ct,
+    assignRefs as cu,
+    SceneWrapper as cv,
+    isEmptyObject as cw,
+    useSoundsOptional as cx,
+    onRescale as cy,
+    ExtendedText as cz,
     useHorizontalScroll as d,
-    Switch as d0,
-    Route as d1,
-    createMultipleTargetOverrides as d2,
-    initExternalPaddings$1 as d3,
-    enableFullScreenModeSupported$1 as d4,
-    setSkipFramesAllowed as d5,
-    TankmanSchema as d6,
-    perkStates as d7,
-    Tooltip as d8,
-    getRegionalDateTime as d9,
-    CountdownStyle as dA,
-    Counter as dB,
-    TextButton as dC,
-    Countdown$1 as dD,
-    fromMs as dE,
-    SoundsRClassProvider as dF,
-    concatWithPath as dG,
-    logBySeverity$1 as dH,
-    ImagesRClassProvider as dI,
-    snakeToCamel as dJ,
-    compose as da,
-    toDays as db,
-    days as dc,
-    toHours as dd,
-    hours as de,
-    minutes as df,
-    toSeconds as dg,
-    map as dh,
-    filter as di,
-    greaterThan as dj,
-    convert as dk,
-    sizes$a as dl,
-    DateTime$1 as dm,
-    PrestigeEmblem as dn,
-    sizes as dp,
-    grades as dq,
-    createString as dr,
-    renderResolvedString as ds,
-    LOWER_ALPHABET as dt,
-    NUMBERS_ALPHABET as du,
-    upgradeLegacy as dv,
-    createSimpleGetter as dw,
-    createMockControls as dx,
-    compare as dy,
-    greaterThanOrEqual as dz,
+    CardsWrapper as d0,
+    Tabs as d1,
+    themes as d2,
+    sizes$2 as d3,
+    setContentReady as d4,
+    Background as d5,
+    Switch as d6,
+    Route as d7,
+    createMultipleTargetOverrides as d8,
+    initExternalPaddings$1 as d9,
+    NUMBERS_ALPHABET as dA,
+    upgradeLegacy as dB,
+    createSimpleGetter as dC,
+    createMockControls as dD,
+    compare as dE,
+    greaterThanOrEqual as dF,
+    CountdownStyle as dG,
+    Counter as dH,
+    TextButton as dI,
+    Countdown$1 as dJ,
+    fromMs as dK,
+    enableFullScreenModeSupported$1 as da,
+    setSkipFramesAllowed as db,
+    greaterThan as dc,
+    days as dd,
+    convert as de,
+    sizes$a as df,
+    DateTime$1 as dg,
+    PrestigeEmblem as dh,
+    sizes as di,
+    grades as dj,
+    Tooltip as dk,
+    TankmanSchema as dl,
+    perkStates as dm,
+    getRegionalDateTime as dn,
+    compose as dp,
+    toDays as dq,
+    toHours as dr,
+    hours as ds,
+    minutes as dt,
+    toSeconds as du,
+    map as dv,
+    filter as dw,
+    createString as dx,
+    renderResolvedString as dy,
+    LOWER_ALPHABET as dz,
     usePrevious as e,
     useLayoutReady as f,
     getViewGlobalPosition$1 as g,

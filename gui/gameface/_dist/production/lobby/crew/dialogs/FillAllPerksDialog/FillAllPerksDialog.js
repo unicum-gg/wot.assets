@@ -461,7 +461,7 @@
                     a = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function r(e) {
                     let u = '';
-                    for (let t = a.length - 1; t >= 0; t--) for (; e >= a[t]; ) ((u += n[t]), (e -= a[t]));
+                    for (let t = a.length - 1; t >= 0; t--) for (; e >= a[t];) ((u += n[t]), (e -= a[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -965,9 +965,13 @@
                         if (t.mediumWidth && F) return r(u, t, f);
                         if (t.smallWidth && m) return r(u, t, f);
                         if (t.extraSmallWidth && D) return r(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && C) return u;
                             if (t.largeHeight && g) return u;
                             if (t.mediumHeight && b) return u;
@@ -1344,7 +1348,7 @@
                             t = J(u);
                         let n,
                             a = e;
-                        for (; null !== (n = X.exec(e)); ) {
+                        for (; null !== (n = X.exec(e));) {
                             const e = n[0].match(/<script (defer|defer="defer") src="(.*?)">/);
                             if (e) {
                                 const u = t + e[2].replace(/\.\.\//g, '');
@@ -1451,7 +1455,7 @@
                                             let u;
                                             const t = ee(),
                                                 n = J(t);
-                                            for (; null !== (u = Y.exec(e)); ) {
+                                            for (; null !== (u = Y.exec(e));) {
                                                 const e = u[0].match(/href="(.*?)"/);
                                                 if (e && !e[1].includes(Z) && n) {
                                                     const u = n + e[1].replace(/\.\.\//g, ''),
@@ -1466,7 +1470,7 @@
                                             ((e) => {
                                                 const u = J(ee());
                                                 let t;
-                                                for (; null !== (t = Y.exec(e)); ) {
+                                                for (; null !== (t = Y.exec(e));) {
                                                     const e = t[0].match(/href="(.*?)"/);
                                                     if (e) {
                                                         const t = u + e[1].replace(/\.\.\//g, ''),
@@ -2759,7 +2763,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var e, t = ou(a.keys()); !(e = t()).done; ) r(e.value, u);
+                                                        for (var e, t = ou(a.keys()); !(e = t()).done;) r(e.value, u);
                                                     },
                                                     unsubscribe: r,
                                                 };

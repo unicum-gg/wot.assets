@@ -1,17 +1,17 @@
 import { i as s, D as a, j as e, E as t } from '../../../../chunks/vendor.js';
 import {
     i as r,
-    k as o,
+    o,
     m as l,
-    l as i,
-    a9 as d,
-    j as n,
+    q as i,
+    ac as d,
+    l as n,
     I as c,
-    cE as p,
+    e as p,
     g as m,
-    O as _,
-    de as g,
-    b2 as h,
+    d as _,
+    dj as g,
+    b5 as h,
     r as x,
 } from '../../../../chunks/lib.js';
 import { g as j, a as u, b as w, c as P } from '../../../../chunks/utils.js';
@@ -92,21 +92,21 @@ const [v, N] = r()(({ observableModel: a }) => {
               })
             : null;
     }),
-    k = 'StageProgress_85b21972',
-    z = 'StageProgress_counter_65133461',
-    C = 'StageProgress_progress_14562909',
-    E = 'StageProgress_progress__current_aca13a9',
-    L = 'StageProgress_progress__max_d886571d',
+    z = 'StageProgress_85b21972',
+    C = 'StageProgress_counter_65133461',
+    L = 'StageProgress_progress_14562909',
+    k = 'StageProgress_progress__current_aca13a9',
+    E = 'StageProgress_progress__max_d886571d',
     F = 'StageProgress_pointsIcon_7d1c1785',
     $ = function ({ collected: s, total: a }) {
         return e.jsxs('div', {
-            className: k,
+            className: z,
             children: [
                 e.jsx(p, {
-                    className: z,
+                    className: C,
                     params: {
-                        current: e.jsx('div', { className: t(C, E), children: m(s, 0) }),
-                        max: e.jsx('div', { className: t(C, L), children: m(a, 0) }),
+                        current: e.jsx('div', { className: t(L, k), children: m(s, 0) }),
+                        max: e.jsx('div', { className: t(L, E), children: m(a, 0) }),
                     },
                     text: R.strings.last_stand_tooltips.rewardPath.tooltip.counter.progress(),
                 }),
@@ -114,12 +114,12 @@ const [v, N] = r()(({ observableModel: a }) => {
             ],
         });
     },
-    B = 'RewardPathTooltipApp_73bcae15',
-    D = 'RewardPathTooltipApp_header_9daa76e0',
-    I = 'RewardPathTooltipApp_phase_3d0cf579',
-    O = 'RewardPathTooltipApp_phaseNumber_a708a829',
-    q = 'RewardPathTooltipApp_stageExplanation_754573fb',
-    M = 'RewardPathTooltipApp_stageFinal_638e7650',
+    q = 'RewardPathTooltipApp_73bcae15',
+    B = 'RewardPathTooltipApp_header_9daa76e0',
+    D = 'RewardPathTooltipApp_phase_3d0cf579',
+    I = 'RewardPathTooltipApp_phaseNumber_a708a829',
+    M = 'RewardPathTooltipApp_stageExplanation_754573fb',
+    O = 'RewardPathTooltipApp_stageFinal_638e7650',
     G = 'RewardPathTooltipApp_info_b9234506',
     H = 'RewardPathTooltipApp_booster_7cc9d50e',
     J = 'RewardPathTooltipApp_dots_238d7372',
@@ -131,22 +131,22 @@ const [v, N] = r()(({ observableModel: a }) => {
         return e.jsx(g, {
             'data-name': 'RewardPathTooltip',
             children: e.jsxs(g.Decorator, {
-                className: B,
+                className: q,
                 children: [
-                    e.jsx('div', { className: D, children: R.strings.last_stand_tooltips.rewardPath.tooltip.title() }),
+                    e.jsx('div', { className: B, children: R.strings.last_stand_tooltips.rewardPath.tooltip.title() }),
                     e.jsxs('div', {
-                        className: I,
+                        className: D,
                         children: [
-                            e.jsx('div', { className: O, children: s.currentProgress.get() }),
+                            e.jsx('div', { className: I, children: s.currentProgress.get() }),
                             e.jsx('div', {
-                                className: q,
+                                className: M,
                                 children: a
                                     ? R.strings.last_stand_tooltips.rewardPath.tooltip.finalStage()
                                     : R.strings.last_stand_tooltips.rewardPath.tooltip.stage(),
                             }),
                             a
                                 ? e.jsx('div', {
-                                      className: M,
+                                      className: O,
                                       children: R.strings.last_stand_tooltips.rewardPath.tooltip.counter.final(),
                                   })
                                 : e.jsx($, { collected: s.dataCollected.get(), total: s.dataAmount.get() }),

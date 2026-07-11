@@ -1,7 +1,7 @@
 import { q as e, j as s, f as n } from '../../../../chunks/vendor.js';
 import {
     i as o,
-    v as t,
+    p as t,
     I as a,
     F as i,
     A as r,
@@ -12,7 +12,7 @@ import {
     E as p,
     ay as d,
     C as h,
-    d as x,
+    q as x,
 } from '../../../../chunks/lib.js';
 import { G as j } from '../../../../chunks/gradient_decorator.js';
 import { M as u } from '../../../../chunks/enums.js';
@@ -173,8 +173,8 @@ const R = 'assault',
         });
     }),
     U = 'MissionsCategoryTooltip_c7151f3b',
-    O = 'MissionsCategoryTooltip_footer_e1c7b92d',
-    q = e(function () {
+    q = 'MissionsCategoryTooltip_footer_e1c7b92d',
+    O = e(function () {
         const { model: e } = y();
         return s.jsx(d, {
             className: U,
@@ -191,10 +191,10 @@ const R = 'assault',
                             maxLevel: h(e.maxLevel.get()),
                         },
                         split: !0,
-                        className: O,
+                        className: q,
                     }),
                 ],
             }),
         });
     });
-x(s.jsx(b, { children: s.jsx(q, {}) }));
+x(s.jsx(b, { children: s.jsx(O, {}) }));

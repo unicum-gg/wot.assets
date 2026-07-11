@@ -9,26 +9,26 @@ import {
     w as o,
     t as l,
     i as d,
-    r,
+    r as m,
 } from '../../../chunks/vendor.js';
 import {
-    i as m,
+    i as r,
     m as h,
-    h as b,
-    y as _,
-    p as u,
-    z as x,
-    A as y,
-    D as p,
-    E as j,
-    G as v,
+    u as _,
+    M as b,
+    h as u,
+    y as x,
+    p as y,
+    z as p,
+    A as j,
+    D as v,
     r as N,
     U as f,
 } from '../../../chunks/lib.js';
 import { C as g, B as V } from '../../../chunks/enums.js';
 import { a as B, N as S } from '../../../chunks/constants.js';
 import { g as A } from '../../../chunks/get_vehicle_image.js';
-/* empty css                     */ const [C, w] = m()(
+/* empty css                     */ const [C, w] = r()(
         (s) => {
             const n = {
                     root: s.observableModel.object(),
@@ -45,67 +45,67 @@ import { g as A } from '../../../chunks/get_vehicle_image.js';
                             techName: s,
                             vehicleCD: n,
                         })),
-                    { equals: a.shallow },
+                    { equals: a.identity },
                 );
             return { ...n, computes: { confirmedChoiceVehicles: t } };
         },
         ({ externalModel: e }) => ({ open: e.createCallbackNoArgs('onOpen') }),
     ),
     I = 'Candidates_dbb5d56c',
-    k = 'Candidates_description_7d32bb4d',
-    E = 'Candidates_divider_a8b91d7e',
-    T = 'Candidates_accent_44bd75ba',
-    D = s(() => {
+    k = 'Candidates_description_88b130d5',
+    M = 'Candidates_divider_a8b91d7e',
+    E = 'Candidates_accent_44bd75ba',
+    T = s(() => {
         const { model: e } = w(),
             { candidateState: a } = e.root.get(),
-            s = e.vehicleToBan.get(),
-            t = e.computes.confirmedChoiceVehicles(),
-            i = t.length;
+            { mediaSize: s } = _(),
+            t = e.vehicleToBan.get(),
+            i = e.computes.confirmedChoiceVehicles();
         return n.jsxs('div', {
             className: I,
             children: [
                 n.jsx('div', {
                     className: k,
-                    children:
-                        t &&
-                        (() => {
-                            switch (a) {
-                                case g.NoSelected:
-                                    return R.strings.comp7_ext.banView.factory.noCandidates();
-                                case g.SingleCandidate:
-                                    return n.jsx(b, {
-                                        text: `${R.strings.comp7_ext.banView.factory.candidate()}`,
-                                        binding: { vehicleName: n.jsx('span', { className: T, children: t[0]?.name }) },
-                                    });
-                                case g.DontBanSelected:
-                                    return n.jsx(b, {
-                                        text: `${R.strings.comp7_ext.banView.factory.candidate()}`,
-                                        binding: {
-                                            vehicleName: n.jsx('span', {
-                                                className: T,
-                                                children: R.strings.comp7_ext.banView.noBan(),
-                                            }),
-                                        },
-                                    });
-                                case g.MultipleCandidates:
-                                    return i > 4 ? null : R.strings.comp7_ext.banView.factory.candidates();
-                                default:
-                                    console.error('Unreachable target');
-                            }
-                        })(),
+                    children: (() => {
+                        switch (a) {
+                            case g.NoSelected:
+                                return R.strings.comp7_ext.banView.factory.noCandidates();
+                            case g.SingleCandidate:
+                                return n.jsx(u, {
+                                    text: `${R.strings.comp7_ext.banView.factory.candidate()}`,
+                                    binding: { vehicleName: n.jsx('span', { className: E, children: i[0]?.name }) },
+                                });
+                            case g.DontBanSelected:
+                                return n.jsx(u, {
+                                    text: `${R.strings.comp7_ext.banView.factory.candidate()}`,
+                                    binding: {
+                                        vehicleName: n.jsx('span', {
+                                            className: E,
+                                            children: R.strings.comp7_ext.banView.noBan(),
+                                        }),
+                                    },
+                                });
+                            case g.MultipleCandidates:
+                                return s < b.Medium && i.length > 3
+                                    ? null
+                                    : R.strings.comp7_ext.banView.factory.candidates();
+                            default:
+                                console.error('Unreachable target');
+                        }
+                    })(),
                 }),
-                s.vehicleCD !== B &&
+                t.vehicleCD !== B &&
                     n.jsxs(n.Fragment, {
                         children: [
-                            n.jsx('div', { className: E }),
+                            n.jsx('div', { className: M }),
                             n.jsx('div', {
                                 className: k,
-                                children: n.jsx(b, {
+                                children: n.jsx(u, {
                                     text: `${R.strings.comp7_ext.banView.factory.pick()}`,
                                     binding: {
                                         vehicleName: n.jsx('span', {
-                                            className: T,
-                                            children: s.vehicleCD === S ? R.strings.comp7_ext.banView.noBan() : s.name,
+                                            className: E,
+                                            children: t.vehicleCD === S ? R.strings.comp7_ext.banView.noBan() : t.name,
                                         }),
                                     },
                                 }),
@@ -115,7 +115,7 @@ import { g as A } from '../../../chunks/get_vehicle_image.js';
             ],
         });
     }),
-    M = 'BanResultSection_9868ea69',
+    D = 'BanResultSection_9868ea69',
     $ = 'BanResultSection_part_9154a720',
     X = 'BanResultSection_votesCount_3b77e1d1',
     z = 'BanResultSection_teamType_f208449e',
@@ -123,55 +123,55 @@ import { g as A } from '../../../chunks/get_vehicle_image.js';
     q = 'BanResultSection_banItem_2673f0f5',
     U = 'BanResultSection_icon_e242507c',
     W = 'BanResultSection_vehicle_53692df2',
-    G = 'BanResultSection_dice_a257778e';
-function O({
+    O = 'BanResultSection_dice_a257778e';
+function G({
     votesCount: e = 0,
     teamType: a,
     bannedVehicle: s,
-    randomlySelected: r,
-    onShowVehicleAnimation: m,
+    randomlySelected: m,
+    onShowVehicleAnimation: r,
     onShowIconAnimation: h,
-    classNames: b,
-    hasAnimation: u = !0,
+    classNames: _,
+    hasAnimation: b = !0,
 }) {
-    const x = _({ body: R.strings.comp7_ext.banWidget.tooltip() }),
+    const u = x({ body: R.strings.comp7_ext.banWidget.tooltip() }),
         y = t(),
         p = t(),
         j = i(s.techName, {
             ref: y,
             from: {
-                opacity: u ? 0 : 1,
-                transform: u ? 'translate(-50%, -50%) scale(2)' : 'translate(-50%, -50%) scale(1)',
+                opacity: b ? 0 : 1,
+                transform: b ? 'translate(-50%, -50%) scale(2)' : 'translate(-50%, -50%) scale(1)',
             },
             enter: { opacity: 1, transform: 'translate(-50%, -50%) scale(1)' },
-            delay: u ? 800 : 0,
-            immediate: !u,
+            delay: b ? 800 : 0,
+            immediate: !b,
             config: { duration: 500 },
             onStart: () => {
-                u && m();
+                b && r();
             },
         }),
         v = c({
             ref: p,
-            from: { opacity: u ? 0 : 0.9, zIndex: 2 },
+            from: { opacity: b ? 0 : 0.9, zIndex: 2 },
             to: { opacity: 0.9 },
-            delay: u ? 1300 : 0,
-            immediate: !u,
+            delay: b ? 1300 : 0,
+            immediate: !b,
             config: { duration: 500 },
             onStart: () => {
-                u && h();
+                b && h();
             },
         });
     return (
-        o([y, p], u ? [0, 0.5] : [0, 0]),
+        o([y, p], b ? [0, 0.5] : [0, 0]),
         n.jsxs('div', {
-            className: l(M, b?.base),
+            className: l(D, _?.base),
             children: [
-                r && n.jsx('div', { className: G, ...x }),
-                e >= 0 && n.jsx('div', { className: l($, X, b?.votesCount), children: e }),
-                n.jsx('div', { className: l($, z, b?.teamType), children: `${R.strings.comp7_ext.banWidget.$dyn(a)}` }),
+                m && n.jsx('div', { className: O, ...u }),
+                e >= 0 && n.jsx('div', { className: l($, X, _?.votesCount), children: e }),
+                n.jsx('div', { className: l($, z, _?.teamType), children: `${R.strings.comp7_ext.banWidget.$dyn(a)}` }),
                 n.jsx('div', {
-                    className: l($, F, b?.name),
+                    className: l($, F, _?.name),
                     children: s.name ? s.name : R.strings.comp7_ext.banView.noBan(),
                 }),
                 n.jsxs('div', {
@@ -202,34 +202,34 @@ const H = 'allies',
         isEnemyRandomlySelected: t,
         bannedByAlliesVehicle: i,
         bannedByEnemiesVehicle: o,
-        hasAnimation: m = !0,
+        hasAnimation: r = !0,
         className: h,
-        classNames: b,
+        classNames: _,
     }) => {
-        const _ = r.useRef(!1),
-            y = r.useRef(!1),
-            p = c({
-                from: { transform: m ? 'translateX(100%)' : 'translateX(0%)' },
+        const b = m.useRef(!1),
+            u = m.useRef(!1),
+            x = c({
+                from: { transform: r ? 'translateX(100%)' : 'translateX(0%)' },
                 to: { transform: 'translateX(0%)' },
-                immediate: !m,
+                immediate: !r,
                 config: { duration: 500 },
             }),
             j = c({
-                from: { transform: m ? 'translateX(-100%)' : 'translateX(0%)' },
+                from: { transform: r ? 'translateX(-100%)' : 'translateX(0%)' },
                 to: { transform: 'translateX(0%)' },
-                immediate: !m,
+                immediate: !r,
                 config: { duration: 500 },
             }),
-            v = c({ from: { opacity: m ? 0 : 0.3 }, to: { opacity: 0.3 }, immediate: !m, config: { duration: 500 } }),
-            N = r.useCallback(() => {
-                _.current || ((_.current = !0), u.sound('comp_7_bans_pict_animation'));
+            v = c({ from: { opacity: r ? 0 : 0.3 }, to: { opacity: 0.3 }, immediate: !r, config: { duration: 500 } }),
+            N = m.useCallback(() => {
+                b.current || ((b.current = !0), y.sound('comp_7_bans_pict_animation'));
             }, []),
-            f = r.useCallback(() => {
-                y.current || ((y.current = !0), u.sound('comp_7_bans_crossed_label'));
+            f = m.useCallback(() => {
+                u.current || ((u.current = !0), y.sound('comp_7_bans_crossed_label'));
             }, []);
         return (
-            x(() => {
-                m && u.sound('comp_7_bans_text_animation');
+            p(() => {
+                r && y.sound('comp_7_bans_text_animation');
             }),
             n.jsxs('div', {
                 className: l(K, h),
@@ -237,30 +237,30 @@ const H = 'allies',
                     n.jsx(d.div, {
                         style: j,
                         className: l(L, P),
-                        children: n.jsx(O, {
+                        children: n.jsx(G, {
                             votesCount: e,
                             teamType: H,
                             bannedVehicle: i,
                             randomlySelected: s,
                             onShowIconAnimation: f,
                             onShowVehicleAnimation: N,
-                            classNames: b?.section,
-                            hasAnimation: m,
+                            classNames: _?.section,
+                            hasAnimation: r,
                         }),
                     }),
                     n.jsx(d.div, { className: Y, style: v }),
                     n.jsx(d.div, {
-                        style: p,
+                        style: x,
                         className: l(L, Q),
-                        children: n.jsx(O, {
+                        children: n.jsx(G, {
                             votesCount: a,
                             teamType: J,
                             bannedVehicle: o,
                             randomlySelected: t,
                             onShowIconAnimation: f,
                             onShowVehicleAnimation: N,
-                            classNames: { ...b?.section, base: l(Z, b?.section?.base) },
-                            hasAnimation: m,
+                            classNames: { ..._?.section, base: l(Z, _?.section?.base) },
+                            hasAnimation: r,
                         }),
                     }),
                 ],
@@ -311,40 +311,34 @@ const H = 'allies',
                       ),
         });
     }),
-    le = { base: 'App_668adc51', line: 'App_line_930c9a60', arrow: 'App_arrow_8d16489d' },
-    de = s(() => {
+    le = 'App_c03b594d',
+    de = 'App_line_930c9a60',
+    me = 'App_arrow_358619e4',
+    re = 'App_button_f521aafc',
+    he = s(() => {
         const { model: e, controls: a } = w(),
-            { banState: s } = e.root.get(),
-            t = y(),
-            i = s === V.None;
-        return (
-            x(() => {
-                t.run(() => {
-                    p({ top: 0, right: 50, bottom: 0, left: 80 });
-                });
-            }),
-            n.jsx('div', {
-                className: le.base,
-                children:
-                    s === V.Finished
-                        ? n.jsx(ae, {})
-                        : n.jsxs(n.Fragment, {
-                              children: [
-                                  n.jsx(oe, {}),
-                                  n.jsx(D, {}),
-                                  n.jsx('div', { className: le.line, children: n.jsx('div', { className: le.arrow }) }),
-                                  n.jsx('div', {
-                                      className: le.button,
-                                      children: n.jsx(j, {
-                                          size: v.medium,
-                                          onClick: a.open,
-                                          disabled: i,
-                                          children: R.strings.comp7_ext.banView.button.ban(),
-                                      }),
+            { banState: s } = e.root.get();
+        return n.jsx('div', {
+            className: le,
+            children:
+                s === V.Finished
+                    ? n.jsx(ae, {})
+                    : n.jsxs(n.Fragment, {
+                          children: [
+                              n.jsx(oe, {}),
+                              n.jsx(T, {}),
+                              n.jsx('div', { className: de, children: n.jsx('div', { className: me }) }),
+                              n.jsx('div', {
+                                  className: re,
+                                  children: n.jsx(j, {
+                                      size: v.medium,
+                                      onClick: a.open,
+                                      disabled: s === V.None,
+                                      children: R.strings.comp7_ext.banView.button.ban(),
                                   }),
-                              ],
-                          }),
-            })
-        );
+                              }),
+                          ],
+                      }),
+        });
     });
-N(n.jsx(f, { children: n.jsx(C, { children: n.jsx(de, {}) }) }));
+N(n.jsx(f, { children: n.jsx(C, { children: n.jsx(he, {}) }) }));

@@ -7,5 +7,6 @@
   </common>
   <subMode>
     <hasBattleQueueWarning>	True	</hasBattleQueueWarning>
+    <showInfoPageOnFirstVisit>	False	</showInfoPageOnFirstVisit>
   </subMode>
 </fun_sub_mode_regular.xml>

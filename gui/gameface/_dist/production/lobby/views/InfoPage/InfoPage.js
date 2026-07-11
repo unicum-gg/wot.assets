@@ -398,7 +398,7 @@
                     i = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function n(e) {
                     let u = '';
-                    for (let t = i.length - 1; t >= 0; t--) for (; e >= i[t]; ) ((u += a[t]), (e -= i[t]));
+                    for (let t = i.length - 1; t >= 0; t--) for (; e >= i[t];) ((u += a[t]), (e -= i[t]));
                     return u;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -2338,7 +2338,7 @@
                         let s = Ge.exec(e),
                             o = e,
                             l = 0;
-                        for (; s; ) {
+                        for (; s;) {
                             const t = s[0],
                                 n = He.exec(t),
                                 c = Ve.exec(t),

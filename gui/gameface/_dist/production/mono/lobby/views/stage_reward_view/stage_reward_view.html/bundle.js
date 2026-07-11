@@ -1,27 +1,27 @@
 import { i as e, D as s, j as a, E as r, r as t } from '../../../chunks/vendor.js';
 import {
     i,
-    k as d,
-    dc as l,
+    o as d,
+    dh as l,
     b as c,
     I as n,
-    b7 as o,
+    ba as o,
     m,
     p,
-    j as u,
-    Q as g,
-    D as y,
-    W as _,
+    l as u,
+    Y as g,
+    K as y,
+    Z as _,
     B as h,
-    aM as w,
+    aQ as w,
     C as b,
     r as j,
-    cz as x,
+    cC as x,
 } from '../../../chunks/lib.js';
 import { E as f, S as N } from '../../../chunks/spring_wrapper.js';
 import { S as v } from '../../../chunks/sound.js';
 import { g as T, a as L, b as E, c as S } from '../../../chunks/utils.js';
-const [z, A] = i()(
+const [A, C] = i()(
     ({ observableModel: s }) => {
         const a = {
                 ...s.primitives(['artefactNumber', 'isLastArtefact', 'isQuestReward']),
@@ -35,7 +35,7 @@ const [z, A] = i()(
     },
     ({ externalModel: e }) => ({ close: e.createCallbackNoArgs('onClose') }),
 );
-var C = ((e) => (
+var z = ((e) => (
     (e.RIBBON = 'ribbon'),
     (e.SUBTITLE = 'subtitle'),
     (e.TITLE = 'title'),
@@ -43,7 +43,7 @@ var C = ((e) => (
     (e.REWARD = 'reward'),
     (e.OTHER = 'other'),
     e
-))(C || {});
+))(z || {});
 const B = 300,
     O = {
         ribbon: { from: { y: 20 }, to: { y: 0 }, delay: B, duration: B, easingType: f.EaseOut },
@@ -65,57 +65,57 @@ const B = 300,
         },
         other: { from: { y: 20, opacity: 0 }, to: { y: 0, opacity: 1 }, delay: 0, duration: B, easingType: f.EaseOut },
     },
-    k = 'RewardList_2f0b5808',
-    I = 'RewardList_ribbon_df2eb79d',
+    I = 'RewardList_2f0b5808',
+    k = 'RewardList_ribbon_df2eb79d',
     $ = 'RewardList_rewards_12849047',
-    D = 'RewardList_ribbonImage_5f4554d1',
-    Q = 'RewardList_ribbonImage__gold_7c6e7caa',
-    U = 'RewardList_highlight_9ef1e53a',
-    M = 'RewardList_shine_17629f60',
-    W = 'RewardList_radial_73b144ff',
-    q = 'RewardList_reward_7bab5c66',
-    H = 'RewardList_rewardValue_e037495',
+    Q = 'RewardList_ribbonImage_5f4554d1',
+    U = 'RewardList_ribbonImage__gold_7c6e7caa',
+    D = 'RewardList_highlight_9ef1e53a',
+    q = 'RewardList_shine_17629f60',
+    H = 'RewardList_radial_73b144ff',
+    M = 'RewardList_reward_7bab5c66',
+    W = 'RewardList_rewardValue_e037495',
     F = 'RewardList_other_aaca6476',
-    P = 'RewardList_otherContent_1c49f8e0',
-    V = 'RewardList_divider_7285fc8',
-    G = O[C.RIBBON].delay + 150,
-    J = () => p.sound(v),
-    K = s(function ({ isAnimationCanceled: e }) {
-        const { model: s } = A(),
+    K = 'RewardList_otherContent_1c49f8e0',
+    P = 'RewardList_divider_7285fc8',
+    V = O[z.RIBBON].delay + 150,
+    Y = () => p.sound(v),
+    Z = s(function ({ isAnimationCanceled: e }) {
+        const { model: s } = C(),
             t = c({ size: n.S296x222 }, { large: { size: n.S400x300 } }),
             i = s.computes.isSpecialReward();
         return a.jsxs('div', {
-            className: k,
+            className: I,
             children: [
                 i &&
                     a.jsxs('div', {
-                        className: U,
+                        className: D,
                         children: [
-                            a.jsx(o, { className: r(M), src: R.videos.last_stand.rays(), autoplay: !0, loop: !0 }),
-                            a.jsx('div', { className: W }),
+                            a.jsx(o, { className: r(q), src: R.videos.last_stand.rays(), autoplay: !0, loop: !0 }),
+                            a.jsx('div', { className: H }),
                         ],
                     }),
                 a.jsxs(N, {
-                    className: I,
-                    ...O[C.RIBBON],
+                    className: k,
+                    ...O[z.RIBBON],
                     isCanceled: e,
                     children: [
-                        a.jsx('div', { className: r(D, i && Q) }),
+                        a.jsx('div', { className: r(Q, i && U) }),
                         a.jsx('div', {
                             className: $,
                             children: m(s.computes.mainRewards(), (s, r) =>
                                 a.jsx(
                                     N,
                                     {
-                                        className: q,
-                                        ...O[C.REWARD],
-                                        delay: G + 150 * r,
+                                        className: M,
+                                        ...O[z.REWARD],
+                                        delay: V + 150 * r,
                                         isCanceled: e,
-                                        onStart: J,
+                                        onStart: Y,
                                         children: a.jsx(u, {
                                             name: s.name,
                                             value: S(s),
-                                            classNames: { info: H },
+                                            classNames: { info: W },
                                             size: t.size,
                                             special: s.overlayType,
                                             image: E(s, t.size),
@@ -131,9 +131,9 @@ const B = 300,
                             a.jsx('div', {
                                 className: F,
                                 children: a.jsxs(N, {
-                                    className: P,
-                                    ...O[C.OTHER],
-                                    delay: G + 600,
+                                    className: K,
+                                    ...O[z.OTHER],
+                                    delay: V + 600,
                                     isCanceled: e,
                                     children: [
                                         a.jsx('div', {
@@ -145,8 +145,8 @@ const B = 300,
                                                 a.jsx(
                                                     u,
                                                     {
-                                                        className: q,
-                                                        classNames: { info: H },
+                                                        className: M,
+                                                        classNames: { info: W },
                                                         name: e.name,
                                                         value: S(e),
                                                         size: n.Big,
@@ -159,7 +159,7 @@ const B = 300,
                                                 ),
                                             ),
                                         }),
-                                        a.jsx('div', { className: V }),
+                                        a.jsx('div', { className: P }),
                                     ],
                                 }),
                             }),
@@ -168,15 +168,15 @@ const B = 300,
             ],
         });
     }),
-    X = 'StageRewardApp_596c72ca',
-    Y = 'StageRewardApp_background_3213d284',
-    Z = 'StageRewardApp_subTitle_1cc7ba74',
+    G = 'StageRewardApp_596c72ca',
+    J = 'StageRewardApp_background_3213d284',
+    X = 'StageRewardApp_subTitle_1cc7ba74',
     ee = 'StageRewardApp_title_b85fb500',
     se = 'StageRewardApp_continueButton_11a86d0e',
     ae = 'StageRewardApp_closeBtn_ee72ce32',
     re = s(function () {
         const [e, s] = t.useState(!1),
-            { model: r, controls: i } = A();
+            { model: r, controls: i } = C();
         (g(i.close), y(_.ENTER, i.close), y(_.SPACE, i.close));
         const d = c(
                 { size: h.sizes.extraSmall },
@@ -189,29 +189,29 @@ const B = 300,
             l = ((n = r.isLastArtefact.get()), r.isQuestReward.get() ? 'special' : n ? 'stageFinal' : 'stage');
         var n;
         return a.jsxs('div', {
-            className: X,
+            className: G,
             onClick: () => s(!0),
             children: [
-                a.jsx('div', { className: Y }),
+                a.jsx('div', { className: J }),
                 a.jsx(N, {
-                    ...O[C.SUBTITLE],
+                    ...O[z.SUBTITLE],
                     isCanceled: e,
                     children: a.jsx(w, {
                         path: `R.strings.last_stand_lobby.stageReward.${l}.subheader`,
-                        className: Z,
+                        className: X,
                         params: { number: r.artefactNumber.get() },
                     }),
                 }),
                 a.jsx(N, {
-                    ...O[C.TITLE],
+                    ...O[z.TITLE],
                     isCanceled: e,
                     children: a.jsx(w, { className: ee, path: `R.strings.last_stand_lobby.stageReward.${l}.header` }),
                 }),
-                a.jsx(K, { isAnimationCanceled: e }),
+                a.jsx(Z, { isAnimationCanceled: e }),
                 a.jsx('div', {
                     className: se,
                     children: a.jsx(N, {
-                        ...O[C.BUTTON],
+                        ...O[z.BUTTON],
                         isCanceled: e,
                         children: a.jsx(h, {
                             size: d.size,
@@ -225,4 +225,4 @@ const B = 300,
             ],
         });
     });
-j(a.jsx(z, { children: a.jsx(x, { children: a.jsx(re, {}) }) }));
+j(a.jsx(A, { children: a.jsx(x, { children: a.jsx(re, {}) }) }));

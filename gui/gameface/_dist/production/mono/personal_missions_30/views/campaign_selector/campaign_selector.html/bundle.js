@@ -1,34 +1,34 @@
-import { r as e, q as a, l as t, j as o, f as i, m as s, s as n, n as r } from '../../../chunks/vendor.js';
+import { r as e, q as a, l as t, j as o, f as i, m as s, n, s as r } from '../../../chunks/vendor.js';
 import {
     c,
     i as l,
-    f as p,
-    g as d,
-    h as _,
+    a as p,
+    r as d,
+    g as _,
     u as m,
     e as g,
-    r as f,
+    b as f,
     V as h,
-    j as u,
+    d as u,
     I as b,
-    l as C,
-    m as S,
-    n as v,
-    b as x,
+    f as C,
+    h as S,
+    j as v,
+    k as x,
     F as O,
     B as y,
     t as I,
-    a as N,
-    k as w,
-    p as E,
-    q as j,
-    v as T,
-    d as k,
+    l as N,
+    m as w,
+    n as E,
+    o as j,
+    p as T,
+    q as k,
     U as L,
 } from '../../../chunks/lib.js';
 import { O as A, P as H } from '../../../chunks/enums.js';
-/* empty css                    */ const W = 'operationId',
-    R = 'campaignsState';
+/* empty css                    */ const R = 'operationId',
+    W = 'campaignsState';
 var $ = ((e) => (
     (e.FIRST_TWO = 'firstTwo'),
     (e.THIRD = 'third'),
@@ -98,8 +98,8 @@ const F = { lightsOn: c('pm_lobby_lights_on') },
         ({ externalModel: e }) => ({
             openInfoScreen: e.createCallbackNoArgs('onMoreInfo'),
             close: e.createCallbackNoArgs('onClose'),
-            openOperation: e.createCallback((e) => ({ [W]: e }), 'onOperation'),
-            switchCampaign: e.createCallback((e) => ({ [R]: e }), 'switchCampaign'),
+            openOperation: e.createCallback((e) => ({ [R]: e }), 'onOperation'),
+            switchCampaign: e.createCallback((e) => ({ [W]: e }), 'switchCampaign'),
         }),
     ),
     Y = [
@@ -141,94 +141,97 @@ const F = { lightsOn: c('pm_lobby_lights_on') },
         const { model: i, controls: s } = U(),
             n = i.computes.disabledCampaign(),
             r = i.campaignSelectorViewState.get(),
-            [c, l] = e.useState('idle'),
-            p = m(),
-            d = 'fadeIn' !== c && 'idle' !== c,
-            _ = r === $.LOCKED || r === $.COMPLETED_WITH_HONOR;
-        function f(e) {
-            l(e);
+            c = e.useRef(!1),
+            [l, p] = e.useState('idle'),
+            d = m(),
+            _ = 'fadeIn' !== l && 'idle' !== l,
+            f = r === $.LOCKED || r === $.COMPLETED_WITH_HONOR;
+        function h(e) {
+            p(e);
         }
-        function h() {
-            (N.stop(), y.stop(), x.stop());
+        function u() {
+            (w.stop(), I.stop(), O.stop());
         }
-        const [u, b] = t(() => ({
+        const [b, C] = t(() => ({
                 from: { opacity: 0, transform: 'scale(1)' },
                 config: { duration: 300, easing: g.easeInCirc },
             })),
-            [C, S] = t(() => ({
+            [S, v] = t(() => ({
                 from: { opacity: 0, transform: 'translateY(0rem)', pointerEvents: 'none' },
                 config: { duration: 300, easing: g.easeInOutCirc },
             })),
-            [v, x] = t(() => ({ from: { opacity: _ ? 0 : 1 } })),
-            [O, y] = t(() => ({ from: { opacity: _ ? 1 : 0 } })),
-            [I, N] = t(() => ({ from: { opacity: 0 } })),
-            [w, E] = t(() => ({ from: { opacity: 0 }, config: { duration: 300 } }));
+            [x, O] = t(() => ({ from: { opacity: f ? 0 : 1 } })),
+            [y, I] = t(() => ({ from: { opacity: f ? 1 : 0 } })),
+            [N, w] = t(() => ({ from: { opacity: 0 } })),
+            [E, j] = t(() => ({ from: { opacity: 0 }, config: { duration: 300 } }));
         return (
             e.useEffect(() => {
-                b.start({ to: { opacity: 1 }, onRest: () => f('fadeIn') });
-            }, [b]),
+                C.start({ to: { opacity: 1 }, onRest: () => h('fadeIn') });
+            }, [C]),
             e.useEffect(() => {
-                switch (c) {
+                switch (l) {
                     case 'fadeOut':
-                        (S.start({ to: { opacity: 0, transform: 'translateY(20rem)', pointerEvents: 'none' } }),
-                            x.start({ to: { opacity: 1 }, config: { duration: 100, easing: g.easeInOutCirc } }),
-                            y.start({ to: { opacity: 0 }, config: { duration: 100, easing: g.easeInOutCirc } }),
-                            N.start({ to: { opacity: 0 }, config: { duration: 100, easing: g.easeInOutCirc } }),
-                            E.start({ to: { opacity: 1 }, onRest: () => f('startLoading') }));
+                        (v.start({ to: { opacity: 0, transform: 'translateY(20rem)', pointerEvents: 'none' } }),
+                            O.start({ to: { opacity: 1 }, config: { duration: 100, easing: g.easeInOutCirc } }),
+                            I.start({ to: { opacity: 0 }, config: { duration: 100, easing: g.easeInOutCirc } }),
+                            w.start({ to: { opacity: 0 }, config: { duration: 100, easing: g.easeInOutCirc } }),
+                            j.start({ to: { opacity: 1 }, onRest: () => h('startLoading') }));
                         break;
                     case 'startLoading':
-                        (f('endLoading'), s.switchCampaign(n));
+                        (h('endLoading'), s.switchCampaign(n));
                         break;
                     case 'endLoading':
-                        E.start({ to: { opacity: 0 }, onRest: () => f('fadeIn'), config: { duration: 300 } });
+                        j.start({ to: { opacity: 0 }, onRest: () => h('fadeIn'), config: { duration: 300 } });
                         break;
                     case 'fadeIn':
-                        if (_)
-                            return void S.start({
+                        if (f)
+                            return void v.start({
                                 from: { opacity: 0, transform: 'translateY(20rem)' },
                                 to: { opacity: 1, transform: 'translateY(0rem)', pointerEvents: 'auto' },
-                                onRest: () => f('idle'),
+                                onRest: () => h('idle'),
                             });
-                        (S.start({
+                        (v.start({
                             from: { opacity: 0, transform: 'translateY(20rem)' },
                             to: { opacity: 1, transform: 'translateY(0rem)', pointerEvents: 'auto' },
                         }),
-                            x.start({ from: { opacity: 1 }, to: q, config: { easing: g.easeInOutCirc } }),
-                            p.play('lightsOn'),
-                            y.start({
+                            O.start({ from: { opacity: 1 }, to: q, config: { easing: g.easeInOutCirc } }),
+                            d.play('lightsOn'),
+                            I.start({
                                 from: { opacity: 0 },
                                 to: Y,
                                 config: { easing: g.easeInOutCirc },
                                 onRest() {
-                                    (f('idle'),
-                                        N.start({
+                                    (h('idle'),
+                                        w.start({
                                             to: { opacity: 1 },
                                             config: { duration: 2e3, easing: g.easeInCirc },
                                         }));
                                 },
                             }));
                 }
-            }, [y, x, n, b, S, E, _, N, s, p, c]),
+            }, [I, O, n, C, v, j, f, w, s, d, l]),
             o.jsx(G.Provider, {
                 value: {
-                    currentStep: c,
-                    bugsStyle: I,
-                    backgroundStyle: O,
-                    boardItemStyle: v,
-                    contentStyle: u,
-                    footerStyle: C,
-                    UIBlocked: d,
+                    currentStep: l,
+                    bugsStyle: N,
+                    backgroundStyle: y,
+                    boardItemStyle: x,
+                    contentStyle: b,
+                    footerStyle: S,
+                    UIBlocked: _,
+                    closeRef: c,
                     getAnimationShade: function (e) {
-                        return 'idle' !== c && 'fadeIn' !== c && 'openOperation' !== c ? 'dark' : e;
+                        return 'idle' !== l && 'fadeIn' !== l && 'openOperation' !== l ? 'dark' : e;
                     },
-                    updateStep: f,
+                    updateStep: h,
                     startAnimation: function () {
-                        (h(), l('fadeOut'));
+                        (u(), p('fadeOut'));
                     },
                     openOperation: function (e) {
-                        (h(),
-                            l('openOperation'),
-                            b.start({
+                        ((c.current = !0),
+                            u(),
+                            p('openOperation'),
+                            C.start({
                                 to: { transform: 'scale(1.1)', opacity: 0 },
                                 config: { duration: 300, easing: g.easeInOutCirc },
                                 onRest: () => e(),
@@ -493,8 +496,8 @@ const fe = {
             { boardItemStyle: w, currentStep: E, getAnimationShade: j, openOperation: T } = Z(),
             k = j(a),
             L = D[g],
-            W = c === _,
-            R = W ? he : ue,
+            R = c === _,
+            W = R ? he : ue,
             $ = g === A.COMPLETED_WITH_HONORS ? A.COMPLETED_WITH_HONORS : A.COMPLETED,
             V = g === A.LOCKED,
             M = S(
@@ -515,7 +518,7 @@ const fe = {
             ),
             [B, F] = t(() => ({
                 from: { transform: 'translate(10%, -220%) rotate(30deg)' },
-                config: { duration: 1e3, easing: n.easeOutCirc },
+                config: { duration: 1e3, easing: r.easeOutCirc },
                 loop: !1,
                 onRest: () => O((e) => e + 1),
             }));
@@ -527,10 +530,10 @@ const fe = {
                 if ('fadeOut' === E) F.stop();
             }, [F, E]),
             o.jsxs('div', {
-                className: r(fe.base, fe[`base__${i}`], fe[`base__${a}`], W && fe.base__active, l),
+                className: n(fe.base, fe[`base__${i}`], fe[`base__${a}`], R && fe.base__active, l),
                 children: [
                     o.jsx('div', {
-                        className: r(fe.hoverArea, !V && fe.hoverArea__available),
+                        className: n(fe.hoverArea, !V && fe.hoverArea__available),
                         ...(V ? P : M),
                         onClick: function () {
                             V ? P.onClick() : (u.play('yes1'), M.onClick(), T(() => I.openOperation(_)));
@@ -541,14 +544,14 @@ const fe = {
                     }),
                     o.jsx('div', { className: fe.glowHover }),
                     o.jsx(b, {
-                        path: `personal_missions_30.campaign_selector.card.${i}.${W ? 'active' : L}.${d}_light`,
+                        path: `personal_missions_30.campaign_selector.card.${i}.${R ? 'active' : L}.${d}_light`,
                         className: fe.background,
                     }),
                     o.jsx(s.div, {
                         style: 'light' === k ? w : void 0,
                         children: o.jsx(b, {
-                            path: `personal_missions_30.campaign_selector.card.${i}.${W ? 'active' : L}.${d}_dark`,
-                            className: r(fe.background, fe.background__dark),
+                            path: `personal_missions_30.campaign_selector.card.${i}.${R ? 'active' : L}.${d}_dark`,
+                            className: n(fe.background, fe.background__dark),
                         }),
                     }),
                     o.jsxs('div', {
@@ -572,14 +575,14 @@ const fe = {
                           ? o.jsxs(o.Fragment, {
                                 children: [
                                     o.jsx(b, {
-                                        path: `personal_missions_30.campaign_selector.card.${i}.badge.${$}_light_${R}_${_}`,
+                                        path: `personal_missions_30.campaign_selector.card.${i}.badge.${$}_light_${W}_${_}`,
                                         className: fe.badge,
                                     }),
                                     o.jsx(s.div, {
-                                        className: r(fe.badge, fe.badge__dark),
+                                        className: n(fe.badge, fe.badge__dark),
                                         style: 'light' === k ? w : void 0,
                                         children: o.jsx(b, {
-                                            path: `personal_missions_30.campaign_selector.card.${i}.badge.${$}_dark_${R}_${_}`,
+                                            path: `personal_missions_30.campaign_selector.card.${i}.badge.${$}_dark_${W}_${_}`,
                                             width: '100%',
                                             height: '100%',
                                         }),
@@ -768,18 +771,18 @@ function He({ className: e }) {
         ],
     });
 }
-const We = 'Congratulations_d8cbc768',
-    Re = 'Congratulations_status_c5e8d951',
+const Re = 'Congratulations_d8cbc768',
+    We = 'Congratulations_status_c5e8d951',
     $e = a(function ({ className: e }) {
         const { model: a } = U(),
             { first: t, second: s, third: n } = a.computes.campaignsInfo(),
             r = a.computes.completedCampaign();
         return o.jsxs('div', {
-            className: i(We, e),
+            className: i(Re, e),
             children: [
                 o.jsx(b, { path: 'personal_missions_30.campaign_selector.done', width: '80rem', height: '80rem' }),
                 o.jsx(O, {
-                    className: Re,
+                    className: We,
                     path: `personal_missions_30.campaignSelector.status.completed.${r}`,
                     params: {
                         firstCampaign: t.campaignName,
@@ -802,7 +805,7 @@ const Ye = { content: 'Control_buttonContent_8e527c3' },
     qe = { switchCampaign: 'switchCampaign', switchCampaigns: 'switchCampaigns', activate: 'activate' },
     Ge = a(function () {
         const a = f.resolve('views'),
-            r = f.resolve('strings'),
+            n = f.resolve('strings'),
             { model: c, controls: l } = U(),
             p = c.blockedByVehicle.get(),
             d = c.firstTimeEntrance.get(),
@@ -820,29 +823,29 @@ const Ye = { content: 'Control_buttonContent_8e527c3' },
                 H.CUSTOM_SIMPLE,
                 e.useMemo(
                     () => ({
-                        body: r.readOrEmpty('personal_missions_30.campaignSelector.status.button.tooltip'),
+                        body: n.readOrEmpty('personal_missions_30.campaignSelector.status.button.tooltip'),
                         resId: a.read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
                     }),
-                    [r, a],
+                    [n, a],
                 ),
             ),
             k = v(
                 H.CUSTOM_SIMPLE,
                 e.useMemo(
                     () => ({
-                        header: r.readOrEmpty('personal_missions_30.campaignSelector.status.tooltip.title'),
-                        body: r.readOrEmpty(`personal_missions_30.campaignSelector.status.tooltip.${S}`),
+                        header: n.readOrEmpty('personal_missions_30.campaignSelector.status.tooltip.title'),
+                        body: n.readOrEmpty(`personal_missions_30.campaignSelector.status.tooltip.${S}`),
                         resId: a.read((e) => e.mono.personal_missions_30.tooltips.param_tooltip('resId')),
                     }),
-                    [S, r, a],
+                    [S, n, a],
                 ),
             ),
-            [L, W] = t(() => ({
+            [L, R] = t(() => ({
                 from: { transform: 'translate(10%, -220%) rotate(30deg)' },
                 to: { transform: 'translate(-60%, 30%) rotate(30deg)' },
                 loop: !0,
                 delay: 5e3,
-                config: { duration: 1e3, easing: n.easeOutCirc },
+                config: { duration: 1e3, easing: r.easeOutCirc },
             }));
         return o.jsxs('div', {
             className: i(De, d && Me, w && Pe),
@@ -875,7 +878,7 @@ const Ye = { content: 'Control_buttonContent_8e527c3' },
                             onClick: function () {
                                 p || (d ? j(() => l.switchCampaign(S)) : E());
                             },
-                            children: r.readOrEmpty(`personal_missions_30.campaignSelector.status.button.${N}`),
+                            children: n.readOrEmpty(`personal_missions_30.campaignSelector.status.button.${N}`),
                         }),
                         p &&
                             o.jsx(b, {
@@ -968,9 +971,12 @@ const Ze = a(function ({ className: e }) {
         const e = f.resolve('videos'),
             { model: a, controls: t } = U(),
             n = a.campaignSelectorViewState.get(),
-            { contentStyle: r, UIBlocked: c } = Z();
+            { contentStyle: r, UIBlocked: c, closeRef: l } = Z();
         return (
-            N(w.ESCAPE, t.close),
+            N(w.ESCAPE, function () {
+                if (l.current) return;
+                t.close();
+            }),
             o.jsx('div', {
                 className: i(Xe.base, Xe[`base__${n}`], c && Xe.base__blocked),
                 children: o.jsxs(s.div, {

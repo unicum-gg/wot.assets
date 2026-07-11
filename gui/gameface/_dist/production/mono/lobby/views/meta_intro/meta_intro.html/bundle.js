@@ -1,22 +1,22 @@
 import { j as e, R as a, r as s } from '../../../chunks/vendor.js';
 import {
     u as t,
-    aS as o,
+    X as o,
     m as i,
     p as n,
     E as r,
     A as l,
     i as c,
-    Q as d,
-    D as m,
-    W as g,
+    Y as d,
+    K as m,
+    Z as g,
     b as _,
     B as p,
     C as b,
     r as y,
     U as u,
 } from '../../../chunks/lib.js';
-import { d as h } from '../../../chunks/sound.js';
+import { M as h } from '../../../chunks/sound.js';
 import { S as f } from '../../../chunks/spring_wrapper.js';
 const I = { y: 0, opacity: 1 };
 var x = ((e) => (
@@ -55,8 +55,8 @@ function B({ image: a, imageBig: s }) {
 const N = 'InfoBlock_f854eb14',
     A = 'InfoBlock_infoBlock_6c954df0',
     v = 'InfoBlock_title_2476dc97',
-    E = 'InfoBlock_subTitle_a648caba',
-    M = a.memo(function ({ items: a, canceledAnim: t = !1 }) {
+    M = 'InfoBlock_subTitle_a648caba',
+    E = a.memo(function ({ items: a, canceledAnim: t = !1 }) {
         return e.jsx('div', {
             className: N,
             children: i(a, (a, o) =>
@@ -73,7 +73,7 @@ const N = 'InfoBlock_f854eb14',
                                 children: [
                                     e.jsx('div', { className: v, children: a.header }),
                                     e.jsx(r, {
-                                        classMix: E,
+                                        classMix: M,
                                         text: a.text,
                                         alignContent: l.Center,
                                         justifyContent: l.Center,
@@ -91,14 +91,14 @@ const N = 'InfoBlock_f854eb14',
         ({ observableModel: e }) => ({ root: e.object() }),
         ({ externalModel: e }) => ({ onClose: e.createCallbackNoArgs('onClose') }),
     ),
-    w = 'MetaIntroApp_f24aa649',
-    L = 'MetaIntroApp_background_47115184',
-    S = 'MetaIntroApp_container_1d43a669',
-    O = 'MetaIntroApp_content_7027a85a',
-    $ = 'MetaIntroApp_header_b706abdc',
-    D = 'MetaIntroApp_bottomContainer_341b7343',
-    K = 'MetaIntroApp_topContainer_9352c5d0',
-    U = 'MetaIntroApp_btn_4fa2f453',
+    w = 'MetaIntroApp_background_ed2a9e7',
+    L = 'MetaIntroApp_f24aa649',
+    O = 'MetaIntroApp_container_1d43a669',
+    S = 'MetaIntroApp_content_7027a85a',
+    K = 'MetaIntroApp_header_b706abdc',
+    $ = 'MetaIntroApp_bottomContainer_341b7343',
+    U = 'MetaIntroApp_topContainer_9352c5d0',
+    D = 'MetaIntroApp_btn_4fa2f453',
     H = 'MetaIntroApp_closeBtn_f6844130',
     P = [
         {
@@ -120,7 +120,7 @@ const N = 'InfoBlock_f854eb14',
             imageBig: R.images.last_stand.gui.maps.icons.metaIntro.big.reward(),
         },
     ],
-    Q = () => {
+    X = () => {
         const { controls: a } = z(),
             [t, o] = s.useState(!1);
         (d(a.onClose), m(g.ENTER, a.onClose), m(g.SPACE, a.onClose));
@@ -129,27 +129,27 @@ const N = 'InfoBlock_f854eb14',
             { medium: { size: p.sizes.small }, large: { size: p.sizes.medium }, extraLarge: { size: p.sizes.large } },
         );
         return e.jsxs('div', {
-            className: w,
+            className: L,
             onClick: () => o(!0),
             children: [
                 e.jsx(b, { className: H, onClose: a.onClose }),
-                e.jsx('div', { className: L }),
+                e.jsx('div', { className: w }),
                 e.jsx(f, {
-                    className: K,
+                    className: U,
                     isCanceled: t,
                     ...C[x.HEADER],
-                    children: e.jsx('div', { className: $, children: R.strings.last_stand_lobby.metaIntro.title() }),
+                    children: e.jsx('div', { className: K, children: R.strings.last_stand_lobby.metaIntro.title() }),
                 }),
                 e.jsx('div', {
-                    className: S,
-                    children: e.jsx('div', { className: O, children: e.jsx(M, { canceledAnim: t, items: P }) }),
+                    className: O,
+                    children: e.jsx('div', { className: S, children: e.jsx(E, { canceledAnim: t, items: P }) }),
                 }),
                 e.jsx(f, {
                     isCanceled: t,
-                    className: D,
+                    className: $,
                     ...C[x.BUTTON],
                     children: e.jsx('div', {
-                        className: U,
+                        className: D,
                         children: e.jsx(p, {
                             theme: p.themes.primary,
                             size: i.size,
@@ -161,4 +161,4 @@ const N = 'InfoBlock_f854eb14',
             ],
         });
     };
-y(e.jsx(u, { children: e.jsx(T, { children: e.jsx(Q, {}) }) }));
+y(e.jsx(u, { children: e.jsx(T, { children: e.jsx(X, {}) }) }));

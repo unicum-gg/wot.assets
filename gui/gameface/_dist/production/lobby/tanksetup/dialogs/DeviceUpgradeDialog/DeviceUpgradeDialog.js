@@ -461,7 +461,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(u) {
                     let e = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; u >= r[t]; ) ((e += n[t]), (u -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; u >= r[t];) ((e += n[t]), (u -= r[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -964,9 +964,13 @@
                         if (t.mediumWidth && F) return a(e, t, b);
                         if (t.smallWidth && D) return a(e, t, b);
                         if (t.extraSmallWidth && C) return a(e, t, b);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && B) return e;
                             if (t.largeHeight && m) return e;
                             if (t.mediumHeight && g) return e;
@@ -1272,7 +1276,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = M(r.keys()); !(u = t()).done; ) a(u.value, e);
+                                                        for (var u, t = M(r.keys()); !(u = t()).done;) a(u.value, e);
                                                     },
                                                     unsubscribe: a,
                                                 };
@@ -2742,6 +2746,7 @@
                         le.BattleBoosterGift,
                         le.OptionalDevice,
                         le.Attachment,
+                        le.TmanToken,
                         le.Gold,
                         le.Credits,
                         le.Crystal,

@@ -174,7 +174,7 @@
                     w = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function T(u) {
                     let e = '';
-                    for (let t = w.length - 1; t >= 0; t--) for (; u >= w[t]; ) ((e += x[t]), (u -= w[t]));
+                    for (let t = w.length - 1; t >= 0; t--) for (; u >= w[t];) ((e += x[t]), (u -= w[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -1082,7 +1082,7 @@
                         let n = Ce.exec(u),
                             E = u,
                             r = 0;
-                        for (; n; ) {
+                        for (; n;) {
                             const t = n[0],
                                 a = se.exec(t),
                                 D = le.exec(t),
@@ -1202,7 +1202,7 @@
                                                         };
                                                     },
                                                     dispose: function () {
-                                                        for (var u, t = me(F.keys()); !(u = t()).done; ) n(u.value, e);
+                                                        for (var u, t = me(F.keys()); !(u = t()).done;) n(u.value, e);
                                                     },
                                                     unsubscribe: n,
                                                 };

@@ -480,9 +480,13 @@
                         if (n.mediumWidth && E) return (0, r.H)(t, n, F);
                         if (n.smallWidth && b) return (0, r.H)(t, n, F);
                         if (n.extraSmallWidth && p) return (0, r.H)(t, n, F);
-                        if (
-                            !(n.extraLargeWidth || n.largeWidth || n.mediumWidth || n.smallWidth || n.extraSmallWidth)
-                        ) {
+                        if (!(
+                            n.extraLargeWidth ||
+                            n.largeWidth ||
+                            n.mediumWidth ||
+                            n.smallWidth ||
+                            n.extraSmallWidth
+                        )) {
                             if (n.extraLargeHeight && f) return t;
                             if (n.largeHeight && v) return t;
                             if (n.mediumHeight && h) return t;
@@ -2018,7 +2022,7 @@
                             };
                         },
                         dispose: function () {
-                            for (var e, n = r(o.keys()); !(e = n()).done; ) {
+                            for (var e, n = r(o.keys()); !(e = n()).done;) {
                                 u(e.value, t);
                             }
                         },
@@ -2751,7 +2755,7 @@
                             t(e).delete(n);
                         },
                         i = (e, ...n) => {
-                            for (var a, s = r(t(e).values()); !(a = s()).done; ) {
+                            for (var a, s = r(t(e).values()); !(a = s()).done;) {
                                 (0, a.value)(...n);
                             }
                         };
@@ -3181,7 +3185,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function s(e) {
                     let t = '';
-                    for (let n = r.length - 1; n >= 0; n--) for (; e >= r[n]; ) ((t += a[n]), (e -= r[n]));
+                    for (let n = r.length - 1; n >= 0; n--) for (; e >= r[n];) ((t += a[n]), (e -= r[n]));
                     return t;
                 }
                 const i = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -3949,7 +3953,7 @@
                               if (!a) return [e];
                               const r = [];
                               let s = 0;
-                              for (; a; ) {
+                              for (; a;) {
                                   const o = t.justifyContent === i.v2.FlexEnd ? a.index : n.lastIndex;
                                   (r.push(e.slice(s, o)), (s = o), (a = n.exec(e)));
                               }
@@ -3994,7 +3998,9 @@
                     },
                     d = (e, t, n = '', a) => {
                         const r = [],
-                            o = e.replace(/(.)(、|。|ー)/g, '$1\ufeff$2');
+                            o = e
+                                .replace(/(.)(、|。|，|ー)/g, '$1\ufeff$2')
+                                .replace(/\d+(?:[ \-.,]\d+)* ?%?/g, (e) => e.split('').join('\ufeff'));
                         return (
                             (0, s.Z)(
                                 o,
@@ -4109,7 +4115,7 @@
                 const a = (e, t, n, a) => {
                     let r = t.exec(e),
                         s = 0;
-                    for (; r; ) (s !== r.index && n(e.slice(s, r.index)), a(r), (s = t.lastIndex), (r = t.exec(e)));
+                    for (; r;) (s !== r.index && n(e.slice(s, r.index)), a(r), (s = t.lastIndex), (r = t.exec(e)));
                     s !== e.length && n(e.slice(s));
                 };
             },
@@ -4185,7 +4191,7 @@
                             g = ((e, t) => {
                                 let n = 0,
                                     a = e.length - 1;
-                                for (; a - n >= 0; ) {
+                                for (; a - n >= 0;) {
                                     const r = n + Math.ceil(0.5 * (a - n));
                                     i(e[r], t) ? (a = r - 1) : (n = r + 1);
                                 }
@@ -5918,7 +5924,7 @@
                         s.size
                             ? i ||
                               (i = window.setInterval(() => {
-                                  for (var e, t = a(s.values()); !(e = t()).done; ) {
+                                  for (var e, t = a(s.values()); !(e = t()).done;) {
                                       (0, e.value)();
                                   }
                               }, 5e3))
@@ -8291,7 +8297,7 @@
                         let o = ge.exec(e),
                             u = e,
                             l = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const n = o[0],
                                 a = Ee.exec(n),
                                 c = be.exec(n),
@@ -9058,7 +9064,7 @@
                                     if (t === ft.Finished) return;
                                     let a = t + 1,
                                         r = Ct(e, a, n);
-                                    for (; a < ft.Finished && void 0 === r; ) (a++, (r = Ct(e, a, n)));
+                                    for (; a < ft.Finished && void 0 === r;) (a++, (r = Ct(e, a, n)));
                                     return void 0 !== r ? { nextStage: a, delay: r } : void 0;
                                 })(A, S, h);
                                 if (e) {
@@ -9606,15 +9612,11 @@
                                         header: R.strings.tooltips.battlesDetails.header(),
                                         body: R.strings.tooltips.battlesDetails.body(),
                                     },
-                                    r().createElement(
-                                        'div',
-                                        null,
-                                        r().createElement(M, {
-                                            name: R.strings.crew.serviceRecord.battlesCounter(),
-                                            icon: R.images.gui.maps.icons.crew.serviceRecord.battlesCountIcon(),
-                                            value: n,
-                                        }),
-                                    ),
+                                    r().createElement(M, {
+                                        name: R.strings.crew.serviceRecord.battlesCounter(),
+                                        icon: R.images.gui.maps.icons.crew.serviceRecord.battlesCountIcon(),
+                                        value: n,
+                                    }),
                                 ),
                                 r().createElement(
                                     N.i,
@@ -9622,15 +9624,11 @@
                                         header: R.strings.crew.serviceRecord.tooltip.averageXP.header(),
                                         body: R.strings.crew.serviceRecord.tooltip.averageXP.body(),
                                     },
-                                    r().createElement(
-                                        'div',
-                                        null,
-                                        r().createElement(M, {
-                                            name: R.strings.crew.serviceRecord.averageXP(),
-                                            icon: R.images.gui.maps.icons.crew.serviceRecord.averageXPIcon(),
-                                            value: a,
-                                        }),
-                                    ),
+                                    r().createElement(M, {
+                                        name: R.strings.crew.serviceRecord.averageXP(),
+                                        icon: R.images.gui.maps.icons.crew.serviceRecord.averageXPIcon(),
+                                        value: a,
+                                    }),
                                 ),
                             ),
                         ),

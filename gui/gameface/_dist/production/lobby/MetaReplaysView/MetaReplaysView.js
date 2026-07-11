@@ -401,7 +401,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function n(e) {
                     let u = '';
-                    for (let a = r.length - 1; a >= 0; a--) for (; e >= r[a]; ) ((u += t[a]), (e -= r[a]));
+                    for (let a = r.length - 1; a >= 0; a--) for (; e >= r[a];) ((u += t[a]), (e -= r[a]));
                     return u;
                 }
                 const s = ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE()),
@@ -899,9 +899,13 @@
                         if (a.mediumWidth && A) return n(u, a, f);
                         if (a.smallWidth && p) return n(u, a, f);
                         if (a.extraSmallWidth && g) return n(u, a, f);
-                        if (
-                            !(a.extraLargeWidth || a.largeWidth || a.mediumWidth || a.smallWidth || a.extraSmallWidth)
-                        ) {
+                        if (!(
+                            a.extraLargeWidth ||
+                            a.largeWidth ||
+                            a.mediumWidth ||
+                            a.smallWidth ||
+                            a.extraSmallWidth
+                        )) {
                             if (a.extraLargeHeight && F) return u;
                             if (a.largeHeight && b) return u;
                             if (a.mediumHeight && D) return u;

@@ -1,19 +1,19 @@
 import { j as e, r as s, e as a } from './vendor.js';
-import { a7 as l, a8 as t, a9 as o, aa as c, ab as i } from './lib.js';
-const n = 'ScrollWithLips_eb8cfe07',
-    r = 'ScrollWithLips_lip_a43ad913',
-    d = 'ScrollWithLips_lip__top_67a886ef',
-    p = 'ScrollWithLips_lip__bottom_3fb8ae46',
+import { k as l, l as t, t as o, a9 as c, o as i } from './lib.js';
+const n = 'ScrollWithLips_7a136195',
+    r = 'ScrollWithLips_lip_5ca29cc2',
+    d = 'ScrollWithLips_lip__top_b267d4b5',
+    p = 'ScrollWithLips_lip__bottom_7aafaed7',
     _ = 'ScrollWithLips_scroll_8e476a4',
     f = 'ScrollWithLips_scroll__loaded_76bcfcc5',
     m = 'ScrollWithLips_scrollContent_e516a6a5',
     h = 'Idle',
     S = 'Start',
-    b = 'Between',
-    u = 'End';
-const v =
-    ((g = function ({ classNames: l, children: v, lipImage: g }) {
-        const [j, x] = s.useState(b),
+    u = 'Between',
+    v = 'End';
+const b =
+    ((g = function ({ classNames: l, children: b, lipImage: g }) {
+        const [j, x] = s.useState(u),
             { api: W } = t(),
             L = j !== h,
             N = o(() => {
@@ -28,10 +28,10 @@ const v =
                                 x(S);
                                 break;
                             case s:
-                                x(u);
+                                x(v);
                                 break;
                             default:
-                                x(b);
+                                x(u);
                         }
                     else x(h);
             });
@@ -55,10 +55,10 @@ const v =
                     j !== S &&
                         j !== h &&
                         e.jsx('div', { className: a(r, d, l?.lip || ''), style: { backgroundImage: `url(${g})` } }),
-                    j !== u &&
+                    j !== v &&
                         j !== h &&
                         e.jsx('div', { className: a(r, p, l?.lip || ''), style: { backgroundImage: `url(${g})` } }),
-                    e.jsx(c, { className: a(m, l?.scrollContent || ''), children: v }),
+                    e.jsx(c, { className: a(m, l?.scrollContent || ''), children: b }),
                     e.jsx(i, { classNames: { base: a(_, L && f, l?.scrollBar) } }),
                 ],
             })
@@ -66,4 +66,4 @@ const v =
     }),
     (s) => e.jsx(l, { children: e.jsx(g, { ...s }) }));
 var g;
-export { v as S };
+export { b as S };

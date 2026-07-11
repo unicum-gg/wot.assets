@@ -305,7 +305,7 @@
                     })(),
                     te = function (e) {
                         let t = '';
-                        for (let n = S.length - 1; n >= 0; n--) for (; e >= S[n]; ) ((t += M[n]), (e -= S[n]));
+                        for (let n = S.length - 1; n >= 0; n--) for (; e >= S[n];) ((t += M[n]), (e -= S[n]));
                         return t;
                     };
                 function ne() {
@@ -1207,7 +1207,7 @@
                 if ((P.exec(''), (o = P.exec(l)) && ((l = o[3]), o[2] || !l)))
                     for (n = 0; n < c; n++)
                         if ((s = (a = e[n]).selector(o[1]))) {
-                            for (i = d.length, r = !1; i--; )
+                            for (i = d.length, r = !1; i--;)
                                 if (d[i].index === a && d[i].key === s) {
                                     r = !0;
                                     break;
@@ -1268,10 +1268,10 @@
                         v = {},
                         f = 1 === arguments.length;
                     for (n = C(this.indexes, e), o = 0; o < n.length; o++)
-                        for (i = n[o], r = d.length; r--; )
+                        for (i = n[o], r = d.length; r--;)
                             if (((a = d[r]), i.index.isPrototypeOf(a))) {
                                 if ((c = a.map.get(i.key)))
-                                    for (s = c.length; s--; )
+                                    for (s = c.length; s--;)
                                         (l = c[s]).selector !== e ||
                                             (!f && l.data !== t) ||
                                             (c.splice(s, 1), (v[l.id] = !0));

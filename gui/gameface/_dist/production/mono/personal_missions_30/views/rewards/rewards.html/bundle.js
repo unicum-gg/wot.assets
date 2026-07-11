@@ -3,16 +3,16 @@ import {
     ak as l,
     al as d,
     O as c,
-    b as _,
+    k as _,
     am as m,
     an as u,
-    r as p,
+    b as p,
     ao as h,
     W as b,
     c as g,
     i as w,
     af as f,
-    f as v,
+    a as v,
     ap as R,
     u as N,
     K as y,
@@ -26,7 +26,7 @@ import {
     C as P,
     I as E,
     aq as H,
-    o as C,
+    v as C,
     ar as V,
     as as k,
     at as M,
@@ -34,10 +34,10 @@ import {
     av as B,
     aw as W,
     V as L,
-    a as z,
-    k as D,
-    d as G,
-    U as q,
+    l as z,
+    m as D,
+    q,
+    U as G,
 } from '../../../chunks/lib.js';
 import { A as K, R as U, s as F } from '../../../chunks/helpers.js';
 /* empty css                    */ const Y = (a) => () => {
@@ -433,7 +433,7 @@ const xe = r(function ({ reward: a, onAnimationStart: s, onAnimationEnd: r, inde
     },
     ze = new Set([U.OPERATION_WITH_HONORS, U.CAMPAIGN_WITH_HONORS]),
     De = new Set([U.VEHICLE_PART, U.OPERATION_WITH_HONORS, U.CAMPAIGN_WITH_HONORS]),
-    Ge = r(function (a) {
+    qe = r(function (a) {
         const { model: s } = ae(),
             { type: r, operationName: n, campaignName: i } = s.root.get(),
             l = s.vehicle.get(),
@@ -475,7 +475,7 @@ const xe = r(function ({ reward: a, onAnimationStart: s, onAnimationEnd: r, inde
             })
         );
     }),
-    qe = {
+    Ge = {
         base: 'RegularMainReward_d1a37b82',
         image: 'RegularMainReward_image_ca63a3d4',
         fadeIn: 'RegularMainReward_fadeIn_54e4f800',
@@ -492,10 +492,10 @@ function Ue({ reward: e }) {
         s = ((r = a.weight), F(r, T.large) ? b.S296x222 : b.S400x300);
     var r;
     return t.jsxs('div', {
-        className: o(qe.base, qe[`base__${e.name}`]),
+        className: o(Ge.base, Ge[`base__${e.name}`]),
         children: [
-            t.jsx(O, { ...e, size: s, image: e.image(s), classNames: { image: qe.image, info: qe.info } }),
-            Ke.has(e.name) && t.jsx('div', { className: qe.label, children: e.label }),
+            t.jsx(O, { ...e, size: s, image: e.image(s), classNames: { image: Ge.image, info: Ge.info } }),
+            Ke.has(e.name) && t.jsx('div', { className: Ge.label, children: e.label }),
         ],
     });
 }
@@ -726,7 +726,7 @@ const Xe = {
                         className: la.closeButton,
                     }),
                 }),
-                t.jsx(Ge, {}),
+                t.jsx(qe, {}),
                 t.jsx('div', { className: la.rewardsContainer, children: l && t.jsx(ea, { className: la.main }) }),
                 d && t.jsx(Ae, { className: la.additional }),
                 r === U.OPERATION_WITH_HONORS &&
@@ -740,6 +740,6 @@ const Xe = {
             ],
         });
     });
-G(t.jsx(ee, { children: t.jsx(q, { soundsOverrides: Z, children: t.jsx(ye, { children: t.jsx(da, {}) }) }) }), {
+q(t.jsx(ee, { children: t.jsx(G, { soundsOverrides: Z, children: t.jsx(ye, { children: t.jsx(da, {}) }) }) }), {
     fullScreen: !0,
 });

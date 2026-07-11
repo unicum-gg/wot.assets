@@ -1,0 +1,64 @@
+import { s, j as e } from '../../../../chunks/vendor.js';
+import { i as r, n as a, b as t, L as c, O as n, r as i, U as d, E as o } from '../../../../chunks/lib.js';
+const [p, l] = r()(({ observableModel: s }) => ({ ...{ root: s.object() } }), a),
+    m = 'App_a3aba712',
+    _ = 'App_title_f53d8db4',
+    x = 'App_description_c94a25d1',
+    j = 'App_footer_6954e057',
+    b = 'App_icon_efac1a20',
+    u = 'App_separator_edcf04ac',
+    h = 'App_textBlock_a1aa5c7e',
+    N = 'App_currentNumber_d28826b0',
+    f = 'App_commonNumber_c5925018',
+    v = 'App_currency_d28826b0',
+    y = t.resolve('strings'),
+    A = 'R.strings.user_missions.tooltip.hub.restart',
+    E = s(function () {
+        const { model: s } = l(),
+            { freeRestarts: r, usedFreeRestarts: a, restartCost: t, currency: i } = s.root.get();
+        return e.jsxs('div', {
+            className: m,
+            children: [
+                e.jsx('div', { className: _, children: y.readOrEmpty(`${A}.title`) }),
+                e.jsx('div', { className: x, children: e.jsx(c, { text: y.readOrEmpty(`${A}.description`) }) }),
+                e.jsxs('div', {
+                    className: j,
+                    children: [
+                        e.jsx('div', { className: u }),
+                        e.jsxs('div', {
+                            className: h,
+                            children: [
+                                r - a > 0 &&
+                                    e.jsx(c, {
+                                        text: y.readOrEmpty(`${A}.free_restarts_text`),
+                                        binding: {
+                                            currentNumber: e.jsx('span', { className: N, children: r - a }),
+                                            commonNumber: e.jsx('span', { className: f, children: `/ ${r}` }),
+                                        },
+                                    }),
+                                e.jsx(c, {
+                                    text:
+                                        r - a <= 0
+                                            ? y.readOrEmpty(`${A}.only_paid_restart`)
+                                            : y.readOrEmpty(`${A}.free_restarts_cost`),
+                                    binding: {
+                                        currency: e.jsx(n, {
+                                            type: i,
+                                            reverse: !0,
+                                            classNames: { base: v, icon: b },
+                                            children: t,
+                                        }),
+                                    },
+                                }),
+                            ],
+                        }),
+                    ],
+                }),
+            ],
+        });
+    });
+i(
+    e.jsx(d, {
+        children: e.jsx(p, { children: e.jsx(o, { children: e.jsx(o.Decorator, { children: e.jsx(E, {}) }) }) }),
+    }),
+);

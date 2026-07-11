@@ -1,4 +1,32 @@
-const _ = {
+import { j as e, e as a } from './vendor.js';
+import { X as _ } from './lib.js';
+const i = 'PurchaseButton_46cf53f3',
+    o = 'PurchaseButton_image_9f3db31f',
+    s = 'PurchaseButton_textBlock_97a7dc7d',
+    r = 'PurchaseButton_text_6d4bbfc',
+    t = 'PurchaseButton_icon_4fb4c378';
+function n({ text: n, image: u, sounds: c, icon: l, onClick: g, className: b }) {
+    return e.jsxs('div', {
+        className: a(i, b),
+        onClick: () => {
+            (_.click(), _.sound(c.purchaseClick), g());
+        },
+        onMouseEnter: () => {
+            _.sound(c.purchaseHover);
+        },
+        children: [
+            e.jsx('div', { className: o, style: { backgroundImage: `url(${u})` } }),
+            e.jsxs('div', {
+                className: s,
+                children: [
+                    e.jsx('div', { className: r, children: n }),
+                    l && e.jsx('div', { className: t, style: { backgroundImage: `url(${l})` } }),
+                ],
+            }),
+        ],
+    });
+}
+const u = {
     entryHover: 'gui_lb_icon_hover',
     boxMouseEnter: 'gui_lb_highlight_on',
     boxMouseLeave: 'gui_lb_highlight_off',
@@ -18,4 +46,4 @@ const _ = {
     infoPageTabHover: 'gui_lb_infopage_box_highlight',
     infoPageTabClick: 'gui_lb_infopage_box_click',
 };
-export { _ as S };
+export { n as P, u as S };

@@ -290,7 +290,7 @@
                     })(),
                     uu = function (u) {
                         let F = '';
-                        for (let A = w.length - 1; A >= 0; A--) for (; u >= w[A]; ) ((F += x[A]), (u -= w[A]));
+                        for (let A = w.length - 1; A >= 0; A--) for (; u >= w[A];) ((F += x[A]), (u -= w[A]));
                         return F;
                     },
                     Fu = Object.keys(T).reduce((u, F) => ((u[F] = () => viewEnv.getShowingStatus() === T[F]), u), {}),
@@ -529,7 +529,7 @@
                         let D = hu.exec(u),
                             t = u,
                             B = 0;
-                        for (; D; ) {
+                        for (; D;) {
                             const A = D[0],
                                 C = bu.exec(A),
                                 n = xu.exec(A),

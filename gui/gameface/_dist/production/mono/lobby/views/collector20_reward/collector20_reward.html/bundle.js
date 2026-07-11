@@ -1,4 +1,4 @@
-import { r as a, j as e, f as s, t as r, v as t, w as i } from '../../../chunks/vendor.js';
+import { r as a, j as e, f as s, t as r, m as t, n as i } from '../../../chunks/vendor.js';
 import {
     u as n,
     a as d,
@@ -14,8 +14,8 @@ import {
     g,
     f,
     h,
-    V as v,
-    C as j,
+    V as j,
+    C as v,
     B as N,
     t as b,
     k as w,
@@ -195,8 +195,8 @@ const [E, H] = o()(
     ga = 'App_raysWrapper_e48e223c',
     fa = 'App_godrays_3df409cd',
     ha = 'App_rays_20aa2b69',
-    va = 'App_wrapperButton_6d5ac65d',
-    ja = 'App_button_7b36300d',
+    ja = 'App_wrapperButton_6d5ac65d',
+    va = 'App_button_7b36300d',
     Na = 'App_buttonContent_cd42fca3',
     ba = 300,
     wa = 2400,
@@ -285,7 +285,7 @@ const [E, H] = o()(
             e.jsxs('div', {
                 className: s(oa),
                 children: [
-                    e.jsx(v, {
+                    e.jsx(j, {
                         src: R.videos.achievements.bg_reward_screen(),
                         autoplay: !0,
                         loop: !0,
@@ -306,7 +306,7 @@ const [E, H] = o()(
                             }),
                         ],
                     }),
-                    e.jsx(i.div, { style: O, className: ca, children: e.jsx(j, { onClose: x }) }),
+                    e.jsx(i.div, { style: O, className: ca, children: e.jsx(v, { onClose: x }) }),
                     e.jsx(X, {}),
                     e.jsxs('div', {
                         className: la,
@@ -325,10 +325,10 @@ const [E, H] = o()(
                             }),
                             e.jsx(i.div, {
                                 style: M,
-                                className: va,
+                                className: ja,
                                 children: e.jsx(N, {
                                     theme: b.primary,
-                                    classNames: { base: ja, content: Na },
+                                    classNames: { base: va, content: Na },
                                     onClick: () => {
                                         r && _.close('confirm');
                                     },

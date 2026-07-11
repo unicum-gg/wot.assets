@@ -1,5 +1,5 @@
 import './vendor.js';
-import { dy as o } from './lib.js';
+import { d8 as o } from './lib.js';
 function i(i, r, s) {
     o(
         () => {

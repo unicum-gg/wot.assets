@@ -1,5 +1,5 @@
 import { l as e, j as s, e as i } from '../../../../chunks/vendor.js';
-import { i as o, n as c, F as l, J as t, U as a, H as n, r as p } from '../../../../chunks/lib.js';
+import { i as o, t as c, F as l, J as t, U as a, H as n, r as p } from '../../../../chunks/lib.js';
 const [r, d] = o()(({ observableModel: e }) => e.primitives(['vehicleName', 'vehicleIcon', 'vehicleDescription']), c),
     m = 'MissionTooltipApp_fba186ac',
     v = 'MissionTooltipApp_title_cee1e2ca',

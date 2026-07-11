@@ -108,7 +108,7 @@ const [J, Q] = c()(
                                 children: n.jsx(u, {
                                     ...s,
                                     name: s.name,
-                                    image: A({ ...s, icon: X(s.icon) }, h.Big),
+                                    image: A({ ...s, icon: 'icon' in s && X(s.icon) }, h.Big),
                                     size: h.Big,
                                     valueType: r,
                                     tooltipArgs: w(

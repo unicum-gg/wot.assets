@@ -427,7 +427,7 @@
                     r = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
                 function a(u) {
                     let e = '';
-                    for (let t = r.length - 1; t >= 0; t--) for (; u >= r[t]; ) ((e += n[t]), (u -= r[t]));
+                    for (let t = r.length - 1; t >= 0; t--) for (; u >= r[t];) ((e += n[t]), (u -= r[t]));
                     return e;
                 }
                 ['ko', 'no'].includes(R.strings.settings.LANGUAGE_CODE());
@@ -915,15 +915,13 @@
                             if (t.mediumWidth && D) return a(e, t, f);
                             if (t.smallWidth && C) return a(e, t, f);
                             if (t.extraSmallWidth && B) return a(e, t, f);
-                            if (
-                                !(
-                                    t.extraLargeWidth ||
-                                    t.largeWidth ||
-                                    t.mediumWidth ||
-                                    t.smallWidth ||
-                                    t.extraSmallWidth
-                                )
-                            ) {
+                            if (!(
+                                t.extraLargeWidth ||
+                                t.largeWidth ||
+                                t.mediumWidth ||
+                                t.smallWidth ||
+                                t.extraSmallWidth
+                            )) {
                                 if (t.extraLargeHeight && m) return e;
                                 if (t.largeHeight && g) return e;
                                 if (t.mediumHeight && _) return e;
@@ -2398,7 +2396,7 @@
                         let o = Ee.exec(u),
                             s = u,
                             E = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const t = o[0],
                                 n = le.exec(t),
                                 l = Ae.exec(t),

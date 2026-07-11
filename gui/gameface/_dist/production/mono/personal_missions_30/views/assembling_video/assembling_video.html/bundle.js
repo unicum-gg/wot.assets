@@ -3,15 +3,15 @@ import {
     e as a,
     c as r,
     i as t,
-    r as p,
-    u as n,
-    s as d,
-    a as m,
+    b as p,
+    u as m,
+    s as n,
+    l as d,
     k as v,
-    b as c,
-    o as l,
-    V as u,
-    d as g,
+    v as l,
+    V as c,
+    m as u,
+    q as g,
     U as b,
 } from '../../../chunks/lib.js';
 /* empty css                    */ const y = {
@@ -50,9 +50,9 @@ import {
             g = a.stageNumber.get(),
             b = _.useRef(null),
             I = _.useRef(!1),
-            h = n(),
+            h = m(),
             [N, k] = e(() => y),
-            [C, S] = e(() => ({ ...j, onRest: d.closeView }));
+            [C, S] = e(() => ({ ...j, onRest: n.closeView }));
         function V() {
             I.current ||
                 ((I.current = !0),
@@ -61,12 +61,12 @@ import {
                 k.start({ ...f, onRest: () => S.start({ to: { opacity: 0 } }) }));
         }
         return (
-            m(v.ESCAPE, V),
-            c(() => {
+            d(u.ESCAPE, V),
+            v(() => {
                 const s = b.current;
                 s && (h.play(`vid_pm_o${t.toString().padStart(2, '0')}_s${g.toString().padStart(2, '0')}`), s.play());
             }),
-            c(() =>
+            v(() =>
                 l((s) => {
                     s ? h.play('vid_pm_pause') : h.play('vid_pm_resume');
                 }),
@@ -77,7 +77,7 @@ import {
                 children: o.jsx(i.div, {
                     className: A.wrapper,
                     style: N,
-                    children: o.jsx(u, {
+                    children: o.jsx(c, {
                         ref: b,
                         className: A.video,
                         src: s.readOrEmpty(

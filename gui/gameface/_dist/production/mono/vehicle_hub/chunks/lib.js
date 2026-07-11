@@ -1254,7 +1254,7 @@ function arabicToRoman(e) {
     let t = '';
     for (let s = ARABIC$1.length - 1; s >= 0; s--) {
         let r = ARABIC$1[s];
-        for (; void 0 !== r && e >= r; ) ((t += ROMAN$1[s]), (e -= r));
+        for (; void 0 !== r && e >= r;) ((t += ROMAN$1[s]), (e -= r));
     }
     return t;
 }
@@ -1345,15 +1345,15 @@ function eq(e, t, s, r, n) {
     if (0 === s) return !1;
     (s < 0 && (s = -1), (n = n || []));
     let u = (r = r || []).length;
-    for (; u--; ) if (r[u] === i) return n[u] === l;
+    for (; u--;) if (r[u] === i) return n[u] === l;
     if ((r.push(e), n.push(t), c)) {
         if (((u = i.length), u !== l.length)) return !1;
-        for (; u--; ) if (!eq(i[u], l[u], s - 1, r, n)) return !1;
+        for (; u--;) if (!eq(i[u], l[u], s - 1, r, n)) return !1;
     } else {
         const e = Object.keys(i);
         let t;
         if (((u = e.length), Object.keys(l).length !== u)) return !1;
-        for (; u--; ) {
+        for (; u--;) {
             if (((t = e[u]), void 0 === t))
                 return (console.error('Error: met undefined in object during deepEqual comparison'), !1);
             if (!Object.prototype.hasOwnProperty.call(l, t) || !eq(i[t], l[t], s - 1, r, n)) return !1;
@@ -1939,7 +1939,9 @@ function useTooltip({
             let i = null;
             function l() {
                 r ||
-                    ((a.current.status = statuses.await),
+                    ('display' === a.current.status &&
+                        (sendEvent$1.tooltip.hide(e, t, s), (a.current.status = statuses.idle)),
+                    (a.current.status = statuses.await),
                     window.clearTimeout(a.current.timeoutId),
                     (a.current.timeoutId = window.setTimeout(c, o)));
             }
@@ -1957,7 +1959,7 @@ function useTooltip({
                 ) {
                     displayedTooltips.delete(i);
                     let e = i.parentElement;
-                    for (; e && !displayedTooltips.has(e); ) e = e.parentElement;
+                    for (; e && !displayedTooltips.has(e);) e = e.parentElement;
                     if (e) {
                         displayedTooltips.get(e).show();
                     }
@@ -2881,7 +2883,7 @@ function resolveAttrParams(e, t) {
     for (let s = 0; s < e.length; s++) {
         if ('$' === e[s]) {
             let r = s + 1;
-            for (; r < e.length && !isEnd(e[r]); ) r++;
+            for (; r < e.length && !isEnd(e[r]);) r++;
             const n = e.slice(s + 1, r),
                 o = t[n];
             if (o) return resolveAttrParams(e.replace(`$${n}`, String(o)), t);
@@ -3765,7 +3767,7 @@ const MIN_LEVEL = 1,
         base__enamel: base__enamel,
     };
 function PrestigeLevel({ level: e, grade: t, type: s, direction: r, classNames: n, ...o }) {
-    return e < MIN_LEVEL
+    return e < MIN_LEVEL || 'undefined' === s
         ? null
         : jsxRuntimeExports.jsxs('div', {
               ...o,
@@ -5777,7 +5779,7 @@ const sounds = { highlight: 'highlight', click: 'play', yes1: 'yes1' },
     ARABIC = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1e3];
 function arabic2roman$1(e) {
     let t = '';
-    for (let s = ARABIC.length - 1; s >= 0; s--) for (; e >= ARABIC[s]; ) ((t += ROMAN[s]), (e -= ARABIC[s]));
+    for (let s = ARABIC.length - 1; s >= 0; s--) for (; e >= ARABIC[s];) ((t += ROMAN[s]), (e -= ARABIC[s]));
     return t;
 }
 const ROMAN_FORBIDDEN_LANGUAGE_CODES = ['ko', 'no'];
@@ -6573,6 +6575,7 @@ const FormatNumber = ({ value: e, format: t = 'integral' }) => {
     RewardType.BattleBoosterGift,
     RewardType.OptionalDevice,
     RewardType.Attachment,
+    RewardType.TmanToken,
     RewardType.Gold,
     RewardType.Credits,
     RewardType.Crystal,
@@ -7166,11 +7169,18 @@ function isSerializableReactNode(e) {
     );
 }
 Tooltip.Decorator = Decorator;
-const base$1 = 'MultilineOverflow_8834bd8e',
+const base$1 = 'MultilineOverflow_ec9f8e47',
     content = 'MultilineOverflow_content_b539970d',
     styles$1 = { base: base$1, content: content };
 function isSerializableParams(e) {
     return !e || Object.values(e).every(isSerializableReactNode);
+}
+function cloneNode(e) {
+    return e instanceof HTMLElement
+        ? e.cloneNode(!0)
+        : e.nodeType === Node.TEXT_NODE
+          ? document.createTextNode(e.nodeValue ?? '')
+          : void 0;
 }
 const MultilineOverflow = reactExports.forwardRef(function (
     {
@@ -7189,120 +7199,116 @@ const MultilineOverflow = reactExports.forwardRef(function (
         classNames: p,
         style: m,
         styleBase: _,
-        ...f
+        styleText: f,
+        ...h
     },
-    h,
+    g,
 ) {
-    const g = reactExports.useRef(null),
-        [E, x] = reactExports.useState(!1);
+    const E = reactExports.useRef(null),
+        x = reactExports.useRef(null),
+        [b, v] = reactExports.useState(!1);
     reactExports.useEffect(() => {
         if (0 === e.length) return;
-        const t = g.current;
-        if (!t) return;
-        const s = document.createElement('div');
-        let r = noop;
+        const t = E.current,
+            s = x.current;
+        if (!t || !s) return;
+        const r = document.createElement('div');
         function n() {
-            if (!t) return;
-            (r(),
-                (s.style.visibility = 'hidden'),
-                (s.className = clsx(styles$1.content, t.children[0].className)),
-                (s.innerHTML = ''),
-                t.appendChild(s));
+            if (!t || !s) return;
             const e = t.children[0];
             if (!e) return console.warn("MultilineOverflow can't get first child to handle it", t);
-            const n = relativeOffset(t.getBoundingClientRect(), e.getBoundingClientRect());
-            (e instanceof HTMLElement && (s.style.cssText = e.style.cssText),
-                (s.style.left = `${n.x}px`),
-                (s.style.top = `${n.y}px`));
-            for (let t of e.childNodes.values()) {
-                if (t instanceof HTMLElement) {
-                    const e = t.cloneNode(!0);
-                    s.appendChild(e);
-                }
-                if (t.nodeType === Node.TEXT_NODE) {
-                    const e = document.createTextNode(t.nodeValue ?? '');
-                    s.appendChild(e);
-                }
+            (r.remove(),
+                (r.className = clsx(styles$1.content, t.children[0].className)),
+                (r.innerHTML = ''),
+                e instanceof HTMLElement && (r.style.cssText = e.style.cssText));
+            const n = e.childNodes.length - 1;
+            let o = n;
+            for (; o >= 0; o--) {
+                const s = e.childNodes[o];
+                if (s instanceof HTMLElement && !(s.offsetTop + s.offsetHeight > t.clientHeight)) break;
             }
-            const o = document.createElement('div');
-            ((o.innerHTML = '...'),
-                s.appendChild(o),
-                (r = createLayoutReadyInEffect(() => {
-                    const e = [];
-                    for (let r = s.childNodes.length - 2; 0 !== r; r--) {
-                        const n = s.childNodes[r];
-                        if (n instanceof HTMLElement) {
-                            if (n.offsetTop + n.offsetHeight <= t.offsetHeight) break;
-                            e.push(n);
-                        }
-                    }
-                    if (0 === e.length) (x(!1), o.remove());
-                    else {
-                        (x(!0), e.forEach((e) => e.remove()));
-                        let s = 0;
-                        for (; s++ < 1e3 && o.previousSibling && o.offsetTop + o.offsetHeight > t.offsetHeight; )
-                            o.previousSibling?.remove();
-                    }
-                    s.style.visibility = '';
-                })));
+            if (o === n) v(!1);
+            else {
+                v(!0);
+                const n = relativeOffset(t.getBoundingClientRect(), e.getBoundingClientRect());
+                for (r.style.visibility = '', r.style.left = `${n.x}px`, r.style.top = `${n.y}px`; o >= 0; o--) {
+                    const t = e.childNodes[o];
+                    if (t instanceof HTMLElement && !(t.offsetLeft + t.offsetWidth + s.offsetWidth > e.clientWidth))
+                        break;
+                }
+                for (let t = 0; t <= o; t++) {
+                    const s = e.childNodes[t];
+                    if (!(s instanceof HTMLElement)) continue;
+                    const n = cloneNode(s);
+                    n ? r.appendChild(n) : console.warn('Unexpected type of target node', s);
+                }
+                const a = s.cloneNode(!0);
+                (a.removeAttribute('style'), r.appendChild(a), t.appendChild(r));
+            }
         }
         const o = new ResizeObserver(n);
         return (
             o.observe(t),
             new DisposeBuilder()
-                .add(() => r())
                 .add(addEventListener(window, 'resize', n))
                 .add(o.disconnect.bind(o))
-                .add(s.remove.bind(s)).dispose
+                .add(r.remove.bind(r)).dispose
         );
-    }, [h, e]);
-    const b = isSerializableParams(s),
-        v = useParamTooltip(
+    }, [g, e]);
+    const y = isSerializableParams(s),
+        w = useParamTooltip(
             'format_text',
             reactExports.useMemo(
                 () => ({
                     text: e,
-                    params: b ? s : void 0,
+                    params: y ? s : void 0,
                     split: o,
                     upgradeLegacy: n,
                     brackets: t,
                     resId: resources.resolve('views').read((e) => e.mono.tooltips.tooltips('resId')),
                 }),
-                [e, t, o, n, s, b],
+                [e, t, o, n, s, y],
             ),
         ),
-        y = u ?? v;
+        T = u ?? w;
     if (
         (reactExports.useEffect(() => {
-            c || E || y.onMouseLeave();
-        }, [E, y, u, c, b]),
+            c || b || T.onMouseLeave();
+        }, [b, T, u, c, y]),
         0 === e.length)
     )
         return null;
-    return jsxRuntimeExports.jsx('div', {
-        ...f,
+    return jsxRuntimeExports.jsxs('div', {
+        ...h,
         onMouseEnter: function (e) {
-            (a?.(e), E && !c && y.onMouseEnter(e));
+            (a?.(e), b && !c && T.onMouseEnter(e));
         },
         onClick: function (e) {
-            (l?.(e), c || y.onClick());
+            (l?.(e), c || T.onClick());
         },
         onMouseLeave: function (e) {
-            (i?.(e), c || y.onMouseLeave());
+            (i?.(e), c || T.onMouseLeave());
         },
-        ref: assignRefs([h, g]),
+        ref: assignRefs([g, E]),
         className: clsx(styles$1.base, d, p?.base),
-        style: _,
-        children: jsxRuntimeExports.jsx(FormatText, {
-            text: e,
-            brackets: t,
-            params: s,
-            upgradeLegacy: n,
-            split: o,
-            formatters: r,
-            className: p?.text,
-            style: { ...m, visibility: 'hidden' },
-        }),
+        style: { ...m, ..._ },
+        children: [
+            jsxRuntimeExports.jsx(FormatText, {
+                text: e,
+                brackets: t,
+                params: s,
+                upgradeLegacy: n,
+                split: o,
+                formatters: r,
+                className: p?.text,
+                style: { ...f, visibility: b ? 'hidden' : void 0 },
+            }),
+            jsxRuntimeExports.jsx('div', {
+                ref: x,
+                style: { visibility: 'hidden', position: 'absolute' },
+                children: '...',
+            }),
+        ],
     });
 });
 function FormatTextSplited({ className: e, ...t }) {

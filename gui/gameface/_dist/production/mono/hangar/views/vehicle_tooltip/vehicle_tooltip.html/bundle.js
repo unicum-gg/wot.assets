@@ -5,10 +5,10 @@ import {
     O as i,
     n as l,
     ag as n,
-    dj as c,
+    dc as c,
     W as o,
-    dc as m,
-    dk as d,
+    dd as m,
+    de as d,
     M as u,
     r as p,
     Z as _,
@@ -18,24 +18,24 @@ import {
     H as v,
     Y as j,
     a0 as b,
-    cs as f,
+    c5 as f,
     a6 as N,
-    b3 as y,
-    bI as E,
-    dl as P,
+    b4 as y,
+    bJ as E,
+    df as P,
     aq as C,
-    dm as w,
-    b7 as R,
+    dg as w,
+    b8 as R,
     ac as O,
     aE as T,
     ah as S,
-    dn as k,
-    dp as B,
-    cw as L,
-    dq as I,
-    d8 as M,
+    dh as k,
+    di as B,
+    cC as L,
+    dj as I,
+    dk as M,
     ab as $,
-    b8 as G,
+    b9 as G,
     J as A,
     E as D,
     F as V,
@@ -48,7 +48,7 @@ import { T as X } from '../../../chunks/tankman_role.js';
     (e.GOLD = 'gold'),
     e
 ))(W || {});
-const [q, U] = a('VehicleTooltipModelProvider')(({ observableModel: e }) => {
+const [J, U] = a('VehicleTooltipModelProvider')(({ observableModel: e }) => {
         const s = {
                 ...e.primitives(['status', 'stateLevel', 'bpEntityValid']),
                 statistics: e.object('statistics'),
@@ -90,7 +90,7 @@ const [q, U] = a('VehicleTooltipModelProvider')(({ observableModel: e }) => {
         };
     }, l),
     Z = 'INACTIVE',
-    J = 'ACTIVE',
+    q = 'ACTIVE',
     K = 'CANCELLED',
     Q = 'critical',
     Y = 'info',
@@ -331,7 +331,7 @@ const he = 'BattlePassPoints_row__battlePassPoints_4e755749',
     }),
     Xe = 'Crew_2339425e',
     We = 'Crew_79af07ed',
-    qe = 'Crew_icon_26258836',
+    Je = 'Crew_icon_26258836',
     Ue = 'Crew_sign_a456f030',
     Ze = t(function ({ className: t }) {
         const { model: a } = U(),
@@ -347,7 +347,7 @@ const he = 'BattlePassPoints_row__battlePassPoints_4e755749',
                     {
                         className: We,
                         children: [
-                            e.jsx(X, { role: y(s.roles, 0), className: qe }),
+                            e.jsx(X, { role: y(s.roles, 0), className: Je }),
                             s.roles.length > 1 &&
                                 e.jsx('div', { className: Ue, children: i.readOrEmpty('crew_perks.sign.plus') }),
                         ],
@@ -357,7 +357,7 @@ const he = 'BattlePassPoints_row__battlePassPoints_4e755749',
             ),
         });
     }),
-    Je = 'Rent_leftColumn_a909b981',
+    qe = 'Rent_leftColumn_a909b981',
     Ke = 'Rent_rentValue_f91a4efd',
     Qe = 'Rent_text_94f0c0d7';
 function Ye({ rentPeriodLeft: s, rentType: t }) {
@@ -366,7 +366,7 @@ function Ye({ rentPeriodLeft: s, rentType: t }) {
     return e.jsxs(_e, {
         children: [
             e.jsxs('div', {
-                className: Je,
+                className: qe,
                 children: [
                     e.jsx('div', { className: Ke, children: v.formatNumber('integral', Math.ceil(s)) }),
                     e.jsx(j, { path: r, width: 24, height: 24 }),
@@ -445,7 +445,7 @@ const es = t(function () {
                         children: l.readOrEmpty('tooltips.vehicle.wotPlusRenting.title'),
                     }),
                 }),
-                i !== J &&
+                i !== q &&
                     e.jsx(_e, {
                         className: t,
                         children: (() => {
@@ -707,7 +707,7 @@ const Is = u('ServiceRecords', Ss.base),
     Hs = 'Tooltip_vehicleType__elite_bb248964',
     Xs = 'Tooltip_section_b726d2f2',
     Ws = 'Tooltip_section__header_c649b074',
-    qs = 'Tooltip_section__earnings_e52798af',
+    Js = 'Tooltip_section__earnings_e52798af',
     Us = 'Tooltip_status_29b423b3',
     Zs = t(function ({ className: t }) {
         const { model: a } = U(),
@@ -729,7 +729,7 @@ const Is = u('ServiceRecords', Ss.base),
                         children: [
                             e.jsx(js, { className: s(Xs, Ws) }),
                             a.computes.hasSpecialMechanics() && e.jsx(As, { className: Xs }),
-                            e.jsx(He, { className: s(Xs, qs) }),
+                            e.jsx(He, { className: s(Xs, Js) }),
                             a.computes.serviceRecords() && e.jsx(Ms, { className: Xs }),
                             e.jsx(_, {
                                 upgradeLegacy: !0,
@@ -746,15 +746,15 @@ const Is = u('ServiceRecords', Ss.base),
             }),
         });
     }),
-    Js = p.resolve('aliases');
+    qs = p.resolve('aliases');
 var Ks;
 V(
     new A()
-        .add(q)
+        .add(J)
         .add(D)
         .addWithProps(
             H,
-            ((Ks = (e) => e.common.shared.DynamicEconomics('resId')), { options: { rootId: Js.read(Ks) } }),
+            ((Ks = (e) => e.common.shared.DynamicEconomics('resId')), { options: { rootId: qs.read(Ks) } }),
         )
         .render(e.jsx(Zs, {})),
 );

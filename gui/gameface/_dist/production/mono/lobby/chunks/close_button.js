@@ -1,37 +1,37 @@
-import { j as o, a3 as s } from './vendor.js';
-import { d4 as e, av as n } from './lib.js';
+import { j as o, W as s } from './vendor.js';
+import { j as e, p as n } from './lib.js';
 const a = 'CloseButton_49a682e7',
     i = 'CloseButton_icon_b31f68a5',
     l = 'CloseButton_iconHover_b5894825',
     c = { heading: 'Page_heading_2dd55438', close: 'Page_close_401a9518' },
     u = ({
         onClick: u,
-        className: d,
-        classNames: r,
-        onMouseEnter: t,
-        onMouseLeave: v,
-        onMouseDown: m,
+        className: r,
+        classNames: t,
+        onMouseEnter: d,
+        onMouseLeave: m,
+        onMouseDown: v,
         onMouseUp: _,
-        soundHover: M = 'highlight',
-        soundClick: p = 'play',
+        soundHover: p = 'highlight',
+        soundClick: M = 'play',
     }) => {
         e(u);
         return o.jsxs('div', {
-            className: s(a, c.close, d),
+            className: s(a, c.close, r),
             onMouseEnter: (o) => {
-                (t?.(o), n.sound(M));
+                (d?.(o), n.sound(p));
             },
             onMouseLeave: (o) => {
-                v?.(o);
+                m?.(o);
             },
             onMouseDown: (o) => {
-                (m?.(o), n.sound(p));
+                (v?.(o), n.sound(M));
             },
             onMouseUp: (o) => {
                 _?.(o);
             },
             onClick: u,
-            children: [o.jsx('div', { className: s(i, r?.icon) }), o.jsx('div', { className: s(l, r?.iconHover) })],
+            children: [o.jsx('div', { className: s(i, t?.icon) }), o.jsx('div', { className: s(l, t?.iconHover) })],
         });
     };
 export { u as C, c as p };

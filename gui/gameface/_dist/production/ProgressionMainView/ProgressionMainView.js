@@ -311,7 +311,7 @@
                     })(),
                     J = function (e) {
                         let u = '';
-                        for (let t = v.length - 1; t >= 0; t--) for (; e >= v[t]; ) ((u += b[t]), (e -= v[t]));
+                        for (let t = v.length - 1; t >= 0; t--) for (; e >= v[t];) ((u += b[t]), (e -= v[t]));
                         return u;
                     };
                 function ee() {
@@ -906,9 +906,13 @@
                         if (t.mediumWidth && A) return o(u, t, f);
                         if (t.smallWidth && g) return o(u, t, f);
                         if (t.extraSmallWidth && F) return o(u, t, f);
-                        if (
-                            !(t.extraLargeWidth || t.largeWidth || t.mediumWidth || t.smallWidth || t.extraSmallWidth)
-                        ) {
+                        if (!(
+                            t.extraLargeWidth ||
+                            t.largeWidth ||
+                            t.mediumWidth ||
+                            t.smallWidth ||
+                            t.extraSmallWidth
+                        )) {
                             if (t.extraLargeHeight && D) return u;
                             if (t.largeHeight && p) return u;
                             if (t.mediumHeight && C) return u;
@@ -4939,7 +4943,7 @@
                         let o = gr.exec(e),
                             i = e,
                             l = 0;
-                        for (; o; ) {
+                        for (; o;) {
                             const t = o[0],
                                 a = Fr.exec(t),
                                 c = Dr.exec(t),

@@ -52,6 +52,14 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
+.DifficultyItem_border_3ef02768 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 /* stylelint-disable scss/dollar-variable-pattern */
 .DifficultyItem_f9ea1d1b {
     display: flex;
@@ -108,23 +116,18 @@ html[lang='th'] input {
     background: url('R.images.last_stand.gui.maps.icons.difficulties.story_point_shine') no-repeat 50% / contain;
 }
 
-.DifficultyItem_border_95aff0e5 {
+.DifficultyItem_border_3ef02768 {
     opacity: 0.7;
     transition: opacity 0.3s 0s ease-in-out;
 }
-.DifficultyItem_base__locked_84d51887 .DifficultyItem_border_95aff0e5 {
+.DifficultyItem_base__locked_84d51887 .DifficultyItem_border_3ef02768 {
     opacity: 0.25;
 }
-.DifficultyItem_base__hoverable_84d51887:hover .DifficultyItem_border_95aff0e5,
-.DifficultyItem_base__selected_84d51887 .DifficultyItem_border_95aff0e5 {
+.DifficultyItem_base__hoverable_84d51887:hover .DifficultyItem_border_3ef02768,
+.DifficultyItem_base__selected_84d51887 .DifficultyItem_border_3ef02768 {
     opacity: 1;
 }
-.DifficultyItem_border_95aff0e5 {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.DifficultyItem_border_3ef02768 {
     background: url('R.images.last_stand.gui.maps.icons.difficulties.border') no-repeat 50% / contain;
 }
 

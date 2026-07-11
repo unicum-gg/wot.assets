@@ -65,9 +65,9 @@ html[lang='th'] input {
     display: flex;
     align-items: flex-end;
 }
-
-.ArmorLayer_armor_d9ec88fc {
+.ArmorLayer_layer_5ad9db4 .ArmorLayer_armor_9a7e5b0 {
     align-items: flex-end;
+    white-space: pre-wrap;
 } /* stylelint-disable selector-no-qualifying-type */
 :root {
     --hangar-highlight-shadow:

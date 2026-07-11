@@ -1,6 +1,6 @@
 import { t as a, j as s, F as e, G as r } from '../../../../chunks/vendor.js';
-import { i as n, h as o, n as c, a5 as t, bv as m, bw as i, r as d, U as p } from '../../../../chunks/lib.js';
-/* empty css                        */ const [l, j] = n()((a) => {
+import { i as n, O as o, n as c, _ as t, bv as m, bw as i, r as d, U as p } from '../../../../chunks/lib.js';
+/* empty css                        */ const [l, _] = n()((a) => {
     const s = a.observableModel.primitives(['params', 'type']);
     return {
         type: s.type,
@@ -11,10 +11,10 @@ import { i as n, h as o, n as c, a5 as t, bv as m, bw as i, r as d, U as p } fro
         },
     };
 }, c);
-const _ = 'App_11090d07',
+const j = 'App_11090d07',
     f = 'App_headerContainer_c897879f',
-    h = 'App_icon_961e61e2',
-    v = 'App_specialtyName_1072bf2a',
+    v = 'App_icon_961e61e2',
+    h = 'App_specialtyName_1072bf2a',
     u = 'App_commanderName_d9ad769f',
     x = 'App_separator_f627df4c',
     N = 'App_description_1072bf2a',
@@ -23,22 +23,22 @@ const _ = 'App_11090d07',
     A =
         ((k = i(y)),
         function () {
-            return j().model.computes.params(k);
+            return _().model.computes.params(k);
         });
 var k;
-const g = a(function () {
+const O = a(function () {
     const { commanderNation: a } = A();
     return s.jsx(m, {
         children: s.jsx(m.Decorator, {
             children: s.jsxs('div', {
-                className: _,
+                className: j,
                 children: [
                     s.jsxs('div', {
                         className: f,
                         children: [
-                            s.jsx('div', { className: h }),
+                            s.jsx('div', { className: v }),
                             s.jsx('div', {
-                                className: v,
+                                className: h,
                                 children: b.readOrEmpty('battle_royale.commanderInfo.commonRank'),
                             }),
                         ],
@@ -57,4 +57,4 @@ const g = a(function () {
         }),
     });
 });
-d(s.jsx(p, { children: s.jsx(l, { children: s.jsx(g, {}) }) }));
+d(s.jsx(p, { children: s.jsx(l, { children: s.jsx(O, {}) }) }));

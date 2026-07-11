@@ -2,26 +2,26 @@ import { W as e, j as s, a0 as a } from '../../../../chunks/vendor.js';
 import {
     i,
     o as l,
-    am as c,
-    d0 as o,
-    av as t,
-    cE as n,
+    an as c,
+    d1 as o,
+    aw as n,
+    cF as t,
     B as r,
-    ce as d,
+    cf as d,
     C as m,
     D as _,
     a9 as p,
     aa as b,
     E as h,
-    d8 as f,
-    aI as u,
-    b$ as x,
-    d9 as g,
-    cF as y,
-    cz as j,
-    c7 as v,
+    d9 as f,
+    aJ as u,
+    c0 as x,
+    da as g,
+    cG as y,
+    cA as j,
+    c8 as N,
 } from '../../../../chunks/lib.js';
-const [N, C] = i()(
+const [v, C] = i()(
         ({ observableModel: e }) => ({
             ...e.primitives([
                 'price',
@@ -44,16 +44,16 @@ const [N, C] = i()(
         }),
     ),
     k = 'Buttons_5fa91684',
-    T = 'Buttons_closeButton_186f67f0',
-    A = l.resolve('strings'),
+    A = 'Buttons_closeButton_186f67f0',
+    T = l.resolve('strings'),
     M = e(function () {
         const { controls: e, model: a } = C(),
             i = !a.isEnoughMoney.get(),
-            l = c({ body: A.readOrEmpty('fl_tooltips.battleAbilities.button.notEnough') }),
+            l = c({ body: T.readOrEmpty('fl_tooltips.battleAbilities.button.notEnough') }),
             m = () => !i && e.submit();
         return (
-            o(t.ENTER, m, !0),
-            n(e.close),
+            o(n.ENTER, m, !0),
+            t(e.close),
             s.jsxs('div', {
                 className: k,
                 children: [
@@ -62,13 +62,13 @@ const [N, C] = i()(
                         theme: d.primary,
                         onClick: m,
                         disabled: i,
-                        children: A.read('fl_dialogs.confirm.btn.' + (a.isBuy.get() ? 'buyAndMount' : 'install')),
+                        children: T.read('fl_dialogs.confirm.btn.' + (a.isBuy.get() ? 'buyAndMount' : 'install')),
                     }),
                     s.jsx(r, {
                         theme: d.secondary,
                         onClick: e.cancel,
-                        classNames: { base: T },
-                        children: A.read('dialogs.dialogTemplates.cancel'),
+                        classNames: { base: A },
+                        children: T.read('dialogs.dialogTemplates.cancel'),
                     }),
                 ],
             })
@@ -77,10 +77,10 @@ const [N, C] = i()(
     E = 'Checkbox_f97c63a7',
     B = 'Checkbox_label_da2dcae0',
     $ = 'Checkbox_vehicleIcon_a13f4af0',
-    I = 'Checkbox_vehicleIcon__checked_22656aaa',
-    F = l.resolve('strings'),
+    F = 'Checkbox_vehicleIcon__checked_22656aaa',
+    I = l.resolve('strings'),
     S = ({ vehicleType: e, isTypeSelected: i, onCheckBoxBtnClick: l }) => {
-        const o = c({ body: F.read(`fl_tooltips.battleAbilities.checkbox.${e}`) });
+        const o = c({ body: I.read(`fl_tooltips.battleAbilities.checkbox.${e}`) });
         return s.jsx('div', {
             className: E,
             ...o,
@@ -91,8 +91,8 @@ const [N, C] = i()(
                 children: s.jsx(p, {
                     path: 'fl_battle_abilities_setup.dealPanel.applyToType',
                     params: {
-                        icon: s.jsx(b, { path: `vehicleTypes.c_24x24.${e}`, className: a($, i && I) }),
-                        type: F.readOrEmpty(`menu.classes.short.${e}`),
+                        icon: s.jsx(b, { path: `vehicleTypes.c_24x24.${e}`, className: a($, i && F) }),
+                        type: I.readOrEmpty(`menu.classes.short.${e}`),
                     },
                     className: B,
                 }),
@@ -100,19 +100,19 @@ const [N, C] = i()(
         });
     },
     O = 'Content_4f01e2b5',
-    W = 'Content_base__singleAbility_9ff38f7a',
-    q = 'Content_names_24f05b3a',
-    w = l.resolve('strings'),
-    z = e(function () {
+    w = 'Content_base__singleAbility_9ff38f7a',
+    W = 'Content_names_24f05b3a',
+    q = l.resolve('strings'),
+    G = e(function () {
         const { model: e, controls: i } = C();
         return s.jsxs('div', {
-            className: a(O, !e.isMultipleAbilities.get() && W),
+            className: a(O, !e.isMultipleAbilities.get() && w),
             children: [
                 e.isMultipleAbilities.get() &&
                     s.jsx('div', {
-                        className: q,
+                        className: W,
                         children: h(e.names.get(), (e) =>
-                            f(w.readOrEmpty('fl_dialogs.confirm.quotedName'), { name: e }),
+                            f(q.readOrEmpty('fl_dialogs.confirm.quotedName'), { name: e }),
                         ).join(', '),
                     }),
                 s.jsx(S, {
@@ -123,25 +123,25 @@ const [N, C] = i()(
             ],
         });
     }),
-    D = 'FooterMoney_1ea76c0a',
-    G = 'FooterMoney_label_8b351dd7',
-    P = 'FooterMoney_priceWrapper_570d739a',
-    H = 'FooterMoney_price_5c2438b2',
-    J = 'FooterMoney_price__notEnough_1126d1b4',
+    z = 'FooterMoney_1ea76c0a',
+    D = 'FooterMoney_label_8b351dd7',
+    J = 'FooterMoney_priceWrapper_570d739a',
+    P = 'FooterMoney_price_5c2438b2',
+    H = 'FooterMoney_price__notEnough_1126d1b4',
     K = 'FooterMoney_iconWrapper_f7f8aac7',
     L = 'FooterMoney_icon_e7df9413',
     Q = 'FooterMoney_iconGlow_fa0721d4',
     U = ({ price: e, isEnoughMoney: i }) =>
         s.jsx('div', {
-            className: D,
+            className: z,
             children: s.jsx(p, {
-                className: G,
+                className: D,
                 path: 'fl_dialogs.confirm.price',
                 params: {
                     price: s.jsxs('div', {
-                        className: P,
+                        className: J,
                         children: [
-                            s.jsx('div', { className: a(H, !i && J), children: e }),
+                            s.jsx('div', { className: a(P, !i && H), children: e }),
                             s.jsxs('div', {
                                 className: K,
                                 children: [s.jsx('div', { className: Q }), s.jsx('div', { className: L })],
@@ -196,13 +196,13 @@ const [N, C] = i()(
     le = 'Title_556c79c2',
     ce = 'Title_61890975',
     oe = 'Title_iconContainer_a9bcfaca',
-    te = 'Title_vehicleIcon_3c17128e',
-    ne = l.resolve('strings');
+    ne = 'Title_vehicleIcon_3c17128e',
+    te = l.resolve('strings');
 function re(e, s, a) {
     const i = a ? 'buy' : 'install',
         l = e ? '.forAllOfType' : '',
         c = s || e ? 'items' : 'item';
-    return ne.readOrEmpty(`fl_dialogs.confirm.title.${i + l}.${c}`);
+    return te.readOrEmpty(`fl_dialogs.confirm.title.${i + l}.${c}`);
 }
 const de = e(function ({ className: e }) {
         const { model: i } = C(),
@@ -213,14 +213,14 @@ const de = e(function ({ className: e }) {
             children: s.jsx(x, {
                 text: re(i.isTypeSelected.get(), c, i.isBuy.get()),
                 binding: {
-                    vehicleType: ne.read(`fl_dialogs.confirm.vehicleType.${l}`),
-                    abilityName: f(ne.readOrEmpty('fl_dialogs.confirm.quotedName'), {
+                    vehicleType: te.read(`fl_dialogs.confirm.vehicleType.${l}`),
+                    abilityName: f(te.readOrEmpty('fl_dialogs.confirm.quotedName'), {
                         name: i.selectedSkillName.get(),
                     }),
-                    type: ne.read(`fl_dialogs.confirm.${c ? 'items' : 'item'}.battleAbility`),
+                    type: te.read(`fl_dialogs.confirm.${c ? 'items' : 'item'}.battleAbility`),
                     vehicleIcon: s.jsx('div', {
                         className: oe,
-                        children: s.jsx(b, { path: `vehicleTypes.c_64x64.${l}`, className: te }),
+                        children: s.jsx(b, { path: `vehicleTypes.c_64x64.${l}`, className: ne }),
                     }),
                 },
                 justifyContent: g.Center,
@@ -246,7 +246,7 @@ function xe() {
                 children: [
                     s.jsx(ie, { className: be }),
                     s.jsx(de, { className: he }),
-                    s.jsx(z, {}),
+                    s.jsx(G, {}),
                     s.jsx('div', { className: ue }),
                     s.jsx(Z, { className: fe }),
                     s.jsx(M, {}),
@@ -255,4 +255,4 @@ function xe() {
         ],
     });
 }
-j(s.jsx(v, { children: s.jsx(N, { children: s.jsx(xe, {}) }) }));
+j(s.jsx(N, { children: s.jsx(v, { children: s.jsx(xe, {}) }) }));

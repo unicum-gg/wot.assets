@@ -172,7 +172,7 @@
                                         e(u).delete(t);
                                     },
                                     a = (u, ...t) => {
-                                        for (var n, a = B(e(u).values()); !(n = a()).done; ) (0, n.value)(...t);
+                                        for (var n, a = B(e(u).values()); !(n = a()).done;) (0, n.value)(...t);
                                     };
                                 return (0, r.useMemo)(() => ({ on: t, off: n, trigger: a }), []);
                             })(),
@@ -1298,8 +1298,7 @@
                         ? `${u}`
                         : (function (u) {
                               let e = '';
-                              for (let t = Zu.length - 1; t >= 0; t--)
-                                  for (; u >= Zu[t]; ) ((e += Ju[t]), (u -= Zu[t]));
+                              for (let t = Zu.length - 1; t >= 0; t--) for (; u >= Zu[t];) ((e += Ju[t]), (u -= Zu[t]));
                               return e;
                           })(u),
                 ee = {

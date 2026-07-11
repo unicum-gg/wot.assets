@@ -81,7 +81,7 @@ const m = 'SeniorityAwardsViewFooter_ee5e4688',
     };
 function g({ resId: e, contentId: s, decoratorId: a, disabled: t, args: o, onShowTooltip: i, onHideTooltip: n }) {
     const d = c({ resId: e, contentId: s, decoratorId: a, disabled: t, args: o, showDelay: 400 }),
-        w = r.useRef(),
+        w = r.useRef(0),
         [u, m] = r.useState(!1);
     return (
         l(() => clearTimeout(w.current)),
@@ -90,12 +90,12 @@ function g({ resId: e, contentId: s, decoratorId: a, disabled: t, args: o, onSho
             onMouseEnter: (e) => {
                 (d.onMouseEnter?.(e),
                     w.current && clearTimeout(w.current),
-                    (w.current = setTimeout(() => {
+                    (w.current = window.setTimeout(() => {
                         (m(!0), i?.());
                     }, 400)));
             },
             onMouseLeave: () => {
-                (d.onMouseLeave?.(), w.current && (clearTimeout(w.current), (w.current = void 0)), u && n?.(), m(!1));
+                (d.onMouseLeave?.(), w.current && (clearTimeout(w.current), (w.current = 0)), u && n?.(), m(!1));
             },
         }
     );

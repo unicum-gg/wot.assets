@@ -1,39 +1,39 @@
 import { r as e, q as s, j as t, e as a } from '../../../chunks/vendor.js';
 import {
     i as r,
-    h as o,
-    j as n,
+    x as o,
+    v as n,
     p as c,
-    l as i,
-    m as l,
-    n as u,
-    I as d,
+    y as i,
+    z as l,
+    A as u,
+    E as d,
     k as _,
-    o as m,
-    q as p,
+    G as m,
+    H as p,
     F as b,
-    v as f,
-    w as g,
-    x,
-    y as h,
-    z as v,
+    J as f,
+    K as g,
+    L as x,
+    M as h,
+    N as v,
     T as C,
-    A as j,
-    D as N,
-    E as S,
-    G as I,
-    H as w,
-    J as E,
-    K as y,
-    L as T,
+    O as N,
+    P as j,
+    Q as S,
+    R as I,
+    S as w,
+    w as E,
+    W as y,
+    X as T,
     c as A,
     C as k,
-    M as P,
-    r as D,
-    U as V,
+    Y as P,
+    r as V,
+    U as D,
 } from '../../../chunks/lib.js';
 import { a as L, b as M, c as H, d as U, e as W, f as B, g as $, h as O, t as F } from '../../../chunks/sounds.js';
-import { S as q, F as z } from '../../../chunks/footer.js';
+import { S as z, F as q } from '../../../chunks/footer.js';
 import { V as K } from '../../../chunks/vehicle_count.js';
 import { g as G } from '../../../chunks/utils.js';
 /* empty css                     */ import '../../../chunks/enums.js';
@@ -169,21 +169,21 @@ function xe({
     onInputMouseDown: x,
     onInputMouseUp: h,
 }) {
-    const { focused: v, setFocused: C, inputRef: R, disabled: j, value: N, focus: S } = i(),
+    const { focused: v, setFocused: C, inputRef: R, disabled: N, value: j, focus: S } = i(),
         I = l(s),
-        w = e.useRef(N),
+        w = e.useRef(j),
         E = e.useRef(!1);
     (e.useEffect(() => {
-        w.current = N;
-    }, [N]),
+        w.current = j;
+    }, [j]),
         e.useEffect(() => {
             const e = R.current;
             if (!e) return;
-            const s = se(ge(N)).length,
+            const s = se(ge(j)).length,
                 t = e?.selectionStart ?? 0,
                 a = e?.selectionEnd ?? 0;
             0 !== t || a !== s ? e.setSelectionRange(t === a ? s : t, s) : e.setSelectionRange(s, s);
-        }, [R, N]),
+        }, [R, j]),
         e.useEffect(() => {
             const e = (e) => {
                 const s = R.current;
@@ -198,11 +198,11 @@ function xe({
             E.current && e && document.activeElement !== e && S();
         }, [R, S]));
     const y = e.useCallback(() => {
-            j || (C(!1), (E.current = !1));
-        }, [C, j]),
+            N || (C(!1), (E.current = !1));
+        }, [C, N]),
         T = e.useCallback(() => {
-            j || (C(!0), (E.current = !0));
-        }, [C, j]),
+            N || (C(!0), (E.current = !0));
+        }, [C, N]),
         A = () => {
             const e = m(n, p, fe(ge(w.current) + r, r));
             (o(e), g(se(e)), c.sound(M));
@@ -217,7 +217,7 @@ function xe({
                     R.current && R.current.setSelectionRange(e, s);
                 }));
         },
-        D = (e) => {
+        V = (e) => {
             const s = e.target,
                 { selectionStart: t, selectionEnd: a, value: r } = s;
             if (null === t || null === a || t !== a) return;
@@ -228,12 +228,12 @@ function xe({
                 l = o && t ? t - 1 : t;
             let u = l;
             const d = c.test(r[l] ?? '');
-            if (n && d) for (; c.test(r[u] ?? '') && u < i; ) u++;
-            if (o && d) for (; c.test(r[u] ?? '') && u > 0; ) u--;
+            if (n && d) for (; c.test(r[u] ?? '') && u < i;) u++;
+            if (o && d) for (; c.test(r[u] ?? '') && u > 0;) u--;
             if (u !== l || (o && d)) return (e.preventDefault(), (u = u < 0 ? 0 : u), void P(u, u));
             ((o && 1 === t && 1 === i) || n) && (e.preventDefault(), L(e.code));
         },
-        V = u(),
+        D = u(),
         L = (e = '') => {
             const s = e === _.BACKSPACE,
                 t = e === _.DELETE,
@@ -251,7 +251,7 @@ function xe({
                 const e = l[r] || '',
                     s = f[x] || '';
                 if (e.match(/\d/g) || e === s) {
-                    for (; e !== f[x] && x < f.length; ) x++;
+                    for (; e !== f[x] && x < f.length;) x++;
                     x++;
                 }
             }
@@ -259,22 +259,22 @@ function xe({
                 R.current && R.current.setSelectionRange(0, 0),
                 P(x, x),
                 g(f),
-                V.run(() => {
+                D.run(() => {
                     const e = m(n, p, fe(b, r)),
                         s = e - (I ?? 0);
-                    (s > 0 ? c.sound(M) : s < 0 && c.sound(H), v && (o(e), g(se(e))), V.clear());
+                    (s > 0 ? c.sound(M) : s < 0 && c.sound(H), v && (o(e), g(se(e))), D.clear());
                 }, 800));
         };
     return t.jsxs(d.Decoration, {
-        className: a(ne, v && ce, j && le, s > 0 && ie),
+        className: a(ne, v && ce, N && le, s > 0 && ie),
         children: [
             t.jsx(d.Field, {
                 className: a(ue, v && _e, s > 0 && de),
                 onChange: () => {
-                    j || L();
+                    N || L();
                 },
                 onWheel: (e) => {
-                    !j &&
+                    !N &&
                         v &&
                         (e.preventDefault(), e.stopPropagation(), e.deltaY < 0 && f && k(), e.deltaY > 0 && b && A());
                 },
@@ -301,7 +301,7 @@ function xe({
                                 break;
                             case _.BACKSPACE:
                             case _.DELETE:
-                                D(e);
+                                V(e);
                         }
                 },
                 onMouseUp: h,
@@ -392,8 +392,8 @@ const he = 'ResourceStepper_7487cb5a',
             upgradeLegacy: !0,
         });
     },
-    je = 'Storage_icon_ee526815',
-    Ne = 'Storage_icon__reverse_e8e0a133',
+    Ne = 'Storage_icon_ee526815',
+    je = 'Storage_icon__reverse_e8e0a133',
     Se = 'Storage_value_f68f8626',
     Ie = 'Storage_value__zero_c2260cb9';
 function we({ itemsInStorage: e, valueFirst: s }) {
@@ -402,7 +402,7 @@ function we({ itemsInStorage: e, valueFirst: s }) {
         reverse: s,
         size: g.extraSmall,
         enough: e > 0,
-        classNames: { base: a(Se, 0 === e && Ie), icon: a(je, s && Ne) },
+        classNames: { base: a(Se, 0 === e && Ie), icon: a(Ne, s && je) },
         children: e,
     });
 }
@@ -430,7 +430,7 @@ const Ee = {
         const { type: c, inventoryCount: i, rate: l, limit: u, tooltipId: d, balance: _ } = s,
             { setResources: m, progression: f, delta: g } = e.useContext(te),
             x = p.resolve('intl'),
-            N = r + _ >= u,
+            j = r + _ >= u,
             S = f + g >= 100,
             I = n === X.NoVehicles,
             w = u / l < 100,
@@ -481,7 +481,7 @@ const Ee = {
                         contentId:
                             R.views.common.tooltip_window.backport_tooltip_content.BackportTooltipContent('resId'),
                         args: { tooltipId: d },
-                        children: t.jsx(j, {
+                        children: t.jsx(N, {
                             className: a(Ee.image, y && Ee.image__disabled),
                             path: `R.images.resource_well.gui.maps.icons.resourcesLoading.resources.${c}`,
                             width: 180,
@@ -506,7 +506,7 @@ const Ee = {
                         },
                     }),
                     S &&
-                        t.jsx(q, {
+                        t.jsx(z, {
                             header: ye.tooltips.resourcesLoadingView.resourcesLoaded.header(),
                             body: ye.tooltips.resourcesLoadingView.resourcesLoaded.body(),
                             children: t.jsx(b, {
@@ -522,7 +522,7 @@ const Ee = {
                         t.jsx(C, {
                             contentId: R.views.resource_well.mono.lobby.tooltips.max_progress_tooltip('resId'),
                             args: { currentValue: r + _, maxValue: u, type: c },
-                            children: N
+                            children: j
                                 ? t.jsx(b, {
                                       className: a(Ee.limitText, Ee.limitText__max),
                                       text: ye.resourcesLoadingView.resourceRate.maxReachedText(),
@@ -565,15 +565,15 @@ const Ee = {
         { position: 0, index: 1 },
     ],
     Pe = 'top',
-    De = 'bottom',
-    Ve = 'both',
+    Ve = 'bottom',
+    De = 'both',
     Le = 'none';
 const Me = s(function ({ activeTabIndex: s }) {
     const { resources: r } = e.useContext(te),
         { model: o } = J(),
         n = o.resourcesTabs.get(),
         { progressionState: c } = o.root.get(),
-        { api: i } = N(),
+        { api: i } = j(),
         u = n[s],
         [d, _] = e.useState(ke),
         [m, p] = e.useState(Le);
@@ -584,7 +584,7 @@ const Me = s(function ({ activeTabIndex: s }) {
                     t = i.animationScroll.scrollPosition.get();
                 p(
                     (function (e, s, t) {
-                        return e <= s ? Le : t <= 10 ? De : s + t >= e - 10 ? Pe : Ve;
+                        return e <= s ? Le : t <= 10 ? Ve : s + t >= e - 10 ? Pe : De;
                     })(e, s, t),
                 );
             },
@@ -678,7 +678,7 @@ const Ue = {
                     className: Ue.label,
                     children: We.resourcesLoadingView.resourcesHeader.$dyn(s)?.toString(),
                 }),
-                t.jsx(q, {
+                t.jsx(z, {
                     header: We.tooltips.resourcesLoadingView.header.$dyn(`${s}_title`)?.toString(),
                     body: We.tooltips.resourcesLoadingView.header.$dyn(`${s}_description`)?.toString(),
                     children: t.jsx('div', { className: a(Ue.image, Ue[`image__${s}`]) }),
@@ -740,8 +740,8 @@ const Ue = {
         });
     }),
     Fe = 'Content_d86d909',
-    qe = 'Content_header_9d26a7f4',
-    ze = 'Content_c84d5903',
+    ze = 'Content_header_9d26a7f4',
+    qe = 'Content_c84d5903',
     Ke = 'Content_content__center_41e47377',
     Ge = s(function () {
         const { model: s } = J(),
@@ -753,9 +753,9 @@ const Ue = {
         return t.jsxs('div', {
             className: Fe,
             children: [
-                t.jsx('div', { className: qe, children: t.jsx(Oe, { handleTabClick: c, activeTabIndex: o }) }),
+                t.jsx('div', { className: ze, children: t.jsx(Oe, { handleTabClick: c, activeTabIndex: o }) }),
                 t.jsx('div', {
-                    className: a(ze, r[o] && r[o].value.resources.length <= 5 && Ke),
+                    className: a(qe, r[o] && r[o].value.resources.length <= 5 && Ke),
                     children: t.jsx(He, { activeTabIndex: o }),
                 }),
             ],
@@ -832,7 +832,7 @@ const Ue = {
                         t.jsx('div', { className: rs, children: t.jsx(Qe, {}) }),
                         t.jsx(k, { className: os, onClose: r.close }),
                         t.jsx(Ge, {}),
-                        t.jsx(z, {
+                        t.jsx(q, {
                             className: cs,
                             variant: 'resources',
                             counterUnavailable: !s.vehicleCounter.get().isVehicleCountAvailable,
@@ -851,4 +851,4 @@ const Ue = {
         });
     }),
     ls = P(F);
-D(t.jsx(V, { soundsOverrides: ls, children: t.jsx(Y, { children: t.jsx(ae, { children: t.jsx(is, {}) }) }) }));
+V(t.jsx(D, { soundsOverrides: ls, children: t.jsx(Y, { children: t.jsx(ae, { children: t.jsx(is, {}) }) }) }));

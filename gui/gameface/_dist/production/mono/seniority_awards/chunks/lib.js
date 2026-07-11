@@ -1439,7 +1439,8 @@ function Pt({ resId: e = 0, contentId: t, decoratorId: n, disabled: r, args: o, 
             let s = null;
             function c() {
                 r ||
-                    ((i.current.status = Bt),
+                    ('display' === i.current.status && (we.tooltip.hide(e, t, n), (i.current.status = Dt)),
+                    (i.current.status = Bt),
                     window.clearTimeout(i.current.timeoutId),
                     (i.current.timeoutId = window.setTimeout(l, a)));
             }
@@ -1455,7 +1456,7 @@ function Pt({ resId: e = 0, contentId: t, decoratorId: n, disabled: r, args: o, 
                 ) {
                     Nt.delete(s);
                     let e = s.parentElement;
-                    for (; e && !Nt.has(e); ) e = e.parentElement;
+                    for (; e && !Nt.has(e);) e = e.parentElement;
                     if (e) {
                         Nt.get(e).show();
                     }
@@ -2137,8 +2138,7 @@ const _n = 'metrics',
                             if (void 0 === i) return;
                             (void 0 !== o.current.get(e) && l(e), r.current.delete(e));
                             const c = (fn() - i) / 1e3;
-                            c <= t ||
-                                ((a = ((e, t) => (void 0 === e && (e = {}), (e.timeSpent = t), e))(a, c)), n(e, s, a));
+                            c <= t || ((a = ((e, t) => ({ ...e, timeSpent: t }))(a, c)), n(e, s, a));
                         },
                         [r, o, n, l],
                     );
@@ -2292,7 +2292,7 @@ function Fn(e, t) {
     for (let n = 0; n < e.length; n++) {
         if ('$' === e[n]) {
             let r = n + 1;
-            for (; r < e.length && !kn(e[r]); ) r++;
+            for (; r < e.length && !kn(e[r]);) r++;
             const s = e.slice(n + 1, r),
                 o = t[s];
             if (o) return Fn(e.replace(`$${s}`, String(o)), t);
@@ -2703,6 +2703,7 @@ const or = [
         Jn.DeluxeGift,
         Jn.BattleBoosterGift,
         Jn.OptionalDevice,
+        Jn.TmanToken,
     ],
     ar = [Jn.Gold, Jn.Credits, Jn.Crystal, Jn.FreeXp],
     ir = [Jn.BattlePassPoints, Jn.EquipCoin],
@@ -3115,7 +3116,7 @@ const Fr = s.forwardRef(function ({ value: e, numberType: t, ...n }, r) {
                       let t = '';
                       for (let n = ze.length - 1; n >= 0; n--) {
                           let r = ze[n];
-                          for (; void 0 !== r && e >= r; ) ((t += Ve[n]), (e -= r));
+                          for (; void 0 !== r && e >= r;) ((t += Ve[n]), (e -= r));
                       }
                       return t;
                   })(e)
@@ -3146,7 +3147,7 @@ const Ar = 'prestige',
         base__enamel: 'VehiclePrestigeLevel_base__enamel_4426b46c',
     };
 function Vr({ level: e, grade: t, type: n, direction: r, classNames: s, ...i }) {
-    return e < 1
+    return e < 1 || 'undefined' === n
         ? null
         : o.jsxs('div', {
               ...i,
@@ -4533,7 +4534,7 @@ function go(e, t) {
             a = n,
             i = -3,
             c = -3;
-        for (e.splice(0, 1); e.length > 0; ) {
+        for (e.splice(0, 1); e.length > 0;) {
             const t = e.findIndex((e) => e[0].x === s.x && e[0].y === s.y);
             if (-1 === t) break;
             const n = e[t],

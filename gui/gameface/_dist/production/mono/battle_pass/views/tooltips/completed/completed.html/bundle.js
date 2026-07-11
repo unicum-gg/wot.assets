@@ -1,7 +1,12 @@
-import { g as s, j as e, v as t, f as a } from '../../../../chunks/vendor.js';
-import { i as o, N as n, bY as c, J as l, U as i, d } from '../../../../chunks/lib.js';
+import { g as s, j as e, w as t, f as a } from '../../../../chunks/vendor.js';
+import { i as o, R as n, cd as c, J as l, U as i, d } from '../../../../chunks/lib.js';
 import { I as m } from '../../../../chunks/icon_text_block.js';
-var r = ((s) => ((s.COMMON = 'common'), (s.EXTRA = 'extra'), (s.HOLIDAY = 'holiday'), s))(r || {});
+/* empty css                       */ var r = ((s) => (
+    (s.COMMON = 'common'),
+    (s.EXTRA = 'extra'),
+    (s.HOLIDAY = 'holiday'),
+    s
+))(r || {});
 const [_, x] = o()(({ observableModel: e }) => {
         const t = { root: e.object() },
             a = s(() => t.root.get().chapterType === r.HOLIDAY);
@@ -70,9 +75,9 @@ const [_, x] = o()(({ observableModel: e }) => {
     I = 'Content_flare_273bab95',
     W = 'Content_messageWrapper_21d573e9',
     B = 'Content_info_a37d477a',
-    Y = 'Content_unlock_8083471',
-    F = R.strings.battle_pass.tooltips,
-    L = t(() => {
+    F = 'Content_unlock_8083471',
+    L = R.strings.battle_pass.tooltips,
+    Y = t(() => {
         const { model: s } = x(),
             { isBattlePassPurchased: t, notChosenRewardCount: o, isAvailableTankmen: n } = s.root.get(),
             c = o > 0,
@@ -80,8 +85,8 @@ const [_, x] = o()(({ observableModel: e }) => {
         return e.jsxs('div', {
             className: a(T, t && !c && !n && y),
             children: [
-                e.jsx('div', { className: O, children: F.completed.title() }),
-                e.jsx('div', { className: A, children: l ? F.completed.oneChapterSubTitle() : F.completed.subTitle() }),
+                e.jsx('div', { className: O, children: L.completed.title() }),
+                e.jsx('div', { className: A, children: l ? L.completed.oneChapterSubTitle() : L.completed.subTitle() }),
                 l
                     ? e.jsx(M, {})
                     : e.jsxs(e.Fragment, {
@@ -93,7 +98,7 @@ const [_, x] = o()(({ observableModel: e }) => {
                                       e.jsx('div', { className: I }),
                                       e.jsx('div', {
                                           className: W,
-                                          children: e.jsx(h, { text: F.completed.message() }),
+                                          children: e.jsx(h, { text: L.completed.message() }),
                                       }),
                                   ],
                               }),
@@ -105,25 +110,25 @@ const [_, x] = o()(({ observableModel: e }) => {
                         c &&
                             e.jsx(m, {
                                 icon: R.images.gui.maps.icons.battlePass.tooltips.bow_small(),
-                                text: o > 1 ? F.claimRewards.multiple() : F.claimRewards.c_1(),
-                                className: Y,
+                                text: o > 1 ? L.claimRewards.multiple() : L.claimRewards.c_1(),
+                                className: F,
                             }),
                         !t &&
                             e.jsx(m, {
                                 icon: R.images.gui.maps.icons.battlePass.progression.icon_lock_current_small(),
-                                text: F.unlockBattlePass(),
-                                className: Y,
+                                text: L.unlockBattlePass(),
+                                className: F,
                             }),
                         n &&
                             e.jsx(m, {
                                 icon: R.images.gui.maps.icons.battlePass.icons.tankmen_small(),
-                                text: F.completed.tankmenNotRecieved(),
-                                className: a(Y),
+                                text: L.completed.tankmenNotRecieved(),
+                                className: a(F),
                             }),
                     ],
                 }),
             ],
         });
     }),
-    E = () => e.jsx(c, { children: e.jsx(c.Decorator, { children: e.jsx(L, {}) }) });
+    E = () => e.jsx(c, { children: e.jsx(c.Decorator, { children: e.jsx(Y, {}) }) });
 d(new l().add(i).addWithProps(_, {}).render(e.jsx(E, {})));

@@ -1,11 +1,11 @@
-import { b as e, at as t } from './lib.js';
-import { s, A as a, t as o } from './vendor.js';
-const i = e.resolve('strings'),
-    r = e.resolve('images'),
+import { aG as e, b as t } from './lib.js';
+import { t as s, B as a, v as o } from './vendor.js';
+const i = t.resolve('strings'),
+    r = t.resolve('images'),
     n = s({ id: o(), textPath: a(), iconPath: a() }),
-    c = (e) =>
-        t(
-            e,
+    c = (t) =>
+        e(
+            t,
             (e) => ({
                 id: e,
                 textPath: `weekly_quests.condition.special.c_${e}`,

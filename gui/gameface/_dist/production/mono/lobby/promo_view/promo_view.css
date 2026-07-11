@@ -52,7 +52,6 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
-/* stylelint-disable scss/dollar-variable-pattern */
 .ContainerAnimation_dc99b0bc {
     position: absolute;
     top: 0;
@@ -61,6 +60,7 @@ html[lang='th'] input {
     left: 0;
 }
 
+/* stylelint-disable scss/dollar-variable-pattern */
 .ContainerAnimation_content_9f9d6eae {
     width: 1920rem;
     height: 1080rem;
@@ -155,6 +155,14 @@ html[lang='th'] input {
 
 /* stylelint-disable selector-no-qualifying-type */
 /* stylelint-disable selector-no-qualifying-type */
+.PromoApp_vignetteBg_ae9ebec {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 /* stylelint-disable scss/dollar-variable-pattern */
 .PromoApp_6e17783a {
     display: flex;
@@ -171,12 +179,7 @@ html[lang='th'] input {
     position: relative;
 }
 
-.PromoApp_vignetteBg_3b32fdde {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.PromoApp_vignetteBg_ae9ebec {
     background: url('R.images.last_stand.gui.maps.icons.backgrounds.vignette_simple') no-repeat 50%/100% 100%;
     pointer-events: none;
 }

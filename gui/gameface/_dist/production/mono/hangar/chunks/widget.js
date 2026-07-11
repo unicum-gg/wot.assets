@@ -2,8 +2,8 @@ import { D as e, r as o, j as t, f as a } from './vendor.js';
 import {
     i as r,
     c as n,
-    ci as s,
-    dv as l,
+    cp as s,
+    dB as l,
     l as m,
     m as c,
     o as d,
@@ -53,10 +53,10 @@ import './preload-helper.js';
     S = 'commanderPlayer',
     k = 'empty',
     C = 'search',
-    E = 'notReady',
-    W = 'ready',
-    w = 'inBattle';
-const B = (e, o, t) => (e ? `${t}_${o}` : o === C ? 'search' : 'empty_member'),
+    B = 'notReady',
+    E = 'ready',
+    W = 'inBattle';
+const w = (e, o, t) => (e ? `${t}_${o}` : o === C ? 'search' : 'empty_member'),
     M = {
         base: 'Platoon_9c663a1',
         button: 'Platoon_button_a989ea7f',
@@ -118,11 +118,11 @@ const B = (e, o, t) => (e ? `${t}_${o}` : o === C ? 'search' : 'empty_member'),
                                         case 'searching':
                                             return C;
                                         case 'notReady':
-                                            return E;
+                                            return B;
                                         case 'ready':
-                                            return W;
+                                            return E;
                                         case 'inBattle':
-                                            return w;
+                                            return W;
                                         default:
                                             return (
                                                 console.error('Platoon widget: met unexpected member state ', e),
@@ -131,13 +131,13 @@ const B = (e, o, t) => (e ? `${t}_${o}` : o === C ? 'search' : 'empty_member'),
                                     }
                                 })(e.state),
                                 c = g(`${n}_${m}`),
-                                d = c && m === W;
+                                d = c && m === E;
                             return t.jsx(
                                 'div',
                                 {
                                     className: M.memberIconWrapper,
                                     children: t.jsx(I, {
-                                        ...P(v, B(c, m, n), d),
+                                        ...P(v, w(c, m, n), d),
                                         className: a(
                                             M.memberIcon,
                                             m === C && M.memberIcon__searchState,

@@ -1396,6 +1396,86 @@ html[lang='th'] input {
 .CellReward_rewardOverlay_38f05890 {
     z-index: 2;
 }
+.CellReward_rewardOverlay__s24x24_6dd06c1b {
+    width: 48rem;
+    height: 48rem;
+}
+.CellReward_rewardOverlay__s48x48_8b97a0ba,
+.CellReward_rewardOverlay__small_d535335f {
+    width: 96rem;
+    height: 96rem;
+    background-size: 100%;
+    overflow: visible;
+}
+.CellReward_rewardOverlay__s80x80_8b97a0ba,
+.CellReward_rewardOverlay__big_5e751c00 {
+    width: 128rem;
+    height: 128rem;
+}
+.CellReward_rewardOverlay__s180x135_1d72ec04 {
+    width: 266rem;
+    height: 241rem;
+}
+.CellReward_rewardOverlay__s232x174_d323f021 {
+    width: 232rem;
+    height: 312rem;
+}
+.CellReward_rewardOverlay__s296x222_3cdd5611 {
+    width: 360rem;
+    height: 332rem;
+}
+.CellReward_rewardOverlay__s360x270_78762b0e {
+    width: 550rem;
+    height: 512rem;
+}
+.CellReward_rewardOverlay__s400x300_115859dc {
+    width: 618rem;
+    height: 590rem;
+}
+.CellReward_rewardOverlay__s600x450_8db6fbbd {
+    width: 670rem;
+    height: 575rem;
+}
+.CellReward_rewardOverlay__trophy-s180x135_8c39cd46 {
+    width: 248rem;
+    height: 224rem;
+}
+.CellReward_rewardOverlay__trophy-s232x174_a285122e {
+    width: 232rem;
+    height: 174rem;
+}
+.CellReward_rewardOverlay__trophy-s296x222_5e1d7b3 {
+    width: 296rem;
+    height: 222rem;
+}
+.CellReward_rewardOverlay__trophy-s360x270_f0db1faf {
+    width: 360rem;
+    height: 270rem;
+}
+.CellReward_rewardOverlay__attachment-small_6dd06c1b {
+    width: 48rem;
+    height: 48rem;
+}
+.CellReward_rewardOverlay__attachment-big_ab5b57ea {
+    width: 80rem;
+    height: 80rem;
+}
+.CellReward_rewardOverlay__attachment-s180x135_52ecfddc {
+    width: 180rem;
+    height: 135rem;
+}
+.CellReward_rewardOverlay__attachment-s232x174_a285122e {
+    width: 232rem;
+    height: 174rem;
+}
+.CellReward_rewardOverlay__attachment-s296x222_5e1d7b3 {
+    width: 296rem;
+    height: 222rem;
+}
+.CellReward_rewardOverlay__attachment-s360x270_f0db1faf {
+    width: 360rem;
+    height: 270rem;
+}
 
 .CellReward_loupe_a4b63feb {
     display: flex;
@@ -1417,11 +1497,27 @@ html[lang='th'] input {
     margin-top: 50rem;
 }
 
-.CellReward_check_a29f1710 {
+.CellReward_check_2d5c6d11 {
     width: 62rem;
     height: 26rem;
     background: no-repeat center/cover;
     position: absolute;
+    top: 5%;
+    right: -15%;
+}
+.CellReward_base__m_8b97a0ba .CellReward_check_2d5c6d11 {
+    top: 0;
+    right: -5%;
+}
+.CellReward_base__l_8b97a0ba .CellReward_check_2d5c6d11 {
+    top: 10%;
+    right: -10%;
+}
+.mediaLarge .CellReward_base__l_8b97a0ba .CellReward_check_2d5c6d11 {
+    top: 10%;
+    right: 10%;
+}
+.mediaLarge .CellReward_base__l_8b97a0ba .CellReward_check__shifted_618a4e81 {
     top: 10%;
     right: -10%;
 } /* stylelint-disable selector-no-qualifying-type */
@@ -2072,13 +2168,14 @@ html[lang='th'] input {
     left: 0;
 }
 
-.App_e312cfaa {
+.App_6fa429f4 {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
     background: #404040;
+    overflow: hidden;
     position: relative;
 }
 

@@ -13,23 +13,24 @@ import {
     p as u,
     V as j,
     F as _,
-    d as f,
-    e as x,
-    f as g,
+    d as x,
+    e as g,
+    f,
     C as b,
     g as v,
     m as y,
-    h as w,
-    k as N,
+    h as N,
+    k as w,
     j as A,
     U as S,
 } from '../../../chunks/lib.js';
 import { g as z } from '../../../chunks/resources.js';
 import { u as k } from '../../../chunks/usePreloadImages.js';
 import { u as E, P, R as C, h as T, g as H } from '../../../chunks/reward.js';
-const O = 'ScrollContent_alignedWrapper_aeca2e8f',
-    I = 'ScrollContent_scrollBar_fa01fa0a',
-    V = ({ children: t }) => {
+const O = 'ScrollContent_c45a500e',
+    I = 'ScrollContent_alignedWrapper_aeca2e8f',
+    V = 'ScrollContent_scrollBar_4f574d8b',
+    $ = ({ children: t }) => {
         const [r, m] = s.useState(!1),
             { api: h } = n(),
             { animationScroll: p, applyScroll: u, getBounds: j } = h,
@@ -48,14 +49,15 @@ const O = 'ScrollContent_alignedWrapper_aeca2e8f',
             }, [j]),
             e.jsxs(e.Fragment, {
                 children: [
-                    e.jsx(l, { classNames: { wrapper: a(!r && O) }, children: t }),
-                    e.jsx(o, { classNames: { base: I } }),
+                    e.jsx(l, { classNames: { wrapper: a(!r && I) }, children: t }),
+                    e.jsx(o, { classNames: { base: V } }),
                 ],
             })
         );
     },
-    $ = ({ children: s }) => e.jsx(r, { children: e.jsx(V, { children: s }) }),
-    [B, F] = m()(
+    B = ({ children: s }) =>
+        e.jsx('div', { className: O, children: e.jsx(r, { children: e.jsx($, { children: s }) }) }),
+    [F, M] = m()(
         ({ observableModel: e }) => ({
             root: e.object(),
             attachments: e.array('attachments'),
@@ -63,27 +65,27 @@ const O = 'ScrollContent_alignedWrapper_aeca2e8f',
         }),
         h,
     ),
-    M = 'Attachment_109d6468',
-    R = 'Attachment_rewardHighlight_d7fbdbe6',
-    U = 'Attachment_rewardOverlay_aab126a3',
-    W = 'Attachment_video_c86f988c',
-    q = 'Attachment_name_e6194f3d',
-    D = 'Attachment_description_da398fbf',
-    G = t(function ({ reward: s }) {
-        const { model: a } = F(),
+    R = 'Attachment_80e82b2',
+    U = 'Attachment_rewardHighlight_d7fbdbe6',
+    W = 'Attachment_rewardOverlay_e88ed684',
+    q = 'Attachment_video_c86f988c',
+    D = 'Attachment_name_b981437c',
+    G = 'Attachment_description_da398fbf',
+    J = t(function ({ reward: s }) {
+        const { model: a } = M(),
             { bundleType: t } = a.root.get(),
             { getText: r } = z(t),
             { assetSize: n, textSize: c, overlaySize: i } = E(P.AttachmentPreview),
             l = s.overlayType,
             o = p.resolve('videos');
         return e.jsxs('div', {
-            className: M,
+            className: R,
             children: [
                 e.jsxs(C, {
                     reward: s,
                     template: P.AttachmentPreview,
                     children: [
-                        l && e.jsx(C.Highlight, { special: l, size: i, className: R }),
+                        l && e.jsx(C.Highlight, { special: l, size: i, className: U }),
                         e.jsx(C.Image, {
                             template: P.AttachmentPreview,
                             showCounter: !1,
@@ -92,57 +94,57 @@ const O = 'ScrollContent_alignedWrapper_aeca2e8f',
                             currencySize: c,
                             onMouseEnter: u.highlight,
                         }),
-                        l && e.jsx(C.Overlay, { name: s.name, special: l, size: i, className: U }),
+                        l && e.jsx(C.Overlay, { className: W, name: s.name, special: l, size: i }),
                         T(l) &&
-                            e.jsx(j, { src: o.readOrEmpty(`rarity.cycle_${l}`), autoplay: !0, loop: !0, className: W }),
+                            e.jsx(j, { src: o.readOrEmpty(`rarity.cycle_${l}`), autoplay: !0, loop: !0, className: q }),
                     ],
                 }),
-                e.jsx('div', { className: q, children: s.label }),
-                e.jsx('div', { className: D, children: r(`attachments_preview.rarity.${l}`) }),
+                e.jsx('div', { className: D, children: s.label }),
+                e.jsx('div', { className: G, children: r(`attachments_preview.rarity.${l}`) }),
             ],
         });
     }),
-    J = 'Header_e0ac2a8e',
-    K = 'Header_title_faafb1ee',
-    L = 'Header_description_20baac9';
-function Q({ title: s, description: t, className: r = '' }) {
+    K = 'Header_9981b078',
+    L = 'Header_title_faafb1ee',
+    Q = 'Header_description_20baac9';
+function X({ title: s, description: t, className: r = '' }) {
     return e.jsxs('div', {
-        className: a(J, r),
-        children: [e.jsx(_, { text: s, className: K }), e.jsx(_, { className: L, text: t })],
+        className: a(K, r),
+        children: [e.jsx(_, { text: s, className: L }), e.jsx(_, { className: Q, text: t })],
     });
 }
-const X = 'App_7b0d0f3d',
-    Y = 'App_close_f5179698',
-    Z = 'App_header_8f98007e',
-    ee = 'App_content_9d82d0a5',
-    se = 'App_footer_9f29f1a9',
-    ae = p.resolve('strings'),
-    te = t(function () {
-        const { model: s } = F(),
+const Y = 'App_7b0d0f3d',
+    Z = 'App_close_f5179698',
+    ee = 'App_header_8f98007e',
+    se = 'App_content_47910ec4',
+    ae = 'App_footer_9f29f1a9',
+    te = p.resolve('strings'),
+    re = t(function () {
+        const { model: s } = M(),
             { getExtImage: a, getText: t } = z(s.bundleType.get()),
             r = s.attachments.get(),
-            n = ae.readOrEmpty('open_bundle.bonuses.attachmentsSet.default'),
-            c = ae.readOrEmpty(`open_bundle.bonuses.attachmentsSet.${s.name.get()}`, 'silent');
-        f(N.ESCAPE, v.closeView);
-        const i = x({ buttonSize: g.medium }, { large: { buttonSize: g.large } }),
+            n = te.readOrEmpty('open_bundle.bonuses.attachmentsSet.default'),
+            c = te.readOrEmpty(`open_bundle.bonuses.attachmentsSet.${s.name.get()}`, 'silent');
+        x(w.ESCAPE, v.closeView);
+        const i = g({ buttonSize: f.medium }, { large: { buttonSize: f.large } }),
             l = k([a('confirmation.background')]);
         return e.jsx('div', {
-            className: X,
+            className: Y,
             style: { backgroundImage: `url(${a('confirmation.background')})` },
             children:
                 l &&
                 e.jsxs(e.Fragment, {
                     children: [
-                        e.jsx(b, { onClose: v.closeView, className: Y }),
-                        e.jsx(Q, { className: Z, title: c || n, description: t('attachments_preview.description') }),
-                        e.jsx($, {
+                        e.jsx(b, { onClose: v.closeView, className: Z }),
+                        e.jsx(X, { className: ee, title: c || n, description: t('attachments_preview.description') }),
+                        e.jsx(B, {
                             children: e.jsx('div', {
-                                className: ee,
-                                children: y(r, (s) => e.jsx(G, { reward: s }, s.icon)),
+                                className: se,
+                                children: y(r, (s) => e.jsx(J, { reward: s }, s.icon)),
                             }),
                         }),
-                        e.jsx(w, {
-                            className: se,
+                        e.jsx(N, {
+                            className: ae,
                             size: i.buttonSize,
                             onClick: v.closeView,
                             children: t('attachments_preview.confirm'),
@@ -151,4 +153,4 @@ const X = 'App_7b0d0f3d',
                 }),
         });
     });
-A(e.jsx(S, { children: e.jsx(B, { children: e.jsx(te, {}) }) })).then(h);
+A(e.jsx(S, { children: e.jsx(F, { children: e.jsx(re, {}) }) })).then(h);
